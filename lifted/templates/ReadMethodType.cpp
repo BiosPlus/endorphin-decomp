@@ -62959,3 +62959,4497 @@ void* fn_004B3160(void* arg1, void* arg2) {
     return nullptr;
 }
 } // namespace lift_004B3160
+
+// [0x004B3830] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004B3830 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00622310();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004B3830(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00622310))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004B3830
+
+// [0x004B3B70] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004B3B70 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0048FAD0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004B3B70(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0048FAD0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004B3B70
+
+// [0x004C5680] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004C5680 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004C4DB0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004C5680(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004C4DB0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004C5680
+
+// [0x004CEFF0] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004CEFF0 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004CE580();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004CEFF0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004CE580))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004CEFF0
+
+// [0x004D1360] ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004D1360 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004D0B10();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004D1360(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004D0B10))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004D1360
+
+// [0x004DF590] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004DF590 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004DDE70();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004DF590(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004DDE70))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004DF590
+
+// [0x004E0120] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004E0120 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004DDE40();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004E0120(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004DDE40))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004E0120
+
+// [0x004E2110] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_004E2110 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004E1980();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004E2110(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004E1980))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004E2110
+
+// [0x004F7670] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_004F7670 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004F4F00();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004F7670(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004F4F00))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004F7670
+
+// [0x004F7820] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_004F7820 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004F4F20();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004F7820(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004F4F20))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004F7820
+
+// [0x004F7CD0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_004F7CD0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004F4F80();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004F7CD0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004F4F80))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004F7CD0
+
+// [0x004F82A0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_004F82A0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004F4EA0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004F82A0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004F4EA0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004F82A0
+
+// [0x004F8F90] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_004F8F90 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004F4FE0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004F8F90(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004F4FE0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004F8F90
+
+// [0x004FE2C0] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_004FE2C0 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004FD810();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004FE2C0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004FD810))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004FE2C0
+
+// [0x004FE8D0] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_004FE8D0 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004FD830();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004FE8D0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004FD830))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004FE8D0
+
+// [0x004FEEE0] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_004FEEE0 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_004FD850();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004FEEE0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_004FD850))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_004FEEE0
+
+// [0x00513B40] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_00513B40 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00511270();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00513B40(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00511270))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00513B40
+
+// [0x00513D00] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_00513D00 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00511280();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00513D00(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00511280))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00513D00
+
+// [0x0051B060] ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_0051B060 {
+// @name ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0051AE90();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0051B060(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0051AE90))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0051B060
+
+// [0x00525100] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_00525100 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00524A60();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00525100(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00524A60))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00525100
+
+// [0x00525560] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_00525560 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00524AE0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00525560(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00524AE0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00525560
+
+// [0x005264A0] ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_4 (84 bytes)
+namespace lift_005264A0 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00525E70();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005264A0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00525E70))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005264A0
+
+// [0x0058B7C0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_0058B7C0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058A8F0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0058B7C0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058A8F0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0058B7C0
+
+// [0x0058BAA0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_0058BAA0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058A920();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0058BAA0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058A920))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0058BAA0
+
+// [0x0058BDB0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_0058BDB0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058A960();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0058BDB0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058A960))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0058BDB0
+
+// [0x0058DA20] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_0058DA20 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058CFB0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0058DA20(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058CFB0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0058DA20
+
+// [0x0058E060] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_0058E060 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058CFD0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0058E060(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058CFD0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0058E060
+
+// [0x0058E500] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_0058E500 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058CFC0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0058E500(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058CFC0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0058E500
+
+// [0x0058FF60] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_0058FF60 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058F5A0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0058FF60(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058F5A0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0058FF60
+
+// [0x005902D0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005902D0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058F5B0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005902D0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058F5B0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005902D0
+
+// [0x00590570] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_00590570 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058F5C0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00590570(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058F5C0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00590570
+
+// [0x005908A0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005908A0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058F5D0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005908A0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058F5D0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005908A0
+
+// [0x005922F0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005922F0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058F5E0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005922F0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058F5E0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005922F0
+
+// [0x005925B0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005925B0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0058F5F0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005925B0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0058F5F0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005925B0
+
+// [0x00595230] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_00595230 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00594070();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00595230(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00594070))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00595230
+
+// [0x00595E40] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_00595E40 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00594700();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00595E40(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00594700))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00595E40
+
+// [0x00598430] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_00598430 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005963B0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00598430(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005963B0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00598430
+
+// [0x00599710] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_00599710 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005971D0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00599710(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005971D0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00599710
+
+// [0x0059E4F0] ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_0059E4F0 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0059D580();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0059E4F0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0059D580))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0059E4F0
+
+// [0x005B9070] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_005B9070 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005B6970();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005B9070(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005B6970))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005B9070
+
+// [0x005BB4C0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_005BB4C0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005B7040();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005BB4C0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005B7040))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005BB4C0
+
+// [0x005BC7F0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005BC7F0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005B6FE0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005BC7F0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005B6FE0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005BC7F0
+
+// [0x005BDD80] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005BDD80 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005B68F0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005BDD80(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005B68F0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005BDD80
+
+// [0x005BE260] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005BE260 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005B6FC0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005BE260(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005B6FC0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005BE260
+
+// [0x005C5950] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_005C5950 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005C2FF0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005C5950(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005C2FF0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005C5950
+
+// [0x005C9550] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_005C9550 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005C3AA0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005C9550(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005C3AA0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005C9550
+
+// [0x005CAF20] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_005CAF20 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005C3C00();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005CAF20(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005C3C00))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005CAF20
+
+// [0x005CEEE0] ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005CEEE0 {
+// @name ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005CE4E0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005CEEE0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005CE4E0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005CEEE0
+
+// [0x005D1E20] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D1E20 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005D06D0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D1E20(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005D06D0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D1E20
+
+// [0x005D39F0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D39F0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005478A0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D39F0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005478A0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D39F0
+
+// [0x005D3E30] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D3E30 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005D0670();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D3E30(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005D0670))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D3E30
+
+// [0x005D4740] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D4740 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00552160();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D4740(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00552160))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D4740
+
+// [0x005D51A0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D51A0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005478E0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D51A0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005478E0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D51A0
+
+// [0x005D57D0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D57D0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005478D0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D57D0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005478D0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D57D0
+
+// [0x005D8110] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D8110 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005CF930();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D8110(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005CF930))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D8110
+
+// [0x005D84E0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D84E0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005478B0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D84E0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005478B0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D84E0
+
+// [0x005D8840] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D8840 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005D0710();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D8840(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005D0710))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D8840
+
+// [0x005D9020] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005D9020 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005478C0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005D9020(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005478C0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005D9020
+
+// [0x005DA4A0] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005DA4A0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005D12A0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005DA4A0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005D12A0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005DA4A0
+
+// [0x005E4EE0] ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E4EE0 {
+// @name ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E25B0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E4EE0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E25B0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E4EE0
+
+// [0x005E5180] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E5180 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E2620();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E5180(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E2620))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E5180
+
+// [0x005E53B0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E53B0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E2690();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E53B0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E2690))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E53B0
+
+// [0x005E5D50] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E5D50 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E27C0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E5D50(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E27C0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E5D50
+
+// [0x005E6B10] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E6B10 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E29A0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E6B10(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E29A0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E6B10
+
+// [0x005E6F10] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E6F10 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E1EE0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E6F10(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E1EE0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E6F10
+
+// [0x005E8240] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E8240 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E2700();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E8240(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E2700))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E8240
+
+// [0x005E8860] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E8860 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E2770();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E8860(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E2770))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E8860
+
+// [0x005E9090] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E9090 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E2810();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E9090(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E2810))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E9090
+
+// [0x005E9560] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E9560 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E2860();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E9560(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E2860))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E9560
+
+// [0x005E9990] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E9990 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E28B0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E9990(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E28B0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E9990
+
+// [0x005E9CB0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E9CB0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E2900();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E9CB0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E2900))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E9CB0
+
+// [0x005E9F80] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005E9F80 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E2950();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005E9F80(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E2950))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005E9F80
+
+// [0x005EA950] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005EA950 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E1F10();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005EA950(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E1F10))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005EA950
+
+// [0x005EAB80] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005EAB80 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005E1F40();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005EAB80(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005E1F40))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005EAB80
+
+// [0x005F60F0] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005F60F0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005F51C0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005F60F0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005F51C0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005F60F0
+
+// [0x005F6BE0] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_005F6BE0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005F5130();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005F6BE0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005F5130))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005F6BE0
+
+// [0x005FD4C0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_4 (84 bytes)
+namespace lift_005FD4C0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0064F8F0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005FD4C0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0064F8F0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005FD4C0
+
+// [0x005FDEF0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_4 (84 bytes)
+namespace lift_005FDEF0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_005FCB30();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005FDEF0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_005FCB30))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005FDEF0
+
+// [0x005FE500] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_4 (84 bytes)
+namespace lift_005FE500 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00603680();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005FE500(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00603680))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005FE500
+
+// [0x005FEB10] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_4 (84 bytes)
+namespace lift_005FEB10 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_006036A0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_005FEB10(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_006036A0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_005FEB10
+
+// [0x00604470] ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_4 (84 bytes)
+namespace lift_00604470 {
+// @name ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00602F40();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00604470(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00602F40))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00604470
+
+// [0x00612F90] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_00612F90 {
+// @name ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00610B20();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00612F90(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00610B20))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00612F90
+
+// [0x00614460] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_00614460 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00611170();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00614460(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00611170))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00614460
+
+// [0x00614740] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_00614740 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_006111A0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00614740(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_006111A0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00614740
+
+// [0x00616350] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_00616350 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_006118E0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00616350(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_006118E0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00616350
+
+// [0x00616520] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_00616520 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00611950();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00616520(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00611950))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00616520
+
+// [0x00617AF0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_00617AF0 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00610CE0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00617AF0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00610CE0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00617AF0
+
+// [0x00617CF0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_00617CF0 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00610CB0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00617CF0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00610CB0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00617CF0
+
+// [0x00619720] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_00619720 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_006111D0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00619720(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_006111D0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00619720
+
+// [0x00619B30] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_4 (84 bytes)
+namespace lift_00619B30 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00611160();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00619B30(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00611160))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00619B30
+
+// [0x0061B750] ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_0061B750 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00611870();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0061B750(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00611870))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0061B750
+
+// [0x0062A8D0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_4 (84 bytes)
+namespace lift_0062A8D0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0062A580();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0062A8D0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0062A580))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0062A8D0
+
+// [0x0062ABE0] ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_4 (84 bytes)
+namespace lift_0062ABE0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0062A590();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0062ABE0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0062A590))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0062ABE0
+
+// [0x00649FC0] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_00649FC0 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00648EC0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00649FC0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00648EC0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00649FC0
+
+// [0x0064A5D0] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_0064A5D0 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00648ED0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0064A5D0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00648ED0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0064A5D0
+
+// [0x0064ABE0] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_0064ABE0 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_00648EE0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0064ABE0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_00648EE0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0064ABE0
+
+// [0x006515D0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_006515D0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0064EA20();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_006515D0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0064EA20))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_006515D0
+
+// [0x00651BE0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_00651BE0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0064EA30();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00651BE0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0064EA30))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00651BE0
+
+// [0x006521F0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_006521F0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0064EA40();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_006521F0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0064EA40))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_006521F0
+
+// [0x00652800] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_00652800 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0064EA50();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00652800(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0064EA50))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00652800
+
+// [0x00652E10] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_00652E10 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0064EA60();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00652E10(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0064EA60))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00652E10
+
+// [0x00653420] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_00653420 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0064EA70();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_00653420(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0064EA70))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_00653420
+
+// [0x006701E0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_4 (84 bytes)
+namespace lift_006701E0 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0067C550();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_006701E0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0067C550))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_006701E0
+
+// [0x0068C6E0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_0068C6E0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0068BDC0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0068C6E0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0068BDC0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0068C6E0
+
+// [0x0068CCF0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_0068CCF0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0068BED0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0068CCF0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0068BED0))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0068CCF0
+
+// [0x0068D300] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_0068D300 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0068BE70();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0068D300(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0068BE70))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0068D300
+
+// [0x0068D910] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_0068D910 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType<GraphEngine>::vfunc_4).
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0068BC30();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0068D910(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0068BC30))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0
+} // namespace lift_0068D910

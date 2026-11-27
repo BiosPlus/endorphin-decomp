@@ -1,0 +1,22 @@
+{
+  "va": "0x004F82A0",
+  "size": 84,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0\u003e",
+  "signature": "void* __stdcall fn_004F82A0(void* out, void* holder)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType\u003cGraphEngine\u003e::vfunc_4).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:03:02Z"
+}
