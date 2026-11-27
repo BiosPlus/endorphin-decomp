@@ -2848,3 +2848,170 @@ void __thiscall fn_004461B0(void* this_ptr, void* node, uint32_t arg1) {
     }
 }
 } // namespace lift_004461B0
+
+// [0x004464D0]
+namespace lift_004464D0 {
+// @name traverseAndApplyToSubobject
+// @summary Recursively traverses a node tree, dynamic-casts each node, and invokes a virtual method on a subobject at +0x0C.
+// @field Node +0x7C uint32_t* children_vec_begin_or_meta
+// @field Node +0x80 uint32_t* children_begin
+// @field Node +0x84 uint32_t* children_end
+
+
+extern void* ext_006A6E9E(void* ptr, int32_t vfDelta, void* srcType, void* dstType, int32_t isReference);
+extern void* mem_00925134;
+
+void __thiscall fn_004464D0(void* self, void* node, uint32_t arg2) {
+    void* cast_obj = ext_006A6E9E(
+        node,
+        0,
+        reinterpret_cast<void*>(0x00A2E2BC),
+        reinterpret_cast<void*>(0x00A2FC0C),
+        0
+    );
+
+    if (cast_obj != nullptr) {
+        void* subobj = static_cast<uint8_t*>(cast_obj) + 0x0C;
+        auto* vtable = *reinterpret_cast<uintptr_t**>(subobj);
+        using VirtualFn = void(__thiscall*)(void*, uint32_t);
+        auto fn = reinterpret_cast<VirtualFn>(vtable[0x20 / sizeof(uintptr_t)]);
+        fn(subobj, arg2);
+    }
+
+    auto* node_bytes = static_cast<uint8_t*>(node);
+    auto* vec_base = node_bytes + 0x7C;
+    auto* it = *reinterpret_cast<uint32_t**>(node_bytes + 0x80);
+    auto invalid_param = reinterpret_cast<void(*)()>(mem_00925134);
+
+    if (it > *reinterpret_cast<uint32_t**>(vec_base + 0x08)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        auto* end = *reinterpret_cast<uint32_t**>(vec_base + 0x08);
+        if (*reinterpret_cast<uint32_t**>(vec_base + 0x04) > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint32_t**>(vec_base + 0x08)) {
+            invalid_param();
+        }
+
+        fn_004464D0(self, reinterpret_cast<void*>(static_cast<uintptr_t>(*it)), arg2);
+
+        if (it >= *reinterpret_cast<uint32_t**>(vec_base + 0x08)) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_004464D0
+
+// [0x004462D0]
+namespace lift_004462D0 {
+// @name fn_004462D0
+// @summary Recursively traverses a node hierarchy, dynamically casting each node and invoking a virtual method if cast succeeds.
+// @field Node +0x7c uint32_t vector_begin_or_alloc
+// @field Node +0x80 void** children_begin
+// @field Node +0x84 void** children_end
+
+
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+extern void (*mem_00925134)(void);
+
+void __thiscall fn_004462D0(void* self, void* node, void* arg2) {
+    void* cast_res = ext_006A6E9E(
+        node,
+        0,
+        reinterpret_cast<void*>(0x00A2E2BC),
+        reinterpret_cast<void*>(0x00A2FBBC),
+        0
+    );
+
+    if (cast_res != nullptr) {
+        void* sub_obj = static_cast<uint8_t*>(cast_res) + 0x0C;
+        void** vtable = *reinterpret_cast<void***>(sub_obj);
+        using VFunc = void(__thiscall*)(void*, void*);
+        auto fn = reinterpret_cast<VFunc>(vtable[0x20 / 4]);
+        fn(sub_obj, arg2);
+    }
+
+    uint8_t* vec = static_cast<uint8_t*>(node) + 0x7C;
+    void** it = *reinterpret_cast<void***>(vec + 4);
+    auto invalid_param = mem_00925134;
+
+    if (it > *reinterpret_cast<void***>(vec + 8)) {
+        invalid_param();
+    }
+
+    while (true) {
+        void** end = *reinterpret_cast<void***>(vec + 8);
+        if (*reinterpret_cast<void***>(vec + 4) > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<void***>(vec + 8)) {
+            invalid_param();
+        }
+
+        void* child = *it;
+        fn_004462D0(self, child, arg2);
+
+        if (it >= *reinterpret_cast<void***>(vec + 8)) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_004462D0
+
+// [0x00446240]
+namespace lift_00446240 {
+// @name sub_00446240
+// @summary Recursively visits a node and its children in a vector at +0x7c, invoking vtable+0x20 on dynamic_casted objects.
+// @field Node +0x0c void* vtable_or_subobj
+// @field Node +0x7c uint32_t[3] children_vec
+
+
+extern void* ext_006A6E9E(void* inptr, int32_t vfdelta, void* src_type, void* dst_type, int32_t is_ref);
+extern uint32_t mem_00925134;
+
+void __thiscall fn_00446240(void* this_ptr, void* node, uint32_t arg1) {
+    void* casted = ext_006A6E9E(node, 0, reinterpret_cast<void*>(0x00a2e2bc), reinterpret_cast<void*>(0x00a2fb78), 0);
+    if (casted != nullptr) {
+        void* subobj = static_cast<uint8_t*>(casted) + 0xc;
+        uint32_t* vtable = *reinterpret_cast<uint32_t**>(subobj);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtable[0x20 / 4]);
+        fn(subobj, arg1);
+    }
+
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    uint8_t* vec = static_cast<uint8_t*>(node) + 0x7c;
+    void** it = *reinterpret_cast<void***>(vec + 0x4);
+    if (it > *reinterpret_cast<void***>(vec + 0x8)) {
+        invalid_param();
+    }
+
+    while (true) {
+        void** end = *reinterpret_cast<void***>(vec + 0x8);
+        if (*reinterpret_cast<void***>(vec + 0x4) > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<void***>(vec + 0x8)) {
+            invalid_param();
+        }
+        fn_00446240(this_ptr, *it, arg1);
+        if (it >= *reinterpret_cast<void***>(vec + 0x8)) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_00446240

@@ -32,6 +32,7 @@ struct Node_Fields {
     // +0xC   void*                    linkB  (evidence: 0x0062B6F0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    list  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    next  (evidence: 0x00673B90) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    vtable_or_subobj  (evidence: 0x00446240) // CONFLICT: multiple definitions at +0xC
     // +0x10  intptr_t                 field_0x10  (evidence: 0x00673B90) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    field_0x10  (evidence: 0x007DB6C0) // CONFLICT: multiple definitions at +0x10
     // +0x14  intptr_t                 field_0x14  (evidence: 0x00673B90) // CONFLICT: multiple definitions at +0x14
@@ -48,14 +49,19 @@ struct Node_Fields {
     // +0x51  uint8_t                  isNil  (evidence: 0x005ED330)
     // +0x59  uint8_t                  field_0x59  (evidence: 0x004275C0)
     // +0x7C  uint32_t                 children_begin  (evidence: 0x004461B0) // CONFLICT: multiple definitions at +0x7C
+    // +0x7C  uint32_t[3]              children_vec  (evidence: 0x00446240) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  void*                    children_vec  (evidence: 0x00586240, 0x005862A0) // CONFLICT: multiple definitions at +0x7C
+    // +0x7C  uint32_t*                children_vec_begin_or_meta  (evidence: 0x004464D0) // CONFLICT: multiple definitions at +0x7C
+    // +0x7C  uint32_t                 vector_begin_or_alloc  (evidence: 0x004462D0) // CONFLICT: multiple definitions at +0x7C
     // +0x80  Node**                   children_begin  (evidence: 0x005862A0) // CONFLICT: multiple definitions at +0x80
-    // +0x80  void**                   children_begin  (evidence: 0x00586240) // CONFLICT: multiple definitions at +0x80
+    // +0x80  uint32_t*                children_begin  (evidence: 0x004464D0) // CONFLICT: multiple definitions at +0x80
+    // +0x80  void**                   children_begin  (evidence: 0x004462D0, 0x00586240) // CONFLICT: multiple definitions at +0x80
     // +0x80  uint32_t                 children_iter  (evidence: 0x004461B0) // CONFLICT: multiple definitions at +0x80
     // +0x80  uint32_t                 field_0x80  (evidence: 0x00586B60) // CONFLICT: multiple definitions at +0x80
     // +0x84  Node**                   children_end  (evidence: 0x005862A0) // CONFLICT: multiple definitions at +0x84
     // +0x84  uint32_t                 children_end  (evidence: 0x004461B0) // CONFLICT: multiple definitions at +0x84
-    // +0x84  void**                   children_end  (evidence: 0x00586240) // CONFLICT: multiple definitions at +0x84
+    // +0x84  uint32_t*                children_end  (evidence: 0x004464D0) // CONFLICT: multiple definitions at +0x84
+    // +0x84  void**                   children_end  (evidence: 0x004462D0, 0x00586240) // CONFLICT: multiple definitions at +0x84
     // +0x84  uint32_t                 field_0x84  (evidence: 0x00586B60) // CONFLICT: multiple definitions at +0x84
     // +0xAD  uint8_t                  flag  (evidence: 0x004A58E0)
     // +0x164 uint32_t                 field_0x164  (evidence: 0x007DA8E0)
