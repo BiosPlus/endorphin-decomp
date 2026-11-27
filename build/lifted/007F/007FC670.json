@@ -1,0 +1,40 @@
+{
+  "va": "0x007FC670",
+  "size": 135,
+  "orig_symbol": "sub_007FC670",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "Vec4::componentMax",
+  "class": "Vec4",
+  "signature": "void fn_007FC670(const float* a, const float* b, float* dst)",
+  "summary": "Stores the component-wise maximum of two 4-float vectors into dst.",
+  "fields": [
+    {
+      "class": "Vec4",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Vec4",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Vec4",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    },
+    {
+      "class": "Vec4",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "w"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:26:46Z"
+}

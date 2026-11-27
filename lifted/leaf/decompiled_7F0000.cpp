@@ -677,3 +677,25 @@ void fn_007F9EB0(int32_t n, float* dst, const float* a, const float* b) {
     }
 }
 } // namespace lift_007F9EB0
+
+// [0x007FC670] sub_007FC670 (135 bytes)
+namespace lift_007FC670 {
+// Register inputs: ecx = a (float[4]), edx = b (float[4]), esi = dst (float[4]).
+// Per component: dst[i] = std::max(a[i], b[i]) (x87 compare; NaN in either
+// operand yields a[i], matching the jp-taken path that loads [ecx]).
+// @name Vec4::componentMax
+// @class Vec4
+// @summary Stores the component-wise maximum of two 4-float vectors into dst.
+// @field Vec4 +0x00 float x
+// @field Vec4 +0x04 float y
+// @field Vec4 +0x08 float z
+// @field Vec4 +0x0C float w
+void fn_007FC670(const float* a, const float* b, float* dst) {
+    for (int i = 0; i < 4; ++i) {
+        // (a < b) ? b : a  -- unordered falls through to a, as in the asm.
+        const float av = a[i];
+        const float bv = b[i];
+        dst[i] = (av < bv) ? bv : av;
+    }
+}
+} // namespace lift_007FC670

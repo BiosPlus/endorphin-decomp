@@ -8251,6 +8251,13 @@
     "summary": "Recursively erases a red-black tree subtree by recursing on right children, freeing nodes, and iterating down left children.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046A8E0": {
+    "name": "TreeIterator::decrement",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_0046A8E0(void* this_)",
+    "summary": "Decrements an RB-tree iterator to the previous node in-order, invoking _invalid_parameter_noinfo on invalid state.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046AC30": {
     "name": "sub_0046AC30",
     "signature": "extern \"C\" void fn_0046AC30(void)",
@@ -81250,6 +81257,13 @@
     "name": "copy16Floats",
     "signature": "void fn_007FC4E0(const float* src, float* dst)",
     "summary": "Copies 16 consecutive 32-bit floats (64 bytes) from src to dst.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x007FC670": {
+    "name": "Vec4::componentMax",
+    "class": "Vec4",
+    "signature": "void fn_007FC670(const float* a, const float* b, float* dst)",
+    "summary": "Stores the component-wise maximum of two 4-float vectors into dst.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x00802D40": {
