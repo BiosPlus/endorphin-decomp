@@ -83663,3 +83663,58 @@ void fn_0049D6E0(void* self) {
     invoke(target, self);
 }
 } // namespace lift_0049D6E0
+
+// [0x004BCEC0] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_45 (157 bytes)
+namespace lift_004BCEC0 {
+// Known callee 0x004BC770: string copy-constructor. self = local string, src = value loaded from obj+0x00.
+extern void* ext_004BC770(void* self, const void* src);
+// Known callee 0x006720E0: thiscall constructor of the 8-byte temp (this = temp, one stack arg = &local string).
+extern void* ext_006720E0(void* self, void* arg);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self = obj, other = &temp). Returns self.
+extern void* ext_0041CF50(void* self, void* other);
+// IAT slot holding the std::string destructor pointer (0x00628FF0); read at call time.
+extern int mem_00924FF4;
+
+static inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// Loads the 32-bit vtable slot at byte offset `slotOff` of the object whose address is `obj`.
+static inline uint32_t vtbl_slot(uint32_t obj, uint32_t slotOff) {
+    uint32_t vt = lift_field<uint32_t>(as_ptr(obj), 0);
+    return lift_field<uint32_t>(as_ptr(vt), slotOff);
+}
+
+// @name ExprParser::ReadMethodType::vfunc_45
+// @class ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>
+// @summary Copies the string source at obj+0x00 into a temp string, assigns it into obj via 0x0041CF50, tears down the temps, then forwards to obj+0x04's vtable slot 0xB4 with (obj, arg2) and returns that result.
+// @field <unknown> +0x00 uint32_t field_0x00 (string source pointer copied from *obj)
+// @field <unknown> +0x04 uint32_t field_0x04 (object pointer; receiver of the slot 0xB4 dispatch)
+uint32_t fn_004BCEC0(void* obj, void* arg2) {
+    // Local std::string scratch (esp+0x0C in the original frame).
+    alignas(8) uint32_t str[7] = {};
+    // Local 8-byte temp (esp+0x04): +0x00 field, +0x04 object pointer.
+    uint32_t tmp[2] = {};
+
+    const uint32_t srcVal = lift_field<uint32_t>(obj, 0x00);
+    ext_004BC770(str, as_ptr(srcVal));
+    ext_006720E0(tmp, str);
+    ext_0041CF50(obj, tmp);
+
+    // Destroy the temp: if its object pointer is non-null, call slot 0x78 with (object, &temp).
+    const uint32_t tmpObj = tmp[1];
+    if (tmpObj != 0) {
+        using ReleaseFn = void (*)(void* self, void* arg);
+        reinterpret_cast<ReleaseFn>(as_ptr(vtbl_slot(tmpObj, 0x78)))(as_ptr(tmpObj), tmp);
+    }
+
+    // Destroy the local string via the destructor pointer stored in the IAT slot.
+    const uint32_t dtor = lift_field<uint32_t>(&mem_00924FF4, 0);
+    reinterpret_cast<void (*)(void*)>(as_ptr(dtor))(str);
+
+    // Tail-forward: obj->field_0x04->vtable[0xB4](obj->field_0x04, obj, arg2); result is left in eax.
+    const uint32_t target = lift_field<uint32_t>(obj, 0x04);
+    using VFn = uint32_t (*)(void* self, void* a, void* b);
+    return reinterpret_cast<VFn>(as_ptr(vtbl_slot(target, 0xB4)))(as_ptr(target), obj, arg2);
+}
+} // namespace lift_004BCEC0

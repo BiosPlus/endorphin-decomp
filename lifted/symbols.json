@@ -16868,6 +16868,13 @@
     "summary": "Copies the name pointer at self+0x00 into a temp string, builds an 8-byte temp {field_00, field_04} from it, assigns that into self, releases the temp's field_04 via vtable slot 0x78, destroys the string, then calls vtable slot 0xB0 (vfunc_44) on self-\u003efield_0x04 with (self, out).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BCEC0": {
+    "name": "ExprParser::ReadMethodType::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "Copies the string source at obj+0x00 into a temp string, assigns it into obj via 0x0041CF50, tears down the temps, then forwards to obj+0x04's vtable slot 0xB4 with (obj, arg2) and returns that result.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004BCF60": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MaterialPair\u003e::vfunc_46 (NMData::MaterialPair::generateDisplayName)",
     "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e",
