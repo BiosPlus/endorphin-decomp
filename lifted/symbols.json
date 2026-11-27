@@ -21258,6 +21258,13 @@
     "summary": "std::mismatch over two ranges of 28-byte std::string elements; returns the first differing iterator pair.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004EF8D0": {
+    "name": "BoundedAdvanceUsedCount",
+    "class": "Unknown",
+    "signature": "void fn_004EF8D0(void* self, uint32_t n)",
+    "summary": "Adds n to the uint32 counter at +0x08 if (0x2762762 - counter) \u003e= n (unsigned); otherwise raises a C++ exception via the throw thunk.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EF970": {
     "name": "AllocRecord18",
     "class": "\u003cClassName\u003e (optional)",

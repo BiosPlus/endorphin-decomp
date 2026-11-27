@@ -1,0 +1,22 @@
+{
+  "va": "0x004EF8D0",
+  "size": 154,
+  "orig_symbol": "sub_004EF8D0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "BoundedAdvanceUsedCount",
+  "class": "Unknown",
+  "signature": "void fn_004EF8D0(void* self, uint32_t n)",
+  "summary": "Adds n to the uint32 counter at +0x08 if (0x2762762 - counter) \u003e= n (unsigned); otherwise raises a C++ exception via the throw thunk.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:15:48Z"
+}

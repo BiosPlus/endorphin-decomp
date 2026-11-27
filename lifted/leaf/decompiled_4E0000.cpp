@@ -1215,3 +1215,31 @@ void fn_004EFDD0(void* self) {
 }
 } // namespace lift_004F02A0
 } // namespace lift_004EFDD0
+
+// [0x004EF8D0] sub_004EF8D0 (154 bytes)
+namespace lift_004EF8D0 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_00924FE4;
+extern int mem_009251C4;
+extern int mem_00924FE0;
+
+// @name BoundedAdvanceUsedCount
+// @class Unknown
+// @summary Adds n to the uint32 counter at +0x08 if (0x2762762 - counter) >= n (unsigned); otherwise raises a C++ exception via the throw thunk.
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_004EF8D0(void* self, uint32_t n) {
+    uint32_t& used = lift_field<uint32_t>(self, 0x08);
+    const uint32_t remaining = 0x02762762u - used;
+    if (remaining >= n) {
+        used += n;
+        return;
+    }
+    // Error path: the original builds a std::string / std::exception temporary
+    // from the rdata constants and throws. Only the throw itself is modelled here.
+    (void)&mem_00924FE4;
+    (void)&mem_009251C4;
+    (void)&mem_00924FE0;
+    ext_006A6DD2();
+}
+} // namespace lift_004EF8D0
