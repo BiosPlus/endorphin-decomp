@@ -37660,6 +37660,13 @@
     "summary": "Gets a 16-float matrix from the embedded object at +0x04 (vtable slot 0x14), transforms it with a negated float at +0x1F4 via sub_0053B470 and Vector4Add, and copies the resulting 4 floats into +0x274.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005D0110": {
+    "name": "Unknown::storeFloatUnderOwnerLock",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_005D0110(void* self, float value)",
+    "summary": "If the flag at +0x1f1 is clear, fetch the owner object from the global via sub_00594000, lock the critical section obtained from its +0x258 sub-object's vtable slot 0x1d8, store the float argument at +0x1f4, dispatch through the sub-object, then unlock.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D0240": {
     "name": "Unknown::storeFloatAndDispatchUnderLock",
     "class": "Unknown",

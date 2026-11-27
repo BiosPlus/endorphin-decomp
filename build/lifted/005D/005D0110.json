@@ -1,0 +1,34 @@
+{
+  "va": "0x005D0110",
+  "size": 143,
+  "orig_symbol": "sub_005D0110",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "Unknown::storeFloatUnderOwnerLock",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_005D0110(void* self, float value)",
+  "summary": "If the flag at +0x1f1 is clear, fetch the owner object from the global via sub_00594000, lock the critical section obtained from its +0x258 sub-object's vtable slot 0x1d8, store the float argument at +0x1f4, dispatch through the sub-object, then unlock.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1F1",
+      "type": "uint8_t",
+      "name": "field_0x1f1"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1F4",
+      "type": "float",
+      "name": "field_0x1f4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x258",
+      "type": "void*",
+      "name": "field_0x258"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:57Z"
+}

@@ -1001,3 +1001,44 @@ void __thiscall fn_005DC430(void* self, void* obj) {
     ext_005DC300(obj, f64);
 }
 } // namespace lift_005DC430
+
+// [0x005D0110] sub_005D0110 (143 bytes)
+namespace lift_005D0110 {
+// Known callee 0x00493F00: Unknown::forwardDispatchViaFirstField (Loads the pointer at self+0x00; if non-null, calls its vtable slot 45 and tail-dispatches the returned value to ext_005304E0 with it as `this`.)
+extern uint32_t ext_00493F00(void* self);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+
+// @name Unknown::storeFloatUnderOwnerLock
+// @class Unknown
+// @summary If the flag at +0x1f1 is clear, fetch the owner object from the global via sub_00594000, lock the critical section obtained from its +0x258 sub-object's vtable slot 0x1d8, store the float argument at +0x1f4, dispatch through the sub-object, then unlock.
+// @field Unknown +0x1f1 uint8_t field_0x1f1
+// @field Unknown +0x1f4 float field_0x1f4
+// @field Unknown +0x258 void* field_0x258
+void __thiscall fn_005D0110(void* self, float value) {
+    using VirtualFn = uint32_t (*)(void* self);
+
+    if (lift_field<uint8_t>(self, 0x1f1) != 0) {
+        return;
+    }
+
+    void* owner = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+    void** sub = &lift_field<void*>(owner, 0x258);
+
+    void* vtable = *static_cast<void**>(*sub);
+    VirtualFn getLock = *reinterpret_cast<VirtualFn*>(static_cast<uint8_t*>(vtable) + 0x1d8);
+    void* lock = reinterpret_cast<void*>(static_cast<uintptr_t>(getLock(*sub)));
+
+    ext_0065C640(lock);
+    lift_field<float>(self, 0x1f4) = value;
+    ext_00493F00(sub);
+    ext_00493EE0(sub);
+    ext_0065C650(lock);
+}
+} // namespace lift_005D0110

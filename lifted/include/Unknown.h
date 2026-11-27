@@ -1746,11 +1746,12 @@ struct Unknown_Fields {
     // +0x1EC void*                    field_0x1ec  (evidence: 0x0041B960) // CONFLICT: multiple definitions at +0x1EC
     // +0x1EC void* field_0x1ec (object pointer; vtable slot 15 = +0x3c takes a float)  (evidence: 0x0041B9E0) // CONFLICT: multiple definitions at +0x1EC
     // +0x1F0 uint32_t                 field_0x1F0  (evidence: 0x006C0580)
-    // +0x1F1 uint8_t                  field_0x1f1  (evidence: 0x005D0240) // CONFLICT: multiple definitions at +0x1F1
+    // +0x1F1 uint8_t                  field_0x1f1  (evidence: 0x005D0110, 0x005D0240) // CONFLICT: multiple definitions at +0x1F1
     // +0x1F1 uint8_t                  flag1f1  (evidence: 0x005D0760, 0x005DD310) // CONFLICT: multiple definitions at +0x1F1
     // +0x1F4 float                    field_0x1F4  (evidence: 0x005CFF60) // CONFLICT: multiple definitions at +0x1F4
     // +0x1F4 uint32_t                 field_0x1F4  (evidence: 0x006C0580) // CONFLICT: multiple definitions at +0x1F4
     // +0x1F4 uint8_t                  field_0x1F4  (evidence: 0x005B6C50) // CONFLICT: multiple definitions at +0x1F4
+    // +0x1F4 float                    field_0x1f4  (evidence: 0x005D0110) // CONFLICT: multiple definitions at +0x1F4
     // +0x1F8 uint32_t                 field_0x1F8  (evidence: 0x006C0580)
     // +0x1FA BYTE                     field_0x1fa  (evidence: 0x004D9C60)
     // +0x1FC uint32_t                 field_0x1FC  (evidence: 0x006C0580)
@@ -1796,7 +1797,7 @@ struct Unknown_Fields {
     // +0x250 void*                    field_0x250  (evidence: 0x00726770) // CONFLICT: multiple definitions at +0x250
     // +0x254 uint32_t                 field_0x254  (evidence: 0x00792880)
     // +0x258 uint32_t                 field_0x258  (evidence: 0x00792880) // CONFLICT: multiple definitions at +0x258
-    // +0x258 void*                    field_0x258  (evidence: 0x004A5810, 0x005CFA60) // CONFLICT: multiple definitions at +0x258
+    // +0x258 void*                    field_0x258  (evidence: 0x004A5810, 0x005CFA60, 0x005D0110) // CONFLICT: multiple definitions at +0x258
     // +0x258 void*                    subObjectSlot  (evidence: 0x005CF960) // CONFLICT: multiple definitions at +0x258
     // +0x25C uint32_t                 field_0x25C  (evidence: 0x00792880)
     // +0x260 uint32_t                 field_0x260  (evidence: 0x00792880)
