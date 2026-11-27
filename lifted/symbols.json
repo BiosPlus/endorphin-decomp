@@ -15095,6 +15095,13 @@
     "summary": "Searches the list at this+0xdc for a node matching key and returns a pointer to its value (node+8) or null.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049EDF0": {
+    "name": "PointainerVectorType::vfunc_10",
+    "class": "Properties::PointainerVectorType",
+    "signature": "static inline void* lift_ptr(uint32_t v)",
+    "summary": "Resolves the vector-backed property pointer; if the object at a4 passes the",
+    "lifted_path": "lifted/templates/PointainerVectorType.cpp"
+  },
   "0x0049EE60": {
     "name": "ConstructAndRegister_0049EE60",
     "signature": "uint32_t fn_0049EE60(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
