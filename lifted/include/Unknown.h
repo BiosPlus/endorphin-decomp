@@ -743,6 +743,7 @@ struct Unknown_Fields {
     // +0x1C  DWORD field_0x1c         (zeroed)  (evidence: 0x00517AD0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int16_t field_0x1C (int16 array; element idx at +0x18+2*idx for idx >= 2)  (evidence: 0x006C9DC0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 arg2Value  (evidence: 0x004B76A0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  int32_t                  arrayCount  (evidence: 0x006E8EF0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t[0x1C] m_str1 (std::string copy of arg b)  (evidence: 0x006738D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void* field_0x1c (std::string, copy-constructed from b)  (evidence: 0x0046FB20) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  count  (evidence: 0x006E8E20) // CONFLICT: multiple definitions at +0x1C
@@ -904,6 +905,7 @@ struct Unknown_Fields {
     // +0x28  uint32_t field_0x28 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x28
     // +0x29  uint8_t field_0x29 (flag byte)  (evidence: 0x00427370, 0x0043CB50, 0x0046FB80, 0x00476B80, 0x00486D40, 0x004928C0, 0x0052A1A0, 0x005AC820, 0x005E0AE0, 0x005E2C70, 0x00624CF0, 0x0065B120)
     // +0x2C  void* field_0x2C (read through the pointer at +0x1C)  (evidence: 0x007C15A0, 0x007CAF70) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  void**                   arrayItems  (evidence: 0x006E8EF0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 elementTable  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  int32_t*                 elements  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void**                   elements_begin  (evidence: 0x00665B80) // CONFLICT: multiple definitions at +0x2C

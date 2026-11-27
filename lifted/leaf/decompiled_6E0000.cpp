@@ -2263,3 +2263,49 @@ uint8_t fn_006E90D0(void* self, uint32_t key) {
     return 1;
 }
 } // namespace lift_006E90D0
+
+// [0x006E8EF0] sub_006E8EF0 (128 bytes)
+namespace lift_006E8EF0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern void ext_006D2170();
+// Known callee 0x006E8A20: Unknown::SetValueAndFlag (Stores a 32-bit argument at +0x00, sets the flag word at +0x04 to 1, and returns this.)
+extern void ext_006E8A20();
+
+// @name Unknown::findOrAddByKey_006E8EF0
+// @class Unknown
+// @summary Scans the pointer array at +0x2c (count at +0x1c) for a record whose first dword equals key; if found, bumps its +4 counter and returns 1. Otherwise allocates an 8-byte record, initialises it with key, appends it (or NULL on allocation failure) to the array and returns 1.
+// @field Unknown +0x1c int32_t arrayCount
+// @field Unknown +0x2c void** arrayItems
+uint8_t fn_006E8EF0(void* self, uint32_t key) {
+    // Linear search over the element pointers.
+    int32_t count = lift_field<int32_t>(self, 0x1c);
+    int32_t i = 0;
+    while (i < count) {
+        void** items = lift_field<void**>(self, 0x2c);
+        auto* rec = static_cast<uint8_t*>(items[i]);
+        if (lift_field<uint32_t>(rec, 0) == key) {
+            lift_field<uint32_t>(rec, 4) += 1;
+            return 1;
+        }
+        ++i;
+    }
+
+    // Not found: allocate a new 8-byte record (MFC80 ord_762, cdecl, one size arg).
+    void* elem = nullptr;
+    auto alloc = reinterpret_cast<void* (*)(uint32_t)>(ext_006A5C62);
+    void* rec = alloc(8);
+    if (rec != nullptr) {
+        // SetValueAndFlag: thiscall(rec, key); returns rec.
+        auto init = reinterpret_cast<void* (*)(void*, uint32_t)>(ext_006E8A20);
+        elem = init(rec, key);
+    }
+
+    // Append elem to the array at this+0x1c (index = current count).
+    int32_t index = lift_field<int32_t>(self, 0x1c);
+    auto insert = reinterpret_cast<int32_t (*)(void*, int32_t, const void*)>(ext_006D2170);
+    insert(static_cast<uint8_t*>(self) + 0x1c, index, &elem);
+    return 1;
+}
+} // namespace lift_006E8EF0

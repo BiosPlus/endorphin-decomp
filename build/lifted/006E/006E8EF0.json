@@ -1,0 +1,28 @@
+{
+  "va": "0x006E8EF0",
+  "size": 128,
+  "orig_symbol": "sub_006E8EF0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::findOrAddByKey_006E8EF0",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006E8EF0(void* self, uint32_t key)",
+  "summary": "Scans the pointer array at +0x2c (count at +0x1c) for a record whose first dword equals key; if found, bumps its +4 counter and returns 1. Otherwise allocates an 8-byte record, initialises it with key, appends it (or NULL on allocation failure) to the array and returns 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "arrayCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void**",
+      "name": "arrayItems"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:00:48Z"
+}
