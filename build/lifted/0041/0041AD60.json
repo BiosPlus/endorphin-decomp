@@ -1,0 +1,13 @@
+{
+  "va": "0x0041AD60",
+  "size": 151,
+  "orig_symbol": "sub_0041AD60",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "destroyVectorElements",
+  "signature": "extern \"C\" void __stdcall fn_0041AD60(void* firstContainer, uint32_t* firstPtr, void* lastContainer, uint32_t* lastPtr)",
+  "summary": "Iterates over a checked vector range of pointers, freeing each element's buffer, destroying it, and deleting it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:12:40Z"
+}
