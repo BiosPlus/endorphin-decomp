@@ -2365,3 +2365,57 @@ uint8_t fn_007C8B50(void* self) {
     return ext_007DD0A0(sub, index, 1);
 }
 } // namespace lift_007C8B50
+
+// [0x007C20C0]
+namespace lift_007C20C0 {
+// @name initBitReaderState
+// @summary Initializes buffer pointers, clears buffer, and loads bit-stream parameters from table
+// @field State +0x24 uint32_t field_0x24
+// @field State +0x34 uint32_t field_0x34
+// @field State +0x3c uint16_t* field_0x3c
+// @field State +0x40 uint32_t field_0x40
+// @field State +0x44 uint32_t field_0x44
+// @field State +0x54 uint32_t field_0x54
+// @field State +0x58 uint32_t field_0x58
+// @field State +0x60 uint32_t field_0x60
+// @field State +0x64 uint32_t field_0x64
+// @field State +0x6c uint32_t field_0x6c
+// @field State +0x70 uint32_t field_0x70
+// @field State +0x74 uint32_t field_0x74
+// @field State +0x78 uint32_t field_0x78
+// @field State +0x7c uint32_t field_0x7c
+// @field State +0x84 uint32_t field_0x84
+// @field State +0x88 uint32_t field_0x88
+
+
+extern uint8_t mem_0099A538[];
+
+uint32_t sub_007C20C0(void* state) {
+    uint32_t val24 = lift_field<uint32_t>(state, 0x24);
+    lift_field<uint32_t>(state, 0x34) = val24 * 2;
+
+    uint32_t count = lift_field<uint32_t>(state, 0x44);
+    uint8_t* buf = lift_field<uint8_t*>(state, 0x3c);
+    *reinterpret_cast<uint16_t*>(buf + 2 * count - 2) = 0;
+    std::memset(buf, 0, 2 * count - 2);
+
+    uint32_t idx = lift_field<uint32_t>(state, 0x7c);
+    const uint8_t* entry = mem_0099A538 + idx * 12;
+
+    lift_field<uint32_t>(state, 0x78) = *reinterpret_cast<const uint16_t*>(entry + 2);
+    lift_field<uint32_t>(state, 0x84) = *reinterpret_cast<const uint16_t*>(entry + 0);
+    lift_field<uint32_t>(state, 0x88) = *reinterpret_cast<const uint16_t*>(entry + 4);
+    lift_field<uint32_t>(state, 0x74) = *reinterpret_cast<const uint16_t*>(entry + 6);
+
+    lift_field<uint32_t>(state, 0x64) = 0;
+    lift_field<uint32_t>(state, 0x54) = 0;
+    lift_field<uint32_t>(state, 0x6c) = 0;
+    lift_field<uint32_t>(state, 0x60) = 0;
+    lift_field<uint32_t>(state, 0x40) = 0;
+
+    lift_field<uint32_t>(state, 0x70) = 2;
+    lift_field<uint32_t>(state, 0x58) = 2;
+
+    return 2;
+}
+} // namespace lift_007C20C0

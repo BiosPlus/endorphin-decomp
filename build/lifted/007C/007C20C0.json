@@ -1,0 +1,111 @@
+{
+  "va": "0x007C20C0",
+  "size": 147,
+  "orig_symbol": "sub_007C20C0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "initBitReaderState",
+  "signature": "uint32_t sub_007C20C0(void* state)",
+  "summary": "Initializes buffer pointers, clears buffer, and loads bit-stream parameters from table",
+  "fields": [
+    {
+      "class": "State",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "State",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "State",
+      "offset": "+0x3C",
+      "type": "uint16_t*",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "State",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "State",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "State",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "State",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "State",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "State",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "State",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "State",
+      "offset": "+0x70",
+      "type": "uint32_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "State",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "State",
+      "offset": "+0x78",
+      "type": "uint32_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "State",
+      "offset": "+0x7C",
+      "type": "uint32_t",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "State",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    },
+    {
+      "class": "State",
+      "offset": "+0x88",
+      "type": "uint32_t",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:05:34Z"
+}

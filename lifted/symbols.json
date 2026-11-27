@@ -82545,6 +82545,12 @@
     "summary": "Copies min(src-\u003eremaining, self-\u003ecount) bytes from self-\u003esrc stream into self's output cursor and advances both sides.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C20C0": {
+    "name": "initBitReaderState",
+    "signature": "uint32_t sub_007C20C0(void* state)",
+    "summary": "Initializes buffer pointers, clears buffer, and loads bit-stream parameters from table",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C2E50": {
     "name": "readFloatPtr",
     "class": "unknown",
