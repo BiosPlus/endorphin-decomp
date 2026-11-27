@@ -73804,6 +73804,12 @@
     "summary": "Returns true if the string is non-null, contains no ':' character, and does not begin with the 2-char prefix at mem_00AAB928.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FEFF0": {
+    "name": "GetFullPathFromCwd_006FEFF0",
+    "signature": "void* fn_006FEFF0(void* self)",
+    "summary": "Gets the current directory, resolves its full path via _fullpath, passes the result to initAssignCString, and returns the first argument.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FF730": {
     "name": "FindU16InZeroTerminatedList",
     "signature": "bool FindU16InZeroTerminatedList(uint16_t key, const uint16_t* list)",

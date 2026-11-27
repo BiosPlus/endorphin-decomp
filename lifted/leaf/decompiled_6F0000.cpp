@@ -2791,3 +2791,42 @@ void* fn_006F9A10(void* self, int32_t arg1, const char* arg2) {
     return self;
 }
 } // namespace lift_006F9A10
+
+// [0x006FEFF0] sub_006FEFF0 (128 bytes)
+namespace lift_006FEFF0 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+extern int mem_00924254;
+extern int mem_00B5D2C0;
+extern int mem_009252F0;
+
+// @name GetFullPathFromCwd_006FEFF0
+// @summary Gets the current directory, resolves its full path via _fullpath, passes the result to initAssignCString, and returns the first argument.
+void* fn_006FEFF0(void* self) {
+    using GetCurrentDirectoryA_fn = DWORD(__stdcall*)(DWORD nBufferLength, LPSTR lpBuffer);
+    using FullpathFn = char*(__cdecl*)(char* absPath, const char* relPath, size_t maxLength);
+
+    // 0x520-byte stack frame, laid out as in the original.
+    alignas(4) unsigned char frame[0x520] = {};
+
+    // [F+0] dword zero, [F+4] byte = mem_00B5D2C0 (prefix byte), [F+5..F+0x107] zeroed.
+    *reinterpret_cast<uint32_t*>(frame) = 0;
+    frame[4] = static_cast<unsigned char>(mem_00B5D2C0);
+    std::memset(frame + 5, 0, 0x103);
+
+    // GetCurrentDirectoryA(0x417, cwd) where cwd = F+0x108.
+    unsigned char* cwd = frame + 0x108;
+    cwd[0] = 0;
+    reinterpret_cast<GetCurrentDirectoryA_fn>(static_cast<uintptr_t>(mem_00924254))(
+        0x417, reinterpret_cast<LPSTR>(cwd));
+
+    // _fullpath(F+4, cwd, 0x104) (cdecl).
+    char* full = reinterpret_cast<char*>(frame + 4);
+    reinterpret_cast<FullpathFn>(static_cast<uintptr_t>(mem_009252F0))(
+        full, reinterpret_cast<const char*>(cwd), 0x104);
+
+    // Object pointer is the original first stack argument; pass resolved path to the callee.
+    ext_006B9D80(self, full);
+    return self;
+}
+} // namespace lift_006FEFF0

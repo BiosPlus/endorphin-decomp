@@ -1,0 +1,13 @@
+{
+  "va": "0x006FEFF0",
+  "size": 128,
+  "orig_symbol": "sub_006FEFF0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "GetFullPathFromCwd_006FEFF0",
+  "signature": "void* fn_006FEFF0(void* self)",
+  "summary": "Gets the current directory, resolves its full path via _fullpath, passes the result to initAssignCString, and returns the first argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:00:54Z"
+}
