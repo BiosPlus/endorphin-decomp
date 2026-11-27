@@ -240,3 +240,34 @@ void* __thiscall fn_0049E860(void* self, void* out, void* unused) {
     return out;
 }
 } // namespace lift_0049E860
+
+// [0x0049FCF0]
+namespace lift_0049FCF0 {
+extern void ext_0040ECB0(void* self, const void* value);
+extern char mem_00925134;
+
+// @name NMData::State::vfunc_6_off_10
+// @class NMData::State
+// @summary Walks the circular entry list rooted at this+0xD0; for each entry whose flag byte at +0x6D is zero, pushes the string returned by its slot-1 virtual getter (object at +0x10) into the output container.
+// @field NMData::State +0xD0 void* list_head
+
+void fn_0049FCF0(void* self, void* out) {
+    (void)&mem_00925134;  // MSVC debug iterator check (_invalid_parameter_noinfo); dead in the original, metadata only
+    unsigned char* state = static_cast<unsigned char*>(self);
+
+    unsigned char* head = static_cast<unsigned char*>(*reinterpret_cast<void**>(state + 0xD0));
+    unsigned char* cur = *reinterpret_cast<unsigned char**>(head);
+
+    while (cur != head) {
+        if (*(cur + 0x6D) == 0) {
+            void* obj = cur + 0x10;
+            void** vtbl = *reinterpret_cast<void***>(obj);
+            using Getter = const void* (*)(void*);
+            const void* value = reinterpret_cast<Getter>(vtbl[1])(obj);
+            ext_0040ECB0(out, value);
+        }
+        cur = *reinterpret_cast<unsigned char**>(cur);
+        head = static_cast<unsigned char*>(*reinterpret_cast<void**>(state + 0xD0));
+    }
+}
+} // namespace lift_0049FCF0
