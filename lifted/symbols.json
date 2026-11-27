@@ -1262,6 +1262,13 @@
     "summary": "Fills `count` std::string elements (28-byte stride) at `base` from `src` and returns the end pointer.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040ECB0": {
+    "name": "Unknown::PushBackString_0040ECB0",
+    "class": "Unknown",
+    "signature": "void fn_0040ECB0(void* self, const void* value)",
+    "summary": "push_back of one 28-byte std::string onto a vector-like {begin,end,capacity} container; fast path constructs in place, slow path defers to ext_0040EBF0.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040EF90": {
     "name": "sub_0040EF90",
     "signature": "extern \"C\" void __fastcall fn_0040EF90(void* self)",

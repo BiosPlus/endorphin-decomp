@@ -2827,3 +2827,42 @@ void fn_00402DD0(void* self) {
 }
 } // namespace lift_004151D0
 } // namespace lift_00402DD0
+
+// [0x0040ECB0] sub_0040ECB0 (166 bytes)
+namespace lift_0040ECB0 {
+// Known callee 0x0040E6F0: ConstructStringArray (Copy-constructs `count` std::string elements (28-byte stride) at `base` from `src`; on exception, destroys already-built elements and rethrows.)
+extern void ext_0040E6F0(void* base, uint32_t count, const void* src);
+// Callee 0x0040EBF0 (184B, not yet lifted): grow-and-insert slow path. Takes `this` in ecx plus four stack args.
+extern void ext_0040EBF0(void* self_ecx, const void* const* value_slot, void* self_arg, uint8_t* last, const void* value);
+
+// @name Unknown::PushBackString_0040ECB0
+// @class Unknown
+// @summary push_back of one 28-byte std::string onto a vector-like {begin,end,capacity} container; fast path constructs in place, slow path defers to ext_0040EBF0.
+// @field Unknown +0x04 uint8_t* begin
+// @field Unknown +0x08 uint8_t* end
+// @field Unknown +0x0C uint8_t* capacity_end
+void fn_0040ECB0(void* self, const void* value) {
+    constexpr ptrdiff_t kElemSize = 28;
+
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x04);
+    uint8_t* last = lift_field<uint8_t*>(self, 0x08);
+    uint8_t* cap = lift_field<uint8_t*>(self, 0x0C);
+
+    // Fast path: storage allocated and room left -> construct one element at `last`.
+    if (begin != nullptr) {
+        ptrdiff_t count = (last - begin) / kElemSize;
+        ptrdiff_t capacity = (cap - begin) / kElemSize;
+        if (count < capacity) {
+            ext_0040E6F0(last, 1, value);
+            lift_field<uint8_t*>(self, 0x08) = last + kElemSize;
+            return;
+        }
+    }
+
+    // Slow path: original calls _invalid_parameter_noinfo when begin > end, then grows via ext_0040EBF0.
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(last)) {
+        std::abort();
+    }
+    ext_0040EBF0(self, &value, self, last, value);
+}
+} // namespace lift_0040ECB0
