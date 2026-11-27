@@ -2034,8 +2034,32 @@ extern void* ext_006E6320(void* self, const char* s);
 // @summary Initializes this and the sub-object at +0x4C, assigns the given C string via ext_006E6320, and returns this.
 void* fn_006E62C0(void* self, const char* s) {
     ext_006B9D10(self);
-    ext_006B9D10(static_cast<uint8_t*>(self) + 0x4C);
+    ext_006B9D10(static_cast<char*>(self) + 0x4C);
     ext_006E6320(self, s);
     return self;
 }
 } // namespace lift_006E62C0
+
+// [0x006E73B0] sub_006E73B0 (96 bytes)
+namespace lift_006E73B0 {
+// Known callee 0x006B9D10: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+extern void* ext_006B9D10(void* self);
+// Known callee 0x006E7470: Unknown::resetAndAssignCString_006E7470 (Sets the leading dword to -1, then assigns a constant C string to the sub-object at +0x08 via ext_006B9EC0.)
+extern void* ext_006E7470(void* self);
+
+// @name Unknown::initWithArgs_006E73B0
+// @class Unknown
+// @summary Initializes the sub-object at +0x08, stores two constructor arguments at +0x04 and +0x54, runs the reset helper, and returns this.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 BYTE field_0x08
+// @field Unknown +0x54 DWORD field_0x54
+void* fn_006E73B0(void* self, DWORD arg1, DWORD arg2) {
+    // The original SEH frame (push -1 / handler / fs:[0] link) is compiler exception
+    // bookkeeping only; the normal path never observes it, so it is not reproduced.
+    lift_field<DWORD>(self, 0x04) = arg2;
+    ext_006B9D10(&lift_field<BYTE>(self, 0x08));
+    lift_field<DWORD>(self, 0x54) = arg1;
+    ext_006E7470(self);
+    return self;
+}
+} // namespace lift_006E73B0

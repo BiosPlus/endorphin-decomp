@@ -225,7 +225,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (base pointer of the 16-byte element array, on the object at field_0x00)  (evidence: 0x0077FF70, 0x0077FFB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   BYTE                     field_0x04  (evidence: 0x004E9BB0, 0x005F5350, 0x006F8B30, 0x006FC200, 0x007148C0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x4
     // +0x4   CSIBCString              field_0x04  (evidence: 0x005634D0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   DWORD                    field_0x04  (evidence: 0x0041A070, 0x00462D50, 0x00480280, 0x004D2710, 0x004D9C60, 0x004F9800, 0x00522220, 0x00528BB0, 0x0052F7D0, 0x00550520, 0x00572720, 0x005B34C0, 0x005D1480, 0x005EC8F0, 0x0063D970, 0x0063DDF0, 0x0063EA50, 0x006619D0, 0x0066A720, 0x006721F0, 0x00676710, 0x00676860, 0x0067A670, 0x00681DD0, 0x006FC200, 0x006FC950, 0x0077F520, 0x0078C230, 0x0078C3A0, 0x007DB130, 0x008102B0, 0x008103C0, 0x00810440, 0x0086B180, 0x0086B200, 0x00870320) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    field_0x04  (evidence: 0x0041A070, 0x00462D50, 0x00480280, 0x004D2710, 0x004D9C60, 0x004F9800, 0x00522220, 0x00528BB0, 0x0052F7D0, 0x00550520, 0x00572720, 0x005B34C0, 0x005D1480, 0x005EC8F0, 0x0063D970, 0x0063DDF0, 0x0063EA50, 0x006619D0, 0x0066A720, 0x006721F0, 0x00676710, 0x00676860, 0x0067A670, 0x00681DD0, 0x006E73B0, 0x006FC200, 0x006FC950, 0x0077F520, 0x0078C230, 0x0078C3A0, 0x007DB130, 0x008102B0, 0x008103C0, 0x00810440, 0x0086B180, 0x0086B200, 0x00870320) // CONFLICT: multiple definitions at +0x4
     // +0x4   FLOAT                    field_0x04  (evidence: 0x005555D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   HANDLE*                  field_0x04  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x4
     // +0x4   MSVCP80_basic_string     field_0x04  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x4
@@ -368,7 +368,7 @@ struct Unknown_Fields {
     // +0x8   void** field_0x08 (container element end)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 entriesEnd  (evidence: 0x0068BDF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    f2  (evidence: 0x0066A4E0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0, 0x006F8B30, 0x006FC200, 0x00714920, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x8
+    // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0, 0x006E73B0, 0x006F8B30, 0x006FC200, 0x00714920, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x8
     // +0x8   Buffer                   field_0x08  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    field_0x08  (evidence: 0x00480280, 0x00497530, 0x004A6020, 0x004BA060, 0x004D9C60, 0x004F9800, 0x00522220, 0x0052F7D0, 0x00572720, 0x005B34C0, 0x0063D970, 0x0063DDF0, 0x0063EA50, 0x006619D0, 0x0066A720, 0x00676710, 0x00676860, 0x006BB7B0, 0x006C1BB0, 0x006C9F00, 0x006E7F90, 0x006E7FA0, 0x006E86A0, 0x006FC200, 0x006FC950, 0x0077F520, 0x007DB130, 0x0086B180, 0x0086B200) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD*                   field_0x08  (evidence: 0x007D4780, 0x007D48A0) // CONFLICT: multiple definitions at +0x8
@@ -1117,7 +1117,7 @@ struct Unknown_Fields {
     // +0x54  int32_t                  count  (evidence: 0x006297B0) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t field_0x54 (record field, per table element)  (evidence: 0x007CAF70, 0x007CCFE0) // CONFLICT: multiple definitions at +0x54
     // +0x54  void** elements (array of element pointers; each is passed as `this` to ext_006AD090)  (evidence: 0x006AF840) // CONFLICT: multiple definitions at +0x54
-    // +0x54  DWORD                    field_0x54  (evidence: 0x00422660, 0x006B95F0, 0x006BA780) // CONFLICT: multiple definitions at +0x54
+    // +0x54  DWORD                    field_0x54  (evidence: 0x00422660, 0x006B95F0, 0x006BA780, 0x006E73B0) // CONFLICT: multiple definitions at +0x54
     // +0x54  field_0x54               field_0x54  (evidence: 0x00648790) // CONFLICT: multiple definitions at +0x54
     // +0x54  float                    field_0x54  (evidence: 0x004E3A30, 0x0051CCC0, 0x006267B0, 0x007C9D80, 0x007CAF70, 0x007D48A0, 0x007D8470, 0x007D85B0) // CONFLICT: multiple definitions at +0x54
     // +0x54  float[4]                 field_0x54  (evidence: 0x0043B450) // CONFLICT: multiple definitions at +0x54

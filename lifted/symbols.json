@@ -69703,6 +69703,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D2390 (ForwardArgToCalleeReturnThis).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E73B0": {
+    "name": "Unknown::initWithArgs_006E73B0",
+    "class": "Unknown",
+    "signature": "void* fn_006E73B0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Initializes the sub-object at +0x08, stores two constructor arguments at +0x04 and +0x54, runs the reset helper, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7410": {
     "name": "Unknown::assignStringByIndexAndForward_006E7410",
     "class": "Unknown",
