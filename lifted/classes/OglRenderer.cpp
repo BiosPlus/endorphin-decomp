@@ -331,3 +331,41 @@ void fn_00533910(void* self, uint32_t arg) {
     ext_0054C770(sub, hdc);
 }
 } // namespace lift_00533910
+
+// [0x005338B0]
+namespace lift_005338B0 {
+// MSVCP80 std::string entry points (IAT slots), typed as thiscall function pointers.
+extern void* (__thiscall* mem_00924FDC)(void* self, const void* rhs); // basic_string::operator=(const basic_string&)
+extern const char* (__thiscall* mem_00924FF0)(void* self);            // basic_string::c_str()
+extern void* (__thiscall* mem_00924FD4)(void* self, const char* s);   // basic_string::operator=(const char*)
+
+// Callees (thiscall, this in ECX).
+extern void __thiscall ext_0054C7F0(void* self);            // DeleteGlobalDisplayListRange
+extern void __thiscall ext_0054C770(void* self, HDC hdc);   // Unknown::BuildFontDisplayLists
+
+// @name OglRenderer::vfunc_19
+// @class OglRenderer
+// @summary Copies a source string into +0x39C, resets the display lists at +0x1DC, copies the source's C string into +0x1E4 and +0x208, then builds the font display lists from the DC at +0x24.
+// @field OglRenderer +0x24 HDC field_0x24
+// @field OglRenderer +0x1DC void* field_0x1DC
+// @field OglRenderer +0x1E4 std::string field_0x1E4
+// @field OglRenderer +0x208 std::string field_0x208
+// @field OglRenderer +0x39C std::string field_0x39C
+void __thiscall fn_005338B0(void* self, void* src) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    mem_00924FDC(base + 0x39C, src);
+
+    void* subobject = base + 0x1DC;
+    ext_0054C7F0(subobject);
+
+    const char* text = mem_00924FF0(src);
+    mem_00924FD4(base + 0x1E4, text);
+
+    text = mem_00924FF0(src);
+    mem_00924FD4(base + 0x208, text);
+
+    HDC hdc = lift_field<HDC>(self, 0x24);
+    ext_0054C770(subobject, hdc);
+}
+} // namespace lift_005338B0

@@ -1,0 +1,46 @@
+{
+  "va": "0x005338B0",
+  "size": 94,
+  "orig_symbol": "OglRenderer::vfunc_19",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_19",
+  "class": "OglRenderer",
+  "signature": "extern void* (__thiscall* mem_00924FDC)(void* self, const void* rhs); // basic_string::operator=(const basic_string\u0026) extern const char* (__thiscall* mem_00924FF0)(void* self);            // basic_string::c_str() extern void* (__thiscall* mem_00924FD4)(void* self, const char* s);   // basic_string::operator=(const char*) extern void __thiscall ext_0054C7F0(void* self);            // DeleteGlobalDisplayListRange extern void __thiscall ext_0054C770(void* self, HDC hdc);   // Unknown::BuildFontDisplayLists void __thiscall fn_005338B0(void* self, void* src)",
+  "summary": "Copies a source string into +0x39C, resets the display lists at +0x1DC, copies the source's C string into +0x1E4 and +0x208, then builds the font display lists from the DC at +0x24.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x24",
+      "type": "HDC",
+      "name": "field_0x24"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x1DC",
+      "type": "void*",
+      "name": "field_0x1DC"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x1E4",
+      "type": "std::string",
+      "name": "field_0x1E4"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x208",
+      "type": "std::string",
+      "name": "field_0x208"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x39C",
+      "type": "std::string",
+      "name": "field_0x39C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:30:37Z"
+}
