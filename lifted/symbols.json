@@ -79393,6 +79393,12 @@
     "summary": "If the self array has matching entries, takes the first match's object and writes double 1.0 into the 8-byte element at index 3 of each 0x20-byte stride of its array.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x0072ADA0": {
+    "name": "ProcessItemLinks",
+    "signature": "void fn_0072ADA0(void* self, void* ctx)",
+    "summary": "For each item in self's pointer table, reads three getter values and inserts link entries into ctx for each of the getter-1 pairs.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072AF80": {
     "name": "Unknown::InitSixSubObjects",
     "class": "Unknown",

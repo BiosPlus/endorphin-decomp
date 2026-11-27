@@ -1437,3 +1437,40 @@ void fn_0072B330(void* self) {
     ext_0077FA20(self);
 }
 } // namespace lift_0072B330
+
+// [0x0072ADA0] sub_0072ADA0 (144 bytes)
+namespace lift_0072ADA0 {
+// Known callee 0x0070F2D0: sub_0070F2D0 (Getter returning int32_t field at offset +0x2D0.)
+extern int32_t __fastcall ext_0070F2D0(void* self);
+// Known callee 0x0070F330: sub_0070F330 (Getter returning int32_t field at offset +0x2E0.)
+extern int32_t __fastcall ext_0070F330(void* self);
+// Known callee 0x0070F340: sub_0070F340 (Getter returning int32_t field at offset +0x2F8.)
+extern int32_t __fastcall ext_0070F340(void* self);
+// Known callee 0x0078D420: fn_0078D420 (Inserts symmetric edge/link entries into two indexed DynamicArrays at offsets +0x10 and +0x28.)
+extern void __thiscall ext_0078D420(void* self, int32_t idx1, int32_t idx2, int32_t arg3, int32_t arg4);
+
+// @name ProcessItemLinks
+// @summary For each item in self's pointer table, reads three getter values and inserts link entries into ctx for each of the getter-1 pairs.
+// @field Unknown +0x00 int32_t count
+// @field Unknown +0x10 void** items
+void fn_0072ADA0(void* self, void* ctx) {
+    const int32_t count = lift_field<int32_t>(self, 0x00);
+    void** const items = lift_field<void**>(self, 0x10);
+
+    for (int32_t i = 0; i < count; ++i) {
+        void* item = items[i];
+
+        const int32_t m = ext_0070F2D0(item);
+        const int32_t a = ext_0070F330(item);
+        const int32_t b = ext_0070F340(item);
+
+        if (m > 0) {
+            int32_t* const a_ptr = reinterpret_cast<int32_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(a)));
+            int32_t* const b_ptr = reinterpret_cast<int32_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(b)));
+            for (int32_t k = 0; k < m; ++k) {
+                ext_0078D420(ctx, i, a_ptr[k], b_ptr[2 * k], b_ptr[2 * k + 1]);
+            }
+        }
+    }
+}
+} // namespace lift_0072ADA0
