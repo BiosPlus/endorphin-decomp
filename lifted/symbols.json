@@ -24555,6 +24555,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004E8810 (SelectionBuffer::vfunc_13).",
     "lifted_path": "lifted/classes/SelectionBuffer.cpp"
   },
+  "0x004E8B60": {
+    "name": "ForEachDynamicCastApply_004E8B60",
+    "class": "PtrVector",
+    "signature": "extern \"C\" char mem_00A2FB78;   // RTTI TypeDescriptor (source type) extern \"C\" char mem_00A2E2D8;   // RTTI TypeDescriptor (target type) static inline uint32_t addr_of(const void* p)",
+    "summary": "Validates a pointer range, erases/normalizes it via 0x596660, then for each element runs RTDynamicCast to the target type and passes non-null results to 0x41A920.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E9900": {
     "name": "SelectionBuffer::vfunc_25",
     "class": "SelectionBuffer",

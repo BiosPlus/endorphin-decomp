@@ -8,8 +8,10 @@
 // Recovered field layout for PtrVector:
 namespace lifted_layout {
 struct PtrVector_Fields {
+    // +0x4   uint32_t                 begin  (evidence: 0x004E8B60) // CONFLICT: multiple definitions at +0x4
     // +0x4   void**                   begin  (evidence: 0x0050AFA0, 0x00674F40) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00483800, 0x00484FB0, 0x00485080) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 end  (evidence: 0x004E8B60) // CONFLICT: multiple definitions at +0x8
     // +0x8   void**                   end  (evidence: 0x0050AFA0, 0x00674F40) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00483800, 0x00484FB0, 0x00485080) // CONFLICT: multiple definitions at +0x8
 };

@@ -1383,3 +1383,80 @@ void __thiscall fn_004EE630(void* self, const char* arg) {
     ext_00475960(lift_field<void*>(self, 0x00), str, &obj, 1);
 }
 } // namespace lift_004EE630
+
+// [0x004E8B60] sub_004E8B60 (194 bytes)
+namespace lift_004E8B60 {
+extern void __thiscall ext_0041A920(void* self, void** slot);
+extern void __thiscall ext_0050ED40(void* self, int32_t count);
+// Known callee 0x00596660: eraseInt32Range (Validates (self-pointer) args, erases [first,last) from a 4-byte-element buffer by shifting the tail down, sets end, and writes a 2-pointer result to out.)
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern void* ext_006A6E9E(void* inptr, ptrdiff_t vfDelta, const void* srcType, const void* dstType, int isReference);
+extern void* mem_00925134;  // IAT slot holding MSVCR80!_invalid_parameter_noinfo
+extern char mem_00A2FB78;   // RTTI TypeDescriptor (source type)
+extern char mem_00A2E2D8;   // RTTI TypeDescriptor (target type)
+
+// Address-as-value helpers for the 32-bit pointer model used by the original code.
+static inline uint32_t addr_of(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+static inline void* ptr_of(uint32_t a) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(a));
+}
+static inline uint32_t rd32(uint32_t base, ptrdiff_t off) {
+    return lift_field<uint32_t>(ptr_of(base), off);
+}
+// Original: call dword ptr [0x925134] (invalid-parameter handler; execution continues after it returns).
+static inline void lift_invalid_parameter_noinfo() {
+    reinterpret_cast<void (*)()>(mem_00925134)();
+}
+
+// @name ForEachDynamicCastApply_004E8B60
+// @class PtrVector
+// @summary Validates a pointer range, erases/normalizes it via 0x596660, then for each element runs RTDynamicCast to the target type and passes non-null results to 0x41A920.
+// @field PtrVector +0x04 uint32_t begin
+// @field PtrVector +0x08 uint32_t end
+void fn_004E8B60(void* arg0, void* self) {
+    (void)arg0;
+    const uint32_t self_a = addr_of(self);
+
+    // Range sanity checks on self (begin <= end); the second check reloads [self+4] as in the original.
+    if (rd32(self_a, 4) > rd32(self_a, 8)) lift_invalid_parameter_noinfo();
+    if (rd32(self_a, 4) > rd32(self_a, 8)) lift_invalid_parameter_noinfo();
+
+    const uint32_t first = rd32(self_a, 4);
+    const uint32_t last = rd32(self_a, 8);
+    void* out[2] = {nullptr, nullptr};
+    ext_00596660(self, out, self,
+                reinterpret_cast<int32_t*>(ptr_of(first)), self,
+                reinterpret_cast<int32_t*>(ptr_of(last)));
+
+    // out[0] is the range object returned by 0x596660.
+    const uint32_t r = addr_of(out[0]);
+    const uint32_t r_begin = rd32(r, 4);
+    int32_t count = 0;
+    if (r_begin != 0) {
+        count = static_cast<int32_t>(rd32(r, 8) - r_begin) >> 2;
+    }
+    ext_0050ED40(self, count);
+
+    uint32_t it = rd32(r, 4);
+    if (it > rd32(r, 8)) lift_invalid_parameter_noinfo();
+
+    for (;;) {
+        const uint32_t end = rd32(r, 8);
+        if (rd32(r, 4) > end) lift_invalid_parameter_noinfo();
+        if (it == end) break;
+        if (!(it < rd32(r, 8))) lift_invalid_parameter_noinfo();
+
+        const uint32_t elem = rd32(it, 0);
+        void* casted = ext_006A6E9E(ptr_of(elem), 0, &mem_00A2FB78, &mem_00A2E2D8, 0);
+        if (casted != nullptr) {
+            ext_0041A920(self, &casted);
+        }
+
+        if (!(it < rd32(r, 8))) lift_invalid_parameter_noinfo();
+        it += 4;
+    }
+}
+} // namespace lift_004E8B60

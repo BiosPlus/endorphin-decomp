@@ -1,0 +1,28 @@
+{
+  "va": "0x004E8B60",
+  "size": 194,
+  "orig_symbol": "sub_004E8B60",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "ForEachDynamicCastApply_004E8B60",
+  "class": "PtrVector",
+  "signature": "extern \"C\" char mem_00A2FB78;   // RTTI TypeDescriptor (source type) extern \"C\" char mem_00A2E2D8;   // RTTI TypeDescriptor (target type) static inline uint32_t addr_of(const void* p)",
+  "summary": "Validates a pointer range, erases/normalizes it via 0x596660, then for each element runs RTDynamicCast to the target type and passes non-null results to 0x41A920.",
+  "fields": [
+    {
+      "class": "PtrVector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "PtrVector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:28:01Z"
+}
