@@ -2480,3 +2480,45 @@ void __thiscall fn_0064E630(void* self, float* vec) {
     }
 }
 } // namespace lift_0064E630
+
+// [0x00640270] sub_00640270 (141 bytes)
+namespace lift_00640270 {
+// Known callee 0x0063E100: Unknown::Unknown(uint32_t, const std::string&).
+// Thiscall: ecx = new object, stack = (owner as uint32_t, name). Returns the constructed object in eax.
+extern void* ext_0063E100(void* obj, uint32_t owner, void* name);
+// sub_00640240 (44B): thiscall, ecx = self, one stack arg (callee-cleaned).
+extern void ext_00640240(void* self, void* arg);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk to MFC80!ord_762, operator new). cdecl, one arg.
+extern void* ext_006A5C62(uint32_t size);
+// IAT slot 0x00924FD8: MSVCP80 std::string::operator=(const std::string&).
+extern int mem_00924FD8;
+
+// @name Unknown::assignOrCreateChild
+// @class Unknown
+// @summary If this+0x34 holds a child, assigns name into child+0x24; otherwise allocates a 0x40-byte Unknown, constructs it from (this, name), and passes it to sub_00640240.
+// @field Unknown +0x24 std::string field_0x24
+// @field Unknown +0x34 uint32_t field_0x34
+void fn_00640270(void* self, void* name) {
+    // SEH frame setup/teardown (mov fs:[0], ...) is boilerplate and omitted.
+    const uint32_t child_ptr = lift_field<uint32_t>(self, 0x34);
+    if (child_ptr != 0) {
+        // lea ecx,[child+0x24]; push name; call std::string::operator=
+        void* child_name = reinterpret_cast<void*>(static_cast<uintptr_t>(child_ptr) + 0x24);
+        using StringAssignFn = void* (*)(void* self_str, const void* rhs);
+        auto assign = reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FD8));
+        assign(child_name, name);
+        return;
+    }
+
+    // push 0x40; call operator new; add esp,4
+    void* raw = ext_006A5C62(0x40);
+    void* created = nullptr;
+    if (raw != nullptr) {
+        // ecx = raw; push name; push self; call Unknown::Unknown
+        const uint32_t owner = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+        created = ext_0063E100(raw, owner, name);
+    }
+    // push eax (created); ecx = self; call sub_00640240
+    ext_00640240(self, created);
+}
+} // namespace lift_00640270
