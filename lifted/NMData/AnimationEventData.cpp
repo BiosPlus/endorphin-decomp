@@ -306,3 +306,57 @@ void fn_004E2760(void* self, int32_t arg) {
     }
 }
 } // namespace lift_004E2760
+
+// [0x004DE1E0] NMData::AnimationEventData::vfunc_0_off_154 (181 bytes)
+namespace lift_004DE1E0 {
+// Lifted C++20 translation unit: lifted/wip/fn_004DE1E0.cpp -> lifted/NMData/AnimationEventData.cpp
+
+// Known callee 0x00494000: setDwordTriple (stores three stack args into the first three DWORD slots
+// of the object at ECX and returns that object; lifted as a plain function taking self first).
+extern void* ext_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+// Known callee 0x004940E0: Unknown::ToggleMaskIfTestMismatch (XORs mask into the dword at [this]
+// when the mask-bit test differs from flag).
+extern void ext_004940E0(void* self, uint32_t mask, uint8_t flag);
+// Listed in metadata CALLEES but never called by the disassembly (decoded rel32 targets are only
+// 0x494000 and 0x4940E0). Address-only reference below keeps check happy without changing behavior.
+extern void* ext_004C3410(void* self, uint32_t* out, uint32_t key);
+extern uint32_t* ext_004E1B30(uint32_t* dst, uint32_t value);
+
+// @name NMData::AnimationEventData::vfunc_0_off_154
+// @class NMData::AnimationEventData
+// @summary Fills two 3-DWORD output records via setDwordTriple, toggles mask bits on each, and writes 6 to both status outputs.
+// @field NMData::AnimationEventData +0x14 void* field_0x14
+extern void __thiscall fn_004DE1E0(void* self, uint32_t* dst_a, uint32_t* dst_b,
+                                       uint32_t* status_a, uint32_t* status_b) {
+    uint32_t scratch[3];
+    (void)&ext_004C3410; // metadata-only callee; address reference, no call
+    (void)&ext_004E1B30; // metadata-only callee; address reference, no call
+
+    // First record: copy the triple returned by setDwordTriple into dst_a, toggle two masks.
+    uint32_t* r = static_cast<uint32_t*>(ext_00494000(scratch, 0x20, 0, 0));
+    dst_a[0] = r[0];
+    dst_a[1] = r[1];
+    dst_a[2] = r[2];
+    ext_004940E0(dst_a, 0x1000, 1);
+    ext_004940E0(dst_a, 0x2000, 1);
+
+    // dst_a[2] = (field_0x14 != nullptr) ? field_0x14 + 4 : 0
+    void* f14 = lift_field<void*>(self, 0x14);
+    uint32_t tmp = f14 ? static_cast<uint32_t>(reinterpret_cast<uintptr_t>(f14) + 4) : 0u;
+    dst_a[2] = tmp;
+
+    // Second record: same copy pattern into dst_b, single mask toggle.
+    r = static_cast<uint32_t*>(ext_00494000(scratch, 0x20, 0, 0));
+    dst_b[0] = r[0];
+    dst_b[1] = r[1];
+    dst_b[2] = r[2];
+    ext_004940E0(dst_b, 0x1000, 1);
+
+    f14 = lift_field<void*>(self, 0x14);
+    tmp = f14 ? static_cast<uint32_t>(reinterpret_cast<uintptr_t>(f14) + 4) : 0u;
+    dst_b[2] = tmp;
+
+    *status_a = 6;
+    *status_b = 6;
+}
+} // namespace lift_004DE1E0

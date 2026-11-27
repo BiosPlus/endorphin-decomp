@@ -23559,6 +23559,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C4E40 (NMData::ForceEventData::NotifyEvent0x266).",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004DE1E0": {
+    "name": "NMData::AnimationEventData::vfunc_0_off_154",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" void __thiscall fn_004DE1E0(void* self, uint32_t* dst_a, uint32_t* dst_b, uint32_t* status_a, uint32_t* status_b)",
+    "summary": "Fills two 3-DWORD output records via setDwordTriple, toggles mask bits on each, and writes 6 to both status outputs.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004DE330": {
     "name": "Unknown::CopyRecordAndForward",
     "class": "Unknown",

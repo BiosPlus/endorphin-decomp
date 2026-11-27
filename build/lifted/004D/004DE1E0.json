@@ -1,0 +1,22 @@
+{
+  "va": "0x004DE1E0",
+  "size": 181,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_0_off_154",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_0_off_154",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" void __thiscall fn_004DE1E0(void* self, uint32_t* dst_a, uint32_t* dst_b, uint32_t* status_a, uint32_t* status_b)",
+  "summary": "Fills two 3-DWORD output records via setDwordTriple, toggles mask bits on each, and writes 6 to both status outputs.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T10:58:50Z"
+}
