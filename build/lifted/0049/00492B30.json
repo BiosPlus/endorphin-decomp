@@ -1,0 +1,28 @@
+{
+  "va": "0x00492B30",
+  "size": 132,
+  "orig_symbol": "sub_00492B30",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "TreeIterator::decrement",
+  "class": "TreeIterator",
+  "signature": "void __fastcall sub_00492B30(uint32_t* self)",
+  "summary": "Decrements a red-black tree iterator to the previous node, validating against nil/begin.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "container_ptr"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "node_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:29:19Z"
+}

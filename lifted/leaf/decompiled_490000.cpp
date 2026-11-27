@@ -2110,3 +2110,55 @@ extern void* __cdecl sub_00490860(void* out, uint32_t /*unused1*/, uint32_t a2, 
     return out;
 }
 } // namespace lift_00490860
+
+// [0x00492B30]
+namespace lift_00492B30 {
+extern void (*mem_00925134)();
+
+// @name TreeIterator::decrement
+// @class TreeIterator
+// @summary Decrements a red-black tree iterator to the previous node, validating against nil/begin.
+// @field TreeIterator +0x00 uint32_t container_ptr
+// @field TreeIterator +0x04 uint32_t node_ptr
+void __fastcall sub_00492B30(uint32_t* self) {
+    auto invalid_param = mem_00925134;
+    if (lift_field<uint32_t>(self, 0x00) == 0) {
+        invalid_param();
+    }
+
+    uint32_t node = lift_field<uint32_t>(self, 0x04);
+    if (lift_field<uint8_t>(reinterpret_cast<void*>(node), 0x21) != 0) {
+        uint32_t right = lift_field<uint32_t>(reinterpret_cast<void*>(node), 0x08);
+        lift_field<uint32_t>(self, 0x04) = right;
+        if (lift_field<uint8_t>(reinterpret_cast<void*>(right), 0x21) != 0) {
+            invalid_param();
+        }
+        return;
+    }
+
+    uint32_t left = lift_field<uint32_t>(reinterpret_cast<void*>(node), 0x00);
+    if (lift_field<uint8_t>(reinterpret_cast<void*>(left), 0x21) == 0) {
+        uint32_t right = lift_field<uint32_t>(reinterpret_cast<void*>(left), 0x08);
+        while (lift_field<uint8_t>(reinterpret_cast<void*>(right), 0x21) == 0) {
+            left = right;
+            right = lift_field<uint32_t>(reinterpret_cast<void*>(left), 0x08);
+        }
+        lift_field<uint32_t>(self, 0x04) = left;
+        return;
+    }
+
+    uint32_t parent = lift_field<uint32_t>(reinterpret_cast<void*>(node), 0x04);
+    while (lift_field<uint8_t>(reinterpret_cast<void*>(parent), 0x21) == 0 &&
+           lift_field<uint32_t>(self, 0x04) == lift_field<uint32_t>(reinterpret_cast<void*>(parent), 0x00)) {
+        lift_field<uint32_t>(self, 0x04) = parent;
+        parent = lift_field<uint32_t>(reinterpret_cast<void*>(parent), 0x04);
+    }
+
+    if (lift_field<uint8_t>(reinterpret_cast<void*>(lift_field<uint32_t>(self, 0x04)), 0x21) != 0) {
+        invalid_param();
+        return;
+    }
+
+    lift_field<uint32_t>(self, 0x04) = parent;
+}
+} // namespace lift_00492B30

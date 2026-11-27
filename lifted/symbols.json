@@ -9101,6 +9101,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_0046FD40.",
     "lifted_path": "lifted/RuntimeEngine/auto_tiny.cpp"
   },
+  "0x00470090": {
+    "name": "TreeIterator::decrement",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_00470090(void* self)",
+    "summary": "Decrement a red-black tree iterator to the previous in-order node, invoking _invalid_parameter_noinfo on invalid state.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00470120": {
     "name": "sub_00470120",
     "class": "TreeIterator",
@@ -11459,6 +11466,13 @@
     "class": "UnknownClass",
     "signature": "extern \"C\" void (*mem_00925134)();   // MSVCR80!_invalid_parameter_noinfo IAT slot namespace",
     "summary": "Validates that self-\u003e+0x0 is non-null, then returns the index at self-\u003e+0x4 after checking it is below the uint32 at (self-\u003e+0x0)-\u003e+0x8; calls the CRT invalid-parameter handler on either failure.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
+  "0x00492B30": {
+    "name": "TreeIterator::decrement",
+    "class": "TreeIterator",
+    "signature": "void __fastcall sub_00492B30(uint32_t* self)",
+    "summary": "Decrements a red-black tree iterator to the previous node, validating against nil/begin.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x00492BC0": {
@@ -15436,6 +15450,13 @@
     "signature": "void* fn_004BA920(void* arg1, DWORD arg2)",
     "summary": "Forwards (arg1, arg2) to ext_004BA230 (result discarded) and returns arg1 unchanged.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004BAAF0": {
+    "name": "NMData::MaterialPair::vfunc_15",
+    "class": "NMData::MaterialPair",
+    "signature": "void* __thiscall fn_004BAAF0(void* self, void* out, uint32_t key)",
+    "summary": "Dispatches property/member lookup by key to return a pointer-pair for fields at +0x04, +0x20, or +0x3C, or a default empty pair.",
+    "lifted_path": "lifted/NMData/MaterialPair.cpp"
   },
   "0x004BBB00": {
     "name": "std::vector\u003cstd::string*\u003e::erase_and_delete",
