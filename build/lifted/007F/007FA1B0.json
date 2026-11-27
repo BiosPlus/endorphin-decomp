@@ -1,0 +1,13 @@
+{
+  "va": "0x007FA1B0",
+  "size": 69,
+  "orig_symbol": "sub_007FA1B0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "Unknown_ScaleOffsetAndInvoke_007FA1B0",
+  "signature": "extern \"C\" uint32_t mem_00B61FA0;  // function pointer: float (__cdecl*)(float*) float fn_007FA1B0(float x)",
+  "summary": "Computes tmp[i] = mem_00B61F8C[i] * x + mem_00B61F7C[i] and returns the result of the function pointer at mem_00B61FA0 applied to tmp.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:24:14Z"
+}

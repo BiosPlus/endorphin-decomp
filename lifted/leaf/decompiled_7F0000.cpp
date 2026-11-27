@@ -580,3 +580,25 @@ void __cdecl sub_007F9E30(int32_t count, float* dst, const float* src) {
     }
 }
 } // namespace lift_007F9E30
+
+// [0x007FA1B0]
+namespace lift_007FA1B0 {
+// Known callee 0x007F9E30: vec_add_f32 (dst[i] += src[i] for i in [0, count))
+extern void ext_007F9E30(int32_t count, float* dst, const float* src);
+// Known callee 0x007F9F30: scaleFloatArray (dst[i] = src[i] * scale for i in [0, count))
+extern void ext_007F9F30(int32_t count, float* dst, const float* src, float scale);
+extern int32_t mem_00B61F9C;   // element count
+extern float mem_00B61F8C[];   // source vector scaled by x
+extern float mem_00B61F7C[];   // source vector added after scaling
+extern uint32_t mem_00B61FA0;  // function pointer: float (__cdecl*)(float*)
+
+// @name Unknown_ScaleOffsetAndInvoke_007FA1B0
+// @summary Computes tmp[i] = mem_00B61F8C[i] * x + mem_00B61F7C[i] and returns the result of the function pointer at mem_00B61FA0 applied to tmp.
+float fn_007FA1B0(float x) {
+    int32_t count = mem_00B61F9C;
+    float tmp[4];
+    ext_007F9F30(count, tmp, mem_00B61F8C, x);
+    ext_007F9E30(count, tmp, mem_00B61F7C);
+    return reinterpret_cast<float(__cdecl*)(float*)>(mem_00B61FA0)(tmp);
+}
+} // namespace lift_007FA1B0
