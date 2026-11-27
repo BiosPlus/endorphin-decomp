@@ -265,3 +265,36 @@ void fn_0054C1F0(void* self, void* arg) {
     }
 }
 } // namespace lift_0054C1F0
+
+// [0x0054C3A0]
+namespace lift_0054C3A0 {
+// @name ManagedDisplayList<RenderableList>::vfunc_12
+// @class ManagedDisplayList<RenderableList>
+// @summary Walks the element pointer range [field_0x18, field_0x1C) and calls virtual slot 12 (+0x30) on each element, forwarding the three stack arguments.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+
+// MSVCR80!_invalid_parameter_noinfo import slot. The original calls through it
+// only on failed bounds asserts, which are unreachable for valid lists.
+extern char mem_00925134;
+
+typedef void (__thiscall *ElementVfn12)(void* self, void* a1, void* a2, void* a3);
+
+void __thiscall fn_0054C3A0(void* self, void* a1, void* a2, void* a3) {
+    (void)&mem_00925134;
+    unsigned char* base = static_cast<unsigned char*>(self);
+    void** it = *reinterpret_cast<void***>(base + 0x18);
+    for (;;) {
+        // The end pointer is re-read on every iteration, as the original does.
+        void** end = *reinterpret_cast<void***>(base + 0x1C);
+        if (it == end) {
+            break;
+        }
+        void* elem = *it;
+        void** vtbl = *reinterpret_cast<void***>(elem);
+        ElementVfn12 fn = reinterpret_cast<ElementVfn12>(vtbl[12]);
+        fn(elem, a1, a2, a3);
+        ++it;
+    }
+}
+} // namespace lift_0054C3A0
