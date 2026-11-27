@@ -32278,6 +32278,13 @@
     "summary": "Looks up a table entry from this-\u003e+0x4, takes its element 0 vector, and stores the float argument as a double at index this-\u003e+0x8 (bounds-checked; calls _invalid_parameter_noinfo on null begin or out-of-range index, then still stores).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00524CE0": {
+    "name": "NMData::NetworkConnectorData::vfunc_13",
+    "class": "NMData::NetworkConnectorData",
+    "signature": "inline const char* cstrFromGlobal(int raw)",
+    "summary": "Compares a std::string key against three constants; on a match initializes outPair via ext_00870320 on a sub-object, otherwise falls through to ext_0046F7D0. Always returns outPair.",
+    "lifted_path": "lifted/NMData/NetworkConnectorData.cpp"
+  },
   "0x00524DA0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e",

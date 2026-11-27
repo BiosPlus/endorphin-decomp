@@ -10,6 +10,9 @@
 // Recovered field layout for NetworkConnectorData:
 namespace lifted_layout {
 struct NetworkConnectorData_Fields {
+    // +0x20  uint8_t                  field_0x20  (evidence: 0x00524CE0)
+    // +0x38  uint8_t[20]              field_0x38  (evidence: 0x00524CE0)
+    // +0x4C  uint8_t[20]              field_0x4c  (evidence: 0x00524CE0)
     // +0xA4  std::string              name  (evidence: 0x00524950)
 };
 } // namespace lifted_layout
