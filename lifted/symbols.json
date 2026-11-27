@@ -12747,6 +12747,13 @@
     "summary": "Lazily initializes a static guard object, then builds a std::string from the argument and forwards it to ext_00475960 on the subobject pointed to by self+0x00.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048BFD0": {
+    "name": "DispatchNamedString_0048BFD0",
+    "class": "UnknownObject",
+    "signature": "extern \"C\" DWORD mem_00AD9E98;    // one-time init guard flag (bit 0) extern \"C\" DWORD mem_00AD9E94;    // static object, first DWORD = vtable-like marker extern \"C\" uintptr_t mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*) ctor extern \"C\" uintptr_t mem_00924FF4; // IAT slot: MSVCP80 basic_string dtor void fn_0048BFD0(void* self, const char* name)",
+    "summary": "Lazily initializes a static object, builds a temporary std::string from a C string, dispatches it through ext_00475960 on *self, then destroys the string.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048C120": {
     "name": "NMData::PoseData::vfunc_6",
     "class": "NMData::PoseData",

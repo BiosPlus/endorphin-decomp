@@ -4061,3 +4061,43 @@ extern void __fastcall fn_00484F20(void* self, int edx_unused, const void* value
     ext_004836C0(self, &value, self, last, value);
 }
 } // namespace lift_00484F20
+
+// [0x0048BFD0] sub_0048BFD0 (165 bytes)
+namespace lift_0048BFD0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void __thiscall ext_0067A670(void* self);
+extern void __thiscall ext_00475960(void* self, void* str, void* name_ref, DWORD flag);
+extern DWORD mem_00AD9E98;    // one-time init guard flag (bit 0)
+extern DWORD mem_00AD9E94;    // static object, first DWORD = vtable-like marker
+extern uintptr_t mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*) ctor
+extern uintptr_t mem_00924FF4; // IAT slot: MSVCP80 basic_string dtor
+
+// @name DispatchNamedString_0048BFD0
+// @class UnknownObject
+// @summary Lazily initializes a static object, builds a temporary std::string from a C string, dispatches it through ext_00475960 on *self, then destroys the string.
+// @field UnknownObject +0x00 void* field_0x00
+void fn_0048BFD0(void* self, const char* name) {
+    // One-time static initialization guarded by bit 0 of mem_00AD9E98.
+    if ((mem_00AD9E98 & 1u) == 0) {
+        mem_00AD9E98 |= 1u;
+        ext_0067A670(&mem_00AD9E94);
+        mem_00AD9E94 = 0x0093DF1Cu;
+    }
+
+    // Local pointer-to-static (the original stores the address of mem_00AD9E94 here).
+    DWORD name_ref = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AD9E94));
+
+    // Temporary std::string storage (MSVC 2005 layout, 0x1C bytes assumed).
+    alignas(8) unsigned char str[0x1C] = {};
+
+    auto str_ctor = reinterpret_cast<void (__thiscall*)(void*, const char*)>(mem_00924FE4);
+    auto str_dtor = reinterpret_cast<void (__thiscall*)(void*)>(mem_00924FF4);
+
+    str_ctor(static_cast<void*>(str), name);
+
+    void* first = *static_cast<void**>(self);
+    ext_00475960(first, static_cast<void*>(str), static_cast<void*>(&name_ref), 1u);
+
+    str_dtor(static_cast<void*>(str));
+}
+} // namespace lift_0048BFD0
