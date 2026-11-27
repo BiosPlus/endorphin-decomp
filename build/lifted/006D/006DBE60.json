@@ -1,0 +1,27 @@
+{
+  "va": "0x006DBE60",
+  "size": 128,
+  "orig_symbol": "sub_006DBE60",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Int64Pair_Combine_006DBE60",
+  "signature": "void __fastcall fn_006DBE60(void* a, void* /*edx, unused*/, void* out, void* b)",
+  "summary": "Combines a 64-bit value at ecx with a 64-bit value on the stack via ext_006A7310 and stores the 64-bit result to the out pointer (first stack arg).",
+  "fields": [
+    {
+      "class": "Int64Pair",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "lo"
+    },
+    {
+      "class": "Int64Pair",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "hi"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:11:10Z"
+}

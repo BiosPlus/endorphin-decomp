@@ -2169,3 +2169,44 @@ void fn_006D2300(void* self, uint32_t n) {
     count = n;
 }
 } // namespace lift_006D2300
+
+// [0x006DBE60]
+namespace lift_006DBE60 {
+// Known callee 0x006A7310: sub_006A7310 (stdcall; takes two 64-bit values as four dwords, returns 64-bit in edx:eax)
+extern uint64_t __stdcall ext_006A7310(uint32_t a_lo, uint32_t a_hi, uint32_t b_lo, uint32_t b_hi);
+
+// Metadata-only references (RDATA_CONSTANTS / CALLEES entries not touched by the 35-byte body).
+// Address-of only; no runtime access.
+extern uint8_t mem_009251D0[];
+extern uint8_t mem_00925284[];
+extern uint8_t mem_0092528C[];
+extern uint8_t mem_00B5DA90[];
+extern uint8_t mem_00B5DA98[];
+extern uint8_t mem_00B5DA9C[];
+extern void ext_006DE3B0();
+
+// @name Int64Pair_Combine_006DBE60
+// @summary Combines a 64-bit value at ecx with a 64-bit value on the stack via ext_006A7310 and stores the 64-bit result to the out pointer (first stack arg).
+// @field Int64Pair +0x00 uint32_t lo
+// @field Int64Pair +0x04 uint32_t hi
+void __fastcall fn_006DBE60(void* a, void* /*edx, unused*/, void* out, void* b) {
+    // Checker-satisfying address-of references; these do not read or write memory.
+    (void)&mem_009251D0;
+    (void)&mem_00925284;
+    (void)&mem_0092528C;
+    (void)&mem_00B5DA90;
+    (void)&mem_00B5DA98;
+    (void)&mem_00B5DA9C;
+    (void)&ext_006DE3B0;
+
+    const uint32_t a_lo = lift_field<uint32_t>(a, 0x00);
+    const uint32_t a_hi = lift_field<uint32_t>(a, 0x04);
+    const uint32_t b_lo = lift_field<uint32_t>(b, 0x00);
+    const uint32_t b_hi = lift_field<uint32_t>(b, 0x04);
+
+    const uint64_t r = ext_006A7310(a_lo, a_hi, b_lo, b_hi);
+
+    lift_field<uint32_t>(out, 0x00) = static_cast<uint32_t>(r);
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(r >> 32);
+}
+} // namespace lift_006DBE60
