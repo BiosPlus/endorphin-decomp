@@ -1671,3 +1671,33 @@ extern void __thiscall fn_00455EB0(void* self) {
     ext_006A679C(base);
 }
 } // namespace lift_00455EB0
+
+// [0x0045AEE0] sub_0045AEE0 (105 bytes)
+namespace lift_0045AEE0 {
+// Known callee 0x006A5F4A: thunk_MFC80_ord_3761 (IAT jump thunk forwarding to MFC80!ord_3761.)
+// Thiscall: ecx = self, one stack arg = out-pointer to a CString.
+extern void __thiscall ext_006A5F4A(void* self, void* out);
+
+// IAT slots (runtime-resolved function pointers).
+extern void* mem_009242FC;  // MFC80!ord_310  (CString::CString)
+extern void* mem_00924300;  // MFC80!ord_876  (CString::operator LPCSTR)
+extern void* mem_009251F0;  // MSVCR80!atof
+extern void* mem_009242F4;  // MFC80!ord_578  (CString::~CString)
+
+// @name getFloatFromCStringCall
+// @summary Fills a local MFC CString via ext_006A5F4A(self, &str), then returns atof() of its contents.
+float fn_0045AEE0(void* self) {
+    // Local MFC CString: a single data pointer.
+    alignas(4) unsigned char str[4] = {0, 0, 0, 0};
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_009242FC)(str);
+    ext_006A5F4A(self, str);
+
+    const char* s = reinterpret_cast<const char* (__thiscall*)(void*)>(mem_00924300)(str);
+    float result = static_cast<float>(
+        reinterpret_cast<double(__cdecl*)(const char*)>(mem_009251F0)(s));
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_009242F4)(str);
+    return result;
+}
+} // namespace lift_0045AEE0
