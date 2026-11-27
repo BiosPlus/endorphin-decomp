@@ -1,0 +1,22 @@
+{
+  "va": "0x004BBB00",
+  "size": 108,
+  "orig_symbol": "sub_004BBB00",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "std::vector\u003cstd::string*\u003e::erase_and_delete",
+  "class": "std::vector\u003cstd::string*\u003e",
+  "signature": "void* __thiscall fn_004BBB00(void* self, CheckedIter* out_iter, uint32_t container, uint32_t elem_ptr)",
+  "summary": "Erases an element from a vector of std::string*, destroying and freeing the string if non-null, and returns the updated iterator.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:14:48Z"
+}
