@@ -352,3 +352,71 @@ void fn_005BFBD0(void* self, const float* src) {
     ext_005BFA80(static_cast<uint8_t*>(self) - 0xC, sub, r);
 }
 } // namespace lift_005BFBD0
+
+// [0x005B8D90]
+namespace lift_005B8D90 {
+// Known callee 0x00435D00 (ext_00435D00): one stack arg, returns eax; applied three times to the stream result.
+extern uint32_t ext_00435D00(uint32_t);
+
+// MSVCP80 IAT slots (values hold the imported function pointers).
+extern int mem_00924E4C;  // basic_ostringstream::ctor(openmode)
+extern int mem_00924E94;  // std::operator<<(ostream&, ...) family
+extern int mem_00B4171C;  // global operand pushed into the stream chain
+extern int mem_00924FF4;  // basic_string::~basic_string
+extern int mem_00924E54;  // basic_ostringstream::str (sret)
+extern int mem_00924E58;  // basic_ostringstream::~basic_ostringstream
+
+// @name NMData::MetaBodyData::vfunc_3
+// @class NMData::MetaBodyData
+// @summary Formats a value from the sub-object at +0x20c into a temporary ostringstream, writes it through the MSVCP stream chain and the ext_00435D00 helper, and returns the resulting string via the sret pointer.
+// @field NMData::MetaBodyData +0x00 void* vtable
+// @field NMData::MetaBodyData +0x20c void* subObject
+void* fn_005B8D90(void* self, void* out) {
+    alignas(8) uint8_t oss[0x100];   // local basic_ostringstream object
+    alignas(8) uint8_t tmp[0x20];    // local basic_string
+
+    auto imp = [](int slot) {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(slot)));
+    };
+
+    using ctor_t  = void(__thiscall*)(void*, int);
+    using dtor_t  = void(__thiscall*)(void*);
+    using str_t   = void*(__thiscall*)(void*, void*);
+    using strdt_t = void(__thiscall*)(void*);
+    using ins_t   = void*(*)(void*, uint32_t);
+    using vfn3_t  = uint32_t(__thiscall*)(void*, void*);
+    using vfn9_t  = uint32_t(__thiscall*)(void*);
+
+    // oss(2)
+    reinterpret_cast<ctor_t>(imp(mem_00924E4C))(oss, 2);
+
+    // sub = self->[0x20c]->[0x18c]; inner = sub+4; r = inner->vtbl[3](&tmp)
+    uint8_t* obj   = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x20c);
+    uint8_t* sub   = *reinterpret_cast<uint8_t**>(obj + 0x18c);
+    uint8_t* inner = sub + 0x4;
+    void** vt      = *reinterpret_cast<void***>(inner);
+    uint32_t edi   = reinterpret_cast<vfn3_t>(vt[3])(inner, tmp);
+
+    // A = self->vtbl[9]()
+    void** selfVt = *reinterpret_cast<void***>(self);
+    uint32_t a    = reinterpret_cast<vfn9_t>(selfVt[9])(self);
+
+    // stream chain: os = operator<<(oss, edi); then ext_00435D00 applied three times
+    uint32_t os = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(
+        reinterpret_cast<ins_t>(imp(mem_00924E94))(oss, edi)));
+    os = ext_00435D00(os);
+    os = ext_00435D00(os);
+    os = ext_00435D00(os);
+    os = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(
+        reinterpret_cast<ins_t>(imp(mem_00924E94))(reinterpret_cast<void*>(static_cast<uintptr_t>(os)),
+                                                   static_cast<uint32_t>(mem_00B4171C))));
+    (void)a;
+
+    // dispose temporary string, then str() into the sret buffer
+    reinterpret_cast<strdt_t>(imp(mem_00924FF4))(tmp);
+    reinterpret_cast<str_t>(imp(mem_00924E54))(oss, out);
+    reinterpret_cast<dtor_t>(imp(mem_00924E58))(oss);
+
+    return out;
+}
+} // namespace lift_005B8D90

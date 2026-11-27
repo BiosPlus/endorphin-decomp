@@ -45115,6 +45115,13 @@
     "summary": "Lazily initializes the static accessor object (guarded by bit 0 of mem_00B43D40) and binds holder+0x04 to it.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005B8D90": {
+    "name": "NMData::MetaBodyData::vfunc_3",
+    "class": "NMData::MetaBodyData",
+    "signature": "extern \"C\" int mem_00924E4C;  // basic_ostringstream::ctor(openmode) extern \"C\" int mem_00924E94;  // std::operator\u003c\u003c(ostream\u0026, ...) family extern \"C\" int mem_00B4171C;  // global operand pushed into the stream chain extern \"C\" int mem_00924FF4;  // basic_string::~basic_string extern \"C\" int mem_00924E54;  // basic_ostringstream::str (sret) extern \"C\" int mem_00924E58;  // basic_ostringstream::~basic_ostringstream void* fn_005B8D90(void* self, void* out)",
+    "summary": "Formats a value from the sub-object at +0x20c into a temporary ostringstream, writes it through the MSVCP stream chain and the ext_00435D00 helper, and returns the resulting string via the sret pointer.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005B8EA0": {
     "name": "forEachNodeCallWithOffset",
     "signature": "void* fn_005B8EA0( ResultPair005B8EA0* out_result, void* first_container, void* first_node, void* last_container, void* last_node, void* fn_ptr, uint32_t offset)",

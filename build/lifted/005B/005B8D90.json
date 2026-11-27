@@ -1,0 +1,28 @@
+{
+  "va": "0x005B8D90",
+  "size": 267,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_3",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_3",
+  "class": "NMData::MetaBodyData",
+  "signature": "extern \"C\" int mem_00924E4C;  // basic_ostringstream::ctor(openmode) extern \"C\" int mem_00924E94;  // std::operator\u003c\u003c(ostream\u0026, ...) family extern \"C\" int mem_00B4171C;  // global operand pushed into the stream chain extern \"C\" int mem_00924FF4;  // basic_string::~basic_string extern \"C\" int mem_00924E54;  // basic_ostringstream::str (sret) extern \"C\" int mem_00924E58;  // basic_ostringstream::~basic_ostringstream void* fn_005B8D90(void* self, void* out)",
+  "summary": "Formats a value from the sub-object at +0x20c into a temporary ostringstream, writes it through the MSVCP stream chain and the ext_00435D00 helper, and returns the resulting string via the sret pointer.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x20C",
+      "type": "void*",
+      "name": "subObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:35:41Z"
+}

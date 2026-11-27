@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::MetaBodyData:
 namespace lifted_layout {
 struct NMData_MetaBodyData_Fields {
+    // +0x0   void*                    vtable  (evidence: 0x005B8D90)
     // +0x4   void*                    field_0x04  (evidence: 0x005BFBD0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    transformInterface_vptr  (evidence: 0x005C1410) // CONFLICT: multiple definitions at +0x4
     // +0xC   void*                    field_0x0C  (evidence: 0x005B6F00) // CONFLICT: multiple definitions at +0xC
@@ -24,5 +25,6 @@ struct NMData_MetaBodyData_Fields {
     // +0x160 void*                    field_0x160  (evidence: 0x005BFC90)
     // +0x168 void*                    field_0x168  (evidence: 0x005BFC90)
     // +0x16C void*                    field_0x16C  (evidence: 0x005BFC90)
+    // +0x20C void*                    subObject  (evidence: 0x005B8D90)
 };
 } // namespace lifted_layout
