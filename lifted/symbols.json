@@ -3724,6 +3724,12 @@
     "summary": "Calls ext_00465B40 to get an object, invokes its vtable slot +0x1D0 with arg 1; on exception, copies the string at self+0x0C into a temporary std::string and passes its c_str() to ext_006A5E60.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00432640": {
+    "name": "callAppVtable1CCWithSeh",
+    "signature": "extern \"C\" void fn_00432640(void)",
+    "summary": "Calls vtable +0x1CC on the object returned by fn_00465B40 with arg 1, reporting any exception via MFC80!ord_1123.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004326D0": {
     "name": "sub_004326D0",
     "signature": "void fn_004326D0(void)",

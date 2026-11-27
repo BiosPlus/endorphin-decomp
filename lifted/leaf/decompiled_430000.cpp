@@ -5157,3 +5157,36 @@ void fn_00433710(void) {
     (void)&mem_00924FF4;
 }
 } // namespace lift_00433710
+
+// [0x00432640] sub_00432640 (134 bytes)
+namespace lift_00432640 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+extern void* ext_00465B40();
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+extern void ext_006A5E60(const char* msg);
+extern int mem_00924FE0;
+extern int mem_00924FF0;
+extern int mem_00924FF4;
+
+// @name callAppVtable1CCWithSeh
+// @summary Calls vtable +0x1CC on the object returned by fn_00465B40 with arg 1, reporting any exception via MFC80!ord_1123.
+extern void fn_00432640(void) {
+    try {
+        void* obj = ext_00465B40();
+        void** vtable = *reinterpret_cast<void***>(obj);
+        using VMethod = void(__thiscall*)(void*, int);
+        auto method = reinterpret_cast<VMethod>(
+            *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtable) + 0x1CC));
+        method(obj, 1);
+    } catch (...) {
+        uint8_t str_buf[0x1C]{};
+        using CopyCtor = void(__thiscall*)(void*, const void*);
+        using CStrFn = const char*(__thiscall*)(const void*);
+        using DtorFn = void(__thiscall*)(void*);
+        reinterpret_cast<CopyCtor>(mem_00924FE0)(str_buf, nullptr);
+        const char* msg = reinterpret_cast<CStrFn>(mem_00924FF0)(str_buf);
+        ext_006A5E60(msg);
+        reinterpret_cast<DtorFn>(mem_00924FF4)(str_buf);
+    }
+}
+} // namespace lift_00432640

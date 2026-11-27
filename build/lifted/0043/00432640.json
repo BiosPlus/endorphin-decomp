@@ -1,0 +1,13 @@
+{
+  "va": "0x00432640",
+  "size": 134,
+  "orig_symbol": "sub_00432640",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "callAppVtable1CCWithSeh",
+  "signature": "extern \"C\" void fn_00432640(void)",
+  "summary": "Calls vtable +0x1CC on the object returned by fn_00465B40 with arg 1, reporting any exception via MFC80!ord_1123.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:23:35Z"
+}
