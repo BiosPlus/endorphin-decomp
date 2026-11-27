@@ -1,0 +1,13 @@
+{
+  "va": "0x005FFFB0",
+  "size": 90,
+  "orig_symbol": "sub_005FFFB0",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "getSingleton_00B47078",
+  "signature": "extern \"C\" void* __cdecl sub_005FFFB0()",
+  "summary": "Lazily constructs and returns the static singleton instance at 0x00B47078, registering its destructor via atexit.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:49:01Z"
+}

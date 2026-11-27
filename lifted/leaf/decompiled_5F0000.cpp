@@ -2052,3 +2052,26 @@ void __fastcall fn_005F4480(uint8_t* self, void* /*edx*/, float value) {
     }
 }
 } // namespace lift_005F4480
+
+// [0x005FFFB0]
+namespace lift_005FFFB0 {
+// @name getSingleton_00B47078
+// @summary Lazily constructs and returns the static singleton instance at 0x00B47078, registering its destructor via atexit.
+
+
+extern uint32_t mem_00B4709C;
+extern uint8_t mem_00B47078[];
+extern uint8_t mem_0091E6C0[];
+
+void __thiscall ext_005FF8A0(void* self);
+int __cdecl ext_006A6C87(void* func);
+
+extern void* __cdecl sub_005FFFB0() {
+    if ((mem_00B4709C & 1u) == 0u) {
+        mem_00B4709C |= 1u;
+        ext_005FF8A0(mem_00B47078);
+        ext_006A6C87(mem_0091E6C0);
+    }
+    return mem_00B47078;
+}
+} // namespace lift_005FFFB0
