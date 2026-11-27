@@ -1532,3 +1532,47 @@ void* fn_00472870(void* src_first, void* src_last, void* dst) {
     return out;
 }
 } // namespace lift_00472870
+
+// [0x00475AE0] sub_00475AE0 (165 bytes)
+namespace lift_00475AE0 {
+extern void __thiscall ext_00475960(void* self, void* strPtr, void** slotPtr, DWORD flag);
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void __thiscall ext_0067A670(void* self);
+extern int mem_00AD9038;
+extern int mem_00AD9034;
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name ExprParser::dispatchWithStaticTempString
+// @class ExprParser
+// @summary Lazily initializes a function-local static string object, builds a temporary std::string from the stack argument, dispatches to ext_00475960 with this->field_0x00, then destroys the temporary.
+// @field ExprParser +0x00 void* field_0x00
+void fn_00475AE0(void* self, const char* arg) {
+    // SEH frame setup/teardown (fs:[0] push/pop, unwind states) is omitted:
+    // it is compiler bookkeeping, not program semantics.
+
+    // Function-local static guard (bit 0 of mem_00AD9038).
+    if ((mem_00AD9038 & 1) == 0) {
+        mem_00AD9038 |= 1;
+        ext_0067A670(&mem_00AD9034);      // thiscall, ECX = &static object, no stack args
+        mem_00AD9034 = 0x0093B44C;        // post-construction store into the static's first DWORD
+    }
+
+    // Temporary std::string (MSVC 2005 layout, 0x1C bytes) constructed from arg.
+    alignas(8) unsigned char tmpStr[0x1C];
+    using StrCtor = void (__thiscall*)(void* self, const char* s);
+    using StrDtor = void (__thiscall*)(void* self);
+    auto strCtor = reinterpret_cast<StrCtor>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE4)));
+    auto strDtor = reinterpret_cast<StrDtor>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    strCtor(tmpStr, arg);
+
+    // Local slot holding the static object's address; its address is passed onward.
+    void* slot = &mem_00AD9034;
+
+    // ECX = *(DWORD*)self; stack: &tmpStr, &slot, 1.
+    void* thisObj = lift_field<void*>(self, 0);
+    ext_00475960(thisObj, tmpStr, &slot, 1);
+
+    strDtor(tmpStr);
+}
+} // namespace lift_00475AE0

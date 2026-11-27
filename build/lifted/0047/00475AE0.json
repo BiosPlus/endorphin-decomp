@@ -1,0 +1,22 @@
+{
+  "va": "0x00475AE0",
+  "size": 165,
+  "orig_symbol": "sub_00475AE0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "ExprParser::dispatchWithStaticTempString",
+  "class": "ExprParser",
+  "signature": "void fn_00475AE0(void* self, const char* arg)",
+  "summary": "Lazily initializes a function-local static string object, builds a temporary std::string from the stack argument, dispatches to ext_00475960 with this-\u003efield_0x00, then destroys the temporary.",
+  "fields": [
+    {
+      "class": "ExprParser",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:47:21Z"
+}

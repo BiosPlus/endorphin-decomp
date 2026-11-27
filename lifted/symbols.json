@@ -10239,6 +10239,13 @@
     "summary": "Allocates a 0x3C-byte node, initializes header links and embedded pair at +0x0C, and sets flags at +0x38/+0x39.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475AE0": {
+    "name": "ExprParser::dispatchWithStaticTempString",
+    "class": "ExprParser",
+    "signature": "void fn_00475AE0(void* self, const char* arg)",
+    "summary": "Lazily initializes a function-local static string object, builds a temporary std::string from the stack argument, dispatches to ext_00475960 with this-\u003efield_0x00, then destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476530": {
     "name": "sub_00476530",
     "class": "UnknownClass",

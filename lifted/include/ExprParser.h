@@ -8,7 +8,8 @@
 // Recovered field layout for ExprParser:
 namespace lifted_layout {
 struct ExprParser_Fields {
-    // +0x0   std::string <name_string> (embedded basic_string, 0x1C bytes)  (evidence: 0x004B6CC0)
+    // +0x0   std::string <name_string> (embedded basic_string, 0x1C bytes)  (evidence: 0x004B6CC0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x00475AE0) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    field_0x04  (evidence: 0x004CB2D0)
     // +0x1C  float                    field_0x1C  (evidence: 0x004B6CC0)
     // +0x20  float                    field_0x20  (evidence: 0x004B6CC0)
