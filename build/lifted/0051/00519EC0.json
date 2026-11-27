@@ -1,0 +1,34 @@
+{
+  "va": "0x00519EC0",
+  "size": 209,
+  "orig_symbol": "NMData::Channel::vfunc_1",
+  "src_path": "src/NMData/Channel.cpp",
+  "lifted_path": "lifted/NMData/Channel.cpp",
+  "name": "NMData::Channel::vfunc_1",
+  "class": "NMData::Channel",
+  "signature": "void fn_00519EC0(void* self, void* owner, uint32_t unusedArg2)",
+  "summary": "Calls vtable slot 3, looks up two names in the owner's item vector, copies the first match's string into this+0x04, and stores the string-table index of the second match at this+0x20 (skipped if the second lookup hits a sentinel).",
+  "fields": [
+    {
+      "class": "Channel",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Channel",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    },
+    {
+      "class": "Channel",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "tableIndex"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:01:07Z"
+}
