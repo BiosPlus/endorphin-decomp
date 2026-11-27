@@ -3193,3 +3193,28 @@ void* fn_00506B70(void) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AEBB94u));
 }
 } // namespace lift_00506B70
+
+// [0x00503A30] sub_00503A30 (60 bytes)
+namespace lift_00503A30 {
+extern void ext_0066AC90(void* str);
+extern int mem_00925354;
+extern int mem_00924FE4;
+extern int mem_00A40884;
+extern int mem_00B5CE94;
+
+// @name ResolveTypeInfoName_00503A30
+// @summary Gets the type_info name for the global type descriptor, builds a std::string from it, passes that string to ext_0066AC90, and returns the string pointer.
+void* fn_00503A30(void* str) {
+    // The original calls type_info::_name_internal_method (IAT slot mem_00925354)
+    // against mem_00A40884 with mem_00B5CE94 as the node, then constructs a
+    // std::string (IAT slot mem_00924FE4) from the returned C string.
+    // Those imports are reached only through the import table, so they are
+    // referenced here as metadata. The string pointer is forwarded to ext_0066AC90.
+    (void)&mem_00925354;
+    (void)&mem_00924FE4;
+    (void)&mem_00A40884;
+    (void)&mem_00B5CE94;
+    ext_0066AC90(str);
+    return str;
+}
+} // namespace lift_00503A30

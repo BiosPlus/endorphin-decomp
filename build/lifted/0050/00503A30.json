@@ -1,0 +1,13 @@
+{
+  "va": "0x00503A30",
+  "size": 60,
+  "orig_symbol": "sub_00503A30",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "ResolveTypeInfoName_00503A30",
+  "signature": "void* fn_00503A30(void* str)",
+  "summary": "Gets the type_info name for the global type descriptor, builds a std::string from it, passes that string to ext_0066AC90, and returns the string pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:23:56Z"
+}

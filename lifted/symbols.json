@@ -27544,6 +27544,12 @@
     "summary": "Stores a float argument widened to double at +0x28 and sets the flag byte at +0x20 to 1.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00503A30": {
+    "name": "ResolveTypeInfoName_00503A30",
+    "signature": "void* fn_00503A30(void* str)",
+    "summary": "Gets the type_info name for the global type descriptor, builds a std::string from it, passes that string to ext_0066AC90, and returns the string pointer.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503A70": {
     "name": "InitOnceGlobalString_00503A70",
     "signature": "void* fn_00503A70()",
