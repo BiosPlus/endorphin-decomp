@@ -46304,6 +46304,13 @@
     "summary": "Walks the intrusive list whose sentinel is at +0x15C; for each entry whose object at node+0x28 accepts (vtable +0x6C), forwards arg to its subobject at +0x0C (vtable +0x10).",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005BFBD0": {
+    "name": "NMData::MetaBodyData::vfunc_5_off_C",
+    "class": "NMData::MetaBodyData",
+    "signature": "void fn_005BFBD0(void* self, const float* src)",
+    "summary": "Divides the src float triple by the sub-object's reference vector, copies the reference into the sub-object, optionally notifies the object at +0x04 via vtable slot 0x34, and forwards the result to sub_005BFA80.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005BFC90": {
     "name": "NMData::MetaBodyData::vfunc_14",
     "class": "NMData::MetaBodyData",

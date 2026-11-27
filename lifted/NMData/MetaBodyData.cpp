@@ -295,3 +295,60 @@ void* __thiscall fn_005C1410(void* self) {
     return result;
 }
 } // namespace lift_005C1410
+
+// [0x005BFBD0] NMData::MetaBodyData::vfunc_5_off_C (188 bytes)
+namespace lift_005BFBD0 {
+// Known callee 0x005B11F0: OglRenderer::vfunc_118 (4B) (thiscall; ecx = this, returns float* in eax).
+extern float* ext_005B11F0(void* self);
+// Known callee 0x005B1B60: Unknown::copyVec4AndSetFlag04 (lifted; copies four floats from src into self+0x10..0x1c and sets the flag byte at self+0x04 to 1).
+extern void ext_005B1B60(void* self, const void* src);
+// Known callee 0x005BFA80: sub_005BFA80 (329B) (thiscall; ecx = self-0xC, args: (sub, out_vec3*)).
+extern void ext_005BFA80(void* self, void* sub, float* out);
+
+// @name NMData::MetaBodyData::vfunc_5_off_C
+// @class NMData::MetaBodyData
+// @summary Divides the src float triple by the sub-object's reference vector, copies the reference into the sub-object, optionally notifies the object at +0x04 via vtable slot 0x34, and forwards the result to sub_005BFA80.
+// @field NMData::MetaBodyData +0x04 void* field_0x04
+// @field NMData::MetaBodyData +0x14C void* field_0x14C
+void fn_005BFBD0(void* self, const float* src) {
+    void* sub_ptr = lift_field<void*>(self, 0x14C);
+    if (sub_ptr == nullptr) {
+        return;
+    }
+
+    uint8_t* sub = reinterpret_cast<uint8_t*>(sub_ptr) + 0x24;
+
+    // Reference vector p = sub->vfunc_118()
+    float* p = ext_005B11F0(sub);
+    float p0 = p[0];
+    float p1 = p[1];
+    float p2 = p[2];
+
+    // Copy the source into the sub-object.
+    ext_005B1B60(sub, src);
+
+    float r[3];
+    r[0] = src[0] / p0;
+    r[1] = 0.0f;
+    r[2] = 0.0f;
+
+    int32_t type = lift_field<int32_t>(sub, 0x8);
+    if (type == 4 || type == 5) {
+        r[1] = 0.0f;
+        r[2] = src[1] / p1;
+    } else {
+        r[1] = src[1] / p1;
+        r[2] = src[2] / p2;
+    }
+
+    void* obj = lift_field<void*>(self, 0x4);
+    if (obj != nullptr) {
+        float* p3 = ext_005B11F0(sub);
+        void* vt = lift_field<void*>(obj, 0);
+        auto hook = lift_field<void (*)(void*, float*)>(vt, 0x34);
+        hook(obj, p3);
+    }
+
+    ext_005BFA80(static_cast<uint8_t*>(self) - 0xC, sub, r);
+}
+} // namespace lift_005BFBD0

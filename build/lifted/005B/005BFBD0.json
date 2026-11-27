@@ -1,0 +1,28 @@
+{
+  "va": "0x005BFBD0",
+  "size": 188,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_5_off_C",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_5_off_C",
+  "class": "NMData::MetaBodyData",
+  "signature": "void fn_005BFBD0(void* self, const float* src)",
+  "summary": "Divides the src float triple by the sub-object's reference vector, copies the reference into the sub-object, optionally notifies the object at +0x04 via vtable slot 0x34, and forwards the result to sub_005BFA80.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x14C",
+      "type": "void*",
+      "name": "field_0x14C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:31:51Z"
+}
