@@ -64192,6 +64192,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C2E60": {
+    "name": "Unknown::NotifyNamedChild",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006C2E60(void* self, uint32_t flag)",
+    "summary": "Finds the child named by string 0x00AA88C4 under the sub-object at +0xF0; always calls vtable slot +0x8C of the embedded object at that sub-object +0x1C08 with a pointer to the flag, and if a child was found calls its vtable slot +0x80 with (flag \u0026 0xFF) as a double.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C2ED0": {
     "name": "Unknown::HasNonZeroChildValue",
     "class": "Unknown",

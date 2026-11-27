@@ -2331,3 +2331,41 @@ extern uint32_t __fastcall fn_006C2ED0(void* self) {
     return 1;
 }
 } // namespace lift_006C2ED0
+
+// [0x006C2E60] sub_006C2E60 (112 bytes)
+namespace lift_006C2E60 {
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+extern uint32_t __fastcall ext_00708000(void* self, const char* name);
+
+// String constant pushed as the name argument (0x00AA88C4).
+extern const char mem_00AA88C4[];
+
+// Virtual slot +0x8C on the embedded object at sub-object +0x1C08: (flag pointer, 0, 0, 0), callee cleans up.
+using VirtFlagPtrFn = void(__thiscall*)(void*, void*, int32_t, int32_t, int32_t);
+// Virtual slot +0x80 on the found child: one double argument, callee cleans up.
+using VirtDoubleFn = void(__thiscall*)(void*, double);
+
+// @name Unknown::NotifyNamedChild
+// @class Unknown
+// @summary Finds the child named by string 0x00AA88C4 under the sub-object at +0xF0; always calls vtable slot +0x8C of the embedded object at that sub-object +0x1C08 with a pointer to the flag, and if a child was found calls its vtable slot +0x80 with (flag & 0xFF) as a double.
+// @field Unknown +0xF0 void* field_0xF0 (sub-object pointer; used as this for ext_00708000 and as base for the +0x1C08 embedded object)
+void __thiscall fn_006C2E60(void* self, uint32_t flag) {
+    void* sub = lift_field<void*>(self, 0xF0);
+    uint32_t childAddr = ext_00708000(sub, mem_00AA88C4);
+    void* child = reinterpret_cast<void*>(static_cast<uintptr_t>(childAddr));
+
+    // Embedded object at sub+0x1C08; its first dword is the vtable pointer.
+    void* embedded = static_cast<uint8_t*>(sub) + 0x1C08;
+    void** vtbl = *reinterpret_cast<void***>(embedded);
+
+    // The flag slot is passed by pointer; the asm's byte store of the low byte is a no-op here.
+    uint32_t slot = flag;
+    lift_field<VirtFlagPtrFn>(vtbl, 0x8C)(embedded, &slot, 0, 0, 0);
+
+    if (child != nullptr) {
+        void** childVtbl = *reinterpret_cast<void***>(child);
+        double value = static_cast<double>(static_cast<int32_t>(flag & 0xFFu));
+        lift_field<VirtDoubleFn>(childVtbl, 0x80)(child, value);
+    }
+}
+} // namespace lift_006C2E60
