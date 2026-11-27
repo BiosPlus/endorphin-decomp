@@ -11727,3 +11727,25 @@ void fn_00590770(void* self) {
     lift_field<void*>(self, 0x04) = &mem_00B3F98C;
 }
 } // namespace lift_00590770
+
+// [0x00590E80] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTZ(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_00590E80 {
+// Known callee 0x0067A670: one-time initializer for the static accessor object at mem_00B3F99C (ECX = object).
+extern void ext_0067A670();
+extern int mem_00B3F9A0;   // one-time-init guard flag (bit 0)
+extern int mem_00B3F99C;   // static accessor object (first DWORD = vtable)
+
+// @name ExprParser::ReadWriteMethodType<TransformNode>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTZ(float), 0}>
+// @summary Lazily initializes the static accessor object at mem_00B3F99C once, then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTZ(float), 0}> +0x04 void* accessor
+void fn_00590E80(void* holder) {
+    if ((mem_00B3F9A0 & 1) == 0) {
+        mem_00B3F9A0 |= 1;
+        ext_0067A670();
+        mem_00B3F99C = 0x0095CC04;
+    }
+    lift_field<DWORD>(holder, 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B3F99C));
+}
+} // namespace lift_00590E80
