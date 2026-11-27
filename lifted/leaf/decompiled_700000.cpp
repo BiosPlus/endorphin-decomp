@@ -3024,3 +3024,26 @@ DWORD fn_0070CF10(void* self, int32_t index) {
 }
 } // namespace lift_0070CE90
 } // namespace lift_0070CF10
+
+// [0x0070CF50]
+namespace lift_0070CF50 {
+// @name Unknown::getBoundedEntry_0070CF50
+// @class Unknown
+// @summary Returns the table entry at index (if 0 <= index < getCount()) passed to ext_006E7460; otherwise calls ext_006E7440 on the sub-object at +0x150 and returns 0.
+// @field Unknown +0x80 uint32_t* entryTable
+// @field Unknown +0x150 uint8_t field_0x150
+
+extern int32_t __fastcall ext_0070CF00(void* self);
+extern int32_t __fastcall ext_006E7460(void* self);
+extern void* __thiscall ext_006E7440(void* self, DWORD index);
+
+extern int32_t __thiscall fn_0070CF50(void* self, int32_t index) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    if (index >= 0 && index < ext_0070CF00(self)) {
+        uint32_t* table = *reinterpret_cast<uint32_t**>(p + 0x80);
+        return ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(table[index])));
+    }
+    ext_006E7440(p + 0x150, 0);
+    return 0;
+}
+} // namespace lift_0070CF50

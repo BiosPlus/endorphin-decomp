@@ -1,0 +1,28 @@
+{
+  "va": "0x0070CF50",
+  "size": 64,
+  "orig_symbol": "sub_0070CF50",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::getBoundedEntry_0070CF50",
+  "class": "Unknown",
+  "signature": "extern \"C\" int32_t __thiscall fn_0070CF50(void* self, int32_t index)",
+  "summary": "Returns the table entry at index (if 0 \u003c= index \u003c getCount()) passed to ext_006E7460; otherwise calls ext_006E7440 on the sub-object at +0x150 and returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint32_t*",
+      "name": "entryTable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x150",
+      "type": "uint8_t",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:02Z"
+}

@@ -74705,6 +74705,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0070CE90 (Unknown::getIndexedEntry_0070CE90).",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070CF50": {
+    "name": "Unknown::getBoundedEntry_0070CF50",
+    "class": "Unknown",
+    "signature": "extern \"C\" int32_t __thiscall fn_0070CF50(void* self, int32_t index)",
+    "summary": "Returns the table entry at index (if 0 \u003c= index \u003c getCount()) passed to ext_006E7460; otherwise calls ext_006E7440 on the sub-object at +0x150 and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070E380": {
     "name": "sub_0070E380",
     "signature": "extern \"C\" void __fastcall fn_0070E380(void* self)",
