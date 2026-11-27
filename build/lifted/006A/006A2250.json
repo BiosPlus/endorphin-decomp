@@ -1,0 +1,22 @@
+{
+  "va": "0x006A2250",
+  "size": 188,
+  "orig_symbol": "ExprParser::Operators::Add::vfunc_2",
+  "src_path": "src/ExprParser/Operators/Add.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Add.cpp",
+  "name": "ExprParser::Operators::Add::vfunc_2",
+  "class": "ExprParser::Operators::Add",
+  "signature": "void fn_006A2250(void* self, void* arg1, void* arg2)",
+  "summary": "Pops the last two entries of the arg2 vector (passing them to this's virtual slot 3), then pops the last entry of arg2 (dispatching it) and the last 4-byte entry of arg1.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Add",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:58:42Z"
+}

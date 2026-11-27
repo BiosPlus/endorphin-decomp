@@ -78661,6 +78661,13 @@
     "summary": "Takes the last entry of the input vector (8-byte elements), evaluates it via this-\u003evtable[3], then pops the last 4-byte entry off the output vector.",
     "lifted_path": "lifted/ExprParser/Operators/Abs.cpp"
   },
+  "0x006A2250": {
+    "name": "ExprParser::Operators::Add::vfunc_2",
+    "class": "ExprParser::Operators::Add",
+    "signature": "void fn_006A2250(void* self, void* arg1, void* arg2)",
+    "summary": "Pops the last two entries of the arg2 vector (passing them to this's virtual slot 3), then pops the last entry of arg2 (dispatching it) and the last 4-byte entry of arg1.",
+    "lifted_path": "lifted/ExprParser/Operators/Add.cpp"
+  },
   "0x006A2B10": {
     "name": "TableLookup_006A2B10",
     "signature": "uint32_t fn_006A2B10(uint32_t index)",
