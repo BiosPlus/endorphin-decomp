@@ -70676,6 +70676,13 @@
     "summary": "Scans the pointer array at +0x74 (count at +0x64) for an entry whose first dword equals value; if found, bumps that entry's +4 counter, otherwise allocates a new 8-byte node, initializes it with value, and appends it to the array. Always returns 1.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E9580": {
+    "name": "sub_006E9580",
+    "class": "Unknown",
+    "signature": "uint8_t __fastcall fn_006E9580(void* self, void* /*edx*/, uint32_t key)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E9150 (Unknown::releaseItemByKey_006E9150).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E9610": {
     "name": "countItemsByType",
     "signature": "extern \"C\" int32_t __fastcall fn_006E9610(void* self, void* /*edx*/, int32_t type)",
