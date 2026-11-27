@@ -33222,6 +33222,13 @@
     "summary": "Walks the key range [keyBegin, keyEnd) in 0x14-byte steps, calling ext_0047B170 for each key and checking bounds through _invalid_parameter_noinfo.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
+  "0x0051C440": {
+    "name": "sub_0051C440",
+    "class": "Vector",
+    "signature": "[[noreturn]] static void invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x00560920 (Vector::InsertSortedFloatKey_00560920).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051C5A0": {
     "name": "InitBaseThenZeroTail_0051C5A0",
     "signature": "void* fn_0051C5A0(void* self)",
@@ -33255,6 +33262,13 @@
     "signature": "void vfunc_16_0051C7C0(void* self)",
     "summary": "Range-checks field_0x30 against field_0x34 (calling the invalid-parameter handler if it exceeds it), then stores the address of this+0x2C at this+0x5C and copies field_0x30 into field_0x60.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
+  "0x0051C8D0": {
+    "name": "sub_0051C8D0",
+    "class": "Vector",
+    "signature": "[[noreturn]] static void invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x00560920 (Vector::InsertSortedFloatKey_00560920).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x0051C980": {
     "name": "sub_0051C980",
@@ -37058,6 +37072,20 @@
     "class": "Unknown",
     "signature": "void fn_005417E0(void* self, float scale)",
     "summary": "Forwards scale to the target of each list node (node+0x28) when flag +0x13D is set, otherwise forwards it to the indexed slot selected by +0xF8; list walk stops when cursor reaches the sentinel at +0x110.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x00541890": {
+    "name": "sub_00541890",
+    "class": "Unknown",
+    "signature": "void fn_00541890(void* self, float scale)",
+    "summary": "Auto-lifted identical-shape clone of 0x005417E0 (Unknown::forwardScaleToItems_005417E0).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x00541940": {
+    "name": "sub_00541940",
+    "class": "Unknown",
+    "signature": "void fn_00541940(void* self, float scale)",
+    "summary": "Auto-lifted identical-shape clone of 0x005417E0 (Unknown::forwardScaleToItems_005417E0).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x00541AB0": {
@@ -98432,6 +98460,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070BB80": {
+    "name": "sub_0070BB80",
+    "class": "Unknown",
+    "signature": "extern void* __thiscall fn_0070BB80(void* self, const double* values)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070BC20 (Unknown::SetValueTriple).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070BBD0": {
     "name": "Unknown::FillTripleFromChains",
     "class": "Unknown",
@@ -98458,6 +98493,13 @@
     "class": "Unknown",
     "signature": "static inline void* lift_0070BBD0_ptr(int32_t v)",
     "summary": "Auto-lifted identical-shape clone of 0x0070BBD0 (Unknown::FillTripleFromChains).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070BD60": {
+    "name": "sub_0070BD60",
+    "class": "Unknown",
+    "signature": "extern void* __thiscall fn_0070BD60(void* self, const double* values)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070BC20 (Unknown::SetValueTriple).",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070BDB0": {

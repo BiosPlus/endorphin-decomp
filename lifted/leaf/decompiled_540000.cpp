@@ -2799,3 +2799,115 @@ void fn_005417E0(void* self, float scale) {
     }
 }
 } // namespace lift_005417E0
+
+// [0x00541890] sub_00541890 (171 bytes)
+namespace lift_00541890 {
+// @name sub_00541890
+// @summary Auto-lifted identical-shape clone of 0x005417E0 (Unknown::forwardScaleToItems_005417E0).
+namespace lift_005417E0 {
+// Known callee 0x00547D10: Unknown::forwardOrAccumulateClamped_00547D10 (thiscall, float arg on stack, callee pops.)
+extern void ext_00547D70(void* self, float scale);
+// Known callee 0x00673C20: sub_00673C20 (auto-lifted clone of advanceCursorSkipFlagged; advances a {container,node} cursor.)
+extern void ext_00673C20(void* self);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (MSVC iterator debug checks; boilerplate, not ported).
+extern int mem_00925134;
+
+// @name Unknown::forwardScaleToItems_005417E0
+// @class Unknown
+// @summary Forwards scale to the target of each list node (node+0x28) when flag +0x13D is set, otherwise forwards it to the indexed slot selected by +0xF8; list walk stops when cursor reaches the sentinel at +0x110.
+// @field Unknown +0x08 void* slotTable
+// @field Unknown +0xF8 uint32_t slotIndex
+// @field Unknown +0x110 void* listSentinelPtr
+// @field Unknown +0x13D uint8_t useListFlag
+// @field ListNode +0x28 void* target
+void fn_00541890(void* self, float scale) {
+    struct Cursor {
+        uint8_t* container;
+        uint8_t* node;
+    };
+
+    (void)&mem_00925134;  // metadata-only reference; invalid_parameter checks are not semantic
+
+    auto* base = static_cast<uint8_t*>(self);
+
+    if (base[0x13D] == 0) {
+        uint32_t idx = *reinterpret_cast<uint32_t*>(base + 0xF8);
+        uint32_t off = idx * 15u;  // (idx << 4) - idx
+        void* target = *reinterpret_cast<void**>(base + 0x8 + 4u * off);
+        ext_00547D70(target, scale);
+        return;
+    }
+
+    Cursor cur{};
+    cur.container = base + 0x10C;
+    uint8_t* sentinel = *reinterpret_cast<uint8_t**>(base + 0x110);
+    cur.node = *reinterpret_cast<uint8_t**>(sentinel);
+
+    for (;;) {
+        uint8_t* end = *reinterpret_cast<uint8_t**>(base + 0x110);
+        if (cur.node == end) {
+            break;
+        }
+        void* nodeTarget = *reinterpret_cast<void**>(cur.node + 0x28);
+        ext_00547D70(nodeTarget, scale);
+        ext_00673C20(&cur);
+    }
+}
+} // namespace lift_005417E0
+} // namespace lift_00541890
+
+// [0x00541940] sub_00541940 (171 bytes)
+namespace lift_00541940 {
+// @name sub_00541940
+// @summary Auto-lifted identical-shape clone of 0x005417E0 (Unknown::forwardScaleToItems_005417E0).
+namespace lift_005417E0 {
+// Known callee 0x00547D10: Unknown::forwardOrAccumulateClamped_00547D10 (thiscall, float arg on stack, callee pops.)
+extern void ext_00547DC0(void* self, float scale);
+// Known callee 0x00673C20: sub_00673C20 (auto-lifted clone of advanceCursorSkipFlagged; advances a {container,node} cursor.)
+extern void ext_00673C20(void* self);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (MSVC iterator debug checks; boilerplate, not ported).
+extern int mem_00925134;
+
+// @name Unknown::forwardScaleToItems_005417E0
+// @class Unknown
+// @summary Forwards scale to the target of each list node (node+0x28) when flag +0x13D is set, otherwise forwards it to the indexed slot selected by +0xF8; list walk stops when cursor reaches the sentinel at +0x110.
+// @field Unknown +0x08 void* slotTable
+// @field Unknown +0xF8 uint32_t slotIndex
+// @field Unknown +0x110 void* listSentinelPtr
+// @field Unknown +0x13D uint8_t useListFlag
+// @field ListNode +0x28 void* target
+void fn_00541940(void* self, float scale) {
+    struct Cursor {
+        uint8_t* container;
+        uint8_t* node;
+    };
+
+    (void)&mem_00925134;  // metadata-only reference; invalid_parameter checks are not semantic
+
+    auto* base = static_cast<uint8_t*>(self);
+
+    if (base[0x13D] == 0) {
+        uint32_t idx = *reinterpret_cast<uint32_t*>(base + 0xF8);
+        uint32_t off = idx * 15u;  // (idx << 4) - idx
+        void* target = *reinterpret_cast<void**>(base + 0x8 + 4u * off);
+        ext_00547DC0(target, scale);
+        return;
+    }
+
+    Cursor cur{};
+    cur.container = base + 0x10C;
+    uint8_t* sentinel = *reinterpret_cast<uint8_t**>(base + 0x110);
+    cur.node = *reinterpret_cast<uint8_t**>(sentinel);
+
+    for (;;) {
+        uint8_t* end = *reinterpret_cast<uint8_t**>(base + 0x110);
+        if (cur.node == end) {
+            break;
+        }
+        void* nodeTarget = *reinterpret_cast<void**>(cur.node + 0x28);
+        ext_00547DC0(nodeTarget, scale);
+        ext_00673C20(&cur);
+    }
+}
+} // namespace lift_005417E0
+} // namespace lift_00541940

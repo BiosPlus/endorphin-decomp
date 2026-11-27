@@ -3491,3 +3491,91 @@ extern void* __thiscall fn_0070BC20(void* self, const double* values) {
     return ret;
 }
 } // namespace lift_0070BC20
+
+// [0x0070BB80] sub_0070BB80 (80 bytes)
+namespace lift_0070BB80 {
+// @name sub_0070BB80
+// @summary Auto-lifted identical-shape clone of 0x0070BC20 (Unknown::SetValueTriple).
+namespace lift_0070BC20 {
+void* __thiscall ext_006DC460(void* self);
+void* __thiscall ext_006C97B0(void* self, float val);
+void* __thiscall ext_006C97D0(void* self, float val);
+void* __thiscall ext_006C97F0(void* self, float val);
+void* __thiscall ext_006CD330(void* self);
+
+// Listed in callee metadata but not called in the disassembly of 0x0070BC20.
+void ext_006B9D80();
+void ext_006C9870();
+void ext_006C9890();
+void ext_006C98B0();
+void ext_00706AF0();
+
+// @name Unknown::SetValueTriple
+// @class Unknown
+// @summary Resolves a child object via GetValueIfCountPositive, converts three doubles at values[0..2] to floats, and applies each through sub-object setters (ext_006C9810, ext_006C9830, ext_006C9850) followed by ext_006CD330.
+extern void* __thiscall fn_0070BB80(void* self, const double* values) {
+    void* base = ext_006DC460(self);
+
+    void* h0 = ext_006C97B0(base, static_cast<float>(values[0]));
+    ext_006CD330(h0);
+
+    void* h1 = ext_006C97D0(base, static_cast<float>(values[1]));
+    ext_006CD330(h1);
+
+    void* h2 = ext_006C97F0(base, static_cast<float>(values[2]));
+    void* ret = ext_006CD330(h2);
+
+    (void)&ext_006B9D80;
+    (void)&ext_006C9870;
+    (void)&ext_006C9890;
+    (void)&ext_006C98B0;
+    (void)&ext_00706AF0;
+
+    return ret;
+}
+} // namespace lift_0070BC20
+} // namespace lift_0070BB80
+
+// [0x0070BD60] sub_0070BD60 (80 bytes)
+namespace lift_0070BD60 {
+// @name sub_0070BD60
+// @summary Auto-lifted identical-shape clone of 0x0070BC20 (Unknown::SetValueTriple).
+namespace lift_0070BC20 {
+void* __thiscall ext_006DC460(void* self);
+void* __thiscall ext_006C9750(void* self, float val);
+void* __thiscall ext_006C9770(void* self, float val);
+void* __thiscall ext_006C9790(void* self, float val);
+void* __thiscall ext_006CD330(void* self);
+
+// Listed in callee metadata but not called in the disassembly of 0x0070BC20.
+void ext_006B9D80();
+void ext_006C9870();
+void ext_006C9890();
+void ext_006C98B0();
+void ext_00706AF0();
+
+// @name Unknown::SetValueTriple
+// @class Unknown
+// @summary Resolves a child object via GetValueIfCountPositive, converts three doubles at values[0..2] to floats, and applies each through sub-object setters (ext_006C9810, ext_006C9830, ext_006C9850) followed by ext_006CD330.
+extern void* __thiscall fn_0070BD60(void* self, const double* values) {
+    void* base = ext_006DC460(self);
+
+    void* h0 = ext_006C9750(base, static_cast<float>(values[0]));
+    ext_006CD330(h0);
+
+    void* h1 = ext_006C9770(base, static_cast<float>(values[1]));
+    ext_006CD330(h1);
+
+    void* h2 = ext_006C9790(base, static_cast<float>(values[2]));
+    void* ret = ext_006CD330(h2);
+
+    (void)&ext_006B9D80;
+    (void)&ext_006C9870;
+    (void)&ext_006C9890;
+    (void)&ext_006C98B0;
+    (void)&ext_00706AF0;
+
+    return ret;
+}
+} // namespace lift_0070BC20
+} // namespace lift_0070BD60

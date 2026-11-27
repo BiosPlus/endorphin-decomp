@@ -1,0 +1,14 @@
+{
+  "va": "0x0070BD60",
+  "size": 80,
+  "orig_symbol": "sub_0070BD60",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_0070BD60",
+  "class": "Unknown",
+  "signature": "extern void* __thiscall fn_0070BD60(void* self, const double* values)",
+  "summary": "Auto-lifted identical-shape clone of 0x0070BC20 (Unknown::SetValueTriple).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:48:00Z"
+}
