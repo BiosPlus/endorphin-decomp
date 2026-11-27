@@ -84380,6 +84380,13 @@
     "summary": "Frees the buffer pointed to by *p (if non-null) via CRT free and nulls *p; no-op if p is null.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007A5F20": {
+    "name": "countMatchingEntries",
+    "class": "ListOwner",
+    "signature": "uint32_t sub_007A5F20(uint32_t self)",
+    "summary": "Calls ext_007B9360 on this, then counts entries in the list at +0x8 whose lookup with key 0x4700 finds a node.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007A74E0": {
     "name": "CountKeyMatchesInTree",
     "signature": "uint32_t fn_007A74E0(uint32_t root)",

@@ -1,0 +1,22 @@
+{
+  "va": "0x007A5F20",
+  "size": 96,
+  "orig_symbol": "sub_007A5F20",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "countMatchingEntries",
+  "class": "ListOwner",
+  "signature": "uint32_t sub_007A5F20(uint32_t self)",
+  "summary": "Calls ext_007B9360 on this, then counts entries in the list at +0x8 whose lookup with key 0x4700 finds a node.",
+  "fields": [
+    {
+      "class": "ListOwner",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "list"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-27T09:18:21Z"
+}

@@ -1883,3 +1883,37 @@ uint32_t fn_007A74E0(uint32_t root) {
     return count & 0xFFFFu;
 }
 } // namespace lift_007A74E0
+
+// [0x007A5F20]
+namespace lift_007A5F20 {
+extern uint32_t ext_007B9360(uint32_t self);
+extern uint32_t ext_007B2D80(uint32_t root, uint32_t key, uint32_t* out);
+
+// @name countMatchingEntries
+// @class ListOwner
+// @summary Calls ext_007B9360 on this, then counts entries in the list at +0x8 whose lookup with key 0x4700 finds a node.
+// @field ListOwner +0x08 uint32_t list
+uint32_t sub_007A5F20(uint32_t self)
+{
+    uint32_t count = 0;
+    ext_007B9360(self);
+    uint32_t list = *(uint32_t*)(self + 0x8);
+    if (list == 0) {
+        return 0;
+    }
+    uint32_t i = 0;
+    if (*(uint32_t*)list != 0) {
+        do {
+            uint32_t arr = *(uint32_t*)(list + 4);
+            uint32_t out;
+            ext_007B2D80(*(uint32_t*)(arr + 8 * i + 4), 0x4700, &out);
+            if (out != 0) {
+                count++;
+            }
+            list = *(uint32_t*)(self + 0x8);
+            i++;
+        } while (i < *(uint32_t*)list);
+    }
+    return count;
+}
+} // namespace lift_007A5F20
