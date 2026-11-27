@@ -28,7 +28,11 @@ struct NMData_FixedPathJointData_Fields {
     // +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x184 void*                    field_0x184  (evidence: 0x005E02D0)
     // +0x194 int32_t                  field_0x194  (evidence: 0x005E4850)
+    // +0x1D4 void** field_0x1d4 (begin of pointer vector)  (evidence: 0x005ECE20)
+    // +0x1D8 void** field_0x1d8 (end of pointer vector)  (evidence: 0x005ECE20)
     // +0x1F8 void**                   field_0x1f8  (evidence: 0x005ECB10)
     // +0x1FC void**                   field_0x1fc  (evidence: 0x005ECB10)
+    // +0x204 void** field_0x204 (begin of element pointer vector)  (evidence: 0x005ECE20)
+    // +0x208 void** field_0x208 (end of element pointer vector)  (evidence: 0x005ECE20)
 };
 } // namespace lifted_layout

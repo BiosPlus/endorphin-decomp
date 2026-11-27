@@ -447,3 +447,62 @@ void* fn_005E1CD0(void* self) {
     return static_obj;
 }
 } // namespace lift_005E1CD0
+
+// [0x005ECE20] NMData::FixedPathJointData::vfunc_35 (274 bytes)
+namespace lift_005ECE20 {
+// Known callee 0x005ECDC0: Unknown::MarkVectorElementsFlag4
+extern void __thiscall ext_005ECDC0(void* self);
+// Known callee 0x00584AE0: descriptiveName_00584AE0
+extern int __thiscall ext_00584AE0(void* self);
+// Known callee 0x005E0EB0: computeClampedScaledLength
+extern float __thiscall ext_005E0EB0(void* self, const float* vec);
+extern int mem_00B40640;
+// MSVCR80!_invalid_parameter_noinfo import slot (debug iterator checks; metadata only)
+extern int mem_00925134;
+
+// @name NMData::FixedPathJointData::vfunc_35
+// @class NMData::FixedPathJointData
+// @summary Marks the element vector, then for each entry in the pointer vector at +0x1D4 whose flag test fails, computes a clamped length and forwards a 3-float vector to the matching element's vtable slot 13.
+// @field NMData::FixedPathJointData +0x1D4 void** field_0x1d4 (begin of pointer vector)
+// @field NMData::FixedPathJointData +0x1D8 void** field_0x1d8 (end of pointer vector)
+// @field NMData::FixedPathJointData +0x204 void** field_0x204 (begin of element pointer vector)
+// @field NMData::FixedPathJointData +0x208 void** field_0x208 (end of element pointer vector)
+void __thiscall fn_005ECE20(void* self) {
+    ext_005ECDC0(self);
+    (void)&mem_00925134;
+
+    void** begin = lift_field<void**>(self, 0x1D4);
+    void** end = lift_field<void**>(self, 0x1D8);
+    uint32_t counter = 0;
+
+    for (void** it = begin; it != end; ++it) {
+        void* obj = *it;
+        if (ext_00584AE0(obj) != 0) {
+            continue;
+        }
+
+        // obj+4 is a secondary (interface) sub-object; call its vtable slot 3.
+        void** iface = *reinterpret_cast<void***>(reinterpret_cast<uint8_t*>(obj) + 4);
+        using GetVecFn = void* (__thiscall*)(void* self_sub, uint32_t arg);
+        GetVecFn get_vec = reinterpret_cast<GetVecFn>(iface[3]);
+        void* result = get_vec(reinterpret_cast<uint8_t*>(obj) + 4,
+                               static_cast<uint32_t>(mem_00B40640));
+
+        const float* vec = reinterpret_cast<const float*>(reinterpret_cast<uint8_t*>(result) + 0x30);
+        float tmp[3];
+        tmp[0] = vec[0];
+        tmp[1] = vec[1];
+        tmp[2] = ext_005E0EB0(self, vec);
+
+        void** elems = lift_field<void**>(self, 0x204);
+        void* elem = elems[counter];
+        if (elem != nullptr) {
+            void** vt = *reinterpret_cast<void***>(elem);
+            using ElemFn = void(__thiscall*)(void* self_elem, float* out);
+            ElemFn fn = reinterpret_cast<ElemFn>(vt[13]);
+            fn(elem, tmp);
+        }
+        ++counter;
+    }
+}
+} // namespace lift_005ECE20

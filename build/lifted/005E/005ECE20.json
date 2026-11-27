@@ -1,0 +1,40 @@
+{
+  "va": "0x005ECE20",
+  "size": 274,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_35",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_35",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void __thiscall fn_005ECE20(void* self)",
+  "summary": "Marks the element vector, then for each entry in the pointer vector at +0x1D4 whose flag test fails, computes a clamped length and forwards a 3-float vector to the matching element's vtable slot 13.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1D4",
+      "type": "void** field_0x1d4 (begin of pointer",
+      "name": "vector)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1D8",
+      "type": "void** field_0x1d8 (end of pointer",
+      "name": "vector)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x204",
+      "type": "void** field_0x204 (begin of element pointer",
+      "name": "vector)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x208",
+      "type": "void** field_0x208 (end of element pointer",
+      "name": "vector)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:02:01Z"
+}

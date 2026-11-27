@@ -54162,6 +54162,13 @@
     "summary": "Walks the pointer vector at this+0x204..+0x208 and sets byte +4 of each pointed-to object to 1.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005ECE20": {
+    "name": "NMData::FixedPathJointData::vfunc_35",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void __thiscall fn_005ECE20(void* self)",
+    "summary": "Marks the element vector, then for each entry in the pointer vector at +0x1D4 whose flag test fails, computes a clamped length and forwards a 3-float vector to the matching element's vtable slot 13.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005ED2C0": {
     "name": "Tree::lower_bound_pair (descriptive; owner class not yet identified)",
     "class": "_Tree",
