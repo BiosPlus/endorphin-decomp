@@ -11876,3 +11876,32 @@ void fn_005B86D0(void* holder) {
         static_cast<DWORD>(reinterpret_cast<std::uintptr_t>(&mem_00B43D04));
 }
 } // namespace lift_005B86D0
+
+// [0x005B3170] ExprParser::ReadWriteMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: void __thiscall Geometry::setTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>)>::vfunc_40 (122 bytes)
+namespace lift_005B3170 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern uint32_t __thiscall ext_0067A670(void* self, uint32_t value);
+extern uint32_t mem_00B43548;
+extern uint32_t mem_00B43544;
+
+// @name ExprParser::ReadWriteMethodType<Geometry>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: void __thiscall Geometry::setTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>)>
+// @summary One-time initializes the static accessor object at mem_00B43544 (vtable 0x96076c) and binds holder+0x04 to it; later calls only rebind.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005B3170(void* holder) {
+    // Static accessor object (its first DWORD is the vtable pointer).
+    void* const accessor = &mem_00B43544;
+
+    // One-time init guard (bit 0 of the flag dword). The original MSVC
+    // SEH frame (fs:[0] push/pop) used for the function-local static guard
+    // is dropped; it has no portable equivalent and no observable effect here.
+    if ((mem_00B43548 & 1u) == 0) {
+        mem_00B43548 |= 1u;
+        ext_0067A670(accessor, 0u);
+        mem_00B43544 = 0x0096076Cu; // vtable pointer for the accessor
+    }
+
+    // Bind holder+0x04 to the static accessor object.
+    lift_field<uint32_t>(holder, 0x04) = 0x00B43544u;
+}
+} // namespace lift_005B3170
