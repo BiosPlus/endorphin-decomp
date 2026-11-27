@@ -23,6 +23,7 @@ void fn_0051C7C0(void* self) {
     lift_field<int32_t>(self, 0x60) = begin;
 }
 #include <cstdint>
+#include <string>
 
 // [0x0051D8C0]
 // @name NMData::QuatChannel::vfunc_8
@@ -134,3 +135,51 @@ float fn_0051ADC0(void* self) {
     return *reinterpret_cast<const float*>(static_cast<uintptr_t>(last));
 }
 } // namespace lift_0051ADC0
+
+// [0x0051A130] NMData::QuatChannel::vfunc_12 (220 bytes)
+namespace lift_0051A130 {
+extern void* ext_00660A50();
+// Known callee 0x006721D0: sub_006721D0 (Auto-lifted identical-shape clone of 0x006722B0 (sub_0067AEE8).)
+extern void ext_006721D0(void* self, void* arg);
+extern int mem_00B599BC;
+extern const char mem_009521E4[];
+// MSVCP80 basic_string ctor/dtor IAT slots: replaced by std::string below (metadata only).
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name NMData::QuatChannel::vfunc_12
+// @class NMData::QuatChannel
+// @summary Asks the global accessor object for a slot-5 result, and if it yields a non-sentinel pointer, runs slot 8 with a temporary std::string, assigns the result, then releases the outstanding pointers.
+// @field NMData::QuatChannel +0x04 void* field_0x04
+void fn_0051A130(void* self, void* arg1) {
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    void* a = ext_00660A50();
+    uint32_t r[2] = {0, 0};
+    void** vta = *reinterpret_cast<void***>(a);
+    reinterpret_cast<void (*)(void*, void*, void*, void*, int)>(vta[5])(
+        a, r, static_cast<uint8_t*>(self) + 4, arg1, 0);
+
+    void* p = lift_field<void*>(r, 4);
+    if (p != nullptr &&
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p)) != static_cast<uint32_t>(mem_00B599BC)) {
+        std::string s(mem_009521E4);
+        uint32_t q[2] = {0, 0};
+        void** vts = *reinterpret_cast<void***>(self);
+        void* ret = reinterpret_cast<void* (*)(void*, void*, void*)>(vts[8])(self, q, &s);
+        ext_006721D0(r, ret);
+        void* q2 = lift_field<void*>(q, 4);
+        if (q2 != nullptr) {
+            void** vtq = *reinterpret_cast<void***>(q2);
+            reinterpret_cast<void (*)(void*, void*)>(vtq[30])(q2, q);
+        }
+    }
+
+    void* last = lift_field<void*>(r, 4);
+    if (last != nullptr) {
+        uint32_t tmp[2] = {0, 0};
+        void** vtl = *reinterpret_cast<void***>(last);
+        reinterpret_cast<void (*)(void*, void*)>(vtl[30])(last, tmp);
+    }
+}
+} // namespace lift_0051A130

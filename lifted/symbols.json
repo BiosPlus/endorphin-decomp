@@ -31020,6 +31020,13 @@
     "summary": "Fetches a helper object, queries it for a (tag, object) pair keyed by this+4 and arg, and if the object is valid and not the sentinel, resolves it through vtable slot 0x20 and ext_006721D0; the pair object is released through vtable slot 0x78 in all non-null cases.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051A130": {
+    "name": "NMData::QuatChannel::vfunc_12",
+    "class": "NMData::QuatChannel",
+    "signature": "void fn_0051A130(void* self, void* arg1)",
+    "summary": "Asks the global accessor object for a slot-5 result, and if it yields a non-sentinel pointer, runs slot 8 with a temporary std::string, assigns the result, then releases the outstanding pointers.",
+    "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
   "0x0051A210": {
     "name": "getStaticBoolString_0051A210",
     "signature": "void* fn_0051A210()",

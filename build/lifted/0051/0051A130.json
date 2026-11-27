@@ -1,0 +1,22 @@
+{
+  "va": "0x0051A130",
+  "size": 220,
+  "orig_symbol": "NMData::QuatChannel::vfunc_12",
+  "src_path": "src/NMData/QuatChannel.cpp",
+  "lifted_path": "lifted/NMData/QuatChannel.cpp",
+  "name": "NMData::QuatChannel::vfunc_12",
+  "class": "NMData::QuatChannel",
+  "signature": "void fn_0051A130(void* self, void* arg1)",
+  "summary": "Asks the global accessor object for a slot-5 result, and if it yields a non-sentinel pointer, runs slot 8 with a temporary std::string, assigns the result, then releases the outstanding pointers.",
+  "fields": [
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:33:33Z"
+}
