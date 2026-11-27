@@ -601,6 +601,12 @@
     "summary": "Bounds-checked lookup returning the first dword of an 88-byte element in a vector at +0x564 using index at +0x684.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00405FB0": {
+    "name": "throwErrorFromLiteral",
+    "signature": "void fn_00405FB0(void* self)",
+    "summary": "Builds a std::string from the .rdata literal at 0x928F30 and throws it wrapped in a std::exception-derived object.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406030": {
     "name": "allocateObjectArray_00406030",
     "signature": "void* fn_00406030(uint32_t count)",

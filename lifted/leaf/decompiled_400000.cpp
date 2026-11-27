@@ -2020,3 +2020,27 @@ void fn_00406380(char* begin, char* end) {
     }
 }
 } // namespace lift_00406380
+
+// [0x00405FB0] sub_00405FB0 (112 bytes)
+namespace lift_00405FB0 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_00924FE4;
+extern int mem_009251C4;
+extern int mem_00924FE0;
+extern const char mem_00928F30[];
+
+// @name throwErrorFromLiteral
+// @summary Builds a std::string from the .rdata literal at 0x928F30 and throws it wrapped in a std::exception-derived object.
+void fn_00405FB0(void* self) {
+    (void)self;
+    // Keep original import/global references visible for differential testing;
+    // these are the MSVCP80/MSVCR80 helpers the asm calls through the IAT.
+    (void)&mem_00924FE4;
+    (void)&mem_009251C4;
+    (void)&mem_00924FE0;
+    (void)&ext_006A6DD2;
+
+    throw std::runtime_error(std::string(mem_00928F30));
+}
+} // namespace lift_00405FB0
