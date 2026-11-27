@@ -2279,3 +2279,32 @@ DWORD fn_00420850(void* self, DWORD arg) {
     return index + 4;
 }
 } // namespace lift_00420850
+
+// [0x00427FE0]
+namespace lift_00427FE0 {
+// @name checkBoundedIndexOrThrow_00427FE0
+// @summary Validates a bounded index via ext_00420850 and throws a C++ exception on zero result.
+// @field arg +0x00 uint32_t flag
+
+    DWORD ext_00420850(void* self, DWORD arg);
+    void* ext_00664C30(void* out_str, uint8_t flag);
+    void* ext_00420530(void);
+    void* __thiscall ext_0041FF30(void* self, void* a1, void* a2);
+    void ext_006A6DD2(void* exc, void* throw_info);
+
+DWORD __stdcall fn_00427FE0(void* arg) {
+    DWORD res = ext_00420850(arg, 0);
+    if (res != 0) {
+        return res;
+    }
+
+    uint8_t out_str[32];
+    uint8_t exc[64];
+    uint32_t flag = *reinterpret_cast<uint32_t*>(arg);
+    void* s1 = ext_00664C30(out_str, static_cast<uint8_t>(flag));
+    void* s2 = ext_00420530();
+    ext_0041FF30(exc, s2, s1);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009D3748));
+    return 0;
+}
+} // namespace lift_00427FE0

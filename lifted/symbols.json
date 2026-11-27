@@ -3351,6 +3351,12 @@
     "summary": "Checks the iterator's container and bounds, steps elem_ptr forward by one 4-byte slot, then advances to the next matching element",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00427FE0": {
+    "name": "checkBoundedIndexOrThrow_00427FE0",
+    "signature": "DWORD __stdcall fn_00427FE0(void* arg)",
+    "summary": "Validates a bounded index via ext_00420850 and throws a C++ exception on zero result.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004280C0": {
     "name": "TreeMap::findInsertPoint",
     "class": "TreeMap",

@@ -1,0 +1,21 @@
+{
+  "va": "0x00427FE0",
+  "size": 112,
+  "orig_symbol": "sub_00427FE0",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "checkBoundedIndexOrThrow_00427FE0",
+  "signature": "DWORD __stdcall fn_00427FE0(void* arg)",
+  "summary": "Validates a bounded index via ext_00420850 and throws a C++ exception on zero result.",
+  "fields": [
+    {
+      "class": "arg",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:19:02Z"
+}
