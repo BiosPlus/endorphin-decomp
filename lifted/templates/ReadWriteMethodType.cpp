@@ -12441,3 +12441,28 @@ void fn_005D2390(void* holder) {
         reinterpret_cast<void*>(&mem_00B459D0);
 }
 } // namespace lift_005D2390
+
+// [0x005D2310] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setEndFrame(int)>::vfunc_40 (122 bytes)
+namespace lift_005D2310 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores the single stack argument into the first DWORD of self; returns it).
+extern DWORD ext_0067A670(void* self, DWORD value);
+// Function-local static guard dword (bit 0 = initialized); also the +0x04 slot of the static accessor object.
+extern DWORD mem_00B459CC;
+// Static accessor object; first DWORD is its vtable pointer.
+extern DWORD mem_00B459C8;
+
+// @name ReadWriteMethodType<VideoPlaneData,int>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setEndFrame(int)>
+// @summary Lazily constructs the static accessor object once (guarded by a bit in mem_00B459CC), then stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005D2310(void* holder) {
+    // MSVC EH frame setup (fs:[0] push/pop) is boilerplate and omitted.
+    if ((mem_00B459CC & 1u) == 0) {
+        mem_00B459CC |= 1u;
+        ext_0067A670(&mem_00B459C8, 0);
+        mem_00B459C8 = 0x0096617Cu;  // vtable pointer of the accessor object
+    }
+    // Store the accessor object address (32-bit target; literal avoids host pointer truncation).
+    *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(holder) + 0x04) = 0x00B459C8u;
+}
+} // namespace lift_005D2310

@@ -35420,6 +35420,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D2310": {
+    "name": "ReadWriteMethodType\u003cVideoPlaneData,int\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, int, \u0026public: void __thiscall NMData::VideoPlaneData::setEndFrame(int)\u003e",
+    "signature": "void fn_005D2310(void* holder)",
+    "summary": "Lazily constructs the static accessor object once (guarded by a bit in mem_00B459CC), then stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005D2390": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData,int\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, int, \u0026public: void __thiscall NMData::VideoPlaneData::setFrameOffset(int)\u003e",
