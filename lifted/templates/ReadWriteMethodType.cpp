@@ -12709,3 +12709,32 @@ void __stdcall fn_005D3D10(void* holder) {
     *reinterpret_cast<DWORD*>(h + 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(accessor));
 }
 } // namespace lift_005D3D10
+
+// [0x005D40F0] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureX(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005D40F0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00B45A34;
+extern int mem_00B45A30;
+
+// @name ReadWriteMethodType<CameraData, float>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureX(float), 0}>
+// @summary Lazily constructs the static accessor object at 0x00B45A30 (guarded by bit 0 of 0x00B45A34) and stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureX(float), 0}> +0x04 void* field_0x04
+//
+// `holder` is the single stack argument (ret 0x4) read at [esp+0x10] in the
+// original; the original ECX is overwritten before any use, so it is not an input.
+void fn_005D40F0(void* holder) {
+    // One-time init guard: bit 0 of the flag dword at 0x00B45A34.
+    if ((mem_00B45A34 & 1) == 0) {
+        mem_00B45A34 |= 1;
+        // Constructor call on the static object (ECX = &mem_00B45A30).
+        ext_0067A670();
+        // Vtable pointer of the static accessor object.
+        mem_00B45A30 = 0x0096776C;
+    }
+    // Bind holder+0x04 to the static accessor object (both paths).
+    *reinterpret_cast<void**>(static_cast<unsigned char*>(holder) + 0x04) =
+        reinterpret_cast<void*>(&mem_00B45A30);
+}
+} // namespace lift_005D40F0
