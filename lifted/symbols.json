@@ -22110,6 +22110,12 @@
     "summary": "Sift-up of value into a max-style index heap: moves parents down while the comparator accepts, then stores value at the final hole.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00518840": {
+    "name": "siftUpIndexArray",
+    "signature": "void fn_00518840(uint32_t* base, int32_t hi, int32_t lo, uint32_t val, void* ctx)",
+    "summary": "Sift-up insertion into a 32-bit index array (heap-style parent=(i-1)/2), stopping at lo; stores val into the resulting slot.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519060": {
     "name": "sub_00519060",
     "signature": "void fn_00519060(uint32_t* first, uint32_t* last, uint32_t pred)",

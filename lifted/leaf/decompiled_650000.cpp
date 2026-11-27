@@ -2069,3 +2069,29 @@ void fn_00518700(void* self, uint32_t* arg1, uint32_t* arg2, uint32_t* arg3) {
     compareSwap(arg1, arg2);
 }
 } // namespace lift_00518700
+
+// [0x00518840] sub_00518840 (96 bytes)
+namespace lift_00518840 {
+// Known callee 0x005185D0: Unknown::compareChildValuesLess (Returns whether the double at +0x20 of child[ix2] is less than that of child[ix1] (false on NaN).)
+// Asm calls it with ecx = address of the 5th stack argument, and two stack args (base[i], val).
+extern uint8_t ext_005185D0(void* ctx, uint32_t a, uint32_t b);
+
+// @name siftUpIndexArray
+// @summary Sift-up insertion into a 32-bit index array (heap-style parent=(i-1)/2), stopping at lo; stores val into the resulting slot.
+void fn_00518840(uint32_t* base, int32_t hi, int32_t lo, uint32_t val, void* ctx) {
+    if (lo >= hi) {
+        base[hi] = val;
+        return;
+    }
+    int32_t i = (hi - 1) / 2;
+    do {
+        if (!ext_005185D0(&ctx, base[i], val)) {
+            break;
+        }
+        base[hi] = base[i];
+        hi = i;
+        i = (i - 1) / 2;
+    } while (lo < hi);
+    base[hi] = val;
+}
+} // namespace lift_00518840
