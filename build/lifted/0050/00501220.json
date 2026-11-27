@@ -1,0 +1,13 @@
+{
+  "va": "0x00501220",
+  "size": 126,
+  "orig_symbol": "sub_00501220",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "sub_00501220",
+  "signature": "extern \"C\" uint32_t __thiscall fn_00501220(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Allocates a 0x28-byte object, constructs it via ext_00500E70, registers it with the global manager from ext_00665870 via ext_00666670, and returns arg2.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:53:27Z"
+}
