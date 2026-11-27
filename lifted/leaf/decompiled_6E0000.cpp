@@ -1790,3 +1790,20 @@ extern void* __thiscall fn_006E0900(void* self) {
     return self;
 }
 } // namespace lift_006E0900
+
+// [0x006E7410] sub_006E7410 (32 bytes)
+namespace lift_006E7410 {
+// Known callee 0x006E7430: sub_006E7430 (Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).)
+extern void* __thiscall ext_006E7430(void* self, uint32_t arg1);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* __thiscall ext_006E7440(void* self, uint32_t index);
+
+// @name Unknown::assignStringByIndexAndForward_006E7410
+// @class Unknown
+// @summary Passes the first stack argument as the index to assignStringByIndex (006E7440) on self, then forwards the second stack argument to the subobject call (006E7430) on self and returns its result.
+
+extern void* __thiscall fn_006E7410(void* self, uint32_t arg1, uint32_t arg2) {
+    ext_006E7440(self, arg1);
+    return ext_006E7430(self, arg2);
+}
+} // namespace lift_006E7410

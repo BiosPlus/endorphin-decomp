@@ -1,0 +1,14 @@
+{
+  "va": "0x006E7410",
+  "size": 32,
+  "orig_symbol": "sub_006E7410",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::assignStringByIndexAndForward_006E7410",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_006E7410(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Passes the first stack argument as the index to assignStringByIndex (006E7440) on self, then forwards the second stack argument to the subobject call (006E7430) on self and returns its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:49:51Z"
+}

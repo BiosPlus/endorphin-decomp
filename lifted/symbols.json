@@ -69525,6 +69525,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D2390 (ForwardArgToCalleeReturnThis).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E7410": {
+    "name": "Unknown::assignStringByIndexAndForward_006E7410",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_006E7410(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Passes the first stack argument as the index to assignStringByIndex (006E7440) on self, then forwards the second stack argument to the subobject call (006E7430) on self and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7430": {
     "name": "sub_006E7430",
     "signature": "void* fn_006E7430(void* self, uint32_t arg1)",
