@@ -27280,6 +27280,13 @@
     "summary": "Calls CameraTool::vfunc_32 on self, then tail-calls vtable slot 26 (+0x68) of the object at this+0xA0 with this = that object and returns its result.",
     "lifted_path": "lifted/classes/PoseTool.cpp"
   },
+  "0x00545290": {
+    "name": "PoseTool::vfunc_17",
+    "class": "PoseTool",
+    "signature": "static inline uint32_t call_vslot(void* obj, ptrdiff_t slotOff)",
+    "summary": "Conditionally runs sub-object 0x88 vfunc and a guarded member check, forwards two args to the 0x254 sub-object, resets +0x350, then calls vslots 0x74 and 0x80.",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
   "0x00545320": {
     "name": "PoseTool::vfunc_18",
     "class": "PoseTool",

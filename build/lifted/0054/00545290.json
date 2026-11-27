@@ -1,0 +1,58 @@
+{
+  "va": "0x00545290",
+  "size": 141,
+  "orig_symbol": "PoseTool::vfunc_17",
+  "src_path": "src/classes/PoseTool.cpp",
+  "lifted_path": "lifted/classes/PoseTool.cpp",
+  "name": "PoseTool::vfunc_17",
+  "class": "PoseTool",
+  "signature": "static inline uint32_t call_vslot(void* obj, ptrdiff_t slotOff)",
+  "summary": "Conditionally runs sub-object 0x88 vfunc and a guarded member check, forwards two args to the 0x254 sub-object, resets +0x350, then calls vslots 0x74 and 0x80.",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "PoseTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "PoseTool",
+      "offset": "+0x9C",
+      "type": "uint32_t",
+      "name": "field_0x9c"
+    },
+    {
+      "class": "PoseTool",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "PoseTool",
+      "offset": "+0x254",
+      "type": "void*",
+      "name": "field_0x254"
+    },
+    {
+      "class": "PoseTool",
+      "offset": "+0x338",
+      "type": "uint8_t",
+      "name": "field_0x338"
+    },
+    {
+      "class": "PoseTool",
+      "offset": "+0x350",
+      "type": "uint32_t",
+      "name": "field_0x350"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:27:46Z"
+}

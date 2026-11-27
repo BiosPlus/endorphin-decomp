@@ -305,3 +305,50 @@ void fn_005451B0(void* self) {
     vcall(self, 0x80);
 }
 } // namespace lift_005451B0
+
+// [0x00545290] PoseTool::vfunc_17 (141 bytes)
+namespace lift_00545290 {
+// Known callee 0x00543550: forwardVtableSlot17AndClearFlags (Forwards two stack args to virtual slot 17 (vtable+0x44) on self, then clears the byte flags at self+0x90 and self+0x93.)
+extern void ext_00543550(void* self, uint32_t arg0, uint32_t arg1);
+
+// Call virtual slot at byte offset `slotOff` of `obj` (vtable read from obj+0), passing obj as this.
+static inline uint32_t call_vslot(void* obj, ptrdiff_t slotOff) {
+    void* vtable = lift_field<void*>(obj, 0);
+    void* target = lift_field<void*>(vtable, slotOff);
+    return reinterpret_cast<uint32_t (*)(void*)>(target)(obj);
+}
+
+// @name PoseTool::vfunc_17
+// @class PoseTool
+// @summary Conditionally runs sub-object 0x88 vfunc and a guarded member check, forwards two args to the 0x254 sub-object, resets +0x350, then calls vslots 0x74 and 0x80.
+// @field PoseTool +0x0 void* vtable
+// @field PoseTool +0x88 void* field_0x88
+// @field PoseTool +0x9C uint32_t field_0x9c
+// @field PoseTool +0x16C void* field_0x16c
+// @field PoseTool +0x254 void* field_0x254
+// @field PoseTool +0x338 uint8_t field_0x338
+// @field PoseTool +0x350 uint32_t field_0x350
+uint32_t fn_00545290(void* self, uint32_t arg0, uint32_t arg1) {
+    if (call_vslot(self, 0x38) & 0xFF) {
+        void* sub = lift_field<void*>(self, 0x88);
+        call_vslot(sub, 0xC0);
+    }
+
+    if (lift_field<uint32_t>(self, 0x9C) == 1) {
+        void* member = static_cast<uint8_t*>(self) + 0x16C;
+        if (call_vslot(member, 0x1C) & 0xFF) {
+            if ((call_vslot(self, 0x2C) & 0xFF) == 0) {
+                lift_field<uint8_t>(self, 0x338) = 1;
+            }
+        }
+    }
+
+    void* sub254 = static_cast<uint8_t*>(self) + 0x254;
+    ext_00543550(sub254, arg0, arg1);
+
+    lift_field<uint32_t>(self, 0x350) = 0;
+    call_vslot(self, 0x74);
+    call_vslot(self, 0x80);
+    return 1;
+}
+} // namespace lift_00545290
