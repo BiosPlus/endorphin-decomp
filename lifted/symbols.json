@@ -18552,6 +18552,13 @@
     "summary": "Backward-copies the 8-byte-slot range [first,last) into dest, then returns dest rewound by the range size in bytes (rounded down to a whole slot).",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E1F50": {
+    "name": "SubobjectListDrainAndDispatch",
+    "class": "Unknown",
+    "signature": "void fn_004E1F50(void* self)",
+    "summary": "Clears a flag at this-\u003efield_0x34-\u003e+0x298 if present, then walks the pointer vector [begin,end) at this+0x04/+0x08, calling vtable slot +0x38 on each element's (+0x08) subobject, and finally tail-calls ext_00598A90 with the result of ext_00594000.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E1FC0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1\u003e",

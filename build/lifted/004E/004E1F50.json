@@ -1,0 +1,34 @@
+{
+  "va": "0x004E1F50",
+  "size": 100,
+  "orig_symbol": "sub_004E1F50",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "SubobjectListDrainAndDispatch",
+  "class": "Unknown",
+  "signature": "void fn_004E1F50(void* self)",
+  "summary": "Clears a flag at this-\u003efield_0x34-\u003e+0x298 if present, then walks the pointer vector [begin,end) at this+0x04/+0x08, calling vtable slot +0x38 on each element's (+0x08) subobject, and finally tail-calls ext_00598A90 with the result of ext_00594000.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (vector begin, iterated as uint32",
+      "name": "pointers)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (vector",
+      "name": "end)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "void* field_0x34 (optional owner; +0x298 cleared when",
+      "name": "non-null)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:05:53Z"
+}

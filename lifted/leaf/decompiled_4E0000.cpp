@@ -853,3 +853,46 @@ bool fn_004EFB20(const uint8_t* first1, const uint8_t* last1, void* range, const
     return res.first1 == last1;
 }
 } // namespace lift_004EFB20
+
+// [0x004E1F50] sub_004E1F50 (100 bytes)
+namespace lift_004E1F50 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x00598A90: iterateFlaggedNodesAndDispatch (takes `this` in ecx; tail-called).
+extern void ext_00598A90(void* self);
+// Debug-check handler pointer (IAT slot for _invalid_parameter_noinfo); only read on bounds failure.
+extern int mem_00925134;
+
+// @name SubobjectListDrainAndDispatch
+// @class Unknown
+// @summary Clears a flag at this->field_0x34->+0x298 if present, then walks the pointer vector [begin,end) at this+0x04/+0x08, calling vtable slot +0x38 on each element's (+0x08) subobject, and finally tail-calls ext_00598A90 with the result of ext_00594000.
+// @field Unknown +0x04 void* field_0x04 (vector begin, iterated as uint32 pointers)
+// @field Unknown +0x08 void* field_0x08 (vector end)
+// @field Unknown +0x34 void* field_0x34 (optional owner; +0x298 cleared when non-null)
+void fn_004E1F50(void* self) {
+    (void)&mem_00925134;
+
+    void* owner = lift_field<void*>(self, 0x34);
+    if (owner != nullptr) {
+        lift_field<int32_t>(owner, 0x298) = 0;
+    }
+
+    // Vector of 32-bit element slots: [begin, end) stepping by 4 bytes.
+    const uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    const uint32_t end = lift_field<uint32_t>(self, 0x08);
+
+    using SlotFn = void(__thiscall*)(void*);
+    for (uint32_t cur = begin; cur != end; cur += 4) {
+        // Element is a pointer to a node; the subobject lives at node+0x08.
+        auto* slotAddr = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(cur));
+        void* node = *reinterpret_cast<void**>(slotAddr);
+        void* sub = static_cast<uint8_t*>(node) + 0x08;
+        void* vtbl = lift_field<void*>(sub, 0x00);
+        SlotFn slot = reinterpret_cast<SlotFn>(lift_field<void*>(vtbl, 0x38));
+        slot(sub);
+    }
+
+    const int32_t result = ext_00594000();
+    ext_00598A90(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(result))));
+}
+} // namespace lift_004E1F50

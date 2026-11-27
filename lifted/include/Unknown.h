@@ -246,6 +246,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04 (self -> link pointer)  (evidence: 0x00810200) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (sentinel/head node pointer)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to subobject; its +0xC holds a function pointer)  (evidence: 0x005F56E0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* field_0x04 (vector begin, iterated as uint32 pointers)  (evidence: 0x004E1F50) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 ptrToSrcPlus14  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    ptrToSubobject  (evidence: 0x007155B0, 0x00715710) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 range1_begin  (evidence: 0x00526960, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
@@ -301,6 +302,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t*                end  (evidence: 0x0049E2F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 end  (evidence: 0x00509DE0, 0x00688CC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    end  (evidence: 0x005013F0, 0x00503BC0, 0x0050B960, 0x0050C4D0, 0x00577DE0, 0x0057A770, 0x0057E9E0, 0x00681410, 0x0069A160) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void* field_0x08 (vector end)  (evidence: 0x004E1F50) // CONFLICT: multiple definitions at +0x8
     // +0x8   void** field_0x08 (container element end)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 entriesEnd  (evidence: 0x0068BDF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0, 0x006F8B30, 0x006FC200, 0x00714920, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x8
@@ -785,6 +787,7 @@ struct Unknown_Fields {
     // +0x34  void*                    field_0x34  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x34
     // +0x34  BYTE field_0x34 (bit 0x2 gates the forward)  (evidence: 0x006FA9C0, 0x006FC200) // CONFLICT: multiple definitions at +0x34
     // +0x34  float                    m31  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x34
+    // +0x34  void* field_0x34 (optional owner; +0x298 cleared when non-null)  (evidence: 0x004E1F50) // CONFLICT: multiple definitions at +0x34
     // +0x34  std::string              str_b  (evidence: 0x004B75A0) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint32_t                 value  (evidence: 0x00622B40, 0x00624E50) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint32_t field_0x34 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x34
