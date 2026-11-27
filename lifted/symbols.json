@@ -33249,6 +33249,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00560920 (Vector::InsertSortedFloatKey_00560920).",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x0051C4F0": {
+    "name": "Vector20::insert",
+    "class": "Vector20",
+    "signature": "extern \"C\" void** __fastcall fn_0051C4F0(uint8_t* self, void* /*edx*/, void** result, void* iterCont, uint8_t* iterPtr, const void* val)",
+    "summary": "Inserts one 20-byte element at iterator position and returns an iterator {container, ptr} to it.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051C5A0": {
     "name": "InitBaseThenZeroTail_0051C5A0",
     "signature": "void* fn_0051C5A0(void* self)",

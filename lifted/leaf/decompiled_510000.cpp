@@ -2358,3 +2358,42 @@ bool fn_0051C8D0(void* self, const float* key) {
 }
 } // namespace lift_00560920
 } // namespace lift_0051C8D0
+
+// [0x0051C4F0]
+namespace lift_0051C4F0 {
+extern uint8_t mem_00925134[];
+extern void __fastcall ext_0051BC00(void* self, void* edx, void* contOwner, uint8_t* where, uint32_t count, const void* val);
+
+// @name Vector20::insert
+// @class Vector20
+// @summary Inserts one 20-byte element at iterator position and returns an iterator {container, ptr} to it.
+// @field Vector20 +0x04 uint8_t* first
+// @field Vector20 +0x08 uint8_t* last
+extern void** __fastcall fn_0051C4F0(uint8_t* self, void* /*edx*/, void** result, void* iterCont, uint8_t* iterPtr, const void* val)
+{
+    typedef void (__cdecl *InvalidParamFn)(void);
+    InvalidParamFn invalidParam = *(InvalidParamFn*)mem_00925134;
+
+    uint8_t* first = lift_field<uint8_t*>(self, 0x4);
+    int32_t idx = 0;
+    if (first != nullptr) {
+        uint8_t* last = lift_field<uint8_t*>(self, 0x8);
+        if ((int32_t)(last - first) / 20 != 0) {
+            if (first > last) invalidParam();
+            if (iterCont == nullptr || iterCont != (void*)self) invalidParam();
+            idx = (int32_t)(iterPtr - first) / 20;
+        }
+    }
+
+    ext_0051BC00(self, nullptr, iterCont, iterPtr, 1, val);
+
+    uint8_t* nfirst = lift_field<uint8_t*>(self, 0x4);
+    if (nfirst > lift_field<uint8_t*>(self, 0x8)) invalidParam();
+    uint8_t* p = nfirst + idx * 20;
+    if (p > lift_field<uint8_t*>(self, 0x8) || p < lift_field<uint8_t*>(self, 0x4)) invalidParam();
+
+    result[1] = p;
+    result[0] = self;
+    return result;
+}
+} // namespace lift_0051C4F0
