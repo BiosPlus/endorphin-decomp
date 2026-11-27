@@ -1625,18 +1625,20 @@ void* fn_0054D220(void* self) {
     using StringCtorFn = void(__thiscall*)(void* thisPtr);
     auto strCtor = reinterpret_cast<StringCtorFn>(static_cast<uintptr_t>(mem_00924FE8));
 
-    lift_field<uint32_t>(self, 0x00) = 0x00956E2C;
+    auto* base = static_cast<uint8_t*>(self);
 
-    strCtor(static_cast<uint8_t*>(self) + 0x18);
+    lift_field<uint32_t>(base, 0x00) = 0x00956E2C;
 
-    lift_field<uint8_t>(self, 0x3D) = 0;
+    strCtor(base + 0x18);
 
-    strCtor(static_cast<uint8_t*>(self) + 0x60);
-    strCtor(static_cast<uint8_t*>(self) + 0x9C);
+    lift_field<uint8_t>(base, 0x3D) = 0;
 
-    lift_field<uint32_t>(self, 0xD0) = 0;
-    lift_field<uint32_t>(self, 0xD4) = 0;
-    lift_field<uint8_t>(self, 0xD8) = 0;
+    strCtor(base + 0x60);
+    strCtor(base + 0x9C);
+
+    lift_field<uint32_t>(base, 0xD0) = 0;
+    lift_field<uint32_t>(base, 0xD4) = 0;
+    lift_field<uint8_t>(base, 0xD8) = 0;
 
     return self;
 }
