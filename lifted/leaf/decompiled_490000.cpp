@@ -2375,3 +2375,35 @@ uint32_t fn_00494310(const void* a1, const void* a2) {
     return pos;
 }
 } // namespace lift_00494310
+
+// [0x0049D0F0] sub_0049D0F0 (154 bytes)
+namespace lift_0049D0F0 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_00924FE0;
+extern int mem_00924FE4;
+extern int mem_009251C4;
+
+// @name Counter::AddBounded
+// @class Counter
+// @summary Adds n to the counter at this+0x08 and returns the new value; throws if the sum would exceed 0x00D20D20.
+// @field Counter +0x08 uint32_t field_0x08
+uint32_t fn_0049D0F0(void* self, uint32_t n) {
+    uint32_t& value = lift_field<uint32_t>(self, 0x08);
+
+    // Headroom below the limit 0x00D20D20; original: esi = 0xD20D20 - value; if (esi < n) throw.
+    const uint32_t headroom = 0x00D20D20u - value;
+    if (headroom < n) {
+        // Original builds a std::string / std::exception pair (MSVCP80/MSVCR80 ctors
+        // via IAT slots) and throws. Those ctor slots are only referenced here.
+        (void)&mem_00924FE0;
+        (void)&mem_00924FE4;
+        (void)&mem_009251C4;
+        ext_006A6DD2();
+        return value;
+    }
+
+    value += n;
+    return value;
+}
+} // namespace lift_0049D0F0

@@ -1,0 +1,22 @@
+{
+  "va": "0x0049D0F0",
+  "size": 154,
+  "orig_symbol": "sub_0049D0F0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Counter::AddBounded",
+  "class": "Counter",
+  "signature": "uint32_t fn_0049D0F0(void* self, uint32_t n)",
+  "summary": "Adds n to the counter at this+0x08 and returns the new value; throws if the sum would exceed 0x00D20D20.",
+  "fields": [
+    {
+      "class": "Counter",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:15:41Z"
+}

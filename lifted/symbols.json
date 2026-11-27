@@ -13623,6 +13623,13 @@
     "summary": "One-time initializer guarded by bit 0 of mem_00ADD818; initializes the static object at mem_00ADD814 and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049D0F0": {
+    "name": "Counter::AddBounded",
+    "class": "Counter",
+    "signature": "uint32_t fn_0049D0F0(void* self, uint32_t n)",
+    "summary": "Adds n to the counter at this+0x08 and returns the new value; throws if the sum would exceed 0x00D20D20.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049D190": {
     "name": "InitGlobalStringAndCopyConstruct",
     "signature": "void* fn_0049D190(void* self)",
