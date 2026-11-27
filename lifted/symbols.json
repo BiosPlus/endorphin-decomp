@@ -15664,6 +15664,13 @@
     "summary": "Calls helper sub_0049DA40 and stores its result at object offset +0x04.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049DBF0": {
+    "name": "NMData::State::vfunc_3",
+    "class": "NMData::State",
+    "signature": "void* __thiscall fn_0049DBF0(void* self, void* node)",
+    "summary": "Serializes NMData::State fields and child elements to an XML/data node.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049DF50": {
     "name": "NMData::State::vfunc_14_off_10",
     "class": "NMData::State",
