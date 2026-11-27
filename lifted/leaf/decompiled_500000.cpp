@@ -2481,3 +2481,24 @@ extern void* fn_00504AA0(uint32_t count) {
     return ext_006A5C62(count * 0x28u);
 }
 } // namespace lift_00504AA0
+
+// [0x00508CD0]
+namespace lift_00508CD0 {
+// @name getStaticString_00AEBC14
+// @summary Thread-unsafe static initialization guard for string at 0x00AEBC14 with atexit registration.
+
+extern uint32_t mem_00AEBC30;
+extern uint8_t mem_00AEBC14[];
+
+extern void* ext_0066AD10(void* out_str, uint32_t arg);
+extern int ext_006A6C87(uint32_t func);
+
+void* fn_00508CD0() {
+    if ((mem_00AEBC30 & 1u) == 0) {
+        mem_00AEBC30 |= 1u;
+        ext_0066AD10(mem_00AEBC14, 0x00A40F04u);
+        ext_006A6C87(0x00919D70u);
+    }
+    return mem_00AEBC14;
+}
+} // namespace lift_00508CD0

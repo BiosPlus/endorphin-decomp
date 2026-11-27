@@ -1,0 +1,13 @@
+{
+  "va": "0x00508CD0",
+  "size": 95,
+  "orig_symbol": "sub_00508CD0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "getStaticString_00AEBC14",
+  "signature": "void* fn_00508CD0()",
+  "summary": "Thread-unsafe static initialization guard for string at 0x00AEBC14 with atexit registration.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:54:35Z"
+}
