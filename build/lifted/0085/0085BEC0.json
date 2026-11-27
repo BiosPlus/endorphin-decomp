@@ -1,0 +1,28 @@
+{
+  "va": "0x0085BEC0",
+  "size": 128,
+  "orig_symbol": "sub_0085BEC0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "Unknown::IncrementOrAppendEntry",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t fn_0085BEC0(uint32_t key, void* self)",
+  "summary": "Increments the count of the entry matching key in the growable table, or grows the table by one and appends a new entry (count 1); returns 0 on success, 0xC if the resize fails.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:16:13Z"
+}

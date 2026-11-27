@@ -34,7 +34,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (container header pointer, passed through to compareIndexedElementsGreater)  (evidence: 0x00518700) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int32_t                  count  (evidence: 0x00783940) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 count  (evidence: 0x006D2300, 0x007B3120) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 count  (evidence: 0x006D2300, 0x007B3120, 0x0085BEC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count_00  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t[19]             entries  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x0
@@ -185,6 +185,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04 (link -> flags dword)  (evidence: 0x00810200) // CONFLICT: multiple definitions at +0x4
     // +0x4   float field_0x04 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 entries  (evidence: 0x007B3120) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    entries  (evidence: 0x0085BEC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 entriesBegin  (evidence: 0x0068BDF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 entry_count  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4

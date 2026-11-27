@@ -81374,6 +81374,13 @@
     "summary": "Reads up to `count` bytes in big-endian order into `*out_val` and returns the number of bytes consumed.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085BEC0": {
+    "name": "Unknown::IncrementOrAppendEntry",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t fn_0085BEC0(uint32_t key, void* self)",
+    "summary": "Increments the count of the entry matching key in the growable table, or grows the table by one and appends a new entry (count 1); returns 0 on success, 0xC if the resize fails.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BF40": {
     "name": "KeyValueTable::lookup",
     "class": "KeyValueTable",

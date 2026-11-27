@@ -1466,3 +1466,47 @@ int32_t fn_0085E6A0(const char* a, const char* b) {
     return 0;
 }
 } // namespace lift_0085E6A0
+
+// [0x0085BEC0] sub_0085BEC0 (128 bytes)
+namespace lift_0085BEC0 {
+// Known callee 0x008596F0: LocalResize (Resize a LocalAlloc'd block (LocalReAlloc, LMEM_MOVEABLE); free it if size is 0; allocate if ptr is NULL.)
+extern void* ext_008596F0(void* hMem, UINT uBytes);
+
+// Table entry: 8 bytes, { key at +0x00, hit count at +0x04 }.
+struct Entry {
+    uint32_t key;
+    uint32_t count;
+};
+
+// @name Unknown::IncrementOrAppendEntry
+// @class Unknown
+// @summary Increments the count of the entry matching key in the growable table, or grows the table by one and appends a new entry (count 1); returns 0 on success, 0xC if the resize fails.
+// @field Unknown +0x00 uint32_t count
+// @field Unknown +0x04 void* entries
+extern uint32_t fn_0085BEC0(uint32_t key, void* self) {
+    uint32_t& count = lift_field<uint32_t>(self, 0x00);
+    void*& base = lift_field<void*>(self, 0x04);
+
+    const uint32_t n = count;
+    for (uint32_t i = 0; i < n; ++i) {
+        Entry* e = reinterpret_cast<Entry*>(static_cast<uint8_t*>(base) + 8 * static_cast<size_t>(i));
+        if (e->key == key) {
+            ++e->count;
+            return 0;
+        }
+    }
+
+    // Not found: grow the array to (n + 1) entries.
+    void* grown = ext_008596F0(base, 8 * n + 8);
+    if (grown == nullptr) {
+        return 0xC;
+    }
+
+    Entry* added = reinterpret_cast<Entry*>(static_cast<uint8_t*>(grown) + 8 * static_cast<size_t>(n));
+    added->count = 1;
+    added->key = key;
+    base = grown;
+    count = n + 1;
+    return 0;
+}
+} // namespace lift_0085BEC0
