@@ -1,0 +1,52 @@
+{
+  "va": "0x00527FE0",
+  "size": 82,
+  "orig_symbol": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::RemoveElementCommand::vfunc_1",
+  "src_path": "src/templates/RemoveElementCommand.cpp",
+  "lifted_path": "lifted/templates/RemoveElementCommand.cpp",
+  "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::RemoveElementCommand::vfunc_1",
+  "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::RemoveElementCommand",
+  "signature": "void fn_00527FE0(void* self)",
+  "summary": "Swaps the pending element pointer into slot +0x18 (releasing the old one via its vtable slot 0), removes the target from the vector at +0x10 (recording the index at +0x20), then notifies the object at +0x24 and the callee at +0x14.",
+  "fields": [
+    {
+      "class": "RemoveElementCommand",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "RemoveElementCommand",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "RemoveElementCommand",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "RemoveElementCommand",
+      "offset": "+0x1C",
+      "type": "uintptr_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "RemoveElementCommand",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "RemoveElementCommand",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:23Z"
+}

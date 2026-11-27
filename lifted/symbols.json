@@ -25481,6 +25481,13 @@
     "summary": "Finds a pointer in a vector, clears it to null, erases it via VectorPtrErase, and returns its index.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00527FE0": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::RemoveElementCommand::vfunc_1",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::RemoveElementCommand",
+    "signature": "void fn_00527FE0(void* self)",
+    "summary": "Swaps the pending element pointer into slot +0x18 (releasing the old one via its vtable slot 0), removes the target from the vector at +0x10 (recording the index at +0x20), then notifies the object at +0x24 and the callee at +0x14.",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x00528040": {
     "name": "Unknown::Destructor_00528040",
     "class": "Unknown",
