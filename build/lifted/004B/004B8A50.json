@@ -1,0 +1,22 @@
+{
+  "va": "0x004B8A50",
+  "size": 74,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getUnitMass, 0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0\u003e",
+  "signature": "void* fn_004B8A50(void* self, void* out, void* const* holder)",
+  "summary": "Reads a float from the NMData::EngineData pointed to by *holder at +0x48 (unit mass), formats it into the sret slot `out` via ext_0046C390, and returns `out`; throws if the object pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:52Z"
+}

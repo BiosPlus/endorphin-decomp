@@ -61505,3 +61505,34 @@ __stdcall void* fn_004B7FC0(void* out, void* const* objRef) {
     return out;
 }
 } // namespace lift_004B7FC0
+
+// [0x004B8A50] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_004B8A50 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void* ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// .rdata ThrowInfo descriptor referenced by the throw path.
+extern const uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads a float from the NMData::EngineData pointed to by *holder at +0x48 (unit mass), formats it into the sret slot `out` via ext_0046C390, and returns `out`; throws if the object pointer is null.
+// @field NMData::EngineData +0x48 float field_0x48
+void* fn_004B8A50(void* self, void* out, void* const* holder) {
+    (void)self;
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Null object: build an exception in the local frame and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort(); // unreachable: _CxxThrowException does not return
+    }
+    float value = lift_field<float>(obj, 0x48);
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_004B8A50
