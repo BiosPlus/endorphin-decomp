@@ -2111,3 +2111,42 @@ void* __cdecl sub_005CDFB0() {
     return reinterpret_cast<void*>(0x00B44578);
 }
 } // namespace lift_005CDFB0
+
+// [0x005CD0A0]
+namespace lift_005CD0A0 {
+extern void* ext_005C3390(void* out_str);
+extern void ext_0040ECB0(void* self, const void* value);
+extern uint32_t mem_00924FF4;
+extern uint8_t mem_00B5962C;
+
+// @name RegisteredTypeObject::ctor_005CD0A0
+// @class RegisteredTypeObject
+// @summary Constructor: sets vtable, zeroes fields, registers its type name string into a global string vector.
+// @field RegisteredTypeObject +0x00 void* vtable
+// @field RegisteredTypeObject +0x08 uint32_t field_0x08
+// @field RegisteredTypeObject +0x0C uint32_t field_0x0C
+// @field RegisteredTypeObject +0x10 uint32_t field_0x10
+// @field RegisteredTypeObject +0x18 uint32_t field_0x18
+// @field RegisteredTypeObject +0x1C uint32_t field_0x1C
+// @field RegisteredTypeObject +0x20 uint32_t field_0x20
+extern void* __fastcall fn_005CD0A0(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(p + 0x00) = 0x00965A18u;
+    *reinterpret_cast<uint32_t*>(p + 0x08) = 0;
+    *reinterpret_cast<uint32_t*>(p + 0x0C) = 0;
+    *reinterpret_cast<uint32_t*>(p + 0x10) = 0;
+    *reinterpret_cast<uint32_t*>(p + 0x18) = 0;
+    *reinterpret_cast<uint32_t*>(p + 0x1C) = 0;
+    *reinterpret_cast<uint32_t*>(p + 0x20) = 0;
+
+    alignas(4) uint8_t tmp[28];
+    void* s = ext_005C3390(tmp);
+    ext_0040ECB0(&mem_00B5962C, s);
+
+    using DtorFn = void(__thiscall*)(void*);
+    DtorFn dtor = *reinterpret_cast<DtorFn*>(&mem_00924FF4);
+    dtor(tmp);
+    return self;
+}
+} // namespace lift_005CD0A0

@@ -51353,6 +51353,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005CCE20 (NMData::CollisionModelData::vfunc_12_off_C).",
     "lifted_path": "lifted/NMData/FluidObjectData.cpp"
   },
+  "0x005CD0A0": {
+    "name": "RegisteredTypeObject::ctor_005CD0A0",
+    "class": "RegisteredTypeObject",
+    "signature": "extern \"C\" void* __fastcall fn_005CD0A0(void* self)",
+    "summary": "Constructor: sets vtable, zeroes fields, registers its type name string into a global string vector.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CD120": {
     "name": "Vector::InsertSortedUnique_005CD120",
     "class": "Vector",

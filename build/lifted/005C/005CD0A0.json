@@ -1,0 +1,58 @@
+{
+  "va": "0x005CD0A0",
+  "size": 128,
+  "orig_symbol": "sub_005CD0A0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "RegisteredTypeObject::ctor_005CD0A0",
+  "class": "RegisteredTypeObject",
+  "signature": "extern \"C\" void* __fastcall fn_005CD0A0(void* self)",
+  "summary": "Constructor: sets vtable, zeroes fields, registers its type name string into a global string vector.",
+  "fields": [
+    {
+      "class": "RegisteredTypeObject",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "RegisteredTypeObject",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "RegisteredTypeObject",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "RegisteredTypeObject",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "RegisteredTypeObject",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "RegisteredTypeObject",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "RegisteredTypeObject",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:44:31Z"
+}
