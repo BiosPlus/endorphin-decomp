@@ -57287,6 +57287,12 @@
     "summary": "Walks the pointer vector at this+0x2C..this+0x30 and invokes virtual slot 0 on each element.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00665BD0": {
+    "name": "sub_00665BD0",
+    "signature": "void fn_00665BD0(void* self, DWORD arg)",
+    "summary": "Allocates a triple via AllocTriple, links it into self's chain at +0x04, then calls sub_006658F0(self, 1); stdcall-style stack arg, ret 4.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00665CA0": {
     "name": "Unknown::DrainFront_00665CA0",
     "class": "Unknown",

@@ -4210,3 +4210,39 @@ void fn_00666CE0(void* self) {
 }
 } // namespace lift_004A5D20
 } // namespace lift_00666CE0
+
+// [0x00665BD0] sub_00665BD0 (50 bytes)
+namespace lift_00665BD0 {
+// Known callee 0x00435CC0: AllocTriple (Allocates a 12-byte block and fills it with two dwords and the dword that a3 points to; returns the block or null.)
+extern void* ext_00435CC0(DWORD a1, DWORD a2, const DWORD* a3);
+// Known callee 0x006658F0: sub_006658F0 (Auto-lifted identical-shape clone of 0x0049D050 (BoundedAddToField08).)
+extern void ext_006658F0(void* self, uint32_t n);
+
+// @name sub_00665BD0
+// @summary Allocates a triple via AllocTriple, links it into self's chain at +0x04, then calls sub_006658F0(self, 1); stdcall-style stack arg, ret 4.
+// @field Unknown +0x04 DWORD field_04
+void fn_00665BD0(void* self, DWORD arg) {
+    // mov edi, [esi+4]
+    DWORD edi_v = lift_field<DWORD>(self, 0x04);
+    void* edi = reinterpret_cast<void*>(static_cast<uintptr_t>(edi_v));
+
+    // mov ecx, [edi+4]
+    DWORD ecx_v = lift_field<DWORD>(edi, 0x04);
+
+    // push arg; push ecx; push edi; call AllocTriple  -> ebx = result
+    void* ebx = ext_00435CC0(edi_v, ecx_v,
+                             reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(arg)));
+    DWORD ebx_v = static_cast<DWORD>(reinterpret_cast<uintptr_t>(ebx));
+
+    // push 1; mov ecx, esi; call sub_006658F0(self, 1)
+    ext_006658F0(self, 1);
+
+    // mov [edi+4], ebx
+    lift_field<DWORD>(edi, 0x04) = ebx_v;
+
+    // mov edx, [ebx+4]; mov [edx], ebx
+    DWORD edx_v = lift_field<DWORD>(ebx, 0x04);
+    void* edx = reinterpret_cast<void*>(static_cast<uintptr_t>(edx_v));
+    lift_field<DWORD>(edx, 0) = ebx_v;
+}
+} // namespace lift_00665BD0

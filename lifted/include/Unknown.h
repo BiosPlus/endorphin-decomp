@@ -234,6 +234,7 @@ struct Unknown_Fields {
     // +0x4   void* subObject (passed as this to ext_006B9D10)  (evidence: 0x006EA6D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string field_0x04 (destroyed via ext_00924FF4)  (evidence: 0x0063E0F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    f1  (evidence: 0x0066A4E0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    field_04  (evidence: 0x00665BD0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_04  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_04  (evidence: 0x006B9950, 0x00783630) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_04  (evidence: 0x005C3130, 0x005F5140) // CONFLICT: multiple definitions at +0x4

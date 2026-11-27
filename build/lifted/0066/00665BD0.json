@@ -1,0 +1,21 @@
+{
+  "va": "0x00665BD0",
+  "size": 50,
+  "orig_symbol": "sub_00665BD0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_00665BD0",
+  "signature": "void fn_00665BD0(void* self, DWORD arg)",
+  "summary": "Allocates a triple via AllocTriple, links it into self's chain at +0x04, then calls sub_006658F0(self, 1); stdcall-style stack arg, ret 4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:18:45Z"
+}
