@@ -1132,3 +1132,39 @@ uint32_t fn_004FB640(void* self) {
 }
 } // namespace lift_004FADD0
 } // namespace lift_004FB640
+
+// [0x004FB0C0] VMCSModes::DefaultImplementation::vfunc_47 (47 bytes)
+namespace lift_004FB0C0 {
+// Callee 0x004667A0 (sub_004667A0): thiscall, ECX = this (from +0x4), one stack argument.
+extern void ext_004667A0(void* self, int32_t arg);
+// Known callee 0x00530290: Unknown::selectIndex3Adjusted (Selects index arg0 (remapping 3 to 7 when the field at +0x88 already equals 3), stores it at +0x70, updates the container at +0x38, then invokes vtable slot 0x154 on the object at +0x10.)
+extern void ext_00530290(void* self, uint32_t arg0);
+
+// Virtual slot 0xB4 (index 45): thiscall with no stack arguments, returns a 32-bit value.
+using VirtualNoArgFn = uint32_t (*)(void* self);
+
+// @name VMCSModes::DefaultImplementation::vfunc_47
+// @class VMCSModes::DefaultImplementation
+// @summary Calls ext_004667A0(this->+0x4, 1), then calls vtable slot 0xB4 on the chain this->+0x8->+0x14->+0x30; if the result is nonzero, calls ext_00530290(result, 4).
+// @field VMCSModes::DefaultImplementation +0x4 void* field_0x04
+// @field VMCSModes::DefaultImplementation +0x8 void* delegate_0x8
+extern void __fastcall fn_004FB0C0(void* self) {
+    // Preamble: pass this->+0x4 as ECX with argument 1.
+    void* first = lift_field<void*>(self, 0x4);
+    ext_004667A0(first, 1);
+
+    // Walk this->+0x8 -> +0x14 -> +0x30 to reach the object whose vtable slot 0xB4 is invoked.
+    void* delegate = lift_field<void*>(self, 0x8);
+    void* mid = lift_field<void*>(delegate, 0x14);
+    void* target = lift_field<void*>(mid, 0x30);
+
+    void* vtable = lift_field<void*>(target, 0x0);
+    auto slot = reinterpret_cast<VirtualNoArgFn>(lift_field<void*>(vtable, 0xB4));
+    uint32_t result = slot(target);
+
+    // If the virtual call returned nonzero, forward it to fn_00530290 with arg 4.
+    if (result != 0) {
+        ext_00530290(reinterpret_cast<void*>(static_cast<uintptr_t>(result)), 4u);
+    }
+}
+} // namespace lift_004FB0C0

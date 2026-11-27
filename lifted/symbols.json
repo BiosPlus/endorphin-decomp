@@ -27039,6 +27039,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004FB0C0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_47",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "extern \"C\" void __fastcall fn_004FB0C0(void* self)",
+    "summary": "Calls ext_004667A0(this-\u003e+0x4, 1), then calls vtable slot 0xB4 on the chain this-\u003e+0x8-\u003e+0x14-\u003e+0x30; if the result is nonzero, calls ext_00530290(result, 4).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004FB3E0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_118",
     "class": "VMCSModes::DefaultImplementation",

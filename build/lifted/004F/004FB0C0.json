@@ -1,0 +1,28 @@
+{
+  "va": "0x004FB0C0",
+  "size": 47,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_47",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_47",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "extern \"C\" void __fastcall fn_004FB0C0(void* self)",
+  "summary": "Calls ext_004667A0(this-\u003e+0x4, 1), then calls vtable slot 0xB4 on the chain this-\u003e+0x8-\u003e+0x14-\u003e+0x30; if the result is nonzero, calls ext_00530290(result, 4).",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:33:33Z"
+}
