@@ -1151,3 +1151,39 @@ void __thiscall sub_0063E050(void* self, void* dst_str, uint32_t tail_len) {
     reinterpret_cast<dtor_fn>(mem_00924ff4)(temp_str);
 }
 } // namespace lift_0063E050
+
+// [0x0063E290]
+namespace lift_0063E290 {
+// @name descriptiveName_0063E290
+// @class UnknownClass
+// @summary Constructor-like: builds a temporary std::string from a .rdata literal, calls sub_0063E240(self, arg1, &str), destroys the string, sets vptr to 0x97cba8, stores low byte of arg2 at +0x24, returns self.
+// @field UnknownClass +0x00 void* vptr
+// @field UnknownClass +0x24 uint8_t field_0x24
+
+
+extern void* __thiscall ext_0063E240(void* self, DWORD arg1, DWORD arg2);
+
+extern const uint32_t mem_00924FE4;
+extern const uint32_t mem_00924FF4;
+extern const char mem_00928B5D[];
+
+extern void* __thiscall fn_0063E290(void* self, DWORD arg1, DWORD arg2) {
+    // MSVC80 std::string is 0x1c bytes in this build (spans E-0x28..E-0x0c in the original frame).
+    alignas(4) uint8_t str[0x1c];
+
+    // Import slots: IAT entries holding basic_string ctor(const char*) and dtor.
+    auto str_ctor = reinterpret_cast<void(__thiscall*)(void*, const char*)>(
+        static_cast<uintptr_t>(mem_00924FE4));
+    auto str_dtor = reinterpret_cast<void(__thiscall*)(void*)>(
+        static_cast<uintptr_t>(mem_00924FF4));
+
+    str_ctor(str, mem_00928B5D);
+    ext_0063E240(self, arg1, static_cast<DWORD>(reinterpret_cast<uintptr_t>(str)));
+    str_dtor(str);
+
+    uint8_t arg2_low = static_cast<uint8_t>(arg2);
+    lift_field<uint32_t>(self, 0x00) = 0x97cba8u;
+    lift_field<uint8_t>(self, 0x24) = arg2_low;
+    return self;
+}
+} // namespace lift_0063E290

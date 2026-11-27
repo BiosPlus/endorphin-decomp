@@ -1,0 +1,28 @@
+{
+  "va": "0x0063E290",
+  "size": 119,
+  "orig_symbol": "sub_0063E290",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "descriptiveName_0063E290",
+  "class": "UnknownClass",
+  "signature": "extern \"C\" void* __thiscall fn_0063E290(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Constructor-like: builds a temporary std::string from a .rdata literal, calls sub_0063E240(self, arg1, \u0026str), destroys the string, sets vptr to 0x97cba8, stores low byte of arg2 at +0x24, returns self.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x24",
+      "type": "uint8_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:12:11Z"
+}
