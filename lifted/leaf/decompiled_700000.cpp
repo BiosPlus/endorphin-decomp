@@ -3128,3 +3128,30 @@ void* fn_00709F10(void* self, void* arg) {
     return ext_006B9E60(arg, child);
 }
 } // namespace lift_00709F10
+
+// [0x0070EB40] sub_0070EB40 (128 bytes)
+namespace lift_0070EB40 {
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void ext_006B9D70(void* self);
+// Known callee 0x006B9E60: Unknown::conditionalAllocAndCopy_006B9E60 (If the argument's type tag check passes, copies its getter values into this object's allocator; otherwise calls sub_006B9920 on this. Returns this.)
+extern void* ext_006B9E60(void* self, void* arg);
+
+// @name Unknown::copyArgAndReset_0070EB40
+// @class Unknown
+// @summary Runs conditionalAllocAndCopy on the two sub-objects at +0xac and +0xf8 using the by-value 0x98-byte argument block, then calls the 0x6B9D70 thunk on two parts of that block.
+// @field Unknown +0xac uint8_t field_0xac
+// @field Unknown +0xf8 uint8_t field_0xf8
+//
+// Stack argument: 0x98-byte by-value block (callee pops it, ret 0x98), passed as `args`.
+// The fs:[0] SEH frame push/restore and its state slot (mem_008BC8E0 scope table) are
+// exception-handling bookkeeping only and are omitted.
+void fn_0070EB40(void* self, void* args) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(self);
+    uint8_t* arg = reinterpret_cast<uint8_t*>(args);
+
+    ext_006B9E60(obj + 0xac, arg);
+    ext_006B9E60(obj + 0xf8, arg + 0x4c);
+    ext_006B9D70(arg);
+    ext_006B9D70(arg + 0x4c);
+}
+} // namespace lift_0070EB40

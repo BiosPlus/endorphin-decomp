@@ -1,0 +1,28 @@
+{
+  "va": "0x0070EB40",
+  "size": 128,
+  "orig_symbol": "sub_0070EB40",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::copyArgAndReset_0070EB40",
+  "class": "Unknown",
+  "signature": "void fn_0070EB40(void* self, void* args)",
+  "summary": "Runs conditionalAllocAndCopy on the two sub-objects at +0xac and +0xf8 using the by-value 0x98-byte argument block, then calls the 0x6B9D70 thunk on two parts of that block.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint8_t",
+      "name": "field_0xac"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "uint8_t",
+      "name": "field_0xf8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:00:49Z"
+}

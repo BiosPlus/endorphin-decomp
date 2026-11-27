@@ -1488,6 +1488,7 @@ struct Unknown_Fields {
     // +0xAC  int32_t                  field_0xac  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t                 field_0xac  (evidence: 0x005B6FC0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t*                field_0xac  (evidence: 0x006BA780, 0x006BB0C0, 0x006BB150) // CONFLICT: multiple definitions at +0xAC
+    // +0xAC  uint8_t                  field_0xac  (evidence: 0x0070EB40) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  void*                    field_0xac  (evidence: 0x005B6980, 0x005CE8D0, 0x007721B0) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  FILE*                    file  (evidence: 0x0074F990) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  void*                    file_handle  (evidence: 0x00772150) // CONFLICT: multiple definitions at +0xAC
@@ -1668,6 +1669,7 @@ struct Unknown_Fields {
     // +0xF8  void*                    field_0xF8  (evidence: 0x00468730, 0x0046C110, 0x0046F910, 0x0048FB00, 0x00594700, 0x0059DE20, 0x00648930, 0x00661A30, 0x006872C0, 0x006872D0, 0x006ACFC0, 0x006AD090, 0x007835F0) // CONFLICT: multiple definitions at +0xF8
     // +0xF8  int32_t                  field_0xf8  (evidence: 0x0043CF30) // CONFLICT: multiple definitions at +0xF8
     // +0xF8  std::int32_t             field_0xf8  (evidence: 0x006A9190) // CONFLICT: multiple definitions at +0xF8
+    // +0xF8  uint8_t                  field_0xf8  (evidence: 0x0070EB40) // CONFLICT: multiple definitions at +0xF8
     // +0xF8  DWORD field_0xF8 (element index)  (evidence: 0x00540D00) // CONFLICT: multiple definitions at +0xF8
     // +0xF8  uint8_t field_0xF8 (subobject; address taken only, not loaded)  (evidence: 0x00630E60, 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0xF8
     // +0xFC  void*                    child  (evidence: 0x00497030) // CONFLICT: multiple definitions at +0xFC

@@ -75159,6 +75159,13 @@
     "summary": "If the pointer at +0x5c is non-null, reassigns the embedded string at +0x60 from it; then initializes the argument object from +0x60 and returns the argument.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070EB40": {
+    "name": "Unknown::copyArgAndReset_0070EB40",
+    "class": "Unknown",
+    "signature": "void fn_0070EB40(void* self, void* args)",
+    "summary": "Runs conditionalAllocAndCopy on the two sub-objects at +0xac and +0xf8 using the by-value 0x98-byte argument block, then calls the 0x6B9D70 thunk on two parts of that block.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070EBC0": {
     "name": "sub_0070EBC0",
     "signature": "void* fn_0070EBC0(void* self, void* arg1)",
