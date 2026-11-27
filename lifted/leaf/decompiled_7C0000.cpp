@@ -2329,3 +2329,22 @@ void __cdecl sub_007C5460(void* self) {
     }
 }
 } // namespace lift_007C5460
+
+// [0x007C8B30] sub_007C8B30 (22 bytes)
+namespace lift_007C8B30 {
+// Known callee 0x007DD0A0: setItemFlagAndLink (Validates an item index and sets or clears bit 0 of its flags, linking or unlinking it from the list at +0xC0.)
+extern uint8_t ext_007DD0A0(void* self, int32_t index, uint8_t enable);
+
+// @name Unknown::clearItemFlagLink_007C8B30
+// @class Unknown
+// @summary Forwards the index at +0x20 and the pointer at +0x0C of the argument to ext_007DD0A0 with enable=0, returning its result as uint8_t.
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x20 int32_t field_0x20
+uint8_t fn_007C8B30(void* obj) {
+    auto* p = static_cast<uint8_t*>(obj);
+    const int32_t index = *reinterpret_cast<int32_t*>(p + 0x20);
+    // 32-bit target: the pointer at +0x0C is stored as a 4-byte value.
+    void* self = reinterpret_cast<void*>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(p + 0x0C)));
+    return ext_007DD0A0(self, index, 0);
+}
+} // namespace lift_007C8B30

@@ -1,0 +1,28 @@
+{
+  "va": "0x007C8B30",
+  "size": 22,
+  "orig_symbol": "sub_007C8B30",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::clearItemFlagLink_007C8B30",
+  "class": "Unknown",
+  "signature": "uint8_t fn_007C8B30(void* obj)",
+  "summary": "Forwards the index at +0x20 and the pointer at +0x0C of the argument to ext_007DD0A0 with enable=0, returning its result as uint8_t.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:02Z"
+}

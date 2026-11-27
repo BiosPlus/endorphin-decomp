@@ -82691,6 +82691,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C8B30": {
+    "name": "Unknown::clearItemFlagLink_007C8B30",
+    "class": "Unknown",
+    "signature": "uint8_t fn_007C8B30(void* obj)",
+    "summary": "Forwards the index at +0x20 and the pointer at +0x0C of the argument to ext_007DD0A0 with enable=0, returning its result as uint8_t.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C8BB0": {
     "name": "forwardBucketMapFromOwner_007C8BB0",
     "signature": "bool fn_007C8BB0(void* self, void* cur, void* out)",
@@ -85200,6 +85207,12 @@
     "signature": "uint32_t GetField08(uint32_t self_ptr)",
     "summary": "Returns the 32-bit value at offset +0x08 of the object pointed to by the first stack argument.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
+  "0x0085BD10": {
+    "name": "ReadBigEndianUInt64",
+    "signature": "uint32_t sub_0085BD10(void* stream, uint32_t count, uint64_t* out_val)",
+    "summary": "Reads up to count big-endian bytes into a 64-bit integer and returns the number of bytes consumed.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x0085BDA0": {
     "name": "readSignedBigEndianCounted_0085BDA0",
