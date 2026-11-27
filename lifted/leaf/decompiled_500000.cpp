@@ -3898,3 +3898,23 @@ void* __thiscall fn_005011B0(void* self, const void* key) {
     return nullptr;
 }
 } // namespace lift_005011B0
+
+// [0x00502860] sub_00502860 (114 bytes)
+namespace lift_00502860 {
+extern void* ext_004FF9A0();
+extern void* ext_00475960(void* self, void* key, void* value, int32_t flag);
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name Unknown::registerSingletonByName_00502860
+// @class Unknown
+// @summary Builds a std::string from name and passes it with the 0x00AEB27C singleton pointer (flag 1) to the object at self+0x0 via sub_00475960.
+// @field Unknown +0x0 void* field_0x0
+void fn_00502860(void* self, const char* name) {
+    (void)&mem_00924FE4; // basic_string(const char*) import slot
+    (void)&mem_00924FF4; // ~basic_string import slot
+    void* singleton = ext_004FF9A0();
+    std::string key(name);
+    ext_00475960(lift_field<void*>(self, 0x0), &key, &singleton, 1);
+}
+} // namespace lift_00502860

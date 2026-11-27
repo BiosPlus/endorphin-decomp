@@ -29653,6 +29653,13 @@
     "summary": "Fetches the static singleton, builds a temporary std::string from the name argument, passes the singleton slot, string and flag 1 to ext_00475960 on this-\u003efield_0x00, then destroys the temporary.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00502860": {
+    "name": "Unknown::registerSingletonByName_00502860",
+    "class": "Unknown",
+    "signature": "void fn_00502860(void* self, const char* name)",
+    "summary": "Builds a std::string from name and passes it with the 0x00AEB27C singleton pointer (flag 1) to the object at self+0x0 via sub_00475960.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00502E00": {
     "name": "NMData::EvolveEngineData::vfunc_1",
     "class": "NMData::EvolveEngineData",
