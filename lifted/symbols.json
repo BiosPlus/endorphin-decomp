@@ -50548,6 +50548,13 @@
     "summary": "Constructs the object: runs the base init (ext_006657F0), sets the vtable to 0x00987A1C, copy-constructs a string at +0x10 from arg1, initializes the sub-object at +0x2C, and zeroes +0x3C/+0x40/+0x44. Returns self.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00665EE0": {
+    "name": "GlobalInstanceInit",
+    "class": "GlobalInstanceInit",
+    "signature": "void* fn_00665EE0(void* self)",
+    "summary": "Zeroes this object's header, initializes two embedded sub-objects at +0x10 and +0x1c via ext_006658D0, clears trailing fields, publishes this to mem_00B59420, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00666340": {
     "name": "MacroCommand::vfunc_0",
     "class": "MacroCommand",

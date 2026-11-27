@@ -3010,3 +3010,50 @@ void* fn_00666A60(void* self, void* out_string) {
     return out_string;
 }
 } // namespace lift_00666A60
+
+// [0x00665EE0] sub_00665EE0 (124 bytes)
+namespace lift_00665EE0 {
+extern uint32_t __thiscall ext_006658D0(void* self);
+extern void* mem_00B59420;
+
+// @name GlobalInstanceInit
+// @class GlobalInstanceInit
+// @summary Zeroes this object's header, initializes two embedded sub-objects at +0x10 and +0x1c via ext_006658D0, clears trailing fields, publishes this to mem_00B59420, and returns this.
+// @field GlobalInstanceInit +0x00 uint32_t field_0x00
+// @field GlobalInstanceInit +0x04 uint32_t field_0x04
+// @field GlobalInstanceInit +0x08 uint32_t field_0x08
+// @field GlobalInstanceInit +0x0c uint32_t field_0x0c
+// @field GlobalInstanceInit +0x14 uint32_t field_0x14
+// @field GlobalInstanceInit +0x18 uint32_t field_0x18
+// @field GlobalInstanceInit +0x20 uint32_t field_0x20
+// @field GlobalInstanceInit +0x24 uint32_t field_0x24
+// @field GlobalInstanceInit +0x2c uint32_t field_0x2c
+// @field GlobalInstanceInit +0x30 uint32_t field_0x30
+// @field GlobalInstanceInit +0x34 uint32_t field_0x34
+void* fn_00665EE0(void* self) {
+    // Header fields.
+    lift_field<uint32_t>(self, 0x00) = 0;
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 1000;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+
+    // First embedded sub-object at +0x10: ext call on it, result at +0x14, then +0x18 = 0.
+    void* subA = static_cast<uint8_t*>(self) + 0x10;
+    lift_field<uint32_t>(self, 0x14) = ext_006658D0(subA);
+    lift_field<uint32_t>(self, 0x18) = 0;
+
+    // Second embedded sub-object at +0x1c: same pattern, result at +0x20, then +0x24 = 0.
+    void* subB = static_cast<uint8_t*>(self) + 0x1c;
+    lift_field<uint32_t>(self, 0x20) = ext_006658D0(subB);
+    lift_field<uint32_t>(self, 0x24) = 0;
+
+    // Trailing fields.
+    lift_field<uint32_t>(self, 0x2c) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+
+    // Publish this object as the global instance.
+    mem_00B59420 = self;
+    return self;
+}
+} // namespace lift_00665EE0
