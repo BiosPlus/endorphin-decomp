@@ -1,0 +1,106 @@
+{
+  "va": "0x005F2970",
+  "size": 1490,
+  "orig_symbol": "NMData::NullRelationshipData::vfunc_21",
+  "src_path": "src/NMData/NullRelationshipData.cpp",
+  "lifted_path": "lifted/NMData/NullRelationshipData.cpp",
+  "name": "NMData::NullRelationshipData::vfunc_21",
+  "class": "NMData::NullRelationshipData",
+  "signature": "static bool is_sentinel(uint32_t v)",
+  "summary": "Deserializes NullRelationshipData properties, coordinates, and child relationship items from a data node.",
+  "fields": [
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x168",
+      "type": "uint8_t[12]",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x179",
+      "type": "uint8_t",
+      "name": "field_0x179"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18c"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x198",
+      "type": "std::string",
+      "name": "field_0x198"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x1B4",
+      "type": "std::string",
+      "name": "field_0x1b4"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x1E0",
+      "type": "uint32_t",
+      "name": "field_0x1e0"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x1E4",
+      "type": "std::string",
+      "name": "field_0x1e4"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x210",
+      "type": "float",
+      "name": "field_0x210"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x214",
+      "type": "float",
+      "name": "field_0x214"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x218",
+      "type": "float",
+      "name": "field_0x218"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x21C",
+      "type": "float",
+      "name": "field_0x21c"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x220",
+      "type": "float",
+      "name": "field_0x220"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x224",
+      "type": "float",
+      "name": "field_0x224"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x238",
+      "type": "int32_t",
+      "name": "field_0x238"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:36:09Z"
+}

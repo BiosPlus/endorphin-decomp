@@ -3,6 +3,7 @@
 #include <new>
 #include <string>
 extern "C" const char* mem_00A9F118;
+#include <cstdint>
 
 // [0x0055DE20] NMData::NullRelationshipData::vfunc_59 (35 bytes)
 namespace lift_0055DE20 {
@@ -95,3 +96,196 @@ void* fn_005EBE00(void* self, void* arg) {
     return arg;
 }
 } // namespace lift_005EBE00
+
+// [0x005F2970]
+namespace lift_005F2970 {
+// @name NMData::NullRelationshipData::vfunc_21
+// @class NMData::NullRelationshipData
+// @summary Deserializes NullRelationshipData properties, coordinates, and child relationship items from a data node.
+// @field NMData::NullRelationshipData +0x168 uint8_t[12] field_0x168
+// @field NMData::NullRelationshipData +0x178 uint8_t field_0x178
+// @field NMData::NullRelationshipData +0x179 uint8_t field_0x179
+// @field NMData::NullRelationshipData +0x18c void* field_0x18c
+// @field NMData::NullRelationshipData +0x198 std::string field_0x198
+// @field NMData::NullRelationshipData +0x1b4 std::string field_0x1b4
+// @field NMData::NullRelationshipData +0x1e0 uint32_t field_0x1e0
+// @field NMData::NullRelationshipData +0x1e4 std::string field_0x1e4
+// @field NMData::NullRelationshipData +0x210 float field_0x210
+// @field NMData::NullRelationshipData +0x214 float field_0x214
+// @field NMData::NullRelationshipData +0x218 float field_0x218
+// @field NMData::NullRelationshipData +0x21c float field_0x21c
+// @field NMData::NullRelationshipData +0x220 float field_0x220
+// @field NMData::NullRelationshipData +0x224 float field_0x224
+// @field NMData::NullRelationshipData +0x238 int32_t field_0x238
+
+
+extern void __thiscall ext_0058F630(void* self, void* arg0);
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+extern void __cdecl ext_00427640(void* out, void* obj);
+extern void __cdecl ext_0053F5F0(int* out, void* obj);
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern uint32_t __thiscall ext_0063F530(void* self, const char* name, uint32_t a, uint32_t b);
+extern float* __cdecl ext_0067EFD0(void* buf, uint32_t item);
+extern void __thiscall ext_00412690(void* self, void* elem);
+extern void __thiscall ext_00427A60(void* iter);
+extern void* __cdecl ext_005F28D0(void* sub_item, void* mgr, void* self);
+extern void __thiscall ext_005A35D0(void* mgr, void* res);
+extern void __thiscall ext_005EE9A0(void* self, void* res);
+extern void __thiscall ext_005ED750(void* self);
+
+extern const char* mem_00A9F724;
+extern const char* mem_00A9F738;
+extern const char* mem_00A9F9AC;
+extern const char* mem_00A9F5D0;
+extern const char* mem_00A9F7F8;
+extern const char* mem_00A9F7F4;
+extern const char* mem_00A9F7FC;
+extern const char* mem_00A9EDA8;
+extern void* mem_00924EAC;
+extern void* mem_00924FC0;
+extern void* mem_00924FDC;
+extern void* mem_00924FE8;
+extern void* mem_00924FEC;
+extern void* mem_00924FF4;
+extern void* mem_0092500C;
+extern void* mem_00925134;
+
+static bool is_sentinel(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+struct CheckedIter {
+    void* container;
+    void* container_check;
+    uint32_t* ptr;
+};
+
+struct PairElem {
+    int32_t index;
+    float weight;
+};
+
+void __thiscall fn_005F2970(uint8_t* self, uint8_t* arg0) {
+    (void)mem_00924EAC; (void)mem_00924FC0; (void)mem_00924FDC; (void)mem_00924FE8;
+    (void)mem_00924FEC; (void)mem_00924FF4; (void)mem_0092500C; (void)mem_00925134;
+    ext_0058F630(self, arg0);
+
+    uint32_t item = ext_0063EFE0(arg0, mem_00A9F724);
+    if (!is_sentinel(item)) {
+        uint32_t tmp = ext_0063EFE0(arg0, mem_00A9F724);
+        ext_00427640(self + 0x178, &tmp);
+    }
+
+    {
+        uint32_t tmp = ext_0063EFE0(arg0, mem_00A9F738);
+        ext_00427640(self + 0x179, &tmp);
+    }
+
+    {
+        uint32_t tmp = ext_0063EFE0(arg0, mem_00A9F9AC);
+        ext_0053F5F0(reinterpret_cast<int*>(self + 0x238), &tmp);
+    }
+
+    std::string str;
+    ext_004275E0(&str, reinterpret_cast<void*>(static_cast<uintptr_t>(ext_0063EFE0(arg0, mem_00A9F5D0))));
+
+    if (!is_sentinel(ext_0063EFE0(arg0, reinterpret_cast<const char*>(0x0096AD94)))) {
+        uint32_t tmp = ext_0063EFE0(arg0, reinterpret_cast<const char*>(0x0096AD94));
+        int val = 0;
+        ext_0053F5F0(&val, &tmp);
+        lift_field<uint32_t>(self, 0x1e0) = static_cast<uint32_t>(val);
+    }
+
+    if (!is_sentinel(ext_0063EFE0(arg0, reinterpret_cast<const char*>(0x0096AD84)))) {
+        uint32_t tmp = ext_0063EFE0(arg0, reinterpret_cast<const char*>(0x0096AD84));
+        ext_004275E0(self + 0x1e4, reinterpret_cast<void*>(static_cast<uintptr_t>(tmp)));
+    }
+
+    uint8_t vec3_buf[16];
+    uint32_t v1 = ext_0063F530(arg0, reinterpret_cast<const char*>(0x0096AD78), 0, 1);
+    if (is_sentinel(v1)) {
+        v1 = 0x00B53B30u;
+    }
+    float* f1 = ext_0067EFD0(vec3_buf, v1);
+    lift_field<float>(self, 0x210) = f1[0];
+    lift_field<float>(self, 0x214) = f1[1];
+    lift_field<float>(self, 0x218) = f1[2];
+
+    uint32_t v2 = ext_0063F530(arg0, reinterpret_cast<const char*>(0x0096AD68), 0, 1);
+    if (is_sentinel(v2)) {
+        v2 = 0x00B53B30u;
+    }
+    float* f2 = ext_0067EFD0(vec3_buf, v2);
+    lift_field<float>(self, 0x21c) = f2[0];
+    lift_field<float>(self, 0x220) = f2[1];
+    lift_field<float>(self, 0x224) = f2[2];
+
+    if (str.empty()) {
+        auto vtbl = lift_field<uintptr_t*>(self, 0);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*)>(vtbl[0x10c / 4]);
+        fn(self);
+    } else {
+        for (size_t i = 0; i < str.size(); ++i) {
+            PairElem elem{static_cast<int32_t>(str[i]) - 0x30, 0.0f};
+            ext_00412690(self + 0x168, &elem);
+        }
+    }
+
+    uint32_t* begin = lift_field<uint32_t*>(arg0, 0x40);
+    uint32_t* end = lift_field<uint32_t*>(arg0, 0x44);
+    for (uint32_t* it = begin; it < end; ++it) {
+        uint8_t* node = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(*it));
+        const std::string& node_name = lift_field<std::string>(node, 0x04);
+        if (node_name == mem_00A9F7F8) {
+            auto vtbl = lift_field<uintptr_t*>(node, 0);
+            auto get_str = reinterpret_cast<std::string*(__thiscall*)(void*, std::string*)>(vtbl[0x08 / 4]);
+            std::string tmp_str;
+            std::string* res = get_str(node, &tmp_str);
+            lift_field<std::string>(self, 0x198) = *res;
+        } else if (node_name == mem_00A9F7F4 || node_name == mem_00A9F7FC) {
+            auto vtbl = lift_field<uintptr_t*>(node, 0);
+            auto get_str = reinterpret_cast<std::string*(__thiscall*)(void*, std::string*)>(vtbl[0x08 / 4]);
+            std::string tmp_str;
+            std::string* res = get_str(node, &tmp_str);
+            lift_field<std::string>(self, 0x1b4) = *res;
+        }
+    }
+
+    if (lift_field<void*>(self, 0x18c) != nullptr) {
+        void* vec = arg0 + 0x24;
+        CheckedIter it{vec, vec, lift_field<uint32_t*>(arg0, 0x28)};
+        ext_00427A60(&it);
+        for (;;) {
+            CheckedIter end_it{vec, vec, lift_field<uint32_t*>(vec, 0x08)};
+            ext_00427A60(&end_it);
+            if (it.ptr == end_it.ptr) {
+                break;
+            }
+            uint8_t* child = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(*it.ptr));
+            if (lift_field<std::string>(child, 0x04) == mem_00A9EDA8) {
+                void* sub_vec = child + 0x24;
+                CheckedIter sub_it{sub_vec, sub_vec, lift_field<uint32_t*>(sub_vec, 0x04)};
+                ext_00427A60(&sub_it);
+                for (;;) {
+                    CheckedIter sub_end{sub_vec, sub_vec, lift_field<uint32_t*>(sub_vec, 0x08)};
+                    ext_00427A60(&sub_end);
+                    if (sub_it.ptr == sub_end.ptr) {
+                        break;
+                    }
+                    void* sub_item = reinterpret_cast<void*>(static_cast<uintptr_t>(*sub_it.ptr));
+                    void* mgr = lift_field<void*>(self, 0x18c);
+                    void* res = ext_005F28D0(sub_item, mgr, self);
+                    ext_005A35D0(lift_field<void*>(self, 0x18c), res);
+                    ext_005EE9A0(self, res);
+                    ++sub_it.ptr;
+                    ext_00427A60(&sub_it);
+                }
+            }
+            ++it.ptr;
+            ext_00427A60(&it);
+        }
+        ext_005ED750(self);
+    }
+}
+} // namespace lift_005F2970

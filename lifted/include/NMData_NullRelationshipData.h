@@ -10,7 +10,21 @@
 // Recovered field layout for NMData::NullRelationshipData:
 namespace lifted_layout {
 struct NMData_NullRelationshipData_Fields {
-    // +0x178 uint8_t                  field_0x178  (evidence: 0x005E1830, 0x005EBE00)
+    // +0x168 uint8_t[12]              field_0x168  (evidence: 0x005F2970)
+    // +0x178 uint8_t                  field_0x178  (evidence: 0x005E1830, 0x005EBE00, 0x005F2970)
+    // +0x179 uint8_t                  field_0x179  (evidence: 0x005F2970)
+    // +0x18C void*                    field_0x18c  (evidence: 0x005F2970)
     // +0x190 void*                    field_0x190  (evidence: 0x005EBE00)
+    // +0x198 std::string              field_0x198  (evidence: 0x005F2970)
+    // +0x1B4 std::string              field_0x1b4  (evidence: 0x005F2970)
+    // +0x1E0 uint32_t                 field_0x1e0  (evidence: 0x005F2970)
+    // +0x1E4 std::string              field_0x1e4  (evidence: 0x005F2970)
+    // +0x210 float                    field_0x210  (evidence: 0x005F2970)
+    // +0x214 float                    field_0x214  (evidence: 0x005F2970)
+    // +0x218 float                    field_0x218  (evidence: 0x005F2970)
+    // +0x21C float                    field_0x21c  (evidence: 0x005F2970)
+    // +0x220 float                    field_0x220  (evidence: 0x005F2970)
+    // +0x224 float                    field_0x224  (evidence: 0x005F2970)
+    // +0x238 int32_t                  field_0x238  (evidence: 0x005F2970)
 };
 } // namespace lifted_layout
