@@ -2730,3 +2730,63 @@ uint32_t fn_00707A10(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t
     return ext_006FAC10(self, a1, a2, a3, a4, a5, a6);
 }
 } // namespace lift_00707A10
+
+// [0x00701DF0] sub_00701DF0 (19 bytes)
+namespace lift_00701DF0 {
+// @name sub_00701DF0
+// @summary Auto-lifted identical-shape clone of 0x00704D60 (Unknown::forwardArgToMember_00704D60).
+namespace lift_00704D60 {
+// Known callee 0x006D3B50: Unknown::insertVirtualResultIntoArray_006D3B50 (Calls virtual slot 0x48 on self with arg1; if it returns non-zero, appends that result to the DynamicArray at +0xdc. Returns the virtual call's result.)
+extern int32_t ext_006DC8E0(void* self, int32_t arg1);
+
+// @name Unknown::forwardArgToMember_00704D60
+// @class Unknown
+// @summary Forwards arg1 to fn_006D3B50 using the object pointer stored at this+0xb4 as its receiver; returns that call's result.
+// @field Unknown +0xb4 void* member
+int32_t fn_00701DF0(void* self, int32_t arg1) {
+    // mov ecx, [ecx+0xb4]; push arg1; call fn_006D3B50; ret 4 (callee result left in eax)
+    void* inner = lift_field<void*>(self, 0x6F0);
+    return ext_006DC8E0(inner, arg1);
+}
+} // namespace lift_00704D60
+} // namespace lift_00701DF0
+
+// [0x00704B00] sub_00704B00 (19 bytes)
+namespace lift_00704B00 {
+// @name sub_00704B00
+// @summary Auto-lifted identical-shape clone of 0x00704D60 (Unknown::forwardArgToMember_00704D60).
+namespace lift_00704D60 {
+// Known callee 0x006D3B50: Unknown::insertVirtualResultIntoArray_006D3B50 (Calls virtual slot 0x48 on self with arg1; if it returns non-zero, appends that result to the DynamicArray at +0xdc. Returns the virtual call's result.)
+extern int32_t ext_006DC8E0(void* self, int32_t arg1);
+
+// @name Unknown::forwardArgToMember_00704D60
+// @class Unknown
+// @summary Forwards arg1 to fn_006D3B50 using the object pointer stored at this+0xb4 as its receiver; returns that call's result.
+// @field Unknown +0xb4 void* member
+int32_t fn_00704B00(void* self, int32_t arg1) {
+    // mov ecx, [ecx+0xb4]; push arg1; call fn_006D3B50; ret 4 (callee result left in eax)
+    void* inner = lift_field<void*>(self, 0x7C8);
+    return ext_006DC8E0(inner, arg1);
+}
+} // namespace lift_00704D60
+} // namespace lift_00704B00
+
+// [0x0070AF30] sub_0070AF30 (19 bytes)
+namespace lift_0070AF30 {
+// @name sub_0070AF30
+// @summary Auto-lifted identical-shape clone of 0x00704D60 (Unknown::forwardArgToMember_00704D60).
+namespace lift_00704D60 {
+// Known callee 0x006D3B50: Unknown::insertVirtualResultIntoArray_006D3B50 (Calls virtual slot 0x48 on self with arg1; if it returns non-zero, appends that result to the DynamicArray at +0xdc. Returns the virtual call's result.)
+extern int32_t ext_006DC8E0(void* self, int32_t arg1);
+
+// @name Unknown::forwardArgToMember_00704D60
+// @class Unknown
+// @summary Forwards arg1 to fn_006D3B50 using the object pointer stored at this+0xb4 as its receiver; returns that call's result.
+// @field Unknown +0xb4 void* member
+int32_t fn_0070AF30(void* self, int32_t arg1) {
+    // mov ecx, [ecx+0xb4]; push arg1; call fn_006D3B50; ret 4 (callee result left in eax)
+    void* inner = lift_field<void*>(self, 0x4F8);
+    return ext_006DC8E0(inner, arg1);
+}
+} // namespace lift_00704D60
+} // namespace lift_0070AF30
