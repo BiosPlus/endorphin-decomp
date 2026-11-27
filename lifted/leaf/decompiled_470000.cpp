@@ -23,6 +23,7 @@ DWORD* __thiscall fn_0047A010(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0047A010
+#include <cstring>
 
 // [0x00479A90]
 namespace lift_00479A90 {
@@ -1292,3 +1293,32 @@ void* __stdcall fn_004727D0(uint32_t a1, uint32_t a2, uint32_t a3, const void* s
     }
 }
 } // namespace lift_004727D0
+
+// [0x00475840] sub_00475840 (82 bytes)
+namespace lift_00475840 {
+// @name sub_00475840
+// @summary Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).
+namespace lift_0052A140 {
+// Known callee 0x00532900: Copy-initialize from source (ctor-style copy of vec4 + string + flag) (Sets the vtable, enable flag, copies 4 floats (+0x08..+0x14), a std::string (+0x18), and a byte flag (+0x34) from the source object.)
+extern void ext_00475160(void* self, const void* src);
+extern int mem_00924FE0;
+
+// @name Unknown::ctor_CopyPairAt1C
+// @class Unknown
+// @summary Copy-constructs a std::string at +0x00 from src, then copy-initializes the sub-object at +0x1C from src+0x1C.
+// @field Unknown +0x00 std::string copy (MSVCP80 basic_string copy ctor, via mem_00924FE0 IAT slot)
+// @field Unknown +0x1C <unknown> field_0x1C (copy-initialized by ext_00532900)
+void* fn_00475840(void* self, const void* src) {
+    // MSVCP80 std::string copy ctor, called indirectly through the IAT slot.
+    using StringCopyCtor = void (*)(void* self, const void* src);
+    auto copy_string = *reinterpret_cast<StringCopyCtor*>(&mem_00924FE0);
+    copy_string(self, src);
+
+    auto* dst_sub = static_cast<unsigned char*>(self) + 0x1C;
+    auto* src_sub = static_cast<const unsigned char*>(src) + 0x1C;
+    ext_00475160(dst_sub, src_sub);
+
+    return self;
+}
+} // namespace lift_0052A140
+} // namespace lift_00475840

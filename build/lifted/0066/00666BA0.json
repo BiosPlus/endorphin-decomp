@@ -1,0 +1,28 @@
+{
+  "va": "0x00666BA0",
+  "size": 82,
+  "orig_symbol": "sub_00666BA0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_00666BA0",
+  "class": "Unknown",
+  "signature": "void* fn_00666BA0(void* self, const void* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string copy (MSVCP80 basic_string copy ctor, via mem_00924FE0 IAT",
+      "name": "slot)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "\u003cunknown\u003e field_0x1C (copy-initialized by",
+      "name": "ext_00532900)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T04:54:08Z"
+}

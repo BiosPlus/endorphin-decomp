@@ -3,6 +3,7 @@
 #include <new>
 #include <string>
 #include <cstring>
+#include <cmath>
 
 // [0x004DE130] sub_004DE130 (35 bytes)
 namespace lift_004DE130 {
@@ -734,3 +735,46 @@ void* fn_004D9CE0(void* self, uint8_t flag) {
     return ext_00493EE0(static_cast<uint8_t*>(obj) + 0x258);
 }
 } // namespace lift_004D9CE0
+
+// [0x004D5560] sub_004D5560 (138 bytes)
+namespace lift_004D5560 {
+// @name sub_004D5560
+// @summary Auto-lifted identical-shape clone of 0x004C0280 (Unknown::copyStringFromDocumentOrThrow).
+namespace lift_004C0280 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x0065F5E0: AdvXMLParser::Document::vfunc_1 (__thiscall: self in ECX, out pointer on stack; returns pointer to the filled string).
+extern void* ext_004D3A10(void* self, void* out);
+// Known callee 0x006A6DD2: thunk to MSVCR80!_CxxThrowException (exception object + ThrowInfo 0x009DEC1C).
+extern void ext_006A6DD2();
+// IAT slots for MSVCP80 std::basic_string<char> copy-ctor (0x924FE0) and dtor (0x924FF4).
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+
+// @name Unknown::copyStringFromDocumentOrThrow
+// @summary If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.
+// @field  none (no class-relative field offsets accessed)
+void* __stdcall fn_004D5560(void* arg1, void* arg2) {
+    if (arg2 == nullptr) {
+        // Path B: build a DerivedException in a local and throw it.
+        // Exception storage size is not recovered; 0x20 bytes is a placeholder for the stack slot at [esp+0x20].
+        alignas(16) unsigned char exc[0x20] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return nullptr; // not reached: _CxxThrowException does not return
+    }
+
+    // Path A: vfunc_1 fills a temporary std::string, which is copy-constructed
+    // into arg1 (the asm's thiscall copy-ctor via IAT 0x924FE0), then destroyed
+    // (IAT 0x924FF4). The result is arg1.
+    using MsvcString = std::string;
+    alignas(MsvcString) unsigned char tmp[sizeof(MsvcString)];
+    void* src = ext_004D3A10(arg2, tmp);
+    new (arg1) MsvcString(*static_cast<MsvcString*>(src));
+    reinterpret_cast<MsvcString*>(tmp)->~MsvcString();
+    (void)&mem_00924FE0; // copy-ctor IAT slot (metadata only; std::string ops are native here)
+    (void)&mem_00924FF4; // dtor IAT slot (metadata only)
+    return arg1;
+}
+} // namespace lift_004C0280
+} // namespace lift_004D5560

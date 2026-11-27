@@ -2216,3 +2216,80 @@ void* __stdcall fn_00595B70(uint32_t a, uint32_t b, uint32_t c, const void* rhs,
     return obj;
 }
 } // namespace lift_00595B70
+
+// [0x00595C90] sub_00595C90 (82 bytes)
+namespace lift_00595C90 {
+// @name sub_00595C90
+// @summary Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).
+namespace lift_0052A140 {
+// Known callee 0x00532900: Copy-initialize from source (ctor-style copy of vec4 + string + flag) (Sets the vtable, enable flag, copies 4 floats (+0x08..+0x14), a std::string (+0x18), and a byte flag (+0x34) from the source object.)
+extern void ext_0049BD50(void* self, const void* src);
+extern int mem_00924FE0;
+
+// @name Unknown::ctor_CopyPairAt1C
+// @class Unknown
+// @summary Copy-constructs a std::string at +0x00 from src, then copy-initializes the sub-object at +0x1C from src+0x1C.
+// @field Unknown +0x00 std::string copy (MSVCP80 basic_string copy ctor, via mem_00924FE0 IAT slot)
+// @field Unknown +0x1C <unknown> field_0x1C (copy-initialized by ext_00532900)
+void* fn_00595C90(void* self, const void* src) {
+    // MSVCP80 std::string copy ctor, called indirectly through the IAT slot.
+    using StringCopyCtor = void (*)(void* self, const void* src);
+    auto copy_string = *reinterpret_cast<StringCopyCtor*>(&mem_00924FE0);
+    copy_string(self, src);
+
+    auto* dst_sub = static_cast<unsigned char*>(self) + 0x1C;
+    auto* src_sub = static_cast<const unsigned char*>(src) + 0x1C;
+    ext_0049BD50(dst_sub, src_sub);
+
+    return self;
+}
+} // namespace lift_0052A140
+} // namespace lift_00595C90
+
+// [0x005978F0] sub_005978F0 (141 bytes)
+namespace lift_005978F0 {
+// @name sub_005978F0
+// @summary Auto-lifted identical-shape clone of 0x00667810 (Unknown::destroyNodeList).
+namespace lift_00667810 {
+// Known callee 0x006668B0: ReleaseFiveStringMembers_006668B0 (Destroys five std::string members (at +0x74, +0x54, +0x38, +0x1C, +0x00) in reverse order via the MSVCP80 basic_string destructor import.)
+extern void ext_00682FD0(void* self);
+extern void ext_00667810(void* self, void* node);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; called cdecl with one pointer argument.)
+extern void ext_006A5C5C(void* arg);
+extern int mem_00924FF4;
+
+// @name Unknown::destroyNodeList
+// @class Unknown
+// @summary Recursively walks a singly linked node list starting at node; for each node it recurses on the child at +0x08, destroys the ObjectWithStrings at +0x28 and the std::string at +0x0C, then frees the node via MFC80!ord_764, until a node with the flag at +0xC1 set is reached.
+// @field Unknown +0x00 Unknown* field_0x00
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C std::string field_0x0C
+// @field Unknown +0x28 ObjectWithStrings field_0x28
+// @field Unknown +0xC1 BYTE field_0xC1
+void fn_005978F0(void* self, void* node) {
+    // MSVCP80 std::basic_string<char>::~basic_string, called thiscall on the string object.
+    using StringDtorFn = void (*)(void*);
+    const StringDtorFn string_dtor = *reinterpret_cast<StringDtorFn*>(&mem_00924FF4);
+
+    uint8_t* edi = static_cast<uint8_t*>(node);
+    uint8_t* esi = edi;
+
+    // Nothing to do when the starting node is already flagged.
+    if (lift_field<uint8_t>(edi, 0xB9) != 0) {
+        return;
+    }
+
+    do {
+        ext_00667810(self, lift_field<void*>(esi, 0x08));
+        esi = lift_field<uint8_t*>(esi, 0x00);
+
+        uint8_t* const str_obj = edi + 0x0C;
+        ext_00682FD0(edi + 0x28);
+        string_dtor(str_obj);
+        ext_006A5C5C(edi);
+
+        edi = esi;
+    } while (lift_field<uint8_t>(esi, 0xB9) == 0);
+}
+} // namespace lift_00667810
+} // namespace lift_005978F0

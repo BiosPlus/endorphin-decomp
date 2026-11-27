@@ -9958,6 +9958,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004AD970 (Unknown::DestroyStringAndArray).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475840": {
+    "name": "sub_00475840",
+    "class": "Unknown",
+    "signature": "void* fn_00475840(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476530": {
     "name": "sub_00476530",
     "class": "UnknownClass",
@@ -14114,6 +14121,13 @@
     "summary": "std::lower_bound-style binary search over a 32-bit element array, comparing projected element against key; returns first index not less than key.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A68E0": {
+    "name": "sub_004A68E0",
+    "class": "Unknown",
+    "signature": "void fn_004A68E0(void* self, void* node)",
+    "summary": "Auto-lifted identical-shape clone of 0x00667810 (Unknown::destroyNodeList).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A6A10": {
     "name": "OwnedPointerRange::destroyAndReset",
     "class": "OwnedPointerRange",
@@ -14154,6 +14168,13 @@
     "signature": "void* fn_004A74B0(void* self, const void* key)",
     "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
+  "0x004A82D0": {
+    "name": "sub_004A82D0",
+    "class": "Unknown",
+    "signature": "void* fn_004A82D0(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004A96A0": {
     "name": "sub_004A96A0",
@@ -14610,6 +14631,13 @@
     "class": "Unknown",
     "signature": "void fn_004AD970(void* self)",
     "summary": "Releases the StringArray at +0x1c, then runs the std::string destructor on the object itself.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004ADA20": {
+    "name": "sub_004ADA20",
+    "class": "Unknown",
+    "signature": "void* fn_004ADA20(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004AEC60": {
@@ -18444,6 +18472,12 @@
     "signature": "void fn_004D54B0(void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004D5560": {
+    "name": "sub_004D5560",
+    "signature": "void* __stdcall fn_004D5560(void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004C0280 (Unknown::copyStringFromDocumentOrThrow).",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
   "0x004D55F0": {
     "name": "ExprParser::ReadWriteMethodType\u003cRigEventData sourceName\u003e::vfunc_40",
@@ -29238,6 +29272,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00557200": {
+    "name": "sub_00557200",
+    "class": "Unknown",
+    "signature": "void* fn_00557200(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00557260": {
     "name": "sub_00557260",
     "signature": "extern \"C\" void __fastcall fn_00557260(void* self)",
@@ -29301,6 +29342,13 @@
     "name": "sub_005587E0",
     "signature": "void fn_005587E0(void* self, uint32_t flag)",
     "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x005588C0": {
+    "name": "sub_005588C0",
+    "class": "Unknown",
+    "signature": "void* fn_005588C0(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00558A10": {
@@ -32680,6 +32728,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00595C90": {
+    "name": "sub_00595C90",
+    "class": "Unknown",
+    "signature": "void* fn_00595C90(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00595CF0": {
     "name": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1\u003e",
@@ -32802,6 +32857,13 @@
     "class": "Unknown",
     "signature": "static inline uint32_t u32_at(const uint8_t* base, std::ptrdiff_t off)",
     "summary": "Walks a singly linked node list starting at arg (next at +0x00); recursively processes each node's +0x08 child, invokes vfunc slot 30 on the object at +0x2C if non-null, destroys the std::string at +0x0C, then calls ext_006A5C5C(node). Stops when a node's flag at +0x31 is nonzero.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x005978F0": {
+    "name": "sub_005978F0",
+    "class": "Unknown",
+    "signature": "void fn_005978F0(void* self, void* node)",
+    "summary": "Auto-lifted identical-shape clone of 0x00667810 (Unknown::destroyNodeList).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x00597DA0": {
@@ -54512,6 +54574,13 @@
     "class": "Unknown",
     "signature": "void* fn_00666A60(void* self, void* out_string)",
     "summary": "Default-constructs the std::string at out_string, builds an 18-byte record referencing it via initRecord_ptrDefaultsWord0C, passes the record to vtable slot 5 of self, and returns out_string.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00666BA0": {
+    "name": "sub_00666BA0",
+    "class": "Unknown",
+    "signature": "void* fn_00666BA0(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00666C00": {
