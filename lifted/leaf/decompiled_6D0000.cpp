@@ -3736,3 +3736,48 @@ bool fn_006D4D90(void* self, DWORD item) {
     return false;
 }
 } // namespace lift_006D4D90
+
+// [0x006D5190] sub_006D5190 (116 bytes)
+namespace lift_006D5190 {
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, int32_t index);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::removeItemAndRelease_006D5190
+// @class Unknown
+// @summary Searches the DWORD array at this+0x19c for item; if found, removes it and calls item's vtable slot 3 with 1; otherwise calls ext_006E7440(this+0x1c4, 0). Returns true when removed.
+// @field Unknown +0x19c int32_t itemCount
+// @field Unknown +0x1ac DWORD* itemData
+// @field Unknown +0x1c4 uint8_t field_0x1c4
+bool fn_006D5190(void* self, void* item) {
+    uint8_t* const base = static_cast<uint8_t*>(self);
+    const int32_t count = lift_field<int32_t>(self, 0x19c);
+    const DWORD key = static_cast<DWORD>(reinterpret_cast<uintptr_t>(item));
+
+    int32_t found = -1;
+    if (count > 0) {
+        DWORD* const data = reinterpret_cast<DWORD*>(
+            static_cast<uintptr_t>(lift_field<DWORD>(self, 0x1ac)));
+        for (int32_t i = 0; i < count; ++i) {
+            if (data[i] == key) {
+                found = i;
+                break;
+            }
+        }
+    }
+
+    if (found == -1) {
+        ext_006E7440(base + 0x1c4, 0);
+        return false;
+    }
+
+    ext_006D2200(base + 0x19c, found);
+
+    if (item != nullptr) {
+        void** const vtbl = *reinterpret_cast<void***>(item);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[3])(item, 1);
+    }
+    return true;
+}
+} // namespace lift_006D5190
