@@ -1,0 +1,13 @@
+{
+  "va": "0x00432130",
+  "size": 134,
+  "orig_symbol": "sub_00432130",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "appOnFileSaveOrAction",
+  "signature": "void __cdecl fn_00432130(void)",
+  "summary": "Invokes vtable+0x1d0(0) on the object returned by sub_00465B40 and displays any caught exception message via AfxMessageBox.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:36:07Z"
+}

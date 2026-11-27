@@ -4703,3 +4703,32 @@ void fn_00432880(void* self) {
     slot(obj, 1);
 }
 } // namespace lift_00432880
+
+// [0x00432130]
+namespace lift_00432130 {
+// @name appOnFileSaveOrAction
+// @summary Invokes vtable+0x1d0(0) on the object returned by sub_00465B40 and displays any caught exception message via AfxMessageBox.
+
+
+extern uintptr_t ext_00465B40(void);
+extern int ext_006A5E60(const char* lpszText, unsigned int nType, unsigned int nIDHelp);
+extern uintptr_t mem_00924FE0;
+extern uintptr_t mem_00924FF0;
+extern uintptr_t mem_00924FF4;
+
+void __cdecl fn_00432130(void) {
+    (void)mem_00924FE0;
+    (void)mem_00924FF0;
+    (void)mem_00924FF4;
+
+    try {
+        uintptr_t obj = ext_00465B40();
+        uintptr_t vtable = *reinterpret_cast<uintptr_t*>(obj);
+        using VMethod = void(__thiscall*)(uintptr_t, int);
+        auto fn = *reinterpret_cast<VMethod*>(vtable + 0x1d0);
+        fn(obj, 0);
+    } catch (const std::exception& e) {
+        ext_006A5E60(e.what(), 0, 0);
+    }
+}
+} // namespace lift_00432130
