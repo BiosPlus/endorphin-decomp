@@ -1,0 +1,14 @@
+{
+  "va": "0x004C0280",
+  "size": 138,
+  "orig_symbol": "sub_004C0280",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "Unknown::copyStringFromDocumentOrThrow",
+  "class": "Unknown",
+  "signature": "void* __stdcall fn_004C0280(void* arg1, void* arg2)",
+  "summary": "If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:32:23Z"
+}
