@@ -68702,6 +68702,13 @@
     "summary": "Searches the DWORD array at this+0xd4 (count at this+0xc4) for item; if found, removes it from the array and releases it via vtable slot 5 (arg 1); otherwise calls ext_006E7440 on this+0x1c4 with index 0. Returns true when found.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D4E90": {
+    "name": "Unknown::removeEntryAndRelease_006D4E90",
+    "class": "Unknown",
+    "signature": "bool fn_006D4E90(void* self, void* obj)",
+    "summary": "Searches the DWORD DynArray at +0x124 for the value passed in; if found, removes it and, when the value is a non-null object, calls its vtable slot 5 with flag 1, returning true. If not found, calls ext_006E7440 on this+0x1C4 with index 0 and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D5190": {
     "name": "Unknown::removeItemAndRelease_006D5190",
     "class": "Unknown",

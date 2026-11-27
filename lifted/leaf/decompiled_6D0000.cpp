@@ -3781,3 +3781,48 @@ bool fn_006D5190(void* self, void* item) {
     return true;
 }
 } // namespace lift_006D5190
+
+// [0x006D4E90] sub_006D4E90 (116 bytes)
+namespace lift_006D4E90 {
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (thiscall-style; ecx = self, one stack arg)
+extern void* ext_006E7440(void* self, DWORD index);
+// Known callee 0x006D2200: DynArray::removeAt (ecx = array self, one stack arg = index)
+extern void ext_006D2200(void* self, void* edx, int32_t index);
+
+// @name Unknown::removeEntryAndRelease_006D4E90
+// @class Unknown
+// @summary Searches the DWORD DynArray at +0x124 for the value passed in; if found, removes it and, when the value is a non-null object, calls its vtable slot 5 with flag 1, returning true. If not found, calls ext_006E7440 on this+0x1C4 with index 0 and returns false.
+// @field Unknown +0x124 int32_t field_0x124
+// @field Unknown +0x134 void* field_0x134
+// @field Unknown +0x1C4 void* field_0x1C4
+bool fn_006D4E90(void* self, void* obj) {
+    const int32_t count = lift_field<int32_t>(self, 0x124);
+    const DWORD key = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+
+    int32_t index = 0;
+    if (count > 0) {
+        DWORD* data = lift_field<DWORD*>(self, 0x134);
+        for (; index < count; ++index) {
+            if (data[index] == key) {
+                break;
+            }
+        }
+    }
+
+    const bool found = index < count;
+    if (!found) {
+        ext_006E7440(static_cast<uint8_t*>(self) + 0x1C4, 0);
+        return false;
+    }
+
+    ext_006D2200(static_cast<uint8_t*>(self) + 0x124, nullptr, index);
+
+    if (obj != nullptr) {
+        using Slot5Fn = void (*)(void* self, int32_t flag);
+        void* vtable = lift_field<void*>(obj, 0x00);
+        Slot5Fn release = lift_field<Slot5Fn>(vtable, 0x14);
+        release(obj, 1);
+    }
+    return true;
+}
+} // namespace lift_006D4E90
