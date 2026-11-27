@@ -15227,6 +15227,13 @@
     "summary": "If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004C0350": {
+    "name": "CallDispatchThenInitPair",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "DWORD fn_004C0350(DWORD a1, DWORD a2)",
+    "summary": "Calls DispatchSubcallByIndex(2, a2, saved ESI), then initDwordPair on a1 with (result, a2); returns a1.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C0380": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0\u003e",

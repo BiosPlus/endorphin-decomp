@@ -1,0 +1,14 @@
+{
+  "va": "0x004C0350",
+  "size": 44,
+  "orig_symbol": "sub_004C0350",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "CallDispatchThenInitPair",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "DWORD fn_004C0350(DWORD a1, DWORD a2)",
+  "summary": "Calls DispatchSubcallByIndex(2, a2, saved ESI), then initDwordPair on a1 with (result, a2); returns a1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:48Z"
+}

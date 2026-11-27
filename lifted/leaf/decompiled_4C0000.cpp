@@ -983,3 +983,23 @@ void fn_004CCB50(void* self, const float* src) {
     lift_field<float>(self, 0x19c) = src[2];
 }
 } // namespace lift_004CCB50
+
+// [0x004C0350] sub_004C0350 (44 bytes)
+namespace lift_004C0350 {
+// Known callee 0x0055DA20: initDwordPair (Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).)
+extern void ext_0055DA20(DWORD* self, DWORD a, DWORD b);
+// Known callee 0x00681E50: DispatchSubcallByIndex (Switch on index 0..6: tail-dispatches to one of six sub-handlers (0..4, 6); index 5 and out-of-range return 0.)
+extern DWORD ext_00681E50(DWORD index, void* a1, void* a2);
+
+// @name CallDispatchThenInitPair
+// @class <ClassName> (optional)
+// @summary Calls DispatchSubcallByIndex(2, a2, saved ESI), then initDwordPair on a1 with (result, a2); returns a1.
+// (no direct object field accesses in this function)
+DWORD fn_004C0350(DWORD a1, DWORD a2) {
+    // Original asm passes the caller's ESI as the third dispatch argument
+    // (it is pushed as a stack slot). That value is not expressible in portable C++; passed as 0.
+    DWORD r = ext_00681E50(2, (void*)(uintptr_t)a2, (void*)0);
+    ext_0055DA20((DWORD*)(uintptr_t)a1, r, a2);
+    return a1;
+}
+} // namespace lift_004C0350
