@@ -10,15 +10,15 @@
 // Recovered field layout for NMData::SkeletalCalibrationVariables:
 namespace lifted_layout {
 struct NMData_SkeletalCalibrationVariables_Fields {
-    // +0x4   float                    field_0x04  (evidence: 0x004F4ED0, 0x004F91F0, 0x006229C0)
-    // +0x8   float                    field_0x08  (evidence: 0x006229C0)
-    // +0xC   float                    field_0x0c  (evidence: 0x006229C0)
-    // +0x10  float                    field_0x10  (evidence: 0x004A9B50, 0x00622320, 0x006229C0)
-    // +0x14  float                    field_0x14  (evidence: 0x004A9B50, 0x00622330, 0x006229C0)
-    // +0x18  float                    field_0x18  (evidence: 0x004A9B50, 0x00622340, 0x006229C0)
-    // +0x1C  float                    field_0x1c  (evidence: 0x004A9B50, 0x00622350, 0x006229C0)
-    // +0x20  float                    field_0x20  (evidence: 0x004A9B50, 0x00622360, 0x006229C0)
-    // +0x24  float                    field_0x24  (evidence: 0x004A9B50, 0x00622370, 0x006229C0)
-    // +0x28  float                    field_0x28  (evidence: 0x006229C0)
+    // +0x4   float                    field_0x04  (evidence: 0x004F4ED0, 0x004F91F0, 0x006224A0, 0x006229C0)
+    // +0x8   float                    field_0x08  (evidence: 0x006224A0, 0x006229C0)
+    // +0xC   float                    field_0x0c  (evidence: 0x006224A0, 0x006229C0)
+    // +0x10  float                    field_0x10  (evidence: 0x004A9B50, 0x00622320, 0x006224A0, 0x006229C0)
+    // +0x14  float                    field_0x14  (evidence: 0x004A9B50, 0x00622330, 0x006224A0, 0x006229C0)
+    // +0x18  float                    field_0x18  (evidence: 0x004A9B50, 0x00622340, 0x006224A0, 0x006229C0)
+    // +0x1C  float                    field_0x1c  (evidence: 0x004A9B50, 0x00622350, 0x006224A0, 0x006229C0)
+    // +0x20  float                    field_0x20  (evidence: 0x004A9B50, 0x00622360, 0x006224A0, 0x006229C0)
+    // +0x24  float                    field_0x24  (evidence: 0x004A9B50, 0x00622370, 0x006224A0, 0x006229C0)
+    // +0x28  float                    field_0x28  (evidence: 0x006224A0, 0x006229C0)
 };
 } // namespace lifted_layout

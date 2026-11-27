@@ -63419,6 +63419,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006227B0 (NMData::HingeCalibrationVariables::vfunc_28).",
     "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp"
   },
+  "0x006224A0": {
+    "name": "NMData::SkeletalCalibrationVariables::vfunc_26",
+    "class": "NMData::SkeletalCalibrationVariables",
+    "signature": "void* fn_006224A0(void* self, void* arg1)",
+    "summary": "Forwards the ten calibration floats of self to sub_0067EF60 on the object returned by sub_006404E0(arg1), then returns that object.",
+    "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp"
+  },
   "0x006226A0": {
     "name": "allocateElements20",
     "signature": "extern \"C\" void* fn_006226A0(uint32_t count)",
