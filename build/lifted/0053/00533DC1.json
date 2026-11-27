@@ -1,0 +1,14 @@
+{
+  "va": "0x00533DC1",
+  "size": 16,
+  "orig_symbol": "sub_00533DC1",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "sub_00533DC1",
+  "class": "RenderableList",
+  "signature": "void fn_00533DC1(void* self, uint32_t arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x00533E71 (RenderableList::vfunc_22_forward).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T04:22:56Z"
+}
