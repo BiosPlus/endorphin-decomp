@@ -26512,6 +26512,12 @@
     "summary": "std::lower_bound over a [first,last) array of 32-byte elements, comparing each element's first uint32 against *key; returns the first element not less than *key.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00555550": {
+    "name": "CopyElementRange",
+    "signature": "uint8_t* fn_00555550(uint8_t* src_begin, uint8_t* src_end, uint8_t* dst)",
+    "summary": "Copies each 0x20-byte element in [src_begin, src_end) field-by-field into consecutive slots starting at dst; returns the one-past-last destination slot (dst itself if the range is empty).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005555D0": {
     "name": "FillRecordsFromTemplate",
     "class": "Unknown",

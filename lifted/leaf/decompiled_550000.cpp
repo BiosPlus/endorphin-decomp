@@ -1779,3 +1779,37 @@ void* __thiscall sub_00553F00(void* self, const void* other) {
     return self;
 }
 } // namespace lift_00553F00
+
+// [0x00555550]
+namespace lift_00555550 {
+// @name CopyElementRange
+// @summary Copies each 0x20-byte element in [src_begin, src_end) field-by-field into consecutive slots starting at dst; returns the one-past-last destination slot (dst itself if the range is empty).
+// @field Element +0x00 uint32_t field_0x00
+// @field Element +0x04 float field_0x04
+// @field Element +0x08 float field_0x08
+// @field Element +0x0c float field_0x0c
+// @field Element +0x10 uint32_t field_0x10
+// @field Element +0x14 uint32_t field_0x14
+// @field Element +0x18 uint32_t field_0x18
+// @field Element +0x1c uint8_t field_0x1c
+// @field Element +0x1d uint8_t field_0x1d
+// @field Element +0x1e uint8_t field_0x1e
+
+uint8_t* fn_00555550(uint8_t* src_begin, uint8_t* src_end, uint8_t* dst) {
+    uint8_t* dst_cur = dst;
+    for (uint8_t* src = src_begin; src != src_end; src += 0x20) {
+        lift_field<uint32_t>(dst_cur, 0x00) = lift_field<uint32_t>(src, 0x00);
+        lift_field<float>(dst_cur, 0x04) = lift_field<float>(src, 0x04);
+        lift_field<float>(dst_cur, 0x08) = lift_field<float>(src, 0x08);
+        lift_field<float>(dst_cur, 0x0c) = lift_field<float>(src, 0x0c);
+        lift_field<uint32_t>(dst_cur, 0x10) = lift_field<uint32_t>(src, 0x10);
+        lift_field<uint32_t>(dst_cur, 0x14) = lift_field<uint32_t>(src, 0x14);
+        lift_field<uint32_t>(dst_cur, 0x18) = lift_field<uint32_t>(src, 0x18);
+        lift_field<uint8_t>(dst_cur, 0x1c) = lift_field<uint8_t>(src, 0x1c);
+        lift_field<uint8_t>(dst_cur, 0x1d) = lift_field<uint8_t>(src, 0x1d);
+        lift_field<uint8_t>(dst_cur, 0x1e) = lift_field<uint8_t>(src, 0x1e);
+        dst_cur += 0x20;
+    }
+    return dst_cur;
+}
+} // namespace lift_00555550
