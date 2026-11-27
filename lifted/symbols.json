@@ -13623,6 +13623,13 @@
     "summary": "One-time initializer guarded by bit 0 of mem_00ADD818; initializes the static object at mem_00ADD814 and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049D050": {
+    "name": "BoundedAddToField08",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_0049D050(void* self, uint32_t n)",
+    "summary": "Adds n to the uint32 at +0x08 if the result stays within 0x1414141 (the remaining headroom check); otherwise builds an std::exception-style object and throws via CxxThrowException.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049D0F0": {
     "name": "Counter::AddBounded",
     "class": "Counter",

@@ -1,0 +1,22 @@
+{
+  "va": "0x0049D050",
+  "size": 154,
+  "orig_symbol": "sub_0049D050",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "BoundedAddToField08",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_0049D050(void* self, uint32_t n)",
+  "summary": "Adds n to the uint32 at +0x08 if the result stays within 0x1414141 (the remaining headroom check); otherwise builds an std::exception-style object and throws via CxxThrowException.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:15:47Z"
+}

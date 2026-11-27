@@ -2407,3 +2407,32 @@ uint32_t fn_0049D0F0(void* self, uint32_t n) {
     return value;
 }
 } // namespace lift_0049D0F0
+
+// [0x0049D050] sub_0049D050 (154 bytes)
+namespace lift_0049D050 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_00924FE0;
+extern int mem_00924FE4;
+extern int mem_009251C4;
+
+// @name BoundedAddToField08
+// @class Unknown
+// @summary Adds n to the uint32 at +0x08 if the result stays within 0x1414141 (the remaining headroom check); otherwise builds an std::exception-style object and throws via CxxThrowException.
+// @field Unknown +0x08 uint32_t field_0x08
+extern void __thiscall fn_0049D050(void* self, uint32_t n) {
+    const uint32_t limit = 0x01414141u;
+    uint32_t current = lift_field<uint32_t>(self, 0x08);
+    uint32_t headroom = limit - current;
+    if (headroom < n) {
+        // Throw path: original constructs std::string / std::exception temporaries
+        // from the IAT slots below and calls _CxxThrowException.
+        (void)&mem_00924FE0;
+        (void)&mem_00924FE4;
+        (void)&mem_009251C4;
+        ext_006A6DD2();
+        return;
+    }
+    lift_field<uint32_t>(self, 0x08) = current + n;
+}
+} // namespace lift_0049D050
