@@ -15,6 +15,9 @@ struct NMData_BackGroundData_Fields {
     // +0x78  void**                   field_0x78  (evidence: 0x0059FF60)
     // +0x15C void*                    field_0x15c  (evidence: 0x0059D6A0) // CONFLICT: multiple definitions at +0x15C
     // +0x15C void**                   field_0x15c  (evidence: 0x0059E080) // CONFLICT: multiple definitions at +0x15C
+    // +0x160 void*                    field_0x160  (evidence: 0x005A5450)
+    // +0x314 void*                    field_0x314  (evidence: 0x005A5450)
+    // +0x38C void*                    field_0x38c  (evidence: 0x005A5450)
     // +0x4DC float                    field_0x4dc  (evidence: 0x0059DD70, 0x005A9960)
     // +0x4E8 float                    field_0x4e8  (evidence: 0x0059E080)
     // +0x540 void*                    field_0x540  (evidence: 0x005A0BF0, 0x005A32F0, 0x005A5400, 0x00687100)
@@ -22,7 +25,7 @@ struct NMData_BackGroundData_Fields {
     // +0x564 uint8_t                  field_0x564  (evidence: 0x005A32F0)
     // +0x570 uint8_t                  field_0x570  (evidence: 0x005A32F0)
     // +0x594 uint32_t                 field_0x594  (evidence: 0x005A6010)
-    // +0x598 void*                    field_0x598  (evidence: 0x005A6010)
+    // +0x598 void*                    field_0x598  (evidence: 0x005A5450, 0x005A6010)
     // +0x5A4 void*                    field_0x5a4  (evidence: 0x005A1AA0)
     // +0x5F4 int32_t                  field_0x5f4  (evidence: 0x0059D6A0) // CONFLICT: multiple definitions at +0x5F4
     // +0x5F4 void*                    field_0x5f4  (evidence: 0x0059E080) // CONFLICT: multiple definitions at +0x5F4

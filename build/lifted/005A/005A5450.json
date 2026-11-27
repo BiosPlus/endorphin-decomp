@@ -1,0 +1,40 @@
+{
+  "va": "0x005A5450",
+  "size": 346,
+  "orig_symbol": "NMData::BackGroundData::vfunc_20",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_20",
+  "class": "NMData::BackGroundData",
+  "signature": "void __thiscall fn_005A5450(void* self, void* arg0)",
+  "summary": "Calls base CharacterData::vfunc_20, looks up or creates a 0x220-byte background object, initializes it, and marks its +0x8C flag.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x160",
+      "type": "void*",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x314",
+      "type": "void*",
+      "name": "field_0x314"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x38C",
+      "type": "void*",
+      "name": "field_0x38c"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x598",
+      "type": "void*",
+      "name": "field_0x598"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:22:02Z"
+}

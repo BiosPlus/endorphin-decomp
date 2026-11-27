@@ -642,3 +642,80 @@ void* fn_005A32F0(void* self, void* arg1, void* arg2) {
     return self;
 }
 } // namespace lift_005A32F0
+
+// [0x005A5450]
+namespace lift_005A5450 {
+// @name NMData::BackGroundData::vfunc_20
+// @class NMData::BackGroundData
+// @summary Calls base CharacterData::vfunc_20, looks up or creates a 0x220-byte background object, initializes it, and marks its +0x8C flag.
+// @field NMData::BackGroundData +0x160 void* field_0x160
+// @field NMData::BackGroundData +0x314 void* field_0x314
+// @field NMData::BackGroundData +0x38C void* field_0x38c
+// @field NMData::BackGroundData +0x598 void* field_0x598
+
+
+struct MsvcString28 {
+    uint8_t data[0x1C];
+};
+
+    extern void* mem_0093BED0;
+    extern void* mem_00924FE4;
+    extern void* mem_00924FE0;
+    extern void* mem_00924FF4;
+    extern void* mem_00924FDC;
+
+    void __thiscall ext_005A4D60(void* self, void* arg0);
+    void* __thiscall ext_005DF5C0(void* self, MsvcString28 str);
+    void* __cdecl ext_006A5C62(uint32_t size);
+    void* __thiscall ext_005C0E70(void* self);
+    void __thiscall ext_00587920(void* self, void* obj, uint32_t flag);
+    void __thiscall ext_005A3540(void* self, void* obj);
+
+void __thiscall fn_005A5450(void* self, void* arg0) {
+    using StrCtorCstrFn = void (__thiscall*)(void*, void*);
+    using StrCtorCopyFn = void (__thiscall*)(void*, const void*);
+    using StrDtorFn = void (__thiscall*)(void*);
+    using StrAssignFn = void* (__thiscall*)(void*, const void*);
+    using Vfunc23Fn = void (__thiscall*)(void*, void*);
+
+    ext_005A4D60(self, arg0);
+
+    MsvcString28 local_str;
+    ((StrCtorCstrFn)mem_00924FE4)(&local_str, mem_0093BED0);
+
+    MsvcString28 copy_str;
+    ((StrCtorCopyFn)mem_00924FE0)(&copy_str, &local_str);
+
+    void* esi = ext_005DF5C0((uint8_t*)self + 0x598, copy_str);
+    ((StrDtorFn)mem_00924FF4)(&local_str);
+
+    if (esi == nullptr) {
+        void* mem = ext_006A5C62(0x220);
+        if (mem != nullptr) {
+            esi = ext_005C0E70(mem);
+        } else {
+            esi = nullptr;
+        }
+
+        MsvcString28 local_str2;
+        ((StrCtorCstrFn)mem_00924FE4)(&local_str2, mem_0093BED0);
+        void** vtable = *(void***)esi;
+        ((Vfunc23Fn)vtable[0x5C / 4])(esi, &local_str2);
+        ((StrDtorFn)mem_00924FF4)(&local_str2);
+
+        void* ebp = (uint8_t*)self + 0x160;
+        *(void**)((uint8_t*)esi + 0x20C) = ebp;
+
+        MsvcString28 local_str3;
+        ((StrCtorCstrFn)mem_00924FE4)(&local_str3, mem_0093BED0);
+        ((StrAssignFn)mem_00924FDC)((uint8_t*)self + 0x314, &local_str3);
+        ((StrDtorFn)mem_00924FF4)(&local_str3);
+
+        *(void**)((uint8_t*)self + 0x38C) = esi;
+        ext_00587920(ebp, esi, 0);
+        ext_005A3540(self, esi);
+    }
+
+    *((uint8_t*)esi + 0x8C) = 1;
+}
+} // namespace lift_005A5450
