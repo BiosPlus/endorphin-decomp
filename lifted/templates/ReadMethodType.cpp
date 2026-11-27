@@ -67699,7 +67699,7 @@ inline StringDtorFn importStringDtor() {
 // @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
 // @summary Copies the property source description from the document and returns true if it equals either of two fixed literal strings.
 // @field ExprParser::ValuePtrType +0x00 void* field_0x00
-__stdcall bool fn_004C0770(void* self) {
+bool __stdcall fn_004C0770(void* self) {
     // Local std::string storage (MSVC x86 layout is 0x1C bytes).
     alignas(8) unsigned char description[0x1C];
 

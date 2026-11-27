@@ -17048,6 +17048,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::MetaBodyConstraintData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CDE30": {
+    "name": "sub_004CDE30",
+    "signature": "void __fastcall fn_004CDE30(void* self)",
+    "summary": "Destroys a vector of string pairs at +0x14, tidies a string vector at +0x04, and calls base destructor sub_0066AC80.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CDEC0": {
     "name": "ClassFactory\u003cCompoundSensor\u003e::vfunc_0",
     "class": "ClassFactory\u003cCompoundSensor\u003e",
