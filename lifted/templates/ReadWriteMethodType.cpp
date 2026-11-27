@@ -11250,3 +11250,31 @@ DWORD fn_00585430(void* holder) {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(holder));
 }
 } // namespace lift_00585430
+
+// [0x0058CB10] ExprParser::ReadWriteMethodType<AnimatableTransform, float, getTZ, float, setTZ>::vfunc_40 (122 bytes)
+namespace lift_0058CB10 {
+// Callee 0x0067A670: thiscall (ECX = self), one stack argument; stores the argument into the first DWORD of self.
+extern uint32_t __thiscall ext_0067A670(void* self, uint32_t value);
+
+// Guard byte/flags for the function-local static (bit 0 = initialized).
+extern uint32_t mem_00B3F930;
+// Static accessor object; its first DWORD is the vtable pointer once initialized.
+extern uint32_t mem_00B3F92C;
+
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform, float, getTZ, float, setTZ>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTZ(float), 0}>
+// @summary Lazily initializes the static accessor object at mem_00B3F92C (one-time init guarded by bit 0 of mem_00B3F930), then binds it into the holder at +0x04.
+// @field ExprParser::ReadWriteMethodType<AnimatableTransform, float, getTZ, float, setTZ> +0x04 void* accessor
+// Stdcall-style: one stack argument (the holder); ECX is not read.
+void __stdcall fn_0058CB10(void* holder) {
+    if ((mem_00B3F930 & 1u) == 0) {
+        mem_00B3F930 |= 1u;
+        // Construct the accessor: call 0x0067A670 with ECX = &mem_00B3F92C and argument 0.
+        ext_0067A670(&mem_00B3F92C, 0);
+        // Install the vtable pointer for the accessor object.
+        mem_00B3F92C = 0x0095BE3Cu;
+    }
+    // Bind the accessor into holder+0x04 (both paths).
+    lift_field<uintptr_t>(holder, 4) = reinterpret_cast<uintptr_t>(&mem_00B3F92C);
+}
+} // namespace lift_0058CB10
