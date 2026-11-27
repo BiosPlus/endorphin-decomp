@@ -181992,3 +181992,69 @@ void* fn_006929E0(void* self, void* arg2) {
 }
 } // namespace lift_0046D3F0
 } // namespace lift_006929E0
+
+// [0x004B15C0] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_44 (165 bytes)
+namespace lift_004B15C0 {
+// Known callee externs (called from this function; signatures inferred from call sites).
+// sub_006720A0: builds a bool-valued temporary (ecx = out, one arg = value)
+extern void ext_006720A0(void* self, uint8_t flag);
+// sub_0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self)
+extern void* ext_0041CF50(void* self, void* other);
+// sub_0046C3C0: DerivedException::DerivedException (constructs exception object in place)
+extern void* ext_0046C3C0(void* self);
+// thunk_MSVCR80__CxxThrowException: IAT thunk to _CxxThrowException (never returns)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Portable virtual dispatch helper: calls the function stored at byte offset `slot`
+// in the vtable of `obj`, passing `obj` as the implicit this-pointer.
+namespace {
+using VFn2 = void* (*)(void* self, void* a);
+using VFn3 = void* (*)(void* self, void* a, void* b);
+
+inline void* vcall1(void* obj, std::size_t slot, void* a) {
+    void** vtbl = *static_cast<void***>(obj);
+    return reinterpret_cast<VFn2>(vtbl[slot / sizeof(void*)])(obj, a);
+}
+
+inline void* vcall2(void* obj, std::size_t slot, void* a, void* b) {
+    void** vtbl = *static_cast<void***>(obj);
+    return reinterpret_cast<VFn3>(vtbl[slot / sizeof(void*)])(obj, a, b);
+}
+} // namespace
+
+// @name ExprParser::ReadMethodType<GraphEntryData,bool,isActive>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the wrapped GraphEntryData's active flag into a temporary, assigns it to this value, then forwards to the object's vfunc at slot 0x44 with (self, out).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x01 unsigned char active
+void* fn_004B15C0(void* self, void* out) {
+    void** selfWords = static_cast<void**>(self);
+
+    // field_0x00 points at the wrapped GraphEntryData; null means the value is missing -> throw.
+    void* target = selfWords[0];
+    if (target == nullptr) {
+        unsigned char exc[0x10] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, nullptr);
+        std::abort();
+    }
+
+    // isActive(): bool stored at +0x01 of the GraphEntryData.
+    unsigned char active = *(static_cast<unsigned char*>(target) + 1);
+
+    unsigned char tmp[0x10] = {};
+    ext_006720A0(tmp, active);
+    ext_0041CF50(self, tmp);
+
+    // Release the temporary's held object via vtable slot 0x78 when present.
+    void* held = *reinterpret_cast<void**>(tmp);
+    if (held != nullptr) {
+        vcall1(held, 0x78, tmp);
+    }
+
+    // Forward to field_0x04's vfunc at slot 0xB0 with (self, out).
+    void* owner = selfWords[1];
+    return vcall2(owner, 0xB0, self, out);
+}
+} // namespace lift_004B15C0
