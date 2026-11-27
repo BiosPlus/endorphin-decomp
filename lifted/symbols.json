@@ -27898,6 +27898,12 @@
     "summary": "Destroys each 0x54-byte element in [begin, end) by calling the IAT-bound std::string destructor on its three string members (+0x38, +0x1C, +0x00), in that order.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00556740": {
+    "name": "destroyStructArray_00556740",
+    "signature": "void sub_00556740(uint8_t* begin, uint8_t* end)",
+    "summary": "Destroys a contiguous range of 0xa0-byte structs containing four std::string members",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005567D0": {
     "name": "destroyStringRange",
     "signature": "void fn_005567D0(void* first, void* last)",

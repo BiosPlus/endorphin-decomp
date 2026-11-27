@@ -1,0 +1,39 @@
+{
+  "va": "0x00556740",
+  "size": 130,
+  "orig_symbol": "sub_00556740",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "destroyStructArray_00556740",
+  "signature": "void sub_00556740(uint8_t* begin, uint8_t* end)",
+  "summary": "Destroys a contiguous range of 0xa0-byte structs containing four std::string members",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "str0"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "str1"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x38",
+      "type": "std::string",
+      "name": "str2"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x54",
+      "type": "std::string",
+      "name": "str3"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:21:12Z"
+}

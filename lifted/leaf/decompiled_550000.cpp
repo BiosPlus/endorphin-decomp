@@ -2182,3 +2182,27 @@ float fn_00554D00(void* self, float value) {
     return static_cast<float>(product);
 }
 } // namespace lift_00554D00
+
+// [0x00556740]
+namespace lift_00556740 {
+// @name destroyStructArray_00556740
+// @summary Destroys a contiguous range of 0xa0-byte structs containing four std::string members
+// @field Element +0x00 std::string str0
+// @field Element +0x1C std::string str1
+// @field Element +0x38 std::string str2
+// @field Element +0x54 std::string str3
+
+
+extern void* mem_00924FF4;
+
+void sub_00556740(uint8_t* begin, uint8_t* end) {
+    using StringDtor = void(__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtor>(mem_00924FF4);
+    for (uint8_t* cur = begin; cur != end; cur += 0xA0) {
+        dtor(cur + 0x54);
+        dtor(cur + 0x38);
+        dtor(cur + 0x1C);
+        dtor(cur + 0x00);
+    }
+}
+} // namespace lift_00556740
