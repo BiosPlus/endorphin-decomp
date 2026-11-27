@@ -22772,6 +22772,13 @@
     "summary": "One-time lazy init of the static VariableValue holder at mem_00AED2BC; links the stack-argument object's +0x04 to it.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005248D0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getBestValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setBestValue(float)\u003e",
+    "signature": "void fn_005248D0(void* holder)",
+    "summary": "One-time (guarded by bit 0 of mem_00AED2C8) construction of a static accessor object at mem_00AED2C4 with vtable 0x95306c, then stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00524A60": {
     "name": "Unknown::getDoubleAsFloat_00524A60",
     "class": "Unknown",

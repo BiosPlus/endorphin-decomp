@@ -11161,3 +11161,34 @@ void fn_00524850(void* self) {
     link = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AED2BC));
 }
 } // namespace lift_00524850
+
+// [0x005248D0] ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, float, &public: void __thiscall NMData::VariableValue::setBestValue(float)>::vfunc_40 (122 bytes)
+namespace lift_005248D0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AED2C8;
+extern DWORD mem_00AED2C4;
+
+// @name ExprParser::ReadWriteMethodType<NMData::VariableValue>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, float, &public: void __thiscall NMData::VariableValue::setBestValue(float)>
+// @summary One-time (guarded by bit 0 of mem_00AED2C8) construction of a static accessor object at mem_00AED2C4 with vtable 0x95306c, then stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005248D0(void* holder) {
+    // Lazy one-time initialisation guarded by bit 0 of mem_00AED2C8.
+    if ((mem_00AED2C8 & 1u) == 0) {
+        mem_00AED2C8 |= 1u;
+
+        // Construct the accessor in place (ECX = &mem_00AED2C4). The stack
+        // argument the original pushed is the saved SEH link, which is
+        // overwritten by the vtable store below, so 0 is passed here.
+        ext_0067A670(&mem_00AED2C4, 0u);
+
+        // Install the vtable pointer as the object's first DWORD.
+        mem_00AED2C4 = 0x95306cu;
+    }
+
+    // holder+0x04 = address of the static accessor object (32-bit DWORD slot).
+    *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(holder) + 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AED2C4));
+}
+} // namespace lift_005248D0
