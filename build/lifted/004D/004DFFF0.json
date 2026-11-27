@@ -1,0 +1,14 @@
+{
+  "va": "0x004DFFF0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setEntryBlendPeriod(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType\u003cAnimationEventData,float\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setEntryBlendPeriod(float), 0}\u003e",
+  "signature": "extern \"C\" int mem_00AE6460;   // init guard flag (bit 0) extern \"C\" int mem_00AE645C;   // function-local static object (vtable slot at +0) DWORD fn_004DFFF0(void* arg)",
+  "summary": "Thread-unsafe-free one-time init of the static accessor object at mem_00AE645C, then stores its address into arg+0x04 (returns 1 if already initialized, else arg).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T02:20:39Z"
+}

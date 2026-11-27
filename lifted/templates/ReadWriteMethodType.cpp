@@ -10592,3 +10592,36 @@ void fn_004DFCE0(void* self) {
     lift_field<void*>(self, 0x4) = static_cast<void*>(&mem_00AE6454);
 }
 } // namespace lift_004DFCE0
+
+// [0x004DFFF0] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setEntryBlendPeriod(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_004DFFF0 {
+// Known callee 0x0067A670 (thiscall, ECX = &mem_00AE645C, no stack args in this call site).
+extern void ext_0067A670(void* self);
+extern int mem_00AE6460;   // init guard flag (bit 0)
+extern int mem_00AE645C;   // function-local static object (vtable slot at +0)
+
+// @name ReadWriteMethodType<AnimationEventData,float>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setEntryBlendPeriod(float), 0}>
+// @summary Thread-unsafe-free one-time init of the static accessor object at mem_00AE645C, then stores its address into arg+0x04 (returns 1 if already initialized, else arg).
+// @field ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setEntryBlendPeriod(float), 0}> +0x04 void* field_0x04
+//
+// Note: the original wraps the guarded init in a Win32 SEH frame (fs:[0] push/pop,
+// handler at 0x0088DBAE). That is exception-registration boilerplate only and is
+// not reproduced in portable C++.
+DWORD fn_004DFFF0(void* arg) {
+    const DWORD objAddr = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE645C));
+
+    if ((mem_00AE6460 & 1) != 0) {
+        // Already initialized: just publish the object address.
+        lift_field<DWORD>(arg, 4) = objAddr;
+        return 1;
+    }
+
+    // First call: mark initialized, construct the static object, set its vtable slot.
+    mem_00AE6460 |= 1;
+    ext_0067A670(&mem_00AE645C);
+    mem_00AE645C = 0x0094AB2C;
+    lift_field<DWORD>(arg, 4) = objAddr;
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(arg));
+}
+} // namespace lift_004DFFF0

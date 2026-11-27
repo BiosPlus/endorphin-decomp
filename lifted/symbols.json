@@ -18012,6 +18012,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004DFFF0": {
+    "name": "ReadWriteMethodType\u003cAnimationEventData,float\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setEntryBlendPeriod(float), 0}\u003e",
+    "signature": "extern \"C\" int mem_00AE6460;   // init guard flag (bit 0) extern \"C\" int mem_00AE645C;   // function-local static object (vtable slot at +0) DWORD fn_004DFFF0(void* arg)",
+    "summary": "Thread-unsafe-free one-time init of the static accessor object at mem_00AE645C, then stores its address into arg+0x04 (returns 1 if already initialized, else arg).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004E0070": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
