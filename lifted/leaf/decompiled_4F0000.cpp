@@ -1317,3 +1317,45 @@ void fn_004F1430(uint32_t container, uint32_t first, uint32_t expected, uint32_t
     }
 }
 } // namespace lift_004F1430
+
+// [0x004F1BD0] sub_004F1BD0 (121 bytes)
+namespace lift_004F1BD0 {
+// Known callee 0x004F1430: clearAndFreePointerRange (Walks the 4-byte pointer range [first,last) of a checked container: for each non-null element, clears it via sub_004F0430 and frees it via the MFC80 thunk, with container validity checks.)
+extern void ext_004F1430(uint32_t container, uint32_t first, uint32_t expected, uint32_t last);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t ptr);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (0x925134)
+extern int mem_00925134;
+
+// @name SomeContainer::clearAndReset
+// @class SomeContainer
+// @summary Clears the pointer range [+0x04, +0x08) of the container via fn_004F1430, frees the element at +0x04 if non-null, then zeroes the three range/capacity fields.
+// @field SomeContainer +0x04 uint32_t field_0x04
+// @field SomeContainer +0x08 uint32_t field_0x08
+// @field SomeContainer +0x0C uint32_t field_0x0C
+void fn_004F1BD0(void* self) {
+    const uint32_t container = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+    if (lift_field<uint32_t>(self, 0x04) > end) {
+        // Original: call MSVCR80!_invalid_parameter_noinfo via IAT (debug-check abort path).
+        (void)&mem_00925134;
+    }
+
+    const uint32_t first = lift_field<uint32_t>(self, 0x04);
+    if (first > lift_field<uint32_t>(self, 0x08)) {
+        (void)&mem_00925134;
+    }
+
+    ext_004F1430(container, container, first, end);
+
+    const uint32_t element = lift_field<uint32_t>(self, 0x04);
+    if (element != 0) {
+        ext_006A5C5C(element);
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_004F1BD0

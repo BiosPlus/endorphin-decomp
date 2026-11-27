@@ -1,0 +1,34 @@
+{
+  "va": "0x004F1BD0",
+  "size": 121,
+  "orig_symbol": "sub_004F1BD0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "SomeContainer::clearAndReset",
+  "class": "SomeContainer",
+  "signature": "void fn_004F1BD0(void* self)",
+  "summary": "Clears the pointer range [+0x04, +0x08) of the container via fn_004F1430, frees the element at +0x04 if non-null, then zeroes the three range/capacity fields.",
+  "fields": [
+    {
+      "class": "SomeContainer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SomeContainer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "SomeContainer",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:23:37Z"
+}

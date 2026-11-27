@@ -20033,6 +20033,13 @@
     "summary": "Walks the 4-byte pointer range [first,last) of a checked container: for each non-null element, clears it via sub_004F0430 and frees it via the MFC80 thunk, with container validity checks.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F1BD0": {
+    "name": "SomeContainer::clearAndReset",
+    "class": "SomeContainer",
+    "signature": "void fn_004F1BD0(void* self)",
+    "summary": "Clears the pointer range [+0x04, +0x08) of the container via fn_004F1430, frees the element at +0x04 if non-null, then zeroes the three range/capacity fields.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F27C0": {
     "name": "VMCSModes::RunEvolutionMode::vfunc_17",
     "class": "VMCSModes::RunEvolutionMode",
