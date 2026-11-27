@@ -1,0 +1,142 @@
+{
+  "va": "0x005E02F0",
+  "size": 137,
+  "orig_symbol": "sub_005E02F0",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "Unknown::initZeroedStateWithArg",
+  "class": "Unknown",
+  "signature": "void fn_005E02F0(void* self, uint32_t arg)",
+  "summary": "Stores the single stack argument at +0x294, zeroes the float block at +0x29C..+0x2E4, and clears the DWORDs at +0x2C0 and +0x2E8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x294",
+      "type": "uint32_t",
+      "name": "field_0x294"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x29C",
+      "type": "float",
+      "name": "field_0x29C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2A0",
+      "type": "float",
+      "name": "field_0x2A0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2A4",
+      "type": "float",
+      "name": "field_0x2A4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2A8",
+      "type": "float",
+      "name": "field_0x2A8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2AC",
+      "type": "float",
+      "name": "field_0x2AC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2B0",
+      "type": "float",
+      "name": "field_0x2B0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2B4",
+      "type": "float",
+      "name": "field_0x2B4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2B8",
+      "type": "float",
+      "name": "field_0x2B8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2BC",
+      "type": "float",
+      "name": "field_0x2BC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C0",
+      "type": "uint32_t",
+      "name": "field_0x2C0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C4",
+      "type": "float",
+      "name": "field_0x2C4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C8",
+      "type": "float",
+      "name": "field_0x2C8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2CC",
+      "type": "float",
+      "name": "field_0x2CC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2D0",
+      "type": "float",
+      "name": "field_0x2D0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2D4",
+      "type": "float",
+      "name": "field_0x2D4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2D8",
+      "type": "float",
+      "name": "field_0x2D8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2DC",
+      "type": "float",
+      "name": "field_0x2DC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2E0",
+      "type": "float",
+      "name": "field_0x2E0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2E4",
+      "type": "float",
+      "name": "field_0x2E4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2E8",
+      "type": "uint32_t",
+      "name": "field_0x2E8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:31:45Z"
+}

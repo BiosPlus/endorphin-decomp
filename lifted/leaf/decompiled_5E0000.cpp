@@ -1535,3 +1535,108 @@ void fn_005ECD40(void* self, void* dst) {
     reinterpret_cast<Slot0Fn>(slot0)(subobj, 0, dst, mem_00B40640);
 }
 } // namespace lift_005ECD40
+
+// [0x005E2BE0]
+namespace lift_005E2BE0 {
+extern void (*mem_00925134)();
+
+// @name TreeIterator::decrement
+// @class TreeIterator
+// @summary Decrement an MSVC8 red-black tree iterator to the previous in-order node.
+// @field TreeIterator +0x00 uint32_t container
+// @field TreeIterator +0x04 uint8_t* node
+void __thiscall sub_005E2BE0(void* self) {
+    auto* iter = static_cast<uint8_t*>(self);
+    if (lift_field<uint32_t>(iter, 0x00) == 0) {
+        mem_00925134();
+    }
+
+    uint8_t* node = lift_field<uint8_t*>(iter, 0x04);
+    if (lift_field<uint8_t>(node, 0x51) != 0) {
+        node = lift_field<uint8_t*>(node, 0x08);
+        lift_field<uint8_t*>(iter, 0x04) = node;
+        if (lift_field<uint8_t>(node, 0x51) != 0) {
+            mem_00925134();
+        }
+        return;
+    }
+
+    uint8_t* left = lift_field<uint8_t*>(node, 0x00);
+    if (lift_field<uint8_t>(left, 0x51) == 0) {
+        uint8_t* right = lift_field<uint8_t*>(left, 0x08);
+        while (lift_field<uint8_t>(right, 0x51) == 0) {
+            left = right;
+            right = lift_field<uint8_t*>(left, 0x08);
+        }
+        lift_field<uint8_t*>(iter, 0x04) = left;
+        return;
+    }
+
+    uint8_t* parent = lift_field<uint8_t*>(node, 0x04);
+    while (lift_field<uint8_t>(parent, 0x51) == 0) {
+        if (lift_field<uint8_t*>(iter, 0x04) != lift_field<uint8_t*>(parent, 0x00)) {
+            break;
+        }
+        lift_field<uint8_t*>(iter, 0x04) = parent;
+        parent = lift_field<uint8_t*>(parent, 0x04);
+    }
+
+    if (lift_field<uint8_t>(lift_field<uint8_t*>(iter, 0x04), 0x51) != 0) {
+        mem_00925134();
+        return;
+    }
+
+    lift_field<uint8_t*>(iter, 0x04) = parent;
+}
+} // namespace lift_005E2BE0
+
+// [0x005E02F0] sub_005E02F0 (137 bytes)
+namespace lift_005E02F0 {
+// @name Unknown::initZeroedStateWithArg
+// @class Unknown
+// @summary Stores the single stack argument at +0x294, zeroes the float block at +0x29C..+0x2E4, and clears the DWORDs at +0x2C0 and +0x2E8.
+// @field Unknown +0x294 uint32_t field_0x294
+// @field Unknown +0x29C float field_0x29C
+// @field Unknown +0x2A0 float field_0x2A0
+// @field Unknown +0x2A4 float field_0x2A4
+// @field Unknown +0x2A8 float field_0x2A8
+// @field Unknown +0x2AC float field_0x2AC
+// @field Unknown +0x2B0 float field_0x2B0
+// @field Unknown +0x2B4 float field_0x2B4
+// @field Unknown +0x2B8 float field_0x2B8
+// @field Unknown +0x2BC float field_0x2BC
+// @field Unknown +0x2C0 uint32_t field_0x2C0
+// @field Unknown +0x2C4 float field_0x2C4
+// @field Unknown +0x2C8 float field_0x2C8
+// @field Unknown +0x2CC float field_0x2CC
+// @field Unknown +0x2D0 float field_0x2D0
+// @field Unknown +0x2D4 float field_0x2D4
+// @field Unknown +0x2D8 float field_0x2D8
+// @field Unknown +0x2DC float field_0x2DC
+// @field Unknown +0x2E0 float field_0x2E0
+// @field Unknown +0x2E4 float field_0x2E4
+// @field Unknown +0x2E8 uint32_t field_0x2E8
+void fn_005E02F0(void* self, uint32_t arg) {
+    lift_field<uint32_t>(self, 0x294) = arg;
+    lift_field<float>(self, 0x2A4) = 0.0f;
+    lift_field<float>(self, 0x2A0) = 0.0f;
+    lift_field<float>(self, 0x29C) = 0.0f;
+    lift_field<float>(self, 0x2B0) = 0.0f;
+    lift_field<float>(self, 0x2AC) = 0.0f;
+    lift_field<float>(self, 0x2A8) = 0.0f;
+    lift_field<float>(self, 0x2BC) = 0.0f;
+    lift_field<float>(self, 0x2B8) = 0.0f;
+    lift_field<float>(self, 0x2B4) = 0.0f;
+    lift_field<uint32_t>(self, 0x2C0) = 0;
+    lift_field<float>(self, 0x2CC) = 0.0f;
+    lift_field<float>(self, 0x2C8) = 0.0f;
+    lift_field<float>(self, 0x2C4) = 0.0f;
+    lift_field<float>(self, 0x2D8) = 0.0f;
+    lift_field<float>(self, 0x2D4) = 0.0f;
+    lift_field<float>(self, 0x2D0) = 0.0f;
+    lift_field<float>(self, 0x2E4) = 0.0f;
+    lift_field<float>(self, 0x2E0) = 0.0f;
+    lift_field<float>(self, 0x2DC) = 0.0f;
+    lift_field<uint32_t>(self, 0x2E8) = 0;
+}
+} // namespace lift_005E02F0

@@ -38550,6 +38550,13 @@
     "summary": "Forwards vfunc_11 to the subobject at +0x184+0xC when +0x184 is set; otherwise returns 3.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005E02F0": {
+    "name": "Unknown::initZeroedStateWithArg",
+    "class": "Unknown",
+    "signature": "void fn_005E02F0(void* self, uint32_t arg)",
+    "summary": "Stores the single stack argument at +0x294, zeroes the float block at +0x29C..+0x2E4, and clears the DWORDs at +0x2C0 and +0x2E8.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E05F0": {
     "name": "NMData::HingeData::vfunc_59",
     "class": "NMData::HingeData",
@@ -38802,6 +38809,13 @@
     "signature": "void* __thiscall fn_005E2A90(void* self, void* a, void* b)",
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
+  "0x005E2BE0": {
+    "name": "TreeIterator::decrement",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_005E2BE0(void* self)",
+    "summary": "Decrement an MSVC8 red-black tree iterator to the previous in-order node.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
   "0x005E2C70": {
     "name": "sub_005E1360_forwardVirtualSlot1Field234",
@@ -45886,6 +45900,13 @@
     "signature": "void* fn_00624D10(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
+  },
+  "0x00624D30": {
+    "name": "TreeIterator::decrement",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_00624D30(void* self)",
+    "summary": "Decrements an MSVC8 red-black tree iterator to the previous in-order node.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00624DC0": {
     "name": "TreeConstIterator::operator++",
@@ -52975,6 +52996,13 @@
     "class": "Unknown",
     "signature": "void* fn_00666A60(void* self, void* out_string)",
     "summary": "Default-constructs the std::string at out_string, builds an 18-byte record referencing it via initRecord_ptrDefaultsWord0C, passes the record to vtable slot 5 of self, and returns out_string.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00666C00": {
+    "name": "TreeIterator::operator--",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_00666C00(void* self)",
+    "summary": "Decrements a red-black tree iterator to the previous node, validating against nil/end.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00666C90": {
@@ -63922,6 +63950,12 @@
     "signature": "uint32_t sub_006B4FD0()",
     "summary": "Calls GetKeyState(VK_ESCAPE) and returns 4 if the key is not down (high bit clear), else 0.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
+  "0x006B5090": {
+    "name": "sub_006B5090_dtor",
+    "signature": "extern \"C\" void __thiscall fn_006B5090(void* self)",
+    "summary": "Destructor that resets vtables, deletes member at +0xd4, destroys member at +0x68, destroys member at +0x5c via MFC80_ord_1934, and calls base destructor MFC80_ord_760.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B5120": {
     "name": "GWCPropInPlaceButton::vfunc_1",
