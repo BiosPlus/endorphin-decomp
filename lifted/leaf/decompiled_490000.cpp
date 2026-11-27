@@ -2295,3 +2295,35 @@ void* fn_0049B400(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4
     return self;
 }
 } // namespace lift_0049B400
+
+// [0x004973B0]
+namespace lift_004973B0 {
+// @name parseVec4FromNode
+// @summary Parses four float fields at +0x00, +0x04, +0x08, and +0x0C from named child items in a node.
+// @field Self +0x00 float field_0x00
+// @field Self +0x04 float field_0x04
+// @field Self +0x08 float field_0x08
+// @field Self +0x0C float field_0x0C
+
+
+    extern const char* mem_00A9F75C;
+    extern const char* mem_00A9FA2C;
+    extern const char* mem_00A9F920;
+    extern const char* mem_00A9F4BC;
+
+    uint32_t __thiscall ext_0063EFE0(uint8_t* self, const char* name);
+    void __cdecl ext_0046C0A0(float* out_val, uint32_t* item);
+
+void __thiscall fn_004973B0(uint8_t* self, uint8_t* node) {
+    const char* const keys[4] = {
+        mem_00A9F75C,
+        mem_00A9FA2C,
+        mem_00A9F920,
+        mem_00A9F4BC,
+    };
+    for (int i = 0; i < 4; ++i) {
+        uint32_t item = ext_0063EFE0(node, keys[i]);
+        ext_0046C0A0(reinterpret_cast<float*>(self + i * 4), &item);
+    }
+}
+} // namespace lift_004973B0

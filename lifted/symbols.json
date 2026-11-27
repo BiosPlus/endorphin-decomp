@@ -12503,6 +12503,12 @@
     "summary": "Returns the byte at this+0xB4 and resets it to zero.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004973B0": {
+    "name": "parseVec4FromNode",
+    "signature": "void __thiscall fn_004973B0(uint8_t* self, uint8_t* node)",
+    "summary": "Parses four float fields at +0x00, +0x04, +0x08, and +0x0C from named child items in a node.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004974E0": {
     "name": "refreshNamedFloatValues",
     "signature": "void fn_004974E0(void* self, void* container)",

@@ -1,0 +1,39 @@
+{
+  "va": "0x004973B0",
+  "size": 149,
+  "orig_symbol": "sub_004973B0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "parseVec4FromNode",
+  "signature": "void __thiscall fn_004973B0(uint8_t* self, uint8_t* node)",
+  "summary": "Parses four float fields at +0x00, +0x04, +0x08, and +0x0C from named child items in a node.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:08:58Z"
+}
