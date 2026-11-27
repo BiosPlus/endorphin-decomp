@@ -1,0 +1,14 @@
+{
+  "va": "0x0045F740",
+  "size": 171,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_83",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_83",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "extern \"C\" void __thiscall fn_0045F740(void* self, void* arg1, uint32_t flags)",
+  "summary": "Looks up an event entry by key and dispatches it via sub_00468F50 or sub_00469000 based on flags.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:17:40Z"
+}

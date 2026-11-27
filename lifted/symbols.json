@@ -8315,6 +8315,13 @@
     "summary": "Runs two helpers on the TriggeredEventView base (this-0x250) with the stack argument, invalidates and updates the view's HWND, then calls a helper on the base with -1.",
     "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
   },
+  "0x0045F740": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_83",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "extern \"C\" void __thiscall fn_0045F740(void* self, void* arg1, uint32_t flags)",
+    "summary": "Looks up an event entry by key and dispatches it via sub_00468F50 or sub_00469000 based on flags.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045FB00": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_86",
     "class": "MultiTrackView::TriggeredEventView",
@@ -28479,6 +28486,13 @@
     "signature": "uint32_t fn_00500B70(uint32_t begin, uint32_t end, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00500BA0": {
+    "name": "EvolveEngineData::vfunc_3",
+    "class": "NMData::EvolveEngineData",
+    "signature": "void* __thiscall fn_00500BA0(void* self, void* node)",
+    "summary": "Serializes EvolveEngineData fields and lastBestIndividual to an XML node.",
+    "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
   },
   "0x00501090": {
     "name": "copyConstructElementRangeEnd",

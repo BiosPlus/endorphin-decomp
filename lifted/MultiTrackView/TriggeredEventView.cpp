@@ -650,3 +650,48 @@ void fn_0045F6F0(void* self, void* arg) {
     ext_0043DC90(tev, -1);
 }
 } // namespace lift_0045F6F0
+
+// [0x0045F740]
+namespace lift_0045F740 {
+// @name MultiTrackView::TriggeredEventView::vfunc_83
+// @class MultiTrackView::TriggeredEventView
+// @summary Looks up an event entry by key and dispatches it via sub_00468F50 or sub_00469000 based on flags.
+
+extern void* __cdecl ext_0043D620(void* arg1);
+extern void* __cdecl ext_00468180(void);
+extern void __thiscall ext_00468F50(void* self, void* arg1);
+extern void __thiscall ext_00469000(void* self, void* arg1, int32_t arg2);
+extern void* __cdecl ext_00594000(void);
+extern uint8_t* __thiscall ext_00597630(void* self, int32_t key);
+extern void __thiscall ext_005A6300(void* self, void* arg1);
+extern void __cdecl ext_006A5C5C(void* ptr);
+
+extern void __thiscall fn_0045F740(void* self, void* arg1, uint32_t flags)
+{
+    (void)self;
+    void* obj = ext_0043D620(arg1);
+    void* vec[3] = { nullptr, nullptr, nullptr };
+
+    int32_t key = lift_field<int32_t>(obj, 0x14);
+    uint8_t* entry = ext_00597630(ext_00594000(), key);
+    if (entry != nullptr)
+    {
+        void* val_ptr = entry + 4;
+        arg1 = val_ptr;
+        ext_005A6300(vec, &arg1);
+        if ((flags & 0x8u) != 0)
+        {
+            ext_00468F50(ext_00468180(), val_ptr);
+        }
+        else
+        {
+            ext_00469000(ext_00468180(), vec, 0);
+        }
+    }
+
+    if (vec[0] != nullptr)
+    {
+        ext_006A5C5C(vec[0]);
+    }
+}
+} // namespace lift_0045F740
