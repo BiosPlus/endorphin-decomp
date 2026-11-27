@@ -1,0 +1,28 @@
+{
+  "va": "0x0051C2A0",
+  "size": 89,
+  "orig_symbol": "NMData::RealChannel::vfunc_10",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_10",
+  "class": "NMData::RealChannel",
+  "signature": "void __thiscall fn_0051C2A0(void* self, void* arg)",
+  "summary": "Walks the [begin, end) range at +0x30/+0x34 in 8-byte steps, calling ext_0047B170(arg, entry) for each entry, aborting via the invalid-parameter handler on bad bounds.",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:48:20Z"
+}

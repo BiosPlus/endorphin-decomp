@@ -261,3 +261,41 @@ void fn_0051A050(void* self, int arg) {
     }
 }
 } // namespace lift_0051A050
+
+// [0x0051C2A0] NMData::RealChannel::vfunc_10 (89 bytes)
+namespace lift_0051C2A0 {
+// CRT _invalid_parameter_noinfo handler pointer, loaded from the IAT slot.
+extern void (*mem_00925134)();
+extern void ext_0047B170(void* self, uint32_t value);
+
+// @name NMData::RealChannel::vfunc_10
+// @class NMData::RealChannel
+// @summary Walks the [begin, end) range at +0x30/+0x34 in 8-byte steps, calling ext_0047B170(arg, entry) for each entry, aborting via the invalid-parameter handler on bad bounds.
+// @field NMData::RealChannel +0x30 uint32_t begin
+// @field NMData::RealChannel +0x34 uint32_t end
+void __thiscall fn_0051C2A0(void* self, void* arg) {
+    // Original: if begin > end (unsigned) the invalid-parameter handler is called (then execution continues).
+    if (static_cast<uint32_t>(lift_field<uint32_t>(self, 0x30)) > lift_field<uint32_t>(self, 0x34)) {
+        mem_00925134();
+    }
+
+    // edi = self + 0x2C; bounds are read through it: [edi+4] = begin, [edi+8] = end.
+    uint32_t cursor = lift_field<uint32_t>(self, 0x30);
+    const uint32_t limit = lift_field<uint32_t>(self, 0x34);
+    if (lift_field<uint32_t>(self, 0x30) > limit) {
+        mem_00925134();
+    }
+
+    while (cursor != limit) {
+        // Entry must be below the current end (re-read from memory each time).
+        if (!(cursor < lift_field<uint32_t>(self, 0x34))) {
+            mem_00925134();
+        }
+        ext_0047B170(arg, cursor);
+        if (!(cursor < lift_field<uint32_t>(self, 0x34))) {
+            mem_00925134();
+        }
+        cursor += 8;
+    }
+}
+} // namespace lift_0051C2A0

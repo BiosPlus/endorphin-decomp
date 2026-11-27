@@ -31134,6 +31134,13 @@
     "summary": "Clears the RealChannel data vector by erasing from begin to end.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051C2A0": {
+    "name": "NMData::RealChannel::vfunc_10",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_0051C2A0(void* self, void* arg)",
+    "summary": "Walks the [begin, end) range at +0x30/+0x34 in 8-byte steps, calling ext_0047B170(arg, entry) for each entry, aborting via the invalid-parameter handler on bad bounds.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051C5A0": {
     "name": "InitBaseThenZeroTail_0051C5A0",
     "signature": "void* fn_0051C5A0(void* self)",
