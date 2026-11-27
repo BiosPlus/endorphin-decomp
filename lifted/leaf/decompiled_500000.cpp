@@ -3449,3 +3449,47 @@ void* fn_00504A30(void* a1) {
     return a1;
 }
 } // namespace lift_00504A30
+
+// [0x0050D2B0] sub_0050D2B0 (161 bytes)
+namespace lift_0050D2B0 {
+// Copy-construct helper (cdecl, 6 stack args as pushed by the original call site).
+extern void ext_0050BE80(void* first, uint32_t count, const void* src, void* self, const void* src_dup, uint32_t flag);
+// Grow-and-insert helper (thiscall in the original; self is passed explicitly here).
+extern void ext_0050D130(void* self, uint32_t* flag_slot, void* self_arg, uint8_t* end, const void* value);
+// CRT _invalid_parameter_noinfo import slot (referenced only on the bad-range path).
+extern int mem_00925134;
+
+// @name ElementVector_PushBack_0050D2B0
+// @summary Appends a copy of a 0x24-byte element to the vector at this: in-place copy-construct when spare capacity exists, otherwise delegates to the grow path.
+// @field ElementVector +0x04 uint8_t* m_begin
+// @field ElementVector +0x08 uint8_t* m_end
+// @field ElementVector +0x0C uint8_t* m_capEnd
+void fn_0050D2B0(void* self, const void* value) {
+    constexpr ptrdiff_t kElemSize = 0x24;
+
+    uint8_t* const begin = lift_field<uint8_t*>(self, 0x4);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x8);
+    uint8_t* const capEnd = lift_field<uint8_t*>(self, 0xC);
+
+    // Fast path: begin is set and there is spare capacity (size < capacity).
+    if (begin != nullptr) {
+        const ptrdiff_t size = (end - begin) / kElemSize;
+        const ptrdiff_t capacity = (capEnd - begin) / kElemSize;
+        if (size < capacity) {
+            uint32_t flag = 0;
+            ext_0050BE80(end, 1, value, self, value, flag);
+            end += kElemSize;
+            lift_field<uint8_t*>(self, 0x8) = end;
+            return;
+        }
+    }
+
+    // Slow path: the original checks begin <= end before delegating to the grow helper.
+    if (begin > end) {
+        (void)&mem_00925134; // original calls _invalid_parameter_noinfo via this import slot
+        std::abort();
+    }
+    uint32_t flag = 0;
+    ext_0050D130(self, &flag, self, end, value);
+}
+} // namespace lift_0050D2B0

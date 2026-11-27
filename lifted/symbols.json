@@ -28971,6 +28971,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004BEB50 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0050D2B0": {
+    "name": "ElementVector_PushBack_0050D2B0",
+    "signature": "void fn_0050D2B0(void* self, const void* value)",
+    "summary": "Appends a copy of a 0x24-byte element to the vector at this: in-place copy-construct when spare capacity exists, otherwise delegates to the grow path.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050D8B0": {
     "name": "NMData::TaskManager::vfunc_1_off_8",
     "class": "NMData::TaskManager",

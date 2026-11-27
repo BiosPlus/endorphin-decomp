@@ -1,0 +1,33 @@
+{
+  "va": "0x0050D2B0",
+  "size": 161,
+  "orig_symbol": "sub_0050D2B0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "ElementVector_PushBack_0050D2B0",
+  "signature": "void fn_0050D2B0(void* self, const void* value)",
+  "summary": "Appends a copy of a 0x24-byte element to the vector at this: in-place copy-construct when spare capacity exists, otherwise delegates to the grow path.",
+  "fields": [
+    {
+      "class": "ElementVector",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "m_begin"
+    },
+    {
+      "class": "ElementVector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "m_end"
+    },
+    {
+      "class": "ElementVector",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "m_capEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:33Z"
+}
