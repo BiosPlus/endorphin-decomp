@@ -2421,6 +2421,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0041FC70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00420530": {
+    "name": "getStaticBoolString_00ACCBA4",
+    "signature": "void* fn_00420530()",
+    "summary": "Lazy-initializes a static string at 0x00ACCBA4 with atexit cleanup and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00420590": {
     "name": "sub_00420590",
     "signature": "void* fn_00420590(void* arg)",
@@ -8947,6 +8953,12 @@
     "signature": "void* __thiscall fn_00476EA0(void* self, void* arg0)",
     "summary": "Looks up an entry via the underlying map's vfunc_0 and dereferences the result if non-null.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
+  },
+  "0x00476F70": {
+    "name": "getStaticString_00AD907C",
+    "signature": "void* fn_00476F70()",
+    "summary": "Lazily initializes static object at 0x00AD907C with atexit cleanup and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
   "0x00477030": {
     "name": "InitOnceGlobalString_00477030",

@@ -840,3 +840,23 @@ extern void* fn_00476660(void* self, int32_t value) {
     return self;
 }
 } // namespace lift_00476660
+
+// [0x00476F70]
+namespace lift_00476F70 {
+extern uint32_t mem_00AD9098;
+extern uint8_t mem_00AD907C[];
+
+extern void* ext_0066AD10(void* out_str, uintptr_t arg);
+extern int ext_006A6C87(void* func);
+
+// @name getStaticString_00AD907C
+// @summary Lazily initializes static object at 0x00AD907C with atexit cleanup and returns it.
+void* fn_00476F70() {
+    if ((mem_00AD9098 & 1u) == 0u) {
+        mem_00AD9098 |= 1u;
+        ext_0066AD10(mem_00AD907C, 0x00A32888u);
+        ext_006A6C87(reinterpret_cast<void*>(0x00916F10u));
+    }
+    return mem_00AD907C;
+}
+} // namespace lift_00476F70

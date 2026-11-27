@@ -1,0 +1,13 @@
+{
+  "va": "0x00476F70",
+  "size": 95,
+  "orig_symbol": "sub_00476F70",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "getStaticString_00AD907C",
+  "signature": "void* fn_00476F70()",
+  "summary": "Lazily initializes static object at 0x00AD907C with atexit cleanup and returns it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:53:40Z"
+}
