@@ -1,0 +1,13 @@
+{
+  "va": "0x006F6940",
+  "size": 16,
+  "orig_symbol": "sub_006F6940",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006F6940",
+  "signature": "extern uint32_t __stdcall fn_006F6940(uint32_t arg0)",
+  "summary": "Auto-lifted identical-shape clone of 0x006F6E40 (ForwardFirstArgToSelector).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:15:32Z"
+}
