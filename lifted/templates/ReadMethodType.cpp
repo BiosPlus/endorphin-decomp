@@ -187338,3 +187338,52 @@ void fn_0066FEF0(void* holder, void* arg2) {
 }
 } // namespace lift_0066FD50
 } // namespace lift_0066FEF0
+
+// [0x00695780] ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>::vfunc_42 (164 bytes)
+namespace lift_00695780 {
+// Known callee 0x00672080: sub_00672080 (18B). Stores a wrapper object built from a float into
+// the thiscall receiver slot (ecx); return value unused.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* exceptionObj);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<DoubleWithProperties, float, getValue>::vfunc_42
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
+// @summary Reads the double pointed to by the holder's first pointer, narrows it to float, passes it to a wrapper object's virtual slot 42 and releases the wrapper via slot 30; returns the slot-42 bool. Throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 double* field_0x00
+// Original: the object's vtable slot 0xA8 (index 42) is invoked with (float, out*) and slot 0x78 (index 30) releases the wrapper.
+// The vtable call convention is modeled with the receiver as the first argument.
+bool fn_00695780(void* holder, void* /*unused stack arg*/) {
+    using VFn42 = bool (*)(void* self, void* out, float value);
+    using VFn30 = void (*)(void* self, void* out);
+
+    double* src = *static_cast<double**>(holder);
+    if (src == nullptr) {
+        // Original builds a DerivedException on the stack and throws via _CxxThrowException.
+        alignas(8) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return false; // not reached
+    }
+
+    const float value = static_cast<float>(*src);
+
+    void* wrapper = nullptr;
+    ext_00672080(&wrapper, value);
+
+    void* out = nullptr;
+    void** vtable = *static_cast<void***>(wrapper);
+    const bool result = reinterpret_cast<VFn42>(vtable[42])(wrapper, &out, value);
+
+    // Release the wrapper (original tests the receiver after the call, then calls slot 30 with &out).
+    if (wrapper != nullptr) {
+        void** vtable = *static_cast<void***>(wrapper);
+        reinterpret_cast<VFn30>(vtable[30])(wrapper, &out);
+    }
+
+    return result;
+}
+} // namespace lift_00695780

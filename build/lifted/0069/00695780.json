@@ -1,0 +1,22 @@
+{
+  "va": "0x00695780",
+  "size": 164,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, getValue\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+  "signature": "bool fn_00695780(void* holder, void* /*unused stack arg*/)",
+  "summary": "Reads the double pointed to by the holder's first pointer, narrows it to float, passes it to a wrapper object's virtual slot 42 and releases the wrapper via slot 30; returns the slot-42 bool. Throws if the pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "double*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:57:09Z"
+}
