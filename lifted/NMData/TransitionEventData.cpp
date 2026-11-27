@@ -95,3 +95,39 @@ void fn_004D0CF0(void* self, int32_t arg) {
     ext_004C0340();
 }
 } // namespace lift_004D0CF0
+
+// [0x004D2750] NMData::TransitionEventData::vfunc_15 (127 bytes)
+namespace lift_004D2750 {
+// Known callee 0x004C3410: NMData::DesiredPoseEventData::vfunc_15 (Switches on a 32-bit key and forwards the output pointer plus the receiver's address to one of the static-pair store helpers (default: zero the output); returns the output pointer.)
+extern DWORD* __thiscall ext_004C3410(void* self, DWORD* out, DWORD key);
+// Known callee 0x004D26F0: storeValueAndStaticObjectAddr (Stores a 32-bit value at dst[0] and the address of the one-time static object (from ext_004D2590) at dst[1].)
+extern void ext_004D26F0(DWORD* dst, DWORD value);
+// Known callee 0x004D2710: storeValueWithStaticObjectAddr (Writes value into dst[0] and the address returned by initStaticObjectOnce_004D25F0 into dst[1].)
+extern void ext_004D2710(DWORD* dst, DWORD value);
+// Known callee 0x004D2730: storeValueAndStaticObjectAddr_004D2730 (Writes the value into dst[0] and the address returned by initStaticObjectOnce_004D2650 into dst[1].)
+extern void ext_004D2730(DWORD* dst, DWORD value);
+// Known callee 0x00671F30: sub_00671F30 (Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.)
+extern void ext_00671F30(DWORD* out);
+
+// @name NMData::TransitionEventData::vfunc_15
+// @class NMData::TransitionEventData
+// @summary Dispatches on a 32-bit key to one of the static-pair store helpers (or the key-0x317 path, selected by a field at +0x190 == 4), otherwise forwards to ext_004C3410; returns the output pointer.
+// @field NMData::TransitionEventData +0x190 uint32_t field_0x190
+DWORD* __thiscall fn_004D2750(void* self, DWORD* out, DWORD key) {
+    if (key == 0x2EC) {
+        ext_004D2710(out, static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+    } else if (key == 0x317) {
+        DWORD field190 = *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(self) + 0x190);
+        if (field190 == 4) {
+            ext_004D2730(out, static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+        } else {
+            ext_00671F30(out);
+        }
+    } else if (key == 0x37F) {
+        ext_004D26F0(out, static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+    } else {
+        ext_004C3410(self, out, key);
+    }
+    return out;
+}
+} // namespace lift_004D2750

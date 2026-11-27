@@ -18956,6 +18956,13 @@
     "summary": "Writes the value into dst[0] and the address returned by initStaticObjectOnce_004D2650 into dst[1].",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004D2750": {
+    "name": "NMData::TransitionEventData::vfunc_15",
+    "class": "NMData::TransitionEventData",
+    "signature": "DWORD* __thiscall fn_004D2750(void* self, DWORD* out, DWORD key)",
+    "summary": "Dispatches on a 32-bit key to one of the static-pair store helpers (or the key-0x317 path, selected by a field at +0x190 == 4), otherwise forwards to ext_004C3410; returns the output pointer.",
+    "lifted_path": "lifted/NMData/TransitionEventData.cpp"
+  },
   "0x004D2C70": {
     "name": "sub_004D2C70",
     "class": "Unknown",

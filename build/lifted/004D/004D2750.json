@@ -1,0 +1,22 @@
+{
+  "va": "0x004D2750",
+  "size": 127,
+  "orig_symbol": "NMData::TransitionEventData::vfunc_15",
+  "src_path": "src/NMData/TransitionEventData.cpp",
+  "lifted_path": "lifted/NMData/TransitionEventData.cpp",
+  "name": "NMData::TransitionEventData::vfunc_15",
+  "class": "NMData::TransitionEventData",
+  "signature": "DWORD* __thiscall fn_004D2750(void* self, DWORD* out, DWORD key)",
+  "summary": "Dispatches on a 32-bit key to one of the static-pair store helpers (or the key-0x317 path, selected by a field at +0x190 == 4), otherwise forwards to ext_004C3410; returns the output pointer.",
+  "fields": [
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x190",
+      "type": "uint32_t",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:28:46Z"
+}
