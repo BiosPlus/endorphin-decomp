@@ -49010,6 +49010,13 @@
     "summary": "Conditionally tears down a subobject through its vtable, then clears related state and copies a name string.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
+  "0x005C06E0": {
+    "name": "_Tree::clearRoot_005C06E0",
+    "class": "\u003cClass\u003e +0x04 void* \u003crootPtr\u003e",
+    "signature": "void fn_005C06E0(void* self)",
+    "summary": "Erases the range spanning the node pointed to by this-\u003e+0x04 via ext_005AEC70, forwards the old root pointer to ext_006A5C5C, then clears +0x04 and +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C0A50": {
     "name": "NMData::MetaBodyData::vfunc_21",
     "class": "NMData::MetaBodyData",

@@ -2150,3 +2150,34 @@ extern void* __fastcall fn_005CD0A0(void* self)
     return self;
 }
 } // namespace lift_005CD0A0
+
+// [0x005C06E0] sub_005C06E0 (52 bytes)
+namespace lift_005C06E0 {
+// Known callee 0x005AEC70: fn_005AEC70 (Auto-lifted identical-shape clone of 0x0046A810, _Tree::eraseRange.)
+// __thiscall: self in ECX, remaining args on the stack; callee cleans up.
+extern void* ext_005AEC70(void* self, void* ret, void* firstCont, void* firstNode,
+                              void* lastCont, void* lastNode);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Called with one cdecl stack argument (pushed by the caller, popped by the caller).
+extern void ext_006A5C5C(void* arg);
+
+// @name _Tree::clearRoot_005C06E0
+// @class <Class> +0x04 void* <rootPtr>
+// @summary Erases the range spanning the node pointed to by this->+0x04 via ext_005AEC70, forwards the old root pointer to ext_006A5C5C, then clears +0x04 and +0x08.
+// @field <Class> +0x04 void* rootPtr
+// @field <Class> +0x08 DWORD field_0x08
+void fn_005C06E0(void* self) {
+    // Return-value buffer for ext_005AEC70 (the TreeIter* result is unused).
+    DWORD retBuf[2] = {0, 0};
+
+    void* node = lift_field<void*>(self, 0x04);
+    void* firstNode = *reinterpret_cast<void**>(node);
+    ext_005AEC70(self, retBuf, self, firstNode, self, node);
+
+    void* oldNode = lift_field<void*>(self, 0x04);
+    ext_006A5C5C(oldNode);
+
+    lift_field<void*>(self, 0x04) = nullptr;
+    lift_field<DWORD>(self, 0x08) = 0;
+}
+} // namespace lift_005C06E0

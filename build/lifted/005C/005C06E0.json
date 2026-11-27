@@ -1,0 +1,28 @@
+{
+  "va": "0x005C06E0",
+  "size": 52,
+  "orig_symbol": "sub_005C06E0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "_Tree::clearRoot_005C06E0",
+  "class": "\u003cClass\u003e +0x04 void* \u003crootPtr\u003e",
+  "signature": "void fn_005C06E0(void* self)",
+  "summary": "Erases the range spanning the node pointed to by this-\u003e+0x04 via ext_005AEC70, forwards the old root pointer to ext_006A5C5C, then clears +0x04 and +0x08.",
+  "fields": [
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "rootPtr"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:44:45Z"
+}
