@@ -174,6 +174,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t                 cachedChild  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    callback  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* next (next node in chain)  (evidence: 0x006FACA0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 child  (evidence: 0x0071CA70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child  (evidence: 0x00528AE0, 0x0052F7D0, 0x005DA150, 0x005DA170, 0x006305A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child_a  (evidence: 0x00586440) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    container  (evidence: 0x00524A60) // CONFLICT: multiple definitions at +0x4
@@ -379,6 +380,7 @@ struct Unknown_Fields {
     // +0xC   DWORD subobject (embedded object; its first dword is set to vtable 0x00951FB4 after the base init call)  (evidence: 0x00517AD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    capacity  (evidence: 0x00503BC0, 0x0050B960, 0x0050C4D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    child  (evidence: 0x0071B0D0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 container  (evidence: 0x0071CA70) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 counter  (evidence: 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  currentIndex  (evidence: 0x008115A0) // CONFLICT: multiple definitions at +0xC

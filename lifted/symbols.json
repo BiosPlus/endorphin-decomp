@@ -74157,6 +74157,13 @@
     "summary": "If +0x04 is non-null, chains ext_006DC460 -\u003e ext_006C9530 -\u003e ext_006C9F70; otherwise looks up the child named by mem_00AA8D1C under +0x0C and tail-calls its vtable slot 31.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071CA70": {
+    "name": "Unknown::DelegateToChildOrLookupByName",
+    "class": "Unknown",
+    "signature": "inline void* as_ptr(uint32_t v)",
+    "summary": "If the +0x04 child is set, chains GetValueIfCountPositive -\u003e sub_006C9540 -\u003e sub_006C9F70 on it; otherwise looks up the name constant in the +0x0C container and tail-dispatches vtable slot 31 (+0x7C) on the result.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071CAA0": {
     "name": "Unknown::GetValueOrFindChildValue",
     "class": "Unknown",

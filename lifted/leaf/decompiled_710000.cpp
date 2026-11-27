@@ -2639,3 +2639,58 @@ extern uint32_t fn_0071CA40(void* self) {
     return slot(obj);
 }
 } // namespace lift_0071CA40
+
+// [0x0071CA70] sub_0071CA70 (48 bytes)
+namespace lift_0071CA70 {
+// Guest pointers are carried as uint32_t and converted to host void* at call sites.
+namespace {
+inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+}
+
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern int32_t ext_006DC460(void* self);
+// Known callee 0x006C9540: sub_006C9540 (no metadata; result passed on as `this`)
+extern uint32_t ext_006C9540(void* self);
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+// Asm passes `this` in ecx and the name address as a stack argument (thiscall-style).
+extern uint32_t ext_00708000(void* self, uint32_t name_addr);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+
+// @name Unknown::DelegateToChildOrLookupByName
+// @class Unknown
+// @summary If the +0x04 child is set, chains GetValueIfCountPositive -> sub_006C9540 -> sub_006C9F70 on it; otherwise looks up the name constant in the +0x0C container and tail-dispatches vtable slot 31 (+0x7C) on the result.
+// @field Unknown +0x04 uint32_t child
+// @field Unknown +0x0C uint32_t container
+uint32_t __fastcall fn_0071CA70(void* self) {
+    // mov ecx, [eax+4]
+    uint32_t child = lift_field<uint32_t>(self, 0x04);
+
+    if (child != 0) {
+        // call sub_006DC460 with this = child; ecx = eax
+        int32_t v = ext_006DC460(as_ptr(child));
+        // call sub_006C9540 with this = v; ecx = eax
+        uint32_t r = ext_006C9540(as_ptr(static_cast<uint32_t>(v)));
+        // jmp sub_006C9F70 (tail call, ecx = r). Callee returns float (st0);
+        // the bit pattern is carried back through uint32_t return.
+        float f = ext_006C9F70(as_ptr(r));
+        uint32_t bits = 0;
+        static_assert(sizeof(bits) == sizeof(f));
+        std::memcpy(&bits, &f, sizeof(bits));
+        return bits;
+    }
+
+    // else: mov ecx, [eax+0Ch]; push 0x00AA8D2C; call sub_00708000
+    uint32_t container = lift_field<uint32_t>(self, 0x0C);
+    uint32_t obj = ext_00708000(as_ptr(container), 0x00AA8D2C);
+
+    // mov edx, [eax]; mov ecx, eax; jmp [edx+7Ch]  (virtual tail call, slot 31)
+    void* o = as_ptr(obj);
+    void** vtable = *reinterpret_cast<void***>(o);
+    using VirtFn = uint32_t (*)(void*);
+    VirtFn target = reinterpret_cast<VirtFn>(lift_field<void*>(static_cast<void*>(vtable), 0x7C));
+    return target(o);
+}
+} // namespace lift_0071CA70
