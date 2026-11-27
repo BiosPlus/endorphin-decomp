@@ -18796,6 +18796,13 @@
     "summary": "Validates the range fields, destroys the range via helper, frees the begin buffer if non-null, then zeroes begin/end/cap.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004EFF00": {
+    "name": "PointerVector::destroyAndReset",
+    "class": "PointerVector",
+    "signature": "void fn_004EFF00(void* self)",
+    "summary": "Destroys all pointers in the [begin, end) range, frees the storage block at begin, and zeroes begin/end/cap.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004F0510": {
     "name": "Properties::TestControl::vfunc_8",
     "class": "Properties::TestControl",

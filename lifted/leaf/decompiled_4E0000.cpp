@@ -708,3 +708,43 @@ void fn_004EFE80(void* self_) {
     *field(0x0c) = 0;
 }
 } // namespace lift_004EFE80
+
+// [0x004EFF00] sub_004EFF00 (121 bytes)
+namespace lift_004EFF00 {
+// Known callee 0x004EFAC0: destroyCheckedPointerRange (Destroys a checked iterator range of pointers by calling the virtual deleting destructor at +4)
+extern void ext_004EFAC0(uint32_t* vec1, uint32_t* first, uint32_t* vec2, uint32_t* last);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* block);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (only used by the original CRT range asserts; omitted in portable code).
+extern int mem_00925134;
+
+// @name PointerVector::destroyAndReset
+// @class PointerVector
+// @summary Destroys all pointers in the [begin, end) range, frees the storage block at begin, and zeroes begin/end/cap.
+// @field PointerVector +0x04 void* begin
+// @field PointerVector +0x08 void* end
+// @field PointerVector +0x0C void* cap
+void fn_004EFF00(void* self) {
+    // Metadata-only reference to the original CRT check slot (no real access in portable code).
+    (void)&mem_00925134;
+
+    // Destroy the checked range [begin, end) via the element destructor helper.
+    void* begin = lift_field<void*>(self, 0x04);
+    void* end = lift_field<void*>(self, 0x08);
+    ext_004EFAC0(reinterpret_cast<uint32_t*>(self),
+                 reinterpret_cast<uint32_t*>(begin),
+                 reinterpret_cast<uint32_t*>(self),
+                 reinterpret_cast<uint32_t*>(end));
+
+    // Free the storage block if one was allocated (begin re-read after the call).
+    void* block = lift_field<void*>(self, 0x04);
+    if (block != nullptr) {
+        ext_006A5C5C(block);
+    }
+
+    // Reset begin/end/cap to null.
+    lift_field<void*>(self, 0x04) = nullptr;
+    lift_field<void*>(self, 0x08) = nullptr;
+    lift_field<void*>(self, 0x0C) = nullptr;
+}
+} // namespace lift_004EFF00
