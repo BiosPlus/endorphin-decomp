@@ -8,8 +8,11 @@
 // Recovered field layout for PointerVector:
 namespace lifted_layout {
 struct PointerVector_Fields {
-    // +0x4   void*                    begin  (evidence: 0x004EFF00)
-    // +0x8   void*                    end  (evidence: 0x004EFF00)
-    // +0xC   void*                    cap  (evidence: 0x004EFF00)
+    // +0x4   uint32_t                 begin  (evidence: 0x00531AE0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    begin  (evidence: 0x004EFF00) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 end  (evidence: 0x00531AE0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    end  (evidence: 0x004EFF00) // CONFLICT: multiple definitions at +0x8
+    // +0xC   void*                    cap  (evidence: 0x004EFF00) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 capacity  (evidence: 0x00531AE0) // CONFLICT: multiple definitions at +0xC
 };
 } // namespace lifted_layout

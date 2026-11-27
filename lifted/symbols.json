@@ -23290,6 +23290,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004023C0 (AVIIO::vfunc_23).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00531AE0": {
+    "name": "PointerVector::destroyAndFree",
+    "class": "PointerVector",
+    "signature": "extern \"C\" void fn_00531AE0(void* self)",
+    "summary": "Destroys every non-null object in the pointer range, frees the buffer, and zeroes begin/end/capacity.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00531B60": {
     "name": "sub_00531B60",
     "signature": "extern \"C\" void __fastcall fn_00531B60(void* self)",

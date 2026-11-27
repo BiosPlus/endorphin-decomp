@@ -1698,3 +1698,40 @@ extern void fn_0053F5F0(int* out) {
     *out = std::atoi(s->c_str());
 }
 } // namespace lift_0053F5F0
+
+// [0x00531AE0]
+namespace lift_00531AE0 {
+// .rdata/IAT slot for MSVCR80!_invalid_parameter_noinfo.
+extern char mem_00925134[];
+
+// Callees (stdcall, 4 args; first arg is the container, passed in ecx as well in the original).
+extern void ext_004080C0(uint32_t container1, uint32_t iterPtr, uint32_t container2, uint32_t endPtr);
+// MFC80 ord_764 (cdecl, one arg: buffer pointer to release).
+extern void ext_006A5C5C(uint32_t ptr);
+
+// @name PointerVector::destroyAndFree
+// @class PointerVector
+// @summary Destroys every non-null object in the pointer range, frees the buffer, and zeroes begin/end/capacity.
+// @field PointerVector +0x04 uint32_t begin
+// @field PointerVector +0x08 uint32_t end
+// @field PointerVector +0x0c uint32_t capacity
+
+extern void fn_00531AE0(void* self) {
+    // MSVC CRT range assertions (_invalid_parameter_noinfo via IAT slot on begin > end) are omitted;
+    // the slot is referenced only to keep the metadata complete.
+    (void)&mem_00925134;
+    const uint32_t selfAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    const uint32_t begin = lift_field<uint32_t>(self, 0x4);
+    const uint32_t end = lift_field<uint32_t>(self, 0x8);
+
+    ext_004080C0(selfAddr, begin, selfAddr, end);
+
+    if (lift_field<uint32_t>(self, 0x4) != 0) {
+        ext_006A5C5C(lift_field<uint32_t>(self, 0x4));
+    }
+
+    lift_field<uint32_t>(self, 0x4) = 0;
+    lift_field<uint32_t>(self, 0x8) = 0;
+    lift_field<uint32_t>(self, 0xc) = 0;
+}
+} // namespace lift_00531AE0
