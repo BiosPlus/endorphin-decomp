@@ -80568,6 +80568,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0069A830 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0069ACC0": {
+    "name": "ExprParser::ExpressionContainer::vfunc_1_off_4",
+    "class": "ExprParser::ExpressionContainer",
+    "signature": "void __thiscall fn_0069ACC0(uint8_t* self, uint8_t* xml_node)",
+    "summary": "Loads expression definitions from an XML node and populates the expression container.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainer.cpp"
+  },
   "0x0069B070": {
     "name": "ExprParser::ExpressionContainer::vfunc_10",
     "class": "ExprParser::ExpressionContainer",

@@ -1,0 +1,46 @@
+{
+  "va": "0x0069ACC0",
+  "size": 942,
+  "orig_symbol": "ExprParser::ExpressionContainer::vfunc_1_off_4",
+  "src_path": "src/ExprParser/ExpressionContainer.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainer.cpp",
+  "name": "ExprParser::ExpressionContainer::vfunc_1_off_4",
+  "class": "ExprParser::ExpressionContainer",
+  "signature": "void __thiscall fn_0069ACC0(uint8_t* self, uint8_t* xml_node)",
+  "summary": "Loads expression definitions from an XML node and populates the expression container.",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x4",
+      "type": "uint8_t[]",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x14",
+      "type": "uint8_t[]",
+      "name": "field_0x14"
+    },
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x24",
+      "type": "uint8_t[]",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:44:23Z"
+}

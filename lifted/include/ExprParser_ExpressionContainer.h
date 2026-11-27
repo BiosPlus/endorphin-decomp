@@ -10,10 +10,14 @@
 // Recovered field layout for ExprParser::ExpressionContainer:
 namespace lifted_layout {
 struct ExprParser_ExpressionContainer_Fields {
-    // +0x8   uint8_t                  field_0x08  (evidence: 0x0069A1F0, 0x0069B070)
+    // +0x4   uint8_t[]                field_0x04  (evidence: 0x0069ACC0)
+    // +0x8   uint8_t                  field_0x08  (evidence: 0x0069A1F0, 0x0069ACC0, 0x0069B070)
+    // +0xC   uint32_t                 field_0x0c  (evidence: 0x0069ACC0)
+    // +0x14  uint8_t[]                field_0x14  (evidence: 0x0069ACC0)
     // +0x18  uint8_t                  field_0x18  (evidence: 0x0069B070)
     // +0x1C  uint8_t*                 field_0x1c  (evidence: 0x0069A1F0)
     // +0x20  uint8_t*                 field_0x20  (evidence: 0x0069A1F0)
+    // +0x24  uint8_t[]                field_0x24  (evidence: 0x0069ACC0)
     // +0x28  uint8_t                  field_0x28  (evidence: 0x0069B070)
 };
 } // namespace lifted_layout
