@@ -1874,3 +1874,23 @@ void __thiscall fn_00558B90(void* self) {
     mem_00924FF4(self);
 }
 } // namespace lift_00558B90
+
+// [0x00559C50] sub_00559C50 (35 bytes)
+namespace lift_00559C50 {
+// Known callee 0x00558B90: destroyStringAndRecordVector (Destroys a vector of 0x3C-byte string-pair records and the owning std::string.)
+extern void ext_00558B90(void* self);
+
+// @name destroyStringPairRange
+// @summary Calls fn_00558B90 on each 0x2C-byte record in [first, last) and returns (stdcall, ret 8).
+void __stdcall fn_00559C50(void* first, void* last) {
+    auto* cur = static_cast<unsigned char*>(first);
+    auto* end = static_cast<unsigned char*>(last);
+    if (cur == end) {
+        return;
+    }
+    do {
+        ext_00558B90(cur);
+        cur += 0x2c;
+    } while (cur != end);
+}
+} // namespace lift_00559C50

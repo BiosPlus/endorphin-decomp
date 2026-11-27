@@ -26974,6 +26974,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00559C50": {
+    "name": "destroyStringPairRange",
+    "signature": "void __stdcall fn_00559C50(void* first, void* last)",
+    "summary": "Calls fn_00558B90 on each 0x2C-byte record in [first, last) and returns (stdcall, ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559E40": {
     "name": "Acclaim2CharacterIO::vfunc_0",
     "class": "Acclaim2CharacterIO",
