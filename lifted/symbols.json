@@ -46116,6 +46116,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00510830 (CopyRangeBackwardAndComputeDestBegin).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062C010": {
+    "name": "ArrayOfPairs::DestroyRange",
+    "class": "ArrayOfPairs",
+    "signature": "void fn_0062C010(void* begin_ptr, void* end_ptr)",
+    "summary": "Walks a [begin, end) array of 16-byte records and invokes virtual slot 30 (+0x78) on each non-null embedded object (+0x04 with arg = record, +0x0C with arg = record+8).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062C0A0": {
     "name": "sub_0062C0A0",
     "signature": "uint32_t __stdcall fn_0062C0A0(uint32_t dst, uint32_t count, uint32_t src)",

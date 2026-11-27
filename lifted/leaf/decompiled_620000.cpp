@@ -2993,3 +2993,38 @@ void fn_00621AC0(void* self) {
     ext_00621740(sub, out_iter, as_u32(sub), begin1, as_u32(sub), end1);
 }
 } // namespace lift_00621AC0
+
+// [0x0062C010] sub_0062C010 (129 bytes)
+namespace lift_0062C010 {
+// @name ArrayOfPairs::DestroyRange
+// @summary Walks a [begin, end) array of 16-byte records and invokes virtual slot 30 (+0x78) on each non-null embedded object (+0x04 with arg = record, +0x0C with arg = record+8).
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0C
+void fn_0062C010(void* begin_ptr, void* end_ptr) {
+    // The original fs:[0] SEH frame setup/teardown is compiler boilerplate and is not reproduced.
+    using VSlot30 = void(__thiscall*)(void* self, void* arg);
+
+    auto* p = static_cast<unsigned char*>(begin_ptr);
+    auto* end = static_cast<unsigned char*>(end_ptr);
+
+    while (p != end) {
+        // +0x0C object: vtable[30](obj, record + 8), only if non-null.
+        void* obj_c = *reinterpret_cast<void**>(p + 0x0C);
+        if (obj_c != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(obj_c);
+            auto fn = reinterpret_cast<VSlot30>(vtbl[0x78 / sizeof(void*)]);
+            fn(obj_c, p + 0x08);
+        }
+
+        // +0x04 object: vtable[30](obj, record), only if non-null.
+        void* obj_4 = *reinterpret_cast<void**>(p + 0x04);
+        if (obj_4 != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(obj_4);
+            auto fn = reinterpret_cast<VSlot30>(vtbl[0x78 / sizeof(void*)]);
+            fn(obj_4, p);
+        }
+
+        p += 0x10;
+    }
+}
+} // namespace lift_0062C010

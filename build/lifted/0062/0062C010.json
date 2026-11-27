@@ -1,0 +1,28 @@
+{
+  "va": "0x0062C010",
+  "size": 129,
+  "orig_symbol": "sub_0062C010",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "ArrayOfPairs::DestroyRange",
+  "class": "ArrayOfPairs",
+  "signature": "void fn_0062C010(void* begin_ptr, void* end_ptr)",
+  "summary": "Walks a [begin, end) array of 16-byte records and invokes virtual slot 30 (+0x78) on each non-null embedded object (+0x04 with arg = record, +0x0C with arg = record+8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:17:44Z"
+}
