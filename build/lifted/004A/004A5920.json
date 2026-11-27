@@ -1,0 +1,28 @@
+{
+  "va": "0x004A5920",
+  "size": 127,
+  "orig_symbol": "sub_004A5920",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "Unknown::AdvanceFlaggedCursor",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_004A5920(void* self)",
+  "summary": "Advances the cursor at +0x04 along node links (+0x04 / +0x08 / +0x00) until reaching a node whose byte at +0xAD is zero; invalid-parameter hook on null self / flagged cursor",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:06:22Z"
+}

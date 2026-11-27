@@ -1029,3 +1029,55 @@ int32_t fn_004A9D80(void* self) {
     return negFlag + count + esi;
 }
 } // namespace lift_004A9D80
+
+// [0x004A5920] sub_004A5920 (127 bytes)
+namespace lift_004A5920 {
+extern void (__cdecl* mem_00925134)();
+
+// @name Unknown::AdvanceFlaggedCursor
+// @class Unknown
+// @summary Advances the cursor at +0x04 along node links (+0x04 / +0x08 / +0x00) until reaching a node whose byte at +0xAD is zero; invalid-parameter hook on null self / flagged cursor
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void __thiscall fn_004A5920(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    if (lift_field<void*>(obj, 0x00) == nullptr) {
+        mem_00925134();
+    }
+
+    uint8_t* n = lift_field<uint8_t*>(obj, 0x04);
+    if (lift_field<uint8_t>(n, 0xad) != 0) {
+        mem_00925134();
+        return;
+    }
+
+    uint8_t* c = lift_field<uint8_t*>(n, 0x08);
+    if (lift_field<uint8_t>(c, 0xad) == 0) {
+        uint8_t* a = lift_field<uint8_t*>(c, 0x00);
+        if (lift_field<uint8_t>(a, 0xad) == 0) {
+            do {
+                c = a;
+                a = lift_field<uint8_t*>(c, 0x00);
+            } while (lift_field<uint8_t>(a, 0xad) == 0);
+        }
+        lift_field<uint8_t*>(obj, 0x04) = c;
+        return;
+    }
+
+    uint8_t* a = lift_field<uint8_t*>(n, 0x04);
+    if (lift_field<uint8_t>(a, 0xad) == 0) {
+        for (;;) {
+            uint8_t* cur = lift_field<uint8_t*>(obj, 0x04);
+            if (cur != lift_field<uint8_t*>(a, 0x08)) {
+                break;
+            }
+            lift_field<uint8_t*>(obj, 0x04) = a;
+            a = lift_field<uint8_t*>(a, 0x04);
+            if (lift_field<uint8_t>(a, 0xad) != 0) {
+                break;
+            }
+        }
+    }
+    lift_field<uint8_t*>(obj, 0x04) = a;
+}
+} // namespace lift_004A5920
