@@ -2623,3 +2623,57 @@ void* fn_00541580(void* self, const void* arg0) {
 }
 } // namespace lift_00479620
 } // namespace lift_00541580
+
+// [0x0054F6F0]
+namespace lift_0054F6F0 {
+// @name std_vector_104B::insert
+// @class std_vector_104B
+// @summary Inserts a single 104-byte element into a vector at the given iterator position and returns the new iterator.
+// @field std_vector_104B +0x04 uint32_t _Myfirst
+// @field std_vector_104B +0x08 uint32_t _Mylast
+
+extern void ext_0054F420(void* self, uint32_t where_cont, uint32_t where_ptr, uint32_t count, uint32_t val);
+extern void (*mem_00925134)();
+
+extern uint32_t* __thiscall sub_0054F6F0(
+    void* self,
+    uint32_t* ret_iter,
+    uint32_t where_cont,
+    uint32_t where_ptr,
+    uint32_t val)
+{
+    uint32_t first = lift_field<uint32_t>(self, 0x04);
+    int32_t index = 0;
+
+    if (first != 0) {
+        uint32_t last = lift_field<uint32_t>(self, 0x08);
+        int32_t count = static_cast<int32_t>(last - first) / 0x68;
+        if (count != 0) {
+            if (first > last) {
+                mem_00925134();
+            }
+            if (where_cont == 0 || where_cont != reinterpret_cast<uintptr_t>(self)) {
+                mem_00925134();
+            }
+            index = static_cast<int32_t>(where_ptr - first) / 0x68;
+        }
+    }
+
+    ext_0054F420(self, where_cont, where_ptr, 1, val);
+
+    uint32_t new_first = lift_field<uint32_t>(self, 0x04);
+    uint32_t new_last = lift_field<uint32_t>(self, 0x08);
+    if (new_first > new_last) {
+        mem_00925134();
+    }
+
+    uint32_t new_ptr = new_first + static_cast<uint32_t>(index * 0x68);
+    if (new_ptr > lift_field<uint32_t>(self, 0x08) || new_ptr < lift_field<uint32_t>(self, 0x04)) {
+        mem_00925134();
+    }
+
+    ret_iter[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    ret_iter[1] = new_ptr;
+    return ret_iter;
+}
+} // namespace lift_0054F6F0

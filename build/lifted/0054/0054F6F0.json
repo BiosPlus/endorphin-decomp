@@ -1,0 +1,28 @@
+{
+  "va": "0x0054F6F0",
+  "size": 173,
+  "orig_symbol": "sub_0054F6F0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "std_vector_104B::insert",
+  "class": "std_vector_104B",
+  "signature": "extern \"C\" uint32_t* __thiscall sub_0054F6F0( void* self, uint32_t* ret_iter, uint32_t where_cont, uint32_t where_ptr, uint32_t val)",
+  "summary": "Inserts a single 104-byte element into a vector at the given iterator position and returns the new iterator.",
+  "fields": [
+    {
+      "class": "std_vector_104B",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "_Myfirst"
+    },
+    {
+      "class": "std_vector_104B",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "_Mylast"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:20:24Z"
+}
