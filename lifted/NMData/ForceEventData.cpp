@@ -604,3 +604,46 @@ void* fn_004C6D70(void* self, void* arg1) {
     return result;
 }
 } // namespace lift_004C6D70
+
+// [0x004C52B0] NMData::ForceEventData::vfunc_4_off_C (159 bytes)
+namespace lift_004C52B0 {
+extern void __thiscall ext_00587020(void* self, float* vec);
+// Known callee 0x00480430: initIdentity3x3IntoPadded (thiscall, self = result of the vtable call).
+extern void __thiscall ext_00480430(void* self);
+extern void __thiscall ext_004C5010(void* self);
+// Known callee 0x004C50C0: computeIdentityMatrixFirstRowNorm (no arguments, returns float).
+extern float ext_004C50C0();
+extern float mem_00A3A108;   // float 50.0f
+extern int32_t mem_00B40640; // global passed as vfunc argument
+
+// @name NMData::ForceEventData::vfunc_4_off_C
+// @class NMData::ForceEventData
+// @summary Stores |*p| as a 3-float vector and passes it to 0x00587020 on the primary subobject; if 50.0f < norm from 0x004C50C0, calls vtable slot 3 on self (with the global and 50.0f) and runs the 0x00480430 / 0x004C5010 helpers on the results.
+// @field NMData::ForceEventData +0x0 void** vptr
+// @field NMData::ForceEventData +0x4 void** TransformInterface_vptr
+// @field NMData::ForceEventData +0xC void** Updateable_vptr
+
+void __thiscall fn_004C52B0(void* self, float* p) {
+    using VFnGlobal = void* (__thiscall*)(void* self, int32_t arg);
+    using VFnGlobalFloat = void* (__thiscall*)(void* self, int32_t arg, float f);
+
+    auto* base = static_cast<uint8_t*>(self);
+
+    const float v = std::fabs(*p);
+    float vec[3] = {v, v, v};
+    ext_00587020(base - 0xC, vec);
+
+    void** ti_vt = *reinterpret_cast<void***>(base - 0x8);
+    void* r = reinterpret_cast<VFnGlobal>(ti_vt[3])(base - 0x8, mem_00B40640);
+    (void)r;
+
+    const float n = ext_004C50C0();
+    if (mem_00A3A108 < n) {
+        void** vp = *reinterpret_cast<void***>(base);
+        void* a = reinterpret_cast<VFnGlobal>(vp[3])(base, mem_00B40640);
+        ext_00480430(a);
+        void* b = reinterpret_cast<VFnGlobalFloat>(vp[3])(base, mem_00B40640, mem_00A3A108);
+        ext_004C5010(b);
+    }
+}
+} // namespace lift_004C52B0

@@ -20337,6 +20337,13 @@
     "summary": "Once-only (guarded by bit 0 of mem_00AE36F4) initialization of the global object at 0x00AE36A8 with four derived float constants, then assigns the literal string at 0x00934804 into it and returns that object.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C52B0": {
+    "name": "NMData::ForceEventData::vfunc_4_off_C",
+    "class": "NMData::ForceEventData",
+    "signature": "void __thiscall fn_004C52B0(void* self, float* p)",
+    "summary": "Stores |*p| as a 3-float vector and passes it to 0x00587020 on the primary subobject; if 50.0f \u003c norm from 0x004C50C0, calls vtable slot 3 on self (with the global and 50.0f) and runs the 0x00480430 / 0x004C5010 helpers on the results.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C5350": {
     "name": "NMData::ForceEventData::vfunc_6_off_C",
     "class": "NMData::ForceEventData",
