@@ -4894,3 +4894,64 @@ void fn_00433680(void* self) {
     method(obj, 3);
 }
 } // namespace lift_00433680
+
+// [0x00432250]
+namespace lift_00432250 {
+// @name sub_00432250
+// @summary Calls vtable+0x1d4(0) on object from sub_00465B40 and displays any caught exception message via AfxMessageBox.
+
+
+extern void* __cdecl ext_00465B40(void);
+extern int __cdecl ext_006A5E60(const char* text, uint32_t type, uint32_t idHelp);
+
+extern void* mem_00924FE0;
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+
+void __cdecl fn_00432250(void) {
+    try {
+        void* obj = ext_00465B40();
+        auto vtable = *reinterpret_cast<uintptr_t**>(obj);
+        auto method = reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0x1d4 / sizeof(uintptr_t)]);
+        method(obj, 0);
+    } catch (const void* exc) {
+        uint8_t local_str[28];
+        auto ctor = reinterpret_cast<void(__thiscall*)(void*, const void*)>(mem_00924FE0);
+        auto c_str = reinterpret_cast<const char*(__thiscall*)(const void*)>(mem_00924FF0);
+        auto dtor = reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4);
+        ctor(local_str, reinterpret_cast<const uint8_t*>(exc) + 0xc);
+        ext_006A5E60(c_str(local_str), 0, 0);
+        dtor(local_str);
+    }
+}
+} // namespace lift_00432250
+
+// [0x004322E0]
+namespace lift_004322E0 {
+// @name sub_004322E0
+// @summary Calls vtable +0x1f0(0) on object from sub_00465B40, catching exceptions to show message box.
+
+extern void* __cdecl ext_00465B40(void);
+extern int __cdecl ext_006A5E60(const char* text, unsigned int type, unsigned int idHelp);
+
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+
+void __cdecl fn_004322E0(void) {
+    try {
+        void* obj = ext_00465B40();
+        uintptr_t vtable = *reinterpret_cast<uintptr_t*>(obj);
+        using VFunc = void(__thiscall*)(void*, int);
+        VFunc fn = *reinterpret_cast<VFunc*>(vtable + 0x1F0);
+        fn(obj, 0);
+    } catch (const std::exception& e) {
+        (void)mem_00924FE0;
+        (void)mem_00924FF0;
+        (void)mem_00924FF4;
+        ext_006A5E60(e.what(), 0, 0);
+    } catch (...) {
+        ext_006A5E60("", 0, 0);
+    }
+}
+} // namespace lift_004322E0

@@ -1,0 +1,13 @@
+{
+  "va": "0x004320A0",
+  "size": 134,
+  "orig_symbol": "sub_004320A0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "callVtable1C8WithTryCatch",
+  "signature": "void __cdecl fn_004320A0(void)",
+  "summary": "Calls ext_00465B40(), invokes virtual method at vtable +0x1C8 with 0, and catches exceptions to show a message box.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:36:25Z"
+}
