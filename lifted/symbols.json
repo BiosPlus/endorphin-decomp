@@ -52897,6 +52897,13 @@
     "summary": "One-time guarded initialisation (flag bit 0 of mem_00B45C2C), then calls ext_005E0380 on self and caches self+0x178 into mem_00B45C24.",
     "lifted_path": "lifted/NMData/NullRelationshipData.cpp"
   },
+  "0x005E18B0": {
+    "name": "NMData::RootRelationshipData::vfunc_54",
+    "class": "NMData::RootRelationshipData",
+    "signature": "void* fn_005E18B0(void* self)",
+    "summary": "If this-\u003e+0x18C dynamically casts to type 0xA88224, call ext_005B5AF0 and return its result; otherwise run one-time init of the static object at 0xB45C30, call ext_005E0380 on it, cache this-\u003e+0x178 into mem_00B45C74, and return the object address.",
+    "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
+  },
   "0x005E1970": {
     "name": "NMData::HingeData::vfunc_61",
     "class": "NMData::HingeData",

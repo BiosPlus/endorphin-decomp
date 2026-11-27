@@ -157,3 +157,42 @@ uint8_t __thiscall fn_005EE250(void* self, uint32_t arg1, uint32_t arg2) {
     return ext_005EE110(self, arg1, arg2);
 }
 } // namespace lift_005EE250
+
+// [0x005E18B0] NMData::RootRelationshipData::vfunc_54 (183 bytes)
+namespace lift_005E18B0 {
+// Callees (direct calls; thiscall ecx=self is passed as the first argument).
+extern void ext_005B5780(void* self, int arg);
+extern void* ext_005B5AF0();
+extern void ext_005E0380(void* self, void* arg);
+extern void ext_006A6C87(uint32_t arg);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+// RTDynamicCast(obj, vfDelta, srcTypeInfo, dstTypeInfo, isReference)
+extern void* ext_006A6E9E(void* obj, int vfDelta, uint32_t srcType, uint32_t dstType, int isReference);
+
+// Globals: one-time init flag (bit 0), the static object at 0x00B45C30, and a cached byte.
+extern uint32_t mem_00B45C7C;
+extern uint8_t  mem_00B45C74;
+extern uint8_t  mem_00B45C30[];
+
+// @name NMData::RootRelationshipData::vfunc_54
+// @class NMData::RootRelationshipData
+// @summary If this->+0x18C dynamically casts to type 0xA88224, call ext_005B5AF0 and return its result; otherwise run one-time init of the static object at 0xB45C30, call ext_005E0380 on it, cache this->+0x178 into mem_00B45C74, and return the object address.
+// @field NMData::RootRelationshipData +0x178 uint8_t field_0x178
+// @field NMData::RootRelationshipData +0x18C void* field_0x18C
+void* fn_005E18B0(void* self) {
+    void* obj = lift_field<void*>(self, 0x18C);
+    if (ext_006A6E9E(obj, 0, 0x00A2FB54u, 0x00A88224u, 0) != nullptr) {
+        return ext_005B5AF0();
+    }
+
+    if ((mem_00B45C7C & 1u) == 0) {
+        mem_00B45C7C |= 1u;
+        ext_005B5780(mem_00B45C30, 9);
+        ext_006A6C87(0x0091E3F0u);
+    }
+
+    ext_005E0380(self, mem_00B45C30);
+    mem_00B45C74 = lift_field<uint8_t>(self, 0x178);
+    return mem_00B45C30;
+}
+} // namespace lift_005E18B0
