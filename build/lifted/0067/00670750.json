@@ -1,0 +1,14 @@
+{
+  "va": "0x00670750",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cVector3::getX\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+  "signature": "void* __stdcall fn_00670750(void* out, const float* const* valueSlot)",
+  "summary": "Stdcall (ret 8) forwarder: if the value pointer slot holds a non-null float pointer, formats that float into the sret string and returns it; otherwise builds a local exception object and throws it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:43Z"
+}

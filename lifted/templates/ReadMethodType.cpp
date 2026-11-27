@@ -61435,3 +61435,35 @@ void* fn_005D69B0(void* out, void** holder) {
     return out;
 }
 } // namespace lift_005D69B0
+
+// [0x00670750] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_4 (73 bytes)
+namespace lift_00670750 {
+// Callee 0x0046C390: formatFloatTrimmedStringWrapper (cdecl: sret slot, then float value; caller cleans up).
+extern void* ext_0046C390(void* out, float value);
+// Callee 0x0046C3C0: DerivedException::DerivedException (thiscall: object in ecx; installs fixed message + vtable).
+extern void* ext_0046C3C0(void* self);
+// Callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (cdecl: object address, ThrowInfo address).
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// ThrowInfo descriptor referenced by the throw site (only its address is used).
+extern uint8_t mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<Vector3::getX>::vfunc_4
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>
+// @summary Stdcall (ret 8) forwarder: if the value pointer slot holds a non-null float pointer, formats that float into the sret string and returns it; otherwise builds a local exception object and throws it.
+// Disassembly: sub esp,0x2c; mov eax,[esp+0x34]; mov eax,[eax]; test eax,eax; je throw; fld [eax]; ... call 0x46c390; ... ret 8.
+// The incoming ecx (this) is never read, so the function takes no object pointer.
+void* __stdcall fn_00670750(void* out, const float* const* valueSlot) {
+    const float* value = *valueSlot;
+    if (value != nullptr) {
+        ext_0046C390(out, *value);
+        return out;
+    }
+
+    // Throw path: the exception object lives in this frame (0x28 bytes of locals).
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+    // _CxxThrowException does not return; this is only to satisfy the signature.
+    return out;
+}
+} // namespace lift_00670750
