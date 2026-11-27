@@ -1,0 +1,33 @@
+{
+  "va": "0x004B66E0",
+  "size": 121,
+  "orig_symbol": "sub_004B66E0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "DestroyOwnedRangeAndFree",
+  "signature": "void fn_004B66E0(void* self)",
+  "summary": "Destroys the owned objects in [begin, end), frees the begin buffer if non-null, and zeroes begin/end/+0xC.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:15:06Z"
+}

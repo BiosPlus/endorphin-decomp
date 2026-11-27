@@ -14276,6 +14276,12 @@
     "summary": "Iterates [first, last) over a container of owned object pointers (debug-checked iterators), calling each non-null element's virtual slot 0x234 with flag 1 (scalar deleting destructor).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B66E0": {
+    "name": "DestroyOwnedRangeAndFree",
+    "signature": "void fn_004B66E0(void* self)",
+    "summary": "Destroys the owned objects in [begin, end), frees the begin buffer if non-null, and zeroes begin/end/+0xC.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B67C0": {
     "name": "ModeManager\u003cVMCSMode\u003e::vfunc_0",
     "class": "ModeManager\u003cVMCSMode\u003e",
