@@ -1,0 +1,14 @@
+{
+  "va": "0x0058C7A0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTY(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform,getTY,setTY\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, getTY, float, setTY\u003e",
+  "signature": "extern \"C\" DWORD mem_00B3F928; // one-time init guard flags (bit 0 = initialized) extern \"C\" DWORD mem_00B3F924; // static accessor object storage void fn_0058C7A0(void* obj)",
+  "summary": "Lazily initializes the static accessor object for AnimatableTransform::getTY/setTY and binds its address into the holder at +0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:25:53Z"
+}

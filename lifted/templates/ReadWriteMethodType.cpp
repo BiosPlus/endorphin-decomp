@@ -11331,3 +11331,27 @@ void __thiscall fn_00585360(void* self, void* holder) {
     lift_field<DWORD>(holder, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B3EB84));
 }
 } // namespace lift_00585360
+
+// [0x0058C7A0] ExprParser::ReadWriteMethodType<AnimatableTransform, float, getTY, float, setTY>::vfunc_40 (122 bytes)
+namespace lift_0058C7A0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B3F928; // one-time init guard flags (bit 0 = initialized)
+extern DWORD mem_00B3F924; // static accessor object storage
+
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform,getTY,setTY>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, getTY, float, setTY>
+// @summary Lazily initializes the static accessor object for AnimatableTransform::getTY/setTY and binds its address into the holder at +0x04.
+// @field ExprParser::ReadWriteMethodType<AnimatableTransform, float, getTY, float, setTY> +0x04 void* field_0x04
+void fn_0058C7A0(void* obj) {
+    // One-time construction of the static accessor (the SEH frame from the original
+    // prologue is compiler-generated EH state and is not reproduced here).
+    if ((mem_00B3F928 & 1u) == 0) {
+        mem_00B3F928 |= 1u;
+        ext_0067A670(static_cast<void*>(&mem_00B3F924), 0u);
+        mem_00B3F924 = 0x0095BC8Cu;
+    }
+    lift_field<DWORD>(obj, 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B3F924));
+}
+} // namespace lift_0058C7A0
