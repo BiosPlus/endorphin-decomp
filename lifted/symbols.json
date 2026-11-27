@@ -26146,6 +26146,12 @@
     "summary": "Resets the vtable slot, tears down the sub-object at +0x820, then destroys the std::string at +0x804.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00550420": {
+    "name": "ParseFileLineCounts",
+    "signature": "void __stdcall fn_00550420(FILE* fp, int* counts, char* buf)",
+    "summary": "Rewinds a file, then scans each line of the 0x800-byte buffer and bumps counters for lines starting with 'f', 'v ', 'vn', or 'vt'.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00550F80": {
     "name": "ModelImporter::vfunc_0",
     "class": "ModelImporter",

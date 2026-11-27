@@ -1,0 +1,39 @@
+{
+  "va": "0x00550420",
+  "size": 121,
+  "orig_symbol": "sub_00550420",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "ParseFileLineCounts",
+  "signature": "void __stdcall fn_00550420(FILE* fp, int* counts, char* buf)",
+  "summary": "Rewinds a file, then scans each line of the 0x800-byte buffer and bumps counters for lines starting with 'f', 'v ', 'vn', or 'vt'.",
+  "fields": [
+    {
+      "class": "CountBlock",
+      "offset": "+0x0",
+      "type": "int",
+      "name": "field_0x00"
+    },
+    {
+      "class": "CountBlock",
+      "offset": "+0x4",
+      "type": "int",
+      "name": "field_0x04"
+    },
+    {
+      "class": "CountBlock",
+      "offset": "+0x8",
+      "type": "int",
+      "name": "field_0x08"
+    },
+    {
+      "class": "CountBlock",
+      "offset": "+0xC",
+      "type": "int",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:16:38Z"
+}

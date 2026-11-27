@@ -1813,3 +1813,38 @@ uint8_t* fn_00555550(uint8_t* src_begin, uint8_t* src_end, uint8_t* dst) {
     return dst_cur;
 }
 } // namespace lift_00555550
+
+// [0x00550420] sub_00550420 (121 bytes)
+namespace lift_00550420 {
+extern int mem_009252C4; // IAT slot: fseek
+extern int mem_009252C0; // IAT slot: fgets
+
+// @name ParseFileLineCounts
+// @summary Rewinds a file, then scans each line of the 0x800-byte buffer and bumps counters for lines starting with 'f', 'v ', 'vn', or 'vt'.
+// @field CountBlock +0x00 int field_0x00
+// @field CountBlock +0x04 int field_0x04
+// @field CountBlock +0x08 int field_0x08
+// @field CountBlock +0x0c int field_0x0c
+void __stdcall fn_00550420(FILE* fp, int* counts, char* buf) {
+    (void)&mem_009252C4;
+    (void)&mem_009252C0;
+    fseek(fp, 0, SEEK_SET);
+    if (fgets(buf, 0x800, fp) == nullptr) {
+        return;
+    }
+    do {
+        if (buf[0] == 'f') {
+            counts[3]++;
+        } else if (buf[0] == 'v') {
+            char next = buf[1];
+            if (next == ' ') {
+                counts[0]++;
+            } else if (next == 'n') {
+                counts[1]++;
+            } else if (next == 't') {
+                counts[2]++;
+            }
+        }
+    } while (fgets(buf, 0x800, fp) != nullptr);
+}
+} // namespace lift_00550420
