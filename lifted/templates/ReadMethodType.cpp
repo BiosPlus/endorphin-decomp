@@ -86962,3 +86962,59 @@ void fn_00674A10(void* self, void* arg1, void* arg2) {
     dispatch(receiver, arg1, arg2);
 }
 } // namespace lift_00674A10
+
+// [0x0046C9E0] ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>::vfunc_47 (165 bytes)
+namespace lift_0046C9E0 {
+extern float ext_0046C080(void* self);                       // NMData::SkeletalCalibrationVariables::vfunc_12
+extern void ext_00672080(void* self, float value);           // sub_00672080 (float-to-temp constructor)
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+extern int mem_008A5428;   // SEH scope/handler table, registered in the original frame only
+extern int mem_009DEC1C;   // ThrowInfo for the exception thrown on null source
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_47
+// @class ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>
+// @summary Reads a float from the source object at self->field_0x00 (throws if null), stores it as a value into self, then forwards self to the vtable slot 47 of self->field_0x04.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0046C9E0(void* self) {
+    // SEH frame setup/teardown (fs:[0] push/restore) is dropped in the portable lift;
+    // the scope table is referenced only so the differential harness sees it as used.
+    (void)&mem_008A5428;
+
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        // Null source: construct DerivedException in place and throw it.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return;  // _CxxThrowException does not return
+    }
+
+    // Read a float from the source via its vfunc_12 (ecx = src).
+    float value = ext_0046C080(src);
+
+    // Build a temporary value object from the float, then assign it into self.
+    alignas(8) unsigned char temp[8] = {};
+    ext_00672080(temp, value);
+    ext_0041CF50(self, temp);
+
+    // Release the temporary's field_0x04 through its vtable slot 0x78 (if present).
+    void* held = lift_field<void*>(temp, 0x04);
+    if (held != nullptr) {
+        void* vtbl = lift_field<void*>(held, 0x00);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vtbl, 0x78));
+        release(held, temp);
+    }
+
+    // Forward self to vtable slot 47 (0xBC) of self->field_0x04.
+    void* target = lift_field<void*>(self, 0x04);
+    void* targetVtbl = lift_field<void*>(target, 0x00);
+    auto dispatch = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(targetVtbl, 0xBC));
+    dispatch(target, self);
+}
+} // namespace lift_0046C9E0
