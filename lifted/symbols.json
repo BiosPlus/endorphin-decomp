@@ -15818,6 +15818,13 @@
     "summary": "Walks [it, last) over an array of 32-bit std::string* slots with debug-iterator checks against owner, destroying and freeing each non-null entry.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BA0D0": {
+    "name": "Unknown::InitWithDynamicCast",
+    "class": "Unknown",
+    "signature": "void* fn_004BA0D0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Sets vtable and a1/a3/a4 fields, stores dynamic_cast(a2) result at +0x14, and stores a2 at +0x08 when the cast result is null; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BA170": {
     "name": "sub_004BA170_dtor",
     "signature": "extern \"C\" void __fastcall fn_004BA170(void* self)",
