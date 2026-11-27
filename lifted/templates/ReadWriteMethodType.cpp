@@ -19935,3 +19935,44 @@ void fn_00524950(void* arg1, void* arg2) {
     dtor(temp);
 }
 } // namespace lift_00524950
+
+// [0x0068EEE0] ExprParser::ReadWriteMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall UnitsWithProperties::setAngleUnitName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41 (140 bytes)
+namespace lift_0068EEE0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (returns its first argument; the temp string slot)
+extern void* ext_0046E780(void* self, void* a1, void* a2);
+// Known callee 0x0068EE80: FindStringInStaticTable (linear search of the 3-entry static string table at 0x00B5AE40; returns matching index or 0)
+extern uint32_t ext_0068EE80(void* self, const void* key);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object, installs vtable)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+// Import slot MSVCP80 std::string destructor (0x00924FF4 holds the function pointer)
+extern uint32_t mem_00924FF4;
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall UnitsWithProperties::setAngleUnitName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>
+// @summary Looks up a string key in the static 3-entry table and stores the matching index into the target; throws DerivedException if the holder pointer is null.
+// @field ExprParser::ReadWriteMethodType +0x04 void* target
+// @field UnknownTarget +0x0c uint32_t field_0x0c
+void __stdcall fn_0068EEE0(void* holder, void* a2) {
+    void* self = lift_field<void*>(holder, 0);
+    if (self == nullptr) {
+        // Construct exception object and throw it (thrown object is 4 bytes into the frame buffer).
+        alignas(8) uint8_t excFrame[0x40];
+        ext_0046C3C0(excFrame);
+        ext_006A6DD2(excFrame + 0x04, reinterpret_cast<const void*>(uintptr_t{0x009DEC1Cu}));
+    }
+
+    void* target = lift_field<void*>(self, 0x04);
+
+    // Temporary std::string-sized return slot filled by ext_0046E780 (returns its first arg).
+    alignas(8) uint8_t tmp[28];
+    void* key = ext_0046E780(tmp, a2, holder);
+
+    uint32_t index = ext_0068EE80(self, key);
+    lift_field<uint32_t>(target, 0x0c) = index;
+
+    auto dtor = reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(tmp);
+}
+} // namespace lift_0068EEE0
