@@ -1,0 +1,22 @@
+{
+  "va": "0x004CDC80",
+  "size": 114,
+  "orig_symbol": "sub_004CDC80",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "CallWithNamedString",
+  "class": "\u003cunknown\u003e",
+  "signature": "void __thiscall fn_004CDC80(void* self, const char* name)",
+  "summary": "Builds a temporary std::string from the argument, calls ext_00475960 on the object reached through this[0] with the global object from ext_004CADD0, then destroys the string.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:16:09Z"
+}

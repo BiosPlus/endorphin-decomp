@@ -1375,3 +1375,29 @@ void* fn_004CA3E0(void* self) {
     return self;
 }
 } // namespace lift_004CA3E0
+
+// [0x004CDC80]
+namespace lift_004CDC80 {
+extern void* ext_004CADD0();
+extern void __thiscall ext_00475960(void* self, void** slot, void* str, int flag);
+extern void* mem_00924FE4;  // MSVCP80 basic_string(const char*) import slot
+extern void* mem_00924FF4;  // MSVCP80 ~basic_string() import slot
+
+using string_ctor_fn = void(__thiscall*)(void* self, const char* s);
+using string_dtor_fn = void(__thiscall*)(void* self);
+
+// @name CallWithNamedString
+// @class <unknown>
+// @summary Builds a temporary std::string from the argument, calls ext_00475960 on the object reached through this[0] with the global object from ext_004CADD0, then destroys the string.
+// @field <unknown> +0x00 void* field_0x00
+void __thiscall fn_004CDC80(void* self, const char* name) {
+    void* obj = ext_004CADD0();
+
+    unsigned char str[0x1C];
+    (*reinterpret_cast<string_ctor_fn*>(&mem_00924FE4))(str, name);
+
+    ext_00475960(lift_field<void*>(self, 0x00), &obj, str, 1);
+
+    (*reinterpret_cast<string_dtor_fn*>(&mem_00924FF4))(str);
+}
+} // namespace lift_004CDC80

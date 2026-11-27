@@ -20886,6 +20886,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::MetaBodyConstraintData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CDC80": {
+    "name": "CallWithNamedString",
+    "class": "\u003cunknown\u003e",
+    "signature": "void __thiscall fn_004CDC80(void* self, const char* name)",
+    "summary": "Builds a temporary std::string from the argument, calls ext_00475960 on the object reached through this[0] with the global object from ext_004CADD0, then destroys the string.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CDE30": {
     "name": "sub_004CDE30",
     "signature": "void __fastcall fn_004CDE30(void* self)",
