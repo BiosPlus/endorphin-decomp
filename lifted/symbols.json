@@ -2098,6 +2098,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00422CE0 (sub_00421AB0).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00418350": {
+    "name": "ExportDialog::OnOK",
+    "class": "ExportDialog",
+    "signature": "void __thiscall fn_00418350(void* self)",
+    "summary": "Validates export dialog inputs, saves settings, and invokes CDialog::OnOK",
+    "lifted_path": "lifted/classes/ExportDialog.cpp"
+  },
   "0x00418830": {
     "name": "CheckButtonStateAndNotifyChildren",
     "class": "UnknownClass",
@@ -104297,6 +104304,13 @@
     "signature": "bool fn_007F1530()",
     "summary": "Checks CPU vendor (Intel/AMD), CPUID SSE support, and OS SSE support, storing the result in mem_00B61F78.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x007F2AC0": {
+    "name": "MdtArthur::arthurSolver_vanilla::vfunc_0",
+    "class": "MdtArthur::arthurSolver_vanilla",
+    "signature": "void __stdcall fn_007F2AC0( float* out,           // +0x04 (0) int n,                // +0x08 (1) uint32_t a2,          // +0x0C (2) float* J,             // +0x10 (3) uint32_t a4,          // +0x14 (4) uint32_t a5,          // +0x18 (5) uint32_t a6,          // +0x1C (6) uint32_t a7,          // +0x20 (7) uint32_t a8,          // +0x24 (8) uint32_t a9,          // +0x28 (9) uint32_t a10,         // +0x2C (10) uint32_t a11,         // +0x30 (11) uint32_t a12,         // +0x34 (12) int* jb,              // +0x38 (13) uint32_t a14,         // +0x3C (14) uint32_t a15,         // +0x40 (15) uint32_t a16,         // +0x44 (16) uint32_t a17,         // +0x48 (17) uint32_t a18,         // +0x4C (18) uint32_t a19,         // +0x50 (19) uint32_t a20,         // +0x54 (20) uint32_t a21,         // +0x58 (21) int* counts,          // +0x5C (22) uint32_t a23,         // +0x60 (23) uint32_t a24,         // +0x64 (24) uint32_t a25,         // +0x68 (25) uint32_t a26,         // +0x6C (26) uint32_t a27,         // +0x70 (27) uint32_t a28,         // +0x74 (28) uint32_t a29,         // +0x78 (29) uint32_t a30,         // +0x7C (30) int num_bodies,       // +0x80 (31) uint32_t a32,         // +0x84 (32) uint32_t a33,         // +0x88 (33) float* rhs,           // +0x8C (34) uint32_t a35,         // +0x90 (35) uint32_t a36,         // +0x94 (36) float* c,             // +0x98 (37) uint32_t a38,         // +0x9C (38) uint32_t a39,         // +0xA0 (39) float* cfm,           // +0xA4 (40) uint32_t a41,         // +0xA8 (41) uint32_t a42,         // +0xAC (42) float* f,             // +0xB0 (43) uint32_t a44,         // +0xB4 (44) uint32_t a45,         // +0xB8 (45) float* lambda,        // +0xBC (46) uint32_t a47,         // +0xC0 (47) uint32_t a48,         // +0xC4 (48) float stepsize,       // +0xC8 (49) float param_50        // +0xCC (50) )",
+    "summary": "Computes constraint forces and updates right-hand side vector for the Arthur LCP solver.",
+    "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp"
   },
   "0x007F36C0": {
     "name": "accumulateStridedProducts",

@@ -278,3 +278,147 @@ void __stdcall fn_007F3870(
         out_x->status = 1;
     }
 }
+
+// [0x007F2AC0]
+namespace lift_007F2AC0 {
+// @name MdtArthur::arthurSolver_vanilla::vfunc_0
+// @class MdtArthur::arthurSolver_vanilla
+// @summary Computes constraint forces and updates right-hand side vector for the Arthur LCP solver.
+void __stdcall fn_007F2AC0(
+    float* out,           // +0x04 (0)
+    int n,                // +0x08 (1)
+    uint32_t a2,          // +0x0C (2)
+    float* J,             // +0x10 (3)
+    uint32_t a4,          // +0x14 (4)
+    uint32_t a5,          // +0x18 (5)
+    uint32_t a6,          // +0x1C (6)
+    uint32_t a7,          // +0x20 (7)
+    uint32_t a8,          // +0x24 (8)
+    uint32_t a9,          // +0x28 (9)
+    uint32_t a10,         // +0x2C (10)
+    uint32_t a11,         // +0x30 (11)
+    uint32_t a12,         // +0x34 (12)
+    int* jb,              // +0x38 (13)
+    uint32_t a14,         // +0x3C (14)
+    uint32_t a15,         // +0x40 (15)
+    uint32_t a16,         // +0x44 (16)
+    uint32_t a17,         // +0x48 (17)
+    uint32_t a18,         // +0x4C (18)
+    uint32_t a19,         // +0x50 (19)
+    uint32_t a20,         // +0x54 (20)
+    uint32_t a21,         // +0x58 (21)
+    int* counts,          // +0x5C (22)
+    uint32_t a23,         // +0x60 (23)
+    uint32_t a24,         // +0x64 (24)
+    uint32_t a25,         // +0x68 (25)
+    uint32_t a26,         // +0x6C (26)
+    uint32_t a27,         // +0x70 (27)
+    uint32_t a28,         // +0x74 (28)
+    uint32_t a29,         // +0x78 (29)
+    uint32_t a30,         // +0x7C (30)
+    int num_bodies,       // +0x80 (31)
+    uint32_t a32,         // +0x84 (32)
+    uint32_t a33,         // +0x88 (33)
+    float* rhs,           // +0x8C (34)
+    uint32_t a35,         // +0x90 (35)
+    uint32_t a36,         // +0x94 (36)
+    float* c,             // +0x98 (37)
+    uint32_t a38,         // +0x9C (38)
+    uint32_t a39,         // +0xA0 (39)
+    float* cfm,           // +0xA4 (40)
+    uint32_t a41,         // +0xA8 (41)
+    uint32_t a42,         // +0xAC (42)
+    float* f,             // +0xB0 (43)
+    uint32_t a44,         // +0xB4 (44)
+    uint32_t a45,         // +0xB8 (45)
+    float* lambda,        // +0xBC (46)
+    uint32_t a47,         // +0xC0 (47)
+    uint32_t a48,         // +0xC4 (48)
+    float stepsize,       // +0xC8 (49)
+    float param_50        // +0xCC (50)
+) {
+    (void)a2; (void)a4; (void)a5; (void)a6; (void)a7; (void)a8; (void)a9; (void)a10;
+    (void)a11; (void)a12; (void)a14; (void)a15; (void)a16; (void)a17; (void)a18; (void)a19;
+    (void)a20; (void)a21; (void)a23; (void)a24; (void)a25; (void)a26; (void)a27; (void)a28;
+    (void)a29; (void)a30; (void)a32; (void)a33; (void)a35; (void)a36; (void)a38; (void)a39;
+    (void)a41; (void)a42; (void)a44; (void)a45; (void)a47; (void)a48;
+
+    float inv_h = 1.0f / stepsize;
+    int n4 = n / 4;
+
+    if (n4 != 0) {
+        for (int i = 0; i < n4; ++i) {
+            out[i * 4 + 0] = 0.0f;
+            out[i * 4 + 1] = 0.0f;
+            out[i * 4 + 2] = 0.0f;
+            out[i * 4 + 3] = 0.0f;
+        }
+    }
+
+    int constraint_idx = 0;
+    if (num_bodies != 0) {
+        int* cur_jb = jb;
+        int* cur_counts = counts;
+        float* cur_lambda = lambda;
+        float* cur_f = f;
+
+        for (int k = 0; k < num_bodies; ++k) {
+            int count = *cur_counts;
+            for (int j = 0; j < count; ++j) {
+                float* Jp = J + constraint_idx * 24;
+                float* body_out = out + cur_jb[j] * 4;
+
+                float v0 = 0.0f, v1 = 0.0f, v2 = 0.0f, v3 = 0.0f;
+                const int lam_idx[6] = {0, 1, 2, 4, 5, 6};
+                for (int r = 0; r < 6; ++r) {
+                    float l = cur_lambda[lam_idx[r]];
+                    v0 += l * Jp[r * 4 + 0];
+                    v1 += l * Jp[r * 4 + 1];
+                    v2 += l * Jp[r * 4 + 2];
+                    v3 += l * Jp[r * 4 + 3];
+                }
+
+                body_out[0] += v0;
+                body_out[1] += v1;
+                body_out[2] += v2;
+                body_out[3] += v3;
+
+                float f3 = cur_f[3];
+                for (int i = 0; i < 12; ++i) {
+                    Jp[i] *= f3;
+                }
+
+                for (int m = 0; m < 3; ++m) {
+                    float t0 = 0.0f, t1 = 0.0f, t2 = 0.0f, t3 = 0.0f;
+                    for (int r = 0; r < 3; ++r) {
+                        float fm = cur_f[8 + r * 4 + m];
+                        t0 += fm * Jp[12 + r * 4 + 0];
+                        t1 += fm * Jp[12 + r * 4 + 1];
+                        t2 += fm * Jp[12 + r * 4 + 2];
+                        t3 += fm * Jp[12 + r * 4 + 3];
+                    }
+                    Jp[12 + m * 4 + 0] = t0;
+                    Jp[12 + m * 4 + 1] = t1;
+                    Jp[12 + m * 4 + 2] = t2;
+                    Jp[12 + m * 4 + 3] = t3;
+                }
+
+                constraint_idx++;
+            }
+            cur_jb += count;
+            cur_counts += 1;
+            cur_lambda += 8;
+            cur_f += 12;
+        }
+    }
+
+    if (n4 != 0) {
+        for (int i = 0; i < n4; ++i) {
+            for (int m = 0; m < 4; ++m) {
+                int idx = i * 4 + m;
+                out[idx] = ((c[idx] + param_50) * cfm[idx] * inv_h - rhs[idx]) * inv_h - out[idx];
+            }
+        }
+    }
+}
+} // namespace lift_007F2AC0
