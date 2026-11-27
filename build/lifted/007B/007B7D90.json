@@ -1,0 +1,33 @@
+{
+  "va": "0x007B7D90",
+  "size": 80,
+  "orig_symbol": "sub_007B7D90",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "fn_007B7D90",
+  "signature": "extern \"C\" void fn_007B7D90(void* arg)",
+  "summary": "Writes the three uint32 values at arg+0x0, +0x4, +0x8 via ext_007B78D0, gated by two global byte flags.",
+  "fields": [
+    {
+      "class": "Args",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (first value, passed to",
+      "name": "ext_007B78D0)"
+    },
+    {
+      "class": "Args",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (second value, passed to",
+      "name": "ext_007B78D0)"
+    },
+    {
+      "class": "Args",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08 (third value, passed to",
+      "name": "ext_007B78D0)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:15:38Z"
+}

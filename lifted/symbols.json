@@ -85255,6 +85255,12 @@
     "summary": "Fills buf[0..n) with bytes from ext_007B7750(), stopping early on global flag states; caches 0x0D via ext_007AA510 once if buf[i] was already set, then continues filling after the existing string.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7D90": {
+    "name": "fn_007B7D90",
+    "signature": "extern \"C\" void fn_007B7D90(void* arg)",
+    "summary": "Writes the three uint32 values at arg+0x0, +0x4, +0x8 via ext_007B78D0, gated by two global byte flags.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B8968": {
     "name": "sub_007B8968_table",
     "signature": "const uint8_t* fn_007B8968(void* self)",

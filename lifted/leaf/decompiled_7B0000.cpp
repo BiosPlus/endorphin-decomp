@@ -2401,3 +2401,30 @@ int32_t fn_007BB140(double x, uint32_t y) {
     return static_cast<int32_t>(static_cast<int64_t>((r + t) - 0.5));
 }
 } // namespace lift_007BB140
+
+// [0x007B7D90]
+namespace lift_007B7D90 {
+// @name fn_007B7D90
+// @summary Writes the three uint32 values at arg+0x0, +0x4, +0x8 via ext_007B78D0, gated by two global byte flags.
+// @field Args +0x00 uint32_t field_0x00 (first value, passed to ext_007B78D0)
+// @field Args +0x04 uint32_t field_0x04 (second value, passed to ext_007B78D0)
+// @field Args +0x08 uint32_t field_0x08 (third value, passed to ext_007B78D0)
+
+extern void ext_007B78D0(uint32_t value);
+
+extern uint8_t mem_00B61218;
+extern uint8_t mem_00B61219;
+
+extern void fn_007B7D90(void* arg) {
+    uint32_t* p = static_cast<uint32_t*>(arg);
+
+    // The second and third calls only happen while (!flag18 || flag19).
+    ext_007B78D0(p[0]);
+    if (mem_00B61218 == 0 || mem_00B61219 != 0) {
+        ext_007B78D0(p[1]);
+    }
+    if (mem_00B61218 == 0 || mem_00B61219 != 0) {
+        ext_007B78D0(p[2]);
+    }
+}
+} // namespace lift_007B7D90
