@@ -81370,6 +81370,13 @@
     "summary": "Zeroes a 100-byte block, clears its flag byte, sets most dword fields to -1, and sets the dword at +0x2C to 1.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085BB40": {
+    "name": "Unknown::AppendByteGrowable",
+    "class": "Unknown",
+    "signature": "inline uint32_t rd32(const uint8_t* base, uint32_t off)",
+    "summary": "Append one byte to a growable byte buffer (optionally via indirection), growing the LocalAlloc'd data block when needed; returns the byte, or 0xFF00 on failure.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BBC0": {
     "name": "__allshl",
     "signature": "uint64_t sub_0085BBC0(uint64_t val, uint32_t shift)",

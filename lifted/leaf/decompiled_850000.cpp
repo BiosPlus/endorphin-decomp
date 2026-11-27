@@ -1548,3 +1548,84 @@ void fn_0085E3A0(void* self) {
     }
 }
 } // namespace lift_0085E3A0
+
+// [0x0085BB40]
+namespace lift_0085BB40 {
+// @name Unknown::AppendByteGrowable
+// @class Unknown
+// @summary Append one byte to a growable byte buffer (optionally via indirection), growing the LocalAlloc'd data block when needed; returns the byte, or 0xFF00 on failure.
+// @field Unknown +0x00 uint8_t* data
+// @field Unknown +0x04 uint32_t high_water
+// @field Unknown +0x08 uint32_t grow_base
+// @field Unknown +0x0C uint32_t capacity_limit
+// @field Unknown +0x10 uint32_t grow_extra
+// @field Unknown +0x14 uint32_t flags
+
+// Outer struct (edi): +0x00 pointer (to inner struct when bit 0x4 of byte +0x14 is set,
+// otherwise the buffer handle itself), +0x08 uint32 write index, +0x14 byte indirection flag.
+
+extern void* ext_008596F0(void* hMem, uint32_t uBytes);
+
+namespace {
+
+inline uint32_t rd32(const uint8_t* base, uint32_t off) {
+    uint32_t v;
+    for (uint32_t i = 0; i < 4; ++i) {
+        reinterpret_cast<uint8_t*>(&v)[i] = base[off + i];
+    }
+    return v;
+}
+
+inline void wr32(uint8_t* base, uint32_t off, uint32_t v) {
+    for (uint32_t i = 0; i < 4; ++i) {
+        base[off + i] = reinterpret_cast<const uint8_t*>(&v)[i];
+    }
+}
+
+inline uint8_t* ptr_at(const uint8_t* base, uint32_t off) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(rd32(base, off)));
+}
+
+}  // namespace
+
+uint32_t fn_0085BB40(uint32_t value, void* outer) {
+    uint8_t* edi = static_cast<uint8_t*>(outer);
+    uint8_t* esi = edi;
+    if (edi[0x14] & 0x04) {
+        esi = ptr_at(edi, 0x00);
+    }
+
+    const uint32_t flags = rd32(esi, 0x14);
+    bool fail = false;
+
+    if (flags & 0x01) {
+        fail = true;
+    } else if ((flags & 0x02) && !(rd32(esi, 0x04) > rd32(edi, 0x08))) {
+        fail = true;
+    } else if (!(rd32(esi, 0x0C) > rd32(edi, 0x08))) {
+        const uint32_t size = rd32(esi, 0x10) + rd32(esi, 0x08) + 1;
+        void* block = ext_008596F0(reinterpret_cast<void*>(ptr_at(edi, 0x00)), size);
+        if (block == nullptr) {
+            fail = true;
+        } else {
+            wr32(esi, 0x00, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(block)));
+        }
+    }
+
+    if (fail) {
+        return 0xFF00;
+    }
+
+    uint8_t* data = ptr_at(esi, 0x00);
+    const uint32_t index = rd32(edi, 0x08);
+    data[index] = static_cast<uint8_t>(value);
+
+    const uint32_t next = index + 1;
+    wr32(edi, 0x08, next);
+    if (next > rd32(esi, 0x04)) {
+        wr32(esi, 0x04, next);
+    }
+
+    return value & 0xFF;
+}
+} // namespace lift_0085BB40

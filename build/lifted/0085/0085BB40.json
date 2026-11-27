@@ -1,0 +1,52 @@
+{
+  "va": "0x0085BB40",
+  "size": 128,
+  "orig_symbol": "sub_0085BB40",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "Unknown::AppendByteGrowable",
+  "class": "Unknown",
+  "signature": "inline uint32_t rd32(const uint8_t* base, uint32_t off)",
+  "summary": "Append one byte to a growable byte buffer (optionally via indirection), growing the LocalAlloc'd data block when needed; returns the byte, or 0xFF00 on failure.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "data"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "high_water"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "grow_base"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "capacity_limit"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "grow_extra"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:16:30Z"
+}
