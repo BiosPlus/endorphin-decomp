@@ -3163,3 +3163,50 @@ void* fn_00413850(void* self, void* owner) {
     return self;
 }
 } // namespace lift_00413850
+
+// [0x00413AF0]
+namespace lift_00413AF0 {
+// @name WideStreambuf::WideStreambuf
+// @class WideStreambuf
+// @summary Constructor for a custom wide-character streambuf with a 1024-byte buffer and critical section.
+// @field WideStreambuf +0x00 uint32_t vftable
+// @field WideStreambuf +0x14 uint32_t* field_0x14
+// @field WideStreambuf +0x24 uint32_t* field_0x24
+// @field WideStreambuf +0x34 int32_t* field_0x34
+// @field WideStreambuf +0x3c void* buffer
+// @field WideStreambuf +0x40 uint32_t field_0x40
+// @field WideStreambuf +0x44 CRITICAL_SECTION cs
+
+
+extern void* ext_006A611E(size_t size);
+extern void* mem_00924F40;
+extern void* mem_00924F44;
+extern void* mem_009241C0;
+
+using streambuf_ctor_t = void (__thiscall*)(void* self);
+using streambuf_setbuf_t = void* (__thiscall*)(void* self, void* buf, int32_t count);
+using init_cs_t = void (__stdcall*)(void* lpCriticalSection);
+
+extern void* __thiscall fn_00413AF0(void* self, uint32_t arg0) {
+    reinterpret_cast<streambuf_ctor_t>(mem_00924F40)(self);
+
+    lift_field<uint32_t>(self, 0x00) = 0x0092C230u;
+    lift_field<uint32_t>(self, 0x40) = arg0;
+
+    void* buf = ext_006A611E(0x400);
+    lift_field<void*>(self, 0x3C) = buf;
+
+    reinterpret_cast<streambuf_setbuf_t>(mem_00924F44)(self, buf, 0x200);
+
+    uint32_t buf_addr = lift_field<uint32_t>(self, 0x3C);
+    *lift_field<uint32_t*>(self, 0x14) = buf_addr;
+    *lift_field<uint32_t*>(self, 0x24) = buf_addr;
+
+    int32_t count = static_cast<int32_t>((buf_addr + 0x3FCu) - buf_addr) >> 1;
+    *lift_field<int32_t*>(self, 0x34) = count;
+
+    reinterpret_cast<init_cs_t>(mem_009241C0)(static_cast<uint8_t*>(self) + 0x44);
+
+    return self;
+}
+} // namespace lift_00413AF0

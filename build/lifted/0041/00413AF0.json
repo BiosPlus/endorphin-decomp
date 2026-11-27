@@ -1,0 +1,58 @@
+{
+  "va": "0x00413AF0",
+  "size": 144,
+  "orig_symbol": "sub_00413AF0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "WideStreambuf::WideStreambuf",
+  "class": "WideStreambuf",
+  "signature": "extern \"C\" void* __thiscall fn_00413AF0(void* self, uint32_t arg0)",
+  "summary": "Constructor for a custom wide-character streambuf with a 1024-byte buffer and critical section.",
+  "fields": [
+    {
+      "class": "WideStreambuf",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "WideStreambuf",
+      "offset": "+0x14",
+      "type": "uint32_t*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "WideStreambuf",
+      "offset": "+0x24",
+      "type": "uint32_t*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "WideStreambuf",
+      "offset": "+0x34",
+      "type": "int32_t*",
+      "name": "field_0x34"
+    },
+    {
+      "class": "WideStreambuf",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "buffer"
+    },
+    {
+      "class": "WideStreambuf",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "WideStreambuf",
+      "offset": "+0x44",
+      "type": "CRITICAL_SECTION",
+      "name": "cs"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:36:05Z"
+}

@@ -81760,6 +81760,12 @@
     "summary": "Calls the function pointer at sub-object +0x08 with (0x18, 0x10); if it returns non-null, forwards (sub-object, self, x, y) to ext_007CC180, otherwise returns null.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CC3F0": {
+    "name": "ClampOrFallbackVec3",
+    "signature": "extern \"C\" float* sub_007CC3F0(void* arg0, const float* in_vec, float* out_vec)",
+    "summary": "Computes dot product of a vec3 and object's +0x20 vec3; if \u003e= threshold, outputs object's +0x30 vec3, else scales input vec3 by mem_0092C180",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CC510": {
     "name": "dotWithOffsetDifference",
     "class": "Unknown",
