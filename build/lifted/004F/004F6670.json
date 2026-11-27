@@ -1,0 +1,14 @@
+{
+  "va": "0x004F6670",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setX(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType_MatrixWithProperties_getX_setX_vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setX(float)\u003e",
+  "signature": "void fn_004F6670(void* self)",
+  "summary": "One-time guarded init of the static global at mem_00AE9F04 (sets its vtable to 0x94D984), then stores its address into self+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:24Z"
+}

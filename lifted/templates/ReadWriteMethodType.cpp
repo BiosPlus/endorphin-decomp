@@ -10727,3 +10727,25 @@ void fn_004F6090(void* self) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9ED4));
 }
 } // namespace lift_004F6090
+
+// [0x004F6670] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, float, &public: void __thiscall MatrixWithProperties::setX(float)>::vfunc_40 (122 bytes)
+namespace lift_004F6670 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (calls ext_00672000 on self, stores the stack argument into the first DWORD of self, returns it).
+extern void ext_0067A670();
+extern uint32_t mem_00AE9F08;
+extern uint32_t mem_00AE9F04;
+
+// @name ReadWriteMethodType_MatrixWithProperties_getX_setX_vfunc_40
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, float, &public: void __thiscall MatrixWithProperties::setX(float)>
+// @summary One-time guarded init of the static global at mem_00AE9F04 (sets its vtable to 0x94D984), then stores its address into self+0x04.
+// @field ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, float, &public: void __thiscall MatrixWithProperties::setX(float)> +0x04 uint32_t field_0x04
+void fn_004F6670(void* self) {
+    // Guard bit (bit 0 of mem_00AE9F08) makes the static initialization run once.
+    if ((mem_00AE9F08 & 1u) == 0) {
+        mem_00AE9F08 |= 1u;
+        ext_0067A670();
+        mem_00AE9F04 = 0x0094D984u;
+    }
+    lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE9F04));
+}
+} // namespace lift_004F6670

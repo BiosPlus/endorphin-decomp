@@ -19200,6 +19200,13 @@
     "summary": "Evaluates a float expression and sets MatrixWithProperties::x, or throws if target is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004F6670": {
+    "name": "ReadWriteMethodType_MatrixWithProperties_getX_setX_vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setX(float)\u003e",
+    "signature": "void fn_004F6670(void* self)",
+    "summary": "One-time guarded init of the static global at mem_00AE9F04 (sets its vtable to 0x94D984), then stores its address into self+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004F66F0": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getX, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getX, 0\u003e",
