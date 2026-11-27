@@ -2022,3 +2022,22 @@ void fn_005302D0(void* self) {
     ext_0065C650(lock);
 }
 } // namespace lift_005302D0
+
+// [0x005371F0] sub_005371F0 (90 bytes)
+namespace lift_005371F0 {
+extern void ext_00536F10(void* self, int arg);
+extern void ext_006A6C87(const void* arg);
+extern int mem_00AEF41C;
+
+// @name InitOnceGuarded_005371F0
+// @summary Run one-time initializer for the object at 0x00AEEF60 guarded by bit 0 of mem_00AEF41C, then return the object address.
+void* fn_005371F0() {
+    // One-time initialization guard: bit 0 of the flag word marks "already run".
+    if ((mem_00AEF41C & 1) == 0) {
+        mem_00AEF41C |= 1;
+        ext_00536F10(reinterpret_cast<void*>(0x00AEEF60), 0);
+        ext_006A6C87(reinterpret_cast<const void*>(0x0091A710));
+    }
+    return reinterpret_cast<void*>(0x00AEEF60);
+}
+} // namespace lift_005371F0

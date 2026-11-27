@@ -1,0 +1,13 @@
+{
+  "va": "0x005371F0",
+  "size": 90,
+  "orig_symbol": "sub_005371F0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "InitOnceGuarded_005371F0",
+  "signature": "void* fn_005371F0()",
+  "summary": "Run one-time initializer for the object at 0x00AEEF60 guarded by bit 0 of mem_00AEF41C, then return the object address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:29:33Z"
+}
