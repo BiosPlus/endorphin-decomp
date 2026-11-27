@@ -18387,3 +18387,1459 @@ extern void fn_004C0EB0(void* arg1, void* arg2) {
     ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
 }
 } // namespace lift_004C0EB0
+
+// [0x0049C1E0] ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_0049C1E0 {
+// @name ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_0049B090(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_0049C1E0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_0049B090(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_0049C1E0
+
+// [0x0049F760] ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_0049F760 {
+// @name ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_0049F490(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_0049F760(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_0049F490(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_0049F760
+
+// [0x004B6430] ExprParser::ReadWriteMethodType<NMData::GraphEntryData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::GraphEntryData::getExpression(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::GraphEntryData::setExpression(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41 (134 bytes)
+namespace lift_004B6430 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEntryData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::GraphEntryData::getExpression(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::GraphEntryData::setExpression(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEntryData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::GraphEntryData::getExpression(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::GraphEntryData::setExpression(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_004B6180(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_004B6430(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_004B6180(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_004B6430
+
+// [0x004CEDE0] ExprParser::ReadWriteMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::IncarnationEventData::setPhysicsLevel(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_004CEDE0 {
+// @name ExprParser::ReadWriteMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::IncarnationEventData::setPhysicsLevel(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::IncarnationEventData::setPhysicsLevel(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_004CEA10(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_004CEDE0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_004CEA10(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_004CEDE0
+
+// [0x004D1680] ExprParser::ReadWriteMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::TransitionEventData::setWindowTypeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_004D1680 {
+// @name ExprParser::ReadWriteMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::TransitionEventData::setWindowTypeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::TransitionEventData::setWindowTypeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_004D0DE0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_004D1680(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_004D0DE0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_004D1680
+
+// [0x004D1790] ExprParser::ReadWriteMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::TransitionEventData::setRequiredPhysicsLevelName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_004D1790 {
+// @name ExprParser::ReadWriteMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::TransitionEventData::setRequiredPhysicsLevelName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::TransitionEventData::setRequiredPhysicsLevelName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_004D0D40(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_004D1790(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_004D0D40(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_004D1790
+
+// [0x004DCDB0] ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RigEventData::setSourceName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_004DCDB0 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RigEventData::setSourceName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RigEventData::setSourceName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_004DCC80(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_004DCDB0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_004DCC80(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_004DCDB0
+
+// [0x00506F50] ExprParser::ReadWriteMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall Interpreter::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41 (134 bytes)
+namespace lift_00506F50 {
+// @name ExprParser::ReadWriteMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall Interpreter::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall Interpreter::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_00506ED0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_00506F50(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_00506ED0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_00506F50
+
+// [0x00511E70] ExprParser::ReadWriteMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall Chromosome::Descriptor::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_00511E70 {
+// @name ExprParser::ReadWriteMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall Chromosome::Descriptor::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall Chromosome::Descriptor::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_00521350(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_00511E70(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_00521350(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_00511E70
+
+// [0x005852D0] ExprParser::ReadWriteMethodType<ObjectNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall ObjectNode::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall ObjectNode::`vcall'{92, {flat}}, 0}>::vfunc_41 (134 bytes)
+namespace lift_005852D0 {
+// @name ExprParser::ReadWriteMethodType<ObjectNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall ObjectNode::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall ObjectNode::`vcall'{92, {flat}}, 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ObjectNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall ObjectNode::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall ObjectNode::`vcall'{92, {flat}}, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_0064F8E0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005852D0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_0064F8E0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005852D0
+
+// [0x005AAD40] ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setMetaBodyNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005AAD40 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setMetaBodyNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setMetaBodyNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_00402040(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005AAD40(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_00402040(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005AAD40
+
+// [0x005ABCE0] ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setHoldModeFromNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005ABCE0 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setHoldModeFromNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setHoldModeFromNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005ABBE0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005ABCE0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005ABBE0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005ABCE0
+
+// [0x005CCD90] ExprParser::ReadWriteMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005CCD90 {
+// @name ExprParser::ReadWriteMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005CCBD0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005CCD90(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005CCBD0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005CCD90
+
+// [0x005D18F0] ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setCameraModeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005D18F0 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setCameraModeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setCameraModeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005D0740(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005D18F0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005D0740(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005D18F0
+
+// [0x005D1980] ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setFilmGateDrawModeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005D1980 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setFilmGateDrawModeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setFilmGateDrawModeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005D0760(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005D1980(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005D0760(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005D1980
+
+// [0x005DCC80] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::VideoPlaneData::getFileName(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::VideoPlaneData::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41 (134 bytes)
+namespace lift_005DCC80 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::VideoPlaneData::getFileName(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::VideoPlaneData::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::VideoPlaneData::getFileName(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::VideoPlaneData::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005DC970(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005DCC80(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005DC970(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005DCC80
+
+// [0x005DD340] ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setCameraTypeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005DD340 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setCameraTypeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setCameraTypeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005DD310(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005DD340(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005DD310(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005DD340
+
+// [0x005E3CB0] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::SkeletalJointData::setFixedCoordsName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005E3CB0 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::SkeletalJointData::setFixedCoordsName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::SkeletalJointData::setFixedCoordsName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005E0E20(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005E3CB0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005E0E20(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005E3CB0
+
+// [0x005EE600] ExprParser::ReadWriteMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RelationshipData::setMetaBodyName0(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005EE600 {
+// @name ExprParser::ReadWriteMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RelationshipData::setMetaBodyName0(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RelationshipData::setMetaBodyName0(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005EDF90(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005EE600(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005EDF90(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005EE600
+
+// [0x005EE690] ExprParser::ReadWriteMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RelationshipData::setMetaBodyName1(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005EE690 {
+// @name ExprParser::ReadWriteMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RelationshipData::setMetaBodyName1(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RelationshipData::setMetaBodyName1(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005EDFB0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005EE690(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005EDFB0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005EE690
+
+// [0x005F5C30] ExprParser::ReadWriteMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall HelperGraphic::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005F5C30 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall HelperGraphic::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall HelperGraphic::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005F54A0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005F5C30(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005F54A0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005F5C30
+
+// [0x005F6F00] ExprParser::ReadWriteMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall HelperGraphic::setLineAxisName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_005F6F00 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall HelperGraphic::setLineAxisName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall HelperGraphic::setLineAxisName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_005F5BA0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_005F6F00(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_005F5BA0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_005F6F00
+
+// [0x006747F0] ExprParser::ReadWriteMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall ExpressionEntry::setExpression(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41 (134 bytes)
+namespace lift_006747F0 {
+// @name ExprParser::ReadWriteMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall ExpressionEntry::setExpression(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall ExpressionEntry::setExpression(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_006744A0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_006747F0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_006744A0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_006747F0
+
+// [0x006831F0] ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::ValuePtrData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_006831F0 {
+// @name ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::ValuePtrData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::ValuePtrData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_004FDD60(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_006831F0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_004FDD60(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_006831F0
+
+// [0x00683400] ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setPropertyType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_00683400 {
+// @name ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setPropertyType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setPropertyType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_00682E00(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_00683400(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_00682E00(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_00683400
+
+// [0x00683510] ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setComment(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_00683510 {
+// @name ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setComment(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setComment(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_00682990(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_00683510(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_00682990(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_00683510
+
+// [0x00685C20] ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setInitialValue(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_00685C20 {
+// @name ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setInitialValue(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setInitialValue(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_00685AE0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_00685C20(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_00685AE0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_00685C20
+
+// [0x006860F0] ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_006860F0 {
+// @name ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::ValuePtrData::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_00685E40(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_006860F0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_00685E40(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0
+} // namespace lift_006860F0
