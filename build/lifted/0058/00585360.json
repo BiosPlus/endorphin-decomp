@@ -1,0 +1,22 @@
+{
+  "va": "0x00585360",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cObjectNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall ObjectNode::`vcall'{36, {flat}}, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall ObjectNode::`vcall'{92, {flat}}, 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cObjectNode\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cObjectNode\u003e",
+  "signature": "DWORD ext_0067A670(void* self, DWORD value);  // storeArgIntoFirstDword_006721B0 void __thiscall fn_00585360(void* self, void* holder)",
+  "summary": "One-time init of static accessor object at 0xB3EB84 (guarded by bit 0 of 0xB3EB88), then stores its address into holder+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType\u003cObjectNode\u003e",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:25:53Z"
+}

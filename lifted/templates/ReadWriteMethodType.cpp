@@ -11308,3 +11308,26 @@ void fn_0058C200(void* self) {
     lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B3F90C));
 }
 } // namespace lift_0058C200
+
+// [0x00585360]
+namespace lift_00585360 {
+// @name ExprParser::ReadWriteMethodType<ObjectNode>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<ObjectNode>
+// @summary One-time init of static accessor object at 0xB3EB84 (guarded by bit 0 of 0xB3EB88), then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<ObjectNode> +0x04 DWORD field_0x04
+
+extern DWORD mem_00B3EB88;
+extern DWORD mem_00B3EB84;
+
+DWORD ext_0067A670(void* self, DWORD value);  // storeArgIntoFirstDword_006721B0
+
+void __thiscall fn_00585360(void* self, void* holder) {
+    (void)self;
+    if ((mem_00B3EB88 & 1u) == 0) {
+        mem_00B3EB88 |= 1u;
+        ext_0067A670(&mem_00B3EB84, 0);
+        mem_00B3EB84 = 0x0095A724u;
+    }
+    lift_field<DWORD>(holder, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B3EB84));
+}
+} // namespace lift_00585360
