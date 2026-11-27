@@ -1,0 +1,34 @@
+{
+  "va": "0x006DC510",
+  "size": 64,
+  "orig_symbol": "sub_006DC510",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::getElementByIndex_006DC510",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __thiscall fn_006DC510(void* self, int32_t index)",
+  "summary": "Returns element[index] of the pointer array at +0xC8 when index is in [0, count); otherwise forwards to the fallback call at 006E7410 and returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "int32_t countGetter (read via",
+      "name": "ext_006DC550)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "uint32_t",
+      "name": "elementsPtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEC",
+      "type": "uint32_t",
+      "name": "fallbackSelf"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:51:20Z"
+}

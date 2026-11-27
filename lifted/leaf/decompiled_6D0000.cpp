@@ -3306,3 +3306,32 @@ int32_t fn_006DC480(void* self) {
     return 0;
 }
 } // namespace lift_006DC480
+
+// [0x006DC510] sub_006DC510 (64 bytes)
+namespace lift_006DC510 {
+// Known callee 0x006DC550: sub_006DC550 (Getter returning int32_t field at offset +0xB8.)
+extern int32_t ext_006DC550(void* self);
+// Known callee 0x006E7410: Unknown::assignStringByIndexAndForward_006E7410 (Passes the first stack argument as the index to assignStringByIndex (006E7440) on self, then forwards the second stack argument to the subobject call (006E7430) on self and returns its result.)
+extern void* ext_006E7410(void* self, uint32_t arg1, uint32_t arg2);
+
+// @name Unknown::getElementByIndex_006DC510
+// @class Unknown
+// @summary Returns element[index] of the pointer array at +0xC8 when index is in [0, count); otherwise forwards to the fallback call at 006E7410 and returns 0.
+// @field Unknown +0xB8 int32_t countGetter (read via ext_006DC550)
+// @field Unknown +0xC8 uint32_t elementsPtr
+// @field Unknown +0xEC uint32_t fallbackSelf
+extern uint32_t __thiscall fn_006DC510(void* self, int32_t index) {
+    if (index >= 0) {
+        const int32_t count = ext_006DC550(self);
+        if (index < count) {
+            const uint32_t base = lift_field<uint32_t>(self, 0xC8);
+            void* arr = reinterpret_cast<void*>(static_cast<uintptr_t>(base));
+            return lift_field<uint32_t>(arr, static_cast<ptrdiff_t>(index) * 4);
+        }
+    }
+    const uint32_t fallbackSelf = lift_field<uint32_t>(self, 0xEC);
+    ext_006E7410(reinterpret_cast<void*>(static_cast<uintptr_t>(fallbackSelf)),
+                 0u, 0xAA93ECu);
+    return 0;
+}
+} // namespace lift_006DC510

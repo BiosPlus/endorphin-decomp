@@ -1449,6 +1449,7 @@ struct Unknown_Fields {
     // +0xB4  void*                    member  (evidence: 0x00701DF0, 0x00704B00, 0x00704D60, 0x0070AF30) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  int32_t                  mode  (evidence: 0x00464780, 0x004647A0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void** entries (array of entry pointers)  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0xB4
+    // +0xB8  int32_t countGetter (read via ext_006DC550)  (evidence: 0x006DC510) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  Buffer                   field_0xB8  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  DWORD                    field_0xB8  (evidence: 0x00540F60) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  SortedArray              field_0xB8  (evidence: 0x00736C90) // CONFLICT: multiple definitions at +0xB8
@@ -1477,6 +1478,7 @@ struct Unknown_Fields {
     // +0xC4  EntryTable               field_0xc4  (evidence: 0x00763E40) // CONFLICT: multiple definitions at +0xC4
     // +0xC4  uint32_t                 field_0xc4  (evidence: 0x0051DDB0) // CONFLICT: multiple definitions at +0xC4
     // +0xC4  uint32_t                 list_head_sentinel  (evidence: 0x0049F0C0) // CONFLICT: multiple definitions at +0xC4
+    // +0xC8  uint32_t                 elementsPtr  (evidence: 0x006DC510) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  int32_t*                 entries  (evidence: 0x006DC480) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  int32_t*                 field_0xC8  (evidence: 0x006DC460) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  void*                    field_0xC8  (evidence: 0x004486A0) // CONFLICT: multiple definitions at +0xC8
@@ -1541,6 +1543,7 @@ struct Unknown_Fields {
     // +0xE8  int32_t                  index  (evidence: 0x006DC480) // CONFLICT: multiple definitions at +0xE8
     // +0xEC  uint8_t field_0xEC (address taken when flag == 0)  (evidence: 0x007C9490, 0x007CAF70) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  int                      checkResult  (evidence: 0x0043C640) // CONFLICT: multiple definitions at +0xEC
+    // +0xEC  uint32_t                 fallbackSelf  (evidence: 0x006DC510) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  BYTE                     field_0xEC  (evidence: 0x007C8490, 0x007C93A0, 0x007CAF70) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  float                    field_0xEC  (evidence: 0x007C8490, 0x007C9AA0, 0x007CAF70) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  DWORD                    field_0xec  (evidence: 0x00441C10, 0x00448420) // CONFLICT: multiple definitions at +0xEC

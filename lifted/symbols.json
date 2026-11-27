@@ -69105,6 +69105,13 @@
     "summary": "Returns entries[index] when index (+0xE8) is non-negative and below the getter limit (ext_006DC550); otherwise forwards +0xEC subobject with (0, 0xAA93EC) and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DC510": {
+    "name": "Unknown::getElementByIndex_006DC510",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __thiscall fn_006DC510(void* self, int32_t index)",
+    "summary": "Returns element[index] of the pointer array at +0xC8 when index is in [0, count); otherwise forwards to the fallback call at 006E7410 and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DC550": {
     "name": "sub_006DC550",
     "signature": "extern \"C\" int32_t __fastcall fn_006DC550(void* self)",
