@@ -12,6 +12,7 @@ namespace lifted_layout {
 struct NMData_FixedPathJointData_Fields {
     // +0x0   none (no direct field access; only the this-0xC base adjustment)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (vptr; vfunc_60 at slot +0xF0 is the element count)  (evidence: 0x005EEDB0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vptr  (evidence: 0x005E4C80) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x005EB920) // CONFLICT: multiple definitions at +0x0
     // +0x74  void** field_0x74 (begin of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
     // +0x78  void** field_0x78 (end of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
@@ -28,6 +29,7 @@ struct NMData_FixedPathJointData_Fields {
     // +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x184 void*                    field_0x184  (evidence: 0x005E02D0)
+    // +0x18C void*                    field_0x18c  (evidence: 0x005E4C80)
     // +0x194 int32_t                  field_0x194  (evidence: 0x005E4850, 0x005EB920)
     // +0x1D4 void**                   field_0x1d4  (evidence: 0x005EB920) // CONFLICT: multiple definitions at +0x1D4
     // +0x1D4 void** field_0x1d4 (begin of pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x1D4

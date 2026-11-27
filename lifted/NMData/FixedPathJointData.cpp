@@ -95,9 +95,12 @@ void* fn_005E29F0(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 #include <cstring>
+#include <ios>
+#include <ostream>
+#include <sstream>
 
-// [0x005E1060] NMData::FixedPathJointData::vfunc_15_off_4 (41 bytes)
-// @name NMData::FixedPathJointData::vfunc_15_off_4
+#include <ostream>
+#include <sstream>
 // @class NMData::FixedPathJointData
 // @summary Forwards arg to HelperGraphic::vfunc_15_off_4 on self, then, if the sub-object at +0x178 is set, invokes its interface vtable slot 15 with arg.
 // @field NMData::FixedPathJointData +0x178 void* field_0x178
@@ -563,3 +566,53 @@ uint32_t __thiscall fn_005ECCF0(void* self, const float* value_ptr) {
     return ext_005EBC10(adjusted_self, &value);
 }
 } // namespace lift_005ECCF0
+
+// [0x005E4C80] NMData::FixedPathJointData::vfunc_3 (261 bytes)
+namespace lift_005E4C80 {
+extern void* ext_00435D00(void* stream);
+extern void* mem_00B41854;
+extern void* mem_00924E4C;  // MSVCP80 ostringstream ctor (import thunk)
+extern void* mem_00924E54;  // MSVCP80 ostringstream::str
+extern void* mem_00924E58;  // MSVCP80 ostringstream dtor
+extern void* mem_00924E94;  // MSVCP80 operator<< (ostream&, string const&)
+extern void* mem_00924FF4;  // MSVCP80 string dtor
+
+// @name NMData::FixedPathJointData::vfunc_3
+// @class NMData::FixedPathJointData
+// @summary Builds a diagnostic string via an ostringstream, using the child at +0x18C and a vfunc on this.
+// @field NMData::FixedPathJointData +0x000 void* vptr
+// @field NMData::FixedPathJointData +0x18C void* field_0x18c
+std::string fn_005E4C80(void* self) {
+    std::ostringstream ss(std::ios_base::out);
+    std::ostream& os = ss;
+
+    // Child object at this->field_0x18c + 4; call its vslot 3 with a temporary string.
+    uint8_t* sub = lift_field<uint8_t*>(self, 0x18C) + 4;
+    void** sub_vt = *reinterpret_cast<void***>(sub);
+    std::string tmp;
+    using Slot3Fn = const std::string* (*)(void*, std::string*);
+    const std::string* desc = reinterpret_cast<Slot3Fn>(sub_vt[3])(sub, &tmp);
+
+    // Virtual call on this, slot 9 (+0x24), result is used as an int.
+    void** vt = *reinterpret_cast<void***>(self);
+    using Slot9Fn = int (*)(void*);
+    int r = reinterpret_cast<Slot9Fn>(vt[9])(self);
+    (void)r;
+
+    os << *desc;
+
+    void* p = static_cast<void*>(&os);
+    p = ext_00435D00(p);
+    p = ext_00435D00(p);
+    p = ext_00435D00(p);
+    (void)p;
+
+    (void)mem_00B41854;
+    (void)&mem_00924E4C;
+    (void)&mem_00924E54;
+    (void)&mem_00924E58;
+    (void)&mem_00924E94;
+    (void)&mem_00924FF4;
+    return ss.str();
+}
+} // namespace lift_005E4C80

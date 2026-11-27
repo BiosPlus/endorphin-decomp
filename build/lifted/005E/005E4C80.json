@@ -1,0 +1,28 @@
+{
+  "va": "0x005E4C80",
+  "size": 261,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_3",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_3",
+  "class": "NMData::FixedPathJointData",
+  "signature": "extern \"C\" void* mem_00924E4C;  // MSVCP80 ostringstream ctor (import thunk) extern \"C\" void* mem_00924E54;  // MSVCP80 ostringstream::str extern \"C\" void* mem_00924E58;  // MSVCP80 ostringstream dtor extern \"C\" void* mem_00924E94;  // MSVCP80 operator\u003c\u003c (ostream\u0026, string const\u0026) extern \"C\" void* mem_00924FF4;  // MSVCP80 string dtor std::string fn_005E4C80(void* self)",
+  "summary": "Builds a diagnostic string via an ostringstream, using the child at +0x18C and a vfunc on this.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:35:31Z"
+}
