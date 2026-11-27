@@ -50568,6 +50568,13 @@
     "summary": "Constructs a std::string from the constant at 0x0097778C into the caller-supplied return slot and returns that slot.",
     "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
   },
+  "0x00626850": {
+    "name": "NMData::EffectorSkeletalData::vfunc_20",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "std::string* fn_00626850(void* self, std::string* ret, void* unused)",
+    "summary": "Builds the string (literal 0x009777A0 + this-\u003efield_0x04 + literal 0x0093BF0C) into the caller's result slot and returns that slot.",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
+  },
   "0x006268F0": {
     "name": "sub_006268F0",
     "signature": "extern \"C\" void __fastcall fn_006268F0(void* self)",

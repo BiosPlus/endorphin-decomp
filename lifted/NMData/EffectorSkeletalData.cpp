@@ -52,3 +52,33 @@ void fn_00626D00(void* self) {
     ext_0063D8F0(static_cast<char*>(self) + 0x44);
 }
 } // namespace lift_00626D00
+
+// [0x00626850] NMData::EffectorSkeletalData::vfunc_20 (157 bytes)
+namespace lift_00626850 {
+// .rdata string literals (contents not recovered).
+extern const char mem_009777A0[];
+extern const char mem_0093BF0C[];
+// IAT slots for the MSVCP80 string ctor/operator+/dtor the original called through.
+// Replaced by std::string operations; referenced only as metadata for the differential check.
+extern int mem_00924FD0;
+extern int mem_00924ECC;
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name NMData::EffectorSkeletalData::vfunc_20
+// @class NMData::EffectorSkeletalData
+// @summary Builds the string (literal 0x009777A0 + this->field_0x04 + literal 0x0093BF0C) into the caller's result slot and returns that slot.
+// @field NMData::EffectorSkeletalData +0x04 std::string field_0x04
+// Stack arg 2 (ret 8) is never read by the original.
+std::string* fn_00626850(void* self, std::string* ret, void* unused) {
+    (void)unused;
+    (void)&mem_00924FD0;
+    (void)&mem_00924ECC;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    auto* member = reinterpret_cast<std::string*>(static_cast<char*>(self) + 0x04);
+    std::string prefixed = std::string(mem_009777A0) + *member;
+    new (ret) std::string(prefixed + mem_0093BF0C);
+    return ret;
+}
+} // namespace lift_00626850
