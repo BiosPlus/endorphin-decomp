@@ -1,0 +1,34 @@
+{
+  "va": "0x006D6C20",
+  "size": 144,
+  "orig_symbol": "sub_006D6C20",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "UnknownClass_0099395c::dtor",
+  "class": "UnknownClass_0099395c",
+  "signature": "extern \"C\" void __thiscall fn_006D6C20(void* self)",
+  "summary": "Destructor that resets vtable to 0x0099395c, resets flags/subobject, frees field_0xFC, destroys +0x100, and calls base destructor.",
+  "fields": [
+    {
+      "class": "UnknownClass_0099395c",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "UnknownClass_0099395c",
+      "offset": "+0xFC",
+      "type": "void*",
+      "name": "field_0xFC"
+    },
+    {
+      "class": "UnknownClass_0099395c",
+      "offset": "+0x100",
+      "type": "uint8_t",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:43:46Z"
+}
