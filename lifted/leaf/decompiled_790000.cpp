@@ -1392,3 +1392,39 @@ void fn_0079E260(void* self, uint32_t selector) {
     reinterpret_cast<StubFn>(&ext_006D80A0)(&local[0]);
 }
 } // namespace lift_0079E260
+
+// [0x0079AF60] sub_0079AF60 (128 bytes)
+namespace lift_0079AF60 {
+// KERNEL32 IAT slots (GlobalSize, GlobalAlloc, GlobalFree). Each slot holds the
+// imported function address, so the slot value is the callable pointer.
+extern void* mem_00924194;
+extern void* mem_009241F0;
+extern void* mem_009241E8;
+
+// @name ResizeGlobalCopy
+// @summary Allocates a new GlobalAlloc block of the requested size, copies min(GlobalSize(src), requested) bytes into it, frees src, and returns the new handle (0 on allocation failure, in which case src is left untouched).
+// @class (none)
+namespace lift_0079AF60 {
+
+void* __cdecl fn_0079AF60(void* src) {
+    using GlobalSizeFn = uint32_t(__stdcall*)(void*);
+    using GlobalAllocFn = void*(__stdcall*)(uint32_t, uint32_t);
+    using GlobalFreeFn = void*(__stdcall*)(void*);
+
+    const int32_t size = static_cast<int32_t>(reinterpret_cast<GlobalSizeFn>(mem_00924194)(src));
+    const int32_t requested = static_cast<int32_t>(reinterpret_cast<uintptr_t>(src));
+
+    const uint32_t copyLen = static_cast<uint32_t>(size < requested ? size : requested);
+
+    void* dst = reinterpret_cast<GlobalAllocFn>(mem_009241F0)(0, static_cast<uint32_t>(requested));
+    if (dst == nullptr) {
+        return nullptr;
+    }
+
+    std::memcpy(dst, src, copyLen);
+    reinterpret_cast<GlobalFreeFn>(mem_009241E8)(src);
+    return dst;
+}
+
+} // namespace lift_0079AF60
+} // namespace lift_0079AF60

@@ -76574,6 +76574,13 @@
     "summary": "Frees the global memory handle passed as its single stack argument via GlobalFree and returns GlobalFree's result.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079AF60": {
+    "name": "ResizeGlobalCopy",
+    "class": "(none)",
+    "signature": "void* __cdecl fn_0079AF60(void* src)",
+    "summary": "Allocates a new GlobalAlloc block of the requested size, copies min(GlobalSize(src), requested) bytes into it, frees src, and returns the new handle (0 on allocation failure, in which case src is left untouched).",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079B010": {
     "name": "CopyMemoryForward",
     "signature": "extern \"C\" void __cdecl fn_0079B010(void* dst, const void* src, uint32_t count)",
