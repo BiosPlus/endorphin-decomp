@@ -61625,3 +61625,32 @@ __stdcall void* fn_005D79D0(void* out, void* self) {
     return out;
 }
 } // namespace lift_005D79D0
+
+// [0x005D6FF0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_005D6FF0 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void* ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<VideoPlaneData,float,getXScale>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>
+// @summary Reads the X scale float from the VideoPlaneData pointed to by the first argument and formats it into the result slot; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field NMData::VideoPlaneData +0x34 float field_0x34
+void* fn_005D6FF0(void* arg1, void* arg2) {
+    (void)arg2;
+    void* obj = *static_cast<void**>(arg1);
+    if (obj == nullptr) {
+        alignas(16) unsigned char exception_obj[64] = {};
+        ext_0046C3C0(exception_obj);
+        ext_006A6DD2(exception_obj, reinterpret_cast<const void*>(static_cast<std::size_t>(0x009DEC1Cu)));
+        return nullptr;
+    }
+    float value = *reinterpret_cast<float*>(static_cast<unsigned char*>(obj) + 0x34);
+    ext_0046C390(arg1, value);
+    return arg1;
+}
+} // namespace lift_005D6FF0

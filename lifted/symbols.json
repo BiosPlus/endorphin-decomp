@@ -36385,6 +36385,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00635500 (ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D6FF0": {
+    "name": "ExprParser::ReadMethodType\u003cVideoPlaneData,float,getXScale\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0\u003e",
+    "signature": "void* fn_005D6FF0(void* arg1, void* arg2)",
+    "summary": "Reads the X scale float from the VideoPlaneData pointed to by the first argument and formats it into the result slot; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D7040": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, getXScale\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, getXScale\u003e",
