@@ -1,0 +1,22 @@
+{
+  "va": "0x0048DE90",
+  "size": 117,
+  "orig_symbol": "NMData::DesiredPoseEventData::vfunc_88",
+  "src_path": "src/NMData/DesiredPoseEventData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp",
+  "name": "NMData::DesiredPoseEventData::vfunc_88",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "void __thiscall fn_0048DE90(void* self)",
+  "summary": "Updates desired pose event data from field_0x16c and frees temporary buffer if allocated.",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x16C",
+      "type": "uint8_t",
+      "name": "field_0x16c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:40:34Z"
+}

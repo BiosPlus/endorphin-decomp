@@ -12,6 +12,7 @@ namespace lifted_layout {
 struct NMData_DesiredPoseEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004869A0)
     // +0x168 void*                    field_0x168  (evidence: 0x00486A70, 0x0048B580)
+    // +0x16C uint8_t                  field_0x16c  (evidence: 0x0048DE90)
     // +0x180 uint8_t                  field_0x180  (evidence: 0x00487B00)
     // +0x19C void**                   field_0x19c  (evidence: 0x00487B00) // CONFLICT: multiple definitions at +0x19C
     // +0x19C uint8_t field_0x19c (address only, not read or written)  (evidence: 0x00486A70) // CONFLICT: multiple definitions at +0x19C

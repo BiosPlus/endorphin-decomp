@@ -284,3 +284,47 @@ void __thiscall fn_00487B00(void* self, void* arg0) {
     *reinterpret_cast<float*>(base + 0x220) = ext_0067EE80(arg0, 0x0093C674u, 0x0093C688u);
 }
 } // namespace lift_00487B00
+
+// [0x0048DE90]
+namespace lift_0048DE90 {
+// @name NMData::DesiredPoseEventData::vfunc_88
+// @class NMData::DesiredPoseEventData
+// @summary Updates desired pose event data from field_0x16c and frees temporary buffer if allocated.
+// @field NMData::DesiredPoseEventData +0x16C uint8_t field_0x16c
+
+
+    void* __stdcall ext_00660A50(void* field_0x16c, void* buf, uint32_t zero);
+    void __thiscall ext_0048BC80(void* obj);
+    void __thiscall ext_0048DDA0(void* self, void* buf);
+    void __cdecl ext_006A5C5C(uint32_t ptr);
+    void __cdecl ext_004275E0(void* dst, void* obj);
+    bool ext_004C24C0(uint32_t val);
+    void ext_004E9BD0(void);
+    uint32_t __thiscall ext_0063EFE0(uint8_t* self, const char* name);
+    void ext_0063F530(void);
+    void ext_0067EE80(void);
+    extern uint32_t mem_00A9F1A4;
+    extern uint32_t mem_00A9F1A8;
+    extern uint32_t mem_00A9F9C4;
+
+void __thiscall fn_0048DE90(void* self) {
+    (void)&ext_004275E0;
+    (void)&ext_004C24C0;
+    (void)&ext_004E9BD0;
+    (void)&ext_0063EFE0;
+    (void)&ext_0063F530;
+    (void)&ext_0067EE80;
+    (void)&mem_00A9F1A4;
+    (void)&mem_00A9F1A8;
+    (void)&mem_00A9F9C4;
+
+    uint32_t buf[4] = {0, 0, 0, 0};
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* obj = ext_00660A50(base + 0x16C, buf, 0);
+    ext_0048BC80(obj);
+    ext_0048DDA0(self, buf);
+    if (buf[1] != 0) {
+        ext_006A5C5C(buf[1]);
+    }
+}
+} // namespace lift_0048DE90
