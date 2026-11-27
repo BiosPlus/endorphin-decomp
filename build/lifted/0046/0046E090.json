@@ -1,0 +1,22 @@
+{
+  "va": "0x0046E090",
+  "size": 167,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter,float,getFrameRate\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e",
+  "signature": "uint8_t __stdcall fn_0046E090(void** holder, void* unused)",
+  "summary": "Reads the holder's object pointer (throws if null), evaluates the calibration float via ext_0046C080, wraps it through ext_00672080 into a temporary, invokes that object's vfunc slot 42 on the holder, releases the temporary via slot 30, and returns the bool result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:47:38Z"
+}

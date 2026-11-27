@@ -9305,6 +9305,13 @@
     "summary": "Returns 1 if the target's skeletal calibration value (via vfunc_12) is at least 1e-6 (NaN yields 0), otherwise 0; throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046E090": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter,float,getFrameRate\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e",
+    "signature": "uint8_t __stdcall fn_0046E090(void** holder, void* unused)",
+    "summary": "Reads the holder's object pointer (throws if null), evaluates the calibration float via ext_0046C080, wraps it through ext_00672080 into a temporary, invokes that object's vfunc slot 42 on the holder, releases the temporary via slot 30, and returns the bool result.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046E140": {
     "name": "ExprParser::ReadWriteMethodType\u003cImageExporter,bool,isEnabled,bool,setEnabled\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, bool, {public: void __thiscall ImageExporter::setEnabled(bool), 0}\u003e",

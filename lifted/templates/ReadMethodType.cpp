@@ -87070,3 +87070,58 @@ void fn_0046C930(void* self, void* out) {
     reinterpret_cast<void (*)(void*, void*, void*)>(dispatch_fn)(obj, self, out);
 }
 } // namespace lift_0046C930
+
+// [0x0046E090] ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>::vfunc_42 (167 bytes)
+namespace lift_0046E090 {
+// Callee 0x0046C080: NMData::SkeletalCalibrationVariables::vfunc_12 (thiscall, no stack args; float result in ST(0)).
+extern float __thiscall ext_0046C080(void* self);
+// Callee 0x00672080: thiscall, ecx = output object, one float stack argument; writes the wrapped value into the output.
+extern void __thiscall ext_00672080(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// SEH scope table for the function's __try region (frame boilerplate; only its address is pushed).
+extern uint32_t mem_008A5428;
+// .rdata throw info (u32 0x00000000) passed as the ThrowInfo argument on the error path.
+extern uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<ImageExporter,float,getFrameRate>::vfunc_42
+// @class ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>
+// @summary Reads the holder's object pointer (throws if null), evaluates the calibration float via ext_0046C080, wraps it through ext_00672080 into a temporary, invokes that object's vfunc slot 42 on the holder, releases the temporary via slot 30, and returns the bool result.
+// @field Unknown +0x00 void* field_0x00
+uint8_t __stdcall fn_0046E090(void** holder, void* unused) {
+    (void)unused;
+    // mov eax,[esp+4]; mov ecx,[eax]  -> obj = *holder
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Null object: construct the default exception and throw it.
+        alignas(8) uint8_t exception[0x28] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, reinterpret_cast<const void*>(&mem_009DEC1C));
+    }
+
+    // call ext_0046C080 with ecx = obj; float result in ST(0)
+    const float value = ext_0046C080(obj);
+
+    // Temporary wrapper object, filled in by ext_00672080 (ecx = &tmp, float argument).
+    void* tmp = nullptr;
+    ext_00672080(&tmp, value);
+
+    // vfunc slot 42 (offset 0xA8) of the temporary, thiscall with the holder and a zeroed out-slot.
+    uint32_t out_slot = 0;
+    void** vtbl = *reinterpret_cast<void***>(tmp);
+    using VSlot42Fn = uint8_t (__thiscall*)(void* self, void* out, void* arg);
+    const uint8_t result = reinterpret_cast<VSlot42Fn>(vtbl[42])(tmp, &out_slot, static_cast<void*>(holder));
+
+    // Release the temporary if it was set: vfunc slot 30 (offset 0x78) with a stack pointer argument.
+    if (tmp != nullptr) {
+        void** vtbl2 = *reinterpret_cast<void***>(tmp);
+        using VSlot30Fn = void (__thiscall*)(void* self, void* arg);
+        uint32_t release_arg = 0;
+        reinterpret_cast<VSlot30Fn>(vtbl2[30])(tmp, &release_arg);
+    }
+
+    return result;
+}
+} // namespace lift_0046E090
