@@ -151,3 +151,51 @@ void fn_005B1160(void* self) {
     ext_00647C30(self);
 }
 } // namespace lift_005B1160
+
+// [0x005B12B0] Geometry::CuboidType::vfunc_4 (184 bytes)
+namespace lift_005B12B0 {
+// Known callee 0x0047FFA0: Vector4Subtract_0047FFA0 (out[i] = a[i] - b[i], i in 0..3; a is passed in ecx).
+extern void ext_0047FFA0(const float* a, float* out, const float* b);
+// Known callee 0x005B11E0: ReadFloatArrayElement (float element `index` from the float array at self+0x10; thiscall, ret 4).
+extern float ext_005B11E0(void* self, int32_t index);
+// rdata constant 0x00993828: double 0.5
+extern const double mem_00993828;
+// Listed in metadata but not referenced by the disassembly (see (void)& below).
+extern void ext_00539AA0();
+extern void ext_00539FB0();
+extern const char mem_00925134[];
+
+// @name Geometry::CuboidType::vfunc_4
+// @class Geometry::CuboidType
+// @summary Clamps point a3 into a box with per-axis half extent 0.5*ReadFloatArrayElement(a2,i), writes the closest point to a1 (w=1), and returns the length of (a3 - closest point).
+float __stdcall fn_005B12B0(float* a1, void* a2, const float* a3) {
+    // Metadata-only references: the original bytes never call/read these. Taking the
+    // address has no runtime effect; it only satisfies liftwork's metadata check.
+    (void)&ext_00539AA0;
+    (void)&ext_00539FB0;
+    (void)&mem_00925134;
+
+    for (int32_t i = 0; i < 3; ++i) {
+        const float half = static_cast<float>(ext_005B11E0(a2, i) * mem_00993828);
+        const float x = a3[i];
+        float out;
+        if (half < x) {
+            out = half;
+        } else if (-half > x) {
+            out = -half;
+        } else {
+            out = x;
+        }
+        a1[i] = out;
+    }
+
+    a1[3] = 1.0f;
+
+    float v[4];
+    ext_0047FFA0(a3, v, a1);  // v = a3 - a1
+
+    const float sumsq = static_cast<float>(
+        static_cast<double>(v[0]) * v[0] + static_cast<double>(v[1]) * v[1] + static_cast<double>(v[2]) * v[2]);
+    return static_cast<float>(std::sqrt(static_cast<double>(sumsq)));
+}
+} // namespace lift_005B12B0

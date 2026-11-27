@@ -1,0 +1,14 @@
+{
+  "va": "0x005B12B0",
+  "size": 184,
+  "orig_symbol": "Geometry::CuboidType::vfunc_4",
+  "src_path": "src/Geometry/CuboidType.cpp",
+  "lifted_path": "lifted/Geometry/CuboidType.cpp",
+  "name": "Geometry::CuboidType::vfunc_4",
+  "class": "Geometry::CuboidType",
+  "signature": "float __stdcall fn_005B12B0(float* a1, void* a2, const float* a3)",
+  "summary": "Clamps point a3 into a box with per-axis half extent 0.5*ReadFloatArrayElement(a2,i), writes the closest point to a1 (w=1), and returns the length of (a3 - closest point).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:32:40Z"
+}
