@@ -1282,3 +1282,33 @@ void __thiscall fn_004FB5B0(void* self, uint32_t arg1) {
 }
 } // namespace lift_004FB520
 } // namespace lift_004FB5B0
+
+// [0x004FB0F0]
+namespace lift_004FB0F0 {
+// @name VMCSModes::DefaultImplementation::vfunc_50
+// @class VMCSModes::DefaultImplementation
+// @summary Calls ext_004667A0 on field_0x04 with 1, queries vtable+0xB4 on nested object at +0x8->+0x14->+0x30, and if non-null calls ext_00530290 with 3.
+// @field VMCSModes::DefaultImplementation +0x04 void* field_0x04
+// @field VMCSModes::DefaultImplementation +0x08 void* field_0x08
+
+
+extern void __thiscall ext_004667A0(void* self, uint32_t arg0);
+extern void __thiscall ext_00530290(void* self, uint32_t arg0);
+
+void __thiscall fn_004FB0F0(void* self) {
+    ext_004667A0(lift_field<void*>(self, 0x04), 1);
+
+    void* obj = lift_field<void*>(self, 0x08);
+    void* sub = lift_field<void*>(obj, 0x14);
+    void* target = lift_field<void*>(sub, 0x30);
+
+    void** vtable = *reinterpret_cast<void***>(target);
+    using VFunc = void* (__thiscall *)(void*);
+    auto vfunc = reinterpret_cast<VFunc>(vtable[0xB4 / sizeof(void*)]);
+    void* result = vfunc(target);
+
+    if (result != nullptr) {
+        ext_00530290(result, 3);
+    }
+}
+} // namespace lift_004FB0F0
