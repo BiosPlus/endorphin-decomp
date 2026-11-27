@@ -184990,3 +184990,73 @@ bool fn_0049D830(void** handle, void* name) {
     return result;
 }
 } // namespace lift_0049D830
+
+// [0x0066F010] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_43 (167 bytes)
+namespace lift_0066F010 {
+// Callees (names kept from the original asm).
+extern void ext_00672080();   // sub_00672080: thiscall ctor-like, (void* slot, float value)
+extern void ext_0041CF50();   // Unknown::assignFromOther_0041CF50: thiscall (self, other), returns self
+extern void ext_0046C3C0();   // DerivedException::DerivedException: thiscall (self)
+extern void ext_006A6DD2();   // thunk to MSVCR80!_CxxThrowException (obj, throwInfo)
+
+// Data referenced by the original asm.
+extern int mem_009DEC1C;      // .rdata u32 0: throw-info argument for the exception path
+extern int mem_008A5428;      // SEH scope-table global (compiler-generated frame setup)
+
+using ThisCallVoidFloat = void (__thiscall*)(void* self, float value);
+using ThisCallPtr       = void* (__thiscall*)(void* self, void* other);
+using ThisCallVoid      = void (__thiscall*)(void* self);
+using ThisCallVoidPtr   = void (__thiscall*)(void* self, void* scratch);
+using ThisCallVfunc43   = void (__thiscall*)(void* self, void* ctx, float value);
+using CxxThrowFn        = void (*)(void* exc, void* throwInfo);
+
+// Reads the function pointer stored at byte offset `byteOffset` in the vtable of `obj`.
+static inline void* vtable_entry(void* obj, size_t byteOffset) {
+    char* vtbl = *reinterpret_cast<char**>(obj);
+    return *reinterpret_cast<void**>(vtbl + byteOffset);
+}
+
+// @name ExprParser::ReadMethodType<NM::Vector3,float,getX>::vfunc_43
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>
+// @summary Reads the float behind ctx->field_0x00 into a temporary, releases the temporary, copies the context's field_0x04 into ctx via the assign helper, then forwards (ctx, value) to field_0x04's vtable slot 43; throws DerivedException when field_0x00 is null.
+// @field Unknown +0x00 float* field_0x00 (pointer to the float value to read)
+// @field Unknown +0x04 void* field_0x04 (object whose vtable slot 43 receives the forwarded call)
+void fn_0066F010(void* ctx, void* arg2) {
+    // Second stack parameter is never read (the function returns with ret 8).
+    (void)arg2;
+    // SEH frame setup/teardown is compiler-generated and has no portable equivalent; omitted.
+    (void)&mem_008A5428;
+
+    float* valuePtr = lift_field<float*>(ctx, 0x00);
+    if (valuePtr == nullptr) {
+        // Null source: construct a DerivedException in local storage and throw it.
+        // The storage size is not recovered from the asm; 0x40 bytes is a placeholder.
+        alignas(8) unsigned char excStorage[0x40] = {};
+        reinterpret_cast<ThisCallVoid>(&ext_0046C3C0)(excStorage);
+        reinterpret_cast<CxxThrowFn>(&ext_006A6DD2)(excStorage, &mem_009DEC1C);
+        return;
+    }
+
+    float value = *valuePtr;
+
+    // Temporary object slot, initialised from the float value.
+    void* tmpSlot = nullptr;
+    reinterpret_cast<ThisCallVoidFloat>(&ext_00672080)(&tmpSlot, value);
+
+    // Scratch object: its field_0x04 is the source for the assign helper below.
+    // Its initial contents are not established by the asm; zero-initialised here.
+    alignas(8) unsigned char scratch[8] = {};
+
+    // ctx = assignFromOther(ctx, &scratch)
+    reinterpret_cast<ThisCallPtr>(&ext_0041CF50)(ctx, scratch);
+
+    // If the temporary was populated, release it via its vtable slot 30 (0x78).
+    if (tmpSlot != nullptr) {
+        reinterpret_cast<ThisCallVoidPtr>(vtable_entry(tmpSlot, 0x78))(tmpSlot, scratch);
+    }
+
+    // field_0x04->vfunc_43(ctx, value)
+    void* obj4 = lift_field<void*>(ctx, 0x04);
+    reinterpret_cast<ThisCallVfunc43>(vtable_entry(obj4, 0xAC))(obj4, ctx, value);
+}
+} // namespace lift_0066F010

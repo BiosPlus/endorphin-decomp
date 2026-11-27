@@ -73316,6 +73316,13 @@
     "summary": "Reads the float at the pointer stored in the ValuePtrType argument; throws if that pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066F010": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3,float,getX\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "static inline void* vtable_entry(void* obj, size_t byteOffset)",
+    "summary": "Reads the float behind ctx-\u003efield_0x00 into a temporary, releases the temporary, copies the context's field_0x04 into ctx via the assign helper, then forwards (ctx, value) to field_0x04's vtable slot 43; throws DerivedException when field_0x00 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0066F2D0": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e",
