@@ -1,0 +1,28 @@
+{
+  "va": "0x007AF3E0",
+  "size": 64,
+  "orig_symbol": "sub_007AF3E0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "ResetHandleAndAppendPtrArray",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_007AF3E0(void* self)",
+  "summary": "Frees the global handle at +0x214 if set (clearing +0x218), then appends/sorts the pointer array at 0x998c98 with 0x5C entries via AppendAndSortPtrArray.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x214",
+      "type": "uint32_t",
+      "name": "field_0x214"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x218",
+      "type": "uint32_t",
+      "name": "field_0x218"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:15Z"
+}

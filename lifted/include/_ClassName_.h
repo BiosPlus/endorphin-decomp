@@ -113,6 +113,8 @@ struct _ClassName__Fields {
     // +0x190 void*                    field_0x190  (evidence: 0x005AA8D0)
     // +0x1C0 uint8_t                  field_0x1C0  (evidence: 0x006D7CA0)
     // +0x1C1 uint8_t                  field_0x1C1  (evidence: 0x006D7CA0)
+    // +0x214 uint32_t                 field_0x214  (evidence: 0x007AF3E0)
+    // +0x218 uint32_t                 field_0x218  (evidence: 0x007AF3E0)
     // +0x498 DWORD                    field_0x498  (evidence: 0x00533D40)
 };
 } // namespace lifted_layout

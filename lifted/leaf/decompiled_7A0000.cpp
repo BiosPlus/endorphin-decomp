@@ -1591,3 +1591,25 @@ void __cdecl fn_007AF420(void* obj, uintptr_t base, int32_t count) {
     }
 }
 } // namespace lift_007AF420
+
+// [0x007AF3E0] sub_007AF3E0 (64 bytes)
+namespace lift_007AF3E0 {
+// Known callee 0x0079AF50: FreeGlobalMemory (Frees the global memory handle passed as its single stack argument via GlobalFree and returns GlobalFree's result.)
+extern uint32_t ext_0079AF50(uint32_t hMem);
+// Known callee 0x007AF420: AppendAndSortPtrArray (Appends pointers to 0x14-byte elements into a GlobalAlloc pointer array and sorts it if previously non-empty.)
+extern void ext_007AF420(void* obj, uintptr_t base, int32_t count);
+
+// @name ResetHandleAndAppendPtrArray
+// @class <ClassName> (optional)
+// @summary Frees the global handle at +0x214 if set (clearing +0x218), then appends/sorts the pointer array at 0x998c98 with 0x5C entries via AppendAndSortPtrArray.
+// @field <ClassName> +0x214 uint32_t field_0x214
+// @field <ClassName> +0x218 uint32_t field_0x218
+void fn_007AF3E0(void* self) {
+    uint32_t& handle = lift_field<uint32_t>(self, 0x214);
+    if (handle != 0) {
+        ext_0079AF50(handle);
+        lift_field<uint32_t>(self, 0x218) = 0;
+    }
+    ext_007AF420(self, static_cast<uintptr_t>(0x998c98u), 0x5c);
+}
+} // namespace lift_007AF3E0

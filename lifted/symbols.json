@@ -82697,6 +82697,13 @@
     "summary": "Clamps two integer pointers to 256 if less than 1, then aligns each up to a 16-byte/pixel boundary.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF3E0": {
+    "name": "ResetHandleAndAppendPtrArray",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_007AF3E0(void* self)",
+    "summary": "Frees the global handle at +0x214 if set (clearing +0x218), then appends/sorts the pointer array at 0x998c98 with 0x5C entries via AppendAndSortPtrArray.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF420": {
     "name": "AppendAndSortPtrArray",
     "signature": "void __cdecl fn_007AF420(void* obj, uintptr_t base, int32_t count)",
