@@ -56,3 +56,24 @@ void fn_005EEBC0(void* self) {
     }
 }
 } // namespace lift_005EEBC0
+
+// [0x005F2F50]
+namespace lift_005F2F50 {
+// @name NMData::RootRelationshipData::vfunc_21
+// @class NMData::RootRelationshipData
+// @summary Calls base NullRelationshipData::vfunc_21 and defaults field_0x14 to "root" if empty
+// @field NMData::RootRelationshipData +0x14 void* field_0x14
+
+extern void __thiscall ext_005F2970(void* self, void* arg1);
+extern bool (__thiscall* mem_00924FEC)(void* self);
+extern void* (__thiscall* mem_00924FD4)(void* self, const char* str);
+extern const char mem_0093E1E4[];
+
+void __thiscall fn_005F2F50(void* self, void* arg1) {
+    ext_005F2970(self, arg1);
+    void* str_field = reinterpret_cast<uint8_t*>(self) + 0x14;
+    if (mem_00924FEC(str_field)) {
+        mem_00924FD4(str_field, mem_0093E1E4);
+    }
+}
+} // namespace lift_005F2F50
