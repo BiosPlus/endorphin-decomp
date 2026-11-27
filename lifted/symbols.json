@@ -35644,6 +35644,13 @@
     "summary": "Binds holder+0x04 to the static accessor object at 0x00B45A18, lazily constructing it once (guarded by bit 0 of 0x00B45A1C) and setting its vtable to 0x0096725C.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005D3890": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData\u003e::vfunc_40 (CentreOfInterest accessor bind)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setCentreOfInterest(float), 0}\u003e",
+    "signature": "extern \"C\" uint32_t mem_00B45A20;  // function-local static accessor object (first DWORD = vtable) void fn_005D3890(void* self)",
+    "summary": "On first call initializes the static accessor object (guard at mem_00B45A24, object at mem_00B45A20) and then stores a pointer to that object into self+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005D3910": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0\u003e",

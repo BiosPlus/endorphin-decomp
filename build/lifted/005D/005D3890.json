@@ -1,0 +1,22 @@
+{
+  "va": "0x005D3890",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setCentreOfInterest(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData\u003e::vfunc_40 (CentreOfInterest accessor bind)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setCentreOfInterest(float), 0}\u003e",
+  "signature": "extern \"C\" uint32_t mem_00B45A20;  // function-local static accessor object (first DWORD = vtable) void fn_005D3890(void* self)",
+  "summary": "On first call initializes the static accessor object (guard at mem_00B45A24, object at mem_00B45A20) and then stores a pointer to that object into self+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:47:01Z"
+}

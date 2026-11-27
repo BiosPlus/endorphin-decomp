@@ -12652,3 +12652,29 @@ void fn_005D3810(void* self) {
     lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B45A18));
 }
 } // namespace lift_005D3810
+
+// [0x005D3890] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setCentreOfInterest(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005D3890 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern uint32_t __thiscall ext_0067A670(void* self, uint32_t value);
+extern uint8_t mem_00B45A24;   // init guard byte for the function-local static accessor
+extern uint32_t mem_00B45A20;  // function-local static accessor object (first DWORD = vtable)
+
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData>::vfunc_40 (CentreOfInterest accessor bind)
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setCentreOfInterest(float), 0}>
+// @summary On first call initializes the static accessor object (guard at mem_00B45A24, object at mem_00B45A20) and then stores a pointer to that object into self+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005D3890(void* self) {
+    void* accessor = reinterpret_cast<void*>(&mem_00B45A20);
+
+    if ((mem_00B45A24 & 1u) == 0) {
+        // First use: mark initialized, run the accessor's setup call with a zero argument,
+        // then install its vtable.
+        mem_00B45A24 |= 1u;
+        ext_0067A670(accessor, 0u);
+        lift_field<void*>(accessor, 0) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0096740Cu));
+    }
+
+    lift_field<void*>(self, 4) = accessor;
+}
+} // namespace lift_005D3890
