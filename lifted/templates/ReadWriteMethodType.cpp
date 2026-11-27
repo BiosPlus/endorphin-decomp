@@ -11435,3 +11435,38 @@ void __stdcall fn_0058C060(void* holder) {
     lift_field<uint32_t>(holder, 4) = 0x00B3F8FCu;
 }
 } // namespace lift_0058C060
+
+// [0x0058C3A0] ExprParser::ReadWriteMethodType<AnimatableTransform, float, getTX, setTX>::vfunc_40 (122 bytes)
+namespace lift_0058C3A0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern uint32_t mem_00B3F920; // one-time-init flag word; bit 0 = initialized
+extern uint32_t mem_00B3F91C; // static accessor object; first DWORD = vtable (0x0095BADC)
+
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTX(float), 0}>
+// @summary One-time-initializes the static TX accessor object (guarded by bit 0 of mem_00B3F920) and stores its address into holder+0x04; the stack argument is the holder.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+//
+// The original prologue/epilogue links an SEH frame via fs:[0] and writes a
+// scope-state slot; that is compiler exception-frame boilerplate with no effect
+// on the observable result, so it is not reproduced here.
+void __stdcall fn_0058C3A0(void* holder) {
+    using StoreFn = uint32_t (__thiscall*)(void* self, uint32_t value);
+
+    if ((mem_00B3F920 & 1u) == 0) {
+        // Mark initialized before constructing (matches original ordering).
+        mem_00B3F920 |= 1u;
+
+        // ECX = &mem_00B3F91C; the single stack argument is passed as 0 here.
+        StoreFn store = reinterpret_cast<StoreFn>(&ext_0067A670);
+        store(&mem_00B3F91C, 0u);
+
+        // Install the accessor's vtable (0x0095BADC).
+        mem_00B3F91C = 0x0095BADCu;
+    }
+
+    // holder->field_0x04 = &mem_00B3F91C (literal game address 0x00B3F91C).
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(holder) + 0x04) = 0x00B3F91Cu;
+}
+} // namespace lift_0058C3A0

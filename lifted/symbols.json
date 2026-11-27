@@ -28958,6 +28958,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0058C3A0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTX(float), 0}\u003e",
+    "signature": "extern \"C\" uint32_t mem_00B3F91C; // static accessor object; first DWORD = vtable (0x0095BADC) void __stdcall fn_0058C3A0(void* holder)",
+    "summary": "One-time-initializes the static TX accessor object (guarded by bit 0 of mem_00B3F920) and stores its address into holder+0x04; the stack argument is the holder.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0058C420": {
     "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0\u003e",
