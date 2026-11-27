@@ -18035,6 +18035,13 @@
     "summary": "Forwards (dst, selector) to ConstructBySelector_004B64C0 and returns dst; the third stdcall argument is ignored.",
     "lifted_path": "lifted/templates/TerminalParentType.cpp"
   },
+  "0x004B6560": {
+    "name": "Unknown::BuildStringResult",
+    "class": "Unknown",
+    "signature": "uint32_t* fn_004B6560(uint8_t* self, uint32_t* out, const char* arg2)",
+    "summary": "Builds a local std::string from a fixed literal, optionally overwrites it from arg2 via ext_00474F00 and assigns, stores ext_00476360's result to *out, destroys the local string and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B6680": {
     "name": "DestroyOwnedRange",
     "class": "Container",

@@ -1,0 +1,28 @@
+{
+  "va": "0x004B6560",
+  "size": 140,
+  "orig_symbol": "sub_004B6560",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::BuildStringResult",
+  "class": "Unknown",
+  "signature": "uint32_t* fn_004B6560(uint8_t* self, uint32_t* out, const char* arg2)",
+  "summary": "Builds a local std::string from a fixed literal, optionally overwrites it from arg2 via ext_00474F00 and assigns, stores ext_00476360's result to *out, destroys the local string and returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:24:09Z"
+}

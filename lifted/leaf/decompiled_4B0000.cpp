@@ -2518,3 +2518,37 @@ void* fn_004B7620(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     return ext_00666670(status);
 }
 } // namespace lift_004B7620
+
+// [0x004B6560] sub_004B6560 (140 bytes)
+namespace lift_004B6560 {
+extern void* ext_00474F00(uint8_t* self, void* buf, const char* arg2);
+extern uint32_t ext_00476360(uint8_t* self, void* buf);
+extern void ext_00662610(void* buf, const char* lit);
+extern int mem_00924FD4;
+extern int mem_00924FF4;
+
+// Indirect MSVCP80 std::string members reached through the IAT slots above.
+using StrAssignFn = void* (*)(void* self, const char* s);
+using StrDtorFn = void (*)(void* self);
+
+// @name Unknown::BuildStringResult
+// @class Unknown
+// @summary Builds a local std::string from a fixed literal, optionally overwrites it from arg2 via ext_00474F00 and assigns, stores ext_00476360's result to *out, destroys the local string and returns out.
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0x18 uint8_t field_0x18
+uint32_t* fn_004B6560(uint8_t* self, uint32_t* out, const char* arg2) {
+    alignas(8) uint8_t str[0x1C]; // MSVCP80 std::string object (28 bytes)
+
+    ext_00662610(str, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00A383F4u)));
+
+    if (arg2 != nullptr) {
+        void* ref = ext_00474F00(self + 0x18, str, arg2);
+        reinterpret_cast<StrAssignFn>(static_cast<uintptr_t>(mem_00924FD4))(ref, arg2);
+    }
+
+    *out = ext_00476360(self + 0x08, str);
+
+    reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str);
+    return out;
+}
+} // namespace lift_004B6560
