@@ -1,0 +1,28 @@
+{
+  "va": "0x0060BF00",
+  "size": 116,
+  "orig_symbol": "NMData::EffectorWithMemoryData::vfunc_14",
+  "src_path": "src/NMData/EffectorWithMemoryData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp",
+  "name": "NMData::EffectorWithMemoryData::vfunc_14",
+  "class": "NMData::EffectorWithMemoryData",
+  "signature": "void* __thiscall fn_0060BF00(void* self, void* parent)",
+  "summary": "Serializes EffectorWithMemoryData fields (memorySpan and integralGradient) into child nodes of the serialized EffectorData node.",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "m_integralGradient"
+    },
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "m_memorySpan"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:25:54Z"
+}

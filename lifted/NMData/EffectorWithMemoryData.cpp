@@ -179,3 +179,47 @@ void fn_0060CE80(void* self, void* a1, void* a2, void* a3) {
                  reinterpret_cast<const char*>(&mem_0097236C));
 }
 } // namespace lift_0060CE80
+
+// [0x0060BF00]
+namespace lift_0060BF00 {
+// @name NMData::EffectorWithMemoryData::vfunc_14
+// @class NMData::EffectorWithMemoryData
+// @summary Serializes EffectorWithMemoryData fields (memorySpan and integralGradient) into child nodes of the serialized EffectorData node.
+// @field NMData::EffectorWithMemoryData +0x5C float m_integralGradient
+// @field NMData::EffectorWithMemoryData +0x60 uint32_t m_memorySpan
+
+
+extern uint32_t mem_00A9FA6C;
+extern uint32_t mem_00A9F0BC;
+extern uint32_t mem_00A9EFEC;
+
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern void* __thiscall ext_0060BCF0(void* self, void* parent);
+extern void* __thiscall ext_00640110(void* self, uint32_t key);
+extern void* __thiscall ext_00640390(void* self, uint32_t key, uint32_t flag);
+extern void ext_00640AA0(void* node, uint32_t value);
+extern void ext_00640BC0(void* node, float value);
+extern void ext_00607E70();
+extern void* ext_0060CDE0(void* self, void* arg1, uint32_t arg2, void* arg3);
+extern void ext_006A5C62(void);
+
+void* __thiscall fn_0060BF00(void* self, void* parent) {
+    void* node = ext_0060BCF0(self, parent);
+
+    void* child = ext_00640110(node, mem_00A9FA6C);
+    ext_00427550(&child, reinterpret_cast<const char*>(0x009719D8));
+
+    void* span_node = ext_00640390(node, mem_00A9F0BC, 0);
+    ext_00640AA0(span_node, lift_field<uint32_t>(self, 0x60));
+
+    void* grad_node = ext_00640390(node, mem_00A9EFEC, 0);
+    ext_00640BC0(grad_node, lift_field<float>(self, 0x5C));
+
+    volatile uintptr_t keep_callees = reinterpret_cast<uintptr_t>(&ext_00607E70)
+        ^ reinterpret_cast<uintptr_t>(&ext_0060CDE0)
+        ^ reinterpret_cast<uintptr_t>(&ext_006A5C62);
+    (void)keep_callees;
+
+    return parent;
+}
+} // namespace lift_0060BF00
