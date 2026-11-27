@@ -3865,3 +3865,46 @@ void fn_00480CE0(void** first, void** second, void** last, void* ctx) {
 }
 } // namespace lift_0043B720
 } // namespace lift_00480CE0
+
+// [0x0048B6A0] sub_0048B6A0 (130 bytes)
+namespace lift_0048B6A0 {
+// Known callee 0x00489350: AllocAndInitRecord (returns a fresh 0x6C-byte record)
+extern void* ext_00489350();
+// Unlifted callee 0x0048AC00: thiscall (ecx = self, one stack argument).
+extern void ext_0048AC00(void* self, uint32_t arg);
+// Known callee 0x0048AFE0: ResetSubObjectLinks_0048AFE0 (unlink-and-zero of self+0x4/+0x8)
+extern void ext_0048AFE0(void* self);
+
+// @name SubObject::InitAndLinkRecord
+// @class SubObject
+// @summary Allocates a record, stores it at self+0x4, self-links its +0/+4/+8 dwords and flag byte +0x69, clears self+0x8, then calls 0x0048AC00; on exception resets self's links and rethrows. Returns self.
+// @field SubObject +0x04 uint32_t record_ptr
+// @field SubObject +0x08 uint32_t field_0x08
+void* fn_0048B6A0(void* self, uint32_t arg) {
+    // call 0x489350; mov [esi+4], eax
+    void* const rec = ext_00489350();
+    lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(rec));
+
+    // mov byte [eax+0x69], 1
+    lift_field<uint8_t>(rec, 0x69) = 1;
+
+    // self-links on the record: [rec+4] = [rec+0] = [rec+8] = rec
+    const uint32_t rec_addr = lift_field<uint32_t>(self, 0x04);
+    lift_field<uint32_t>(rec, 0x04) = rec_addr;
+    lift_field<uint32_t>(rec, 0x00) = rec_addr;
+    lift_field<uint32_t>(rec, 0x08) = rec_addr;
+
+    // mov dword [esi+8], 0; push arg; mov ecx, esi; call 0x48AC00
+    lift_field<uint32_t>(self, 0x08) = 0;
+    try {
+        ext_0048AC00(self, arg);
+    } catch (...) {
+        // Unwind funclet at 0x0048B711: reset links on self, then rethrow.
+        ext_0048AFE0(self);
+        throw;
+    }
+
+    // mov eax, esi
+    return self;
+}
+} // namespace lift_0048B6A0

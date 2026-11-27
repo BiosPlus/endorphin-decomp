@@ -1,0 +1,28 @@
+{
+  "va": "0x0048B6A0",
+  "size": 130,
+  "orig_symbol": "sub_0048B6A0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "SubObject::InitAndLinkRecord",
+  "class": "SubObject",
+  "signature": "void* fn_0048B6A0(void* self, uint32_t arg)",
+  "summary": "Allocates a record, stores it at self+0x4, self-links its +0/+4/+8 dwords and flag byte +0x69, clears self+0x8, then calls 0x0048AC00; on exception resets self's links and rethrows. Returns self.",
+  "fields": [
+    {
+      "class": "SubObject",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "record_ptr"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:29:56Z"
+}

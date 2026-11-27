@@ -9,8 +9,9 @@
 namespace lifted_layout {
 struct SubObject_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x006722B0, 0x00672490, 0x00673B60)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x0048AFE0, 0x005AED40)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0048AFE0, 0x005AED40)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0048AFE0, 0x005AED40) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 record_ptr  (evidence: 0x0048B6A0) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0048AFE0, 0x0048B6A0, 0x005AED40)
     // +0xC   void*                    field_0x0C  (evidence: 0x006722B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x0058A9E0) // CONFLICT: multiple definitions at +0xC
     // +0x20  HWND                     field_0x20  (evidence: 0x0041D330) // CONFLICT: multiple definitions at +0x20
