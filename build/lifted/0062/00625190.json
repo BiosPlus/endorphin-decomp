@@ -1,0 +1,28 @@
+{
+  "va": "0x00625190",
+  "size": 175,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType_SensorIsCollidingWith::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",
+  "signature": "bool fn_00625190(void* holder, uint32_t arg2)",
+  "summary": "Reads the target sensor's colliding flag (+0x30), wraps it in a temporary value and forwards it through the value's vfunc_42 with the caller's second argument; throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Sensors::SensorIsCollidingWith",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:57:44Z"
+}

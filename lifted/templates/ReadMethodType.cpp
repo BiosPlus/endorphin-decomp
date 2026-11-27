@@ -187682,3 +187682,55 @@ uint32_t fn_00625540(void* self) {
     return reinterpret_cast<U32ThisFn>(vslot(target, 0xBC))(target, self);
 }
 } // namespace lift_00625540
+
+// [0x00625190] ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>::vfunc_42 (175 bytes)
+namespace lift_00625190 {
+extern void ext_006720A0(void* self, uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadMethodType_SensorIsCollidingWith::vfunc_42
+// @class ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>
+// @summary Reads the target sensor's colliding flag (+0x30), wraps it in a temporary value and forwards it through the value's vfunc_42 with the caller's second argument; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field Sensors::SensorIsCollidingWith +0x30 uint8_t field_0x30
+bool fn_00625190(void* holder, uint32_t arg2) {
+    // Target sensor pointer stored at holder+0.
+    void* obj = lift_field<void*>(holder, 0);
+    if (obj == nullptr) {
+        // Null target: build the fixed-message exception and throw it.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        (void)&mem_009DEC1C;
+        ext_006A6DD2();
+        return false;
+    }
+
+    // Virtual call at vtable+0x44 on the sensor; float result is discarded.
+    void* vt = lift_field<void*>(obj, 0);
+    auto refresh = reinterpret_cast<float (*)(void*)>(lift_field<void*>(vt, 0x44));
+    (void)refresh(obj);
+
+    // Colliding flag at +0x30, converted into a temporary value object.
+    uint8_t flag = lift_field<uint8_t>(obj, 0x30);
+    alignas(8) unsigned char temp[8] = {};
+    ext_006720A0(temp, static_cast<uint32_t>(flag));
+
+    // temp+4 holds the value object pointer.
+    void* value = lift_field<void*>(temp, 4);
+    void* valueVt = lift_field<void*>(value, 0);
+    auto query = reinterpret_cast<bool (*)(void*, void*, uint32_t)>(lift_field<void*>(valueVt, 0xA8));
+    bool result = query(value, temp, arg2);
+
+    // Release the temporary value through vtable+0x78.
+    if (value != nullptr) {
+        void* valueVt2 = lift_field<void*>(value, 0);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(valueVt2, 0x78));
+        release(value, temp);
+    }
+    return result;
+}
+} // namespace lift_00625190
