@@ -80132,6 +80132,13 @@
     "summary": "Returns the dword at +0x28 if the dword at +0x20 is nonzero, otherwise the dword at +0x04.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078C3B0": {
+    "name": "Unknown::storeCopyOfStringAndAppend_0078C3B0",
+    "class": "Unknown",
+    "signature": "int32_t fn_0078C3B0(void* self, const char* s)",
+    "summary": "Returns the cached value at +0x20 if set; otherwise heap-copies the C string argument and appends the copy pointer to the DynamicArray at +0x04, returning InsertAt's result.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078C410": {
     "name": "UnknownClass::getByteAtIndex",
     "class": "UnknownClass",

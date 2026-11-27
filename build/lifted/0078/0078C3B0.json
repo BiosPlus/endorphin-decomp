@@ -1,0 +1,28 @@
+{
+  "va": "0x0078C3B0",
+  "size": 96,
+  "orig_symbol": "sub_0078C3B0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::storeCopyOfStringAndAppend_0078C3B0",
+  "class": "Unknown",
+  "signature": "int32_t fn_0078C3B0(void* self, const char* s)",
+  "summary": "Returns the cached value at +0x20 if set; otherwise heap-copies the C string argument and appends the copy pointer to the DynamicArray at +0x04, returning InsertAt's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DynamicArray",
+      "name": "dynArray"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:59:12Z"
+}

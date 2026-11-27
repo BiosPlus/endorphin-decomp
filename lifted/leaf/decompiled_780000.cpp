@@ -2943,3 +2943,51 @@ void* fn_00785810(void* self) {
     return self;
 }
 } // namespace lift_00785810
+
+// [0x0078C3B0] sub_0078C3B0 (96 bytes)
+namespace lift_0078C3B0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern void ext_006D2170();
+// Metadata-listed callees not called by the 96-byte disasm (address-only references below, no runtime effect).
+extern void ext_00782FC0();
+extern void ext_00782FE0();
+extern void ext_007853D0();
+extern void ext_00788C40();
+// Metadata-listed RDATA constants not dereferenced by the disasm (address-only references below).
+extern int mem_00925298;
+extern int mem_009251D0;
+
+// @name Unknown::storeCopyOfStringAndAppend_0078C3B0
+// @class Unknown
+// @summary Returns the cached value at +0x20 if set; otherwise heap-copies the C string argument and appends the copy pointer to the DynamicArray at +0x04, returning InsertAt's result.
+// @field Unknown +0x04 DynamicArray dynArray
+// @field Unknown +0x20 DWORD field_0x20
+int32_t fn_0078C3B0(void* self, const char* s) {
+    using AllocFn = void* (*)(size_t);
+    using InsertFn = int32_t (*)(void* self, int32_t index, const void* elem);
+
+    // Address-only references to metadata-listed symbols; never called or read.
+    (void)&ext_00782FC0;
+    (void)&ext_00782FE0;
+    (void)&ext_007853D0;
+    (void)&ext_00788C40;
+    (void)&mem_00925298;
+    (void)&mem_009251D0;
+
+    const DWORD existing = lift_field<DWORD>(self, 0x20);
+    if (existing != 0) {
+        return static_cast<int32_t>(existing);
+    }
+
+    const size_t count = std::strlen(s) + 1; // includes the terminating NUL
+    void* buffer = reinterpret_cast<AllocFn>(ext_006A5C62)(count);
+    void* slot = buffer;
+    std::memcpy(buffer, s, count);
+
+    void* array = static_cast<uint8_t*>(self) + 0x04;
+    const int32_t index = lift_field<int32_t>(self, 0x04);
+    return reinterpret_cast<InsertFn>(ext_006D2170)(array, index, &slot);
+}
+} // namespace lift_0078C3B0

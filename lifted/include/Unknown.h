@@ -218,6 +218,7 @@ struct Unknown_Fields {
     // +0x4   void*                    cursor  (evidence: 0x005943D0, 0x00667030, 0x00673C20) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to subobject, dereferenced)  (evidence: 0x00661A40) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (link -> flags dword)  (evidence: 0x00810200) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DynamicArray             dynArray  (evidence: 0x0078C3B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   float field_0x04 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 entries  (evidence: 0x007B3120) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    entries  (evidence: 0x0085BEC0) // CONFLICT: multiple definitions at +0x4
@@ -802,7 +803,7 @@ struct Unknown_Fields {
     // +0x20  uint32_t                 embedded_array_data_ptr  (evidence: 0x006E99C0) // CONFLICT: multiple definitions at +0x20
     // +0x20  std::uint32_t*           entries  (evidence: 0x006FDF90) // CONFLICT: multiple definitions at +0x20
     // +0x20  int32_t                  fieldOffset  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x20
-    // +0x20  DWORD                    field_0x20  (evidence: 0x0045BC30, 0x00465EF0, 0x00538FA0, 0x0054F3A0, 0x00599E70, 0x00622B40, 0x00624540, 0x00642010, 0x006423D0, 0x006B6C60, 0x006BA780, 0x006FC200, 0x006FDFC0, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  DWORD                    field_0x20  (evidence: 0x0045BC30, 0x00465EF0, 0x00538FA0, 0x0054F3A0, 0x00599E70, 0x00622B40, 0x00624540, 0x00642010, 0x006423D0, 0x006B6C60, 0x006BA780, 0x006FC200, 0x006FDFC0, 0x0078C230, 0x0078C3A0, 0x0078C3B0) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD*                   field_0x20  (evidence: 0x006FC200, 0x006FDF30) // CONFLICT: multiple definitions at +0x20
     // +0x20  DynArray                 field_0x20  (evidence: 0x006DE570) // CONFLICT: multiple definitions at +0x20
     // +0x20  HMODULE                  field_0x20  (evidence: 0x00441020, 0x0044B6A0) // CONFLICT: multiple definitions at +0x20
