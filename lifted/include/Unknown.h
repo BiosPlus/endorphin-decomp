@@ -39,6 +39,7 @@ struct Unknown_Fields {
     // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t[19]             entries  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vptr (vtable pointer of both objects returned by ext_00465B40)  (evidence: 0x0042FC90) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float                    f0  (evidence: 0x0066A4E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_00  (evidence: 0x0057BB20, 0x006BA780, 0x006BDAF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint16_t                 field_00  (evidence: 0x007BD640) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x0  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0x0
@@ -186,6 +187,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string field_0x04 (destroyed via ext_00924FF4)  (evidence: 0x0063E0F0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   float                    f1  (evidence: 0x0066A4E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_04  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_04  (evidence: 0x006B9950, 0x00783630) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_04  (evidence: 0x005C3130, 0x005F5140) // CONFLICT: multiple definitions at +0x4
@@ -308,6 +310,7 @@ struct Unknown_Fields {
     // +0x8   void* field_0x08 (vector end)  (evidence: 0x004E1F50) // CONFLICT: multiple definitions at +0x8
     // +0x8   void** field_0x08 (container element end)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 entriesEnd  (evidence: 0x0068BDF0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   float                    f2  (evidence: 0x0066A4E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0, 0x006F8B30, 0x006FC200, 0x00714920, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x8
     // +0x8   Buffer                   field_0x08  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    field_0x08  (evidence: 0x00480280, 0x00497530, 0x004A6020, 0x004BA060, 0x004D9C60, 0x004F9800, 0x00522220, 0x0052F7D0, 0x005B34C0, 0x0063D970, 0x0063DDF0, 0x0063EA50, 0x006619D0, 0x0066A720, 0x00676710, 0x006BB7B0, 0x006C1BB0, 0x006C9F00, 0x006E7F90, 0x006E7FA0, 0x006E86A0, 0x006FC200, 0x006FC950, 0x0077F520, 0x007DB130, 0x0086B180, 0x0086B200) // CONFLICT: multiple definitions at +0x8

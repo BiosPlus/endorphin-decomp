@@ -52239,6 +52239,13 @@
     "summary": "Copies four stack float arguments into consecutive float fields at self+0x00..+0x0C (thiscall, callee pops 0x10 bytes).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x0066A4E0": {
+    "name": "Unknown::ClampThenInvertFirstThreeFloats_0066A4E0",
+    "class": "Unknown",
+    "signature": "void fn_0066A4E0(void* self)",
+    "summary": "Clamps four float32 values at self to [0,1], then replaces the first three with 1.0f - value.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x0066A720": {
     "name": "Unknown::AllocCountedBuffer",
     "class": "Unknown",

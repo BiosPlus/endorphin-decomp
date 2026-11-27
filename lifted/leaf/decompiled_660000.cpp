@@ -3197,3 +3197,24 @@ void fn_0066A220(void* self) {
     }
 }
 } // namespace lift_0066A220
+
+// [0x0066A4E0]
+namespace lift_0066A4E0 {
+// @name Unknown::ClampThenInvertFirstThreeFloats_0066A4E0
+// @class Unknown
+// @summary Clamps four float32 values at self to [0,1], then replaces the first three with 1.0f - value.
+// @field Unknown +0x00 float f0
+// @field Unknown +0x04 float f1
+// @field Unknown +0x08 float f2
+
+extern void ext_0066A220(void* self);
+
+void fn_0066A4E0(void* self) {
+    ext_0066A220(self);
+
+    float* f = reinterpret_cast<float*>(self);
+    f[0] = 1.0f - f[0];
+    f[1] = 1.0f - f[1];
+    f[2] = 1.0f - f[2];
+}
+} // namespace lift_0066A4E0
