@@ -53398,6 +53398,12 @@
     "summary": "Builds a row-major 3x3 float matrix at out from three 16-byte-strided rows of self and returns out.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067E5B0": {
+    "name": "setPaddedMatrixFromAdjustedIdentity",
+    "signature": "void fn_0067E5B0(void* self, uint32_t arg)",
+    "summary": "Builds a packed 3x3 identity, adjusts it via sub_006951A0 using the stack argument, then copies it into self's padded 4-stride matrix.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067EC60": {
     "name": "initZeroDouble",
     "signature": "void* __thiscall sub_0067EC60(void* self)",
