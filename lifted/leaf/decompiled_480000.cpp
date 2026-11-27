@@ -2522,3 +2522,44 @@ void fn_00480430(void* self) {
     (void)&ext_006657F0;
 }
 } // namespace lift_00480430
+
+// [0x0048F2F0]
+namespace lift_0048F2F0 {
+// @name sub_0048F2F0
+// @summary Constructor that initializes base class, sets vtable 0x0093E718, stores 3 args, zeroes fields, and initializes +0x08 from global vector element 0 and +0x18 from arg1+0x15C.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2C
+
+
+extern void* __thiscall ext_006657F0(void* self, uint32_t arg);
+extern int32_t __cdecl ext_00468180(void);
+extern uint32_t __thiscall ext_00469570(uint8_t* self, uint32_t index);
+
+void* __thiscall fn_0048F2F0(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    ext_006657F0(self, 0);
+
+    *reinterpret_cast<uint32_t*>(self + 0x00) = 0x0093E718;
+    *reinterpret_cast<uint32_t*>(self + 0x10) = arg1;
+    *reinterpret_cast<uint32_t*>(self + 0x14) = arg2;
+    *reinterpret_cast<uint32_t*>(self + 0x20) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x24) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x28) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x2C) = arg3;
+
+    int32_t vec = ext_00468180();
+    uint32_t elem = ext_00469570(reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(vec))), 0);
+    *reinterpret_cast<uint32_t*>(self + 0x08) = elem;
+
+    uint8_t* ptr = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(arg1));
+    *reinterpret_cast<uint32_t*>(self + 0x18) = *reinterpret_cast<uint32_t*>(ptr + 0x15C);
+
+    return self;
+}
+} // namespace lift_0048F2F0

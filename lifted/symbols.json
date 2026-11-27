@@ -11187,6 +11187,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0048F070 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
   },
+  "0x0048F2F0": {
+    "name": "sub_0048F2F0",
+    "signature": "void* __thiscall fn_0048F2F0(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Constructor that initializes base class, sets vtable 0x0093E718, stores 3 args, zeroes fields, and initializes +0x08 from global vector element 0 and +0x18 from arg1+0x15C.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048F4F0": {
     "name": "Commands::BufferChannelsCommand::vfunc_1",
     "class": "Commands::BufferChannelsCommand",
