@@ -78844,6 +78844,13 @@
     "summary": "Stores address of mem_00996D48 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077FA70": {
+    "name": "Unknown::flushIndexedElements_0077FA70",
+    "class": "Unknown",
+    "signature": "void fn_0077FA70(void* self)",
+    "summary": "For each element of the child object at +0x04, calls virtual slot 5 on self with that element, then clears the child pointer.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077FAB0": {
     "name": "Unknown::zeroFourDwords",
     "class": "Unknown",

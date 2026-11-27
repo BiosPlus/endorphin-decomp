@@ -507,3 +507,39 @@ extern bool __thiscall fn_007721B0(void* self)
     return result == 0;
 }
 } // namespace lift_007721B0
+
+// [0x0077FA70] sub_0077FA70 (64 bytes)
+namespace lift_0077FA70 {
+// Known callee 0x006DC510: Unknown::getElementByIndex_006DC510 (Returns element[index] of the pointer array at +0xC8 when index is in [0, count); otherwise forwards to the fallback call at 006E7410 and returns 0.)
+extern uint32_t ext_006DC510(void* self, int32_t index);
+// Known callee 0x006DC550: sub_006DC550 (Getter returning int32_t field at offset +0xB8.)
+extern int32_t ext_006DC550(void* self);
+
+// @name Unknown::flushIndexedElements_0077FA70
+// @class Unknown
+// @summary For each element of the child object at +0x04, calls virtual slot 5 on self with that element, then clears the child pointer.
+// @field Unknown +0x00 void* vtbl
+// @field Unknown +0x04 void* child
+void fn_0077FA70(void* self) {
+    void* child = lift_field<void*>(self, 0x04);
+    if (child == nullptr) {
+        return;
+    }
+
+    int32_t index = 0;
+    int32_t count = ext_006DC550(child);
+    if (count > 0) {
+        void** vtbl = *reinterpret_cast<void***>(self);
+        using VSlot5Fn = void (*)(void*, uint32_t);
+        auto slot5 = reinterpret_cast<VSlot5Fn>(vtbl[5]);
+        do {
+            uint32_t element = ext_006DC510(lift_field<void*>(self, 0x04), index);
+            slot5(self, element);
+            ++index;
+            count = ext_006DC550(lift_field<void*>(self, 0x04));
+        } while (index < count);
+    }
+
+    lift_field<void*>(self, 0x04) = nullptr;
+}
+} // namespace lift_0077FA70

@@ -1,0 +1,28 @@
+{
+  "va": "0x0077FA70",
+  "size": 64,
+  "orig_symbol": "sub_0077FA70",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::flushIndexedElements_0077FA70",
+  "class": "Unknown",
+  "signature": "void fn_0077FA70(void* self)",
+  "summary": "For each element of the child object at +0x04, calls virtual slot 5 on self with that element, then clears the child pointer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtbl"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:11Z"
+}

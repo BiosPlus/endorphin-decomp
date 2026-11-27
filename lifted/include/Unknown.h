@@ -171,7 +171,7 @@ struct Unknown_Fields {
     // +0x0   void*                    vtable_primary  (evidence: 0x0052F3C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_ptr  (evidence: 0x0053C4C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtbl  (evidence: 0x00462D50, 0x0048E190, 0x0048E270, 0x004BA0D0, 0x004FDE10, 0x00508C30, 0x00508D30, 0x00527310, 0x00609970) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D48A0, 0x007D4B10, 0x007D8470) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x0077FA70, 0x007D48A0, 0x007D4B10, 0x007D8470) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x00648EA0, 0x006BB7C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (arg1 pair x; also arg2 table word, final subtract source for y)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x0046CE90, 0x0046E450, 0x0046EA50, 0x004886F0, 0x00488E30, 0x004A2930, 0x004A2AD0, 0x004B1D40, 0x004B1E50, 0x004B21D0, 0x004B7BC0, 0x004CB250, 0x0059F920, 0x005FCC10, 0x00633240, 0x00639730, 0x00678960, 0x00695740, 0x007148E0, 0x007155B0, 0x0086CFB0)
@@ -201,7 +201,7 @@ struct Unknown_Fields {
     // +0x4   void*                    callback  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* next (next node in chain)  (evidence: 0x006FACA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 child  (evidence: 0x0071CA70) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    child  (evidence: 0x00528AE0, 0x0052F7D0, 0x005DA150, 0x005DA170, 0x006305A0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    child  (evidence: 0x00528AE0, 0x0052F7D0, 0x005DA150, 0x005DA170, 0x006305A0, 0x0077FA70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    childListA  (evidence: 0x007F0DA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    childVtbl  (evidence: 0x005865D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child_a  (evidence: 0x00586440) // CONFLICT: multiple definitions at +0x4
