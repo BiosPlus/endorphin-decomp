@@ -1,0 +1,52 @@
+{
+  "va": "0x006863A0",
+  "size": 654,
+  "orig_symbol": "NMData::ValuePtrData::vfunc_1_off_8",
+  "src_path": "src/NMData/ValuePtrData.cpp",
+  "lifted_path": "lifted/NMData/ValuePtrData.cpp",
+  "name": "NMData::ValuePtrData::vfunc_1_off_8",
+  "class": "NMData::ValuePtrData",
+  "signature": "void __thiscall fn_006863A0(void* self, void* xmlNode)",
+  "summary": "Loads ValuePtrData fields and buffered value pointer from XML node properties.",
+  "fields": [
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x24",
+      "type": "std::string",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x40",
+      "type": "uint8_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x48",
+      "type": "uint8_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:24:05Z"
+}

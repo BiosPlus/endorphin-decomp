@@ -78256,6 +78256,13 @@
     "summary": "For each 0x94-byte element in [first, last), stores the leading uint32 of src into it and copy-assigns src's subobject (+0x04) into the element's subobject via ext_00685890.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x006863A0": {
+    "name": "NMData::ValuePtrData::vfunc_1_off_8",
+    "class": "NMData::ValuePtrData",
+    "signature": "void __thiscall fn_006863A0(void* self, void* xmlNode)",
+    "summary": "Loads ValuePtrData fields and buffered value pointer from XML node properties.",
+    "lifted_path": "lifted/NMData/ValuePtrData.cpp"
+  },
   "0x00686630": {
     "name": "sub_00686630",
     "class": "Unknown",

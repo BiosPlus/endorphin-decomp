@@ -34,8 +34,10 @@ uint32_t fn_00682C20(void* self, uint32_t arg) {
     }
     return (arg == 0x67u) ? 0x67u : 0x66u;
 }
+#include <cstdint>
+#include <string>
 
-// [0x00682CE0] NMData::ValuePtrData::vfunc_17 (85 bytes)
+#include <string>
 // @name NMData::ValuePtrData::vfunc_17
 // @class NMData::ValuePtrData
 // @summary If a1 == 0x280: returns 0x46 when the object at +0x28 reports vfunc slot 12 == 5; otherwise, when +0x64 is set and a3 is non-null, stores ext_0067A050(a2, self+0x50) into *a3. Returns a1 in all non-0x46 paths.
@@ -227,3 +229,139 @@ void* fn_00682A00(void* self, void* arg) {
     return arg;
 }
 } // namespace lift_00682A00
+
+// [0x006863A0]
+namespace lift_006863A0 {
+// @name NMData::ValuePtrData::vfunc_1_off_8
+// @class NMData::ValuePtrData
+// @summary Loads ValuePtrData fields and buffered value pointer from XML node properties.
+// @field NMData::ValuePtrData +0x04 uint8_t field_0x04
+// @field NMData::ValuePtrData +0x20 void* field_0x20
+// @field NMData::ValuePtrData +0x24 std::string field_0x24
+// @field NMData::ValuePtrData +0x40 uint8_t field_0x40
+// @field NMData::ValuePtrData +0x48 uint8_t field_0x48
+// @field NMData::ValuePtrData +0x64 uint8_t field_0x64
+
+
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern uint32_t __thiscall ext_0041CEB0(void* self, void* arg1);
+extern void* __thiscall ext_0041CF00(void* self, void* src);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __cdecl ext_00671100(int id);
+extern void __thiscall ext_006722B0(void* self, void* arg1);
+extern void __cdecl ext_006824E0(void* arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+extern void* __thiscall ext_00685900(void* self, void* arg1, uint32_t arg2, uint32_t arg3);
+extern void __thiscall ext_00685E40(void* self, void* arg1);
+extern void __cdecl ext_0053F5F0(int* out, void* prop);
+
+extern uint32_t mem_00A9FA6C;
+extern uint32_t mem_00A9F838;
+extern uint32_t mem_00A9F6E8;
+extern uint32_t mem_00A9F8C0;
+extern uint32_t mem_00A9F57C;
+extern uint32_t mem_00AA2400;
+extern uint32_t mem_00AA23DC;
+extern uint32_t mem_00AA23D4;
+extern uint32_t mem_00AA23E4;
+extern uint32_t mem_00AA23A0;
+extern uint32_t mem_00AA2404;
+extern uint32_t mem_00B599BC;
+extern const char* mem_0092A0D0;
+extern uint32_t mem_00924EA8;
+extern uint32_t mem_00924FC0;
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_00924FF4;
+
+struct BufferedPair_006863A0 {
+    uint32_t val;
+    void* obj;
+};
+
+void __thiscall fn_006863A0(void* self, void* xmlNode) {
+    (void)mem_00924EA8;
+    (void)mem_00924FC0;
+    (void)mem_00924FDC;
+    (void)mem_00924FE8;
+    (void)mem_00924FF4;
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    uint32_t prop = ext_0063EFE0(xmlNode, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FA6C)));
+    std::string local_str;
+
+    uint32_t name_key = 0;
+    if (prop != 0x00B53A34 &&
+        prop != 0x00B53B30 &&
+        prop != 0x00B53AB0 &&
+        prop != 0x00B53A70 &&
+        prop != 0x00B53AF0) {
+        ext_004275E0(&local_str, reinterpret_cast<void*>(static_cast<uintptr_t>(prop)));
+        ext_004275E0(base + 0x04, reinterpret_cast<void*>(static_cast<uintptr_t>(
+            ext_0063EFE0(xmlNode, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F838))))));
+        ext_004275E0(base + 0x24, reinterpret_cast<void*>(static_cast<uintptr_t>(
+            ext_0063EFE0(xmlNode, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F6E8))))));
+        ext_004275E0(base + 0x48, reinterpret_cast<void*>(static_cast<uintptr_t>(
+            ext_0063EFE0(xmlNode, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F8C0))))));
+        name_key = mem_00A9F57C;
+    } else {
+        ext_004275E0(&local_str, reinterpret_cast<void*>(static_cast<uintptr_t>(
+            ext_0063EFE0(xmlNode, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00AA2400))))));
+        uint32_t flag = mem_00AA23DC;
+        ext_006824E0(xmlNode, base + 0x04, flag != 0 ? 1 : 0, flag);
+        ext_004275E0(base + 0x24, reinterpret_cast<void*>(static_cast<uintptr_t>(
+            ext_0063EFE0(xmlNode, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00AA23D4))))));
+        ext_004275E0(base + 0x48, reinterpret_cast<void*>(static_cast<uintptr_t>(
+            ext_0063EFE0(xmlNode, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00AA23E4))))));
+        name_key = mem_00AA23A0;
+    }
+
+    ext_004275E0(base + 0x64, reinterpret_cast<void*>(static_cast<uintptr_t>(
+        ext_0063EFE0(xmlNode, reinterpret_cast<const char*>(static_cast<uintptr_t>(name_key))))));
+
+    if (!local_str.empty()) {
+        ext_00685E40(base - 0x08, &local_str);
+    } else {
+        uint32_t id_prop = ext_0063EFE0(xmlNode, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00AA2404)));
+        int parsed_id = 0;
+        void* id_prop_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(id_prop));
+        ext_0053F5F0(&parsed_id, &id_prop_ptr);
+
+        void* obj = ext_00671100(parsed_id);
+        lift_field<void*>(base, 0x20) = obj;
+
+        BufferedPair_006863A0 pair{0, nullptr};
+        std::string* field_24 = reinterpret_cast<std::string*>(base + 0x24);
+        if (*field_24 == reinterpret_cast<const char*>(&mem_0092A0D0)) {
+            void** vtable = *reinterpret_cast<void***>(obj);
+            using Slot18Fn = void* (__thiscall*)(void*, int);
+            void* src_obj = reinterpret_cast<Slot18Fn>(vtable[0x48 / 4])(obj, 0);
+            ext_0041CF00(&pair, src_obj);
+
+            if (pair.obj == nullptr || reinterpret_cast<uintptr_t>(pair.obj) == mem_00B599BC) {
+                field_24->clear();
+            } else {
+                std::string tmp_str;
+                ext_0041CEB0(&pair, &tmp_str);
+                *field_24 = tmp_str;
+            }
+
+            if (pair.obj != nullptr) {
+                void** pv = *reinterpret_cast<void***>(pair.obj);
+                using Slot30Fn = void (__thiscall*)(void*, uint32_t*);
+                reinterpret_cast<Slot30Fn>(pv[0x78 / 4])(pair.obj, &pair.val);
+            }
+        }
+
+        void* sub_res = ext_00685900(base - 0x08, &pair.val, 0, 0);
+        ext_0041CF50(base + 0x40, sub_res);
+
+        if (pair.obj != nullptr) {
+            void** pv = *reinterpret_cast<void***>(pair.obj);
+            using Slot30Fn = void (__thiscall*)(void*, uint32_t*);
+            reinterpret_cast<Slot30Fn>(pv[0x78 / 4])(pair.obj, &pair.val);
+        }
+    }
+
+    ext_006722B0(base + 0x40, xmlNode);
+}
+} // namespace lift_006863A0
