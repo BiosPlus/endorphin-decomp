@@ -69147,6 +69147,13 @@
     "summary": "Returns entries[index] when index (+0xE8) is non-negative and below the getter limit (ext_006DC550); otherwise forwards +0xEC subobject with (0, 0xAA93EC) and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DC4C0": {
+    "name": "Unknown::getIndexedEntryOrForward_006DC4C0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_006DC4C0(void* self, int32_t index)",
+    "summary": "Forwards entries[index] (index at stack arg, entries at +0xC8) to ext_006C9330 when index is non-negative and below the getter limit (ext_006DC550); otherwise forwards +0xEC subobject with (0, 0xAA93EC) to ext_006E7410.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DC510": {
     "name": "Unknown::getElementByIndex_006DC510",
     "class": "Unknown",

@@ -3424,3 +3424,33 @@ void* fn_006D2C30(void* self, const void* arg) {
     return self;
 }
 } // namespace lift_006D2C30
+
+// [0x006DC4C0] sub_006DC4C0 (80 bytes)
+namespace lift_006DC4C0 {
+// Known callee 0x006C9330: sub_006C9330 (Pure jump thunk forwarding to sub_006E7460.)
+extern void __fastcall ext_006C9330(void* self);
+// Known callee 0x006DC550: sub_006DC550 (Getter returning int32_t field at offset +0xB8.)
+extern int32_t __fastcall ext_006DC550(void* self);
+// Known callee 0x006E7410: Unknown::assignStringByIndexAndForward_006E7410 (Passes the first stack argument as the index to assignStringByIndex (006E7440) on self, then forwards the second stack argument to the subobject call (006E7430) on self and returns its result.)
+extern void* __thiscall ext_006E7410(void* self, uint32_t arg1, uint32_t arg2);
+
+// @name Unknown::getIndexedEntryOrForward_006DC4C0
+// @class Unknown
+// @summary Forwards entries[index] (index at stack arg, entries at +0xC8) to ext_006C9330 when index is non-negative and below the getter limit (ext_006DC550); otherwise forwards +0xEC subobject with (0, 0xAA93EC) to ext_006E7410.
+// @field Unknown +0xC8 uint32_t* entries
+// @field Unknown +0xEC void* subobject
+extern void __thiscall fn_006DC4C0(void* self, int32_t index) {
+    auto* base = static_cast<uint8_t*>(self);
+    if (index >= 0) {
+        const int32_t limit = ext_006DC550(self);
+        if (index < limit) {
+            uint32_t* entries = *reinterpret_cast<uint32_t**>(base + 0xC8);
+            const uintptr_t entry = static_cast<uintptr_t>(entries[index]);
+            ext_006C9330(reinterpret_cast<void*>(entry));
+            return;
+        }
+    }
+    void* sub = *reinterpret_cast<void**>(base + 0xEC);
+    (void)ext_006E7410(sub, 0u, 0x00AA93ECu);
+}
+} // namespace lift_006DC4C0
