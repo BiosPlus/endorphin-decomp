@@ -1,0 +1,28 @@
+{
+  "va": "0x004BCE20",
+  "size": 157,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e::vfunc_44",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType_MaterialPair::vfunc_44",
+  "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e",
+  "signature": "void fn_004BCE20(void* self, void* out)",
+  "summary": "Copies the name pointer at self+0x00 into a temp string, builds an 8-byte temp {field_00, field_04} from it, assigns that into self, releases the temp's field_04 via vtable slot 0x78, destroys the string, then calls vtable slot 0xB0 (vfunc_44) on self-\u003efield_0x04 with (self, out).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:32:18Z"
+}

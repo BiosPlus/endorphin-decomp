@@ -83410,3 +83410,52 @@ void* __stdcall fn_004D6AA0(void* self, void* out) {
     return vfn(obj, self, out);
 }
 } // namespace lift_004D6AA0
+
+// [0x004BCE20] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_44 (157 bytes)
+namespace lift_004BCE20 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x004BC770: sub_004BC770 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_004BC770(void* self, const void* src);
+// Unlifted callee 0x006720E0: 43-byte thiscall helper; builds the 8-byte temp from the name string.
+extern void* ext_006720E0(void* self, const void* src);
+// Import slot for the MSVCP80 std::basic_string<char> destructor (IAT entry holding the function address).
+extern int mem_00924FF4;
+
+// @name ReadMethodType_MaterialPair::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>
+// @summary Copies the name pointer at self+0x00 into a temp string, builds an 8-byte temp {field_00, field_04} from it, assigns that into self, releases the temp's field_04 via vtable slot 0x78, destroys the string, then calls vtable slot 0xB0 (vfunc_44) on self->field_0x04 with (self, out).
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void fn_004BCE20(void* self, void* out) {
+    // Temp std::string (MSVC VC8 layout, 0x1C bytes) built by ext_004BC770.
+    alignas(8) unsigned char name[0x1C];
+    // Temp {field_00, field_04} built by ext_006720E0 and consumed by ext_0041CF50.
+    alignas(8) unsigned char tmp[0x08];
+
+    // name = copy of self->field_0x00
+    ext_004BC770(name, lift_field<const void*>(self, 0x00));
+    ext_006720E0(tmp, name);
+
+    // self->assignFromOther(tmp)
+    ext_0041CF50(self, tmp);
+
+    // Release tmp.field_04 via its vtable slot 0x78 (thiscall: this = obj, arg = tmp).
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* vt = lift_field<void*>(held, 0x00);
+        void* release = lift_field<void*>(vt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(release)(held, tmp);
+    }
+
+    // Destroy the temp string through the imported destructor (thiscall: this = name).
+    void* str_dtor = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    reinterpret_cast<void (*)(void*)>(str_dtor)(name);
+
+    // self->field_0x04->vfunc_44(self, out)  (vtable slot 0xB0 = index 44)
+    void* obj = lift_field<void*>(self, 0x04);
+    void* vt = lift_field<void*>(obj, 0x00);
+    void* vfunc44 = lift_field<void*>(vt, 0xB0);
+    reinterpret_cast<void (*)(void*, void*, void*)>(vfunc44)(obj, self, out);
+}
+} // namespace lift_004BCE20
