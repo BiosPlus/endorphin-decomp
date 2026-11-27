@@ -1,0 +1,14 @@
+{
+  "va": "0x00461660",
+  "size": 91,
+  "orig_symbol": "sub_00461660",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::allocAndCtor_0x190",
+  "class": "Unknown",
+  "signature": "void* fn_00461660()",
+  "summary": "Allocates a 0x190-byte object via MFC80 ord_762; if the allocation succeeded, runs the constructor fn_00461510 on it and returns the object, otherwise returns null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:40:40Z"
+}

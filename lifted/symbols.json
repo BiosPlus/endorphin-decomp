@@ -7757,6 +7757,13 @@
     "summary": "Returns address of global mem_00938918.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00461660": {
+    "name": "Unknown::allocAndCtor_0x190",
+    "class": "Unknown",
+    "signature": "void* fn_00461660()",
+    "summary": "Allocates a 0x190-byte object via MFC80 ord_762; if the allocation succeeded, runs the constructor fn_00461510 on it and returns the object, otherwise returns null.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004616C0": {
     "name": "UpdateAvailableDialog::vfunc_1",
     "class": "UpdateAvailableDialog",

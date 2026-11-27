@@ -2443,3 +2443,23 @@ uintptr_t fn_00467300(void* self, void* arg) {
     return static_cast<uintptr_t>(0x004672EFu);
 }
 } // namespace lift_00467300
+
+// [0x00461660] sub_00461660 (91 bytes)
+namespace lift_00461660 {
+// Known callee 0x00461510: Unknown::ctor_CreateSolidBrushWindow (Constructs the object: initializes MFC80 base via thunk, sets vtables, creates a solid brush and passes it to ord_1280; returns this.)
+extern void* ext_00461510(void* self, uint32_t arg);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(uint32_t size);
+
+// @name Unknown::allocAndCtor_0x190
+// @summary Allocates a 0x190-byte object via MFC80 ord_762; if the allocation succeeded, runs the constructor fn_00461510 on it and returns the object, otherwise returns null.
+void* fn_00461660() {
+    // Original SEH frame setup/teardown (fs:[0] push/pop, state slot at [esp+0xc]) is
+    // MSVC exception bookkeeping with no portable equivalent and no observable effect here.
+    void* obj = ext_006A5C62(0x190);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_00461510(obj, 0);
+}
+} // namespace lift_00461660
