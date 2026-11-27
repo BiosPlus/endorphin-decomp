@@ -1928,3 +1928,32 @@ extern void* fn_0054F3A0(void* self) {
     return self;
 }
 } // namespace lift_0054F3A0
+
+// [0x00547220]
+namespace lift_00547220 {
+// @name Unknown::ctor_00547220
+// @class Unknown
+// @summary Two-argument constructor: base-initialises self, installs vtable 0x956B74, constructs the TranslateHandleGraphic subobject at +0x98, zeroes four floats at +0xB4..+0xC0, runs ext_005470D0, and returns self. The original SEH frame (fs:[0] try-state) is dropped as it is not portable; it only guards the callees' exceptions.
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x98 ToolGraphics::TranslateHandleGraphic handle_graphic
+// @field Unknown +0xB4 float field_0xb4
+// @field Unknown +0xB8 float field_0xb8
+// @field Unknown +0xBC float field_0xbc
+// @field Unknown +0xC0 float field_0xc0
+
+void __thiscall ext_005436B0(void* self, DWORD a1, DWORD a2);
+void* __fastcall ext_0054A860(void* self);
+void __fastcall ext_005470D0(void* self);
+
+void* __thiscall fn_00547220(void* self, DWORD a1, DWORD a2) {
+    ext_005436B0(self, a1, a2);
+    lift_field<uint32_t>(self, 0x00) = 0x956B74u;
+    ext_0054A860(static_cast<uint8_t*>(self) + 0x98);
+    lift_field<float>(self, 0xC0) = 0.0f;
+    lift_field<float>(self, 0xBC) = 0.0f;
+    lift_field<float>(self, 0xB8) = 0.0f;
+    lift_field<float>(self, 0xB4) = 0.0f;
+    ext_005470D0(self);
+    return self;
+}
+} // namespace lift_00547220

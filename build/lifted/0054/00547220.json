@@ -1,0 +1,52 @@
+{
+  "va": "0x00547220",
+  "size": 129,
+  "orig_symbol": "sub_00547220",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::ctor_00547220",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_00547220(void* self, DWORD a1, DWORD a2)",
+  "summary": "Two-argument constructor: base-initialises self, installs vtable 0x956B74, constructs the TranslateHandleGraphic subobject at +0x98, zeroes four floats at +0xB4..+0xC0, runs ext_005470D0, and returns self. The original SEH frame (fs:[0] try-state) is dropped as it is not portable; it only guards the callees' exceptions.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "ToolGraphics::TranslateHandleGraphic",
+      "name": "handle_graphic"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "float",
+      "name": "field_0xb4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "float",
+      "name": "field_0xb8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xBC",
+      "type": "float",
+      "name": "field_0xbc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "float",
+      "name": "field_0xc0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:18:08Z"
+}
