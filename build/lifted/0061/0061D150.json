@@ -1,0 +1,14 @@
+{
+  "va": "0x0061D150",
+  "size": 65,
+  "orig_symbol": "NMData::DriveFrame::vfunc_22",
+  "src_path": "src/NMData/DriveFrame.cpp",
+  "lifted_path": "lifted/NMData/DriveFrame.cpp",
+  "name": "NMData::DriveFrame::vfunc_22",
+  "class": "NMData::DriveFrame",
+  "signature": "void* fn_0061D150(void* self, void* arg)",
+  "summary": "Forwards the argument to Constraint::vfunc_22 and to the helper chain (global, divideTripletByScale, Transform::vfunc_22) on this, then returns the argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:40:27Z"
+}

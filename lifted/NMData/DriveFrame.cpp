@@ -47,3 +47,39 @@ void* fn_0061D1A0(void* self, uint32_t index, float value) {
     return ext_00611200(self, triple);
 }
 } // namespace lift_0061D1A0
+
+// [0x0061D150] NMData::DriveFrame::vfunc_22 (65 bytes)
+namespace lift_0061D150 {
+// Known callee 0x00611270: NMData::Constraint::vfunc_22 (Calls a method on the argument object with a global value and this's +0x154 sub-object, forwards the result to ext_0067F040, and returns the argument.)
+extern void* ext_00611270(void* self, void* other);
+// Known callee 0x00640390: sub_00640390 (332B). Stack args: (uint32_t a, uint32_t b), ecx = self.
+extern void* ext_00640390(void* self, uint32_t a, uint32_t b);
+// Known callee 0x006125B0: Unknown::divideTripletByScale_0x160 (Builds a local 3x3 identity matrix in a frame struct, calls two helpers, then divides the three floats at +0x160/+0x164/+0x168 by the scale floats at +0x154/+0x158/+0x15c.)
+// Lifted leaf is declared void; the eax value consumed below is whatever that callee leaves in eax.
+extern uint32_t ext_006125B0(void* self);
+// Known callee 0x0067F040: sub_0067F040 (58B). cdecl, two stack args.
+extern void ext_0067F040(void* a, uint32_t b);
+// Known callee 0x00593AE0: Transform::vfunc_22 (299B). ecx = self, one stack arg.
+extern void* ext_00593AE0(void* self, void* arg);
+// Global read from 0x00A9EE5C (value 0x0098719C at link time).
+extern uint32_t mem_00A9EE5C;
+
+// @name NMData::DriveFrame::vfunc_22
+// @class NMData::DriveFrame
+// @summary Forwards the argument to Constraint::vfunc_22 and to the helper chain (global, divideTripletByScale, Transform::vfunc_22) on this, then returns the argument.
+// @field none: this function does not read or write DriveFrame fields directly; self is only passed to callees.
+void* fn_0061D150(void* self, void* arg) {
+    ext_00611270(self, arg);
+
+    uint32_t global_value = mem_00A9EE5C;
+    void* ebx_val = ext_00640390(arg, 0u, global_value);
+
+    uint32_t eax_val = ext_006125B0(self);
+
+    ext_0067F040(ebx_val, eax_val);
+
+    ext_00593AE0(self, ebx_val);
+
+    return arg;
+}
+} // namespace lift_0061D150

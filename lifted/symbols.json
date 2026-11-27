@@ -62218,6 +62218,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046CB60 (ExprParser::ReadMethodType\u003cImageExporter, bool, isEnabled, 0\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061D150": {
+    "name": "NMData::DriveFrame::vfunc_22",
+    "class": "NMData::DriveFrame",
+    "signature": "void* fn_0061D150(void* self, void* arg)",
+    "summary": "Forwards the argument to Constraint::vfunc_22 and to the helper chain (global, divideTripletByScale, Transform::vfunc_22) on this, then returns the argument.",
+    "lifted_path": "lifted/NMData/DriveFrame.cpp"
+  },
   "0x0061D1A0": {
     "name": "NMData::DriveFrame::vfunc_60",
     "class": "NMData::DriveFrame",
