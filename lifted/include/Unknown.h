@@ -262,6 +262,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04 (begin pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (self -> link pointer)  (evidence: 0x00810200) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (sentinel/head node pointer)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t* field_0x04 (self begin pointer)  (evidence: 0x0065DAD0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to subobject; its +0xC holds a function pointer)  (evidence: 0x005F56E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (vector begin, iterated as uint32 pointers)  (evidence: 0x004E1F50) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 ptrToSrcPlus14  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x4
@@ -372,6 +373,7 @@ struct Unknown_Fields {
     // +0x8   void*                    peer  (evidence: 0x00532B40) // CONFLICT: multiple definitions at +0x8
     // +0x8   float* field_0x08 (end-of-data pointer)  (evidence: 0x00607F20) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (end pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t* field_0x08 (self end pointer)  (evidence: 0x0065DAD0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (array end pointer)  (evidence: 0x00503BC0, 0x00505D00, 0x0050C4D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (next link pointer)  (evidence: 0x00427370, 0x0043CB50, 0x0046FB80, 0x00476B80, 0x00486D40, 0x004928C0, 0x0052A1A0, 0x005AC820, 0x005E0AE0, 0x005E2C70, 0x00624CF0, 0x0065B120) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 range1_end  (evidence: 0x00526960, 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
@@ -445,6 +447,7 @@ struct Unknown_Fields {
     // +0xC   void*                    pObj  (evidence: 0x006D8FD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t field_0x0c (multiplier applied to the lower index of the pair)  (evidence: 0x007DD160) // CONFLICT: multiple definitions at +0xC
     // +0xC   float* field_0x0C (end-of-capacity pointer)  (evidence: 0x00607F20) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint8_t* field_0x0C (self capacity end pointer)  (evidence: 0x0065DAD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object pointer)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 rangeFirst  (evidence: 0x004F0250) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0c (address taken only; no type information recovered)  (evidence: 0x00440770, 0x00441C10) // CONFLICT: multiple definitions at +0xC

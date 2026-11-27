@@ -2197,3 +2197,67 @@ void __cdecl fn_00518A00(uint32_t* base, int32_t hole, int32_t len, uint32_t val
     ext_005187E0(base, hole, top, value, ctx);
 }
 } // namespace lift_00518A00
+
+// [0x0065DAD0] sub_0065DAD0 (135 bytes)
+namespace lift_0065DAD0 {
+// Known callee 0x00405FB0: throwErrorFromLiteral (Builds a std::string from the .rdata literal at 0x928F30 and throws it wrapped in a std::exception-derived object.)
+extern void ext_00405FB0();
+// Known callee 0x0041A100: allocateArrayOrThrow (Allocates memory via MFC80!ord_762 or throws std::bad_alloc on overflow.)
+extern void* ext_0041A100(uint32_t count);
+// IAT slots referenced by the original asm: CRT _invalid_parameter_noinfo (0x925134) and memmove_s (0x9251EC).
+// Replaced below by an abort guard and std::memmove; referenced here as metadata only.
+extern int mem_00925134;
+extern int mem_009251EC;
+
+// @name Unknown::assignCopyOfRange
+// @class Unknown
+// @summary Replaces self's byte range with a fresh heap copy of the [begin,end) bytes of src (arg0), returning self.
+// @field Unknown +0x04 uint8_t* field_0x04 (self begin pointer)
+// @field Unknown +0x08 uint8_t* field_0x08 (self end pointer)
+// @field Unknown +0x0C uint8_t* field_0x0C (self capacity end pointer)
+// @field ArgUnknown +0x04 uint8_t* field_0x04 (src begin pointer)
+// @field ArgUnknown +0x08 uint8_t* field_0x08 (src end pointer)
+void* fn_0065DAD0(void* self, const void* src) {
+    (void)&mem_00925134;
+    (void)&mem_009251EC;
+
+    uint8_t* srcBegin = lift_field<uint8_t*>(src, 0x04);
+    uint8_t* srcEnd = lift_field<uint8_t*>(src, 0x08);
+
+    // Byte length of the source range (0 when the source begin pointer is null).
+    size_t count = srcBegin != nullptr
+        ? static_cast<size_t>(reinterpret_cast<uintptr_t>(srcEnd) - reinterpret_cast<uintptr_t>(srcBegin))
+        : 0;
+
+    lift_field<uint8_t*>(self, 0x04) = nullptr;
+    lift_field<uint8_t*>(self, 0x08) = nullptr;
+    lift_field<uint8_t*>(self, 0x0C) = nullptr;
+
+    if (count == 0) {
+        return self;
+    }
+
+    // Original: count > 0xFFFFFFFF -> throw (unreachable for a 32-bit size, kept for fidelity).
+    if (count > 0xFFFFFFFFu) {
+        ext_00405FB0();
+    }
+
+    uint8_t* buf = static_cast<uint8_t*>(ext_0041A100(static_cast<uint32_t>(count)));
+    lift_field<uint8_t*>(self, 0x04) = buf;
+    lift_field<uint8_t*>(self, 0x08) = buf;
+    lift_field<uint8_t*>(self, 0x0C) = buf + count;
+
+    // Original: begin > end -> _invalid_parameter_noinfo (does not return).
+    if (reinterpret_cast<uintptr_t>(srcBegin) > reinterpret_cast<uintptr_t>(srcEnd)) {
+        std::abort();
+    }
+
+    // Copy the bytes and set self's end pointer to the copied range's end.
+    uint8_t* dstBegin = lift_field<uint8_t*>(self, 0x04);
+    if (count != 0) {
+        std::memmove(dstBegin, srcBegin, count);
+    }
+    lift_field<uint8_t*>(self, 0x08) = dstBegin + count;
+    return self;
+}
+} // namespace lift_0065DAD0
