@@ -2539,3 +2539,31 @@ void __thiscall fn_00403E80(void* self, const void* lpFormat) {
     }
 }
 } // namespace lift_00403E80
+
+// [0x00402B60] sub_00402B60 (146 bytes)
+namespace lift_00402B60 {
+// Known callee 0x004026E0: std_vector_string_Tidy (Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.)
+extern void ext_004026E0(void* self);
+// Import slot for MSVCP80 std::basic_string<char>::~basic_string (IAT entry, bound at load time).
+extern void (*mem_00924FF4)(void* self);
+
+// @name ClearStringMembersAndVector
+// @summary Destroys five std::string members (highest offset first) and the std::vector<std::string> at +0x38; the MSVC SEH/unwind frame is dropped.
+// @field Unknown +0x38 std::vector<std::string> field_0x38
+// @field Unknown +0x50 std::string field_0x50
+// @field Unknown +0x8c std::string field_0x8c
+// @field Unknown +0xbc std::string field_0xbc
+// @field Unknown +0xd8 std::string field_0xd8
+// @field Unknown +0xf4 std::string field_0xf4
+void fn_00402B60(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    mem_00924FF4(base + 0xf4);
+    mem_00924FF4(base + 0xd8);
+    mem_00924FF4(base + 0xbc);
+    mem_00924FF4(base + 0x8c);
+    mem_00924FF4(base + 0x50);
+
+    ext_004026E0(base + 0x38);
+}
+} // namespace lift_00402B60

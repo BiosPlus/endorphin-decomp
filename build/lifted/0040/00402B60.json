@@ -1,0 +1,51 @@
+{
+  "va": "0x00402B60",
+  "size": 146,
+  "orig_symbol": "sub_00402B60",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "ClearStringMembersAndVector",
+  "signature": "void fn_00402B60(void* self)",
+  "summary": "Destroys five std::string members (highest offset first) and the std::vector\u003cstd::string\u003e at +0x38; the MSVC SEH/unwind frame is dropped.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "std::vector\u003cstd::string\u003e",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "std::string",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "std::string",
+      "name": "field_0x8c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xBC",
+      "type": "std::string",
+      "name": "field_0xbc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD8",
+      "type": "std::string",
+      "name": "field_0xd8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "std::string",
+      "name": "field_0xf4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:36:45Z"
+}
