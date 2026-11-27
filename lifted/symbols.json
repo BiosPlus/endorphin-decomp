@@ -25675,6 +25675,12 @@
     "summary": "Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00553F90": {
+    "name": "allocArray160_00553F90",
+    "signature": "void* fn_00553F90(uint32_t count)",
+    "summary": "Allocates an array of `count` 160-byte (0xA0) elements via the MFC80 allocator; throws std::exception if count*0xA0 would overflow.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00553FF0": {
     "name": "Unknown::destroyStringAt54AndMembers",
     "class": "Unknown",
