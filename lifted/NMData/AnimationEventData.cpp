@@ -471,3 +471,28 @@ void* __thiscall fn_004BF800(void* self, void* out_str) {
     return out_str;
 }
 } // namespace lift_004BF800
+
+// [0x004C28F0]
+namespace lift_004C28F0 {
+// @name NMData::AnimationEventData::vfunc_92
+// @class NMData::AnimationEventData
+// @summary Copies the input string, passes it to ext_004C2790 and vfunc at +0x5C, then destroys the copy
+// @field NMData::AnimationEventData +0x00 void** vtable
+
+extern void __thiscall ext_004C2790(void* self, void* str);
+extern uintptr_t mem_00924FE0;
+extern uintptr_t mem_00924FF4;
+
+void __thiscall fn_004C28F0(void* self, const void* str_arg) {
+    uint8_t local_str[28];
+    reinterpret_cast<void(__thiscall*)(void*, const void*)>(mem_00924FE0)(local_str, str_arg);
+
+    ext_004C2790(self, local_str);
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto vfunc = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x5C / sizeof(void*)]);
+    vfunc(self, local_str);
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(local_str);
+}
+} // namespace lift_004C28F0

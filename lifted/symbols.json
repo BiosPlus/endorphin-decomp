@@ -78921,6 +78921,13 @@
     "summary": "Looks up a key in a static searchable map; on miss, queries a virtual slot and registers the result, returning the found value or the static sentinel.",
     "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
   },
+  "0x00699650": {
+    "name": "ExprParser::ObjectType::vfunc_23",
+    "class": "ExprParser::ObjectType",
+    "signature": "void* __thiscall fn_00699650(void* self, void* out, void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Resolves a sub-object from arg1+0x2c, updates it via virtual calls if found, and initializes out.",
+    "lifted_path": "lifted/ExprParser/ObjectType.cpp"
+  },
   "0x006996C0": {
     "name": "sub_006996C0",
     "signature": "extern \"C\" void* __cdecl fn_006996C0(void* obj)",

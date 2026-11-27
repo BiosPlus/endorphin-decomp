@@ -1,0 +1,22 @@
+{
+  "va": "0x004C28F0",
+  "size": 112,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_92",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_92",
+  "class": "NMData::AnimationEventData",
+  "signature": "void __thiscall fn_004C28F0(void* self, const void* str_arg)",
+  "summary": "Copies the input string, passes it to ext_004C2790 and vfunc at +0x5C, then destroys the copy",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:40:29Z"
+}
