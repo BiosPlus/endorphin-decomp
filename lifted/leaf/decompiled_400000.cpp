@@ -1921,9 +1921,10 @@ extern int mem_00924FE0;
 extern int mem_00928EF0;
 
 // @name StringExceptionWithMember::ctor
+// @class unknown
 // @summary Construct an exception-style object from a std::string: store c_str() as the exception message, set the vtable, and copy-construct the std::string member at +0x0C. Returns self.
-// @field field_0x00 uint32_t vtable
-// @field field_0x0C std::string message
+// @field unknown +0x00 uint32_t vptr
+// @field unknown +0x0C std::string field_0x0C
 void* fn_00403560(void* self, const void* src) {
     // IAT slots referenced by the original indirect calls (metadata only).
     (void)&mem_00924FF0;
