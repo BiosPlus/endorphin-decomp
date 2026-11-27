@@ -1,0 +1,63 @@
+{
+  "va": "0x00466870",
+  "size": 133,
+  "orig_symbol": "sub_00466870",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "destroyTwoMembers_00466870",
+  "signature": "static void destroy_member(uint8_t* member)",
+  "summary": "Destroys two embedded 0x28-byte member objects at +0x38 and +0x10 by freeing their +0x18 buffers and calling sub_00678DE0.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x10",
+      "type": "uint8_t[0x28]",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x38",
+      "type": "uint8_t[0x28]",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x50",
+      "type": "void*",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:33:41Z"
+}

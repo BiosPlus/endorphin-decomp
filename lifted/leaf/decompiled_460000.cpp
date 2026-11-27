@@ -2143,3 +2143,36 @@ void __thiscall sub_0046A8E0(void* this_) {
     lift_field<uint8_t*>(this_, 0x4) = parent;
 }
 } // namespace lift_0046A8E0
+
+// [0x00466870]
+namespace lift_00466870 {
+extern void ext_006A5C5C(void* ptr);
+extern void __thiscall ext_00678DE0(void* self);
+
+static void destroy_member(uint8_t* member) {
+    void* ptr = lift_field<void*>(member, 0x18);
+    if (ptr != nullptr) {
+        ext_006A5C5C(ptr);
+    }
+    lift_field<uint32_t>(member, 0x18) = 0;
+    lift_field<uint32_t>(member, 0x1C) = 0;
+    lift_field<uint32_t>(member, 0x20) = 0;
+    ext_00678DE0(member);
+}
+
+// @name destroyTwoMembers_00466870
+// @summary Destroys two embedded 0x28-byte member objects at +0x38 and +0x10 by freeing their +0x18 buffers and calling sub_00678DE0.
+// @field Self +0x10 uint8_t[0x28] field_0x10
+// @field Self +0x28 void* field_0x28
+// @field Self +0x2C uint32_t field_0x2C
+// @field Self +0x30 uint32_t field_0x30
+// @field Self +0x38 uint8_t[0x28] field_0x38
+// @field Self +0x50 void* field_0x50
+// @field Self +0x54 uint32_t field_0x54
+// @field Self +0x58 uint32_t field_0x58
+void __thiscall fn_00466870(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    destroy_member(base + 0x38);
+    destroy_member(base + 0x10);
+}
+} // namespace lift_00466870
