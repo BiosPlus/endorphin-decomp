@@ -437,3 +437,45 @@ extern BYTE fn_0074F990(void* self, const char* filename) {
     return 1;
 }
 } // namespace lift_0074F990
+
+// [0x00742E60] sub_00742E60 (112 bytes)
+namespace lift_00742E60 {
+// Known callee 0x006BB150: findItemByKey (Searches an array of object pointers at +0xac (count at +0x9c) using ext_006E6E40 and returns the first matching pointer or 0.)
+extern uint32_t ext_006BB150(void* self, uint32_t arg0);
+// Known callee 0x006D3B50: Unknown::insertVirtualResultIntoArray_006D3B50 (Calls virtual slot 0x48 on self with arg1; if it returns non-zero, appends that result to the DynamicArray at +0xdc. Returns the virtual call's result.)
+extern int32_t ext_006D3B50(void* self, int32_t arg1);
+// Known callee 0x006BB0C0: Unknown::appendUniqueToArray_006BB0C0 (Appends a non-zero value to the DynamicArray at +0x9C unless it is already present; then calls virtual slot 0x20 on self with the value.)
+extern void ext_006BB0C0(void* self, uint32_t value);
+
+// @name Unknown::forEachItemInheritedInsert_00742E60
+// @class Unknown
+// @summary Calls virtual slot 0x0C on arg0 to get an owner object; for each item in owner's array (count +0xC0, items ptr +0xD0) not found via findItemByKey on arg0, inserts the result of insertVirtualResultIntoArray into arg0's array.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x00 void* field_0x00
+// NOTE: +0xC0/+0xD0 are read from the owner object returned by arg0's vtable slot 0x0C, not from self.
+void fn_00742E60(void* self, void* arg0) {
+    // Virtual call: arg0->vtable[0x0C](arg0) -> owner (thiscall, no args beyond this).
+    void* const* vtbl = *reinterpret_cast<void* const* const*>(arg0);
+    using SlotFn = uint32_t (*)(void*);
+    const uint32_t owner = reinterpret_cast<SlotFn>(vtbl[3])(arg0);
+    if (owner == 0) {
+        return;
+    }
+
+    const void* ownerPtr = reinterpret_cast<const void*>(static_cast<uintptr_t>(owner));
+    const int32_t count = lift_field<int32_t>(ownerPtr, 0xC0);
+    for (int32_t i = 0; i < count; ++i) {
+        const uint32_t items = lift_field<uint32_t>(ownerPtr, 0xD0);
+        const uint32_t* arr = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(items));
+        const uint32_t item = arr[i];
+
+        if (ext_006BB150(arg0, item) == 0) {
+            const uint32_t selfField = lift_field<uint32_t>(self, 0x04);
+            const int32_t result = ext_006D3B50(reinterpret_cast<void*>(static_cast<uintptr_t>(selfField)), static_cast<int32_t>(item));
+            if (result != 0) {
+                ext_006BB0C0(arg0, static_cast<uint32_t>(result));
+            }
+        }
+    }
+}
+} // namespace lift_00742E60

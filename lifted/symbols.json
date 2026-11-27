@@ -78578,6 +78578,13 @@
     "summary": "Search an array of string pointers for a matching string, returning its index or -1.",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x00742E60": {
+    "name": "Unknown::forEachItemInheritedInsert_00742E60",
+    "class": "Unknown",
+    "signature": "void fn_00742E60(void* self, void* arg0)",
+    "summary": "Calls virtual slot 0x0C on arg0 to get an owner object; for each item in owner's array (count +0xC0, items ptr +0xD0) not found via findItemByKey on arg0, inserts the result of insertVirtualResultIntoArray into arg0's array.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x00743440": {
     "name": "findFirstMatchingItem",
     "signature": "int fn_00743440(void* arg1, void* list)",

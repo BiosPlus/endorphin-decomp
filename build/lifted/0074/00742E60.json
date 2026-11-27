@@ -1,0 +1,28 @@
+{
+  "va": "0x00742E60",
+  "size": 112,
+  "orig_symbol": "sub_00742E60",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "Unknown::forEachItemInheritedInsert_00742E60",
+  "class": "Unknown",
+  "signature": "void fn_00742E60(void* self, void* arg0)",
+  "summary": "Calls virtual slot 0x0C on arg0 to get an owner object; for each item in owner's array (count +0xC0, items ptr +0xD0) not found via findItemByKey on arg0, inserts the result of insertVirtualResultIntoArray into arg0's array.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:55:40Z"
+}
