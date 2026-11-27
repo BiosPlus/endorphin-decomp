@@ -13,6 +13,7 @@ struct MdtArthur_arthurSolver_sse_Fields {
     // +0x0   float*                   out  (evidence: 0x007F44C0)
     // +0x4   uint8_t*                 field_0x04  (evidence: 0x007F44C0)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x007F44C0)
-    // +0xC   int32_t                  field_0x0c  (evidence: 0x007F44C0)
+    // +0xC   int32_t                  field_0x0c  (evidence: 0x007F4330, 0x007F44C0)
+    // +0x2C  int32_t                  field_0x2c  (evidence: 0x007F4330)
 };
 } // namespace lifted_layout

@@ -1,0 +1,28 @@
+{
+  "va": "0x007F4330",
+  "size": 400,
+  "orig_symbol": "MdtArthur::arthurSolver_sse::vfunc_1",
+  "src_path": "src/MdtArthur/arthurSolver_sse.cpp",
+  "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp",
+  "name": "MdtArthur::arthurSolver_sse::vfunc_1",
+  "class": "MdtArthur::arthurSolver_sse",
+  "signature": "void __stdcall fn_007F4330( float* out, int32_t count, uint32_t unused_10, ArthurSolverParams params, const uint8_t* esi, uint32_t unused_94, uint32_t unused_98, uint32_t unused_9c, const float* in_vec, uint32_t unused_a4, uint32_t unused_a8, float bias, float scale)",
+  "summary": "Computes 4-wide SSE reciprocal of scaled/biased input plus strided matrix-block products.",
+  "fields": [
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x2C",
+      "type": "int32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:05:48Z"
+}

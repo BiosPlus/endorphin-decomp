@@ -58,8 +58,10 @@ void fn_007F4330(void* self, int32_t count, const void* params, const void* rec_
         }
     }
 }
+#include <cstdint>
+#include <xmmintrin.h>
 
-// [0x007F44C0]
+#include <xmmintrin.h>
 // @name MdtArthur::arthurSolver_sse::vfunc_2
 // @class MdtArthur::arthurSolver_sse
 // @summary Projected Gauss-Seidel / LCP iterative solver step for MdtArthur::arthurSolver_sse
@@ -196,3 +198,86 @@ void __stdcall fn_007F44C0(void* self_ptr, void* arg1_ptr, const uint32_t* arg2_
         ++iter;
     }
 }
+
+// [0x007F4330]
+namespace lift_007F4330 {
+// @name MdtArthur::arthurSolver_sse::vfunc_1
+// @class MdtArthur::arthurSolver_sse
+// @summary Computes 4-wide SSE reciprocal of scaled/biased input plus strided matrix-block products.
+// @field MdtArthur::arthurSolver_sse +0x0C int32_t field_0x0c
+// @field MdtArthur::arthurSolver_sse +0x2C int32_t field_0x2c
+
+
+extern void ext_007F36C0(float* out, const uint8_t* base, const float* mat, int idx);
+
+struct ArthurSolverParams {
+    const uint8_t* blk_base;   // +0x00 (ebp+0x14)
+    uint32_t pad_04[12];       // +0x04..+0x30
+    const int32_t* table1;     // +0x34 (ebp+0x48 -> esp+0x84)
+    uint32_t pad_38[2];        // +0x38..+0x3C
+    const int32_t* table2;     // +0x40 (ebp+0x54 -> esp+0x90)
+    uint32_t pad_44[13];       // +0x44..+0x74
+    int32_t stride;            // +0x78 (ebp+0x8c -> esp+0xc8)
+};
+
+void __stdcall fn_007F4330(
+    float* out,
+    int32_t count,
+    uint32_t unused_10,
+    ArthurSolverParams params,
+    const uint8_t* esi,
+    uint32_t unused_94,
+    uint32_t unused_98,
+    uint32_t unused_9c,
+    const float* in_vec,
+    uint32_t unused_a4,
+    uint32_t unused_a8,
+    float bias,
+    float scale)
+{
+    (void)unused_10;
+    (void)unused_94;
+    (void)unused_98;
+    (void)unused_9c;
+    (void)unused_a4;
+    (void)unused_a8;
+
+    int32_t n = count / 4;
+    if (n == 0) {
+        return;
+    }
+
+    __m128 xmm_scale = _mm_set1_ps(scale);
+    __m128 xmm_bias = _mm_set1_ps(bias);
+
+    for (int32_t i = 0; i < n; ++i) {
+        alignas(16) float sum[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+
+        int32_t c = lift_field<int32_t>(esi, 0x0C);
+        int32_t b = lift_field<int32_t>(esi, 0x2C);
+
+        if (c != -1) {
+            int32_t idx = params.table1[params.stride * c + i] + params.table2[c];
+            const float* mat = reinterpret_cast<const float*>(params.blk_base + idx * 96);
+            ext_007F36C0(sum, esi, mat, 0);
+        }
+
+        if (b != -1) {
+            int32_t idx = params.table1[params.stride * b + i] + params.table2[b];
+            const float* mat = reinterpret_cast<const float*>(params.blk_base + idx * 96);
+            ext_007F36C0(sum, esi, mat, 1);
+        }
+
+        __m128 v_in = _mm_load_ps(in_vec + i * 4);
+        __m128 v_sum = _mm_load_ps(sum);
+        __m128 v = _mm_add_ps(_mm_add_ps(_mm_mul_ps(v_in, xmm_scale), xmm_bias), v_sum);
+
+        __m128 r = _mm_rcp_ps(v);
+        __m128 r2v = _mm_mul_ps(_mm_mul_ps(r, v), r);
+        __m128 res = _mm_sub_ps(_mm_add_ps(r, r), r2v);
+        _mm_store_ps(out + i * 4, res);
+
+        esi += 0x100;
+    }
+}
+} // namespace lift_007F4330
