@@ -12,7 +12,7 @@ struct ValuePtr_Fields {
     // +0x0   void*                    ptr  (evidence: 0x004B4C30, 0x005A46E0, 0x005B7320, 0x005B7BC0) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    ctrl  (evidence: 0x005B7320) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x005B7490, 0x005B7BC0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x04  (evidence: 0x004C0BE0, 0x005B7BC0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x004C0BE0, 0x005B7BC0, 0x00692FD0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    obj  (evidence: 0x005A46E0, 0x005B7BC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    type  (evidence: 0x004B4C30) // CONFLICT: multiple definitions at +0x4
 };

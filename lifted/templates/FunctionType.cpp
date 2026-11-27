@@ -494,3 +494,35 @@ uint32_t fn_005B7320(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     return a2;
 }
 } // namespace lift_005B7320
+
+// [0x00692FD0]
+namespace lift_00692FD0 {
+extern uint32_t __thiscall ext_00692F50(void* self, uint32_t arg);
+
+// @name ExprParser::FunctionType<ValuePtrArrayObject, ValuePtr const &, ValuePtr const &, ValuePtrArrayObject::push>::vfunc_48
+// @class ExprParser::FunctionType<ValuePtrArrayObject, ValuePtr const &, ValuePtr const &, ValuePtrArrayObject::push>
+// @summary Calls ValuePtrArrayObject::push on arg1 with arg2 and wraps the resulting ValuePtr.
+// @field ValuePtr +0x04 void* field_0x04
+uint32_t* __thiscall fn_00692FD0(void* self, uint32_t* out, uint32_t* arg1, uint32_t arg2) {
+    (void)self;
+    void* obj = reinterpret_cast<void*>(*arg1);
+    uint32_t esi_val = ext_00692F50(obj, arg2);
+    uint32_t* esi = reinterpret_cast<uint32_t*>(esi_val);
+
+    uint32_t field4 = esi[1];
+    if (field4 != 0) {
+        void* ecx = reinterpret_cast<void*>(field4);
+        void** vtable = *reinterpret_cast<void***>(ecx);
+        using VFunc28 = uint32_t* (__thiscall*)(void*, uint32_t**, uint32_t*);
+        VFunc28 fn = reinterpret_cast<VFunc28>(vtable[0x70 / 4]);
+        uint32_t* tmp = arg1;
+        uint32_t* res = fn(ecx, &tmp, esi);
+        out[0] = *res;
+        out[1] = esi[1];
+    } else {
+        out[0] = 0;
+        out[1] = field4;
+    }
+    return out;
+}
+} // namespace lift_00692FD0
