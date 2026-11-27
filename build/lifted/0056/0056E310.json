@@ -1,0 +1,22 @@
+{
+  "va": "0x0056E310",
+  "size": 800,
+  "orig_symbol": "BVHIO::vfunc_14",
+  "src_path": "src/classes/BVHIO.cpp",
+  "lifted_path": "lifted/classes/BVHIO.cpp",
+  "name": "BVHIO::vfunc_14",
+  "class": "BVHIO",
+  "signature": "static void init_bvh_node_vtables(uint8_t* node)",
+  "summary": "Parses a BVH file hierarchy (ROOT/JOINT nodes) from a file stream and initializes the skeleton/timeline.",
+  "fields": [
+    {
+      "class": "BVHIO",
+      "offset": "+0x27C",
+      "type": "uint32_t",
+      "name": "field_0x27C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:34:01Z"
+}

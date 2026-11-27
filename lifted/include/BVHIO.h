@@ -12,6 +12,7 @@ namespace lifted_layout {
 struct BVHIO_Fields {
     // +0x16C int32_t                  startFrame  (evidence: 0x0056EAC0)
     // +0x170 int32_t                  endFrame  (evidence: 0x0056EAC0)
+    // +0x27C uint32_t                 field_0x27C  (evidence: 0x0056E310)
     // +0x414 uint32_t                 skeletonData  (evidence: 0x0056EAC0)
     // +0x420 uint32_t                 timeline  (evidence: 0x0056EAC0)
     // +0x424 uint32_t                 progressCallback  (evidence: 0x0056EAC0)

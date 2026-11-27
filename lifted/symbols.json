@@ -55848,6 +55848,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::SkeletalJointData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005F0620": {
+    "name": "NMData::SkeletalJointData::clone",
+    "class": "NMData::SkeletalJointData",
+    "signature": "extern \"C\" void* __fastcall fn_005F0620(void* self)",
+    "summary": "Allocates and constructs a clone of SkeletalJointData and copies its state, transform channels, and child objects.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005F0A20": {
     "name": "NMData::RPROJointData::vfunc_17_off_C",
     "class": "NMData::RPROJointData",

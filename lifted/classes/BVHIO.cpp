@@ -380,3 +380,130 @@ void __thiscall fn_0056EAC0(void* self, const std::string* filename) {
     ofs.close();
 }
 } // namespace lift_0056EAC0
+
+// [0x0056E310]
+namespace lift_0056E310 {
+// @name BVHIO::vfunc_14
+// @class BVHIO
+// @summary Parses a BVH file hierarchy (ROOT/JOINT nodes) from a file stream and initializes the skeleton/timeline.
+// @field BVHIO +0x27C uint32_t field_0x27C
+
+
+extern void* ext_0058F200(void* self);
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_00587920(void* self, void* node, uint32_t flag);
+extern void ext_0056DCA0(void* self, void* node, void* stream);
+extern void* ext_006A6E9E(void* ptr, int32_t vfDelta, uint32_t srcType, uint32_t targetType, int32_t isReference);
+extern void ext_005557A0(void* self, void* castedNode, void* obj27c);
+extern void ext_00401D20(void* self);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009250C4;
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_009250EC;
+extern uint32_t mem_009250DC;
+extern uint32_t mem_00924FC8;
+extern uint32_t mem_00924FC0;
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_009250CC;
+
+static void init_bvh_node_vtables(uint8_t* node) {
+    lift_field<uint32_t>(node, 0x00) = 0x0092912Cu;
+    lift_field<uint32_t>(node, 0x04) = 0x009290E4u;
+    lift_field<uint32_t>(node, 0x08) = 0x009290A4u;
+    lift_field<uint32_t>(node, 0x0C) = 0x00929054u;
+    lift_field<uint32_t>(node, 0x150) = 0x00929040u;
+}
+
+extern uint32_t __thiscall fn_0056E310(void* self, void* filePathStr) {
+    void* obj27c = static_cast<uint8_t*>(self) + 0x27C;
+    uint32_t obj27c_vtable = *static_cast<uint32_t*>(obj27c);
+    reinterpret_cast<void(__thiscall*)(void*)>(
+        *reinterpret_cast<uint32_t*>(obj27c_vtable + 0x84)
+    )(obj27c);
+
+    const char* pathCStr = reinterpret_cast<const char*(__thiscall*)(void*)>(mem_00924FF0)(filePathStr);
+
+    uint8_t ifs[0x8C]{};
+    reinterpret_cast<void(__thiscall*)(void*, const char*, int32_t, int32_t, int32_t)>(mem_009250C4)(
+        ifs, pathCStr, 1, 0x40, 1
+    );
+
+    uint8_t rootNode[0x154]{};
+    ext_0058F200(rootNode);
+    init_bvh_node_vtables(rootNode);
+
+    uint8_t token[0x1C]{};
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FE8)(token);
+
+    int32_t rootCount = 0;
+    void* curNode = nullptr;
+
+    void* strm = reinterpret_cast<void*(__cdecl*)(void*, void*)>(mem_009250EC)(ifs, token);
+    void* iosPtr = static_cast<uint8_t*>(strm) + *reinterpret_cast<int32_t*>(*reinterpret_cast<uint32_t*>(strm) + 4);
+    while (reinterpret_cast<void*(__thiscall*)(void*)>(mem_009250DC)(iosPtr) != nullptr) {
+        if (!reinterpret_cast<bool(__cdecl*)(void*, uint32_t)>(mem_00924FC8)(token, 0x009592ACu)) {
+            break;
+        }
+
+        if (reinterpret_cast<bool(__cdecl*)(void*, uint32_t)>(mem_00924FC0)(token, 0x009592A4u)) {
+            rootCount += 1;
+            uint8_t* node = static_cast<uint8_t*>(ext_006A5C62(0x154));
+            if (node != nullptr) {
+                ext_0058F200(node);
+                lift_field<uint32_t>(node, 0x150) = 0x00928EACu;
+                init_bvh_node_vtables(node);
+            }
+            ext_00587920(rootNode, node, 1);
+            curNode = node;
+            ext_0056DCA0(self, node, ifs);
+        } else if (reinterpret_cast<bool(__cdecl*)(void*, uint32_t)>(mem_00924FC0)(token, 0x00959278u)) {
+            uint8_t* node = static_cast<uint8_t*>(ext_006A5C62(0x154));
+            if (node != nullptr) {
+                ext_0058F200(node);
+                lift_field<uint32_t>(node, 0x150) = 0x00928EACu;
+                init_bvh_node_vtables(node);
+            }
+            ext_00587920(curNode, node, 1);
+            ext_0056DCA0(self, node, ifs);
+        }
+
+        strm = reinterpret_cast<void*(__cdecl*)(void*, void*)>(mem_009250EC)(ifs, token);
+        iosPtr = static_cast<uint8_t*>(strm) + *reinterpret_cast<int32_t*>(*reinterpret_cast<uint32_t*>(strm) + 4);
+    }
+
+    if (rootCount == 1) {
+        uint32_t beginPtr = lift_field<uint32_t>(rootNode, 0x80);
+        uint32_t endPtr = lift_field<uint32_t>(rootNode, 0x84);
+        if (beginPtr > endPtr) {
+            reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+        }
+        if (beginPtr >= endPtr) {
+            reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+        }
+        curNode = reinterpret_cast<void*>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(beginPtr))));
+    } else {
+        curNode = rootNode;
+    }
+
+    uint32_t curNodeVtable = *static_cast<uint32_t*>(curNode);
+    uint32_t nodeProp = reinterpret_cast<uint32_t(__thiscall*)(void*)>(
+        *reinterpret_cast<uint32_t*>(curNodeVtable + 0x24)
+    )(curNode);
+
+    uint32_t obj27cVtable = *static_cast<uint32_t*>(obj27c);
+    reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(
+        *reinterpret_cast<uint32_t*>(obj27cVtable + 0x5C)
+    )(obj27c, nodeProp);
+
+    void* casted = ext_006A6E9E(curNode, 0, 0x00A2E2BCu, 0x00A2E264u, 0);
+    ext_005557A0(self, casted, obj27c);
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(token);
+    ext_00401D20(rootNode);
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_009250CC)(ifs);
+
+    return 0;
+}
+} // namespace lift_0056E310
