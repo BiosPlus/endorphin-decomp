@@ -1645,3 +1645,58 @@ uint32_t __cdecl sub_007AA5A0(uint32_t idx) {
     }
 }
 } // namespace lift_007AA5A0
+
+// [0x007AA510] sub_007AA510 (144 bytes)
+namespace lift_007AA510 {
+// Known callee 0x007AA5A0: sub_007AA5A0 (Lookup table mapping index 0..22 to a constant address)
+extern uint32_t ext_007AA5A0(uint32_t idx);
+extern int mem_00998118;
+extern int mem_00B61218;
+extern int mem_00B61210;
+extern int mem_00B61214;
+
+namespace {
+// Slot table at 0x00B61170: 8-byte slots of { uint32 key; uint32 value; }.
+// key == 0 marks a free slot. 19 slots span [0x00B61170, 0x00B61208).
+constexpr ptrdiff_t kSlotTableBase = 0x00B61170;
+constexpr ptrdiff_t kSlotTableEnd  = 0x00B61208;
+constexpr ptrdiff_t kSlotStride    = 8;
+// Absolute-address table: base is null, offsets are the real VAs.
+void* const kNoBase = nullptr;
+}  // namespace
+
+// @name sub_007AA510
+// @summary Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.
+void fn_007AA510(uint32_t idx) {
+    if (idx == 0) {
+        return;
+    }
+
+    // Latch the flag byte from mem_00998118 into mem_00B61218.
+    uint8_t flag = *reinterpret_cast<uint8_t*>(&mem_00998118);
+    *reinterpret_cast<uint8_t*>(&mem_00B61218) = flag;
+
+    // Scan for a free slot (key == 0).
+    ptrdiff_t addr = kSlotTableBase;
+    while (addr < kSlotTableEnd) {
+        if (lift_field<uint32_t>(kNoBase, addr) == 0) {
+            lift_field<uint32_t>(kNoBase, addr) = idx;
+            uint32_t value = ext_007AA5A0(idx);
+            lift_field<uint32_t>(kNoBase, addr + 4) = value;
+            lift_field<uint32_t>(kNoBase, addr + kSlotStride) = 0;
+            return;
+        }
+        addr += kSlotStride;
+    }
+
+    // Table full: use the overflow globals.
+    if (mem_00B61210 != 0) {
+        mem_00B61210 = 0x16;
+        mem_00B61214 = static_cast<int>(ext_007AA5A0(0x16));
+        return;
+    }
+
+    mem_00B61210 = static_cast<int>(idx);
+    mem_00B61214 = static_cast<int>(ext_007AA5A0(idx));
+}
+} // namespace lift_007AA510
