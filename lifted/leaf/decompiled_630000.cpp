@@ -1503,3 +1503,54 @@ void* fn_0063E3E0(void* self, uint32_t stackArg) {
     return obj;
 }
 } // namespace lift_0063E3E0
+
+// [0x0063E770] sub_0063E770 (128 bytes)
+namespace lift_0063E770 {
+// Known callee 0x0063E0C0: Unknown::Unknown(uint32_t, const std::string&) (string-copy ctor stub) (Stamps vtable 0x0097CB4C at +0x00, copy-constructs a std::string from the second argument into this+0x04, stores the first argument at +0x20, and returns this.)
+extern void* ext_0063E0C0(void* self, DWORD arg0, const void* name);
+
+// Global DWORD passed as the first argument to ext_0063E0C0.
+extern DWORD mem_00A9B148;
+
+// Literal C string used to build the temporary std::string.
+extern const char mem_0097CC20[];
+
+// Vtable stamped at +0x00 after the ext_ call.
+extern const char mem_0097CC08[];
+
+// MSVCP80 import slots (IAT entries holding function pointers):
+//   mem_00924FE4 : basic_string(const char*) ctor
+//   mem_00924FF4 : basic_string dtor
+//   mem_00924FE0 : basic_string(const basic_string&) copy ctor
+extern uintptr_t mem_00924FE4;
+extern uintptr_t mem_00924FF4;
+extern uintptr_t mem_00924FE0;
+
+// @name Unknown::Unknown_0063E770
+// @class Unknown
+// @summary Thiscall ctor(const std::string& src): builds a temp std::string from the literal at 0x0097CC20, calls ext_0063E0C0(this, *mem_00A9B148, &temp), destroys temp, stamps vtable 0x0097CC08 at +0x00, copy-constructs std::string at +0x24 from src, returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x24 uint8_t field_0x24 (std::string, copy-constructed from src)
+
+namespace {
+using CStrCtorFn = void* (__thiscall*)(void* self, const char* s);
+using StrDtorFn = void (__thiscall*)(void* self);
+using StrCopyCtorFn = void* (__thiscall*)(void* self, const void* other);
+} // namespace
+
+__thiscall void* fn_0063E770(void* self, const void* src) {
+    // Temporary std::string (MSVC 2005 layout; storage sized to the frame slot used by the original).
+    alignas(8) uint8_t temp[0x24];
+
+    reinterpret_cast<CStrCtorFn>(mem_00924FE4)(temp, mem_0097CC20);
+    ext_0063E0C0(self, mem_00A9B148, temp);
+    reinterpret_cast<StrDtorFn>(mem_00924FF4)(temp);
+
+    *reinterpret_cast<DWORD*>(self) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_0097CC08));
+
+    uint8_t* field_24 = static_cast<uint8_t*>(self) + 0x24;
+    reinterpret_cast<StrCopyCtorFn>(mem_00924FE0)(field_24, src);
+
+    return self;
+}
+} // namespace lift_0063E770
