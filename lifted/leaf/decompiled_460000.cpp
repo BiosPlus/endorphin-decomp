@@ -2463,3 +2463,63 @@ void* fn_00461660() {
     return ext_00461510(obj, 0);
 }
 } // namespace lift_00461660
+
+// [0x004622F0] sub_004622F0 (137 bytes)
+namespace lift_004622F0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one stack argument (0x1c); returns a heap pointer.
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x006ADBF0: sub_006ADBF0 (Constructor initializing vtable, std::map-like tree at +0xc, MFC object at +0x18, and fields)
+// __thiscall, ret 8: (this, arg1, arg2), returns this.
+extern void* ext_006ADBF0(void* self, uint32_t arg1, uint32_t arg2);
+extern int mem_00991070;
+extern int mem_00924FE8;
+extern int mem_00924E90;
+extern int mem_00924E94;
+extern int mem_00924E98;
+extern int mem_00924FA0;
+extern int mem_00924FCC;
+extern int mem_00924FF0;
+extern int mem_00924FF4;
+
+// @name Unknown::initWithPairAndAllocString_004622F0
+// @class Unknown
+// @summary Constructs the object: runs the base ctor, stores two stack args, allocates a 0x1c-byte block and default-constructs a string into it.
+// @field Unknown +0x00 uint32_t vtable_ptr
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x34 uint8_t field_0x34
+// @field Unknown +0x40 uint32_t field_0x40
+// @field Unknown +0x44 uint32_t field_0x44
+void* fn_004622F0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    // Metadata-only references to rdata slots listed in the original asm (not real accesses).
+    (void)&mem_00924E90;
+    (void)&mem_00924E94;
+    (void)&mem_00924E98;
+    (void)&mem_00924FA0;
+    (void)&mem_00924FCC;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+
+    // Base constructor: (this, arg3, <global constant 2>).
+    ext_006ADBF0(self, arg3, static_cast<uint32_t>(*reinterpret_cast<int*>(&mem_00991070)));
+
+    // Vtable pointer and stored arguments.
+    lift_field<uint32_t>(self, 0x00) = 0x00938B9C;
+    lift_field<uint32_t>(self, 0x40) = arg1;
+    lift_field<uint32_t>(self, 0x44) = arg2;
+    lift_field<uint8_t>(self, 0x34) = 1;
+
+    // Allocate 0x1c bytes; if allocation succeeded, default-construct a string in it.
+    void* block = ext_006A5C62(0x1c);
+    uint32_t result = 0;
+    if (block != nullptr) {
+        using StringDefaultCtor = void* (*)(void* self);
+        auto ctor = reinterpret_cast<StringDefaultCtor>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(*reinterpret_cast<int*>(&mem_00924FE8))));
+        result = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ctor(block)));
+    }
+    lift_field<uint32_t>(self, 0x08) = result;
+
+    return self;
+}
+} // namespace lift_004622F0
