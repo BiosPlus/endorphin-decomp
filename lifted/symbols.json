@@ -85224,6 +85224,12 @@
     "summary": "Fills buf[0..n] with ext_007B7750() results until a zero byte is produced (or n bytes are written); buf[0] is cleared first. If all n bytes are nonzero and mem_00B61218/mem_00B61219 gating allows, calls fn_007AA510(13).",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7C50": {
+    "name": "FillFlaggedByteBuffer",
+    "signature": "void fn_007B7C50(uint8_t* buf, uint32_t n)",
+    "summary": "Fills buf[0..n) with bytes from ext_007B7750(), stopping early on global flag states; caches 0x0D via ext_007AA510 once if buf[i] was already set, then continues filling after the existing string.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B8968": {
     "name": "sub_007B8968_table",
     "signature": "const uint8_t* fn_007B8968(void* self)",

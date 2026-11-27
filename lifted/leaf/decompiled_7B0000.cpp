@@ -2236,3 +2236,65 @@ void fn_007B2D80(uint32_t root, uint32_t key, uint32_t out) {
     lift_field<uint32_t>(kNoBase, static_cast<ptrdiff_t>(out)) = result;
 }
 } // namespace lift_007B2D80
+
+// [0x007B7C50] sub_007B7C50 (144 bytes)
+namespace lift_007B7C50 {
+extern uint8_t ext_007B7750();
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+extern uint8_t mem_00B61218;
+extern uint8_t mem_00B61219;
+
+// @name FillFlaggedByteBuffer
+// @summary Fills buf[0..n) with bytes from ext_007B7750(), stopping early on global flag states; caches 0x0D via ext_007AA510 once if buf[i] was already set, then continues filling after the existing string.
+void fn_007B7C50(uint8_t* buf, uint32_t n) {
+    buf[0] = 0;
+    uint32_t i = 0;
+
+    if (n != 0) {
+        for (;;) {
+            const uint8_t c = ext_007B7750();
+            buf[i] = c;
+            if (mem_00B61218 != 0 && mem_00B61219 == 0) {
+                return;
+            }
+            if (c == 0) {
+                break;
+            }
+            ++i;
+            if (i >= n) {
+                break;
+            }
+        }
+    }
+
+    // L_89: if buf[i] is non-zero, cache 0x0D and check the second flag.
+    if (buf[i] != 0) {
+        ext_007AA510(13);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+    }
+
+    if (i >= n) {
+        return;
+    }
+
+    // Resume at strlen(buf) + 1 (the repne scasb sequence in the original asm).
+    i = static_cast<uint32_t>(std::strlen(reinterpret_cast<const char*>(buf))) + 1;
+    if (i >= n) {
+        return;
+    }
+
+    for (;;) {
+        buf[i] = ext_007B7750();
+        if (mem_00B61218 != 0 && mem_00B61219 == 0) {
+            return;
+        }
+        ++i;
+        if (i >= n) {
+            return;
+        }
+    }
+}
+} // namespace lift_007B7C50

@@ -1,0 +1,13 @@
+{
+  "va": "0x007B7C50",
+  "size": 144,
+  "orig_symbol": "sub_007B7C50",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "FillFlaggedByteBuffer",
+  "signature": "void fn_007B7C50(uint8_t* buf, uint32_t n)",
+  "summary": "Fills buf[0..n) with bytes from ext_007B7750(), stopping early on global flag states; caches 0x0D via ext_007AA510 once if buf[i] was already set, then continues filling after the existing string.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:14:11Z"
+}
