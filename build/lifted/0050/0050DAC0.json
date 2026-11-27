@@ -1,0 +1,28 @@
+{
+  "va": "0x0050DAC0",
+  "size": 283,
+  "orig_symbol": "NMData::TaskManager::vfunc_1_off_4",
+  "src_path": "src/NMData/TaskManager.cpp",
+  "lifted_path": "lifted/NMData/TaskManager.cpp",
+  "name": "NMData::TaskManager::vfunc_1_off_4",
+  "class": "NMData::TaskManager",
+  "signature": "static uint32_t normalize_sentinel(uint32_t r)",
+  "summary": "Looks up two sentinel-normalized entries via 0x0063F530, feeds them to the sub-object helpers, then resolves a named item and forwards it to the name-index lookup on this-4; returns void.",
+  "fields": [
+    {
+      "class": "NMData::TaskManager",
+      "offset": "+0xC",
+      "type": "unknown",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "NMData::TaskManager",
+      "offset": "+0x20",
+      "type": "unknown",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:11:43Z"
+}

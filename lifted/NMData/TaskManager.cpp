@@ -176,3 +176,72 @@ extern void __thiscall fn_0050D820(void* self, void* arg1, uint32_t arg2) {
     (void)arg2;
 }
 } // namespace lift_0050D820
+
+// [0x0050DAC0] NMData::TaskManager::vfunc_1_off_4 (283 bytes)
+namespace lift_0050DAC0 {
+// Callee signatures inferred from the call sites (thiscall = ecx + stack args).
+extern uint32_t __thiscall ext_0063F530(void* self, uint32_t a, uint32_t b, uint32_t c);
+extern void __thiscall ext_0050D0B0(void* self, uint32_t a);
+extern void __cdecl ext_0050D8C0(uint32_t a, void* b, uint32_t c, uint32_t d);
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+// 0x004275E0: assignVirtualString (cdecl, dst + obj).
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern void __thiscall ext_0050D7C0(void* self);
+// 0x00508800: FindMatchingNameIndex (thiscall, one stack arg, returns bool).
+extern bool __thiscall ext_00508800(void* self, const void* str);
+
+// MSVC import/global slots (values are the function/data addresses).
+extern int mem_00924FE8;
+extern int mem_00A9F308;
+extern int mem_00A9F30C;
+extern int mem_00A9F300;
+extern int mem_00A9F438;
+extern int mem_00924FF4;
+
+// Maps the lookup sentinels (0x00B53A34, 0x00B53B30, 0x00B53AB0, 0x00B53A70, 0x00B53AF0) to 0x00B53B30.
+static uint32_t normalize_sentinel(uint32_t r) {
+    switch (r) {
+        case 0x00B53A34u:
+        case 0x00B53B30u:
+        case 0x00B53AB0u:
+        case 0x00B53A70u:
+        case 0x00B53AF0u:
+            return 0x00B53B30u;
+        default:
+            return r;
+    }
+}
+
+// @name NMData::TaskManager::vfunc_1_off_4
+// @class NMData::TaskManager
+// @summary Looks up two sentinel-normalized entries via 0x0063F530, feeds them to the sub-object helpers, then resolves a named item and forwards it to the name-index lookup on this-4; returns void.
+// @field NMData::TaskManager +0x0C unknown field_0x0C
+// @field NMData::TaskManager +0x20 unknown field_0x20
+extern void __thiscall fn_0050DAC0(void* self, void* arg) {
+    char* const obj = static_cast<char*>(self);
+    // 0x1C-byte std::string temporary (MSVC layout); constructed and destroyed via the IAT slots.
+    alignas(4) uint8_t tmp[0x1C] = {};
+
+    uint32_t r1 = normalize_sentinel(ext_0063F530(arg, static_cast<uint32_t>(mem_00A9F308), 0, 1));
+    ext_0050D0B0(obj + 0x0C, r1);
+
+    uint32_t r2 = normalize_sentinel(ext_0063F530(arg, static_cast<uint32_t>(mem_00A9F30C), 0, 1));
+    ext_0050D8C0(r2, obj + 0x20, static_cast<uint32_t>(mem_00A9F300), 1);
+
+    auto ctor = reinterpret_cast<void(__thiscall*)(void*)>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE8)));
+    auto dtor = reinterpret_cast<void(__thiscall*)(void*)>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    ctor(tmp);
+
+    const char* name = reinterpret_cast<const char*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00A9F438)));
+    uint32_t item = ext_0063EFE0(arg, name);
+    ext_004275E0(tmp, reinterpret_cast<void*>(static_cast<uintptr_t>(item)));
+
+    ext_00508800(obj - 4, tmp);
+    ext_0050D7C0(obj - 4);
+
+    dtor(tmp);
+}
+} // namespace lift_0050DAC0
