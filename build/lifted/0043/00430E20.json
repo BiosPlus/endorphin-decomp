@@ -1,0 +1,13 @@
+{
+  "va": "0x00430E20",
+  "size": 132,
+  "orig_symbol": "sub_00430E20",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "CString_concat_cstr",
+  "signature": "void* __cdecl sub_00430E20(void* out, void* str1, const void* psz2)",
+  "summary": "Concatenates a CStringT and a C-string into a destination CStringT",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:26:15Z"
+}

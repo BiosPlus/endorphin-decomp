@@ -4351,3 +4351,27 @@ extern void* __stdcall fn_00430FC0(void* out_str, void* in_cstr) {
     return out_str;
 }
 } // namespace lift_00430FC0
+
+// [0x00430E20]
+namespace lift_00430E20 {
+// @name CString_concat_cstr
+// @summary Concatenates a CStringT and a C-string into a destination CStringT
+// @return void* Destination CStringT pointer (arg0)
+
+extern void* (__thiscall *mem_0092478C)(void* self);
+extern void (__thiscall *mem_00924788)(void* self, void* mgr);
+extern uint32_t (__cdecl *mem_00924784)(const void* psz);
+extern uint32_t (__cdecl *mem_0092431C)(void* self, const void* psz, uint32_t len);
+extern uint32_t (__cdecl *mem_00924300)(void* self, uint32_t arg);
+extern void (__cdecl *mem_00924780)(void* out, uint32_t arg);
+
+void* __cdecl sub_00430E20(void* out, void* str1, const void* psz2) {
+    void* mgr = mem_0092478C(str1);
+    mem_00924788(out, mgr);
+    uint32_t len2 = mem_00924784(psz2);
+    uint32_t len1 = mem_0092431C(str1, psz2, len2);
+    uint32_t total = mem_00924300(str1, len1);
+    mem_00924780(out, total);
+    return out;
+}
+} // namespace lift_00430E20
