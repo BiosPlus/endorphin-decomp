@@ -1,0 +1,28 @@
+{
+  "va": "0x006DCF80",
+  "size": 68,
+  "orig_symbol": "sub_006DCF80",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::insertVirtualItemsIntoArray_006DCF80",
+  "class": "Unknown",
+  "signature": "void fn_006DCF80(void* self, void* arg)",
+  "summary": "Gets a container via vtable slot 3 of self, then inserts each of its items into the array passed as the stack argument using DynamicArray::InsertAt.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "int32_t",
+      "name": "field_0xc0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "void**",
+      "name": "field_0xd0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:23Z"
+}

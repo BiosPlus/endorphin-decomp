@@ -1450,7 +1450,7 @@ struct Unknown_Fields {
     // +0xC0  int                      field_0xC0  (evidence: 0x00705740) // CONFLICT: multiple definitions at +0xC0
     // +0xC0  int32_t                  field_0xC0  (evidence: 0x00700F50, 0x00708000, 0x00708C10, 0x00708CC0) // CONFLICT: multiple definitions at +0xC0
     // +0xC0  float                    field_0xc0  (evidence: 0x00547220) // CONFLICT: multiple definitions at +0xC0
-    // +0xC0  int32_t                  field_0xc0  (evidence: 0x00708D10, 0x00709AB0) // CONFLICT: multiple definitions at +0xC0
+    // +0xC0  int32_t                  field_0xc0  (evidence: 0x006DCF80, 0x00708D10, 0x00709AB0) // CONFLICT: multiple definitions at +0xC0
     // +0xC1  BYTE                     field_0xC1  (evidence: 0x00667810) // CONFLICT: multiple definitions at +0xC1
     // +0xC1  uint8_t                  field_0xC1  (evidence: 0x00666C90) // CONFLICT: multiple definitions at +0xC1
     // +0xC4  int32_t                  field_0xC4  (evidence: 0x006BCEE0) // CONFLICT: multiple definitions at +0xC4
@@ -1481,7 +1481,7 @@ struct Unknown_Fields {
     // +0xD0  void*                    field_0xD0  (evidence: 0x004486A0, 0x0070AD00, 0x0070E3B0) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  int32_t                  field_0xd0  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t                 field_0xd0  (evidence: 0x0054D220, 0x00709AB0) // CONFLICT: multiple definitions at +0xD0
-    // +0xD0  void**                   field_0xd0  (evidence: 0x00708D10) // CONFLICT: multiple definitions at +0xD0
+    // +0xD0  void**                   field_0xd0  (evidence: 0x006DCF80, 0x00708D10) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  DynamicArray<void*>      items  (evidence: 0x006DD240) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t field_0xD0 (accessed on the object returned by ord_3085(self), not on self)  (evidence: 0x00456DE0) // CONFLICT: multiple definitions at +0xD0
     // +0xD4  int                      field_0xD4  (evidence: 0x004486A0) // CONFLICT: multiple definitions at +0xD4

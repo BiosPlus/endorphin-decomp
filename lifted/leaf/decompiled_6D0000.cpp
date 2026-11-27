@@ -3044,3 +3044,39 @@ int32_t fn_006D3B50(void* self, int32_t arg1) {
     return result;
 }
 } // namespace lift_006D3B50
+
+// [0x006DCF80] sub_006DCF80 (68 bytes)
+namespace lift_006DCF80 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::insertVirtualItemsIntoArray_006DCF80
+// @class Unknown
+// @summary Gets a container via vtable slot 3 of self, then inserts each of its items into the array passed as the stack argument using DynamicArray::InsertAt.
+// @field Unknown +0xc0 int32_t field_0xc0
+// @field Unknown +0xd0 void** field_0xd0
+void fn_006DCF80(void* self, void* arg) {
+    using VSlot3 = void* (__thiscall*)(void* self);
+
+    // mov eax,[ecx]; call [eax+0xc]  -> container = self->vtable[3](self)
+    void** vtable = *reinterpret_cast<void***>(self);
+    void* container = reinterpret_cast<VSlot3>(vtable[3])(self);
+
+    auto* base = static_cast<uint8_t*>(container);
+    int32_t count = *reinterpret_cast<int32_t*>(base + 0xc0);
+    if (count <= 0) {
+        return;
+    }
+
+    for (int32_t i = 0; i < count; ++i) {
+        // The asm reloads the item array pointer on every iteration.
+        void** items = *reinterpret_cast<void***>(static_cast<uint8_t*>(container) + 0xd0);
+        void* elem = items[i];
+
+        // push &elem (the original stack-arg slot is overwritten with elem);
+        // push *arg as index; ecx = arg as this.
+        int32_t index = *reinterpret_cast<int32_t*>(arg);
+        ext_006D2170(arg, index, &elem);
+    }
+}
+} // namespace lift_006DCF80
