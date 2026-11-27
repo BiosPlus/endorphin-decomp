@@ -27657,6 +27657,13 @@
     "summary": "Writes the byte at *src into count consecutive bytes starting at dst (src is not advanced, so it is re-read each iteration); returns dst + count. stdcall, callee pops 12 bytes.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00577B10": {
+    "name": "sub_00577B10",
+    "class": "Vector",
+    "signature": "void* __thiscall fn_00577B10( void* self, void* ret_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057CEE0 (Vector::eraseRange_0057CEE0).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00577DE0": {
     "name": "sub_00577DE0",
     "class": "Unknown",
@@ -27923,6 +27930,20 @@
     "class": "Unknown",
     "signature": "VectorIterator* __thiscall fn_0057E9E0(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
     "summary": "Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057EA40": {
+    "name": "sub_0057EA40",
+    "class": "Vector",
+    "signature": "void* __thiscall fn_0057EA40( void* self, void* ret_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057CEE0 (Vector::eraseRange_0057CEE0).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057EAB0": {
+    "name": "sub_0057EAB0",
+    "class": "Vector",
+    "signature": "void* __thiscall fn_0057EAB0( void* self, void* ret_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057CEE0 (Vector::eraseRange_0057CEE0).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057EB20": {
