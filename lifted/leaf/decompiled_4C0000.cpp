@@ -39,6 +39,7 @@ void __thiscall fn_004CCDE0(uint8_t* self) {
 } // namespace lift_0051BF10
 } // namespace lift_004CCDE0
 #include <cmath>
+#include <cstdint>
 
 // [0x004C1AC0] sub_004C1AC0 (37 bytes)
 namespace lift_004C1AC0 {
@@ -1957,3 +1958,73 @@ extern bool __thiscall fn_004C34B0(void* self, const void* str_arg, const uint32
     return false;
 }
 } // namespace lift_004C34B0
+
+// [0x004C2960]
+namespace lift_004C2960 {
+// @name createOrClone_004C2960
+// @summary Factory function: default-constructs a 0x50-byte object if arg is null, or dynamic_casts arg and copy-constructs it (throwing on cast failure), then sets final vtables.
+// @field Obj_004C2960 +0x00 uint32_t vtable_0x00
+// @field Obj_004C2960 +0x04 uint32_t vtable_0x04
+// @field Obj_004C2960 +0x18 uint32_t vtable_0x18
+
+
+void* ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+void* ext_006A5C62(uint32_t size);
+void* ext_004C2410(void* self, void* src);
+void* ext_004ED640(void* self);
+void* ext_0041CDA0(void* dst);
+void* ext_00403560(void* self, const void* src);
+[[noreturn]] void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FD0;
+extern uint8_t mem_0092F9D4[];
+extern uint8_t mem_009D47A4[];
+extern uint8_t mem_00A2E2F8[];
+extern uint8_t mem_00A39890[];
+
+void* fn_004C2960(void* src) {
+    if (src == nullptr) {
+        void* obj = ext_006A5C62(0x50);
+        if (obj == nullptr) {
+            return nullptr;
+        }
+        ext_004ED640(obj);
+        lift_field<uint32_t>(obj, 0x00) = 0x009444E4u;
+        lift_field<uint32_t>(obj, 0x04) = 0x009444B8u;
+        lift_field<uint32_t>(obj, 0x18) = 0x009444A8u;
+        return obj;
+    }
+
+    void* casted = ext_006A6E9E(src, 0, mem_00A2E2F8, mem_00A39890, 0);
+    if (casted != nullptr) {
+        void* obj = ext_006A5C62(0x50);
+        if (obj == nullptr) {
+            return nullptr;
+        }
+        ext_004C2410(obj, casted);
+        lift_field<uint32_t>(obj, 0x00) = 0x009444E4u;
+        lift_field<uint32_t>(obj, 0x04) = 0x009444B8u;
+        lift_field<uint32_t>(obj, 0x18) = 0x009444A8u;
+        return obj;
+    }
+
+    alignas(8) uint8_t typeNameStr[0x1C];
+    alignas(8) uint8_t prefixStr[0x1C];
+    alignas(8) uint8_t fullMsgStr[0x1C];
+    alignas(8) uint8_t exceptionObj[0x28];
+
+    void* typeNamePtr = ext_0041CDA0(typeNameStr);
+
+    using StringCtorFn = void* (*)(void* self, const void* cstr);
+    auto stringCtor = reinterpret_cast<StringCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+    void* prefixPtr = stringCtor(prefixStr, mem_0092F9D4);
+
+    using StringConcatFn = void* (*)(void* out, const void* lhs, const void* rhs);
+    auto stringConcat = reinterpret_cast<StringConcatFn>(static_cast<uintptr_t>(mem_00924FD0));
+    void* fullMsgPtr = stringConcat(fullMsgStr, prefixPtr, typeNamePtr);
+
+    ext_00403560(exceptionObj, fullMsgPtr);
+    ext_006A6DD2(exceptionObj, mem_009D47A4);
+}
+} // namespace lift_004C2960

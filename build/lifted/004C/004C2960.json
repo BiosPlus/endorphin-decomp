@@ -1,0 +1,33 @@
+{
+  "va": "0x004C2960",
+  "size": 383,
+  "orig_symbol": "sub_004C2960",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "createOrClone_004C2960",
+  "signature": "void* fn_004C2960(void* src)",
+  "summary": "Factory function: default-constructs a 0x50-byte object if arg is null, or dynamic_casts arg and copy-constructs it (throwing on cast failure), then sets final vtables.",
+  "fields": [
+    {
+      "class": "Obj_004C2960",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_0x00"
+    },
+    {
+      "class": "Obj_004C2960",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vtable_0x04"
+    },
+    {
+      "class": "Obj_004C2960",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "vtable_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:53:02Z"
+}
