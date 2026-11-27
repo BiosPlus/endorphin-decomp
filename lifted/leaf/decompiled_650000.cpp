@@ -1819,3 +1819,27 @@ void* fn_00519100(void* self) {
     return self;
 }
 } // namespace lift_00519100
+
+// [0x005180D0] sub_005180D0 (82 bytes)
+namespace lift_005180D0 {
+// Known callee 0x0050F990: sub_0050F990 (Stores address of mem_00950A74 into field at offset +0x0.)
+extern void ext_0050F990(void* self);
+// Known callee 0x006246B0: OwnedPointerRange::clearAndFreeChecked (Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.)
+extern void ext_006246B0(void* self);
+
+// @name Unknown::clearRangeAndReset
+// @class Unknown
+// @summary Writes the vtable pointer 0x009520C4 to self, clears and frees the OwnedPointerRange at self+0x38, then calls ext_0050F990 on self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x38 OwnedPointerRange range
+void fn_005180D0(void* self) {
+    // Vtable store at offset +0x00 (the original 0x9520C4 is written as a 32-bit value).
+    *reinterpret_cast<std::uint32_t*>(self) = 0x009520C4u;
+
+    // Clear and free the range embedded at self+0x38.
+    ext_006246B0(static_cast<char*>(self) + 0x38);
+
+    // Final call on self (ecx = self in the original).
+    ext_0050F990(self);
+}
+} // namespace lift_005180D0

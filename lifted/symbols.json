@@ -21662,6 +21662,13 @@
     "summary": "Initializes the object via the base initializer, sets its vtable to 0x009520C4, stores 0.1 at +0x30 and zeroes the three dwords at +0x3C..+0x44; returns self.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x005180D0": {
+    "name": "Unknown::clearRangeAndReset",
+    "class": "Unknown",
+    "signature": "void fn_005180D0(void* self)",
+    "summary": "Writes the vtable pointer 0x009520C4 to self, clears and frees the OwnedPointerRange at self+0x38, then calls ext_0050F990 on self.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00518130": {
     "name": "SelectionMethodEgalitarianElitist::vfunc_0",
     "class": "SelectionMethodEgalitarianElitist",
