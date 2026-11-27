@@ -80944,6 +80944,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C79E0": {
+    "name": "Unknown::ProcessIndexedRanges",
+    "class": "Unknown",
+    "signature": "static inline T* slot_ptr(const void* base, ptrdiff_t off)",
+    "summary": "For index i, run callee 0x007C7900 over the range C[S[i]..S[i]+E[i]) and callee 0x007C7970 over D[P[i]..P[i]+Q[i]) while the status stays zero; if the status is nonzero, invoke the owner's callback at +0x5C4 with (self, i, owner+0x5CC).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C8490": {
     "name": "Unknown::setField44IfBit0Clear",
     "class": "Unknown",

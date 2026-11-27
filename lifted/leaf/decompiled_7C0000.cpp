@@ -2148,3 +2148,73 @@ void* sub_007CA460(void* arg1, const float* dir, float* out) {
     return out;
 }
 } // namespace lift_007CA460
+
+// [0x007C79E0] sub_007C79E0 (141 bytes)
+namespace lift_007C79E0 {
+// Known callee 0x007C7900: sub_007C7900 (109B). Called once per element of a range; returns a status in eax that gates further calls.
+extern uint32_t ext_007C7900(uint32_t arg);
+// Known callee 0x007C7970: sub_007C7970 (103B). Same protocol as ext_007C7900, applied to the second range.
+extern uint32_t ext_007C7970(uint32_t arg);
+
+// Helper: read a 32-bit pointer slot stored at base+off and return it as a typed pointer.
+template <typename T>
+static inline T* slot_ptr(const void* base, ptrdiff_t off) {
+    return reinterpret_cast<T*>(static_cast<uintptr_t>(lift_field<uint32_t>(const_cast<void*>(base), off)));
+}
+
+// @name Unknown::ProcessIndexedRanges
+// @class Unknown
+// @summary For index i, run callee 0x007C7900 over the range C[S[i]..S[i]+E[i]) and callee 0x007C7970 over D[P[i]..P[i]+Q[i]) while the status stays zero; if the status is nonzero, invoke the owner's callback at +0x5C4 with (self, i, owner+0x5CC).
+// @field Unknown +0x00 uint32_t* elementsA
+// @field Unknown +0x04 uint32_t* rangeStartB
+// @field Unknown +0x08 uint32_t* rangeCountB
+// @field Unknown +0x14 uint32_t* listC
+// @field Unknown +0x18 uint32_t* rangeStartC
+// @field Unknown +0x1C uint32_t* rangeCountC
+// @field OwnerArg +0x5C4 void* callback
+// @field OwnerArg +0x5CC void* callbackContext
+void fn_007C79E0(void* self, uint32_t status, void* owner, uint32_t i) {
+    uint32_t eax = status;
+
+    // First range: C[S[i] .. S[i]+E[i]), each element passed to ext_007C7900 while eax == 0.
+    {
+        uint32_t* rangeStart = slot_ptr<uint32_t>(self, 0x18);
+        uint32_t* rangeCount = slot_ptr<uint32_t>(self, 0x1C);
+        uint32_t* list = slot_ptr<uint32_t>(self, 0x14);
+
+        uint32_t esi = rangeStart[i];
+        uint32_t edi = esi + rangeCount[i];
+        while (esi < edi && eax == 0) {
+            eax = ext_007C7900(list[esi]);
+            ++esi;
+        }
+    }
+
+    // Second range: D[P[i] .. P[i]+Q[i]), each element passed to ext_007C7970 while eax == 0.
+    {
+        uint32_t* rangeStart = slot_ptr<uint32_t>(self, 0x04);
+        uint32_t* rangeCount = slot_ptr<uint32_t>(self, 0x08);
+        uint32_t* elements = slot_ptr<uint32_t>(self, 0x00);
+
+        uint32_t esi = rangeStart[i];
+        uint32_t edi = esi + rangeCount[i];
+        while (esi < edi && eax == 0) {
+            eax = ext_007C7970(elements[esi]);
+            ++esi;
+        }
+    }
+
+    if (eax == 0) {
+        return;
+    }
+
+    // Status nonzero: dispatch to the owner's callback if one is registered.
+    auto callback = lift_field<uint32_t>(owner, 0x5C4);
+    if (callback == 0) {
+        return;
+    }
+    uint32_t context = lift_field<uint32_t>(owner, 0x5CC);
+    auto fn = reinterpret_cast<void (*)(void*, uint32_t, uint32_t)>(static_cast<uintptr_t>(callback));
+    fn(self, i, context);
+}
+} // namespace lift_007C79E0
