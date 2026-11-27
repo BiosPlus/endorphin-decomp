@@ -1,0 +1,46 @@
+{
+  "va": "0x0052AC70",
+  "size": 129,
+  "orig_symbol": "sub_0052AC70",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::walkChainDestroyStrings_0052AC70",
+  "class": "Unknown",
+  "signature": "void fn_0052AC70(void* self, void* arg)",
+  "summary": "Walks a linked chain of nodes from arg (until a node with flag +0x61 is set), recursing on each node's +0x08 payload, resetting the subobject at +0x28 and destroying the std::string at +0x0C, then notifying via thunk_MFC80_ord_764.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (next node",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (payload passed to recursive",
+      "name": "call)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string field_0x0c (subobject destroyed per",
+      "name": "node)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "Unknown field_0x28 (subobject passed to",
+      "name": "ext_00532770)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x61",
+      "type": "uint8_t field_0x61 (stop",
+      "name": "flag)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:18:05Z"
+}

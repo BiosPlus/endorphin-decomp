@@ -1830,3 +1830,56 @@ void fn_00528040(void* self) {
     ext_00506090(self);
 }
 } // namespace lift_00528040
+
+// [0x0052AC70] sub_0052AC70 (129 bytes)
+namespace lift_0052AC70 {
+// Known callee 0x00532770: Unknown::resetVtableDestroyStringNotifyDialog_00532770 (Resets the vtable to 0x009543B4, destroys the std::string at +0x18, then calls AddCharacterDialog::vfunc_3 on the subobject at +0x08.)
+extern void ext_00532770(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+// IAT slot for the MSVCP80 std::basic_string<char> destructor (called indirectly via [0x924FF4]).
+extern DWORD mem_00924FF4;
+
+// @name Unknown::walkChainDestroyStrings_0052AC70
+// @class Unknown
+// @summary Walks a linked chain of nodes from arg (until a node with flag +0x61 is set), recursing on each node's +0x08 payload, resetting the subobject at +0x28 and destroying the std::string at +0x0C, then notifying via thunk_MFC80_ord_764.
+// @field Unknown +0x00 void* field_0x00 (next node pointer)
+// @field Unknown +0x08 void* field_0x08 (payload passed to recursive call)
+// @field Unknown +0x0C std::string field_0x0c (subobject destroyed per node)
+// @field Unknown +0x28 Unknown field_0x28 (subobject passed to ext_00532770)
+// @field Unknown +0x61 uint8_t field_0x61 (stop flag)
+//
+// The original SEH frame (fs:[0] push/pop, __except state -1) is MSVC EH bookkeeping and is omitted.
+// Calling convention: thiscall (this in ecx), one stack argument, callee-cleans (ret 4).
+void fn_0052AC70(void* self, void* arg) {
+    uint8_t* edi = static_cast<uint8_t*>(arg);
+    uint8_t* esi = edi;
+
+    if (lift_field<uint8_t>(edi, 0x61) != 0) {
+        return;
+    }
+
+    do {
+        // push [esi+8]; ecx = self; call sub_0052AC70 (self-recursion)
+        fn_0052AC70(self, lift_field<void*>(esi, 0x08));
+
+        // esi = [esi] (advance to next node)
+        esi = lift_field<uint8_t*>(esi, 0x00);
+
+        uint8_t* ebp = edi + 0x0C;
+
+        // call sub_00532770 with ecx = ebp + 0x1C (subobject at edi+0x28)
+        ext_00532770(ebp + 0x1C);
+
+        // call [0x924FF4]: std::basic_string<char> destructor on ebp
+        using DtorFn = void (*)(void*);
+        reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(ebp);
+
+        // push edi; call thunk_MFC80_ord_764; add esp,4
+        ext_006A5C5C(edi);
+
+        // edi = esi; loop while the next node's stop flag is clear
+        edi = esi;
+    } while (lift_field<uint8_t>(esi, 0x61) == 0);
+}
+} // namespace lift_0052AC70

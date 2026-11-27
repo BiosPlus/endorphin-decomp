@@ -23827,6 +23827,13 @@
     "summary": "Finds the lower-bound node in a red-black tree keyed by std::string.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052AC70": {
+    "name": "Unknown::walkChainDestroyStrings_0052AC70",
+    "class": "Unknown",
+    "signature": "void fn_0052AC70(void* self, void* arg)",
+    "summary": "Walks a linked chain of nodes from arg (until a node with flag +0x61 is set), recursing on each node's +0x08 payload, resetting the subobject at +0x28 and destroying the std::string at +0x0C, then notifying via thunk_MFC80_ord_764.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052EBA0": {
     "name": "TreeMap::find",
     "class": "TreeMap",
