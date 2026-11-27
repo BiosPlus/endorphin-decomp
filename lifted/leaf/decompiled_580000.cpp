@@ -1626,3 +1626,36 @@ void fn_00585010(uint32_t* out, uint32_t* src, uint32_t* srcEnd, void* container
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(cur));
 }
 } // namespace lift_00585010
+
+// [0x005865D0] sub_005865D0 (129 bytes)
+namespace lift_005865D0 {
+// Virtual slots used by the inline subobject at self+0x04 (byte offsets 0x20 and 0x3C).
+using VirtPredicateFn = BYTE(__thiscall*)(void* self);
+using VirtVisitFn = void(__thiscall*)(void* self, void* arg);
+
+// Original asm loads this (_invalid_parameter_noinfo) only on iterator-range assertion failures.
+extern int mem_00925134;
+
+// @name Unknown::VisitElementRange
+// @class Unknown
+// @summary If the inline child's predicate passes (and arg1->flag at +0x08 is clear), notify the child via vslot 15, then recursively visit every element pointer in the range at +0x80..+0x84.
+// @field Unknown +0x04 void* childVtbl
+// @field Unknown +0x80 void** elemBegin
+// @field Unknown +0x84 void** elemEnd
+void fn_005865D0(void* self, void* arg1, void* arg2) {
+    (void)&mem_00925134;  // range-assert handler reference; only hit on invalid iterators
+    auto* child = static_cast<uint8_t*>(self) + 0x04;
+    void** vtbl = *reinterpret_cast<void***>(child);
+
+    auto predicate = reinterpret_cast<VirtPredicateFn>(vtbl[8]);
+    if (predicate(child) && lift_field<BYTE>(arg1, 0x08) == 0) {
+        auto visit = reinterpret_cast<VirtVisitFn>(vtbl[15]);
+        visit(child, arg2);
+    }
+
+    void** const end = lift_field<void**>(self, 0x84);
+    for (void** cur = lift_field<void**>(self, 0x80); cur != end; ++cur) {
+        fn_005865D0(*cur, arg1, arg2);
+    }
+}
+} // namespace lift_005865D0

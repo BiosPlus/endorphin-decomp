@@ -1,0 +1,34 @@
+{
+  "va": "0x005865D0",
+  "size": 129,
+  "orig_symbol": "sub_005865D0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::VisitElementRange",
+  "class": "Unknown",
+  "signature": "void fn_005865D0(void* self, void* arg1, void* arg2)",
+  "summary": "If the inline child's predicate passes (and arg1-\u003eflag at +0x08 is clear), notify the child via vslot 15, then recursively visit every element pointer in the range at +0x80..+0x84.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "childVtbl"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "void**",
+      "name": "elemBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "void**",
+      "name": "elemEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:18:06Z"
+}
