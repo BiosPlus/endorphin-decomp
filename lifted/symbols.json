@@ -65396,6 +65396,13 @@
     "summary": "Looks up an object via ext_006DC460, then writes three doubles (each a float getter result) into out and returns out.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702EE0": {
+    "name": "Unknown::GetSecondDoubleFromCounterTriple",
+    "class": "Unknown",
+    "signature": "double fn_00702EE0(void* self)",
+    "summary": "Fills a local 3-double triple via FillDoubleTripleFromCounter and returns its second double.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702F60": {
     "name": "sub_00702F60",
     "class": "Unknown",

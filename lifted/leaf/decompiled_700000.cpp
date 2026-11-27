@@ -2192,3 +2192,33 @@ extern double fn_0070BF00(void* self) {
     return v;
 }
 } // namespace lift_0070BF00
+
+// [0x00702EE0] sub_00702EE0 (117 bytes)
+namespace lift_00702EE0 {
+extern void ext_006D2370(void* self);
+// Known callee 0x006D23F0: Unknown::GetAddressAt8 (Returns this + 8 * index; thiscall, one stack argument, callee pops 4.)
+extern void* ext_006D23F0(void* self, uint32_t index);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0();
+// Known callee 0x00702AA0: FillDoubleTripleFromCounter (writes three doubles into out; thiscall, returns out.)
+extern double* ext_00702AA0(void* self, double* out);
+// SEH scope table referenced by the original's try/finally frame (not needed in portable C++).
+extern int mem_008BFD88;
+
+// @name Unknown::GetSecondDoubleFromCounterTriple
+// @class Unknown
+// @summary Fills a local 3-double triple via FillDoubleTripleFromCounter and returns its second double.
+double fn_00702EE0(void* self) {
+    (void)&mem_008BFD88;
+
+    double tmp[3] = {0.0, 0.0, 0.0};  // local object at esp+0xc in the original
+    ext_006D2370(tmp);                 // construct local (thiscall, ecx = &tmp)
+    ext_00702AA0(self, tmp);           // fill tmp with three doubles
+
+    // GetAddressAt8(&tmp, 1) == &tmp[1]; the original copies that double and returns it in st(0).
+    double result = *static_cast<double*>(ext_006D23F0(tmp, 1));
+
+    ext_006D80A0();                    // empty callee
+    return result;
+}
+} // namespace lift_00702EE0
