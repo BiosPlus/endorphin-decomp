@@ -1019,3 +1019,47 @@ extern void __thiscall fn_0072B010(void* self) {
     ext_006B9D70(base);
 }
 } // namespace lift_0072B010
+
+// [0x00725B50]
+namespace lift_00725B50 {
+// @name parseVector7Fields
+// @summary Parses seven 32-bit fields at +0x1CC..+0x1E4 from a string argument via sscanf.
+// @field Unknown +0x1CC uint32_t field_0x1CC
+// @field Unknown +0x1D0 uint32_t field_0x1D0
+// @field Unknown +0x1D4 uint32_t field_0x1D4
+// @field Unknown +0x1D8 uint32_t field_0x1D8
+// @field Unknown +0x1DC uint32_t field_0x1DC
+// @field Unknown +0x1E0 uint32_t field_0x1E0
+// @field Unknown +0x1E4 uint32_t field_0x1E4
+
+
+    int32_t __fastcall ext_006E7460(void* self);
+    void __fastcall ext_006B9D70(void* self);
+    extern uint32_t mem_0092521C;
+
+struct StrArg76 {
+    uint8_t data[0x4C];
+};
+
+extern void __fastcall fn_00725B50(void* self, void* /*edx*/, StrArg76 str_arg) {
+    using sscanf_fn = int(__cdecl*)(const char*, const char*, ...);
+    auto sscanf_ptr = reinterpret_cast<sscanf_fn>(static_cast<uintptr_t>(mem_0092521C));
+
+    const char* src = reinterpret_cast<const char*>(static_cast<uintptr_t>(ext_006E7460(&str_arg)));
+    const char* fmt = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AACF9C));
+
+    sscanf_ptr(
+        src,
+        fmt,
+        &lift_field<uint32_t>(self, 0x1CC),
+        &lift_field<uint32_t>(self, 0x1D0),
+        &lift_field<uint32_t>(self, 0x1D4),
+        &lift_field<uint32_t>(self, 0x1D8),
+        &lift_field<uint32_t>(self, 0x1DC),
+        &lift_field<uint32_t>(self, 0x1E0),
+        &lift_field<uint32_t>(self, 0x1E4)
+    );
+
+    ext_006B9D70(&str_arg);
+}
+} // namespace lift_00725B50

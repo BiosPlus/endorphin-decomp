@@ -1,0 +1,57 @@
+{
+  "va": "0x00725B50",
+  "size": 144,
+  "orig_symbol": "sub_00725B50",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "parseVector7Fields",
+  "signature": "extern \"C\" void __fastcall fn_00725B50(void* self, void* /*edx*/, StrArg76 str_arg)",
+  "summary": "Parses seven 32-bit fields at +0x1CC..+0x1E4 from a string argument via sscanf.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1CC",
+      "type": "uint32_t",
+      "name": "field_0x1CC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D0",
+      "type": "uint32_t",
+      "name": "field_0x1D0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D4",
+      "type": "uint32_t",
+      "name": "field_0x1D4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D8",
+      "type": "uint32_t",
+      "name": "field_0x1D8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1DC",
+      "type": "uint32_t",
+      "name": "field_0x1DC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E0",
+      "type": "uint32_t",
+      "name": "field_0x1E0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E4",
+      "type": "uint32_t",
+      "name": "field_0x1E4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:45:06Z"
+}
