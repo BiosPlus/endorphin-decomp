@@ -1,0 +1,14 @@
+{
+  "va": "0x0061F310",
+  "size": 274,
+  "orig_symbol": "NMData::TwistAndSwingLimit::vfunc_15",
+  "src_path": "src/NMData/TwistAndSwingLimit.cpp",
+  "lifted_path": "lifted/NMData/TwistAndSwingLimit.cpp",
+  "name": "NMData::TwistAndSwingLimit::vfunc_15",
+  "class": "NMData::TwistAndSwingLimit",
+  "signature": "uint32_t* __thiscall fn_0061F310(void* self, uint32_t* out, uint32_t id)",
+  "summary": "Dispatches property/symbol ID to the corresponding TwistAndSwingLimit accessor or default zero initializer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:47:05Z"
+}
