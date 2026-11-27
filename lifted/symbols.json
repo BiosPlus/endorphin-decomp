@@ -4885,6 +4885,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004490F0": {
+    "name": "readIntFromSubobject",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* mem_009242FC;  // MFC80!ord_310  (string construct) extern \"C\" void* mem_00924300;  // MFC80!ord_876  (string -\u003e const char*) extern \"C\" void* mem_009251E4;  // MSVCR80!atoi extern \"C\" void* mem_009242F4;  // MFC80!ord_578  (string destruct) int fn_004490F0(void* self)",
+    "summary": "Fetches a string through thunk_MFC80_ord_3761 from the subobject at self+0x78 into a temporary string and returns atoi() of it.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00449810": {
     "name": "RangeDialog::vfunc_1",
     "class": "RangeDialog",
