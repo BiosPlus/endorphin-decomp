@@ -224,3 +224,46 @@ void __thiscall sub_007E47E0(const void* self, const float* src, float* dst) {
     dst[2] = (lift_field<float>(self, 0x20) * dx + lift_field<float>(self, 0x24) * dy) + lift_field<float>(self, 0x28) * dz;
 }
 } // namespace lift_007E47E0
+
+// [0x007E46B0]
+namespace lift_007E46B0 {
+// @name Vec3::normalize
+// @class Vec3
+// @summary Normalizes a 3D float vector in-place (setting to (1,0,0) if length <= 0) and returns its original length.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+
+
+extern double mem_0092A278;
+
+struct Vec3 {
+    float x;
+    float y;
+    float z;
+};
+
+float fn_007E46B0(Vec3* vec) {
+    float x = vec->x;
+    float y = vec->y;
+    float z = vec->z;
+
+    float sum = static_cast<float>(static_cast<double>(x) * static_cast<double>(x) + mem_0092A278);
+    sum = y * y + sum;
+    float len_sq = z * z + sum;
+
+    if (len_sq <= 0.0f) {
+        vec->x = 1.0f;
+        vec->y = 0.0f;
+        vec->z = 0.0f;
+        return 0.0f;
+    }
+
+    float len = std::sqrt(len_sq);
+    float inv_len = 1.0f / len;
+    vec->x = x * inv_len;
+    vec->y = y * inv_len;
+    vec->z = z * inv_len;
+    return len;
+}
+} // namespace lift_007E46B0
