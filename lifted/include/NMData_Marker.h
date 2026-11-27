@@ -10,7 +10,9 @@
 // Recovered field layout for NMData::Marker:
 namespace lifted_layout {
 struct NMData_Marker_Fields {
+    // +0x0   void*                    vptr  (evidence: 0x008704D0)
     // +0x4   void*                    field_0x04  (evidence: 0x00870930)
     // +0xC   void*                    field_0x0C  (evidence: 0x00870930)
+    // +0x174 void*                    field_0x174  (evidence: 0x008704D0)
 };
 } // namespace lifted_layout

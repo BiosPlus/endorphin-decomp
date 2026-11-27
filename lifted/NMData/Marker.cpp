@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/NMData/Marker.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <string>
 
 // [0x00870930] NMData::Marker::vfunc_34
 namespace lift_00870930 {
@@ -83,3 +84,62 @@ void* __attribute__((thiscall)) fn_00870870(void* self) {
     return obj;
 }
 } // namespace lift_00870870
+
+// [0x008704D0] NMData::Marker::vfunc_3 (351 bytes)
+namespace lift_008704D0 {
+// .rdata string literal at 0x0092AB70 (seed for both local std::strings)
+extern const char mem_0092AB70[];
+// global const char* at 0x00B41AFC (appended to a local string)
+extern const char* mem_00B41AFC;
+
+// Callees named in the original metadata (not invoked by this function's own code; kept as address references).
+extern void ext_004275E0();
+extern void ext_0058F630();
+extern void ext_0063EFE0();
+extern void ext_0063F530();
+extern void ext_0067B930();
+// Data refs named in the original metadata (RDATA/IAT/global slots; address references only).
+extern int mem_00924ECC;
+extern int mem_00924FD0;
+extern int mem_00924FD8;
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+extern int mem_00A9F1B0;
+extern int mem_00A9F3B8;
+extern int mem_00A9F744;
+extern int mem_00A9F7F4;
+extern int mem_00B40640;
+
+// @name NMData::Marker::vfunc_3
+// @class NMData::Marker
+// @summary Asks the sub-object at this+0x174 (+4) to fill the out string, then builds out = out_seed + global + "" + this->vfunc_9() via std::string concatenation and assigns it to out.
+// @field NMData::Marker +0x00 void* vptr
+// @field NMData::Marker +0x174 void* field_0x174
+std::string* __thiscall fn_008704D0(void* self, std::string* out) {
+    (void)&ext_004275E0; (void)&ext_0058F630; (void)&ext_0063EFE0; (void)&ext_0063F530; (void)&ext_0067B930;
+    (void)&mem_00924ECC; (void)&mem_00924FD0; (void)&mem_00924FD8; (void)&mem_00924FE4; (void)&mem_00924FF4;
+    (void)&mem_00A9F1B0; (void)&mem_00A9F3B8; (void)&mem_00A9F744; (void)&mem_00A9F7F4; (void)&mem_00B40640;
+
+    // First: member sub-object (at this+0x174, vptr at +4) fills *out via its vtable slot 3.
+    unsigned char* member = static_cast<unsigned char*>(lift_field<void*>(self, 0x174));
+    void* obj = member + 4;
+    void** obj_vt = *reinterpret_cast<void***>(obj);
+    using vfn3_t = void (__thiscall*)(void* self_, std::string* out_);
+    reinterpret_cast<vfn3_t>(obj_vt[3])(obj, out);
+
+    // Build the temporaries.
+    std::string s1(mem_0092AB70);
+    std::string s2(mem_0092AB70);
+    std::string t1 = s2 + mem_00B41AFC;
+    std::string t2 = t1 + s1;
+
+    // Virtual slot 9 on this returns a const std::string*.
+    void** self_vt = *reinterpret_cast<void***>(self);
+    using vfn9_t = const std::string* (__thiscall*)(void* self_);
+    const std::string* v = reinterpret_cast<vfn9_t>(self_vt[9])(self);
+
+    std::string t3 = t2 + *v;
+    *out = t3;
+    return out;
+}
+} // namespace lift_008704D0
