@@ -30383,6 +30383,13 @@
     "summary": "Stores two stack-passed DWORDs into this+0x04 and this+0x08 (thiscall, ret 8).",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
   },
+  "0x005B1870": {
+    "name": "Geometry::~Geometry",
+    "class": "Geometry",
+    "signature": "void fn_005B1870(void* self)",
+    "summary": "Destructor: sets the Geometry vptr, destroys the embedded std::string at +0x28, deletes the object at +0x0C through its virtual deleting destructor (slot 0) if non-null, then runs the base-class teardown ext_0065F440.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B18E0": {
     "name": "AssignStringAndSetFlag",
     "class": "Unknown",

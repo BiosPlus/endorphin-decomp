@@ -983,3 +983,39 @@ void* __thiscall sub_005B1930(void* self) {
     return self;
 }
 } // namespace lift_005B1930
+
+// [0x005B1870] sub_005B1870 (103 bytes)
+namespace lift_005B1870 {
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void __fastcall ext_0065F440(void* self);
+// IAT slot holding the MSVCP80 std::basic_string<char> destructor.
+extern int mem_00924FF4;
+
+// @name Geometry::~Geometry
+// @class Geometry
+// @summary Destructor: sets the Geometry vptr, destroys the embedded std::string at +0x28, deletes the object at +0x0C through its virtual deleting destructor (slot 0) if non-null, then runs the base-class teardown ext_0065F440.
+// @field Geometry +0x00 void* vptr
+// @field Geometry +0x0C void* field_0x0C
+// @field Geometry +0x28 std::string field_0x28
+// Note: the MSVC SEH frame (fs:[0] push/pop, -1 state slot) is unwinding bookkeeping and is not modeled.
+void fn_005B1870(void* self) {
+    // Geometry vtable (0x0095F88C); the base teardown below overwrites it again.
+    lift_field<uint32_t>(self, 0x00) = 0x0095F88Cu;
+
+    // Destroy the embedded std::string at this+0x28 (indirect call through IAT slot).
+    auto strDtor = reinterpret_cast<void (__thiscall*)(void*)>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    strDtor(static_cast<char*>(self) + 0x28);
+
+    // Delete the owned object at this+0x0C via its virtual deleting destructor (vtable slot 0, flag 1).
+    void* owned = lift_field<void*>(self, 0x0C);
+    if (owned != nullptr) {
+        void** vtbl = *static_cast<void***>(owned);
+        auto deleter = reinterpret_cast<void (__thiscall*)(void*, int)>(vtbl[0]);
+        deleter(owned, 1);
+    }
+
+    // Base-class teardown.
+    ext_0065F440(self);
+}
+} // namespace lift_005B1870
