@@ -1,0 +1,34 @@
+{
+  "va": "0x006D5110",
+  "size": 128,
+  "orig_symbol": "sub_006D5110",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::removeValueOrDefault_006D5110",
+  "class": "Unknown",
+  "signature": "bool fn_006D5110(void* self, DWORD value)",
+  "summary": "Searches the DynArray at +0x184 for value; if found removes it, releases it via vtable slot 3 and returns true; otherwise calls the helper at +0x1c4 with 0 and returns false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x184",
+      "type": "int32_t",
+      "name": "valueCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x194",
+      "type": "DWORD*",
+      "name": "valueData"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "void*",
+      "name": "fallbackHelper"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:00:45Z"
+}

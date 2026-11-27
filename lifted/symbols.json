@@ -68820,6 +68820,13 @@
     "summary": "Searches the 32-bit DynArray at +0x154 for value; if found, removes it, frees value via MFC80 and returns true; otherwise calls fn_006E7440 on +0x1C4 with index 0 and returns false.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D5110": {
+    "name": "Unknown::removeValueOrDefault_006D5110",
+    "class": "Unknown",
+    "signature": "bool fn_006D5110(void* self, DWORD value)",
+    "summary": "Searches the DynArray at +0x184 for value; if found removes it, releases it via vtable slot 3 and returns true; otherwise calls the helper at +0x1c4 with 0 and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D5190": {
     "name": "Unknown::removeItemAndRelease_006D5190",
     "class": "Unknown",

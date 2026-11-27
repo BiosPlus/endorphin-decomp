@@ -4325,3 +4325,45 @@ bool fn_006D5090(void* self, uint32_t value) {
     return true;
 }
 } // namespace lift_006D5090
+
+// [0x006D5110] sub_006D5110 (128 bytes)
+namespace lift_006D5110 {
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, void* edx, int32_t index);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::removeValueOrDefault_006D5110
+// @class Unknown
+// @summary Searches the DynArray at +0x184 for value; if found removes it, releases it via vtable slot 3 and returns true; otherwise calls the helper at +0x1c4 with 0 and returns false.
+// @field Unknown +0x184 int32_t valueCount
+// @field Unknown +0x194 DWORD* valueData
+// @field Unknown +0x1c4 void* fallbackHelper
+bool fn_006D5110(void* self, DWORD value) {
+    auto* base = static_cast<uint8_t*>(self);
+    const int32_t count = lift_field<int32_t>(self, 0x184);
+    DWORD* data = lift_field<DWORD*>(self, 0x194);
+
+    int32_t index = -1;
+    for (int32_t i = 0; i < count; ++i) {
+        if (data[i] == value) {
+            index = i;
+            break;
+        }
+    }
+
+    if (index == -1) {
+        ext_006E7440(base + 0x1c4, 0);
+        return false;
+    }
+
+    ext_006D2200(base + 0x184, nullptr, index);
+
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(value));
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<void(__thiscall*)(void*, int)>(vtbl[3])(obj, 1);
+    }
+    return true;
+}
+} // namespace lift_006D5110
