@@ -1,0 +1,33 @@
+{
+  "va": "0x00567100",
+  "size": 130,
+  "orig_symbol": "sub_00567100",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "findByName",
+  "signature": "uint32_t __thiscall sub_00567100(void* self, const void* key)",
+  "summary": "Searches a vector of item pointers at +0x14 for an item whose std::string at +0x8 matches key",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "vec_proxy"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x18",
+      "type": "uint32_t*",
+      "name": "vec_begin"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x1C",
+      "type": "uint32_t*",
+      "name": "vec_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:21:25Z"
+}

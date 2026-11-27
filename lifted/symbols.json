@@ -28435,6 +28435,12 @@
     "summary": "Counts the children of model for which self's CheckModelAgainstSelf accepts the child; returns 0 for a null model.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x005633A0": {
+    "name": "setModelAndPrimitiveName",
+    "signature": "void __stdcall fn_005633A0(void* model, void* strObj)",
+    "summary": "Sets the name of a CSLModel and its CSLPrimitive from a fallback-resolved string.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x005634D0": {
     "name": "FormatCSIBCStringToStdString",
     "signature": "extern \"C\" uint32_t mem_00925754; // CSIBCString::operator!=(const char*) extern \"C\" uint32_t mem_00925750; // CSIBCString::operator=(const CSIBCString\u0026) extern \"C\" uint32_t mem_0092574C; // CSIBCString::GetText() extern \"C\" uint32_t mem_00924FE4; // std::basic_string\u003cchar\u003e::basic_string(const char*) void* __stdcall fn_005634D0(void* out, void* obj)",

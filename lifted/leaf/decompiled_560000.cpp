@@ -917,3 +917,35 @@ uint32_t __thiscall sub_00567100(void* self, const void* key) {
     }
 }
 } // namespace lift_00567100
+
+// [0x005633A0]
+namespace lift_005633A0 {
+extern void* ext_00584BD0(void* self);
+extern void* ext_007C5622(void* self);
+extern void ext_007C5628(void* self, const char* name);
+
+extern uintptr_t mem_00924FE0;
+extern uintptr_t mem_00924FF0;
+extern uintptr_t mem_00924FF4;
+
+using StringCopyCtorFn = void(__thiscall*)(void* self, const void* other);
+using StringCStrFn = const char*(__thiscall*)(const void* self);
+using StringDtorFn = void(__thiscall*)(void* self);
+
+// @name setModelAndPrimitiveName
+// @summary Sets the name of a CSLModel and its CSLPrimitive from a fallback-resolved string.
+void __stdcall fn_005633A0(void* model, void* strObj) {
+    void* srcStr = ext_00584BD0(strObj);
+
+    alignas(4) uint8_t localStr[0x1c];
+    reinterpret_cast<StringCopyCtorFn>(mem_00924FE0)(localStr, srcStr);
+
+    const char* name = reinterpret_cast<StringCStrFn>(mem_00924FF0)(localStr);
+    ext_007C5628(model, name);
+
+    void* primitive = ext_007C5622(model);
+    ext_007C5628(primitive, name);
+
+    reinterpret_cast<StringDtorFn>(mem_00924FF4)(localStr);
+}
+} // namespace lift_005633A0
