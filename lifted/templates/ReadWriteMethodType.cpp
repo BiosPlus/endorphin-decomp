@@ -11825,3 +11825,27 @@ void __stdcall fn_005AB1A0(void* holder) {
     lift_field<void*>(holder, 0x04) = static_cast<void*>(&mem_00B4220C);
 }
 } // namespace lift_005AB1A0
+
+// [0x005B30F0] ExprParser::ReadWriteMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall Geometry::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_40 (122 bytes)
+namespace lift_005B30F0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (calls ext_00672000 on self, then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B43540;  // one-time-init guard bit (bit 0)
+extern DWORD mem_00B4353C;  // static accessor object; first DWORD is its vtable
+
+// @name ReadWriteMethodType<Geometry>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<Geometry>
+// @summary One-time guarded initialisation of the static Geometry accessor object at 0xB4353C, then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<Geometry> +0x04 void* field_0x04
+void fn_005B30F0(void* self) {
+    // Static-local guard: the first caller initialises the accessor object
+    // (vtable store + self-init via ext_0067A670); later callers skip straight
+    // to the holder bind.
+    if ((mem_00B43540 & 1u) == 0) {
+        mem_00B43540 |= 1u;
+        ext_0067A670(&mem_00B4353C, 0);
+        mem_00B4353C = 0x009605BCu;  // vtable for the accessor object
+    }
+    lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B4353C));
+}
+} // namespace lift_005B30F0

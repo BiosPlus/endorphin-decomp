@@ -1,0 +1,22 @@
+{
+  "va": "0x005B30F0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall Geometry::setFileName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType\u003cGeometry\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cGeometry\u003e",
+  "signature": "extern \"C\" DWORD mem_00B43540;  // one-time-init guard bit (bit 0) extern \"C\" DWORD mem_00B4353C;  // static accessor object; first DWORD is its vtable void fn_005B30F0(void* self)",
+  "summary": "One-time guarded initialisation of the static Geometry accessor object at 0xB4353C, then stores its address into holder+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType\u003cGeometry\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:31:07Z"
+}
