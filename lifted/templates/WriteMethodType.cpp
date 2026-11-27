@@ -7228,3 +7228,28 @@ void fn_00595770(void* holder) {
     lift_field<DWORD>(holder, 0x04) = 0x00B413C4u;
 }
 } // namespace lift_00595770
+
+// [0x0064C100]
+namespace lift_0064C100 {
+// Original asm: one-time static-init guard, then store the static accessor
+// address into holder+0x04. The fs:[0] SEH frame setup/teardown is a
+// compiler-generated exception-handling detail and is not reproduced here.
+
+extern uint32_t mem_00B55840; // init guard dword (bit 0 = initialized)
+extern uint32_t mem_00B5583C; // static accessor object (first dword = vtable 0x0097F3F4)
+void __thiscall ext_0067A670(void* self, DWORD value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setRotationAxisX>::vfunc_40
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}>
+// @summary Lazily constructs the static accessor object (guarded by bit 0 of mem_00B55840), then binds holder+0x04 to it.
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setRotationAxisX> +0x04 uint32_t field_0x04
+void __stdcall fn_0064C100(void* holder) {
+    if ((mem_00B55840 & 1u) == 0) {
+        mem_00B55840 |= 1u;
+        ext_0067A670(&mem_00B5583C, 0);
+        mem_00B5583C = 0x0097F3F4u;
+    }
+    auto* slot = reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(holder) + 4);
+    *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B5583C));
+}
+} // namespace lift_0064C100

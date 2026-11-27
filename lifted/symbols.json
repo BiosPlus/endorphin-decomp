@@ -47461,6 +47461,13 @@
     "summary": "Copies a range of 24-byte records via CopyRange24, then returns dst advanced by the record count (end-begin)/24.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x0064C100": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, setRotationAxisX\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e",
+    "signature": "void __stdcall fn_0064C100(void* holder)",
+    "summary": "Lazily constructs the static accessor object (guarded by bit 0 of mem_00B55840), then binds holder+0x04 to it.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064C900": {
     "name": "fillRecordsFromSource",
     "signature": "void fn_0064C900(void* dst, uint32_t count, const void* src)",
