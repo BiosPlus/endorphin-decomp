@@ -83718,3 +83718,56 @@ uint32_t fn_004BCEC0(void* obj, void* arg2) {
     return reinterpret_cast<VFn>(as_ptr(vtbl_slot(target, 0xB4)))(as_ptr(target), obj, arg2);
 }
 } // namespace lift_004BCEC0
+
+// [0x004D6B40] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_46 (157 bytes)
+namespace lift_004D6B40 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x004D5560: sub_004D5560 (Auto-lifted identical-shape clone of 0x004C0280 (Unknown::copyStringFromDocumentOrThrow).)
+extern void* ext_004D5560(void* dst, void* src);
+// Known callee 0x006720E0: sub_006720E0 (43B, thiscall with one stack argument).
+extern void ext_006720E0(void* self, void* arg);
+// MSVCP80 basic_string destructor is reached through the IAT slot at 0x00924FF4.
+extern void* mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData>::vfunc_46 (NMData::RigEventData::getUserRetargetRefFrame)
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Copies the first-field source into a temporary string, stores it into self's held value via the guarded assign helper, then forwards self and out to the wrapped object's vtable slot 0xB8.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004D6B40(void* self, void* out) {
+    // Stack-resident helper record: f0 at esp+4, f4 at esp+8.
+    struct Holder {
+        void* f0;
+        void* f4;
+    };
+
+    // Source value is the first dword of self.
+    void* src = *static_cast<void**>(self);
+
+    // std::string temporary (esp+0x10), filled by the copy helper.
+    unsigned char text[0x20] = {};
+    void* tmp = ext_004D5560(text, src);
+
+    Holder h{};
+    ext_006720E0(&h.f4, tmp);
+    ext_0041CF50(self, &h);
+
+    // Release the previous holder value through its vtable slot 0x78 (index 30 for 32-bit slots).
+    if (h.f4 != nullptr) {
+        void* vt = *static_cast<void**>(h.f4);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(h.f4, &h);
+    }
+
+    // Destroy the std::string temporary via the IAT-resolved destructor.
+    auto dtor = *reinterpret_cast<void (**)(void*)>(&mem_00924FF4);
+    dtor(text);
+
+    // Forward to the wrapped object at self+0x04, vtable slot 0xB8.
+    void* obj = lift_field<void*>(self, 0x04);
+    void* vt = *static_cast<void**>(obj);
+    auto forward = reinterpret_cast<void (*)(void*, void*, void*)>(lift_field<void*>(vt, 0xB8));
+    forward(obj, self, out);
+}
+} // namespace lift_004D6B40

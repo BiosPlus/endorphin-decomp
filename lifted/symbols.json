@@ -19619,6 +19619,13 @@
     "summary": "Copies the first dword of self into a temp string via 0x004D5560, wraps that into a holder, assigns the holder into self, releases the holder's previous ref, then forwards to self-\u003efield_0x04 vtable slot 0xAC with the out pointer and returns its result.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D6B40": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData\u003e::vfunc_46 (NMData::RigEventData::getUserRetargetRefFrame)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D6B40(void* self, void* out)",
+    "summary": "Copies the first-field source into a temporary string, stores it into self's held value via the guarded assign helper, then forwards self and out to the wrapped object's vtable slot 0xB8.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D6BE0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_47",
     "class": "ExprParser::ReadMethodType",
