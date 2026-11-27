@@ -1,0 +1,22 @@
+{
+  "va": "0x00513740",
+  "size": 159,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+  "signature": "bool fn_00513740(void* self, void** arg0, void* arg1)",
+  "summary": "Resolves the descriptor subobject at +0x04, builds a temporary via the virtual thunk, invokes its vfunc_42 with the argument, releases the temporary, and returns the bool result; throws if the holder pointer is null.",
+  "fields": [
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:48:46Z"
+}

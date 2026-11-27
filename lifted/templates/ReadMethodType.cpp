@@ -186610,3 +186610,61 @@ void fn_005FCF40(void* holder, void* out) {
     reinterpret_cast<Fwd>(lift_005FCF40_vtable(obj)[0xB8 / 4])(obj, holder, out);
 }
 } // namespace lift_005FCF40
+
+// [0x00513740] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_42 (159 bytes)
+namespace lift_00513740 {
+// Known callee 0x00682ED0: VirtualSlot9Thunk (Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x24 (slot 9 on x86). The original tail-jumps to that address with the same this; this lift returns the target so the caller performs the call.)
+extern void ext_00682ED0();
+// Known callee 0x006720E0: sub_006720E0 (43B, thiscall helper: takes out-slot in ecx and one stack arg)
+extern void ext_006720E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_42
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>
+// @summary Resolves the descriptor subobject at +0x04, builds a temporary via the virtual thunk, invokes its vfunc_42 with the argument, releases the temporary, and returns the bool result; throws if the holder pointer is null.
+// @field Chromosome::Descriptor +0x04 void* field_0x04
+
+bool fn_00513740(void* self, void** arg0, void* arg1) {
+    (void)self;
+    (void)arg1;
+
+    // mov eax,[esp+0x10] / mov eax,[eax]: holder = *arg0
+    void* holder = *arg0;
+    if (holder == nullptr) {
+        // Null holder: construct exception and throw via CxxThrowException.
+        void* exc = nullptr;
+        reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&exc);
+        reinterpret_cast<void (*)(void*, const void*)>(ext_006A6DD2)(
+            &exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+        return false;
+    }
+
+    // lea ecx,[holder+4]; call vslot9 thunk -> code address
+    uint8_t* sub = static_cast<uint8_t*>(holder) + 0x04;
+    void* target = reinterpret_cast<void* (*)(void*)>(ext_00682ED0)(sub);
+
+    // sub_006720E0(&obj, target): produces the temporary object
+    void* obj = nullptr;
+    reinterpret_cast<void (*)(void*, void*)>(ext_006720E0)(&obj, target);
+
+    // vfunc at vtable byte offset 0xA8 (slot 42) on obj
+    void* slot = nullptr;
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    void* vfunc = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0xA8);
+    bool result = reinterpret_cast<bool (*)(void*, void*, void*)>(vfunc)(obj, &slot, arg0);
+
+    // Release temporary: if obj != null, call vslot 0x78 with out-slot
+    if (obj != nullptr) {
+        void** vtbl2 = *reinterpret_cast<void***>(obj);
+        void* dtor = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl2) + 0x78);
+        void* tmp = nullptr;
+        reinterpret_cast<void (*)(void*, void*)>(dtor)(obj, &tmp);
+    }
+
+    return result;
+}
+} // namespace lift_00513740

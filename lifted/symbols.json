@@ -29867,6 +29867,13 @@
     "summary": "Reads a std::string property from a Chromosome::Descriptor* via virtual slot 9, or throws an exception if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00513740": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+    "signature": "bool fn_00513740(void* self, void** arg0, void* arg1)",
+    "summary": "Resolves the descriptor subobject at +0x04, builds a temporary via the virtual thunk, invokes its vfunc_42 with the argument, releases the temporary, and returns the bool result; throws if the holder pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005137E0": {
     "name": "ReadMethodType::vfunc_43",
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
