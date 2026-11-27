@@ -8,8 +8,13 @@
 // Recovered field layout for CSomething:
 namespace lifted_layout {
 struct CSomething_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x00461E20)
+    // +0x0   uint32_t                 vftable  (evidence: 0x00419E30) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vtable  (evidence: 0x00461E20) // CONFLICT: multiple definitions at +0x0
+    // +0x54  void*                    field_0x54  (evidence: 0x00419E30)
+    // +0x5C  void*                    field_0x5c  (evidence: 0x00419E30)
     // +0x60  void*                    field_0x60  (evidence: 0x00419B90)
+    // +0x68  void*                    field_0x68  (evidence: 0x00419E30)
+    // +0x6C  void*                    field_0x6c  (evidence: 0x00419E30)
     // +0x74  void*                    field_0x74  (evidence: 0x00461E20)
     // +0x78  void*                    field_0x78  (evidence: 0x00461E20)
     // +0x7C  void*                    field_0x7c  (evidence: 0x00461E20)

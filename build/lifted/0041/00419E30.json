@@ -1,0 +1,46 @@
+{
+  "va": "0x00419E30",
+  "size": 152,
+  "orig_symbol": "sub_00419E30",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "CSomething::~CSomething",
+  "class": "CSomething",
+  "signature": "void fn_00419E30(void* self)",
+  "summary": "Destructor that frees the item ID list at +0x6c and buffer at +0x60 via IMalloc, destroys CString members, and calls base destructor.",
+  "fields": [
+    {
+      "class": "CSomething",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "field_0x54"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0x6C",
+      "type": "void*",
+      "name": "field_0x6c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:20:51Z"
+}

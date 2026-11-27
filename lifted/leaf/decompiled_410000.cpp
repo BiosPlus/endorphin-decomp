@@ -3556,3 +3556,47 @@ void* __thiscall sub_00412F80(void* self) {
     return best;
 }
 } // namespace lift_00412F80
+
+// [0x00419E30]
+namespace lift_00419E30 {
+// @name CSomething::~CSomething
+// @class CSomething
+// @summary Destructor that frees the item ID list at +0x6c and buffer at +0x60 via IMalloc, destroys CString members, and calls base destructor.
+// @field CSomething +0x00 uint32_t vftable
+// @field CSomething +0x54 void* field_0x54
+// @field CSomething +0x5c void* field_0x5c
+// @field CSomething +0x68 void* field_0x68
+// @field CSomething +0x6c void* field_0x6c
+
+extern uint32_t mem_00925540;
+extern uint32_t mem_009242F4;
+
+extern void ext_00419B90(void* self, void* pMalloc);
+extern void ext_006A6304(int32_t hr);
+extern void ext_006A6310(void* self);
+
+void fn_00419E30(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0092D39C;
+
+    void* pMalloc = nullptr;
+    using SHGetMallocFn = int32_t(__stdcall*)(void**);
+    int32_t hr = reinterpret_cast<SHGetMallocFn>(mem_00925540)(&pMalloc);
+    if (hr < 0) {
+        ext_006A6304(hr);
+    }
+
+    using IMallocFreeFn = void(__stdcall*)(void*, void*);
+    void** vtable = *reinterpret_cast<void***>(pMalloc);
+    reinterpret_cast<IMallocFreeFn>(vtable[5])(pMalloc, lift_field<void*>(self, 0x6c));
+
+    ext_00419B90(self, pMalloc);
+
+    using CStringDtorFn = void(__thiscall*)(void*);
+    auto cstring_dtor = reinterpret_cast<CStringDtorFn>(mem_009242F4);
+    cstring_dtor(reinterpret_cast<uint8_t*>(self) + 0x68);
+    cstring_dtor(reinterpret_cast<uint8_t*>(self) + 0x5c);
+    cstring_dtor(reinterpret_cast<uint8_t*>(self) + 0x54);
+
+    ext_006A6310(self);
+}
+} // namespace lift_00419E30
