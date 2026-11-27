@@ -1805,3 +1805,28 @@ void __thiscall sub_00527690(void* self, uint32_t arg0, uint32_t arg1) {
     }
 }
 } // namespace lift_00527690
+
+// [0x00528040] sub_00528040 (89 bytes)
+namespace lift_00528040 {
+// Known callee 0x00506090: Unknown::Destructor_00506090 (Destructor that sets the vtable, destroys the container at +0x20, destroys the std::string at +0x4, and calls the base destructor.)
+extern void ext_00506090(void* self);
+// Known callee 0x006246B0: OwnedPointerRange::clearAndFreeChecked (Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.)
+extern void ext_006246B0(void* self);
+
+// @name Unknown::Destructor_00528040
+// @class Unknown
+// @summary Derived destructor: sets its vtables, clears the owned pointer range at +0x3C, then runs the base destructor.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x38 uint32_t vtableSecondary
+// @field Unknown +0x3C OwnedPointerRange range
+void fn_00528040(void* self) {
+    // Primary vtable pointer (32-bit game image address).
+    lift_field<uint32_t>(self, 0x00) = 0x0094F654u;
+    // Secondary (embedded base) vtable pointer.
+    lift_field<uint32_t>(self, 0x38) = 0x0094F648u;
+    // Clear and free the owned pointer range at this+0x3C.
+    ext_006246B0(static_cast<uint8_t*>(self) + 0x3C);
+    // Run the base-class destructor on this object.
+    ext_00506090(self);
+}
+} // namespace lift_00528040

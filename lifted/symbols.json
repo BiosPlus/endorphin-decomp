@@ -22680,6 +22680,13 @@
     "summary": "Erases an element from a vector of pointers, deleting the pointed-to object if non-null.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00528040": {
+    "name": "Unknown::Destructor_00528040",
+    "class": "Unknown",
+    "signature": "void fn_00528040(void* self)",
+    "summary": "Derived destructor: sets its vtables, clears the owned pointer range at +0x3C, then runs the base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00528100": {
     "name": "InterpreterSub::InterpreterSub",
     "class": "InterpreterSub",
