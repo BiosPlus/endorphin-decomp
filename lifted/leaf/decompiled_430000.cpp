@@ -4805,3 +4805,92 @@ void fn_004335F0_handler(void* state) {
     reinterpret_cast<void (*)(const char*)>(reinterpret_cast<void*>(&ext_006A5E60))(tmp.c_str());
 }
 } // namespace lift_004335F0
+
+// [0x004320A0]
+namespace lift_004320A0 {
+extern void* __cdecl ext_00465B40(void);
+extern int __stdcall ext_006A5E60(const char* lpszText, uint32_t nType, uint32_t nIDHelp);
+
+extern uintptr_t mem_00924FE0;
+extern uintptr_t mem_00924FF0;
+extern uintptr_t mem_00924FF4;
+
+// @name callVtable1C8WithTryCatch
+// @summary Calls ext_00465B40(), invokes virtual method at vtable +0x1C8 with 0, and catches exceptions to show a message box.
+void __cdecl fn_004320A0(void) {
+    try {
+        void* obj = ext_00465B40();
+        using VMethod = void(__thiscall*)(void*, int32_t);
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+        auto method = reinterpret_cast<VMethod>(vtable[0x1C8 / sizeof(uintptr_t)]);
+        method(obj, 0);
+    } catch (const char* const& ex) {
+        using StrCopyCtor = void* (__thiscall*)(void*, const void*);
+        using StrCStr = const char* (__thiscall*)(const void*);
+        using StrDtor = void(__thiscall*)(void*);
+
+        alignas(4) uint8_t msg[0x1C];
+        reinterpret_cast<StrCopyCtor>(mem_00924FE0)(msg, reinterpret_cast<const uint8_t*>(&ex) + 0xC);
+        const char* text = reinterpret_cast<StrCStr>(mem_00924FF0)(msg);
+        ext_006A5E60(text, 0, 0);
+        reinterpret_cast<StrDtor>(mem_00924FF4)(msg);
+    }
+}
+} // namespace lift_004320A0
+
+// [0x00433680] sub_00433680 (134 bytes)
+namespace lift_00433680 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+// Returns an object pointer in eax.
+extern void* ext_00465B40();
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+extern void ext_006A5E60(const char* text, int arg1, int arg2);
+// IAT slots holding MSVCP80 std::string helpers (addresses stored as u32).
+extern int mem_00924FE0;  // basic_string copy ctor (thiscall)
+extern int mem_00924FF0;  // basic_string::c_str (thiscall)
+extern int mem_00924FF4;  // basic_string dtor (thiscall)
+
+// @name BaseObject::invokeVirtual208_3 (sub_00433680)
+// @class <Class> (no class recovered)
+// @summary Fetches an object from ext_00465B40 and invokes its vtable slot +0x208 with argument 3.
+// @field <Class> +0x00 uint32_t vtable
+
+namespace {
+
+using ThisCallFn1 = void (*)(void* self, int arg);
+
+// Thiscall-style helpers for the MSVCP80 string routines (this in the first argument on this ABI).
+using StrCopyCtorFn = void (*)(void* self, const void* src);
+using StrCStrFn     = const char* (*)(void* self);
+using StrDtorFn     = void (*)(void* self);
+
+// Unwind funclet of the original SEH frame (0x004336CC). Not reached from the normal
+// return path; only executed when the protected body throws. `frame_this` is the
+// value the funclet reads from the frame slot ebp-0x14.
+[[maybe_unused]] void fn_00433680_unwind(void* frame_this) {
+    alignas(8) unsigned char tmp[0x20] = {};
+    auto copy_ctor = reinterpret_cast<StrCopyCtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE0)));
+    auto c_str     = reinterpret_cast<StrCStrFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF0)));
+    auto dtor      = reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+
+    // Source string lives at frame_this + 0xC.
+    copy_ctor(tmp, static_cast<const unsigned char*>(frame_this) + 0xC);
+    ext_006A5E60(c_str(tmp), 0, 0);
+    dtor(tmp);
+}
+
+}  // namespace
+
+void fn_00433680(void* self) {
+    (void)self;  // original body never reads its frame argument
+
+    // Call 0x00465B40 -> object in eax.
+    void* obj = ext_00465B40();
+
+    // Virtual call: [obj] is the vtable; slot at +0x208 is invoked thiscall with arg 3.
+    const uint32_t vtable = lift_field<uint32_t>(obj, 0);
+    const uint32_t target = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 0x208);
+    auto method = reinterpret_cast<ThisCallFn1>(static_cast<uintptr_t>(target));
+    method(obj, 3);
+}
+} // namespace lift_00433680

@@ -1,0 +1,22 @@
+{
+  "va": "0x00433680",
+  "size": 134,
+  "orig_symbol": "sub_00433680",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "BaseObject::invokeVirtual208_3 (sub_00433680)",
+  "class": "\u003cClass\u003e (no class recovered)",
+  "signature": "extern \"C\" int mem_00924FE0;  // basic_string copy ctor (thiscall) extern \"C\" int mem_00924FF0;  // basic_string::c_str (thiscall) extern \"C\" int mem_00924FF4;  // basic_string dtor (thiscall) namespace",
+  "summary": "Fetches an object from ext_00465B40 and invokes its vtable slot +0x208 with argument 3.",
+  "fields": [
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:36:25Z"
+}

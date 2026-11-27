@@ -8,7 +8,8 @@
 // Recovered field layout for <Class>:
 namespace lifted_layout {
 struct _Class__Fields {
-    // +0x0   DWORD field_0x00 (dereferenced as the forwarded argument)  (evidence: 0x00537EC0)
+    // +0x0   DWORD field_0x00 (dereferenced as the forwarded argument)  (evidence: 0x00537EC0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x00433680) // CONFLICT: multiple definitions at +0x0
     // +0x8   float field_0x08 (written: abs-like result of the float argument)  (evidence: 0x007C9D00)
     // +0x44  uint8_t* field_0x44 (pointer dereferenced as byte)  (evidence: 0x007C6F20)
     // +0xDC  DWORD field_0xdc (array; element stride 4, indexed by field_0x194*15)  (evidence: 0x00533CF0)
