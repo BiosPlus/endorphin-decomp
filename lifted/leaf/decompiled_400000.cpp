@@ -2618,3 +2618,45 @@ void __thiscall fn_00401690(void* self) {
     ext_006A5E6C(self, mem_00928A88, 0);
 }
 } // namespace lift_00401690
+
+// [0x004093D0] sub_004093D0 (155 bytes)
+namespace lift_004093D0 {
+extern int mem_0092A5EC;
+extern int mem_0092A23C;
+extern int mem_0093712C;
+
+// Known callee 0x00458200: sub_00458200 (Destructor tail-call: restores vtable mem_0093712C and tail-calls base destructor sub_00454BA0.)
+extern void __fastcall ext_00458200(void* self);
+// Known callee 0x00531AE0: PointerVector::destroyAndFree (Destroys every non-null object in the pointer range, frees the buffer, and zeroes begin/end/capacity.)
+extern void __fastcall ext_00531AE0(void* self);
+// Known callee 0x006A5FF2: thunk_MFC80_ord_1934 (IAT jump thunk forwarding to MFC80!ord_1934.)
+extern void __thiscall ext_006A5FF2(void* self);
+// Known callee 0x006A601C: thunk_MFC80_ord_753 (IAT jump thunk forwarding to MFC80!ord_753.)
+extern void __thiscall ext_006A601C(void* self);
+// Known callee 0x006A60B2: thunk_MFC80_ord_651 (IAT jump thunk forwarding to MFC80!ord_651.)
+extern void __thiscall ext_006A60B2(void* self);
+
+// @name ClassName::~ClassName
+// @class ClassName
+// @summary Destructor: sets vtables, tears down member objects at +0x1B8/+0x1B0/+0x13C/+0x12C, then tail-calls the base destructor.
+// @field ClassName +0x000 void* vtable
+// @field ClassName +0x12C void* ptr_begin
+// @field ClassName +0x1B0 void* member_1b0
+// @field ClassName +0x1B8 void* member_1b8
+extern void __fastcall fn_004093D0(void* self) {
+    // The original MSVC SEH frame (fs:[0] push/restore, state byte at [esp+0x14]) is
+    // unwinding bookkeeping only and has no portable equivalent; it is omitted.
+    lift_field<void*>(self, 0x0) = &mem_0092A5EC;
+
+    void* member_1b8 = static_cast<uint8_t*>(self) + 0x1B8;
+    ext_006A5FF2(member_1b8);
+    lift_field<void*>(member_1b8, 0x0) = &mem_0092A23C;
+    ext_006A5FF2(member_1b8);
+
+    ext_006A60B2(static_cast<uint8_t*>(self) + 0x1B0);
+    ext_006A601C(static_cast<uint8_t*>(self) + 0x13C);
+    ext_00531AE0(static_cast<uint8_t*>(self) + 0x12C);
+
+    ext_00458200(self);
+}
+} // namespace lift_004093D0

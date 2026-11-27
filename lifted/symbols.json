@@ -904,6 +904,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0092A23C and tail-calls base destructor thunk_MFC80_ord_1934.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x004093D0": {
+    "name": "ClassName::~ClassName",
+    "class": "ClassName",
+    "signature": "extern \"C\" void __fastcall fn_004093D0(void* self)",
+    "summary": "Destructor: sets vtables, tears down member objects at +0x1B8/+0x1B0/+0x13C/+0x12C, then tail-calls the base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004095B0": {
     "name": "ButtonPanel::vfunc_1",
     "class": "ButtonPanel",
