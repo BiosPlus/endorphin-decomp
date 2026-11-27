@@ -1,0 +1,22 @@
+{
+  "va": "0x004F39F0",
+  "size": 278,
+  "orig_symbol": "VMCSModes::EditMode::vfunc_117",
+  "src_path": "src/VMCSModes/EditMode.cpp",
+  "lifted_path": "lifted/VMCSModes/EditMode.cpp",
+  "name": "VMCSModes::EditMode::vfunc_117",
+  "class": "VMCSModes::EditMode",
+  "signature": "void fn_004F39F0(void* self, uint32_t arg1)",
+  "summary": "Constructs a temporary Geometry (type 5, scale {0.5, 1, 1}), optionally sets its RGBA color to {0.2, 0.25, 0.25, 1}, and passes it to ext_004F3690 while holding a scoped pause/lock on the controller at field_0x08+0x14.",
+  "fields": [
+    {
+      "class": "VMCSModes::EditMode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:45:00Z"
+}

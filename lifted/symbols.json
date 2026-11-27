@@ -17927,6 +17927,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0042C0D0 (TreeMap::insertUnique).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004AE210": {
+    "name": "TreeMap::insertHint",
+    "class": "TreeMap",
+    "signature": "TreeIterator* __thiscall fn_004AE210(void* self, TreeIterator* ret, void* whereContainer, void* whereNode, const void* val)",
+    "summary": "Inserts a key-value element into a red-black tree map using an iterator hint, falling back to full tree insertion if the hint does not bracket the key.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AE420": {
     "name": "sub_004AE420",
     "class": "_Tree",

@@ -11,6 +11,6 @@
 namespace lifted_layout {
 struct VMCSModes_EditMode_Fields {
     // +0x0   void*                    vtable  (evidence: 0x004F2F90)
-    // +0x8   void*                    field_0x08  (evidence: 0x004F2F90, 0x004F38D0)
+    // +0x8   void*                    field_0x08  (evidence: 0x004F2F90, 0x004F38D0, 0x004F39F0)
 };
 } // namespace lifted_layout

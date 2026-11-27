@@ -120,3 +120,57 @@ void fn_004F38D0(void* self, uint32_t arg0) {
     }
 }
 } // namespace lift_004F38D0
+
+// [0x004F39F0]
+namespace lift_004F39F0 {
+// @name VMCSModes::EditMode::vfunc_117
+// @class VMCSModes::EditMode
+// @summary Constructs a temporary Geometry (type 5, scale {0.5, 1, 1}), optionally sets its RGBA color to {0.2, 0.25, 0.25, 1}, and passes it to ext_004F3690 while holding a scoped pause/lock on the controller at field_0x08+0x14.
+// @field VMCSModes::EditMode +0x08 void* field_0x08
+
+
+extern int32_t mem_00AD89B4;
+extern const float mem_009324A4;
+extern const float mem_00940694;
+extern const float mem_0094CBE0;
+
+extern void ext_00472350(void* self);
+extern void ext_005B5810(void* self, int32_t type, const float* params);
+extern void ext_005B1B60(void* self, const float* vec4);
+extern void ext_004F3690(void* self, void* geom, uint32_t arg1, int32_t arg2);
+extern void ext_005B1870(void* self);
+extern void ext_0046F930(void* self);
+
+void fn_004F39F0(void* self, uint32_t arg1) {
+    void* field08 = lift_field<void*>(self, 0x08);
+    void* controller = lift_field<void*>(field08, 0x14);
+
+    if (controller != nullptr) {
+        if (mem_00AD89B4 == 0) {
+            lift_field<uint8_t>(controller, 0x153) = 1;
+            ext_00472350(controller);
+        }
+        mem_00AD89B4 += 1;
+    }
+
+    alignas(16) uint8_t geom[0x4C];
+    float params[3] = { mem_009324A4, 1.0f, 1.0f };
+    ext_005B5810(geom, 5, params);
+
+    if ((arg1 & 0xFFu) != 0) {
+        float color[4] = { mem_00940694, mem_0094CBE0, mem_0094CBE0, 1.0f };
+        ext_005B1B60(geom, color);
+    }
+
+    ext_004F3690(self, geom, arg1, 0);
+    ext_005B1870(geom);
+
+    if (controller != nullptr) {
+        mem_00AD89B4 -= 1;
+        if (mem_00AD89B4 == 0) {
+            lift_field<uint8_t>(controller, 0x153) = 0;
+            ext_0046F930(controller);
+        }
+    }
+}
+} // namespace lift_004F39F0
