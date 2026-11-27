@@ -1553,3 +1553,76 @@ void fn_005850C0(void* self, uint32_t arg) {
     ext_0067DB10(self, m);
 }
 } // namespace lift_005850C0
+
+// [0x00586030] sub_00586030 (126 bytes)
+namespace lift_00586030 {
+// IAT slot for MSVCR80!_invalid_parameter_noinfo. Only used by MSVC debug
+// iterator-bounds guards in the original; omitted here. Referenced for
+// metadata only, not a real access.
+extern int mem_00925134;
+
+// @name assignChildDepthsAndIndices
+// @summary Stores depth on this node, then recursively visits each child pointer in the child vector at +0x80..+0x84, setting each child's depth+1 and its sibling index at +0x9c.
+// @class ChildNode
+// @field ChildNode +0x80 uint32_t childVectorBegin
+// @field ChildNode +0x84 uint32_t childVectorEnd
+// @field ChildNode +0x98 uint32_t depth
+// @field ChildNode +0x9c uint32_t childIndex
+void fn_00586030(void* self, uint32_t depth) {
+    (void)&mem_00925134;
+    lift_field<uint32_t>(self, 0x98) = depth;
+
+    uint32_t index = 0;
+    uint32_t it = lift_field<uint32_t>(self, 0x80);
+    while (it != lift_field<uint32_t>(self, 0x84)) {
+        uint32_t childAddr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(it));
+        void* child = reinterpret_cast<void*>(static_cast<uintptr_t>(childAddr));
+
+        fn_00586030(child, depth + 1);
+        lift_field<uint32_t>(child, 0x9c) = index;
+
+        index += 1;
+        it += 4;
+    }
+}
+} // namespace lift_00586030
+
+// [0x00585010] sub_00585010 (126 bytes)
+namespace lift_00585010 {
+extern void (*mem_00925134)(void);  // import slot: _invalid_parameter_noinfo (MSVCR80)
+
+// @name copyDwordsNotEqualToKey
+// @summary Copies each dword in [src, srcEnd) that differs from *key into a destination cursor, then writes {container, cursor} to out.
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_00585010(uint32_t* out, uint32_t* src, uint32_t* srcEnd, void* container, uint32_t* dst, const uint32_t* key) {
+    uint32_t* cur = dst;
+
+    if (src != srcEnd) {
+        do {
+            if (*src != *key) {
+                uint32_t* slot = cur;
+
+                if (container == nullptr) {
+                    mem_00925134();
+                }
+                if (reinterpret_cast<uintptr_t>(cur) >= lift_field<uint32_t>(container, 0x08)) {
+                    mem_00925134();
+                }
+                cur += 1;
+
+                if (container == nullptr) {
+                    mem_00925134();
+                }
+                if (reinterpret_cast<uintptr_t>(slot) >= lift_field<uint32_t>(container, 0x08)) {
+                    mem_00925134();
+                }
+                *slot = *src;
+            }
+            ++src;
+        } while (src != srcEnd);
+    }
+
+    out[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(container));
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(cur));
+}
+} // namespace lift_00585010

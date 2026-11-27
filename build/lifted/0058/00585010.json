@@ -1,0 +1,21 @@
+{
+  "va": "0x00585010",
+  "size": 126,
+  "orig_symbol": "sub_00585010",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "copyDwordsNotEqualToKey",
+  "signature": "extern \"C\" void (*mem_00925134)(void);  // import slot: _invalid_parameter_noinfo (MSVCR80) void fn_00585010(uint32_t* out, uint32_t* src, uint32_t* srcEnd, void* container, uint32_t* dst, const uint32_t* key)",
+  "summary": "Copies each dword in [src, srcEnd) that differs from *key into a destination cursor, then writes {container, cursor} to out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:03:58Z"
+}
