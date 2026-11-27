@@ -12,6 +12,13 @@ namespace lifted_layout {
 struct NMData_TriggeredEventData_Fields {
     // +0x0   uintptr_t                ptr  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004B8920, 0x004C0400, 0x0059F920, 0x005FCC10, 0x00639730, 0x0066F700, 0x0068DE60, 0x00695740) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (read via enclosing object at this-0x154)  (evidence: 0x004BFBA0) // CONFLICT: multiple definitions at +0x0
-    // +0x16C void* field_0x16C (address of this+0x18 passed to callback; not dereferenced here)  (evidence: 0x004BFBA0)
+    // +0x14  uint8_t[28]              name  (evidence: 0x004C24C0)
+    // +0x15C int32_t                  field_0x15C  (evidence: 0x004C24C0)
+    // +0x160 int32_t                  field_0x160  (evidence: 0x004C24C0)
+    // +0x164 int32_t                  field_0x164  (evidence: 0x004C24C0)
+    // +0x168 uint32_t                 field_0x168  (evidence: 0x004C24C0)
+    // +0x16C void*                    field_0x16C  (evidence: 0x004C24C0) // CONFLICT: multiple definitions at +0x16C
+    // +0x16C void* field_0x16C (address of this+0x18 passed to callback; not dereferenced here)  (evidence: 0x004BFBA0) // CONFLICT: multiple definitions at +0x16C
+    // +0x17C uint8_t                  field_0x17C  (evidence: 0x004C24C0)
 };
 } // namespace lifted_layout

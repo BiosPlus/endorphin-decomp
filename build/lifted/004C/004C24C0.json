@@ -1,0 +1,58 @@
+{
+  "va": "0x004C24C0",
+  "size": 666,
+  "orig_symbol": "NMData::TriggeredEventData::vfunc_21",
+  "src_path": "src/NMData/TriggeredEventData.cpp",
+  "lifted_path": "lifted/NMData/TriggeredEventData.cpp",
+  "name": "NMData::TriggeredEventData::vfunc_21",
+  "class": "NMData::TriggeredEventData",
+  "signature": "static bool is_sentinel(uint32_t val)",
+  "summary": "Loads TriggeredEventData properties from XML/data node and updates event/name state.",
+  "fields": [
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x14",
+      "type": "uint8_t[28]",
+      "name": "name"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15C"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x164",
+      "type": "int32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:24:12Z"
+}
