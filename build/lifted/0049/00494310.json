@@ -1,0 +1,13 @@
+{
+  "va": "0x00494310",
+  "size": 153,
+  "orig_symbol": "sub_00494310",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "findDottedSuffixInUpperCopy",
+  "signature": "uint32_t fn_00494310(const void* a1, const void* a2)",
+  "summary": "Returns the index of the string \".\" + *a2 inside an upper-cased copy of *a1 (npos if absent).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:51:17Z"
+}

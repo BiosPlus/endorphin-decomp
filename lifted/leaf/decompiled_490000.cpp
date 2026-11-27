@@ -2327,3 +2327,51 @@ void __thiscall fn_004973B0(uint8_t* self, uint8_t* node) {
     }
 }
 } // namespace lift_004973B0
+
+// [0x00494310] sub_00494310 (153 bytes)
+namespace lift_00494310 {
+// Known callees / data (indirect through IAT slots or rdata):
+//   ext_00664ED0 -> upperCopyStringRange (Gathers the bounds of a std::string (MSVC layout) and forwards them to upperCopyRangeToPair; returns the string pointer.)
+//   mem_00924FE0 -> MSVCP80 std::basic_string<char>::basic_string(const basic_string&)
+//   mem_00924FCC -> MSVCP80 std::operator+(const char*, const basic_string&)
+//   mem_00924FB4 -> MSVCP80 std::basic_string<char>::find(const basic_string&, size_t)
+//   mem_00924FF4 -> MSVCP80 std::basic_string<char>::~basic_string()
+//   mem_0092AB70 -> rdata address of the one-character literal "."
+extern void* ext_00664ED0(void* self);
+extern int mem_00924FE0;
+extern int mem_00924FCC;
+extern int mem_00924FB4;
+extern int mem_00924FF4;
+extern int mem_0092AB70;
+
+namespace {
+// MSVC std::string is 0x18 bytes (x86); buffers are sized to hold it.
+constexpr size_t kMsvcStringSize = 0x18;
+
+using StrCopyCtorFn = void(__thiscall*)(void* self, const void* src);
+using StrDtorFn = void(__thiscall*)(void* self);
+using StrFindFn = size_t(__thiscall*)(void* self, const void* str, size_t pos);
+using StrConcatFn = void*(__cdecl*)(void* out, const char* lhs, const void* rhs);
+} // namespace
+
+// @name findDottedSuffixInUpperCopy
+// @summary Returns the index of the string "." + *a2 inside an upper-cased copy of *a1 (npos if absent).
+uint32_t fn_00494310(const void* a1, const void* a2) {
+    alignas(8) unsigned char copy[kMsvcStringSize];   // std::string copy of *a1
+    alignas(8) unsigned char key[kMsvcStringSize];    // temporary "." + *a2
+
+    const auto copyCtor = *reinterpret_cast<StrCopyCtorFn*>(&mem_00924FE0);
+    const auto concat = *reinterpret_cast<StrConcatFn*>(&mem_00924FCC);
+    const auto find = *reinterpret_cast<StrFindFn*>(&mem_00924FB4);
+    const auto dtor = *reinterpret_cast<StrDtorFn*>(&mem_00924FF4);
+    const char* const dot = reinterpret_cast<const char*>(&mem_0092AB70);
+
+    copyCtor(copy, a1);
+    ext_00664ED0(copy);
+    concat(key, dot, a2);
+    const uint32_t pos = static_cast<uint32_t>(find(copy, key, 0));
+    dtor(key);
+    dtor(copy);
+    return pos;
+}
+} // namespace lift_00494310

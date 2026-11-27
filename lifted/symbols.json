@@ -12346,6 +12346,12 @@
     "summary": "Tests whether any bit in mask is set in the dword at [this]; if that boolean differs from the byte flag argument, calls sub_00494060 to XOR mask into the dword.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00494310": {
+    "name": "findDottedSuffixInUpperCopy",
+    "signature": "uint32_t fn_00494310(const void* a1, const void* a2)",
+    "summary": "Returns the index of the string \".\" + *a2 inside an upper-cased copy of *a1 (npos if absent).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004947D0": {
     "name": "sub_004947D0",
     "signature": "extern \"C\" void __fastcall fn_004947D0(void* self)",
