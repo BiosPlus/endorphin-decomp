@@ -4671,3 +4671,17 @@ void fn_00668DF0(void* self) {
 }
 } // namespace lift_0042E820
 } // namespace lift_00668DF0
+
+// [0x006622F0] sub_006622F0 (24 bytes)
+namespace lift_006622F0 {
+extern void ext_00451670(void* self, DWORD* value);
+
+// @name SubObject4C::forwardValue
+// @class SubObject4C
+// @summary Forwards a DWORD argument by pointer to sub_00451670 on the this+0x4C sub-object.
+// @field SubObject4C +0x4C void* field_0x4C
+void fn_006622F0(void* self, DWORD arg) {
+    DWORD value = arg;
+    ext_00451670(static_cast<char*>(self) + 0x4C, &value);
+}
+} // namespace lift_006622F0
