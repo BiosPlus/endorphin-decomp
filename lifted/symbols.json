@@ -2050,6 +2050,12 @@
     "summary": "Returns the address of the static .rdata constant mem_0092D8A8 (pointer to 0x0092D894).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041BA60": {
+    "name": "sub_0041BA60",
+    "signature": "void sub_0041BA60(void* self)",
+    "summary": "Reads an integer from a child window's text and passes it to a virtual method on field_0x1ec.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041BBB0": {
     "name": "GridPropertyPage::vfunc_86",
     "class": "GridPropertyPage",
@@ -21372,6 +21378,13 @@
     "class": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setLowerLimit(float), 0}\u003e",
     "signature": "extern void __stdcall fn_00511F90(void** targetPtr, void* valueArg)",
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00511FE0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor, float, getLowerLimit, float, setLowerLimit\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setLowerLimit(float), 0}\u003e",
+    "signature": "extern \"C\" DWORD mem_00AEBE08; // one-time init guard flags (bit 0 = initialized) extern \"C\" DWORD mem_00AEBE04; // static object storage (first DWORD = vtable 0x00951654) void fn_00511FE0(void* self)",
+    "summary": "Lazily initializes the shared static method-type object at 0x00AEBE04 (once), then points self+0x4 at it.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00512060": {

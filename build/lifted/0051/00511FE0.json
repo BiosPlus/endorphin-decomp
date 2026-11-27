@@ -1,0 +1,22 @@
+{
+  "va": "0x00511FE0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setLowerLimit(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor, float, getLowerLimit, float, setLowerLimit\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setLowerLimit(float), 0}\u003e",
+  "signature": "extern \"C\" DWORD mem_00AEBE08; // one-time init guard flags (bit 0 = initialized) extern \"C\" DWORD mem_00AEBE04; // static object storage (first DWORD = vtable 0x00951654) void fn_00511FE0(void* self)",
+  "summary": "Lazily initializes the shared static method-type object at 0x00AEBE04 (once), then points self+0x4 at it.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "pMethodType"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:24:02Z"
+}

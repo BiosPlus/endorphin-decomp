@@ -10961,3 +10961,28 @@ void __stdcall fn_0051A4E0(void* out) {
     lift_field<void*>(out, 0x04) = &mem_00AEC754;
 }
 } // namespace lift_0051A4E0
+
+// [0x00511FE0] ExprParser::ReadWriteMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setLowerLimit(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_00511FE0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AEBE08; // one-time init guard flags (bit 0 = initialized)
+extern DWORD mem_00AEBE04; // static object storage (first DWORD = vtable 0x00951654)
+
+// @name ExprParser::ReadWriteMethodType<Chromosome::Descriptor, float, getLowerLimit, float, setLowerLimit>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setLowerLimit(float), 0}>
+// @summary Lazily initializes the shared static method-type object at 0x00AEBE04 (once), then points self+0x4 at it.
+// @field ExprParser::ReadWriteMethodType +0x04 DWORD pMethodType
+void fn_00511FE0(void* self) {
+    // The original wraps this in an MSVC SEH frame (fs:[0] push/pop) that only
+    // guards the init path; it has no effect on the observable result here.
+    if ((mem_00AEBE08 & 1u) == 0) {
+        mem_00AEBE08 |= 1u;
+        // Callee overwrites the first DWORD of the object; the vtable store below
+        // replaces it, so the argument value does not affect the final state.
+        ext_0067A670(&mem_00AEBE04, 0);
+        mem_00AEBE04 = 0x00951654u;
+    }
+    lift_field<DWORD>(self, 0x4) = 0x00AEBE04u;
+}
+} // namespace lift_00511FE0
