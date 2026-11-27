@@ -68924,6 +68924,13 @@
     "summary": "Copies three int32 fields from +0x1c4/+0x1c8/+0x1cc to output pointers, or clamps to (5, 0, 0) when field_0x1c4 is in [1, 4].",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D6B70": {
+    "name": "Unknown::initAllocSubobjectAndArg_006D6B70",
+    "class": "Unknown",
+    "signature": "void* fn_006D6B70(void* self, DWORD arg)",
+    "summary": "Initializes this with one stack argument, allocates an 8-byte helper object into this+0xFC (zeroing its first two dwords), re-stamps the vtable, and resets the flag block; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D6C00": {
     "name": "sub_006D6C00",
     "signature": "extern \"C\" void* __fastcall fn_006D6C00(void* self, int edx_unused, unsigned int flags)",

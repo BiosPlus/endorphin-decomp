@@ -4367,3 +4367,46 @@ bool fn_006D5110(void* self, DWORD value) {
     return true;
 }
 } // namespace lift_006D5110
+
+// [0x006D6B70] sub_006D6B70 (139 bytes)
+namespace lift_006D6B70 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Used as cdecl operator-new-style allocator: pushes 8, returns pointer in eax, caller pops 4.
+extern void* ext_006A5C62(DWORD size);
+// Known callee 0x006B9D10: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+extern void* ext_006B9D10(void* self);
+// Known callee 0x006D59C0: Unknown::initWithSubobjectAndArg_006D59C0 (Sets the vtable, initializes the sub-object at +0x04, initializes members at +0x5C and +0xB0, stores the single stack argument at +0xA8 (zeroing +0xAC), and returns this.)
+extern void* ext_006D59C0(void* self, DWORD arg);
+// Known callee 0x006D6CB0: Unknown::ResetFlagsAndInitSubobject (Releases the object at field_0xFC, writes 0x01 to the flag block at 0x14C..0x156, clears byte 0x14F, then runs the initializer on the subobject at +0xB0.)
+extern void ext_006D6CB0(void* self);
+
+// @name Unknown::initAllocSubobjectAndArg_006D6B70
+// @class Unknown
+// @summary Initializes this with one stack argument, allocates an 8-byte helper object into this+0xFC (zeroing its first two dwords), re-stamps the vtable, and resets the flag block; returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0xFC void* field_0xFC
+// @field Sub8 +0x00 DWORD field_0x00
+// @field Sub8 +0x04 DWORD field_0x04
+void* fn_006D6B70(void* self, DWORD arg) {
+    ext_006D59C0(self, arg);
+
+    // Allocate the 8-byte helper; original zeroes +0x04 only when allocation succeeded.
+    void* obj = ext_006A5C62(8);
+    if (obj != nullptr) {
+        lift_field<DWORD>(obj, 0x04) = 0;
+    }
+    lift_field<void*>(self, 0xFC) = obj;
+
+    ext_006B9D10(static_cast<uint8_t*>(self) + 0x100);
+
+    // Re-read +0xFC after the call (original reloads it), then zero its first dword.
+    void* stored = lift_field<void*>(self, 0xFC);
+    lift_field<DWORD>(self, 0x00) = 0x0099395Cu; // vtable pointer stamp
+    if (stored != nullptr) {
+        lift_field<DWORD>(stored, 0x00) = 0;      // original writes unconditionally; null is guarded here
+    }
+
+    ext_006D6CB0(self);
+    return self;
+}
+} // namespace lift_006D6B70
