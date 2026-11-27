@@ -3666,6 +3666,12 @@
     "summary": "Calls virtual slot +0x1E4 (arg 0) on the object returned by ext_00465B40; on exception, logs the std::string at obj+0x0C via thunk_MFC80_ord_1123 and returns 0x004324CB.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00432760": {
+    "name": "sub_00432760",
+    "signature": "[[maybe_unused]] static void cleanup_004327AC(void* frame_base)",
+    "summary": "Calls ext_00465B40() to obtain an object, then invokes its vtable slot +0x1f0 with argument 1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004327F0": {
     "name": "Unknown::sehCleanupShowString",
     "class": "Unknown",

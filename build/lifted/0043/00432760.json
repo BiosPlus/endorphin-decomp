@@ -1,0 +1,13 @@
+{
+  "va": "0x00432760",
+  "size": 134,
+  "orig_symbol": "sub_00432760",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00432760",
+  "signature": "[[maybe_unused]] static void cleanup_004327AC(void* frame_base)",
+  "summary": "Calls ext_00465B40() to obtain an object, then invokes its vtable slot +0x1f0 with argument 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:29:42Z"
+}

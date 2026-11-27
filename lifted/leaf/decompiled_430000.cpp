@@ -4486,3 +4486,38 @@ void fn_004327F0(void* self) {
     target(obj, 1);
 }
 } // namespace lift_004327F0
+
+// [0x00432760]
+namespace lift_00432760 {
+// @name sub_00432760
+// @summary Calls ext_00465B40() to obtain an object, then invokes its vtable slot +0x1f0 with argument 1.
+
+extern void* ext_00465B40(void);
+extern void ext_006A5E60(void);
+extern uint8_t mem_00924FE0[];
+extern uint8_t mem_00924FF0[];
+extern uint8_t mem_00924FF4[];
+
+// Unwind/cleanup funclet at 0x004327AC (reached only via SEH unwind, not on the normal return path).
+// Copies a std::string built from the 0x0C-offset of the frame base, forwards its c_str() to
+// ext_006A5E60, then destroys the temporary. The std::string temporaries are MSVCP80 calls
+// (mem_00924FE0/FF0/FF4 are their IAT slots) and are not modeled here.
+[[maybe_unused]] static void cleanup_004327AC(void* frame_base) {
+    void* src = lift_field<void*>(frame_base, 0x0c);
+    (void)src;
+    ext_006A5E60();
+}
+
+void sub_00432760(void) {
+    // Original SEH prolog/epilog (fs:[0] frame push/pop, ebp/ebx/esi/edi saves) is not modeled.
+    (void)&mem_00924FE0;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+
+    void* obj = ext_00465B40();
+    void* vtbl = lift_field<void*>(obj, 0);
+    using SlotFn = void (*)(void*, int);
+    SlotFn slot = reinterpret_cast<SlotFn>(lift_field<void*>(vtbl, 0x1f0));
+    slot(obj, 1);
+}
+} // namespace lift_00432760
