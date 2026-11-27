@@ -1,0 +1,22 @@
+{
+  "va": "0x007AE200",
+  "size": 119,
+  "orig_symbol": "sub_007AE200",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Unknown::collectIndexedValuesAndForward_007AE200",
+  "class": "Unknown",
+  "signature": "inline void* const* vtableOf(const void* obj)",
+  "summary": "Queries a count from obj (vtbl[5]); if count \u003e= 20 forwards constant args to self+0x20 via ext_006E7410 and returns that result with low byte cleared; otherwise fills a local array with ext_006DEEC0(obj-\u003evtbl[6](i)) for i \u003c count and calls self-\u003evtbl[2](array, count).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:57:42Z"
+}

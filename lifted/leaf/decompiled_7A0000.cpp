@@ -1455,3 +1455,43 @@ void fn_007AAA20(void* self, const char* s) {
     ext_006B9D70(tmp);
 }
 } // namespace lift_007AAA20
+
+// [0x007AE200] sub_007AE200 (119 bytes)
+namespace lift_007AE200 {
+// Known callee 0x006DEEC0: sub_006DEEC0 (Getter returning int32_t field at offset +0x38.)
+extern int32_t ext_006DEEC0(void* self);
+// Known callee 0x006E7410: Unknown::assignStringByIndexAndForward_006E7410 (Passes the first stack argument as the index to assignStringByIndex (006E7440) on self, then forwards the second stack argument to the subobject call (006E7430) on self and returns its result.)
+extern void* ext_006E7410(void* self, uint32_t arg1, uint32_t arg2);
+
+namespace {
+using VFnCount = int32_t (*)(void* self);
+using VFnItem = void* (*)(void* self, int32_t index);
+using VFnProcess = uint32_t (*)(void* self, int32_t* items, int32_t count);
+
+inline void* const* vtableOf(const void* obj) {
+    return *reinterpret_cast<void* const* const*>(obj);
+}
+}  // namespace
+
+// @name Unknown::collectIndexedValuesAndForward_007AE200
+// @class Unknown
+// @summary Queries a count from obj (vtbl[5]); if count >= 20 forwards constant args to self+0x20 via ext_006E7410 and returns that result with low byte cleared; otherwise fills a local array with ext_006DEEC0(obj->vtbl[6](i)) for i < count and calls self->vtbl[2](array, count).
+// @field Unknown +0x20 void* field_0x20
+uint32_t fn_007AE200(void* self, void* obj, uint32_t /*unused*/) {
+    const int32_t count = reinterpret_cast<VFnCount>(vtableOf(obj)[5])(obj);
+
+    if (count >= 0x14) {
+        void* const r = ext_006E7410(static_cast<uint8_t*>(self) + 0x20, 4u, 0x00AB0AF8u);
+        // Original code: xor al, al -> clear the low byte of the returned value.
+        return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(r)) & 0xFFFFFF00u;
+    }
+
+    int32_t items[0x14] = {};
+    for (int32_t i = 0; i < count; ++i) {
+        void* const entry = reinterpret_cast<VFnItem>(vtableOf(obj)[6])(obj, i);
+        items[i] = ext_006DEEC0(entry);
+    }
+
+    return reinterpret_cast<VFnProcess>(vtableOf(self)[2])(self, items, count);
+}
+} // namespace lift_007AE200
