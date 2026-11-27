@@ -5518,6 +5518,13 @@
     "summary": "Calls sub_0044C330 with six stack arguments, then returns the address a1 + 4*a2 (dword element a2 of array a1).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C460": {
+    "name": "VectorUint32::erase",
+    "class": "VectorUint32",
+    "signature": "VectorIter* __thiscall fn_0044C460( void* self, VectorIter* out_iter, void* first_cont, uint32_t* first_ptr, void* last_cont, uint32_t* last_ptr)",
+    "summary": "Erases a range [first, last) of 32-bit elements from a vector and returns the updated iterator.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C4D0": {
     "name": "DWORD_RangeCopy_thiscall",
     "signature": "DWORD* __thiscall fn_0044C4D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -9170,6 +9177,12 @@
     "name": "sub_00477EC0",
     "signature": "void __thiscall sub_00477EC0(void* self, uint32_t arg0)",
     "summary": "Iterates over a pointer vector at this+0x30 and invokes vtable+0xEC on each element with arg0",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
+  "0x00477F30": {
+    "name": "getMaxField0x160",
+    "signature": "int32_t __thiscall sub_00477F30(void* self)",
+    "summary": "Iterates a vector of pointers at +0x30 and returns the maximum signed int32 at +0x160 (or 0 if none \u003e 0).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
   "0x00478410": {
@@ -22327,6 +22340,12 @@
     "summary": "Validates vector bounds and returns a pointer to the last 4-byte element.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00527D60": {
+    "name": "VectorPtrErase",
+    "signature": "void* __thiscall sub_00527D60(void* self, void* ret_iter, void* container, uintptr_t* pos)",
+    "summary": "Erases an element from a vector of pointers, deleting the pointed-to object if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00528100": {
     "name": "InterpreterSub::InterpreterSub",
     "class": "InterpreterSub",
@@ -26039,6 +26058,12 @@
     "name": "sub_005541A0_dtor",
     "signature": "void __thiscall sub_005541A0(void* self)",
     "summary": "Destructor that destroys std::string members at +0x20 and +0x04",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x005541F0": {
+    "name": "sub_005541F0_copy_ctor",
+    "signature": "void* __thiscall sub_005541F0(void* self, const void* src)",
+    "summary": "Copy constructor for a struct with two uint8_t flags and two std::string fields",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00554260": {

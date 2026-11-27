@@ -1,0 +1,27 @@
+{
+  "va": "0x00477F30",
+  "size": 99,
+  "orig_symbol": "sub_00477F30",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "getMaxField0x160",
+  "signature": "int32_t __thiscall sub_00477F30(void* self)",
+  "summary": "Iterates a vector of pointers at +0x30 and returns the maximum signed int32 at +0x160 (or 0 if none \u003e 0).",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x34",
+      "type": "uint32_t*",
+      "name": "vec_first"
+    },
+    {
+      "class": "this",
+      "offset": "+0x38",
+      "type": "uint32_t*",
+      "name": "vec_last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:02:06Z"
+}

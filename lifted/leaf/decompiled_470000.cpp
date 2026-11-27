@@ -931,3 +931,46 @@ void fn_00478410(void* self, void* range) {
     ext_00678D70(self, 1);
 }
 } // namespace lift_00478410
+
+// [0x00477F30]
+namespace lift_00477F30 {
+extern void (*mem_00925134)();
+
+// @name getMaxField0x160
+// @summary Iterates a vector of pointers at +0x30 and returns the maximum signed int32 at +0x160 (or 0 if none > 0).
+// @field this +0x34 uint32_t* vec_first
+// @field this +0x38 uint32_t* vec_last
+int32_t __thiscall sub_00477F30(void* self) {
+    uint8_t* vec = static_cast<uint8_t*>(self) + 0x30;
+    uint32_t* it = *reinterpret_cast<uint32_t**>(vec + 0x4);
+    int32_t max_val = 0;
+
+    if (it > *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+        mem_00925134();
+    }
+
+    for (;;) {
+        uint32_t* end = *reinterpret_cast<uint32_t**>(vec + 0x8);
+        if (*reinterpret_cast<uint32_t**>(vec + 0x4) > end) {
+            mem_00925134();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            mem_00925134();
+        }
+        uint8_t* item = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(*it));
+        int32_t val = *reinterpret_cast<int32_t*>(item + 0x160);
+        if (val > max_val) {
+            max_val = val;
+        }
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            mem_00925134();
+        }
+        ++it;
+    }
+
+    return max_val;
+}
+} // namespace lift_00477F30
