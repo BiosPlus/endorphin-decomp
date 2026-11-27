@@ -1,0 +1,28 @@
+{
+  "va": "0x0063E7F0",
+  "size": 126,
+  "orig_symbol": "sub_0063E7F0",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Derived::Derived(uint32_t, const std::string\u0026)",
+  "class": "Derived",
+  "signature": "extern \"C\" void* __thiscall fn_0063E7F0(void* self, uint32_t arg0, const void* name)",
+  "summary": "Builds base via ext_0063E0C0 using a temporary empty std::string and arg0, then sets the derived vtable and copy-constructs name into +0x24.",
+  "fields": [
+    {
+      "class": "Derived",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Derived",
+      "offset": "+0x24",
+      "type": "std::string",
+      "name": "name"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:04:13Z"
+}

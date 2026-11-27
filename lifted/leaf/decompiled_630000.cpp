@@ -1354,3 +1354,49 @@ void* fn_0063E100(void* self, uint32_t arg0, const void* name) {
     return self;
 }
 } // namespace lift_0063E100
+
+// [0x0063E7F0] sub_0063E7F0 (126 bytes)
+namespace lift_0063E7F0 {
+// Known callee 0x0063E0C0: Unknown::Unknown(uint32_t, const std::string&) (base ctor; stamps vtable 0x0097CB4C, copy-constructs name at +0x04, stores arg0 at +0x20)
+extern void* __thiscall ext_0063E0C0(void* self, uint32_t arg0, const void* name);
+
+// MSVCP80 std::string import slots (IAT entries, holding the real function pointers).
+extern int mem_00924FE4; // basic_string(const char*) ctor
+extern int mem_00924FF4; // basic_string dtor
+extern int mem_00924FE0; // basic_string(const basic_string&) copy ctor
+
+// Read-only data: vtable of the derived class and the empty-string literal used for the temp.
+extern int mem_0097CC08; // derived vtable
+extern int mem_0097CC20; // const char* literal
+
+// Layout of MSVC std::string (VS2005) is 0x1C bytes.
+using StringCtorCStrFn = void* (__thiscall*)(void* self, const char* s);
+using StringCopyCtorFn = void* (__thiscall*)(void* self, const void* other);
+using StringDtorFn     = void (__thiscall*)(void* self);
+
+// @name Derived::Derived(uint32_t, const std::string&)
+// @class Derived
+// @summary Builds base via ext_0063E0C0 using a temporary empty std::string and arg0, then sets the derived vtable and copy-constructs name into +0x24.
+// @field Derived +0x00 void* vtable
+// @field Derived +0x24 std::string name
+extern void* __thiscall fn_0063E7F0(void* self, uint32_t arg0, const void* name) {
+    alignas(8) uint8_t temp[0x1C];
+
+    // temp = std::string(literal)
+    (*reinterpret_cast<StringCtorCStrFn*>(&mem_00924FE4))(
+        temp, reinterpret_cast<const char*>(&mem_0097CC20));
+
+    // base ctor(self, arg0, &temp)
+    ext_0063E0C0(self, arg0, temp);
+
+    // ~temp
+    (*reinterpret_cast<StringDtorFn*>(&mem_00924FF4))(temp);
+
+    // derived vtable, then this->name = name
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(&mem_0097CC08);
+    (*reinterpret_cast<StringCopyCtorFn*>(&mem_00924FE0))(
+        &lift_field<uint8_t>(self, 0x24), name);
+
+    return self;
+}
+} // namespace lift_0063E7F0
