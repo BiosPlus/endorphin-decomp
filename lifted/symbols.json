@@ -44148,6 +44148,12 @@
     "summary": "IAT jump thunk forwarding to GLU32!gluPerspective.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E050": {
+    "name": "sub_0063E050",
+    "signature": "void __thiscall sub_0063E050(void* self, void* dst_str, uint32_t tail_len)",
+    "summary": "Extracts a substring from a buffer range (minus trailing length) and assigns it to the destination std::string",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E0C0": {
     "name": "Unknown::Unknown(uint32_t, const std::string\u0026) (string-copy ctor stub)",
     "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
@@ -45483,6 +45489,12 @@
     "class": "Unknown",
     "signature": "void fn_00648510(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x00648640": {
+    "name": "containsElement",
+    "signature": "uint8_t __thiscall sub_00648640(void* self, uint32_t value)",
+    "summary": "Checks whether a 32-bit value is present in the vector at offset 0x48.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00648790": {

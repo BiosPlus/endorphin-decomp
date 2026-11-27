@@ -2326,3 +2326,42 @@ PairPtr* fn_00641350(void* self, PairPtr* out, const int8_t* key) {
     return out;
 }
 } // namespace lift_00641350
+
+// [0x00648640]
+namespace lift_00648640 {
+// @name containsElement
+// @summary Checks whether a 32-bit value is present in the vector at offset 0x48.
+// @field UnknownClass +0x48 uint32_t* field_0x48
+// @field UnknownClass +0x4c uint32_t* field_0x4c
+// @field UnknownClass +0x50 uint32_t* field_0x50
+
+
+extern void (__cdecl *mem_00925134)();
+
+uint8_t __thiscall sub_00648640(void* self, uint32_t value) {
+    uint8_t* vec = static_cast<uint8_t*>(self) + 0x48;
+    uint32_t* end = lift_field<uint32_t*>(self, 0x50);
+    if (lift_field<uint32_t*>(self, 0x4c) > end) {
+        mem_00925134();
+    }
+
+    uint32_t* it = lift_field<uint32_t*>(vec, 0x4);
+    if (it > lift_field<uint32_t*>(vec, 0x8)) {
+        mem_00925134();
+    }
+
+    while (it != end && *it != value) {
+        ++it;
+    }
+
+    uint32_t* end2 = lift_field<uint32_t*>(vec, 0x8);
+    if (lift_field<uint32_t*>(vec, 0x4) > end2) {
+        mem_00925134();
+    }
+    if (!vec) {
+        mem_00925134();
+    }
+
+    return (it != end2) ? 1 : 0;
+}
+} // namespace lift_00648640
