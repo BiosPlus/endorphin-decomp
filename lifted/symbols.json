@@ -85085,6 +85085,12 @@
     "summary": "Heap-duplicates a NUL-terminated string (strlen + 1 bytes via malloc) and returns the copy.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B2C20": {
+    "name": "AllocBlock1C_CacheOnNull",
+    "signature": "void fn_007B2C20(void** slot)",
+    "summary": "If *slot is unset, allocates a 0x1C-byte block into it, zeroes the leading dwords and seeds two flag bytes from 0x009996FC; caches index 2 or 1 via ext_007AA510 when slot is NULL, gated by byte 0x00B61219.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B2D80": {
     "name": "sub_007B2D80",
     "signature": "static uint32_t search_tree(uint32_t node, uint32_t key)",

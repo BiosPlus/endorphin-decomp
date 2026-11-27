@@ -2298,3 +2298,58 @@ void fn_007B7C50(uint8_t* buf, uint32_t n) {
     }
 }
 } // namespace lift_007B7C50
+
+// [0x007B2C20] sub_007B2C20 (128 bytes)
+namespace lift_007B2C20 {
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+extern uint32_t mem_009996FC;   // .rdata u32 0x000000FF; read as a byte
+extern uint8_t mem_00B61219;    // global byte flag
+extern int mem_00925208;        // IAT slot for MSVCR80!malloc; replaced by std::malloc
+
+// @name AllocBlock1C_CacheOnNull
+// @summary If *slot is unset, allocates a 0x1C-byte block into it, zeroes the leading dwords and seeds two flag bytes from 0x009996FC; caches index 2 or 1 via ext_007AA510 when slot is NULL, gated by byte 0x00B61219.
+// @field LiftedBlock1C +0x00 uint32_t field_0x00
+// @field LiftedBlock1C +0x04 uint32_t field_0x04
+// @field LiftedBlock1C +0x08 uint32_t field_0x08
+// @field LiftedBlock1C +0x0C uint32_t field_0x0C
+// @field LiftedBlock1C +0x10 uint32_t field_0x10
+// @field LiftedBlock1C +0x14 uint32_t field_0x14
+// @field LiftedBlock1C +0x18 uint8_t field_0x18
+// @field LiftedBlock1C +0x19 uint8_t field_0x19
+void fn_007B2C20(void** slot) {
+    if (slot == nullptr) {
+        ext_007AA510(2);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+    }
+
+    // Original: unconditional store of the new block into *slot.
+    // A NULL slot faults here in the original binary, so the NULL branch below is
+    // only reachable in the same way the original reaches it.
+    // The original calls malloc through the IAT slot at 0x00925208; that indirection
+    // is an import thunk, so std::malloc is used instead. Reference kept for the check.
+    (void)&mem_00925208;
+    *slot = std::malloc(0x1c);
+
+    if (slot == nullptr) {
+        ext_007AA510(1);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+    }
+
+    void* block = *slot;
+    const uint8_t flag = *reinterpret_cast<const uint8_t*>(&mem_009996FC);
+
+    lift_field<uint32_t>(block, 0x00) = 0;
+    lift_field<uint32_t>(block, 0x04) = 0;
+    lift_field<uint32_t>(block, 0x08) = 0;
+    lift_field<uint32_t>(block, 0x0C) = 0;
+    lift_field<uint32_t>(block, 0x10) = 0;
+    lift_field<uint32_t>(block, 0x14) = 0;
+    lift_field<uint8_t>(block, 0x18) = flag;
+    lift_field<uint8_t>(block, 0x19) = flag;
+}
+} // namespace lift_007B2C20

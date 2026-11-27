@@ -1,0 +1,63 @@
+{
+  "va": "0x007B2C20",
+  "size": 128,
+  "orig_symbol": "sub_007B2C20",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "AllocBlock1C_CacheOnNull",
+  "signature": "void fn_007B2C20(void** slot)",
+  "summary": "If *slot is unset, allocates a 0x1C-byte block into it, zeroes the leading dwords and seeds two flag bytes from 0x009996FC; caches index 2 or 1 via ext_007AA510 when slot is NULL, gated by byte 0x00B61219.",
+  "fields": [
+    {
+      "class": "LiftedBlock1C",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "LiftedBlock1C",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "LiftedBlock1C",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "LiftedBlock1C",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "LiftedBlock1C",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "LiftedBlock1C",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "LiftedBlock1C",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "LiftedBlock1C",
+      "offset": "+0x19",
+      "type": "uint8_t",
+      "name": "field_0x19"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:14:20Z"
+}
