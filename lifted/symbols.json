@@ -79351,6 +79351,13 @@
     "summary": "Under the critical section at +0x00, frees every node in each bucket chain of the array at +0x04 (count at +0x0C), zeroes the bucket heads, then resets +0x20 and +0x24 to 0.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078D130": {
+    "name": "PoolAllocator::deallocate",
+    "class": "PoolAllocator",
+    "signature": "void __thiscall sub_0078D130(void* self, void* fallbackAllocator, void* ptr)",
+    "summary": "Returns a block to the pool free-list or delegates to the fallback allocator if out of range.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078D1C0": {
     "name": "makeLowBitMask",
     "signature": "__cdecl uint32_t fn_0078D1C0(int32_t n)",

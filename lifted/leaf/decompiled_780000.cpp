@@ -2765,3 +2765,52 @@ void* __thiscall fn_0078CE20(void* this_, uint32_t arg1, uint32_t arg2, uint32_t
     return this_;
 }
 } // namespace lift_0078CE20
+
+// [0x0078D130]
+namespace lift_0078D130 {
+// @name PoolAllocator::deallocate
+// @class PoolAllocator
+// @summary Returns a block to the pool free-list or delegates to the fallback allocator if out of range.
+// @field PoolAllocator +0x00 void* criticalSection
+// @field PoolAllocator +0x04 void** buckets
+// @field PoolAllocator +0x08 uint32_t maxBlockSize
+// @field PoolAllocator +0x10 uint32_t bucketShift
+// @field PoolAllocator +0x1c uint32_t memoryLimit
+// @field PoolAllocator +0x20 uint32_t allocatedBytes
+// @field PoolAllocator +0x24 uint32_t allocationCount
+
+extern void (__stdcall *mem_009242E0)(void*);
+extern void (__stdcall *mem_009241BC)(void*);
+
+void __thiscall sub_0078D130(void* self, void* fallbackAllocator, void* ptr) {
+    uint8_t* header = static_cast<uint8_t*>(ptr) - 8;
+    uint32_t size = *reinterpret_cast<uint32_t*>(header);
+    uint8_t offset = *(header + 4);
+    void* base = header - offset;
+
+    void* cs = lift_field<void*>(self, 0x00);
+    mem_009242E0(cs);
+
+    void** buckets = lift_field<void**>(self, 0x04);
+    uint32_t maxBlockSize = lift_field<uint32_t>(self, 0x08);
+    uint32_t memoryLimit = lift_field<uint32_t>(self, 0x1c);
+
+    if (buckets != nullptr && size >= 8 && size < maxBlockSize &&
+        (memoryLimit == 0 || lift_field<uint32_t>(self, 0x20) <= memoryLimit)) {
+        uint32_t shift = lift_field<uint32_t>(self, 0x10);
+        uint32_t bucketIdx = size >> (shift & 0x1f);
+        *static_cast<void**>(base) = buckets[bucketIdx];
+        buckets[bucketIdx] = base;
+        mem_009241BC(cs);
+        return;
+    }
+
+    mem_009241BC(cs);
+    using FreeFn = void(__thiscall*)(void*, void*);
+    void** vtable = *static_cast<void***>(fallbackAllocator);
+    reinterpret_cast<FreeFn>(vtable[3])(fallbackAllocator, base);
+
+    lift_field<uint32_t>(self, 0x20) -= size;
+    lift_field<uint32_t>(self, 0x24) -= 1;
+}
+} // namespace lift_0078D130

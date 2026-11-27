@@ -1,0 +1,76 @@
+{
+  "va": "0x0078CE20",
+  "size": 144,
+  "orig_symbol": "sub_0078CE20",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_0078CE20",
+  "class": "PoolAllocator",
+  "signature": "void* __thiscall fn_0078CE20(void* this_, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Initializes a pool/chunked allocator with a critical section, bitmask shift parameters, and zeroed bucket array.",
+  "fields": [
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "criticalSection"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "buckets"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "capacity"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "bucketCount"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "shiftBits"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "lowBitMask"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:47:17Z"
+}
