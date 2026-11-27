@@ -11,7 +11,22 @@
 namespace lifted_layout {
 struct Acclaim2CharacterIO_Fields {
     // +0x0   void* vtable (no direct field access; self is only passed through to ext_00553720)  (evidence: 0x0056B770)
+    // +0x78  float                    field_0x78  (evidence: 0x0056BD50)
+    // +0x7C  float                    field_0x7c  (evidence: 0x0056BD50)
+    // +0x80  float                    field_0x80  (evidence: 0x0056BD50)
+    // +0x84  uint32_t                 field_0x84  (evidence: 0x0056BD50)
+    // +0x88  uint32_t                 field_0x88  (evidence: 0x0056BD50)
+    // +0x8C  uint32_t                 field_0x8c  (evidence: 0x0056BD50)
     // +0xAC  std::string              field_0xac  (evidence: 0x0056B8C0)
-    // +0x46C float                    field_0x46c  (evidence: 0x0056B8C0)
+    // +0x27C uint8_t                  field_0x27c  (evidence: 0x0056BD50)
+    // +0x46C float                    field_0x46c  (evidence: 0x0056B8C0, 0x0056BD50)
+    // +0x484 void**                   field_0x484  (evidence: 0x0056BD50)
+    // +0x488 void**                   field_0x488  (evidence: 0x0056BD50)
+    // +0x490 float                    field_0x490  (evidence: 0x0056BD50)
+    // +0x494 float                    field_0x494  (evidence: 0x0056BD50)
+    // +0x498 float                    field_0x498  (evidence: 0x0056BD50)
+    // +0x49C uint32_t                 field_0x49c  (evidence: 0x0056BD50)
+    // +0x4A0 uint32_t                 field_0x4a0  (evidence: 0x0056BD50)
+    // +0x4A4 uint32_t                 field_0x4a4  (evidence: 0x0056BD50)
 };
 } // namespace lifted_layout

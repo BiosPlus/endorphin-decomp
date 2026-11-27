@@ -38507,6 +38507,13 @@
     "summary": "Returns 1 if the range [+0x28, +0x2c) is non-null and spans more than one 4-byte element, else 0.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x0056BD50": {
+    "name": "Acclaim2CharacterIO::vfunc_14",
+    "class": "Acclaim2CharacterIO",
+    "signature": "int __thiscall fn_0056BD50(void* self, void* arg0)",
+    "summary": "Loads Acclaim2 character data, processes skeleton/nodes based on version, and copies transform/bounds fields.",
+    "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
+  },
   "0x0056D840": {
     "name": "sub_0056D840",
     "class": "Unknown",
