@@ -8,10 +8,10 @@
 // Recovered field layout for ThrownObject:
 namespace lifted_layout {
 struct ThrownObject_Fields {
-    // +0x0   void*                    vptr  (evidence: 0x0043D2E0)
-    // +0x10  std::string              message  (evidence: 0x0043D2E0)
-    // +0x30  uint32_t                 field_0x30  (evidence: 0x0043D2E0)
-    // +0x34  uint8_t                  field_0x34  (evidence: 0x0043D2E0)
-    // +0x38  uint8_t                  field_0x38  (evidence: 0x0043D2E0)
+    // +0x0   void*                    vptr  (evidence: 0x0043D2E0, 0x0067F5B0)
+    // +0x10  std::string              message  (evidence: 0x0043D2E0, 0x0067F5B0)
+    // +0x30  uint32_t                 field_0x30  (evidence: 0x0043D2E0, 0x0067F5B0)
+    // +0x34  uint8_t                  field_0x34  (evidence: 0x0043D2E0, 0x0067F5B0)
+    // +0x38  uint8_t                  field_0x38  (evidence: 0x0043D2E0, 0x0067F5B0)
 };
 } // namespace lifted_layout
