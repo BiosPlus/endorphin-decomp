@@ -62084,6 +62084,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x00692230": {
+    "name": "VectorElementAt",
+    "signature": "void* fn_00692230(void* self, int32_t index)",
+    "summary": "Bounds-checked element address lookup on a vector of 8-byte elements; throws when index is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006922D0": {
     "name": "ExprParser::FunctionType\u003cValuePtrArrayObject,push\u003e::vfunc_16",
     "class": "ExprParser::FunctionType\u003cValuePtrArrayObject,push\u003e",

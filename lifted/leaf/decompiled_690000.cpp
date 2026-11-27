@@ -1864,3 +1864,45 @@ void fn_00697690(void* self, float value) {
     }
 }
 } // namespace lift_00697690
+
+// [0x00692230] sub_00692230 (154 bytes)
+namespace lift_00692230 {
+// Known callee 0x00403560: StringExceptionWithMember::ctor
+// (store c_str() as the exception message, set vtable, copy-construct std::string at +0x0C; returns self)
+extern void* ext_00403560(void* self, const std::string* src);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException; does not return)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// Throw message literal (.rdata @ 0x0094BB04) and ThrowInfo/type descriptor (.rdata @ 0x009D47A4)
+extern const char mem_0094BB04[];
+extern const char mem_009D47A4[];
+// IAT slots: std::string(const char*) ctor (0x00924FE4) and _invalid_parameter_noinfo (0x00925134).
+// The C++ std::string ctor above replaces the first; the invalid-parameter assert is not
+// reproduced (the index check already guards the same range). Referenced for metadata only.
+extern int mem_00924FE4;
+extern int mem_00925134;
+
+// @name VectorElementAt
+// @summary Bounds-checked element address lookup on a vector of 8-byte elements; throws when index is out of range.
+void* fn_00692230(void* self, int32_t index) {
+    (void)&mem_00924FE4;
+    (void)&mem_00925134;
+
+    // Vector header: +0x0C = begin pointer, +0x10 = end pointer (8-byte elements).
+    const uint32_t begin = lift_field<uint32_t>(self, 0x0C);
+    const uint32_t end   = lift_field<uint32_t>(self, 0x10);
+    const int32_t  size  = (begin == 0) ? 0 : (static_cast<int32_t>(end - begin) >> 3);
+
+    if (index >= size) {
+        // Out of range: build the exception object (message = literal) and throw.
+        // The MSVC exception object is opaque here; 0x30 bytes of storage covers the asm's
+        // object area (esp+0x28 .. esp+0x58).
+        std::string msg(mem_0094BB04);
+        alignas(8) uint8_t exc[0x30]{};
+        ext_00403560(exc, &msg);
+        ext_006A6DD2(exc, mem_009D47A4);
+    }
+
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(begin) +
+                                   static_cast<intptr_t>(index) * 8);
+}
+} // namespace lift_00692230
