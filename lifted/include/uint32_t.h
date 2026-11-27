@@ -10,7 +10,7 @@ namespace lifted_layout {
 struct uint32_t_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00441A60) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 word0  (evidence: 0x0086B1C0) // CONFLICT: multiple definitions at +0x0
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00441A60) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00441A60, 0x006923C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 word1  (evidence: 0x0086B1C0) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00441A60) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 word2  (evidence: 0x0086B1C0) // CONFLICT: multiple definitions at +0x8

@@ -1162,3 +1162,28 @@ void __stdcall fn_0066D530(void* self) {
     lift_field<uint32_t>(self, 0x04) = 0x00B596B8u;
 }
 } // namespace lift_0066D530
+
+// [0x006923C0]
+namespace lift_006923C0 {
+extern uint32_t mem_00B5BCC4;
+extern uint32_t mem_00B5BCC0;
+extern void __thiscall ext_0067A670(void* self);
+extern void ext_00671F30(uint32_t* out);
+extern void ext_0067BA20();
+
+// @name ExprParser::Method2Type<ValuePtrArrayObject, int, ValuePtr const &, ValuePtrArrayObject::setElement>::vfunc_40
+// @class ExprParser::Method2Type
+// @summary Lazily initializes static type descriptor mem_00B5BCC0 and stores its address into out[1].
+// @field uint32_t +0x04 uint32_t field_0x04
+void __thiscall fn_006923C0(void* self, uint32_t* out) {
+    (void)self;
+    (void)&ext_00671F30;
+    (void)&ext_0067BA20;
+    if ((mem_00B5BCC4 & 1u) == 0) {
+        mem_00B5BCC4 |= 1u;
+        ext_0067A670(&mem_00B5BCC0);
+        mem_00B5BCC0 = 0x0098EFECu;
+    }
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B5BCC0));
+}
+} // namespace lift_006923C0

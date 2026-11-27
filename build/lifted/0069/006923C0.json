@@ -1,0 +1,22 @@
+{
+  "va": "0x006923C0",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cValuePtrArrayObject, int, ValuePtr const \u0026, {public: void __thiscall ValuePtrArrayObject::setElement(int, ValuePtr const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type\u003cValuePtrArrayObject, int, ValuePtr const \u0026, ValuePtrArrayObject::setElement\u003e::vfunc_40",
+  "class": "ExprParser::Method2Type",
+  "signature": "void __thiscall fn_006923C0(void* self, uint32_t* out)",
+  "summary": "Lazily initializes static type descriptor mem_00B5BCC0 and stores its address into out[1].",
+  "fields": [
+    {
+      "class": "uint32_t",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:44:36Z"
+}
