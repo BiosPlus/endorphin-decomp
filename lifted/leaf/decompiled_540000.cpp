@@ -2474,3 +2474,58 @@ extern void* __fastcall fn_00546FA0(void* self, int edx_unused, uint32_t a1, uin
     return self;
 }
 } // namespace lift_00546FA0
+
+// [0x00544E20] sub_00544E20 (157 bytes)
+namespace lift_00544E20 {
+// Known callee 0x0053F690: sub_0053F690
+extern void __fastcall ext_0053F690(void* self);
+// Known callee 0x0053F6A0: forwardValueToChildSetField498
+extern void __fastcall ext_0053F6A0(void* self, DWORD arg0, DWORD value);
+
+// @name ConditionalChildRefreshAndNotify
+// @class Unknown
+// @summary Gated child refresh: when flag bit0 set and +0x144 == 6, forces child flags, calls child vfunc +0x44 and thunk 0x53F690, then optionally calls self vfunc +0x68; returns byte at +0x260.
+// @field Unknown +0x144 DWORD field_0x144
+// @field Unknown +0x164 void* child_subobject
+// @field Unknown +0x248 BYTE field_0x248
+// @field Unknown +0x249 BYTE field_0x249
+// @field Unknown +0x260 BYTE field_0x260
+// @field Unknown +0x261 BYTE field_0x261
+extern BYTE __fastcall fn_00544E20(void* self, DWORD a1, DWORD a2) {
+    if ((static_cast<BYTE>(a1) & 1u) == 0) {
+        return lift_field<BYTE>(self, 0x260);
+    }
+    if (lift_field<DWORD>(self, 0x144) != 6u) {
+        return lift_field<BYTE>(self, 0x260);
+    }
+
+    BYTE saved = lift_field<BYTE>(self, 0x248);
+    lift_field<BYTE>(self, 0x261) = 1;
+    lift_field<BYTE>(self, 0x249) = 1;
+    lift_field<BYTE>(self, 0x248) = 1;
+
+    void* child = static_cast<uint8_t*>(self) + 0x164;
+    ext_0053F6A0(child, 0x93a444u, 0x0Cu);
+
+    // child->vtbl[+0x44](a1, a2)
+    void* childVtbl = lift_field<void*>(child, 0);
+    auto childFn = reinterpret_cast<void (*)(void*, DWORD, DWORD)>(
+        lift_field<void*>(childVtbl, 0x44));
+    childFn(child, a1, a2);
+
+    lift_field<BYTE>(self, 0x249) = 0;
+    lift_field<BYTE>(self, 0x248) = saved;
+    ext_0053F690(child);
+
+    bool pending = lift_field<BYTE>(self, 0x260) != 0;
+    lift_field<BYTE>(self, 0x261) = 0;
+    if (pending) {
+        // self->vtbl[+0x68](self)
+        void* selfVtbl = lift_field<void*>(self, 0);
+        auto selfFn = reinterpret_cast<void (*)(void*)>(
+            lift_field<void*>(selfVtbl, 0x68));
+        selfFn(self);
+    }
+    return lift_field<BYTE>(self, 0x260);
+}
+} // namespace lift_00544E20

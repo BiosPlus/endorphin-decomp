@@ -1,0 +1,52 @@
+{
+  "va": "0x00544E20",
+  "size": 157,
+  "orig_symbol": "sub_00544E20",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "ConditionalChildRefreshAndNotify",
+  "class": "Unknown",
+  "signature": "extern \"C\" BYTE __fastcall fn_00544E20(void* self, DWORD a1, DWORD a2)",
+  "summary": "Gated child refresh: when flag bit0 set and +0x144 == 6, forces child flags, calls child vfunc +0x44 and thunk 0x53F690, then optionally calls self vfunc +0x68; returns byte at +0x260.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x144",
+      "type": "DWORD",
+      "name": "field_0x144"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "void*",
+      "name": "child_subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x248",
+      "type": "BYTE",
+      "name": "field_0x248"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x249",
+      "type": "BYTE",
+      "name": "field_0x249"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x260",
+      "type": "BYTE",
+      "name": "field_0x260"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x261",
+      "type": "BYTE",
+      "name": "field_0x261"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:36:53Z"
+}

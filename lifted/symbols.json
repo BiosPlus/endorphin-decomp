@@ -29669,6 +29669,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00544B10 (ForceApplicationTool::vfunc_18_off_98).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544E20": {
+    "name": "ConditionalChildRefreshAndNotify",
+    "class": "Unknown",
+    "signature": "extern \"C\" BYTE __fastcall fn_00544E20(void* self, DWORD a1, DWORD a2)",
+    "summary": "Gated child refresh: when flag bit0 set and +0x144 == 6, forces child flags, calls child vfunc +0x44 and thunk 0x53F690, then optionally calls self vfunc +0x68; returns byte at +0x260.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00544F30": {
     "name": "Unknown::dtor_00544F30",
     "class": "Unknown",
