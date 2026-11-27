@@ -1370,3 +1370,18 @@ int32_t __cdecl sub_008635C0(const uint8_t* rec) {
     return 1;
 }
 } // namespace lift_008635C0
+
+// [0x0086EE30] sub_0086EE30 (48 bytes)
+namespace lift_0086EE30 {
+// Known callee 0x0086B220: CopyFiveDwords (Copies five consecutive 32-bit words from src to dst (offsets 0x00..0x10).)
+extern void ext_0086B220(void* src, void* dst);
+
+// @name CopyTwoFiveDwordBlocks
+// @summary Copy two 20-byte blocks (five dwords each) from src to dst: the block at offset 0x00 and the block at offset 0x14.
+void fn_0086EE30(void* src, void* dst) {
+    auto* s = static_cast<std::uint8_t*>(src);
+    auto* d = static_cast<std::uint8_t*>(dst);
+    ext_0086B220(s, d);
+    ext_0086B220(s + 0x14, d + 0x14);
+}
+} // namespace lift_0086EE30

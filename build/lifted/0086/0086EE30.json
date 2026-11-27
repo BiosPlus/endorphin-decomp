@@ -1,0 +1,13 @@
+{
+  "va": "0x0086EE30",
+  "size": 48,
+  "orig_symbol": "sub_0086EE30",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "CopyTwoFiveDwordBlocks",
+  "signature": "void fn_0086EE30(void* src, void* dst)",
+  "summary": "Copy two 20-byte blocks (five dwords each) from src to dst: the block at offset 0x00 and the block at offset 0x14.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:17:33Z"
+}

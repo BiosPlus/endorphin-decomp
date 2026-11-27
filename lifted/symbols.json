@@ -82019,6 +82019,12 @@
     "summary": "Copies the two dword halves of the 64-bit field at +0x1050 into +0x1048.",
     "lifted_path": "lifted/leaf/tiny_860000.cpp"
   },
+  "0x0086EE30": {
+    "name": "CopyTwoFiveDwordBlocks",
+    "signature": "void fn_0086EE30(void* src, void* dst)",
+    "summary": "Copy two 20-byte blocks (five dwords each) from src to dst: the block at offset 0x00 and the block at offset 0x14.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086EFD0": {
     "name": "sub_0086086B",
     "class": "(none)",
