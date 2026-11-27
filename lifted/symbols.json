@@ -5602,6 +5602,13 @@
     "summary": "Toggles the owner's redraw timer based on the armed byte at +0x0D, then, if the left button is held and the cursor is left of owner+0xfc, marks the hit item at +0x38 when its id matches +0x10.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp"
   },
+  "0x00442E70": {
+    "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_3",
+    "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+    "signature": "uint8_t __thiscall fn_00442E70(void* self, uint32_t arg1, int32_t arg2, int32_t arg3)",
+    "summary": "Handles mouse/input events in MultiTrackView WaitState, dispatching to track/item hit-testing and state transitions.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp"
+  },
   "0x004430A0": {
     "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_7",
     "class": "MultiTrackView::MultiTrackViewStates::WaitState",

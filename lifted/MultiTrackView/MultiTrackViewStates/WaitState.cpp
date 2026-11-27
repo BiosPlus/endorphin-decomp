@@ -275,3 +275,143 @@ uint8_t __thiscall fn_00442A40(void* self, uint32_t flags, int32_t x, int32_t y)
     return 1;
 }
 } // namespace lift_00442A40
+
+// [0x00442E70]
+namespace lift_00442E70 {
+// @name MultiTrackView::MultiTrackViewStates::WaitState::vfunc_3
+// @class MultiTrackView::MultiTrackViewStates::WaitState
+// @summary Handles mouse/input events in MultiTrackView WaitState, dispatching to track/item hit-testing and state transitions.
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x04 void* field_0x04
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x08 void* owner
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x10 uint32_t field_0x10
+
+
+void __thiscall ext_004429C0(void* self);
+void __thiscall ext_006A60D0(void* self);
+uint8_t __thiscall ext_0041C880(void* self, uint32_t index);
+void* __thiscall ext_0043D900(void* self, void* pt);
+void* __thiscall ext_0043C920(void* self);
+void __thiscall ext_0043DA60(void* self);
+uintptr_t __thiscall ext_0043C9B0(void* self, void* arg);
+void* __thiscall ext_0043D620(void* self, void* pt);
+void __thiscall ext_0043E0F0(void* self, void* item, uint32_t arg1, int32_t arg2, int32_t arg3);
+uint8_t __thiscall ext_00412F50(void* self, void* pt);
+void __thiscall ext_004132D0(void* self, uint8_t flag);
+void __thiscall ext_0043DC90(void* self, int32_t arg);
+
+extern uintptr_t mem_009256E4;
+extern uintptr_t mem_00925688;
+extern uintptr_t mem_0092568C;
+
+struct LiftPoint {
+    int32_t x;
+    int32_t y;
+};
+
+uint8_t __thiscall fn_00442E70(void* self, uint32_t arg1, int32_t arg2, int32_t arg3) {
+    using GetAsyncKeyStateFn = uint32_t(__stdcall*)(int32_t);
+    using InvalidateRectFn = int32_t(__stdcall*)(void*, const void*, int32_t);
+    using UpdateWindowFn = int32_t(__stdcall*)(void*);
+
+    lift_field<uint32_t>(self, 0x10) = 0xFFFFFFFEu;
+    ext_004429C0(self);
+    ext_006A60D0(lift_field<void*>(self, 0x08));
+
+    auto getAsyncKeyState = reinterpret_cast<GetAsyncKeyStateFn>(mem_009256E4);
+    if (((getAsyncKeyState(0x12) >> 15) & 1u) != 0) {
+        void* owner = lift_field<void*>(self, 0x08);
+        if (arg2 > lift_field<int32_t>(owner, 0xFC)) {
+            ext_0041C880(lift_field<void*>(self, 0x04), 1);
+            return 1;
+        }
+    }
+
+    LiftPoint pt{arg2, arg3};
+    void* owner = lift_field<void*>(self, 0x08);
+    void* hit = ext_0043D900(owner, &pt);
+    if (hit != nullptr) {
+        lift_field<void*>(lift_field<void*>(self, 0x08), 0xA0) = hit;
+
+        using Vfunc10Fn = uint32_t(__thiscall*)(void*, void*);
+        void** vtable = lift_field<void**>(hit, 0x00);
+        auto vfunc10 = reinterpret_cast<Vfunc10Fn>(vtable[0x10 / 4]);
+        uint32_t res = vfunc10(hit, &pt);
+
+        if (res == 0) {
+            ext_0041C880(lift_field<void*>(self, 0x04), 7);
+            return 1;
+        }
+        if (res == 1) {
+            ext_0041C880(lift_field<void*>(self, 0x04), 8);
+            return 1;
+        }
+        if (res == 2) {
+            if (lift_field<uint8_t>(hit, 0x8E) != 0) {
+                ext_0041C880(lift_field<void*>(self, 0x04), 4);
+                return 1;
+            }
+            ext_0041C880(lift_field<void*>(self, 0x04), 6);
+            void* vec = ext_0043C920(lift_field<void*>(self, 0x08));
+            uint32_t begin = lift_field<uint32_t>(vec, 0x04);
+            if (begin != 0) {
+                uint32_t end = lift_field<uint32_t>(vec, 0x08);
+                if (static_cast<int32_t>(end - begin) >> 2 != 0) {
+                    ext_0043DA60(lift_field<void*>(self, 0x08));
+                    ext_0043C9B0(lift_field<void*>(self, 0x08), nullptr);
+                    void* hwnd = lift_field<void*>(lift_field<void*>(self, 0x08), 0x20);
+                    auto invalidateRect = reinterpret_cast<InvalidateRectFn>(mem_00925688);
+                    invalidateRect(hwnd, nullptr, 1);
+                    return 1;
+                }
+            }
+        }
+        return 1;
+    }
+
+    int32_t threshold = lift_field<int32_t>(owner, 0xFC);
+    if (pt.x > threshold) {
+        ext_0041C880(lift_field<void*>(self, 0x04), 5);
+        void* track = ext_0043D620(lift_field<void*>(self, 0x08), &pt);
+        if (track != nullptr) {
+            using Vfunc0CFn = uint8_t(__thiscall*)(void*);
+            void** vtable = lift_field<void**>(track, 0x00);
+            auto vfunc0C = reinterpret_cast<Vfunc0CFn>(vtable[0x0C / 4]);
+            if (vfunc0C(track) != 0) {
+                ext_0043E0F0(lift_field<void*>(self, 0x08), track, arg1, pt.x, pt.y);
+                void* newHit = ext_0043D900(lift_field<void*>(self, 0x08), &pt);
+                if (newHit != nullptr) {
+                    lift_field<void*>(lift_field<void*>(self, 0x08), 0xA0) = newHit;
+                    ext_0041C880(lift_field<void*>(self, 0x04), 6);
+                    return 1;
+                }
+            }
+        }
+        return 1;
+    }
+
+    if (pt.x < threshold) {
+        void* track = ext_0043D620(owner, &pt);
+        if (track != nullptr && lift_field<int32_t>(track, 0x14) != -1) {
+            if (ext_00412F50(track, &pt) != 0) {
+                uint8_t newFlag = (lift_field<uint8_t>(track, 0x37) == 0) ? 1 : 0;
+                ext_004132D0(track, newFlag);
+                void* hwnd = lift_field<void*>(lift_field<void*>(self, 0x08), 0x20);
+                auto invalidateRect = reinterpret_cast<InvalidateRectFn>(mem_00925688);
+                invalidateRect(hwnd, nullptr, 1);
+                void* hwnd2 = lift_field<void*>(lift_field<void*>(self, 0x08), 0x20);
+                auto updateWindow = reinterpret_cast<UpdateWindowFn>(mem_0092568C);
+                updateWindow(hwnd2);
+                ext_0043DC90(lift_field<void*>(self, 0x08), -1);
+                return 1;
+            }
+            uint32_t trackId = lift_field<uint32_t>(track, 0x14);
+            lift_field<uint8_t>(track, 0x38) = 1;
+            lift_field<uint32_t>(self, 0x10) = trackId;
+            return 1;
+        }
+        ext_0041C880(lift_field<void*>(self, 0x04), 5);
+    }
+
+    return 1;
+}
+} // namespace lift_00442E70

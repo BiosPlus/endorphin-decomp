@@ -1,0 +1,34 @@
+{
+  "va": "0x00442E70",
+  "size": 555,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_3",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_3",
+  "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+  "signature": "uint8_t __thiscall fn_00442E70(void* self, uint32_t arg1, int32_t arg2, int32_t arg3)",
+  "summary": "Handles mouse/input events in MultiTrackView WaitState, dispatching to track/item hit-testing and state transitions.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:09:21Z"
+}
