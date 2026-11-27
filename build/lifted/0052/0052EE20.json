@@ -1,0 +1,14 @@
+{
+  "va": "0x0052EE20",
+  "size": 139,
+  "orig_symbol": "NullRenderer::vfunc_102",
+  "src_path": "src/classes/NullRenderer.cpp",
+  "lifted_path": "lifted/classes/NullRenderer.cpp",
+  "name": "NullRenderer::createInstance",
+  "class": "NullRenderer",
+  "signature": "void* __stdcall fn_0052EE20(void* owner)",
+  "summary": "Allocates a 0x44-byte NullRenderer; constructs it with an owner back-reference when owner is non-null, otherwise with the plain constructor. Returns null if allocation fails.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:29Z"
+}

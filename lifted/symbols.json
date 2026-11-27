@@ -24621,6 +24621,13 @@
     "summary": "Pure jump thunk forwarding to sub_00537250.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0052EE20": {
+    "name": "NullRenderer::createInstance",
+    "class": "NullRenderer",
+    "signature": "void* __stdcall fn_0052EE20(void* owner)",
+    "summary": "Allocates a 0x44-byte NullRenderer; constructs it with an owner back-reference when owner is non-null, otherwise with the plain constructor. Returns null if allocation fails.",
+    "lifted_path": "lifted/classes/NullRenderer.cpp"
+  },
   "0x0052EF20": {
     "name": "CompoundRenderable::vfunc_7",
     "class": "CompoundRenderable",
