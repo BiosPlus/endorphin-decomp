@@ -69566,3 +69566,49 @@ void* fn_0062E870(void* self) {
     return reinterpret_cast<ThisCall1>(lift_field<void*>(childVtbl, 0xBC))(child, self);
 }
 } // namespace lift_0062E870
+
+// [0x00504DD0] ExprParser::ReadMethodType<...>::vfunc_42 (152 bytes)
+namespace lift_00504DD0 {
+// Known callee 0x006720C0: unlifted helper; writes an object pointer into the slot it is given (ecx) and pops its one stack argument.
+extern void ext_006720C0(void* slot, int zero);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs the exception in place, returns self).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: IAT thunk to MSVCR80!_CxxThrowException(object, throwInfo).
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// Throw metadata (.rdata) referenced by the throw path.
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Interpreter,int,&Interpreter::bogus,0>::vfunc_42
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary Null-checks the pointer held in arg1, fetches a wrapped object through a helper, invokes its vtable slot 42 with arg2, releases the wrapper, and returns the result; throws a DerivedException if arg1 holds null.
+// (No accessed offsets on `this`: the original never reads ecx before overwriting it, so no @field lines.)
+bool fn_00504DD0(void* arg1, void* arg2) {
+    // Null check on *arg1: a null target raises a fixed-message exception.
+    if (*reinterpret_cast<void**>(arg1) == nullptr) {
+        void* exc = nullptr;
+        ext_0046C3C0(&exc);
+        ext_006A6DD2(&exc, &mem_009DEC1C);
+        return false; // not reached: _CxxThrowException does not return
+    }
+
+    // Fetch the wrapped object into a local slot.
+    void* obj = nullptr;
+    ext_006720C0(&obj, 0);
+
+    // Vtable slot 42 (offset 0xA8) on the wrapped object: bool (this, arg2, &state).
+    using VFn42 = unsigned char (*)(void* self, void* arg, void* out);
+    void** vt = *reinterpret_cast<void***>(obj);
+    int state = 0;
+    bool result = reinterpret_cast<VFn42>(vt[0xA8 / sizeof(void*)])(obj, arg2, &state) != 0;
+
+    // Release the wrapper: vtable slot 30 (offset 0x78) with a pointer to a local.
+    if (obj != nullptr) {
+        using VFn30 = void (*)(void* self, void* out);
+        void** vt2 = *reinterpret_cast<void***>(obj);
+        int tmp = 0;
+        reinterpret_cast<VFn30>(vt2[0x78 / sizeof(void*)])(obj, &tmp);
+    }
+
+    return result;
+}
+} // namespace lift_00504DD0

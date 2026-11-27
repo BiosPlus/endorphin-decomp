@@ -1,0 +1,14 @@
+{
+  "va": "0x00504DD0",
+  "size": 152,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter,int,\u0026Interpreter::bogus,0\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+  "signature": "bool fn_00504DD0(void* arg1, void* arg2)",
+  "summary": "Null-checks the pointer held in arg1, fetches a wrapped object through a helper, invokes its vtable slot 42 with arg2, releases the wrapper, and returns the result; throws a DerivedException if arg1 holds null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:50:44Z"
+}
