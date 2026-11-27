@@ -1442,3 +1442,27 @@ uint32_t fn_0085BDA0(void* self, uint32_t count, int32_t* out) {
     return after - before;
 }
 } // namespace lift_0085BDA0
+
+// [0x0085E6A0]
+namespace lift_0085E6A0 {
+// @name StrCaseInsensitiveDiff
+// @summary Compares two NUL-terminated ASCII strings ignoring case; returns 0 if equal, 1 otherwise.
+
+uint32_t ext_0085E1F0(const char* str);
+uint8_t ext_0085E690(uint8_t ch);
+
+int32_t fn_0085E6A0(const char* a, const char* b) {
+    uint32_t len = ext_0085E1F0(a);
+    if (ext_0085E1F0(b) != len) {
+        return 1;
+    }
+    for (uint32_t i = 0; i < len; ++i) {
+        uint8_t cb = ext_0085E690(static_cast<uint8_t>(b[i]));
+        uint8_t ca = ext_0085E690(static_cast<uint8_t>(a[i]));
+        if (cb != ca) {
+            return 1;
+        }
+    }
+    return 0;
+}
+} // namespace lift_0085E6A0

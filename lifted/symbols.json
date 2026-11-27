@@ -81517,6 +81517,12 @@
     "summary": "Converts an ASCII lowercase letter (a-z) to uppercase; other values are returned unchanged. Result is in AL.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085E6A0": {
+    "name": "StrCaseInsensitiveDiff",
+    "signature": "int32_t fn_0085E6A0(const char* a, const char* b)",
+    "summary": "Compares two NUL-terminated ASCII strings ignoring case; returns 0 if equal, 1 otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085E720": {
     "name": "BuildPrintable16Ring",
     "signature": "void fn_0085E720(const char* src, int len)",
