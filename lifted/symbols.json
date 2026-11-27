@@ -69658,6 +69658,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006E7F90 (sub_006E6340).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E89B0": {
+    "name": "DynamicArray::insertAt_006E89B0",
+    "class": "DynamicArray",
+    "signature": "int32_t fn_006E89B0(void* self, int32_t index, const void* elem)",
+    "summary": "Thin EH-guarded wrapper that forwards (index, element-pointer) to DynamicArray::InsertAt and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E8A20": {
     "name": "Unknown::SetValueAndFlag",
     "class": "Unknown",

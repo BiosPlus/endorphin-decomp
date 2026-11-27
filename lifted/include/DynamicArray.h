@@ -8,7 +8,8 @@
 // Recovered field layout for DynamicArray:
 namespace lifted_layout {
 struct DynamicArray_Fields {
-    // +0x0   int32_t                  count  (evidence: 0x006C4D70, 0x006D2170)
+    // +0x0   void* self (not accessed directly; passed through to InsertAt)  (evidence: 0x006E89B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int32_t                  count  (evidence: 0x006C4D70, 0x006D2170) // CONFLICT: multiple definitions at +0x0
     // +0x4   int32_t                  num_blocks  (evidence: 0x006D2170)
     // +0x8   int32_t                  block_size  (evidence: 0x006D2170)
     // +0xC   int32_t                  elem_size  (evidence: 0x006D2170)

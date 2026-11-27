@@ -1,0 +1,22 @@
+{
+  "va": "0x006E89B0",
+  "size": 112,
+  "orig_symbol": "sub_006E89B0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "DynamicArray::insertAt_006E89B0",
+  "class": "DynamicArray",
+  "signature": "int32_t fn_006E89B0(void* self, int32_t index, const void* elem)",
+  "summary": "Thin EH-guarded wrapper that forwards (index, element-pointer) to DynamicArray::InsertAt and returns its result.",
+  "fields": [
+    {
+      "class": "DynamicArray",
+      "offset": "+0x0",
+      "type": "void* self (not accessed directly; passed through to",
+      "name": "InsertAt)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:46:54Z"
+}

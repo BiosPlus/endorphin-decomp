@@ -1665,3 +1665,27 @@ extern void __fastcall fn_006E9A40(void* self) {
     ext_0077FA20(self);
 }
 } // namespace lift_006E9A40
+
+// [0x006E89B0] sub_006E89B0 (112 bytes)
+namespace lift_006E89B0 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0();
+
+// @name DynamicArray::insertAt_006E89B0
+// @class DynamicArray
+// @summary Thin EH-guarded wrapper that forwards (index, element-pointer) to DynamicArray::InsertAt and returns its result.
+// @field DynamicArray +0x00 void* self (not accessed directly; passed through to InsertAt)
+int32_t fn_006E89B0(void* self, int32_t index, const void* elem) {
+    // The original sets up an MSVC SEH frame (fs:[0] push/restore) around the call;
+    // that is exception bookkeeping only and has no portable equivalent, so it is omitted.
+    int32_t result = ext_006D2170(self, index, elem);
+
+    // Two cleanup calls on local slots (empty callee, no observable effect).
+    ext_006D80A0();
+    ext_006D80A0();
+
+    return result;
+}
+} // namespace lift_006E89B0
