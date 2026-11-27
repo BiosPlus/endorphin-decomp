@@ -1,0 +1,28 @@
+{
+  "va": "0x005C87C0",
+  "size": 160,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_63",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_63",
+  "class": "NMData::CollisionModelData",
+  "signature": "void fn_005C87C0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Allocates a 0x60-byte helper object, swaps it into self+0x16C (releasing any previous one), runs sub_00648530 on it with the three stack args, and clears the flag at self+0x168.",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x168",
+      "type": "uint8_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:02Z"
+}

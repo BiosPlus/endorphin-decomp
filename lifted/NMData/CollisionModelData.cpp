@@ -574,3 +574,41 @@ void* __thiscall fn_005CC490(void* self, void* arg1) {
 }
 } // namespace lift_005CC6C0
 } // namespace lift_005CC490
+
+// [0x005C87C0] NMData::CollisionModelData::vfunc_63 (160 bytes)
+namespace lift_005C87C0 {
+// Allocator thunk 0x006A5C62 -> MFC80!ord_762 (cdecl, takes byte count, returns new block).
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006486B0 (sub_006486B0): thiscall, this passed in ecx, returns result in eax.
+extern void* ext_006486B0(void* self);
+// Known callee 0x00648790: Unknown::ReleaseOwnedPointers (thiscall, this passed in ecx).
+extern void ext_00648790(void* self);
+// Free thunk 0x006A5C5C -> MFC80!ord_764 (cdecl, takes the block to release).
+extern void ext_006A5C5C(void* ptr);
+// Known callee 0x00648530 (sub_00648530): thiscall, this = ecx (the new object);
+// stack args are (self, a1, a2, a3).
+extern void ext_00648530(void* thisObj, void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+
+// @name NMData::CollisionModelData::vfunc_63
+// @class NMData::CollisionModelData
+// @summary Allocates a 0x60-byte helper object, swaps it into self+0x16C (releasing any previous one), runs sub_00648530 on it with the three stack args, and clears the flag at self+0x168.
+// @field NMData::CollisionModelData +0x168 uint8_t field_0x168
+// @field NMData::CollisionModelData +0x16C void* field_0x16c
+void fn_005C87C0(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    void* created = ext_006A5C62(0x60);
+    void* newObj = nullptr;
+    if (created != nullptr) {
+        newObj = ext_006486B0(created);
+    }
+
+    void* old = lift_field<void*>(self, 0x16C);
+    if (newObj != old && old != nullptr) {
+        ext_00648790(old);
+        ext_006A5C5C(old);
+    }
+
+    lift_field<void*>(self, 0x16C) = newObj;
+    ext_00648530(newObj, self, a1, a2, a3);
+    lift_field<uint8_t>(self, 0x168) = 0;
+}
+} // namespace lift_005C87C0

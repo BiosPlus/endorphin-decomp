@@ -48116,6 +48116,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::CollisionModelData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005C87C0": {
+    "name": "NMData::CollisionModelData::vfunc_63",
+    "class": "NMData::CollisionModelData",
+    "signature": "void fn_005C87C0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Allocates a 0x60-byte helper object, swaps it into self+0x16C (releasing any previous one), runs sub_00648530 on it with the three stack args, and clears the flag at self+0x168.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C88F0": {
     "name": "NMData::FluidObjectData::vfunc_1_off_C",
     "class": "NMData::FluidObjectData",
