@@ -78140,6 +78140,12 @@
     "summary": "Cdecl wrapper that forwards its single pointer argument to the CRT free() via an indirect IAT call.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C53C0": {
+    "name": "ComputeWordSumsAndSetFlag",
+    "signature": "void fn_007C53C0(void* self)",
+    "summary": "Sums three strided u16 ranges at self+0x8c/0xa8/0x28c (stride 4) and stores (sumA \u003c= sumB\u003e\u003e2) as a byte at +0x1c",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C5440": {
     "name": "BitReverseLowBits",
     "signature": "uint32_t fn_007C5440(uint32_t x, int32_t n)",

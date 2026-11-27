@@ -1918,3 +1918,29 @@ float fn_007C8E30(void* self) {
     return len;
 }
 } // namespace lift_007C8E30
+
+// [0x007C53C0] sub_007C53C0 (128 bytes)
+namespace lift_007C53C0 {
+// @name ComputeWordSumsAndSetFlag
+// @summary Sums three strided u16 ranges at self+0x8c/0xa8/0x28c (stride 4) and stores (sumA <= sumB>>2) as a byte at +0x1c
+// @field <self> +0x1c uint8_t flag (written: 1 if sumA <= (sumB >> 2), else 0)
+// @field <self> +0x8c uint16_t word_8c (u16 read, stride 4, 7 entries: +0x8c..+0xa4, accumulated into sumA)
+// @field <self> +0xa8 uint16_t word_a8 (u16 read, stride 4, 121 entries: +0xa8..+0x288, accumulated into sumB)
+// @field <self> +0x28c uint16_t word_28c (u16 read, stride 4, 128 entries: +0x28c..+0x488, accumulated into sumA)
+void fn_007C53C0(void* self) {
+    uint32_t sumA = 0; // edx
+    uint32_t sumB = 0; // edi
+
+    for (int i = 0; i < 7; ++i) {
+        sumA += lift_field<uint16_t>(self, 0x8c + 4 * i);
+    }
+    for (int i = 0; i < 0x79; ++i) {
+        sumB += lift_field<uint16_t>(self, 0xa8 + 4 * i);
+    }
+    for (int i = 0; i < 128; ++i) {
+        sumA += lift_field<uint16_t>(self, 0x28c + 4 * i);
+    }
+
+    lift_field<uint8_t>(self, 0x1c) = (sumA <= (sumB >> 2)) ? 1 : 0;
+}
+} // namespace lift_007C53C0
