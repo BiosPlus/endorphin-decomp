@@ -2699,3 +2699,48 @@ void fn_00672690(void** first, int holeIndex, int len, void* value) {
     ext_006724B0(first, holeIndex, topIndex, value);
 }
 } // namespace lift_00672690
+
+// [0x00676860] sub_00676860 (139 bytes)
+namespace lift_00676860 {
+// Known callee 0x00676710: compareDwordPairRange (Validates that the other-range end (other + 8*count, count = (end-begin)/8) lies within [range+0x04, range+0x08] (invalid-parameter handler otherwise), then returns 1 iff IsSameDwordPair matches for every 8-byte element of [begin, end) against the same-offset element of other.)
+extern int ext_00676710(const void* begin, const void* end, void* range, const void* other);
+
+// MSVCRT _invalid_parameter_noinfo, called through its IAT slot.
+extern void (*mem_00925134)(void);
+
+// @name compareDwordPairRanges
+// @summary Returns 1 if two {begin,end} DWORD-pair ranges have the same element count and every 8-byte pair in range a matches the same-offset pair in range b (via compareDwordPairRange); otherwise 0. Invokes the invalid-parameter handler on inconsistent bounds but continues.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+int fn_00676860(const void* a, const void* b) {
+    const uint32_t aBegin = lift_field<uint32_t>(a, 0x04);
+    const uint32_t aEnd   = lift_field<uint32_t>(a, 0x08);
+    const uint32_t bBegin = lift_field<uint32_t>(b, 0x04);
+    const uint32_t bEnd   = lift_field<uint32_t>(b, 0x08);
+
+    // Element counts: (end - begin) / 8 (signed arithmetic shift), or 0 when begin is null.
+    const int32_t countA = (aBegin != 0) ? (static_cast<int32_t>(aEnd - aBegin) >> 3) : 0;
+    const int32_t countB = (bBegin != 0) ? (static_cast<int32_t>(bEnd - bBegin) >> 3) : 0;
+    if (countA != countB) {
+        return 0;
+    }
+
+    // Bounds sanity checks; the handler is invoked but execution continues.
+    if (bBegin > bEnd) {
+        mem_00925134();
+    }
+    if (aBegin > aEnd) {
+        mem_00925134();
+    }
+    if (aBegin > bEnd) {
+        mem_00925134();
+    }
+
+    return ext_00676710(reinterpret_cast<const void*>(static_cast<uintptr_t>(aBegin)),
+                        reinterpret_cast<const void*>(static_cast<uintptr_t>(aEnd)),
+                        const_cast<void*>(b),
+                        reinterpret_cast<const void*>(static_cast<uintptr_t>(bBegin))) != 0
+               ? 1
+               : 0;
+}
+} // namespace lift_00676860

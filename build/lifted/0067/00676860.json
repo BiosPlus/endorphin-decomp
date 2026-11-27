@@ -1,0 +1,27 @@
+{
+  "va": "0x00676860",
+  "size": 139,
+  "orig_symbol": "sub_00676860",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "compareDwordPairRanges",
+  "signature": "int fn_00676860(const void* a, const void* b)",
+  "summary": "Returns 1 if two {begin,end} DWORD-pair ranges have the same element count and every 8-byte pair in range a matches the same-offset pair in range b (via compareDwordPairRange); otherwise 0. Invokes the invalid-parameter handler on inconsistent bounds but continues.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:26:14Z"
+}

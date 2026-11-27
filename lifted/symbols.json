@@ -56004,6 +56004,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x14 and tail-calls sub_004AEE60.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00676860": {
+    "name": "compareDwordPairRanges",
+    "signature": "int fn_00676860(const void* a, const void* b)",
+    "summary": "Returns 1 if two {begin,end} DWORD-pair ranges have the same element count and every 8-byte pair in range a matches the same-offset pair in range b (via compareDwordPairRange); otherwise 0. Invokes the invalid-parameter handler on inconsistent bounds but continues.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00678170": {
     "name": "ConvertAngleUnits",
     "class": "\u003cunknown\u003e",
