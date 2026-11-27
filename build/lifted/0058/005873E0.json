@@ -1,0 +1,28 @@
+{
+  "va": "0x005873E0",
+  "size": 104,
+  "orig_symbol": "sub_005873E0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::findKeyThenEraseTail",
+  "class": "Unknown",
+  "signature": "void fn_005873E0(void* self, const uint32_t* key)",
+  "summary": "Finds *key in the [begin, end) range stored in self, compacts the tail after the match, then erases the trimmed range via eraseInt32Range.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:44Z"
+}

@@ -1872,3 +1872,39 @@ void fn_00586540(void* self, void* arg1, void* arg2) {
     }
 }
 } // namespace lift_00586540
+
+// [0x005873E0] sub_005873E0 (104 bytes)
+namespace lift_005873E0 {
+// Known callee 0x00586BE0: findKeyThenCompactTail (Scans [begin, end) for the first dword equal to *key; if none is found returns {container, end} via out, otherwise compacts the tail after the match and returns out.)
+extern uint32_t* ext_00586BE0(uint32_t* out, void* container, uint32_t* begin, void* expectedContainer, uint32_t* end, const uint32_t* key);
+// Known callee 0x00596660: eraseInt32Range (Validates self-pointer args, erases [first,last) from a 4-byte-element buffer by shifting the tail down, sets end, and writes a 2-pointer result to out.)
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (guard calls omitted below; metadata only).
+extern int mem_00925134;
+
+// @name Unknown::findKeyThenEraseTail
+// @class Unknown
+// @summary Finds *key in the [begin, end) range stored in self, compacts the tail after the match, then erases the trimmed range via eraseInt32Range.
+// @field Unknown +0x04 uint32_t* begin
+// @field Unknown +0x08 uint32_t* end
+void fn_005873E0(void* self, const uint32_t* key) {
+    // The three MSVCR80 _invalid_parameter_noinfo guards (begin <= end checks) are
+    // assertion boilerplate and are omitted; they only fire on corrupt ranges.
+    (void)&mem_00925134;
+    uint32_t* begin = lift_field<uint32_t*>(self, 0x04);
+    uint32_t* end   = lift_field<uint32_t*>(self, 0x08);
+
+    // Pass 1: locate key and compact tail. Result struct is {ptr0, ptr1}.
+    uint32_t* out1 = nullptr;
+    alignas(8) uint32_t result1[2] = {0, 0};
+    out1 = ext_00586BE0(result1, self, begin, self, end, key);
+
+    void** r = reinterpret_cast<void**>(out1);
+    void*  a2    = r[0];
+    int32_t* first = reinterpret_cast<int32_t*>(r[1]);
+
+    // Pass 2: erase the range; out receives a 2-pointer result we do not consume.
+    void* out2[2] = {nullptr, nullptr};
+    ext_00596660(self, out2, a2, first, self, reinterpret_cast<int32_t*>(end));
+}
+} // namespace lift_005873E0

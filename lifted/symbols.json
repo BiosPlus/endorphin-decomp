@@ -30511,6 +30511,13 @@
     "summary": "Notifies two embedded interface subobjects, then recursively tears down each child pointer in the range [+0x80, +0x84).",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x005873E0": {
+    "name": "Unknown::findKeyThenEraseTail",
+    "class": "Unknown",
+    "signature": "void fn_005873E0(void* self, const uint32_t* key)",
+    "summary": "Finds *key in the [begin, end) range stored in self, compacts the tail after the match, then erases the trimmed range via eraseInt32Range.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x005877A0": {
     "name": "IdentityNode::vfunc_1_off_C",
     "class": "IdentityNode",
