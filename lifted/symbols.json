@@ -15762,6 +15762,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0050C4D0 (sub_00508310).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BEB50": {
+    "name": "resetRangesAndMarkers",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_004BEB50(void* self)",
+    "summary": "Clears the OwnedPointerRange members at +0x24 and +0x14, re-stamps the markers at +0x10 and +0x04, then re-stamps the marker at +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BED30": {
     "name": "NMData::EvolveEngineData::vfunc_6",
     "class": "NMData::EvolveEngineData",

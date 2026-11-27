@@ -1878,3 +1878,41 @@ void fn_004B6EC0(void* self, void* lookup) {
     ext_004275E0(base + 0x58, find(mem_00A9F6F8));
 }
 } // namespace lift_004B6EC0
+
+// [0x004BEB50]
+namespace lift_004BEB50 {
+// @name resetRangesAndMarkers
+// @class Unknown
+// @summary Clears the OwnedPointerRange members at +0x24 and +0x14, re-stamps the markers at +0x10 and +0x04, then re-stamps the marker at +0x00.
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x10 uint8_t field_0x10
+// @field Unknown +0x14 OwnedPointerRange field_0x14
+// @field Unknown +0x24 OwnedPointerRange field_0x24
+
+extern void __fastcall ext_006246B0(void* self);
+extern void __fastcall ext_0065C660(void* self);
+extern void __fastcall ext_0065F440(void* self);
+
+// Metadata-only references (not called in the disassembly). Address-taken
+// only, so there is no runtime effect; see RDATA/CALLEES metadata mismatch.
+extern void __fastcall ext_0053F5F0(int* out);
+extern uint32_t __thiscall ext_0063EFE0(uint8_t* self, const char* name);
+extern const uint32_t mem_00A9F9B0;
+extern const uint32_t mem_00A9F608;
+
+extern void __fastcall fn_004BEB50(void* self) {
+    // Metadata-only references: take addresses, never call or read.
+    (void)&ext_0053F5F0;
+    (void)&ext_0063EFE0;
+    (void)&mem_00A9F9B0;
+    (void)&mem_00A9F608;
+
+    auto* base = static_cast<uint8_t*>(self);
+
+    ext_006246B0(base + 0x24);
+    ext_006246B0(base + 0x14);
+    ext_0065F440(base + 0x10);
+    ext_0065C660(self != nullptr ? base + 0x04 : nullptr);
+    ext_0065F440(self);
+}
+} // namespace lift_004BEB50

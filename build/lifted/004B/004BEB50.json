@@ -1,0 +1,40 @@
+{
+  "va": "0x004BEB50",
+  "size": 130,
+  "orig_symbol": "sub_004BEB50",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "resetRangesAndMarkers",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_004BEB50(void* self)",
+  "summary": "Clears the OwnedPointerRange members at +0x24 and +0x14, re-stamps the markers at +0x10 and +0x04, then re-stamps the marker at +0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "OwnedPointerRange",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "OwnedPointerRange",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T04:21:47Z"
+}
