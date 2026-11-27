@@ -1,0 +1,22 @@
+{
+  "va": "0x004F0340",
+  "size": 138,
+  "orig_symbol": "sub_004F0340",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "Unknown::eraseRange8 (descriptive; owner class not yet identified)",
+  "class": "Unknown",
+  "signature": "uint8_t** fn_004F0340(void* self, uint8_t** out, uint8_t* sentinelA, uint8_t* first, uint8_t* sentinelB, uint8_t* last)",
+  "summary": "Erases the 8-byte-element range [first,last) from a vector-like container whose end pointer is at +0x08: moves the tail down onto first, destroys the now-stale trailing elements via ext_00493D90, updates end, and returns the pair {first-or-a2, first} through the hidden out pointer. Calls invalid_parameter when the first sentinel is null or differs from the second sentinel.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:32:30Z"
+}

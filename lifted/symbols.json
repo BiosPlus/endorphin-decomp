@@ -19731,6 +19731,13 @@
     "summary": "Clears the StringPairList at +0x18, zeroes two counters, then erases the [first,last) int32 range of the sub-object at +0x08 (with validity checks).",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F0340": {
+    "name": "Unknown::eraseRange8 (descriptive; owner class not yet identified)",
+    "class": "Unknown",
+    "signature": "uint8_t** fn_004F0340(void* self, uint8_t** out, uint8_t* sentinelA, uint8_t* first, uint8_t* sentinelB, uint8_t* last)",
+    "summary": "Erases the 8-byte-element range [first,last) from a vector-like container whose end pointer is at +0x08: moves the tail down onto first, destroys the now-stale trailing elements via ext_00493D90, updates end, and returns the pair {first-or-a2, first} through the hidden out pointer. Calls invalid_parameter when the first sentinel is null or differs from the second sentinel.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F0430": {
     "name": "Unknown::clearStringPairsAndRelease",
     "class": "Unknown",

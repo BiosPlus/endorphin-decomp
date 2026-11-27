@@ -1119,3 +1119,52 @@ void* fn_004FFE90(void* first, void* last, void* dest) {
     return static_cast<uint8_t*>(dest) - static_cast<ptrdiff_t>(36) * count;
 }
 } // namespace lift_004FFE90
+
+// [0x004F0340] sub_004F0340 (138 bytes)
+namespace lift_004F0340 {
+// Import slot holding MSVCR80!_invalid_parameter_noinfo (called with no arguments).
+extern void(__cdecl* mem_00925134)(void);
+// Element destructor-like callee, thiscall with one argument in ECX.
+extern void __fastcall ext_00493D90(void* self);
+
+// @name Unknown::eraseRange8 (descriptive; owner class not yet identified)
+// @class Unknown
+// @summary Erases the 8-byte-element range [first,last) from a vector-like container whose end pointer is at +0x08: moves the tail down onto first, destroys the now-stale trailing elements via ext_00493D90, updates end, and returns the pair {first-or-a2, first} through the hidden out pointer. Calls invalid_parameter when the first sentinel is null or differs from the second sentinel.
+// @field Unknown +0x08 uint8_t* field_0x08
+uint8_t** fn_004F0340(void* self, uint8_t** out, uint8_t* sentinelA, uint8_t* first,
+                      uint8_t* sentinelB, uint8_t* last) {
+    using InvalidParamFn = void (*)();
+
+    if (sentinelA == nullptr || sentinelA != sentinelB) {
+        auto invalidParam = reinterpret_cast<InvalidParamFn>(mem_00925134);
+        invalidParam();
+    }
+
+    uint8_t** endSlot = reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x08);
+    uint8_t* end = *endSlot;
+
+    if (first != last) {
+        // Shift the tail [last, end) down so it starts at first, 8 bytes at a time.
+        uint8_t* newEnd = first + (end - last);
+        if (last != end) {
+            for (uint8_t* src = last, *dst = first; src != end; src += 8, dst += 8) {
+                std::memcpy(dst, src, 8);
+            }
+        }
+
+        // Destroy the stale trailing elements [newEnd, end).
+        for (uint8_t* p = newEnd; p != end; p += 8) {
+            ext_00493D90(p);
+        }
+
+        *endSlot = newEnd;
+        out[0] = first;
+        out[1] = first;
+        return out;
+    }
+
+    out[0] = sentinelA;
+    out[1] = first;
+    return out;
+}
+} // namespace lift_004F0340
