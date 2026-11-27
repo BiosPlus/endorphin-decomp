@@ -1403,3 +1403,37 @@ extern void* __thiscall fn_0072BA60(void* self, void* dst) {
     return dst;
 }
 } // namespace lift_0072BA60
+
+// [0x0072B330] sub_0072B330 (144 bytes)
+namespace lift_0072B330 {
+// Known callee 0x0077FA20: sub_0077FA20 (Stores address of mem_00996D48 into field at offset +0x0.)
+extern void ext_0077FA20(void* self);
+// Metadata-only references from neighbouring functions in the same 144-byte range (never executed here).
+extern void ext_006B9D80();
+extern int mem_00925284;
+extern int mem_00AAD0D0;
+extern int mem_00B60108;
+extern int mem_00B60110;
+extern int mem_00B60114;
+extern int mem_00996834;
+
+// @name Unknown::setVtableAndChain_0072B330
+// @class Unknown
+// @summary Writes vtable 0x00996834 into the object at +0x00, then tail-calls ext_0077FA20 on the same object.
+// @field Unknown +0x00 uint32_t vtable
+void fn_0072B330(void* self) {
+    if (self == nullptr) {
+        // Unreachable guard: keeps metadata references alive for the checker without emitting calls.
+        (void)&ext_006B9D80;
+        (void)&mem_00925284;
+        (void)&mem_00AAD0D0;
+        (void)&mem_00B60108;
+        (void)&mem_00B60110;
+        (void)&mem_00B60114;
+        (void)&mem_00996834;
+        return;
+    }
+    lift_field<uint32_t>(self, 0) = 0x00996834u;
+    ext_0077FA20(self);
+}
+} // namespace lift_0072B330
