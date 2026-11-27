@@ -1,0 +1,13 @@
+{
+  "va": "0x00507490",
+  "size": 173,
+  "orig_symbol": "sub_00507490",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "vectorIteratorFromPosition_00507490",
+  "signature": "void __thiscall fn_00507490(uint8_t* self, uint32_t* out, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "Converts a position pointer into an element index of a 0x68-byte-element vector (begin at +0x4, end at +0x8), calls ext_00506FE0 with it, then returns {self, begin + index * 0x68} through the out pointer (ret 0x10).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:30:53Z"
+}

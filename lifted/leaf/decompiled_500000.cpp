@@ -3599,3 +3599,48 @@ void fn_00502760(void* self, const char* arg) {
     ext_00475960(receiver, static_cast<void*>(&tmp), &singletonSlot, 1);
 }
 } // namespace lift_00502760
+
+// [0x00507490] sub_00507490 (173 bytes)
+namespace lift_00507490 {
+void __thiscall ext_00506FE0(uint8_t* self, uint32_t a2, uint32_t a3, uint32_t count, uint32_t a4);
+extern uint32_t mem_00925134;
+
+// @name vectorIteratorFromPosition_00507490
+// @summary Converts a position pointer into an element index of a 0x68-byte-element vector (begin at +0x4, end at +0x8), calls ext_00506FE0 with it, then returns {self, begin + index * 0x68} through the out pointer (ret 0x10).
+void __thiscall fn_00507490(uint8_t* self, uint32_t* out, uint32_t a2, uint32_t a3, uint32_t a4) {
+    using InvalidParamFn = void(__cdecl*)();
+    InvalidParamFn invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+
+    uint32_t index = 0;
+    if (begin != 0 && static_cast<int32_t>(end - begin) / 0x68 != 0) {
+        if (begin > end) {
+            invalid_param();
+        }
+        if (a2 != self_addr) {
+            invalid_param();
+        }
+        index = static_cast<uint32_t>(static_cast<int32_t>(a3 - begin) / 0x68);
+    }
+
+    ext_00506FE0(self, a2, a3, 1, a4);
+
+    uint32_t cur_begin = lift_field<uint32_t>(self, 0x04);
+    if (cur_begin > lift_field<uint32_t>(self, 0x08)) {
+        invalid_param();
+    }
+    uint32_t result = cur_begin + index * 0x68;
+    if (result > lift_field<uint32_t>(self, 0x08)) {
+        invalid_param();
+    }
+    if (result < lift_field<uint32_t>(self, 0x04)) {
+        invalid_param();
+    }
+
+    out[0] = self_addr;
+    out[1] = result;
+}
+} // namespace lift_00507490

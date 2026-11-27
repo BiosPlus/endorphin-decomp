@@ -28312,6 +28312,12 @@
     "summary": "For property id 0x361 stores a reference to this object into the output value; otherwise writes the default/empty value.",
     "lifted_path": "lifted/classes/InitialVariableValues.cpp"
   },
+  "0x00507490": {
+    "name": "vectorIteratorFromPosition_00507490",
+    "signature": "void __thiscall fn_00507490(uint8_t* self, uint32_t* out, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Converts a position pointer into an element index of a 0x68-byte-element vector (begin at +0x4, end at +0x8), calls ext_00506FE0 with it, then returns {self, begin + index * 0x68} through the out pointer (ret 0x10).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00507730": {
     "name": "ThreeLayerNet::vfunc_0",
     "class": "ThreeLayerNet",
