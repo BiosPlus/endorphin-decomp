@@ -14,17 +14,20 @@ struct Record_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x004060F0, 0x00492C60, 0x0079A230) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint16_t                 tag  (evidence: 0x0086EFD0) // CONFLICT: multiple definitions at +0x0
     // +0x2   uint16_t                 field_0x02  (evidence: 0x0086EFD0)
+    // +0x4   uint32_t                 data_ptr  (evidence: 0x00859F60) // CONFLICT: multiple definitions at +0x4
     // +0x4   FLOAT                    field_0x04  (evidence: 0x00555100) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x0074F7A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x004060F0, 0x00503BC0, 0x00508BC0, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint16_t                 field_0x04  (evidence: 0x007AF8F0, 0x0086EFD0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00492C60) // CONFLICT: multiple definitions at +0x4
     // +0x6   uint16_t                 field_0x06  (evidence: 0x0086EFD0)
+    // +0x8   uint32_t                 data_size  (evidence: 0x00859F60) // CONFLICT: multiple definitions at +0x8
     // +0x8   FLOAT                    field_0x08  (evidence: 0x00555100) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  field_0x08  (evidence: 0x0074F7A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00492C60) // CONFLICT: multiple definitions at +0x8
     // +0xC   FLOAT                    field_0x0C  (evidence: 0x00555100) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00492C60) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 flag  (evidence: 0x00859F60) // CONFLICT: multiple definitions at +0xC
     // +0x10  DWORD                    field_0x10  (evidence: 0x00555100) // CONFLICT: multiple definitions at +0x10
     // +0x10  float                    field_0x10  (evidence: 0x00492C60) // CONFLICT: multiple definitions at +0x10
     // +0x14  DWORD                    field_0x14  (evidence: 0x00555100) // CONFLICT: multiple definitions at +0x14
