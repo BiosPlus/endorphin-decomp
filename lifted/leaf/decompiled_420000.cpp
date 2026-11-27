@@ -1916,3 +1916,29 @@ extern void* __thiscall fn_00422660(void* self, DWORD a1, DWORD a2, DWORD a3, DW
     return self;
 }
 } // namespace lift_00422660
+
+// [0x0042F3C0]
+namespace lift_0042F3C0 {
+// @name sub_0042F3C0_dtor
+// @summary Destructor for a dialog/window class with four embedded MFC control members.
+// @field Self +0x00 uintptr_t vftable
+// @field Self +0x74 uint8_t[0x54] field_0x74
+// @field Self +0xC8 uint8_t[0x54] field_0xC8
+// @field Self +0x11C uint8_t[0x54] field_0x11C
+// @field Self +0x170 uint8_t[0x54] field_0x170
+
+extern void (__thiscall * const ext_006A5DFA)(void*);
+extern void (__thiscall * const ext_006A5F6E)(void*);
+extern uint8_t mem_0092F6BC[];
+
+extern void __thiscall fn_0042F3C0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uintptr_t*>(base) = reinterpret_cast<uintptr_t>(mem_0092F6BC);
+
+    ext_006A5DFA(base + 0x170);
+    ext_006A5DFA(base + 0x11C);
+    ext_006A5DFA(base + 0xC8);
+    ext_006A5DFA(base + 0x74);
+    ext_006A5F6E(base);
+}
+} // namespace lift_0042F3C0

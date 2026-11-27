@@ -17,6 +17,7 @@ struct Self_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x0063E050, 0x006E6D70, 0x006E7000, 0x006E8440, 0x006E86F0, 0x0072C0B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              name  (evidence: 0x004FDAA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x00410230) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uintptr_t                vftable  (evidence: 0x0042F3C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vftable_0x00  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x005149F0, 0x0054C890, 0x005947B0, 0x0059DDA0, 0x005A71E0, 0x005B1930, 0x00678280, 0x006AD3C0, 0x006B0CD0, 0x006BA780) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t*                vtable  (evidence: 0x00414260, 0x006F7970, 0x006FC200) // CONFLICT: multiple definitions at +0x0
@@ -97,7 +98,8 @@ struct Self_Fields {
     // +0x60  uint8_t[64]              field_0x60  (evidence: 0x00627450) // CONFLICT: multiple definitions at +0x60
     // +0x64  uint32_t                 member_0x64_vtable  (evidence: 0x006B0CD0, 0x006BA780)
     // +0x70  uint8_t                  field_0x70  (evidence: 0x004765B0)
-    // +0x74  void*                    vftable_0x74  (evidence: 0x004615B0)
+    // +0x74  uint8_t[0x54]            field_0x74  (evidence: 0x0042F3C0) // CONFLICT: multiple definitions at +0x74
+    // +0x74  void*                    vftable_0x74  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x74
     // +0x80  uint32_t                 field_0x80  (evidence: 0x007129A0)
     // +0x84  uint32_t                 field_0x84  (evidence: 0x007129A0)
     // +0x88  void*                    childObject  (evidence: 0x006B8190, 0x006BA780)
@@ -109,7 +111,8 @@ struct Self_Fields {
     // +0xBC  float                    field_0xbc  (evidence: 0x00630510) // CONFLICT: multiple definitions at +0xBC
     // +0xC0  int32_t                  field_0xC0  (evidence: 0x0053F960)
     // +0xC4  int32_t                  field_0xC4  (evidence: 0x0053F960)
-    // +0xC8  int32_t                  field_0xC8  (evidence: 0x0053F960)
+    // +0xC8  int32_t                  field_0xC8  (evidence: 0x0053F960) // CONFLICT: multiple definitions at +0xC8
+    // +0xC8  uint8_t[0x54]            field_0xC8  (evidence: 0x0042F3C0) // CONFLICT: multiple definitions at +0xC8
     // +0xEC  uint32_t                 field_0xEC  (evidence: 0x005971D0)
     // +0xF6  uint8_t                  field_0xf6  (evidence: 0x00630510)
     // +0xF8  std::string              field_0xf8  (evidence: 0x00551A20)
@@ -119,6 +122,7 @@ struct Self_Fields {
     // +0x110 uint32_t                 field_0x110  (evidence: 0x007025C0)
     // +0x114 void*                    field_0x114_vftable  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    field_114  (evidence: 0x00630580) // CONFLICT: multiple definitions at +0x114
+    // +0x11C uint8_t[0x54]            field_0x11C  (evidence: 0x0042F3C0) // CONFLICT: multiple definitions at +0x11C
     // +0x11C int32_t                  field_0x11c  (evidence: 0x004329A0) // CONFLICT: multiple definitions at +0x11C
     // +0x11C uint8_t                  field_0x11c  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x11C
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687260, 0x00687280)
@@ -129,6 +133,7 @@ struct Self_Fields {
     // +0x164 float                    field_0x164  (evidence: 0x005AA890)
     // +0x168 float                    field_0x168  (evidence: 0x005AA890)
     // +0x16C float                    field_0x16c  (evidence: 0x005AA890)
+    // +0x170 uint8_t[0x54]            field_0x170  (evidence: 0x0042F3C0)
     // +0x188 void*                    field_0x188  (evidence: 0x0041BAE0)
     // +0x190 void*                    field_0x190  (evidence: 0x005AA890)
     // +0x1EC void*                    field_0x1EC  (evidence: 0x0041BAE0)

@@ -1,0 +1,45 @@
+{
+  "va": "0x0042F3C0",
+  "size": 130,
+  "orig_symbol": "sub_0042F3C0",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "sub_0042F3C0_dtor",
+  "signature": "extern \"C\" void __thiscall fn_0042F3C0(void* self)",
+  "summary": "Destructor for a dialog/window class with four embedded MFC control members.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x74",
+      "type": "uint8_t[0x54]",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC8",
+      "type": "uint8_t[0x54]",
+      "name": "field_0xC8"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x11C",
+      "type": "uint8_t[0x54]",
+      "name": "field_0x11C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x170",
+      "type": "uint8_t[0x54]",
+      "name": "field_0x170"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:20:03Z"
+}

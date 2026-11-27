@@ -3018,6 +3018,12 @@
     "summary": "Virtual getter returning the address of the global data slot mem_0092F694 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0042F3C0": {
+    "name": "sub_0042F3C0_dtor",
+    "signature": "extern \"C\" void __thiscall fn_0042F3C0(void* self)",
+    "summary": "Destructor for a dialog/window class with four embedded MFC control members.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042F520": {
     "name": "LoadPoseDialog::vfunc_1",
     "class": "LoadPoseDialog",
