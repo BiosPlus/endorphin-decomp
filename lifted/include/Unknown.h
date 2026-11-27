@@ -89,7 +89,7 @@ struct Unknown_Fields {
     // +0x0   void* vtable (written with mem_009326EC)  (evidence: 0x00441C10, 0x00442C40, 0x00443700) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    next  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 next_or_head  (evidence: 0x00783800, 0x00783820, 0x00788E50) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    object  (evidence: 0x00493EA0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    object  (evidence: 0x00493EA0, 0x00666170) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to the array-owning object)  (evidence: 0x0077FF70, 0x0077FFB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 owner  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x0
@@ -267,6 +267,7 @@ struct Unknown_Fields {
     // +0x4   void*                    ptrToSubobject  (evidence: 0x007155B0, 0x00715710) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 range1_begin  (evidence: 0x00526960, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  rectLeft  (evidence: 0x00540DD0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 refCount  (evidence: 0x00666170) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t                  requestStopEnabled  (evidence: 0x00468630) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD field_0x04 (accessed through the pointer loaded from self+0x04)  (evidence: 0x00810240) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711D40, 0x007155B0) // CONFLICT: multiple definitions at +0x4

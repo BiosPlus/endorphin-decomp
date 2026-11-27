@@ -52274,6 +52274,13 @@
     "summary": "Zeroes this object's header, initializes two embedded sub-objects at +0x10 and +0x1c via ext_006658D0, clears trailing fields, publishes this to mem_00B59420, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00666170": {
+    "name": "Unknown::AcquireConstructedObject",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00666170(void* self, const void* arg1)",
+    "summary": "On first use (refCount at +0x04 is zero) allocates 0x48 bytes, constructs the object from arg1, replaces and deletes any previous object at +0x00, then increments the reference count at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00666340": {
     "name": "MacroCommand::vfunc_0",
     "class": "MacroCommand",

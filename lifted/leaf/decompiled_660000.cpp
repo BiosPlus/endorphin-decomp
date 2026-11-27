@@ -3295,3 +3295,42 @@ void* fn_0066A500(void* self, void* out, const void* rhs) {
     return out;
 }
 } // namespace lift_0066A500
+
+// [0x00666170] sub_00666170 (129 bytes)
+namespace lift_00666170 {
+// Known callee 0x00665DC0: Unknown::Construct (Constructs the object: runs the base init (ext_006657F0), sets the vtable to 0x00987A1C, copy-constructs a string at +0x10 from arg1, initializes the sub-object at +0x2C, and zeroes +0x3C/+0x40/+0x44. Returns self.)
+extern void* ext_00665DC0(void* self, const void* arg1, uint32_t arg2);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 = operator new.)
+extern void* ext_006A5C62(size_t size);
+
+// Scalar deleting destructor slot (vtable + 0) invoked on the previously owned object.
+typedef void(__thiscall* ObjectDeleteFn)(void* self, uint32_t flags);
+
+// @name Unknown::AcquireConstructedObject
+// @class Unknown
+// @summary On first use (refCount at +0x04 is zero) allocates 0x48 bytes, constructs the object from arg1, replaces and deletes any previous object at +0x00, then increments the reference count at +0x04.
+// @field Unknown +0x00 void* object
+// @field Unknown +0x04 uint32_t refCount
+void __thiscall fn_00666170(void* self, const void* arg1) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t* refCount = reinterpret_cast<uint32_t*>(base + 0x04);
+
+    if (*refCount == 0) {
+        void* allocated = ext_006A5C62(0x48);
+        void* newObject = nullptr;
+        if (allocated != nullptr) {
+            newObject = ext_00665DC0(allocated, arg1, 0);
+        }
+
+        void** objectSlot = reinterpret_cast<void**>(base + 0x00);
+        void* oldObject = *objectSlot;
+        if (oldObject != newObject && oldObject != nullptr) {
+            void** vtable = *reinterpret_cast<void***>(oldObject);
+            reinterpret_cast<ObjectDeleteFn>(vtable[0])(oldObject, 1);
+        }
+        *objectSlot = newObject;
+    }
+
+    ++*refCount;
+}
+} // namespace lift_00666170

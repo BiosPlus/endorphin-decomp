@@ -1,0 +1,28 @@
+{
+  "va": "0x00666170",
+  "size": 129,
+  "orig_symbol": "sub_00666170",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::AcquireConstructedObject",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00666170(void* self, const void* arg1)",
+  "summary": "On first use (refCount at +0x04 is zero) allocates 0x48 bytes, constructs the object from arg1, replaces and deletes any previous object at +0x00, then increments the reference count at +0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "object"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "refCount"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:18:10Z"
+}
