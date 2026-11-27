@@ -1,0 +1,34 @@
+{
+  "va": "0x0054F7A0",
+  "size": 161,
+  "orig_symbol": "sub_0054F7A0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::emplaceBack_0054F7A0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_0054F7A0(void* self, const void* value)",
+  "summary": "Appends a 0x68-byte element copy (from a reference argument) to a begin/end/capacity vector; fast path constructs in place, slow path calls the reallocating helper sub_0054F6F0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "capacity_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:13:16Z"
+}

@@ -2529,3 +2529,44 @@ extern BYTE __fastcall fn_00544E20(void* self, DWORD a1, DWORD a2) {
     return lift_field<BYTE>(self, 0x260);
 }
 } // namespace lift_00544E20
+
+// [0x0054F7A0] sub_0054F7A0 (161 bytes)
+namespace lift_0054F7A0 {
+extern void __cdecl ext_0054F1E0(uint8_t* end, int one, const void* a, void* self, const void* b, uint32_t flag);
+extern void __thiscall ext_0054F6F0(void* self, uint8_t* flag_out, void* self_again, uint8_t* end, const void* value);
+extern void (*mem_00925134)(void);
+
+// @name Unknown::emplaceBack_0054F7A0
+// @class Unknown
+// @summary Appends a 0x68-byte element copy (from a reference argument) to a begin/end/capacity vector; fast path constructs in place, slow path calls the reallocating helper sub_0054F6F0.
+// @field Unknown +0x04 uint8_t* begin
+// @field Unknown +0x08 uint8_t* end
+// @field Unknown +0x0C uint8_t* capacity_end
+extern void __thiscall fn_0054F7A0(void* self, const void* value) {
+    static constexpr ptrdiff_t kElemSize = 0x68;
+
+    uint8_t flag;  // stack byte at [esp+8]; set to 0 on the fast path only.
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x04);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x08);
+
+    if (begin != nullptr) {
+        const ptrdiff_t size = (reinterpret_cast<ptrdiff_t>(end) - reinterpret_cast<ptrdiff_t>(begin)) / kElemSize;
+        uint8_t* cap_end = lift_field<uint8_t*>(self, 0x0C);
+        const ptrdiff_t capacity = (reinterpret_cast<ptrdiff_t>(cap_end) - reinterpret_cast<ptrdiff_t>(begin)) / kElemSize;
+        if (static_cast<uint32_t>(size) < static_cast<uint32_t>(capacity)) {
+            // Fast path: room available, construct the new element at end.
+            flag = 0;
+            ext_0054F1E0(end, 1, value, self, value, flag);
+            lift_field<uint8_t*>(self, 0x08) = end + kElemSize;
+            return;
+        }
+    }
+
+    // Slow path: no storage or full; reallocate through the helper.
+    uint8_t* cur_end = lift_field<uint8_t*>(self, 0x08);
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(cur_end)) {
+        mem_00925134();  // _invalid_parameter_noinfo; the original falls through.
+    }
+    ext_0054F6F0(self, &flag, self, cur_end, value);
+}
+} // namespace lift_0054F7A0
