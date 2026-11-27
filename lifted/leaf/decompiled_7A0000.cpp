@@ -1855,3 +1855,31 @@ void fn_007AC610(uint32_t* cell) {
     ext_007AC5F0(*cell + 8);
 }
 } // namespace lift_007AC610
+
+// [0x007A74E0] sub_007A74E0 (80 bytes)
+namespace lift_007A74E0 {
+// Known callee 0x007B2D80: sub_007B2D80 (Searches the key tree rooted at root for key and stores the matching node address (0 if not found) into *out; with out==NULL it first reports idx 2 via ext_007AA510 and only proceeds if mem_00B61219 is set.)
+extern void ext_007B2D80(uint32_t root, uint32_t key, uint32_t* out);
+// Known callee 0x007B2DF0: ListFindFirstByKey (Walks a singly linked list from head and stores the first node whose dword key matches, or 0 if none.)
+extern void ext_007B2DF0(uint32_t head, uint32_t key, uint32_t* out);
+
+// Absolute-address base used with lift_field (game VAs are used as offsets from nullptr).
+static void* const kNoBase = nullptr;
+
+// @name CountKeyMatchesInTree
+// @summary Finds key 0x4130 in the tree rooted at root; then, for each matched node, searches its list at +0x10 for key 0x4130 repeatedly, counting hits; returns the count masked to 16 bits.
+// @field TreeNode +0x10 uint32_t field_0x10
+uint32_t fn_007A74E0(uint32_t root) {
+    uint32_t node = 0;
+    ext_007B2D80(root, 0x4130, &node);
+
+    uint32_t count = 0;
+    while (node != 0) {
+        uint32_t head = lift_field<uint32_t>(kNoBase, static_cast<ptrdiff_t>(node) + 0x10);
+        ext_007B2DF0(head, 0x4130, &node);
+        ++count;
+    }
+
+    return count & 0xFFFFu;
+}
+} // namespace lift_007A74E0

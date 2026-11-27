@@ -1,0 +1,21 @@
+{
+  "va": "0x007A74E0",
+  "size": 80,
+  "orig_symbol": "sub_007A74E0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "CountKeyMatchesInTree",
+  "signature": "uint32_t fn_007A74E0(uint32_t root)",
+  "summary": "Finds key 0x4130 in the tree rooted at root; then, for each matched node, searches its list at +0x10 for key 0x4130 repeatedly, counting hits; returns the count masked to 16 bits.",
+  "fields": [
+    {
+      "class": "TreeNode",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:16:05Z"
+}

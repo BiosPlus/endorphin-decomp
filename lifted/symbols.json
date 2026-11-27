@@ -84275,6 +84275,12 @@
     "summary": "Frees the buffer pointed to by *p (if non-null) via CRT free and nulls *p; no-op if p is null.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007A74E0": {
+    "name": "CountKeyMatchesInTree",
+    "signature": "uint32_t fn_007A74E0(uint32_t root)",
+    "summary": "Finds key 0x4130 in the tree rooted at root; then, for each matched node, searches its list at +0x10 for key 0x4130 repeatedly, counting hits; returns the count masked to 16 bits.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007A8BC0": {
     "name": "ReleaseCachedSlot",
     "signature": "void fn_007A8BC0(uint32_t* slot)",
