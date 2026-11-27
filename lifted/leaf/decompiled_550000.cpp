@@ -2143,3 +2143,22 @@ int fn_005504A0(void* file, void* ctx, char* line) {
     return 0;
 }
 } // namespace lift_005504A0
+
+// [0x00554D40]
+namespace lift_00554D40 {
+// @name UnitScaleDivideByField
+// @class Unknown
+// @summary Scales a float by the unit-conversion factor from ext_005531B0, then divides by the product of the fields at +0x24 and +0x10.
+// @field Unknown +0x10 float field_0x10 (multiplied into the divisor)
+// @field Unknown +0x24 float field_0x24 (multiplied into the divisor)
+
+extern float ext_005531B0(void* self, float value);
+
+extern float fn_00554D40(void* self, float value) {
+    float scaled = ext_005531B0(self, value);
+    const auto* base = static_cast<const unsigned char*>(self);
+    float f10 = *reinterpret_cast<const float*>(base + 0x10);
+    float f24 = *reinterpret_cast<const float*>(base + 0x24);
+    return scaled / (f24 * f10);
+}
+} // namespace lift_00554D40

@@ -1,0 +1,28 @@
+{
+  "va": "0x00554D40",
+  "size": 32,
+  "orig_symbol": "sub_00554D40",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "UnitScaleDivideByField",
+  "class": "Unknown",
+  "signature": "extern \"C\" float fn_00554D40(void* self, float value)",
+  "summary": "Scales a float by the unit-conversion factor from ext_005531B0, then divides by the product of the fields at +0x24 and +0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float field_0x10 (multiplied into the",
+      "name": "divisor)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float field_0x24 (multiplied into the",
+      "name": "divisor)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:05:41Z"
+}
