@@ -3084,3 +3084,72 @@ void* fn_00622CA0(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a
     return obj;
 }
 } // namespace lift_00622CA0
+
+// [0x00629530] sub_00629530 (135 bytes)
+namespace lift_00629530 {
+// Known callee 0x00673C20: advanceCursorSkipFlagged (Advances the (cursor, current) iterator pair to the next unflagged list entry.)
+extern void ext_00673C20(void* self);
+
+// MSVCR80!_invalid_parameter_noinfo (IAT slot at 0x00925134; does not return)
+extern void (*mem_00925134)(void);
+
+// @name ScanListForFlaggedEntry
+// @summary Walks the circular list at this->+0x28->+0x15c, advancing until an entry whose owner's +0x16c settings block has byte +0x46 set; then sets this+0x30 to 1.
+// @field Self +0x28 uint8_t* field_0x28
+// @field Self +0x30 uint8_t field_0x30
+void fn_00629530(void* self) {
+    struct Iter {
+        uint8_t* cursor;
+        uint8_t* current;
+    };
+
+    // Invalid-parameter path (IAT call; noreturn in the original).
+    auto invalid_param = []() {
+        mem_00925134();
+        std::abort();
+    };
+
+    // esi = this->owner(+0x28) + 0x15c : sentinel head of the circular list
+    uint8_t* owner = lift_field<uint8_t*>(self, 0x28);
+    uint8_t* head = owner + 0x15c;
+
+    // first = head->+4 ; current = first->next(+0)
+    uint8_t* first = lift_field<uint8_t*>(head, 0x4);
+    uint8_t* current = lift_field<uint8_t*>(first, 0x0);
+
+    Iter it{head, current};
+
+    // Initial store of 0 into this+0x30 (happens before the loop in the asm).
+    lift_field<uint8_t>(self, 0x30) = 0;
+
+    for (;;) {
+        // Iterator cursor must be the head sentinel.
+        if (it.cursor == nullptr || it.cursor != head) {
+            invalid_param();
+        }
+
+        // Wrapped back around to the first entry: done.
+        if (it.current == first) {
+            return;
+        }
+
+        if (it.cursor == nullptr) {
+            invalid_param();
+        }
+        if (it.current == lift_field<uint8_t*>(it.cursor, 0x4)) {
+            invalid_param();
+        }
+
+        // current->owner(+0x28)->settings(+0x16c)->flag(+0x46)
+        uint8_t* entry_owner = lift_field<uint8_t*>(it.current, 0x28);
+        uint8_t* settings = lift_field<uint8_t*>(entry_owner, 0x16c);
+        if (lift_field<uint8_t>(settings, 0x46) != 0) {
+            lift_field<uint8_t>(self, 0x30) = 1;
+            return;
+        }
+
+        // Advance the iterator (thiscall: ecx = &iter).
+        ext_00673C20(&it);
+    }
+}
+} // namespace lift_00629530

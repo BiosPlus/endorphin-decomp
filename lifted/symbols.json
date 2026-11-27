@@ -46224,6 +46224,12 @@
     "summary": "Calls virtual slot 8 (+0x20) on the object chained from self+0x28/+0x20c/+0x234 with arg 0, storing the float result at self+0x30.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00629530": {
+    "name": "ScanListForFlaggedEntry",
+    "signature": "void fn_00629530(void* self)",
+    "summary": "Walks the circular list at this-\u003e+0x28-\u003e+0x15c, advancing until an entry whose owner's +0x16c settings block has byte +0x46 set; then sets this+0x30 to 1.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006296A0": {
     "name": "Unknown::initZeroFloatsStoreArg3C",
     "class": "Unknown",
