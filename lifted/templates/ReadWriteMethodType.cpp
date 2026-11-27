@@ -11622,3 +11622,27 @@ void fn_005B2E50(void* holder) {
     lift_field<DWORD>(holder, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B43534));
 }
 } // namespace lift_005B2E50
+
+// [0x0059EF90] ExprParser::ReadWriteMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}>::vfunc_40 (122 bytes)
+namespace lift_0059EF90 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; calls ext_00672000 on self,
+// then stores the single stack argument into the first DWORD of self; returns that value).
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B414A8;  // one-time init guard (bit 0)
+extern int mem_00B414A4;  // static accessor object (first DWORD = vtable 0x0095E60C)
+
+// @name ExprParser::ReadWriteMethodType::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}>
+// @summary On first call, initializes the static accessor object (guard bit, storeArg call, vtable write); then binds holder+0x04 to its address.
+// @field ExprParser::ReadWriteMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}> +0x04 void* accessor
+void fn_0059EF90(void* self) {
+    if ((mem_00B414A8 & 1) == 0) {
+        mem_00B414A8 |= 1;
+        ext_0067A670(&mem_00B414A4, 0);
+        mem_00B414A4 = 0x0095E60C;
+    }
+    // Address is a 32-bit game pointer; store as a 32-bit value at holder+0x04.
+    lift_field<uint32_t>(self, 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B414A4));
+}
+} // namespace lift_0059EF90

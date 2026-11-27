@@ -1,0 +1,14 @@
+{
+  "va": "0x0059EF90",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}\u003e",
+  "signature": "extern \"C\" int mem_00B414A8;  // one-time init guard (bit 0) extern \"C\" int mem_00B414A4;  // static accessor object (first DWORD = vtable 0x0095E60C) void fn_0059EF90(void* self)",
+  "summary": "On first call, initializes the static accessor object (guard bit, storeArg call, vtable write); then binds holder+0x04 to its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:30:29Z"
+}
