@@ -2545,3 +2545,27 @@ bool fn_006BC760(void* self, int32_t value) {
     return true;
 }
 } // namespace lift_006BC760
+
+// [0x006B9B40]
+namespace lift_006B9B40 {
+extern uint32_t __thiscall ext_006B9A00(void* ecx, int32_t len, uint32_t* out);
+extern void ext_006A5C5C(uint32_t arg);
+
+// @name Unknown::allocAndCopy_006B9B40
+// @class Unknown
+// @summary Allocates len bytes via allocBuffer; on success copies len bytes from src into the buffer, then forwards the allocator's output slot to MFC80 ord_764 and returns the allocator result.
+// @field Unknown +0x00 uint8_t* buffer
+extern uint32_t __thiscall fn_006B9B40(void* self, uint32_t len, const uint8_t* src)
+{
+    const uint32_t n = len;
+    const uint32_t result = ext_006B9A00(self, static_cast<int32_t>(n), &len);
+
+    if (n != 0 && result == 0) {
+        uint8_t* dst = *reinterpret_cast<uint8_t**>(self);
+        std::memcpy(dst, src, n);
+    }
+
+    ext_006A5C5C(len);
+    return result;
+}
+} // namespace lift_006B9B40

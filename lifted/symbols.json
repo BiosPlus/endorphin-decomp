@@ -66130,6 +66130,13 @@
     "summary": "Detaches any existing buffer and allocates an inline or heap buffer of the requested length, returning 0 on success or 1 on error.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B9B40": {
+    "name": "Unknown::allocAndCopy_006B9B40",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __thiscall fn_006B9B40(void* self, uint32_t len, const uint8_t* src)",
+    "summary": "Allocates len bytes via allocBuffer; on success copies len bytes from src into the buffer, then forwards the allocator's output slot to MFC80 ord_764 and returns the allocator result.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9CE0": {
     "name": "StrContainsChar_006B9CE0",
     "signature": "extern \"C\" BOOLEAN __stdcall StrContainsChar_006B9CE0(CHAR c, const CHAR* s)",
