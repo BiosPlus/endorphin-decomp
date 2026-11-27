@@ -12581,3 +12581,25 @@ void fn_005D2970(void* holder) {
     mem_fs_0 = frame[0];
 }
 } // namespace lift_005D2970
+
+// [0x005D3390] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYOffset(float)>::vfunc_40 (122 bytes)
+namespace lift_005D3390 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B45A04;
+extern int mem_00B45A00;
+
+// @name ReadWriteMethodType<VideoPlaneData, float>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYOffset(float)>
+// @summary Lazily initializes the static accessor object at 0xB45A00 (one-time guard at 0xB45A04) and stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYOffset(float)> +0x04 void* field_0x04
+void fn_005D3390(void* holder) {
+    // One-time init guard: bit 0 of mem_00B45A04 marks the accessor as constructed.
+    if ((mem_00B45A04 & 1) == 0) {
+        mem_00B45A04 |= 1;
+        ext_0067A670(&mem_00B45A00, 0);
+        mem_00B45A00 = 0x966D4C; // vtable for the accessor object
+    }
+    lift_field<DWORD>(holder, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B45A00));
+}
+} // namespace lift_005D3390

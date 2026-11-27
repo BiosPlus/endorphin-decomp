@@ -1,0 +1,14 @@
+{
+  "va": "0x005D3390",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, float, \u0026public: void __thiscall NMData::VideoPlaneData::setYOffset(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType\u003cVideoPlaneData, float\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, float, \u0026public: void __thiscall NMData::VideoPlaneData::setYOffset(float)\u003e",
+  "signature": "void fn_005D3390(void* holder)",
+  "summary": "Lazily initializes the static accessor object at 0xB45A00 (one-time guard at 0xB45A04) and stores its address into holder+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:46:27Z"
+}

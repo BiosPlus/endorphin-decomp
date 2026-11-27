@@ -35602,6 +35602,13 @@
     "summary": "Reads the VideoPlaneData X-offset field and returns 1 if it is at least 1e-6 (else 0); throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D3390": {
+    "name": "ReadWriteMethodType\u003cVideoPlaneData, float\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, float, \u0026public: void __thiscall NMData::VideoPlaneData::setYOffset(float)\u003e",
+    "signature": "void fn_005D3390(void* holder)",
+    "summary": "Lazily initializes the static accessor object at 0xB45A00 (one-time guard at 0xB45A04) and stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005D3410": {
     "name": "ExprParser::ReadMethodType\u003cVideoPlaneData,getYOffset\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0\u003e",
