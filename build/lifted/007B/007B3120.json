@@ -1,0 +1,28 @@
+{
+  "va": "0x007B3120",
+  "size": 112,
+  "orig_symbol": "sub_007B3120",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::FreeOwnedEntryArray",
+  "class": "Unknown",
+  "signature": "void fn_007B3120(void* self)",
+  "summary": "Frees each entry's owned pointer (zeroing the entry's second dword), then frees the entry array and the header, and nulls the holder's header pointer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:03:50Z"
+}

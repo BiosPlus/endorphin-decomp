@@ -1669,3 +1669,45 @@ float fn_007B0FC0(void* a, void* b) {
     return std::bit_cast<float>(result);
 }
 } // namespace lift_007B0FC0
+
+// [0x007B3120] sub_007B3120 (112 bytes)
+namespace lift_007B3120 {
+extern int mem_009251D8;
+
+// @name Unknown::FreeOwnedEntryArray
+// @class Unknown
+// @summary Frees each entry's owned pointer (zeroing the entry's second dword), then frees the entry array and the header, and nulls the holder's header pointer.
+// @field Unknown +0x00 uint32_t count
+// @field Unknown +0x04 uint32_t entries
+void fn_007B3120(void* self) {
+    using free_fn_t = void (*)(void*);
+
+    // Loads the free() pointer from the IAT slot (mem_009251D8), as the original does.
+    free_fn_t release = reinterpret_cast<free_fn_t>(static_cast<uintptr_t>(mem_009251D8));
+
+    if (self == nullptr) return;
+
+    // `self` is a holder whose first dword is a pointer to the header block.
+    uintptr_t header_addr = lift_field<uint32_t>(self, 0x00);
+    if (header_addr == 0) return;
+    void* header = reinterpret_cast<void*>(header_addr);
+
+    // Header: +0x00 entry count, +0x04 entry array pointer.
+    uint32_t count = lift_field<uint32_t>(header, 0x00);
+    uintptr_t entries_addr = lift_field<uint32_t>(header, 0x04);
+
+    if (entries_addr != 0) {
+        void* entries = reinterpret_cast<void*>(entries_addr);
+        // Entries are 8 bytes: +0x00 owned pointer (freed), +0x04 zeroed after free.
+        for (uint32_t i = 0; i < count; ++i) {
+            uint8_t* entry = static_cast<uint8_t*>(entries) + 8u * i;
+            release(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(entry, 0x00))));
+            lift_field<uint32_t>(entry, 0x04) = 0;
+        }
+        release(entries);
+    }
+
+    release(header);
+    lift_field<uint32_t>(self, 0x00) = 0;
+}
+} // namespace lift_007B3120
