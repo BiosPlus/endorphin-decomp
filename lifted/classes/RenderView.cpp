@@ -106,7 +106,7 @@ void fn_0044C3A0(void* self, void* arg) {
         }
     }
 
-    // Tail call into the owning object at this - 0x5C.
+    // Call ext_0044BC60 with the owning object (this - 0x5C) as `this`.
     auto target = reinterpret_cast<void (*)(void*)>(ext_0044BC60);
     target(static_cast<uint8_t*>(self) - 0x5C);
 }

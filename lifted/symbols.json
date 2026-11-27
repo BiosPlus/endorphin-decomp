@@ -6063,10 +6063,10 @@
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044C3A0": {
-    "name": "RenderView::vfunc_0_off_5C",
+    "name": "RenderView::vfunc_28",
     "class": "RenderView",
-    "signature": "inline void* callVirtualRet(void* obj, uintptr_t byteOff)",
-    "summary": "Clears the flag at +0x19, sets it when a single-element vector of objects reports state 6, then calls ext_0044BC60 on the owning RenderView (this - 0x5C).",
+    "signature": "BOOL fn_0044BF40(void* self, RECT* rect)",
+    "summary": "If field_0x6c is set, fills rect via GetWindowRect on the window handle at *(mem_00ACDB40 + 0x20); otherwise returns FALSE.",
     "lifted_path": "lifted/classes/RenderView.cpp"
   },
   "0x0044C420": {

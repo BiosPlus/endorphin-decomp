@@ -4,11 +4,29 @@
   "orig_symbol": "RenderView::vfunc_0_off_5C",
   "src_path": "src/classes/RenderView.cpp",
   "lifted_path": "lifted/classes/RenderView.cpp",
-  "name": "RenderView::vfunc_0_off_5C",
+  "name": "RenderView::vfunc_28",
   "class": "RenderView",
-  "signature": "inline void* callVirtualRet(void* obj, uintptr_t byteOff)",
-  "summary": "Clears the flag at +0x19, sets it when a single-element vector of objects reports state 6, then calls ext_0044BC60 on the owning RenderView (this - 0x5C).",
+  "signature": "BOOL fn_0044BF40(void* self, RECT* rect)",
+  "summary": "If field_0x6c is set, fills rect via GetWindowRect on the window handle at *(mem_00ACDB40 + 0x20); otherwise returns FALSE.",
   "fields": [
+    {
+      "class": "RenderView",
+      "offset": "+0x6C",
+      "type": "uint8_t",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "RenderView",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "RenderView",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
     {
       "class": "RenderView",
       "offset": "+0x19",
@@ -18,5 +36,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-27T04:32:28Z"
+  "lifted_at": "2026-11-27T04:32:38Z"
 }
