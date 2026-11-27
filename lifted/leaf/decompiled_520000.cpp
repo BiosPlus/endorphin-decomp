@@ -1964,3 +1964,49 @@ void* fn_0052A140(void* self, const void* src) {
     return self;
 }
 } // namespace lift_0052A140
+
+// [0x00527310] sub_00527310 (146 bytes)
+namespace lift_00527310 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (thiscall, one stack argument, ret 4; stores vtable 0x00987A04, arg at +0x04, zeroes +0x08/+0x0C; returns self.)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args; IAT thunk to MSVCR80!__RTDynamicCast.)
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType, const void* targetType, int32_t isReference);
+// Type descriptors referenced by address (original: push 0xA2F4F4 / push 0xA43F48).
+extern int mem_00A2F4F4;
+extern int mem_00A43F48;
+
+// @name Unknown::initVtblDynCastFields
+// @class Unknown
+// @summary Thiscall init: calls InitVtblAndArg, stamps vtable 0x00953344, stores arg1 at +0x10, performs RTDynamicCast(arg2, 0, 0xA2F4F4, 0xA43F48) into +0x14, stores arg3/arg4 at +0x1C/+0x24, sets +0x08 = arg2 only when the cast fails; returns self.
+// @field Unknown +0x00 uint32_t vtbl
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 void* dynCastResult
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// Original SEH frame (fs:[0] registration, handler 0x88A1E8) is compiler boilerplate and is not modelled.
+void* fn_00527310(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00953344u;
+    lift_field<uint32_t>(self, 0x10) = arg1;
+
+    void* cast = ext_006A6E9E(reinterpret_cast<void*>(static_cast<uintptr_t>(arg2)),
+                              0,
+                              reinterpret_cast<const void*>(&mem_00A2F4F4),
+                              reinterpret_cast<const void*>(&mem_00A43F48),
+                              0);
+    lift_field<void*>(self, 0x14) = cast;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = arg3;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = arg4;
+
+    if (cast == nullptr) {
+        lift_field<uint32_t>(self, 0x08) = arg2;
+    }
+    return self;
+}
+} // namespace lift_00527310

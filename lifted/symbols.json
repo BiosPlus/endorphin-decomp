@@ -24781,6 +24781,13 @@
     "summary": "Copy-constructs the std::string returned by element[index]'s vtable slot 9 into the caller's return buffer.",
     "lifted_path": "lifted/classes/InitialVariableValues.cpp"
   },
+  "0x00527310": {
+    "name": "Unknown::initVtblDynCastFields",
+    "class": "Unknown",
+    "signature": "void* fn_00527310(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Thiscall init: calls InitVtblAndArg, stamps vtable 0x00953344, stores arg1 at +0x10, performs RTDynamicCast(arg2, 0, 0xA2F4F4, 0xA43F48) into +0x14, stores arg3/arg4 at +0x1C/+0x24, sets +0x08 = arg2 only when the cast fails; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x005273B0": {
     "name": "GetOnceInitString_005273B0",
     "signature": "extern \"C\" int mem_00AED308;  // one-time initialization flag (bit 0) extern \"C\" int mem_00AED2EC;  // global string object storage void* fn_005273B0()",
