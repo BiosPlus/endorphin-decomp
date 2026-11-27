@@ -40535,6 +40535,13 @@
     "summary": "Lazily initializes a static singleton at 0x00B45F98 with vtable 0x0096AB94 and returns its pointer.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EB890": {
+    "name": "NMData::FixedPathJointData::vfunc_10_off_C",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void fn_005EB890(void* self, uint32_t arg1, uint8_t arg2)",
+    "summary": "Iterates the child pointer array [field_0x74, field_0x78); unless arg2 is set, children whose vfunc_c4 returns true are skipped, otherwise the child's +0xC sub-object gets vfunc_24(arg1) and vfunc_28(arg1, 1).",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EBEA0": {
     "name": "NMData::RootRelationshipData::vfunc_22",
     "class": "NMData::RootRelationshipData",

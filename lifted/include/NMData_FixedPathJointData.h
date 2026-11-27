@@ -12,8 +12,8 @@ namespace lifted_layout {
 struct NMData_FixedPathJointData_Fields {
     // +0x0   none (no direct field access; only the this-0xC base adjustment)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (vptr; vfunc_60 at slot +0xF0 is the element count)  (evidence: 0x005EEDB0) // CONFLICT: multiple definitions at +0x0
-    // +0x74  void** field_0x74 (begin of child pointer array)  (evidence: 0x005E1060)
-    // +0x78  void** field_0x78 (end of child pointer array)  (evidence: 0x005E1060)
+    // +0x74  void** field_0x74 (begin of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
+    // +0x78  void** field_0x78 (end of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
     // +0xE0  void* field_0xe0 (object pointer; its vtable slot at +0xAC is called)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  void*                    field_0xe0  (evidence: 0x005E0E70) // CONFLICT: multiple definitions at +0xE0
     // +0x140 int32_t                  field_0x140  (evidence: 0x005E0E70) // CONFLICT: multiple definitions at +0x140

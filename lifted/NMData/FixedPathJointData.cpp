@@ -380,3 +380,41 @@ void fn_005ECB10(void* self, std::uint32_t arg0) {
     }
 }
 } // namespace lift_005ECB10
+
+// [0x005EB890] NMData::FixedPathJointData::vfunc_10_off_C (139 bytes)
+namespace lift_005EB890 {
+// MSVC iterator bounds-check trap (_invalid_parameter_noinfo IAT slot); not modelled.
+extern int mem_00925134;
+
+// @name NMData::FixedPathJointData::vfunc_10_off_C
+// @class NMData::FixedPathJointData
+// @summary Iterates the child pointer array [field_0x74, field_0x78); unless arg2 is set, children whose vfunc_c4 returns true are skipped, otherwise the child's +0xC sub-object gets vfunc_24(arg1) and vfunc_28(arg1, 1).
+// @field NMData::FixedPathJointData +0x74 void** field_0x74 (begin of child pointer array)
+// @field NMData::FixedPathJointData +0x78 void** field_0x78 (end of child pointer array)
+void fn_005EB890(void* self, uint32_t arg1, uint8_t arg2) {
+    (void)&mem_00925134;
+    using PredFn = uint8_t(__thiscall*)(void*);
+    using VFn1 = void(__thiscall*)(void*, uint32_t);
+    using VFn2 = void(__thiscall*)(void*, uint32_t, uint32_t);
+
+    void** begin = lift_field<void**>(self, 0x74);
+    void** end = lift_field<void**>(self, 0x78);
+
+    for (void** p = begin; p != end; ++p) {
+        void* child = *p;
+
+        if (arg2 == 0) {
+            void** child_vt = *reinterpret_cast<void***>(child);
+            auto pred = reinterpret_cast<PredFn>(child_vt[0xC4 / sizeof(void*)]);
+            if (pred(child)) {
+                continue;
+            }
+        }
+
+        void* sub = reinterpret_cast<uint8_t*>(child) + 0xC;
+        void** sub_vt = *reinterpret_cast<void***>(sub);
+        reinterpret_cast<VFn1>(sub_vt[0x24 / sizeof(void*)])(sub, arg1);
+        reinterpret_cast<VFn2>(sub_vt[0x28 / sizeof(void*)])(sub, arg1, 1u);
+    }
+}
+} // namespace lift_005EB890
