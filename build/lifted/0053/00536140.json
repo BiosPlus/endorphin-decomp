@@ -1,0 +1,40 @@
+{
+  "va": "0x00536140",
+  "size": 136,
+  "orig_symbol": "sub_00536140",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "intersectBoxes2i",
+  "class": "Box2i",
+  "signature": "inline int32_t wrapSub(int32_t a, int32_t b)",
+  "summary": "Intersects two 2D int boxes stored as {minX, minY, maxX, maxY} (ecx = first box, stack arg = second box and output); writes the overlap to the output and zeroes it when the boxes do not overlap with positive extent.",
+  "fields": [
+    {
+      "class": "Box2i",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "minX"
+    },
+    {
+      "class": "Box2i",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "minY"
+    },
+    {
+      "class": "Box2i",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "maxX"
+    },
+    {
+      "class": "Box2i",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "maxY"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:26:59Z"
+}

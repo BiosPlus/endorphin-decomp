@@ -1856,3 +1856,45 @@ void* fn_00532870(void* self, float a0, float a1, float a2, float a3, uint8_t a4
     return self;
 }
 } // namespace lift_00532870
+
+// [0x00536140] sub_00536140 (136 bytes)
+namespace lift_00536140 {
+// @name intersectBoxes2i
+// @class Box2i
+// @summary Intersects two 2D int boxes stored as {minX, minY, maxX, maxY} (ecx = first box, stack arg = second box and output); writes the overlap to the output and zeroes it when the boxes do not overlap with positive extent.
+// @field Box2i +0x00 int32_t minX
+// @field Box2i +0x04 int32_t minY
+// @field Box2i +0x08 int32_t maxX
+// @field Box2i +0x0C int32_t maxY
+namespace {
+
+// Signed difference with wrap-around, matching the asm's sub + test.
+inline int32_t wrapSub(int32_t a, int32_t b) {
+    return static_cast<int32_t>(static_cast<uint32_t>(a) - static_cast<uint32_t>(b));
+}
+
+} // namespace
+
+void __thiscall fn_00536140(int32_t* self, int32_t* out) {
+    int32_t* a = out; // asm reads and writes the same stack argument
+    int32_t* b = self;
+
+    // Lower bounds take the larger value; upper bounds take the smaller value.
+    int32_t lo0 = b[0] > a[0] ? b[0] : a[0];
+    int32_t lo1 = b[1] > a[1] ? b[1] : a[1];
+    int32_t hi2 = b[2] < a[2] ? b[2] : a[2];
+    int32_t hi3 = b[3] < a[3] ? b[3] : a[3];
+
+    if (wrapSub(hi2, lo0) > 0 && wrapSub(hi3, lo1) > 0) {
+        out[0] = lo0;
+        out[1] = lo1;
+        out[2] = hi2;
+        out[3] = hi3;
+    } else {
+        out[0] = 0;
+        out[1] = 0;
+        out[2] = 0;
+        out[3] = 0;
+    }
+}
+} // namespace lift_00536140

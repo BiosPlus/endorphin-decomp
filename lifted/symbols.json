@@ -25127,6 +25127,13 @@
     "summary": "Copies a byte range [first, last) to dst using memmove_s if non-empty and returns dst + (last - first).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00536140": {
+    "name": "intersectBoxes2i",
+    "class": "Box2i",
+    "signature": "inline int32_t wrapSub(int32_t a, int32_t b)",
+    "summary": "Intersects two 2D int boxes stored as {minX, minY, maxX, maxY} (ecx = first box, stack arg = second box and output); writes the overlap to the output and zeroes it when the boxes do not overlap with positive extent.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00536230": {
     "name": "deleteRangeChecked",
     "signature": "void fn_00536230(uint8_t* self, const void* owner, uint32_t* first, uint32_t* last)",
