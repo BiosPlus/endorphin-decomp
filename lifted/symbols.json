@@ -20396,6 +20396,12 @@
     "summary": "One-time initialization guard: on first call sets bit 0 of mem_00AE1D68, runs ext_004BEBE0 on the static object at mem_00AE1D44 and ext_006A6C87(0x9185E0); returns the static object's address.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BF020": {
+    "name": "RegisterNamedKey_004BF020",
+    "signature": "extern \"C\" int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern \"C\" int mem_00924FF4; // basic_string::~basic_string void fn_004BF020(void* arg)",
+    "summary": "Takes a by-value name key; if it is empty, fills it from a bool-formatted string, optionally appends the type_info name when the flag byte at +0x1C is set, then registers the key with the static registry (InsertUnique at +0x4 and a second insert at +0x14), using callback 0x004BE800.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BF320": {
     "name": "sub_004BF320",
     "signature": "void* fn_004BF320(void* arg0)",

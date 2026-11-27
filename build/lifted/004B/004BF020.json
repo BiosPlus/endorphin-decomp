@@ -1,0 +1,13 @@
+{
+  "va": "0x004BF020",
+  "size": 244,
+  "orig_symbol": "sub_004BF020",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "RegisterNamedKey_004BF020",
+  "signature": "extern \"C\" int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern \"C\" int mem_00924FF4; // basic_string::~basic_string void fn_004BF020(void* arg)",
+  "summary": "Takes a by-value name key; if it is empty, fills it from a bool-formatted string, optionally appends the type_info name when the flag byte at +0x1C is set, then registers the key with the static registry (InsertUnique at +0x4 and a second insert at +0x14), using callback 0x004BE800.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:42:28Z"
+}

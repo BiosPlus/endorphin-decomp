@@ -3530,3 +3530,60 @@ void* fn_004B4EE0(void* self, void* a1, void* a2, uint32_t a3, uint32_t a4, uint
     return self;
 }
 } // namespace lift_004B4EE0
+
+// [0x004BF020] sub_004BF020 (244 bytes)
+namespace lift_004BF020 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uintptr_t flag);
+// Known callee 0x004BE7C0: TypeInfoName_004BE7C0 (Fetches type_info name at 0xa328b0 (MSVC runtime), builds a temp std::string, passes the incoming esi-register value to ext_0066AC90, and returns it unchanged.)
+extern void* ext_004BE7C0(void* out_str);
+extern void* ext_006798D0(void* a, void* b);
+extern void ext_006790C0(void* self);
+// Known callee 0x004BEFC0: initOnceAndGetStaticObject (One-time initialization guard: on first call sets bit 0 of mem_00AE1D68, runs ext_004BEBE0 on the static object at mem_00AE1D44 and ext_006A6C87(0x9185E0); returns the static object's address.)
+extern void* ext_004BEFC0();
+// Known callee 0x004BED90: sub_004BED90 (Auto-lifted identical-shape clone of 0x00429350 (Map::InsertUnique_00429350).)
+extern bool ext_004BED90(void* self, const void* key, const uint32_t* value, uint8_t throw_on_dup);
+extern void ext_0043A910(void* self, const void* key, const void* value, uint8_t throw_on_dup);
+
+// MSVCP80 std::string imports, read through their IAT slots.
+extern int mem_00924FEC; // basic_string::empty
+extern int mem_00924FDC; // basic_string::operator=(const basic_string&)
+extern int mem_00924FF4; // basic_string::~basic_string
+
+// @name RegisterNamedKey_004BF020
+// @summary Takes a by-value name key; if it is empty, fills it from a bool-formatted string, optionally appends the type_info name when the flag byte at +0x1C is set, then registers the key with the static registry (InsertUnique at +0x4 and a second insert at +0x14), using callback 0x004BE800.
+void fn_004BF020(void* arg) {
+    // Strings are 0x18-byte MSVCP80 std::string objects.
+    alignas(8) uint8_t s0[0x18] = {};
+    alignas(8) uint8_t s2[0x18] = {};
+
+    // Build the default string from the constant at 0x00A32B50.
+    ext_0066AD10(static_cast<void*>(s0), static_cast<uintptr_t>(0x00A32B50u));
+
+    // if (arg.empty()) arg = s0;
+    bool arg_empty = (*reinterpret_cast<bool (**)(void*)>(&mem_00924FEC))(arg);
+    if (arg_empty) {
+        (*reinterpret_cast<void* (**)(void*, const void*)>(&mem_00924FDC))(arg, static_cast<const void*>(s0));
+    }
+
+    // if (arg->flag) { append type_info name }
+    if (lift_field<uint8_t>(arg, 0x1C) != 0) {
+        void* name = ext_004BE7C0(static_cast<void*>(s2));
+        void* dst = ext_006798D0(name, static_cast<void*>(s0));
+        ext_006790C0(dst);
+        (*reinterpret_cast<void (**)(void*)>(&mem_00924FF4))(static_cast<void*>(s2));
+    }
+
+    // Static registry object.
+    void* registry = ext_004BEFC0();
+
+    // Callback pointer stored as the map value.
+    uint32_t callback = 0x004BE800u;
+    ext_004BED90(static_cast<uint8_t*>(registry) + 0x04, arg, &callback, 1);
+    ext_0043A910(static_cast<uint8_t*>(registry) + 0x14, arg, static_cast<const void*>(s0), 1);
+
+    // Destroy the temporary and the by-value key.
+    (*reinterpret_cast<void (**)(void*)>(&mem_00924FF4))(static_cast<void*>(s0));
+    (*reinterpret_cast<void (**)(void*)>(&mem_00924FF4))(arg);
+}
+} // namespace lift_004BF020
