@@ -41064,6 +41064,13 @@
     "summary": "Reads the wrapped object pointer; if non-null, throws via ext_0046C4E0 with the object's field at +0x28, otherwise constructs a fixed-message exception and throws it.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D6660": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e",
+    "signature": "uint8_t fn_005D6660(void* self, void** p, uint32_t q)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType\u003cNMData::Task,int,getID\u003e::vfunc_42).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D6980": {
     "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e",
@@ -41706,6 +41713,13 @@
     "summary": "Reads the GraphEntryData object held by the value pointer and returns whether its +0x20 field is non-zero; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005DB660": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
+    "signature": "uint8_t fn_005DB660(void* self, void** p, uint32_t q)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType\u003cNMData::Task,int,getID\u003e::vfunc_42).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005DB700": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
@@ -41718,6 +41732,13 @@
     "class": "ExprParser::ReadMethodType",
     "signature": "[[noreturn]] void fn_005DB750(void* self)",
     "summary": "Reads the VideoPlaneData object from the argument; if non-null, throws using its +0x24 field, otherwise throws a fixed-message exception. Never returns.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005DB780": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
+    "signature": "uint8_t fn_005DB780(void* self, void** p, uint32_t q)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType\u003cNMData::Task,int,getID\u003e::vfunc_42).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005DB960": {
@@ -51715,6 +51736,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00508EE0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006351E0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e",
+    "signature": "uint8_t fn_006351E0(void* self, void** p, uint32_t q)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType\u003cNMData::Task,int,getID\u003e::vfunc_42).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006353E0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e::vfunc_47",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e",
@@ -52224,6 +52252,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0\u003e",
     "signature": "void fn_00638A00(void* holder)",
     "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00638C50": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
+    "signature": "uint8_t fn_00638C50(void* self, void** p, uint32_t q)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType\u003cNMData::Task,int,getID\u003e::vfunc_42).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00638E50": {
@@ -57183,6 +57218,13 @@
     "summary": "Returns 1 if the dword at this+0x24 is nonzero, otherwise 0 (thiscall, this in ECX).",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x006658F0": {
+    "name": "sub_006658F0",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_006658F0(void* self, uint32_t n)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049D050 (BoundedAddToField08).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00665990": {
     "name": "StdList::erase",
     "class": "StdList",
@@ -57345,6 +57387,13 @@
     "signature": "uint8_t fn_00666CC0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0049ABC0 (Unknown::getByteAt09OfPtr12C).",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x00666CE0": {
+    "name": "sub_00666CE0",
+    "class": "NodeCursor",
+    "signature": "static inline void invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x004A5D20 (NodeCursor::advanceToUnflaggedNode).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00667030": {
     "name": "advanceCursorSkipFlagged",
@@ -59434,6 +59483,13 @@
     "name": "copyConstructStringPairAndFields",
     "signature": "void* __thiscall sub_00673C90(void* self, const void* other)",
     "summary": "Copy-constructs two std::string members at +0x00 and +0x1C and copies three 32-bit fields at +0x38, +0x3C, and +0x40.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x00673E00": {
+    "name": "sub_00673E00",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_00673E00(void* self, uint32_t n)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049D050 (BoundedAddToField08).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00673EA0": {

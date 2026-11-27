@@ -1,0 +1,52 @@
+{
+  "va": "0x00666CE0",
+  "size": 154,
+  "orig_symbol": "sub_00666CE0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_00666CE0",
+  "class": "NodeCursor",
+  "signature": "static inline void invalid_parameter_noinfo()",
+  "summary": "Auto-lifted identical-shape clone of 0x004A5D20 (NodeCursor::advanceToUnflaggedNode).",
+  "fields": [
+    {
+      "class": "NodeCursor",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NodeCursor",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "current"
+    },
+    {
+      "class": "LinkNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "link0"
+    },
+    {
+      "class": "LinkNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "link4"
+    },
+    {
+      "class": "LinkNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "link8"
+    },
+    {
+      "class": "LinkNode",
+      "offset": "+0xAD",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:17:58Z"
+}

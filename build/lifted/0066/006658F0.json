@@ -1,0 +1,22 @@
+{
+  "va": "0x006658F0",
+  "size": 154,
+  "orig_symbol": "sub_006658F0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_006658F0",
+  "class": "Unknown",
+  "signature": "extern void __thiscall fn_006658F0(void* self, uint32_t n)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049D050 (BoundedAddToField08).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:17:58Z"
+}

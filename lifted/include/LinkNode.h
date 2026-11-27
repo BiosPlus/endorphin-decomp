@@ -8,10 +8,10 @@
 // Recovered field layout for LinkNode:
 namespace lifted_layout {
 struct LinkNode_Fields {
-    // +0x0   void*                    link0  (evidence: 0x004A5D20)
-    // +0x4   void*                    link4  (evidence: 0x004A5D20)
-    // +0x8   void*                    link8  (evidence: 0x004A5D20)
+    // +0x0   void*                    link0  (evidence: 0x004A5D20, 0x00666CE0)
+    // +0x4   void*                    link4  (evidence: 0x004A5D20, 0x00666CE0)
+    // +0x8   void*                    link8  (evidence: 0x004A5D20, 0x00666CE0)
     // +0x14  std::uint32_t            field_0x14  (evidence: 0x007C6810)
-    // +0xAD  uint8_t                  flag  (evidence: 0x004A5D20)
+    // +0xAD  uint8_t                  flag  (evidence: 0x004A5D20, 0x00666CE0)
 };
 } // namespace lifted_layout

@@ -1,0 +1,22 @@
+{
+  "va": "0x00638C50",
+  "size": 157,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
+  "signature": "uint8_t fn_00638C50(void* self, void** p, uint32_t q)",
+  "summary": "Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType\u003cNMData::Task,int,getID\u003e::vfunc_42).",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:17:58Z"
+}

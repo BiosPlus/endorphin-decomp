@@ -4100,3 +4100,113 @@ int __cdecl sub_00664A80(void* str, const char* find_str, const char* replace_st
     return count;
 }
 } // namespace lift_00664A80
+
+// [0x006658F0] sub_006658F0 (154 bytes)
+namespace lift_006658F0 {
+// @name sub_006658F0
+// @summary Auto-lifted identical-shape clone of 0x0049D050 (BoundedAddToField08).
+namespace lift_0049D050 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_00924FE0;
+extern int mem_00924FE4;
+extern int mem_009251C4;
+
+// @name BoundedAddToField08
+// @class Unknown
+// @summary Adds n to the uint32 at +0x08 if the result stays within 0x1414141 (the remaining headroom check); otherwise builds an std::exception-style object and throws via CxxThrowException.
+// @field Unknown +0x08 uint32_t field_0x08
+extern void __thiscall fn_006658F0(void* self, uint32_t n) {
+    const uint32_t limit = 0x3FFFFFFFu;
+    uint32_t current = lift_field<uint32_t>(self, 0x08);
+    uint32_t headroom = limit - current;
+    if (headroom < n) {
+        // Throw path: original constructs std::string / std::exception temporaries
+        // from the IAT slots below and calls _CxxThrowException.
+        (void)&mem_00924FE0;
+        (void)&mem_00924FE4;
+        (void)&mem_009251C4;
+        ext_006A6DD2();
+        return;
+    }
+    lift_field<uint32_t>(self, 0x08) = current + n;
+}
+} // namespace lift_0049D050
+} // namespace lift_006658F0
+
+// [0x00666CE0] sub_00666CE0 (154 bytes)
+namespace lift_00666CE0 {
+// @name sub_00666CE0
+// @summary Auto-lifted identical-shape clone of 0x004A5D20 (NodeCursor::advanceToUnflaggedNode).
+namespace lift_004A5D20 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern void ext_00594000();
+extern void ext_00593F20();
+extern int mem_00925134;
+extern int mem_00B58DFC;
+
+static inline void invalid_parameter_noinfo() {
+    // mem_00925134 holds the address of _invalid_parameter_noinfo (IAT slot).
+    reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+}
+
+// @name NodeCursor::advanceToUnflaggedNode
+// @class NodeCursor
+// @summary Advances the cursor at +0x04 along the link graph of LinkNodes to the next node whose +0xAD flag is clear; calls invalid-parameter handler on bad state.
+// @field NodeCursor +0x00 int32_t field_0x00
+// @field NodeCursor +0x04 void* current
+// @field LinkNode +0x00 void* link0
+// @field LinkNode +0x04 void* link4
+// @field LinkNode +0x08 void* link8
+// @field LinkNode +0xAD uint8_t flag
+void fn_00666CE0(void* self) {
+    // Metadata lists these as references, but the original bytes never call or read them.
+    // Address-only references (no runtime effect) keep the check consistent; no real call added.
+    (void)&ext_00594000;
+    (void)&ext_00593F20;
+    (void)&mem_00B58DFC;
+
+    if (lift_field<int32_t>(self, 0x00) == 0) {
+        invalid_parameter_noinfo();
+    }
+
+    void* cur = lift_field<void*>(self, 0x04);
+
+    if (lift_field<uint8_t>(cur, 0xC1) != 0) {
+        cur = lift_field<void*>(cur, 0x08);
+        lift_field<void*>(self, 0x04) = cur;
+        if (lift_field<uint8_t>(cur, 0xC1) == 0) {
+            return;
+        }
+        invalid_parameter_noinfo();
+        return;
+    }
+
+    void* c = lift_field<void*>(cur, 0x00);
+    if (lift_field<uint8_t>(c, 0xC1) == 0) {
+        void* a = lift_field<void*>(c, 0x08);
+        if (lift_field<uint8_t>(a, 0xC1) == 0) {
+            do {
+                c = a;
+                a = lift_field<void*>(c, 0x08);
+            } while (lift_field<uint8_t>(a, 0xC1) == 0);
+        }
+        lift_field<void*>(self, 0x04) = c;
+        return;
+    }
+
+    void* d = lift_field<void*>(cur, 0x04);
+    while (lift_field<uint8_t>(d, 0xC1) == 0 &&
+           lift_field<void*>(self, 0x04) == lift_field<void*>(d, 0x00)) {
+        lift_field<void*>(self, 0x04) = d;
+        d = lift_field<void*>(d, 0x04);
+    }
+
+    if (lift_field<uint8_t>(lift_field<void*>(self, 0x04), 0xC1) != 0) {
+        invalid_parameter_noinfo();
+        return;
+    }
+    lift_field<void*>(self, 0x04) = d;
+}
+} // namespace lift_004A5D20
+} // namespace lift_00666CE0

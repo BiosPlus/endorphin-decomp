@@ -82193,3 +82193,258 @@ uint8_t fn_00508FA0(void* self, void** p, uint32_t q) {
     return result;
 }
 } // namespace lift_00508FA0
+
+// [0x005D6660] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_42 (154 bytes)
+namespace lift_005D6660 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType<NMData::Task,int,getID>::vfunc_42).
+namespace lift_00508FA0 {
+// sub_006720C0 (18B, not lifted). Original: thiscall, self in ecx = holder, one stack arg.
+extern void ext_006720C0(void* self, uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw path (pushed as the second argument).
+extern int mem_009DEC1C;
+
+// @name ReadMethodType<NMData::Task,int,getID>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Throws if the source pointer is null; otherwise resolves an id from the source at +0x14 into a temporary holder, invokes the holder object's vfunc +0xA8 with the argument, and releases the holder object via vfunc +0x78.
+// @field Object +0x14 uint32_t field_0x14
+uint8_t fn_005D6660(void* self, void** p, uint32_t q) {
+    // ecx (self) is never read by the original code; kept only to match the thiscall signature.
+    (void)self;
+
+    // SEH frame setup/teardown (fs:[0] push/restore, state counter) is dropped; not portable.
+    void* obj = *p;
+    if (obj == nullptr) {
+        // Construct the exception object in a local and throw it (CxxThrowException never returns).
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+    }
+
+    // Holder filled by sub_006720C0 from obj->field_0x14; holder[1] is the object used below.
+    void* holder[2] = {};
+    ext_006720C0(holder, lift_field<uint32_t>(obj, 0x28));
+
+    void* vobj = holder[1];
+    auto vfn = reinterpret_cast<uint8_t(__thiscall*)(void*, void*, uint32_t)>(
+        lift_field<void*>(*static_cast<void**>(vobj), 0xA8));
+    uint8_t result = vfn(vobj, holder, q);
+
+    if (holder[1] != nullptr) {
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(
+            lift_field<void*>(*static_cast<void**>(holder[1]), 0x78));
+        release(holder[1], holder);
+    }
+    return result;
+}
+} // namespace lift_00508FA0
+} // namespace lift_005D6660
+
+// [0x005DB660] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_42 (154 bytes)
+namespace lift_005DB660 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType<NMData::Task,int,getID>::vfunc_42).
+namespace lift_00508FA0 {
+// sub_006720C0 (18B, not lifted). Original: thiscall, self in ecx = holder, one stack arg.
+extern void ext_006720C0(void* self, uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw path (pushed as the second argument).
+extern int mem_009DEC1C;
+
+// @name ReadMethodType<NMData::Task,int,getID>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Throws if the source pointer is null; otherwise resolves an id from the source at +0x14 into a temporary holder, invokes the holder object's vfunc +0xA8 with the argument, and releases the holder object via vfunc +0x78.
+// @field Object +0x14 uint32_t field_0x14
+uint8_t fn_005DB660(void* self, void** p, uint32_t q) {
+    // ecx (self) is never read by the original code; kept only to match the thiscall signature.
+    (void)self;
+
+    // SEH frame setup/teardown (fs:[0] push/restore, state counter) is dropped; not portable.
+    void* obj = *p;
+    if (obj == nullptr) {
+        // Construct the exception object in a local and throw it (CxxThrowException never returns).
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+    }
+
+    // Holder filled by sub_006720C0 from obj->field_0x14; holder[1] is the object used below.
+    void* holder[2] = {};
+    ext_006720C0(holder, lift_field<uint32_t>(obj, 0x20));
+
+    void* vobj = holder[1];
+    auto vfn = reinterpret_cast<uint8_t(__thiscall*)(void*, void*, uint32_t)>(
+        lift_field<void*>(*static_cast<void**>(vobj), 0xA8));
+    uint8_t result = vfn(vobj, holder, q);
+
+    if (holder[1] != nullptr) {
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(
+            lift_field<void*>(*static_cast<void**>(holder[1]), 0x78));
+        release(holder[1], holder);
+    }
+    return result;
+}
+} // namespace lift_00508FA0
+} // namespace lift_005DB660
+
+// [0x005DB780] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_42 (154 bytes)
+namespace lift_005DB780 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType<NMData::Task,int,getID>::vfunc_42).
+namespace lift_00508FA0 {
+// sub_006720C0 (18B, not lifted). Original: thiscall, self in ecx = holder, one stack arg.
+extern void ext_006720C0(void* self, uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw path (pushed as the second argument).
+extern int mem_009DEC1C;
+
+// @name ReadMethodType<NMData::Task,int,getID>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Throws if the source pointer is null; otherwise resolves an id from the source at +0x14 into a temporary holder, invokes the holder object's vfunc +0xA8 with the argument, and releases the holder object via vfunc +0x78.
+// @field Object +0x14 uint32_t field_0x14
+uint8_t fn_005DB780(void* self, void** p, uint32_t q) {
+    // ecx (self) is never read by the original code; kept only to match the thiscall signature.
+    (void)self;
+
+    // SEH frame setup/teardown (fs:[0] push/restore, state counter) is dropped; not portable.
+    void* obj = *p;
+    if (obj == nullptr) {
+        // Construct the exception object in a local and throw it (CxxThrowException never returns).
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+    }
+
+    // Holder filled by sub_006720C0 from obj->field_0x14; holder[1] is the object used below.
+    void* holder[2] = {};
+    ext_006720C0(holder, lift_field<uint32_t>(obj, 0x24));
+
+    void* vobj = holder[1];
+    auto vfn = reinterpret_cast<uint8_t(__thiscall*)(void*, void*, uint32_t)>(
+        lift_field<void*>(*static_cast<void**>(vobj), 0xA8));
+    uint8_t result = vfn(vobj, holder, q);
+
+    if (holder[1] != nullptr) {
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(
+            lift_field<void*>(*static_cast<void**>(holder[1]), 0x78));
+        release(holder[1], holder);
+    }
+    return result;
+}
+} // namespace lift_00508FA0
+} // namespace lift_005DB780
+
+// [0x006351E0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_42 (157 bytes)
+namespace lift_006351E0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType<NMData::Task,int,getID>::vfunc_42).
+namespace lift_00508FA0 {
+// sub_006720C0 (18B, not lifted). Original: thiscall, self in ecx = holder, one stack arg.
+extern void ext_006720C0(void* self, uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw path (pushed as the second argument).
+extern int mem_009DEC1C;
+
+// @name ReadMethodType<NMData::Task,int,getID>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Throws if the source pointer is null; otherwise resolves an id from the source at +0x14 into a temporary holder, invokes the holder object's vfunc +0xA8 with the argument, and releases the holder object via vfunc +0x78.
+// @field Object +0x14 uint32_t field_0x14
+uint8_t fn_006351E0(void* self, void** p, uint32_t q) {
+    // ecx (self) is never read by the original code; kept only to match the thiscall signature.
+    (void)self;
+
+    // SEH frame setup/teardown (fs:[0] push/restore, state counter) is dropped; not portable.
+    void* obj = *p;
+    if (obj == nullptr) {
+        // Construct the exception object in a local and throw it (CxxThrowException never returns).
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+    }
+
+    // Holder filled by sub_006720C0 from obj->field_0x14; holder[1] is the object used below.
+    void* holder[2] = {};
+    ext_006720C0(holder, lift_field<uint32_t>(obj, 0xC0));
+
+    void* vobj = holder[1];
+    auto vfn = reinterpret_cast<uint8_t(__thiscall*)(void*, void*, uint32_t)>(
+        lift_field<void*>(*static_cast<void**>(vobj), 0xA8));
+    uint8_t result = vfn(vobj, holder, q);
+
+    if (holder[1] != nullptr) {
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(
+            lift_field<void*>(*static_cast<void**>(holder[1]), 0x78));
+        release(holder[1], holder);
+    }
+    return result;
+}
+} // namespace lift_00508FA0
+} // namespace lift_006351E0
+
+// [0x00638C50] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_42 (157 bytes)
+namespace lift_00638C50 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00508FA0 (ReadMethodType<NMData::Task,int,getID>::vfunc_42).
+namespace lift_00508FA0 {
+// sub_006720C0 (18B, not lifted). Original: thiscall, self in ecx = holder, one stack arg.
+extern void ext_006720C0(void* self, uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw path (pushed as the second argument).
+extern int mem_009DEC1C;
+
+// @name ReadMethodType<NMData::Task,int,getID>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Throws if the source pointer is null; otherwise resolves an id from the source at +0x14 into a temporary holder, invokes the holder object's vfunc +0xA8 with the argument, and releases the holder object via vfunc +0x78.
+// @field Object +0x14 uint32_t field_0x14
+uint8_t fn_00638C50(void* self, void** p, uint32_t q) {
+    // ecx (self) is never read by the original code; kept only to match the thiscall signature.
+    (void)self;
+
+    // SEH frame setup/teardown (fs:[0] push/restore, state counter) is dropped; not portable.
+    void* obj = *p;
+    if (obj == nullptr) {
+        // Construct the exception object in a local and throw it (CxxThrowException never returns).
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+    }
+
+    // Holder filled by sub_006720C0 from obj->field_0x14; holder[1] is the object used below.
+    void* holder[2] = {};
+    ext_006720C0(holder, lift_field<uint32_t>(obj, 0xC4));
+
+    void* vobj = holder[1];
+    auto vfn = reinterpret_cast<uint8_t(__thiscall*)(void*, void*, uint32_t)>(
+        lift_field<void*>(*static_cast<void**>(vobj), 0xA8));
+    uint8_t result = vfn(vobj, holder, q);
+
+    if (holder[1] != nullptr) {
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(
+            lift_field<void*>(*static_cast<void**>(holder[1]), 0x78));
+        release(holder[1], holder);
+    }
+    return result;
+}
+} // namespace lift_00508FA0
+} // namespace lift_00638C50
