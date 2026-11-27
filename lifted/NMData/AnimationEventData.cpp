@@ -685,3 +685,90 @@ extern void __thiscall fn_004E1A70(void* self, void* arg) {
     ext_00661F70(static_cast<char*>(self) + 0x740, count);
 }
 } // namespace lift_004E1A70
+
+// [0x004E3BF0]
+namespace lift_004E3BF0 {
+// @name NMData::AnimationEventData::vfunc_34
+// @class NMData::AnimationEventData
+// @summary Clears the [begin,end) range at +0x984/+0x988, re-wires subobject +0xC to a peer from the call on the TransformInterface vtable, dynamic-casts the peer and stores +0x934 into it, then forwards through two helpers and the +0x2FC table; returns the last helper result (or 0).
+// @field NMData::AnimationEventData +0x00 void** vptr
+// @field NMData::AnimationEventData +0x04 void** field_0x04 (vptr of the TransformInterface subobject; its slot +0x0C is called)
+// @field NMData::AnimationEventData +0x0c void* field_0x0c (address of embedded subobject; passed to ext_00528B90)
+// @field NMData::AnimationEventData +0x184 void* field_0x184 (address only, passed to ext_00662420)
+// @field NMData::AnimationEventData +0x2fc void* field_0x2fc (address only, passed to ext_004E3660)
+// @field NMData::AnimationEventData +0x934 void* field_0x934 (address only, stored at result+0x20)
+// @field NMData::AnimationEventData +0x980 void* field_0x980 (address only; base of the range struct passed to ext_00596660)
+// @field NMData::AnimationEventData +0x984 void* field_0x984 (range begin pointer)
+// @field NMData::AnimationEventData +0x988 void* field_0x988 (range end pointer)
+// @field NMData::AnimationEventData +0x990 uint8_t field_0x990
+// @field NMData::AnimationEventData +0x9d4 uint8_t field_0x9d4
+
+extern int32_t ext_00594000();
+extern void ext_00662420(void* self, void* arg);
+extern void ext_004DE020(void* self);
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+extern uintptr_t ext_00493E40(void* self, uintptr_t a, uintptr_t b);
+extern void ext_00528B90(void* self, void* peer);
+extern void* ext_006A6E9E(void* obj, int32_t vfDelta, void* srcType, void* tgtType, int32_t isRef);
+extern uintptr_t ext_00493E70(void* self, uintptr_t a);
+extern void ext_004E3660(void* self, void* arg, void* a2, uintptr_t a3);
+extern void ext_004E1DC0(void* self, uint8_t flag);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (called indirectly through the slot).
+extern void* mem_00925134;
+extern void* mem_00B40640;
+
+uintptr_t fn_004E3BF0(void* self, void* arg) {
+    uint8_t* const esi = static_cast<uint8_t*>(self);
+
+    uint8_t* edi = esi ? esi + 0x184 : nullptr;
+
+    uintptr_t mgr = static_cast<uint32_t>(ext_00594000());
+    ext_00662420(reinterpret_cast<void*>(mgr + 0x1c8), edi);
+
+    if (lift_field<uint8_t>(self, 0x9d4) != 0) {
+        ext_004DE020(self);
+    }
+
+    uintptr_t begin = reinterpret_cast<uintptr_t>(lift_field<void*>(self, 0x984));
+    uintptr_t end = reinterpret_cast<uintptr_t>(lift_field<void*>(self, 0x988));
+    if (begin > end) {
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();
+    }
+
+    void* range = esi + 0x980;
+    void* outPair[2] = {nullptr, nullptr};
+    ext_00596660(range, outPair, range,
+                 lift_field<int32_t*>(self, 0x984), range,
+                 lift_field<int32_t*>(self, 0x988));
+
+    // Vtable slots are addressed by byte offset (+0x0C, +0xD8), as in the original.
+    void** vt4 = lift_field<void**>(self, 0x4);
+    using VFn = uintptr_t(__thiscall*)(void* self, void* a, void* b);
+    uintptr_t t1 = reinterpret_cast<VFn>(*reinterpret_cast<void**>(
+        reinterpret_cast<uint8_t*>(vt4) + 0x0c))(esi + 0x4, mem_00B40640, esi + 0x0c);
+
+    void** vt0 = lift_field<void**>(self, 0x0);
+    using VSelf = uintptr_t(__thiscall*)(void* self);
+    uintptr_t e2 = reinterpret_cast<VSelf>(*reinterpret_cast<void**>(
+        reinterpret_cast<uint8_t*>(vt0) + 0xd8))(self);
+
+    uintptr_t r1 = ext_00493E40(arg, e2, t1);
+
+    uintptr_t result = 0;
+    if (r1 != 0) {
+        ext_00528B90(esi + 0x0c, reinterpret_cast<void*>(r1));
+
+        void* casted = ext_006A6E9E(reinterpret_cast<void*>(r1), 0,
+                                    reinterpret_cast<void*>(uintptr_t{0xa3e624}),
+                                    reinterpret_cast<void*>(uintptr_t{0xa3e640}), 0);
+        lift_field<void*>(casted, 0x20) = esi + 0x934;
+
+        uintptr_t r3 = ext_00493E70(arg, r1);
+        ext_004E3660(self, arg, esi + 0x2fc, r3);
+        result = r3;
+    }
+
+    ext_004E1DC0(self, lift_field<uint8_t>(self, 0x990));
+    return result;
+}
+} // namespace lift_004E3BF0

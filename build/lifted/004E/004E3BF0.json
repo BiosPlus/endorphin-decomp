@@ -1,0 +1,82 @@
+{
+  "va": "0x004E3BF0",
+  "size": 316,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_34",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_34",
+  "class": "NMData::AnimationEventData",
+  "signature": "uintptr_t fn_004E3BF0(void* self, void* arg)",
+  "summary": "Clears the [begin,end) range at +0x984/+0x988, re-wires subobject +0xC to a peer from the call on the TransformInterface vtable, dynamic-casts the peer and stores +0x934 into it, then forwards through two helpers and the +0x2FC table; returns the last helper result (or 0).",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x4",
+      "type": "void** field_0x04 (vptr of the TransformInterface subobject; its slot +0x0C is",
+      "name": "called)"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0xC",
+      "type": "void* field_0x0c (address of embedded subobject; passed to",
+      "name": "ext_00528B90)"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x184",
+      "type": "void* field_0x184 (address only, passed to",
+      "name": "ext_00662420)"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x2FC",
+      "type": "void* field_0x2fc (address only, passed to",
+      "name": "ext_004E3660)"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x934",
+      "type": "void* field_0x934 (address only, stored at",
+      "name": "result+0x20)"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x980",
+      "type": "void* field_0x980 (address only; base of the range struct passed to",
+      "name": "ext_00596660)"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x984",
+      "type": "void* field_0x984 (range begin",
+      "name": "pointer)"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x988",
+      "type": "void* field_0x988 (range end",
+      "name": "pointer)"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x990",
+      "type": "uint8_t",
+      "name": "field_0x990"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9D4",
+      "type": "uint8_t",
+      "name": "field_0x9d4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:14:40Z"
+}

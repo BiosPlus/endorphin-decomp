@@ -25139,6 +25139,13 @@
     "summary": "Zeroes the integer state words, sets the float slots at +0x38/+0x4C/+0x60/+0x74 to 1.0 and the remaining float slots to 0.0.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E3BF0": {
+    "name": "NMData::AnimationEventData::vfunc_34",
+    "class": "NMData::AnimationEventData",
+    "signature": "uintptr_t fn_004E3BF0(void* self, void* arg)",
+    "summary": "Clears the [begin,end) range at +0x984/+0x988, re-wires subobject +0xC to a peer from the call on the TransformInterface vtable, dynamic-casts the peer and stores +0x934 into it, then forwards through two helpers and the +0x2FC table; returns the last helper result (or 0).",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004E6900": {
     "name": "NMData::AnimationEventData::vfunc_0_off_158",
     "class": "NMData::AnimationEventData",
