@@ -1,0 +1,22 @@
+{
+  "va": "0x004C4F30",
+  "size": 99,
+  "orig_symbol": "NMData::ForceEventData::vfunc_3_off_C",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_3_off_C",
+  "class": "NMData::ForceEventData",
+  "signature": "void fn_004C4F30(void* self, uint32_t a1, uint32_t a2, float a3)",
+  "summary": "Calls TransformInterface vtable slots 4 and 0 (sharing one out-buffer) around ext_0067E020, then ext_00586D00 on the owning object.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "TransformInterface_vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:45:15Z"
+}

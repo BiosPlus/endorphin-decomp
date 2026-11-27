@@ -20289,6 +20289,13 @@
     "summary": "Fills out-record a1 and a2 with a 3-dword triple (8,0,0) from setDwordTriple, applies mask toggles to each (a1: 0x1000 and 0x2000, a2: 0x1000), and writes 6 to the dwords at a3 and a4.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C4F30": {
+    "name": "NMData::ForceEventData::vfunc_3_off_C",
+    "class": "NMData::ForceEventData",
+    "signature": "void fn_004C4F30(void* self, uint32_t a1, uint32_t a2, float a3)",
+    "summary": "Calls TransformInterface vtable slots 4 and 0 (sharing one out-buffer) around ext_0067E020, then ext_00586D00 on the owning object.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C4FA0": {
     "name": "NMData::ForceEventData::vfunc_2_off_C",
     "class": "NMData::ForceEventData",

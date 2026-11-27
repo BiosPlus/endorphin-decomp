@@ -467,3 +467,48 @@ extern void* __thiscall fn_004C4E00(void* self, void* arg) {
     return arg;
 }
 } // namespace lift_004C4E00
+
+// [0x004C4F30] NMData::ForceEventData::vfunc_3_off_C (99 bytes)
+namespace lift_004C4F30 {
+extern void ext_0067E020(void* out, uint32_t a1, uint32_t a2, float a3);
+extern void ext_00586D00(void* self);
+extern int mem_00B40640;
+
+// @name NMData::ForceEventData::vfunc_3_off_C
+// @class NMData::ForceEventData
+// @summary Calls TransformInterface vtable slots 4 and 0 (sharing one out-buffer) around ext_0067E020, then ext_00586D00 on the owning object.
+// @field NMData::ForceEventData +0x04 void** TransformInterface_vptr
+void fn_004C4F30(void* self, uint32_t a1, uint32_t a2, float a3) {
+    // Virtual-call signatures inferred from the stack layout at each call site.
+    using VFnSlot4 = void (*)(void* self, void* out, int32_t zero, int32_t g);
+    using VFnSlot0 = void (*)(void* self, int32_t zero, void* out, int32_t g);
+
+    // TransformInterface subobject sits at ForceEventData +0x04 (self - 8).
+    uint8_t* ti = reinterpret_cast<uint8_t*>(self) - 8;
+
+    // Scratch out-parameter buffer (size inferred from frame layout).
+    alignas(4) uint8_t out[16] = {};
+
+    // Slot 4 of TransformInterface vtable: fills out via out-pointer.
+    {
+        void** vt = lift_field<void**>(self, -8);
+        int32_t g = mem_00B40640;
+        auto fn = reinterpret_cast<VFnSlot4>(vt[4]);
+        fn(ti, out, 0, g);
+    }
+
+    // Helper on out-buffer, arguments a1, a2, a3 (callee cleans stack).
+    ext_0067E020(out, a1, a2, a3);
+
+    // Slot 0 of TransformInterface vtable: fills out again.
+    {
+        void** vt = lift_field<void**>(self, -8);
+        int32_t g = mem_00B40640;
+        auto fn = reinterpret_cast<VFnSlot0>(vt[0]);
+        fn(ti, 0, out, g);
+    }
+
+    // Finally operate on the owning ForceEventData object (self - 0x0C).
+    ext_00586D00(reinterpret_cast<uint8_t*>(self) - 0x0C);
+}
+} // namespace lift_004C4F30
