@@ -44624,6 +44624,13 @@
     "summary": "Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B7320": {
+    "name": "ExprParser::FunctionType\u003cMetaBodyData,ValuePtr,string const\u0026,getCollisionWithSensor\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall NMData::MetaBodyData::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "uint32_t fn_005B7320(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Builds the sensor-name string, looks up the MetaBodyData sensor, and writes the resulting ValuePtr into the out-parameter (returned).",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x005B7420": {
     "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::applyImpulseViaVelocity(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::applyImpulseViaVelocity(class NM::Vector3 const \u0026), 0}\u003e",

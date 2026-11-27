@@ -1,0 +1,28 @@
+{
+  "va": "0x005B7320",
+  "size": 206,
+  "orig_symbol": "ExprParser::FunctionType\u003cNMData::MetaBodyData, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall NMData::MetaBodyData::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cMetaBodyData,ValuePtr,string const\u0026,getCollisionWithSensor\u003e::vfunc_48",
+  "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall NMData::MetaBodyData::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+  "signature": "uint32_t fn_005B7320(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Builds the sensor-name string, looks up the MetaBodyData sensor, and writes the resulting ValuePtr into the out-parameter (returned).",
+  "fields": [
+    {
+      "class": "ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ValuePtr",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "ctrl"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:32:35Z"
+}

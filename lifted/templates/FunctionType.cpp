@@ -422,3 +422,75 @@ void fn_00692310(void* out, void* holder, void* ctx) {
     }
 }
 } // namespace lift_00692310
+
+// [0x005B7320] ExprParser::FunctionType<NMData::MetaBodyData, ValuePtr, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class ValuePtr __thiscall NMData::MetaBodyData::getCollisionWithSensor(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48 (206 bytes)
+namespace lift_005B7320 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls vtable slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern void* ext_0046E780(void* self, void* a1, void* a2, void* a3);
+// Known callee 0x005B64E0: sub_005B64E0 (thiscall on self; writes result to a1, returns the result object pointer).
+extern void* ext_005B64E0(void* self, void* a1, void* a2);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string (thiscall, one pointer arg).
+extern void (*mem_00924FF4)(void* self);
+
+// @name ExprParser::FunctionType<MetaBodyData,ValuePtr,string const&,getCollisionWithSensor>::vfunc_48
+// @class ExprParser::FunctionType<NMData::MetaBodyData, ValuePtr, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class ValuePtr __thiscall NMData::MetaBodyData::getCollisionWithSensor(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Builds the sensor-name string, looks up the MetaBodyData sensor, and writes the resulting ValuePtr into the out-parameter (returned).
+// @field ValuePtr +0x00 void* ptr
+// @field ValuePtr +0x04 void* ctrl
+//
+// Stack args (stdcall-style, ret 0xC): a1 unused, a2 = ValuePtr* out, a3 = ValuePtr* in.
+// The SEH frame / try-state bookkeeping of the original is dropped; no __try is needed for the portable form.
+uint32_t fn_005B7320(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    (void)self;
+    (void)a1;
+
+    auto at = [](uint32_t v) { return reinterpret_cast<void*>(static_cast<uintptr_t>(v)); };
+
+    uint32_t* out = reinterpret_cast<uint32_t*>(at(a2));   // ValuePtr* result (edi)
+    uint32_t* in  = reinterpret_cast<uint32_t*>(at(a3));   // ValuePtr* argument (ecx = in[1])
+
+    // Frame locals, named after their [esp+off] slots in the original.
+    alignas(8) unsigned char sensorName[0x18] = {};        // [esp+0x14] std::string temp; [esp+0x1c] lives inside it
+    void* nameOut   = sensorName + 0x8;                    // &[esp+0x1c]
+    uint32_t tmpObj = 0;                                   // [esp+0x10]: object produced by the lookup
+    uint32_t tmpCtl = 0;                                   // [esp+0x0c]: out-arg for the release call
+    uint32_t result = 0;                                   // [esp+0x44]: sret slot for the virtual call
+
+    // esi = out[0]: object used as "this" for the lookup.
+    void* obj = at(out[0]);
+
+    // Build the sensor name via forwardVtableSlot4 on in[1].
+    void* nameRet = ext_0046E780(at(in[1]), nameOut, at(a3), at(a2));
+
+    // Lookup: ext_005B64E0(this=obj, a1=&tmpObj, a2=nameRet). Returns result ValuePtr* R.
+    uint32_t* R = reinterpret_cast<uint32_t*>(ext_005B64E0(obj, &tmpObj, nameRet));
+
+    // If R has a control block, ask it via vtable slot 0x70 (index 28) for the value; else value is 0.
+    void* p = &result;
+    if (R[1] != 0) {
+        void** vtbl = *reinterpret_cast<void***>(at(R[1]));
+        using Slot70 = void* (*)(void* self, void* out, void* arg);
+        p = reinterpret_cast<Slot70>(vtbl[0x70 / sizeof(void*)])(at(R[1]), &result, R);
+    } else {
+        result = 0;
+    }
+    uint32_t value = *reinterpret_cast<uint32_t*>(p);
+
+    // Write the result ValuePtr into *out.
+    out[0] = value;
+    out[1] = R[1];
+
+    // Release the temporary object from the lookup, if any (vtable slot 0x78, index 30).
+    uint32_t tmp = tmpObj;
+    if (tmp != 0) {
+        void** vtbl = *reinterpret_cast<void***>(at(tmp));
+        using Slot78 = void* (*)(void* self, void* out);
+        reinterpret_cast<Slot78>(vtbl[0x78 / sizeof(void*)])(at(tmp), &tmpCtl);
+    }
+
+    // Destroy the sensor-name temporary.
+    mem_00924FF4(sensorName);
+
+    return a2;
+}
+} // namespace lift_005B7320
