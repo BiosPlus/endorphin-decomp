@@ -2831,6 +2831,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00476B80 (sub_00476B80).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x004273F0": {
+    "name": "TreeIterator::decrement",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_004273F0(void* self)",
+    "summary": "Decrements a red-black tree iterator to the previous in-order node, invoking _invalid_parameter_noinfo on invalid state.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00427480": {
     "name": "fill_struct_0x24",
     "signature": "extern \"C\" void fn_00427480(void* first, void* last, const void* val)",
@@ -3546,6 +3553,12 @@
     "name": "callVtable0WithGlobalField60Is1",
     "signature": "uint32_t __stdcall fn_00430E00(void* obj)",
     "summary": "Calls vtable[0] on the passed object with the result of ext_00430380() as its argument.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00430E20": {
+    "name": "CString_concat_cstr",
+    "signature": "void* __cdecl sub_00430E20(void* out, void* str1, const void* psz2)",
+    "summary": "Concatenates a CStringT and a C-string into a destination CStringT",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00430EB0": {
@@ -80525,6 +80538,13 @@
     "summary": "Updates state at +0x10 and invokes cleanup callback if transitioning from 1 while unowned",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D62D0": {
+    "name": "MemoryChunk::resize",
+    "class": "MemoryChunk",
+    "signature": "extern \"C\" void* sub_007D62D0(void* self, int32_t new_size)",
+    "summary": "Resizes a memory chunk to at least new_size, reallocating via its allocator if needed.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D6660": {
     "name": "incrementBucket",
     "signature": "int32_t* sub_007D6660(int32_t eax, void* esi)",
@@ -80912,6 +80932,13 @@
     "signature": "extern \"C\" uint32_t __cdecl fn_007DFDC0(void* arg1, void* arg2)",
     "summary": "Loads the dword pointed to by arg1, then calls the function pointer stored at arg2+0x0C with that dword as its single argument and returns the result.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007E46B0": {
+    "name": "Vec3::normalize",
+    "class": "Vec3",
+    "signature": "float fn_007E46B0(Vec3* vec)",
+    "summary": "Normalizes a 3D float vector in-place (setting to (1,0,0) if length \u003c= 0) and returns its original length.",
+    "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
   },
   "0x007E4770": {
     "name": "NM::Vector3::normalize",
