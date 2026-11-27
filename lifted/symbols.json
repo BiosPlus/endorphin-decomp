@@ -9067,6 +9067,13 @@
     "summary": "Virtual getter for ImageExporter::getFrameRate; if the target pointer is non-null it queries the calibration value, then always raises a DerivedException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046C930": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e",
+    "signature": "void fn_0046C930(void* self, void* out)",
+    "summary": "Reads a float from this-\u003efield_0x00 and, via a temp, assigns it into this, then dispatches this-\u003efield_0x04-\u003evfunc_46(this, out); throws if field_0x00 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046C9E0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_47",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e",

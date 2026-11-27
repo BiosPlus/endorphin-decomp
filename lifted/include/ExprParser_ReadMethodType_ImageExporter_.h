@@ -8,6 +8,7 @@
 // Recovered field layout for ExprParser::ReadMethodType<ImageExporter>:
 namespace lifted_layout {
 struct ExprParser_ReadMethodType_ImageExporter__Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740)
+    // +0x0   void*                    field_0x00  (evidence: 0x0046C930, 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740)
+    // +0x4   void*                    field_0x04  (evidence: 0x0046C930)
 };
 } // namespace lifted_layout

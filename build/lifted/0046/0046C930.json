@@ -1,0 +1,28 @@
+{
+  "va": "0x0046C930",
+  "size": 170,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e::vfunc_46",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_46",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e",
+  "signature": "void fn_0046C930(void* self, void* out)",
+  "summary": "Reads a float from this-\u003efield_0x00 and, via a temp, assigns it into this, then dispatches this-\u003efield_0x04-\u003evfunc_46(this, out); throws if field_0x00 is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType\u003cImageExporter\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ReadMethodType\u003cImageExporter\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:47:38Z"
+}
