@@ -10846,3 +10846,29 @@ void fn_004F6400(void* out) {
     lift_field<DWORD>(out, 4) = 0x00AE9EECu;
 }
 } // namespace lift_004F6400
+
+// [0x004F69F0] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, float, &public: void __thiscall MatrixWithProperties::setY(float)>::vfunc_40 (122 bytes)
+namespace lift_004F69F0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (calls ext_00672000 on self, then stores the single stack argument into the first DWORD of self; returns that value).
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AE9F10;
+extern int mem_00AE9F0C;
+
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, float, &public: void __thiscall MatrixWithProperties::setY(float)>
+// @summary One-time initialises the shared static vtable/value object at mem_00AE9F0C (guarded by bit 0 of mem_00AE9F10), then points obj+0x04 at that shared object.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004F69F0(void* obj) {
+    // Lazy one-time init guarded by bit 0 of mem_00AE9F10.
+    if ((mem_00AE9F10 & 1) == 0) {
+        mem_00AE9F10 |= 1;
+        // Original: ECX = &mem_00AE9F0C, push 0, call ext_0067A670 (stores 0 into first dword).
+        ext_0067A670(reinterpret_cast<void*>(&mem_00AE9F0C), 0);
+        // Then the first dword of the shared object becomes its vtable pointer.
+        mem_00AE9F0C = 0x0094DB34;
+    }
+
+    // obj->field_0x04 = &mem_00AE9F0C (shared object) on both paths.
+    lift_field<void*>(obj, 0x04) = reinterpret_cast<void*>(&mem_00AE9F0C);
+}
+} // namespace lift_004F69F0

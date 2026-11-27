@@ -1,0 +1,22 @@
+{
+  "va": "0x004F69F0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setY(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setY(float)\u003e",
+  "signature": "void fn_004F69F0(void* obj)",
+  "summary": "One-time initialises the shared static vtable/value object at mem_00AE9F0C (guarded by bit 0 of mem_00AE9F10), then points obj+0x04 at that shared object.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:53Z"
+}

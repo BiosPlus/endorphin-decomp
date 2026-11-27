@@ -19256,6 +19256,13 @@
     "summary": "Virtual setter that reads a float from the source value object and calls MatrixWithProperties::setY, or throws an exception if target is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004F69F0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setY(float)\u003e",
+    "signature": "void fn_004F69F0(void* obj)",
+    "summary": "One-time initialises the shared static vtable/value object at mem_00AE9F0C (guarded by bit 0 of mem_00AE9F10), then points obj+0x04 at that shared object.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004F6A70": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e",
