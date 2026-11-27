@@ -68512,3 +68512,228 @@ bool __stdcall fn_004D8860(void* arg1, void* arg2) {
     return result != 0;
 }
 } // namespace lift_004D8860
+
+// [0x00512C60] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_42 (149 bytes)
+namespace lift_00512C60 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_42
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D8860 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42).
+namespace lift_004D8860 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42
+// @class ExprParser::ReadMethodType
+// @summary Evaluates a RigEventData::getUserRetargetRefFrame expression by resolving the target object and forwarding to its vfunc_42.
+
+
+extern void* __stdcall ext_00511960(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern uint32_t mem_00924FF4;
+
+struct LocalRef {
+    void* obj;
+    uint32_t aux;
+};
+
+bool __stdcall fn_00512C60(void* arg1, void* arg2) {
+    uint8_t str_buf[0x1c]{};
+    void* str_ptr = ext_00511960(str_buf, *reinterpret_cast<void**>(arg1));
+
+    LocalRef ref{nullptr, 0};
+    ext_006720E0(&ref, str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    using Vfunc42 = uint8_t(__thiscall*)(void*, void*, void*);
+    auto* vtbl = *reinterpret_cast<void***>(ref.obj);
+    uint8_t result = reinterpret_cast<Vfunc42>(vtbl[0xa8 / 4])(ref.obj, &ref, arg2);
+
+    if (ref.obj != nullptr) {
+        using Vfunc30 = void(__thiscall*)(void*, void*);
+        auto* vtbl2 = *reinterpret_cast<void***>(ref.obj);
+        reinterpret_cast<Vfunc30>(vtbl2[0x78 / 4])(ref.obj, &ref);
+    }
+
+    return result != 0;
+}
+} // namespace lift_004D8860
+} // namespace lift_00512C60
+
+// [0x00513300] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_42 (149 bytes)
+namespace lift_00513300 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_42
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D8860 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42).
+namespace lift_004D8860 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42
+// @class ExprParser::ReadMethodType
+// @summary Evaluates a RigEventData::getUserRetargetRefFrame expression by resolving the target object and forwarding to its vfunc_42.
+
+
+extern void* __stdcall ext_005119F0(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern uint32_t mem_00924FF4;
+
+struct LocalRef {
+    void* obj;
+    uint32_t aux;
+};
+
+bool __stdcall fn_00513300(void* arg1, void* arg2) {
+    uint8_t str_buf[0x1c]{};
+    void* str_ptr = ext_005119F0(str_buf, *reinterpret_cast<void**>(arg1));
+
+    LocalRef ref{nullptr, 0};
+    ext_006720E0(&ref, str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    using Vfunc42 = uint8_t(__thiscall*)(void*, void*, void*);
+    auto* vtbl = *reinterpret_cast<void***>(ref.obj);
+    uint8_t result = reinterpret_cast<Vfunc42>(vtbl[0xa8 / 4])(ref.obj, &ref, arg2);
+
+    if (ref.obj != nullptr) {
+        using Vfunc30 = void(__thiscall*)(void*, void*);
+        auto* vtbl2 = *reinterpret_cast<void***>(ref.obj);
+        reinterpret_cast<Vfunc30>(vtbl2[0x78 / 4])(ref.obj, &ref);
+    }
+
+    return result != 0;
+}
+} // namespace lift_004D8860
+} // namespace lift_00513300
+
+// [0x00591360] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_42 (149 bytes)
+namespace lift_00591360 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D8860 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42).
+namespace lift_004D8860 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42
+// @class ExprParser::ReadMethodType
+// @summary Evaluates a RigEventData::getUserRetargetRefFrame expression by resolving the target object and forwarding to its vfunc_42.
+
+
+extern void* __stdcall ext_0058F770(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern uint32_t mem_00924FF4;
+
+struct LocalRef {
+    void* obj;
+    uint32_t aux;
+};
+
+bool __stdcall fn_00591360(void* arg1, void* arg2) {
+    uint8_t str_buf[0x1c]{};
+    void* str_ptr = ext_0058F770(str_buf, *reinterpret_cast<void**>(arg1));
+
+    LocalRef ref{nullptr, 0};
+    ext_006720E0(&ref, str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    using Vfunc42 = uint8_t(__thiscall*)(void*, void*, void*);
+    auto* vtbl = *reinterpret_cast<void***>(ref.obj);
+    uint8_t result = reinterpret_cast<Vfunc42>(vtbl[0xa8 / 4])(ref.obj, &ref, arg2);
+
+    if (ref.obj != nullptr) {
+        using Vfunc30 = void(__thiscall*)(void*, void*);
+        auto* vtbl2 = *reinterpret_cast<void***>(ref.obj);
+        reinterpret_cast<Vfunc30>(vtbl2[0x78 / 4])(ref.obj, &ref);
+    }
+
+    return result != 0;
+}
+} // namespace lift_004D8860
+} // namespace lift_00591360
+
+// [0x005B2660] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_42 (149 bytes)
+namespace lift_005B2660 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D8860 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42).
+namespace lift_004D8860 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42
+// @class ExprParser::ReadMethodType
+// @summary Evaluates a RigEventData::getUserRetargetRefFrame expression by resolving the target object and forwarding to its vfunc_42.
+
+
+extern void* __stdcall ext_005B1220(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern uint32_t mem_00924FF4;
+
+struct LocalRef {
+    void* obj;
+    uint32_t aux;
+};
+
+bool __stdcall fn_005B2660(void* arg1, void* arg2) {
+    uint8_t str_buf[0x1c]{};
+    void* str_ptr = ext_005B1220(str_buf, *reinterpret_cast<void**>(arg1));
+
+    LocalRef ref{nullptr, 0};
+    ext_006720E0(&ref, str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    using Vfunc42 = uint8_t(__thiscall*)(void*, void*, void*);
+    auto* vtbl = *reinterpret_cast<void***>(ref.obj);
+    uint8_t result = reinterpret_cast<Vfunc42>(vtbl[0xa8 / 4])(ref.obj, &ref, arg2);
+
+    if (ref.obj != nullptr) {
+        using Vfunc30 = void(__thiscall*)(void*, void*);
+        auto* vtbl2 = *reinterpret_cast<void***>(ref.obj);
+        reinterpret_cast<Vfunc30>(vtbl2[0x78 / 4])(ref.obj, &ref);
+    }
+
+    return result != 0;
+}
+} // namespace lift_004D8860
+} // namespace lift_005B2660
+
+// [0x006839F0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_42 (149 bytes)
+namespace lift_006839F0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D8860 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42).
+namespace lift_004D8860 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42
+// @class ExprParser::ReadMethodType
+// @summary Evaluates a RigEventData::getUserRetargetRefFrame expression by resolving the target object and forwarding to its vfunc_42.
+
+
+extern void* __stdcall ext_00683100(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern uint32_t mem_00924FF4;
+
+struct LocalRef {
+    void* obj;
+    uint32_t aux;
+};
+
+bool __stdcall fn_006839F0(void* arg1, void* arg2) {
+    uint8_t str_buf[0x1c]{};
+    void* str_ptr = ext_00683100(str_buf, *reinterpret_cast<void**>(arg1));
+
+    LocalRef ref{nullptr, 0};
+    ext_006720E0(&ref, str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    using Vfunc42 = uint8_t(__thiscall*)(void*, void*, void*);
+    auto* vtbl = *reinterpret_cast<void***>(ref.obj);
+    uint8_t result = reinterpret_cast<Vfunc42>(vtbl[0xa8 / 4])(ref.obj, &ref, arg2);
+
+    if (ref.obj != nullptr) {
+        using Vfunc30 = void(__thiscall*)(void*, void*);
+        auto* vtbl2 = *reinterpret_cast<void***>(ref.obj);
+        reinterpret_cast<Vfunc30>(vtbl2[0x78 / 4])(ref.obj, &ref);
+    }
+
+    return result != 0;
+}
+} // namespace lift_004D8860
+} // namespace lift_006839F0
