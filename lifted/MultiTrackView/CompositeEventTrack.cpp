@@ -323,3 +323,52 @@ void fn_00410460(void* self, int32_t arg0, int32_t arg1, int32_t arg2, int32_t a
     vfn(obj, 5);
 }
 } // namespace lift_00410460
+
+// [0x00412B20] MultiTrackView::CompositeEventTrack::vfunc_5 (227 bytes)
+namespace lift_00412B20 {
+// Known callee 0x00594000: sub_00594000 (cdecl, no args; returns global int32 mem_00B40D08).
+extern uint32_t __cdecl ext_00594000();
+// Known callee 0x00597630: Unknown::findValueByKey. ecx = object pointer (from ext_00594000),
+// one stack arg = key (self+0x14). Returns the value pointer in eax.
+extern void* __thiscall ext_00597630(void* self, uintptr_t key);
+// Known callee 0x0041A4F0: sub_0041A4F0 (thiscall, no stack args).
+extern void __thiscall ext_0041A4F0(void* self);
+// Callee 0x00412720: sub_00412720 (1022B, not yet lifted). thiscall, six stack args.
+extern void __thiscall ext_00412720(void* self, uintptr_t a1, uintptr_t a2, uintptr_t a3,
+                                        uintptr_t a4, uintptr_t a5, uintptr_t a6);
+// Callee 0x0041AB80: sub_0041AB80 (349B, not yet lifted). thiscall, two stack args.
+extern void __thiscall ext_0041AB80(void* self, uintptr_t a1, uintptr_t a2);
+// Callee 0x00410DD0: sub_00410DD0 (997B, not yet lifted). thiscall, four stack args.
+extern void __thiscall ext_00410DD0(void* self, uintptr_t a1, uintptr_t a2, uintptr_t a3,
+                                        uintptr_t a4);
+
+// @name MultiTrackView::CompositeEventTrack::vfunc_5
+// @class MultiTrackView::CompositeEventTrack
+// @summary Looks up a value via ext_00594000/ext_00597630 keyed by self+0x14; if found, runs ext_0041A4F0 on self+0x30+0x1B4 and then seven ext_00412720 calls with (k,flag) pairs, one ext_0041AB80 call, and a final ext_00410DD0 call.
+// @field MultiTrackView::CompositeEventTrack +0x14 uint32_t field_0x14
+// @field MultiTrackView::CompositeEventTrack +0x30 void* field_0x30
+extern void __thiscall fn_00412B20(void* self, uint32_t a1, uint32_t a2) {
+    const uintptr_t ebx = ext_00594000();
+    const uintptr_t ebp = reinterpret_cast<uintptr_t>(
+        ext_00597630(reinterpret_cast<void*>(ebx), lift_field<uint32_t>(self, 0x14)));
+    if (ebp == 0) {
+        return;
+    }
+
+    ext_0041A4F0(static_cast<uint8_t*>(lift_field<void*>(self, 0x30)) + 0x1B4);
+
+    // Seven ext_00412720 calls: (this=self, a1, ebx, ebp, a2, k, flag).
+    ext_00412720(self, a1, ebx, ebp, a2, 0, 0);
+    ext_00412720(self, a1, ebx, ebp, a2, 2, 0);
+    ext_00412720(self, a1, ebx, ebp, a2, 4, 0);
+    ext_00412720(self, a1, ebx, ebp, a2, 6, 0);
+    ext_00412720(self, a1, ebx, ebp, a2, 0, 1);
+    ext_00412720(self, a1, ebx, ebp, a2, 2, 1);
+    ext_00412720(self, a1, ebx, ebp, a2, 4, 1);
+
+    ext_0041AB80(static_cast<uint8_t*>(lift_field<void*>(self, 0x30)) + 0x1B4, a1,
+                 0x00453C3Cu);
+
+    ext_00410DD0(self, a1, ebx, ebp, a2);
+}
+} // namespace lift_00412B20

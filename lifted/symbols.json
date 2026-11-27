@@ -1596,6 +1596,13 @@
     "summary": "Appends an 8-byte element when capacity allows (via sub_00596300, advancing end); otherwise calls sub_004115D0 to handle growth.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00412B20": {
+    "name": "MultiTrackView::CompositeEventTrack::vfunc_5",
+    "class": "MultiTrackView::CompositeEventTrack",
+    "signature": "extern \"C\" void __thiscall fn_00412B20(void* self, uint32_t a1, uint32_t a2)",
+    "summary": "Looks up a value via ext_00594000/ext_00597630 keyed by self+0x14; if found, runs ext_0041A4F0 on self+0x30+0x1B4 and then seven ext_00412720 calls with (k,flag) pairs, one ext_0041AB80 call, and a final ext_00410DD0 call.",
+    "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp"
+  },
   "0x00412C10": {
     "name": "sub_00412C10",
     "signature": "extern \"C\" void __fastcall fn_00412C10(void* self)",

@@ -1,0 +1,28 @@
+{
+  "va": "0x00412B20",
+  "size": 227,
+  "orig_symbol": "MultiTrackView::CompositeEventTrack::vfunc_5",
+  "src_path": "src/MultiTrackView/CompositeEventTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp",
+  "name": "MultiTrackView::CompositeEventTrack::vfunc_5",
+  "class": "MultiTrackView::CompositeEventTrack",
+  "signature": "extern \"C\" void __thiscall fn_00412B20(void* self, uint32_t a1, uint32_t a2)",
+  "summary": "Looks up a value via ext_00594000/ext_00597630 keyed by self+0x14; if found, runs ext_0041A4F0 on self+0x30+0x1B4 and then seven ext_00412720 calls with (k,flag) pairs, one ext_0041AB80 call, and a final ext_00410DD0 call.",
+  "fields": [
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:10:28Z"
+}
