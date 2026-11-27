@@ -1,0 +1,27 @@
+{
+  "va": "0x0063E050",
+  "size": 102,
+  "orig_symbol": "sub_0063E050",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "sub_0063E050",
+  "signature": "void __thiscall sub_0063E050(void* self, void* dst_str, uint32_t tail_len)",
+  "summary": "Extracts a substring from a buffer range (minus trailing length) and assigns it to the destination std::string",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "const char*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:08:13Z"
+}

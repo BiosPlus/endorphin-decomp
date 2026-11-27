@@ -1123,3 +1123,31 @@ bool fn_0063EC10(void* self, DWORD value, void* iter) {
     }
 }
 } // namespace lift_0063EC10
+
+// [0x0063E050]
+namespace lift_0063E050 {
+extern uint32_t mem_00925070;
+extern uint32_t mem_00924fdc;
+extern uint32_t mem_00924ff4;
+
+// @name sub_0063E050
+// @summary Extracts a substring from a buffer range (minus trailing length) and assigns it to the destination std::string
+// @field Self +0x00 void* field_0x00
+// @field Self +0x04 const char* field_0x04
+void __thiscall sub_0063E050(void* self, void* dst_str, uint32_t tail_len) {
+    const char* start = lift_field<const char*>(self, 0x04);
+    void* inner = lift_field<void*>(self, 0x00);
+    const char* end = lift_field<const char*>(inner, 0x08);
+    uint32_t len = static_cast<uint32_t>(end - start) - tail_len;
+
+    uint8_t temp_str[0x1c];
+
+    using ctor_fn = void* (__thiscall*)(void*, const char*, uint32_t);
+    using assign_fn = void* (__thiscall*)(void*, void*);
+    using dtor_fn = void (__thiscall*)(void*);
+
+    void* str_ptr = reinterpret_cast<ctor_fn>(mem_00925070)(temp_str, start, len);
+    reinterpret_cast<assign_fn>(mem_00924fdc)(dst_str, str_ptr);
+    reinterpret_cast<dtor_fn>(mem_00924ff4)(temp_str);
+}
+} // namespace lift_0063E050
