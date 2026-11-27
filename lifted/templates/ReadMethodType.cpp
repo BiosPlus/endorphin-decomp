@@ -68106,3 +68106,81 @@ bool fn_006838A0(void* self) {
 }
 } // namespace lift_00512B10
 } // namespace lift_006838A0
+
+// [0x004BCAF0]
+namespace lift_004BCAF0 {
+// @name ExprParser::ReadMethodType<NMData::MaterialPair,std::string,&NMData::MaterialPair::generateDisplayName,1>::vfunc_2
+// @class ExprParser::ReadMethodType
+// @summary Converts the string value at *arg0 to a float, rounds to nearest integer away from zero, and returns it.
+
+    void* __thiscall ext_004BC770(void* self, const void* src);
+    int32_t ext_006A6DE0();
+    extern uint32_t mem_00924FF0;
+    extern uint32_t mem_009251F0;
+    extern double mem_00993828;
+    extern uint32_t mem_00924FF4;
+
+int32_t __thiscall fn_004BCAF0(void* self, const void* const* arg0) {
+    (void)self;
+    uint8_t local_str[28];
+    ext_004BC770(local_str, *arg0);
+
+    using cstr_fn_t = const char* (__thiscall*)(const void*);
+    const char* s = reinterpret_cast<cstr_fn_t>(mem_00924FF0)(local_str);
+
+    using atof_fn_t = double (__cdecl*)(const char*);
+    float val = static_cast<float>(reinterpret_cast<atof_fn_t>(mem_009251F0)(s));
+
+    double d = static_cast<double>(val);
+    if (d < 0.0) {
+        d -= mem_00993828;
+    } else {
+        d += mem_00993828;
+    }
+    (void)d;
+    int32_t res = ext_006A6DE0();
+
+    using dtor_fn_t = void (__thiscall*)(void*);
+    reinterpret_cast<dtor_fn_t>(mem_00924FF4)(local_str);
+
+    return res;
+}
+} // namespace lift_004BCAF0
+
+// [0x004C06D0]
+namespace lift_004C06D0 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, std::string, getPropertySourceDescription, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads a property source description string, converts it to float via atof, rounds to nearest integer, and returns it.
+
+
+extern void* __stdcall ext_004C0280(void* arg1, void* arg2);
+extern int32_t __cdecl ext_006A6DE0(double val);
+
+extern const uint32_t mem_00924FF0;
+extern const uint32_t mem_009251F0;
+extern const double mem_00993828;
+extern const uint32_t mem_00924FF4;
+
+int32_t __thiscall fn_004C06D0(void* this_ptr, void** arg1) {
+    (void)this_ptr;
+    uint8_t local_str[28];
+
+    void* str_ptr = ext_004C0280(local_str, *arg1);
+
+    using c_str_fn = const char* (__thiscall*)(void*);
+    const char* cstr = reinterpret_cast<c_str_fn>(static_cast<uintptr_t>(mem_00924FF0))(str_ptr);
+
+    using atof_fn = double (__cdecl*)(const char*);
+    float val = static_cast<float>(reinterpret_cast<atof_fn>(static_cast<uintptr_t>(mem_009251F0))(cstr));
+
+    double rounded = (val < 0.0f) ? (static_cast<double>(val) - mem_00993828)
+                                  : (static_cast<double>(val) + mem_00993828);
+    int32_t result = ext_006A6DE0(rounded);
+
+    using dtor_fn = void (__thiscall*)(void*);
+    reinterpret_cast<dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(local_str);
+
+    return result;
+}
+} // namespace lift_004C06D0

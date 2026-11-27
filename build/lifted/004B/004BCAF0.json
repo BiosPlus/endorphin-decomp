@@ -1,0 +1,14 @@
+{
+  "va": "0x004BCAF0",
+  "size": 148,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::MaterialPair,std::string,\u0026NMData::MaterialPair::generateDisplayName,1\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "int32_t __thiscall fn_004BCAF0(void* self, const void* const* arg0)",
+  "summary": "Converts the string value at *arg0 to a float, rounds to nearest integer away from zero, and returns it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:06:12Z"
+}

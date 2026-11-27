@@ -16203,6 +16203,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType\u003cNMData::TriggeredEventData\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BCAF0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MaterialPair,std::string,\u0026NMData::MaterialPair::generateDisplayName,1\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "int32_t __thiscall fn_004BCAF0(void* self, const void* const* arg0)",
+    "summary": "Converts the string value at *arg0 to a float, rounds to nearest integer away from zero, and returns it.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004BCB90": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MaterialPair\u003e::vfunc_3 (NMData::MaterialPair::generateDisplayName)",
     "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e",
@@ -16386,6 +16393,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",
     "signature": "float fn_004C0660(void* self)",
     "summary": "Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004C06D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::string, getPropertySourceDescription, 1\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",
+    "signature": "int32_t __thiscall fn_004C06D0(void* this_ptr, void** arg1)",
+    "summary": "Reads a property source description string, converts it to float via atof, rounds to nearest integer, and returns it.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004C0770": {
@@ -19826,6 +19840,12 @@
     "signature": "uint32_t __thiscall fn_004E7370(void* self, uint32_t a, uint32_t b)",
     "summary": "Forwards to virtual slot 24 (vtable +0x60) with arguments (a, 3, b, 1) and returns its result.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x004E7390": {
+    "name": "compareObjectsByTypeOrName",
+    "signature": "extern \"C\" bool __stdcall fn_004E7390(void* lhs, void* rhs)",
+    "summary": "Compares two polymorphic objects by dynamic-casted fields (+0x98, +0x9C) or falls back to comparing their vtable+0x24 string pointers.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
   "0x004E7DF0": {
     "name": "sub_004E7DF0",
