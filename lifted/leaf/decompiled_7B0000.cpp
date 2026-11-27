@@ -15,6 +15,7 @@ extern const uint8_t mem_007B7084[12] = {
 } // namespace lift_007B7084
 #include <cstdlib>
 #include <bit>
+#include <cstdio>
 
 // [0x007B5224] sub_007B5224 (16 bytes)
 namespace lift_007B5224 {
@@ -2023,3 +2024,29 @@ int fn_007B2430(uint32_t ptrValue, int maxlen) {
     return 0;
 }
 } // namespace lift_007B2430
+
+// [0x007B78D0]
+namespace lift_007B78D0 {
+// @name sub_007B78D0
+// @summary Copies its uint32 argument into a local, fetches a FILE* via ext_0079EBE0, fwrite()s the local (4 bytes) to it, and reports 0x11 via ext_007AA510 on short write.
+
+extern int32_t ext_0079EBE0(void);
+extern void ext_007AA510(uint32_t idx);
+extern void ext_007BAE20(uint32_t* src, uint32_t* dst);
+
+extern uint32_t mem_00999790; // .rdata u32 0x00000004 (fwrite element size)
+extern void* mem_00925268;    // IAT slot for MSVCR80!fwrite (replaced by direct fwrite call)
+
+extern void sub_007B78D0(uint32_t value) {
+    (void)&mem_00925268; // metadata only: original indirect fwrite via IAT
+    uint32_t local = 0;
+    ext_007BAE20(&value, &local);
+
+    FILE* stream = reinterpret_cast<FILE*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_0079EBE0())));
+
+    if (fwrite(&local, static_cast<size_t>(mem_00999790), 1, stream) != 1) {
+        ext_007AA510(0x11);
+    }
+}
+} // namespace lift_007B78D0

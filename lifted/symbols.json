@@ -85138,6 +85138,12 @@
     "summary": "12-byte byte-index table for a switch jump table at 0x007B6xxx; this is data, not code. The disassembly above is the table bytes decoded as instructions.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B78D0": {
+    "name": "sub_007B78D0",
+    "signature": "extern uint32_t mem_00999790; // .rdata u32 0x00000004 (fwrite element size) extern void* mem_00925268;    // IAT slot for MSVCR80!fwrite (replaced by direct fwrite call) extern \"C\" void sub_007B78D0(uint32_t value)",
+    "summary": "Copies its uint32 argument into a local, fetches a FILE* via ext_0079EBE0, fwrite()s the local (4 bytes) to it, and reports 0x11 via ext_007AA510 on short write.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B7970": {
     "name": "ProcessByteBufferUntilStop",
     "signature": "void __cdecl ProcessByteBufferUntilStop(uint32_t count, const uint8_t* data)",
