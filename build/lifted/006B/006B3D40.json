@@ -1,0 +1,14 @@
+{
+  "va": "0x006B3D40",
+  "size": 123,
+  "orig_symbol": "GWCDateTimePropertyValue::vfunc_1",
+  "src_path": "src/classes/GWCDateTimePropertyValue.cpp",
+  "lifted_path": "lifted/classes/GWCDateTimePropertyValue.cpp",
+  "name": "GWCDateTimePropertyValue::vfunc_1",
+  "class": "GWCDateTimePropertyValue",
+  "signature": "inline void* import_slot(const int\u0026 slot)",
+  "summary": "Builds a formatted string via self's vtable[2] and MFC80 helpers, then passes it to obj's vtable[28].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:49:40Z"
+}
