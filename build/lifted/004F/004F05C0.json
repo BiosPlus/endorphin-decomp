@@ -1,0 +1,40 @@
+{
+  "va": "0x004F05C0",
+  "size": 82,
+  "orig_symbol": "Properties::TestControl::vfunc_1",
+  "src_path": "src/Properties/TestControl.cpp",
+  "lifted_path": "lifted/Properties/TestControl.cpp",
+  "name": "Properties::TestControl::vfunc_1",
+  "class": "Properties::TestControl",
+  "signature": "void fn_004F05C0(void* self)",
+  "summary": "Increments counter +0x28, zeroes +0x24, erases the int32 range [begin,end) at +0x0C/+0x10 via ext_00596660, then tail-calls StringPairList::clear on this+0x18.",
+  "fields": [
+    {
+      "class": "Properties::TestControl",
+      "offset": "+0xC",
+      "type": "int32_t*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Properties::TestControl",
+      "offset": "+0x10",
+      "type": "int32_t*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Properties::TestControl",
+      "offset": "+0x24",
+      "type": "DWORD",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Properties::TestControl",
+      "offset": "+0x28",
+      "type": "DWORD",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:22:58Z"
+}
