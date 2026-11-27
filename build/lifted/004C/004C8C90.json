@@ -1,0 +1,46 @@
+{
+  "va": "0x004C8C90",
+  "size": 347,
+  "orig_symbol": "sub_004C8C90",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "MakeCastObjectOrThrow",
+  "class": "EHObject",
+  "signature": "extern \"C\" int mem_00924FE4;   // basic_string\u003cchar\u003e::basic_string(const char*)  (thiscall) extern \"C\" int mem_00924FD0;   // operator+(const string\u0026, const string\u0026)          (cdecl, hidden return) extern \"C\" int mem_00A3A44C;   // type_info used as source type for the dynamic cast extern \"C\" int mem_00A3A724;   // type_info used as target type for the dynamic cast extern \"C\" int mem_0092F9D4;   // const char* message prefix for the exception text extern \"C\" int mem_009D47A4;   // _ThrowInfo for the thrown exception extern \"C\" int mem_00945C38;   // vtable: intermediate (during base ctor) extern \"C\" int mem_00945C50;   // vtable: final class vtable void* fn_004C8C90(void* arg)",
+  "summary": "If arg is null return a zeroed 0x14-byte EHObject; otherwise dynamic-cast arg and wrap it in a new EHObject, or throw a std::string-message exception when the cast fails.",
+  "fields": [
+    {
+      "class": "EHObject",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "EHObject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "base_subobject"
+    },
+    {
+      "class": "EHObject",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "EHObject",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "EHObject",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:49:28Z"
+}

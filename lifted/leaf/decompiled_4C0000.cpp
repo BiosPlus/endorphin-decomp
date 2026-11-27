@@ -1820,3 +1820,87 @@ extern void* fn_004C8B30(void* src)
     return nullptr;
 }
 } // namespace lift_004C8B30
+
+// [0x004C8C90] sub_004C8C90 (347 bytes)
+namespace lift_004C8C90 {
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern void* ext_006A6E9E(void* v, ptrdiff_t vfOffset, void* srcType, void* dstType, int isReference);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 == operator new.)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x004A6970: sub_004A6970 (152B) - base-subobject constructor, this = obj+4, arg = cast+4.
+extern void ext_004A6970(void* self, void* arg);
+// Known callee 0x004C7270: TypeInfoNameTempPassthrough_004C7270 (fills a temp std::string from the type_info name and returns its argument unchanged.)
+extern void* ext_004C7270(void* arg);
+// Known callee 0x00403560: StringExceptionWithMember::ctor (Construct an exception-style object from a std::string; returns self.)
+extern void* ext_00403560(void* self, const void* src);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+
+// IAT slots (MSVCP80 std::string ctor and operator+), called through the slot.
+extern int mem_00924FE4;   // basic_string<char>::basic_string(const char*)  (thiscall)
+extern int mem_00924FD0;   // operator+(const string&, const string&)          (cdecl, hidden return)
+
+// Data / rdata addresses referenced by the original code.
+extern int mem_00A3A44C;   // type_info used as source type for the dynamic cast
+extern int mem_00A3A724;   // type_info used as target type for the dynamic cast
+extern int mem_0092F9D4;   // const char* message prefix for the exception text
+extern int mem_009D47A4;   // _ThrowInfo for the thrown exception
+extern int mem_00945C38;   // vtable: intermediate (during base ctor)
+extern int mem_00945C50;   // vtable: final class vtable
+
+// @name MakeCastObjectOrThrow
+// @class EHObject
+// @summary If arg is null return a zeroed 0x14-byte EHObject; otherwise dynamic-cast arg and wrap it in a new EHObject, or throw a std::string-message exception when the cast fails.
+// @field EHObject +0x00 void* vtable
+// @field EHObject +0x04 void* base_subobject
+// @field EHObject +0x08 void* field_0x08
+// @field EHObject +0x0C void* field_0x0C
+// @field EHObject +0x10 void* field_0x10
+void* fn_004C8C90(void* arg) {
+    if (arg == nullptr) {
+        auto* obj = static_cast<unsigned char*>(ext_006A5C62(0x14));
+        if (obj == nullptr) {
+            return nullptr;
+        }
+        *reinterpret_cast<void**>(obj + 0x08) = nullptr;
+        *reinterpret_cast<void**>(obj + 0x0C) = nullptr;
+        *reinterpret_cast<void**>(obj + 0x10) = nullptr;
+        *reinterpret_cast<void**>(obj) = reinterpret_cast<void*>(&mem_00945C50);
+        return obj;
+    }
+
+    void* cast = ext_006A6E9E(arg, 0,
+                              reinterpret_cast<void*>(&mem_00A3A44C),
+                              reinterpret_cast<void*>(&mem_00A3A724), 0);
+    if (cast == nullptr) {
+        // Cast failed: build "<prefix><type name>" as a std::string and throw it.
+        using StrCtorFn = void*(__thiscall*)(void* self, const char* s);
+        using ConcatFn  = void*(__cdecl*)(void* ret, void* lhs, void* rhs);
+
+        alignas(8) unsigned char typeName[0x20] = {};  // esp+0x14
+        void* typeNameStr = ext_004C7270(typeName);
+
+        alignas(8) unsigned char prefix[0x20] = {};    // esp+0x34
+        auto strCtor = *reinterpret_cast<StrCtorFn*>(&mem_00924FE4);
+        void* prefixStr = strCtor(prefix, reinterpret_cast<const char*>(&mem_0092F9D4));
+
+        alignas(8) unsigned char joined[0x20] = {};    // esp+0x54
+        auto concat = *reinterpret_cast<ConcatFn*>(&mem_00924FD0);
+        void* joinedStr = concat(joined, prefixStr, typeNameStr);
+
+        alignas(8) unsigned char excObj[0x20] = {};    // esp+0x6c
+        ext_00403560(excObj, joinedStr);
+        ext_006A6DD2(excObj, reinterpret_cast<const void*>(&mem_009D47A4));
+        return nullptr;  // _CxxThrowException does not return
+    }
+
+    auto* obj = static_cast<unsigned char*>(ext_006A5C62(0x14));
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    *reinterpret_cast<void**>(obj) = reinterpret_cast<void*>(&mem_00945C38);
+    ext_004A6970(obj + 0x04, static_cast<unsigned char*>(cast) + 0x04);
+    *reinterpret_cast<void**>(obj) = reinterpret_cast<void*>(&mem_00945C50);
+    return obj;
+}
+} // namespace lift_004C8C90
