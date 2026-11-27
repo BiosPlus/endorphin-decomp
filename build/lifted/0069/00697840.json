@@ -1,0 +1,40 @@
+{
+  "va": "0x00697840",
+  "size": 125,
+  "orig_symbol": "sub_00697840",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "Unknown::setFormatStrings",
+  "class": "Unknown",
+  "signature": "static inline StrAssignFn  slot_assign()",
+  "summary": "Copies table string g_table[idx] into this-\u003estr, replaces the first \"%e\" with arg1's string at +0x04 and the first \"%s\" with arg3, then copies arg1's +0x50/+0x54/+0x58 dwords into this+0x30/+0x28/+0x2c.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "str"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:54:19Z"
+}

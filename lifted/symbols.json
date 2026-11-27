@@ -55017,6 +55017,13 @@
     "summary": "Initializes a 20-byte struct with 0x19, three zeros, and 1.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x00697840": {
+    "name": "Unknown::setFormatStrings",
+    "class": "Unknown",
+    "signature": "static inline StrAssignFn  slot_assign()",
+    "summary": "Copies table string g_table[idx] into this-\u003estr, replaces the first \"%e\" with arg1's string at +0x04 and the first \"%s\" with arg3, then copies arg1's +0x50/+0x54/+0x58 dwords into this+0x30/+0x28/+0x2c.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006981A0": {
     "name": "Unknown::CopyConstructPair_006981A0",
     "class": "Unknown",

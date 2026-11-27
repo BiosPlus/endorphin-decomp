@@ -1469,3 +1469,66 @@ void* fn_006999F0(void) {
     return (void*)&mem_00B5C9A8;
 }
 } // namespace lift_006999F0
+
+// [0x00697840] sub_00697840 (125 bytes)
+namespace lift_00697840 {
+extern int mem_00AA3D0C;
+extern int mem_0098F6C0;
+extern int mem_009548E8;
+extern int mem_00924FD4;
+extern int mem_00925014;
+extern int mem_00925020;
+
+// MSVCP80 std::string members, called indirectly through the IAT slots
+// (call dword ptr [0x924fd4] / [0x925014] / [0x925020]).
+using StrAssignFn  = void* (__thiscall*)(void* self, const char* s);
+using StrFindFn    = uint32_t (__thiscall*)(void* self, const char* s, uint32_t pos);
+using StrReplaceFn = void* (__thiscall*)(void* self, uint32_t pos, uint32_t count, const void* str);
+
+static inline StrAssignFn  slot_assign()  { return reinterpret_cast<StrAssignFn>(static_cast<uintptr_t>(mem_00924FD4)); }
+static inline StrFindFn    slot_find()    { return reinterpret_cast<StrFindFn>(static_cast<uintptr_t>(mem_00925014)); }
+static inline StrReplaceFn slot_replace() { return reinterpret_cast<StrReplaceFn>(static_cast<uintptr_t>(mem_00925020)); }
+
+// @name Unknown::setFormatStrings
+// @class Unknown
+// @summary Copies table string g_table[idx] into this->str, replaces the first "%e" with arg1's string at +0x04 and the first "%s" with arg3, then copies arg1's +0x50/+0x54/+0x58 dwords into this+0x30/+0x28/+0x2c.
+// @field Unknown +0x0C std::string str
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2c
+// @field Unknown +0x30 uint32_t field_0x30
+void __thiscall fn_00697840(void* self, void* arg1, uint32_t idx, const void* arg3) {
+    // mov edi, ecx ; esi = this + 0x0C (std::string)
+    void* str = reinterpret_cast<uint8_t*>(self) + 0x0C;
+
+    // mov ecx, [4*idx + 0xAA3D0C] ; table of const char* in .data
+    const uint32_t* table = reinterpret_cast<const uint32_t*>(&mem_00AA3D0C);
+    const char* src = reinterpret_cast<const char*>(static_cast<uintptr_t>(table[idx]));
+
+    // str = src  (basic_string::operator=(const char*))
+    slot_assign()(str, src);
+
+    // pos = str.find("%e", 0)
+    const char* fmtE = reinterpret_cast<const char*>(&mem_0098F6C0);
+    uint32_t pos = slot_find()(str, fmtE, 0);
+
+    // ebx = arg1
+    uint8_t* a1 = reinterpret_cast<uint8_t*>(arg1);
+    if (static_cast<int32_t>(pos) >= 0) {
+        // str.replace(pos, 2, *(arg1 + 4))
+        slot_replace()(str, pos, 2, a1 + 0x04);
+    }
+
+    // pos = str.find("%s", 0)
+    const char* fmtS = reinterpret_cast<const char*>(&mem_009548E8);
+    pos = slot_find()(str, fmtS, 0);
+    if (static_cast<int32_t>(pos) >= 0) {
+        // str.replace(pos, 2, *arg3)
+        slot_replace()(str, pos, 2, arg3);
+    }
+
+    // this->+0x28 = arg1->+0x54 ; this->+0x2C = arg1->+0x58 ; this->+0x30 = arg1->+0x50
+    lift_field<uint32_t>(self, 0x28) = lift_field<uint32_t>(arg1, 0x54);
+    lift_field<uint32_t>(self, 0x2C) = lift_field<uint32_t>(arg1, 0x58);
+    lift_field<uint32_t>(self, 0x30) = lift_field<uint32_t>(arg1, 0x50);
+}
+} // namespace lift_00697840
