@@ -1,0 +1,28 @@
+{
+  "va": "0x006FA4A0",
+  "size": 117,
+  "orig_symbol": "sub_006FA4A0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::FindAcceptingEntry",
+  "class": "Unknown",
+  "signature": "static uint8_t callAccept(void* obj, uintptr_t arg)",
+  "summary": "Tests arg via vfunc +0x78 against ext_006FC6E0(-1) and ext_006FC6E0(mem_00B5E400); returns this if either accepts, else scans the +0x2c entry array backwards and returns the first entry whose +0x38 sub-object accepts arg, or null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void**",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:06:53Z"
+}

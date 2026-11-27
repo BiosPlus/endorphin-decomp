@@ -2239,3 +2239,52 @@ void* fn_006FCD50(void* self) {
     return self;
 }
 } // namespace lift_006FCD50
+
+// [0x006FA4A0]
+namespace lift_006FA4A0 {
+// @name Unknown::FindAcceptingEntry
+// @class Unknown
+// @summary Tests arg via vfunc +0x78 against ext_006FC6E0(-1) and ext_006FC6E0(mem_00B5E400); returns this if either accepts, else scans the +0x2c entry array backwards and returns the first entry whose +0x38 sub-object accepts arg, or null.
+// @field Unknown +0x1C int32_t field_0x1C
+// @field Unknown +0x2C void** field_0x2C
+
+
+extern uint32_t ext_006FC6E0(uint32_t index);
+extern uint32_t mem_00B5E400;
+
+// Calls vfunc at byte offset +0x78 of obj's vtable (thiscall, one argument).
+using AcceptFn = uint8_t(__thiscall*)(void* self, uintptr_t arg);
+
+static uint8_t callAccept(void* obj, uintptr_t arg) {
+    void* vtable = *reinterpret_cast<void**>(obj);
+    auto fn = reinterpret_cast<AcceptFn>(lift_field<void*>(vtable, 0x78));
+    return fn(obj, arg);
+}
+
+void* __thiscall fn_006FA4A0(void* this_ptr, void* arg) {
+    if (arg == nullptr) {
+        return this_ptr;
+    }
+
+    uintptr_t first = static_cast<uintptr_t>(ext_006FC6E0(0xFFFFFFFFu));
+    if (callAccept(arg, first) != 0) {
+        return this_ptr;
+    }
+
+    uintptr_t second = static_cast<uintptr_t>(ext_006FC6E0(mem_00B5E400));
+    if (callAccept(arg, second) != 0) {
+        return this_ptr;
+    }
+
+    for (int32_t i = lift_field<int32_t>(this_ptr, 0x1C) - 1; i >= 0; --i) {
+        void** entries = lift_field<void**>(this_ptr, 0x2C);
+        void* entry = entries[i];
+        void* sub = lift_field<void*>(entry, 0x38);
+        if (callAccept(sub, reinterpret_cast<uintptr_t>(arg)) != 0) {
+            return entry;
+        }
+    }
+
+    return nullptr;
+}
+} // namespace lift_006FA4A0

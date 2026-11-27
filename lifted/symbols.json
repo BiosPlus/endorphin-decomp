@@ -64622,6 +64622,13 @@
     "summary": "Scans the int32 DynamicArray embedded at +0x1C for the given value and removes the first match.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FA4A0": {
+    "name": "Unknown::FindAcceptingEntry",
+    "class": "Unknown",
+    "signature": "static uint8_t callAccept(void* obj, uintptr_t arg)",
+    "summary": "Tests arg via vfunc +0x78 against ext_006FC6E0(-1) and ext_006FC6E0(mem_00B5E400); returns this if either accepts, else scans the +0x2c entry array backwards and returns the first entry whose +0x38 sub-object accepts arg, or null.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FA520": {
     "name": "sub_006FA520",
     "signature": "void fn_006FA520(uint32_t arg)",
