@@ -2106,6 +2106,13 @@
     "summary": "Sets the vtable word, allocates a 0x10-byte node (zeroing its +0x4/+0x8/+0xC words) and stores it at +0x04 (or NULL if allocation fails); returns this.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041C880": {
+    "name": "StateManager::setStateByIndex",
+    "class": "StateManager",
+    "signature": "uint8_t __thiscall fn_0041C880(uint32_t self, uint32_t index)",
+    "summary": "Switches the active object at +0x8 to the element at index in the vector at +0x4, calling vtable+0x8 on the old and vtable+0x4 on the new.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041C980": {
     "name": "GuiControllerMFC::vfunc_0",
     "class": "GuiControllerMFC",

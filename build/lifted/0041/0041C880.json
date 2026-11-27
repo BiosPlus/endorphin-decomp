@@ -1,0 +1,28 @@
+{
+  "va": "0x0041C880",
+  "size": 94,
+  "orig_symbol": "sub_0041C880",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "StateManager::setStateByIndex",
+  "class": "StateManager",
+  "signature": "uint8_t __thiscall fn_0041C880(uint32_t self, uint32_t index)",
+  "summary": "Switches the active object at +0x8 to the element at index in the vector at +0x4, calling vtable+0x8 on the old and vtable+0x4 on the new.",
+  "fields": [
+    {
+      "class": "StateManager",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "StateManager",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:52:47Z"
+}

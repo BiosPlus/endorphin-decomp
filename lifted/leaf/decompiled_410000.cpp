@@ -2397,3 +2397,58 @@ void* fn_0041E070(void* self) {
     return self;
 }
 } // namespace lift_0041E070
+
+// [0x0041C880]
+namespace lift_0041C880 {
+// @name StateManager::setStateByIndex
+// @class StateManager
+// @summary Switches the active object at +0x8 to the element at index in the vector at +0x4, calling vtable+0x8 on the old and vtable+0x4 on the new.
+// @field StateManager +0x04 uint32_t field_0x04
+// @field StateManager +0x08 uint32_t field_0x08
+
+
+extern uint32_t __thiscall ext_0041C7C0(uint32_t self, uint32_t index);
+
+uint8_t __thiscall fn_0041C880(uint32_t self, uint32_t index) {
+    void* self_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(self));
+    uint32_t vec = lift_field<uint32_t>(self_ptr, 0x04);
+    void* vec_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vec));
+    uint32_t begin = lift_field<uint32_t>(vec_ptr, 0x04);
+    if (begin == 0) {
+        return 0;
+    }
+
+    uint32_t end = lift_field<uint32_t>(vec_ptr, 0x08);
+    uint32_t size = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
+    if (index >= size) {
+        return 0;
+    }
+
+    uint32_t elem_ptr = ext_0041C7C0(vec, index);
+    if (*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(elem_ptr)) == 0) {
+        return 0;
+    }
+
+    uint32_t current = lift_field<uint32_t>(self_ptr, 0x08);
+    if (current != 0) {
+        uint32_t vtable = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(current));
+        auto on_exit = reinterpret_cast<void(__thiscall*)(uint32_t)>(
+            static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable + 0x08))));
+        on_exit(current);
+    }
+
+    vec = lift_field<uint32_t>(self_ptr, 0x04);
+    elem_ptr = ext_0041C7C0(vec, index);
+    uint32_t next = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(elem_ptr));
+    lift_field<uint32_t>(self_ptr, 0x08) = next;
+    if (next == 0) {
+        return 0;
+    }
+
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(next));
+    auto on_enter = reinterpret_cast<void(__thiscall*)(uint32_t)>(
+        static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable + 0x04))));
+    on_enter(next);
+    return 1;
+}
+} // namespace lift_0041C880
