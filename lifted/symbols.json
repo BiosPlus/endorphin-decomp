@@ -74324,6 +74324,12 @@
     "summary": "Returns BlendTwoValuesOverRange100(a, b, c) plus mulSquareDouble of an offset of a scaled by -0.002, signed by whether b \u003e c (+/-1000).",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00722BA0": {
+    "name": "BlendPlusSquaredScaledOffset",
+    "signature": "double fn_00722BA0(double a, double b, double c)",
+    "summary": "Returns BlendTwoValuesOverRange100(a, b, c) + mulSquareDouble((a - 500) * 0.002, sign) where sign is -1000 if b \u003c c (or unordered) else +1000.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00722F60": {
     "name": "sub_00722F60",
     "signature": "extern \"C\" void* __fastcall fn_00722F60(void* self, int edx_unused, unsigned int flags)",

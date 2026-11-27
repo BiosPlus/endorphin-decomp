@@ -838,3 +838,25 @@ double fn_00722730(double a, double b, double c) {
     return ext_00722660(a, b, c) + squared;
 }
 } // namespace lift_00722730
+
+// [0x00722BA0] sub_00722BA0 (128 bytes)
+namespace lift_00722BA0 {
+// Known callee 0x00722660: BlendTwoValuesOverRange100 (Returns 0.5 * ((100 - a) * 0.01 * c + (100 + a) * 0.01 * b), a weighted blend of b and c with a in [-100, 100] (double return in ST0).)
+extern double ext_00722660(double a, double b, double c);
+// Known callee 0x00722720: mulSquareDouble (Computes (a * a) * b for two double-precision arguments.)
+extern double ext_00722720(double a, double b);
+extern const double mem_009967F0; // .rdata double 500
+extern const double mem_009967F8; // .rdata double 0.002
+
+// @name BlendPlusSquaredScaledOffset
+// @summary Returns BlendTwoValuesOverRange100(a, b, c) + mulSquareDouble((a - 500) * 0.002, sign) where sign is -1000 if b < c (or unordered) else +1000.
+// @field none (free function, no struct accesses)
+double fn_00722BA0(double a, double b, double c) {
+    // fcomp sets C0 on b < c and on unordered operands, which selects -1000.
+    const double s = (b < c || std::isunordered(b, c)) ? -1000.0 : 1000.0;
+    const double t = (a - mem_009967F0) * mem_009967F8;
+    const double v1 = ext_00722720(t, s);
+    const double r = ext_00722660(a, b, c);
+    return r + v1;
+}
+} // namespace lift_00722BA0

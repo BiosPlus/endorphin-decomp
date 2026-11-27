@@ -1,0 +1,13 @@
+{
+  "va": "0x00722BA0",
+  "size": 128,
+  "orig_symbol": "sub_00722BA0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "BlendPlusSquaredScaledOffset",
+  "signature": "double fn_00722BA0(double a, double b, double c)",
+  "summary": "Returns BlendTwoValuesOverRange100(a, b, c) + mulSquareDouble((a - 500) * 0.002, sign) where sign is -1000 if b \u003c c (or unordered) else +1000.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:13:03Z"
+}
