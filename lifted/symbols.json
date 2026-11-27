@@ -28883,6 +28883,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0058C2D0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}\u003e",
+    "signature": "extern \"C\" int mem_00B3F918; // guard byte (bit 0 = initialized) extern \"C\" int mem_00B3F914; // static accessor object storage void fn_0058C2D0(void* holder)",
+    "summary": "Lazily initializes the function-local static accessor (guard byte at 0xB3F918, object at 0xB3F914, vtable 0x0095B92C) and binds its address into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0058C350": {
     "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTX(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTX(float), 0}\u003e",

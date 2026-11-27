@@ -11192,3 +11192,28 @@ void fn_005248D0(void* holder) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AED2C4));
 }
 } // namespace lift_005248D0
+
+// [0x0058C2D0] ExprParser::ReadWriteMethodType<AnimatableTransform, float, getEulerZ, float, setEulerZ>::vfunc_40 (122 bytes)
+namespace lift_0058C2D0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00B3F918; // guard byte (bit 0 = initialized)
+extern int mem_00B3F914; // static accessor object storage
+
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}>
+// @summary Lazily initializes the function-local static accessor (guard byte at 0xB3F918, object at 0xB3F914, vtable 0x0095B92C) and binds its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<AnimatableTransform> +0x04 uint32_t field_0x04
+void fn_0058C2D0(void* holder) {
+    // MSVC SEH frame push/pop (fs:[0] chain) is compiler boilerplate and is omitted.
+    uint8_t* guard = reinterpret_cast<uint8_t*>(&mem_00B3F918);
+    if ((*guard & 1u) == 0) {
+        *guard |= 1u;
+        ext_0067A670();
+        *reinterpret_cast<uint32_t*>(&mem_00B3F914) = 0x0095B92Cu;
+    }
+    uint8_t* h = static_cast<uint8_t*>(holder);
+    *reinterpret_cast<uint32_t*>(h + 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B3F914));
+}
+} // namespace lift_0058C2D0

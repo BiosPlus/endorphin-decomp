@@ -1,0 +1,22 @@
+{
+  "va": "0x0058C2D0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}\u003e",
+  "signature": "extern \"C\" int mem_00B3F918; // guard byte (bit 0 = initialized) extern \"C\" int mem_00B3F914; // static accessor object storage void fn_0058C2D0(void* holder)",
+  "summary": "Lazily initializes the function-local static accessor (guard byte at 0xB3F918, object at 0xB3F914, vtable 0x0095B92C) and binds its address into holder+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:25:45Z"
+}
