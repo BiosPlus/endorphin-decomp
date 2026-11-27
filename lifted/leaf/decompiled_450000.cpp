@@ -1736,3 +1736,46 @@ int fn_00459060(HWND hwnd) {
     return fn_00459000(obj, hwnd);
 }
 } // namespace lift_00459060
+
+// [0x004519B0]
+namespace lift_004519B0 {
+// @name updateType7Objects
+// @summary Iterates over a vector of objects from the global manager and invokes vtable+0x164 on those whose vtable+0xf8 returns 7.
+// @field GlobalManager +0x26c void* field_0x26c
+// @field ObjectContainer +0x34 void** begin
+// @field ObjectContainer +0x38 void** end
+
+
+extern int32_t __cdecl ext_00594000(void);
+extern void(__cdecl* mem_00925134)(void);
+
+extern void __cdecl fn_004519B0(void) {
+    uint8_t* mgr = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+    uint8_t* container = lift_field<uint8_t*>(mgr, 0x26c);
+
+    void** it = lift_field<void**>(container, 0x34);
+    void** end = lift_field<void**>(container, 0x38);
+    if (it > end) {
+        mem_00925134();
+    }
+
+    for (; it != lift_field<void**>(container, 0x38); ++it) {
+        if (lift_field<void**>(container, 0x34) > lift_field<void**>(container, 0x38)) {
+            mem_00925134();
+        }
+        if (it >= lift_field<void**>(container, 0x38)) {
+            mem_00925134();
+        }
+        void* obj = *it;
+        if (!obj) {
+            continue;
+        }
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+        auto get_type = reinterpret_cast<int32_t(__thiscall*)(void*)>(vtable[0xf8 / sizeof(uintptr_t)]);
+        if (get_type(obj) == 7) {
+            auto action = reinterpret_cast<void(__thiscall*)(void*)>(vtable[0x164 / sizeof(uintptr_t)]);
+            action(obj);
+        }
+    }
+}
+} // namespace lift_004519B0

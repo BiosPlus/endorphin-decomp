@@ -1,0 +1,33 @@
+{
+  "va": "0x004519B0",
+  "size": 107,
+  "orig_symbol": "sub_004519B0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "updateType7Objects",
+  "signature": "extern \"C\" void __cdecl fn_004519B0(void)",
+  "summary": "Iterates over a vector of objects from the global manager and invokes vtable+0x164 on those whose vtable+0xf8 returns 7.",
+  "fields": [
+    {
+      "class": "GlobalManager",
+      "offset": "+0x26C",
+      "type": "void*",
+      "name": "field_0x26c"
+    },
+    {
+      "class": "ObjectContainer",
+      "offset": "+0x34",
+      "type": "void**",
+      "name": "begin"
+    },
+    {
+      "class": "ObjectContainer",
+      "offset": "+0x38",
+      "type": "void**",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:11:57Z"
+}
