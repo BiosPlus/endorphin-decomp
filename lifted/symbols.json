@@ -66116,6 +66116,13 @@
     "summary": "Getter returning int32_t field at offset +0x4.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B99D0": {
+    "name": "Unknown::allocBufferAndForward",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006B99D0(uint32_t len)",
+    "summary": "Allocates a buffer of the given length via allocBuffer (which may rewrite the length argument through its out pointer), then forwards the resulting length to the MFC80 ord_764 thunk and returns the allocBuffer status.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9A00": {
     "name": "Unknown::allocBuffer",
     "class": "Unknown",

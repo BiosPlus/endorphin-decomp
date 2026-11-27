@@ -1,0 +1,14 @@
+{
+  "va": "0x006B99D0",
+  "size": 48,
+  "orig_symbol": "sub_006B99D0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::allocBufferAndForward",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006B99D0(uint32_t len)",
+  "summary": "Allocates a buffer of the given length via allocBuffer (which may rewrite the length argument through its out pointer), then forwards the resulting length to the MFC80 ord_764 thunk and returns the allocBuffer status.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:43:52Z"
+}

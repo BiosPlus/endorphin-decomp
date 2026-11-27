@@ -2460,3 +2460,22 @@ __thiscall void* fn_006B43F0(void* self, DWORD arg1, DWORD arg2, BYTE arg3) {
     return self;
 }
 } // namespace lift_006B43F0
+
+// [0x006B99D0] sub_006B99D0 (48 bytes)
+namespace lift_006B99D0 {
+// Known callee 0x006B9A00: Unknown::allocBuffer (Detaches any existing buffer and allocates an inline or heap buffer of the requested length, returning 0 on success or 1 on error.)
+extern uint32_t __thiscall ext_006B9A00(void* ecx, int32_t len, uint32_t* out);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void __cdecl ext_006A5C5C(uint32_t value);
+
+// @name Unknown::allocBufferAndForward
+// @summary Allocates a buffer of the given length via allocBuffer (which may rewrite the length argument through its out pointer), then forwards the resulting length to the MFC80 ord_764 thunk and returns the allocBuffer status.
+uint32_t fn_006B99D0(uint32_t len) {
+    // len is passed by address to allocBuffer, which may update it; the updated value is what gets forwarded.
+    uint32_t value = len;
+    // The original does not load ecx before the call, so it is passed as zero here.
+    uint32_t status = ext_006B9A00(nullptr, static_cast<int32_t>(value), &value);
+    ext_006A5C5C(value);
+    return status;
+}
+} // namespace lift_006B99D0
