@@ -1,0 +1,45 @@
+{
+  "va": "0x004CDE30",
+  "size": 133,
+  "orig_symbol": "sub_004CDE30",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "sub_004CDE30",
+  "signature": "void __fastcall fn_004CDE30(void* self)",
+  "summary": "Destroys a vector of string pairs at +0x14, tidies a string vector at +0x04, and calls base destructor sub_0066AC80.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:34:08Z"
+}

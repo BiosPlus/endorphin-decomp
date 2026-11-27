@@ -1135,3 +1135,36 @@ void* __stdcall fn_004C0280(void* arg1, void* arg2) {
     return arg1;
 }
 } // namespace lift_004C0280
+
+// [0x004CDE30]
+namespace lift_004CDE30 {
+// @name sub_004CDE30
+// @summary Destroys a vector of string pairs at +0x14, tidies a string vector at +0x04, and calls base destructor sub_0066AC80.
+// @field Self +0x00 uint32_t field_0x00
+// @field Self +0x04 void* field_0x04
+// @field Self +0x18 uint32_t field_0x18
+// @field Self +0x1C uint32_t field_0x1C
+// @field Self +0x20 uint32_t field_0x20
+
+
+void ext_0041DD40(uint32_t begin, uint32_t end);
+void ext_006A5C5C(uint32_t ptr);
+void __fastcall ext_00672D10(void* self);
+void __fastcall ext_0066AC80(void* self);
+
+void __fastcall fn_004CDE30(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x18);
+    if (begin != 0) {
+        uint32_t end = lift_field<uint32_t>(self, 0x1C);
+        ext_0041DD40(begin, end);
+        ext_006A5C5C(begin);
+    }
+
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    ext_00672D10(static_cast<uint8_t*>(self) + 0x04);
+    ext_0066AC80(self);
+}
+} // namespace lift_004CDE30
