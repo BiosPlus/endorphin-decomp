@@ -28655,6 +28655,12 @@
     "summary": "Resets three buffer pointers, then allocates count 60-byte elements and sets begin/end/limit; returns false for count 0.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00555980": {
+    "name": "CopyConstructRangeWithRollback",
+    "signature": "void* fn_00555980(void* src_begin, void* src_end, void* dst_begin)",
+    "summary": "Copy-constructs 0x54-byte records from [src_begin, src_end) into dst_begin onward; on exception destroys the already-built records and rethrows. Returns the one-past-last destination pointer.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005565C0": {
     "name": "sub_005565C0",
     "signature": "void* fn_005565C0(const void* first, const void* last, void* dest)",

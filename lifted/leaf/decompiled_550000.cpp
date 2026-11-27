@@ -2406,3 +2406,43 @@ void fn_00558FE0(uint32_t begin, uint32_t end) {
     }
 }
 } // namespace lift_00558FE0
+
+// [0x00555980] sub_00555980 (141 bytes)
+namespace lift_00555980 {
+// Known callee 0x00553F00: ThreeStringsCopyCtor (Copy-constructs a 0x54-byte record with three std::string fields).
+extern void* ext_00553F00(void* self, const void* other);
+// Known callee 0x00663060: sub_00663060_dtor (Destroys three std::string members at +0x38, +0x1c, +0x00).
+extern void ext_00663060(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to _CxxThrowException; used here to rethrow).
+extern void ext_006A6DD2();
+
+// @name CopyConstructRangeWithRollback
+// @summary Copy-constructs 0x54-byte records from [src_begin, src_end) into dst_begin onward; on exception destroys the already-built records and rethrows. Returns the one-past-last destination pointer.
+void* fn_00555980(void* src_begin, void* src_end, void* dst_begin) {
+    constexpr std::size_t kRecordSize = 0x54;
+
+    auto* src = static_cast<std::uint8_t*>(src_begin);
+    auto* const src_last = static_cast<std::uint8_t*>(src_end);
+    auto* const dst_first = static_cast<std::uint8_t*>(dst_begin);
+    std::uint8_t* dst = dst_first;
+
+    try {
+        while (src != src_last) {
+            if (dst != nullptr) {
+                ext_00553F00(dst, src);
+            }
+            dst += kRecordSize;
+            src += kRecordSize;
+        }
+    } catch (...) {
+        // Unwind: destroy every record constructed so far, then rethrow.
+        for (std::uint8_t* p = dst_first; p != dst; p += kRecordSize) {
+            ext_00663060(p);
+        }
+        ext_006A6DD2();
+        throw;
+    }
+
+    return dst;
+}
+} // namespace lift_00555980
