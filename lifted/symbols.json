@@ -31947,6 +31947,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005B2C80": {
+    "name": "ExprParser::ReadWriteMethodType\u003cGeometry\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, float, \u0026private: void __thiscall Geometry::setParam1(float)\u003e",
+    "signature": "void vfunc_40_005B2C80(void* holder)",
+    "summary": "Binds holder+0x04 to the function-local static accessor object (vtable 0x96025C), initializing that object once behind a guard dword.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005B2D00": {
     "name": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, 0\u003e",

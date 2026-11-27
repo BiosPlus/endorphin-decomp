@@ -11749,3 +11749,31 @@ void fn_00590E80(void* holder) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B3F99C));
 }
 } // namespace lift_00590E80
+
+// [0x005B2C80]
+namespace lift_005B2C80 {
+// @name ExprParser::ReadWriteMethodType<Geometry>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, float, &private: void __thiscall Geometry::setParam1(float)>
+// @summary Binds holder+0x04 to the function-local static accessor object (vtable 0x96025C), initializing that object once behind a guard dword.
+// @field ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, float, &private: void __thiscall Geometry::setParam1(float)> +0x04 void* accessor
+
+// Static accessor object at 0xB4352C; its first dword is the vtable pointer.
+extern uint32_t mem_00B4352C;
+// One-time initialization guard dword at 0xB43530 (bit 0 = initialized).
+extern uint32_t mem_00B43530;
+
+// Callee 0x0067A670 (lifted as fn_006721B0): stores `value` into the first
+// dword of self after calling ext_00672000 on self; returns value.
+uint32_t ext_0067A670(void* self, uint32_t value);
+
+void vfunc_40_005B2C80(void* holder) {
+    if ((mem_00B43530 & 1u) == 0) {
+        mem_00B43530 |= 1u;
+        // The original also passed the SEH frame link as `value`; that dword is
+        // overwritten by the vtable store below, so 0 is passed here.
+        ext_0067A670(&mem_00B4352C, 0u);
+        mem_00B4352C = 0x0096025Cu;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<unsigned char*>(holder) + 0x04) = 0x00B4352Cu;
+}
+} // namespace lift_005B2C80

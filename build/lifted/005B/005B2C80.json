@@ -1,0 +1,14 @@
+{
+  "va": "0x005B2C80",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, float, \u0026private: void __thiscall Geometry::setParam1(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cGeometry\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, float, \u0026private: void __thiscall Geometry::setParam1(float)\u003e",
+  "signature": "void vfunc_40_005B2C80(void* holder)",
+  "summary": "Binds holder+0x04 to the function-local static accessor object (vtable 0x96025C), initializing that object once behind a guard dword.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:30:30Z"
+}
