@@ -887,3 +887,44 @@ void* __thiscall fn_004DDF00(void* self, void* node) {
     return node;
 }
 } // namespace lift_004DDF00
+
+// [0x004E3570] NMData::AnimationEventData::vfunc_76 (55 bytes)
+namespace lift_004E3570 {
+// @name NMData::AnimationEventData::vfunc_76
+// @class NMData::AnimationEventData
+// @summary Appends the argument to the container at +0x9B0 via ext_0041A920, validates begin <= end, and stores the container end iterator at +0x9C0/+0x9C4.
+// @field NMData::AnimationEventData +0x9B0 uint8_t[16] field_0x9b0
+// @field NMData::AnimationEventData +0x9C0 uint32_t field_0x9c0
+// @field NMData::AnimationEventData +0x9C4 uint32_t field_0x9c4
+
+extern void __thiscall ext_0041A920(void* self, const void* elem);
+extern void ext_004E35B0(void);
+extern void ext_004E3AB0(void);
+extern void ext_004E5990(void);
+extern void ext_004E5AE0(void);
+extern int32_t __cdecl ext_00594000(void);
+extern void ext_006622D0(void);
+extern void ext_006A5C5C(void);
+extern void (__cdecl* mem_00925134)(void);
+
+void __thiscall fn_004E3570(void* self, uint32_t arg) {
+    (void)&ext_004E35B0;
+    (void)&ext_004E3AB0;
+    (void)&ext_004E5990;
+    (void)&ext_004E5AE0;
+    (void)&ext_00594000;
+    (void)&ext_006622D0;
+    (void)&ext_006A5C5C;
+
+    uint8_t* container = static_cast<uint8_t*>(self) + 0x9B0;
+    ext_0041A920(container, &arg);
+
+    uint32_t end_ptr = lift_field<uint32_t>(container, 0x08);
+    if (lift_field<uint32_t>(container, 0x04) > end_ptr) {
+        mem_00925134();
+    }
+
+    lift_field<uint32_t>(self, 0x9C0) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(container));
+    lift_field<uint32_t>(self, 0x9C4) = end_ptr;
+}
+} // namespace lift_004E3570

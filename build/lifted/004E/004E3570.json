@@ -1,0 +1,34 @@
+{
+  "va": "0x004E3570",
+  "size": 55,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_76",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_76",
+  "class": "NMData::AnimationEventData",
+  "signature": "void __thiscall fn_004E3570(void* self, uint32_t arg)",
+  "summary": "Appends the argument to the container at +0x9B0 via ext_0041A920, validates begin \u003c= end, and stores the container end iterator at +0x9C0/+0x9C4.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9B0",
+      "type": "uint8_t[16]",
+      "name": "field_0x9b0"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9C0",
+      "type": "uint32_t",
+      "name": "field_0x9c0"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9C4",
+      "type": "uint32_t",
+      "name": "field_0x9c4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-carbon@low",
+  "lifted_at": "2026-11-27T12:39:37Z"
+}
