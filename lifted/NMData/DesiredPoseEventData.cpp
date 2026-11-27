@@ -151,3 +151,82 @@ DWORD* __thiscall fn_004C3410(void* self, DWORD* out, DWORD key) {
     return out;
 }
 } // namespace lift_004C3410
+
+// [0x0048B580]
+namespace lift_0048B580 {
+// @name NMData::DesiredPoseEventData::vfunc_90
+// @class NMData::DesiredPoseEventData
+// @summary Collects strings from a tree at field_0x168+0x5A4, passes them to ext_004C28C0, and cleans up.
+// @field NMData::DesiredPoseEventData +0x168 void* field_0x168
+
+extern void ext_0040ECB0(void* self, const void* value);
+extern void ext_004C28C0(void* self, void* vec_wrapper);
+extern void ext_00673C20(void* it);
+extern void ext_006A5C5C(void* ptr);
+
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924FF4;
+
+void fn_0048B580(void* self) {
+    uint8_t* f168 = lift_field<uint8_t*>(self, 0x168);
+    if (!f168) {
+        return;
+    }
+
+    struct VecWrapper {
+        uint32_t pad;
+        void* begin;
+        void* end;
+        void* capacity;
+    } vec = {0, nullptr, nullptr, nullptr};
+
+    uint8_t* tree = f168 + 0x5A4;
+    void* head = lift_field<void*>(tree, 0x4);
+    struct TreeIter {
+        void* container;
+        void* node;
+    } it = {tree, lift_field<void*>(head, 0x0)};
+
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    auto dtor_string = reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4);
+
+    while (true) {
+        void* cur_head = lift_field<void*>(tree, 0x4);
+        if (!it.container || it.container != tree) {
+            invalid_param();
+        }
+        if (it.node == cur_head) {
+            break;
+        }
+        if (!it.container) {
+            invalid_param();
+        }
+        if (it.node == lift_field<void*>(it.container, 0x4)) {
+            invalid_param();
+        }
+
+        void* obj = lift_field<void*>(it.node, 0x28);
+        void** vtbl = lift_field<void**>(obj, 0x0);
+        auto vfn_3 = reinterpret_cast<void*(__thiscall*)(void*, void*)>(vtbl[3]);
+
+        uint8_t temp_str[28];
+        void* ret_str = vfn_3(obj, temp_str);
+        ext_0040ECB0(&vec.begin, ret_str);
+        dtor_string(temp_str);
+
+        ext_00673C20(&it);
+    }
+
+    ext_004C28C0(self, &vec);
+
+    if (vec.begin) {
+        uint8_t* p = static_cast<uint8_t*>(vec.begin);
+        uint8_t* end = static_cast<uint8_t*>(vec.end);
+        while (p != end) {
+            dtor_string(p);
+            p += 0x1C;
+        }
+        ext_006A5C5C(vec.begin);
+    }
+}
+} // namespace lift_0048B580

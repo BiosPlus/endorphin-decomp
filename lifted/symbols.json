@@ -12810,6 +12810,13 @@
     "summary": "Stdcall (ret 8) proxy: loads the target pointer stored at the proxy's first dword and forwards it to ext_0048ABF0 in ECX; the second stack argument is ignored.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0048B580": {
+    "name": "NMData::DesiredPoseEventData::vfunc_90",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "void fn_0048B580(void* self)",
+    "summary": "Collects strings from a tree at field_0x168+0x5A4, passes them to ext_004C28C0, and cleans up.",
+    "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
   "0x0048B6A0": {
     "name": "SubObject::InitAndLinkRecord",
     "class": "SubObject",
@@ -45422,6 +45429,13 @@
     "signature": "void fn_005B8C80(void* self)",
     "summary": "Lazily initializes the static accessor object (guarded by bit 0 of mem_00B43D40) and binds holder+0x04 to it.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005B8D00": {
+    "name": "NMData::MetaBodyData::vfunc_34",
+    "class": "NMData::MetaBodyData",
+    "signature": "void* fn_005B8D00(void* self, void* arg0)",
+    "summary": "Creates or retrieves a render object via TransformInterface, links it to RenderObjectOwner, and returns it.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
   "0x005B8D90": {
     "name": "NMData::MetaBodyData::vfunc_3",

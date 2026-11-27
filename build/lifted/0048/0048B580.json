@@ -1,0 +1,22 @@
+{
+  "va": "0x0048B580",
+  "size": 287,
+  "orig_symbol": "NMData::DesiredPoseEventData::vfunc_90",
+  "src_path": "src/NMData/DesiredPoseEventData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp",
+  "name": "NMData::DesiredPoseEventData::vfunc_90",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "void fn_0048B580(void* self)",
+  "summary": "Collects strings from a tree at field_0x168+0x5A4, passes them to ext_004C28C0, and cleans up.",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:46:39Z"
+}
