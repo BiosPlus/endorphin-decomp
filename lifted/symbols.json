@@ -76806,6 +76806,13 @@
     "summary": "IAT jump thunk forwarding to MSVCR80!realloc.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007C8E30": {
+    "name": "Vec3::normalizeLengthF",
+    "class": "Vec3",
+    "signature": "float fn_007C8E30(void* self)",
+    "summary": "Computes the length of the 3-float vector at this; if length \u003e 0 normalizes it in place and returns the length, otherwise sets it to (1,0,0) and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9260": {
     "name": "Unknown::getField9CBit0",
     "class": "Unknown",

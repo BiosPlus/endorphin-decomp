@@ -1872,3 +1872,49 @@ void fn_007CD880(const float* a, const float* b, float* out) {
     out[3] = b[3] * a[0] + a[3] * b[0] + a[1] * b[2] - a[2] * b[1];
 }
 } // namespace lift_007CD880
+
+// [0x007C8E30] sub_007C8E30 (125 bytes)
+namespace lift_007C8E30 {
+// Known callee 0x006A7250: thunk_MSVCR80__CIsqrt (IAT jump thunk forwarding to MSVCR80!_CIsqrt).
+// Lifted as std::sqrt below; the thunk is retained as a declaration for differential reference.
+extern void ext_006A7250();
+// .rdata constant at 0x0092A278 (read as a qword by the original fadd).
+extern int mem_0092A278;
+
+// @name Vec3::normalizeLengthF
+// @class Vec3
+// @summary Computes the length of the 3-float vector at this; if length > 0 normalizes it in place and returns the length, otherwise sets it to (1,0,0) and returns 0.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+float fn_007C8E30(void* self) {
+    float& x = lift_field<float>(self, 0x00);
+    float& y = lift_field<float>(self, 0x04);
+    float& z = lift_field<float>(self, 0x08);
+
+    // Constant at 0x0092A278 read as IEEE double (qword), per the fadd qword operand.
+    double k;
+    std::memcpy(&k, &mem_0092A278, sizeof k);
+
+    // tmp = x*x + k ; tmp = y*y + tmp ; tmp = z*z + tmp  (each intermediate stored as float)
+    float t0 = static_cast<float>(static_cast<double>(x) * x + k);
+    float t1 = static_cast<float>(static_cast<double>(y) * y + t0);
+    float len2 = static_cast<float>(static_cast<double>(z) * z + t1);
+
+    if (!(len2 > 0.0f)) {
+        // Zero, negative, or NaN: fallback to unit X axis, return 0.
+        x = 1.0f;
+        y = 0.0f;
+        z = 0.0f;
+        return 0.0f;
+    }
+
+    float len = static_cast<float>(std::sqrt(static_cast<double>(len2)));
+    float inv = static_cast<float>(1.0 / static_cast<double>(len));
+
+    x = static_cast<float>(static_cast<double>(x) * inv);
+    y = static_cast<float>(static_cast<double>(y) * inv);
+    z = static_cast<float>(static_cast<double>(z) * inv);
+    return len;
+}
+} // namespace lift_007C8E30
