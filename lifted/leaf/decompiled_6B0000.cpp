@@ -2859,3 +2859,21 @@ extern void* fn_006BB5D0(void* ecx) {
     return ecx;
 }
 } // namespace lift_006BB5D0
+
+// [0x006B9DC0] sub_006B9DC0 (31 bytes)
+namespace lift_006B9DC0 {
+// Known callee 0x006B9910: Unknown::sub_006B9910 (Zero-initializes two dword fields and sets the vtable pointer to mem_00B5D2B8.)
+extern void ext_006B9910(void* ecx);
+// Known callee 0x006B9F40: Unknown::assignFormattedPair_006B9F40 (Formats two DWORD arguments into a 52-byte stack buffer via sprintf (format at 0x00AA86A8), then assigns the buffer at offset +4 to self via assignCString; returns self.)
+extern void* ext_006B9F40(void* self, uint32_t a, uint32_t b);
+
+// @name Unknown::initAndAssignFormattedPair_006B9DC0
+// @class Unknown
+// @summary Initializes self via sub_006B9910, formats (a, b) into self via assignFormattedPair, and returns self.
+// (No fields are accessed directly by this function; offsets are touched only inside the callees.)
+void* fn_006B9DC0(void* self, uint32_t a, uint32_t b) {
+    ext_006B9910(self);
+    ext_006B9F40(self, a, b);
+    return self;
+}
+} // namespace lift_006B9DC0
