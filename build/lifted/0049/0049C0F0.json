@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C0F0",
+  "size": 45,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_10",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_10",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "uint32_t fn_0049C0F0(void* self, void* out_holder, const void* src_str)",
+  "summary": "Parses the std::string argument as a rounded float via ext_0049BF70, stores the result through the pointer held in the first stack argument, and returns it.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+      "offset": "+0x0",
+      "type": "const int32_t* value_ptr (not accessed by this function; listed for context",
+      "name": "only)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:12:42Z"
+}

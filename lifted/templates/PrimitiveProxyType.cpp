@@ -692,3 +692,27 @@ void __stdcall fn_0049B2C0(uint8_t** out_holder, const void* str_src) {
     *dst = result;
 }
 } // namespace lift_0049B2C0
+
+// [0x0049C0F0] ExprParser::PrimitiveProxyType<int>::vfunc_10 (45 bytes)
+namespace lift_0049C0F0 {
+// Known callee 0x0049BF70: parseRoundedFloatAndCall_0049BF70 (Converts the string's c_str() with atof to float, rounds half away from zero (+/-0.5), then forwards the caller's esi as the sole argument to ext_006A6DE0 and returns its result.)
+extern uint32_t ext_0049BF70(const char* text, uint32_t esi_in);
+// IAT slot for MSVCP80 std::string copy ctor; metadata-only reference (not a real access).
+extern int mem_00924FE0;
+
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_10
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Parses the std::string argument as a rounded float via ext_0049BF70, stores the result through the pointer held in the first stack argument, and returns it.
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr (not accessed by this function; listed for context only)
+uint32_t fn_0049C0F0(void* self, void* out_holder, const void* src_str) {
+    (void)self;
+    (void)&mem_00924FE0;
+    // Copy-constructed std::string temp in the original: its data pointer equals the source's data pointer.
+    const char* text = *reinterpret_cast<const char* const*>(src_str);
+    uint32_t esi_in = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src_str));
+    uint32_t result = ext_0049BF70(text, esi_in);
+    uint32_t* dst = *reinterpret_cast<uint32_t* const*>(out_holder);
+    *dst = result;
+    return result;
+}
+} // namespace lift_0049C0F0
