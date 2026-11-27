@@ -2117,3 +2117,34 @@ void fn_007CA080(const void* fromObj, const float* src, const void* toObj, float
     out[2] = src[2];
 }
 } // namespace lift_007CA080
+
+// [0x007CA460]
+namespace lift_007CA460 {
+extern uint32_t ext_007D5AE0(void* p);
+extern uint32_t ext_007D48A0(void* p);
+
+// @name computeScaledOffsetPosition
+// @summary Computes out = basePos + dir * scale using positions/scale from two helper lookups.
+// @field BaseObj +0x10 float field_0x10
+// @field PosObj +0x30 float field_0x30
+// @field PosObj +0x34 float field_0x34
+// @field PosObj +0x38 float field_0x38
+void* sub_007CA460(void* arg1, const float* dir, float* out) {
+    uintptr_t edi = ext_007D5AE0(arg1);
+    uintptr_t eax = ext_007D48A0(arg1);
+
+    float scale = *reinterpret_cast<const float*>(edi + 0x10);
+    float sx = dir[0] * scale;
+    float sy = dir[1] * scale;
+    float sz = dir[2] * scale;
+
+    float rx = *reinterpret_cast<const float*>(eax + 0x30) + sx;
+    float ry = *reinterpret_cast<const float*>(eax + 0x34) + sy;
+    float rz = *reinterpret_cast<const float*>(eax + 0x38) + sz;
+
+    out[0] = rx;
+    out[1] = ry;
+    out[2] = rz;
+    return out;
+}
+} // namespace lift_007CA460

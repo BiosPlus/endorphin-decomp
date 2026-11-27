@@ -1,0 +1,39 @@
+{
+  "va": "0x007CA460",
+  "size": 132,
+  "orig_symbol": "sub_007CA460",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "computeScaledOffsetPosition",
+  "signature": "void* sub_007CA460(void* arg1, const float* dir, float* out)",
+  "summary": "Computes out = basePos + dir * scale using positions/scale from two helper lookups.",
+  "fields": [
+    {
+      "class": "BaseObj",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "PosObj",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "PosObj",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "PosObj",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:32:17Z"
+}
