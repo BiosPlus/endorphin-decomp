@@ -810,3 +810,54 @@ void sub_007F9FB0(int count, float* dst, const float* src1, float scale, const f
     }
 }
 } // namespace lift_007F9FB0
+
+// [0x007F1530]
+namespace lift_007F1530 {
+// @name CPU::detectSSE
+// @class CPU
+// @summary Checks CPU vendor (Intel/AMD), CPUID SSE support, and OS SSE support, storing the result in mem_00B61F78.
+
+
+extern void ext_006A745E(uint32_t cookie);
+extern uint8_t ext_007F13F0(void* out);
+extern uint32_t ext_007F1480();
+extern bool ext_007F14B0();
+extern int (*mem_009252A0)(const char*, const char*, size_t);
+extern const char mem_0098C490[];
+extern const char mem_0098C4A0[];
+extern uint32_t mem_00AA7E40;
+extern uint8_t mem_00B61F78;
+
+bool fn_007F1530()
+{
+    uint32_t cookie = mem_00AA7E40;
+    uint32_t vendor[3];
+    uint8_t has_sse = 1;
+
+    if (!ext_007F13F0(vendor)) {
+        mem_00B61F78 = 0;
+        ext_006A745E(cookie);
+        return false;
+    }
+
+    const char* vendor_str = reinterpret_cast<const char*>(vendor);
+    if (mem_009252A0(vendor_str, mem_0098C490, 12) != 0 &&
+        mem_009252A0(vendor_str, mem_0098C4A0, 12) != 0) {
+        has_sse = 0;
+    }
+
+    if (ext_007F1480() == 0) {
+        has_sse = 0;
+    }
+
+    if (!ext_007F14B0()) {
+        mem_00B61F78 = 0;
+        ext_006A745E(cookie);
+        return false;
+    }
+
+    mem_00B61F78 = has_sse;
+    ext_006A745E(cookie);
+    return true;
+}
+} // namespace lift_007F1530
