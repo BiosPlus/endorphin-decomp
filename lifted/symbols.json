@@ -68007,6 +68007,13 @@
     "summary": "Pure jump thunk forwarding to sub_006D2250.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2170": {
+    "name": "DynamicArray::InsertAt",
+    "class": "DynamicArray",
+    "signature": "int32_t __thiscall fn_006D2170(void* self, int32_t index, const void* elem)",
+    "summary": "Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2200": {
     "name": "DynArray::removeAt",
     "class": "DynArray",
@@ -68072,6 +68079,12 @@
     "name": "vec4d_divScalar",
     "signature": "void vec4d_divScalar(double divisor, double* self)",
     "summary": "Divides four consecutive doubles at this+0x00..+0x18 by a scalar double argument (stdcall-style, ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D2500": {
+    "name": "NegateVec4dToOut",
+    "signature": "void* __thiscall fn_006D2500(const void* self, void* out)",
+    "summary": "Negates four doubles from self into a temporary buffer, forwards it to ext_006D2390 with out, and returns out.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D26D0": {
