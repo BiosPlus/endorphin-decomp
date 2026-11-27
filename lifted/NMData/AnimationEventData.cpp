@@ -274,3 +274,35 @@ void fn_00486BE0(void* self, [[maybe_unused]] int32_t arg) {
     ext_004C0340();
 }
 } // namespace lift_00486BE0
+
+// [0x004E2760] NMData::AnimationEventData::vfunc_85 (55 bytes)
+namespace lift_004E2760 {
+// Known callee 0x004E1F50: SubobjectListDrainAndDispatch (Clears a flag at this->field_0x34->+0x298 if present, then walks the pointer vector [begin,end) at this+0x04/+0x08, calling vtable slot +0x38 on each element's (+0x08) subobject, and finally tail-calls ext_00598A90 with the result of ext_00594000.)
+extern void ext_004E1F50(void* self);
+
+// @name NMData::AnimationEventData::vfunc_85
+// @class NMData::AnimationEventData
+// @summary Dispatches SubobjectListDrainAndDispatch once when enabled and the argument changes to match field_0x160 (stores the new argument in field_0x9cc).
+// @field NMData::AnimationEventData +0xB74 int32_t field_0xb74
+// @field NMData::AnimationEventData +0x17C uint8_t field_0x17c
+// @field NMData::AnimationEventData +0x9CC int32_t field_0x9cc
+// @field NMData::AnimationEventData +0x160 int32_t field_0x160
+void fn_004E2760(void* self, int32_t arg) {
+    // Bail out if field_0xb74 is zero or the enable byte is clear.
+    if (lift_field<int32_t>(self, 0xb74) == 0) {
+        return;
+    }
+    if (lift_field<uint8_t>(self, 0x17c) == 0) {
+        return;
+    }
+    // Nothing to do if the stored argument is unchanged.
+    if (lift_field<int32_t>(self, 0x9cc) == arg) {
+        return;
+    }
+    lift_field<int32_t>(self, 0x9cc) = arg;
+    // Only dispatch when the new argument matches field_0x160.
+    if (arg == lift_field<int32_t>(self, 0x160)) {
+        ext_004E1F50(self);
+    }
+}
+} // namespace lift_004E2760
