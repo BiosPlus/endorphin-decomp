@@ -1855,3 +1855,20 @@ extern float __cdecl fn_007CC510(void* a, void* b, uint32_t unused3, uint32_t un
     return static_cast<float>(acc);
 }
 } // namespace lift_007CC510
+
+// [0x007CD880] sub_007CD880 (124 bytes)
+namespace lift_007CD880 {
+// @name quaternionMultiply
+// @summary Hamilton product of two 4-float quaternions (x,y,z,w): out = a * b
+// @field Quaternion +0x00 float x
+// @field Quaternion +0x04 float y
+// @field Quaternion +0x08 float z
+// @field Quaternion +0x0c float w
+void fn_007CD880(const float* a, const float* b, float* out) {
+    // Note: asm passes operands in ecx (a), eax (b), edx (out).
+    out[0] = a[0] * b[0] - a[1] * b[1] - a[2] * b[2] - a[3] * b[3];
+    out[1] = b[1] * a[0] + a[1] * b[0] + a[2] * b[3] - a[3] * b[2];
+    out[2] = b[2] * a[0] + a[2] * b[0] + a[3] * b[1] - a[1] * b[3];
+    out[3] = b[3] * a[0] + a[3] * b[0] + a[1] * b[2] - a[2] * b[1];
+}
+} // namespace lift_007CD880

@@ -77338,6 +77338,12 @@
     "summary": "Clears the pointer-sized slot at +0x18, and if it was non-null, passes it through ext_007D8700 and tail-dispatches the result to ext_007C9930; otherwise returns.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CD880": {
+    "name": "quaternionMultiply",
+    "signature": "void fn_007CD880(const float* a, const float* b, float* out)",
+    "summary": "Hamilton product of two 4-float quaternions (x,y,z,w): out = a * b",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CD900": {
     "name": "BuildSignedPermutedMatrix3x4_007CD900",
     "signature": "void fn_007CD900(const void* src, void* dst)",

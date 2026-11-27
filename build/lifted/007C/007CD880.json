@@ -1,0 +1,39 @@
+{
+  "va": "0x007CD880",
+  "size": 124,
+  "orig_symbol": "sub_007CD880",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "quaternionMultiply",
+  "signature": "void fn_007CD880(const float* a, const float* b, float* out)",
+  "summary": "Hamilton product of two 4-float quaternions (x,y,z,w): out = a * b",
+  "fields": [
+    {
+      "class": "Quaternion",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Quaternion",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Quaternion",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    },
+    {
+      "class": "Quaternion",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "w"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:51:16Z"
+}

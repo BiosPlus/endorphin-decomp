@@ -8,9 +8,13 @@
 // Recovered field layout for Quaternion:
 namespace lifted_layout {
 struct Quaternion_Fields {
-    // +0x0   float                    field_0x00  (evidence: 0x007CD960)
-    // +0x4   float                    field_0x04  (evidence: 0x007CD960)
-    // +0x8   float                    field_0x08  (evidence: 0x007CD960)
-    // +0xC   float                    field_0x0c  (evidence: 0x007CD960)
+    // +0x0   float                    field_0x00  (evidence: 0x007CD960) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float                    x  (evidence: 0x007CD880) // CONFLICT: multiple definitions at +0x0
+    // +0x4   float                    field_0x04  (evidence: 0x007CD960) // CONFLICT: multiple definitions at +0x4
+    // +0x4   float                    y  (evidence: 0x007CD880) // CONFLICT: multiple definitions at +0x4
+    // +0x8   float                    field_0x08  (evidence: 0x007CD960) // CONFLICT: multiple definitions at +0x8
+    // +0x8   float                    z  (evidence: 0x007CD880) // CONFLICT: multiple definitions at +0x8
+    // +0xC   float                    field_0x0c  (evidence: 0x007CD960) // CONFLICT: multiple definitions at +0xC
+    // +0xC   float                    w  (evidence: 0x007CD880) // CONFLICT: multiple definitions at +0xC
 };
 } // namespace lifted_layout
