@@ -2249,3 +2249,50 @@ void fn_00461E20(void* self) {
     ext_006A5F6E();
 }
 } // namespace lift_00461E20
+
+// [0x00462D50] sub_00462D50 (147 bytes)
+namespace lift_00462D50 {
+// Known callee 0x00401980: sub_00401980 (48B). Called with ecx=this; result stored at this+0x0C.
+extern void* ext_00401980(void* self);
+// Known callee 0x00462840: sub_00462840 (23B). Called with ecx=new object, one stack arg; result in eax.
+extern DWORD ext_00462840(void* self, DWORD arg);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.). cdecl, one arg (8), returns pointer.
+extern void* ext_006A5C62(DWORD size);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.). cdecl, one arg (pointer).
+extern void ext_006A5C5C(void* p);
+// Vtable address written into object header (0x00938E48).
+extern int mem_00938E48;
+
+// @name Unknown::initAllocAndArg
+// @class Unknown
+// @summary Constructor-style init: stores vtable and arg, allocates 8-byte object, runs sub_00462840 on it, frees previous +0x08 pointer if different; returns this.
+// @field Unknown +0x00 uint32_t vtbl
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+//
+// The MSVC SEH frame setup/teardown (fs:[0] push/restore) and the local state slots are
+// compiler/exception bookkeeping and are intentionally not reproduced.
+void* fn_00462D50(void* self, DWORD arg) {
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00938E48));
+    lift_field<DWORD>(self, 0x04) = arg;
+    lift_field<void*>(self, 0x08) = nullptr;
+
+    void* aux = ext_00401980(self);
+    lift_field<void*>(self, 0x0C) = aux;
+
+    void* obj = ext_006A5C62(8);
+    DWORD result = 0;
+    if (obj != nullptr) {
+        result = ext_00462840(obj, arg);
+    }
+
+    void* old = lift_field<void*>(self, 0x08);
+    if (reinterpret_cast<uintptr_t>(old) != static_cast<uintptr_t>(result) && old != nullptr) {
+        ext_006A5C5C(old);
+    }
+    lift_field<DWORD>(self, 0x08) = result;
+
+    return self;
+}
+} // namespace lift_00462D50

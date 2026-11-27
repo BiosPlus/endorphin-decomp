@@ -7901,6 +7901,13 @@
     "summary": "Mode 1 returns byte +0x18 of the object at this+0x0C; mode 2 returns GetInnerByte1C(this+0x08) if non-null; otherwise 0.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00462D50": {
+    "name": "Unknown::initAllocAndArg",
+    "class": "Unknown",
+    "signature": "void* fn_00462D50(void* self, DWORD arg)",
+    "summary": "Constructor-style init: stores vtable and arg, allocates 8-byte object, runs sub_00462840 on it, frees previous +0x08 pointer if different; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00462E50": {
     "name": "Dispatch::forwardStringIfInnerCountOne",
     "class": "Dispatch",
