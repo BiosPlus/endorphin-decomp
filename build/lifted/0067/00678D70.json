@@ -1,0 +1,28 @@
+{
+  "va": "0x00678D70",
+  "size": 103,
+  "orig_symbol": "BaseEventDispatcher::vfunc_1",
+  "src_path": "src/classes/BaseEventDispatcher.cpp",
+  "lifted_path": "lifted/classes/BaseEventDispatcher.cpp",
+  "name": "BaseEventDispatcher::vfunc_1",
+  "class": "BaseEventDispatcher",
+  "signature": "[[noreturn]] void invalid_parameter_noinfo()",
+  "summary": "Invokes virtual slot 0 on every object pointer in the dispatcher's [begin, end) list, passing the single argument.",
+  "fields": [
+    {
+      "class": "BaseEventDispatcher",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "begin"
+    },
+    {
+      "class": "BaseEventDispatcher",
+      "offset": "+0xC",
+      "type": "void**",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:55:12Z"
+}

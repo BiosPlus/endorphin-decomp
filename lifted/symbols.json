@@ -21265,6 +21265,12 @@
     "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0051A560": {
+    "name": "initStaticBoolString",
+    "signature": "void* fn_0051A560()",
+    "summary": "Initializes a static string via ext_0066AD10 once, registers its destructor with atexit, and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051A670": {
     "name": "std::lower_bound over std::string elements (32-byte stride)",
     "class": "std::lower_bound over std",
@@ -49152,6 +49158,13 @@
     "signature": "extern float __thiscall fn_00678A50(void* /*this*/, const uint32_t* ptr_holder)",
     "summary": "Auto-lifted identical-shape clone of 0x004B13A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00678D70": {
+    "name": "BaseEventDispatcher::vfunc_1",
+    "class": "BaseEventDispatcher",
+    "signature": "[[noreturn]] void invalid_parameter_noinfo()",
+    "summary": "Invokes virtual slot 0 on every object pointer in the dispatcher's [begin, end) list, passing the single argument.",
+    "lifted_path": "lifted/classes/BaseEventDispatcher.cpp"
   },
   "0x00678DE0": {
     "name": "sub_00678DE0",
