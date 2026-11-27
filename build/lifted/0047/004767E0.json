@@ -1,0 +1,46 @@
+{
+  "va": "0x004767E0",
+  "size": 125,
+  "orig_symbol": "sub_004767E0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "Unknown::copyConstructRecord_004767E0",
+  "class": "Unknown",
+  "signature": "void* fn_004767E0(void* self, const void* src)",
+  "summary": "Copy-constructs four std::string members (+0x00, +0x1C, +0x38, +0x54) from the source object, then copies the flag byte at +0x70; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "std::string",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "std::string",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:53:47Z"
+}

@@ -9243,6 +9243,13 @@
     "summary": "Destroys four std::string members (+0x54, +0x38, +0x1c, +0x00) in reverse order via the MSVCP80 basic_string dtor IAT slot.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x004767E0": {
+    "name": "Unknown::copyConstructRecord_004767E0",
+    "class": "Unknown",
+    "signature": "void* fn_004767E0(void* self, const void* src)",
+    "summary": "Copy-constructs four std::string members (+0x00, +0x1C, +0x38, +0x54) from the source object, then copies the flag byte at +0x70; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004769D0": {
     "name": "NMData::SceneData::vfunc_7",
     "class": "NMData::SceneData",

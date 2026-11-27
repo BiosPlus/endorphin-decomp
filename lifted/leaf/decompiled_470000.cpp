@@ -1026,3 +1026,31 @@ extern void __fastcall fn_004773D0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_004773D0
+
+// [0x004767E0] sub_004767E0 (125 bytes)
+namespace lift_004767E0 {
+// Import slot holding the address of MSVCP80 std::basic_string<char> copy constructor
+// (void __thiscall (this, const basic_string& rhs)).
+extern uint32_t mem_00924FE0;
+
+// @name Unknown::copyConstructRecord_004767E0
+// @class Unknown
+// @summary Copy-constructs four std::string members (+0x00, +0x1C, +0x38, +0x54) from the source object, then copies the flag byte at +0x70; returns self.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C std::string field_0x1c
+// @field Unknown +0x38 std::string field_0x38
+// @field Unknown +0x54 std::string field_0x54
+// @field Unknown +0x70 uint8_t field_0x70
+void* fn_004767E0(void* self, const void* src) {
+    using StrCopyCtor = void (*)(void* thisObj, const void* rhs);
+    auto strCopy = reinterpret_cast<StrCopyCtor>(static_cast<uintptr_t>(mem_00924FE0));
+
+    strCopy(self, src);
+    strCopy(static_cast<uint8_t*>(self) + 0x1c, static_cast<const uint8_t*>(src) + 0x1c);
+    strCopy(static_cast<uint8_t*>(self) + 0x38, static_cast<const uint8_t*>(src) + 0x38);
+    strCopy(static_cast<uint8_t*>(self) + 0x54, static_cast<const uint8_t*>(src) + 0x54);
+
+    lift_field<uint8_t>(self, 0x70) = lift_field<uint8_t>(src, 0x70);
+    return self;
+}
+} // namespace lift_004767E0
