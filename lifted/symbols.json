@@ -21900,6 +21900,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
   },
+  "0x004CE740": {
+    "name": "NMData::IncarnationEventData::vfunc_22",
+    "class": "NMData::IncarnationEventData",
+    "signature": "void* __thiscall fn_004CE740(void* self, void* arg)",
+    "summary": "Serializes IncarnationEventData fields and delegates to TriggeredEventData::vfunc_22",
+    "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
   "0x004CE7B0": {
     "name": "findStringNameIndex",
     "signature": "int __stdcall sub_004CE7B0(const void *str)",
@@ -60072,6 +60079,13 @@
     "signature": "void* fn_0060BEA0()",
     "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/NMData/EffectorData.cpp"
+  },
+  "0x0060BF00": {
+    "name": "NMData::EffectorWithMemoryData::vfunc_14",
+    "class": "NMData::EffectorWithMemoryData",
+    "signature": "void* __thiscall fn_0060BF00(void* self, void* parent)",
+    "summary": "Serializes EffectorWithMemoryData fields (memorySpan and integralGradient) into child nodes of the serialized EffectorData node.",
+    "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp"
   },
   "0x0060BF80": {
     "name": "NMData::EffectorWithModesData::vfunc_14",

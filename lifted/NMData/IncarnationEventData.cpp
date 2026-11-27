@@ -345,3 +345,46 @@ extern void __thiscall fn_004CE5F0(void* self, void* arg) {
     }
 }
 } // namespace lift_004CE5F0
+
+// [0x004CE740]
+namespace lift_004CE740 {
+// @name NMData::IncarnationEventData::vfunc_22
+// @class NMData::IncarnationEventData
+// @summary Serializes IncarnationEventData fields and delegates to TriggeredEventData::vfunc_22
+// @field NMData::IncarnationEventData +0x180 uint32_t field_0x180
+// @field NMData::IncarnationEventData +0x18C float field_0x18c
+
+
+extern uint32_t mem_00A9F898;
+extern uint8_t mem_00AE51C8[];
+extern const char mem_009473C0[];
+extern uint8_t mem_00AE29D0[];
+
+extern void* (__thiscall* const mem_00924FF0)(void* str); // std::string::c_str
+
+extern void* __thiscall ext_00640110(void* self, const void* key);
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern void __cdecl ext_00640BC0(void* node, float value);
+extern void __thiscall ext_004C1DE0(void* self, void* arg);
+extern void ext_0047A7F0();
+extern void ext_004CE950();
+
+void* __thiscall fn_004CE740(void* self, void* arg) {
+    void* node = ext_00640110(arg, reinterpret_cast<const void*>(static_cast<uintptr_t>(mem_00A9F898)));
+
+    uint32_t idx = lift_field<uint32_t>(self, 0x180);
+    void* str_ptr = mem_00AE51C8 + idx * 28;
+    const char* cstr = static_cast<const char*>(mem_00924FF0(str_ptr));
+    ext_00427550(&node, cstr);
+
+    void* momentum_node = ext_00640110(arg, mem_009473C0);
+    float momentum_scale = lift_field<float>(self, 0x18C);
+    ext_00640BC0(momentum_node, momentum_scale);
+
+    ext_004C1DE0(self, arg);
+    (void)ext_0047A7F0;
+    (void)ext_004CE950;
+    (void)mem_00AE29D0;
+    return arg;
+}
+} // namespace lift_004CE740

@@ -1,0 +1,28 @@
+{
+  "va": "0x004CE740",
+  "size": 109,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_22",
+  "src_path": "src/NMData/IncarnationEventData.cpp",
+  "lifted_path": "lifted/NMData/IncarnationEventData.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_22",
+  "class": "NMData::IncarnationEventData",
+  "signature": "void* __thiscall fn_004CE740(void* self, void* arg)",
+  "summary": "Serializes IncarnationEventData fields and delegates to TriggeredEventData::vfunc_22",
+  "fields": [
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x180",
+      "type": "uint32_t",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x18C",
+      "type": "float",
+      "name": "field_0x18c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:25:54Z"
+}
