@@ -1,0 +1,34 @@
+{
+  "va": "0x004465F0",
+  "size": 144,
+  "orig_symbol": "sub_004465F0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Node::visitAndDynamicCast",
+  "class": "Node",
+  "signature": "void __thiscall fn_004465F0(void* self, void* node, uint32_t arg2)",
+  "summary": "Recursively traverses a node tree, dynamic-casting each node and invoking vtable+0x20 on subobject +0xC if non-null.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x7C",
+      "type": "std_vector_ptr",
+      "name": "children_vec"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x80",
+      "type": "uint32_t*",
+      "name": "children_begin"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x84",
+      "type": "uint32_t*",
+      "name": "children_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:38:28Z"
+}
