@@ -2419,3 +2419,35 @@ uint32_t sub_007C20C0(void* state) {
     return 2;
 }
 } // namespace lift_007C20C0
+
+// [0x007C6150] sub_007C6150 (155 bytes)
+namespace lift_007C6150 {
+// @name Transform3x4::MultiplyVec3Affine
+// @class Transform3x4
+// @summary Computes out[0..2] = M * v + T from the 3x4 matrix at +0x110..+0x148 and vector at +0x170..+0x178.
+// @field Transform3x4 +0x110 float m00
+// @field Transform3x4 +0x114 float m10
+// @field Transform3x4 +0x118 float m20
+// @field Transform3x4 +0x120 float m01
+// @field Transform3x4 +0x124 float m11
+// @field Transform3x4 +0x128 float m21
+// @field Transform3x4 +0x130 float m02
+// @field Transform3x4 +0x134 float m12
+// @field Transform3x4 +0x138 float m22
+// @field Transform3x4 +0x140 float t0
+// @field Transform3x4 +0x144 float t1
+// @field Transform3x4 +0x148 float t2
+// @field Transform3x4 +0x170 float v0
+// @field Transform3x4 +0x174 float v1
+// @field Transform3x4 +0x178 float v2
+void fn_007C6150(void* self, float* out) {
+    const float* p = reinterpret_cast<const float*>(self);
+    float v0 = p[0x170 / 4];
+    float v1 = p[0x174 / 4];
+    float v2 = p[0x178 / 4];
+
+    out[0] = p[0x120 / 4] * v1 + p[0x110 / 4] * v0 + p[0x130 / 4] * v2 + p[0x140 / 4];
+    out[1] = p[0x114 / 4] * v0 + p[0x124 / 4] * v1 + p[0x134 / 4] * v2 + p[0x144 / 4];
+    out[2] = p[0x118 / 4] * v0 + p[0x128 / 4] * v1 + p[0x138 / 4] * v2 + p[0x148 / 4];
+}
+} // namespace lift_007C6150

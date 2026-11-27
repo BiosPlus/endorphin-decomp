@@ -86570,6 +86570,13 @@
     "summary": "Copies three consecutive floats from self+0x30..+0x38 into out[0..2].",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6150": {
+    "name": "Transform3x4::MultiplyVec3Affine",
+    "class": "Transform3x4",
+    "signature": "void fn_007C6150(void* self, float* out)",
+    "summary": "Computes out[0..2] = M * v + T from the 3x4 matrix at +0x110..+0x148 and vector at +0x170..+0x178.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C62B0": {
     "name": "set_vec3_0xb0",
     "signature": "void sub_007C62B0(uintptr_t obj, float a1, float a2, float a3)",

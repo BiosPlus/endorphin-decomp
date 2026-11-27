@@ -1,0 +1,106 @@
+{
+  "va": "0x007C6150",
+  "size": 155,
+  "orig_symbol": "sub_007C6150",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Transform3x4::MultiplyVec3Affine",
+  "class": "Transform3x4",
+  "signature": "void fn_007C6150(void* self, float* out)",
+  "summary": "Computes out[0..2] = M * v + T from the 3x4 matrix at +0x110..+0x148 and vector at +0x170..+0x178.",
+  "fields": [
+    {
+      "class": "Transform3x4",
+      "offset": "+0x110",
+      "type": "float",
+      "name": "m00"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x114",
+      "type": "float",
+      "name": "m10"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x118",
+      "type": "float",
+      "name": "m20"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x120",
+      "type": "float",
+      "name": "m01"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x124",
+      "type": "float",
+      "name": "m11"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x128",
+      "type": "float",
+      "name": "m21"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x130",
+      "type": "float",
+      "name": "m02"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x134",
+      "type": "float",
+      "name": "m12"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x138",
+      "type": "float",
+      "name": "m22"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x140",
+      "type": "float",
+      "name": "t0"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x144",
+      "type": "float",
+      "name": "t1"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x148",
+      "type": "float",
+      "name": "t2"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x170",
+      "type": "float",
+      "name": "v0"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "v1"
+    },
+    {
+      "class": "Transform3x4",
+      "offset": "+0x178",
+      "type": "float",
+      "name": "v2"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:05Z"
+}
