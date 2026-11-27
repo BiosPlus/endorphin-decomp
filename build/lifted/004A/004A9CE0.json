@@ -1,0 +1,40 @@
+{
+  "va": "0x004A9CE0",
+  "size": 156,
+  "orig_symbol": "sub_004A9CE0",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "GetEntryCount",
+  "class": "Object",
+  "signature": "static inline void* lift_ptr32(uint32_t value)",
+  "summary": "Returns the count of entries: the size of the range record from ext_00593F20 (when the",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x180",
+      "type": "uint32_t",
+      "name": "field_0x180"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x2F4",
+      "type": "uint32_t",
+      "name": "field_0x2f4"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x304",
+      "type": "int32_t",
+      "name": "field_0x304"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x308",
+      "type": "int32_t",
+      "name": "field_0x308"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:40Z"
+}

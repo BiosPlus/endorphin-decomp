@@ -131,6 +131,7 @@ struct Object_Fields {
     // +0x160 float                    field_0x160  (evidence: 0x005AA850)
     // +0x178 uint32_t                 field_0x178  (evidence: 0x007D8470)
     // +0x17C uint32_t                 field_0x17c  (evidence: 0x007C6DB0, 0x007C8490, 0x007CAF70)
+    // +0x180 uint32_t                 field_0x180  (evidence: 0x004A9CE0)
     // +0x190 void*                    field_0x190  (evidence: 0x005AA850)
     // +0x1A0 uint32_t                 field_0x1A0  (evidence: 0x007BDC00)
     // +0x1A4 uint32_t                 field_0x1A4  (evidence: 0x007C2E50)
@@ -144,6 +145,9 @@ struct Object_Fields {
     // +0x250 void*                    field_0x250  (evidence: 0x007266C0)
     // +0x264 uint32_t                 field_0x264  (evidence: 0x005D0670)
     // +0x268 void*                    field_0x268  (evidence: 0x005D0670)
+    // +0x2F4 uint32_t                 field_0x2f4  (evidence: 0x004A9CE0)
+    // +0x304 int32_t                  field_0x304  (evidence: 0x004A9CE0)
+    // +0x308 int32_t                  field_0x308  (evidence: 0x004A9CE0)
     // +0xF88 uint8_t                  field_0xF88  (evidence: 0x0079D6D0)
 };
 } // namespace lifted_layout

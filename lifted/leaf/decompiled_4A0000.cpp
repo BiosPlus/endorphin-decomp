@@ -1442,3 +1442,65 @@ void* __stdcall fn_004A8D00(DWORD a0, DWORD a1, DWORD a2, const void* a3, BYTE f
     return obj;
 }
 } // namespace lift_004A8D00
+
+// [0x004A9CE0] sub_004A9CE0 (156 bytes)
+namespace lift_004A9CE0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x00593F20: sub_00593F20 (thiscall; returns pointer to a {begin,end} range record at +4/+8.)
+extern void* __thiscall ext_00593F20(void* self);
+extern uint8_t mem_00B58DFC;
+
+static inline void* lift_ptr32(uint32_t value) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(value));
+}
+
+// @name GetEntryCount
+// @class Object
+// @summary Returns the count of entries: the size of the range record from ext_00593F20 (when the
+//          list at +0x180 is empty and ext_00594000 is nonzero), or else (+0x304 if nonnegative)
+//          plus that range size divided by 28 when the record at +0x2f4 is valid.
+// @field Object +0x180 uint32_t field_0x180
+// @field Object +0x2f4 uint32_t field_0x2f4
+// @field Object +0x304 int32_t field_0x304
+// @field Object +0x308 int32_t field_0x308
+extern int32_t __thiscall fn_004A9CE0(void* self) {
+    int32_t esi = 0;
+
+    if (mem_00B58DFC == 0 && ext_00594000() != 0) {
+        const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+        if (lift_field<uint32_t>(self, 0x180) != self_addr + 0x188) {
+            return lift_field<int32_t>(self, 0x304);
+        }
+
+        void* range = ext_00593F20(
+            lift_ptr32(static_cast<uint32_t>(ext_00594000())));
+        const uint32_t begin = lift_field<uint32_t>(range, 4);
+        if (begin != 0) {
+            const uint32_t end = lift_field<uint32_t>(range, 8);
+            esi = static_cast<int32_t>(end - begin) >> 2;
+        }
+    }
+
+    const int32_t ecx = lift_field<int32_t>(self, 0x304);
+    if (ecx >= 0) {
+        return ecx + esi;
+    }
+
+    const uint32_t list = lift_field<uint32_t>(self, 0x2f4);
+    if (list == 0) {
+        return ecx + esi;
+    }
+    if (lift_field<int32_t>(self, 0x308) < 0) {
+        return ecx + esi;
+    }
+
+    void* rec = lift_ptr32(list);
+    const uint32_t begin = lift_field<uint32_t>(rec, 4);
+    if (begin == 0) {
+        return esi;
+    }
+    const int32_t n = static_cast<int32_t>(lift_field<uint32_t>(rec, 8) - begin);
+    return (n / 28) + esi;
+}
+} // namespace lift_004A9CE0
