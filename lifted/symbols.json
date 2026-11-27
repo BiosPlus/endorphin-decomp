@@ -36413,6 +36413,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, getUnitMass, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D76B0": {
+    "name": "ExprParser::ReadMethodType\u003cVideoPlaneData,float,getXOffset,0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
+    "signature": "void* __stdcall fn_005D76B0(void* out, void** holder)",
+    "summary": "Reads the X offset float from the VideoPlaneData held by the ValuePtr and formats it into the sret string slot; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D7700": {
     "name": "ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",

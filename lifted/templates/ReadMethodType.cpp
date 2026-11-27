@@ -61536,3 +61536,34 @@ void* fn_004B8A50(void* self, void* out, void* const* holder) {
     return out;
 }
 } // namespace lift_004B8A50
+
+// [0x005D76B0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_005D76B0 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void* ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info referenced by the exception path (0x009DEC1C).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData,float,getXOffset,0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reads the X offset float from the VideoPlaneData held by the ValuePtr and formats it into the sret string slot; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* object
+// @field NMData::VideoPlaneData +0x3c float field_0x3c
+void* __stdcall fn_005D76B0(void* out, void** holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Null object: construct the exception object and throw it.
+        alignas(8) unsigned char exc_obj[0x20] = {};
+        ext_0046C3C0(exc_obj);
+        ext_006A6DD2(exc_obj, mem_009DEC1C);
+        return out; // not reached
+    }
+    float value = lift_field<float>(obj, 0x3c);
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_005D76B0
