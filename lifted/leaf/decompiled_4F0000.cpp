@@ -971,3 +971,63 @@ void fn_004F0430(void* self) {
     lift_field<uint32_t>(self, 0x14) = 0;
 }
 } // namespace lift_004F0430
+
+// [0x004F0250] sub_004F0250 (78 bytes)
+namespace lift_004F0250 {
+// Known callee 0x00596660: eraseInt32Range (Validates (self-pointer) args, erases [first,last) from a 4-byte-element buffer by shifting the tail down, sets end, and writes a 2-pointer result to out.)
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// Known callee 0x004EFDF0: StringPairList::clear (Clears all nodes in a doubly-linked list of string pairs and resets size to zero.)
+extern void ext_004EFDF0(void* self);
+// Data slot at 0x00925134 holding the invalid-parameter handler pointer (MSVCR80!_invalid_parameter_noinfo).
+extern uint32_t mem_00925134;
+
+// @name clearStringPairsAndEraseInt32Range
+// @summary Clears the StringPairList at +0x18, zeroes two counters, then erases the [first,last) int32 range of the sub-object at +0x08 (with validity checks).
+// @field Unknown +0x0C uint32_t rangeFirst
+// @field Unknown +0x10 uint32_t rangeLast
+// @field Unknown +0x18 StringPairList pairs
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+void fn_004F0250(void* self) {
+    uint8_t* const base = static_cast<uint8_t*>(self);
+
+    // mov dword ptr [esi+0x28], 0 ; mov dword ptr [esi+0x24], 0
+    lift_field<uint32_t>(base, 0x28) = 0;
+    lift_field<uint32_t>(base, 0x24) = 0;
+
+    // lea ecx,[esi+0x18] ; call ext_004EFDF0   (StringPairList::clear)
+    ext_004EFDF0(base + 0x18);
+
+    // mov edi,[esi+0x10]  -> last end pointer
+    const uint32_t last = lift_field<uint32_t>(base, 0x10);
+
+    // mov ebp,[0x925134]  -> invalid-parameter handler
+    auto invalid_parameter = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134));
+
+    // esi = self + 8 : sub-object whose range is [ [esi+4], [esi+8] )
+    uint8_t* const vec = base + 0x08;
+
+    // cmp [esi+4], edi ; jbe ok ; call ebp
+    if (lift_field<uint32_t>(vec, 0x4) > last) {
+        invalid_parameter();
+    }
+
+    // mov ebx,[esi+4]  -> first
+    const uint32_t first = lift_field<uint32_t>(vec, 0x4);
+
+    // cmp ebx,[esi+8] ; jbe ok ; call ebp
+    if (first > lift_field<uint32_t>(vec, 0x8)) {
+        invalid_parameter();
+    }
+
+    // push edi / esi / ebx / esi ; lea eax,[esp+0x20] ; push eax ; mov ecx,esi ; call ext_00596660
+    // 2-pointer result scratch lives in the 8-byte frame reserved by the original `sub esp,8`.
+    void* result[2] = {nullptr, nullptr};
+    ext_00596660(vec,
+                 result,
+                 vec,
+                 reinterpret_cast<int32_t*>(static_cast<uintptr_t>(first)),
+                 vec,
+                 reinterpret_cast<int32_t*>(static_cast<uintptr_t>(last)));
+}
+} // namespace lift_004F0250

@@ -19488,6 +19488,12 @@
     "summary": "Destroys all pointers in the [begin, end) range, frees the storage block at begin, and zeroes begin/end/cap.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004F0250": {
+    "name": "clearStringPairsAndEraseInt32Range",
+    "signature": "void fn_004F0250(void* self)",
+    "summary": "Clears the StringPairList at +0x18, zeroes two counters, then erases the [first,last) int32 range of the sub-object at +0x08 (with validity checks).",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F0430": {
     "name": "Unknown::clearStringPairsAndRelease",
     "class": "Unknown",

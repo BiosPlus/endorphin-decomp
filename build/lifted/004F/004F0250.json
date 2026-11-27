@@ -1,0 +1,45 @@
+{
+  "va": "0x004F0250",
+  "size": 78,
+  "orig_symbol": "sub_004F0250",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "clearStringPairsAndEraseInt32Range",
+  "signature": "void fn_004F0250(void* self)",
+  "summary": "Clears the StringPairList at +0x18, zeroes two counters, then erases the [first,last) int32 range of the sub-object at +0x08 (with validity checks).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "rangeFirst"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "rangeLast"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "StringPairList",
+      "name": "pairs"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:23:03Z"
+}
