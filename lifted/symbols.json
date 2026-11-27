@@ -69928,6 +69928,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006EA190 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006EA200": {
+    "name": "initGenericNode_006EA200",
+    "signature": "void* fn_006EA200(void* self)",
+    "summary": "Initializes the object with the C string \"GenericNode\" via initAssignCString and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006EA3C0": {
     "name": "initHugeBounds",
     "signature": "void sub_006EA3C0()",

@@ -1807,3 +1807,17 @@ extern void* __thiscall fn_006E7410(void* self, uint32_t arg1, uint32_t arg2) {
     return ext_006E7430(self, arg2);
 }
 } // namespace lift_006E7410
+
+// [0x006EA200] sub_006EA200 (33 bytes)
+namespace lift_006EA200 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+extern int mem_00AA96F8;
+
+// @name initGenericNode_006EA200
+// @summary Initializes the object with the C string "GenericNode" via initAssignCString and returns this.
+void* fn_006EA200(void* self) {
+    ext_006B9D80(self, reinterpret_cast<const char*>(&mem_00AA96F8));
+    return self;
+}
+} // namespace lift_006EA200
