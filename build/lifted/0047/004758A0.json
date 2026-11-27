@@ -1,0 +1,22 @@
+{
+  "va": "0x004758A0",
+  "size": 24,
+  "orig_symbol": "sub_004758A0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "SubObject_004758A0",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_004758A0(void* self, DWORD arg)",
+  "summary": "Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "\u003copaque subobject\u003e",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:55:40Z"
+}

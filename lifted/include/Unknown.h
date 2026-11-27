@@ -1143,6 +1143,7 @@ struct Unknown_Fields {
     // +0x50  float                    comp2  (evidence: 0x0062E2D0) // CONFLICT: multiple definitions at +0x50
     // +0x50  DWORD*                   entryTable  (evidence: 0x0070CE90, 0x0070CF10) // CONFLICT: multiple definitions at +0x50
     // +0x50  uint8_t block50[0x20] (constructed via ext_006D2370)  (evidence: 0x006EA6D0) // CONFLICT: multiple definitions at +0x50
+    // +0x50  <opaque subobject>       field_0x50  (evidence: 0x004758A0) // CONFLICT: multiple definitions at +0x50
     // +0x50  INT                      field_0x50  (evidence: 0x00798710) // CONFLICT: multiple definitions at +0x50
     // +0x50  double                   field_0x50  (evidence: 0x004408B0, 0x00441C10, 0x006E8740, 0x006E8800, 0x00766240, 0x00774560) // CONFLICT: multiple definitions at +0x50
     // +0x50  field_0x50               field_0x50  (evidence: 0x00648790) // CONFLICT: multiple definitions at +0x50

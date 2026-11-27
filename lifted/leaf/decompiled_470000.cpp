@@ -1662,3 +1662,19 @@ void fn_0047D4D0(void* self) {
 }
 } // namespace lift_0042E820
 } // namespace lift_0047D4D0
+
+// [0x004758A0] sub_004758A0 (24 bytes)
+namespace lift_004758A0 {
+// Callee 0x005A6300 (sub_005A6300): thiscall, ECX = sub-object, one stack arg = pointer to value.
+extern void ext_005A6300(void* self, DWORD* value);
+
+// @name SubObject_004758A0
+// @class <ClassName> (optional)
+// @summary Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.
+// @field Unknown +0x50 <opaque subobject> field_0x50
+void fn_004758A0(void* self, DWORD arg) {
+    DWORD value = arg;
+    void* sub = static_cast<uint8_t*>(self) + 0x50;
+    ext_005A6300(sub, &value);
+}
+} // namespace lift_004758A0

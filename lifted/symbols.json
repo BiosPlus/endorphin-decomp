@@ -10672,6 +10672,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x004758A0": {
+    "name": "SubObject_004758A0",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_004758A0(void* self, DWORD arg)",
+    "summary": "Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00475A40": {
     "name": "allocNode_00475A40",
     "signature": "void* fn_00475A40(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5)",
