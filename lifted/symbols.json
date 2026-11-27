@@ -5218,6 +5218,19 @@
     "summary": "Recursively traverses a node tree, dynamic-casting each node and invoking virtual method +0x20 if matched",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x004465F0": {
+    "name": "Node::visitAndDynamicCast",
+    "class": "Node",
+    "signature": "void __thiscall fn_004465F0(void* self, void* node, uint32_t arg2)",
+    "summary": "Recursively traverses a node tree, dynamic-casting each node and invoking vtable+0x20 on subobject +0xC if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x00446680": {
+    "name": "sub_00446680",
+    "signature": "void __thiscall fn_00446680(void* self, void* node, void* arg1)",
+    "summary": "Recursively visits a node and its children, invoking virtual method +0x20 on dynamic_cast\u003c0xa2fc50\u003e subobject at +0xc",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00446740": {
     "name": "NodeView::vfunc_0_off_14C",
     "class": "NodeView",

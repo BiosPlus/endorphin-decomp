@@ -1196,3 +1196,33 @@ void fn_00477DD0(int32_t* begin, int32_t* end) {
     }
 }
 } // namespace lift_00477DD0
+
+// [0x00476940]
+namespace lift_00476940 {
+// @name std_string_isEqualOrDotPrefix
+// @summary Checks if arg1 equals this string or starts with this string followed by '.'
+
+extern const char* (__thiscall *mem_00924FF0)(const void* self);
+extern const char* (__cdecl *mem_00925240)(const char* haystack, const char* needle);
+extern uint32_t (__thiscall *mem_00924EAC)(const void* self);
+extern const char* (__thiscall *mem_00924FFC)(const void* self, uint32_t index);
+
+uint8_t __thiscall sub_00476940(const void* self, const void* other) {
+    const char* needle = mem_00924FF0(self);
+    const char* haystack = mem_00924FF0(other);
+    const char* found = mem_00925240(haystack, needle);
+
+    if (found == mem_00924FF0(other) && mem_00924EAC(other) == mem_00924EAC(self)) {
+        return 1;
+    }
+
+    if (found == mem_00924FF0(other) && mem_00924EAC(other) > mem_00924EAC(self)) {
+        uint32_t len = mem_00924EAC(self);
+        if (*mem_00924FFC(other, len) == '.') {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_00476940

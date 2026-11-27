@@ -1,0 +1,13 @@
+{
+  "va": "0x00476940",
+  "size": 144,
+  "orig_symbol": "sub_00476940",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "std_string_isEqualOrDotPrefix",
+  "signature": "uint8_t __thiscall sub_00476940(const void* self, const void* other)",
+  "summary": "Checks if arg1 equals this string or starts with this string followed by '.'",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:38:23Z"
+}
