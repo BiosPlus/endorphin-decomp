@@ -44914,6 +44914,13 @@
     "summary": "Sets float element 3 in subobject at +0x8, marks flag at +0xC, notifies subobject at +0xBC, and dispatches virtual slot 0x154 on global object +0x258 if non-null.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x006125B0": {
+    "name": "Unknown::divideTripletByScale_0x160",
+    "class": "Unknown",
+    "signature": "void fn_006125B0(void* self)",
+    "summary": "Builds a local 3x3 identity matrix in a frame struct, calls two helpers, then divides the three floats at +0x160/+0x164/+0x168 by the scale floats at +0x154/+0x158/+0x15c.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00612730": {
     "name": "NMData::Constraint::vfunc_72",
     "class": "NMData::Constraint",

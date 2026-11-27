@@ -2734,3 +2734,45 @@ void* fn_00611200(void* self, const void* p) {
     return ext_00493EE0(objPtr);
 }
 } // namespace lift_00611200
+
+// [0x006125B0] sub_006125B0 (147 bytes)
+namespace lift_006125B0 {
+extern void ext_0067DAD0(void* self, const float* m);
+extern void ext_00694880(void* self, float* p);
+extern int mem_00B40640;
+
+// @name Unknown::divideTripletByScale_0x160
+// @summary Builds a local 3x3 identity matrix in a frame struct, calls two helpers, then divides the three floats at +0x160/+0x164/+0x168 by the scale floats at +0x154/+0x158/+0x15c.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x154 float field_0x154
+// @field Unknown +0x158 float field_0x158
+// @field Unknown +0x15C float field_0x15c
+// @field Unknown +0x160 float field_0x160
+// @field Unknown +0x164 float field_0x164
+// @field Unknown +0x168 float field_0x168
+void fn_006125B0(void* self) {
+    // Stack frame: header slot (saved self) followed by a 3x3 identity matrix.
+    struct IdentityFrame {
+        void* hdr;
+        float m[9];
+    };
+    IdentityFrame frame{};
+    frame.hdr = self;
+    frame.m[0] = 1.0f; frame.m[1] = 0.0f; frame.m[2] = 0.0f;
+    frame.m[3] = 0.0f; frame.m[4] = 1.0f; frame.m[5] = 0.0f;
+    frame.m[6] = 0.0f; frame.m[7] = 0.0f; frame.m[8] = 1.0f;
+
+    // Indirect call: fn = *(field_0x04 + 8), this = self + 4, arg = mem_00B40640.
+    using Slot2Fn = void* (__thiscall*)(void* self_, uint32_t arg);
+    void* inner = lift_field<void*>(self, 0x04);
+    Slot2Fn fn = reinterpret_cast<Slot2Fn>(lift_field<void*>(inner, 0x08));
+    void* obj = fn(static_cast<uint8_t*>(self) + 0x04, static_cast<uint32_t>(mem_00B40640));
+
+    ext_0067DAD0(obj, frame.m);
+    ext_00694880(&frame, &lift_field<float>(self, 0x160));
+
+    lift_field<float>(self, 0x160) = lift_field<float>(self, 0x160) / lift_field<float>(self, 0x154);
+    lift_field<float>(self, 0x164) = lift_field<float>(self, 0x164) / lift_field<float>(self, 0x158);
+    lift_field<float>(self, 0x168) = lift_field<float>(self, 0x168) / lift_field<float>(self, 0x15C);
+}
+} // namespace lift_006125B0

@@ -1,0 +1,58 @@
+{
+  "va": "0x006125B0",
+  "size": 147,
+  "orig_symbol": "sub_006125B0",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "Unknown::divideTripletByScale_0x160",
+  "class": "Unknown",
+  "signature": "void fn_006125B0(void* self)",
+  "summary": "Builds a local 3x3 identity matrix in a frame struct, calls two helpers, then divides the three floats at +0x160/+0x164/+0x168 by the scale floats at +0x154/+0x158/+0x15c.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x154",
+      "type": "float",
+      "name": "field_0x154"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "float",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "float",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x160",
+      "type": "float",
+      "name": "field_0x160"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "float",
+      "name": "field_0x164"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x168",
+      "type": "float",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:41:59Z"
+}
