@@ -1,0 +1,27 @@
+{
+  "va": "0x004E7390",
+  "size": 148,
+  "orig_symbol": "sub_004E7390",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "compareObjectsByTypeOrName",
+  "signature": "extern \"C\" bool __stdcall fn_004E7390(void* lhs, void* rhs)",
+  "summary": "Compares two polymorphic objects by dynamic-casted fields (+0x98, +0x9C) or falls back to comparing their vtable+0x24 string pointers.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x98",
+      "type": "int32_t",
+      "name": "field_0x98"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x9C",
+      "type": "int32_t",
+      "name": "field_0x9c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:06:09Z"
+}

@@ -959,3 +959,33 @@ void __thiscall fn_004EC160(void* self, void* nodePtr) {
     }
 }
 } // namespace lift_004EC160
+
+// [0x004E7390]
+namespace lift_004E7390 {
+extern void* __cdecl ext_006A6E9E(void* ptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+extern bool (__cdecl* mem_00924EF4)(const void* lhs, const void* rhs);
+
+// @name compareObjectsByTypeOrName
+// @summary Compares two polymorphic objects by dynamic-casted fields (+0x98, +0x9C) or falls back to comparing their vtable+0x24 string pointers.
+// @field Object +0x98 int32_t field_0x98
+// @field Object +0x9c int32_t field_0x9c
+extern bool __stdcall fn_004E7390(void* lhs, void* rhs) {
+    void* castLhs = ext_006A6E9E(lhs, 0, reinterpret_cast<void*>(0x00A2E2D8), reinterpret_cast<void*>(0x00A2E2BC), 0);
+    if (castLhs != nullptr) {
+        void* castRhs = ext_006A6E9E(rhs, 0, reinterpret_cast<void*>(0x00A2E2D8), reinterpret_cast<void*>(0x00A2E2BC), 0);
+        if (castRhs != nullptr) {
+            int32_t lhsKey = lift_field<int32_t>(castLhs, 0x98);
+            int32_t rhsKey = lift_field<int32_t>(castRhs, 0x98);
+            if (lhsKey != rhsKey) {
+                return lhsKey < rhsKey;
+            }
+            return lift_field<int32_t>(castLhs, 0x9c) > lift_field<int32_t>(castRhs, 0x9c);
+        }
+    }
+
+    using GetNameFn = const void* (__thiscall*)(void*);
+    const void* rhsName = (*reinterpret_cast<GetNameFn*>(*reinterpret_cast<uintptr_t*>(rhs) + 0x24))(rhs);
+    const void* lhsName = (*reinterpret_cast<GetNameFn*>(*reinterpret_cast<uintptr_t*>(lhs) + 0x24))(lhs);
+    return mem_00924EF4(lhsName, rhsName);
+}
+} // namespace lift_004E7390

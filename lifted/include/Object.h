@@ -107,7 +107,9 @@ struct Object_Fields {
     // +0x90  uint64_t                 field_0x90  (evidence: 0x00785E00) // CONFLICT: multiple definitions at +0x90
     // +0x90  uint8_t                  field_0x90  (evidence: 0x00630540) // CONFLICT: multiple definitions at +0x90
     // +0x94  uint8_t                  field_0x94  (evidence: 0x004564A0)
-    // +0x98  uint64_t                 field_0x98  (evidence: 0x00785E00)
+    // +0x98  int32_t                  field_0x98  (evidence: 0x004E7390) // CONFLICT: multiple definitions at +0x98
+    // +0x98  uint64_t                 field_0x98  (evidence: 0x00785E00) // CONFLICT: multiple definitions at +0x98
+    // +0x9C  int32_t                  field_0x9c  (evidence: 0x004E7390)
     // +0xA0  uint32_t                 field_0xa0  (evidence: 0x00547E80) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  uint64_t                 field_0xa0  (evidence: 0x00785E00) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    ptr_a0  (evidence: 0x005481E0) // CONFLICT: multiple definitions at +0xA0
