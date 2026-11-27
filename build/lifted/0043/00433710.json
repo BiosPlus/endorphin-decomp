@@ -1,0 +1,22 @@
+{
+  "va": "0x00433710",
+  "size": 134,
+  "orig_symbol": "sub_00433710",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "fn_00433710",
+  "class": "(none; object type not recovered)",
+  "signature": "void fn_00433710(void)",
+  "summary": "Gets the singleton-like object from ext_00465B40 and calls its vtable slot at +0x208 with (this, 4); the SEH cleanup funclet at 0x0043375C is not part of the normal path and is omitted.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:23:31Z"
+}

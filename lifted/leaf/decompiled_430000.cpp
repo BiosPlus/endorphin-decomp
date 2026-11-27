@@ -5120,3 +5120,40 @@ void fn_004325B0(void* self) {
     }
 }
 } // namespace lift_004325B0
+
+// [0x00433710] sub_00433710 (134 bytes)
+namespace lift_00433710 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+extern void* ext_00465B40();
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+extern void ext_006A5E60();
+extern int mem_00924FE0;
+extern int mem_00924FF0;
+extern int mem_00924FF4;
+
+// @name fn_00433710
+// @class (none; object type not recovered)
+// @summary Gets the singleton-like object from ext_00465B40 and calls its vtable slot at +0x208 with (this, 4); the SEH cleanup funclet at 0x0043375C is not part of the normal path and is omitted.
+// @field Unknown +0x00 void* vptr
+void fn_00433710(void) {
+    // call 0x465b40 ; eax = object
+    void* obj = ext_00465B40();
+    // mov edx, [eax]; mov eax, [edx + 0x208]; push 4; call eax  (thiscall, ecx = obj)
+    void* vptr = lift_field<void*>(obj, 0x00);
+    void* slot = lift_field<void*>(vptr, 0x208);
+    using SlotFn = void(__thiscall*)(void* thisPtr, int arg);
+    SlotFn fn = reinterpret_cast<SlotFn>(slot);
+    fn(obj, 4);
+    // Original epilogue restores the SEH frame (fs:[0]) and returns; the frame
+    // handling is host-specific and not reproduced here.
+
+    // References kept from the original asm that live only on the unwind path
+    // (funclet 0x0043375C: std::string temp built from [ebp-0x14]+0xC, passed to
+    // thunk_MFC80_ord_1123, then ~basic_string via mem_00924FF4). They are not
+    // executed on the normal return path, so they are only referenced here.
+    (void)&ext_006A5E60;
+    (void)&mem_00924FE0;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+}
+} // namespace lift_00433710
