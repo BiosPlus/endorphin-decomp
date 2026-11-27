@@ -4609,3 +4609,46 @@ int fn_00432910(void) {
     }
 }
 } // namespace lift_00432910
+
+// [0x004334D0] sub_004334D0 (134 bytes)
+namespace lift_004334D0 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+// Returns an object pointer in eax (declared void here; callers cast to the real shape).
+extern void ext_00465B40();
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+// Takes one const char* argument in the original code.
+extern void ext_006A5E60();
+// MSVCP80 IAT slots used by the unwind funclet (std::string ctor / c_str / dtor).
+extern int mem_00924FE0;
+extern int mem_00924FF0;
+extern int mem_00924FF4;
+
+// Unwind funclet at 0x0043351C. Reached through the SEH unwind table, not the normal path.
+// obj14 is the value of [ebp-0x14]; the std::string lives at obj14+0x0c.
+// Copies that string, passes its c_str() to ext_006A5E60, then destroys the copy.
+static void fn_0043351C(void* obj14) {
+    // Keep the MSVCP80 IAT slots referenced; std::string replaces ctor/c_str/dtor.
+    (void)&mem_00924FE0;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+
+    const std::string& src = *reinterpret_cast<const std::string*>(static_cast<uint8_t*>(obj14) + 0x0c);
+    std::string tmp(src);
+    reinterpret_cast<void (*)(const char*)>(ext_006A5E60)(tmp.c_str());
+}
+
+// @name Unknown::invokeSlot208Chain
+// @summary Gets an object from sub_00465B40 and calls its vtable slot 0x208 with a 0 argument; SEH unwind funclet at 0x43351C is lifted separately.
+void fn_004334D0(void* self) {
+    (void)self;
+
+    // call 0x465B40 -> eax = object
+    using GetObjFn = void* (*)();
+    void* obj = reinterpret_cast<GetObjFn>(ext_00465B40)();
+
+    // mov edx,[eax]; mov eax,[edx+0x208]; push 0; call eax  (thiscall: ecx = obj)
+    void* vtbl = *static_cast<void**>(obj);
+    void* slot = *reinterpret_cast<void**>(static_cast<uint8_t*>(vtbl) + 0x208);
+    reinterpret_cast<void(__thiscall*)(void*, int)>(slot)(obj, 0);
+}
+} // namespace lift_004334D0

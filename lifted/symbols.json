@@ -3742,6 +3742,13 @@
     "summary": "Calls virtual method at vtable+0x204 on the object returned by sub_00465B40 and displays any caught exception message.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004334D0": {
+    "name": "Unknown::invokeSlot208Chain",
+    "class": "Unknown",
+    "signature": "static void fn_0043351C(void* obj14)",
+    "summary": "Gets an object from sub_00465B40 and calls its vtable slot 0x208 with a 0 argument; SEH unwind funclet at 0x43351C is lifted separately.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00433990": {
     "name": "Unknown::CallbackAtField168IfNot2",
     "class": "Unknown",

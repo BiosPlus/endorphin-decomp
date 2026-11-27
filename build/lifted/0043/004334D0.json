@@ -1,0 +1,14 @@
+{
+  "va": "0x004334D0",
+  "size": 134,
+  "orig_symbol": "sub_004334D0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::invokeSlot208Chain",
+  "class": "Unknown",
+  "signature": "static void fn_0043351C(void* obj14)",
+  "summary": "Gets an object from sub_00465B40 and calls its vtable slot 0x208 with a 0 argument; SEH unwind funclet at 0x43351C is lifted separately.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:32:08Z"
+}
