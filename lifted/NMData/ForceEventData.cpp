@@ -446,3 +446,24 @@ void __thiscall fn_004C65C0(void* self) {
     std::memcpy(dst, src, 3 * sizeof(float));
 }
 } // namespace lift_004C65C0
+
+// [0x004C4E00]
+namespace lift_004C4E00 {
+extern void* __thiscall ext_004C1DE0(void* self, void* arg);
+extern void* __cdecl ext_0067EF60(void* arg, float value, uint32_t b, uint32_t a);
+extern uint32_t mem_00A9F8E4;
+extern uint32_t mem_00A9F4D8;
+
+// @name NMData::ForceEventData::vfunc_22
+// @class NMData::ForceEventData
+// @summary Forwards its stack argument to NMData::TriggeredEventData::vfunc_22, then calls ext_0067EF60 with the float at this+0x180 and two constants, and returns the argument.
+// @field NMData::ForceEventData +0x180 float field_0x180
+extern void* __thiscall fn_004C4E00(void* self, void* arg) {
+    ext_004C1DE0(self, arg);
+    float value = lift_field<float>(self, 0x180);
+    uint32_t a = mem_00A9F8E4;
+    uint32_t b = mem_00A9F4D8;
+    ext_0067EF60(arg, value, b, a);
+    return arg;
+}
+} // namespace lift_004C4E00

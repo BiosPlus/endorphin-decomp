@@ -1,0 +1,22 @@
+{
+  "va": "0x004C4E00",
+  "size": 53,
+  "orig_symbol": "NMData::ForceEventData::vfunc_22",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_22",
+  "class": "NMData::ForceEventData",
+  "signature": "extern \"C\" void* __thiscall fn_004C4E00(void* self, void* arg)",
+  "summary": "Forwards its stack argument to NMData::TriggeredEventData::vfunc_22, then calls ext_0067EF60 with the float at this+0x180 and two constants, and returns the argument.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x180",
+      "type": "float",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:40:08Z"
+}

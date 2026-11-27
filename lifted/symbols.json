@@ -20205,6 +20205,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C4E00": {
+    "name": "NMData::ForceEventData::vfunc_22",
+    "class": "NMData::ForceEventData",
+    "signature": "extern \"C\" void* __thiscall fn_004C4E00(void* self, void* arg)",
+    "summary": "Forwards its stack argument to NMData::TriggeredEventData::vfunc_22, then calls ext_0067EF60 with the float at this+0x180 and two constants, and returns the argument.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C4E40": {
     "name": "NMData::ForceEventData::NotifyEvent0x266",
     "class": "NMData::ForceEventData",
