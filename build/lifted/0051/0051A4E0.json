@@ -1,0 +1,22 @@
+{
+  "va": "0x0051A4E0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, NM::Vector4 const \u0026, \u0026public: void __thiscall NMData::QuatChannel::setKeyFrame(class NM::Vector4 const \u0026)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cQuatChannel\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, NM::Vector4 const \u0026, \u0026public: void __thiscall NMData::QuatChannel::setKeyFrame(class NM::Vector4 const \u0026)\u003e",
+  "signature": "void __stdcall fn_0051A4E0(void* out)",
+  "summary": "One-time initializes the shared static object at mem_00AEC754 (guard bit 0 of mem_00AEC758), then stores its address into field +0x04 of the stack-passed output object.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:24:02Z"
+}

@@ -22038,6 +22038,13 @@
     "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0051A4E0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cQuatChannel\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, NM::Vector4 const \u0026, \u0026public: void __thiscall NMData::QuatChannel::setKeyFrame(class NM::Vector4 const \u0026)\u003e",
+    "signature": "void __stdcall fn_0051A4E0(void* out)",
+    "summary": "One-time initializes the shared static object at mem_00AEC754 (guard bit 0 of mem_00AEC758), then stores its address into field +0x04 of the stack-passed output object.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0051A560": {
     "name": "initStaticBoolString",
     "signature": "void* fn_0051A560()",

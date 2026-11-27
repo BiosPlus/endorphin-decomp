@@ -10936,3 +10936,28 @@ void fn_005214B0(void* self) {
     lift_field<void*>(self, 0x04) = &mem_00AECC4C;
 }
 } // namespace lift_005214B0
+
+// [0x0051A4E0] ExprParser::ReadWriteMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, NM::Vector4 const &, &public: void __thiscall NMData::QuatChannel::setKeyFrame(class NM::Vector4 const &)>::vfunc_40 (122 bytes)
+namespace lift_0051A4E0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AEC758;
+extern int mem_00AEC754;
+
+// @name ExprParser::ReadWriteMethodType<QuatChannel>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, NM::Vector4 const &, &public: void __thiscall NMData::QuatChannel::setKeyFrame(class NM::Vector4 const &)>
+// @summary One-time initializes the shared static object at mem_00AEC754 (guard bit 0 of mem_00AEC758), then stores its address into field +0x04 of the stack-passed output object.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+// Stack arg `out` is the caller's output object (ret 4). The original MSVC
+// fs:[0] SEH frame (try-state -1 / handler 0x892E1E) is EH bookkeeping for the
+// function-local static init guard and has no portable equivalent; it is omitted.
+void __stdcall fn_0051A4E0(void* out) {
+    if ((mem_00AEC758 & 1) == 0) {
+        mem_00AEC758 |= 1;
+        (void)ext_0067A670(&mem_00AEC754, 0);
+        mem_00AEC754 = 0x0095247C;
+    }
+    lift_field<void*>(out, 0x04) = &mem_00AEC754;
+}
+} // namespace lift_0051A4E0
