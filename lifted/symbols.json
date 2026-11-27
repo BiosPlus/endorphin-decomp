@@ -59839,6 +59839,13 @@
     "summary": "Returns global int32 value from mem_00B59DB8.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00675B70": {
+    "name": "LiftCallSubobjectPairIntoOut",
+    "class": "Unknown",
+    "signature": "void* fn_00675B70(void* arg1, void* arg2, void* arg3, void* arg4)",
+    "summary": "Forwards (dst, obj+0x4c) to ext_00661840; if ext_006616B0(dst) is nonzero, calls ext_00661860 with obj+0x10 and copies its two-dword result into dst. Returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00675D20": {
     "name": "sub_00675D20",
     "signature": "extern \"C\" void __fastcall fn_00675D20(void* self)",

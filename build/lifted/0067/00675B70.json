@@ -1,0 +1,22 @@
+{
+  "va": "0x00675B70",
+  "size": 155,
+  "orig_symbol": "sub_00675B70",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "LiftCallSubobjectPairIntoOut",
+  "class": "Unknown",
+  "signature": "void* fn_00675B70(void* arg1, void* arg2, void* arg3, void* arg4)",
+  "summary": "Forwards (dst, obj+0x4c) to ext_00661840; if ext_006616B0(dst) is nonzero, calls ext_00661860 with obj+0x10 and copies its two-dword result into dst. Returns dst.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:27:08Z"
+}

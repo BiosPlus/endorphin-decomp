@@ -3006,3 +3006,43 @@ extern void __thiscall fn_00673E00(void* self, uint32_t n) {
 }
 } // namespace lift_0049D050
 } // namespace lift_00673E00
+
+// [0x00675B70] sub_00675B70 (155 bytes)
+namespace lift_00675B70 {
+// Callee prototypes. The originals are thiscall/__stdcall-style; the first
+// parameter is the implicit `this` (passed in ECX / on the stack by the caller).
+extern void* ext_00661840(void* self, void* arg1, void* arg2);
+// Known callee 0x006616B0: sub_006616B0 (Auto-lifted identical-shape clone of 0x00493E00 (forwardVtable0B4_viaFirstField).)
+extern intptr_t ext_006616B0(void* self);
+// Known callee 0x00661860: Unknown::CallSubobjectVirtualSlot1 (Forwards (arg1, this+4, arg2) to virtual slot 1 of the object pointed to by this+0, then returns arg1.)
+extern void* ext_00661860(void* self, void* arg1, void* arg2);
+// Known callee 0x00493D90: AddCharacterDialog::vfunc_3 (destructor-like cleanup on a temporary).
+extern void ext_00493D90(void* self);
+
+// @name LiftCallSubobjectPairIntoOut
+// @class Unknown
+// @summary Forwards (dst, obj+0x4c) to ext_00661840; if ext_006616B0(dst) is nonzero, calls ext_00661860 with obj+0x10 and copies its two-dword result into dst. Returns dst.
+// @field Unknown +0x4c uint32_t field_0x4c
+void* fn_00675B70(void* arg1, void* arg2, void* arg3, void* arg4) {
+    // arg1 = output buffer (returned), arg2 = `this` for the sub-calls, arg3 unused,
+    // arg4 = source object. SEH frame setup/teardown from the original is omitted.
+    (void)arg3;
+
+    uint8_t* obj = static_cast<uint8_t*>(arg4);
+    uint32_t t = lift_field<uint32_t>(obj, 0x4c);
+    ext_00661840(&arg2, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(t)));
+
+    if (static_cast<uint8_t>(ext_006616B0(arg1)) != 0) {
+        uint32_t tmp[2] = {};
+        void* ret = ext_00661860(&arg2, &tmp, obj + 0x10);
+        auto* src = static_cast<uint32_t*>(ret);
+        lift_field<uint32_t>(arg1, 0) = src[0];
+        lift_field<uint32_t>(arg1, 4) = src[1];
+        ext_00493D90(&tmp);
+    }
+
+    uint32_t unwind_temp[2] = {};
+    ext_00493D90(&unwind_temp);
+    return arg1;
+}
+} // namespace lift_00675B70

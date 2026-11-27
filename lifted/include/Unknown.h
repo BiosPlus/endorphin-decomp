@@ -1120,7 +1120,7 @@ struct Unknown_Fields {
     // +0x4C  float                    field_0x4c  (evidence: 0x00622B40, 0x0062E290, 0x007D48A0, 0x007D8470) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  int32_t                  field_0x4c  (evidence: 0x00660C10, 0x006CA520) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  std::uint32_t            field_0x4c  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x4C
-    // +0x4C  uint32_t                 field_0x4c  (evidence: 0x00707A10, 0x00709AB0, 0x00790F40, 0x007911E0, 0x007966D0) // CONFLICT: multiple definitions at +0x4C
+    // +0x4C  uint32_t                 field_0x4c  (evidence: 0x00675B70, 0x00707A10, 0x00709AB0, 0x00790F40, 0x007911E0, 0x007966D0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint8_t                  field_0x4c  (evidence: 0x0063F960) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint8_t[0x4c]            field_0x4c  (evidence: 0x0072AF80) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  void*                    field_0x4c  (evidence: 0x00441020, 0x0044B5C0, 0x0046C2F0, 0x006C9250) // CONFLICT: multiple definitions at +0x4C
