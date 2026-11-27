@@ -70459,6 +70459,13 @@
     "summary": "Computes the scaled delta of arg against field +0x04 and then bumps the counter at +0x1C.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078C280": {
+    "name": "Unknown::Init",
+    "class": "Unknown",
+    "signature": "void* fn_0078C280(void* self)",
+    "summary": "Initializes object: inits sub-object at +0x04 (clamped min 1 / 0x10), sets +0x18 self-pointer to +0x14, inits +0x38 sub-object, zeroes scalar fields; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078C3A0": {
     "name": "Unknown::sub_0078C3A0",
     "class": "Unknown",

@@ -2025,3 +2025,48 @@ void fn_00783A80(void) {
     mem_00AAF3B1 = 0;
 }
 } // namespace lift_00783A80
+
+// [0x0078C280] sub_0078C280 (112 bytes)
+namespace lift_0078C280 {
+// Known callee 0x006B9D10: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+extern void* ext_006B9D10(void* self);
+// Known callee 0x006D2130: Unknown::InitClampedMin1 (Zeroes fields +0x00, +0x04, +0x10; stores arg2 at +0x0C and max(arg1, 1) (signed) at +0x08.)
+extern void ext_006D2130(void* self, int32_t arg1, int32_t arg2);
+
+// @name Unknown::Init
+// @class Unknown
+// @summary Initializes object: inits sub-object at +0x04 (clamped min 1 / 0x10), sets +0x18 self-pointer to +0x14, inits +0x38 sub-object, zeroes scalar fields; returns this.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x18 void* field_0x18
+// @field Unknown +0x1C int32_t field_0x1C
+// @field Unknown +0x20 int32_t field_0x20
+// @field Unknown +0x24 int32_t field_0x24
+// @field Unknown +0x28 int32_t field_0x28
+// @field Unknown +0x2C int32_t field_0x2C
+// @field Unknown +0x30 int32_t field_0x30
+// @field Unknown +0x34 uint8_t field_0x34
+void* fn_0078C280(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Sub-object at +0x04 (edi = this + 4): ext_006D2130(edi, 4, 0x10)
+    void* sub = base + 0x04;
+    ext_006D2130(sub, 4, 0x10);
+
+    // *(edi + 0x14) = edi + 0x10  -> *(this + 0x18) = this + 0x14
+    *reinterpret_cast<uint8_t**>(base + 0x18) = base + 0x14;
+
+    // Sub-object at +0x38: ext_006B9D10(this + 0x38); result unused
+    (void)ext_006B9D10(base + 0x38);
+
+    *reinterpret_cast<int32_t*>(base + 0x00) = 0;
+    *reinterpret_cast<int32_t*>(base + 0x1C) = 0;
+    *reinterpret_cast<int32_t*>(base + 0x20) = 0;
+    *reinterpret_cast<uint8_t*>(base + 0x34) = 0;
+    *reinterpret_cast<int32_t*>(base + 0x24) = 0;
+    *reinterpret_cast<int32_t*>(base + 0x28) = 0;
+    *reinterpret_cast<int32_t*>(base + 0x2C) = 0;
+    *reinterpret_cast<int32_t*>(base + 0x30) = 0;
+
+    return self;
+}
+} // namespace lift_0078C280
