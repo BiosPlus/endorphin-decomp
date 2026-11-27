@@ -333,3 +333,54 @@ void fn_004F9C10(void* self) {
     }
 }
 } // namespace lift_004F9C10
+
+// [0x004FAAB0]
+namespace lift_004FAAB0 {
+// @name VMCSModes::DefaultImplementation::vfunc_72
+// @class VMCSModes::DefaultImplementation
+// @summary Looks up a range via this->+0x8->+0x14->+0x34 renderer chain; returns fn_00477FA0(field 0x26C of global object, first element of range) if the range is non-empty, else false.
+// @field VMCSModes::DefaultImplementation +0x08 void* field_0x08
+
+extern void* __thiscall ext_005B11F0(void* self);            // OglRenderer::vfunc_118
+extern int32_t __cdecl ext_00594000(void);                    // returns global int32 (mem_00B40D08)
+extern bool __thiscall ext_00477FA0(void* self, uint32_t arg); // Unknown::findEntryWithField168Match
+extern int mem_00925134;                                     // _invalid_parameter_noinfo slot (metadata reference only)
+
+using VFnGetRange = void* (__thiscall*)(void* self);
+
+bool VMCSModes_DefaultImplementation_vfunc_72(void* self) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+    uint8_t* p1 = *reinterpret_cast<uint8_t**>(s + 0x08);
+    uint8_t* p2 = *reinterpret_cast<uint8_t**>(p1 + 0x14);
+    void* obj = *reinterpret_cast<void**>(p2 + 0x34);
+
+    uint8_t* esi = static_cast<uint8_t*>(ext_005B11F0(obj));
+
+    (void)&mem_00925134;
+    uint8_t* g = reinterpret_cast<uint8_t*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+    void* ebx = *reinterpret_cast<void**>(g + 0x26C);
+
+    void** vt = *reinterpret_cast<void***>(esi);
+    auto getRange = reinterpret_cast<VFnGetRange>(vt[7]);
+    uint8_t* r = static_cast<uint8_t*>(getRange(esi));
+
+    uint32_t begin = *reinterpret_cast<uint32_t*>(r + 0x4);
+    if (begin == 0) {
+        return false;
+    }
+    uint32_t end = *reinterpret_cast<uint32_t*>(r + 0x8);
+    if ((static_cast<int32_t>(end - begin) >> 2) == 0) {
+        return false;
+    }
+
+    vt = *reinterpret_cast<void***>(esi);
+    getRange = reinterpret_cast<VFnGetRange>(vt[7]);
+    uint8_t* v = static_cast<uint8_t*>(getRange(esi));
+
+    uint32_t cur = *reinterpret_cast<uint32_t*>(v + 0x4);
+    uint32_t elem = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cur));
+
+    return ext_00477FA0(ebx, elem);
+}
+} // namespace lift_004FAAB0

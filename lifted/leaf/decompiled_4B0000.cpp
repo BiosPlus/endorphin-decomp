@@ -1960,3 +1960,61 @@ void fn_004B7060(void* self, void* lookup) {
     ext_0053F5F0(second, &tmp2);
 }
 } // namespace lift_004B7060
+
+// [0x004BF6A0]
+namespace lift_004BF6A0 {
+extern bool ext_00661E80(void* self);
+extern uint8_t mem_00925134[];
+
+// @name Unknown::advanceCursorRange
+// @class Unknown
+// @summary Advances the cursor up to count[+0x70] times via ext_00661E80 (stopping early on failure), then validates the cursor pair at *(+0x00)+8 and returns true only if all advances succeeded and the node's sequence value at +0x08 does not exceed the limit at +0x6C.
+// @field Unknown +0x00 DWORD cursor_ptr
+// @field Unknown +0x6C int32_t seq_limit
+// @field Unknown +0x70 DWORD advance_count
+
+static inline uint8_t* as_ptr(DWORD addr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
+}
+
+bool fn_004BF6A0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    // Phase 1: advance the cursor `advance_count` times while every call returns true.
+    // Original: bl starts as 1; loop body runs only while bl != 0.
+    bool ok = true;
+    DWORD count = lift_field<DWORD>(obj, 0x70);
+    if (count != 0) {
+        DWORD i = 0;
+        do {
+            if (!ok) {
+                break;
+            }
+            DWORD cursor = lift_field<DWORD>(obj, 0x00);
+            ok = ext_00661E80(reinterpret_cast<void*>(static_cast<uintptr_t>(cursor)));
+            ++i;
+        } while (i < count);
+    }
+
+    // Phase 2: validate the cursor pair at (*cursor_ptr + 8).
+    // The CRT _invalid_parameter_noinfo guard calls (IAT slot 0x925134) are assertions
+    // with no effect on the return value, so they are not reproduced here.
+    (void)&mem_00925134; // metadata-only reference to the CRT import slot
+    DWORD cursorBase = lift_field<DWORD>(obj, 0x00);
+    uint8_t* pair = as_ptr(cursorBase) + 8;
+    DWORD hdr = lift_field<DWORD>(pair, 0);
+    DWORD node = lift_field<DWORD>(pair, 4);
+    (void)lift_field<DWORD>(as_ptr(hdr), 4); // read performed by original guard compare
+
+    int32_t seq = lift_field<int32_t>(as_ptr(node), 0x08);
+    int32_t limit = lift_field<int32_t>(obj, 0x6C);
+
+    if (seq > limit) {
+        return false;
+    }
+    if (!ok) {
+        return false;
+    }
+    return true;
+}
+} // namespace lift_004BF6A0

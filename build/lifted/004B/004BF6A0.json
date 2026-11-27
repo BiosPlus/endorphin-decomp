@@ -1,0 +1,34 @@
+{
+  "va": "0x004BF6A0",
+  "size": 99,
+  "orig_symbol": "sub_004BF6A0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::advanceCursorRange",
+  "class": "Unknown",
+  "signature": "static inline uint8_t* as_ptr(DWORD addr)",
+  "summary": "Advances the cursor up to count[+0x70] times via ext_00661E80 (stopping early on failure), then validates the cursor pair at *(+0x00)+8 and returns true only if all advances succeeded and the node's sequence value at +0x08 does not exceed the limit at +0x6C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "cursor_ptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "int32_t",
+      "name": "seq_limit"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "DWORD",
+      "name": "advance_count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:27:58Z"
+}

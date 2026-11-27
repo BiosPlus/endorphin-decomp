@@ -15884,6 +15884,13 @@
     "summary": "Initializes object state: sets dword +0x00 to 0x0C, dword +0x04 to 0, byte +0x08 to 1; returns this in eax.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004BF6A0": {
+    "name": "Unknown::advanceCursorRange",
+    "class": "Unknown",
+    "signature": "static inline uint8_t* as_ptr(DWORD addr)",
+    "summary": "Advances the cursor up to count[+0x70] times via ext_00661E80 (stopping early on failure), then validates the cursor pair at *(+0x00)+8 and returns true only if all advances succeeded and the node's sequence value at +0x08 does not exceed the limit at +0x6C.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BF710": {
     "name": "Unknown::copyFromFirstThenDestroyEmbedded",
     "class": "Unknown",
@@ -20998,6 +21005,13 @@
     "class": "VMCSModes::DefaultImplementation",
     "signature": "BOOLEAN fn_004FA2B0(void* self)",
     "summary": "Returns true when the vector reached through this-\u003efield_0x08 chain is non-empty (begin != null and end != begin).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAAB0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_72",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "bool VMCSModes_DefaultImplementation_vfunc_72(void* self)",
+    "summary": "Looks up a range via this-\u003e+0x8-\u003e+0x14-\u003e+0x34 renderer chain; returns fn_00477FA0(field 0x26C of global object, first element of range) if the range is non-empty, else false.",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
   "0x004FD800": {

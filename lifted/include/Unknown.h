@@ -38,6 +38,7 @@ struct Unknown_Fields {
     // +0x0   int32_t                  count  (evidence: 0x00783940, 0x008635C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count  (evidence: 0x006D2300, 0x007B3120, 0x0085BEC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count_00  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    cursor_ptr  (evidence: 0x004BF6A0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t*                 data  (evidence: 0x0085BB40) // CONFLICT: multiple definitions at +0x0
     // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t[19]             entries  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x0
@@ -1137,7 +1138,9 @@ struct Unknown_Fields {
     // +0x6C  BYTE                     field_0x6c  (evidence: 0x00422660) // CONFLICT: multiple definitions at +0x6C
     // +0x6C  uint32_t                 field_0x6c  (evidence: 0x006080D0) // CONFLICT: multiple definitions at +0x6C
     // +0x6C  void*                    field_0x6c  (evidence: 0x006B6A30) // CONFLICT: multiple definitions at +0x6C
+    // +0x6C  int32_t                  seq_limit  (evidence: 0x004BF6A0) // CONFLICT: multiple definitions at +0x6C
     // +0x6C  void* field_0x6c (embedded std::string)  (evidence: 0x00685890) // CONFLICT: multiple definitions at +0x6C
+    // +0x70  DWORD                    advance_count  (evidence: 0x004BF6A0) // CONFLICT: multiple definitions at +0x70
     // +0x70  uint32_t                 currentIndex  (evidence: 0x00530290) // CONFLICT: multiple definitions at +0x70
     // +0x70  Buffer                   field_0x70  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x70
     // +0x70  DWORD                    field_0x70  (evidence: 0x00422660) // CONFLICT: multiple definitions at +0x70
