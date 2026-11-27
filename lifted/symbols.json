@@ -9645,6 +9645,12 @@
     "summary": "Fills a 4x4 float matrix (16 floats, row-major) with the identity matrix.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480430": {
+    "name": "initIdentity3x3IntoPadded",
+    "signature": "void fn_00480430(void* self)",
+    "summary": "Builds a local 3x3 float identity matrix on the stack, runs sub_0067DAD0 and sub_0067B7F0 over it (once on the whole block and once per row), then copies it into the padded matrix at this via copyPacked3x3ToPaddedMatrix.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00480530": {
     "name": "ReleaseSubobjectsThenForwardToTail",
     "class": "\u003cUnknown\u003e (owner class not identified)",
