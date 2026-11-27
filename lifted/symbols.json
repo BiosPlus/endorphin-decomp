@@ -26873,6 +26873,13 @@
     "summary": "Writes the XSI scene using the filename at +0x478 and closes the CSLScene at +0x494.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x00565120": {
+    "name": "Unknown::findModelByFallbackName",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_00565120(void* self, void* nameSource)",
+    "summary": "Copies the std::string chosen by getStrPtrOrFallback(arg) into a temporary, then calls CSLScene::FindModel(c_str) on the scene at +0x494 and returns the resulting model pointer.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00566380": {
     "name": "sub_00566380",
     "class": "ObjectWithChild",

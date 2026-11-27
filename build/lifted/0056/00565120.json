@@ -1,0 +1,22 @@
+{
+  "va": "0x00565120",
+  "size": 117,
+  "orig_symbol": "sub_00565120",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "Unknown::findModelByFallbackName",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_00565120(void* self, void* nameSource)",
+  "summary": "Copies the std::string chosen by getStrPtrOrFallback(arg) into a temporary, then calls CSLScene::FindModel(c_str) on the scene at +0x494 and returns the resulting model pointer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x494",
+      "type": "void*",
+      "name": "field_0x494"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:06:57Z"
+}

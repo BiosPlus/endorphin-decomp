@@ -562,3 +562,45 @@ void* fn_0056B850(void* out, void* self) {
     return out;
 }
 } // namespace lift_0056B850
+
+// [0x00565120] sub_00565120 (117 bytes)
+namespace lift_00565120 {
+// Known callee 0x007C56D0: thunk_XSIFtk-3.6.2.1_?FindModel@CSLScene@@QAEPAVCSLModel@@PAD@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?FindModel@CSLScene@@QAEPAVCSLModel@@PAD@Z.)
+extern void ext_007C56D0();
+// Known callee 0x00584BD0: Unknown::getStrPtrOrFallback (Returns a pointer to the std::string at +0x4C if it differs from a fixed literal, else a pointer to the std::string at +0x14.)
+extern void ext_00584BD0();
+// IAT slot: MSVCP80 std::basic_string<char>::basic_string(const basic_string&) (thiscall)
+extern int mem_00924FE0;
+// IAT slot: MSVCP80 std::basic_string<char>::c_str() (thiscall)
+extern int mem_00924FF0;
+// IAT slot: MSVCP80 std::basic_string<char>::~basic_string() (thiscall)
+extern int mem_00924FF4;
+
+// @name Unknown::findModelByFallbackName
+// @class Unknown
+// @summary Copies the std::string chosen by getStrPtrOrFallback(arg) into a temporary, then calls CSLScene::FindModel(c_str) on the scene at +0x494 and returns the resulting model pointer.
+// @field Unknown +0x494 void* field_0x494
+
+void* __thiscall fn_00565120(void* self, void* nameSource) {
+    using StrPtrFn      = void* (__thiscall*)(void* self);
+    using StrCopyCtorFn = void (__thiscall*)(void* self, const void* src);
+    using CStrFn        = const char* (__thiscall*)(void* self);
+    using StrDtorFn     = void (__thiscall*)(void* self);
+    using FindModelFn   = void* (__thiscall*)(void* self, const char* name);
+
+    // Temporary std::string (MSVC 2005 layout, 0x1C bytes).
+    alignas(8) uint8_t tmpStr[0x1C];
+
+    void* const src = reinterpret_cast<StrPtrFn>(&ext_00584BD0)(nameSource);
+    reinterpret_cast<StrCopyCtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE0)))(tmpStr, src);
+
+    const char* const name =
+        reinterpret_cast<CStrFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF0)))(tmpStr);
+
+    void* const scene = lift_field<void*>(self, 0x494);
+    void* const model = reinterpret_cast<FindModelFn>(&ext_007C56D0)(scene, name);
+
+    reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)))(tmpStr);
+    return model;
+}
+} // namespace lift_00565120
