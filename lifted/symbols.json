@@ -66775,6 +66775,12 @@
     "summary": "Calls GetKeyState(VK_ESCAPE) and returns 4 if the key is not down (high bit clear), else 0.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B4FF0": {
+    "name": "sub_006B4FF0",
+    "signature": "extern \"C\" void* __thiscall fn_006B4FF0(void* self, uint8_t arg0, uint8_t arg1, uint8_t arg2)",
+    "summary": "Constructor initializing vtables, embedded subobject at +0x68, and byte fields at +0xdc..+0xde",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B5090": {
     "name": "sub_006B5090_dtor",
     "signature": "extern \"C\" void __thiscall fn_006B5090(void* self)",
