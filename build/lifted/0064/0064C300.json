@@ -1,0 +1,22 @@
+{
+  "va": "0x0064C300",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "WriteMethodType\u003cRelationshipRPROMagnet, float\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}\u003e",
+  "signature": "void fn_0064C300(void* holder)",
+  "summary": "One-time init of the static accessor object (guarded by bit 0 of mem_00B55860), then stores its address into holder+0x04.",
+  "fields": [
+    {
+      "class": "WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:46:26Z"
+}

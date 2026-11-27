@@ -7346,3 +7346,31 @@ void fn_0064C280(void* holder) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B55854));
 }
 } // namespace lift_0064C280
+
+// [0x0064C300] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_0064C300 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B55860;
+extern int mem_00B5585C;
+
+// @name WriteMethodType<RelationshipRPROMagnet, float>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}>
+// @summary One-time init of the static accessor object (guarded by bit 0 of mem_00B55860), then stores its address into holder+0x04.
+// @field WriteMethodType +0x04 void* field_0x04
+void fn_0064C300(void* holder) {
+    // Function-local static init guard: bit 0 of the guard byte/dword.
+    // The SEH frame (fs:[0] push/pop, trylevel) present in the original is
+    // compiler exception bookkeeping for the init and is not reproduced here.
+    if ((mem_00B55860 & 1) == 0) {
+        mem_00B55860 |= 1;
+        // Construct static accessor object: ECX = &mem_00B5585C, stack arg = 0.
+        ext_0067A670(&mem_00B5585C, 0);
+        // Vtable pointer of the static accessor object.
+        *reinterpret_cast<DWORD*>(&mem_00B5585C) = 0x0097F754u;
+    }
+    // Bind holder+0x04 to the static accessor object (32-bit address value).
+    lift_field<DWORD>(holder, 4) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B5585C));
+}
+} // namespace lift_0064C300
