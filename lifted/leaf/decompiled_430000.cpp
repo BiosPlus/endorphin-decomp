@@ -4732,3 +4732,37 @@ void __cdecl fn_00432130(void) {
     }
 }
 } // namespace lift_00432130
+
+// [0x004321C0]
+namespace lift_004321C0 {
+// @name appRunModalOrInit
+// @summary Calls virtual method at +0x1CC on the object returned by fn_00465B40 and displays any caught exception message via AfxMessageBox.
+
+
+extern void* __cdecl ext_00465B40(void);
+extern int __stdcall ext_006A5E60(const char* lpszText, unsigned int nType, unsigned int nIDHelp);
+
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+
+void __cdecl fn_004321C0(void) {
+    try {
+        void* obj = ext_00465B40();
+        void** vtable = *reinterpret_cast<void***>(obj);
+        using VMethod = void(__thiscall*)(void*, int);
+        auto method = reinterpret_cast<VMethod>(vtable[0x1CC / sizeof(void*)]);
+        method(obj, 0);
+    } catch (const void* exc) {
+        uint8_t msg[0x1C];
+        using StrCopyCtor = void(__thiscall*)(void*, const void*);
+        using StrCStr = const char*(__thiscall*)(const void*);
+        using StrDtor = void(__thiscall*)(void*);
+
+        reinterpret_cast<StrCopyCtor>(mem_00924FE0)(msg, static_cast<const uint8_t*>(exc) + 0xC);
+        const char* text = reinterpret_cast<StrCStr>(mem_00924FF0)(msg);
+        ext_006A5E60(text, 0, 0);
+        reinterpret_cast<StrDtor>(mem_00924FF4)(msg);
+    }
+}
+} // namespace lift_004321C0
