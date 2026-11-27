@@ -2684,3 +2684,28 @@ int32_t __thiscall fn_006D3600(void* self) {
     return value;
 }
 } // namespace lift_006D3600
+
+// [0x006D3660] sub_006D3660 (48 bytes)
+namespace lift_006D3660 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::insertCountIntoArray_006D3660
+// @class Unknown
+// @summary Queries a virtual count (vtable slot 5); if nonzero, inserts it into the DynamicArray at +0x34 and returns it.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x34 DynamicArray dynArray
+int32_t fn_006D3660(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    void** vtbl = *reinterpret_cast<void***>(base);
+    auto getCount = reinterpret_cast<int32_t (*)(void*)>(vtbl[5]);
+    int32_t count = getCount(self);
+    if (count != 0) {
+        void* arr = base + 0x34;
+        int32_t index = *reinterpret_cast<int32_t*>(arr);
+        int32_t elem = count;
+        ext_006D2170(arr, index, &elem);
+    }
+    return count;
+}
+} // namespace lift_006D3660

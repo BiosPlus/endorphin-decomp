@@ -1,0 +1,28 @@
+{
+  "va": "0x006D3660",
+  "size": 48,
+  "orig_symbol": "sub_006D3660",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::insertCountIntoArray_006D3660",
+  "class": "Unknown",
+  "signature": "int32_t fn_006D3660(void* self)",
+  "summary": "Queries a virtual count (vtable slot 5); if nonzero, inserts it into the DynamicArray at +0x34 and returns it.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "DynamicArray",
+      "name": "dynArray"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:43:47Z"
+}

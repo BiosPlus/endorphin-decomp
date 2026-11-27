@@ -68233,6 +68233,13 @@
     "summary": "Calls vtable slot 3 on this; if it returns nonzero, appends that value to the DynamicArray at this+0x34 via InsertAt(count, \u0026value). Returns the slot-3 result.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D3660": {
+    "name": "Unknown::insertCountIntoArray_006D3660",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D3660(void* self)",
+    "summary": "Queries a virtual count (vtable slot 5); if nonzero, inserts it into the DynamicArray at +0x34 and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D3690": {
     "name": "Unknown::appendNewIdToArray_006D3690",
     "class": "Unknown",
