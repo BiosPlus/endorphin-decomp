@@ -15286,6 +15286,13 @@
     "summary": "Checks whether the rectangle returned for the element at +0xE0 has positive width and height.",
     "lifted_path": "lifted/NMData/State.cpp"
   },
+  "0x0049E0D0": {
+    "name": "NMData::State::setRectFromFirstPoint",
+    "class": "NMData::State",
+    "signature": "void __thiscall fn_0049E0D0(void* self, void* pts)",
+    "summary": "Builds a rect from the first point of a point array (pts+4 = begin, pts+8 = end) extended by this object's (+0xE8-+0xE0, +0xEC-+0xE4) extent, normalizes it via Rect2D::initNormalized, and stores the result back into +0xE0..+0xEC.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049E2E0": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_38",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",

@@ -271,3 +271,51 @@ void fn_0049FCF0(void* self, void* out) {
     }
 }
 } // namespace lift_0049FCF0
+
+// [0x0049E0D0] NMData::State::vfunc_31_off_8 (182 bytes)
+namespace lift_0049E0D0 {
+// Known callee 0x00414D30: Rect2D::initNormalized (Initializes a 2D bounding box from four floats and normalizes min/max X and Y)
+extern void* ext_00414D30(void* self, float x0, float y0, float x1, float y1);
+extern int mem_00925134;
+
+// @name NMData::State::setRectFromFirstPoint
+// @class NMData::State
+// @summary Builds a rect from the first point of a point array (pts+4 = begin, pts+8 = end) extended by this object's (+0xE8-+0xE0, +0xEC-+0xE4) extent, normalizes it via Rect2D::initNormalized, and stores the result back into +0xE0..+0xEC.
+// @field NMData::State +0xE0 float field_0xE0
+// @field NMData::State +0xE4 float field_0xE4
+// @field NMData::State +0xE8 float field_0xE8
+// @field NMData::State +0xEC float field_0xEC
+void __thiscall fn_0049E0D0(void* self, void* pts) {
+    // Original CRT invalid-parameter handler, loaded through the import slot.
+    void (*invalid_parameter)(void) =
+        *reinterpret_cast<void (**)(void)>(&mem_00925134);
+
+    float dx = lift_field<float>(self, 0xE8) - lift_field<float>(self, 0xE0);
+    float dy = lift_field<float>(self, 0xEC) - lift_field<float>(self, 0xE4);
+
+    uint32_t begin = lift_field<uint32_t>(pts, 4);
+    uint32_t end   = lift_field<uint32_t>(pts, 8);
+    if (begin == 0 || (int32_t)(end - begin) >> 3 == 0) {
+        invalid_parameter();
+    }
+
+    float px = lift_field<float>((void*)(uintptr_t)begin, 0);
+    float py = lift_field<float>((void*)(uintptr_t)begin, 4);
+    float x1 = px + dx;
+    float y1 = py + dy;
+
+    begin = lift_field<uint32_t>(pts, 4);
+    end   = lift_field<uint32_t>(pts, 8);
+    if (begin == 0 || (int32_t)(end - begin) >> 3 == 0) {
+        invalid_parameter();
+    }
+
+    uint32_t rect[4] = {0, 0, 0, 0};
+    void* r = ext_00414D30(rect, px, py, x1, y1);
+
+    lift_field<uint32_t>(self, 0xE0) = lift_field<uint32_t>(r, 0);
+    lift_field<uint32_t>(self, 0xE4) = lift_field<uint32_t>(r, 4);
+    lift_field<uint32_t>(self, 0xE8) = lift_field<uint32_t>(r, 8);
+    lift_field<uint32_t>(self, 0xEC) = lift_field<uint32_t>(r, 12);
+}
+} // namespace lift_0049E0D0

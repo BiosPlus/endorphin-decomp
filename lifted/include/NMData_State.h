@@ -18,10 +18,10 @@ struct NMData_State_Fields {
     // +0x80  uint32_t*                field_0x80  (evidence: 0x0049FC80)
     // +0x84  uint32_t*                field_0x84  (evidence: 0x0049FC80)
     // +0xD0  void*                    list_head  (evidence: 0x0049FCF0)
-    // +0xE0  float                    field_0xE0  (evidence: 0x0049AF70, 0x0049E000, 0x0049FAC0)
-    // +0xE4  float                    field_0xE4  (evidence: 0x0049AF70, 0x0049FAC0)
-    // +0xE8  float                    field_0xE8  (evidence: 0x0049AF70, 0x0049FAC0, 0x0049FB50)
-    // +0xEC  float                    field_0xEC  (evidence: 0x0049ABA0, 0x0049AF70, 0x0049FAC0, 0x0049FB50)
+    // +0xE0  float                    field_0xE0  (evidence: 0x0049AF70, 0x0049E000, 0x0049E0D0, 0x0049FAC0)
+    // +0xE4  float                    field_0xE4  (evidence: 0x0049AF70, 0x0049E0D0, 0x0049FAC0)
+    // +0xE8  float                    field_0xE8  (evidence: 0x0049AF70, 0x0049E0D0, 0x0049FAC0, 0x0049FB50)
+    // +0xEC  float                    field_0xEC  (evidence: 0x0049ABA0, 0x0049AF70, 0x0049E0D0, 0x0049FAC0, 0x0049FB50)
     // +0x10C void*                    field_0x10C  (evidence: 0x0049DF50) // CONFLICT: multiple definitions at +0x10C
     // +0x10C void*                    nameList  (evidence: 0x0049E860) // CONFLICT: multiple definitions at +0x10C
     // +0x11C void*                    overrideObj  (evidence: 0x0049E860)
