@@ -2938,3 +2938,38 @@ void __cdecl sub_006725F0(void** a, void** b, void** c) {
     compareAndSwap(a, b);
 }
 } // namespace lift_006725F0
+
+// [0x0067BA60]
+namespace lift_0067BA60 {
+// @name Vector3::buildBasisFromPair
+// @class Vector3
+// @summary Computes cross product of self and other, builds a 3x3 basis matrix, and passes it to ext_00694840.
+// @field Vector3 +0x00 float x
+// @field Vector3 +0x04 float y
+// @field Vector3 +0x08 float z
+
+
+extern void __thiscall ext_00694840(void* mat, void* self);
+
+void __thiscall sub_0067BA60(void* self, const void* other) {
+    float cx = lift_field<float>(self, 0x00);
+    float cy = lift_field<float>(self, 0x04);
+    float cz = lift_field<float>(self, 0x08);
+
+    float ax = lift_field<float>(other, 0x00);
+    float ay = lift_field<float>(other, 0x04);
+    float az = lift_field<float>(other, 0x08);
+
+    float cross_x = cy * az - cz * ay;
+    float cross_y = cz * ax - cx * az;
+    float cross_z = cx * ay - cy * ax;
+
+    float mat[9] = {
+        cx, cy, cz,
+        ax, ay, az,
+        cross_x, cross_y, cross_z
+    };
+
+    ext_00694840(mat, self);
+}
+} // namespace lift_0067BA60
