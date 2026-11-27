@@ -801,3 +801,21 @@ void fn_00729A00(uint32_t self) {
     }
 }
 } // namespace lift_00729A00
+
+// [0x007226A0]
+namespace lift_007226A0 {
+extern double ext_00722660(double a, double b, double c);
+extern double ext_00722720(double a, double b);
+extern const double mem_009967F0;
+extern const double mem_009967F8;
+
+// @name BlendPlusSignedSquareOverRange500
+// @summary Returns BlendTwoValuesOverRange100(a,b,c) + mulSquareDouble((a-500)*0.002, b>c ? 1000 : -1000).
+double fn_007226A0(double a, double b, double c) {
+    double sign = (b > c) ? 1000.0 : -1000.0;
+    double t = (a - mem_009967F0) * mem_009967F8;
+    double r = ext_00722720(t, sign);
+    double q = ext_00722660(a, b, c);
+    return q + r;
+}
+} // namespace lift_007226A0

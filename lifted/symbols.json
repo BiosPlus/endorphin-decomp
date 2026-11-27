@@ -74278,6 +74278,12 @@
     "summary": "Returns 0.5 * ((100 - a) * 0.01 * c + (100 + a) * 0.01 * b), a weighted blend of b and c with a in [-100, 100] (double return in ST0).",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x007226A0": {
+    "name": "BlendPlusSignedSquareOverRange500",
+    "signature": "double fn_007226A0(double a, double b, double c)",
+    "summary": "Returns BlendTwoValuesOverRange100(a,b,c) + mulSquareDouble((a-500)*0.002, b\u003ec ? 1000 : -1000).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00722720": {
     "name": "mulSquareDouble",
     "signature": "double sub_00722720(double a, double b)",
