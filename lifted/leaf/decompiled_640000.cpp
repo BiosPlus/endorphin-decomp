@@ -2522,3 +2522,79 @@ void fn_00640270(void* self, void* name) {
     ext_00640240(self, created);
 }
 } // namespace lift_00640270
+
+// [0x00645E20] sub_00645E20 (142 bytes)
+namespace lift_00645E20 {
+extern void ext_00645E20();
+extern int mem_00928EAC;
+extern int mem_0093BF24;
+extern int mem_0097D99C;
+extern int mem_0097D988;
+extern int mem_0097D954;
+
+// @name ConstructDefaultStateObject
+// @summary Initializes vtable pointers, zeroes integer state, and sets float fields to 1.0f/0.0f defaults (thiscall, no args).
+// @field Object +0x00 uint32_t vtable_0097D99C
+// @field Object +0x04 uint32_t vtable_0097D988
+// @field Object +0x08 uint32_t vtable_0097D954
+// @field Object +0x10 uint32_t field_0x10
+// @field Object +0x14 uint32_t field_0x14
+// @field Object +0x18 uint32_t field_0x18
+// @field Object +0x1c float field_0x1c
+// @field Object +0x20 float field_0x20
+// @field Object +0x24 float field_0x24
+// @field Object +0x28 float field_0x28
+// @field Object +0x2c float field_0x2c
+// @field Object +0x30 float field_0x30
+// @field Object +0x34 float field_0x34
+// @field Object +0x38 float field_0x38
+// @field Object +0x3c float field_0x3c
+// @field Object +0x40 float field_0x40
+// @field Object +0x44 float field_0x44
+// @field Object +0x48 float field_0x48
+// @field Object +0x4c float field_0x4c
+// @field Object +0x50 float field_0x50
+// @field Object +0x54 float field_0x54
+// @field Object +0x58 float field_0x58
+// @field Object +0x5c uint32_t field_0x5c
+// @field Object +0x60 uint32_t field_0x60
+void fn_00645E20(void* self) {
+    // The original asm wraps this body in an SEH frame (fs:[0] push/pop).
+    // That is compiler/runtime boilerplate and is not modeled here.
+    (void)&ext_00645E20;
+    (void)&mem_00928EAC;
+    (void)&mem_0093BF24;
+    (void)&mem_0097D99C;
+    (void)&mem_0097D988;
+    (void)&mem_0097D954;
+
+    // Vtable-slot stores. Values are the original VAs, written in the original order.
+    lift_field<uint32_t>(self, 0x04) = 0x00928EAC;
+    lift_field<uint32_t>(self, 0x08) = 0x0093BF24;
+    lift_field<float>(self, 0x1C) = 1.0f;
+    lift_field<float>(self, 0x20) = 0.0f;
+    lift_field<uint32_t>(self, 0x00) = 0x0097D99C;
+    lift_field<float>(self, 0x20) = 0.0f;
+    lift_field<uint32_t>(self, 0x04) = 0x0097D988;
+    lift_field<float>(self, 0x24) = 0.0f;
+    lift_field<uint32_t>(self, 0x08) = 0x0097D954;
+    lift_field<float>(self, 0x28) = 0.0f;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<float>(self, 0x2C) = 0.0f;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<uint32_t>(self, 0x5C) = 0;
+    lift_field<float>(self, 0x3C) = 0.0f;
+    lift_field<uint32_t>(self, 0x60) = 0;
+    lift_field<float>(self, 0x40) = 0.0f;
+    lift_field<float>(self, 0x48) = 0.0f;
+    lift_field<float>(self, 0x4C) = 0.0f;
+    lift_field<float>(self, 0x50) = 0.0f;
+    lift_field<float>(self, 0x54) = 0.0f;
+    lift_field<float>(self, 0x30) = 1.0f;
+    lift_field<float>(self, 0x44) = 1.0f;
+    lift_field<float>(self, 0x58) = 1.0f;
+}
+} // namespace lift_00645E20

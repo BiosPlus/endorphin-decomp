@@ -50719,6 +50719,12 @@
     "summary": "Sets a double field at offset +0x08 of a 24-byte element in a vector at +0x10/+0x14 after bounds checking",
     "lifted_path": "lifted/classes/MagnetJoint.cpp"
   },
+  "0x00645E20": {
+    "name": "ConstructDefaultStateObject",
+    "signature": "void fn_00645E20(void* self)",
+    "summary": "Initializes vtable pointers, zeroes integer state, and sets float fields to 1.0f/0.0f defaults (thiscall, no args).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00645EB0": {
     "name": "InitStringPairAndResetTail",
     "signature": "extern \"C\" void __fastcall fn_00645EB0(void* self)",
