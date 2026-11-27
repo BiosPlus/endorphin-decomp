@@ -1,0 +1,46 @@
+{
+  "va": "0x004C63F0",
+  "size": 147,
+  "orig_symbol": "NMData::ForceEventData::vfunc_84",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_84",
+  "class": "NMData::ForceEventData",
+  "signature": "extern \"C\" void __thiscall fn_004C63F0(void* self, int32_t frame)",
+  "summary": "Triggers force event update at frame field_0x15c and finalizes at field_0x15c + 3",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0xC",
+      "type": "Updateable",
+      "name": "updateable"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x188",
+      "type": "uint8_t",
+      "name": "field_0x188"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:48:40Z"
+}

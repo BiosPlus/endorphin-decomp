@@ -647,3 +647,41 @@ void __thiscall fn_004C52B0(void* self, float* p) {
     }
 }
 } // namespace lift_004C52B0
+
+// [0x004C63F0]
+namespace lift_004C63F0 {
+// @name NMData::ForceEventData::vfunc_84
+// @class NMData::ForceEventData
+// @summary Triggers force event update at frame field_0x15c and finalizes at field_0x15c + 3
+// @field NMData::ForceEventData +0x0C Updateable updateable
+// @field NMData::ForceEventData +0x15C int32_t field_0x15c
+// @field NMData::ForceEventData +0x17C uint8_t field_0x17c
+// @field NMData::ForceEventData +0x184 void* field_0x184
+// @field NMData::ForceEventData +0x188 uint8_t field_0x188
+
+
+extern int32_t __cdecl ext_00594000(void);
+extern void __thiscall ext_00528BF0(void* self, uint32_t a0, uint32_t a1, uint32_t a2);
+extern uint32_t __thiscall ext_00528BB0(void* self, uint32_t a0, uint32_t a1);
+extern void __thiscall ext_004C6250(void* self);
+
+extern void __thiscall fn_004C63F0(void* self, int32_t frame) {
+    if (frame == lift_field<int32_t>(self, 0x15C) &&
+        lift_field<uint8_t>(self, 0x188) == 0 &&
+        lift_field<uint8_t>(self, 0x17C) != 0 &&
+        lift_field<void*>(self, 0x184) != nullptr) {
+        uint32_t arg = static_cast<uint32_t>(ext_00594000()) + 0x168u;
+        void* updateable = static_cast<uint8_t*>(self) + 0x0C;
+        ext_00528BF0(updateable, 0x200u, 0u, arg);
+        ext_00528BB0(updateable, 0x200u, 0u);
+        ext_004C6250(lift_field<void*>(self, 0x184));
+        lift_field<uint8_t>(self, 0x188) = 1;
+    }
+
+    if (frame == lift_field<int32_t>(self, 0x15C) + 3 &&
+        lift_field<uint8_t>(self, 0x188) != 0) {
+        void* updateable = static_cast<uint8_t*>(self) + 0x0C;
+        ext_00528BB0(updateable, 0x200u, 1u);
+    }
+}
+} // namespace lift_004C63F0
