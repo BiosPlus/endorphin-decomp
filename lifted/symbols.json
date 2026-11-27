@@ -9173,6 +9173,12 @@
     "summary": "Constructor initializing two std::string fields by copy, two by default, and a uint8_t flag to 0",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x004765B0": {
+    "name": "sub_004765B0_ctor",
+    "signature": "void* __thiscall sub_004765B0(void* self, const void* arg1, const void* arg2, const void* arg3)",
+    "summary": "Constructor initializing four std::string fields (one default, three from arguments) and a bool flag at +0x70",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476630": {
     "name": "constructStdStringFromCStr",
     "signature": "extern \"C\" void* __cdecl fn_00476630(void* out, const char* s)",
@@ -21366,6 +21372,13 @@
     "class": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setUpperLimit(float), 0}\u003e",
     "signature": "extern void __stdcall fn_00512060(void** targetPtr, void* valueArg)",
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005120B0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor\u003e::vfunc_40",
+    "class": "ExprParser::ValuePtrType",
+    "signature": "void fn_005120B0(void* obj)",
+    "summary": "One-time guarded init of a static type-descriptor object; stores its address into obj+0x04 (stdcall, 1 arg).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00512130": {

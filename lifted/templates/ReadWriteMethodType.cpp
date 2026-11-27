@@ -10872,3 +10872,24 @@ void fn_004F69F0(void* obj) {
     lift_field<void*>(obj, 0x04) = reinterpret_cast<void*>(&mem_00AE9F0C);
 }
 } // namespace lift_004F69F0
+
+// [0x005120B0]
+namespace lift_005120B0 {
+// @name ExprParser::ReadWriteMethodType<Chromosome::Descriptor>::vfunc_40
+// @class ExprParser::ValuePtrType
+// @summary One-time guarded init of a static type-descriptor object; stores its address into obj+0x04 (stdcall, 1 arg).
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AEBE10;
+extern DWORD mem_00AEBE0C;
+
+void fn_005120B0(void* obj) {
+    if ((mem_00AEBE10 & 1u) == 0) {
+        mem_00AEBE10 |= 1u;
+        ext_0067A670(&mem_00AEBE0C, 0);
+        mem_00AEBE0C = 0x00951804;
+    }
+    lift_field<void*>(obj, 0x04) = &mem_00AEBE0C;
+}
+} // namespace lift_005120B0

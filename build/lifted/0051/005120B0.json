@@ -1,0 +1,22 @@
+{
+  "va": "0x005120B0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setUpperLimit(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor\u003e::vfunc_40",
+  "class": "ExprParser::ValuePtrType",
+  "signature": "void fn_005120B0(void* obj)",
+  "summary": "One-time guarded init of a static type-descriptor object; stores its address into obj+0x04 (stdcall, 1 arg).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:23:54Z"
+}
