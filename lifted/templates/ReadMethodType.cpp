@@ -184649,3 +184649,55 @@ void fn_00625240(void* self, void* ctx, void* arg) {
     reinterpret_cast<ForwardFn>(lift_field<void*>(nextVtable, 0xAC))(next, ctx, arg);
 }
 } // namespace lift_00625240
+
+// [0x005B3810] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_43 (164 bytes)
+namespace lift_005B3810 {
+// Known callee 0x006720E0 (43B): thiscall helper; initializes the handle slot at self from value.
+extern void ext_006720E0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of other into self; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object at self).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException).
+extern void ext_006A6DD2(void);
+
+// @name ExprParser::ReadMethodType::vfunc_43 (Geometry::getFileName)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Reads the value from the held inner object via vtable slot 8, stores it into a temporary handle, copies that handle into self via ext_0041CF50, releases the temporary, then forwards to self's sub-object vfunc_43 with (self, arg). Throws DerivedException if the held pointer is null.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00 (held object pointer; dereferenced for its +0x0C sub-object)
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04 (handle object; receives the copy and is the vfunc_43 receiver)
+uint32_t fn_005B3810(void* self, void* arg) {
+    void* obj = lift_field<void*>(self, 0x00);
+    if (!obj) {
+        alignas(8) uint8_t exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();  // throws DerivedException (typeinfo 0x009DEC1C); does not return
+        return 0;
+    }
+
+    // inner = obj->+0x0C; value = inner->vtable[8]()
+    void* inner = lift_field<void*>(obj, 0x0C);
+    void** inner_vt = *reinterpret_cast<void***>(inner);
+    auto vfunc_8 = reinterpret_cast<uint32_t(__thiscall*)(void*)>(inner_vt[8]);
+    uint32_t value = vfunc_8(inner);
+
+    // Temporary {field_0x00, field_0x04}; field_0x04 receives the handle built from value.
+    void* tmp[2] = {nullptr, nullptr};
+    ext_006720E0(&tmp[1], value);
+
+    ext_0041CF50(self, tmp);
+
+    // Release the temporary handle (vtable slot 30 with out-pointer to tmp[0]).
+    if (tmp[1]) {
+        void** tvt = *reinterpret_cast<void***>(tmp[1]);
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void**)>(tvt[30]);
+        release(tmp[1], &tmp[0]);
+    }
+
+    // Forward to child = self->+0x04; return child->vtable[43](child, self, arg).
+    void* child = lift_field<void*>(self, 0x04);
+    void** cvt = *reinterpret_cast<void***>(child);
+    auto vfunc_43 = reinterpret_cast<uint32_t(__thiscall*)(void*, void*, void*)>(cvt[43]);
+    return vfunc_43(child, self, arg);
+}
+} // namespace lift_005B3810
