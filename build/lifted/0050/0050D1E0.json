@@ -1,0 +1,81 @@
+{
+  "va": "0x0050D1E0",
+  "size": 148,
+  "orig_symbol": "sub_0050D1E0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "init_0050D1E0",
+  "signature": "void* __thiscall fn_0050D1E0(void* self)",
+  "summary": "Constructor initializing vtables, embedded subobject at +0x10, and fields +0x28..+0x34",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_0"
+    },
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vtable_4"
+    },
+    {
+      "class": "self",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "vtable_8"
+    },
+    {
+      "class": "self",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "subobj_vtable"
+    },
+    {
+      "class": "self",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "self",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "self",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "self",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "self",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "self",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "self",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:06:38Z"
+}

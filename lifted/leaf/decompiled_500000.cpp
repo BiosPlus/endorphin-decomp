@@ -2913,3 +2913,53 @@ void* fn_00508D30(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4
 }
 } // namespace lift_004BA0D0
 } // namespace lift_00508D30
+
+// [0x0050D1E0]
+namespace lift_0050D1E0 {
+// @name init_0050D1E0
+// @summary Constructor initializing vtables, embedded subobject at +0x10, and fields +0x28..+0x34
+// @field self +0x00 uint32_t vtable_0
+// @field self +0x04 uint32_t vtable_4
+// @field self +0x08 uint32_t vtable_8
+// @field self +0x10 uint32_t subobj_vtable
+// @field self +0x18 uint32_t field_0x18
+// @field self +0x1c uint32_t field_0x1c
+// @field self +0x20 uint32_t field_0x20
+// @field self +0x28 uint32_t field_0x28
+// @field self +0x2c uint32_t field_0x2c
+// @field self +0x30 uint32_t field_0x30
+// @field self +0x34 uint32_t field_0x34
+
+
+void __thiscall ext_00661980(void* self);
+void __thiscall ext_005087F0(void* self, uint32_t arg);
+
+void* __thiscall fn_0050D1E0(void* self) {
+    ext_00661980(self);
+
+    lift_field<uint32_t>(self, 0x04) = 0x00928EFCu;
+    lift_field<uint32_t>(self, 0x08) = 0x0094F984u;
+
+    void* subobj = static_cast<uint8_t*>(self) + 0x10;
+
+    lift_field<uint32_t>(self, 0x00) = 0x009503FCu;
+    lift_field<uint32_t>(self, 0x04) = 0x009503D0u;
+    lift_field<uint32_t>(self, 0x08) = 0x009503C4u;
+
+    ext_00661980(subobj);
+
+    lift_field<uint32_t>(subobj, 0x00) = 0x0095036Cu;
+    lift_field<uint32_t>(subobj, 0x08) = 0;
+    lift_field<uint32_t>(subobj, 0x0C) = 0;
+    lift_field<uint32_t>(subobj, 0x10) = 0;
+
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+
+    ext_005087F0(self, 0);
+
+    return self;
+}
+} // namespace lift_0050D1E0

@@ -22871,6 +22871,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0050C770 (NMData::Task::~Task (scalar deleting destructor)).",
     "lifted_path": "lifted/NMData/TaskTemplate.cpp"
   },
+  "0x0050D1E0": {
+    "name": "init_0050D1E0",
+    "signature": "void* __thiscall fn_0050D1E0(void* self)",
+    "summary": "Constructor initializing vtables, embedded subobject at +0x10, and fields +0x28..+0x34",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050D280": {
     "name": "NMData::TaskManager::vfunc_0_off_4",
     "class": "NMData::TaskManager",
@@ -23286,6 +23292,13 @@
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1\u003e",
     "signature": "float fn_00512A00(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType\u003cNMData::TriggeredEventData\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00512A70": {
+    "name": "ExprParser::ReadMethodType_getTypicalMutationRate::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::string, getTypicalMutationRate, 1\u003e",
+    "signature": "int32_t __thiscall fn_00512A70(void* self, void* arg0)",
+    "summary": "Parses a string value from arg0 as a float, rounds to nearest int, and returns it.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00512B10": {
