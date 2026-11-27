@@ -1,0 +1,28 @@
+{
+  "va": "0x00493970",
+  "size": 52,
+  "orig_symbol": "sub_00493970",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "ResetPtrFieldsAfterDispatch",
+  "class": "Unknown",
+  "signature": "void fn_00493970(void* self)",
+  "summary": "Passes self's +0x4 pointer and its dereferenced value to ext_004935F0, forwards the +0x4 value to ext_006A5C5C, then zeroes self+0x4 and self+0x8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:13:10Z"
+}

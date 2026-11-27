@@ -2594,3 +2594,30 @@ uint32_t fn_0049EE60(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t
     return a2;
 }
 } // namespace lift_0049EE60
+
+// [0x00493970] sub_00493970 (52 bytes)
+namespace lift_00493970 {
+// Stack-argument layout of the call at 0x00493986 (ecx = self is passed as the leading argument here).
+extern void ext_004935F0(void* self, void* out, DWORD value, void* self2, void* ptr);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(DWORD arg);
+
+// @name ResetPtrFieldsAfterDispatch
+// @class Unknown
+// @summary Passes self's +0x4 pointer and its dereferenced value to ext_004935F0, forwards the +0x4 value to ext_006A5C5C, then zeroes self+0x4 and self+0x8.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+void fn_00493970(void* self) {
+    DWORD local[2] = {0, 0};
+    DWORD* fields = reinterpret_cast<DWORD*>(self);
+    DWORD* ptr = reinterpret_cast<DWORD*>(fields[1]);
+    DWORD value = *ptr;
+
+    ext_004935F0(self, local, value, self, reinterpret_cast<void*>(ptr));
+
+    ext_006A5C5C(fields[1]);
+
+    fields[1] = 0;
+    fields[2] = 0;
+}
+} // namespace lift_00493970
