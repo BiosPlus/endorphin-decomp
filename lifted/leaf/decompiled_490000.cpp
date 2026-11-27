@@ -2436,3 +2436,23 @@ extern void __thiscall fn_0049D050(void* self, uint32_t n) {
     lift_field<uint32_t>(self, 0x08) = current + n;
 }
 } // namespace lift_0049D050
+
+// [0x00492480] sub_00492480 (157 bytes)
+namespace lift_00492480 {
+extern uint8_t __cdecl ext_0056B670(double a, double b, double c);
+
+// @name CheckFourComponentsWithinTolerance
+// @class <ClassName> (optional)
+// @summary Calls ext_0056B670 for each of four float components of self against the four float args, using the double arg as the shared third parameter; returns 1 only if all four calls return nonzero.
+// @field <ClassName> +0x00 float field_0x00
+// @field <ClassName> +0x04 float field_0x04
+// @field <ClassName> +0x08 float field_0x08
+// @field <ClassName> +0x0C float field_0x0C
+extern uint8_t __thiscall fn_00492480(void* self, float a0, float a1, float a2, float a3, double e) {
+    if (!ext_0056B670(lift_field<float>(self, 0x00), a0, e)) return 0;
+    if (!ext_0056B670(lift_field<float>(self, 0x04), a1, e)) return 0;
+    if (!ext_0056B670(lift_field<float>(self, 0x08), a2, e)) return 0;
+    if (!ext_0056B670(lift_field<float>(self, 0x0C), a3, e)) return 0;
+    return 1;
+}
+} // namespace lift_00492480
