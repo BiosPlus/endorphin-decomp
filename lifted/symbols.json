@@ -8616,6 +8616,13 @@
     "summary": "Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046E7B0": {
+    "name": "ExprParser::ReadWriteMethodType::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ImageExporter::getDestination(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall ImageExporter::setDestination(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_0046E7B0(void* arg1, void* arg2)",
+    "summary": "Forwards a string value from arg2 through slot 4 into the target object held by arg1 (ImageExporter::setDestination path); throws a fixed exception if the target is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0046E840": {
     "name": "ExprParser::ReadWriteMethodType\u003cImageExporter, getDestination, setDestination\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType",

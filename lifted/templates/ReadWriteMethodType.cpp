@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <cstring>
 #include <cstddef>
+#include <string>
 
 // [0x0066EBA0] ExprParser::ReadWriteMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, float, &public: void __thiscall NM::Vector3::setX(float)>::vfunc_41 (62 bytes)
 namespace lift_0066EBA0 {
@@ -18081,3 +18082,52 @@ uint32_t fn_00488480(void* const* holder, const void* arg2) {
     return result;
 }
 } // namespace lift_00488480
+
+// [0x0046E7B0] ExprParser::ReadWriteMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall ImageExporter::setDestination(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_0046E7B0 {
+// Known callee 0x0046C060: sub_0046C060 (This-adjustor thunk: adjusts `this` by +0x28 and forwards through mem_00924FDC.)
+extern void ext_0046C060(void* self, void* arg);
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern void* ext_0046E780(void* self, void* a1, void* a2, void* a3);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// IAT slot for MSVCP80 std::string destructor (called on the local string at scope exit).
+extern int mem_00924FF4;
+
+// Original VA of the RTTI ThrowInfo pushed before the exception object.
+static constexpr uint32_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall ImageExporter::setDestination(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Forwards a string value from arg2 through slot 4 into the target object held by arg1 (ImageExporter::setDestination path); throws a fixed exception if the target is null.
+// @field ExprParser::ReadWriteMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_0046E7B0(void* arg1, void* arg2) {
+    // arg1 -> holder whose first word is the target object pointer.
+    void* target = lift_field<void*>(arg1, 0x00);
+
+    if (target == nullptr) {
+        // Null target: construct the fixed-message exception and throw it.
+        alignas(8) unsigned char excStorage[0x40] = {};
+        ext_0046C3C0(excStorage);
+        ext_006A6DD2(excStorage,
+                     reinterpret_cast<const void*>(static_cast<uintptr_t>(kThrowInfoVA)));
+        return;
+    }
+
+    // arg2 -> source record; word at +4 is the inner object that slot 4 is invoked on.
+    void* inner = lift_field<void*>(arg2, 0x04);
+
+    // Local string receiving the slot-4 result (was the stack buffer at esp+0x0c).
+    std::string tmp;
+    void* result = ext_0046E780(inner, &tmp, arg2, arg1);
+
+    // Forward the result to the target's setter (thunk adjusts `this` by +0x28).
+    ext_0046C060(target, result);
+
+    // The std::string destructor (IAT slot mem_00924FF4) runs implicitly when `tmp` leaves scope.
+    (void)&mem_00924FF4;
+}
+} // namespace lift_0046E7B0
