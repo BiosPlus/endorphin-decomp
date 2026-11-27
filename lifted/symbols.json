@@ -80617,6 +80617,12 @@
     "summary": "Adds delta to *counter; if the result exceeds limit, reports via ext_007D5950 and returns 0, otherwise stores the sum and returns old + bias.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D7990": {
+    "name": "ScaleDivOrFillU32Array",
+    "signature": "void fn_007D7990(uint32_t* dst, [[maybe_unused]] uint32_t a2, [[maybe_unused]] uint32_t a3, void* params, uint32_t divisor, const uint32_t* src, [[maybe_unused]] uint32_t a7, [[maybe_unused]] uint32_t a8, uint32_t count, uint32_t a10)",
+    "summary": "Mode 0 writes dst[i] = (src[i] * params.field_0x14) / divisor (0 when divisor is 0); mode 1 fills dst with params.field_0x18; other modes call ext_007D5950 as an error report.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D7A20": {
     "name": "sub_007D7A20",
     "signature": "extern \"C\" void* __cdecl fn_007D7A20(void)",

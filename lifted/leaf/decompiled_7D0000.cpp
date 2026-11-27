@@ -1497,3 +1497,55 @@ extern void* sub_007D62D0(void* self, int32_t new_size) {
     return lift_field<void*>(self, 0x00);
 }
 } // namespace lift_007D62D0
+
+// [0x007D7990] sub_007D7990 (135 bytes)
+namespace lift_007D7990 {
+extern void ext_007D5950(uint32_t a0, uint32_t a1, uint32_t a2);
+
+// @name ScaleDivOrFillU32Array
+// @summary Mode 0 writes dst[i] = (src[i] * params.field_0x14) / divisor (0 when divisor is 0); mode 1 fills dst with params.field_0x18; other modes call ext_007D5950 as an error report.
+// @field ScaleFillParams +0x10 uint32_t field_0x10
+// @field ScaleFillParams +0x14 uint32_t field_0x14
+// @field ScaleFillParams +0x18 uint32_t field_0x18
+void fn_007D7990(uint32_t* dst,
+                 [[maybe_unused]] uint32_t a2,
+                 [[maybe_unused]] uint32_t a3,
+                 void* params,
+                 uint32_t divisor,
+                 const uint32_t* src,
+                 [[maybe_unused]] uint32_t a7,
+                 [[maybe_unused]] uint32_t a8,
+                 uint32_t count,
+                 uint32_t a10) {
+    const uint32_t mode = lift_field<uint32_t>(params, 0x10);
+
+    if (mode == 0) {
+        if (count == 0) {
+            return;
+        }
+        const uint32_t scale = lift_field<uint32_t>(params, 0x14);
+        for (uint32_t i = 0; i < count; ++i) {
+            if (divisor == 0) {
+                dst[i] = 0;
+            } else {
+                const uint32_t product = src[i] * scale;
+                dst[i] = product / divisor;
+            }
+        }
+        return;
+    }
+
+    if (mode == 1) {
+        if (count == 0) {
+            return;
+        }
+        const uint32_t fill = lift_field<uint32_t>(params, 0x18);
+        for (uint32_t i = 0; i < count; ++i) {
+            dst[i] = fill;
+        }
+        return;
+    }
+
+    ext_007D5950(0u, a10, 0x0099E03Cu);
+}
+} // namespace lift_007D7990

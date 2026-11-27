@@ -1,0 +1,33 @@
+{
+  "va": "0x007D7990",
+  "size": 135,
+  "orig_symbol": "sub_007D7990",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "ScaleDivOrFillU32Array",
+  "signature": "void fn_007D7990(uint32_t* dst, [[maybe_unused]] uint32_t a2, [[maybe_unused]] uint32_t a3, void* params, uint32_t divisor, const uint32_t* src, [[maybe_unused]] uint32_t a7, [[maybe_unused]] uint32_t a8, uint32_t count, uint32_t a10)",
+  "summary": "Mode 0 writes dst[i] = (src[i] * params.field_0x14) / divisor (0 when divisor is 0); mode 1 fills dst with params.field_0x18; other modes call ext_007D5950 as an error report.",
+  "fields": [
+    {
+      "class": "ScaleFillParams",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "ScaleFillParams",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "ScaleFillParams",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:27:08Z"
+}
