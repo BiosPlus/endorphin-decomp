@@ -65290,6 +65290,13 @@
     "summary": "Sets the vftable pointer at +0x00 to 0x00991744 and returns this.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B1840": {
+    "name": "GWCHotKeyPropertiesFactory::vfunc_1",
+    "class": "GWCHotKeyPropertiesFactory",
+    "signature": "extern \"C\" void* __thiscall fn_006B1840(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Creates a hot key properties object if the type ID matches 0x12C and initializes it via vfunc_5.",
+    "lifted_path": "lifted/classes/GWCHotKeyPropertiesFactory.cpp"
+  },
   "0x006B18E0": {
     "name": "GWCDateTimePropertiesFactory::vfunc_0",
     "class": "GWCDateTimePropertiesFactory",
