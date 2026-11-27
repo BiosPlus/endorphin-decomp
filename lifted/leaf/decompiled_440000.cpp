@@ -2377,3 +2377,41 @@ int fn_004490F0(void* self) {
     return value;
 }
 } // namespace lift_004490F0
+
+// [0x00449160] sub_00449160 (109 bytes)
+namespace lift_00449160 {
+// @name sub_00449160
+// @summary Auto-lifted identical-shape clone of 0x004490F0 (readIntFromSubobject).
+namespace lift_004490F0 {
+// Known callee 0x006A5F4A: thunk_MFC80_ord_3761 (IAT jump thunk forwarding to MFC80!ord_3761.)
+extern void ext_006A5F4A();
+// IAT slots (hold import addresses at runtime; not data constants).
+extern void* mem_009242FC;  // MFC80!ord_310  (string construct)
+extern void* mem_00924300;  // MFC80!ord_876  (string -> const char*)
+extern void* mem_009251E4;  // MSVCR80!atoi
+extern void* mem_009242F4;  // MFC80!ord_578  (string destruct)
+
+// @name readIntFromSubobject
+// @class Unknown
+// @summary Fetches a string through thunk_MFC80_ord_3761 from the subobject at self+0x78 into a temporary string and returns atoi() of it.
+// @field Unknown +0x78 void* field_0x78
+int fn_00449160(void* self) {
+    // Opaque storage for the temporary MFC string; real layout/size not recovered.
+    // The original MSVC SEH frame (fs:[0] push/restore, state word) is compiler scaffolding and is omitted.
+    alignas(16) unsigned char tmp[32] = {};
+    auto* subobject = static_cast<unsigned char*>(self) + 0xD0;
+
+    using Fn0 = void (*)(void* self);
+    using Fn1 = void (*)(void* self, void* out);
+    using StrFn = const char* (*)(void* self);
+    using AtoiFn = int (*)(const char*);
+
+    reinterpret_cast<Fn0>(mem_009242FC)(tmp);
+    reinterpret_cast<Fn1>(&ext_006A5F4A)(subobject, tmp);
+    const char* text = reinterpret_cast<StrFn>(mem_00924300)(tmp);
+    int value = reinterpret_cast<AtoiFn>(mem_009251E4)(text);
+    reinterpret_cast<Fn0>(mem_009242F4)(tmp);
+    return value;
+}
+} // namespace lift_004490F0
+} // namespace lift_00449160
