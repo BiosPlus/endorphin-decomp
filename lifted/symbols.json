@@ -9675,6 +9675,13 @@
     "summary": "Decrements an RB-tree iterator to the previous node in-order, invoking _invalid_parameter_noinfo on invalid state.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046A970": {
+    "name": "_Tree::insertAt",
+    "class": "_Tree",
+    "signature": "extern \"C\" void** __thiscall fn_0046A970(void* this_, void** ret, bool addLeft, void* whereP, const void* val)",
+    "summary": "RB-tree insert of a new node beside 'where' (left if addLeft), rebalance, return iterator; throws length_error when too large.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046AC30": {
     "name": "sub_0046AC30",
     "signature": "extern \"C\" void fn_0046AC30(void)",

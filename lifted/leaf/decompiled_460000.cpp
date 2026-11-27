@@ -2789,3 +2789,106 @@ extern TreeIter* __thiscall fn_0046A810(void* self, TreeIter* ret, void* firstCo
     return ret;
 }
 } // namespace lift_0046A810
+
+// [0x0046A970]
+namespace lift_0046A970 {
+extern void ext_006A6DD2(void);
+extern void __thiscall ext_0046A8E0(void* this_);
+extern void* __stdcall ext_0046A490(void* larg, void* parent, void* rarg, const void* val, int color);
+extern void __thiscall ext_0046A370(void* this_, void* node);
+extern void __thiscall ext_00475060(void* this_, void* node);
+extern uint8_t mem_0088F4C2;
+extern uint8_t mem_0092C530;
+extern uint8_t mem_00924FE4;
+extern uint8_t mem_009251C4;
+extern uint8_t mem_00928ECC;
+extern uint8_t mem_00924FE0;
+extern uint8_t mem_009CDF20;
+extern uint8_t mem_00928ED8;
+
+// @name _Tree::insertAt
+// @class _Tree
+// @summary RB-tree insert of a new node beside 'where' (left if addLeft), rebalance, return iterator; throws length_error when too large.
+// @field _Tree +0x04 void* head
+// @field _Tree +0x08 uint32_t size
+namespace {
+struct Node {
+    Node* left;
+    Node* parent;
+    Node* right;
+    uint32_t pad;
+    uint8_t color;
+    uint8_t isnil;
+};
+}
+
+extern void** __thiscall fn_0046A970(void* this_, void** ret, bool addLeft, void* whereP, const void* val) {
+    uint8_t* self = (uint8_t*)this_;
+    (void)&ext_0046A8E0; // listed callee, but not called in this function's bytes
+    if (lift_field<uint32_t>(self, 0x8) >= 0x3FFFFFFEu) {
+        (void)&mem_0088F4C2; (void)&mem_0092C530; (void)&mem_00924FE4;
+        (void)&mem_009251C4; (void)&mem_00928ECC; (void)&mem_00924FE0;
+        (void)&mem_009CDF20; (void)&mem_00928ED8;
+        ext_006A6DD2();
+    }
+    Node* where = (Node*)whereP;
+    Node*& head = *(Node**)(self + 0x4);
+    Node* nn = (Node*)ext_0046A490(head, where, head, val, 0);
+    lift_field<uint32_t>(self, 0x8) += 1;
+    if (where == head) {
+        head->parent = nn;
+        head->left = nn;
+        head->right = nn;
+    } else if (addLeft) {
+        where->left = nn;
+        if (where == head->left) head->left = nn;
+    } else {
+        where->right = nn;
+        if (where == head->right) head->right = nn;
+    }
+    Node* x = nn;
+    while (x->parent->color == 0) {
+        Node* p = x->parent;
+        Node* g = p->parent;
+        if (p == g->left) {
+            Node* y = g->right;
+            if (y->color == 0) {
+                p->color = 1; y->color = 1;
+                x->parent->parent->color = 0;
+                x = x->parent->parent;
+            } else {
+                if (x == p->right) { x = p; ext_0046A370(this_, x); }
+                x->parent->color = 1;
+                x->parent->parent->color = 0;
+                ext_00475060(this_, x->parent->parent);
+            }
+        } else {
+            Node* y = g->left;
+            if (y->color == 0) {
+                p->color = 1; y->color = 1;
+                x->parent->parent->color = 0;
+                x = x->parent->parent;
+            } else {
+                if (x == p->left) { x = p; ext_00475060(this_, x); }
+                x->parent->color = 1;
+                x->parent->parent->color = 0;
+                // inline rotate left on grandparent
+                Node* w = x->parent->parent;
+                Node* r = w->right;
+                w->right = r->left;
+                if (!r->left->isnil) r->left->parent = w;
+                r->parent = w->parent;
+                if (w == head->parent) head->parent = r;
+                else if (w == w->parent->left) w->parent->left = r;
+                else w->parent->right = r;
+                r->left = w;
+                w->parent = r;
+            }
+        }
+    }
+    head->parent->color = 1;
+    ret[1] = nn;
+    ret[0] = this_;
+    return ret;
+}
+} // namespace lift_0046A970
