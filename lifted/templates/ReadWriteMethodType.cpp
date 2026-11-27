@@ -11905,3 +11905,29 @@ void fn_005B3170(void* holder) {
     lift_field<uint32_t>(holder, 0x04) = 0x00B43544u;
 }
 } // namespace lift_005B3170
+
+// [0x005B8870] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B8870 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B43D18;
+extern DWORD mem_00B43D14;
+
+// @name ReadWriteMethodType<MetaBodyData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const &), 0}>
+// @summary One-time static-init guard: initializes the static accessor object at mem_00B43D14 once, then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType +0x04 DWORD field_0x04
+void fn_005B8870(void* holder) {
+    // Static-init guard: run the one-time setup only on first call.
+    if ((mem_00B43D18 & 1u) == 0) {
+        mem_00B43D18 |= 1u;
+        // Zero the first DWORD of the static accessor object via the callee.
+        (void)ext_0067A670(&mem_00B43D14, 0u);
+        // Install the accessor's vtable pointer.
+        mem_00B43D14 = 0x0096252Cu;
+    }
+    // holder+0x04 = address of the static accessor object (same on both paths).
+    lift_field<DWORD>(holder, 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B43D14));
+}
+} // namespace lift_005B8870

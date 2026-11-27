@@ -1,0 +1,22 @@
+{
+  "va": "0x005B8870",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType\u003cMetaBodyData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const \u0026), 0}\u003e",
+  "signature": "void fn_005B8870(void* holder)",
+  "summary": "One-time static-init guard: initializes the static accessor object at mem_00B43D14 once, then stores its address into holder+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:44:34Z"
+}
