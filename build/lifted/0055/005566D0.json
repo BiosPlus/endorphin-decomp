@@ -1,0 +1,33 @@
+{
+  "va": "0x005566D0",
+  "size": 110,
+  "orig_symbol": "sub_005566D0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "destroyStringArray_005566D0",
+  "signature": "void fn_005566D0(void* begin, void* end)",
+  "summary": "Destroys each 0x54-byte element in [begin, end) by calling the IAT-bound std::string destructor on its three string members (+0x38, +0x1C, +0x00), in that order.",
+  "fields": [
+    {
+      "class": "Elem54",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Elem54",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Elem54",
+      "offset": "+0x38",
+      "type": "std::string",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:00:19Z"
+}

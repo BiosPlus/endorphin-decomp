@@ -1698,3 +1698,34 @@ extern void* fn_00554140(uint32_t count) {
     return ext_006A5C62(count * 60u);
 }
 } // namespace lift_00554140
+
+// [0x005566D0] sub_005566D0 (110 bytes)
+namespace lift_005566D0 {
+extern int mem_00924FF4;  // .idata IAT slot: MSVCP80 std::basic_string<char> dtor
+
+// @name destroyStringArray_005566D0
+// @summary Destroys each 0x54-byte element in [begin, end) by calling the IAT-bound std::string destructor on its three string members (+0x38, +0x1C, +0x00), in that order.
+// @field Elem54 +0x00 std::string field_0x00
+// @field Elem54 +0x1C std::string field_0x1C
+// @field Elem54 +0x38 std::string field_0x38
+using StringDtorFn = void (*)(void*);
+
+void fn_005566D0(void* begin, void* end) {
+    auto* first = static_cast<uint8_t*>(begin);
+    auto* last = static_cast<uint8_t*>(end);
+    if (first == last) {
+        return;
+    }
+
+    // call dword ptr [0x924ff4] : read the IAT slot value as the dtor address
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(*reinterpret_cast<const uint32_t*>(&mem_00924FF4)));
+
+    do {
+        dtor(first + 0x38);  // lea ecx, [esi+0x38]
+        dtor(first + 0x1C);  // lea ecx, [esi+0x1c]
+        dtor(first);         // mov ecx, esi
+        first += 0x54;       // add esi, 0x54
+    } while (first != last);
+}
+} // namespace lift_005566D0

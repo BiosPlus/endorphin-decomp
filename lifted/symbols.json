@@ -26095,6 +26095,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00510830 (CopyRangeBackwardAndComputeDestBegin).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005566D0": {
+    "name": "destroyStringArray_005566D0",
+    "signature": "void fn_005566D0(void* begin, void* end)",
+    "summary": "Destroys each 0x54-byte element in [begin, end) by calling the IAT-bound std::string destructor on its three string members (+0x38, +0x1C, +0x00), in that order.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005567D0": {
     "name": "destroyStringRange",
     "signature": "void fn_005567D0(void* first, void* last)",
