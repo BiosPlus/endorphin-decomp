@@ -1,0 +1,13 @@
+{
+  "va": "0x00571E20",
+  "size": 95,
+  "orig_symbol": "sub_00571E20",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "OnceInitStatic_00B3C15C",
+  "signature": "void* fn_00571E20()",
+  "summary": "One-time guarded initializer: on first call sets bit 0 of mem_00B3C178, calls ext_00662610(\u0026mem_00B3C15C, 0x00A856F8) and ext_006A6C87(0x0091C8F0); always returns \u0026mem_00B3C15C. The MSVC SEH frame (fs:[0] push/restore) is runtime exception plumbing and is not modeled.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:29:44Z"
+}

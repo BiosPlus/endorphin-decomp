@@ -2427,3 +2427,22 @@ void fn_0057E740(void* begin, uint32_t count, void* arg) {
     ext_006A6DD2(nullptr, nullptr);
 }
 } // namespace lift_0057E740
+
+// [0x00571E20] sub_00571E20 (95 bytes)
+namespace lift_00571E20 {
+extern void ext_00662610(void* obj, uint32_t arg);
+extern void ext_006A6C87(uint32_t arg);
+extern int mem_00B3C178;
+extern int mem_00B3C15C;
+
+// @name OnceInitStatic_00B3C15C
+// @summary One-time guarded initializer: on first call sets bit 0 of mem_00B3C178, calls ext_00662610(&mem_00B3C15C, 0x00A856F8) and ext_006A6C87(0x0091C8F0); always returns &mem_00B3C15C. The MSVC SEH frame (fs:[0] push/restore) is runtime exception plumbing and is not modeled.
+void* fn_00571E20() {
+    if ((mem_00B3C178 & 1) == 0) {
+        mem_00B3C178 |= 1;
+        ext_00662610(&mem_00B3C15C, 0x00A856F8u);
+        ext_006A6C87(0x0091C8F0u);
+    }
+    return &mem_00B3C15C;
+}
+} // namespace lift_00571E20
