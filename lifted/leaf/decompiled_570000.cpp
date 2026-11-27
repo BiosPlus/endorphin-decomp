@@ -2573,3 +2573,23 @@ void __thiscall fn_0057DCE0(void* self, const void* src) {
     ext_0057D9C0(self, tmp_slot, self, end, src);
 }
 } // namespace lift_0057DCE0
+
+// [0x00575E30] sub_00575E30 (95 bytes)
+namespace lift_00575E30 {
+extern void ext_00662610(void* a, const void* b);
+extern void ext_006A6C87(const void* a);
+extern int mem_00B3CDF8;
+extern int mem_00B3CDDC;
+
+// @name sub_00575E30 (one-time guarded initializer)
+// @summary Runs a one-time initialization guarded by bit 0 of mem_00B3CDF8, then returns &mem_00B3CDDC.
+// (The original SEH frame / try-state bookkeeping around the calls is dropped; it is boilerplate.)
+void* fn_00575E30(void) {
+    if ((mem_00B3CDF8 & 1) == 0) {
+        mem_00B3CDF8 |= 1;
+        ext_00662610(&mem_00B3CDDC, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A4320Cu)));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x0091CC00u)));
+    }
+    return &mem_00B3CDDC;
+}
+} // namespace lift_00575E30

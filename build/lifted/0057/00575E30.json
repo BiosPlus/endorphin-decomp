@@ -1,0 +1,13 @@
+{
+  "va": "0x00575E30",
+  "size": 95,
+  "orig_symbol": "sub_00575E30",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_00575E30 (one-time guarded initializer)",
+  "signature": "void* fn_00575E30(void)",
+  "summary": "Runs a one-time initialization guarded by bit 0 of mem_00B3CDF8, then returns \u0026mem_00B3CDDC.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:32:25Z"
+}
