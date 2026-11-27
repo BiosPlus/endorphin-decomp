@@ -1,0 +1,52 @@
+{
+  "va": "0x00603230",
+  "size": 121,
+  "orig_symbol": "sub_00603230",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "ClampedRateDispatch",
+  "class": "(none)",
+  "signature": "void __thiscall fn_00603230(void* self)",
+  "summary": "Calls vtbl[8] on the object at self+0x04 (arg self+0x34) and computes x = result - self+0x2C, stores x to self+0x30, then clamps -x*self+0x4C into [-self+0x50, self+0x50] and dispatches it through vtbl[4]; then dispatches self+0x2C through vtbl[5].",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "self",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "self",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "self",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "self",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "self",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:16:55Z"
+}

@@ -1351,3 +1351,43 @@ void* fn_0060C360(void* self, const void* other) {
     return self;
 }
 } // namespace lift_0060C360
+
+// [0x00603230] sub_00603230 (121 bytes)
+namespace lift_00603230 {
+// @name ClampedRateDispatch
+// @class (none)
+// @summary Calls vtbl[8] on the object at self+0x04 (arg self+0x34) and computes x = result - self+0x2C, stores x to self+0x30, then clamps -x*self+0x4C into [-self+0x50, self+0x50] and dispatches it through vtbl[4]; then dispatches self+0x2C through vtbl[5].
+// @field self +0x04 void* field_0x04
+// @field self +0x2C float field_0x2c
+// @field self +0x30 float field_0x30
+// @field self +0x34 uint32_t field_0x34
+// @field self +0x4C float field_0x4c
+// @field self +0x50 float field_0x50
+void __thiscall fn_00603230(void* self) {
+    using GetFn = float(__thiscall*)(void*, uint32_t);
+    using SetFn = void(__thiscall*)(void*, double, uint32_t);
+
+    void* obj = lift_field<void*>(self, 0x04);
+    uint32_t arg = lift_field<uint32_t>(self, 0x34);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+
+    float ret = reinterpret_cast<GetFn>(vtbl[8])(obj, arg);
+    float x = ret - lift_field<float>(self, 0x2C);
+    lift_field<float>(self, 0x30) = x;
+
+    float a = -x * lift_field<float>(self, 0x4C);
+    float hi = lift_field<float>(self, 0x50);
+    float lo = -hi;
+    double v = (a < lo) ? static_cast<double>(lo)
+             : (a > hi) ? static_cast<double>(hi)
+             : static_cast<double>(a);
+
+    reinterpret_cast<SetFn>(vtbl[4])(obj, v, arg);
+
+    obj = lift_field<void*>(self, 0x04);
+    arg = lift_field<uint32_t>(self, 0x34);
+    vtbl = *reinterpret_cast<void***>(obj);
+    double f2c = static_cast<double>(lift_field<float>(self, 0x2C));
+    reinterpret_cast<SetFn>(vtbl[5])(obj, f2c, arg);
+}
+} // namespace lift_00603230
