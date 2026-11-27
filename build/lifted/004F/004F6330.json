@@ -1,0 +1,22 @@
+{
+  "va": "0x004F6330",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getTheta(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setTheta(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties\u003e::vfunc_40 (bind static accessor)",
+  "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getTheta(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setTheta(float)\u003e",
+  "signature": "void fn_004F6330(void* self)",
+  "summary": "On first call, initializes the static accessor object at 0x00AE9EE4 (sets its vtable to 0x0094D2C4); then stores that object's address into self+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:27Z"
+}

@@ -10770,3 +10770,29 @@ void fn_004F65A0(void* self) {
     lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9EFC));
 }
 } // namespace lift_004F65A0
+
+// [0x004F6330] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, getTheta, setTheta>::vfunc_40 (122 bytes)
+namespace lift_004F6330 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack arg;
+// calls ext_00672000 on self, then stores the argument into the first DWORD of self.)
+extern void __thiscall ext_0067A670(void* self, uint32_t value);
+
+// Static one-time-init guard (bit 0) and the static accessor object it initializes.
+extern uint32_t mem_00AE9EE8;
+extern uint32_t mem_00AE9EE4;
+
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties>::vfunc_40 (bind static accessor)
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, float, &public: void __thiscall MatrixWithProperties::setTheta(float)>
+// @summary On first call, initializes the static accessor object at 0x00AE9EE4 (sets its vtable to 0x0094D2C4); then stores that object's address into self+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004F6330(void* self) {
+    if ((mem_00AE9EE8 & 1u) == 0u) {
+        mem_00AE9EE8 |= 1u;
+        ext_0067A670(&mem_00AE9EE4, 0u);
+        mem_00AE9EE4 = 0x0094D2C4u;
+    }
+
+    auto* const holder = static_cast<std::uint8_t*>(self);
+    *reinterpret_cast<std::uint32_t*>(holder + 0x04) = 0x00AE9EE4u;
+}
+} // namespace lift_004F6330

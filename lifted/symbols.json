@@ -19165,6 +19165,13 @@
     "summary": "Reads MatrixWithProperties::getPhi from the held object; throws if the held pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F6330": {
+    "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties\u003e::vfunc_40 (bind static accessor)",
+    "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getTheta(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setTheta(float)\u003e",
+    "signature": "void fn_004F6330(void* self)",
+    "summary": "On first call, initializes the static accessor object at 0x00AE9EE4 (sets its vtable to 0x0094D2C4); then stores that object's address into self+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004F63B0": {
     "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setAlpha(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setAlpha(float)\u003e",
