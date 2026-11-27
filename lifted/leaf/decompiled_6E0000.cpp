@@ -2063,3 +2063,41 @@ void* fn_006E73B0(void* self, DWORD arg1, DWORD arg2) {
     return self;
 }
 } // namespace lift_006E73B0
+
+// [0x006E8BF0]
+namespace lift_006E8BF0 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index, clamped to count, growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8).)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::addUniqueIndex_006E8BF0
+// @class Unknown
+// @summary Ensures index is present in the int32 list at +0x04 (appending it if absent); index 0 is handled separately. Reports the result through ext_006E7440 and returns true only when a new entry was appended.
+// @field Unknown +0x04 int32_t count
+// @field Unknown +0x14 int32_t* indices
+// @field Unknown +0x94 uint8_t field_0x94
+extern bool fn_006E8BF0(void* self, int32_t index) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    if (index == 0) {
+        ext_006E7440(base + 0x94, 0);
+        return false;
+    }
+
+    const int32_t count = *reinterpret_cast<int32_t*>(base + 0x04);
+    int32_t* indices = *reinterpret_cast<int32_t**>(base + 0x14);
+
+    for (int32_t i = 0; i < count; ++i) {
+        if (indices[i] == index) {
+            ext_006E7440(base + 0x94, 1);
+            return false;
+        }
+    }
+
+    // Not present: append via DynamicArray::InsertAt at the end (index == count).
+    int32_t value = index;
+    ext_006D2170(base + 0x04, count, &value);
+    return true;
+}
+} // namespace lift_006E8BF0

@@ -70043,6 +70043,13 @@
     "summary": "Stores a 32-bit argument at +0x00, sets the flag word at +0x04 to 1, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E8BF0": {
+    "name": "Unknown::addUniqueIndex_006E8BF0",
+    "class": "Unknown",
+    "signature": "extern \"C\" bool fn_006E8BF0(void* self, int32_t index)",
+    "summary": "Ensures index is present in the int32 list at +0x04 (appending it if absent); index 0 is handled separately. Reports the result through ext_006E7440 and returns true only when a new entry was appended.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E8E20": {
     "name": "Unknown::getFirstDwordAtIndex_006E8E20",
     "class": "Unknown",
