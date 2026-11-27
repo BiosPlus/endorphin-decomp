@@ -1,0 +1,52 @@
+{
+  "va": "0x004593B0",
+  "size": 423,
+  "orig_symbol": "MultiTrackView::TimeRuler::vfunc_0_off_50",
+  "src_path": "src/MultiTrackView/TimeRuler.cpp",
+  "lifted_path": "lifted/MultiTrackView/TimeRuler.cpp",
+  "name": "MultiTrackView::TimeRuler::vfunc_0_off_50",
+  "class": "MultiTrackView::TimeRuler",
+  "signature": "void __thiscall fn_004593B0(void* self)",
+  "summary": "Updates time ruler ranges, playback state, and invalidates the view rect.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TimeRuler",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    },
+    {
+      "class": "MultiTrackView::TimeRuler",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    },
+    {
+      "class": "MultiTrackView::TimeRuler",
+      "offset": "+0x6C",
+      "type": "void*",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "MultiTrackView::TimeRuler",
+      "offset": "+0x70",
+      "type": "void*",
+      "name": "field_0x70"
+    },
+    {
+      "class": "MultiTrackView::TimeRuler",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "MultiTrackView::TimeRuler",
+      "offset": "+0x78",
+      "type": "void*",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:06:01Z"
+}

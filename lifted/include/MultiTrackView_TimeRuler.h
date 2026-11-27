@@ -10,6 +10,11 @@
 // Recovered field layout for MultiTrackView::TimeRuler:
 namespace lifted_layout {
 struct MultiTrackView_TimeRuler_Fields {
-    // +0x30  void*                    field_0x30  (evidence: 0x004591A0)
+    // +0x30  void*                    field_0x30  (evidence: 0x004591A0, 0x004593B0)
+    // +0x58  void*                    field_0x58  (evidence: 0x004593B0)
+    // +0x6C  void*                    field_0x6c  (evidence: 0x004593B0)
+    // +0x70  void*                    field_0x70  (evidence: 0x004593B0)
+    // +0x74  void*                    field_0x74  (evidence: 0x004593B0)
+    // +0x78  void*                    field_0x78  (evidence: 0x004593B0)
 };
 } // namespace lifted_layout
