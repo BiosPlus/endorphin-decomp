@@ -47171,6 +47171,13 @@
     "summary": "Walks the command list anchored at this+0x30 and invokes virtual slot 1 on each element's command object.",
     "lifted_path": "lifted/classes/MacroCommand.cpp"
   },
+  "0x00665B10": {
+    "name": "MacroCommand::vfunc_4",
+    "class": "MacroCommand",
+    "signature": "void fn_00665B10(void* self)",
+    "summary": "Calls vfunc slot 1 on every command in the macro's list, passing the stored argument at +0x0C.",
+    "lifted_path": "lifted/classes/MacroCommand.cpp"
+  },
   "0x00665B80": {
     "name": "Unknown::ReleaseElements_00665B80",
     "class": "Unknown",

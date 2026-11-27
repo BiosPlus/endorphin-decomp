@@ -58,3 +58,35 @@ void fn_00665A50(void* self) {
     }
 }
 } // namespace lift_00665A50
+
+// [0x00665B10] MacroCommand::vfunc_4 (104 bytes)
+namespace lift_00665B10 {
+extern int mem_00925134;
+
+// Iterates the command list at +0x3C..+0x40 and invokes virtual slot 1 on each
+// element, passing the value stored at +0x0C. The MSVC iterator-debug range checks
+// (_invalid_parameter_noinfo via IAT 0x925134) are omitted: they only fire on
+// corrupt iterator state and have no effect on valid input.
+// @name MacroCommand::vfunc_4
+// @class MacroCommand
+// @summary Calls vfunc slot 1 on every command in the macro's list, passing the stored argument at +0x0C.
+// @field MacroCommand +0x0C DWORD field_0x0C
+// @field MacroCommand +0x3C void* field_0x3C
+// @field MacroCommand +0x40 void* field_0x40
+void fn_00665B10(void* self) {
+    (void)&mem_00925134;  // metadata-only: IAT slot for _invalid_parameter_noinfo (range checks omitted)
+
+    using Fn = void (*)(void* obj, uint32_t arg);
+
+    DWORD arg = lift_field<DWORD>(self, 0x0C);
+    void** it = lift_field<void**>(self, 0x3C);
+    void** end = lift_field<void**>(self, 0x40);
+
+    for (; it != end; ++it) {
+        void* obj = *it;
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        Fn slot1 = reinterpret_cast<Fn>(vtbl[1]);
+        slot1(obj, arg);
+    }
+}
+} // namespace lift_00665B10
