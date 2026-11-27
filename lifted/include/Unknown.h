@@ -935,6 +935,7 @@ struct Unknown_Fields {
     // +0x34  void*                    field_0x34  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x34
     // +0x34  void**                   field_0x34  (evidence: 0x00477FA0) // CONFLICT: multiple definitions at +0x34
     // +0x34  BYTE field_0x34 (bit 0x2 gates the forward)  (evidence: 0x006FA9C0, 0x006FC200) // CONFLICT: multiple definitions at +0x34
+    // +0x34  int32_t field_0x34 (embedded DynamicArray; its leading dword is read as the insert index/count)  (evidence: 0x006D3600) // CONFLICT: multiple definitions at +0x34
     // +0x34  float                    m31  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x34
     // +0x34  void* field_0x34 (optional owner; +0x298 cleared when non-null)  (evidence: 0x004E1F50) // CONFLICT: multiple definitions at +0x34
     // +0x34  std::string              str_b  (evidence: 0x004B75A0) // CONFLICT: multiple definitions at +0x34
