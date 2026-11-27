@@ -1444,3 +1444,56 @@ extern void __fastcall fn_007DEC00(int ecx_unused, void* self) {
     }
 }
 } // namespace lift_007DEC00
+
+// [0x007D62D0]
+namespace lift_007D62D0 {
+extern void ext_007D58E0(int32_t, void*, const char*);
+extern const char mem_0099DEF8[];
+
+// @name MemoryChunk::resize
+// @class MemoryChunk
+// @summary Resizes a memory chunk to at least new_size, reallocating via its allocator if needed.
+// @field MemoryChunk +0x00 void* data
+// @field MemoryChunk +0x04 int32_t capacity
+// @field MemoryChunk +0x08 int32_t max_capacity
+// @field MemoryChunk +0x0c uint32_t alignment
+// @field MemoryChunk +0x14 int32_t in_use
+// @field MemoryChunk +0x18 int32_t resizable
+// @field MemoryChunk +0x1c void* allocator
+extern void* sub_007D62D0(void* self, int32_t new_size) {
+    if (new_size <= lift_field<int32_t>(self, 0x04)) {
+        lift_field<int32_t>(self, 0x14) = 1;
+        return lift_field<void*>(self, 0x00);
+    }
+
+    if (lift_field<int32_t>(self, 0x18) == 0) {
+        ext_007D58E0(0, lift_field<void*>(self, 0x1c), mem_0099DEF8);
+    }
+
+    void* data = lift_field<void*>(self, 0x00);
+    if (data != nullptr) {
+        void* allocator = lift_field<void*>(self, 0x1c);
+        auto free_fn = lift_field<void (*)(void*)>(allocator, 0x10);
+        free_fn(data);
+        lift_field<void*>(self, 0x00) = nullptr;
+        lift_field<int32_t>(self, 0x04) = 0;
+    }
+
+    uint32_t alignment = lift_field<uint32_t>(self, 0x0c);
+    void* allocator = lift_field<void*>(self, 0x1c);
+    auto alloc_fn = lift_field<void* (*)(int32_t, uint32_t)>(allocator, 0x08);
+    void* new_data = alloc_fn(new_size, alignment);
+    lift_field<void*>(self, 0x00) = new_data;
+    if (new_data != nullptr) {
+        lift_field<int32_t>(self, 0x04) = new_size;
+    }
+
+    int32_t capacity = lift_field<int32_t>(self, 0x04);
+    lift_field<int32_t>(self, 0x14) = 1;
+    if (capacity > lift_field<int32_t>(self, 0x08)) {
+        lift_field<int32_t>(self, 0x08) = capacity;
+    }
+
+    return lift_field<void*>(self, 0x00);
+}
+} // namespace lift_007D62D0
