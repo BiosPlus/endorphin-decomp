@@ -62,3 +62,37 @@ void fn_0060BB50(void* self) {
     string_clear(base + 0x20);  // original: tail-jump (jmp [IAT]) with ecx = self+0x20
 }
 } // namespace lift_0060BB50
+
+// [0x0060BA80]
+namespace lift_0060BA80 {
+extern uint32_t __thiscall ext_0063EFE0(uint8_t* self, const char* name);
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern void ext_00486CB0(const void* arg1, const void* arg2, const char* arg3);
+
+extern const char* mem_00A9F838;
+extern const char* mem_00A9F748;
+extern const char mem_0093F7BC[];
+extern const char mem_009722A8[];
+
+// @name NMData::EffectorBaseData::vfunc_13
+// @class NMData::EffectorBaseData
+// @summary Initializes m_name and m_jointName from the provided attribute source after calling vfunc_19.
+// @field NMData::EffectorBaseData +0x04 std::string m_name
+// @field NMData::EffectorBaseData +0x20 std::string m_jointName
+
+void __thiscall fn_0060BA80(uint8_t* self, uint8_t* arg1) {
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto vfunc_19 = reinterpret_cast<void(__thiscall*)(uint8_t*)>(vtable[19]);
+    vfunc_19(self);
+
+    uint32_t name_obj = ext_0063EFE0(arg1, mem_00A9F838);
+    ext_004275E0(self + 0x04, reinterpret_cast<void*>(static_cast<uintptr_t>(name_obj)));
+
+    uint32_t joint_obj = ext_0063EFE0(arg1, mem_00A9F748);
+    ext_004275E0(self + 0x20, reinterpret_cast<void*>(static_cast<uintptr_t>(joint_obj)));
+
+    (void)ext_00486CB0;
+    (void)mem_0093F7BC;
+    (void)mem_009722A8;
+}
+} // namespace lift_0060BA80

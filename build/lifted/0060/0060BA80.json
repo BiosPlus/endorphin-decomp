@@ -1,0 +1,28 @@
+{
+  "va": "0x0060BA80",
+  "size": 73,
+  "orig_symbol": "NMData::EffectorBaseData::vfunc_13",
+  "src_path": "src/NMData/EffectorBaseData.cpp",
+  "lifted_path": "lifted/NMData/EffectorBaseData.cpp",
+  "name": "NMData::EffectorBaseData::vfunc_13",
+  "class": "NMData::EffectorBaseData",
+  "signature": "void __thiscall fn_0060BA80(uint8_t* self, uint8_t* arg1)",
+  "summary": "Initializes m_name and m_jointName from the provided attribute source after calling vfunc_19.",
+  "fields": [
+    {
+      "class": "NMData::EffectorBaseData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "m_name"
+    },
+    {
+      "class": "NMData::EffectorBaseData",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "m_jointName"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:50:04Z"
+}

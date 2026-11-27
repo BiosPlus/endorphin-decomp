@@ -10,8 +10,10 @@
 // Recovered field layout for NMData::EffectorBaseData:
 namespace lifted_layout {
 struct NMData_EffectorBaseData_Fields {
-    // +0x4   std::string              field_0x04  (evidence: 0x0060BB50)
-    // +0x20  std::string              field_0x20  (evidence: 0x0060BB50)
+    // +0x4   std::string              field_0x04  (evidence: 0x0060BB50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   std::string              m_name  (evidence: 0x0060BA80) // CONFLICT: multiple definitions at +0x4
+    // +0x20  std::string              field_0x20  (evidence: 0x0060BB50) // CONFLICT: multiple definitions at +0x20
+    // +0x20  std::string              m_jointName  (evidence: 0x0060BA80) // CONFLICT: multiple definitions at +0x20
     // +0x40  void*                    field_0x40  (evidence: 0x0060BB80, 0x0060C040)
 };
 } // namespace lifted_layout
