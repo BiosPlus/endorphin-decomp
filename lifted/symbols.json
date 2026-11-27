@@ -12181,6 +12181,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C8440 (NMData::BehaviourData::vfunc_1_off_154).",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x0048AFE0": {
+    "name": "ResetSubObjectLinks_0048AFE0",
+    "class": "SubObject",
+    "signature": "void fn_0048AFE0(void* self)",
+    "summary": "Calls 0x0048AC80 with the object's linked pointer, passes the linked pointer to 0x006A5C5C, then zeroes the two link dwords at +0x4 and +0x8.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048B020": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e",

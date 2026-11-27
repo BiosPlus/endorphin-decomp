@@ -1,0 +1,28 @@
+{
+  "va": "0x0048AFE0",
+  "size": 52,
+  "orig_symbol": "sub_0048AFE0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "ResetSubObjectLinks_0048AFE0",
+  "class": "SubObject",
+  "signature": "void fn_0048AFE0(void* self)",
+  "summary": "Calls 0x0048AC80 with the object's linked pointer, passes the linked pointer to 0x006A5C5C, then zeroes the two link dwords at +0x4 and +0x8.",
+  "fields": [
+    {
+      "class": "SubObject",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:56:34Z"
+}

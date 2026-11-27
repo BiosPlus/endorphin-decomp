@@ -3193,3 +3193,42 @@ uint32_t* fn_0048CD20(void* self, uint32_t* out, uint32_t key) {
 }
 } // namespace lift_00476430
 } // namespace lift_0048CD20
+
+// [0x0048AFE0] sub_0048AFE0 (52 bytes)
+namespace lift_0048AFE0 {
+// Callee 0x0048AC80 (sub_0048AC80): __thiscall, ecx = this, five stack args
+// (out buffer, this, *(this+4) dword, this, this+4 pointer). Callee cleans stack.
+extern void __thiscall ext_0048AC80(uint32_t self, uint32_t out, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one stack argument, caller cleans.
+extern void ext_006A5C5C(uint32_t arg);
+
+// @name ResetSubObjectLinks_0048AFE0
+// @class SubObject
+// @summary Calls 0x0048AC80 with the object's linked pointer, passes the linked pointer to 0x006A5C5C, then zeroes the two link dwords at +0x4 and +0x8.
+// @field SubObject +0x04 uint32_t field_0x04
+// @field SubObject +0x08 uint32_t field_0x08
+void fn_0048AFE0(void* self) {
+    const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    // mov eax, [esi+4]; mov ecx, [eax]
+    const uint32_t link = lift_field<uint32_t>(self, 0x4);
+    const uint32_t first_dword = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(link)), 0);
+
+    // Five stack args to 0x0048AC80; out buffer is the 8-byte frame local (result unused).
+    uint32_t out[2] = {0, 0};
+    ext_0048AC80(self_addr,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out)),
+                 self_addr,
+                 first_dword,
+                 self_addr,
+                 link);
+
+    // mov ecx, [esi+4]; push ecx; call 0x006A5C5C; add esp, 4 (re-read: callee may change it)
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x4));
+
+    // xor eax, eax; mov [esi+4], eax; mov [esi+8], eax
+    lift_field<uint32_t>(self, 0x4) = 0;
+    lift_field<uint32_t>(self, 0x8) = 0;
+}
+} // namespace lift_0048AFE0
