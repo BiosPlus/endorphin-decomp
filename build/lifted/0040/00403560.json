@@ -1,0 +1,14 @@
+{
+  "va": "0x00403560",
+  "size": 104,
+  "orig_symbol": "sub_00403560",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "StringExceptionWithMember::ctor",
+  "class": "StringExceptionWithMember",
+  "signature": "void* fn_00403560(void* self, const void* src)",
+  "summary": "Construct an exception-style object from a std::string: store c_str() as the exception message, set the vtable, and copy-construct the std::string member at +0x0C. Returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:55:13Z"
+}

@@ -1907,3 +1907,32 @@ void* __thiscall sub_004019B0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_004019B0
+
+// [0x00403560] sub_00403560 (104 bytes)
+namespace lift_00403560 {
+// Imported MSVCP80/MSVCR80 entry points (original asm called through IAT slots).
+extern const char* ext_basic_string_c_str(const void* str);
+extern void ext_exception_ctor_cstr(void* self, const char* const* msg);
+extern void ext_basic_string_copy_ctor(void* self, const void* other);
+
+extern int mem_00924FF0;
+extern int mem_00925130;
+extern int mem_00924FE0;
+extern int mem_00928EF0;
+
+// @name StringExceptionWithMember::ctor
+// @summary Construct an exception-style object from a std::string: store c_str() as the exception message, set the vtable, and copy-construct the std::string member at +0x0C. Returns self.
+// @field field_0x00 uint32_t vtable
+// @field field_0x0C std::string message
+void* fn_00403560(void* self, const void* src) {
+    // IAT slots referenced by the original indirect calls (metadata only).
+    (void)&mem_00924FF0;
+    (void)&mem_00925130;
+    (void)&mem_00924FE0;
+    const char* msg = ext_basic_string_c_str(src);
+    ext_exception_ctor_cstr(self, &msg);
+    lift_field<uint32_t>(self, 0x00) = 0x00928EF0u;
+    ext_basic_string_copy_ctor(reinterpret_cast<uint8_t*>(self) + 0x0C, src);
+    return self;
+}
+} // namespace lift_00403560
