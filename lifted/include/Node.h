@@ -31,7 +31,10 @@ struct Node_Fields {
     // +0xC   void*                    field_0x0c  (evidence: 0x007CAF70, 0x007DB6C0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    linkB  (evidence: 0x0062B6F0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    list  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0xC
-    // +0x10  void*                    field_0x10  (evidence: 0x007DB6C0)
+    // +0xC   void*                    next  (evidence: 0x00673B90) // CONFLICT: multiple definitions at +0xC
+    // +0x10  intptr_t                 field_0x10  (evidence: 0x00673B90) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void*                    field_0x10  (evidence: 0x007DB6C0) // CONFLICT: multiple definitions at +0x10
+    // +0x14  intptr_t                 field_0x14  (evidence: 0x00673B90) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t**               field_0x14  (evidence: 0x007DB6C0) // CONFLICT: multiple definitions at +0x14
     // +0x15  uint8_t                  field_0x15  (evidence: 0x00401AF0, 0x00420590, 0x004275C0, 0x0046FBA0, 0x00486D60, 0x004928E0, 0x005014B0, 0x0052A070, 0x0055E8C0, 0x00594310, 0x0059DE00, 0x005AC840, 0x005E0B00, 0x005E2C70, 0x00624D10)

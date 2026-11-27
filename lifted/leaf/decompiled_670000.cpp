@@ -2401,3 +2401,48 @@ void fn_0067E560(void* self, const void* p) {
 }
 } // namespace lift_0067E600
 } // namespace lift_0067E560
+
+// [0x00673B90]
+namespace lift_00673B90 {
+// @name Unknown::findFirstValidNode
+// @class Unknown
+// @summary Iterates a linked list at +0x0C, testing each node's (+0x10, +0x14) pair and returning the first non-zero result from ext_006616C0.
+// @field Unknown +0x0C void* head
+// @field Node +0x0C void* next
+// @field Node +0x10 intptr_t field_0x10
+// @field Node +0x14 intptr_t field_0x14
+
+
+    intptr_t ext_006616B0(void* self);
+    intptr_t ext_006616C0(void* self);
+    void ext_00493D90(void* self);
+
+struct LocalPair_00673B90 {
+    intptr_t first;
+    intptr_t second;
+};
+
+intptr_t fn_00673B90(void* self) {
+    void* node = lift_field<void*>(self, 0x0c);
+    intptr_t result = 0;
+
+    while (node != nullptr) {
+        LocalPair_00673B90 pair;
+        pair.first = lift_field<intptr_t>(node, 0x10);
+        pair.second = lift_field<intptr_t>(node, 0x14);
+
+        if ((ext_006616B0(&pair) & 0xFF) == 0) {
+            result = ext_006616C0(&pair);
+        }
+
+        node = lift_field<void*>(node, 0x0c);
+        ext_00493D90(&pair);
+
+        if (result != 0) {
+            break;
+        }
+    }
+
+    return result;
+}
+} // namespace lift_00673B90

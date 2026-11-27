@@ -430,6 +430,7 @@ struct Unknown_Fields {
     // +0xC   void*                    field_0xc  (evidence: 0x007D48A0, 0x007D4B20, 0x007D8470, 0x007DAD70) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD                    flags  (evidence: 0x007CAF70, 0x007CCC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   u32                      flags  (evidence: 0x007CAF70, 0x007CCC30) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    head  (evidence: 0x00673B90) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 index  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    inner  (evidence: 0x007155B0, 0x0071C430) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 inner_first_flags  (evidence: 0x00783650) // CONFLICT: multiple definitions at +0xC

@@ -50525,6 +50525,12 @@
     "summary": "Scales a 3D vector by fields at +0x7C..+0x84 and adds fields at +0x70..+0x78.",
     "lifted_path": "lifted/classes/SkeletalJoint.cpp"
   },
+  "0x0064E630": {
+    "name": "clampVectorMagnitude",
+    "signature": "void __thiscall fn_0064E630(void* self, float* vec)",
+    "summary": "Clamps a 3D float vector's magnitude to 0.99 * vtable[0x4c] limit",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x0064EA80": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e",
@@ -54486,6 +54492,13 @@
     "signature": "void SetIntValueAndSetFlag(void* self, DWORD value)",
     "summary": "Stores a DWORD argument at this+0x60 and sets the byte flag at this+0x65 to 1.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
+  "0x00673B90": {
+    "name": "Unknown::findFirstValidNode",
+    "class": "Unknown",
+    "signature": "intptr_t fn_00673B90(void* self)",
+    "summary": "Iterates a linked list at +0x0C, testing each node's (+0x10, +0x14) pair and returning the first non-zero result from ext_006616C0.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00673C20": {
     "name": "sub_00673C20",

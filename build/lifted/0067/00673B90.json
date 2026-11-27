@@ -1,0 +1,40 @@
+{
+  "va": "0x00673B90",
+  "size": 130,
+  "orig_symbol": "sub_00673B90",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Unknown::findFirstValidNode",
+  "class": "Unknown",
+  "signature": "intptr_t fn_00673B90(void* self)",
+  "summary": "Iterates a linked list at +0x0C, testing each node's (+0x10, +0x14) pair and returning the first non-zero result from ext_006616C0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "Node",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "next"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x10",
+      "type": "intptr_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x14",
+      "type": "intptr_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:22:02Z"
+}
