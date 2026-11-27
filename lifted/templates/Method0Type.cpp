@@ -150,9 +150,12 @@ extern "C" void ext_004CCAF0(void* target);
 // Callee takes its single argument in ECX (thiscall-style), so it is declared __fastcall.
 extern "C" void __thiscall ext_0068BC50(void* self);
 #include <cstdint>
+#include <stdexcept>
+#include <cstring>
+#include <cstddef>
 
-// [0x004CB470] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_41 (14 bytes)
-#include "lift_compat.h"
+#include <cstring>
+#include <cstddef>
 
 // Known callee 0x004CA560: sub_004CA560 (Virtual dispatch thunk: forwards to vtable slot at +0x160.)
 extern "C" void ext_004CA560(void* self);
@@ -1144,3 +1147,138 @@ void* __stdcall fn_0060A090(void* out, void** src) {
     return out;                              // eax = out
 }
 } // namespace lift_0060A090
+
+// [0x0066DD50] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_40 (122 bytes)
+namespace lift_0066DD50 {
+// @name ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_40
+// @class ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>
+// @summary Auto-lifted identical-shape clone of 0x005D2970 (ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40).
+namespace lift_005D2970 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static accessor object below has been initialized.
+extern DWORD mem_00B59734;
+// Static accessor object (global) whose address is stored into holder+0x04.
+extern DWORD mem_00B59730;
+
+// @name ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXScale(float)>
+// @summary Binds holder+0x04 to the static accessor object at mem_00B459E8, running its one-time initializer on first use under a local SEH frame.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0066DD50(void* holder) {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8B371Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B59734 & 1u) == 0) {
+        mem_00B59734 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B59730, frame[0]);
+        mem_00B59730 = 0x98A764u;
+    }
+
+    // Bind holder+0x04 to the static accessor object (both paths store the same address).
+    *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(holder) + 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B59730));
+
+    mem_fs_0 = frame[0];
+}
+} // namespace lift_005D2970
+} // namespace lift_0066DD50
+
+// [0x0068C020] ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_40 (122 bytes)
+namespace lift_0068C020 {
+// @name ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_40
+// @class ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005D2970 (ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40).
+namespace lift_005D2970 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static accessor object below has been initialized.
+extern DWORD mem_00B5ADB8;
+// Static accessor object (global) whose address is stored into holder+0x04.
+extern DWORD mem_00B5ADB4;
+
+// @name ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXScale(float)>
+// @summary Binds holder+0x04 to the static accessor object at mem_00B459E8, running its one-time initializer on first use under a local SEH frame.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0068C020(void* holder) {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8B5B4Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B5ADB8 & 1u) == 0) {
+        mem_00B5ADB8 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B5ADB4, frame[0]);
+        mem_00B5ADB4 = 0x98DE44u;
+    }
+
+    // Bind holder+0x04 to the static accessor object (both paths store the same address).
+    *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(holder) + 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B5ADB4));
+
+    mem_fs_0 = frame[0];
+}
+} // namespace lift_005D2970
+} // namespace lift_0068C020
+
+// [0x00692440] ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>::vfunc_40 (122 bytes)
+namespace lift_00692440 {
+// @name ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>::vfunc_40
+// @class ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005D2970 (ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40).
+namespace lift_005D2970 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static accessor object below has been initialized.
+extern DWORD mem_00B5BCCC;
+// Static accessor object (global) whose address is stored into holder+0x04.
+extern DWORD mem_00B5BCC8;
+
+// @name ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXScale(float)>
+// @summary Binds holder+0x04 to the static accessor object at mem_00B459E8, running its one-time initializer on first use under a local SEH frame.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_00692440(void* holder) {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8B5E6Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B5BCCC & 1u) == 0) {
+        mem_00B5BCCC |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B5BCC8, frame[0]);
+        mem_00B5BCC8 = 0x98ED64u;
+    }
+
+    // Bind holder+0x04 to the static accessor object (both paths store the same address).
+    *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(holder) + 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B5BCC8));
+
+    mem_fs_0 = frame[0];
+}
+} // namespace lift_005D2970
+} // namespace lift_00692440
