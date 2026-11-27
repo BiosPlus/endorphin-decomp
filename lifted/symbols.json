@@ -16985,6 +16985,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls NMData::EvolveEngineData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004BEFC0": {
+    "name": "initOnceAndGetStaticObject",
+    "signature": "void* fn_004BEFC0()",
+    "summary": "One-time initialization guard: on first call sets bit 0 of mem_00AE1D68, runs ext_004BEBE0 on the static object at mem_00AE1D44 and ext_006A6C87(0x9185E0); returns the static object's address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BF680": {
     "name": "Unknown::InitStateDefault",
     "class": "Unknown",

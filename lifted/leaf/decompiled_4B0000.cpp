@@ -2347,3 +2347,23 @@ void fn_004BBF60(uint32_t key) {
 }
 } // namespace lift_0055CAC0
 } // namespace lift_004BBF60
+
+// [0x004BEFC0]
+namespace lift_004BEFC0 {
+extern void ext_004BEBE0(void* self);
+extern void ext_006A6C87(uint32_t arg);
+extern uint32_t mem_00AE1D68;
+extern uint8_t mem_00AE1D44;
+
+// @name initOnceAndGetStaticObject
+// @summary One-time initialization guard: on first call sets bit 0 of mem_00AE1D68, runs ext_004BEBE0 on the static object at mem_00AE1D44 and ext_006A6C87(0x9185E0); returns the static object's address.
+// @field none (no self pointer; accesses only globals)
+void* fn_004BEFC0() {
+    if ((mem_00AE1D68 & 1u) == 0) {
+        mem_00AE1D68 |= 1u;
+        ext_004BEBE0(&mem_00AE1D44);
+        ext_006A6C87(0x009185E0u);
+    }
+    return &mem_00AE1D44;
+}
+} // namespace lift_004BEFC0
