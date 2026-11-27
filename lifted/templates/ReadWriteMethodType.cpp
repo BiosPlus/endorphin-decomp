@@ -12413,3 +12413,31 @@ void fn_005D3710(void* holder) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B45A08));
 }
 } // namespace lift_005D3710
+
+// [0x005D2390] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setFrameOffset(int)>::vfunc_40 (122 bytes)
+namespace lift_005D2390 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern uint32_t ext_0067A670(void* self, uint32_t value);
+extern uint32_t mem_00B459D4;
+extern uint32_t mem_00B459D0;
+
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData,int>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setFrameOffset(int)>
+// @summary One-time init of the static frame-offset accessor object (guarded by a bit in mem_00B459D4), then points holder+0x04 at that accessor.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005D2390(void* holder) {
+    // Original wraps this in a SEH frame (fs:[0] push/pop); that is runtime
+    // scaffolding and is not reproduced here.
+    if ((mem_00B459D4 & 1u) == 0) {
+        // First call: mark init-in-progress, run the static constructor helper
+        // on the accessor object (its first DWORD receives 0), then install the vtable.
+        mem_00B459D4 |= 1u;
+        ext_0067A670(&mem_00B459D0, 0u);
+        mem_00B459D0 = 0x0096632Cu;
+    }
+
+    // Bind holder+0x04 to the static accessor object (both paths).
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(holder) + 0x04) =
+        reinterpret_cast<void*>(&mem_00B459D0);
+}
+} // namespace lift_005D2390
