@@ -2660,3 +2660,49 @@ extern void __fastcall fn_004093D0(void* self) {
     ext_00458200(self);
 }
 } // namespace lift_004093D0
+
+// [0x004073C0] sub_004073C0 (161 bytes)
+namespace lift_004073C0 {
+// Known callee 0x004063F0: UnknownClass_constructRange (Copy-constructs `count` 0x58-byte UnknownClass elements at `begin` from `src`; on exception destroys the already-built prefix and rethrows.)
+extern void ext_004063F0();
+extern void ext_00407170();
+extern int mem_00925134;
+
+// @name UnknownClassVector::push_back
+// @class UnknownClassVector
+// @summary Appends one copy of the 0x58-byte UnknownClass at `value`; when full (or begin is null) defers to ext_00407170 for reallocation.
+// @field UnknownClassVector +0x04 uint8_t* begin
+// @field UnknownClassVector +0x08 uint8_t* end
+// @field UnknownClassVector +0x0C uint8_t* cap
+void fn_004073C0(void* self, const void* value) {
+    // __thiscall-style helper: self in ecx, remaining args on stack.
+    using CopyRangeFn = void(__cdecl*)(void* begin, uint32_t count, const void* src,
+                                       void* selfArg, const void* src2, uint32_t flag);
+    using GrowFn = void(__thiscall*)(void* selfArg, uint32_t* slot, void* selfCopy,
+                                     uint8_t* end, const void* val);
+    constexpr std::ptrdiff_t kElemSize = 0x58;
+
+    uint8_t*& begin = lift_field<uint8_t*>(self, 0x04);
+    uint8_t*& end = lift_field<uint8_t*>(self, 0x08);
+    uint8_t* const cap = lift_field<uint8_t*>(self, 0x0C);
+
+    // Fast path: begin is non-null and size < capacity (all in whole elements).
+    if (begin != nullptr) {
+        const std::ptrdiff_t size = (end - begin) / kElemSize;
+        const std::ptrdiff_t capacity = (cap - begin) / kElemSize;
+        if (size < capacity) {
+            reinterpret_cast<CopyRangeFn>(ext_004063F0)(end, 1u, value, self, value, 0u);
+            end += kElemSize;
+            return;
+        }
+    }
+
+    // Slow path: asm checks begin <= end (unsigned) before growing.
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(end)) {
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();  // _invalid_parameter_noinfo
+    }
+
+    uint32_t slot = 0;  // stack temp passed by address to the grow routine
+    reinterpret_cast<GrowFn>(ext_00407170)(self, &slot, self, end, value);
+}
+} // namespace lift_004073C0
