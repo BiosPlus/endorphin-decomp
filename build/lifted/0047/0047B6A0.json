@@ -1,0 +1,27 @@
+{
+  "va": "0x0047B6A0",
+  "size": 390,
+  "orig_symbol": "sub_0047B6A0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "collectMatchingElements",
+  "signature": "extern \"C\" void __cdecl fn_0047B6A0(void* src, void* dstVec, const char* nameFilter, uint8_t clearFirst)",
+  "summary": "Iterates a filtered vector at src+0x24, clones matching elements by name into 0x18C-byte objects, and appends them to dstVec.",
+  "fields": [
+    {
+      "class": "SrcContainer",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "elementsVec"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:45:34Z"
+}

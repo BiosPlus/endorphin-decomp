@@ -2354,3 +2354,106 @@ void* fn_00479890(void* self, MsvcString arg_str, void* out) {
     return out;
 }
 } // namespace lift_00479890
+
+// [0x0047B6A0]
+namespace lift_0047B6A0 {
+// @name collectMatchingElements
+// @summary Iterates a filtered vector at src+0x24, clones matching elements by name into 0x18C-byte objects, and appends them to dstVec.
+// @field SrcContainer +0x24 void* elementsVec
+// @field Element +0x04 std::string name
+
+void __thiscall ext_0041A920(void* self, void* itemPtr);
+void __thiscall ext_00427A60(void* self);
+void* __thiscall ext_004C6780(void* self, void* strArg);
+void __thiscall ext_0050BE20(void* self);
+void* __cdecl ext_006A5C62(uint32_t size);
+
+extern uintptr_t mem_00925134;
+extern uintptr_t mem_00924FC0;
+extern uintptr_t mem_00924FE4;
+extern uintptr_t mem_00924FF4;
+
+namespace {
+struct CheckedVectorIter {
+    void* container0;
+    void* container1;
+    uintptr_t cur;
+};
+} // namespace
+
+extern void __cdecl fn_0047B6A0(void* src, void* dstVec, const char* nameFilter, uint8_t clearFirst) {
+    using InvalidParamFn = void(__cdecl*)();
+    using StrEqCstrFn = bool(__cdecl*)(const void*, const char*);
+    using StrCtorCstrFn = void*(__thiscall*)(void*, const char*);
+    using StrDtorFn = void(__thiscall*)(void*);
+    using VFunc54Fn = void(__thiscall*)(void*, void*);
+
+    auto invalidParam = [&]() {
+        reinterpret_cast<InvalidParamFn>(mem_00925134)();
+    };
+
+    if (clearFirst != 0) {
+        ext_0050BE20(dstVec);
+    }
+
+    uint8_t* srcVec = static_cast<uint8_t*>(src) + 0x24;
+
+    uintptr_t beginPtr = lift_field<uintptr_t>(srcVec, 0x04);
+    if (beginPtr > lift_field<uintptr_t>(srcVec, 0x08)) {
+        invalidParam();
+    }
+    CheckedVectorIter it{ srcVec, srcVec, beginPtr };
+    ext_00427A60(&it);
+
+    uintptr_t endPtr = lift_field<uintptr_t>(srcVec, 0x08);
+    if (lift_field<uintptr_t>(srcVec, 0x04) > endPtr) {
+        invalidParam();
+    }
+    CheckedVectorIter endIt{ srcVec, srcVec, endPtr };
+    ext_00427A60(&endIt);
+
+    for (;;) {
+        void* container = it.container1;
+        if (container == nullptr || container != endIt.container1) {
+            invalidParam();
+        }
+        uintptr_t cur = it.cur;
+        if (cur >= endIt.cur) {
+            break;
+        }
+        if (container == nullptr) {
+            invalidParam();
+        }
+        if (cur >= lift_field<uintptr_t>(container, 0x08)) {
+            invalidParam();
+        }
+
+        void* elem = *reinterpret_cast<void**>(cur);
+        const void* elemName = static_cast<const uint8_t*>(elem) + 0x04;
+        if (reinterpret_cast<StrEqCstrFn>(mem_00924FC0)(elemName, nameFilter)) {
+            void* raw = ext_006A5C62(0x18c);
+            void* obj = nullptr;
+            if (raw != nullptr) {
+                alignas(4) uint8_t tmpStr[0x1c];
+                reinterpret_cast<StrCtorCstrFn>(mem_00924FE4)(
+                    tmpStr,
+                    reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00928B5D)));
+                obj = ext_004C6780(raw, tmpStr);
+                reinterpret_cast<StrDtorFn>(mem_00924FF4)(tmpStr);
+            }
+
+            void** vtbl = *reinterpret_cast<void***>(obj);
+            reinterpret_cast<VFunc54Fn>(vtbl[0x54 / sizeof(void*)])(obj, elem);
+
+            void* pushed = obj;
+            ext_0041A920(dstVec, &pushed);
+        }
+
+        if (cur >= lift_field<uintptr_t>(container, 0x08)) {
+            invalidParam();
+        }
+        it.cur = cur + sizeof(void*);
+        ext_00427A60(&it);
+    }
+}
+} // namespace lift_0047B6A0
