@@ -1,0 +1,28 @@
+{
+  "va": "0x007833B0",
+  "size": 64,
+  "orig_symbol": "sub_007833B0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::openFileAndStore_007833B0",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint8_t __thiscall fn_007833B0(void* self, const char* path, const char* mode)",
+  "summary": "Opens path/mode via UTF8PathFopen into the record at this+0x04, stores the success flag at record+0x04, assigns path into this+0x0C, and returns the flag.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "fileRecord"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "char*",
+      "name": "pathBuffer"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:11Z"
+}

@@ -250,6 +250,7 @@ struct Unknown_Fields {
     // +0x4   uint8_t                  field_0x04[0x14]  (evidence: 0x006E72D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   unknown                  field_0x4  (evidence: 0x005CFEC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x4  (evidence: 0x0071CAD0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    fileRecord  (evidence: 0x007833B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   BYTE                     flag04  (evidence: 0x005B3500) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 flags  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    float4Value  (evidence: 0x0054F300) // CONFLICT: multiple definitions at +0x4
@@ -501,6 +502,7 @@ struct Unknown_Fields {
     // +0xC   uint8_t*                 out_cursor  (evidence: 0x007C1F90) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    pObj  (evidence: 0x006D8FD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t field_0x0c (multiplier applied to the lower index of the pair)  (evidence: 0x007DD160) // CONFLICT: multiple definitions at +0xC
+    // +0xC   char*                    pathBuffer  (evidence: 0x007833B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   float* field_0x0C (end-of-capacity pointer)  (evidence: 0x00607F20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t* field_0x0C (self capacity end pointer)  (evidence: 0x0065DAD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object pointer)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0xC

@@ -2829,3 +2829,32 @@ extern uint8_t __thiscall fn_007865B0(void* self, [[maybe_unused]] uint32_t stac
     return 0;
 }
 } // namespace lift_007865B0
+
+// [0x007833B0] sub_007833B0 (64 bytes)
+namespace lift_007833B0 {
+// Known callee 0x00783160: UTF8PathFopen (Converts a UTF-8 path and mode to UTF-16 (CP_UTF8) and opens the file with _wfopen; stores the FILE* through out and returns whether it is non-null.)
+extern uint8_t ext_00783160(FILE** out, const char* path, const char* mode);
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* ext_006B9EC0(void* self, const char* s);
+
+// @name Unknown::openFileAndStore_007833B0
+// @class Unknown
+// @summary Opens path/mode via UTF8PathFopen into the record at this+0x04, stores the success flag at record+0x04, assigns path into this+0x0C, and returns the flag.
+// @field Unknown +0x04 void* fileRecord
+// @field Unknown +0x0C char* pathBuffer
+extern uint8_t __thiscall fn_007833B0(void* self, const char* path, const char* mode) {
+    // ecx = [self+4] is passed as the FILE** out-parameter; the callee stores the FILE* there.
+    FILE** out = reinterpret_cast<FILE**>(lift_field<void*>(self, 0x4));
+    uint8_t ok = ext_00783160(out, path, mode);
+
+    // record = [self+4]; record->flag (byte at +4) = ok
+    void* record = lift_field<void*>(self, 0x4);
+    lift_field<uint8_t>(record, 0x4) = ok;
+
+    // ext_006B9EC0(this + 0xC, path); return value discarded
+    ext_006B9EC0(reinterpret_cast<char*>(self) + 0xC, path);
+
+    // Re-read record pointer and return its flag byte
+    return lift_field<uint8_t>(lift_field<void*>(self, 0x4), 0x4);
+}
+} // namespace lift_007833B0
