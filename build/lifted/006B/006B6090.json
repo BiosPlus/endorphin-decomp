@@ -1,0 +1,28 @@
+{
+  "va": "0x006B6090",
+  "size": 18,
+  "orig_symbol": "sub_006B6090",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "Unknown::resetVtablesAndTailDestruct",
+  "class": "Unknown",
+  "signature": "void fn_006B6090(void* self)",
+  "summary": "Sets the primary vtable at +0x00 and the secondary vtable at +0x54, then tail-calls the base destructor sub_006B5090.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "vtable2"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:33:45Z"
+}

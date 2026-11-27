@@ -850,3 +850,22 @@ uint32_t fn_006B67E0(void* self, uint32_t wParam, uint32_t lParam) {
     return 0; // xor eax, eax
 }
 } // namespace lift_006B67E0
+
+// [0x006B6090] sub_006B6090 (18 bytes)
+namespace lift_006B6090 {
+// Known callee 0x006B5090: sub_006B5090_dtor (Destructor that resets vtables, deletes member at +0xd4, destroys member at +0x68, destroys member at +0x5c via MFC80_ord_1934, and calls base destructor MFC80_ord_760.)
+extern void ext_006B5090(void* self);
+extern int mem_009922BC;
+extern int mem_009922B4;
+
+// @name Unknown::resetVtablesAndTailDestruct
+// @class Unknown
+// @summary Sets the primary vtable at +0x00 and the secondary vtable at +0x54, then tail-calls the base destructor sub_006B5090.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x54 void* vtable2
+void fn_006B6090(void* self) {
+    lift_field<void*>(self, 0x00) = &mem_009922BC;
+    lift_field<void*>(self, 0x54) = &mem_009922B4;
+    ext_006B5090(self);
+}
+} // namespace lift_006B6090

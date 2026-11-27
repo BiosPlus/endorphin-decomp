@@ -1770,6 +1770,13 @@
     "summary": "Returns the address of the global constant mem_0092C8E4 (a .rdata pointer value).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00416710": {
+    "name": "sub_00416710_dtor",
+    "class": "sub_00416710",
+    "signature": "extern \"C\" void __thiscall fn_00416710(void* self)",
+    "summary": "Destructor for object with vftable 0x0092c92c, destroying four embedded MFC controls and base class.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004167A0": {
     "name": "CommandParser::setIntFromCStringArg",
     "class": "CommandParser",
@@ -7947,6 +7954,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00465D00 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00466870": {
+    "name": "destroyTwoMembers_00466870",
+    "signature": "static void destroy_member(uint8_t* member)",
+    "summary": "Destroys two embedded 0x28-byte member objects at +0x38 and +0x10 by freeing their +0x18 buffers and calling sub_00678DE0.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00466BA0": {
     "name": "DispatchRangeWithDefault",
     "signature": "void fn_00466BA0(void* self, uint32_t arg1, uint32_t arg2)",
@@ -11266,6 +11279,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0048F590 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
   },
+  "0x0048F740": {
+    "name": "Unknown::InitObject",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_0048F740(void* self, uint32_t arg1, uint8_t arg2, uint32_t arg3)",
+    "summary": "Initializes vtable, fields, and retrieves a vector element at index 0.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048F920": {
     "name": "Commands::SetTriggeredEventFrameRangeCommand::vfunc_0",
     "class": "Commands::SetTriggeredEventFrameRangeCommand",
@@ -14011,6 +14031,13 @@
     "signature": "void fn_004ABF10(uint32_t* first, uint32_t* last, uint32_t pred)",
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004ABF60": {
+    "name": "NMData::BehaviourData::vfunc_87",
+    "class": "NMData::BehaviourData",
+    "signature": "void fn_004ABF60(void* self)",
+    "summary": "Clears active behaviour state, notifies child object, erases int32 range, and deletes subobject",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
   },
   "0x004ABFF0": {
     "name": "lookupNameViaField180",
@@ -64130,6 +64157,13 @@
     "signature": "extern \"C\" void fn_006B6060(void)",
     "summary": "Pure jump thunk forwarding to sub_006B6050.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x006B6090": {
+    "name": "Unknown::resetVtablesAndTailDestruct",
+    "class": "Unknown",
+    "signature": "void fn_006B6090(void* self)",
+    "summary": "Sets the primary vtable at +0x00 and the secondary vtable at +0x54, then tail-calls the base destructor sub_006B5090.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
   "0x006B60B0": {
     "name": "sub_006B60B0",
