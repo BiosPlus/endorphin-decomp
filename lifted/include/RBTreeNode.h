@@ -8,11 +8,13 @@
 // Recovered field layout for RBTreeNode:
 namespace lifted_layout {
 struct RBTreeNode_Fields {
-    // +0x0   void*                    left  (evidence: 0x00622B40)
-    // +0x4   void*                    parent  (evidence: 0x00622B40)
-    // +0x8   void*                    right  (evidence: 0x00622B40)
+    // +0x0   void*                    left  (evidence: 0x00492F00, 0x00622B40)
+    // +0x4   void*                    parent  (evidence: 0x00492F00, 0x00622B40)
+    // +0x8   void*                    right  (evidence: 0x00492F00, 0x00622B40)
     // +0xC   uint32_t                 key0  (evidence: 0x00622B40)
     // +0x10  uint32_t                 key1  (evidence: 0x00622B40)
     // +0x19  uint8_t                  isNil  (evidence: 0x00622B40)
+    // +0x20  uint8_t                  color  (evidence: 0x00492F00)
+    // +0x21  uint8_t                  is_nil  (evidence: 0x00492F00)
 };
 } // namespace lifted_layout

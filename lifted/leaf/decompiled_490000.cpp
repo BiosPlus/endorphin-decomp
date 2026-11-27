@@ -2789,3 +2789,205 @@ uint32_t* fn_0049A930(void* self, uint32_t* out, uint32_t key) {
     return out;
 }
 } // namespace lift_0049A930
+
+// [0x00492F00]
+namespace lift_00492F00 {
+extern void ext_006A6DD2(void);
+extern void __thiscall ext_00492BC0(void* self);
+extern void* __cdecl ext_004928E0(void* arg);
+extern void* __cdecl ext_004928C0(void* arg);
+extern void __thiscall ext_00492A80(void* self, void* node);
+extern void __thiscall ext_00492AD0(void* self, void* node);
+extern void __cdecl ext_006A5C5C(void* node);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_009251C4;
+extern uint32_t mem_00924FE0;
+
+// @name RBTree::erase
+// @class RBTree
+// @summary Erases a node at the given iterator position from an MSVC8 red-black tree and rebalances the tree.
+// @field RBTree +0x04 void* head
+// @field RBTree +0x08 uint32_t size
+// @field RBTreeNode +0x00 void* left
+// @field RBTreeNode +0x04 void* parent
+// @field RBTreeNode +0x08 void* right
+// @field RBTreeNode +0x20 uint8_t color
+// @field RBTreeNode +0x21 uint8_t is_nil
+void* __thiscall sub_00492F00(void* self, void* out_iter, void* iter_container, void* iter_node) {
+    uint8_t* node = static_cast<uint8_t*>(iter_node);
+    if (lift_field<uint8_t>(node, 0x21) != 0) {
+        (void)mem_00924FE4;
+        (void)mem_009251C4;
+        (void)mem_00924FE0;
+        ext_006A6DD2();
+    }
+
+    uint8_t* erased_node = node;
+    struct {
+        void* container;
+        void* node;
+    } next_iter = { iter_container, iter_node };
+    ext_00492BC0(&next_iter);
+
+    uint8_t* fix_node = nullptr;
+    uint8_t* fix_parent = nullptr;
+
+    uint8_t* left = lift_field<uint8_t*>(erased_node, 0x00);
+    if (lift_field<uint8_t>(left, 0x21) != 0) {
+        fix_node = lift_field<uint8_t*>(erased_node, 0x08);
+    } else {
+        uint8_t* right = lift_field<uint8_t*>(erased_node, 0x08);
+        if (lift_field<uint8_t>(right, 0x21) != 0) {
+            fix_node = left;
+        } else {
+            uint8_t* succ = static_cast<uint8_t*>(next_iter.node);
+            fix_node = lift_field<uint8_t*>(succ, 0x08);
+            if (succ != erased_node) {
+                lift_field<uint8_t*>(left, 0x04) = succ;
+                lift_field<uint8_t*>(succ, 0x00) = left;
+                if (succ == lift_field<uint8_t*>(erased_node, 0x08)) {
+                    fix_parent = succ;
+                } else {
+                    fix_parent = lift_field<uint8_t*>(succ, 0x04);
+                    if (lift_field<uint8_t>(fix_node, 0x21) == 0) {
+                        lift_field<uint8_t*>(fix_node, 0x04) = fix_parent;
+                    }
+                    lift_field<uint8_t*>(fix_parent, 0x00) = fix_node;
+                    uint8_t* erased_right = lift_field<uint8_t*>(erased_node, 0x08);
+                    lift_field<uint8_t*>(succ, 0x08) = erased_right;
+                    lift_field<uint8_t*>(erased_right, 0x04) = succ;
+                }
+
+                uint8_t* head = lift_field<uint8_t*>(self, 0x04);
+                if (lift_field<uint8_t*>(head, 0x04) == erased_node) {
+                    lift_field<uint8_t*>(head, 0x04) = succ;
+                } else {
+                    uint8_t* erased_parent = lift_field<uint8_t*>(erased_node, 0x04);
+                    if (lift_field<uint8_t*>(erased_parent, 0x00) == erased_node) {
+                        lift_field<uint8_t*>(erased_parent, 0x00) = succ;
+                    } else {
+                        lift_field<uint8_t*>(erased_parent, 0x08) = succ;
+                    }
+                }
+                lift_field<uint8_t*>(succ, 0x04) = lift_field<uint8_t*>(erased_node, 0x04);
+                uint8_t tmp_color = lift_field<uint8_t>(erased_node, 0x20);
+                lift_field<uint8_t>(erased_node, 0x20) = lift_field<uint8_t>(succ, 0x20);
+                lift_field<uint8_t>(succ, 0x20) = tmp_color;
+                goto rebalance;
+            }
+        }
+    }
+
+    fix_parent = lift_field<uint8_t*>(erased_node, 0x04);
+    if (lift_field<uint8_t>(fix_node, 0x21) == 0) {
+        lift_field<uint8_t*>(fix_node, 0x04) = fix_parent;
+    }
+    {
+        uint8_t* head = lift_field<uint8_t*>(self, 0x04);
+        if (lift_field<uint8_t*>(head, 0x04) == erased_node) {
+            lift_field<uint8_t*>(head, 0x04) = fix_node;
+        } else if (lift_field<uint8_t*>(fix_parent, 0x00) == erased_node) {
+            lift_field<uint8_t*>(fix_parent, 0x00) = fix_node;
+        } else {
+            lift_field<uint8_t*>(fix_parent, 0x08) = fix_node;
+        }
+
+        if (lift_field<uint8_t*>(head, 0x00) == erased_node) {
+            void* new_min = (lift_field<uint8_t>(fix_node, 0x21) != 0) ? fix_parent : ext_004928E0(fix_node);
+            lift_field<void*>(head, 0x00) = new_min;
+        }
+        if (lift_field<uint8_t*>(head, 0x08) == erased_node) {
+            void* new_max = (lift_field<uint8_t>(fix_node, 0x21) != 0) ? fix_parent : ext_004928C0(fix_node);
+            lift_field<void*>(head, 0x08) = new_max;
+        }
+    }
+
+rebalance:
+    if (lift_field<uint8_t>(erased_node, 0x20) == 1) {
+        uint8_t* head = lift_field<uint8_t*>(self, 0x04);
+        while (fix_node != lift_field<uint8_t*>(head, 0x04) && lift_field<uint8_t>(fix_node, 0x20) == 1) {
+            if (fix_node == lift_field<uint8_t*>(fix_parent, 0x00)) {
+                uint8_t* sibling = lift_field<uint8_t*>(fix_parent, 0x08);
+                if (lift_field<uint8_t>(sibling, 0x20) == 0) {
+                    lift_field<uint8_t>(sibling, 0x20) = 1;
+                    lift_field<uint8_t>(fix_parent, 0x20) = 0;
+                    ext_00492A80(self, fix_parent);
+                    sibling = lift_field<uint8_t*>(fix_parent, 0x08);
+                }
+                if (lift_field<uint8_t>(sibling, 0x21) != 0) {
+                    fix_node = fix_parent;
+                    fix_parent = lift_field<uint8_t*>(fix_parent, 0x04);
+                    head = lift_field<uint8_t*>(self, 0x04);
+                    continue;
+                }
+                uint8_t* sib_left = lift_field<uint8_t*>(sibling, 0x00);
+                uint8_t* sib_right = lift_field<uint8_t*>(sibling, 0x08);
+                if (lift_field<uint8_t>(sib_left, 0x20) == 1 && lift_field<uint8_t>(sib_right, 0x20) == 1) {
+                    lift_field<uint8_t>(sibling, 0x20) = 0;
+                    fix_node = fix_parent;
+                    fix_parent = lift_field<uint8_t*>(fix_parent, 0x04);
+                    head = lift_field<uint8_t*>(self, 0x04);
+                } else {
+                    if (lift_field<uint8_t>(sib_right, 0x20) == 1) {
+                        lift_field<uint8_t>(sib_left, 0x20) = 1;
+                        lift_field<uint8_t>(sibling, 0x20) = 0;
+                        ext_00492AD0(self, sibling);
+                        sibling = lift_field<uint8_t*>(fix_parent, 0x08);
+                    }
+                    lift_field<uint8_t>(sibling, 0x20) = lift_field<uint8_t>(fix_parent, 0x20);
+                    lift_field<uint8_t>(fix_parent, 0x20) = 1;
+                    lift_field<uint8_t>(lift_field<uint8_t*>(sibling, 0x08), 0x20) = 1;
+                    ext_00492A80(self, fix_parent);
+                    break;
+                }
+            } else {
+                uint8_t* sibling = lift_field<uint8_t*>(fix_parent, 0x00);
+                if (lift_field<uint8_t>(sibling, 0x20) == 0) {
+                    lift_field<uint8_t>(sibling, 0x20) = 1;
+                    lift_field<uint8_t>(fix_parent, 0x20) = 0;
+                    ext_00492AD0(self, fix_parent);
+                    sibling = lift_field<uint8_t*>(fix_parent, 0x00);
+                }
+                if (lift_field<uint8_t>(sibling, 0x21) != 0) {
+                    fix_node = fix_parent;
+                    fix_parent = lift_field<uint8_t*>(fix_parent, 0x04);
+                    head = lift_field<uint8_t*>(self, 0x04);
+                    continue;
+                }
+                uint8_t* sib_right = lift_field<uint8_t*>(sibling, 0x08);
+                uint8_t* sib_left = lift_field<uint8_t*>(sibling, 0x00);
+                if (lift_field<uint8_t>(sib_right, 0x20) == 1 && lift_field<uint8_t>(sib_left, 0x20) == 1) {
+                    lift_field<uint8_t>(sibling, 0x20) = 0;
+                    fix_node = fix_parent;
+                    fix_parent = lift_field<uint8_t*>(fix_parent, 0x04);
+                    head = lift_field<uint8_t*>(self, 0x04);
+                } else {
+                    if (lift_field<uint8_t>(sib_left, 0x20) == 1) {
+                        lift_field<uint8_t>(sib_right, 0x20) = 1;
+                        lift_field<uint8_t>(sibling, 0x20) = 0;
+                        ext_00492A80(self, sibling);
+                        sibling = lift_field<uint8_t*>(fix_parent, 0x00);
+                    }
+                    lift_field<uint8_t>(sibling, 0x20) = lift_field<uint8_t>(fix_parent, 0x20);
+                    lift_field<uint8_t>(fix_parent, 0x20) = 1;
+                    lift_field<uint8_t>(lift_field<uint8_t*>(sibling, 0x00), 0x20) = 1;
+                    ext_00492AD0(self, fix_parent);
+                    break;
+                }
+            }
+        }
+        lift_field<uint8_t>(fix_node, 0x20) = 1;
+    }
+
+    ext_006A5C5C(erased_node);
+    uint32_t size = lift_field<uint32_t>(self, 0x08);
+    if (size > 0) {
+        lift_field<uint32_t>(self, 0x08) = size - 1;
+    }
+
+    lift_field<void*>(out_iter, 0x00) = next_iter.container;
+    lift_field<void*>(out_iter, 0x04) = next_iter.node;
+    return out_iter;
+}
+} // namespace lift_00492F00

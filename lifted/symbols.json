@@ -13936,6 +13936,13 @@
     "summary": "Calls ext_006A5C62(0x24) to get a 0x24-byte record, zeroes the dwords at +0x00, +0x04 and +0x08 (each guarded by a non-zero address test), sets byte +0x20 to 1 and byte +0x21 to 0, then returns the record pointer.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00492F00": {
+    "name": "RBTree::erase",
+    "class": "RBTree",
+    "signature": "void* __thiscall sub_00492F00(void* self, void* out_iter, void* iter_container, void* iter_node)",
+    "summary": "Erases a node at the given iterator position from an MSVC8 red-black tree and rebalances the tree.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00493330": {
     "name": "Tree_erase",
     "signature": "void __thiscall fn_00493330(void* self, void* node)",
