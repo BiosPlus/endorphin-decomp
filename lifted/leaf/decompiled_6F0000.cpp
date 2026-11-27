@@ -2356,3 +2356,27 @@ uint32_t fn_006FF760(const uint16_t* s, const uint16_t* list) {
     return runs;
 }
 } // namespace lift_006FF760
+
+// [0x006F9E60] sub_006F9E60 (48 bytes)
+namespace lift_006F9E60 {
+// Known callee 0x006F9DE0: GetOrCreateSingleton_006F9DE0 (Lazily allocates a 0x24-byte Unknown object into mem_00B5E41C on first call and returns the global pointer.)
+extern void* ext_006F9DE0(void);
+// Known callee 0x006F9E90: Lazy-initialize critical section (If not yet initialized (+0x20 == 0), allocates 0x18 bytes, stores the pointer at +0x1c, runs InitializeCriticalSection on it, and marks the object initialized.)
+extern void ext_006F9E90(void* self);
+extern uint32_t mem_00B5E420;
+extern void* mem_00B5E41C;
+
+// @name GetOrInitSingletonAndBumpCounter_006F9E60
+// @summary Ensures the singleton at mem_00B5E41C is created and initialized on first call, then increments the init counter mem_00B5E420.
+// @field (global) mem_00B5E420 uint32_t counter (not a class field)
+void fn_006F9E60(void) {
+    if (mem_00B5E420 == 0) {
+        ext_006F9DE0();
+        void* obj = mem_00B5E41C;
+        if (obj != nullptr) {
+            ext_006F9E90(obj);
+        }
+    }
+    mem_00B5E420 += 1;
+}
+} // namespace lift_006F9E60

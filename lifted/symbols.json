@@ -69703,6 +69703,12 @@
     "summary": "Lazily allocates a 0x24-byte Unknown object into mem_00B5E41C on first call and returns the global pointer.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F9E60": {
+    "name": "GetOrInitSingletonAndBumpCounter_006F9E60",
+    "signature": "void fn_006F9E60(void)",
+    "summary": "Ensures the singleton at mem_00B5E41C is created and initialized on first call, then increments the init counter mem_00B5E420.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F9E90": {
     "name": "Lazy-initialize critical section",
     "class": "CriticalSectionHolder",
