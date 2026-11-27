@@ -223,6 +223,7 @@ struct Unknown_Fields {
     // +0x4   float* field_0x04 (begin pointer)  (evidence: 0x00607F20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (begin pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (self -> link pointer)  (evidence: 0x00810200) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t field_0x04 (sentinel/head node pointer)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 ptrToSrcPlus14  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    ptrToSubobject  (evidence: 0x007155B0, 0x00715710) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 range1_begin  (evidence: 0x00526960, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4

@@ -1,0 +1,45 @@
+{
+  "va": "0x005DF6B0",
+  "size": 105,
+  "orig_symbol": "sub_005DF6B0",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "TreeLowerBoundIter (descriptive; owner class not yet identified)",
+  "signature": "inline uint32_t\u0026 node_u32(uint32_t p, ptrdiff_t off)",
+  "summary": "Tree search for first node with key \u003e= *key; returns {self, node} pair, or {self, head} when no match.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (sentinel/head node",
+      "name": "pointer)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (child pointer, taken when node key \u003e= search",
+      "name": "key)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08 (child pointer, taken when node key \u003c search",
+      "name": "key)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "int32_t field_0x0c (node",
+      "name": "key)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x15",
+      "type": "uint8_t field_0x15 (nil flag; nonzero = sentinel/end of",
+      "name": "walk)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:56:55Z"
+}

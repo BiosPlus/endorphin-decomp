@@ -537,3 +537,59 @@ void fn_005DC930(void* self) {
     lift_field<void*>(self, 0x44) = nullptr;
 }
 } // namespace lift_005DC930
+
+// [0x005DF6B0]
+namespace lift_005DF6B0 {
+// @name TreeLowerBoundIter (descriptive; owner class not yet identified)
+// @summary Tree search for first node with key >= *key; returns {self, node} pair, or {self, head} when no match.
+// @field Unknown +0x04 uint32_t field_0x04 (sentinel/head node pointer)
+// @field TreeNode +0x00 uint32_t field_0x00 (child pointer, taken when node key >= search key)
+// @field TreeNode +0x08 uint32_t field_0x08 (child pointer, taken when node key < search key)
+// @field TreeNode +0x0c int32_t field_0x0c (node key)
+// @field TreeNode +0x15 uint8_t field_0x15 (nil flag; nonzero = sentinel/end of walk)
+
+namespace {
+
+inline uint32_t& node_u32(uint32_t p, ptrdiff_t off) {
+    return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(p)), off);
+}
+
+inline int32_t& node_i32(uint32_t p, ptrdiff_t off) {
+    return lift_field<int32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(p)), off);
+}
+
+inline uint8_t& node_u8(uint32_t p, ptrdiff_t off) {
+    return lift_field<uint8_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(p)), off);
+}
+
+} // namespace
+
+void* fn_005DF6B0(void* self, void* out, const void* key) {
+    const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    const uint32_t head = lift_field<uint32_t>(self, 0x04);
+    uint32_t cand = head;
+    uint32_t cur = node_u32(head, 0x04);
+
+    const int32_t search = lift_field<int32_t>(const_cast<void*>(key), 0);
+
+    // Walk while node is not the nil sentinel.
+    while (node_u8(cur, 0x15) == 0) {
+        if (node_i32(cur, 0x0c) >= search) {
+            cand = cur;
+            cur = node_u32(cur, 0x00);
+        } else {
+            cur = node_u32(cur, 0x08);
+        }
+    }
+
+    uint32_t first = self_addr;
+    uint32_t second = head;
+    if (cand != head && search >= node_i32(cand, 0x0c)) {
+        second = cand;
+    }
+
+    lift_field<uint32_t>(out, 0x00) = first;
+    lift_field<uint32_t>(out, 0x04) = second;
+    return out;
+}
+} // namespace lift_005DF6B0

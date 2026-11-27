@@ -35044,6 +35044,12 @@
     "summary": "Recursively erases and frees all non-nil nodes in a red-black tree subtree",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005DF6B0": {
+    "name": "TreeLowerBoundIter (descriptive; owner class not yet identified)",
+    "signature": "inline uint32_t\u0026 node_u32(uint32_t p, ptrdiff_t off)",
+    "summary": "Tree search for first node with key \u003e= *key; returns {self, node} pair, or {self, head} when no match.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DF720": {
     "name": "Unknown::forEachAdvanceInvoke_005DF720",
     "class": "Unknown",
