@@ -64768,6 +64768,12 @@
     "summary": "Decrements the int32 counter at self+0x38; when it reaches zero, calls vtable slot 0 on self with argument 1.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006ADBF0": {
+    "name": "sub_006ADBF0",
+    "signature": "extern \"C\" void* __thiscall fn_006ADBF0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Constructor initializing vtable, std::map-like tree at +0xc, MFC object at +0x18, and fields",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AEC30": {
     "name": "GWCPropertyValue::vfunc_0",
     "class": "GWCPropertyValue",
