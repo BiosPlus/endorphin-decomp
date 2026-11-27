@@ -1,0 +1,52 @@
+{
+  "va": "0x00402500",
+  "size": 167,
+  "orig_symbol": "sub_00402500",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Tree::cloneSubtree",
+  "class": "Tree",
+  "signature": "void* fn_00402500(void* self, void* rec, void* arg1)",
+  "summary": "Recursively clones a red-black tree subtree (non-nil nodes) into newly allocated nodes, linking child pointers; on unwind erases the partial clone and rethrows.",
+  "fields": [
+    {
+      "class": "Tree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "root"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "keyPair[2]"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x14",
+      "type": "BYTE",
+      "name": "color"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x15",
+      "type": "BYTE",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:28Z"
+}

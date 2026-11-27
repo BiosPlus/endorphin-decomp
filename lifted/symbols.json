@@ -418,6 +418,13 @@
     "summary": "Copy constructor for a std::logic_error subclass, calling base copy constructor and setting vtable.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00402500": {
+    "name": "Tree::cloneSubtree",
+    "class": "Tree",
+    "signature": "void* fn_00402500(void* self, void* rec, void* arg1)",
+    "summary": "Recursively clones a red-black tree subtree (non-nil nodes) into newly allocated nodes, linking child pointers; on unwind erases the partial clone and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00402630": {
     "name": "copyRecordRange",
     "class": "Unknown",

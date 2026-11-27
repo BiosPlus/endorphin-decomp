@@ -2866,3 +2866,53 @@ void fn_0040ECB0(void* self, const void* value) {
     ext_0040EBF0(self, &value, self, last, value);
 }
 } // namespace lift_0040ECB0
+
+// [0x00402500]
+namespace lift_00402500 {
+// @name Tree::cloneSubtree
+// @class Tree
+// @summary Recursively clones a red-black tree subtree (non-nil nodes) into newly allocated nodes, linking child pointers; on unwind erases the partial clone and rethrows.
+// @field Tree +0x04 void* root
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0c DWORD keyPair[2]
+// @field TreeNode +0x14 BYTE color
+// @field TreeNode +0x15 BYTE isNil
+
+// Callee declarations (thiscall-style: self passed in ecx).
+void* ext_004EF970(void* self, DWORD a0, DWORD a1, DWORD a2, const DWORD* a3, BYTE a4);
+void ext_005DF270(void* self, DWORD node);
+void ext_006A6DD2(void);
+
+void* fn_00402500(void* self, void* rec, void* arg1) {
+    unsigned char* const s = static_cast<unsigned char*>(self);
+    unsigned char* const rb = static_cast<unsigned char*>(rec);
+    auto toDword = [](const void* p) {
+        return static_cast<DWORD>(reinterpret_cast<uintptr_t>(p));
+    };
+
+    void* r = *reinterpret_cast<void**>(s + 0x04);
+    try {
+        if (rb[0x15] == 0) {
+            const BYTE color = rb[0x14];
+            void* n = ext_004EF970(self, toDword(r), toDword(arg1), toDword(r),
+                                   reinterpret_cast<const DWORD*>(rb + 0x0c), color);
+
+            if (static_cast<unsigned char*>(r)[0x15] != 0) {
+                r = n;
+            }
+
+            unsigned char* const nb = static_cast<unsigned char*>(n);
+            void* leftSrc = *reinterpret_cast<void**>(rb + 0x00);
+            *reinterpret_cast<void**>(nb + 0x00) = fn_00402500(self, leftSrc, n);
+
+            void* rightSrc = *reinterpret_cast<void**>(rb + 0x08);
+            *reinterpret_cast<void**>(nb + 0x08) = fn_00402500(self, rightSrc, n);
+        }
+    } catch (...) {
+        ext_005DF270(self, toDword(r));
+        ext_006A6DD2();
+    }
+    return r;
+}
+} // namespace lift_00402500
