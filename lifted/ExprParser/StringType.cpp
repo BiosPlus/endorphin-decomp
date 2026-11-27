@@ -335,3 +335,47 @@ void __stdcall fn_0066EEE0(void* arg1, void* arg2, void* arg3, void* arg4) {
     );
 }
 } // namespace lift_0066EEE0
+
+// [0x0066B350] ExprParser::StringType::vfunc_25 (188 bytes)
+namespace lift_0066B350 {
+// @name ExprParser::StringType::vfunc_25
+// @class ExprParser::StringType
+// @summary Fetches a std::string from ext_0041CEB0(value, buf), then writes ("" + fetched + "") into out_str and returns out_str.
+
+extern void* ext_0041CEB0(void* self, void* out_str);
+// Metadata lists ext_006720E0 as a callee, but the 188 bytes never call it.
+// Only the address is taken below (no runtime effect); no call is added.
+extern void ext_006720E0(void);
+
+// MSVCP80 std::string IAT slots used by the original code.
+// 0x00924FE4: basic_string::basic_string(const char*)
+static auto& mem_00924FE4 = *reinterpret_cast<void (**)(void*, const char*)>(static_cast<uintptr_t>(0x00924FE4u));
+// 0x00924FD0: operator+(const basic_string&, const basic_string&), returns by value (sret)
+static auto& mem_00924FD0 = *reinterpret_cast<void* (**)(void*, const void*, const void*)>(static_cast<uintptr_t>(0x00924FD0u));
+// 0x00924ECC: operator+(const basic_string&, const char*), returns by value (sret)
+static auto& mem_00924ECC = *reinterpret_cast<void* (**)(void*, const void*, const char*)>(static_cast<uintptr_t>(0x00924ECCu));
+// 0x00924FF4: basic_string::~basic_string()
+static auto& mem_00924FF4 = *reinterpret_cast<void (**)(void*)>(static_cast<uintptr_t>(0x00924FF4u));
+
+// String literal at 0x0092B4A0 (contents not recovered here).
+static const char* const lit_0092B4A0 = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0092B4A0u));
+
+void* __stdcall fn_0066B350(void* out_str, void* value) {
+    (void)&ext_006720E0;  // address only; not called by the original bytes
+
+    alignas(4) uint8_t fetched[28];
+    void* src = ext_0041CEB0(value, fetched);
+
+    alignas(4) uint8_t prefix[28];
+    mem_00924FE4(prefix, lit_0092B4A0);
+
+    alignas(4) uint8_t joined[28];
+    mem_00924FD0(joined, prefix, src);
+    mem_00924ECC(out_str, joined, lit_0092B4A0);
+
+    mem_00924FF4(joined);
+    mem_00924FF4(prefix);
+    mem_00924FF4(fetched);
+    return out_str;
+}
+} // namespace lift_0066B350

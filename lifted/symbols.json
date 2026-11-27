@@ -72548,6 +72548,13 @@
     "summary": "Forwards (rec + 0x2C, 0) to ext_006720E0 on self and returns self.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x0066B350": {
+    "name": "ExprParser::StringType::vfunc_25",
+    "class": "ExprParser::StringType",
+    "signature": "void* __stdcall fn_0066B350(void* out_str, void* value)",
+    "summary": "Fetches a std::string from ext_0041CEB0(value, buf), then writes (\"\" + fetched + \"\") into out_str and returns out_str.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066B410": {
     "name": "ExprParser::StringType::vfunc_42",
     "class": "ExprParser::StringType",

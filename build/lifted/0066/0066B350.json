@@ -1,0 +1,14 @@
+{
+  "va": "0x0066B350",
+  "size": 188,
+  "orig_symbol": "ExprParser::StringType::vfunc_25",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_25",
+  "class": "ExprParser::StringType",
+  "signature": "void* __stdcall fn_0066B350(void* out_str, void* value)",
+  "summary": "Fetches a std::string from ext_0041CEB0(value, buf), then writes (\"\" + fetched + \"\") into out_str and returns out_str.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:59:23Z"
+}
