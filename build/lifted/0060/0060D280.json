@@ -1,0 +1,34 @@
+{
+  "va": "0x0060D280",
+  "size": 281,
+  "orig_symbol": "NMData::EffectorGroupData::vfunc_14",
+  "src_path": "src/NMData/EffectorGroupData.cpp",
+  "lifted_path": "lifted/NMData/EffectorGroupData.cpp",
+  "name": "NMData::EffectorGroupData::vfunc_14",
+  "class": "NMData::EffectorGroupData",
+  "signature": "extern \"C\" int mem_00924FE4; // MSVCP80 string(const char*) ctor import: metadata only extern \"C\" int mem_00924FF0; // MSVCP80 string::c_str import: metadata only extern \"C\" int mem_00924FF4; // MSVCP80 string dtor import: metadata only extern \"C\" int mem_00925134; // MSVCR80 _invalid_parameter_noinfo import: metadata only void fn_0060D280(void* self, void* arg)",
+  "summary": "Re-binds the child name from this+0x04 under the object from sub_006404E0(arg), then for each 28-byte std::string in the list at this+0x48..+0x4C clears the owned objects and assigns that string as a child via assignOrCreateChild.",
+  "fields": [
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:49:57Z"
+}

@@ -59581,6 +59581,13 @@
     "summary": "If arg3 is null, allocates and constructs a 0x60-byte object; then fills it from arg1 and this, invokes its vtable slot 0x30 with this, stores it at this+0x40 and returns it.",
     "lifted_path": "lifted/NMData/EffectorData.cpp"
   },
+  "0x0060D280": {
+    "name": "NMData::EffectorGroupData::vfunc_14",
+    "class": "NMData::EffectorGroupData",
+    "signature": "extern \"C\" int mem_00924FE4; // MSVCP80 string(const char*) ctor import: metadata only extern \"C\" int mem_00924FF0; // MSVCP80 string::c_str import: metadata only extern \"C\" int mem_00924FF4; // MSVCP80 string dtor import: metadata only extern \"C\" int mem_00925134; // MSVCR80 _invalid_parameter_noinfo import: metadata only void fn_0060D280(void* self, void* arg)",
+    "summary": "Re-binds the child name from this+0x04 under the object from sub_006404E0(arg), then for each 28-byte std::string in the list at this+0x48..+0x4C clears the owned objects and assigns that string as a child via assignOrCreateChild.",
+    "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
+  },
   "0x0060D3A0": {
     "name": "NMData::EffectorGroupData::vfunc_22",
     "class": "NMData::EffectorGroupData",

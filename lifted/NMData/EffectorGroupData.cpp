@@ -310,3 +310,57 @@ void __thiscall fn_0060D5F0(void* self, void* src) {
     }
 }
 } // namespace lift_0060D5F0
+
+// [0x0060D280] NMData::EffectorGroupData::vfunc_14 (281 bytes)
+namespace lift_0060D280 {
+extern void ext_00427550(void* self, const char* name);
+extern void ext_0063F8D0(void* self);
+extern void* ext_00640110(void* self, uint32_t value);
+extern void ext_00640270(void* self, void* name);
+extern void* ext_006404E0(void* self, uint32_t value);
+extern uint32_t mem_00A9EE64;
+extern uint32_t mem_00A9EE68;
+extern uint32_t mem_00A9F838;
+extern int mem_00924FE4; // MSVCP80 string(const char*) ctor import: metadata only
+extern int mem_00924FF0; // MSVCP80 string::c_str import: metadata only
+extern int mem_00924FF4; // MSVCP80 string dtor import: metadata only
+extern int mem_00925134; // MSVCR80 _invalid_parameter_noinfo import: metadata only
+
+// @name NMData::EffectorGroupData::vfunc_14
+// @class NMData::EffectorGroupData
+// @summary Re-binds the child name from this+0x04 under the object from sub_006404E0(arg), then for each 28-byte std::string in the list at this+0x48..+0x4C clears the owned objects and assigns that string as a child via assignOrCreateChild.
+// @field NMData::EffectorGroupData +0x04 std::string field_0x04
+// @field NMData::EffectorGroupData +0x48 uint32_t field_0x48
+// @field NMData::EffectorGroupData +0x4C uint32_t field_0x4C
+void fn_0060D280(void* self, void* arg) {
+    // Import slots: std::string ctor/c_str/dtor and invalid-parameter guards are
+    // replaced by std::string and plain bounds; these refs are metadata only.
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+    (void)&mem_00925134;
+
+    void* obj = ext_006404E0(arg, mem_00A9EE68);
+    void* slot = ext_00640110(obj, mem_00A9F838);
+
+    const char* name = reinterpret_cast<std::string*>(
+        reinterpret_cast<uint8_t*>(self) + 0x04)->c_str();
+    ext_00427550(&slot, name);
+
+    // Element iteration over the list at this+0x48 (begin) .. this+0x4C (end), stride 0x1C.
+    uintptr_t it = static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x48));
+    const uintptr_t end = static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x4C));
+
+    while (it != end) {
+        void* owner = ext_006404E0(obj, mem_00A9EE64);
+        const char* s = reinterpret_cast<std::string*>(it)->c_str();
+        ext_0063F8D0(owner);
+        {
+            std::string child_name(s);
+            ext_00640270(owner, &child_name);
+        }
+        it += 0x1C;
+    }
+    // Original returns with eax still holding the first stack argument; no value is consumed by callers here.
+}
+} // namespace lift_0060D280
