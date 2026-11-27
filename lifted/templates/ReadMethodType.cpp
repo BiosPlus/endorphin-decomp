@@ -86833,3 +86833,70 @@ void fn_004B8260(void* self) {
     invoke(sub, obj);
 }
 } // namespace lift_004B8260
+
+// [0x004B7DE0] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>::vfunc_44 (168 bytes)
+namespace lift_004B7DE0 {
+// Known callee 0x00672080: sub_00672080 (18B). Called as thiscall(this = &other.field_0x04, float value).
+extern void ext_00672080();
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50. Called as thiscall(self, other).
+extern void ext_0041CF50();
+// Known callee 0x0046C3C0: DerivedException::DerivedException. Only on the null-source path.
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException. Only on the null-source path.
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>
+// @summary Reads a float from the held source value, assigns it through a temp into self, then dispatches to the target's vfunc_44 (vtable slot 0xB0).
+// @field ExprParser::ReadMethodType +0x00 void* source (pointer to the source value object)
+// @field ExprParser::ReadMethodType +0x04 void* target (object whose vfunc_44 is dispatched)
+// @field ExprParser::ValuePtrType +0x1c float value (field read from the source object)
+
+namespace {
+
+// Stack-resident pair used as the `other` argument to assignFromOther.
+struct Pair {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+using ThisCall1 = void* (__thiscall*)(void* self, void* other);
+using ThisCallFloat = void (__thiscall*)(void* self, float value);
+using ThisCallVoid = void (__thiscall*)(void* self, void* other);
+using ThisCallVFunc44 = void (__thiscall*)(void* self, void* p, float value);
+
+} // namespace
+
+void fn_004B7DE0(void* self) {
+    void* source = *static_cast<void**>(self);
+    if (source == nullptr) {
+        // Original: construct DerivedException and _CxxThrowException(&ex, &mem_009DEC1C).
+        (void)&ext_0046C3C0;
+        (void)&ext_006A6DD2;
+        (void)&mem_009DEC1C;
+        throw std::runtime_error("ExprParser::ReadMethodType: null source value");
+    }
+
+    const float value = lift_field<float>(source, 0x1c);
+
+    Pair other{};
+    // sub_00672080(&other.field_0x04, value)
+    reinterpret_cast<ThisCallFloat>(&ext_00672080)(&other.field_0x04, value);
+
+    // self->assignFromOther(other)
+    reinterpret_cast<ThisCall1>(&ext_0041CF50)(self, &other);
+
+    // Release the temporary held in other.field_0x04 (vtable slot 0x78).
+    void* held = other.field_0x04;
+    if (held != nullptr) {
+        void** vtbl = *static_cast<void***>(held);
+        reinterpret_cast<ThisCallVoid>(vtbl[0x78 / sizeof(void*)])(held, &other);
+    }
+
+    // Dispatch: target->vfunc_44(self, value) through vtable slot 0xB0.
+    void* target = lift_field<void*>(self, 0x04);
+    void** vtbl = *static_cast<void***>(target);
+    reinterpret_cast<ThisCallVFunc44>(vtbl[0xB0 / sizeof(void*)])(target, self, value);
+}
+} // namespace lift_004B7DE0
