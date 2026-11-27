@@ -40,6 +40,7 @@ struct Node_Fields {
     // +0x1C  void*                    next  (evidence: 0x0085C1C0) // CONFLICT: multiple definitions at +0x1C
     // +0x20  void*                    child  (evidence: 0x0085C1C0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    field_0x20  (evidence: 0x00859AF0) // CONFLICT: multiple definitions at +0x20
+    // +0x24  uintptr_t                children_vec  (evidence: 0x00567210)
     // +0x51  uint8_t                  isNil  (evidence: 0x005ED330)
     // +0x59  uint8_t                  field_0x59  (evidence: 0x004275C0)
     // +0x7C  void*                    children_vec  (evidence: 0x00586240, 0x005862A0)
