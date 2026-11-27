@@ -1,0 +1,28 @@
+{
+  "va": "0x0060C910",
+  "size": 175,
+  "orig_symbol": "NMData::EffectorWithMemoryData::vfunc_13",
+  "src_path": "src/NMData/EffectorWithMemoryData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp",
+  "name": "NMData::EffectorWithMemoryData::vfunc_13",
+  "class": "NMData::EffectorWithMemoryData",
+  "signature": "uint32_t normalize_sentinel(uint32_t r)",
+  "summary": "Stdcall (ret 4, ECX = this): runs NMData::EffectorData::vfunc_13 on arg1, then reads a float (this+0x5C) and a uint32 (this+0x60) attribute via the name lookup, normalizing sentinel results.",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:40:54Z"
+}

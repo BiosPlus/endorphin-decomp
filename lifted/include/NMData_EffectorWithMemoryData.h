@@ -11,7 +11,7 @@
 namespace lifted_layout {
 struct NMData_EffectorWithMemoryData_Fields {
     // +0x4   std::string              field_0x04  (evidence: 0x0060BC20, 0x0060C2C0)
-    // +0x5C  float                    field_0x5c  (evidence: 0x0060D3E0)
-    // +0x60  uint32_t                 field_0x60  (evidence: 0x0060D3E0)
+    // +0x5C  float                    field_0x5c  (evidence: 0x0060C910, 0x0060D3E0)
+    // +0x60  uint32_t                 field_0x60  (evidence: 0x0060C910, 0x0060D3E0)
 };
 } // namespace lifted_layout

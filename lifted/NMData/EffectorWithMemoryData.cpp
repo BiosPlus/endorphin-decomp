@@ -10,6 +10,7 @@ extern "C" void __thiscall ext_string_dtor(void* self);
 extern "C" const char mem_00972218[];
 extern "C" const char mem_0093BF0C[];
 #include <string>
+#include <cstdint>
 
 // [0x0060C2C0] NMData::EffectorWithMemoryData::vfunc_20 (157 bytes)
 namespace lift_0060C2C0 {
@@ -70,3 +71,72 @@ extern void* __thiscall fn_0060D3E0(void* self, void* arg1, uint32_t arg2, void*
     return ext_0060CDE0(self, arg1, arg2, obj);
 }
 } // namespace lift_0060D3E0
+
+// [0x0060C910] NMData::EffectorWithMemoryData::vfunc_13 (175 bytes)
+namespace lift_0060C910 {
+// Known callee 0x0060C640: NMData::EffectorData::vfunc_13 (thiscall: ECX = this, stack arg1).
+// Initializes base data from arg1, then reads float/int/bool attributes into this+0x44..+0x58.
+extern void __thiscall ext_0060C640(void* self, void* arg1);
+// Known callee 0x0063F530 (thiscall: ECX = arg1; stack: name, 0, 1). Returns a pointer-sized
+// lookup result in EAX.
+extern uint32_t __thiscall ext_0063F530(void* self, const char* name, uint32_t zero, uint32_t one);
+// Known callee 0x0053F5F0: parseIntFromStringProp (ECX = &slot; stack: out, &slot).
+// Calls ext_004275C0 to get a string, converts it with atoi, and stores the integer at *out.
+extern void __thiscall ext_0053F5F0(void* slot, void* out, void* slot_arg);
+// Known callee 0x0046C0A0: parseFloatFromString (ECX = &slot; stack: out, &slot).
+// Calls ext_004275C0 to get a std::string, converts it with atof, and stores the float at *out.
+extern void __thiscall ext_0046C0A0(void* slot, float* out, void* slot_arg);
+
+// .data globals holding C string pointers (attribute names).
+extern uint32_t mem_00A9F0BC;
+extern uint32_t mem_00A9EFEC;
+// Sentinel objects compared by address against the lookup result (immediates in the original).
+extern int mem_00B53A34;
+extern int mem_00B53B30;
+extern int mem_00B53AB0;
+extern int mem_00B53A70;
+extern int mem_00B53AF0;
+
+namespace {
+constexpr uint32_t kSentinelA34 = 0x00B53A34u;
+constexpr uint32_t kSentinelB30 = 0x00B53B30u;
+constexpr uint32_t kSentinelAB0 = 0x00B53AB0u;
+constexpr uint32_t kSentinelA70 = 0x00B53A70u;
+constexpr uint32_t kSentinelAF0 = 0x00B53AF0u;
+
+// Any of the sentinel objects is replaced by the default sentinel kSentinelB30.
+uint32_t normalize_sentinel(uint32_t r) {
+    if (r == kSentinelA34 || r == kSentinelB30 || r == kSentinelAB0 || r == kSentinelA70 ||
+        r == kSentinelAF0) {
+        return kSentinelB30;
+    }
+    return r;
+}
+} // namespace
+
+// @name NMData::EffectorWithMemoryData::vfunc_13
+// @class NMData::EffectorWithMemoryData
+// @summary Stdcall (ret 4, ECX = this): runs NMData::EffectorData::vfunc_13 on arg1, then reads a float (this+0x5C) and a uint32 (this+0x60) attribute via the name lookup, normalizing sentinel results.
+// @field NMData::EffectorWithMemoryData +0x5C float field_0x5c
+// @field NMData::EffectorWithMemoryData +0x60 uint32_t field_0x60
+void __thiscall fn_0060C910(void* self, void* arg1) {
+    // Address-only references to sentinel globals (see normalize_sentinel).
+    (void)&mem_00B53A34;
+    (void)&mem_00B53B30;
+    (void)&mem_00B53AB0;
+    (void)&mem_00B53A70;
+    (void)&mem_00B53AF0;
+
+    ext_0060C640(self, arg1);
+
+    // Integer attribute into this+0x60.
+    const char* name_int = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F0BC));
+    uint32_t slot = normalize_sentinel(ext_0063F530(arg1, name_int, 0, 1));
+    ext_0053F5F0(&slot, &lift_field<uint32_t>(self, 0x60), &slot);
+
+    // Float attribute into this+0x5C.
+    const char* name_float = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9EFEC));
+    slot = normalize_sentinel(ext_0063F530(arg1, name_float, 0, 1));
+    ext_0046C0A0(&slot, &lift_field<float>(self, 0x5C), &slot);
+}
+} // namespace lift_0060C910
