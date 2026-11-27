@@ -186891,3 +186891,59 @@ void* fn_005B3AD0(void* self) {
     return reinterpret_cast<void* (__thiscall*)(void*, void*)>(vfunc47_slot)(target, self);
 }
 } // namespace lift_005B3AD0
+
+// [0x0068F5A0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_47 (161 bytes)
+namespace lift_0068F5A0 {
+// Known callee 0x0068EE60: sub_0068EE60 (Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).)
+extern void* ext_0068EE60(uint32_t index);
+// Known callee 0x006720E0: sub_006720E0 (thiscall: constructs temp holder from record pointer)
+extern void ext_006720E0(void* self, void* record);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+
+// @name ExprParser::ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Resolves the record at this->field_0x00->field_0x04->index 0x0C, releases a temp holder, then forwards to the stored object's vfunc slot 0xBC.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void* fn_0068F5A0(void* self) {
+    void* p = lift_field<void*>(self, 0x00);
+    if (p == nullptr) {
+        // Null field_0x00: construct a DerivedException in-place and throw it.
+        // Exception storage size is not recovered; 0x20 is a conservative placeholder.
+        alignas(16) unsigned char exc[0x20] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return nullptr;
+    }
+
+    void* q = lift_field<void*>(p, 0x04);
+    uint32_t index = lift_field<uint32_t>(q, 0x0C);
+    void* record = ext_0068EE60(index);
+
+    struct TempHolder {
+        void* field_0x00;
+        void* field_0x04;
+    } tmp{};
+    ext_006720E0(&tmp, record);
+    ext_0041CF50(self, &tmp);
+
+    // Release the temp's field_0x04 through vtable slot 0x78.
+    void* held = tmp.field_0x04;
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &tmp);
+    }
+
+    // Forward to self->field_0x04's vtable slot 0xBC, passing self.
+    void* obj = lift_field<void*>(self, 0x04);
+    void** vt2 = *reinterpret_cast<void***>(obj);
+    auto vfunc47 = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vt2, 0xBC));
+    return vfunc47(obj, self);
+}
+} // namespace lift_0068F5A0

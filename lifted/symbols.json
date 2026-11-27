@@ -77332,6 +77332,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0068F140 (ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0068F5A0": {
+    "name": "ExprParser::ReadMethodType::vfunc_47",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void* fn_0068F5A0(void* self)",
+    "summary": "Resolves the record at this-\u003efield_0x00-\u003efield_0x04-\u003eindex 0x0C, releases a temp holder, then forwards to the stored object's vfunc slot 0xBC.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0068F700": {
     "name": "sub_0068F700",
     "class": "Unknown",
