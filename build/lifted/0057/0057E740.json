@@ -1,0 +1,14 @@
+{
+  "va": "0x0057E740",
+  "size": 141,
+  "orig_symbol": "sub_0057E740",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Unknown::ConstructThenDestroyRange_0057E740",
+  "class": "Unknown",
+  "signature": "void fn_0057E740(void* begin, uint32_t count, void* arg)",
+  "summary": "Walks a range of 0x38-byte elements starting at begin: for each non-null element calls ext_005572F0(elem, arg); then destroys every element in the range via ext_00557280 and rethrows through CxxThrowException. Does nothing when count is 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:29:42Z"
+}

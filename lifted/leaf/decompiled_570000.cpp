@@ -2386,3 +2386,44 @@ void __thiscall fn_005795D0(void* self, const void* value) {
     ext_00578FD0(self, value_ref, self, end, value);
 }
 } // namespace lift_005795D0
+
+// [0x0057E740] sub_0057E740 (141 bytes)
+namespace lift_0057E740 {
+// Known callee 0x00557280: Unknown::ReleaseStringMembers_00557280 (Releases the StringArray at +0x28 and destroys the std::string at +0x0C of the object.)
+extern void ext_00557280(void* self);
+// Callee 0x005572F0 (sub_005572F0, 104B, not yet lifted): called per element with the element as `this` and the extra argument pushed.
+extern void ext_005572F0(void* self, void* arg);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Called with two zero arguments, i.e. a rethrow with no exception object.
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+// @name Unknown::ConstructThenDestroyRange_0057E740
+// @summary Walks a range of 0x38-byte elements starting at begin: for each non-null element calls ext_005572F0(elem, arg); then destroys every element in the range via ext_00557280 and rethrows through CxxThrowException. Does nothing when count is 0.
+// @field (none) The function reads no fixed object offsets; the 0x38 element stride is the only layout fact used.
+// The SEH frame prologue/epilogue and the fs:[0] handler registration are omitted.
+void fn_0057E740(void* begin, uint32_t count, void* arg) {
+    if (count == 0) {
+        return;
+    }
+
+    uint8_t* const first = static_cast<uint8_t*>(begin);
+    uint8_t* cur = first;
+
+    // First pass: visit `count` elements of 0x38 bytes, skipping null element pointers.
+    for (uint32_t remaining = count; remaining != 0; --remaining) {
+        if (cur != nullptr) {
+            ext_005572F0(cur, arg);
+        }
+        cur += 0x38;
+    }
+
+    // Second pass: destroy every element in [first, end).
+    uint8_t* const end = cur;
+    for (cur = first; cur != end; cur += 0x38) {
+        ext_00557280(cur);
+    }
+
+    // Rethrow with no exception object (both arguments zero).
+    ext_006A6DD2(nullptr, nullptr);
+}
+} // namespace lift_0057E740
