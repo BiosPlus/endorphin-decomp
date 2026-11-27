@@ -3099,3 +3099,32 @@ void* fn_00704BF0() {
     return ext_006E73B0(&mem_00B5E948, &mem_00AABBEC, 1);
 }
 } // namespace lift_00704BF0
+
+// [0x00709F10] sub_00709F10 (115 bytes)
+namespace lift_00709F10 {
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void ext_006B9D70(void* self);
+// Known callee 0x006B9E60: Unknown::conditionalAllocAndCopy_006B9E60 (If the argument's type tag check passes, copies its getter values into this object's allocator; otherwise calls sub_006B9920 on this. Returns this.)
+extern void* ext_006B9E60(void* self, void* arg);
+
+// @name refreshChildFromGetterAndCopy
+// @summary If the getter at +0x50 is set, calls it with the +0x08 sub-object into a temporary, copies the result into the embedded object at +0x80, and destroys the temporary. Then runs the conditional copy of the embedded object into arg, and returns its result.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x50 void* field_0x50
+// @field Unknown +0x80 void* field_0x80 (embedded object; address only, passed as this)
+void* fn_00709F10(void* self, void* arg) {
+    using Getter = void* (*)(void* self, void* out);
+
+    void* child = static_cast<uint8_t*>(self) + 0x80;
+
+    if (void* getter = lift_field<void*>(self, 0x50)) {
+        alignas(8) uint8_t tmp[0x54];
+        void* sub = lift_field<void*>(self, 0x08);
+        void* value = reinterpret_cast<Getter>(getter)(sub, tmp);
+        ext_006B9E60(child, value);
+        ext_006B9D70(tmp);
+    }
+
+    return ext_006B9E60(arg, child);
+}
+} // namespace lift_00709F10

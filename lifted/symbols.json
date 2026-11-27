@@ -74630,6 +74630,12 @@
     "summary": "Returns the value at this-\u003e+0x04-\u003e+0x04 when this-\u003e+0x04 is non-null and its +0x00 key equals this-\u003e+0x00; otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00709F10": {
+    "name": "refreshChildFromGetterAndCopy",
+    "signature": "void* fn_00709F10(void* self, void* arg)",
+    "summary": "If the getter at +0x50 is set, calls it with the +0x08 sub-object into a temporary, copies the result into the embedded object at +0x80, and destroys the temporary. Then runs the conditional copy of the embedded object into arg, and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070A1D0": {
     "name": "sub_0070A1D0",
     "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",
