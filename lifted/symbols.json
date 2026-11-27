@@ -59933,6 +59933,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/NMData/EffectorData.cpp"
   },
+  "0x0060BF80": {
+    "name": "NMData::EffectorWithModesData::vfunc_14",
+    "class": "NMData::EffectorWithModesData",
+    "signature": "void* __thiscall fn_0060BF80(void* self, void* arg1)",
+    "summary": "Serializes EffectorWithModesData fields into the node returned by EffectorData::vfunc_14.",
+    "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
+  },
   "0x0060C040": {
     "name": "NMData::EffectorBaseData::vfunc_2",
     "class": "NMData::EffectorBaseData",

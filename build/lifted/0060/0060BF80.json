@@ -1,0 +1,40 @@
+{
+  "va": "0x0060BF80",
+  "size": 190,
+  "orig_symbol": "NMData::EffectorWithModesData::vfunc_14",
+  "src_path": "src/NMData/EffectorWithModesData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithModesData.cpp",
+  "name": "NMData::EffectorWithModesData::vfunc_14",
+  "class": "NMData::EffectorWithModesData",
+  "signature": "void* __thiscall fn_0060BF80(void* self, void* arg1)",
+  "summary": "Serializes EffectorWithModesData fields into the node returned by EffectorData::vfunc_14.",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x5C",
+      "type": "int",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x60",
+      "type": "std::string",
+      "name": "field_0x60"
+    },
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7C"
+    },
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:18:07Z"
+}

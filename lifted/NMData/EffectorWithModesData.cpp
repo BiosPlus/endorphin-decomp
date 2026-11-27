@@ -245,3 +245,51 @@ void fn_0060CF00(void* self, void* arg1, void* arg2, void* arg3) {
                  reinterpret_cast<const char*>(&mem_00972390));
 }
 } // namespace lift_0060CF00
+
+// [0x0060BF80]
+namespace lift_0060BF80 {
+// @name NMData::EffectorWithModesData::vfunc_14
+// @class NMData::EffectorWithModesData
+// @summary Serializes EffectorWithModesData fields into the node returned by EffectorData::vfunc_14.
+// @field NMData::EffectorWithModesData +0x5C int field_0x5C
+// @field NMData::EffectorWithModesData +0x60 std::string field_0x60
+// @field NMData::EffectorWithModesData +0x7C float field_0x7C
+// @field NMData::EffectorWithModesData +0x80 float field_0x80
+
+extern void* (__thiscall* const ext_0060BCF0)(void* self, void* node);
+extern void* (__thiscall* const ext_00640110)(void* self, uint32_t key);
+extern void (__thiscall* const ext_00427550)(void* self, const char* name);
+extern void* (__thiscall* const ext_00640390)(void* self, uint32_t key, uint32_t flag);
+extern void (__cdecl* const ext_00640AA0)(void* a, uint32_t b);
+extern void (__cdecl* const ext_00640BC0)(void* a, float b);
+
+extern uint32_t mem_00A9FA6C;
+extern uint32_t mem_00A9F0BC;
+extern uint32_t mem_00A9F408;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00A9F40C;
+extern uint32_t mem_00A9F094;
+
+void* __thiscall fn_0060BF80(void* self, void* arg1) {
+    void* edi = ext_0060BCF0(self, arg1);
+
+    void* tmp = ext_00640110(edi, mem_00A9FA6C);
+    ext_00427550(&tmp, reinterpret_cast<const char*>(0x009719CC));
+
+    void* node_5c = ext_00640390(edi, mem_00A9F0BC, 0);
+    ext_00640AA0(node_5c, lift_field<uint32_t>(self, 0x5C));
+
+    tmp = ext_00640390(edi, mem_00A9F408, 0);
+    using c_str_fn = const char* (__thiscall*)(const void*);
+    const char* str_60 = reinterpret_cast<c_str_fn>(mem_00924FF0)(static_cast<const char*>(self) + 0x60);
+    ext_00427550(&tmp, str_60);
+
+    void* node_80 = ext_00640390(edi, mem_00A9F40C, 0);
+    ext_00640BC0(node_80, lift_field<float>(self, 0x80));
+
+    void* node_7c = ext_00640390(edi, mem_00A9F094, 0);
+    ext_00640BC0(node_7c, lift_field<float>(self, 0x7C));
+
+    return arg1;
+}
+} // namespace lift_0060BF80
