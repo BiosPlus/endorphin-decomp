@@ -1530,8 +1530,6 @@ namespace lift_007AB2F0 {
 // @summary Constructs the object: initializes the sub-object with two static arguments, sets the vtable pointer, then runs the reset helper.
 // @field Unknown +0x00 DWORD vtable_ptr
 
-DWORD ext_007853D0_ret_unused_placeholder;
-
 void* ext_007853D0(void* self, DWORD arg1, DWORD arg2, DWORD arg3);
 void ext_007AB720(void* self);
 
