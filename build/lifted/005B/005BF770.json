@@ -1,0 +1,58 @@
+{
+  "va": "0x005BF770",
+  "size": 774,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_13_off_C",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_13_off_C",
+  "class": "NMData::MetaBodyData",
+  "signature": "extern \"C\" uint8_t __thiscall fn_005BF770(void* self_off_C, void* arg0)",
+  "summary": "Initializes a MetaBodyData subobject, creates and configures its associated object, and updates child lists.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x14C",
+      "type": "void*",
+      "name": "field_0x14C"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x150",
+      "type": "void*",
+      "name": "field_0x150"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "field_0x15C"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x160",
+      "type": "void*",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x200",
+      "type": "void*",
+      "name": "field_0x200"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:48:49Z"
+}

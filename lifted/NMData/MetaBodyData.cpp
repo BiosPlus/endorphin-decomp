@@ -729,3 +729,141 @@ void* __thiscall fn_005BE840(void* self, void* arg1) {
     return node;
 }
 } // namespace lift_005BE840
+
+// [0x005BF770]
+namespace lift_005BF770 {
+// @name NMData::MetaBodyData::vfunc_13_off_C
+// @class NMData::MetaBodyData
+// @summary Initializes a MetaBodyData subobject, creates and configures its associated object, and updates child lists.
+// @field NMData::MetaBodyData +0x08 void* field_0x08
+// @field NMData::MetaBodyData +0x14C void* field_0x14C
+// @field NMData::MetaBodyData +0x150 void* field_0x150
+// @field NMData::MetaBodyData +0x154 void* field_0x154
+// @field NMData::MetaBodyData +0x15C void* field_0x15C
+// @field NMData::MetaBodyData +0x160 void* field_0x160
+// @field NMData::MetaBodyData +0x200 void* field_0x200
+
+
+    void __cdecl ext_005BE710(void* a1, void* a2);
+    void* __cdecl ext_006A5C62(uint32_t size);
+    void __thiscall ext_005EEEF0(void* self);
+    void __thiscall ext_005A35D0(void* self, void* a1);
+    void __thiscall ext_005EE9A0(void* self, void* a1);
+    void __thiscall ext_005A3540(void* self, void* a1);
+    void __thiscall ext_00587920(void* self, void* a1, uint32_t a2);
+    void __thiscall ext_00673C20(void* iter);
+    void __thiscall ext_005BE460(void* self, void* a1, void* a2);
+
+    extern uint32_t mem_00924FDC;
+    extern uint32_t mem_00A9F004;
+    extern uint32_t mem_00924ECC;
+    extern uint32_t mem_00924FF4;
+    extern uint32_t mem_00925134;
+    extern uint8_t mem_00B44014[];
+
+struct MsvcListIter {
+    void* container;
+    void* node;
+};
+
+extern uint8_t __thiscall fn_005BF770(void* self_off_C, void* arg0) {
+    char* esi = static_cast<char*>(self_off_C);
+    void* str_ptr = esi + 0x8;
+
+    using StringAssignFn = void* (__thiscall*)(void*, const void*);
+    reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC))(str_ptr, mem_00B44014);
+
+    char* arg0_sub = *reinterpret_cast<char**>(static_cast<char*>(arg0) + 0x20c);
+    char* ebp = *reinterpret_cast<char**>(arg0_sub + 0x18c);
+    ext_005BE710(ebp + 0x598, str_ptr);
+
+    char* edi = static_cast<char*>(ext_006A5C62(0x2f8));
+    if (edi != nullptr) {
+        ext_005EEEF0(edi);
+        *reinterpret_cast<uint32_t*>(edi + 0x0) = 0x958674;
+        *reinterpret_cast<uint32_t*>(edi + 0x4) = 0x95862c;
+        *reinterpret_cast<uint32_t*>(edi + 0x8) = 0x9585ec;
+        *reinterpret_cast<uint32_t*>(edi + 0xc) = 0x95859c;
+        *reinterpret_cast<uint32_t*>(edi + 0x150) = 0x958584;
+        *reinterpret_cast<uint32_t*>(edi + 0x154) = 0x95857c;
+    }
+
+    uint8_t temp_str[32];
+    using StringConcatFn = void* (__cdecl*)(void*, void*, uint32_t);
+    void* concat_res = reinterpret_cast<StringConcatFn>(static_cast<uintptr_t>(mem_00924ECC))(
+        temp_str, str_ptr, mem_00A9F004);
+
+    void** vtable = *reinterpret_cast<void***>(edi);
+    using Vfunc5CFn = void (__thiscall*)(void*, void*);
+    reinterpret_cast<Vfunc5CFn>(vtable[0x5c / 4])(edi, concat_res);
+
+    using StringDtorFn = void (__thiscall*)(void*);
+    reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4))(temp_str);
+
+    ext_005A35D0(ebp, edi);
+    void* ebp_160 = ebp + 0x160;
+    ext_005EE9A0(ebp_160, edi);
+
+    char* base_obj = esi - 0xc;
+    ext_005A3540(ebp, base_obj);
+
+    *reinterpret_cast<void**>(esi + 0x200) = edi;
+    *reinterpret_cast<void**>(edi + 0x190) = ebp_160;
+
+    char* obj200 = *reinterpret_cast<char**>(esi + 0x200);
+    *reinterpret_cast<uint32_t*>(obj200 + 0x228) = *reinterpret_cast<uint32_t*>(obj200 + 0x22c);
+
+    obj200 = *reinterpret_cast<char**>(esi + 0x200);
+    reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC))(
+        obj200 + 0x198, obj200 + 0x1b4);
+
+    obj200 = *reinterpret_cast<char**>(esi + 0x200);
+    *reinterpret_cast<void**>(obj200 + 0x22c) = base_obj;
+
+    obj200 = *reinterpret_cast<char**>(esi + 0x200);
+    reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC))(
+        obj200 + 0x1b4, esi + 0x8);
+
+    obj200 = *reinterpret_cast<char**>(esi + 0x200);
+    ext_00587920(obj200, base_obj, 0);
+
+    obj200 = *reinterpret_cast<char**>(esi + 0x200);
+    *reinterpret_cast<uint8_t*>(obj200 + 0x178) = 0;
+
+    void* list1_container = esi + 0x150;
+    void* list1_end = *reinterpret_cast<void**>(esi + 0x154);
+    MsvcListIter iter1{list1_container, *reinterpret_cast<void**>(list1_end)};
+    using InvalidParamFn = void (__cdecl*)();
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+    while (iter1.node != *reinterpret_cast<void**>(esi + 0x154)) {
+        if (iter1.container == nullptr || iter1.node == *reinterpret_cast<void**>(esi + 0x154)) {
+            invalid_param();
+        }
+        char* item = *reinterpret_cast<char**>(static_cast<char*>(iter1.node) + 0x28);
+        *reinterpret_cast<void**>(item + 0x164) = base_obj;
+        *reinterpret_cast<uint8_t*>(item + 0x19c) = 1;
+        *reinterpret_cast<uint8_t*>(item + 0x19d) = 1;
+        *reinterpret_cast<uint8_t*>(item + 0x19e) = 1;
+        ext_00587920(base_obj, item, 0);
+        ext_00673C20(&iter1);
+    }
+
+    void* list2_container = esi + 0x15c;
+    void* list2_end = *reinterpret_cast<void**>(esi + 0x160);
+    MsvcListIter iter2{list2_container, *reinterpret_cast<void**>(list2_end)};
+    while (iter2.node != *reinterpret_cast<void**>(esi + 0x160)) {
+        char* item = *reinterpret_cast<char**>(static_cast<char*>(iter2.node) + 0x28);
+        *reinterpret_cast<void**>(item + 0x164) = base_obj;
+        ext_00587920(base_obj, item, 0);
+        ext_00673C20(&iter2);
+    }
+
+    char* field_14c = *reinterpret_cast<char**>(esi + 0x14c);
+    if (field_14c != nullptr) {
+        obj200 = *reinterpret_cast<char**>(esi + 0x200);
+        ext_005BE460(base_obj, *reinterpret_cast<void**>(obj200 + 0x18c), field_14c + 0x24);
+    }
+
+    return 1;
+}
+} // namespace lift_005BF770
