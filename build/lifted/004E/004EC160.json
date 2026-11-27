@@ -1,0 +1,46 @@
+{
+  "va": "0x004EC160",
+  "size": 130,
+  "orig_symbol": "sub_004EC160",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "StringMapTree::eraseSubtree",
+  "class": "StringMapTree",
+  "signature": "void __thiscall fn_004EC160(void* self, void* nodePtr)",
+  "summary": "Recursively erases a red-black tree subtree of std::string key-value nodes",
+  "fields": [
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "TreeNode*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "TreeNode*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "uint8_t[28]",
+      "name": "key"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x28",
+      "type": "uint8_t[28]",
+      "name": "value"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:20:55Z"
+}
