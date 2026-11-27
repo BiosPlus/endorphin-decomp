@@ -80,3 +80,35 @@ void __thiscall fn_004593B0(void* self) {
     mem_00925688(*reinterpret_cast<void**>(owner3 + 0x20), nullptr, 1);
 }
 } // namespace lift_004593B0
+
+// [0x004591B0]
+namespace lift_004591B0 {
+int32_t __stdcall ext_0043CEB0(int32_t arg);
+void __thiscall ext_0043DC90(void* self, int32_t v);
+int32_t __cdecl ext_00468180();
+void* __thiscall ext_00468660(void* self);
+void __thiscall ext_004686A0(void* self, int32_t v);
+
+// @name MultiTrackView::TimeRuler::vfunc_10
+// @class MultiTrackView::TimeRuler
+// @summary Range-checks an index against the owner's limit at +0xfc; out-of-range calls ext_0043DC90(-1), in-range maps the index through ext_0043CEB0 and forwards it to the owner's helper object's vfunc at +0x98 with argument 5.
+// @field MultiTrackView::TimeRuler +0x30 void* field_0x30
+
+void __thiscall fn_004591B0(void* self, int32_t a0, int32_t index, int32_t a2) {
+    (void)a0;
+    (void)a2;
+
+    void* owner = lift_field<void*>(self, 0x30);
+    if (index < lift_field<int32_t>(owner, 0xfc)) {
+        ext_0043DC90(owner, -1);
+        return;
+    }
+
+    int32_t edi = ext_0043CEB0(index);
+    void* esi = reinterpret_cast<void*>(static_cast<intptr_t>(ext_00468180()));
+    ext_004686A0(esi, edi);
+
+    void* obj = ext_00468660(esi);
+    (*reinterpret_cast<void (__thiscall***)(void*, int32_t)>(obj))[0x98 / 4](obj, 5);
+}
+} // namespace lift_004591B0

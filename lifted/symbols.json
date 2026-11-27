@@ -7817,6 +7817,13 @@
     "summary": "Secondary-base thunk: rebases this from the RuntimeEngineStopEventListener subobject (+0x54) to the pointer stored at TimeRuler +0x30 and sets that object's byte at +0x190 to 1.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x004591B0": {
+    "name": "MultiTrackView::TimeRuler::vfunc_10",
+    "class": "MultiTrackView::TimeRuler",
+    "signature": "void __thiscall fn_004591B0(void* self, int32_t a0, int32_t index, int32_t a2)",
+    "summary": "Range-checks an index against the owner's limit at +0xfc; out-of-range calls ext_0043DC90(-1), in-range maps the index through ext_0043CEB0 and forwards it to the owner's helper object's vfunc at +0x98 with argument 5.",
+    "lifted_path": "lifted/MultiTrackView/TimeRuler.cpp"
+  },
   "0x00459250": {
     "name": "sub_00459250",
     "signature": "extern \"C\" void __fastcall fn_00459250(void* self)",
