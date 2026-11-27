@@ -1,0 +1,14 @@
+{
+  "va": "0x00524850",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e",
+  "signature": "void fn_00524850(void* self)",
+  "summary": "One-time lazy init of the static VariableValue holder at mem_00AED2BC; links the stack-argument object's +0x04 to it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:24:46Z"
+}

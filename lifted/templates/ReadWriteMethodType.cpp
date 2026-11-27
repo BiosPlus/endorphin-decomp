@@ -11128,3 +11128,36 @@ void fn_00504CF0(void* self) {
     lift_field<DWORD>(self, 4) = 0x00AEBB6C;
 }
 } // namespace lift_00504CF0
+
+// [0x00524850] ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, &public: void __thiscall NMData::VariableValue::setInitialValue(float)>::vfunc_40 (122 bytes)
+namespace lift_00524850 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AED2C0;
+extern DWORD mem_00AED2BC;
+
+// @name ExprParser::ReadWriteMethodType<NMData::VariableValue>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, &public: void __thiscall NMData::VariableValue::setInitialValue(float)>
+// @summary One-time lazy init of the static VariableValue holder at mem_00AED2BC; links the stack-argument object's +0x04 to it.
+// @field ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, &public: void __thiscall NMData::VariableValue::setInitialValue(float)> +0x04 DWORD holderLink
+void fn_00524850(void* self) {
+    // The original SEH frame (fs:[0] push/restore, try-state slot) is runtime
+    // bookkeeping and is omitted. Its saved-handler value is only passed to the
+    // callee below, whose store to mem_00AED2BC is overwritten immediately after.
+    const DWORD saved_handler = 0;
+
+    // Stack argument (original [esp+4]) is the object whose +0x04 is linked.
+    DWORD& link = lift_field<DWORD>(self, 0x04);
+
+    if ((mem_00AED2C0 & 1u) != 0) {
+        // Already initialised: just link and return.
+        link = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AED2BC));
+        return;
+    }
+
+    mem_00AED2C0 |= 1u;
+    (void)ext_0067A670(&mem_00AED2BC, saved_handler);
+    mem_00AED2BC = 0x00952EBCu;
+    link = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AED2BC));
+}
+} // namespace lift_00524850
