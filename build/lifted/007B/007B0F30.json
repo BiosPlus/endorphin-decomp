@@ -1,0 +1,33 @@
+{
+  "va": "0x007B0F30",
+  "size": 144,
+  "orig_symbol": "sub_007B0F30",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ComputeNormalizedRatioOrError",
+  "signature": "uint32_t fn_007B0F30(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+  "summary": "Divides a3 by a4 into *a5 as float (unsigned a3 if a2-\u003efield_0x02 == 5, else signed), or reports an error if a4 == 0.",
+  "fields": [
+    {
+      "class": "Arg2",
+      "offset": "+0x0",
+      "type": "uint16_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Arg2",
+      "offset": "+0x2",
+      "type": "uint16_t",
+      "name": "field_0x02"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:49:59Z"
+}

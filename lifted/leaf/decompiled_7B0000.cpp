@@ -1871,3 +1871,40 @@ void sub_007B5158() {
     (void)not_code;
 }
 } // namespace lift_007B5158
+
+// [0x007B0F30]
+namespace lift_007B0F30 {
+// @name ComputeNormalizedRatioOrError
+// @summary Divides a3 by a4 into *a5 as float (unsigned a3 if a2->field_0x02 == 5, else signed), or reports an error if a4 == 0.
+// @field Arg2 +0x00 uint16_t field_0x00
+// @field Arg2 +0x02 uint16_t field_0x02
+// @field Entry +0x10 uint32_t field_0x10
+
+
+extern uint32_t ext_007AF5E0(uint32_t a1, uint32_t a2);
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+
+uint32_t fn_007B0F30(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5) {
+    auto* p_a2 = reinterpret_cast<void*>(static_cast<uintptr_t>(a2));
+    if (a4 == 0) {
+        uint32_t key = lift_field<uint16_t>(p_a2, 0x0);
+        uint32_t entry = ext_007AF5E0(a1, key);
+        uint32_t err_code = lift_field<uint32_t>(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(entry)), 0x10);
+        uint32_t obj = lift_field<uint32_t>(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(a1)), 0x0);
+        ext_0079B140(obj, 0x00AB1498u, err_code);
+        return 0;
+    }
+
+    auto* p_a5 = reinterpret_cast<void*>(static_cast<uintptr_t>(a5));
+    if (lift_field<uint16_t>(p_a2, 0x2) == 5) {
+        lift_field<float>(p_a5, 0x0) = static_cast<float>(
+            static_cast<double>(a3) / static_cast<double>(static_cast<int32_t>(a4)));
+    } else {
+        lift_field<float>(p_a5, 0x0) = static_cast<float>(
+            static_cast<double>(static_cast<int32_t>(a3)) / static_cast<double>(static_cast<int32_t>(a4)));
+    }
+    return 1;
+}
+} // namespace lift_007B0F30

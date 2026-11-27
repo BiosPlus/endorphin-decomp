@@ -44333,6 +44333,13 @@
     "summary": "Destructor that resets vtable, destroys two std::string members at +0x20 and +0x4, and calls base destructor.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060BA80": {
+    "name": "NMData::EffectorBaseData::vfunc_13",
+    "class": "NMData::EffectorBaseData",
+    "signature": "void __thiscall fn_0060BA80(uint8_t* self, uint8_t* arg1)",
+    "summary": "Initializes m_name and m_jointName from the provided attribute source after calling vfunc_19.",
+    "lifted_path": "lifted/NMData/EffectorBaseData.cpp"
+  },
   "0x0060BB50": {
     "name": "NMData::EffectorBaseData::vfunc_19",
     "class": "NMData::EffectorBaseData",
