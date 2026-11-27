@@ -8,7 +8,7 @@
 // Recovered field layout for TreeIterator:
 namespace lifted_layout {
 struct TreeIterator_Fields {
-    // +0x0   uint32_t                 container  (evidence: 0x00420680, 0x00470090, 0x0052A280) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 container  (evidence: 0x00420680, 0x00470090, 0x0052A280, 0x005E2BE0, 0x00624D30, 0x00666C00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    container  (evidence: 0x004273F0, 0x0052A1C0, 0x005948E0, 0x0059E2B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 container_proxy  (evidence: 0x0046A8E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 container_ptr  (evidence: 0x00492B30) // CONFLICT: multiple definitions at +0x0
@@ -16,11 +16,12 @@ struct TreeIterator_Fields {
     // +0x0   void* field_0x00 (container/head pointer, null-checked)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 owner  (evidence: 0x00414E60) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    currentNode  (evidence: 0x00595AF0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   TreeNode*                node  (evidence: 0x004273F0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   TreeNode*                node  (evidence: 0x004273F0, 0x00624D30) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 node  (evidence: 0x00414E60, 0x00420680) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t*                 node  (evidence: 0x00419F50, 0x0046A8E0, 0x00470120, 0x00474FF0, 0x00486E30, 0x0052A1C0, 0x0052A280, 0x0059E2B0, 0x005E0B20) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t*                 node  (evidence: 0x00419F50, 0x0046A8E0, 0x00470120, 0x00474FF0, 0x00486E30, 0x0052A1C0, 0x0052A280, 0x0059E2B0, 0x005E0B20, 0x005E2BE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    node  (evidence: 0x004442E0, 0x00470090, 0x005948E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 node_ptr  (evidence: 0x00492B30) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uintptr_t                ptr  (evidence: 0x00666C00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (current node pointer, updated)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

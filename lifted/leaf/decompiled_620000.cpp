@@ -3210,3 +3210,64 @@ void* fn_00629720(void* self) {
     return dest;
 }
 } // namespace lift_00629720
+
+// [0x00624D30]
+namespace lift_00624D30 {
+extern void (*mem_00925134)();
+
+// @name TreeIterator::decrement
+// @class TreeIterator
+// @summary Decrements an MSVC8 red-black tree iterator to the previous in-order node.
+// @field TreeIterator +0x00 uint32_t container
+// @field TreeIterator +0x04 TreeNode* node
+// @field TreeNode +0x00 TreeNode* left
+// @field TreeNode +0x04 TreeNode* parent
+// @field TreeNode +0x08 TreeNode* right
+// @field TreeNode +0x19 uint8_t is_nil
+void __thiscall sub_00624D30(void* self) {
+    uint8_t* it = static_cast<uint8_t*>(self);
+    auto invalid_param = mem_00925134;
+
+    if (lift_field<uint32_t>(it, 0x00) == 0) {
+        invalid_param();
+    }
+
+    uint8_t* node = lift_field<uint8_t*>(it, 0x04);
+    if (lift_field<uint8_t>(node, 0x19) != 0) {
+        uint8_t* right = lift_field<uint8_t*>(node, 0x08);
+        lift_field<uint8_t*>(it, 0x04) = right;
+        if (lift_field<uint8_t>(right, 0x19) != 0) {
+            invalid_param();
+        }
+        return;
+    }
+
+    uint8_t* left = lift_field<uint8_t*>(node, 0x00);
+    if (lift_field<uint8_t>(left, 0x19) == 0) {
+        uint8_t* right = lift_field<uint8_t*>(left, 0x08);
+        while (lift_field<uint8_t>(right, 0x19) == 0) {
+            left = right;
+            right = lift_field<uint8_t*>(left, 0x08);
+        }
+        lift_field<uint8_t*>(it, 0x04) = left;
+        return;
+    }
+
+    uint8_t* parent = lift_field<uint8_t*>(node, 0x04);
+    while (lift_field<uint8_t>(parent, 0x19) == 0) {
+        uint8_t* cur = lift_field<uint8_t*>(it, 0x04);
+        if (cur != lift_field<uint8_t*>(parent, 0x00)) {
+            break;
+        }
+        lift_field<uint8_t*>(it, 0x04) = parent;
+        parent = lift_field<uint8_t*>(parent, 0x04);
+    }
+
+    if (lift_field<uint8_t>(lift_field<uint8_t*>(it, 0x04), 0x19) != 0) {
+        invalid_param();
+        return;
+    }
+
+    lift_field<uint8_t*>(it, 0x04) = parent;
+}
+} // namespace lift_00624D30

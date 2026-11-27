@@ -1,0 +1,52 @@
+{
+  "va": "0x00624D30",
+  "size": 132,
+  "orig_symbol": "sub_00624D30",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "TreeIterator::decrement",
+  "class": "TreeIterator",
+  "signature": "void __thiscall sub_00624D30(void* self)",
+  "summary": "Decrements an MSVC8 red-black tree iterator to the previous in-order node.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "container"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "TreeNode*",
+      "name": "node"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "TreeNode*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "TreeNode*",
+      "name": "parent"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "TreeNode*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x19",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:31:41Z"
+}
