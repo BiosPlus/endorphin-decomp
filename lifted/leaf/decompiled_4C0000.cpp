@@ -1904,3 +1904,56 @@ void* fn_004C8C90(void* arg) {
     return obj;
 }
 } // namespace lift_004C8C90
+
+// [0x004C34B0] sub_004C34B0 (211 bytes)
+namespace lift_004C34B0 {
+// Known callee 0x004142E0: sub_004142E0 (302B), thiscall(obj, arg); called only on the throw path.
+extern void __thiscall ext_004142E0(void* self, const void* arg);
+// Known callee 0x004276B0: StdStringCopyConstruct (cdecl copy-construct std::string at dst from src; returns dst).
+extern void* ext_004276B0(void* dst, const void* src);
+// Known callee 0x004C1740: InitOnceGlobalString_004C1740 (cdecl, no args; returns address of the global string).
+extern void* ext_004C1740(void);
+// Known callee 0x005CD120: Vector::InsertSortedUnique_005CD120 (thiscall(self, value); returns true if inserted).
+extern bool __thiscall ext_005CD120(void* self, const void* value);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(obj, ThrowInfo)).
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+// MSVCP80 IAT slots: std::string copy constructor and destructor.
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+// ThrowInfo for the exception thrown on the failure path.
+extern int mem_009D1278;
+
+// @name Vector::InsertSortedUniqueOrThrow_004C34B0
+// @class Vector
+// @summary Inserts a copy of a std::string into the sorted vector; returns true if inserted. If not inserted and flag is set, throws an exception built from *code_arg.
+extern bool __thiscall fn_004C34B0(void* self, const void* str_arg, const uint32_t* code_arg, uint8_t flag) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using DtorFn = void (*)(void*);
+
+    alignas(8) uint8_t str_tmp[28];   // temporary std::string copy of *str_arg used for the insert
+    alignas(8) uint8_t str_copy[28];  // copy of *str_arg kept alive on the throw path
+    alignas(8) uint8_t exc_obj[28];   // scratch 'this' passed to ext_004142E0
+    uint32_t exc_value;               // 4-byte payload of the thrown exception
+
+    (*reinterpret_cast<CopyCtorFn*>(&mem_00924FE0))(str_tmp, str_arg);
+    exc_value = *code_arg;
+
+    const bool inserted = ext_005CD120(self, str_tmp);
+
+    (*reinterpret_cast<DtorFn*>(&mem_00924FF4))(str_tmp);
+
+    if (inserted) {
+        return true;
+    }
+    if (flag == 0) {
+        return false;
+    }
+
+    ext_004276B0(str_copy, str_arg);
+    void* global_str = ext_004C1740();
+    ext_004142E0(exc_obj, global_str);
+    ext_006A6DD2(&exc_value, &mem_009D1278);
+    // Unreachable: _CxxThrowException does not return.
+    return false;
+}
+} // namespace lift_004C34B0

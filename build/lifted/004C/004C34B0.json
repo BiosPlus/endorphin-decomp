@@ -1,0 +1,14 @@
+{
+  "va": "0x004C34B0",
+  "size": 211,
+  "orig_symbol": "sub_004C34B0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "Vector::InsertSortedUniqueOrThrow_004C34B0",
+  "class": "Vector",
+  "signature": "extern \"C\" bool __thiscall fn_004C34B0(void* self, const void* str_arg, const uint32_t* code_arg, uint8_t flag)",
+  "summary": "Inserts a copy of a std::string into the sorted vector; returns true if inserted. If not inserted and flag is set, throws an exception built from *code_arg.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:50:03Z"
+}
