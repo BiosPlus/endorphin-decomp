@@ -1753,6 +1753,13 @@
     "summary": "Forwards arguments with a zeroed flag byte to sub_004148F0",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004151D0": {
+    "name": "ReleaseOwnedNode_004151D0",
+    "class": "Unknown",
+    "signature": "void fn_004151D0(void* self)",
+    "summary": "Thiscall: reads the owned pointer at +0x04, walks it via ext_00414E60 and ext_005DF840 (re-reading the pointer and its first dword before each), releases the pointer via ext_006A5C5C, then zeroes +0x04 and +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004152D0": {
     "name": "MappedFile::close",
     "class": "MappedFile",

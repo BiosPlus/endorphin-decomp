@@ -1,0 +1,28 @@
+{
+  "va": "0x004151D0",
+  "size": 126,
+  "orig_symbol": "sub_004151D0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "ReleaseOwnedNode_004151D0",
+  "class": "Unknown",
+  "signature": "void fn_004151D0(void* self)",
+  "summary": "Thiscall: reads the owned pointer at +0x04, walks it via ext_00414E60 and ext_005DF840 (re-reading the pointer and its first dword before each), releases the pointer via ext_006A5C5C, then zeroes +0x04 and +0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "ownedPtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:13:37Z"
+}
