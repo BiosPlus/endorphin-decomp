@@ -249,3 +249,81 @@ void* __thiscall fn_005CFE70(void* self, void* out, const void* name) {
     return out;
 }
 } // namespace lift_005CFE70
+
+// [0x005DDA40]
+namespace lift_005DDA40 {
+// Known callee 0x005CFC80: ReleaseHandleAt154IfSet (If the dword at this+0x158 is nonzero, passes the dword at this+0x154 to ext_00530730 and then clears this+0x154.)
+extern void ext_005CFC80(void* self);
+// Known callee 0x005DD020: sub_005DD020 (112B) (thiscall, one argument: pointer to a std::string.)
+extern void ext_005DD020(void* self, const void* str);
+// Known callee 0x005DD090: sub_005DD090 (245B) (thiscall, one argument: DWORD taken from this+0x158.)
+extern void ext_005DD090(void* self, uint32_t handle);
+
+// MSVCP80 std::basic_string<char> IAT slots (bound at load time).
+extern int mem_00924FE0; // basic_string copy constructor
+extern int mem_00924FDC; // basic_string::operator=(const basic_string&)
+extern int mem_00924FF4; // basic_string destructor
+
+// Metadata-listed callees/globals that the 154-byte body never calls or reads.
+// They are referenced only by taking their address (see the (void)& lines below); nothing executes.
+extern void ext_00480920();
+extern void ext_00493E00();
+extern void ext_00493E40();
+extern void ext_00493E50();
+extern void ext_00493E70();
+extern void ext_00528B90();
+extern void ext_00528BB0();
+extern void ext_00548190();
+extern void ext_005CFE10();
+extern int mem_00B40640;
+
+// Thiscall function pointer types for the MSVCP80 std::basic_string<char> members.
+using StringCopyCtorFn = void(__thiscall*)(void* self, const void* src);
+using StringAssignFn   = void(__thiscall*)(void* self, const void* src);
+using StringDtorFn     = void(__thiscall*)(void* self);
+
+// @name NMData::CameraData::vfunc_23
+// @class NMData::CameraData
+// @summary Releases the handle at +0x154 if set, copies the argument string through a temporary into the string at +0x14 (via ext_005DD020), and calls ext_005DD090 with +0x158 when both a handle was released and +0x158 is nonzero.
+// @field NMData::CameraData +0x14 std::string field_0x14
+// @field NMData::CameraData +0x154 uint32_t field_0x154
+// @field NMData::CameraData +0x158 uint32_t field_0x158
+void fn_005DDA40(void* self, const void* arg1) {
+    // Address-only references to metadata-listed symbols; no call or read happens here.
+    (void)&ext_00480920;
+    (void)&ext_00493E00;
+    (void)&ext_00493E40;
+    (void)&ext_00493E50;
+    (void)&ext_00493E70;
+    (void)&ext_00528B90;
+    (void)&ext_00528BB0;
+    (void)&ext_00548190;
+    (void)&ext_005CFE10;
+    (void)&mem_00B40640;
+
+    bool had_handle = false;
+    if (lift_field<uint32_t>(self, 0x154) != 0) {
+        had_handle = true;
+        ext_005CFC80(self);
+    }
+
+    // Temporary std::string (MSVC80 layout, 28 bytes) copy-constructed from the argument.
+    alignas(4) uint8_t temp[0x1C];
+    auto copy_ctor = *reinterpret_cast<StringCopyCtorFn*>(&mem_00924FE0);
+    copy_ctor(temp, arg1);
+
+    ext_005DD020(self, temp);
+
+    void* member = static_cast<uint8_t*>(self) + 0x14;
+    auto assign = *reinterpret_cast<StringAssignFn*>(&mem_00924FDC);
+    assign(member, temp);
+
+    uint32_t handle = lift_field<uint32_t>(self, 0x158);
+    if (handle != 0 && had_handle) {
+        ext_005DD090(self, handle);
+    }
+
+    auto dtor = *reinterpret_cast<StringDtorFn*>(&mem_00924FF4);
+    dtor(temp);
+}
+} // namespace lift_005DDA40

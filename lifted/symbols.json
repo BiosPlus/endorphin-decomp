@@ -52317,6 +52317,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005DDA40": {
+    "name": "NMData::CameraData::vfunc_23",
+    "class": "NMData::CameraData",
+    "signature": "void fn_005DDA40(void* self, const void* arg1)",
+    "summary": "Releases the handle at +0x154 if set, copies the argument string through a temporary into the string at +0x14 (via ext_005DD020), and calls ext_005DD090 with +0x158 when both a handle was released and +0x158 is nonzero.",
+    "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
   "0x005DF1F0": {
     "name": "AnimatableTransform::vfunc_15",
     "class": "AnimatableTransform",

@@ -12,8 +12,11 @@ namespace lifted_layout {
 struct NMData_CameraData_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x005DD190)
     // +0xC   void*                    field_0x0c  (evidence: 0x005DD190)
+    // +0x14  std::string              field_0x14  (evidence: 0x005DDA40)
     // +0xE8  uintptr_t                field_0xe8  (evidence: 0x005DD190)
-    // +0x154 void*                    field_0x154  (evidence: 0x005DD190)
+    // +0x154 uint32_t                 field_0x154  (evidence: 0x005DDA40) // CONFLICT: multiple definitions at +0x154
+    // +0x154 void*                    field_0x154  (evidence: 0x005DD190) // CONFLICT: multiple definitions at +0x154
+    // +0x158 uint32_t                 field_0x158  (evidence: 0x005DDA40)
     // +0x15C uint8_t                  field_0x15c  (evidence: 0x005DD190)
     // +0x1A8 uint8_t                  field_0x1a8  (evidence: 0x005CFC20)
     // +0x1F0 uint8_t                  field_0x1f0  (evidence: 0x005CFC20)
