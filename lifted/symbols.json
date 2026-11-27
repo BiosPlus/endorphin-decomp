@@ -15467,6 +15467,13 @@
     "summary": "Reads the wrapped GraphEntryData pointer and returns its int field at +0x20 as a float; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1B60": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
+    "signature": "int32_t fn_004B1B60(void* holder, void* arg2)",
+    "summary": "Re-dispatches to the holder's secondary object via its vtable slot 43 after a guarded temporary copy; throws if the target object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1CA0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e",

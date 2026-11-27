@@ -83099,3 +83099,55 @@ void fn_005FCFF0(void* arg) {
     reinterpret_cast<void (*)(void*, void*)>(vt3[47])(q, arg);
 }
 } // namespace lift_005FCFF0
+
+// [0x004B1B60] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_43 (157 bytes)
+namespace lift_004B1B60 {
+// Helper at 0x006720C0 (18 bytes): thiscall, fills the temporary at its `this`
+// with a value derived from its stack argument.
+extern void ext_006720C0(void* self, int32_t arg);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object, installs vtable).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Re-dispatches to the holder's secondary object via its vtable slot 43 after a guarded temporary copy; throws if the target object pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 int32_t field_0x20
+int32_t fn_004B1B60(void* holder, void* arg2) {
+    void* target = lift_field<void*>(holder, 0x00);
+    if (target == nullptr) {
+        // Null target: build the exception object and throw.
+        alignas(8) uint8_t exceptionObj[0x28] = {};
+        ext_0046C3C0(exceptionObj);
+        constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+        ext_006A6DD2(exceptionObj, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached
+    }
+
+    // Temporary filled by the helper from target->field_0x20; its +0x04 is a ref-counted pointer.
+    alignas(8) uint8_t tmp[0x10] = {};
+    ext_006720C0(tmp, lift_field<int32_t>(target, 0x20));
+
+    // holder = copy of tmp (guarded self-assignment).
+    ext_0041CF50(holder, tmp);
+
+    // Release the temporary's +0x04 object via its vtable slot 30 (offset 0x78).
+    void* tmpObj = lift_field<void*>(tmp, 0x04);
+    if (tmpObj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(tmpObj);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(vtbl[0x78 / 4]);
+        release(tmpObj, tmp);
+    }
+
+    // Tail-dispatch: holder->field_0x04->vfunc_43(holder, arg2); result passes through.
+    void* inner = lift_field<void*>(holder, 0x04);
+    void** innerVtbl = *reinterpret_cast<void***>(inner);
+    auto vfn = reinterpret_cast<int32_t (*)(void*, void*, void*)>(innerVtbl[0xAC / 4]);
+    return vfn(inner, holder, arg2);
+}
+} // namespace lift_004B1B60
