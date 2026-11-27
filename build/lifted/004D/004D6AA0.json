@@ -1,0 +1,28 @@
+{
+  "va": "0x004D6AA0",
+  "size": 157,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e::vfunc_43",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType::vfunc_43",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "void* __stdcall fn_004D6AA0(void* self, void* out)",
+  "summary": "Copies the first dword of self into a temp string via 0x004D5560, wraps that into a holder, assigns the holder into self, releases the holder's previous ref, then forwards to self-\u003efield_0x04 vtable slot 0xAC with the out pointer and returns its result.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:32:09Z"
+}

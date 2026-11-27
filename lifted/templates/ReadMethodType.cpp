@@ -83360,3 +83360,53 @@ void* fn_004C0960(void* self, void* arg2) {
     return vfunc43(target, self, arg2);
 }
 } // namespace lift_004C0960
+
+// [0x004D6AA0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_43 (157 bytes)
+namespace lift_004D6AA0 {
+// Known callee 0x004D5560: sub_004D5560 (Auto-lifted identical-shape clone of 0x004C0280 (Unknown::copyStringFromDocumentOrThrow).)
+extern void* __stdcall ext_004D5560(void* arg1, void* arg2);
+// Known callee 0x006720E0: sub_006720E0 (43B). Thiscall; stores its stack argument into the holder object at this+0x04.
+extern void __thiscall ext_006720E0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// MSVCP80 basic_string destructor, reached through the IAT slot mem_00924FF4 (value 0x00628FF0).
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType::vfunc_43
+// @class ExprParser::ReadMethodType
+// @summary Copies the first dword of self into a temp string via 0x004D5560, wraps that into a holder, assigns the holder into self, releases the holder's previous ref, then forwards to self->field_0x04 vtable slot 0xAC with the out pointer and returns its result.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void* __stdcall fn_004D6AA0(void* self, void* out) {
+    (void)&mem_00924FF4;
+
+    // Temp std::string (MSVC layout, 28 bytes) used as the out buffer of ext_004D5560.
+    alignas(8) uint8_t str_buf[32] = {};
+    // Holder object: +0x04 receives the pointer produced by ext_004D5560.
+    alignas(8) uint8_t holder[8] = {};
+
+    void* first = lift_field<void*>(self, 0x00);
+    void* p = ext_004D5560(first, str_buf);
+
+    ext_006720E0(holder, p);
+    ext_0041CF50(self, holder);
+
+    void* held = lift_field<void*>(holder, 0x04);
+    if (held != nullptr) {
+        void** held_vtbl = lift_field<void**>(held, 0x00);
+        using ReleaseFn = void(__thiscall*)(void*, void*);
+        auto release = reinterpret_cast<ReleaseFn>(lift_field<void*>(held_vtbl, 0x78));
+        release(held, holder);
+    }
+
+    // Indirect call through the IAT slot mem_00924FF4 (original: call dword ptr [0x924ff4]).
+    auto str_dtor = reinterpret_cast<void(__thiscall*)(void*)>(*reinterpret_cast<void* const*>(&mem_00924FF4));
+    str_dtor(str_buf);
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void** obj_vtbl = lift_field<void**>(obj, 0x00);
+    using VFn = void*(__thiscall*)(void*, void*, void*);
+    auto vfn = reinterpret_cast<VFn>(lift_field<void*>(obj_vtbl, 0xAC));
+    return vfn(obj, self, out);
+}
+} // namespace lift_004D6AA0

@@ -19570,6 +19570,13 @@
     "summary": "Parses a string from a document node into a rounded integer via atof.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D6AA0": {
+    "name": "ExprParser::ReadMethodType::vfunc_43",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void* __stdcall fn_004D6AA0(void* self, void* out)",
+    "summary": "Copies the first dword of self into a temp string via 0x004D5560, wraps that into a holder, assigns the holder into self, releases the holder's previous ref, then forwards to self-\u003efield_0x04 vtable slot 0xAC with the out pointer and returns its result.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D6BE0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_47",
     "class": "ExprParser::ReadMethodType",
