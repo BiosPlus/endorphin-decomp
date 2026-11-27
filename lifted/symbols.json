@@ -14745,6 +14745,13 @@
     "summary": "Lazily initializes a static object once (guarded), then stores its address into the caller-supplied out-object at +0x04.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B7FC0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getTimeZoomFactor, 0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",
+    "signature": "__stdcall void* fn_004B7FC0(void* out, void* const* objRef)",
+    "summary": "Reads a float at +0x24 of the EngineData pointed to by *objRef, formats it into the sret string out; throws if *objRef is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B8010": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getTimeZoomFactor, 0\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",

@@ -1,0 +1,22 @@
+{
+  "va": "0x004B7FC0",
+  "size": 74,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getTimeZoomFactor, 0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",
+  "signature": "__stdcall void* fn_004B7FC0(void* out, void* const* objRef)",
+  "summary": "Reads a float at +0x24 of the EngineData pointed to by *objRef, formats it into the sret string out; throws if *objRef is null.",
+  "fields": [
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:47Z"
+}

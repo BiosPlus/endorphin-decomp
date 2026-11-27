@@ -61467,3 +61467,41 @@ void* __stdcall fn_00670750(void* out, const float* const* valueSlot) {
     return out;
 }
 } // namespace lift_00670750
+
+// [0x004B7FC0] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_004B7FC0 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getTimeZoomFactor, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>
+// @summary Reads a float at +0x24 of the EngineData pointed to by *objRef, formats it into the sret string out; throws if *objRef is null.
+// @field NMData::EngineData +0x24 float field_0x24
+__stdcall void* fn_004B7FC0(void* out, void* const* objRef) {
+    void* obj = *objRef;
+
+    if (obj == nullptr) {
+        // Null path: construct a DerivedException in a local slot (asm: lea ecx,[esp+4]) and throw it.
+        alignas(8) unsigned char exc[0x28];
+        using CtorFn = void* (*)(void*);
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(ext_0046C3C0))(exc);
+
+        // Throw via MSVCR80!_CxxThrowException (ThrowInfo at 0x009DEC1C). Does not return.
+        using ThrowFn = void (*)(void*, const void*);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(ext_006A6DD2))(
+            exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = *reinterpret_cast<const float*>(static_cast<const unsigned char*>(obj) + 0x24);
+
+    // Cdecl call: formatFloatTrimmedStringWrapper(out, value); the callee returns out.
+    using FormatFn = void* (*)(void*, float);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_004B7FC0
