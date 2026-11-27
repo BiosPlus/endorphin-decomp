@@ -4524,3 +4524,43 @@ extern void* __thiscall fn_006D91D0(void* self, void* out) {
     return out;
 }
 } // namespace lift_006D91D0
+
+// [0x006DC200]
+namespace lift_006DC200 {
+// @name Unknown::initWithCStringAndInt_006DC200
+// @class Unknown
+// @summary Constructs object by calling base initializer, initializing two range sub-objects at +0xB8 and +0xD0, setting +0xE8 to -1, +0xEC to arg3, and vtable to 0x993BE8.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0xB8 void* field_0xB8
+// @field Unknown +0xCC void* field_0xCC
+// @field Unknown +0xD0 void* field_0xD0
+// @field Unknown +0xE4 void* field_0xE4
+// @field Unknown +0xE8 int32_t field_0xE8
+// @field Unknown +0xEC int32_t field_0xEC
+
+
+    void* ext_006BAB80(void* self, int32_t unused, const char* s);
+    void ext_006D2130(void* self, int32_t arg1, int32_t arg2);
+    void ext_008B9406(void);
+    extern uint32_t mem_00993BE8[];
+
+void* fn_006DC200(void* self, int32_t unused, const char* s, int32_t arg3) {
+    (void)&ext_008B9406;
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_006BAB80(self, unused, s);
+
+    uint8_t* sub1 = base + 0xB8;
+    ext_006D2130(sub1, 16, 4);
+    *reinterpret_cast<void**>(sub1 + 0x14) = sub1 + 0x10;
+
+    uint8_t* sub2 = base + 0xD0;
+    ext_006D2130(sub2, 16, 4);
+    *reinterpret_cast<void**>(sub2 + 0x14) = sub2 + 0x10;
+
+    *reinterpret_cast<int32_t*>(base + 0xEC) = arg3;
+    *reinterpret_cast<int32_t*>(base + 0xE8) = -1;
+    *reinterpret_cast<void**>(base) = static_cast<void*>(mem_00993BE8);
+
+    return self;
+}
+} // namespace lift_006DC200

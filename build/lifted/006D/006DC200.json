@@ -1,0 +1,58 @@
+{
+  "va": "0x006DC200",
+  "size": 153,
+  "orig_symbol": "sub_006DC200",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::initWithCStringAndInt_006DC200",
+  "class": "Unknown",
+  "signature": "void* fn_006DC200(void* self, int32_t unused, const char* s, int32_t arg3)",
+  "summary": "Constructs object by calling base initializer, initializing two range sub-objects at +0xB8 and +0xD0, setting +0xE8 to -1, +0xEC to arg3, and vtable to 0x993BE8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "void*",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xCC",
+      "type": "void*",
+      "name": "field_0xCC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "void*",
+      "name": "field_0xD0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE4",
+      "type": "void*",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE8",
+      "type": "int32_t",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEC",
+      "type": "int32_t",
+      "name": "field_0xEC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T09:01:46Z"
+}
