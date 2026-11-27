@@ -1,0 +1,58 @@
+{
+  "va": "0x007A9230",
+  "size": 128,
+  "orig_symbol": "sub_007A9230",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "LazyAllocAndInitBlock_007A9230",
+  "class": "Unknown",
+  "signature": "void fn_007A9230(void** slot)",
+  "summary": "If *slot is null, mallocs a 0x14-byte block into it (on malloc failure calls ext_007AA510(1) and returns unless mem_00B61219 is set); then zeroes the block: dword +0x00, dwords +0x08/+0x0C/+0x10, and bytes +0x04..+0x06 are set from mem_00998070.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "field_0x06"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:13:41Z"
+}

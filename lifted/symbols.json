@@ -84210,6 +84210,13 @@
     "summary": "If slot is null, caches index 2 via ext_007AA510 (when flag mem_00B61219 is set, falls through); otherwise frees the pointer stored in *slot and nulls it.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007A9230": {
+    "name": "LazyAllocAndInitBlock_007A9230",
+    "class": "Unknown",
+    "signature": "void fn_007A9230(void** slot)",
+    "summary": "If *slot is null, mallocs a 0x14-byte block into it (on malloc failure calls ext_007AA510(1) and returns unless mem_00B61219 is set); then zeroes the block: dword +0x00, dwords +0x08/+0x0C/+0x10, and bytes +0x04..+0x06 are set from mem_00998070.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007A95C0": {
     "name": "ConditionalStoreFlagByte",
     "class": "\u003cClassName\u003e (optional)",

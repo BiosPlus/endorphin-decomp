@@ -1770,3 +1770,48 @@ void fn_007A8BC0(uint32_t* slot) {
     }
 }
 } // namespace lift_007A8BC0
+
+// [0x007A9230] sub_007A9230 (128 bytes)
+namespace lift_007A9230 {
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+// IAT slot for MSVCR80!malloc (cdecl).
+extern void* (*mem_00925208)(size_t n);
+// Byte-sized global flag at 0x00B61219.
+extern uint8_t mem_00B61219;
+// .rdata constant at 0x00998070; the code only ever reads its low byte.
+extern const uint8_t mem_00998070;
+
+// @name LazyAllocAndInitBlock_007A9230
+// @class Unknown
+// @summary If *slot is null, mallocs a 0x14-byte block into it (on malloc failure calls ext_007AA510(1) and returns unless mem_00B61219 is set); then zeroes the block: dword +0x00, dwords +0x08/+0x0C/+0x10, and bytes +0x04..+0x06 are set from mem_00998070.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x05 uint8_t field_0x05
+// @field Unknown +0x06 uint8_t field_0x06
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_007A9230(void** slot) {
+    if (*slot == nullptr) {
+        void* p = mem_00925208(0x14);
+        *slot = p;
+        if (p == nullptr) {
+            ext_007AA510(1);
+            if (mem_00B61219 == 0) {
+                return;
+            }
+        }
+    }
+
+    void* blk = *slot;
+    const uint8_t flag = mem_00998070;
+    lift_field<uint32_t>(blk, 0x00) = 0;
+    lift_field<uint8_t>(blk, 0x04) = flag;
+    lift_field<uint8_t>(blk, 0x05) = flag;
+    lift_field<uint8_t>(blk, 0x06) = flag;
+    lift_field<uint32_t>(blk, 0x08) = 0;
+    lift_field<uint32_t>(blk, 0x0C) = 0;
+    lift_field<uint32_t>(blk, 0x10) = 0;
+}
+} // namespace lift_007A9230
