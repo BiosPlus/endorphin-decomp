@@ -101624,6 +101624,13 @@
     "summary": "Finds a child by name at 0x00AA8D2C, invokes its vtable+0x80 with a double value, and if field_0x04 is non-null updates it with the float-converted value.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071CD00": {
+    "name": "Unknown::SetValueAndPropagate_0071CD00",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_0071CD00(void* self, void* edx, double value)",
+    "summary": "Finds child named by string 0xAA8D3C under +0xC, calls its vtable+0x80 setter with the double, then if +0x4 is set propagates the value as float via 6DC460/6C9550/6CD330.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071D530": {
     "name": "Unknown::initAssignCString_0071D530",
     "class": "Unknown",

@@ -270,7 +270,7 @@ struct Unknown_Fields {
     // +0x4   void**                   field_0x04  (evidence: 0x0043D710) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t                  field_0x04[0x14]  (evidence: 0x006E72D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   unknown                  field_0x4  (evidence: 0x005CFEC0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x4  (evidence: 0x0071CAD0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x4  (evidence: 0x0071CAD0, 0x0071CD00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    fileRecord  (evidence: 0x007833B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   BYTE                     flag04  (evidence: 0x005B3500) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 flags  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
@@ -520,7 +520,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x004132D0, 0x0041C5D0, 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004B4D30, 0x004B5820, 0x004BEBE0, 0x00504640, 0x00553980, 0x00558B50, 0x00559840, 0x0059F920, 0x005B51E0, 0x005FCC10, 0x00639730, 0x00661BF0, 0x0068EFF0, 0x0068F050, 0x00695740, 0x006B0C40, 0x006D9070, 0x00783790, 0x00783800, 0x00788E50, 0x00790D60, 0x00790F40, 0x007966D0, 0x00798570, 0x0079ADA0, 0x0079DCE0, 0x007A9230, 0x007BE010, 0x0086CFB0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x00507850, 0x0053E290, 0x00585120, 0x0058A9A0, 0x0058AA20, 0x005B2130, 0x005B38C0, 0x005B3970, 0x005B3A20, 0x005B7040, 0x007008B0, 0x00700920, 0x00700960, 0x00715660, 0x0071B7E0, 0x0071B870, 0x0071B910, 0x0071C3A0, 0x0071C4E0, 0x0071C500, 0x0071C530, 0x0071C560, 0x0071C5A0, 0x0071C5C0, 0x0071C740, 0x0071C750, 0x0071C8D0, 0x0071C970) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0xC  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0xC
-    // +0xC   void*                    field_0xC  (evidence: 0x006D8E70, 0x0071CAD0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0xC  (evidence: 0x006D8E70, 0x0071CAD0, 0x0071CD00) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0xc  (evidence: 0x007D48A0, 0x007D4B20, 0x007D8470, 0x007DAD70) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD                    flags  (evidence: 0x007CAF70, 0x007CCC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   u32                      flags  (evidence: 0x007CAF70, 0x007CCC30) // CONFLICT: multiple definitions at +0xC

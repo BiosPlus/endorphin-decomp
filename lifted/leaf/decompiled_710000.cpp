@@ -3068,3 +3068,33 @@ void* __thiscall fn_007140B0(void* self, uint32_t arg1) {
     return self;
 }
 } // namespace lift_007140B0
+
+// [0x0071CD00]
+namespace lift_0071CD00 {
+extern uint32_t __fastcall ext_00708000(void* self, void* edx, const char* name);
+extern int32_t __fastcall ext_006DC460(void* self, void* edx);
+extern void* __fastcall ext_006C9550(void* self, void* edx, float value);
+extern void __fastcall ext_006CD330(void* self, void* edx);
+
+typedef void(__fastcall* SetDoubleFn)(void* self, void* edx, double value);
+
+// @name Unknown::SetValueAndPropagate_0071CD00
+// @class Unknown
+// @summary Finds child named by string 0xAA8D3C under +0xC, calls its vtable+0x80 setter with the double, then if +0x4 is set propagates the value as float via 6DC460/6C9550/6CD330.
+// @field Unknown +0x04 void* field_0x4
+// @field Unknown +0x0C void* field_0xC
+extern void __fastcall fn_0071CD00(void* self, void* edx, double value)
+{
+    (void)edx;
+    uint8_t* s = (uint8_t*)self;
+    void* child = (void*)(uintptr_t)ext_00708000(*(void**)(s + 0xC), nullptr, (const char*)(uintptr_t)0xAA8D3C);
+    void** vtbl = *(void***)child;
+    ((SetDoubleFn)vtbl[0x80 / 4])(child, nullptr, value);
+    void* p = *(void**)(s + 0x4);
+    if (p) {
+        void* a = (void*)(intptr_t)ext_006DC460(p, nullptr);
+        void* b = ext_006C9550(a, nullptr, (float)value);
+        ext_006CD330(b, nullptr);
+    }
+}
+} // namespace lift_0071CD00

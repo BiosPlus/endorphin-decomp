@@ -1,0 +1,28 @@
+{
+  "va": "0x0071CD00",
+  "size": 80,
+  "orig_symbol": "sub_0071CD00",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::SetValueAndPropagate_0071CD00",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_0071CD00(void* self, void* edx, double value)",
+  "summary": "Finds child named by string 0xAA8D3C under +0xC, calls its vtable+0x80 setter with the double, then if +0x4 is set propagates the value as float via 6DC460/6C9550/6CD330.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0xC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:48:34Z"
+}
