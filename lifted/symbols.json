@@ -22018,6 +22018,13 @@
     "summary": "Dynamic-casts input to NMData::EvolveParams, throws on failure, else writes bool* at +0x1D and type ptr to out pair.",
     "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
   },
+  "0x005001F0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 30\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 30\u003e",
+    "signature": "void* fn_005001F0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
   "0x00500290": {
     "name": "ExprParser::WriteMethodType\u003cEvolveEngine,float,stopWithFitness\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e",
@@ -22060,6 +22067,41 @@
     "signature": "void* fn_005007F0(const void* first, const void* last, void* dest)",
     "summary": "Auto-lifted identical-shape clone of 0x0050B060 (Unknown::copyRecordRangeAndAdvance_0050B060).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00500850": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, float, 4\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, float, 4\u003e",
+    "signature": "void* fn_00500850(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x005008F0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 16\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 16\u003e",
+    "signature": "void* fn_005008F0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x00500990": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 8\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 8\u003e",
+    "signature": "void* fn_00500990(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x00500A30": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 12\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 12\u003e",
+    "signature": "void* fn_00500A30(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x00500AD0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 24\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 24\u003e",
+    "signature": "void* fn_00500AD0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
   },
   "0x00500B70": {
     "name": "sub_00500B70",
@@ -22958,6 +23000,41 @@
     "summary": "Copies the 0x24-byte records in [first, last) to dest and returns dest advanced past them.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050B0C0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskTemplateParam, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, 4\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskTemplateParam, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, 4\u003e",
+    "signature": "void* fn_0050B0C0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x0050B160": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskTemplateParam, float, 32\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskTemplateParam, float, 32\u003e",
+    "signature": "void* fn_0050B160(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x0050B200": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskTemplateParam, float, 36\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskTemplateParam, float, 36\u003e",
+    "signature": "void* fn_0050B200(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x0050B2A0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskParam, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, 4\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskParam, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, 4\u003e",
+    "signature": "void* fn_0050B2A0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x0050B340": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskParam, float, 32\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskParam, float, 32\u003e",
+    "signature": "void* fn_0050B340(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
   "0x0050B6A0": {
     "name": "UnknownClass::sortThreeByString_0050B6A0",
     "class": "UnknownClass",
@@ -23152,6 +23229,41 @@
     "signature": "double fn_0050EA10(void* self)",
     "summary": "Returns the double at offset 0x20 of the object pointed to by this+0x08 (thiscall getter).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
+  "0x0050EA20": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, int, 4\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, int, 4\u003e",
+    "signature": "void* fn_0050EA20(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x0050EAC0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, float, 12\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, float, 12\u003e",
+    "signature": "void* fn_0050EAC0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x0050EB60": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, 60\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, 60\u003e",
+    "signature": "void* fn_0050EB60(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x0050EC00": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, float, 28\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, float, 28\u003e",
+    "signature": "void* fn_0050EC00(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x0050ECA0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, int, 8\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, int, 8\u003e",
+    "signature": "void* fn_0050ECA0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
   },
   "0x0050EDF0": {
     "name": "Unknown::clearAndReleaseOwned",
@@ -23653,6 +23765,62 @@
     "signature": "void* fn_005142F0(void* self, void* pair)",
     "summary": "Forwards (self, pair) to ext_005136C0 with a zero DWORD and returns self.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00514320": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 56\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 56\u003e",
+    "signature": "void* fn_00514320(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x005143C0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 60\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 60\u003e",
+    "signature": "void* fn_005143C0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x00514460": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 40\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 40\u003e",
+    "signature": "void* fn_00514460(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x00514500": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 44\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 44\u003e",
+    "signature": "void* fn_00514500(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x005145A0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 72\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 72\u003e",
+    "signature": "void* fn_005145A0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x00514640": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 76\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 76\u003e",
+    "signature": "void* fn_00514640(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x005146E0": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 48\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 48\u003e",
+    "signature": "void* fn_005146E0(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
+  "0x00514780": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 52\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 52\u003e",
+    "signature": "void* fn_00514780(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
   },
   "0x005149F0": {
     "name": "sub_005149F0_dtor",
@@ -24965,6 +25133,13 @@
     "signature": "extern void __stdcall fn_00524DF0(void** targetPtr, void* valueArg)",
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00524F80": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::VariableValue, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, 12\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::VariableValue, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, 12\u003e",
+    "signature": "void* fn_00524F80(void* self, void* out_pair, void* src_obj)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
   },
   "0x00525020": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0\u003e::vfunc_0",

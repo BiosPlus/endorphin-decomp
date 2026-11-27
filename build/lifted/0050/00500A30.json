@@ -1,0 +1,14 @@
+{
+  "va": "0x00500A30",
+  "size": 151,
+  "orig_symbol": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 12\u003e::vfunc_17",
+  "src_path": "src/templates/PrimitiveProxyCreator.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp",
+  "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 12\u003e::vfunc_17",
+  "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, int, 12\u003e",
+  "signature": "void* fn_00500A30(void* self, void* out_pair, void* src_obj)",
+  "summary": "Auto-lifted identical-shape clone of 0x00500150 (ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T05:16:28Z"
+}
