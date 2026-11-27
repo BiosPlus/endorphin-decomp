@@ -1,0 +1,28 @@
+{
+  "va": "0x004327F0",
+  "size": 134,
+  "orig_symbol": "sub_004327F0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::sehCleanupShowString",
+  "class": "Unknown",
+  "signature": "void fn_004327F0_sehHandler(void* ctx)",
+  "summary": "SEH handler: copy-constructs a std::string from ctx+0x0C, passes its c_str() to ext_006A5E60, then destroys the string.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "sourceString"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:29:38Z"
+}

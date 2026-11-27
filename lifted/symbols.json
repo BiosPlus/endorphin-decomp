@@ -3666,6 +3666,13 @@
     "summary": "Calls virtual slot +0x1E4 (arg 0) on the object returned by ext_00465B40; on exception, logs the std::string at obj+0x0C via thunk_MFC80_ord_1123 and returns 0x004324CB.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004327F0": {
+    "name": "Unknown::sehCleanupShowString",
+    "class": "Unknown",
+    "signature": "void fn_004327F0_sehHandler(void* ctx)",
+    "summary": "SEH handler: copy-constructs a std::string from ctx+0x0C, passes its c_str() to ext_006A5E60, then destroys the string.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004329A0": {
     "name": "init_and_update_field_0x11c",
     "signature": "extern \"C\" void __thiscall fn_004329A0(uintptr_t self)",

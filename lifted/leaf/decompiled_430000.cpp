@@ -4437,3 +4437,52 @@ extern void __cdecl fn_00434090(void) {
     }
 }
 } // namespace lift_00434090
+
+// [0x004327F0] sub_004327F0 (134 bytes)
+namespace lift_004327F0 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+extern void* ext_00465B40();
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+extern void ext_006A5E60(const char* message);
+extern int mem_00924FE0;
+extern int mem_00924FF0;
+extern int mem_00924FF4;
+
+// Imported MSVCP80 member functions reached through IAT slots.
+using StrCopyCtorFn = void(__thiscall*)(void* self, const void* other);
+using StrCStrFn     = const char*(__thiscall*)(void* self);
+using StrDtorFn     = void(__thiscall*)(void* self);
+using VirtCall1Fn   = void(__thiscall*)(void* self, int arg);
+
+// [0x00432830..] SEH unwind/cleanup funclet (0x0043283C..0x00432875).
+// @name Unknown::sehCleanupShowString
+// @class Unknown
+// @summary SEH handler: copy-constructs a std::string from ctx+0x0C, passes its c_str() to ext_006A5E60, then destroys the string.
+// @field Unknown +0x0C std::string sourceString
+void fn_004327F0_sehHandler(void* ctx) {
+    // Local std::string at [ebp-0x30] (MSVCP80 layout, size 0x1C).
+    alignas(8) unsigned char str[0x1C];
+    auto copyCtor = *reinterpret_cast<StrCopyCtorFn*>(reinterpret_cast<void*>(&mem_00924FE0));
+    auto cStr     = *reinterpret_cast<StrCStrFn*>(reinterpret_cast<void*>(&mem_00924FF0));
+    auto dtor     = *reinterpret_cast<StrDtorFn*>(reinterpret_cast<void*>(&mem_00924FF4));
+
+    void* source = static_cast<unsigned char*>(ctx) + 0x0C; // ctx+0x0C is a std::string
+    copyCtor(str, source);
+    const char* text = cStr(str);
+    ext_006A5E60(text);
+    dtor(str);
+}
+
+// @name Unknown::invokeVirtualSlot1E8
+// @class Unknown
+// @summary Gets the global object from ext_00465B40 and calls its vtable slot +0x1E8 with argument 1; the SEH frame setup/teardown is boilerplate.
+// @field Unknown +0x00 void* vtable
+void fn_004327F0(void* self) {
+    (void)self;
+    // SEH frame setup/teardown (fs:[0] push/pop, cookie, saved regs) is compiler boilerplate; omitted.
+    void* obj = ext_00465B40();
+    void* vtable = lift_field<void*>(obj, 0x0);
+    auto target = lift_field<VirtCall1Fn>(vtable, 0x1E8);
+    target(obj, 1);
+}
+} // namespace lift_004327F0
