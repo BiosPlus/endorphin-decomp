@@ -16296,6 +16296,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x60 and tail-calls sub_004BBC20.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004BC240": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RemoveElementCommand::vfunc_1",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RemoveElementCommand",
+    "signature": "void fn_004BC240(void* self)",
+    "summary": "Removes a string pointer from the owner's vector, replaces the stored pointer (releasing the old one), then notifies the sub-object at +0x24 and the callback at +0x14.",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x004BC420": {
     "name": "sub_004BC420",
     "signature": "extern \"C\" void fn_004BC420(void)",
