@@ -1907,3 +1907,36 @@ uint32_t fn_0051E4B0(void* self) {
     return r;
 }
 } // namespace lift_0051E4B0
+
+// [0x005149F0]
+namespace lift_005149F0 {
+// @name sub_005149F0_dtor
+// @summary Destructor that sets vtable, destroys member at +0x14, frees buffer at +0x8..+0x10, and calls base destructor.
+// @field Self +0x00 uint32_t vtable
+// @field Self +0x08 void* field_0x08
+// @field Self +0x0C uint32_t field_0x0C
+// @field Self +0x10 uint32_t field_0x10
+// @field Self +0x14 void field_0x14
+
+
+extern uint8_t mem_0094F5DC[];
+void __fastcall ext_00504B80(void* self);
+void __fastcall ext_0065F440(void* self);
+void ext_006A5C5C(void* ptr);
+
+extern void __fastcall fn_005149F0(void* self) {
+    lift_field<uint32_t>(self, 0x0) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_0094F5DC));
+    ext_00504B80(static_cast<uint8_t*>(self) + 0x14);
+
+    void* ptr = lift_field<void*>(self, 0x8);
+    if (ptr != nullptr) {
+        ext_006A5C5C(ptr);
+    }
+
+    lift_field<uint32_t>(self, 0x8) = 0;
+    lift_field<uint32_t>(self, 0xC) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+
+    ext_0065F440(self);
+}
+} // namespace lift_005149F0

@@ -18,7 +18,7 @@ struct Self_Fields {
     // +0x0   std::string              name  (evidence: 0x004FDAA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x00410230) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vftable_0x00  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vtable  (evidence: 0x0054C890, 0x005947B0, 0x0059DDA0, 0x005A71E0, 0x005B1930, 0x00678280, 0x006AD3C0, 0x006B0CD0, 0x006BA780) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x005149F0, 0x0054C890, 0x005947B0, 0x0059DDA0, 0x005A71E0, 0x005B1930, 0x00678280, 0x006AD3C0, 0x006B0CD0, 0x006BA780) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t*                vtable  (evidence: 0x00414260, 0x006F7970, 0x006FC200) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00495AB0, 0x006118E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x004142A0, 0x00611870, 0x006E7340) // CONFLICT: multiple definitions at +0x0
@@ -39,18 +39,19 @@ struct Self_Fields {
     // +0x8   int32_t                  field_0x08  (evidence: 0x00492550) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x005B0E60, 0x006AD3C0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t[]                field_0x08  (evidence: 0x00533F50) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    field_0x08  (evidence: 0x0041C540, 0x006E6D70, 0x006E7000) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x0041C540, 0x005149F0, 0x006E6D70, 0x006E7000) // CONFLICT: multiple definitions at +0x8
     // +0x8   std::string              field_0x8  (evidence: 0x00504B80) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    lock  (evidence: 0x0067A670, 0x0067AE20) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    vec_strings  (evidence: 0x00495AB0) // CONFLICT: multiple definitions at +0x8
     // +0xC   DWORD                    field_0x0C  (evidence: 0x004A5A50, 0x007B1E20) // CONFLICT: multiple definitions at +0xC
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x006AD3C0, 0x00700940) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x005149F0, 0x006AD3C0, 0x00700940) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0C  (evidence: 0x0067A670, 0x0067AE20, 0x0071C1B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x0041C540) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x006D9170) // CONFLICT: multiple definitions at +0xC
     // +0x10  DWORD                    field_0x10  (evidence: 0x004A5A50) // CONFLICT: multiple definitions at +0x10
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x0041C540, 0x006D9170) // CONFLICT: multiple definitions at +0x10
-    // +0x14  void*                    field_0x14  (evidence: 0x0048F590, 0x007B1FA0, 0x007BD640)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x0041C540, 0x005149F0, 0x006D9170) // CONFLICT: multiple definitions at +0x10
+    // +0x14  void                     field_0x14  (evidence: 0x005149F0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  void*                    field_0x14  (evidence: 0x0048F590, 0x007B1FA0, 0x007BD640) // CONFLICT: multiple definitions at +0x14
     // +0x17  uint8_t                  field_0x17  (evidence: 0x006D9170)
     // +0x18  std::string              field_0x18  (evidence: 0x0054C890) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    field_0x18  (evidence: 0x004AFE50, 0x004B5030, 0x004FDE90) // CONFLICT: multiple definitions at +0x18
