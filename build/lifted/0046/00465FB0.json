@@ -1,0 +1,22 @@
+{
+  "va": "0x00465FB0",
+  "size": 147,
+  "orig_symbol": "sub_00465FB0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "LogStringFieldThenNotify",
+  "class": "Unknown",
+  "signature": "extern \"C\" int mem_00924E94;   // operator\u003c\u003c(ostream\u0026, const string\u0026) extern \"C\" int mem_00924E98;   // ostream::operator\u003c\u003c(ostream\u0026 (*)(ostream\u0026)) extern \"C\" int mem_00924FCC;   // operator+(const char*, const string\u0026) extern \"C\" int mem_00924FF0;   // string::c_str() extern \"C\" int mem_00924FF4;   // string::~string() void fn_00465FB0(void* self)",
+  "summary": "Writes the std::string at self+0x0C to std::cout followed by endl, then passes \"\u003cliteral\u003e\" + that string's c_str() to ext_006A5E60.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:39:11Z"
+}

@@ -40,6 +40,7 @@ void fn_00467330() {
 }
 } // namespace lift_00437DE0
 } // namespace lift_00467330
+#include <iostream>
 
 // [0x00467380] sub_00467380 (8 bytes)
 namespace lift_00467380 {
@@ -2338,3 +2339,45 @@ void* fn_00461510(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_00461510
+
+// [0x00465FB0] sub_00465FB0 (147 bytes)
+namespace lift_00465FB0 {
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+extern void ext_006A5E60(const char* text);
+extern int mem_00924E90;   // std::endl
+extern int mem_00924FA0;   // std::cout
+extern int mem_00924E94;   // operator<<(ostream&, const string&)
+extern int mem_00924E98;   // ostream::operator<<(ostream& (*)(ostream&))
+extern int mem_00924FCC;   // operator+(const char*, const string&)
+extern int mem_00924FF0;   // string::c_str()
+extern int mem_00924FF4;   // string::~string()
+
+// @name LogStringFieldThenNotify
+// @class Unknown
+// @summary Writes the std::string at self+0x0C to std::cout followed by endl, then passes "<literal>" + that string's c_str() to ext_006A5E60.
+// @field Unknown +0x0C std::string field_0x0C
+void fn_00465FB0(void* self) {
+    auto* cout_obj = reinterpret_cast<std::ostream*>(static_cast<uintptr_t>(mem_00924FA0));
+    auto endl_fn = reinterpret_cast<std::ostream& (*)(std::ostream&)>(static_cast<uintptr_t>(mem_00924E90));
+    auto& field_0x0C = *reinterpret_cast<std::string*>(static_cast<char*>(self) + 0x0C);
+
+    auto op_insert = reinterpret_cast<std::ostream& (*)(std::ostream&, const std::string&)>(
+        static_cast<uintptr_t>(mem_00924E94));
+    auto op_manip = reinterpret_cast<std::ostream& (*)(std::ostream&, std::ostream& (*)(std::ostream&))>(
+        static_cast<uintptr_t>(mem_00924E98));
+    auto op_concat = reinterpret_cast<std::string (*)(const char*, const std::string&)>(
+        static_cast<uintptr_t>(mem_00924FCC));
+    auto str_c_str = reinterpret_cast<const char* (*)(const std::string*)>(
+        static_cast<uintptr_t>(mem_00924FF0));
+    auto str_dtor = reinterpret_cast<void (*)(std::string*)>(static_cast<uintptr_t>(mem_00924FF4));
+
+    // std::cout << field_0x0C << std::endl;
+    std::ostream& os = op_insert(*cout_obj, field_0x0C);
+    op_manip(os, endl_fn);
+
+    // std::string tmp = "<literal @0x0092F8F4>" + field_0x0C;  ext_006A5E60(tmp.c_str());
+    std::string tmp = op_concat(reinterpret_cast<const char*>(uintptr_t{0x0092F8F4}), field_0x0C);
+    ext_006A5E60(str_c_str(&tmp));
+    str_dtor(&tmp);
+}
+} // namespace lift_00465FB0
