@@ -766,3 +766,59 @@ void __thiscall fn_00567190(void* ecx_this, void* self, int32_t* counter) {
     }
 }
 } // namespace lift_00567190
+
+// [0x00565060] sub_00565060 (129 bytes)
+namespace lift_00565060 {
+// Known callee 0x007C5706: thunk_XSIFtk-3.6.2.1_?SceneInfo@CSLScene@@QAEPAVCSLSceneInfo@@XZ (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?SceneInfo@CSLScene@@QAEPAVCSLSceneInfo@@XZ.)
+extern void ext_007C5706();
+// Known callee 0x007C5694: thunk_XSIFtk-3.6.2.1_??4CSLStringProxy@@QAEAAV0@PBD@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!??4CSLStringProxy@@QAEAAV0@PBD@Z.)
+extern void ext_007C5694();
+// Known callee 0x007C5700: thunk_XSIFtk-3.6.2.1_?SetFrameRate@CSLSceneInfo@@QAEXM@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?SetFrameRate@CSLSceneInfo@@QAEXM@Z.)
+extern void ext_007C5700();
+// Known callee 0x007C56FA: thunk_XSIFtk-3.6.2.1_?SetStart@CSLSceneInfo@@QAEXM@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?SetStart@CSLSceneInfo@@QAEXM@Z.)
+extern void ext_007C56FA();
+// Known callee 0x007C56F4: thunk_XSIFtk-3.6.2.1_?SetEnd@CSLSceneInfo@@QAEXM@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?SetEnd@CSLSceneInfo@@QAEXM@Z.)
+extern void ext_007C56F4();
+
+// @name Unknown::ApplySceneRangeToSceneInfo
+// @class Unknown
+// @summary Fetches the scene's CSLSceneInfo and, if non-null, copies frame rate (+0x174) and start/end (+0x16C/+0x170, converted to float) into it, after setting a flag and assigning a name string from the info's child vtable.
+// @field Unknown +0x494 void* scene
+// @field Unknown +0x16C int32_t startFrame
+// @field Unknown +0x170 int32_t endFrame
+// @field Unknown +0x174 float frameRate
+// @field CSLSceneInfo +0x4C void* nameSource
+// @field CSLSceneInfo +0x50 int32_t flag
+// @field CSLSceneInfo +0x54 void* nameProxy
+void fn_00565060(void* self) {
+    // Thiscall: self arrives in ECX. Callees are invoked through typed pointers.
+    using SceneInfoFn = void* (*)(void* scene);
+    using StringAssignFn = void* (*)(void* proxy, const char* value);
+    using SetFloatFn = void (*)(void* obj, float value);
+
+    void* scene = lift_field<void*>(self, 0x494);
+    void* info = reinterpret_cast<SceneInfoFn>(ext_007C5706)(scene);
+    if (info == nullptr) {
+        return;
+    }
+
+    // Snapshot the source values before any callee runs (matches the asm's load order).
+    int32_t startFrame = lift_field<int32_t>(self, 0x16C);
+    float frameRate = lift_field<float>(self, 0x174);
+    int32_t endFrame = lift_field<int32_t>(self, 0x170);
+
+    void* nameSource = lift_field<void*>(info, 0x4C);
+    lift_field<int32_t>(info, 0x50) = 1;
+
+    // eax = [nameSource]  (vtable); ecx = [vtable + 4]  -> const char* argument
+    void* vtable = lift_field<void*>(nameSource, 0x0);
+    const char* name = lift_field<const char*>(vtable, 0x4);
+
+    void* nameProxy = static_cast<uint8_t*>(info) + 0x54;
+    reinterpret_cast<StringAssignFn>(ext_007C5694)(nameProxy, name);
+
+    reinterpret_cast<SetFloatFn>(ext_007C5700)(info, frameRate);
+    reinterpret_cast<SetFloatFn>(ext_007C56FA)(info, static_cast<float>(startFrame));
+    reinterpret_cast<SetFloatFn>(ext_007C56F4)(info, static_cast<float>(endFrame));
+}
+} // namespace lift_00565060

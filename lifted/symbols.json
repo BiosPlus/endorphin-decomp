@@ -28385,6 +28385,13 @@
     "summary": "Looks up the CSLAngle from the scene at +0x494, sets its angle type to 0, then sets it again to 0 or 1 based on the mode at +0x194 (other values leave it at 0).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x00565060": {
+    "name": "Unknown::ApplySceneRangeToSceneInfo",
+    "class": "Unknown",
+    "signature": "void fn_00565060(void* self)",
+    "summary": "Fetches the scene's CSLSceneInfo and, if non-null, copies frame rate (+0x174) and start/end (+0x16C/+0x170, converted to float) into it, after setting a flag and assigning a name string from the info's child vtable.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x005650F0": {
     "name": "writeAndCloseXSIScene",
     "class": "UnknownClass",

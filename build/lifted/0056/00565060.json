@@ -1,0 +1,58 @@
+{
+  "va": "0x00565060",
+  "size": 129,
+  "orig_symbol": "sub_00565060",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "Unknown::ApplySceneRangeToSceneInfo",
+  "class": "Unknown",
+  "signature": "void fn_00565060(void* self)",
+  "summary": "Fetches the scene's CSLSceneInfo and, if non-null, copies frame rate (+0x174) and start/end (+0x16C/+0x170, converted to float) into it, after setting a flag and assigning a name string from the info's child vtable.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x494",
+      "type": "void*",
+      "name": "scene"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x16C",
+      "type": "int32_t",
+      "name": "startFrame"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x170",
+      "type": "int32_t",
+      "name": "endFrame"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "frameRate"
+    },
+    {
+      "class": "CSLSceneInfo",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "nameSource"
+    },
+    {
+      "class": "CSLSceneInfo",
+      "offset": "+0x50",
+      "type": "int32_t",
+      "name": "flag"
+    },
+    {
+      "class": "CSLSceneInfo",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "nameProxy"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:17:50Z"
+}

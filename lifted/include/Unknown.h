@@ -1482,7 +1482,10 @@ struct Unknown_Fields {
     // +0x16C void**                   entries  (evidence: 0x0074D800) // CONFLICT: multiple definitions at +0x16C
     // +0x16C void**                   field_0x16C  (evidence: 0x007648F0) // CONFLICT: multiple definitions at +0x16C
     // +0x16C uint32_t                 field_0x16c  (evidence: 0x006A8800, 0x00798570) // CONFLICT: multiple definitions at +0x16C
-    // +0x174 uint32_t                 field_0x174  (evidence: 0x0046FF50)
+    // +0x16C int32_t                  startFrame  (evidence: 0x00565060) // CONFLICT: multiple definitions at +0x16C
+    // +0x170 int32_t                  endFrame  (evidence: 0x00565060)
+    // +0x174 uint32_t                 field_0x174  (evidence: 0x0046FF50) // CONFLICT: multiple definitions at +0x174
+    // +0x174 float                    frameRate  (evidence: 0x00565060) // CONFLICT: multiple definitions at +0x174
     // +0x178 uint32_t                 field_0x178  (evidence: 0x007CD490)
     // +0x179 uint8_t                  field_0x179  (evidence: 0x004928A0)
     // +0x17C Unknown                  field_0x17C  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0x17C
@@ -1711,7 +1714,7 @@ struct Unknown_Fields {
     // +0x480 uint32_t                 field_0x480  (evidence: 0x004030F0)
     // +0x490 DWORD                    field_0x490  (evidence: 0x00702780)
     // +0x494 void*                    field_0x494  (evidence: 0x00565120) // CONFLICT: multiple definitions at +0x494
-    // +0x494 void*                    scene  (evidence: 0x00564FE0) // CONFLICT: multiple definitions at +0x494
+    // +0x494 void*                    scene  (evidence: 0x00564FE0, 0x00565060) // CONFLICT: multiple definitions at +0x494
     // +0x4C4 uint32_t                 field_0x4C4  (evidence: 0x004030F0, 0x00408050, 0x0040BE90)
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
     // +0x518 DWORD                    field_0x518  (evidence: 0x00702790)
