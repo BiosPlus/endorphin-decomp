@@ -1,0 +1,28 @@
+{
+  "va": "0x00728370",
+  "size": 64,
+  "orig_symbol": "sub_00728370",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::forwardStringOrDefault_00728370",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint8_t __thiscall fn_00728370(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "If arg1 is zero, calls ext_006E7410 with (0xa, 0xaad070) on self+0xef0 and returns 0; otherwise, if the flag at +0x15 is set, forwards (arg1, arg2) to the vtable slot 7 method of the object at +0x10 and returns 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:06Z"
+}

@@ -77958,6 +77958,13 @@
     "summary": "Finds a sub-object by key in field_0x250, validates an index against its count, and clears offset +0x1C of the indexed item.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00728370": {
+    "name": "Unknown::forwardStringOrDefault_00728370",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint8_t __thiscall fn_00728370(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "If arg1 is zero, calls ext_006E7410 with (0xa, 0xaad070) on self+0xef0 and returns 0; otherwise, if the flag at +0x15 is set, forwards (arg1, arg2) to the vtable slot 7 method of the object at +0x10 and returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00728570": {
     "name": "sub_00728570",
     "signature": "extern \"C\" void __fastcall fn_00728570(void* self)",

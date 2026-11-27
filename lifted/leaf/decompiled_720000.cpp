@@ -1101,3 +1101,32 @@ BOOLEAN fn_00724610(void* self) {
     return 1;
 }
 } // namespace lift_00724610
+
+// [0x00728370]
+namespace lift_00728370 {
+// @name Unknown::forwardStringOrDefault_00728370
+// @class Unknown
+// @summary If arg1 is zero, calls ext_006E7410 with (0xa, 0xaad070) on self+0xef0 and returns 0; otherwise, if the flag at +0x15 is set, forwards (arg1, arg2) to the vtable slot 7 method of the object at +0x10 and returns 1.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x15 uint8_t field_0x15
+
+extern void* __thiscall ext_006E7410(void* self, uint32_t arg1, uint32_t arg2);
+
+extern uint8_t __thiscall fn_00728370(void* self, uint32_t arg1, uint32_t arg2) {
+    if (arg1 == 0) {
+        // Subobject at self+0xef0 receives the default string call.
+        uint8_t* sub = reinterpret_cast<uint8_t*>(self) + 0xef0;
+        ext_006E7410(sub, 0xa, 0xaad070u);
+        return 0;
+    }
+
+    if (lift_field<uint8_t>(self, 0x15) != 0) {
+        void* obj = lift_field<void*>(self, 0x10);
+        void** vtable = *reinterpret_cast<void***>(obj);
+        using Slot7Fn = void(__thiscall*)(void* self, uint32_t arg1, uint32_t arg2);
+        Slot7Fn slot7 = reinterpret_cast<Slot7Fn>(vtable[7]);
+        slot7(obj, arg1, arg2);
+    }
+    return 1;
+}
+} // namespace lift_00728370
