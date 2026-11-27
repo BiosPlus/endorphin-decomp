@@ -1,0 +1,13 @@
+{
+  "va": "0x00462AA0",
+  "size": 98,
+  "orig_symbol": "sub_00462AA0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "showModalDialogOrRun",
+  "signature": "void fn_00462AA0(void* self)",
+  "summary": "Constructs a temporary 0x120-byte object from ecx, invokes MFC80!ord_2020 on it, and destroys it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:59:43Z"
+}

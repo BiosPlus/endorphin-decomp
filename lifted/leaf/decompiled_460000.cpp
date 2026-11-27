@@ -1825,3 +1825,21 @@ extern void __fastcall fn_0046C120(void* self) {
     (void)&mem_0092568C;
 }
 } // namespace lift_0046C120
+
+// [0x00462AA0]
+namespace lift_00462AA0 {
+// @name showModalDialogOrRun
+// @summary Constructs a temporary 0x120-byte object from ecx, invokes MFC80!ord_2020 on it, and destroys it.
+
+
+extern void ext_006A5FA4(void);
+extern void fn_004624C0(void* self, void* arg1, uint32_t arg2);
+extern void fn_00462440(void* self);
+
+void fn_00462AA0(void* self) {
+    uint8_t local_obj[0x120];
+    fn_004624C0(local_obj, self, 0);
+    ext_006A5FA4();
+    fn_00462440(local_obj);
+}
+} // namespace lift_00462AA0
