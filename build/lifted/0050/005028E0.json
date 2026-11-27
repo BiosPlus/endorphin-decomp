@@ -1,0 +1,22 @@
+{
+  "va": "0x005028E0",
+  "size": 114,
+  "orig_symbol": "sub_005028E0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Unknown::insertUniqueStringFromCString_005028E0",
+  "class": "Unknown",
+  "signature": "void fn_005028E0(void* self, const char* a1)",
+  "summary": "Builds a std::string from a1 and inserts it into the sorted vector at *this, using the singleton at 0x00AEB284 as the a2 argument; throws if already present.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:49:22Z"
+}

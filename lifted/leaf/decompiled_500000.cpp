@@ -3977,3 +3977,47 @@ void fn_00506BD0(const void* key, const void* arg2, uint8_t flag) {
                  reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009E9404u)));
 }
 } // namespace lift_00506BD0
+
+// [0x005028E0] sub_005028E0 (114 bytes)
+namespace lift_005028E0 {
+// Known callee 0x004FFA00: ensureStaticSingletonInitialized_004FFA00 (One-time initializer for the global singleton at 0x00AEB284; sets its first DWORD to vtable 0x0094E44C and returns its address.)
+extern void* ext_004FFA00();
+// Known callee 0x00475960: Vector::InsertUniqueOrThrow_00475960 (Inserts a copy of the std::string at a1 into the sorted vector self; if it is already present and a3 is set, builds a message and throws it, otherwise returns false.)
+extern bool ext_00475960(void* self, const void* a1, const void* a2, bool a3);
+// MSVCP80 IAT slots: basic_string<char>::basic_string(const char*) and ~basic_string<char>().
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+
+// MSVC 2005 std::string (basic_string<char>) is 0x1C bytes.
+struct StdStringStorage {
+    alignas(4) unsigned char bytes[0x1C];
+};
+
+using StdStringCtorFn = void(__thiscall*)(void* self, const char* s);
+using StdStringDtorFn = void(__thiscall*)(void* self);
+
+} // namespace
+
+// @name Unknown::insertUniqueStringFromCString_005028E0
+// @class Unknown
+// @summary Builds a std::string from a1 and inserts it into the sorted vector at *this, using the singleton at 0x00AEB284 as the a2 argument; throws if already present.
+// @field Unknown +0x00 void* field_0x00
+void fn_005028E0(void* self, const char* a1) {
+    void* singleton = ext_004FFA00();
+
+    StdStringStorage str{};
+    (*reinterpret_cast<StdStringCtorFn*>(&mem_00924FE4))(&str, a1);
+
+    void* vec = *reinterpret_cast<void**>(self);
+    try {
+        ext_00475960(vec, &str, &singleton, true);
+    } catch (...) {
+        // Original frame ran the string destructor during unwind (SEH cleanup).
+        (*reinterpret_cast<StdStringDtorFn*>(&mem_00924FF4))(&str);
+        throw;
+    }
+    (*reinterpret_cast<StdStringDtorFn*>(&mem_00924FF4))(&str);
+}
+} // namespace lift_005028E0
