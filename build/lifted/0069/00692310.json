@@ -1,0 +1,14 @@
+{
+  "va": "0x00692310",
+  "size": 109,
+  "orig_symbol": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, int, {public: class ValuePtr const \u0026 __thiscall ValuePtrArrayObject::getElement(int), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "FunctionType::vfunc_48 (ValuePtrArrayObject::getElement dispatch)",
+  "class": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, int, {public: class ValuePtr const \u0026 __thiscall ValuePtrArrayObject::getElement(int), 0}\u003e",
+  "signature": "inline void* ptr_at(const void* base, ptrdiff_t off)",
+  "summary": "Evaluates the index from ctx via a virtual call, fetches the vector element, and returns a ValuePtr copy of it (zeroed if the element has no owner).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:27:08Z"
+}

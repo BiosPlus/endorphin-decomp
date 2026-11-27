@@ -62239,6 +62239,13 @@
     "summary": "Forwards arg1 to ext_00671F30 (one stack argument, caller-cleaned) and returns arg1 unchanged.",
     "lifted_path": "lifted/templates/ROMethod2Type.cpp"
   },
+  "0x00692310": {
+    "name": "FunctionType::vfunc_48 (ValuePtrArrayObject::getElement dispatch)",
+    "class": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, int, {public: class ValuePtr const \u0026 __thiscall ValuePtrArrayObject::getElement(int), 0}\u003e",
+    "signature": "inline void* ptr_at(const void* base, ptrdiff_t off)",
+    "summary": "Evaluates the index from ctx via a virtual call, fetches the vector element, and returns a ValuePtr copy of it (zeroed if the element has no owner).",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x00692380": {
     "name": "ExprParser::Method2Type::vfunc_49",
     "class": "ExprParser::Method2Type",

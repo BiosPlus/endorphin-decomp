@@ -372,3 +372,53 @@ DWORD __stdcall fn_0068BF40([[maybe_unused]] DWORD a, DWORD b, DWORD c) {
     return c;
 }
 } // namespace lift_0068BF40
+
+// [0x00692310] ExprParser::FunctionType<ValuePtrArrayObject, ValuePtr const &, int, {public: class ValuePtr const & __thiscall ValuePtrArrayObject::getElement(int), 0}>::vfunc_48 (109 bytes)
+namespace lift_00692310 {
+// Known callee 0x00692230: VectorElementAt (Bounds-checked element address lookup on a vector of 8-byte elements; throws when index is out of range.)
+extern void* ext_00692230(void* self, int32_t index);
+
+namespace {
+
+// Read a 4-byte guest pointer field and return it as a host pointer.
+inline void* ptr_at(const void* base, ptrdiff_t off) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, off)));
+}
+
+// Fetch vtable slot `slot` of `obj` (vptr at +0, 4-byte entries).
+inline void* vslot(const void* obj, int slot) {
+    const void* vt = ptr_at(obj, 0);
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(vt, slot * 4)));
+}
+
+using VFnIndex = int32_t (__thiscall*)(void* self, void* a, void* b, void* c);
+using VFnElem  = void* (__thiscall*)(void* self, void* tmp, void* elem);
+
+}  // namespace
+
+// @name FunctionType::vfunc_48 (ValuePtrArrayObject::getElement dispatch)
+// @class ExprParser::FunctionType<ValuePtrArrayObject, ValuePtr const &, int, {public: class ValuePtr const & __thiscall ValuePtrArrayObject::getElement(int), 0}>
+// @summary Evaluates the index from ctx via a virtual call, fetches the vector element, and returns a ValuePtr copy of it (zeroed if the element has no owner).
+// Stack args (stdcall, ret 0xc): out = ValuePtr* result, holder = pointer to vector object pointer, ctx = index-source object.
+void fn_00692310(void* out, void* holder, void* ctx) {
+    void* vec = ptr_at(holder, 0);                      // vector object (*holder)
+    void* owner = ptr_at(ctx, 4);                       // ctx->owner
+    auto index_fn = reinterpret_cast<VFnIndex>(vslot(owner, 2));
+    int32_t index = index_fn(owner, ctx, vec, nullptr); // virtual index evaluation
+
+    void* elem = ext_00692230(vec, index);              // VectorElementAt(vec, index)
+    uint32_t elem_owner = lift_field<uint32_t>(elem, 4);
+
+    if (elem_owner != 0) {
+        void* owner2 = reinterpret_cast<void*>(static_cast<uintptr_t>(elem_owner));
+        uint32_t tmp[2]{};
+        auto get_fn = reinterpret_cast<VFnElem>(vslot(owner2, 28));  // vtable +0x70
+        void* r = get_fn(owner2, tmp, elem);
+        lift_field<uint32_t>(out, 0) = lift_field<uint32_t>(r, 0);
+        lift_field<uint32_t>(out, 4) = elem_owner;
+    } else {
+        lift_field<uint32_t>(out, 0) = 0;
+        lift_field<uint32_t>(out, 4) = 0;
+    }
+}
+} // namespace lift_00692310
