@@ -2638,3 +2638,33 @@ void* __thiscall sub_006B9E30(void* self, uint32_t len, const uint8_t* src) {
     return self;
 }
 } // namespace lift_006B9E30
+
+// [0x006B9E60] sub_006B9E60 (63 bytes)
+namespace lift_006B9E60 {
+// Known callee 0x006B9940: Unknown::IsNotTypeTag_B5D2BC (Returns 1 if the first dword of *this differs from the constant 0xB5D2BC (global mem_00B5D2BC), else 0.)
+extern uint32_t ext_006B9940(void* self);
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t ext_006E7460(void* self);
+// Known callee 0x006B99C0: sub_006B99C0 (Getter returning int32_t field at offset +0x4.)
+extern int32_t ext_006B99C0(void* self);
+// Known callee 0x006B9B40: Unknown::allocAndCopy_006B9B40 (Allocates len bytes via allocBuffer; on success copies len bytes from src into the buffer, then forwards the allocator's output slot to MFC80 ord_764 and returns the allocator result.)
+extern uint32_t ext_006B9B40(void* self, uint32_t len, const uint8_t* src);
+// Callee 0x006B9920: sub_006B9920 (32B, result unused here)
+extern uint32_t ext_006B9920(void* self);
+
+// @name Unknown::conditionalAllocAndCopy_006B9E60
+// @class Unknown
+// @summary If the argument's type tag check passes, copies its getter values into this object's allocator; otherwise calls sub_006B9920 on this. Returns this.
+void* fn_006B9E60(void* self, void* arg) {
+    if (static_cast<uint8_t>(ext_006B9940(arg)) != 0) {
+        // Stack pushes: first the +0x0 getter result (src), then the +0x4 getter result (len).
+        int32_t src = ext_006E7460(arg);
+        int32_t len = ext_006B99C0(arg);
+        ext_006B9B40(self, static_cast<uint32_t>(len),
+                     reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(src)));
+    } else {
+        ext_006B9920(self);
+    }
+    return self;
+}
+} // namespace lift_006B9E60
