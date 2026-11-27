@@ -717,6 +717,7 @@ struct Unknown_Fields {
     // +0x28  int32_t                  limit_b  (evidence: 0x0078C690) // CONFLICT: multiple definitions at +0x28
     // +0x28  float                    m22  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x28
     // +0x28  std::string field_0x28 (compared against "" via MSVCP80 operator!=)  (evidence: 0x00440770, 0x00441C10) // CONFLICT: multiple definitions at +0x28
+    // +0x28  void*                    owner  (evidence: 0x006297B0) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t field_0x28 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x28
     // +0x29  uint8_t field_0x29 (flag byte)  (evidence: 0x00427370, 0x0043CB50, 0x0046FB80, 0x00476B80, 0x00486D40, 0x004928C0, 0x0052A1A0, 0x005AC820, 0x005E0AE0, 0x005E2C70, 0x00624CF0, 0x0065B120)
     // +0x2C  void* field_0x2C (read through the pointer at +0x1C)  (evidence: 0x007C15A0, 0x007CAF70) // CONFLICT: multiple definitions at +0x2C
@@ -899,6 +900,7 @@ struct Unknown_Fields {
     // +0x50  uint32_t field_0x50 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x50
     // +0x51  uint8_t                  field_0x51  (evidence: 0x005E4D90)
     // +0x54  void**                   children_begin  (evidence: 0x00469530) // CONFLICT: multiple definitions at +0x54
+    // +0x54  int32_t                  count  (evidence: 0x006297B0) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t field_0x54 (record field, per table element)  (evidence: 0x007CAF70, 0x007CCFE0) // CONFLICT: multiple definitions at +0x54
     // +0x54  void** elements (array of element pointers; each is passed as `this` to ext_006AD090)  (evidence: 0x006AF840) // CONFLICT: multiple definitions at +0x54
     // +0x54  DWORD                    field_0x54  (evidence: 0x006B95F0, 0x006BA780) // CONFLICT: multiple definitions at +0x54

@@ -1,0 +1,28 @@
+{
+  "va": "0x006297B0",
+  "size": 125,
+  "orig_symbol": "sub_006297B0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::advanceCursorRangeAndNotify",
+  "class": "Unknown",
+  "signature": "void fn_006297B0(void* self)",
+  "summary": "Iterates a cursor pair at this+0x15C (embedded in the object at this-\u003e+0x28) this-\u003e+0x54 times via ext_00673C20, validates the pair (null / end-marker checks call the invalid-parameter handler), then forwards this+0x30 through ext_00648480 and the object chain into ext_0067DAD0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:54:09Z"
+}

@@ -2868,3 +2868,74 @@ void fn_006246B0(void* self) {
     w[3] = 0;
 }
 } // namespace lift_006246B0
+
+// [0x006297B0] sub_006297B0 (125 bytes)
+namespace lift_006297B0 {
+// Known callee 0x00673C20: sub_00673C20 (Auto-lifted identical-shape clone of 0x00667030 (advanceCursorSkipFlagged).)
+extern void ext_00673C20(void* self);
+// Known callee 0x00648480: GetIndirectField_0x5c_0x00 (Loads the object pointer at self+0x5C, reads the dword it points to, and returns GetField_0x44Thunk applied to that value.)
+extern uint32_t ext_00648480(void* self);
+extern void ext_0067DAD0(void* self);
+// IAT slot holding the _invalid_parameter_noinfo handler pointer.
+extern int mem_00925134;
+
+// @name Unknown::advanceCursorRangeAndNotify
+// @class Unknown
+// @summary Iterates a cursor pair at this+0x15C (embedded in the object at this->+0x28) this->+0x54 times via ext_00673C20, validates the pair (null / end-marker checks call the invalid-parameter handler), then forwards this+0x30 through ext_00648480 and the object chain into ext_0067DAD0.
+// @field Unknown +0x28 void* owner
+// @field Unknown +0x54 int32_t count
+namespace lift_006297B0 {
+
+void fn_006297B0(void* self) {
+    // eax = owner = this->+0x28
+    const uint32_t owner = lift_field<uint32_t>(self, 0x28);
+    void* const owner_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(owner));
+
+    // ecx = **(owner + 0x160)
+    const uint32_t cfg_ptr = lift_field<uint32_t>(owner_ptr, 0x160);
+    const uint32_t ecx_val = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(cfg_ptr)), 0x00);
+
+    // ebx = cursor = owner + 0x15C ; ebp = ecx_val
+    // Stored on the stack as a 2-dword pair: [0]=cursor, [1]=value.
+    uint32_t pair[2];
+    pair[0] = owner + 0x15C;
+    pair[1] = ecx_val;
+
+    // for (edi = 0; edi < this->+0x54; ++edi) ext_00673C20(&pair)
+    // The loop bound is re-read from memory on each iteration, as in the asm.
+    if (lift_field<int32_t>(self, 0x54) > 0) {
+        int32_t i = 0;
+        do {
+            ext_00673C20(pair);
+            ++i;
+        } while (i < lift_field<int32_t>(self, 0x54));
+    }
+
+    // Reload the pair (the callee may have updated it).
+    const uint32_t cursor = pair[0];
+    const uint32_t value = pair[1];
+
+    // edi = [mem_00925134] ; if (cursor == 0) call edi ; if (value == [cursor+4]) call edi
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(static_cast<uintptr_t>(mem_00925134));
+    if (cursor == 0) {
+        invalid_param();
+    }
+    void* const cursor_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(cursor));
+    if (value == lift_field<uint32_t>(cursor_ptr, 0x04)) {
+        invalid_param();
+    }
+
+    // edx = value->+0x28 ; ecx = edx->+0x16C ; push (this + 0x30) ; call ext_00648480
+    // NOTE: the asm pushes this+0x30 as a stack argument. The lifted callee
+    // (see leaf 0x00648480) reads only ecx-passed self, so only self is passed here.
+    void* const value_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(value));
+    const uint32_t value_owner = lift_field<uint32_t>(value_ptr, 0x28);
+    const uint32_t ecx2 = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(value_owner)), 0x16C);
+    const uint32_t result = ext_00648480(reinterpret_cast<void*>(static_cast<uintptr_t>(ecx2)));
+
+    // ecx = eax ; call ext_0067DAD0 (thiscall, no stack args)
+    ext_0067DAD0(reinterpret_cast<void*>(static_cast<uintptr_t>(result)));
+}
+
+} // namespace lift_006297B0
+} // namespace lift_006297B0

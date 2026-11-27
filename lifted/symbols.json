@@ -44348,6 +44348,13 @@
     "summary": "Calls base initializer with arg0, sets vtable, zeroes/ones float fields at +0x30..+0x50, and stores arg2 at +0x54; returns self.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x006297B0": {
+    "name": "Unknown::advanceCursorRangeAndNotify",
+    "class": "Unknown",
+    "signature": "void fn_006297B0(void* self)",
+    "summary": "Iterates a cursor pair at this+0x15C (embedded in the object at this-\u003e+0x28) this-\u003e+0x54 times via ext_00673C20, validates the pair (null / end-marker checks call the invalid-parameter handler), then forwards this+0x30 through ext_00648480 and the object chain into ext_0067DAD0.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00629830": {
     "name": "Sensors::SensorCollisionPosition::vfunc_14",
     "class": "Sensors::SensorCollisionPosition",
