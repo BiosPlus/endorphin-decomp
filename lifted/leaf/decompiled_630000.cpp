@@ -1241,3 +1241,63 @@ void __thiscall sub_0063F4E0(uint32_t self, uint32_t value) {
     }
 }
 } // namespace lift_0063F4E0
+
+// [0x0063DAD0] sub_0063DAD0 (123 bytes)
+namespace lift_0063DAD0 {
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (indirect call target).
+extern void (*mem_00925134)(void);
+
+// @name Unknown::ComputeMaxOfFirstTwoElementGetters
+// @class Unknown
+// @summary Validates the 4-byte-element array at +0x2c/+0x30, calls vtable slot 0x44 (float getter) on element[1] then element[0], and stores the larger value (element[1] when not greater or unordered) as float at +0x38.
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x38 float field_0x38
+void fn_0063DAD0(void* self) {
+    // Guest-pointer helper: stored pointers are 32-bit values.
+    auto guest_ptr = [](uint32_t v) -> void* {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+    };
+    using GetterFn = float (*)(void*);
+
+    // Check 1: begin must be non-null and element count (end - begin) / 4 must be > 1 (unsigned).
+    // Each failing check invokes the invalid-parameter handler, matching the original flow.
+    uint32_t begin_raw = lift_field<uint32_t>(self, 0x2c);
+    if (begin_raw == 0) {
+        mem_00925134();
+    } else {
+        const int32_t count = static_cast<int32_t>(lift_field<uint32_t>(self, 0x30) - begin_raw) >> 2;
+        if (static_cast<uint32_t>(count) <= 1) {
+            mem_00925134();
+        }
+    }
+
+    // Original calls the getter on element[1] first.
+    void* begin = guest_ptr(begin_raw);
+    void* elem1 = guest_ptr(lift_field<uint32_t>(begin, 4));
+    void* vt1 = guest_ptr(lift_field<uint32_t>(elem1, 0));
+    GetterFn get1 = reinterpret_cast<GetterFn>(guest_ptr(lift_field<uint32_t>(vt1, 0x44)));
+    const float a = get1(elem1);
+
+    // Check 2: begin must be non-null and element count must be non-zero.
+    begin_raw = lift_field<uint32_t>(self, 0x2c);
+    if (begin_raw == 0) {
+        mem_00925134();
+    } else {
+        const int32_t count = static_cast<int32_t>(lift_field<uint32_t>(self, 0x30) - begin_raw) >> 2;
+        if (count == 0) {
+            mem_00925134();
+        }
+    }
+
+    // Then the getter on element[0].
+    void* begin2 = guest_ptr(begin_raw);
+    void* elem0 = guest_ptr(lift_field<uint32_t>(begin2, 0));
+    void* vt0 = guest_ptr(lift_field<uint32_t>(elem0, 0));
+    GetterFn get0 = reinterpret_cast<GetterFn>(guest_ptr(lift_field<uint32_t>(vt0, 0x44)));
+    const float b = get0(elem0);
+
+    // fcompp + test ah,0x41: take b only when strictly greater (NaN compares false, keeps a).
+    lift_field<float>(self, 0x38) = (b > a) ? b : a;
+}
+} // namespace lift_0063DAD0
