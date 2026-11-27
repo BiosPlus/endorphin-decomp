@@ -1,0 +1,13 @@
+{
+  "va": "0x008719F0",
+  "size": 121,
+  "orig_symbol": "sub_008719F0",
+  "src_path": "src/leaf/decompiled_870000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_870000.cpp",
+  "name": "parseStandaloneDeclaration",
+  "signature": "bool fn_008719F0(void* self, uint8_t* out)",
+  "summary": "Matches \"standalone=\" then a quoted \"yes\" or \"no\" value, writing 1 or 0 to *out; returns false if \"standalone\" is absent.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:20:41Z"
+}

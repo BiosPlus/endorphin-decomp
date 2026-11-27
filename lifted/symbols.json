@@ -38331,6 +38331,13 @@
     "summary": "Allocates 0x40 bytes and initializes an Unknown object with 4 uint32_t arguments",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FC110": {
+    "name": "Unknown::createAndInit",
+    "class": "Unknown",
+    "signature": "void* fn_005FC110(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Allocates 0x40 bytes via MFC80::operator new and initializes the object with fn_00627240.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FC890": {
     "name": "UnknownClass::allocateAndConstruct",
     "class": "UnknownClass",
@@ -77327,6 +77334,12 @@
     "class": "TextCursor",
     "signature": "T\u0026 field_at(void* self, std::uintptr_t off)",
     "summary": "Skips blank lines backward, matches str, then consumes '=' (throws on failure); restores cursor fields if str does not match.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
+  "0x008719F0": {
+    "name": "parseStandaloneDeclaration",
+    "signature": "bool fn_008719F0(void* self, uint8_t* out)",
+    "summary": "Matches \"standalone=\" then a quoted \"yes\" or \"no\" value, writing 1 or 0 to *out; returns false if \"standalone\" is absent.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
   "0x00872730": {

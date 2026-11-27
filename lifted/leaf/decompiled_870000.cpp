@@ -389,3 +389,42 @@ void __thiscall fn_008703F0(void* self, void* arg1) {
 }
 } // namespace lift_005C0E00
 } // namespace lift_008703F0
+
+// [0x008719F0] sub_008719F0 (121 bytes)
+namespace lift_008719F0 {
+// Known callee 0x008718C0: TextCursor::MatchStringThenEquals_008718C0 (Skips blank lines backward, matches str, then consumes '=' (throws on failure); restores cursor fields if str does not match.)
+extern bool ext_008718C0(void* self, const char* str);
+// Callee 0x00870E90: sub_00870E90 (81B) - returns next char in al (thiscall, self in ecx)
+extern uint8_t ext_00870E90(void* self);
+// Known callee 0x00870E40: sub_00870E40 (Builds a 0x14-byte exception object from this-fields +0x10/+0x08/+0x04/+0x14 and a stack argument, then throws it.)
+extern void ext_00870E40(void* self, uint32_t arg1);
+// Known callee 0x00870F40: StreamReader::matchString (Matches a null-terminated string against the stream, restoring state on mismatch.)
+extern bool ext_00870F40(void* self, const char* str);
+extern int mem_0099F178;
+extern int mem_0099F174;
+extern int mem_0099F170;
+
+// @name parseStandaloneDeclaration
+// @summary Matches "standalone=" then a quoted "yes" or "no" value, writing 1 or 0 to *out; returns false if "standalone" is absent.
+bool fn_008719F0(void* self, uint8_t* out) {
+    if (!ext_008718C0(self, reinterpret_cast<const char*>(&mem_0099F178))) {
+        return false;
+    }
+    const uint8_t quote = ext_00870E90(self);
+    if (quote != '\'' && quote != '"') {
+        ext_00870E40(self, 0x15);
+    }
+    if (ext_00870F40(self, reinterpret_cast<const char*>(&mem_0099F174))) {
+        *out = 1;
+    } else if (ext_00870F40(self, reinterpret_cast<const char*>(&mem_0099F170))) {
+        *out = 0;
+    } else {
+        ext_00870E40(self, 0x16);
+        return true;
+    }
+    if (ext_00870E90(self) != quote) {
+        ext_00870E40(self, 0x16);
+    }
+    return true;
+}
+} // namespace lift_008719F0
