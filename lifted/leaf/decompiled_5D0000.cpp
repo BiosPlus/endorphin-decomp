@@ -1129,3 +1129,47 @@ void fn_005D0350(void* self, float scale) {
     ext_005CFEC0(self, 0, v);
 }
 } // namespace lift_005D0350
+
+// [0x005DC730]
+namespace lift_005DC730 {
+// @name copyConstruct_00968AD4
+// @summary Copy-constructs an object with vtable 0x00968AD4, copying its std::string at +0x04 and scalar fields.
+// @field Obj +0x00 uint32_t vtable
+// @field Obj +0x04 std_string field_0x04
+// @field Obj +0x20 uint32_t field_0x20
+// @field Obj +0x24 uint32_t field_0x24
+// @field Obj +0x28 uint32_t field_0x28
+// @field Obj +0x2C float field_0x2c
+// @field Obj +0x30 uint8_t field_0x30
+// @field Obj +0x34 uint32_t field_0x34
+// @field Obj +0x38 uint32_t field_0x38
+// @field Obj +0x3C uint32_t field_0x3c
+// @field Obj +0x40 uint32_t field_0x40
+// @field Obj +0x44 uint32_t field_0x44
+
+extern void __thiscall ext_00661980(void* self);
+extern void* (__thiscall* mem_00924FE0)(void* self, const void* other);
+
+void* __thiscall fn_005DC730(void* self, const void* other) {
+    ext_00661980(self);
+    lift_field<uint32_t>(self, 0x00) = 0x00968AD4u;
+
+    mem_00924FE0(
+        static_cast<uint8_t*>(self) + 0x04,
+        static_cast<const uint8_t*>(other) + 0x04
+    );
+
+    lift_field<uint32_t>(self, 0x20) = lift_field<uint32_t>(other, 0x20);
+    lift_field<uint32_t>(self, 0x24) = lift_field<uint32_t>(other, 0x24);
+    lift_field<uint32_t>(self, 0x28) = lift_field<uint32_t>(other, 0x28);
+    lift_field<float>(self, 0x2C) = lift_field<float>(other, 0x2C);
+    lift_field<uint8_t>(self, 0x30) = lift_field<uint8_t>(other, 0x30);
+    lift_field<uint32_t>(self, 0x34) = lift_field<uint32_t>(other, 0x34);
+    lift_field<uint32_t>(self, 0x38) = lift_field<uint32_t>(other, 0x38);
+    lift_field<uint32_t>(self, 0x3C) = lift_field<uint32_t>(other, 0x3C);
+    lift_field<uint32_t>(self, 0x40) = lift_field<uint32_t>(other, 0x40);
+    lift_field<uint32_t>(self, 0x44) = 0u;
+
+    return self;
+}
+} // namespace lift_005DC730
