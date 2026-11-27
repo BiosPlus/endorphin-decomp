@@ -1788,3 +1788,35 @@ void* __fastcall sub_007CD960(const float* ecx, void* /*edx*/, float* eax) {
     return eax;
 }
 } // namespace lift_007CD960
+
+// [0x007C54F0] sub_007C54F0 (121 bytes)
+namespace lift_007C54F0 {
+// @name ByteBufferWriter::flushPendingBytes
+// @class ByteBufferWriter
+// @summary Flushes up to two pending bytes into the output buffer at the write cursor, advances the cursor, then clears the pending bytes and counter.
+// @field ByteBufferWriter +0x08 uint8_t* buffer
+// @field ByteBufferWriter +0x14 int32_t writePos
+// @field ByteBufferWriter +0x16B0 uint8_t pendingByte0
+// @field ByteBufferWriter +0x16B1 uint8_t pendingByte1
+// @field ByteBufferWriter +0x16B4 int32_t pendingCount
+void fn_007C54F0(void* self) {
+    auto& buffer = lift_field<uint8_t*>(self, 0x08);
+    auto& writePos = lift_field<int32_t>(self, 0x14);
+    auto& pendingByte0 = lift_field<uint8_t>(self, 0x16B0);
+    auto& pendingByte1 = lift_field<uint8_t>(self, 0x16B1);
+    auto& pendingCount = lift_field<int32_t>(self, 0x16B4);
+
+    if (pendingCount > 8) {
+        buffer[writePos] = pendingByte0;
+        buffer[writePos + 1] = pendingByte1;
+        writePos += 2;
+    } else if (pendingCount > 0) {
+        buffer[writePos] = pendingByte0;
+        writePos += 1;
+    }
+
+    pendingByte0 = 0;
+    pendingByte1 = 0;
+    pendingCount = 0;
+}
+} // namespace lift_007C54F0

@@ -1,0 +1,46 @@
+{
+  "va": "0x007C54F0",
+  "size": 121,
+  "orig_symbol": "sub_007C54F0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "ByteBufferWriter::flushPendingBytes",
+  "class": "ByteBufferWriter",
+  "signature": "void fn_007C54F0(void* self)",
+  "summary": "Flushes up to two pending bytes into the output buffer at the write cursor, advances the cursor, then clears the pending bytes and counter.",
+  "fields": [
+    {
+      "class": "ByteBufferWriter",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "buffer"
+    },
+    {
+      "class": "ByteBufferWriter",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "writePos"
+    },
+    {
+      "class": "ByteBufferWriter",
+      "offset": "+0x16B0",
+      "type": "uint8_t",
+      "name": "pendingByte0"
+    },
+    {
+      "class": "ByteBufferWriter",
+      "offset": "+0x16B1",
+      "type": "uint8_t",
+      "name": "pendingByte1"
+    },
+    {
+      "class": "ByteBufferWriter",
+      "offset": "+0x16B4",
+      "type": "int32_t",
+      "name": "pendingCount"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:19:06Z"
+}
