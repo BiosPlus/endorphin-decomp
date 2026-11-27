@@ -2260,3 +2260,27 @@ void fn_006D7970(void* self, uint32_t n) {
     ext_006D2300(sub, n);
 }
 } // namespace lift_006D7970
+
+// [0x006D7C40] sub_006D7C40 (64 bytes)
+namespace lift_006D7C40 {
+// Known callee 0x006D7970: Unknown::ResetSubobjectAndSetCount (Resets the sub-object at this+0x28 (ResetAndFreeBuffer156) and then sets its element count to the stack argument.)
+extern void ext_006D7970();
+
+// @name Unknown::SetParamsAndResetSubobject
+// @class Unknown
+// @summary Stores four stack args into this+0x1a8..0x1b4 and calls ResetSubobjectAndSetCount with arg1 * arg3.
+// @field Unknown +0x1a8 uint32_t field_0x1a8
+// @field Unknown +0x1ac uint32_t field_0x1ac
+// @field Unknown +0x1b0 uint32_t field_0x1b0
+// @field Unknown +0x1b4 uint32_t field_0x1b4
+void __thiscall fn_006D7C40(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    lift_field<uint32_t>(self, 0x1b0) = a1;
+    lift_field<uint32_t>(self, 0x1a8) = a2;
+    lift_field<uint32_t>(self, 0x1b4) = a3;
+    lift_field<uint32_t>(self, 0x1ac) = a4;
+
+    // Callee 0x006D7970 (ext_006D7970): __thiscall(this, count), count = a1 * a3.
+    using ResetFn = void(__thiscall*)(void*, uint32_t);
+    reinterpret_cast<ResetFn>(reinterpret_cast<void*>(&ext_006D7970))(self, a1 * a3);
+}
+} // namespace lift_006D7C40

@@ -65804,6 +65804,13 @@
     "summary": "Initializes a block of state fields at +0x1A8..+0x1C5 of the object to defaults (4 or 0).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D7C40": {
+    "name": "Unknown::SetParamsAndResetSubobject",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006D7C40(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Stores four stack args into this+0x1a8..0x1b4 and calls ResetSubobjectAndSetCount with arg1 * arg3.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D7CA0": {
     "name": "sub_006D7CA0",
     "class": "\u003cClassName\u003e (optional)",
