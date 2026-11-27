@@ -8,6 +8,8 @@
 // Recovered field layout for StringPtrVector:
 namespace lifted_layout {
 struct StringPtrVector_Fields {
-    // +0x8   uint8_t*                 field_0x08  (evidence: 0x004BBB00)
+    // +0x4   uint32_t                 begin  (evidence: 0x004BBC90)
+    // +0x8   uint32_t                 end  (evidence: 0x004BBC90)
+    // +0xC   uint32_t                 capacity  (evidence: 0x004BBC90)
 };
 } // namespace lifted_layout

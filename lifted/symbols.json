@@ -14767,6 +14767,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B6530 (Properties::TerminalParentType\u003cNMData::GraphEntryData\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/TerminalParentType.cpp"
   },
+  "0x004BBC90": {
+    "name": "StringPtrVector::ClearAndFree",
+    "class": "StringPtrVector",
+    "signature": "inline uint32_t\u0026 field_u32(void* base, uintptr_t off)",
+    "summary": "Destroys all string pointers in [begin, end), frees the begin buffer if non-null, and zeroes begin/end/capacity.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BBF50": {
     "name": "sub_004BBF50",
     "signature": "extern \"C\" void __fastcall fn_004BBF50(void* self)",

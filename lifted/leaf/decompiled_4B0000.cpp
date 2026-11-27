@@ -1354,3 +1354,47 @@ void fn_004B5270(void* self) {
     lift_field<uint32_t>(base, 0x0c) = 0;
 }
 } // namespace lift_004B5270
+
+// [0x004BBC90]
+namespace lift_004BBC90 {
+// @name StringPtrVector::ClearAndFree
+// @class StringPtrVector
+// @summary Destroys all string pointers in [begin, end), frees the begin buffer if non-null, and zeroes begin/end/capacity.
+// @field StringPtrVector +0x4 uint32_t begin
+// @field StringPtrVector +0x8 uint32_t end
+// @field StringPtrVector +0xc uint32_t capacity
+
+extern void ext_004BA060(void* self, uintptr_t first, void* owner, uintptr_t last);
+extern void ext_006A5C5C(void* ptr);
+extern void ext_invalid_parameter_noinfo(void);
+extern char mem_00925134[];
+
+namespace {
+
+inline uint32_t& field_u32(void* base, uintptr_t off) {
+    return *reinterpret_cast<uint32_t*>(static_cast<char*>(base) + off);
+}
+
+}  // namespace
+
+extern void fn_004BBC90(void* self) {
+    const uint32_t begin = field_u32(self, 0x4);
+    const uint32_t end   = field_u32(self, 0x8);
+
+    (void)&mem_00925134;  // IAT slot for _invalid_parameter_noinfo (metadata only)
+    if (begin > end) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    ext_004BA060(self, begin, self, end);
+
+    const uint32_t buf = field_u32(self, 0x4);
+    if (buf != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(buf)));
+    }
+
+    field_u32(self, 0x4) = 0;
+    field_u32(self, 0x8) = 0;
+    field_u32(self, 0xc) = 0;
+}
+} // namespace lift_004BBC90
