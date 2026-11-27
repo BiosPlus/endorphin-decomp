@@ -1005,3 +1005,50 @@ extern uint32_t __stdcall fn_006A7D80(uint32_t self, uint8_t flag) {
     }
 }
 } // namespace lift_006A7D80
+
+// [0x006AD580] sub_006AD580 (127 bytes)
+namespace lift_006AD580 {
+// Known callee 0x006ACE90: BuildMetricInsetRect_006ACE90 (Copies src RECT into dst, moves top down 1 and right in 4, then sets left = right - GetSystemMetrics(71) and bottom = top + GetSystemMetrics(72); returns dst.)
+extern RECT* ext_006ACE90(const RECT* src, RECT* dst);
+// Known callee 0x006ACFC0: sub_006ACFC0 (Auto-lifted identical-shape clone of 0x0046F910 (Unknown::ReadF8ObjectByte12C).)
+extern uint8_t ext_006ACFC0(void* self);
+// Known callee 0x006ACFD0: getField0x1COrZero (Returns the 32-bit field at offset 0x1C if the object pointer is non-null, otherwise 0.)
+extern uint32_t ext_006ACFD0(void* self);
+// Import slot for USER32!DrawFrameControl (IAT entry at 0x009256C8).
+extern int mem_009256C8;
+
+// @name Unknown::DrawFrameControlInsetButton_006AD580
+// @class Unknown
+// @summary If the flag byte at +0x38 is set, computes an inset rect via 0x006ACE90, copies it to arg3, and draws a DFC_BUTTON frame on arg1's HDC with state flags derived from the flag bytes.
+// @field Unknown +0x38 uint8_t field_0x38
+// @field Unknown +0x3C uint8_t* field_0x3c
+void fn_006AD580(void* self, void* arg1, RECT* arg2, RECT* arg3) {
+    using DrawFrameControlFn = int(*)(void* hdc, RECT* rect, uint32_t type, uint32_t state);
+
+    if (lift_field<uint8_t>(self, 0x38) == 0) {
+        return;
+    }
+
+    const uint32_t field1c = ext_006ACFD0(self);
+
+    // Stack scratch RECT passed as the source of 0x006ACE90 (uninitialized in the original; zeroed here).
+    RECT src{};
+    RECT* inset = ext_006ACE90(&src, arg2);
+    *arg3 = *inset;
+
+    const uint8_t hasObj = ext_006ACFC0(reinterpret_cast<void*>(static_cast<uintptr_t>(field1c)));
+
+    const uint32_t flagPtr = lift_field<uint32_t>(self, 0x3C);
+    const uint8_t flagByte = *reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(flagPtr));
+
+    uint32_t state = 0;
+    state |= (hasObj == 0) ? 0x100u : 0u;
+    state |= (flagByte != 0) ? 0x400u : 0u;
+
+    const uint32_t hdcAddr = lift_field<uint32_t>(arg1, 4);
+    void* hdc = reinterpret_cast<void*>(static_cast<uintptr_t>(hdcAddr));
+
+    auto drawFrameControl = reinterpret_cast<DrawFrameControlFn>(static_cast<uintptr_t>(mem_009256C8));
+    drawFrameControl(hdc, arg3, 4u, state);
+}
+} // namespace lift_006AD580

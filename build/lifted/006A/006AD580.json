@@ -1,0 +1,28 @@
+{
+  "va": "0x006AD580",
+  "size": 127,
+  "orig_symbol": "sub_006AD580",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::DrawFrameControlInsetButton_006AD580",
+  "class": "Unknown",
+  "signature": "void fn_006AD580(void* self, void* arg1, RECT* arg2, RECT* arg3)",
+  "summary": "If the flag byte at +0x38 is set, computes an inset rect via 0x006ACE90, copies it to arg3, and draws a DFC_BUTTON frame on arg1's HDC with state flags derived from the flag bytes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint8_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint8_t*",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:09:27Z"
+}
