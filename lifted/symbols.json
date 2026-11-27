@@ -62218,6 +62218,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::PrimaryTwistAndSwingConstraint::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0061D9F0": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_34",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "void* fn_0061D9F0(void* self, void* owner)",
+    "summary": "Wires two child objects into self+0x330/+0x334 with back-pointers, notifies vtable slots on the returned object and self, lazily initializes a static 1.025-scale Matrix44 once, and returns the object from the first helper chain.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x0061DB80": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_17_off_C",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

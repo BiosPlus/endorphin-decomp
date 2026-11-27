@@ -510,3 +510,82 @@ void fn_00612D70(void* self) {
     reinterpret_cast<void (*)(void*, void*)>(&ext_0067E5B0)(static_cast<unsigned char*>(self) + 0x2d8, frame + 0x00);
 }
 } // namespace lift_00612D70
+
+// [0x0061D9F0] NMData::PrimaryTwistAndSwingConstraint::vfunc_34 (398 bytes)
+namespace lift_0061D9F0 {
+extern void* ext_005B5AF0(void* a);
+// Known callee 0x00493E40: forwardVtableSlot194 (thiscall: ecx = self, one stack argument)
+extern void* ext_00493E40(void* self, void* a);
+// Known callee 0x00493E70: forwardVtable198_viaFirstField (thiscall: ecx = self, one stack argument)
+extern void* ext_00493E70(void* self, void* a);
+extern void* ext_00480920(void* a, void* b);
+// Known callee 0x005AC360: Matrix44::Matrix44_fromVec4s (ecx = this, four row pointers)
+extern void* ext_005AC360(void* self, const float* row0, const float* row1, const float* row2, const float* row3);
+extern void ext_006A6C87(void* fn);
+// Known callee 0x00528B90: Unknown::setPeerWithBackLink (ecx = self, one stack argument)
+extern void ext_00528B90(void* self, void* peer);
+extern int mem_00B40640;
+extern int mem_00B490D0;
+extern int mem_009769A8;
+
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_34
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Wires two child objects into self+0x330/+0x334 with back-pointers, notifies vtable slots on the returned object and self, lazily initializes a static 1.025-scale Matrix44 once, and returns the object from the first helper chain.
+// @field NMData::PrimaryTwistAndSwingConstraint +0x04 void* field_0x04
+// @field NMData::PrimaryTwistAndSwingConstraint +0x330 void* field_0x330
+// @field NMData::PrimaryTwistAndSwingConstraint +0x334 void* field_0x334
+void* fn_0061D9F0(void* self, void* owner) {
+    uint8_t* const s = static_cast<uint8_t*>(self);
+    uint8_t* const iface = s + 0x04;   // interface sub-object; its vtable pointer sits at iface+0
+    void* const ebp = s + 0x0C;
+    void* const base = self ? static_cast<void*>(s + 0x0C) : nullptr;
+    void* const mem = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00B40640)));
+
+    // iface slot 3 (+0x0C) with args (mem, base, 0)
+    void** const iface_vt = *reinterpret_cast<void***>(iface);
+    void* const r = reinterpret_cast<void* (*)(void*, void*, void*, void*)>(iface_vt[3])(
+        iface, mem, base, nullptr);
+
+    void* const t = ext_005B5AF0(r);
+    void* const u = ext_00493E40(owner, t);
+    void* const v = ext_00493E70(owner, u);
+
+    void* const w = ext_00480920(ebp, nullptr);
+
+    void* const y = ext_00493E40(owner, s + 0x22C);
+    lift_field<void*>(self, 0x330) = y;
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(y) + 0x20) = s + 0x22C;
+
+    // v slot 3 (+0x0C) with args (y, w)
+    void** const v_vt = *reinterpret_cast<void***>(v);
+    reinterpret_cast<void* (*)(void*, void*, void*)>(v_vt[3])(v, y, w);
+
+    // One-time initialization of a static scale matrix (guard bit 0 of mem_00B490D0).
+    if ((static_cast<uint32_t>(mem_00B490D0) & 1u) == 0) {
+        mem_00B490D0 = static_cast<int>(static_cast<uint32_t>(mem_00B490D0) | 1u);
+        const float c = std::bit_cast<float>(static_cast<uint32_t>(mem_009769A8));
+        const float row0[4] = {c, 0.0f, 0.0f, 0.0f};
+        const float row1[4] = {0.0f, c, 0.0f, 0.0f};
+        const float row2[4] = {0.0f, 0.0f, c, 0.0f};
+        const float row3[4] = {0.0f, 0.0f, 0.0f, 1.0f};
+        ext_005AC360(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B49090u)), row0, row1, row2, row3);
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091EB80u)));
+    }
+
+    void* const z = ext_00493E40(owner, s + 0x16C);
+    lift_field<void*>(self, 0x334) = z;
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(z) + 0x20) = s + 0x16C;
+
+    // v slot 3 (+0x0C) with args (z, static matrix, ebp, 0)
+    void* const matrix = reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B49090u));
+    reinterpret_cast<void* (*)(void*, void*, void*, void*, void*)>(v_vt[3])(v, z, matrix, ebp, nullptr);
+
+    ext_00528B90(ebp, v);
+
+    // self slot 79 (+0x13C), no arguments
+    void** const self_vt = *reinterpret_cast<void***>(self);
+    reinterpret_cast<void (*)(void*)>(self_vt[79])(self);
+
+    return v;
+}
+} // namespace lift_0061D9F0
