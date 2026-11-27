@@ -1582,3 +1582,56 @@ void* fn_00609970(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4
 }
 } // namespace lift_004BA0D0
 } // namespace lift_00609970
+
+// [0x00608350] sub_00608350 (154 bytes)
+namespace lift_00608350 {
+// Known callee 0x00602F70: Unknown::ctor_00602F70 (Runs the base ctor (sub_00602EC0), sets vtable to 0x0096F8A4, zeroes floats at +0x2c/+0x30 and int at +0x34, initializes sub-records at +0x38 and +0x4c via sub_0060BCD0; returns this.)
+extern void* ext_00602F70(void* self);
+// Known callee 0x00607F20: FloatArray::assignFilled (allocate count floats and fill with value) (Resets the three array pointers, then for count > 0 allocates count float slots (throws if count > 0x3FFFFFFF) and fills them with *value_ptr.)
+extern void __thiscall ext_00607F20(void* self, uint32_t count, uint32_t value_ptr);
+// Import slot holding the address of the MSVCP80 std::basic_string<char> (const char*) constructor.
+extern uint32_t mem_00924FE4;
+// .rdata float constant 20.0f.
+extern float mem_00956EE0;
+
+// @name Unknown::ctor_00608350
+// @class Unknown
+// @summary Constructs the object: runs the base ctor, sets vtable 0x00971934, zeroes four ints at +0x64..+0x70, builds a 20-float array at +0x78 filled with 0.0, sets the count at +0x74 to 20, zeroes +0x88, constructs an empty std::string at +0x8C and sets float +0xAC to 20.0; returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x64 uint32_t field_0x64
+// @field Unknown +0x68 uint32_t field_0x68
+// @field Unknown +0x6c uint32_t field_0x6c
+// @field Unknown +0x70 uint32_t field_0x70
+// @field Unknown +0x74 uint32_t field_0x74
+// @field Unknown +0x78 uint8_t field_0x78[0x14]
+// @field Unknown +0x88 uint32_t field_0x88
+// @field Unknown +0x8c uint8_t field_0x8c[0x18]
+// @field Unknown +0xac float field_0xac
+void* fn_00608350(void* self) {
+    // Base ctor on this (ecx saved to esi), then store our vtable.
+    ext_00602F70(self);
+    lift_field<uint32_t>(self, 0x00) = 0x00971934u;
+
+    lift_field<uint32_t>(self, 0x64) = 0u;
+    lift_field<uint32_t>(self, 0x68) = 0u;
+    lift_field<uint32_t>(self, 0x6C) = 0u;
+    lift_field<uint32_t>(self, 0x70) = 0u;
+
+    // Stack float 0.0f is passed by address as the fill value.
+    float zero = 0.0f;
+    lift_field<uint32_t>(self, 0x74) = 20u;
+
+    void* arr = static_cast<uint8_t*>(self) + 0x78;
+    ext_00607F20(arr, 20u, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&zero)));
+    lift_field<uint32_t>(self, 0x88) = 0u;
+
+    // Construct std::string from the literal at 0x009719C4 via the imported ctor.
+    using StrCtorFn = void(__thiscall*)(void* self_str, const char* s);
+    StrCtorFn str_ctor = reinterpret_cast<StrCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+    str_ctor(static_cast<uint8_t*>(self) + 0x8C,
+             reinterpret_cast<const char*>(static_cast<uintptr_t>(0x009719C4u)));
+
+    lift_field<float>(self, 0xAC) = mem_00956EE0;
+    return self;
+}
+} // namespace lift_00608350

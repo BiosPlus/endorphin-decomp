@@ -1,0 +1,76 @@
+{
+  "va": "0x00608350",
+  "size": 154,
+  "orig_symbol": "sub_00608350",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "Unknown::ctor_00608350",
+  "class": "Unknown",
+  "signature": "void* fn_00608350(void* self)",
+  "summary": "Constructs the object: runs the base ctor, sets vtable 0x00971934, zeroes four ints at +0x64..+0x70, builds a 20-float array at +0x78 filled with 0.0, sets the count at +0x74 to 20, zeroes +0x88, constructs an empty std::string at +0x8C and sets float +0xAC to 20.0; returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint32_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "uint8_t",
+      "name": "field_0x78[0x14]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "uint32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "uint8_t",
+      "name": "field_0x8c[0x18]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "float",
+      "name": "field_0xac"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:18:44Z"
+}

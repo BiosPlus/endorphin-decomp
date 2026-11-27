@@ -46560,6 +46560,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006080D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00608350": {
+    "name": "Unknown::ctor_00608350",
+    "class": "Unknown",
+    "signature": "void* fn_00608350(void* self)",
+    "summary": "Constructs the object: runs the base ctor, sets vtable 0x00971934, zeroes four ints at +0x64..+0x70, builds a 20-float array at +0x78 filled with 0.0, sets the count at +0x74 to 20, zeroes +0x88, constructs an empty std::string at +0x8C and sets float +0xAC to 20.0; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00609670": {
     "name": "StringPairKey::operator\u003c",
     "class": "StringPairKey",
