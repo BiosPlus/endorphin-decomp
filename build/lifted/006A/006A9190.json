@@ -1,0 +1,52 @@
+{
+  "va": "0x006A9190",
+  "size": 119,
+  "orig_symbol": "sub_006A9190",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "PositionVerticalScrollBarInClient",
+  "class": "Unknown",
+  "signature": "void fn_006A9190(void* self)",
+  "summary": "Computes a vertical-scrollbar rect from the client rect (optional top inset and bottom trim, width = GetSystemMetrics(2)) and calls the child window's MoveWindow-style method at this+0x108; no-op unless this+0x128 is nonzero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF6",
+      "type": "std::uint8_t",
+      "name": "field_0xf6"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "std::int32_t",
+      "name": "field_0xf8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xFC",
+      "type": "std::uint8_t",
+      "name": "field_0xfc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x108",
+      "type": "std::uint8_t",
+      "name": "child_0x108"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x128",
+      "type": "std::int32_t",
+      "name": "field_0x128"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:12:09Z"
+}

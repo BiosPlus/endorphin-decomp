@@ -57192,6 +57192,13 @@
     "summary": "Iterates the child-pointer array at this+0xA0 (count at this+0xA4); calls child vfunc slot 1 with (a1, a2, a3) and returns the first nonzero result, else 0. Out-of-range index calls the MFC80 failure thunk.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006A9190": {
+    "name": "PositionVerticalScrollBarInClient",
+    "class": "Unknown",
+    "signature": "void fn_006A9190(void* self)",
+    "summary": "Computes a vertical-scrollbar rect from the client rect (optional top inset and bottom trim, width = GetSystemMetrics(2)) and calls the child window's MoveWindow-style method at this+0x108; no-op unless this+0x128 is nonzero.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A9210": {
     "name": "ClientRectAdjust::adjustClientRect",
     "class": "ClientRectAdjust",

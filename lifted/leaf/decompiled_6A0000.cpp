@@ -906,3 +906,51 @@ void __thiscall fn_006A9210(void* self, RECT* rc) {
     }
 }
 } // namespace lift_006A9210
+
+// [0x006A9190] sub_006A9190 (119 bytes)
+namespace lift_006A9190 {
+// Known callee 0x006A5E5A: thunk_MFC80_ord_4125 (IAT jump thunk forwarding to MFC80!ord_4125.)
+extern void ext_006A5E5A();
+extern std::uint32_t mem_0092566C; // IAT slot: USER32!GetClientRect
+extern std::uint32_t mem_0092563C; // IAT slot: USER32!GetSystemMetrics
+
+// @name PositionVerticalScrollBarInClient
+// @class Unknown
+// @summary Computes a vertical-scrollbar rect from the client rect (optional top inset and bottom trim, width = GetSystemMetrics(2)) and calls the child window's MoveWindow-style method at this+0x108; no-op unless this+0x128 is nonzero.
+// @field Unknown +0x20 HWND hwnd
+// @field Unknown +0xF6 std::uint8_t field_0xf6
+// @field Unknown +0xF8 std::int32_t field_0xf8
+// @field Unknown +0xFC std::uint8_t field_0xfc
+// @field Unknown +0x108 std::uint8_t child_0x108
+// @field Unknown +0x128 std::int32_t field_0x128
+void fn_006A9190(void* self) {
+    if (lift_field<std::int32_t>(self, 0x128) == 0) {
+        return;
+    }
+
+    using GetClientRectFn = BOOL(__stdcall*)(HWND, RECT*);
+    using GetSystemMetricsFn = int(__stdcall*)(int);
+    using ChildMoveFn = void(__thiscall*)(void*, int, int, int, int, int);
+
+    RECT rect{};
+    auto getClientRect = reinterpret_cast<GetClientRectFn>(static_cast<std::uintptr_t>(mem_0092566C));
+    getClientRect(lift_field<HWND>(self, 0x20), &rect);
+
+    if (lift_field<std::uint8_t>(self, 0xfc) != 0) {
+        rect.top += 0x1c;
+    }
+    if (lift_field<std::uint8_t>(self, 0xf6) != 0) {
+        rect.bottom -= lift_field<std::int32_t>(self, 0xf8);
+    }
+
+    auto getSystemMetrics = reinterpret_cast<GetSystemMetricsFn>(static_cast<std::uintptr_t>(mem_0092563C));
+    const int scrollWidth = getSystemMetrics(2);
+
+    const int x = rect.right - scrollWidth;
+    const int y = rect.top;
+    const int height = rect.bottom - rect.top;
+
+    auto child = static_cast<std::uint8_t*>(self) + 0x108;
+    reinterpret_cast<ChildMoveFn>(&ext_006A5E5A)(child, x, y, scrollWidth, height, 1);
+}
+} // namespace lift_006A9190
