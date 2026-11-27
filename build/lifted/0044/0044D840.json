@@ -1,0 +1,21 @@
+{
+  "va": "0x0044D840",
+  "size": 157,
+  "orig_symbol": "sub_0044D840",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "FillComboFromStringTable",
+  "signature": "void fn_0044D840(void* self)",
+  "summary": "Resets the combo box at this+0x9E0 (CB_RESETCONTENT) and adds each of the 7 std::string entries of the table at 0x00AD2590 (CB_ADDSTRING, stride 0x1C).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x9E0",
+      "type": "void*",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:29:24Z"
+}

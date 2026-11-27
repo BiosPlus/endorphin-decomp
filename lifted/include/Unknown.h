@@ -2315,6 +2315,7 @@ struct Unknown_Fields {
     // +0x820 void*                    field_0x820  (evidence: 0x0054FCB0)
     // +0x98C HWND                     hwnd  (evidence: 0x0044DCF0)
     // +0x9C0 uint8_t                  field_0x9C0  (evidence: 0x00441C10, 0x0044CE90)
+    // +0x9E0 void*                    hwnd  (evidence: 0x0044D840)
     // +0xA80 double                   field_0xa80  (evidence: 0x0071B7E0) // CONFLICT: multiple definitions at +0xA80
     // +0xA80 double field_0xa80 (on the object at this+0xc)  (evidence: 0x0071B870) // CONFLICT: multiple definitions at +0xA80
     // +0xB08 double                   field_0xb08  (evidence: 0x0071B7E0) // CONFLICT: multiple definitions at +0xB08

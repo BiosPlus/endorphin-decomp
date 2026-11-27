@@ -3422,3 +3422,49 @@ void fn_004493C0(void* self) {
     ext_006A5F6E();
 }
 } // namespace lift_004493C0
+
+// [0x0044D840] sub_0044D840 (157 bytes)
+namespace lift_0044D840 {
+// @name FillComboFromStringTable
+// @summary Resets the combo box at this+0x9E0 (CB_RESETCONTENT) and adds each of the 7 std::string entries of the table at 0x00AD2590 (CB_ADDSTRING, stride 0x1C).
+// @field Unknown +0x9E0 void* hwnd
+
+// Import slots (thiscall/stdcall thunks through the IAT).
+extern uint32_t mem_00925694; // USER32!SendMessageA (stdcall)
+extern uint32_t mem_00924FE0; // MSVCP80 basic_string copy ctor (thiscall)
+extern uint32_t mem_00924FF0; // MSVCP80 basic_string::c_str (thiscall)
+extern uint32_t mem_00924FF4; // MSVCP80 basic_string dtor (thiscall)
+
+// Global table of std::string entries at 0x00AD2590 (7 entries, 0x1C bytes each).
+extern uint8_t mem_00AD2590[];
+
+typedef uint32_t (__stdcall *SendMessageAFn)(void* hWnd, uint32_t Msg, uint32_t wParam, intptr_t lParam);
+typedef void (__thiscall *StringCopyCtorFn)(void* self, const void* other);
+typedef const char* (__thiscall *StringCStrFn)(void* self);
+typedef void (__thiscall *StringDtorFn)(void* self);
+
+static constexpr uint32_t kCbResetContent = 0x14B;
+static constexpr uint32_t kCbAddString    = 0x143;
+static constexpr size_t   kStringSize     = 0x1C;
+static constexpr size_t   kStringCount    = 7;
+
+void fn_0044D840(void* self) {
+    void* hwnd = lift_field<void*>(self, 0x9E0);
+
+    SendMessageAFn sendMessage = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    StringCopyCtorFn strCopy = reinterpret_cast<StringCopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0));
+    StringCStrFn strCStr = reinterpret_cast<StringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+    StringDtorFn strDtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+
+    sendMessage(hwnd, kCbResetContent, 0, 0);
+
+    for (size_t i = 0; i < kStringCount; ++i) {
+        void* entry = mem_00AD2590 + i * kStringSize;
+        alignas(4) uint8_t temp[kStringSize];
+        strCopy(temp, entry);
+        const char* text = strCStr(temp);
+        sendMessage(hwnd, kCbAddString, 0, reinterpret_cast<intptr_t>(text));
+        strDtor(temp);
+    }
+}
+} // namespace lift_0044D840
