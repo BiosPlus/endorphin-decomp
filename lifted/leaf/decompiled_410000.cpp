@@ -3256,3 +3256,38 @@ void fn_0041AFF0(void* self) {
 }
 } // namespace lift_004F1BD0
 } // namespace lift_0041AFF0
+
+// [0x0041FC70] sub_0041FC70 (147 bytes)
+namespace lift_0041FC70 {
+// @name Unknown::~Unknown
+// @class Unknown
+// @summary Destructor: resets the vptr, destroys the std::string at +0x17C, then tears down the subobjects at +0x128, +0x120, +0xCC, +0x74 and finally this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x74 uint8_t field_0x74
+// @field Unknown +0xCC uint8_t field_0xcc
+// @field Unknown +0x120 uint8_t field_0x120
+// @field Unknown +0x128 uint8_t field_0x128
+// @field Unknown +0x17C std::string field_0x17c
+
+extern void __thiscall ext_006A5DFA(void* self, uint8_t flag);
+extern void __thiscall ext_006A60B2(void* self, uint8_t flag);
+extern void __thiscall ext_006A63C4(void* self, uint8_t flag);
+extern void __thiscall ext_006A5F6E(void* self, uint32_t flag);
+extern uint32_t mem_00924FF4;
+
+void __thiscall fn_0041FC70(uint8_t* self) {
+    // Reset vptr to the base-class table.
+    lift_field<uint32_t>(self, 0x00) = 0x0092E01C;
+
+    // Destroy the std::string member at +0x17C through the MSVCP80 import slot.
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(self + 0x17C);
+
+    // Tear down subobjects; the flag argument mirrors the original unwind-state value.
+    ext_006A5DFA(self + 0x128, 3);
+    ext_006A60B2(self + 0x120, 2);
+    ext_006A63C4(self + 0xCC, 1);
+    ext_006A63C4(self + 0x74, 0);
+    ext_006A5F6E(self, 0xFFFFFFFFu);
+}
+} // namespace lift_0041FC70

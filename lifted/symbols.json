@@ -2627,6 +2627,13 @@
     "summary": "Returns the address of the global at 0x0092DFF4 (constant pointer accessor, ignores this)",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041FC70": {
+    "name": "Unknown::~Unknown",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0041FC70(uint8_t* self)",
+    "summary": "Destructor: resets the vptr, destroys the std::string at +0x17C, then tears down the subobjects at +0x128, +0x120, +0xCC, +0x74 and finally this.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041FD10": {
     "name": "sub_0041FD10",
     "signature": "extern \"C\" void __stdcall fn_0041FD10(DWORD arg0, DWORD arg1)",

@@ -1,0 +1,52 @@
+{
+  "va": "0x0041FC70",
+  "size": 147,
+  "orig_symbol": "sub_0041FC70",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::~Unknown",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0041FC70(uint8_t* self)",
+  "summary": "Destructor: resets the vptr, destroys the std::string at +0x17C, then tears down the subobjects at +0x128, +0x120, +0xCC, +0x74 and finally this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint8_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xCC",
+      "type": "uint8_t",
+      "name": "field_0xcc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x120",
+      "type": "uint8_t",
+      "name": "field_0x120"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x128",
+      "type": "uint8_t",
+      "name": "field_0x128"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x17C",
+      "type": "std::string",
+      "name": "field_0x17c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:38:46Z"
+}
