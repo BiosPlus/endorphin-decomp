@@ -1,0 +1,64 @@
+{
+  "va": "0x00547110",
+  "size": 142,
+  "orig_symbol": "TranslateTool::vfunc_31",
+  "src_path": "src/classes/TranslateTool.cpp",
+  "lifted_path": "lifted/classes/TranslateTool.cpp",
+  "name": "TranslateTool::vfunc_31",
+  "class": "TranslateTool",
+  "signature": "inline Fn vslot(void* obj, std::size_t index)",
+  "summary": "If ext_005434C0 returns 0, pushes GL matrix, multiplies it by this+0x04, stores a float from vslot 6 of the element at container(+0x84)[n] into +0xA0, forwards (arg1, arg2) to the function at obj(+0x98)+0x10 with this=\u0026this+0x98, then pops the matrix.",
+  "fields": [
+    {
+      "class": "TranslateTool",
+      "offset": "+0x4",
+      "type": "float[16]",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TranslateTool",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "TranslateTool",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "TranslateTool",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "TranslateTool",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "TranslateTool",
+      "offset": "+0x84",
+      "type": "void*",
+      "name": "field_0x84"
+    },
+    {
+      "class": "TranslateTool",
+      "offset": "+0x98",
+      "type": "void*",
+      "name": "field_0x98"
+    },
+    {
+      "class": "TranslateTool",
+      "offset": "+0xA0",
+      "type": "float",
+      "name": "field_0xA0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:31:10Z"
+}

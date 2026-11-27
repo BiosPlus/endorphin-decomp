@@ -27625,6 +27625,13 @@
     "summary": "Calls vslot +0x38 on the object held at +0x88 with arg 1, then tail-calls vslot +0x68 on this.",
     "lifted_path": "lifted/classes/JointTool.cpp"
   },
+  "0x00547110": {
+    "name": "TranslateTool::vfunc_31",
+    "class": "TranslateTool",
+    "signature": "inline Fn vslot(void* obj, std::size_t index)",
+    "summary": "If ext_005434C0 returns 0, pushes GL matrix, multiplies it by this+0x04, stores a float from vslot 6 of the element at container(+0x84)[n] into +0xA0, forwards (arg1, arg2) to the function at obj(+0x98)+0x10 with this=\u0026this+0x98, then pops the matrix.",
+    "lifted_path": "lifted/classes/TranslateTool.cpp"
+  },
   "0x005471D0": {
     "name": "RotateTool::vfunc_26",
     "class": "RotateTool",
