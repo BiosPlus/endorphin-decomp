@@ -2473,3 +2473,24 @@ extern uint32_t __fastcall fn_00708000(void* self, const char* name) {
     return 0;
 }
 } // namespace lift_00708000
+
+// [0x00702B40] sub_00702B40 (32 bytes)
+namespace lift_00702B40 {
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+extern uint32_t __fastcall ext_00708000(void* self, const char* name);
+
+// @name Unknown::ForwardVirtualSlot31ToChildByName
+// @class Unknown
+// @summary Looks up the child at self+0x268 by name "0xAABAE4" via ext_00708000, then tail-calls vtable slot 0x7C on the result.
+// @field Unknown +0x268 void* child
+extern uint32_t __fastcall fn_00702B40(void* self) {
+    void* child = lift_field<void*>(self, 0x268);
+    const char* name = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AABAE4u));
+    uint32_t found = ext_00708000(child, name);
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(found));
+    void* vtbl = lift_field<void*>(obj, 0);
+    uint32_t target = lift_field<uint32_t>(vtbl, 0x7C);
+    auto method = reinterpret_cast<uint32_t(__fastcall*)(void*)>(static_cast<uintptr_t>(target));
+    return method(obj);
+}
+} // namespace lift_00702B40

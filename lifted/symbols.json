@@ -70633,6 +70633,13 @@
     "summary": "Looks up an object via ext_006DC460, then writes three doubles (each a float getter result) into out and returns out.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702B40": {
+    "name": "Unknown::ForwardVirtualSlot31ToChildByName",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __fastcall fn_00702B40(void* self)",
+    "summary": "Looks up the child at self+0x268 by name \"0xAABAE4\" via ext_00708000, then tail-calls vtable slot 0x7C on the result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702BE0": {
     "name": "Unknown::GetFirstElementAsDouble",
     "class": "Unknown",

@@ -1,0 +1,22 @@
+{
+  "va": "0x00702B40",
+  "size": 32,
+  "orig_symbol": "sub_00702B40",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::ForwardVirtualSlot31ToChildByName",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __fastcall fn_00702B40(void* self)",
+  "summary": "Looks up the child at self+0x268 by name \"0xAABAE4\" via ext_00708000, then tail-calls vtable slot 0x7C on the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:14:31Z"
+}
