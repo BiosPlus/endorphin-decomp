@@ -1994,3 +1994,34 @@ void fn_00783270(void* self) {
     ext_006B9D70(static_cast<uint8_t*>(self) + 0x0C);
 }
 } // namespace lift_00783270
+
+// [0x00783A80] sub_00783A80 (112 bytes)
+namespace lift_00783A80 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// cdecl; called with size 0x14, returns the allocated pointer in eax.
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x00782D00: sub_00782D00 (thiscall: reset object state, store one DWORD argument)
+// thiscall: self in ecx, one stack DWORD argument, callee pops (ret 4).
+extern void ext_00782D00(void* self, DWORD arg);
+extern DWORD mem_00B608DC;
+extern uint8_t mem_00AAF3B1;
+
+// @name LazyInitSharedObject
+// @summary Once-only lazy init: if the global object pointer is null and the init flag byte is set, allocates a 0x14-byte object, initializes it via ext_00782D00(obj, 0x14), publishes the pointer (0 on alloc failure) to mem_00B608DC and clears the flag. The MSVC SEH frame (fs:[0]) setup/teardown is omitted.
+// (no struct fields: the function only passes the new object through to ext_00782D00)
+void fn_00783A80(void) {
+    if (mem_00B608DC != 0) {
+        return;
+    }
+    if (mem_00AAF3B1 == 0) {
+        return;
+    }
+
+    void* obj = ext_006A5C62(0x14);
+    if (obj != nullptr) {
+        ext_00782D00(obj, 0x14);
+    }
+    mem_00B608DC = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+    mem_00AAF3B1 = 0;
+}
+} // namespace lift_00783A80

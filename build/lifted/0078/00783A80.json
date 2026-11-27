@@ -1,0 +1,13 @@
+{
+  "va": "0x00783A80",
+  "size": 112,
+  "orig_symbol": "sub_00783A80",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "LazyInitSharedObject",
+  "signature": "void fn_00783A80(void)",
+  "summary": "Once-only lazy init: if the global object pointer is null and the init flag byte is set, allocates a 0x14-byte object, initializes it via ext_00782D00(obj, 0x14), publishes the pointer (0 on alloc failure) to mem_00B608DC and clears the flag. The MSVC SEH frame (fs:[0]) setup/teardown is omitted.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:20Z"
+}
