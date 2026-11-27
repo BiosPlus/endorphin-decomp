@@ -256,3 +256,77 @@ extern void __thiscall fn_005F3370(void* self, void* arg) {
     ext_00587920(lift_field<void*>(self, 0x17C), lift_field<void*>(self, 0x184), 0);
 }
 } // namespace lift_005F3370
+
+// [0x005EC320]
+namespace lift_005EC320 {
+// Callees (x86 thiscall/cdecl conventions are preserved by argument order here).
+// ext_006404E0: thiscall(self=arg, const char* literal) -> returns object pointer.
+extern void* __thiscall ext_006404E0(void* self, const void* s);
+// ext_005EB5A0 = NMData::RelationshipData::vfunc_22: thiscall(self, void* arg), result unused.
+extern void __thiscall ext_005EB5A0(void* self, void* arg);
+// ext_00640110: thiscall(self, const void* value) -> returns object pointer.
+extern void* __thiscall ext_00640110(void* self, const void* value);
+// Known callee 0x00640A80: ResetChildNameFromBool. Caller pushes (obj, flag).
+extern void ext_00640A80(void* obj, uint8_t flag);
+// Known callee 0x00640AA0: ResetChildFromFormattedId. Caller pushes (a, b).
+extern void ext_00640AA0(void* a, uint32_t b);
+
+// Data referenced by the original asm.
+extern const char mem_0096AFE8[];   // literal pushed at 0x005EC329
+extern const char mem_0096AFD8[];   // literal pushed at 0x005EC33F
+extern uint32_t   mem_00A9F724;     // u32 value 0x0098573C loaded at 0x005EC39F / 0x005EC3DA
+
+// Vtable call shapes: slot index = byte offset / 4.
+using VFnThisArg  = void    (*)(void* self, void* arg);   // vtable +0x58 (slot 22)
+using VFnThisBool = uint8_t (*)(void* self);              // vtable +0x70 (slot 28)
+
+// @name NMData::MagnetJointData::vfunc_22
+// @class NMData::MagnetJointData
+// @summary Initialises three child objects from literals, resets the name of the 0x190 peer's flag-dependent child, and returns arg.
+// @field NMData::MagnetJointData +0x178 uint8_t field_0x178
+// @field NMData::MagnetJointData +0x17C void* field_0x17c
+// @field NMData::MagnetJointData +0x180 void* field_0x180
+// @field NMData::MagnetJointData +0x184 void* field_0x184
+// @field NMData::MagnetJointData +0x190 void* field_0x190
+// @field NMData::MagnetJointData +0x2FC uint32_t field_0x2FC
+void* fn_005EC320(void* self, void* arg) {
+    void* obj = ext_006404E0(arg, mem_0096AFE8);
+    ext_005EB5A0(self, obj);
+
+    void* r = ext_00640110(obj, mem_0096AFD8);
+    ext_00640AA0(r, lift_field<uint32_t>(self, 0x2FC));
+
+    // Three child objects: each vtable slot 22 is invoked with (obj).
+    {
+        void* child = lift_field<void*>(self, 0x17C);
+        void** vt = *reinterpret_cast<void***>(child);
+        reinterpret_cast<VFnThisArg>(vt[22])(child, obj);
+    }
+    {
+        void* child = lift_field<void*>(self, 0x180);
+        void** vt = *reinterpret_cast<void***>(child);
+        reinterpret_cast<VFnThisArg>(vt[22])(child, obj);
+    }
+    {
+        void* child = lift_field<void*>(self, 0x184);
+        void** vt = *reinterpret_cast<void***>(child);
+        reinterpret_cast<VFnThisArg>(vt[22])(child, obj);
+    }
+
+    void* peer = lift_field<void*>(self, 0x190);
+    if (peer != nullptr) {
+        void** vt = *reinterpret_cast<void***>(peer);
+        bool changed = reinterpret_cast<VFnThisBool>(vt[28])(peer) != 0;
+        if (!changed) {
+            // Re-check peer's flag against ours only when the virtual call reported no change.
+            changed = lift_field<uint8_t>(peer, 0x178) != lift_field<uint8_t>(self, 0x178);
+        }
+        if (changed) {
+            void* e = ext_00640110(obj, reinterpret_cast<const void*>(static_cast<uintptr_t>(mem_00A9F724)));
+            ext_00640A80(e, lift_field<uint8_t>(self, 0x178));
+        }
+    }
+
+    return arg;
+}
+} // namespace lift_005EC320

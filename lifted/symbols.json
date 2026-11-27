@@ -55125,6 +55125,13 @@
     "summary": "Calls sub_006404E0 on the stack argument with a constant from 0x00986694, forwards the result to RelationshipData::vfunc_22; when the flag at +0x178 is clear, resets the child name via sub_00640110 and ResetChildNameFromBool; returns the stack argument.",
     "lifted_path": "lifted/NMData/RPROMagnetData.cpp"
   },
+  "0x005EC320": {
+    "name": "NMData::MagnetJointData::vfunc_22",
+    "class": "NMData::MagnetJointData",
+    "signature": "void* fn_005EC320(void* self, void* arg)",
+    "summary": "Initialises three child objects from literals, resets the name of the 0x190 peer's flag-dependent child, and returns arg.",
+    "lifted_path": "lifted/NMData/MagnetJointData.cpp"
+  },
   "0x005EC8D0": {
     "name": "storeValueAndStaticObject",
     "signature": "void fn_005EC8D0(DWORD* dst, DWORD value)",

@@ -1,0 +1,52 @@
+{
+  "va": "0x005EC320",
+  "size": 225,
+  "orig_symbol": "NMData::MagnetJointData::vfunc_22",
+  "src_path": "src/NMData/MagnetJointData.cpp",
+  "lifted_path": "lifted/NMData/MagnetJointData.cpp",
+  "name": "NMData::MagnetJointData::vfunc_22",
+  "class": "NMData::MagnetJointData",
+  "signature": "void* fn_005EC320(void* self, void* arg)",
+  "summary": "Initialises three child objects from literals, resets the name of the 0x190 peer's flag-dependent child, and returns arg.",
+  "fields": [
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    },
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    },
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x2FC",
+      "type": "uint32_t",
+      "name": "field_0x2FC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:10:40Z"
+}
