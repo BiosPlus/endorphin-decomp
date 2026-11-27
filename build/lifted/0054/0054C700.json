@@ -1,0 +1,33 @@
+{
+  "va": "0x0054C700",
+  "size": 94,
+  "orig_symbol": "sub_0054C700",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "sub_0054C700",
+  "signature": "void* __thiscall sub_0054C700(void* self)",
+  "summary": "Constructor that initializes vtable, sets field_0x4 to 0xE, and initializes a std::string at +0x8 with a constant string.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:52:32Z"
+}

@@ -1348,3 +1348,26 @@ void* __thiscall fn_005404B0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_005404B0
+
+// [0x0054C700]
+namespace lift_0054C700 {
+extern uint8_t mem_00956DFC[];
+extern uint8_t mem_0092C520[];
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_00924FD4;
+
+// @name sub_0054C700
+// @summary Constructor that initializes vtable, sets field_0x4 to 0xE, and initializes a std::string at +0x8 with a constant string.
+// @field Class +0x00 uint32_t vptr
+// @field Class +0x04 uint32_t field_0x4
+// @field Class +0x08 void* field_0x8
+void* __thiscall sub_0054C700(void* self) {
+    lift_field<uint32_t>(self, 0x0) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00956DFC));
+    void* str_ptr = static_cast<uint8_t*>(self) + 0x8;
+    reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_00924FE8))(str_ptr);
+    lift_field<uint32_t>(self, 0x4) = 0xE;
+    reinterpret_cast<void*(__thiscall*)(void*, const char*)>(static_cast<uintptr_t>(mem_00924FD4))(
+        str_ptr, reinterpret_cast<const char*>(mem_0092C520));
+    return self;
+}
+} // namespace lift_0054C700
