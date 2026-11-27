@@ -2245,3 +2245,30 @@ void fn_006737B0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_006737B0
+
+// [0x0067DB10] sub_0067DB10 (125 bytes)
+namespace lift_0067DB10 {
+// @name copyPacked3x3ToPaddedMatrix
+// @summary Copies a packed 3x3 float matrix (36 bytes) from src into a 4-float-stride matrix at self (rows at +0x00, +0x10, +0x20), leaving the padding slots untouched.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+void fn_0067DB10(void* self, const void* src) {
+    // Packed src element i (0..8, row-major) -> dst slot, rows padded to 16 bytes.
+    static constexpr ptrdiff_t kDstOffset[9] = {
+        0x00, 0x04, 0x08,   // src row 0 -> dst row 0
+        0x10, 0x14, 0x18,   // src row 1 -> dst row 1
+        0x20, 0x24, 0x28,   // src row 2 -> dst row 2
+    };
+    const float* in = static_cast<const float*>(src);
+    for (ptrdiff_t i = 0; i < 9; ++i) {
+        lift_field<float>(self, kDstOffset[i]) = in[i];
+    }
+}
+} // namespace lift_0067DB10
