@@ -79165,6 +79165,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF660": {
+    "name": "ProcessKeyedRecordByName",
+    "class": "Unknown",
+    "signature": "int32_t fn_007AF660(void* obj, uint32_t arg2)",
+    "summary": "Finds the record for the 16-bit key at obj+0x44; if its name starts with the expected 3-char prefix dispatches via the hook with the obj's first field, else reports an error and returns -1.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF6F0": {
     "name": "sub_007AF6F0",
     "signature": "int32_t fn_007AF6F0(void* self)",

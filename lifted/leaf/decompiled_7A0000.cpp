@@ -1355,3 +1355,42 @@ uint32_t fn_007AF180(void* self) {
     return result;
 }
 } // namespace lift_007AF180
+
+// [0x007AF660] sub_007AF660 (134 bytes)
+namespace lift_007AF660 {
+// Known callee 0x007AF8F0: FindRecordByKey16 (looks up a 16-bit key in the node list, then the static table).
+extern uint8_t* ext_007AF8F0(uint16_t key);
+// Known callee 0x0079B140: DispatchThreeArgsToOptionalHook (calls global hook mem_00AAFC2C if non-null).
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+// IAT slot for strncmp (MSVCR80.dll) at 0x009252A0.
+extern int mem_009252A0;
+
+// @name ProcessKeyedRecordByName
+// @class Unknown
+// @summary Finds the record for the 16-bit key at obj+0x44; if its name starts with the expected 3-char prefix dispatches via the hook with the obj's first field, else reports an error and returns -1.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x44 uint16_t field_0x44
+int32_t fn_007AF660(void* obj, uint32_t arg2) {
+    (void)&mem_009252A0; // metadata-only reference to the strncmp IAT slot
+    const uint16_t key = lift_field<uint16_t>(obj, 0x44);
+    uint8_t* node = ext_007AF8F0(key);
+    if (node == nullptr) {
+        ext_0079B140(lift_field<uint32_t>(obj, 0x00), 0x00AB10D0u, static_cast<uint32_t>(key));
+        (void)arg2;
+        return -1;
+    }
+
+    // Record name pointer stored at node+0x00 (32-bit guest pointer).
+    const uint32_t name_va = lift_field<uint32_t>(node, 0x00);
+    const char* name = reinterpret_cast<const char*>(static_cast<uintptr_t>(name_va));
+    const char* prefix = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AB1178u));
+
+    if (std::strncmp(name, prefix, 3) == 0) {
+        ext_0079B140(lift_field<uint32_t>(obj, 0x00), 0x00AB112Cu, name_va);
+        return -1;
+    }
+
+    ext_0079B140(lift_field<uint32_t>(obj, 0x00), 0x00AB1108u, name_va);
+    return -1;
+}
+} // namespace lift_007AF660

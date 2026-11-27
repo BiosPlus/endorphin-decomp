@@ -1,0 +1,28 @@
+{
+  "va": "0x007AF660",
+  "size": 134,
+  "orig_symbol": "sub_007AF660",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "ProcessKeyedRecordByName",
+  "class": "Unknown",
+  "signature": "int32_t fn_007AF660(void* obj, uint32_t arg2)",
+  "summary": "Finds the record for the 16-bit key at obj+0x44; if its name starts with the expected 3-char prefix dispatches via the hook with the obj's first field, else reports an error and returns -1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "uint16_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:23:55Z"
+}
