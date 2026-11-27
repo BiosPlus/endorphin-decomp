@@ -23445,11 +23445,32 @@
     "summary": "Auto-lifted identical-shape clone of 0x00674C90 (ExprParser::ReadMethodType_ExpressionEntry_getExpression::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00505560": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
+    "signature": "void* fn_00505560(void* self, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D21F0 (ExprParser::ReadMethodType::vfunc_46).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00505600": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
+    "signature": "void* fn_00505600(void* self, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D21F0 (ExprParser::ReadMethodType::vfunc_46).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005056A0": {
     "name": "ExprParser::ReadMethodType::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
     "signature": "void fn_005056A0(void* self)",
     "summary": "Virtual slot 5: throws. If the wrapped pointer is non-null, throws via the message helper at +4; otherwise throws a fixed DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005056D0": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
+    "signature": "void* fn_005056D0(void* self, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D21F0 (ExprParser::ReadMethodType::vfunc_46).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00505820": {
@@ -47544,6 +47565,13 @@
     "summary": "Copy constructor: runs base copy ctor 0x0060BBA0, sets vtable 0x00972234, copies +0x5c/+0x7c/+0x80 floats/dword and copy-constructs the std::string at +0x60; returns this.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060C3D0": {
+    "name": "NMData::EffectorWithModesData::vfunc_20",
+    "class": "NMData::EffectorWithModesData",
+    "signature": "std::string* fn_0060C3D0(void* self, std::string* ret, void* unused)",
+    "summary": "Auto-lifted identical-shape clone of 0x00626850 (NMData::EffectorSkeletalData::vfunc_20).",
+    "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
+  },
   "0x0060C490": {
     "name": "NMData::EffectorWithModesData::vfunc_19",
     "class": "NMData::EffectorWithModesData",
@@ -51555,11 +51583,32 @@
     "summary": "Takes a holder pointer; if its target is null raises a C++ exception, otherwise obtains a sub-object via sub_00672110 and forwards to its vfunc_42, then releases it via vfunc_30 and returns the bool result.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0062E5F0": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
+    "signature": "void* __stdcall fn_0062E5F0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E730 (ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_45 (getVertAxis)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0062E690": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
+    "signature": "void* __stdcall fn_0062E690(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E730 (ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_45 (getVertAxis)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062E730": {
     "name": "ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_45 (getVertAxis)",
     "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
     "signature": "void* __stdcall fn_0062E730(void* self, void* arg)",
     "summary": "Reads the held pointer's sub-object into a temp, reassigns field_0x04 from it, releases the temp, then forwards to the inner object's vfunc at slot 45.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0062E7D0": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
+    "signature": "void* __stdcall fn_0062E7D0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E730 (ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_45 (getVertAxis)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0062E870": {

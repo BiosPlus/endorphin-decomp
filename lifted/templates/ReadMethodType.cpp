@@ -86388,3 +86388,321 @@ void fn_00514130(void* self) {
     vcall1(child, 0xbc, self);
 }
 } // namespace lift_00514130
+
+// [0x00505560] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_43 (157 bytes)
+namespace lift_00505560 {
+// @name ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D21F0 (ExprParser::ReadMethodType::vfunc_46).
+namespace lift_005D21F0 {
+extern void* ext_006720E0(void* tmp, void* src);
+extern void* ext_0041CF50(void* self, void* other);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType::vfunc_46
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Copies the value held at self->field_0x00 into a temp, assigns it to self, releases the temp, then forwards to field_0x04's vtable slot 46 (throws DerivedException if field_0x00 is null).
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void* fn_00505560(void* self, void* arg2) {
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner == nullptr) {
+        unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009dec1cu)));
+        return nullptr;
+    }
+
+    // Temp holder built from inner+0x04.
+    unsigned char tmp[8] = {};
+    ext_006720E0(tmp, static_cast<unsigned char*>(inner) + 0x04);
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's owned object via its vtable slot 0x78 when present.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(heldVt, 0x78));
+        release(held, tmp);
+    }
+
+    // Forward to field_0x04's vtable slot 46 (0xB8): (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void* targetVt = lift_field<void*>(target, 0x00);
+    auto forward = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xAC));
+    return forward(target, self, arg2);
+}
+} // namespace lift_005D21F0
+} // namespace lift_00505560
+
+// [0x00505600] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_45 (157 bytes)
+namespace lift_00505600 {
+// @name ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D21F0 (ExprParser::ReadMethodType::vfunc_46).
+namespace lift_005D21F0 {
+extern void* ext_006720E0(void* tmp, void* src);
+extern void* ext_0041CF50(void* self, void* other);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType::vfunc_46
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Copies the value held at self->field_0x00 into a temp, assigns it to self, releases the temp, then forwards to field_0x04's vtable slot 46 (throws DerivedException if field_0x00 is null).
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void* fn_00505600(void* self, void* arg2) {
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner == nullptr) {
+        unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009dec1cu)));
+        return nullptr;
+    }
+
+    // Temp holder built from inner+0x04.
+    unsigned char tmp[8] = {};
+    ext_006720E0(tmp, static_cast<unsigned char*>(inner) + 0x04);
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's owned object via its vtable slot 0x78 when present.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(heldVt, 0x78));
+        release(held, tmp);
+    }
+
+    // Forward to field_0x04's vtable slot 46 (0xB8): (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void* targetVt = lift_field<void*>(target, 0x00);
+    auto forward = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB4));
+    return forward(target, self, arg2);
+}
+} // namespace lift_005D21F0
+} // namespace lift_00505600
+
+// [0x005056D0] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_44 (157 bytes)
+namespace lift_005056D0 {
+// @name ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_44
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D21F0 (ExprParser::ReadMethodType::vfunc_46).
+namespace lift_005D21F0 {
+extern void* ext_006720E0(void* tmp, void* src);
+extern void* ext_0041CF50(void* self, void* other);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType::vfunc_46
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Copies the value held at self->field_0x00 into a temp, assigns it to self, releases the temp, then forwards to field_0x04's vtable slot 46 (throws DerivedException if field_0x00 is null).
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void* fn_005056D0(void* self, void* arg2) {
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner == nullptr) {
+        unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009dec1cu)));
+        return nullptr;
+    }
+
+    // Temp holder built from inner+0x04.
+    unsigned char tmp[8] = {};
+    ext_006720E0(tmp, static_cast<unsigned char*>(inner) + 0x04);
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's owned object via its vtable slot 0x78 when present.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(heldVt, 0x78));
+        release(held, tmp);
+    }
+
+    // Forward to field_0x04's vtable slot 46 (0xB8): (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void* targetVt = lift_field<void*>(target, 0x00);
+    auto forward = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB0));
+    return forward(target, self, arg2);
+}
+} // namespace lift_005D21F0
+} // namespace lift_005056D0
+
+// [0x0062E5F0] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_43 (157 bytes)
+namespace lift_0062E5F0 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_43
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0062E730 (ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_45 (getVertAxis)).
+namespace lift_0062E730 {
+// Known callee 0x00672110: sub_00672110 (52B), thiscall; builds a temp from a source pointer.
+extern void* __thiscall ext_00672110(void* self, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+using ThisCall1 = void* (__thiscall*)(void* self, void* a);
+using ThisCall2 = void* (__thiscall*)(void* self, void* a, void* b);
+
+// @name ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_45 (getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the held pointer's sub-object into a temp, reassigns field_0x04 from it, releases the temp, then forwards to the inner object's vfunc at slot 45.
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x04 void* field_0x04
+void* __stdcall fn_0062E5F0(void* self, void* arg) {
+    // Exception object and temp slot (EH frame setup/teardown omitted).
+    alignas(8) unsigned char exc[0x10] = {};
+    alignas(8) unsigned char tmp[0x10] = {};
+
+    void* held = lift_field<void*>(self, 0x00);
+    if (held == nullptr) {
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    // Build temp from held + 0x78.
+    ext_00672110(tmp, static_cast<unsigned char*>(held) + 0x78);
+
+    // Copy-assign into self's field_0x04 from temp.
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's pointer via vtable slot 0x78 when non-null.
+    void* released = lift_field<void*>(tmp, 0x00);
+    if (released != nullptr) {
+        void** relVt = *reinterpret_cast<void***>(released);
+        auto relFn = reinterpret_cast<ThisCall1>(relVt[0x78 / sizeof(void*)]);
+        relFn(released, tmp);
+    }
+
+    // Tail-forward to field_0x04's vfunc at slot 0xB4 with (self, arg).
+    void* inner = lift_field<void*>(self, 0x04);
+    void** innerVt = *reinterpret_cast<void***>(inner);
+    auto innerFn = reinterpret_cast<ThisCall2>(innerVt[0xAC / sizeof(void*)]);
+    return innerFn(inner, self, arg);
+}
+} // namespace lift_0062E730
+} // namespace lift_0062E5F0
+
+// [0x0062E690] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_44 (157 bytes)
+namespace lift_0062E690 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_44
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0062E730 (ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_45 (getVertAxis)).
+namespace lift_0062E730 {
+// Known callee 0x00672110: sub_00672110 (52B), thiscall; builds a temp from a source pointer.
+extern void* __thiscall ext_00672110(void* self, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+using ThisCall1 = void* (__thiscall*)(void* self, void* a);
+using ThisCall2 = void* (__thiscall*)(void* self, void* a, void* b);
+
+// @name ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_45 (getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the held pointer's sub-object into a temp, reassigns field_0x04 from it, releases the temp, then forwards to the inner object's vfunc at slot 45.
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x04 void* field_0x04
+void* __stdcall fn_0062E690(void* self, void* arg) {
+    // Exception object and temp slot (EH frame setup/teardown omitted).
+    alignas(8) unsigned char exc[0x10] = {};
+    alignas(8) unsigned char tmp[0x10] = {};
+
+    void* held = lift_field<void*>(self, 0x00);
+    if (held == nullptr) {
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    // Build temp from held + 0x78.
+    ext_00672110(tmp, static_cast<unsigned char*>(held) + 0x78);
+
+    // Copy-assign into self's field_0x04 from temp.
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's pointer via vtable slot 0x78 when non-null.
+    void* released = lift_field<void*>(tmp, 0x00);
+    if (released != nullptr) {
+        void** relVt = *reinterpret_cast<void***>(released);
+        auto relFn = reinterpret_cast<ThisCall1>(relVt[0x78 / sizeof(void*)]);
+        relFn(released, tmp);
+    }
+
+    // Tail-forward to field_0x04's vfunc at slot 0xB4 with (self, arg).
+    void* inner = lift_field<void*>(self, 0x04);
+    void** innerVt = *reinterpret_cast<void***>(inner);
+    auto innerFn = reinterpret_cast<ThisCall2>(innerVt[0xB0 / sizeof(void*)]);
+    return innerFn(inner, self, arg);
+}
+} // namespace lift_0062E730
+} // namespace lift_0062E690
+
+// [0x0062E7D0] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_46 (157 bytes)
+namespace lift_0062E7D0 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_46
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0062E730 (ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_45 (getVertAxis)).
+namespace lift_0062E730 {
+// Known callee 0x00672110: sub_00672110 (52B), thiscall; builds a temp from a source pointer.
+extern void* __thiscall ext_00672110(void* self, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+using ThisCall1 = void* (__thiscall*)(void* self, void* a);
+using ThisCall2 = void* (__thiscall*)(void* self, void* a, void* b);
+
+// @name ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_45 (getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the held pointer's sub-object into a temp, reassigns field_0x04 from it, releases the temp, then forwards to the inner object's vfunc at slot 45.
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x04 void* field_0x04
+void* __stdcall fn_0062E7D0(void* self, void* arg) {
+    // Exception object and temp slot (EH frame setup/teardown omitted).
+    alignas(8) unsigned char exc[0x10] = {};
+    alignas(8) unsigned char tmp[0x10] = {};
+
+    void* held = lift_field<void*>(self, 0x00);
+    if (held == nullptr) {
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    // Build temp from held + 0x78.
+    ext_00672110(tmp, static_cast<unsigned char*>(held) + 0x78);
+
+    // Copy-assign into self's field_0x04 from temp.
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's pointer via vtable slot 0x78 when non-null.
+    void* released = lift_field<void*>(tmp, 0x00);
+    if (released != nullptr) {
+        void** relVt = *reinterpret_cast<void***>(released);
+        auto relFn = reinterpret_cast<ThisCall1>(relVt[0x78 / sizeof(void*)]);
+        relFn(released, tmp);
+    }
+
+    // Tail-forward to field_0x04's vfunc at slot 0xB4 with (self, arg).
+    void* inner = lift_field<void*>(self, 0x04);
+    void** innerVt = *reinterpret_cast<void***>(inner);
+    auto innerFn = reinterpret_cast<ThisCall2>(innerVt[0xB8 / sizeof(void*)]);
+    return innerFn(inner, self, arg);
+}
+} // namespace lift_0062E730
+} // namespace lift_0062E7D0

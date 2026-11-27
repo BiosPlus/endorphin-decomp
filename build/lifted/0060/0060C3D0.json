@@ -1,0 +1,28 @@
+{
+  "va": "0x0060C3D0",
+  "size": 157,
+  "orig_symbol": "NMData::EffectorWithModesData::vfunc_20",
+  "src_path": "src/NMData/EffectorWithModesData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithModesData.cpp",
+  "name": "NMData::EffectorWithModesData::vfunc_20",
+  "class": "NMData::EffectorWithModesData",
+  "signature": "std::string* fn_0060C3D0(void* self, std::string* ret, void* unused)",
+  "summary": "Auto-lifted identical-shape clone of 0x00626850 (NMData::EffectorSkeletalData::vfunc_20).",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:46:08Z"
+}
