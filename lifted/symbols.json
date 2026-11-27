@@ -47889,6 +47889,13 @@
     "summary": "Returns the magnitude sqrt(f30^2 + f38^2) of the two horizontal velocity floats, sign-normalized to non-negative.",
     "lifted_path": "lifted/Sensors/SensorAbsoluteHorizontalVelocityMag.cpp"
   },
+  "0x006273B0": {
+    "name": "MetaBodySensor_Derived::MetaBodySensor_Derived",
+    "class": "MetaBodySensor_Derived",
+    "signature": "void* __thiscall fn_006273B0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Constructor: calls MetaBodySensor::MetaBodySensor(arg0), installs vtable 0x0097791C, and initializes transform matrices at +0x30..+0x5C and +0x60..+0x9C to identity.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00627450": {
     "name": "copyMatrixFromTarget_0x60",
     "signature": "void fn_00627450(void* self)",

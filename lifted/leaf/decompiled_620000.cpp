@@ -3312,3 +3312,85 @@ float fn_0062E2D0(void* self, const float* v) {
     return static_cast<float>(lift_field<double>(self, 0x40));
 }
 } // namespace lift_0062E2D0
+
+// [0x006273B0]
+namespace lift_006273B0 {
+// @name MetaBodySensor_Derived::MetaBodySensor_Derived
+// @class MetaBodySensor_Derived
+// @summary Constructor: calls MetaBodySensor::MetaBodySensor(arg0), installs vtable 0x0097791C, and initializes transform matrices at +0x30..+0x5C and +0x60..+0x9C to identity.
+// @field MetaBodySensor_Derived +0x00 uint32_t vtable
+// @field MetaBodySensor_Derived +0x30 float field_0x30
+// @field MetaBodySensor_Derived +0x34 float field_0x34
+// @field MetaBodySensor_Derived +0x38 float field_0x38
+// @field MetaBodySensor_Derived +0x3c float field_0x3c
+// @field MetaBodySensor_Derived +0x40 float field_0x40
+// @field MetaBodySensor_Derived +0x44 float field_0x44
+// @field MetaBodySensor_Derived +0x48 float field_0x48
+// @field MetaBodySensor_Derived +0x4c float field_0x4c
+// @field MetaBodySensor_Derived +0x50 float field_0x50
+// @field MetaBodySensor_Derived +0x54 float field_0x54
+// @field MetaBodySensor_Derived +0x58 float field_0x58
+// @field MetaBodySensor_Derived +0x5c float field_0x5c
+// @field MetaBodySensor_Derived +0x60 float field_0x60
+// @field MetaBodySensor_Derived +0x64 float field_0x64
+// @field MetaBodySensor_Derived +0x68 float field_0x68
+// @field MetaBodySensor_Derived +0x6c float field_0x6c
+// @field MetaBodySensor_Derived +0x70 float field_0x70
+// @field MetaBodySensor_Derived +0x74 float field_0x74
+// @field MetaBodySensor_Derived +0x78 float field_0x78
+// @field MetaBodySensor_Derived +0x7c float field_0x7c
+// @field MetaBodySensor_Derived +0x80 float field_0x80
+// @field MetaBodySensor_Derived +0x84 float field_0x84
+// @field MetaBodySensor_Derived +0x88 float field_0x88
+// @field MetaBodySensor_Derived +0x8c float field_0x8c
+// @field MetaBodySensor_Derived +0x90 float field_0x90
+// @field MetaBodySensor_Derived +0x94 float field_0x94
+// @field MetaBodySensor_Derived +0x98 float field_0x98
+// @field MetaBodySensor_Derived +0x9c float field_0x9c
+
+
+extern void __thiscall ext_005FF240(void* self, uint32_t arg);
+extern const uint32_t mem_0097791C[];
+
+void* __thiscall fn_006273B0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)arg1;
+    (void)arg2;
+    (void)arg3;
+
+    ext_005FF240(self, arg0);
+
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_0097791C));
+
+    lift_field<float>(self, 0x30) = 1.0f;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x3c) = 0.0f;
+    lift_field<float>(self, 0x40) = 1.0f;
+    lift_field<float>(self, 0x44) = 0.0f;
+    lift_field<float>(self, 0x48) = 0.0f;
+    lift_field<float>(self, 0x4c) = 0.0f;
+    lift_field<float>(self, 0x50) = 1.0f;
+    lift_field<float>(self, 0x54) = 0.0f;
+    lift_field<float>(self, 0x58) = 0.0f;
+    lift_field<float>(self, 0x5c) = 0.0f;
+
+    lift_field<float>(self, 0x60) = 1.0f;
+    lift_field<float>(self, 0x64) = 0.0f;
+    lift_field<float>(self, 0x68) = 0.0f;
+    lift_field<float>(self, 0x6c) = 0.0f;
+    lift_field<float>(self, 0x70) = 0.0f;
+    lift_field<float>(self, 0x74) = 1.0f;
+    lift_field<float>(self, 0x78) = 0.0f;
+    lift_field<float>(self, 0x7c) = 0.0f;
+    lift_field<float>(self, 0x80) = 0.0f;
+    lift_field<float>(self, 0x84) = 0.0f;
+    lift_field<float>(self, 0x88) = 1.0f;
+    lift_field<float>(self, 0x8c) = 0.0f;
+    lift_field<float>(self, 0x90) = 0.0f;
+    lift_field<float>(self, 0x94) = 0.0f;
+    lift_field<float>(self, 0x98) = 0.0f;
+    lift_field<float>(self, 0x9c) = 1.0f;
+
+    return self;
+}
+} // namespace lift_006273B0
