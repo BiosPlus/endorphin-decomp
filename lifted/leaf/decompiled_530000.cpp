@@ -1898,3 +1898,20 @@ void __thiscall fn_00536140(int32_t* self, int32_t* out) {
     }
 }
 } // namespace lift_00536140
+
+// [0x00533E71] sub_00533E71 (16 bytes)
+namespace lift_00533E71 {
+// Known callee 0x0054C160: RenderableList::vfunc_22 (Iterates over child renderables when enabled, bracketed by global renderer vfunc_2/vfunc_3 calls, invoking vfunc_22 on each.)
+extern void ext_0054C160(void* self, uint32_t arg1);
+
+// @name RenderableList::vfunc_22_forward
+// @class RenderableList
+// @summary Forwards a single stack argument to RenderableList::vfunc_22 using the object in esi as `this`; esi is left holding the forwarded argument.
+void fn_00533E71(void* self, uint32_t arg1) {
+    // Original: mov ecx,[esp+8]; push ecx; mov ecx,esi; call 0x54C160; pop esi; ret 4
+    // `self` is the object in esi (passed as `this` to the callee).
+    // `arg1` is the stack argument, pushed and cleaned up by the caller
+    // (the `pop esi` after the call reclaims it, so esi ends up equal to arg1).
+    ext_0054C160(self, arg1);
+}
+} // namespace lift_00533E71

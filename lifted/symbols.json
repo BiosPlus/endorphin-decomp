@@ -25305,6 +25305,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00533D50 (Unknown::dtor_00533D50).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00533E71": {
+    "name": "RenderableList::vfunc_22_forward",
+    "class": "RenderableList",
+    "signature": "void fn_00533E71(void* self, uint32_t arg1)",
+    "summary": "Forwards a single stack argument to RenderableList::vfunc_22 using the object in esi as `this`; esi is left holding the forwarded argument.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00533E90": {
     "name": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_0",
     "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
