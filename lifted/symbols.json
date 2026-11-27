@@ -27233,6 +27233,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x005762C0": {
+    "name": "VSKIO::vfunc_14",
+    "class": "VSKIO",
+    "signature": "void fn_005762C0(void* self, int edx_unused, void* a1)",
+    "summary": "Builds a temporary Unknown {vptr, this}, clears this+0x488, invokes the function stored at this+0x20 with the c_str() of the string argument, then destroys the temporary.",
+    "lifted_path": "lifted/classes/VSKIO.cpp"
+  },
   "0x00576D50": {
     "name": "sub_00576D50",
     "signature": "uint32_t fn_00576D50(uint32_t begin, uint32_t end, uint32_t value)",

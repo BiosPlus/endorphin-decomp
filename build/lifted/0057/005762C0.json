@@ -1,0 +1,28 @@
+{
+  "va": "0x005762C0",
+  "size": 117,
+  "orig_symbol": "VSKIO::vfunc_14",
+  "src_path": "src/classes/VSKIO.cpp",
+  "lifted_path": "lifted/classes/VSKIO.cpp",
+  "name": "VSKIO::vfunc_14",
+  "class": "VSKIO",
+  "signature": "void fn_005762C0(void* self, int edx_unused, void* a1)",
+  "summary": "Builds a temporary Unknown {vptr, this}, clears this+0x488, invokes the function stored at this+0x20 with the c_str() of the string argument, then destroys the temporary.",
+  "fields": [
+    {
+      "class": "VSKIO",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "VSKIO",
+      "offset": "+0x488",
+      "type": "uint32_t",
+      "name": "field_0x488"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:07:25Z"
+}
