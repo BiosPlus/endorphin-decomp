@@ -11803,3 +11803,25 @@ void fn_0059EBF0(void* holder) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B4149C));
 }
 } // namespace lift_0059EBF0
+
+// [0x005AB1A0] ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setMetaBodyNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005AB1A0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B42210;
+extern DWORD mem_00B4220C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::RigNode>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setMetaBodyNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary On first call, lazily initializes the static accessor object at mem_00B4220C (guarded by bit 0 of mem_00B42210) and stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_005AB1A0(void* holder) {
+    // Lazy-init guard: bit 0 of mem_00B42210 marks the static object as initialized.
+    if ((mem_00B42210 & 1u) == 0) {
+        mem_00B42210 |= 1u;
+        ext_0067A670(static_cast<void*>(&mem_00B4220C), 0u);
+        mem_00B4220C = 0x0095F1ECu; // vtable of the static accessor object
+    }
+    lift_field<void*>(holder, 0x04) = static_cast<void*>(&mem_00B4220C);
+}
+} // namespace lift_005AB1A0
