@@ -1,0 +1,28 @@
+{
+  "va": "0x00433560",
+  "size": 134,
+  "orig_symbol": "sub_00433560",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "ExpressionSource::dispatchVfunc_0x208 (try/catch wrapper)",
+  "class": "ExpressionSource",
+  "signature": "void fn_00433560()",
+  "summary": "Calls vtable slot 0x208 with argument 1 on the object from fn_00465B40; on exception, reports a string via ext_006A5E60.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExceptionContext",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:36:34Z"
+}
