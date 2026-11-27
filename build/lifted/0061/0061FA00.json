@@ -1,0 +1,46 @@
+{
+  "va": "0x0061FA00",
+  "size": 939,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_21",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_21",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "static bool is_sentinel(uint32_t v)",
+  "summary": "Loads twist/swing constraint properties and parent/child transforms from a data node.",
+  "fields": [
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x164",
+      "type": "uint8_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x224",
+      "type": "uint8_t",
+      "name": "field_0x224"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x328",
+      "type": "uint8_t",
+      "name": "field_0x328"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x329",
+      "type": "uint8_t",
+      "name": "field_0x329"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x32A",
+      "type": "uint8_t",
+      "name": "field_0x32A"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:24:59Z"
+}

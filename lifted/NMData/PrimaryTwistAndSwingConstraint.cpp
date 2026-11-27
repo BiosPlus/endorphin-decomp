@@ -589,3 +589,91 @@ void* fn_0061D9F0(void* self, void* owner) {
     return v;
 }
 } // namespace lift_0061D9F0
+
+// [0x0061FA00]
+namespace lift_0061FA00 {
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_21
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Loads twist/swing constraint properties and parent/child transforms from a data node.
+// @field NMData::PrimaryTwistAndSwingConstraint +0x164 uint8_t field_0x164
+// @field NMData::PrimaryTwistAndSwingConstraint +0x224 uint8_t field_0x224
+// @field NMData::PrimaryTwistAndSwingConstraint +0x328 uint8_t field_0x328
+// @field NMData::PrimaryTwistAndSwingConstraint +0x329 uint8_t field_0x329
+// @field NMData::PrimaryTwistAndSwingConstraint +0x32A uint8_t field_0x32A
+
+void __thiscall ext_00612650(void* self, void* arg);
+void __thiscall ext_00593910(void* self, uint32_t arg);
+void __thiscall ext_00610E00(void* self, uint32_t arg);
+void __thiscall ext_0061F510(void* self, uint32_t arg);
+uint32_t __thiscall ext_0063EFE0(void* self, uint32_t name);
+uint32_t __thiscall ext_0063F530(void* self, uint32_t key, uint32_t a2, uint32_t a3);
+void* __cdecl ext_0067EFD0(void* out, uint32_t val);
+void __cdecl ext_00427640(void* out, void* obj);
+
+extern uint32_t mem_00A9F1C8;
+extern uint32_t mem_00A9F34C;
+extern uint32_t mem_00A9EFDC;
+extern uint32_t mem_00A9F298;
+extern uint32_t mem_00A9EF98;
+extern uint32_t mem_00A9F008;
+extern uint32_t mem_00A9FA48;
+extern uint32_t mem_00A9F9F0;
+extern uint32_t mem_00A9F778;
+
+static bool is_sentinel(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+static uint32_t norm_sentinel(uint32_t v) {
+    return is_sentinel(v) ? 0x00B53B30u : v;
+}
+
+static void read_bool_prop(void* node, uint32_t key, uint8_t* out) {
+    uint32_t val = ext_0063EFE0(node, key);
+    if (is_sentinel(val)) {
+        *out = 1;
+    } else {
+        uint32_t tmp = val;
+        ext_00427640(out, &tmp);
+    }
+}
+
+extern void __thiscall fn_0061FA00(void* self, void* arg0) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_00612650(self, arg0);
+
+    uint32_t node1 = norm_sentinel(ext_0063F530(arg0, mem_00A9F1C8, 0, 1));
+    uint8_t buf[16];
+    if (!is_sentinel(node1)) {
+        void** vtable = *reinterpret_cast<void***>(self);
+        void* res = ext_0067EFD0(buf, node1);
+        reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0xF4 / 4])(self, res);
+
+        uint32_t sub = norm_sentinel(ext_0063F530(reinterpret_cast<void*>(node1), mem_00A9F34C, 0, 1));
+        if (!is_sentinel(sub)) {
+            ext_00593910(self, node1);
+        }
+    } else {
+        uint32_t node2 = norm_sentinel(ext_0063F530(arg0, mem_00A9EFDC, 0, 1));
+        void** vtable = *reinterpret_cast<void***>(self);
+        void* res = ext_0067EFD0(buf, node2);
+        reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0xF4 / 4])(self, res);
+    }
+
+    uint32_t node3 = norm_sentinel(ext_0063F530(arg0, mem_00A9F298, 0, 1));
+    if (!is_sentinel(node3)) {
+        uint32_t v1 = norm_sentinel(ext_0063F530(arg0, mem_00A9F298, 0, 1));
+        ext_00610E00(base + 0x164, v1);
+        uint32_t v2 = norm_sentinel(ext_0063F530(arg0, mem_00A9EF98, 0, 1));
+        ext_00610E00(base + 0x224, v2);
+    } else {
+        uint32_t v3 = norm_sentinel(ext_0063F530(arg0, mem_00A9F008, 0, 1));
+        ext_0061F510(self, v3);
+    }
+
+    read_bool_prop(arg0, mem_00A9FA48, base + 0x328);
+    read_bool_prop(arg0, mem_00A9F9F0, base + 0x329);
+    read_bool_prop(arg0, mem_00A9F778, base + 0x32A);
+}
+} // namespace lift_0061FA00

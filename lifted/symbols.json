@@ -63824,6 +63824,13 @@
     "summary": "Dispatches on arg2 (0x33B, 0x33E, 0x356) to one of three helpers, otherwise forwards to AnimatableTransform::vfunc_15; always returns self.",
     "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
   },
+  "0x0061FA00": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_21",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "static bool is_sentinel(uint32_t v)",
+    "summary": "Loads twist/swing constraint properties and parent/child transforms from a data node.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x0061FDB0": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_15",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

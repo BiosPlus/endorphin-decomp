@@ -15,16 +15,16 @@ struct NMData_PrimaryTwistAndSwingConstraint_Fields {
     // +0x154 float                    field_0x154  (evidence: 0x00612B60, 0x00612C00)
     // +0x158 float                    field_0x158  (evidence: 0x00612B60, 0x00612C00)
     // +0x15C float                    field_0x15c  (evidence: 0x00612B60, 0x00612C00)
-    // +0x164 uint8_t                  field_0x164  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0)
-    // +0x224 uint8_t                  field_0x224  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0)
+    // +0x164 uint8_t                  field_0x164  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0, 0x0061FA00)
+    // +0x224 uint8_t                  field_0x224  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0, 0x0061FA00)
     // +0x2D8 void*                    field_0x2d8  (evidence: 0x00612D70)
     // +0x318 void*                    field_0x318  (evidence: 0x00612D70)
     // +0x320 void* field_0x320 (object; vtable slots 8 and 9 are called with the argument)  (evidence: 0x00611E00)
     // +0x324 void* field_0x324 (object; vtable slot 8 is called with the argument)  (evidence: 0x00611E00)
     // +0x328 void* field_0x328 (object; vtable slot 8 is called with the argument)  (evidence: 0x00611E00) // CONFLICT: multiple definitions at +0x328
-    // +0x328 uint8_t                  field_0x328  (evidence: 0x004A9B50, 0x00611BF0, 0x00611C90, 0x00611CE0) // CONFLICT: multiple definitions at +0x328
-    // +0x329 uint8_t                  field_0x329  (evidence: 0x00611BF0, 0x00611CE0)
-    // +0x32A uint8_t                  field_0x32A  (evidence: 0x00611BF0)
+    // +0x328 uint8_t                  field_0x328  (evidence: 0x004A9B50, 0x00611BF0, 0x00611C90, 0x00611CE0, 0x0061FA00) // CONFLICT: multiple definitions at +0x328
+    // +0x329 uint8_t                  field_0x329  (evidence: 0x00611BF0, 0x00611CE0, 0x0061FA00)
+    // +0x32A uint8_t                  field_0x32A  (evidence: 0x00611BF0, 0x0061FA00)
     // +0x32C void* field_0x32c (object; vtable slots 8 and 9 are called with the argument)  (evidence: 0x00611E00) // CONFLICT: multiple definitions at +0x32C
     // +0x32C void*                    field_0x32c  (evidence: 0x00611CE0) // CONFLICT: multiple definitions at +0x32C
     // +0x330 void*                    field_0x330  (evidence: 0x00611CE0, 0x0061D9F0)
