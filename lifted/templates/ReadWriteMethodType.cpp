@@ -10796,3 +10796,26 @@ void fn_004F6330(void* self) {
     *reinterpret_cast<std::uint32_t*>(holder + 0x04) = 0x00AE9EE4u;
 }
 } // namespace lift_004F6330
+
+// [0x004F6110] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, float, &public: void __thiscall MatrixWithProperties::setPhi(float)>::vfunc_40 (122 bytes)
+namespace lift_004F6110 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = object; calls ext_00672000 on self).
+extern void ext_0067A670();
+// Function-local static guard (bit 0 = initialized/initializing).
+extern DWORD mem_00AE9EE0;
+// Function-local static object storage; first DWORD is its vtable pointer.
+extern DWORD mem_00AE9EDC;
+
+// @name ReadWriteMethodType_MatrixWithProperties_getPhi_vfunc_40
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, float, &public: void __thiscall MatrixWithProperties::setPhi(float)>
+// @summary Lazily initializes the function-local static ReadWriteMethodType object (guard bit 0) and stores its address into the ValuePtrType argument at +0x04.
+// @field ValuePtrType +0x04 DWORD field_0x04
+void fn_004F6110(void* self) {
+    if ((mem_00AE9EE0 & 1u) == 0) {
+        mem_00AE9EE0 |= 1u;
+        ext_0067A670();  // thiscall on &mem_00AE9EDC
+        mem_00AE9EDC = 0x0094D114u;  // vtable of the static object
+    }
+    lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9EDC));
+}
+} // namespace lift_004F6110

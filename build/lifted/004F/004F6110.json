@@ -1,0 +1,22 @@
+{
+  "va": "0x004F6110",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setPhi(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType_MatrixWithProperties_getPhi_vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setPhi(float)\u003e",
+  "signature": "void fn_004F6110(void* self)",
+  "summary": "Lazily initializes the function-local static ReadWriteMethodType object (guard bit 0) and stores its address into the ValuePtrType argument at +0x04.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:29Z"
+}

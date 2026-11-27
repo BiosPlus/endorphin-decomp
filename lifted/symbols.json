@@ -19158,6 +19158,13 @@
     "summary": "Lazily initializes a function-local static object (guarded by mem_00AE9ED8), then stores its address into this+0x04.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004F6110": {
+    "name": "ReadWriteMethodType_MatrixWithProperties_getPhi_vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setPhi(float)\u003e",
+    "signature": "void fn_004F6110(void* self)",
+    "summary": "Lazily initializes the function-local static ReadWriteMethodType object (guard bit 0) and stores its address into the ValuePtrType argument at +0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004F6190": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties\u003e",
