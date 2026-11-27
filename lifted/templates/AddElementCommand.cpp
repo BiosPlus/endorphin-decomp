@@ -306,3 +306,56 @@ void __thiscall fn_00517910(void* self) {
 
 } // namespace lift_00517910
 } // namespace lift_00517910
+
+// [0x00501450] PointainerWithUndo<PointainerSet<NMData::MaterialPair>>::AddElementCommand::vfunc_2 (94 bytes)
+namespace lift_00501450 {
+// Known callee 0x00527EC0: VectorPtrFindAndErase (Finds a pointer in a vector, clears it to null, erases it via VectorPtrErase, and returns its index.)
+extern int32_t __thiscall ext_00527EC0(void* self, uintptr_t* target_ptr);
+// Known callee 0x00517510: CallSlot3OnEachEntryThenDispatch (Forwards its argument to CallSlot3OnEachEntry (0x005170D0) on this, then calls 0x00678D70 on this with flag 1.)
+extern void __thiscall ext_00517510(void* self, void* arg);
+
+static inline void* u32_to_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// @name PointainerWithUndo<PointainerSet<NMData::MaterialPair>>::AddElementCommand::vfunc_2
+// @class PointainerWithUndo<PointainerSet<NMData::MaterialPair>>::AddElementCommand
+// @summary Swaps the pending pointer at +0x18 for the current one at +0x1c (releasing the old one via its vtable slot 0 with flag 1), removes the new one from the vector at +0x10, invokes the callback at +0x24 with the new pointer and +0x20, then dispatches to slot 3 of the object at +0x14 if set.
+// @field AddElementCommand +0x10 uint32_t field_0x10
+// @field AddElementCommand +0x14 uint32_t field_0x14
+// @field AddElementCommand +0x18 uint32_t field_0x18
+// @field AddElementCommand +0x1c uint32_t field_0x1c
+// @field AddElementCommand +0x20 uint32_t field_0x20
+// @field AddElementCommand +0x24 uint32_t field_0x24
+void fn_00501450(void* self) {
+    // Old pointer at +0x18 is released if it differs from the new one at +0x1c.
+    uint32_t old_ptr = lift_field<uint32_t>(self, 0x18);
+    uint32_t new_ptr = lift_field<uint32_t>(self, 0x1c);
+    if (new_ptr != old_ptr && old_ptr != 0) {
+        void* obj = u32_to_ptr(old_ptr);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto release = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtbl[0]);
+        release(obj, 1);
+    }
+    lift_field<uint32_t>(self, 0x18) = new_ptr;
+
+    // Remove the new pointer from the vector at +0x10.
+    uintptr_t target = static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x1c));
+    ext_00527EC0(u32_to_ptr(lift_field<uint32_t>(self, 0x10)), &target);
+
+    // Invoke the callback at +0x24 (slot 1) with (+0x1c, +0x20).
+    if (lift_field<uint32_t>(self, 0x24) != 0) {
+        uint32_t arg2 = lift_field<uint32_t>(self, 0x20);
+        void* obj = u32_to_ptr(lift_field<uint32_t>(self, 0x24));
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto callback = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(vtbl[1]);
+        callback(obj, lift_field<uint32_t>(self, 0x1c), arg2);
+    }
+
+    // Dispatch on the object at +0x14 if present.
+    if (lift_field<uint32_t>(self, 0x14) != 0) {
+        ext_00517510(u32_to_ptr(lift_field<uint32_t>(self, 0x14)),
+                     u32_to_ptr(lift_field<uint32_t>(self, 0x1c)));
+    }
+}
+} // namespace lift_00501450

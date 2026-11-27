@@ -11,6 +11,12 @@
 namespace lifted_layout {
 struct AddElementCommand_Fields {
     // +0x8   void*                    field_0x08  (evidence: 0x0060AE20)
-    // +0x14  int32_t                  field_0x14  (evidence: 0x0060AE20)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00501450)
+    // +0x14  int32_t                  field_0x14  (evidence: 0x0060AE20) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00501450) // CONFLICT: multiple definitions at +0x14
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x00501450)
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x00501450)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x00501450)
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x00501450)
 };
 } // namespace lifted_layout

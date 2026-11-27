@@ -22203,6 +22203,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00501450": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::AddElementCommand::vfunc_2",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::AddElementCommand",
+    "signature": "static inline void* u32_to_ptr(uint32_t v)",
+    "summary": "Swaps the pending pointer at +0x18 for the current one at +0x1c (releasing the old one via its vtable slot 0 with flag 1), removes the new one from the vector at +0x10, invokes the callback at +0x24 with the new pointer and +0x20, then dispatches to slot 3 of the object at +0x14 if set.",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
+  },
   "0x005014B0": {
     "name": "sub_005014B0",
     "signature": "void* fn_005014B0(void* arg)",
