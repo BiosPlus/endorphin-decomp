@@ -62501,6 +62501,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00625240 (ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00625540": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",
+    "signature": "inline void* vslot(void* obj, ptrdiff_t off)",
+    "summary": "Reads the colliding flag from the sensor held in self-\u003efield_0x00, stores a bool-derived temp into self-\u003efield_0x04 via assignFromOther, then forwards to self-\u003efield_0x04's vfunc +0xBC.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006255F0": {
     "name": "sub_006255F0",
     "signature": "void* fn_006255F0()",

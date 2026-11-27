@@ -187609,3 +187609,76 @@ uint8_t fn_0068F2E0(void* holder, void* arg2) {
     return result;
 }
 } // namespace lift_0068F2E0
+
+// [0x00625540] ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>::vfunc_47 (173 bytes)
+namespace lift_00625540 {
+// Known callee 0x006720A0: sub_006720A0 (18B) - ctor for an 8-byte pointer-pair temp from a bool-ish value
+extern void ext_006720A0();
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void ext_0041CF50();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+namespace {
+
+// Returns the function pointer stored at byte offset `off` in the vtable of `obj`.
+inline void* vslot(void* obj, ptrdiff_t off) {
+    void* vtbl = *reinterpret_cast<void**>(obj);
+    return *reinterpret_cast<void**>(static_cast<uint8_t*>(vtbl) + off);
+}
+
+using VoidThisFn   = void (__thiscall*)(void* self);
+using FloatThisFn  = float (__thiscall*)(void* self);
+using CtorFn       = void (__thiscall*)(void* self, uint32_t arg);
+using AssignFn     = void* (__thiscall*)(void* self, void* other);
+using ReleaseFn    = void (__thiscall*)(void* self, void* other);
+using U32ThisFn    = uint32_t (__thiscall*)(void* self, void* arg);
+using ThrowFn      = void (*)(void* obj, void* throwInfo);
+
+} // namespace
+
+// @name ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool>::vfunc_47
+// @class ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>
+// @summary Reads the colliding flag from the sensor held in self->field_0x00, stores a bool-derived temp into self->field_0x04 via assignFromOther, then forwards to self->field_0x04's vfunc +0xBC.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field Sensors::SensorIsCollidingWith +0x30 bool field_0x30
+uint32_t fn_00625540(void* self) {
+    (void)&mem_008A5428; // SEH scope-table reference from frame setup; frame itself is omitted.
+
+    void* sensor = lift_field<void*>(self, 0x00);
+    if (!sensor) {
+        // Null sensor: construct DerivedException and throw it with the global throw-info.
+        alignas(8) uint8_t exc[16] = {};
+        reinterpret_cast<VoidThisFn>(&ext_0046C3C0)(exc);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(exc, static_cast<void*>(&mem_009DEC1C));
+        return 0; // not reached
+    }
+
+    // Virtual getter at +0x44 (float result is discarded by the original code).
+    reinterpret_cast<FloatThisFn>(vslot(sensor, 0x44))(sensor);
+
+    uint8_t flag = lift_field<uint8_t>(sensor, 0x30);
+
+    // Original stores the byte over the low byte of the stack argument slot and then
+    // reads it back as a dword, so the upper 3 bytes keep the old self pointer bits.
+    uint32_t packed = (static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)) & 0xFFFFFF00u) | flag;
+
+    // 8-byte temp pair { field_0x00, field_0x04 } (pointer-sized slots).
+    alignas(alignof(void*)) uint8_t tmp[2 * sizeof(void*)] = {};
+    reinterpret_cast<CtorFn>(&ext_006720A0)(tmp, packed);
+    reinterpret_cast<AssignFn>(&ext_0041CF50)(self, tmp);
+
+    void* tmpRef = lift_field<void*>(tmp, sizeof(void*));
+    if (tmpRef) {
+        reinterpret_cast<ReleaseFn>(vslot(tmpRef, 0x78))(tmpRef, tmp);
+    }
+
+    void* target = lift_field<void*>(self, 0x04);
+    return reinterpret_cast<U32ThisFn>(vslot(target, 0xBC))(target, self);
+}
+} // namespace lift_00625540
