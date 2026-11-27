@@ -1,0 +1,28 @@
+{
+  "va": "0x0060D5A0",
+  "size": 67,
+  "orig_symbol": "NMData::EffectorGroupData::vfunc_19",
+  "src_path": "src/NMData/EffectorGroupData.cpp",
+  "lifted_path": "lifted/NMData/EffectorGroupData.cpp",
+  "name": "NMData::EffectorGroupData::vfunc_19",
+  "class": "NMData::EffectorGroupData",
+  "signature": "void fn_0060D5A0(void* self)",
+  "summary": "Clears the base-class strings, range-checks the string range at this+0x44 against this+0x4c, then calls copyStringRangeTruncate on it.",
+  "fields": [
+    {
+      "class": "EffectorGroupData",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "EffectorGroupData",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:24:01Z"
+}

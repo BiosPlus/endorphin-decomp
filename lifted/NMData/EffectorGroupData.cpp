@@ -95,3 +95,38 @@ std::string fn_0060D4D0(const void* /*self*/) {
 }
 } // namespace lift_0047DB90
 } // namespace lift_0060D4D0
+
+// [0x0060D5A0] NMData::EffectorGroupData::vfunc_19 (67 bytes)
+namespace lift_0060D5A0 {
+// Known callee 0x0060BB50: NMData::EffectorBaseData::vfunc_19 (Clears two std::string members (at +0x04 and +0x20) of the object.)
+extern void __thiscall ext_0060BB50(void* self);
+// Known callee 0x00406510: Unknown::copyStringRangeTruncate (Copies a std::string range through sub_00406090, destroys the old tail past the new end, stores the new end at this+0x08 and writes {a2, a3} to the sret pair at a1.)
+extern uint32_t __thiscall ext_00406510(void* self, void* a1, void* a2, uint32_t a3, void* a4, uint32_t a5);
+// RDATA slot 0x00925134: pointer to the CRT invalid-parameter handler (MSVCR80 _invalid_parameter_noinfo).
+extern uint32_t mem_00925134;
+
+// @name NMData::EffectorGroupData::vfunc_19
+// @class NMData::EffectorGroupData
+// @summary Clears the base-class strings, range-checks the string range at this+0x44 against this+0x4c, then calls copyStringRangeTruncate on it.
+// @field EffectorGroupData +0x48 uint32_t field_0x48
+// @field EffectorGroupData +0x4C uint32_t field_0x4c
+void fn_0060D5A0(void* self) {
+    ext_0060BB50(self);
+
+    const uint32_t tail = lift_field<uint32_t>(self, 0x4C);
+    auto invalid_param = reinterpret_cast<void (*)()>(mem_00925134);
+
+    void* range = &lift_field<uint8_t>(self, 0x44);
+    if (lift_field<uint32_t>(range, 0x4) > tail) {
+        invalid_param();
+    }
+    const uint32_t begin = lift_field<uint32_t>(range, 0x4);
+    if (begin > lift_field<uint32_t>(range, 0x8)) {
+        invalid_param();
+    }
+
+    // sret pair written by the callee; the caller discards it.
+    uint32_t sret[2] = {0, 0};
+    ext_00406510(range, sret, range, begin, range, tail);
+}
+} // namespace lift_0060D5A0

@@ -43676,6 +43676,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
     "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
   },
+  "0x0060D5A0": {
+    "name": "NMData::EffectorGroupData::vfunc_19",
+    "class": "NMData::EffectorGroupData",
+    "signature": "void fn_0060D5A0(void* self)",
+    "summary": "Clears the base-class strings, range-checks the string range at this+0x44 against this+0x4c, then calls copyStringRangeTruncate on it.",
+    "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
+  },
   "0x0060D730": {
     "name": "unknown::ctorWithTailFields",
     "class": "unknown",
