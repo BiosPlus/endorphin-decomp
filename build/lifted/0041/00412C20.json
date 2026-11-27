@@ -1,0 +1,28 @@
+{
+  "va": "0x00412C20",
+  "size": 127,
+  "orig_symbol": "sub_00412C20",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "SubobjectStringLookupSetFlag",
+  "class": "Unknown",
+  "signature": "extern \"C\" int mem_00924300;  // IAT slot: MFC80!ord_876 (thiscall, returns const char*) extern \"C\" int mem_00924FE4;  // IAT slot: MSVCP80 basic_string(const char*) ctor extern \"C\" int mem_00924FF4;  // IAT slot: MSVCP80 basic_string dtor namespace",
+  "summary": "Builds a temporary std::string from a subobject query, forwards it with an int32-derived key to sub_00594620, and stores (self-\u003e+0x37 == 0) into the returned object's +0x4E6 byte when non-null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x37",
+      "type": "uint8_t",
+      "name": "field_0x37"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:04:53Z"
+}

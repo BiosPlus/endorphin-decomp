@@ -1436,6 +1436,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x1C and forwards through mem_009244D4.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00412C20": {
+    "name": "SubobjectStringLookupSetFlag",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_00924300;  // IAT slot: MFC80!ord_876 (thiscall, returns const char*) extern \"C\" int mem_00924FE4;  // IAT slot: MSVCP80 basic_string(const char*) ctor extern \"C\" int mem_00924FF4;  // IAT slot: MSVCP80 basic_string dtor namespace",
+    "summary": "Builds a temporary std::string from a subobject query, forwards it with an int32-derived key to sub_00594620, and stores (self-\u003e+0x37 == 0) into the returned object's +0x4E6 byte when non-null.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00412CA0": {
     "name": "IsMfcPairCallZero",
     "signature": "extern \"C\" int __cdecl fn_00412CA0(void* a1, void* a2)",
