@@ -68777,3 +68777,51 @@ void __thiscall fn_005051F0(void* self, void* target) {
     vfunc_bc(field4, target);
 }
 } // namespace lift_005051F0
+
+// [0x004B11B0]
+namespace lift_004B11B0 {
+// @name ExprParser::ReadMethodType<Interpreter,getType>::vfunc_47
+// @class ExprParser::ReadMethodType<Interpreter,getType>
+// @summary Evaluates Interpreter::getType on the target object, assigns the result, and invokes vtable slot 0xBC.
+// @field ValuePtr arg0 +0x00 void* field_0x00
+// @field ValuePtr arg0 +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_006720E0(void* self, void* arg);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+extern const uint32_t mem_009DEC1C;
+
+struct ValuePair {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+void __thiscall fn_004B11B0(void* self, void* arg1) {
+    (void)self;
+    auto* target = static_cast<ValuePair*>(arg1);
+    void* obj = target->field_0x00;
+    if (!obj) {
+        uint8_t exc[0x24];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return;
+    }
+
+    ValuePair tmp{};
+    ext_006720E0(&tmp, static_cast<uint8_t*>(obj) + 4);
+    ext_0041CF50(target, &tmp);
+
+    if (tmp.field_0x04) {
+        using ReleaseFn = void(__thiscall*)(void*, void*);
+        auto** vtable = *reinterpret_cast<void***>(tmp.field_0x04);
+        reinterpret_cast<ReleaseFn>(vtable[0x78 / 4])(tmp.field_0x04, &tmp);
+    }
+
+    void* field04 = target->field_0x04;
+    using Vfunc47Fn = void(__thiscall*)(void*, void*);
+    auto** vtable = *reinterpret_cast<void***>(field04);
+    reinterpret_cast<Vfunc47Fn>(vtable[0xBC / 4])(field04, target);
+}
+} // namespace lift_004B11B0

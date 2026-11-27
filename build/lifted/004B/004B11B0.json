@@ -1,0 +1,14 @@
+{
+  "va": "0x004B11B0",
+  "size": 152,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter,getType\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter,getType\u003e",
+  "signature": "void __thiscall fn_004B11B0(void* self, void* arg1)",
+  "summary": "Evaluates Interpreter::getType on the target object, assigns the result, and invokes vtable slot 0xBC.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:20:55Z"
+}
