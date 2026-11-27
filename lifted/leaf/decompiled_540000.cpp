@@ -1545,9 +1545,9 @@ extern void* ext_005480F0(void* self);
 // @field Unknown +0x3c float field_0x3c
 // @field Unknown +0x40 float field_0x40
 // @field Unknown +0x84 void* child
-// @field Unknown +0x84 uint8_t child_flag_at_0x04 (child+0x04)
-// @field Unknown +0x84 uint32_t child_count_at_0xf8 (child+0xf8)
-// @field Unknown +0x84 uint32_t child_table_at_0x08 (child+0x08, indexed by count*15)
+// @field UnknownChild +0x04 uint8_t flag
+// @field UnknownChild +0x08 uint32_t table (indexed by count*15, 4-byte entries)
+// @field UnknownChild +0xf8 uint32_t count
 void fn_00543C00(void* self) {
     void* child = lift_field<void*>(self, 0x84);
 
