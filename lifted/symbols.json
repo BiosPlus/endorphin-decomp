@@ -79700,6 +79700,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0069A830 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0069B070": {
+    "name": "ExprParser::ExpressionContainer::vfunc_10",
+    "class": "ExprParser::ExpressionContainer",
+    "signature": "void __thiscall fn_0069B070(void* self, void* arg)",
+    "summary": "Dynamic-casts the argument to RTTI type 0x00AA3D80; if the cast succeeds, invokes three sub-object helpers pairing this+0x08/+0x18/+0x28 with the cast result's +0x08/+0x18/+0x28.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainer.cpp"
+  },
   "0x0069B0C0": {
     "name": "ConsumeStringPrefix",
     "signature": "bool ConsumeStringPrefix(char **dst, const char *src)",
