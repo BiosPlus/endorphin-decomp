@@ -2222,3 +2222,42 @@ int fn_00784650(void* self, uint32_t value, uint32_t /*unused_stack_arg*/) {
     return 0;
 }
 } // namespace lift_00784650
+
+// [0x0078CEF0] sub_0078CEF0 (128 bytes)
+namespace lift_0078CEF0 {
+// KERNEL32 critical-section imports (IAT slots) and MSVCR80 free.
+extern void (__stdcall *mem_009242E0)(void*);  // EnterCriticalSection
+extern void (__stdcall *mem_009241BC)(void*);  // LeaveCriticalSection
+extern void (__cdecl *mem_009251D8)(void*);    // free
+
+// @name CriticalSectionBuckets::ClearBuckets
+// @class CriticalSectionBuckets
+// @summary Under the critical section at +0x00, frees every node in each bucket chain of the array at +0x04 (count at +0x0C), zeroes the bucket heads, then resets +0x20 and +0x24 to 0.
+// @field CriticalSectionBuckets +0x00 void* criticalSection
+// @field CriticalSectionBuckets +0x04 void** buckets
+// @field CriticalSectionBuckets +0x0C uint32_t bucketCount
+// @field CriticalSectionBuckets +0x20 uint32_t field_0x20
+// @field CriticalSectionBuckets +0x24 uint32_t field_0x24
+void __thiscall fn_0078CEF0(void* self) {
+    void* cs = lift_field<void*>(self, 0x00);
+    mem_009242E0(cs);
+
+    void** buckets = lift_field<void**>(self, 0x04);
+    uint32_t count = lift_field<uint32_t>(self, 0x0C);
+    if (buckets != nullptr && count > 0) {
+        for (uint32_t i = 0; i < count; ++i) {
+            void* node = buckets[i];
+            while (node != nullptr) {
+                void* next = *static_cast<void**>(node);
+                mem_009251D8(node);
+                node = next;
+            }
+            buckets[i] = nullptr;
+        }
+    }
+
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = 0;
+    mem_009241BC(cs);
+}
+} // namespace lift_0078CEF0

@@ -76200,6 +76200,13 @@
     "summary": "Returns the dword at index this-\u003efield_0x1C if 0 \u003c= index \u003c ext_006E7460(this), else 0.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078CEF0": {
+    "name": "CriticalSectionBuckets::ClearBuckets",
+    "class": "CriticalSectionBuckets",
+    "signature": "extern void (__stdcall *mem_009242E0)(void*);  // EnterCriticalSection extern void (__stdcall *mem_009241BC)(void*);  // LeaveCriticalSection extern void (__cdecl *mem_009251D8)(void*);    // free void __thiscall fn_0078CEF0(void* self)",
+    "summary": "Under the critical section at +0x00, frees every node in each bucket chain of the array at +0x04 (count at +0x0C), zeroes the bucket heads, then resets +0x20 and +0x24 to 0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078D1C0": {
     "name": "makeLowBitMask",
     "signature": "__cdecl uint32_t fn_0078D1C0(int32_t n)",
