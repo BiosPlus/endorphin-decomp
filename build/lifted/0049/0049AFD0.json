@@ -1,0 +1,40 @@
+{
+  "va": "0x0049AFD0",
+  "size": 188,
+  "orig_symbol": "NMData::State::vfunc_26_off_8",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_26_off_8",
+  "class": "NMData::State",
+  "signature": "void fn_0049AFD0(void* self, const float* p, uint32_t arg2)",
+  "summary": "Accepts a new (p[0], p[1]) corner if both deltas from (+0xE0, +0xE4) are \u003e= 0.007 and all four values are in [0,1]; then stores it to +0xE8/+0xEC.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "field_0xE0"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE4",
+      "type": "float",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE8",
+      "type": "float",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "field_0xEC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:31:53Z"
+}

@@ -8168,6 +8168,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFDB8 and tail-calls sub_0045F150.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0045FB00": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_86",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "inline void push_cstr(void* vec, const void* std_str)",
+    "summary": "Formats event label strings into a vector and returns the selected field value.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045FF80": {
     "name": "sub_0045FF80",
     "class": "UnknownClass",
@@ -14670,6 +14677,13 @@
     "class": "NMData::State",
     "signature": "bool fn_0049AF70(void* self, const float* pt)",
     "summary": "Returns true if the 2D point pt[0..1] lies inside the box (e0,e4)-(e8,ec) stored in this.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
+  "0x0049AFD0": {
+    "name": "NMData::State::vfunc_26_off_8",
+    "class": "NMData::State",
+    "signature": "void fn_0049AFD0(void* self, const float* p, uint32_t arg2)",
+    "summary": "Accepts a new (p[0], p[1]) corner if both deltas from (+0xE0, +0xE4) are \u003e= 0.007 and all four values are in [0,1]; then stores it to +0xE8/+0xEC.",
     "lifted_path": "lifted/NMData/State.cpp"
   },
   "0x0049B170": {

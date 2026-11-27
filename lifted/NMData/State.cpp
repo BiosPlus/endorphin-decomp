@@ -508,3 +508,49 @@ void __thiscall fn_008702F0(void* self, void* arg1, void* arg2) {
     ext_006829A0(arg1);
 }
 } // namespace lift_008702F0
+
+// [0x0049AFD0] NMData::State::vfunc_26_off_8 (188 bytes)
+namespace lift_0049AFD0 {
+// Known callee 0x0049ACB0: descriptiveName: allFourFloatsInUnitRange (Returns true if all four float components at p[0..3] lie in [0.0, 1.0]; NaN fails.)
+extern bool ext_0049ACB0(const float* p);
+// Listed in the original callee metadata (sub_00498B60); not called in this function's disasm.
+extern void ext_00498B60();
+extern int mem_0094B858;
+
+// @name NMData::State::vfunc_26_off_8
+// @class NMData::State
+// @summary Accepts a new (p[0], p[1]) corner if both deltas from (+0xE0, +0xE4) are >= 0.007 and all four values are in [0,1]; then stores it to +0xE8/+0xEC.
+// @field NMData::State +0xE0 float field_0xE0
+// @field NMData::State +0xE4 float field_0xE4
+// @field NMData::State +0xE8 float field_0xE8
+// @field NMData::State +0xEC float field_0xEC
+void fn_0049AFD0(void* self, const float* p, uint32_t arg2) {
+    (void)arg2;  // second stack argument (ret 8) is not used by the original code
+    // Metadata callee 0x00498B60 is not called by these bytes; address-only reference, no runtime effect.
+    (void)&ext_00498B60;
+
+    const float x1 = lift_field<float>(self, 0xE0);
+    const float y1 = lift_field<float>(self, 0xE4);
+    const float minDelta = *reinterpret_cast<const float*>(&mem_0094B858);
+
+    // Ordered "less than" test: NaN does not reject here (matches the x87 flag logic).
+    const float dx = p[0] - x1;
+    if (dx < minDelta) {
+        return;
+    }
+    const float dy = p[1] - y1;
+    if (dy < minDelta) {
+        return;
+    }
+
+    float box[4] = {x1, y1, p[0], p[1]};
+    if (!ext_0049ACB0(box)) {
+        return;
+    }
+
+    lift_field<float>(self, 0xE0) = x1;
+    lift_field<float>(self, 0xE4) = y1;
+    lift_field<float>(self, 0xE8) = p[0];
+    lift_field<float>(self, 0xEC) = p[1];
+}
+} // namespace lift_0049AFD0

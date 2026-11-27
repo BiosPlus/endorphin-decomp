@@ -20,13 +20,13 @@ struct NMData_State_Fields {
     // +0xCC  void*                    field_0xCC  (evidence: 0x0049F140)
     // +0xD0  void*                    list_head  (evidence: 0x0049FCF0)
     // +0xD8  void*                    field_0xD8  (evidence: 0x0049F140)
-    // +0xE0  float                    field_0xE0  (evidence: 0x0049AF70, 0x0049E000, 0x0049E0D0, 0x0049E190, 0x0049FAC0) // CONFLICT: multiple definitions at +0xE0
+    // +0xE0  float                    field_0xE0  (evidence: 0x0049AF70, 0x0049AFD0, 0x0049E000, 0x0049E0D0, 0x0049E190, 0x0049FAC0) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  float                    rect_x1  (evidence: 0x0049CD30) // CONFLICT: multiple definitions at +0xE0
-    // +0xE4  float                    field_0xE4  (evidence: 0x0049AF70, 0x0049E0D0, 0x0049E190, 0x0049FAC0) // CONFLICT: multiple definitions at +0xE4
+    // +0xE4  float                    field_0xE4  (evidence: 0x0049AF70, 0x0049AFD0, 0x0049E0D0, 0x0049E190, 0x0049FAC0) // CONFLICT: multiple definitions at +0xE4
     // +0xE4  float                    rect_y1  (evidence: 0x0049CD30) // CONFLICT: multiple definitions at +0xE4
-    // +0xE8  float                    field_0xE8  (evidence: 0x0049AF70, 0x0049E0D0, 0x0049E190, 0x0049FAC0, 0x0049FB50) // CONFLICT: multiple definitions at +0xE8
+    // +0xE8  float                    field_0xE8  (evidence: 0x0049AF70, 0x0049AFD0, 0x0049E0D0, 0x0049E190, 0x0049FAC0, 0x0049FB50) // CONFLICT: multiple definitions at +0xE8
     // +0xE8  float                    rect_x2  (evidence: 0x0049CD30) // CONFLICT: multiple definitions at +0xE8
-    // +0xEC  float                    field_0xEC  (evidence: 0x0049ABA0, 0x0049AF70, 0x0049E0D0, 0x0049E190, 0x0049FAC0, 0x0049FB50) // CONFLICT: multiple definitions at +0xEC
+    // +0xEC  float                    field_0xEC  (evidence: 0x0049ABA0, 0x0049AF70, 0x0049AFD0, 0x0049E0D0, 0x0049E190, 0x0049FAC0, 0x0049FB50) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  float                    rect_y2  (evidence: 0x0049CD30) // CONFLICT: multiple definitions at +0xEC
     // +0x10C void*                    field_0x10C  (evidence: 0x0049DF50) // CONFLICT: multiple definitions at +0x10C
     // +0x10C void*                    nameList  (evidence: 0x0049E860) // CONFLICT: multiple definitions at +0x10C
