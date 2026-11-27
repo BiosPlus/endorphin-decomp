@@ -10,6 +10,11 @@
 // Recovered field layout for MetaBodySensorData:
 namespace lifted_layout {
 struct MetaBodySensorData_Fields {
+    // +0x0   void*                    field_0x00  (evidence: 0x0060EA90)
     // +0x154 void*                    field_0x154  (evidence: 0x00610780)
+    // +0x180 std::string              field_0x180  (evidence: 0x0060EA90)
+    // +0x19C std::string              field_0x19c  (evidence: 0x0060EA90)
+    // +0x1B8 void*                    field_0x1b8  (evidence: 0x0060EA90)
+    // +0x1BC std::string              field_0x1bc  (evidence: 0x0060EA90)
 };
 } // namespace lifted_layout

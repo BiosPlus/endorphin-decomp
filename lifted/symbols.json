@@ -58850,6 +58850,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060EA90": {
+    "name": "NMData::MetaBodySensorData::vfunc_21",
+    "class": "MetaBodySensorData",
+    "signature": "void fn_0060EA90(void* self, void* arg)",
+    "summary": "Calls the vtable slot at +0xF8 on self, runs SensorData::vfunc_21 on arg, then fills four string-valued members (+0x180/+0x19c/+0x1bc from property lookups) and parses an int property into the +0x1b8 subobject.",
+    "lifted_path": "lifted/NMData/MetaBodySensorData.cpp"
+  },
   "0x0060EC20": {
     "name": "NMData::SensorData::vfunc_1_off_C",
     "class": "NMData::SensorData",

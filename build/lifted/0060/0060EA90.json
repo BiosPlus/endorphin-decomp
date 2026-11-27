@@ -1,0 +1,46 @@
+{
+  "va": "0x0060EA90",
+  "size": 157,
+  "orig_symbol": "NMData::MetaBodySensorData::vfunc_21",
+  "src_path": "src/NMData/MetaBodySensorData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodySensorData.cpp",
+  "name": "NMData::MetaBodySensorData::vfunc_21",
+  "class": "MetaBodySensorData",
+  "signature": "void fn_0060EA90(void* self, void* arg)",
+  "summary": "Calls the vtable slot at +0xF8 on self, runs SensorData::vfunc_21 on arg, then fills four string-valued members (+0x180/+0x19c/+0x1bc from property lookups) and parses an int property into the +0x1b8 subobject.",
+  "fields": [
+    {
+      "class": "MetaBodySensorData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "MetaBodySensorData",
+      "offset": "+0x180",
+      "type": "std::string",
+      "name": "field_0x180"
+    },
+    {
+      "class": "MetaBodySensorData",
+      "offset": "+0x19C",
+      "type": "std::string",
+      "name": "field_0x19c"
+    },
+    {
+      "class": "MetaBodySensorData",
+      "offset": "+0x1B8",
+      "type": "void*",
+      "name": "field_0x1b8"
+    },
+    {
+      "class": "MetaBodySensorData",
+      "offset": "+0x1BC",
+      "type": "std::string",
+      "name": "field_0x1bc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:09Z"
+}
