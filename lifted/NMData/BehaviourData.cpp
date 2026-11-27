@@ -388,3 +388,189 @@ DWORD* __thiscall fn_004ABDF0(void* self, DWORD* out, DWORD key) {
     return out;
 }
 } // namespace lift_004ABDF0
+
+// [0x004ACCD0] NMData::BehaviourData::vfunc_82 (933 bytes)
+namespace lift_004ACCD0 {
+// @name NMData::BehaviourData::vfunc_82
+// @class NMData::BehaviourData
+// @summary Stores arg at +0x168, resolves two name-keyed lookups for the string at arg+0x458 (plus "_legacy"), then selects an element from the +0x2F4/+0x2FC range records (or the +0x180/+0x30 legacy path) and forwards it to ext_004AC8B0.
+// @field NMData::BehaviourData +0x30 std::string field_0x30
+// @field NMData::BehaviourData +0x168 uint32_t field_0x168
+// @field NMData::BehaviourData +0x180 void* field_0x180
+// @field NMData::BehaviourData +0x2F4 uint32_t field_0x2f4
+// @field NMData::BehaviourData +0x2F8 uint32_t field_0x2f8
+// @field NMData::BehaviourData +0x2FC uint32_t field_0x2fc
+// @field NMData::BehaviourData +0x300 uint32_t field_0x300
+// @field NMData::BehaviourData +0x304 int32_t field_0x304
+// @field NMData::BehaviourData +0x308 uint32_t field_0x308
+// @field NMData::BehaviourData +0x30C std::string field_0x30c
+// @field NMData::BehaviourData +0x364 uint8_t field_0x364
+
+extern void ext_004EE620(void* self);
+extern uint32_t ext_004AD950(void* self, const void* name);
+extern uint32_t ext_004AD960(void* self, const void* name);
+extern uint32_t ext_004A9CE0(void* self);
+extern void* ext_004A9E00(void* self, void* out, uint32_t value);
+extern void ext_004AC8B0(void* self, void* elem);
+extern void ext_004ABA70(void* out, uint32_t owner, uint32_t first, uint32_t unused, uint32_t last, const void* value);
+extern uint32_t* ext_00410D10(void* self, uint32_t* out);
+extern uint32_t* ext_00489320(void* self, uint32_t* out);
+extern uint32_t ext_00401AC0(void* self);
+extern void* ext_0041CCC0(void* self, uint32_t index);
+extern int32_t ext_0041CD60(void* self);
+extern uint32_t ext_0040D9F0(void* self, const void* arg);
+extern uint8_t ext_0049AD40(const void* self, const void* other);
+extern uint32_t* ext_0050E360(void* self, uint32_t index);
+extern uint32_t ext_00593F20(void* self);
+extern int32_t ext_00594000(void);
+extern int mem_008848F2;
+extern int mem_00924ECC;
+extern int mem_00924FB0;
+extern int mem_00924FC4;
+extern int mem_00924FDC;
+extern int mem_00924FEC;
+extern int mem_00924FF4;
+extern int mem_00941EC0;
+extern int mem_00ADF358;
+extern int mem_00ADF5C4;
+extern int mem_00B58DFC;
+
+static inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+void fn_004ACCD0(void* self, uint32_t arg) {
+    // MSVCP80 IAT slots and SEH scope-table reference: the string operations
+    // below are implemented natively with std::string.
+    (void)&mem_008848F2;
+    (void)&mem_00924ECC;
+    (void)&mem_00924FB0;
+    (void)&mem_00924FC4;
+    (void)&mem_00924FDC;
+    (void)&mem_00924FEC;
+    (void)&mem_00924FF4;
+
+    uint32_t buf18[2] = {0u, 0u};
+    uint32_t buf20[2] = {0u, 0u};
+
+    lift_field<uint32_t>(self, 0x168) = arg;
+    ext_004EE620(&lift_field<uint8_t>(self, 0x364));
+    uint32_t a168 = lift_field<uint32_t>(self, 0x168);
+    lift_field<uint32_t>(self, 0x2F4) = 0u;
+    if (a168 == 0u) {
+        return;
+    }
+    uint32_t g = static_cast<uint32_t>(mem_00ADF358);
+    if (g == 0u) {
+        return;
+    }
+
+    std::string& name = *reinterpret_cast<std::string*>(static_cast<uint8_t*>(as_ptr(a168)) + 0x458);
+    lift_field<uint32_t>(self, 0x2F4) = ext_004AD950(as_ptr(g), &name);
+    lift_field<uint32_t>(self, 0x2F8) = ext_004AD960(as_ptr(g), &name);
+
+    std::string t1 = name + reinterpret_cast<const char*>(&mem_00941EC0);
+    lift_field<uint32_t>(self, 0x2FC) = ext_004AD950(as_ptr(g), &t1);
+    lift_field<uint32_t>(self, 0x300) = ext_004AD960(as_ptr(g), &t1);
+
+    std::string& s30c = lift_field<std::string>(self, 0x30C);
+
+    if (!s30c.empty()) {
+        // Branch B: the +0x30C string is non-empty.
+        if (lift_field<int32_t>(self, 0x304) < 0) {
+            uint32_t a2 = lift_field<uint32_t>(self, 0x2FC);
+            if (a2 != 0u) {
+                uint32_t idx = lift_field<uint32_t>(self, 0x308);
+                uint32_t n = ext_00401AC0(as_ptr(a2));
+                if (idx < n) {
+                    ext_004AC8B0(self, ext_0041CCC0(as_ptr(a2), idx));
+                    return;
+                }
+            }
+        }
+        uint32_t a3 = lift_field<uint32_t>(self, 0x2F4);
+        if (a3 == 0u) {
+            lift_field<int32_t>(self, 0x304) = 0;
+            return;
+        }
+        uint32_t n3 = ext_00401AC0(as_ptr(a3));
+        uint32_t idx3 = static_cast<uint32_t>(lift_field<int32_t>(self, 0x304));
+        bool reset = idx3 >= n3;
+        if (!reset) {
+            void* e = ext_0041CCC0(as_ptr(a3), idx3);
+            reset = (s30c != *static_cast<std::string*>(e));
+        }
+        if (reset) {
+            idx3 = 0u;
+        }
+        lift_field<int32_t>(self, 0x304) = static_cast<int32_t>(idx3);
+        ext_004AC8B0(self, ext_0041CCC0(as_ptr(a3), idx3));
+        return;
+    }
+
+    // Branch A: +0x30C is empty; it must equal the global string at mem_00ADF5C4.
+    if (s30c == *reinterpret_cast<std::string*>(&mem_00ADF5C4)
+        && *reinterpret_cast<uint8_t*>(&mem_00B58DFC) == 0u
+        && ext_00594000() != 0) {
+        uint32_t rec = ext_00593F20(as_ptr(static_cast<uint32_t>(ext_00594000())));
+        int32_t cnt = ext_0041CD60(as_ptr(rec));
+        lift_field<uint32_t>(self, 0x308) = 0xFFFFFFFFu;
+        int32_t p304 = lift_field<int32_t>(self, 0x304);
+        if (p304 < cnt) {
+            uint32_t base = static_cast<uint32_t>(ext_00594000());
+            uint32_t* el = ext_0050E360(static_cast<uint8_t*>(as_ptr(base)) + 0x298,
+                                        static_cast<uint32_t>(p304));
+            lift_field<void*>(self, 0x180) = as_ptr(*el);
+            uint32_t r = ext_004A9CE0(self);
+            std::string tmp;
+            void* ps = ext_004A9E00(self, &tmp, r);
+            lift_field<std::string>(self, 0x30) = *static_cast<std::string*>(ps);
+            return;
+        }
+        lift_field<int32_t>(self, 0x304) = 0;
+        lift_field<void*>(self, 0x180) = static_cast<uint8_t*>(self) + 0x188;
+    }
+
+    // Branch C: range record at +0x2F4.
+    uint32_t a = lift_field<uint32_t>(self, 0x2F4);
+    if (a != 0u) {
+        uint32_t* rng = ext_00410D10(as_ptr(a), buf18);
+        uint32_t* cur = ext_00489320(as_ptr(a), buf20);
+        uint32_t find[2] = {0u, 0u};
+        ext_004ABA70(find, cur[0], cur[1], rng[0], rng[1], &s30c);
+        uint32_t* rng2 = ext_00410D10(as_ptr(a), buf20);
+        if (ext_0049AD40(&find[1], rng2) != 0u) {
+            uint32_t* c2 = ext_00489320(as_ptr(a), buf20);
+            uint32_t idx = ext_0040D9F0(&find[1], c2);
+            lift_field<int32_t>(self, 0x304) = static_cast<int32_t>(idx);
+            ext_004AC8B0(self, ext_0041CCC0(as_ptr(a), idx));
+            return;
+        }
+    }
+
+    // Branch D: range record at +0x2FC.
+    a = lift_field<uint32_t>(self, 0x2FC);
+    if (a != 0u) {
+        uint32_t* rng = ext_00410D10(as_ptr(a), buf20);
+        uint32_t* cur = ext_00489320(as_ptr(a), buf18);
+        uint32_t find[2] = {0u, 0u};
+        ext_004ABA70(find, cur[0], cur[1], rng[0], rng[1], &s30c);
+        uint32_t* rng2 = ext_00410D10(as_ptr(a), buf20);
+        if (ext_0049AD40(&find[1], rng2) != 0u) {
+            lift_field<int32_t>(self, 0x304) = -1;
+            uint32_t* c2 = ext_00489320(as_ptr(a), buf20);
+            uint32_t idx = ext_0040D9F0(&find[1], c2);
+            lift_field<uint32_t>(self, 0x308) = idx;
+            ext_004AC8B0(self, ext_0041CCC0(as_ptr(a), idx));
+            return;
+        }
+    }
+
+    // Branch E: fall back to index 0 of the +0x2F4 record.
+    lift_field<int32_t>(self, 0x304) = 0;
+    a = lift_field<uint32_t>(self, 0x2F4);
+    if (a != 0u) {
+        ext_004AC8B0(self, ext_0041CCC0(as_ptr(a), 0u));
+    }
+}
+} // namespace lift_004ACCD0

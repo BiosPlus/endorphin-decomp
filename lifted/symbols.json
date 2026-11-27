@@ -17294,6 +17294,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004ACCD0": {
+    "name": "NMData::BehaviourData::vfunc_82",
+    "class": "NMData::BehaviourData",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "Stores arg at +0x168, resolves two name-keyed lookups for the string at arg+0x458 (plus \"_legacy\"), then selects an element from the +0x2F4/+0x2FC range records (or the +0x180/+0x30 legacy path) and forwards it to ext_004AC8B0.",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
   "0x004AD760": {
     "name": "NMData::BehaviourData::vfunc_1_off_158",
     "class": "NMData::BehaviourData",
