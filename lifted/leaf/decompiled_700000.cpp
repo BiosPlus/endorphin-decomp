@@ -3083,3 +3083,19 @@ void fn_0070C8C0() {
     mem_00B5ED38 = -(*src);
 }
 } // namespace lift_0070C860
+
+// [0x00704BF0] sub_00704BF0 (18 bytes)
+namespace lift_00704BF0 {
+// Known callee 0x006E73B0: Unknown::initWithArgs_006E73B0 (Initializes the sub-object at +0x08, stores two constructor arguments at +0x04 and +0x54, runs the reset helper, and returns this.)
+extern void* ext_006E73B0(void* self, const void* arg1, DWORD arg2);
+extern int mem_00AABBEC;
+extern int mem_00B5E948;
+
+// @name Unknown::initWithDefaults_00704BF0
+// @class Unknown
+// @summary Calls initWithArgs_006E73B0 on the global object at 0x00B5E948 with the table address 0x00AABBEC and flag 1, returning its result.
+void* fn_00704BF0() {
+    // push 1; push &mem_00AABBEC; mov ecx, &mem_00B5E948; call ext_006E73B0; ret
+    return ext_006E73B0(&mem_00B5E948, &mem_00AABBEC, 1);
+}
+} // namespace lift_00704BF0

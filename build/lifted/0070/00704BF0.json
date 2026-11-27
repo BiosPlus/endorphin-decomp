@@ -1,0 +1,14 @@
+{
+  "va": "0x00704BF0",
+  "size": 18,
+  "orig_symbol": "sub_00704BF0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::initWithDefaults_00704BF0",
+  "class": "Unknown",
+  "signature": "void* fn_00704BF0()",
+  "summary": "Calls initWithArgs_006E73B0 on the global object at 0x00B5E948 with the table address 0x00AABBEC and flag 1, returning its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:56:44Z"
+}
