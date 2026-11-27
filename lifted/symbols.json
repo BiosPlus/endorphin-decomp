@@ -10126,6 +10126,12 @@
     "summary": "Stores the float at *value into every 4-byte slot in [first, last); no-op if first == last.",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00477520": {
+    "name": "findInRangeStoreResult_00477520",
+    "signature": "void fn_00477520(void* a1, void* out, void* value, void* end, void* a5, void* key)",
+    "summary": "Searches [out, end) via ext_00476BC0 and stores value and the search result as two DWORDs at out.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477B70": {
     "name": "HeapBuildFloats",
     "signature": "void fn_00477B70(float* first, float* last)",

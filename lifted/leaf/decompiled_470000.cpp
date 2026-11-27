@@ -1322,3 +1322,28 @@ void* fn_00475840(void* self, const void* src) {
 }
 } // namespace lift_0052A140
 } // namespace lift_00475840
+
+// [0x00477520] sub_00477520 (118 bytes)
+namespace lift_00477520 {
+// Known callee 0x00476BC0: std_string_findInRange (Linear search over [begin, end) of 28-byte std::string elements; returns the first element matching the key at a 0x1C-byte stride, or end if none match.)
+extern void ext_00476BC0();
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+
+// @name findInRangeStoreResult_00477520
+// @summary Searches [out, end) via ext_00476BC0 and stores value and the search result as two DWORDs at out.
+void fn_00477520(void* a1, void* out, void* value, void* end, void* a5, void* key) {
+    (void)a1;
+    (void)a5;
+    (void)key;             // key is copy-constructed into a local temp (mem_00924FE0) and destroyed (mem_00924FF4); it never reaches the search call
+    (void)&mem_00924FE0;
+    (void)&mem_00924FF4;
+
+    auto find = reinterpret_cast<void* (*)(void*, void*)>(&ext_00476BC0);
+    void* found = find(out, end);
+
+    auto* words = static_cast<std::uint32_t*>(out);
+    words[0] = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(value));
+    words[1] = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(found));
+}
+} // namespace lift_00477520
