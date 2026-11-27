@@ -10819,3 +10819,30 @@ void fn_004F6110(void* self) {
     lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9EDC));
 }
 } // namespace lift_004F6110
+
+// [0x004F6400] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, &public: void __thiscall MatrixWithProperties::setAlpha(float)>::vfunc_40 (122 bytes)
+namespace lift_004F6400 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AE9EF0;  // one-time initialisation guard (bit 0)
+extern int mem_00AE9EEC;  // static object; first DWORD holds its vtable pointer
+
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, &public: void __thiscall MatrixWithProperties::setAlpha(float)>
+// @summary Runs the one-time init of the static object at 0x00AE9EEC on first call, then points the out-object's +4 slot at that static object.
+// @field ValuePtrType +0x04 void* field_0x04
+void fn_004F6400(void* out) {
+    // The original SEH frame setup/teardown (fs:[0] writes) is compiler
+    // exception scaffolding for the static init and is not reproduced here.
+    DWORD* guard = reinterpret_cast<DWORD*>(&mem_00AE9EF0);
+    DWORD* obj = reinterpret_cast<DWORD*>(&mem_00AE9EEC);
+
+    if ((*guard & 1u) == 0) {
+        *guard |= 1u;
+        ext_0067A670(obj, 0);
+        *obj = 0x0094D474u;
+    }
+
+    lift_field<DWORD>(out, 4) = 0x00AE9EECu;
+}
+} // namespace lift_004F6400

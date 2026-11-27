@@ -1,0 +1,22 @@
+{
+  "va": "0x004F6400",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setAlpha(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setAlpha(float)\u003e",
+  "signature": "extern \"C\" int mem_00AE9EF0;  // one-time initialisation guard (bit 0) extern \"C\" int mem_00AE9EEC;  // static object; first DWORD holds its vtable pointer void fn_004F6400(void* out)",
+  "summary": "Runs the one-time init of the static object at 0x00AE9EEC on first call, then points the out-object's +4 slot at that static object.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:33Z"
+}
