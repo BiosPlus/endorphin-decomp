@@ -59879,6 +59879,13 @@
     "summary": "Resets base sensor data, clears the vector at +0x180, and clears the string at +0x190.",
     "lifted_path": "lifted/NMData/CompoundSensorData.cpp"
   },
+  "0x0060F6A0": {
+    "name": "NMData::CompoundSensorData::vfunc_21",
+    "class": "NMData::CompoundSensorData",
+    "signature": "extern \"C\" int mem_00925134;   // CRT invalid-parameter handler (boilerplate) extern \"C\" int mem_00A9F268;   // C-string compared against each element name extern \"C\" int mem_00924FC0;   // MSVCP80 std::string operator==(const string\u0026, const char*) extern \"C\" int mem_00924FF4;   // MSVCP80 std::string destructor namespace",
+    "summary": "Looks up a named item, then walks its pointer vector at +0x24 pushing each element whose name matches a global string into the +0x180 list.",
+    "lifted_path": "lifted/NMData/CompoundSensorData.cpp"
+  },
   "0x0060F970": {
     "name": "NMData::CompoundSensorData::vfunc_0",
     "class": "NMData::CompoundSensorData",

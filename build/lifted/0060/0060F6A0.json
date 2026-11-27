@@ -1,0 +1,34 @@
+{
+  "va": "0x0060F6A0",
+  "size": 382,
+  "orig_symbol": "NMData::CompoundSensorData::vfunc_21",
+  "src_path": "src/NMData/CompoundSensorData.cpp",
+  "lifted_path": "lifted/NMData/CompoundSensorData.cpp",
+  "name": "NMData::CompoundSensorData::vfunc_21",
+  "class": "NMData::CompoundSensorData",
+  "signature": "extern \"C\" int mem_00925134;   // CRT invalid-parameter handler (boilerplate) extern \"C\" int mem_00A9F268;   // C-string compared against each element name extern \"C\" int mem_00924FC0;   // MSVCP80 std::string operator==(const string\u0026, const char*) extern \"C\" int mem_00924FF4;   // MSVCP80 std::string destructor namespace",
+  "summary": "Looks up a named item, then walks its pointer vector at +0x24 pushing each element whose name matches a global string into the +0x180 list.",
+  "fields": [
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x180",
+      "type": "uint32_t",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x190",
+      "type": "uint8_t",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:57:47Z"
+}
