@@ -14217,6 +14217,13 @@
     "summary": "Recursively frees a red-black tree's nodes starting from the given node.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x004935F0": {
+    "name": "Tree::eraseRange",
+    "class": "Tree",
+    "signature": "void* fn_004935F0(void* self, void* out, void* first_tree, void* first_node, void* last_tree, void* last_node)",
+    "summary": "MSVC8 _Tree::erase(first, last): clears the whole tree when [first,last) spans it, otherwise advances and erases each node in the range; returns last-position iterator.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00493970": {
     "name": "ResetPtrFieldsAfterDispatch",
     "class": "Unknown",

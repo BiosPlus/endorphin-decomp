@@ -3107,3 +3107,57 @@ void* __thiscall fn_0049E930(void* self, void* arg0, void* arg1, uint32_t arg2, 
     return self;
 }
 } // namespace lift_0049E930
+
+// [0x004935F0] sub_004935F0 (203 bytes)
+namespace lift_004935F0 {
+// Known callee 0x00492BC0: TreeConstIterator::increment (Advances an MSVC8 red-black tree iterator to the next in-order node.)
+extern void ext_00492BC0(void* self);
+// Known callee 0x00492F00: RBTree::erase (Erases a node at the given iterator position from an MSVC8 red-black tree and rebalances the tree.)
+extern void* ext_00492F00(void* self, void* out_iter, void* iter_container, void* iter_node);
+// Known callee 0x00493330: Tree_erase (Recursively frees a red-black tree's nodes starting from the given node.)
+extern void ext_00493330(void* self, void* node);
+// MSVCR80!_invalid_parameter_noinfo IAT slot: guarded CRT assertions (boilerplate, dropped).
+extern int mem_00925134;
+
+// @name Tree::eraseRange
+// @class Tree
+// @summary MSVC8 _Tree::erase(first, last): clears the whole tree when [first,last) spans it, otherwise advances and erases each node in the range; returns last-position iterator.
+// @field RBTree +0x04 void* head
+// @field RBTree +0x08 uint32_t size
+// @field RBTreeNode +0x00 void* left
+// @field RBTreeNode +0x04 void* parent
+// @field RBTreeNode +0x08 void* right
+void* fn_004935F0(void* self, void* out, void* first_tree, void* first_node,
+                  void* last_tree, void* last_node) {
+    (void)&mem_00925134;  // CRT invalid-parameter guards elided (never taken on valid trees)
+    void* head = lift_field<void*>(self, 0x04);
+    void* begin = lift_field<void*>(head, 0x00);
+
+    if (first_node == begin && last_node == head) {
+        // clear(): free all nodes, then reset the header to the empty state.
+        void* root = lift_field<void*>(head, 0x04);
+        ext_00493330(self, root);
+        lift_field<void*>(head, 0x04) = head;   // parent = head
+        lift_field<uint32_t>(self, 0x08) = 0;   // size = 0
+        lift_field<void*>(head, 0x00) = head;   // left = head
+        lift_field<void*>(head, 0x08) = head;   // right = head
+        lift_field<void*>(out, 0x00) = self;
+        lift_field<void*>(out, 0x04) = lift_field<void*>(head, 0x00);
+        return out;
+    }
+
+    // Range erase: iterator slots live in the argument area, so they are advanced in place.
+    void* iter[2] = {first_tree, first_node};
+    while (iter[1] != last_node) {
+        void* old_tree = iter[0];
+        void* old_node = iter[1];
+        ext_00492BC0(iter);                              // ++first
+        void* discard[2];
+        ext_00492F00(self, discard, old_tree, old_node); // erase(old)
+    }
+
+    lift_field<void*>(out, 0x00) = iter[0];
+    lift_field<void*>(out, 0x04) = iter[1];
+    return out;
+}
+} // namespace lift_004935F0

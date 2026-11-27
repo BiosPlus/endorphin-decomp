@@ -1,0 +1,46 @@
+{
+  "va": "0x004935F0",
+  "size": 203,
+  "orig_symbol": "sub_004935F0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Tree::eraseRange",
+  "class": "Tree",
+  "signature": "void* fn_004935F0(void* self, void* out, void* first_tree, void* first_node, void* last_tree, void* last_node)",
+  "summary": "MSVC8 _Tree::erase(first, last): clears the whole tree when [first,last) spans it, otherwise advances and erases each node in the range; returns last-position iterator.",
+  "fields": [
+    {
+      "class": "RBTree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "RBTree",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "RBTreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "RBTreeNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "RBTreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:45:58Z"
+}
