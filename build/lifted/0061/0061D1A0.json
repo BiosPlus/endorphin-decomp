@@ -1,0 +1,14 @@
+{
+  "va": "0x0061D1A0",
+  "size": 62,
+  "orig_symbol": "NMData::DriveFrame::vfunc_60",
+  "src_path": "src/NMData/DriveFrame.cpp",
+  "lifted_path": "lifted/NMData/DriveFrame.cpp",
+  "name": "NMData::DriveFrame::vfunc_60",
+  "class": "NMData::DriveFrame",
+  "signature": "void* fn_0061D1A0(void* self, uint32_t index, float value)",
+  "summary": "Copies the triple returned by ext_006125B0 into a local array, overwrites element [index] with value, and forwards the array to ext_00611200 (thiscall, callee pops 8 bytes: index, value).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:43:48Z"
+}

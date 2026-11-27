@@ -25,3 +25,25 @@ float* fn_005EC070(void* self, float* out) {
     out[2] = src[2];
     return out;
 }
+
+// [0x0061D1A0] NMData::DriveFrame::vfunc_60 (62 bytes)
+namespace lift_0061D1A0 {
+// Known callee 0x00611200: scaleVec3IntoSlotsAndDispatch (Scales floats at +0x154/+0x158/+0x15C by p[0..2] into +0x160/+0x164/+0x168, calls vslot 3 of the embedded object at +0x04 with mem_00B40640, passes the result to ext_0067E600 with &field_0x160, then if ext_00594000() is nonzero returns ext_00493EE0(value + 0x258).)
+extern void* ext_00611200(void* self, const void* p);
+// Known callee 0x006125B0: Unknown::divideTripletByScale_0x160 (Builds a local 3x3 identity matrix in a frame struct, calls two helpers, then divides the three floats at +0x160/+0x164/+0x168 by the scale floats at +0x154/+0x158/+0x15c.)
+// Returns a pointer to a float triple in eax (the asm reads [eax], [eax+4], [eax+8]).
+extern const float* ext_006125B0(void* self);
+
+// @name NMData::DriveFrame::vfunc_60
+// @class NMData::DriveFrame
+// @summary Copies the triple returned by ext_006125B0 into a local array, overwrites element [index] with value, and forwards the array to ext_00611200 (thiscall, callee pops 8 bytes: index, value).
+void* fn_0061D1A0(void* self, uint32_t index, float value) {
+    float triple[3];
+    const float* src = ext_006125B0(self);
+    triple[0] = src[0];
+    triple[1] = src[1];
+    triple[2] = src[2];
+    triple[index] = value;
+    return ext_00611200(self, triple);
+}
+} // namespace lift_0061D1A0

@@ -46363,6 +46363,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061D1A0": {
+    "name": "NMData::DriveFrame::vfunc_60",
+    "class": "NMData::DriveFrame",
+    "signature": "void* fn_0061D1A0(void* self, uint32_t index, float value)",
+    "summary": "Copies the triple returned by ext_006125B0 into a local array, overwrites element [index] with value, and forwards the array to ext_00611200 (thiscall, callee pops 8 bytes: index, value).",
+    "lifted_path": "lifted/NMData/DriveFrame.cpp"
+  },
   "0x0061D250": {
     "name": "NMData::Constraint::vfunc_68",
     "class": "NMData::Constraint",
