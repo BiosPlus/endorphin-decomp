@@ -2277,3 +2277,70 @@ void fn_006B6320(void* self) {
     ext_006A6310();
 }
 } // namespace lift_006B6320
+
+// [0x006B7380] sub_006B7380 (145 bytes)
+namespace lift_006B7380 {
+// Known callee 0x006A663A: thunk_MFC80_ord_4888 (IAT jump thunk forwarding to MFC80!ord_4888.)
+// Called with one stack argument (edi); callee cleans up (no esp fixup at call site).
+extern void __stdcall ext_006A663A(uint8_t* arg);
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+// One stack argument (parent HWND); returns an object pointer in eax.
+extern uint8_t* __stdcall ext_006A5E00(uint32_t hwnd);
+// Known callee 0x006A60D0: thunk_MFC80_ord_5833 (IAT jump thunk forwarding to MFC80!ord_5833.)
+// Takes its "this" in ecx.
+extern void __thiscall ext_006A60D0(uint8_t* self);
+// IAT slot 0x00925650 holding USER32!GetParent (called indirectly via call [0x925650]).
+extern uint32_t mem_00925650;
+
+// @name Unknown::RefreshParentState
+// @class Unknown
+// @summary Compares the parent-window owner of self with arg's owner; when they match and self's state at +0x68 is nonzero and not 0xd, notifies the subobject at +0x70 and clears +0x68.
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x60 uint8_t field_0x60
+// @field Unknown +0x68 uint32_t field_0x68
+// @field Unknown +0x70 uint8_t field_0x70
+// @field Unknown +0x90 uint32_t field_0x90
+void __thiscall fn_006B7380(uint8_t* self, uint8_t* arg) {
+    using GetParentFn = uint32_t(__stdcall*)(uint32_t);
+
+    ext_006A663A(arg);
+
+    if (lift_field<uint8_t>(self, 0x60) == 0) {
+        return;
+    }
+
+    // ecx = arg ? arg->field_0x20 : 0   (same value is later reused as edi)
+    const uint32_t arg_val = arg ? lift_field<uint32_t>(arg, 0x20) : 0u;
+    // ebx = self + 0x70 (lea, never null); eax = ebx->field_0x20 == self->field_0x90
+    uint8_t* const sub = self + 0x70;
+    const uint32_t sub_val = lift_field<uint32_t>(sub, 0x20);
+
+    if (arg_val == sub_val) {
+        const uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
+        const uint32_t parent = reinterpret_cast<GetParentFn>(
+            static_cast<uintptr_t>(mem_00925650))(hwnd);
+        uint8_t* const owner = ext_006A5E00(parent);
+        ext_006A60D0(owner);
+        return;
+    }
+
+    {
+        const uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
+        const uint32_t parent = reinterpret_cast<GetParentFn>(
+            static_cast<uintptr_t>(mem_00925650))(hwnd);
+        uint8_t* const owner = ext_006A5E00(parent);
+        const uint32_t owner_val = owner ? lift_field<uint32_t>(owner, 0x20) : 0u;
+        if (arg_val != owner_val) {
+            return;
+        }
+    }
+
+    const uint32_t state = lift_field<uint32_t>(self, 0x68);
+    if (state == 0 || state == 0x0d) {
+        return;
+    }
+
+    ext_006A60D0(sub);
+    lift_field<uint32_t>(self, 0x68) = 0;
+}
+} // namespace lift_006B7380

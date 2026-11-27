@@ -1,0 +1,46 @@
+{
+  "va": "0x006B7380",
+  "size": 145,
+  "orig_symbol": "sub_006B7380",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::RefreshParentState",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_006B7380(uint8_t* self, uint8_t* arg)",
+  "summary": "Compares the parent-window owner of self with arg's owner; when they match and self's state at +0x68 is nonzero and not 0xd, notifies the subobject at +0x70 and clears +0x68.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint8_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "uint32_t",
+      "name": "field_0x90"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:37:12Z"
+}

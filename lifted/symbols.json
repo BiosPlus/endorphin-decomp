@@ -65431,6 +65431,13 @@
     "summary": "Copies this-\u003e+0x20 into child-\u003e+0x38, conditionally re-initializes the child via a vfunc, reparents the child HWND to NULL, then sends WM_SETFONT (0x30) to it.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B7380": {
+    "name": "Unknown::RefreshParentState",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006B7380(uint8_t* self, uint8_t* arg)",
+    "summary": "Compares the parent-window owner of self with arg's owner; when they match and self's state at +0x68 is nonzero and not 0xd, notifies the subobject at +0x70 and clears +0x68.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B7420": {
     "name": "PostMessageIfActive",
     "class": "Unknown",
