@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::NullRelationshipData:
 namespace lifted_layout {
 struct NMData_NullRelationshipData_Fields {
-    // +0x178 uint8_t                  field_0x178  (evidence: 0x005E1830)
+    // +0x178 uint8_t                  field_0x178  (evidence: 0x005E1830, 0x005EBE00)
+    // +0x190 void*                    field_0x190  (evidence: 0x005EBE00)
 };
 } // namespace lifted_layout

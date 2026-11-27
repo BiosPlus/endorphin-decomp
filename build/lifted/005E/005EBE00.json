@@ -1,0 +1,28 @@
+{
+  "va": "0x005EBE00",
+  "size": 156,
+  "orig_symbol": "NMData::NullRelationshipData::vfunc_22",
+  "src_path": "src/NMData/NullRelationshipData.cpp",
+  "lifted_path": "lifted/NMData/NullRelationshipData.cpp",
+  "name": "NMData::NullRelationshipData::vfunc_22",
+  "class": "NMData::NullRelationshipData",
+  "signature": "void* fn_005EBE00(void* self, void* arg)",
+  "summary": "Resolves a handle from arg via 0x006404E0, forwards it to RelationshipData::vfunc_22, then when the child at +0x190 reports true (or its +0x178 flag differs from ours) updates the child name via 0x00640110 and 0x00640A80; returns arg.",
+  "fields": [
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:10:11Z"
+}

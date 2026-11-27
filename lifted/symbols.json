@@ -55020,6 +55020,13 @@
     "summary": "Returns early if a1 == field_0x194; otherwise optionally calls ext_005C2BE0(a1, a2), dispatches a1/a2 to virtual slot 68 or 69 on self, then calls virtual slot 63 on each child pointer in the vector at +0x1D4..+0x1D8.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005EBE00": {
+    "name": "NMData::NullRelationshipData::vfunc_22",
+    "class": "NMData::NullRelationshipData",
+    "signature": "void* fn_005EBE00(void* self, void* arg)",
+    "summary": "Resolves a handle from arg via 0x006404E0, forwards it to RelationshipData::vfunc_22, then when the child at +0x190 reports true (or its +0x178 flag differs from ours) updates the child name via 0x00640110 and 0x00640A80; returns arg.",
+    "lifted_path": "lifted/NMData/NullRelationshipData.cpp"
+  },
   "0x005EBEA0": {
     "name": "NMData::RootRelationshipData::vfunc_22",
     "class": "NMData::RootRelationshipData",
