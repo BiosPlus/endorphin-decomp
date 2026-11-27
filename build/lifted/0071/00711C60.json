@@ -1,0 +1,21 @@
+{
+  "va": "0x00711C60",
+  "size": 144,
+  "orig_symbol": "sub_00711C60",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getOrCreateSubobject_00711C60",
+  "signature": "extern \"C\" void* __fastcall fn_00711C60(void* self, uint32_t /*edx*/, uint8_t create_if_null)",
+  "summary": "Returns the subobject pointer at +0x2C of the +0x40 subobject, optionally allocating and initializing it (0x1C bytes) if null.",
+  "fields": [
+    {
+      "class": "Subobject40",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:44:02Z"
+}

@@ -2786,3 +2786,25 @@ extern uint8_t __fastcall fn_00711450(void* self, uint32_t /*edx*/, double value
     }
 }
 } // namespace lift_00711450
+
+// [0x00711C60]
+namespace lift_00711C60 {
+// @name getOrCreateSubobject_00711C60
+// @summary Returns the subobject pointer at +0x2C of the +0x40 subobject, optionally allocating and initializing it (0x1C bytes) if null.
+// @field Subobject40 +0x2c void* field_0x2c
+
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __fastcall ext_006E72A0(void* self);
+extern void* __fastcall ext_0071E680(void* self);
+
+extern void* __fastcall fn_00711C60(void* self, uint32_t /*edx*/, uint8_t create_if_null) {
+    void* sub = ext_0071E680(self);
+    if (lift_field<void*>(sub, 0x2c) == nullptr && create_if_null != 0) {
+        void* mem = ext_006A5C62(0x1c);
+        void* obj = mem ? ext_006E72A0(mem) : nullptr;
+        lift_field<void*>(ext_0071E680(self), 0x2c) = obj;
+    }
+    return lift_field<void*>(ext_0071E680(self), 0x2c);
+}
+} // namespace lift_00711C60
