@@ -1,0 +1,22 @@
+{
+  "va": "0x0048C350",
+  "size": 165,
+  "orig_symbol": "sub_0048C350",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::invokeWithTempString",
+  "class": "Unknown",
+  "signature": "void fn_0048C350(void* self, const char* text)",
+  "summary": "One-time guarded init of a static object, then builds a temporary std::string from the argument and passes it to the method on self's first pointer; destroys the temporary.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:41:47Z"
+}

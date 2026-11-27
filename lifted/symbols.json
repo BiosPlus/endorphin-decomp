@@ -13332,6 +13332,13 @@
     "summary": "Initializes a static key object if needed, constructs a std::string from the argument, passes it with the key to ext_00475960 on field_0x0, then destroys the string.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048C350": {
+    "name": "Unknown::invokeWithTempString",
+    "class": "Unknown",
+    "signature": "void fn_0048C350(void* self, const char* text)",
+    "summary": "One-time guarded init of a static object, then builds a temporary std::string from the argument and passes it to the method on self's first pointer; destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048C400": {
     "name": "sub_0048C400",
     "class": "Unknown",

@@ -4477,3 +4477,44 @@ void fn_0048FA40(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_0048FA40
+
+// [0x0048C350] sub_0048C350 (165 bytes)
+namespace lift_0048C350 {
+// Known callee 0x00475960: sub_00475960 (thiscall on [self]; takes (std::string& text, const void** slot, int flag)).
+extern void ext_00475960(void* self, void* text, void* slot, int flag);
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores the stack argument into the first DWORD of self; returns it).
+extern void ext_0067A670(void* self, uint32_t value);
+extern int mem_00AD9EA8;
+extern int mem_00AD9EA4;
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name Unknown::invokeWithTempString
+// @class Unknown
+// @summary One-time guarded init of a static object, then builds a temporary std::string from the argument and passes it to the method on self's first pointer; destroys the temporary.
+// @field Unknown +0x00 void* field_0x00
+void fn_0048C350(void* self, const char* text) {
+    // MSVCP80 std::string (char) ctor-from-C-string and dtor, reached through IAT slots.
+    using StrCtorFn = void (*)(void* self, const char* text);
+    using StrDtorFn = void (*)(void* self);
+
+    // One-time static initialization guard (bit 0 of mem_00AD9EA8).
+    if ((mem_00AD9EA8 & 1) == 0) {
+        mem_00AD9EA8 |= 1;
+        // The original passes the caller's ESI as the stack argument here; the
+        // value is overwritten immediately below, so 0 is used.
+        ext_0067A670(&mem_00AD9EA4, 0);
+        mem_00AD9EA4 = 0x93c77c;
+    }
+
+    unsigned char tmp[0x20];
+    void* slot = &mem_00AD9EA4;
+
+    ((StrCtorFn)(uintptr_t)mem_00924FE4)(tmp, text);
+
+    void* inner = lift_field<void*>(self, 0);
+    ext_00475960(inner, tmp, &slot, 1);
+
+    ((StrDtorFn)(uintptr_t)mem_00924FF4)(tmp);
+}
+} // namespace lift_0048C350
