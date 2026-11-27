@@ -1,0 +1,22 @@
+{
+  "va": "0x004F9C10",
+  "size": 33,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_53",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_53",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "void fn_004F9C10(void* self)",
+  "summary": "Walks self-\u003e+0x8-\u003e+0x14-\u003e+0x30, calls vtable slot 0xB4 on that object, and if the result is non-null calls selectIndex(result, 1).",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:56:12Z"
+}

@@ -306,3 +306,30 @@ void fn_004F9C40(void* self) {
     }
 }
 } // namespace lift_004F9C40
+
+// [0x004F9C10] VMCSModes::DefaultImplementation::vfunc_53 (33 bytes)
+namespace lift_004F9C10 {
+// Known callee 0x00530290: Unknown::selectIndex3Adjusted (Selects index arg0 (remapping 3 to 7 when the field at +0x88 already equals 3), stores it at +0x70, updates the container at +0x38, then invokes vtable slot 0x154 on the object at +0x10.)
+extern void ext_00530290(void* self, uint32_t arg0);
+
+// @name VMCSModes::DefaultImplementation::vfunc_53
+// @class VMCSModes::DefaultImplementation
+// @summary Walks self->+0x8->+0x14->+0x30, calls vtable slot 0xB4 on that object, and if the result is non-null calls selectIndex(result, 1).
+// @field VMCSModes::DefaultImplementation +0x08 void* field_0x08
+void fn_004F9C10(void* self) {
+    // Object chain: self+0x8 -> +0x14 -> +0x30 (the receiver for the virtual call).
+    void* p8 = lift_field<void*>(self, 0x08);
+    void* p14 = lift_field<void*>(p8, 0x14);
+    void* obj = lift_field<void*>(p14, 0x30);
+
+    // Virtual call through vtable slot at byte offset 0xB4 (slot 45), this = obj.
+    void* vtable = *static_cast<void**>(obj);
+    using SlotFn = void* (*)(void*);
+    auto slot = reinterpret_cast<SlotFn>(lift_field<void*>(vtable, 0xB4));
+    void* result = slot(obj);
+
+    if (result != nullptr) {
+        ext_00530290(result, 1);
+    }
+}
+} // namespace lift_004F9C10

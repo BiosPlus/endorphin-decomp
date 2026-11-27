@@ -19841,6 +19841,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9BD0 (VMCSModes::DefaultImplementation::vfunc_33).",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F9C10": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_53",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_004F9C10(void* self)",
+    "summary": "Walks self-\u003e+0x8-\u003e+0x14-\u003e+0x30, calls vtable slot 0xB4 on that object, and if the result is non-null calls selectIndex(result, 1).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004F9C40": {
     "name": "VMCSModes::DefaultImplementation::vfunc_54",
     "class": "VMCSModes::DefaultImplementation",
