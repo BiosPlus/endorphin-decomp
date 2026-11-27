@@ -980,3 +980,52 @@ void fn_004A6A10(void* self) {
     *field0C = 0;
 }
 } // namespace lift_004A6A10
+
+// [0x004A9D80] sub_004A9D80 (121 bytes)
+namespace lift_004A9D80 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Unlifted callee 0x00593F20 (7B): takes an int32 in ecx, returns a pointer to a record
+// whose +4 and +8 dwords are the begin/end of an element array.
+extern void* ext_00593F20(int32_t key);
+// Byte flag at 0x00B58DFC.
+extern uint8_t mem_00B58DFC;
+
+// @name Unknown::GetScaledElementCount
+// @class Unknown
+// @summary Returns an element count derived from a global lookup record plus the
+//          element count of the list at +0x2F4, adjusted by the sign of +0x304.
+// @field Unknown +0x2F4 uint32_t listPtr
+// @field Unknown +0x304 int32_t signedCounter
+int32_t fn_004A9D80(void* self) {
+    int32_t esi = 0;
+
+    if (mem_00B58DFC == 0) {
+        if (ext_00594000() != 0) {
+            const int32_t v = ext_00594000();
+            const auto* rec = static_cast<const uint8_t*>(ext_00593F20(v));
+            const int32_t begin = lift_field<int32_t>(rec, 4);
+            if (begin != 0) {
+                const int32_t end = lift_field<int32_t>(rec, 8);
+                esi = (end - begin) >> 2;
+            }
+        }
+    }
+
+    const uint32_t listPtr = lift_field<uint32_t>(self, 0x2F4);
+    if (listPtr == 0) {
+        return 0;
+    }
+
+    const auto* list = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(listPtr));
+    int32_t count = 0;
+    const int32_t begin = lift_field<int32_t>(list, 4);
+    if (begin != 0) {
+        const int32_t end = lift_field<int32_t>(list, 8);
+        count = (end - begin) / 28;
+    }
+
+    const int32_t negFlag = lift_field<int32_t>(self, 0x304) < 0 ? 1 : 0;
+    return negFlag + count + esi;
+}
+} // namespace lift_004A9D80

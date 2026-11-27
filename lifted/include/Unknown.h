@@ -1459,8 +1459,10 @@ struct Unknown_Fields {
     // +0x2D4 DWORD                    field_0x2D4  (evidence: 0x00597630)
     // +0x2DC void*                    field_0x2dc  (evidence: 0x00594600)
     // +0x2E4 void*                    field_0x2e4  (evidence: 0x00463950)
+    // +0x2F4 uint32_t                 listPtr  (evidence: 0x004A9D80)
     // +0x2F8 DWORD field_0x2F8 (on sub-object at this+0x0C)  (evidence: 0x007155B0, 0x0071C0E0, 0x0071F070)
     // +0x2FC DWORD field_0x2FC (on sub-object at this+0x0C)  (evidence: 0x007155B0, 0x0071C0E0, 0x0071F070)
+    // +0x304 int32_t                  signedCounter  (evidence: 0x004A9D80)
     // +0x308 std::string              field_0x308  (evidence: 0x004030F0, 0x0040AB60)
     // +0x340 DWORD                    field_0x340  (evidence: 0x0070ACC0) // CONFLICT: multiple definitions at +0x340
     // +0x340 uint32_t                 field_0x340  (evidence: 0x0070AD00) // CONFLICT: multiple definitions at +0x340

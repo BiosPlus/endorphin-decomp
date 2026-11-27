@@ -1,0 +1,28 @@
+{
+  "va": "0x004A9D80",
+  "size": 121,
+  "orig_symbol": "sub_004A9D80",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "Unknown::GetScaledElementCount",
+  "class": "Unknown",
+  "signature": "int32_t fn_004A9D80(void* self)",
+  "summary": "Returns an element count derived from a global lookup record plus the",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2F4",
+      "type": "uint32_t",
+      "name": "listPtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x304",
+      "type": "int32_t",
+      "name": "signedCounter"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:15:00Z"
+}
