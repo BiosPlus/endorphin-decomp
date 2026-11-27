@@ -8019,6 +8019,13 @@
     "summary": "Queries an object's virtual slot, adds a signed 16-bit argument, clamps the sum at zero, and forwards it to another global-derived object.",
     "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
   },
+  "0x0045DEB0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_81",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "extern \"C\" uint32_t ext_00594000(void);                          // sub_00594000: returns global object pointer (mem_00B40D08) extern \"C\" uint32_t ext_00468180(void);                          // sub_00468180: returns global object pointer (mem_00AD7CD8) extern \"C\" uint32_t ext_00468660(void* self);                    // sub_00468660: auto-lifted clone of AVIIO::vfunc_23 extern \"C\" int32_t  ext_00477F30(void* self);                    // getMaxField0x160: max int32 at +0x160 over vector at +0x30 (0 if none \u003e 0) extern \"C\" void     ext_0043DD60(void* self, double a, double b); // Unknown::clampAndDispatchFloatPair extern \"C\" int32_t  ext_006A6DE0(double v);                      // sub_006A6DE0: takes value from FPU stack, returns int32 extern \"C\" const double mem_00937FC0;  // .rdata double 1.05 (qword 0x3FF0CCCCC0000000) extern \"C\" uintptr_t    mem_00925688;  // IAT slot: USER32!InvalidateRect static inline void* as_ptr(uint32_t v)",
+    "summary": "Computes a clamped max of four int values (ebx, edi, esi, vfunc result - 1), scales it by 1.05 via sub_006A6DE0 (default 300 if zero), clamps to \u003e= 300, dispatches it to clampAndDispatchFloatPair, then invalidates the owning window.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045E470": {
     "name": "MultiTrackView::TriggeredEventView::ForwardToMemberWithArg",
     "class": "MultiTrackView::TriggeredEventView",

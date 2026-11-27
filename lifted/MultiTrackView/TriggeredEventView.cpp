@@ -131,3 +131,68 @@ void* __stdcall fn_004602B0(void* out) {
     return out;
 }
 } // namespace lift_004602B0
+
+// [0x0045DEB0] MultiTrackView::TriggeredEventView::vfunc_81 (242 bytes)
+namespace lift_0045DEB0 {
+// Callees (differentially tested against endorphin.exe; do not inline)
+extern uint32_t ext_00594000(void);                          // sub_00594000: returns global object pointer (mem_00B40D08)
+extern uint32_t ext_00468180(void);                          // sub_00468180: returns global object pointer (mem_00AD7CD8)
+extern uint32_t ext_00468660(void* self);                    // sub_00468660: auto-lifted clone of AVIIO::vfunc_23
+extern int32_t  ext_00477F30(void* self);                    // getMaxField0x160: max int32 at +0x160 over vector at +0x30 (0 if none > 0)
+extern void     ext_0043DD60(void* self, double a, double b); // Unknown::clampAndDispatchFloatPair
+extern int32_t  ext_006A6DE0(double v);                      // sub_006A6DE0: takes value from FPU stack, returns int32
+
+// Data
+extern const double mem_00937FC0;  // .rdata double 1.05 (qword 0x3FF0CCCCC0000000)
+extern uintptr_t    mem_00925688;  // IAT slot: USER32!InvalidateRect
+
+static inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// @name MultiTrackView::TriggeredEventView::vfunc_81
+// @class MultiTrackView::TriggeredEventView
+// @summary Computes a clamped max of four int values (ebx, edi, esi, vfunc result - 1), scales it by 1.05 via sub_006A6DE0 (default 300 if zero), clamps to >= 300, dispatches it to clampAndDispatchFloatPair, then invalidates the owning window.
+// @field MultiTrackView::TriggeredEventView +0x20 HWND field_0x20
+void fn_0045DEB0(void* self) {
+    // ebx = sub_00594000()->[+0x26c]->[+0x1ec]
+    void* root1 = as_ptr(ext_00594000());
+    int32_t ebx = lift_field<int32_t>(as_ptr(lift_field<uint32_t>(root1, 0x26c)), 0x1ec);
+
+    // edi = sub_00594000()->[+0x26c]->[+0x1e4]
+    void* root2 = as_ptr(ext_00594000());
+    int32_t edi = lift_field<int32_t>(as_ptr(lift_field<uint32_t>(root2, 0x26c)), 0x1e4);
+
+    // esi = getMaxField0x160(sub_00594000()->[+0x26c])
+    void* root3 = as_ptr(ext_00594000());
+    int32_t esi = ext_00477F30(as_ptr(lift_field<uint32_t>(root3, 0x26c)));
+
+    // n = obj->vfunc[+0xa0]() - 1, where obj = sub_00468660(sub_00468180())
+    void* obj = as_ptr(ext_00468660(as_ptr(ext_00468180())));
+    void** vtbl = lift_field<void**>(obj, 0);
+    using VFn = int32_t (*)(void*);
+    int32_t n = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0xa0))(obj) - 1;
+
+    // Chain of signed max operations
+    int32_t a = (esi < n) ? n : esi;
+    int32_t b = (edi < a) ? a : edi;
+    int32_t c = (ebx < b) ? b : ebx;
+
+    // Scale: c * 1.05 via sub_006A6DE0, or 300 when c == 0; then clamp to >= 300
+    int32_t r;
+    if (c != 0) {
+        r = ext_006A6DE0(static_cast<double>(c) * mem_00937FC0);
+    } else {
+        r = 300;
+    }
+    int32_t d = (r < 300) ? 300 : r;
+
+    // clampAndDispatchFloatPair(self, 0.0, (double)d)
+    ext_0043DD60(self, 0.0, static_cast<double>(d));
+
+    // InvalidateRect(self->[+0x20], NULL, TRUE)
+    using InvalidateRectFn = int32_t (*)(void*, const void*, int32_t);
+    auto invalidate = reinterpret_cast<InvalidateRectFn>(mem_00925688);
+    invalidate(as_ptr(lift_field<uint32_t>(self, 0x20)), nullptr, 1);
+}
+} // namespace lift_0045DEB0
