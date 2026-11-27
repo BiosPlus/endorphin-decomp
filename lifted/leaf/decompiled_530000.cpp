@@ -1793,3 +1793,40 @@ void fn_00530290(void* self, uint32_t arg0) {
     target(subject);
 }
 } // namespace lift_00530290
+
+// [0x005327F0] sub_005327F0 (127 bytes)
+namespace lift_005327F0 {
+// Callee 0x0066A330: Unknown::SetFloat4 (thiscall; four float stack args copied to self+0x00..+0x0C; returns self in eax).
+extern void* ext_0066A330(void* self, float a0, float a1, float a2, float a3);
+// Import slot 0x00924FE0 -> MSVCP80 std::string copy constructor. The indirect call is replaced by an
+// in-place copy-construction of std::string at self+0x18 (MSVC 2005 std::string layout, 0x1C bytes).
+extern int mem_00924FE0;
+
+// @name Unknown::Unknown (float4 + string constructor)
+// @class Unknown
+// @summary Thiscall constructor: sets vtable, flag at +0x04, forwards four floats to SetFloat4 on the subobject at +0x08, copy-constructs a std::string at +0x18 from the pointer in the first argument, clears the flag at +0x34, and returns self.
+// @field Unknown +0x00 void* vftable
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x18 std::string name
+// @field Unknown +0x34 uint8_t field_0x34
+void* fn_005327F0(void* self, uint32_t a0, float a1, float a2, float a3, uint32_t a4) {
+    (void)mem_00924FE0;
+    (void)a4; // 5th stack dword is popped by "ret 0x14" but never read.
+
+    auto* base = static_cast<uint8_t*>(self);
+
+    // First argument is used both as a float (SetFloat4 arg 0, bit pattern preserved) and as a std::string pointer.
+    const float f0 = std::bit_cast<float>(a0);
+    const auto* src = reinterpret_cast<const std::string*>(static_cast<uintptr_t>(a0));
+
+    lift_field<uint8_t>(self, 0x04) = 1;
+    lift_field<uint32_t>(self, 0x00) = 0x009543B4u; // vftable
+
+    ext_0066A330(base + 0x08, f0, a1, a2, a3);
+
+    new (base + 0x18) std::string(*src);
+
+    lift_field<uint8_t>(self, 0x34) = 0;
+    return self;
+}
+} // namespace lift_005327F0
