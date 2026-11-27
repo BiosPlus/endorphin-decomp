@@ -57631,6 +57631,13 @@
     "summary": "Advances the cursor at self+0x04 past nodes whose byte at +0x39 is set, using the +0x04 and +0x08 links; calls the invalid-parameter handler when self+0x00 is null or the cursor node is flagged on entry.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x006670A0": {
+    "name": "Unknown::ctor_AllocAndInit",
+    "class": "Unknown",
+    "signature": "void* __stdcall fn_006670A0(uint32_t a0, uint32_t a1, uint32_t a2, const void* src, uint8_t flag)",
+    "summary": "Allocates a 0xC4-byte object, stores three dwords and a copy-initialized sub-object (+0x0C) from src, plus a flag byte at +0xC0; returns the object or null if allocation fails.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00667140": {
     "name": "sub_00667140",
     "signature": "void* fn_00667140()",

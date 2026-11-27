@@ -1,0 +1,52 @@
+{
+  "va": "0x006670A0",
+  "size": 156,
+  "orig_symbol": "sub_006670A0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::ctor_AllocAndInit",
+  "class": "Unknown",
+  "signature": "void* __stdcall fn_006670A0(uint32_t a0, uint32_t a1, uint32_t a2, const void* src, uint8_t flag)",
+  "summary": "Allocates a 0xC4-byte object, stores three dwords and a copy-initialized sub-object (+0x0C) from src, plus a flag byte at +0xC0; returns the object or null if allocation fails.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "\u003cunknown\u003e field_0x0C (copy-initialized by",
+      "name": "ext_00666BA0)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "uint8_t",
+      "name": "field_0xC0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC1",
+      "type": "uint8_t",
+      "name": "field_0xC1"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:28:45Z"
+}

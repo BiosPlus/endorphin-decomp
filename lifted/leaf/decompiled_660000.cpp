@@ -4423,3 +4423,46 @@ void fn_00665250(void* str, uint32_t ch) {
     erase_m(str, &found, from, end_full);
 }
 } // namespace lift_00665250
+
+// [0x006670A0] sub_006670A0 (156 bytes)
+namespace lift_006670A0 {
+// Known callee 0x00666BA0: sub_00666BA0 (Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).)
+extern void* ext_00666BA0(void* self, const void* src);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 - operator new)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764 - operator delete)
+extern void ext_006A5C5C(void* p);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* obj, void* info);
+
+// @name Unknown::ctor_AllocAndInit
+// @class Unknown
+// @summary Allocates a 0xC4-byte object, stores three dwords and a copy-initialized sub-object (+0x0C) from src, plus a flag byte at +0xC0; returns the object or null if allocation fails.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C <unknown> field_0x0C (copy-initialized by ext_00666BA0)
+// @field Unknown +0xC0 uint8_t field_0xC0
+// @field Unknown +0xC1 uint8_t field_0xC1
+void* __stdcall fn_006670A0(uint32_t a0, uint32_t a1, uint32_t a2, const void* src, uint8_t flag) {
+    auto* obj = static_cast<unsigned char*>(ext_006A5C62(0xC4));
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    try {
+        *reinterpret_cast<uint32_t*>(obj + 0x00) = a0;
+        *reinterpret_cast<uint32_t*>(obj + 0x04) = a1;
+        *reinterpret_cast<uint32_t*>(obj + 0x08) = a2;
+        ext_00666BA0(obj + 0x0C, src);
+        *(obj + 0xC0) = flag;
+        *(obj + 0xC1) = 0;
+    } catch (...) {
+        // Unwind landing pad: free the object, then rethrow the active exception.
+        ext_006A5C5C(obj);
+        ext_006A6DD2(nullptr, nullptr);
+    }
+
+    return obj;
+}
+} // namespace lift_006670A0
