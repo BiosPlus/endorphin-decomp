@@ -85022,6 +85022,12 @@
     "summary": "Returns ecx when the first stack argument equals 2, otherwise 0; callee pops 8 bytes of arguments.",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007B2430": {
+    "name": "fn_007B2430",
+    "signature": "int fn_007B2430(uint32_t ptrValue, int maxlen)",
+    "summary": "Bounded NUL-terminated string scan: returns index of first NUL within maxlen+1 bytes, reporting errors via ext_007AA510 on NULL input or unterminated string.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B2480": {
     "name": "StrDup",
     "signature": "char* fn_007B2480(const char* src)",

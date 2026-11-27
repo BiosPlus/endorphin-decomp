@@ -1,0 +1,13 @@
+{
+  "va": "0x007B2430",
+  "size": 80,
+  "orig_symbol": "sub_007B2430",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "fn_007B2430",
+  "signature": "int fn_007B2430(uint32_t ptrValue, int maxlen)",
+  "summary": "Bounded NUL-terminated string scan: returns index of first NUL within maxlen+1 bytes, reporting errors via ext_007AA510 on NULL input or unterminated string.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:13:24Z"
+}

@@ -1979,3 +1979,47 @@ int32_t fn_007BF4E0(void* self) {
     return 1;
 }
 } // namespace lift_007BF4E0
+
+// [0x007B2430] sub_007B2430 (80 bytes)
+namespace lift_007B2430 {
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+extern int mem_00B61219;
+
+// @name fn_007B2430
+// @summary Bounded NUL-terminated string scan: returns index of first NUL within maxlen+1 bytes, reporting errors via ext_007AA510 on NULL input or unterminated string.
+// @field none
+int fn_007B2430(uint32_t ptrValue, int maxlen) {
+    if (ptrValue == 0) {
+        ext_007AA510(2);
+        return 0;
+    }
+
+    const char* s = reinterpret_cast<const char*>(static_cast<uintptr_t>(ptrValue));
+    int limit = maxlen + 1;
+    int i = 0;
+
+    if (limit > 0) {
+        // Scan for NUL, stopping once i reaches limit.
+        while (true) {
+            if (s[i] == 0) {
+                break;
+            }
+            ++i;
+            if (i >= limit) {
+                break;
+            }
+        }
+    }
+
+    if (s[i] == 0) {
+        return i;
+    }
+
+    ext_007AA510(0x12);
+    if (static_cast<uint8_t>(mem_00B61219) != 0) {
+        return i;
+    }
+    return 0;
+}
+} // namespace lift_007B2430
