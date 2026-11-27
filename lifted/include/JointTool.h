@@ -10,6 +10,10 @@
 // Recovered field layout for JointTool:
 namespace lifted_layout {
 struct JointTool_Fields {
+    // +0x34  float                    translateX  (evidence: 0x00545850)
+    // +0x38  float                    translateY  (evidence: 0x00545850)
+    // +0x3C  float                    translateZ  (evidence: 0x00545850)
     // +0x88  void*                    field_0x88  (evidence: 0x005470F0)
+    // +0x9C  void*                    field_0x9c  (evidence: 0x00545850)
 };
 } // namespace lifted_layout

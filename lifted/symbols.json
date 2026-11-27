@@ -27294,6 +27294,13 @@
     "summary": "Pure jump thunk forwarding to sub_00543350.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00545850": {
+    "name": "JointTool::vfunc_31",
+    "class": "JointTool",
+    "signature": "extern \"C\" uint32_t mem_009324A4; // float 0.5 (bit pattern 0x3F000000) extern \"C\" void* mem_009254D0;   // glColor4f extern \"C\" void* mem_009253D0;   // glTranslatef extern \"C\" void* mem_00925524;   // glPopName extern \"C\" void* mem_00925404;   // glPopMatrix void fn_00545850(void* self)",
+    "summary": "Calls virtual slot 0x80 on self, then (unless ext_005434C0 reports true) draws a translated, named GL marker and invokes slot 0x58 on the embedded sub-object at +0x9C.",
+    "lifted_path": "lifted/classes/JointTool.cpp"
+  },
   "0x00545940": {
     "name": "Unknown::InitWithArgsAndSubobject9C",
     "class": "Unknown",
