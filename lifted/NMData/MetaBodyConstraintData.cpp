@@ -177,3 +177,32 @@ extern void __thiscall fn_004CD190(void* self, void* src) {
     ext_004026E0(strList);
 }
 } // namespace lift_004CD190
+
+// [0x004CE390]
+namespace lift_004CE390 {
+// @name NMData::MetaBodyConstraintData::vfunc_88
+// @class NMData::MetaBodyConstraintData
+// @summary Allocates and initializes a 0x30-byte helper object, replaces field_0x180, and updates it with this.
+// @field NMData::MetaBodyConstraintData +0x180 void* field_0x180
+
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_004CCC30(void* self);
+extern void __thiscall ext_0046AC30(void* self);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __thiscall ext_004CE040(void* self, void* owner);
+
+extern void __thiscall fn_004CE390(void* self) {
+    void* obj = ext_006A5C62(0x30);
+    void* new_obj = obj ? ext_004CCC30(obj) : nullptr;
+
+    void* old_obj = lift_field<void*>(self, 0x180);
+    if (new_obj != old_obj && old_obj != nullptr) {
+        ext_0046AC30(old_obj);
+        ext_006A5C5C(old_obj);
+    }
+
+    lift_field<void*>(self, 0x180) = new_obj;
+    ext_004CE040(new_obj, self);
+}
+} // namespace lift_004CE390

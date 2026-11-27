@@ -1,0 +1,22 @@
+{
+  "va": "0x004CE390",
+  "size": 136,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_88",
+  "src_path": "src/NMData/MetaBodyConstraintData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_88",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "extern \"C\" void __thiscall fn_004CE390(void* self)",
+  "summary": "Allocates and initializes a 0x30-byte helper object, replaces field_0x180, and updates it with this.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:46:29Z"
+}

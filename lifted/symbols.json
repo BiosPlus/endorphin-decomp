@@ -21608,6 +21608,13 @@
     "summary": "One-time initializer for the static object at 0x00AE4520, guarded by bit 0 of the flag dword at 0x00AE4544; runs ext_004CD9F0 on the object and registers 0x00918C00 via ext_006A6C87, then returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004CE390": {
+    "name": "NMData::MetaBodyConstraintData::vfunc_88",
+    "class": "NMData::MetaBodyConstraintData",
+    "signature": "extern \"C\" void __thiscall fn_004CE390(void* self)",
+    "summary": "Allocates and initializes a 0x30-byte helper object, replaces field_0x180, and updates it with this.",
+    "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
+  },
   "0x004CE570": {
     "name": "sub_004CE570",
     "signature": "extern \"C\" void __fastcall fn_004CE570(void* self, int edx_unused, float value)",
