@@ -1,0 +1,28 @@
+{
+  "va": "0x0049F140",
+  "size": 252,
+  "orig_symbol": "NMData::State::vfunc_14_off_8",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_14_off_8",
+  "class": "NMData::State",
+  "signature": "void* __thiscall fn_0049F140(void* self, uint32_t arg)",
+  "summary": "Looks up arg in the state's two intrusive lists (at +0xC8 and +0xD8, adjusted by -8) and returns the matching value pointer, or nullptr.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0xCC",
+      "type": "void*",
+      "name": "field_0xCC"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xD8",
+      "type": "void*",
+      "name": "field_0xD8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:01:08Z"
+}

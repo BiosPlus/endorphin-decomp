@@ -15396,6 +15396,13 @@
     "summary": "Searches a sentinel-terminated linked list at this+0xC4 for the first node matching arg and returns its embedded object (node+8), or nullptr.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049F140": {
+    "name": "NMData::State::vfunc_14_off_8",
+    "class": "NMData::State",
+    "signature": "void* __thiscall fn_0049F140(void* self, uint32_t arg)",
+    "summary": "Looks up arg in the state's two intrusive lists (at +0xC8 and +0xD8, adjusted by -8) and returns the matching value pointer, or nullptr.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049F2E0": {
     "name": "sub_0049F2E0",
     "class": "(none)",

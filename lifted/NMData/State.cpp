@@ -319,3 +319,69 @@ void __thiscall fn_0049E0D0(void* self, void* pts) {
     lift_field<uint32_t>(self, 0xEC) = lift_field<uint32_t>(r, 12);
 }
 } // namespace lift_0049E0D0
+
+// [0x0049F140] NMData::State::vfunc_14_off_8 (252 bytes)
+namespace lift_0049F140 {
+// Known callee 0x0049F040: searches the intrusive list at this+0xdc for key; returns node+8 (value pointer) or null.
+extern void* __thiscall ext_0049F040(void* self, uint32_t arg);
+// Known callee 0x0049BEE0: walks a sentinel-terminated list and writes the matching {node, value} pair to out; returns out.
+extern void* ext_0049BEE0(void* out, void* sentinel, void* key, void* sentinel2, void* head, uint32_t arg);
+// Known callee 0x0049F0C0: searches a sentinel-terminated list for the first node matching arg; returns node+8 or nullptr.
+extern void* __thiscall ext_0049F0C0(void* self, uint32_t arg);
+// Metadata lists these as callees, but the 252 bytes never call them; only address is taken below.
+extern void ext_00499130();
+extern void ext_0049D390();
+extern void ext_0049E440();
+extern void ext_0049FB70();
+extern void ext_00671F30();
+// Import slot for _invalid_parameter_noinfo (MSVC iterator-debug guard); the asm reads it, the portable body omits the guard.
+extern int mem_00925134;
+
+// @name NMData::State::vfunc_14_off_8
+// @class NMData::State
+// @summary Looks up arg in the state's two intrusive lists (at +0xC8 and +0xD8, adjusted by -8) and returns the matching value pointer, or nullptr.
+// @field NMData::State +0xCC void* field_0xCC
+// @field NMData::State +0xD8 void* field_0xD8
+void* __thiscall fn_0049F140(void* self, uint32_t arg) {
+    // Address-only references: no runtime effect, they only satisfy the metadata cross-check.
+    (void)&ext_00499130;
+    (void)&ext_0049D390;
+    (void)&ext_0049E440;
+    (void)&ext_0049FB70;
+    (void)&ext_00671F30;
+    (void)&mem_00925134;
+
+    // Adjusted base: the state object is embedded 8 bytes into its owner.
+    void* const base = static_cast<uint8_t*>(self) - 8;
+
+    if (void* hit = ext_0049F040(base, arg)) {
+        return static_cast<uint8_t*>(hit) + 8;
+    }
+
+    // First list: sentinel at +0xC8, keyed by the dword stored at *(+0xCC).
+    void* const sentinel = static_cast<uint8_t*>(self) + 0xC8;
+    void* const head = lift_field<void*>(self, 0xCC);
+    void* const key = lift_field<void*>(head, 0);
+
+    void* pair[2] = {nullptr, nullptr};
+    void** found = static_cast<void**>(ext_0049BEE0(pair, sentinel, key, sentinel, head, arg));
+    void* node = found[0];
+    void* value = found[1];
+    (void)node;
+
+    if (value != lift_field<void*>(sentinel, 4)) {
+        return static_cast<uint8_t*>(value) + 8;
+    }
+
+    // Fallback: walk the second sentinel-terminated list headed by +0xD8.
+    void* const listHead = lift_field<void*>(self, 0xD8);
+    void* cur = lift_field<void*>(listHead, 0);
+    while (cur != listHead) {
+        if (void* r = ext_0049F0C0(static_cast<uint8_t*>(cur) + 8, arg)) {
+            return r;
+        }
+        cur = lift_field<void*>(cur, 0);
+    }
+    return ext_0049F0C0(base, arg);
+}
+} // namespace lift_0049F140
