@@ -3679,6 +3679,12 @@
     "summary": "Calls virtual method at +0x1CC on the object returned by fn_00465B40 and displays any caught exception message via AfxMessageBox.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00432250": {
+    "name": "sub_00432250",
+    "signature": "void __cdecl fn_00432250(void)",
+    "summary": "Calls vtable+0x1d4(0) on object from sub_00465B40 and displays any caught exception message via AfxMessageBox.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00432400": {
     "name": "fn_00432400 (call-object virtual method 0x1EC with arg 0)",
     "signature": "void fn_00432400(void* self)",
