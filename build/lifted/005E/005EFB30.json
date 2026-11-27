@@ -1,0 +1,58 @@
+{
+  "va": "0x005EFB30",
+  "size": 483,
+  "orig_symbol": "NMData::HingeData::vfunc_17_off_C",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_17_off_C",
+  "class": "NMData::HingeData",
+  "signature": "extern \"C\" void* __thiscall fn_005EFB30(void* self)",
+  "summary": "Clones a HingeData object, copying its properties, transform/constraint state, and sub-objects.",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x148",
+      "type": "uint8_t",
+      "name": "field_0x148"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0xE4",
+      "type": "void*",
+      "name": "field_0xe4"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0xE8",
+      "type": "uint32_t",
+      "name": "field_0xe8"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0xEC",
+      "type": "uint32_t",
+      "name": "field_0xec"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:28:00Z"
+}

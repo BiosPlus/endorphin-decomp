@@ -578,3 +578,94 @@ void __thiscall fn_005EDAC0(void* self) {
     ext_005A3500(target, record);
 }
 } // namespace lift_005EDAC0
+
+// [0x005EFB30]
+namespace lift_005EFB30 {
+// @name NMData::HingeData::vfunc_17_off_C
+// @class NMData::HingeData
+// @summary Clones a HingeData object, copying its properties, transform/constraint state, and sub-objects.
+// @field NMData::HingeData +0x148 uint8_t field_0x148
+// @field NMData::HingeData +0x168 void* field_0x168
+// @field NMData::HingeData +0x178 uint8_t field_0x178
+// @field NMData::HingeData +0x17C void* field_0x17c
+// @field NMData::HingeData +0xE4 void* field_0xe4
+// @field NMData::HingeData +0xE8 uint32_t field_0xe8
+// @field NMData::HingeData +0xEC uint32_t field_0xec
+
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_005EF6D0(void* self);
+extern void __thiscall ext_00505F00(void* self, void* src);
+extern void __thiscall ext_005881D0(void* self, void* src);
+extern void __thiscall ext_0065F280(void* self, void* src);
+extern void __thiscall ext_0065F440(void* self);
+
+extern void* __thiscall fn_005EFB30(void* self) {
+    uint8_t* edi = static_cast<uint8_t*>(self);
+
+    void* raw = ext_006A5C62(0x2f8);
+    void* esi = nullptr;
+    if (raw != nullptr) {
+        esi = ext_005EF6D0(raw);
+    }
+
+    auto vtable_esi = *reinterpret_cast<void***>(esi);
+    using VFunc5C = void(__thiscall*)(void*, void*);
+    reinterpret_cast<VFunc5C>(vtable_esi[0x5c / 4])(esi, edi + 0x8);
+
+    *reinterpret_cast<uint8_t*>(static_cast<uint8_t*>(esi) + 0x178) = *(edi + 0x16c);
+    ext_00505F00(static_cast<uint8_t*>(esi) + 0x168, edi + 0x15c);
+
+    void* iface_m8 = edi - 0x8;
+    auto vtable_m8 = *reinterpret_cast<void***>(iface_m8);
+    using VFunc20 = uint8_t(__thiscall*)(void*);
+    *(static_cast<uint8_t*>(esi) + 0x148) = reinterpret_cast<VFunc20>(vtable_m8[0x20 / 4])(iface_m8);
+
+    uint8_t buf_14[16]{};
+    uint8_t buf_20[24]{};
+    uint8_t buf_38[24]{};
+
+    void* src_sub = *reinterpret_cast<void**>(edi + 0x170);
+    void* dst_sub = *reinterpret_cast<void**>(static_cast<uint8_t*>(esi) + 0x17c);
+
+    auto vtable_src = *reinterpret_cast<void***>(src_sub);
+    auto vtable_dst = *reinterpret_cast<void***>(dst_sub);
+
+    using VFunc110 = void*(__thiscall*)(void*, void*);
+    void* res_110 = reinterpret_cast<VFunc110>(vtable_src[0x110 / 4])(src_sub, buf_14);
+    using VFuncF4 = void(__thiscall*)(void*, void*);
+    reinterpret_cast<VFuncF4>(vtable_dst[0xf4 / 4])(dst_sub, res_110);
+
+    using VFunc118 = void(__thiscall*)(void*, void*, uint32_t, uint32_t);
+    reinterpret_cast<VFunc118>(vtable_src[0x118 / 4])(src_sub, buf_38, 0, 1);
+    reinterpret_cast<VFunc118>(vtable_src[0x118 / 4])(src_sub, buf_20, 0, 0);
+
+    using VFuncEC = void(__thiscall*)(void*, void*, uint32_t, uint32_t);
+    reinterpret_cast<VFuncEC>(vtable_dst[0xec / 4])(dst_sub, buf_38, 0, 1);
+    reinterpret_cast<VFuncEC>(vtable_dst[0xec / 4])(dst_sub, buf_20, 0, 0);
+
+    using VFunc130 = void*(__thiscall*)(void*, uint32_t);
+    void* res_130 = reinterpret_cast<VFunc130>(vtable_src[0x130 / 4])(src_sub, 0);
+    using VFunc108 = void(__thiscall*)(void*, uint32_t, void*);
+    reinterpret_cast<VFunc108>(vtable_dst[0x108 / 4])(dst_sub, 0, res_130);
+
+    uint8_t* src_sub_b = *reinterpret_cast<uint8_t**>(edi + 0x170);
+    uint8_t* dst_sub_b = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(esi) + 0x17c);
+    ext_005881D0(dst_sub_b, src_sub_b);
+    ext_0065F280(dst_sub_b + 0xe4, src_sub_b + 0xe4);
+    *reinterpret_cast<uint32_t*>(dst_sub_b + 0xe8) = *reinterpret_cast<uint32_t*>(src_sub_b + 0xe8);
+    *reinterpret_cast<uint32_t*>(dst_sub_b + 0xec) = *reinterpret_cast<uint32_t*>(src_sub_b + 0xec);
+
+    uint8_t* src_base = edi - 0xc;
+    uint8_t* dst_base = static_cast<uint8_t*>(esi);
+    ext_005881D0(dst_base, src_base);
+    ext_0065F280(dst_base + 0xe4, src_base + 0xe4);
+    *reinterpret_cast<uint32_t*>(dst_base + 0xe8) = *reinterpret_cast<uint32_t*>(src_base + 0xe8);
+    *reinterpret_cast<uint32_t*>(dst_base + 0xec) = *reinterpret_cast<uint32_t*>(src_base + 0xec);
+
+    ext_0065F440(buf_20);
+    ext_0065F440(buf_38);
+
+    return esi;
+}
+} // namespace lift_005EFB30
