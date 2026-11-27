@@ -279,3 +279,30 @@ bool __thiscall fn_004FA170(void* self) {
     return count != 0;
 }
 } // namespace lift_004FA170
+
+// [0x004F9C40]
+namespace lift_004F9C40 {
+void ext_00530290(void* self, uint32_t arg0);
+
+// @name VMCSModes::DefaultImplementation::vfunc_54
+// @class VMCSModes::DefaultImplementation
+// @summary Calls vtable slot 0xB4 on the object reached via this->+0x8->+0x14->+0x30; if it returns non-null, calls ext_00530290(result, 0).
+// @field VMCSModes::DefaultImplementation +0x08 void* field_0x08
+
+void fn_004F9C40(void* self) {
+    // this->+0x08 -> +0x14 -> +0x30 (intermediate objects have unrecovered layouts)
+    void* a = lift_field<void*>(self, 0x08);
+    void* b = lift_field<void*>(a, 0x14);
+    void* obj = lift_field<void*>(b, 0x30);
+
+    // Virtual call: vtable = *obj; slot byte offset 0xB4 (call [vtable+0xB4] with ecx = obj)
+    void* vt = lift_field<void*>(obj, 0);
+    using VirtFn = void* (*)(void*);
+    VirtFn slot = reinterpret_cast<VirtFn>(lift_field<void*>(vt, 0xB4));
+    void* r = slot(obj);
+
+    if (r != nullptr) {
+        ext_00530290(r, 0);
+    }
+}
+} // namespace lift_004F9C40

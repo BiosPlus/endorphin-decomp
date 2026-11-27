@@ -19834,6 +19834,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9BD0 (VMCSModes::DefaultImplementation::vfunc_33).",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F9C40": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_54",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_004F9C40(void* self)",
+    "summary": "Calls vtable slot 0xB4 on the object reached via this-\u003e+0x8-\u003e+0x14-\u003e+0x30; if it returns non-null, calls ext_00530290(result, 0).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004F9D00": {
     "name": "VMCSModes::DefaultImplementation::vfunc_97",
     "class": "VMCSModes::DefaultImplementation",
