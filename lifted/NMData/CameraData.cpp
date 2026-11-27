@@ -149,3 +149,81 @@ void fn_005DCB00(void* self) {
     ext_0058F030(obj);
 }
 } // namespace lift_005DCB00
+
+// [0x005DD190] NMData::CameraData::vfunc_34 (315 bytes)
+namespace lift_005DD190 {
+// Callees (kept as ext_/mem_ references for differential testing against endorphin.exe).
+extern uintptr_t ext_00493E00(void* self);                        // thunk: vtable+0xB4 of first field
+extern void      ext_005DD090(void* self, uintptr_t arg);
+extern void*     ext_00493E50(void* self, void* p, uintptr_t flags); // scalar deleting dtor thunk
+extern void*     ext_00493E40(void* self, void* p, uintptr_t q);     // vtable-pointer forwarder
+extern void      ext_00528B90(void* self, void* peer);              // setPeerWithBackLink
+extern DWORD     ext_00528BB0(void* self, DWORD a0, DWORD a1);      // forwardVirtual0x2CIfNonNull
+extern uintptr_t ext_00493E70(void* self, void* extra);             // vtable+0x198 forwarder
+extern void      ext_00548190(void* self, void* arg);
+extern uintptr_t ext_00480920(void* self, uintptr_t a, uintptr_t b);
+extern void      ext_005CFE10(void* self, uint32_t arg1);           // set_field_0x1f2
+extern int mem_00B40640;
+
+// Virtual dispatch through a vtable slot given as a byte offset (e.g. 0x1C -> slot 7).
+template <typename R, typename... Args>
+static inline R vslot(void* obj, size_t byteOffset, Args... args) {
+    void* const* vtbl = *reinterpret_cast<void* const* const*>(obj);
+    using Fn = R (*)(void*, Args...);
+    Fn fn = reinterpret_cast<Fn>(vtbl[byteOffset / sizeof(void*)]);
+    return fn(obj, args...);
+}
+
+// @name NMData::CameraData::vfunc_34
+// @class NMData::CameraData
+// @summary Resolves two child objects via thunks, wires back-links into them, stores the second one at this+0x2C4, and returns the object from the final forwarder.
+// @field NMData::CameraData +0x04 void* field_0x04
+// @field NMData::CameraData +0x0C void* field_0x0c
+// @field NMData::CameraData +0xE8 uintptr_t field_0xe8
+// @field NMData::CameraData +0x154 void* field_0x154
+// @field NMData::CameraData +0x15C uint8_t field_0x15c
+// @field NMData::CameraData +0x1F2 uint8_t field_0x1f2
+// @field NMData::CameraData +0x210 uint8_t field_0x210
+// @field NMData::CameraData +0x2C4 void* field_0x2c4
+void* fn_005DD190(void* self, void* arg) {
+    uint8_t* const base = static_cast<uint8_t*>(self);
+    void* const sub4 = base + 0x04;
+    void* const sub0c = base + 0x0C;
+    void* const p15c = base + 0x15C;
+    void* const p210 = base + 0x210;
+
+    uintptr_t a = ext_00493E00(arg);
+    ext_005DD090(self, a);
+
+    void* res;
+    if (vslot<uint8_t>(sub4, 0x1C)) {
+        res = ext_00493E50(arg, p15c, lift_field<uintptr_t>(self, 0xE8));
+    } else {
+        uintptr_t g = static_cast<uintptr_t>(static_cast<uint32_t>(mem_00B40640));
+        uintptr_t r = vslot<uintptr_t>(sub4, 0x0C, g);
+        res = ext_00493E40(arg, p15c, r);
+    }
+    lift_field<void*>(res, 0x20) = p15c;
+
+    ext_00528B90(sub0c, res);
+    ext_00528BB0(sub0c, 0x100, 1);
+    ext_00528BB0(sub0c, 0x40000, 1);
+
+    void* ebx = reinterpret_cast<void*>(ext_00493E70(arg, res));
+
+    void* const p154 = lift_field<void*>(self, 0x154);
+    if (p154) {
+        ext_00548190(p154, self);
+    }
+
+    uintptr_t r480 = ext_00480920(p154, 0, 0);
+    void* edi2 = ext_00493E40(arg, p210, r480);
+    lift_field<void*>(edi2, 0x20) = p210;
+
+    lift_field<void*>(self, 0x2C4) = edi2;
+    ext_005CFE10(self, lift_field<uint8_t>(self, 0x1F2));
+
+    vslot<void>(ebx, 0x0C, edi2);
+    return ebx;
+}
+} // namespace lift_005DD190

@@ -1,0 +1,64 @@
+{
+  "va": "0x005DD190",
+  "size": 315,
+  "orig_symbol": "NMData::CameraData::vfunc_34",
+  "src_path": "src/NMData/CameraData.cpp",
+  "lifted_path": "lifted/NMData/CameraData.cpp",
+  "name": "NMData::CameraData::vfunc_34",
+  "class": "NMData::CameraData",
+  "signature": "static inline R vslot(void* obj, size_t byteOffset, Args... args)",
+  "summary": "Resolves two child objects via thunks, wires back-links into them, stores the second one at this+0x2C4, and returns the object from the final forwarder.",
+  "fields": [
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0xE8",
+      "type": "uintptr_t",
+      "name": "field_0xe8"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x15C",
+      "type": "uint8_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1F2",
+      "type": "uint8_t",
+      "name": "field_0x1f2"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x210",
+      "type": "uint8_t",
+      "name": "field_0x210"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x2C4",
+      "type": "void*",
+      "name": "field_0x2c4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:36:17Z"
+}

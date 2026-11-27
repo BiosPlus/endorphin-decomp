@@ -52002,6 +52002,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005DD190": {
+    "name": "NMData::CameraData::vfunc_34",
+    "class": "NMData::CameraData",
+    "signature": "static inline R vslot(void* obj, size_t byteOffset, Args... args)",
+    "summary": "Resolves two child objects via thunks, wires back-links into them, stores the second one at this+0x2C4, and returns the object from the final forwarder.",
+    "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
   "0x005DD310": {
     "name": "sub_005DD310",
     "class": "Unknown",
