@@ -1871,3 +1871,53 @@ void* fn_0063E6C0(void* self, uint32_t arg0) {
     return result;
 }
 } // namespace lift_0063E6C0
+
+// [0x0063EB70] sub_0063EB70 (156 bytes)
+namespace lift_0063EB70 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (operator new, cdecl; called with 0x30)
+extern void ext_006A5C62();
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (operator delete, cdecl)
+extern void ext_006A5C5C();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (reached via the `throw;` rethrow below)
+extern void ext_006A6DD2();
+// Indirect call slot 0x00924FE0: holds the address of the MSVCP80 basic_string copy constructor.
+extern int mem_00924FE0;
+
+// @name Record0x30::CreateWithString
+// @class Record0x30
+// @summary Allocates a 0x30-byte record, stores three dwords, copy-constructs a std::string at +0x0c from src, copies one byte from src+0x1c, and stores a flag byte; returns the record or null.
+// @field Record0x30 +0x00 uint32_t field_0x00
+// @field Record0x30 +0x04 uint32_t field_0x04
+// @field Record0x30 +0x08 uint32_t field_0x08
+// @field Record0x30 +0x0c uint8_t field_0x0c[0x1c]
+// @field Record0x30 +0x28 uint8_t field_0x28
+// @field Record0x30 +0x2c uint8_t field_0x2c
+// @field Record0x30 +0x2d uint8_t field_0x2d
+void* fn_0063EB70(uint32_t a1, uint32_t a2, uint32_t a3, const uint8_t* src, uint8_t flag) {
+    using AllocFn = void* (*)(size_t);
+    using FreeFn = void (*)(void*);
+    using StrCopyFn = void(__thiscall*)(void* self, const void* other);
+
+    void* obj = reinterpret_cast<AllocFn>(ext_006A5C62)(0x30);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    lift_field<uint32_t>(obj, 0x00) = a1;
+    lift_field<uint32_t>(obj, 0x04) = a2;
+    lift_field<uint32_t>(obj, 0x08) = a3;
+
+    void* str = static_cast<uint8_t*>(obj) + 0x0c;
+    try {
+        auto copyCtor = reinterpret_cast<StrCopyFn>(static_cast<uintptr_t>(mem_00924FE0));
+        copyCtor(str, src);
+        lift_field<uint8_t>(obj, 0x28) = src[0x1c];
+        lift_field<uint8_t>(obj, 0x2c) = flag;
+        lift_field<uint8_t>(obj, 0x2d) = 0;
+    } catch (...) {
+        reinterpret_cast<FreeFn>(ext_006A5C5C)(obj);
+        throw;
+    }
+    return obj;
+}
+} // namespace lift_0063EB70

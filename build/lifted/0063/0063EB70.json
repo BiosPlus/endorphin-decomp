@@ -1,0 +1,58 @@
+{
+  "va": "0x0063EB70",
+  "size": 156,
+  "orig_symbol": "sub_0063EB70",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Record0x30::CreateWithString",
+  "class": "Record0x30",
+  "signature": "void* fn_0063EB70(uint32_t a1, uint32_t a2, uint32_t a3, const uint8_t* src, uint8_t flag)",
+  "summary": "Allocates a 0x30-byte record, stores three dwords, copy-constructs a std::string at +0x0c from src, copies one byte from src+0x1c, and stores a flag byte; returns the record or null.",
+  "fields": [
+    {
+      "class": "Record0x30",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0c[0x1c]"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x28",
+      "type": "uint8_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x2C",
+      "type": "uint8_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x2D",
+      "type": "uint8_t",
+      "name": "field_0x2d"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:28:45Z"
+}
