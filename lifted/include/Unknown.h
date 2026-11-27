@@ -31,6 +31,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 bucketBase  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    buffer  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int32_t                  count  (evidence: 0x00783940) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count_00  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t[19]             entries  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x0
@@ -405,7 +406,7 @@ struct Unknown_Fields {
     // +0x10  uint32_t                 count  (evidence: 0x00796660) // CONFLICT: multiple definitions at +0x10
     // +0x10  void**                   data_10  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t*                 entries  (evidence: 0x0077F620) // CONFLICT: multiple definitions at +0x10
-    // +0x10  void**                   entries  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void**                   entries  (evidence: 0x00783940, 0x007839B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    entryTable  (evidence: 0x006FC250) // CONFLICT: multiple definitions at +0x10
     // +0x10  void* field_0x10 (address only; this+0x10 passed as the this-pointer to ext_005111E0)  (evidence: 0x00689570, 0x0068BC00, 0x0068BDF0) // CONFLICT: multiple definitions at +0x10
     // +0x10  <embedded object>        field_0x10  (evidence: 0x007008F0, 0x0070AD00, 0x0070E390, 0x0070E3B0, 0x0070EC70, 0x007155B0, 0x0071C330, 0x0071F070) // CONFLICT: multiple definitions at +0x10
@@ -521,6 +522,7 @@ struct Unknown_Fields {
     // +0x18  FinishFn                 finish  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0x18
     // +0x18  int32_t                  flag  (evidence: 0x007D4720) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t flags (of the stack argument `arg`; class not identified)  (evidence: 0x004561C0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  void*                    indexList  (evidence: 0x00783940) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    m12  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    quadric  (evidence: 0x0054A0E0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 range2_end  (evidence: 0x00526960, 0x0052F7D0) // CONFLICT: multiple definitions at +0x18

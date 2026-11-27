@@ -2132,3 +2132,48 @@ void fn_00788C90(void* self) {
     lift_field<uint32_t>(self, 0x18) = static_cast<uint32_t>(st.wMilliseconds) & 0xffffu;
 }
 } // namespace lift_00788C90
+
+// [0x00783940] sub_00783940 (112 bytes)
+namespace lift_00783940 {
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200();
+// Known callee 0x007837D0: IndexListNode::shiftIndicesAfterRemove (Walks the node list from this; decrements the indices at +0x08 and +0x0C that are greater than the removed index argument.)
+extern void ext_007837D0();
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C();
+
+// @name IndexedPairList::removeMatchingEntry
+// @class Unknown
+// @summary Scans the entry array for an entry whose first two int32 keys equal (key1, key2); if found, removes it from the array, releases the entry via MFC80 ord_764, and shifts indices in the attached index list at +0x18 past the removed slot. Returns 0 if removed, 1 if not found.
+// @field Unknown +0x00 int32_t count
+// @field Unknown +0x10 void** entries
+// @field Unknown +0x18 void* indexList
+int32_t __thiscall fn_00783940(void* self, int32_t key1, int32_t key2) {
+    const int32_t count = lift_field<int32_t>(self, 0x00);
+    if (count > 0) {
+        void** entries = lift_field<void**>(self, 0x10);
+        for (int32_t i = 0; i < count; ++i) {
+            void* entry = entries[i];
+            if (lift_field<int32_t>(entry, 0x00) == key1 &&
+                lift_field<int32_t>(entry, 0x04) == key2) {
+                // DynArray::removeAt(self, index) -- __fastcall: ecx=self, edx=unused, stack=index
+                using RemoveAtFn = void(__fastcall*)(void* self, void* edx, int32_t index);
+                reinterpret_cast<RemoveAtFn>(&ext_006D2200)(self, nullptr, i);
+
+                // MFC80 ord_764 thunk, cdecl single argument (the released entry)
+                using ReleaseFn = void(__cdecl*)(void* p);
+                reinterpret_cast<ReleaseFn>(&ext_006A5C5C)(entry);
+
+                void* indexList = lift_field<void*>(self, 0x18);
+                if (indexList != nullptr) {
+                    // IndexListNode::shiftIndicesAfterRemove -- ecx=indexList, stack=removed index
+                    using ShiftFn = void(__thiscall*)(void* self, int32_t removedIndex);
+                    reinterpret_cast<ShiftFn>(&ext_007837D0)(indexList, i);
+                }
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+} // namespace lift_00783940

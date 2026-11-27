@@ -1,0 +1,34 @@
+{
+  "va": "0x00783940",
+  "size": 112,
+  "orig_symbol": "sub_00783940",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "IndexedPairList::removeMatchingEntry",
+  "class": "Unknown",
+  "signature": "int32_t __thiscall fn_00783940(void* self, int32_t key1, int32_t key2)",
+  "summary": "Scans the entry array for an entry whose first two int32 keys equal (key1, key2); if found, removes it from the array, releases the entry via MFC80 ord_764, and shifts indices in the attached index list at +0x18 past the removed slot. Returns 0 if removed, 1 if not found.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "entries"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "indexList"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:32Z"
+}

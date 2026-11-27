@@ -70096,6 +70096,13 @@
     "summary": "Releases entries via sub_007839B0, resets the +0x18 chain if non-null, and calls sub_006D2160.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783940": {
+    "name": "IndexedPairList::removeMatchingEntry",
+    "class": "Unknown",
+    "signature": "int32_t __thiscall fn_00783940(void* self, int32_t key1, int32_t key2)",
+    "summary": "Scans the entry array for an entry whose first two int32 keys equal (key1, key2); if found, removes it from the array, releases the entry via MFC80 ord_764, and shifts indices in the attached index list at +0x18 past the removed slot. Returns 0 if removed, 1 if not found.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007839B0": {
     "name": "ReleaseEntriesAndResetChain",
     "class": "Unknown",
