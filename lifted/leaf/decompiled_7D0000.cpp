@@ -1598,3 +1598,48 @@ void fn_007DA850(void* self, int32_t n, int32_t m) {
     lift_field<uint32_t>(p, 0x2C) = 0;
 }
 } // namespace lift_007DA850
+
+// [0x007DD0A0]
+namespace lift_007DD0A0 {
+// @name setItemFlagAndLink
+// @summary Validates an item index and sets or clears bit 0 of its flags, linking or unlinking it from the list at +0xC0.
+// @field this +0x0C int32_t count
+// @field this +0x10 uint8_t* items (stride 0x9C)
+// @field this +0xC0 void* listHead (intrusive doubly-linked list)
+uint8_t __thiscall sub_007DD0A0(void* self, int32_t index, uint8_t enable) {
+    if (index < 0 || index >= lift_field<int32_t>(self, 0x0C)) {
+        return 0;
+    }
+
+    uint8_t* items = lift_field<uint8_t*>(self, 0x10);
+    uint8_t* item = items + static_cast<size_t>(index) * 0x9C;
+
+    if (lift_field<int32_t>(item, 0x08) != index) {
+        return 0;
+    }
+
+    if (enable != 0) {
+        if ((lift_field<uint8_t>(item, 0x10) & 0x1) == 0) {
+            lift_field<uint32_t>(item, 0x10) |= 0x1u;
+            uint8_t* head = static_cast<uint8_t*>(self) + 0xC0;
+            void* next = lift_field<void*>(head, 0x00);
+            lift_field<void*>(item, 0x04) = head;
+            lift_field<void*>(item, 0x00) = next;
+            lift_field<void*>(head, 0x00) = item;
+            lift_field<void*>(next, 0x04) = item;
+        }
+    } else {
+        if ((lift_field<uint8_t>(item, 0x10) & 0x1) != 0) {
+            lift_field<uint32_t>(item, 0x10) &= ~0x1u;
+            void* next = lift_field<void*>(item, 0x00);
+            void* prev = lift_field<void*>(item, 0x04);
+            lift_field<void*>(next, 0x04) = prev;
+            lift_field<void*>(prev, 0x00) = next;
+            lift_field<void*>(item, 0x04) = item;
+            lift_field<void*>(item, 0x00) = item;
+        }
+    }
+
+    return 1;
+}
+} // namespace lift_007DD0A0

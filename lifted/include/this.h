@@ -14,11 +14,14 @@ struct this_Fields {
     // +0x4   uint32_t                 items  (evidence: 0x00780160) // CONFLICT: multiple definitions at +0x4
     // +0x8   struct                   field_0x08  (evidence: 0x006111A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00524B50, 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
+    // +0xC   int32_t                  count  (evidence: 0x007DD0A0)
+    // +0x10  uint8_t* items (stride   0x9C)  (evidence: 0x007DD0A0)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0063F480)
     // +0x34  uint32_t*                vec_first  (evidence: 0x00477F30)
     // +0x38  uint32_t*                vec_last  (evidence: 0x00477F30)
     // +0x54  uint32_t*                field_0x54  (evidence: 0x006AF8E0)
     // +0x58  int32_t                  field_0x58  (evidence: 0x006AF8E0)
+    // +0xC0  void* listHead (intrusive doubly-linked list)  (evidence: 0x007DD0A0)
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x0058AB90) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  uint8_t                  r  (evidence: 0x0044A2D0) // CONFLICT: multiple definitions at +0xF0
     // +0xF1  uint8_t                  g  (evidence: 0x0044A2D0)
