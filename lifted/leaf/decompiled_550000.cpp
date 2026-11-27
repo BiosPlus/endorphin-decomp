@@ -3033,3 +3033,73 @@ void* __thiscall fn_005590D0(void* self, void* srcNode, void* parent) {
     return result;
 }
 } // namespace lift_005590D0
+
+// [0x005586F0]
+namespace lift_005586F0 {
+// @name Vector84::Vector84
+// @class Vector84
+// @summary Copy-constructs a std::vector of 0x54-byte records, allocating storage and rolling back on exception.
+// @field Vector84 +0x04 void* _Myfirst
+// @field Vector84 +0x08 void* _Mylast
+// @field Vector84 +0x0C void* _Myend
+
+
+extern void ext_00405FB0(void* self);
+extern void* ext_00553EA0(uint32_t count);
+extern void* ext_00555980(void* src_begin, void* src_end, void* dst_begin);
+extern void ext_005587E0(void* self, uint32_t flag);
+extern void ext_006A6DD2(void);
+extern void (*mem_00925134)(void);
+
+void* __thiscall fn_005586F0(void* self, const void* other) {
+    uint32_t src_begin = lift_field<uint32_t>(other, 0x04);
+    uint32_t count = 0;
+    if (src_begin != 0) {
+        uint32_t src_end = lift_field<uint32_t>(other, 0x08);
+        count = static_cast<uint32_t>(static_cast<int32_t>(src_end - src_begin) / 0x54);
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+
+    if (count == 0) {
+        return self;
+    }
+
+    if (count > 0x30C30C3u) {
+        ext_00405FB0(self);
+    }
+
+    void* buf = ext_00553EA0(count);
+    uintptr_t buf_addr = reinterpret_cast<uintptr_t>(buf);
+    lift_field<uintptr_t>(self, 0x04) = buf_addr;
+    lift_field<uintptr_t>(self, 0x08) = buf_addr;
+    lift_field<uintptr_t>(self, 0x0C) = buf_addr + static_cast<uintptr_t>(count) * 0x54u;
+
+    try {
+        uintptr_t end_addr = lift_field<uintptr_t>(other, 0x08);
+        if (lift_field<uintptr_t>(other, 0x04) > end_addr && mem_00925134) {
+            mem_00925134();
+        }
+        uintptr_t begin_addr = lift_field<uintptr_t>(other, 0x04);
+        if (begin_addr > lift_field<uintptr_t>(other, 0x08) && mem_00925134) {
+            mem_00925134();
+        }
+
+        void* dst_begin = reinterpret_cast<void*>(lift_field<uintptr_t>(self, 0x04));
+        void* dst_end = ext_00555980(
+            reinterpret_cast<void*>(begin_addr),
+            reinterpret_cast<void*>(end_addr),
+            dst_begin
+        );
+        lift_field<uintptr_t>(self, 0x08) = reinterpret_cast<uintptr_t>(dst_end);
+    } catch (...) {
+        ext_005587E0(self, 0);
+        ext_006A6DD2();
+        throw;
+    }
+
+    return self;
+}
+} // namespace lift_005586F0
