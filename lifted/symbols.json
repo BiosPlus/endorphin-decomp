@@ -10779,6 +10779,13 @@
     "summary": "One-time guard that constructs the static object at 0x00AD903C, then builds a std::string from the stack argument and forwards it through sub_00475960.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475C40": {
+    "name": "StaticStringHolder::initAndConstruct_00475C40",
+    "class": "StaticStringHolder",
+    "signature": "void fn_00475C40(void* self, DWORD arg)",
+    "summary": "One-time guarded init of a static object at 0xAD9044, then builds a temporary string from the argument and passes it to ext_00475960 with the holder's inner pointer.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476430": {
     "name": "Unknown::lookupStringKeyedValue",
     "class": "Unknown",

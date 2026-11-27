@@ -1,0 +1,22 @@
+{
+  "va": "0x00475C40",
+  "size": 165,
+  "orig_symbol": "sub_00475C40",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "StaticStringHolder::initAndConstruct_00475C40",
+  "class": "StaticStringHolder",
+  "signature": "void fn_00475C40(void* self, DWORD arg)",
+  "summary": "One-time guarded init of a static object at 0xAD9044, then builds a temporary string from the argument and passes it to ext_00475960 with the holder's inner pointer.",
+  "fields": [
+    {
+      "class": "StaticStringHolder",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:12:51Z"
+}

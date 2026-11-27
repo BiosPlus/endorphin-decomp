@@ -1795,3 +1795,38 @@ void fn_004758E0(void* self, DWORD arg) {
 }
 } // namespace lift_004758A0
 } // namespace lift_004758E0
+
+// [0x00475C40] sub_00475C40 (165 bytes)
+namespace lift_00475C40 {
+// @name StaticStringHolder::initAndConstruct_00475C40
+// @class StaticStringHolder
+// @summary One-time guarded init of a static object at 0xAD9044, then builds a temporary string from the argument and passes it to ext_00475960 with the holder's inner pointer.
+// @field StaticStringHolder +0x00 void* inner
+
+extern void ext_00475960(void* self, void* ref, void* str, DWORD flag);
+extern void ext_0067A670(void* self);
+extern uint32_t mem_00AD9048;
+extern uint32_t mem_00AD9044;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF4;
+
+void fn_00475C40(void* self, DWORD arg) {
+    if ((mem_00AD9048 & 1) == 0) {
+        mem_00AD9048 |= 1;
+        ext_0067A670(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AD9044u)));
+        mem_00AD9044 = 0x93b7acu;
+    }
+
+    // Temporary std::string built from arg (MSVCP80 ctor via IAT slot 0x924FE4).
+    alignas(8) uint8_t str[0x18];
+    using StrCtor = void (*)(void* self, DWORD arg);
+    using StrDtor = void (*)(void* self);
+    reinterpret_cast<StrCtor>(static_cast<uintptr_t>(mem_00924FE4))(str, arg);
+
+    DWORD refSlot = 0;
+    void* inner = *static_cast<void**>(self);
+    ext_00475960(inner, &refSlot, str, 1);
+
+    reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4))(str);
+}
+} // namespace lift_00475C40
