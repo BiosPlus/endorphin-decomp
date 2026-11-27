@@ -1,0 +1,13 @@
+{
+  "va": "0x005CDFB0",
+  "size": 90,
+  "orig_symbol": "sub_005CDFB0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "getStaticObject_00B44578",
+  "signature": "void* __cdecl sub_005CDFB0()",
+  "summary": "Lazy-initializes and returns a pointer to the static object at 0x00B44578",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:18:33Z"
+}

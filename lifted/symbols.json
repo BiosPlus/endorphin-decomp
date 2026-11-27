@@ -12924,6 +12924,13 @@
     "summary": "Copies 20-byte records from [src_begin, src_end) to dst, advancing both by 20 bytes per record; the copy is skipped while dst is zero.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00489E10": {
+    "name": "std::_Tree_std_string::erase",
+    "class": "std::_Tree_std_string",
+    "signature": "void* fn_00489E10(void* self, void* out_iter, void* it_proxy, void* it_node)",
+    "summary": "Removes the element at the given iterator from a red-black tree keyed by std::string and returns the next iterator.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048A0E0": {
     "name": "DestroyNodeChain",
     "signature": "void fn_0048A0E0(void* self, void* node)",
@@ -50251,6 +50258,12 @@
     "class": "Vector",
     "signature": "bool fn_005CD120(void* self, const void* value)",
     "summary": "Inserts a std::string into the sorted vector unless an equal element exists; returns true if inserted.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CDFB0": {
+    "name": "getStaticObject_00B44578",
+    "signature": "void* __cdecl sub_005CDFB0()",
+    "summary": "Lazy-initializes and returns a pointer to the static object at 0x00B44578",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
   "0x005CE760": {
@@ -99725,6 +99738,13 @@
     "class": "Unknown",
     "signature": "void fn_0071CC60(void* self, double value)",
     "summary": "Finds the child named by the string at 0x00AA8D1C under this+0x0C, calls its vtable slot at +0x80 with the double argument, then if this+0x04 is non-null converts the value to float and forwards it through sub_006C9530 and sub_006CD330.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x0071CCB0": {
+    "name": "Unknown::SetChildAndPropertyValue_0071CCB0",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_0071CCB0(void* self, double value)",
+    "summary": "Finds a child by name at 0x00AA8D2C, invokes its vtable+0x80 with a double value, and if field_0x04 is non-null updates it with the float-converted value.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071D530": {

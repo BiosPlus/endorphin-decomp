@@ -2091,3 +2091,23 @@ void* sub_005C3390(void* out_str) {
     return out_str;
 }
 } // namespace lift_005C3390
+
+// [0x005CDFB0]
+namespace lift_005CDFB0 {
+// @name getStaticObject_00B44578
+// @summary Lazy-initializes and returns a pointer to the static object at 0x00B44578
+
+
+extern uint32_t mem_00B4459C;
+extern void* __thiscall ext_005CD0A0(void* self);
+extern int __cdecl ext_006A6C87(void* func);
+
+void* __cdecl sub_005CDFB0() {
+    if ((mem_00B4459C & 1u) == 0) {
+        mem_00B4459C |= 1u;
+        ext_005CD0A0(reinterpret_cast<void*>(0x00B44578));
+        ext_006A6C87(reinterpret_cast<void*>(0x0091E070));
+    }
+    return reinterpret_cast<void*>(0x00B44578);
+}
+} // namespace lift_005CDFB0
