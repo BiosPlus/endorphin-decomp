@@ -1,0 +1,28 @@
+{
+  "va": "0x0054C770",
+  "size": 122,
+  "orig_symbol": "sub_0054C770",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::BuildFontDisplayLists",
+  "class": "Unknown",
+  "signature": "inline Fn import_from_slot(int slot)",
+  "summary": "Creates a 96-glyph bitmap display-list font (ASCII 32..127) from the name string at +0x08 and the height at +0x04, selected into the given DC.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:26:26Z"
+}

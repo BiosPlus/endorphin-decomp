@@ -1643,3 +1643,54 @@ void* fn_0054D220(void* self) {
     return self;
 }
 } // namespace lift_0054D220
+
+// [0x0054C770] sub_0054C770 (122 bytes)
+namespace lift_0054C770 {
+// Global display-list base written by glGenLists.
+extern int mem_00AF657C;
+
+// Import slots (IAT entries). The original asm calls through these; they are
+// read as values and cast to the real stdcall/thiscall signatures below.
+extern int mem_009253EC;   // OPENGL32!glGenLists
+extern int mem_00924FF0;   // MSVCP80!std::string::c_str
+extern int mem_00924088;   // GDI32!CreateFontA
+extern int mem_00924070;   // GDI32!SelectObject
+extern int mem_00925510;   // OPENGL32!wglUseFontBitmapsA
+extern int mem_00924090;   // GDI32!DeleteObject
+
+template <typename Fn>
+inline Fn import_from_slot(int slot) {
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(static_cast<uint32_t>(slot)));
+}
+
+// @name Unknown::BuildFontDisplayLists
+// @class Unknown
+// @summary Creates a 96-glyph bitmap display-list font (ASCII 32..127) from the name string at +0x08 and the height at +0x04, selected into the given DC.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 std::string field_0x08
+void fn_0054C770(void* self, void* hdc) {
+    using GlGenListsFn = GLuint(__stdcall*)(GLsizei);
+    using CStrFn = const char*(__thiscall*)(const void*);
+    using CreateFontFn = void*(__stdcall*)(int, int, int, int, int, DWORD, DWORD, DWORD,
+                                           DWORD, DWORD, DWORD, DWORD, DWORD, const char*);
+    using SelectObjectFn = void*(__stdcall*)(void*, void*);
+    using WglUseFontBitmapsFn = BOOL(__stdcall*)(void*, DWORD, DWORD, DWORD);
+    using DeleteObjectFn = BOOL(__stdcall*)(void*);
+
+    mem_00AF657C = static_cast<int>(import_from_slot<GlGenListsFn>(mem_009253EC)(96));
+
+    const int32_t height = lift_field<int32_t>(self, 0x04);
+    const void* nameStr = static_cast<const uint8_t*>(self) + 0x08;
+    const char* face = import_from_slot<CStrFn>(mem_00924FF0)(nameStr);
+
+    void* font = import_from_slot<CreateFontFn>(mem_00924088)(
+        -height, 0, 0, 0, 400, 0, 0, 0, 0, 4, 0, 4, 0, face);
+
+    SelectObjectFn selectObject = import_from_slot<SelectObjectFn>(mem_00924070);
+    void* oldFont = selectObject(hdc, font);
+    import_from_slot<WglUseFontBitmapsFn>(mem_00925510)(
+        hdc, 0x20, 0x60, static_cast<DWORD>(mem_00AF657C));
+    selectObject(hdc, oldFont);
+    import_from_slot<DeleteObjectFn>(mem_00924090)(font);
+}
+} // namespace lift_0054C770
