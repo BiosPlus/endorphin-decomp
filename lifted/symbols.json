@@ -55766,6 +55766,13 @@
     "summary": "Scans the 0x2c-byte record array bounded by field_0x134/field_0x138 and returns the first record's pointer whose std::string at +0x10 equals the argument; returns 0 if none match",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x006885F0": {
+    "name": "Unknown::FindEntryByName_006885F0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006885F0(void* self, const void* name)",
+    "summary": "Linear search over a 0x24-stride entry array at this+0x144..this+0x148; each entry's first dword points to a record whose std::string at +0x10 is compared with the key; returns that record pointer on match, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00688670": {
     "name": "Unknown::FindFirstKind13Element",
     "class": "Unknown",

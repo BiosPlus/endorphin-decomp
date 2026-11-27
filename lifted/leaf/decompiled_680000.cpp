@@ -2524,3 +2524,38 @@ uint32_t __thiscall fn_00688570(void* self, const void* name) {
     }
 }
 } // namespace lift_00688570
+
+// [0x006885F0] sub_006885F0 (127 bytes)
+namespace lift_006885F0 {
+// Import slot holding MSVCP80 std::operator==(const std::string&, const std::string&).
+extern uint32_t mem_00924FC4;
+// Import slot for MSVCR80 _invalid_parameter_noinfo. The original's CRT bounds guards
+// are omitted; this reference is metadata-only, not a real access.
+extern uint32_t mem_00925134;
+
+// @name Unknown::FindEntryByName_006885F0
+// @class Unknown
+// @summary Linear search over a 0x24-stride entry array at this+0x144..this+0x148; each entry's first dword points to a record whose std::string at +0x10 is compared with the key; returns that record pointer on match, else 0.
+// @field Unknown +0x144 uint32_t entries_begin
+// @field Unknown +0x148 uint32_t entries_end
+uint32_t fn_006885F0(void* self, const void* name) {
+    (void)&mem_00925134;
+    using StringEqFn = bool (*)(const void*, const void*);
+    const auto eq = reinterpret_cast<StringEqFn>(static_cast<uintptr_t>(mem_00924FC4));
+
+    uint8_t* const base = static_cast<uint8_t*>(self);
+    const uint32_t end = lift_field<uint32_t>(base, 0x148);
+    uint32_t cur = lift_field<uint32_t>(base, 0x144);
+
+    while (cur != end) {
+        const auto* entry = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(cur));
+        const uint32_t record = *reinterpret_cast<const uint32_t*>(entry);
+        const auto* key = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(record)) + 0x10;
+        if (eq(key, name)) {
+            return record;
+        }
+        cur += 0x24;
+    }
+    return 0;
+}
+} // namespace lift_006885F0
