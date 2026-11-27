@@ -1,0 +1,28 @@
+{
+  "va": "0x00533E30",
+  "size": 65,
+  "orig_symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_22",
+  "src_path": "src/templates/ManagedDisplayList.cpp",
+  "lifted_path": "lifted/templates/ManagedDisplayList.cpp",
+  "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_22",
+  "class": "ManagedDisplayList\u003cRenderableList\u003e",
+  "signature": "void fn_00533E30(void* self, uint32_t arg1)",
+  "summary": "Replays the cached GL display list at +0x2C, or re-records it around a RenderableList::vfunc_22 call when the dirty flag at +0x04 is set; forwards to vfunc_22 when no list exists.",
+  "fields": [
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x2C",
+      "type": "GLuint",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:23:41Z"
+}

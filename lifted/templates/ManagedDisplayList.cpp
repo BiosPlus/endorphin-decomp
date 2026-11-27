@@ -467,3 +467,47 @@ uint8_t fn_0054C4E0(void* self, uint32_t unused_arg0, uint32_t arg) {
     return lift_field<uint8_t>(self, 0x04);
 }
 } // namespace lift_0054C4E0
+
+// [0x00533E30] ManagedDisplayList<RenderableList>::vfunc_22 (65 bytes)
+namespace lift_00533E30 {
+// Known callee 0x0054C160: RenderableList::vfunc_22 (Iterates over child renderables when enabled, bracketed by global renderer vfunc_2/vfunc_3 calls, invoking vfunc_22 on each.)
+extern void __thiscall ext_0054C160(void* self, uint32_t arg1);
+// Known callee 0x00533E71: RenderableList::vfunc_22_forward (Forwards a single stack argument to RenderableList::vfunc_22 using the object in esi as `this`; esi is left holding the forwarded argument.)
+extern void __thiscall ext_00533E71(void* self, uint32_t arg1);
+
+// OpenGL entry points are reached through IAT slots (indirect calls).
+extern uintptr_t mem_009253F8; // glNewList
+extern uintptr_t mem_009253F4; // glEndList
+extern uintptr_t mem_009253F0; // glCallList
+
+// @name ManagedDisplayList<RenderableList>::vfunc_22
+// @class ManagedDisplayList<RenderableList>
+// @summary Replays the cached GL display list at +0x2C, or re-records it around a RenderableList::vfunc_22 call when the dirty flag at +0x04 is set; forwards to vfunc_22 when no list exists.
+// @field ManagedDisplayList<RenderableList> +0x04 uint8_t field_0x04
+// @field ManagedDisplayList<RenderableList> +0x2C GLuint field_0x2C
+void fn_00533E30(void* self, uint32_t arg1) {
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t list = *reinterpret_cast<uint32_t*>(base + 0x2C);
+
+    if (list == 0) {
+        ext_00533E71(self, arg1);
+        return;
+    }
+
+    uint8_t& flag = *(base + 0x04);
+    if (flag == 0) {
+        auto glCallList = reinterpret_cast<void(__stdcall*)(uint32_t)>(mem_009253F0);
+        glCallList(list);
+        return;
+    }
+
+    constexpr uint32_t GL_COMPILE_AND_EXECUTE = 0x1301;
+    auto glNewList = reinterpret_cast<void(__stdcall*)(uint32_t, uint32_t)>(mem_009253F8);
+    auto glEndList = reinterpret_cast<void(__stdcall*)()>(mem_009253F4);
+
+    glNewList(list, GL_COMPILE_AND_EXECUTE);
+    ext_0054C160(self, arg1);
+    glEndList();
+    flag = 0;
+}
+} // namespace lift_00533E30
