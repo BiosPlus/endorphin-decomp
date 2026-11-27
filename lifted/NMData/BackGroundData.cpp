@@ -719,3 +719,99 @@ void __thiscall fn_005A5450(void* self, void* arg0) {
     *((uint8_t*)esi + 0x8C) = 1;
 }
 } // namespace lift_005A5450
+
+// [0x005A4810]
+namespace lift_005A4810 {
+extern uint32_t mem_009849A4;
+
+extern void __thiscall ext_00495A20(uint8_t* self);
+extern void __thiscall ext_00587920(uint8_t* self, void* a1, void* a2);
+extern void __thiscall ext_0058A1A0(uint8_t* self);
+extern void __cdecl ext_00599E40(void* a1);
+extern void __thiscall ext_005A0910(uint8_t* self, void* a1, void* a2, void* a3, void* a4);
+extern void __thiscall ext_005A0970(uint8_t* self, void* a1, void* a2, void* a3, void* a4);
+extern void __thiscall ext_005AE480(uint8_t* self, void* root);
+
+static void ClearTree(uint8_t* tree, void(__thiscall* erase_range)(uint8_t*, void*, void*, void*, void*)) {
+    uint8_t* head = lift_field<uint8_t*>(tree, 0x4);
+    void* begin = lift_field<void*>(head, 0x0);
+    erase_range(tree, tree, begin, tree, head);
+    head = lift_field<uint8_t*>(tree, 0x4);
+    void* root = lift_field<void*>(head, 0x4);
+    ext_005AE480(tree, root);
+    head = lift_field<uint8_t*>(tree, 0x4);
+    lift_field<void*>(head, 0x4) = head;
+    lift_field<uint32_t>(tree, 0x8) = 0;
+    lift_field<void*>(head, 0x0) = head;
+    lift_field<void*>(head, 0x8) = head;
+}
+
+// @name NMData::BackGroundData::vfunc_33_off_4
+// @class NMData::BackGroundData
+// @summary Resets BackGroundData transform state, clears internal trees and channels, and invokes base reset hooks.
+// @field NMData::BackGroundData +0x15C void** field_0x15c
+// @field NMData::BackGroundData +0x2E8 void* field_0x2e8
+// @field NMData::BackGroundData +0x4DC uint8_t field_0x4dc
+// @field NMData::BackGroundData +0x4E0 uint8_t field_0x4e0
+// @field NMData::BackGroundData +0x4E2 uint8_t field_0x4e2
+// @field NMData::BackGroundData +0x4E4 uint32_t field_0x4e4
+// @field NMData::BackGroundData +0x4E8 float field_0x4e8
+// @field NMData::BackGroundData +0x4EC float field_0x4ec
+// @field NMData::BackGroundData +0x4F0 float field_0x4f0
+// @field NMData::BackGroundData +0x54C void* field_0x54c
+// @field NMData::BackGroundData +0x558 void* field_0x558
+// @field NMData::BackGroundData +0x564 void* field_0x564
+// @field NMData::BackGroundData +0x570 void* field_0x570
+// @field NMData::BackGroundData +0x57C void* field_0x57c
+// @field NMData::BackGroundData +0x588 void* field_0x588
+// @field NMData::BackGroundData +0x594 void* field_0x594
+// @field NMData::BackGroundData +0x5A0 void* field_0x5a0
+// @field NMData::BackGroundData +0x5DC void* field_0x5dc
+// @field NMData::BackGroundData +0x5EC uint32_t field_0x5ec
+// @field NMData::BackGroundData +0x5F0 uint32_t field_0x5f0
+// @field NMData::BackGroundData +0x5F4 uint32_t field_0x5f4
+// @field NMData::BackGroundData +0x5FC uint32_t field_0x5fc
+// @field NMData::BackGroundData +0x600 float field_0x600
+// @field NMData::BackGroundData +0x614 float field_0x614
+// @field NMData::BackGroundData +0x61C void* field_0x61c
+extern void __thiscall fn_005A4810(uint8_t* self) {
+    lift_field<float>(self, 0x4F0) = 0.0f;
+    lift_field<float>(self, 0x4E8) = 1.0f;
+    lift_field<float>(self, 0x4EC) = 1.0f;
+    lift_field<uint8_t>(self, 0x4DC) = 0;
+    lift_field<uint8_t>(self, 0x4E0) = 0;
+    lift_field<uint8_t>(self, 0x4E2) = 1;
+    lift_field<uint32_t>(self, 0x4E4) = 3;
+
+    ClearTree(self + 0x594, ext_005A0910);
+    ClearTree(self + 0x588, ext_005A0910);
+    ClearTree(self + 0x5A0, ext_005A0910);
+    ClearTree(self + 0x54C, ext_005A0910);
+    ClearTree(self + 0x558, ext_005A0910);
+    ClearTree(self + 0x564, ext_005A0910);
+    ClearTree(self + 0x570, ext_005A0910);
+    ClearTree(self + 0x57C, ext_005A0970);
+
+    uint8_t* sub_15c = self + 0x15C;
+    void** vt_15c = lift_field<void**>(sub_15c, 0x0);
+    reinterpret_cast<void(__thiscall*)(void*)>(vt_15c[0x84 / 4])(sub_15c);
+
+    lift_field<void*>(self, 0x2E8) = self - 0x4;
+    ClearTree(self + 0x5DC, ext_005A0910);
+
+    ext_00495A20(self + 0x61C);
+    ext_0058A1A0(self);
+    ext_00587920(self, sub_15c, nullptr);
+
+    lift_field<uint32_t>(self, 0x5EC) = 6;
+    lift_field<uint32_t>(self, 0x5F0) = 0;
+    lift_field<uint8_t>(self, 0x4E0) = 0;
+    lift_field<uint32_t>(self, 0x5FC) = mem_009849A4;
+    lift_field<float>(self, 0x600) = 1.0f;
+    lift_field<float>(self, 0x614) = 0.0f;
+
+    if (lift_field<uint32_t>(self, 0x5F4) != 0) {
+        ext_00599E40(self + 0x14);
+    }
+}
+} // namespace lift_005A4810

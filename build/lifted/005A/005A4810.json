@@ -1,0 +1,166 @@
+{
+  "va": "0x005A4810",
+  "size": 713,
+  "orig_symbol": "NMData::BackGroundData::vfunc_33_off_4",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_33_off_4",
+  "class": "NMData::BackGroundData",
+  "signature": "static void ClearTree(uint8_t* tree, void(__thiscall* erase_range)(uint8_t*, void*, void*, void*, void*))",
+  "summary": "Resets BackGroundData transform state, clears internal trees and channels, and invokes base reset hooks.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x15C",
+      "type": "void**",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x2E8",
+      "type": "void*",
+      "name": "field_0x2e8"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4DC",
+      "type": "uint8_t",
+      "name": "field_0x4dc"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4E0",
+      "type": "uint8_t",
+      "name": "field_0x4e0"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4E2",
+      "type": "uint8_t",
+      "name": "field_0x4e2"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4E4",
+      "type": "uint32_t",
+      "name": "field_0x4e4"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4E8",
+      "type": "float",
+      "name": "field_0x4e8"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4EC",
+      "type": "float",
+      "name": "field_0x4ec"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4F0",
+      "type": "float",
+      "name": "field_0x4f0"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x54C",
+      "type": "void*",
+      "name": "field_0x54c"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x558",
+      "type": "void*",
+      "name": "field_0x558"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x564",
+      "type": "void*",
+      "name": "field_0x564"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x570",
+      "type": "void*",
+      "name": "field_0x570"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x57C",
+      "type": "void*",
+      "name": "field_0x57c"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x588",
+      "type": "void*",
+      "name": "field_0x588"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x594",
+      "type": "void*",
+      "name": "field_0x594"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5A0",
+      "type": "void*",
+      "name": "field_0x5a0"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5DC",
+      "type": "void*",
+      "name": "field_0x5dc"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5EC",
+      "type": "uint32_t",
+      "name": "field_0x5ec"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5F0",
+      "type": "uint32_t",
+      "name": "field_0x5f0"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5F4",
+      "type": "uint32_t",
+      "name": "field_0x5f4"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5FC",
+      "type": "uint32_t",
+      "name": "field_0x5fc"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x600",
+      "type": "float",
+      "name": "field_0x600"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x614",
+      "type": "float",
+      "name": "field_0x614"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x61C",
+      "type": "void*",
+      "name": "field_0x61c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:33:19Z"
+}

@@ -38790,6 +38790,13 @@
     "summary": "One-time guarded initializer: on first call sets bit 0 of mem_00B3C178, calls ext_00662610(\u0026mem_00B3C15C, 0x00A856F8) and ext_006A6C87(0x0091C8F0); always returns \u0026mem_00B3C15C. The MSVC SEH frame (fs:[0] push/restore) is runtime exception plumbing and is not modeled.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x005722F0": {
+    "name": "CSMMotionIO::vfunc_13",
+    "class": "CSMMotionIO",
+    "signature": "void __thiscall fn_005722F0(void* self, const void* filename_str)",
+    "summary": "Export motion data to a file using an output file stream and optional progress callback.",
+    "lifted_path": "lifted/classes/CSMMotionIO.cpp"
+  },
   "0x00572680": {
     "name": "Unknown::releaseAndResetField20",
     "class": "Unknown",
@@ -43512,6 +43519,13 @@
     "signature": "void __thiscall fn_005A46E0(void* self, void* out, void** arg2, void** arg3)",
     "summary": "Calls a helper on the target object, then writes a ValuePtr to out: the value from the input's object via vtable slot +0x70 if the object is non-null, otherwise a null ValuePtr.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005A4810": {
+    "name": "NMData::BackGroundData::vfunc_33_off_4",
+    "class": "NMData::BackGroundData",
+    "signature": "static void ClearTree(uint8_t* tree, void(__thiscall* erase_range)(uint8_t*, void*, void*, void*, void*))",
+    "summary": "Resets BackGroundData transform state, clears internal trees and channels, and invokes base reset hooks.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
   "0x005A4D60": {
     "name": "NMData::CharacterData::vfunc_20",
