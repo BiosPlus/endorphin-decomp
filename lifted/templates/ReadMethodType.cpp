@@ -86706,3 +86706,43 @@ void* __stdcall fn_0062E7D0(void* self, void* arg) {
 }
 } // namespace lift_0062E730
 } // namespace lift_0062E7D0
+
+// [0x004B1510] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_43 (165 bytes)
+namespace lift_004B1510 {
+extern void ext_006720A0();
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void ext_0041CF50();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData,bool,isActive>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the flag byte at +1 of the value pointed to by field_0x00 (throws if the pointer is null), copies it into a temporary, then forwards to the field_0x04 object's vtable slot 0xAC with arg2.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_004B1510(void* self, void* arg2) {
+    uint8_t* value = *reinterpret_cast<uint8_t**>(self);
+    if (value == nullptr) {
+        // Original builds a DerivedException (ext_0046C3C0) and throws via the CRT thunk.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return nullptr;
+    }
+    uint8_t flag = value[1];
+    // Original constructs a temporary from the flag byte via ext_006720A0 (ecx = temp, one byte arg).
+    ext_006720A0();
+    (void)flag;
+
+    // Original: assignFromOther(self, &temp) via ext_0041CF50.
+    ext_0041CF50();
+
+    // Original: indirect call through field_0x04's vtable slot 0xAC (index 43) with (self, arg2).
+    void* obj = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using VFunc = void* (*)(void*, void*, void*);
+    VFunc method = reinterpret_cast<VFunc>(vtbl[43]);
+    return method(obj, self, arg2);
+}
+} // namespace lift_004B1510
