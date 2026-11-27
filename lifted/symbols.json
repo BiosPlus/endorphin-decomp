@@ -19590,6 +19590,13 @@
     "summary": "If the object's first dword is non-zero, throw the default-message exception; otherwise build a DerivedException and throw it.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00505290": {
+    "name": "Sub_00505290::Sub_00505290",
+    "class": "Sub_00505290",
+    "signature": "void* __thiscall fn_00505290(void* self, const void* src)",
+    "summary": "Constructor: sets vtable to 0x0094F484, copies DWORDs at +0x04/+0x08 and the std::string at +0x0C from the source object.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005052F0": {
     "name": "Unknown::destroyStringField0CAndReinit",
     "class": "Unknown",

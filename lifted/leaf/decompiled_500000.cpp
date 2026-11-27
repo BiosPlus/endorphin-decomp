@@ -2424,3 +2424,32 @@ void fn_005052F0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_005052F0
+
+// [0x00505290] sub_00505290 (92 bytes)
+namespace lift_00505290 {
+// IAT slot holding the MSVCP80 std::basic_string<char> copy-constructor address.
+extern int mem_00924FE0;
+
+// @name Sub_00505290::Sub_00505290
+// @class Sub_00505290
+// @summary Constructor: sets vtable to 0x0094F484, copies DWORDs at +0x04/+0x08 and the std::string at +0x0C from the source object.
+// @field Sub_00505290 +0x00 DWORD vtable
+// @field Sub_00505290 +0x04 DWORD field_0x04
+// @field Sub_00505290 +0x08 DWORD field_0x08
+// @field Sub_00505290 +0x0C std::string field_0x0C
+
+namespace {
+using StringCopyCtor = void(__thiscall*)(void* self, const void* src);
+}
+
+void* __thiscall fn_00505290(void* self, const void* src) {
+    lift_field<DWORD>(self, 0x00) = 0x0094F484u;
+    lift_field<DWORD>(self, 0x04) = lift_field<const DWORD>(src, 0x04);
+    lift_field<DWORD>(self, 0x08) = lift_field<const DWORD>(src, 0x08);
+
+    auto copy_string = *reinterpret_cast<StringCopyCtor*>(&mem_00924FE0);
+    copy_string(static_cast<uint8_t*>(self) + 0x0C,
+                static_cast<const uint8_t*>(src) + 0x0C);
+    return self;
+}
+} // namespace lift_00505290
