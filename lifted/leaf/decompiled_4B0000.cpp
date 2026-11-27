@@ -3844,3 +3844,78 @@ void* fn_004BB6C0(void* self, void* a1, void* a2, uint32_t a3, uint32_t a4, uint
     return self;
 }
 } // namespace lift_004BB6C0
+
+// [0x004BB8E0] sub_004BB8E0 (326 bytes)
+namespace lift_004BB8E0 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (stores vtable 0x00987A04, arg at +0x04, zeroes +0x08/+0x0C; returns self).
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x006A6E9E: IAT thunk to MSVCR80!__RTDynamicCast(inptr, vfDelta, srcType, dstType, isReference).
+extern uint32_t ext_006A6E9E(uint32_t inptr, int32_t vfDelta, uint32_t srcType, uint32_t dstType, int32_t isReference);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo.
+extern int mem_00925134;
+
+// @name Unknown::InitRangeIndex_004BB8E0
+// @class Unknown
+// @summary Initializes object from a {first,last} range pointer (a1) and a search key (a4); stores the key's index (clamped to range size) and dynamic-cast result; returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t rangePtr
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t index
+// @field Unknown +0x24 uint32_t field_0x24
+
+static inline void* as_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+static inline void invalid_parameter_noinfo() {
+    (*reinterpret_cast<void (**)()>(&mem_00925134))();
+}
+
+void* fn_004BB8E0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5) {
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x00) = 0x009441C8u;
+    lift_field<uint32_t>(self, 0x10) = a1;
+    lift_field<uint32_t>(self, 0x14) = ext_006A6E9E(a2, 0, 0x00A2F4F4u, 0x00A38B38u, 0);
+    lift_field<uint32_t>(self, 0x18) = a3;
+    lift_field<uint32_t>(self, 0x1C) = a3;
+    lift_field<uint32_t>(self, 0x24) = a5;
+    if (lift_field<uint32_t>(self, 0x14) == 0)
+        lift_field<uint32_t>(self, 0x08) = a2;
+
+    void* range = as_ptr(lift_field<uint32_t>(self, 0x10));
+    if (a4 != 0) {
+        uint32_t first = lift_field<uint32_t>(range, 4);
+        uint32_t last  = lift_field<uint32_t>(range, 8);
+        if (first > last)
+            invalid_parameter_noinfo();
+
+        // Linear search for a4 in [first, last).
+        uint32_t p = first;
+        while (p != last && lift_field<uint32_t>(as_ptr(p), 0) != a4)
+            p += 4;
+
+        // Index = element count before p, plus one.
+        int32_t idx = (static_cast<int32_t>(p - first) >> 2) + 1;
+        lift_field<uint32_t>(self, 0x20) = static_cast<uint32_t>(idx);
+    } else {
+        uint32_t first = lift_field<uint32_t>(range, 4);
+        uint32_t last  = lift_field<uint32_t>(range, 8);
+        int32_t count = first ? (static_cast<int32_t>(last - first) >> 2) : 0;
+        lift_field<uint32_t>(self, 0x20) = static_cast<uint32_t>(count);
+    }
+
+    // Clamp index to the current range size.
+    range = as_ptr(lift_field<uint32_t>(self, 0x10));
+    uint32_t f = lift_field<uint32_t>(range, 4);
+    uint32_t l = lift_field<uint32_t>(range, 8);
+    uint32_t size = f ? static_cast<uint32_t>(static_cast<int32_t>(l - f) >> 2) : 0u;
+    if (lift_field<uint32_t>(self, 0x20) > size)
+        lift_field<uint32_t>(self, 0x20) = size;
+
+    return self;
+}
+} // namespace lift_004BB8E0

@@ -20259,6 +20259,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
     "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
+  "0x004BB8E0": {
+    "name": "Unknown::InitRangeIndex_004BB8E0",
+    "class": "Unknown",
+    "signature": "static inline void* as_ptr(uint32_t addr)",
+    "summary": "Initializes object from a {first,last} range pointer (a1) and a search key (a4); stores the key's index (clamped to range size) and dynamic-cast result; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BBA30": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::AddElementCommand::vfunc_3",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::AddElementCommand",
