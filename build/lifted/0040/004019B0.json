@@ -1,0 +1,39 @@
+{
+  "va": "0x004019B0",
+  "size": 95,
+  "orig_symbol": "sub_004019B0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_004019B0",
+  "signature": "void* __thiscall sub_004019B0(void* self, const void* other)",
+  "summary": "Copy constructor for a struct/class containing two std::strings (+0x00, +0x20) and two 32-bit fields (+0x1C, +0x3C)",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:53:23Z"
+}

@@ -2663,6 +2663,12 @@
     "summary": "Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00427700": {
+    "name": "getStaticBoolStringInit",
+    "signature": "void* fn_00427700()",
+    "summary": "Lazily initializes a static string/object at 0x00ACDAE8 with 0x00A2F2F0, registers atexit cleanup 0x00914FC0, and returns 0x00ACDAE8.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004277B0": {
     "name": "std_allocate_36byte_array",
     "signature": "void* fn_004277B0(uint32_t count)",

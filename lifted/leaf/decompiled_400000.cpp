@@ -1883,3 +1883,27 @@ void fn_0040FE10(void* self, void* a2, uint32_t a3, uint32_t a4, uint32_t a5,
     reinterpret_cast<SlotFnWithValue>(vtable_slot(self, 0x38))(self, first);
 }
 } // namespace lift_0040FE10
+
+// [0x004019B0]
+namespace lift_004019B0 {
+// @name sub_004019B0
+// @summary Copy constructor for a struct/class containing two std::strings (+0x00, +0x20) and two 32-bit fields (+0x1C, +0x3C)
+// @field UnknownClass +0x00 std::string field_0x00
+// @field UnknownClass +0x1C uint32_t field_0x1C
+// @field UnknownClass +0x20 std::string field_0x20
+// @field UnknownClass +0x3C uint32_t field_0x3C
+
+
+extern void* mem_00924FE0;
+
+using std_string_copy_ctor_t = void(__thiscall*)(void* self, const void* other);
+
+void* __thiscall sub_004019B0(void* self, const void* other) {
+    auto copy_ctor = reinterpret_cast<std_string_copy_ctor_t>(mem_00924FE0);
+    copy_ctor(self, other);
+    lift_field<uint32_t>(self, 0x1C) = lift_field<uint32_t>(other, 0x1C);
+    copy_ctor(static_cast<uint8_t*>(self) + 0x20, static_cast<const uint8_t*>(other) + 0x20);
+    lift_field<uint32_t>(self, 0x3C) = lift_field<uint32_t>(other, 0x3C);
+    return self;
+}
+} // namespace lift_004019B0
