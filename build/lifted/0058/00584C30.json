@@ -1,0 +1,13 @@
+{
+  "va": "0x00584C30",
+  "size": 60,
+  "orig_symbol": "sub_00584C30",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "TypeNameStringApply_00584C30",
+  "signature": "extern \"C\" int mem_00924FE4;  // IAT slot: basic_string(const char*) constructor extern \"C\" int mem_00A2E2BC;  // .data object used as the type_info receiver (ECX) extern \"C\" int mem_00B5CE94;  // global __type_info_node passed as the only argument extern \"C\" int mem_00924FE8;  // RDATA entry listed in the metadata; not referenced by the disassembly int32_t fn_00584C30(int32_t a1)",
+  "summary": "Builds a std::string from the type_info name of mem_00A2E2BC, forwards it with a1 to ext_0066AC90, and returns a1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:33:08Z"
+}

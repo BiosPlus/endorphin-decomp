@@ -2153,3 +2153,53 @@ void* fn_00589130() {
     return reinterpret_cast<void*>(kInstance);
 }
 } // namespace lift_00589130
+
+// [0x00584C30] sub_00584C30 (60 bytes)
+namespace lift_00584C30 {
+// Portable model of the MSVC 2005 std::string object (basic_string<char>, 0x1c bytes),
+// built in place by the caller and passed on the stack by value.
+struct LiftMsvcString {
+    alignas(4) uint8_t bytes[0x1c];
+};
+
+// Function-pointer shapes for the imported thiscall routines (ECX = this, extra args on stack).
+using TypeInfoNameFn = const char* (*)(void* self, const void* node);
+using StringFromCStrFn = void (*)(void* self, const char* s);
+
+extern void ext_0066AC90(int32_t a1, LiftMsvcString name);
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+// Not called by this function's disassembly; declared only for the callee table.
+extern void ext_00661980(void* self);
+extern int mem_00925354;  // IAT slot: type_info::_name_internal_method
+extern int mem_00924FE4;  // IAT slot: basic_string(const char*) constructor
+extern int mem_00A2E2BC;  // .data object used as the type_info receiver (ECX)
+extern int mem_00B5CE94;  // global __type_info_node passed as the only argument
+extern int mem_00924FE8;  // RDATA entry listed in the metadata; not referenced by the disassembly
+
+// @name TypeNameStringApply_00584C30
+// @summary Builds a std::string from the type_info name of mem_00A2E2BC, forwards it with a1 to ext_0066AC90, and returns a1.
+int32_t fn_00584C30(int32_t a1) {
+    // The original zeroes a saved-ECX stack slot and stores the string address into another
+    // one; both are frame/EH bookkeeping and are not modelled.
+
+    // Metadata-only references: the callee table and RDATA list name these, but this
+    // disassembly never calls or reads them. Taking the address has no runtime effect.
+    (void)&ext_00661980;
+    (void)&mem_00924FE8;
+
+    // Fetch the decorated type name from the type_info object.
+    auto nameFn = reinterpret_cast<TypeInfoNameFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925354)));
+    const char* typeName = nameFn(static_cast<void*>(&mem_00A2E2BC), static_cast<const void*>(&mem_00B5CE94));
+
+    // Construct the string in place from that name.
+    LiftMsvcString name{};
+    auto ctorFn = reinterpret_cast<StringFromCStrFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE4)));
+    ctorFn(static_cast<void*>(name.bytes), typeName);
+
+    // Pass a1 and the string to the callee (cdecl; the caller's stack cleanup is implicit in the call).
+    ext_0066AC90(a1, name);
+
+    // The original returns the first argument (ESI/EAX).
+    return a1;
+}
+} // namespace lift_00584C30
