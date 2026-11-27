@@ -110,3 +110,20 @@ void* __thiscall sub_00870E10(void* self) {
     return self;
 }
 } // namespace lift_00870E10
+
+// [0x008703A0] sub_008703A0 (14 bytes)
+namespace lift_008703A0 {
+// Known callee 0x006246B0: OwnedPointerRange::clearAndFreeChecked (Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.)
+extern void ext_006246B0(void* self);
+extern int mem_0094F63C;
+
+// @name OwnedPointerRange::clearAndFreeCheckedThunk
+// @class OwnedPointerRange
+// @summary Stores the rdata tag "`sa" at the object's first slot, advances self by 4, and tail-calls clearAndFreeChecked.
+// @field OwnedPointerRange +0x00 uint32_t field_0x00
+void fn_008703A0(void* self) {
+    auto* w = reinterpret_cast<uint32_t*>(self);
+    *w = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0094F63C));
+    ext_006246B0(static_cast<char*>(self) + 4);
+}
+} // namespace lift_008703A0

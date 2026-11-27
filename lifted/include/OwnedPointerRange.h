@@ -8,6 +8,7 @@
 // Recovered field layout for OwnedPointerRange:
 namespace lifted_layout {
 struct OwnedPointerRange_Fields {
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x008703A0)
     // +0x4   uint32_t                 begin  (evidence: 0x006246B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x004EFE80) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    first  (evidence: 0x004A6A10) // CONFLICT: multiple definitions at +0x4

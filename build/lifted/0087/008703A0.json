@@ -1,0 +1,22 @@
+{
+  "va": "0x008703A0",
+  "size": 14,
+  "orig_symbol": "sub_008703A0",
+  "src_path": "src/leaf/tiny_870000.cpp",
+  "lifted_path": "lifted/leaf/tiny_870000.cpp",
+  "name": "OwnedPointerRange::clearAndFreeCheckedThunk",
+  "class": "OwnedPointerRange",
+  "signature": "void fn_008703A0(void* self)",
+  "summary": "Stores the rdata tag \"`sa\" at the object's first slot, advances self by 4, and tail-calls clearAndFreeChecked.",
+  "fields": [
+    {
+      "class": "OwnedPointerRange",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:38Z"
+}

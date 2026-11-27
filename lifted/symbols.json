@@ -76971,6 +76971,13 @@
     "summary": "Calls ext_0049D360 on (this + 4) and initializes outPair with (result, this + 4), returning outPair.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x008703A0": {
+    "name": "OwnedPointerRange::clearAndFreeCheckedThunk",
+    "class": "OwnedPointerRange",
+    "signature": "void fn_008703A0(void* self)",
+    "summary": "Stores the rdata tag \"`sa\" at the object's first slot, advances self by 4, and tail-calls clearAndFreeChecked.",
+    "lifted_path": "lifted/leaf/tiny_870000.cpp"
+  },
   "0x008703B0": {
     "name": "Unknown::ctorResetFields_008703B0",
     "class": "Unknown",
