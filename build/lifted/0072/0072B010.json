@@ -1,0 +1,51 @@
+{
+  "va": "0x0072B010",
+  "size": 144,
+  "orig_symbol": "sub_0072B010",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "sub_0072B010",
+  "signature": "extern \"C\" void __thiscall fn_0072B010(void* self)",
+  "summary": "Destroys six 0x4c-byte sub-objects in reverse order via ext_006B9D70.",
+  "fields": [
+    {
+      "class": "sub_0072B010",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "sub_0072B010",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "sub_0072B010",
+      "offset": "+0x98",
+      "type": "void*",
+      "name": "field_0x98"
+    },
+    {
+      "class": "sub_0072B010",
+      "offset": "+0xE4",
+      "type": "void*",
+      "name": "field_0xe4"
+    },
+    {
+      "class": "sub_0072B010",
+      "offset": "+0x130",
+      "type": "void*",
+      "name": "field_0x130"
+    },
+    {
+      "class": "sub_0072B010",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:44:56Z"
+}
