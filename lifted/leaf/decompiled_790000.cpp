@@ -1841,3 +1841,74 @@ void fn_0079EBF0(void** out) {
     obj[0x18] = mem_00997749;
 }
 } // namespace lift_0079EBF0
+
+// [0x0079EF70]
+namespace lift_0079EF70 {
+// @name ClosePackedFileAndFree
+// @class UnknownClass
+// @summary Closes the stream at +0x00 (if open), removes its file when the flag at +0x18 is set, releases the object's slot via ext_0079EA60, frees the owned buffers at +0x04 and +0x10 and the object itself; if fclose failed, requests a slot cache entry (idx 12) via ext_007AA510.
+// @field UnknownClass +0x00 void* stream
+// @field UnknownClass +0x04 char* path
+// @field UnknownClass +0x10 void* field_0x10
+// @field UnknownClass +0x18 uint8_t remove_on_close
+
+extern uint32_t mem_00925264; // .rdata IAT slot: MSVCR80!fclose
+extern uint32_t mem_009252CC; // .rdata IAT slot: MSVCR80!remove
+extern uint32_t mem_009251D8; // .rdata IAT slot: MSVCR80!free
+
+void ext_0079EA60(void* self);
+void ext_007AA510(uint32_t idx);
+
+namespace {
+
+inline void* guest_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// Calls through an IAT slot whose value is stored in a guest global.
+template <typename Fn>
+inline Fn iat_call(uint32_t slot_value) {
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(slot_value));
+}
+
+}  // namespace
+
+void fn_0079EF70(void* self) {
+    if (self == nullptr) {
+        return;
+    }
+
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t close_result = 0;
+
+    uint32_t stream = *reinterpret_cast<uint32_t*>(base + 0x00);
+    if (stream != 0) {
+        using FcloseFn = int32_t(__cdecl*)(void*);
+        close_result = iat_call<FcloseFn>(mem_00925264)(guest_ptr(stream));
+
+        uint8_t remove_flag = *(base + 0x18);
+        if (remove_flag != 0) {
+            uint32_t path = *reinterpret_cast<uint32_t*>(base + 0x04);
+            using RemoveFn = int32_t(__cdecl*)(const char*);
+            iat_call<RemoveFn>(mem_009252CC)(static_cast<const char*>(guest_ptr(path)));
+        }
+    }
+
+    ext_0079EA60(self);
+
+    using FreeFn = void(__cdecl*)(void*);
+    FreeFn free_fn = iat_call<FreeFn>(mem_009251D8);
+
+    uint32_t path_buf = *reinterpret_cast<uint32_t*>(base + 0x04);
+    free_fn(guest_ptr(path_buf));
+
+    uint32_t extra_buf = *reinterpret_cast<uint32_t*>(base + 0x10);
+    free_fn(guest_ptr(extra_buf));
+
+    free_fn(self);
+
+    if (close_result != 0) {
+        ext_007AA510(12);
+    }
+}
+} // namespace lift_0079EF70

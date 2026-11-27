@@ -84150,6 +84150,13 @@
     "summary": "Gets a stream handle from ext_0079EBE0 and calls CRT fseek(stream, offset, SEEK_SET), discarding the result.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079EF70": {
+    "name": "ClosePackedFileAndFree",
+    "class": "UnknownClass",
+    "signature": "inline void* guest_ptr(uint32_t addr)",
+    "summary": "Closes the stream at +0x00 (if open), removes its file when the flag at +0x18 is set, releases the object's slot via ext_0079EA60, frees the owned buffers at +0x04 and +0x10 and the object itself; if fclose failed, requests a slot cache entry (idx 12) via ext_007AA510.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079F1D0": {
     "name": "sub_0079F1D0",
     "signature": "void fn_0079F1D0(void* self)",
