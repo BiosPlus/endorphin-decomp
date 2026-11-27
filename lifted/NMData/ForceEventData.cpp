@@ -685,3 +685,92 @@ extern void __thiscall fn_004C63F0(void* self, int32_t frame) {
     }
 }
 } // namespace lift_004C63F0
+
+// [0x004C6BF0]
+namespace lift_004C6BF0 {
+// @name NMData::ForceEventData::vfunc_1_off_154
+// @class NMData::ForceEventData
+// @summary Updates ForceEventData from a dependent selection source if its list is non-empty.
+// @field NMData::ForceEventData +0x04 void* TransformInterface_vptr
+// @field NMData::ForceEventData +0x0C void* Updateable_vptr
+// @field NMData::ForceEventData +0x15C int32_t field_0x15c
+
+
+    int32_t __cdecl ext_00594000(void);
+    void __thiscall ext_004C28C0(void* self, void* vec);
+    void __thiscall ext_004A6970(void* self, uint32_t arg0);
+    void __thiscall ext_00466F00(void* self, void* arg0);
+    void __thiscall ext_00528BF0(void* self, uint32_t a0, uint32_t a1, void* a2);
+    void __thiscall ext_00661F70(void* self, int32_t a0);
+    uint32_t __thiscall ext_00528BB0(void* self, uint32_t a0, uint32_t a1);
+    void __cdecl ext_004C6130(uint32_t a0, void* a1, void* a2);
+    void __thiscall ext_00586D00(void* self);
+    void __thiscall ext_00466910(void* self);
+    void __cdecl ext_006A5C5C(uint32_t a0);
+    void __thiscall ext_004026E0(void* self);
+    extern uint32_t mem_00B40640;
+
+void __thiscall fn_004C6BF0(void* self, void* arg0) {
+    uint8_t* p_this = static_cast<uint8_t*>(self);
+    int32_t ebp = ext_00594000();
+
+    uint32_t** vtbl_arg = *reinterpret_cast<uint32_t***>(arg0);
+    typedef uint32_t (__thiscall *GetListFn)(void*);
+    uint32_t list_ptr = reinterpret_cast<GetListFn>(vtbl_arg[0x0C / 4])(arg0);
+
+    uint32_t begin = *reinterpret_cast<uint32_t*>(list_ptr + 0x04);
+    if (begin == 0) {
+        return;
+    }
+    uint32_t end = *reinterpret_cast<uint32_t*>(list_ptr + 0x08);
+    if ((static_cast<int32_t>(end - begin) >> 2) == 0) {
+        return;
+    }
+
+    uint32_t vec[3] = {0, 0, 0};
+    vtbl_arg = *reinterpret_cast<uint32_t***>(arg0);
+    typedef void (__thiscall *FillVecFn)(void*, void*);
+    reinterpret_cast<FillVecFn>(vtbl_arg[0x34 / 4])(arg0, vec);
+
+    uint8_t* base_obj = p_this - 0x154;
+    ext_004C28C0(base_obj, vec);
+
+    vtbl_arg = *reinterpret_cast<uint32_t***>(arg0);
+    typedef uint32_t (__thiscall *GetNameFn)(void*);
+    uint32_t name_arg = reinterpret_cast<GetNameFn>(vtbl_arg[0x14 / 4])(arg0);
+
+    uint32_t local_24[4] = {0, 0, 0, 0};
+    ext_004A6970(local_24, name_arg);
+
+    void* esi = reinterpret_cast<uint8_t*>(ebp) + 0x1C8;
+    struct {
+        void* ptr;
+        uint8_t embedded[64];
+    } local_30;
+    local_30.ptr = esi;
+    ext_00466F00(local_30.embedded, esi);
+
+    void* updateable = p_this - 0x148;
+    ext_00528BF0(updateable, 0x200, 1, esi);
+
+    int32_t val = *reinterpret_cast<int32_t*>(p_this + 0x08) + 1;
+    ext_00661F70(esi, val);
+
+    ext_00528BF0(updateable, 0x200, 0, esi);
+    ext_00528BB0(updateable, 0x200, 0);
+
+    void* transform_if = p_this - 0x150;
+    uint32_t** vtbl_tf = *reinterpret_cast<uint32_t***>(transform_if);
+    typedef uint32_t (__thiscall *GetTfFn)(void*, uint32_t);
+    uint32_t tf_res = reinterpret_cast<GetTfFn>(vtbl_tf[0x0C / 4])(transform_if, mem_00B40640);
+
+    ext_004C6130(tf_res + 0x30, local_24, esi);
+    ext_00586D00(base_obj);
+    ext_00466910(&local_30);
+
+    if (local_24[0] != 0) {
+        ext_006A5C5C(local_24[0]);
+    }
+    ext_004026E0(vec);
+}
+} // namespace lift_004C6BF0

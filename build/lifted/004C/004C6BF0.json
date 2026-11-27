@@ -1,0 +1,34 @@
+{
+  "va": "0x004C6BF0",
+  "size": 382,
+  "orig_symbol": "NMData::ForceEventData::vfunc_1_off_154",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_1_off_154",
+  "class": "NMData::ForceEventData",
+  "signature": "void __thiscall fn_004C6BF0(void* self, void* arg0)",
+  "summary": "Updates ForceEventData from a dependent selection source if its list is non-empty.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "TransformInterface_vptr"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "Updateable_vptr"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:04:22Z"
+}
