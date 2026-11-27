@@ -3454,3 +3454,43 @@ extern void __thiscall fn_006DC4C0(void* self, int32_t index) {
     (void)ext_006E7410(sub, 0u, 0x00AA93ECu);
 }
 } // namespace lift_006DC4C0
+
+// [0x006D4B30] sub_006D4B30 (109 bytes)
+namespace lift_006D4B30 {
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+// Called as thiscall-style: self = this+0x4C, edx unused, index on stack.
+extern void ext_006D2200();
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+// Called with self = this+0x1C4 and index 0.
+extern void ext_006E7440();
+
+// @name Unknown::removeEntryAndRelease_006D4B30
+// @class Unknown
+// @summary Linearly searches the DWORD array at +0x5C (count at +0x4C) for the given value; if found, removes it and releases the item via its vtable slot 0 (deleting dtor, flag 1); otherwise calls the sub-object at +0x1C4 with index 0. Returns true when found, false otherwise.
+// @field Unknown +0x1C4 void* field_0x1C4
+// @field Unknown +0x4C int32_t count
+// @field Unknown +0x5C uint32_t* entries
+bool fn_006D4B30(void* self, uint32_t item) {
+    auto* base = static_cast<uint8_t*>(self);
+    const int32_t count = *reinterpret_cast<int32_t*>(base + 0x4C);
+
+    if (count > 0) {
+        auto* entries = *reinterpret_cast<uint32_t**>(base + 0x5C);
+        for (int32_t i = 0; i < count; ++i) {
+            if (entries[i] == item) {
+                reinterpret_cast<void (*)(void*, void*, int32_t)>(&ext_006D2200)(
+                    base + 0x4C, nullptr, i);
+                if (item != 0) {
+                    auto* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(item));
+                    void** vtbl = *reinterpret_cast<void***>(obj);
+                    reinterpret_cast<void (*)(void*, int)>(vtbl[0])(obj, 1);
+                }
+                return true;
+            }
+        }
+    }
+
+    reinterpret_cast<void* (*)(void*, uint32_t)>(&ext_006E7440)(base + 0x1C4, 0);
+    return false;
+}
+} // namespace lift_006D4B30

@@ -1,0 +1,34 @@
+{
+  "va": "0x006D4B30",
+  "size": 109,
+  "orig_symbol": "sub_006D4B30",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::removeEntryAndRelease_006D4B30",
+  "class": "Unknown",
+  "signature": "bool fn_006D4B30(void* self, uint32_t item)",
+  "summary": "Linearly searches the DWORD array at +0x5C (count at +0x4C) for the given value; if found, removes it and releases the item via its vtable slot 0 (deleting dtor, flag 1); otherwise calls the sub-object at +0x1C4 with index 0. Returns true when found, false otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "void*",
+      "name": "field_0x1C4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t*",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:54:50Z"
+}

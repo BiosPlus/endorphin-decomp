@@ -68674,6 +68674,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D4140 (allocateAndConstruct_006D7AE0).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D4B30": {
+    "name": "Unknown::removeEntryAndRelease_006D4B30",
+    "class": "Unknown",
+    "signature": "bool fn_006D4B30(void* self, uint32_t item)",
+    "summary": "Linearly searches the DWORD array at +0x5C (count at +0x4C) for the given value; if found, removes it and releases the item via its vtable slot 0 (deleting dtor, flag 1); otherwise calls the sub-object at +0x1C4 with index 0. Returns true when found, false otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D55F0": {
     "name": "sub_006D55F0",
     "signature": "extern \"C\" int32_t __fastcall fn_006D55F0(void* self)",
