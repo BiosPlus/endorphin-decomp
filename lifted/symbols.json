@@ -68773,6 +68773,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006D7DB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D7E20": {
+    "name": "Unknown::initAssignMesh_006D7E20",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_006D7E20(void* self)",
+    "summary": "Calls initAssignCString with the string \"Mesh\" on the object passed as the stack argument and returns that object.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D7E50": {
     "name": "sub_006D7E50",
     "signature": "extern \"C\" int32_t __cdecl fn_006D7E50(void)",

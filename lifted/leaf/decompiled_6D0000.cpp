@@ -3262,3 +3262,18 @@ int32_t fn_006D8980(void) {
     return *ext_00715550(obj);
 }
 } // namespace lift_006D8980
+
+// [0x006D7E20] sub_006D7E20 (33 bytes)
+namespace lift_006D7E20 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+extern int mem_00AA9160;
+
+// @name Unknown::initAssignMesh_006D7E20
+// @class Unknown
+// @summary Calls initAssignCString with the string "Mesh" on the object passed as the stack argument and returns that object.
+extern void* fn_006D7E20(void* self) {
+    ext_006B9D80(self, reinterpret_cast<const char*>(&mem_00AA9160));
+    return self;
+}
+} // namespace lift_006D7E20
