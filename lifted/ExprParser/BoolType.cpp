@@ -358,3 +358,54 @@ void* __stdcall fn_0066AE90(void* self, const uint8_t* src) {
     return self;
 }
 } // namespace lift_0066AE90
+
+// [0x0067A980] ExprParser::BoolType::vfunc_17 (166 bytes)
+namespace lift_0067A980 {
+// Callees referenced by the original asm (kept as ext_/mem_ for differential testing).
+// Known callee 0x0041CF00: Unknown::CopyFromSource_0041CF00 (copies a (value, object) pair into self; value comes from virtual slot 0x70 of the source object, or 0 if there is no object)
+extern void* __thiscall ext_0041CF00(void* self, void* src);
+// Known callee 0x00671F30: sub_00671F30 (zeroes the first dword of the output buffer and stores mem_00B599BC into the second dword)
+extern void ext_00671F30(void* out);
+
+namespace {
+
+// (value, object) pair passed to CopyFromSource and to the virtual slot 0x78 release/handler.
+struct ValueObjectPair {
+    uint32_t value;
+    void*    object;
+};
+
+} // namespace
+
+// @name ExprParser::BoolType::vfunc_17
+// @class ExprParser::BoolType
+// @summary Calls the object's vfunc_16 with the value; on success builds a (result, this) pair, copies it into out via CopyFromSource and forwards it to this->vfunc_30; otherwise zeroes out. Returns out.
+// @field ExprParser::BoolType +0x00 void* field_0x00
+void* fn_0067A980(void* self, void* out, void* value) {
+    // Virtual slot 0x40 (index 16): probe with the value. Result is stored as the pair's value.
+    void* vtable = lift_field<void*>(self, 0x00);
+    void* probe_slot = lift_field<void*>(vtable, 0x40);
+    auto probe = reinterpret_cast<uint32_t(__thiscall*)(void*, void*)>(probe_slot);
+    uint32_t result = probe(self, value);
+
+    if (result != 0) {
+        ValueObjectPair pair{};
+        pair.value  = result;
+        pair.object = self;
+
+        ext_0041CF00(out, &pair);
+
+        // Virtual slot 0x78 (index 30) on the saved object, passing the pair.
+        if (self != nullptr) {
+            void* self_vtable = lift_field<void*>(self, 0x00);
+            void* handler_slot = lift_field<void*>(self_vtable, 0x78);
+            auto handler = reinterpret_cast<void(__thiscall*)(void*, void*)>(handler_slot);
+            handler(self, &pair);
+        }
+    } else {
+        ext_00671F30(out);
+    }
+
+    return out;
+}
+} // namespace lift_0067A980
