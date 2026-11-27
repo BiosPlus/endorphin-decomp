@@ -16847,6 +16847,13 @@
     "summary": "Copies a string from arg1, looks up a value object via sub_006720E0, forwards vfunc +0xA8, and cleans up via vfunc +0x78.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BCD80": {
+    "name": "ExprParser::ReadMethodType_MaterialPair_generateDisplayName::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e",
+    "signature": "void fn_004BCD80(void* self, void* owner, void* out)",
+    "summary": "Builds a temporary ValuePtrType from the owner's string-pointer field, assigns it into the owner, releases the temporary and string, then forwards to the owner's value object's vfunc slot 43 with (owner, out).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004BCE20": {
     "name": "ReadMethodType_MaterialPair::vfunc_44",
     "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e",

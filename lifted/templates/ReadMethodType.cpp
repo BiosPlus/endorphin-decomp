@@ -83502,3 +83502,57 @@ void fn_004C0AA0(void* self, void* out) {
     describe(obj, self, out);
 }
 } // namespace lift_004C0AA0
+
+// [0x004BCD80] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_43 (157 bytes)
+namespace lift_004BCD80 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void ext_0041CF50();
+// Known callee 0x004BC770: sub_004BC770 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void ext_004BC770();
+extern void ext_006720E0();
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType_MaterialPair_generateDisplayName::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>
+// @summary Builds a temporary ValuePtrType from the owner's string-pointer field, assigns it into the owner, releases the temporary and string, then forwards to the owner's value object's vfunc slot 43 with (owner, out).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004BCD80(void* self, void* owner, void* out) {
+    (void)self; // ecx (this) is never read by the original body
+
+    using fn_void_2 = void (*)(void*, void*);
+    using fn_void_3 = void (*)(void*, void*, void*);
+    using fn_void_1 = void (*)(void*);
+
+    alignas(4) unsigned char str_tmp[0x1c]; // std::string temporary (MSVC layout, opaque)
+    alignas(4) unsigned char val_tmp[8];    // ValuePtrType temporary (field_0x00, field_0x04)
+
+    // str_tmp = string copy-constructed from owner->field_0x00
+    reinterpret_cast<fn_void_2>(ext_004BC770)(str_tmp, lift_field<void*>(owner, 0x00));
+    // val_tmp built from str_tmp
+    reinterpret_cast<fn_void_2>(ext_006720E0)(val_tmp, str_tmp);
+    // owner->assignFromOther(val_tmp)
+    reinterpret_cast<fn_void_2>(ext_0041CF50)(owner, val_tmp);
+
+    // Release val_tmp's value object via its vtable slot 0x78
+    void* val_obj = lift_field<void*>(val_tmp, 0x04);
+    if (val_obj != nullptr) {
+        void* val_vt = lift_field<void*>(val_obj, 0x00);
+        auto release = reinterpret_cast<fn_void_2>(
+            reinterpret_cast<std::uintptr_t>(lift_field<void*>(val_vt, 0x78)));
+        release(val_obj, val_tmp);
+    }
+
+    // Destroy str_tmp via the imported std::string destructor (IAT slot 0x00924FF4)
+    auto str_dtor = reinterpret_cast<fn_void_1>(
+        reinterpret_cast<std::uintptr_t>(lift_field<void*>(&mem_00924FF4, 0x00)));
+    str_dtor(str_tmp);
+
+    // owner->field_0x04->vfunc_43(owner, out)
+    void* obj = lift_field<void*>(owner, 0x04);
+    void* obj_vt = lift_field<void*>(obj, 0x00);
+    auto vfunc43 = reinterpret_cast<fn_void_3>(
+        reinterpret_cast<std::uintptr_t>(lift_field<void*>(obj_vt, 0xAC)));
+    vfunc43(obj, owner, out);
+}
+} // namespace lift_004BCD80
