@@ -1,0 +1,124 @@
+{
+  "va": "0x00551DE0",
+  "size": 323,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_17",
+  "src_path": "src/NMCamera/Orthogonal.cpp",
+  "lifted_path": "lifted/NMCamera/Orthogonal.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_17",
+  "class": "NMCamera::Orthogonal",
+  "signature": "void fn_00551DE0(void* self)",
+  "summary": "Rebuilds the direction vector at +0xD8 from +0x74/+0x78/+0x7C (w=0), crosses it with the vector at +0x90, normalizes that cross when its length is non-zero, applies scaled offsets via +0xD8 helper, stores (this+0x80 - dir) into +0xE8..+0xF4, and sets +0x2C to 1.",
+  "fields": [
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x2C",
+      "type": "uint8_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x74",
+      "type": "float",
+      "name": "field_0x74"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x90",
+      "type": "float",
+      "name": "field_0x90"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x94",
+      "type": "float",
+      "name": "field_0x94"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x98",
+      "type": "float",
+      "name": "field_0x98"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x9C",
+      "type": "float",
+      "name": "field_0x9c"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xD8",
+      "type": "float",
+      "name": "field_0xd8"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xDC",
+      "type": "float",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "field_0xe0"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xE4",
+      "type": "float",
+      "name": "field_0xe4"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xE8",
+      "type": "float",
+      "name": "field_0xe8"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "field_0xec"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xF0",
+      "type": "float",
+      "name": "field_0xf0"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xF4",
+      "type": "float",
+      "name": "field_0xf4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:38:47Z"
+}

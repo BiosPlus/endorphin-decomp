@@ -203,3 +203,80 @@ extern void* __thiscall fn_00551B50(void* self) {
     return obj + 0xF8;
 }
 } // namespace lift_00551B50
+
+// [0x00551DE0] NMCamera::Orthogonal::vfunc_17 (323 bytes)
+namespace lift_00551DE0 {
+// Known callee 0x0047FFA0: Vector4Subtract_0047FFA0 (out[i] = a[i] - b[i], i in 0..3; returns out).
+extern float* ext_0047FFA0(const float* self, float* out, const float* b);
+// Known callee 0x00540D60: Vec3::normalize (normalizes in place if length is non-zero; returns this).
+extern float* ext_00540D60(float* self);
+// Known callee 0x00547820: Vec3::cross (out = self x rhs, w = 0; returns out).
+extern float* ext_00547820(const float* self, float* out, const float* rhs);
+// Known callee 0x006936A0: unnamed 21-byte helper, called as (self, v, s).
+extern void ext_006936A0(void* self, const float* v, float s);
+// Constant 0x00993838 (float 0.0f), compared against the vector length.
+extern float mem_00993838;
+
+// @name NMCamera::Orthogonal::vfunc_17
+// @class NMCamera::Orthogonal
+// @summary Rebuilds the direction vector at +0xD8 from +0x74/+0x78/+0x7C (w=0), crosses it with the vector at +0x90, normalizes that cross when its length is non-zero, applies scaled offsets via +0xD8 helper, stores (this+0x80 - dir) into +0xE8..+0xF4, and sets +0x2C to 1.
+// @field NMCamera::Orthogonal +0x2C uint8_t field_0x2c
+// @field NMCamera::Orthogonal +0x68 float field_0x68
+// @field NMCamera::Orthogonal +0x6C float field_0x6c
+// @field NMCamera::Orthogonal +0x74 float field_0x74
+// @field NMCamera::Orthogonal +0x78 float field_0x78
+// @field NMCamera::Orthogonal +0x7C float field_0x7c
+// @field NMCamera::Orthogonal +0x90 float field_0x90
+// @field NMCamera::Orthogonal +0x94 float field_0x94
+// @field NMCamera::Orthogonal +0x98 float field_0x98
+// @field NMCamera::Orthogonal +0x9C float field_0x9c
+// @field NMCamera::Orthogonal +0xD8 float field_0xd8
+// @field NMCamera::Orthogonal +0xDC float field_0xdc
+// @field NMCamera::Orthogonal +0xE0 float field_0xe0
+// @field NMCamera::Orthogonal +0xE4 float field_0xe4
+// @field NMCamera::Orthogonal +0xE8 float field_0xe8
+// @field NMCamera::Orthogonal +0xEC float field_0xec
+// @field NMCamera::Orthogonal +0xF0 float field_0xf0
+// @field NMCamera::Orthogonal +0xF4 float field_0xf4
+void fn_00551DE0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto F = [base](std::size_t off) -> float& {
+        return *reinterpret_cast<float*>(base + off);
+    };
+    float* dir = reinterpret_cast<float*>(base + 0xD8);
+
+    // dir = { +0x74, +0x78, +0x7C, 0.0f }
+    dir[0] = F(0x74);
+    dir[1] = F(0x78);
+    dir[2] = F(0x7C);
+    dir[3] = 0.0f;
+
+    // Stack copies used as call arguments.
+    float rhs[4] = { F(0x90), F(0x94), F(0x98), F(0x9C) };
+    float dirCopy[4] = { dir[0], dir[1], dir[2], dir[3] };
+    float cross[4];
+    ext_00547820(dirCopy, cross, rhs);  // cross = dir x rhs
+
+    float len2 = cross[0] * cross[0] + cross[1] * cross[1] + cross[2] * cross[2];
+    float len = std::sqrt(len2);
+
+    if (len != mem_00993838) {
+        float* n = ext_00540D60(cross);
+        for (int i = 0; i < 4; ++i) {
+            cross[i] = n[i];
+        }
+        ext_006936A0(dir, cross, F(0x68));
+    }
+
+    ext_006936A0(dir, rhs, F(0x6C));
+
+    float diff[4];
+    const float* r = ext_0047FFA0(reinterpret_cast<float*>(base + 0x80), diff, dir);
+    F(0xE8) = r[0];
+    F(0xEC) = r[1];
+    F(0xF0) = r[2];
+    F(0xF4) = r[3];
+
+    *reinterpret_cast<uint8_t*>(base + 0x2C) = 1;
+}
+} // namespace lift_00551DE0

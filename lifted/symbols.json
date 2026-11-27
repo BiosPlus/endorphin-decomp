@@ -36686,6 +36686,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00551A20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMCamera/auto_tiny.cpp"
   },
+  "0x00551DE0": {
+    "name": "NMCamera::Orthogonal::vfunc_17",
+    "class": "NMCamera::Orthogonal",
+    "signature": "void fn_00551DE0(void* self)",
+    "summary": "Rebuilds the direction vector at +0xD8 from +0x74/+0x78/+0x7C (w=0), crosses it with the vector at +0x90, normalizes that cross when its length is non-zero, applies scaled offsets via +0xD8 helper, stores (this+0x80 - dir) into +0xE8..+0xF4, and sets +0x2C to 1.",
+    "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
+  },
   "0x00552130": {
     "name": "Matrix4::getRow",
     "class": "Matrix4",

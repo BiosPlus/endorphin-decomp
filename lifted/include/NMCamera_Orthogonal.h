@@ -11,20 +11,36 @@
 namespace lifted_layout {
 struct NMCamera_Orthogonal_Fields {
     // +0x0   void*                    vtable_ptr  (evidence: 0x00551B50, 0x00551C10)
+    // +0x2C  uint8_t                  field_0x2c  (evidence: 0x00551DE0)
     // +0x30  float                    field_0x30  (evidence: 0x00551AF0)
     // +0x34  float                    field_0x34  (evidence: 0x00551AF0)
     // +0x3C  void*                    field_0x3c  (evidence: 0x00551AF0)
     // +0x58  void*                    field_0x58  (evidence: 0x00551AF0)
-    // +0x68  float                    field_0x68  (evidence: 0x00551AF0)
-    // +0x6C  float                    field_0x6c  (evidence: 0x00551AF0)
-    // +0x74  void*                    field_0x74  (evidence: 0x00551AF0)
-    // +0x90  void*                    field_0x90  (evidence: 0x00551AF0)
+    // +0x68  float                    field_0x68  (evidence: 0x00551AF0, 0x00551DE0)
+    // +0x6C  float                    field_0x6c  (evidence: 0x00551AF0, 0x00551DE0)
+    // +0x74  float                    field_0x74  (evidence: 0x00551DE0) // CONFLICT: multiple definitions at +0x74
+    // +0x74  void*                    field_0x74  (evidence: 0x00551AF0) // CONFLICT: multiple definitions at +0x74
+    // +0x78  float                    field_0x78  (evidence: 0x00551DE0)
+    // +0x7C  float                    field_0x7c  (evidence: 0x00551DE0)
+    // +0x90  float                    field_0x90  (evidence: 0x00551DE0) // CONFLICT: multiple definitions at +0x90
+    // +0x90  void*                    field_0x90  (evidence: 0x00551AF0) // CONFLICT: multiple definitions at +0x90
+    // +0x94  float                    field_0x94  (evidence: 0x00551DE0)
+    // +0x98  float                    field_0x98  (evidence: 0x00551DE0)
+    // +0x9C  float                    field_0x9c  (evidence: 0x00551DE0)
     // +0xA0  int32_t                  field_0xa0  (evidence: 0x00551AF0)
     // +0xB0  double                   field_0xb0  (evidence: 0x00551C30, 0x00551CB0)
     // +0xB8  double                   field_0xb8  (evidence: 0x00551C30, 0x00551CB0)
     // +0xC0  double                   field_0xc0  (evidence: 0x00551A80, 0x00551C30)
     // +0xC8  double                   field_0xc8  (evidence: 0x00551A80)
     // +0xD0  double                   field_0xd0  (evidence: 0x00551A80)
+    // +0xD8  float                    field_0xd8  (evidence: 0x00551DE0)
+    // +0xDC  float                    field_0xdc  (evidence: 0x00551DE0)
+    // +0xE0  float                    field_0xe0  (evidence: 0x00551DE0)
+    // +0xE4  float                    field_0xe4  (evidence: 0x00551DE0)
+    // +0xE8  float                    field_0xe8  (evidence: 0x00551DE0)
+    // +0xEC  float                    field_0xec  (evidence: 0x00551DE0)
+    // +0xF0  float                    field_0xf0  (evidence: 0x00551DE0)
+    // +0xF4  float                    field_0xf4  (evidence: 0x00551DE0)
     // +0xF8  std::string              field_0xf8  (evidence: 0x00551B50)
 };
 } // namespace lifted_layout
