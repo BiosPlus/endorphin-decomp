@@ -24029,6 +24029,13 @@
     "summary": "Pure jump thunk forwarding to sub_004E7EC0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004E87F0": {
+    "name": "SelectionBuffer::vfunc_12",
+    "class": "SelectionBuffer",
+    "signature": "DWORD __thiscall fn_004E87F0(void* self, DWORD arg)",
+    "summary": "Calls virtual slot 3 on self to obtain a value, then forwards (arg, value) to ext_004E8570 and returns its result.",
+    "lifted_path": "lifted/classes/SelectionBuffer.cpp"
+  },
   "0x004E9900": {
     "name": "SelectionBuffer::vfunc_25",
     "class": "SelectionBuffer",
