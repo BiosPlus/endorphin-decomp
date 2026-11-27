@@ -53523,6 +53523,13 @@
     "summary": "Returns 1 if the Vector3 referenced by *self has length \u003e= 1e-6, else 0; throws if the vector pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066FAE0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e",
+    "signature": "void* fn_0066FAE0(void* out, void* unused)",
+    "summary": "Reads the Vector3 pointer held in the first argument, computes its length, and formats it into the output slot.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0066FB50": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",

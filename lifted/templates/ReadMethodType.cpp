@@ -67532,3 +67532,40 @@ void* fn_00604E50(void* /*unused*/, void* out) {
     return out;
 }
 } // namespace lift_00604E50
+
+// [0x0066FAE0]
+namespace lift_0066FAE0 {
+extern void* ext_0046C390(void* out, float value);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, calcNorm, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NM::Vector3, float, calcNorm, 1>
+// @summary Reads the Vector3 pointer held in the first argument, computes its length, and formats it into the output slot.
+// @field ExprParser::ValuePtrType +0x00 NM::Vector3* vec
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+void* fn_0066FAE0(void* out, void* unused) {
+    (void)unused;
+
+    // First dword of the argument is a Vector3* (may be null).
+    const auto* vec = lift_field<const float*>(out, 0x00);
+    if (vec == nullptr) {
+        unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        (void)&mem_009DEC1C;
+        ext_006A6DD2();
+        return out;
+    }
+
+    const float x = lift_field<const float>(vec, 0x00);
+    const float y = lift_field<const float>(vec, 0x04);
+    const float z = lift_field<const float>(vec, 0x08);
+
+    const float length = std::sqrt(x * x + y * y + z * z);
+    ext_0046C390(out, length);
+    return out;
+}
+} // namespace lift_0066FAE0

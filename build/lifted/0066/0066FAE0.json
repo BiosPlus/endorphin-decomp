@@ -1,0 +1,40 @@
+{
+  "va": "0x0066FAE0",
+  "size": 108,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e",
+  "signature": "void* fn_0066FAE0(void* out, void* unused)",
+  "summary": "Reads the Vector3 pointer held in the first argument, computes its length, and formats it into the output slot.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "NM::Vector3*",
+      "name": "vec"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:04:08Z"
+}
