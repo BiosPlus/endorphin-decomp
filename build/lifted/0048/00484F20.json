@@ -1,0 +1,34 @@
+{
+  "va": "0x00484F20",
+  "size": 131,
+  "orig_symbol": "sub_00484F20",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Vector::PushBackVec4_00484F20",
+  "class": "Vector",
+  "signature": "extern \"C\" void __fastcall fn_00484F20(void* self, int edx_unused, const void* value)",
+  "summary": "push_back of a 16-byte (4-float) element: appends in place when capacity allows, otherwise defers to the reallocating insert helper.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:32:55Z"
+}

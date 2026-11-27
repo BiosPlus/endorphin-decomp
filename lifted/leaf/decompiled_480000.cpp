@@ -4015,3 +4015,49 @@ void fn_0048AC00(void* self, void* arg1) {
 }
 } // namespace lift_00402730
 } // namespace lift_0048AC00
+
+// [0x00484F20] sub_00484F20 (131 bytes)
+namespace lift_00484F20 {
+// Known callee 0x004817A0: fillVec4Array (Fills an array of 16-byte (4-float) elements with a single 4-float value.)
+extern void ext_004817A0(void* dst, uint32_t count, const void* src);
+// Known callee 0x004836C0: sub_004836C0 (Auto-lifted identical-shape clone of 0x00475710 (Vector::InsertAndGetIterator_00475710).)
+// Original is __thiscall with 4 stack args: (&value_ref, this, last, value); callee cleans up.
+extern void ext_004836C0(void* self, const void* const* value_ref, void* self_again, uint8_t* last, const void* value);
+// MSVCR80 _invalid_parameter_noinfo IAT slot (0x925134); see invalid-parameter branch below.
+extern int mem_00925134;
+
+// @name Vector::PushBackVec4_00484F20
+// @class Vector
+// @summary push_back of a 16-byte (4-float) element: appends in place when capacity allows, otherwise defers to the reallocating insert helper.
+// @field Vector +0x04 uint8_t* field_0x04
+// @field Vector +0x08 uint8_t* field_0x08
+// @field Vector +0x0C uint8_t* field_0x0C
+extern void __fastcall fn_00484F20(void* self, int edx_unused, const void* value) {
+    (void)edx_unused;
+    uint8_t* first = lift_field<uint8_t*>(self, 0x04);
+    uint8_t* last = lift_field<uint8_t*>(self, 0x08);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x0C);
+
+    // size = first ? (last - first) / 16 : 0
+    // Fast path: first is non-null and size < capacity ((end - first) / 16).
+    if (first != nullptr) {
+        ptrdiff_t size = (last - first) >> 4;
+        ptrdiff_t capacity = (end - first) >> 4;
+        if (size < capacity) {
+            ext_004817A0(last, 1, value);
+            lift_field<uint8_t*>(self, 0x08) = last + 16;
+            return;
+        }
+    }
+
+    // Slow path. Original: if (first > last) _invalid_parameter_noinfo();
+    // Portable stand-in for the MSVCR80 non-returning handler: abort.
+    if (first > last) {
+        (void)&mem_00925134;
+        std::abort();
+    }
+
+    // Reallocating insert: thiscall with (&value, this, last, value) on the stack.
+    ext_004836C0(self, &value, self, last, value);
+}
+} // namespace lift_00484F20

@@ -11879,6 +11879,13 @@
     "summary": "Appends one 64-byte block to a Vector of 64-byte elements: if capacity allows, calls the slot helper at the end pointer and advances end by 0x40; otherwise validates the range and calls the grow/insert helper.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00484F20": {
+    "name": "Vector::PushBackVec4_00484F20",
+    "class": "Vector",
+    "signature": "extern \"C\" void __fastcall fn_00484F20(void* self, int edx_unused, const void* value)",
+    "summary": "push_back of a 16-byte (4-float) element: appends in place when capacity allows, otherwise defers to the reallocating insert helper.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00484FB0": {
     "name": "sub_00484FB0",
     "signature": "static inline void invalid_parameter_noinfo()",
