@@ -26346,6 +26346,12 @@
     "summary": "Returns true when this mode's virtual check (slot 39) passes and the object obtained via slot 45 of the chain at +0x8 -\u003e +0x14 -\u003e +0x30 has field +0x38 equal to 6.",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004F9EA0": {
+    "name": "initStaticObjectOnce_004F9EA0",
+    "signature": "void* fn_004F9EA0(void)",
+    "summary": "One-time initializer for the static object at mem_00AEA594 guarded by bit0 of mem_00AEA5B0; on first call sets the guard, runs ext_00662610 on the object, registers the cleanup via ext_006A6C87, and returns the object's address. The MSVC SEH frame setup/teardown is compiler bookkeeping and is not modeled.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FA170": {
     "name": "VMCSModes::DefaultImplementation::vfunc_106",
     "class": "VMCSModes::DefaultImplementation",

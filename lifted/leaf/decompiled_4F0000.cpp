@@ -1525,3 +1525,28 @@ uint8_t* fn_004FFD90(uint8_t* src_first, uint8_t* src_last, uint8_t* dst) {
     return d;
 }
 } // namespace lift_004FFD90
+
+// [0x004F9EA0] sub_004F9EA0 (95 bytes)
+namespace lift_004F9EA0 {
+// Known callee 0x00662610: called with (&mem_00AEA594, 0x00A3FFE0) as cdecl args.
+extern void ext_00662610(void* obj, uint32_t arg);
+// Known callee 0x006A6C87: called with 0x00919A90 as its single cdecl arg
+// (registers a destructor-style callback for the static object).
+extern void ext_006A6C87(uint32_t arg);
+// Init-guard flags word; bit0 marks the static object as initialized/initializing.
+extern uint32_t mem_00AEA5B0;
+// Static object storage whose address is returned.
+extern uint8_t mem_00AEA594[];
+
+// @name initStaticObjectOnce_004F9EA0
+// @summary One-time initializer for the static object at mem_00AEA594 guarded by bit0 of mem_00AEA5B0; on first call sets the guard, runs ext_00662610 on the object, registers the cleanup via ext_006A6C87, and returns the object's address. The MSVC SEH frame setup/teardown is compiler bookkeeping and is not modeled.
+// @field mem_00AEA5B0 bit0 guard flag (set before the constructor runs)
+void* fn_004F9EA0(void) {
+    if ((mem_00AEA5B0 & 1u) == 0) {
+        mem_00AEA5B0 |= 1u;
+        ext_00662610(static_cast<void*>(mem_00AEA594), 0x00A3FFE0u);
+        ext_006A6C87(0x00919A90u);
+    }
+    return static_cast<void*>(mem_00AEA594);
+}
+} // namespace lift_004F9EA0

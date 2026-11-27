@@ -1,0 +1,13 @@
+{
+  "va": "0x004F9EA0",
+  "size": 95,
+  "orig_symbol": "sub_004F9EA0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "initStaticObjectOnce_004F9EA0",
+  "signature": "void* fn_004F9EA0(void)",
+  "summary": "One-time initializer for the static object at mem_00AEA594 guarded by bit0 of mem_00AEA5B0; on first call sets the guard, runs ext_00662610 on the object, registers the cleanup via ext_006A6C87, and returns the object's address. The MSVC SEH frame setup/teardown is compiler bookkeeping and is not modeled.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:15:38Z"
+}
