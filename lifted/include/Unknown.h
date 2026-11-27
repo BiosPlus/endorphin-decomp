@@ -39,7 +39,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (container header pointer, passed through to compareIndexedElementsGreater)  (evidence: 0x00518700) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t ptr_0x00 (pointer value used as "self" for copyFieldsFrom)  (evidence: 0x004BF710) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   int32_t                  count  (evidence: 0x00783940, 0x007839F0, 0x008635C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int32_t                  count  (evidence: 0x00783940, 0x007839F0, 0x0078CAF0, 0x008635C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count  (evidence: 0x006D2300, 0x007B3120, 0x0085BEC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count_00  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    cursor_ptr  (evidence: 0x004BF6A0) // CONFLICT: multiple definitions at +0x0
@@ -713,6 +713,7 @@ struct Unknown_Fields {
     // +0x18  int32_t                  flag  (evidence: 0x007D4720) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t flags (of the stack argument `arg`; class not identified)  (evidence: 0x004561C0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    indexList  (evidence: 0x00783940) // CONFLICT: multiple definitions at +0x18
+    // +0x18  int32_t                  lastIndex  (evidence: 0x0078CAF0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 length  (evidence: 0x00871450) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    m12  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x18
     // +0x18  std::string              name  (evidence: 0x005327F0) // CONFLICT: multiple definitions at +0x18

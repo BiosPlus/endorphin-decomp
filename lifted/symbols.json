@@ -80221,6 +80221,13 @@
     "summary": "Not code: 17-byte switch index lookup table (followed by 0x90 padding); returns the table.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078CAF0": {
+    "name": "Unknown::allocInitAndInsert_0078CAF0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_0078CAF0(void* self)",
+    "summary": "Allocates a 0x84-byte object, constructs it via fn_0078C280, inserts it into this at index [this+0x00] via fn_006D2170, then stores (count - 1) at this+0x18.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CB70": {
     "name": "getIndexedDword",
     "signature": "uint32_t getIndexedDword(void* ecx, uint32_t index)",

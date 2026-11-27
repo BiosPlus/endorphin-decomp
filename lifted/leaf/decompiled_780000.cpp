@@ -3025,3 +3025,27 @@ void* fn_00786270(void* self) {
 }
 } // namespace lift_00785810
 } // namespace lift_00786270
+
+// [0x0078CAF0]
+namespace lift_0078CAF0 {
+// @name Unknown::allocInitAndInsert_0078CAF0
+// @class Unknown
+// @summary Allocates a 0x84-byte object, constructs it via fn_0078C280, inserts it into this at index [this+0x00] via fn_006D2170, then stores (count - 1) at this+0x18.
+// @field Unknown +0x00 int32_t count
+// @field Unknown +0x18 int32_t lastIndex
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_0078C280(void* self);
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+extern void* fn_0078CAF0(void* self) {
+    void* obj = ext_006A5C62(0x84);
+    void* slot = obj ? ext_0078C280(obj) : nullptr;
+
+    int32_t index = lift_field<int32_t>(self, 0x00);
+    ext_006D2170(self, index, &slot);
+
+    lift_field<int32_t>(self, 0x18) = lift_field<int32_t>(self, 0x00) - 1;
+    return self;
+}
+} // namespace lift_0078CAF0
