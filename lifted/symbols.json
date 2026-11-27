@@ -17060,6 +17060,13 @@
     "summary": "Fetches a source string via ext_004C0280 into a temporary std::string, wraps it in a holder assigned to self's field_0x04 through ext_0041CF50, releases the old holder, then forwards to the object at field_0x04 via vtable slot 44 with (self, out).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C0B40": {
+    "name": "ReadMethodType\u003cTriggeredEventData\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",
+    "signature": "void* fn_004C0B40(void* node, void* out)",
+    "summary": "Copies the document string of arg1 into a temporary, assigns it into arg1's field_0x04 holder, then forwards to field_0x04-\u003evfunc_46(arg1, arg2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C0BE0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::string, getPropertySourceDescription, 1\u003e::vfunc_47",
     "class": "ExprParser::ReadMethodType",

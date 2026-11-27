@@ -83205,3 +83205,56 @@ void fn_004C0A00(void* self, void* out) {
     virt(obj, self, out);
 }
 } // namespace lift_004C0A00
+
+// [0x004C0B40] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_46 (157 bytes)
+namespace lift_004C0B40 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void ext_0041CF50();
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void ext_004C0280();
+// Known callee 0x006720E0: thiscall helper that initializes the 8-byte temporary from a string pointer (43 bytes).
+extern void ext_006720E0();
+// MSVCP80 std::string destructor import slot (indirect call in the original; elided here, see note at the call site).
+extern int mem_00924FF4;
+
+// @name ReadMethodType<TriggeredEventData>::vfunc_46
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string of arg1 into a temporary, assigns it into arg1's field_0x04 holder, then forwards to field_0x04->vfunc_46(arg1, arg2).
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x04 void* field_0x04
+void* fn_004C0B40(void* node, void* out) {
+    // 0x18-byte std::string-sized buffer (frame offset -0x28): receives the copied string.
+    alignas(8) unsigned char str_tmp[0x18] = {};
+    // 8-byte temporary (frame offset -0x30): { field_0x00, field_0x04 }.
+    alignas(8) unsigned char val_tmp[8] = {};
+
+    // ext_004C0280(&str_tmp, node->field_0x00) -> returns &str_tmp.
+    void* doc = lift_field<void*>(node, 0x00);
+    void* str_ptr = reinterpret_cast<void* (*)(void*, void*)>(ext_004C0280)(str_tmp, doc);
+
+    // val_tmp = ctor(str_ptr) (thiscall, ecx = &val_tmp).
+    reinterpret_cast<void (*)(void*, void*)>(ext_006720E0)(val_tmp, str_ptr);
+
+    // node->assignFromOther(&val_tmp) (thiscall, ecx = node).
+    reinterpret_cast<void* (*)(void*, void*)>(ext_0041CF50)(node, val_tmp);
+
+    // If val_tmp.field_0x04 is non-null, invoke its vtable slot 0x78 with &val_tmp.
+    void* held = lift_field<void*>(val_tmp, 0x04);
+    if (held != nullptr) {
+        void* vtbl = lift_field<void*>(held, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(slot)(held, val_tmp);
+    }
+
+    // Destroy str_tmp: original makes an indirect call through mem_00924FF4 (MSVCP80
+    // std::string dtor). The MSVC ABI cannot be reproduced portably, so only the
+    // import reference is kept here.
+    (void)mem_00924FF4;
+
+    // Forward: node->field_0x04->vfunc_46(node, out) (thiscall, ecx = field_0x04).
+    void* obj = lift_field<void*>(node, 0x04);
+    void* obj_vtbl = lift_field<void*>(obj, 0x00);
+    void* vfunc46 = lift_field<void*>(obj_vtbl, 0xB8);
+    return reinterpret_cast<void* (*)(void*, void*, void*)>(vfunc46)(obj, node, out);
+}
+} // namespace lift_004C0B40
