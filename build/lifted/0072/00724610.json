@@ -1,0 +1,40 @@
+{
+  "va": "0x00724610",
+  "size": 96,
+  "orig_symbol": "sub_00724610",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::resetArraysAndAppend_00724610",
+  "class": "Unknown",
+  "signature": "BOOLEAN fn_00724610(void* self)",
+  "summary": "Resets the arrays at +0x194 and +0x1ac, then appends the vtable-slot 0x24 result of the object at +0x10 to the first array and the dword at +0x04 to the second.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "sourceObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x194",
+      "type": "DynamicArray",
+      "name": "arr194"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1AC",
+      "type": "DynamicArray",
+      "name": "arr1ac"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:47:01Z"
+}

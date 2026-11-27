@@ -77445,6 +77445,13 @@
     "summary": "Pure jump thunk forwarding to sub_007892B0.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x00724610": {
+    "name": "Unknown::resetArraysAndAppend_00724610",
+    "class": "Unknown",
+    "signature": "BOOLEAN fn_00724610(void* self)",
+    "summary": "Resets the arrays at +0x194 and +0x1ac, then appends the vtable-slot 0x24 result of the object at +0x10 to the first array and the dword at +0x04 to the second.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00724E30": {
     "name": "Unknown::CopyStridedQuadFromSubobject",
     "class": "Unknown",

@@ -1063,3 +1063,41 @@ extern void __fastcall fn_00725B50(void* self, void* /*edx*/, StrArg76 str_arg) 
     ext_006B9D70(&str_arg);
 }
 } // namespace lift_00725B50
+
+// [0x00724610] sub_00724610 (96 bytes)
+namespace lift_00724610 {
+// Known callee 0x006D2250: Unknown::ResetAndFreeBuffer156 (Frees the pointer stored at +0x10 (via the imported CRT free) if non-null, then zeroes +0x10, +0x00 and +0x04.)
+extern void ext_006D2250(void* self);
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::resetArraysAndAppend_00724610
+// @class Unknown
+// @summary Resets the arrays at +0x194 and +0x1ac, then appends the vtable-slot 0x24 result of the object at +0x10 to the first array and the dword at +0x04 to the second.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x10 void* sourceObject
+// @field Unknown +0x194 DynamicArray arr194
+// @field Unknown +0x1ac DynamicArray arr1ac
+BOOLEAN fn_00724610(void* self) {
+    void* arr1 = &lift_field<uint8_t>(self, 0x194);
+    ext_006D2250(arr1);
+
+    void* arr2 = &lift_field<uint8_t>(self, 0x1ac);
+    ext_006D2250(arr2);
+
+    void* obj = lift_field<void*>(self, 0x10);
+    void* vtbl = lift_field<void*>(obj, 0);
+    using SlotFn = int32_t (*)(void*);
+    SlotFn slot = reinterpret_cast<SlotFn>(lift_field<void*>(vtbl, 0x24));
+    int32_t tmp = slot(obj);
+
+    int32_t idx1 = lift_field<int32_t>(arr1, 0);
+    ext_006D2170(arr1, idx1, &tmp);
+
+    int32_t tmp2 = lift_field<int32_t>(self, 0x04);
+    int32_t idx2 = lift_field<int32_t>(arr2, 0);
+    ext_006D2170(arr2, idx2, &tmp2);
+
+    return 1;
+}
+} // namespace lift_00724610
