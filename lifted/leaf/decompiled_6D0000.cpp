@@ -2847,3 +2847,31 @@ int32_t __thiscall fn_006D37B0(void* self) {
     return value;
 }
 } // namespace lift_006D37B0
+
+// [0x006D3DB0]
+namespace lift_006D3DB0 {
+// @name Unknown::appendVirtualResultToArray_006D3DB0
+// @class Unknown
+// @summary Calls virtual slot 0x68 on self; if it returns non-null, appends the result to the DynamicArray at +0x184 and returns it.
+// @field Unknown +0x000 void* vtable
+// @field Unknown +0x184 DynamicArray array
+
+int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+int32_t __thiscall fn_006D3DB0(void* self) {
+    auto* obj = static_cast<uint8_t*>(self);
+
+    // vtable at +0x00; slot at byte offset 0x68
+    using VirtFn = int32_t(__thiscall*)(void*);
+    VirtFn getter = *reinterpret_cast<VirtFn*>(*reinterpret_cast<uint8_t**>(obj) + 0x68);
+    int32_t result = getter(self);
+
+    if (result != 0) {
+        int32_t tmp = result;
+        int32_t index = *reinterpret_cast<int32_t*>(obj + 0x184);
+        ext_006D2170(obj + 0x184, index, &tmp);
+    }
+
+    return result;
+}
+} // namespace lift_006D3DB0
