@@ -11217,3 +11217,36 @@ void fn_0058C2D0(void* holder) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B3F914));
 }
 } // namespace lift_0058C2D0
+
+// [0x00585430]
+namespace lift_00585430 {
+// @name ExprParser::ReadWriteMethodType<ObjectNode>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<ObjectNode>
+// @summary One-time guarded init of the static accessor object at 0xB3EB8C (vtable 0x0095A8D4); then binds holder+0x04 to its address.
+// @field ExprParser::ValuePtrType +0x04 DWORD field_0x04
+
+// Callee: fn_006721B0 (storeArgIntoFirstDword). thiscall, ECX = self, one stack arg.
+DWORD ext_0067A670(void* self, DWORD value);
+
+// Guard flag and static accessor object (first DWORD holds the vtable pointer).
+extern DWORD mem_00B3EB90;
+extern DWORD mem_00B3EB8C;
+
+DWORD fn_00585430(void* holder) {
+    // The original asm wraps this in an SEH frame (fs:[0] push/pop); that frame
+    // is not modeled in portable C++.
+    if (mem_00B3EB90 & 1) {
+        // Already initialized.
+        lift_field<DWORD>(holder, 0x04) =
+            static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B3EB8C));
+        return 1;
+    }
+
+    mem_00B3EB90 |= 1;
+    ext_0067A670(&mem_00B3EB8C, 0);
+    mem_00B3EB8C = 0x0095A8D4;
+    lift_field<DWORD>(holder, 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B3EB8C));
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(holder));
+}
+} // namespace lift_00585430

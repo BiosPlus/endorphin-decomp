@@ -28552,6 +28552,13 @@
     "summary": "Reads the target pointer from *self (throws if null), then forwards arg through the vcall at slot 3 of arg-\u003e+0x04 and passes the result to the target's +0x0C subobject via ext_004AA580.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00585430": {
+    "name": "ExprParser::ReadWriteMethodType\u003cObjectNode\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cObjectNode\u003e",
+    "signature": "DWORD fn_00585430(void* holder)",
+    "summary": "One-time guarded init of the static accessor object at 0xB3EB8C (vtable 0x0095A8D4); then binds holder+0x04 to its address.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00585610": {
     "name": "ExprParser::ReadMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0\u003e",

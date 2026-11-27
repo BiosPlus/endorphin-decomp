@@ -1,0 +1,22 @@
+{
+  "va": "0x00585430",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall ObjectNode::`vcall'{32, {flat}}, 12}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cObjectNode\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cObjectNode\u003e",
+  "signature": "DWORD fn_00585430(void* holder)",
+  "summary": "One-time guarded init of the static accessor object at 0xB3EB8C (vtable 0x0095A8D4); then binds holder+0x04 to its address.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:25:48Z"
+}
