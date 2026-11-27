@@ -52620,6 +52620,13 @@
     "summary": "Packs two args into a pair, calls sub_0065F7F0 with (a3 - a2) to produce two result words, stores them into the out pointer, then calls sub_00664BA0 with masked a3 and returns the out pointer.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00664E40": {
+    "name": "copyCharsSkippingDelimiter",
+    "class": "StdString",
+    "signature": "static void invalid_parameter_noinfo()",
+    "summary": "Copies bytes from [begin,end) into dest, skipping bytes equal to ch; each store is validated against the std::string container (esi) like MSVC debug iterator checks; returns {container, dest_end} through the out pointer.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00664ED0": {
     "name": "upperCopyStringRange",
     "class": "\u003cnone\u003e",

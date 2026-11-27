@@ -3397,3 +3397,69 @@ extern void __thiscall fn_00666360(void* self) {
     }
 }
 } // namespace lift_00666360
+
+// [0x00664E40]
+namespace lift_00664E40 {
+// @name copyCharsSkippingDelimiter
+// @class StdString
+// @summary Copies bytes from [begin,end) into dest, skipping bytes equal to ch; each store is validated against the std::string container (esi) like MSVC debug iterator checks; returns {container, dest_end} through the out pointer.
+// @field StdString +0x14 uint32_t field_0x14
+
+extern uint32_t mem_00925134; // IAT slot: MSVCR80!_invalid_parameter_noinfo
+extern uint32_t mem_00924E44; // IAT slot: MSVCP80 std::string::_Myptr
+
+struct CopyResult {
+    uint32_t container;
+    uint32_t dest;
+};
+
+static void invalid_parameter_noinfo() {
+    using Fn = void(__cdecl*)(void);
+    reinterpret_cast<Fn>(mem_00925134)();
+}
+
+static uintptr_t string_myptr(uint32_t container) {
+    using Fn = char*(__thiscall*)(void*);
+    char* p = reinterpret_cast<Fn>(mem_00924E44)(reinterpret_cast<void*>(static_cast<uintptr_t>(container)));
+    return reinterpret_cast<uintptr_t>(p);
+}
+
+// Iterator validity check: container == -2 means unchecked; otherwise
+// it must point below (data + field_0x14) of the container.
+static void validate_iter(uint32_t container, uintptr_t it) {
+    if (container == 0xFFFFFFFEu) {
+        return;
+    }
+    if (container == 0) {
+        invalid_parameter_noinfo();
+    }
+    uintptr_t base = string_myptr(container) +
+                     lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(container)), 0x14);
+    if (!(it < base)) {
+        invalid_parameter_noinfo();
+    }
+}
+
+extern void __cdecl fn_00664E40(CopyResult* out, const char* begin, const char* end,
+                                uint32_t container, char* dest, int ch) {
+    const char target = static_cast<char>(ch);
+    const char* src = begin;
+    uintptr_t edi = reinterpret_cast<uintptr_t>(dest);
+
+    if (src != end) {
+        do {
+            if (*src != target) {
+                uintptr_t store_at = edi;
+                validate_iter(container, edi);
+                edi += 1;
+                validate_iter(container, store_at);
+                *reinterpret_cast<char*>(store_at) = *src;
+            }
+            ++src;
+        } while (src != end);
+    }
+
+    out->dest = static_cast<uint32_t>(edi);
+    out->container = container;
+}
+} // namespace lift_00664E40
