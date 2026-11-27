@@ -1400,3 +1400,47 @@ extern void* __thiscall fn_0063E7F0(void* self, uint32_t arg0, const void* name)
     return self;
 }
 } // namespace lift_0063E7F0
+
+// [0x0063E460] sub_0063E460 (126 bytes)
+namespace lift_0063E460 {
+// Known callee 0x0063E0C0: Unknown::Unknown(uint32_t, const std::string&) (string-copy ctor stub)
+// Stamps vtable 0x0097CB4C at +0x00, copy-constructs a std::string from the second argument into this+0x04,
+// stores the first argument at +0x20, and returns this.
+extern void* ext_0063E0C0(void* self, uint32_t arg0, const void* name);
+extern int mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*) ctor
+extern int mem_00924FF4; // IAT slot: MSVCP80 basic_string dtor
+extern int mem_00924FE0; // IAT slot: MSVCP80 basic_string(const basic_string&) copy ctor
+
+// @name Unknown::Unknown(uint32_t, const std::string&) (derived ctor)
+// @class Unknown
+// @summary Builds base Unknown from (arg0, temp string literal), then sets derived vtable and copies the name string into +0x24.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x24 std::string name
+void* fn_0063E460(void* self, uint32_t arg0, const void* name) {
+    using StrCtorCStr = void* (__thiscall*)(void* self, const char* s);
+    using StrCopyCtor = void* (__thiscall*)(void* self, const void* other);
+    using StrDtor = void (__thiscall*)(void* self);
+
+    // Local temporary std::string (MSVC layout, 0x20 bytes is enough for the 0x18-byte object).
+    alignas(8) uint8_t tmp[0x20] = {};
+
+    // tmp = std::string(literal at 0x0097CBDC)
+    reinterpret_cast<StrCtorCStr>(*reinterpret_cast<void**>(&mem_00924FE4))(
+        tmp, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0097CBDCu)));
+
+    // Base-class ctor: this = Unknown(arg0, tmp)
+    ext_0063E0C0(self, arg0, tmp);
+
+    // ~tmp
+    reinterpret_cast<StrDtor>(*reinterpret_cast<void**>(&mem_00924FF4))(tmp);
+
+    // Derived vtable overrides the base vtable stamp
+    lift_field<uint32_t>(self, 0x00) = 0x0097CBC4u;
+
+    // this+0x24 = std::string(name)  (copy-construct from caller's string)
+    reinterpret_cast<StrCopyCtor>(*reinterpret_cast<void**>(&mem_00924FE0))(
+        reinterpret_cast<uint8_t*>(self) + 0x24, name);
+
+    return self;
+}
+} // namespace lift_0063E460

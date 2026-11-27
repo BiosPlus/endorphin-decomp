@@ -47835,6 +47835,13 @@
     "summary": "Returns 1 when arg == 1; otherwise tail-forwards arg to ext_004701E0 (AnimatableTransform::vfunc_13_off_C) and returns its result.",
     "lifted_path": "lifted/AdvXMLParser/Element.cpp"
   },
+  "0x0063E460": {
+    "name": "Unknown::Unknown(uint32_t, const std::string\u0026) (derived ctor)",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*) ctor extern \"C\" int mem_00924FF4; // IAT slot: MSVCP80 basic_string dtor extern \"C\" int mem_00924FE0; // IAT slot: MSVCP80 basic_string(const basic_string\u0026) copy ctor void* fn_0063E460(void* self, uint32_t arg0, const void* name)",
+    "summary": "Builds base Unknown from (arg0, temp string literal), then sets derived vtable and copies the name string into +0x24.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E4E0": {
     "name": "AdvXMLParser::Comment::vfunc_3",
     "class": "AdvXMLParser::Comment",

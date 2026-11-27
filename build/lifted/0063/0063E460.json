@@ -1,0 +1,28 @@
+{
+  "va": "0x0063E460",
+  "size": 126,
+  "orig_symbol": "sub_0063E460",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::Unknown(uint32_t, const std::string\u0026) (derived ctor)",
+  "class": "Unknown",
+  "signature": "extern \"C\" int mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*) ctor extern \"C\" int mem_00924FF4; // IAT slot: MSVCP80 basic_string dtor extern \"C\" int mem_00924FE0; // IAT slot: MSVCP80 basic_string(const basic_string\u0026) copy ctor void* fn_0063E460(void* self, uint32_t arg0, const void* name)",
+  "summary": "Builds base Unknown from (arg0, temp string literal), then sets derived vtable and copies the name string into +0x24.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "std::string",
+      "name": "name"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:04:18Z"
+}
