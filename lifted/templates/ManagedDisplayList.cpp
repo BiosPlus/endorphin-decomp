@@ -366,3 +366,72 @@ void __thiscall fn_0054C2B0(void* self, void* arg) {
     }
 }
 } // namespace lift_0054C2B0
+
+// [0x0054C420]
+namespace lift_0054C420 {
+// @name ManagedDisplayList<RenderableList>::vfunc_14
+// @class ManagedDisplayList<RenderableList>
+// @summary Iterates over child Renderables in the list and invokes vfunc_14 on each with two arguments
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+
+
+extern void (*mem_00925134)();
+
+void __thiscall fn_0054C420(void* self, uint32_t arg1, uint32_t arg2) {
+    uint8_t* esi = reinterpret_cast<uint8_t*>(self) + 0x14;
+    void** edi = *reinterpret_cast<void***>(esi + 0x4);
+    if (edi > *reinterpret_cast<void***>(esi + 0x8)) {
+        mem_00925134();
+    }
+
+    while (true) {
+        void** ebx = *reinterpret_cast<void***>(esi + 0x8);
+        if (*reinterpret_cast<void***>(esi + 0x4) > ebx) {
+            mem_00925134();
+        }
+        if (edi == ebx) {
+            break;
+        }
+        if (edi >= *reinterpret_cast<void***>(esi + 0x8)) {
+            mem_00925134();
+        }
+
+        void* elem = *edi;
+        void** vtable = *reinterpret_cast<void***>(elem);
+        auto vfunc = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(vtable[0x38 / sizeof(void*)]);
+        vfunc(elem, arg1, arg2);
+
+        if (edi >= *reinterpret_cast<void***>(esi + 0x8)) {
+            mem_00925134();
+        }
+        ++edi;
+    }
+}
+} // namespace lift_0054C420
+
+// [0x0054C330]
+namespace lift_0054C330 {
+// @name ManagedDisplayList<RenderableList>::vfunc_11
+// @class ManagedDisplayList<RenderableList>
+// @summary Iterates over child renderables and invokes vfunc_11 on each with two arguments
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+
+
+extern void (*mem_00925134)();
+
+void __thiscall fn_0054C330(void* self, uint32_t arg0, uint32_t arg1) {
+    void** begin = lift_field<void**>(self, 0x18);
+    void** end = lift_field<void**>(self, 0x1C);
+    if (begin > end) {
+        mem_00925134();
+    }
+    for (void** it = begin; it != end; ++it) {
+        void* item = *it;
+        void** vtable = *reinterpret_cast<void***>(item);
+        auto vfunc = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(vtable[0x2C / 4]);
+        vfunc(item, arg0, arg1);
+    }
+}
+} // namespace lift_0054C330
