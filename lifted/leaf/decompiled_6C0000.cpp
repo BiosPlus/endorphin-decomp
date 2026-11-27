@@ -2299,3 +2299,35 @@ extern void fn_006C9B70(void* self, uint32_t a1, uint32_t a2, uint32_t a3,
     ext_006C9DA0(self, 0);
 }
 } // namespace lift_006C9B70
+
+// [0x006C2ED0]
+namespace lift_006C2ED0 {
+// @name Unknown::HasNonZeroChildValue
+// @class Unknown
+// @summary Looks up child "name 0xAA88C4" under this->+0xF0; returns 1 if its virtual slot 0x7C yields a nonzero, non-NaN value, else 0.
+// @field Unknown +0xF0 void* field_0xF0
+
+extern uint32_t __fastcall ext_00708000(void* self, const char* name);
+extern const double mem_0092A278;
+
+extern uint32_t __fastcall fn_006C2ED0(void* self) {
+    void* obj = lift_field<void*>(self, 0xF0);
+
+    const char* name = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AA88C4u));
+    void* child = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_00708000(obj, name)));
+    if (child == nullptr) {
+        return 0;
+    }
+
+    void* vtbl = *reinterpret_cast<void**>(child);
+    void* slot = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x7C);
+    using ValueFn = double(__fastcall*)(void*);
+    double value = reinterpret_cast<ValueFn>(slot)(child);
+
+    // fcomp + test ah,0x40: equal or unordered (NaN) => return 0.
+    if (value == mem_0092A278 || std::isnan(value)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_006C2ED0

@@ -1,0 +1,22 @@
+{
+  "va": "0x006C2ED0",
+  "size": 64,
+  "orig_symbol": "sub_006C2ED0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::HasNonZeroChildValue",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __fastcall fn_006C2ED0(void* self)",
+  "summary": "Looks up child \"name 0xAA88C4\" under this-\u003e+0xF0; returns 1 if its virtual slot 0x7C yields a nonzero, non-NaN value, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "void*",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:14:38Z"
+}

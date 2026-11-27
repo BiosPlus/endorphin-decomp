@@ -64192,6 +64192,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C2ED0": {
+    "name": "Unknown::HasNonZeroChildValue",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __fastcall fn_006C2ED0(void* self)",
+    "summary": "Looks up child \"name 0xAA88C4\" under this-\u003e+0xF0; returns 1 if its virtual slot 0x7C yields a nonzero, non-NaN value, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C2F10": {
     "name": "sub_006C2F10",
     "signature": "extern \"C\" void __fastcall fn_006C2F10(void* self, int edx_unused, int32_t value)",
