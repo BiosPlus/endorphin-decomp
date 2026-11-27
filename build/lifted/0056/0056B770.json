@@ -1,0 +1,22 @@
+{
+  "va": "0x0056B770",
+  "size": 131,
+  "orig_symbol": "Acclaim2CharacterIO::vfunc_3",
+  "src_path": "src/classes/Acclaim2CharacterIO.cpp",
+  "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp",
+  "name": "Acclaim2CharacterIO::vfunc_3",
+  "class": "Acclaim2CharacterIO",
+  "signature": "void* fn_0056B770(void* self, void* arg)",
+  "summary": "Queries ext_0063F530 with the global mem_00A9ECE8; if the result is one of five status codes it is normalized to 0xB53B30 and, when matched, ext_00640390 result is forwarded to NMFileIO::vfunc_3 on this. Returns the argument.",
+  "fields": [
+    {
+      "class": "Acclaim2CharacterIO",
+      "offset": "+0x0",
+      "type": "void* vtable (no direct field access; self is only passed through to",
+      "name": "ext_00553720)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:44:36Z"
+}

@@ -10,6 +10,7 @@
 // Recovered field layout for Acclaim2CharacterIO:
 namespace lifted_layout {
 struct Acclaim2CharacterIO_Fields {
+    // +0x0   void* vtable (no direct field access; self is only passed through to ext_00553720)  (evidence: 0x0056B770)
     // +0xAC  std::string              field_0xac  (evidence: 0x0056B8C0)
     // +0x46C float                    field_0x46c  (evidence: 0x0056B8C0)
 };
