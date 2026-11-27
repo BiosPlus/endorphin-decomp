@@ -4724,6 +4724,12 @@
     "summary": "Walks the pointer range [this+0x58, this+0x5c) and calls virtual slot 0 of each element object with arg; aborts on range violation.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043E360": {
+    "name": "ConstructElementRangeEnd",
+    "signature": "uint32_t* __stdcall fn_0043E360(uint32_t* base, uint32_t count, uint32_t arg)",
+    "summary": "Constructs count 4-byte elements in base[] via ext_0043D870 and returns base + count.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043E3A0": {
     "name": "destroyRange_0043E3A0",
     "signature": "void __stdcall sub_0043E3A0(uint32_t begin, uint32_t end)",
