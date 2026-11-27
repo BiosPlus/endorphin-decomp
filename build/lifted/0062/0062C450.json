@@ -1,0 +1,13 @@
+{
+  "va": "0x0062C450",
+  "size": 117,
+  "orig_symbol": "sub_0062C450",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "sub_0062C450",
+  "signature": "extern \"C\" void __fastcall fn_0062C450(void* self)",
+  "summary": "Destructor/cleanup that destroys and frees the 16-byte record array at +0x40..+0x4C and delegates base cleanup to ext_005FF040.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:19:41Z"
+}

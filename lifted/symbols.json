@@ -42863,6 +42863,13 @@
     "summary": "Returns arg1; if arg2 == 0xc8, dispatches to sub_00661650 on arg1 with +0x164 when +0x160 is nonzero or sub_0046F7D0(arg1) otherwise; else delegates to NMData::AxisDefineSensorData::vfunc_14.",
     "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
+  "0x00611650": {
+    "name": "NMData::HingeConstraint::vfunc_66",
+    "class": "NMData::HingeConstraint",
+    "signature": "void __thiscall fn_00611650(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Sets flag byte at +0x160, propagates state 0x1000 to child trees, and dispatches notification (5, 0) if global manager is present.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x006116B0": {
     "name": "NMData::HingeConstraint::setFirstComponentVector",
     "class": "NMData::HingeConstraint",

@@ -3028,3 +3028,33 @@ void fn_0062C010(void* begin_ptr, void* end_ptr) {
     }
 }
 } // namespace lift_0062C010
+
+// [0x0062C450]
+namespace lift_0062C450 {
+// @name sub_0062C450
+// @summary Destructor/cleanup that destroys and frees the 16-byte record array at +0x40..+0x4C and delegates base cleanup to ext_005FF040.
+// @field +0x40 uint32_t field_0x40
+// @field +0x44 void* field_0x44
+// @field +0x48 void* field_0x48
+// @field +0x4C uint32_t field_0x4c
+
+
+extern void __fastcall ext_005FF040(void* self);
+extern void ext_0062C010(void* begin_ptr, void* end_ptr);
+extern void ext_006A5C5C(void* ptr);
+
+extern void __fastcall fn_0062C450(void* self) {
+    void* begin_ptr = lift_field<void*>(self, 0x44);
+    if (begin_ptr != nullptr) {
+        void* end_ptr = lift_field<void*>(self, 0x48);
+        ext_0062C010(begin_ptr, end_ptr);
+        ext_006A5C5C(lift_field<void*>(self, 0x44));
+    }
+
+    lift_field<uint32_t>(self, 0x44) = 0;
+    lift_field<uint32_t>(self, 0x48) = 0;
+    lift_field<uint32_t>(self, 0x4C) = 0;
+
+    ext_005FF040(self);
+}
+} // namespace lift_0062C450
