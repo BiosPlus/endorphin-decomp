@@ -2323,3 +2323,50 @@ void fn_00543350(void* self) {
     lift_field<uint8_t>(self, 0x95) = 0;
 }
 } // namespace lift_00543350
+
+// [0x00546F00] sub_00546F00 (150 bytes)
+namespace lift_00546F00 {
+// Known callee 0x00543350: InitialVariableValues::ResetDefaults (Resets a block of float and byte state fields to their default values (1.0f or 0.0f) and clears the int at +0x88.)
+extern void ext_00543350(void* self);
+extern void ext_006A6C87(uint32_t arg);
+extern float mem_0093247C;
+extern int32_t mem_00AF4E74;
+extern float mem_00AF4E64;
+extern float mem_00AF4E68;
+extern float mem_00AF4E6C;
+extern float mem_00AF4E70;
+
+// @name InitialVariableValues::InitStateAndGlobals
+// @class InitialVariableValues
+// @summary Resets the default state via ResetDefaults, sets float/byte fields, and on first call initializes shared globals (flag bit 0) and calls sub_006A6C87.
+// @field InitialVariableValues +0xbc float field_0xbc
+// @field InitialVariableValues +0xd4 float field_0xd4
+// @field InitialVariableValues +0xd8 float field_0xd8
+// @field InitialVariableValues +0xdc float field_0xdc
+// @field InitialVariableValues +0xe0 float field_0xe0
+// @field InitialVariableValues +0xe4 uint8_t field_0xe4
+// @field InitialVariableValues +0xe5 uint8_t field_0xe5
+// @field InitialVariableValues +0xe6 uint8_t field_0xe6
+void fn_00546F00(void* self) {
+    ext_00543350(self);
+
+    lift_field<float>(self, 0xBC) = mem_0093247C;
+    lift_field<uint8_t>(self, 0xE4) = 0;
+    lift_field<uint8_t>(self, 0xE5) = 0;
+    lift_field<uint8_t>(self, 0xE6) = 0;
+
+    if ((mem_00AF4E74 & 1) == 0) {
+        mem_00AF4E74 |= 1;
+        mem_00AF4E64 = 0.0f;
+        mem_00AF4E68 = 0.0f;
+        mem_00AF4E6C = 0.0f;
+        mem_00AF4E70 = 1.0f;
+        ext_006A6C87(0x0091B5B0u);
+    }
+
+    lift_field<float>(self, 0xD4) = mem_00AF4E64;
+    lift_field<float>(self, 0xD8) = mem_00AF4E68;
+    lift_field<float>(self, 0xDC) = mem_00AF4E6C;
+    lift_field<float>(self, 0xE0) = mem_00AF4E70;
+}
+} // namespace lift_00546F00

@@ -52,5 +52,13 @@ struct InitialVariableValues_Fields {
     // +0x93  uint8_t                  field_0x93  (evidence: 0x00543350)
     // +0x94  uint8_t                  field_0x94  (evidence: 0x00543350)
     // +0x95  uint8_t                  field_0x95  (evidence: 0x00543350)
+    // +0xBC  float                    field_0xbc  (evidence: 0x00546F00)
+    // +0xD4  float                    field_0xd4  (evidence: 0x00546F00)
+    // +0xD8  float                    field_0xd8  (evidence: 0x00546F00)
+    // +0xDC  float                    field_0xdc  (evidence: 0x00546F00)
+    // +0xE0  float                    field_0xe0  (evidence: 0x00546F00)
+    // +0xE4  uint8_t                  field_0xe4  (evidence: 0x00546F00)
+    // +0xE5  uint8_t                  field_0xe5  (evidence: 0x00546F00)
+    // +0xE6  uint8_t                  field_0xe6  (evidence: 0x00546F00)
 };
 } // namespace lifted_layout

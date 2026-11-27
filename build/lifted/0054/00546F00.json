@@ -1,0 +1,64 @@
+{
+  "va": "0x00546F00",
+  "size": 150,
+  "orig_symbol": "sub_00546F00",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "InitialVariableValues::InitStateAndGlobals",
+  "class": "InitialVariableValues",
+  "signature": "void fn_00546F00(void* self)",
+  "summary": "Resets the default state via ResetDefaults, sets float/byte fields, and on first call initializes shared globals (flag bit 0) and calls sub_006A6C87.",
+  "fields": [
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xBC",
+      "type": "float",
+      "name": "field_0xbc"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xD4",
+      "type": "float",
+      "name": "field_0xd4"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xD8",
+      "type": "float",
+      "name": "field_0xd8"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xDC",
+      "type": "float",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "field_0xe0"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xE4",
+      "type": "uint8_t",
+      "name": "field_0xe4"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xE5",
+      "type": "uint8_t",
+      "name": "field_0xe5"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xE6",
+      "type": "uint8_t",
+      "name": "field_0xe6"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:02:49Z"
+}

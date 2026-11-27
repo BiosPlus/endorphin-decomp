@@ -5769,6 +5769,13 @@
     "summary": "Stamp vtable 0x00933A64 into self, invoke MFC80 ord_578 on subobjects at +0x78 and +0x74, then tail-forward to ord_605 thunk.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00449EC0": {
+    "name": "ReloadCharacterDialog::OnOK",
+    "class": "ReloadCharacterDialog",
+    "signature": "void __thiscall fn_00449EC0(void* self)",
+    "summary": "Validates dialog data, checks if the character file exists, shows an error message if missing, or calls CDialog::OnOK.",
+    "lifted_path": "lifted/classes/ReloadCharacterDialog.cpp"
+  },
   "0x00449F60": {
     "name": "ReloadCharacterDialog::vfunc_1",
     "class": "ReloadCharacterDialog",
@@ -9061,6 +9068,13 @@
     "class": "ExprParser::ReadMethodType\u003cImageExporter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ImageExporter::getDestination(void) const, 0}, 0\u003e",
     "signature": "extern void fn_0046D320(int* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0046D530": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, const std::string\u0026, \u0026ImageExporter::getDestination, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void __thiscall fn_0046D530(void* self, void* arg1)",
+    "summary": "Reads ImageExporter::getDestination(), wraps it in a temporary value, assigns it to arg1, releases the temporary, and invokes vtable slot 0xBC on arg1-\u003efield_0x04; throws DerivedException if arg1-\u003efield_0x00 is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0046D5D0": {
@@ -28853,6 +28867,13 @@
     "signature": "int32_t fn_00546860(void* self)",
     "summary": "Returns 1 if the int at RotateTool+0xA8 equals 4, otherwise 0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00546F00": {
+    "name": "InitialVariableValues::InitStateAndGlobals",
+    "class": "InitialVariableValues",
+    "signature": "void fn_00546F00(void* self)",
+    "summary": "Resets the default state via ResetDefaults, sets float/byte fields, and on first call initializes shared globals (flag bit 0) and calls sub_006A6C87.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x00547040": {
     "name": "RotateTool::vfunc_14",
