@@ -2088,3 +2088,65 @@ extern int32_t __thiscall fn_006D8280(void* self, int32_t idx, int32_t sub) {
     return data[index];
 }
 } // namespace lift_006D8280
+
+// [0x006D2280] sub_006D2280 (127 bytes)
+namespace lift_006D2280 {
+extern void ext_006A7310();
+extern int mem_00925290;
+extern int mem_00B5DAB8;
+extern int mem_00B5DAC0;
+extern int mem_00B5DAC8;
+extern int mem_00925284;
+extern int mem_00B5DA98;
+extern int mem_00B5DA9C;
+extern int mem_00B5DA90;
+
+// @name Unknown::GrowAndZeroFill_006D2280
+// @class Unknown
+// @summary Reserves capacity for n more elements (realloc when needed), zero-fills the newly exposed tail, and advances the element count by n.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 void* field_0x10
+void __thiscall fn_006D2280(void* self, uint32_t n) {
+    // Metadata-only references to original asm symbols (not real accesses).
+    (void)&ext_006A7310;
+    (void)&mem_00B5DAB8;
+    (void)&mem_00B5DAC0;
+    (void)&mem_00B5DAC8;
+    (void)&mem_00925284;
+    (void)&mem_00B5DA98;
+    (void)&mem_00B5DA9C;
+    (void)&mem_00B5DA90;
+
+    if (n == 0) {
+        return;
+    }
+
+    uint32_t& count    = lift_field<uint32_t>(self, 0x00);
+    uint32_t& capacity = lift_field<uint32_t>(self, 0x04);
+    uint32_t  stride   = lift_field<uint32_t>(self, 0x08);
+    uint32_t  elemSize = lift_field<uint32_t>(self, 0x0C);
+    void*&    data     = lift_field<void*>(self, 0x10);
+
+    // Required element count: ceil((count + n) / stride), minimum 1 (unsigned 32-bit math).
+    uint32_t newCount = (count + stride + n - 1) / stride;
+    if (newCount <= 1) {
+        newCount = 1;
+    }
+
+    uint32_t oldBytes = elemSize * count;
+    uint32_t newBytes = elemSize * stride * newCount;
+
+    if (newCount > capacity) {
+        (void)&mem_00925290; // IAT slot: MSVCR80!realloc
+        data = std::realloc(data, newBytes);
+        capacity = newCount;
+    }
+
+    std::memset(static_cast<uint8_t*>(data) + oldBytes, 0, newBytes - oldBytes);
+
+    count += n;
+}
+} // namespace lift_006D2280

@@ -65342,6 +65342,13 @@
     "summary": "Frees the pointer stored at +0x10 (via the imported CRT free) if non-null, then zeroes +0x10, +0x00 and +0x04.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D2280": {
+    "name": "Unknown::GrowAndZeroFill_006D2280",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006D2280(void* self, uint32_t n)",
+    "summary": "Reserves capacity for n more elements (realloc when needed), zero-fills the newly exposed tail, and advances the element count by n.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2390": {
     "name": "ForwardArgToCalleeReturnThis",
     "signature": "void* fn_006D2390(void* self, uint32_t arg1)",
