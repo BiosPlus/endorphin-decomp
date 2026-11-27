@@ -2446,3 +2446,53 @@ intptr_t fn_00673B90(void* self) {
     return result;
 }
 } // namespace lift_00673B90
+
+// [0x00673420] sub_00673420 (135 bytes)
+namespace lift_00673420 {
+// Known callee 0x00672C20: DestroyStringElementRange (Iterates [first, last) over 0x2C-byte elements; for each element with a non-null owner at +0x28, calls its vtable slot 0x78 with (owner, &element+0x24), then destroys the std::string at element+0x00.)
+// Called cdecl with four stack arguments: (first, last, this+0x1C, self).
+extern void ext_00672C20(void* first, void* last, void* ctx, void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Called cdecl with one stack argument: the value at this+0x20.
+extern void ext_006A5C5C(void* arg);
+// IAT slot holding the address of std::basic_string<char>::~basic_string (MSVCP80).
+extern int mem_00924FF4;
+
+using StringDtorFn = void(__thiscall*)(void*);
+
+// Calls the std::string destructor through the IAT slot mem_00924FF4 (indirect call in the original).
+static void call_string_dtor(void* obj) {
+    auto fn = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    fn(obj);
+}
+
+// @name Class_00673420::~Class_00673420
+// @class Class_00673420
+// @summary Destructor: destroys the string at +0x2C, releases the element range at +0x20..+0x24 if non-empty, zeroes the range fields, then destroys the base std::string at +0x00.
+// @field Class_00673420 +0x20 void* range_first
+// @field Class_00673420 +0x24 void* range_last
+// @field Class_00673420 +0x28 uint32_t field_0x28
+// @field Class_00673420 +0x2C std::string field_0x2c
+void fn_00673420(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Destroy member string at +0x2C.
+    call_string_dtor(base + 0x2C);
+
+    uint8_t* esi = base + 0x1C;
+    void* first = lift_field<void*>(self, 0x20);
+    if (first != nullptr) {
+        void* last = lift_field<void*>(self, 0x24);
+        ext_00672C20(first, last, esi, self);
+        ext_006A5C5C(lift_field<void*>(self, 0x20));
+    }
+
+    lift_field<void*>(self, 0x20) = nullptr;
+    lift_field<void*>(self, 0x24) = nullptr;
+    lift_field<uint32_t>(self, 0x28) = 0;
+
+    // Destroy base std::string at +0x00.
+    call_string_dtor(self);
+}
+} // namespace lift_00673420

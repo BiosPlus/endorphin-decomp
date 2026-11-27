@@ -1,0 +1,40 @@
+{
+  "va": "0x00673420",
+  "size": 135,
+  "orig_symbol": "sub_00673420",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Class_00673420::~Class_00673420",
+  "class": "Class_00673420",
+  "signature": "static void call_string_dtor(void* obj)",
+  "summary": "Destructor: destroys the string at +0x2C, releases the element range at +0x20..+0x24 if non-empty, zeroes the range fields, then destroys the base std::string at +0x00.",
+  "fields": [
+    {
+      "class": "Class_00673420",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "range_first"
+    },
+    {
+      "class": "Class_00673420",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "range_last"
+    },
+    {
+      "class": "Class_00673420",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Class_00673420",
+      "offset": "+0x2C",
+      "type": "std::string",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:27:29Z"
+}
