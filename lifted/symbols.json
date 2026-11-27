@@ -78738,6 +78738,12 @@
     "summary": "Byte lookup table (switch index map) misdecoded as code; returns table byte for index.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B5158": {
+    "name": "sub_007B5158",
+    "signature": "void sub_007B5158()",
+    "summary": "Data table misidentified as code (no return instruction)",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B5224": {
     "name": "Table_007B5224_Bytes16",
     "summary": "16-byte constant lookup table of values 0..3 (data, not executable code)",

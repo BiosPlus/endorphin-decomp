@@ -1,0 +1,201 @@
+{
+  "va": "0x0078D7A0",
+  "size": 132,
+  "orig_symbol": "sub_0078D7A0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_0078D7A0",
+  "signature": "void* __thiscall sub_0078D7A0(void* self)",
+  "summary": "Initializes object fields and sets vtable to 0x0099708C",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x65",
+      "type": "uint8_t",
+      "name": "field_0x65"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x66",
+      "type": "uint8_t",
+      "name": "field_0x66"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x67",
+      "type": "uint8_t",
+      "name": "field_0x67"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x234",
+      "type": "uint32_t",
+      "name": "field_0x234"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x238",
+      "type": "uint32_t",
+      "name": "field_0x238"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x23C",
+      "type": "uint32_t",
+      "name": "field_0x23C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x240",
+      "type": "uint32_t",
+      "name": "field_0x240"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x244",
+      "type": "uint32_t",
+      "name": "field_0x244"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x248",
+      "type": "uint32_t",
+      "name": "field_0x248"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24C",
+      "type": "uint32_t",
+      "name": "field_0x24C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:32:06Z"
+}

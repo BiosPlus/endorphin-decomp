@@ -2447,3 +2447,84 @@ extern "C++" char* __thiscall fn_0078BD50(void* self, char* buf, int maxLen) {
     return buf;
 }
 } // namespace lift_0078BD50
+
+// [0x0078D7A0]
+namespace lift_0078D7A0 {
+// @name sub_0078D7A0
+// @summary Initializes object fields and sets vtable to 0x0099708C
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2C
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0x4C uint32_t field_0x4C
+// @field Unknown +0x50 uint32_t field_0x50
+// @field Unknown +0x54 uint32_t field_0x54
+// @field Unknown +0x58 uint32_t field_0x58
+// @field Unknown +0x5C uint32_t field_0x5C
+// @field Unknown +0x60 uint32_t field_0x60
+// @field Unknown +0x64 uint8_t field_0x64
+// @field Unknown +0x65 uint8_t field_0x65
+// @field Unknown +0x66 uint8_t field_0x66
+// @field Unknown +0x67 uint8_t field_0x67
+// @field Unknown +0x234 uint32_t field_0x234
+// @field Unknown +0x238 uint32_t field_0x238
+// @field Unknown +0x23C uint32_t field_0x23C
+// @field Unknown +0x240 uint32_t field_0x240
+// @field Unknown +0x244 uint32_t field_0x244
+// @field Unknown +0x248 uint32_t field_0x248
+// @field Unknown +0x24C uint32_t field_0x24C
+
+
+void* __thiscall sub_0078D7A0(void* self) {
+    lift_field<uint32_t>(self, 0x10) = 4;
+    lift_field<uint32_t>(self, 0x14) = 4;
+    lift_field<uint32_t>(self, 0x18) = 4;
+    lift_field<uint32_t>(self, 0x1C) = 4;
+
+    lift_field<uint32_t>(self, 0x00) = 0x0099708Cu;
+
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+    lift_field<uint32_t>(self, 0x48) = 0;
+    lift_field<uint32_t>(self, 0x4C) = 0;
+    lift_field<uint32_t>(self, 0x50) = 0;
+
+    lift_field<uint32_t>(self, 0x20) = 1;
+    lift_field<uint32_t>(self, 0x24) = 1;
+    lift_field<uint32_t>(self, 0x5C) = 1;
+
+    lift_field<uint32_t>(self, 0x54) = 0;
+    lift_field<uint32_t>(self, 0x58) = 0;
+
+    lift_field<uint32_t>(self, 0x234) = 0;
+    lift_field<uint32_t>(self, 0x238) = 0;
+    lift_field<uint32_t>(self, 0x244) = 0;
+    lift_field<uint32_t>(self, 0x23C) = 0;
+    lift_field<uint32_t>(self, 0x240) = 0;
+    lift_field<uint32_t>(self, 0x248) = 0;
+    lift_field<uint32_t>(self, 0x24C) = 0;
+
+    lift_field<uint32_t>(self, 0x60) = 1;
+
+    lift_field<uint8_t>(self, 0x64) = 0;
+    lift_field<uint8_t>(self, 0x65) = 0;
+    lift_field<uint8_t>(self, 0x66) = 0;
+    lift_field<uint8_t>(self, 0x67) = 0;
+
+    return self;
+}
+} // namespace lift_0078D7A0
