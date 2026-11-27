@@ -86900,3 +86900,65 @@ void fn_004B7DE0(void* self) {
     reinterpret_cast<ThisCallVFunc44>(vtbl[0xB0 / sizeof(void*)])(target, self, value);
 }
 } // namespace lift_004B7DE0
+
+// [0x00674A10] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_44 (157 bytes)
+namespace lift_00674A10 {
+// Helper callees, declared with their real calling conventions.
+// ext_006720E0: thiscall, ecx = temp result slot, one stack arg (source pointer).
+extern void __thiscall ext_006720E0(void* self, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; thiscall, one stack arg).
+extern void __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall, constructs in place).
+extern void __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk to MSVCR80!_CxxThrowException (cdecl).
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+// RTTI TypeDescriptor for the thrown DerivedException.
+extern const char mem_009DEC1C[];
+
+// Byte-offset vtable slot read: vtable is the first word of obj.
+static inline void* vtable_slot(void* obj, uintptr_t byteOffset) {
+    void* vt = *reinterpret_cast<void**>(obj);
+    return *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vt) + byteOffset);
+}
+
+// Two-word temporary filled by ext_006720E0 and released after the copy.
+struct ReadTemp {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+// @name ExprParser::ReadMethodType::vfunc_44
+// @class ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>
+// @summary Reads the pointer at arg1+0x00 (throws DerivedException if null); copies a derived value into arg1 via assignFromOther, releases the temp, then dispatches vtable slot 0xB0 on arg1->field_0x04 with (arg1, arg2).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00 (target object pointer, dereferenced first)
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04 (sub-object; vtable slot 0xB0 dispatch receiver)
+// Stack args: arg1 (self object) and arg2 (forwarded); ret 8. ECX (self) is not read.
+// SEH frame setup and trylevel bookkeeping of the original are not reproduced.
+void fn_00674A10(void* self, void* arg1, void* arg2) {
+    (void)self;
+    void* target = lift_field<void*>(arg1, 0x00);
+    if (target == nullptr) {
+        alignas(16) unsigned char exc[32] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return;
+    }
+
+    ReadTemp tmp = {nullptr, nullptr};
+    ext_006720E0(&tmp, static_cast<char*>(target) + 0x1C);
+    ext_0041CF50(arg1, &tmp);
+
+    if (tmp.field_0x04 != nullptr) {
+        // vtable slot 0x78: release of the temp's field_0x04 with &tmp as argument.
+        using ReleaseFn = void(__thiscall*)(void* self, void* arg);
+        auto release = reinterpret_cast<ReleaseFn>(vtable_slot(tmp.field_0x04, 0x78));
+        release(tmp.field_0x04, &tmp);
+    }
+
+    // vtable slot 0xB0 on arg1->field_0x04, called with (arg1, arg2).
+    using DispatchFn = void(__thiscall*)(void* self, void* a, void* b);
+    void* receiver = lift_field<void*>(arg1, 0x04);
+    auto dispatch = reinterpret_cast<DispatchFn>(vtable_slot(receiver, 0xB0));
+    dispatch(receiver, arg1, arg2);
+}
+} // namespace lift_00674A10

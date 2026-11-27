@@ -60494,6 +60494,13 @@
     "summary": "Reads the ExpressionEntry* stored in the output slot, copy-constructs its expression string into that slot, and returns it; throws if the entry pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00674A10": {
+    "name": "ExprParser::ReadMethodType::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e",
+    "signature": "static inline void* vtable_slot(void* obj, uintptr_t byteOffset)",
+    "summary": "Reads the pointer at arg1+0x00 (throws DerivedException if null); copies a derived value into arg1 via assignFromOther, releases the temp, then dispatches vtable slot 0xB0 on arg1-\u003efield_0x04 with (arg1, arg2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00674BF0": {
     "name": "ExprParser::ReadMethodType::vfunc_47",
     "class": "ExprParser::ReadMethodType",
