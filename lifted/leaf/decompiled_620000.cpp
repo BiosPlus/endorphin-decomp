@@ -2690,3 +2690,29 @@ extern void* fn_00620FE0(uint32_t count) {
     return ext_006A5C62(count * 0x48u);
 }
 } // namespace lift_00620FE0
+
+// [0x00620F80]
+namespace lift_00620F80 {
+// @name sub_00620F80
+// @summary Copy constructor copying two std::string fields and two double fields
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c std::string field_0x1c
+// @field Unknown +0x38 double field_0x38
+// @field Unknown +0x40 double field_0x40
+
+
+extern void* (__thiscall* mem_00924FE0)(void* self, const void* other);
+
+void* __thiscall sub_00620F80(void* self, const void* other) {
+    auto* dst = static_cast<uint8_t*>(self);
+    const auto* src = static_cast<const uint8_t*>(other);
+
+    mem_00924FE0(dst, src);
+    mem_00924FE0(dst + 0x1c, src + 0x1c);
+
+    lift_field<double>(dst, 0x38) = lift_field<const double>(src, 0x38);
+    lift_field<double>(dst, 0x40) = lift_field<const double>(src, 0x40);
+
+    return self;
+}
+} // namespace lift_00620F80
