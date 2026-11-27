@@ -75945,6 +75945,12 @@
     "summary": "Resets an MD5 context: zeroes the 64-bit bit count and loads the four standard MD5 initial state words.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00869E50": {
+    "name": "PackBytesDescendingToDwords",
+    "signature": "void fn_00869E50(uint32_t* out, uint32_t count, const uint8_t* src, int32_t len)",
+    "summary": "Packs a byte buffer into dwords, reading up to four bytes per output dword from the end backwards (little-endian shift order); once the source is exhausted, zero-fills the remaining outputs.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00869EC0": {
     "name": "uint32ArrayToBigEndianBytes",
     "signature": "void sub_00869EC0(uint8_t* dst, int32_t dst_len, const uint32_t* src, uint32_t src_count)",

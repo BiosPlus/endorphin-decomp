@@ -1213,3 +1213,30 @@ uint32_t fn_0086CDB0(void* buf) {
     return 0;
 }
 } // namespace lift_0086CDB0
+
+// [0x00869E50] sub_00869E50 (112 bytes)
+namespace lift_00869E50 {
+// @name PackBytesDescendingToDwords
+// @summary Packs a byte buffer into dwords, reading up to four bytes per output dword from the end backwards (little-endian shift order); once the source is exhausted, zero-fills the remaining outputs.
+void fn_00869E50(uint32_t* out, uint32_t count, const uint8_t* src, int32_t len) {
+    int32_t idx = len - 1;  // eax
+    for (uint32_t i = 0; i < count; ++i) {
+        if (idx < 0) {
+            // Source exhausted: zero-fill out[i..count).
+            for (uint32_t j = i; j < count; ++j) {
+                out[j] = 0;
+            }
+            return;
+        }
+        uint32_t packed = 0;  // esi
+        uint32_t shift = 0;   // ecx
+        do {
+            uint32_t byte = src[idx];  // mov bl, [eax+edi]
+            packed |= byte << shift;
+            shift += 8;
+            --idx;
+        } while (idx >= 0 && shift < 32);
+        out[i] = packed;
+    }
+}
+} // namespace lift_00869E50
