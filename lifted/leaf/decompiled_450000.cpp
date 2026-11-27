@@ -2047,3 +2047,16 @@ void fn_0045FF80(void* self) {
 }
 } // namespace lift_0042E820
 } // namespace lift_0045FF80
+
+// [0x00451AE0] sub_00451AE0 (16 bytes)
+namespace lift_00451AE0 {
+extern void ext_00451670(void* self, void* arg);
+
+// @name ForwardSubobjectArg_00451AE0
+// @summary Forwards the address of its single stack argument to ext_00451670, passing self+0x14 as the receiver.
+// Note: no member field is dereferenced here; self+0x14 is only computed as an address.
+// The original ends in `ret 4`, so the single stack argument is callee-cleaned.
+void fn_00451AE0(void* self, void* arg) {
+    ext_00451670(static_cast<unsigned char*>(self) + 0x14, &arg);
+}
+} // namespace lift_00451AE0

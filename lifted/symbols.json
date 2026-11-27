@@ -6925,6 +6925,12 @@
     "summary": "Iterates over a vector of objects from the global manager and invokes vtable+0x164 on those whose vtable+0xf8 returns 7.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00451AE0": {
+    "name": "ForwardSubobjectArg_00451AE0",
+    "signature": "void fn_00451AE0(void* self, void* arg)",
+    "summary": "Forwards the address of its single stack argument to ext_00451670, passing self+0x14 as the receiver.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x004520E0": {
     "name": "RigEditorFrame::vfunc_1",
     "class": "RigEditorFrame",
