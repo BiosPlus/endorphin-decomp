@@ -847,3 +847,45 @@ void __thiscall fn_004F0FB0(void* self, void* node) {
     } while (lift_field<uint8_t>(cur, 0x39) == 0);
 }
 } // namespace lift_004F0FB0
+
+// [0x004FDE10] sub_004FDE10 (127 bytes)
+namespace lift_004FDE10 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// IAT slot holding the std::string copy-constructor thunk (MSVCP80).
+extern int mem_00924FE0;
+
+// @name Unknown::InitFromArgs
+// @class Unknown
+// @summary Four-argument initializer: runs base init, stores vtable and two args, then copy-constructs two std::string members (one from a virtual call on a3, one from a4).
+// @field Unknown +0x00 uint32_t vtbl
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 std::string field_0x18
+// @field Unknown +0x34 std::string field_0x34
+void* fn_004FDE10(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    // Base-class initialization (ecx = self, stack arg 0).
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x10) = a1;
+    lift_field<uint32_t>(self, 0x00) = 0x0094EC8C; // vtable
+    lift_field<uint32_t>(self, 0x14) = a3;
+
+    // Virtual call slot 9 (offset 0x24) on a3; its result is the source string for +0x18.
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(a3));
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto vfn = reinterpret_cast<void* (*)(void*)>(vtbl[9]);
+    const void* src1 = vfn(obj);
+
+    // std::string copy-construct through the IAT slot.
+    using CopyCtor = void (*)(void* dst, const void* src);
+    CopyCtor copy_ctor = *reinterpret_cast<CopyCtor*>(&mem_00924FE0);
+    copy_ctor(static_cast<uint8_t*>(self) + 0x18, src1);
+    copy_ctor(static_cast<uint8_t*>(self) + 0x34,
+              reinterpret_cast<const void*>(static_cast<uintptr_t>(a4)));
+
+    lift_field<uint32_t>(self, 0x08) = a2;
+    return self;
+}
+} // namespace lift_004FDE10

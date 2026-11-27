@@ -20280,6 +20280,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xC and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x004FDE10": {
+    "name": "Unknown::InitFromArgs",
+    "class": "Unknown",
+    "signature": "void* fn_004FDE10(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Four-argument initializer: runs base init, stores vtable and two args, then copy-constructs two std::string members (one from a virtual call on a3, one from a4).",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FDE90": {
     "name": "sub_004FDE90",
     "signature": "extern \"C\" void __fastcall fn_004FDE90(void* self)",
