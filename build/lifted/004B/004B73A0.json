@@ -1,0 +1,13 @@
+{
+  "va": "0x004B73A0",
+  "size": 109,
+  "orig_symbol": "sub_004B73A0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "getGlobalStringByIndex",
+  "signature": "uint32_t __stdcall fn_004B73A0(uint32_t out_str, uint32_t index)",
+  "summary": "Returns a copy of a global std::string vector element by index, or an empty string if out of bounds.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:15:13Z"
+}
