@@ -18388,6 +18388,13 @@
     "summary": "Reads a bool from the wrapped object's getter (vtable slot 3 of the sub-object at arg1+0x04), stores it into the inner object at +0x04, then dispatches index 5; throws if the inner pointer is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004E9E30": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, isGroundCollisionEnabled, setGroundCollisionEnabled\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, isGroundCollisionEnabled, setGroundCollisionEnabled\u003e",
+    "signature": "void fn_004E9E30(void* obj)",
+    "summary": "Lazily initializes the function-local static at 0x00AE711C (vtable 0x0094B25C) once, then stores its address at obj+4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004E9F60": {
     "name": "ExprParser::ReadWriteMethodType::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)\u003e",

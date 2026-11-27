@@ -10519,3 +10519,30 @@ void fn_004EA450(void* obj) {
     *obj_field4 = singleton_addr;
 }
 } // namespace lift_004EA450
+
+// [0x004E9E30] ExprParser::ReadWriteMethodType<...>::vfunc_40 (122 bytes)
+namespace lift_004E9E30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword (ECX = self, stack arg = value; stores value into self[0] and returns it)
+extern DWORD ext_0067A670(void* self, DWORD value);
+
+// Static guard flag (dword, bit 0 = initialized) and static object storage.
+extern DWORD mem_00AE7120;
+extern DWORD mem_00AE711C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, isGroundCollisionEnabled, setGroundCollisionEnabled>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, isGroundCollisionEnabled, setGroundCollisionEnabled>
+// @summary Lazily initializes the function-local static at 0x00AE711C (vtable 0x0094B25C) once, then stores its address at obj+4.
+// @field ExprParser::ReadWriteMethodType +0x04 DWORD staticObjectPtr
+void fn_004E9E30(void* obj) {
+    // One-time initialization guarded by bit 0 of mem_00AE7120.
+    if ((mem_00AE7120 & 1u) == 0) {
+        mem_00AE7120 |= 1u;
+        // Initialize the first DWORD of the static object to 0 via the helper.
+        ext_0067A670(&mem_00AE711C, 0);
+        // Install the vtable pointer for the static object.
+        mem_00AE711C = 0x0094B25Cu;
+    }
+    // Publish the static object's address into obj+4.
+    *reinterpret_cast<DWORD*>(reinterpret_cast<uint8_t*>(obj) + 0x4) = 0x00AE711Cu;
+}
+} // namespace lift_004E9E30
