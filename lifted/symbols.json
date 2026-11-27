@@ -10349,6 +10349,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00481E60": {
+    "name": "std_equal_u32_checked",
+    "signature": "static inline uint32_t* lift_ptr32(uint32_t v)",
+    "summary": "Compares two (begin,end) uint32_t vector-like ranges for equal size and contents, with MSVC8 checked-iterator bounds checks; returns 1 if equal, else 0",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004820D0": {
     "name": "sub_004820D0",
     "signature": "DWORD* __thiscall fn_004820D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

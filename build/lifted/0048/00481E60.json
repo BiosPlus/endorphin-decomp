@@ -1,0 +1,27 @@
+{
+  "va": "0x00481E60",
+  "size": 139,
+  "orig_symbol": "sub_00481E60",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "std_equal_u32_checked",
+  "signature": "static inline uint32_t* lift_ptr32(uint32_t v)",
+  "summary": "Compares two (begin,end) uint32_t vector-like ranges for equal size and contents, with MSVC8 checked-iterator bounds checks; returns 1 if equal, else 0",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:41Z"
+}

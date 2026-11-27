@@ -2607,3 +2607,65 @@ extern void* __thiscall fn_0048F740(void* self, uint32_t arg1, uint8_t arg2, uin
     return self;
 }
 } // namespace lift_0048F740
+
+// [0x00481E60] sub_00481E60 (139 bytes)
+namespace lift_00481E60 {
+// Known callee 0x00481B50: std_equal_u32 (Checks whether two uint32_t ranges are equal with MSVC8 checked-iterator bounds validation)
+// The call site pushes six dwords (cdecl, caller cleans up with add esp,0x18).
+extern bool ext_00481B50(uint32_t* first1, uint32_t* last1, void* cont2a, uint32_t* first2, void* cont2b, void* cont2c);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (called via `call dword ptr [0x925134]`).
+extern void (*mem_00925134)(void);
+
+static inline uint32_t* lift_ptr32(uint32_t v) {
+    return reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(v));
+}
+
+// @name std_equal_u32_checked
+// @summary Compares two (begin,end) uint32_t vector-like ranges for equal size and contents, with MSVC8 checked-iterator bounds checks; returns 1 if equal, else 0
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+int fn_00481E60(void* a, void* b) {
+    // Element count of a: 0 when begin is null, else (end - begin) / 4 (arithmetic shift).
+    uint32_t a_begin = lift_field<uint32_t>(a, 0x04);
+    int32_t na = 0;
+    if (a_begin != 0) {
+        na = static_cast<int32_t>(lift_field<uint32_t>(a, 0x08) - a_begin) >> 2;
+    }
+
+    // Element count of b, same rule.
+    uint32_t b_begin = lift_field<uint32_t>(b, 0x04);
+    int32_t nb = 0;
+    if (b_begin != 0) {
+        nb = static_cast<int32_t>(lift_field<uint32_t>(b, 0x08) - b_begin) >> 2;
+    }
+
+    if (na != nb) {
+        return 0;
+    }
+
+    // Checked-iterator validation. The original continues after the
+    // invalid-parameter handler returns, so do the same.
+    if (b_begin > lift_field<uint32_t>(b, 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t a_end = lift_field<uint32_t>(a, 0x08);
+    if (a_begin > a_end) {
+        mem_00925134();
+    }
+
+    if (a_begin > lift_field<uint32_t>(b, 0x08)) {
+        mem_00925134();
+    }
+
+    // Range comparison. Arguments match the original push order:
+    // first1=a.begin, last1=a.end, cont2=b, first2=b.begin, then b twice (container context).
+    bool eq = ext_00481B50(lift_ptr32(a_begin),
+                           lift_ptr32(a_end),
+                           b,
+                           lift_ptr32(b_begin),
+                           b,
+                           b);
+    return eq ? 1 : 0;
+}
+} // namespace lift_00481E60
