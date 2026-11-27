@@ -2426,3 +2426,22 @@ extern RefPair* __cdecl sub_0048FC00(RefPair* first, RefPair* last, RefPair* des
     return dest;
 }
 } // namespace lift_0048FC00
+
+// [0x0048F070] sub_0048F070 (89 bytes)
+namespace lift_0048F070 {
+// Known callee 0x006246B0: OwnedPointerRange::clearAndFreeChecked (Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.)
+extern void ext_006246B0(void* self);
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void ext_00665810(void* self);
+
+// @name Commands::BufferPoseCommand::~BufferPoseCommand
+// @class Commands::BufferPoseCommand
+// @summary Clears and frees the two owned pointer ranges at +0x24 and +0x14, then calls sub_00665810 on self (destructor body; the MSVC SEH frame setup is omitted).
+// @field Commands::BufferPoseCommand +0x14 OwnedPointerRange field_0x14
+// @field Commands::BufferPoseCommand +0x24 OwnedPointerRange field_0x24
+extern void __fastcall fn_0048F070(void* self) {
+    ext_006246B0(static_cast<char*>(self) + 0x24);
+    ext_006246B0(static_cast<char*>(self) + 0x14);
+    ext_00665810(self);
+}
+} // namespace lift_0048F070

@@ -1,0 +1,28 @@
+{
+  "va": "0x0048F070",
+  "size": 89,
+  "orig_symbol": "sub_0048F070",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Commands::BufferPoseCommand::~BufferPoseCommand",
+  "class": "Commands::BufferPoseCommand",
+  "signature": "extern \"C\" void __fastcall fn_0048F070(void* self)",
+  "summary": "Clears and frees the two owned pointer ranges at +0x24 and +0x14, then calls sub_00665810 on self (destructor body; the MSVC SEH frame setup is omitted).",
+  "fields": [
+    {
+      "class": "Commands::BufferPoseCommand",
+      "offset": "+0x14",
+      "type": "OwnedPointerRange",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Commands::BufferPoseCommand",
+      "offset": "+0x24",
+      "type": "OwnedPointerRange",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:36Z"
+}

@@ -11,5 +11,7 @@
 namespace lifted_layout {
 struct Commands_BufferPoseCommand_Fields {
     // +0x0   void**                   vptr  (evidence: 0x0048DF90)
+    // +0x14  OwnedPointerRange        field_0x14  (evidence: 0x0048F070)
+    // +0x24  OwnedPointerRange        field_0x24  (evidence: 0x0048F070)
 };
 } // namespace lifted_layout
