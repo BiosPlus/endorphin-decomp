@@ -1054,3 +1054,66 @@ void* fn_004767E0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_004767E0
+
+// [0x00470090]
+namespace lift_00470090 {
+// @name TreeIterator::decrement
+// @class TreeIterator
+// @summary Decrement a red-black tree iterator to the previous in-order node, invoking _invalid_parameter_noinfo on invalid state.
+// @field TreeIterator +0x00 uint32_t container
+// @field TreeIterator +0x04 void* node
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x45 uint8_t is_nil
+
+
+extern void* mem_00925134;
+
+using invalid_param_fn = void(__cdecl*)();
+
+void __thiscall sub_00470090(void* self) {
+    auto invalid_param = reinterpret_cast<invalid_param_fn>(mem_00925134);
+    if (lift_field<uint32_t>(self, 0x0) == 0) {
+        invalid_param();
+    }
+
+    void* node = lift_field<void*>(self, 0x4);
+    if (lift_field<uint8_t>(node, 0x45) != 0) {
+        node = lift_field<void*>(node, 0x8);
+        lift_field<void*>(self, 0x4) = node;
+        if (lift_field<uint8_t>(node, 0x45) != 0) {
+            invalid_param();
+        }
+        return;
+    }
+
+    void* left = lift_field<void*>(node, 0x0);
+    if (lift_field<uint8_t>(left, 0x45) == 0) {
+        void* right = lift_field<void*>(left, 0x8);
+        while (lift_field<uint8_t>(right, 0x45) == 0) {
+            left = right;
+            right = lift_field<void*>(left, 0x8);
+        }
+        lift_field<void*>(self, 0x4) = left;
+        return;
+    }
+
+    void* parent = lift_field<void*>(node, 0x4);
+    while (lift_field<uint8_t>(parent, 0x45) == 0) {
+        void* cur = lift_field<void*>(self, 0x4);
+        if (cur != lift_field<void*>(parent, 0x0)) {
+            break;
+        }
+        lift_field<void*>(self, 0x4) = parent;
+        parent = lift_field<void*>(parent, 0x4);
+    }
+
+    void* cur = lift_field<void*>(self, 0x4);
+    if (lift_field<uint8_t>(cur, 0x45) != 0) {
+        invalid_param();
+        return;
+    }
+    lift_field<void*>(self, 0x4) = parent;
+}
+} // namespace lift_00470090
