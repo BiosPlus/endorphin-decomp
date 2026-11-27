@@ -186,3 +186,72 @@ void fn_00524C10(void* self, void* obj) {
     ext_008703D0(static_cast<uint8_t*>(self) + 0x4C, normalize(r2), static_cast<uint32_t>(mem_00A9F154));
 }
 } // namespace lift_00524C10
+
+// [0x005261F0]
+namespace lift_005261F0 {
+// @name NMData::NetworkConnectorData::vfunc_2
+// @class NMData::NetworkConnectorData
+// @summary Resolves a property/symbol value by checking field_0xa0, field_0x38, field_0x4c, or falling back to Character::vfunc_2.
+// @field NMData::NetworkConnectorData +0x38 uint8_t[20] field_0x38
+// @field NMData::NetworkConnectorData +0x4C uint8_t[20] field_0x4c
+// @field NMData::NetworkConnectorData +0x60 void* field_0x60
+// @field NMData::NetworkConnectorData +0xA0 uint8_t field_0xa0
+
+extern void* mem_00B599BC;
+
+extern void* __thiscall ext_00526180(void* self, void* out, void* arg1);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_00870350(void* self, void* out, void* arg1);
+extern void* __thiscall ext_0065F450(void* self, void* out, void* arg1);
+extern void __thiscall ext_0065F550(void* self);
+extern void __thiscall ext_008703F0(void* self, void* arg1);
+
+struct ValueHandle {
+    void* value;
+    void* obj;
+};
+
+static inline void release_handle_obj(void* obj, void* scratch) {
+    if (obj) {
+        using ReleaseFn = void(__thiscall*)(void*, void*);
+        void** vtable = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<ReleaseFn>(vtable[0x78 / sizeof(void*)])(obj, scratch);
+    }
+}
+
+void* __thiscall fn_005261F0(void* self, void* out, void* arg1) {
+    ValueHandle* out_handle = reinterpret_cast<ValueHandle*>(out);
+    out_handle->value = nullptr;
+    out_handle->obj = mem_00B599BC;
+
+    if (lift_field<uint8_t>(self, 0xA0) != 0) {
+        ValueHandle tmp{};
+        void* res = ext_00526180(reinterpret_cast<uint8_t*>(self) + 0x60, &tmp.obj, arg1);
+        ext_0041CF50(out_handle, res);
+        release_handle_obj(tmp.obj, &tmp.value);
+    } else {
+        ValueHandle tmp{};
+        ext_00870350(reinterpret_cast<uint8_t*>(self) + 0x38, &tmp.obj, arg1);
+        if (tmp.obj == nullptr || tmp.obj == mem_00B599BC) {
+            ValueHandle tmp2{};
+            void* res = ext_00870350(reinterpret_cast<uint8_t*>(self) + 0x4C, &tmp2.obj, arg1);
+            ext_0041CF50(&tmp, res);
+            release_handle_obj(tmp2.obj, &tmp2.value);
+        }
+        release_handle_obj(tmp.obj, &tmp.value);
+    }
+
+    if (out_handle->obj == nullptr || out_handle->obj == mem_00B599BC) {
+        ValueHandle tmp3{};
+        void* res = ext_0065F450(self, &tmp3.obj, arg1);
+        ext_0041CF50(out_handle, res);
+        release_handle_obj(tmp3.obj, &tmp3.value);
+    }
+
+    return out_handle;
+    if (false) {
+        ext_0065F550(nullptr);
+        ext_008703F0(nullptr, nullptr);
+    }
+}
+} // namespace lift_005261F0

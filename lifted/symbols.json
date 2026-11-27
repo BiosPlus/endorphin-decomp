@@ -33146,6 +33146,13 @@
     "summary": "Forwards to ext_00525E80 on the sub-object at this+0x60, passing the original this as a stack argument.",
     "lifted_path": "lifted/NMData/NetworkConnectorData.cpp"
   },
+  "0x005261F0": {
+    "name": "NMData::NetworkConnectorData::vfunc_2",
+    "class": "NMData::NetworkConnectorData",
+    "signature": "static inline void release_handle_obj(void* obj, void* scratch)",
+    "summary": "Resolves a property/symbol value by checking field_0xa0, field_0x38, field_0x4c, or falling back to Character::vfunc_2.",
+    "lifted_path": "lifted/NMData/NetworkConnectorData.cpp"
+  },
   "0x00526350": {
     "name": "ExprParser::ReadMethodType\u003cNMData::NetworkConnectorData, float, \u0026public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::NetworkConnectorData, float, \u0026public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1\u003e",
@@ -39070,6 +39077,13 @@
     "signature": "extern \"C\" bool (__cdecl* mem_00924FB0)(const void* lhs, const void* rhs);   // operator!= (basic_string, basic_string) extern \"C\" void* (__cdecl* mem_009250EC)(void* stream, void* str);           // operator\u003e\u003e (basic_istream\u0026, basic_string\u0026) extern \"C\" bool (__thiscall* mem_009250C0)(void* ios);                       // ios_base::operator! extern \"C\" char\u0026 (__thiscall* mem_0092500C)(void* str, size_t index);        // basic_string::operator[] bool __thiscall fn_00570700(void* self, void* marker, void* stream)",
     "summary": "Reads lines from stream into this+0x46c, skipping '#' comment lines via ext_00570380, until a line equals marker; returns false on stream failure.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x00571B90": {
+    "name": "CDLCharacterIO::vfunc_10",
+    "class": "CDLCharacterIO",
+    "signature": "void fn_00571B90(void* self, const std::string* filename)",
+    "summary": "Open a character file, initialize progress/logging, parse sections, and throw on failure.",
+    "lifted_path": "lifted/classes/CDLCharacterIO.cpp"
   },
   "0x00571DD0": {
     "name": "sub_00571DD0",

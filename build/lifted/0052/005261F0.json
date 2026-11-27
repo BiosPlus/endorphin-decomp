@@ -1,0 +1,40 @@
+{
+  "va": "0x005261F0",
+  "size": 342,
+  "orig_symbol": "NMData::NetworkConnectorData::vfunc_2",
+  "src_path": "src/NMData/NetworkConnectorData.cpp",
+  "lifted_path": "lifted/NMData/NetworkConnectorData.cpp",
+  "name": "NMData::NetworkConnectorData::vfunc_2",
+  "class": "NMData::NetworkConnectorData",
+  "signature": "static inline void release_handle_obj(void* obj, void* scratch)",
+  "summary": "Resolves a property/symbol value by checking field_0xa0, field_0x38, field_0x4c, or falling back to Character::vfunc_2.",
+  "fields": [
+    {
+      "class": "NMData::NetworkConnectorData",
+      "offset": "+0x38",
+      "type": "uint8_t[20]",
+      "name": "field_0x38"
+    },
+    {
+      "class": "NMData::NetworkConnectorData",
+      "offset": "+0x4C",
+      "type": "uint8_t[20]",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "NMData::NetworkConnectorData",
+      "offset": "+0x60",
+      "type": "void*",
+      "name": "field_0x60"
+    },
+    {
+      "class": "NMData::NetworkConnectorData",
+      "offset": "+0xA0",
+      "type": "uint8_t",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:09:50Z"
+}
