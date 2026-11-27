@@ -22325,6 +22325,12 @@
     "summary": "Stores the double at *value into every 8-byte slot in [first, last); no-op if first == last.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00503B20": {
+    "name": "uninitialized_fill_n_string_pair",
+    "signature": "void fn_00503B20(uint8_t* dst, uint32_t count, const uint8_t* src)",
+    "summary": "Uninitialized-fills N 32-byte (std::string + u32) elements, destroying constructed elements on exception",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503BC0": {
     "name": "sub_00508310",
     "class": "NMData::RealChannel",
@@ -55060,6 +55066,12 @@
     "summary": "Checks if a checked iterator points to the first element of its container",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00661B50": {
+    "name": "sub_00661B50",
+    "signature": "uint32_t __thiscall sub_00661B50(void* this_ptr, uint32_t index)",
+    "summary": "Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00661E80": {
     "name": "Unknown::advanceCursorAndDispatch",
     "class": "Unknown",
@@ -82309,6 +82321,12 @@
     "name": "descriptiveName: ClassifyDoubleIndirectTag",
     "signature": "int32_t fn_007AA3D0(const void* const* pp)",
     "summary": "Follows a double pointer to a 32-bit tag and maps known tags to codes 3, 1, 2 (else 0); returns 0 on any null pointer.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
+  "0x007AA5A0": {
+    "name": "sub_007AA5A0",
+    "signature": "uint32_t __cdecl sub_007AA5A0(uint32_t idx)",
+    "summary": "Lookup table mapping index 0..22 to a constant address",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AA6B0": {
