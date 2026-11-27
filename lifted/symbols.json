@@ -18104,6 +18104,13 @@
     "summary": "Initializes the object: calls base init, stores two uint32 values, and copy-constructs two std::strings from the given pointers.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B7620": {
+    "name": "Object::InitAndRegister_004B7620",
+    "class": "Object",
+    "signature": "void* fn_004B7620(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Allocates a 0x50-byte object, initializes it via InitVtblAndCopyStrings when allocation succeeds, then calls the two follow-up helpers and returns the last helper's result.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B76A0": {
     "name": "Unknown::ctor_DynamicCastPair",
     "class": "Unknown",

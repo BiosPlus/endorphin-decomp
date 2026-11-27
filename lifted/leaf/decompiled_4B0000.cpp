@@ -2494,3 +2494,28 @@ void fn_004B60A0(void* self, const char* arg1) {
     reinterpret_cast<StringDtor>(mem_00924FF4)(str);
 }
 } // namespace lift_004B60A0
+
+// [0x004B7620] sub_004B7620 (117 bytes)
+namespace lift_004B7620 {
+// Known callee 0x004B75A0: InitVtblAndCopyStrings (Initializes the object: calls base init, stores two uint32 values, and copy-constructs two std::strings from the given pointers.)
+extern void* ext_004B75A0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x00665870: sub_00665870 (Returns global int32 value from mem_00B59420.)
+extern int32_t ext_00665870(void);
+// sub_00666670 (292B): thiscall taking the int32 from ext_00665870 in ECX; return value passed through.
+extern void* ext_00666670(int32_t self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762; called with size 0x50 as cdecl arg, returns allocated pointer.)
+extern void* ext_006A5C62(uint32_t size);
+
+// @name Object::InitAndRegister_004B7620
+// @class Object
+// @summary Allocates a 0x50-byte object, initializes it via InitVtblAndCopyStrings when allocation succeeds, then calls the two follow-up helpers and returns the last helper's result.
+void* fn_004B7620(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    void* obj = ext_006A5C62(0x50);
+    void* initResult = nullptr;
+    if (obj != nullptr) {
+        initResult = ext_004B75A0(obj, reinterpret_cast<uintptr_t>(self), a1, a2, a3);
+    }
+    int32_t status = ext_00665870();
+    return ext_00666670(status);
+}
+} // namespace lift_004B7620
