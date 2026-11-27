@@ -15058,6 +15058,12 @@
     "summary": "Stores constants 0.2f and 100.0f at this+0x1C/+0x20, then zeroes this+0x24..+0x30.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B6EC0": {
+    "name": "assignNamedStringsFromLookup",
+    "signature": "void fn_004B6EC0(void* self, void* lookup)",
+    "summary": "Looks up four fixed name keys in the lookup container and assigns each result's string into this object at +0x04, +0x20, +0x3C and +0x58.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B6FF0": {
     "name": "Unknown::InitStrings",
     "class": "Unknown",

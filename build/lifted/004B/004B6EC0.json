@@ -1,0 +1,13 @@
+{
+  "va": "0x004B6EC0",
+  "size": 119,
+  "orig_symbol": "sub_004B6EC0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "assignNamedStringsFromLookup",
+  "signature": "void fn_004B6EC0(void* self, void* lookup)",
+  "summary": "Looks up four fixed name keys in the lookup container and assigns each result's string into this object at +0x04, +0x20, +0x3C and +0x58.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:20:20Z"
+}

@@ -1847,3 +1847,34 @@ void fn_004BF710(void* self) {
     ext_00466870(embedded);
 }
 } // namespace lift_004BF710
+
+// [0x004B6EC0] sub_004B6EC0 (119 bytes)
+namespace lift_004B6EC0 {
+// Known callee 0x0063EFE0: sub_0063EFE0 (Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.)
+extern void* ext_0063EFE0(void* self, const char* name);
+// Known callee 0x004275E0: assignVirtualString (Calls vtable[2] on obj to obtain a temporary std::string, assigns it to dst, and destroys the temporary.)
+extern void ext_004275E0(void* dst, void* obj);
+extern uint32_t mem_00A9F838;
+extern uint32_t mem_00A9F7BC;
+extern uint32_t mem_00A9F7C0;
+extern uint32_t mem_00A9F6F8;
+
+// @name assignNamedStringsFromLookup
+// @summary Looks up four fixed name keys in the lookup container and assigns each result's string into this object at +0x04, +0x20, +0x3C and +0x58.
+// @field uint8_t field_0x04 (std::string destination 1)
+// @field uint8_t field_0x20 (std::string destination 2)
+// @field uint8_t field_0x3C (std::string destination 3)
+// @field uint8_t field_0x58 (std::string destination 4)
+void fn_004B6EC0(void* self, void* lookup) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    auto find = [lookup](uint32_t key) -> void* {
+        return ext_0063EFE0(lookup, reinterpret_cast<const char*>(static_cast<uintptr_t>(key)));
+    };
+
+    ext_004275E0(base + 0x04, find(mem_00A9F838));
+    ext_004275E0(base + 0x20, find(mem_00A9F7BC));
+    ext_004275E0(base + 0x3C, find(mem_00A9F7C0));
+    ext_004275E0(base + 0x58, find(mem_00A9F6F8));
+}
+} // namespace lift_004B6EC0
