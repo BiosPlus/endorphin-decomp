@@ -668,3 +668,121 @@ void* fn_005C84C0(void* self, void* arg) {
     return result;
 }
 } // namespace lift_005C84C0
+
+// [0x005C4100] NMData::CollisionModelData::vfunc_21 (650 bytes)
+namespace lift_005C4100 {
+extern void ext_0058F630(void* self, void* obj);
+extern uint32_t ext_0063EFE0(void* self, const char* name);
+extern void ext_00427640(void* out, void* item_slot);
+extern void ext_004275E0(void* dst, void* obj);
+extern uint32_t ext_0063F530(void* self, uint32_t a, uint32_t b, uint32_t c);
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_005B3500(void* self);
+extern void ext_005B18E0(void* self, void* src);
+extern void ext_005B5E50(void* self, uint32_t code);
+extern int mem_00A9F568;
+extern int mem_00A9F56C;
+extern int mem_00A9F564;
+extern int mem_00A9F724;
+extern int mem_00A9FAB4;
+extern int mem_00A9F7B8;
+extern int mem_00A9EF58;
+extern int mem_00A9F570;
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+namespace {
+
+constexpr uint32_t kSentinelA34 = 0x00B53A34u;
+constexpr uint32_t kSentinelB30 = 0x00B53B30u;
+constexpr uint32_t kSentinelAB0 = 0x00B53AB0u;
+constexpr uint32_t kSentinelA70 = 0x00B53A70u;
+constexpr uint32_t kSentinelAF0 = 0x00B53AF0u;
+
+inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+inline const char* as_cstr(int v) {
+    return reinterpret_cast<const char*>(static_cast<uintptr_t>(static_cast<uint32_t>(v)));
+}
+
+inline bool is_sentinel(uint32_t r) {
+    return r == kSentinelA34 || r == kSentinelB30 || r == kSentinelAB0 ||
+           r == kSentinelA70 || r == kSentinelAF0;
+}
+
+// Looks up the item named by `name` in `obj`, then stores the comparison
+// result (via ext_00427640) into the byte at `out`.
+void lookup_and_compare(void* obj, int name, void* out) {
+    uint32_t slot = ext_0063EFE0(obj, as_cstr(name));
+    ext_00427640(out, &slot);
+}
+
+}  // namespace
+
+// @name NMData::CollisionModelData::vfunc_21
+// @class NMData::CollisionModelData
+// @summary Resolves named flags from obj into this object's bytes and rebuilds the owned node at +0x15C (with string payload) via the base vfunc_21 and helper calls.
+// @field NMData::CollisionModelData +0x158 void* field_0x158
+// @field NMData::CollisionModelData +0x15C void* field_0x15c
+// @field NMData::CollisionModelData +0x160 uint8_t field_0x160
+// @field NMData::CollisionModelData +0x17C std::string field_0x17c
+// @field NMData::CollisionModelData +0x19C uint8_t field_0x19c
+// @field NMData::CollisionModelData +0x19D uint8_t field_0x19d
+// @field NMData::CollisionModelData +0x19E uint8_t field_0x19e
+// @field NMData::CollisionModelData +0x19F uint8_t field_0x19f
+void fn_005C4100(void* self, void* obj) {
+    // std::string ctor/dtor IAT slots: replaced by std::string below (metadata-only refs).
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+
+    ext_0058F630(self, obj);
+
+    lookup_and_compare(obj, mem_00A9F568, &lift_field<uint8_t>(self, 0x19C));
+    lookup_and_compare(obj, mem_00A9F56C, &lift_field<uint8_t>(self, 0x19D));
+    lookup_and_compare(obj, mem_00A9F564, &lift_field<uint8_t>(self, 0x19E));
+    lookup_and_compare(obj, mem_00A9F724, &lift_field<uint8_t>(self, 0x160));
+
+    uint32_t r = ext_0063EFE0(obj, as_cstr(mem_00A9FAB4));
+    if (!is_sentinel(r)) {
+        uint32_t slot = ext_0063EFE0(obj, as_cstr(mem_00A9FAB4));
+        ext_00427640(&lift_field<uint8_t>(self, 0x19F), &slot);
+    }
+
+    uint32_t name_item = ext_0063EFE0(obj, as_cstr(mem_00A9F7B8));
+    ext_004275E0(&lift_field<std::string>(self, 0x17C), as_ptr(name_item));
+
+    uint32_t r2 = ext_0063F530(obj, static_cast<uint32_t>(mem_00A9EF58), 0, 1);
+    if (is_sentinel(r2)) {
+        return;
+    }
+
+    void* fresh = nullptr;
+    void* node = ext_006A5C62(0x4C);
+    if (node != nullptr) {
+        fresh = ext_005B3500(node);
+    }
+
+    void* old = lift_field<void*>(self, 0x15C);
+    if (fresh != old && old != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(old);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[0])(old, 1);
+    }
+    lift_field<void*>(self, 0x15C) = fresh;
+
+    void* back = self ? static_cast<void*>(reinterpret_cast<uint8_t*>(self) + 0x158) : nullptr;
+    lift_field<void*>(fresh, 0x48) = back;
+
+    {
+        std::string tmp(as_cstr(mem_00A9F570));
+        ext_005B18E0(fresh, &tmp);
+    }
+
+    uint32_t r3 = ext_0063F530(obj, static_cast<uint32_t>(mem_00A9EF58), 0, 1);
+    if (is_sentinel(r3)) {
+        r3 = kSentinelB30;
+    }
+    ext_005B5E50(fresh, r3);
+}
+} // namespace lift_005C4100

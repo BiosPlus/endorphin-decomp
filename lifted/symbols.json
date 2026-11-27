@@ -47397,6 +47397,13 @@
     "summary": "If field +0x16C is set and the peer's virtual slot 0xEC accepts it, forwards the peer's +0x16C into the delegate thunk.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C4100": {
+    "name": "NMData::CollisionModelData::vfunc_21",
+    "class": "NMData::CollisionModelData",
+    "signature": "inline void* as_ptr(uint32_t v)",
+    "summary": "Resolves named flags from obj into this object's bytes and rebuilds the owned node at +0x15C (with string payload) via the base vfunc_21 and helper calls.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C44A0": {
     "name": "NMData::FluidObjectData::vfunc_33",
     "class": "NMData::FluidObjectData",
