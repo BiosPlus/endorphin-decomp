@@ -1,0 +1,22 @@
+{
+  "va": "0x004CD190",
+  "size": 318,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_1_off_154",
+  "src_path": "src/NMData/MetaBodyConstraintData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_1_off_154",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "extern \"C\" void __thiscall fn_004CD190(void* self, void* src)",
+  "summary": "Collects an object-pointer list from src, hands a string list to the -0x154 subobject, pokes vfuncs 9/10 on the last element when mode is 3 or 4, then frees the list buffer and destroys the string list.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x30",
+      "type": "int",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:38:04Z"
+}

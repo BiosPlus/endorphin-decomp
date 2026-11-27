@@ -21428,6 +21428,13 @@
     "summary": "Cleans up, destroys, and clears the subobject at +0x180 if non-null.",
     "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
   },
+  "0x004CD190": {
+    "name": "NMData::MetaBodyConstraintData::vfunc_1_off_154",
+    "class": "NMData::MetaBodyConstraintData",
+    "signature": "extern \"C\" void __thiscall fn_004CD190(void* self, void* src)",
+    "summary": "Collects an object-pointer list from src, hands a string list to the -0x154 subobject, pokes vfuncs 9/10 on the last element when mode is 3 or 4, then frees the list buffer and destroys the string list.",
+    "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
+  },
   "0x004CD3A0": {
     "name": "NMData::MetaBodyConstraintData::vfunc_0",
     "class": "NMData::MetaBodyConstraintData",

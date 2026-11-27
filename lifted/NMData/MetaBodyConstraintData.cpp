@@ -111,3 +111,69 @@ void* fn_004CD020(void* self) {
     return ext_004CCE20(mem, owner);
 }
 } // namespace lift_004CD020
+
+// [0x004CD190]
+namespace lift_004CD190 {
+// @name NMData::MetaBodyConstraintData::vfunc_1_off_154
+// @class NMData::MetaBodyConstraintData
+// @summary Collects an object-pointer list from src, hands a string list to the -0x154 subobject, pokes vfuncs 9/10 on the last element when mode is 3 or 4, then frees the list buffer and destroys the string list.
+// @field NMData::MetaBodyConstraintData +0x30 int field_0x30
+
+extern void __thiscall ext_004026E0(void* self);
+extern void __thiscall ext_004A6970(void* self, void* value);
+extern void __thiscall ext_004C28C0(void* self, void* strList);
+extern void __cdecl ext_006A5C5C(void* ptr);
+// CRT _invalid_parameter_noinfo IAT slot: only used by MSVC iterator checks, which are dropped.
+extern int mem_00925134;
+
+// MSVC-layout vector header (first / last / end) used by the callee-side helpers.
+struct MsvcVecPtrs {
+    void** first;
+    void** last;
+    void** cap;
+};
+
+extern void __thiscall fn_004CD190(void* self, void* src) {
+    using VF5 = void*(__thiscall*)(void* self);
+    using VF9 = void(__thiscall*)(void* self, int32_t a);
+    using VF10 = void(__thiscall*)(void* self, int32_t a, int32_t b);
+    using VF13 = void(__thiscall*)(void* self, void* out);
+
+    (void)&mem_00925134;  // metadata reference only; not a real access
+
+    void* strList[3] = {nullptr, nullptr, nullptr};  // std::vector<std::string> out-param
+    MsvcVecPtrs objs{nullptr, nullptr, nullptr};     // std::vector<void*> filled by ext_004A6970
+
+    void** vt = *reinterpret_cast<void***>(src);
+    reinterpret_cast<VF13>(vt[13])(src, strList);
+
+    ext_004C28C0(static_cast<char*>(self) - 0x154, strList);
+
+    void* value = reinterpret_cast<VF5>(vt[5])(src);
+    ext_004A6970(&objs, value);
+
+    int32_t mode = lift_field<int32_t>(self, 0x30);
+
+    if (mode == 4 || mode == 3) {
+        if (objs.first != nullptr && objs.first != objs.last) {
+            void** slot = objs.last - 1;
+
+            void* obj = *slot;
+            void* sub = static_cast<char*>(obj) + 0xc;
+            void** subVt = *reinterpret_cast<void***>(sub);
+            reinterpret_cast<VF9>(subVt[9])(sub, 7);
+
+            obj = *slot;  // re-read the slot, as the original does
+            void* sub2 = static_cast<char*>(obj) + 0xc;
+            void** subVt2 = *reinterpret_cast<void***>(sub2);
+            reinterpret_cast<VF10>(subVt2[10])(sub2, 7, 1);
+        }
+    }
+
+    if (objs.first != nullptr) {
+        ext_006A5C5C(objs.first);
+    }
+
+    ext_004026E0(strList);
+}
+} // namespace lift_004CD190
