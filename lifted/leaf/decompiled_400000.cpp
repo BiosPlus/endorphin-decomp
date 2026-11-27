@@ -2579,3 +2579,42 @@ void* fn_0040E890(void* base, uint32_t count, const void* src) {
     return static_cast<uint8_t*>(base) + count * 28u;
 }
 } // namespace lift_0040E890
+
+// [0x00401690]
+namespace lift_00401690 {
+// @name initDisplayOptionsPanel
+// @summary Configures child controls with display option values and initializes the Display Options panel
+// @field Self +0xAC void* field_0xAC
+// @field Self +0xB0 void* field_0xB0
+// @field Self +0xB4 void* field_0xB4
+// @field Self +0xB8 void* field_0xB8
+// @field Self +0x164 uint32_t field_0x164
+// @field Self +0x168 uint32_t field_0x168
+// @field Self +0x16C uint32_t field_0x16C
+// @field Self +0x170 uint32_t field_0x170
+
+
+void __thiscall ext_0044A0F0(void* self, uint32_t arg);
+void __thiscall ext_0044A100(void* self, uint32_t arg);
+void __thiscall ext_0044A110(void* self, uint32_t arg);
+void __thiscall ext_0044A120(void* self, uint32_t arg);
+void __thiscall ext_0041BB60(void* self, uint32_t arg);
+void __thiscall ext_005434E0(void* self, uint32_t arg);
+void __thiscall ext_006A5E6C(void* self, const char* title, uint32_t flags);
+extern const char mem_00928A88[];
+
+void __thiscall fn_00401690(void* self) {
+    void* obj_ac = lift_field<void*>(self, 0xAC);
+    ext_0044A0F0(obj_ac, lift_field<uint32_t>(self, 0x164));
+    ext_0044A100(obj_ac, lift_field<uint32_t>(self, 0x168));
+    ext_0044A110(obj_ac, lift_field<uint32_t>(self, 0x16C));
+    ext_0044A120(obj_ac, lift_field<uint32_t>(self, 0x170));
+
+    uint32_t val_164 = lift_field<uint32_t>(self, 0x164);
+    ext_0041BB60(lift_field<void*>(self, 0xB0), val_164);
+    ext_005434E0(lift_field<void*>(self, 0xB8), val_164);
+    ext_005434E0(lift_field<void*>(self, 0xB4), val_164);
+
+    ext_006A5E6C(self, mem_00928A88, 0);
+}
+} // namespace lift_00401690

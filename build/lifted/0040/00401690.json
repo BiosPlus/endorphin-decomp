@@ -1,0 +1,63 @@
+{
+  "va": "0x00401690",
+  "size": 145,
+  "orig_symbol": "sub_00401690",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "initDisplayOptionsPanel",
+  "signature": "void __thiscall fn_00401690(void* self)",
+  "summary": "Configures child controls with display option values and initializes the Display Options panel",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0xAC",
+      "type": "void*",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xB0",
+      "type": "void*",
+      "name": "field_0xB0"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xB4",
+      "type": "void*",
+      "name": "field_0xB4"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xB8",
+      "type": "void*",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x16C",
+      "type": "uint32_t",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:53:25Z"
+}
