@@ -66258,6 +66258,13 @@
     "summary": "Allocates len bytes via allocBuffer; on success copies len bytes from src into the buffer, then forwards the allocator's output slot to MFC80 ord_764 and returns the allocator result.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B9B90": {
+    "name": "Unknown::replaceBufferWithTwoSegments_006B9B90",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall fn_006B9B90(void* ecx, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Reallocates the object's buffer to hold two segments (a1 bytes from a2, then a3 bytes from a4), then calls ext_006A5C5C(this).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9CE0": {
     "name": "StrContainsChar_006B9CE0",
     "signature": "extern \"C\" BOOLEAN __stdcall StrContainsChar_006B9CE0(CHAR c, const CHAR* s)",

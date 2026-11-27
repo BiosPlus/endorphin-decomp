@@ -28,6 +28,7 @@ struct Unknown_Fields {
     // +0x0   uint8_t[0x1C] m_str0 (std::string copy of arg a)  (evidence: 0x006738D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (std::string, copy-constructed from a)  (evidence: 0x0046FB20) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t entries_base (pointer to 20-byte entry array, stored as 32-bit address)  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint8_t* data_ptr (current buffer pointer; replaced by allocBuffer)  (evidence: 0x006B9B90) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 first dword, overwritten from* arg  (evidence: 0x006F8AD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer;* arg1)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t bucket_base (pointer to 20-byte bucket array)  (evidence: 0x007F0B30) // CONFLICT: multiple definitions at +0x0

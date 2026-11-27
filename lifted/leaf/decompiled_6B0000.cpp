@@ -2983,3 +2983,35 @@ void* fn_006BAB80(void* self, int32_t unused, const char* s) {
     return self;
 }
 } // namespace lift_006BAB80
+
+// [0x006B9B90]
+namespace lift_006B9B90 {
+// @name Unknown::replaceBufferWithTwoSegments_006B9B90
+// @class Unknown
+// @summary Reallocates the object's buffer to hold two segments (a1 bytes from a2, then a3 bytes from a4), then calls ext_006A5C5C(this).
+// @field Unknown +0x00 uint8_t* data_ptr (current buffer pointer; replaced by allocBuffer)
+
+extern uint32_t __thiscall ext_006B9A00(void* ecx, int32_t len, uint32_t* out);
+extern void ext_006A5C5C(void* self);
+
+uint32_t __thiscall fn_006B9B90(void* ecx, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    const uint32_t len = a1 + a3;
+    uint32_t tmp = 0;
+    const uint32_t status = ext_006B9A00(ecx, static_cast<int32_t>(len), &tmp);
+
+    if (len != 0 && status == 0) {
+        uint8_t* dst = *reinterpret_cast<uint8_t**>(ecx);
+        std::memcpy(dst,
+                    reinterpret_cast<const void*>(static_cast<uintptr_t>(a2)),
+                    a1);
+
+        dst = *reinterpret_cast<uint8_t**>(ecx);
+        std::memcpy(dst + a1,
+                    reinterpret_cast<const void*>(static_cast<uintptr_t>(a4)),
+                    a3);
+    }
+
+    ext_006A5C5C(ecx);
+    return status;
+}
+} // namespace lift_006B9B90

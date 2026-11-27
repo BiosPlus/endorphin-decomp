@@ -1,0 +1,22 @@
+{
+  "va": "0x006B9B90",
+  "size": 128,
+  "orig_symbol": "sub_006B9B90",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::replaceBufferWithTwoSegments_006B9B90",
+  "class": "Unknown",
+  "signature": "uint32_t __thiscall fn_006B9B90(void* ecx, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "Reallocates the object's buffer to hold two segments (a1 bytes from a2, then a3 bytes from a4), then calls ext_006A5C5C(this).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t* data_ptr (current buffer pointer; replaced by",
+      "name": "allocBuffer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:59:02Z"
+}
