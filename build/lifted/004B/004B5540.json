@@ -1,0 +1,13 @@
+{
+  "va": "0x004B5540",
+  "size": 111,
+  "orig_symbol": "sub_004B5540",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "AllocStringFlagsAndNotify_004B5540",
+  "signature": "int32_t fn_004B5540(void* self, int32_t a1, int32_t a2, int32_t a3)",
+  "summary": "Allocates a 0x24-byte object, runs StringFlagsInit on it when the allocation succeeds, then forwards it with the stack args to AllocConstructAndNotify_004B5360.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:01Z"
+}

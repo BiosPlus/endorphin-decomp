@@ -2605,3 +2605,24 @@ int32_t fn_004B5360(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4) 
     return a2;
 }
 } // namespace lift_004B5360
+
+// [0x004B5540] sub_004B5540 (111 bytes)
+namespace lift_004B5540 {
+// Known callee 0x004B0F50: StringFlagsInit (Sets four byte flags (1,1,1,0), default-constructs the string at +0x04 via the import slot, zeroes the dword at +0x20; returns this.)
+extern void* ext_004B0F50(void* self);
+// Known callee 0x004B5360: AllocConstructAndNotify_004B5360 (Allocates a 0x28-byte object, and if the allocation succeeded constructs it via sub_004B4EE0 (passing this and four stack args); then passes the construction result through sub_00665870 and sub_00666670 and returns the second stack argument.)
+extern int32_t ext_004B5360(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(uint32_t size);
+
+// @name AllocStringFlagsAndNotify_004B5540
+// @summary Allocates a 0x24-byte object, runs StringFlagsInit on it when the allocation succeeds, then forwards it with the stack args to AllocConstructAndNotify_004B5360.
+int32_t fn_004B5540(void* self, int32_t a1, int32_t a2, int32_t a3) {
+    void* obj = ext_006A5C62(0x24);
+    void* initialized = nullptr;
+    if (obj != nullptr) {
+        initialized = ext_004B0F50(obj);
+    }
+    return ext_004B5360(self, a1, static_cast<int32_t>(reinterpret_cast<uintptr_t>(initialized)), a2, a3);
+}
+} // namespace lift_004B5540
