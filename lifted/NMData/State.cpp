@@ -1092,3 +1092,300 @@ void* __thiscall fn_0049DBF0(void* self, void* node) {
     return node;
 }
 } // namespace lift_0049DBF0
+
+// [0x004A1A40]
+namespace lift_004A1A40 {
+// @name NMData::State::vfunc_1
+// @class NMData::State
+// @summary Loads an NMData::State (or StateRef) from an XML node, parsing properties, child states, bounds, and references.
+// @field NMData::State +0x1C void* adjusted_base
+// @field NMData::State +0x38 void* field_0x38
+// @field NMData::State +0x48 void* field_0x48
+// @field NMData::State +0x64 uint8_t field_0x64
+// @field NMData::State +0x65 uint8_t field_0x65
+// @field NMData::State +0x68 uint32_t field_0x68
+// @field NMData::State +0x6C uint8_t field_0x6C
+// @field NMData::State +0x70 void* field_0x70
+// @field NMData::State +0x8C void* field_0x8C
+// @field NMData::State +0xA8 void* field_0xA8
+// @field NMData::State +0xC4 void* field_0xC4
+// @field NMData::State +0xD0 void* list_head
+// @field NMData::State +0xDC void* field_0xDC
+// @field NMData::State +0xE0 void* field_0xE0
+// @field NMData::State +0xE8 float field_0xE8
+// @field NMData::State +0xEC float field_0xEC
+// @field NMData::State +0xF0 float field_0xF0
+// @field NMData::State +0xF4 float field_0xF4
+// @field NMData::State +0xF8 int32_t field_0xF8
+// @field NMData::State +0xFC uint32_t field_0xFC
+// @field NMData::State +0x11C void* field_0x11C
+// @field NMData::State +0x130 uint32_t field_0x130
+
+
+    extern uint32_t mem_00AA237C;
+    extern uint32_t mem_00AA23DC;
+    extern uint32_t mem_00AA23A8;
+    extern uint32_t mem_00AA23C0;
+    extern uint32_t mem_00AA23CC;
+    extern uint32_t mem_00AA2408;
+    extern uint32_t mem_00AA2360;
+    extern uint32_t mem_00AA23B0;
+    extern uint32_t mem_00AA235C;
+    extern uint32_t mem_00AA23AC;
+    extern uint32_t mem_00AA2364;
+    extern uint32_t mem_00AA23B4;
+    extern uint32_t mem_00AA2384;
+    extern uint32_t mem_00AA2388;
+    extern uint32_t mem_00AA2358;
+    extern uint32_t mem_00AA2380;
+    extern uint32_t mem_00AA2368;
+    extern uint32_t mem_00AA2374;
+    extern uint32_t mem_00AA2390;
+    extern uint32_t mem_00AA238C;
+    extern uint32_t mem_00A9F1F4;
+    extern uint32_t mem_00A9F104;
+    extern uint32_t mem_00AA23BC;
+
+    extern float mem_0093F8EC;
+    extern float mem_00940694;
+    extern float mem_00940690;
+
+    extern uint8_t (__cdecl *mem_00924FC0)(const void*, const char*);
+    extern void (__thiscall *mem_00924FE8)(void*);
+    extern uint8_t (__thiscall *mem_00924FEC)(const void*);
+    extern const char* (__thiscall *mem_00924FF0)(const void*);
+    extern void (__thiscall *mem_00924FF4)(void*);
+    extern void (__thiscall *mem_00924FE4)(void*, const char*);
+    extern void (__cdecl *mem_00925134)(void);
+
+    void* __thiscall ext_00403560(void* self, const void* src);
+    void __cdecl ext_004275E0(void* dst, void* obj);
+    void __cdecl ext_00427640(void* out, void* obj);
+    void __thiscall ext_00427A60(void* self);
+    void* __thiscall ext_0045DFB0(void* self, uint32_t name);
+    void __thiscall ext_004973B0(void* self, void* node);
+    void* __thiscall ext_0049AA80(void* self, void* out);
+    uint32_t __thiscall ext_0049D0F0(void* self, uint32_t n);
+    void __thiscall ext_0049DFA0(void* self, uint32_t arg);
+    void __cdecl ext_0049F540(void* node, void* dst, uint32_t key, uint32_t flag);
+    void __thiscall ext_0049F8D0(void* self);
+    void __cdecl ext_0049FE40(void* node, void* dst, uint32_t key, uint32_t flag);
+    void __thiscall ext_0049FF90(void* self);
+    void __thiscall ext_004A0270(void* self, uint32_t arg);
+    void __cdecl ext_004A1100(void* node, void* dst, uint32_t key);
+    void* __thiscall ext_004A17C0(void* self, void* head, void* prev, void* val);
+    void __cdecl ext_004A22A0(void* node, void* dst, uint32_t key);
+    void __cdecl ext_004EBAB0(void* node, void* dst);
+    void __cdecl ext_0053F5F0(void* out, void* obj);
+    void* __thiscall ext_0063EFE0(void* self, uint32_t name);
+    void* __thiscall ext_0063F530(void* self, uint32_t name, uint32_t a, uint32_t b);
+    void __fastcall ext_0065C660(void* self);
+    void __cdecl ext_006824E0(void* node, void* dst, uint32_t a, uint32_t b);
+    void __stdcall ext_006A6DD2(void* exc, void* throw_info);
+
+static void* normalize_sentinel(void* p) {
+    uintptr_t v = reinterpret_cast<uintptr_t>(p);
+    if (v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u || v == 0x00B53A70u || v == 0x00B53AF0u) {
+        return reinterpret_cast<void*>(0x00B53B30u);
+    }
+    return p;
+}
+
+static bool is_sentinel(void* p) {
+    uintptr_t v = reinterpret_cast<uintptr_t>(p);
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u || v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+void __thiscall fn_004A1A40(void* self, void* node) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+    uint8_t* n = static_cast<uint8_t*>(node);
+
+    if (mem_00924FC0(n + 4, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00AA237C)))) {
+        ext_006824E0(n, s + 0x1C, 1, mem_00AA23DC);
+
+        uint8_t tmp_str[32];
+        mem_00924FE8(tmp_str);
+        void* item = ext_0063EFE0(n, mem_00AA23A8);
+        ext_004275E0(tmp_str, item);
+
+        uint32_t flag = 1;
+        if (mem_00924FC0(tmp_str, reinterpret_cast<const char*>(0x009406A4u)) ||
+            mem_00924FC0(tmp_str, reinterpret_cast<const char*>(0x00940698u)) ||
+            mem_00924FC0(tmp_str, reinterpret_cast<const char*>(0x0092F17Cu))) {
+            flag = 0;
+        }
+        *reinterpret_cast<uint32_t*>(s + 0x68) = flag;
+
+        item = ext_0063EFE0(n, mem_00AA23C0);
+        ext_00427640(s + 0x6C, &item);
+
+        item = ext_0063EFE0(n, mem_00AA23CC);
+        ext_00427640(s + 0x65, &item);
+
+        item = ext_0063EFE0(n, mem_00AA2408);
+        if (is_sentinel(item)) {
+            *reinterpret_cast<uint32_t*>(s + 0x130) = 1;
+        } else {
+            ext_0053F5F0(s + 0x130, &item);
+        }
+
+        item = normalize_sentinel(ext_0063F530(n, mem_00AA2360, 0, 1));
+        ext_004EBAB0(item, s + 0x70);
+        if (mem_00924FEC(s + 0x70)) {
+            ext_004275E0(s + 0x70, ext_0063EFE0(n, mem_00AA23B0));
+        }
+
+        item = normalize_sentinel(ext_0063F530(n, mem_00AA235C, 0, 1));
+        ext_004EBAB0(item, s + 0x8C);
+        if (mem_00924FEC(s + 0x8C)) {
+            ext_004275E0(s + 0x8C, ext_0063EFE0(n, mem_00AA23AC));
+        }
+
+        item = normalize_sentinel(ext_0063F530(n, mem_00AA2364, 0, 1));
+        ext_004EBAB0(item, s + 0xA8);
+        if (mem_00924FEC(s + 0xA8)) {
+            ext_004275E0(s + 0xA8, ext_0063EFE0(n, mem_00AA23B4));
+        }
+
+        if (*(s + 0x64) == 0) {
+            void* sub = ext_0045DFB0(n, mem_00AA2388);
+            ext_004A1100(sub, s + 0xC4, mem_00AA2384);
+        }
+
+        item = normalize_sentinel(ext_0063F530(n, mem_00AA2358, 0, 1));
+        ext_004A1100(item, s + 0xD0, mem_00AA2384);
+
+        item = normalize_sentinel(ext_0063F530(n, mem_00AA2380, 0, 1));
+        ext_004A22A0(item, s + 0xDC, mem_00AA237C);
+
+        struct CheckedVecIter {
+            void* container1;
+            void* container2;
+            uint32_t* ptr;
+        };
+
+        void* list_node = normalize_sentinel(ext_0063F530(n, mem_00AA2380, 0, 1));
+        uint8_t* ln = static_cast<uint8_t*>(list_node);
+        uint32_t* begin_ptr = *reinterpret_cast<uint32_t**>(ln + 0x28);
+        uint32_t* end_ptr = *reinterpret_cast<uint32_t**>(ln + 0x2C);
+        if (begin_ptr > end_ptr) {
+            mem_00925134();
+        }
+        CheckedVecIter it{ln + 0x24, ln + 0x24, begin_ptr};
+        ext_00427A60(&it);
+
+        list_node = normalize_sentinel(ext_0063F530(n, mem_00AA2380, 0, 1));
+        ln = static_cast<uint8_t*>(list_node);
+        uint32_t* end_begin = *reinterpret_cast<uint32_t**>(ln + 0x28);
+        uint32_t* end_end = *reinterpret_cast<uint32_t**>(ln + 0x2C);
+        if (end_begin > end_end) {
+            mem_00925134();
+        }
+        CheckedVecIter it_end{ln + 0x24, ln + 0x24, end_end};
+        ext_00427A60(&it_end);
+
+        while (true) {
+            if (!it.container2 || it.container2 != it_end.container2) {
+                mem_00925134();
+            }
+            if (it.ptr >= it_end.ptr) {
+                break;
+            }
+            if (!it.container2) {
+                mem_00925134();
+            }
+            uint32_t* container_end = *reinterpret_cast<uint32_t**>(static_cast<uint8_t*>(it.container2) + 8);
+            if (it.ptr >= container_end) {
+                mem_00925134();
+            }
+            uint8_t* elem = reinterpret_cast<uint8_t*>(*it.ptr);
+            if (mem_00924FC0(elem + 4, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00AA2368)))) {
+                uint8_t sub_state[0x140];
+                ext_0049FF90(sub_state);
+                fn_004A1A40(sub_state, elem);
+                uint8_t* head = *reinterpret_cast<uint8_t**>(s + 0xE0);
+                void* head_prev = *reinterpret_cast<void**>(head + 4);
+                uint8_t* new_node = static_cast<uint8_t*>(ext_004A17C0(s + 0xDC, head, head_prev, sub_state));
+                ext_0049D0F0(s + 0xDC, 1);
+                *reinterpret_cast<uint8_t**>(head + 4) = new_node;
+                *reinterpret_cast<uint8_t**>(*reinterpret_cast<void**>(new_node + 4)) = new_node;
+                ext_0049F8D0(sub_state);
+            }
+            uint32_t* cur_end = *reinterpret_cast<uint32_t**>(static_cast<uint8_t*>(it.container2) + 8);
+            if (it.ptr >= cur_end) {
+                mem_00925134();
+            }
+            it.ptr += 1;
+            ext_00427A60(&it);
+        }
+
+        if (*(s + 0x64) == 0) {
+            *reinterpret_cast<uint32_t*>(s + 0xFC) = 0;
+        }
+        ext_004A0270(s, *reinterpret_cast<uint32_t*>(s + 0xFC));
+        ext_0049DFA0(s, *reinterpret_cast<uint32_t*>(s + 0x130));
+
+        if (*(s + 0x64) == 0) {
+            item = normalize_sentinel(ext_0063F530(n, mem_00AA2374, 0, 1));
+            ext_004973B0(s + 0xE8, item);
+        }
+
+        float w = *reinterpret_cast<float*>(s + 0xF0) - *reinterpret_cast<float*>(s + 0xE8);
+        float h = *reinterpret_cast<float*>(s + 0xF4) - *reinterpret_cast<float*>(s + 0xEC);
+        if (!(w > 0.0f && h > 0.0f)) {
+            *reinterpret_cast<float*>(s + 0xE8) = mem_0093F8EC;
+            *reinterpret_cast<float*>(s + 0xEC) = mem_0093F8EC;
+            *reinterpret_cast<float*>(s + 0xF0) = mem_00940694;
+            *reinterpret_cast<float*>(s + 0xF4) = mem_00940690;
+        }
+
+        item = ext_0063EFE0(n, 0x009404B0u);
+        ext_0053F5F0(s + 0xF8, &item);
+
+        item = normalize_sentinel(ext_0063F530(n, mem_00AA2390, 0, 1));
+        ext_0049FE40(item, s + 0x11C, mem_00AA238C, 1);
+
+        item = normalize_sentinel(ext_0063F530(n, mem_00A9F1F4, 0, 1));
+        ext_0049F540(item, s + 0x38, mem_00A9F104, 0);
+
+        mem_00924FF4(tmp_str);
+        return;
+    }
+
+    if (mem_00924FC0(n + 4, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00AA2368)))) {
+        *(s + 0x64) = 1;
+        ext_004275E0(s + 0x48, ext_0063EFE0(n, mem_00AA23BC));
+        ext_004973B0(s + 0xE8, ext_0045DFB0(n, mem_00AA2374));
+        void* sub = ext_0045DFB0(n, mem_00AA2388);
+        ext_004A1100(sub, s + 0xC4, mem_00AA2384);
+
+        uint8_t s2[32];
+        mem_00924FE8(s2);
+
+        struct LocalObj {
+            uintptr_t vtable;
+            void* owner;
+            void* str;
+        } local_obj{0x00940458u, s, s2};
+
+        uint8_t tmp_str2[32];
+        void* ret_str = ext_0049AA80(s, tmp_str2);
+        const char* cstr = mem_00924FF0(ret_str);
+        using VFunc8 = void (__thiscall *)(void*, const char*, uint32_t);
+        VFunc8 fn8 = *reinterpret_cast<VFunc8*>(local_obj.vtable + 0x20);
+        fn8(&local_obj, cstr, 0);
+        mem_00924FF4(tmp_str2);
+
+        ext_006824E0(n, s + 0x1C, 1, mem_00AA23DC);
+        ext_0065C660(&local_obj);
+        mem_00924FF4(s2);
+        return;
+    }
+
+    uint8_t err_str[32];
+    mem_00924FE4(err_str, reinterpret_cast<const char*>(0x00940648u));
+    uint8_t exc[64];
+    ext_00403560(exc, err_str);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009D47A4u));
+}
+} // namespace lift_004A1A40

@@ -1,0 +1,148 @@
+{
+  "va": "0x004A1A40",
+  "size": 2140,
+  "orig_symbol": "NMData::State::vfunc_1",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_1",
+  "class": "NMData::State",
+  "signature": "static void* normalize_sentinel(void* p)",
+  "summary": "Loads an NMData::State (or StateRef) from an XML node, parsing properties, child states, bounds, and references.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "adjusted_base"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "field_0x48"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x65",
+      "type": "uint8_t",
+      "name": "field_0x65"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x6C",
+      "type": "uint8_t",
+      "name": "field_0x6C"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x70",
+      "type": "void*",
+      "name": "field_0x70"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x8C",
+      "type": "void*",
+      "name": "field_0x8C"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xA8",
+      "type": "void*",
+      "name": "field_0xA8"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xC4",
+      "type": "void*",
+      "name": "field_0xC4"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xD0",
+      "type": "void*",
+      "name": "list_head"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xDC",
+      "type": "void*",
+      "name": "field_0xDC"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE0",
+      "type": "void*",
+      "name": "field_0xE0"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE8",
+      "type": "float",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "field_0xEC"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xF0",
+      "type": "float",
+      "name": "field_0xF0"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xF4",
+      "type": "float",
+      "name": "field_0xF4"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xF8",
+      "type": "int32_t",
+      "name": "field_0xF8"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xFC",
+      "type": "uint32_t",
+      "name": "field_0xFC"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x11C",
+      "type": "void*",
+      "name": "field_0x11C"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x130",
+      "type": "uint32_t",
+      "name": "field_0x130"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:00:46Z"
+}
