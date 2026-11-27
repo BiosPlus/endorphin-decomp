@@ -1,0 +1,22 @@
+{
+  "va": "0x004DDD30",
+  "size": 194,
+  "orig_symbol": "NMData::RigEventData::vfunc_88",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_88",
+  "class": "NMData::RigEventData",
+  "signature": "extern \"C\" void __thiscall fn_004DDD30(void* self)",
+  "summary": "Collects a 3-word vector via ext_00660A50 on this+0x16C, then forwards its first elements to ext_004DDA90 and frees the buffer.",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:10:40Z"
+}

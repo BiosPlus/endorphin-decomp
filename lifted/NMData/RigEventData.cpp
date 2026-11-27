@@ -404,3 +404,46 @@ void fn_004DC4F0(void* self, void* arg) {
     ext_004026E0(tmp_vec);
 }
 } // namespace lift_004DC4F0
+
+// [0x004DDD30] NMData::RigEventData::vfunc_88 (194 bytes)
+namespace lift_004DDD30 {
+extern void* ext_00660A50(void* a, void* b, uint32_t c);
+extern void __thiscall ext_004DA820(void* self);
+extern void __thiscall ext_004DDA90(void* self, uint32_t a, uint32_t b, uint32_t c, uint32_t d);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+extern void* mem_00925134;
+extern uint32_t mem_00B40640;
+
+// @name NMData::RigEventData::vfunc_88
+// @class NMData::RigEventData
+// @summary Collects a 3-word vector via ext_00660A50 on this+0x16C, then forwards its first elements to ext_004DDA90 and frees the buffer.
+// @field NMData::RigEventData +0x16C void* field_0x16C
+extern void __thiscall fn_004DDD30(void* self) {
+    // SEH frame setup/teardown (fs:[0] push/pop) and CRT _invalid_parameter_noinfo
+    // guard are omitted: the guard branch is unreachable because the element count
+    // is known non-zero at that point.
+    (void)&mem_00925134;
+
+    uint32_t vec[3] = {0, 0, 0};
+    void* tmp = ext_00660A50(static_cast<uint8_t*>(self) + 0x16C, vec, 0);
+    ext_004DA820(tmp);
+
+    const uint32_t begin = vec[0];
+    if (begin == 0) {
+        return;
+    }
+
+    const uint32_t end = vec[1];
+    const int32_t bytes = static_cast<int32_t>(end - begin);
+    const int32_t count = bytes >> 2;
+    if (count != 0) {
+        const auto* elems = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(begin));
+        const uint32_t first = elems[0];
+        const uint32_t second = (count == 2) ? elems[1] : 0u;
+        ext_004DDA90(self, first, second, mem_00B40640, mem_00B40640);
+    }
+
+    ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(begin)));
+}
+} // namespace lift_004DDD30

@@ -24020,6 +24020,13 @@
     "summary": "Pure jump thunk forwarding to sub_004DCB90.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004DDD30": {
+    "name": "NMData::RigEventData::vfunc_88",
+    "class": "NMData::RigEventData",
+    "signature": "extern \"C\" void __thiscall fn_004DDD30(void* self)",
+    "summary": "Collects a 3-word vector via ext_00660A50 on this+0x16C, then forwards its first elements to ext_004DDA90 and frees the buffer.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004DDE00": {
     "name": "clearFlag_004DDE00",
     "signature": "void sub_004DDE00()",
