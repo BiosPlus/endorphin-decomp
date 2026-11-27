@@ -1,0 +1,87 @@
+{
+  "va": "0x006B4FF0",
+  "size": 153,
+  "orig_symbol": "sub_006B4FF0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006B4FF0",
+  "signature": "extern \"C\" void* __thiscall fn_006B4FF0(void* self, uint8_t arg0, uint8_t arg1, uint8_t arg2)",
+  "summary": "Constructor initializing vtables, embedded subobject at +0x68, and byte fields at +0xdc..+0xde",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "uint8_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD4",
+      "type": "uint32_t",
+      "name": "field_0xd4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD8",
+      "type": "uint32_t",
+      "name": "field_0xd8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "uint8_t",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDD",
+      "type": "uint8_t",
+      "name": "field_0xdd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDE",
+      "type": "uint8_t",
+      "name": "field_0xde"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T09:01:10Z"
+}

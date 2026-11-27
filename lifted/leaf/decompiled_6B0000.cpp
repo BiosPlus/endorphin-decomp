@@ -3096,3 +3096,47 @@ void fn_006BB870(void* self) {
     ext_006B9D70(temp);
 }
 } // namespace lift_006BB870
+
+// [0x006B4FF0]
+namespace lift_006B4FF0 {
+// @name sub_006B4FF0
+// @summary Constructor initializing vtables, embedded subobject at +0x68, and byte fields at +0xdc..+0xde
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x54 uint32_t field_0x54
+// @field Unknown +0x58 uint32_t field_0x58
+// @field Unknown +0x5c uint32_t field_0x5c
+// @field Unknown +0x60 uint32_t field_0x60
+// @field Unknown +0x64 uint8_t field_0x64
+// @field Unknown +0x68 uint8_t field_0x68
+// @field Unknown +0xd4 uint32_t field_0xd4
+// @field Unknown +0xd8 uint32_t field_0xd8
+// @field Unknown +0xdc uint8_t field_0xdc
+// @field Unknown +0xdd uint8_t field_0xdd
+// @field Unknown +0xde uint8_t field_0xde
+
+
+extern void __thiscall ext_006A5C6E(void* self);
+extern void __thiscall ext_006B0CA0(void* self);
+
+extern void* __thiscall fn_006B4FF0(void* self, uint8_t arg0, uint8_t arg1, uint8_t arg2) {
+    ext_006A5C6E(self);
+
+    lift_field<uint32_t>(self, 0x54) = 0x0099201C;
+    lift_field<uint32_t>(self, 0x00) = 0x0099202C;
+    lift_field<uint32_t>(self, 0x54) = 0x00992024;
+    lift_field<uint32_t>(self, 0x58) = 0;
+    lift_field<uint32_t>(self, 0x60) = 0;
+    lift_field<uint32_t>(self, 0x5C) = 0x0092A5D4;
+    lift_field<uint8_t>(self, 0x64) = 0;
+
+    ext_006B0CA0(static_cast<uint8_t*>(self) + 0x68);
+
+    lift_field<uint32_t>(self, 0xD4) = 0;
+    lift_field<uint8_t>(self, 0xDC) = arg0;
+    lift_field<uint32_t>(self, 0xD8) = 0;
+    lift_field<uint8_t>(self, 0xDD) = arg2;
+    lift_field<uint8_t>(self, 0xDE) = arg1;
+
+    return self;
+}
+} // namespace lift_006B4FF0

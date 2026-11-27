@@ -70361,6 +70361,13 @@
     "summary": "Sets field_0x10 to the given value, sets field_0x17 to 1, and updates flag 0x10 on field_0x0c + 0x1f0 depending on whether value is 1 or 2.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D91D0": {
+    "name": "Unknown::getTypeName_006D91D0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_006D91D0(void* self, void* out)",
+    "summary": "Copies a type-name string into out based on field_0x10 (0..2) and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D9450": {
     "name": "sub_006D9450",
     "signature": "extern \"C\" void __fastcall fn_006D9450(void* self)",
