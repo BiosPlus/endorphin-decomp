@@ -55118,6 +55118,13 @@
     "summary": "Lazily initializes a static singleton at 0x00B45F98 with vtable 0x0096AB94 and returns its pointer.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EB5A0": {
+    "name": "NMData::RelationshipData::vfunc_22",
+    "class": "NMData::RelationshipData",
+    "signature": "void* __thiscall fn_005EB5A0(void* self, void* arg0)",
+    "summary": "Serializes RelationshipData fields, child relationships, and flags into the target data node.",
+    "lifted_path": "lifted/NMData/RelationshipData.cpp"
+  },
   "0x005EB890": {
     "name": "NMData::FixedPathJointData::vfunc_10_off_C",
     "class": "NMData::FixedPathJointData",
@@ -60267,6 +60274,13 @@
     "class": "NMData::MetaBodySensorData",
     "signature": "void* fn_00610780(void* self, void* arg)",
     "summary": "Forwards the incoming pointer with the address of this+0x154 and a zero flag to ext_006105E0, then returns the incoming pointer.",
+    "lifted_path": "lifted/NMData/MetaBodySensorData.cpp"
+  },
+  "0x006107B0": {
+    "name": "NMData::MetaBodySensorData::vfunc_59",
+    "class": "NMData::MetaBodySensorData",
+    "signature": "inline void* addr(uint32_t v)",
+    "summary": "Resolves an entry from arg1 via lookups gated on two strings, builds a result object through sub_006104E0 using subobject +0x154, calls its vfunc at +0x68, stores the float pair as doubles, and caches the result and value in this.",
     "lifted_path": "lifted/NMData/MetaBodySensorData.cpp"
   },
   "0x006108F0": {

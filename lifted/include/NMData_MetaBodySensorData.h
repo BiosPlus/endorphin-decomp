@@ -10,9 +10,13 @@
 // Recovered field layout for NMData::MetaBodySensorData:
 namespace lifted_layout {
 struct NMData_MetaBodySensorData_Fields {
+    // +0x154 uint8_t                  field_0x154  (evidence: 0x006107B0)
+    // +0x170 void*                    field_0x170  (evidence: 0x006107B0)
+    // +0x174 float                    field_0x174  (evidence: 0x006107B0)
+    // +0x178 float                    field_0x178  (evidence: 0x006107B0)
     // +0x180 std::string              field_0x180  (evidence: 0x0060E6C0)
-    // +0x19C std::string              field_0x19c  (evidence: 0x0060E6C0)
-    // +0x1B8 int32_t                  field_0x1b8  (evidence: 0x0060E6C0)
-    // +0x1BC std::string              field_0x1bc  (evidence: 0x0060E6C0)
+    // +0x19C std::string              field_0x19c  (evidence: 0x0060E6C0, 0x006107B0)
+    // +0x1B8 int32_t                  field_0x1b8  (evidence: 0x0060E6C0, 0x006107B0)
+    // +0x1BC std::string              field_0x1bc  (evidence: 0x0060E6C0, 0x006107B0)
 };
 } // namespace lifted_layout

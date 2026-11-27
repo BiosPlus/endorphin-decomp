@@ -125,3 +125,92 @@ void* fn_0060E6C0(void* self, void* a1) {
     return a1;
 }
 } // namespace lift_0060E6C0
+
+// [0x006107B0] NMData::MetaBodySensorData::vfunc_59 (313 bytes)
+namespace lift_006107B0 {
+// Known callee 0x0040C010: CArray::GetAt (thiscall, element at index from a begin/end-pointer array)
+extern uint32_t ext_0040C010(void* self, uint32_t index);
+// Known callee 0x00594000: sub_00594000 (cdecl, returns global int32 from mem_00B40D08)
+extern int32_t ext_00594000();
+// Known callee 0x00594620: sub_00594620 (member forwarding thunk, loads subobject at +0x26C)
+extern uint32_t ext_00594620(void* self);
+// Known callee 0x005DF5C0: sub_005DF5C0 (thiscall lookup, returns object or 0)
+extern uint32_t ext_005DF5C0(void* self);
+// Known callee 0x005ED5D0: sub_005ED5D0 (thiscall lookup, returns object)
+extern uint32_t ext_005ED5D0(void* self);
+// Known callee 0x006104E0: sub_006104E0 (takes subobject pointer and a 4-word argument block, returns object)
+extern uint32_t ext_006104E0(void* subobj, uint32_t* args);
+// MSVCP80 std::string::empty import slot (used via function pointer)
+extern int mem_00924FEC;
+// MSVCP80 std::string copy-ctor import slot: only feeds unused temporaries; metadata reference only.
+extern int mem_00924FE0;
+
+namespace {
+
+inline void* addr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// std::string::empty() via the import slot (thiscall; receiver passed as first arg).
+inline bool string_empty(void* s) {
+    using EmptyFn = bool (*)(void*);
+    return reinterpret_cast<EmptyFn>(addr(static_cast<uint32_t>(mem_00924FEC)))(s);
+}
+
+}  // namespace
+
+// @name NMData::MetaBodySensorData::vfunc_59
+// @class NMData::MetaBodySensorData
+// @summary Resolves an entry from arg1 via lookups gated on two strings, builds a result object through sub_006104E0 using subobject +0x154, calls its vfunc at +0x68, stores the float pair as doubles, and caches the result and value in this.
+// @field NMData::MetaBodySensorData +0x154 uint8_t field_0x154
+// @field NMData::MetaBodySensorData +0x170 void* field_0x170
+// @field NMData::MetaBodySensorData +0x174 float field_0x174
+// @field NMData::MetaBodySensorData +0x178 float field_0x178
+// @field NMData::MetaBodySensorData +0x19C std::string field_0x19c
+// @field NMData::MetaBodySensorData +0x1B8 int32_t field_0x1b8
+// @field NMData::MetaBodySensorData +0x1BC std::string field_0x1bc
+void* fn_006107B0(void* self, void* a1, uint32_t a2) {
+    (void)a2;  // ret 8: second stack argument is not read by this body
+    (void)&mem_00924FE0;
+
+    uint8_t* arg = static_cast<uint8_t*>(a1);
+    uint8_t* me = static_cast<uint8_t*>(self);
+
+    uint32_t edi = ext_005ED5D0(arg + 0x598);
+
+    uint32_t ebx;
+    if (string_empty(me + 0x19C)) {
+        ebx = edi;
+    } else {
+        ebx = ext_005DF5C0(arg + 0x598);
+        if (ebx == 0) {
+            int32_t g = ext_00594000();
+            uint32_t elem = ext_0040C010(addr(static_cast<uint32_t>(g)), 0);
+            ebx = ext_005ED5D0(addr(elem + 0x598));
+        }
+    }
+
+    // Fallback value ([esp+0x1c] in the original) is not recoverable from the disassembly; 0 is used.
+    uint32_t s = 0;
+    if (!string_empty(me + 0x1BC)) {
+        int32_t g = ext_00594000();
+        s = ext_00594620(addr(static_cast<uint32_t>(g)));
+    }
+
+    uint32_t ebp = lift_field<uint32_t>(me, 0x1B8);
+    uint32_t args[4] = {edi, ebx, s, ebp};
+    uint32_t result = ext_006104E0(me + 0x154, args);
+
+    void* obj = addr(result);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    uint32_t args2[4] = {edi, ebx, s, ebp};
+    using VFn = uint32_t (*)(void*, uint32_t*);
+    reinterpret_cast<VFn>(vtbl[26])(obj, args2);
+
+    lift_field<double>(obj, 0x18) = static_cast<double>(lift_field<float>(me, 0x174));
+    lift_field<double>(obj, 0x20) = static_cast<double>(lift_field<float>(me, 0x178));
+    lift_field<uint32_t>(me, 0x1B8) = s;
+    lift_field<uint32_t>(me, 0x170) = result;
+    return obj;
+}
+} // namespace lift_006107B0
