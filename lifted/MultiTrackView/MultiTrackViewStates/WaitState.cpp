@@ -142,3 +142,76 @@ uint8_t fn_00443200(void* self, int32_t a, int32_t b, int32_t c) {
     return 1;
 }
 } // namespace lift_00443200
+
+// [0x004430A0] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_7 (221 bytes)
+namespace lift_004430A0 {
+// Known callee 0x0043C9B0: Unknown::forwardVirtual150WithSubobject80 (Forwards its argument to virtual slot 0x150 on self, passing self+0x80 as the second argument, and returns the result.)
+extern uintptr_t ext_0043C9B0(void* self, void* arg);
+// Known callee 0x0043CEB0: lerpByClientWidthRounded (Evaluates lerpByClientWidth for arg, adds the constant at mem_0092BD70, and rounds the result to the nearest int32 (FPU default rounding).)
+extern int32_t ext_0043CEB0(void* self, int32_t arg);
+// Known callee 0x0043D620 (225B): thiscall, out-param pointer, returns object pointer.
+extern void* ext_0043D620(void* self, int32_t* out);
+// Known callee 0x0043F460 (45B): thiscall, one object argument, no return value used.
+extern void ext_0043F460(void* self, void* arg);
+// Known callee 0x004407B0: GetPointerChainDword10 (Returns the DWORD at +0x10 of the pointer stored at self+0x44, or 0 if that pointer is null.)
+extern DWORD ext_004407B0(void* self);
+// Known callee 0x004429C0: resetOwnerTimer (Calls helper on owner, clears byte flag at +0x0D, kills owner timer, then restarts it with owner's +0x168 interval.)
+extern void ext_004429C0(void* self);
+// Known callee 0x0043D900 (173B): thiscall, out-param pointer, returns object pointer.
+extern void* ext_0043D900(void* self, int32_t* out);
+// IAT slot: USER32!InvalidateRect (stdcall).
+extern uintptr_t mem_00925688;
+// IAT slot: USER32!UpdateWindow (stdcall).
+extern uintptr_t mem_0092568C;
+
+// Vtable dispatch helper: calls slot `Slot` of `obj`, passing obj as this.
+namespace lift_004430A0 {
+template <typename R, std::size_t Slot, typename... A>
+inline R lift_vcall(void* obj, A... args) {
+    void** vt = lift_field<void**>(obj, 0);
+    using Fn = R (*)(void*, A...);
+    return reinterpret_cast<Fn>(vt[Slot])(obj, args...);
+}
+}  // namespace lift_004430A0
+
+// @name MultiTrackView::MultiTrackViewStates::WaitState::vfunc_7
+// @class MultiTrackView::MultiTrackViewStates::WaitState
+// @summary Refreshes the owner's timer and window, resolves a target object, and dispatches vtable slot 6 or 7 on it; always returns true.
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x08 void* owner
+BOOLEAN fn_004430A0(void* self, int32_t arg1, int32_t arg2, int32_t arg3) {
+    using InvalidateRectFn = int32_t(__stdcall*)(void*, const void*, int32_t);
+    using UpdateWindowFn = int32_t(__stdcall*)(void*);
+
+    ext_004429C0(self);
+    void* owner = lift_field<void*>(self, 0x08);
+    void* target = ext_0043D900(owner, &arg2);
+
+    if (target != nullptr && (arg1 & 0x8) == 0) {
+        // owner->+0xA0 = target
+        lift_field<void*>(owner, 0xA0) = target;
+        if (lift_field<uint8_t>(target, 0x88) == 0 && lift_field<uint8_t>(target, 0x8E) != 0) {
+            ext_0043F460(owner, target);
+        }
+        (void)ext_0043C9B0(owner, nullptr);
+
+        // InvalidateRect(owner->+0x20, NULL, TRUE); UpdateWindow(owner->+0x20);
+        void* hwnd = lift_field<void*>(owner, 0x20);
+        reinterpret_cast<InvalidateRectFn>(mem_00925688)(hwnd, nullptr, 1);
+        hwnd = lift_field<void*>(owner, 0x20);
+        reinterpret_cast<UpdateWindowFn>(mem_0092568C)(hwnd);
+
+        const DWORD d = ext_004407B0(target);
+        if (d != 0) {
+            void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(d));
+            lift_004430A0::lift_vcall<void, 6>(obj, target, arg2, arg3);
+        }
+    } else {
+        void* b = ext_0043D620(owner, &arg2);
+        if (b != nullptr) {
+            const int32_t r = ext_0043CEB0(owner, arg1);
+            lift_004430A0::lift_vcall<void, 7>(b, arg2, arg3, r);
+        }
+    }
+    return 1;
+}
+} // namespace lift_004430A0

@@ -5525,6 +5525,13 @@
     "summary": "Toggles the owner's redraw timer based on the armed byte at +0x0D, then, if the left button is held and the cursor is left of owner+0xfc, marks the hit item at +0x38 when its id matches +0x10.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp"
   },
+  "0x004430A0": {
+    "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_7",
+    "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+    "signature": "inline R lift_vcall(void* obj, A... args)",
+    "summary": "Refreshes the owner's timer and window, resolves a target object, and dispatches vtable slot 6 or 7 on it; always returns true.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp"
+  },
   "0x00443200": {
     "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_12",
     "class": "MultiTrackView::MultiTrackViewStates::WaitState",

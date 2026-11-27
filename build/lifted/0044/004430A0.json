@@ -1,0 +1,22 @@
+{
+  "va": "0x004430A0",
+  "size": 221,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_7",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_7",
+  "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+  "signature": "inline R lift_vcall(void* obj, A... args)",
+  "summary": "Refreshes the owner's timer and window, resolves a target object, and dispatches vtable slot 6 or 7 on it; always returns true.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "owner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:49:55Z"
+}
