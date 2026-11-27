@@ -78538,6 +78538,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0074F910 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
   },
+  "0x0074F990": {
+    "name": "Unknown::openFileOrFallback_0074F990",
+    "class": "Unknown",
+    "signature": "extern \"C\" BYTE fn_0074F990(void* self, const char* filename)",
+    "summary": "Opens the named file with fopen and stores the handle at +0xAC; on failure assigns the name via fn_006E7440 at +0x08 and returns false, on success assigns it via fn_006B9EC0 at +0xB0 and returns true. Any previously open handle is released through vtable slot 2 first.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x007511F4": {
     "name": "DataTable_007511F4",
     "signature": "std::optional\u003cuint8_t\u003e fn_007511F4(uint32_t key)",

@@ -25,6 +25,7 @@ void* __thiscall fn_0074F820(void* self, void* obj, uint32_t index) {
 }
 } // namespace lift_006D2AA0
 } // namespace lift_0074F820
+#include <cstdio>
 
 // [0x0074F650] sub_0074F650 (48 bytes)
 namespace lift_0074F650 {
@@ -395,3 +396,44 @@ bool fn_00747580(void* self, void* obj) {
     return true;
 }
 } // namespace lift_00747580
+
+// [0x0074F990] sub_0074F990 (84 bytes)
+namespace lift_0074F990 {
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* ext_006B9EC0(void* self, const char* s);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+extern int mem_009252A8;
+
+// @name Unknown::openFileOrFallback_0074F990
+// @class Unknown
+// @summary Opens the named file with fopen and stores the handle at +0xAC; on failure assigns the name via fn_006E7440 at +0x08 and returns false, on success assigns it via fn_006B9EC0 at +0xB0 and returns true. Any previously open handle is released through vtable slot 2 first.
+// @field Unknown +0x00 void** vtbl
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0xAC FILE* file
+// @field Unknown +0xB0 void* field_0xB0
+extern BYTE fn_0074F990(void* self, const char* filename) {
+    // Mode string at 0x00AAE64C; its contents were not recovered in this lift.
+    static const char* const kOpenMode = "rb";
+
+    // Release a previously opened handle through vtable slot 2 (+0x08).
+    FILE*& file = lift_field<FILE*>(self, 0xAC);
+    if (file != nullptr) {
+        void** vtbl = lift_field<void**>(self, 0x00);
+        using CloseSlot = void (*)(void*);
+        reinterpret_cast<CloseSlot>(vtbl[2])(self);
+    }
+
+    // The original calls through the IAT slot mem_009252A8 (fopen).
+    (void)&mem_009252A8;
+    file = std::fopen(filename, kOpenMode);
+
+    if (file == nullptr) {
+        ext_006E7440(&lift_field<char>(self, 0x08), 3);
+        return 0;
+    }
+
+    ext_006B9EC0(&lift_field<char>(self, 0xB0), filename);
+    return 1;
+}
+} // namespace lift_0074F990
