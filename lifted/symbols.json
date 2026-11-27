@@ -53442,6 +53442,13 @@
     "summary": "Starts from a packed 3x3 identity, applies ext_006951E0 with the stack parameter, then copies the result into the padded matrix at self.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067E650": {
+    "name": "Unknown::initTransformFromFloat",
+    "class": "Unknown",
+    "signature": "void fn_0067E650(void* self, float a)",
+    "summary": "Fills a scratch 3x3 identity-like block, calls helpers on it, then sets the bottom row of the 4x4 matrix at self to (0, 0, 0, 1).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067EC60": {
     "name": "initZeroDouble",
     "signature": "void* __thiscall sub_0067EC60(void* self)",

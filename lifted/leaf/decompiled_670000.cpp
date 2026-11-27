@@ -2315,3 +2315,37 @@ void fn_0067E600(void* self, const void* p) {
     ext_0067DB10(self, m);
 }
 } // namespace lift_0067E600
+
+// [0x0067E650] sub_0067E650 (98 bytes)
+namespace lift_0067E650 {
+// Unknown callee 0x00658880 (thiscall: ecx = this, one float stack argument, callee pops).
+extern void ext_00658880(void* self, float value);
+
+// Known callee 0x0067DB10: copyPacked3x3ToPaddedMatrix (Copies a packed 3x3 float matrix (36 bytes) from src into a 4-float-stride matrix at self (rows at +0x00, +0x10, +0x20), leaving the padding slots untouched.)
+extern void ext_0067DB10(void* self, const void* src);
+
+// @name Unknown::initTransformFromFloat
+// @class Unknown
+// @summary Fills a scratch 3x3 identity-like block, calls helpers on it, then sets the bottom row of the 4x4 matrix at self to (0, 0, 0, 1).
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3c float field_0x3c
+void fn_0067E650(void* self, float a) {
+    // Scratch frame mirroring the stack slots used by the original code:
+    // frame[0] = saved esi (self bits), frame[1..9] = 3x3 block (identity pattern).
+    float frame[10] = {};
+    frame[0] = std::bit_cast<float>(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)));
+    frame[1] = 1.0f;
+    frame[5] = 1.0f;
+    frame[9] = 1.0f;
+
+    ext_00658880(&frame[1], a);
+    ext_0067DB10(self, &frame[0]);
+
+    lift_field<float>(self, 0x30) = 0.0f;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x3c) = 1.0f;
+}
+} // namespace lift_0067E650
