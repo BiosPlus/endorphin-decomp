@@ -1,0 +1,22 @@
+{
+  "va": "0x00488870",
+  "size": 84,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData,float,getEntryBlendPeriod,0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
+  "signature": "std::string* fn_00488870(std::string* out, void* holder)",
+  "summary": "Reads the object pointer held in the argument; if null, throws; otherwise formats getEntryBlendPeriod() into the sret string and returns it.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:01:38Z"
+}

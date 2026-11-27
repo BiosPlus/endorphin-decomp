@@ -62806,3 +62806,34 @@ void* __stdcall fn_00695A70(void* out, const void* self) {
     return out;
 }
 } // namespace lift_00695A70
+
+// [0x00488870] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_00488870 {
+// Callee prototypes (not yet lifted; the thiscall getter returns float in st0).
+extern float ext_00486970(void* self);
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern std::string* ext_0046C390(std::string* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData,float,getEntryBlendPeriod,0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Reads the object pointer held in the argument; if null, throws; otherwise formats getEntryBlendPeriod() into the sret string and returns it.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+std::string* fn_00488870(std::string* out, void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj == nullptr) {
+        // Original builds a local exception object in the 0x28-byte frame slot at esp+4,
+        // constructs it, then throws through the CRT throw thunk.
+        alignas(16) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return out;
+    }
+    float value = ext_00486970(obj);
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_00488870
