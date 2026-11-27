@@ -77845,6 +77845,12 @@
     "summary": "Reads a count at list+0x00 and an item-pointer array at list+0x10; calls ext_006BA780(item, arg1) on each item in order and returns the index of the first nonzero result, or -1 if none (or count \u003c= 0).",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x007435A0": {
+    "name": "matchStringOption",
+    "signature": "extern \"C\" int __cdecl sub_007435A0(const char* str)",
+    "summary": "Returns 1 if input equals mem_00AAE5C0, 2 if it equals mem_00AAE5B0, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x00743AB0": {
     "name": "sub_00743AB0",
     "signature": "extern \"C\" void* __fastcall fn_00743AB0(void* self, int edx_unused, unsigned int flags)",
