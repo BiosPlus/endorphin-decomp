@@ -5493,3 +5493,55 @@ uint32_t* __stdcall fn_0043E360(uint32_t* base, uint32_t count, uint32_t arg) {
     return base + count;
 }
 } // namespace lift_0043E360
+
+// [0x00437230] sub_00437230 (139 bytes)
+namespace lift_00437230 {
+// Known callee 0x00435CC0: AllocTriple (Allocates a 12-byte block and fills it with two dwords and the dword that a3 points to; returns the block or null.)
+extern void ext_00435CC0();
+// Known callee 0x006658F0: sub_006658F0 (Auto-lifted identical-shape clone of 0x0049D050 (BoundedAddToField08).)
+extern void ext_006658F0();
+// Known callee 0x006A653E: thunk_MFC80_ord_5725 (IAT jump thunk forwarding to MFC80!ord_5725.)
+extern void ext_006A653E();
+
+// @name Owner::AttachNewBlock
+// @class Owner
+// @summary Calls a virtual on a1 (vtable+0x170); if it succeeds, notifies a1 via a thunk and, when a6 is nonzero, allocates a block linked into field_0xE8 and returns true.
+// @field Owner +0xE8 uint8_t field_0xE8[8]
+bool fn_00437230(void* self, void* a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6) {
+    // Virtual call: vtable(a1)+0x170 (__thiscall: ecx=a1; stack: a2, self, a3, a4|0x50000000; callee cleans).
+    using VFn = uint32_t(__thiscall*)(void* obj, uint32_t p1, void* owner, uint32_t p2, uint32_t p3);
+    void* vtbl = *reinterpret_cast<void**>(a1);
+    auto vfn = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x170));
+    uint32_t ok = vfn(a1, a2, self, a3, a4 | 0x50000000u);
+    if (ok == 0) {
+        return false;
+    }
+    // Thunk call: ecx=a1; one stack arg = (a1->field_0x80 | a5 | 0x34).
+    using ThunkFn = void(__thiscall*)(void* obj, uint32_t flags);
+    uint32_t flags = lift_field<uint32_t>(a1, 0x80) | a5 | 0x34u;
+    reinterpret_cast<ThunkFn>(ext_006A653E)(a1, flags);
+
+    if ((a6 & 0xFFu) != 0) {
+        // ctx = self + 0xE8 (used as `this` for the next two calls).
+        void* ctx = lift_field<void*>(self, 0xE8);
+        void* node = lift_field<void*>(ctx, 4);             // edi = [ctx+4]
+        uint32_t nodeF4 = lift_field<uint32_t>(node, 4);    // edx = [node+4]
+
+        // AllocTriple(node, nodeF4, &tmp) with tmp = a1 (the original a6 stack slot is overwritten with a1).
+        uint32_t tmp = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(a1));
+        using AllocFn = void*(__thiscall*)(void* ctxThis, void* n1, uint32_t n2, const uint32_t* p3);
+        void* blk = reinterpret_cast<AllocFn>(ext_00435CC0)(ctx, node, nodeF4, &tmp);
+
+        // sub_006658F0(ctx, 1)
+        using GrowFn = void(__thiscall*)(void* ctxThis, uint32_t n);
+        reinterpret_cast<GrowFn>(ext_006658F0)(ctx, 1u);
+
+        // node->field_0x4 = blk; *(blk->field_0x4) = blk;
+        lift_field<void*>(node, 4) = blk;
+        void* linked = lift_field<void*>(blk, 4);
+        *reinterpret_cast<void**>(linked) = blk;
+    }
+    // Success path (both branches): return true.
+    return true;
+}
+} // namespace lift_00437230
