@@ -1279,3 +1279,31 @@ void* fn_004CDEE0(void) {
     return &mem_00AE4520;
 }
 } // namespace lift_004CDEE0
+
+// [0x004C7270] sub_004C7270 (60 bytes)
+namespace lift_004C7270 {
+extern void ext_0066AC90(void* arg);
+extern int mem_00925354;  // IAT: std::type_info::_name_internal_method
+extern int mem_00924FE4;  // IAT: std::basic_string<char>::basic_string(const char*)
+extern int mem_00A3A44C;  // global std::type_info object (used as `this`)
+extern int mem_00B5CE94;  // __type_info_node pointer constant
+
+// @name TypeInfoNameTempPassthrough_004C7270
+// @summary Fetch the type_info name of the global type object, build a temporary std::string from it, pass the incoming argument to ext_0066AC90, and return that argument unchanged.
+void* fn_004C7270(void* arg) {
+    using NameInternalMethodFn = const char* (__thiscall*)(void* self, const void* node);
+    using StringCtorFn = void (__thiscall*)(void* self, const char* s);
+
+    auto name_internal = *reinterpret_cast<NameInternalMethodFn*>(&mem_00925354);
+    const char* name = name_internal(reinterpret_cast<void*>(&mem_00A3A44C),
+                                     reinterpret_cast<const void*>(&mem_00B5CE94));
+
+    // Temporary std::string (MSVC layout, 28 bytes), constructed from the name.
+    unsigned char str[28] = {};
+    auto string_ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE4);
+    string_ctor(static_cast<void*>(str), name);
+
+    ext_0066AC90(arg);
+    return arg;
+}
+} // namespace lift_004C7270

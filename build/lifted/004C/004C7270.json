@@ -1,0 +1,13 @@
+{
+  "va": "0x004C7270",
+  "size": 60,
+  "orig_symbol": "sub_004C7270",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "TypeInfoNameTempPassthrough_004C7270",
+  "signature": "extern \"C\" int mem_00924FE4;  // IAT: std::basic_string\u003cchar\u003e::basic_string(const char*) extern \"C\" int mem_00A3A44C;  // global std::type_info object (used as `this`) extern \"C\" int mem_00B5CE94;  // __type_info_node pointer constant void* fn_004C7270(void* arg)",
+  "summary": "Fetch the type_info name of the global type object, build a temporary std::string from it, pass the incoming argument to ext_0066AC90, and return that argument unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:12:59Z"
+}

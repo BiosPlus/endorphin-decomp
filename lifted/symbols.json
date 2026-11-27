@@ -19760,6 +19760,12 @@
     "summary": "Copy constructor: copies the base exception, sets the vtable, and copy-constructs two std::string members.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C7270": {
+    "name": "TypeInfoNameTempPassthrough_004C7270",
+    "signature": "extern \"C\" int mem_00924FE4;  // IAT: std::basic_string\u003cchar\u003e::basic_string(const char*) extern \"C\" int mem_00A3A44C;  // global std::type_info object (used as `this`) extern \"C\" int mem_00B5CE94;  // __type_info_node pointer constant void* fn_004C7270(void* arg)",
+    "summary": "Fetch the type_info name of the global type object, build a temporary std::string from it, pass the incoming argument to ext_0066AC90, and return that argument unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C72D0": {
     "name": "CopyRangeBackward_004C72D0",
     "signature": "extern uint8_t* __cdecl fn_004C72D0(uint8_t* first, uint8_t* last, uint8_t* d_last)",
