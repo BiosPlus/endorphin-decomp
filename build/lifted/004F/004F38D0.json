@@ -1,0 +1,22 @@
+{
+  "va": "0x004F38D0",
+  "size": 278,
+  "orig_symbol": "VMCSModes::EditMode::vfunc_116",
+  "src_path": "src/VMCSModes/EditMode.cpp",
+  "lifted_path": "lifted/VMCSModes/EditMode.cpp",
+  "name": "VMCSModes::EditMode::vfunc_116",
+  "class": "VMCSModes::EditMode",
+  "signature": "void fn_004F38D0(void* self, uint32_t arg0)",
+  "summary": "Renders or updates edit mode geometry with optional highlight color under a scoped lock/stop-request guard.",
+  "fields": [
+    {
+      "class": "VMCSModes::EditMode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:17:10Z"
+}

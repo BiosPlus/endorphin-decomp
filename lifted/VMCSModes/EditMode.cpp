@@ -57,3 +57,66 @@ void fn_004F2F90(void* self) {
         ext_00530290(d, static_cast<uint32_t>(ebx));
 }
 } // namespace lift_004F2F90
+
+// [0x004F38D0]
+namespace lift_004F38D0 {
+// @name VMCSModes::EditMode::vfunc_116
+// @class VMCSModes::EditMode
+// @summary Renders or updates edit mode geometry with optional highlight color under a scoped lock/stop-request guard.
+// @field VMCSModes::EditMode +0x08 void* field_0x08
+
+extern void ext_00472350(void* self);
+extern void ext_005B5810(void* self, int32_t count, const void* vec4);
+extern void ext_005B1B60(void* self, const void* src);
+extern void ext_004F3690(void* self, void* geom, uint32_t arg0, uint32_t arg1);
+extern void ext_005B1870(void* self);
+extern void ext_0046F930(void* self);
+
+extern uint8_t mem_00AD89B4[];
+extern uint8_t mem_009324A4[];
+extern uint8_t mem_00940694[];
+extern uint8_t mem_0094CBE0[];
+
+void fn_004F38D0(void* self, uint32_t arg0) {
+    void* field_08 = lift_field<void*>(self, 0x08);
+    void* guard_obj = lift_field<void*>(field_08, 0x14);
+
+    if (guard_obj != nullptr) {
+        if (*reinterpret_cast<int32_t*>(mem_00AD89B4) == 0) {
+            lift_field<uint8_t>(guard_obj, 0x153) = 1;
+            ext_00472350(guard_obj);
+        }
+        *reinterpret_cast<int32_t*>(mem_00AD89B4) += 1;
+    }
+
+    alignas(16) uint8_t geom[0x60]{};
+    float color1[4] = {
+        *reinterpret_cast<const float*>(mem_009324A4),
+        1.0f,
+        0.0f,
+        1.0f,
+    };
+    ext_005B5810(geom, 4, color1);
+
+    if ((arg0 & 0xFFu) != 0) {
+        float color2[4] = {
+            *reinterpret_cast<const float*>(mem_00940694),
+            *reinterpret_cast<const float*>(mem_0094CBE0),
+            *reinterpret_cast<const float*>(mem_0094CBE0),
+            1.0f,
+        };
+        ext_005B1B60(geom, color2);
+    }
+
+    ext_004F3690(self, geom, arg0, 0);
+    ext_005B1870(geom);
+
+    if (guard_obj != nullptr) {
+        *reinterpret_cast<int32_t*>(mem_00AD89B4) -= 1;
+        if (*reinterpret_cast<int32_t*>(mem_00AD89B4) == 0) {
+            lift_field<uint8_t>(guard_obj, 0x153) = 0;
+            ext_0046F930(guard_obj);
+        }
+    }
+}
+} // namespace lift_004F38D0
