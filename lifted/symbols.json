@@ -78253,6 +78253,13 @@
     "summary": "Setter storing uint8_t argument into field at offset +0x14.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072C060": {
+    "name": "Unknown::guardedConditionalCopy_0072C060",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0072C060(uint8_t* self, void* arg)",
+    "summary": "Runs conditionalAllocAndCopy on the subobject at +0x18 with the argument's address, then runs the cleanup thunk on a stack-resident guard object.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072C0B0": {
     "name": "sub_0072C0B0_ctor",
     "signature": "void* __thiscall fn_0072C0B0(void* self, uint32_t arg0)",

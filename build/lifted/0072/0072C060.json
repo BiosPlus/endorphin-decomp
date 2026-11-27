@@ -1,0 +1,22 @@
+{
+  "va": "0x0072C060",
+  "size": 80,
+  "orig_symbol": "sub_0072C060",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::guardedConditionalCopy_0072C060",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0072C060(uint8_t* self, void* arg)",
+  "summary": "Runs conditionalAllocAndCopy on the subobject at +0x18 with the argument's address, then runs the cleanup thunk on a stack-resident guard object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:18Z"
+}

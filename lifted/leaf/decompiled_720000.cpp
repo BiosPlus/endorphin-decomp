@@ -1130,3 +1130,24 @@ extern uint8_t __thiscall fn_00728370(void* self, uint32_t arg1, uint32_t arg2) 
     return 1;
 }
 } // namespace lift_00728370
+
+// [0x0072C060] sub_0072C060 (80 bytes)
+namespace lift_0072C060 {
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+// Stack arity is inferred from the call site (three pushed/stored words); not verified against sub_006B9970.
+void __thiscall ext_006B9D70(void* self, void* a1, void* a2, int32_t a3);
+// Known callee 0x006B9E60: Unknown::conditionalAllocAndCopy_006B9E60 (If the argument's type tag check passes, copies its getter values into this object's allocator; otherwise calls sub_006B9920 on this. Returns this.)
+void* __thiscall ext_006B9E60(void* self, void* arg);
+
+// @name Unknown::guardedConditionalCopy_0072C060
+// @class Unknown
+// @summary Runs conditionalAllocAndCopy on the subobject at +0x18 with the argument's address, then runs the cleanup thunk on a stack-resident guard object.
+// @field Unknown +0x18 uint8_t field_0x18
+void __thiscall fn_0072C060(uint8_t* self, void* arg) {
+    // Stack-resident guard object that the original passed in ecx to the cleanup thunk.
+    uint8_t guard_frame[16] = {};
+
+    ext_006B9E60(self + 0x18, &arg);
+    ext_006B9D70(guard_frame, &arg, nullptr, -1);
+}
+} // namespace lift_0072C060
