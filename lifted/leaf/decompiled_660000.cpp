@@ -3351,3 +3351,49 @@ void* __thiscall fn_00666320(void* self, void* arg1, const void* arg2) {
     return self;
 }
 } // namespace lift_00666320
+
+// [0x00666360]
+namespace lift_00666360 {
+// @name sub_00666360_dtor
+// @summary Destructor/cleanup for object at this, clearing mem_00B59420, freeing field_0x2c, destroying subobjects at +0x1c and +0x10, and deleting *this if non-null.
+// @field +0x00 void* field_0x00
+// @field +0x10 uint8_t field_0x10
+// @field +0x1c uint8_t field_0x1c
+// @field +0x2c void* field_0x2c
+// @field +0x30 uint32_t field_0x30
+// @field +0x34 uint32_t field_0x34
+
+
+extern uint32_t mem_00B59420;
+
+extern void __thiscall ext_00666120(void* self);
+extern void __thiscall ext_004369D0(void* self);
+extern void __cdecl ext_006A5C5C(void* ptr);
+
+extern void __thiscall fn_00666360(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    ext_00666120(self);
+
+    mem_00B59420 = 0;
+
+    void* ptr = lift_field<void*>(base, 0x2c);
+    if (ptr != nullptr) {
+        ext_006A5C5C(ptr);
+    }
+
+    lift_field<uint32_t>(base, 0x2c) = 0;
+    lift_field<uint32_t>(base, 0x30) = 0;
+    lift_field<uint32_t>(base, 0x34) = 0;
+
+    ext_004369D0(base + 0x1c);
+    ext_004369D0(base + 0x10);
+
+    void* inner = lift_field<void*>(base, 0x00);
+    if (inner != nullptr) {
+        using deleting_dtor_fn = void(__thiscall*)(void*, int);
+        auto** vtable = *static_cast<deleting_dtor_fn**>(inner);
+        vtable[0](inner, 1);
+    }
+}
+} // namespace lift_00666360

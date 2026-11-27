@@ -1,0 +1,13 @@
+{
+  "va": "0x00666360",
+  "size": 131,
+  "orig_symbol": "sub_00666360",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_00666360_dtor",
+  "signature": "extern \"C\" void __thiscall fn_00666360(void* self)",
+  "summary": "Destructor/cleanup for object at this, clearing mem_00B59420, freeing field_0x2c, destroying subobjects at +0x1c and +0x10, and deleting *this if non-null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:25:33Z"
+}
