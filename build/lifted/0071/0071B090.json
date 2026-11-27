@@ -1,0 +1,22 @@
+{
+  "va": "0x0071B090",
+  "size": 32,
+  "orig_symbol": "sub_0071B090",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::ForwardVirtualOnNamedChild",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0071B090(void* self)",
+  "summary": "Looks up a child object at self+0x0C by a fixed name and tail-calls its virtual slot 0x7C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:14:33Z"
+}

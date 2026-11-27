@@ -73498,6 +73498,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071B090": {
+    "name": "Unknown::ForwardVirtualOnNamedChild",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0071B090(void* self)",
+    "summary": "Looks up a child object at self+0x0C by a fixed name and tail-calls its virtual slot 0x7C.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071B0F0": {
     "name": "sub_0071B0F0",
     "class": "Unknown",

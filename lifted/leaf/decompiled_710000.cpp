@@ -2444,3 +2444,23 @@ void fn_00711FE0(const char* src) {
     ext_007110C0(sub, src);
 }
 } // namespace lift_00711FE0
+
+// [0x0071B090] sub_0071B090 (32 bytes)
+namespace lift_0071B090 {
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+extern uint32_t ext_00708000(void* self, const char* name);
+
+// @name Unknown::ForwardVirtualOnNamedChild
+// @class Unknown
+// @summary Looks up a child object at self+0x0C by a fixed name and tail-calls its virtual slot 0x7C.
+// @field Unknown +0x0C void* field_0x0C
+uint32_t fn_0071B090(void* self) {
+    void* parent = lift_field<void*>(self, 0x0C);
+    uint32_t child = ext_00708000(parent, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AA8D5Cu)));
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(child));
+    void** vtbl = lift_field<void**>(obj, 0);
+    using VirtualFn = uint32_t (*)(void*);
+    VirtualFn slot = reinterpret_cast<VirtualFn>(lift_field<void*>(vtbl, 0x7C));
+    return slot(obj);
+}
+} // namespace lift_0071B090
