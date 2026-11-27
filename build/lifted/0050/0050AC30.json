@@ -1,0 +1,28 @@
+{
+  "va": "0x0050AC30",
+  "size": 231,
+  "orig_symbol": "NMData::TaskManager::vfunc_13",
+  "src_path": "src/NMData/TaskManager.cpp",
+  "lifted_path": "lifted/NMData/TaskManager.cpp",
+  "name": "NMData::TaskManager::vfunc_13",
+  "class": "NMData::TaskManager",
+  "signature": "void* __thiscall fn_0050AC30(void* self, void* arg1, void* arg2)",
+  "summary": "Compares the std::string in arg2 against two binary-resident literals. Match 1: calls vfunc slot 13 on the sub-object at this+0x10 with (arg1, temp std::string literal 0x928B5D). Match 2: lazily inits a static guard then calls ext_0055DA20 on arg1 with (static object, this+0x24). No match: calls ext_0046F7D0(arg1). Returns arg1.",
+  "fields": [
+    {
+      "class": "NMData::TaskManager",
+      "offset": "+0x10",
+      "type": "unknown",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NMData::TaskManager",
+      "offset": "+0x24",
+      "type": "unknown",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:50:08Z"
+}

@@ -12,6 +12,8 @@ namespace lifted_layout {
 struct NMData_TaskManager_Fields {
     // +0x8   void*                    field_0x08  (evidence: 0x0050B710)
     // +0xC   unknown                  field_0x0C  (evidence: 0x0050B710)
+    // +0x10  unknown                  field_0x10  (evidence: 0x0050AC30)
     // +0x20  unknown                  field_0x20  (evidence: 0x0050B710)
+    // +0x24  unknown                  field_0x24  (evidence: 0x0050AC30)
 };
 } // namespace lifted_layout
