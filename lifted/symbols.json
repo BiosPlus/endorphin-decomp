@@ -22411,6 +22411,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x0051E4B0": {
+    "name": "Unknown::LookupInRange_0051E4B0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void (*mem_00925134)(void);   // IAT slot: _invalid_parameter_noinfo extern \"C\" const char mem_0049AA30[];    // rdata tag string passed to ext_0051E040 uint32_t fn_0051E4B0(void* self)",
+    "summary": "Validates the [+0x144, +0x148] pair, calls ext_0051E040 with it, and returns the result (0 if it equals the upper bound); invalid-parameter trap on out-of-range.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051E560": {
     "name": "sub_0051E560",
     "class": "Unknown",

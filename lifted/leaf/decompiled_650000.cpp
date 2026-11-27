@@ -1870,3 +1870,40 @@ void fn_005179E0(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_005179E0
+
+// [0x0051E4B0] sub_0051E4B0 (122 bytes)
+namespace lift_0051E4B0 {
+extern uint32_t ext_0051E040(uint32_t lo, uint32_t hi, const char* tag);
+extern void (*mem_00925134)(void);   // IAT slot: _invalid_parameter_noinfo
+extern const char mem_0049AA30[];    // rdata tag string passed to ext_0051E040
+
+// @name Unknown::LookupInRange_0051E4B0
+// @class Unknown
+// @summary Validates the [+0x144, +0x148] pair, calls ext_0051E040 with it, and returns the result (0 if it equals the upper bound); invalid-parameter trap on out-of-range.
+// @field Unknown +0x144 uint32_t field_0x144
+// @field Unknown +0x148 uint32_t field_0x148
+uint32_t fn_0051E4B0(void* self) {
+    // Pre-check: lower bound must not exceed upper bound.
+    if (lift_field<uint32_t>(self, 0x144) > lift_field<uint32_t>(self, 0x148)) {
+        mem_00925134();
+    }
+
+    uint32_t lo = lift_field<uint32_t>(self, 0x144);
+    uint32_t hi = lift_field<uint32_t>(self, 0x148);
+    uint32_t r = ext_0051E040(lo, hi, mem_0049AA30);
+
+    // Post-call: re-validate the bounds and re-read the upper bound.
+    if (lift_field<uint32_t>(self, 0x144) > lift_field<uint32_t>(self, 0x148)) {
+        mem_00925134();
+    }
+    hi = lift_field<uint32_t>(self, 0x148);
+
+    if (r == hi) {
+        return 0;
+    }
+    if (r >= lift_field<uint32_t>(self, 0x148)) {
+        mem_00925134();
+    }
+    return r;
+}
+} // namespace lift_0051E4B0
