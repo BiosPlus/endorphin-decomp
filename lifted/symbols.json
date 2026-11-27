@@ -31078,6 +31078,13 @@
     "summary": "Reads the first dword of the first stack argument, builds a temporary std::string via ext_0058F770, copy-constructs the result into the first argument's buffer, destroys the temporary, and returns the first argument.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00591320": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e",
+    "signature": "void fn_00591320(void* self)",
+    "summary": "Copies the TransformNode-held user reference frame string via ext_0058F770 into a 24-byte temp, then calls ext_0046C4E0 which throws a default ExceptionWithMessage.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005914A0": {
     "name": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0\u003e",

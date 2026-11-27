@@ -67620,3 +67620,31 @@ void fn_004C0880(void* self) {
     ext_0046C4E0();
 }
 } // namespace lift_004C0880
+
+// [0x00591320] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_00591320 {
+// Known callee 0x0058F770: descriptiveName_0058F770 (Throws DerivedException if obj is null; otherwise fills a temp string via ext_0058F550(obj), copy-constructs *out from it, destroys the temp, and returns out.)
+extern void ext_0058F770();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Copies the TransformNode-held user reference frame string via ext_0058F770 into a 24-byte temp, then calls ext_0046C4E0 which throws a default ExceptionWithMessage.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00591320(void* self) {
+    // Load the object pointer stored in the slot that self points to.
+    void* obj = *static_cast<void**>(self);
+
+    // 24-byte temp for the std::string (32-bit MSVC layout), passed as the out pointer.
+    unsigned char out[0x18] = {};
+
+    // ext_0058F770 is cdecl (out, obj); cast the untyped extern to its real signature.
+    auto copyFn = reinterpret_cast<void* (*)(void*, const void*)>(ext_0058F770);
+    copyFn(out, obj);
+
+    // ext_0046C4E0 takes no arguments and throws.
+    auto throwFn = reinterpret_cast<void (*)()>(ext_0046C4E0);
+    throwFn();
+}
+} // namespace lift_00591320
