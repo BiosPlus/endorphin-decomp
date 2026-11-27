@@ -1,0 +1,13 @@
+{
+  "va": "0x0078FF40",
+  "size": 85,
+  "orig_symbol": "sub_0078FF40",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "ExprParser/NMData batch edge-insert helper (descriptiveFunctionName: InsertEdgeBatch16)",
+  "signature": "extern \"C\" const double mem_0092A278;  // 0.0 comparison constant (qword at 0x0092A278) void fn_0078FF40(void* self, const int32_t* idx, const double* vals, int32_t arg)",
+  "summary": "For 16 doubles in vals[], skip entries equal to 0.0 (or NaN); otherwise call fn_0078D420(self, idx[i], arg, low32(v), high32(v)).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:26Z"
+}

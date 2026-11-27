@@ -22209,6 +22209,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00501620": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand::vfunc_1",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand",
+    "signature": "void __thiscall fn_00501620(void* self)",
+    "summary": "Swaps the stored element at +0x1C into +0x18 (releasing the previous one via its virtual dtor), removes the element from the container at +0x10 recording its index in +0x20, notifies the object at +0x24, and forwards the element to the handler at +0x14.",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x00501EC0": {
     "name": "EvolveEngine::vfunc_0_off_10",
     "class": "EvolveEngine",
@@ -81412,6 +81419,12 @@
     "name": "sub_0078FED0",
     "signature": "void __stdcall sub_0078FED0( uint32_t base_offset, const uint32_t* src_offsets, uint32_t divisor, const double* src_values, const double* scale_values, double* out_values, uint32_t* out_indices)",
     "summary": "Computes 16 normalized index offsets and optionally scales 16 double values into output arrays",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
+  "0x0078FF40": {
+    "name": "ExprParser/NMData batch edge-insert helper (descriptiveFunctionName: InsertEdgeBatch16)",
+    "signature": "extern \"C\" const double mem_0092A278;  // 0.0 comparison constant (qword at 0x0092A278) void fn_0078FF40(void* self, const int32_t* idx, const double* vals, int32_t arg)",
+    "summary": "For 16 doubles in vals[], skip entries equal to 0.0 (or NaN); otherwise call fn_0078D420(self, idx[i], arg, low32(v), high32(v)).",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00790D40": {

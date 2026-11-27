@@ -3137,3 +3137,29 @@ void __thiscall fn_00787430(
     lift_field<uint32_t>(self, 0x1C) = a7;
 }
 } // namespace lift_00787430
+
+// [0x0078FF40] sub_0078FF40 (85 bytes)
+namespace lift_0078FF40 {
+// Known callee 0x0078D420: fn_0078D420 (Inserts symmetric edge/link entries into two indexed DynamicArrays at offsets +0x10 and +0x28.)
+extern void fn_0078D420(void* self, int32_t idx1, int32_t idx2, int32_t arg3, int32_t arg4);
+extern const double mem_0092A278;  // 0.0 comparison constant (qword at 0x0092A278)
+
+// @name ExprParser/NMData batch edge-insert helper (descriptiveFunctionName: InsertEdgeBatch16)
+// @summary For 16 doubles in vals[], skip entries equal to 0.0 (or NaN); otherwise call fn_0078D420(self, idx[i], arg, low32(v), high32(v)).
+void fn_0078FF40(void* self, const int32_t* idx, const double* vals, int32_t arg) {
+    for (int i = 0; i < 16; ++i) {
+        const double v = vals[i];
+        // x87 fcomp + test ah,0x40: C3 set on equal or unordered (NaN) -> skip the call.
+        if (std::isunordered(v, mem_0092A278) || v == mem_0092A278) {
+            continue;
+        }
+        uint64_t bits;
+        std::memcpy(&bits, &v, sizeof bits);
+        fn_0078D420(self,
+                    idx[i],
+                    arg,
+                    static_cast<int32_t>(static_cast<uint32_t>(bits)),
+                    static_cast<int32_t>(static_cast<uint32_t>(bits >> 32)));
+    }
+}
+} // namespace lift_0078FF40
