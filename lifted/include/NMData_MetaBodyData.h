@@ -17,6 +17,10 @@ struct NMData_MetaBodyData_Fields {
     // +0x80  uint32_t*                field_0x80  (evidence: 0x0049FC80, 0x005C0E00, 0x008703F0)
     // +0x84  uint32_t*                field_0x84  (evidence: 0x0049FC80, 0x005C0E00, 0x008703F0)
     // +0x14C void*                    field_0x14C  (evidence: 0x005B6880, 0x005B68D0)
-    // +0x158 void*                    field_0x158  (evidence: 0x005B6E70, 0x005B6F00)
+    // +0x158 void*                    field_0x158  (evidence: 0x005B6E70, 0x005B6F00, 0x005BFC90)
+    // +0x15C void*                    field_0x15C  (evidence: 0x005BFC90)
+    // +0x160 void*                    field_0x160  (evidence: 0x005BFC90)
+    // +0x168 void*                    field_0x168  (evidence: 0x005BFC90)
+    // +0x16C void*                    field_0x16C  (evidence: 0x005BFC90)
 };
 } // namespace lifted_layout

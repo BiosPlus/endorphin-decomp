@@ -167,3 +167,88 @@ void __thiscall fn_005C0E00(void* self, void* arg1) {
     }
 }
 } // namespace lift_005C0E00
+
+// [0x005BFC90]
+namespace lift_005BFC90 {
+// @name NMData::MetaBodyData::vfunc_14
+// @class NMData::MetaBodyData
+// @summary Handles property/data queries (0xB8, 0x39, 0x8C) on MetaBodyData, delegating to AxisDefineSensorData::vfunc_14 otherwise.
+// @field NMData::MetaBodyData +0x158 void* field_0x158
+// @field NMData::MetaBodyData +0x15C void* field_0x15C
+// @field NMData::MetaBodyData +0x160 void* field_0x160
+// @field NMData::MetaBodyData +0x168 void* field_0x168
+// @field NMData::MetaBodyData +0x16C void* field_0x16C
+
+
+extern void* __thiscall ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
+extern void __thiscall ext_00661650(void* self, void* arg1);
+extern void __thiscall ext_00673C20(void* iter);
+extern void (*mem_00925134)();
+
+namespace {
+
+struct CheckedIter {
+    void* container;
+    void* node;
+};
+
+void* find_matching_entry(void* self, uint32_t container_offset) {
+    char* edi = reinterpret_cast<char*>(self) + container_offset;
+    void* head = *reinterpret_cast<void**>(edi + 4);
+    CheckedIter iter;
+    iter.container = edi;
+    iter.node = *reinterpret_cast<void**>(head);
+
+    while (true) {
+        void* end_node = *reinterpret_cast<void**>(edi + 4);
+        if (iter.container == nullptr || iter.container != edi) {
+            mem_00925134();
+        }
+        if (iter.node == end_node) {
+            return nullptr;
+        }
+        if (iter.container == nullptr) {
+            mem_00925134();
+        }
+        if (iter.node == *reinterpret_cast<void**>(reinterpret_cast<char*>(iter.container) + 4)) {
+            mem_00925134();
+        }
+        void* entry = *reinterpret_cast<void**>(reinterpret_cast<char*>(iter.node) + 0x28);
+        if (*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(entry) + 0x15C) == 0) {
+            return entry;
+        }
+        ext_00673C20(&iter);
+    }
+}
+
+}  // namespace
+
+void* __thiscall fn_005BFC90(void* self, void* arg1, uint32_t arg2) {
+    if (arg2 == 0xB8) {
+        void* val = lift_field<void*>(self, 0x158);
+        if (val != nullptr) {
+            ext_00661650(arg1, val);
+            return arg1;
+        }
+    }
+
+    if (arg2 == 0x39 || arg2 == 0xB8) {
+        void* entry = find_matching_entry(self, 0x15C);
+        if (entry != nullptr) {
+            ext_00661650(arg1, entry);
+            return arg1;
+        }
+    }
+
+    if (arg2 == 0x8C || arg2 == 0x39 || arg2 == 0xB8) {
+        void* entry = find_matching_entry(self, 0x168);
+        if (entry != nullptr) {
+            ext_00661650(arg1, entry);
+            return arg1;
+        }
+    }
+
+    ext_0058F6B0(self, arg1, arg2);
+    return arg1;
+}
+} // namespace lift_005BFC90

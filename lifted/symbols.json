@@ -46178,6 +46178,13 @@
     "summary": "Walks the intrusive list whose sentinel is at +0x15C; for each entry whose object at node+0x28 accepts (vtable +0x6C), forwards arg to its subobject at +0x0C (vtable +0x10).",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005BFC90": {
+    "name": "NMData::MetaBodyData::vfunc_14",
+    "class": "NMData::MetaBodyData",
+    "signature": "void* find_matching_entry(void* self, uint32_t container_offset)",
+    "summary": "Handles property/data queries (0xB8, 0x39, 0x8C) on MetaBodyData, delegating to AxisDefineSensorData::vfunc_14 otherwise.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005C0E00": {
     "name": "NMData::MetaBodyData::vfunc_6",
     "class": "NMData::MetaBodyData",

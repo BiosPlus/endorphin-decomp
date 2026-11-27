@@ -1,0 +1,46 @@
+{
+  "va": "0x005BFC90",
+  "size": 335,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_14",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_14",
+  "class": "NMData::MetaBodyData",
+  "signature": "void* find_matching_entry(void* self, uint32_t container_offset)",
+  "summary": "Handles property/data queries (0xB8, 0x39, 0x8C) on MetaBodyData, delegating to AxisDefineSensorData::vfunc_14 otherwise.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "field_0x15C"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x160",
+      "type": "void*",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:04:40Z"
+}
