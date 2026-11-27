@@ -41365,6 +41365,12 @@
     "summary": "Allocates count * 20 bytes via MFC operator new, throwing std::bad_alloc on 32-bit overflow",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00622700": {
+    "name": "copyBackward20",
+    "signature": "uint32_t sub_00622700(uint32_t src_begin_addr, uint32_t src_end_addr, uint32_t dst_end_addr)",
+    "summary": "Backward-copies a range of 20-byte structs (one 32-bit int and four floats)",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622750": {
     "name": "InitTaggedZeroFloatTriple",
     "signature": "void* InitTaggedZeroFloatTriple(void* self)",
@@ -70935,6 +70941,12 @@
     "summary": "Compares up to count bytes of two buffers and returns the signed difference of the first mismatching byte.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079B070": {
+    "name": "logErrorV",
+    "signature": "void sub_0079B070(const char* prefix, const char* fmt, void* args)",
+    "summary": "Logs an optional prefix, formatted message via vfprintf, and trailing newline to stderr",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079B0E0": {
     "name": "debugLogVPrintf",
     "signature": "void fn_0079B0E0(const char* prefix, const char* fmt, va_list args)",
@@ -73896,6 +73908,12 @@
     "name": "BuildSignedPermutedMatrix3x4_007CD900",
     "signature": "void fn_007CD900(const void* src, void* dst)",
     "summary": "Reads four floats from src (ecx) and writes a 3x4 row-major float matrix to dst (eax) with a fixed sign/permutation pattern (negations of src[1], src[2], src[3] and copies of src[0], src[1], src[2], src[3]).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007CD960": {
+    "name": "QuaternionToMatrix3x4",
+    "signature": "void* __fastcall sub_007CD960(const float* ecx, void* /*edx*/, float* eax)",
+    "summary": "Converts a quaternion into a 3x4 skew-symmetric-like matrix and returns the output pointer",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CDB70": {

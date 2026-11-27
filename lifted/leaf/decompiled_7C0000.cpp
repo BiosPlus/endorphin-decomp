@@ -1751,3 +1751,40 @@ extern void sub_007CC970(void* obj) {
     freeFn(obj);
 }
 } // namespace lift_007CC970
+
+// [0x007CD960]
+namespace lift_007CD960 {
+// @name QuaternionToMatrix3x4
+// @summary Converts a quaternion into a 3x4 skew-symmetric-like matrix and returns the output pointer
+// @field Quaternion +0x00 float field_0x00
+// @field Quaternion +0x04 float field_0x04
+// @field Quaternion +0x08 float field_0x08
+// @field Quaternion +0x0C float field_0x0c
+
+
+void* __fastcall sub_007CD960(const float* ecx, void* /*edx*/, float* eax) {
+    float q0 = ecx[0];
+    float q1 = ecx[1];
+    float q2 = ecx[2];
+    float q3 = ecx[3];
+
+    eax[0]  = -q1;
+    eax[4]  = -q2;
+    eax[8]  = -q3;
+
+    eax[11] = q0;
+    eax[6]  = q0;
+    eax[1]  = q0;
+
+    eax[10] = -q1;
+    eax[7]  = q1;
+
+    eax[3]  = -q2;
+    eax[9]  = q2;
+
+    eax[5]  = -q3;
+    eax[2]  = q3;
+
+    return eax;
+}
+} // namespace lift_007CD960

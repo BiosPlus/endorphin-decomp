@@ -1,0 +1,39 @@
+{
+  "va": "0x007CD960",
+  "size": 100,
+  "orig_symbol": "sub_007CD960",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "QuaternionToMatrix3x4",
+  "signature": "void* __fastcall sub_007CD960(const float* ecx, void* /*edx*/, float* eax)",
+  "summary": "Converts a quaternion into a 3x4 skew-symmetric-like matrix and returns the output pointer",
+  "fields": [
+    {
+      "class": "Quaternion",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Quaternion",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Quaternion",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Quaternion",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:03:29Z"
+}
