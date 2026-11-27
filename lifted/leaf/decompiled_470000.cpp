@@ -1347,3 +1347,55 @@ void fn_00477520(void* a1, void* out, void* value, void* end, void* a5, void* ke
     words[1] = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(found));
 }
 } // namespace lift_00477520
+
+// [0x0047A4E0]
+namespace lift_0047A4E0 {
+// @name findByName_0047A4E0
+// @summary Iterates a tree container at this+0x18 and returns the first non-null entry whose name at +0x04 matches the given string.
+// @field Self +0x18 TreeContainer field_0x18
+// @field TreeNode +0x28 void* entry
+
+
+void* ext_00584A10(void* self);
+void ext_00673C20(void* self);
+void mem_00925134();
+uint8_t mem_00924FC4(void* lhs, void* rhs);
+
+struct TreeIter_0047A4E0 {
+    void* cont;
+    void* node;
+};
+
+void* fn_0047A4E0(void* self, void* targetName) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t* container = base + 0x18;
+    void* head = *reinterpret_cast<void**>(base + 0x1c);
+
+    TreeIter_0047A4E0 it;
+    it.cont = container;
+    it.node = *reinterpret_cast<void**>(head);
+
+    for (;;) {
+        void* endNode = *reinterpret_cast<void**>(container + 0x04);
+        if (!it.cont || it.cont != container) {
+            mem_00925134();
+        }
+        if (it.node == endNode) {
+            return nullptr;
+        }
+        if (!it.cont || it.node == *reinterpret_cast<void**>(static_cast<uint8_t*>(it.cont) + 0x04)) {
+            mem_00925134();
+        }
+
+        void* entry = *reinterpret_cast<void**>(static_cast<uint8_t*>(it.node) + 0x28);
+        if (entry) {
+            void* entryName = ext_00584A10(static_cast<uint8_t*>(entry) + 4);
+            if (mem_00924FC4(entryName, targetName) != 0) {
+                return entry;
+            }
+        }
+
+        ext_00673C20(&it);
+    }
+}
+} // namespace lift_0047A4E0

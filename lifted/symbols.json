@@ -10300,6 +10300,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x0047A4E0": {
+    "name": "findByName_0047A4E0",
+    "signature": "void* fn_0047A4E0(void* self, void* targetName)",
+    "summary": "Iterates a tree container at this+0x18 and returns the first non-null entry whose name at +0x04 matches the given string.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x0047AF80": {
     "name": "ContainerEventDispatcher::vfunc_1",
     "class": "ContainerEventDispatcher",
@@ -70636,6 +70642,13 @@
     "summary": "If 0 \u003c= index \u003c this-\u003ecount (+0x4C), returns the DWORD pointed to by table[index] (table at +0x5C); otherwise calls ext_006E7440(this+0x94, 3) and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E9390": {
+    "name": "Unknown::releaseEntry_006E9390",
+    "class": "Unknown",
+    "signature": "uint8_t __fastcall fn_006E9390(void* self, void* /*edx*/, uint32_t key)",
+    "summary": "Searches the DynArray at +0x4C for an entry matching key, decrements its refcount at +4, and removes/frees it if zero.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E9420": {
     "name": "sub_006E9420",
     "signature": "extern \"C\" int32_t __fastcall fn_006E9420(void* self)",
@@ -79325,6 +79338,12 @@
     "class": "Unknown",
     "signature": "extern \"C\" void __thiscall fn_0074B330(void* self)",
     "summary": "Destructor body: destroys four embedded sub-objects at +0xD0, +0xB8, +0xA0, +0x88 (via sub_006D2160), then runs the base teardown sub_006B9D70 on this.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
+  "0x0074B3B0": {
+    "name": "appendNonNegativeId",
+    "signature": "extern \"C\" uint8_t __thiscall fn_0074B3B0(void* self, int32_t val, int32_t arg2, int32_t arg3, int32_t arg4)",
+    "summary": "Appends a non-negative int32_t value to the DynamicArray at +0x88 and increments the counter at +0x64.",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
   "0x0074B840": {

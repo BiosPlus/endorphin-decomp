@@ -1,0 +1,27 @@
+{
+  "va": "0x0047A4E0",
+  "size": 151,
+  "orig_symbol": "sub_0047A4E0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "findByName_0047A4E0",
+  "signature": "void* fn_0047A4E0(void* self, void* targetName)",
+  "summary": "Iterates a tree container at this+0x18 and returns the first non-null entry whose name at +0x04 matches the given string.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x18",
+      "type": "TreeContainer",
+      "name": "field_0x18"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "entry"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:13:03Z"
+}
