@@ -1,0 +1,14 @@
+{
+  "va": "0x00681ED0",
+  "size": 125,
+  "orig_symbol": "Properties::PropertyIteratorTypes::MatrixTypeIterator\u003cNM::Matrix4, 4\u003e::vfunc_2",
+  "src_path": "src/templates/MatrixTypeIterator.cpp",
+  "lifted_path": "lifted/templates/MatrixTypeIterator.cpp",
+  "name": "Properties::PropertyIteratorTypes::MatrixTypeIterator\u003cNM::Matrix4, 4\u003e::vfunc_2",
+  "class": "Properties::PropertyIteratorTypes::MatrixTypeIterator\u003cNM::Matrix4, 4\u003e",
+  "signature": "uint32_t fn_00681ED0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Looks up a sub-index from a3-0x1B8 via a 12-entry table, dispatches to 0x681E50, stores the pair into a1 and returns a1; out-of-range a3 forwards to the 0x681B00 thunk.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:02:40Z"
+}

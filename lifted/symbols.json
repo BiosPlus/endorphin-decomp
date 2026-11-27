@@ -54113,6 +54113,13 @@
     "summary": "Switch on index 0..6: tail-dispatches to one of six sub-handlers (0..4, 6); index 5 and out-of-range return 0.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00681ED0": {
+    "name": "Properties::PropertyIteratorTypes::MatrixTypeIterator\u003cNM::Matrix4, 4\u003e::vfunc_2",
+    "class": "Properties::PropertyIteratorTypes::MatrixTypeIterator\u003cNM::Matrix4, 4\u003e",
+    "signature": "uint32_t fn_00681ED0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Looks up a sub-index from a3-0x1B8 via a 12-entry table, dispatches to 0x681E50, stores the pair into a1 and returns a1; out-of-range a3 forwards to the 0x681B00 thunk.",
+    "lifted_path": "lifted/templates/MatrixTypeIterator.cpp"
+  },
   "0x00681FE0": {
     "name": "sub_00681FE0",
     "signature": "void* fn_00681FE0(void* self)",
