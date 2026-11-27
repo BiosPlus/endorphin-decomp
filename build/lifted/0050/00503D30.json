@@ -1,0 +1,33 @@
+{
+  "va": "0x00503D30",
+  "size": 152,
+  "orig_symbol": "sub_00503D30",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "CopyVector8Buffer",
+  "signature": "void* to_ptr(uint32_t v)",
+  "summary": "Resets self to empty, then allocates a fresh 8-byte-element buffer sized to src and memmove_s-copies src's contents into it; returns self.",
+  "fields": [
+    {
+      "class": "Vector8",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Vector8",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Vector8",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:50:10Z"
+}

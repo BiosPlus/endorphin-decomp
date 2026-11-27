@@ -22362,6 +22362,12 @@
     "summary": "Fills `count` consecutive doubles at `dst` with the double loaded from `*src` (re-read each iteration); returns dst + count.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00503D30": {
+    "name": "CopyVector8Buffer",
+    "signature": "void* to_ptr(uint32_t v)",
+    "summary": "Resets self to empty, then allocates a fresh 8-byte-element buffer sized to src and memmove_s-copies src's contents into it; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503DD0": {
     "name": "Evaluator::vfunc_0",
     "class": "Evaluator",

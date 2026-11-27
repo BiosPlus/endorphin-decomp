@@ -2963,3 +2963,88 @@ void* __thiscall fn_0050D1E0(void* self) {
     return self;
 }
 } // namespace lift_0050D1E0
+
+// [0x00503D30] sub_00503D30 (152 bytes)
+namespace lift_00503D30 {
+// Known callee 0x00405FB0: throwErrorFromLiteral (Builds a std::string from the .rdata literal at 0x928F30 and throws it wrapped in a std::exception-derived object.)
+extern void ext_00405FB0();
+// Known callee 0x00519D50: allocate_8byte_elements (Allocates an array of 8-byte elements with overflow check, throwing std::bad_alloc on overflow.)
+extern void* ext_00519D50(uint32_t count);
+// IAT slots: MSVCR80!_invalid_parameter_noinfo and MSVCR80!memmove_s
+extern int mem_00925134;
+extern int mem_009251EC;
+
+namespace {
+
+using invalid_parameter_fn = void (*)();
+using memmove_s_fn = int (*)(void* dst, size_t dst_size, const void* src, size_t src_size);
+
+void* to_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+uint32_t to_addr(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+void call_invalid_parameter() {
+    (*reinterpret_cast<invalid_parameter_fn*>(&mem_00925134))();
+}
+
+}  // namespace
+
+// @name CopyVector8Buffer
+// @summary Resets self to empty, then allocates a fresh 8-byte-element buffer sized to src and memmove_s-copies src's contents into it; returns self.
+// @field Vector8 +0x04 uint32_t field_0x04
+// @field Vector8 +0x08 uint32_t field_0x08
+// @field Vector8 +0x0C uint32_t field_0x0C
+void* fn_00503D30(void* self, void* src) {
+    // Element count of src: (end - begin) / 8, or 0 if begin is null.
+    const uint32_t src_begin = lift_field<uint32_t>(src, 0x4);
+    int32_t count = 0;
+    if (src_begin != 0) {
+        count = static_cast<int32_t>(lift_field<uint32_t>(src, 0x8) - src_begin) >> 3;
+    }
+
+    // Reset self to empty.
+    lift_field<uint32_t>(self, 0x4) = 0;
+    lift_field<uint32_t>(self, 0x8) = 0;
+    lift_field<uint32_t>(self, 0xC) = 0;
+
+    if (count == 0) {
+        return self;
+    }
+
+    // Unsigned overflow check on the element count.
+    if (static_cast<uint32_t>(count) > 0x1FFFFFFFu) {
+        ext_00405FB0();  // throws
+    }
+
+    const uint32_t block = to_addr(ext_00519D50(static_cast<uint32_t>(count)));
+    lift_field<uint32_t>(self, 0x4) = block;
+    lift_field<uint32_t>(self, 0x8) = block;
+    lift_field<uint32_t>(self, 0xC) = block + static_cast<uint32_t>(count) * 8u;
+
+    // Validity checks on src (begin must not exceed end); both kept as in the original.
+    if (lift_field<uint32_t>(src, 0x4) > lift_field<uint32_t>(src, 0x8)) {
+        call_invalid_parameter();
+    }
+    const uint32_t src_first = lift_field<uint32_t>(src, 0x4);
+    if (src_first > lift_field<uint32_t>(src, 0x8)) {
+        call_invalid_parameter();
+    }
+
+    // Copy src's bytes into the new block.
+    const int32_t n = static_cast<int32_t>(lift_field<uint32_t>(src, 0x8) - src_first) >> 3;
+    const uint32_t dst = lift_field<uint32_t>(self, 0x4);
+    const uint32_t bytes = static_cast<uint32_t>(n) * 8u;
+    const uint32_t dst_end = dst + bytes;
+    if (n != 0) {
+        (*reinterpret_cast<memmove_s_fn*>(&mem_009251EC))(
+            to_ptr(dst), bytes, to_ptr(src_first), bytes);
+    }
+    lift_field<uint32_t>(self, 0x8) = dst_end;
+
+    return self;
+}
+} // namespace lift_00503D30
