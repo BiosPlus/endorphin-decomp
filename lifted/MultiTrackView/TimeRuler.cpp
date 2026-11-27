@@ -201,3 +201,126 @@ void __thiscall fn_00459560(void* self, uint32_t arg0, uint32_t arg1, uint32_t a
     ext_006A6166(menu);
 }
 } // namespace lift_00459560
+
+// [0x00459700]
+namespace lift_00459700 {
+// @name MultiTrackView::TimeRuler::vfunc_6
+// @class MultiTrackView::TimeRuler
+// @summary Displays a context menu for the time ruler and dispatches the selected command.
+// @field MultiTrackView::TimeRuler +0x30 void* field_0x30
+
+    int32_t __thiscall ext_0043C930(void* self, void* arg0, void* arg1);
+    void* __cdecl ext_00468180(void);
+    void* __thiscall ext_00468660(void* self);
+    void __thiscall ext_00468710(void* self, uint8_t value);
+    void __thiscall ext_00468730(void* self, uint32_t value);
+    uint8_t __thiscall ext_00468750(void* self);
+    uint8_t __thiscall ext_00468770(void* self);
+    void __thiscall ext_00468790(void* self, uint32_t value);
+    void __thiscall ext_00468810(void* self, uint32_t value);
+    void __thiscall ext_00468890(void* self, uint32_t value);
+    void __thiscall ext_00468920(void* self, uint32_t value);
+    void __thiscall ext_006A6166(void* self);
+    void __thiscall ext_006A616C(void* self, void* hMenu);
+
+    extern uint32_t mem_00925630;
+    extern uint32_t mem_00925634;
+    extern uint32_t mem_00925638;
+    extern uint32_t mem_00925688;
+
+template <typename Ret, typename... Args>
+static inline Ret vcall(void* obj, uint32_t offset, Args... args) {
+    auto vtbl = *reinterpret_cast<uintptr_t**>(obj);
+    using Fn = Ret(__thiscall*)(void*, Args...);
+    auto fn = reinterpret_cast<Fn>(vtbl[offset / 4]);
+    return fn(obj, args...);
+}
+
+void __thiscall fn_00459700(void* self, void* arg0, int32_t x, int32_t y) {
+    if (!arg0) {
+        return;
+    }
+
+    int32_t pt[2] = { x, y };
+    void* view = lift_field<void*>(self, 0x30);
+    void* hwnd = lift_field<void*>(view, 0x20);
+
+    using ClientToScreenFn = int32_t(__stdcall*)(void*, int32_t*);
+    reinterpret_cast<ClientToScreenFn>(mem_00925630)(hwnd, pt);
+
+    uint32_t menu[2] = { 0x0092BD7C, 0 };
+    using CreatePopupMenuFn = void*(__stdcall*)();
+    void* hMenu = reinterpret_cast<CreatePopupMenuFn>(mem_00925638)();
+    ext_006A616C(menu, hMenu);
+
+    void* esi = ext_00468180();
+    uint32_t mode = lift_field<uint32_t>(arg0, 0x8);
+
+    using AppendMenuAFn = int32_t(__stdcall*)(void*, uint32_t, uint32_t, uint32_t);
+    auto appendMenu = reinterpret_cast<AppendMenuAFn>(mem_00925634);
+
+    if (mode == 0) {
+        appendMenu(reinterpret_cast<void*>(menu[1]), 0, 0x65, 0x009379A0);
+        appendMenu(reinterpret_cast<void*>(menu[1]), 0, 0x66, 0x00937994);
+    } else if (mode == 2) {
+        if (ext_00468770(esi) != 0) {
+            appendMenu(reinterpret_cast<void*>(menu[1]), 0, 0x67, 0x00937988);
+        }
+    } else if (mode == 3) {
+        if (ext_00468750(esi) != 0) {
+            appendMenu(reinterpret_cast<void*>(menu[1]), 0, 0x68, 0x00937988);
+        }
+    }
+
+    int32_t cmd = ext_0043C930(lift_field<void*>(self, 0x30), menu, pt);
+    switch (cmd) {
+        case 0x65: {
+            void* obj = ext_00468660(esi);
+            vcall<void>(obj, 0x64);
+            void* obj2 = ext_00468660(esi);
+            vcall<void>(obj2, 0x98, 5);
+            break;
+        }
+        case 0x66: {
+            void* obj = ext_00468660(esi);
+            vcall<void>(obj, 0x68);
+            void* obj2 = ext_00468660(esi);
+            vcall<void>(obj2, 0x98, 5);
+            break;
+        }
+        case 0x67: {
+            ext_00468730(esi, 0);
+            ext_00468890(esi, 0);
+            void* obj = ext_00468660(esi);
+            uint32_t n = vcall<uint32_t>(obj, 0xA0);
+            ext_00468920(esi, n - 1);
+            void* obj2 = ext_00468660(esi);
+            vcall<void>(obj2, 0x98, 5);
+            void* cur_view = lift_field<void*>(self, 0x30);
+            void* cur_hwnd = lift_field<void*>(cur_view, 0x20);
+            using InvalidateRectFn = int32_t(__stdcall*)(void*, void*, int32_t);
+            reinterpret_cast<InvalidateRectFn>(mem_00925688)(cur_hwnd, nullptr, 1);
+            break;
+        }
+        case 0x68: {
+            ext_00468710(esi, 0);
+            ext_00468790(esi, 0);
+            void* obj = ext_00468660(esi);
+            uint32_t n = vcall<uint32_t>(obj, 0xA0);
+            ext_00468810(esi, n - 1);
+            void* obj2 = ext_00468660(esi);
+            vcall<void>(obj2, 0x98, 5);
+            void* cur_view = lift_field<void*>(self, 0x30);
+            void* cur_hwnd = lift_field<void*>(cur_view, 0x20);
+            using InvalidateRectFn = int32_t(__stdcall*)(void*, void*, int32_t);
+            reinterpret_cast<InvalidateRectFn>(mem_00925688)(cur_hwnd, nullptr, 1);
+            break;
+        }
+        default:
+            break;
+    }
+
+    menu[0] = 0x0092BD7C;
+    ext_006A6166(menu);
+}
+} // namespace lift_00459700
