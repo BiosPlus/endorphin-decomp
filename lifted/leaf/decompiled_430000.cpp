@@ -5069,3 +5069,54 @@ void fn_00432520(void) {
     (void)&mem_00924FF4;
 }
 } // namespace lift_00432520
+
+// [0x004325B0] sub_004325B0 (134 bytes)
+namespace lift_004325B0 {
+// Known callee 0x00465B40: sub_00465B40 (__cdecl, no args, returns object pointer in EAX)
+extern void* ext_00465B40(void);
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (cdecl, 3 stack args: c_str pointer, 0, 0)
+extern int32_t __cdecl ext_006A5E60(const char* arg0, uint32_t arg1, uint32_t arg2);
+// .rdata IAT slots: std::string copy-ctor, c_str, dtor (MSVCP80)
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::vcall1D0ThenReportOnException
+// @class Unknown
+// @summary Calls ext_00465B40 to get an object, invokes its vtable slot +0x1D0 with arg 1; on exception, copies the string at self+0x0C into a temporary std::string and passes its c_str() to ext_006A5E60.
+// @field Unknown +0x0c std::string field_0x0c
+void fn_004325B0(void* self) {
+    try {
+        // call sub_00465B40 -> eax = object
+        void* obj = ext_00465B40();
+
+        // mov edx,[eax]; mov ecx,eax; mov eax,[edx+0x1d0]; push 1; call eax  (thiscall: this = obj)
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        void* slot = nullptr;
+        std::memcpy(&slot, reinterpret_cast<const unsigned char*>(vtbl) + 0x1d0, sizeof(slot));
+        using VFn = void (*)(void* self_, int arg);
+        reinterpret_cast<VFn>(slot)(obj, 1);
+    } catch (...) {
+        // Exception funclet (0x4325FC..0x43262F), continues at the normal epilogue.
+        // Frame slot [ebp-0x14] is taken to be self; it is not written on the normal path.
+        unsigned char tmp[0x1c];  // MSVC std::string temporary at [ebp-0x30]
+
+        // push (self+0xc); lea ecx,[tmp]; call copy-ctor(tmp, const string& at self+0xc)
+        using CtorFn = void (*)(void* this_, const void* src);
+        reinterpret_cast<CtorFn>(static_cast<uintptr_t>(mem_00924FE0))(
+            static_cast<void*>(tmp), static_cast<unsigned char*>(self) + 0x0c);
+
+        // lea ecx,[tmp]; call c_str(tmp) -> eax
+        using CStrFn = const char* (*)(void* this_);
+        const char* text = reinterpret_cast<CStrFn>(static_cast<uintptr_t>(mem_00924FF0))(
+            static_cast<void*>(tmp));
+
+        // push 0; push 0; push eax; call thunk_MFC80_ord_1123 (cdecl)
+        ext_006A5E60(text, 0u, 0u);
+
+        // lea ecx,[tmp]; call dtor(tmp)
+        using DtorFn = void (*)(void* this_);
+        reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(static_cast<void*>(tmp));
+    }
+}
+} // namespace lift_004325B0

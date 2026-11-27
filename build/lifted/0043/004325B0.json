@@ -1,0 +1,22 @@
+{
+  "va": "0x004325B0",
+  "size": 134,
+  "orig_symbol": "sub_004325B0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::vcall1D0ThenReportOnException",
+  "class": "Unknown",
+  "signature": "void fn_004325B0(void* self)",
+  "summary": "Calls ext_00465B40 to get an object, invokes its vtable slot +0x1D0 with arg 1; on exception, copies the string at self+0x0C into a temporary std::string and passes its c_str() to ext_006A5E60.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:21:25Z"
+}

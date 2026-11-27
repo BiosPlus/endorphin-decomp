@@ -3717,6 +3717,13 @@
     "summary": "Gets the singleton-like object from ext_00465B40 and calls its vtable slot at +0x1C8 with (this, 1); the SEH cleanup funclet at 0x0043256C is not part of the normal path and is omitted.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004325B0": {
+    "name": "Unknown::vcall1D0ThenReportOnException",
+    "class": "Unknown",
+    "signature": "void fn_004325B0(void* self)",
+    "summary": "Calls ext_00465B40 to get an object, invokes its vtable slot +0x1D0 with arg 1; on exception, copies the string at self+0x0C into a temporary std::string and passes its c_str() to ext_006A5E60.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004326D0": {
     "name": "sub_004326D0",
     "signature": "void fn_004326D0(void)",
