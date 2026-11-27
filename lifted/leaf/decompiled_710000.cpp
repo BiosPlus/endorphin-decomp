@@ -2533,3 +2533,25 @@ float fn_0071CAD0(void* self) {
     return getter(obj2);
 }
 } // namespace lift_0071CAD0
+
+// [0x0071B0D0] sub_0071B0D0 (32 bytes)
+namespace lift_0071B0D0 {
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+extern uint32_t ext_00708000(void* self, const char* name);
+
+// Name literal at 0x00AA8D64 (passed as the lookup key).
+extern const char mem_00AA8D64[];
+
+// @name Unknown::ForwardVirtualOnNamedChild
+// @class Unknown
+// @summary Looks up the child named by mem_00AA8D64 under the object at +0x0C and tail-calls vtable slot +0x7C on the result.
+// @field Unknown +0x0C void* child
+uint32_t fn_0071B0D0(void* self) {
+    void* child = lift_field<void*>(self, 0x0C);
+    void* obj = reinterpret_cast<void*>(
+        static_cast<uintptr_t>(ext_00708000(child, mem_00AA8D64)));
+    void* vtbl = lift_field<void*>(obj, 0);
+    auto method = reinterpret_cast<uint32_t (*)(void*)>(lift_field<void*>(vtbl, 0x7c));
+    return method(obj);
+}
+} // namespace lift_0071B0D0

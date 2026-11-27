@@ -378,6 +378,7 @@ struct Unknown_Fields {
     // +0xC   void* handler (handler pointer at table[kind*40 + 0x0C])  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD subobject (embedded object; its first dword is set to vtable 0x00951FB4 after the base init call)  (evidence: 0x00517AD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    capacity  (evidence: 0x00503BC0, 0x0050B960, 0x0050C4D0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    child  (evidence: 0x0071B0D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 counter  (evidence: 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  currentIndex  (evidence: 0x008115A0) // CONFLICT: multiple definitions at +0xC

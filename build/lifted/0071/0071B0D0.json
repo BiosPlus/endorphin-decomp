@@ -1,0 +1,22 @@
+{
+  "va": "0x0071B0D0",
+  "size": 32,
+  "orig_symbol": "sub_0071B0D0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::ForwardVirtualOnNamedChild",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0071B0D0(void* self)",
+  "summary": "Looks up the child named by mem_00AA8D64 under the object at +0x0C and tail-calls vtable slot +0x7C on the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:14:38Z"
+}
