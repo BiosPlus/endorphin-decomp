@@ -1679,3 +1679,22 @@ extern void* fn_00539490(uint32_t count) {
     return ext_006A5C62(count * 12u);
 }
 } // namespace lift_00539490
+
+// [0x0053F5F0]
+namespace lift_0053F5F0 {
+extern std::string* __thiscall ext_004275C0(void* self, std::string* out_str);
+    extern uint32_t mem_00924FF0;
+    extern uint32_t mem_00924FF4;
+    extern uint32_t mem_009251E4;
+
+// @name parseIntFromStringProp
+// @summary Calls ext_004275C0 to get a string, converts it with atoi, and stores the integer at *out.
+extern void fn_0053F5F0(int* out) {
+    (void)mem_00924FF0;
+    (void)mem_00924FF4;
+    (void)mem_009251E4;
+    std::string temp_str;
+    std::string* s = ext_004275C0(out, &temp_str);
+    *out = std::atoi(s->c_str());
+}
+} // namespace lift_0053F5F0

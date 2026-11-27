@@ -1,0 +1,13 @@
+{
+  "va": "0x0053F5F0",
+  "size": 101,
+  "orig_symbol": "sub_0053F5F0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "parseIntFromStringProp",
+  "signature": "extern \"C\" void fn_0053F5F0(int* out)",
+  "summary": "Calls ext_004275C0 to get a string, converts it with atoi, and stores the integer at *out.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:06:40Z"
+}
