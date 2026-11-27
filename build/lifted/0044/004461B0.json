@@ -1,0 +1,33 @@
+{
+  "va": "0x004461B0",
+  "size": 144,
+  "orig_symbol": "sub_004461B0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "traverseAndInvoke",
+  "signature": "void __thiscall fn_004461B0(void* this_ptr, void* node, uint32_t arg1)",
+  "summary": "Recursively traverses a node tree, calling vtable[0x20] on dynamic_cast-matched nodes",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x7C",
+      "type": "uint32_t",
+      "name": "children_begin"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "children_iter"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "children_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:36:02Z"
+}

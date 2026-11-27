@@ -2790,3 +2790,61 @@ void fn_0044BC60(void* self) {
 
 } // namespace lift_0044BC60
 } // namespace lift_0044BC60
+
+// [0x004461B0]
+namespace lift_004461B0 {
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfdelta, void* srcType, void* targetType, int32_t isReference);
+extern void(__cdecl* mem_00925134)(void);
+
+// @name traverseAndInvoke
+// @summary Recursively traverses a node tree, calling vtable[0x20] on dynamic_cast-matched nodes
+// @field Node +0x7C uint32_t children_begin
+// @field Node +0x80 uint32_t children_iter
+// @field Node +0x84 uint32_t children_end
+void __thiscall fn_004461B0(void* this_ptr, void* node, uint32_t arg1) {
+    void* cast_result = ext_006A6E9E(
+        node,
+        0,
+        reinterpret_cast<void*>(0x00A2E2BC),
+        reinterpret_cast<void*>(0x00A2FB54),
+        0
+    );
+    if (cast_result != nullptr) {
+        uint8_t* sub_obj = reinterpret_cast<uint8_t*>(cast_result) + 0x10;
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(sub_obj);
+        typedef void(__thiscall* VFunc)(void*, uint32_t);
+        VFunc fn = reinterpret_cast<VFunc>(vtable[0x20 / sizeof(uintptr_t)]);
+        fn(sub_obj, arg1);
+    }
+
+    uint8_t* node_bytes = reinterpret_cast<uint8_t*>(node);
+    uint32_t* iter = *reinterpret_cast<uint32_t**>(node_bytes + 0x80);
+    uint8_t* vec_base = node_bytes + 0x7C;
+    void(__cdecl * invalid_param)(void) = mem_00925134;
+
+    uint32_t* end_ptr = *reinterpret_cast<uint32_t**>(vec_base + 0x08);
+    if (iter > end_ptr) {
+        invalid_param();
+    }
+
+    for (;;) {
+        end_ptr = *reinterpret_cast<uint32_t**>(vec_base + 0x08);
+        uint32_t* begin_ptr = *reinterpret_cast<uint32_t**>(vec_base + 0x04);
+        if (begin_ptr > end_ptr) {
+            invalid_param();
+        }
+        if (iter == end_ptr) {
+            break;
+        }
+        if (iter >= *reinterpret_cast<uint32_t**>(vec_base + 0x08)) {
+            invalid_param();
+        }
+        void* child = reinterpret_cast<void*>(*iter);
+        fn_004461B0(this_ptr, child, arg1);
+        if (iter >= *reinterpret_cast<uint32_t**>(vec_base + 0x08)) {
+            invalid_param();
+        }
+        ++iter;
+    }
+}
+} // namespace lift_004461B0
