@@ -1,0 +1,28 @@
+{
+  "va": "0x00870460",
+  "size": 98,
+  "orig_symbol": "NMData::Marker::vfunc_22",
+  "src_path": "src/NMData/Marker.cpp",
+  "lifted_path": "lifted/NMData/Marker.cpp",
+  "name": "NMData::Marker::vfunc_22",
+  "class": "NMData::Marker",
+  "signature": "void* __thiscall fn_00870460(void* self, void* arg1)",
+  "summary": "Serializes or exports Marker node data to a child object and assigns its name.",
+  "fields": [
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x154",
+      "type": "std::string",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:16:11Z"
+}
