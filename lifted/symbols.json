@@ -17081,6 +17081,13 @@
     "summary": "Fetches a source string via ext_004C0280 into a temporary std::string, wraps it in a holder assigned to self's field_0x04 through ext_0041CF50, releases the old holder, then forwards to the object at field_0x04 via vtable slot 44 with (self, out).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C0AA0": {
+    "name": "ReadMethodType_vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",
+    "signature": "void fn_004C0AA0(void* self, void* out)",
+    "summary": "Fetches a string from the document in field_0x00, rebinds this object's field_0x04 through a temp, then forwards (self, out) to vtable slot 0xB4 of field_0x04.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C0B40": {
     "name": "ReadMethodType\u003cTriggeredEventData\u003e::vfunc_46",
     "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",

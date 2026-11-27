@@ -83459,3 +83459,46 @@ void fn_004BCE20(void* self, void* out) {
     reinterpret_cast<void (*)(void*, void*, void*)>(vfunc44)(obj, self, out);
 }
 } // namespace lift_004BCE20
+
+// [0x004C0AA0] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_45 (157 bytes)
+namespace lift_004C0AA0 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* ext_004C0280(void* arg1, void* arg2);
+// sub_006720E0 (43B): thiscall helper, one pointer argument; initializes the 8-byte temp from the string.
+extern void ext_006720E0(void* self, void* arg);
+// MSVCP80 basic_string dtor import slot (0x00924FF4); the lifted code uses a std::string local instead.
+extern int mem_00924FF4;
+
+// @name ReadMethodType_vfunc_45
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches a string from the document in field_0x00, rebinds this object's field_0x04 through a temp, then forwards (self, out) to vtable slot 0xB4 of field_0x04.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x04 void* field_0x04
+void fn_004C0AA0(void* self, void* out) {
+    {
+        std::string text;
+        ext_004C0280(&text, lift_field<void*>(self, 0x00));
+
+        // 8-byte temp value: field +0x00 unused here, field +0x04 is released below.
+        alignas(8) uint8_t tmp[8] = {};
+        ext_006720E0(tmp, &text);
+        ext_0041CF50(self, tmp);
+
+        void* held = lift_field<void*>(tmp, 0x04);
+        if (held != nullptr) {
+            void* held_vt = *static_cast<void**>(held);
+            auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(held_vt, 0x78));
+            release(held, tmp);
+        }
+        // text is destroyed here, before the virtual call, as in the original.
+        (void)&mem_00924FF4;  // metadata-only: std::string dtor import, replaced by scope exit
+    }
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void* obj_vt = *static_cast<void**>(obj);
+    auto describe = reinterpret_cast<void (*)(void*, void*, void*)>(lift_field<void*>(obj_vt, 0xB4));
+    describe(obj, self, out);
+}
+} // namespace lift_004C0AA0
