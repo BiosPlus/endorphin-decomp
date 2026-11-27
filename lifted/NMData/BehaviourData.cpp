@@ -68,6 +68,7 @@ void __thiscall fn_004A9C60(void* self, uint32_t arg) {
     ext_0047D300(mem_00AE29D0, field_0x168);
 }
 #include <cstdint>
+#include <cstring>
 
 // [0x004A9C90] NMData::BehaviourData::vfunc_73 (35 bytes)
 // @name NMData::BehaviourData::vfunc_73
@@ -919,3 +920,189 @@ void __thiscall fn_004AD080(void* self, void* node) {
     ext_004EC300(lift_field<void*>(self, 0x180), &lift_field<std::string>(self, 0x328));
 }
 } // namespace lift_004AD080
+
+// [0x004AD340]
+namespace lift_004AD340 {
+// @name NMData::BehaviourData::vfunc_88
+// @class NMData::BehaviourData
+// @summary Rebuilds behaviour data state, filters active items, clears cached arrays, and registers HelperGraphic render objects.
+// @field NMData::BehaviourData +0x0C void* field_0x0c
+// @field NMData::BehaviourData +0x10 void* field_0x10
+// @field NMData::BehaviourData +0x168 void* field_0x168
+// @field NMData::BehaviourData +0x180 void* field_0x180
+// @field NMData::BehaviourData +0x184 void* field_0x184
+// @field NMData::BehaviourData +0x2F0 void* field_0x2f0
+// @field NMData::BehaviourData +0x328 uint8_t field_0x328
+// @field NMData::BehaviourData +0x364 uint8_t field_0x364
+// @field NMData::BehaviourData +0x3C8 uint8_t field_0x3c8
+// @field NMData::BehaviourData +0x3CC int32_t* field_0x3cc
+// @field NMData::BehaviourData +0x3D0 int32_t* field_0x3d0
+// @field NMData::BehaviourData +0x3D8 uint8_t field_0x3d8
+// @field NMData::BehaviourData +0x3DC int32_t* field_0x3dc
+// @field NMData::BehaviourData +0x3E0 int32_t* field_0x3e0
+
+
+void __thiscall ext_004EE200(void* self);
+void* __thiscall ext_004ECA30(void* self);
+void __thiscall ext_00660D10(void* self, void* arg);
+void __thiscall ext_00660D40(void* self);
+void __thiscall ext_004EC300(void* self, void* arg);
+void* __cdecl ext_006A5C62(uint32_t size);
+void* __thiscall ext_0051F9E0(void* self, void* arg);
+void __thiscall ext_00520BD0(void* self);
+void __thiscall ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+uint8_t __cdecl ext_005F3E70(void* c1, void* first, void* c2, void* last, void* key_ptr, void* pred);
+void __thiscall ext_0041A920(void* self, void* item);
+void __cdecl ext_004AC4B0(int32_t* first, int32_t* last, int32_t count, void* ctx);
+void* __thiscall ext_0041CEB0(void* self, void* out_str);
+void* __cdecl ext_006A6E9E(void* src, int32_t vfdelta, void* src_type, void* dst_type, int32_t is_ref);
+void* __thiscall ext_005F9B90(void* self, void* arg);
+uint8_t __thiscall ext_00584C00(void* self);
+
+extern const char mem_00941EC8[];
+extern void* mem_00A2E2F8;
+extern void* mem_00A36F20;
+extern uint8_t (__cdecl* mem_00924FC0)(void* str, const char* cstr);
+extern void (__thiscall* mem_00924FF4)(void* str);
+extern void (__cdecl* mem_00925134)(void);
+extern int32_t (__cdecl* mem_009251EC)(void* dst, size_t dst_size, const void* src, size_t count);
+void __cdecl ext_00888C4D(void);
+
+void __thiscall fn_004AD340(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* state_obj = base + 0x364;
+    ext_004EE200(state_obj);
+    void* list_obj = ext_004ECA30(state_obj);
+
+    uint8_t guard[4];
+    ext_00660D10(guard, list_obj);
+
+    void* field180 = lift_field<void*>(base, 0x180);
+    if (field180 != nullptr) {
+        lift_field<uint8_t>(field180, 0x138) = 1;
+    }
+
+    ext_004EC300(lift_field<void*>(base, 0x180), base + 0x328);
+
+    void* mem = ext_006A5C62(0x168);
+    void* new_obj = (mem != nullptr) ? ext_0051F9E0(mem, lift_field<void*>(base, 0x180)) : nullptr;
+
+    void* old_obj = lift_field<void*>(base, 0x2F0);
+    if (new_obj != old_obj && old_obj != nullptr) {
+        using dtor_fn = void(__thiscall*)(void*, int32_t);
+        auto vtbl = *static_cast<void***>(old_obj);
+        reinterpret_cast<dtor_fn>(vtbl[0])(old_obj, 1);
+    }
+
+    lift_field<void*>(base, 0x2F0) = new_obj;
+    lift_field<void*>(base, 0x184) = new_obj;
+    ext_00520BD0(new_obj);
+
+    void* vec_3c8 = base + 0x3C8;
+    int32_t* first_3c8 = lift_field<int32_t*>(base, 0x3CC);
+    int32_t* last_3c8 = lift_field<int32_t*>(base, 0x3D0);
+    void* erase_out[2];
+    ext_00596660(vec_3c8, erase_out, vec_3c8, first_3c8, vec_3c8, last_3c8);
+
+    int32_t* list_first = lift_field<int32_t*>(list_obj, 0x4);
+    int32_t* list_last = lift_field<int32_t*>(list_obj, 0x8);
+    if (list_first != nullptr && (list_last - list_first) != 0) {
+        void* field168 = lift_field<void*>(base, 0x168);
+        void* container = lift_field<void*>(field168, 0x5EC);
+        void** it = lift_field<void**>(container, 0x1C);
+        void** end = lift_field<void**>(container, 0x20);
+
+        while (it != end) {
+            void* item = *it;
+            using get_next_fn = void*(__thiscall*)(void*, int32_t);
+            using pred_fn = uint8_t(__thiscall*)(void*);
+
+            void* cur = reinterpret_cast<get_next_fn>((*static_cast<void***>(item))[4])(item, 0);
+            while (cur != nullptr) {
+                auto cur_vtbl = *static_cast<void***>(cur);
+                if (reinterpret_cast<pred_fn>(cur_vtbl[5])(cur) != 0) {
+                    break;
+                }
+                cur = reinterpret_cast<get_next_fn>(cur_vtbl[4])(cur, 0);
+            }
+
+            if (cur != nullptr) {
+                void* key = cur;
+                if (ext_005F3E70(
+                        list_obj,
+                        lift_field<void*>(list_obj, 0x4),
+                        list_obj,
+                        lift_field<void*>(list_obj, 0x8),
+                        &key,
+                        container) != 0) {
+                    ext_0041A920(vec_3c8, it);
+                }
+            }
+            ++it;
+        }
+
+        int32_t* cur_first = lift_field<int32_t*>(base, 0x3CC);
+        int32_t* cur_last = lift_field<int32_t*>(base, 0x3D0);
+        ext_004AC4B0(cur_first, cur_last, static_cast<int32_t>(cur_last - cur_first), container);
+    }
+
+    int32_t* first_3dc = lift_field<int32_t*>(base, 0x3DC);
+    int32_t* last_3e0 = lift_field<int32_t*>(base, 0x3E0);
+    if (first_3dc != last_3e0) {
+        int32_t* tail_end = lift_field<int32_t*>(base, 0x3E0);
+        int32_t count = static_cast<int32_t>(tail_end - last_3e0);
+        if (count > 0) {
+            size_t bytes = static_cast<size_t>(count) * sizeof(int32_t);
+            mem_009251EC(first_3dc, bytes, last_3e0, bytes);
+        }
+        lift_field<int32_t*>(base, 0x3E0) = first_3dc + count;
+    }
+
+    if (lift_field<void*>(base, 0x10) != nullptr) {
+        uint8_t* vec_158 = static_cast<uint8_t*>(lift_field<void*>(base, 0x184)) + 0x158;
+        uint8_t* it = lift_field<uint8_t*>(vec_158, 0x4);
+        uint8_t* end = lift_field<uint8_t*>(vec_158, 0x8);
+
+        while (it != end) {
+            void* sub = lift_field<void*>(it, 0x20);
+            using get_type_fn = int32_t(__thiscall*)(void*);
+            int32_t type_id = reinterpret_cast<get_type_fn>((*static_cast<void***>(sub))[12])(sub);
+
+            uint8_t* elem = it + 0x1C;
+            bool is_helper = false;
+            if (type_id == 5) {
+                uint8_t str_buf[32];
+                void* ret_str = ext_0041CEB0(elem, str_buf);
+                is_helper = (mem_00924FC0(ret_str, mem_00941EC8) != 0);
+                mem_00924FF4(str_buf);
+            }
+
+            if (is_helper) {
+                void* obj_owner = lift_field<void*>(elem, 0x4);
+                using get_obj_fn = void*(__thiscall*)(void*, void*);
+                void* obj = reinterpret_cast<get_obj_fn>((*static_cast<void***>(obj_owner))[24])(obj_owner, elem);
+                void* dyn = ext_006A6E9E(obj, 0, &mem_00A2E2F8, &mem_00A36F20, 0);
+                ext_0041A920(base + 0x3D8, &dyn);
+
+                void* f10 = lift_field<void*>(base, 0x10);
+                void* target = lift_field<void*>(f10, 0x10);
+                auto target_vtbl = *static_cast<void***>(target);
+                using reg_fn = void(__thiscall*)(void*, void*);
+                void* res = ext_005F9B90(dyn, base + 0xC);
+                reinterpret_cast<reg_fn>(target_vtbl[3])(target, res);
+            }
+
+            it += 0x24;
+        }
+
+        uint8_t flag = ext_00584C00(self);
+        void* vtbl_0c = lift_field<void*>(base, 0xC);
+        using notify_fn = void(__thiscall*)(void*, uint32_t);
+        reinterpret_cast<notify_fn>(static_cast<void**>(vtbl_0c)[8])(base + 0xC, flag);
+    }
+
+    ext_00660D40(guard);
+    (void)&ext_00888C4D;
+    (void)&mem_00925134;
+}
+} // namespace lift_004AD340

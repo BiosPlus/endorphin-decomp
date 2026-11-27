@@ -1,0 +1,100 @@
+{
+  "va": "0x004AD340",
+  "size": 1056,
+  "orig_symbol": "NMData::BehaviourData::vfunc_88",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_88",
+  "class": "NMData::BehaviourData",
+  "signature": "void __thiscall fn_004AD340(void* self)",
+  "summary": "Rebuilds behaviour data state, filters active items, clears cached arrays, and registers HelperGraphic render objects.",
+  "fields": [
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x2F0",
+      "type": "void*",
+      "name": "field_0x2f0"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x328",
+      "type": "uint8_t",
+      "name": "field_0x328"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x364",
+      "type": "uint8_t",
+      "name": "field_0x364"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3C8",
+      "type": "uint8_t",
+      "name": "field_0x3c8"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3CC",
+      "type": "int32_t*",
+      "name": "field_0x3cc"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3D0",
+      "type": "int32_t*",
+      "name": "field_0x3d0"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3D8",
+      "type": "uint8_t",
+      "name": "field_0x3d8"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3DC",
+      "type": "int32_t*",
+      "name": "field_0x3dc"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3E0",
+      "type": "int32_t*",
+      "name": "field_0x3e0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:49:42Z"
+}
