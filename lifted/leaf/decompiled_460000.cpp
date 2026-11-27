@@ -1843,3 +1843,62 @@ void fn_00462AA0(void* self) {
     fn_00462440(local_obj);
 }
 } // namespace lift_00462AA0
+
+// [0x00463D00]
+namespace lift_00463D00 {
+// @name sub_00463D00
+// @summary Iterates a vector of pointers at +0x414 and invokes MFC80!ord_2164 on each element with arg1.
+// @field Class +0x414 uint32_t field_0x414
+// @field Class +0x418 void** vec_begin
+// @field Class +0x41C void** vec_end
+
+
+    extern void (*mem_00925134)(void);
+    extern uint32_t mem_00924FF0;
+    extern uint32_t mem_00924FF4;
+    extern const char mem_009251F0[];
+    void __thiscall ext_006A5FDA(void* self, void* arg1);
+    int* ext_004275C0(void);
+
+void __thiscall fn_00463D00(void* self, void* arg1) {
+    (void)mem_00924FF0;
+    (void)mem_00924FF4;
+    (void)mem_009251F0;
+    (void)ext_004275C0;
+    void (*invalid_param)(void) = mem_00925134;
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t* vec = base + 0x414;
+
+    uint32_t esi = lift_field<uint32_t>(base, 0x418);
+    if (esi > lift_field<uint32_t>(base, 0x41C)) {
+        invalid_param();
+    }
+
+    while (true) {
+        uint32_t ebx = lift_field<uint32_t>(vec, 0x8);
+        if (lift_field<uint32_t>(vec, 0x4) > ebx) {
+            invalid_param();
+        }
+        if (vec == nullptr) {
+            invalid_param();
+        }
+        if (esi == ebx) {
+            break;
+        }
+        if (vec == nullptr) {
+            invalid_param();
+        }
+        if (esi >= lift_field<uint32_t>(vec, 0x8)) {
+            invalid_param();
+        }
+
+        void* elem = *reinterpret_cast<void**>(static_cast<uintptr_t>(esi));
+        ext_006A5FDA(elem, arg1);
+
+        if (esi >= lift_field<uint32_t>(vec, 0x8)) {
+            invalid_param();
+        }
+        esi += 4;
+    }
+}
+} // namespace lift_00463D00

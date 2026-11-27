@@ -7246,6 +7246,12 @@
     "summary": "Sends window message 0x1009 (WM_USER+0x1009-style custom msg, wParam=0, lParam=0) to the HWND stored at this+0x2E4 via SendMessageA.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00463D00": {
+    "name": "sub_00463D00",
+    "signature": "void __thiscall fn_00463D00(void* self, void* arg1)",
+    "summary": "Iterates a vector of pointers at +0x414 and invokes MFC80!ord_2164 on each element with arg1.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00463EE0": {
     "name": "VideoGeneratorDialog::vfunc_1",
     "class": "VideoGeneratorDialog",

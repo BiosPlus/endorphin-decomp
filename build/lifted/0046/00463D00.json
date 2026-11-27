@@ -1,0 +1,33 @@
+{
+  "va": "0x00463D00",
+  "size": 100,
+  "orig_symbol": "sub_00463D00",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_00463D00",
+  "signature": "void __thiscall fn_00463D00(void* self, void* arg1)",
+  "summary": "Iterates a vector of pointers at +0x414 and invokes MFC80!ord_2164 on each element with arg1.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x414",
+      "type": "uint32_t",
+      "name": "field_0x414"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x418",
+      "type": "void**",
+      "name": "vec_begin"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x41C",
+      "type": "void**",
+      "name": "vec_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:02:41Z"
+}
