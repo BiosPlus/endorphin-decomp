@@ -259,3 +259,43 @@ extern void __thiscall fn_0074B330(void* self) {
     ext_006B9D70(self);
 }
 } // namespace lift_0074B330
+
+// [0x0074F710] sub_0074F710 (134 bytes)
+namespace lift_0074F710 {
+// Known callee 0x0074F7A0: Compare3Int32Keys (Three-key ordering compare of two 12-byte records: keys at +0x00, +0x08, +0x04 (in that priority); returns 0 if all equal, else 1 or -1.)
+extern int ext_0074F7A0(const void* a, const void* b);
+// IAT slots for MSVCR80 realloc (0x925290) and qsort (0x925298).
+extern void* mem_00925290;
+extern void* mem_00925298;
+
+// @name AppendRecordSorted16
+// @summary Appends a 16-byte record to a growable array (grows by 10 when full), stamps its slot index into dword +0x0C, re-sorts the array with Compare3Int32Keys, and returns the new record's index.
+// @field Record16 +0x00 uint32_t field_0x00
+// @field Record16 +0x04 uint32_t field_0x04
+// @field Record16 +0x08 uint32_t field_0x08
+// @field Record16 +0x0C uint32_t field_0x0C
+int fn_0074F710(void** buf, int32_t* capacity, int32_t* count, const void* rec) {
+    if (*capacity == *count) {
+        *capacity += 10;
+        auto realloc_fn = reinterpret_cast<void* (*)(void*, size_t)>(mem_00925290);
+        *buf = realloc_fn(*buf, static_cast<size_t>(*capacity) << 4);
+    }
+
+    const int32_t n = *count;
+    auto* base = static_cast<unsigned char*>(*buf);
+    auto* dst = reinterpret_cast<uint32_t*>(base + (static_cast<size_t>(n) << 4));
+    const auto* src = static_cast<const uint32_t*>(rec);
+    dst[0] = src[0];
+    dst[1] = src[1];
+    dst[2] = src[2];
+    dst[3] = src[3];
+    dst[3] = static_cast<uint32_t>(n);
+
+    *count = n + 1;
+
+    auto qsort_fn = reinterpret_cast<void (*)(void*, size_t, size_t,
+                                              int (*)(const void*, const void*))>(mem_00925298);
+    qsort_fn(*buf, static_cast<size_t>(n + 1), 16, &ext_0074F7A0);
+    return n;
+}
+} // namespace lift_0074F710

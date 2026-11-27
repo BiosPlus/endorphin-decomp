@@ -1,0 +1,39 @@
+{
+  "va": "0x0074F710",
+  "size": 134,
+  "orig_symbol": "sub_0074F710",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "AppendRecordSorted16",
+  "signature": "int fn_0074F710(void** buf, int32_t* capacity, int32_t* count, const void* rec)",
+  "summary": "Appends a 16-byte record to a growable array (grows by 10 when full), stamps its slot index into dword +0x0C, re-sorts the array with Compare3Int32Keys, and returns the new record's index.",
+  "fields": [
+    {
+      "class": "Record16",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record16",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record16",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Record16",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:23:43Z"
+}

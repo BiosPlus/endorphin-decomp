@@ -76555,6 +76555,12 @@
     "summary": "Returns (a / b) + (a % b) * c using signed 32-bit division; stdcall, 3 args (a, c, b).",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x0074F710": {
+    "name": "AppendRecordSorted16",
+    "signature": "int fn_0074F710(void** buf, int32_t* capacity, int32_t* count, const void* rec)",
+    "summary": "Appends a 16-byte record to a growable array (grows by 10 when full), stamps its slot index into dword +0x0C, re-sorts the array with Compare3Int32Keys, and returns the new record's index.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074F7A0": {
     "name": "Compare3Int32Keys",
     "signature": "int fn_0074F7A0(const void* a, const void* b)",
