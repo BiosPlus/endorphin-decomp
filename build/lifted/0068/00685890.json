@@ -1,0 +1,64 @@
+{
+  "va": "0x00685890",
+  "size": 109,
+  "orig_symbol": "sub_00685890",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Unknown::copyFrom_00685890",
+  "class": "Unknown",
+  "signature": "void* fn_00685890(void* self, void* other)",
+  "summary": "Copy-assigns this object's string members (+0x0C, +0x2C, +0x50, +0x6C) and the +0x28, +0x88, +0x8C words from `other`, delegates the embedded sub-object at +0x48 to fn_0041CF50, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void* field_0x0c (embedded",
+      "name": "std::string)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void* field_0x2c (embedded",
+      "name": "std::string)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "void* field_0x48 (embedded sub-object, copied via",
+      "name": "fn_0041CF50)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "void* field_0x50 (embedded",
+      "name": "std::string)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "void* field_0x6c (embedded",
+      "name": "std::string)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "uint32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "uint32_t",
+      "name": "field_0x8c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:00:28Z"
+}

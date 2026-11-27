@@ -2217,3 +2217,50 @@ void* __thiscall sub_006807A0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_006807A0
+
+// [0x00685890] sub_00685890 (109 bytes)
+namespace lift_00685890 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+
+// Import slot (IAT entry at 0x924FDC) holding MSVCP80 std::basic_string<char>::operator=(const basic_string&).
+extern uint32_t mem_00924FDC;
+
+// @name Unknown::copyFrom_00685890
+// @class Unknown
+// @summary Copy-assigns this object's string members (+0x0C, +0x2C, +0x50, +0x6C) and the +0x28, +0x88, +0x8C words from `other`, delegates the embedded sub-object at +0x48 to fn_0041CF50, and returns self.
+// @field Unknown +0x0C void* field_0x0c (embedded std::string)
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C void* field_0x2c (embedded std::string)
+// @field Unknown +0x48 void* field_0x48 (embedded sub-object, copied via fn_0041CF50)
+// @field Unknown +0x50 void* field_0x50 (embedded std::string)
+// @field Unknown +0x6C void* field_0x6c (embedded std::string)
+// @field Unknown +0x88 uint32_t field_0x88
+// @field Unknown +0x8C uint32_t field_0x8c
+void* fn_00685890(void* self, void* other) {
+    using AssignFn = void* (__thiscall*)(void* thisObj, const void* src);
+    auto stringAssign = [](void* dst, const void* src) {
+        auto fn = reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+        fn(dst, src);
+    };
+    // Address of an embedded member (not the pointer stored in it).
+    auto at = [](void* base, ptrdiff_t off) -> void* {
+        return reinterpret_cast<uint8_t*>(base) + off;
+    };
+
+    stringAssign(at(self, 0x0c), at(other, 0x0c));
+
+    lift_field<uint32_t>(self, 0x28) = lift_field<uint32_t>(other, 0x28);
+    stringAssign(at(self, 0x2c), at(other, 0x2c));
+
+    ext_0041CF50(at(self, 0x48), at(other, 0x48));
+
+    stringAssign(at(self, 0x50), at(other, 0x50));
+    stringAssign(at(self, 0x6c), at(other, 0x6c));
+
+    lift_field<uint32_t>(self, 0x88) = lift_field<uint32_t>(other, 0x88);
+    lift_field<uint32_t>(self, 0x8c) = lift_field<uint32_t>(other, 0x8c);
+
+    return self;
+}
+} // namespace lift_00685890
