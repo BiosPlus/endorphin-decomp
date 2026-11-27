@@ -2407,3 +2407,32 @@ void fn_00544240(void* self) {
     }
 }
 } // namespace lift_00544240
+
+// [0x005459D0] sub_005459D0 (115 bytes)
+namespace lift_005459D0 {
+// Known callee 0x005436B0: sub_005436B0 (181B) - thiscall, two stack args (arg1, arg2), called as base init.
+extern void ext_005436B0(void* self, uint32_t arg1, uint32_t arg2);
+// Known callee 0x00549980: GraphicQuadricObject::GraphicQuadricObject (Initializes a graphic object with vtable 0x956d14, unit scale/color floats, flag 4, and two GLU quadric objects.)
+extern void* ext_00549980(void* self);
+// Known callee 0x00543350: InitialVariableValues::ResetDefaults (Resets a block of float and byte state fields to their default values (1.0f or 0.0f) and clears the int at +0x88.)
+extern void ext_00543350(void* self);
+// .rdata float 0.1 (u32 0x3DCCCCCD)
+extern uint32_t mem_0093F8EC;
+
+// @name ConstructWithQuadricAndDefaults
+// @summary Thiscall constructor body: runs base init with two stack args, sets vtable 0x9569fc, constructs the embedded GraphicQuadricObject at +0x9C, resets defaults, stores 0.1f at +0xCC, returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x9C void field_0x9C
+// @field Unknown +0xCC float field_0xCC
+void* fn_005459D0(void* self, uint32_t arg1, uint32_t arg2) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    ext_005436B0(self, arg1, arg2);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x009569FCu;
+    ext_00549980(base + 0x9C);
+    ext_00543350(self);
+    *reinterpret_cast<float*>(base + 0xCC) = std::bit_cast<float>(mem_0093F8EC);
+
+    return self;
+}
+} // namespace lift_005459D0

@@ -28784,6 +28784,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005457B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005459D0": {
+    "name": "ConstructWithQuadricAndDefaults",
+    "signature": "void* fn_005459D0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Thiscall constructor body: runs base init with two stack args, sets vtable 0x9569fc, constructs the embedded GraphicQuadricObject at +0x9C, resets defaults, stores 0.1f at +0xCC, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00545A50": {
     "name": "ResizeTool::vfunc_29",
     "class": "ResizeTool",
