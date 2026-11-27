@@ -67612,7 +67612,7 @@ void fn_004C0880(void* self) {
     void* document = *static_cast<void**>(self);
 
     // Copy the string into a local buffer; the callee throws on a null document.
-    alignas(std::max_align_t) unsigned char local[16] = {};
+    alignas(8) unsigned char local[16] = {};
     void* copied = ext_004C0280(local, document);
     (void)copied;
 
