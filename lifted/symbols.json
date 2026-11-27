@@ -80500,6 +80500,13 @@
     "summary": "Flushes up to two pending bytes into the output buffer at the write cursor, advances the cursor, then clears the pending bytes and counter.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C5570": {
+    "name": "ByteBufferWriter::writeWordAndBytes",
+    "class": "ByteBufferWriter",
+    "signature": "void fn_007C5570(void* self, const uint8_t* src, uint32_t v, uint32_t flag)",
+    "summary": "Flushes pending bytes, sets state to 8, optionally writes the low/high bytes of v followed by their bitwise complements, then copies v bytes from src into the buffer.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C5610": {
     "name": "thunk_XSIFtk-3.6.2.1_?GetPrimitiveType@CSLModel@@QAE?AW4ETemplateType@CSLTemplate@@XZ",
     "signature": "extern \"C\" void fn_007C5610(void)",

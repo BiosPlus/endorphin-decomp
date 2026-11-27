@@ -1,0 +1,34 @@
+{
+  "va": "0x007C5570",
+  "size": 145,
+  "orig_symbol": "sub_007C5570",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "ByteBufferWriter::writeWordAndBytes",
+  "class": "ByteBufferWriter",
+  "signature": "void fn_007C5570(void* self, const uint8_t* src, uint32_t v, uint32_t flag)",
+  "summary": "Flushes pending bytes, sets state to 8, optionally writes the low/high bytes of v followed by their bitwise complements, then copies v bytes from src into the buffer.",
+  "fields": [
+    {
+      "class": "ByteBufferWriter",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "buffer"
+    },
+    {
+      "class": "ByteBufferWriter",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "cursor"
+    },
+    {
+      "class": "ByteBufferWriter",
+      "offset": "+0x16AC",
+      "type": "uint32_t",
+      "name": "state"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:37:03Z"
+}

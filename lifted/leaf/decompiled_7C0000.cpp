@@ -2252,3 +2252,38 @@ extern float* sub_007CC3F0(void* arg0, const float* in_vec, float* out_vec) {
     return out_vec;
 }
 } // namespace lift_007CC3F0
+
+// [0x007C5570] ByteBufferWriter::writeWordAndBytes (145 bytes)
+namespace lift_007C5570 {
+// Known callee 0x007C54F0: ByteBufferWriter::flushPendingBytes (Flushes up to two pending bytes into the output buffer at the write cursor, advances the cursor, then clears the pending bytes and counter.)
+extern void ext_007C54F0(void* self);
+
+// @name ByteBufferWriter::writeWordAndBytes
+// @class ByteBufferWriter
+// @summary Flushes pending bytes, sets state to 8, optionally writes the low/high bytes of v followed by their bitwise complements, then copies v bytes from src into the buffer.
+// @field ByteBufferWriter +0x08 uint8_t* buffer
+// @field ByteBufferWriter +0x14 uint32_t cursor
+// @field ByteBufferWriter +0x16AC uint32_t state
+void fn_007C5570(void* self, const uint8_t* src, uint32_t v, uint32_t flag) {
+    ext_007C54F0(self);
+    lift_field<uint32_t>(self, 0x16AC) = 8;
+
+    uint8_t* buf = lift_field<uint8_t*>(self, 0x08);
+    uint32_t& cursor = lift_field<uint32_t>(self, 0x14);
+
+    if (flag != 0) {
+        const uint8_t lo = static_cast<uint8_t>(v);
+        const uint8_t hi = static_cast<uint8_t>(v >> 8);
+        buf[cursor++] = lo;
+        buf[cursor++] = hi;
+        buf[cursor++] = static_cast<uint8_t>(~lo);
+        buf[cursor++] = static_cast<uint8_t>(~hi);
+    }
+
+    if (v != 0) {
+        for (uint32_t i = 0; i < v; ++i) {
+            buf[cursor++] = src[i];
+        }
+    }
+}
+} // namespace lift_007C5570

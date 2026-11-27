@@ -8,8 +8,10 @@
 // Recovered field layout for ByteBufferWriter:
 namespace lifted_layout {
 struct ByteBufferWriter_Fields {
-    // +0x8   uint8_t*                 buffer  (evidence: 0x007C54F0)
-    // +0x14  int32_t                  writePos  (evidence: 0x007C54F0)
+    // +0x8   uint8_t*                 buffer  (evidence: 0x007C54F0, 0x007C5570)
+    // +0x14  uint32_t                 cursor  (evidence: 0x007C5570) // CONFLICT: multiple definitions at +0x14
+    // +0x14  int32_t                  writePos  (evidence: 0x007C54F0) // CONFLICT: multiple definitions at +0x14
+    // +0x16AC uint32_t                 state  (evidence: 0x007C5570)
     // +0x16B0 uint8_t                  pendingByte0  (evidence: 0x007C54F0)
     // +0x16B1 uint8_t                  pendingByte1  (evidence: 0x007C54F0)
     // +0x16B4 int32_t                  pendingCount  (evidence: 0x007C54F0)
