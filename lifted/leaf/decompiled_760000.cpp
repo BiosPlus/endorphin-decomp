@@ -390,3 +390,19 @@ void fn_007642D0(void* self) {
     reinterpret_cast<void (*)(void*)>(&ext_00754FA0)(self);
 }
 } // namespace lift_007642D0
+
+// [0x00766900] sub_00766900 (22 bytes)
+namespace lift_00766900 {
+// Known callee 0x0079F230: sub_0079F230 (Auto-lifted identical-shape clone of 0x0078D740 (allocAndConstructObject0x250).)
+extern void* ext_0079F230(void);
+
+// @name AllocAndInvokeVSlot128
+// @summary Allocates an object via ext_0079F230, calls its virtual slot at +0x128 with the object as this, and returns the object.
+void* fn_00766900(void) {
+    void* obj = ext_0079F230();
+    void* vtbl = lift_field<void*>(obj, 0);
+    auto slot = reinterpret_cast<void(__thiscall*)(void*)>(lift_field<void*>(vtbl, 0x128));
+    slot(obj);
+    return obj;
+}
+} // namespace lift_00766900

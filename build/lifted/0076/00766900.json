@@ -1,0 +1,13 @@
+{
+  "va": "0x00766900",
+  "size": 22,
+  "orig_symbol": "sub_00766900",
+  "src_path": "src/leaf/decompiled_760000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_760000.cpp",
+  "name": "AllocAndInvokeVSlot128",
+  "signature": "void* fn_00766900(void)",
+  "summary": "Allocates an object via ext_0079F230, calls its virtual slot at +0x128 with the object as this, and returns the object.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:15:42Z"
+}

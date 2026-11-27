@@ -82130,6 +82130,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00766730 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_760000.cpp"
   },
+  "0x00766900": {
+    "name": "AllocAndInvokeVSlot128",
+    "signature": "void* fn_00766900(void)",
+    "summary": "Allocates an object via ext_0079F230, calls its virtual slot at +0x128 with the object as this, and returns the object.",
+    "lifted_path": "lifted/leaf/decompiled_760000.cpp"
+  },
   "0x0076AD20": {
     "name": "copyVec3NegateZ",
     "signature": "extern \"C\" void __stdcall fn_0076AD20( uint32_t dst, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8)",
