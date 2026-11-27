@@ -1,0 +1,13 @@
+{
+  "va": "0x00477DD0",
+  "size": 142,
+  "orig_symbol": "sub_00477DD0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "insertionSortInt32Range",
+  "signature": "void fn_00477DD0(int32_t* begin, int32_t* end)",
+  "summary": "Insertion sort of an int32 array in [begin, end); a key smaller than the first element shifts the prefix with memmove_s.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:30:07Z"
+}

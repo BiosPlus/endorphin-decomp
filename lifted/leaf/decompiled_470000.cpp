@@ -1152,3 +1152,47 @@ bool fn_00477FA0(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_00477FA0
+
+// [0x00477DD0] sub_00477DD0 (142 bytes)
+namespace lift_00477DD0 {
+// IAT slot holding MSVCR80!memmove_s (original: call dword ptr [0x9251ec]).
+extern int mem_009251EC;
+using MemmoveSFn = int (*)(void* dst, size_t dst_size, const void* src, size_t count);
+
+// @name insertionSortInt32Range
+// @summary Insertion sort of an int32 array in [begin, end); a key smaller than the first element shifts the prefix with memmove_s.
+void fn_00477DD0(int32_t* begin, int32_t* end) {
+    if (begin == end) {
+        return;
+    }
+    int32_t* next = begin + 1;
+    if (next == end) {
+        return;
+    }
+    for (; next != end; ++next) {
+        const int32_t key = *next;
+        if (key < *begin) {
+            // Shift [begin, next) up by one slot, then drop key at begin.
+            const ptrdiff_t count = next - begin;
+            if (count > 0) {
+                const size_t bytes = static_cast<size_t>(count) * 4;
+                auto memmove_s_fn = reinterpret_cast<MemmoveSFn>(
+                    static_cast<uintptr_t>(static_cast<uint32_t>(mem_009251EC)));
+                memmove_s_fn(begin + 1, bytes, begin, bytes);
+            }
+            *begin = key;
+        } else {
+            int32_t* hole = next;
+            int32_t* p = next - 1;
+            if (key < *p) {
+                do {
+                    *hole = *p;
+                    hole = p;
+                    --p;
+                } while (key < *p);
+            }
+            *hole = key;
+        }
+    }
+}
+} // namespace lift_00477DD0

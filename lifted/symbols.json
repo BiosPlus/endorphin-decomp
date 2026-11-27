@@ -9844,6 +9844,12 @@
     "summary": "Builds a heap in place over a 32-bit element range by sifting down each parent from n/2-1 to 0.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00477DD0": {
+    "name": "insertionSortInt32Range",
+    "signature": "void fn_00477DD0(int32_t* begin, int32_t* end)",
+    "summary": "Insertion sort of an int32 array in [begin, end); a key smaller than the first element shifts the prefix with memmove_s.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477E60": {
     "name": "FillTriplesFromSource",
     "signature": "void fn_00477E60(DWORD* dst, DWORD count, const DWORD* src)",
