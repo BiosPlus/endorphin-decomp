@@ -50737,6 +50737,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0050A720 (CopyBackwardElements24Wrapper).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00687DC0": {
+    "name": "ArrayOf56::reserve",
+    "class": "ArrayOf56",
+    "signature": "bool fn_00687DC0(void* self, uint32_t count)",
+    "summary": "Zeroes the three 32-bit range fields, then allocates count 56-byte elements and stores [begin, begin, begin+56*count) into the object; returns false when count is 0.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687E20": {
     "name": "sub_00687E20",
     "signature": "extern uint32_t fn_00687E20(uint32_t first, uint32_t last, uint32_t dest)",

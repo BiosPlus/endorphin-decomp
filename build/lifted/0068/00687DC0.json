@@ -1,0 +1,34 @@
+{
+  "va": "0x00687DC0",
+  "size": 81,
+  "orig_symbol": "sub_00687DC0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "ArrayOf56::reserve",
+  "class": "ArrayOf56",
+  "signature": "bool fn_00687DC0(void* self, uint32_t count)",
+  "summary": "Zeroes the three 32-bit range fields, then allocates count 56-byte elements and stores [begin, begin, begin+56*count) into the object; returns false when count is 0.",
+  "fields": [
+    {
+      "class": "ArrayOf56",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ArrayOf56",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ArrayOf56",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:21Z"
+}

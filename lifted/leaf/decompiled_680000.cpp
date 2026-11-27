@@ -2297,3 +2297,45 @@ void fn_00688E20(void* self, void* out, uint32_t a2, uint32_t first, uint32_t a4
     lift_field<uint32_t>(out, 0x04) = first;
 }
 } // namespace lift_00688E20
+
+// [0x00687DC0] sub_00687DC0 (81 bytes)
+namespace lift_00687DC0 {
+// Known callee 0x00405FB0: throwErrorFromLiteral (Builds a std::string from the .rdata literal at 0x928F30 and throws it wrapped in a std::exception-derived object.)
+extern void ext_00405FB0(void* self);
+// Known callee 0x0041D9E0: allocArray56 (Allocates an array of 56-byte elements with overflow check, throwing std::bad_alloc on overflow.)
+extern void* ext_0041D9E0(uint32_t count);
+
+// @name ArrayOf56::reserve
+// @class ArrayOf56
+// @summary Zeroes the three 32-bit range fields, then allocates count 56-byte elements and stores [begin, begin, begin+56*count) into the object; returns false when count is 0.
+// @field ArrayOf56 +0x04 uint32_t field_0x04
+// @field ArrayOf56 +0x08 uint32_t field_0x08
+// @field ArrayOf56 +0x0c uint32_t field_0x0c
+bool fn_00687DC0(void* self, uint32_t count) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto field = [base](std::size_t off) -> uint32_t& {
+        return *reinterpret_cast<uint32_t*>(base + off);
+    };
+
+    field(0x04) = 0;
+    field(0x08) = 0;
+    field(0x0c) = 0;
+
+    if (count == 0) {
+        return false;
+    }
+
+    if (count > 0x4924924u) {
+        ext_00405FB0(self); // throws
+    }
+
+    void* block = ext_0041D9E0(count);
+    uint32_t begin = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(block));
+    uint32_t end = begin + 56u * count; // 32-bit wrap, matches lea
+
+    field(0x04) = begin;
+    field(0x08) = begin;
+    field(0x0c) = end;
+    return true;
+}
+} // namespace lift_00687DC0
