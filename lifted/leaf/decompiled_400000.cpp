@@ -2119,3 +2119,28 @@ void* fn_00402630(const void* src_begin, const void* src_end, void* dst) {
     return out;
 }
 } // namespace lift_00402630
+
+// [0x0040C490]
+namespace lift_0040C490 {
+// @name ListBox::addStringWithLeadingSpace
+// @summary Prepends a space to the given string and sends LB_ADDSTRING to the control HWND at +0xa4.
+// @field ListBox +0xa4 uint32_t hwnd
+
+
+extern uintptr_t __stdcall ext_0040B220(uintptr_t out_ptr, uintptr_t rhs_ptr);
+
+    extern const char* (__thiscall *mem_00924FF0)(uintptr_t str_ptr);
+    extern uintptr_t (__stdcall *mem_00925694)(uint32_t hwnd, uint32_t msg, uint32_t wparam, const char* lparam);
+    extern void (__thiscall *mem_00924FF4)(uintptr_t str_ptr);
+
+void __thiscall fn_0040C490(uintptr_t self, uintptr_t rhs_ptr) {
+    alignas(4) uint8_t local_str[0x1c];
+    uintptr_t str_ptr = reinterpret_cast<uintptr_t>(local_str);
+
+    ext_0040B220(str_ptr, rhs_ptr);
+    const char* cstr = mem_00924FF0(str_ptr);
+    uint32_t hwnd = lift_field<uint32_t>(reinterpret_cast<void*>(self), 0xa4);
+    mem_00925694(hwnd, 0x180, 0, cstr);
+    mem_00924FF4(str_ptr);
+}
+} // namespace lift_0040C490

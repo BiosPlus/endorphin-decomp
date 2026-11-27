@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct ListBox_Fields {
     // +0x0   unknown                  field_0x00  (evidence: 0x0042EA40, 0x00535610, 0x00545B80, 0x0055BBD0, 0x005FF1C0)
+    // +0xA4  uint32_t                 hwnd  (evidence: 0x0040C490)
 };
 } // namespace lifted_layout
