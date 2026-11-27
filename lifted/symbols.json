@@ -13625,6 +13625,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x200 and tail-calls sub_004AFF30.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004B01E0": {
+    "name": "EventDispatcherWithArgs::vfunc_1",
+    "class": "EventDispatcherWithArgs\u003cFrameBufferIterator, FrameBufferPlaybackEventListener, \u0026[thunk]: __thiscall FrameBufferTickEventListener::`vcall'{0, {flat}}\u003e",
+    "signature": "void fn_004B01E0(void* self, uint32_t arg)",
+    "summary": "Dispatches a tick with arg as the second argument and zero as the first to the dispatcher's range via DispatchRangeWithDefault.",
+    "lifted_path": "lifted/templates/EventDispatcherWithArgs.cpp"
+  },
   "0x004B0840": {
     "name": "sub_004B0840",
     "signature": "extern \"C\" void __fastcall fn_004B0840(void* self)",

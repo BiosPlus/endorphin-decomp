@@ -1,0 +1,34 @@
+{
+  "va": "0x004B01E0",
+  "size": 15,
+  "orig_symbol": "EventDispatcherWithArgs\u003cFrameBufferIterator, FrameBufferPlaybackEventListener, \u0026[thunk]: __thiscall FrameBufferTickEventListener::`vcall'{0, {flat}}\u003e::vfunc_1",
+  "src_path": "src/templates/EventDispatcherWithArgs.cpp",
+  "lifted_path": "lifted/templates/EventDispatcherWithArgs.cpp",
+  "name": "EventDispatcherWithArgs::vfunc_1",
+  "class": "EventDispatcherWithArgs\u003cFrameBufferIterator, FrameBufferPlaybackEventListener, \u0026[thunk]: __thiscall FrameBufferTickEventListener::`vcall'{0, {flat}}\u003e",
+  "signature": "void fn_004B01E0(void* self, uint32_t arg)",
+  "summary": "Dispatches a tick with arg as the second argument and zero as the first to the dispatcher's range via DispatchRangeWithDefault.",
+  "fields": [
+    {
+      "class": "EventDispatcherWithArgs",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "rangeBegin"
+    },
+    {
+      "class": "EventDispatcherWithArgs",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "rangeEnd"
+    },
+    {
+      "class": "EventDispatcherWithArgs",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "defaultArg"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:16:32Z"
+}
