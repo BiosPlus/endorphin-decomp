@@ -1025,3 +1025,112 @@ void __thiscall fn_005C0A50(void* self, void* arg0) {
     }
 }
 } // namespace lift_005C0A50
+
+// [0x005C14B0]
+namespace lift_005C14B0 {
+// @name NMData::MetaBodyData::vfunc_16_off_C
+// @class NMData::MetaBodyData
+// @summary Clones MetaBodyData and creates/attaches its associated render/proxy object
+// @field NMData::MetaBodyData +0x8 MsvcString field_0x08
+// @field NMData::MetaBodyData +0x200 void* field_0x200
+// @field NMData::MetaBodyData +0x20C void* subObject
+
+
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+
+void* __cdecl ext_006A5C62(uint32_t size);
+void* __thiscall ext_005C1060(void* self, void* src);
+void __thiscall ext_00587470(void* self, void* arg0);
+void __thiscall ext_005ECBA0(void* self, void* arg0);
+int __thiscall ext_005DF5C0(void* self, MsvcString str);
+void __thiscall ext_005BFDE0(void* self, MsvcString str);
+void __thiscall ext_005BFEE0(void* self, MsvcString str);
+void __thiscall ext_005A3540(void* self, void* arg0);
+void* __thiscall ext_005EF6D0(void* self);
+void __thiscall ext_005EE9A0(void* self, void* arg0);
+void __thiscall ext_00587920(void* self, void* arg0, uint32_t arg1);
+void __thiscall ext_005A35D0(void* self, void* arg0);
+
+extern MsvcString* (__cdecl* mem_00924ECC)(MsvcString* out, const MsvcString* lhs, const char* rhs);
+extern void (__thiscall* mem_00924FDC)(MsvcString* self, const MsvcString* rhs);
+extern void (__thiscall* mem_00924FE0)(MsvcString* self, const MsvcString* rhs);
+extern void (__thiscall* mem_00924FF4)(MsvcString* self);
+extern const char* mem_00A9F004;
+
+void* __thiscall fn_005C14B0(void* self, void* arg0) {
+    uint8_t* esi = static_cast<uint8_t*>(self);
+    void* raw_meta = ext_006A5C62(0x220);
+    void* edi = nullptr;
+    if (raw_meta != nullptr) {
+        edi = ext_005C1060(raw_meta, esi - 0xC);
+    }
+
+    void* obj200 = lift_field<void*>(esi, 0x200);
+    void* ecx_190 = lift_field<void*>(obj200, 0x190);
+    uint8_t* ebx = lift_field<uint8_t*>(obj200, 0x18C);
+    ext_00587470(ecx_190, obj200);
+
+    obj200 = lift_field<void*>(esi, 0x200);
+    ext_005ECBA0(lift_field<void*>(obj200, 0x190), obj200);
+
+    obj200 = lift_field<void*>(esi, 0x200);
+    auto vfunc_24 = reinterpret_cast<const MsvcString* (__thiscall*)(void*)>(
+        (*reinterpret_cast<void***>(obj200))[0x24 / 4]);
+    MsvcString tmp1{};
+    mem_00924FE0(&tmp1, vfunc_24(obj200));
+    uint8_t* ebp = ebx + 0x58C;
+    int found = ext_005DF5C0(ebp, tmp1);
+
+    obj200 = lift_field<void*>(esi, 0x200);
+    vfunc_24 = reinterpret_cast<const MsvcString* (__thiscall*)(void*)>(
+        (*reinterpret_cast<void***>(obj200))[0x24 / 4]);
+    MsvcString tmp2{};
+    mem_00924FE0(&tmp2, vfunc_24(obj200));
+    ext_005BFDE0(found != 0 ? ebp : (ebx + 0x5A4), tmp2);
+
+    void* ebp_arg = arg0;
+    void* sub20c = lift_field<void*>(ebp_arg, 0x20C);
+    void* ebx_new = lift_field<void*>(sub20c, 0x18C);
+
+    MsvcString tmp3{};
+    mem_00924FE0(&tmp3, reinterpret_cast<const MsvcString*>(esi + 0x8));
+    ext_005BFEE0(ebx + 0x598, tmp3);
+
+    ext_005A3540(ebx_new, edi);
+
+    void* raw_proxy = ext_006A5C62(0x2F8);
+    void* esi_new = nullptr;
+    if (raw_proxy != nullptr) {
+        esi_new = ext_005EF6D0(raw_proxy);
+    }
+
+    auto edi_vfunc_24 = reinterpret_cast<const MsvcString* (__thiscall*)(void*)>(
+        (*reinterpret_cast<void***>(edi))[0x24 / 4]);
+    MsvcString joined{};
+    mem_00924ECC(&joined, edi_vfunc_24(edi), mem_00A9F004);
+    auto esi_vfunc_5c = reinterpret_cast<void (__thiscall*)(void*, MsvcString*)>(
+        (*reinterpret_cast<void***>(esi_new))[0x5C / 4]);
+    esi_vfunc_5c(esi_new, &joined);
+    mem_00924FF4(&joined);
+
+    ext_005EE9A0(lift_field<void*>(ebp_arg, 0x20C), esi_new);
+
+    lift_field<void*>(esi_new, 0x228) = ebp_arg;
+    auto ebp_vfunc_24 = reinterpret_cast<const MsvcString* (__thiscall*)(void*)>(
+        (*reinterpret_cast<void***>(ebp_arg))[0x24 / 4]);
+    mem_00924FDC(reinterpret_cast<MsvcString*>(static_cast<uint8_t*>(esi_new) + 0x198), ebp_vfunc_24(ebp_arg));
+
+    lift_field<void*>(esi_new, 0x22C) = edi;
+    edi_vfunc_24 = reinterpret_cast<const MsvcString* (__thiscall*)(void*)>(
+        (*reinterpret_cast<void***>(edi))[0x24 / 4]);
+    mem_00924FDC(reinterpret_cast<MsvcString*>(static_cast<uint8_t*>(esi_new) + 0x1B4), edi_vfunc_24(edi));
+
+    ext_00587920(esi_new, edi, 0);
+    lift_field<void*>(edi, 0x20C) = esi_new;
+    ext_005A35D0(ebx_new, esi_new);
+
+    return edi;
+}
+} // namespace lift_005C14B0
