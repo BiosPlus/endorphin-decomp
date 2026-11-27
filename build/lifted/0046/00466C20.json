@@ -1,0 +1,14 @@
+{
+  "va": "0x00466C20",
+  "size": 10,
+  "orig_symbol": "EventDispatcherWithArgs\u003cFrameBufferIterator, FrameBufferPlaybackEventListener, \u0026[thunk]: __thiscall FrameBufferTickEventListener::`vcall'{0, {flat}}\u003e::vfunc_2",
+  "src_path": "src/templates/EventDispatcherWithArgs.cpp",
+  "lifted_path": "lifted/templates/EventDispatcherWithArgs.cpp",
+  "name": "EventDispatcherWithArgs::vfunc_2",
+  "class": "EventDispatcherWithArgs\u003cFrameBufferIterator, FrameBufferPlaybackEventListener, \u0026[thunk]: __thiscall FrameBufferTickEventListener::`vcall'{0, {flat}}\u003e",
+  "signature": "void fn_00466C20(void* self)",
+  "summary": "Dispatches a tick with both arguments zeroed to the dispatcher's range via DispatchRangeWithDefault.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:16:24Z"
+}

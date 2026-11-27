@@ -7609,6 +7609,13 @@
     "summary": "Dispatches arg1 (or self-\u003e+0x24 when arg1 is 0) to every object pointer in the [+0x18, +0x1C) range, then forwards arg2 to ext_00678D70.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00466C20": {
+    "name": "EventDispatcherWithArgs::vfunc_2",
+    "class": "EventDispatcherWithArgs\u003cFrameBufferIterator, FrameBufferPlaybackEventListener, \u0026[thunk]: __thiscall FrameBufferTickEventListener::`vcall'{0, {flat}}\u003e",
+    "signature": "void fn_00466C20(void* self)",
+    "summary": "Dispatches a tick with both arguments zeroed to the dispatcher's range via DispatchRangeWithDefault.",
+    "lifted_path": "lifted/templates/EventDispatcherWithArgs.cpp"
+  },
   "0x00466CF0": {
     "name": "VMCActionDoc::vfunc_30",
     "class": "VMCActionDoc",
@@ -25824,6 +25831,13 @@
     "class": "ManagedDisplayList\u003cRenderableList\u003e",
     "signature": "void __thiscall fn_0054C3A0(void* self, void* a1, void* a2, void* a3)",
     "summary": "Walks the element pointer range [field_0x18, field_0x1C) and calls virtual slot 12 (+0x30) on each element, forwarding the three stack arguments.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
+  "0x0054C420": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_14",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void __thiscall fn_0054C420(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Iterates over child Renderables in the list and invokes vfunc_14 on each with two arguments",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
   "0x0054C490": {
