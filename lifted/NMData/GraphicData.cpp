@@ -203,3 +203,44 @@ void __thiscall fn_0061FF80(void* self, void* arg) {
     ext_005B5E50(sub, value);
 }
 } // namespace lift_0061FF80
+
+// [0x00620040] NMData::GraphicData::vfunc_36 (90 bytes)
+namespace lift_00620040 {
+// @name NMData::GraphicData::vfunc_36
+// @class NMData::GraphicData
+// @summary Builds the homogeneous vector (x, x, x, 1.0f) from *arg, passes it to ext_005B1AB0 on this+0x154, then if this->field_0x10 is non-null, calls vfunc_13 (vtable +0x34) on it with the result of OglRenderer::vfunc_118 (ext_005B11F0) on this+0x154.
+// @field NMData::GraphicData +0x10 void* field_0x10
+
+// Thiscall; ecx = this+0x154 (sub-object address), one stack argument (pointer to float[4]); callee pops it.
+extern void __thiscall ext_005B1AB0(void* self, float* vec4);
+// OglRenderer::vfunc_118: thiscall, ecx = this+0x154, no stack args; result returned in eax.
+extern uint32_t __thiscall ext_005B11F0(void* self);
+// Known callees listed in the metadata only (not called by this function's asm; referenced for metadata only).
+extern void ext_0058F650();
+extern void ext_005B44B0();
+extern void ext_006404E0();
+// Data referenced by the original asm's surrounding metadata only (not accessed here).
+extern const uint32_t mem_00A9EF74;
+
+void __thiscall fn_00620040(uint8_t* self, const float* arg1) {
+    (void)&ext_0058F650;
+    (void)&ext_005B44B0;
+    (void)&ext_006404E0;
+    (void)&mem_00A9EF74;
+
+    const float x = *arg1;
+    float vec4[4] = {x, x, x, 1.0f};
+
+    uint8_t* sub = self + 0x154;
+    ext_005B1AB0(sub, vec4);
+
+    void* obj = lift_field<void*>(self, 0x10);
+    if (obj != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(obj);
+        uint32_t result = ext_005B11F0(sub);
+        using VFunc13 = void(__thiscall*)(void*, uint32_t);
+        auto vfunc_13 = reinterpret_cast<VFunc13>(vtable[13]);
+        vfunc_13(obj, result);
+    }
+}
+} // namespace lift_00620040

@@ -1,0 +1,22 @@
+{
+  "va": "0x00620040",
+  "size": 90,
+  "orig_symbol": "NMData::GraphicData::vfunc_36",
+  "src_path": "src/NMData/GraphicData.cpp",
+  "lifted_path": "lifted/NMData/GraphicData.cpp",
+  "name": "NMData::GraphicData::vfunc_36",
+  "class": "NMData::GraphicData",
+  "signature": "void __thiscall fn_00620040(uint8_t* self, const float* arg1)",
+  "summary": "Builds the homogeneous vector (x, x, x, 1.0f) from *arg, passes it to ext_005B1AB0 on this+0x154, then if this-\u003efield_0x10 is non-null, calls vfunc_13 (vtable +0x34) on it with the result of OglRenderer::vfunc_118 (ext_005B11F0) on this+0x154.",
+  "fields": [
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:02:37Z"
+}

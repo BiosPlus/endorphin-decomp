@@ -63355,6 +63355,13 @@
     "summary": "Calls CollisionModelDataBase::vfunc_21 on self with arg, maps the result of sub_0063F530(arg, mem_00A9EF58, 0, 1) through a set of sentinel values to a canonical 0x00B53B30 (otherwise keeps the raw result), assigns the literal string into the subobject at +0x154, and forwards the canonical value to sub_005B5E50 on that subobject.",
     "lifted_path": "lifted/NMData/GraphicData.cpp"
   },
+  "0x00620040": {
+    "name": "NMData::GraphicData::vfunc_36",
+    "class": "NMData::GraphicData",
+    "signature": "void __thiscall fn_00620040(uint8_t* self, const float* arg1)",
+    "summary": "Builds the homogeneous vector (x, x, x, 1.0f) from *arg, passes it to ext_005B1AB0 on this+0x154, then if this-\u003efield_0x10 is non-null, calls vfunc_13 (vtable +0x34) on it with the result of OglRenderer::vfunc_118 (ext_005B11F0) on this+0x154.",
+    "lifted_path": "lifted/NMData/GraphicData.cpp"
+  },
   "0x00620120": {
     "name": "NMData::GraphicData::vfunc_34",
     "class": "NMData::GraphicData",
