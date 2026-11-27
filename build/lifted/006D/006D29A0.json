@@ -1,0 +1,34 @@
+{
+  "va": "0x006D29A0",
+  "size": 144,
+  "orig_symbol": "sub_006D29A0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Vec3d::normalize",
+  "class": "Vec3d",
+  "signature": "void __thiscall sub_006D29A0(void* self)",
+  "summary": "Normalize a 3D double-precision vector in place, zeroing it if its length is zero.",
+  "fields": [
+    {
+      "class": "Vec3d",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "x"
+    },
+    {
+      "class": "Vec3d",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "y"
+    },
+    {
+      "class": "Vec3d",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:43:35Z"
+}

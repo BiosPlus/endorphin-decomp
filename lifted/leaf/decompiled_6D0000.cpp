@@ -2481,3 +2481,36 @@ extern void* __thiscall fn_006D2410(const void* self, void* out, double scale) {
     return out;
 }
 } // namespace lift_006D2410
+
+// [0x006D29A0]
+namespace lift_006D29A0 {
+// @name Vec3d::normalize
+// @class Vec3d
+// @summary Normalize a 3D double-precision vector in place, zeroing it if its length is zero.
+// @field Vec3d +0x00 double x
+// @field Vec3d +0x08 double y
+// @field Vec3d +0x10 double z
+
+
+extern double mem_0092A270;
+extern double mem_0092A278;
+
+void __thiscall sub_006D29A0(void* self) {
+    double& x = lift_field<double>(self, 0x00);
+    double& y = lift_field<double>(self, 0x08);
+    double& z = lift_field<double>(self, 0x10);
+
+    double len = std::sqrt(x * x + y * y + z * z);
+    if (len == mem_0092A278) {
+        x = 0.0;
+        y = 0.0;
+        z = 0.0;
+        return;
+    }
+
+    double inv_len = mem_0092A270 / len;
+    x *= inv_len;
+    y *= inv_len;
+    z *= inv_len;
+}
+} // namespace lift_006D29A0

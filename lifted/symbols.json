@@ -68168,6 +68168,13 @@
     "summary": "Returns 1 if the x, y and z doubles of two Vec3d values each differ by at most 1e-6 (NaN differences count as equal, matching the x87 fcomp/C0|C3 test); otherwise 0.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D29A0": {
+    "name": "Vec3d::normalize",
+    "class": "Vec3d",
+    "signature": "void __thiscall sub_006D29A0(void* self)",
+    "summary": "Normalize a 3D double-precision vector in place, zeroing it if its length is zero.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2A30": {
     "name": "sub_006D2A30",
     "signature": "extern \"C\" void* __fastcall fn_006D2A30(void* self)",
@@ -69432,6 +69439,12 @@
     "summary": "Counts items in array at +0x8c matching the given type, or returns total count if type is 0.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E9730": {
+    "name": "getItemByTypeAndIndex",
+    "signature": "extern \"C\" void* __fastcall fn_006E9730(void* self, void* /*edx*/, int32_t index, int32_t type)",
+    "summary": "Returns the index-th item in the array at +0x8c matching the given type (or any type if type is 0).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E99C0": {
     "name": "ConstructObject_006E99C0",
     "class": "Unknown",
@@ -69444,6 +69457,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006E9A20(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006E9A40 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E9A40": {
+    "name": "Unknown::DestroyArrayAndBase",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_006E9A40(void* self)",
+    "summary": "Destructor that destroys elements in an array at +0x1C (count at +0x0C), resets/frees the subobject at +0x0C, and calls base destructor 0x0077FA20.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E9AD0": {
     "name": "sub_006E9AD0",
