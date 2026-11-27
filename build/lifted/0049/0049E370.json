@@ -1,0 +1,22 @@
+{
+  "va": "0x0049E370",
+  "size": 205,
+  "orig_symbol": "PointainerWithUndo\u003cUndoablePointainerVectorWithFind\u003cNMData::ValuePtrData\u003e\u003e::RemoveElementCommand::vfunc_3",
+  "src_path": "src/templates/RemoveElementCommand.cpp",
+  "lifted_path": "lifted/templates/RemoveElementCommand.cpp",
+  "name": "RemoveElementCommand::describe",
+  "class": "PointainerWithUndo\u003cUndoablePointainerVectorWithFind\u003cNMData::ValuePtrData\u003e\u003e::RemoveElementCommand",
+  "signature": "extern \"C\" uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern \"C\" uint32_t mem_00924E54; // ostringstream::str() extern \"C\" uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern \"C\" uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern \"C\" uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0049E370(void* self, void* /*edx*/, void* result)",
+  "summary": "Builds a description string from a literal and the element at +0x1C via an ostringstream, returning it by value.",
+  "fields": [
+    {
+      "class": "RemoveElementCommand",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:41:20Z"
+}

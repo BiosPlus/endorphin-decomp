@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/templates/RemoveElementCommand.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x00527FE0] PointainerWithUndo<UndoablePointainerVector<Interpreter>>::RemoveElementCommand::vfunc_1 (82 bytes)
 namespace lift_00527FE0 {
@@ -202,3 +203,39 @@ void fn_004B55B0(void* self) {
     }
 }
 } // namespace lift_004B55B0
+
+// [0x0049E370]
+namespace lift_0049E370 {
+extern void* ext_0049D190(void* out, uint32_t value);
+extern void* ext_00435D00(void* out, const char* lit, void* str);
+extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int)
+extern uint32_t mem_00924E54; // ostringstream::str()
+extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor)
+extern uint32_t mem_00924E94; // operator<<(ostream&, const string&)
+extern uint32_t mem_00924FF4; // string::~string
+
+// @name RemoveElementCommand::describe
+// @class PointainerWithUndo<UndoablePointainerVectorWithFind<NMData::ValuePtrData>>::RemoveElementCommand
+// @summary Builds a description string from a literal and the element at +0x1C via an ostringstream, returning it by value.
+// @field RemoveElementCommand +0x1C uint32_t field_0x1C
+void* __fastcall fn_0049E370(void* self, void* /*edx*/, void* result)
+{
+    alignas(8) uint8_t oss[0x80];
+    alignas(8) uint8_t tmp[0x20];
+    alignas(8) uint8_t tmp2[0x20];
+
+    using CtorFn = void(__thiscall*)(void*, int);
+    using StrFn = void*(__thiscall*)(void*, void*);
+    using DtorFn = void(__thiscall*)(void*);
+    using ShlFn = void*(__cdecl*)(void*, void*);
+
+    ((CtorFn)(uintptr_t)mem_00924E4C)(oss, 2);
+    void* s = ext_0049D190(tmp, *(uint32_t*)((uint8_t*)self + 0x1C));
+    void* s2 = ext_00435D00(tmp2, (const char*)(uintptr_t)0x009404B4u, s);
+    ((ShlFn)(uintptr_t)mem_00924E94)(oss, s2);
+    ((DtorFn)(uintptr_t)mem_00924FF4)(tmp);
+    ((StrFn)(uintptr_t)mem_00924E54)(oss, result);
+    ((DtorFn)(uintptr_t)mem_00924E58)(oss);
+    return result;
+}
+} // namespace lift_0049E370

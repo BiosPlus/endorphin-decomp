@@ -15969,6 +15969,13 @@
     "summary": "Searches a vector of objects for one whose vtable+0x24 name matches the given std::string",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049E370": {
+    "name": "RemoveElementCommand::describe",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVectorWithFind\u003cNMData::ValuePtrData\u003e\u003e::RemoveElementCommand",
+    "signature": "extern \"C\" uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern \"C\" uint32_t mem_00924E54; // ostringstream::str() extern \"C\" uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern \"C\" uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern \"C\" uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0049E370(void* self, void* /*edx*/, void* result)",
+    "summary": "Builds a description string from a literal and the element at +0x1C via an ostringstream, returning it by value.",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x0049E440": {
     "name": "initObjectWithStaticBase_0049E440",
     "signature": "void* fn_0049E440(void* self, DWORD arg2)",
