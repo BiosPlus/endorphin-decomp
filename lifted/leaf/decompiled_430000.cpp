@@ -4212,3 +4212,48 @@ void fn_0043B650(uint32_t* arr, int32_t hole, int32_t bottom, uint32_t value, ui
     ext_0043B560(arr, hole, top, value, extra);
 }
 } // namespace lift_0043B650
+
+// [0x00432400] sub_00432400 (134 bytes)
+namespace lift_00432400 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+extern void ext_00465B40();
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+extern void ext_006A5E60();
+extern int mem_00924FE0;
+extern int mem_00924FF0;
+extern int mem_00924FF4;
+
+// @name fn_00432400 (call-object virtual method 0x1EC with arg 0)
+// @summary Gets an object from ext_00465B40 and invokes its vtable slot at +0x1EC with argument 0.
+// @field Unknown +0x00 void** vptr
+void fn_00432400(void* self) {
+    (void)self;
+    // call ext_00465B40 -> eax = object (this)
+    void* obj = reinterpret_cast<void* (*)()>(ext_00465B40)();
+    // mov edx, [eax]; mov eax, [edx+0x1ec]; push 0; call eax  (ecx = obj)
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    void* method = *reinterpret_cast<void**>(reinterpret_cast<char*>(vtbl) + 0x1EC);
+    reinterpret_cast<void (*)(void*, int)>(method)(obj, 0);
+}
+
+// SEH cleanup funclet (0x43244C..0x432485); returns to 0x43243B.
+// Source object at frame-0x14; copies its +0x0C std::string into a temp at frame-0x30,
+// passes its c_str() to ext_006A5E60, then destroys the temp.
+// @name fn_00432400_cleanup
+// @summary Unwind funclet: string copy, c_str pass to ext_006A5E60, string destroy.
+void fn_00432400_cleanup(char* frame) {
+    char* srcObj = *reinterpret_cast<char**>(frame - 0x14);
+    void* srcStr = srcObj + 0x0C;
+    alignas(8) unsigned char tmp[0x1C] = {};
+    // MSVCP80 std::string copy ctor (this = tmp, arg = srcStr)
+    using CopyCtor = void (*)(void*, const void*);
+    reinterpret_cast<CopyCtor>(*reinterpret_cast<void**>(&mem_00924FE0))(tmp, srcStr);
+    // MSVCP80 basic_string::c_str (this = tmp)
+    using CStr = const char* (*)(void*);
+    const char* s = reinterpret_cast<CStr>(*reinterpret_cast<void**>(&mem_00924FF0))(tmp);
+    reinterpret_cast<void (*)(const char*)>(ext_006A5E60)(s);
+    // MSVCP80 basic_string dtor (this = tmp)
+    using Dtor = void (*)(void*);
+    reinterpret_cast<Dtor>(*reinterpret_cast<void**>(&mem_00924FF4))(tmp);
+}
+} // namespace lift_00432400

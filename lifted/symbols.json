@@ -3621,6 +3621,12 @@
     "summary": "Gets the global value via fn_00465B30, resolves an object with fn_00468660, then calls its vtable slot 1 and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00432400": {
+    "name": "fn_00432400 (call-object virtual method 0x1EC with arg 0)",
+    "signature": "void fn_00432400(void* self)",
+    "summary": "Gets an object from ext_00465B40 and invokes its vtable slot at +0x1EC with argument 0.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004329A0": {
     "name": "init_and_update_field_0x11c",
     "signature": "extern \"C\" void __thiscall fn_004329A0(uintptr_t self)",

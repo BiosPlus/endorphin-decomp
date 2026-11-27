@@ -1,0 +1,21 @@
+{
+  "va": "0x00432400",
+  "size": 134,
+  "orig_symbol": "sub_00432400",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "fn_00432400 (call-object virtual method 0x1EC with arg 0)",
+  "signature": "void fn_00432400(void* self)",
+  "summary": "Gets an object from ext_00465B40 and invokes its vtable slot at +0x1EC with argument 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:22:47Z"
+}
