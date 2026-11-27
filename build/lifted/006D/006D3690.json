@@ -1,0 +1,28 @@
+{
+  "va": "0x006D3690",
+  "size": 48,
+  "orig_symbol": "sub_006D3690",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::appendNewIdToArray_006D3690",
+  "class": "Unknown",
+  "signature": "int32_t __thiscall fn_006D3690(void* self)",
+  "summary": "Calls virtual slot 6 on self to obtain a new id; if nonzero, appends it to the DynamicArray at +0x34 (index = current count) and returns the id.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "DynamicArray",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:43:41Z"
+}
