@@ -1131,3 +1131,24 @@ extern void __fastcall fn_004BA170(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_004BA170
+
+// [0x004B5030]
+namespace lift_004B5030 {
+// @name sub_004B5030
+// @summary Destroys optional std::string wrapper at +0x18, frees it, and calls sub_00665810
+// @field Self +0x18 void* field_0x18
+
+
+    void __fastcall ext_00665810(void* self);
+    void ext_006A5C5C(void* ptr);
+    extern void (__fastcall *mem_00924FF4)(void* str);
+
+extern void __fastcall fn_004B5030(void* self) {
+    void* obj = lift_field<void*>(self, 0x18);
+    if (obj != nullptr) {
+        mem_00924FF4(static_cast<uint8_t*>(obj) + 4);
+        ext_006A5C5C(obj);
+    }
+    ext_00665810(self);
+}
+} // namespace lift_004B5030
