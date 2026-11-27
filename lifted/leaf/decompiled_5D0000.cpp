@@ -1270,3 +1270,51 @@ void fn_005D10C0(void* self, float value) {
     ext_0065C650(cs);
 }
 } // namespace lift_005D10C0
+
+// [0x005D1200] sub_005D1200 (152 bytes)
+namespace lift_005D1200 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x005B11D0: UnknownClass::getElementPtr (Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.)
+extern uint32_t* ext_005B11D0(uintptr_t self, uint32_t index);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+
+// @name Unknown::SetFloatElementUnderLock
+// @class Unknown
+// @summary If the flag at +0x1f1 is clear, locks the object at global+0x258, stores the float argument into element 4 of the array at +0x210, sets flag +0x214, calls fn_00493EE0 and unlocks.
+// @field Unknown +0x1f1 uint8_t field_0x1f1
+// @field Unknown +0x210 UnknownClass field_0x210
+// @field Unknown +0x214 uint8_t field_0x214
+void fn_005D1200(void* self, float value) {
+    // Early-out when the flag at +0x1f1 is set (the original jne skips the whole body).
+    if (lift_field<uint8_t>(self, 0x1f1) != 0) {
+        return;
+    }
+
+    // Global object returned by fn_00594000; its +0x258 slot holds a locked-object pointer.
+    uintptr_t objAddr = static_cast<uint32_t>(ext_00594000());
+    uint8_t* obj = reinterpret_cast<uint8_t*>(objAddr);
+    void* lock = lift_field<void*>(obj, 0x258);
+
+    // Virtual call: slot at vtable+0x1d8 on the lock object, thiscall with the lock as this.
+    void* vtbl = lift_field<void*>(lock, 0);
+    void* slot = lift_field<void*>(vtbl, 0x1d8);
+    void* cs = reinterpret_cast<void* (*)(void*)>(slot)(lock);
+
+    ext_0065C640(cs);
+
+    uint32_t* elem = ext_005B11D0(reinterpret_cast<uintptr_t>(self) + 0x210, 4);
+    *elem = std::bit_cast<uint32_t>(value);
+
+    lift_field<uint8_t>(self, 0x214) = 1;
+
+    ext_00493EE0(obj + 0x258);
+
+    ext_0065C650(cs);
+}
+} // namespace lift_005D1200

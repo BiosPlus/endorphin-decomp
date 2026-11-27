@@ -38988,6 +38988,13 @@
     "summary": "If the flag at +0x1F1 is clear, store a float into element 0 of the inline array at +0x210, set the flag at +0x214, and dispatch on the global object under a critical section.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005D1200": {
+    "name": "Unknown::SetFloatElementUnderLock",
+    "class": "Unknown",
+    "signature": "void fn_005D1200(void* self, float value)",
+    "summary": "If the flag at +0x1f1 is clear, locks the object at global+0x258, stores the float argument into element 4 of the array at +0x210, sets flag +0x214, calls fn_00493EE0 and unlocks.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D13B0": {
     "name": "NMData::CameraData::vfunc_7_off_C",
     "class": "NMData::CameraData",
