@@ -1173,3 +1173,51 @@ void* __thiscall fn_005DC730(void* self, const void* other) {
     return self;
 }
 } // namespace lift_005DC730
+
+// [0x005D1020] sub_005D1020 (152 bytes)
+namespace lift_005D1020 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x005B11D0: UnknownClass::getElementPtr (Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.)
+extern uint32_t* ext_005B11D0(uintptr_t self, uint32_t index);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+
+// @name Unknown::UpdateFloatAndDispatch
+// @class Unknown
+// @summary If the flag at +0x1f1 is clear, enters the critical section of a global object, stores a float into element 0 of the inline array at +0x210, sets the flag at +0x214, dispatches through the global object, and leaves the critical section.
+// @field Unknown +0x1f1 uint8_t field_0x1f1
+// @field Unknown +0x210 uint32_t field_0x210
+// @field Unknown +0x214 uint8_t field_0x214
+void fn_005D1020(void* self, float value) {
+    if (lift_field<uint8_t>(self, 0x1f1) != 0) {
+        return;
+    }
+
+    // Global object pointer (32-bit address held in an int32 global).
+    uintptr_t obj = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000()));
+    uintptr_t lockField = obj + 0x258;
+
+    // Virtual call: vtable[0x1d8 / 4] on the object stored at obj+0x258.
+    void* lockObj = *reinterpret_cast<void**>(lockField);
+    void** vtbl = *reinterpret_cast<void***>(lockObj);
+    using VirtFn = void* (__thiscall*)(void*);
+    VirtFn slot = *reinterpret_cast<VirtFn*>(reinterpret_cast<uint8_t*>(vtbl) + 0x1d8);
+    void* lock = slot(lockObj);
+
+    ext_0065C640(lock);
+
+    uint32_t* elem = ext_005B11D0(reinterpret_cast<uintptr_t>(self) + 0x210, 0);
+    *reinterpret_cast<float*>(elem) = value;
+
+    lift_field<uint8_t>(self, 0x214) = 1;
+
+    ext_00493EE0(reinterpret_cast<void*>(lockField));
+
+    ext_0065C650(lock);
+}
+} // namespace lift_005D1020

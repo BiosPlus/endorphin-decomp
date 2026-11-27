@@ -1,0 +1,34 @@
+{
+  "va": "0x005D1020",
+  "size": 152,
+  "orig_symbol": "sub_005D1020",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "Unknown::UpdateFloatAndDispatch",
+  "class": "Unknown",
+  "signature": "void fn_005D1020(void* self, float value)",
+  "summary": "If the flag at +0x1f1 is clear, enters the critical section of a global object, stores a float into element 0 of the inline array at +0x210, sets the flag at +0x214, dispatches through the global object, and leaves the critical section.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1F1",
+      "type": "uint8_t",
+      "name": "field_0x1f1"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x210",
+      "type": "uint32_t",
+      "name": "field_0x210"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x214",
+      "type": "uint8_t",
+      "name": "field_0x214"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:49:56Z"
+}

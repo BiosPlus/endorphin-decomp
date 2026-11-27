@@ -38960,6 +38960,13 @@
     "summary": "Returns 1 if the object at this+0x44 has a nonzero dword at offset +0x4, else 0.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
+  "0x005D1020": {
+    "name": "Unknown::UpdateFloatAndDispatch",
+    "class": "Unknown",
+    "signature": "void fn_005D1020(void* self, float value)",
+    "summary": "If the flag at +0x1f1 is clear, enters the critical section of a global object, stores a float into element 0 of the inline array at +0x210, sets the flag at +0x214, dispatches through the global object, and leaves the critical section.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D13B0": {
     "name": "NMData::CameraData::vfunc_7_off_C",
     "class": "NMData::CameraData",
