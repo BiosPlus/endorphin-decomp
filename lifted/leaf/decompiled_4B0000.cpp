@@ -1176,3 +1176,46 @@ void* fn_004B74E0() {
     return mem_00AE161C;
 }
 } // namespace lift_004B74E0
+
+// [0x004B72D0] sub_004B72D0 (100 bytes)
+namespace lift_004B72D0 {
+// @name sub_004B72D0
+// @summary Auto-lifted identical-shape clone of 0x005C3FB0 (TableFindStringIndex).
+namespace lift_005C3FB0 {
+// Element array bounds (pointer values stored in globals).
+extern uint32_t mem_00AE1D18;
+extern uint32_t mem_00AE1D1C;
+
+// IAT slot holding std::operator==(const std::string&, const std::string&) (MSVCP80).
+extern uint32_t mem_00924FC4;
+extern uint8_t ext_std_string_operator_eq(const void* lhs, const void* rhs);
+
+// @name TableFindStringIndex
+// @class <unknown>
+// @summary Returns the index of the first 28-byte element in the global array whose std::string matches self+0x17C, or 0 if none.
+// @field <unknown> +0x17C std::string field_0x17C
+int fn_004B72D0(void* self) {
+    uint32_t index = 0;
+    (void)&mem_00924FC4;  // callee is dispatched through this IAT slot
+    for (;;) {
+        // Globals are re-read every iteration, as in the original loop.
+        const uint32_t begin = mem_00AE1D18;
+        if (begin == 0) {
+            return 0;
+        }
+        const uint32_t end = mem_00AE1D1C;
+        const int32_t count = static_cast<int32_t>(end - begin) / 28;
+        if (index >= static_cast<uint32_t>(count)) {
+            return 0;
+        }
+        const uint8_t* elem =
+            reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(begin + index * 28));
+        const uint8_t* key = static_cast<uint8_t*>(self) + 0x58;
+        if (ext_std_string_operator_eq(elem, key) != 0) {
+            return static_cast<int>(index);
+        }
+        ++index;
+    }
+}
+} // namespace lift_005C3FB0
+} // namespace lift_004B72D0

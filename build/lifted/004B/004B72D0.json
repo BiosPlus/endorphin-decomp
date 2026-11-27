@@ -1,0 +1,22 @@
+{
+  "va": "0x004B72D0",
+  "size": 100,
+  "orig_symbol": "sub_004B72D0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004B72D0",
+  "class": "\u003cunknown\u003e",
+  "signature": "int fn_004B72D0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C3FB0 (TableFindStringIndex).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x17C",
+      "type": "std::string",
+      "name": "field_0x17C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T01:55:57Z"
+}
