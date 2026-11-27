@@ -359,3 +359,62 @@ void fn_00501450(void* self) {
     }
 }
 } // namespace lift_00501450
+
+// [0x004B5480] PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::AddElementCommand::vfunc_2 (98 bytes)
+namespace lift_004B5480 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// Known callee 0x004B53E0: VectorFindAndErase (Finds an element matching *target_ptr in a pointer vector, clears and erases it, and returns its index.)
+extern int32_t ext_004B53E0(void* self, const uint32_t* target_ptr);
+// Known callee 0x00517510: CallSlot3OnEachEntryThenDispatch (Forwards its argument to CallSlot3OnEachEntry (0x005170D0) on this, then calls 0x00678D70 on this with flag 1.)
+extern void ext_00517510(void* self, void* arg);
+// .rdata slot 0x00924FF4 holds the address of the string destructor (MSVCP80).
+extern uint32_t mem_00924FF4;
+
+static inline void* lift_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// @name PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::AddElementCommand::vfunc_2
+// @class PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::AddElementCommand
+// @summary Releases the element at +0x18 if it is non-null and differs from +0x1c, sets +0x18 = +0x1c, removes +0x1c from the pointer vector at +0x10, then invokes the vtable slot 1 callback on +0x24 and dispatches +0x14 if set.
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::AddElementCommand +0x10 uint32_t field_0x10
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::AddElementCommand +0x14 uint32_t field_0x14
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::AddElementCommand +0x18 uint32_t field_0x18
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::AddElementCommand +0x1c uint32_t field_0x1c
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::AddElementCommand +0x20 uint32_t field_0x20
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::AddElementCommand +0x24 uint32_t field_0x24
+void fn_004B5480(void* self) {
+    uint32_t& f10 = lift_field<uint32_t>(self, 0x10);
+    uint32_t& f14 = lift_field<uint32_t>(self, 0x14);
+    uint32_t& f18 = lift_field<uint32_t>(self, 0x18);
+    uint32_t& f1c = lift_field<uint32_t>(self, 0x1c);
+    uint32_t& f20 = lift_field<uint32_t>(self, 0x20);
+    uint32_t& f24 = lift_field<uint32_t>(self, 0x24);
+
+    const uint32_t end = f1c;
+    const uint32_t begin = f18;
+    if (end != begin && begin != 0) {
+        auto dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(mem_00924FF4));
+        void* elem = lift_ptr(begin);
+        dtor(static_cast<uint8_t*>(elem) + 4);
+        ext_006A5C5C(elem);
+    }
+    f18 = end;
+
+    ext_004B53E0(lift_ptr(f10), &f1c);
+
+    if (f24 != 0) {
+        void* obj = lift_ptr(f24);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot1 = reinterpret_cast<void (*)(void*, uint32_t, uint32_t)>(
+            reinterpret_cast<uintptr_t>(vtbl[1]));
+        slot1(obj, f1c, f20);
+    }
+
+    if (f14 != 0) {
+        ext_00517510(lift_ptr(f14), lift_ptr(f1c));
+    }
+}
+} // namespace lift_004B5480

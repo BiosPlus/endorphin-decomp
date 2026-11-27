@@ -15590,6 +15590,13 @@
     "summary": "Finds an element matching *target_ptr in a pointer vector, clears and erases it, and returns its index.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B5480": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_2",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
+    "signature": "static inline void* lift_ptr(uint32_t v)",
+    "summary": "Releases the element at +0x18 if it is non-null and differs from +0x1c, sets +0x18 = +0x1c, removes +0x1c from the pointer vector at +0x10, then invokes the vtable slot 1 callback on +0x24 and dispatches +0x14 if set.",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
+  },
   "0x004B54F0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e",

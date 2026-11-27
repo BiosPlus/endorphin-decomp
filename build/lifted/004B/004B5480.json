@@ -1,0 +1,52 @@
+{
+  "va": "0x004B5480",
+  "size": 98,
+  "orig_symbol": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_2",
+  "src_path": "src/templates/AddElementCommand.cpp",
+  "lifted_path": "lifted/templates/AddElementCommand.cpp",
+  "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_2",
+  "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
+  "signature": "static inline void* lift_ptr(uint32_t v)",
+  "summary": "Releases the element at +0x18 if it is non-null and differs from +0x1c, sets +0x18 = +0x1c, removes +0x1c from the pointer vector at +0x10, then invokes the vtable slot 1 callback on +0x24 and dispatches +0x14 if set.",
+  "fields": [
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:36Z"
+}
