@@ -2010,3 +2010,45 @@ void* fn_00527310(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint3
     return self;
 }
 } // namespace lift_00527310
+
+// [0x0052A370] sub_0052A370 (147 bytes)
+namespace lift_0052A370 {
+// Known callee 0x0052A140: Unknown::ctor_CopyPairAt1C (Copy-constructs a std::string at +0x00 from src, then copy-initializes the sub-object at +0x1C from src+0x1C.)
+extern void* ext_0052A140(void* self, const void* src);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764 — operator delete)
+extern void ext_006A5C5C(void* p);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name Unknown::createPairObject
+// @class Unknown
+// @summary Allocates a 0x62-byte object, stores three dword args at +0x00/+0x04/+0x08, copy-constructs a sub-object at +0x0C from the fourth arg, stores a byte flag at +0x60 and clears +0x61; returns the object (or null on allocation failure). Frees and rethrows if the sub-object constructor throws.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint8_t field_0x0C
+// @field Unknown +0x60 uint8_t field_0x60
+// @field Unknown +0x61 uint8_t field_0x61
+void* fn_0052A370(uint32_t arg0, uint32_t arg1, uint32_t arg2, const void* arg3, uint8_t arg4) {
+    void* obj = ext_006A5C62(100);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    auto* base = static_cast<uint8_t*>(obj);
+    try {
+        lift_field<uint32_t>(base, 0x00) = arg0;
+        lift_field<uint32_t>(base, 0x04) = arg1;
+        lift_field<uint32_t>(base, 0x08) = arg2;
+        ext_0052A140(base + 0x0C, arg3);
+        lift_field<uint8_t>(base, 0x60) = arg4;
+        lift_field<uint8_t>(base, 0x61) = 0;
+    } catch (...) {
+        ext_006A5C5C(obj);
+        throw;
+    }
+    return obj;
+}
+} // namespace lift_0052A370

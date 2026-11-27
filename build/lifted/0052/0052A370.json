@@ -1,0 +1,52 @@
+{
+  "va": "0x0052A370",
+  "size": 147,
+  "orig_symbol": "sub_0052A370",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::createPairObject",
+  "class": "Unknown",
+  "signature": "void* fn_0052A370(uint32_t arg0, uint32_t arg1, uint32_t arg2, const void* arg3, uint8_t arg4)",
+  "summary": "Allocates a 0x62-byte object, stores three dword args at +0x00/+0x04/+0x08, copy-constructs a sub-object at +0x0C from the fourth arg, stores a byte flag at +0x60 and clears +0x61; returns the object (or null on allocation failure). Frees and rethrows if the sub-object constructor throws.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint8_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x61",
+      "type": "uint8_t",
+      "name": "field_0x61"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:40:46Z"
+}

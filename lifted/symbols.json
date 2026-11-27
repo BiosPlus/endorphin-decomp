@@ -25044,6 +25044,13 @@
     "summary": "Decrements an MSVC std::_Tree iterator to the previous in-order node.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052A370": {
+    "name": "Unknown::createPairObject",
+    "class": "Unknown",
+    "signature": "void* fn_0052A370(uint32_t arg0, uint32_t arg1, uint32_t arg2, const void* arg3, uint8_t arg4)",
+    "summary": "Allocates a 0x62-byte object, stores three dword args at +0x00/+0x04/+0x08, copy-constructs a sub-object at +0x0C from the fourth arg, stores a byte flag at +0x60 and clears +0x61; returns the object (or null on allocation failure). Frees and rethrows if the sub-object constructor throws.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052AC70": {
     "name": "Unknown::walkChainDestroyStrings_0052AC70",
     "class": "Unknown",
