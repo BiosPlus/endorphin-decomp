@@ -2571,3 +2571,26 @@ void fn_004167A0(void* self) {
     (void)&mem_009242F4;
 }
 } // namespace lift_004167A0
+
+// [0x00414530]
+namespace lift_00414530 {
+// @name createStyledPen
+// @summary Creates a GDI pen with style 0, 1, or 2 and attaches it to a CPen object.
+
+
+extern uint32_t __fastcall ext_0066A180(void* colorObj);
+extern void __fastcall ext_006A5FFE(void* penObj, uint32_t hPen);
+
+typedef uint32_t (__stdcall *CreatePenFn)(int fnPenStyle, int nWidth, uint32_t crColor);
+extern CreatePenFn mem_00924084;
+
+void fn_00414530(void* penObj, void* colorObj, int nWidth, uint32_t penStyle) {
+    if (penStyle > 2) {
+        return;
+    }
+
+    uint32_t crColor = ext_0066A180(colorObj);
+    uint32_t hPen = mem_00924084(static_cast<int>(penStyle), nWidth, crColor);
+    ext_006A5FFE(penObj, hPen);
+}
+} // namespace lift_00414530
