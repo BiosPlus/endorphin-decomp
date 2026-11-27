@@ -2882,3 +2882,28 @@ extern void* __stdcall fn_00673EA0(uint32_t nextPtr, uint32_t prevPtr, const voi
     return node;
 }
 } // namespace lift_00673EA0
+
+// [0x0067BB00]
+namespace lift_0067BB00 {
+extern void __thiscall ext_00694880(void* self, void* arg);
+
+// @name Vec3::buildBasisFromCross
+// @class Vec3
+// @summary Computes cross(this, other), builds a 3x3 basis matrix [this, other, cross], and passes it to ext_00694880.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+void __thiscall sub_0067BB00(float* self, const float* other) {
+    float cx = self[1] * other[2] - self[2] * other[1];
+    float cy = self[2] * other[0] - self[0] * other[2];
+    float cz = self[0] * other[1] - self[1] * other[0];
+
+    float basis[9] = {
+        self[0],  self[1],  self[2],
+        other[0], other[1], other[2],
+        cx,       cy,       cz,
+    };
+
+    ext_00694880(basis, self);
+}
+} // namespace lift_0067BB00
