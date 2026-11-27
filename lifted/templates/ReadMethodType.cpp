@@ -183693,3 +183693,53 @@ void fn_0049D980(void* self, void* arg) {
 }
 } // namespace lift_0049D580
 } // namespace lift_0049D980
+
+// [0x004B1460] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_42 (162 bytes)
+namespace lift_004B1460 {
+// Known callee 0x006720A0: sub_006720A0 (18B). Thiscall; ecx = temp object, one stack arg (bool/flag dword).
+extern void __thiscall ext_006720A0(void* temp, uint32_t flagWord);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_42 (NMData::GraphEntryData::isActive)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads a flag byte from the object referenced by the first stack argument (throws if null), then calls vtable slot 42 of a helper object to obtain a bool.
+// @field Unknown +0x01 uint8_t field_0x01
+bool fn_004B1460(void* const* slot, uint32_t arg2) {
+    void* obj = *slot;
+    if (obj == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return false;
+    }
+
+    // Original stores the flag byte into the low byte of the argument slot and reads back a dword
+    // from that slot, so the value passed to the helper is (slotBits & ~0xFF) | flag.
+    const uint8_t flag = lift_field<uint8_t>(obj, 1);
+    const uint32_t flagWord = (static_cast<uint32_t>(reinterpret_cast<uintptr_t>(slot)) & 0xFFFFFF00u) | flag;
+
+    // Temp object constructed by sub_006720A0; temp[1] (offset +4) holds the receiver for the next call.
+    void* temp[2] = {nullptr, nullptr};
+    ext_006720A0(temp, flagWord);
+
+    void* receiver = temp[1];
+    // Vtable slot 42 (offset 0xA8) on receiver: bool (thiscall)(void* out, uint32_t arg2).
+    using Slot42 = bool(__thiscall*)(void* self, void* out, uint32_t value);
+    void* vt = *static_cast<void**>(receiver);
+    auto fn42 = reinterpret_cast<Slot42>(lift_field<void*>(vt, 0xA8));
+    const bool result = fn42(receiver, static_cast<void*>(temp), arg2);
+
+    // If the receiver is non-null, release it via vtable slot 30 (offset 0x78) with a pointer to temp.
+    receiver = temp[1];
+    if (receiver != nullptr) {
+        using Slot30 = void(__thiscall*)(void* self, void* arg);
+        void* vt30 = *static_cast<void**>(receiver);
+        auto fn30 = reinterpret_cast<Slot30>(lift_field<void*>(vt30, 0x78));
+        fn30(receiver, static_cast<void*>(temp));
+    }
+
+    return result;
+}
+} // namespace lift_004B1460

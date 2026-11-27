@@ -17053,6 +17053,13 @@
     "summary": "Reads the value pointer stored in the argument, throws if null, otherwise returns the GraphEntryData active flag byte at +0x01.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1460": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_42 (NMData::GraphEntryData::isActive)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e",
+    "signature": "bool fn_004B1460(void* const* slot, uint32_t arg2)",
+    "summary": "Reads a flag byte from the object referenced by the first stack argument (throws if null), then calls vtable slot 42 of a helper object to obtain a bool.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1510": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,isActive\u003e::vfunc_43",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e",
