@@ -2751,3 +2751,35 @@ void* fn_00500430(uint8_t* first, uint8_t* last, uint8_t* dst) {
     return cur;
 }
 } // namespace lift_00500430
+
+// [0x005003A0] sub_005003A0 (141 bytes)
+namespace lift_005003A0 {
+// Known callee 0x005940E0: Unknown::destructorBody_005940E0 (Releases an optional child object at +0x20 through its vtable slot 0x78 (passing &field_0x1c), then destroys the std::string at offset 0.)
+extern void __thiscall ext_005940E0(void* self);
+// Known callee 0x00594250: copy_string_and_field (Copy-constructs a std::string at +0x00 and clones/copies a vtable-backed member at +0x1C/+0x20)
+extern void* __thiscall ext_00594250(void* self, const void* rhs);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+
+// @name copyConstructElementRange
+// @summary Copy-constructs count 0x24-byte elements starting at begin from rhs (skipping null slots); on exception destroys the already-constructed prefix and rethrows.
+void fn_005003A0(uint8_t* begin, uint32_t count, const void* rhs) {
+    uint8_t* cur = begin;
+    try {
+        while (count != 0) {
+            if (cur != nullptr) {
+                ext_00594250(cur, rhs);
+            }
+            --count;
+            cur += 0x24;
+        }
+    } catch (...) {
+        // Unwind: destroy the fully constructed elements in [begin, cur).
+        for (uint8_t* p = begin; p != cur; p += 0x24) {
+            ext_005940E0(p);
+        }
+        // Rethrow the active exception (original calls _CxxThrowException(NULL, NULL)).
+        ext_006A6DD2(nullptr, nullptr);
+    }
+}
+} // namespace lift_005003A0

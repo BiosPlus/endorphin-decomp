@@ -21396,6 +21396,12 @@
     "summary": "Binary lower_bound over an array of object pointers; each element's virtual slot 9 yields a key compared against value via mem_00924EF4.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x005003A0": {
+    "name": "copyConstructElementRange",
+    "signature": "void fn_005003A0(uint8_t* begin, uint32_t count, const void* rhs)",
+    "summary": "Copy-constructs count 0x24-byte elements starting at begin from rhs (skipping null slots); on exception destroys the already-constructed prefix and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00500430": {
     "name": "copyElementRangeWithCleanup",
     "signature": "void* fn_00500430(uint8_t* first, uint8_t* last, uint8_t* dst)",

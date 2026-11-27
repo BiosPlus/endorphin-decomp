@@ -1,0 +1,13 @@
+{
+  "va": "0x005003A0",
+  "size": 141,
+  "orig_symbol": "sub_005003A0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "copyConstructElementRange",
+  "signature": "void fn_005003A0(uint8_t* begin, uint32_t count, const void* rhs)",
+  "summary": "Copy-constructs count 0x24-byte elements starting at begin from rhs (skipping null slots); on exception destroys the already-constructed prefix and rethrows.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:27:52Z"
+}
