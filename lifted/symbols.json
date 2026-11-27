@@ -40707,6 +40707,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00620FE0": {
+    "name": "allocArray72",
+    "signature": "extern \"C\" void* fn_00620FE0(uint32_t count)",
+    "summary": "Allocates an array of 72-byte elements with overflow check, throwing std::bad_alloc on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00621040": {
     "name": "CopyRecordRange_00621040",
     "signature": "uint8_t* CopyRecordRange_00621040(const uint8_t* first, const uint8_t* last, uint8_t* dst)",
@@ -44391,6 +44397,12 @@
     "signature": "int32_t fn_006455B0(void* self)",
     "summary": "Returns (end - begin) / 6 for a range stored at +4 (begin) and +8 (end); 0 if begin is null.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x006455D0": {
+    "name": "vec_alloc_24",
+    "signature": "extern \"C\" void* fn_006455D0(uint32_t count)",
+    "summary": "Allocates count * 24 bytes with overflow check, throwing std::bad_alloc on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00645A80": {
     "name": "NullRelationship::vfunc_48",
@@ -48950,6 +48962,12 @@
     "name": "sub_00676780",
     "signature": "void* __thiscall sub_00676780(void* self)",
     "summary": "Constructor that zeroes fields and default-constructs a std::string member at +0x04",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x006767D0": {
+    "name": "clearState",
+    "signature": "void fn_006767D0(void* self)",
+    "summary": "Clears the string at +0x04, erases all elements from the int32 vector at +0x20, and resets fields at +0x00 and +0x30 to zero.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00676850": {

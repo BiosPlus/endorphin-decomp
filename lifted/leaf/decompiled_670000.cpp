@@ -1842,3 +1842,42 @@ void* __cdecl fn_00672430(uint32_t count) {
     return ext_006A5C62(count * 0x50u);
 }
 } // namespace lift_00672430
+
+// [0x006767D0]
+namespace lift_006767D0 {
+// @name clearState
+// @summary Clears the string at +0x04, erases all elements from the int32 vector at +0x20, and resets fields at +0x00 and +0x30 to zero.
+// @field Self +0x00 uint32_t field_0x00
+// @field Self +0x04 char[28] field_0x04
+// @field Self +0x20 void* field_0x20
+// @field Self +0x24 int32_t* field_0x24
+// @field Self +0x28 int32_t* field_0x28
+// @field Self +0x30 uint32_t field_0x30
+
+
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+extern void (*mem_00924EA8)(void* str);
+extern void (*mem_00925134)();
+
+void fn_006767D0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    mem_00924EA8(base + 0x04);
+
+    uint8_t* vec = base + 0x20;
+    int32_t* last = lift_field<int32_t*>(base, 0x28);
+    if (lift_field<int32_t*>(base, 0x24) > last) {
+        mem_00925134();
+    }
+
+    int32_t* first = lift_field<int32_t*>(vec, 0x04);
+    if (first > lift_field<int32_t*>(vec, 0x08)) {
+        mem_00925134();
+    }
+
+    void* out[2] = {};
+    ext_00596660(vec, out, vec, first, vec, last);
+
+    lift_field<uint32_t>(base, 0x30) = 0;
+    lift_field<uint32_t>(base, 0x00) = 0;
+}
+} // namespace lift_006767D0
