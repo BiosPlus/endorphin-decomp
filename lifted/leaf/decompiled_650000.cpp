@@ -1717,3 +1717,39 @@ void fn_005172A0(void* self, void* arg) {
     }
 }
 } // namespace lift_005172A0
+
+// [0x00517AD0] sub_00517AD0 (112 bytes)
+namespace lift_00517AD0 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+
+// @name Unknown::ctorWithSubobjectAt0C
+// @class Unknown
+// @summary Initializes the object: sets flag byte at +0x04, runs the base initializer ext_00661980 on the embedded subobject at +0x0C, installs the vtables at +0x00/+0x08/+0x0C, zeroes dwords +0x14/+0x18/+0x1C, and returns this. SEH frame setup/teardown omitted.
+// @field Unknown +0x00 DWORD vtable0 (set to 0x0093C08C, then 0x00952018)
+// @field Unknown +0x04 BYTE flag (set to 1)
+// @field Unknown +0x08 DWORD vtable1 (set to 0x00951F3C, then 0x0095200C)
+// @field Unknown +0x0C DWORD subobject (embedded object; its first dword is set to vtable 0x00951FB4 after the base init call)
+// @field Unknown +0x14 DWORD field_0x14 (zeroed)
+// @field Unknown +0x18 DWORD field_0x18 (zeroed)
+// @field Unknown +0x1C DWORD field_0x1c (zeroed)
+void* fn_00517AD0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint8_t* sub = obj + 0x0C;
+
+    lift_field<BYTE>(obj, 0x04) = 1;
+    lift_field<DWORD>(obj, 0x00) = 0x0093C08C;
+    lift_field<DWORD>(obj, 0x08) = 0x00951F3C;
+
+    ext_00661980(sub);
+
+    lift_field<DWORD>(sub, 0x00) = 0x00951FB4;
+    lift_field<DWORD>(obj, 0x00) = 0x00952018;
+    lift_field<DWORD>(obj, 0x08) = 0x0095200C;
+    lift_field<DWORD>(obj, 0x14) = 0;
+    lift_field<DWORD>(obj, 0x18) = 0;
+    lift_field<DWORD>(obj, 0x1C) = 0;
+
+    return self;
+}
+} // namespace lift_00517AD0

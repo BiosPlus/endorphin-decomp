@@ -21320,6 +21320,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls Individual::vfunc_0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00517AD0": {
+    "name": "Unknown::ctorWithSubobjectAt0C",
+    "class": "Unknown",
+    "signature": "void* fn_00517AD0(void* self)",
+    "summary": "Initializes the object: sets flag byte at +0x04, runs the base initializer ext_00661980 on the embedded subobject at +0x0C, installs the vtables at +0x00/+0x08/+0x0C, zeroes dwords +0x14/+0x18/+0x1C, and returns this. SEH frame setup/teardown omitted.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00517B40": {
     "name": "Individual::vfunc_0",
     "class": "Individual",
