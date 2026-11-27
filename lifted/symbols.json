@@ -13750,6 +13750,13 @@
     "summary": "Invokes virtual slot 1 at +0x8 on a non-null NMData::State to copy-construct a std::string result, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049D6E0": {
+    "name": "ReadMethodType::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
+    "signature": "void fn_0049D6E0(void* self)",
+    "summary": "Reads the method object held in self (field_0x00); if present, builds a temporary via the slot-1 virtual, assigns it into self, releases the old field_0x04, then invokes vfunc slot 0xBC on field_0x04. Throws DerivedException when field_0x00 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049D780": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",

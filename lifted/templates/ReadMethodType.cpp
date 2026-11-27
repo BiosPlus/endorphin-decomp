@@ -83608,3 +83608,58 @@ void fn_004BCF60(void* self, void* out) {
     delegate(obj, self, out);
 }
 } // namespace lift_004BCF60
+
+// [0x0049D6E0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_47 (157 bytes)
+namespace lift_0049D6E0 {
+// Known callee 0x0046A470: VirtualSlot1Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.)
+extern void* ext_0046A470(void* self);
+// Known callee 0x006720E0: sub_006720E0 (43B, unnamed; thiscall with one stack argument, initializes the slot at its this pointer)
+extern void ext_006720E0(void* self, void* arg);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// Data referenced by the throw path: RTTI ThrowInfo for the thrown exception type.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>
+// @summary Reads the method object held in self (field_0x00); if present, builds a temporary via the slot-1 virtual, assigns it into self, releases the old field_0x04, then invokes vfunc slot 0xBC on field_0x04. Throws DerivedException when field_0x00 is null.
+// @field ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0> +0x04 void* field_0x04
+void fn_0049D6E0(void* self) {
+    void* obj = lift_field<void*>(self, 0x00);
+    if (obj == nullptr) {
+        // Throw path: construct DerivedException in a local buffer and throw it.
+        // Buffer size is not recovered; 0x40 is a generous stand-in for the object storage.
+        alignas(8) unsigned char exc[0x40] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return;
+    }
+
+    void* a = ext_0046A470(static_cast<unsigned char*>(obj) + 0x08);
+
+    // Temporary pair: f4 receives the value built by ext_006720E0 and is passed to the assign helper as "other".
+    struct Pair {
+        void* f0;
+        void* f4;
+    } pair{};
+    ext_006720E0(&pair.f4, a);
+    ext_0041CF50(self, &pair);
+
+    void* newValue = pair.f4;
+    if (newValue != nullptr) {
+        void* vt = lift_field<void*>(newValue, 0x00);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(newValue, &pair);
+    }
+
+    void* target = lift_field<void*>(self, 0x04);
+    void* vt2 = lift_field<void*>(target, 0x00);
+    auto invoke = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt2, 0xBC));
+    invoke(target, self);
+}
+} // namespace lift_0049D6E0
