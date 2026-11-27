@@ -134,3 +134,55 @@ DWORD* fn_00524CE0(void* self, DWORD* outPair, const std::string& key) {
     return outPair;
 }
 } // namespace lift_00524CE0
+
+// [0x00524C10] NMData::NetworkConnectorData::vfunc_21 (196 bytes)
+namespace lift_00524C10 {
+// Callees and data kept from the original asm (leaf is differentially tested).
+// Original calling conventions: ext_00507D10/ext_0063EFE0/ext_0063F530/ext_008703D0 are
+// __thiscall (self in ecx, stack args callee-cleaned); ext_004275E0 is __cdecl.
+extern void ext_00507D10(void* self, void* obj);                              // Interpreter::vfunc_21(obj)
+// Known callee 0x0063EFE0: sub_0063EFE0 (Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.)
+extern uint32_t ext_0063EFE0(void* self, uint32_t name);
+// Known callee 0x004275E0: assignVirtualString (Calls vtable[2] on obj to obtain a temporary std::string, assigns it to dst, and destroys the temporary.)
+extern void ext_004275E0(void* dst, uint32_t obj);
+extern uint32_t ext_0063F530(void* self, uint32_t a, uint32_t b, uint32_t c);
+extern void ext_008703D0(void* self, uint32_t a, uint32_t b);
+extern int mem_00A9F838;
+extern int mem_00A9EFE8;
+extern int mem_00A9EFE0;
+extern int mem_00A9F168;
+extern int mem_00A9F154;
+
+// @name NMData::NetworkConnectorData::vfunc_21
+// @class NMData::NetworkConnectorData
+// @summary Binds two name-keyed items from obj into this object's string/field slots at +0x38, +0x4C and +0xA4.
+// @field NMData::NetworkConnectorData +0x38 uint8_t[20] field_0x38
+// @field NMData::NetworkConnectorData +0x4C uint8_t[20] field_0x4c
+// @field NMData::NetworkConnectorData +0xA4 std::string field_0xa4
+void fn_00524C10(void* self, void* obj) {
+    // Maps any of the five "not found" sentinels to 0x00B53B30; other values pass through.
+    auto normalize = [](uint32_t r) -> uint32_t {
+        switch (r) {
+            case 0x00B53A34u:
+            case 0x00B53B30u:
+            case 0x00B53AB0u:
+            case 0x00B53A70u:
+            case 0x00B53AF0u:
+                return 0x00B53B30u;
+            default:
+                return r;
+        }
+    };
+
+    ext_00507D10(self, obj);
+
+    uint32_t s = ext_0063EFE0(obj, static_cast<uint32_t>(mem_00A9F838));
+    ext_004275E0(&lift_field<std::string>(self, 0xA4), s);
+
+    uint32_t r1 = ext_0063F530(obj, static_cast<uint32_t>(mem_00A9EFE8), 0u, 1u);
+    ext_008703D0(static_cast<uint8_t*>(self) + 0x38, normalize(r1), static_cast<uint32_t>(mem_00A9EFE0));
+
+    uint32_t r2 = ext_0063F530(obj, static_cast<uint32_t>(mem_00A9F168), 0u, 1u);
+    ext_008703D0(static_cast<uint8_t*>(self) + 0x4C, normalize(r2), static_cast<uint32_t>(mem_00A9F154));
+}
+} // namespace lift_00524C10

@@ -32285,6 +32285,13 @@
     "summary": "Looks up a table entry from this-\u003e+0x4, takes its element 0 vector, and stores the float argument as a double at index this-\u003e+0x8 (bounds-checked; calls _invalid_parameter_noinfo on null begin or out-of-range index, then still stores).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00524C10": {
+    "name": "NMData::NetworkConnectorData::vfunc_21",
+    "class": "NMData::NetworkConnectorData",
+    "signature": "void fn_00524C10(void* self, void* obj)",
+    "summary": "Binds two name-keyed items from obj into this object's string/field slots at +0x38, +0x4C and +0xA4.",
+    "lifted_path": "lifted/NMData/NetworkConnectorData.cpp"
+  },
   "0x00524CE0": {
     "name": "NMData::NetworkConnectorData::vfunc_13",
     "class": "NMData::NetworkConnectorData",

@@ -1,0 +1,34 @@
+{
+  "va": "0x00524C10",
+  "size": 196,
+  "orig_symbol": "NMData::NetworkConnectorData::vfunc_21",
+  "src_path": "src/NMData/NetworkConnectorData.cpp",
+  "lifted_path": "lifted/NMData/NetworkConnectorData.cpp",
+  "name": "NMData::NetworkConnectorData::vfunc_21",
+  "class": "NMData::NetworkConnectorData",
+  "signature": "void fn_00524C10(void* self, void* obj)",
+  "summary": "Binds two name-keyed items from obj into this object's string/field slots at +0x38, +0x4C and +0xA4.",
+  "fields": [
+    {
+      "class": "NMData::NetworkConnectorData",
+      "offset": "+0x38",
+      "type": "uint8_t[20]",
+      "name": "field_0x38"
+    },
+    {
+      "class": "NMData::NetworkConnectorData",
+      "offset": "+0x4C",
+      "type": "uint8_t[20]",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "NMData::NetworkConnectorData",
+      "offset": "+0xA4",
+      "type": "std::string",
+      "name": "field_0xa4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:49:08Z"
+}
