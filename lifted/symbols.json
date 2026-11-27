@@ -50915,6 +50915,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0063E180 (AdvXMLParser::Text::vfunc_3).",
     "lifted_path": "lifted/AdvXMLParser/CData.cpp"
   },
+  "0x0063E890": {
+    "name": "sub_0063E890",
+    "signature": "extern \"C\" void* __thiscall fn_0063E890(void* self, uint32_t arg0)",
+    "summary": "Allocates a 0x40-byte Derived object and constructs it with arg0 and a string returned by vtable[1].",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E930": {
     "name": "AdvXMLParser::CData::vfunc_4",
     "class": "AdvXMLParser::CData",
@@ -82538,6 +82544,12 @@
     "name": "clampAndAlignDimensions",
     "signature": "void __cdecl sub_007AF310(uint32_t /*unused*/, int32_t* a2, int32_t* a3)",
     "summary": "Clamps two integer pointers to 256 if less than 1, then aligns each up to a 16-byte/pixel boundary.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
+  "0x007AF420": {
+    "name": "AppendAndSortPtrArray",
+    "signature": "void __cdecl fn_007AF420(void* obj, uintptr_t base, int32_t count)",
+    "summary": "Appends pointers to 0x14-byte elements into a GlobalAlloc pointer array and sorts it if previously non-empty.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AF4C0": {

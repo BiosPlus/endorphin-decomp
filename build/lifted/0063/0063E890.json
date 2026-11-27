@@ -1,0 +1,21 @@
+{
+  "va": "0x0063E890",
+  "size": 151,
+  "orig_symbol": "sub_0063E890",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "sub_0063E890",
+  "signature": "extern \"C\" void* __thiscall fn_0063E890(void* self, uint32_t arg0)",
+  "summary": "Allocates a 0x40-byte Derived object and constructs it with arg0 and a string returned by vtable[1].",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:17:12Z"
+}

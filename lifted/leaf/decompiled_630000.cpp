@@ -1797,3 +1797,32 @@ void* __thiscall fn_0063E500(void* self, uint32_t arg0) {
     return result;
 }
 } // namespace lift_0063E500
+
+// [0x0063E890]
+namespace lift_0063E890 {
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_0063E7F0(void* self, uint32_t arg0, const void* name);
+
+typedef void (__thiscall *mem_00924FF4_t)(void*);
+extern mem_00924FF4_t mem_00924FF4;
+
+// @name sub_0063E890
+// @summary Allocates a 0x40-byte Derived object and constructs it with arg0 and a string returned by vtable[1].
+// @field Self +0x00 void** vtable
+extern void* __thiscall fn_0063E890(void* self, uint32_t arg0) {
+    void* mem = ext_006A5C62(0x40);
+    if (!mem) {
+        return nullptr;
+    }
+
+    uint8_t temp_str[0x1C];
+    void** vtable = *reinterpret_cast<void***>(self);
+    using GetNameFn = void* (__thiscall*)(void*, void*);
+    auto get_name = reinterpret_cast<GetNameFn>(vtable[1]);
+    void* name_ptr = get_name(self, temp_str);
+
+    void* result = ext_0063E7F0(mem, arg0, name_ptr);
+    mem_00924FF4(temp_str);
+    return result;
+}
+} // namespace lift_0063E890

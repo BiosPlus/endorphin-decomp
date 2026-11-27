@@ -23,7 +23,7 @@ struct Self_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x005149F0, 0x0054C890, 0x005947B0, 0x0059DDA0, 0x005A71E0, 0x005B1930, 0x00678280, 0x006AD3C0, 0x006B0CD0, 0x006BA780) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t*                vtable  (evidence: 0x00414260, 0x006F7970, 0x006FC200) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00495AB0, 0x006118E0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void**                   vtable  (evidence: 0x004142A0, 0x00611870, 0x0064E630, 0x006E7340, 0x00711398) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vtable  (evidence: 0x004142A0, 0x00611870, 0x0063E890, 0x0064E630, 0x006E7340, 0x00711398) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_0x0  (evidence: 0x00692BA0) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x004B0F80)
     // +0x2   uint8_t                  field_0x02  (evidence: 0x004B0F80)
