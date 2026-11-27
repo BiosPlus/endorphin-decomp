@@ -1454,3 +1454,46 @@ void* fn_005E46B0() {
     return mem_00B45EF0;
 }
 } // namespace lift_005E46B0
+
+// [0x005ED2C0]
+namespace lift_005ED2C0 {
+// @name Tree::lower_bound_pair (descriptive; owner class not yet identified)
+// @class _Tree
+// @summary Lower-bound search over a binary tree keyed by *keyArg; writes (self, bound) to out, where bound is the first node with key >= *keyArg or the head node.
+// @field _Tree +0x04 uint32_t _Myhead
+// @field _TreeNode +0x00 uint32_t _Left
+// @field _TreeNode +0x04 uint32_t _Parent
+// @field _TreeNode +0x08 uint32_t _Right
+// @field _TreeNode +0x0c uint32_t _Key
+// @field _TreeNode +0x51 uint8_t _Isnil
+
+static inline void* lift_node_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// Returns via hidden out-pointer (ret 8): out[0] = self, out[1] = bound node.
+void __thiscall fn_005ED2C0(void* self, void* out, void* keyArg) {
+    const uint32_t head = lift_field<uint32_t>(self, 0x04);
+    uint32_t x = lift_field<uint32_t>(lift_node_ptr(head), 0x04); // root = head->_Parent
+    uint32_t y = head;
+    const uint32_t k = lift_field<uint32_t>(keyArg, 0);
+
+    while (lift_field<uint8_t>(lift_node_ptr(x), 0x51) == 0) {
+        if (!(lift_field<uint32_t>(lift_node_ptr(x), 0x0c) < k)) {
+            y = x;
+            x = lift_field<uint32_t>(lift_node_ptr(x), 0x00);
+        } else {
+            x = lift_field<uint32_t>(lift_node_ptr(x), 0x08);
+        }
+    }
+
+    uint32_t bound = head;
+    if (y != head && !(k < lift_field<uint32_t>(lift_node_ptr(y), 0x0c))) {
+        bound = y;
+    }
+
+    const uint32_t selfVal = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    lift_field<uint32_t>(out, 0x00) = selfVal;
+    lift_field<uint32_t>(out, 0x04) = bound;
+}
+} // namespace lift_005ED2C0

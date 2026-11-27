@@ -8,8 +8,13 @@
 // Recovered field layout for _TreeNode:
 namespace lifted_layout {
 struct _TreeNode_Fields {
-    // +0x0   void*                    _Left  (evidence: 0x0046A510)
-    // +0x8   void*                    _Right  (evidence: 0x0046A510)
+    // +0x0   uint32_t                 _Left  (evidence: 0x005ED2C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    _Left  (evidence: 0x0046A510) // CONFLICT: multiple definitions at +0x0
+    // +0x4   uint32_t                 _Parent  (evidence: 0x005ED2C0)
+    // +0x8   uint32_t                 _Right  (evidence: 0x005ED2C0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    _Right  (evidence: 0x0046A510) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint32_t                 _Key  (evidence: 0x005ED2C0)
     // +0x11  uint8_t                  _Isnil  (evidence: 0x0046A510)
+    // +0x51  uint8_t                  _Isnil  (evidence: 0x005ED2C0)
 };
 } // namespace lifted_layout

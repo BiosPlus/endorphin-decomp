@@ -36408,6 +36408,13 @@
     "summary": "Walks the pointer vector at this+0x204..+0x208 and sets byte +4 of each pointed-to object to 1.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005ED2C0": {
+    "name": "Tree::lower_bound_pair (descriptive; owner class not yet identified)",
+    "class": "_Tree",
+    "signature": "static inline void* lift_node_ptr(uint32_t addr)",
+    "summary": "Lower-bound search over a binary tree keyed by *keyArg; writes (self, bound) to out, where bound is the first node with key \u003e= *keyArg or the head node.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005ED330": {
     "name": "TreeEraseSubtree",
     "signature": "void __thiscall fn_005ED330(void* self, void* node)",
