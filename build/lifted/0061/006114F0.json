@@ -1,0 +1,28 @@
+{
+  "va": "0x006114F0",
+  "size": 130,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_22",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_22",
+  "class": "NMData::HingeConstraint",
+  "signature": "void* __thiscall fn_006114F0(void* self, void* arg)",
+  "summary": "Serializes or updates HingeConstraint properties via Constraint::vfunc_22, Transform::vfunc_22, and child node helpers.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x160",
+      "type": "uint8_t",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:26:21Z"
+}

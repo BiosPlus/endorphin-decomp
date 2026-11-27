@@ -361,3 +361,43 @@ void __thiscall fn_0061F760(void* self, void* arg0) {
     }
 }
 } // namespace lift_0061F760
+
+// [0x006114F0]
+namespace lift_006114F0 {
+// @name NMData::HingeConstraint::vfunc_22
+// @class NMData::HingeConstraint
+// @summary Serializes or updates HingeConstraint properties via Constraint::vfunc_22, Transform::vfunc_22, and child node helpers.
+// @field NMData::HingeConstraint +0x00 void** vtable
+// @field NMData::HingeConstraint +0x160 uint8_t field_0x160
+
+extern uint32_t mem_00A9FAC0;
+extern uint32_t mem_00A9F604;
+
+extern void* __thiscall ext_00611270(void* self, void* other);
+extern void* __thiscall ext_006404E0(void* self, uint32_t arg);
+extern void __cdecl ext_0067EF60(void* obj, float val, uint32_t a3, uint32_t a4);
+extern void __thiscall ext_00593AE0(void* self, void* arg);
+extern void __thiscall ext_006112B0(void* self, void* arg);
+extern void* __thiscall ext_00640110(void* self, uint32_t arg);
+extern void __cdecl ext_00640A80(void* obj, uint32_t flag);
+
+void* __thiscall fn_006114F0(void* self, void* arg) {
+    ext_00611270(self, arg);
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto vfunc_10c = reinterpret_cast<float(__thiscall*)(void*, uint32_t)>(vtable[0x10C / 4]);
+    float val = vfunc_10c(self, 0);
+
+    void* child = ext_006404E0(arg, 0x00972D68);
+    ext_0067EF60(child, val, 0x00972D60, mem_00A9FAC0);
+
+    ext_00593AE0(self, child);
+    ext_006112B0(self, arg);
+
+    void* node = ext_00640110(arg, mem_00A9F604);
+    uint8_t flag = lift_field<uint8_t>(self, 0x160);
+    ext_00640A80(node, static_cast<uint32_t>(flag));
+
+    return arg;
+}
+} // namespace lift_006114F0

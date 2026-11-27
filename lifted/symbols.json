@@ -60702,6 +60702,13 @@
     "summary": "Pure jump thunk forwarding to AnimatableTransform::vfunc_29.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006114F0": {
+    "name": "NMData::HingeConstraint::vfunc_22",
+    "class": "NMData::HingeConstraint",
+    "signature": "void* __thiscall fn_006114F0(void* self, void* arg)",
+    "summary": "Serializes or updates HingeConstraint properties via Constraint::vfunc_22, Transform::vfunc_22, and child node helpers.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x00611580": {
     "name": "NMData::HingeConstraint::vfunc_69",
     "class": "NMData::HingeConstraint",
