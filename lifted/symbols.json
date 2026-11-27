@@ -62995,6 +62995,13 @@
     "summary": "Destructor that resets vftables at +0x00 and +0x58 and destroys member and base subobjects",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B4CB0": {
+    "name": "Unknown::UpdatePackedValueAndPost_006B4CB0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void ext_006A5EA8(void* self);                               // thunk_MFC80_ord_1903 extern \"C\" void* ext_006B4440(void* ecx);                               // sub_006B4440 extern \"C\" void* ext_006B4430(void* ecx);                               // sub_006B4430 extern \"C\" WPARAM ext_006AD940(void* ecx);                              // sub_006AD940 extern \"C\" void ext_008727BA(void* self, uint16_t* lo, uint16_t* hi);   // thunk_MFC80_ord_2801 extern \"C\" void* ext_006A5E00(void* parent);                            // thunk_MFC80_ord_2372 extern \"C\" uint32_t mem_00925650; // IAT slot: USER32!GetParent extern \"C\" uint32_t mem_00925618; // IAT slot: USER32!PostMessageA extern \"C\" uint32_t mem_00B5D200; // global: message id posted to the parent window void fn_006B4CB0(void* self, uint32_t arg1)",
+    "summary": "Refreshes a cached packed 32-bit value from a 16-bit pair; when it changes, posts a message to the parent window.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B4D30": {
     "name": "sub_006B4D30",
     "signature": "extern \"C\" int32_t __thiscall fn_006B4D30(void* self, uint32_t /*unused_arg*/)",

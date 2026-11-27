@@ -1927,3 +1927,56 @@ void fn_006B6A30(void* self) {
     ext_006A6310(esi);
 }
 } // namespace lift_006B6A30
+
+// [0x006B4CB0] sub_006B4CB0 (128 bytes)
+namespace lift_006B4CB0 {
+// Known callees
+extern void ext_006A5EA8(void* self);                               // thunk_MFC80_ord_1903
+extern void* ext_006B4440(void* ecx);                               // sub_006B4440
+extern void* ext_006B4430(void* ecx);                               // sub_006B4430
+extern WPARAM ext_006AD940(void* ecx);                              // sub_006AD940
+extern void ext_008727BA(void* self, uint16_t* lo, uint16_t* hi);   // thunk_MFC80_ord_2801
+extern void* ext_006A5E00(void* parent);                            // thunk_MFC80_ord_2372
+
+// Imported / global data referenced by the original asm
+extern uint32_t mem_00925650; // IAT slot: USER32!GetParent
+extern uint32_t mem_00925618; // IAT slot: USER32!PostMessageA
+extern uint32_t mem_00B5D200; // global: message id posted to the parent window
+
+// @name Unknown::UpdatePackedValueAndPost_006B4CB0
+// @class Unknown
+// @summary Refreshes a cached packed 32-bit value from a 16-bit pair; when it changes, posts a message to the parent window.
+// @field Unknown +0x20 HWND field_0x20
+// @field Unknown +0x54 void* field_0x54
+void fn_006B4CB0(void* self, uint32_t arg1) {
+    (void)arg1; // stack argument is popped by callee (ret 4) but never read
+
+    ext_006A5EA8(self);
+
+    void* obj = ext_006B4440(lift_field<void*>(self, 0x54));
+    void* cache = ext_006B4430(obj);
+
+    uint16_t lo = 0;
+    uint16_t hi = 0;
+    ext_008727BA(self, &lo, &hi);
+    uint32_t packed = (static_cast<uint32_t>(hi) << 16) | static_cast<uint32_t>(lo);
+
+    if (packed == lift_field<uint32_t>(cache, 0)) {
+        return;
+    }
+    lift_field<uint32_t>(cache, 0) = packed;
+
+    auto getParent = reinterpret_cast<void* (__stdcall*)(void*)>(
+        static_cast<uintptr_t>(mem_00925650));
+    void* parent = getParent(lift_field<void*>(self, 0x20));
+    void* target = ext_006A5E00(parent);
+
+    obj = ext_006B4440(lift_field<void*>(self, 0x54));
+    WPARAM wparam = ext_006AD940(obj);
+    uint32_t msg = mem_00B5D200;
+
+    auto postMessage = reinterpret_cast<BOOL(__stdcall*)(void*, UINT, WPARAM, LPARAM)>(
+        static_cast<uintptr_t>(mem_00925618));
+    (void)postMessage(lift_field<void*>(target, 0x20), msg, wparam, 0);
+}
+} // namespace lift_006B4CB0
