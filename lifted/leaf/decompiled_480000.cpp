@@ -2445,3 +2445,45 @@ extern void __fastcall fn_0048F070(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_0048F070
+
+// [0x0048F510]
+namespace lift_0048F510 {
+// @name Unknown::ctor_0048F510
+// @class Unknown
+// @summary Initializes base object with vtable 0x0093E730, stores two arguments, zeroes fields, and sets field_0x08 from global vector element 0.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+
+
+extern void* __thiscall ext_006657F0(void* self, uint32_t arg);
+extern int32_t __cdecl ext_00468180(void);
+extern uint32_t __thiscall ext_00469570(uint8_t* self, uint32_t index);
+
+extern void* __thiscall fn_0048F510(void* self, uint32_t arg0, uint32_t arg1) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    ext_006657F0(self, 1);
+
+    lift_field<uint32_t>(base, 0x00) = 0x0093E730u;
+    lift_field<uint32_t>(base, 0x10) = arg0;
+    lift_field<uint32_t>(base, 0x14) = arg0;
+    lift_field<uint32_t>(base, 0x18) = arg1;
+    lift_field<uint32_t>(base, 0x20) = 0;
+    lift_field<uint32_t>(base, 0x24) = 0;
+    lift_field<uint32_t>(base, 0x28) = 0;
+    lift_field<uint32_t>(base, 0x0C) = 0;
+
+    int32_t vec = ext_00468180();
+    uint32_t elem0 = ext_00469570(reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(vec))), 0);
+    lift_field<uint32_t>(base, 0x08) = elem0;
+
+    return self;
+}
+} // namespace lift_0048F510
