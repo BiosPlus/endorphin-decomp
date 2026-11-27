@@ -3826,3 +3826,36 @@ bool fn_006D4E90(void* self, void* obj) {
     return true;
 }
 } // namespace lift_006D4E90
+
+// [0x006D4F10] sub_006D4F10 (116 bytes)
+namespace lift_006D4F10 {
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, void* edx, int32_t index);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::removeElementIfFound_006D4F10
+// @class Unknown
+// @summary Linear-searches the pointer array at +0x13c for arg; if found, removes it, calls arg's vtable slot 5 (arg, 1) when non-null, and returns 1; otherwise calls ext_006E7440(this+0x1c4, 0) and returns 0.
+// @field Unknown +0x13c int32_t field_0x13c
+// @field Unknown +0x14c void** field_0x14c
+// @field Unknown +0x1c4 uint8_t field_0x1c4
+uint8_t fn_006D4F10(void* self, void* arg) {
+    const int32_t count = lift_field<int32_t>(self, 0x13c);
+    void** const data = lift_field<void**>(self, 0x14c);
+
+    for (int32_t i = 0; i < count; ++i) {
+        if (data[i] == arg) {
+            ext_006D2200(&lift_field<uint8_t>(self, 0x13c), nullptr, i);
+            if (arg != nullptr) {
+                void** vtbl = *reinterpret_cast<void***>(arg);
+                reinterpret_cast<void(__thiscall*)(void*, int)>(vtbl[5])(arg, 1);
+            }
+            return 1;
+        }
+    }
+
+    ext_006E7440(&lift_field<uint8_t>(self, 0x1c4), 0);
+    return 0;
+}
+} // namespace lift_006D4F10
