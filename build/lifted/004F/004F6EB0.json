@@ -1,0 +1,22 @@
+{
+  "va": "0x004F6EB0",
+  "size": 76,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties,float,getZ\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, 0\u003e",
+  "signature": "void* fn_004F6EB0(void* outString, const void* holder)",
+  "summary": "Reads the MatrixWithProperties pointer from the ValuePtrType argument, calls getZ on it, and formats the float into the sret string slot; throws if the object pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:01:30Z"
+}

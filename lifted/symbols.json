@@ -19512,6 +19512,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F6EB0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties,float,getZ\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, 0\u003e",
+    "signature": "void* fn_004F6EB0(void* outString, const void* holder)",
+    "summary": "Reads the MatrixWithProperties pointer from the ValuePtrType argument, calls getZ on it, and formats the float into the sret string slot; throws if the object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F7250": {
     "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setMagnitude(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setMagnitude(float)\u003e",

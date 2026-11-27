@@ -62576,3 +62576,43 @@ void* fn_00470840(void* out, void* holder) {
     return out;
 }
 } // namespace lift_00470840
+
+// [0x004F6EB0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_4 (76 bytes)
+namespace lift_004F6EB0 {
+// Callee 0x004F4DF0 (sub_004F4DF0): MatrixWithProperties::getZ, called with the
+// object pointer as `this` and returning a float (x87 st0 in the original).
+extern float ext_004F4DF0(void* self);
+
+// Callee 0x0046C390: formatFloatTrimmedStringWrapper. Writes the trimmed string for
+// `value` into the sret slot `out` and returns `out`.
+extern void* ext_0046C390(void* out, float value);
+
+// Callee 0x0046C3C0: DerivedException::DerivedException, constructs the exception
+// object in caller-provided storage.
+extern void* ext_0046C3C0(void* exceptionObj);
+
+// Callee 0x006A6DD2: thunk to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address pushed before the throw (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<MatrixWithProperties,float,getZ>::vfunc_4
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>
+// @summary Reads the MatrixWithProperties pointer from the ValuePtrType argument, calls getZ on it, and formats the float into the sret string slot; throws if the object pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// Stack arguments: arg1 = sret std::string* (returned in eax), arg2 = ValuePtrType holder.
+void* fn_004F6EB0(void* outString, const void* holder) {
+    void* target = lift_field<void*>(const_cast<void*>(holder), 0x00);
+    if (target == nullptr) {
+        alignas(8) uint8_t exceptionObj[0x28];
+        ext_0046C3C0(exceptionObj);
+        ext_006A6DD2(exceptionObj, reinterpret_cast<const void*>(kThrowInfoVA));
+        return outString;
+    }
+
+    float z = ext_004F4DF0(target);
+    ext_0046C390(outString, z);
+    return outString;
+}
+} // namespace lift_004F6EB0
