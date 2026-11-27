@@ -3032,3 +3032,31 @@ void fn_00410D40(void* self) {
     }
 }
 } // namespace lift_00410D40
+
+// [0x00416710]
+namespace lift_00416710 {
+// @name sub_00416710_dtor
+// @class sub_00416710
+// @summary Destructor for object with vftable 0x0092c92c, destroying four embedded MFC controls and base class.
+// @field sub_00416710 +0x00 uint32_t vftable
+// @field sub_00416710 +0x88 uint8_t field_0x88
+// @field sub_00416710 +0xdc uint8_t field_0xdc
+// @field sub_00416710 +0x130 uint8_t field_0x130
+// @field sub_00416710 +0x188 uint8_t field_0x188
+
+
+extern void __thiscall ext_006A5DFA(void* self);
+extern void __thiscall ext_006A5F2C(void* self);
+extern void __thiscall ext_006A5F38(void* self);
+extern void __thiscall ext_006A61D2(void* self);
+
+extern void __thiscall fn_00416710(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base) = 0x0092c92c;
+    ext_006A5F2C(base + 0x188);
+    ext_006A5F2C(base + 0x130);
+    ext_006A5F38(base + 0xdc);
+    ext_006A5DFA(base + 0x88);
+    ext_006A61D2(base);
+}
+} // namespace lift_00416710

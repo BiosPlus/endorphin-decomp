@@ -1,0 +1,46 @@
+{
+  "va": "0x00416710",
+  "size": 133,
+  "orig_symbol": "sub_00416710",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_00416710_dtor",
+  "class": "sub_00416710",
+  "signature": "extern \"C\" void __thiscall fn_00416710(void* self)",
+  "summary": "Destructor for object with vftable 0x0092c92c, destroying four embedded MFC controls and base class.",
+  "fields": [
+    {
+      "class": "sub_00416710",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "sub_00416710",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "sub_00416710",
+      "offset": "+0xDC",
+      "type": "uint8_t",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "sub_00416710",
+      "offset": "+0x130",
+      "type": "uint8_t",
+      "name": "field_0x130"
+    },
+    {
+      "class": "sub_00416710",
+      "offset": "+0x188",
+      "type": "uint8_t",
+      "name": "field_0x188"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:33:40Z"
+}
