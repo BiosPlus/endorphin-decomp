@@ -1,0 +1,28 @@
+{
+  "va": "0x005F17B0",
+  "size": 249,
+  "orig_symbol": "NMData::NullRelationshipData::vfunc_17_off_C",
+  "src_path": "src/NMData/NullRelationshipData.cpp",
+  "lifted_path": "lifted/NMData/NullRelationshipData.cpp",
+  "name": "NMData::NullRelationshipData::vfunc_17_off_C",
+  "class": "NMData::NullRelationshipData",
+  "signature": "extern \"C\" void* __thiscall fn_005F17B0(uint8_t* self_off_c)",
+  "summary": "Clones a NullRelationshipData object from its +0xC subobject, copying transform and state.",
+  "fields": [
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x148",
+      "type": "uint8_t",
+      "name": "field_0x148"
+    },
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:40:46Z"
+}

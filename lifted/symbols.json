@@ -47859,6 +47859,13 @@
     "summary": "Looks up two named items (via sub_0063EFE0 / sub_0063F530) and copies the first's string into this+0x17C; if the third lookup finds an item, replaces the owned object at this+0x15C with a freshly constructed one and hands it the string and the final lookup result.",
     "lifted_path": "lifted/NMData/FluidObjectData.cpp"
   },
+  "0x005C46F0": {
+    "name": "NMData::FluidObjectData::vfunc_22",
+    "class": "NMData::FluidObjectData",
+    "signature": "void* __thiscall fn_005C46F0(void* self, void* arg1)",
+    "summary": "Serializes FluidObjectData properties and optional child object into an archive/XML node.",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
+  },
   "0x005C4780": {
     "name": "sub_005C4780",
     "class": "Unknown",
@@ -55959,6 +55966,13 @@
     "signature": "extern \"C\" void* __thiscall fn_005F0FA0(uint8_t* self_off_c)",
     "summary": "Allocates and constructs a 0x318-byte object (likely MagnetJointData) and copies a flag from TransformInterface::vfunc_0x20 to offset +0x148.",
     "lifted_path": "lifted/NMData/MagnetJointData.cpp"
+  },
+  "0x005F17B0": {
+    "name": "NMData::NullRelationshipData::vfunc_17_off_C",
+    "class": "NMData::NullRelationshipData",
+    "signature": "extern \"C\" void* __thiscall fn_005F17B0(uint8_t* self_off_c)",
+    "summary": "Clones a NullRelationshipData object from its +0xC subobject, copying transform and state.",
+    "lifted_path": "lifted/NMData/NullRelationshipData.cpp"
   },
   "0x005F18B0": {
     "name": "NMData::HingeData::vfunc_0",

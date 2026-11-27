@@ -289,3 +289,97 @@ void __thiscall fn_005F2970(uint8_t* self, uint8_t* arg0) {
     }
 }
 } // namespace lift_005F2970
+
+// [0x005F17B0]
+namespace lift_005F17B0 {
+// @name NMData::NullRelationshipData::vfunc_17_off_C
+// @class NMData::NullRelationshipData
+// @summary Clones a NullRelationshipData object from its +0xC subobject, copying transform and state.
+// @field NMData::NullRelationshipData +0x148 uint8_t field_0x148
+// @field NMData::NullRelationshipData +0x178 uint8_t field_0x178
+
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void __thiscall ext_005EEEF0(void* self);
+extern void ext_00412690();
+extern void ext_004275E0();
+extern void ext_00427640();
+extern void ext_00427A60();
+extern void ext_0053F5F0();
+extern void ext_0058F630();
+extern void ext_005A35D0();
+extern void ext_005ED750();
+extern void ext_005EE9A0();
+extern void ext_005F28D0();
+extern void ext_0063EFE0();
+extern void ext_0063F530();
+extern void ext_0067EFD0();
+
+extern uint32_t mem_00B40640;
+extern uint32_t mem_00924EAC;
+extern uint32_t mem_00924FC0;
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_00924FEC;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_0092500C;
+extern uint32_t mem_00925134;
+extern uint32_t mem_00A9EDA8;
+extern uint32_t mem_00A9F5D0;
+extern uint32_t mem_00A9F738;
+extern uint32_t mem_00A9F7F4;
+extern uint32_t mem_00A9F7F8;
+extern uint32_t mem_00A9F7FC;
+extern uint32_t mem_00A9F9AC;
+
+extern void* __thiscall fn_005F17B0(uint8_t* self_off_c)
+{
+    uint8_t* edi = self_off_c;
+    uint8_t* esi = static_cast<uint8_t*>(ext_006A5C62(0x2F8));
+    if (esi != nullptr) {
+        ext_005EEEF0(esi);
+        lift_field<uint32_t>(esi, 0x000) = 0x00958674u;
+        lift_field<uint32_t>(esi, 0x004) = 0x0095862Cu;
+        lift_field<uint32_t>(esi, 0x008) = 0x009585ECu;
+        lift_field<uint32_t>(esi, 0x00C) = 0x0095859Cu;
+        lift_field<uint32_t>(esi, 0x150) = 0x00958584u;
+        lift_field<uint32_t>(esi, 0x154) = 0x0095857Cu;
+    }
+
+    auto vfunc_5c = reinterpret_cast<void(__thiscall*)(void*, void*)>(
+        reinterpret_cast<uint32_t*>(lift_field<uintptr_t>(esi, 0x0))[0x5C / 4]);
+    vfunc_5c(esi, edi + 0x8);
+
+    lift_field<uint8_t>(esi, 0x178) = lift_field<uint8_t>(edi, 0x16C);
+
+    uint8_t local_buf[64];
+    uint8_t* edi_off4 = edi - 0x8;
+    auto vfunc_10 = reinterpret_cast<void(__thiscall*)(void*, void*, uint32_t, uint32_t)>(
+        reinterpret_cast<uint32_t*>(lift_field<uintptr_t>(edi_off4, 0x0))[0x10 / 4]);
+    vfunc_10(edi_off4, local_buf, 0, mem_00B40640);
+
+    uint8_t* ebx = esi + 0x4;
+    auto ebx_vfunc_0 = reinterpret_cast<void(__thiscall*)(void*, uint32_t, void*, uint32_t)>(
+        reinterpret_cast<uint32_t*>(lift_field<uintptr_t>(ebx, 0x0))[0]);
+    ebx_vfunc_0(ebx, 0, local_buf, mem_00B40640);
+
+    auto ebx_vfunc_4 = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(
+        reinterpret_cast<uint32_t*>(lift_field<uintptr_t>(ebx, 0x0))[1]);
+    ebx_vfunc_4(ebx, 0);
+
+    auto vfunc_20 = reinterpret_cast<uint8_t(__thiscall*)(void*)>(
+        reinterpret_cast<uint32_t*>(lift_field<uintptr_t>(edi_off4, 0x0))[0x20 / 4]);
+    lift_field<uint8_t>(esi, 0x148) = vfunc_20(edi_off4);
+
+    (void)ext_00412690; (void)ext_004275E0; (void)ext_00427640; (void)ext_00427A60;
+    (void)ext_0053F5F0; (void)ext_0058F630; (void)ext_005A35D0; (void)ext_005ED750;
+    (void)ext_005EE9A0; (void)ext_005F28D0; (void)ext_0063EFE0; (void)ext_0063F530;
+    (void)ext_0067EFD0;
+    (void)mem_00924EAC; (void)mem_00924FC0; (void)mem_00924FDC; (void)mem_00924FE8;
+    (void)mem_00924FEC; (void)mem_00924FF4; (void)mem_0092500C; (void)mem_00925134;
+    (void)mem_00A9EDA8; (void)mem_00A9F5D0; (void)mem_00A9F738; (void)mem_00A9F7F4;
+    (void)mem_00A9F7F8; (void)mem_00A9F7FC; (void)mem_00A9F9AC;
+
+    return esi;
+}
+} // namespace lift_005F17B0
