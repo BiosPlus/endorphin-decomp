@@ -1,0 +1,14 @@
+{
+  "va": "0x00590420",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerZ(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cTransformNode\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerZ(float), 0}\u003e",
+  "signature": "void fn_00590420(void* self)",
+  "summary": "One-time initializes the static accessor object at 0xB3F984 (guarded by flag 0xB3F988), then stores its address into holder+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:30:25Z"
+}

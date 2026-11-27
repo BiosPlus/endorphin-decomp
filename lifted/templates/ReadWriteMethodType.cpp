@@ -11575,3 +11575,27 @@ void fn_00590AA0(void* self) {
     lift_field<void*>(self, 0x04) = reinterpret_cast<void*>(&mem_00B3F994);
 }
 } // namespace lift_00590AA0
+
+// [0x00590420] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerZ(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_00590420 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern uint32_t mem_00B3F988;
+extern uint32_t mem_00B3F984;
+
+// @name ExprParser::ReadWriteMethodType<TransformNode>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerZ(float), 0}>
+// @summary One-time initializes the static accessor object at 0xB3F984 (guarded by flag 0xB3F988), then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerZ(float), 0}> +0x04 uint32_t field_0x04
+void fn_00590420(void* self) {
+    // Guarded one-time init: flag bit 0 of mem_00B3F988 marks the accessor as built.
+    if ((mem_00B3F988 & 1u) == 0u) {
+        mem_00B3F988 |= 1u;
+        ext_0067A670();  // thiscall(ECX = &mem_00B3F984, arg = 0); stores arg into first DWORD
+        mem_00B3F984 = 0x0095C6F4u;  // vtable of the accessor object
+    }
+    // Bind holder+0x04 to the accessor object (both paths).
+    *reinterpret_cast<uint32_t*>(static_cast<char*>(self) + 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B3F984));
+}
+} // namespace lift_00590420
