@@ -1758,3 +1758,86 @@ void fn_0049ECB0(void* begin, void* end) {
     }
 }
 } // namespace lift_0049ECB0
+
+// [0x00492BC0]
+namespace lift_00492BC0 {
+// @name TreeConstIterator::increment
+// @class TreeConstIterator
+// @summary Advances an MSVC8 red-black tree iterator to the next in-order node.
+// @field TreeConstIterator +0x00 uint32_t container
+// @field TreeConstIterator +0x04 void* node
+
+
+extern void (*mem_00925134)();
+
+void __thiscall sub_00492BC0(void* self) {
+    if (lift_field<uint32_t>(self, 0x00) == 0) {
+        mem_00925134();
+    }
+
+    uint8_t* node = lift_field<uint8_t*>(self, 0x04);
+    if (lift_field<uint8_t>(node, 0x21) != 0) {
+        mem_00925134();
+        return;
+    }
+
+    uint8_t* right = lift_field<uint8_t*>(node, 0x08);
+    if (lift_field<uint8_t>(right, 0x21) == 0) {
+        uint8_t* left = lift_field<uint8_t*>(right, 0x00);
+        while (lift_field<uint8_t>(left, 0x21) == 0) {
+            right = left;
+            left = lift_field<uint8_t*>(right, 0x00);
+        }
+        lift_field<uint8_t*>(self, 0x04) = right;
+        return;
+    }
+
+    uint8_t* parent = lift_field<uint8_t*>(node, 0x04);
+    while (lift_field<uint8_t>(parent, 0x21) == 0 &&
+           lift_field<uint8_t*>(self, 0x04) == lift_field<uint8_t*>(parent, 0x08)) {
+        lift_field<uint8_t*>(self, 0x04) = parent;
+        parent = lift_field<uint8_t*>(parent, 0x04);
+    }
+    lift_field<uint8_t*>(self, 0x04) = parent;
+}
+} // namespace lift_00492BC0
+
+// [0x0049EFC0] sub_0049EFC0 (120 bytes)
+namespace lift_0049EFC0 {
+// Known callee 0x004970A0: UnknownClass::assignFromSubobjectVirtual_004970A0 (If field +0xBC is non-null, call virtual slot 1 on the sub-object at +0x8 and assign its result into the string at +0x30.)
+extern void ext_004970A0(void* self);
+// Import slot for MSVCR80!_invalid_parameter_noinfo. Its guarding checks are
+// unreachable (the loop conditions already exclude them), so only the reference is kept.
+extern int mem_00925134;
+
+// Reads a 32-bit pointer-sized link stored at base+off as a byte pointer.
+static inline uint8_t* lift_link(const void* base, ptrdiff_t off) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, off)));
+}
+
+// @name UnknownClass::assignAllEntriesFromLists
+// @class UnknownClass
+// @summary Walks the list at +0xD4 calling ext_004970A0 on each entry, then walks the list at +0xDC/+0xE0 and, for each node, walks its sub-list at node+0xD0 calling ext_004970A0 on each entry.
+// @field UnknownClass +0xD4 uint32_t field_0xd4
+// @field UnknownClass +0xDC uint32_t field_0xdc
+// @field UnknownClass +0xE0 uint32_t field_0xe0
+void fn_0049EFC0(void* self) {
+    (void)&mem_00925134;
+
+    // First list: sentinel pointer at +0xD4, entries are node+0x8.
+    uint8_t* head1 = lift_link(self, 0xD4);
+    for (uint8_t* node = lift_link(head1, 0x0); node != head1; node = lift_link(node, 0x0)) {
+        ext_004970A0(node + 0x8);
+    }
+
+    // Second list: sentinel pointer stored at +0xE0 (the container at +0xDC).
+    uint8_t* head2 = lift_link(self, 0xE0);
+    for (uint8_t* outer = lift_link(head2, 0x0); outer != head2; outer = lift_link(outer, 0x0)) {
+        // Each outer node carries a sub-list sentinel at +0xD0; entries are node+0x8.
+        uint8_t* sub_head = lift_link(outer, 0xD0);
+        for (uint8_t* node = lift_link(sub_head, 0x0); node != sub_head; node = lift_link(node, 0x0)) {
+            ext_004970A0(node + 0x8);
+        }
+    }
+}
+} // namespace lift_0049EFC0

@@ -12374,6 +12374,13 @@
     "summary": "Searches the list at this+0xdc for a node matching key and returns a pointer to its value (node+8) or null.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049EFC0": {
+    "name": "UnknownClass::assignAllEntriesFromLists",
+    "class": "UnknownClass",
+    "signature": "static inline uint8_t* lift_link(const void* base, ptrdiff_t off)",
+    "summary": "Walks the list at +0xD4 calling ext_004970A0 on each entry, then walks the list at +0xDC/+0xE0 and, for each node, walks its sub-list at node+0xD0 calling ext_004970A0 on each entry.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049F040": {
     "name": "Unknown::findListValueByKey",
     "class": "Unknown",

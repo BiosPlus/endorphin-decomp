@@ -125,9 +125,12 @@ struct UnknownClass_Fields {
     // +0xBC  void**                   field_0xbc  (evidence: 0x006123C0) // CONFLICT: multiple definitions at +0xBC
     // +0xC0  uint32_t                 field_0xC0  (evidence: 0x0043CC60)
     // +0xD0  uint32_t field_0xD0 (on object referenced by +0x88)  (evidence: 0x0043CC60)
+    // +0xD4  uint32_t                 field_0xd4  (evidence: 0x0049EFC0)
     // +0xD8  void*                    ownedObject  (evidence: 0x00466360)
     // +0xDC  uint32_t                 field_0xDC  (evidence: 0x00705760) // CONFLICT: multiple definitions at +0xDC
+    // +0xDC  uint32_t                 field_0xdc  (evidence: 0x0049EFC0) // CONFLICT: multiple definitions at +0xDC
     // +0xDC  uint32_t                 list_head  (evidence: 0x0049ED70) // CONFLICT: multiple definitions at +0xDC
+    // +0xE0  uint32_t                 field_0xe0  (evidence: 0x0049EFC0)
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x0058AB60)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594040, 0x0059DE20)
     // +0x108 uint32_t                 field_0x108  (evidence: 0x0043CC60)
