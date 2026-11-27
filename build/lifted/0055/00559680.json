@@ -1,0 +1,13 @@
+{
+  "va": "0x00559680",
+  "size": 68,
+  "orig_symbol": "sub_00559680",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "destroyAndResetRange_00559680",
+  "signature": "void fn_00559680(void* self)",
+  "summary": "If the range begin pointer at +0x08 is non-null, destroys the 0xa0-byte struct range [+0x08, +0x0C) via ext_00556740, frees the begin pointer via ext_006A5C5C, then zeroes the +0x08, +0x0C and +0x10 pointers.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:20:24Z"
+}

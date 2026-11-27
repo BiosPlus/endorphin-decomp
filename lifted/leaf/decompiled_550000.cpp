@@ -2307,3 +2307,25 @@ void fn_00558B50(void* self) {
     lift_field<uint32_t>(self, 0x10) = 0;
 }
 } // namespace lift_00558B50
+
+// [0x00559680] sub_00559680 (68 bytes)
+namespace lift_00559680 {
+// Known callee 0x00556740: destroyStructArray_00556740 (Destroys a contiguous range of 0xa0-byte structs containing four std::string members)
+extern void ext_00556740(void* begin, void* end);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+
+// @name destroyAndResetRange_00559680
+// @summary If the range begin pointer at +0x08 is non-null, destroys the 0xa0-byte struct range [+0x08, +0x0C) via ext_00556740, frees the begin pointer via ext_006A5C5C, then zeroes the +0x08, +0x0C and +0x10 pointers.
+void fn_00559680(void* self) {
+    // Reads/writes three 32-bit pointer slots of a 32-bit object, mirroring the asm's [esi+4..+0x10] accesses (esi = self+4).
+    if (lift_field<uint32_t>(self, 0x08) != 0) {
+        ext_00556740(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08))),
+                     reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x0C))));
+        ext_006A5C5C(lift_field<uint32_t>(self, 0x08));
+    }
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+}
+} // namespace lift_00559680

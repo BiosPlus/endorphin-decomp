@@ -28638,6 +28638,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00559680": {
+    "name": "destroyAndResetRange_00559680",
+    "signature": "void fn_00559680(void* self)",
+    "summary": "If the range begin pointer at +0x08 is non-null, destroys the 0xa0-byte struct range [+0x08, +0x0C) via ext_00556740, frees the begin pointer via ext_006A5C5C, then zeroes the +0x08, +0x0C and +0x10 pointers.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005597C0": {
     "name": "clearStringVectorRecord",
     "signature": "void fn_005597C0(void* self, uint32_t flag)",
