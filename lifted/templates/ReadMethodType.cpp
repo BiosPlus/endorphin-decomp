@@ -184827,3 +184827,57 @@ void* __stdcall fn_0066FC80(void* obj, void* arg2) {
     return reinterpret_cast<VFn43>(sub_vtbl[43])(sub, obj, arg2);
 }
 } // namespace lift_0066FC80
+
+// [0x005FCD30]
+namespace lift_005FCD30 {
+// Known callee 0x00672110: sub_00672110 (52B), thiscall ctor-like helper: initializes the temp at `self` from `value`.
+extern void* ext_00672110(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object at self, returns self).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(object, typeinfo)).
+extern void ext_006A6DD2(void* exc, void* typeInfo);
+// RTTI type descriptor passed to the throw thunk.
+extern int mem_009DEC1C;
+
+// Vtable calls use the 32-bit slot index (byte offset / 4): 0x38 -> 14, 0x78 -> 30, 0xAC -> 43.
+using ThisCall0 = void* (*)(void* self);
+using ThisCall1 = void* (*)(void* self, void* a);
+using ThisCall2 = void* (*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<Sensor,...>::vfunc_43 (getMutableVector3 reader)
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>
+// @summary Gets a value from the object held in self+0 (via vtable slot 14), wraps it in a temp, assigns the temp into self's held value, releases the temp's inner object (slot 30), then forwards (self, arg2) to the object at self+4's vtable slot 43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005FCD30(void* self, void* arg2) {
+    // Temp object written by ext_00672110 and consumed by ext_0041CF50 (size not fully known; generous buffer).
+    alignas(8) uint8_t tmp[64] = {};
+
+    void* obj = lift_field<void*>(self, 0);
+    if (obj == nullptr) {
+        // Original builds an exception object and throws it via CxxThrowException with the type descriptor.
+        alignas(8) uint8_t exc[64] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    void** objVt = *reinterpret_cast<void***>(obj);
+    void* value = reinterpret_cast<ThisCall0>(objVt[14])(obj);
+
+    ext_00672110(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    void* inner = lift_field<void*>(tmp, 4);
+    if (inner != nullptr) {
+        void** innerVt = *reinterpret_cast<void***>(inner);
+        reinterpret_cast<ThisCall1>(innerVt[30])(inner, tmp);
+    }
+
+    void* target = lift_field<void*>(self, 4);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    return reinterpret_cast<ThisCall2>(targetVt[43])(target, self, arg2);
+}
+} // namespace lift_005FCD30
