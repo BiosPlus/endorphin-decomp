@@ -38157,6 +38157,13 @@
     "summary": "Fetches a global object, calls its virtual slot 0x1d8 to get a critical-section pointer, enters that section, stores the stack argument at self+0x208, dispatches through the subobject at global+0x258, then leaves the section (also on unwind).",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005D0350": {
+    "name": "Unknown::accumulateClampAndDispatch_005D0350",
+    "class": "Unknown",
+    "signature": "extern const double mem_0092C508;  // 0.1 (double) void fn_005D0350(void* self, float scale)",
+    "summary": "Returns early if flag +0x1F1 is set; otherwise refreshes the 4-float vector at +0x274, adds scale times the vtable-slot-5 result of the embedded object to +0x1F4 (clamped to a minimum of 0.1), then dispatches the local vector copy through ext_005CFEC0.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D0530": {
     "name": "UnknownOwner::applyTranslationOffsetAndDispatch",
     "class": "UnknownOwner",

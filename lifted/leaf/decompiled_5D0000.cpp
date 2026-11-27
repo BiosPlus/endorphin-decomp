@@ -1083,3 +1083,49 @@ void __thiscall fn_005D01A0(void* self, float value) {
     ext_0065C650(lock);
 }
 } // namespace lift_005D01A0
+
+// [0x005D0350] sub_005D0350 (125 bytes)
+namespace lift_005D0350 {
+// Known callee 0x005CFEC0: Unknown::transformAndDispatch_005CFEC0 (Returns early if flag +0x1F1 is set; otherwise fetches a 4x4 matrix from the embedded object's vtable slot 5, derives a transformed point via sub_0053B470 and Vector4Add, then calls vtable slot 0 of the embedded object with the matrix buffer and global mem_00B40644.)
+extern void ext_005CFEC0(void* self, int edx_unused, const float* a);
+// Known callee 0x005CFF60: Unknown_ComputeTransformedVec4_005CFF60 (Gets a 16-float matrix from the embedded object at +0x04 (vtable slot 0x14), transforms it with a negated float at +0x1F4 via sub_0053B470 and Vector4Add, and copies the resulting 4 floats into +0x274.)
+extern void ext_005CFF60(void* self);
+extern const float mem_0093F8EC;   // 0.1f
+extern const double mem_0092C508;  // 0.1 (double)
+
+// @name Unknown::accumulateClampAndDispatch_005D0350
+// @class Unknown
+// @summary Returns early if flag +0x1F1 is set; otherwise refreshes the 4-float vector at +0x274, adds scale times the vtable-slot-5 result of the embedded object to +0x1F4 (clamped to a minimum of 0.1), then dispatches the local vector copy through ext_005CFEC0.
+// @field Unknown +0x154 void* field_0x154
+// @field Unknown +0x1F1 uint8_t field_0x1F1
+// @field Unknown +0x1F4 float field_0x1F4
+void fn_005D0350(void* self, float scale) {
+    uint8_t* const base = static_cast<uint8_t*>(self);
+
+    if (lift_field<uint8_t>(base, 0x1F1) != 0) {
+        return;
+    }
+
+    // Refresh the transformed vector at +0x274 and take a local copy of it.
+    ext_005CFF60(self);
+    float v[4];
+    for (int i = 0; i < 4; ++i) {
+        v[i] = lift_field<float>(base, 0x274 + 4 * i);
+    }
+
+    // s = obj->vtbl[5](obj, &self->+0x1F4)
+    void* const obj = lift_field<void*>(base, 0x154);
+    void** const vt = *reinterpret_cast<void***>(obj);
+    using Method5 = float (__fastcall*)(void* self, int edx_unused, float* p);
+    const float s = reinterpret_cast<Method5>(vt[5])(obj, 0, &lift_field<float>(base, 0x1F4));
+
+    // +0x1F4 = s * scale + +0x1F4; then clamp to a minimum of 0.1 (NaN is left unchanged).
+    float& f1f4 = lift_field<float>(base, 0x1F4);
+    f1f4 = s * scale + f1f4;
+    if (static_cast<double>(f1f4) < mem_0092C508) {
+        f1f4 = mem_0093F8EC;
+    }
+
+    ext_005CFEC0(self, 0, v);
+}
+} // namespace lift_005D0350
