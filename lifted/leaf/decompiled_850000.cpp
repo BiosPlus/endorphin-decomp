@@ -1819,3 +1819,47 @@ uint32_t sub_0085BD10(void* stream, uint32_t count, uint64_t* out_val) {
     return end_pos - start_pos;
 }
 } // namespace lift_0085BD10
+
+// [0x0085F9D0]
+namespace lift_0085F9D0 {
+// @name rotateAndXorDecrypt
+// @summary Circularly left-shifts a byte buffer by (key & 0xf) + 1 bits and XORs each byte with key.
+uint16_t __cdecl sub_0085F9D0(uint8_t key, uint8_t* buf, uint32_t len) {
+    uint16_t count = key & 0x0f;
+    uint8_t* end_ptr = buf + len - 1;
+
+    uint16_t prev_count;
+    do {
+        uint8_t carry = 0;
+        uint8_t* p = end_ptr;
+        if (static_cast<uint16_t>(len) != 0) {
+            uint16_t rem = static_cast<uint16_t>(len - 1);
+            uint16_t prev_rem;
+            do {
+                uint8_t val = *p;
+                uint8_t next_carry = val >> 7;
+                *p = static_cast<uint8_t>((val << 1) | carry);
+                p--;
+                carry = next_carry;
+                prev_rem = rem;
+                rem--;
+            } while (prev_rem != 0);
+        }
+        if (carry != 0) {
+            *end_ptr |= 0x01;
+        }
+        prev_count = count;
+        count--;
+    } while (prev_count != 0);
+
+    uint16_t i = 0;
+    if (len != 0) {
+        do {
+            buf[i] ^= key;
+            i++;
+        } while (static_cast<uint32_t>(i) < len);
+    }
+
+    return 0;
+}
+} // namespace lift_0085F9D0

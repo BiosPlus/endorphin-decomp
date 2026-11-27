@@ -1744,6 +1744,13 @@
     "summary": "Sends WM_NOTIFY (code NM_RETURN) to the parent window of this control if that parent is still a valid window.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004154A0": {
+    "name": "EditBox::PreTranslateMessage",
+    "class": "EditBox",
+    "signature": "int32_t __thiscall fn_004154A0(void* self, void* pMsg)",
+    "summary": "Handles WM_KEYDOWN for Enter (notifying parent and selecting all if modified) and non-Tab keys (marking modified) before forwarding to CEdit::PreTranslateMessage.",
+    "lifted_path": "lifted/classes/EditBox.cpp"
+  },
   "0x00415540": {
     "name": "Unknown::ResetWindowState",
     "class": "Unknown",
@@ -74997,6 +75004,12 @@
     "summary": "If the getter at +0x50 is set, calls it with the +0x08 sub-object into a temporary, copies the result into the embedded object at +0x80, and destroys the temporary. Then runs the conditional copy of the embedded object into arg, and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00709F90": {
+    "name": "sub_00709F90",
+    "signature": "extern \"C\" void __thiscall fn_00709F90( void* self, void* arg0, uint32_t /*arg1*/, uint32_t /*arg2*/, uint32_t /*arg3*/)",
+    "summary": "Dispatches vtable notifications (0x14, 0x15) and updates subobject at +0x80 or +0x40 depending on field +0x54",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070A1D0": {
     "name": "sub_0070A1D0",
     "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",
@@ -86344,6 +86357,12 @@
     "name": "memcmp",
     "signature": "int32_t __cdecl sub_0085F7B0(const void* buf1, const void* buf2, uint32_t count)",
     "summary": "Compare up to n bytes of two memory buffers and return the unsigned byte difference at the first mismatch",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
+  "0x0085F9D0": {
+    "name": "rotateAndXorDecrypt",
+    "signature": "uint16_t __cdecl sub_0085F9D0(uint8_t key, uint8_t* buf, uint32_t len)",
+    "summary": "Circularly left-shifts a byte buffer by (key \u0026 0xf) + 1 bits and XORs each byte with key.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x0085FA64": {
