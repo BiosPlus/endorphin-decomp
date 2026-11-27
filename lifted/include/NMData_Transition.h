@@ -10,21 +10,26 @@
 // Recovered field layout for NMData::Transition:
 namespace lifted_layout {
 struct NMData_Transition_Fields {
-    // +0x20  std::string              field_0x20  (evidence: 0x00498FF0)
-    // +0x3C  void*                    field_0x3C  (evidence: 0x00498FF0)
-    // +0x58  void*                    field_0x58  (evidence: 0x00498FF0)
+    // +0x20  std::string              field_0x20  (evidence: 0x00498FF0, 0x00499EF0)
+    // +0x3C  void*                    field_0x3C  (evidence: 0x00498FF0, 0x00499EF0)
+    // +0x58  std::string              field_0x58  (evidence: 0x00499EF0) // CONFLICT: multiple definitions at +0x58
+    // +0x58  void*                    field_0x58  (evidence: 0x00498FF0) // CONFLICT: multiple definitions at +0x58
     // +0x60  uint8_t                  field_0x60  (evidence: 0x004991A0)
-    // +0x74  void*                    field_0x74  (evidence: 0x00498FF0)
-    // +0x84  void*                    field_0x84  (evidence: 0x004991A0, 0x00499560, 0x00499CE0, 0x00499D00)
+    // +0x74  void*                    field_0x74  (evidence: 0x00498FF0, 0x00499EF0)
+    // +0x84  float                    field_0x84  (evidence: 0x00499EF0) // CONFLICT: multiple definitions at +0x84
+    // +0x84  void*                    field_0x84  (evidence: 0x004991A0, 0x00499560, 0x00499CE0, 0x00499D00) // CONFLICT: multiple definitions at +0x84
+    // +0x88  float                    field_0x88  (evidence: 0x00499EF0) // CONFLICT: multiple definitions at +0x88
     // +0x88  float*                   field_0x88  (evidence: 0x00499440, 0x00499830) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint32_t                 field_0x88  (evidence: 0x00499560) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint8_t*                 field_0x88  (evidence: 0x004997E0) // CONFLICT: multiple definitions at +0x88
     // +0x88  void*                    field_0x88  (evidence: 0x00497680, 0x004991A0) // CONFLICT: multiple definitions at +0x88
+    // +0x8C  float                    field_0x8C  (evidence: 0x00499EF0) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  float*                   field_0x8C  (evidence: 0x00499440, 0x00499830) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  uint32_t                 field_0x8C  (evidence: 0x00499560) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  uint8_t*                 field_0x8C  (evidence: 0x004997E0) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  void*                    field_0x8C  (evidence: 0x00497680, 0x004991A0) // CONFLICT: multiple definitions at +0x8C
-    // +0x94  void*                    field_0x94  (evidence: 0x00498FF0)
+    // +0x90  float                    field_0x90  (evidence: 0x00499EF0)
+    // +0x94  void*                    field_0x94  (evidence: 0x00498FF0, 0x00499EF0)
     // +0xB0  void*                    field_0xB0  (evidence: 0x00496F50, 0x00496F70, 0x00496F90, 0x00496FE0, 0x00497000, 0x004991A0)
     // +0xB4  uint8_t                  field_0xB4  (evidence: 0x004973A0, 0x004A9B50) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  uint8_t*                 field_0xB4  (evidence: 0x00498FF0) // CONFLICT: multiple definitions at +0xB4

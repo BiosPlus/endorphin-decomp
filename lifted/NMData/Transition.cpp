@@ -509,3 +509,91 @@ void* __thiscall fn_00498FF0(void* self, void* arg1) {
     return arg1;
 }
 } // namespace lift_00498FF0
+
+// [0x00499EF0]
+namespace lift_00499EF0 {
+// @name NMData::Transition::loadFromXML
+// @class NMData::Transition
+// @summary Loads Transition data from an XML node, clamping vector pairs to minimum thresholds and zeroing vec4 at +0x84.
+// @field NMData::Transition +0x20 std::string field_0x20
+// @field NMData::Transition +0x3C void* field_0x3C
+// @field NMData::Transition +0x58 std::string field_0x58
+// @field NMData::Transition +0x74 void* field_0x74
+// @field NMData::Transition +0x84 float field_0x84
+// @field NMData::Transition +0x88 float field_0x88
+// @field NMData::Transition +0x8C float field_0x8C
+// @field NMData::Transition +0x90 float field_0x90
+// @field NMData::Transition +0x94 void* field_0x94
+
+
+void __cdecl ext_006824E0(uint8_t* node, uint8_t* dst, uint32_t arg2, uint32_t arg3);
+uint32_t __thiscall ext_0063EFE0(uint8_t* self, const char* name);
+void __cdecl ext_004275E0(void* dst, uint32_t obj);
+void __cdecl ext_004EBAB0(uint8_t* node, uint8_t* dst);
+uint32_t __thiscall ext_0063F530(uint8_t* self, uint32_t name, uint32_t arg1, uint32_t arg2);
+void __thiscall ext_004973B0(uint8_t* self, uint32_t node);
+void __cdecl ext_00499D20(uint8_t* node, uint8_t* dst, uint32_t name);
+void __thiscall ext_00514A70(uint8_t* self, uint32_t count, float v0, float v1);
+
+extern uint32_t mem_00AA23EC;
+extern uint32_t mem_00AA23A4;
+extern uint32_t mem_00AA2374;
+extern uint32_t mem_00AA2370;
+extern const char mem_0093F8F4[];
+extern bool (__thiscall* mem_00924FEC)(const void* self);
+extern void (__cdecl* mem_00925134)();
+
+void __thiscall fn_00499EF0(uint8_t* self, uint8_t* node) {
+    ext_006824E0(node, self + 0x20, 0, mem_00AA23EC);
+
+    uint32_t item = ext_0063EFE0(node, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00AA23A4)));
+    ext_004275E0(self + 0x3C, item);
+
+    uint8_t* str_0x58 = self + 0x58;
+    ext_004EBAB0(node, str_0x58);
+    if (mem_00924FEC(str_0x58)) {
+        uint32_t fallback = ext_0063EFE0(node, mem_0093F8F4);
+        ext_004275E0(str_0x58, fallback);
+    }
+
+    uint32_t child = ext_0063F530(node, mem_00AA2374, 0, 1);
+    if (child == 0x00B53A34u || child == 0x00B53B30u || child == 0x00B53AB0u ||
+        child == 0x00B53A70u || child == 0x00B53AF0u) {
+        child = 0x00B53B30u;
+    }
+    ext_004973B0(self + 0x94, child);
+
+    uint8_t* vec_0x74 = self + 0x74;
+    ext_00499D20(node, vec_0x74, mem_00AA2370);
+
+    uint8_t* vec_begin = lift_field<uint8_t*>(vec_0x74, 0x04);
+    uint8_t* vec_end = lift_field<uint8_t*>(vec_0x74, 0x08);
+    if (vec_begin == nullptr || ((vec_end - vec_begin) >> 3) == 0) {
+        ext_00514A70(vec_0x74, 2, 0.0f, 0.0f);
+    }
+
+    constexpr float kMinFirst = 0.01f;
+    constexpr float kMinSecond = 0.1f;
+
+    vec_begin = lift_field<uint8_t*>(vec_0x74, 0x04);
+    vec_end = lift_field<uint8_t*>(vec_0x74, 0x08);
+    uint32_t count = (vec_begin != nullptr) ? static_cast<uint32_t>((vec_end - vec_begin) >> 3) : 0;
+    for (uint32_t i = 0; i < count; ++i) {
+        if (vec_begin == nullptr || i >= static_cast<uint32_t>((vec_end - vec_begin) >> 3)) {
+            mem_00925134();
+        }
+        float* pair = reinterpret_cast<float*>(vec_begin + i * 8);
+        if (kMinFirst > pair[0]) {
+            pair[0] = kMinFirst;
+        }
+        if (kMinSecond > pair[1]) {
+            pair[1] = kMinSecond;
+        }
+    }
+
+    lift_field<float>(self, 0x84) = 0.0f;
+    lift_field<float>(self, 0x88) = 0.0f;
+    lift_field<float>(self, 0x8C) = 0.0f;
+    lift_field<float>(self, 0x90) = 0.0f;
+}
+} // namespace lift_00499EF0
