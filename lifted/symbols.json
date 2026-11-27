@@ -81680,6 +81680,13 @@
     "summary": "Returns |a.x-b.x| + |a.y-b.y| + |a.z-b.z| for two float vectors at ecx and eax (Manhattan distance), rounding each step to float as the x87 code did.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x00803BB0": {
+    "name": "Vec3::makePerpendicularNormalized",
+    "class": "Vec3",
+    "signature": "void fn_00803BB0(const void* src, void* out)",
+    "summary": "Normalizes the vector at src into a local copy, then writes a normalized perpendicular to out: (-y, x, 0) when z is strictly within (-0.5, 0.5), otherwise (-z, 0, x). The x87 NaN handling is preserved (NaN takes the second branch).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x00803F80": {
     "name": "FindSlotByTrailingOnes",
     "signature": "void* fn_00803F80(void* self)",

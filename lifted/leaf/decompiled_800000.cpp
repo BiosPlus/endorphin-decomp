@@ -1172,3 +1172,43 @@ void fn_008044A0(void* self) {
     } while (bit <= mask);
 }
 } // namespace lift_008044A0
+
+// [0x00803BB0] sub_00803BB0 (137 bytes)
+namespace lift_00803BB0 {
+// Known callee 0x007E46B0: Vec3::normalize (Normalizes a 3D float vector in-place (setting to (1,0,0) if length <= 0) and returns its original length.)
+extern float ext_007E46B0(void* vec);
+extern float mem_009324A4; // .rdata float  0.5
+extern float mem_00955680; // .rdata float -0.5
+
+// @name Vec3::makePerpendicularNormalized
+// @summary Normalizes the vector at src into a local copy, then writes a normalized perpendicular to out: (-y, x, 0) when z is strictly within (-0.5, 0.5), otherwise (-z, 0, x). The x87 NaN handling is preserved (NaN takes the second branch).
+// @field Vec3 +0x00 float field_0x00
+// @field Vec3 +0x04 float field_0x04
+// @field Vec3 +0x08 float field_0x08
+void fn_00803BB0(const void* src, void* out) {
+    // Local copy of the source vector, normalized in place by the callee.
+    float v[3];
+    v[0] = lift_field<float>(src, 0x00);
+    v[1] = lift_field<float>(src, 0x04);
+    v[2] = lift_field<float>(src, 0x08);
+    (void)ext_007E46B0(v);
+
+    const float x = v[0];
+    const float y = v[1];
+    const float z = v[2];
+
+    // Ordered test: take the first branch only when mem_00955680 < z < mem_009324A4.
+    if (z < mem_009324A4 && z > mem_00955680) {
+        lift_field<float>(out, 0x00) = -y;
+        lift_field<float>(out, 0x04) = x;
+        lift_field<float>(out, 0x08) = 0.0f;
+    } else {
+        lift_field<float>(out, 0x00) = -z;
+        lift_field<float>(out, 0x04) = 0.0f;
+        lift_field<float>(out, 0x08) = x;
+    }
+
+    // Normalize the result in place; its returned length is discarded.
+    (void)ext_007E46B0(out);
+}
+} // namespace lift_00803BB0
