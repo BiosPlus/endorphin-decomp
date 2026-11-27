@@ -42586,6 +42586,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A0BF0": {
+    "name": "NMData::BackGroundData::vfunc_1_off_4",
+    "class": "NMData::BackGroundData",
+    "signature": "int fn_005A0BF0(void* self, const std::string\u0026 arg0)",
+    "summary": "Copies the argument string, checks the sub-object at +0x540 and the base-class handler, then dispatches the argument to five named registry entries via their vtable slot 1, returning nonzero on the first failure.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x005A1600": {
     "name": "Unknown::forEachNodeInRange_005A1600",
     "class": "Unknown",

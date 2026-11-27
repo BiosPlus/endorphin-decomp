@@ -253,3 +253,62 @@ void fn_005A6010(void* self, void* arg) {
     }
 }
 } // namespace lift_005A6010
+
+// [0x005A0BF0] NMData::BackGroundData::vfunc_1_off_4 (284 bytes)
+namespace lift_005A0BF0 {
+// Callees
+extern int ext_00586140(void* self, const void* arg0);
+extern int ext_005DF5C0(void* self, const void* key);
+extern void* ext_005A06F0(void* self, const void* key);
+
+// Rodata/global name pointers (char* values pushed as std::string ctor arguments)
+extern const char* mem_00B41854;
+extern const char* mem_00B4171C;
+extern const char* mem_00B41B00;
+extern const char* mem_00B41B04;
+extern const char* mem_00B41AFC;
+
+// Import thunk slots for MSVCP80 string ctors; replaced by std::string construction.
+extern int mem_00924FE0;
+extern int mem_00924FE4;
+
+// @name NMData::BackGroundData::vfunc_1_off_4
+// @class NMData::BackGroundData
+// @summary Copies the argument string, checks the sub-object at +0x540 and the base-class handler, then dispatches the argument to five named registry entries via their vtable slot 1, returning nonzero on the first failure.
+// @field NMData::BackGroundData +0x540 void* field_0x540
+int fn_005A0BF0(void* self, const std::string& arg0) {
+    (void)&mem_00924FE0;
+    (void)&mem_00924FE4;
+
+    {
+        std::string key(arg0);
+        if (ext_005DF5C0(static_cast<uint8_t*>(self) + 0x540, &key) != 0) {
+            return 1;
+        }
+    }
+
+    if (ext_00586140(self, &arg0) != 0) {
+        return 1;
+    }
+
+    const char* const names[] = {
+        mem_00B41854,
+        mem_00B4171C,
+        mem_00B41B00,
+        mem_00B41B04,
+        mem_00B41AFC,
+    };
+
+    for (const char* name : names) {
+        std::string key(name);
+        void* obj = ext_005A06F0(static_cast<uint8_t*>(self) + 0x540, &key);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot1 = reinterpret_cast<int (*)(void*, const void*)>(vtbl[1]);
+        if (slot1(obj, &arg0) != 0) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_005A0BF0

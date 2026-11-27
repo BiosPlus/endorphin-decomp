@@ -1,0 +1,22 @@
+{
+  "va": "0x005A0BF0",
+  "size": 284,
+  "orig_symbol": "NMData::BackGroundData::vfunc_1_off_4",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_1_off_4",
+  "class": "NMData::BackGroundData",
+  "signature": "int fn_005A0BF0(void* self, const std::string\u0026 arg0)",
+  "summary": "Copies the argument string, checks the sub-object at +0x540 and the base-class handler, then dispatches the argument to five named registry entries via their vtable slot 1, returning nonzero on the first failure.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x540",
+      "type": "void*",
+      "name": "field_0x540"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:35:08Z"
+}
