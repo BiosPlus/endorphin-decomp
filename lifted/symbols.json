@@ -75980,6 +75980,12 @@
     "summary": "Negates an array of single-precision floats from src into dst.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F9E30": {
+    "name": "vec_add_f32",
+    "signature": "void __cdecl sub_007F9E30(int32_t count, float* dst, const float* src)",
+    "summary": "Add src float array into dst float array element-wise",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F9F30": {
     "name": "scaleFloatArray",
     "signature": "void fn_007F9F30(int32_t count, float* dst, const float* src, float scale)",

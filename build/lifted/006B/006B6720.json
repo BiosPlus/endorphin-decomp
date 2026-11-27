@@ -1,0 +1,34 @@
+{
+  "va": "0x006B6720",
+  "size": 118,
+  "orig_symbol": "GWCPropInPlaceSpinEdit::vfunc_66",
+  "src_path": "src/classes/GWCPropInPlaceSpinEdit.cpp",
+  "lifted_path": "lifted/classes/GWCPropInPlaceSpinEdit.cpp",
+  "name": "GWCPropInPlaceSpinEdit::vfunc_66",
+  "class": "GWCPropInPlaceSpinEdit",
+  "signature": "extern \"C\" void __thiscall fn_006B6720(void* self, void* pMsg)",
+  "summary": "Redirects WM_KEYDOWN messages to the embedded child control's HWND before calling base PreTranslateMessage.",
+  "fields": [
+    {
+      "class": "GWCPropInPlaceSpinEdit",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "m_hWnd"
+    },
+    {
+      "class": "GWCPropInPlaceSpinEdit",
+      "offset": "+0xA8",
+      "type": "uint8_t",
+      "name": "field_0xa8"
+    },
+    {
+      "class": "GWCPropInPlaceSpinEdit",
+      "offset": "+0xC8",
+      "type": "uint32_t",
+      "name": "field_0xc8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:22:21Z"
+}
