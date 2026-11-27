@@ -1184,3 +1184,55 @@ uint8_t fn_0072DBE0(void* self, void* arg1, void* arg2, void* arg3, void* arg4) 
     return lift_field<uint8_t>(self, 0x108);
 }
 } // namespace lift_0072DBE0
+
+// [0x007283B0] sub_007283B0 (96 bytes)
+namespace lift_007283B0 {
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t ext_006E7460(void* self);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::conditionalRefresh_007283B0
+// @class Unknown
+// @summary If the getter at this+0xEF0 returns a value <= -1 and the object at +0x10 reports true via vslot 11, clears +0x25C, and if vslot 12 returns nonzero calls assignStringByIndex on this+0xEF0 with index 11.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x15 uint8_t field_0x15
+// @field Unknown +0x25C uint32_t field_0x25c
+// @field Unknown +0xEF0 uint8_t field_0xef0
+
+void fn_007283B0(void* self) {
+    // lea edi, [esi+0xef0]; ecx = edi; call getter
+    void* sub = &lift_field<uint8_t>(self, 0xEF0);
+    if (ext_006E7460(sub) > -1) {
+        return;
+    }
+
+    // mov ecx, [esi+0x10]; mov eax, [ecx]; call [eax+0x2c]  (vslot 11)
+    void* obj = lift_field<void*>(self, 0x10);
+    void** vt = *reinterpret_cast<void***>(obj);
+    using FnBool = uint8_t (*)(void*);
+    if (reinterpret_cast<FnBool>(vt[11])(obj) == 0) {
+        return;
+    }
+
+    // if ([esi+0x15] == 0) { push 0xaad034; push [esi+0x10]; call [vtbl+0x3c] (vslot 15) }
+    if (lift_field<uint8_t>(self, 0x15) == 0) {
+        void* o = lift_field<void*>(self, 0x10);
+        void** v = *reinterpret_cast<void***>(o);
+        using FnSlot15 = void (*)(void*, uint32_t);
+        reinterpret_cast<FnSlot15>(v[15])(o, 0x00AAD034u);
+    }
+
+    // mov [esi+0x25c], 0; mov edx, [ecx]; call [edx+0x30] (vslot 12)
+    void* o2 = lift_field<void*>(self, 0x10);
+    lift_field<uint32_t>(self, 0x25C) = 0;
+    void** v2 = *reinterpret_cast<void***>(o2);
+    using FnInt = int32_t (*)(void*);
+    if (reinterpret_cast<FnInt>(v2[12])(o2) == 0) {
+        return;
+    }
+
+    // push 0xb; ecx = edi; call assignStringByIndex
+    ext_006E7440(sub, 0x0B);
+}
+} // namespace lift_007283B0

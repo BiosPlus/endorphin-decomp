@@ -18,6 +18,7 @@ extern "C" void* __fastcall fn_006FD400(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+#include <cstddef>
 
 // [0x006F90D0]
 namespace lift_006F90D0 {
@@ -2704,3 +2705,40 @@ uint8_t fn_006F8EE0(void* self, int32_t index, void* arg) {
     return 1;
 }
 } // namespace lift_006F8EE0
+
+// [0x006F7680] sub_006F7680 (96 bytes)
+namespace lift_006F7680 {
+// Known callee 0x006B9950: sub_006B0050 (Stores address of mem_00991168 into field at offset +0x0.)
+// Returns a bool in al; the caller tests it.
+extern bool ext_006B9950(void* self);
+// Known callee 0x006EA7C0: Unknown::copyEntryFields_006EA7C0 (Copies the dword at +0x00 and the sub-objects at +0x04/+0x50/+0x70/+0x90 from src into this; returns this.)
+extern void* ext_006EA7C0(void* self, void* arg);
+
+// @name Unknown::loadEntryAt_006F7680
+// @class Unknown
+// @summary Validates index in [0,191), lazily initializes the slot at +0x1a0 via ext_006B9950 when its dword is zero, then copies the slot into arg when arg is non-null. Returns true on success.
+// @field Unknown +0x1a0 uint32_t field_0x1a0
+// @field Unknown +0x1a4 uint8_t field_0x1a4[4]
+bool fn_006F7680(void* self, int32_t index, void* arg) {
+    // Valid slot indices are 0..0xBE (191 entries). Each slot is 0xB8 bytes.
+    if (index < 0 || index >= 0xBF) {
+        return false;
+    }
+
+    unsigned char* slot = static_cast<unsigned char*>(self) +
+                          static_cast<std::size_t>(index) * 0xB8u;
+
+    uint32_t* field1a0 = reinterpret_cast<uint32_t*>(slot + 0x1a0);
+    if (*field1a0 == 0) {
+        if (ext_006B9950(slot + 0x1a4)) {
+            return false;
+        }
+    }
+
+    if (arg != nullptr) {
+        ext_006EA7C0(arg, slot + 0x1a0);
+    }
+
+    return true;
+}
+} // namespace lift_006F7680

@@ -1,0 +1,28 @@
+{
+  "va": "0x006F7680",
+  "size": 96,
+  "orig_symbol": "sub_006F7680",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::loadEntryAt_006F7680",
+  "class": "Unknown",
+  "signature": "bool fn_006F7680(void* self, int32_t index, void* arg)",
+  "summary": "Validates index in [0,191), lazily initializes the slot at +0x1a0 via ext_006B9950 when its dword is zero, then copies the slot into arg when arg is non-null. Returns true on success.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1A0",
+      "type": "uint32_t",
+      "name": "field_0x1a0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1A4",
+      "type": "uint8_t",
+      "name": "field_0x1a4[4]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:54:58Z"
+}
