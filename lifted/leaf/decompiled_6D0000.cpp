@@ -3111,3 +3111,19 @@ void* fn_006D2320(void* self, void* src) {
     return self;
 }
 } // namespace lift_006D2320
+
+// [0x006D2A40]
+namespace lift_006D2A40 {
+// @name Unknown::insertArgAndReturnIndex_006D2A40
+// @class Unknown
+// @summary Forwards (arg1, &arg2) to DynamicArray::InsertAt on self, runs an empty helper, and returns InsertAt's result; the SEH frame setup/teardown is dropped.
+
+int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+extern void __cdecl ext_006D80A0(void);
+
+int32_t fn_006D2A40(void* self, int32_t arg1, int32_t* arg2) {
+    const int32_t result = ext_006D2170(self, arg1, static_cast<const void*>(arg2));
+    ext_006D80A0();
+    return result;
+}
+} // namespace lift_006D2A40

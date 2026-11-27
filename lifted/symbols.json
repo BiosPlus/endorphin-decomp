@@ -68258,6 +68258,13 @@
     "summary": "Returns `this` pointer unchanged.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2A40": {
+    "name": "Unknown::insertArgAndReturnIndex_006D2A40",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D2A40(void* self, int32_t arg1, int32_t* arg2)",
+    "summary": "Forwards (arg1, \u0026arg2) to DynamicArray::InsertAt on self, runs an empty helper, and returns InsertAt's result; the SEH frame setup/teardown is dropped.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2A90": {
     "name": "Unknown::sub_006D2A90",
     "class": "Unknown",
