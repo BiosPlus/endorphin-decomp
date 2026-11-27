@@ -732,3 +732,35 @@ uint32_t __thiscall fn_005EDFD0(void* self) {
     return ext_0058A1A0(self);
 }
 } // namespace lift_005EDFD0
+
+// [0x005EBF70] NMData::FixedPathJointData::vfunc_22 (36 bytes)
+namespace lift_005EBF70 {
+// Known callee 0x006404E0 (sub_006404E0, 224B): thiscall with self = arg1 and one stack argument; returns a pointer.
+extern void* __thiscall ext_006404E0(void* self, void* value);
+// Known callee 0x005EB5A0: NMData::RelationshipData::vfunc_22 (752B). Thiscall with one stack argument (callee-cleaned).
+extern void __thiscall ext_005EB5A0(void* self, void* arg);
+// Known callee 0x0048EF80: std_vector_8_erase_range. Listed as a callee but has no direct call in the bytes; metadata-only reference.
+extern void* __thiscall ext_0048EF80(void* self, void* ret_iter, void* first_proxy, uint32_t first_ptr,
+                                         void* last_proxy, uint32_t last_ptr);
+// Known callee 0x005EEB90 (sub_005EEB90, 38B). Listed as a callee but has no direct call in the bytes; metadata-only reference.
+extern void __thiscall ext_005EEB90(void* self, int32_t index);
+// Global dword at 0x00A9EF14 (holds 0x00986F54). Its value is passed through as a stack argument, not dereferenced.
+extern void* mem_00A9EF14;
+// IAT slot 0x00925134: MSVCR80!_invalid_parameter_noinfo. Metadata-only reference; not a real access.
+extern int mem_00925134;
+
+// @name NMData::FixedPathJointData::vfunc_22
+// @class NMData::FixedPathJointData
+// @summary Passes the global value at mem_00A9EF14 and arg1 through ext_006404E0, forwards that result to NMData::RelationshipData::vfunc_22 on this, and returns arg1.
+void* __thiscall fn_005EBF70(void* self, void* arg1) {
+    // Metadata-only references to listed callees (no direct call in the original bytes).
+    (void)&ext_0048EF80;
+    (void)&ext_005EEB90;
+    (void)&mem_00925134;
+
+    void* g = mem_00A9EF14;
+    void* r = ext_006404E0(arg1, g);
+    ext_005EB5A0(self, r);
+    return arg1;
+}
+} // namespace lift_005EBF70
