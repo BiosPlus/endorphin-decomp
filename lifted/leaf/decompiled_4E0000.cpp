@@ -624,3 +624,44 @@ float __thiscall fn_004E1980(void* self) {
     return static_cast<float>(recip * static_cast<double>(count - 1));
 }
 } // namespace lift_004E1980
+
+// [0x004ED640] sub_004ED640 (111 bytes)
+namespace lift_004ED640 {
+// Known callee 0x00692B50: ctor_00944E74 (Constructor that initializes base vtable via ext_00661980, sets vtables 0x00944E74 and 0x00944E44, and zeroes fields at +0x0c, +0x10, +0x14.)
+extern void ext_00692B50();
+extern int mem_00924FE8;
+
+// @name ctor_004ED640
+// @class <ClassName> (optional)
+// @summary Constructor: calls base ctor 0x00692B50, sets vtables at +0x00/+0x04/+0x18, default-constructs string at +0x1c, zeroes +0x38..+0x4c.
+// @field <ClassName> +0x00 uint32_t vtable_0
+// @field <ClassName> +0x04 uint32_t vtable_4
+// @field <ClassName> +0x18 uint32_t vtable_18
+// @field <ClassName> +0x1c uint32_t field_0x1c
+// @field <ClassName> +0x38 uint32_t field_0x38
+// @field <ClassName> +0x40 uint32_t field_0x40
+// @field <ClassName> +0x44 uint32_t field_0x44
+// @field <ClassName> +0x48 uint32_t field_0x48
+// @field <ClassName> +0x4c uint32_t field_0x4c
+void* fn_004ED640(void* self) {
+    // Base-class constructor call (ext_00692B50), then vtable/field setup.
+    ext_00692B50();
+
+    // Member std::string at +0x1c is default-constructed via mem_00924FE8
+    // (MSVCP80 basic_string default ctor IAT slot); referenced for differential tests.
+    (void)&mem_00924FE8;
+
+    lift_field<uint32_t>(self, 0x00) = 0x009451b4;
+    lift_field<uint32_t>(self, 0x04) = 0x00945184;
+    lift_field<uint32_t>(self, 0x18) = 0x009443bc;
+    lift_field<uint32_t>(self, 0x18) = 0x00945174;
+
+    lift_field<uint32_t>(self, 0x38) = 0;
+    lift_field<uint32_t>(self, 0x40) = 0;
+    lift_field<uint32_t>(self, 0x44) = 0;
+    lift_field<uint32_t>(self, 0x48) = 0;
+    lift_field<uint32_t>(self, 0x4c) = 0;
+
+    return self;
+}
+} // namespace lift_004ED640

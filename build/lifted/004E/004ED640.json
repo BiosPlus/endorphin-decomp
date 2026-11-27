@@ -1,0 +1,70 @@
+{
+  "va": "0x004ED640",
+  "size": 111,
+  "orig_symbol": "sub_004ED640",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "ctor_004ED640",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void* fn_004ED640(void* self)",
+  "summary": "Constructor: calls base ctor 0x00692B50, sets vtables at +0x00/+0x04/+0x18, default-constructs string at +0x1c, zeroes +0x38..+0x4c.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_0"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vtable_4"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "vtable_18"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:00:14Z"
+}
