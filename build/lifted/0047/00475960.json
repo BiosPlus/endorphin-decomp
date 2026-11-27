@@ -1,0 +1,14 @@
+{
+  "va": "0x00475960",
+  "size": 211,
+  "orig_symbol": "sub_00475960",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "Vector::InsertUniqueOrThrow_00475960",
+  "class": "Vector",
+  "signature": "bool fn_00475960(void* self, const void* a1, const void* a2, bool a3)",
+  "summary": "Inserts a copy of the std::string at a1 into the sorted vector self; if it is already present and a3 is set, builds a message and throws it, otherwise returns false.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:45:43Z"
+}

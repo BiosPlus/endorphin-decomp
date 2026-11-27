@@ -2457,3 +2457,57 @@ extern void __cdecl fn_0047B6A0(void* src, void* dstVec, const char* nameFilter,
     }
 }
 } // namespace lift_0047B6A0
+
+// [0x00475960] sub_00475960 (211 bytes)
+namespace lift_00475960 {
+// Known callee 0x004142E0: sub_004142E0 (302B, not yet lifted; thiscall with 2 stack args, callee-cleanup)
+extern void ext_004142E0(void* self, void* first, const void* second);
+// Known callee 0x004276B0: StdStringCopyConstruct (Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.)
+extern void* ext_004276B0(void* dst, const void* src);
+// Known callee 0x004722F0: Unknown::GetOnceInitializedString_004722F0 (One-time guarded initializer for the string buffer at mem_00AD9014; returns its address.)
+extern void* ext_004722F0();
+// Known callee 0x005CD120: Vector::InsertSortedUnique_005CD120 (Inserts a std::string into the sorted vector unless an equal element exists; returns true if inserted.)
+extern bool ext_005CD120(void* self, const void* value);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(const void* object, const void* throwInfo);
+// MSVCP80 std::string copy-constructor IAT slot (thiscall, one stack arg)
+extern int mem_00924FE0;
+// MSVCP80 std::string destructor IAT slot (thiscall)
+extern int mem_00924FF4;
+
+// @name Vector::InsertUniqueOrThrow_00475960
+// @class Vector
+// @summary Inserts a copy of the std::string at a1 into the sorted vector self; if it is already present and a3 is set, builds a message and throws it, otherwise returns false.
+bool fn_00475960(void* self, const void* a1, const void* a2, bool a3) {
+    constexpr size_t kStdStringSize = 0x1C;   // MSVC 2005 std::string: 28 bytes
+    constexpr uintptr_t kThrowInfo = 0x009D1278u;
+
+    // Temporary std::string copy of *a1.
+    alignas(8) unsigned char tmp[kStdStringSize];
+    (*reinterpret_cast<void* (**)(void*, const void*)>(&mem_00924FE0))(tmp, a1);
+
+    // The original reads *a2 into a dead local; the read is kept in case it faults.
+    const uint32_t key = *static_cast<const uint32_t*>(a2);
+    (void)key;
+
+    const bool inserted = ext_005CD120(self, tmp);
+    (*reinterpret_cast<void (**)(void*)>(&mem_00924FF4))(tmp);
+
+    if (inserted) {
+        return true;
+    }
+    if (!a3) {
+        return false;
+    }
+
+    // Build a message from a copy of *a1 and throw it.
+    alignas(8) unsigned char copy[kStdStringSize];
+    ext_004276B0(copy, a1);
+
+    alignas(8) unsigned char msg[kStdStringSize];
+    ext_004142E0(msg, ext_004722F0(), copy);
+
+    ext_006A6DD2(msg, reinterpret_cast<const void*>(kThrowInfo));
+    return false;
+}
+} // namespace lift_00475960

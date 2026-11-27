@@ -11476,6 +11476,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475960": {
+    "name": "Vector::InsertUniqueOrThrow_00475960",
+    "class": "Vector",
+    "signature": "bool fn_00475960(void* self, const void* a1, const void* a2, bool a3)",
+    "summary": "Inserts a copy of the std::string at a1 into the sorted vector self; if it is already present and a3 is set, builds a message and throws it, otherwise returns false.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00475A40": {
     "name": "allocNode_00475A40",
     "signature": "void* fn_00475A40(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5)",
