@@ -1198,6 +1198,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0040C1D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0040DA90": {
+    "name": "ListBox::addDefaultItems",
+    "class": "ListBox",
+    "signature": "void __thiscall fn_0040DA90(uintptr_t self)",
+    "summary": "Adds two default string items to the ListBox control.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040DFB0": {
     "name": "AddCharacterDialog::vfunc_12",
     "class": "AddCharacterDialog",
@@ -12213,6 +12220,13 @@
     "signature": "int fn_00482480(void* self)",
     "summary": "Calls virtual slot 9 (+0x24) on self; returns 1 if the returned byte is zero, else 0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00482490": {
+    "name": "ToolEngine::vfunc_2",
+    "class": "ToolEngine",
+    "signature": "uint32_t __thiscall ToolEngine_vfunc_2(void* self, uint32_t arg0)",
+    "summary": "Forwards a pointer to the argument and subobject at +0x22C to ext_00451670.",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
   },
   "0x00483070": {
     "name": "ToolEngine::vfunc_63",
@@ -102679,6 +102693,12 @@
     "signature": "void fn_00790E20(uint8_t* self, uint32_t arg)",
     "summary": "Thiscall setter: sets +0x5C to 1, stores the stack argument at +0x24, and clears +0x2C; callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x00790E40": {
+    "name": "checkOrInitField64",
+    "signature": "uint8_t __thiscall fn_00790E40(void* self)",
+    "summary": "Checks field_0x60, calls ext_00791FF0 if non-zero, and returns byte field_0x64.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x00790EE0": {
     "name": "Unknown::computeCachedEnd_00790EE0",

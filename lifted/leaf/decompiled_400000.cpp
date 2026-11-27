@@ -3054,3 +3054,22 @@ void* fn_004028E0(void* self, void* src) {
     return self;
 }
 } // namespace lift_004028E0
+
+// [0x0040DA90]
+namespace lift_0040DA90 {
+// @name ListBox::addDefaultItems
+// @class ListBox
+// @summary Adds two default string items to the ListBox control.
+
+
+extern void __thiscall ext_0040C510(uintptr_t self, uintptr_t arg);
+extern void __thiscall ext_0040C490(uintptr_t self, uintptr_t rhs_ptr);
+
+extern uint8_t mem_00AC87DC;
+extern uint8_t mem_00AC853C;
+
+void __thiscall fn_0040DA90(uintptr_t self) {
+    ext_0040C510(self, (uintptr_t)&mem_00AC87DC);
+    ext_0040C490(self, (uintptr_t)&mem_00AC853C);
+}
+} // namespace lift_0040DA90

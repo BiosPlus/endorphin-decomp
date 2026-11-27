@@ -1,0 +1,14 @@
+{
+  "va": "0x0040DA90",
+  "size": 27,
+  "orig_symbol": "sub_0040DA90",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "ListBox::addDefaultItems",
+  "class": "ListBox",
+  "signature": "void __thiscall fn_0040DA90(uintptr_t self)",
+  "summary": "Adds two default string items to the ListBox control.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:23:16Z"
+}
