@@ -722,6 +722,7 @@ struct Unknown_Fields {
     // +0x1C  float                    x  (evidence: 0x004B1130) // CONFLICT: multiple definitions at +0x1C
     // +0x1E  BYTE                     field_0x1E  (evidence: 0x005555D0) // CONFLICT: multiple definitions at +0x1E
     // +0x1E  uint8_t                  field_0x1e  (evidence: 0x00402630) // CONFLICT: multiple definitions at +0x1E
+    // +0x20  HWND field_0x20 (of the child at +0x114)  (evidence: 0x004331D0) // CONFLICT: multiple definitions at +0x20
     // +0x20  BYTE field_0x20 (base of byte array indexed by first argument)  (evidence: 0x0071E660) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    child  (evidence: 0x005940E0, 0x005947B0, 0x00672590) // CONFLICT: multiple definitions at +0x20
     // +0x20  double field_0x20 (element value compared)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x20
@@ -1467,6 +1468,7 @@ struct Unknown_Fields {
     // +0x110 uint32_t                 field_0x110  (evidence: 0x0077FFD0) // CONFLICT: multiple definitions at +0x110
     // +0x110 void*                    field_0x110  (evidence: 0x004352B0) // CONFLICT: multiple definitions at +0x110
     // +0x114 uint32_t                 field_0x114  (evidence: 0x006B6290, 0x0077FFD0) // CONFLICT: multiple definitions at +0x114
+    // +0x114 void*                    field_0x114  (evidence: 0x004331D0) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    selectionBuffer  (evidence: 0x006B6480) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    sub114  (evidence: 0x006305A0) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    vfptr_embedded  (evidence: 0x0041B480) // CONFLICT: multiple definitions at +0x114
@@ -1516,6 +1518,7 @@ struct Unknown_Fields {
     // +0x144 uint32_t                 entries_begin  (evidence: 0x006885F0) // CONFLICT: multiple definitions at +0x144
     // +0x144 float                    field_0x144  (evidence: 0x00630420) // CONFLICT: multiple definitions at +0x144
     // +0x144 uint32_t                 field_0x144  (evidence: 0x0051E4B0) // CONFLICT: multiple definitions at +0x144
+    // +0x148 void* field_0x148 (of the child at +0x114)  (evidence: 0x004331D0) // CONFLICT: multiple definitions at +0x148
     // +0x148 uint8_t*                 elems_end  (evidence: 0x00688670) // CONFLICT: multiple definitions at +0x148
     // +0x148 uint32_t                 entries_end  (evidence: 0x006885F0) // CONFLICT: multiple definitions at +0x148
     // +0x148 float                    field_0x148  (evidence: 0x00630420) // CONFLICT: multiple definitions at +0x148
@@ -1524,6 +1527,7 @@ struct Unknown_Fields {
     // +0x148 uint8_t                  field_0x148  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x148
     // +0x148 void*                    field_0x148  (evidence: 0x0044ACE0) // CONFLICT: multiple definitions at +0x148
     // +0x148 void*                    subObject  (evidence: 0x0070AD00, 0x0070E3B0, 0x0070EC50) // CONFLICT: multiple definitions at +0x148
+    // +0x14C void* field_0x14C (of the child at +0x114)  (evidence: 0x004331D0) // CONFLICT: multiple definitions at +0x14C
     // +0x14C int32_t field_0x14C (indexed array base; element stride 4, indices 1..17)  (evidence: 0x007AA7F0, 0x007AA950) // CONFLICT: multiple definitions at +0x14C
     // +0x14C uint32_t                 field_0x14C  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0x14C
     // +0x14C float                    field_0x14c  (evidence: 0x00630420) // CONFLICT: multiple definitions at +0x14C

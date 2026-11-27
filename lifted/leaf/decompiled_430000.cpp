@@ -5232,3 +5232,85 @@ void fn_0043DD60(void* self, double arg1, double arg2) {
     ext_00466BA0(sub, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(pair)), 0u);
 }
 } // namespace lift_0043DD60
+
+// [0x004331D0] sub_004331D0 (138 bytes)
+namespace lift_004331D0 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t ext_00465B30(void);
+// Known callee 0x00469170: sub_00469170 (Member forwarding thunk: loads subobject pointer at +0x2C and tail-calls sub_004AEC90.)
+// The asm consumes the returned value in eax, so it is declared as returning a 32-bit value.
+extern uint32_t __fastcall ext_00469170(void* self);
+// Known callee 0x006A651A: thunk_MFC80_ord_6081 (IAT jump thunk forwarding to MFC80!ord_6081.)
+// Called with ecx = this, stack args (ptr, flag) pushed by the caller.
+extern void __thiscall ext_006A651A(void* self, void* arg1, int32_t arg2);
+// IAT slot for USER32!UpdateWindow (import table entry at 0x0092568C).
+extern uint32_t mem_0092568C;
+
+// @name UpdateWindowAndNotifySubobject
+// @class Unknown
+// @summary Queries the child at +0x114 via vtable slot 0x15C; if it reports success, updates its window and dispatches through two child vtables.
+// @field Unknown +0x114 void* field_0x114
+// @field Unknown +0x20 HWND field_0x20 (of the child at +0x114)
+// @field Unknown +0x14C void* field_0x14C (of the child at +0x114)
+// @field Unknown +0x148 void* field_0x148 (of the child at +0x114)
+void fn_004331D0(void* self) {
+    using QueryFn = int32_t(__thiscall*)(void* thisp, int32_t arg);
+    using VoidFn = void(__thiscall*)(void* thisp, int32_t arg);
+    using NoArgFn = int32_t(__thiscall*)(void* thisp);
+
+    auto* base = static_cast<uint8_t*>(self);
+
+    // edi = child A = self->field_0x114
+    void* childA = *reinterpret_cast<void**>(base + 0x114);
+    auto* a = static_cast<uint8_t*>(childA);
+
+    // Query: vtable[0x15C] (ecx = A, push 0). flag = (result == 0) ? 1 : 0.
+    void** vtA = *reinterpret_cast<void***>(a);
+    auto queryA = reinterpret_cast<QueryFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtA) + 0x15C));
+    int32_t queryResult = queryA(a, 0);
+    int32_t flag = (queryResult == 0) ? 1 : 0;
+
+    // Thunk to MFC80 ord 6081 with ecx = self, args (childA, flag).
+    ext_006A651A(self, childA, flag);
+
+    // Second query on A with the same vtable slot; bail if zero.
+    void* childA2 = *reinterpret_cast<void**>(base + 0x114);
+    auto* a2 = static_cast<uint8_t*>(childA2);
+    void** vtA2 = *reinterpret_cast<void***>(a2);
+    auto queryA2 = reinterpret_cast<NoArgFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtA2) + 0x15C));
+    if (queryA2(a2) == 0) {
+        return;
+    }
+
+    // UpdateWindow(A->field_0x20) via IAT (stdcall, one arg).
+    void* hwnd = *reinterpret_cast<void**>(a2 + 0x20);
+    using UpdateWindowFn = int32_t(__stdcall*)(void* hwnd);
+    auto updateWindow = reinterpret_cast<UpdateWindowFn>(static_cast<uintptr_t>(mem_0092568C));
+    (void)updateWindow(hwnd);
+
+    // Call vtable[0] of B = A->field_0x14C with this = &A->field_0x14C.
+    uint8_t* b = *reinterpret_cast<uint8_t**>(a2 + 0x14C);
+    uint8_t* bThis = a2 + 0x14C;
+    void** vtB = *reinterpret_cast<void***>(b);
+    auto callB0 = reinterpret_cast<NoArgFn>(vtB[0]);
+    (void)callB0(bThis);
+
+    // Reload A; edi = C = A->field_0x148; esi = &A->field_0x148.
+    auto* a3 = static_cast<uint8_t*>(*reinterpret_cast<void**>(base + 0x114));
+    void* c = *reinterpret_cast<void**>(a3 + 0x148);
+    uint8_t* cThis = a3 + 0x148;
+
+    // eax = GetGlobalField58()
+    int32_t global58 = ext_00465B30();
+
+    // eax = sub_00469170(global58)
+    uint32_t forwarded = ext_00469170(reinterpret_cast<void*>(static_cast<uintptr_t>(global58)));
+
+    // C->vtable[0](cThis, forwarded)
+    void** vtC = *reinterpret_cast<void***>(c);
+    auto callC0 = reinterpret_cast<VoidFn>(vtC[0]);
+    callC0(cThis, static_cast<int32_t>(forwarded));
+}
+} // namespace lift_004331D0

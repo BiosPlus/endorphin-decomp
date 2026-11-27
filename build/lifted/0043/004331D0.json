@@ -1,0 +1,40 @@
+{
+  "va": "0x004331D0",
+  "size": 138,
+  "orig_symbol": "sub_004331D0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "UpdateWindowAndNotifySubobject",
+  "class": "Unknown",
+  "signature": "void fn_004331D0(void* self)",
+  "summary": "Queries the child at +0x114 via vtable slot 0x15C; if it reports success, updates its window and dispatches through two child vtables.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x114",
+      "type": "void*",
+      "name": "field_0x114"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND field_0x20 (of the child at",
+      "name": "+0x114)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14C",
+      "type": "void* field_0x14C (of the child at",
+      "name": "+0x114)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x148",
+      "type": "void* field_0x148 (of the child at",
+      "name": "+0x114)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:35Z"
+}
