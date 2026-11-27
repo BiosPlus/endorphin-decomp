@@ -22097,6 +22097,13 @@
     "summary": "Returns whether the double at +0x20 of child[ix2] is less than that of child[ix1] (false on NaN).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x005187E0": {
+    "name": "heapSiftUpIndices",
+    "class": "(none)",
+    "signature": "void __cdecl fn_005187E0(uint32_t* base, int32_t hole, int32_t top, uint32_t value, void* ctx)",
+    "summary": "Sift-up of value into a max-style index heap: moves parents down while the comparator accepts, then stores value at the final hole.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519060": {
     "name": "sub_00519060",
     "signature": "void fn_00519060(uint32_t* first, uint32_t* last, uint32_t pred)",

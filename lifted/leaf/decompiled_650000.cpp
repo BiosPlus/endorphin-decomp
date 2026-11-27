@@ -2020,3 +2020,28 @@ int fn_005185D0(void* self, uint32_t ix1, uint32_t ix2) {
     return v2 < v1 ? 1 : 0;
 }
 } // namespace lift_005185D0
+
+// [0x005187E0]
+namespace lift_005187E0 {
+// External comparator: returns nonzero when element at idxA should sit below idxB's value.
+int __thiscall ext_00518550(void* self, uint32_t idxA, uint32_t idxB);
+
+// @name heapSiftUpIndices
+// @summary Sift-up of value into a max-style index heap: moves parents down while the comparator accepts, then stores value at the final hole.
+// @class (none)
+// @summary Sift-up of value into a heap of uint32 indices using ext_00518550 as the ordering predicate; ctx is passed by address as the comparator's self.
+void __cdecl fn_005187E0(uint32_t* base, int32_t hole, int32_t top, uint32_t value, void* ctx) {
+    // Loop while the hole is below the top index, moving each parent down
+    // while the comparator accepts it against value.
+    while (hole > top) {
+        int32_t parent = (hole - 1) / 2;
+        uint32_t parentVal = base[parent];
+        if (!ext_00518550(&ctx, parentVal, value)) {
+            break;
+        }
+        base[hole] = parentVal;
+        hole = parent;
+    }
+    base[hole] = value;
+}
+} // namespace lift_005187E0
