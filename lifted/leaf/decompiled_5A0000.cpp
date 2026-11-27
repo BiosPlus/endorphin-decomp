@@ -997,3 +997,39 @@ void fn_005A1600(void* self) {
         0u);
 }
 } // namespace lift_005A1600
+
+// [0x005AD0E0]
+namespace lift_005AD0E0 {
+// @name allocAndInitNode_005AD0E0
+// @summary Allocates a 0x2c-byte object, initializes its fields and std::string member, and frees/rethrows on exception.
+// @field Node +0x00 uint32_t field_0x00
+// @field Node +0x04 uint32_t field_0x04
+// @field Node +0x08 uint32_t field_0x08
+// @field Node +0x0C uint8_t[0x1C] field_0x0C_std_string
+// @field Node +0x28 uint8_t field_0x28
+// @field Node +0x29 uint8_t field_0x29
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __stdcall ext_006A6DD2(uint32_t pExceptionObject, uint32_t pThrowInfo);
+extern void* mem_00924FE0;
+
+extern void* __stdcall fn_005AD0E0(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint8_t a5) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(ext_006A5C62(0x2c));
+    if (obj != nullptr) {
+        try {
+            *reinterpret_cast<uint32_t*>(obj + 0x00) = a1;
+            *reinterpret_cast<uint32_t*>(obj + 0x04) = a2;
+            *reinterpret_cast<uint32_t*>(obj + 0x08) = a3;
+            using StringCopyCtor = void(__thiscall*)(void*, uint32_t);
+            reinterpret_cast<StringCopyCtor>(mem_00924FE0)(obj + 0x0c, a4);
+            *reinterpret_cast<uint8_t*>(obj + 0x28) = a5;
+            *reinterpret_cast<uint8_t*>(obj + 0x29) = 0;
+        } catch (...) {
+            ext_006A5C5C(obj);
+            ext_006A6DD2(0, 0);
+        }
+    }
+    return obj;
+}
+} // namespace lift_005AD0E0
