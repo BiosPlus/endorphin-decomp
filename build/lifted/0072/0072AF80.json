@@ -1,0 +1,58 @@
+{
+  "va": "0x0072AF80",
+  "size": 144,
+  "orig_symbol": "sub_0072AF80",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::InitSixSubObjects",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_0072AF80(void* self)",
+  "summary": "Initializes six embedded 0x4c-byte sub-objects via ext_006B9D10, clears field_0x1c8, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t[0x4c]",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "uint8_t[0x4c]",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "uint8_t[0x4c]",
+      "name": "field_0x98"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE4",
+      "type": "uint8_t[0x4c]",
+      "name": "field_0xe4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x130",
+      "type": "uint8_t[0x4c]",
+      "name": "field_0x130"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x17C",
+      "type": "uint8_t[0x4c]",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C8",
+      "type": "uint32_t",
+      "name": "field_0x1c8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:44:56Z"
+}

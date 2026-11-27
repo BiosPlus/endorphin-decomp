@@ -967,3 +967,55 @@ double fn_00722C20(double a, double b, double c) {
     return ext_00722660(a, b, c) + scaled;
 }
 } // namespace lift_00722C20
+
+// [0x0072AF80]
+namespace lift_0072AF80 {
+// @name Unknown::InitSixSubObjects
+// @class Unknown
+// @summary Initializes six embedded 0x4c-byte sub-objects via ext_006B9D10, clears field_0x1c8, and returns this.
+// @field Unknown +0x00 uint8_t[0x4c] field_0x00
+// @field Unknown +0x4c uint8_t[0x4c] field_0x4c
+// @field Unknown +0x98 uint8_t[0x4c] field_0x98
+// @field Unknown +0xe4 uint8_t[0x4c] field_0xe4
+// @field Unknown +0x130 uint8_t[0x4c] field_0x130
+// @field Unknown +0x17c uint8_t[0x4c] field_0x17c
+// @field Unknown +0x1c8 uint32_t field_0x1c8
+
+
+extern void* __thiscall ext_006B9D10(void* self);
+
+void* __thiscall fn_0072AF80(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    constexpr uintptr_t offsets[] = {0x00, 0x4c, 0x98, 0xe4, 0x130, 0x17c};
+    for (uintptr_t off : offsets) {
+        ext_006B9D10(base + off);
+    }
+    lift_field<uint32_t>(self, 0x1c8) = 0;
+    return self;
+}
+} // namespace lift_0072AF80
+
+// [0x0072B010]
+namespace lift_0072B010 {
+// @name sub_0072B010
+// @summary Destroys six 0x4c-byte sub-objects in reverse order via ext_006B9D70.
+// @field sub_0072B010 +0x00 void* field_0x00
+// @field sub_0072B010 +0x4c void* field_0x4c
+// @field sub_0072B010 +0x98 void* field_0x98
+// @field sub_0072B010 +0xe4 void* field_0xe4
+// @field sub_0072B010 +0x130 void* field_0x130
+// @field sub_0072B010 +0x17c void* field_0x17c
+
+
+extern void __thiscall ext_006B9D70(void* self);
+
+extern void __thiscall fn_0072B010(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_006B9D70(base + 0x17c);
+    ext_006B9D70(base + 0x130);
+    ext_006B9D70(base + 0xe4);
+    ext_006B9D70(base + 0x98);
+    ext_006B9D70(base + 0x4c);
+    ext_006B9D70(base);
+}
+} // namespace lift_0072B010
