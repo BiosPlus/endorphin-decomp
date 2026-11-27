@@ -372,3 +372,236 @@ extern void __thiscall fn_00412B20(void* self, uint32_t a1, uint32_t a2) {
     ext_00410DD0(self, a1, ebx, ebp, a2);
 }
 } // namespace lift_00412B20
+
+// [0x004105F0]
+namespace lift_004105F0 {
+// @name MultiTrackView::CompositeEventTrack::vfunc_6
+// @class MultiTrackView::CompositeEventTrack
+// @summary Displays a context menu for a composite event track item and dispatches the selected command.
+// @field MultiTrackView::CompositeEventTrack +0x30 void* field_0x30
+// @field MultiTrackView::CompositeEventTrack +0x50 void* field_0x50
+
+
+void* __thiscall ext_0045E930(void* self, void* arg);
+void __thiscall ext_006A616C(void* self, uint32_t hMenu);
+int32_t __cdecl ext_00468180(void);
+uint8_t __thiscall ext_004409C0(void* self);
+int32_t __thiscall ext_004410C0(void* self);
+uint8_t __thiscall ext_00442430(void* self);
+uint8_t __thiscall ext_004424E0(void* self);
+int32_t __thiscall ext_0043C930(void* self, void* menu, void* pt);
+void __thiscall ext_004313A0(void* self);
+void __thiscall ext_004686A0(void* self, uint32_t arg);
+void* __thiscall ext_00468660(void* self);
+uint8_t __thiscall ext_00410370(void* self);
+void __thiscall ext_00468E80(void* self, void* esi, int32_t ebp, int32_t eax, uint32_t ecx);
+void __thiscall ext_00468D60(void* self, void* esi, int32_t ebp);
+void __thiscall ext_004409D0(void* self);
+void __thiscall ext_004409E0(void* self);
+void __thiscall ext_00468DF0(void* self, void* esi, uint32_t flag);
+void __thiscall ext_006A5F68(void* self, uint32_t a1, const char* a2, uint32_t a3, uint32_t a4, const char* a5, uint32_t a6, uint32_t a7);
+int32_t __thiscall ext_006A5F62(void* self);
+void* __thiscall ext_0040BF00(void* self);
+void __thiscall ext_006A5F5C(void* self, void* out_str);
+void* __cdecl ext_006A6E9E(void* ptr, uint32_t vfdelta, void* src_type, void* dst_type, uint32_t is_ref);
+void __thiscall ext_0040BF20(void* self);
+void __thiscall ext_006A5F56(void* self);
+void __thiscall ext_00486AF0(void* self, void* str);
+void __thiscall ext_004805E0(void* self, void* arg);
+void __thiscall ext_006A6166(void* self);
+
+extern uint32_t mem_00925630;
+extern uint32_t mem_00925638;
+extern uint32_t mem_00925634;
+extern uint32_t mem_00ACDB40;
+extern uint32_t mem_00924FD0;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924300;
+extern uint32_t mem_009242F4;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00924FE4;
+
+typedef int32_t (__stdcall *ClientToScreenFn)(void* hwnd, void* lpPoint);
+typedef uint32_t (__stdcall *CreatePopupMenuFn)(void);
+typedef int32_t (__stdcall *AppendMenuAFn)(uint32_t hMenu, uint32_t uFlags, uint32_t uIDNewItem, const char* lpNewItem);
+typedef void* (__cdecl *StdStringConcatFn)(void* out_str, void* s1, void* s2);
+typedef const char* (__thiscall *StdStringCStrFn)(void* self);
+typedef void (__thiscall *StdStringCtorFn)(void* self, const char* s);
+typedef void (__thiscall *StdStringDtorFn)(void* self);
+typedef const char* (__thiscall *CStringGetBufferFn)(void* self, int32_t minBufLen);
+typedef void (__thiscall *CStringDtorFn)(void* self);
+
+void __thiscall fn_004105F0(void* self, void* arg0, int32_t pt_x, int32_t pt_y) {
+    if (!arg0) {
+        return;
+    }
+
+    int32_t pt[2] = { pt_x, pt_y };
+    void* obj = ext_0045E930(lift_field<void*>(self, 0x50), arg0);
+    void* view_obj = lift_field<void*>(self, 0x30);
+    void* hwnd = lift_field<void*>(view_obj, 0x20);
+    ((ClientToScreenFn)mem_00925630)(hwnd, pt);
+
+    uint32_t menu_buf[2] = { 0x0092BD7C, 0 };
+    uint32_t hmenu = ((CreatePopupMenuFn)mem_00925638)();
+    ext_006A616C(menu_buf, hmenu);
+
+    void* doc = reinterpret_cast<void*>(ext_00468180());
+    uint32_t item_type = lift_field<uint32_t>(arg0, 0x08);
+    AppendMenuAFn append_menu = (AppendMenuAFn)mem_00925634;
+
+    if (ext_004409C0(arg0) != 0) {
+        append_menu(menu_buf[1], 0, 0x6F, reinterpret_cast<const char*>(0x0092BE0C));
+    } else {
+        append_menu(menu_buf[1], 0, 0x6F, reinterpret_cast<const char*>(0x0092BDFC));
+    }
+
+    if (ext_004410C0(arg0) > 1) {
+        if (ext_00442430(arg0) != 0) {
+            append_menu(menu_buf[1], 0, 0x69, reinterpret_cast<const char*>(0x0092BDE8));
+        }
+        if (ext_004424E0(arg0) != 0) {
+            append_menu(menu_buf[1], 0, 0x6A, reinterpret_cast<const char*>(0x0092BDD0));
+        }
+    }
+
+    if (item_type == 4) {
+        append_menu(menu_buf[1], 0x800, 0, nullptr);
+        append_menu(menu_buf[1], 0, 0x6D, reinterpret_cast<const char*>(0x0092BDC0));
+        append_menu(menu_buf[1], 0, 0x6C, reinterpret_cast<const char*>(0x0092BDB0));
+    }
+
+    append_menu(menu_buf[1], 0x800, 0, nullptr);
+    append_menu(menu_buf[1], 0, 0x6E, reinterpret_cast<const char*>(0x0092BD98));
+
+    int32_t cmd = ext_0043C930(lift_field<void*>(self, 0x30), menu_buf, pt);
+    switch (cmd) {
+        case 0x65: {
+            ext_004313A0(reinterpret_cast<void*>(mem_00ACDB40));
+            break;
+        }
+        case 0x66:
+        case 0x67: {
+            uint8_t str_buf[32];
+            uint8_t dlg_buf[480];
+            uint8_t guard[4];
+            ((StdStringConcatFn)mem_00924FD0)(str_buf, reinterpret_cast<void*>(0x00B593AC), reinterpret_cast<void*>(0x00AD7A88));
+            const char* s1 = ((StdStringCStrFn)mem_00924FF0)(str_buf);
+            const char* s2 = ((StdStringCStrFn)mem_00924FF0)(reinterpret_cast<void*>(0x00B59240));
+            ext_006A5F68(dlg_buf, 0, s2, 0, 0, s1, 0, 0);
+            if (ext_006A5F62(dlg_buf) == 1) {
+                ext_0040BF00(guard);
+                uint32_t cstr_buf[4];
+                ext_006A5F5C(dlg_buf, cstr_buf);
+                void* casted = ext_006A6E9E(obj, 0, reinterpret_cast<void*>(0x00A2E914), reinterpret_cast<void*>(0x00A2E93C), 0);
+                if (casted) {
+                    void* sub = reinterpret_cast<uint8_t*>(casted) + 0x19C;
+                    void* vt_obj = lift_field<void*>(casted, 0x19C);
+                    void* vt = reinterpret_cast<uint8_t*>(vt_obj) + 0x24;
+                    const char* txt = ((CStringGetBufferFn)mem_00924300)(cstr_buf, 1);
+                    typedef void (__thiscall *Vfn0)(void*, const char*);
+                    ((*reinterpret_cast<Vfn0**>(vt))[0])(sub, txt);
+                }
+                ((CStringDtorFn)mem_009242F4)(cstr_buf);
+                ext_0040BF20(guard);
+            }
+            ext_006A5F56(dlg_buf);
+            ((StdStringDtorFn)mem_00924FF4)(str_buf);
+            break;
+        }
+        case 0x68: {
+            uint8_t str_buf[32];
+            uint8_t dlg_buf[480];
+            uint8_t guard[4];
+            ((StdStringConcatFn)mem_00924FD0)(str_buf, reinterpret_cast<void*>(0x00B593AC), reinterpret_cast<void*>(0x00AD7A88));
+            const char* s1 = ((StdStringCStrFn)mem_00924FF0)(str_buf);
+            const char* s2 = ((StdStringCStrFn)mem_00924FF0)(reinterpret_cast<void*>(0x00B59240));
+            ext_006A5F68(dlg_buf, 1, s2, 0, 0x1004, s1, 0, 0);
+            if (ext_006A5F62(dlg_buf) == 1) {
+                ext_0040BF00(guard);
+                uint32_t cstr_buf[4];
+                ext_006A5F5C(dlg_buf, cstr_buf);
+                void* casted = ext_006A6E9E(obj, 0, reinterpret_cast<void*>(0x00A2E914), reinterpret_cast<void*>(0x00A2E93C), 0);
+                if (casted) {
+                    void* d1 = reinterpret_cast<void*>(ext_00468180());
+                    void* d1_14 = lift_field<void*>(d1, 0x14);
+                    void* d1_34 = lift_field<void*>(d1_14, 0x34);
+                    typedef void (__thiscall *Vfn30)(void*);
+                    ((*reinterpret_cast<Vfn30**>(d1_34))[0x30 / 4])(d1_34);
+
+                    void* d2 = reinterpret_cast<void*>(ext_00468180());
+                    void* d2_sub = ext_00468660(d2);
+                    typedef void (__thiscall *VfnD4)(void*);
+                    ((*reinterpret_cast<VfnD4**>(d2_sub))[0xD4 / 4])(d2_sub);
+
+                    const char* txt = ((CStringGetBufferFn)mem_00924300)(cstr_buf, 0);
+                    uint8_t tmp_str[32];
+                    ((StdStringCtorFn)mem_00924FE4)(tmp_str, txt);
+                    ext_00486AF0(casted, tmp_str);
+                    ((StdStringDtorFn)mem_00924FF4)(tmp_str);
+
+                    void* d3 = reinterpret_cast<void*>(ext_00468180());
+                    void* d3_14 = lift_field<void*>(d3, 0x14);
+                    void* d3_34 = lift_field<void*>(d3_14, 0x34);
+                    ext_004805E0(d3_34, casted);
+
+                    void* d4 = reinterpret_cast<void*>(ext_00468180());
+                    void* d4_sub = ext_00468660(d4);
+                    typedef void (__thiscall *VfnB4)(void*);
+                    ((*reinterpret_cast<VfnB4**>(d4_sub))[0xB4 / 4])(d4_sub);
+                }
+                ((CStringDtorFn)mem_009242F4)(cstr_buf);
+                ext_0040BF20(guard);
+            }
+            ext_006A5F56(dlg_buf);
+            ((StdStringDtorFn)mem_00924FF4)(str_buf);
+            break;
+        }
+        case 0x69: {
+            uint32_t val = lift_field<uint32_t>(obj, 0x15C);
+            ext_004686A0(doc, val);
+            break;
+        }
+        case 0x6A: {
+            void* sub = ext_00468660(doc);
+            typedef int32_t (__thiscall *Vfn9C)(void*);
+            int32_t frame = ((*reinterpret_cast<Vfn9C**>(sub))[0x9C / 4])(sub);
+            if (ext_00410370(arg0) != 0) {
+                int32_t start = lift_field<int32_t>(obj, 0x15C);
+                int32_t end = lift_field<int32_t>(obj, 0x160);
+                uint32_t track_id = lift_field<uint32_t>(obj, 0x164);
+                ext_00468E80(doc, obj, frame, (end - start) + frame, track_id);
+            } else {
+                ext_00468D60(doc, obj, frame);
+            }
+            break;
+        }
+        case 0x6C: {
+            ext_004409D0(arg0);
+            break;
+        }
+        case 0x6D: {
+            ext_004409E0(arg0);
+            break;
+        }
+        case 0x6E: {
+            void* sub = ext_00468660(doc);
+            typedef void (__thiscall *Vfn1C4)(void*);
+            ((*reinterpret_cast<Vfn1C4**>(sub))[0x1C4 / 4])(sub);
+            break;
+        }
+        case 0x6F: {
+            if (obj) {
+                uint32_t flag = (lift_field<uint8_t>(obj, 0x17C) == 0) ? 1 : 0;
+                ext_00468DF0(doc, obj, flag);
+            }
+            break;
+        }
+        default:
+            break;
+    }
+
+    menu_buf[0] = 0x0092BD7C;
+    ext_006A6166(menu_buf);
+}
+} // namespace lift_004105F0

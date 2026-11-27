@@ -1554,6 +1554,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x004105F0": {
+    "name": "MultiTrackView::CompositeEventTrack::vfunc_6",
+    "class": "MultiTrackView::CompositeEventTrack",
+    "signature": "void __thiscall fn_004105F0(void* self, void* arg0, int32_t pt_x, int32_t pt_y)",
+    "summary": "Displays a context menu for a composite event track item and dispatches the selected command.",
+    "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp"
+  },
   "0x00410B50": {
     "name": "MultiTrackView::CompositeEventTrack::vfunc_8",
     "class": "MultiTrackView::CompositeEventTrack",
