@@ -1794,3 +1794,28 @@ void __thiscall fn_005BFFE0(void* self, uint8_t key_buf[28]) {
 }
 } // namespace lift_00541630
 } // namespace lift_005BFFE0
+
+// [0x005BF460]
+namespace lift_005BF460 {
+extern void __stdcall ext_00587470(void* obj);
+void __thiscall ext_005BEF60(void* self, uint8_t key_buf[28]);
+extern uint32_t mem_00924FE0;
+
+typedef void* (__thiscall* GetNameFn)(void* self);
+typedef void* (__thiscall* StrCopyCtorFn)(void* self, const void* src);
+
+// @name Owner::removeObjectByName
+// @summary If obj is non-null, notify it, then erase its name key from the map at +0x15C.
+// @field Owner +0x15C TreeMap nameMap
+void __thiscall fn_005BF460(void* self, void* obj)
+{
+    if (obj == nullptr)
+        return;
+    ext_00587470(obj);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    void* name = reinterpret_cast<GetNameFn>(vtbl[9])(obj);
+    uint8_t key_buf[28];
+    reinterpret_cast<StrCopyCtorFn>(*reinterpret_cast<void**>(&mem_00924FE0))(key_buf, name);
+    ext_005BEF60(reinterpret_cast<uint8_t*>(self) + 0x15C, key_buf);
+}
+} // namespace lift_005BF460

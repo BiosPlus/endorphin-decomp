@@ -21,6 +21,7 @@ struct Owner_Fields {
     // +0xB0  void*                    field_0xb0  (evidence: 0x007CAF70)
     // +0xE8  uint8_t                  field_0xE8[8]  (evidence: 0x00437230)
     // +0x154 uint32_t last_bucket_index (written with index)  (evidence: 0x007F0B30)
+    // +0x15C TreeMap                  nameMap  (evidence: 0x005BF460)
     // +0x160 void*                    listHead  (evidence: 0x005BED50)
     // +0x164 uint32_t                 subobject  (evidence: 0x005C39F0)
     // +0x43C int32_t                  index  (evidence: 0x004D4060)

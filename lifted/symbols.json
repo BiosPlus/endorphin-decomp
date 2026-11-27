@@ -49279,6 +49279,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005BF460": {
+    "name": "Owner::removeObjectByName",
+    "class": "Owner",
+    "signature": "void __thiscall fn_005BF460(void* self, void* obj)",
+    "summary": "If obj is non-null, notify it, then erase its name key from the map at +0x15C.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005BF770": {
     "name": "NMData::MetaBodyData::vfunc_13_off_C",
     "class": "NMData::MetaBodyData",
