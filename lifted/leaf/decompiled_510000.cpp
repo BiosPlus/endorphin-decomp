@@ -375,3 +375,44 @@ extern void* fn_00519D50(uint32_t count) {
     return ext_006A5C62(count * 8u);
 }
 } // namespace lift_00519D50
+
+// [0x0051A210]
+namespace lift_0051A210 {
+extern uint32_t mem_00AEC728;
+extern uint8_t mem_00AEC70C[];
+
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+extern int ext_006A6C87(void* fn);
+
+// @name getStaticBoolString_0051A210
+// @summary Lazily initializes a static string via ext_0066AD10, registers an atexit destructor, and returns its address.
+void* fn_0051A210() {
+    if ((mem_00AEC728 & 1u) == 0u) {
+        mem_00AEC728 |= 1u;
+        ext_0066AD10(mem_00AEC70C, static_cast<uint8_t>(0x00A4320Cu));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00919FF0u)));
+    }
+    return mem_00AEC70C;
+}
+} // namespace lift_0051A210
+
+// [0x0051A270]
+namespace lift_0051A270 {
+extern uint8_t mem_00AEC748[];
+extern uint8_t mem_00AEC72C[];
+
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+extern int ext_006A6C87(void* fn);
+
+// @name getStaticBoolString_0051A270
+// @summary Lazily initializes a static string via ext_0066AD10 and registers its atexit destructor.
+void* fn_0051A270() {
+    auto* guard = reinterpret_cast<uint32_t*>(mem_00AEC748);
+    if ((*guard & 1u) == 0u) {
+        *guard |= 1u;
+        ext_0066AD10(mem_00AEC72C, static_cast<uint8_t>(0x00A43218u));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00919FE0u)));
+    }
+    return mem_00AEC72C;
+}
+} // namespace lift_0051A270

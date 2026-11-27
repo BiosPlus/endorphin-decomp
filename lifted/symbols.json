@@ -21239,6 +21239,18 @@
     "summary": "Gets a float from a node's object (or a default global object) via vtable slot 1, then passes it with the input float to vtable slot 5 of self.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x0051A210": {
+    "name": "getStaticBoolString_0051A210",
+    "signature": "void* fn_0051A210()",
+    "summary": "Lazily initializes a static string via ext_0066AD10, registers an atexit destructor, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
+  "0x0051A270": {
+    "name": "getStaticBoolString_0051A270",
+    "signature": "void* fn_0051A270()",
+    "summary": "Lazily initializes a static string via ext_0066AD10 and registers its atexit destructor.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051A400": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, float, \u0026public: void __thiscall NMData::RealChannel::setKeyFrame(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, float, \u0026public: void __thiscall NMData::RealChannel::setKeyFrame(float)\u003e",
