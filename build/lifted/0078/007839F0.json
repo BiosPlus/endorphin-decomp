@@ -1,0 +1,34 @@
+{
+  "va": "0x007839F0",
+  "size": 144,
+  "orig_symbol": "sub_007839F0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::dispatchCallbacksReverse",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __fastcall fn_007839F0(void* self, int edx_unused, void* arg1, void* arg2)",
+  "summary": "Iterates callbacks in reverse order with active iterator linking, stopping early if arg2+0x4 is non-zero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "items"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "activeIterator"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:46:43Z"
+}
