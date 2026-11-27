@@ -37246,6 +37246,13 @@
     "summary": "Rebuilds the direction vector at +0xD8 from +0x74/+0x78/+0x7C (w=0), crosses it with the vector at +0x90, normalizes that cross when its length is non-zero, applies scaled offsets via +0xD8 helper, stores (this+0x80 - dir) into +0xE8..+0xF4, and sets +0x2C to 1.",
     "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
   },
+  "0x00551F30": {
+    "name": "NMCamera::Orthogonal::vfunc_10",
+    "class": "NMCamera::Orthogonal",
+    "signature": "void __thiscall fn_00551F30(void* self, int32_t x, int32_t y, void* target, float* out_vec4)",
+    "summary": "Projects screen-space delta coordinates into world/camera space using the orthogonal scale and camera transform.",
+    "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
+  },
   "0x00552130": {
     "name": "Matrix4::getRow",
     "class": "Matrix4",
@@ -59933,6 +59940,13 @@
     "summary": "Sets floats at +0x0 (1.0), +0x4 (1.0), +0x8 (mem_009518E0 = 10.0), +0xC (0.0) and byte at +0x10 (1); thiscall, this in ecx.",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x0060BCF0": {
+    "name": "NMData::EffectorData::vfunc_14",
+    "class": "NMData::EffectorData",
+    "signature": "void* __thiscall fn_0060BCF0(void* self, void* parent)",
+    "summary": "Serializes EffectorData fields into a child node created from the given parent.",
+    "lifted_path": "lifted/NMData/EffectorData.cpp"
+  },
   "0x0060BDF0": {
     "name": "NMData::EffectorData::vfunc_19",
     "class": "NMData::EffectorData",
@@ -60215,6 +60229,13 @@
     "class": "NMData::SensorData",
     "signature": "extern \"C\" void __thiscall fn_0060E540(uint8_t* self)",
     "summary": "Clears two string fields and resets sensor data fields to default values.",
+    "lifted_path": "lifted/NMData/SensorData.cpp"
+  },
+  "0x0060E590": {
+    "name": "NMData::SensorData::vfunc_22",
+    "class": "NMData::SensorData",
+    "signature": "void* __thiscall fn_0060E590(void* self, void* target)",
+    "summary": "Serializes SensorData string fields and non-default float range (0x174, 0x178) into the target node.",
     "lifted_path": "lifted/NMData/SensorData.cpp"
   },
   "0x0060E6C0": {

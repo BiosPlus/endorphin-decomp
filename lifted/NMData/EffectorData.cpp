@@ -302,3 +302,61 @@ void __thiscall fn_0060C640(uint8_t* self, uint8_t* arg1) {
     }
 }
 } // namespace lift_0060C640
+
+// [0x0060BCF0]
+namespace lift_0060BCF0 {
+extern uint32_t mem_00A9EE64;
+extern uint32_t mem_00A9FA6C;
+extern uint32_t mem_00A9F5CC;
+extern uint32_t mem_00A9F43C;
+extern uint32_t mem_00A9EF5C;
+extern uint32_t mem_00A9EE38;
+extern uint32_t mem_00A9EF60;
+extern uint32_t mem_00A9ED5C;
+
+extern void* __thiscall ext_006404E0(void* self, uint32_t a);
+extern void __thiscall ext_0060BAD0(void* self, void* node);
+extern void* __thiscall ext_00640110(void* self, uint32_t a);
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern void __cdecl ext_00640AA0(void* a, uint32_t b);
+extern void __cdecl ext_00640A80(void* a, uint8_t flag);
+extern void* __thiscall ext_00640390(void* self, uint32_t a, uint32_t b);
+extern void __cdecl ext_00640BC0(void* a, float val);
+
+// @name NMData::EffectorData::vfunc_14
+// @class NMData::EffectorData
+// @summary Serializes EffectorData fields into a child node created from the given parent.
+// @field NMData::EffectorData +0x44 uint32_t field_0x44
+// @field NMData::EffectorData +0x48 float field_0x48
+// @field NMData::EffectorData +0x4C float field_0x4c
+// @field NMData::EffectorData +0x50 float field_0x50
+// @field NMData::EffectorData +0x54 float field_0x54
+// @field NMData::EffectorData +0x58 uint8_t field_0x58
+void* __thiscall fn_0060BCF0(void* self, void* parent) {
+    void* node = ext_006404E0(parent, mem_00A9EE64);
+    ext_0060BAD0(self, node);
+
+    void* child = ext_00640110(node, mem_00A9FA6C);
+    ext_00427550(&child, reinterpret_cast<const char*>(0x009719F0));
+
+    void* id_child = ext_00640110(node, mem_00A9F5CC);
+    ext_00640AA0(id_child, lift_field<uint32_t>(self, 0x44));
+
+    void* bool_child = ext_00640110(node, mem_00A9F43C);
+    ext_00640A80(bool_child, lift_field<uint8_t>(self, 0x58));
+
+    void* f1_child = ext_00640390(node, mem_00A9EF5C, 0);
+    ext_00640BC0(f1_child, lift_field<float>(self, 0x48));
+
+    void* f2_child = ext_00640390(node, mem_00A9EE38, 0);
+    ext_00640BC0(f2_child, lift_field<float>(self, 0x54));
+
+    void* f3_child = ext_00640390(node, mem_00A9EF60, 0);
+    ext_00640BC0(f3_child, lift_field<float>(self, 0x4C));
+
+    void* f4_child = ext_00640390(node, mem_00A9ED5C, 0);
+    ext_00640BC0(f4_child, lift_field<float>(self, 0x50));
+
+    return node;
+}
+} // namespace lift_0060BCF0
