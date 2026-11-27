@@ -79921,6 +79921,13 @@
     "summary": "Forwards to virtual slot 47 (+0xBC) of the object at self+0x04, passing self as the argument.",
     "lifted_path": "lifted/ExprParser/Operators/Abs.cpp"
   },
+  "0x006A1CF0": {
+    "name": "ExprParser::Operators::Evaluate::vfunc_3",
+    "class": "ExprParser::Operators::Evaluate",
+    "signature": "static inline uint32_t as_u32(const void* p)",
+    "summary": "Evaluates the operator: builds a std::string result via helpers, then either calls the sub-object's slot 0x78 hook or, on exception, prints the message to std::cout and runs cleanup.",
+    "lifted_path": "lifted/ExprParser/Operators/Evaluate.cpp"
+  },
   "0x006A1DF0": {
     "name": "ExprParser::Operators::Comma::vfunc_2",
     "class": "ExprParser::Operators::Comma",
