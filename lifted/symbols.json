@@ -61410,6 +61410,13 @@
     "summary": "Copies a range of 0x24-byte structs backward, copying a u32, a u8, and assigning a std::string at +0x08.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00687470": {
+    "name": "Unknown::SwapStringPair_00687470",
+    "class": "Unknown",
+    "signature": "void fn_00687470(void* a, void* b)",
+    "summary": "Swaps two {std::string, std::string} pairs: copy-constructs a temp from a, assigns a from b and b from the temp, then destroys the temp.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687510": {
     "name": "sub_00687510",
     "class": "Unknown",

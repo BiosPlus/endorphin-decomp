@@ -1,0 +1,28 @@
+{
+  "va": "0x00687470",
+  "size": 155,
+  "orig_symbol": "sub_00687470",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Unknown::SwapStringPair_00687470",
+  "class": "Unknown",
+  "signature": "void fn_00687470(void* a, void* b)",
+  "summary": "Swaps two {std::string, std::string} pairs: copy-constructs a temp from a, assigns a from b and b from the temp, then destroys the temp.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:54Z"
+}

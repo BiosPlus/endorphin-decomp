@@ -2797,3 +2797,46 @@ void fn_00682D80(void* self, void* owner) {
     ext_0041CF50(held, reinterpret_cast<void*>(static_cast<uintptr_t>(element)));
 }
 } // namespace lift_00682D80
+
+// [0x00687470] sub_00687470 (155 bytes)
+namespace lift_00687470 {
+// Known callee 0x006981A0: Unknown::CopyConstructPair_006981A0 (Copy-constructs two std::string members (at +0x00 and +0x1C) from the matching strings of src; returns this.)
+extern void* ext_006981A0(void* self, const void* src);
+extern int mem_00924FDC;
+extern int mem_00924FF4;
+
+// Thiscall signatures for the MSVCP80 std::basic_string<char> operator= and destructor imports.
+using StringAssignFn = void(__thiscall*)(void* self, const void* src);
+using StringDtorFn   = void(__thiscall*)(void* self);
+
+// @name Unknown::SwapStringPair_00687470
+// @class Unknown
+// @summary Swaps two {std::string, std::string} pairs: copy-constructs a temp from a, assigns a from b and b from the temp, then destroys the temp.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C std::string field_0x1c
+void fn_00687470(void* a, void* b) {
+    // Temp pair (two std::string slots at +0x00 and +0x1C, 0x38 bytes total).
+    alignas(8) unsigned char tmp[0x38];
+
+    auto assign = *reinterpret_cast<StringAssignFn*>(&mem_00924FDC);
+    auto dtor   = *reinterpret_cast<StringDtorFn*>(&mem_00924FF4);
+
+    // tmp = copy of a's pair
+    ext_006981A0(tmp, a);
+
+    auto* a_bytes = static_cast<unsigned char*>(a);
+    auto* b_bytes = static_cast<unsigned char*>(b);
+
+    // a = b
+    assign(a_bytes,        b_bytes);
+    assign(a_bytes + 0x1C, b_bytes + 0x1C);
+
+    // b = tmp
+    assign(b_bytes,        tmp);
+    assign(b_bytes + 0x1C, tmp + 0x1C);
+
+    // destroy temp (reverse order)
+    dtor(tmp + 0x1C);
+    dtor(tmp);
+}
+} // namespace lift_00687470
