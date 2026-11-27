@@ -12,5 +12,6 @@ namespace lifted_layout {
 struct Interpolator_Linear_Fields {
     // +0x4   uint32_t                 keys_begin  (evidence: 0x00528640, 0x00528730)
     // +0x8   uint32_t                 keys_end  (evidence: 0x00528640, 0x00528730)
+    // +0x14  uint8_t[16]              field_0x14  (evidence: 0x00528820)
 };
 } // namespace lifted_layout

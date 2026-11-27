@@ -132,3 +132,120 @@ __thiscall void* fn_00528730(void* self, void* a1, void* a2, uint32_t key, float
     return key_ptr(key + 0x04);
 }
 } // namespace lift_00528730
+
+// [0x00528820]
+namespace lift_00528820 {
+// @name Interpolator::Linear::vfunc_1
+// @class Interpolator::Linear
+// @summary Linearly interpolates between two keyframe transforms or returns the single keyframe if at the end.
+// @field Interpolator::Linear +0x14 uint8_t[16] field_0x14
+
+extern void __thiscall ext_0051CE40(void* self, uint32_t a1, void* a2, uint32_t a3);
+extern void __thiscall ext_00694330(void* self, void* a1);
+extern void __thiscall ext_00694A70(void* self, uint32_t a1, uint32_t a2);
+extern void __thiscall ext_00694B60(void* self, uint32_t a1, void* a2);
+extern void __thiscall ext_00695070(void* self, void* a1);
+extern void ext_006A5C5C(void* ptr);
+extern uint32_t mem_00925134;
+
+extern uint32_t __thiscall fn_00528820(
+    void* self,
+    uint32_t arg0,
+    uint32_t arg1,
+    uint32_t arg2,
+    float arg3)
+{
+    uint32_t esi = arg2;
+    uint32_t edi = arg1;
+    typedef void (*invalid_param_fn)(void);
+    invalid_param_fn invalid_param = (invalid_param_fn)(uintptr_t)mem_00925134;
+
+    if (edi == 0) {
+        invalid_param();
+    }
+    if (esi >= lift_field<uint32_t>((void*)(uintptr_t)edi, 0x8)) {
+        invalid_param();
+    }
+
+    uint32_t range = arg0;
+    uint32_t keys_end = lift_field<uint32_t>((void*)(uintptr_t)range, 0x8);
+    uint32_t ebp = esi + 0x10;
+    if (lift_field<uint32_t>((void*)(uintptr_t)range, 0x4) > keys_end) {
+        invalid_param();
+    }
+    if (arg1 != range) {
+        invalid_param();
+    }
+
+    if (ebp == keys_end) {
+        if (esi >= lift_field<uint32_t>((void*)(uintptr_t)arg1, 0x8)) {
+            invalid_param();
+        }
+        return esi + 0x4;
+    }
+
+    float mat1[12] = {
+        1.0f, 0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 1.0f, 0.0f
+    };
+    if (esi >= lift_field<uint32_t>((void*)(uintptr_t)arg1, 0x8)) {
+        invalid_param();
+    }
+    ext_00694A70(mat1, 0, esi + 0x4);
+
+    float q1[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+    ext_00694330(q1, mat1);
+
+    float mat2[12] = {
+        1.0f, 0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 1.0f, 0.0f
+    };
+    if (ebp >= lift_field<uint32_t>((void*)(uintptr_t)arg1, 0x8)) {
+        invalid_param();
+    }
+    ext_00694A70(mat2, 0, ebp + 0x4);
+
+    float q2[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+    ext_00694330(q2, mat2);
+
+    uint32_t vec[3] = {0, 0, 0};
+    if (esi >= lift_field<uint32_t>((void*)(uintptr_t)arg1, 0x8)) {
+        invalid_param();
+    }
+    ext_0051CE40(vec, esi, q1, 0);
+
+    if (ebp >= lift_field<uint32_t>((void*)(uintptr_t)arg1, 0x8)) {
+        invalid_param();
+    }
+    ext_0051CE40(vec, ebp, q2, 0);
+
+    if (vec[0] > vec[1]) {
+        invalid_param();
+    }
+
+    typedef float* (__thiscall *vfunc2_fn)(void*, float*, uint32_t, uint32_t, float);
+    uint32_t vtable = lift_field<uint32_t>(self, 0x0);
+    vfunc2_fn vfunc2 = (vfunc2_fn)(uintptr_t)lift_field<uint32_t>((void*)(uintptr_t)vtable, 0x8);
+    float tmp_q[4];
+    float* res_q = vfunc2(self, tmp_q, vec[0], vec[1], arg3);
+
+    float q_out[4] = {res_q[0], res_q[1], res_q[2], res_q[3]};
+    float mat_out[12] = {
+        1.0f, 0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 1.0f, 0.0f
+    };
+    ext_00695070(mat_out, q_out);
+
+    uint32_t out_ptr = (uint32_t)(uintptr_t)self + 0x14;
+    ext_00694B60(mat_out, 0, (void*)(uintptr_t)out_ptr);
+
+    if (vec[0] != 0) {
+        ext_006A5C5C((void*)(uintptr_t)vec[0]);
+    }
+
+    return out_ptr;
+}
+} // namespace lift_00528820

@@ -1,0 +1,22 @@
+{
+  "va": "0x00528820",
+  "size": 648,
+  "orig_symbol": "Interpolator::Linear::vfunc_1",
+  "src_path": "src/Interpolator/Linear.cpp",
+  "lifted_path": "lifted/Interpolator/Linear.cpp",
+  "name": "Interpolator::Linear::vfunc_1",
+  "class": "Interpolator::Linear",
+  "signature": "extern \"C\" uint32_t __thiscall fn_00528820( void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, float arg3)",
+  "summary": "Linearly interpolates between two keyframe transforms or returns the single keyframe if at the end.",
+  "fields": [
+    {
+      "class": "Interpolator::Linear",
+      "offset": "+0x14",
+      "type": "uint8_t[16]",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:33:32Z"
+}
