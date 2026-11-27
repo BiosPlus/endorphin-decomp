@@ -55515,6 +55515,13 @@
     "summary": "Returns 1 if the double behind the held pointer, rounded to float, is \u003e= 1e-6 (NaN yields 0); throws via ext_0046C3C0 when the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00695A70": {
+    "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, getValue, 0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+    "signature": "void* __stdcall fn_00695A70(void* out, const void* self)",
+    "summary": "Reads the double behind the object's value pointer as a float and forwards it with the sret slot to 0x0046C390; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00695CE0": {
     "name": "sub_00695CE0",
     "signature": "void* fn_00695CE0()",

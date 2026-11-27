@@ -62776,3 +62776,33 @@ void* fn_004B2BE0(void* /*unused_first_arg*/, void* out) {
     return out;
 }
 } // namespace lift_004B2BE0
+
+// [0x00695A70] ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>::vfunc_4 (81 bytes)
+namespace lift_00695A70 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<DoubleWithProperties, float, getValue, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
+// @summary Reads the double behind the object's value pointer as a float and forwards it with the sret slot to 0x0046C390; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 const double* valuePtr
+void* __stdcall fn_00695A70(void* out, const void* self) {
+    const double* src = lift_field<const double*>(self, 0);
+    if (src == nullptr) {
+        // Null value: construct the exception in a frame-local buffer and throw it.
+        // Buffer size is the frame space available below the return address (0x2c - 0x08), not a known type size.
+        alignas(8) uint8_t exc[0x24];
+        ext_0046C3C0(static_cast<void*>(exc));
+        ext_006A6DD2(static_cast<void*>(exc),
+                     reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;  // not reached: the throw does not return
+    }
+    const float value = static_cast<float>(*src);
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_00695A70
