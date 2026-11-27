@@ -46241,6 +46241,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::MetaBodyData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005C1410": {
+    "name": "NMData::MetaBodyData::vfunc_17_off_C",
+    "class": "NMData::MetaBodyData",
+    "signature": "void* __thiscall fn_005C1410(void* self)",
+    "summary": "Allocates a 0x220-byte object, initialises it via sub_005C1060, copies 64 bytes from the TransformInterface-supplied buffer into the new object's buffer, then calls its slot 1 with flag 0.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005C1D30": {
     "name": "NMData::MetaBodyData::vfunc_0",
     "class": "NMData::MetaBodyData",

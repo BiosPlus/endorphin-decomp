@@ -252,3 +252,46 @@ void* __thiscall fn_005BFC90(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_005BFC90
+
+// [0x005C1410] NMData::MetaBodyData::vfunc_17_off_C (148 bytes)
+namespace lift_005C1410 {
+extern void* ext_006A5C62(size_t size);                  // thunk_MFC80_ord_762 (operator new, cdecl)
+extern void* __thiscall ext_005C1060(void* self, void* arg);  // sub_005C1060
+extern int mem_00B40640;
+
+// @name NMData::MetaBodyData::vfunc_17_off_C
+// @class NMData::MetaBodyData
+// @summary Allocates a 0x220-byte object, initialises it via sub_005C1060, copies 64 bytes from the TransformInterface-supplied buffer into the new object's buffer, then calls its slot 1 with flag 0.
+// @field NMData::MetaBodyData +0x04 void* transformInterface_vptr
+void* __thiscall fn_005C1410(void* self) {
+    // self is the subobject at MetaBodyData +0x0C; the full object starts 0x0C bytes earlier.
+    auto* esi = static_cast<uint8_t*>(self);
+    auto* obj = esi - 0x0C;
+
+    void* result = ext_006A5C62(0x220);
+    if (result) {
+        result = ext_005C1060(result, obj);
+    }
+
+    // Source buffer: TransformInterface (obj+0x04) vtable slot 5, arg = mem_00B40640.
+    void** iface_vtbl = *reinterpret_cast<void***>(esi - 0x08);
+    using SrcFn = void*(__thiscall*)(void*, int);
+    void* src = reinterpret_cast<SrcFn>(iface_vtbl[5])(esi - 0x08, mem_00B40640);
+
+    // Destination buffer: result+0x04 subobject, vtable slot 11.
+    auto* sub = static_cast<uint8_t*>(result) + 0x04;
+    void** sub_vtbl = *reinterpret_cast<void***>(sub);
+    using DstFn = void*(__thiscall*)(void*);
+    void* dst = reinterpret_cast<DstFn>(sub_vtbl[11])(sub);
+
+    // rep movsd, ecx = 0x10 dwords.
+    std::memcpy(dst, src, 0x10 * sizeof(uint32_t));
+
+    // Destructor-style call on the subobject: vtable slot 1 with flag 0.
+    sub_vtbl = *reinterpret_cast<void***>(sub);
+    using FlagFn = void(__thiscall*)(void*, int);
+    reinterpret_cast<FlagFn>(sub_vtbl[1])(sub, 0);
+
+    return result;
+}
+} // namespace lift_005C1410

@@ -1,0 +1,22 @@
+{
+  "va": "0x005C1410",
+  "size": 148,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_17_off_C",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_17_off_C",
+  "class": "NMData::MetaBodyData",
+  "signature": "void* __thiscall fn_005C1410(void* self)",
+  "summary": "Allocates a 0x220-byte object, initialises it via sub_005C1060, copies 64 bytes from the TransformInterface-supplied buffer into the new object's buffer, then calls its slot 1 with flag 0.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "transformInterface_vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:03Z"
+}
