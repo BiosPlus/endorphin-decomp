@@ -38954,6 +38954,13 @@
     "summary": "Allocates a 0x78-byte Sub_00629850 object, runs its constructor with four args, then overrides its vtable pointers; returns null if allocation fails.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FF690": {
+    "name": "Sub_00629850::create",
+    "class": "Sub_00629850",
+    "signature": "extern \"C\" void* __cdecl fn_005FF690(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Factory: allocates a 0x78-byte object, runs Sub_00629850 constructor with four args, installs final vtables at +0x00 and +0x30, returns object or null if allocation fails.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FF710": {
     "name": "Sub_00629850::create",
     "class": "Sub_00629850",

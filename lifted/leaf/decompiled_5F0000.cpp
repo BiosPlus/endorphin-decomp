@@ -1864,3 +1864,27 @@ void* fn_005FF710(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
     return obj;
 }
 } // namespace lift_005FF710
+
+// [0x005FF690] sub_005FF690 (119 bytes)
+namespace lift_005FF690 {
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_00629850(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4);
+extern int mem_0096EF7C;
+extern int mem_0096EF64;
+
+// @name Sub_00629850::create
+// @class Sub_00629850
+// @summary Factory: allocates a 0x78-byte object, runs Sub_00629850 constructor with four args, installs final vtables at +0x00 and +0x30, returns object or null if allocation fails.
+// @field Sub_00629850 +0x00 void* field_0x00
+// @field Sub_00629850 +0x30 void* field_0x30
+extern void* __cdecl fn_005FF690(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    void* obj = ext_006A5C62(0x78u);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    ext_00629850(obj, arg1, arg2, arg3, arg4);
+    lift_field<void*>(obj, 0x00) = &mem_0096EF7C;
+    lift_field<void*>(obj, 0x30) = &mem_0096EF64;
+    return obj;
+}
+} // namespace lift_005FF690

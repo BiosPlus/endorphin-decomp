@@ -1,0 +1,28 @@
+{
+  "va": "0x005FF690",
+  "size": 119,
+  "orig_symbol": "sub_005FF690",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "Sub_00629850::create",
+  "class": "Sub_00629850",
+  "signature": "extern \"C\" void* __cdecl fn_005FF690(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Factory: allocates a 0x78-byte object, runs Sub_00629850 constructor with four args, installs final vtables at +0x00 and +0x30, returns object or null if allocation fails.",
+  "fields": [
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:27Z"
+}
