@@ -4609,3 +4609,46 @@ void fn_006D93B0(void* self, const uint32_t* src) {
     notify38b(self, 0, 0x15, self, src, nullptr, 0);
 }
 } // namespace lift_006D93B0
+
+// [0x006D3560]
+namespace lift_006D3560 {
+// @name sub_006D3560
+// @summary Formats a temporary object, looks up or creates an item via vtable+0x8, notifies field_0x1b4, and inserts into DynamicArray at +0x1c.
+// @field Self +0x00 void** vtable
+// @field Self +0x1C int32_t dynamicArrayCount
+// @field Self +0x1B4 void* field_0x1b4
+
+
+    void* __cdecl ext_006D57D0(void* dst, const void* arg1, void* arg2);
+    int32_t __thiscall ext_006E7460(void* self);
+    void __thiscall ext_006B9D70(void* self);
+    int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+    extern const uint8_t mem_00AA8704[];
+
+extern void* __thiscall fn_006D3560(void* self, void* arg1) {
+    uint8_t local_buf[0x4C];
+    void* tmp = ext_006D57D0(local_buf, mem_00AA8704, arg1);
+    int32_t val = ext_006E7460(tmp);
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto vfunc_0x8 = reinterpret_cast<void* (__thiscall*)(void*, int32_t)>(vtable[2]);
+    void* edi = vfunc_0x8(self, val);
+
+    ext_006B9D70(local_buf);
+
+    if (edi != nullptr) {
+        void* obj_1b4 = lift_field<void*>(self, 0x1B4);
+        if (obj_1b4 != nullptr) {
+            void** obj_vtable = *reinterpret_cast<void***>(obj_1b4);
+            auto obj_vfunc_0x8 = reinterpret_cast<void (__thiscall*)(void*, void*)>(obj_vtable[2]);
+            obj_vfunc_0x8(obj_1b4, reinterpret_cast<uint8_t*>(edi) + 4);
+        }
+
+        int32_t index = lift_field<int32_t>(self, 0x1C);
+        void* elem = edi;
+        ext_006D2170(reinterpret_cast<uint8_t*>(self) + 0x1C, index, &elem);
+    }
+
+    return edi;
+}
+} // namespace lift_006D3560
