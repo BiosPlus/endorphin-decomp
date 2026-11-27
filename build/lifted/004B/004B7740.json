@@ -1,0 +1,52 @@
+{
+  "va": "0x004B7740",
+  "size": 127,
+  "orig_symbol": "sub_004B7740",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::Unknown(uint32_t, uint32_t, const Object*, uint32_t)",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_004B7740(void* self, uint32_t a, uint32_t b, void* c, uint32_t d)",
+  "summary": "Thiscall constructor: runs ext_006657F0 base init, stores vtable, two args, and copy-constructs two std::string members.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "std::string",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "std::string",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:06:16Z"
+}

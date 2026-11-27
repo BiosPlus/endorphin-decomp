@@ -1721,3 +1721,41 @@ void* fn_004B5820(void* self) {
     return self;
 }
 } // namespace lift_004B5820
+
+// [0x004B7740]
+namespace lift_004B7740 {
+extern void* ext_006657F0(void* self, uint32_t arg);
+extern uint32_t mem_00924FE0;
+
+// @name Unknown::Unknown(uint32_t, uint32_t, const Object*, uint32_t)
+// @class Unknown
+// @summary Thiscall constructor: runs ext_006657F0 base init, stores vtable, two args, and copy-constructs two std::string members.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x18 std::string field_0x18
+// @field Unknown +0x34 std::string field_0x34
+void* __thiscall fn_004B7740(void* self, uint32_t a, uint32_t b, void* c, uint32_t d) {
+    (void)d;
+    (void)&mem_00924FE0; // MSVCP80 basic_string copy-ctor IAT slot; replaced by std::string below
+
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x10) = b;
+    lift_field<uint32_t>(self, 0x00) = 0x00943678;
+    lift_field<void*>(self, 0x14) = c;
+
+    void** vtbl = *reinterpret_cast<void***>(c);
+    auto getter = reinterpret_cast<const void* (__thiscall*)(void*)>(vtbl[9]);
+    const void* src = getter(c);
+    new (&lift_field<std::string>(self, 0x18))
+        std::string(*static_cast<const std::string*>(src));
+
+    new (&lift_field<std::string>(self, 0x34))
+        std::string(*static_cast<const std::string*>(c));
+
+    lift_field<uint32_t>(self, 0x08) = a;
+    return self;
+}
+} // namespace lift_004B7740

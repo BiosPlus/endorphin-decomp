@@ -14705,6 +14705,13 @@
     "summary": "Initializes the object: calls base init, stores two uint32 values, and copy-constructs two std::strings from the given pointers.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B7740": {
+    "name": "Unknown::Unknown(uint32_t, uint32_t, const Object*, uint32_t)",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_004B7740(void* self, uint32_t a, uint32_t b, void* c, uint32_t d)",
+    "summary": "Thiscall constructor: runs ext_006657F0 base init, stores vtable, two args, and copy-constructs two std::string members.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B77C0": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand::vfunc_4",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand",
