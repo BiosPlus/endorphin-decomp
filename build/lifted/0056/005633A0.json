@@ -1,0 +1,13 @@
+{
+  "va": "0x005633A0",
+  "size": 130,
+  "orig_symbol": "sub_005633A0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "setModelAndPrimitiveName",
+  "signature": "void __stdcall fn_005633A0(void* model, void* strObj)",
+  "summary": "Sets the name of a CSLModel and its CSLPrimitive from a fallback-resolved string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:21:26Z"
+}
