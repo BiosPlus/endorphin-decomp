@@ -12333,3 +12333,30 @@ void fn_005D2B80(void* holder) {
     lift_field<void*>(holder, 0x04) = &mem_00B459F0;
 }
 } // namespace lift_005D2B80
+
+// [0x005D2560] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setFrameRate(float)>::vfunc_40 (122 bytes)
+namespace lift_005D2560 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern uint32_t __thiscall ext_0067A670(void* self, uint32_t value);
+extern uint32_t mem_00B459DC;
+extern uint32_t mem_00B459D8;
+
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setFrameRate(float)>
+// @summary Lazily constructs the static accessor object at mem_00B459D8 (guarded by a one-time flag at mem_00B459DC), then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType +0x04 void* accessor
+void __stdcall fn_005D2560(void* holder) {
+    // One-time construction guard for the static accessor object.
+    if ((mem_00B459DC & 0xFFu) == 0) {
+        mem_00B459DC |= 1u;
+        // Construct the static object: ECX = &obj, single stack arg = 0.
+        ext_0067A670(reinterpret_cast<void*>(&mem_00B459D8), 0u);
+        // Install the object's vtable pointer (0x009664DC).
+        mem_00B459D8 = 0x009664DCu;
+    }
+
+    // Bind holder+0x04 to the static accessor object.
+    uint32_t* slot = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(holder) + 0x04);
+    *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B459D8));
+}
+} // namespace lift_005D2560
