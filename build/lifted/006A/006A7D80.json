@@ -1,0 +1,13 @@
+{
+  "va": "0x006A7D80",
+  "size": 120,
+  "orig_symbol": "sub_006A7D80",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "FindAcceptedArrayElementOrSelf",
+  "signature": "uint8_t __thiscall ext_006AEC90(void* self);                   // NullRelationship::vfunc_49 int32_t __thiscall ext_006A7C10(void* self);                   // sub_006A7C10: element count uint32_t __thiscall ext_006AF8E0(void* self, int32_t index);   // getArrayElement (bounds-checked) uint8_t __thiscall ext_006AD090(void* self);                   // predicate on element void* __cdecl ext_006AEC60(void);                              // GWCCategoryItem::vfunc_0 -\u003e \u0026mem_00991104 int32_t __thiscall ext_006A63BE(void* self, void* arg);        // thunk_MFC80_ord_3952 } extern \"C\" uint32_t __stdcall fn_006A7D80(uint32_t self, uint8_t flag)",
+  "summary": "Walks an indexed array from the last element down; for the first element accepted by ext_006AD090 and ext_006A63BE it restarts from that element, otherwise returns the current object.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:14:44Z"
+}

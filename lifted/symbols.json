@@ -57162,6 +57162,12 @@
     "summary": "Calls the virtual method at vtable offset 0x144 on self, forwarding arg, and returns its result zero-extended to 32 bits.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A7D80": {
+    "name": "FindAcceptedArrayElementOrSelf",
+    "signature": "uint8_t __thiscall ext_006AEC90(void* self);                   // NullRelationship::vfunc_49 int32_t __thiscall ext_006A7C10(void* self);                   // sub_006A7C10: element count uint32_t __thiscall ext_006AF8E0(void* self, int32_t index);   // getArrayElement (bounds-checked) uint8_t __thiscall ext_006AD090(void* self);                   // predicate on element void* __cdecl ext_006AEC60(void);                              // GWCCategoryItem::vfunc_0 -\u003e \u0026mem_00991104 int32_t __thiscall ext_006A63BE(void* self, void* arg);        // thunk_MFC80_ord_3952 } extern \"C\" uint32_t __stdcall fn_006A7D80(uint32_t self, uint8_t flag)",
+    "summary": "Walks an indexed array from the last element down; for the first element accepted by ext_006AD090 and ext_006A63BE it restarts from that element, otherwise returns the current object.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A7F30": {
     "name": "Unknown::ForwardArgToVirtualSlot85",
     "class": "Unknown",

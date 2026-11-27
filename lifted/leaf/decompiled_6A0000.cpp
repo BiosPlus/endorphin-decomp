@@ -954,3 +954,54 @@ void fn_006A9190(void* self) {
     reinterpret_cast<ChildMoveFn>(&ext_006A5E5A)(child, x, y, scrollWidth, height, 1);
 }
 } // namespace lift_006A9190
+
+// [0x006A7D80]
+namespace lift_006A7D80 {
+// @name FindAcceptedArrayElementOrSelf
+// @summary Walks an indexed array from the last element down; for the first element accepted by ext_006AD090 and ext_006A63BE it restarts from that element, otherwise returns the current object.
+
+uint8_t __thiscall ext_006AEC90(void* self);                   // NullRelationship::vfunc_49
+int32_t __thiscall ext_006A7C10(void* self);                   // sub_006A7C10: element count
+uint32_t __thiscall ext_006AF8E0(void* self, int32_t index);   // getArrayElement (bounds-checked)
+uint8_t __thiscall ext_006AD090(void* self);                   // predicate on element
+void* __cdecl ext_006AEC60(void);                              // GWCCategoryItem::vfunc_0 -> &mem_00991104
+int32_t __thiscall ext_006A63BE(void* self, void* arg);        // thunk_MFC80_ord_3952
+
+extern uint32_t __stdcall fn_006A7D80(uint32_t self, uint8_t flag) {
+    uint32_t cur = self;
+    uint8_t f = flag;
+
+    for (;;) {
+        void* obj = reinterpret_cast<void*>(cur);
+
+        if (ext_006AEC90(obj) == 0 && f == 0)
+            return cur;
+
+        if (ext_006A7C10(obj) == 0)
+            return cur;
+
+        int32_t i = ext_006A7C10(obj) - 1;
+        bool restarted = false;
+
+        for (; i >= 0; --i) {
+            uint32_t elem = ext_006AF8E0(obj, i);
+            void* elemPtr = reinterpret_cast<void*>(elem);
+
+            if (ext_006AD090(elemPtr) == 0)
+                continue;
+
+            void* gw = ext_006AEC60();
+            if (ext_006A63BE(elemPtr, gw) != 0) {
+                cur = elem;
+                f = 0;
+                restarted = true;
+                break;
+            }
+            return elem;
+        }
+
+        if (!restarted)
+            return cur;
+    }
+}
+} // namespace lift_006A7D80
