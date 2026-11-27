@@ -1297,3 +1297,69 @@ int fn_006AA500(void* self) {
     return count;
 }
 } // namespace lift_006AA500
+
+// [0x006A84D0]
+namespace lift_006A84D0 {
+// @name registerWindowClass
+// @summary Checks if a window class is already registered and registers it via AfxRegisterClass if not.
+
+
+extern void* ext_006A5EDE(void);
+extern int32_t ext_006A6724(void* wndcls);
+extern void ext_006A631C(void);
+
+extern uint8_t mem_0092DF38[];
+extern uint32_t mem_009256C4;
+extern uint32_t mem_009255BC;
+extern uint32_t mem_0092571C;
+
+namespace {
+struct WndClassA {
+    uint32_t style;
+    uint32_t lpfnWndProc;
+    int32_t cbClsExtra;
+    int32_t cbWndExtra;
+    uint32_t hInstance;
+    uint32_t hIcon;
+    uint32_t hCursor;
+    uint32_t hbrBackground;
+    uint32_t lpszMenuName;
+    uint32_t lpszClassName;
+};
+} // namespace
+
+extern int32_t fn_006A84D0(void) {
+    void* module_state = ext_006A5EDE();
+    uint32_t hInstance = lift_field<uint32_t>(module_state, 0x8);
+
+    WndClassA wndcls{};
+    using GetClassInfoAFn = int32_t(__stdcall*)(uint32_t, const void*, WndClassA*);
+    auto get_class_info = reinterpret_cast<GetClassInfoAFn>(static_cast<uintptr_t>(mem_009256C4));
+    if (get_class_info(hInstance, mem_0092DF38, &wndcls) != 0) {
+        return 1;
+    }
+
+    wndcls.style = 0x848;
+    wndcls.lpfnWndProc = mem_009255BC;
+    wndcls.cbClsExtra = 0;
+    wndcls.cbWndExtra = 0;
+    wndcls.hInstance = hInstance;
+    wndcls.hIcon = 0;
+
+    ext_006A5EDE();
+
+    using LoadCursorAFn = uint32_t(__stdcall*)(uint32_t, uintptr_t);
+    auto load_cursor = reinterpret_cast<LoadCursorAFn>(static_cast<uintptr_t>(mem_0092571C));
+    wndcls.hCursor = load_cursor(0, 0x7F00);
+    wndcls.hbrBackground = 0;
+    wndcls.lpszMenuName = 0;
+    wndcls.lpszClassName = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_0092DF38));
+
+    if (ext_006A6724(&wndcls) != 0) {
+        return 1;
+    }
+
+    ext_006A631C();
+    return 0;
+}
+} // namespace lift_006A84D0
