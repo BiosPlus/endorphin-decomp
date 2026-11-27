@@ -2154,6 +2154,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00417CD0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00418DE0": {
+    "name": "ExportDialog::OnInitDialog",
+    "class": "ExportDialog",
+    "signature": "int32_t __thiscall fn_00418DE0(void* self)",
+    "summary": "Initializes the ExportDialog controls, combo boxes, check boxes, numeric/text fields, and visibility states from settings and predObj.",
+    "lifted_path": "lifted/classes/ExportDialog.cpp"
+  },
   "0x00419700": {
     "name": "sub_00419700",
     "signature": "extern \"C\" const DWORD* fn_00419700(void)",
