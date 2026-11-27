@@ -29863,6 +29863,12 @@
     "summary": "Builds a std::string from a1 and inserts it into the sorted vector at *this, using the singleton at 0x00AEB284 as the a2 argument; throws if already present.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00502960": {
+    "name": "insertUniqueNamed_00502960",
+    "signature": "void fn_00502960(void* self, const char* name)",
+    "summary": "Fetches the static singleton, copies the name into a std::string, and inserts it into the sorted vector owned by this object (throws on duplicate via callee).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00502E00": {
     "name": "NMData::EvolveEngineData::vfunc_1",
     "class": "NMData::EvolveEngineData",

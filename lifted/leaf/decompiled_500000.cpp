@@ -4083,3 +4083,26 @@ void fn_0050F5B0(const void* key, void* out, unsigned char throwIfMissing) {
     ext_006A6DD2(excObj, kThrowInfo);
 }
 } // namespace lift_0050F5B0
+
+// [0x00502960] sub_00502960 (114 bytes)
+namespace lift_00502960 {
+// Known callee 0x004FFA60: getStaticSingletonAddress_004FFA60 (Lazily initializes the static singleton at 0x00AEB28C (guarded by bit 0 of 0x00AEB290) and returns its address.)
+extern void* ext_004FFA60();
+// Known callee 0x00475960: Vector::InsertUniqueOrThrow_00475960 (Inserts a copy of the std::string at a1 into the sorted vector self; if it is already present and a3 is set, builds a message and throws it, otherwise returns false.)
+extern bool ext_00475960(void* self, const void* a1, const void* a2, bool a3);
+// MSVC runtime IAT slots used by the original std::string ctor/dtor; replaced by real std::string.
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name insertUniqueNamed_00502960
+// @summary Fetches the static singleton, copies the name into a std::string, and inserts it into the sorted vector owned by this object (throws on duplicate via callee).
+// @field Unknown +0x00 void* field_0x00
+void fn_00502960(void* self, const char* name) {
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    void* singleton = ext_004FFA60();
+    std::string str(name);
+    void* vec = *reinterpret_cast<void**>(self);
+    ext_00475960(vec, &str, &singleton, true);
+}
+} // namespace lift_00502960

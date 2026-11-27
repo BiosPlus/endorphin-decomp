@@ -1,0 +1,21 @@
+{
+  "va": "0x00502960",
+  "size": 114,
+  "orig_symbol": "sub_00502960",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "insertUniqueNamed_00502960",
+  "signature": "void fn_00502960(void* self, const char* name)",
+  "summary": "Fetches the static singleton, copies the name into a std::string, and inserts it into the sorted vector owned by this object (throws on duplicate via callee).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:53:06Z"
+}
