@@ -2612,3 +2612,27 @@ void* fn_006F8AD0(void* self, void* arg) {
     return self;
 }
 } // namespace lift_006F8AD0
+
+// [0x006FA350] sub_006FA350 (32 bytes)
+namespace lift_006FA350 {
+// Known callee 0x006B9950: sub_006B0050 (Stores address of mem_00991168 into field at offset +0x0.)
+extern void ext_006B9950();
+// Known callee 0x006F8AD0: Unknown::copyHeaderAndForward_006F8AD0 (Copies the leading dword of the source record into this object's first field, then forwards the source pointer advanced by 4 to conditionalAllocAndCopy on the subobject at +0x04. Returns this.)
+extern void ext_006F8AD0();
+extern void ext_00782C40();
+
+// @name sub_006FA350
+// @summary Returns self when the first stack argument is 0, 2, or 0xDE1947F3; otherwise returns nullptr. Callee takes two stack args (ret 8); the second is unused.
+void* fn_006FA350(void* self, DWORD arg0, DWORD arg1) {
+    // Metadata-only references: the original bytes never call these callees
+    // (verified: only je/cmp/setne/ret). Taking the address has no runtime effect.
+    (void)&ext_006B9950;
+    (void)&ext_006F8AD0;
+    (void)&ext_00782C40;
+    (void)arg1;
+    if (arg0 == 0u || arg0 == 2u || arg0 == 0xDE1947F3u) {
+        return self;
+    }
+    return nullptr;
+}
+} // namespace lift_006FA350

@@ -1,0 +1,13 @@
+{
+  "va": "0x006FA350",
+  "size": 32,
+  "orig_symbol": "sub_006FA350",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006FA350",
+  "signature": "void* fn_006FA350(void* self, DWORD arg0, DWORD arg1)",
+  "summary": "Returns self when the first stack argument is 0, 2, or 0xDE1947F3; otherwise returns nullptr. Callee takes two stack args (ret 8); the second is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:49:56Z"
+}
