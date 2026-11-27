@@ -2377,3 +2377,34 @@ double fn_00702C60(void* self) {
     return *elem;
 }
 } // namespace lift_00702C60
+
+// [0x00702D60] sub_00702D60 (128 bytes)
+namespace lift_00702D60 {
+extern void ext_006D2370(void* self);
+// Known callee 0x006D23F0: Unknown::GetAddressAt8 (Returns this + 8 * index (32-bit address of an 8-byte element in an array based at this); thiscall, one stack argument, callee pops 4.)
+extern uint32_t ext_006D23F0(uint32_t self, uint32_t index);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0();
+// Known callee 0x00702A50: Unknown::GetDoubleTripleFromComponents (Resolves a child object via ext_006DC460, then writes the float results of three)
+extern double* ext_00702A50(void* self, double* out);
+
+// @name Unknown::GetDoubleAtIndex2FromComponents
+// @class Unknown
+// @summary Fills a 32-byte local array of doubles via GetDoubleTripleFromComponents and returns the double at index 2.
+double fn_00702D60(void* self) {
+    alignas(8) uint8_t local[0x20];
+
+    ext_006D2370(local);
+    ext_00702A50(self, reinterpret_cast<double*>(local));
+
+    const uint32_t elem_addr = ext_006D23F0(
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(local)), 2);
+    double result;
+    std::memcpy(&result,
+                reinterpret_cast<const void*>(static_cast<uintptr_t>(elem_addr)),
+                sizeof result);
+
+    ext_006D80A0();
+    return result;
+}
+} // namespace lift_00702D60

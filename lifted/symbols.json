@@ -70634,6 +70634,13 @@
     "summary": "Fills a local value triple from self and returns the double stored at element index 1 (byte offset 8).",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702D60": {
+    "name": "Unknown::GetDoubleAtIndex2FromComponents",
+    "class": "Unknown",
+    "signature": "double fn_00702D60(void* self)",
+    "summary": "Fills a 32-byte local array of doubles via GetDoubleTripleFromComponents and returns the double at index 2.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702E60": {
     "name": "Unknown::GetFirstDoubleFromCounterTriple",
     "class": "Unknown",

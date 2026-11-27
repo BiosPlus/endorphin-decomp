@@ -1,0 +1,14 @@
+{
+  "va": "0x00702D60",
+  "size": 128,
+  "orig_symbol": "sub_00702D60",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::GetDoubleAtIndex2FromComponents",
+  "class": "Unknown",
+  "signature": "double fn_00702D60(void* self)",
+  "summary": "Fills a 32-byte local array of doubles via GetDoubleTripleFromComponents and returns the double at index 2.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:12:51Z"
+}
