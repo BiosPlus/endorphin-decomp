@@ -33997,6 +33997,12 @@
     "summary": "Copies the translation row (+0x30..+0x38) from the interface's source matrix into its destination matrix and sets +0x3C to 1.0.",
     "lifted_path": "lifted/classes/AnimatableTransform.cpp"
   },
+  "0x00593710": {
+    "name": "ClassifyStringToken",
+    "signature": "inline const char* lit_at(uintptr_t addr)",
+    "summary": "Uppercases a by-value std::string argument in place, then maps it to 1, 0 or 2 by comparing against three literals (default 2).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00593870": {
     "name": "AnimatableTransform::vfunc_17_off_C",
     "class": "AnimatableTransform",

@@ -2375,3 +2375,45 @@ void fn_00594330(void* self) {
     cur = x;
 }
 } // namespace lift_00594330
+
+// [0x00593710] sub_00593710 (155 bytes)
+namespace lift_00593710 {
+// Known callee 0x00664ED0: upperCopyStringRange (Gathers the bounds of a std::string (MSVC layout) and forwards them to upperCopyRangeToPair; returns the string pointer.)
+extern void* ext_00664ED0(void* self);
+extern int mem_00924FC0;
+extern int mem_00924FF4;
+
+// @name ClassifyStringToken
+// @summary Uppercases a by-value std::string argument in place, then maps it to 1, 0 or 2 by comparing against three literals (default 2).
+
+namespace {
+// MSVC 2005 std::string::operator==(const string&, const char*) (__cdecl).
+using StrEqFn = bool (__cdecl*)(const void* str, const char* lit);
+// MSVC 2005 std::string::~string() (__thiscall).
+using StrDtorFn = void (__thiscall*)(void* str);
+
+inline const char* lit_at(uintptr_t addr) {
+    return reinterpret_cast<const char*>(addr);
+}
+} // namespace
+
+int fn_00593710(void* self) {
+    // Uppercase the argument string in place (case-insensitive compare below).
+    ext_00664ED0(self);
+
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FC0)));
+    auto str_dtor = reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+
+    int result = 2;
+    if (str_eq(self, lit_at(0x95CFD8))) {
+        result = 1;
+    } else if (str_eq(self, lit_at(0x95CFD0))) {
+        result = 2;
+    } else if (str_eq(self, lit_at(0x95CFC8))) {
+        result = 0;
+    }
+
+    str_dtor(self);
+    return result;
+}
+} // namespace lift_00593710

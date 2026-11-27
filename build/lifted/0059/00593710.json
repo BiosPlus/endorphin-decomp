@@ -1,0 +1,13 @@
+{
+  "va": "0x00593710",
+  "size": 155,
+  "orig_symbol": "sub_00593710",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "ClassifyStringToken",
+  "signature": "inline const char* lit_at(uintptr_t addr)",
+  "summary": "Uppercases a by-value std::string argument in place, then maps it to 1, 0 or 2 by comparing against three literals (default 2).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:41Z"
+}
