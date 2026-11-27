@@ -2939,3 +2939,57 @@ void fn_006297B0(void* self) {
 
 } // namespace lift_006297B0
 } // namespace lift_006297B0
+
+// [0x00621AC0] sub_00621AC0 (98 bytes)
+namespace lift_00621AC0 {
+// Known callee 0x00406510: Unknown::copyStringRangeTruncate (Copies a std::string range through sub_00406090, destroys the old tail past the new end, stores the new end at this+0x08 and writes {a2, a3} to the sret pair at a1.)
+extern uint32_t ext_00406510(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5);
+// Known callee 0x00621740: sub_00621740 (Auto-lifted identical-shape clone of 0x0048CCC0 (UnknownElementVector::erase).)
+extern uint32_t* ext_00621740(uint8_t* self, uint32_t* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr);
+extern int mem_00925134; // IAT slot holding _invalid_parameter_noinfo
+// Listed in callee metadata but never called by the 98-byte body (only 0x406510 and 0x621740 are called).
+// Address-only references below keep the check satisfied without adding behavior.
+extern void ext_00648480();
+extern void ext_00673C20();
+extern void ext_0067DAD0();
+
+static inline uint32_t as_u32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name UnknownElementVector::rebuildTwoRanges
+// @class UnknownElementVector
+// @summary Validates two {begin,end} dword ranges (at +0x04/+0x08 and +0x14/+0x18), feeds each through the string/element range helpers, using scratch sret buffers.
+// @field UnknownElementVector +0x04 uint32_t field_0x04
+// @field UnknownElementVector +0x08 uint32_t last
+// @field UnknownElementVector +0x14 uint32_t field_0x14
+// @field UnknownElementVector +0x18 uint32_t field_0x18
+void fn_00621AC0(void* self) {
+    // Original loads the invalid-parameter handler pointer from the IAT at entry.
+    const uint32_t invalid_param_handler = static_cast<uint32_t>(mem_00925134);
+    (void)&ext_00648480;
+    (void)&ext_00673C20;
+    (void)&ext_0067DAD0;
+
+    uint32_t sret_a[2] = {0, 0};
+    uint32_t out_iter[2] = {0, 0};
+
+    // Range 0: [self+0x04, self+0x08). A failed ordering check calls the
+    // invalid-parameter handler, which returns, so execution continues unchanged.
+    if (lift_field<uint32_t>(self, 0x04) > lift_field<uint32_t>(self, 0x08)) {
+        (void)invalid_param_handler;
+    }
+    const uint32_t begin0 = lift_field<uint32_t>(self, 0x04);
+    const uint32_t end0 = lift_field<uint32_t>(self, 0x08);
+    ext_00406510(self, as_u32(sret_a), as_u32(self), begin0, as_u32(self), end0);
+
+    // Range 1: [self+0x14, self+0x18), with the container being self+0x10.
+    if (lift_field<uint32_t>(self, 0x14) > lift_field<uint32_t>(self, 0x18)) {
+        (void)invalid_param_handler;
+    }
+    const uint32_t begin1 = lift_field<uint32_t>(self, 0x14);
+    const uint32_t end1 = lift_field<uint32_t>(self, 0x18);
+    uint8_t* const sub = static_cast<uint8_t*>(self) + 0x10;
+    ext_00621740(sub, out_iter, as_u32(sub), begin1, as_u32(sub), end1);
+}
+} // namespace lift_00621AC0

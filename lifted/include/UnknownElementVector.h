@@ -8,6 +8,10 @@
 // Recovered field layout for UnknownElementVector:
 namespace lifted_layout {
 struct UnknownElementVector_Fields {
-    // +0x8   uint8_t*                 last  (evidence: 0x0048CCC0, 0x00621740)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00621AC0)
+    // +0x8   uint32_t                 last  (evidence: 0x00621AC0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t*                 last  (evidence: 0x0048CCC0, 0x00621740) // CONFLICT: multiple definitions at +0x8
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00621AC0)
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x00621AC0)
 };
 } // namespace lifted_layout
