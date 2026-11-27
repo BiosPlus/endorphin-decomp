@@ -1745,3 +1745,52 @@ void* __stdcall fn_0058F770(void* out, void* obj) {
     return out;
 }
 } // namespace lift_0058F770
+
+// [0x005860B0] sub_005860B0 (134 bytes)
+namespace lift_005860B0 {
+extern int mem_00925134; // IAT slot: MSVCR80!_invalid_parameter_noinfo
+extern int mem_00924FC4; // IAT slot: MSVCP80 std::operator==(const basic_string&, const basic_string&)
+
+// Calls through the IAT slot at mem_00925134 (asm: call dword ptr [0x925134]).
+static void invalid_parameter_noinfo() {
+    (*reinterpret_cast<void (**)()>(&mem_00925134))();
+}
+
+// Calls through the IAT slot at mem_00924FC4 (asm: push eax; push ebp; call dword ptr [0x924fc4]).
+static bool msvcp_string_equal(void* lhs, void* rhs) {
+    return (*reinterpret_cast<bool (**)(void*, void*)>(&mem_00924FC4))(lhs, rhs);
+}
+
+// @name Unknown::findElementMatchingArg
+// @class Unknown
+// @summary Scans the element-pointer range [+0x80, +0x84) and returns the first element whose vtable slot 9 result compares equal to arg (nullptr if none).
+// @field Unknown +0x80 void** elemBegin
+// @field Unknown +0x84 void** elemEnd
+void* __thiscall fn_005860B0(void* self, void* arg) {
+    void** cur = lift_field<void**>(self, 0x80);
+    void** const end = lift_field<void**>(self, 0x84);
+
+    if (!(cur <= end)) {
+        invalid_parameter_noinfo();
+    }
+
+    while (cur != end) {
+        if (!(cur < end)) {
+            invalid_parameter_noinfo();
+        }
+
+        void* obj = *cur;
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto vfn = reinterpret_cast<void* (__thiscall*)(void*, void*)>(vtbl[9]); // offset 0x24
+        void* key = vfn(obj, arg);
+
+        if (msvcp_string_equal(key, arg)) {
+            return *cur;
+        }
+
+        ++cur;
+    }
+
+    return nullptr;
+}
+} // namespace lift_005860B0

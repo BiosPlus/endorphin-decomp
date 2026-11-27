@@ -30360,6 +30360,13 @@
     "summary": "Stores depth on this node, then recursively visits each child pointer in the child vector at +0x80..+0x84, setting each child's depth+1 and its sibling index at +0x9c.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x005860B0": {
+    "name": "Unknown::findElementMatchingArg",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_00924FC4; // IAT slot: MSVCP80 std::operator==(const basic_string\u0026, const basic_string\u0026) static void invalid_parameter_noinfo()",
+    "summary": "Scans the element-pointer range [+0x80, +0x84) and returns the first element whose vtable slot 9 result compares equal to arg (nullptr if none).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x005861D0": {
     "name": "NodeWeight::sumRecursive",
     "class": "NodeWeight",

@@ -1,0 +1,28 @@
+{
+  "va": "0x005860B0",
+  "size": 134,
+  "orig_symbol": "sub_005860B0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::findElementMatchingArg",
+  "class": "Unknown",
+  "signature": "extern \"C\" int mem_00924FC4; // IAT slot: MSVCP80 std::operator==(const basic_string\u0026, const basic_string\u0026) static void invalid_parameter_noinfo()",
+  "summary": "Scans the element-pointer range [+0x80, +0x84) and returns the first element whose vtable slot 9 result compares equal to arg (nullptr if none).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "void**",
+      "name": "elemBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "void**",
+      "name": "elemEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:24:05Z"
+}
