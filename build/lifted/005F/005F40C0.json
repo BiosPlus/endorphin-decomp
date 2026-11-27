@@ -1,0 +1,22 @@
+{
+  "va": "0x005F40C0",
+  "size": 236,
+  "orig_symbol": "EffectorGroup::vfunc_22",
+  "src_path": "src/classes/EffectorGroup.cpp",
+  "lifted_path": "lifted/classes/EffectorGroup.cpp",
+  "name": "EffectorGroup::vfunc_22",
+  "class": "EffectorGroup",
+  "signature": "void __thiscall fn_005F40C0(void* self, float arg)",
+  "summary": "Forwards vfunc_22(float) to each child effector in the group, optionally filtered by global set mem_00B46790",
+  "fields": [
+    {
+      "class": "EffectorGroup",
+      "offset": "+0x2C",
+      "type": "std::vector\u003cvoid*\u003e",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:16:37Z"
+}
