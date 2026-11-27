@@ -2044,3 +2044,55 @@ uint32_t fn_0049BF70(const char* text, uint32_t esi_in) {
     return ext_006A6DE0(esi_in);
 }
 } // namespace lift_0049BF70
+
+// [0x004906D0] sub_004906D0 (129 bytes)
+namespace lift_004906D0 {
+extern int mem_00925134;
+extern int mem_009251EC;
+
+// Guest 32-bit address -> host pointer (same convention as the other lifted leaves).
+static inline void* guest_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// @name CopyRangeToBoundedTail
+// @summary Copies the byte range [src_begin, src_end) to dst (bounds-checked against container), then writes {container, dst + size} into out and returns out.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t fn_004906D0(uint32_t out, uint32_t src_begin, uint32_t src_end, uint32_t container, uint32_t dst) {
+    // Signed element count: (src_end - src_begin) >> 2 (arithmetic shift, as in the original).
+    const int32_t count = static_cast<int32_t>(src_end - src_begin) >> 2;
+    const uint32_t size = static_cast<uint32_t>(count) * 4u;
+
+    // Metadata-only: records the MSVCR80 import slots (_invalid_parameter_noinfo, memmove_s)
+    // that the original asm referenced; not a real access.
+    (void)&mem_00925134;
+    (void)&mem_009251EC;
+
+    // _invalid_parameter_noinfo paths: the original never returns from these.
+    if (container == 0) {
+        std::abort();
+    }
+
+    const uint32_t new_end = dst + size;
+    const uint32_t c_begin = lift_field<uint32_t>(guest_ptr(container), 0x04);
+    const uint32_t c_end = lift_field<uint32_t>(guest_ptr(container), 0x08);
+    if (new_end > c_end || new_end < c_begin) {
+        std::abort();
+    }
+
+    lift_field<uint32_t>(guest_ptr(out), 0x04) = new_end;
+    lift_field<uint32_t>(guest_ptr(out), 0x00) = container;
+
+    if (count > 0) {
+        if (dst >= c_end) {
+            std::abort();
+        }
+        // Original: memmove_s(dst, size, src, size); with equal sizes this is std::memmove.
+        std::memmove(guest_ptr(dst), guest_ptr(src_begin), size);
+    }
+
+    return out;
+}
+} // namespace lift_004906D0

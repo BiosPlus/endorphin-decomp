@@ -11192,6 +11192,12 @@
     "summary": "Resets the three range pointers of an 8-byte element buffer and allocates `count` elements; returns false when count is 0.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x004906D0": {
+    "name": "CopyRangeToBoundedTail",
+    "signature": "static inline void* guest_ptr(uint32_t addr)",
+    "summary": "Copies the byte range [src_begin, src_end) to dst (bounds-checked against container), then writes {container, dst + size} into out and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00490810": {
     "name": "moveRangeWithReleaseCount_00490810",
     "signature": "uint32_t fn_00490810(uint32_t first, uint32_t last, uint32_t dest)",
