@@ -1294,3 +1294,42 @@ uint32_t __cdecl sub_008592A0(const uint8_t* data, uint32_t len) {
     return eax;
 }
 } // namespace lift_008592A0
+
+// [0x00859F60]
+namespace lift_00859F60 {
+// @name AllocDataRecord
+// @summary Allocates a 16-byte record and optionally allocates a zeroed buffer of size arg1 when arg0 is null.
+// @field Record +0x04 uint32_t data_ptr
+// @field Record +0x08 uint32_t data_size
+// @field Record +0x0C uint32_t flag
+
+
+uint32_t ext_00859730(void* hMem);
+void* ext_0086CF90(uint32_t count, uint32_t size);
+uint32_t ext_0086CFB0(uint32_t arg);
+
+extern uint32_t fn_00859F60(uint32_t buf, uint32_t size) {
+    uint32_t rec = ext_0086CFB0(0);
+    if (rec == 0) {
+        return 0;
+    }
+
+    void* rec_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(rec));
+
+    uint32_t data = buf;
+    if (data == 0) {
+        lift_field<uint32_t>(rec_ptr, 0x0C) = 0;
+        if (size != 0) {
+            data = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_0086CF90(size, 1)));
+            if (data == 0) {
+                ext_00859730(rec_ptr);
+                return 0;
+            }
+        }
+    }
+
+    lift_field<uint32_t>(rec_ptr, 0x04) = data;
+    lift_field<uint32_t>(rec_ptr, 0x08) = size;
+    return rec;
+}
+} // namespace lift_00859F60
