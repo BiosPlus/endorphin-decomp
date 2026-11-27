@@ -16834,6 +16834,13 @@
     "summary": "Copy-constructs the string at index field_0x43C of the 28-byte-element vector at +0x444 into *out; returns an empty-literal string when the index is out of range.",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004D40E0": {
+    "name": "IndexedStringElementOrFallback",
+    "class": "Owner",
+    "signature": "void* fn_004D40E0(void* self, void* ret)",
+    "summary": "Returns std::string copy of element[index] of the 28-byte-element vector at +0x454 (index in +0x440), or a fallback string when the index is out of range or the vector is empty.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D41C0": {
     "name": "Unknown::getStringElement (descriptive; owner class not yet identified)",
     "class": "Unknown",

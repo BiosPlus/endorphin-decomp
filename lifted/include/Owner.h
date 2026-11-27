@@ -23,7 +23,11 @@ struct Owner_Fields {
     // +0x160 void*                    listHead  (evidence: 0x005BED50)
     // +0x164 uint32_t                 subobject  (evidence: 0x005C39F0)
     // +0x43C int32_t                  index  (evidence: 0x004D4060)
+    // +0x440 int32_t                  field_0x440  (evidence: 0x004D40E0)
     // +0x448 int32_t                  vector_begin  (evidence: 0x004D4060)
     // +0x44C int32_t                  vector_end  (evidence: 0x004D4060)
+    // +0x454 void*                    vec28  (evidence: 0x004D40E0)
+    // +0x458 uint8_t*                 field_0x458  (evidence: 0x004D40E0)
+    // +0x45C uint8_t*                 field_0x45C  (evidence: 0x004D40E0)
 };
 } // namespace lifted_layout

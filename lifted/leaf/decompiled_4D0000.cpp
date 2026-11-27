@@ -572,3 +572,50 @@ std::string* fn_004D4060(void* self, std::string* out) {
     return new (out) std::string(fallback);
 }
 } // namespace lift_004D4060
+
+// [0x004D40E0] sub_004D40E0 (121 bytes)
+namespace lift_004D40E0 {
+// Known callee 0x0041CCC0: Vector28::at (Checked element access for a 28-byte element vector)
+extern void* ext_0041CCC0(void* self, uint32_t index);
+extern int mem_00924FE0;
+extern int mem_00A34650;
+extern int mem_00924FE4;
+
+// @name IndexedStringElementOrFallback
+// @class Owner
+// @summary Returns std::string copy of element[index] of the 28-byte-element vector at +0x454 (index in +0x440), or a fallback string when the index is out of range or the vector is empty.
+// @field Owner +0x440 int32_t field_0x440
+// @field Owner +0x454 void* vec28
+// @field Owner +0x458 uint8_t* field_0x458
+// @field Owner +0x45C uint8_t* field_0x45C
+void* fn_004D40E0(void* self, void* ret) {
+    // Import slots for MSVCP80 std::string constructors (copy-ctor, ctor from const char*).
+    using StrCtorFromStr = void(__thiscall*)(void* self_, const void* src);
+    using StrCtorFromCStr = void(__thiscall*)(void* self_, const void* src);
+
+    int32_t index = lift_field<int32_t>(self, 0x440);
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x458);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x45C);
+
+    // Element count = (end - begin) / 28; null begin yields count 0.
+    // Valid index is 0 .. count-1, checked as signed compare; index < 0 is never valid here.
+    int32_t count = 0;
+    if (begin != nullptr) {
+        count = static_cast<int32_t>(end - begin) / 28;
+    }
+    int32_t last_index = count - 1;
+
+    if (index < 0 || index > last_index) {
+        // Fallback: construct from the string literal pointer stored at mem_00A34650.
+        const void* fallback = reinterpret_cast<const void*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00A34650)));
+        auto ctor = *reinterpret_cast<StrCtorFromCStr*>(&mem_00924FE4);
+        ctor(ret, fallback);
+        return ret;
+    }
+
+    void* elem = ext_0041CCC0(static_cast<uint8_t*>(self) + 0x454,static_cast<uint32_t>(index));
+    auto copy_ctor = *reinterpret_cast<StrCtorFromStr*>(&mem_00924FE0);
+    copy_ctor(ret, elem);
+    return ret;
+}
+} // namespace lift_004D40E0
