@@ -19877,6 +19877,13 @@
     "summary": "Clears the StringPairList at +0x18, zeroes two counters, then erases the [first,last) int32 range of the sub-object at +0x08 (with validity checks).",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F02A0": {
+    "name": "StringPairList::clearAndReleaseHandle",
+    "class": "StringPairList",
+    "signature": "void fn_004F02A0(void* self)",
+    "summary": "Clears the string pair list, passes the value at +0x04 to MFC80 ord_764, then zeroes +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F0340": {
     "name": "Unknown::eraseRange8 (descriptive; owner class not yet identified)",
     "class": "Unknown",
