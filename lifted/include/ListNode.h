@@ -14,7 +14,7 @@ struct ListNode_Fields {
     // +0x0   uint32_t                 key  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t next (previous head of bucket list)  (evidence: 0x007F0B30) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 next  (evidence: 0x0049DB60) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    next  (evidence: 0x00456C70, 0x0049BEE0, 0x0049DBA0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    next  (evidence: 0x00456C70, 0x0049BEE0, 0x0049DBA0, 0x005BED50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    prev  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint8_t*                 field_0x04  (evidence: 0x007AF8F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    next  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x4
@@ -34,6 +34,7 @@ struct ListNode_Fields {
     // +0x14  void*                    field_0x14  (evidence: 0x007B8D80) // CONFLICT: multiple definitions at +0x14
     // +0x14  DWORD                    next  (evidence: 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x14
     // +0x24  std::string              key  (evidence: 0x0049DB60)
+    // +0x28  void*                    peer  (evidence: 0x005BED50)
     // +0x2D  uint8_t                  isNil  (evidence: 0x005E0060)
 };
 } // namespace lifted_layout

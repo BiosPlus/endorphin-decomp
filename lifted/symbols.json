@@ -10983,6 +10983,13 @@
     "summary": "Validates that self-\u003e+0x0 is non-null, then returns the index at self-\u003e+0x4 after checking it is below the uint32 at (self-\u003e+0x0)-\u003e+0x8; calls the CRT invalid-parameter handler on either failure.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00492BC0": {
+    "name": "TreeConstIterator::increment",
+    "class": "TreeConstIterator",
+    "signature": "void __thiscall sub_00492BC0(void* self)",
+    "summary": "Advances an MSVC8 red-black tree iterator to the next in-order node.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00492C60": {
     "name": "AllocRecordFromParts",
     "class": "Record",
@@ -32405,6 +32412,13 @@
     "signature": "void fn_005BE2C0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BED50": {
+    "name": "forwardToPeersInList",
+    "class": "Owner",
+    "signature": "void fn_005BED50(void* self, void* arg)",
+    "summary": "Walks the intrusive list headed at this+0x160 and forwards the argument to each node's peer at +0x28.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
   "0x005C0E00": {
     "name": "NMData::MetaBodyData::vfunc_6",

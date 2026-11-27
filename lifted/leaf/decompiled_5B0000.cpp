@@ -1019,3 +1019,37 @@ void fn_005B1870(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_005B1870
+
+// [0x005BED50] sub_005BED50 (120 bytes)
+namespace lift_005BED50 {
+// Known callee 0x005C40C0: ForwardToPeerIfAccepted (If field +0x16C is set and the peer's virtual slot 0xEC accepts it, forwards the peer's +0x16C into the delegate thunk.)
+extern void ext_005C40C0(void* self, void* peer);
+// Known callee 0x00673C20: sub_00673C20 (Auto-lifted identical-shape clone of 0x00667030 (advanceCursorSkipFlagged).)
+extern void ext_00673C20(void* self);
+// IAT slot for _invalid_parameter_noinfo (debug iterator asserts, dropped). Metadata-only reference.
+extern int mem_00925134;
+
+// @name forwardToPeersInList
+// @class Owner
+// @summary Walks the intrusive list headed at this+0x160 and forwards the argument to each node's peer at +0x28.
+// @field Owner +0x160 void* listHead
+// @field ListNode +0x00 void* next
+// @field ListNode +0x28 void* peer
+void fn_005BED50(void* self, void* arg) {
+    (void)&mem_00925134;
+
+    // Sentinel head node of the list stored at self+0x160.
+    void* const head = lift_field<void*>(self, 0x160);
+
+    // Iterator pair mirrored from the stack locals: [0] = address of self+0x15C (container), [1] = current node.
+    void* iter[2];
+    iter[0] = static_cast<uint8_t*>(self) + 0x15C;
+    iter[1] = *static_cast<void**>(head);
+
+    while (iter[1] != head) {
+        void* const peer = lift_field<void*>(iter[1], 0x28);
+        ext_005C40C0(peer, arg);
+        ext_00673C20(iter);
+    }
+}
+} // namespace lift_005BED50
