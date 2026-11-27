@@ -1,0 +1,22 @@
+{
+  "va": "0x0078BD50",
+  "size": 135,
+  "orig_symbol": "sub_0078BD50",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "ReadLine",
+  "class": "ReaderBase",
+  "signature": "extern \"C++\" char* __thiscall fn_0078BD50(void* self, char* buf, int maxLen)",
+  "summary": "Reads up to maxLen-1 bytes one at a time via vtable slot +0x14 (read(dst, 1)), stopping after '\\n'; NUL-terminates. Returns buf, or nullptr on read failure or maxLen \u003c= 0.",
+  "fields": [
+    {
+      "class": "ReaderBase",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:26:55Z"
+}

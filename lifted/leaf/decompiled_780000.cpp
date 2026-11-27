@@ -2409,3 +2409,41 @@ void fn_0078CC90(void) {
     mem_00B60DBC = nullptr;
 }
 } // namespace lift_0078CC90
+
+// [0x0078BD50]
+namespace lift_0078BD50 {
+// @name ReadLine
+// @class ReaderBase
+// @summary Reads up to maxLen-1 bytes one at a time via vtable slot +0x14 (read(dst, 1)), stopping after '\n'; NUL-terminates. Returns buf, or nullptr on read failure or maxLen <= 0.
+// @field ReaderBase +0x00 void** vtable
+
+extern "C++" char* __thiscall fn_0078BD50(void* self, char* buf, int maxLen) {
+    if (maxLen <= 0) {
+        return nullptr;
+    }
+    if (maxLen == 1) {
+        buf[0] = '\0';
+        return buf;
+    }
+
+    using ReadFn = int(__thiscall*)(void* self, char* dst, int count);
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto read = reinterpret_cast<ReadFn>(vtable[5]);
+
+    const int limit = maxLen - 1;
+    int i = 0;
+    for (; i < limit; ++i) {
+        char* p = buf + i;
+        if (read(self, p, 1) != 1) {
+            buf[i] = '\0';
+            return nullptr;
+        }
+        if (*p == '\n') {
+            buf[i + 1] = '\0';
+            return buf;
+        }
+    }
+    buf[i] = '\0';
+    return buf;
+}
+} // namespace lift_0078BD50
