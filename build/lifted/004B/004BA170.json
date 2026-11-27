@@ -1,0 +1,21 @@
+{
+  "va": "0x004BA170",
+  "size": 94,
+  "orig_symbol": "sub_004BA170",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004BA170_dtor",
+  "signature": "extern \"C\" void __fastcall fn_004BA170(void* self)",
+  "summary": "Destructor that destroys and frees the std::string at +0x18 if non-null, then resets base vtable via ext_00665810.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:52:28Z"
+}

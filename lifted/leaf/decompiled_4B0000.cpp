@@ -1112,3 +1112,22 @@ void* __thiscall sub_004B7340(void* self, uint32_t index) {
     return mem_00924FDC(dst, src);
 }
 } // namespace lift_004B7340
+
+// [0x004BA170]
+namespace lift_004BA170 {
+void __fastcall ext_00665810(void* self);
+void ext_006A5C5C(void* ptr);
+extern void (__fastcall *mem_00924FF4)(void* self);
+
+// @name sub_004BA170_dtor
+// @summary Destructor that destroys and frees the std::string at +0x18 if non-null, then resets base vtable via ext_00665810.
+// @field Unknown +0x18 void* field_0x18
+extern void __fastcall fn_004BA170(void* self) {
+    void* str_ptr = lift_field<void*>(self, 0x18);
+    if (str_ptr != nullptr) {
+        mem_00924FF4(str_ptr);
+        ext_006A5C5C(str_ptr);
+    }
+    ext_00665810(self);
+}
+} // namespace lift_004BA170
