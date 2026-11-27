@@ -13,15 +13,16 @@ struct NMData_AnimationEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004D3CB0, 0x004DDED0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x004C28F0, 0x004DE1B0) // CONFLICT: multiple definitions at +0x0
     // +0x14  void*                    field_0x14  (evidence: 0x004BF800, 0x004C1A80, 0x004DE1E0)
-    // +0x15C int32_t                  field_0x15c  (evidence: 0x004DE0F0)
-    // +0x160 int32_t                  field_0x160  (evidence: 0x004E2760)
+    // +0x15C int32_t                  field_0x15c  (evidence: 0x004DE0F0, 0x004E1A00)
+    // +0x160 int32_t                  field_0x160  (evidence: 0x004E1A00, 0x004E2760)
     // +0x168 int32_t                  field_0x168  (evidence: 0x00486BE0, 0x004BFBE0, 0x004DE0F0)
-    // +0x17C uint8_t                  field_0x17c  (evidence: 0x004E2760)
+    // +0x17C uint8_t                  field_0x17c  (evidence: 0x004E1A00, 0x004E2760)
     // +0x9A0 int32_t                  field_0x9a0  (evidence: 0x004DE0F0)
     // +0x9B0 uint8_t[16]              field_0x9b0  (evidence: 0x004E2700)
     // +0x9C0 uint32_t                 field_0x9c0  (evidence: 0x004E2700)
     // +0x9C4 uint32_t                 field_0x9c4  (evidence: 0x004E2700)
     // +0x9CC int32_t                  field_0x9cc  (evidence: 0x004E2760)
-    // +0xB74 int32_t                  field_0xb74  (evidence: 0x004E2760)
+    // +0xB74 int32_t                  field_0xb74  (evidence: 0x004E2760) // CONFLICT: multiple definitions at +0xB74
+    // +0xB74 void*                    field_0xb74  (evidence: 0x004E1A00) // CONFLICT: multiple definitions at +0xB74
 };
 } // namespace lifted_layout

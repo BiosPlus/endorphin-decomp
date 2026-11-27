@@ -1,0 +1,40 @@
+{
+  "va": "0x004E1A00",
+  "size": 108,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_0_off_180",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_0_off_180",
+  "class": "NMData::AnimationEventData",
+  "signature": "void __thiscall fn_004E1A00(void* self, void* arg0)",
+  "summary": "Handles frame buffer tick events by validating the iterator, checking frame bounds, and forwarding the computed record.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0xB74",
+      "type": "void*",
+      "name": "field_0xb74"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:40:52Z"
+}

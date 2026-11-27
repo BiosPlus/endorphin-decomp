@@ -496,3 +496,56 @@ void __thiscall fn_004C28F0(void* self, const void* str_arg) {
     reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(local_str);
 }
 } // namespace lift_004C28F0
+
+// [0x004E1A00]
+namespace lift_004E1A00 {
+// @name NMData::AnimationEventData::vfunc_0_off_180
+// @class NMData::AnimationEventData
+// @summary Handles frame buffer tick events by validating the iterator, checking frame bounds, and forwarding the computed record.
+// @field NMData::AnimationEventData +0x15C int32_t field_0x15c
+// @field NMData::AnimationEventData +0x160 int32_t field_0x160
+// @field NMData::AnimationEventData +0x17C uint8_t field_0x17c
+// @field NMData::AnimationEventData +0xB74 void* field_0xb74
+
+
+extern uint32_t mem_00925134;
+extern void __thiscall ext_004DE330(void* self, const void* src);
+extern void ext_00479550();
+extern void __thiscall ext_00481BD0(void* self, uint32_t value);
+
+void __thiscall fn_004E1A00(void* self, void* arg0) {
+    (void)ext_00479550;
+    (void)ext_00481BD0;
+    uint8_t* esi = reinterpret_cast<uint8_t*>(self);
+    void* target = lift_field<void*>(esi, 0x9F4);
+    if (!target) {
+        return;
+    }
+    if (lift_field<uint8_t>(esi, -0x4) == 0) {
+        return;
+    }
+
+    auto invalid_parameter_noinfo = reinterpret_cast<void(__cdecl*)()>(static_cast<uintptr_t>(mem_00925134));
+    uint8_t* edi = reinterpret_cast<uint8_t*>(arg0);
+
+    if (lift_field<uint32_t>(edi, 0x8) == 0) {
+        invalid_parameter_noinfo();
+    }
+    uint8_t* container = lift_field<uint8_t*>(edi, 0x8);
+    uint8_t* node = lift_field<uint8_t*>(edi, 0xC);
+    if (reinterpret_cast<uintptr_t>(node) == lift_field<uint32_t>(container, 0x4)) {
+        invalid_parameter_noinfo();
+    }
+
+    node = lift_field<uint8_t*>(edi, 0xC);
+    int32_t val = lift_field<int32_t>(node, 0x8) - 1;
+    if (val > lift_field<int32_t>(esi, -0x24) && val <= lift_field<int32_t>(esi, -0x20)) {
+        uint8_t* subobj = esi - 0x17C;
+        void** vtable = *reinterpret_cast<void***>(subobj);
+        auto vfunc = reinterpret_cast<const void*(__thiscall*)(void*, void*)>(vtable[5]);
+        target = lift_field<void*>(esi, 0x9F4);
+        const void* record = vfunc(subobj, edi);
+        ext_004DE330(target, record);
+    }
+}
+} // namespace lift_004E1A00
