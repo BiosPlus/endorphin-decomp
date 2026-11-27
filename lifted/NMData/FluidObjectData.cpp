@@ -275,3 +275,96 @@ void* __thiscall fn_005CC6C0(void* self, void* arg1) {
     return result;
 }
 } // namespace lift_005CC6C0
+
+// [0x005C4520] NMData::FluidObjectData::vfunc_21 (452 bytes)
+namespace lift_005C4520 {
+// Base-class vfunc_21 (NMData::CollisionModelDataBase::vfunc_21), thiscall with one stack arg.
+extern void ext_0058F630(void* self, void* arg);
+// sub_0063EFE0: thiscall on container (ecx), one stack arg (C-string name); returns item or sentinel.
+extern void* ext_0063EFE0(void* container, const char* name);
+// sub_00427640: cdecl helper, two stack args (arg0 = this+0x160, obj = address of item slot).
+extern void ext_00427640(void* arg0, void* obj);
+// sub_004275E0 (assignVirtualString): cdecl, (dst, obj).
+extern void ext_004275E0(void* dst, void* obj);
+// sub_0063F530: thiscall on container (ecx) with three stack args (value, 0, 1); returns item or sentinel.
+extern void* ext_0063F530(void* container, void* value, uint32_t zero, uint32_t one);
+// AssignStringAndSetFlag: thiscall on target (ecx), one stack arg (const std::string&).
+extern void ext_005B18E0(void* self, void* src);
+// Unknown::ctor_005B3500: thiscall on freshly allocated object, returns this.
+extern void* ext_005B3500(void* self);
+// sub_005B5E50: thiscall on target (ecx), one stack arg.
+extern void ext_005B5E50(void* self, void* arg);
+// thunk_MFC80_ord_762 (operator new): cdecl, one stack arg (size).
+extern void* ext_006A5C62(size_t size);
+
+extern uintptr_t mem_00A9EF58;
+extern uintptr_t mem_00A9F570;
+extern uintptr_t mem_00A9F724;
+extern uintptr_t mem_00A9F7B8;
+extern uintptr_t mem_00924FE4;
+extern uintptr_t mem_00924FF4;
+
+namespace {
+// Sentinel "not found" results returned by the item-lookup helpers.
+bool is_missing_sentinel(const void* p) {
+    const auto v = reinterpret_cast<uintptr_t>(p);
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+} // namespace
+
+// @name NMData::FluidObjectData::vfunc_21
+// @class NMData::FluidObjectData
+// @summary Looks up two named items (via sub_0063EFE0 / sub_0063F530) and copies the first's string into this+0x17C; if the third lookup finds an item, replaces the owned object at this+0x15C with a freshly constructed one and hands it the string and the final lookup result.
+// @field NMData::FluidObjectData +0x158 void* field_0x158
+// @field NMData::FluidObjectData +0x15C void* field_0x15c
+// @field NMData::FluidObjectData +0x160 uint8_t field_0x160
+// @field NMData::FluidObjectData +0x17C std::string field_0x17c
+void __thiscall fn_005C4520(void* self, void* arg) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    ext_0058F630(self, arg);
+
+    void* item1 = ext_0063EFE0(arg, reinterpret_cast<const char*>(mem_00A9F724));
+    ext_00427640(base + 0x160, &item1);
+
+    void* item2 = ext_0063EFE0(arg, reinterpret_cast<const char*>(mem_00A9F7B8));
+    ext_004275E0(base + 0x17C, item2);
+
+    void* found = ext_0063F530(arg, reinterpret_cast<void*>(mem_00A9EF58), 0, 1);
+    if (is_missing_sentinel(found)) {
+        return;
+    }
+
+    void* created = nullptr;
+    if (void* raw = ext_006A5C62(0x4C)) {
+        created = ext_005B3500(raw);
+    }
+
+    void* old = lift_field<void*>(self, 0x15C);
+    if (created != old && old != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(old);
+        using ScalarDeleteFn = void(__thiscall*)(void*, uint32_t);
+        reinterpret_cast<ScalarDeleteFn>(vtbl[0])(old, 1);
+    }
+
+    lift_field<void*>(self, 0x15C) = created;
+    lift_field<void*>(created, 0x48) = (self != nullptr) ? static_cast<void*>(base + 0x158) : nullptr;
+
+    // Build a temporary std::string from the literal at mem_00A9F570 (MSVC std::string is 28 bytes).
+    uint32_t name_buf[7]{};
+    auto str_ctor = reinterpret_cast<void(__thiscall*)(void*, const char*)>(mem_00924FE4);
+    str_ctor(name_buf, reinterpret_cast<const char*>(mem_00A9F570));
+
+    ext_005B18E0(lift_field<void*>(self, 0x15C), name_buf);
+
+    auto str_dtor = reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4);
+    str_dtor(name_buf);
+
+    void* found2 = ext_0063F530(arg, reinterpret_cast<void*>(mem_00A9EF58), 0, 1);
+    void* final_arg = is_missing_sentinel(found2)
+                          ? reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B53B30u))
+                          : found2;
+    ext_005B5E50(lift_field<void*>(self, 0x15C), final_arg);
+}
+} // namespace lift_005C4520

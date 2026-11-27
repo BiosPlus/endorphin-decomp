@@ -47320,6 +47320,13 @@
     "summary": "Assigns a string literal to the member std::string at +0x17c, clears the flag at +0x198, then forwards to the base NMData::CollisionModelDataBase::vfunc_33.",
     "lifted_path": "lifted/NMData/FluidObjectData.cpp"
   },
+  "0x005C4520": {
+    "name": "NMData::FluidObjectData::vfunc_21",
+    "class": "NMData::FluidObjectData",
+    "signature": "bool is_missing_sentinel(const void* p)",
+    "summary": "Looks up two named items (via sub_0063EFE0 / sub_0063F530) and copies the first's string into this+0x17C; if the third lookup finds an item, replaces the owned object at this+0x15C with a freshly constructed one and hands it the string and the final lookup result.",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
+  },
   "0x005C4780": {
     "name": "sub_005C4780",
     "class": "Unknown",

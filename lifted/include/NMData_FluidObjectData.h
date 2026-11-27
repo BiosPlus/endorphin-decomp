@@ -14,8 +14,10 @@ struct NMData_FluidObjectData_Fields {
     // +0x14  std::string              field_0x14  (evidence: 0x005C32E0)
     // +0x74  uint32_t                 field_0x74  (evidence: 0x005CCF60)
     // +0x78  uint32_t                 field_0x78  (evidence: 0x005CCF60)
-    // +0x158 void*                    field_0x158  (evidence: 0x005CC490, 0x005CC6C0, 0x005CCF60)
-    // +0x17C std::string              field_0x17c  (evidence: 0x005C44A0)
+    // +0x158 void*                    field_0x158  (evidence: 0x005C4520, 0x005CC490, 0x005CC6C0, 0x005CCF60)
+    // +0x15C void*                    field_0x15c  (evidence: 0x005C4520)
+    // +0x160 uint8_t                  field_0x160  (evidence: 0x005C4520)
+    // +0x17C std::string              field_0x17c  (evidence: 0x005C44A0, 0x005C4520)
     // +0x198 u32                      field_0x198  (evidence: 0x005C44A0)
 };
 } // namespace lifted_layout
