@@ -43072,6 +43072,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005AAAB0 (NMData::SourceRigNode::vfunc_59).",
     "lifted_path": "lifted/NMData/TargetRigNode.cpp"
   },
+  "0x005AAB90": {
+    "name": "NMData::RigNode::vfunc_21",
+    "class": "NMData::RigNode",
+    "signature": "void __thiscall fn_005AAB90(void* self, void* arg)",
+    "summary": "Looks up named items in the owning container, caches a table index at +0x154, and copies float triples into +0x158..+0x16C.",
+    "lifted_path": "lifted/NMData/RigNode.cpp"
+  },
   "0x005AAD10": {
     "name": "ObjectWithChild::SetValueFromStringKey",
     "class": "ObjectWithChild",

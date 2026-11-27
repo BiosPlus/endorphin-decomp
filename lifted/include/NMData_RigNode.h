@@ -13,9 +13,18 @@ struct NMData_RigNode_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x005ABC10)
     // +0x4   void*                    field_0x04  (evidence: 0x005ABC10)
     // +0xC   void*                    field_0x0C  (evidence: 0x005ABC10)
-    // +0x154 uint32_t                 field_0x154  (evidence: 0x005AA900)
-    // +0x158 uint8_t                  field_0x158  (evidence: 0x005AA900)
-    // +0x164 uint8_t                  field_0x164  (evidence: 0x005AA900)
+    // +0x154 int32_t                  field_0x154  (evidence: 0x005AAB90) // CONFLICT: multiple definitions at +0x154
+    // +0x154 uint32_t                 field_0x154  (evidence: 0x005AA900) // CONFLICT: multiple definitions at +0x154
+    // +0x158 float                    field_0x158  (evidence: 0x005AAB90) // CONFLICT: multiple definitions at +0x158
+    // +0x158 uint8_t                  field_0x158  (evidence: 0x005AA900) // CONFLICT: multiple definitions at +0x158
+    // +0x15C float                    field_0x15C  (evidence: 0x005AAB90)
+    // +0x160 float                    field_0x160  (evidence: 0x005AAB90)
+    // +0x164 float                    field_0x164  (evidence: 0x005AAB90) // CONFLICT: multiple definitions at +0x164
+    // +0x164 uint8_t                  field_0x164  (evidence: 0x005AA900) // CONFLICT: multiple definitions at +0x164
+    // +0x168 float                    field_0x168  (evidence: 0x005AAB90)
+    // +0x16C float                    field_0x16C  (evidence: 0x005AAB90)
+    // +0x170 std::string              field_0x170  (evidence: 0x005AAB90)
+    // +0x18C uint8_t                  field_0x18C  (evidence: 0x005AAB90)
     // +0x190 void*                    field_0x190  (evidence: 0x005AA900)
 };
 } // namespace lifted_layout

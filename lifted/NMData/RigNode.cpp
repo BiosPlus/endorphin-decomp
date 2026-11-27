@@ -141,3 +141,95 @@ void* fn_005ABC10(void* self, void* frame_slot_0x24) {
     return peer;
 }
 } // namespace lift_005ABC10
+
+// [0x005AAB90] NMData::RigNode::vfunc_21 (384 bytes)
+namespace lift_005AAB90 {
+// Known callee 0x004275E0: assignVirtualString (cdecl; copies the string returned by obj's vtable[2] into dst)
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+// Known callee 0x00427640: checkStringEqualsConst (cdecl; two stack args, obj at +0x18c and out-bool pointer)
+extern void __cdecl ext_00427640(void* obj, uint8_t* out);
+// Callee 0x0058F630: NMData::CollisionModelDataBase::vfunc_21 (thiscall on the original this, one stack arg; result unused)
+extern void __thiscall ext_0058F630(void* self, void* arg);
+// Known callee 0x005AAA00: FindStringInTable (thiscall on this; key pointer; returns table index or 0)
+extern int32_t __thiscall ext_005AAA00(void* self, const void* key);
+// Known callee 0x0063EFE0: sub_0063EFE0 (thiscall on container; C-string name; returns item pointer or sentinel)
+extern void* __thiscall ext_0063EFE0(void* self, const char* name);
+// Known callee 0x0063F530: sub_0063F530 (thiscall on container; key, 0, 1; returns a sentinel-or-value code)
+extern uint32_t __thiscall ext_0063F530(void* self, uintptr_t key, int a, int b);
+// Known callee 0x0067EFD0: sub_0067EFD0 (cdecl; out slot and key; returns pointer to a float triple)
+extern const float* __cdecl ext_0067EFD0(void* out, uintptr_t key);
+// MSVC std::string destructor, reached through the import slot at 0x00924FF4
+extern int mem_00924FF4;
+// Data cells holding C-string / key pointers
+extern int mem_00A9F6BC;
+extern int mem_00A9F7F4;
+extern int mem_00A9F1B8;
+extern int mem_00A9ED1C;
+
+// @name NMData::RigNode::vfunc_21
+// @class NMData::RigNode
+// @summary Looks up named items in the owning container, caches a table index at +0x154, and copies float triples into +0x158..+0x16C.
+// @field NMData::RigNode +0x154 int32_t field_0x154
+// @field NMData::RigNode +0x158 float field_0x158
+// @field NMData::RigNode +0x15C float field_0x15C
+// @field NMData::RigNode +0x160 float field_0x160
+// @field NMData::RigNode +0x164 float field_0x164
+// @field NMData::RigNode +0x168 float field_0x168
+// @field NMData::RigNode +0x16C float field_0x16C
+// @field NMData::RigNode +0x170 std::string field_0x170
+// @field NMData::RigNode +0x18C uint8_t field_0x18C
+void __thiscall fn_005AAB90(void* self, void* arg) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Sentinel codes returned by sub_0063F530 are folded to one value before use.
+    const auto normalize = [](uint32_t r) -> uint32_t {
+        if (r == 0x00B53A34u || r == 0x00B53B30u || r == 0x00B53AB0u ||
+            r == 0x00B53A70u || r == 0x00B53AF0u) {
+            return 0x00B53B30u;
+        }
+        return r;
+    };
+
+    ext_0058F630(self, arg);
+
+    // Item A: vtable[2] yields a temporary std::string (sret into tmp), whose address is the key.
+    const char* nameA = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F6BC));
+    void* itemA = ext_0063EFE0(arg, nameA);
+    alignas(8) uint8_t tmp[0x1C];
+    void** vtblA = *static_cast<void***>(itemA);
+    auto vfnA = reinterpret_cast<void* (__thiscall*)(void*, void*)>(vtblA[2]);
+    void* keyA = vfnA(itemA, tmp);
+    lift_field<int32_t>(self, 0x154) = ext_005AAA00(self, keyA);
+
+    // Destroy the temporary std::string through the import slot.
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(tmp);
+
+    // Item C: assign its string into self+0x170.
+    const char* nameC = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F7F4));
+    void* itemC = ext_0063EFE0(arg, nameC);
+    ext_004275E0(base + 0x170, itemC);
+
+    // Item D: its address is stored in a slot that the string check writes a bool into.
+    void* itemD = ext_0063EFE0(arg, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0095EF48u)));
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(itemD));
+    ext_00427640(base + 0x18C, reinterpret_cast<uint8_t*>(&slot));
+
+    // First float triple -> +0x158, +0x15C, +0x160.
+    const char* keyB = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F1B8));
+    uint32_t r1 = normalize(ext_0063F530(arg, reinterpret_cast<uintptr_t>(keyB), 0, 1));
+    uint32_t scratch1 = 0;
+    const float* p1 = ext_0067EFD0(&scratch1, r1);
+    lift_field<float>(self, 0x158) = p1[0];
+    lift_field<float>(self, 0x15C) = p1[1];
+    lift_field<float>(self, 0x160) = p1[2];
+
+    // Second float triple -> +0x164, +0x168, +0x16C.
+    uint32_t r2 = normalize(ext_0063F530(arg, static_cast<uintptr_t>(mem_00A9ED1C), 0, 1));
+    uint32_t scratch2 = 0;
+    const float* p2 = ext_0067EFD0(&scratch2, r2);
+    lift_field<float>(self, 0x164) = p2[0];
+    lift_field<float>(self, 0x168) = p2[1];
+    lift_field<float>(self, 0x16C) = p2[2];
+}
+} // namespace lift_005AAB90

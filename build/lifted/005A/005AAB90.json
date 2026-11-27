@@ -1,0 +1,70 @@
+{
+  "va": "0x005AAB90",
+  "size": 384,
+  "orig_symbol": "NMData::RigNode::vfunc_21",
+  "src_path": "src/NMData/RigNode.cpp",
+  "lifted_path": "lifted/NMData/RigNode.cpp",
+  "name": "NMData::RigNode::vfunc_21",
+  "class": "NMData::RigNode",
+  "signature": "void __thiscall fn_005AAB90(void* self, void* arg)",
+  "summary": "Looks up named items in the owning container, caches a table index at +0x154, and copies float triples into +0x158..+0x16C.",
+  "fields": [
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x154",
+      "type": "int32_t",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x158",
+      "type": "float",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x15C",
+      "type": "float",
+      "name": "field_0x15C"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x160",
+      "type": "float",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x164",
+      "type": "float",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x168",
+      "type": "float",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x16C",
+      "type": "float",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x170",
+      "type": "std::string",
+      "name": "field_0x170"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x18C",
+      "type": "uint8_t",
+      "name": "field_0x18C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:38:58Z"
+}
