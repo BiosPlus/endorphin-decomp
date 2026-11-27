@@ -46763,6 +46763,12 @@
     "summary": "Takes the positions of the first two child sensors, builds a cross-product frame from them and a reference offset, and stores the derived plane terms (doubles at +0x58..+0x70) plus the cached positions (+0x78, +0x84).",
     "lifted_path": "lifted/Sensors/CompoundSensorHorizontalPlane.cpp"
   },
+  "0x00630390": {
+    "name": "sub_00630390",
+    "signature": "void __thiscall sub_00630390(void* self, const float* vec)",
+    "summary": "Copies a 3D vector, normalizes it via ext_0067B7F0, scales it by a float retrieved from a virtual call on field_0x4, and stores the result at +0x9c..+0xa4.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x00630420": {
     "name": "scaleVec3At0x144ByReciprocalOfQuery",
     "class": "Unknown",

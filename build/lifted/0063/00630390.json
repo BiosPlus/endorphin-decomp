@@ -1,0 +1,39 @@
+{
+  "va": "0x00630390",
+  "size": 131,
+  "orig_symbol": "sub_00630390",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "sub_00630390",
+  "signature": "void __thiscall sub_00630390(void* self, const float* vec)",
+  "summary": "Copies a 3D vector, normalizes it via ext_0067B7F0, scales it by a float retrieved from a virtual call on field_0x4, and stores the result at +0x9c..+0xa4.",
+  "fields": [
+    {
+      "class": "void",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x4"
+    },
+    {
+      "class": "void",
+      "offset": "+0x9C",
+      "type": "float",
+      "name": "field_0x9c"
+    },
+    {
+      "class": "void",
+      "offset": "+0xA0",
+      "type": "float",
+      "name": "field_0xa0"
+    },
+    {
+      "class": "void",
+      "offset": "+0xA4",
+      "type": "float",
+      "name": "field_0xa4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:25:01Z"
+}

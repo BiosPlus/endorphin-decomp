@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct void_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x00519100)
+    // +0x4   void*                    field_0x4  (evidence: 0x00630390)
     // +0x10  DWORD                    field_0x10  (evidence: 0x0041D350, 0x004407B0, 0x00441020, 0x0044B6A0, 0x00548260)
     // +0x34  uint32_t                 field_0x34  (evidence: 0x00519100)
     // +0x38  uint32_t                 field_0x38  (evidence: 0x00519100)
@@ -23,5 +24,8 @@ struct void_Fields {
     // +0x68  uint32_t                 field_0x68  (evidence: 0x00519100)
     // +0x6C  uint32_t                 field_0x6C  (evidence: 0x00519100)
     // +0x98  int                      state  (evidence: 0x00455CD0)
+    // +0x9C  float                    field_0x9c  (evidence: 0x00630390)
+    // +0xA0  float                    field_0xa0  (evidence: 0x00630390)
+    // +0xA4  float                    field_0xa4  (evidence: 0x00630390)
 };
 } // namespace lifted_layout

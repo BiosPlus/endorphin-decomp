@@ -1554,3 +1554,36 @@ __thiscall void* fn_0063E770(void* self, const void* src) {
     return self;
 }
 } // namespace lift_0063E770
+
+// [0x00630390]
+namespace lift_00630390 {
+// @name sub_00630390
+// @summary Copies a 3D vector, normalizes it via ext_0067B7F0, scales it by a float retrieved from a virtual call on field_0x4, and stores the result at +0x9c..+0xa4.
+// @field void +0x04 void* field_0x4
+// @field void +0x9c float field_0x9c
+// @field void +0xa0 float field_0xa0
+// @field void +0xa4 float field_0xa4
+
+extern float* __thiscall ext_0067B7F0(void* self);
+
+void __thiscall sub_00630390(void* self, const float* vec) {
+    float local_vec[3];
+    local_vec[0] = vec[0];
+    local_vec[1] = vec[1];
+    local_vec[2] = vec[2];
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using GetScaleFn = void(__thiscall*)(void*, float*);
+    auto get_scale = reinterpret_cast<GetScaleFn>(vtable[0x4c / sizeof(void*)]);
+
+    float scale = 0.0f;
+    get_scale(obj, &scale);
+
+    float* norm = ext_0067B7F0(local_vec);
+
+    lift_field<float>(self, 0x9c) = norm[0] * scale;
+    lift_field<float>(self, 0xa0) = norm[1] * scale;
+    lift_field<float>(self, 0xa4) = norm[2] * scale;
+}
+} // namespace lift_00630390
