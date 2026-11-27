@@ -2307,3 +2307,27 @@ void* __thiscall fn_00516EF0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, 
     return self;
 }
 } // namespace lift_00516EF0
+
+// [0x00515A80] sub_00515A80 (156 bytes)
+namespace lift_00515A80 {
+// Known callee 0x00404F00: formatIntToString (Formats an integer into a stack buffer via _snprintf and constructs a std::string.)
+extern void* ext_00404F00(void* out_str, int32_t value);
+extern void* (__thiscall* mem_00924FE4)(void* self, const char* str);   // std::string::basic_string(const char*)
+extern void* (*mem_00924FD0)(void* ret, const void* lhs, const void* rhs); // std::operator+(string, string), hidden return
+extern void (__thiscall* mem_00924FF4)(void* self);                     // std::string::~basic_string
+extern const char mem_00951B40[];                                       // string literal prefix
+
+// @name FormatIntWithLiteralPrefix
+// @summary Formats an int via formatIntToString and writes literal + formatted digits into out (std::string); returns out
+void* __stdcall fn_00515A80(void* out, int32_t value) {
+    unsigned char prefix[0x1C];  // std::string temporary (frame +0x04)
+    unsigned char digits[0x1C];  // std::string from formatIntToString (frame +0x20)
+
+    void* s = ext_00404F00(digits, value);
+    mem_00924FE4(prefix, mem_00951B40);
+    mem_00924FD0(out, prefix, s);
+    mem_00924FF4(prefix);
+    mem_00924FF4(digits);
+    return out;
+}
+} // namespace lift_00515A80
