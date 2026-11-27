@@ -1,0 +1,40 @@
+{
+  "va": "0x00459F20",
+  "size": 1610,
+  "orig_symbol": "MultiTrackView::TimeRulerMarkerTrack::vfunc_1",
+  "src_path": "src/MultiTrackView/TimeRulerMarkerTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/TimeRulerMarkerTrack.cpp",
+  "name": "MultiTrackView::TimeRulerMarkerTrack::vfunc_1",
+  "class": "MultiTrackView::TimeRulerMarkerTrack",
+  "signature": "inline T\u0026 at(void* base, std::size_t off)",
+  "summary": "Lays out time-ruler tick markers: refreshes each child marker's bounds, then computes a nice tick step from the view's time scale and emits labelled tick elements into the marker container.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TimeRulerMarkerTrack",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "MultiTrackView::TimeRulerMarkerTrack",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "MultiTrackView::TimeRulerMarkerTrack",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "view"
+    },
+    {
+      "class": "MultiTrackView::TimeRulerMarkerTrack",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:09:09Z"
+}

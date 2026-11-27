@@ -7947,6 +7947,13 @@
     "summary": "MSVC scalar deleting destructor: calls 0x00459E80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00459F20": {
+    "name": "MultiTrackView::TimeRulerMarkerTrack::vfunc_1",
+    "class": "MultiTrackView::TimeRulerMarkerTrack",
+    "signature": "inline T\u0026 at(void* base, std::size_t off)",
+    "summary": "Lays out time-ruler tick markers: refreshes each child marker's bounds, then computes a nice tick step from the view's time scale and emits labelled tick elements into the marker container.",
+    "lifted_path": "lifted/MultiTrackView/TimeRulerMarkerTrack.cpp"
+  },
   "0x0045AD70": {
     "name": "ToolsPropertyPage::vfunc_0",
     "class": "ToolsPropertyPage",
