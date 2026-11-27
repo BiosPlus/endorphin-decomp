@@ -36658,6 +36658,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00501140 (ValidatedCursorAdvance_00501140).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00556A00": {
+    "name": "Unknown::BuildNodeChain",
+    "class": "Unknown",
+    "signature": "static inline void* AsPtr(DWORD v)",
+    "summary": "Reads the owner handle at self+0x04 and, if the node's flag at +0x2D is clear, creates a record from the node's payload and recursively builds child (+0x00) and sibling (+0x08) chains under it; on exception in the recursion, releases the chain and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00556AB0": {
     "name": "sub_00556AB0",
     "signature": "DWORD* __thiscall fn_00556AB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

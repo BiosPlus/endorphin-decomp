@@ -2935,3 +2935,56 @@ void fn_00557710(void* self, IterResult* out, void* a2, uint8_t* a3, uint32_t a4
 }
 } // namespace lift_00475710
 } // namespace lift_00557710
+
+// [0x00556A00] sub_00556A00 (167 bytes)
+namespace lift_00556A00 {
+// Known callee 0x005554B0: Record_CreateFromParts (thiscall; self is passed in ECX)
+extern void* __stdcall ext_005554B0(void* self, DWORD a0, DWORD a1, DWORD a2, const void* src, BYTE flag);
+// Known callee 0x005AE480: ReleaseChainNodes (thiscall; self is passed in ECX)
+extern void __stdcall ext_005AE480(void* self, DWORD chainHead);
+
+// @name Unknown::BuildNodeChain
+// @class Unknown
+// @summary Reads the owner handle at self+0x04 and, if the node's flag at +0x2D is clear, creates a record from the node's payload and recursively builds child (+0x00) and sibling (+0x08) chains under it; on exception in the recursion, releases the chain and rethrows.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x0C uint8_t field_0x0C
+// @field Unknown +0x2C BYTE field_0x2C
+// @field Unknown +0x2D BYTE field_0x2D
+static inline void* AsPtr(DWORD v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+void* fn_00556A00(void* self, void* node, DWORD owner) {
+    DWORD link = lift_field<DWORD>(self, 0x04);
+    void* ret = AsPtr(link);
+
+    if (lift_field<BYTE>(node, 0x2D) != 0) {
+        return ret;
+    }
+
+    void* rec = ext_005554B0(self,
+                            link,
+                            owner,
+                            link,
+                            &lift_field<uint8_t>(node, 0x0C),
+                            lift_field<BYTE>(node, 0x2C));
+
+    if (lift_field<BYTE>(ret, 0x2D) != 0) {
+        ret = rec;
+    }
+
+    try {
+        lift_field<DWORD>(rec, 0x00) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(
+            fn_00556A00(self, AsPtr(lift_field<DWORD>(node, 0x00)), static_cast<DWORD>(reinterpret_cast<uintptr_t>(rec)))));
+        lift_field<DWORD>(rec, 0x08) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(
+            fn_00556A00(self, AsPtr(lift_field<DWORD>(node, 0x08)), static_cast<DWORD>(reinterpret_cast<uintptr_t>(rec)))));
+    } catch (...) {
+        ext_005AE480(self, static_cast<DWORD>(reinterpret_cast<uintptr_t>(ret)));
+        throw;
+    }
+
+    return ret;
+}
+} // namespace lift_00556A00
