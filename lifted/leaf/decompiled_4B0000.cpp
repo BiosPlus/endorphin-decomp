@@ -3465,3 +3465,68 @@ bool fn_004BED90(void* self, const void* key, const uint32_t* value, uint8_t thr
 }
 } // namespace lift_00429350
 } // namespace lift_004BED90
+
+// [0x004B4EE0] sub_004B4EE0 (326 bytes)
+namespace lift_004B4EE0 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, uint32_t srcType, uint32_t dstType, int32_t isRef);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo
+extern int mem_00925134;
+
+// @name Unknown::InitWithCastAndIndex_004B4EE0
+// @class Unknown
+// @summary Initializes the object from a container pointer and a dynamic-cast of arg2, then computes an index into the container.
+// @field Unknown +0x00 uint32_t vtbl
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x10 void* container
+// @field Unknown +0x14 void* castResult
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+// @field Unknown +0x20 int32_t index
+// @field Unknown +0x24 uint32_t field_0x24
+void* fn_004B4EE0(void* self, void* a1, void* a2, uint32_t a3, uint32_t a4, uint32_t a5) {
+    constexpr uint32_t kVtbl    = 0x009432D8u;
+    constexpr uint32_t kSrcType = 0x00A2F4F4u;
+    constexpr uint32_t kDstType = 0x00A38288u;
+
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x00) = kVtbl;
+    lift_field<void*>(self, 0x10) = a1;
+    lift_field<void*>(self, 0x14) = ext_006A6E9E(a2, 0, kSrcType, kDstType, 0);
+    lift_field<uint32_t>(self, 0x18) = a3;
+    lift_field<uint32_t>(self, 0x1C) = a3;
+    lift_field<uint32_t>(self, 0x24) = a5;
+    if (lift_field<void*>(self, 0x14) == nullptr) {
+        lift_field<void*>(self, 0x08) = a2;
+    }
+
+    // Container layout: +0x04 = begin, +0x08 = end (32-bit addresses).
+    void* container = lift_field<void*>(self, 0x10);
+    uint32_t begin = lift_field<uint32_t>(container, 4);
+    uint32_t end = lift_field<uint32_t>(container, 8);
+    int32_t count = (begin != 0) ? (static_cast<int32_t>(end - begin) >> 2) : 0;
+
+    int32_t index = count;
+    if (a4 != 0) {
+        if (begin > end) {
+            // _invalid_parameter_noinfo via IAT slot
+            (*reinterpret_cast<void (**)()>(&mem_00925134))();
+        }
+        uint32_t it = begin;
+        while (it != end && *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(it)) != a4) {
+            it += 4;
+        }
+        uint32_t diff = it - static_cast<uint32_t>(reinterpret_cast<uintptr_t>(a2));
+        index = (static_cast<int32_t>(diff) >> 2) + 1;
+    }
+
+    // Clamp to the container count (unsigned compare, as in the original).
+    lift_field<int32_t>(self, 0x20) =
+        (static_cast<uint32_t>(index) > static_cast<uint32_t>(count)) ? count : index;
+
+    return self;
+}
+} // namespace lift_004B4EE0
