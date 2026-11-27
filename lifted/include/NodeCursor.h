@@ -8,7 +8,7 @@
 // Recovered field layout for NodeCursor:
 namespace lifted_layout {
 struct NodeCursor_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x005943D0)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x005943D0)
+    // +0x0   int32_t                  field_0x00  (evidence: 0x004A5D20)
+    // +0x4   void*                    current  (evidence: 0x004A5D20)
 };
 } // namespace lifted_layout

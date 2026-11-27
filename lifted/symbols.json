@@ -14479,6 +14479,13 @@
     "summary": "Lazily initializes and returns the static string object at 0x00ADEBC4 with atexit cleanup.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A5D20": {
+    "name": "NodeCursor::advanceToUnflaggedNode",
+    "class": "NodeCursor",
+    "signature": "static inline void invalid_parameter_noinfo()",
+    "summary": "Advances the cursor at +0x04 along the link graph of LinkNodes to the next node whose +0xAD flag is clear; calls invalid-parameter handler on bad state.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A5F70": {
     "name": "OwnedPointerRange::destroyPointerRange",
     "class": "OwnedPointerRange",

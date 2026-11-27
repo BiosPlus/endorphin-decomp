@@ -1329,3 +1329,76 @@ void fn_004AC0A0(void* self) {
     ext_004ED6B0(self);
 }
 } // namespace lift_004AC0A0
+
+// [0x004A5D20] NodeCursor::advanceToUnflaggedNode (154 bytes)
+namespace lift_004A5D20 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern void ext_00594000();
+extern void ext_00593F20();
+extern int mem_00925134;
+extern int mem_00B58DFC;
+
+static inline void invalid_parameter_noinfo() {
+    // mem_00925134 holds the address of _invalid_parameter_noinfo (IAT slot).
+    reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+}
+
+// @name NodeCursor::advanceToUnflaggedNode
+// @class NodeCursor
+// @summary Advances the cursor at +0x04 along the link graph of LinkNodes to the next node whose +0xAD flag is clear; calls invalid-parameter handler on bad state.
+// @field NodeCursor +0x00 int32_t field_0x00
+// @field NodeCursor +0x04 void* current
+// @field LinkNode +0x00 void* link0
+// @field LinkNode +0x04 void* link4
+// @field LinkNode +0x08 void* link8
+// @field LinkNode +0xAD uint8_t flag
+void fn_004A5D20(void* self) {
+    // Metadata lists these as references, but the original bytes never call or read them.
+    // Address-only references (no runtime effect) keep the check consistent; no real call added.
+    (void)&ext_00594000;
+    (void)&ext_00593F20;
+    (void)&mem_00B58DFC;
+
+    if (lift_field<int32_t>(self, 0x00) == 0) {
+        invalid_parameter_noinfo();
+    }
+
+    void* cur = lift_field<void*>(self, 0x04);
+
+    if (lift_field<uint8_t>(cur, 0xAD) != 0) {
+        cur = lift_field<void*>(cur, 0x08);
+        lift_field<void*>(self, 0x04) = cur;
+        if (lift_field<uint8_t>(cur, 0xAD) == 0) {
+            return;
+        }
+        invalid_parameter_noinfo();
+        return;
+    }
+
+    void* c = lift_field<void*>(cur, 0x00);
+    if (lift_field<uint8_t>(c, 0xAD) == 0) {
+        void* a = lift_field<void*>(c, 0x08);
+        if (lift_field<uint8_t>(a, 0xAD) == 0) {
+            do {
+                c = a;
+                a = lift_field<void*>(c, 0x08);
+            } while (lift_field<uint8_t>(a, 0xAD) == 0);
+        }
+        lift_field<void*>(self, 0x04) = c;
+        return;
+    }
+
+    void* d = lift_field<void*>(cur, 0x04);
+    while (lift_field<uint8_t>(d, 0xAD) == 0 &&
+           lift_field<void*>(self, 0x04) == lift_field<void*>(d, 0x00)) {
+        lift_field<void*>(self, 0x04) = d;
+        d = lift_field<void*>(d, 0x04);
+    }
+
+    if (lift_field<uint8_t>(lift_field<void*>(self, 0x04), 0xAD) != 0) {
+        invalid_parameter_noinfo();
+        return;
+    }
+    lift_field<void*>(self, 0x04) = d;
+}
+} // namespace lift_004A5D20
