@@ -44,3 +44,29 @@ uint32_t fn_00532560(void* self, void* arg) {
     return fn(arg, element);
 }
 } // namespace lift_00532560
+
+// [0x005324E0] HasCustomBufferedTMPtr::vfunc_2 (34 bytes)
+namespace lift_005324E0 {
+// Known callee 0x00661B50: sub_00661B50 (Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index)
+extern uint32_t ext_00661B50(void* self, uint32_t index);
+
+// @name HasCustomBufferedTMPtr::vfunc_2
+// @class HasCustomBufferedTMPtr
+// @summary Fetches a 64-byte element via the wrapper at +0x8 (indexed by +0x4) and copies it to dest.
+// @field HasCustomBufferedTMPtr +0x04 uint32_t field_0x4
+// @field HasCustomBufferedTMPtr +0x08 uint32_t field_0x8
+void fn_005324E0(void* self, void* dest) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t index = *reinterpret_cast<uint32_t*>(base + 0x4);
+    void* wrapper = reinterpret_cast<void*>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(base + 0x8)));
+
+    uint32_t srcAddr = ext_00661B50(wrapper, index);
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(srcAddr));
+    uint32_t* dst = static_cast<uint32_t*>(dest);
+
+    // Equivalent of: mov ecx,0x10 / rep movsd  (16 dwords = 64 bytes)
+    for (int i = 0; i < 16; ++i) {
+        dst[i] = src[i];
+    }
+}
+} // namespace lift_005324E0

@@ -1,0 +1,28 @@
+{
+  "va": "0x005324E0",
+  "size": 34,
+  "orig_symbol": "HasCustomBufferedTMPtr::vfunc_2",
+  "src_path": "src/classes/HasCustomBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp",
+  "name": "HasCustomBufferedTMPtr::vfunc_2",
+  "class": "HasCustomBufferedTMPtr",
+  "signature": "void fn_005324E0(void* self, void* dest)",
+  "summary": "Fetches a 64-byte element via the wrapper at +0x8 (indexed by +0x4) and copies it to dest.",
+  "fields": [
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    },
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:18Z"
+}
