@@ -46713,6 +46713,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D3070 (NMData::TransitionEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/classes/TransformRefNode.cpp"
   },
+  "0x006265C0": {
+    "name": "TransformRefNode::vfunc_3_off_4",
+    "class": "TransformRefNode",
+    "signature": "void* fn_006265C0(void* self)",
+    "summary": "One-time initialisation of a set of shared float constants (1.0/0.0 table), then calls ext_006A6C87 with 0x91F1E0; always returns \u0026mem_00B4B7D8.",
+    "lifted_path": "lifted/classes/TransformRefNode.cpp"
+  },
   "0x00626650": {
     "name": "TransformRefNode::vfunc_12_off_4",
     "class": "TransformRefNode",

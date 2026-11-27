@@ -140,3 +140,58 @@ void* fn_006266E0(void* self) {
 }
 } // namespace lift_00593D90
 } // namespace lift_006266E0
+
+// [0x006265C0] TransformRefNode::vfunc_3_off_4 (140 bytes)
+namespace lift_006265C0 {
+extern void ext_006A6C87(uint32_t arg);
+
+extern uint32_t mem_00B4B818;
+extern float mem_00B4B7D8;
+extern float mem_00B4B7DC;
+extern float mem_00B4B7E0;
+extern float mem_00B4B7E4;
+extern float mem_00B4B7E8;
+extern float mem_00B4B7EC;
+extern float mem_00B4B7F0;
+extern float mem_00B4B7F4;
+extern float mem_00B4B7F8;
+extern float mem_00B4B7FC;
+extern float mem_00B4B800;
+extern float mem_00B4B804;
+extern float mem_00B4B808;
+extern float mem_00B4B80C;
+extern float mem_00B4B810;
+extern float mem_00B4B814;
+
+// @name TransformRefNode::vfunc_3_off_4
+// @class TransformRefNode
+// @summary One-time initialisation of a set of shared float constants (1.0/0.0 table), then calls ext_006A6C87 with 0x91F1E0; always returns &mem_00B4B7D8.
+void* fn_006265C0(void* self) {
+    (void)self;
+
+    if ((mem_00B4B818 & 1u) == 0) {
+        mem_00B4B818 |= 1u;
+
+        mem_00B4B7D8 = 1.0f;
+        mem_00B4B7DC = 0.0f;
+        mem_00B4B7E0 = 0.0f;
+        mem_00B4B7E4 = 0.0f;
+        mem_00B4B7E8 = 0.0f;
+        mem_00B4B7EC = 1.0f;
+        mem_00B4B7F0 = 0.0f;
+        mem_00B4B7F4 = 0.0f;
+        mem_00B4B7F8 = 0.0f;
+        mem_00B4B7FC = 0.0f;
+        mem_00B4B800 = 1.0f;
+        mem_00B4B804 = 0.0f;
+        mem_00B4B808 = 0.0f;
+        mem_00B4B80C = 0.0f;
+        mem_00B4B810 = 0.0f;
+        mem_00B4B814 = 1.0f;
+
+        ext_006A6C87(0x0091F1E0u);
+    }
+
+    return static_cast<void*>(&mem_00B4B7D8);
+}
+} // namespace lift_006265C0

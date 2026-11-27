@@ -1,0 +1,14 @@
+{
+  "va": "0x006265C0",
+  "size": 140,
+  "orig_symbol": "TransformRefNode::vfunc_3_off_4",
+  "src_path": "src/classes/TransformRefNode.cpp",
+  "lifted_path": "lifted/classes/TransformRefNode.cpp",
+  "name": "TransformRefNode::vfunc_3_off_4",
+  "class": "TransformRefNode",
+  "signature": "void* fn_006265C0(void* self)",
+  "summary": "One-time initialisation of a set of shared float constants (1.0/0.0 table), then calls ext_006A6C87 with 0x91F1E0; always returns \u0026mem_00B4B7D8.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:27:41Z"
+}
