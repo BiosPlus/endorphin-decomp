@@ -8,6 +8,9 @@
 // Recovered field layout for RecordRange:
 namespace lifted_layout {
 struct RecordRange_Fields {
-    // +0x8   uint8_t*                 field_0x08  (evidence: 0x005230B0, 0x0052F7D0)
+    // +0x4   std::uint8_t*            begin  (evidence: 0x005795D0)
+    // +0x8   std::uint8_t*            end  (evidence: 0x005795D0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t*                 field_0x08  (evidence: 0x005230B0, 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
+    // +0xC   std::uint8_t*            capacity_end  (evidence: 0x005795D0)
 };
 } // namespace lifted_layout

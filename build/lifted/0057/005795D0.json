@@ -1,0 +1,34 @@
+{
+  "va": "0x005795D0",
+  "size": 161,
+  "orig_symbol": "sub_005795D0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "RecordRange::AppendCopy",
+  "class": "RecordRange",
+  "signature": "void __thiscall fn_005795D0(void* self, const void* value)",
+  "summary": "Appends a copy of a 0x54-byte record to a begin/end/capacity record array: fast path copy-constructs in place when capacity allows, otherwise falls back to the reallocating insert path (ext_00578FD0).",
+  "fields": [
+    {
+      "class": "RecordRange",
+      "offset": "+0x4",
+      "type": "std::uint8_t*",
+      "name": "begin"
+    },
+    {
+      "class": "RecordRange",
+      "offset": "+0x8",
+      "type": "std::uint8_t*",
+      "name": "end"
+    },
+    {
+      "class": "RecordRange",
+      "offset": "+0xC",
+      "type": "std::uint8_t*",
+      "name": "capacity_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:16:04Z"
+}

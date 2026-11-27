@@ -37190,6 +37190,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x005795D0": {
+    "name": "RecordRange::AppendCopy",
+    "class": "RecordRange",
+    "signature": "void __thiscall fn_005795D0(void* self, const void* value)",
+    "summary": "Appends a copy of a 0x54-byte record to a begin/end/capacity record array: fast path copy-constructs in place when capacity allows, otherwise falls back to the reallocating insert path (ext_00578FD0).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00579680": {
     "name": "sub_00579680",
     "signature": "extern void* fn_00579680(void* first, void* last, void* destEnd)",

@@ -2344,3 +2344,45 @@ void* fn_00572720(DWORD a0, DWORD a1, DWORD a2, const void* src, BYTE flag) {
     return p;
 }
 } // namespace lift_00572720
+
+// [0x005795D0] sub_005795D0 (161 bytes)
+namespace lift_005795D0 {
+// Known callee 0x00576E50: FillConstructRecordRangeWithRollback (Copy-constructs `count` 0x54-byte records from `other` into consecutive slots starting at `begin` (null slots are skipped but still advanced); on exception destroys the records already built and rethrows.)
+extern void ext_00576E50(void* begin, std::uint32_t count, const void* other);
+// Known callee 0x00578FD0: sub_00578FD0 (reallocating insert path; thiscall, ecx = self, stack = (const void* const* value_ref, self, end, value)). Exact callee signature unverified.
+extern void ext_00578FD0(void* self, const void* const* value_ref, void* self_arg, std::uint8_t* end, const void* value);
+// Import-table slot for MSVCR80!_invalid_parameter_noinfo (indirect call target).
+extern int mem_00925134;
+
+// @name RecordRange::AppendCopy
+// @class RecordRange
+// @summary Appends a copy of a 0x54-byte record to a begin/end/capacity record array: fast path copy-constructs in place when capacity allows, otherwise falls back to the reallocating insert path (ext_00578FD0).
+// @field RecordRange +0x04 std::uint8_t* begin
+// @field RecordRange +0x08 std::uint8_t* end
+// @field RecordRange +0x0C std::uint8_t* capacity_end
+void __thiscall fn_005795D0(void* self, const void* value) {
+    constexpr std::ptrdiff_t kRecordSize = 0x54;
+
+    std::uint8_t*& begin = lift_field<std::uint8_t*>(self, 0x4);
+    std::uint8_t*& end = lift_field<std::uint8_t*>(self, 0x8);
+    std::uint8_t* const capacity_end = lift_field<std::uint8_t*>(self, 0xC);
+
+    if (begin != nullptr) {
+        const auto size = static_cast<std::uint32_t>((end - begin) / kRecordSize);
+        const auto capacity = static_cast<std::uint32_t>((capacity_end - begin) / kRecordSize);
+        if (size < capacity) {
+            // Fast path: construct one record in place at end, then advance end.
+            ext_00576E50(end, 1, value);
+            end += kRecordSize;
+            return;
+        }
+    }
+
+    // Slow path: begin must not be past end; the CRT handler is called (and returns) if it is.
+    if (begin > end) {
+        reinterpret_cast<void (*)()>(static_cast<std::intptr_t>(mem_00925134))();
+    }
+    const void* const* value_ref = &value;
+    ext_00578FD0(self, value_ref, self, end, value);
+}
+} // namespace lift_005795D0
