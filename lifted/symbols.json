@@ -74005,6 +74005,13 @@
     "summary": "Forwards its single argument to ext_006FA920 and returns that result.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00707990": {
+    "name": "Unknown::ForwardWithOptionalOwnerDispatch",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall fn_00707990(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6)",
+    "summary": "If this+0x4C is non-null and its first dword equals this+0x48, invokes vtable +0x12C on the object at +0x4 of it (result discarded); then always forwards the six args to ext_006FAD00 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00707F50": {
     "name": "Unknown::ContainsUnorderedPair_00707F50",
     "class": "Unknown",

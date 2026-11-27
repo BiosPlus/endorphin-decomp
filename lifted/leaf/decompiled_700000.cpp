@@ -2636,3 +2636,32 @@ int32_t fn_00704D60(void* self, int32_t arg1) {
     return ext_006D3B50(inner, arg1);
 }
 } // namespace lift_00704D60
+
+// [0x00707990] sub_00707990 (115 bytes)
+namespace lift_00707990 {
+// Known callee 0x006FAD00: Node::dispatchOrTraverseSlot14 (Dispatches vtable slot 14 to parent (+0x08) if present and bit 0x10 of +0x34 is clear; otherwise traverses the child node chain (+0x3c) and invokes slot 14 on its head object, returning 1.)
+extern uint32_t ext_006FAD00(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6);
+
+// Signature of the virtual method stored at vtable byte offset +0x12C (called thiscall with six stack args).
+typedef uint32_t(__thiscall* VtableSlot12CFn)(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6);
+
+// @name Unknown::ForwardWithOptionalOwnerDispatch
+// @class Unknown
+// @summary If this+0x4C is non-null and its first dword equals this+0x48, invokes vtable +0x12C on the object at +0x4 of it (result discarded); then always forwards the six args to ext_006FAD00 and returns its result.
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0x4C ptr field_0x4C
+uint32_t __thiscall fn_00707990(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6) {
+    const uint32_t key = lift_field<uint32_t>(self, 0x48);
+    void* const owner = lift_field<void*>(self, 0x4C);
+
+    if (owner != nullptr && *static_cast<const uint32_t*>(owner) == key) {
+        void* const target = lift_field<void*>(owner, 4);
+        void* const vtbl = lift_field<void*>(target, 0);
+        void* const slot = lift_field<void*>(vtbl, 0x12C);
+        const auto fn = reinterpret_cast<VtableSlot12CFn>(slot);
+        (void)fn(target, a1, a2, a3, a4, a5, a6);
+    }
+
+    return ext_006FAD00(self, a1, a2, a3, a4, a5, a6);
+}
+} // namespace lift_00707990

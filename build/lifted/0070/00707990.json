@@ -1,0 +1,28 @@
+{
+  "va": "0x00707990",
+  "size": 115,
+  "orig_symbol": "sub_00707990",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::ForwardWithOptionalOwnerDispatch",
+  "class": "Unknown",
+  "signature": "uint32_t __thiscall fn_00707990(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6)",
+  "summary": "If this+0x4C is non-null and its first dword equals this+0x48, invokes vtable +0x12C on the object at +0x4 of it (result discarded); then always forwards the six args to ext_006FAD00 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "ptr",
+      "name": "field_0x4C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:47:01Z"
+}
