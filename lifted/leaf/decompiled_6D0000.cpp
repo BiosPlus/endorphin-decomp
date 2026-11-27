@@ -3335,3 +3335,35 @@ extern uint32_t __thiscall fn_006DC510(void* self, int32_t index) {
     return 0;
 }
 } // namespace lift_006DC510
+
+// [0x006DBE10] sub_006DBE10 (32 bytes)
+namespace lift_006DBE10 {
+// Known callee 0x006FC930: sub_006FC930 (getter returning int32_t field at +0x14). Metadata-only reference (not called by this function's asm).
+extern int32_t ext_006FC930(void* self);
+// Known callee 0x006DC550: sub_006DC550 (getter returning int32_t field at +0xB8). Metadata-only reference (not called by this function's asm).
+extern int32_t ext_006DC550(void* self);
+// Known callee 0x006E7410: Unknown::assignStringByIndexAndForward_006E7410. Metadata-only reference (not called by this function's asm).
+extern void* ext_006E7410(void* self, DWORD arg1, DWORD arg2);
+// Known callee 0x006DEED0: Unknown::swapField38AndNotify. Metadata-only reference (not called by this function's asm).
+extern DWORD ext_006DEED0(void* self, DWORD newValue, uint8_t releaseOld);
+
+// @name Unknown::subInt64IntoArg_006DBE10
+// @class Unknown
+// @summary Computes *arg = *self - *arg as a 64-bit subtraction (low dword, then high dword with borrow) and returns arg.
+// @field Unknown +0x00 DWORD lo
+// @field Unknown +0x04 DWORD hi
+void* fn_006DBE10(void* self, DWORD /*unused*/, void* arg) {
+    (void)&ext_006FC930;
+    (void)&ext_006DC550;
+    (void)&ext_006E7410;
+    (void)&ext_006DEED0;
+    auto* s = static_cast<DWORD*>(self);
+    auto* a = static_cast<DWORD*>(arg);
+    const DWORD borrow = (s[0] < a[0]) ? 1u : 0u;
+    const DWORD lo = s[0] - a[0];
+    const DWORD hi = s[1] - a[1] - borrow;
+    a[0] = lo;
+    a[1] = hi;
+    return arg;
+}
+} // namespace lift_006DBE10

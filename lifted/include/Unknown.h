@@ -94,6 +94,7 @@ struct Unknown_Fields {
     // +0x0   void*                    inner_first  (evidence: 0x00783650) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to inner object whose vtable slot 8 is invoked)  (evidence: 0x006616F0, 0x00661950) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 key  (evidence: 0x004030F0, 0x00404E40) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    lo  (evidence: 0x006DBE10) // CONFLICT: multiple definitions at +0x0
     // +0x0   int32_t                  lo  (evidence: 0x006DBE30) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 lo  (evidence: 0x006DBDF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    m00  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x0
@@ -256,6 +257,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t                 header  (evidence: 0x0041A530, 0x0045E700) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    header  (evidence: 0x004774B0, 0x00641350) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (read indirectly via ext_006AD180, not directly here)  (evidence: 0x0041CB80) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    hi  (evidence: 0x006DBE10) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  hi  (evidence: 0x006DBE30) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 hi  (evidence: 0x006DBDF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 high_water  (evidence: 0x0085BB40) // CONFLICT: multiple definitions at +0x4

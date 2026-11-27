@@ -69074,6 +69074,13 @@
     "summary": "Adds the 64-bit value at this (ecx) into the 64-bit value pointed to by the second stack argument, in place.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DBE10": {
+    "name": "Unknown::subInt64IntoArg_006DBE10",
+    "class": "Unknown",
+    "signature": "void* fn_006DBE10(void* self, DWORD /*unused*/, void* arg)",
+    "summary": "Computes *arg = *self - *arg as a 64-bit subtraction (low dword, then high dword with borrow) and returns arg.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DBE30": {
     "name": "Unknown::storeInt64Result",
     "class": "Unknown",

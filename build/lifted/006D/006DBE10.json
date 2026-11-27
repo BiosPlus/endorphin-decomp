@@ -1,0 +1,28 @@
+{
+  "va": "0x006DBE10",
+  "size": 32,
+  "orig_symbol": "sub_006DBE10",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::subInt64IntoArg_006DBE10",
+  "class": "Unknown",
+  "signature": "void* fn_006DBE10(void* self, DWORD /*unused*/, void* arg)",
+  "summary": "Computes *arg = *self - *arg as a 64-bit subtraction (low dword, then high dword with borrow) and returns arg.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "lo"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "hi"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:51:30Z"
+}
