@@ -1,0 +1,13 @@
+{
+  "va": "0x0054C800",
+  "size": 109,
+  "orig_symbol": "sub_0054C800",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "glPrintFormatted",
+  "signature": "void __cdecl sub_0054C800(const char* fmt, ...)",
+  "summary": "Formats a string with vsprintf and renders it using OpenGL display lists.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:16:18Z"
+}

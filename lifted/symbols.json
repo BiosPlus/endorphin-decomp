@@ -22599,6 +22599,12 @@
     "summary": "Copy-constructs the caller-provided std::string from the process-global string and returns it.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00527690": {
+    "name": "sub_00527690",
+    "signature": "void __thiscall sub_00527690(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Iterates over a vector of objects at +0x14 and invokes vtable[2](arg0, arg1) on each",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00527AC0": {
     "name": "Unknown::forwardDispatchThenVfunc1",
     "class": "Unknown",
@@ -25866,6 +25872,12 @@
     "signature": "extern void (*mem_009253E8)(GLuint list, GLsizei range);            // glDeleteLists (IAT slot) void fn_0054C7F0()",
     "summary": "Deletes the 0x60-entry block of GL display lists starting at the global base list id.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
+  "0x0054C800": {
+    "name": "glPrintFormatted",
+    "signature": "void __cdecl sub_0054C800(const char* fmt, ...)",
+    "summary": "Formats a string with vsprintf and renders it using OpenGL display lists.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x0054C870": {
     "name": "Font::vfunc_0",

@@ -22,8 +22,10 @@ float fn_005478B0(uint32_t ecx) {
 #include <cstdint>
 #include <cstdlib>
 #include <cmath>
+#include <cstdarg>
+#include <cstring>
 
-// [0x005478C0] sub_005478C0 (14 bytes)
+#include <cstring>
 namespace lift_005478C0 {
 // @name sub_005478C0
 // @summary Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).
@@ -1424,3 +1426,43 @@ void* __fastcall fn_0054A860(void* self) {
     return self;
 }
 } // namespace lift_0054A860
+
+// [0x0054C800]
+namespace lift_0054C800 {
+// @name glPrintFormatted
+// @summary Formats a string with vsprintf and renders it using OpenGL display lists.
+
+
+extern uint32_t mem_009252B8;
+extern uint32_t mem_0092546C;
+extern uint32_t mem_00AF657C;
+extern uint32_t mem_00925518;
+extern uint32_t mem_00925514;
+extern uint32_t mem_0092552C;
+
+void __cdecl sub_0054C800(const char* fmt, ...) {
+    if (!fmt) {
+        return;
+    }
+
+    char buf[256];
+    va_list args;
+    va_start(args, fmt);
+    using VsprintfFn = int(__cdecl*)(char*, const char*, va_list);
+    reinterpret_cast<VsprintfFn>(static_cast<uintptr_t>(mem_009252B8))(buf, fmt, args);
+    va_end(args);
+
+    using GlPushAttribFn = void(__stdcall*)(uint32_t);
+    reinterpret_cast<GlPushAttribFn>(static_cast<uintptr_t>(mem_0092546C))(0x20000);
+
+    using GlListBaseFn = void(__stdcall*)(uint32_t);
+    reinterpret_cast<GlListBaseFn>(static_cast<uintptr_t>(mem_00925518))(mem_00AF657C - 0x20);
+
+    using GlCallListsFn = void(__stdcall*)(int32_t, uint32_t, const void*);
+    reinterpret_cast<GlCallListsFn>(static_cast<uintptr_t>(mem_00925514))(
+        static_cast<int32_t>(std::strlen(buf)), 0x1401, buf);
+
+    using GlPopAttribFn = void(__stdcall*)();
+    reinterpret_cast<GlPopAttribFn>(static_cast<uintptr_t>(mem_0092552C))();
+}
+} // namespace lift_0054C800
