@@ -1816,3 +1816,50 @@ void __thiscall fn_005CF960(void* self, float value) {
     ext_0065C650(lockObj);
 }
 } // namespace lift_005CF960
+
+// [0x005CFA60] sub_005CFA60 (124 bytes)
+namespace lift_005CFA60 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+
+// @name setFloat38AndDispatchLocked
+// @class Unknown
+// @summary Locks the object returned by the global-owner vfunc (slot +0x1d8) of ext_00594000's object at +0x258, stores the float argument at self+0x38, dispatches slot +0x154 of the object at +0x258, then unlocks.
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x258 void* field_0x258
+void fn_005CFA60(void* self, float value) {
+    // mov eax, ext_00594000(); base object pointer (32-bit value)
+    void* base = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+
+    // mov ecx, [base+0x258]; lea esi, [base+0x258]
+    void* obj = lift_field<void*>(base, 0x258);
+    void* slotAddr = static_cast<void*>(&lift_field<void*>(base, 0x258));
+
+    // mov eax, [ecx]; mov edx, [eax+0x1d8]; call edx  (thiscall on obj)
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    using VSlotFn = void* (*)(void* thisPtr);
+    auto vslot = reinterpret_cast<VSlotFn>(lift_field<void*>(vtbl, 0x1d8));
+    void* lockObj = vslot(obj);
+
+    // CriticalSectionLock::enter(lockObj)
+    ext_0065C640(lockObj);
+
+    // Release lock on every exit path, mirroring the original __finally-style SEH frame.
+    struct LockGuard {
+        void* lock;
+        ~LockGuard() { ext_0065C650(lock); }
+    } guard{lockObj};
+
+    // fstp dword [self+0x38], value
+    lift_field<float>(self, 0x38) = value;
+
+    // call dispatchVirtualSlot154OfPointedObject(slotAddr)
+    (void)ext_00493EE0(slotAddr);
+}
+} // namespace lift_005CFA60

@@ -1,0 +1,28 @@
+{
+  "va": "0x005CFA60",
+  "size": 124,
+  "orig_symbol": "sub_005CFA60",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "setFloat38AndDispatchLocked",
+  "class": "Unknown",
+  "signature": "void fn_005CFA60(void* self, float value)",
+  "summary": "Locks the object returned by the global-owner vfunc (slot +0x1d8) of ext_00594000's object at +0x258, stores the float argument at self+0x38, dispatches slot +0x154 of the object at +0x258, then unlocks.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x258",
+      "type": "void*",
+      "name": "field_0x258"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:50:49Z"
+}

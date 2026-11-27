@@ -35202,6 +35202,13 @@
     "summary": "Gets the sub-object at root+0x258 from ext_00594000(), calls its vtable slot 0x1d8 to obtain a lock object, enters that lock, stores the float argument at self+0x34, dispatches via ext_00493EE0 on the root slot, then leaves the lock.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005CFA60": {
+    "name": "setFloat38AndDispatchLocked",
+    "class": "Unknown",
+    "signature": "void fn_005CFA60(void* self, float value)",
+    "summary": "Locks the object returned by the global-owner vfunc (slot +0x1d8) of ext_00594000's object at +0x258, stores the float argument at self+0x38, dispatches slot +0x154 of the object at +0x258, then unlocks.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CFAE0": {
     "name": "setFloat40AndDispatchUnderLock",
     "signature": "void fn_005CFAE0(void* self, float value)",

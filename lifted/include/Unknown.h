@@ -777,7 +777,7 @@ struct Unknown_Fields {
     // +0x38  DWORD                    field_0x38  (evidence: 0x00518030, 0x0051C5A0, 0x0051CCC0) // CONFLICT: multiple definitions at +0x38
     // +0x38  HWND                     field_0x38  (evidence: 0x00415430) // CONFLICT: multiple definitions at +0x38
     // +0x38  double                   field_0x38  (evidence: 0x00620F80, 0x00622B40, 0x00766240) // CONFLICT: multiple definitions at +0x38
-    // +0x38  float                    field_0x38  (evidence: 0x004F9950, 0x00543C00, 0x00554510, 0x0055CD10, 0x005DC650, 0x00622B40, 0x006271A0, 0x00627240, 0x00629370, 0x006293A0, 0x006296A0, 0x006296D0, 0x00629D30, 0x00629F10, 0x0062A0C0, 0x0063D970, 0x0063D990, 0x0063DAD0, 0x0063DDF0, 0x007CAF70, 0x007CCAB0) // CONFLICT: multiple definitions at +0x38
+    // +0x38  float                    field_0x38  (evidence: 0x004F9950, 0x00543C00, 0x00554510, 0x0055CD10, 0x005CFA60, 0x005DC650, 0x00622B40, 0x006271A0, 0x00627240, 0x00629370, 0x006293A0, 0x006296A0, 0x006296D0, 0x00629D30, 0x00629F10, 0x0062A0C0, 0x0063D970, 0x0063D990, 0x0063DAD0, 0x0063DDF0, 0x007CAF70, 0x007CCAB0) // CONFLICT: multiple definitions at +0x38
     // +0x38  int32_t                  field_0x38  (evidence: 0x006AD960) // CONFLICT: multiple definitions at +0x38
     // +0x38  std::string              field_0x38  (evidence: 0x00663060) // CONFLICT: multiple definitions at +0x38
     // +0x38  std::uint32_t            field_0x38  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x38
@@ -1499,7 +1499,7 @@ struct Unknown_Fields {
     // +0x240 void*                    arrayEnd  (evidence: 0x005947B0) // CONFLICT: multiple definitions at +0x240
     // +0x250 int32_t                  field_0x250  (evidence: 0x007266A0, 0x0072B180) // CONFLICT: multiple definitions at +0x250
     // +0x250 void*                    field_0x250  (evidence: 0x00726770) // CONFLICT: multiple definitions at +0x250
-    // +0x258 void*                    field_0x258  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x258
+    // +0x258 void*                    field_0x258  (evidence: 0x004A5810, 0x005CFA60) // CONFLICT: multiple definitions at +0x258
     // +0x258 void*                    subObjectSlot  (evidence: 0x005CF960) // CONFLICT: multiple definitions at +0x258
     // +0x264 const double*            samples  (evidence: 0x00796660)
     // +0x268 DWORD                    field_0x268  (evidence: 0x00702700, 0x0070AD00) // CONFLICT: multiple definitions at +0x268
