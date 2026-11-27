@@ -1,0 +1,22 @@
+{
+  "va": "0x0060B550",
+  "size": 195,
+  "orig_symbol": "NMData::DisabledCollisionPairList::vfunc_1_off_8",
+  "src_path": "src/NMData/DisabledCollisionPairList.cpp",
+  "lifted_path": "lifted/NMData/DisabledCollisionPairList.cpp",
+  "name": "NMData::DisabledCollisionPairList::vfunc_1_off_8",
+  "class": "NMData::DisabledCollisionPairList",
+  "signature": "void fn_0060B550(void* self, void* src)",
+  "summary": "Queries a source object's vfunc slot 3 for a count, erases the [first,last) range via a helper, then releases the resulting end pointer if non-null.",
+  "fields": [
+    {
+      "class": "NMData::DisabledCollisionPairList",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:47Z"
+}
