@@ -23140,6 +23140,13 @@
     "summary": "Throws DerivedException when field_0x00 is null; otherwise assigns from a temporary, releases the temporary's field_0x04, and forwards to field_0x04's vfunc at 0xB0 with (obj, arg).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00504F10": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+    "signature": "static inline Fn vslot(void* obj, std::size_t byteOffset)",
+    "summary": "If self-\u003efield_0x00 is set, copy self through a temp into self and release the temp; then forward to self-\u003efield_0x04-\u003evfunc_45(self, arg2). Otherwise throw a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00504FB0": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter,int,bogus,0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",

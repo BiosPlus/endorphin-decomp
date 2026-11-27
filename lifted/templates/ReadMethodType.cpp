@@ -82643,3 +82643,51 @@ void __stdcall fn_00504E70(void* obj, void* arg) {
     forward(field04, obj, arg);
 }
 } // namespace lift_00504E70
+
+// [0x00504F10] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_45 (155 bytes)
+namespace lift_00504F10 {
+extern void ext_006720C0(void* self, int flag);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// The caller pushes (exception object, ThrowInfo) cdecl; declared with those two arguments here.
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+extern int mem_009DEC1C;
+
+// Call a virtual slot (byte offset into the vtable) of obj, returning it as a function pointer type.
+template <typename Fn>
+static inline Fn vslot(void* obj, std::size_t byteOffset) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<Fn>(vtbl[byteOffset / sizeof(void*)]);
+}
+
+// @name ExprParser::ReadMethodType<Interpreter>::vfunc_45
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary If self->field_0x00 is set, copy self through a temp into self and release the temp; then forward to self->field_0x04->vfunc_45(self, arg2). Otherwise throw a DerivedException.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+int fn_00504F10(void* self, void* arg2) {
+    if (lift_field<void*>(self, 0x00) != nullptr) {
+        // Temp holder: +0x00 and +0x04 (second word is released after the copy).
+        void* tmp[2] = {nullptr, nullptr};
+        ext_006720C0(tmp, 0);
+        ext_0041CF50(self, tmp);
+
+        void* release = tmp[1];
+        if (release != nullptr) {
+            vslot<void (*)(void*, void*)>(release, 0x78)(release, tmp);
+        }
+
+        void* target = lift_field<void*>(self, 0x04);
+        return vslot<int (*)(void*, void*, void*)>(target, 0xb4)(target, self, arg2);
+    }
+
+    // Storage for the exception object constructed in place (size not known from asm; generous).
+    alignas(8) unsigned char exc[0x40] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+    return 0;
+}
+} // namespace lift_00504F10
