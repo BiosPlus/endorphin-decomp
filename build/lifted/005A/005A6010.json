@@ -1,0 +1,46 @@
+{
+  "va": "0x005A6010",
+  "size": 276,
+  "orig_symbol": "NMData::BackGroundData::vfunc_58_off_4",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_58_off_4",
+  "class": "NMData::BackGroundData",
+  "signature": "static inline uint32_t addr_of(const void* p)",
+  "summary": "Refills the string range in arg from this+0x594 list nodes: each node's sub-object (node+0x28) yields a std::string via virtual slot 9, and non-empty copies are push_backed into arg; the cursor is advanced via ext_00673C20 until it reaches the list terminator.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x594",
+      "type": "uint32_t",
+      "name": "field_0x594"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x598",
+      "type": "void*",
+      "name": "field_0x598"
+    },
+    {
+      "class": "Unknown::StringRange",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown::StringRange",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown::ListNode",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:02:57Z"
+}

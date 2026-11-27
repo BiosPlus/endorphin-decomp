@@ -42449,6 +42449,13 @@
     "summary": "Validates the argument's range fields (+4 \u003c= +8), then forwards the argument and this-owned state to ext_00479C80.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x005A6010": {
+    "name": "NMData::BackGroundData::vfunc_58_off_4",
+    "class": "NMData::BackGroundData",
+    "signature": "static inline uint32_t addr_of(const void* p)",
+    "summary": "Refills the string range in arg from this+0x594 list nodes: each node's sub-object (node+0x28) yields a std::string via virtual slot 9, and non-empty copies are push_backed into arg; the cursor is advanced via ext_00673C20 until it reaches the list terminator.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x005A6650": {
     "name": "sub_005A6650",
     "class": "Unknown",

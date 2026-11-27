@@ -171,3 +171,85 @@ void fn_0059FF60(void* self, void* arg) {
     }
 }
 } // namespace lift_0059FF60
+
+// [0x005A6010] NMData::BackGroundData::vfunc_58_off_4 (276 bytes)
+namespace lift_005A6010 {
+// Known callee 0x00406510: Unknown::copyStringRangeTruncate (Copies a std::string range through sub_00406090, destroys the old tail past the new end, stores the new end at this+0x08 and writes {a2, a3} to the sret pair at a1.)
+extern uint32_t ext_00406510(void* self, void* sret, void* a2, uint32_t a3, void* a4, uint32_t a5);
+// Known callee 0x0040ECB0: Unknown::PushBackString_0040ECB0 (push_back of one 28-byte std::string onto a vector-like container.)
+extern void ext_0040ECB0(void* self, const void* value);
+// Known callee 0x00673C20: sub_00673C20 (Auto-lifted identical-shape clone of 0x00667030 (advanceCursorSkipFlagged).)
+extern void ext_00673C20(void* self);
+
+// MSVCP80 std::string entry points, read from their IAT slots (values are the function addresses).
+extern void* const mem_00924FE0; // MSVCP80 basic_string(const basic_string&) copy ctor
+extern void* const mem_00924FEC; // MSVCP80 basic_string::empty
+extern void* const mem_00924FF4; // MSVCP80 basic_string::~basic_string
+// MSVCRT _invalid_parameter_noinfo IAT slot: only used by MSVC debug iterator guards (boilerplate, omitted).
+extern void* const mem_00925134;
+
+static inline uint32_t addr_of(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+static inline void* ptr_of(uint32_t a) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(a));
+}
+
+// @name NMData::BackGroundData::vfunc_58_off_4
+// @class NMData::BackGroundData
+// @summary Refills the string range in arg from this+0x594 list nodes: each node's sub-object (node+0x28) yields a std::string via virtual slot 9, and non-empty copies are push_backed into arg; the cursor is advanced via ext_00673C20 until it reaches the list terminator.
+// @field NMData::BackGroundData +0x594 uint32_t field_0x594
+// @field NMData::BackGroundData +0x598 void* field_0x598
+// @field Unknown::StringRange +0x04 uint32_t field_0x04
+// @field Unknown::StringRange +0x08 uint32_t field_0x08
+// @field Unknown::ListNode +0x28 void* field_0x28
+void fn_005A6010(void* self, void* arg) {
+    using PFN_getString = const void* (__thiscall*)(void* self);
+    using PFN_copyString = void (__thiscall*)(void* self, const void* src);
+    using PFN_emptyString = bool (__thiscall*)(const void* self);
+    using PFN_dtorString = void (__thiscall*)(void* self);
+
+    // Debug-iterator guard slot (_invalid_parameter_noinfo) is not reached on valid input; referenced only.
+    (void)&mem_00925134;
+
+    // Read the range bounds from the argument object (+0x04 first, +0x08 last).
+    const uint32_t range_first = lift_field<uint32_t>(arg, 0x04);
+    const uint32_t range_last = lift_field<uint32_t>(arg, 0x08);
+
+    // Copies the range into arg via ext_00406510; the sret pair it writes is unused by this function.
+    uint32_t sret_pair[2] = {0u, 0u};
+    (void)ext_00406510(arg, sret_pair, arg, range_first, arg, range_last);
+
+    // Cursor {container, node}: container is the list sentinel at this+0x594,
+    // node is the first element pointed to by *(this+0x598).
+    uint32_t cursor[2];
+    cursor[0] = addr_of(static_cast<uint8_t*>(self) + 0x594);
+    cursor[1] = lift_field<uint32_t>(ptr_of(lift_field<uint32_t>(self, 0x598)), 0);
+
+    for (;;) {
+        // Terminator is the sentinel's +4 slot; stop when the node reaches it.
+        const uint32_t terminator = lift_field<uint32_t>(ptr_of(cursor[0]), 0x04);
+        if (cursor[1] == terminator) {
+            break;
+        }
+
+        // Element sub-object at node+0x28; its virtual slot 9 (offset 0x24) returns a const std::string*.
+        void* const node = ptr_of(cursor[1]);
+        void* const item = ptr_of(lift_field<uint32_t>(node, 0x28));
+        void* const vtable = ptr_of(lift_field<uint32_t>(item, 0x00));
+        const auto get_string = reinterpret_cast<PFN_getString>(ptr_of(lift_field<uint32_t>(vtable, 0x24)));
+        const void* const src = get_string(item);
+
+        // Local 28-byte std::string copy of *src.
+        alignas(8) uint8_t tmp[28];
+        reinterpret_cast<PFN_copyString>(mem_00924FE0)(tmp, src);
+        if (!reinterpret_cast<PFN_emptyString>(mem_00924FEC)(tmp)) {
+            ext_0040ECB0(arg, tmp);
+        }
+        reinterpret_cast<PFN_dtorString>(mem_00924FF4)(tmp);
+
+        ext_00673C20(cursor);
+    }
+}
+} // namespace lift_005A6010
