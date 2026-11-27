@@ -1275,3 +1275,25 @@ void* fn_00725AE0(void* self, void* target) {
     return target;
 }
 } // namespace lift_00725AE0
+
+// [0x0072CF30] sub_0072CF30 (93 bytes)
+namespace lift_0072CF30 {
+// Known callee 0x006E73B0: Unknown::initWithArgs_006E73B0 (Initializes the sub-object at +0x08, stores two constructor arguments at +0x04 and +0x54, runs the reset helper, and returns this.)
+extern void* __thiscall ext_006E73B0(void* self, DWORD arg1, DWORD arg2);
+// Known callee 0x006B9D10: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+extern void* __thiscall ext_006B9D10(void* self);
+
+// @name Unknown::ctorInitSubobjects_0072CF30
+// @class Unknown
+// @summary Constructor-style init: stores arg1 at this+0x04, initializes the sub-object at this+0x08 with (0x00AAD18C, 8), initializes the sub-object at this+0x60, sets the vtable at this+0x00 to 0x00996B1C, and returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x04 DWORD field_0x04
+
+extern void* __thiscall fn_0072CF30(void* self, DWORD arg1) {
+    lift_field<DWORD>(self, 0x04) = arg1;
+    ext_006E73B0(static_cast<uint8_t*>(self) + 0x08, 0x00AAD18Cu, 8u);
+    ext_006B9D10(static_cast<uint8_t*>(self) + 0x60);
+    lift_field<DWORD>(self, 0x00) = 0x00996B1Cu;
+    return self;
+}
+} // namespace lift_0072CF30
