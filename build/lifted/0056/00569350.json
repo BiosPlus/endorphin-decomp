@@ -1,0 +1,13 @@
+{
+  "va": "0x00569350",
+  "size": 141,
+  "orig_symbol": "sub_00569350",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "ConstructRangeWithRollback",
+  "signature": "void fn_00569350(void* begin, uint32_t count, uint32_t arg)",
+  "summary": "Calls ext_00402800 on each 16-byte element of a range; on exception, destroys the already-processed elements via ext_004026E0 and rethrows.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:23:48Z"
+}

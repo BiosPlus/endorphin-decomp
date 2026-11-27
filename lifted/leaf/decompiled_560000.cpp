@@ -987,3 +987,32 @@ void __thiscall fn_00563740(void* this_ptr, void* target, void* src_obj) {
     dtor_fn(local_str);
 }
 } // namespace lift_00563740
+
+// [0x00569350] sub_00569350 (141 bytes)
+namespace lift_00569350 {
+// Known callee 0x004026E0: std_vector_string_Tidy (Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.)
+extern void ext_004026E0(void* this_ptr);
+// Callee 0x00402800: sub_00402800 (176B), thiscall with one stack argument.
+extern void ext_00402800(void* this_ptr, uint32_t arg);
+
+// @name ConstructRangeWithRollback
+// @summary Calls ext_00402800 on each 16-byte element of a range; on exception, destroys the already-processed elements via ext_004026E0 and rethrows.
+void fn_00569350(void* begin, uint32_t count, uint32_t arg) {
+    auto* p = static_cast<uint8_t*>(begin);
+    try {
+        for (uint32_t remaining = count; remaining != 0; --remaining) {
+            if (p != nullptr) {
+                ext_00402800(p, arg);
+            }
+            p += 16;
+        }
+    } catch (...) {
+        auto* cur = static_cast<uint8_t*>(begin);
+        while (cur != p) {
+            ext_004026E0(cur);
+            cur += 16;
+        }
+        throw;
+    }
+}
+} // namespace lift_00569350
