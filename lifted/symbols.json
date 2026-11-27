@@ -1837,6 +1837,13 @@
     "summary": "Queries a button's check state via BM_GETCHECK (0xF0) and forwards the boolean result to two child sub-objects.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004188C0": {
+    "name": "Unknown::SyncCheckStateToChildren",
+    "class": "Unknown",
+    "signature": "static uint8_t call_vslot_0x90(void* obj)",
+    "summary": "Reads a button's check state via BM_GETCHECK, derives a flag from a child's vtable query, forwards it to two child objects, and stores the checked flag at [[+0x78]+0xA8].",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00418940": {
     "name": "ExportDialog::vfunc_1",
     "class": "ExportDialog",

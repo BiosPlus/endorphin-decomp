@@ -2813,3 +2813,50 @@ void fn_0041B960(void* self) {
     dtorStr(&str);
 }
 } // namespace lift_0041B960
+
+// [0x004188C0] sub_004188C0 (128 bytes)
+namespace lift_004188C0 {
+// Known callee 0x006A5FDA: thunk_MFC80_ord_2164 (IAT jump thunk forwarding to MFC80!ord_2164.)
+extern void ext_006A5FDA(void* self, int arg);
+// IAT slot holding USER32!SendMessageA
+extern uintptr_t mem_00925694;
+
+using SendMessageAFn = int32_t(__stdcall*)(uint32_t hwnd, uint32_t msg, uint32_t wparam, int32_t lparam);
+
+// Calls the object's vtable slot at +0x90 (thiscall, no args); returns the low byte of the result.
+static uint8_t call_vslot_0x90(void* obj) {
+    void* vtbl = lift_field<void*>(obj, 0);
+    auto fn = reinterpret_cast<uint8_t(__thiscall*)(void*)>(lift_field<void*>(vtbl, 0x90));
+    return fn(obj);
+}
+
+// @name Unknown::SyncCheckStateToChildren
+// @class Unknown
+// @summary Reads a button's check state via BM_GETCHECK, derives a flag from a child's vtable query, forwards it to two child objects, and stores the checked flag at [[+0x78]+0xA8].
+// @field Unknown +0x3e4 uint32_t field_0x3e4
+// @field Unknown +0x74 void* field_0x74
+// @field Unknown +0x78 void* field_0x78
+// @field Unknown +0x418 void* field_0x418
+// @field Unknown +0x46c void* field_0x46c
+void fn_004188C0(void* self) {
+    const uint32_t hwnd = lift_field<uint32_t>(self, 0x3E4);
+    auto send_message = reinterpret_cast<SendMessageAFn>(mem_00925694);
+
+    // BM_GETCHECK (0xF0); checked == (result == 1)
+    const bool checked = send_message(hwnd, 0xF0, 0, 0) == 1;
+
+    int32_t flag_a = 0;
+    if (checked) {
+        flag_a = call_vslot_0x90(lift_field<void*>(self, 0x74)) != 0 ? 1 : 0;
+    }
+    ext_006A5FDA(static_cast<uint8_t*>(self) + 0x418, flag_a);
+
+    int32_t flag_b = 0;
+    if (checked) {
+        flag_b = call_vslot_0x90(lift_field<void*>(self, 0x74)) != 0 ? 1 : 0;
+    }
+    ext_006A5FDA(static_cast<uint8_t*>(self) + 0x46C, flag_b);
+
+    lift_field<uint8_t>(lift_field<void*>(self, 0x78), 0xA8) = checked ? 1 : 0;
+}
+} // namespace lift_004188C0
