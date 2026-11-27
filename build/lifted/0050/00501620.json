@@ -1,0 +1,52 @@
+{
+  "va": "0x00501620",
+  "size": 92,
+  "orig_symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand::vfunc_1",
+  "src_path": "src/templates/RemoveElementCommand.cpp",
+  "lifted_path": "lifted/templates/RemoveElementCommand.cpp",
+  "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand::vfunc_1",
+  "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand",
+  "signature": "void __thiscall fn_00501620(void* self)",
+  "summary": "Swaps the stored element at +0x1C into +0x18 (releasing the previous one via its virtual dtor), removes the element from the container at +0x10 recording its index in +0x20, notifies the object at +0x24, and forwards the element to the handler at +0x14.",
+  "fields": [
+    {
+      "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "container"
+    },
+    {
+      "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "handler"
+    },
+    {
+      "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "prev_element"
+    },
+    {
+      "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "element"
+    },
+    {
+      "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "removed_index"
+    },
+    {
+      "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "listener"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:26Z"
+}
