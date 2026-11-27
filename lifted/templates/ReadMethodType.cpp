@@ -187734,3 +187734,52 @@ bool fn_00625190(void* holder, uint32_t arg2) {
     return result;
 }
 } // namespace lift_00625190
+
+// [0x00604EF0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_42 (176 bytes)
+namespace lift_00604EF0 {
+// Helper externs (thiscall in the original; __thiscall is a no-op in lift_compat.h).
+extern void ext_00672080(void** self, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Effector, float, Effector::getPoseRawDesiredDisplacement, 1>::vfunc_42
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>
+// @summary Reads a float from the held object's vfunc slot 14, wraps it in a temporary value, and returns the bool result of its vfunc slot 42.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+uint8_t fn_00604EF0(void* holder, void* /*unused*/) {
+    void* obj = *reinterpret_cast<void**>(holder);
+    if (obj == nullptr) {
+        // Null holder: construct a DerivedException and throw it.
+        alignas(8) unsigned char exception[0x40] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, &mem_009DEC1C);
+        return 0; // not reached
+    }
+
+    using GetFloatPtrFn = float* (__thiscall*)(void* self, float* out);
+    float out = 0.0f;
+    void** objVtbl = *reinterpret_cast<void***>(obj);
+    float* p = reinterpret_cast<GetFloatPtrFn>(objVtbl[14])(obj, &out);
+    float value = *p;
+
+    void* temp = nullptr;
+    ext_00672080(&temp, value);
+
+    using CallFn = uint8_t (__thiscall*)(void* self, void** outRef, float v);
+    void* outAddr = &out;
+    out = 0.0f;
+    void** tempVtbl = *reinterpret_cast<void***>(temp);
+    uint8_t result = reinterpret_cast<CallFn>(tempVtbl[42])(temp, &outAddr, value);
+
+    if (temp != nullptr) {
+        using ReleaseFn = void (__thiscall*)(void* self, void* scratch);
+        void* scratch = nullptr;
+        void** relVtbl = *reinterpret_cast<void***>(temp);
+        reinterpret_cast<ReleaseFn>(relVtbl[30])(temp, &scratch);
+    }
+    return result;
+}
+} // namespace lift_00604EF0

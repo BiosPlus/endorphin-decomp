@@ -1,0 +1,22 @@
+{
+  "va": "0x00604EF0",
+  "size": 176,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffector, float, Effector::getPoseRawDesiredDisplacement, 1\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
+  "signature": "uint8_t fn_00604EF0(void* holder, void* /*unused*/)",
+  "summary": "Reads a float from the held object's vfunc slot 14, wraps it in a temporary value, and returns the bool result of its vfunc slot 42.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:57:44Z"
+}
