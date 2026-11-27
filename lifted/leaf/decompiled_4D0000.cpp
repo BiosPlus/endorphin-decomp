@@ -666,3 +666,32 @@ void fn_004D9C60(void* self) {
     }
 }
 } // namespace lift_004D9C60
+
+// [0x004D0260] sub_004D0260 (79 bytes)
+namespace lift_004D0260 {
+// Known callee 0x0053F5F0: parseIntFromStringProp (Calls ext_004275C0 to get a string, converts it with atoi, and stores the integer at *out.)
+extern void ext_0053F5F0(void* out, void* item_slot);
+// Known callee 0x0063EFE0: sub_0063EFE0 (Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.)
+extern uint32_t ext_0063EFE0(void* self, const char* name);
+extern int mem_00A9FAE8;
+extern int mem_00A9FAEC;
+
+// @name sub_004D0260
+// @class unknown
+// @summary Looks up two named items in the container passed as arg1 and parses an int from each item's string property into self+0x00 and self+0x04.
+// @field unknown +0x00 int field_0x00
+// @field unknown +0x04 int field_0x04
+void fn_004D0260(void* self, void* container) {
+    // Name pointers are stored as u32 globals holding C-string addresses.
+    const char* name1 = reinterpret_cast<const char*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00A9FAE8)));
+    const char* name2 = reinterpret_cast<const char*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00A9FAEC)));
+
+    uint32_t item = ext_0063EFE0(container, name1);
+    ext_0053F5F0(self, &item);
+
+    item = ext_0063EFE0(container, name2);
+    ext_0053F5F0(static_cast<uint8_t*>(self) + 0x04, &item);
+}
+} // namespace lift_004D0260

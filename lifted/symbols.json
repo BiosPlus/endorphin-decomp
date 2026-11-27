@@ -17406,6 +17406,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00622380 (NMData::SkeletalCalibrationVariables::vfunc_28).",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004D0260": {
+    "name": "sub_004D0260",
+    "class": "unknown",
+    "signature": "void fn_004D0260(void* self, void* container)",
+    "summary": "Looks up two named items in the container passed as arg1 and parses an int from each item's string property into self+0x00 and self+0x04.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D0AE0": {
     "name": "sub_004D0AE0",
     "signature": "extern \"C\" void __fastcall fn_004D0AE0(void* self, int edx_unused, float value)",
