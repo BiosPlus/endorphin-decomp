@@ -1,0 +1,13 @@
+{
+  "va": "0x00518B00",
+  "size": 438,
+  "orig_symbol": "sub_00518B00",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "unguardedPartition",
+  "signature": "UnguardedPartitionResult* __cdecl fn_00518B00( UnguardedPartitionResult* out, uint32_t* first, uint32_t* last, void* pred)",
+  "summary": "Performs MSVC std::_Unguarded_partition (3-way quicksort partition) on a range of uint32_t indices using comparator pred.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:22:19Z"
+}
