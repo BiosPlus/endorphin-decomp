@@ -1246,3 +1246,54 @@ void fn_006AD890(void* self, void* a1, const Vec16* a2, uint32_t a3, uint32_t a4
     }
 }
 } // namespace lift_006AD890
+
+// [0x006AA500] sub_006AA500 (142 bytes)
+namespace lift_006AA500 {
+// Known callee 0x006A9210: ClientRectAdjust::adjustClientRect (Fills RECT with the window client area, then shrinks/shifts it for optional header, scrollbar and border insets.)
+extern void ext_006A9210(void* self, RECT* rc);
+// Callee 0x006A7C20 (12 bytes): thiscall, takes one stack argument, returns the next value in eax.
+extern uint32_t ext_006A7C20(void* self, uint32_t value);
+// Holds the USER32!OffsetRect function pointer (loaded at run time).
+extern int mem_0092564C;
+
+// @name Unknown::countVisibleRowsInClientRect
+// @class Unknown
+// @summary Adjusts the client RECT via adjustClientRect, then walks a chain starting at +0x68 through sub_006A7C20, offsetting a working RECT by +0xE8 per step, and returns how many steps keep the working RECT's bottom within the client bottom.
+// @field Unknown +0x68 uint32_t field_0x68
+// @field Unknown +0xE8 int32_t field_0xE8
+int fn_006AA500(void* self) {
+    using OffsetRectFn = int(__stdcall*)(RECT*, int, int);
+
+    auto* base = static_cast<unsigned char*>(self);
+    auto* offsetRect = reinterpret_cast<OffsetRectFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_0092564C)));
+
+    RECT rc{};
+    ext_006A9210(self, &rc);
+
+    const int32_t dyBase = *reinterpret_cast<int32_t*>(base + 0xE8);
+    RECT work{};
+    work.left = rc.left;
+    work.top = rc.top;
+    work.right = rc.right;
+    work.bottom = dyBase + rc.top;
+
+    int count = 0;
+    uint32_t cur = *reinterpret_cast<uint32_t*>(base + 0x68);
+    if (cur != 0) {
+        for (;;) {
+            if (work.bottom > rc.bottom) {
+                break;
+            }
+            count += 1;
+            cur = ext_006A7C20(self, cur);
+            const int32_t dy = *reinterpret_cast<int32_t*>(base + 0xE8);
+            offsetRect(&work, 0, dy);
+            if (cur == 0) {
+                break;
+            }
+        }
+    }
+    return count;
+}
+} // namespace lift_006AA500

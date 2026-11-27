@@ -1146,7 +1146,7 @@ struct Unknown_Fields {
     // +0x68  double                   field_0x68  (evidence: 0x00766240) // CONFLICT: multiple definitions at +0x68
     // +0x68  float                    field_0x68  (evidence: 0x004E3A30, 0x006267B0, 0x00647BF0, 0x00647C10, 0x00647C30, 0x00647C50, 0x00648A20) // CONFLICT: multiple definitions at +0x68
     // +0x68  int32_t                  field_0x68  (evidence: 0x006AA890, 0x006D0370, 0x006D0490, 0x006E3A40, 0x006E7F90) // CONFLICT: multiple definitions at +0x68
-    // +0x68  uint32_t                 field_0x68  (evidence: 0x005DC430, 0x006080D0, 0x006B0EC0) // CONFLICT: multiple definitions at +0x68
+    // +0x68  uint32_t                 field_0x68  (evidence: 0x005DC430, 0x006080D0, 0x006AA500, 0x006B0EC0) // CONFLICT: multiple definitions at +0x68
     // +0x68  uint8_t                  field_0x68  (evidence: 0x006E8790) // CONFLICT: multiple definitions at +0x68
     // +0x68  void*                    field_0x68  (evidence: 0x00441020, 0x00441C10, 0x0044B5B0, 0x0044B5C0, 0x0044B6A0, 0x0044B9D0, 0x0044BA30, 0x0044BBB0, 0x0044BBE0, 0x0044BC10) // CONFLICT: multiple definitions at +0x68
     // +0x68  uint8_t                  member_68  (evidence: 0x006B5090) // CONFLICT: multiple definitions at +0x68
@@ -1458,6 +1458,7 @@ struct Unknown_Fields {
     // +0xE4  void*                    field_0xe4  (evidence: 0x004030F0, 0x00403400, 0x0040A910, 0x0040BE90) // CONFLICT: multiple definitions at +0xE4
     // +0xE8  Buffer                   field_0xE8  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xE8
     // +0xE8  double                   field_0xE8  (evidence: 0x0043DD60, 0x0043DDF0) // CONFLICT: multiple definitions at +0xE8
+    // +0xE8  int32_t                  field_0xE8  (evidence: 0x006AA500) // CONFLICT: multiple definitions at +0xE8
     // +0xE8  uint32_t                 field_0xE8  (evidence: 0x00455C80) // CONFLICT: multiple definitions at +0xE8
     // +0xE8  double                   field_0xe8  (evidence: 0x0043CA30) // CONFLICT: multiple definitions at +0xE8
     // +0xEC  uint8_t field_0xEC (address taken when flag == 0)  (evidence: 0x007C9490, 0x007CAF70) // CONFLICT: multiple definitions at +0xEC

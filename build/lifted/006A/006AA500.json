@@ -1,0 +1,28 @@
+{
+  "va": "0x006AA500",
+  "size": 142,
+  "orig_symbol": "sub_006AA500",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::countVisibleRowsInClientRect",
+  "class": "Unknown",
+  "signature": "int fn_006AA500(void* self)",
+  "summary": "Adjusts the client RECT via adjustClientRect, then walks a chain starting at +0x68 through sub_006A7C20, offsetting a working RECT by +0xE8 per step, and returns how many steps keep the working RECT's bottom within the client bottom.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE8",
+      "type": "int32_t",
+      "name": "field_0xE8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:47Z"
+}

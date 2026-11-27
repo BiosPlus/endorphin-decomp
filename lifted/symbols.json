@@ -64088,6 +64088,13 @@
     "summary": "Locks or unlocks redraw of this object's window via LockWindowUpdate and sets the locked flag at +0x198.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AA500": {
+    "name": "Unknown::countVisibleRowsInClientRect",
+    "class": "Unknown",
+    "signature": "int fn_006AA500(void* self)",
+    "summary": "Adjusts the client RECT via adjustClientRect, then walks a chain starting at +0x68 through sub_006A7C20, offsetting a working RECT by +0xE8 per step, and returns how many steps keep the working RECT's bottom within the client bottom.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AA890": {
     "name": "Unknown::NotifyChildrenAndReset",
     "class": "Unknown",
