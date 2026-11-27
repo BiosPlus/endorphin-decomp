@@ -29962,6 +29962,13 @@
     "summary": "Copies a range of 48-byte elements backward via ext_005732A0 and returns the adjusted destination pointer.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00573430": {
+    "name": "Unknown::fillFromSourceViaTempString",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_00573430(void* this_ptr, const void* src)",
+    "summary": "Default-constructs a temporary std::string, passes it with src to std_vector_string::Construct_n on self, then destroys the temporary; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005738D0": {
     "name": "sub_005738D0",
     "signature": "uint32_t fn_005738D0(uint32_t begin, uint32_t end, uint32_t value)",

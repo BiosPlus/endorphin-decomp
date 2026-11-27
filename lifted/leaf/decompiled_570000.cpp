@@ -2268,3 +2268,38 @@ void __thiscall fn_00573300(void* this_ptr, uint32_t count, const void* src) {
     lift_field<uint8_t*>(this_ptr, 0x08) = begin + static_cast<size_t>(count) * 28;
 }
 } // namespace lift_00573300
+
+// [0x00573430] sub_00573430 (96 bytes)
+namespace lift_00573430 {
+// @name Unknown::fillFromSourceViaTempString
+// @class Unknown
+// @summary Default-constructs a temporary std::string, passes it with src to std_vector_string::Construct_n on self, then destroys the temporary; returns self.
+
+extern void __thiscall ext_00573300(void* this_ptr, uint32_t count, const void* src);
+
+// IAT slots holding the MSVCP80 std::basic_string<char> default ctor and dtor.
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_00924FF4;
+
+void* __thiscall fn_00573430(void* this_ptr, const void* src) {
+    // Temporary std::string on the stack (sizeof == 28 for MSVCP80 basic_string<char>).
+    alignas(8) uint8_t tmp[28];
+
+    // Thiscall to the default ctor. The original forwards whatever the ctor leaves in eax
+    // as the count argument, so the ctor is typed as returning uint32_t to keep that value.
+    using StringCtor = uint32_t(__thiscall*)(void* self);
+    using StringDtor = void(__thiscall*)(void* self);
+    const auto ctor = reinterpret_cast<StringCtor>(static_cast<uintptr_t>(mem_00924FE8));
+    const auto dtor = reinterpret_cast<StringDtor>(static_cast<uintptr_t>(mem_00924FF4));
+
+    const uint32_t count = ctor(tmp);
+    try {
+        ext_00573300(this_ptr, count, src);
+    } catch (...) {
+        dtor(tmp);
+        throw;
+    }
+    dtor(tmp);
+    return this_ptr;
+}
+} // namespace lift_00573430

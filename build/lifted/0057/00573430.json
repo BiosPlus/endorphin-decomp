@@ -1,0 +1,14 @@
+{
+  "va": "0x00573430",
+  "size": 96,
+  "orig_symbol": "sub_00573430",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Unknown::fillFromSourceViaTempString",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_00573430(void* this_ptr, const void* src)",
+  "summary": "Default-constructs a temporary std::string, passes it with src to std_vector_string::Construct_n on self, then destroys the temporary; returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:38:43Z"
+}
