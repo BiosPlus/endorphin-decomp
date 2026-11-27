@@ -17095,6 +17095,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B17D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e",
+    "signature": "uint32_t __stdcall fn_004B17D0(void* self)",
+    "summary": "Reads the value pointer at +0x00, throws if it is null, otherwise copies the byte at value+1 through a scratch object and calls field_0x04-\u003evfunc_47(self).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1880": {
     "name": "initStaticObjectOnce_004B1880",
     "signature": "void* fn_004B1880(void)",

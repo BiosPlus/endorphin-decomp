@@ -183743,3 +183743,57 @@ bool fn_004B1460(void* const* slot, uint32_t arg2) {
     return result;
 }
 } // namespace lift_004B1460
+
+// [0x004B17D0] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_47 (160 bytes)
+namespace lift_004B17D0 {
+// Thiscall externs: `this` in ecx, remaining arguments on the stack.
+extern void __thiscall ext_006720A0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __cdecl ext_006A6DD2(void* exception, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the value pointer at +0x00, throws if it is null, otherwise copies the byte at value+1 through a scratch object and calls field_0x04->vfunc_47(self).
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0> +0x04 void* field_0x04
+uint32_t __stdcall fn_004B17D0(void* self) {
+    void* value = lift_field<void*>(self, 0x00);
+    if (value == nullptr) {
+        // Null value: build a DerivedException and throw it.
+        void* exception = nullptr;
+        ext_0046C3C0(&exception);
+        ext_006A6DD2(&exception,
+                     reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0;
+    }
+
+    // Byte at value+1 (the original reuses the argument slot for this byte).
+    const uint32_t flag = *(static_cast<const uint8_t*>(value) + 1);
+
+    // Scratch object: f0 is the sub_6720A0 output, f4 is the second dword.
+    struct Scratch {
+        void* f0;
+        void* f4;
+    } scratch{};
+    ext_006720A0(&scratch, flag);
+    ext_0041CF50(self, &scratch);
+
+    // If scratch.f4 is non-null, release it via its vtable slot 0x78 (index 30).
+    void* held = scratch.f4;
+    if (held != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (__thiscall*)(void*, void*)>(vtbl[0x78 / 4]);
+        release(held, &scratch);
+    }
+
+    // Tail call: field_0x04->vfunc_47(self); its eax is the return value.
+    void* field = lift_field<void*>(self, 0x04);
+    void** fvtbl = *reinterpret_cast<void***>(field);
+    auto is_active = reinterpret_cast<uint32_t (__thiscall*)(void*, void*)>(fvtbl[0xBC / 4]);
+    return is_active(field, self);
+}
+} // namespace lift_004B17D0
