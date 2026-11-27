@@ -1,0 +1,64 @@
+{
+  "va": "0x005F0620",
+  "size": 830,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_17_off_C",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::clone",
+  "class": "NMData::SkeletalJointData",
+  "signature": "extern \"C\" void* __fastcall fn_005F0620(void* self)",
+  "summary": "Allocates and constructs a clone of SkeletalJointData and copies its state, transform channels, and child objects.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x14",
+      "type": "MsvcString",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x148",
+      "type": "uint8_t",
+      "name": "field_0x148"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x168",
+      "type": "uint8_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x308",
+      "type": "uint32_t",
+      "name": "field_0x308"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:34:09Z"
+}

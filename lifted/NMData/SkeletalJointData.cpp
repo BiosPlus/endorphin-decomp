@@ -487,3 +487,110 @@ void __thiscall fn_005EDD30(void* self) {
     ext_005A3500(mgr, esi);
 }
 } // namespace lift_005EDD30
+
+// [0x005F0620]
+namespace lift_005F0620 {
+// @name NMData::SkeletalJointData::clone
+// @class NMData::SkeletalJointData
+// @summary Allocates and constructs a clone of SkeletalJointData and copies its state, transform channels, and child objects.
+// @field NMData::SkeletalJointData +0x14 MsvcString field_0x14
+// @field NMData::SkeletalJointData +0x148 uint8_t field_0x148
+// @field NMData::SkeletalJointData +0x168 uint8_t field_0x168
+// @field NMData::SkeletalJointData +0x178 uint8_t field_0x178
+// @field NMData::SkeletalJointData +0x17C void* field_0x17c
+// @field NMData::SkeletalJointData +0x180 void* field_0x180
+// @field NMData::SkeletalJointData +0x184 void* field_0x184
+// @field NMData::SkeletalJointData +0x308 uint32_t field_0x308
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_005EFFF0(void* self);
+extern void __thiscall ext_00505F00(void* self, void* src);
+extern void __thiscall ext_0065F440(void* self);
+extern void __thiscall ext_005881D0(void* self, void* src);
+extern void __thiscall ext_0065F280(void* self, void* src);
+extern void __thiscall ext_00587920(void* self, void* child, int32_t flag);
+extern void __thiscall ext_005B6610(void* self, void* src);
+
+extern void* __fastcall fn_005F0620(void* self) {
+    void* mem = ext_006A5C62(0x324);
+    void* clone = nullptr;
+    if (mem != nullptr) {
+        clone = ext_005EFFF0(mem);
+    }
+
+    using VfnSetName = void(__thiscall*)(void*, void*);
+    ((VfnSetName)(*(void***)clone)[0x5C / 4])(clone, (uint8_t*)self + 0x8);
+
+    *(uint8_t*)((uint8_t*)clone + 0x178) = *(uint8_t*)((uint8_t*)self + 0x16c);
+    ext_00505F00((uint8_t*)clone + 0x168, (uint8_t*)self + 0x15c);
+    *(uint32_t*)((uint8_t*)clone + 0x308) = *(uint32_t*)((uint8_t*)self + 0x2fc);
+
+    uint8_t* iface4 = (uint8_t*)self - 0x8;
+    using VfnGetFlag = uint8_t(__thiscall*)(void*);
+    *(uint8_t*)((uint8_t*)clone + 0x148) = ((VfnGetFlag)(*(void***)iface4)[0x20 / 4])(iface4);
+
+    void* esi = *(void**)((uint8_t*)clone + 0x17c);
+    void* edi = *(void**)((uint8_t*)self + 0x170);
+
+    uint8_t tmp14[32]{};
+    uint8_t tmp38[32]{};
+    uint8_t tmp2c[32]{};
+
+    using VfnGet110 = void*(__thiscall*)(void*, void*);
+    using VfnSetF4 = void(__thiscall*)(void*, void*);
+    void* r110 = ((VfnGet110)(*(void***)edi)[0x110 / 4])(edi, tmp14);
+    ((VfnSetF4)(*(void***)esi)[0xF4 / 4])(esi, r110);
+
+    using VfnGetCount = int32_t(__thiscall*)(void*);
+    using VfnGet118 = void(__thiscall*)(void*, void*, int32_t, int32_t);
+    using VfnSetEC = void(__thiscall*)(void*, void*, int32_t, int32_t);
+
+    for (int32_t i = 0; i < ((VfnGetCount)(*(void***)esi)[0x138 / 4])(esi); ++i) {
+        ((VfnGet118)(*(void***)edi)[0x118 / 4])(edi, tmp38, i, 0);
+        ((VfnGet118)(*(void***)edi)[0x118 / 4])(edi, tmp14, i, 1);
+        ((VfnSetEC)(*(void***)esi)[0xEC / 4])(esi, tmp38, i, 0);
+        ((VfnSetEC)(*(void***)esi)[0xEC / 4])(esi, tmp14, i, 1);
+        ext_0065F440(tmp14);
+        ext_0065F440(tmp38);
+    }
+
+    using VfnGet130 = uint32_t(__thiscall*)(void*, int32_t);
+    using VfnSet108 = void(__thiscall*)(void*, int32_t, uint32_t);
+    for (int32_t k = 0; k < 3; ++k) {
+        uint32_t val = ((VfnGet130)(*(void***)edi)[0x130 / 4])(edi, k);
+        ((VfnSet108)(*(void***)esi)[0x108 / 4])(esi, k, val);
+    }
+
+    ext_005881D0(esi, edi);
+    ext_0065F280((uint8_t*)esi + 0xe4, (uint8_t*)edi + 0xe4);
+    *(uint32_t*)((uint8_t*)esi + 0xe8) = *(uint32_t*)((uint8_t*)edi + 0xe8);
+    *(uint32_t*)((uint8_t*)esi + 0xec) = *(uint32_t*)((uint8_t*)edi + 0xec);
+
+    void* edi2 = *(void**)((uint8_t*)clone + 0x180);
+    void* src_174 = *(void**)((uint8_t*)self + 0x174);
+    void* r2 = ((VfnGet110)(*(void***)src_174)[0x110 / 4])(src_174, tmp2c);
+    ((VfnSetF4)(*(void***)edi2)[0xF4 / 4])(edi2, r2);
+
+    ext_005881D0(edi2, src_174);
+    ext_0065F280((uint8_t*)edi2 + 0xe4, (uint8_t*)src_174 + 0xe4);
+    *(uint32_t*)((uint8_t*)edi2 + 0xe8) = *(uint32_t*)((uint8_t*)src_174 + 0xe8);
+    *(uint32_t*)((uint8_t*)edi2 + 0xec) = *(uint32_t*)((uint8_t*)src_174 + 0xec);
+
+    void* self_base = (uint8_t*)self - 0xc;
+    ext_005881D0(clone, self_base);
+    ext_0065F280((uint8_t*)clone + 0xe4, (uint8_t*)self_base + 0xe4);
+    *(uint32_t*)((uint8_t*)clone + 0xe8) = *(uint32_t*)((uint8_t*)self_base + 0xe8);
+    *(uint32_t*)((uint8_t*)clone + 0xec) = *(uint32_t*)((uint8_t*)self_base + 0xec);
+    ext_00587920(clone, *(void**)((uint8_t*)clone + 0x180), 0);
+
+    void* edi3 = *(void**)((uint8_t*)clone + 0x184);
+    void* src_178 = *(void**)((uint8_t*)self + 0x178);
+    ext_005B6610(edi3, src_178);
+    *(float*)((uint8_t*)edi3 + 0x154) = *(float*)((uint8_t*)src_178 + 0x154);
+    *(float*)((uint8_t*)edi3 + 0x158) = *(float*)((uint8_t*)src_178 + 0x158);
+    *(float*)((uint8_t*)edi3 + 0x15c) = *(float*)((uint8_t*)src_178 + 0x15c);
+    ext_00587920(esi, edi3, 0);
+
+    return clone;
+}
+} // namespace lift_005F0620
