@@ -11737,6 +11737,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005B0D90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0048C1A0": {
+    "name": "InvokeWithStaticInitAndStringArg",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_0048C1A0(uint32_t this_ptr, uint32_t arg0)",
+    "summary": "Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, \u0026str, \u0026static_init_slot, 1).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048C860": {
     "name": "resetHandleAndDestroyStringAt4",
     "signature": "void fn_0048C860(void* self)",
