@@ -1,0 +1,28 @@
+{
+  "va": "0x006C4D70",
+  "size": 64,
+  "orig_symbol": "sub_006C4D70",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::appendToArray_006C4D70",
+  "class": "Unknown",
+  "signature": "void fn_006C4D70(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4)",
+  "summary": "Appends the 32-bit value a1 to the DynamicArray embedded at +0x4D0 (index = current count, read from the array's first dword).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4D0",
+      "type": "DynamicArray",
+      "name": "field_0x4D0"
+    },
+    {
+      "class": "DynamicArray",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:37Z"
+}

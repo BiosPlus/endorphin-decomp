@@ -67025,6 +67025,13 @@
     "summary": "Transforms a 3D double vector by the upper-left 3x3 transpose of a 4x4 double matrix.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C4D70": {
+    "name": "Unknown::appendToArray_006C4D70",
+    "class": "Unknown",
+    "signature": "void fn_006C4D70(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4)",
+    "summary": "Appends the 32-bit value a1 to the DynamicArray embedded at +0x4D0 (index = current count, read from the array's first dword).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C59C0": {
     "name": "Unknown::GetChildByIndex",
     "class": "Unknown",

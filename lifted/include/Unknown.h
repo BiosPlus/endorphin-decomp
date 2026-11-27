@@ -2010,6 +2010,7 @@ struct Unknown_Fields {
     // +0x494 void*                    field_0x494  (evidence: 0x00565120) // CONFLICT: multiple definitions at +0x494
     // +0x494 void*                    scene  (evidence: 0x00564FE0, 0x00565060) // CONFLICT: multiple definitions at +0x494
     // +0x4C4 uint32_t                 field_0x4C4  (evidence: 0x004030F0, 0x00408050, 0x0040BE90)
+    // +0x4D0 DynamicArray             field_0x4D0  (evidence: 0x006C4D70)
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
     // +0x4E8 int32_t field_0x4E8 (on the object returned by ext_00594620)  (evidence: 0x00412CE0)
     // +0x518 DWORD                    field_0x518  (evidence: 0x00702790)

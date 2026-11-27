@@ -2369,3 +2369,28 @@ void __thiscall fn_006C2E60(void* self, uint32_t flag) {
     }
 }
 } // namespace lift_006C2E60
+
+// [0x006C4D70] sub_006C4D70 (64 bytes)
+namespace lift_006C4D70 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+// Calling convention: __thiscall (self in ECX), index and elem on the stack.
+extern void ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::appendToArray_006C4D70
+// @class Unknown
+// @summary Appends the 32-bit value a1 to the DynamicArray embedded at +0x4D0 (index = current count, read from the array's first dword).
+// @field Unknown +0x4D0 DynamicArray field_0x4D0
+// @field DynamicArray +0x00 int32_t count
+void fn_006C4D70(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4) {
+    // a2, a3, a4 are spilled to the caller's scratch stack slots in the original
+    // code and never read by the callee; they are not observable here.
+    (void)a2;
+    (void)a3;
+    (void)a4;
+
+    void* array = static_cast<uint8_t*>(self) + 0x4D0;
+    int32_t index = lift_field<int32_t>(array, 0);
+    int32_t value = a1;
+    ext_006D2170(array, index, &value);
+}
+} // namespace lift_006C4D70
