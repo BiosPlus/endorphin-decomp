@@ -48708,6 +48708,13 @@
     "summary": "Copies 0x18-byte records from [first, last) to dst; if dst is null, only advances the source (no copy).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x0064B900": {
+    "name": "Unknown::buildPaddedRotationMatrix",
+    "class": "Unknown",
+    "signature": "uint8_t fn_0064B900(void* self, float value)",
+    "summary": "Initialises a local packed 3x3 identity, runs it through two helpers with the float argument, copies it into the padded 4-stride matrix at self, and returns the helper's bool result.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x0064C0A0": {
     "name": "Unknown::CopyRange24AndAdvance_0064C0A0",
     "class": "Unknown",

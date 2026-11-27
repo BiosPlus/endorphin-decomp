@@ -1,0 +1,14 @@
+{
+  "va": "0x0064B900",
+  "size": 98,
+  "orig_symbol": "sub_0064B900",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::buildPaddedRotationMatrix",
+  "class": "Unknown",
+  "signature": "uint8_t fn_0064B900(void* self, float value)",
+  "summary": "Initialises a local packed 3x3 identity, runs it through two helpers with the float argument, copies it into the padded 4-stride matrix at self, and returns the helper's bool result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:56:55Z"
+}

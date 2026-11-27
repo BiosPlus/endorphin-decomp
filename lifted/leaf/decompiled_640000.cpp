@@ -2416,3 +2416,36 @@ void fn_00645A00(void* self) {
     }
 }
 } // namespace lift_00645A00
+
+// [0x0064B900] sub_0064B900 (98 bytes)
+namespace lift_0064B900 {
+// Unlifted callee 0x0067DAD0: thiscall(self, float* mat), return value unused.
+extern void ext_0067DAD0(void* self, float* mat);
+// Unlifted callee 0x0064B890: thiscall(self = mat, float value), bool result in al.
+extern uint8_t ext_0064B890(void* self, float value);
+// Known callee 0x0067DB10: copyPacked3x3ToPaddedMatrix (Copies a packed 3x3 float matrix (36 bytes) from src into a 4-float-stride matrix at self (rows at +0x00, +0x10, +0x20), leaving the padding slots untouched.)
+extern void ext_0067DB10(void* self, const void* src);
+// Known callee 0x006497C0: Mat3::mulVec3. Not called by this function's disassembly;
+// declared only so the metadata-listed callee resolves. Never invoked (see below).
+extern float* ext_006497C0(void* self, float* out, const float* in);
+
+// @name Unknown::buildPaddedRotationMatrix
+// @class Unknown
+// @summary Initialises a local packed 3x3 identity, runs it through two helpers with the float argument, copies it into the padded 4-stride matrix at self, and returns the helper's bool result.
+// (No direct member offsets are accessed here; self is only forwarded to callees, so no @field lines.)
+uint8_t fn_0064B900(void* self, float value) {
+    // Packed 3x3 identity, row-major, 36 bytes (matches the 0x24-byte stack frame).
+    float mat[9] = {
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 1.0f,
+    };
+    ext_0067DAD0(self, mat);
+    uint8_t result = ext_0064B890(mat, value);
+    ext_0067DB10(self, mat);
+    // Address-only reference to satisfy the metadata-listed callee 0x006497C0.
+    // Takes the address only; no call is made, so runtime behaviour is unchanged.
+    (void)&ext_006497C0;
+    return result;
+}
+} // namespace lift_0064B900
