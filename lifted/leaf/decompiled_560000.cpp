@@ -1694,3 +1694,69 @@ extern InsertResult* __thiscall fn_0056F050(void* self, InsertResult* ret, const
 }
 } // namespace lift_0042C0D0
 } // namespace lift_0056F050
+
+// [0x00560920] sub_00560920 (175 bytes)
+namespace lift_00560920 {
+// Known callee 0x0055F340: LowerBoundFloatKey16 (Binary search over 16-byte records keyed by their leading float; returns the first record whose key is not less than *key (std::lower_bound semantics).)
+// Caller pushes five cdecl arguments (begin, end, key, a dword local, 0) and cleans up 0x14 bytes.
+extern void* ext_0055F340(void* begin, void* end, const float* key, uint32_t unused_a, uint32_t unused_b);
+// Known callee 0x00560270: sub_00560270 (Auto-lifted identical-shape clone of 0x00475710 (Vector::InsertAndGetIterator_00475710).)
+extern void ext_00560270(void* self, void* out);
+// Import slot 0x00925134: MSVCR80!_invalid_parameter_noinfo (noreturn CRT assertion).
+extern int mem_00925134;
+
+// Portable stand-in for the CRT invalid-parameter trap reached through the IAT slot.
+[[noreturn]] static void invalid_parameter_noinfo() {
+    (void)&mem_00925134;
+    std::abort();
+}
+
+// @name Vector::InsertSortedFloatKey_00560920
+// @class Vector
+// @summary Lower-bounds *key in [begin,end); if the hit is end or its float key is greater than *key, inserts via ext_00560270 and returns true, otherwise returns false.
+// @field Vector +0x04 uint8_t* begin
+// @field Vector +0x08 uint8_t* end
+bool fn_00560920(void* self, const float* key) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto** begin_slot = reinterpret_cast<uint8_t**>(base + 0x04);
+    auto** end_slot = reinterpret_cast<uint8_t**>(base + 0x08);
+
+    // Range sanity checks: begin <= end.
+    if (reinterpret_cast<uintptr_t>(*begin_slot) > reinterpret_cast<uintptr_t>(*end_slot))
+        invalid_parameter_noinfo();
+    uint8_t* begin = *begin_slot;
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(*end_slot))
+        invalid_parameter_noinfo();
+
+    uint32_t flag_arg = 0;  // byte local zeroed in the prologue, passed as a dword
+    uint8_t* found = static_cast<uint8_t*>(
+        ext_0055F340(begin, *end_slot, key, flag_arg, 0));
+
+    // Re-validate the range after the search.
+    uint8_t* end = *end_slot;
+    if (reinterpret_cast<uintptr_t>(*begin_slot) > reinterpret_cast<uintptr_t>(end))
+        invalid_parameter_noinfo();
+    if (!self)
+        invalid_parameter_noinfo();
+
+    if (found == end) {
+        uint32_t slot = 0;
+        ext_00560270(self, &slot);
+        return true;
+    }
+
+    if (!self)
+        invalid_parameter_noinfo();
+    if (reinterpret_cast<uintptr_t>(found) >= reinterpret_cast<uintptr_t>(*end_slot))
+        invalid_parameter_noinfo();
+
+    // Insert only when the found record's key is strictly greater than *key.
+    // NaN compares false here, matching the x87 fcompp/test-ah-0x41 sequence.
+    if (*reinterpret_cast<const float*>(found) > *key) {
+        uint32_t slot = 0;
+        ext_00560270(self, &slot);
+        return true;
+    }
+    return false;
+}
+} // namespace lift_00560920

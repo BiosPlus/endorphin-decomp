@@ -39710,6 +39710,13 @@
     "summary": "Populate a float vector with standard frame rates and return the index of the first rate greater than this-\u003efield_0x174, or size - 1.",
     "lifted_path": "lifted/classes/FBXIO.cpp"
   },
+  "0x00560920": {
+    "name": "Vector::InsertSortedFloatKey_00560920",
+    "class": "Vector",
+    "signature": "[[noreturn]] static void invalid_parameter_noinfo()",
+    "summary": "Lower-bounds *key in [begin,end); if the hit is end or its float key is greater than *key, inserts via ext_00560270 and returns true, otherwise returns false.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00562A30": {
     "name": "FBXIO::vfunc_13",
     "class": "FBXIO",
