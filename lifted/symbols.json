@@ -17970,6 +17970,13 @@
     "summary": "One-time guarded init of a static ReadWriteMethodType object (vtable 0x0094A7CC), then points the out-param's +4 at that static object.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004DFCE0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, bool, getAnimationVisibility, bool, setAnimationVisibility\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, bool, getAnimationVisibility, bool, setAnimationVisibility\u003e",
+    "signature": "void fn_004DFCE0(void* self)",
+    "summary": "Lazily initializes the shared static descriptor at mem_00AE6454 once, then stores its address into the argument's +0x4 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004DFD60": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e",

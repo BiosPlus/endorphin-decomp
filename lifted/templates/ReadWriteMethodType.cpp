@@ -10569,3 +10569,26 @@ void fn_004E9FB0(void* arg0) {
         static_cast<void*>(&mem_00AE7124);
 }
 } // namespace lift_004E9FB0
+
+// [0x004DFCE0] sub_004DFCE0 (122 bytes)
+namespace lift_004DFCE0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (calls ext_00672000 on self, stores stack arg into first DWORD of self).
+extern DWORD ext_0067A670(void* self, DWORD value);
+// Guard word for the one-time initialization of mem_00AE6454 (bit 0 = initialized).
+extern DWORD mem_00AE6458;
+// Static descriptor object; first slot holds its vtable pointer (0x0094A97C).
+extern void* mem_00AE6454;
+
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, getAnimationVisibility, bool, setAnimationVisibility>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, getAnimationVisibility, bool, setAnimationVisibility>
+// @summary Lazily initializes the shared static descriptor at mem_00AE6454 once, then stores its address into the argument's +0x4 slot.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_004DFCE0(void* self) {
+    if ((mem_00AE6458 & 1u) == 0) {
+        mem_00AE6458 |= 1u;
+        ext_0067A670(&mem_00AE6454, 0);
+        mem_00AE6454 = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0094A97Cu));
+    }
+    lift_field<void*>(self, 0x4) = static_cast<void*>(&mem_00AE6454);
+}
+} // namespace lift_004DFCE0
