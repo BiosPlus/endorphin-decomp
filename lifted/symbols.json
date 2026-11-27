@@ -29765,6 +29765,12 @@
     "summary": "Advances/looks up cursor via ext_00501140 and throws an exception if null.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00501220": {
+    "name": "sub_00501220",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00501220(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Allocates a 0x28-byte object, constructs it via ext_00500E70, registers it with the global manager from ext_00665870 via ext_00666670, and returns arg2.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005012A0": {
     "name": "NMData::EvolveEngineData::vfunc_2_off_8",
     "class": "NMData::EvolveEngineData",
