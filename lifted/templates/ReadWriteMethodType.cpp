@@ -12360,3 +12360,32 @@ void __stdcall fn_005D2560(void* holder) {
     *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B459D8));
 }
 } // namespace lift_005D2560
+
+// [0x005D2F80] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXOffset(float)>::vfunc_40 (122 bytes)
+namespace lift_005D2F80 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern uint32_t mem_00B459FC; // one-time init guard (bit 0)
+extern uint32_t mem_00B459F8; // static accessor object (first DWORD = vtable)
+
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXOffset(float)>
+// @summary Lazily initializes the static accessor object (guard bit 0, first DWORD set to vtable 0x966B9C) and stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_005D2F80(void* holder) {
+    if ((mem_00B459FC & 1u) == 0) {
+        mem_00B459FC |= 1u;
+
+        // Thiscall: ECX = &mem_00B459F8, one stack argument = 0.
+        using StoreFirstDwordFn = void (__thiscall*)(void* self, uint32_t value);
+        auto store = reinterpret_cast<StoreFirstDwordFn>(&ext_0067A670);
+        store(&mem_00B459F8, 0u);
+
+        mem_00B459F8 = 0x00966B9Cu; // vtable for the accessor object
+    }
+
+    // Both paths: holder->field_0x04 = &mem_00B459F8.
+    auto* slot = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(holder) + 0x04);
+    *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B459F8));
+}
+} // namespace lift_005D2F80
