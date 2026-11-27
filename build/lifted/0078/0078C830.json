@@ -1,0 +1,45 @@
+{
+  "va": "0x0078C830",
+  "size": 144,
+  "orig_symbol": "sub_0078C830",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_0078C830",
+  "signature": "uint64_t __thiscall sub_0078C830(void* self, int32_t index, uint8_t swap)",
+  "summary": "Reads a 64-bit integer from a binary buffer or parses it from a string table",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "const char**",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "const uint8_t*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "const uint32_t*",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:47:07Z"
+}

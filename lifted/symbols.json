@@ -79330,6 +79330,13 @@
     "summary": "Calls CriticalSectionBuckets::ClearBuckets on every entry of the array at +0x10 of the global object, for count entries at +0x00.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078CE20": {
+    "name": "sub_0078CE20",
+    "class": "PoolAllocator",
+    "signature": "void* __thiscall fn_0078CE20(void* this_, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Initializes a pool/chunked allocator with a critical section, bitmask shift parameters, and zeroed bucket array.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CEB0": {
     "name": "CriticalSectionBuckets::Destroy",
     "class": "CriticalSectionBuckets",

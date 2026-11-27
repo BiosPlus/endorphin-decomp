@@ -2667,3 +2667,101 @@ extern uint32_t __fastcall fn_007839F0(void* self, int edx_unused, void* arg1, v
     return 0;
 }
 } // namespace lift_007839F0
+
+// [0x0078C830]
+namespace lift_0078C830 {
+extern uint32_t mem_0092521C;
+extern const char mem_00AA92D4[];
+
+// @name sub_0078C830
+// @summary Reads a 64-bit integer from a binary buffer or parses it from a string table
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x14 const char** field_0x14
+// @field Unknown +0x20 const uint8_t* field_0x20
+// @field Unknown +0x28 int32_t field_0x28
+// @field Unknown +0x2c const uint32_t* field_0x2c
+uint64_t __thiscall sub_0078C830(void* self, int32_t index, uint8_t swap) {
+    const uint8_t* base = lift_field<const uint8_t*>(self, 0x20);
+    if (base != nullptr) {
+        int32_t count = lift_field<int32_t>(self, 0x28);
+        if (index >= count) {
+            return 0;
+        }
+        const uint32_t* offsets = lift_field<const uint32_t*>(self, 0x2c);
+        uint32_t offset = offsets[index];
+        uint64_t val = *reinterpret_cast<const uint64_t*>(base + offset);
+        if (swap != 0) {
+            val = ((val & 0x00000000000000FFULL) << 56) |
+                  ((val & 0x000000000000FF00ULL) << 40) |
+                  ((val & 0x0000000000FF0000ULL) << 24) |
+                  ((val & 0x00000000FF000000ULL) << 8)  |
+                  ((val & 0x000000FF00000000ULL) >> 8)  |
+                  ((val & 0x0000FF0000000000ULL) >> 24) |
+                  ((val & 0x00FF000000000000ULL) >> 40) |
+                  ((val & 0xFF00000000000000ULL) >> 56);
+        }
+        return val;
+    } else {
+        int32_t count = lift_field<int32_t>(self, 0x04);
+        if (index >= count) {
+            return 0;
+        }
+        const char* const* strings = lift_field<const char* const*>(self, 0x14);
+        uint64_t val = 0;
+        using SscanfFn = int(__cdecl*)(const char*, const char*, ...);
+        auto fn = reinterpret_cast<SscanfFn>(static_cast<uintptr_t>(mem_0092521C));
+        fn(strings[index], mem_00AA92D4, &val);
+        return val;
+    }
+}
+} // namespace lift_0078C830
+
+// [0x0078CE20]
+namespace lift_0078CE20 {
+// @name sub_0078CE20
+// @class PoolAllocator
+// @summary Initializes a pool/chunked allocator with a critical section, bitmask shift parameters, and zeroed bucket array.
+// @field PoolAllocator +0x00 void* criticalSection
+// @field PoolAllocator +0x04 void* buckets
+// @field PoolAllocator +0x08 uint32_t capacity
+// @field PoolAllocator +0x0c uint32_t bucketCount
+// @field PoolAllocator +0x10 uint32_t shiftBits
+// @field PoolAllocator +0x14 uint32_t lowBitMask
+// @field PoolAllocator +0x18 uint32_t field_0x18
+// @field PoolAllocator +0x1c uint32_t field_0x1c
+// @field PoolAllocator +0x20 uint32_t field_0x20
+// @field PoolAllocator +0x24 uint32_t field_0x24
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern uint32_t ext_0078D1C0(int32_t n);
+extern void (__stdcall *mem_009241C0)(void* lpCriticalSection);
+extern void* (__cdecl *mem_00925208)(uint32_t size);
+
+void* __thiscall fn_0078CE20(void* this_, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    void* cs = ext_006A5C62(0x18);
+    if (cs != nullptr) {
+        mem_009241C0(cs);
+    }
+
+    lift_field<void*>(this_, 0x00) = cs;
+    lift_field<uint32_t>(this_, 0x08) = arg1;
+    lift_field<uint32_t>(this_, 0x10) = arg2;
+
+    uint32_t bucketCount = arg1 >> (arg2 & 0x1F);
+    lift_field<uint32_t>(this_, 0x0c) = bucketCount;
+    lift_field<uint32_t>(this_, 0x14) = ext_0078D1C0(static_cast<int32_t>(arg2));
+
+    lift_field<uint32_t>(this_, 0x18) = arg3;
+    lift_field<uint32_t>(this_, 0x1c) = arg4;
+    lift_field<uint32_t>(this_, 0x20) = 0;
+    lift_field<uint32_t>(this_, 0x24) = 0;
+
+    uint32_t allocSize = bucketCount << 2;
+    void* buckets = mem_00925208(allocSize);
+    lift_field<void*>(this_, 0x04) = buckets;
+    std::memset(buckets, 0, allocSize);
+
+    return this_;
+}
+} // namespace lift_0078CE20
