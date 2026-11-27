@@ -1,0 +1,13 @@
+{
+  "va": "0x004B7860",
+  "size": 117,
+  "orig_symbol": "sub_004B7860",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "AllocUnknownAndNotify_004B7860",
+  "signature": "void fn_004B7860(void* self, uint32_t a1, void* a2, uint32_t a3)",
+  "summary": "Allocates a 0x50-byte object and, if the allocation succeeded, constructs an Unknown in it from the owner this and three stack args; then passes the global int32 from 0x00665870 to 0x00666670.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:30Z"
+}

@@ -2665,3 +2665,27 @@ uint32_t* fn_004BE470(void* self, uint32_t* out, const void* flag) {
     return out;
 }
 } // namespace lift_004BE470
+
+// [0x004B7860] sub_004B7860 (117 bytes)
+namespace lift_004B7860 {
+// Known callee 0x004B7740: Unknown::Unknown(uint32_t, uint32_t, const Object*, uint32_t) (thiscall; ecx = new object, four stack args: owner this, a1, a2, a3)
+extern void* ext_004B7740(void* self, uint32_t a, uint32_t b, void* c, uint32_t d);
+// Known callee 0x00665870: sub_00665870 (cdecl, no args; returns int32 from global mem_00B59420)
+extern int32_t ext_00665870(void);
+// Known callee 0x00666670: sub_00666670 (thiscall, this = result of 0x00665870; return value unused)
+extern void ext_00666670(int32_t self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (cdecl, one stack arg = allocation size; returns allocated pointer)
+extern void* ext_006A5C62(size_t size);
+
+// @name AllocUnknownAndNotify_004B7860
+// @summary Allocates a 0x50-byte object and, if the allocation succeeded, constructs an Unknown in it from the owner this and three stack args; then passes the global int32 from 0x00665870 to 0x00666670.
+void fn_004B7860(void* self, uint32_t a1, void* a2, uint32_t a3) {
+    void* obj = ext_006A5C62(0x50);
+    if (obj != nullptr) {
+        (void)ext_004B7740(obj, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)), a1, a2, a3);
+    }
+
+    int32_t status = ext_00665870();
+    ext_00666670(status);
+}
+} // namespace lift_004B7860
