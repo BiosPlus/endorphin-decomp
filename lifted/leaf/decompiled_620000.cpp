@@ -3460,3 +3460,46 @@ void* __cdecl fn_0062BD30(const void* first, const void* last, void* dest) {
     return dst;
 }
 } // namespace lift_0062BD30
+
+// [0x00621CA0]
+namespace lift_00621CA0 {
+// @name Vector72::push_back
+// @class Vector72
+// @summary Appends a 72-byte element to the vector, growing via insert if capacity is full
+// @field Vector72 +0x04 void* first
+// @field Vector72 +0x08 void* last
+// @field Vector72 +0x0C void* end
+
+
+extern void __cdecl ext_006215D0(void* dest, uint32_t count, const void* val, void* vec, const void* val2, uint32_t tag);
+extern void __thiscall ext_00621BF0(void* self, void* out_iter, void* container, void* where, const void* val);
+extern void (__cdecl* mem_00925134)();
+
+extern void __thiscall sub_00621CA0(void* self, const void* val) {
+    uint8_t* first = lift_field<uint8_t*>(self, 0x04);
+    int32_t size = 0;
+    if (first != nullptr) {
+        uint8_t* last = lift_field<uint8_t*>(self, 0x08);
+        size = static_cast<int32_t>(last - first) / 0x48;
+    }
+
+    if (first != nullptr) {
+        uint8_t* end = lift_field<uint8_t*>(self, 0x0C);
+        int32_t capacity = static_cast<int32_t>(end - first) / 0x48;
+        if (static_cast<uint32_t>(size) < static_cast<uint32_t>(capacity)) {
+            uint8_t* last = lift_field<uint8_t*>(self, 0x08);
+            ext_006215D0(last, 1, val, self, val, 0);
+            lift_field<uint8_t*>(self, 0x08) = last + 0x48;
+            return;
+        }
+    }
+
+    uint8_t* last = lift_field<uint8_t*>(self, 0x08);
+    if (first > last) {
+        mem_00925134();
+    }
+
+    uint32_t out_iter[2];
+    ext_00621BF0(self, out_iter, self, last, val);
+}
+} // namespace lift_00621CA0

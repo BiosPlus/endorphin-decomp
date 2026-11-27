@@ -1,0 +1,34 @@
+{
+  "va": "0x00621CA0",
+  "size": 161,
+  "orig_symbol": "sub_00621CA0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Vector72::push_back",
+  "class": "Vector72",
+  "signature": "extern \"C\" void __thiscall sub_00621CA0(void* self, const void* val)",
+  "summary": "Appends a 72-byte element to the vector, growing via insert if capacity is full",
+  "fields": [
+    {
+      "class": "Vector72",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "first"
+    },
+    {
+      "class": "Vector72",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "last"
+    },
+    {
+      "class": "Vector72",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:44:49Z"
+}
