@@ -2293,3 +2293,85 @@ void fn_005978F0(void* self, void* node) {
 }
 } // namespace lift_00667810
 } // namespace lift_005978F0
+
+// [0x00594330] sub_00594330 (154 bytes)
+namespace lift_00594330 {
+// Import slot (IAT) holding MSVCR80!_invalid_parameter_noinfo.
+extern void (*mem_00925134)(void);
+
+namespace {
+inline uint8_t* node_at(uint32_t addr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
+}
+inline uint32_t link_at(uint32_t node, ptrdiff_t off) {
+    return lift_field<uint32_t>(node_at(node), off);
+}
+inline bool flag_at(uint32_t node) {
+    return lift_field<uint8_t>(node_at(node), 0xB9) != 0;
+}
+} // namespace
+
+// @name TreeConstIterator::operator++
+// @class TreeConstIterator
+// @summary MSVC std::_Tree const-iterator increment: advances the current node at +0x04 to its in-order successor (via the node+0x08 / node+0x00 / node+0x04 links), stopping at nodes whose byte at +0xB9 is set; calls _invalid_parameter_noinfo when the iterator state is invalid.
+// @field TreeConstIterator +0x00 uint32_t field_0x00 (container/header pointer, must be non-null)
+// @field TreeConstIterator +0x04 uint32_t field_0x04 (current node pointer)
+// @field TreeNode +0x00 uint32_t field_0x00 (link)
+// @field TreeNode +0x04 uint32_t field_0x04 (link)
+// @field TreeNode +0x08 uint32_t field_0x08 (link)
+// @field TreeNode +0xB9 uint8_t field_0xB9 (sentinel flag)
+void fn_00594330(void* self) {
+    uint32_t& container = lift_field<uint32_t>(self, 0x00);
+    uint32_t& cur = lift_field<uint32_t>(self, 0x04);
+
+    if (container == 0) {
+        mem_00925134();
+    }
+
+    uint32_t a = cur;
+    if (flag_at(a)) {
+        // Current node is a sentinel: step to node+0x08.
+        uint32_t b = link_at(a, 0x08);
+        cur = b;
+        if (flag_at(b)) {
+            mem_00925134();
+        }
+        return;
+    }
+
+    uint32_t c = link_at(a, 0x00);
+    if (!flag_at(c)) {
+        uint32_t d = link_at(c, 0x08);
+        if (!flag_at(d)) {
+            do {
+                c = d;
+                d = link_at(c, 0x08);
+            } while (!flag_at(d));
+        }
+        cur = c;
+        return;
+    }
+
+    // c is a sentinel: walk up the +0x04 chain from a.
+    uint32_t x = link_at(a, 0x04);
+    if (!flag_at(x)) {
+        for (;;) {
+            if (cur != link_at(x, 0x00)) {
+                break;
+            }
+            cur = x;
+            uint32_t y = link_at(x, 0x04);
+            x = y;
+            if (flag_at(y)) {
+                break;
+            }
+        }
+    }
+
+    if (flag_at(cur)) {
+        mem_00925134();
+        return;
+    }
+    cur = x;
+}
+} // namespace lift_00594330
