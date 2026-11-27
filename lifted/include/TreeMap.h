@@ -8,10 +8,12 @@
 // Recovered field layout for TreeMap:
 namespace lifted_layout {
 struct TreeMap_Fields {
+    // +0x4   void*                    _Myhead  (evidence: 0x0052A650) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00624640) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    head  (evidence: 0x00472780, 0x004A7440, 0x0052EBA0, 0x0052F7D0, 0x005947B0, 0x0059B2E0, 0x005A07A0, 0x005AE100) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    header  (evidence: 0x004280C0, 0x0048BBA0, 0x004EC380) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    nil  (evidence: 0x005590D0) // CONFLICT: multiple definitions at +0x4
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00624640)
+    // +0x8   uint32_t                 _Mysize  (evidence: 0x0052A650) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00624640) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout

@@ -33821,6 +33821,13 @@
     "summary": "Allocates a 0x62-byte object, stores three dword args at +0x00/+0x04/+0x08, copy-constructs a sub-object at +0x0C from the fourth arg, stores a byte flag at +0x60 and clears +0x61; returns the object (or null on allocation failure). Frees and rethrows if the sub-object constructor throws.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052A650": {
+    "name": "TreeMap::erase",
+    "class": "TreeMap",
+    "signature": "static inline void* node_left(void* n)",
+    "summary": "Removes the element at the given red-black tree iterator, rebalances the tree, destroys the node's value and key string, and returns the next iterator.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052AC70": {
     "name": "Unknown::walkChainDestroyStrings_0052AC70",
     "class": "Unknown",

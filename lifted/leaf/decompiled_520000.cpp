@@ -2189,3 +2189,216 @@ void* __thiscall fn_0052ADB0(void* self, void* key, const void* val) {
     return reinterpret_cast<uint8_t*>(result.node) + 0x28;
 }
 } // namespace lift_0052ADB0
+
+// [0x0052A650]
+namespace lift_0052A650 {
+// @name TreeMap::erase
+// @class TreeMap
+// @summary Removes the element at the given red-black tree iterator, rebalances the tree, destroys the node's value and key string, and returns the next iterator.
+// @field TreeMap +0x04 void* _Myhead
+// @field TreeMap +0x08 uint32_t _Mysize
+// @field TreeNode +0x00 void* _Left
+// @field TreeNode +0x04 void* _Parent
+// @field TreeNode +0x08 void* _Right
+// @field TreeNode +0x0C char[28] _Key
+// @field TreeNode +0x28 void* _Value
+// @field TreeNode +0x60 uint8_t _Color
+// @field TreeNode +0x61 uint8_t _Isnil
+
+
+void* ext_0052A070(void* node);
+void __thiscall ext_0052A090(void* self, void* node);
+void __thiscall ext_0052A0E0(void* self, void* node);
+void* ext_0052A1A0(void* node);
+void __thiscall ext_0052A1C0(void* iter);
+void ext_00532770(void* val);
+void ext_006A5C5C(void* ptr);
+void ext_006A6DD2(void* exc, void* throw_info);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_009251C4;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+
+struct TreeIter {
+    void* cont;
+    void* node;
+};
+
+static inline void* node_left(void* n) { return lift_field<void*>(n, 0x00); }
+static inline void*& node_left_ref(void* n) { return lift_field<void*>(n, 0x00); }
+static inline void* node_parent(void* n) { return lift_field<void*>(n, 0x04); }
+static inline void*& node_parent_ref(void* n) { return lift_field<void*>(n, 0x04); }
+static inline void* node_right(void* n) { return lift_field<void*>(n, 0x08); }
+static inline void*& node_right_ref(void* n) { return lift_field<void*>(n, 0x08); }
+static inline uint8_t& node_color(void* n) { return lift_field<uint8_t>(n, 0x60); }
+static inline uint8_t node_isnil(void* n) { return lift_field<uint8_t>(n, 0x61); }
+
+TreeIter* __thiscall fn_0052A650(void* self, TreeIter* out_iter, void* iter_cont, void* iter_node) {
+    if (node_isnil(iter_node) != 0) {
+        uint8_t str_buf[28];
+        uint8_t exc_buf[40];
+        auto ctor_str = reinterpret_cast<void (__thiscall*)(void*, const char*)>(static_cast<uintptr_t>(mem_00924FE4));
+        auto ctor_exc = reinterpret_cast<void (__thiscall*)(void*)>(static_cast<uintptr_t>(mem_009251C4));
+        auto copy_str = reinterpret_cast<void (__thiscall*)(void*, void*)>(static_cast<uintptr_t>(mem_00924FE0));
+        ctor_str(str_buf, reinterpret_cast<const char*>(0x00929218));
+        ctor_exc(exc_buf);
+        lift_field<uint32_t>(exc_buf, 0x00) = 0x00928ECC;
+        copy_str(exc_buf + 0x0C, str_buf);
+        lift_field<uint32_t>(exc_buf, 0x00) = 0x00928EE4;
+        ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009CE164));
+    }
+
+    void* erased_node = iter_node;
+    TreeIter next_iter{iter_cont, iter_node};
+    ext_0052A1C0(&next_iter);
+
+    void* fixnode = nullptr;
+    void* fixnodeparent = nullptr;
+    void* pnode = erased_node;
+
+    if (node_isnil(node_left(pnode)) != 0) {
+        fixnode = node_right(pnode);
+    } else if (node_isnil(node_right(pnode)) != 0) {
+        fixnode = node_left(pnode);
+    } else {
+        pnode = next_iter.node;
+        fixnode = node_right(pnode);
+    }
+
+    if (pnode == erased_node) {
+        fixnodeparent = node_parent(erased_node);
+        if (node_isnil(fixnode) == 0) {
+            node_parent_ref(fixnode) = fixnodeparent;
+        }
+        void* head = lift_field<void*>(self, 0x04);
+        if (node_parent(head) == erased_node) {
+            node_parent_ref(head) = fixnode;
+        } else if (node_left(fixnodeparent) == erased_node) {
+            node_left_ref(fixnodeparent) = fixnode;
+        } else {
+            node_right_ref(fixnodeparent) = fixnode;
+        }
+
+        head = lift_field<void*>(self, 0x04);
+        if (node_left(head) == erased_node) {
+            node_left_ref(head) = (node_isnil(fixnode) != 0) ? fixnodeparent : ext_0052A070(fixnode);
+        }
+        head = lift_field<void*>(self, 0x04);
+        if (node_right(head) == erased_node) {
+            node_right_ref(head) = (node_isnil(fixnode) != 0) ? fixnodeparent : ext_0052A1A0(fixnode);
+        }
+    } else {
+        node_parent_ref(node_left(erased_node)) = pnode;
+        node_left_ref(pnode) = node_left(erased_node);
+
+        if (pnode == node_right(erased_node)) {
+            fixnodeparent = pnode;
+        } else {
+            fixnodeparent = node_parent(pnode);
+            if (node_isnil(fixnode) == 0) {
+                node_parent_ref(fixnode) = fixnodeparent;
+            }
+            node_left_ref(fixnodeparent) = fixnode;
+            node_right_ref(pnode) = node_right(erased_node);
+            node_parent_ref(node_right(erased_node)) = pnode;
+        }
+
+        void* head = lift_field<void*>(self, 0x04);
+        if (node_parent(head) == erased_node) {
+            node_parent_ref(head) = pnode;
+        } else if (node_left(node_parent(erased_node)) == erased_node) {
+            node_left_ref(node_parent(erased_node)) = pnode;
+        } else {
+            node_right_ref(node_parent(erased_node)) = pnode;
+        }
+
+        node_parent_ref(pnode) = node_parent(erased_node);
+        uint8_t tmp_color = node_color(pnode);
+        node_color(pnode) = node_color(erased_node);
+        node_color(erased_node) = tmp_color;
+    }
+
+    if (node_color(erased_node) == 1) {
+        while (fixnode != node_parent(lift_field<void*>(self, 0x04)) && node_color(fixnode) == 1) {
+            if (fixnode == node_left(fixnodeparent)) {
+                void* sib = node_right(fixnodeparent);
+                if (node_color(sib) == 0) {
+                    node_color(sib) = 1;
+                    node_color(fixnodeparent) = 0;
+                    ext_0052A090(self, fixnodeparent);
+                    sib = node_right(fixnodeparent);
+                }
+                if (node_isnil(sib) != 0) {
+                    fixnode = fixnodeparent;
+                    fixnodeparent = node_parent(fixnodeparent);
+                    continue;
+                }
+                if (node_color(node_left(sib)) == 1 && node_color(node_right(sib)) == 1) {
+                    node_color(sib) = 0;
+                    fixnode = fixnodeparent;
+                    fixnodeparent = node_parent(fixnodeparent);
+                    continue;
+                }
+                if (node_color(node_right(sib)) == 1) {
+                    node_color(node_left(sib)) = 1;
+                    node_color(sib) = 0;
+                    ext_0052A0E0(self, sib);
+                    sib = node_right(fixnodeparent);
+                }
+                node_color(sib) = node_color(fixnodeparent);
+                node_color(fixnodeparent) = 1;
+                node_color(node_right(sib)) = 1;
+                ext_0052A090(self, fixnodeparent);
+                break;
+            } else {
+                void* sib = node_left(fixnodeparent);
+                if (node_color(sib) == 0) {
+                    node_color(sib) = 1;
+                    node_color(fixnodeparent) = 0;
+                    ext_0052A0E0(self, fixnodeparent);
+                    sib = node_left(fixnodeparent);
+                }
+                if (node_isnil(sib) != 0) {
+                    fixnode = fixnodeparent;
+                    fixnodeparent = node_parent(fixnodeparent);
+                    continue;
+                }
+                if (node_color(node_right(sib)) == 1 && node_color(node_left(sib)) == 1) {
+                    node_color(sib) = 0;
+                    fixnode = fixnodeparent;
+                    fixnodeparent = node_parent(fixnodeparent);
+                    continue;
+                }
+                if (node_color(node_left(sib)) == 1) {
+                    node_color(node_right(sib)) = 1;
+                    node_color(sib) = 0;
+                    ext_0052A090(self, sib);
+                    sib = node_left(fixnodeparent);
+                }
+                node_color(sib) = node_color(fixnodeparent);
+                node_color(fixnodeparent) = 1;
+                node_color(node_left(sib)) = 1;
+                ext_0052A0E0(self, fixnodeparent);
+                break;
+            }
+        }
+        node_color(fixnode) = 1;
+    }
+
+    uint8_t* key_ptr = reinterpret_cast<uint8_t*>(erased_node) + 0x0C;
+    ext_00532770(key_ptr + 0x1C);
+    auto dtor_str = reinterpret_cast<void (__thiscall*)(void*)>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor_str(key_ptr);
+    ext_006A5C5C(erased_node);
+
+    uint32_t& mysize = lift_field<uint32_t>(self, 0x08);
+    if (mysize > 0) {
+        mysize -= 1;
+    }
+
+    out_iter->cont = next_iter.cont;
+    out_iter->node = next_iter.node;
+    return out_iter;
+}
+} // namespace lift_0052A650
