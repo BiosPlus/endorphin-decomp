@@ -43406,6 +43406,12 @@
     "summary": "Lazily constructs the global singleton at mem_00B4137C on first use (guarded by bit 0 of mem_00B41398), registers its destructor, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00594A30": {
+    "name": "OneTimeInitSharedGlobal_00594A30",
+    "signature": "void* fn_00594A30()",
+    "summary": "One-time guarded initializer: on first call sets bit 0 of mem_00B413B8, calls ext_00662610(\u0026mem_00B4139C, 0x00A40484) and ext_006A6C87(0x0091D680), then returns \u0026mem_00B4139C. SEH frame bookkeeping (fs:[0] push/pop) is omitted.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00594AA0": {
     "name": "ExprParser::Function2Type::vfunc_49",
     "class": "ExprParser::Function2Type\u003cWorld, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

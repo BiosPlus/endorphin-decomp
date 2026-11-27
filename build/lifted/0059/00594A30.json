@@ -1,0 +1,13 @@
+{
+  "va": "0x00594A30",
+  "size": 95,
+  "orig_symbol": "sub_00594A30",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "OneTimeInitSharedGlobal_00594A30",
+  "signature": "void* fn_00594A30()",
+  "summary": "One-time guarded initializer: on first call sets bit 0 of mem_00B413B8, calls ext_00662610(\u0026mem_00B4139C, 0x00A40484) and ext_006A6C87(0x0091D680), then returns \u0026mem_00B4139C. SEH frame bookkeeping (fs:[0] push/pop) is omitted.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:44:48Z"
+}

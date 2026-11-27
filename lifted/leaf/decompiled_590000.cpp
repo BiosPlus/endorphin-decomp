@@ -2666,3 +2666,23 @@ void fn_005990D0(void* self, std::string key) {
     ext_005AE1B0(self, &out, it.tree, node);
 }
 } // namespace lift_005990D0
+
+// [0x00594A30] sub_00594A30 (95 bytes)
+namespace lift_00594A30 {
+extern void ext_00662610(void* a, void* b);
+extern void ext_006A6C87(void* a);
+extern int mem_00B413B8;
+extern int mem_00B4139C;
+
+// @name OneTimeInitSharedGlobal_00594A30
+// @summary One-time guarded initializer: on first call sets bit 0 of mem_00B413B8, calls ext_00662610(&mem_00B4139C, 0x00A40484) and ext_006A6C87(0x0091D680), then returns &mem_00B4139C. SEH frame bookkeeping (fs:[0] push/pop) is omitted.
+void* fn_00594A30() {
+    if ((mem_00B413B8 & 1) == 0) {
+        mem_00B413B8 |= 1;
+        ext_00662610(reinterpret_cast<void*>(&mem_00B4139C),
+                     reinterpret_cast<void*>(static_cast<uintptr_t>(0x00A40484)));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091D680)));
+    }
+    return reinterpret_cast<void*>(&mem_00B4139C);
+}
+} // namespace lift_00594A30
