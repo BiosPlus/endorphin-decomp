@@ -46561,6 +46561,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00977734 and tail-calls base destructor sub_0060BA10.",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00626D00": {
+    "name": "NMData::EffectorSkeletalData::vfunc_19",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "void fn_00626D00(void* self)",
+    "summary": "Clears base-class string members, then initializes the sub-object at +0x44 via initFields.",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
+  },
   "0x00626E60": {
     "name": "NMData::EffectorSkeletalData::vfunc_0",
     "class": "NMData::EffectorSkeletalData",

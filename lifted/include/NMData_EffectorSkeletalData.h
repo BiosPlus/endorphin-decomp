@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::EffectorSkeletalData:
 namespace lifted_layout {
 struct NMData_EffectorSkeletalData_Fields {
-    // +0x4   std::string              field_0x04  (evidence: 0x00626850)
+    // +0x44  char                     field_0x44  (evidence: 0x00626D00)
 };
 } // namespace lifted_layout

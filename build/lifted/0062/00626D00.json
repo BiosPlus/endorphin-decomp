@@ -1,0 +1,22 @@
+{
+  "va": "0x00626D00",
+  "size": 17,
+  "orig_symbol": "NMData::EffectorSkeletalData::vfunc_19",
+  "src_path": "src/NMData/EffectorSkeletalData.cpp",
+  "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp",
+  "name": "NMData::EffectorSkeletalData::vfunc_19",
+  "class": "NMData::EffectorSkeletalData",
+  "signature": "void fn_00626D00(void* self)",
+  "summary": "Clears base-class string members, then initializes the sub-object at +0x44 via initFields.",
+  "fields": [
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x44",
+      "type": "char",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:23:17Z"
+}

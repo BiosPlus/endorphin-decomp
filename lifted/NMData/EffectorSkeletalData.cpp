@@ -36,3 +36,19 @@ std::string* fn_00626820(void* self, std::string* ret) {
     return ret;
 }
 } // namespace lift_00626820
+
+// [0x00626D00]
+namespace lift_00626D00 {
+// External callees (original asm: ext_0060BB50, ext_0063D8F0).
+void ext_0060BB50(void* self);
+void ext_0063D8F0(void* self);
+
+// @name NMData::EffectorSkeletalData::vfunc_19
+// @class NMData::EffectorSkeletalData
+// @summary Clears base-class string members, then initializes the sub-object at +0x44 via initFields.
+// @field NMData::EffectorSkeletalData +0x44 char field_0x44
+void fn_00626D00(void* self) {
+    ext_0060BB50(self);
+    ext_0063D8F0(static_cast<char*>(self) + 0x44);
+}
+} // namespace lift_00626D00
