@@ -1,0 +1,13 @@
+{
+  "va": "0x004E7540",
+  "size": 115,
+  "orig_symbol": "sub_004E7540",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "siftDownHeapByTypeOrName",
+  "signature": "extern \"C\" void __cdecl fn_004E7540(void** arr, int32_t start, int32_t len, void* val, void* extra)",
+  "summary": "Sift-down step of a max-heap of object pointers: floats the hole at `start` down to a leaf using compareObjectsByTypeOrName, then sifts the value up via pushHeapByTypeOrName.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:39Z"
+}

@@ -1163,3 +1163,32 @@ void __thiscall fn_004ED6B0(void* this_ptr) {
     ext_00692BA0(self);
 }
 } // namespace lift_004ED6B0
+
+// [0x004E7540]
+namespace lift_004E7540 {
+extern bool __stdcall ext_004E7390(void* lhs, void* rhs);
+extern void __cdecl ext_004E7430(void** arr, int32_t holeIndex, int32_t topIndex, void* val);
+
+// @name siftDownHeapByTypeOrName
+// @summary Sift-down step of a max-heap of object pointers: floats the hole at `start` down to a leaf using compareObjectsByTypeOrName, then sifts the value up via pushHeapByTypeOrName.
+extern void __cdecl fn_004E7540(void** arr, int32_t start, int32_t len, void* val, void* extra) {
+    (void)extra;  // arg5 is pushed for the callee's 5th stack slot; ext_004E7430 declares only 4 params.
+    int32_t hole = start;
+    int32_t child = 2 * hole + 2;
+    while (child < len) {
+        // Pick left child (child - 1) when compare(right, left) holds, as in the original asm.
+        if (ext_004E7390(arr[child], arr[child - 1])) {
+            child--;
+        }
+        arr[hole] = arr[child];
+        hole = child;
+        child = 2 * child + 2;
+    }
+    if (child == len) {
+        // Only a left child remains; it is the last element.
+        arr[hole] = arr[len - 1];
+        hole = len - 1;
+    }
+    ext_004E7430(arr, hole, start, val);
+}
+} // namespace lift_004E7540
