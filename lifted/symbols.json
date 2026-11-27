@@ -39001,6 +39001,13 @@
     "summary": "If the flag at +0x1F1 is clear, store a float into element 0 of the inline array at +0x210, set the flag at +0x214, and dispatch on the global object under a critical section.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005D1160": {
+    "name": "UnknownClass::setElement3AndDispatchLocked",
+    "class": "UnknownClass",
+    "signature": "void fn_005D1160(void* self, float value)",
+    "summary": "If the flag at +0x1F1 is clear, lock the critical section of the global object's child, store a float into element 3 of the inline array at +0x210, set the flag at +0x214, dispatch the child's vtable slot, and unlock.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D1200": {
     "name": "Unknown::SetFloatElementUnderLock",
     "class": "Unknown",

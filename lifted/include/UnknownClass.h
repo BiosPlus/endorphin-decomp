@@ -199,10 +199,13 @@ struct UnknownClass_Fields {
     // +0x1D8 uint32_t                 field_0x1d8  (evidence: 0x007BD640)
     // +0x1E4 uint32_t                 field_0x1e4  (evidence: 0x007BD640)
     // +0x1EC void*                    field_0x1ec  (evidence: 0x0041BA60)
-    // +0x1F1 uint8_t                  field_0x1f1  (evidence: 0x005D01A0, 0x005D10C0)
+    // +0x1F1 uint8_t                  field_0x1f1  (evidence: 0x005D01A0, 0x005D10C0) // CONFLICT: multiple definitions at +0x1F1
+    // +0x1F1 uint8_t field_0x1F1 (early-out flag; nonzero skips all work)  (evidence: 0x005D1160) // CONFLICT: multiple definitions at +0x1F1
+    // +0x210 uint8_t field_0x210 (sub-object whose inline array at +0x10 is indexed by ext_005B11D0)  (evidence: 0x005D1160) // CONFLICT: multiple definitions at +0x210
     // +0x210 uint8_t[]                field_0x210  (evidence: 0x005D01A0) // CONFLICT: multiple definitions at +0x210
     // +0x210 uint32_t                 inlineArray  (evidence: 0x005D10C0) // CONFLICT: multiple definitions at +0x210
-    // +0x214 uint8_t                  flag214  (evidence: 0x005D10C0)
+    // +0x214 uint8_t                  flag214  (evidence: 0x005D10C0) // CONFLICT: multiple definitions at +0x214
+    // +0x214 uint8_t field_0x214 (set to 1 after the element store)  (evidence: 0x005D1160) // CONFLICT: multiple definitions at +0x214
     // +0x27C void*                    field_0x27C  (evidence: 0x00564600)
     // +0x3B4 void*                    field_0x3B4  (evidence: 0x004805A0)
     // +0x3B8 uint32_t                 field_0x3B8  (evidence: 0x004805A0)
