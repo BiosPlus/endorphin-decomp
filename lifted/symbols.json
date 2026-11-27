@@ -24671,6 +24671,13 @@
     "summary": "Recursively erases a red-black tree subtree of std::string key-value nodes",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004EC2C0": {
+    "name": "ResetObjectRefFields",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t fn_004EC2C0(void* self)",
+    "summary": "Calls ext_004EC1F0 with a scratch buffer and the pointer at +0x4 (and its first dword), forwards the +0x4 value to ext_006A5C5C, then zeroes the +0x4 and +0x8 fields.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EC380": {
     "name": "TreeMap::find",
     "class": "TreeMap",

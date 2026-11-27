@@ -1243,3 +1243,31 @@ void fn_004EF8D0(void* self, uint32_t n) {
     ext_006A6DD2();
 }
 } // namespace lift_004EF8D0
+
+// [0x004EC2C0] sub_004EC2C0 (52 bytes)
+namespace lift_004EC2C0 {
+// Known callee 0x004EC1F0: sub_004EC1F0 (thiscall: ECX = self, 5 stack args, callee cleans up)
+extern uint32_t ext_004EC1F0(void* self, void* out, void* arg2, uint32_t arg3, void* arg4, void* arg5);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (cdecl, 1 stack arg; IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+
+// @name ResetObjectRefFields
+// @class Unknown
+// @summary Calls ext_004EC1F0 with a scratch buffer and the pointer at +0x4 (and its first dword), forwards the +0x4 value to ext_006A5C5C, then zeroes the +0x4 and +0x8 fields.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+extern uint32_t fn_004EC2C0(void* self) {
+    uint32_t scratch[2];
+    void* const obj = lift_field<void*>(self, 0x04);
+    const uint32_t first = lift_field<uint32_t>(obj, 0x00);
+
+    ext_004EC1F0(self, scratch, self, first, self, obj);
+
+    const uint32_t ptrVal = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(lift_field<void*>(self, 0x04)));
+    ext_006A5C5C(ptrVal);
+
+    lift_field<void*>(self, 0x04) = nullptr;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    return 0; // eax is zeroed by xor before ret
+}
+} // namespace lift_004EC2C0
