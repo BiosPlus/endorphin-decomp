@@ -407,3 +407,83 @@ void* fn_005ED030(void* self, void* dst, const void* name) {
     return dst;
 }
 } // namespace lift_005ED030
+
+// [0x005EDD30]
+namespace lift_005EDD30 {
+struct MsvcString {
+    uint32_t data[7];
+};
+
+extern void* fn_006A5C62(uint32_t size);
+#define ext_006A5C62 fn_006A5C62
+extern void* __thiscall fn_006267B0(void* self);
+#define ext_006267B0 fn_006267B0
+extern uint32_t __thiscall ext_005DF5C0(void* self, MsvcString str);
+extern void __thiscall ext_005A7320(void* self, void* str, uint32_t flag);
+extern void __thiscall ext_005A2F70(void* self, void* str, uint32_t arg1, uint32_t arg2);
+extern void __thiscall ext_005A3500(void* self, void* obj);
+
+extern uint32_t mem_00924FDC;
+extern const char* mem_00A9EE64;
+extern uint32_t mem_00924ECC;
+extern uint32_t mem_00924FF4;
+extern const char* mem_00A8F2B4;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FE0;
+extern const char* mem_00A8F2B8;
+
+// @name NMData::SkeletalJointData::vfunc_64
+// @class NMData::SkeletalJointData
+// @summary Allocates and initializes a helper object, registers two named attributes on field_0x18c if missing, and attaches the object.
+// @field NMData::SkeletalJointData +0x14 MsvcString field_0x14
+// @field NMData::SkeletalJointData +0x18C void* field_0x18c
+void __thiscall fn_005EDD30(void* self) {
+    uint8_t* edi = (uint8_t*)self;
+
+    void* raw = ext_006A5C62(0xA8);
+    void* esi = raw ? ext_006267B0(raw) : nullptr;
+    uint8_t* obj = (uint8_t*)esi;
+
+    auto str_assign = (void* (__thiscall*)(void*, const void*))(uintptr_t)mem_00924FDC;
+    auto str_concat = (void* (__cdecl*)(void*, const void*, const char*))(uintptr_t)mem_00924ECC;
+    auto str_dtor   = (void (__thiscall*)(void*))(uintptr_t)mem_00924FF4;
+    auto str_ctor_s = (void* (__thiscall*)(void*, const char*))(uintptr_t)mem_00924FE4;
+    auto str_ctor_c = (void* (__thiscall*)(void*, const void*))(uintptr_t)mem_00924FE0;
+
+    void* name_ptr = edi + 0x14;
+    str_assign(obj + 0x20, name_ptr);
+
+    MsvcString tmp;
+    str_concat(&tmp, name_ptr, mem_00A9EE64);
+    str_assign(obj + 0x04, &tmp);
+    str_dtor(&tmp);
+
+    void* mgr = *(void**)(edi + 0x18C);
+    void** vtbl = *(void***)esi;
+
+    const char* keys[2] = { mem_00A8F2B4, mem_00A8F2B8 };
+    size_t vfunc_offsets[2] = { 0x44 / 4, 0x48 / 4 };
+
+    for (int i = 0; i < 2; ++i) {
+        str_ctor_s(&tmp, keys[i]);
+        MsvcString arg_copy;
+        str_ctor_c(&arg_copy, &tmp);
+        uint32_t found = ext_005DF5C0((uint8_t*)mgr + 0x568, arg_copy);
+        str_dtor(&tmp);
+
+        if (found == 0) {
+            str_ctor_s(&tmp, keys[i]);
+            ext_005A7320(mgr, &tmp, 0);
+            str_dtor(&tmp);
+        }
+
+        str_ctor_s(&tmp, keys[i]);
+        uint32_t val1 = ((uint32_t (__thiscall*)(void*))vtbl[vfunc_offsets[i]])(esi);
+        uint32_t val2 = ((uint32_t (__thiscall*)(void*))vtbl[0x24 / 4])(esi);
+        ext_005A2F70(mgr, &tmp, val2, val1);
+        str_dtor(&tmp);
+    }
+
+    ext_005A3500(mgr, esi);
+}
+} // namespace lift_005EDD30

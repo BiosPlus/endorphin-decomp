@@ -1,0 +1,28 @@
+{
+  "va": "0x005EDD30",
+  "size": 605,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_64",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_64",
+  "class": "NMData::SkeletalJointData",
+  "signature": "void __thiscall fn_005EDD30(void* self)",
+  "summary": "Allocates and initializes a helper object, registers two named attributes on field_0x18c if missing, and attaches the object.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x14",
+      "type": "MsvcString",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:22:39Z"
+}
