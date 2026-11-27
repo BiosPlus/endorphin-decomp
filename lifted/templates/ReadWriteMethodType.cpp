@@ -18267,3 +18267,39 @@ void fn_00497CC0(void* self, void* value) {
     ext_00497030(obj, &key);
 }
 } // namespace lift_00497CC0
+
+// [0x00497C10] ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setCondition(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_00497C10 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern void* ext_0046E780(void* self, void* a1, void* a2, void* a3);
+// Known callee 0x00496F00: sub_00496F00 (This-adjustor thunk: adjusts `this` by +0x4C and forwards through mem_00924FDC.)
+extern void ext_00496F00(void* self, void* arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// IAT slot 0x00924FF4 (MSVCP80 std::string destructor), used to release the temporary string.
+extern int mem_00924FF4;
+
+// @name ReadWriteMethodType<NMData::Transition>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setCondition(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Setter write path: if the held target pointer is non-null, forwards the string argument to Transition::setCondition via the this-adjusted thunk; otherwise throws a DerivedException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field std::basic_string +0x04 void* field_0x04
+void fn_00497C10(void* holder, void* value) {
+    void* target = lift_field<void*>(holder, 0x00);
+    if (target != nullptr) {
+        // Temporary std::string filled by ext_0046E780 (its a1 out-pointer), then forwarded.
+        alignas(std::string) unsigned char tmp[sizeof(std::string)];
+        void* self_for_call = lift_field<void*>(value, 0x04);
+        void* ret = ext_0046E780(self_for_call, tmp, value, holder);
+        ext_00496F00(target, ret);
+        (void)&mem_00924FF4; // original releases tmp via IAT slot; portable form calls the destructor directly
+        reinterpret_cast<std::string*>(tmp)->~basic_string();
+    } else {
+        alignas(8) unsigned char exc[0x20] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    }
+}
+} // namespace lift_00497C10
