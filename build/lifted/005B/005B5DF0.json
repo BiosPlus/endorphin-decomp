@@ -1,0 +1,14 @@
+{
+  "va": "0x005B5DF0",
+  "size": 82,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: void __thiscall Geometry::setTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: void __thiscall Geometry::setTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e)\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: void __thiscall Geometry::setTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e)\u003e",
+  "signature": "void __stdcall fn_005B5DF0(void* holder, const void* arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x004D5500 (ExprParser::ReadWriteMethodType::vfunc_41).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:35:51Z"
+}

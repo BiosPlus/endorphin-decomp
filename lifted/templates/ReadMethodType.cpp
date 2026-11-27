@@ -83771,3 +83771,2467 @@ void fn_004D6B40(void* self, void* out) {
     forward(obj, self, out);
 }
 } // namespace lift_004D6B40
+
+// [0x004D8900] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_44 (157 bytes)
+namespace lift_004D8900 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_004D5560(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_004D8900(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_004D5560(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB0));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_004D8900
+
+// [0x004D89A0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_45 (157 bytes)
+namespace lift_004D89A0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_004D5560(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_004D89A0(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_004D5560(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB4));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_004D89A0
+
+// [0x00509040] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_43 (157 bytes)
+namespace lift_00509040 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00509040(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x14);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xAC);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00509040
+
+// [0x005090E0] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_44 (157 bytes)
+namespace lift_005090E0 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005090E0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x14);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB0);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005090E0
+
+// [0x00509180] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_45 (157 bytes)
+namespace lift_00509180 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_45
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00509180(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x14);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB4);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00509180
+
+// [0x00509220] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_46 (157 bytes)
+namespace lift_00509220 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_46
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00509220(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x14);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB8);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00509220
+
+// [0x00512D00] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_43 (157 bytes)
+namespace lift_00512D00 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_43
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_00511960(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00512D00(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_00511960(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xAC));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00512D00
+
+// [0x00512DA0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_44 (157 bytes)
+namespace lift_00512DA0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_44
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_00511960(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00512DA0(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_00511960(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB0));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00512DA0
+
+// [0x00512E40] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_45 (157 bytes)
+namespace lift_00512E40 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_45
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_00511960(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00512E40(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_00511960(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB4));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00512E40
+
+// [0x00512EE0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_46 (157 bytes)
+namespace lift_00512EE0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_46
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_00511960(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00512EE0(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_00511960(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB8));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00512EE0
+
+// [0x005133A0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_43 (157 bytes)
+namespace lift_005133A0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_43
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_005119F0(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005133A0(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_005119F0(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xAC));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_005133A0
+
+// [0x00513440] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_44 (157 bytes)
+namespace lift_00513440 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_44
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_005119F0(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00513440(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_005119F0(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB0));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00513440
+
+// [0x005134E0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_45 (157 bytes)
+namespace lift_005134E0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_45
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_005119F0(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005134E0(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_005119F0(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB4));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_005134E0
+
+// [0x00513580] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_46 (157 bytes)
+namespace lift_00513580 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_46
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_005119F0(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00513580(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_005119F0(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB8));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00513580
+
+// [0x00522600] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_44 (160 bytes)
+namespace lift_00522600 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_44
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00522600(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC4);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB0);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00522600
+
+// [0x005226B0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_45 (160 bytes)
+namespace lift_005226B0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005226B0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC4);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB4);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005226B0
+
+// [0x0058FB80] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_43 (157 bytes)
+namespace lift_0058FB80 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_0058F770(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_0058FB80(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_0058F770(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xAC));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_0058FB80
+
+// [0x0058FC20] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_44 (157 bytes)
+namespace lift_0058FC20 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_44
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_0058F770(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_0058FC20(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_0058F770(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB0));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_0058FC20
+
+// [0x0058FCC0] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_46 (157 bytes)
+namespace lift_0058FCC0 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_46
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_0058F770(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_0058FCC0(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_0058F770(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB8));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_0058FCC0
+
+// [0x00591400] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_45 (157 bytes)
+namespace lift_00591400 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_0058F770(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00591400(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_0058F770(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB4));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00591400
+
+// [0x005B2700] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_43 (157 bytes)
+namespace lift_005B2700 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_005B1220(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005B2700(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_005B1220(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xAC));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_005B2700
+
+// [0x005B27A0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_44 (157 bytes)
+namespace lift_005B27A0 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_44
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_005B1220(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005B27A0(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_005B1220(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB0));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_005B27A0
+
+// [0x005B2840] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_46 (157 bytes)
+namespace lift_005B2840 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_46
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_005B1220(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005B2840(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_005B1220(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB8));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_005B2840
+
+// [0x005B3380] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_45 (157 bytes)
+namespace lift_005B3380 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_005B1220(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005B3380(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_005B1220(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB4));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_005B3380
+
+// [0x005D6700] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_43 (157 bytes)
+namespace lift_005D6700 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005D6700(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x28);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xAC);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005D6700
+
+// [0x005D67A0] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_44 (157 bytes)
+namespace lift_005D67A0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005D67A0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x28);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB0);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005D67A0
+
+// [0x005D6840] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_45 (157 bytes)
+namespace lift_005D6840 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005D6840(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x28);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB4);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005D6840
+
+// [0x005D68E0] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_46 (157 bytes)
+namespace lift_005D68E0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_46
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005D68E0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x28);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB8);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005D68E0
+
+// [0x005DA880] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_45 (157 bytes)
+namespace lift_005DA880 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005DA880(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x20);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB4);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005DA880
+
+// [0x005DA920] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_46 (157 bytes)
+namespace lift_005DA920 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_46
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005DA920(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x20);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB8);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005DA920
+
+// [0x005DAAB0] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_44 (157 bytes)
+namespace lift_005DAAB0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005DAAB0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x24);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB0);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005DAAB0
+
+// [0x005DAB50] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_45 (157 bytes)
+namespace lift_005DAB50 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005DAB50(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x24);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB4);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005DAB50
+
+// [0x005DB820] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_43 (157 bytes)
+namespace lift_005DB820 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005DB820(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x24);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xAC);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005DB820
+
+// [0x005DB8C0] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_46 (157 bytes)
+namespace lift_005DB8C0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_46
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005DB8C0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x24);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB8);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005DB8C0
+
+// [0x00635280] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_45 (160 bytes)
+namespace lift_00635280 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00635280(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC0);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB4);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00635280
+
+// [0x00635330] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_46 (160 bytes)
+namespace lift_00635330 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_46
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00635330(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC0);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB8);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00635330
+
+// [0x00638CF0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_43 (160 bytes)
+namespace lift_00638CF0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00638CF0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC4);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xAC);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00638CF0
+
+// [0x00638DA0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_46 (160 bytes)
+namespace lift_00638DA0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_46
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00638DA0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC4);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB8);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00638DA0
+
+// [0x00638F30] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_43 (160 bytes)
+namespace lift_00638F30 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00638F30(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC0);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xAC);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00638F30
+
+// [0x00638FE0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_44 (160 bytes)
+namespace lift_00638FE0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_44
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00638FE0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC0);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB0);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00638FE0
+
+// [0x00683A90] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_43 (157 bytes)
+namespace lift_00683A90 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_00683100(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00683A90(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_00683100(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xAC));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00683A90
+
+// [0x00683B30] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_44 (157 bytes)
+namespace lift_00683B30 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_00683100(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00683B30(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_00683100(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB0));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00683B30
+
+// [0x00683BD0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_45 (157 bytes)
+namespace lift_00683BD0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_45
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_00683100(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00683BD0(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_00683100(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB4));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00683BD0
+
+// [0x00683C70] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_46 (157 bytes)
+namespace lift_00683C70 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_46
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0960 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43).
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_00683100(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_00683C70(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_00683100(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB8));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
+} // namespace lift_00683C70

@@ -3513,3 +3513,323 @@ uint32_t fn_005160D0(void* self, uint32_t index) {
     return vfunc46(inner, obj, index);
 }
 } // namespace lift_005160D0
+
+// [0x005162D0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_44 (157 bytes)
+namespace lift_005162D0 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_44
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_005162D0(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB0);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_005162D0
+
+// [0x00516370] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_45 (157 bytes)
+namespace lift_00516370 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_45
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00516370(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB4);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00516370
+
+// [0x00516410] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_46 (157 bytes)
+namespace lift_00516410 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_46
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004B1C00 (ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44).
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_00516410(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0xC);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB8);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
+} // namespace lift_00516410
+
+// [0x005166B0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_43 (157 bytes)
+namespace lift_005166B0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_43
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Auto-lifted identical-shape clone of 0x00516030 (ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_44).
+namespace lift_00516030 {
+extern void* ext_0041CF50(void* self, void* other);
+extern void ext_006720C0(void* self, uint32_t arg);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void);
+
+// Two-slot temporary built by ext_006720C0 and consumed by ext_0041CF50.
+// field_0x00 is the value returned by the vtable slot 0x70 path; field_0x04 is an
+// object pointer whose vtable is released (slot 0x78) at the end of the call.
+struct LiftPairTemp {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+// Loads the vtable of obj and returns the function pointer stored at byte offset byte_off.
+static inline void* vtable_slot(void* obj, size_t byte_off) {
+    auto* vt = *reinterpret_cast<uint8_t**>(obj);
+    return *reinterpret_cast<void**>(vt + byte_off);
+}
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_44
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Reads the inner object from holder->field_0x00 (throws DerivedException if null), builds a temporary from its field at +0x08, assigns it into holder, releases the temporary, then forwards to holder->field_0x04's vtable slot 0x2C(holder, arg2) and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t fn_005166B0(void* holder, void* arg2) {
+    auto* h = static_cast<uint8_t*>(holder);
+
+    void* inner = *reinterpret_cast<void**>(h + 0x00);
+    if (inner == nullptr) {
+        // Original constructs a DerivedException in place and throws it through the CRT thunk.
+        // Exception object size is not recoverable from the listing, so a conservative buffer is used.
+        alignas(8) uint8_t exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return 0; // not reached: the CRT throw does not return
+    }
+
+    uint32_t value = *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(inner) + 0x08);
+    LiftPairTemp tmp{};
+    ext_006720C0(&tmp, value);
+
+    ext_0041CF50(holder, &tmp);
+
+    if (tmp.field_0x04 != nullptr) {
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(
+            vtable_slot(tmp.field_0x04, 0x78));
+        release(tmp.field_0x04, &tmp);
+    }
+
+    // holder->field_0x04 may have been replaced by ext_0041CF50, so reload it here.
+    void* target = *reinterpret_cast<void**>(h + 0x04);
+    auto forward = reinterpret_cast<uint32_t(__thiscall*)(void*, void*, void*)>(
+        vtable_slot(target, 0xAC));
+    return forward(target, holder, arg2);
+}
+} // namespace lift_00516030
+} // namespace lift_005166B0
+
+// [0x00516750] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_45 (157 bytes)
+namespace lift_00516750 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_45
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Auto-lifted identical-shape clone of 0x00516030 (ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_44).
+namespace lift_00516030 {
+extern void* ext_0041CF50(void* self, void* other);
+extern void ext_006720C0(void* self, uint32_t arg);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void);
+
+// Two-slot temporary built by ext_006720C0 and consumed by ext_0041CF50.
+// field_0x00 is the value returned by the vtable slot 0x70 path; field_0x04 is an
+// object pointer whose vtable is released (slot 0x78) at the end of the call.
+struct LiftPairTemp {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+// Loads the vtable of obj and returns the function pointer stored at byte offset byte_off.
+static inline void* vtable_slot(void* obj, size_t byte_off) {
+    auto* vt = *reinterpret_cast<uint8_t**>(obj);
+    return *reinterpret_cast<void**>(vt + byte_off);
+}
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_44
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Reads the inner object from holder->field_0x00 (throws DerivedException if null), builds a temporary from its field at +0x08, assigns it into holder, releases the temporary, then forwards to holder->field_0x04's vtable slot 0x2C(holder, arg2) and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t fn_00516750(void* holder, void* arg2) {
+    auto* h = static_cast<uint8_t*>(holder);
+
+    void* inner = *reinterpret_cast<void**>(h + 0x00);
+    if (inner == nullptr) {
+        // Original constructs a DerivedException in place and throws it through the CRT thunk.
+        // Exception object size is not recoverable from the listing, so a conservative buffer is used.
+        alignas(8) uint8_t exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return 0; // not reached: the CRT throw does not return
+    }
+
+    uint32_t value = *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(inner) + 0x08);
+    LiftPairTemp tmp{};
+    ext_006720C0(&tmp, value);
+
+    ext_0041CF50(holder, &tmp);
+
+    if (tmp.field_0x04 != nullptr) {
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(
+            vtable_slot(tmp.field_0x04, 0x78));
+        release(tmp.field_0x04, &tmp);
+    }
+
+    // holder->field_0x04 may have been replaced by ext_0041CF50, so reload it here.
+    void* target = *reinterpret_cast<void**>(h + 0x04);
+    auto forward = reinterpret_cast<uint32_t(__thiscall*)(void*, void*, void*)>(
+        vtable_slot(target, 0xB4));
+    return forward(target, holder, arg2);
+}
+} // namespace lift_00516030
+} // namespace lift_00516750

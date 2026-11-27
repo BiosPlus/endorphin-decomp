@@ -20062,3 +20062,91 @@ void __stdcall fn_004D5500(void* holder, const void* arg2) {
     ext_004D3940(target, str);
 }
 } // namespace lift_004D5500
+
+// [0x0058F710] ExprParser::ReadWriteMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall TransformNode::setUserRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>::vfunc_41 (82 bytes)
+namespace lift_0058F710 {
+// @name ExprParser::ReadWriteMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall TransformNode::setUserRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall TransformNode::setUserRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004D5500 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004D5500 {
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall NMData::RigEventData::setUserRetargetRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>
+// @summary Setter thunk: dereferences the holder to a target object (throws if null), then forwards the by-value std::string argument to ClassifyStringFieldStore on that target.
+
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (returns its first argument; called with three stack args).
+extern uint32_t ext_0046E780(void* self, const void* a1, void* a2);
+// Known callee 0x004D3940: ClassifyStringFieldStore (thiscall; copies the by-value std::string, stores classification at this+0x394; callee pops 0x1C).
+struct LiftStdStringBlob {
+    unsigned char bytes[0x1C];
+};
+extern void ext_0058F4F0(void* self, LiftStdStringBlob str);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; constructs the exception object in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(object, throwInfo)).
+extern void ext_006A6DD2(void* object, void* throwInfo);
+
+void __stdcall fn_0058F710(void* holder, const void* arg2) {
+    void* target = *static_cast<void**>(holder);
+
+    if (target == nullptr) {
+        // Null target: construct the exception object in a local slot and throw it.
+        alignas(8) unsigned char exc[0x24];
+        ext_0046C3C0(exc);
+        void* throwInfo = reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+        ext_006A6DD2(exc, throwInfo);
+        return;
+    }
+
+    // Build the by-value std::string temporary via the forwarding helper.
+    LiftStdStringBlob str{};
+    ext_0046E780(&str, arg2, &str);
+
+    // Hand the temporary (by value) to ClassifyStringFieldStore on the target; callee consumes it.
+    ext_0058F4F0(target, str);
+}
+} // namespace lift_004D5500
+} // namespace lift_0058F710
+
+// [0x005B5DF0] ExprParser::ReadWriteMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: void __thiscall Geometry::setTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>)>::vfunc_41 (82 bytes)
+namespace lift_005B5DF0 {
+// @name ExprParser::ReadWriteMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: void __thiscall Geometry::setTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: void __thiscall Geometry::setTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>)>
+// @summary Auto-lifted identical-shape clone of 0x004D5500 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004D5500 {
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall NMData::RigEventData::setUserRetargetRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>
+// @summary Setter thunk: dereferences the holder to a target object (throws if null), then forwards the by-value std::string argument to ClassifyStringFieldStore on that target.
+
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (returns its first argument; called with three stack args).
+extern uint32_t ext_0046E780(void* self, const void* a1, void* a2);
+// Known callee 0x004D3940: ClassifyStringFieldStore (thiscall; copies the by-value std::string, stores classification at this+0x394; callee pops 0x1C).
+struct LiftStdStringBlob {
+    unsigned char bytes[0x1C];
+};
+extern void ext_005B5B50(void* self, LiftStdStringBlob str);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; constructs the exception object in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(object, throwInfo)).
+extern void ext_006A6DD2(void* object, void* throwInfo);
+
+void __stdcall fn_005B5DF0(void* holder, const void* arg2) {
+    void* target = *static_cast<void**>(holder);
+
+    if (target == nullptr) {
+        // Null target: construct the exception object in a local slot and throw it.
+        alignas(8) unsigned char exc[0x24];
+        ext_0046C3C0(exc);
+        void* throwInfo = reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+        ext_006A6DD2(exc, throwInfo);
+        return;
+    }
+
+    // Build the by-value std::string temporary via the forwarding helper.
+    LiftStdStringBlob str{};
+    ext_0046E780(&str, arg2, &str);
+
+    // Hand the temporary (by value) to ClassifyStringFieldStore on the target; callee consumes it.
+    ext_005B5B50(target, str);
+}
+} // namespace lift_004D5500
+} // namespace lift_005B5DF0
