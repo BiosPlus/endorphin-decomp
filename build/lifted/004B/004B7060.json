@@ -1,0 +1,28 @@
+{
+  "va": "0x004B7060",
+  "size": 79,
+  "orig_symbol": "sub_004B7060",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "parseTwoNamedIntProps",
+  "class": "Unknown",
+  "signature": "void fn_004B7060(void* self, void* lookup)",
+  "summary": "Looks up two fixed name keys in the lookup container and parses each result into an int via parseIntFromStringProp, targeting self and self+0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T04:22:32Z"
+}

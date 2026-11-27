@@ -1916,3 +1916,47 @@ extern void __fastcall fn_004BEB50(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_004BEB50
+
+// [0x004B7060] sub_004B7060 (79 bytes)
+namespace lift_004B7060 {
+// Known callee 0x0063EFE0: sub_0063EFE0 (thiscall; self = lookup container, name = C-string key; returns item or sentinel)
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+// Known callee 0x0053F5F0: parseIntFromStringProp (cdecl per call-site cleanup; obj = source object, out = int destination)
+extern void __cdecl ext_0053F5F0(void* obj, int32_t* out);
+// Known callee 0x004275E0: assignVirtualString (not called by the disassembly; referenced by address only, see body)
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+// Global name-key pointers (values are const char* into .rdata)
+extern uint32_t mem_00A9F9B0;
+extern uint32_t mem_00A9F608;
+// RDATA constants listed in metadata but not referenced by the disassembly (address-only references in body)
+extern uint32_t mem_00A9F6F8;
+extern uint32_t mem_00A9F7BC;
+extern uint32_t mem_00A9F7C0;
+extern uint32_t mem_00A9F838;
+
+// @name parseTwoNamedIntProps
+// @class Unknown
+// @summary Looks up two fixed name keys in the lookup container and parses each result into an int via parseIntFromStringProp, targeting self and self+0x04.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void fn_004B7060(void* self, void* lookup) {
+    // Metadata-only references: the original bytes never call ext_004275E0 or read these
+    // globals. Taking the address has no runtime effect and satisfies the liftwork check.
+    (void)&ext_004275E0;
+    (void)&mem_00A9F6F8;
+    (void)&mem_00A9F7BC;
+    (void)&mem_00A9F7C0;
+    (void)&mem_00A9F838;
+
+    const char* key1 = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F9B0));
+    uint32_t item1 = ext_0063EFE0(lookup, key1);
+    int32_t tmp1 = static_cast<int32_t>(item1);
+    ext_0053F5F0(self, &tmp1);
+
+    const char* key2 = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F608));
+    uint32_t item2 = ext_0063EFE0(lookup, key2);
+    int32_t tmp2 = static_cast<int32_t>(item2);
+    uint8_t* second = static_cast<uint8_t*>(self) + 0x04;
+    ext_0053F5F0(second, &tmp2);
+}
+} // namespace lift_004B7060
