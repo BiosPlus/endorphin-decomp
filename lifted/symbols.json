@@ -54168,6 +54168,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005EEBC0": {
+    "name": "NMData::RootRelationshipData::vfunc_67",
+    "class": "NMData::RootRelationshipData",
+    "signature": "void fn_005EEBC0(void* self)",
+    "summary": "Clears the 8-byte element vector at self+0x168 and refills it with six {id, 0.0f} entries (ids 3, 4, 5, 0, 1, 2).",
+    "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
+  },
   "0x005EEDB0": {
     "name": "NMData::FixedPathJointData::vfunc_67",
     "class": "NMData::FixedPathJointData",

@@ -1,0 +1,28 @@
+{
+  "va": "0x005EEBC0",
+  "size": 219,
+  "orig_symbol": "NMData::RootRelationshipData::vfunc_67",
+  "src_path": "src/NMData/RootRelationshipData.cpp",
+  "lifted_path": "lifted/NMData/RootRelationshipData.cpp",
+  "name": "NMData::RootRelationshipData::vfunc_67",
+  "class": "NMData::RootRelationshipData",
+  "signature": "void fn_005EEBC0(void* self)",
+  "summary": "Clears the 8-byte element vector at self+0x168 and refills it with six {id, 0.0f} entries (ids 3, 4, 5, 0, 1, 2).",
+  "fields": [
+    {
+      "class": "NMData::RootRelationshipData",
+      "offset": "+0x16C",
+      "type": "uint32_t",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "NMData::RootRelationshipData",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:00:34Z"
+}
