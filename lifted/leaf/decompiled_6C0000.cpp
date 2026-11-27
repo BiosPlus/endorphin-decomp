@@ -2205,3 +2205,33 @@ void __cdecl sub_006C8E30()
     mem_00B5D5E0 = -*src;
 }
 } // namespace lift_006C8E00
+
+// [0x006C9C40]
+namespace lift_006C9C40 {
+// @name Unknown::applyModeBits10
+// @class Unknown
+// @summary Replaces bits 1-3 of field +0x10 with arg; when the current mode is 0x8 it is left alone, and arg==8 first reconfigures params 2-5.
+// @field Unknown +0x10 uint32_t field_0x10 (bitfield; bits 1-3 are the mode bits)
+
+struct Unknown;
+
+extern uint32_t ext_006C9D30(void* self, uint32_t value, uint32_t flags);
+extern void ext_006C9D70(void* self, uint32_t value, uint32_t maskSource);
+extern void ext_006C9DF0(void* self, int32_t index, float value);
+
+extern void fn_006C9C40(Unknown* self, uint32_t arg) {
+    auto* field10 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x10);
+
+    if ((*field10 & 0xEu) != 0x8u && arg == 8u) {
+        ext_006C9D30(self, 0u, 0x03000000u);
+        ext_006C9DF0(self, 2, 0.33333334f);
+        ext_006C9DF0(self, 3, 0.33333334f);
+        ext_006C9D70(self, 0u, 0x30000000u);
+        ext_006C9DF0(self, 4, 0.0f);
+        ext_006C9DF0(self, 5, 0.0f);
+    }
+
+    uint32_t f = *field10;
+    *field10 = (f & ~0xEu) | (arg & 0xEu);
+}
+} // namespace lift_006C9C40

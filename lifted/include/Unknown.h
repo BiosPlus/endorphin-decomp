@@ -446,6 +446,7 @@ struct Unknown_Fields {
     // +0x10  DWORD group_table_entries (24-byte stride; each entry's first DWORD is a pointer to a subtable array)  (evidence: 0x0078D510) // CONFLICT: multiple definitions at +0x10
     // +0x10  std::uint32_t            base  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 begin  (evidence: 0x00645A00) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t field_0x10 (bitfield; bits 1-3 are the mode bits)  (evidence: 0x006C9C40) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t field_0x10 (one-shot byte)  (evidence: 0x00640CD0, 0x00648A20) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    child  (evidence: 0x00441020, 0x0044B780, 0x0044B7A0, 0x0044B7C0, 0x006722B0, 0x00672490, 0x00675D60) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 count  (evidence: 0x00796660) // CONFLICT: multiple definitions at +0x10
