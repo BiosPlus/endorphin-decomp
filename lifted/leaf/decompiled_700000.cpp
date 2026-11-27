@@ -2244,3 +2244,25 @@ void* fn_0070C060(void* self, void* out) {
     return out;
 }
 } // namespace lift_0070C060
+
+// [0x0070C2D0] sub_0070C2D0 (127 bytes)
+namespace lift_0070C2D0 {
+// Known callee 0x0077FB40: Unknown::setDoubleQuadToOnes (Writes four IEEE-754 doubles of 1.0 (0x3FF0000000000000) at +0x00, +0x08, +0x10, +0x18 and returns self.)
+extern void* ext_0077FB40(void* self);
+// Known callee 0x0070BDB0: sub_0070BDB0 (Auto-lifted identical-shape clone of 0x0070BBD0 (Unknown::FillTripleFromChains).)
+extern void* ext_0070BDB0(void* self, void* buf);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0();
+
+// @name Unknown::fillQuadAndCopyOut_0070C2D0
+// @class Unknown
+// @summary Fills a 32-byte scratch buffer with four 1.0 doubles, lets 0070BDB0 update it, copies it to the out pointer, and returns out.
+void* fn_0070C2D0(void* self, void* out) {
+    alignas(8) uint64_t buf[4] = {0, 0, 0, 0};
+    ext_0077FB40(buf);
+    ext_0070BDB0(self, buf);
+    std::memcpy(out, buf, sizeof(buf));
+    ext_006D80A0();
+    return out;
+}
+} // namespace lift_0070C2D0
