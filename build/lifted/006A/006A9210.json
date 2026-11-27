@@ -1,0 +1,58 @@
+{
+  "va": "0x006A9210",
+  "size": 119,
+  "orig_symbol": "sub_006A9210",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "ClientRectAdjust::adjustClientRect",
+  "class": "ClientRectAdjust",
+  "signature": "void __thiscall fn_006A9210(void* self, RECT* rc)",
+  "summary": "Fills RECT with the window client area, then shrinks/shifts it for optional header, scrollbar and border insets.",
+  "fields": [
+    {
+      "class": "ClientRectAdjust",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "ClientRectAdjust",
+      "offset": "+0xF6",
+      "type": "BYTE",
+      "name": "flag_f6"
+    },
+    {
+      "class": "ClientRectAdjust",
+      "offset": "+0xF8",
+      "type": "LONG",
+      "name": "inset_f8"
+    },
+    {
+      "class": "ClientRectAdjust",
+      "offset": "+0xFC",
+      "type": "BYTE",
+      "name": "flag_fc"
+    },
+    {
+      "class": "ClientRectAdjust",
+      "offset": "+0x108",
+      "type": "BYTE",
+      "name": "sub_108"
+    },
+    {
+      "class": "ClientRectAdjust",
+      "offset": "+0x128",
+      "type": "HWND",
+      "name": "child_hwnd"
+    },
+    {
+      "class": "ClientRectAdjust",
+      "offset": "+0x179",
+      "type": "BYTE",
+      "name": "flag_179"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:11:55Z"
+}

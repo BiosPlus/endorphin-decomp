@@ -854,3 +854,55 @@ uint32_t fn_006A8840(void* self, uint32_t arg0) {
     return out_slot;
 }
 } // namespace lift_006A8840
+
+// [0x006A9210]
+namespace lift_006A9210 {
+// @name ClientRectAdjust::adjustClientRect
+// @class ClientRectAdjust
+// @summary Fills RECT with the window client area, then shrinks/shifts it for optional header, scrollbar and border insets.
+// @field ClientRectAdjust +0x20 HWND hwnd
+// @field ClientRectAdjust +0xF6 BYTE flag_f6
+// @field ClientRectAdjust +0xF8 LONG inset_f8
+// @field ClientRectAdjust +0xFC BYTE flag_fc
+// @field ClientRectAdjust +0x108 BYTE sub_108
+// @field ClientRectAdjust +0x128 HWND child_hwnd
+// @field ClientRectAdjust +0x179 BYTE flag_179
+
+BOOL ext_GetClientRect(HWND hWnd, RECT* lpRect);
+BOOL ext_IsWindowVisible(HWND hWnd);
+int ext_GetSystemMetrics(int nIndex);
+BOOL ext_InflateRect(RECT* lprc, int dx, int dy);
+// IAT slots for the imports above (call targets are the ext_ functions).
+extern uint32_t mem_0092563C;
+extern uint32_t mem_0092566C;
+extern uint32_t mem_00925678;
+extern uint32_t mem_009256CC;
+
+void __thiscall fn_006A9210(void* self, RECT* rc) {
+    (void)&mem_0092563C;
+    (void)&mem_0092566C;
+    (void)&mem_00925678;
+    (void)&mem_009256CC;
+
+    const HWND hwnd = lift_field<HWND>(self, 0x20);
+    ext_GetClientRect(hwnd, rc);
+
+    if (lift_field<BYTE>(self, 0xFC) != 0) {
+        rc->top += 0x1C;
+    }
+
+    if (lift_field<BYTE>(self, 0xF6) != 0) {
+        rc->bottom -= lift_field<LONG>(self, 0xF8);
+    }
+
+    // Sub-object at +0x108 is always a valid address; its +0x20 field is self+0x128.
+    const HWND child = lift_field<HWND>(self, 0x128);
+    if (child != nullptr && ext_IsWindowVisible(child)) {
+        rc->right -= ext_GetSystemMetrics(2 /* SM_CXVSCROLL */);
+    }
+
+    if (lift_field<BYTE>(self, 0x179) != 0) {
+        ext_InflateRect(rc, -1, -1);
+    }
+}
+} // namespace lift_006A9210
