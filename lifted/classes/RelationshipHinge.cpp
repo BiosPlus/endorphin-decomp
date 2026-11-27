@@ -103,3 +103,40 @@ void __thiscall fn_00658B30(void* self) {
     ext_007C9E80(reinterpret_cast<void*>(static_cast<uintptr_t>(target)), 0.0f, mem_00984790);
 }
 } // namespace lift_00658B30
+
+// [0x006593E0] RelationshipHinge::vfunc_0 (142 bytes)
+namespace lift_006593E0 {
+// Known callee 0x007C9C50: addOffset0x160 (Returns the first argument plus 0x160.)
+extern uint32_t ext_007C9C50(uint32_t arg0);
+// Known callee 0x007C9E80: sub_007C9E80 (Stores a float parameter, sets a nonzero flag and absolute value for a second float, and clears a field.)
+extern void ext_007C9E80(void* self, float val1, float val2);
+extern int mem_00925134;
+
+// @name RelationshipHinge::vfunc_0
+// @class RelationshipHinge
+// @summary Reads the first element of the hinge's 24-byte-stride array, offsets a flag via addOffset0x160, and forwards the result with two floats to sub_007C9E80.
+// @field RelationshipHinge +0x10 uint8_t* field_0x10
+// @field RelationshipHinge +0x14 uint8_t* field_0x14
+// @field RelationshipHinge +0x64 uint32_t field_0x64
+void fn_006593E0(void* self) {
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x10);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x14);
+
+    // Original calls the CRT invalid-parameter handler (via mem_00925134) when
+    // begin is null or the element count (bytes / 24) is zero, then continues.
+    const intptr_t bytes = reinterpret_cast<intptr_t>(end) - reinterpret_cast<intptr_t>(begin);
+    if (begin == nullptr || bytes / 24 == 0) {
+        (void)&mem_00925134;
+    }
+
+    const double d0 = lift_field<double>(begin, 0x00);
+    const double d1 = lift_field<double>(begin, 0x10);
+    const uint32_t flag = lift_field<uint32_t>(self, 0x64);
+
+    const float val1 = -static_cast<float>(d1);
+    const float val2 = static_cast<float>(d0);
+    const uint32_t offset = ext_007C9C50(flag);
+
+    ext_007C9E80(reinterpret_cast<void*>(static_cast<uintptr_t>(offset)), val1, val2);
+}
+} // namespace lift_006593E0

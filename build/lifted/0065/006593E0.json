@@ -1,0 +1,34 @@
+{
+  "va": "0x006593E0",
+  "size": 142,
+  "orig_symbol": "RelationshipHinge::vfunc_0",
+  "src_path": "src/classes/RelationshipHinge.cpp",
+  "lifted_path": "lifted/classes/RelationshipHinge.cpp",
+  "name": "RelationshipHinge::vfunc_0",
+  "class": "RelationshipHinge",
+  "signature": "void fn_006593E0(void* self)",
+  "summary": "Reads the first element of the hinge's 24-byte-stride array, offsets a flag via addOffset0x160, and forwards the result with two floats to sub_007C9E80.",
+  "fields": [
+    {
+      "class": "RelationshipHinge",
+      "offset": "+0x10",
+      "type": "uint8_t*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "RelationshipHinge",
+      "offset": "+0x14",
+      "type": "uint8_t*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "RelationshipHinge",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:31Z"
+}

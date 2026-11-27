@@ -53200,6 +53200,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00649840 (Unknown::ResetVtablesAndRelease).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x006593E0": {
+    "name": "RelationshipHinge::vfunc_0",
+    "class": "RelationshipHinge",
+    "signature": "void fn_006593E0(void* self)",
+    "summary": "Reads the first element of the hinge's 24-byte-stride array, offsets a flag via addOffset0x160, and forwards the result with two floats to sub_007C9E80.",
+    "lifted_path": "lifted/classes/RelationshipHinge.cpp"
+  },
   "0x006595B0": {
     "name": "RelationshipRPROJoint::vfunc_49",
     "class": "RelationshipRPROJoint",
