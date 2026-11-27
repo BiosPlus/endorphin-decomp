@@ -51621,6 +51621,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005D2970 (ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0066DED0": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3,float\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026public: void __thiscall NM::Vector3::radArbitraryRotateE(class NM::Vector3 const \u0026, float)\u003e",
+    "signature": "void fn_0066DED0(void* holder)",
+    "summary": "Lazily initialises the static accessor object at mem_00B59748 (guarded by bit 0 of mem_00B5974C) and stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x0066E050": {
     "name": "StringPool::freeNode",
     "class": "StringPool",

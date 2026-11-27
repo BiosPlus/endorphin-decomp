@@ -1018,3 +1018,26 @@ extern uint32_t fn_005B7E80(void* self, uint32_t a1, uint32_t a2, uint32_t a3, u
 } // namespace lift_005B7E80
 } // namespace lift_0066C2B0
 } // namespace lift_005B7E80
+
+// [0x0066DED0] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &public: void __thiscall NM::Vector3::radArbitraryRotateE(class NM::Vector3 const &, float)>::vfunc_40 (122 bytes)
+namespace lift_0066DED0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+// The disassembly passes only ECX (&mem_00B59748) and no stack arguments, so it is declared with self only.
+extern void ext_0067A670(void* self);
+extern uint32_t mem_00B5974C;
+extern uint32_t mem_00B59748;
+
+// @name ExprParser::Method2Type<NM::Vector3,float>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &public: void __thiscall NM::Vector3::radArbitraryRotateE(class NM::Vector3 const &, float)>
+// @summary Lazily initialises the static accessor object at mem_00B59748 (guarded by bit 0 of mem_00B5974C) and stores its address into holder+0x04.
+// @field ExprParser::Method2Type +0x04 DWORD accessorPtr
+void fn_0066DED0(void* holder) {
+    if (!(mem_00B5974C & 1u)) {
+        mem_00B5974C |= 1u;
+        ext_0067A670(&mem_00B59748);
+        mem_00B59748 = 0x0098AC74u; // vtable pointer for the accessor object
+    }
+    auto* words = reinterpret_cast<uint32_t*>(holder);
+    words[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B59748));
+}
+} // namespace lift_0066DED0
