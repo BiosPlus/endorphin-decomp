@@ -1,0 +1,40 @@
+{
+  "va": "0x004AB9D0",
+  "size": 159,
+  "orig_symbol": "NMData::BehaviourData::vfunc_22",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_22",
+  "class": "NMData::BehaviourData",
+  "signature": "void __thiscall fn_004AB9D0(void* self, void* xmlNode)",
+  "summary": "Serializes BehaviourData fields, TargetSelection subobject, and base TriggeredEventData to XML.",
+  "fields": [
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x304",
+      "type": "int32_t",
+      "name": "field_0x304"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x30C",
+      "type": "std::string",
+      "name": "field_0x30c"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x368",
+      "type": "void**",
+      "name": "field_0x368"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:16:48Z"
+}

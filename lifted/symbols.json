@@ -17235,6 +17235,13 @@
     "summary": "Thread-safe-style one-time initializer for the static object at 0x00ADFA08: runs its constructor (ext_0067A670) once, sets its vtable to 0x00941984, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004AB9D0": {
+    "name": "NMData::BehaviourData::vfunc_22",
+    "class": "NMData::BehaviourData",
+    "signature": "void __thiscall fn_004AB9D0(void* self, void* xmlNode)",
+    "summary": "Serializes BehaviourData fields, TargetSelection subobject, and base TriggeredEventData to XML.",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
   "0x004ABA70": {
     "name": "FindStringInRangeToPair",
     "signature": "void fn_004ABA70(StringFindResult* out, void* owner, void* first, void* unused, void* last, const void* value)",
@@ -59754,6 +59761,13 @@
     "signature": "void fn_0060B2B0(void* self)",
     "summary": "Stamps three vtable pointers into the object, resets the OwnedPointerRange at +0x10 and the string vector at +0x20, then runs the sub-object reset at offset 0.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060B320": {
+    "name": "NMData::DisabledCollisionPairList::vfunc_0_off_4",
+    "class": "NMData::DisabledCollisionPairList",
+    "signature": "void __thiscall fn_0060B320(void* self, uint32_t /*arg1*/, uint32_t /*arg2*/)",
+    "summary": "Iterates over the internal pointer vector to invoke sub_0060B0F0 and sub_0060A240.",
+    "lifted_path": "lifted/NMData/DisabledCollisionPairList.cpp"
   },
   "0x0060B440": {
     "name": "NMData::DisabledCollisionPairList::vfunc_0",

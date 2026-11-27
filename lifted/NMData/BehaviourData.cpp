@@ -574,3 +574,53 @@ void fn_004ACCD0(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_004ACCD0
+
+// [0x004AB9D0]
+namespace lift_004AB9D0 {
+// @name NMData::BehaviourData::vfunc_22
+// @class NMData::BehaviourData
+// @summary Serializes BehaviourData fields, TargetSelection subobject, and base TriggeredEventData to XML.
+// @field NMData::BehaviourData +0x180 void* field_0x180
+// @field NMData::BehaviourData +0x304 int32_t field_0x304
+// @field NMData::BehaviourData +0x30c std::string field_0x30c
+// @field NMData::BehaviourData +0x368 void** field_0x368
+
+
+extern uint32_t mem_00A9F3B0;
+extern uint32_t mem_00A9F17C;
+extern uint32_t mem_00A9F480;
+extern void* mem_00924FF0;
+extern uint32_t mem_00A9F6D4;
+extern const char* mem_00941C04;
+
+extern void ext_005006E0(void* a1, void* a2, uint32_t a3, uint32_t a4, uint32_t a5);
+extern void* ext_00640110(void* self, uint32_t a1);
+extern void ext_00427550(void* self, const char* name);
+extern void ext_00640A50(void* node, int32_t val);
+extern void* ext_00640390(void* self, const char* name, uint32_t a2);
+extern void ext_004C1DE0(void* self, void* a1);
+
+void __thiscall fn_004AB9D0(void* self, void* xmlNode) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    uint8_t* field_180 = lift_field<uint8_t*>(obj, 0x180);
+    ext_005006E0(field_180 + 0x11c, xmlNode, mem_00A9F17C, mem_00A9F3B0, 0);
+
+    void* child1 = ext_00640110(xmlNode, mem_00A9F480);
+    using c_str_fn = const char* (__thiscall*)(void*);
+    const char* nameStr = reinterpret_cast<c_str_fn>(mem_00924FF0)(obj + 0x30c);
+    ext_00427550(&child1, nameStr);
+
+    void* child2 = ext_00640110(xmlNode, mem_00A9F6D4);
+    int32_t val_304 = lift_field<int32_t>(obj, 0x304);
+    ext_00640A50(child2, val_304);
+
+    void* targetSel = ext_00640390(xmlNode, mem_00941C04, 0);
+    void* subobj = obj + 0x368;
+    void** vtbl = lift_field<void**>(obj, 0x368);
+    using vfunc3_fn = void (__thiscall*)(void*, void*);
+    reinterpret_cast<vfunc3_fn>(vtbl[3])(subobj, targetSel);
+
+    ext_004C1DE0(self, xmlNode);
+}
+} // namespace lift_004AB9D0
