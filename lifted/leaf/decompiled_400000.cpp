@@ -2247,3 +2247,61 @@ uint32_t __thiscall fn_00406510(void* self, uint32_t a1, uint32_t a2, uint32_t a
     return a1;
 }
 } // namespace lift_00406510
+
+// [0x0040F0F0] sub_0040F0F0 (126 bytes)
+namespace lift_0040F0F0 {
+// Known callee 0x006A5FF2: thunk_MFC80_ord_1934 (IAT jump thunk forwarding to MFC80!ord_1934.)
+extern void ext_006A5FF2();
+// Known callee 0x006A5FFE: thunk_MFC80_ord_1280 (IAT jump thunk forwarding to MFC80!ord_1280.)
+extern void ext_006A5FFE();
+extern int mem_00874F08;
+extern int mem_0092407C;
+extern int mem_00925648;
+extern int mem_0092A23C;
+extern int mem_0092A254;
+
+// @name DrawItemInfo::fillRectWithSolidBrush
+// @class DrawItemInfo
+// @summary Creates a solid brush of the given color, fills the rect using the hDC from the draw-item struct, then releases the brush object.
+// @field DrawItemInfo +0x04 HDC hDC
+void fn_0040F0F0(void* pDis, RECT rc, COLORREF color) {
+    // SEH frame setup/teardown (push -1 / scope table / fs:[0] link) is boilerplate
+    // and is not representable portably; the scope-table reference is kept for diff parity.
+    (void)&mem_00874F08;
+
+    // Brush wrapper object on the stack: vptr at +0, HBRUSH m_hObject at +4.
+    struct BrushSlot {
+        const void* vptr;
+        HBRUSH      hObject;
+    };
+    BrushSlot brush{};
+    brush.vptr    = &mem_0092A254;
+    brush.hObject = nullptr;
+
+    // CreateSolidBrush through the IAT slot at mem_0092407C.
+    using CreateSolidBrushFn = HBRUSH (*)(COLORREF);
+    auto createSolidBrush = reinterpret_cast<CreateSolidBrushFn>(
+        static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(&mem_0092407C)));
+    HBRUSH hbr = createSolidBrush(color);
+
+    // MFC80 ord_1280: attaches hbr into the brush wrapper (thiscall, ecx = &brush, arg = hbr).
+    // The extern is declared void(void); the thiscall arguments are not representable here.
+    ext_006A5FFE();
+    brush.hObject = hbr;
+
+    // hDC lives at +0x04 of the draw-item struct.
+    HDC hdc = lift_field<HDC>(pDis, 0x04);
+
+    // FillRect(hdc, &rc, brush) through the IAT slot at mem_00925648.
+    RECT r = rc;
+    using FillRectFn = int (*)(HDC, const RECT*, HBRUSH);
+    auto fillRect = reinterpret_cast<FillRectFn>(
+        static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(&mem_00925648)));
+    fillRect(hdc, &r, brush.hObject);
+
+    // Re-tag the wrapper as the MFC80 object vtable at mem_0092A23C, then run its
+    // destructor thunk (ord_1934). Scalar-deleting flag (-1) is SEH state bookkeeping.
+    brush.vptr = &mem_0092A23C;
+    ext_006A5FF2();
+}
+} // namespace lift_0040F0F0
