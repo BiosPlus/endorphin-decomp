@@ -22,10 +22,17 @@ struct NMData_RigEventData_Fields {
     // +0x180 void*                    SelectionVariable::Listener::vptr  (evidence: 0x004A9B50, 0x004D3D30)
     // +0x18C uint32_t                 field_0x18C  (evidence: 0x004DB020) // CONFLICT: multiple definitions at +0x18C
     // +0x18C void*                    field_0x18C  (evidence: 0x004DAF20) // CONFLICT: multiple definitions at +0x18C
-    // +0x192 uint8_t                  field_0x192  (evidence: 0x004DB020)
-    // +0x193 uint8_t                  field_0x193  (evidence: 0x004DB020)
+    // +0x190 uint8_t                  field_0x190  (evidence: 0x004D4310)
+    // +0x191 uint8_t                  field_0x191  (evidence: 0x004D4310)
+    // +0x192 uint8_t                  field_0x192  (evidence: 0x004D4310, 0x004DB020)
+    // +0x193 uint8_t                  field_0x193  (evidence: 0x004D4310, 0x004DB020)
+    // +0x194 uint8_t                  field_0x194  (evidence: 0x004D4310)
+    // +0x195 uint8_t                  field_0x195  (evidence: 0x004D4310)
+    // +0x198 float                    field_0x198  (evidence: 0x004D4310)
     // +0x334 void**                   field_0x334  (evidence: 0x004DAF20)
     // +0x338 void**                   field_0x338  (evidence: 0x004DAF20)
+    // +0x340 int32_t                  field_0x340  (evidence: 0x004D4310)
+    // +0x344 int32_t                  field_0x344  (evidence: 0x004D4310)
     // +0x398 uint8_t                  field_0x398  (evidence: 0x004D3C60)
     // +0x3E8 uint8_t                  field_0x3e8  (evidence: 0x004DCA50)
 };

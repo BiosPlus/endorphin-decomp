@@ -22889,6 +22889,13 @@
     "summary": "Bounds-checks index against the element count of a vector of 28-byte std::string elements at self+0x458/+0x45C, then copy-constructs that element into out and returns out.",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004D4310": {
+    "name": "NMData::RigEventData::vfunc_22",
+    "class": "NMData::RigEventData",
+    "signature": "void* fn_004D4310(void* self, void* out)",
+    "summary": "Serializes RigEventData fields to the output node and delegates to TriggeredEventData::vfunc_22.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004D4730": {
     "name": "NMData::RigEventData::vfunc_1_off_184",
     "class": "NMData::RigEventData",

@@ -35,6 +35,7 @@ void* fn_004D3C20(void* self, void* arg1, uint32_t arg2) {
     }
     return arg1;
 }
+#include <cstdint>
 
 // [0x004DCB20] NMData::RigEventData::vfunc_17_off_C (99 bytes)
 // @name NMData::RigEventData::vfunc_17_off_C
@@ -500,3 +501,92 @@ void __thiscall fn_004DCA50(void* this_ptr, void* arg1) {
     (void)mem_00925134;
 }
 } // namespace lift_004DCA50
+
+// [0x004D4310]
+namespace lift_004D4310 {
+// @name NMData::RigEventData::vfunc_22
+// @class NMData::RigEventData
+// @summary Serializes RigEventData fields to the output node and delegates to TriggeredEventData::vfunc_22.
+// @field NMData::RigEventData +0x190 uint8_t field_0x190
+// @field NMData::RigEventData +0x191 uint8_t field_0x191
+// @field NMData::RigEventData +0x192 uint8_t field_0x192
+// @field NMData::RigEventData +0x193 uint8_t field_0x193
+// @field NMData::RigEventData +0x194 uint8_t field_0x194
+// @field NMData::RigEventData +0x195 uint8_t field_0x195
+// @field NMData::RigEventData +0x198 float field_0x198
+// @field NMData::RigEventData +0x340 int32_t field_0x340
+// @field NMData::RigEventData +0x344 int32_t field_0x344
+
+
+extern void* mem_00A9FA74;
+extern void* mem_00A9F720;
+extern void* mem_00A9F71C;
+extern void* mem_00A9F734;
+extern void* mem_00A9F924;
+extern void* mem_00A9F6DC;
+extern void* mem_00A9F89C;
+extern void* mem_00A9F6A0;
+extern void* mem_00A9F690;
+extern void* mem_00A9F914;
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_00B40640;
+
+extern void ext_004D3E40(void* self);
+extern std::string* ext_004D4060(void* self, std::string* out);
+extern std::string* ext_004D40E0(void* self, std::string* out);
+extern std::string* ext_004D3A10(void* self, std::string* out);
+extern void* ext_00640110(void* self, void* key);
+extern void ext_00427550(void* self, const char* name);
+extern void ext_00640A80(void* node, uint8_t flag);
+extern void ext_00640BC0(void* node, float value);
+extern void ext_00640A50(void* node, int32_t value);
+extern void ext_004C1DE0(void* self, void* out);
+extern uintptr_t ext_00493E40(void* self);
+extern void ext_004DC370();
+extern void ext_00528B90(void* self, void* peer);
+
+void* fn_004D4310(void* self, void* out) {
+    (void)mem_00924FF0;
+    (void)mem_00924FF4;
+    (void)mem_00B40640;
+    (void)ext_00493E40;
+    (void)ext_004DC370;
+    (void)ext_00528B90;
+    ext_004D3E40(self);
+
+    {
+        std::string str;
+        ext_004D4060(self, &str);
+        void* child = ext_00640110(out, mem_00A9FA74);
+        ext_00427550(&child, str.c_str());
+    }
+
+    {
+        std::string str;
+        ext_004D40E0(self, &str);
+        void* child = ext_00640110(out, reinterpret_cast<void*>(0x00948520));
+        ext_00427550(&child, str.c_str());
+    }
+
+    ext_00640A80(ext_00640110(out, mem_00A9F720), lift_field<uint8_t>(self, 0x190));
+    ext_00640A80(ext_00640110(out, reinterpret_cast<void*>(0x00948514)), lift_field<uint8_t>(self, 0x191));
+    ext_00640A80(ext_00640110(out, mem_00A9F71C), lift_field<uint8_t>(self, 0x192));
+    ext_00640A80(ext_00640110(out, mem_00A9F734), lift_field<uint8_t>(self, 0x193));
+    ext_00640BC0(ext_00640110(out, mem_00A9F924), lift_field<float>(self, 0x198));
+    ext_00640A50(ext_00640110(out, mem_00A9F6DC), lift_field<int32_t>(self, 0x344));
+    ext_00640A50(ext_00640110(out, mem_00A9F89C), lift_field<int32_t>(self, 0x340));
+    ext_00640A80(ext_00640110(out, mem_00A9F6A0), lift_field<uint8_t>(self, 0x194));
+    ext_00640A80(ext_00640110(out, mem_00A9F690), lift_field<uint8_t>(self, 0x195));
+
+    {
+        std::string str;
+        ext_004D3A10(self, &str);
+        void* child = ext_00640110(out, mem_00A9F914);
+        ext_00427550(&child, str.c_str());
+    }
+
+    ext_004C1DE0(self, out);
+    return out;
+}
+} // namespace lift_004D4310
