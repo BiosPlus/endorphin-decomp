@@ -12832,6 +12832,13 @@
     "summary": "One-time guarded initialization of the static object at 0x00ADD7E4; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049B400": {
+    "name": "Unknown::InitDynCastFields",
+    "class": "Unknown",
+    "signature": "void* fn_0049B400(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Initializes this object: calls InitVtblAndArg(0), sets the vtable, runs a dynamic_cast on arg2, stores the results and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049B4D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State, std::string const\u0026, \u0026NMData::State::getFileName\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType",

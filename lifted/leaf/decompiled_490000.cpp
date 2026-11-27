@@ -2255,3 +2255,43 @@ void* __thiscall fn_004950B0(void* self, void* out_str, int32_t index) {
     return out_str;
 }
 } // namespace lift_004950B0
+
+// [0x0049B400] sub_0049B400 (146 bytes)
+namespace lift_0049B400 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+// __cdecl RTDynamicCast(inptr, VfDelta, SrcType, TargetType, isReference); all values are 32-bit in the x86 binary.
+extern uint32_t ext_006A6E9E(uint32_t inptr, int32_t vfDelta, uint32_t srcType, uint32_t targetType, int32_t isReference);
+
+// @name Unknown::InitDynCastFields
+// @class Unknown
+// @summary Initializes this object: calls InitVtblAndArg(0), sets the vtable, runs a dynamic_cast on arg2, stores the results and returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+void* fn_0049B400(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    // The MSVC SEH frame push/pop (fs:[0] handler install and restore) is boilerplate and is omitted.
+
+    ext_006657F0(self, 0);
+    lift_field<uint32_t>(self, 0x00) = 0x0093FCF8;
+    lift_field<uint32_t>(self, 0x10) = a1;
+
+    const uint32_t result = ext_006A6E9E(a2, 0, 0x00A2F4F4, 0x00A354C8, 0);
+
+    lift_field<uint32_t>(self, 0x14) = result;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = a3;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = a4;
+    if (result == 0) {
+        lift_field<uint32_t>(self, 0x08) = a2;
+    }
+    return self;
+}
+} // namespace lift_0049B400
