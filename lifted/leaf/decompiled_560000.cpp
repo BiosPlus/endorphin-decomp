@@ -949,3 +949,41 @@ void __stdcall fn_005633A0(void* model, void* strObj) {
     reinterpret_cast<StringDtorFn>(mem_00924FF4)(localStr);
 }
 } // namespace lift_005633A0
+
+// [0x00563740]
+namespace lift_00563740 {
+// @name SetStringPropertyIfTypeMatches
+// @summary Sets a string property on a target object via vtable+0x5C if its type name (vtable+0x24) matches 0x00928B5D.
+
+extern uint32_t mem_00924E48; // std::basic_string<char>::compare(const char*)
+extern uint32_t mem_00924FF4; // std::basic_string<char>::~basic_string()
+extern void* __stdcall ext_005634D0(void* out, void* obj);
+
+void __thiscall fn_00563740(void* this_ptr, void* target, void* src_obj) {
+    (void)this_ptr;
+    if (!target || !src_obj) {
+        return;
+    }
+
+    auto** vtable = *reinterpret_cast<void***>(target);
+    using GetTypeFn = void* (__thiscall*)(void*);
+    void* type_str = reinterpret_cast<GetTypeFn>(vtable[0x24 / 4])(target);
+
+    using CompareFn = int (__thiscall*)(void*, const char*);
+    auto compare_fn = reinterpret_cast<CompareFn>(static_cast<uintptr_t>(mem_00924E48));
+    if (compare_fn(type_str, reinterpret_cast<const char*>(0x00928B5D)) != 0) {
+        return;
+    }
+
+    uint8_t local_str[0x1C]{};
+    ext_005634D0(local_str, src_obj);
+
+    vtable = *reinterpret_cast<void***>(target);
+    using SetStrFn = void (__thiscall*)(void*, void*);
+    reinterpret_cast<SetStrFn>(vtable[0x5C / 4])(target, local_str);
+
+    using DtorFn = void (__thiscall*)(void*);
+    auto dtor_fn = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor_fn(local_str);
+}
+} // namespace lift_00563740

@@ -1,0 +1,13 @@
+{
+  "va": "0x00563740",
+  "size": 144,
+  "orig_symbol": "sub_00563740",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "SetStringPropertyIfTypeMatches",
+  "signature": "void __thiscall fn_00563740(void* this_ptr, void* target, void* src_obj)",
+  "summary": "Sets a string property on a target object via vtable+0x5C if its type name (vtable+0x24) matches 0x00928B5D.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:38:48Z"
+}
