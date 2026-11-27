@@ -108,3 +108,46 @@ void* fn_0048DD30(void* self) {
     return ext_0048DB80(mem, owner);
 }
 } // namespace lift_0048DD30
+
+// [0x004C3410] NMData::DesiredPoseEventData::vfunc_15 (156 bytes)
+namespace lift_004C3410 {
+// Known callee 0x004C2230: storePairWithStaticObject (Stores the value into dst[0], then stores the address returned by the one-time static object initializer into dst[1].)
+extern void ext_004C2230(DWORD* dst, DWORD value);
+// Known callee 0x004C2250: StorePairWithStaticObject (Writes the value argument to out[0], then writes the address returned by initStaticObjectOnce_004C1D20 to out[1].)
+extern void ext_004C2250(DWORD* out, DWORD value);
+// Known callee 0x004C2270: storeValueAndStaticObjectAddr (Ensures the static object is initialized, then writes value into dst[0] and the static object's address into dst[1].)
+extern void ext_004C2270(DWORD* dst, DWORD value);
+// Known callee 0x00671F30: sub_00671F30 (Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.)
+extern void ext_00671F30(DWORD* out);
+// Known callee 0x004C1BD0: storeValueAndStaticPtrPair_004C1BD0 (Stores value into dst+0x00 and the result of ext_004C0E40(0) into dst+0x04.)
+extern void ext_004C1BD0(void* dst, DWORD value);
+
+// @name NMData::DesiredPoseEventData::vfunc_15
+// @class NMData::DesiredPoseEventData
+// @summary Switches on a 32-bit key and forwards the output pointer plus the receiver's address to one of the static-pair store helpers (default: zero the output); returns the output pointer.
+// (No direct field accesses: self is only passed through as a value, so no @field lines.)
+DWORD* __thiscall fn_004C3410(void* self, DWORD* out, DWORD key) {
+    const DWORD value = static_cast<DWORD>(reinterpret_cast<uintptr_t>(self));
+
+    switch (key) {
+    case 0x24A:
+        ext_004C2270(out, value);
+        break;
+    case 0x266:
+    case 0x334:
+        ext_004C2250(out, value);
+        break;
+    case 0x2D4:
+    case 0x361:
+        ext_004C2230(out, value);
+        break;
+    case 0x386:
+        ext_004C1BD0(out, value);
+        break;
+    default:
+        ext_00671F30(out);
+        break;
+    }
+    return out;
+}
+} // namespace lift_004C3410

@@ -17300,6 +17300,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::TriggeredEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C3410": {
+    "name": "NMData::DesiredPoseEventData::vfunc_15",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "DWORD* __thiscall fn_004C3410(void* self, DWORD* out, DWORD key)",
+    "summary": "Switches on a 32-bit key and forwards the output pointer plus the receiver's address to one of the static-pair store helpers (default: zero the output); returns the output pointer.",
+    "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
   "0x004C4390": {
     "name": "sub_004C4390",
     "signature": "void* sub_004C4390(void* self)",

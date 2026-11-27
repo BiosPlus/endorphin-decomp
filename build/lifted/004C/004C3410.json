@@ -1,0 +1,14 @@
+{
+  "va": "0x004C3410",
+  "size": 156,
+  "orig_symbol": "NMData::DesiredPoseEventData::vfunc_15",
+  "src_path": "src/NMData/DesiredPoseEventData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp",
+  "name": "NMData::DesiredPoseEventData::vfunc_15",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "DWORD* __thiscall fn_004C3410(void* self, DWORD* out, DWORD key)",
+  "summary": "Switches on a 32-bit key and forwards the output pointer plus the receiver's address to one of the static-pair store helpers (default: zero the output); returns the output pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:30Z"
+}
