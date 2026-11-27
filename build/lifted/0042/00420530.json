@@ -1,0 +1,13 @@
+{
+  "va": "0x00420530",
+  "size": 95,
+  "orig_symbol": "sub_00420530",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "getStaticBoolString_00ACCBA4",
+  "signature": "void* fn_00420530()",
+  "summary": "Lazy-initializes a static string at 0x00ACCBA4 with atexit cleanup and returns its address.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:53:33Z"
+}

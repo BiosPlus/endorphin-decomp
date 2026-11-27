@@ -1609,3 +1609,29 @@ void* fn_00427700() {
     return mem_00ACDAE8;
 }
 } // namespace lift_00427700
+
+// [0x00420530]
+namespace lift_00420530 {
+// @name getStaticBoolString_00ACCBA4
+// @summary Lazy-initializes a static string at 0x00ACCBA4 with atexit cleanup and returns its address.
+
+
+extern uint32_t mem_00ACCBC0;
+extern uint8_t mem_00ACCBA4;
+extern uint32_t mem_00A2F20C;
+extern uint8_t mem_00914C30;
+
+extern void* ext_0066AD10(void* out_str, void* arg);
+extern int ext_006A6C87(void* fn);
+extern void ext_00877D0E();
+
+void* fn_00420530() {
+    (void)&ext_00877D0E;
+    if ((mem_00ACCBC0 & 1u) == 0) {
+        mem_00ACCBC0 |= 1u;
+        ext_0066AD10(&mem_00ACCBA4, &mem_00A2F20C);
+        ext_006A6C87(&mem_00914C30);
+    }
+    return &mem_00ACCBA4;
+}
+} // namespace lift_00420530
