@@ -4151,3 +4151,30 @@ void fn_00436AD0(void* self) {
     ext_00436A50(self, static_cast<int>(newFlag), 1);
 }
 } // namespace lift_00436AD0
+
+// [0x0043B4D0]
+namespace lift_0043B4D0 {
+// @name AddCharacterDialog::ResetSlots
+// @class AddCharacterDialog
+// @summary Calls ext_00493D90 (AddCharacterDialog::vfunc_3) on six sub-objects at this+0x74/0x64/0x54/0x44/0x34/0x24 with the values 4, 3, 2, 1, 0, -1.
+// @field AddCharacterDialog +0x24 void* field_0x24 (sub-object passed as this to vfunc_3)
+// @field AddCharacterDialog +0x34 void* field_0x34 (sub-object passed as this to vfunc_3)
+// @field AddCharacterDialog +0x44 void* field_0x44 (sub-object passed as this to vfunc_3)
+// @field AddCharacterDialog +0x54 void* field_0x54 (sub-object passed as this to vfunc_3)
+// @field AddCharacterDialog +0x64 void* field_0x64 (sub-object passed as this to vfunc_3)
+// @field AddCharacterDialog +0x74 void* field_0x74 (sub-object passed as this to vfunc_3)
+
+// Callee: AddCharacterDialog::vfunc_3(this, int value)
+extern void ext_00493D90(void* self, int value);
+
+void fn_0043B4D0(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+
+    ext_00493D90(base + 0x74, 4);
+    ext_00493D90(base + 0x64, 3);
+    ext_00493D90(base + 0x54, 2);
+    ext_00493D90(base + 0x44, 1);
+    ext_00493D90(base + 0x34, 0);
+    ext_00493D90(base + 0x24, -1);
+}
+} // namespace lift_0043B4D0

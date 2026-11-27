@@ -1,0 +1,52 @@
+{
+  "va": "0x0043B4D0",
+  "size": 129,
+  "orig_symbol": "sub_0043B4D0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "AddCharacterDialog::ResetSlots",
+  "class": "AddCharacterDialog",
+  "signature": "void fn_0043B4D0(void* self)",
+  "summary": "Calls ext_00493D90 (AddCharacterDialog::vfunc_3) on six sub-objects at this+0x74/0x64/0x54/0x44/0x34/0x24 with the values 4, 3, 2, 1, 0, -1.",
+  "fields": [
+    {
+      "class": "AddCharacterDialog",
+      "offset": "+0x24",
+      "type": "void* field_0x24 (sub-object passed as this to",
+      "name": "vfunc_3)"
+    },
+    {
+      "class": "AddCharacterDialog",
+      "offset": "+0x34",
+      "type": "void* field_0x34 (sub-object passed as this to",
+      "name": "vfunc_3)"
+    },
+    {
+      "class": "AddCharacterDialog",
+      "offset": "+0x44",
+      "type": "void* field_0x44 (sub-object passed as this to",
+      "name": "vfunc_3)"
+    },
+    {
+      "class": "AddCharacterDialog",
+      "offset": "+0x54",
+      "type": "void* field_0x54 (sub-object passed as this to",
+      "name": "vfunc_3)"
+    },
+    {
+      "class": "AddCharacterDialog",
+      "offset": "+0x64",
+      "type": "void* field_0x64 (sub-object passed as this to",
+      "name": "vfunc_3)"
+    },
+    {
+      "class": "AddCharacterDialog",
+      "offset": "+0x74",
+      "type": "void* field_0x74 (sub-object passed as this to",
+      "name": "vfunc_3)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:16:33Z"
+}

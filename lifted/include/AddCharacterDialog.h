@@ -11,5 +11,11 @@
 namespace lifted_layout {
 struct AddCharacterDialog_Fields {
     // +0x20  HWND                     field_0x20  (evidence: 0x004010C0, 0x004010D0, 0x00535610, 0x00545B80, 0x005FF1C0)
+    // +0x24  void* field_0x24 (sub-object passed as this to vfunc_3)  (evidence: 0x0043B4D0)
+    // +0x34  void* field_0x34 (sub-object passed as this to vfunc_3)  (evidence: 0x0043B4D0)
+    // +0x44  void* field_0x44 (sub-object passed as this to vfunc_3)  (evidence: 0x0043B4D0)
+    // +0x54  void* field_0x54 (sub-object passed as this to vfunc_3)  (evidence: 0x0043B4D0)
+    // +0x64  void* field_0x64 (sub-object passed as this to vfunc_3)  (evidence: 0x0043B4D0)
+    // +0x74  void* field_0x74 (sub-object passed as this to vfunc_3)  (evidence: 0x0043B4D0)
 };
 } // namespace lifted_layout
