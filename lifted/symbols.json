@@ -38276,6 +38276,13 @@
     "summary": "Dispatches to vtable slot 16 (+0x40) with argument 2.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005FC890": {
+    "name": "UnknownClass::allocateAndConstruct",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC890(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FCB30": {
     "name": "VirtualSlot18Lookup",
     "class": "UnknownObject (optional)",

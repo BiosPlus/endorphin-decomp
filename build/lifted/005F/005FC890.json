@@ -1,0 +1,14 @@
+{
+  "va": "0x005FC890",
+  "size": 118,
+  "orig_symbol": "sub_005FC890",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "UnknownClass::allocateAndConstruct",
+  "class": "UnknownClass",
+  "signature": "uintptr_t fn_005FC890(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:20:26Z"
+}

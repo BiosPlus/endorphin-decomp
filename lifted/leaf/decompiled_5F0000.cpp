@@ -1326,3 +1326,23 @@ uint32_t sub_005F3E70(void* iter_container, void* first, void* expected_containe
     return 1;
 }
 } // namespace lift_005F3E70
+
+// [0x005FC890] sub_005FC890 (118 bytes)
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_00629E20(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC890(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x38);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_00629E20(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
