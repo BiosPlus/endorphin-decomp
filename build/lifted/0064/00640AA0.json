@@ -1,0 +1,13 @@
+{
+  "va": "0x00640AA0",
+  "size": 44,
+  "orig_symbol": "sub_00640AA0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "ResetChildFromFormattedId",
+  "signature": "void fn_00640AA0(void* a, uint32_t b)",
+  "summary": "Formats the integer argument with the rdata format string into a 16-byte buffer and passes it to ResetChildAndAssignName on the address of the first argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:40:51Z"
+}

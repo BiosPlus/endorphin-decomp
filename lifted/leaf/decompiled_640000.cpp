@@ -2710,3 +2710,25 @@ void fn_00640A80(uint8_t flag) {
     ext_00427550(&flag, name);
 }
 } // namespace lift_00640A80
+
+// [0x00640AA0] sub_00640AA0 (44 bytes)
+namespace lift_00640AA0 {
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+// The callee takes its object in ECX and the name in EDX (__fastcall).
+extern void __fastcall ext_00427550(void* self, const char* name);
+
+// IAT slot for MSVCR80!sprintf (0x00925218)
+extern uint32_t mem_00925218;
+
+// @name ResetChildFromFormattedId
+// @summary Formats the integer argument with the rdata format string into a 16-byte buffer and passes it to ResetChildAndAssignName on the address of the first argument.
+void fn_00640AA0(void* a, uint32_t b) {
+    char buf[16];
+    using SprintfFn = int(__cdecl*)(char*, const char*, ...);
+    reinterpret_cast<SprintfFn>(static_cast<uintptr_t>(mem_00925218))(
+        buf,
+        reinterpret_cast<const char*>(static_cast<uintptr_t>(0x009720E8)),
+        b);
+    ext_00427550(static_cast<void*>(&a), buf);
+}
+} // namespace lift_00640AA0
