@@ -1,0 +1,34 @@
+{
+  "va": "0x004ABE70",
+  "size": 145,
+  "orig_symbol": "NMData::BehaviourData::vfunc_8_off_C",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_8_off_C",
+  "class": "NMData::BehaviourData",
+  "signature": "void __thiscall fn_004ABE70(void* self, uint8_t al)",
+  "summary": "Stores a byte flag, forwards it to vtable slot 8 of each element in a pointer vector (+0x3d0..+0x3d4), then calls ext_00594000 and dispatches ext_00493EE0 on the result plus 0x258.",
+  "fields": [
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3D0",
+      "type": "void**",
+      "name": "field_0x3d0"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3D4",
+      "type": "void**",
+      "name": "field_0x3d4"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x5C",
+      "type": "uint8_t",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:37:06Z"
+}

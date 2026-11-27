@@ -263,3 +263,47 @@ void fn_004ABF60(void* self) {
     lift_field<uint32_t>(self, 0x184) = 0;
 }
 } // namespace lift_004ABF60
+
+// [0x004ABE70] NMData::BehaviourData::vfunc_8_off_C (145 bytes)
+namespace lift_004ABE70 {
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Import slot for MSVCR80!_invalid_parameter_noinfo (debug iterator checks); metadata-only reference.
+extern int mem_00925134;
+
+// @name NMData::BehaviourData::vfunc_8_off_C
+// @class NMData::BehaviourData
+// @summary Stores a byte flag, forwards it to vtable slot 8 of each element in a pointer vector (+0x3d0..+0x3d4), then calls ext_00594000 and dispatches ext_00493EE0 on the result plus 0x258.
+// @field NMData::BehaviourData +0x3d0 void** field_0x3d0
+// @field NMData::BehaviourData +0x3d4 void** field_0x3d4
+// @field NMData::BehaviourData +0x5c uint8_t field_0x5c
+
+// Virtual method at vtable slot 8 of a subobject: void __thiscall(this, uint8_t).
+typedef void (__thiscall *SubobjectSlot8Fn)(void* self, uint8_t flag);
+
+void __thiscall fn_004ABE70(void* self, uint8_t al) {
+    (void)&mem_00925134;
+    lift_field<uint8_t>(self, 0x5c) = al;
+
+    void** first = lift_field<void**>(self, 0x3d0);
+    void** last = lift_field<void**>(self, 0x3d4);
+    if (first == nullptr || first == last) {
+        return;
+    }
+
+    for (void** it = first; it != lift_field<void**>(self, 0x3d4); ++it) {
+        void* obj = *it;
+        // Subobject at +0xc: its vptr is read from obj+0xc, slot 8 is at vtable+0x20.
+        void** vtbl = lift_field<void**>(obj, 0x0c);
+        void* slot = lift_field<void*>(vtbl, 0x20);
+        auto fn = reinterpret_cast<SubobjectSlot8Fn>(slot);
+        fn(static_cast<uint8_t*>(obj) + 0x0c, lift_field<uint8_t>(self, 0x5c));
+    }
+
+    int32_t global = ext_00594000();
+    void* ecx = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(global)) + 0x258);
+    ext_00493EE0(ecx);
+}
+} // namespace lift_004ABE70

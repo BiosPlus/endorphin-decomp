@@ -14338,6 +14338,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004ABE70": {
+    "name": "NMData::BehaviourData::vfunc_8_off_C",
+    "class": "NMData::BehaviourData",
+    "signature": "void __thiscall fn_004ABE70(void* self, uint8_t al)",
+    "summary": "Stores a byte flag, forwards it to vtable slot 8 of each element in a pointer vector (+0x3d0..+0x3d4), then calls ext_00594000 and dispatches ext_00493EE0 on the result plus 0x258.",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
   "0x004ABF10": {
     "name": "sub_004ABF10",
     "signature": "void fn_004ABF10(uint32_t* first, uint32_t* last, uint32_t pred)",
