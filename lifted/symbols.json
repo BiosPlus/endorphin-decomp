@@ -4339,6 +4339,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043BB40": {
+    "name": "Unknown::Unknown_0043BB40",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0043BB40(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Constructor-style init: sets vtable 0x931EA4, stores arg1 at +0x04 and arg2 at +0x10 and arg3 at +0x24, initializes two embedded MFC80 objects at +0x08 and +0x0C via MFC80!ord_304 with string 0x928B5D, zeroes +0x18..+0x20 and +0x2C..+0x3C, sets +0x28 to 0xE, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043BEE0": {
     "name": "MultiTrackView::MarkerTrack::vfunc_0",
     "class": "MultiTrackView::MarkerTrack",

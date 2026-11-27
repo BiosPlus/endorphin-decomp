@@ -5433,3 +5433,49 @@ void fn_0043D870(uint32_t* base, uint32_t count, uint32_t arg) {
     }
 }
 } // namespace lift_0043D870
+
+// [0x0043BB40] sub_0043BB40 (143 bytes)
+namespace lift_0043BB40 {
+extern int mem_009242F0;
+
+// @name Unknown::Unknown_0043BB40
+// @class Unknown
+// @summary Constructor-style init: sets vtable 0x931EA4, stores arg1 at +0x04 and arg2 at +0x10 and arg3 at +0x24, initializes two embedded MFC80 objects at +0x08 and +0x0C via MFC80!ord_304 with string 0x928B5D, zeroes +0x18..+0x20 and +0x2C..+0x3C, sets +0x28 to 0xE, returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint32_t arg1
+// @field Unknown +0x08 uint8_t embedded_obj_08[4]
+// @field Unknown +0x0C uint8_t embedded_obj_0C[4]
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t arg3
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2C
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 uint32_t field_0x38
+// @field Unknown +0x3C uint32_t field_0x3C
+void* __thiscall fn_0043BB40(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    lift_field<uint32_t>(self, 0x00) = 0x00931EA4u;
+    lift_field<uint32_t>(self, 0x04) = arg1;
+    // call dword ptr [0x9242F0] (MFC80!ord_304), thiscall with one arg, callee cleans up
+    using OrdFn = void(__thiscall*)(void*, const void*);
+    OrdFn ord_304 = reinterpret_cast<OrdFn>(mem_009242F0);
+    const void* str_928B5D = reinterpret_cast<const void*>(0x928B5Du);
+    ord_304(static_cast<uint8_t*>(self) + 0x08, str_928B5D);
+    ord_304(static_cast<uint8_t*>(self) + 0x0C, str_928B5D);
+    lift_field<uint32_t>(self, 0x10) = arg2;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+    lift_field<uint32_t>(self, 0x24) = arg3;
+    lift_field<uint32_t>(self, 0x28) = 0x0E;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+    lift_field<uint32_t>(self, 0x38) = 0;
+    lift_field<uint32_t>(self, 0x3C) = 0;
+    return self;
+}
+} // namespace lift_0043BB40
