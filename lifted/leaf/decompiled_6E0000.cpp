@@ -1518,3 +1518,36 @@ extern void __fastcall fn_006E7730(void* self) {
     ext_006B9D70(p + 0x8);
 }
 } // namespace lift_006E7730
+
+// [0x006E4CD0]
+namespace lift_006E4CD0 {
+extern void ext_006C9F00();
+extern void ext_006CA020();
+extern void ext_006CA6A0();
+extern void ext_006CD320();
+extern void ext_006DEEC0();
+
+extern const double mem_00993CC8;
+extern const uint32_t mem_00925294;
+extern const double mem_00993828;
+extern const double mem_0092A270;
+extern const double mem_009324A8;
+extern const double mem_00993CC0;
+
+// @name wrapAngleNear
+// @summary Wraps angle a by multiples of 360 degrees to be within 180 degrees of target angle b.
+extern double __cdecl fn_006E4CD0(double a, double b) {
+    (void)&ext_006C9F00; (void)&ext_006CA020; (void)&ext_006CA6A0;
+    (void)&ext_006CD320; (void)&ext_006DEEC0;
+    (void)&mem_00925294; // MSVCR80!modf IAT slot
+    double intpart = 0.0;
+    double frac = std::modf((b - a) * mem_00993CC8, &intpart);
+    if (frac > mem_00993828) {
+        intpart += mem_0092A270;
+    }
+    if (frac < mem_009324A8) {
+        intpart -= mem_0092A270;
+    }
+    return intpart * mem_00993CC0 + a;
+}
+} // namespace lift_006E4CD0
