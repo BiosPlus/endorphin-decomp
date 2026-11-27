@@ -2271,3 +2271,31 @@ void fn_006C9250(void* self) {
     ext_006B9D70(self);
 }
 } // namespace lift_006C9250
+
+// [0x006C9B70]
+namespace lift_006C9B70 {
+// @name Unknown::InitSixArgs_006C9B70
+// @class Unknown
+// @summary Forwards six stack arguments to a sequence of field setters on this (bits, float array slots, flag setters).
+
+extern void ext_0079E5B0(void* self, uint32_t a1, uint32_t a2);
+extern void ext_00789BA0(void* self, uint32_t edx_unused, uint32_t value);
+extern void ext_006C9C40(void* self, uint32_t arg);
+extern void ext_006C9D00(void* self, uint32_t arg);
+extern void ext_006C9DA0(void* self, uint32_t arg);
+extern void ext_006C9E70(void* self, int32_t idx, float value);
+extern void ext_006C9F20(void* self, uint8_t flag);
+
+extern void fn_006C9B70(void* self, uint32_t a1, uint32_t a2, uint32_t a3,
+                            uint32_t a4, uint32_t a5, uint32_t a6) {
+    ext_0079E5B0(self, a1, a2);
+    ext_00789BA0(self, a3, a3);
+    ext_006C9C40(self, 8u);
+    ext_006C9D00(self, 0x200u);
+    ext_006C9E70(self, 0, std::bit_cast<float>(a4));
+    ext_006C9E70(self, 1, std::bit_cast<float>(a5));
+    ext_006C9E70(self, 2, std::bit_cast<float>(a6));
+    ext_006C9F20(self, 0);
+    ext_006C9DA0(self, 0);
+}
+} // namespace lift_006C9B70

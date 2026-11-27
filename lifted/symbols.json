@@ -65079,6 +65079,13 @@
     "summary": "Zeroes the 0x18-byte state block at this, stores 0.33333334f at +0x04, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C9B70": {
+    "name": "Unknown::InitSixArgs_006C9B70",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_006C9B70(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6)",
+    "summary": "Forwards six stack arguments to a sequence of field setters on this (bits, float array slots, flag setters).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9C30": {
     "name": "sub_006C9C30",
     "signature": "uint32_t sub_006C9C30(uint8_t* ecx)",
