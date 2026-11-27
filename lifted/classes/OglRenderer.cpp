@@ -449,3 +449,25 @@ uint8_t* __thiscall fn_00534D20(uint8_t* self, uint32_t arg1, uint32_t arg2, uin
     return obj;
 }
 } // namespace lift_00534D20
+
+// [0x00534D70]
+namespace lift_00534D70 {
+extern void* ext_005343A0(void* self, uint32_t a1, uint32_t a4, uint32_t a5);
+extern void* ext_0053AFF0(void* self, uint32_t a2, uint32_t a3);
+extern void* ext_00532E90(void* self, uint32_t a5);
+
+// @name OglRenderer::vfunc_95
+// @class OglRenderer
+// @summary Creates/looks up an object via sub_005343A0, initializes it with (a2,a3), and copies its +0x38 into +0x1C of the entry found by sub_00532E90(a5).
+void* fn_00534D70(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)
+{
+    uint8_t* obj = (uint8_t*)ext_005343A0(self, a1, a4, a5);
+    if (!obj)
+        return nullptr;
+    ext_0053AFF0(obj, a2, a3);
+    uint8_t* entry = (uint8_t*)ext_00532E90(self, a5);
+    if (entry)
+        lift_field<uint32_t>(entry, 0x1C) = lift_field<uint32_t>(obj, 0x38);
+    return obj;
+}
+} // namespace lift_00534D70

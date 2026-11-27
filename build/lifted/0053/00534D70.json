@@ -1,0 +1,14 @@
+{
+  "va": "0x00534D70",
+  "size": 76,
+  "orig_symbol": "OglRenderer::vfunc_95",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_95",
+  "class": "OglRenderer",
+  "signature": "void* fn_00534D70(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+  "summary": "Creates/looks up an object via sub_005343A0, initializes it with (a2,a3), and copies its +0x38 into +0x1C of the entry found by sub_00532E90(a5).",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:53:04Z"
+}
