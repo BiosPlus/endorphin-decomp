@@ -1688,3 +1688,26 @@ int32_t fn_00859B30(uint8_t* node, const int32_t* key, uint32_t continueSiblings
     }
 }
 } // namespace lift_00859B30
+
+// [0x008587C0]
+namespace lift_008587C0 {
+// @name init_sbox_008587C0
+// @summary Initializes a 256-byte S-box permutation using a key and key length.
+void __cdecl sub_008587C0(const uint8_t* key, int32_t key_len, uint8_t* sbox)
+{
+    for (int32_t i = 0; i < 256; ++i) {
+        sbox[i] = static_cast<uint8_t>(i);
+    }
+
+    uint8_t key_idx = 0;
+    uint32_t j = 0;
+    for (int32_t i = 0; i < 256; ++i) {
+        uint8_t s_i = sbox[i];
+        uint32_t idx = key_idx;
+        j = static_cast<uint8_t>(key[idx] - s_i + j);
+        sbox[i] = sbox[j];
+        sbox[j] = s_i;
+        key_idx = static_cast<uint8_t>(static_cast<int32_t>(idx + 1) % key_len);
+    }
+}
+} // namespace lift_008587C0
