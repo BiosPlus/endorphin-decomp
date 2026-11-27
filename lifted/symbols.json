@@ -2894,6 +2894,12 @@
     "summary": "Zeroes the dword at this+0, assigns global string mem_00ACD714 from mem_00AD7BD8, returns this.",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x00425DC0": {
+    "name": "scopedUnknownInitAndDestroy",
+    "signature": "void fn_00425DC0(void)",
+    "summary": "Builds a stack-local Unknown object, runs its init and MFC80 ord_2020 step, then destroys it.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00426960": {
     "name": "ConstructEmptyStdString",
     "signature": "void* fn_00426960(void* self)",

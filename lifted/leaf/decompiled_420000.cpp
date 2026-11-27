@@ -2097,3 +2097,25 @@ void fn_00427550(void* self, const char* name) {
     (void)&mem_00ACDAAC;
 }
 } // namespace lift_00427550
+
+// [0x00425DC0] sub_00425DC0 (97 bytes)
+namespace lift_00425DC0 {
+// Known callee 0x004197A0: Unknown::initWithSolidBrush (thiscall: self in ecx, one stack arg)
+extern void* ext_004197A0(void* self, DWORD a1);
+// Known callee 0x00419840: Destructor_00419840 (thiscall: self in ecx)
+extern void ext_00419840(void* self);
+// Known callee 0x006A5FA4: thunk_MFC80_ord_2020 (IAT thunk; asm passes self in ecx)
+extern void ext_006A5FA4(void* self);
+
+// @name scopedUnknownInitAndDestroy
+// @summary Builds a stack-local Unknown object, runs its init and MFC80 ord_2020 step, then destroys it.
+void fn_00425DC0(void) {
+    // Stack-local object occupying the 0x190-byte frame (SEH frame sits above it in the original asm).
+    alignas(16) unsigned char obj[0x190];
+    void* self = obj;
+
+    ext_004197A0(self, 0);    // construct / init sub-object
+    ext_006A5FA4(self);       // MFC80 ord_2020 on the same object
+    ext_00419840(self);       // destroy
+}
+} // namespace lift_00425DC0
