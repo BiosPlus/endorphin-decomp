@@ -30509,6 +30509,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00472730 (Tree::lowerBound).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x0055CAC0": {
+    "name": "UnknownClass::ThrowIfKeyNotFound",
+    "class": "UnknownClass",
+    "signature": "void fn_0055CAC0(uint32_t key)",
+    "summary": "Returns if the tree lookup for key finds a value; otherwise builds a prefixed exception message from the literal pointed to by mem_00A85480 and throws it.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055CD10": {
     "name": "Unknown::InitWithDefaults",
     "class": "Unknown",

@@ -1,0 +1,14 @@
+{
+  "va": "0x0055CAC0",
+  "size": 111,
+  "orig_symbol": "sub_0055CAC0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "UnknownClass::ThrowIfKeyNotFound",
+  "class": "UnknownClass",
+  "signature": "void fn_0055CAC0(uint32_t key)",
+  "summary": "Returns if the tree lookup for key finds a value; otherwise builds a prefixed exception message from the literal pointed to by mem_00A85480 and throws it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:03:02Z"
+}
