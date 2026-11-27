@@ -186721,3 +186721,62 @@ void* fn_005B38C0(void* self, void* arg2) {
     return reinterpret_cast<void* (*)(void*, void*, void*)>(vt3[0xB0 / sizeof(void*)])(f4, self, arg2);
 }
 } // namespace lift_005B38C0
+
+// [0x005FCE90]
+namespace lift_005FCE90 {
+// Known callee 0x00672110 (sub_00672110, 52B): builds a ValuePtr-style temporary from a value (thiscall, one stack arg).
+extern void ext_00672110(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in caller buffer).
+extern void ext_0046C3C0(void* exceptionObj);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception type raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// Vtable slots are 4-byte entries on the 32-bit target: byte offset 0x38 -> index 14, 0x78 -> 30, 0xB4 -> 45.
+static inline void* vtable_slot(void* obj, size_t index) {
+    void** vtbl = *static_cast<void***>(obj);
+    return vtbl[index];
+}
+
+// Layout of the 8-byte ValuePtr-style temporary built on the stack.
+struct ValuePtrTemp {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+// @name ExprParser::ReadMethodType<Sensor>::vfunc_45 (Sensor::getMutableVector3 accessor)
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>
+// @summary Pulls a value from the source object in field_0x00 (vtable slot 14), stores it into this holder via assignFromOther, releases the temporary, then forwards to field_0x04's vtable slot 45 with (holder, arg2). Throws a C++ exception if field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005FCE90(void* holder, void* arg2) {
+    void* source = lift_field<void*>(holder, 0x00);
+    if (source == nullptr) {
+        uint8_t exceptionObj[0x28] = {};
+        ext_0046C3C0(exceptionObj);
+        ext_006A6DD2(exceptionObj, reinterpret_cast<const void*>(kThrowInfoVA));
+        return nullptr;
+    }
+
+    using GetValueFn = void* (*)(void* self);
+    void* value = reinterpret_cast<GetValueFn>(vtable_slot(source, 14))(source);
+
+    ValuePtrTemp temp = {};
+    ext_00672110(&temp, value);
+    ext_0041CF50(holder, &temp);
+
+    using ReleaseFn = void (*)(void* self, void* arg);
+    void* tempTarget = temp.field_0x04;
+    if (tempTarget != nullptr) {
+        reinterpret_cast<ReleaseFn>(vtable_slot(tempTarget, 30))(tempTarget, &temp);
+    }
+
+    using ForwardFn = void* (*)(void* self, void* a, void* b);
+    void* target = lift_field<void*>(holder, 0x04);
+    return reinterpret_cast<ForwardFn>(vtable_slot(target, 45))(target, holder, arg2);
+}
+} // namespace lift_005FCE90
