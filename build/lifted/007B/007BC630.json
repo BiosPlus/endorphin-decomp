@@ -1,0 +1,33 @@
+{
+  "va": "0x007BC630",
+  "size": 106,
+  "orig_symbol": "sub_007BC630",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "sub_007BC630",
+  "signature": "int32_t fn_007BC630(void* self)",
+  "summary": "Maps three 16-bit type/mode fields (+0x28, +0x2a, +0x36) to a status code or -1",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x28",
+      "type": "uint16_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x2A",
+      "type": "uint16_t",
+      "name": "field_0x2a"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x36",
+      "type": "uint16_t",
+      "name": "field_0x36"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:08:55Z"
+}

@@ -1738,3 +1738,50 @@ void sub_007B5074() {
     (void)entry;
 }
 } // namespace lift_007B5074
+
+// [0x007BC630] sub_007BC630 (106 bytes)
+namespace lift_007BC630 {
+// @name sub_007BC630
+// @summary Maps three 16-bit type/mode fields (+0x28, +0x2a, +0x36) to a status code or -1
+// @field unknown +0x28 uint16_t field_0x28
+// @field unknown +0x2a uint16_t field_0x2a
+// @field unknown +0x36 uint16_t field_0x36
+int32_t fn_007BC630(void* self) {
+    uint32_t f28 = lift_field<uint16_t>(self, 0x28);
+    uint32_t f2a = lift_field<uint16_t>(self, 0x2a);
+    uint32_t key = (f28 << 3) | f2a;
+
+    int32_t result = -1;
+    switch (key) {
+    case 0x41:
+    case 0x44:
+        result = 3;
+        break;
+    case 0x81:
+    case 0x82:
+    case 0x84:
+        result = 1;
+        break;
+    case 0x101:
+    case 0x102:
+    case 0x104:
+        result = 2;
+        break;
+    case 0x103:
+        result = 0;
+        break;
+    default:
+        result = -1;
+        break;
+    }
+
+    uint16_t f36 = lift_field<uint16_t>(self, 0x36);
+    if (f36 == 1) {
+        return (result == 2) ? 2 : -1;
+    }
+    if (f36 == 3) {
+        return (result != 2) ? result : -1;
+    }
+    return -1;
+}
+} // namespace lift_007BC630
