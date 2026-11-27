@@ -1883,3 +1883,59 @@ void fn_0052AC70(void* self, void* arg) {
     } while (lift_field<uint8_t>(esi, 0x61) == 0);
 }
 } // namespace lift_0052AC70
+
+// [0x0052A280]
+namespace lift_0052A280 {
+// @name TreeIterator::decrement
+// @class TreeIterator
+// @summary Decrements an MSVC std::_Tree iterator to the previous in-order node.
+// @field TreeIterator +0x00 uint32_t container
+// @field TreeIterator +0x04 uint8_t* node
+
+
+extern void (*mem_00925134)();
+
+void __thiscall sub_0052A280(void* self) {
+    auto* it = static_cast<uint8_t*>(self);
+    auto invalid_param = mem_00925134;
+
+    if (lift_field<uint32_t>(it, 0x00) == 0) {
+        invalid_param();
+    }
+
+    uint8_t* node = lift_field<uint8_t*>(it, 0x04);
+    if (lift_field<uint8_t>(node, 0x61) != 0) {
+        node = lift_field<uint8_t*>(node, 0x08);
+        lift_field<uint8_t*>(it, 0x04) = node;
+        if (lift_field<uint8_t>(node, 0x61) != 0) {
+            invalid_param();
+        }
+        return;
+    }
+
+    uint8_t* left = lift_field<uint8_t*>(node, 0x00);
+    if (lift_field<uint8_t>(left, 0x61) == 0) {
+        uint8_t* right = lift_field<uint8_t*>(left, 0x08);
+        while (lift_field<uint8_t>(right, 0x61) == 0) {
+            left = right;
+            right = lift_field<uint8_t*>(left, 0x08);
+        }
+        lift_field<uint8_t*>(it, 0x04) = left;
+        return;
+    }
+
+    uint8_t* parent = lift_field<uint8_t*>(node, 0x04);
+    while (lift_field<uint8_t>(parent, 0x61) == 0 &&
+           lift_field<uint8_t*>(it, 0x04) == lift_field<uint8_t*>(parent, 0x00)) {
+        lift_field<uint8_t*>(it, 0x04) = parent;
+        parent = lift_field<uint8_t*>(parent, 0x04);
+    }
+
+    if (lift_field<uint8_t>(lift_field<uint8_t*>(it, 0x04), 0x61) != 0) {
+        invalid_param();
+        return;
+    }
+
+    lift_field<uint8_t*>(it, 0x04) = parent;
+}
+} // namespace lift_0052A280
