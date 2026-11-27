@@ -2493,6 +2493,13 @@
     "summary": "Switches the active object at +0x8 to the element at index in the vector at +0x4, calling vtable+0x8 on the old and vtable+0x4 on the new.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041C8E0": {
+    "name": "GuiControllerMFC::DestroyItemList",
+    "class": "GuiControllerMFC",
+    "signature": "inline void* guest_ptr(uint32_t addr)",
+    "summary": "Sets the vtable, deletes every non-null object in the list at self+0x4 (vtable slot 0 with flag 1), then frees the list's buffer and the list header.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041C980": {
     "name": "GuiControllerMFC::vfunc_0",
     "class": "GuiControllerMFC",

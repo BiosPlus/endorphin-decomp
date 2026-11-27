@@ -3869,3 +3869,85 @@ uint32_t fn_00415E30(uint32_t packed, float scale_in)
     return (b << 16) | (g << 8) | r;
 }
 } // namespace lift_00415E30
+
+// [0x0041C8E0] sub_0041C8E0 (157 bytes)
+namespace lift_0041C8E0 {
+// Callees / globals referenced by the original asm.
+// ext_006A5C5C: IAT jump thunk forwarding to MFC80!ord_764 (cdecl, one pointer arg; frees memory).
+extern void ext_006A5C5C(void* p);
+// mem_00925134: IAT slot holding MSVCR80!_invalid_parameter_noinfo.
+extern void* mem_00925134;
+
+namespace {
+
+// The original code runs on 32-bit guest addresses; keep them as uint32_t values.
+inline void* guest_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+inline void invalid_parameter() {
+    reinterpret_cast<void (*)()>(mem_00925134)();
+}
+
+}  // namespace
+
+// @name GuiControllerMFC::DestroyItemList
+// @class GuiControllerMFC
+// @summary Sets the vtable, deletes every non-null object in the list at self+0x4 (vtable slot 0 with flag 1), then frees the list's buffer and the list header.
+// @field GuiControllerMFC +0x00 uint32_t field_0x00
+// @field GuiControllerMFC +0x04 uint32_t field_0x04
+void fn_0041C8E0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0092DB90u;
+
+    // S = list header at self->+0x4; S+0x4 = begin, S+0x8 = end, S+0xC = capacity.
+    const uint32_t list_addr = lift_field<uint32_t>(self, 0x04);
+    void* list = guest_ptr(list_addr);
+
+    // Pre-loop bounds check: begin <= end.
+    uint32_t it = lift_field<uint32_t>(list, 0x04);
+    if (it > lift_field<uint32_t>(list, 0x08)) {
+        invalid_parameter();
+    }
+
+    for (;;) {
+        // Loop head: begin <= end must still hold.
+        if (lift_field<uint32_t>(list, 0x04) > lift_field<uint32_t>(list, 0x08)) {
+            invalid_parameter();
+        }
+        const uint32_t end = lift_field<uint32_t>(list, 0x08);
+        if (it == end) {
+            break;
+        }
+        if (it >= lift_field<uint32_t>(list, 0x08)) {
+            invalid_parameter();
+        }
+
+        // Delete the object pointed to by this slot, if any: obj->vtable[0](1).
+        const uint32_t obj_addr = lift_field<uint32_t>(guest_ptr(it), 0);
+        if (obj_addr != 0) {
+            void* obj = guest_ptr(obj_addr);
+            const uint32_t vtable = lift_field<uint32_t>(obj, 0);
+            const uint32_t slot0 = lift_field<uint32_t>(guest_ptr(vtable), 0);
+            using DeletingDtorFn = void(__thiscall*)(void*, int);
+            reinterpret_cast<DeletingDtorFn>(guest_ptr(slot0))(obj, 1);
+        }
+
+        if (it >= lift_field<uint32_t>(list, 0x08)) {
+            invalid_parameter();
+        }
+        it += 4;
+    }
+
+    // Free the buffer (if any), zero the header, then free the header.
+    if (list_addr != 0) {
+        const uint32_t buffer = lift_field<uint32_t>(list, 0x04);
+        if (buffer != 0) {
+            ext_006A5C5C(guest_ptr(buffer));
+        }
+        lift_field<uint32_t>(list, 0x04) = 0;
+        lift_field<uint32_t>(list, 0x08) = 0;
+        lift_field<uint32_t>(list, 0x0C) = 0;
+        ext_006A5C5C(list);
+    }
+}
+} // namespace lift_0041C8E0
