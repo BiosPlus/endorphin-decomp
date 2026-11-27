@@ -49,3 +49,68 @@ void Primitives_Sphyl_vfunc_25(void* self, uint32_t a1, void* src, uint32_t a3) 
     lift_field<uint8_t>(self, 0x48) = static_cast<uint8_t>(ext_std_string_index_const(str, 0));
 }
 } // namespace lift_0053DA40
+
+// [0x0053B8A0]
+namespace lift_0053B8A0 {
+// @name Primitives::Sphyl::vfunc_28
+// @class Primitives::Sphyl
+// @summary Renders a sphyl (capsule) primitive using OpenGL/GLU sphere and cylinder calls.
+// @field Primitives::Sphyl +0x20 uint32_t field_0x20
+// @field Primitives::Sphyl +0x3C uint32_t field_0x3C
+// @field Primitives::Sphyl +0x40 uint32_t field_0x40
+// @field Primitives::Sphyl +0x44 uint32_t field_0x44
+// @field Primitives::Sphyl +0x4C uint32_t field_0x4C
+
+
+extern uint32_t* __thiscall ext_005B11D0(uintptr_t self, uint32_t index);
+extern void __stdcall ext_0063E036(uintptr_t quadric, double radius, int32_t slices, int32_t stacks);
+extern void __stdcall ext_0063E01E(uintptr_t quadric, uint32_t orientation);
+extern void __stdcall ext_0063E02A(uintptr_t quadric, double baseRadius, double topRadius, double height, int32_t slices, int32_t stacks);
+
+extern void (__stdcall *mem_00925414)(void);
+extern void (__stdcall *mem_009253D0)(float x, float y, float z);
+extern void (__stdcall *mem_00925404)(void);
+extern const double mem_00993828;
+
+void __thiscall fn_0053B8A0(void* self, uint32_t /*unused*/) {
+    mem_00925414();
+
+    uintptr_t params = lift_field<uint32_t>(self, 0x20);
+    float half_neg_len = static_cast<float>(-static_cast<double>(*reinterpret_cast<const float*>(ext_005B11D0(params, 1))) * mem_00993828);
+    mem_009253D0(0.0f, 0.0f, half_neg_len);
+
+    float radius = *reinterpret_cast<const float*>(ext_005B11D0(params, 0));
+    int32_t slices = lift_field<int32_t>(self, 0x3C);
+    int32_t stacks_sphere = lift_field<int32_t>(self, 0x44);
+    uintptr_t quadric = lift_field<uint32_t>(self, 0x4C);
+    ext_0063E036(quadric, static_cast<double>(radius), slices, stacks_sphere);
+
+    ext_0063E01E(lift_field<uint32_t>(self, 0x4C), 0x186B4);
+
+    const float* height_ptr = reinterpret_cast<const float*>(ext_005B11D0(params, 1));
+    const float* top_radius_ptr = reinterpret_cast<const float*>(ext_005B11D0(params, 0));
+    const float* base_radius_ptr = reinterpret_cast<const float*>(ext_005B11D0(params, 0));
+    int32_t stacks_cyl = lift_field<int32_t>(self, 0x40);
+    slices = lift_field<int32_t>(self, 0x3C);
+    quadric = lift_field<uint32_t>(self, 0x4C);
+    ext_0063E02A(
+        quadric,
+        static_cast<double>(*base_radius_ptr),
+        static_cast<double>(*top_radius_ptr),
+        static_cast<double>(*height_ptr),
+        slices,
+        stacks_cyl
+    );
+
+    float length = *reinterpret_cast<const float*>(ext_005B11D0(params, 1));
+    mem_009253D0(0.0f, 0.0f, length);
+
+    radius = *reinterpret_cast<const float*>(ext_005B11D0(params, 0));
+    slices = lift_field<int32_t>(self, 0x3C);
+    stacks_sphere = lift_field<int32_t>(self, 0x44);
+    quadric = lift_field<uint32_t>(self, 0x4C);
+    ext_0063E036(quadric, static_cast<double>(radius), slices, stacks_sphere);
+
+    mem_00925404();
+}
+} // namespace lift_0053B8A0
