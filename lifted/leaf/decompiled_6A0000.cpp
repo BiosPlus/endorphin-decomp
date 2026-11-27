@@ -1363,3 +1363,53 @@ extern int32_t fn_006A84D0(void) {
     return 0;
 }
 } // namespace lift_006A84D0
+
+// [0x006ADBF0]
+namespace lift_006ADBF0 {
+// @name sub_006ADBF0
+// @summary Constructor initializing vtable, std::map-like tree at +0xc, MFC object at +0x18, and fields
+// @field sub_006ADBF0 +0x00 uint32_t vtable
+// @field sub_006ADBF0 +0x04 uint32_t field_0x04
+// @field sub_006ADBF0 +0x0c uint8_t tree_0x0c
+// @field sub_006ADBF0 +0x18 uint32_t subobj_vtable_0x18
+// @field sub_006ADBF0 +0x2c uint32_t field_0x2c
+// @field sub_006ADBF0 +0x30 uint32_t field_0x30
+// @field sub_006ADBF0 +0x34 uint8_t field_0x34
+// @field sub_006ADBF0 +0x38 uint32_t field_0x38
+// @field sub_006ADBF0 +0x3c uint32_t field_0x3c
+
+
+extern uint32_t __thiscall ext_0059F5C0(void* self);
+extern void __thiscall ext_006A6778(void* self);
+
+extern void* __thiscall fn_006ADBF0(void* self, uint32_t arg1, uint32_t arg2) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x009910BCu;
+    *reinterpret_cast<uint32_t*>(base + 0x04) = arg2;
+
+    uint8_t* tree = base + 0x0C;
+    uint32_t head = ext_0059F5C0(tree);
+    *reinterpret_cast<uint32_t*>(tree + 0x04) = head;
+    *reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(head) + 0x2D) = 1;
+
+    uint32_t node = *reinterpret_cast<uint32_t*>(tree + 0x04);
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(node) + 0x04) = node;
+    node = *reinterpret_cast<uint32_t*>(tree + 0x04);
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(node) + 0x00) = node;
+    node = *reinterpret_cast<uint32_t*>(tree + 0x04);
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(node) + 0x08) = node;
+    *reinterpret_cast<uint32_t*>(tree + 0x08) = 0;
+
+    uint8_t* subobj = base + 0x18;
+    ext_006A6778(subobj);
+    *reinterpret_cast<uint32_t*>(subobj + 0x00) = 0x009910A4u;
+
+    *reinterpret_cast<uint32_t*>(base + 0x2C) = arg1;
+    *reinterpret_cast<uint32_t*>(base + 0x30) = 0;
+    *reinterpret_cast<uint8_t*>(base + 0x34) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x38) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x3C) = 0;
+
+    return self;
+}
+} // namespace lift_006ADBF0
