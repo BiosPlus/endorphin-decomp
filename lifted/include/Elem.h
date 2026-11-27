@@ -13,5 +13,6 @@ struct Elem_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00687890)
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00687890)
     // +0x10  std::string              field_0x10  (evidence: 0x00687890)
+    // +0x5A0 int32_t                  field_0x5a0  (evidence: 0x005963F0)
 };
 } // namespace lifted_layout

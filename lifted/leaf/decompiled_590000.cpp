@@ -1598,3 +1598,45 @@ DWORD __fastcall sub_00599EA0(void* self) {
     return lift_field<DWORD>(elem, 0x22C);
 }
 } // namespace lift_00599EA0
+
+// [0x005963F0]
+namespace lift_005963F0 {
+// @name sub_005963F0
+// @summary Sums field_0x5a0 across all pointer elements in the vector at this+0x238
+// @field Self +0x238 uint8_t[] field_0x238
+// @field Elem +0x5a0 int32_t field_0x5a0
+
+
+extern void (*mem_00925134)();
+
+int32_t __thiscall sub_005963F0(void* self) {
+    uint8_t* vec = reinterpret_cast<uint8_t*>(self) + 0x238;
+    uint32_t* it = lift_field<uint32_t*>(vec, 0x4);
+    int32_t sum = 0;
+
+    if (it > lift_field<uint32_t*>(vec, 0x8)) {
+        mem_00925134();
+    }
+
+    for (;;) {
+        uint32_t* end = lift_field<uint32_t*>(vec, 0x8);
+        if (lift_field<uint32_t*>(vec, 0x4) > end) {
+            mem_00925134();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= lift_field<uint32_t*>(vec, 0x8)) {
+            mem_00925134();
+        }
+        uint8_t* elem = reinterpret_cast<uint8_t*>(*it);
+        sum += lift_field<int32_t>(elem, 0x5a0);
+        if (it >= lift_field<uint32_t*>(vec, 0x8)) {
+            mem_00925134();
+        }
+        ++it;
+    }
+
+    return sum;
+}
+} // namespace lift_005963F0

@@ -117,6 +117,7 @@ struct Self_Fields {
     // +0x168 float                    field_0x168  (evidence: 0x005AA890)
     // +0x16C float                    field_0x16c  (evidence: 0x005AA890)
     // +0x190 void*                    field_0x190  (evidence: 0x005AA890)
+    // +0x238 uint8_t[]                field_0x238  (evidence: 0x005963F0)
     // +0x250 void*                    field_0x250  (evidence: 0x007267D0)
     // +0x268 uint8_t*                 field_0x268  (evidence: 0x007025C0)
     // +0x26C uint32_t                 field_0x26C  (evidence: 0x005947B0)
