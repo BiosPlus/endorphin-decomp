@@ -2083,3 +2083,47 @@ void* __fastcall sub_00574D90(void* self) {
     return self;
 }
 } // namespace lift_00574D90
+
+// [0x00570700] sub_00570700 (136 bytes)
+namespace lift_00570700 {
+// Known callee 0x00570380: readUntilNewline (Reads one char at a time from the istream until '\n' is consumed (returns true) or the stream fails (returns false).)
+extern bool ext_00570380(void* self, void* stream);
+
+// Import slots used by the original asm (MSVCP80 thunks, resolved at runtime).
+extern bool (__cdecl* mem_00924FB0)(const void* lhs, const void* rhs);   // operator!= (basic_string, basic_string)
+extern void* (__cdecl* mem_009250EC)(void* stream, void* str);           // operator>> (basic_istream&, basic_string&)
+extern bool (__thiscall* mem_009250C0)(void* ios);                       // ios_base::operator!
+extern char& (__thiscall* mem_0092500C)(void* str, size_t index);        // basic_string::operator[]
+
+// @name readSectionUntilMarker
+// @class Unknown
+// @summary Reads lines from stream into this+0x46c, skipping '#' comment lines via ext_00570380, until a line equals marker; returns false on stream failure.
+// @field Unknown +0x46c std::string field_0x46c
+
+bool __thiscall fn_00570700(void* self, void* marker, void* stream) {
+    void* const line = static_cast<uint8_t*>(self) + 0x46c;
+
+    if (!mem_00924FB0(line, marker)) {
+        return true;
+    }
+
+    do {
+        // stream >> line; then !stream (ios_base::operator! on the vbase-adjusted ios)
+        void* const in = mem_009250EC(stream, line);
+        void* const vtbl = lift_field<void*>(in, 0);
+        const int32_t vbase = lift_field<int32_t>(vtbl, 4);
+        void* const ios = static_cast<uint8_t*>(in) + vbase;
+        if (mem_009250C0(ios)) {
+            return false;
+        }
+
+        if (mem_0092500C(line, 0) == '#') {
+            if (!ext_00570380(self, stream)) {
+                return false;
+            }
+        }
+    } while (mem_00924FB0(line, marker));
+
+    return true;
+}
+} // namespace lift_00570700

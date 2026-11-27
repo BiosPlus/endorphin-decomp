@@ -28928,6 +28928,13 @@
     "summary": "Reads two floats from a stream, scales each through this+0x5C AngleScaler, and stores each as a flag byte plus scaled float in an out array (elements 0x18 apart, filled high-index first).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00570700": {
+    "name": "readSectionUntilMarker",
+    "class": "Unknown",
+    "signature": "extern \"C\" bool (__cdecl* mem_00924FB0)(const void* lhs, const void* rhs);   // operator!= (basic_string, basic_string) extern \"C\" void* (__cdecl* mem_009250EC)(void* stream, void* str);           // operator\u003e\u003e (basic_istream\u0026, basic_string\u0026) extern \"C\" bool (__thiscall* mem_009250C0)(void* ios);                       // ios_base::operator! extern \"C\" char\u0026 (__thiscall* mem_0092500C)(void* str, size_t index);        // basic_string::operator[] bool __thiscall fn_00570700(void* self, void* marker, void* stream)",
+    "summary": "Reads lines from stream into this+0x46c, skipping '#' comment lines via ext_00570380, until a line equals marker; returns false on stream failure.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00571DF0": {
     "name": "CSMMotionIO::vfunc_3",
     "class": "CSMMotionIO",
