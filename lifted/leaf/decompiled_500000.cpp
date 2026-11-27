@@ -4106,3 +4106,85 @@ void fn_00502960(void* self, const char* name) {
     ext_00475960(vec, &str, &singleton, true);
 }
 } // namespace lift_00502960
+
+// [0x00501220]
+namespace lift_00501220 {
+// @name sub_00501220
+// @summary Allocates a 0x28-byte object, constructs it via ext_00500E70, registers it with the global manager from ext_00665870 via ext_00666670, and returns arg2.
+
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_00500E70(void* self, void* owner, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4);
+extern void* __cdecl ext_00665870(void);
+extern void __thiscall ext_00666670(void* self, void* obj);
+
+extern uint32_t __thiscall fn_00501220(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    void* obj = ext_006A5C62(0x28);
+    if (obj != nullptr) {
+        obj = ext_00500E70(obj, self, arg1, arg2, arg3, arg4);
+    }
+    void* manager = ext_00665870();
+    ext_00666670(manager, obj);
+    return arg2;
+}
+} // namespace lift_00501220
+
+// [0x0050F6B0] sub_0050F6B0 (246 bytes)
+namespace lift_0050F6B0 {
+// Known callee 0x005047A0: GetOnceInitializedObject_005047A0 (One-time lazy initializer guarded by bit 0 of mem_00AEBB40; returns the address of the singleton object at 0x00AEBB1C.)
+extern void* ext_005047A0(void);
+// Known callee 0x00505D50: sub_00505D50 (Finds an element by key and returns a pointer to offset 0x1C of the element, or nullptr if not found.)
+extern void* __thiscall ext_00505D50(void* self, void* key);
+// Known callee 0x004C6F60: sub_004C6F60 (397B; builds the exception object into the caller-supplied slot and returns a pointer to it.)
+extern void* __thiscall ext_004C6F60(void* self);
+// Known callee 0x004C7200: StringExceptionWithMember::copy_ctor (Copy constructor: copies the base exception, sets the vtable, and copy-constructs two std::string members.)
+extern void* __thiscall ext_004C7200(void* self, const void* other);
+// Known callee 0x00503A30: ResolveTypeInfoName_00503A30 (Gets the type_info name for the global type descriptor, builds a std::string from it, passes that string to ext_0066AC90, and returns the string pointer.)
+extern void* ext_00503A30(void* str);
+// Known callee 0x0066AC90: sub_0066AC90 (115B)
+extern void ext_0066AC90(void* str);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+// MSVCP80 std::string copy-constructor IAT slot (value at 0x00924FE0).
+extern int mem_00924FE0;
+
+// @name LookupDispatchOrThrow_0050F6B0
+// @summary Looks up key in the singleton's table; if found, invokes the entry's function pointer with arg; otherwise, when throwIfMissing is set, builds a type-name string and throws a StringExceptionWithMember.
+// @field <unknown> +0x00 void* field_0x00 (entry's function pointer, read via *found)
+void fn_0050F6B0(void* key, void* arg, uint8_t throwIfMissing) {
+    void* singleton = ext_005047A0();
+    void* found = ext_00505D50(static_cast<uint8_t*>(singleton) + 0x4, key);
+
+    if (found != nullptr) {
+        auto dispatch = *reinterpret_cast<void (**)(void*)>(found);
+        dispatch(arg);
+        return;
+    }
+
+    if (throwIfMissing == 0) {
+        return;
+    }
+
+    // Stack string buffers (MSVCP80 std::string is 0x1c bytes in this build).
+    alignas(8) unsigned char keyCopy[0x1c];
+    alignas(8) unsigned char msgStr[0x1c];
+    alignas(8) unsigned char typeNameStr[0x1c];
+    alignas(8) unsigned char excObj[0x20];
+    alignas(8) unsigned char thrown[0x20];
+
+    // std::string copy-ctor via IAT slot: keyCopy = *key.
+    auto string_copy_ctor =
+        *reinterpret_cast<void (* const*)(void* self, const void* src)>(&mem_00924FE0);
+    string_copy_ctor(keyCopy, key);
+
+    ext_00503A30(typeNameStr);
+    ext_0066AC90(msgStr);
+
+    void* base = ext_004C6F60(excObj);
+    ext_004C7200(thrown, base);
+
+    // Throw info descriptor for the exception type (immediate address in the binary).
+    const void* throwInfo = reinterpret_cast<const void*>(uintptr_t{0x009E9404});
+    ext_006A6DD2(thrown, throwInfo);
+}
+} // namespace lift_0050F6B0

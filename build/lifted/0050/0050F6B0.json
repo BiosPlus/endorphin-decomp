@@ -1,0 +1,21 @@
+{
+  "va": "0x0050F6B0",
+  "size": 246,
+  "orig_symbol": "sub_0050F6B0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "LookupDispatchOrThrow_0050F6B0",
+  "signature": "void fn_0050F6B0(void* key, void* arg, uint8_t throwIfMissing)",
+  "summary": "Looks up key in the singleton's table; if found, invokes the entry's function pointer with arg; otherwise, when throwIfMissing is set, builds a type-name string and throws a StringExceptionWithMember.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (entry's function pointer, read via*",
+      "name": "found)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:53:32Z"
+}

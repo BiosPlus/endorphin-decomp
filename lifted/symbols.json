@@ -31436,6 +31436,12 @@
     "summary": "Looks up a std::string key in the lazily-initialized global map; if found, calls the element's stored function pointer with out, otherwise throws StringExceptionWithMember when throwIfMissing is set.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050F6B0": {
+    "name": "LookupDispatchOrThrow_0050F6B0",
+    "signature": "void fn_0050F6B0(void* key, void* arg, uint8_t throwIfMissing)",
+    "summary": "Looks up key in the singleton's table; if found, invokes the entry's function pointer with arg; otherwise, when throwIfMissing is set, builds a type-name string and throws a StringExceptionWithMember.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050F970": {
     "name": "InitZeroedStateWithVTable",
     "signature": "void fn_0050F970(void* self)",
