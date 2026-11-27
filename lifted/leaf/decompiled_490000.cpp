@@ -2519,3 +2519,44 @@ void fn_004916B0(void* self, const char* arg0) {
     ext_00475960(self_ecx, str_addr, init_slot_addr, 1);
 }
 } // namespace lift_004916B0
+
+// [0x00492150] sub_00492150 (140 bytes)
+namespace lift_00492150 {
+// Callee ABI as seen in the original asm:
+//  ext_00662610: this in ecx, args (buf, s), caller cleans (add esp,8)
+//  ext_00474F00: this in ecx, args (buf, s), callee cleans (ret 8), returns pointer in eax
+//  ext_00476360: this in ecx, arg (buf), callee cleans (ret 4), returns u32 in eax
+extern void ext_00662610(void* self, void* buf, const char* s);
+extern void* ext_00474F00(void* self, void* buf, const char* s);
+extern uint32_t ext_00476360(void* self, void* buf);
+extern int mem_00924FD4; // IAT slot: string assign (this only, as in asm)
+extern int mem_00924FF4; // IAT slot: string dtor (this only)
+
+// @name LoadNamedString
+// @class UnknownClass
+// @summary Builds a temp string from literal 0x00A34588, optionally assigns arg-derived text into self+0x18, then stores the result of ext_00476360(self+0x08) into *out and returns out.
+// @field UnknownClass +0x08 uint8_t field_0x08 (sub-object passed as this to ext_00476360)
+// @field UnknownClass +0x18 uint8_t field_0x18 (sub-object passed as this to ext_00474F00)
+void* fn_00492150(void* self, uint32_t* out, const char* arg) {
+    // SEH frame setup/teardown from the original prologue/epilogue is omitted (not portable).
+    unsigned char tmp[0x18];
+
+    ext_00662610(self, tmp, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00A34588u)));
+
+    if (arg != nullptr) {
+        void* r = ext_00474F00(static_cast<unsigned char*>(self) + 0x18, tmp, arg);
+        using AssignFn = void (*)(void*);
+        auto assign = reinterpret_cast<AssignFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FD4)));
+        assign(r);
+    }
+
+    uint32_t v = ext_00476360(static_cast<unsigned char*>(self) + 0x08, tmp);
+    *out = v;
+
+    using DtorFn = void (*)(void*);
+    auto dtor = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(tmp);
+
+    return out;
+}
+} // namespace lift_00492150

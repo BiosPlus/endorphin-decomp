@@ -12938,6 +12938,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00491A90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00492150": {
+    "name": "LoadNamedString",
+    "class": "UnknownClass",
+    "signature": "extern \"C\" int mem_00924FD4; // IAT slot: string assign (this only, as in asm) extern \"C\" int mem_00924FF4; // IAT slot: string dtor (this only) void* fn_00492150(void* self, uint32_t* out, const char* arg)",
+    "summary": "Builds a temp string from literal 0x00A34588, optionally assigns arg-derived text into self+0x18, then stores the result of ext_00476360(self+0x08) into *out and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00492480": {
     "name": "CheckFourComponentsWithinTolerance",
     "class": "\u003cClassName\u003e (optional)",

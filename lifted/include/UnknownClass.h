@@ -36,6 +36,7 @@ struct UnknownClass_Fields {
     // +0x4   void* field_0x04 (std::string key)  (evidence: 0x0050B6A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   char*                    path  (evidence: 0x0079EF70) // CONFLICT: multiple definitions at +0x4
     // +0x6   uint8_t                  field_0x06  (evidence: 0x007A9BD0)
+    // +0x8   uint8_t field_0x08 (sub-object passed as this to ext_00476360)  (evidence: 0x00492150) // CONFLICT: multiple definitions at +0x8
     // +0x8   float[]                  field_0x08  (evidence: 0x00610C60) // CONFLICT: multiple definitions at +0x8
     // +0x8   std::string              field_0x08  (evidence: 0x00505360) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00526C70, 0x0052F7D0, 0x005DF940, 0x00661DE0, 0x006722B0, 0x00672490, 0x008599F0) // CONFLICT: multiple definitions at +0x8
@@ -63,6 +64,7 @@ struct UnknownClass_Fields {
     // +0x14  void**                   field_0x14  (evidence: 0x00517360) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    listHead  (evidence: 0x007B2E20, 0x007BD640) // CONFLICT: multiple definitions at +0x14
     // +0x15  uint8_t                  field_0x15  (evidence: 0x004CC6A0)
+    // +0x18  uint8_t field_0x18 (sub-object passed as this to ext_00474F00)  (evidence: 0x00492150) // CONFLICT: multiple definitions at +0x18
     // +0x18  float[]                  field_0x18  (evidence: 0x00610C60) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18  (evidence: 0x00526C70, 0x0052F7D0, 0x005679D0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    field_0x18  (evidence: 0x004CC6A0) // CONFLICT: multiple definitions at +0x18
