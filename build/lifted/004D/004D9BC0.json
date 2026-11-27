@@ -1,0 +1,33 @@
+{
+  "va": "0x004D9BC0",
+  "size": 149,
+  "orig_symbol": "sub_004D9BC0",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "invalidateChildrenAndHierarchy",
+  "signature": "extern \"C\" void __thiscall fn_004D9BC0(void* self)",
+  "summary": "If field_0x1fa is non-zero, notifies each element in the vector at field_0x20c via 0x00528BB0(0x1000, 0) and recurses on this+0x10 via 0x00586A50(0x1000, 0).",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x1FA",
+      "type": "uint8_t",
+      "name": "field_0x1fa"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x20C",
+      "type": "void*",
+      "name": "field_0x20c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:09:51Z"
+}

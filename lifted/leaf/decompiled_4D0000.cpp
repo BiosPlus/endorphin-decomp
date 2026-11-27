@@ -778,3 +778,58 @@ void* __stdcall fn_004D5560(void* arg1, void* arg2) {
 }
 } // namespace lift_004C0280
 } // namespace lift_004D5560
+
+// [0x004D9BC0]
+namespace lift_004D9BC0 {
+// @name invalidateChildrenAndHierarchy
+// @summary If field_0x1fa is non-zero, notifies each element in the vector at field_0x20c via 0x00528BB0(0x1000, 0) and recurses on this+0x10 via 0x00586A50(0x1000, 0).
+// @field Self +0x10 uint8_t field_0x10
+// @field Self +0x1FA uint8_t field_0x1fa
+// @field Self +0x20C void* field_0x20c
+
+
+extern void (*mem_00925134)();
+extern DWORD __thiscall ext_00528BB0(void* self, DWORD arg0, DWORD arg1);
+extern void __thiscall ext_00586A50(void* self, DWORD arg0, DWORD arg1);
+
+extern void __thiscall fn_004D9BC0(void* self) {
+    if (lift_field<uint8_t>(self, 0x1FA) == 0) {
+        return;
+    }
+
+    uint8_t* vec = lift_field<uint8_t*>(self, 0x20C);
+    if (vec != nullptr) {
+        uintptr_t it = lift_field<uintptr_t>(vec, 0x04);
+        if (it > lift_field<uintptr_t>(vec, 0x08)) {
+            mem_00925134();
+        }
+
+        for (;;) {
+            uint8_t* cur_vec = lift_field<uint8_t*>(self, 0x20C);
+            uintptr_t end = lift_field<uintptr_t>(cur_vec, 0x08);
+            if (lift_field<uintptr_t>(cur_vec, 0x04) > end) {
+                mem_00925134();
+            }
+            if (vec != cur_vec) {
+                mem_00925134();
+            }
+            if (it == end) {
+                break;
+            }
+            if (it >= lift_field<uintptr_t>(vec, 0x08)) {
+                mem_00925134();
+            }
+
+            uint8_t* elem = *reinterpret_cast<uint8_t**>(it);
+            ext_00528BB0(elem + 0x0C, 0x1000, 0);
+
+            if (it >= lift_field<uintptr_t>(vec, 0x08)) {
+                mem_00925134();
+            }
+            it += 4;
+        }
+    }
+
+    ext_00586A50(static_cast<uint8_t*>(self) + 0x10, 0x1000, 0);
+}
+} // namespace lift_004D9BC0
