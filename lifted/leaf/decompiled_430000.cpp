@@ -3947,3 +3947,56 @@ uint32_t fn_00431460(void) {
     return slot1(obj);
 }
 } // namespace lift_00431460
+
+// [0x00434DB0] sub_00434DB0 (121 bytes)
+namespace lift_00434DB0 {
+extern int mem_00924E7C;
+extern int mem_00924E80;
+extern int mem_00924EA0;
+extern int mem_00924E9C;
+
+// MSVCP80 imports reached through the IAT slots above:
+//   mem_00924E7C -> std::uncaught_exception()
+//   mem_00924E80 -> basic_ostream::_Osfx()
+//   mem_00924EA0 -> basic_ios::rdbuf()
+//   mem_00924E9C -> basic_streambuf::_Unlock()
+extern bool ext_uncaught_exception(void);
+extern void ext_ostream_Osfx(void* ostr);
+extern void* ext_ios_rdbuf(void* ios);
+extern void ext_streambuf_Unlock(void* streambuf);
+
+// Resolves the basic_ios base of a basic_ostream via its virtual-base table:
+// vbptr = *(ostr), vbase offset = vbptr[1] (at +4), ios = ostr + offset.
+static uint8_t* ostream_ios(uint8_t* ostr) {
+    uint8_t* vbptr = *reinterpret_cast<uint8_t**>(ostr);
+    int32_t vbase_off = *reinterpret_cast<int32_t*>(vbptr + 4);
+    return ostr + vbase_off;
+}
+
+// @name OstreamSentry::~OstreamSentry
+// @class OstreamSentry
+// @summary Sentry destructor: if no exception is unwinding, flushes the owning ostream via _Osfx, then if its rdbuf is set, unlocks that streambuf.
+// @field OstreamSentry +0x00 void* ostr
+void fn_00434DB0(void* self) {
+    // IAT slots the original asm dispatches through; the ext_ calls below
+    // stand in for them, so these are metadata-only references.
+    (void)&mem_00924E7C;
+    (void)&mem_00924E80;
+    (void)&mem_00924EA0;
+    (void)&mem_00924E9C;
+
+    // Sentry destructor pattern: flush only when not unwinding.
+    if (!ext_uncaught_exception()) {
+        uint8_t* ostr = *reinterpret_cast<uint8_t**>(self);
+        ext_ostream_Osfx(ostr);
+    }
+
+    uint8_t* ostr = *reinterpret_cast<uint8_t**>(self);
+    void* sb = ext_ios_rdbuf(ostream_ios(ostr));
+    if (sb != nullptr) {
+        ostr = *reinterpret_cast<uint8_t**>(self);
+        sb = ext_ios_rdbuf(ostream_ios(ostr));
+        ext_streambuf_Unlock(sb);
+    }
+}
+} // namespace lift_00434DB0
