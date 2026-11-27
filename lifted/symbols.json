@@ -21518,6 +21518,12 @@
     "summary": "One-time initializer for the static object at mem_00AE3D94: under a local SEH frame, runs ext_004C94E0 on the object and ext_006A6C87(0x918AE0) on first call, marks the guard bit, and returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C98C0": {
+    "name": "findAndInvokeFactory_004C98C0",
+    "signature": "void* fn_004C98C0(void* key, void* arg2, uint8_t throwIfNotFound)",
+    "summary": "Looks up a factory/creator entry by key in the static registry, invokes it with arg2 if found, or throws/returns nullptr if not found.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CA1C0": {
     "name": "NMData::SeverEventData::vfunc_88",
     "class": "NMData::SeverEventData",

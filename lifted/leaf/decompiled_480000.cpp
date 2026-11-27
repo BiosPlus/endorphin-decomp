@@ -4363,3 +4363,36 @@ rebalance:
     return out_iter;
 }
 } // namespace lift_00489E10
+
+// [0x0048C2A0]
+namespace lift_0048C2A0 {
+// External functions and globals
+    void __thiscall ext_00475960(void* self, void* str, void* key, int flag);
+    void __thiscall ext_0067A670(void* self);
+    extern DWORD mem_00AD9EA0;
+    extern DWORD mem_00AD9E9C;
+    extern DWORD mem_00924FE4;
+    extern DWORD mem_00924FF4;
+
+// @name fn_0048C2A0
+// @summary Initializes a static key object if needed, constructs a std::string from the argument, passes it with the key to ext_00475960 on field_0x0, then destroys the string.
+// @field Self +0x00 void* field_0x0
+void __thiscall fn_0048C2A0(void* self, const char* str) {
+    if ((mem_00AD9EA0 & 1) == 0) {
+        mem_00AD9EA0 |= 1;
+        ext_0067A670(&mem_00AD9E9C);
+        mem_00AD9E9C = 0x0093C6A4;
+    }
+
+    DWORD key = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AD9E9C));
+    uint8_t local_str[0x1C];
+
+    using StrCtor = void(__thiscall*)(void*, const char*);
+    using StrDtor = void(__thiscall*)(void*);
+
+    reinterpret_cast<StrCtor>(static_cast<uintptr_t>(mem_00924FE4))(local_str, str);
+    void* inner = lift_field<void*>(self, 0x00);
+    ext_00475960(inner, local_str, &key, 1);
+    reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4))(local_str);
+}
+} // namespace lift_0048C2A0

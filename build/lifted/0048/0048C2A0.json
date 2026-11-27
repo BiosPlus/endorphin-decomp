@@ -1,0 +1,21 @@
+{
+  "va": "0x0048C2A0",
+  "size": 165,
+  "orig_symbol": "sub_0048C2A0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "fn_0048C2A0",
+  "signature": "void __thiscall fn_0048C2A0(void* self, const char* str)",
+  "summary": "Initializes a static key object if needed, constructs a std::string from the argument, passes it with the key to ext_00475960 on field_0x0, then destroys the string.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:32:36Z"
+}

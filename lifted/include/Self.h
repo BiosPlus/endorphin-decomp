@@ -10,7 +10,7 @@ namespace lifted_layout {
 struct Self_Fields {
     // +0x0   int32_t                  count  (evidence: 0x007C8820) // CONFLICT: multiple definitions at +0x0
     // +0x0   uintptr_t                field_0x0  (evidence: 0x0068BB60) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x0  (evidence: 0x00504B80) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x0  (evidence: 0x0048C2A0, 0x00504B80) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    field_0x00  (evidence: 0x004973B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int32_t                  field_0x00  (evidence: 0x00492550) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              field_0x00  (evidence: 0x004765B0) // CONFLICT: multiple definitions at +0x0
