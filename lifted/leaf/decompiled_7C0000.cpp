@@ -2287,3 +2287,45 @@ void fn_007C5570(void* self, const uint8_t* src, uint32_t v, uint32_t flag) {
     }
 }
 } // namespace lift_007C5570
+
+// [0x007C5460]
+namespace lift_007C5460 {
+// @name BitWriter::flushBytes
+// @class BitWriter
+// @summary Flushes 1 or 2 buffered bytes from a 16-bit accumulator into the output buffer.
+// @field BitWriter +0x08 uint8_t* field_0x08
+// @field BitWriter +0x14 int32_t field_0x14
+// @field BitWriter +0x16b0 uint16_t field_0x16b0
+// @field BitWriter +0x16b4 int32_t field_0x16b4
+
+
+void __cdecl sub_007C5460(void* self) {
+    int32_t bit_count = lift_field<int32_t>(self, 0x16b4);
+    if (bit_count == 16) {
+        uint8_t* buf = lift_field<uint8_t*>(self, 0x08);
+        int32_t pos = lift_field<int32_t>(self, 0x14);
+        buf[pos] = lift_field<uint8_t>(self, 0x16b0);
+
+        pos = lift_field<int32_t>(self, 0x14) + 1;
+        lift_field<int32_t>(self, 0x14) = pos;
+        buf = lift_field<uint8_t*>(self, 0x08);
+        buf[pos] = lift_field<uint8_t>(self, 0x16b1);
+
+        lift_field<int32_t>(self, 0x14) = lift_field<int32_t>(self, 0x14) + 1;
+        lift_field<uint16_t>(self, 0x16b0) = 0;
+        lift_field<int32_t>(self, 0x16b4) = 0;
+        return;
+    }
+
+    if (bit_count >= 8) {
+        uint8_t* buf = lift_field<uint8_t*>(self, 0x08);
+        int32_t pos = lift_field<int32_t>(self, 0x14);
+        buf[pos] = lift_field<uint8_t>(self, 0x16b0);
+
+        uint16_t next_word = static_cast<uint16_t>(lift_field<uint8_t>(self, 0x16b1));
+        lift_field<uint16_t>(self, 0x16b0) = next_word;
+        lift_field<int32_t>(self, 0x14) = lift_field<int32_t>(self, 0x14) + 1;
+        lift_field<int32_t>(self, 0x16b4) = lift_field<int32_t>(self, 0x16b4) - 8;
+    }
+}
+} // namespace lift_007C5460
