@@ -37961,6 +37961,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057B100": {
+    "name": "std_vector_0x14::push_back",
+    "class": "std_vector_0x14",
+    "signature": "void fn_0057B100(void* self, uint32_t arg0)",
+    "summary": "Appends one 20-byte element at end; grows via ext_0057B050 when begin is null or capacity is full (caller passes arg0 by value).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057BB20": {
     "name": "Unknown::StoreValueAndInitString",
     "class": "Unknown",

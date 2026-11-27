@@ -1,0 +1,34 @@
+{
+  "va": "0x0057B100",
+  "size": 161,
+  "orig_symbol": "sub_0057B100",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "std_vector_0x14::push_back",
+  "class": "std_vector_0x14",
+  "signature": "void fn_0057B100(void* self, uint32_t arg0)",
+  "summary": "Appends one 20-byte element at end; grows via ext_0057B050 when begin is null or capacity is full (caller passes arg0 by value).",
+  "fields": [
+    {
+      "class": "std_vector_0x14",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "std_vector_0x14",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    },
+    {
+      "class": "std_vector_0x14",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "capacity_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:33:06Z"
+}

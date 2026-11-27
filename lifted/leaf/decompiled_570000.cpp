@@ -2593,3 +2593,51 @@ void* fn_00575E30(void) {
     return &mem_00B3CDDC;
 }
 } // namespace lift_00575E30
+
+// [0x0057B100] sub_0057B100 (161 bytes)
+namespace lift_0057B100 {
+// @name std_vector_0x14::push_back
+// @class std_vector_0x14
+// @summary Appends one 20-byte element at end; grows via ext_0057B050 when begin is null or capacity is full (caller passes arg0 by value).
+// @field std_vector_0x14 +0x04 void* begin
+// @field std_vector_0x14 +0x08 void* end
+// @field std_vector_0x14 +0x0C void* capacity_end
+
+extern void ext_0057A280(void* end, int32_t one, uint32_t p2, void* self, uint32_t p1, uint32_t flag);
+extern void ext_0057B050(void* self, uint8_t* tmp, void* self_again, void* end, uint32_t p);
+extern int mem_00925134;
+
+void fn_0057B100(void* self, uint32_t arg0) {
+    void* begin = lift_field<void*>(self, 0x04);
+    void* end = lift_field<void*>(self, 0x08);
+
+    const uintptr_t b = reinterpret_cast<uintptr_t>(begin);
+    const uintptr_t e = reinterpret_cast<uintptr_t>(end);
+
+    if (b != 0) {
+        // count = (end - begin) / 20 (signed)
+        const uint32_t count = static_cast<uint32_t>(
+            static_cast<int32_t>(static_cast<uint32_t>(e - b)) / 20);
+        const uintptr_t c = reinterpret_cast<uintptr_t>(lift_field<void*>(self, 0x0C));
+        // capCount = (capacity_end - begin) / 20 (signed)
+        const uint32_t capCount = static_cast<uint32_t>(
+            static_cast<int32_t>(static_cast<uint32_t>(c - b)) / 20);
+
+        if (count < capCount) {
+            // Fast path: room available, construct in place then bump end by 20.
+            const uint32_t flag = 0;
+            ext_0057A280(end, 1, arg0, self, arg0, flag);
+            lift_field<void*>(self, 0x08) = reinterpret_cast<void*>(e + 0x14);
+            return;
+        }
+    }
+
+    // Slow path (begin null or full): sanity-check begin <= end, then grow.
+    if (b > e) {
+        (void)&mem_00925134; // original called _invalid_parameter_noinfo here; does not return
+        std::abort();
+    }
+    uint8_t tmp = 0;
+    ext_0057B050(self, &tmp, self, end, arg0);
+}
+} // namespace lift_0057B100
