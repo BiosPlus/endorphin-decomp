@@ -1,0 +1,40 @@
+{
+  "va": "0x004D0BB0",
+  "size": 199,
+  "orig_symbol": "NMData::TransitionEventData::vfunc_22",
+  "src_path": "src/NMData/TransitionEventData.cpp",
+  "lifted_path": "lifted/NMData/TransitionEventData.cpp",
+  "name": "NMData::TransitionEventData::vfunc_22",
+  "class": "NMData::TransitionEventData",
+  "signature": "void* __thiscall fn_004D0BB0(void* self, void* node)",
+  "summary": "Serializes TransitionEventData fields to an XML node and delegates to TriggeredEventData::vfunc_22.",
+  "fields": [
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x188",
+      "type": "uint32_t",
+      "name": "field_0x188"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x190",
+      "type": "uint32_t",
+      "name": "field_0x190"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x194",
+      "type": "float",
+      "name": "m_momentumScaleFactor"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x198",
+      "type": "void*",
+      "name": "field_0x198"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:18:34Z"
+}

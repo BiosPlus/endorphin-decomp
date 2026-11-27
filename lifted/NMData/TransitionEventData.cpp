@@ -294,3 +294,57 @@ extern void __thiscall fn_004D37E0(void* self) {
     lift_field<int32_t>(self, 0x184) = 0x7FFFFFFF;
 }
 } // namespace lift_004D37E0
+
+// [0x004D0BB0]
+namespace lift_004D0BB0 {
+// @name NMData::TransitionEventData::vfunc_22
+// @class NMData::TransitionEventData
+// @summary Serializes TransitionEventData fields to an XML node and delegates to TriggeredEventData::vfunc_22.
+// @field NMData::TransitionEventData +0x188 uint32_t field_0x188
+// @field NMData::TransitionEventData +0x190 uint32_t field_0x190
+// @field NMData::TransitionEventData +0x194 float m_momentumScaleFactor
+// @field NMData::TransitionEventData +0x198 void* field_0x198
+
+
+extern void* __thiscall ext_00427550(void* self, const char* name);
+extern void* __thiscall ext_004C1DE0(void* self, void* node);
+extern void* __cdecl ext_004D0B60(uint32_t index);
+extern void* __thiscall ext_00640110(void* self, const void* name);
+extern void* __thiscall ext_00640390(void* self, const void* name, uint32_t arg2);
+extern void __cdecl ext_00640BC0(void* node, float value);
+
+extern const void* mem_00A9FAE4;
+extern const void* mem_00924FF0;
+extern const void* mem_00A9F8F8;
+extern const void* mem_00A9EDE8;
+extern uint8_t mem_00AE5C68[];
+extern const char mem_009473C0[];
+
+using c_str_fn = const char* (__thiscall*)(void* self);
+using vfunc_58_fn = void (__thiscall*)(void* self, void* node);
+
+void* __thiscall fn_004D0BB0(void* self, void* node)
+{
+    void* child1 = ext_00640110(node, mem_00A9FAE4);
+    void* entry1 = ext_004D0B60(lift_field<uint32_t>(self, 0x188));
+    const char* str1 = reinterpret_cast<c_str_fn>(mem_00924FF0)(entry1);
+    ext_00427550(&child1, str1);
+
+    uint32_t idx2 = lift_field<uint32_t>(self, 0x190);
+    void* child2 = ext_00640110(node, mem_00A9F8F8);
+    void* entry2 = mem_00AE5C68 + idx2 * 28;
+    const char* str2 = reinterpret_cast<c_str_fn>(mem_00924FF0)(entry2);
+    ext_00427550(&child2, str2);
+
+    void* child3 = ext_00640110(node, mem_009473C0);
+    ext_00640BC0(child3, lift_field<float>(self, 0x194));
+
+    void* child4 = ext_00640390(node, mem_00A9EDE8, 0);
+    void* subobj = static_cast<uint8_t*>(self) + 0x198;
+    void** vtable = lift_field<void**>(self, 0x198);
+    reinterpret_cast<vfunc_58_fn>(vtable[0x58 / sizeof(void*)])(subobj, child4);
+
+    ext_004C1DE0(self, node);
+    return node;
+}
+} // namespace lift_004D0BB0
