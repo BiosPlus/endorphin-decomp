@@ -53411,6 +53411,12 @@
     "summary": "Builds a packed 3x3 identity, adjusts it via sub_006951A0 using the stack argument, then copies it into self's padded 4-stride matrix.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067E600": {
+    "name": "buildPaddedMatrixFromParam",
+    "signature": "void fn_0067E600(void* self, const void* p)",
+    "summary": "Starts from a packed 3x3 identity, applies ext_006951E0 with the stack parameter, then copies the result into the padded matrix at self.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067EC60": {
     "name": "initZeroDouble",
     "signature": "void* __thiscall sub_0067EC60(void* self)",

@@ -2293,3 +2293,25 @@ void fn_0067E5B0(void* self, uint32_t arg) {
     ext_0067DB10(self, m);
 }
 } // namespace lift_0067E5B0
+
+// [0x0067E600] sub_0067E600 (79 bytes)
+namespace lift_0067E600 {
+// Known callee 0x0067DB10: copyPacked3x3ToPaddedMatrix (Copies a packed 3x3 float matrix (36 bytes) from src into a 4-float-stride matrix at self (rows at +0x00, +0x10, +0x20), leaving the padding slots untouched.)
+extern void ext_0067DB10(void* self, const void* src);
+// Callee 0x006951E0 (81 bytes, not yet lifted): receives a 3x3 packed matrix in its
+// first argument (ECX in the original) and one stack pointer argument.
+extern void ext_006951E0(void* self, const void* p);
+
+// @name buildPaddedMatrixFromParam
+// @summary Starts from a packed 3x3 identity, applies ext_006951E0 with the stack parameter, then copies the result into the padded matrix at self.
+void fn_0067E600(void* self, const void* p) {
+    // Packed 3x3 identity (row-major, 9 floats = 36 bytes).
+    float m[9] = {
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 1.0f,
+    };
+    ext_006951E0(m, p);
+    ext_0067DB10(self, m);
+}
+} // namespace lift_0067E600

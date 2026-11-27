@@ -1,0 +1,13 @@
+{
+  "va": "0x0067E600",
+  "size": 79,
+  "orig_symbol": "sub_0067E600",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "buildPaddedMatrixFromParam",
+  "signature": "void fn_0067E600(void* self, const void* p)",
+  "summary": "Starts from a packed 3x3 identity, applies ext_006951E0 with the stack parameter, then copies the result into the padded matrix at self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:56:27Z"
+}
