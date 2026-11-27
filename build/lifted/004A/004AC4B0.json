@@ -1,0 +1,13 @@
+{
+  "va": "0x004AC4B0",
+  "size": 238,
+  "orig_symbol": "sub_004AC4B0",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "IntrosortRange",
+  "signature": "void fn_004AC4B0(uint32_t* first, uint32_t* last, int32_t ideal, uint32_t pred)",
+  "summary": "Introsort loop with median-of-nine partition, heap sort fallback, and insertion sort for small ranges.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:29:07Z"
+}

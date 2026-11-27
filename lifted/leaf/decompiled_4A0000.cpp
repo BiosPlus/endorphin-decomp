@@ -1930,3 +1930,58 @@ void __thiscall fn_004AEE60(void* ecx) {
 }
 } // namespace lift_0049E8D0
 } // namespace lift_004AEE60
+
+// [0x004AC4B0]
+namespace lift_004AC4B0 {
+// @name IntrosortRange
+// @summary Introsort loop with median-of-nine partition, heap sort fallback, and insertion sort for small ranges.
+
+struct PairPtr {
+    uint32_t* first;
+    uint32_t* second;
+};
+
+extern void ext_004ED490(PairPtr* out_pair, uint32_t* first, uint32_t* last, uint32_t pred);
+extern void ext_004ED5D0(uint32_t* first, uint32_t* last, uint32_t pred);
+extern void ext_004AB990(uint32_t* first, uint32_t* last, uint32_t pred, int32_t a4, int32_t a5);
+extern void ext_004ABF10(uint32_t* first, uint32_t* last, uint32_t pred);
+
+void fn_004AC4B0(uint32_t* first, uint32_t* last, int32_t ideal, uint32_t pred) {
+    int32_t count = static_cast<int32_t>(last - first);
+    if (count > 0x20) {
+        while (count > 0x20) {
+            if (ideal <= 0) {
+                int32_t byte_diff = static_cast<int32_t>(reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(first)) & -4;
+                if (byte_diff > 4) {
+                    ext_004AB990(first, last, pred, 0, 0);
+                }
+                ext_004ABF10(first, last, pred);
+                return;
+            }
+
+            PairPtr mid{};
+            ext_004ED490(&mid, first, last, pred);
+
+            int32_t half = ideal / 2;
+            ideal = half + (half / 2);
+
+            int32_t right_bytes = static_cast<int32_t>(reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(mid.second)) & -4;
+            int32_t left_bytes = static_cast<int32_t>(reinterpret_cast<uintptr_t>(mid.first) - reinterpret_cast<uintptr_t>(first)) & -4;
+
+            if (left_bytes < right_bytes) {
+                fn_004AC4B0(first, mid.first, ideal, pred);
+                first = mid.second;
+            } else {
+                fn_004AC4B0(mid.second, last, ideal, pred);
+                last = mid.first;
+            }
+
+            count = static_cast<int32_t>(last - first);
+        }
+    }
+
+    if (count > 1) {
+        ext_004ED5D0(first, last, pred);
+    }
+}
+} // namespace lift_004AC4B0

@@ -17678,6 +17678,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::BehaviourData::vfunc_22.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004AC4B0": {
+    "name": "IntrosortRange",
+    "signature": "void fn_004AC4B0(uint32_t* first, uint32_t* last, int32_t ideal, uint32_t pred)",
+    "summary": "Introsort loop with median-of-nine partition, heap sort fallback, and insertion sort for small ranges.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AC730": {
     "name": "NMData::BehaviourData::vfunc_0",
     "class": "NMData::BehaviourData",
