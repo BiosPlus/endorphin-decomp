@@ -21,6 +21,7 @@ float fn_005E2770(void* self) {
 }
 } // namespace lift_005E2770
 #include <cmath>
+#include <cstdint>
 
 // [0x005E2810] sub_005E2810 (27 bytes)
 namespace lift_005E2810 {
@@ -1640,3 +1641,39 @@ void fn_005E02F0(void* self, uint32_t arg) {
     lift_field<uint32_t>(self, 0x2E8) = 0;
 }
 } // namespace lift_005E02F0
+
+// [0x005E0EB0]
+namespace lift_005E0EB0 {
+extern double mem_00968EC0;
+extern double mem_00968EB8;
+extern double mem_0092C508;
+extern double mem_00932470;
+extern float mem_00968E74;
+extern float mem_00968E70;
+
+// @name computeClampedScaledLength
+// @summary Computes a scaled and clamped 3D vector length based on a flag at this->field_0x18c->field_0x4e4.
+// @field unknown +0x18c void* field_0x18c
+// @field unknown_18c +0x4e4 uint8_t field_0x4e4
+float __thiscall fn_005E0EB0(void* self, const float* vec) {
+    float x = vec[0];
+    float y = vec[1];
+    float z = vec[2];
+    float len = std::sqrt(x * x + y * y + z * z);
+
+    void* obj = lift_field<void*>(self, 0x18c);
+    if (obj != nullptr && lift_field<uint8_t>(obj, 0x4e4) != 0) {
+        float scaled = static_cast<float>(static_cast<double>(len) * mem_00968EC0);
+        if (static_cast<double>(scaled) > mem_00968EB8) {
+            return mem_00968E74;
+        }
+        return scaled;
+    } else {
+        float scaled = static_cast<float>(static_cast<double>(len) * mem_0092C508);
+        if (static_cast<double>(scaled) > mem_00932470) {
+            return mem_00968E70;
+        }
+        return scaled;
+    }
+}
+} // namespace lift_005E0EB0

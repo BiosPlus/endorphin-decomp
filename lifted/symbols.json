@@ -40224,6 +40224,12 @@
     "summary": "Thunk-style tick forwarder: if +0x140 is zero and +0xE0 is set, calls vslot 0x14 on the object at self-0x150 with arg, then vslot 0xAC on the +0xE0 object with that result.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E0EB0": {
+    "name": "computeClampedScaledLength",
+    "signature": "float __thiscall fn_005E0EB0(void* self, const float* vec)",
+    "summary": "Computes a scaled and clamped 3D vector length based on a flag at this-\u003efield_0x18c-\u003efield_0x4e4.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E1060": {
     "name": "NMData::FixedPathJointData::vfunc_0_off_154",
     "class": "NMData::FixedPathJointData",

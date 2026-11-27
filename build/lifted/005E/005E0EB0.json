@@ -1,0 +1,27 @@
+{
+  "va": "0x005E0EB0",
+  "size": 149,
+  "orig_symbol": "sub_005E0EB0",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "computeClampedScaledLength",
+  "signature": "float __thiscall fn_005E0EB0(void* self, const float* vec)",
+  "summary": "Computes a scaled and clamped 3D vector length based on a flag at this-\u003efield_0x18c-\u003efield_0x4e4.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18c"
+    },
+    {
+      "class": "unknown_18c",
+      "offset": "+0x4E4",
+      "type": "uint8_t",
+      "name": "field_0x4e4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:10:18Z"
+}
