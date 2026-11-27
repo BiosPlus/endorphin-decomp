@@ -1,0 +1,70 @@
+{
+  "va": "0x00610920",
+  "size": 318,
+  "orig_symbol": "NMData::CompoundSensorData::vfunc_59",
+  "src_path": "src/NMData/CompoundSensorData.cpp",
+  "lifted_path": "lifted/NMData/CompoundSensorData.cpp",
+  "name": "NMData::CompoundSensorData::vfunc_59",
+  "class": "NMData::CompoundSensorData",
+  "signature": "extern bool (*mem_00924FEC)(void* self);                  // basic_string::empty extern void (*mem_00924FE0)(void* self, const void* src); // basic_string(const basic_string\u0026) extern void (*mem_00925134)(void);                        // MSVCR80 _invalid_parameter_noinfo (range guard) void* fn_00610920(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Lazily resolves a sub-object from a1+0x598 when this+0x190 is non-empty, pushes two float fields into the sub-object at this+0x154, invokes its vfunc+0x68, then forwards each entry of the [0x184,0x188) array (resolved via a1+0x550) to ext_0041A920.",
+  "fields": [
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x170",
+      "type": "void*",
+      "name": "field_0x170"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "field_0x174"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x178",
+      "type": "float",
+      "name": "field_0x178"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x17C",
+      "type": "uint32_t",
+      "name": "field_0x17C"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x180",
+      "type": "uint32_t",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x188",
+      "type": "void*",
+      "name": "field_0x188"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x190",
+      "type": "uint8_t",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:14:58Z"
+}

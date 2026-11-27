@@ -265,3 +265,74 @@ void fn_0060EEB0(void* self, void* arg) {
     }
 }
 } // namespace lift_0060EEB0
+
+// [0x00610920]
+namespace lift_00610920 {
+// Callees (thiscall/cdecl in the original; plain C++ prototypes here).
+extern void* ext_005DF5C0(void* self);
+extern void* ext_00610630(void* p, int zero, int one);
+extern void ext_0041A920(void* self, void* pair);
+
+// MSVCP80 std::string IAT slots (function pointers loaded from the import table).
+extern bool (*mem_00924FEC)(void* self);                  // basic_string::empty
+extern void (*mem_00924FE0)(void* self, const void* src); // basic_string(const basic_string&)
+extern void (*mem_00925134)(void);                        // MSVCR80 _invalid_parameter_noinfo (range guard)
+
+// @name NMData::CompoundSensorData::vfunc_59
+// @class NMData::CompoundSensorData
+// @summary Lazily resolves a sub-object from a1+0x598 when this+0x190 is non-empty, pushes two float fields into the sub-object at this+0x154, invokes its vfunc+0x68, then forwards each entry of the [0x184,0x188) array (resolved via a1+0x550) to ext_0041A920.
+// @field NMData::CompoundSensorData +0x154 void* field_0x154
+// @field NMData::CompoundSensorData +0x170 void* field_0x170
+// @field NMData::CompoundSensorData +0x174 float field_0x174
+// @field NMData::CompoundSensorData +0x178 float field_0x178
+// @field NMData::CompoundSensorData +0x17C uint32_t field_0x17C
+// @field NMData::CompoundSensorData +0x180 uint32_t field_0x180
+// @field NMData::CompoundSensorData +0x184 void* field_0x184
+// @field NMData::CompoundSensorData +0x188 void* field_0x188
+// @field NMData::CompoundSensorData +0x190 uint8_t field_0x190
+void* fn_00610920(void* self, void* arg1, uint32_t arg2) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+
+    void* esi = nullptr;
+    if (!mem_00924FEC(s + 0x190)) {
+        // Temporary string copy built from this+0x190; the original never destructs it.
+        uint8_t tmp[0x1c];
+        mem_00924FE0(tmp, s + 0x190);
+        esi = ext_005DF5C0(static_cast<uint8_t*>(arg1) + 0x598);
+    }
+
+    // Range guard on the [begin,end) pair at this+0x184/0x188 (debug-iterator check in the asm).
+    if (reinterpret_cast<uintptr_t>(lift_field<void*>(self, 0x184)) >
+        reinterpret_cast<uintptr_t>(lift_field<void*>(self, 0x188))) {
+        mem_00925134();
+    }
+
+    void* edi = ext_00610630(s + 0x154, 0, 1);
+
+    void* vtbl = lift_field<void*>(edi, 0);
+    lift_field<double>(edi, 0x18) = static_cast<double>(lift_field<float>(self, 0x174));
+    lift_field<double>(edi, 0x20) = static_cast<double>(lift_field<float>(self, 0x178));
+    using VFn = void (*)(void* self, void* arg);
+    reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x68))(edi, esi);
+
+    for (void* cur = lift_field<void*>(self, 0x184);
+         cur != lift_field<void*>(self, 0x188);
+         cur = static_cast<uint8_t*>(cur) + 0x1c) {
+        uint8_t key[0x1c];
+        mem_00924FE0(key, cur);
+
+        void* found = ext_005DF5C0(static_cast<uint8_t*>(arg1) + 0x550);
+        if (found != nullptr) {
+            void* v = lift_field<void*>(found, 0x170);
+            if (v != nullptr) {
+                lift_field<void*>(key, 0x10) = v;
+                ext_0041A920(static_cast<uint8_t*>(edi) + 0x28, &lift_field<void*>(key, 0x10));
+            }
+        }
+    }
+
+    lift_field<void*>(self, 0x170) = edi;
+    lift_field<uint32_t>(self, 0x17C) = arg2;
+    return edi;
+}
+} // namespace lift_00610920

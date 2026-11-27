@@ -11,10 +11,16 @@
 namespace lifted_layout {
 struct NMData_CompoundSensorData_Fields {
     // +0x0   void**                   vtable  (evidence: 0x0060F6A0)
-    // +0x154 void*                    field_0x154  (evidence: 0x006108F0)
-    // +0x180 uint32_t                 field_0x180  (evidence: 0x0060F640, 0x0060F6A0)
-    // +0x184 uint32_t                 field_0x184  (evidence: 0x0060F640)
-    // +0x188 uint32_t                 field_0x188  (evidence: 0x0060F640)
-    // +0x190 uint8_t                  field_0x190  (evidence: 0x0060F640, 0x0060F6A0)
+    // +0x154 void*                    field_0x154  (evidence: 0x006108F0, 0x00610920)
+    // +0x170 void*                    field_0x170  (evidence: 0x00610920)
+    // +0x174 float                    field_0x174  (evidence: 0x00610920)
+    // +0x178 float                    field_0x178  (evidence: 0x00610920)
+    // +0x17C uint32_t                 field_0x17C  (evidence: 0x00610920)
+    // +0x180 uint32_t                 field_0x180  (evidence: 0x0060F640, 0x0060F6A0, 0x00610920)
+    // +0x184 uint32_t                 field_0x184  (evidence: 0x0060F640) // CONFLICT: multiple definitions at +0x184
+    // +0x184 void*                    field_0x184  (evidence: 0x00610920) // CONFLICT: multiple definitions at +0x184
+    // +0x188 uint32_t                 field_0x188  (evidence: 0x0060F640) // CONFLICT: multiple definitions at +0x188
+    // +0x188 void*                    field_0x188  (evidence: 0x00610920) // CONFLICT: multiple definitions at +0x188
+    // +0x190 uint8_t                  field_0x190  (evidence: 0x0060F640, 0x0060F6A0, 0x00610920)
 };
 } // namespace lifted_layout
