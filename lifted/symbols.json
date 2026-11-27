@@ -27402,6 +27402,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_4 (NMData::State::getFileName)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005861D0": {
+    "name": "NodeWeight::sumRecursive",
+    "class": "NodeWeight",
+    "signature": "uint32_t __thiscall fn_005861D0(uint8_t* self)",
+    "summary": "Returns 1 plus the recursive sum of the results for each element in the child pointer array at this+0x7C.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00586240": {
     "name": "Node::traverseAndInvoke",
     "class": "Node",

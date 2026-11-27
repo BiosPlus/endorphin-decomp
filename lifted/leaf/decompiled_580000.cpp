@@ -1269,3 +1269,46 @@ void __thiscall sub_005862A0(void* self) {
     }
 }
 } // namespace lift_005862A0
+
+// [0x005861D0] sub_005861D0 (103 bytes)
+namespace lift_005861D0 {
+// MSVCR80 _invalid_parameter_noinfo import slot (0x00925134)
+extern void (*mem_00925134)();
+
+// @name NodeWeight::sumRecursive
+// @class NodeWeight
+// @summary Returns 1 plus the recursive sum of the results for each element in the child pointer array at this+0x7C.
+// @field NodeWeight +0x80 uint32_t childBegin
+// @field NodeWeight +0x84 uint32_t childEnd
+uint32_t __thiscall fn_005861D0(uint8_t* self) {
+    uint8_t* vec = self + 0x7C;
+    uint32_t total = 1;
+
+    uint32_t cur = *reinterpret_cast<uint32_t*>(vec + 0x04);
+    if (cur > *reinterpret_cast<uint32_t*>(vec + 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t end = *reinterpret_cast<uint32_t*>(vec + 0x08);
+    if (*reinterpret_cast<uint32_t*>(vec + 0x04) > end) {
+        mem_00925134();
+    }
+
+    // Original: cmp esi, esi / je ... (always equal; invalid-parameter path is unreachable)
+
+    while (cur != end) {
+        if (!(cur < *reinterpret_cast<uint32_t*>(vec + 0x08))) {
+            mem_00925134();
+        }
+        uint32_t raw = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cur));
+        uint8_t* child = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(raw));
+        total += fn_005861D0(child);
+        if (!(cur < *reinterpret_cast<uint32_t*>(vec + 0x08))) {
+            mem_00925134();
+        }
+        cur += 4;
+    }
+
+    return total;
+}
+} // namespace lift_005861D0
