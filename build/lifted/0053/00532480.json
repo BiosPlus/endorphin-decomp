@@ -1,0 +1,22 @@
+{
+  "va": "0x00532480",
+  "size": 36,
+  "orig_symbol": "HasBufferedTMPtr::vfunc_10",
+  "src_path": "src/classes/HasBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp",
+  "name": "HasBufferedTMPtr::vfunc_10",
+  "class": "HasBufferedTMPtr",
+  "signature": "void __thiscall fn_00532480(void* self, void* arg)",
+  "summary": "Reads the index at +0x04, fetches the global-owned object via ext_00661B50 using that index, then calls vtable slot 4 of the stack argument with the result.",
+  "fields": [
+    {
+      "class": "HasBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:28Z"
+}

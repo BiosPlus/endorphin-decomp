@@ -115,3 +115,26 @@ float* __thiscall fn_00532680(void* self, float* out) {
     return out;
 }
 } // namespace lift_00532680
+
+// [0x00532480] HasBufferedTMPtr::vfunc_10 (36 bytes)
+namespace lift_00532480 {
+// Known callee 0x00661B50: sub_00661B50 (Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index)
+extern uint32_t __thiscall ext_00661B50(void* this_ptr, uint32_t index);
+extern uint32_t mem_00AEE8A8;
+
+// @name HasBufferedTMPtr::vfunc_10
+// @class HasBufferedTMPtr
+// @summary Reads the index at +0x04, fetches the global-owned object via ext_00661B50 using that index, then calls vtable slot 4 of the stack argument with the result.
+// @field HasBufferedTMPtr +0x04 uint32_t field_0x04
+
+using VFn = void (__thiscall*)(void* self, uint32_t value);
+
+void __thiscall fn_00532480(void* self, void* arg) {
+    uint32_t index = lift_field<uint32_t>(self, 0x04);
+    void* global_this = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00AEE8A8));
+    uint32_t value = ext_00661B50(global_this, index);
+    void** vtbl = *reinterpret_cast<void***>(arg);
+    VFn vfn = reinterpret_cast<VFn>(vtbl[4]);
+    vfn(arg, value);
+}
+} // namespace lift_00532480

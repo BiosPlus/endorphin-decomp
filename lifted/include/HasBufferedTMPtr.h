@@ -10,7 +10,7 @@
 // Recovered field layout for HasBufferedTMPtr:
 namespace lifted_layout {
 struct HasBufferedTMPtr_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00532430, 0x005324B0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00532430, 0x00532480, 0x005324B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 index  (evidence: 0x00532400, 0x00532450, 0x00532680) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

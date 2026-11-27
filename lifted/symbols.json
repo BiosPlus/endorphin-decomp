@@ -26366,6 +26366,13 @@
     "summary": "Looks up element at self-\u003eindex via the wrapper in mem_00AEE8A8 and issues glTranslatef with its (x, y, z) at +0x30/+0x34/+0x38.",
     "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp"
   },
+  "0x00532480": {
+    "name": "HasBufferedTMPtr::vfunc_10",
+    "class": "HasBufferedTMPtr",
+    "signature": "void __thiscall fn_00532480(void* self, void* arg)",
+    "summary": "Reads the index at +0x04, fetches the global-owned object via ext_00661B50 using that index, then calls vtable slot 4 of the stack argument with the result.",
+    "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp"
+  },
   "0x005324B0": {
     "name": "HasBufferedTMPtr::vfunc_12",
     "class": "HasBufferedTMPtr",
