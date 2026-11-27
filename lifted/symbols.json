@@ -8138,6 +8138,12 @@
     "summary": "Constructs an ExceptionWithMessage-derived exception with a default message string at 0x0093a7b4 and installs vtable 0x0093a7ac.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046C390": {
+    "name": "formatFloatTrimmedStringWrapper",
+    "signature": "std::string* fn_0046C390(std::string* out, float value)",
+    "summary": "Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C3C0": {
     "name": "DerivedException::DerivedException",
     "class": "DerivedException",

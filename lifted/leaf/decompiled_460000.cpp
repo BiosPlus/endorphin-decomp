@@ -2014,3 +2014,16 @@ void fn_00466BA0(void* self, uint32_t arg1, uint32_t arg2) {
     ext_00678D70(self, arg2);
 }
 } // namespace lift_00466BA0
+
+// [0x0046C390] sub_0046C390 (36 bytes)
+namespace lift_0046C390 {
+// Known callee 0x00664840: formatFloatTrimmedString (Formats a float with the format at mem_0097CD20 into a 50-byte buffer, strips trailing '0' chars after the decimal point (keeping at least one digit), and placement-constructs a std::string at the caller's sret slot, returning it.)
+extern std::string* ext_00664840(std::string* out, float value);
+
+// @name formatFloatTrimmedStringWrapper
+// @summary Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.
+std::string* fn_0046C390(std::string* out, float value) {
+    ext_00664840(out, value);
+    return out;
+}
+} // namespace lift_0046C390
