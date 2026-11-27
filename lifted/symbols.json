@@ -10835,6 +10835,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475710": {
+    "name": "Vector::InsertAndGetIterator_00475710",
+    "class": "Vector",
+    "signature": "[[noreturn]] void invalid_parameter_noinfo()",
+    "summary": "Validates the vector range, calls ext_00475240 to insert one element at a3, then writes {container, iterator} to out.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004757A0": {
     "name": "RuntimeEngine::vfunc_0_off_8",
     "class": "RuntimeEngine",
