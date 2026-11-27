@@ -8,8 +8,8 @@
 // Recovered field layout for Vector3:
 namespace lifted_layout {
 struct Vector3_Fields {
-    // +0x0   float                    x  (evidence: 0x0067BA60, 0x00698B50)
-    // +0x4   float                    y  (evidence: 0x0067BA60, 0x00698B50)
-    // +0x8   float                    z  (evidence: 0x0067BA60, 0x00698B50)
+    // +0x0   float                    x  (evidence: 0x0067BA60, 0x00698B50, 0x007B7DE0)
+    // +0x4   float                    y  (evidence: 0x0067BA60, 0x00698B50, 0x007B7DE0)
+    // +0x8   float                    z  (evidence: 0x0067BA60, 0x00698B50, 0x007B7DE0)
 };
 } // namespace lifted_layout

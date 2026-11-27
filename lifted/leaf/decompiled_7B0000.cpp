@@ -2473,3 +2473,37 @@ void fn_007B7E70(void* dst) {
     }
 }
 } // namespace lift_007B7E70
+
+// [0x007B7DE0] sub_007B7DE0 (96 bytes)
+namespace lift_007B7DE0 {
+// Known callee 0x007B7910: ReadFloatFromStream (Reads one 4-byte value from the stream returned by ext_0079EBE0 and returns its bits as a float; on a short read it reports via ext_007AA510(13) and returns 0.0f unless the global flag mem_00B61219 is set.)
+extern float ext_007B7910(void);
+extern int mem_00999738;
+extern int mem_0099973C;
+extern int mem_00999740;
+extern unsigned char mem_00B61218;
+extern unsigned char mem_00B61219;
+
+// @name ReadVector3FromStream
+// @class (none)
+// @summary Fills a 3-float vector at out with three values read from the stream; the seeded dword defaults are stored first, and Y/Z are only read when the global gating flags allow it.
+// @field Vector3 +0x00 float x
+// @field Vector3 +0x04 float y
+// @field Vector3 +0x08 float z
+void fn_007B7DE0(float* out) {
+    uint32_t* words = reinterpret_cast<uint32_t*>(out);
+    words[0] = static_cast<uint32_t>(mem_00999738);
+    words[1] = static_cast<uint32_t>(mem_0099973C);
+    words[2] = static_cast<uint32_t>(mem_00999740);
+
+    out[0] = ext_007B7910();
+
+    const bool gate_ok = (mem_00B61218 == 0) || (mem_00B61219 != 0);
+    if (gate_ok) {
+        out[1] = ext_007B7910();
+    }
+    if (gate_ok) {
+        out[2] = ext_007B7910();
+    }
+}
+} // namespace lift_007B7DE0

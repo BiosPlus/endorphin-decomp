@@ -85287,6 +85287,13 @@
     "summary": "Writes the three uint32 values at arg+0x0, +0x4, +0x8 via ext_007B78D0, gated by two global byte flags.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7DE0": {
+    "name": "ReadVector3FromStream",
+    "class": "(none)",
+    "signature": "void fn_007B7DE0(float* out)",
+    "summary": "Fills a 3-float vector at out with three values read from the stream; the seeded dword defaults are stored first, and Y/Z are only read when the global gating flags allow it.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B7E70": {
     "name": "ReadFloatPairToBuffer",
     "signature": "void fn_007B7E70(void* dst)",
