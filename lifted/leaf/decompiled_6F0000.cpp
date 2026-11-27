@@ -2636,3 +2636,20 @@ void* fn_006FA350(void* self, DWORD arg0, DWORD arg1) {
     return nullptr;
 }
 } // namespace lift_006FA350
+
+// [0x006F98A0] sub_006F98A0 (33 bytes)
+namespace lift_006F98A0 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+
+// String literal referenced by the immediate push at 0x006F98AB.
+extern const char mem_00AAB8C0[];
+
+// @name Unknown::initAssignCString_006F98A0
+// @class Unknown
+// @summary Calls initAssignCString_006B9D80 on self with the string at 0x00AAB8C0 and returns self.
+extern void* __stdcall fn_006F98A0(void* self) {
+    ext_006B9D80(self, mem_00AAB8C0);
+    return self;
+}
+} // namespace lift_006F98A0

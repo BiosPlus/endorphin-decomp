@@ -1,0 +1,14 @@
+{
+  "va": "0x006F98A0",
+  "size": 33,
+  "orig_symbol": "sub_006F98A0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::initAssignCString_006F98A0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __stdcall fn_006F98A0(void* self)",
+  "summary": "Calls initAssignCString_006B9D80 on self with the string at 0x00AAB8C0 and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:49:56Z"
+}
