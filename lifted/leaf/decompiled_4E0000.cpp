@@ -1534,3 +1534,37 @@ void fn_004E8C30(void* self) {
     }
 }
 } // namespace lift_004E8C30
+
+// [0x004EC460] sub_004EC460 (59 bytes)
+namespace lift_004EC460 {
+// Known callee 0x004EC1F0 (sub_004EC1F0): thiscall, self in ecx, 5 stack args, callee cleans up (ret 0x14).
+extern void __thiscall ext_004EC1F0(void* self, void* out, void* a2, uint32_t a3, void* a4, void* a5);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one stack argument, caller cleans up.
+extern void __cdecl ext_006A5C5C(uint32_t arg);
+
+// @name SearchableMap::resetAndInitFromSubobject
+// @class SearchableMap
+// @summary Stores the SearchableMap vtable, calls ext_004EC1F0 on the embedded sub-object at +0x04 with the pointer stored at +0x08, forwards the dword at +0x08 to ext_006A5C5C, then clears +0x08 and +0x0C.
+// @field SearchableMap +0x00 uint32_t vtable
+// @field SearchableMap +0x08 uint32_t field_0x08
+// @field SearchableMap +0x0C uint32_t field_0x0c
+void fn_004EC460(void* self) {
+    uint8_t* esi = static_cast<uint8_t*>(self) + 0x04;
+
+    lift_field<uint32_t>(self, 0x00) = 0x0094B890u;
+
+    uint32_t p_addr = lift_field<uint32_t>(esi, 0x04);          // [esi+4] == self+0x08
+    uint8_t* p = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(p_addr));
+    uint32_t p_first = *reinterpret_cast<const uint32_t*>(p);   // [eax]
+
+    uint32_t out_buf[2] = {};
+    ext_004EC1F0(esi, out_buf, esi, p_first, esi, p);
+
+    uint32_t forwarded = lift_field<uint32_t>(esi, 0x04);       // reloaded after call
+    ext_006A5C5C(forwarded);
+
+    lift_field<uint32_t>(esi, 0x04) = 0u;                       // self+0x08
+    lift_field<uint32_t>(esi, 0x08) = 0u;                       // self+0x0C
+}
+} // namespace lift_004EC460
