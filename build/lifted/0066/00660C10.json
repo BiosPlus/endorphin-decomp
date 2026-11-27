@@ -1,0 +1,46 @@
+{
+  "va": "0x00660C10",
+  "size": 127,
+  "orig_symbol": "sub_00660C10",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::destroyMembers_00660C10",
+  "class": "Unknown",
+  "signature": "void fn_00660C10(void* this_ptr)",
+  "summary": "Releases the two sub-objects at +0x40/+0x48 via virtual slot 0x78, destroys the string at +0x1c, then runs its destructor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "std::string_vector",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "int32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "int32_t",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:06:18Z"
+}

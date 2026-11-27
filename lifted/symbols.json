@@ -51540,6 +51540,13 @@
     "summary": "Erases a checked-iterator range [first, last) from a vector of 0x20-byte string elements, destroying trailing elements and returning the updated iterator.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00660C10": {
+    "name": "Unknown::destroyMembers_00660C10",
+    "class": "Unknown",
+    "signature": "void fn_00660C10(void* this_ptr)",
+    "summary": "Releases the two sub-objects at +0x40/+0x48 via virtual slot 0x78, destroys the string at +0x1c, then runs its destructor.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006616B0": {
     "name": "sub_006616B0",
     "signature": "intptr_t fn_006616B0(void* self)",

@@ -3131,3 +3131,47 @@ std::string* fn_00664840(std::string* out, float value) {
     return out;
 }
 } // namespace lift_00664840
+
+// [0x00660C10]
+namespace lift_00660C10 {
+// @name Unknown::destroyMembers_00660C10
+// @class Unknown
+// @summary Releases the two sub-objects at +0x40/+0x48 via virtual slot 0x78, destroys the string at +0x1c, then runs its destructor.
+// @field Unknown +0x1c std::string_vector field_0x1c
+// @field Unknown +0x40 void* field_0x40
+// @field Unknown +0x44 int32_t field_0x44
+// @field Unknown +0x48 void* field_0x48
+// @field Unknown +0x4c int32_t field_0x4c
+
+extern void ext_004026E0(void* this_ptr);
+extern uint32_t mem_00924FF4;
+
+void fn_00660C10(void* this_ptr) {
+    char* self = static_cast<char*>(this_ptr);
+
+    // Sub-object at +0x48: if flag at +0x4c is set, invoke virtual slot 0x78 on its inner object.
+    if (*reinterpret_cast<int32_t*>(self + 0x4c) != 0) {
+        void* sub = self + 0x48;
+        void* inner = *reinterpret_cast<void**>(static_cast<char*>(sub) + 0x4);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        using VFn = void (*)(void*, void*);
+        reinterpret_cast<VFn>(vtbl[0x78 / 4])(inner, sub);
+    }
+
+    // Sub-object at +0x40: if flag at +0x44 is set, invoke virtual slot 0x78 on its inner object.
+    if (*reinterpret_cast<int32_t*>(self + 0x44) != 0) {
+        void* sub = self + 0x40;
+        void* inner = *reinterpret_cast<void**>(static_cast<char*>(sub) + 0x4);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        using VFn = void (*)(void*, void*);
+        reinterpret_cast<VFn>(vtbl[0x78 / 4])(inner, sub);
+    }
+
+    ext_004026E0(self + 0x1c);
+
+    // Destructor of the object at this (dispatched through the import slot).
+    using DtorFn = void (*)(void*);
+    DtorFn dtor = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(self);
+}
+} // namespace lift_00660C10
