@@ -14,7 +14,7 @@ struct ExprParser_WriteMethodType_Fields {
     // +0x4   void* subObject (holder sub-object pointer; its vtable is used for slots +0x08 and +0x70)  (evidence: 0x005A2C40, 0x005B7BC0, 0x00627720, 0x0062B380, 0x00649150, 0x006492B0, 0x0064EC00, 0x00650DB0, 0x00650E50, 0x0068BC90) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    expr  (evidence: 0x005B7BC0, 0x00604C70, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x005F3A70, 0x005F3CF0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x04  (evidence: 0x00489580, 0x005B7BC0, 0x00607AD0, 0x00629F70, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x00489580, 0x005B7BC0, 0x00607AD0, 0x00629F70, 0x00649150, 0x006492B0, 0x0064C200, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (value-source object; vtable slot 1 = sample, slot 28 = get-value-ref)  (evidence: 0x005B7BC0, 0x0062B170, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x005B7BC0, 0x005F36B0, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 staticObjectPtr  (evidence: 0x006077D0) // CONFLICT: multiple definitions at +0x4

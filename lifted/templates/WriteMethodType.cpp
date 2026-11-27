@@ -7374,3 +7374,29 @@ void fn_0064C300(void* holder) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B5585C));
 }
 } // namespace lift_0064C300
+
+// [0x0064C200] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisZ(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_0064C200 {
+// Callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = &mem_00B5584C, one stack arg; calls ext_00672000 on self, then stores the arg into the first DWORD of self; returns that value).
+extern uint32_t ext_0067A670(void* self, uint32_t value);
+// Guard byte/flag word for the one-time initialization of the static at mem_00B5584C.
+extern uint32_t mem_00B55850;
+// Static object slot; first DWORD receives the vtable pointer 0x0097F5A4 after first-time init.
+extern uint32_t mem_00B5584C;
+
+// @name WriteMethodType<RelationshipRPROMagnet, float>::vfunc_40
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisZ(float), 0}>
+// @summary One-time guarded init of static slot mem_00B5584C (via ext_0067A670), then binds self+0x04 to that slot's address.
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_0064C200(void* self) {
+    const uint32_t slotAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B5584C));
+
+    if ((mem_00B55850 & 1u) == 0) {
+        mem_00B55850 |= 1u;
+        ext_0067A670(&mem_00B5584C, 0);
+        mem_00B5584C = 0x0097F5A4u;
+    }
+
+    lift_field<uint32_t>(self, 0x04) = slotAddr;
+}
+} // namespace lift_0064C200
