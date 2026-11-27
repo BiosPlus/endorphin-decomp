@@ -137,3 +137,26 @@ void* fn_00532720(void* self, void* out) {
     return out;
 }
 } // namespace lift_00532720
+
+// [0x00532700] HasCustomBufferedTMPtr::vfunc_1 (31 bytes)
+namespace lift_00532700 {
+// Known callee 0x00661B50: sub_00661B50 (Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index)
+extern void* ext_00661B50(void* this_ptr, uint32_t index, uint32_t arg);
+// Known callee 0x004F9950: Unknown::copyVec3WithZeroW_004F9950 (Copies three floats from self+0x30..0x38 to out[0..2] and sets out[3] = 0.0f (Vec3 -> Vec4 with w = 0).)
+extern void ext_004F9950(void* self);
+
+// @name HasCustomBufferedTMPtr::vfunc_1
+// @class HasCustomBufferedTMPtr
+// @summary Forwards a stack argument through ext_00661B50 using self->field_0x4 as index and self->field_0x8 as the this pointer, then calls ext_004F9950 on the result; returns the stack argument.
+// @field HasCustomBufferedTMPtr +0x4 uint32_t field_0x4
+// @field HasCustomBufferedTMPtr +0x8 uint32_t field_0x8
+uint32_t __thiscall fn_00532700(void* self, uint32_t arg) {
+    const uint32_t index = lift_field<uint32_t>(self, 0x4);
+    const uint32_t thisVal = lift_field<uint32_t>(self, 0x8);
+
+    void* result = ext_00661B50(reinterpret_cast<void*>(static_cast<uintptr_t>(thisVal)), index, arg);
+    ext_004F9950(result);
+
+    return arg;
+}
+} // namespace lift_00532700

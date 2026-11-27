@@ -1,0 +1,28 @@
+{
+  "va": "0x00532700",
+  "size": 31,
+  "orig_symbol": "HasCustomBufferedTMPtr::vfunc_1",
+  "src_path": "src/classes/HasCustomBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp",
+  "name": "HasCustomBufferedTMPtr::vfunc_1",
+  "class": "HasCustomBufferedTMPtr",
+  "signature": "uint32_t __thiscall fn_00532700(void* self, uint32_t arg)",
+  "summary": "Forwards a stack argument through ext_00661B50 using self-\u003efield_0x4 as index and self-\u003efield_0x8 as the this pointer, then calls ext_004F9950 on the result; returns the stack argument.",
+  "fields": [
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    },
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:24Z"
+}

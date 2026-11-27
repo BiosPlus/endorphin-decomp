@@ -26394,6 +26394,13 @@
     "summary": "Fetches field_0x4 and field_0x8, resolves an element via ext_00661B50, then forwards it to the vtable slot at +0x10 of the argument object.",
     "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
   },
+  "0x00532700": {
+    "name": "HasCustomBufferedTMPtr::vfunc_1",
+    "class": "HasCustomBufferedTMPtr",
+    "signature": "uint32_t __thiscall fn_00532700(void* self, uint32_t arg)",
+    "summary": "Forwards a stack argument through ext_00661B50 using self-\u003efield_0x4 as index and self-\u003efield_0x8 as the this pointer, then calls ext_004F9950 on the result; returns the stack argument.",
+    "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
+  },
   "0x00532720": {
     "name": "HasCustomBufferedTMPtr::vfunc_3",
     "class": "HasCustomBufferedTMPtr",
