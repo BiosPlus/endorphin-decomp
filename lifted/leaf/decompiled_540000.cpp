@@ -1854,3 +1854,49 @@ void fn_0054F210(void* self, uint8_t** out, uint8_t* arg2, uint8_t* arg3, uint8_
     out[1] = arg5;
 }
 } // namespace lift_0054F210
+
+// [0x0054F300] sub_0054F300 (104 bytes)
+namespace lift_0054F300 {
+// Known callee 0x0054F210: Unknown::CopyRangeAndDestroyTail_0054F210 (Guards two checked iterator args, copies [srcBegin, this->end) to dest via ext_0054F0D0, destroys the stale tail elements (virtual dtor with flag 0) and updates this->end; returns the pair {checked first, srcBegin} (or {arg2, arg3} when no copy is needed).)
+extern void ext_0054F210(void* self, uint8_t** out, uint8_t* arg2, uint8_t* arg3, uint8_t* arg4, uint8_t* arg5);
+// Known callee 0x00669E40: setFloat4FromStack (Copies four float arguments into the first 16 bytes of self (ret 0x10, callee-cleans 4 floats).)
+extern void ext_00669E40(void* self, float a0, float a1, float a2, float a3);
+// CRT invalid-parameter handler slot (IAT entry for _invalid_parameter_noinfo).
+extern int mem_00925134;
+
+// @name Unknown::InitStateAndCopyTail_0054F300
+// @class Unknown
+// @summary Sets the state flags, stores the float4 {0,0,0,1} at self+0x04, then runs the checked iterator guard and tail copy via ext_0054F210 on the iterator at self+0x18.
+// @field Unknown +0x14 uint8_t flag14
+// @field Unknown +0x15 uint8_t flag15
+// @field Unknown +0x16 uint8_t flag16
+// @field Unknown +0x04 float float4Value
+// @field Unknown +0x1C uint8_t* iterBegin
+// @field Unknown +0x20 uint8_t* iterEnd
+void fn_0054F300(void* self) {
+    // Flags are stored before the float4 write; both happen before the callee.
+    lift_field<uint8_t>(self, 0x14) = 1;
+    lift_field<uint8_t>(self, 0x15) = 0;
+    lift_field<uint8_t>(self, 0x16) = 0;
+
+    // setFloat4FromStack(self + 4, 0.0f, 0.0f, 0.0f, 1.0f)
+    ext_00669E40(static_cast<uint8_t*>(self) + 0x04, 0.0f, 0.0f, 0.0f, 1.0f);
+
+    uint8_t* const iter = static_cast<uint8_t*>(self) + 0x18;
+    uint8_t* const end = lift_field<uint8_t*>(self, 0x20);
+    uint8_t* const begin = lift_field<uint8_t*>(self, 0x1C);
+
+    // Checked-iterator guard: begin must not exceed end (two identical checks in the original).
+    // On failure the CRT invalid-parameter handler is invoked and execution continues.
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(end)) {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    }
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(end)) {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    }
+
+    // Pair result is not consumed by this function; pass a scratch out-slot.
+    uint8_t* out[2] = {nullptr, nullptr};
+    ext_0054F210(iter, out, iter, begin, iter, end);
+}
+} // namespace lift_0054F300
