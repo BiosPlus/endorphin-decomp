@@ -2454,3 +2454,26 @@ extern void* fn_00681EA0(void* out, DWORD* in) {
     return out;
 }
 } // namespace lift_00681E50
+
+// [0x00682150] sub_00682150 (126 bytes)
+namespace lift_00682150 {
+extern void ext_00695440(void* self);
+extern DWORD ext_005111E0(void* self, DWORD* count);
+extern DWORD mem_00B5AC90;
+extern int mem_00B5A2B8;
+
+// @name GuardedInitAndDecrementForward
+// @summary Runs a one-time guarded initializer (ext_00695440) on the global at mem_00B5A2B8 when bit 0 of mem_00B5AC90 is clear, then returns 0 if count is zero or otherwise forwards count-1 (by pointer) to ext_005111E0.
+// @field Unknown +0x00 DWORD guard_flags (global mem_00B5AC90; bit 0 = initialized)
+DWORD fn_00682150(DWORD count) {
+    if ((mem_00B5AC90 & 1u) == 0) {
+        mem_00B5AC90 |= 1u;
+        ext_00695440(&mem_00B5A2B8);
+    }
+    if (count == 0) {
+        return 0;
+    }
+    count -= 1;
+    return ext_005111E0(&mem_00B5A2B8, &count);
+}
+} // namespace lift_00682150

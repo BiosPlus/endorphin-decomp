@@ -1,0 +1,21 @@
+{
+  "va": "0x00682150",
+  "size": 126,
+  "orig_symbol": "sub_00682150",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "GuardedInitAndDecrementForward",
+  "signature": "DWORD fn_00682150(DWORD count)",
+  "summary": "Runs a one-time guarded initializer (ext_00695440) on the global at mem_00B5A2B8 when bit 0 of mem_00B5AC90 is clear, then returns 0 if count is zero or otherwise forwards count-1 (by pointer) to ext_005111E0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD guard_flags (global mem_00B5AC90; bit 0 =",
+      "name": "initialized)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:03:43Z"
+}
