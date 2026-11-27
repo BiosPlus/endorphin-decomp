@@ -2553,3 +2553,34 @@ extern void __fastcall fn_00464CC0(void* self) {
     ext_006A624A(self);
 }
 } // namespace lift_00464CC0
+
+// [0x0046AC40] sub_0046AC40 (52 bytes)
+namespace lift_0046AC40 {
+// @name sub_0046AC40
+// @summary Auto-lifted identical-shape clone of 0x00493970 (ResetPtrFieldsAfterDispatch).
+namespace lift_00493970 {
+// Stack-argument layout of the call at 0x00493986 (ecx = self is passed as the leading argument here).
+extern void ext_0046A810(void* self, void* out, DWORD value, void* self2, void* ptr);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(DWORD arg);
+
+// @name ResetPtrFieldsAfterDispatch
+// @class Unknown
+// @summary Passes self's +0x4 pointer and its dereferenced value to ext_004935F0, forwards the +0x4 value to ext_006A5C5C, then zeroes self+0x4 and self+0x8.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+void fn_0046AC40(void* self) {
+    DWORD local[2] = {0, 0};
+    DWORD* fields = reinterpret_cast<DWORD*>(self);
+    DWORD* ptr = reinterpret_cast<DWORD*>(fields[1]);
+    DWORD value = *ptr;
+
+    ext_0046A810(self, local, value, self, reinterpret_cast<void*>(ptr));
+
+    ext_006A5C5C(fields[1]);
+
+    fields[1] = 0;
+    fields[2] = 0;
+}
+} // namespace lift_00493970
+} // namespace lift_0046AC40

@@ -8,7 +8,7 @@
 // Recovered field layout for Properties::PointainerVectorType:
 namespace lifted_layout {
 struct Properties_PointainerVectorType_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x0049EDF0)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0049EDF0)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0049EDF0, 0x004B52F0, 0x0050B780, 0x0050B8C0, 0x00517820, 0x00527DD0, 0x0060AF60)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0049EDF0, 0x004B52F0, 0x0050B780, 0x0050B8C0, 0x00517820, 0x00527DD0, 0x0060AF60)
 };
 } // namespace lifted_layout

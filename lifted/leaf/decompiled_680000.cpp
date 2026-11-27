@@ -97,8 +97,10 @@ int32_t fn_00682E20(void* self) {
 } // namespace lift_00682E20
 #include <stdexcept>
 #include <utility>
+#include <iostream>
+#include <streambuf>
 
-// [0x0068BC00] sub_0068BC00 (36 bytes)
+#include <streambuf>
 namespace lift_0068BC00 {
 extern DWORD ext_005111E0(void* self, DWORD* count);
 
@@ -3242,3 +3244,51 @@ uint32_t* fn_0068F700(void* self, uint32_t* out, uint32_t key) {
 }
 } // namespace lift_00476430
 } // namespace lift_0068F700
+
+// [0x00686630] sub_00686630 (102 bytes)
+namespace lift_00686630 {
+// @name sub_00686630
+// @summary Auto-lifted identical-shape clone of 0x0060F3B0 (sub_0060F3B0).
+namespace lift_0060F3B0 {
+// @name sub_0060F3B0
+// @summary Auto-lifted identical-shape clone of 0x00501140 (ValidatedCursorAdvance_00501140).
+namespace lift_00501140 {
+extern void ext_00686030(void* self, DWORD* out, DWORD arg);
+extern void (*mem_00925134)();
+
+// @name ValidatedCursorAdvance_00501140
+// @class Unknown
+// @summary Calls ext_00500DA0 to fetch an (owner, cursor) pair, validates the range at self+0x04/+0x08 and the owner, and returns cursor+0x1C (or null when cursor == end). Invalid states call mem_00925134 and continue.
+// @field self +0x04 DWORD field_0x04
+// @field self +0x08 DWORD field_0x08
+void* fn_00686630(void* self, DWORD arg) {
+    DWORD pair[2] = {0, 0}; // pair[0] = owner, pair[1] = cursor
+    ext_00686030(self, pair, arg);
+
+    const DWORD begin = lift_field<DWORD>(self, 0x04);
+    const DWORD end = lift_field<DWORD>(self, 0x08);
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    const DWORD owner = pair[0];
+    const DWORD self_bits = static_cast<DWORD>(reinterpret_cast<uintptr_t>(self));
+    if (owner == 0 || owner != self_bits) {
+        mem_00925134();
+    }
+
+    const DWORD cursor = pair[1];
+    if (cursor == end) {
+        return nullptr;
+    }
+
+    if (owner == 0 ||
+        cursor >= lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(owner)), 0x08)) {
+        mem_00925134();
+    }
+
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(cursor + 0x4));
+}
+} // namespace lift_00501140
+} // namespace lift_0060F3B0
+} // namespace lift_00686630

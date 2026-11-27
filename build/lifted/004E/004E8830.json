@@ -1,0 +1,22 @@
+{
+  "va": "0x004E8830",
+  "size": 24,
+  "orig_symbol": "SelectionBuffer::vfunc_14",
+  "src_path": "src/classes/SelectionBuffer.cpp",
+  "lifted_path": "lifted/classes/SelectionBuffer.cpp",
+  "name": "SelectionBuffer::vfunc_14",
+  "class": "SelectionBuffer",
+  "signature": "int32_t fn_004E8830(void* self, void* a1)",
+  "summary": "Auto-lifted identical-shape clone of 0x004E8810 (SelectionBuffer::vfunc_13).",
+  "fields": [
+    {
+      "class": "SelectionBuffer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:23:01Z"
+}

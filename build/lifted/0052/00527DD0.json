@@ -1,0 +1,28 @@
+{
+  "va": "0x00527DD0",
+  "size": 100,
+  "orig_symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::VariableValue\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_10",
+  "src_path": "src/templates/PointainerVectorType.cpp",
+  "lifted_path": "lifted/templates/PointainerVectorType.cpp",
+  "name": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::VariableValue\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_10",
+  "class": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::VariableValue\u003e\u003e, Properties::GetPropertySource\u003e",
+  "signature": "static inline void* lift_ptr(uint32_t v)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049EDF0 (PointainerVectorType::vfunc_10).",
+  "fields": [
+    {
+      "class": "Properties::PointainerVectorType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Properties::PointainerVectorType",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:23:01Z"
+}

@@ -1,0 +1,28 @@
+{
+  "va": "0x0046AC40",
+  "size": 52,
+  "orig_symbol": "sub_0046AC40",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_0046AC40",
+  "class": "Unknown",
+  "signature": "void fn_0046AC40(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00493970 (ResetPtrFieldsAfterDispatch).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:23:01Z"
+}

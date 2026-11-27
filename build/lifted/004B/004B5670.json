@@ -1,0 +1,28 @@
+{
+  "va": "0x004B5670",
+  "size": 88,
+  "orig_symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_9",
+  "src_path": "src/templates/PointainerVectorType.cpp",
+  "lifted_path": "lifted/templates/PointainerVectorType.cpp",
+  "name": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_9",
+  "class": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e, Properties::GetTerminalParent\u003e",
+  "signature": "uint32_t __stdcall fn_004B5670(uint32_t a1, void* a2, uint32_t a3, void* a4, uint32_t a5, void* a6)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049F4E0 (Properties::PointainerVectorType::vfunc_9).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:23:01Z"
+}

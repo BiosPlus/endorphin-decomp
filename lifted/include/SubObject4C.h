@@ -8,6 +8,6 @@
 // Recovered field layout for SubObject4C:
 namespace lifted_layout {
 struct SubObject4C_Fields {
-    // +0x4C  void*                    field_0x4C  (evidence: 0x006622F0)
+    // +0x4C  void*                    field_0x4C  (evidence: 0x006622F0, 0x00662400, 0x00662420)
 };
 } // namespace lifted_layout

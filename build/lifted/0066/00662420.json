@@ -1,0 +1,22 @@
+{
+  "va": "0x00662420",
+  "size": 24,
+  "orig_symbol": "sub_00662420",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_00662420",
+  "class": "SubObject4C",
+  "signature": "void fn_00662420(void* self, DWORD arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x006622F0 (SubObject4C::forwardValue).",
+  "fields": [
+    {
+      "class": "SubObject4C",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "field_0x4C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:23:01Z"
+}

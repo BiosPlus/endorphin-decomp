@@ -4685,3 +4685,70 @@ void fn_006622F0(void* self, DWORD arg) {
     ext_00451670(static_cast<char*>(self) + 0x4C, &value);
 }
 } // namespace lift_006622F0
+
+// [0x00662400] sub_00662400 (24 bytes)
+namespace lift_00662400 {
+// @name sub_00662400
+// @summary Auto-lifted identical-shape clone of 0x006622F0 (SubObject4C::forwardValue).
+namespace lift_006622F0 {
+extern void ext_005A6300(void* self, DWORD* value);
+
+// @name SubObject4C::forwardValue
+// @class SubObject4C
+// @summary Forwards a DWORD argument by pointer to sub_00451670 on the this+0x4C sub-object.
+// @field SubObject4C +0x4C void* field_0x4C
+void fn_00662400(void* self, DWORD arg) {
+    DWORD value = arg;
+    ext_005A6300(static_cast<char*>(self) + 0x24, &value);
+}
+} // namespace lift_006622F0
+} // namespace lift_00662400
+
+// [0x00662420] sub_00662420 (24 bytes)
+namespace lift_00662420 {
+// @name sub_00662420
+// @summary Auto-lifted identical-shape clone of 0x006622F0 (SubObject4C::forwardValue).
+namespace lift_006622F0 {
+extern void ext_005A6300(void* self, DWORD* value);
+
+// @name SubObject4C::forwardValue
+// @class SubObject4C
+// @summary Forwards a DWORD argument by pointer to sub_00451670 on the this+0x4C sub-object.
+// @field SubObject4C +0x4C void* field_0x4C
+void fn_00662420(void* self, DWORD arg) {
+    DWORD value = arg;
+    ext_005A6300(static_cast<char*>(self) + 0x4C, &value);
+}
+} // namespace lift_006622F0
+} // namespace lift_00662420
+
+// [0x00667DD0] sub_00667DD0 (52 bytes)
+namespace lift_00667DD0 {
+// @name sub_00667DD0
+// @summary Auto-lifted identical-shape clone of 0x00493970 (ResetPtrFieldsAfterDispatch).
+namespace lift_00493970 {
+// Stack-argument layout of the call at 0x00493986 (ecx = self is passed as the leading argument here).
+extern void ext_00667C70(void* self, void* out, DWORD value, void* self2, void* ptr);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(DWORD arg);
+
+// @name ResetPtrFieldsAfterDispatch
+// @class Unknown
+// @summary Passes self's +0x4 pointer and its dereferenced value to ext_004935F0, forwards the +0x4 value to ext_006A5C5C, then zeroes self+0x4 and self+0x8.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+void fn_00667DD0(void* self) {
+    DWORD local[2] = {0, 0};
+    DWORD* fields = reinterpret_cast<DWORD*>(self);
+    DWORD* ptr = reinterpret_cast<DWORD*>(fields[1]);
+    DWORD value = *ptr;
+
+    ext_00667C70(self, local, value, self, reinterpret_cast<void*>(ptr));
+
+    ext_006A5C5C(fields[1]);
+
+    fields[1] = 0;
+    fields[2] = 0;
+}
+} // namespace lift_00493970
+} // namespace lift_00667DD0
