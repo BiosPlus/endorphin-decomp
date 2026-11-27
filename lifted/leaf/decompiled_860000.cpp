@@ -1269,3 +1269,59 @@ extern uint32_t sub_008685C0() {
 #endif
 }
 } // namespace lift_008685C0
+
+// [0x00865C00] sub_00865C00 (122 bytes)
+namespace lift_00865C00 {
+// @name mixPairWithTable12Rounds
+// @summary Runs 12 rounds of a rotate/xor/add mix over a (x,y) pair at arg1, reading 32-bit words from the table at arg2 (walking backward by 8 bytes per round), then subtracts the table's +0x04/+0x00 words from x/y and returns arg2.
+// @field Unknown +0x00 uint32_t field_0x00 (arg1 pair x; also arg2 table word, final subtract source for y)
+// @field Unknown +0x04 uint32_t field_0x04 (arg1 pair y; also arg2 table word, final subtract source for x)
+// @field Unknown +0x08 uint32_t field_0x08 (arg2 table word)
+// @field Unknown +0x0c uint32_t field_0x0c (arg2 table word)
+// @field Unknown +0x10 uint32_t field_0x10 (arg2 table word)
+// @field Unknown +0x14 uint32_t field_0x14 (arg2 table word)
+// @field Unknown +0x18 uint32_t field_0x18 (arg2 table word)
+// @field Unknown +0x1c uint32_t field_0x1c (arg2 table word)
+// @field Unknown +0x20 uint32_t field_0x20 (arg2 table word)
+// @field Unknown +0x24 uint32_t field_0x24 (arg2 table word)
+// @field Unknown +0x28 uint32_t field_0x28 (arg2 table word)
+// @field Unknown +0x2c uint32_t field_0x2c (arg2 table word)
+// @field Unknown +0x30 uint32_t field_0x30 (arg2 table word)
+// @field Unknown +0x34 uint32_t field_0x34 (arg2 table word)
+// @field Unknown +0x38 uint32_t field_0x38 (arg2 table word)
+// @field Unknown +0x3c uint32_t field_0x3c (arg2 table word)
+// @field Unknown +0x40 uint32_t field_0x40 (arg2 table word)
+// @field Unknown +0x44 uint32_t field_0x44 (arg2 table word)
+// @field Unknown +0x48 uint32_t field_0x48 (arg2 table word)
+// @field Unknown +0x4c uint32_t field_0x4c (arg2 table word)
+// @field Unknown +0x50 uint32_t field_0x50 (arg2 table word)
+// @field Unknown +0x54 uint32_t field_0x54 (arg2 table word)
+// @field Unknown +0x58 uint32_t field_0x58 (arg2 table word)
+// @field Unknown +0x5c uint32_t field_0x5c (arg2 table word)
+// @field Unknown +0x60 uint32_t field_0x60 (arg2 table word)
+// @field Unknown +0x64 uint32_t field_0x64 (arg2 table word, first round base)
+void* fn_00865C00(void* pair, void* table) {
+    // Round k (0..11): table base P_k = table + 0x64 - 8k.
+    // Original loop: ebp = [pair] - [P_k]; t = rotr(ebp, y>>7 & 31) ^ y; [pair] = t;
+    //                ebx = [P_k - 4] + y;  y' = rotr(ebx, (t>>4) & 31) ^ t; [pair+4] = y'.
+    for (int k = 0; k < 12; ++k) {
+        const ptrdiff_t p = 0x64 - 8 * static_cast<ptrdiff_t>(k);
+
+        const uint32_t y  = lift_field<uint32_t>(pair, 0x04);
+        const uint32_t s1 = (y >> 7) & 0x1Fu;
+        const uint32_t a  = lift_field<uint32_t>(pair, 0x00) - lift_field<uint32_t>(table, p);
+        const uint32_t t  = std::rotr(a, static_cast<int>(s1)) ^ y;
+        lift_field<uint32_t>(pair, 0x00) = t;
+
+        const uint32_t s2 = (t >> 4) & 0x1Fu;
+        const uint32_t b  = lift_field<uint32_t>(table, p - 4) + y;
+        const uint32_t ny = std::rotr(b, static_cast<int>(s2)) ^ t;
+        lift_field<uint32_t>(pair, 0x04) = ny;
+    }
+
+    // Final: [pair+0] -= [table+4]; [pair+4] -= [table+0]; return table in eax.
+    lift_field<uint32_t>(pair, 0x00) -= lift_field<uint32_t>(table, 0x04);
+    lift_field<uint32_t>(pair, 0x04) -= lift_field<uint32_t>(table, 0x00);
+    return table;
+}
+} // namespace lift_00865C00

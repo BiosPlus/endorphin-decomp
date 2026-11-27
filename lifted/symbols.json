@@ -79232,6 +79232,12 @@
     "summary": "Applies a 12-round 64-bit block cipher transform using a 26-word key schedule.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00865C00": {
+    "name": "mixPairWithTable12Rounds",
+    "signature": "void* fn_00865C00(void* pair, void* table)",
+    "summary": "Runs 12 rounds of a rotate/xor/add mix over a (x,y) pair at arg1, reading 32-bit words from the table at arg2 (walking backward by 8 bytes per round), then subtracts the table's +0x04/+0x00 words from x/y and returns arg2.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x008665CC": {
     "name": "DataBlock_008665CC",
     "signature": "const uint8_t* fn_008665CC()",
