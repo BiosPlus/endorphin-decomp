@@ -62837,3 +62837,36 @@ std::string* fn_00488870(std::string* out, void* holder) {
     return out;
 }
 } // namespace lift_00488870
+
+// [0x004F5B50] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>::vfunc_4 (76 bytes)
+namespace lift_004F5B50 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void* ext_0046C390(void* out, float value);
+// Callee 0x004F4DE0 (4 bytes, unnamed): reads the float getter result from the object (returned in ST0).
+extern float ext_004F4DE0(void* self);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// RTTI/ThrowInfo data referenced by the throw path (pushed as 0x009DEC1C).
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, getY, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>
+// @summary Reads the Y value of the MatrixWithProperties object held in the value pointer, formats it into the sret string, or throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_004F5B50(void* out, void* self) {
+    // Object pointer stored at offset 0 of the value-pointer object.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj == nullptr) {
+        // Build the DerivedException in a local buffer (frame is 0x2c bytes) and throw it.
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return out;
+    }
+    float value = ext_004F4DE0(obj);
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_004F5B50

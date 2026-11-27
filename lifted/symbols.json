@@ -19379,6 +19379,13 @@
     "summary": "Evaluates MatrixWithProperties::getY() on the dereferenced argument and returns true if \u003e= 1e-6, throwing if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F5B50": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, getY, 0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e",
+    "signature": "void* fn_004F5B50(void* out, void* self)",
+    "summary": "Reads the Y value of the MatrixWithProperties object held in the value pointer, formats it into the sret string, or throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F5BA0": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties\u003e::getY_vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e",
