@@ -105,3 +105,37 @@ void __fastcall fn_00552270(void* self) {
     ext_0063E048(fovy, aspect, zNear, zFar);
 }
 } // namespace lift_00552270
+
+// [0x005526A0] NMCamera::Perspective::vfunc_5 (124 bytes)
+namespace lift_005526A0 {
+// Known callee 0x005B11E0: ReadFloatArrayElement (thiscall, ret 4). Returns float element `index` of the array at this+0x10.
+extern float ext_005B11E0(void* self, int32_t index);
+// Known callee 0x005D0670: sub_005D06D0 (ecx = field_0xA0 value). Returns float.
+extern float ext_005D0670(uint32_t ecx);
+// .rdata double 25.4 (constant)
+extern double mem_009574F0;
+// global double used when field_0xA0 is null
+extern double mem_00AF7AC0;
+
+// @name NMCamera::Perspective::vfunc_5
+// @class NMCamera::Perspective
+// @summary Returns |value| of a float scaled by 25.4 and divided by a float-array-derived ratio; falls back to 2*arg*global when field_0xA0 is null.
+// @field NMCamera::Perspective +0xA0 uint32_t field_0xA0
+float fn_005526A0(void* self, const float* arg) {
+    const uint32_t a0 = lift_field<uint32_t>(self, 0xA0);
+
+    if (a0 != 0) {
+        // thiscall receiver for ext_005B11E0 is field_0xA0 + 0x210
+        void* elem_self = reinterpret_cast<void*>(static_cast<uintptr_t>(a0) + 0x210);
+        const float v1 = ext_005B11E0(elem_self, 2);
+
+        const double scaled = static_cast<double>(*arg) * static_cast<double>(v1) * mem_009574F0;
+        const float r = ext_005D0670(a0);
+        const double q = scaled / static_cast<double>(r);
+        return std::fabs(static_cast<float>(q));
+    }
+
+    const double doubled = static_cast<double>(*arg) + static_cast<double>(*arg);
+    return std::fabs(static_cast<float>(doubled * mem_00AF7AC0));
+}
+} // namespace lift_005526A0

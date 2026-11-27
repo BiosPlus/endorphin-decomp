@@ -1,0 +1,22 @@
+{
+  "va": "0x005526A0",
+  "size": 124,
+  "orig_symbol": "NMCamera::Perspective::vfunc_5",
+  "src_path": "src/NMCamera/Perspective.cpp",
+  "lifted_path": "lifted/NMCamera/Perspective.cpp",
+  "name": "NMCamera::Perspective::vfunc_5",
+  "class": "NMCamera::Perspective",
+  "signature": "float fn_005526A0(void* self, const float* arg)",
+  "summary": "Returns |value| of a float scaled by 25.4 and divided by a float-array-derived ratio; falls back to 2*arg*global when field_0xA0 is null.",
+  "fields": [
+    {
+      "class": "NMCamera::Perspective",
+      "offset": "+0xA0",
+      "type": "uint32_t",
+      "name": "field_0xA0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:50:49Z"
+}

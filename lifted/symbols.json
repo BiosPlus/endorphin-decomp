@@ -26778,6 +26778,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005478F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005526A0": {
+    "name": "NMCamera::Perspective::vfunc_5",
+    "class": "NMCamera::Perspective",
+    "signature": "float fn_005526A0(void* self, const float* arg)",
+    "summary": "Returns |value| of a float scaled by 25.4 and divided by a float-array-derived ratio; falls back to 2*arg*global when field_0xA0 is null.",
+    "lifted_path": "lifted/NMCamera/Perspective.cpp"
+  },
   "0x00552850": {
     "name": "sub_00552850",
     "signature": "extern \"C\" void __fastcall fn_00552850(void* self)",
