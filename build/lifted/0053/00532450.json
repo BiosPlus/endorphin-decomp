@@ -1,0 +1,22 @@
+{
+  "va": "0x00532450",
+  "size": 47,
+  "orig_symbol": "HasBufferedTMPtr::vfunc_13",
+  "src_path": "src/classes/HasBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp",
+  "name": "HasBufferedTMPtr::vfunc_13",
+  "class": "HasBufferedTMPtr",
+  "signature": "void fn_00532450(void* self)",
+  "summary": "Looks up element at self-\u003eindex via the wrapper in mem_00AEE8A8 and issues glTranslatef with its (x, y, z) at +0x30/+0x34/+0x38.",
+  "fields": [
+    {
+      "class": "HasBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "index"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:13Z"
+}
