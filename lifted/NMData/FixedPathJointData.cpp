@@ -1167,3 +1167,27 @@ void __fastcall fn_005E4900(void* self, std::uint32_t arg) {
     }
 }
 } // namespace lift_005E4900
+
+// [0x005EE290]
+namespace lift_005EE290 {
+// @name NMData::FixedPathJointData::vfunc_39
+// @class NMData::FixedPathJointData
+// @summary Prepares fixed path joint data, applies an update with one argument, and finalizes via sub_005EDA00.
+
+
+void __thiscall ext_005ED960(void* self);
+void __thiscall ext_005EBDD0(void* self, uint32_t arg);
+uint32_t __thiscall ext_005EDA00(void* self);
+void ext_005EB5A0();
+void ext_006404E0();
+extern uint32_t mem_00A9EF14;
+
+uint32_t __thiscall fn_005EE290(void* self, uint32_t arg) {
+    (void)ext_005EB5A0;
+    (void)ext_006404E0;
+    (void)mem_00A9EF14;
+    ext_005ED960(self);
+    ext_005EBDD0(self, arg);
+    return ext_005EDA00(self);
+}
+} // namespace lift_005EE290
