@@ -1,0 +1,22 @@
+{
+  "va": "0x00482490",
+  "size": 27,
+  "orig_symbol": "ToolEngine::vfunc_2",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_2",
+  "class": "ToolEngine",
+  "signature": "uint32_t __thiscall ToolEngine_vfunc_2(void* self, uint32_t arg0)",
+  "summary": "Forwards a pointer to the argument and subobject at +0x22C to ext_00451670.",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x22C",
+      "type": "uint8_t",
+      "name": "field_0x22C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:23:16Z"
+}

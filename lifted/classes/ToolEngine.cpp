@@ -336,3 +336,16 @@ void fn_00480F60(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_00480F60
+
+// [0x00482490]
+namespace lift_00482490 {
+extern uint32_t __thiscall ext_00451670(void* self, uint32_t* arg0);
+
+// @name ToolEngine::vfunc_2
+// @class ToolEngine
+// @summary Forwards a pointer to the argument and subobject at +0x22C to ext_00451670.
+// @field ToolEngine +0x22C uint8_t field_0x22C
+uint32_t __thiscall ToolEngine_vfunc_2(void* self, uint32_t arg0) {
+    return ext_00451670(static_cast<uint8_t*>(self) + 0x22C, &arg0);
+}
+} // namespace lift_00482490
