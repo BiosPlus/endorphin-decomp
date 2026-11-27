@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/NMData/CompoundSensorData.cpp
 #include "lift_compat.h"
 extern "C" void ext_00610730(void* a1, void* subobject);
+#include <string>
 
 // [0x006108F0] NMData::CompoundSensorData::vfunc_8 (37 bytes)
 // @name NMData::CompoundSensorData::vfunc_8
@@ -205,3 +206,62 @@ void fn_0060F6A0(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_0060F6A0
+
+// [0x0060EEB0] NMData::CompoundSensorData::vfunc_22 (304 bytes)
+namespace lift_0060EEB0 {
+// Known callees
+extern void* ext_006404E0(void* self, uint32_t arg);
+extern void ext_0060E590(void* self, void* arg);
+extern void* ext_00640110(void* self, uint32_t arg);
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+extern void ext_00427550(void* self, const char* name);
+// Known callee 0x0063F8D0: clearOwnedObjects (Deletes all non-null objects in the vector at +0x24 and clears it.)
+extern void ext_0063F8D0(void* self);
+// Known callee 0x00640270: Unknown::assignOrCreateChild (If this+0x34 holds a child, assigns name into child+0x24; otherwise allocates a 0x40-byte Unknown and attaches it.)
+extern void ext_00640270(void* self, void* name);
+
+extern uint32_t mem_00A9EDD8;
+extern uint32_t mem_00A9EFE8;
+extern uint32_t mem_00A9F7F4;
+extern uint32_t mem_00A9F268;
+// CRT/MSVCP import slots (c_str, string ctor/dtor, _invalid_parameter_noinfo); boilerplate only.
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00925134;
+
+// @name NMData::CompoundSensorData::vfunc_22
+// @class NMData::CompoundSensorData
+// @summary Rebuilds the child-name table: resolves the sensor's name objects, assigns the child name, and re-attaches each entry of the string vector at +0x184..+0x188 (stride 0x1C) as a named child.
+// @field CompoundSensorData +0x184 uint32_t field_0x184
+// @field CompoundSensorData +0x188 uint32_t field_0x188
+// @field CompoundSensorData +0x190 std::string field_0x190
+void fn_0060EEB0(void* self, void* arg) {
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+    (void)&mem_00925134;
+
+    void* r1 = ext_006404E0(arg, mem_00A9EDD8);
+    ext_0060E590(self, r1);
+    void* r2 = ext_006404E0(r1, mem_00A9EFE8);
+    void* r3 = ext_00640110(r1, mem_00A9F7F4);
+
+    std::string& base_name = lift_field<std::string>(self, 0x190);
+    ext_00427550(&r3, base_name.c_str());
+
+    const uint32_t begin = lift_field<uint32_t>(self, 0x184);
+    const uint32_t end = lift_field<uint32_t>(self, 0x188);
+
+    for (uint32_t it = begin; it != end; it += 0x1C) {
+        void* elem = reinterpret_cast<void*>(static_cast<uintptr_t>(it));
+        void* owner = ext_006404E0(r2, mem_00A9F268);
+        const char* name = lift_field<std::string>(elem, 0).c_str();
+
+        ext_0063F8D0(owner);
+
+        std::string tmp(name);
+        ext_00640270(owner, &tmp);
+    }
+}
+} // namespace lift_0060EEB0

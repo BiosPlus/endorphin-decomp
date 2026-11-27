@@ -1,0 +1,34 @@
+{
+  "va": "0x0060EEB0",
+  "size": 304,
+  "orig_symbol": "NMData::CompoundSensorData::vfunc_22",
+  "src_path": "src/NMData/CompoundSensorData.cpp",
+  "lifted_path": "lifted/NMData/CompoundSensorData.cpp",
+  "name": "NMData::CompoundSensorData::vfunc_22",
+  "class": "NMData::CompoundSensorData",
+  "signature": "void fn_0060EEB0(void* self, void* arg)",
+  "summary": "Rebuilds the child-name table: resolves the sensor's name objects, assigns the child name, and re-attaches each entry of the string vector at +0x184..+0x188 (stride 0x1C) as a named child.",
+  "fields": [
+    {
+      "class": "CompoundSensorData",
+      "offset": "+0x184",
+      "type": "uint32_t",
+      "name": "field_0x184"
+    },
+    {
+      "class": "CompoundSensorData",
+      "offset": "+0x188",
+      "type": "uint32_t",
+      "name": "field_0x188"
+    },
+    {
+      "class": "CompoundSensorData",
+      "offset": "+0x190",
+      "type": "std::string",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:12:18Z"
+}
