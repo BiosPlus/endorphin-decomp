@@ -24,6 +24,7 @@ uint32_t fn_00648480(void* self) {
 #include <cstdint>
 #include <cstring>
 #include <stdexcept>
+#include <cmath>
 
 // [0x00647F00] sub_00647F00 (18 bytes)
 namespace lift_00647F00 {
@@ -2449,3 +2450,33 @@ uint8_t fn_0064B900(void* self, float value) {
     return result;
 }
 } // namespace lift_0064B900
+
+// [0x0064E630]
+namespace lift_0064E630 {
+extern double mem_009802F0;
+
+// @name clampVectorMagnitude
+// @summary Clamps a 3D float vector's magnitude to 0.99 * vtable[0x4c] limit
+// @field Self +0x00 void** vtable
+void __thiscall fn_0064E630(void* self, float* vec) {
+    using GetLimitFn = void(__thiscall*)(void*, float*);
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto getLimit = reinterpret_cast<GetLimitFn>(vtable[0x4c / sizeof(void*)]);
+
+    float rawLimit = 0.0f;
+    getLimit(self, &rawLimit);
+
+    float limit = static_cast<float>(static_cast<double>(rawLimit) * mem_009802F0);
+    float len = static_cast<float>(std::sqrt(
+        static_cast<double>(vec[0]) * vec[0] +
+        static_cast<double>(vec[1]) * vec[1] +
+        static_cast<double>(vec[2]) * vec[2]));
+
+    if (limit < len) {
+        float scale = limit / len;
+        vec[0] *= scale;
+        vec[1] *= scale;
+        vec[2] *= scale;
+    }
+}
+} // namespace lift_0064E630
