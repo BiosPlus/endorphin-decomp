@@ -85110,6 +85110,12 @@
     "summary": "If *slot is unset, allocates a 0x1C-byte block into it, zeroes the leading dwords and seeds two flag bytes from 0x009996FC; caches index 2 or 1 via ext_007AA510 when slot is NULL, gated by byte 0x00B61219.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B2CA0": {
+    "name": "StoreDwordThroughSlotGated",
+    "signature": "void fn_007B2CA0(void** slot, DWORD value)",
+    "summary": "Ensures slot is allocated via AllocBlock1C_CacheOnNull, then writes value as a DWORD through *slot when gate bytes allow it.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B2D80": {
     "name": "sub_007B2D80",
     "signature": "static uint32_t search_tree(uint32_t node, uint32_t key)",

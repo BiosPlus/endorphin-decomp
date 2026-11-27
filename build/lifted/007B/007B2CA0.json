@@ -1,0 +1,13 @@
+{
+  "va": "0x007B2CA0",
+  "size": 48,
+  "orig_symbol": "sub_007B2CA0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "StoreDwordThroughSlotGated",
+  "signature": "void fn_007B2CA0(void** slot, DWORD value)",
+  "summary": "Ensures slot is allocated via AllocBlock1C_CacheOnNull, then writes value as a DWORD through *slot when gate bytes allow it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:15:40Z"
+}

@@ -2428,3 +2428,20 @@ extern void fn_007B7D90(void* arg) {
     }
 }
 } // namespace lift_007B7D90
+
+// [0x007B2CA0] sub_007B2CA0 (48 bytes)
+namespace lift_007B2CA0 {
+// Known callee 0x007B2C20: AllocBlock1C_CacheOnNull (If *slot is unset, allocates a 0x1C-byte block into it, zeroes the leading dwords and seeds two flag bytes from 0x009996FC; caches index 2 or 1 via ext_007AA510 when slot is NULL, gated by byte 0x00B61219.)
+extern void ext_007B2C20(void** slot);
+extern uint8_t mem_00B61218;
+extern uint8_t mem_00B61219;
+
+// @name StoreDwordThroughSlotGated
+// @summary Ensures slot is allocated via AllocBlock1C_CacheOnNull, then writes value as a DWORD through *slot when gate bytes allow it.
+void fn_007B2CA0(void** slot, DWORD value) {
+    ext_007B2C20(slot);
+    if (mem_00B61218 == 0 || mem_00B61219 != 0) {
+        *reinterpret_cast<DWORD*>(*slot) = value;
+    }
+}
+} // namespace lift_007B2CA0
