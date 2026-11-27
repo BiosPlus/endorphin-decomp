@@ -10490,3 +10490,32 @@ void __stdcall fn_004EA2B0(void* arg) {
     *reinterpret_cast<DWORD*>(static_cast<char*>(arg) + 0x4) = 0x00AE712Cu;
 }
 } // namespace lift_004EA2B0
+
+// [0x004EA450] ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setProjectRootEnabled(bool)>::vfunc_40 (122 bytes)
+namespace lift_004EA450 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AE7138;
+extern int mem_00AE7134;
+
+// @name ReadWriteMethodType<PoseToolOptions,bool>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setProjectRootEnabled(bool)>
+// @summary One-time guarded init of the static ValuePtr singleton at mem_00AE7134 (vtable 0x0094B76c), then publishes its address into the stack-arg object's +0x04 slot.
+// @field ValuePtrType +0x04 void* field_0x04
+void fn_004EA450(void* obj) {
+    // Guard bit 0 of mem_00AE7138 is the one-time-initialization flag.
+    uint32_t* guard = reinterpret_cast<uint32_t*>(&mem_00AE7138);
+    uint32_t* singleton_slot = reinterpret_cast<uint32_t*>(&mem_00AE7134);
+    uint32_t singleton_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE7134));
+
+    if ((*guard & 1u) == 0) {
+        *guard |= 1u;
+        (void)ext_0067A670(singleton_slot, 0u);
+        *singleton_slot = 0x0094B76Cu;
+    }
+
+    // Publish the singleton address into obj+0x04 (both paths).
+    uint32_t* obj_field4 = reinterpret_cast<uint32_t*>(static_cast<unsigned char*>(obj) + 0x04);
+    *obj_field4 = singleton_addr;
+}
+} // namespace lift_004EA450

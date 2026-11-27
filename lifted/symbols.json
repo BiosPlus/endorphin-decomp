@@ -18458,6 +18458,13 @@
     "summary": "Reads the bool from the argument's sub-object via vtable slot 3, stores it at obj+0x09, then triggers the global dispatch; throws if the value pointer is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004EA450": {
+    "name": "ReadWriteMethodType\u003cPoseToolOptions,bool\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setProjectRootEnabled(bool)\u003e",
+    "signature": "void fn_004EA450(void* obj)",
+    "summary": "One-time guarded init of the static ValuePtr singleton at mem_00AE7134 (vtable 0x0094B76c), then publishes its address into the stack-arg object's +0x04 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004EA4D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isProjectRootEnabled, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",

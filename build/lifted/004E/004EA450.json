@@ -1,0 +1,22 @@
+{
+  "va": "0x004EA450",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setProjectRootEnabled(bool)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType\u003cPoseToolOptions,bool\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setProjectRootEnabled(bool)\u003e",
+  "signature": "void fn_004EA450(void* obj)",
+  "summary": "One-time guarded init of the static ValuePtr singleton at mem_00AE7134 (vtable 0x0094B76c), then publishes its address into the stack-arg object's +0x04 slot.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:20:26Z"
+}
