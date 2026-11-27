@@ -125,8 +125,10 @@ BOOLEAN fn_00480280(void* self) {
     return (diff >> 2) == 0 ? 1 : 0;
 }
 } // namespace lift_00480280
+#include <cstdio>
+#include <memory>
 
-// [0x004805A0] sub_004805A0 (40 bytes)
+#include <memory>
 namespace lift_004805A0 {
 extern void ext_004AF850(void* self_plus_8, uint32_t arg);
 
@@ -3952,3 +3954,64 @@ void fn_0048BF20(void* self, const char* arg) {
     str_dtor(str);
 }
 } // namespace lift_0048BF20
+
+// [0x0048AC00] sub_0048AC00 (117 bytes)
+namespace lift_0048AC00 {
+// @name sub_0048AC00
+// @summary Auto-lifted identical-shape clone of 0x00402730 (Tree::assignFrom).
+namespace lift_00402730 {
+// Known callee 0x00402500: Tree::cloneSubtree (Recursively clones a red-black tree subtree (non-nil nodes) into newly allocated nodes, linking child pointers; on unwind erases the partial clone and rethrows.)
+extern void* ext_0048A8F0(void* self, void* rec, void* arg1);
+
+// Node layout: +0x00 left, +0x08 right, +0x15 isnil.
+static inline bool tree_node_isnil(const void* node) {
+    return lift_field<uint8_t>(node, 0x69) != 0;
+}
+
+// @name Tree::assignFrom
+// @class Tree
+// @summary Replaces this tree's root with a deep clone of the source tree's root, re-establishes the header's leftmost/rightmost links, and copies the source's +0x08 word.
+// @field Tree +0x04 void* head
+// @field Tree +0x08 void* field_0x08
+void fn_0048AC00(void* self, void* arg1) {
+    void* const dstHead = lift_field<void*>(self, 0x04);
+    void* const srcHead = lift_field<void*>(arg1, 0x04);
+    void* const srcRoot = lift_field<void*>(srcHead, 0x04);
+
+    // Clone the source subtree under the destination header.
+    void* const clonedRoot = ext_0048A8F0(self, srcRoot, dstHead);
+    lift_field<void*>(dstHead, 0x04) = clonedRoot;
+
+    lift_field<void*>(self, 0x08) = lift_field<void*>(arg1, 0x08);
+
+    void* const newRoot = lift_field<void*>(dstHead, 0x04);
+    if (tree_node_isnil(newRoot)) {
+        lift_field<void*>(dstHead, 0x00) = dstHead;
+        lift_field<void*>(dstHead, 0x08) = dstHead;
+        return;
+    }
+
+    // Leftmost search (literal translation of the original nil-skipping loop).
+    void* p = newRoot;
+    void* q = lift_field<void*>(p, 0x00);
+    if (tree_node_isnil(q)) {
+        do {
+            p = q;
+            q = lift_field<void*>(p, 0x00);
+        } while (tree_node_isnil(q));
+    }
+    lift_field<void*>(dstHead, 0x00) = p;
+
+    // Rightmost search (literal translation of the original nil-skipping loop).
+    void* c = newRoot;
+    void* r = lift_field<void*>(c, 0x08);
+    if (tree_node_isnil(r)) {
+        do {
+            c = r;
+            r = lift_field<void*>(c, 0x08);
+        } while (tree_node_isnil(r));
+    }
+    lift_field<void*>(dstHead, 0x08) = c;
+}
+} // namespace lift_00402730
+} // namespace lift_0048AC00

@@ -3206,3 +3206,45 @@ extern void __thiscall fn_00709F90(
     vfn38(self, 0, 0x15, self, arg0, nullptr, 0);
 }
 } // namespace lift_00709F90
+
+// [0x0070C350] sub_0070C350 (32 bytes)
+namespace lift_0070C350 {
+// @name sub_0070C350
+// @summary Auto-lifted identical-shape clone of 0x006C1AF0 (sub_006C1AF0).
+namespace lift_006C1AF0 {
+// @name sub_006C1AF0
+// @summary Auto-lifted identical-shape clone of 0x0079DB50 (ThunkCallVirtualSlot4OverArray).
+namespace lift_0079DB50 {
+// Known callee 0x007857A0: callVirtualSlot4OverArray (Walks a uint32 array and calls virtual slot 4 on this for each element, alternating which return values are kept; returns the final flag (initially true).)
+extern uint8_t ext_0070BE00(void* self, const uint32_t* values);
+
+// @name ThunkCallVirtualSlot4OverArray
+// @class (none; free function)
+// @summary Forwards its two stack arguments to callVirtualSlot4OverArray (ext_007857A0) and returns that flag unchanged.
+uint8_t __stdcall fn_0070C350(void* self, const uint32_t* values) {
+    return ext_0070BE00(self, values);
+}
+} // namespace lift_0079DB50
+} // namespace lift_006C1AF0
+} // namespace lift_0070C350
+
+// [0x0070C380] sub_0070C380 (32 bytes)
+namespace lift_0070C380 {
+// @name sub_0070C380
+// @summary Auto-lifted identical-shape clone of 0x006C1AF0 (sub_006C1AF0).
+namespace lift_006C1AF0 {
+// @name sub_006C1AF0
+// @summary Auto-lifted identical-shape clone of 0x0079DB50 (ThunkCallVirtualSlot4OverArray).
+namespace lift_0079DB50 {
+// Known callee 0x007857A0: callVirtualSlot4OverArray (Walks a uint32 array and calls virtual slot 4 on this for each element, alternating which return values are kept; returns the final flag (initially true).)
+extern uint8_t ext_0070BEA0(void* self, const uint32_t* values);
+
+// @name ThunkCallVirtualSlot4OverArray
+// @class (none; free function)
+// @summary Forwards its two stack arguments to callVirtualSlot4OverArray (ext_007857A0) and returns that flag unchanged.
+uint8_t __stdcall fn_0070C380(void* self, const uint32_t* values) {
+    return ext_0070BEA0(self, values);
+}
+} // namespace lift_0079DB50
+} // namespace lift_006C1AF0
+} // namespace lift_0070C380

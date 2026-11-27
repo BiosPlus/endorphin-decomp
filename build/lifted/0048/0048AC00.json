@@ -1,0 +1,28 @@
+{
+  "va": "0x0048AC00",
+  "size": 117,
+  "orig_symbol": "sub_0048AC00",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "sub_0048AC00",
+  "class": "Tree",
+  "signature": "static inline bool tree_node_isnil(const void* node)",
+  "summary": "Auto-lifted identical-shape clone of 0x00402730 (Tree::assignFrom).",
+  "fields": [
+    {
+      "class": "Tree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "Tree",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:31:47Z"
+}

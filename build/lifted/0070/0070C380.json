@@ -1,0 +1,14 @@
+{
+  "va": "0x0070C380",
+  "size": 32,
+  "orig_symbol": "sub_0070C380",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_0070C380",
+  "class": "(none; free function)",
+  "signature": "uint8_t __stdcall fn_0070C380(void* self, const uint32_t* values)",
+  "summary": "Auto-lifted identical-shape clone of 0x006C1AF0 (sub_006C1AF0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:31:47Z"
+}
