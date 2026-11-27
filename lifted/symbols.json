@@ -29846,6 +29846,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00576E50": {
+    "name": "FillConstructRecordRangeWithRollback",
+    "signature": "void fn_00576E50(void* begin, std::uint32_t count, const void* other)",
+    "summary": "Copy-constructs `count` 0x54-byte records from `other` into consecutive slots starting at `begin` (null slots are skipped but still advanced); on exception destroys the records already built and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005774B0": {
     "name": "Vector20::back",
     "class": "Vector20",

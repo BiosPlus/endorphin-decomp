@@ -2187,3 +2187,40 @@ void fn_0057CAC0(uint8_t* begin, uint32_t count, const void* src) {
     }
 }
 } // namespace lift_0057CAC0
+
+// [0x00576E50] sub_00576E50 (141 bytes)
+namespace lift_00576E50 {
+// Known callee 0x00553F00: ThreeStringsCopyCtor (Copy-constructs a struct containing three std::string fields at +0x00, +0x1c, and +0x38)
+extern void* ext_00553F00(void* self, const void* other);
+// Known callee 0x00663060: sub_00663060_dtor (Destroys three std::string members at offsets +0x38, +0x1c, and +0x00)
+extern void ext_00663060(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// The original pushes two null arguments before the call (rethrow of the current exception).
+extern void ext_006A6DD2(void* exception_object, void* throw_info);
+
+// @name FillConstructRecordRangeWithRollback
+// @summary Copy-constructs `count` 0x54-byte records from `other` into consecutive slots starting at `begin` (null slots are skipped but still advanced); on exception destroys the records already built and rethrows.
+void fn_00576E50(void* begin, std::uint32_t count, const void* other) {
+    constexpr std::size_t kRecordSize = 0x54;
+
+    auto* const first = static_cast<std::uint8_t*>(begin);
+    std::uint8_t* dst = first;
+
+    try {
+        while (count != 0) {
+            --count;
+            if (dst != nullptr) {
+                ext_00553F00(dst, other);
+            }
+            dst += kRecordSize;
+        }
+    } catch (...) {
+        // Unwind: destroy every record constructed so far (the slot whose construction failed is not included).
+        for (std::uint8_t* p = first; p != dst; p += kRecordSize) {
+            ext_00663060(p);
+        }
+        ext_006A6DD2(nullptr, nullptr);
+        throw;
+    }
+}
+} // namespace lift_00576E50
