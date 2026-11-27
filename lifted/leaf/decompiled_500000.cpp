@@ -3048,3 +3048,35 @@ void* fn_00503D30(void* self, void* src) {
     return self;
 }
 } // namespace lift_00503D30
+
+// [0x00503B20]
+namespace lift_00503B20 {
+// @name uninitialized_fill_n_string_pair
+// @summary Uninitialized-fills N 32-byte (std::string + u32) elements, destroying constructed elements on exception
+// @field Element +0x00 std::string str
+// @field Element +0x1C uint32_t field_0x1C
+
+
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+extern void ext_006A6DD2(uint32_t pExceptionObject, uint32_t pThrowInfo);
+
+void fn_00503B20(uint8_t* dst, uint32_t count, const uint8_t* src) {
+    uint8_t* first = dst;
+    uint8_t* cur = dst;
+    try {
+        for (uint32_t i = count; i > 0; --i) {
+            if (cur != nullptr) {
+                reinterpret_cast<void(__thiscall*)(void*, const void*)>(mem_00924FE0)(cur, src);
+                *reinterpret_cast<uint32_t*>(cur + 0x1C) = *reinterpret_cast<const uint32_t*>(src + 0x1C);
+            }
+            cur += 0x20;
+        }
+    } catch (...) {
+        for (uint8_t* p = first; p != cur; p += 0x20) {
+            reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(p);
+        }
+        ext_006A6DD2(0, 0);
+    }
+}
+} // namespace lift_00503B20
