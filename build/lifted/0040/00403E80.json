@@ -1,0 +1,22 @@
+{
+  "va": "0x00403E80",
+  "size": 144,
+  "orig_symbol": "sub_00403E80",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "AviRecorder::setStreamFormat",
+  "class": "AviRecorder",
+  "signature": "void __thiscall fn_00403E80(void* self, const void* lpFormat)",
+  "summary": "Sets the AVI stream format for the stream handle at +0x500, releasing AVI handles and throwing an exception on failure.",
+  "fields": [
+    {
+      "class": "AviRecorder",
+      "offset": "+0x500",
+      "type": "void*",
+      "name": "aviStream"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:36:00Z"
+}

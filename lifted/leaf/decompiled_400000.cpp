@@ -2500,3 +2500,42 @@ void* fn_004023D0(void* first, void* last, void* dest) {
     return out;
 }
 } // namespace lift_004023D0
+
+// [0x00403E80]
+namespace lift_00403E80 {
+// @name AviRecorder::setStreamFormat
+// @class AviRecorder
+// @summary Sets the AVI stream format for the stream handle at +0x500, releasing AVI handles and throwing an exception on failure.
+// @field AviRecorder +0x500 void* aviStream
+
+extern void ext_00403290(void* self);
+extern void* ext_00403560(void* self, const void* src);
+extern int32_t ext_006A347E(void* pavi, int32_t lPos, const void* lpFormat, int32_t cbFormat);
+extern void ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+
+extern uint32_t mem_00924FE4;
+extern const char mem_00929710[];
+extern uint32_t mem_00928F28;
+extern uint8_t mem_009CE04C[];
+
+void __thiscall fn_00403E80(void* self, const void* lpFormat) {
+    uint32_t biSize = *reinterpret_cast<const uint32_t*>(lpFormat);
+    uint32_t biClrUsed = lift_field<uint32_t>(lpFormat, 0x20);
+    int32_t cbFormat = static_cast<int32_t>(biSize + 4 * biClrUsed);
+    void* pavi = lift_field<void*>(self, 0x500);
+
+    if (ext_006A347E(pavi, 0, lpFormat, cbFormat) != 0) {
+        ext_00403290(self);
+
+        uint8_t strBuf[0x1C]{};
+        using StrCtorFn = void(__thiscall*)(void*, const char*);
+        reinterpret_cast<StrCtorFn>(static_cast<uintptr_t>(mem_00924FE4))(strBuf, mem_00929710);
+
+        uint8_t excBuf[0x28]{};
+        ext_00403560(excBuf, strBuf);
+        *reinterpret_cast<uint32_t*>(excBuf) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00928F28));
+
+        ext_006A6DD2(excBuf, mem_009CE04C);
+    }
+}
+} // namespace lift_00403E80

@@ -477,6 +477,13 @@
     "summary": "Construct an exception-style object from a std::string: store c_str() as the exception message, set the vtable, and copy-construct the std::string member at +0x0C. Returns self.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00403E80": {
+    "name": "AviRecorder::setStreamFormat",
+    "class": "AviRecorder",
+    "signature": "void __thiscall fn_00403E80(void* self, const void* lpFormat)",
+    "summary": "Sets the AVI stream format for the stream handle at +0x500, releasing AVI handles and throwing an exception on failure.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00403F10": {
     "name": "VideoExporter::vfunc_0",
     "class": "VideoExporter",
@@ -1571,6 +1578,13 @@
     "class": "UnknownClass",
     "signature": "extern int mem_00924F9C;  // IAT slot: MSVCP80 basic_streambuf dtor (base-class tail jump) extern int mem_009242E4;  // IAT slot: KERNEL32!DeleteCriticalSection (stdcall) extern void __thiscall fn_00413990(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00413C40 (UnknownClass::teardown_00413C40).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
+  "0x00413AF0": {
+    "name": "WideStreambuf::WideStreambuf",
+    "class": "WideStreambuf",
+    "signature": "extern \"C\" void* __thiscall fn_00413AF0(void* self, uint32_t arg0)",
+    "summary": "Constructor for a custom wide-character streambuf with a 1024-byte buffer and critical section.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
   "0x00413C40": {
@@ -5159,6 +5173,12 @@
     "class": "Unknown",
     "signature": "void fn_00444750(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
     "summary": "Forwards three arguments to ext_004564A0, then, if the embedded object at self+0x15C is non-null and its +0x20 field is set, calls ext_006A5E4E with adjusted arguments.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x004461B0": {
+    "name": "traverseAndInvoke",
+    "signature": "void __thiscall fn_004461B0(void* this_ptr, void* node, uint32_t arg1)",
+    "summary": "Recursively traverses a node tree, calling vtable[0x20] on dynamic_cast-matched nodes",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x00446740": {
