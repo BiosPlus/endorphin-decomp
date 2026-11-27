@@ -6137,3 +6137,57 @@ void __cdecl fn_0043AB70(LiftStr0043AB70 name, uint32_t flag) {
     str_dtor(&name);
 }
 } // namespace lift_0043AB70
+
+// [0x0043AA10] sub_0043AA10 (211 bytes)
+namespace lift_0043AA10 {
+// Known callee 0x004142E0: constructs the thrown exception payload (at payload+4) from the global string and the message.
+extern void ext_004142E0(void* self, void* global, void* msg);
+// Known callee 0x004276B0: StdStringCopyConstruct (cdecl; copy-constructs a std::string at dst from src; returns dst).
+extern void* ext_004276B0(void* dst, const void* src);
+// Known callee 0x00434CA0: InitOnceGlobalString_00434CA0 (returns the address of the global string).
+extern void* ext_00434CA0();
+// Known callee 0x005CD120: Vector::InsertSortedUnique_005CD120 (thiscall; returns true if the string was inserted).
+extern bool ext_005CD120(void* self, const void* value);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to MSVCR80!_CxxThrowException; never returns).
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// MSVCP80 IAT slots: the original calls these through `call dword ptr [slot]`.
+extern void* mem_00924FE0; // std::string copy constructor (thiscall)
+extern void* mem_00924FF4; // std::string destructor (thiscall)
+
+// @name Vector::InsertSortedUniqueOrThrow_0043AA10
+// @class Vector
+// @summary Copies the std::string arg1 and inserts it into the sorted vector; if it is a duplicate and arg3 is set, throws an exception built from the key at *arg2 and the global string.
+bool fn_0043AA10(void* self, const void* arg1, const void* arg2, bool arg3) {
+    using StrCopyCtorFn = void (*)(void* self, const void* src);
+    using StrDtorFn = void (*)(void* self);
+
+    // Local std::string copy of arg1 (MSVCP80 copy constructor via IAT slot).
+    alignas(8) unsigned char tmp[0x20];
+    (*reinterpret_cast<StrCopyCtorFn*>(&mem_00924FE0))(tmp, arg1);
+
+    // Key dword read from *arg2 (kept in the exception payload slot).
+    alignas(4) unsigned char payload[0x20];
+    lift_field<uint32_t>(payload, 0) = *static_cast<const uint32_t*>(arg2);
+
+    bool inserted = ext_005CD120(self, tmp);
+
+    (*reinterpret_cast<StrDtorFn*>(&mem_00924FF4))(tmp);
+
+    if (inserted) {
+        return true;
+    }
+    if (!arg3) {
+        return false;
+    }
+
+    // Duplicate with arg3 set: build a message string and throw.
+    alignas(8) unsigned char msg[0x20];
+    ext_004276B0(msg, arg1);
+    void* global = ext_00434CA0();
+    ext_004142E0(payload + 4, global, msg);
+    ext_006A6DD2(payload, reinterpret_cast<const void*>(uintptr_t{0x009D1278}));
+    // Unreachable: _CxxThrowException does not return.
+    return false;
+}
+} // namespace lift_0043AA10

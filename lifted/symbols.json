@@ -4805,6 +4805,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005CD120 (Vector::InsertSortedUnique_005CD120).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043AA10": {
+    "name": "Vector::InsertSortedUniqueOrThrow_0043AA10",
+    "class": "Vector",
+    "signature": "extern \"C\" void* mem_00924FE0; // std::string copy constructor (thiscall) extern \"C\" void* mem_00924FF4; // std::string destructor (thiscall) bool fn_0043AA10(void* self, const void* arg1, const void* arg2, bool arg3)",
+    "summary": "Copies the std::string arg1 and inserts it into the sorted vector; if it is a duplicate and arg3 is set, throws an exception built from the key at *arg2 and the global string.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043AAF0": {
     "name": "GetConstant_0043AAF0",
     "signature": "extern \"C\" const unsigned int* __cdecl fn_0043AAF0()",

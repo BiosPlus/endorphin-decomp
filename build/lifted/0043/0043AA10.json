@@ -1,0 +1,14 @@
+{
+  "va": "0x0043AA10",
+  "size": 211,
+  "orig_symbol": "sub_0043AA10",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Vector::InsertSortedUniqueOrThrow_0043AA10",
+  "class": "Vector",
+  "signature": "extern \"C\" void* mem_00924FE0; // std::string copy constructor (thiscall) extern \"C\" void* mem_00924FF4; // std::string destructor (thiscall) bool fn_0043AA10(void* self, const void* arg1, const void* arg2, bool arg3)",
+  "summary": "Copies the std::string arg1 and inserts it into the sorted vector; if it is a duplicate and arg3 is set, throws an exception built from the key at *arg2 and the global string.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:42:11Z"
+}
