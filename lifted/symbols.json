@@ -74376,6 +74376,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0070B040 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070B0C0": {
+    "name": "Unknown::initAssignCStringWrapper_0070B0C0",
+    "class": "Unknown",
+    "signature": "void* fn_0070B0C0(void* self)",
+    "summary": "Calls initAssignCString_006B9D80 on the object with the constant string at mem_00B5D2C0 and returns the object pointer.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070BB60": {
     "name": "sub_0070BB60",
     "class": "Unknown",

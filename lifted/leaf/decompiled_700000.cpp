@@ -2917,3 +2917,18 @@ void* fn_00700FA0(void* self) {
     return self;
 }
 } // namespace lift_00700FA0
+
+// [0x0070B0C0] sub_0070B0C0 (33 bytes)
+namespace lift_0070B0C0 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+extern int mem_00B5D2C0;
+
+// @name Unknown::initAssignCStringWrapper_0070B0C0
+// @class Unknown
+// @summary Calls initAssignCString_006B9D80 on the object with the constant string at mem_00B5D2C0 and returns the object pointer.
+void* fn_0070B0C0(void* self) {
+    ext_006B9D80(self, reinterpret_cast<const char*>(&mem_00B5D2C0));
+    return self;
+}
+} // namespace lift_0070B0C0
