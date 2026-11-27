@@ -2141,3 +2141,40 @@ uint8_t fn_006E9500(void* self, uint32_t value) {
     return 1;
 }
 } // namespace lift_006E9500
+
+// [0x006E9BB0] sub_006E9BB0 (128 bytes)
+namespace lift_006E9BB0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762, operator new).
+extern void ext_006A5C62();
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (zero-inits the object, assigns the C string, returns this).
+extern void ext_006B9D80();
+// Known callee 0x006D2170: DynamicArray::InsertAt(self=ecx, index, elem) (__thiscall, index and elem on the stack).
+extern void ext_006D2170();
+
+namespace lift_006E9BB0 {
+using NewFn = void* (*)(size_t);
+using InitCStrFn = void* (*)(void* self, const char* s);
+using InsertAtFn = int32_t (*)(void* self, int32_t index, const void* elem);
+} // namespace lift_006E9BB0
+
+// @name Unknown::allocInitAndAppend_006E9BB0
+// @class Unknown
+// @summary Allocates a 0x4C-byte object, initializes it from the C string argument, and appends the resulting pointer (NULL if allocation failed) to the DynamicArray at +0x0C.
+// @field Unknown +0x0C int32_t field_0x0c
+void fn_006E9BB0(void* self, const char* s) {
+    using namespace lift_006E9BB0;
+
+    // The original SEH frame (fs:[0] push/pop) has no portable equivalent and is dropped.
+    void* obj = reinterpret_cast<NewFn>(ext_006A5C62)(0x4C);
+
+    void* result = nullptr;
+    if (obj != nullptr) {
+        result = reinterpret_cast<InitCStrFn>(ext_006B9D80)(obj, s);
+    }
+
+    // The original passes ecx = this+0x0C as the array's self, index = its current value, elem = &result.
+    void* array = static_cast<uint8_t*>(self) + 0x0C;
+    const int32_t index = lift_field<int32_t>(self, 0x0C);
+    reinterpret_cast<InsertAtFn>(ext_006D2170)(array, index, &result);
+}
+} // namespace lift_006E9BB0

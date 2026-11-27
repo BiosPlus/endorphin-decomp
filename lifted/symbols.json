@@ -70295,6 +70295,13 @@
     "summary": "Looks up an item by key 0x00AA8D80 on the object from ext_006C9360(a1), invokes vtable+0x10 if found, and calls ext_00732CB0(a1).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E9BB0": {
+    "name": "Unknown::allocInitAndAppend_006E9BB0",
+    "class": "Unknown",
+    "signature": "void fn_006E9BB0(void* self, const char* s)",
+    "summary": "Allocates a 0x4C-byte object, initializes it from the C string argument, and appends the resulting pointer (NULL if allocation failed) to the DynamicArray at +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E9C30": {
     "name": "Class::getItemValue",
     "class": "Class",
