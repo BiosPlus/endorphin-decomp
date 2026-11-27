@@ -77884,6 +77884,13 @@
     "summary": "Evaluates three operand tokens (arg3, arg2, arg1 in that order) through their sub-object vtable slot 1, packs them as floats {arg1, arg2, arg3}, and passes the array to arg1's sub-object vtable slot 11.",
     "lifted_path": "lifted/ExprParser/Operators/VectorConstructor.cpp"
   },
+  "0x006A0E20": {
+    "name": "ExprParser::Operators::AssignAdd::vfunc_3",
+    "class": "ExprParser::Operators::AssignAdd",
+    "signature": "inline R vcall(void* obj, std::size_t offset, A... args)",
+    "summary": "Assign-add step: if the rhs object reports type 0xF, copy the pair from self, call its vslot 0xAC with rhs, then release it; otherwise run the fallback path. Finishes with the guarded self-assignment copy.",
+    "lifted_path": "lifted/ExprParser/Operators/AssignAdd.cpp"
+  },
   "0x006A1240": {
     "name": "ExprParser::Operators::Modulus::vfunc_3",
     "class": "ExprParser::Operators::Modulus",

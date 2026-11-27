@@ -1,0 +1,22 @@
+{
+  "va": "0x006A0E20",
+  "size": 235,
+  "orig_symbol": "ExprParser::Operators::AssignAdd::vfunc_3",
+  "src_path": "src/ExprParser/Operators/AssignAdd.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/AssignAdd.cpp",
+  "name": "ExprParser::Operators::AssignAdd::vfunc_3",
+  "class": "ExprParser::Operators::AssignAdd",
+  "signature": "inline R vcall(void* obj, std::size_t offset, A... args)",
+  "summary": "Assign-add step: if the rhs object reports type 0xF, copy the pair from self, call its vslot 0xAC with rhs, then release it; otherwise run the fallback path. Finishes with the guarded self-assignment copy.",
+  "fields": [
+    {
+      "class": "AssignAdd",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:40:57Z"
+}
