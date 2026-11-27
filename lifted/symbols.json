@@ -18609,6 +18609,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00622380 (NMData::SkeletalCalibrationVariables::vfunc_28).",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004D01C0": {
+    "name": "InitTwoInlineArrays",
+    "class": "Unknown",
+    "signature": "void* fn_004D01C0(void* self)",
+    "summary": "Initializes an object's header fields, runs array init on the inline buffer at +0x18 (28-byte elements, 4 entries) and at +0x90 (84-byte elements, 7 entries), then returns self.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D0260": {
     "name": "sub_004D0260",
     "class": "unknown",

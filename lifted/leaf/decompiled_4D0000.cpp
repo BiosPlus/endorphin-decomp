@@ -833,3 +833,48 @@ extern void __thiscall fn_004D9BC0(void* self) {
     ext_00586A50(static_cast<uint8_t*>(self) + 0x10, 0x1000, 0);
 }
 } // namespace lift_004D9BC0
+
+// [0x004D01C0] sub_004D01C0 (155 bytes)
+namespace lift_004D01C0 {
+// Known callee 0x006A6C99: sub_006A6C99 (stdcall, 5 args; array/range initializer used twice here.)
+extern void ext_006A6C99(void* buf, uint32_t a2, uint32_t a3, void* a4, void* a5);
+// .rdata constants: ctor/dtor function pointers for the element type of the first array.
+extern int mem_00924FE8;
+extern int mem_00924FF4;
+
+// @name InitTwoInlineArrays
+// @class Unknown
+// @summary Initializes an object's header fields, runs array init on the inline buffer at +0x18 (28-byte elements, 4 entries) and at +0x90 (84-byte elements, 7 entries), then returns self.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+// @field Unknown +0x0C uint8_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint8_t field_0x18
+// @field Unknown +0x88 uint32_t field_0x88
+// @field Unknown +0x8C uint8_t field_0x8C
+// @field Unknown +0x8D uint8_t field_0x8D
+// @field Unknown +0x90 uint8_t field_0x90
+void* fn_004D01C0(void* self) {
+    lift_field<int32_t>(self, 0x00) = 1;
+    lift_field<int32_t>(self, 0x08) = 1;
+    lift_field<uint8_t>(self, 0x0C) = 1;
+    lift_field<int32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0x140;
+    lift_field<uint32_t>(self, 0x14) = 0xF0;
+
+    ext_006A6C99(&lift_field<uint8_t>(self, 0x18), 0x1C, 4,
+                 reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE8))),
+                 reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4))));
+
+    lift_field<uint8_t>(self, 0x8C) = 0;
+    lift_field<uint8_t>(self, 0x8D) = 0;
+    ext_006A6C99(&lift_field<uint8_t>(self, 0x90), 0x54, 7,
+                 reinterpret_cast<void*>(uintptr_t{0x4D0010}),
+                 reinterpret_cast<void*>(uintptr_t{0x504A70}));
+
+    lift_field<uint32_t>(self, 0x88) = 0;
+    return self;
+}
+} // namespace lift_004D01C0

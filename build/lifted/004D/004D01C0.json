@@ -1,0 +1,82 @@
+{
+  "va": "0x004D01C0",
+  "size": 155,
+  "orig_symbol": "sub_004D01C0",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "InitTwoInlineArrays",
+  "class": "Unknown",
+  "signature": "void* fn_004D01C0(void* self)",
+  "summary": "Initializes an object's header fields, runs array init on the inline buffer at +0x18 (28-byte elements, 4 entries) and at +0x90 (84-byte elements, 7 entries), then returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "uint32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "uint8_t",
+      "name": "field_0x8C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8D",
+      "type": "uint8_t",
+      "name": "field_0x8D"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "field_0x90"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:18:56Z"
+}
