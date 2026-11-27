@@ -22252,6 +22252,13 @@
     "summary": "Sift-up insertion into a 32-bit index array (heap-style parent=(i-1)/2), stopping at lo; stores val into the resulting slot.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00518A00": {
+    "name": "adjustIndexHeap",
+    "class": "(none)",
+    "signature": "void __cdecl fn_00518A00(uint32_t* base, int32_t hole, int32_t len, uint32_t value, void* ctx)",
+    "summary": "Floyd-style heap adjust over a uint32 index array: walks the larger child down from the hole to a leaf (ties go to the right child), then sifts value back up via heapSiftUpIndices.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00518A80": {
     "name": "siftDownIndexArray",
     "signature": "void fn_00518A80(uint32_t* base, int32_t i, int32_t hi, uint32_t val, void* ctx)",

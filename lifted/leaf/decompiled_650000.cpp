@@ -2162,3 +2162,38 @@ void fn_00518A80(uint32_t* base, int32_t i, int32_t hi, uint32_t val, void* ctx)
     ext_00518840(base, hole, i, val, ctx);
 }
 } // namespace lift_00518A80
+
+// [0x00518A00] sub_00518A00 (115 bytes)
+namespace lift_00518A00 {
+// Known callee 0x005187E0: heapSiftUpIndices (Sift-up of value into a max-style index heap: moves parents down while the comparator accepts, then stores value at the final hole.)
+extern void ext_005187E0(uint32_t* base, int32_t hole, int32_t top, uint32_t value, void* ctx);
+// Known callee 0x00518550: compareIndexedElementsGreater (Bounds-checks two indices (arg1, arg2) against the vector-like container reached through self->field_0x00, then returns 1 if the double at +0x20 of element[arg2] is greater than that of element[arg1] (NaN or unordered yields 0).)
+extern int __thiscall ext_00518550(void* self, uint32_t idxA, uint32_t idxB);
+
+// @name adjustIndexHeap
+// @class (none)
+// @summary Floyd-style heap adjust over a uint32 index array: walks the larger child down from the hole to a leaf (ties go to the right child), then sifts value back up via heapSiftUpIndices.
+void __cdecl fn_00518A00(uint32_t* base, int32_t hole, int32_t len, uint32_t value, void* ctx) {
+    const int32_t top = hole;
+    int32_t child = 2 * hole + 2;
+
+    while (child < len) {
+        // Comparator receives the address of the ctx parameter as self.
+        // Returns nonzero when left > right; then the left child is chosen.
+        if (ext_00518550(&ctx, base[child], base[child - 1]) != 0) {
+            child--;
+        }
+        base[hole] = base[child];
+        hole = child;
+        child = 2 * child + 2;
+    }
+
+    // Only a left child remains (its index is len - 1): move it up into the hole.
+    if (child == len) {
+        base[hole] = base[len - 1];
+        hole = len - 1;
+    }
+
+    ext_005187E0(base, hole, top, value, ctx);
+}
+} // namespace lift_00518A00

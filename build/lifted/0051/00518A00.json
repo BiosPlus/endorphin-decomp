@@ -1,0 +1,14 @@
+{
+  "va": "0x00518A00",
+  "size": 115,
+  "orig_symbol": "sub_00518A00",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "adjustIndexHeap",
+  "class": "(none)",
+  "signature": "void __cdecl fn_00518A00(uint32_t* base, int32_t hole, int32_t len, uint32_t value, void* ctx)",
+  "summary": "Floyd-style heap adjust over a uint32 index array: walks the larger child down from the hole to a leaf (ties go to the right child), then sifts value back up via heapSiftUpIndices.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:01:39Z"
+}
