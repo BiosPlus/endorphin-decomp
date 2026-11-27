@@ -33,7 +33,7 @@ struct Unknown_Fields {
     // +0x0   void*                    buffer  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (container header pointer, passed through to compareIndexedElementsGreater)  (evidence: 0x00518700) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   int32_t                  count  (evidence: 0x00783940) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int32_t                  count  (evidence: 0x00783940, 0x008635C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count  (evidence: 0x006D2300, 0x007B3120, 0x0085BEC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count_00  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t*                 data  (evidence: 0x0085BB40) // CONFLICT: multiple definitions at +0x0
@@ -102,6 +102,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 ptrToSrcPlus8  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr_0x00  (evidence: 0x006E86E0, 0x006E8790) // CONFLICT: multiple definitions at +0x0
     // +0x0   double field_0x00[] (indexed by arg, stride 8; element type inferred from fld qword)  (evidence: 0x0077FAE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint8_t                  records  (evidence: 0x008635C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 selector  (evidence: 0x007155B0, 0x0071A790) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    self  (evidence: 0x00493EE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (vtable pointer of self)  (evidence: 0x00711B00) // CONFLICT: multiple definitions at +0x0

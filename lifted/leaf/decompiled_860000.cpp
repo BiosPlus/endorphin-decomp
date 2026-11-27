@@ -1338,3 +1338,35 @@ void fn_0086B220(void* src, void* dst) {
     }
 }
 } // namespace lift_0086B220
+
+// [0x008635C0]
+namespace lift_008635C0 {
+// @name AppendUniqueRecord13
+// @summary Scan the 13-byte record table (count at mem_00AB9F38, records from mem_00AB9F40); if the 13-byte input matches an existing record return 0, otherwise copy it into the next slot, bump the count (capped at 99), and return 1.
+// @field Unknown +0x00 int32_t count
+// @field Unknown +0x00 uint8_t records
+
+extern int32_t mem_00AB9F38;
+extern uint8_t mem_00AB9F40[];
+
+extern int32_t ext_0085F7B0(const void* buf1, const void* buf2, uint32_t count);
+extern void ext_0085D530(uint8_t* dst, const uint8_t* src, uint32_t count);
+
+int32_t __cdecl sub_008635C0(const uint8_t* rec) {
+    const int32_t count = mem_00AB9F38;
+
+    for (int32_t i = 0; i < count; ++i) {
+        const uint8_t* entry = mem_00AB9F40 + i * 13;
+        if (ext_0085F7B0(rec, entry, 13) == 0) {
+            return 0;
+        }
+    }
+
+    ext_0085D530(mem_00AB9F40 + count * 13, rec, 13);
+
+    if (mem_00AB9F38 < 0x63) {
+        mem_00AB9F38 = mem_00AB9F38 + 1;
+    }
+    return 1;
+}
+} // namespace lift_008635C0

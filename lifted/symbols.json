@@ -81730,6 +81730,12 @@
     "summary": "Multi-byte alignment NOP padding (lea ecx, [ecx]; lea esp, [esp])",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008635C0": {
+    "name": "AppendUniqueRecord13",
+    "signature": "int32_t __cdecl sub_008635C0(const uint8_t* rec)",
+    "summary": "Scan the 13-byte record table (count at mem_00AB9F38, records from mem_00AB9F40); if the 13-byte input matches an existing record return 0, otherwise copy it into the next slot, bump the count (capped at 99), and return 1.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00864F30": {
     "name": "initStatusRecordAndClearGlobal",
     "signature": "uint32_t fn_00864F30(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint16_t* outRecord)",
