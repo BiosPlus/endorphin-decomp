@@ -3989,3 +3989,44 @@ void* fn_0041CDA0(void* dst) {
     return dst;
 }
 } // namespace lift_0041CDA0
+
+// [0x0041E4C0] sub_0041E4C0 (128 bytes)
+namespace lift_0041E4C0 {
+// Known callee 0x0041CDA0: ExprParser::GetTypeNameInto (Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.)
+extern void* ext_0041CDA0(void* dst);
+// Callee 0x0040ECB0 (166 bytes, unnamed): thiscall on global 0xB5962C with one stack argument.
+extern void ext_0040ECB0(void* self, void* arg);
+extern int mem_0092DF84;
+extern int mem_00B5962C;
+// IAT slot for MSVCP80 ~basic_string; the destructor is implicit below (metadata reference only).
+extern int mem_00924FF4;
+
+// @name ClassFactory<CompoundSensor>::ctor
+// @class ClassFactory<CompoundSensor>
+// @summary Installs the factory vtable, zeroes its state fields, then writes the type name of the global type object to the stream at 0xB5962C; returns this.
+// @field ClassFactory<CompoundSensor> +0x00 uint32_t vptr
+// @field ClassFactory<CompoundSensor> +0x08 uint32_t field_0x08
+// @field ClassFactory<CompoundSensor> +0x0c uint32_t field_0x0c
+// @field ClassFactory<CompoundSensor> +0x10 uint32_t field_0x10
+// @field ClassFactory<CompoundSensor> +0x18 uint32_t field_0x18
+// @field ClassFactory<CompoundSensor> +0x1c uint32_t field_0x1c
+// @field ClassFactory<CompoundSensor> +0x20 uint32_t field_0x20
+void* fn_0041E4C0(void* self) {
+    // Vtable pointer: the original stores the immediate VA of the vtable (mem_0092DF84).
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0092DF84));
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1c) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Temporary std::string filled by GetTypeNameInto; destroyed automatically at scope exit.
+    std::string name;
+    void* text = ext_0041CDA0(&name);
+    ext_0040ECB0(&mem_00B5962C, text);
+    (void)&mem_00924FF4;
+
+    return self;
+}
+} // namespace lift_0041E4C0

@@ -2761,6 +2761,13 @@
     "summary": "Constructor-like init: sets vptr to 0x92df58, zeroes members, sets a byte flag, calls ext_0041DCF0(this), returns this.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041E4C0": {
+    "name": "ClassFactory\u003cCompoundSensor\u003e::ctor",
+    "class": "ClassFactory\u003cCompoundSensor\u003e",
+    "signature": "void* fn_0041E4C0(void* self)",
+    "summary": "Installs the factory vtable, zeroes its state fields, then writes the type name of the global type object to the stream at 0xB5962C; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041FC60": {
     "name": "HotkeyDialog::vfunc_0",
     "class": "HotkeyDialog",
