@@ -1,0 +1,33 @@
+{
+  "va": "0x00859B30",
+  "size": 128,
+  "orig_symbol": "sub_00859B30",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "MatchNodeTreeWalk",
+  "signature": "static inline uint8_t* lift_ptr(uint32_t addr)",
+  "summary": "Walks a sibling/child node tree matching a -1-terminated int32 key sequence; on each full match invokes cb (if set) and counts matches. Returns the total match count (0 if the key is empty or a prefix node has no child).",
+  "fields": [
+    {
+      "class": "MatchNode",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "key"
+    },
+    {
+      "class": "MatchNode",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "next_sibling"
+    },
+    {
+      "class": "MatchNode",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "first_child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:16:40Z"
+}

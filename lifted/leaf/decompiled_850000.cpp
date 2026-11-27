@@ -1629,3 +1629,62 @@ uint32_t fn_0085BB40(uint32_t value, void* outer) {
     return value & 0xFF;
 }
 } // namespace lift_0085BB40
+
+// [0x00859B30] sub_00859B30 (128 bytes)
+namespace lift_00859B30 {
+// Self-recursive call in the original asm (ext_00859B30 == sub_00859B30); the lifted body calls fn_00859B30 directly.
+extern void ext_00859B30();
+
+// Callback invoked on each full key match: cb(node, ctx). Nonzero return stops the walk.
+typedef int32_t (*MatchCallback)(uint8_t* node, uint8_t* ctx);
+
+// Converts a 32-bit guest address stored in a node field into a host pointer.
+static inline uint8_t* lift_ptr(uint32_t addr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
+}
+
+// @name MatchNodeTreeWalk
+// @summary Walks a sibling/child node tree matching a -1-terminated int32 key sequence; on each full match invokes cb (if set) and counts matches. Returns the total match count (0 if the key is empty or a prefix node has no child).
+// @field MatchNode +0x00 int32_t key
+// @field MatchNode +0x1C uint32_t next_sibling
+// @field MatchNode +0x20 uint32_t first_child
+int32_t fn_00859B30(uint8_t* node, const int32_t* key, uint32_t continueSiblings,
+                    MatchCallback cb, uint8_t* ctx) {
+    if (*key == -1) {
+        return 0;
+    }
+
+    const int32_t* const keyStart = key;
+    int32_t total = 0;
+    uint8_t* n = node;
+
+    for (;;) {
+        if (*key == lift_field<int32_t>(n, 0x00)) {
+            if (key[1] == -1) {
+                // Full key matched at this node.
+                ++total;
+                if (cb != nullptr && cb(n, ctx) != 0) {
+                    return total;
+                }
+            } else {
+                // Prefix matched; descend into children with the remaining key.
+                uint8_t* child = lift_ptr(lift_field<uint32_t>(n, 0x20));
+                if (child == nullptr) {
+                    return 0;
+                }
+                total += fn_00859B30(child, key + 1, continueSiblings, cb, ctx);
+            }
+
+            if (continueSiblings == 0) {
+                return total;
+            }
+            key = keyStart;
+        }
+
+        n = lift_ptr(lift_field<uint32_t>(n, 0x1C));
+        if (n == nullptr) {
+            return total;
+        }
+    }
+}
+} // namespace lift_00859B30

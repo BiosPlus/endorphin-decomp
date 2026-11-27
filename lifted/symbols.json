@@ -81320,6 +81320,12 @@
     "summary": "Recursively destroys a node's right/child (+0x20 if flag 0x20000000 set) and left/next (+0x1c) pointers, then frees the node.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00859B30": {
+    "name": "MatchNodeTreeWalk",
+    "signature": "static inline uint8_t* lift_ptr(uint32_t addr)",
+    "summary": "Walks a sibling/child node tree matching a -1-terminated int32 key sequence; on each full match invokes cb (if set) and counts matches. Returns the total match count (0 if the key is empty or a prefix node has no child).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859D30": {
     "name": "sub_00859D30",
     "signature": "uint32_t sub_00859D30(uint32_t arg0)",
