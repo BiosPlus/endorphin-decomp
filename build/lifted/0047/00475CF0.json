@@ -1,0 +1,22 @@
+{
+  "va": "0x00475CF0",
+  "size": 165,
+  "orig_symbol": "sub_00475CF0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "ProcessNamedString_00475CF0",
+  "class": "UnknownOwner",
+  "signature": "inline F importFn(int slot)",
+  "summary": "Lazily initializes a static global, builds a temporary string from the name argument, forwards it with this-\u003efield_0x00 to ext_00475960, then destroys the temporary.",
+  "fields": [
+    {
+      "class": "UnknownOwner",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:16:19Z"
+}

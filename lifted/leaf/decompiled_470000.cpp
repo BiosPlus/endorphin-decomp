@@ -1878,3 +1878,54 @@ void* fn_00479620(void* self, const void* arg0) {
     ext_006A6DD2(frame + 0x24, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009D3748u)));
 }
 } // namespace lift_00479620
+
+// [0x00475CF0] sub_00475CF0 (165 bytes)
+namespace lift_00475CF0 {
+extern void ext_00475960();
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00AD9050;
+extern int mem_00AD904C;
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+namespace {
+
+// MSVC thiscall (ECX = this, remaining args on stack). Defined as a no-op on non-MSVC hosts by lift_compat.h.
+using ThisFn0 = void(__thiscall*)(void* self);
+using ThisFn1 = void(__thiscall*)(void* self, const char* s);
+using ThisFn3 = void(__thiscall*)(void* self, void* a, void* b, int flag);
+
+// Resolve an imported function address stored in an IAT-style slot.
+template <typename F>
+inline F importFn(int slot) {
+    return reinterpret_cast<F>(static_cast<uintptr_t>(static_cast<uint32_t>(slot)));
+}
+
+} // namespace
+
+// @name ProcessNamedString_00475CF0
+// @class UnknownOwner
+// @summary Lazily initializes a static global, builds a temporary string from the name argument, forwards it with this->field_0x00 to ext_00475960, then destroys the temporary.
+// @field UnknownOwner +0x00 void* field_0x00
+void fn_00475CF0(void* self, const char* name) {
+    // SEH frame setup/teardown from the original prologue/epilogue is omitted (not portable).
+
+    // One-time initialization of the static object at mem_00AD904C.
+    if ((mem_00AD9050 & 1) == 0) {
+        mem_00AD9050 |= 1;
+        reinterpret_cast<ThisFn0>(ext_0067A670)(&mem_00AD904C);
+        mem_00AD904C = 0x93b95c;
+    }
+
+    // Temporary string object built from the name (MSVC std::string is 0x1C bytes).
+    alignas(8) unsigned char tmp[0x1c];
+    importFn<ThisFn1>(mem_00924FE4)(tmp, name);
+
+    void* out = nullptr;
+    void* obj = lift_field<void*>(self, 0);
+    reinterpret_cast<ThisFn3>(ext_00475960)(obj, tmp, &out, 1);
+
+    importFn<ThisFn0>(mem_00924FF4)(tmp);
+}
+} // namespace lift_00475CF0

@@ -10882,6 +10882,13 @@
     "summary": "One-time guarded init of a static object at 0xAD9044, then builds a temporary string from the argument and passes it to ext_00475960 with the holder's inner pointer.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475CF0": {
+    "name": "ProcessNamedString_00475CF0",
+    "class": "UnknownOwner",
+    "signature": "inline F importFn(int slot)",
+    "summary": "Lazily initializes a static global, builds a temporary string from the name argument, forwards it with this-\u003efield_0x00 to ext_00475960, then destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476430": {
     "name": "Unknown::lookupStringKeyedValue",
     "class": "Unknown",
