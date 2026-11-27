@@ -66336,6 +66336,13 @@
     "summary": "Sets vtable, destroys and frees non-null elements in embedded array at +0x04, then resets and destroys the array.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BB5D0": {
+    "name": "Unknown::initDefaultsAssignCString_006BB5D0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_006BB5D0(void* ecx)",
+    "summary": "Assigns the C string constant at 0x00B5D2C0 via the initAssignCString callee, then zeroes fields at +0x50, +0x54 and +0x58; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BB5F0": {
     "name": "Unknown::initCopyFields_006BB5F0",
     "class": "Unknown",

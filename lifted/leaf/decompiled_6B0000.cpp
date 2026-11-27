@@ -2838,3 +2838,24 @@ void* fn_006B9DA0(void* self, int value) {
     return self;
 }
 } // namespace lift_006B9DA0
+
+// [0x006BB5D0]
+namespace lift_006BB5D0 {
+extern void* ext_006B9D80(void* ecx, const char* s);
+extern const char mem_00B5D2C0[];
+
+// @name Unknown::initDefaultsAssignCString_006BB5D0
+// @class Unknown
+// @summary Assigns the C string constant at 0x00B5D2C0 via the initAssignCString callee, then zeroes fields at +0x50, +0x54 and +0x58; returns this.
+// @field Unknown +0x50 uint32_t field_0x50
+// @field Unknown +0x54 uint32_t field_0x54
+// @field Unknown +0x58 uint8_t field_0x58
+extern void* fn_006BB5D0(void* ecx) {
+    auto* self = static_cast<unsigned char*>(ecx);
+    ext_006B9D80(ecx, mem_00B5D2C0);
+    *reinterpret_cast<uint32_t*>(self + 0x50) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x54) = 0;
+    *reinterpret_cast<uint8_t*>(self + 0x58) = 0;
+    return ecx;
+}
+} // namespace lift_006BB5D0
