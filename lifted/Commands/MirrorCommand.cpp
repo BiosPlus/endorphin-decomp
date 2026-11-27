@@ -75,3 +75,60 @@ void fn_005AC560(void* self) {
     reinterpret_cast<NoArgFn>(vslot(grandchild, 0x8C))(grandchild);
 }
 } // namespace lift_005AC560
+
+// [0x005AC5C0] Commands::MirrorCommand::vfunc_2 (123 bytes)
+namespace lift_005AC5C0 {
+extern int mem_00B40640;
+
+// @name Commands::MirrorCommand::vfunc_2
+// @class Commands::MirrorCommand
+// @summary Copies a 64-byte block from this+0x68 into a buffer returned by the target's accessor, notifies the target's subobject, then chains virtual calls through target+0x94 and tail-dispatches target vfunc 0x8C.
+// @field Commands::MirrorCommand +0x14 void* target
+// @field Commands::MirrorCommand +0x28 uint8_t field_0x28
+// @field Commands::MirrorCommand +0x68 uint8_t field_0x68[64]
+
+namespace {
+
+using VFnSelf = void* (*)(void* self);
+using VFnNotify = void (*)(void* self, int arg0, void* arg1, int arg2);
+
+inline void* vtbl(void* obj) {
+    return *reinterpret_cast<void**>(obj);
+}
+
+// Reads the function pointer stored at byte offset `off` in obj's vtable
+// (32-bit layout, offsets as in the original asm).
+inline void* vslot(void* obj, ptrdiff_t off) {
+    return lift_field<void*>(vtbl(obj), off);
+}
+
+} // namespace
+
+void fn_005AC5C0(void* self) {
+    void* target = lift_field<void*>(self, 0x14);
+
+    // Embedded subobject at target+0x04 (its address is the `this` for these calls).
+    void* sub = static_cast<uint8_t*>(target) + 0x04;
+
+    // dst = sub->vfunc_2C(); memcpy(dst, self+0x68, 64);
+    void* dst = reinterpret_cast<VFnSelf>(vslot(sub, 0x2C))(sub);
+    std::memcpy(dst, static_cast<uint8_t*>(self) + 0x68, 0x10 * sizeof(uint32_t));
+
+    // sub->vfunc_0(2, self+0x28, mem_00B40640);
+    reinterpret_cast<VFnNotify>(vslot(sub, 0x00))(
+        sub, 2, static_cast<uint8_t*>(self) + 0x28, mem_00B40640);
+
+    // if (target->+0x94) { p->vfunc_8C(); if (p->+0x94) q->vfunc_8C(); }
+    void* p = lift_field<void*>(target, 0x94);
+    if (p != nullptr) {
+        reinterpret_cast<VFnSelf>(vslot(p, 0x8C))(p);
+        void* q = lift_field<void*>(p, 0x94);
+        if (q != nullptr) {
+            reinterpret_cast<VFnSelf>(vslot(q, 0x8C))(q);
+        }
+    }
+
+    // Tail call: return target->vfunc_8C();
+    reinterpret_cast<VFnSelf>(vslot(target, 0x8C))(target);
+}
+} // namespace lift_005AC5C0

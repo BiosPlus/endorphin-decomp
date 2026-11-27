@@ -12,7 +12,9 @@ namespace lifted_layout {
 struct Commands_MirrorCommand_Fields {
     // +0x0   void**                   vptr  (evidence: 0x005AC640)
     // +0x10  uint32_t                 field_0x10  (evidence: 0x005AC560)
-    // +0x14  void*                    target  (evidence: 0x005AC560)
+    // +0x14  void*                    target  (evidence: 0x005AC560, 0x005AC5C0)
     // +0x18  uint32_t                 field_0x18  (evidence: 0x005AC560)
+    // +0x28  uint8_t                  field_0x28  (evidence: 0x005AC5C0)
+    // +0x68  uint8_t                  field_0x68[64]  (evidence: 0x005AC5C0)
 };
 } // namespace lifted_layout
