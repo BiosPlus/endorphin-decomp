@@ -68948,6 +68948,12 @@
     "summary": "Scans 12 consecutive 32-byte records at 0x00B5D91C; returns the dword at record+0x00 for the first record whose dword at +0x04 equals the key and whose byte at +0x11 is nonzero, otherwise 6.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D98A0": {
+    "name": "findValueByKey",
+    "signature": "int32_t fn_006D98A0(int32_t key)",
+    "summary": "Scans a 12-entry table of 0x20-byte records for a matching key; returns the record's +0x08 value, or the address of mem_00B5D2C0 if no key matches.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D98D0": {
     "name": "sub_006D98D0",
     "signature": "extern \"C\" int32_t __cdecl fn_006D98D0(void)",

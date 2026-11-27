@@ -3197,3 +3197,33 @@ int32_t fn_006D2BD0(void* self, uint32_t* args) {
     return result;
 }
 } // namespace lift_006D2BD0
+
+// [0x006D98A0] sub_006D98A0 (48 bytes)
+namespace lift_006D98A0 {
+// @name findValueByKey
+// @summary Scans a 12-entry table of 0x20-byte records for a matching key; returns the record's +0x08 value, or the address of mem_00B5D2C0 if no key matches.
+// @field <ClassName> +0x00 <type> <fieldName>
+
+// Known callee 0x006D8A40 / 0x0077FAC0 are NOT called by these bytes; the
+// metadata lists them anyway. Only take their addresses (no runtime effect).
+extern void ext_006D8A40();
+extern void ext_0077FAC0();
+extern int mem_00B5D2C0;
+extern int mem_00B5D910;
+
+int32_t fn_006D98A0(int32_t key) {
+    (void)&ext_006D8A40;
+    (void)&ext_0077FAC0;
+    // Keys live at table+0x0C + i*0x20 (i = 0..11); values at table+0x08 + i*0x20.
+    const uint8_t* table = reinterpret_cast<const uint8_t*>(&mem_00B5D910);
+    for (uint32_t i = 0; i < 12; ++i) {
+        const uint8_t* rec = table + i * 0x20;
+        if (*reinterpret_cast<const int32_t*>(rec + 0x0C) == key) {
+            // Original code's trailing `je` can never be taken (ZF from the add
+            // is never set for i in [0,11]), so the value is always loaded here.
+            return *reinterpret_cast<const int32_t*>(rec + 0x08);
+        }
+    }
+    return static_cast<int32_t>(reinterpret_cast<uintptr_t>(&mem_00B5D2C0));
+}
+} // namespace lift_006D98A0
