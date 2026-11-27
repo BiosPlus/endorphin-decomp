@@ -3967,6 +3967,12 @@
     "summary": "Sift-up insertion of value into a heap of 32-bit element handles, using ext_004410C0 as the ordering key; stores value at the final hole.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043B5D0": {
+    "name": "fn_0043B5D0 (three-way conditional sort of object slots)",
+    "signature": "static void cswap_by_predicate(void** x, void** y)",
+    "summary": "Conditionally swaps three void* slots (a, b, c) using ext_004410C0 as a predicate: cswap(b,a), cswap(c,b), cswap(b,a), where cswap(x,y) swaps when ext_004410C0(*x) \u003e 1 and ext_004410C0(*y) \u003c= 1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043B6E0": {
     "name": "copy_dword_range",
     "signature": "extern \"C\" void* __cdecl sub_0043B6E0(const void* first, const void* last, void* dest)",

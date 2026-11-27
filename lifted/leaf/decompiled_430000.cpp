@@ -4060,3 +4060,27 @@ void fn_0043B450(void* self) {
     ext_0066A310(base + 0x74);
 }
 } // namespace lift_0043B450
+
+// [0x0043B5D0] sub_0043B5D0 (123 bytes)
+namespace lift_0043B5D0 {
+// Known callee 0x004410C0: descriptiveName: ext_004410C0 (difference of two rounded fields)
+int32_t ext_004410C0(void* self);
+
+// @name fn_0043B5D0 (three-way conditional sort of object slots)
+// @summary Conditionally swaps three void* slots (a, b, c) using ext_004410C0 as a predicate: cswap(b,a), cswap(c,b), cswap(b,a), where cswap(x,y) swaps when ext_004410C0(*x) > 1 and ext_004410C0(*y) <= 1.
+// @field none (no struct field accesses; only dereferences the three slot pointers)
+
+static void cswap_by_predicate(void** x, void** y) {
+    if (ext_004410C0(*x) > 1 && ext_004410C0(*y) <= 1) {
+        void* tmp = *x;
+        *x = *y;
+        *y = tmp;
+    }
+}
+
+void fn_0043B5D0(void** a, void** b, void** c) {
+    cswap_by_predicate(b, a);
+    cswap_by_predicate(c, b);
+    cswap_by_predicate(b, a);
+}
+} // namespace lift_0043B5D0
