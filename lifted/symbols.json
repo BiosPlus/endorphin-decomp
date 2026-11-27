@@ -13595,6 +13595,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00495AB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00496150": {
+    "name": "dynCastAndDispatchRange",
+    "class": "Unknown",
+    "signature": "static inline uint32_t addr32(const void* p)",
+    "summary": "Normalizes the range at self (+0x04..+0x08) via ext_00596660, sizes the pointer array in vec (+0x04..+0x08),",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00496CE0": {
     "name": "sub_00496CE0",
     "class": "ObjectWithChild",

@@ -1,0 +1,28 @@
+{
+  "va": "0x00496150",
+  "size": 194,
+  "orig_symbol": "sub_00496150",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "dynCastAndDispatchRange",
+  "class": "Unknown",
+  "signature": "static inline uint32_t addr32(const void* p)",
+  "summary": "Normalizes the range at self (+0x04..+0x08) via ext_00596660, sizes the pointer array in vec (+0x04..+0x08),",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:13:40Z"
+}

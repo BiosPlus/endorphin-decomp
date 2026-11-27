@@ -2658,3 +2658,90 @@ void** __thiscall fn_00496DF0(void* self, void** out, const char* s) {
     return out;
 }
 } // namespace lift_00496DF0
+
+// [0x00496150] sub_00496150 (194 bytes)
+namespace lift_00496150 {
+// Callees (thiscall: ecx = self, first stack arg = item/count).
+extern void __thiscall ext_0041A920(void* ecx, void** item);
+extern void __thiscall ext_0050ED40(void* ecx, int32_t count);
+// Known callee 0x00596660: eraseInt32Range (erases [first,last) from a 4-byte-element buffer, writes 2-pointer result to out).
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, forwards to MSVCR80!__RTDynamicCast).
+extern void* ext_006A6E9E(void* obj, int32_t vfDelta, const void* srcType, const void* dstType, int32_t isReference);
+
+extern int mem_00925134;   // IAT slot of _invalid_parameter_noinfo
+extern int mem_00A2E2BC;   // RTTI source type descriptor
+extern int mem_00A30138;   // RTTI target type descriptor
+
+static inline uint32_t addr32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+[[noreturn]] static void invalid_parameter_noinfo() {
+    (void)&mem_00925134; // metadata reference to the CRT invalid-parameter trap
+    std::abort();
+}
+
+// @name dynCastAndDispatchRange
+// @class Unknown
+// @summary Normalizes the range at self (+0x04..+0x08) via ext_00596660, sizes the pointer array in vec (+0x04..+0x08),
+//          then for each element dynamic-casts the object to the target RTTI type and dispatches non-null results to ext_0041A920.
+// @field Unknown +0x04 int32_t* field_0x04
+// @field Unknown +0x08 int32_t* field_0x08
+void fn_00496150(void* vec, void** out, void* self) {
+    // Original: self->first (+0x04) must not exceed self->last (+0x08).
+    if (addr32(lift_field<void*>(self, 0x04)) > addr32(lift_field<void*>(self, 0x08))) {
+        invalid_parameter_noinfo();
+    }
+
+    // Original: sub_00596660(self, scratch, self, self[+4], self, self[+8]).
+    void* scratch[2] = {nullptr, nullptr};
+    ext_00596660(self, scratch, self,
+                lift_field<int32_t*>(self, 0x04), self,
+                lift_field<int32_t*>(self, 0x08));
+
+    // Original: count = (vec[+8] - vec[+4]) >> 2 when vec[+4] != 0, else 0.
+    int32_t count = 0;
+    if (lift_field<uint32_t>(vec, 0x04) != 0) {
+        uint32_t diff = lift_field<uint32_t>(vec, 0x08) - lift_field<uint32_t>(vec, 0x04);
+        count = static_cast<int32_t>(diff) >> 2;
+    }
+    ext_0050ED40(self, count);
+
+    // Original: cur = vec[+4]; cur must not exceed vec[+8].
+    uint8_t* cur = lift_field<uint8_t*>(vec, 0x04);
+    if (addr32(cur) > addr32(lift_field<uint8_t*>(vec, 0x08))) {
+        invalid_parameter_noinfo();
+    }
+
+    // Original loop: for (cur = vec[+4]; cur != vec[+8]; cur += 4) { ... }
+    for (;;) {
+        uint8_t* end = lift_field<uint8_t*>(vec, 0x08);
+        if (addr32(lift_field<uint8_t*>(vec, 0x04)) > addr32(end)) {
+            invalid_parameter_noinfo();
+        }
+        if (addr32(cur) == addr32(end)) {
+            break;
+        }
+        // cur < end is guaranteed here; the original re-checks it against the same end value.
+        if (addr32(cur) >= addr32(end)) {
+            invalid_parameter_noinfo();
+        }
+
+        // Original: obj = *cur; result = __RTDynamicCast(obj, 0, src, dst, 0).
+        void* obj = lift_field<void*>(cur, 0);
+        void* result = ext_006A6E9E(obj, 0,
+                                    &mem_00A2E2BC,
+                                    &mem_00A30138,
+                                    0);
+
+        // Original: [arg2] = result; if (result) sub_0041A920(self, &[arg2]).
+        *out = result;
+        if (result != nullptr) {
+            ext_0041A920(self, out);
+        }
+
+        cur += 4; // 4-byte element stride (32-bit pointers)
+    }
+}
+} // namespace lift_00496150
