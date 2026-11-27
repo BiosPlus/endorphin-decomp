@@ -1613,3 +1613,35 @@ void fn_007AF3E0(void* self) {
     ext_007AF420(self, static_cast<uintptr_t>(0x998c98u), 0x5c);
 }
 } // namespace lift_007AF3E0
+
+// [0x007AA5A0]
+namespace lift_007AA5A0 {
+// @name sub_007AA5A0
+// @summary Lookup table mapping index 0..22 to a constant address
+uint32_t __cdecl sub_007AA5A0(uint32_t idx) {
+    switch (idx) {
+    case 0:  return 0x00AB076Cu;
+    case 1:  return 0x00AB0738u;
+    case 2:  return 0x00AB06B0u;
+    case 3:  return 0x00AB0638u;
+    case 4:  return 0x00AB05B0u;
+    case 5:  return 0x00AB055Cu;
+    case 6:  return 0x00AB04F4u;
+    case 7:  return 0x00AB0458u;
+    case 8:  return 0x00AB03A4u;
+    case 9:  return 0x00AB0354u;
+    case 10: return 0x00AB030Cu;
+    case 11: return 0x00AB02DCu;
+    case 12: return 0x00AB02A8u;
+    case 13: return 0x00AB0274u;
+    case 14: return 0x00AB0234u;
+    case 15: return 0x00AB01F8u;
+    case 16: return 0x00AB01BCu;
+    case 17: return 0x00AB0188u;
+    case 18: return 0x00AB00D8u;
+    case 19: return 0x00AB0080u;
+    case 20: return 0x00AB0044u;
+    default: return 0x00AB0020u;
+    }
+}
+} // namespace lift_007AA5A0
