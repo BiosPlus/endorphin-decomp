@@ -67721,3 +67721,38 @@ __stdcall bool fn_004C0770(void* self) {
     return matched;
 }
 } // namespace lift_004C0770
+
+// [0x00512B10] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_3 (130 bytes)
+namespace lift_00512B10 {
+// Known callee 0x00511960: sub_00511960 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_00511960(void* self, const void* src);
+extern int mem_00924FC0;   // IAT slot: operator==(const std::string&, const char*)
+extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall)
+extern const char mem_0092F10C[];  // .rdata string literal (1st comparand)
+extern const char mem_0093A810[];  // .rdata string literal (2nd comparand)
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Copies the string referenced by *self and returns true if it equals either of two literal method-type names.
+bool fn_00512B10(void* self) {
+    // Source pointer is the first dword of the argument object.
+    const void* src = *reinterpret_cast<void* const*>(self);
+
+    // Stack-resident std::string (MSVC 2005 layout, 0x1c bytes).
+    alignas(8) unsigned char tmp[0x1c];
+    void* str = ext_00511960(tmp, src);
+
+    using StrEq = bool (*)(const void* lhs, const char* rhs);
+    using StrDtor = void (*)(void* self);
+    const StrEq str_eq = *reinterpret_cast<StrEq*>(&mem_00924FC0);
+    const StrDtor str_dtor = *reinterpret_cast<StrDtor*>(&mem_00924FF4);
+
+    bool result = str_eq(str, mem_0092F10C);
+    if (!result) {
+        result = str_eq(str, mem_0093A810);
+    }
+
+    str_dtor(tmp);
+    return result;
+}
+} // namespace lift_00512B10

@@ -22494,6 +22494,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType\u003cNMData::TriggeredEventData\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00512B10": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1\u003e",
+    "signature": "extern \"C\" int mem_00924FC0;   // IAT slot: operator==(const std::string\u0026, const char*) extern \"C\" int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall) extern \"C\" const char mem_0092F10C[];  // .rdata string literal (1st comparand) extern \"C\" const char mem_0093A810[];  // .rdata string literal (2nd comparand) bool fn_00512B10(void* self)",
+    "summary": "Copies the string referenced by *self and returns true if it equals either of two literal method-type names.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00512BA0": {
     "name": "ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_4 (Chromosome::Descriptor::getTypicalMutationRate)",
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1\u003e",
