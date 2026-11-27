@@ -1719,3 +1719,47 @@ float __fastcall fn_00524A60(void* self)
     return (float)((double*)dbeg)[idx];
 }
 } // namespace lift_00524A60
+
+// [0x0052A1C0]
+namespace lift_0052A1C0 {
+// @name TreeIterator::increment
+// @class TreeIterator
+// @summary Advances a red-black tree iterator to the next in-order node, calling _invalid_parameter_noinfo on invalid/end iterators.
+// @field TreeIterator +0x00 void* container
+// @field TreeIterator +0x04 uint8_t* node
+
+
+extern void (*mem_00925134)();
+
+void __thiscall sub_0052A1C0(void* self) {
+    auto* it = static_cast<uint8_t*>(self);
+    if (lift_field<uint32_t>(it, 0x00) == 0) {
+        mem_00925134();
+    }
+
+    uint8_t* node = lift_field<uint8_t*>(it, 0x04);
+    if (lift_field<uint8_t>(node, 0x61) != 0) {
+        mem_00925134();
+        return;
+    }
+
+    uint8_t* right = lift_field<uint8_t*>(node, 0x08);
+    if (lift_field<uint8_t>(right, 0x61) == 0) {
+        uint8_t* left = lift_field<uint8_t*>(right, 0x00);
+        while (lift_field<uint8_t>(left, 0x61) == 0) {
+            right = left;
+            left = lift_field<uint8_t*>(right, 0x00);
+        }
+        lift_field<uint8_t*>(it, 0x04) = right;
+        return;
+    }
+
+    uint8_t* parent = lift_field<uint8_t*>(node, 0x04);
+    while (lift_field<uint8_t>(parent, 0x61) == 0 &&
+           lift_field<uint8_t*>(it, 0x04) == lift_field<uint8_t*>(parent, 0x08)) {
+        lift_field<uint8_t*>(it, 0x04) = parent;
+        parent = lift_field<uint8_t*>(parent, 0x04);
+    }
+    lift_field<uint8_t*>(it, 0x04) = parent;
+}
+} // namespace lift_0052A1C0
