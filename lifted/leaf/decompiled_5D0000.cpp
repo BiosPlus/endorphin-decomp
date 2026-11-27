@@ -1042,3 +1042,44 @@ void __thiscall fn_005D0110(void* self, float value) {
     ext_0065C650(lock);
 }
 } // namespace lift_005D0110
+
+// [0x005D01A0]
+namespace lift_005D01A0 {
+// @name setFloatElement5AndNotify
+// @class UnknownClass
+// @summary If flag +0x1f1 is clear, locks via the global object's +0x258 vtable call, stores the float arg into element 5 of the +0x210 array, notifies the global's +0x258 object, and unlocks.
+// @field UnknownClass +0x1f1 uint8_t field_0x1f1
+// @field UnknownClass +0x210 uint8_t[] field_0x210
+// @field UnknownGlobal +0x258 void* field_0x258
+
+
+extern void* ext_00594000(void);
+extern void ext_0065C640(void* self);
+extern uint32_t* ext_005B11D0(void* self, uint32_t index);
+extern void* ext_00493EE0(void* self);
+extern void ext_0065C650(void* self);
+
+void __thiscall fn_005D01A0(void* self, float value) {
+    // SEH frame push/pop on fs:[0] from the original prologue/epilogue is dropped (not portable).
+    if (lift_field<uint8_t>(self, 0x1f1) != 0) {
+        return;
+    }
+
+    void* global = ext_00594000();
+    void* slot = static_cast<uint8_t*>(global) + 0x258;
+    void* obj = lift_field<void*>(global, 0x258);
+
+    void* vtable = lift_field<void*>(obj, 0);
+    auto get_lock = reinterpret_cast<void* (__thiscall*)(void*)>(lift_field<void*>(vtable, 0x1d8));
+    void* lock = get_lock(obj);
+
+    ext_0065C640(lock);
+
+    float* elem = reinterpret_cast<float*>(ext_005B11D0(static_cast<uint8_t*>(self) + 0x210, 5));
+    *elem = value;
+
+    ext_00493EE0(slot);
+
+    ext_0065C650(lock);
+}
+} // namespace lift_005D01A0

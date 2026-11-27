@@ -1,0 +1,34 @@
+{
+  "va": "0x005D01A0",
+  "size": 145,
+  "orig_symbol": "sub_005D01A0",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "setFloatElement5AndNotify",
+  "class": "UnknownClass",
+  "signature": "void __thiscall fn_005D01A0(void* self, float value)",
+  "summary": "If flag +0x1f1 is clear, locks via the global object's +0x258 vtable call, stores the float arg into element 5 of the +0x210 array, notifies the global's +0x258 object, and unlocks.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1F1",
+      "type": "uint8_t",
+      "name": "field_0x1f1"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x210",
+      "type": "uint8_t[]",
+      "name": "field_0x210"
+    },
+    {
+      "class": "UnknownGlobal",
+      "offset": "+0x258",
+      "type": "void*",
+      "name": "field_0x258"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:37:11Z"
+}

@@ -37771,6 +37771,13 @@
     "summary": "If the flag at +0x1f1 is clear, fetch the owner object from the global via sub_00594000, lock the critical section obtained from its +0x258 sub-object's vtable slot 0x1d8, store the float argument at +0x1f4, dispatch through the sub-object, then unlock.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005D01A0": {
+    "name": "setFloatElement5AndNotify",
+    "class": "UnknownClass",
+    "signature": "void __thiscall fn_005D01A0(void* self, float value)",
+    "summary": "If flag +0x1f1 is clear, locks via the global object's +0x258 vtable call, stores the float arg into element 5 of the +0x210 array, notifies the global's +0x258 object, and unlocks.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D0240": {
     "name": "Unknown::storeFloatAndDispatchUnderLock",
     "class": "Unknown",
