@@ -11962,6 +11962,13 @@
     "summary": "Gets the rig type name string for the given index via RigManager::getRigTypeNameFromIndex",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004950B0": {
+    "name": "Unknown::assignStringAt",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_004950B0(void* self, void* out_str, int32_t index)",
+    "summary": "Resets out_str to an empty string, then assigns the vector element at index into it when 0 \u003c= index \u003c count.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00495460": {
     "name": "Iterator::copyFromAndAdvance",
     "class": "Iterator",

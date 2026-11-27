@@ -2229,3 +2229,29 @@ void fn_004974E0(void* self, void* container) {
     ext_0046C0A0(self_arg, &out);
 }
 } // namespace lift_004974E0
+
+// [0x004950B0] sub_004950B0 (135 bytes)
+namespace lift_004950B0 {
+// Known callee 0x0041CCC0: Vector28::at (Checked element access for a 28-byte element vector)
+// Known callee 0x00494830: sub_00494830 (returns the element count of self's vector)
+extern void* ext_0041CCC0(void* self, uint32_t index);
+extern int32_t ext_00494830(void* self);
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FDC;
+
+// @name Unknown::assignStringAt
+// @class Unknown
+// @summary Resets out_str to an empty string, then assigns the vector element at index into it when 0 <= index < count.
+// @field Unknown +0x08 uint8_t field_0x08
+void* __thiscall fn_004950B0(void* self, void* out_str, int32_t index) {
+    using StringCstrCtor = void* (__thiscall*)(void*, const char*);
+    using StringAssign = void* (__thiscall*)(void*, void*);
+
+    reinterpret_cast<StringCstrCtor>(static_cast<uintptr_t>(mem_00924FE4))(out_str, "");
+    if (index >= 0 && index < ext_00494830(self)) {
+        void* elem = ext_0041CCC0(static_cast<uint8_t*>(self) + 0x8, static_cast<uint32_t>(index));
+        reinterpret_cast<StringAssign>(static_cast<uintptr_t>(mem_00924FDC))(out_str, elem);
+    }
+    return out_str;
+}
+} // namespace lift_004950B0
