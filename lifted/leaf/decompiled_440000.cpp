@@ -2415,3 +2415,26 @@ int fn_00449160(void* self) {
 }
 } // namespace lift_004490F0
 } // namespace lift_00449160
+
+// [0x004406C0]
+namespace lift_004406C0 {
+extern void __thiscall ext_00493D90(void* self);
+extern uintptr_t mem_00924FF4;
+
+// @name sub_004406C0
+// @summary Destructor that resets vtable, destroys subobject at +0x78, and destroys std::string members at +0x28 and +0x0C
+// @field unknown +0x00 uint32_t vftable
+// @field unknown +0x0C std::string field_0x0C
+// @field unknown +0x28 std::string field_0x28
+// @field unknown +0x78 AddCharacterDialog field_0x78
+void __thiscall sub_004406C0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    lift_field<uint32_t>(self, 0x00) = 0x0093240Cu;
+    ext_00493D90(base + 0x78);
+
+    using string_dtor_t = void(__thiscall*)(void*);
+    auto string_dtor = reinterpret_cast<string_dtor_t>(mem_00924FF4);
+    string_dtor(base + 0x28);
+    string_dtor(base + 0x0C);
+}
+} // namespace lift_004406C0

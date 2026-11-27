@@ -4181,6 +4181,12 @@
     "summary": "Pure jump thunk forwarding to GetStringLiteral_00440680.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004406C0": {
+    "name": "sub_004406C0",
+    "signature": "void __thiscall sub_004406C0(void* self)",
+    "summary": "Destructor that resets vtable, destroys subobject at +0x78, and destroys std::string members at +0x28 and +0x0C",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00440770": {
     "name": "Unknown::getNameOrFallbackPtr",
     "class": "Unknown",
@@ -7109,6 +7115,12 @@
     "summary": "Loads the pointer stored at this+0x04 and zeroes the dword at +0x04 of the pointed-to object.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00462AA0": {
+    "name": "showModalDialogOrRun",
+    "signature": "void fn_00462AA0(void* self)",
+    "summary": "Constructs a temporary 0x120-byte object from ecx, invokes MFC80!ord_2020 on it, and destroys it.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00462D10": {
     "name": "Unknown::getByteByMode_00462D10",
     "class": "Unknown",
@@ -9784,6 +9796,12 @@
     "signature": "void* fn_00486F00(void* self, uint32_t unused)",
     "summary": "Invoke the normalize2 helper on self with flag 0 and return self. The second argument is unused.",
     "lifted_path": "lifted/templates/ROMethod0Type.cpp"
+  },
+  "0x00486F20": {
+    "name": "unique_strings",
+    "signature": "uint8_t* __cdecl sub_00486F20(uint8_t* first, uint8_t* last)",
+    "summary": "Deduplicates adjacent equal std::string elements in a contiguous range [first, last)",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x00486F90": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
