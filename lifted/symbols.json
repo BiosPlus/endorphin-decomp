@@ -60813,6 +60813,13 @@
     "summary": "Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DE3F0": {
+    "name": "SlotRef::setOrRelease",
+    "class": "SlotRef",
+    "signature": "void fn_006DE3F0(void* self, void* newObj)",
+    "summary": "Swaps the refcounted object held at +0x14 for newObj (or releases it when newObj is null), adjusting the refcount at object +0xa0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DE460": {
     "name": "sub_006DE460",
     "signature": "extern \"C\" void __thiscall fn_006DE460(void* self)",

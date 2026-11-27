@@ -1990,3 +1990,47 @@ uint32_t fn_006DEED0(void* self, uint32_t newValue, uint8_t releaseOld) {
     return previous;
 }
 } // namespace lift_006DEED0
+
+// [0x006DE3F0] sub_006DE3F0 (112 bytes)
+namespace lift_006DE3F0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C();
+extern void ext_006DE3F0();
+// Known callee 0x006DE460: sub_006DE460 (Destroys subobject at +0x4c and base object via sub_006B9D70.)
+extern void ext_006DE460();
+
+// @name SlotRef::setOrRelease
+// @class SlotRef
+// @summary Swaps the refcounted object held at +0x14 for newObj (or releases it when newObj is null), adjusting the refcount at object +0xa0.
+// @field SlotRef +0x14 void* held
+// @field Refcounted +0xa0 DWORD refCount
+void fn_006DE3F0(void* self, void* newObj) {
+    if (newObj != nullptr) {
+        void* cur = lift_field<void*>(self, 0x14);
+        if (cur == newObj) {
+            return;
+        }
+        if (cur != nullptr) {
+            // Release the previously held object (same self, null argument).
+            fn_006DE3F0(self, nullptr);
+        }
+        lift_field<void*>(self, 0x14) = newObj;
+        lift_field<DWORD>(newObj, 0xa0) += 1;
+        return;
+    }
+
+    // Release path: drop one reference on the held object.
+    void* held = lift_field<void*>(self, 0x14);
+    lift_field<DWORD>(held, 0xa0) -= 1;
+
+    held = lift_field<void*>(self, 0x14);
+    if (lift_field<DWORD>(held, 0xa0) != 0) {
+        return;
+    }
+    if (held != nullptr) {
+        reinterpret_cast<void (*)(void*)>(&ext_006DE460)(held);
+        reinterpret_cast<void (*)(void*)>(&ext_006A5C5C)(held);
+    }
+    lift_field<void*>(self, 0x14) = nullptr;
+}
+} // namespace lift_006DE3F0
