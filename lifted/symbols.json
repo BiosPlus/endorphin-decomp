@@ -26408,6 +26408,13 @@
     "summary": "Fetches an element via ext_00661B50 at field_0x4, offsets it by 0x30, and tail-dispatches vtable slot 7 on the target object.",
     "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
   },
+  "0x00532680": {
+    "name": "HasBufferedTMPtr::vfunc_1",
+    "class": "HasBufferedTMPtr",
+    "signature": "float* __thiscall fn_00532680(void* self, float* out)",
+    "summary": "Looks up an element via the global owner at mem_00AEE8A8 using this-\u003e+0x04 as index, then copies its Vec3 into out as Vec4 (w = 0); returns out.",
+    "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp"
+  },
   "0x00532700": {
     "name": "HasCustomBufferedTMPtr::vfunc_1",
     "class": "HasCustomBufferedTMPtr",
