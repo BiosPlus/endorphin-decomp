@@ -1,0 +1,28 @@
+{
+  "va": "0x005B4CD0",
+  "size": 359,
+  "orig_symbol": "Geometry::SphereType::vfunc_16",
+  "src_path": "src/Geometry/SphereType.cpp",
+  "lifted_path": "lifted/Geometry/SphereType.cpp",
+  "name": "Geometry::SphereType::vfunc_16",
+  "class": "Geometry::SphereType",
+  "signature": "extern \"C\" double mem_00955090;  // 2*pi (double) struct CheckedFloat3Iter",
+  "summary": "Clears a Float3Vector and refills it with latitude rings of points on a sphere of radius params[0] (stacks latitude steps, slices points per ring, XZ-plane rings)",
+  "fields": [
+    {
+      "class": "Float3Vector",
+      "offset": "+0x4",
+      "type": "float*",
+      "name": "begin"
+    },
+    {
+      "class": "Float3Vector",
+      "offset": "+0x8",
+      "type": "float*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:38:14Z"
+}

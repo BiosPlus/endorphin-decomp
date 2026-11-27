@@ -89,3 +89,71 @@ float __stdcall fn_005B1700(void* self, uint32_t /*unused*/) {
     return std::fabs(v);
 }
 } // namespace lift_005B1700
+
+// [0x005B4CD0] Geometry::SphereType::vfunc_16 (359 bytes)
+namespace lift_005B4CD0 {
+// Known callee 0x00539AA0: Float3Vector::erase (Erases a range [first, last) of 12-byte float3 elements from the vector and returns the updated checked iterator.)
+// Known callee 0x00539FB0: sub_00539FB0 (159B) - Float3Vector push of one float3 (called with this=points, arg=&p[0]).
+// Known callee 0x005B11E0: ReadFloatArrayElement (Returns float element `index` from the float array at this+0x10 (thiscall, ret 4).)
+extern float ext_005B11E0(void* self, int32_t index);
+extern void* ext_00539AA0(void* self, void* out_iter, void* first_container, float* first_ptr, void* last_container, float* last_ptr);
+extern void ext_00539FB0(void* self, const float* value);
+extern void* mem_00925134;   // _invalid_parameter_noinfo function pointer
+extern double mem_00955090;  // 2*pi (double)
+
+// @name Geometry::SphereType::vfunc_16
+// @class Geometry::SphereType
+// @summary Clears a Float3Vector and refills it with latitude rings of points on a sphere of radius params[0] (stacks latitude steps, slices points per ring, XZ-plane rings)
+// @field Float3Vector +0x04 float* begin
+// @field Float3Vector +0x08 float* end
+struct CheckedFloat3Iter {
+    void* container;
+    float* ptr;
+};
+
+void fn_005B4CD0(void* params, void* points, int32_t stacks, int32_t slices) {
+    const float radius = ext_005B11E0(params, 0);
+    const float b = ext_005B11E0(params, 0);
+    const float two_b = b + b;
+
+    float* begin = lift_field<float*>(points, 0x04);
+    float* end = lift_field<float*>(points, 0x08);
+    if (reinterpret_cast<std::uintptr_t>(begin) > reinterpret_cast<std::uintptr_t>(end)) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    const float step = two_b / static_cast<float>(stacks);
+
+    CheckedFloat3Iter out_iter{};
+    ext_00539AA0(points, &out_iter, points, begin, points, end);
+
+    float p[3] = {0.0f, 0.0f, 0.0f};
+    if (stacks <= 0) {
+        return;
+    }
+
+    int32_t i = -(stacks / 2);
+    int32_t remaining = stacks;
+    do {
+        const float t = static_cast<float>(i) * step;
+        const float u = t / radius;
+        const float theta = static_cast<float>(std::asin(static_cast<double>(u)));
+        const float ring = static_cast<float>(std::cos(static_cast<double>(theta))) * radius;
+
+        if (slices > 0) {
+            const float fslices = static_cast<float>(slices);
+            for (int32_t j = 0; j < slices; ++j) {
+                const float phi = static_cast<float>(
+                    (static_cast<double>(j) * mem_00955090) / static_cast<double>(fslices));
+                const float c = static_cast<float>(std::cos(static_cast<double>(phi)));
+                const float s = static_cast<float>(std::sin(static_cast<double>(phi)));
+                p[0] = c * ring;
+                p[1] = 0.0f;
+                p[2] = s * ring;
+                ext_00539FB0(points, p);
+            }
+        }
+        ++i;
+    } while (--remaining != 0);
+}
+} // namespace lift_005B4CD0

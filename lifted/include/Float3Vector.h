@@ -8,7 +8,7 @@
 // Recovered field layout for Float3Vector:
 namespace lifted_layout {
 struct Float3Vector_Fields {
-    // +0x4   float*                   begin  (evidence: 0x005B4BA0)
-    // +0x8   float*                   end  (evidence: 0x00539AA0, 0x005B4BA0)
+    // +0x4   float*                   begin  (evidence: 0x005B4BA0, 0x005B4CD0)
+    // +0x8   float*                   end  (evidence: 0x00539AA0, 0x005B4BA0, 0x005B4CD0)
 };
 } // namespace lifted_layout
