@@ -1,0 +1,22 @@
+{
+  "va": "0x00699260",
+  "size": 99,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_34",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_34",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void __stdcall fn_00699260(void* a, void* b)",
+  "summary": "Fills a local out-pair via sub_004ECB40(arg_b), assigns the result into arg_a via 0x0041CF50, then calls vtable+0x78 on the out-pair's second slot object if non-null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:03:04Z"
+}

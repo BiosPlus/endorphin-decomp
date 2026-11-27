@@ -423,3 +423,37 @@ uint32_t __thiscall fn_0069A910(void* self, uint32_t flag, void* a, void* b, voi
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out));
 }
 } // namespace lift_0069A910
+
+// [0x00699260] ExprParser::ExpressionContainerType::vfunc_34 (99 bytes)
+namespace lift_00699260 {
+void* __thiscall ext_004ECB40(void* self, void* out);
+void* __thiscall ext_0041CF50(void* self, void* other);
+void ext_006992E0();
+void ext_00699720();
+void ext_0069A7B0();
+void ext_006A5C62();
+
+// @name ExprParser::ExpressionContainerType::vfunc_34
+// @class ExprParser::ExpressionContainerType
+// @summary Fills a local out-pair via sub_004ECB40(arg_b), assigns the result into arg_a via 0x0041CF50, then calls vtable+0x78 on the out-pair's second slot object if non-null.
+// @field Unknown +0x00 void* vtable
+void __stdcall fn_00699260(void* a, void* b) {
+    void* tmp[2] = {nullptr, nullptr};
+
+    void* r1 = ext_004ECB40(b, tmp);
+    ext_0041CF50(a, r1);
+
+    void* obj = tmp[1];
+    if (obj != nullptr) {
+        void** vt = *reinterpret_cast<void***>(obj);
+        using VFunc78 = void (__thiscall*)(void*, void*);
+        reinterpret_cast<VFunc78>(vt[0x78 / 4])(obj, tmp);
+    }
+
+    // Metadata-listed callees not invoked in the 0x00699260 disassembly (address-only, no runtime effect)
+    (void)&ext_006992E0;
+    (void)&ext_00699720;
+    (void)&ext_0069A7B0;
+    (void)&ext_006A5C62;
+}
+} // namespace lift_00699260

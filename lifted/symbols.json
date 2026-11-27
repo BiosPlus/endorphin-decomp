@@ -79579,6 +79579,13 @@
     "summary": "Allocates a 12-byte object, runs its initializer, and stores it into the out-slot with a ref count of +1 (null slot if allocation fails).",
     "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
   },
+  "0x00699260": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_34",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "void __stdcall fn_00699260(void* a, void* b)",
+    "summary": "Fills a local out-pair via sub_004ECB40(arg_b), assigns the result into arg_a via 0x0041CF50, then calls vtable+0x78 on the out-pair's second slot object if non-null.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
+  },
   "0x006992D0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_24",
     "class": "ExprParser::ExpressionContainerType",
