@@ -2798,3 +2798,26 @@ extern void* fn_006BB5F0(void* ecx, void* src) {
     return self;
 }
 } // namespace lift_006BB5F0
+
+// [0x006B9F40] sub_006B9F40 (64 bytes)
+namespace lift_006B9F40 {
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void ext_006B9EC0();
+// IAT slot holding MSVCR80!sprintf
+extern uint32_t mem_00925218;
+
+// @name Unknown::assignFormattedPair_006B9F40
+// @class Unknown
+// @summary Formats two DWORD arguments into a 52-byte stack buffer via sprintf (format at 0x00AA86A8), then assigns the buffer at offset +4 to self via assignCString; returns self.
+void* fn_006B9F40(void* self, uint32_t a, uint32_t b) {
+    using SprintfFn = int(__cdecl*)(char*, const char*, ...);
+    using AssignFn = void*(__thiscall*)(void*, const char*);
+
+    char buf[0x34];
+    const char* fmt = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AA86A8u));
+    reinterpret_cast<SprintfFn>(static_cast<uintptr_t>(mem_00925218))(buf, fmt, a, b);
+
+    const char* s = buf + 4;
+    return reinterpret_cast<AssignFn>(reinterpret_cast<void*>(ext_006B9EC0))(self, s);
+}
+} // namespace lift_006B9F40
