@@ -184701,3 +184701,59 @@ uint32_t fn_005B3810(void* self, void* arg) {
     return vfunc_43(child, self, arg);
 }
 } // namespace lift_005B3810
+
+// [0x0068F140] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_43 (166 bytes)
+namespace lift_0068F140 {
+// Known callee 0x0068EE60: sub_0068EE60 (Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).)
+extern void* ext_0068EE60(uint32_t index);
+// Callee 0x006720E0: sub_006720E0 (thiscall; constructs temp object at ecx, takes one stack value)
+extern void ext_006720E0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<UnitsWithProperties>::vfunc_43
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>
+// @summary Throws if field_0x00 is null; otherwise builds a temp from the index at field_0x00->field_0x04->+0x0c, assigns it into self, releases the temp, and returns field_0x04->vfunc_43(self, out).
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+
+void* fn_0068F140(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        // Original: construct DerivedException in a local and raise it via CxxThrowException.
+        alignas(8) uint8_t exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+        return nullptr;
+    }
+
+    void* owner = lift_field<void*>(src, 0x04);
+    uint32_t index = lift_field<uint32_t>(owner, 0x0c);
+    void* value = ext_0068EE60(index);
+
+    // 12-byte frame: frame+0 is the "other" record, frame+4 is the temp object built in place.
+    alignas(8) uint8_t frame[12] = {};
+    void* temp = frame + 4;
+    ext_006720E0(temp, value);
+    ext_0041CF50(self, frame);
+
+    // Release the temp's field_0x00 object (vtable slot 0x78) if it is set.
+    void* temp_obj = lift_field<void*>(frame, 0x04);
+    if (temp_obj != nullptr) {
+        void* vtbl = lift_field<void*>(temp_obj, 0x00);
+        void* release_fn = lift_field<void*>(vtbl, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(release_fn)(temp_obj, frame);
+    }
+
+    // Dispatch: self->field_0x04->vfunc_43(self, out).
+    void* target = lift_field<void*>(self, 0x04);
+    void* vtbl = lift_field<void*>(target, 0x00);
+    void* vfunc = lift_field<void*>(vtbl, 0xac);
+    return reinterpret_cast<void* (*)(void*, void*, void*)>(vfunc)(target, self, out);
+}
+} // namespace lift_0068F140

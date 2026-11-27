@@ -76982,6 +76982,13 @@
     "summary": "Reads a value's string via ext_0068EE60(index) and returns 1 if it equals \"true\" or \"TRUE\" (else 0); throws DerivedException if the holder pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0068F140": {
+    "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e",
+    "signature": "void* fn_0068F140(void* self, void* out)",
+    "summary": "Throws if field_0x00 is null; otherwise builds a temp from the index at field_0x00-\u003efield_0x04-\u003e+0x0c, assigns it into self, releases the temp, and returns field_0x04-\u003evfunc_43(self, out).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0068F1F0": {
     "name": "ExprParser::ReadMethodType_getAngleUnitName::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::string const \u0026, \u0026UnitsWithProperties::getAngleUnitName, 0\u003e",
