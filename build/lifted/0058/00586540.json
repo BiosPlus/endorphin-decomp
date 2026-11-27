@@ -1,0 +1,40 @@
+{
+  "va": "0x00586540",
+  "size": 139,
+  "orig_symbol": "sub_00586540",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::dispatchToChildren",
+  "class": "Unknown",
+  "signature": "void fn_00586540(void* self, void* arg1, void* arg2)",
+  "summary": "If the interface at +0x04 reports true, forward (arg1, arg2) to the interface at +0x08, then recurse into every child pointer in the [+0x80, +0x84) array.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "void**",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "void**",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:38Z"
+}

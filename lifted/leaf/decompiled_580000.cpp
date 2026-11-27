@@ -1834,3 +1834,41 @@ uint32_t* fn_00586BE0(uint32_t* out, void* container, uint32_t* begin, void* exp
     return out;
 }
 } // namespace lift_00586BE0
+
+// [0x00586540] sub_00586540 (139 bytes)
+namespace lift_00586540 {
+extern void ext_00586540(void* self, void* arg1, void* arg2);
+extern int mem_00925134;  // _invalid_parameter_noinfo IAT slot (bounds-check guards; metadata only)
+
+using VFuncBool = bool (__thiscall*)(void* self);
+using VFuncVoid2 = void (__thiscall*)(void* self, void* a, void* b);
+
+// @name Unknown::dispatchToChildren
+// @class Unknown
+// @summary If the interface at +0x04 reports true, forward (arg1, arg2) to the interface at +0x08, then recurse into every child pointer in the [+0x80, +0x84) array.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x80 void** field_0x80
+// @field Unknown +0x84 void** field_0x84
+void fn_00586540(void* self, void* arg1, void* arg2) {
+    (void)&mem_00925134;
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Interface at +0x04: vtable slot 7 (offset 0x1c) returns bool.
+    void* ifaceA = base + 0x04;
+    void** vtA = *reinterpret_cast<void***>(ifaceA);
+    if (reinterpret_cast<VFuncBool>(vtA[7])(ifaceA)) {
+        // Interface at +0x08: vtable slot 1 (offset 0x04) takes (arg1, arg2).
+        void* ifaceB = base + 0x08;
+        void** vtB = *reinterpret_cast<void***>(ifaceB);
+        reinterpret_cast<VFuncVoid2>(vtB[1])(ifaceB, arg1, arg2);
+    }
+
+    // Child array: iterate [begin, end) and recurse on each child object.
+    void** it = lift_field<void**>(self, 0x80);
+    while (it != lift_field<void**>(self, 0x84)) {
+        ext_00586540(*it, arg1, arg2);
+        ++it;
+    }
+}
+} // namespace lift_00586540

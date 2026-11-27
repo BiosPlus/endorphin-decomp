@@ -30443,6 +30443,13 @@
     "summary": "If the object embedded at +0x04 reports true via vtable slot 7, forward arg to the object embedded at +0x08 (vtable slot 4), then recurse into every element of the pointer vector at +0x80..+0x84 with the same arg.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00586540": {
+    "name": "Unknown::dispatchToChildren",
+    "class": "Unknown",
+    "signature": "void fn_00586540(void* self, void* arg1, void* arg2)",
+    "summary": "If the interface at +0x04 reports true, forward (arg1, arg2) to the interface at +0x08, then recurse into every child pointer in the [+0x80, +0x84) array.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x005865D0": {
     "name": "Unknown::VisitElementRange",
     "class": "Unknown",
