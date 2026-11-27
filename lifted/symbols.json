@@ -79064,6 +79064,12 @@
     "summary": "Copies the 32-byte entry at index from the array at this+0x10 into dst (8 dwords); returns ecx as 0.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x0077F650": {
+    "name": "callPreCleanupAndMaybeFree_0077F650",
+    "signature": "void* __thiscall fn_0077F650(void* self, uint32_t flags)",
+    "summary": "Runs the pre-cleanup thunk, conditionally calls the MFC80 free thunk on self when bit 0 of the stack argument is set, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077F6D0": {
     "name": "sub_0077F6D0",
     "signature": "void __cdecl fn_0077F6D0(void)",

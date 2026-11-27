@@ -635,3 +635,39 @@ extern BOOLEAN __thiscall fn_00772150(void* self, const char* path) {
     return FALSE;
 }
 } // namespace lift_00772150
+
+// [0x0077F650] sub_0077F650 (112 bytes)
+namespace lift_0077F650 {
+// Known callee 0x00772040: sub_00772040 (Pure jump thunk forwarding to sub_006B9D70.)
+extern void ext_00772040();
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Called cdecl with one argument (this) pushed by the caller.
+extern void ext_006A5C5C(void* self);
+// Known callee 0x00754FA0: sub_00754FA0_dtor (metadata only in this entry; not called here)
+extern void ext_00754FA0();
+// Known callee 0x007721B0: Unknown::closeFileAndResetString_007721B0 (metadata only in this entry; not called here)
+extern void ext_007721B0();
+// RDATA/global refs listed in the range metadata; not accessed by this entry.
+extern int mem_00925284;
+extern int mem_00B60728;
+extern int mem_00B6072C;
+extern int mem_00B60720;
+
+// @name callPreCleanupAndMaybeFree_0077F650
+// @summary Runs the pre-cleanup thunk, conditionally calls the MFC80 free thunk on self when bit 0 of the stack argument is set, and returns self.
+void* __thiscall fn_0077F650(void* self, uint32_t flags) {
+    // Metadata-only references (address taken, never read or called). No runtime effect.
+    (void)&ext_00754FA0;
+    (void)&ext_007721B0;
+    (void)&mem_00925284;
+    (void)&mem_00B60728;
+    (void)&mem_00B6072C;
+    (void)&mem_00B60720;
+
+    ext_00772040();
+    if (flags & 1u) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+} // namespace lift_0077F650
