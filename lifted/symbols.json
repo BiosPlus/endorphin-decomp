@@ -72534,6 +72534,13 @@
     "summary": "Zeroes the first dword of this and tail-calls fn_006B9960 on this + 4.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F8AD0": {
+    "name": "Unknown::copyHeaderAndForward_006F8AD0",
+    "class": "Unknown",
+    "signature": "void* fn_006F8AD0(void* self, void* arg)",
+    "summary": "Copies the leading dword of the source record into this object's first field, then forwards the source pointer advanced by 4 to conditionalAllocAndCopy on the subobject at +0x04. Returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F8AF0": {
     "name": "Unknown::ResetHeaderState",
     "class": "Unknown",

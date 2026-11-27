@@ -2593,3 +2593,22 @@ void* fn_006FDE80(void* self) {
     return reinterpret_cast<void*>(static_cast<intptr_t>(result));
 }
 } // namespace lift_006FDE80
+
+// [0x006F8AD0]
+namespace lift_006F8AD0 {
+// @name Unknown::copyHeaderAndForward_006F8AD0
+// @class Unknown
+// @summary Copies the leading dword of the source record into this object's first field, then forwards the source pointer advanced by 4 to conditionalAllocAndCopy on the subobject at +0x04. Returns this.
+// @field Unknown +0x00 uint32_t field_0x00 first dword, overwritten from *arg
+
+void* ext_006B9E60(void* self, void* arg);
+
+void* fn_006F8AD0(void* self, void* arg) {
+    auto* dst = static_cast<uint32_t*>(self);
+    auto* src = static_cast<uint32_t*>(arg);
+    *dst = *src;
+    void* next = static_cast<uint8_t*>(arg) + 4;
+    ext_006B9E60(static_cast<uint8_t*>(self) + 4, next);
+    return self;
+}
+} // namespace lift_006F8AD0
