@@ -1695,3 +1695,42 @@ extern void fn_00699A50(uint8_t* first, uint8_t* last, uint8_t* src) {
     }
 }
 } // namespace lift_00699A50
+
+// [0x00692BA0]
+namespace lift_00692BA0 {
+// @name sub_00692BA0
+// @summary Destructor that dispatches virtual cleanup on vector elements, frees the buffer, and resets base vtables.
+// @field Self +0x0 uint32_t vtable_0x0
+// @field Self +0x4 uint32_t vtable_0x4
+// @field Self +0xc uint8_t* field_0xc
+// @field Self +0x10 uint8_t* field_0x10
+// @field Self +0x14 uint32_t field_0x14
+
+
+extern uint8_t mem_00944E74;
+extern uint8_t mem_00944E44;
+
+extern void __cdecl ext_0048A120(uint8_t* begin, uint8_t* end);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __fastcall ext_0065C660(void* self);
+extern void __fastcall ext_0065F440(void* self);
+
+extern void __fastcall fn_00692BA0(void* self) {
+    lift_field<uint32_t>(self, 0x0) = (uint32_t)(uintptr_t)&mem_00944E74;
+    lift_field<uint32_t>(self, 0x4) = (uint32_t)(uintptr_t)&mem_00944E44;
+
+    uint8_t* begin = lift_field<uint8_t*>(self, 0xc);
+    if (begin != nullptr) {
+        uint8_t* end = lift_field<uint8_t*>(self, 0x10);
+        ext_0048A120(begin, end);
+        ext_006A5C5C(lift_field<void*>(self, 0xc));
+    }
+
+    lift_field<uint32_t>(self, 0xc) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+
+    ext_0065C660((uint8_t*)self + 4);
+    ext_0065F440(self);
+}
+} // namespace lift_00692BA0

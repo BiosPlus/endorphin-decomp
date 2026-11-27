@@ -1,0 +1,45 @@
+{
+  "va": "0x00692BA0",
+  "size": 147,
+  "orig_symbol": "sub_00692BA0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "sub_00692BA0",
+  "signature": "extern \"C\" void __fastcall fn_00692BA0(void* self)",
+  "summary": "Destructor that dispatches virtual cleanup on vector elements, frees the buffer, and resets base vtables.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_0x0"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vtable_0x4"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "field_0xc"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x10",
+      "type": "uint8_t*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:04:53Z"
+}
