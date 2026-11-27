@@ -53564,6 +53564,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00640D00 (AdvXMLParser::Comment::Generate).",
     "lifted_path": "lifted/AdvXMLParser/CData.cpp"
   },
+  "0x00640E40": {
+    "name": "Record0x30::CreateWithString",
+    "class": "Record0x30",
+    "signature": "void* fn_00640E40(uint32_t a0, uint32_t a1, uint32_t a2, const uint8_t* a3, uint8_t a4)",
+    "summary": "Allocates a 0x30-byte record, fills header fields, copies a length-prefixed string into it; returns the record or null.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00640EE0": {
     "name": "AdvXMLParser::NodeContainer::vfunc_5",
     "class": "AdvXMLParser::NodeContainer",

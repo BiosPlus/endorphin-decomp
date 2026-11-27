@@ -8,15 +8,18 @@
 // Recovered field layout for Record0x30:
 namespace lifted_layout {
 struct Record0x30_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x0059F520, 0x0063EB70)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x0059F520, 0x0063EB70)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0059F520, 0x0063EB70)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x0059F520, 0x0063EB70, 0x00640E40)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0059F520, 0x0063EB70, 0x00640E40)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0059F520, 0x0063EB70, 0x00640E40)
+    // +0xC   uint8_t                  field_0x0c  (evidence: 0x00640E40) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t                  field_0x0c[0x1c]  (evidence: 0x0063EB70) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              str  (evidence: 0x0059F520) // CONFLICT: multiple definitions at +0xC
+    // +0x10  std::string              str  (evidence: 0x00640E40)
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0059F520)
     // +0x28  uint8_t                  field_0x28  (evidence: 0x0063EB70)
     // +0x2C  uint8_t                  field_0x2c  (evidence: 0x0063EB70) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint8_t                  flag  (evidence: 0x0059F520) // CONFLICT: multiple definitions at +0x2C
-    // +0x2D  uint8_t                  field_0x2d  (evidence: 0x0059F520, 0x0063EB70)
+    // +0x2C  uint8_t                  flag_0x2c  (evidence: 0x00640E40) // CONFLICT: multiple definitions at +0x2C
+    // +0x2D  uint8_t                  field_0x2d  (evidence: 0x0059F520, 0x0063EB70, 0x00640E40)
 };
 } // namespace lifted_layout

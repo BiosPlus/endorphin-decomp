@@ -2751,3 +2751,51 @@ void fn_00640A50(void* unused, int a1) {
     ext_00427550(&unused, buf);
 }
 } // namespace lift_00640A50
+
+// [0x00640E40] sub_00640E40 (156 bytes)
+namespace lift_00640E40 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* a, void* b);
+// IAT slot 0x924FE0: MSVCP80 std::string copy constructor (thiscall, this=ecx, src=stack).
+extern void* mem_00924FE0;
+
+// @name Record0x30::CreateWithString
+// @class Record0x30
+// @summary Allocates a 0x30-byte record, fills header fields, copies a length-prefixed string into it; returns the record or null.
+// @field Record0x30 +0x00 uint32_t field_0x00
+// @field Record0x30 +0x04 uint32_t field_0x04
+// @field Record0x30 +0x08 uint32_t field_0x08
+// @field Record0x30 +0x0c uint8_t field_0x0c
+// @field Record0x30 +0x10 std::string str
+// @field Record0x30 +0x2c uint8_t flag_0x2c
+// @field Record0x30 +0x2d uint8_t field_0x2d
+void* fn_00640E40(uint32_t a0, uint32_t a1, uint32_t a2, const uint8_t* a3, uint8_t a4) {
+    using StringCopyCtor = void (*)(void* self, const void* src);
+
+    auto* rec = static_cast<uint8_t*>(ext_006A5C62(0x30));
+    if (rec == nullptr) {
+        return nullptr;
+    }
+
+    try {
+        lift_field<uint32_t>(rec, 0x00) = a0;
+        lift_field<uint32_t>(rec, 0x04) = a1;
+        lift_field<uint32_t>(rec, 0x08) = a2;
+        lift_field<uint8_t>(rec, 0x0c) = *a3;
+
+        const void* src = a3 + 4;
+        reinterpret_cast<StringCopyCtor>(mem_00924FE0)(rec + 0x10, src);
+
+        lift_field<uint8_t>(rec, 0x2c) = a4;
+        lift_field<uint8_t>(rec, 0x2d) = 0;
+    } catch (...) {
+        ext_006A5C5C(rec);
+        ext_006A6DD2(nullptr, nullptr);
+    }
+    return rec;
+}
+} // namespace lift_00640E40
