@@ -1,0 +1,40 @@
+{
+  "va": "0x004CCB50",
+  "size": 50,
+  "orig_symbol": "sub_004CCB50",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "UnknownClass::SetVec3IfNoPendingNotify",
+  "class": "UnknownClass",
+  "signature": "void fn_004CCB50(void* self, const float* src)",
+  "summary": "If the dword at +0x180 is zero, stores the 3-float vector src into +0x194..+0x19c; otherwise tail-forwards to SetVec3AndNotifyElements.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x180",
+      "type": "int32_t",
+      "name": "pendingNotifyFlag"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x194",
+      "type": "float",
+      "name": "vec3X"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x198",
+      "type": "float",
+      "name": "vec3Y"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x19C",
+      "type": "float",
+      "name": "vec3Z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:27Z"
+}

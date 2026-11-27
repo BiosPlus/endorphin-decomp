@@ -163,12 +163,16 @@ struct UnknownClass_Fields {
     // +0x17C void*                    field_0x17C  (evidence: 0x005E2830) // CONFLICT: multiple definitions at +0x17C
     // +0x17C uintptr_t                subobject  (evidence: 0x005E2790, 0x005E27E0, 0x005E2880, 0x005E28D0, 0x005E2920, 0x005E2970) // CONFLICT: multiple definitions at +0x17C
     // +0x17C void*                    subobject  (evidence: 0x005E29C0) // CONFLICT: multiple definitions at +0x17C
+    // +0x180 int32_t                  pendingNotifyFlag  (evidence: 0x004CCB50)
     // +0x190 float                    field_0x190  (evidence: 0x007C5C00)
     // +0x194 float                    field_0x194  (evidence: 0x007C5C00) // CONFLICT: multiple definitions at +0x194
     // +0x194 int32_t                  field_0x194  (evidence: 0x00565010) // CONFLICT: multiple definitions at +0x194
+    // +0x194 float                    vec3X  (evidence: 0x004CCB50) // CONFLICT: multiple definitions at +0x194
     // +0x198 float                    field_0x198  (evidence: 0x007C5C00) // CONFLICT: multiple definitions at +0x198
     // +0x198 int                      field_0x198  (evidence: 0x006F7560) // CONFLICT: multiple definitions at +0x198
-    // +0x19C TypedObj*                field_0x19C  (evidence: 0x006F7560)
+    // +0x198 float                    vec3Y  (evidence: 0x004CCB50) // CONFLICT: multiple definitions at +0x198
+    // +0x19C TypedObj*                field_0x19C  (evidence: 0x006F7560) // CONFLICT: multiple definitions at +0x19C
+    // +0x19C float                    vec3Z  (evidence: 0x004CCB50) // CONFLICT: multiple definitions at +0x19C
     // +0x1A4 void*                    field_0x1a4  (evidence: 0x007BBBE0)
     // +0x1CC void*                    field_0x1cc  (evidence: 0x007BD4A0, 0x007BD640) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC void**                   field_0x1cc  (evidence: 0x007BF9C0) // CONFLICT: multiple definitions at +0x1CC

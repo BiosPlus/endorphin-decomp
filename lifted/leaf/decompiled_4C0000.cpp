@@ -960,3 +960,26 @@ void fn_004CC6A0(void* self, const float* src) {
     }
 }
 } // namespace lift_004CC6A0
+
+// [0x004CCB50] sub_004CCB50 (50 bytes)
+namespace lift_004CCB50 {
+// Known callee 0x004CC6A0: UnknownClass::SetVec3AndNotifyElements (Copies a 3-float vector into this+0x24..0x2c, sets the flag at +0x15, then calls virtual slot 42 on every element pointer in the [begin,end) array.)
+extern void ext_004CC6A0(void* self, const float* src);
+
+// @name UnknownClass::SetVec3IfNoPendingNotify
+// @class UnknownClass
+// @summary If the dword at +0x180 is zero, stores the 3-float vector src into +0x194..+0x19c; otherwise tail-forwards to SetVec3AndNotifyElements.
+// @field UnknownClass +0x180 int32_t pendingNotifyFlag
+// @field UnknownClass +0x194 float vec3X
+// @field UnknownClass +0x198 float vec3Y
+// @field UnknownClass +0x19c float vec3Z
+void fn_004CCB50(void* self, const float* src) {
+    if (lift_field<int32_t>(self, 0x180) != 0) {
+        ext_004CC6A0(self, src);
+        return;
+    }
+    lift_field<float>(self, 0x194) = src[0];
+    lift_field<float>(self, 0x198) = src[1];
+    lift_field<float>(self, 0x19c) = src[2];
+}
+} // namespace lift_004CCB50

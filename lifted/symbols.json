@@ -16292,6 +16292,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004CCB50": {
+    "name": "UnknownClass::SetVec3IfNoPendingNotify",
+    "class": "UnknownClass",
+    "signature": "void fn_004CCB50(void* self, const float* src)",
+    "summary": "If the dword at +0x180 is zero, stores the 3-float vector src into +0x194..+0x19c; otherwise tail-forwards to SetVec3AndNotifyElements.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CCB90": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e",
