@@ -80579,6 +80579,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00687920 (Unknown::copyRecordRangeAndRebase_00687920).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00699E90": {
+    "name": "ExprParser::ExpressionContainer::saveToXML",
+    "class": "ExprParser::ExpressionContainer",
+    "signature": "void* __thiscall fn_00699E90(void* self, void* xml_node)",
+    "summary": "Serializes the expression container name and its expression entries into an XML node.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainer.cpp"
+  },
   "0x0069A090": {
     "name": "sub_0069A090",
     "signature": "void* fn_0069A090(const void* first, const void* last, void* dest)",

@@ -1,0 +1,40 @@
+{
+  "va": "0x00699E90",
+  "size": 265,
+  "orig_symbol": "ExprParser::ExpressionContainer::vfunc_3_off_4",
+  "src_path": "src/ExprParser/ExpressionContainer.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainer.cpp",
+  "name": "ExprParser::ExpressionContainer::saveToXML",
+  "class": "ExprParser::ExpressionContainer",
+  "signature": "void* __thiscall fn_00699E90(void* self, void* xml_node)",
+  "summary": "Serializes the expression container name and its expression entries into an XML node.",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x4",
+      "type": "uint8_t[]",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x24",
+      "type": "uint8_t[]",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-27T12:51:20Z"
+}

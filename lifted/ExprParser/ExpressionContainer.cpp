@@ -235,3 +235,104 @@ void __thiscall fn_0069ACC0(uint8_t* self, uint8_t* xml_node) {
     }
 }
 } // namespace lift_0069ACC0
+
+// [0x00699E90] ExprParser::ExpressionContainer::vfunc_3_off_4 (265 bytes)
+namespace lift_00699E90 {
+void __thiscall ext_00427550(void* self, const char* name);
+void* __thiscall ext_00640110(void* self, uint32_t tag);
+void* __thiscall ext_006404E0(void* self, uint32_t tag);
+void __cdecl ext_00640A50(void* prop, int32_t value);
+void __cdecl ext_00682460(void* xml_node, void* expr_entry, uint32_t tag);
+void ext_004275C0();
+void ext_00427A60();
+void ext_004E3D30();
+void ext_0053F5F0();
+void ext_0063EFE0();
+void ext_00671100();
+void ext_00671490();
+void ext_0067FAB0();
+void ext_006824E0();
+void ext_0069ABD0();
+
+extern uint32_t mem_00AA23B8;
+extern uint32_t mem_00AA2354;
+extern uint32_t mem_00AA23DC;
+extern uint32_t mem_00AA2404;
+extern uint32_t mem_00AA23D0;
+extern const char* (__thiscall* mem_00924FF0)(void* self);
+extern void (__cdecl* mem_00925134)();
+extern int mem_00924FDC;
+extern int mem_00924FF4;
+extern int mem_00924FC0;
+extern int mem_009251E4;
+extern int mem_00AA2400;
+extern int mem_00924FE8;
+extern int mem_00B599BC;
+
+// @name ExprParser::ExpressionContainer::saveToXML
+// @class ExprParser::ExpressionContainer
+// @summary Serializes the expression container name and its expression entries into an XML node.
+// @field ExprParser::ExpressionContainer +0x04 uint8_t[] field_0x04
+// @field ExprParser::ExpressionContainer +0x08 uint8_t* field_0x08
+// @field ExprParser::ExpressionContainer +0x0C uint8_t* field_0x0c
+// @field ExprParser::ExpressionContainer +0x24 uint8_t[] field_0x24
+void* __thiscall fn_00699E90(void* self, void* xml_node) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    void* name_prop = ext_00640110(xml_node, mem_00AA23B8);
+    const char* container_name = mem_00924FF0(base + 0x24);
+    ext_00427550(&name_prop, container_name);
+
+    uint8_t* vec_base = base + 0x04;
+    uint8_t* it = lift_field<uint8_t*>(base, 0x08);
+    if (it > lift_field<uint8_t*>(vec_base, 0x08)) {
+        mem_00925134();
+    }
+
+    for (;;) {
+        uint8_t* vec_end = lift_field<uint8_t*>(vec_base, 0x08);
+        if (lift_field<uint8_t*>(vec_base, 0x04) > vec_end) {
+            mem_00925134();
+        }
+        if (it == vec_end) {
+            break;
+        }
+
+        void* expr_node = ext_006404E0(xml_node, mem_00AA2354);
+        if (it >= lift_field<uint8_t*>(vec_base, 0x08)) {
+            mem_00925134();
+        }
+        ext_00682460(expr_node, it, mem_00AA23DC);
+
+        if (it >= lift_field<uint8_t*>(vec_base, 0x08)) {
+            mem_00925134();
+        }
+        void* val_obj = lift_field<void*>(it, 0x20);
+        void* val_prop = ext_00640110(expr_node, mem_00AA2404);
+        using GetIntFn = int32_t (__thiscall*)(void*);
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(val_obj);
+        int32_t val = reinterpret_cast<GetIntFn>(vtable[0x30 / 4])(val_obj);
+        ext_00640A50(val_prop, val);
+
+        if (it >= lift_field<uint8_t*>(vec_base, 0x08)) {
+            mem_00925134();
+        }
+        void* type_prop = ext_00640110(expr_node, mem_00AA23D0);
+        ext_00640A50(type_prop, lift_field<int32_t>(it, 0x1C));
+
+        if (it >= lift_field<uint8_t*>(vec_base, 0x08)) {
+            mem_00925134();
+        }
+        it += 0x2C;
+    }
+
+    // Keep expected callee/global metadata references from liftwork's function record
+    (void)&ext_004275C0; (void)&ext_00427A60; (void)&ext_004E3D30; (void)&ext_0053F5F0;
+    (void)&ext_0063EFE0; (void)&ext_00671100; (void)&ext_00671490; (void)&ext_0067FAB0;
+    (void)&ext_006824E0; (void)&ext_0069ABD0;
+    (void)&mem_00924FC0; (void)&mem_00924FDC; (void)&mem_00924FE8; (void)&mem_00924FF4;
+    (void)&mem_009251E4; (void)&mem_00AA2400; (void)&mem_00B599BC;
+
+    return xml_node;
+}
+} // namespace lift_00699E90
