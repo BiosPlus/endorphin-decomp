@@ -4443,3 +4443,48 @@ extern void __fastcall fn_006D8490(void* self, Arg16_006D8490 arg) {
     ext_006D80A0();
 }
 } // namespace lift_006D8490
+
+// [0x006DC560]
+namespace lift_006DC560 {
+// @name Unknown::removeElementAt_006DC560
+// @class Unknown
+// @summary Validates index (> 0 and < count at +0xb8), removes and destroys the element from the DynArray at +0xb8, adjusts +0xe8 if it matched index, and reports errors via +0xec.
+// @field Unknown +0xb8 int32_t count
+// @field Unknown +0xc8 void** items
+// @field Unknown +0xe8 int32_t field_0xe8
+// @field Unknown +0xec void* field_0xec
+
+
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __thiscall ext_006C9250(void* self);
+extern void __thiscall ext_006D2200(void* self, int32_t index);
+extern void* __thiscall ext_006E7410(void* self, uint32_t arg1, uint32_t arg2);
+
+extern uint8_t __thiscall fn_006DC560(void* self, int32_t index) {
+    if (index == 0) {
+        ext_006E7410(lift_field<void*>(self, 0xec), 0, 0x00aa9408);
+        return 0;
+    }
+
+    int32_t count = lift_field<int32_t>(self, 0xb8);
+    if (index < 0 || index >= count) {
+        ext_006E7410(lift_field<void*>(self, 0xec), 0, 0x00aa87e4);
+        return 0;
+    }
+
+    if (lift_field<int32_t>(self, 0xe8) == index) {
+        lift_field<int32_t>(self, 0xe8) = index - 1;
+    }
+
+    void** items = lift_field<void**>(self, 0xc8);
+    void* elem = items[index];
+    ext_006D2200(&lift_field<uint8_t>(self, 0xb8), index);
+
+    if (elem != nullptr) {
+        ext_006C9250(elem);
+        ext_006A5C5C(elem);
+    }
+
+    return 1;
+}
+} // namespace lift_006DC560

@@ -1,0 +1,40 @@
+{
+  "va": "0x006DC560",
+  "size": 144,
+  "orig_symbol": "sub_006DC560",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::removeElementAt_006DC560",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint8_t __thiscall fn_006DC560(void* self, int32_t index)",
+  "summary": "Validates index (\u003e 0 and \u003c count at +0xb8), removes and destroys the element from the DynArray at +0xb8, adjusts +0xe8 if it matched index, and reports errors via +0xec.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "void**",
+      "name": "items"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE8",
+      "type": "int32_t",
+      "name": "field_0xe8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEC",
+      "type": "void*",
+      "name": "field_0xec"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:14:28Z"
+}
