@@ -2222,3 +2222,25 @@ double fn_00702EE0(void* self) {
     return result;
 }
 } // namespace lift_00702EE0
+
+// [0x0070C060] sub_0070C060 (127 bytes)
+namespace lift_0070C060 {
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0(void* self);
+// Known callee 0x0070BBD0: Unknown::FillTripleFromChains (Resolves a value index via GetValueIfCountPositive, then reads three float getters through chained sub-object lookups and stores them as doubles into the caller-supplied buffer at offsets 0x00, 0x08 and 0x10; returns that buffer.)
+extern void* ext_0070BBD0(void* self, void* buf);
+// Known callee 0x0077FB40: Unknown::setDoubleQuadToOnes (Writes four IEEE-754 doubles of 1.0 (0x3FF0000000000000) at +0x00, +0x08, +0x10, +0x18 and returns self.)
+extern void* ext_0077FB40(void* self);
+
+// @name Unknown::fillTripleAndCopyOut_0070C060
+// @class Unknown
+// @summary Fills a 4-double temp with 1.0s, overwrites the first three with FillTripleFromChains, copies the 32-byte temp to out, and returns out.
+void* fn_0070C060(void* self, void* out) {
+    double buf[4];
+    ext_0077FB40(buf);
+    ext_0070BBD0(self, buf);
+    std::memcpy(out, buf, sizeof(buf));
+    ext_006D80A0(buf);
+    return out;
+}
+} // namespace lift_0070C060
