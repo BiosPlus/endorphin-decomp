@@ -1,0 +1,13 @@
+{
+  "va": "0x007F9FB0",
+  "size": 148,
+  "orig_symbol": "sub_007F9FB0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "vecAddScaled",
+  "signature": "void sub_007F9FB0(int count, float* dst, const float* src1, float scale, const float* src2)",
+  "summary": "Computes dst[i] = src1[i] * scale + src2[i] for count floats",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:07:54Z"
+}

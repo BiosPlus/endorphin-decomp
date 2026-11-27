@@ -797,3 +797,16 @@ uint8_t fn_007F13F0(void* self) {
     return 1;
 }
 } // namespace lift_007F13F0
+
+// [0x007F9FB0]
+namespace lift_007F9FB0 {
+// @name vecAddScaled
+// @summary Computes dst[i] = src1[i] * scale + src2[i] for count floats
+
+
+void sub_007F9FB0(int count, float* dst, const float* src1, float scale, const float* src2) {
+    for (int i = 0; i < count; ++i) {
+        dst[i] = src1[i] * scale + src2[i];
+    }
+}
+} // namespace lift_007F9FB0

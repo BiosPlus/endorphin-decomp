@@ -85144,6 +85144,12 @@
     "summary": "Writes dst[i] = src[i] * scale for i in [0, count) (cdecl; count\u003c=0 writes nothing).",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F9FB0": {
+    "name": "vecAddScaled",
+    "signature": "void sub_007F9FB0(int count, float* dst, const float* src1, float scale, const float* src2)",
+    "summary": "Computes dst[i] = src1[i] * scale + src2[i] for count floats",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007FA1B0": {
     "name": "Unknown_ScaleOffsetAndInvoke_007FA1B0",
     "signature": "extern \"C\" uint32_t mem_00B61FA0;  // function pointer: float (__cdecl*)(float*) float fn_007FA1B0(float x)",
