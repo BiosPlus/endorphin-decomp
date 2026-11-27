@@ -264,3 +264,85 @@ void __thiscall fn_004C8340(void* self) {
     dtor(&str);
 }
 } // namespace lift_004C8340
+
+// [0x004C8210]
+namespace lift_004C8210 {
+// @name NMData::SeverEventData::vfunc_21
+// @class NMData::SeverEventData
+// @summary Runs the TriggeredEventData base hook, assigns a string property into this+0x180 (key chosen by a global object's level check), and if the key lookup succeeds, parses an int into this+0x15C and forwards a secondary lookup result into this+0x16C.
+// @field NMData::SeverEventData +0x15C uint32_t field_0x15c
+// @field NMData::SeverEventData +0x16C uint8_t field_0x16c
+// @field NMData::SeverEventData +0x180 std::string field_0x180
+
+// Base-class vfunc_21 (NMData::TriggeredEventData::vfunc_21): __thiscall, one stack arg, callee-cleans.
+extern void __thiscall ext_004C24C0(void* self, void* arg);
+// Known callee 0x004275E0: assignVirtualString — cdecl(dst, obj).
+extern void ext_004275E0(void* dst, void* obj);
+// Known callee 0x0053F5F0: parseIntFromStringProp — cdecl(out, key_source).
+extern void ext_0053F5F0(void* out, void* key_source);
+// Known callee 0x0063EFE0: sub_0063EFE0 — __thiscall(self, name) -> lookup result.
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+// Known callee 0x0063F530: sub_0063F530 — __thiscall(self, key, a, b), callee-cleans.
+extern uint32_t __thiscall ext_0063F530(void* self, uint32_t key, uint32_t a, uint32_t b);
+// Known callee 0x0049F540: sub_0049F540 — cdecl(result, dst, key, zero).
+extern void ext_0049F540(uint32_t result, void* dst, uint32_t key, uint32_t zero);
+
+// Rodata/global addresses (values are VAs of string keys or sentinels).
+extern uint32_t mem_00AE29D0; // global object pointer; +0x538 is a level counter
+extern uint32_t mem_00A9F838; // key VA
+extern uint32_t mem_00A9F96C; // fallback key VA
+extern uint32_t mem_00A9F680; // key VA
+extern uint32_t mem_00A9F0C0; // key VA
+extern uint32_t mem_00A9F0C4; // key VA
+
+namespace {
+
+// Sentinel results returned by the lookup routine (no match / special).
+inline bool is_sentinel(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+inline void* as_ptr(uint32_t va) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(va));
+}
+
+inline const char* as_cstr(uint32_t va) {
+    return reinterpret_cast<const char*>(static_cast<uintptr_t>(va));
+}
+
+} // namespace
+
+void __thiscall fn_004C8210(void* self, void* arg) {
+    auto* edi = static_cast<uint8_t*>(self);
+
+    // Base hook: TriggeredEventData::vfunc_21(arg) with this in ECX.
+    ext_004C24C0(self, arg);
+
+    // Choose the key: if the global object exists and its level at +0x538 is < 5,
+    // use key A9F838; otherwise use A9F96C.
+    auto* g = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(mem_00AE29D0));
+    uint32_t key_a;
+    if (g != nullptr && lift_field<int32_t>(g, 0x538) < 5) {
+        key_a = mem_00A9F838;
+    } else {
+        key_a = mem_00A9F96C;
+    }
+
+    uint32_t value_a = ext_0063EFE0(arg, as_cstr(key_a));
+    ext_004275E0(edi + 0x180, as_ptr(value_a));
+
+    // Second lookup with key F680; if it hits a sentinel, skip the parse step.
+    uint32_t value_b = ext_0063EFE0(arg, as_cstr(mem_00A9F680));
+    if (!is_sentinel(value_b)) {
+        uint32_t parsed_src = ext_0063EFE0(arg, as_cstr(mem_00A9F680));
+        ext_0053F5F0(edi + 0x15C, &parsed_src);
+    }
+
+    // Third lookup (key F0C0) with fixed args (0, 1); result gates the final store.
+    uint32_t value_c = ext_0063F530(arg, mem_00A9F0C0, 0, 1);
+    if (!is_sentinel(value_c)) {
+        ext_0049F540(value_c, edi + 0x16C, mem_00A9F0C4, 0);
+    }
+}
+} // namespace lift_004C8210

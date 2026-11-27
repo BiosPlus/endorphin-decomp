@@ -1,0 +1,34 @@
+{
+  "va": "0x004C8210",
+  "size": 295,
+  "orig_symbol": "NMData::SeverEventData::vfunc_21",
+  "src_path": "src/NMData/SeverEventData.cpp",
+  "lifted_path": "lifted/NMData/SeverEventData.cpp",
+  "name": "NMData::SeverEventData::vfunc_21",
+  "class": "NMData::SeverEventData",
+  "signature": "inline bool is_sentinel(uint32_t v)",
+  "summary": "Runs the TriggeredEventData base hook, assigns a string property into this+0x180 (key chosen by a global object's level check), and if the key lookup succeeds, parses an int into this+0x15C and forwards a secondary lookup result into this+0x16C.",
+  "fields": [
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x15C",
+      "type": "uint32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x16C",
+      "type": "uint8_t",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x180",
+      "type": "std::string",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:11:47Z"
+}

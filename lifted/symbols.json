@@ -20910,6 +20910,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004C80A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C8210": {
+    "name": "NMData::SeverEventData::vfunc_21",
+    "class": "NMData::SeverEventData",
+    "signature": "inline bool is_sentinel(uint32_t v)",
+    "summary": "Runs the TriggeredEventData base hook, assigns a string property into this+0x180 (key chosen by a global object's level check), and if the key lookup succeeds, parses an int into this+0x15C and forwards a secondary lookup result into this+0x16C.",
+    "lifted_path": "lifted/NMData/SeverEventData.cpp"
+  },
   "0x004C8340": {
     "name": "NMData::SeverEventData::vfunc_90",
     "class": "NMData::SeverEventData",
