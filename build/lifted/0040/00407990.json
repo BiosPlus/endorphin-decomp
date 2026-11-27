@@ -1,0 +1,34 @@
+{
+  "va": "0x00407990",
+  "size": 143,
+  "orig_symbol": "BottomPanel::vfunc_66",
+  "src_path": "src/classes/BottomPanel.cpp",
+  "lifted_path": "lifted/classes/BottomPanel.cpp",
+  "name": "BottomPanel::vfunc_66",
+  "class": "BottomPanel",
+  "signature": "static inline SendMessageAFn iat_SendMessageA()",
+  "summary": "Forwards a message to two child windows; on WM_CHAR (0x102) re-sends it to the focused window if that window's parent is this panel, else falls back to ext_006A600A.",
+  "fields": [
+    {
+      "class": "BottomPanel",
+      "offset": "+0xD8",
+      "type": "HWND",
+      "name": "field_0xd8"
+    },
+    {
+      "class": "BottomPanel",
+      "offset": "+0x148",
+      "type": "HWND",
+      "name": "field_0x148"
+    },
+    {
+      "class": "CWnd",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:18Z"
+}

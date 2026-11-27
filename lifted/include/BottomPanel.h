@@ -11,6 +11,8 @@
 namespace lifted_layout {
 struct BottomPanel_Fields {
     // +0x0   void*                    vptr  (evidence: 0x004086A0)
+    // +0xD8  HWND                     field_0xd8  (evidence: 0x00407990)
+    // +0x148 HWND                     field_0x148  (evidence: 0x00407990)
     // +0x198 uint8_t                  field_0x198  (evidence: 0x00407750)
     // +0x1EC uint8_t                  field_0x1ec  (evidence: 0x00407750)
     // +0x240 uint8_t                  field_0x240  (evidence: 0x00407750)

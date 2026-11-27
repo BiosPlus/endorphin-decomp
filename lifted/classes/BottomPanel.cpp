@@ -58,3 +58,60 @@ void __thiscall fn_00407750(void* self, uint32_t arg1, uint32_t arg2) {
     }
 }
 } // namespace lift_00407750
+
+// [0x00407990] BottomPanel::vfunc_66 (143 bytes)
+namespace lift_00407990 {
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+extern void* ext_006A5E00(void* hwnd);
+// Known callee 0x006A600A: thunk_MFC80_ord_5202 (IAT jump thunk forwarding to MFC80!ord_5202.)
+extern intptr_t ext_006A600A(void* self, void* msg);
+extern int mem_00925694;
+extern int mem_00925654;
+extern int mem_00925650;
+
+// IAT slots (USER32 imports) hold the resolved function address at runtime.
+using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+using GetFocusFn     = HWND(__stdcall*)();
+using GetParentFn    = HWND(__stdcall*)(HWND);
+
+static inline SendMessageAFn iat_SendMessageA() {
+    return reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+}
+static inline GetFocusFn iat_GetFocus() {
+    return reinterpret_cast<GetFocusFn>(static_cast<uintptr_t>(mem_00925654));
+}
+static inline GetParentFn iat_GetParent() {
+    return reinterpret_cast<GetParentFn>(static_cast<uintptr_t>(mem_00925650));
+}
+
+// @name BottomPanel::vfunc_66
+// @class BottomPanel
+// @summary Forwards a message to two child windows; on WM_CHAR (0x102) re-sends it to the focused window if that window's parent is this panel, else falls back to ext_006A600A.
+// @field BottomPanel +0xd8 HWND field_0xd8
+// @field BottomPanel +0x148 HWND field_0x148
+// @field CWnd +0x20 HWND field_0x20
+intptr_t fn_00407990(void* self, void* msg) {
+    const auto sendMessageA = iat_SendMessageA();
+
+    // msg is a MSG-like struct: +0x4 message, +0x8 wParam, +0xC lParam.
+    sendMessageA(lift_field<HWND>(self, 0xd8), 0x407, 0, reinterpret_cast<LPARAM>(msg));
+    sendMessageA(lift_field<HWND>(self, 0x148), 0x407, 0, reinterpret_cast<LPARAM>(msg));
+
+    if (lift_field<uint32_t>(msg, 4) == 0x102) {
+        HWND focus = iat_GetFocus()();
+        void* wnd = ext_006A5E00(focus);
+        if (wnd != nullptr) {
+            HWND wndHwnd = lift_field<HWND>(wnd, 0x20);
+            HWND parent = iat_GetParent()(wndHwnd);
+            if (ext_006A5E00(parent) == self) {
+                sendMessageA(wndHwnd, 0x102,
+                             static_cast<WPARAM>(lift_field<uint32_t>(msg, 8)),
+                             static_cast<LPARAM>(lift_field<int32_t>(msg, 0xc)));
+                return 1;
+            }
+        }
+    }
+
+    return ext_006A600A(self, msg);
+}
+} // namespace lift_00407990

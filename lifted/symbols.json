@@ -802,6 +802,13 @@
     "summary": "Computes the floor of a single-precision float via MSVCR80 floor.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00407990": {
+    "name": "BottomPanel::vfunc_66",
+    "class": "BottomPanel",
+    "signature": "static inline SendMessageAFn iat_SendMessageA()",
+    "summary": "Forwards a message to two child windows; on WM_CHAR (0x102) re-sends it to the focused window if that window's parent is this panel, else falls back to ext_006A600A.",
+    "lifted_path": "lifted/classes/BottomPanel.cpp"
+  },
   "0x00408040": {
     "name": "sub_00408040",
     "signature": "extern \"C\" void fn_00408040(void)",

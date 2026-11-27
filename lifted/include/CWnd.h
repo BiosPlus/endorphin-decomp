@@ -9,6 +9,7 @@
 // Recovered field layout for CWnd:
 namespace lifted_layout {
 struct CWnd_Fields {
+    // +0x20  HWND                     field_0x20  (evidence: 0x00407990) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    hWnd  (evidence: 0x004046E0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 m_hWnd  (evidence: 0x00401080, 0x004030F0, 0x0040BE90, 0x004545A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    m_hWnd  (evidence: 0x00460540, 0x006AC2E0) // CONFLICT: multiple definitions at +0x20
