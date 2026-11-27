@@ -8,6 +8,7 @@
 // Recovered field layout for ExprParser::Method2Type:
 namespace lifted_layout {
 struct ExprParser_Method2Type_Fields {
-    // +0x4   DWORD                    accessorPtr  (evidence: 0x0066DED0)
+    // +0x4   DWORD                    accessorPtr  (evidence: 0x0066DED0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x0066D5B0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

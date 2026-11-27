@@ -1066,3 +1066,31 @@ void fn_0066DE50(void* holder) {
     lift_field<DWORD>(holder, 0x04) = 0x00B59740u;
 }
 } // namespace lift_0066DE50
+
+// [0x0066D5B0] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationEulersAtoB(class NM::Vector3 const &, NM::Vector3 const &)>::vfunc_40 (122 bytes)
+namespace lift_0066D5B0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B596C4;
+extern int mem_00B596C0;
+
+// @name ExprParser::Method2Type::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationEulersAtoB(class NM::Vector3 const &, NM::Vector3 const &)>
+// @summary One-time init of a static accessor object (vtable 0x988EEC) guarded by a bit flag, then binds holder+0x04 to that object.
+// @field ExprParser::Method2Type +0x04 void* field_0x04
+//
+// The original SEH frame setup/teardown (fs:[0] push/pop) is MSVC EH bookkeeping
+// for the function-local static guard and is omitted; it has no portable meaning.
+void fn_0066D5B0(void* self) {
+    // Guard bit: if already initialised, skip straight to the bind.
+    if ((mem_00B596C4 & 1) == 0) {
+        mem_00B596C4 |= 1;
+        // Callee ext_0067A670 is passed the static object as ECX and a
+        // zero stack argument (the asm stores 0 to the trylevel slot before the call).
+        ext_0067A670(&mem_00B596C0, 0);
+        mem_00B596C0 = 0x988EEC;  // vtable pointer for the static accessor object
+    }
+    // Bind holder+0x04 to the static accessor object (address kept as a 32-bit value).
+    lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B596C0));
+}
+} // namespace lift_0066D5B0

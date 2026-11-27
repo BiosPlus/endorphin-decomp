@@ -51501,6 +51501,13 @@
     "summary": "Lazily initializes the static type descriptor at mem_00B596B0 (guarded by bit 0 of mem_00B596B4), then stores its address into out-\u003e+0x04.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
+  "0x0066D5B0": {
+    "name": "ExprParser::Method2Type::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationEulersAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "void fn_0066D5B0(void* self)",
+    "summary": "One-time init of a static accessor object (vtable 0x988EEC) guarded by a bit flag, then binds holder+0x04 to that object.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x0066D630": {
     "name": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateX(float)\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateX(float)\u003e",
