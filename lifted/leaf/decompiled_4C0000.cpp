@@ -1622,3 +1622,54 @@ extern void* fn_004C89D0(void* arg0) {
     return nullptr;
 }
 } // namespace lift_004C89D0
+
+// [0x004C98C0]
+namespace lift_004C98C0 {
+// @name findAndInvokeFactory_004C98C0
+// @summary Looks up a factory/creator entry by key in the static registry, invokes it with arg2 if found, or throws/returns nullptr if not found.
+// @field StaticRegistry +0x04 void* lookupTable
+
+
+extern void* ext_004C9860(void);
+extern void* __thiscall ext_00505D50(void* self, void* key);
+extern void* ext_004C7270(void* arg);
+extern void ext_0066AC90(void* arg);
+extern void* __thiscall ext_004C6F60(void* self, ...);
+extern void* __thiscall ext_004C7200(void* self, const void* other);
+extern void ext_006A6DD2(void);
+
+extern void* mem_00924FE0;
+
+using FactoryFn = void* (*)(void*);
+using StringCopyCtor = void* (__thiscall*)(void* self, const void* other);
+
+void* fn_004C98C0(void* key, void* arg2, uint8_t throwIfNotFound) {
+    void* registry = ext_004C9860();
+    void* entry = ext_00505D50(static_cast<char*>(registry) + 0x04, key);
+    if (entry != nullptr) {
+        FactoryFn fn = *reinterpret_cast<FactoryFn*>(entry);
+        return fn(arg2);
+    }
+
+    if (throwIfNotFound == 0) {
+        return nullptr;
+    }
+
+    uint8_t keyCopy[0x1C]{};
+    reinterpret_cast<StringCopyCtor>(mem_00924FE0)(keyCopy, key);
+
+    uint8_t typeNameBuf[0x1C]{};
+    uint8_t typeArgBuf[0x1C]{};
+    ext_004C7270(typeArgBuf);
+    ext_0066AC90(typeNameBuf);
+
+    uint8_t excTemp[0x60]{};
+    void* excObj = ext_004C6F60(excTemp);
+
+    uint8_t excCopy[0x60]{};
+    ext_004C7200(excCopy, excObj);
+    ext_006A6DD2();
+
+    return nullptr;
+}
+} // namespace lift_004C98C0
