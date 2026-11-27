@@ -1357,3 +1357,38 @@ void fn_00798570(void* self, uint32_t value) {
     dispatch(self, quotient);
 }
 } // namespace lift_00798570
+
+// [0x0079E260] sub_0079E260 (128 bytes)
+namespace lift_0079E260 {
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0();
+// Known callee 0x00714940: sub_00714940 (Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).)
+extern void ext_00714940();
+
+// @name Unknown::DispatchSubobjectCall
+// @class Unknown
+// @summary Selects a subobject pointer from self->field_0x00 by selector (0: +0x00, 1: +0x48, 2: +0x90, other: no call), calls ext_00714940 with it and a local out buffer, then calls the empty stub ext_006D80A0 on that buffer.
+// @field Unknown +0x00 void* field_0x00
+void fn_0079E260(void* self, uint32_t selector) {
+    // Local out-buffer (was the SEH-frame-adjacent stack slot at esp+0x14).
+    uint32_t local[4] = {0, 0, 0, 0};
+
+    uint8_t* base = *reinterpret_cast<uint8_t**>(self);
+    uint8_t* target = nullptr;
+    bool doCall = true;
+    switch (selector) {
+        case 0: target = base;        break;
+        case 1: target = base + 0x48; break;
+        case 2: target = base + 0x90; break;
+        default: doCall = false;      break;
+    }
+
+    if (doCall) {
+        using SubFn = void*(__thiscall*)(void* self_, void* out);
+        reinterpret_cast<SubFn>(&ext_00714940)(target, &local[0]);
+    }
+
+    using StubFn = void(__thiscall*)(void* self_);
+    reinterpret_cast<StubFn>(&ext_006D80A0)(&local[0]);
+}
+} // namespace lift_0079E260

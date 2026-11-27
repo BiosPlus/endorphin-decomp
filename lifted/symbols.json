@@ -76784,6 +76784,13 @@
     "summary": "Dispatches on a selector (stack arg): 0 checks *self, 1 checks *self+0x48, 2 checks *self+0x90; any other selector returns 0.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079E260": {
+    "name": "Unknown::DispatchSubobjectCall",
+    "class": "Unknown",
+    "signature": "void fn_0079E260(void* self, uint32_t selector)",
+    "summary": "Selects a subobject pointer from self-\u003efield_0x00 by selector (0: +0x00, 1: +0x48, 2: +0x90, other: no call), calls ext_00714940 with it and a local out buffer, then calls the empty stub ext_006D80A0 on that buffer.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079E410": {
     "name": "Unknown::updateIndexedRecordFromD8",
     "class": "Unknown",
