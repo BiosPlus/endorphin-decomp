@@ -51520,6 +51520,13 @@
     "summary": "Takes a holder pointer; if its target is null raises a C++ exception, otherwise obtains a sub-object via sub_00672110 and forwards to its vfunc_42, then releases it via vfunc_30 and returns the bool result.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0062E730": {
+    "name": "ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_45 (getVertAxis)",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
+    "signature": "void* __stdcall fn_0062E730(void* self, void* arg)",
+    "summary": "Reads the held pointer's sub-object into a temp, reassigns field_0x04 from it, releases the temp, then forwards to the inner object's vfunc at slot 45.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062E870": {
     "name": "ReadMethodType::vfunc_47",
     "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",

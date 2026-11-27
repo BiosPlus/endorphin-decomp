@@ -86277,3 +86277,57 @@ void* fn_005D21F0(void* self, void* arg2) {
     return forward(target, self, arg2);
 }
 } // namespace lift_005D21F0
+
+// [0x0062E730]
+namespace lift_0062E730 {
+// Known callee 0x00672110: sub_00672110 (52B), thiscall; builds a temp from a source pointer.
+extern void* __thiscall ext_00672110(void* self, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+using ThisCall1 = void* (__thiscall*)(void* self, void* a);
+using ThisCall2 = void* (__thiscall*)(void* self, void* a, void* b);
+
+// @name ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_45 (getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the held pointer's sub-object into a temp, reassigns field_0x04 from it, releases the temp, then forwards to the inner object's vfunc at slot 45.
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x04 void* field_0x04
+void* __stdcall fn_0062E730(void* self, void* arg) {
+    // Exception object and temp slot (EH frame setup/teardown omitted).
+    alignas(8) unsigned char exc[0x10] = {};
+    alignas(8) unsigned char tmp[0x10] = {};
+
+    void* held = lift_field<void*>(self, 0x00);
+    if (held == nullptr) {
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    // Build temp from held + 0x78.
+    ext_00672110(tmp, static_cast<unsigned char*>(held) + 0x78);
+
+    // Copy-assign into self's field_0x04 from temp.
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's pointer via vtable slot 0x78 when non-null.
+    void* released = lift_field<void*>(tmp, 0x00);
+    if (released != nullptr) {
+        void** relVt = *reinterpret_cast<void***>(released);
+        auto relFn = reinterpret_cast<ThisCall1>(relVt[0x78 / sizeof(void*)]);
+        relFn(released, tmp);
+    }
+
+    // Tail-forward to field_0x04's vfunc at slot 0xB4 with (self, arg).
+    void* inner = lift_field<void*>(self, 0x04);
+    void** innerVt = *reinterpret_cast<void***>(inner);
+    auto innerFn = reinterpret_cast<ThisCall2>(innerVt[0xB4 / sizeof(void*)]);
+    return innerFn(inner, self, arg);
+}
+} // namespace lift_0062E730
