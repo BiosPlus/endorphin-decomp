@@ -2745,3 +2745,47 @@ void fn_00496150(void* vec, void** out, void* self) {
     }
 }
 } // namespace lift_00496150
+
+// [0x0049A930] sub_0049A930 (140 bytes)
+namespace lift_0049A930 {
+// Known callee 0x00474F00: sub_00474F00 (thiscall on this+0x18; takes (std::string* str, uint32 key); returns a pointer used as the receiver of the follow-up assign import)
+extern void* ext_00474F00(void* self, void* str, uint32_t key);
+// Known callee 0x00476360: sub_00476360 (thiscall on this+0x08; takes (std::string* str); returns a 32-bit value)
+extern uint32_t ext_00476360(void* self, void* str);
+// Known callee 0x00662610: sub_00662610 (cdecl helper that fills a std::string from a C string literal)
+extern void ext_00662610(void* str, const char* text);
+// Import slot holding the MSVCP80 thiscall target invoked on the object returned by ext_00474F00 (no stack args)
+extern int mem_00924FD4;
+// Import slot holding the MSVCP80 std::string destructor (thiscall, no stack args)
+extern int mem_00924FF4;
+
+// @name Unknown::lookupStringKeyedValue_0049A930
+// @class Unknown
+// @summary Clone of Unknown::lookupStringKeyedValue (0x00476430) using literal 0x00A34FEC: builds a std::string, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.
+// @field Unknown +0x08 subobject field_0x08
+// @field Unknown +0x18 subobject field_0x18
+uint32_t* fn_0049A930(void* self, uint32_t* out, uint32_t key) {
+    // Local std::string (28-byte MSVC 2005 layout) in the frame.
+    alignas(8) uint8_t str[0x1C] = {};
+    ext_00662610(str, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00A34FECu)));
+
+    if (key != 0) {
+        void* resolved = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, str, key);
+
+        using ThisOnlyFn = void (__thiscall*)(void*);
+        auto assign = reinterpret_cast<ThisOnlyFn>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FD4)));
+        assign(resolved);
+    }
+
+    uint32_t value = ext_00476360(static_cast<uint8_t*>(self) + 0x08, str);
+    *out = value;
+
+    using StringDtorFn = void (__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(str);
+
+    return out;
+}
+} // namespace lift_0049A930

@@ -14245,6 +14245,13 @@
     "summary": "Forwards the first argument as the receiver to ext_00505F00, passing the address of the sub-object at this+0x84 as its stack argument, and returns the callee's result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x0049A930": {
+    "name": "Unknown::lookupStringKeyedValue_0049A930",
+    "class": "Unknown",
+    "signature": "uint32_t* fn_0049A930(void* self, uint32_t* out, uint32_t key)",
+    "summary": "Clone of Unknown::lookupStringKeyedValue (0x00476430) using literal 0x00A34FEC: builds a std::string, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049AA70": {
     "name": "sub_0049AA70",
     "signature": "extern \"C\" void fn_0049AA70(void)",

@@ -1,0 +1,28 @@
+{
+  "va": "0x0049A930",
+  "size": 140,
+  "orig_symbol": "sub_0049A930",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Unknown::lookupStringKeyedValue_0049A930",
+  "class": "Unknown",
+  "signature": "uint32_t* fn_0049A930(void* self, uint32_t* out, uint32_t key)",
+  "summary": "Clone of Unknown::lookupStringKeyedValue (0x00476430) using literal 0x00A34FEC: builds a std::string, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "subobject",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "subobject",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:15:42Z"
+}
