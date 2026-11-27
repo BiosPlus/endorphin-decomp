@@ -2814,3 +2814,18 @@ void __thiscall sub_0078D130(void* self, void* fallbackAllocator, void* ptr) {
     lift_field<uint32_t>(self, 0x24) -= 1;
 }
 } // namespace lift_0078D130
+
+// [0x007865B0] sub_007865B0 (20 bytes)
+namespace lift_007865B0 {
+// Known callee 0x006E7410: Unknown::assignStringByIndexAndForward_006E7410 (Passes the first stack argument as the index to assignStringByIndex (006E7440) on self, then forwards the second stack argument to the subobject call (006E7430) on self and returns its result.)
+extern void* __thiscall ext_006E7410(void* self, uint32_t arg1, uint32_t arg2);
+
+// @name Unknown::assignConstStringIndex2_007865B0
+// @class Unknown
+// @summary Calls ext_006E7410 on the subobject at self+0x20 with index 2 and constant 0x00AAF4A0, discards the result, and returns 0 (ret 4, one stack argument popped by callee).
+// @field Unknown +0x20 void* field_0x20
+extern uint8_t __thiscall fn_007865B0(void* self, [[maybe_unused]] uint32_t stackArg) {
+    (void)ext_006E7410(static_cast<uint8_t*>(self) + 0x20, 2u, 0x00AAF4A0u);
+    return 0;
+}
+} // namespace lift_007865B0

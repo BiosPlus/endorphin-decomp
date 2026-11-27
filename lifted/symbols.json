@@ -79344,6 +79344,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00996F30 and tail-calls base destructor sub_00785430.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007865B0": {
+    "name": "Unknown::assignConstStringIndex2_007865B0",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint8_t __thiscall fn_007865B0(void* self, [[maybe_unused]] uint32_t stackArg)",
+    "summary": "Calls ext_006E7410 on the subobject at self+0x20 with index 2 and constant 0x00AAF4A0, discards the result, and returns 0 (ret 4, one stack argument popped by callee).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00787000": {
     "name": "sub_00787000",
     "signature": "extern \"C\" void __fastcall fn_00787000(void* self, int edx_unused, uint8_t value)",
