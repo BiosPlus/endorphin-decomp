@@ -66313,6 +66313,13 @@
     "summary": "Destroys the 0x48-byte element range at +0x14..+0x18, releases its buffer via ext_006A5C5C, zeroes the range pointers and tidies the owning vector.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00621CA0": {
+    "name": "Vector72::push_back",
+    "class": "Vector72",
+    "signature": "extern \"C\" void __thiscall sub_00621CA0(void* self, const void* val)",
+    "summary": "Appends a 72-byte element to the vector, growing via insert if capacity is full",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622210": {
     "name": "NMData::HingeCalibrationVariables::vfunc_26",
     "class": "NMData::HingeCalibrationVariables",
