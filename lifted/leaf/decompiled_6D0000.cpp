@@ -3080,3 +3080,34 @@ void fn_006DCF80(void* self, void* arg) {
     }
 }
 } // namespace lift_006DCF80
+
+// [0x006D2320]
+namespace lift_006D2320 {
+// @name Unknown::appendAllFromSource_006D2320
+// @class Unknown
+// @summary Resets self, copies src+0x08 into self+0x08, then appends every int32 element of src's array to self via DynamicArray insert.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x08 int32_t field_0x08
+
+void ext_006D2250(void* self);
+int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+void* fn_006D2320(void* self, void* src) {
+    auto* dst_b = static_cast<uint8_t*>(self);
+    auto* src_b = static_cast<uint8_t*>(src);
+
+    ext_006D2250(self);
+
+    *reinterpret_cast<int32_t*>(dst_b + 0x08) = *reinterpret_cast<int32_t*>(src_b + 0x08);
+
+    const int32_t count = *reinterpret_cast<int32_t*>(src_b + 0x00);
+    for (int32_t i = 0; i < count; ++i) {
+        uint32_t value = *reinterpret_cast<uint32_t*>(
+            *reinterpret_cast<uint8_t**>(src_b + 0x10) + 4 * static_cast<std::size_t>(i));
+        const int32_t end_index = *reinterpret_cast<int32_t*>(dst_b + 0x00);
+        ext_006D2170(self, end_index, &value);
+    }
+
+    return self;
+}
+} // namespace lift_006D2320

@@ -1,0 +1,28 @@
+{
+  "va": "0x006D2320",
+  "size": 80,
+  "orig_symbol": "sub_006D2320",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::appendAllFromSource_006D2320",
+  "class": "Unknown",
+  "signature": "void* fn_006D2320(void* self, void* src)",
+  "summary": "Resets self, copies src+0x08 into self+0x08, then appends every int32 element of src's array to self via DynamicArray insert.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:40Z"
+}

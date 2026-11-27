@@ -68166,6 +68166,13 @@
     "summary": "Sets the element count to n; if n exceeds the current count, grows the container by the difference first.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D2320": {
+    "name": "Unknown::appendAllFromSource_006D2320",
+    "class": "Unknown",
+    "signature": "void* fn_006D2320(void* self, void* src)",
+    "summary": "Resets self, copies src+0x08 into self+0x08, then appends every int32 element of src's array to self via DynamicArray insert.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2390": {
     "name": "ForwardArgToCalleeReturnThis",
     "signature": "void* fn_006D2390(void* self, uint32_t arg1)",
