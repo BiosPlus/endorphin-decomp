@@ -2846,3 +2846,39 @@ void fn_0067C8C0(void* self, const float* mat) {
     dst[2] = z;
 }
 } // namespace lift_0067C8C0
+
+// [0x00673EA0]
+namespace lift_00673EA0 {
+// @name allocAndConstructListNode
+// @summary Allocates a 0x4C-byte node, sets two pointer fields at +0x00/+0x04, and copy-constructs the payload at +0x08.
+// @field Node +0x00 uint32_t next
+// @field Node +0x04 uint32_t prev
+// @field Node +0x08 uint8_t payload[0x44]
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A5C5C(void* ptr);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void* __thiscall ext_00673C90(void* self, const void* other);
+
+extern void* __stdcall fn_00673EA0(uint32_t nextPtr, uint32_t prevPtr, const void* val) {
+    uint8_t* node = static_cast<uint8_t*>(ext_006A5C62(0x4C));
+    try {
+        if (node != nullptr) {
+            lift_field<uint32_t>(node, 0x00) = nextPtr;
+        }
+        uint8_t* prevField = node + 0x04;
+        if (prevField != nullptr) {
+            lift_field<uint32_t>(node, 0x04) = prevPtr;
+        }
+        uint8_t* payload = node + 0x08;
+        if (payload != nullptr) {
+            ext_00673C90(payload, val);
+        }
+    } catch (...) {
+        ext_006A5C5C(node);
+        ext_006A6DD2(nullptr, nullptr);
+    }
+    return node;
+}
+} // namespace lift_00673EA0

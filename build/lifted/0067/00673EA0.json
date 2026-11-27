@@ -1,0 +1,33 @@
+{
+  "va": "0x00673EA0",
+  "size": 144,
+  "orig_symbol": "sub_00673EA0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "allocAndConstructListNode",
+  "signature": "extern \"C\" void* __stdcall fn_00673EA0(uint32_t nextPtr, uint32_t prevPtr, const void* val)",
+  "summary": "Allocates a 0x4C-byte node, sets two pointer fields at +0x00/+0x04, and copy-constructs the payload at +0x08.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "next"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "prev"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "payload[0x44]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:38:58Z"
+}

@@ -16,8 +16,10 @@ struct Node_Fields {
     // +0x0   Node*                    left  (evidence: 0x005ED330) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 left  (evidence: 0x007D48C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   Node*                    next  (evidence: 0x007837A0, 0x00788E50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 next  (evidence: 0x00673EA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x00586240, 0x005862A0) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    linkA  (evidence: 0x0062B6F0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 prev  (evidence: 0x00673EA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    prev  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 right  (evidence: 0x007D48C0) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 counter_08  (evidence: 0x007837A0, 0x00788E50) // CONFLICT: multiple definitions at +0x8
@@ -25,6 +27,7 @@ struct Node_Fields {
     // +0x8   Node*                    next  (evidence: 0x004A58E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    next  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 parent  (evidence: 0x007D48C0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t                  payload[0x44]  (evidence: 0x00673EA0) // CONFLICT: multiple definitions at +0x8
     // +0x8   Node*                    right  (evidence: 0x005ED330) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t field_0x08 (embedded subobject; only its address is taken)  (evidence: 0x0062B6F0) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 counter_0C  (evidence: 0x007837A0, 0x00788E50) // CONFLICT: multiple definitions at +0xC
