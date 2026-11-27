@@ -12,12 +12,15 @@ namespace lifted_layout {
 struct NMData_EffectorGroupData_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x0060DA60)
     // +0x4   std::string              field_0x04  (evidence: 0x0060D280, 0x0060D500, 0x0060D5F0)
+    // +0x40  void*                    field_0x40  (evidence: 0x0060D780)
     // +0x44  uint32_t                 field_0x44  (evidence: 0x0060DA60) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint8_t                  field_0x44  (evidence: 0x0060DB20) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint8_t[12]              field_0x44  (evidence: 0x0060D5F0) // CONFLICT: multiple definitions at +0x44
     // +0x44  undefined                field_0x44  (evidence: 0x0060D3A0) // CONFLICT: multiple definitions at +0x44
-    // +0x48  uint32_t                 field_0x48  (evidence: 0x0060D280, 0x0060DA60)
-    // +0x4C  uint32_t                 field_0x4C  (evidence: 0x0060D280, 0x0060DA60)
+    // +0x48  uint32_t                 field_0x48  (evidence: 0x0060D280, 0x0060DA60) // CONFLICT: multiple definitions at +0x48
+    // +0x48  void*                    field_0x48  (evidence: 0x0060D780) // CONFLICT: multiple definitions at +0x48
+    // +0x4C  uint32_t                 field_0x4C  (evidence: 0x0060D280, 0x0060DA60) // CONFLICT: multiple definitions at +0x4C
+    // +0x4C  void*                    field_0x4C  (evidence: 0x0060D780) // CONFLICT: multiple definitions at +0x4C
     // +0x50  uint32_t                 field_0x50  (evidence: 0x0060DA60)
 };
 } // namespace lifted_layout

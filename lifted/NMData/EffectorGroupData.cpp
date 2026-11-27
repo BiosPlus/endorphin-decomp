@@ -364,3 +364,85 @@ void fn_0060D280(void* self, void* arg) {
     // Original returns with eax still holding the first stack argument; no value is consumed by callers here.
 }
 } // namespace lift_0060D280
+
+// [0x0060D780] NMData::EffectorGroupData::vfunc_15 (390 bytes)
+namespace lift_0060D780 {
+// operator new thunk (thunk_MFC80_ord_762): cdecl, one stack arg (size), returns storage.
+extern void* ext_006A5C62(size_t size);
+// sub_00602EC0 (ctor): thiscall, this = new'd object; initializes vtable and zeroes fields.
+extern void ext_00602EC0(void* self);
+// sub_00596660 (eraseInt32Range): erases [first,last) from the int32 vector at obj+0x2c, writes 2-pointer result to out.
+extern void ext_00596660(void* self, void** out, void* a2, void* first, void* a4, void* last);
+// sub_0059A140: vector<int32_t> insert-at-position slow path (grows storage); result written to out.
+extern void ext_0059A140(void* self, void** out, void* vec, void* pos, const int32_t* value);
+// sub_005DF5C0: thiscall lookup on a1+0x55c; returns object whose +0x40 is an int32 payload.
+extern void* ext_005DF5C0(void* self);
+// MSVCP80 std::string copy-constructor IAT slot (dead temporary, see loop body).
+extern int mem_00924FE0;
+// MSVCRT _invalid_parameter_noinfo IAT slot (bounds asserts in the original; omitted).
+extern int mem_00925134;
+
+// @name NMData::EffectorGroupData::vfunc_15
+// @class NMData::EffectorGroupData
+// @summary Allocates a 0x3c-byte helper object, stores it at self+0x40, and fills its int32 vector with one entry per element of self's string vector (0x1c stride).
+// @field NMData::EffectorGroupData +0x40 void* field_0x40
+// @field NMData::EffectorGroupData +0x48 void* field_0x48
+// @field NMData::EffectorGroupData +0x4C void* field_0x4C
+void fn_0060D780(void* self, void* a1, void* a2, void* a3) {
+    (void)a2;
+    (void)a3;
+    // Original bounds-check branches call _invalid_parameter_noinfo via this IAT
+    // slot on failure only; the checks are dropped and the slot is kept as metadata.
+    (void)&mem_00925134;
+
+    // new(0x3c) and construct. operator new throws on failure in MSVC, so the
+    // original null-pointer branch is unreachable and not modelled beyond a guard.
+    uint8_t* obj = static_cast<uint8_t*>(ext_006A5C62(0x3c));
+    if (obj == nullptr) {
+        lift_field<void*>(self, 0x40) = nullptr;
+        return;
+    }
+    ext_00602EC0(obj);
+    lift_field<uint32_t>(obj, 0x00) = 0x0097181Cu;   // vtable
+    lift_field<int32_t*>(obj, 0x30) = nullptr;        // int32 vector begin
+    lift_field<int32_t*>(obj, 0x34) = nullptr;        // int32 vector end
+    lift_field<int32_t*>(obj, 0x38) = nullptr;        // int32 vector capacity
+
+    // Int32 vector lives at obj+0x2c (begin +0x30, end +0x34, cap +0x38).
+    uint8_t* vec = obj + 0x2c;
+    int32_t* vbegin = lift_field<int32_t*>(obj, 0x30);
+    int32_t* vend = lift_field<int32_t*>(obj, 0x34);
+
+    // Clear the int32 vector: erase [begin, end).
+    void* erase_out[2] = {nullptr, nullptr};
+    ext_00596660(vec, erase_out, vec, vbegin, vec, vend);
+
+    // Iterate self's std::string vector: begin at +0x48, end at +0x4C, stride 0x1c.
+    uint8_t* p = lift_field<uint8_t*>(self, 0x48);
+    uint8_t* last = lift_field<uint8_t*>(self, 0x4C);
+    for (; p != last; p += 0x1c) {
+        // Original copy-constructs *p into a stack std::string temporary via
+        // mem_00924FE0 and never passes it on. The temporary is dead; only the
+        // IAT reference is kept so the dependency stays visible.
+        (void)&mem_00924FE0;
+
+        uint8_t* rv = static_cast<uint8_t*>(ext_005DF5C0(static_cast<uint8_t*>(a1) + 0x55c));
+        int32_t value = lift_field<int32_t>(rv, 0x40);
+
+        int32_t* b = lift_field<int32_t*>(obj, 0x30);
+        int32_t* e = lift_field<int32_t*>(obj, 0x34);
+        int32_t* c = lift_field<int32_t*>(obj, 0x38);
+        bool has_room = (b != nullptr) && (e - b) < (c - b);
+
+        if (has_room) {
+            *e = value;
+            lift_field<int32_t*>(obj, 0x34) = e + 1;
+        } else {
+            void* ins_out[2] = {nullptr, nullptr};
+            ext_0059A140(vec, ins_out, vec, e, &value);
+        }
+    }
+
+    lift_field<void*>(self, 0x40) = obj;
+}
+} // namespace lift_0060D780
