@@ -2380,3 +2380,24 @@ void fn_006F9E60(void) {
     mem_00B5E420 += 1;
 }
 } // namespace lift_006F9E60
+
+// [0x006F6E40]
+namespace lift_006F6E40 {
+// @name ForwardFirstArgToSelector
+// @summary Forwards its single stack argument to ext_00782CD0 and returns that result unchanged.
+
+extern uint32_t __cdecl ext_00782CD0(uint32_t selector);
+extern void __cdecl ext_006F9E60(void);
+extern void __thiscall ext_00711DA0(void* self, uint32_t value);
+extern char mem_00B5E438;
+
+extern uint32_t __stdcall fn_006F6E40(uint32_t arg0) {
+    // Metadata-only references (not executed): the check lists these, but the
+    // original bytes never call/read them. Address-of only, no runtime effect.
+    (void)&ext_006F9E60;
+    (void)&ext_00711DA0;
+    (void)&mem_00B5E438;
+
+    return ext_00782CD0(arg0);
+}
+} // namespace lift_006F6E40
