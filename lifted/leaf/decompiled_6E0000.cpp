@@ -2401,3 +2401,52 @@ uint8_t __fastcall fn_006E9390(void* self, void* /*edx*/, uint32_t key) {
     return 0;
 }
 } // namespace lift_006E9390
+
+// [0x006E9150]
+namespace lift_006E9150 {
+// @name Unknown::releaseItemByKey_006E9150
+// @class Unknown
+// @summary Decrements refcount of an item matching key in DynArray at +0x34, removing and freeing it if refcount reaches zero.
+// @field Unknown +0x34 DynArray items
+// @field Unknown +0x44 void** items_data
+// @field Unknown +0x94 Unknown errorReporter
+
+
+extern void ext_006A5C5C(void* ptr);
+extern void __fastcall ext_006D2200(void* self, void* /*edx*/, int32_t index);
+extern void* __fastcall ext_006E7440(void* self, void* /*edx*/, uint32_t index);
+
+uint8_t __fastcall fn_006E9150(void* self, void* /*edx*/, uint32_t key) {
+    char* base = static_cast<char*>(self);
+    void* dynArray = base + 0x34;
+    int32_t count = lift_field<int32_t>(self, 0x34);
+
+    int32_t index = 0;
+    if (count > 0) {
+        uint32_t** data = lift_field<uint32_t**>(self, 0x44);
+        while (index < count) {
+            if (*data[index] == key) {
+                uint32_t* entry = data[index];
+                int32_t refCount = lift_field<int32_t>(entry, 0x4) - 1;
+                lift_field<int32_t>(entry, 0x4) = refCount;
+
+                data = lift_field<uint32_t**>(self, 0x44);
+                entry = data[index];
+                if (lift_field<int32_t>(entry, 0x4) != 0) {
+                    ext_006E7440(base + 0x94, nullptr, 6);
+                    return 0;
+                }
+
+                void* item = lift_field<void**>(dynArray, 0x10)[index];
+                ext_006D2200(dynArray, nullptr, index);
+                ext_006A5C5C(item);
+                return 1;
+            }
+            ++index;
+        }
+    }
+
+    ext_006E7440(base + 0x94, nullptr, 7);
+    return 0;
+}
+} // namespace lift_006E9150

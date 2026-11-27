@@ -70635,6 +70635,13 @@
     "summary": "Scans the element array at +0x34 for an entry whose first dword equals key; if found, increments that entry's refcount at +4. Otherwise allocates a new entry (ext_006A5C62, 8 bytes), sets its key via SetValueAndFlag, and inserts it into the array via DynamicArray::InsertAt. Returns TRUE in all cases.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E9150": {
+    "name": "Unknown::releaseItemByKey_006E9150",
+    "class": "Unknown",
+    "signature": "uint8_t __fastcall fn_006E9150(void* self, void* /*edx*/, uint32_t key)",
+    "summary": "Decrements refcount of an item matching key in DynArray at +0x34, removing and freeing it if refcount reaches zero.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E91E0": {
     "name": "Unknown::getIndexedEntryFirstDword_006E91E0",
     "class": "Unknown",
