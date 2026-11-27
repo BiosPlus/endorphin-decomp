@@ -312,3 +312,89 @@ int fn_005A0BF0(void* self, const std::string& arg0) {
     return 0;
 }
 } // namespace lift_005A0BF0
+
+// [0x0059E080] NMData::BackGroundData::vfunc_25_off_4 (337 bytes)
+namespace lift_0059E080 {
+// Known callee 0x00410390: sub_00410390 (Checks virtual predicate at +0x28 and compares string at +0x458 against three known values)
+extern void ext_00410390();
+// Known callee 0x00410420: checkVirtualPredicateAndStrEq (Returns 0 if the virtual predicate at vtable+0x28 is true or ext_00410390 returns true; otherwise returns 1.)
+extern void ext_00410420();
+// Known callee 0x00492520: fn_00492520 (select field by selector: 0 -> +0x0C, 1 -> +0x10, else 0) (Returns one of two 32-bit fields of self based on a selector argument; returns 0 for other selectors.)
+extern void ext_00492520();
+// Known callee 0x00492540: isFieldZero (Returns true if the 32-bit value at offset 0 of the object is zero.)
+extern void ext_00492540();
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void ext_00493EE0();
+// Known callee 0x00586660: Unknown::CallVirtual8COnSelfAndElements (Invokes the virtual slot 0x8c on self, then on every pointer element in the range [self+0x80, self+0x84).)
+extern void ext_00586660();
+extern void ext_00586D00();
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern void ext_00594000();
+// Known callee 0x0059DE20: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern void ext_0059DE20();
+// Known callee 0x0059DE40: MinFloatPtr (Returns the pointer to the smaller float: returns b if *a > *b, otherwise a (NaN-safe: a is returned when unordered).)
+extern void ext_0059DE40();
+extern void ext_006AD940();
+extern int mem_00955998;
+extern int mem_009324A4;
+
+// @name NMData::BackGroundData::vfunc_25_off_4
+// @class NMData::BackGroundData
+// @summary Guarded update: clamps the float argument and field_0x4e8 against zero, refreshes field_0x4e8 and calls TransitionFactorSource vslot 0x94 with a {p/field_0x4e8, p/field_0x4e8, p/field_0x4e8, 1} vector, then runs follow-up calls.
+// @field NMData::BackGroundData +0x15C void** field_0x15c
+// @field NMData::BackGroundData +0x4E8 float field_0x4e8
+// @field NMData::BackGroundData +0x5F4 void* field_0x5f4
+void fn_0059E080(void* self, float p) {
+    float a = std::bit_cast<float>(mem_00955998);  // 2.0f
+    float b = std::bit_cast<float>(mem_009324A4);  // 0.5f
+    uint8_t* const s = static_cast<uint8_t*>(self);
+    void* const edi = s - 4;
+
+    // Early out: self->field_0x5f4->field_0x26c must be non-null and its field 0 must be non-zero.
+    void* const obj = lift_field<void*>(self, 0x5F4);
+    if (obj == nullptr) return;
+    void* const sub = lift_field<void*>(obj, 0x26C);
+    void* const t0 = reinterpret_cast<void* (*)(void*)>(&ext_006AD940)(sub);
+    if (reinterpret_cast<uint8_t (*)(void*)>(&ext_00492540)(t0)) return;
+
+    // Early out: p <= 0 or field_0x4e8 <= 0 (ordered compares; NaN continues).
+    if (0.0f >= p) return;
+    if (0.0f >= lift_field<float>(self, 0x4E8)) return;
+
+    if (reinterpret_cast<uint8_t (*)(void*)>(&ext_00410420)(edi)) {
+        // ext_0059DE20 is called as float*(float*, float*) per the disassembly; its CALLEES
+        // metadata looks copied from ext_00594000 and should be re-verified.
+        p = *reinterpret_cast<float* (*)(float*, float*)>(&ext_0059DE20)(&p, &b);
+        p = *reinterpret_cast<float* (*)(float*, float*)>(&ext_0059DE40)(&p, &a);
+    }
+
+    const float x = p / lift_field<float>(self, 0x4E8);
+    float vec[4] = {x, x, x, 1.0f};
+
+    // Virtual call: vtable of the TransitionFactorSource subobject at +0x15C, slot +0x94, this = self+0x15C.
+    void* const vt = lift_field<void*>(self, 0x15C);
+    void* const slot94 = *reinterpret_cast<void* const*>(static_cast<uint8_t*>(vt) + 0x94);
+    reinterpret_cast<void (*)(void*, float*)>(slot94)(s + 0x15C, vec);
+
+    lift_field<float>(self, 0x4E8) = p;
+
+    if (reinterpret_cast<uint8_t (*)(void*)>(&ext_00410390)(edi)) {
+        void* const o = lift_field<void*>(self, 0x5F4);
+        if (o != nullptr) {
+            void* const s2 = lift_field<void*>(o, 0x26C);
+            void* const t1 = reinterpret_cast<void* (*)(void*)>(&ext_006AD940)(s2);
+            const int32_t r = reinterpret_cast<int32_t (*)(void*, int32_t)>(&ext_00492520)(t1, 0);
+            if (r != 0) {
+                void* const dst = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(r)));
+                lift_field<float>(dst, 0x4F0) = lift_field<float>(self, 0x4E8);
+            }
+        }
+    }
+
+    reinterpret_cast<void (*)(void*)>(&ext_00586D00)(self);
+    reinterpret_cast<void (*)(void*)>(&ext_00586660)(self);
+    const int32_t g = reinterpret_cast<int32_t (*)()>(&ext_00594000)();
+    void* const tail = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(g) + 0x258u));
+    reinterpret_cast<void* (*)(void*)>(&ext_00493EE0)(tail);
+}
+} // namespace lift_0059E080
