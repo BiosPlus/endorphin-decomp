@@ -1,0 +1,28 @@
+{
+  "va": "0x005E2BE0",
+  "size": 132,
+  "orig_symbol": "sub_005E2BE0",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "TreeIterator::decrement",
+  "class": "TreeIterator",
+  "signature": "void __thiscall sub_005E2BE0(void* self)",
+  "summary": "Decrement an MSVC8 red-black tree iterator to the previous in-order node.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "container"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "node"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:31:41Z"
+}
