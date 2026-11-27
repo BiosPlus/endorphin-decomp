@@ -1,0 +1,28 @@
+{
+  "va": "0x00551B50",
+  "size": 182,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_7",
+  "src_path": "src/NMCamera/Orthogonal.cpp",
+  "lifted_path": "lifted/NMCamera/Orthogonal.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_7",
+  "class": "NMCamera::Orthogonal",
+  "signature": "extern \"C\" void* __thiscall fn_00551B50(void* self)",
+  "summary": "If the virtual predicate (slot 8) holds, returns Camera::vfunc_7(this); otherwise builds \"\u003clit\u003e\" + Camera name + \"\u003clit\u003e\" into this+0xF8 and returns \u0026this-\u003efield_0xf8.",
+  "fields": [
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable_ptr"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xF8",
+      "type": "std::string",
+      "name": "field_0xf8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:57:56Z"
+}

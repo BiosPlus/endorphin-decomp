@@ -36315,6 +36315,13 @@
     "summary": "Returns 1 if the flag at +0xA0 is set, otherwise 1 only when both sub-checks pass and two float pairs are equal.",
     "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
   },
+  "0x00551B50": {
+    "name": "NMCamera::Orthogonal::vfunc_7",
+    "class": "NMCamera::Orthogonal",
+    "signature": "extern \"C\" void* __thiscall fn_00551B50(void* self)",
+    "summary": "If the virtual predicate (slot 8) holds, returns Camera::vfunc_7(this); otherwise builds \"\u003clit\u003e\" + Camera name + \"\u003clit\u003e\" into this+0xF8 and returns \u0026this-\u003efield_0xf8.",
+    "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
+  },
   "0x00551C10": {
     "name": "NMCamera::Orthogonal::vfunc_6",
     "class": "NMCamera::Orthogonal",

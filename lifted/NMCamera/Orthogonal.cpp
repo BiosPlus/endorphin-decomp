@@ -145,3 +145,61 @@ void fn_00551C30(void* self, const int32_t* xy, const float* p, float* out) {
     out[3] = 1.0f;
 }
 } // namespace lift_00551C30
+
+// [0x00551B50] NMCamera::Orthogonal::vfunc_7 (182 bytes)
+namespace lift_00551B50 {
+// Known callee 0x00547AB0: Camera::vfunc_7 (If Camera+0xA0 is non-null, tail-dispatch vtable slot 9 on that object; otherwise return &Camera+0x08.)
+extern void* __thiscall ext_00547AB0(void* self);
+
+// MSVCP80 import slots (IAT entries read through by pointer).
+extern uint32_t mem_00924FCC;
+extern uint32_t mem_00924ECC;
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00924FF4;
+
+// std::string operator+(const char*, const std::string&) — sret, cdecl.
+using StringConcatCStrLhsFn = void* (__cdecl*)(void* out, const char* lhs, const void* rhs);
+// std::string operator+(const std::string&, const char*) — sret, cdecl.
+using StringConcatCStrRhsFn = void* (__cdecl*)(void* out, const void* lhs, const char* rhs);
+// std::string::operator=(const std::string&) — thiscall.
+using StringAssignFn = void* (__thiscall*)(void* self, const void* rhs);
+// std::string::~string() — thiscall.
+using StringDtorFn = void (__thiscall*)(void* self);
+// Virtual slot 8 (+0x20) on the object: bool (thiscall).
+using VirtualBoolFn = unsigned char (__thiscall*)(void* self);
+
+// @name NMCamera::Orthogonal::vfunc_7
+// @class NMCamera::Orthogonal
+// @summary If the virtual predicate (slot 8) holds, returns Camera::vfunc_7(this); otherwise builds "<lit>" + Camera name + "<lit>" into this+0xF8 and returns &this->field_0xf8.
+// @field NMCamera::Orthogonal +0x00 void* vtable_ptr
+// @field NMCamera::Orthogonal +0xF8 std::string field_0xf8
+extern void* __thiscall fn_00551B50(void* self) {
+    auto* obj = static_cast<uint8_t*>(self);
+
+    void** vtable = *reinterpret_cast<void***>(obj);
+    auto predicate = reinterpret_cast<VirtualBoolFn>(vtable[8]);
+    if (predicate(obj) != 0) {
+        return ext_00547AB0(obj);
+    }
+
+    void* camera_name = ext_00547AB0(obj);
+
+    alignas(16) uint8_t out1[0x20];
+    alignas(16) uint8_t tmp2[0x20];
+
+    auto concat_lhs = reinterpret_cast<StringConcatCStrLhsFn>(mem_00924FCC);
+    concat_lhs(out1, reinterpret_cast<const char*>(0x957430), camera_name);
+
+    auto concat_rhs = reinterpret_cast<StringConcatCStrRhsFn>(mem_00924ECC);
+    concat_rhs(tmp2, out1, reinterpret_cast<const char*>(0x93BF0C));
+
+    auto assign = reinterpret_cast<StringAssignFn>(mem_00924FDC);
+    assign(obj + 0xF8, tmp2);
+
+    auto dtor = reinterpret_cast<StringDtorFn>(mem_00924FF4);
+    dtor(tmp2);
+    dtor(out1);
+
+    return obj + 0xF8;
+}
+} // namespace lift_00551B50

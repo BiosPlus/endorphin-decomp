@@ -10,7 +10,7 @@
 // Recovered field layout for NMCamera::Orthogonal:
 namespace lifted_layout {
 struct NMCamera_Orthogonal_Fields {
-    // +0x0   void*                    vtable_ptr  (evidence: 0x00551C10)
+    // +0x0   void*                    vtable_ptr  (evidence: 0x00551B50, 0x00551C10)
     // +0x30  float                    field_0x30  (evidence: 0x00551AF0)
     // +0x34  float                    field_0x34  (evidence: 0x00551AF0)
     // +0x3C  void*                    field_0x3c  (evidence: 0x00551AF0)
@@ -25,5 +25,6 @@ struct NMCamera_Orthogonal_Fields {
     // +0xC0  double                   field_0xc0  (evidence: 0x00551A80, 0x00551C30)
     // +0xC8  double                   field_0xc8  (evidence: 0x00551A80)
     // +0xD0  double                   field_0xd0  (evidence: 0x00551A80)
+    // +0xF8  std::string              field_0xf8  (evidence: 0x00551B50)
 };
 } // namespace lifted_layout
