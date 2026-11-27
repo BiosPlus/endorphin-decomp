@@ -4244,3 +4244,33 @@ void* __thiscall fn_006D3880(void* self) {
     return result;
 }
 } // namespace lift_006D3880
+
+// [0x006D3C30]
+namespace lift_006D3C30 {
+// @name Unknown::allocConstructAndInsert_006D3C30
+// @class Unknown
+// @summary Allocates a 0x24-byte object, constructs it, and appends it to the DynamicArray at +0x34; returns the object or null. SEH frame bookkeeping omitted.
+// @field Unknown +0x34 DynamicArray entries
+
+extern void* ext_006A5C62(size_t size);
+extern void* ext_006E99C0(void* self, void* arg1);
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+void* fn_006D3C30(void* self) {
+    void* result = nullptr;
+    void* allocated = ext_006A5C62(0x24);
+    if (allocated != nullptr) {
+        result = ext_006E99C0(allocated, self);
+    }
+
+    // Original stores the result into a stack slot and passes its address as elem.
+    void* slot = result;
+    if (result != nullptr) {
+        void* entries = reinterpret_cast<uint8_t*>(self) + 0x34;
+        int32_t count = lift_field<int32_t>(self, 0x34);
+        ext_006D2170(entries, count, &slot);
+    }
+
+    return result;
+}
+} // namespace lift_006D3C30

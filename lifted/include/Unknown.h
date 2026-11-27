@@ -955,6 +955,7 @@ struct Unknown_Fields {
     // +0x34  int32_t                  array_count  (evidence: 0x006D3780) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint32_t*                begin_0x34  (evidence: 0x00477EC0) // CONFLICT: multiple definitions at +0x34
     // +0x34  DynamicArray             dynArray  (evidence: 0x006D3660) // CONFLICT: multiple definitions at +0x34
+    // +0x34  DynamicArray             entries  (evidence: 0x006D3C30) // CONFLICT: multiple definitions at +0x34
     // +0x34  DWORD                    entriesCapacity  (evidence: 0x00558FE0) // CONFLICT: multiple definitions at +0x34
     // +0x34  int32_t                  entryCount  (evidence: 0x006D4AC0, 0x006E9000) // CONFLICT: multiple definitions at +0x34
     // +0x34  BYTE                     field_0x34  (evidence: 0x005F5350, 0x006FA990, 0x006FC200) // CONFLICT: multiple definitions at +0x34

@@ -1,0 +1,22 @@
+{
+  "va": "0x006D3C30",
+  "size": 128,
+  "orig_symbol": "sub_006D3C30",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::allocConstructAndInsert_006D3C30",
+  "class": "Unknown",
+  "signature": "void* fn_006D3C30(void* self)",
+  "summary": "Allocates a 0x24-byte object, constructs it, and appends it to the DynamicArray at +0x34; returns the object or null. SEH frame bookkeeping omitted.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "DynamicArray",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:59:31Z"
+}

@@ -68662,6 +68662,13 @@
     "summary": "Calls virtual slot 0x48 on self with arg1; if it returns non-zero, appends that result to the DynamicArray at +0xdc. Returns the virtual call's result.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D3C30": {
+    "name": "Unknown::allocConstructAndInsert_006D3C30",
+    "class": "Unknown",
+    "signature": "void* fn_006D3C30(void* self)",
+    "summary": "Allocates a 0x24-byte object, constructs it, and appends it to the DynamicArray at +0x34; returns the object or null. SEH frame bookkeeping omitted.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D3CB0": {
     "name": "Unknown::appendVirtualResultToArray_006D3CB0",
     "class": "Unknown",
