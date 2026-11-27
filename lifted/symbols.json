@@ -18695,6 +18695,13 @@
     "summary": "Lazily initializes a static accessor object (guard bit 0 in mem_00AE5D48, vtable 0x0094938C) and stores its address into the out ValuePtr's +0x04 slot; ECX is unused.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004D6A00": {
+    "name": "ExprParser::ReadMethodType_getUserRetargetRefFrame::vfunc_2",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "int32_t __thiscall fn_004D6A00(void* this_ptr, void* arg1)",
+    "summary": "Parses a string from a document node into a rounded integer via atof.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D6C80": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}\u003e",

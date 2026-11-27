@@ -68184,3 +68184,36 @@ int32_t __thiscall fn_004C06D0(void* this_ptr, void** arg1) {
     return result;
 }
 } // namespace lift_004C06D0
+
+// [0x004D6A00]
+namespace lift_004D6A00 {
+// @name ExprParser::ReadMethodType_getUserRetargetRefFrame::vfunc_2
+// @class ExprParser::ReadMethodType
+// @summary Parses a string from a document node into a rounded integer via atof.
+
+
+extern void* __stdcall ext_004D5560(void* dst, void* src);
+extern int32_t ext_006A6DE0(double val);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+extern double mem_00993828;
+extern uint32_t mem_00924FF4;
+
+int32_t __thiscall fn_004D6A00(void* this_ptr, void* arg1) {
+    (void)this_ptr;
+    uint8_t str_buf[24]{};
+    void* str_ptr = ext_004D5560(str_buf, *reinterpret_cast<void**>(arg1));
+    using c_str_fn = const char* (__thiscall*)(void*);
+    const char* cstr = reinterpret_cast<c_str_fn>(mem_00924FF0)(str_ptr);
+    using atof_fn = double (__cdecl*)(const char*);
+    float val = static_cast<float>(reinterpret_cast<atof_fn>(mem_009251F0)(cstr));
+    *reinterpret_cast<float*>(arg1) = val;
+    double rounded = (val < 0.0f) ? (static_cast<double>(val) - mem_00993828)
+                                  : (static_cast<double>(val) + mem_00993828);
+    int32_t result = ext_006A6DE0(rounded);
+    using dtor_fn = void (__thiscall*)(void*);
+    reinterpret_cast<dtor_fn>(mem_00924FF4)(str_buf);
+    return result;
+}
+} // namespace lift_004D6A00

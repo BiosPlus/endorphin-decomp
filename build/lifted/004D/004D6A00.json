@@ -1,0 +1,14 @@
+{
+  "va": "0x004D6A00",
+  "size": 148,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType_getUserRetargetRefFrame::vfunc_2",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "int32_t __thiscall fn_004D6A00(void* this_ptr, void* arg1)",
+  "summary": "Parses a string from a document node into a rounded integer via atof.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:06:21Z"
+}
