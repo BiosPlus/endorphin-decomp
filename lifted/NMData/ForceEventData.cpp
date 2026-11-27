@@ -34,6 +34,7 @@ extern "C" void __thiscall fn_004C4DD0(void* self, void* a) {
 }
 #include <cstdint>
 #include <cstddef>
+#include <cstring>
 
 // [0x004C4E40] NMData::ForceEventData::vfunc_60 (34 bytes)
 // @name NMData::ForceEventData::NotifyEvent0x266
@@ -362,3 +363,86 @@ void fn_004C6E60(void* self) {
     ext_004C6E30(block, self);
 }
 } // namespace lift_004C6E60
+
+// [0x004C65C0] NMData::ForceEventData::vfunc_90 (303 bytes)
+namespace lift_004C65C0 {
+// @name NMData::ForceEventData::vfunc_90
+// @class NMData::ForceEventData
+// @summary Fills a temp string-vector via vtbl[79], then resolves a target (this+0x168, or a global-derived fallback); if non-null calls target->vtbl[3] and this->sub_004C2760 with the result, and copies a Vec3 (+0x30) from the target's subobject result into this's subobject result (+0x30).
+// @field NMData::ForceEventData +0x04 void** TransformInterface_vptr
+// @field NMData::ForceEventData +0x168 void* field_0x168
+// @field <unknown target @+0x168> +0x38C void* field_0x38c
+
+// Known callee 0x004026E0: std_vector_string_Tidy (destroys strings, frees buffer, nulls pointers)
+extern void __thiscall ext_004026E0(void* vec);
+// Known callee 0x00594000: sub_00594000 (cdecl, returns global int32 from mem_00B40D08)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x00599E70: Unknown::getGrandparentField0x38C (thiscall, returns DWORD)
+extern uint32_t __thiscall ext_00599E70(void* self);
+// Known callee 0x005DF5C0: sub_005DF5C0 (thiscall, returns pointer)
+extern void* __thiscall ext_005DF5C0(void* self);
+// Known callee 0x004C2760: sub_004C2760 (thiscall, one stack arg)
+extern void __thiscall ext_004C2760(void* self, void* arg);
+// Global DWORD passed as argument to this->TransformInterface::vfunc_3
+extern uint32_t mem_00B40640;
+// CRT import slots (MSVCP80 std::string ctor/dtor thunks); address-only, no runtime effect here.
+extern void* mem_00924FE0;
+extern void* mem_00924FF4;
+
+void __thiscall fn_004C65C0(void* self) {
+    // Out-param: std::vector<std::string> in MSVC layout (begin/end/cap), tidied below.
+    (void)&mem_00924FE0;
+    (void)&mem_00924FF4;
+    void* names[3] = {nullptr, nullptr, nullptr};
+    void** selfVt = *reinterpret_cast<void***>(self);
+    reinterpret_cast<void(__thiscall*)(void*, void*)>(selfVt[79])(self, names);
+    ext_004026E0(names);
+
+    // Original's MSVC std::string temp (copy of a global, unused) and CRT import
+    // thunks for its ctor/dtor are omitted: they have no observable effect here.
+    const uint32_t ctx = static_cast<uint32_t>(ext_00594000());
+    if (ctx == 0) {
+        return;
+    }
+
+    void* target = lift_field<void*>(self, 0x168);
+    void* node = nullptr;
+    if (target == nullptr) {
+        const uint32_t g = static_cast<uint32_t>(ext_00594000());
+        node = reinterpret_cast<void*>(static_cast<uintptr_t>(
+            ext_00599E70(reinterpret_cast<void*>(static_cast<uintptr_t>(g)))));
+    } else {
+        node = ext_005DF5C0(static_cast<uint8_t*>(target) + 0x598);
+        if (node == nullptr) {
+            node = lift_field<void*>(target, 0x38C);
+        }
+    }
+    if (node == nullptr) {
+        return;
+    }
+
+    {
+        std::string text;
+        void** nodeVt = *reinterpret_cast<void***>(node);
+        void* r = reinterpret_cast<void*(__thiscall*)(void*, std::string*)>(nodeVt[3])(node, &text);
+        ext_004C2760(self, r);
+    }
+
+    // node's TransformInterface-like subobject at +0x04: vtbl[5](ctx + 0x1c8)
+    uint8_t* nodeSub = static_cast<uint8_t*>(node) + 4;
+    void** nodeSubVt = *reinterpret_cast<void***>(nodeSub);
+    void* c = reinterpret_cast<void*(__thiscall*)(void*, void*)>(nodeSubVt[5])(
+        nodeSub, reinterpret_cast<void*>(static_cast<uintptr_t>(ctx + 0x1c8)));
+
+    // this's TransformInterface subobject at +0x04: vtbl[3](mem_00B40640)
+    uint8_t* selfSub = static_cast<uint8_t*>(self) + 4;
+    void** selfSubVt = *reinterpret_cast<void***>(selfSub);
+    void* d = reinterpret_cast<void*(__thiscall*)(void*, uint32_t)>(selfSubVt[3])(
+        selfSub, mem_00B40640);
+
+    // Copy Vec3 from c+0x30 to d+0x30.
+    const uint8_t* src = static_cast<const uint8_t*>(c) + 0x30;
+    uint8_t* dst = static_cast<uint8_t*>(d) + 0x30;
+    std::memcpy(dst, src, 3 * sizeof(float));
+}
+} // namespace lift_004C65C0

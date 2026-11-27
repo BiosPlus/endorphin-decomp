@@ -1,0 +1,28 @@
+{
+  "va": "0x004C65C0",
+  "size": 303,
+  "orig_symbol": "NMData::ForceEventData::vfunc_90",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_90",
+  "class": "NMData::ForceEventData",
+  "signature": "void __thiscall fn_004C65C0(void* self)",
+  "summary": "Fills a temp string-vector via vtbl[79], then resolves a target (this+0x168, or a global-derived fallback); if non-null calls target-\u003evtbl[3] and this-\u003esub_004C2760 with the result, and copies a Vec3 (+0x30) from the target's subobject result into this's subobject result (+0x30).",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "TransformInterface_vptr"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:35:43Z"
+}
