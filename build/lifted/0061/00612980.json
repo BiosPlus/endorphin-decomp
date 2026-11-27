@@ -1,0 +1,22 @@
+{
+  "va": "0x00612980",
+  "size": 152,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_68",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_68",
+  "class": "NMData::HingeConstraint",
+  "signature": "void __thiscall fn_00612980(void* self, float* out)",
+  "summary": "Queries the TransformInterface slot-2 object, derives a 3-vector through it using an identity 3x3 matrix, and writes the negated vector to the caller's out buffer.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "TransformInterface_vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:23Z"
+}

@@ -249,3 +249,37 @@ uintptr_t fn_0061D3F0(void* self, int edx_unused, DWORD stack_arg) {
     return obj_value;
 }
 } // namespace lift_0061D3F0
+
+// [0x00612980] NMData::HingeConstraint::vfunc_68 (152 bytes)
+namespace lift_00612980 {
+extern uint32_t mem_00B40640;
+extern double mem_00993830;
+extern void ext_0067DAD0(void* self, void* m);
+extern void ext_00694B60(void* self, uint32_t flag, void* out);
+
+// @name NMData::HingeConstraint::vfunc_68
+// @class NMData::HingeConstraint
+// @summary Queries the TransformInterface slot-2 object, derives a 3-vector through it using an identity 3x3 matrix, and writes the negated vector to the caller's out buffer.
+// @field NMData::HingeConstraint +0x04 void* TransformInterface_vtable
+void __thiscall fn_00612980(void* self, float* out) {
+    float vec[3] = {0.0f, 0.0f, 0.0f};
+    float mat[9] = {1.0f, 0.0f, 0.0f,
+                    0.0f, 1.0f, 0.0f,
+                    0.0f, 0.0f, 1.0f};
+
+    // Slot 2 (byte offset 8) of the TransformInterface vtable at self+4.
+    void* ti_vtable = lift_field<void*>(self, 4);
+    void* slot2 = lift_field<void*>(ti_vtable, 8);
+    using Slot2Fn = void* (*)(void* self_ti, uint32_t arg);
+    void* obj = reinterpret_cast<Slot2Fn>(slot2)(
+        static_cast<uint8_t*>(self) + 4, mem_00B40640);
+
+    ext_0067DAD0(obj, mat);
+    ext_00694B60(mat, 0u, vec);
+
+    const double k = mem_00993830;  // -1.0
+    out[0] = static_cast<float>(static_cast<double>(vec[0]) * k);
+    out[1] = static_cast<float>(static_cast<double>(vec[1]) * k);
+    out[2] = static_cast<float>(static_cast<double>(vec[2]) * k);
+}
+} // namespace lift_00612980

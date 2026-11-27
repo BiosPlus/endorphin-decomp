@@ -59369,6 +59369,13 @@
     "summary": "Lazily initializes and returns a static singleton object at 0x00B48E90.",
     "lifted_path": "lifted/NMData/Constraint.cpp"
   },
+  "0x00612980": {
+    "name": "NMData::HingeConstraint::vfunc_68",
+    "class": "NMData::HingeConstraint",
+    "signature": "void __thiscall fn_00612980(void* self, float* out)",
+    "summary": "Queries the TransformInterface slot-2 object, derives a 3-vector through it using an identity 3x3 matrix, and writes the negated vector to the caller's out buffer.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x00612C00": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_68",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
