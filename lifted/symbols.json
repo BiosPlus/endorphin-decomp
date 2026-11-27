@@ -16453,6 +16453,13 @@
     "summary": "Dynamically casts the input object pointer to NMData::RigEventData using __RTDynamicCast.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004D4230": {
+    "name": "Unknown::copyStringElementAt",
+    "class": "Unknown",
+    "signature": "void* fn_004D4230(void* self, void* out, uint32_t index)",
+    "summary": "Bounds-checks index against the element count of a vector of 28-byte std::string elements at self+0x458/+0x45C, then copy-constructs that element into out and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D4730": {
     "name": "NMData::RigEventData::vfunc_1_off_184",
     "class": "NMData::RigEventData",

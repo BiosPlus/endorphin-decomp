@@ -1,0 +1,28 @@
+{
+  "va": "0x004D4230",
+  "size": 103,
+  "orig_symbol": "sub_004D4230",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "Unknown::copyStringElementAt",
+  "class": "Unknown",
+  "signature": "void* fn_004D4230(void* self, void* out, uint32_t index)",
+  "summary": "Bounds-checks index against the element count of a vector of 28-byte std::string elements at self+0x458/+0x45C, then copy-constructs that element into out and returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x458",
+      "type": "uint8_t*",
+      "name": "field_0x458"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x45C",
+      "type": "uint8_t*",
+      "name": "field_0x45c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:55:25Z"
+}

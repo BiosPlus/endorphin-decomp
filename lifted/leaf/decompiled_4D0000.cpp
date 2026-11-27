@@ -469,3 +469,35 @@ void fn_004D3DE0(void* self, uint8_t flag) {
     }
 }
 } // namespace lift_004D3DE0
+
+// [0x004D4230] sub_004D4230 (103 bytes)
+namespace lift_004D4230 {
+// Import slot holding MSVCR80!_invalid_parameter_noinfo.
+extern uint32_t mem_00925134;
+// Import slot holding MSVCP80 std::basic_string<char>::basic_string(const basic_string&).
+extern uint32_t mem_00924FE0;
+
+// @name Unknown::copyStringElementAt
+// @class Unknown
+// @summary Bounds-checks index against the element count of a vector of 28-byte std::string elements at self+0x458/+0x45C, then copy-constructs that element into out and returns out.
+// @field Unknown +0x458 uint8_t* field_0x458
+// @field Unknown +0x45C uint8_t* field_0x45c
+void* fn_004D4230(void* self, void* out, uint32_t index) {
+    using CopyCtorFn = void(__thiscall*)(void* thisObj, const void* src);
+    using InvalidParamFn = void (*)();
+
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x458);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x45c);
+    int32_t count = static_cast<int32_t>(end - begin) / 28;
+
+    if (index >= static_cast<uint32_t>(count)) {
+        auto invalidParam = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+        invalidParam();
+    }
+
+    uint8_t* element = lift_field<uint8_t*>(self, 0x458) + static_cast<size_t>(index) * 28;
+    auto copyCtor = reinterpret_cast<CopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0));
+    copyCtor(out, element);
+    return out;
+}
+} // namespace lift_004D4230
