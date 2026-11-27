@@ -772,3 +772,48 @@ uintptr_t fn_004E3BF0(void* self, void* arg) {
     return result;
 }
 } // namespace lift_004E3BF0
+
+// [0x004C1F90]
+namespace lift_004C1F90 {
+void __thiscall ext_00486CB0(void* self, const void* arg1, const void* arg2, const char* arg3);
+void __thiscall ext_0058D800(void* self, void* arg1, uint32_t arg2, uint32_t arg3);
+void __thiscall ext_004769F0(void* self, const int32_t* arg1, const int32_t* arg2, const char* arg3);
+void __thiscall ext_0049AD90(void* self, const uint8_t* arg1, const uint8_t* arg2, const char* arg3);
+void __thiscall ext_004C1B50(void* self, const void* arg1, const void* arg2, const char* arg3);
+void __thiscall ext_004C2070(void* self, void* arg1, uint32_t arg2);
+void ext_00661650(void);
+
+// @name NMData::AnimationEventData::vfunc_94
+// @class NMData::AnimationEventData
+// @summary Compares fields of two AnimationEventData objects and delegates to ext_0058D800.
+// @field NMData::AnimationEventData +0x14 void* field_0x14
+// @field NMData::AnimationEventData +0x15C int32_t field_0x15c
+// @field NMData::AnimationEventData +0x160 int32_t field_0x160
+// @field NMData::AnimationEventData +0x16C void* field_0x16c
+// @field NMData::AnimationEventData +0x17C uint8_t field_0x17c
+extern void __thiscall fn_004C1F90(void* self, void* arg1, uint32_t arg2, uint32_t arg3) {
+    using VFunc9 = const void* (__thiscall*)(void*);
+    void** vtable = *reinterpret_cast<void***>(arg1);
+    const void* name_ptr = reinterpret_cast<VFunc9>(vtable[9])(arg1);
+
+    uint32_t dummy_ctx = arg2;
+    ext_00486CB0(&dummy_ctx, reinterpret_cast<const char*>(self) + 0x14, name_ptr, reinterpret_cast<const char*>(0x0093F7BC));
+    ext_0058D800(self, arg1, arg2, arg3);
+
+    int32_t lhs_15c = lift_field<int32_t>(self, 0x15C);
+    int32_t rhs_15c = lift_field<int32_t>(arg1, 0x15C);
+    ext_004769F0(&lhs_15c, &lhs_15c, &rhs_15c, reinterpret_cast<const char*>(0x00944E30));
+
+    int32_t lhs_160 = lift_field<int32_t>(self, 0x160);
+    int32_t rhs_160 = lift_field<int32_t>(arg1, 0x160);
+    ext_004769F0(&lhs_160, &lhs_160, &rhs_160, reinterpret_cast<const char*>(0x00944E24));
+
+    uint8_t lhs_17c = lift_field<uint8_t>(self, 0x17C);
+    uint8_t rhs_17c = lift_field<uint8_t>(arg1, 0x17C);
+    ext_0049AD90(&lhs_17c, &lhs_17c, &rhs_17c, reinterpret_cast<const char*>(0x00944E18));
+
+    ext_004C1B50(&dummy_ctx, reinterpret_cast<const char*>(self) + 0x16C, reinterpret_cast<const char*>(arg1) + 0x16C, reinterpret_cast<const char*>(0x00944E08));
+    (void)ext_004C2070;
+    (void)ext_00661650;
+}
+} // namespace lift_004C1F90

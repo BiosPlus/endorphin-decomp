@@ -1,0 +1,46 @@
+{
+  "va": "0x004C1F90",
+  "size": 219,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_94",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_94",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" void __thiscall fn_004C1F90(void* self, void* arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Compares fields of two AnimationEventData objects and delegates to ext_0058D800.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:20:30Z"
+}
