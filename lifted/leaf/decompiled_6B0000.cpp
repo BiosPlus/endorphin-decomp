@@ -3140,3 +3140,35 @@ extern void* __thiscall fn_006B4FF0(void* self, uint8_t arg0, uint8_t arg1, uint
     return self;
 }
 } // namespace lift_006B4FF0
+
+// [0x006BBAE0]
+namespace lift_006BBAE0 {
+extern uint32_t mem_00925284; // IAT slot: MSVCR80.dll!_HUGE
+extern uint32_t mem_00B5D348, mem_00B5D34C, mem_00B5D350, mem_00B5D354,
+    mem_00B5D358, mem_00B5D35C, mem_00B5D360, mem_00B5D364, mem_00B5D368,
+    mem_00B5D36C, mem_00B5D370, mem_00B5D374, mem_00B5D378, mem_00B5D37C,
+    mem_00B5D380, mem_00B5D384, mem_00B5D388, mem_00B5D38C, mem_00B5D390,
+    mem_00B5D394, mem_00B5D398, mem_00B5D39C, mem_00B5D3A0, mem_00B5D3A4,
+    mem_00B5D3A8, mem_00B5D3AC, mem_00B5D3B0, mem_00B5D3B4, mem_00B5D3B8,
+    mem_00B5D3BC, mem_00B5D3C0, mem_00B5D3C4;
+
+// @name initHugeValueTable
+// @summary Static initializer: fills 16 global doubles (0xB5D348..0xB5D3C4) with the CRT _HUGE value
+void sub_006BBAE0() {
+    const uint32_t* huge = (const uint32_t*)(uintptr_t)mem_00925284;
+    uint32_t* dst[32] = {
+        &mem_00B5D348, &mem_00B5D34C, &mem_00B5D350, &mem_00B5D354,
+        &mem_00B5D358, &mem_00B5D35C, &mem_00B5D360, &mem_00B5D364,
+        &mem_00B5D368, &mem_00B5D36C, &mem_00B5D370, &mem_00B5D374,
+        &mem_00B5D378, &mem_00B5D37C, &mem_00B5D380, &mem_00B5D384,
+        &mem_00B5D388, &mem_00B5D38C, &mem_00B5D390, &mem_00B5D394,
+        &mem_00B5D398, &mem_00B5D39C, &mem_00B5D3A0, &mem_00B5D3A4,
+        &mem_00B5D3A8, &mem_00B5D3AC, &mem_00B5D3B0, &mem_00B5D3B4,
+        &mem_00B5D3B8, &mem_00B5D3BC, &mem_00B5D3C0, &mem_00B5D3C4,
+    };
+    for (int i = 0; i < 32; i += 2) {
+        *dst[i] = huge[0];
+        *dst[i + 1] = huge[1];
+    }
+}
+} // namespace lift_006BBAE0

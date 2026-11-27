@@ -1,0 +1,13 @@
+{
+  "va": "0x006BBAE0",
+  "size": 278,
+  "orig_symbol": "sub_006BBAE0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "initHugeValueTable",
+  "signature": "void sub_006BBAE0()",
+  "summary": "Static initializer: fills 16 global doubles (0xB5D348..0xB5D3C4) with the CRT _HUGE value",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:40:51Z"
+}

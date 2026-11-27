@@ -88931,6 +88931,12 @@
     "summary": "Copies the 8-byte double pointed to by the _HUGE pointer into four consecutive 8-byte globals.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BBAE0": {
+    "name": "initHugeValueTable",
+    "signature": "void sub_006BBAE0()",
+    "summary": "Static initializer: fills 16 global doubles (0xB5D348..0xB5D3C4) with the CRT _HUGE value",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BC0D0": {
     "name": "Unknown::ForwardSetValueThroughChild",
     "class": "Unknown",
