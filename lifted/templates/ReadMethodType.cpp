@@ -68401,3 +68401,74 @@ int32_t __thiscall fn_00683800(void* this_ptr, void** arg1) {
 }
 } // namespace lift_004C06D0
 } // namespace lift_00683800
+
+// [0x004C08C0]
+namespace lift_004C08C0 {
+extern void* (__stdcall* ext_004C0280)(void*, void*);
+extern void (__thiscall* ext_006720E0)(void*, void*);
+extern void (__thiscall* mem_00924FF4)(void*);
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData,std::string,getPropertySourceDescription,1>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData,std::string,getPropertySourceDescription,1>
+// @summary Copies a string from arg1's inner pointer, looks up a handler via sub_006720E0, invokes vfunc +0xa8, and releases via vfunc +0x78.
+uint8_t __stdcall fn_004C08C0(void* arg1, void* arg2) {
+    uint8_t temp_str[28];
+    uint32_t holder[2];
+
+    void* str_ret = ext_004C0280(temp_str, *reinterpret_cast<void**>(arg1));
+    ext_006720E0(holder, str_ret);
+    mem_00924FF4(temp_str);
+
+    void* obj = reinterpret_cast<void*>(holder[1]);
+    auto vtbl = *reinterpret_cast<void***>(obj);
+    using VfuncA8 = uint8_t (__thiscall*)(void*, void*, void*);
+    uint8_t result = reinterpret_cast<VfuncA8>(vtbl[0xa8 / 4])(obj, holder, arg2);
+
+    obj = reinterpret_cast<void*>(holder[1]);
+    if (obj != nullptr) {
+        vtbl = *reinterpret_cast<void***>(obj);
+        using Vfunc78 = void (__thiscall*)(void*, void*);
+        reinterpret_cast<Vfunc78>(vtbl[0x78 / 4])(obj, holder);
+    }
+
+    return result;
+}
+} // namespace lift_004C08C0
+
+// [0x004BCCE0]
+namespace lift_004BCCE0 {
+// @name ExprParser::ReadMethodType<NMData::MaterialPair,std::string,&NMData::MaterialPair::generateDisplayName,1>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::MaterialPair,std::string,&NMData::MaterialPair::generateDisplayName,1>
+// @summary Copies a string from arg1, looks up a value object via sub_006720E0, forwards vfunc +0xA8, and cleans up via vfunc +0x78.
+
+
+void* __stdcall ext_004BC770(void* self, const void* src);
+void* __thiscall ext_006720E0(void* self, const void* str);
+extern void* mem_00924FF4;
+
+uint8_t __stdcall fn_004BCCE0(const void* arg1, void* arg2) {
+    alignas(8) uint8_t local_val[8] = {};
+    alignas(4) uint8_t local_str[28] = {};
+
+    const void* src = *reinterpret_cast<const void* const*>(arg1);
+    void* str_ptr = ext_004BC770(local_str, src);
+    ext_006720E0(local_val, str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(local_str);
+
+    void* obj = *reinterpret_cast<void**>(local_val + 4);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using VFuncA8 = uint8_t(__thiscall*)(void*, void*, void*);
+    uint8_t result = reinterpret_cast<VFuncA8>(vtable[0xA8 / 4])(obj, local_val, arg2);
+
+    obj = *reinterpret_cast<void**>(local_val + 4);
+    if (obj != nullptr) {
+        void** obj_vt = *reinterpret_cast<void***>(obj);
+        using VFunc78 = void(__thiscall*)(void*, void*);
+        reinterpret_cast<VFunc78>(obj_vt[0x78 / 4])(obj, local_val);
+    }
+
+    return result;
+}
+} // namespace lift_004BCCE0

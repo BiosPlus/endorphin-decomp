@@ -16269,6 +16269,13 @@
     "summary": "Copy-constructs a temporary std::string from the pointer stored at offset 0 of self, then throws the default ExceptionWithMessage.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BCCE0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MaterialPair,std::string,\u0026NMData::MaterialPair::generateDisplayName,1\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair,std::string,\u0026NMData::MaterialPair::generateDisplayName,1\u003e",
+    "signature": "uint8_t __stdcall fn_004BCCE0(const void* arg1, void* arg2)",
+    "summary": "Copies a string from arg1, looks up a value object via sub_006720E0, forwards vfunc +0xA8, and cleans up via vfunc +0x78.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004BE680": {
     "name": "sub_004BE680",
     "signature": "void __fastcall fn_004BE680(void* self)",
@@ -16459,6 +16466,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",
     "signature": "void fn_004C0880(void* self)",
     "summary": "Reads the pointer stored at arg, copies the string via copyStringFromDocumentOrThrow into a local, then throws a default ExceptionWithMessage.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004C08C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData,std::string,getPropertySourceDescription,1\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData,std::string,getPropertySourceDescription,1\u003e",
+    "signature": "uint8_t __stdcall fn_004C08C0(void* arg1, void* arg2)",
+    "summary": "Copies a string from arg1's inner pointer, looks up a handler via sub_006720E0, invokes vfunc +0xa8, and releases via vfunc +0x78.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004C0E40": {
