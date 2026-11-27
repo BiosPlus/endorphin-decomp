@@ -73897,6 +73897,13 @@
     "summary": "Reads the Vector3 value pointer at +0; if non-null, dereferences its float x component (value unused), then always constructs and throws a DerivedException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006707D0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::getX,0\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "uint8_t fn_006707D0(void** slot, void* unused_arg)",
+    "summary": "Reads the float x from *(*slot), wraps it in a temp value object via sub_00672080, dispatches its vfunc_42 with (\u0026out, x), then releases the temp's pointee via vfunc_30; throws DerivedException if the source pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670880": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_45",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",

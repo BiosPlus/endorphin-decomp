@@ -1,0 +1,28 @@
+{
+  "va": "0x006707D0",
+  "size": 164,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::getX,0\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+  "signature": "uint8_t fn_006707D0(void** slot, void* unused_arg)",
+  "summary": "Reads the float x from *(*slot), wraps it in a temp value object via sub_00672080, dispatches its vfunc_42 with (\u0026out, x), then releases the temp's pointee via vfunc_30; throws DerivedException if the source pointer is null.",
+  "fields": [
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:57:29Z"
+}

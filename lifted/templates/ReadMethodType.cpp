@@ -187445,3 +187445,52 @@ void fn_0059FC20(void* self) {
     vfn(obj4, self);
 }
 } // namespace lift_0059FC20
+
+// [0x006707D0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_42 (164 bytes)
+namespace lift_006707D0 {
+// Known callee 0x00672080: sub_00672080 (thiscall; constructs temp object at self, one float arg)
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info RDATA for the DerivedException throw
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::getX,0>::vfunc_42
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>
+// @summary Reads the float x from *(*slot), wraps it in a temp value object via sub_00672080, dispatches its vfunc_42 with (&out, x), then releases the temp's pointee via vfunc_30; throws DerivedException if the source pointer is null.
+// @field NM::Vector3 +0x00 float x
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+uint8_t fn_006707D0(void** slot, void* unused_arg) {
+    (void)unused_arg;
+    void* src = *slot;
+    if (src == nullptr) {
+        // Original: construct DerivedException in a local and raise it via CxxThrowException.
+        alignas(8) uint8_t exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+        return 0;
+    }
+
+    float value = lift_field<float>(src, 0x00);
+
+    alignas(8) uint8_t temp[16] = {};
+    ext_00672080(temp, value);
+
+    // First dword of temp is the value object pointer filled in by sub_00672080.
+    void* obj = lift_field<void*>(temp, 0x00);
+    uint32_t out = 0;
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    auto vfunc42 = reinterpret_cast<uint8_t (*)(void*, void*, float)>(lift_field<void*>(vtbl, 0xa8));
+    uint8_t result = vfunc42(obj, &out, value);
+
+    // Release the temp's pointee (vtable slot 0x78) if it is set.
+    if (obj != nullptr) {
+        void* release_vtbl = lift_field<void*>(obj, 0x00);
+        void* release_fn = lift_field<void*>(release_vtbl, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(release_fn)(obj, &out);
+    }
+    return result;
+}
+} // namespace lift_006707D0
