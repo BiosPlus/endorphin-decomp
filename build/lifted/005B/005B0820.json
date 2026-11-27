@@ -1,0 +1,46 @@
+{
+  "va": "0x005B0820",
+  "size": 1140,
+  "orig_symbol": "NMData::PoseData::vfunc_1",
+  "src_path": "src/NMData/PoseData.cpp",
+  "lifted_path": "lifted/NMData/PoseData.cpp",
+  "name": "NMData::PoseData::vfunc_1",
+  "class": "NMData::PoseData",
+  "signature": "bool is_xml_sentinel(void* p)",
+  "summary": "Deserializes PoseData from an XML node, loading name, mode, two transform maps, and root transform matrix",
+  "fields": [
+    {
+      "class": "NMData::PoseData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::PoseData",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::PoseData",
+      "offset": "+0x24",
+      "type": "uint8_t[64]",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::PoseData",
+      "offset": "+0x64",
+      "type": "std::string",
+      "name": "field_0x64"
+    },
+    {
+      "class": "NMData::PoseData",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "field_0x80"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:35:11Z"
+}
