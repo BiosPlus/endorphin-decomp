@@ -1499,6 +1499,7 @@ struct Unknown_Fields {
     // +0xB0  uint32_t                 field_0xb0  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8_t                  field_0xb0  (evidence: 0x00544130, 0x007721B0) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  void*                    field_0xb0  (evidence: 0x007CA750, 0x007DB4C0) // CONFLICT: multiple definitions at +0xB0
+    // +0xB0  FILE*                    m_file  (evidence: 0x00764930) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8_t field_0xb0 (embedded sub-object; its address is passed, not read)  (evidence: 0x006A8800) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  void* field_0xB0 (data pointer, set to this+0xAC)  (evidence: 0x006BAB80) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8_t[?] subobject (address-only; passed as this to ord_4066 thunk)  (evidence: 0x006A8840) // CONFLICT: multiple definitions at +0xB0
@@ -1681,6 +1682,7 @@ struct Unknown_Fields {
     // +0x100 int32_t                  field_0x100  (evidence: 0x006AA890) // CONFLICT: multiple definitions at +0x100
     // +0x100 uint32_t                 field_0x100  (evidence: 0x00430550, 0x007155B0, 0x0071C700) // CONFLICT: multiple definitions at +0x100
     // +0x100 void*                    field_0x100  (evidence: 0x00430260, 0x004305A0, 0x004305F0, 0x00430660, 0x004306C0, 0x00430720, 0x00430780, 0x004307C0, 0x00430CE0) // CONFLICT: multiple definitions at +0x100
+    // +0x100 char[]                   m_name  (evidence: 0x00764930) // CONFLICT: multiple definitions at +0x100
     // +0x104 void**                   childArray  (evidence: 0x006C1BB0, 0x006C59C0) // CONFLICT: multiple definitions at +0x104
     // +0x104 void*                    elements  (evidence: 0x006D4F90) // CONFLICT: multiple definitions at +0x104
     // +0x104 DWORD                    field_0x104  (evidence: 0x00455F10) // CONFLICT: multiple definitions at +0x104
@@ -1815,6 +1817,7 @@ struct Unknown_Fields {
     // +0x15C float                    field_0x15c  (evidence: 0x006125B0) // CONFLICT: multiple definitions at +0x15C
     // +0x15C void*                    field_0x15c  (evidence: 0x005C3C00) // CONFLICT: multiple definitions at +0x15C
     // +0x15C uint8_t[] embedded_subobject (address only; not dereferenced at this level)  (evidence: 0x00441C10, 0x00444750) // CONFLICT: multiple definitions at +0x15C
+    // +0x15C int32_t                  m_itemCount  (evidence: 0x00764930) // CONFLICT: multiple definitions at +0x15C
     // +0x15C uint32_t*                shift_table  (evidence: 0x007B0FC0) // CONFLICT: multiple definitions at +0x15C
     // +0x160 Unknown                  eventContainer_0x160  (evidence: 0x0046F830) // CONFLICT: multiple definitions at +0x160
     // +0x160 DWORD                    field_0x160  (evidence: 0x006D9030, 0x00702700, 0x0070AD00) // CONFLICT: multiple definitions at +0x160
@@ -1839,6 +1842,7 @@ struct Unknown_Fields {
     // +0x16C void**                   entries  (evidence: 0x0074D800) // CONFLICT: multiple definitions at +0x16C
     // +0x16C void**                   field_0x16C  (evidence: 0x007648F0) // CONFLICT: multiple definitions at +0x16C
     // +0x16C uint32_t                 field_0x16c  (evidence: 0x006A8800, 0x00798570) // CONFLICT: multiple definitions at +0x16C
+    // +0x16C void**                   m_items  (evidence: 0x00764930) // CONFLICT: multiple definitions at +0x16C
     // +0x16C int32_t                  startFrame  (evidence: 0x00565060) // CONFLICT: multiple definitions at +0x16C
     // +0x170 int32_t                  endFrame  (evidence: 0x00565060)
     // +0x174 uint32_t                 field_0x174  (evidence: 0x0046FF50) // CONFLICT: multiple definitions at +0x174

@@ -79057,6 +79057,13 @@
     "summary": "Scans the pointer array at +0x16C (count at +0x15C) for an entry whose first two DWORDs match (a, b); returns its index or -1.",
     "lifted_path": "lifted/leaf/decompiled_760000.cpp"
   },
+  "0x00764930": {
+    "name": "Unknown::releaseItemsAndResetFile_00764930",
+    "class": "Unknown",
+    "signature": "uint8_t fn_00764930(void* self)",
+    "summary": "Calls the per-item release thunk on each non-null pointer in the table at +0x16c (count at +0x15c), resets the buffer at +0x15c, closes the FILE* at +0xb0 if set, and reassigns the string at +0x100 to a constant; returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_760000.cpp"
+  },
   "0x00766210": {
     "name": "scaleDoubleBlock16",
     "signature": "void __stdcall fn_00766210(void* self, double scale)",

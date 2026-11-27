@@ -1,0 +1,40 @@
+{
+  "va": "0x00764930",
+  "size": 128,
+  "orig_symbol": "sub_00764930",
+  "src_path": "src/leaf/decompiled_760000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_760000.cpp",
+  "name": "Unknown::releaseItemsAndResetFile_00764930",
+  "class": "Unknown",
+  "signature": "uint8_t fn_00764930(void* self)",
+  "summary": "Calls the per-item release thunk on each non-null pointer in the table at +0x16c (count at +0x15c), resets the buffer at +0x15c, closes the FILE* at +0xb0 if set, and reassigns the string at +0x100 to a constant; returns 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "FILE*",
+      "name": "m_file"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "char[]",
+      "name": "m_name"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "m_itemCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x16C",
+      "type": "void**",
+      "name": "m_items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:00:45Z"
+}

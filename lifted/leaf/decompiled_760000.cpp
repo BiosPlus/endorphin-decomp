@@ -305,3 +305,49 @@ extern void* fn_00764190(void* ecx, const char* a1, uint32_t a2, uint32_t a3) {
     return self;
 }
 } // namespace lift_00764190
+
+// [0x00764930] sub_00764930 (128 bytes)
+namespace lift_00764930 {
+// Known callee 0x007641C0: sub_007641C0 (This-adjustor thunk: adjusts `this` by +0x8 and tail-calls sub_006B9D70.)
+extern void ext_007641C0(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; cdecl, one argument.)
+extern void ext_006A5C5C(void* arg);
+// Known callee 0x006D2250: Unknown::ResetAndFreeBuffer156 (Frees the pointer stored at +0x10 if non-null, then zeroes +0x10, +0x00 and +0x04.)
+extern void ext_006D2250(void* self);
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string to this; returns this.)
+extern void* ext_006B9EC0(void* self, const char* s);
+// IAT slot 0x00925264: MSVCR80!fclose (called indirectly in the original; the portable build calls fclose directly).
+extern uint32_t mem_00925264;
+
+// @name Unknown::releaseItemsAndResetFile_00764930
+// @class Unknown
+// @summary Calls the per-item release thunk on each non-null pointer in the table at +0x16c (count at +0x15c), resets the buffer at +0x15c, closes the FILE* at +0xb0 if set, and reassigns the string at +0x100 to a constant; returns 1.
+// @field Unknown +0x0b0 FILE* m_file
+// @field Unknown +0x100 char[] m_name
+// @field Unknown +0x15c int32_t m_itemCount
+// @field Unknown +0x16c void** m_items
+uint8_t fn_00764930(void* self) {
+    const int32_t count = lift_field<int32_t>(self, 0x15c);
+    for (int32_t i = 0; i < count; ++i) {
+        void** items = lift_field<void**>(self, 0x16c);
+        void* item = items[i];
+        if (item != nullptr) {
+            ext_007641C0(item);
+            ext_006A5C5C(item);
+        }
+    }
+
+    ext_006D2250(static_cast<uint8_t*>(self) + 0x15c);
+
+    void* file = lift_field<void*>(self, 0xb0);
+    if (file != nullptr) {
+        (void)&mem_00925264;
+        fclose(static_cast<FILE*>(file));
+        lift_field<void*>(self, 0xb0) = nullptr;
+        ext_006B9EC0(static_cast<uint8_t*>(self) + 0x100,
+                     reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00B5D2C0)));
+    }
+
+    return 1;
+}
+} // namespace lift_00764930
