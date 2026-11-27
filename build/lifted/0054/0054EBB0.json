@@ -1,0 +1,28 @@
+{
+  "va": "0x0054EBB0",
+  "size": 125,
+  "orig_symbol": "NMMatrixStackManager::vfunc_7",
+  "src_path": "src/classes/NMMatrixStackManager.cpp",
+  "lifted_path": "lifted/classes/NMMatrixStackManager.cpp",
+  "name": "NMMatrixStackManager::vfunc_7",
+  "class": "NMMatrixStackManager",
+  "signature": "void fn_0054EBB0(void* self, const float* src)",
+  "summary": "Validates the window bounds (lower at +0x08, end at +0x0C), adds the float3 at src to the translation (+0x30..+0x38) of the 64-byte matrix block ending at end, then calls glTranslatef with src.",
+  "fields": [
+    {
+      "class": "NMMatrixStackManager",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMMatrixStackManager",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:54:07Z"
+}

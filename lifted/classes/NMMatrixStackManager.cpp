@@ -149,3 +149,44 @@ void fn_0054EC30(void* self) {
     mem_009253D4();
 }
 } // namespace lift_0054EC30
+
+// [0x0054EBB0]
+namespace lift_0054EBB0 {
+// _invalid_parameter_noinfo import slot (IAT entry at 0x00925134).
+extern void (*mem_00925134)(void);
+// glTranslatef import slot (IAT entry at 0x009253D0).
+extern void (*mem_009253D0)(float x, float y, float z);
+
+// @name NMMatrixStackManager::vfunc_7
+// @class NMMatrixStackManager
+// @summary Validates the window bounds (lower at +0x08, end at +0x0C), adds the float3 at src to the translation (+0x30..+0x38) of the 64-byte matrix block ending at end, then calls glTranslatef with src.
+// @field NMMatrixStackManager +0x08 uint32_t field_0x08
+// @field NMMatrixStackManager +0x0C uint32_t field_0x0C
+void fn_0054EBB0(void* self, const float* src) {
+    const uint32_t lower = lift_field<uint32_t>(self, 0x08);
+    const uint32_t end = lift_field<uint32_t>(self, 0x0C);
+
+    // Bounds assertions (each reports via _invalid_parameter_noinfo on failure).
+    if (lower > end) {
+        mem_00925134();
+    }
+    const uint32_t base = end - 0x40u;
+    if (base > end || base < lower) {
+        mem_00925134();
+    }
+    if (base >= end) {
+        mem_00925134();
+    }
+
+    // Matrix block [end-0x40, end); translation lives at +0x30..+0x38.
+    uint8_t* mtx = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(base));
+
+    // Each component is re-read from src at the point of use, matching the
+    // original memory ordering in case src aliases the matrix block.
+    lift_field<float>(mtx, 0x30) = src[0] + lift_field<float>(mtx, 0x30);
+    lift_field<float>(mtx, 0x34) = lift_field<float>(mtx, 0x34) + src[1];
+    lift_field<float>(mtx, 0x38) = lift_field<float>(mtx, 0x38) + src[2];
+
+    mem_009253D0(src[0], src[1], src[2]);
+}
+} // namespace lift_0054EBB0

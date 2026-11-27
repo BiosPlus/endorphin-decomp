@@ -26608,6 +26608,13 @@
     "summary": "Copies a 4x4 matrix into the top slot of the matrix stack and loads it into OpenGL.",
     "lifted_path": "lifted/classes/NMMatrixStackManager.cpp"
   },
+  "0x0054EBB0": {
+    "name": "NMMatrixStackManager::vfunc_7",
+    "class": "NMMatrixStackManager",
+    "signature": "void fn_0054EBB0(void* self, const float* src)",
+    "summary": "Validates the window bounds (lower at +0x08, end at +0x0C), adds the float3 at src to the translation (+0x30..+0x38) of the 64-byte matrix block ending at end, then calls glTranslatef with src.",
+    "lifted_path": "lifted/classes/NMMatrixStackManager.cpp"
+  },
   "0x0054EC30": {
     "name": "NMMatrixStackManager::resetTopMatrixToIdentity",
     "class": "NMMatrixStackManager",
