@@ -74,7 +74,7 @@ struct Unknown_Fields {
     // +0x0   int                      index  (evidence: 0x00543220) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (object kind word; low byte used as index)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (accessed only via arg/ECX; layout not inferred)  (evidence: 0x0068BB30) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    inner  (evidence: 0x006E8750, 0x0079DDC0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    inner  (evidence: 0x005185D0, 0x006E8750, 0x0079DDC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    inner_first  (evidence: 0x00783650) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to inner object whose vtable slot 8 is invoked)  (evidence: 0x006616F0, 0x00661950) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 key  (evidence: 0x004030F0, 0x00404E40) // CONFLICT: multiple definitions at +0x0

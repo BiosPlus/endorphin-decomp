@@ -8,6 +8,8 @@
 // Recovered field layout for UnknownInner:
 namespace lifted_layout {
 struct UnknownInner_Fields {
+    // +0x4   uint32_t                 childBegin  (evidence: 0x005185D0)
+    // +0x8   uint32_t                 childEnd  (evidence: 0x005185D0)
     // +0x18  uint32_t                 value0  (evidence: 0x004689B0)
     // +0x1C  uint32_t                 value1  (evidence: 0x004689B0)
     // +0x20  DWORD                    field_0x20  (evidence: 0x007CCA00) // CONFLICT: multiple definitions at +0x20

@@ -1985,3 +1985,38 @@ int __thiscall fn_00518550(void* self, uint32_t idxA, uint32_t idxB) {
     return (valB > valA) ? 1 : 0;
 }
 } // namespace lift_00518550
+
+// [0x005185D0] sub_005185D0 (125 bytes)
+namespace lift_005185D0 {
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (called when index is out of range).
+extern void (*mem_00925134)(void);
+
+// @name Unknown::compareChildValuesLess
+// @class Unknown
+// @summary Returns whether the double at +0x20 of child[ix2] is less than that of child[ix1] (false on NaN).
+// @field Unknown +0x00 void* inner
+// @field UnknownInner +0x04 uint32_t childBegin
+// @field UnknownInner +0x08 uint32_t childEnd
+// @field UnknownChild +0x20 double value
+
+static void* childAt(void* inner, uint32_t index) {
+    uint32_t begin = lift_field<uint32_t>(inner, 0x04);
+    uint32_t end = lift_field<uint32_t>(inner, 0x08);
+    if (begin == 0 || index >= (end - begin) / 4) {
+        mem_00925134();
+    }
+    // Element stride is 4 bytes (32-bit target layout).
+    return lift_field<void*>(reinterpret_cast<void*>(static_cast<uintptr_t>(begin)),
+                             4 * static_cast<ptrdiff_t>(index));
+}
+
+int fn_005185D0(void* self, uint32_t ix1, uint32_t ix2) {
+    void* inner = lift_field<void*>(self, 0x00);
+    void* child1 = childAt(inner, ix1);
+    double v1 = lift_field<double>(child1, 0x20);
+    void* child2 = childAt(inner, ix2);
+    double v2 = lift_field<double>(child2, 0x20);
+    // x87 fcomp + ah test: result is 1 only when v2 < v1 (unordered -> 0).
+    return v2 < v1 ? 1 : 0;
+}
+} // namespace lift_005185D0
