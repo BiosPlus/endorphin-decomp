@@ -25417,6 +25417,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005455F0 (PoseTool::vfunc_28).",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00543220": {
+    "name": "Container::setCurrentIndex",
+    "class": "Unknown",
+    "signature": "inline void call_virtual(void* obj, ptrdiff_t vtable_offset)",
+    "summary": "Bounds-checked index selection into a pointer vector; swaps the current element and notifies old/new via vtable.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005432A0": {
     "name": "sub_005432A0",
     "signature": "void __thiscall sub_005432A0(void* self, uint32_t arg0)",

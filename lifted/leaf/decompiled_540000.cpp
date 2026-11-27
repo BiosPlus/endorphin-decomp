@@ -1694,3 +1694,66 @@ void fn_0054C770(void* self, void* hdc) {
     import_from_slot<DeleteObjectFn>(mem_00924090)(font);
 }
 } // namespace lift_0054C770
+
+// [0x00543220] sub_00543220 (124 bytes)
+namespace lift_00543220 {
+extern int mem_00925134;
+
+namespace {
+
+using InvalidParamFn = void (*)();
+
+// Invokes virtual slot at byte offset `vtable_offset` on `obj` with `obj` as the sole argument.
+inline void call_virtual(void* obj, ptrdiff_t vtable_offset) {
+    void** vtable = *reinterpret_cast<void***>(obj);
+    auto target = reinterpret_cast<void (*)(void*)>(lift_field<void*>(vtable, vtable_offset));
+    target(obj);
+}
+
+} // namespace
+
+// @name Container::setCurrentIndex
+// @class Unknown
+// @summary Bounds-checked index selection into a pointer vector; swaps the current element and notifies old/new via vtable.
+// @field Unknown +0x00 int index
+// @field Unknown +0x08 void** begin
+// @field Unknown +0x0C void** end
+// @field Unknown +0x14 void* current
+void fn_00543220(void* self, int index, uint8_t flag) {
+    if (index >= 10) {
+        return;
+    }
+
+    auto invalid_parameter = *reinterpret_cast<InvalidParamFn*>(&mem_00925134);
+
+    void** begin = lift_field<void**>(self, 0x08);
+    if (begin == nullptr ||
+        static_cast<uint32_t>(index) >= static_cast<uint32_t>(lift_field<void**>(self, 0x0C) - begin)) {
+        invalid_parameter();
+    }
+
+    void* current = lift_field<void*>(self, 0x14);
+    if (begin[index] == current) {
+        return;
+    }
+
+    if (current != nullptr) {
+        // flag == 0 -> vtable slot at +0x60, otherwise +0x64
+        call_virtual(current, flag == 0 ? 0x60 : 0x64);
+    }
+
+    begin = lift_field<void**>(self, 0x08);
+    if (begin == nullptr ||
+        static_cast<uint32_t>(index) >= static_cast<uint32_t>(lift_field<void**>(self, 0x0C) - begin)) {
+        invalid_parameter();
+    }
+
+    void* next = begin[index];
+    lift_field<void*>(self, 0x14) = next;
+    if (next != nullptr) {
+        call_virtual(next, 0x5C);
+    }
+
+    lift_field<int>(self, 0x00) = index;
+}
+} // namespace lift_00543220

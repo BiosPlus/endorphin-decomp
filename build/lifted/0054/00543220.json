@@ -1,0 +1,40 @@
+{
+  "va": "0x00543220",
+  "size": 124,
+  "orig_symbol": "sub_00543220",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Container::setCurrentIndex",
+  "class": "Unknown",
+  "signature": "inline void call_virtual(void* obj, ptrdiff_t vtable_offset)",
+  "summary": "Bounds-checked index selection into a pointer vector; swaps the current element and notifies old/new via vtable.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int",
+      "name": "index"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void**",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "current"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:50:42Z"
+}
