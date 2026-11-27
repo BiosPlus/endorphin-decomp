@@ -1593,3 +1593,39 @@ void __thiscall fn_0049DFA0(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_0049DFA0
+
+// [0x0049B170] sub_0049B170 (112 bytes)
+namespace lift_0049B170 {
+// Import slots (IAT entries) for MSVCP80 std::basic_string<char> helpers.
+extern uint32_t mem_00924FC0; // operator==(const basic_string&, const char*)
+extern uint32_t mem_00924FF4; // basic_string<char>::~basic_string()
+
+// Read-only string literals compared against the temporary.
+extern char mem_0092F10C[];
+extern char mem_0093A810[];
+
+// @name StringEqualsEitherLiteral_0049B170
+// @summary Builds a local std::string temporary, returns true if it equals either of two literals (short-circuit OR), then destroys the temporary.
+uint8_t fn_0049B170() {
+    using EqFn = uint8_t (*)(const void* str, const char* lit);
+    using DtorFn = void (*)(void* str);
+
+    auto eq = reinterpret_cast<EqFn>(static_cast<uintptr_t>(mem_00924FC0));
+    auto dtor = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+
+    // Local std::string temporary; only its first dword is initialised here
+    // (matches the original `mov [esp+0x18], ebx` with ebx == 0).
+    alignas(8) unsigned char str[0x1C];
+    lift_field<uint32_t>(str, 0x00) = 0;
+
+    uint8_t result = 0;
+    if (eq(str, mem_0092F10C) != 0) {
+        result = 1;
+    } else if (eq(str, mem_0093A810) != 0) {
+        result = 1;
+    }
+
+    dtor(str);
+    return result;
+}
+} // namespace lift_0049B170
