@@ -85164,6 +85164,12 @@
     "summary": "12-byte byte-index table for a switch jump table at 0x007B6xxx; this is data, not code. The disassembly above is the table bytes decoded as instructions.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7830": {
+    "name": "readStreamDwordOrFail",
+    "signature": "int32_t fn_007B7830(void)",
+    "summary": "Gets a stream handle from ext_0079EBE0, attempts a 4-byte fread into a local, and returns the stream value copied via copyDword; on read failure reports via ext_007AA510(13) and returns 0 unless mem_00B61219 is set.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B7890": {
     "name": "writeDwordToStream",
     "signature": "void fn_007B7890(uint32_t arg1)",

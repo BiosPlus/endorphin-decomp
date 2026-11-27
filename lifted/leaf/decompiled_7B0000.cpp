@@ -2113,3 +2113,42 @@ void fn_007B7890(uint32_t arg1) {
     }
 }
 } // namespace lift_007B7890
+
+// [0x007B7830] sub_007B7830 (96 bytes)
+namespace lift_007B7830 {
+// Known callee 0x0079EBE0: sub_0079EBE0 (Calls ext_0079EBD0 to get a pointer-sized address and returns the int32 stored at it.)
+extern int32_t ext_0079EBE0(void);
+// Known callee 0x007BAE20: copyDword (Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).)
+extern void ext_007BAE20(uint32_t* src, uint32_t* dst);
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+// IAT slot holding MSVCR80 fread (original asm: call dword ptr [0x9252ac]).
+extern uint32_t mem_009252AC;
+// .rdata constant 0x0099978C: element size passed to fread.
+extern uint32_t mem_0099978C;
+// Global flag at 0x00B61219 (byte).
+extern uint8_t mem_00B61219;
+
+typedef size_t (*FreadFn)(void* buf, size_t size, size_t count, void* stream);
+
+// @name readStreamDwordOrFail
+// @summary Gets a stream handle from ext_0079EBE0, attempts a 4-byte fread into a local, and returns the stream value copied via copyDword; on read failure reports via ext_007AA510(13) and returns 0 unless mem_00B61219 is set.
+int32_t fn_007B7830(void) {
+    uint32_t stream = static_cast<uint32_t>(ext_0079EBE0());
+    uint32_t buf = 0;
+
+    FreadFn fread_fn = reinterpret_cast<FreadFn>(static_cast<uintptr_t>(mem_009252AC));
+    size_t n = fread_fn(&buf, static_cast<size_t>(mem_0099978C), 1,
+                        reinterpret_cast<void*>(static_cast<uintptr_t>(stream)));
+
+    if (n != 1) {
+        ext_007AA510(13);
+        if (mem_00B61219 == 0) {
+            return 0;
+        }
+    }
+
+    ext_007BAE20(&stream, &buf);
+    return static_cast<int32_t>(buf);
+}
+} // namespace lift_007B7830

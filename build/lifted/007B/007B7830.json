@@ -1,0 +1,13 @@
+{
+  "va": "0x007B7830",
+  "size": 96,
+  "orig_symbol": "sub_007B7830",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "readStreamDwordOrFail",
+  "signature": "int32_t fn_007B7830(void)",
+  "summary": "Gets a stream handle from ext_0079EBE0, attempts a 4-byte fread into a local, and returns the stream value copied via copyDword; on read failure reports via ext_007AA510(13) and returns 0 unless mem_00B61219 is set.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:13:59Z"
+}
