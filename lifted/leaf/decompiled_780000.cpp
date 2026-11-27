@@ -2261,3 +2261,41 @@ void __thiscall fn_0078CEF0(void* self) {
     mem_009241BC(cs);
 }
 } // namespace lift_0078CEF0
+
+// [0x00783160] sub_00783160 (128 bytes)
+namespace lift_00783160 {
+extern int mem_009241FC;
+extern int mem_00925190;
+// MSVC stack probe (__chkstk) for the 4 KB frame; portable local arrays make it unnecessary.
+extern void ext_006A7270();
+
+// @name UTF8PathFopen
+// @summary Converts a UTF-8 path and mode to UTF-16 (CP_UTF8) and opens the file with _wfopen; stores the FILE* through out and returns whether it is non-null.
+
+// MultiByteToWideChar (stdcall, 6 args), resolved through the IAT slot mem_009241FC.
+using MultiByteToWideCharFn = int(__stdcall*)(uint32_t codePage, uint32_t flags,
+                                              const char* src, int srcLen,
+                                              wchar_t* dst, int dstLen);
+// _wfopen (cdecl), resolved through the IAT slot mem_00925190.
+using WFopenFn = FILE*(__cdecl*)(const wchar_t* path, const wchar_t* mode);
+
+constexpr uint32_t kCodePageUtf8 = 65001; // 0xFDE9
+constexpr int kWideCapacity = 0x400;      // wide chars per buffer (2 KB)
+
+// cdecl: out at [esp+4] (FILE**), path at [esp+8], mode at [esp+0xC].
+uint8_t __cdecl fn_00783160(FILE** out, const char* path, const char* mode) {
+    (void)&ext_006A7270; // stack probe; no portable equivalent needed
+    wchar_t wpath[kWideCapacity];
+    wchar_t wmode[kWideCapacity];
+
+    auto to_wide = *reinterpret_cast<MultiByteToWideCharFn*>(&mem_009241FC);
+    auto wfopen = *reinterpret_cast<WFopenFn*>(&mem_00925190);
+
+    to_wide(kCodePageUtf8, 0, path, -1, wpath, kWideCapacity);
+    to_wide(kCodePageUtf8, 0, mode, -1, wmode, kWideCapacity);
+
+    FILE* fp = wfopen(wpath, wmode);
+    *out = fp;
+    return fp != nullptr ? 1 : 0;
+}
+} // namespace lift_00783160

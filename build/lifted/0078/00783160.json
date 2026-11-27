@@ -1,0 +1,13 @@
+{
+  "va": "0x00783160",
+  "size": 128,
+  "orig_symbol": "sub_00783160",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "UTF8PathFopen",
+  "signature": "constexpr int kWideCapacity = 0x400;      // wide chars per buffer (2 KB) uint8_t __cdecl fn_00783160(FILE** out, const char* path, const char* mode)",
+  "summary": "Converts a UTF-8 path and mode to UTF-16 (CP_UTF8) and opens the file with _wfopen; stores the FILE* through out and returns whether it is non-null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:15:19Z"
+}
