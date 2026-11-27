@@ -60453,6 +60453,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060E890": {
+    "name": "NMData::SensorData::vfunc_21",
+    "class": "NMData::SensorData",
+    "signature": "static inline bool is_lookup_sentinel(uint32_t v)",
+    "summary": "Calls a virtual slot at +0xF8, resolves named items from two string keys and a table of default items, and fills the two float fields +0x174/+0x178 through a string-to-float parser.",
+    "lifted_path": "lifted/NMData/SensorData.cpp"
+  },
   "0x0060EA90": {
     "name": "NMData::MetaBodySensorData::vfunc_21",
     "class": "MetaBodySensorData",

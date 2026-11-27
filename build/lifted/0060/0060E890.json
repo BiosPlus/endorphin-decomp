@@ -1,0 +1,40 @@
+{
+  "va": "0x0060E890",
+  "size": 365,
+  "orig_symbol": "NMData::SensorData::vfunc_21",
+  "src_path": "src/NMData/SensorData.cpp",
+  "lifted_path": "lifted/NMData/SensorData.cpp",
+  "name": "NMData::SensorData::vfunc_21",
+  "class": "NMData::SensorData",
+  "signature": "static inline bool is_lookup_sentinel(uint32_t v)",
+  "summary": "Calls a virtual slot at +0xF8, resolves named items from two string keys and a table of default items, and fills the two float fields +0x174/+0x178 through a string-to-float parser.",
+  "fields": [
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x14",
+      "type": "std::string",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x154",
+      "type": "std::string",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "field_0x174"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x178",
+      "type": "float",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:33:29Z"
+}
