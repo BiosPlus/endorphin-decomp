@@ -1838,6 +1838,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004155E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00415E30": {
+    "name": "ScaleRgbBytesClamped",
+    "signature": "uint32_t fn_00415E30(uint32_t packed, float scale_in)",
+    "summary": "Scales the low three bytes of a packed value (R=bits 0-7, G=8-15, B=16-23) by max(scale, 1.0), saturating each channel to 0..255 via ext_006A6DE0.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00415ED0": {
     "name": "InitWithDefaultMode",
     "signature": "void* fn_00415ED0(void* self)",

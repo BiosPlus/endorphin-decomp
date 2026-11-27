@@ -3843,3 +3843,29 @@ void fn_004133F0(void* self) {
     reinterpret_cast<StrDtorFn>(iat_target(mem_00924FF4))(str);
 }
 } // namespace lift_004133F0
+
+// [0x00415E30] sub_00415E30 (156 bytes)
+namespace lift_00415E30 {
+// Clamp/convert helper: takes a float (passed on the x87 stack in the original) and returns an int.
+extern int ext_006A6DE0(float v);
+
+// @name ScaleRgbBytesClamped
+// @summary Scales the low three bytes of a packed value (R=bits 0-7, G=8-15, B=16-23) by max(scale, 1.0), saturating each channel to 0..255 via ext_006A6DE0.
+uint32_t fn_00415E30(uint32_t packed, float scale_in)
+{
+    // Scale is clamped to at least 1.0 (NaN also yields 1.0).
+    const float scale = (scale_in > 1.0f) ? scale_in : 1.0f;
+
+    const auto channel = [scale](uint32_t c) -> uint32_t {
+        const int r = ext_006A6DE0(static_cast<float>(static_cast<int>(c)) * scale);
+        return (r < 0xff) ? static_cast<uint32_t>(static_cast<uint8_t>(r)) : 0xffu;
+    };
+
+    // Call order matches the original: low, high, then middle channel.
+    const uint32_t r = channel(packed & 0xffu);
+    const uint32_t b = channel((packed >> 16) & 0xffu);
+    const uint32_t g = channel((packed >> 8) & 0xffu);
+
+    return (b << 16) | (g << 8) | r;
+}
+} // namespace lift_00415E30

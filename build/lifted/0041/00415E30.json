@@ -1,0 +1,13 @@
+{
+  "va": "0x00415E30",
+  "size": 156,
+  "orig_symbol": "sub_00415E30",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "ScaleRgbBytesClamped",
+  "signature": "uint32_t fn_00415E30(uint32_t packed, float scale_in)",
+  "summary": "Scales the low three bytes of a packed value (R=bits 0-7, G=8-15, B=16-23) by max(scale, 1.0), saturating each channel to 0..255 via ext_006A6DE0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:26Z"
+}
