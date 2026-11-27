@@ -1,0 +1,34 @@
+{
+  "va": "0x004B5610",
+  "size": 89,
+  "orig_symbol": "sub_004B5610",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "InitVectorOwner",
+  "class": "Unknown",
+  "signature": "void fn_004B5610(void* self)",
+  "summary": "Writes two vtable pointers, resets the Vector sub-object at +0x08, then re-stamps the vtable at +0x00 via sub_0065F440.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (vtable pointer; overwritten to 0x0093BF24 by callee",
+      "name": "0x0065F440)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (vtable pointer,",
+      "name": "0x009432F0)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t field_0x08[] (Vector sub-object, passed as this to",
+      "name": "Vector_destroyAndReset)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:16:28Z"
+}

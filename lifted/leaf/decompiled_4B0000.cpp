@@ -1575,3 +1575,31 @@ uint32_t __stdcall fn_004B73A0(uint32_t out_str, uint32_t index) {
     return out_str;
 }
 } // namespace lift_004B73A0
+
+// [0x004B5610] sub_004B5610 (89 bytes)
+namespace lift_004B5610 {
+// Known callee 0x004B5270: Vector_destroyAndReset (Validates begin/end/bound ordering, destroys the element range via ext_004B4930, releases the storage through ext_006A5C5C when it is non-null, then resets the three pointers to null.)
+extern void ext_004B5270(void* self);
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+
+// @name InitVectorOwner
+// @class Unknown
+// @summary Writes two vtable pointers, resets the Vector sub-object at +0x08, then re-stamps the vtable at +0x00 via sub_0065F440.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer; overwritten to 0x0093BF24 by callee 0x0065F440)
+// @field Unknown +0x04 uint32_t field_0x04 (vtable pointer, 0x009432F0)
+// @field Unknown +0x08 uint8_t field_0x08[] (Vector sub-object, passed as this to Vector_destroyAndReset)
+void fn_004B5610(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // The MSVC SEH frame (fs:[0] push/pop, state cookie) is not reproduced; it only guards the calls below.
+    lift_field<uint32_t>(base, 0x00) = 0x009432FCu;
+    lift_field<uint32_t>(base, 0x04) = 0x009432F0u;
+
+    // Reset/destroy the sub-object at this+0x08 (ecx = this + 8).
+    ext_004B5270(base + 0x08);
+
+    // Final store of the primary vtable slot (ecx = this).
+    ext_0065F440(base);
+}
+} // namespace lift_004B5610

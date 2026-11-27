@@ -14256,6 +14256,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B5610": {
+    "name": "InitVectorOwner",
+    "class": "Unknown",
+    "signature": "void fn_004B5610(void* self)",
+    "summary": "Writes two vtable pointers, resets the Vector sub-object at +0x08, then re-stamps the vtable at +0x00 via sub_0065F440.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B58A0": {
     "name": "NMData::GraphEngineData::vfunc_0",
     "class": "NMData::GraphEngineData",
@@ -25831,6 +25838,13 @@
     "class": "ManagedDisplayList\u003cRenderableList\u003e",
     "signature": "extern \"C\" int mem_00925134;   // CRT _invalid_parameter_noinfo IAT slot (bounds-check boilerplate) void __thiscall fn_0054C2B0(void* self, void* arg)",
     "summary": "Walks the element pointer range [field_0x18, field_0x1C) and calls vtable slots 8 and 9 on each element with the given argument.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
+  "0x0054C330": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_11",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void __thiscall fn_0054C330(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Iterates over child renderables and invokes vfunc_11 on each with two arguments",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
   "0x0054C3A0": {

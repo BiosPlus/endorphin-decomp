@@ -12,6 +12,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t vtable          (vptr)  (evidence: 0x006BB7D0, 0x006E7F90, 0x006E7FB0, 0x006E7FC0, 0x006E7FD0, 0x006E7FE0, 0x006E7FF0, 0x006E8000, 0x006E8010, 0x006E8020, 0x006E8030, 0x006E8040, 0x006E86B0, 0x006E8810, 0x0072B1C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to subobject; dereferenced to reach +0x04/+0x08)  (evidence: 0x0072B1E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)  (evidence: 0x006E7F90, 0x006E8050, 0x006E8060, 0x006E8070, 0x006E8080) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t field_0x00 (vtable pointer; overwritten to 0x0093BF24 by callee 0x0065F440)  (evidence: 0x004B5610) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD vtable0 (set to 0x0093C08C, then 0x00952018)  (evidence: 0x00517AD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, set to 0x009793d4)  (evidence: 0x0063D950, 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (vtable pointer, set to 0x953B0C)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x0
@@ -146,6 +147,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04      (begin)  (evidence: 0x0051DE50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04         (begin)  (evidence: 0x005053D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t openFlag         (inner+0x04)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t field_0x04 (vtable pointer, 0x009432F0)  (evidence: 0x004B5610) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (array begin pointer; element stride 0x68)  (evidence: 0x00503BC0, 0x00505D00, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   BYTE flag (set to        1)  (evidence: 0x00517AD0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t field_0x04 (type code read from inner struct; compared against 2)  (evidence: 0x006BA780, 0x006BB790) // CONFLICT: multiple definitions at +0x4
@@ -267,6 +269,7 @@ struct Unknown_Fields {
     // +0x8   void* field_0x08         (end)  (evidence: 0x005053D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD vtable1 (set to 0x00951F3C, then 0x0095200C)  (evidence: 0x00517AD0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (child pointer table base; element i at +0x08 + 60*i)  (evidence: 0x00540D00) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t field_0x08[] (Vector sub-object, passed as this to Vector_destroyAndReset)  (evidence: 0x004B5610) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 arg  (evidence: 0x004F0A90) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    child  (evidence: 0x0041C710, 0x00441020, 0x0044B660, 0x0044B680, 0x0044B760, 0x0053A5E0, 0x005A2BD0, 0x00682DE0, 0x00687230) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  chunkSize  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0x8
