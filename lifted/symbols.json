@@ -5345,6 +5345,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00440ED0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00441D40": {
+    "name": "MultiTrackView::RangeMarker::vfunc_1",
+    "class": "MultiTrackView::RangeMarker",
+    "signature": "inline R lift_vcall(void* obj, A... args)",
+    "summary": "If two lookups agree, forward to vtable slot 2; otherwise clamp a computed range into out[0..3] via a callee on obj and return out.",
+    "lifted_path": "lifted/MultiTrackView/RangeMarker.cpp"
+  },
   "0x00442960": {
     "name": "Unknown::InitWithTag",
     "class": "Unknown",
