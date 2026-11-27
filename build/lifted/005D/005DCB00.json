@@ -1,0 +1,28 @@
+{
+  "va": "0x005DCB00",
+  "size": 179,
+  "orig_symbol": "NMData::CameraData::vfunc_14_off_8",
+  "src_path": "src/NMData/CameraData.cpp",
+  "lifted_path": "lifted/NMData/CameraData.cpp",
+  "name": "NMData::CameraData::vfunc_14_off_8",
+  "class": "NMData::CameraData",
+  "signature": "static void call_vslot_0x78(void* obj, void* arg)",
+  "summary": "Refreshes the two cached CameraData slots at +0x264 and +0x25C from helper results, releasing the previous occupants, then runs the TransformNode update (ext_0058F030).",
+  "fields": [
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x25C",
+      "type": "void*",
+      "name": "field_0x25c"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x264",
+      "type": "uint8_t",
+      "name": "field_0x264"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:13Z"
+}

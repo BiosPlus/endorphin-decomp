@@ -96,3 +96,56 @@ void fn_005D13B0(void* self) {
     mem_00B3F200 = 0;
 }
 } // namespace lift_005D13B0
+
+// [0x005DCB00] NMData::CameraData::vfunc_14_off_8 (179 bytes)
+namespace lift_005DCB00 {
+// Known callee 0x005DC4D0: sub_005DC4D0 (Auto-lifted identical-shape clone of 0x005B4030 (storeValueWithStaticSingleton).)
+// Called cdecl (out, value); the result is consumed from eax.
+extern void* ext_005DC4D0(void* out, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy ... Returns self.)
+// thiscall: self in ecx, other on the stack.
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x005DC4F0: sub_005DC4F0 (Auto-lifted identical-shape clone of 0x005B4030 (storeValueWithStaticSingleton).)
+extern void* ext_005DC4F0(void* out, uint32_t value);
+// Known callee 0x0058F030: AnimatableTransform::vfunc_14_off_8 (thiscall, no args).
+extern void ext_0058F030(void* self);
+
+// Calls vtable slot 0x78 (thiscall: this in ecx, one stack arg) on the object at `obj`.
+static void call_vslot_0x78(void* obj, void* arg) {
+    void** vtbl = lift_field<void**>(obj, 0);
+    void* slot = lift_field<void*>(vtbl, 0x78);
+    reinterpret_cast<void (*)(void*, void*)>(slot)(obj, arg);
+}
+
+// @name NMData::CameraData::vfunc_14_off_8
+// @class NMData::CameraData
+// @summary Refreshes the two cached CameraData slots at +0x264 and +0x25C from helper results, releasing the previous occupants, then runs the TransformNode update (ext_0058F030).
+// @field NMData::CameraData +0x25C void* field_0x25c
+// @field NMData::CameraData +0x264 uint8_t field_0x264
+void fn_005DCB00(void* self) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(self);
+    // Original stack frame scratch slots: frame[0] / frame[2] receive the helper outputs;
+    // frame[1] / frame[3] are the release targets read back after the copy calls.
+    uint32_t frame[4] = {};
+    void* edi = obj - 8;
+
+    // Block 1: produce a value, copy it into this+0x264.
+    void* t0 = ext_005DC4D0(&frame[0], static_cast<uint32_t>(reinterpret_cast<uintptr_t>(edi)));
+    ext_0041CF50(obj + 0x264, t0);
+    void* old0 = reinterpret_cast<void*>(static_cast<uintptr_t>(frame[1]));
+    if (old0 != nullptr) {
+        call_vslot_0x78(old0, &frame[0]);
+    }
+
+    // Block 2: produce a second value, copy it into this+0x25C.
+    void* t1 = ext_005DC4F0(&frame[2], static_cast<uint32_t>(reinterpret_cast<uintptr_t>(edi)));
+    ext_0041CF50(obj + 0x25C, t1);
+    void* old1 = reinterpret_cast<void*>(static_cast<uintptr_t>(frame[3]));
+    if (old1 != nullptr) {
+        call_vslot_0x78(old1, &frame[2]);
+    }
+
+    // Final update on this (AnimatableTransform::vfunc_14_off_8).
+    ext_0058F030(obj);
+}
+} // namespace lift_005DCB00

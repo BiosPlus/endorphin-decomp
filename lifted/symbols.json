@@ -51729,6 +51729,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::CameraData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005DCB00": {
+    "name": "NMData::CameraData::vfunc_14_off_8",
+    "class": "NMData::CameraData",
+    "signature": "static void call_vslot_0x78(void* obj, void* arg)",
+    "summary": "Refreshes the two cached CameraData slots at +0x264 and +0x25C from helper results, releasing the previous occupants, then runs the TransformNode update (ext_0058F030).",
+    "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
   "0x005DCC80": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::VideoPlaneData::getFileName(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall NMData::VideoPlaneData::setFileName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::VideoPlaneData::getFileName(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall NMData::VideoPlaneData::setFileName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e",
