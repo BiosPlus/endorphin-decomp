@@ -10749,3 +10749,24 @@ void fn_004F6670(void* self) {
     lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE9F04));
 }
 } // namespace lift_004F6670
+
+// [0x004F65A0] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, float, &public: void __thiscall MatrixWithProperties::setGamma(float)>::vfunc_40 (122 bytes)
+namespace lift_004F65A0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE9F00;
+extern DWORD mem_00AE9EFC;
+
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, float, &public: void __thiscall MatrixWithProperties::setGamma(float)>
+// @summary Lazily initializes the static getGamma/setGamma method-holder at mem_00AE9EFC once, then points the caller's +0x04 slot at it.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_004F65A0(void* self) {
+    if ((mem_00AE9F00 & 1u) == 0) {
+        mem_00AE9F00 |= 1u;
+        ext_0067A670(reinterpret_cast<void*>(&mem_00AE9EFC), 0);
+        mem_00AE9EFC = 0x0094D7D4u;
+    }
+    lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9EFC));
+}
+} // namespace lift_004F65A0

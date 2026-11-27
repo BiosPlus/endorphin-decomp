@@ -19193,6 +19193,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004F65A0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getGamma(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setGamma(float)\u003e",
+    "signature": "void fn_004F65A0(void* self)",
+    "summary": "Lazily initializes the static getGamma/setGamma method-holder at mem_00AE9EFC once, then points the caller's +0x04 slot at it.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004F6620": {
     "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, getX, float, setX\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType",
@@ -38938,6 +38945,13 @@
     "name": "Sub_00629850_New",
     "signature": "void* fn_005FF610(uint32_t p0, uint32_t p1, uint32_t p2, uint32_t p3)",
     "summary": "Allocates a 0x78-byte Sub_00629850 object, runs its constructor with four args, then overrides its vtable pointers; returns null if allocation fails.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF710": {
+    "name": "Sub_00629850::create",
+    "class": "Sub_00629850",
+    "signature": "void* fn_005FF710(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Allocates a 0x78-byte Sub_00629850 via operator new, runs its constructor with four forwarded args, then installs the two vtable pointers; returns the object or NULL if allocation failed.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
   "0x005FF790": {

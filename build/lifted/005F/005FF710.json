@@ -1,0 +1,28 @@
+{
+  "va": "0x005FF710",
+  "size": 119,
+  "orig_symbol": "sub_005FF710",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "Sub_00629850::create",
+  "class": "Sub_00629850",
+  "signature": "void* fn_005FF710(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Allocates a 0x78-byte Sub_00629850 via operator new, runs its constructor with four forwarded args, then installs the two vtable pointers; returns the object or NULL if allocation failed.",
+  "fields": [
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "vftable_30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:25Z"
+}

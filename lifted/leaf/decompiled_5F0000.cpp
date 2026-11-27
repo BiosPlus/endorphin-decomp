@@ -1838,3 +1838,29 @@ void* fn_005FF610(uint32_t p0, uint32_t p1, uint32_t p2, uint32_t p3) {
     return obj;
 }
 } // namespace lift_005FF610
+
+// [0x005FF710] sub_005FF710 (119 bytes)
+namespace lift_005FF710 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 = operator new, cdecl)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629850: Sub_00629850::Sub_00629850 (thiscall ctor; 4 stack args, callee-cleaned)
+extern void* ext_00629850(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4);
+
+// @name Sub_00629850::create
+// @class Sub_00629850
+// @summary Allocates a 0x78-byte Sub_00629850 via operator new, runs its constructor with four forwarded args, then installs the two vtable pointers; returns the object or NULL if allocation failed.
+// @field Sub_00629850 +0x00 void* vftable
+// @field Sub_00629850 +0x30 void* vftable_30
+void* fn_005FF710(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    // Original SEH frame (fs:[0] push/restore) only guards the ctor call; no cleanup
+    // is performed on the failure path, so it is not reproduced here.
+    void* obj = ext_006A5C62(0x78);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    ext_00629850(obj, arg1, arg2, arg3, arg4);
+    lift_field<uint32_t>(obj, 0x00) = 0x0096F004u; // vftable (base)
+    lift_field<uint32_t>(obj, 0x30) = 0x0096EFECu; // vftable_30
+    return obj;
+}
+} // namespace lift_005FF710
