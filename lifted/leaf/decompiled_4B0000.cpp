@@ -2511,9 +2511,8 @@ extern void* ext_006A5C62(uint32_t size);
 // @summary Allocates a 0x50-byte object, initializes it via InitVtblAndCopyStrings when allocation succeeds, then calls the two follow-up helpers and returns the last helper's result.
 void* fn_004B7620(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     void* obj = ext_006A5C62(0x50);
-    void* initResult = nullptr;
     if (obj != nullptr) {
-        initResult = ext_004B75A0(obj, reinterpret_cast<uintptr_t>(self), a1, a2, a3);
+        ext_004B75A0(obj, reinterpret_cast<uintptr_t>(self), a1, a2, a3);
     }
     int32_t status = ext_00665870();
     return ext_00666670(status);
