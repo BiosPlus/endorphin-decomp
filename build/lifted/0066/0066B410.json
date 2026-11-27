@@ -1,0 +1,14 @@
+{
+  "va": "0x0066B410",
+  "size": 136,
+  "orig_symbol": "ExprParser::StringType::vfunc_42",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_42",
+  "class": "ExprParser::StringType",
+  "signature": "bool fn_0066B410(void* arg1, void* arg2)",
+  "summary": "Fills two local std::strings via ext_0041CEB0 (first from arg2, then from arg1) and returns whether they compare equal.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:30:12Z"
+}

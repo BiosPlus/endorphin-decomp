@@ -53374,6 +53374,13 @@
     "summary": "Forwards (rec + 0x2C, 0) to ext_006720E0 on self and returns self.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x0066B410": {
+    "name": "ExprParser::StringType::vfunc_42",
+    "class": "ExprParser::StringType",
+    "signature": "bool fn_0066B410(void* arg1, void* arg2)",
+    "summary": "Fills two local std::strings via ext_0041CEB0 (first from arg2, then from arg1) and returns whether they compare equal.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066B4A0": {
     "name": "ExprParser::StringType::vfunc_33",
     "class": "ExprParser::StringType",

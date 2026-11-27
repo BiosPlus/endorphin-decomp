@@ -277,3 +277,34 @@ void* fn_0066B320(void* self, void* rec, DWORD unused1, DWORD unused2, DWORD unu
     return self;
 }
 } // namespace lift_0066B320
+
+// [0x0066B410] ExprParser::StringType::vfunc_42 (136 bytes)
+namespace lift_0066B410 {
+// Known callee 0x0041CEB0: UnknownClass::forwardToSubobjectSlot4.
+// Calls vtable slot 4 of the subobject at +0x04 with (arg1, self, 0, 0), then returns arg1.
+// Used as a getter that fills the std::string passed as arg1, with `self` as the holder.
+extern void* ext_0041CEB0(void* self, void* out);
+
+// MSVCP80 imports used by the original code (operator==(string, string) and
+// ~basic_string). Replaced below by the standard operators; kept as references
+// for traceability against the original asm.
+extern int mem_00924FC4;
+extern int mem_00924FF4;
+
+// @name ExprParser::StringType::vfunc_42
+// @class ExprParser::StringType
+// @summary Fills two local std::strings via ext_0041CEB0 (first from arg2, then from arg1) and returns whether they compare equal.
+bool fn_0066B410(void* arg1, void* arg2) {
+    (void)&mem_00924FC4;  // metadata reference only (operator== import)
+    (void)&mem_00924FF4;  // metadata reference only (~basic_string import)
+
+    std::string first;   // local at [esp+0x24] in the original frame
+    std::string second;  // local at [esp+0x08] in the original frame
+
+    ext_0041CEB0(arg2, &first);
+    ext_0041CEB0(arg1, &second);
+
+    return first == second;
+    // Destruction order (second, then first) matches the original cleanup.
+}
+} // namespace lift_0066B410
