@@ -92715,6 +92715,12 @@
     "summary": "Initializes the object with the C string \"GenericNode\" via initAssignCString and returns this.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006EA230": {
+    "name": "initAndPopulateFromString_006EA230",
+    "signature": "extern \"C\" void* __stdcall fn_006EA230(void* out_obj)",
+    "summary": "Initializes a temporary inline-buffer object with global 0xaa96f8, constructs out_obj from it via ext_006E72D0, and frees the temporary items.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006EA3C0": {
     "name": "initHugeBounds",
     "signature": "void sub_006EA3C0()",

@@ -2624,3 +2624,47 @@ uint8_t __fastcall fn_006E9840(void* self, void* /*edx*/, uint32_t key) {
 }
 } // namespace lift_006E9150
 } // namespace lift_006E9840
+
+// [0x006EA230]
+namespace lift_006EA230 {
+// @name initAndPopulateFromString_006EA230
+// @summary Initializes a temporary inline-buffer object with global 0xaa96f8, constructs out_obj from it via ext_006E72D0, and frees the temporary items.
+
+
+extern void* __thiscall ext_006E72A0(void* self);
+extern void* __fastcall ext_006E72D0(void* self, void* /*edx*/, void* arg1);
+extern void __thiscall ext_006B9D70(void* self);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __thiscall ext_006D2250(void* self);
+extern void __thiscall ext_006D2160(void* self);
+
+extern void* __stdcall fn_006EA230(void* out_obj) {
+    alignas(4) uint8_t local_obj[0x20]{};
+    ext_006E72A0(local_obj);
+
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(local_obj);
+    uint32_t arg_val = *reinterpret_cast<uint32_t*>(local_obj + 0x04);
+    using Vfn2 = void(__thiscall*)(void*, uint32_t, uint32_t, uint32_t);
+    reinterpret_cast<Vfn2>(vtable[2])(local_obj, arg_val, 0x00AA96F8u, 0u);
+
+    ext_006E72D0(out_obj, nullptr, local_obj);
+
+    *reinterpret_cast<uint32_t*>(local_obj) = 0x00993CE0u;
+
+    int32_t count = *reinterpret_cast<int32_t*>(local_obj + 0x04);
+    for (int32_t i = 0; i < count; ++i) {
+        void** items = *reinterpret_cast<void***>(local_obj + 0x14);
+        void* item = items[i];
+        if (item != nullptr) {
+            ext_006B9D70(item);
+            ext_006A5C5C(item);
+        }
+        count = *reinterpret_cast<int32_t*>(local_obj + 0x04);
+    }
+
+    ext_006D2250(local_obj + 0x04);
+    ext_006D2160(local_obj + 0x04);
+
+    return out_obj;
+}
+} // namespace lift_006EA230

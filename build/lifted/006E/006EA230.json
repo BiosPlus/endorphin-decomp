@@ -1,0 +1,13 @@
+{
+  "va": "0x006EA230",
+  "size": 203,
+  "orig_symbol": "sub_006EA230",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "initAndPopulateFromString_006EA230",
+  "signature": "extern \"C\" void* __stdcall fn_006EA230(void* out_obj)",
+  "summary": "Initializes a temporary inline-buffer object with global 0xaa96f8, constructs out_obj from it via ext_006E72D0, and frees the temporary items.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:33:28Z"
+}
