@@ -3661,6 +3661,12 @@
     "summary": "Gets the global value via fn_00465B30, resolves an object with fn_00468660, then calls its vtable slot 1 and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004320A0": {
+    "name": "callVtable1C8WithTryCatch",
+    "signature": "void __cdecl fn_004320A0(void)",
+    "summary": "Calls ext_00465B40(), invokes virtual method at vtable +0x1C8 with 0, and catches exceptions to show a message box.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00432130": {
     "name": "appOnFileSaveOrAction",
     "signature": "void __cdecl fn_00432130(void)",
