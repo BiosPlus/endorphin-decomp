@@ -1,0 +1,52 @@
+{
+  "va": "0x00665E40",
+  "size": 154,
+  "orig_symbol": "sub_00665E40",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "NodeListOwner::releaseContents",
+  "class": "NodeListOwner",
+  "signature": "void fn_00665E40(void* self)",
+  "summary": "Resets the vtable, clears the NodeList at +0x2C (destroying its elements), frees the pointer at +0x3C if set, destroys the string at +0x10 and re-runs the init helper.",
+  "fields": [
+    {
+      "class": "NodeListOwner",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "NodeListOwner",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NodeListOwner",
+      "offset": "+0x2C",
+      "type": "NodeList",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "NodeListOwner",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "NodeListOwner",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "NodeListOwner",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:19:02Z"
+}

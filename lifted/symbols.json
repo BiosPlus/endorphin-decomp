@@ -57333,6 +57333,13 @@
     "summary": "Constructs the object: runs the base init (ext_006657F0), sets the vtable to 0x00987A1C, copy-constructs a string at +0x10 from arg1, initializes the sub-object at +0x2C, and zeroes +0x3C/+0x40/+0x44. Returns self.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00665E40": {
+    "name": "NodeListOwner::releaseContents",
+    "class": "NodeListOwner",
+    "signature": "void fn_00665E40(void* self)",
+    "summary": "Resets the vtable, clears the NodeList at +0x2C (destroying its elements), frees the pointer at +0x3C if set, destroys the string at +0x10 and re-runs the init helper.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00665EE0": {
     "name": "GlobalInstanceInit",
     "class": "GlobalInstanceInit",

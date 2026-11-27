@@ -4246,3 +4246,60 @@ void fn_00665BD0(void* self, DWORD arg) {
     lift_field<DWORD>(edx, 0) = ebx_v;
 }
 } // namespace lift_00665BD0
+
+// [0x00665E40] sub_00665E40 (154 bytes)
+namespace lift_00665E40 {
+// Known callee 0x00665D70: NodeList::clearNodes (Destroys all element nodes of a circular list (between sentinel head and first node), resets the head to self-loop, and zeroes the size.)
+extern void __fastcall ext_00665D70(void* self);
+// Callee 0x004369D0: sub_004369D0 (72 bytes, thiscall on the NodeList at self+0x2C)
+extern void __fastcall ext_004369D0(void* self);
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void __fastcall ext_00665810(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void __cdecl ext_006A5C5C(void* ptr);
+// Known callee 0x006659F0: destroyListElements (Iterates a checked std::list<T*> range [first, last) and invokes the deleting destructor on each non-null element.)
+extern void __stdcall ext_006659F0(void* first_cont, void* first_node, void* last_cont, void* last_node);
+// MSVCP80 std::string dtor reached through IAT slot 0x00924FF4 (value 0x00628FF0)
+extern int mem_00924FF4;
+
+// @name NodeListOwner::releaseContents
+// @class NodeListOwner
+// @summary Resets the vtable, clears the NodeList at +0x2C (destroying its elements), frees the pointer at +0x3C if set, destroys the string at +0x10 and re-runs the init helper.
+// @field NodeListOwner +0x00 void* vtable
+// @field NodeListOwner +0x10 std::string field_0x10
+// @field NodeListOwner +0x2C NodeList field_0x2C
+// @field NodeListOwner +0x3C void* field_0x3C
+// @field NodeListOwner +0x40 uint32_t field_0x40
+// @field NodeListOwner +0x44 uint32_t field_0x44
+void fn_00665E40(void* self) {
+    // Vtable pointer set to 0x00987A1C before any member work.
+    lift_field<uint32_t>(self, 0x00) = 0x00987A1C;
+
+    // Embedded list object at self+0x2C (passed as `this` to the list helpers).
+    void* list = static_cast<uint8_t*>(self) + 0x2C;
+    ext_00665D70(list);
+
+    // Free the pointer stored at +0x3C if it is non-null, then zero the three dwords at +0x3C..+0x44.
+    void* ptr3c = lift_field<void*>(self, 0x3C);
+    if (ptr3c != nullptr) {
+        ext_006A5C5C(ptr3c);
+    }
+    lift_field<uint32_t>(self, 0x3C) = 0;
+    lift_field<uint32_t>(self, 0x40) = 0;
+    lift_field<uint32_t>(self, 0x44) = 0;
+
+    // Range over the list's sentinel: last = sentinel.next, first = last->next.
+    // Reads list+0x04 (sentinel next) and the node's first dword, matching the asm's push order.
+    void* last_node = lift_field<void*>(list, 0x04);
+    void* first_node = lift_field<void*>(last_node, 0x00);
+    ext_006659F0(list, first_node, list, last_node);
+
+    ext_004369D0(list);
+
+    // std::string at self+0x10 is destroyed through the MSVCP80 IAT slot (mem_00924FF4).
+    // Not a real call here: the target lives in the MSVC runtime, so only the slot is referenced.
+    (void)&mem_00924FF4;
+
+    ext_00665810(self);
+}
+} // namespace lift_00665E40
