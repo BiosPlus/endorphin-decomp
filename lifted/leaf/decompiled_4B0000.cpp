@@ -2179,3 +2179,66 @@ void __thiscall fn_004B0F80(void* self, void* src) {
     ext_00427640(base + 0x2, &bool2_item);
 }
 } // namespace lift_004B0F80
+
+// [0x004BBEB0]
+namespace lift_004BBEB0 {
+struct CheckedIter {
+    uint32_t container;
+    uint32_t ptr;
+};
+
+extern void* (__thiscall* ext_004BBB00)(void* self, CheckedIter* out_iter, uint32_t container, uint32_t elem_ptr);
+extern void (__cdecl* mem_00925134)();
+
+// @name std::vector<std::string*>::find_and_erase_null
+// @class std::vector<std::string*>
+// @summary Finds an element in a vector of std::string*, nulls it out, erases it, and returns its index.
+// @field std::vector<std::string*> +0x04 uint32_t begin
+// @field std::vector<std::string*> +0x08 uint32_t end
+int32_t __thiscall fn_004BBEB0(void* self, uint32_t* elem_ptr) {
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+    if (lift_field<uint32_t>(self, 0x04) > end) {
+        mem_00925134();
+    }
+
+    uint32_t cur = lift_field<uint32_t>(self, 0x04);
+    if (cur > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    if (cur != end) {
+        uint32_t target = *elem_ptr;
+        while (*reinterpret_cast<uint32_t*>(cur) != target) {
+            cur += 4;
+            if (cur == end) {
+                break;
+            }
+        }
+    }
+
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    if (begin > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    if (!self) {
+        mem_00925134();
+    }
+
+    int32_t index = static_cast<int32_t>(cur - begin) >> 2;
+
+    if (!self) {
+        mem_00925134();
+    }
+
+    if (cur >= lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    *reinterpret_cast<uint32_t*>(cur) = 0;
+    CheckedIter out_iter = { cur, 0 };
+    ext_004BBB00(self, &out_iter, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)), cur);
+
+    return index;
+}
+} // namespace lift_004BBEB0

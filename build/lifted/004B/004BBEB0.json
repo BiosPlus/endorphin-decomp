@@ -1,0 +1,28 @@
+{
+  "va": "0x004BBEB0",
+  "size": 150,
+  "orig_symbol": "sub_004BBEB0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "std::vector\u003cstd::string*\u003e::find_and_erase_null",
+  "class": "std::vector\u003cstd::string*\u003e",
+  "signature": "int32_t __thiscall fn_004BBEB0(void* self, uint32_t* elem_ptr)",
+  "summary": "Finds an element in a vector of std::string*, nulls it out, erases it, and returns its index.",
+  "fields": [
+    {
+      "class": "std::vector\u003cstd::string*\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "std::vector\u003cstd::string*\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:11:20Z"
+}
