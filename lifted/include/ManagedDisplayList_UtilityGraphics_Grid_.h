@@ -11,7 +11,9 @@
 namespace lifted_layout {
 struct ManagedDisplayList_UtilityGraphics_Grid__Fields {
     // +0x0   void*                    vptr  (evidence: 0x00533E90, 0x00533ED0)
+    // +0x4   uint8_t                  field_0x04  (evidence: 0x00533D80)
     // +0xC   uint8_t                  field_0x0C  (evidence: 0x0052EF40)
-    // +0x30  GLuint                   displayList  (evidence: 0x00533E90, 0x00533ED0)
+    // +0x30  GLuint                   displayList  (evidence: 0x00533E90, 0x00533ED0) // CONFLICT: multiple definitions at +0x30
+    // +0x30  GLuint                   field_0x30  (evidence: 0x00533D80) // CONFLICT: multiple definitions at +0x30
 };
 } // namespace lifted_layout

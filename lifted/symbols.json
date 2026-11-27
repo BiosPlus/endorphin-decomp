@@ -25406,6 +25406,13 @@
     "summary": "Resets vtable to 0x009547FC, deletes the display list at +0x30 if non-zero, then tail-calls the base dtor ext_00532B40.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00533D80": {
+    "name": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_22",
+    "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
+    "signature": "void fn_00533D80(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x00533E30 (ManagedDisplayList\u003cRenderableList\u003e::vfunc_22).",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x00533DC1": {
     "name": "sub_00533DC1",
     "class": "RenderableList",
