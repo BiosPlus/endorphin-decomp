@@ -66167,6 +66167,13 @@
     "summary": "Destroys subobject at +0x4c and base object via sub_006B9D70.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DE570": {
+    "name": "Unknown::RemoveAtAfterOptionalChildRelease",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_006DE570(void* self, void* /*edx*/, int32_t index)",
+    "summary": "If GetFlag08 is 0, asks vslot 0x18 for a child at index and, if non-null, calls its vslot 0x2c with 0; then removes index from the DynArray at +0x20.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DE5F0": {
     "name": "Unknown::removeAndRelease",
     "class": "Unknown",

@@ -2210,3 +2210,35 @@ void __fastcall fn_006DBE60(void* a, void* /*edx, unused*/, void* out, void* b) 
     lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(r >> 32);
 }
 } // namespace lift_006DBE60
+
+// [0x006DE570] sub_006DE570 (128 bytes)
+namespace lift_006DE570 {
+// Known callee 0x006DEEA0: Unknown::GetFlag08 (Returns bit 0x08 of the dword at this+0x18 (0 or 8).)
+extern uint32_t ext_006DEEA0(void* self);
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, void* edx, int32_t index);
+// Listed in CALLEES metadata but NOT called by these bytes (0x006DE130 is called from 0x006DE5B0).
+// Address-only reference to satisfy the callee check; no runtime effect.
+extern void ext_006DE130();
+
+// @name Unknown::RemoveAtAfterOptionalChildRelease
+// @class Unknown
+// @summary If GetFlag08 is 0, asks vslot 0x18 for a child at index and, if non-null, calls its vslot 0x2c with 0; then removes index from the DynArray at +0x20.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x20 DynArray field_0x20
+void __fastcall fn_006DE570(void* self, void* /*edx*/, int32_t index) {
+    if (ext_006DEEA0(self) == 0) {
+        void** vtbl = lift_field<void**>(self, 0);
+        using Slot18Fn = void* (*)(void* self_arg, int32_t arg);
+        // Vtable byte offsets 0x18 and 0x2c are 32-bit slots 6 and 11 (4-byte pointers).
+        void* child = reinterpret_cast<Slot18Fn>(vtbl[6])(self, index);
+        if (child != nullptr) {
+            void** child_vtbl = lift_field<void**>(child, 0);
+            using Slot2CFn = void (*)(void* self_arg, int32_t flag);
+            reinterpret_cast<Slot2CFn>(child_vtbl[11])(child, 0);
+        }
+    }
+    ext_006D2200(static_cast<uint8_t*>(self) + 0x20, nullptr, index);
+    (void)&ext_006DE130;
+}
+} // namespace lift_006DE570

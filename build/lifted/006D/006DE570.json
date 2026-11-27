@@ -1,0 +1,28 @@
+{
+  "va": "0x006DE570",
+  "size": 128,
+  "orig_symbol": "sub_006DE570",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::RemoveAtAfterOptionalChildRelease",
+  "class": "Unknown",
+  "signature": "void __fastcall fn_006DE570(void* self, void* /*edx*/, int32_t index)",
+  "summary": "If GetFlag08 is 0, asks vslot 0x18 for a child at index and, if non-null, calls its vslot 0x2c with 0; then removes index from the DynArray at +0x20.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DynArray",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:11:30Z"
+}
