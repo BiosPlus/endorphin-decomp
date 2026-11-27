@@ -1,0 +1,28 @@
+{
+  "va": "0x005323C0",
+  "size": 57,
+  "orig_symbol": "HasRelativeToBufferTMPtr::vfunc_12",
+  "src_path": "src/classes/HasRelativeToBufferTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasRelativeToBufferTMPtr.cpp",
+  "name": "HasRelativeToBufferTMPtr::vfunc_12",
+  "class": "HasRelativeToBufferTMPtr",
+  "signature": "void fn_005323C0(void* self, void* other)",
+  "summary": "Resolves an element via ext_00661B50 and forwards two offset-adjusted addresses to virtual slot 7 of the other object",
+  "fields": [
+    {
+      "class": "HasRelativeToBufferTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "HasRelativeToBufferTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:23Z"
+}

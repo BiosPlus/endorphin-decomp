@@ -26338,6 +26338,13 @@
     "summary": "Calls glTranslatef with the translation vector (+0x30..+0x38) of the objects referenced by fields +0x4 and +0x8.",
     "lifted_path": "lifted/classes/HasRelativeTMPtr.cpp"
   },
+  "0x005323C0": {
+    "name": "HasRelativeToBufferTMPtr::vfunc_12",
+    "class": "HasRelativeToBufferTMPtr",
+    "signature": "void fn_005323C0(void* self, void* other)",
+    "summary": "Resolves an element via ext_00661B50 and forwards two offset-adjusted addresses to virtual slot 7 of the other object",
+    "lifted_path": "lifted/classes/HasRelativeToBufferTMPtr.cpp"
+  },
   "0x00532430": {
     "name": "HasBufferedTMPtr::vfunc_11",
     "class": "HasBufferedTMPtr",
@@ -55344,6 +55351,12 @@
     "signature": "int sub_006649B0_isWhitespace(unsigned char c)",
     "summary": "Returns 1 if the byte is ASCII whitespace (space, tab, CR, LF), otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x00664A80": {
+    "name": "replaceString",
+    "signature": "int __cdecl sub_00664A80(void* str, const char* find_str, const char* replace_str, bool only_first)",
+    "summary": "Replaces occurrences of a substring in a std::string and returns the replacement count.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00664B20": {
     "name": "StdStringContainsCStr",
