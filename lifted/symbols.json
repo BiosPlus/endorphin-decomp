@@ -35602,6 +35602,13 @@
     "summary": "Lazily initializes the CameraData type-name accessor static object once, then binds holder+0x04 to it.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005D3790": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::CameraData::setCameraModeName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_005D3790(void* self)",
+    "summary": "One-time initializes a static accessor object (guarded by a byte flag), then stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005D3910": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0\u003e",

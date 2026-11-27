@@ -12491,3 +12491,29 @@ void __stdcall fn_005D2290(void* self) {
     *reinterpret_cast<DWORD*>(static_cast<BYTE*>(self) + 0x04) = 0x00B459C0;
 }
 } // namespace lift_005D2290
+
+// [0x005D3790] ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setCameraModeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005D3790 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern uint32_t __thiscall ext_0067A670(void* self, uint32_t value);
+extern uint32_t mem_00B45A14;
+extern uint32_t mem_00B45A10;
+
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CameraData::setCameraModeName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary One-time initializes a static accessor object (guarded by a byte flag), then stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005D3790(void* self) {
+    // Guard: first call initializes the static accessor object at mem_00B45A10.
+    if ((mem_00B45A14 & 1u) == 0) {
+        mem_00B45A14 |= 1u;
+        // Construct the accessor: its first dword is set to 0 via ext_0067A670 (thiscall, ECX = &mem_00B45A10).
+        ext_0067A670(&mem_00B45A10, 0u);
+        // Install the accessor vtable (0x009670AC) on the static object.
+        mem_00B45A10 = 0x009670ACu;
+    }
+    // Bind holder+0x04 to the static accessor object (address 0x00B45A10).
+    uint8_t* holder = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(holder + 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B45A10));
+}
+} // namespace lift_005D3790
