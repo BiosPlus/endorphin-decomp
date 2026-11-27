@@ -1,0 +1,28 @@
+{
+  "va": "0x005CF960",
+  "size": 124,
+  "orig_symbol": "sub_005CF960",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "lockedDispatchAndStoreFloat",
+  "class": "Unknown",
+  "signature": "static inline void* ptr_at(const void* base, ptrdiff_t off)",
+  "summary": "Gets the sub-object at root+0x258 from ext_00594000(), calls its vtable slot 0x1d8 to obtain a lock object, enters that lock, stores the float argument at self+0x34, dispatches via ext_00493EE0 on the root slot, then leaves the lock.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x258",
+      "type": "void*",
+      "name": "subObjectSlot"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:50:48Z"
+}

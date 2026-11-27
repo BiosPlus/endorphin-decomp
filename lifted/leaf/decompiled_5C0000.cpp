@@ -1769,3 +1769,50 @@ void fn_005CFAE0(void* self, float value) {
     ext_0065C650(lockObj);
 }
 } // namespace lift_005CFAE0
+
+// [0x005CF960] sub_005CF960 (124 bytes)
+namespace lift_005CF960 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void __thiscall ext_0065C640(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void __thiscall ext_0065C650(void* self);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* __thiscall ext_00493EE0(void* ecx);
+
+// Reads a 32-bit pointer-sized value stored at base+off (the target is a 32-bit image).
+static inline void* ptr_at(const void* base, ptrdiff_t off) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, off)));
+}
+
+// @name lockedDispatchAndStoreFloat
+// @class Unknown
+// @summary Gets the sub-object at root+0x258 from ext_00594000(), calls its vtable slot 0x1d8 to obtain a lock object, enters that lock, stores the float argument at self+0x34, dispatches via ext_00493EE0 on the root slot, then leaves the lock.
+// @field Unknown +0x258 void* subObjectSlot
+// @field Self +0x34 float field_0x34
+void __thiscall fn_005CF960(void* self, float value) {
+    // SEH frame setup/teardown (fs:[0] push/pop) and the unwind state
+    // stores to the stack frame are MSVC boilerplate and are omitted.
+    uint8_t* root = reinterpret_cast<uint8_t*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+
+    // ecx = [root+0x258]; esi = &[root+0x258]
+    void* slotAddr = root + 0x258;
+    void* obj = ptr_at(root, 0x258);
+
+    // eax = vtable(obj); edx = [vtable+0x1d8]; call edx (this = obj)
+    void* vtbl = ptr_at(obj, 0);
+    void* vfn = ptr_at(vtbl, 0x1d8);
+    using LockGetFn = void*(__thiscall*)(void*);
+    void* lockObj = reinterpret_cast<LockGetFn>(vfn)(obj);
+
+    ext_0065C640(lockObj);
+
+    lift_field<float>(self, 0x34) = value;
+
+    ext_00493EE0(slotAddr);
+
+    ext_0065C650(lockObj);
+}
+} // namespace lift_005CF960

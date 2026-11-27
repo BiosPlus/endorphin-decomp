@@ -35195,6 +35195,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005CF960": {
+    "name": "lockedDispatchAndStoreFloat",
+    "class": "Unknown",
+    "signature": "static inline void* ptr_at(const void* base, ptrdiff_t off)",
+    "summary": "Gets the sub-object at root+0x258 from ext_00594000(), calls its vtable slot 0x1d8 to obtain a lock object, enters that lock, stores the float argument at self+0x34, dispatches via ext_00493EE0 on the root slot, then leaves the lock.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CFAE0": {
     "name": "setFloat40AndDispatchUnderLock",
     "signature": "void fn_005CFAE0(void* self, float value)",
