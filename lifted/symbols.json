@@ -44199,6 +44199,13 @@
     "summary": "Refills the string range in arg from this+0x594 list nodes: each node's sub-object (node+0x28) yields a std::string via virtual slot 9, and non-empty copies are push_backed into arg; the cursor is advanced via ext_00673C20 until it reaches the list terminator.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x005A6220": {
+    "name": "Tree::TreeCopyCtor",
+    "class": "Tree",
+    "signature": "void* __thiscall fn_005A6220(void* self, const void* other)",
+    "summary": "Allocates and initializes a sentinel head node for an RB-tree, zeroes size, and copies from another tree.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A6650": {
     "name": "sub_005A6650",
     "class": "Unknown",

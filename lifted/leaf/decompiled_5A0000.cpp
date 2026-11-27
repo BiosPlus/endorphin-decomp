@@ -2385,3 +2385,39 @@ rebalance:
 }
 } // namespace lift_00489E10
 } // namespace lift_005AE1B0
+
+// [0x005A6220]
+namespace lift_005A6220 {
+extern void* ext_004EBE30();
+extern uint32_t ext_004EC2C0(void* self);
+extern void ext_005A4640(void* self, const void* other);
+extern void ext_006A6DD2(uint32_t p1, uint32_t p2);
+
+// @name Tree::TreeCopyCtor
+// @class Tree
+// @summary Allocates and initializes a sentinel head node for an RB-tree, zeroes size, and copies from another tree.
+// @field Tree +0x04 void* head
+// @field Tree +0x08 uint32_t size
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x45 uint8_t isnil
+void* __thiscall fn_005A6220(void* self, const void* other) {
+    void* head = ext_004EBE30();
+    lift_field<void*>(self, 0x4) = head;
+    lift_field<uint8_t>(head, 0x45) = 1;
+    lift_field<void*>(head, 0x4) = head;
+    lift_field<void*>(head, 0x0) = head;
+    lift_field<void*>(head, 0x8) = head;
+    lift_field<uint32_t>(self, 0x8) = 0;
+
+    try {
+        ext_005A4640(self, other);
+    } catch (...) {
+        ext_004EC2C0(self);
+        ext_006A6DD2(0, 0);
+    }
+
+    return self;
+}
+} // namespace lift_005A6220
