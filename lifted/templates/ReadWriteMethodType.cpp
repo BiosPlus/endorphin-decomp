@@ -12517,3 +12517,27 @@ void fn_005D3790(void* self) {
     *reinterpret_cast<uint32_t*>(holder + 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B45A10));
 }
 } // namespace lift_005D3790
+
+// [0x005D2740] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, bool, {public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0}, bool, {public: void __thiscall NMData::VideoPlaneData::setMustDrawTimeCode(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_005D2740 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+// Init guard word (bit 0 = initialized/in-progress) and the static accessor object it guards.
+extern DWORD mem_00B459E4;
+extern DWORD mem_00B459E0;
+
+// @name ReadWriteMethodType<VideoPlaneData, bool>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, bool, {public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0}, bool, {public: void __thiscall NMData::VideoPlaneData::setMustDrawTimeCode(bool), 0}>
+// @summary Lazily initializes the static accessor object at mem_00B459E0 (once, guarded by bit 0 of mem_00B459E4) and stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, bool, ...> +0x04 void* staticAccessor
+void fn_005D2740(void* self) {
+    // The original SEH frame push/pop (fs:[0] manipulation) is compiler bookkeeping and is omitted.
+    if ((mem_00B459E4 & 1u) == 0) {
+        mem_00B459E4 |= 1u;
+        // thiscall: ECX = &mem_00B459E0, one stack argument = 0
+        ext_0067A670(&mem_00B459E0, 0);
+        mem_00B459E0 = 0x0096668Cu;  // vtable of the static accessor object
+    }
+    lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B459E0));
+}
+} // namespace lift_005D2740
