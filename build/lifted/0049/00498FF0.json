@@ -1,0 +1,52 @@
+{
+  "va": "0x00498FF0",
+  "size": 208,
+  "orig_symbol": "NMData::Transition::vfunc_3_off_10",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_3_off_10",
+  "class": "NMData::Transition",
+  "signature": "void* __thiscall fn_00498FF0(void* self, void* arg1)",
+  "summary": "Serializes Transition properties to XML",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x94",
+      "type": "void*",
+      "name": "field_0x94"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xB4",
+      "type": "uint8_t*",
+      "name": "field_0xB4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:27:51Z"
+}

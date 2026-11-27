@@ -456,3 +456,56 @@ uint8_t fn_00499560(void* self, void* arg) {
     return margin_rect_contains(x2, y2, margin, arg) ? 1 : 0;
 }
 } // namespace lift_00499560
+
+// [0x00498FF0]
+namespace lift_00498FF0 {
+extern uint32_t mem_00B5A0B8;
+extern uint32_t mem_00924FEC;
+extern uint32_t mem_00AA23EC;
+extern uint32_t mem_00AA23A4;
+extern uint32_t mem_00AA2394;
+extern uint32_t mem_00AA2374;
+extern uint32_t mem_00AA2370;
+
+void ext_00682460(void* arg1, void* str, uint32_t key);
+void ext_00662810(void* arg1, uint32_t key, void* val);
+void* __thiscall ext_006404E0(void* self, uint32_t key);
+void __thiscall ext_00497450(void* self, void* arg1);
+void ext_00498E70(void* field, void* arg1, uint32_t zero, uint32_t key);
+
+// @name NMData::Transition::vfunc_3_off_10
+// @class NMData::Transition
+// @summary Serializes Transition properties to XML
+// @field NMData::Transition +0x20 std::string field_0x20
+// @field NMData::Transition +0x3C void* field_0x3C
+// @field NMData::Transition +0x58 void* field_0x58
+// @field NMData::Transition +0x74 void* field_0x74
+// @field NMData::Transition +0x94 void* field_0x94
+// @field NMData::Transition +0xB4 uint8_t* field_0xB4
+void* __thiscall fn_00498FF0(void* self, void* arg1) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    using EmptyFn = uint8_t(__thiscall*)(void*);
+    if (mem_00B5A0B8 != 0 && reinterpret_cast<EmptyFn>(mem_00924FEC)(base + 0x20) != 0) {
+        return arg1;
+    }
+
+    ext_00682460(arg1, base + 0x20, mem_00AA23EC);
+
+    uint8_t* field_b4 = lift_field<uint8_t*>(self, 0xB4);
+    if (field_b4 != nullptr && mem_00B5A0B8 != 0) {
+        ext_00662810(arg1, mem_00AA23A4, field_b4);
+        ext_00662810(arg1, mem_00AA2394, field_b4 + 0x5C);
+    } else {
+        ext_00662810(arg1, mem_00AA23A4, base + 0x3C);
+        ext_00662810(arg1, mem_00AA2394, base + 0x58);
+    }
+
+    if (mem_00B5A0B8 == 0) {
+        void* elem = ext_006404E0(arg1, mem_00AA2374);
+        ext_00497450(base + 0x94, elem);
+        ext_00498E70(base + 0x74, arg1, 0, mem_00AA2370);
+    }
+
+    return arg1;
+}
+} // namespace lift_00498FF0
