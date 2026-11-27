@@ -1,0 +1,40 @@
+{
+  "va": "0x006EA6D0",
+  "size": 112,
+  "orig_symbol": "sub_006EA6D0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::Init",
+  "class": "Unknown",
+  "signature": "void* fn_006EA6D0(void* self)",
+  "summary": "Initializes the sub-object at +0x04, constructs three 32-byte blocks at +0x50/+0x70/+0x90, runs InitDefaults on self, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* subObject (passed as this to",
+      "name": "ext_006B9D10)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint8_t block50[0x20] (constructed via",
+      "name": "ext_006D2370)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t block70[0x20] (constructed via",
+      "name": "ext_006D2370)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "uint8_t block90[0x20] (constructed via",
+      "name": "ext_006D2370)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:50:01Z"
+}

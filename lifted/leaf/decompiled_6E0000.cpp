@@ -2542,3 +2542,32 @@ void fn_006EA740(void* ecx) {
     lift_field<uint32_t>(ecx, 0xB0) = 0;
 }
 } // namespace lift_006EA740
+
+// [0x006EA6D0] sub_006EA6D0 (112 bytes)
+namespace lift_006EA6D0 {
+// Known callee 0x006B9D10: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+extern void* ext_006B9D10(void* self);
+// Known callee 0x006D2370: sub_006D2370 (constructs the local out-buffer; thiscall, no stack args)
+extern void ext_006D2370(void* self);
+// Known callee 0x006EA740: Unknown::InitDefaults (Zeroes the first dword, initializes the sub-object at +0x04, then fills three 32-byte blocks (+0x50, +0x70, +0x90) with double 1.0 patterns and clears +0xB0.)
+extern void ext_006EA740(void* self);
+
+// @name Unknown::Init
+// @class Unknown
+// @summary Initializes the sub-object at +0x04, constructs three 32-byte blocks at +0x50/+0x70/+0x90, runs InitDefaults on self, and returns self.
+// @field Unknown +0x04 void* subObject (passed as this to ext_006B9D10)
+// @field Unknown +0x50 uint8_t block50[0x20] (constructed via ext_006D2370)
+// @field Unknown +0x70 uint8_t block70[0x20] (constructed via ext_006D2370)
+// @field Unknown +0x90 uint8_t block90[0x20] (constructed via ext_006D2370)
+//
+// The MSVC SEH frame setup/teardown (fs:[0] push/pop, EH state stores at
+// [esp+0x10]) is compiler bookkeeping and is intentionally not reproduced.
+void* fn_006EA6D0(void* self) {
+    ext_006B9D10(&lift_field<uint8_t>(self, 0x04));
+    ext_006D2370(&lift_field<uint8_t>(self, 0x50));
+    ext_006D2370(&lift_field<uint8_t>(self, 0x70));
+    ext_006D2370(&lift_field<uint8_t>(self, 0x90));
+    ext_006EA740(self);
+    return self;
+}
+} // namespace lift_006EA6D0

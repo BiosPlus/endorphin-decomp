@@ -71376,6 +71376,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006EA6D0": {
+    "name": "Unknown::Init",
+    "class": "Unknown",
+    "signature": "void* fn_006EA6D0(void* self)",
+    "summary": "Initializes the sub-object at +0x04, constructs three 32-byte blocks at +0x50/+0x70/+0x90, runs InitDefaults on self, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006EA740": {
     "name": "Unknown::InitDefaults",
     "class": "Unknown",
