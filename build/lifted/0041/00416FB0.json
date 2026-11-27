@@ -1,0 +1,28 @@
+{
+  "va": "0x00416FB0",
+  "size": 158,
+  "orig_symbol": "sub_00416FB0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::readIntAndStoreOrRefreshString",
+  "class": "Unknown",
+  "signature": "void fn_00416FB0(void* self)",
+  "summary": "Reads an int via readIntFromAccessor on the field at +0x8C; if positive, stores it at inner+0x168 (inner = this+0x88). Otherwise formats the stored int at inner+0x168 into a std::string and assigns its c_str() to the field at +0x8C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "void*",
+      "name": "field_0x8C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:41:26Z"
+}

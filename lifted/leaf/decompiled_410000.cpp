@@ -4338,3 +4338,46 @@ bool __thiscall fn_0041DFC0(void* self, const uint32_t* val) {
     return true;
 }
 } // namespace lift_0041DFC0
+
+// [0x00416FB0] sub_00416FB0 (158 bytes)
+namespace lift_00416FB0 {
+// Known callee 0x00404F00: formatIntToString (Formats an integer into a stack buffer via _snprintf and constructs a std::string.)
+extern void* ext_00404F00(void* out_str, int32_t value);
+// Known callee 0x00416C30: readIntFromAccessor (Fetches a string through thunk_MFC80_ord_3761 into a temporary string object and returns atoi() of it.)
+extern int ext_00416C30(void* obj);
+// Known callee 0x006A5F50: thunk_MFC80_ord_6067 (IAT jump thunk forwarding to MFC80!ord_6067.)
+extern void ext_006A5F50(void* self, const char* s);
+// IAT slots (MSVCP80): basic_string::c_str and basic_string::~basic_string (thiscall)
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+
+// @name Unknown::readIntAndStoreOrRefreshString
+// @class Unknown
+// @summary Reads an int via readIntFromAccessor on the field at +0x8C; if positive, stores it at inner+0x168 (inner = this+0x88). Otherwise formats the stored int at inner+0x168 into a std::string and assigns its c_str() to the field at +0x8C.
+// @field Unknown +0x88 void* field_0x88
+// @field Unknown +0x8C void* field_0x8C
+void fn_00416FB0(void* self) {
+    uint8_t* const self_bytes = static_cast<uint8_t*>(self);
+    void* const str_field = self_bytes + 0x8C;
+
+    const int32_t result = ext_00416C30(str_field);
+    void* const inner = lift_field<void*>(self, 0x88);
+
+    if (result > 0) {
+        lift_field<int32_t>(inner, 0x168) = result;
+        return;
+    }
+
+    const int32_t value = lift_field<int32_t>(inner, 0x168);
+
+    alignas(8) unsigned char tmp[0x1C];
+    void* const str = ext_00404F00(tmp, value);
+
+    using CStrFn = const char* (__thiscall*)(void*);
+    using DtorFn = void (__thiscall*)(void*);
+
+    const char* const cstr = reinterpret_cast<CStrFn>(mem_00924FF0)(str);
+    ext_006A5F50(str_field, cstr);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(tmp);
+}
+} // namespace lift_00416FB0
