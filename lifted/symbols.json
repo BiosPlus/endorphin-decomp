@@ -57893,6 +57893,13 @@
     "summary": "Formats the RGB property value into a CString using MFC80::Format",
     "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp"
   },
+  "0x006B3BB0": {
+    "name": "GWCRGBPropertyValue::vfunc_3",
+    "class": "GWCRGBPropertyValue",
+    "signature": "void __thiscall fn_006B3BB0(void* self, uint32_t arg0)",
+    "summary": "Parses an RGB string into 3 bytes, packs them into a 32-bit value, and stores it via field_0x40.",
+    "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp"
+  },
   "0x006B3C20": {
     "name": "GWCRGBPropertyValue::vfunc_0",
     "class": "GWCRGBPropertyValue",
@@ -72518,6 +72525,12 @@
     "summary": "Packs WORD fields +0x28, +0x36, +0x2a into key=(a\u003c\u003c6)|(b\u003c\u003c3)|c, then maps key to 3/1/0/-1.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BC630": {
+    "name": "sub_007BC630",
+    "signature": "int32_t fn_007BC630(void* self)",
+    "summary": "Maps three 16-bit type/mode fields (+0x28, +0x2a, +0x36) to a status code or -1",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BD310": {
     "name": "initDescriptorFields",
     "signature": "void __cdecl sub_007BD310(void* self)",
@@ -75907,6 +75920,12 @@
     "name": "rotateRight32",
     "signature": "void __cdecl sub_0085D890(uint32_t* ptr, uint16_t count)",
     "summary": "Rotates a 32-bit unsigned integer at ptr right by 1 bit, count times.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
+  "0x0085D9D0": {
+    "name": "findOrFirstFreeEntry",
+    "signature": "int32_t sub_0085D9D0(uint16_t a1, uint16_t a2, uint16_t a3, uint32_t a4)",
+    "summary": "Searches a 1000-entry table at 0x00ABB374 for a matching entry, returning its 1-based index, or the negated 1-based index of the first free slot, or 0 if full.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x0085DA40": {

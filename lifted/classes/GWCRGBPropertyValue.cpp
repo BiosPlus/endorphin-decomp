@@ -125,3 +125,44 @@ void* __thiscall fn_006B3B30(void* self, void* out_str) {
     return out_str;
 }
 } // namespace lift_006B3B30
+
+// [0x006B3BB0]
+namespace lift_006B3BB0 {
+// @name GWCRGBPropertyValue::vfunc_3
+// @class GWCRGBPropertyValue
+// @summary Parses an RGB string into 3 bytes, packs them into a 32-bit value, and stores it via field_0x40.
+// @field GWCRGBPropertyValue +0x40 uint32_t* field_0x40
+
+
+extern uint32_t mem_00924300;
+extern uint32_t mem_0092521C;
+extern uint32_t mem_009242F4;
+
+void __thiscall fn_006B3BB0(void* self, uint32_t arg0) {
+    uint32_t local0 = 0;
+    uint32_t local1 = 0;
+    uint32_t local2 = 0;
+
+    using FnGetStr = const char* (__thiscall*)(void*);
+    using FnSscanf = int (__cdecl*)(const char*, const char*, ...);
+    using FnDtor = void (__thiscall*)(void*);
+
+    const char* str = reinterpret_cast<FnGetStr>(mem_00924300)(&arg0);
+    reinterpret_cast<FnSscanf>(mem_0092521C)(
+        str,
+        reinterpret_cast<const char*>(0x009919D4),
+        &local2,
+        &local1,
+        &local0
+    );
+
+    uint32_t packed = (static_cast<uint8_t>(local0) << 16)
+                    | (static_cast<uint8_t>(local1) << 8)
+                    | static_cast<uint8_t>(local2);
+
+    uint32_t* dst = lift_field<uint32_t*>(self, 0x40);
+    *dst = packed;
+
+    reinterpret_cast<FnDtor>(mem_009242F4)(&arg0);
+}
+} // namespace lift_006B3BB0
