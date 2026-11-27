@@ -83,3 +83,69 @@ void Primitives_Sensor_vfunc_23(void* self, uint32_t arg1, uint32_t arg2) {
     ext_0053ADD0(self, &rec);
 }
 } // namespace lift_0053B7A0
+
+// [0x0053D870] Primitives::Sensor::vfunc_28 (232 bytes)
+namespace lift_0053D870 {
+extern void __thiscall ext_0053D3C0(void* self);
+// Known callee 0x005B11D0: UnknownClass::getElementPtr (Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.)
+extern uint32_t* __thiscall ext_005B11D0(uintptr_t self, uint32_t index);
+extern uint32_t ext_006A6DE0();
+extern int mem_00925414;
+extern int mem_00925404;
+extern int mem_009254CC;
+extern int mem_00955A30;
+extern int mem_00955D14;
+extern int mem_00955D10;
+
+// @name Primitives::Sensor::vfunc_28
+// @class Primitives::Sensor
+// @summary Pushes GL matrix, applies one of five fixed axis-aligned rotations chosen by ext_006A6DE0(), forwards arg to the child object's vfunc at +0x58, then pops the matrix.
+// @field Primitives::Sensor +0x20 void* field_0x20
+// @field Primitives::Sensor +0x3c void* field_0x3c
+float __thiscall fn_0053D870(void* self, uint32_t arg) {
+    void* obj20 = lift_field<void*>(self, 0x20);
+    if (obj20 == nullptr) {
+        return 0.0f; // asm leaves st(0) untouched on this path
+    }
+
+    uint32_t* elem = ext_005B11D0(reinterpret_cast<uintptr_t>(obj20), 2);
+    // Value stays on the x87 stack (st(0)) and is returned to the caller.
+    float f = *reinterpret_cast<float*>(elem);
+
+    uint32_t idx = ext_006A6DE0();
+    ext_0053D3C0(self);
+
+    auto glPushMatrix = *reinterpret_cast<void(__stdcall**)()>(&mem_00925414);
+    auto glPopMatrix = *reinterpret_cast<void(__stdcall**)()>(&mem_00925404);
+    auto glRotatef = *reinterpret_cast<void(__stdcall**)(float, float, float, float)>(&mem_009254CC);
+
+    glPushMatrix();
+
+    if (idx <= 5) {
+        const float deg90 = *reinterpret_cast<const float*>(&mem_00955A30);
+        const float degNeg90 = *reinterpret_cast<const float*>(&mem_00955D14);
+        const float deg180 = *reinterpret_cast<const float*>(&mem_00955D10);
+
+        float angle = 0.0f, x = 0.0f, y = 0.0f, z = 0.0f;
+        switch (idx) {
+            case 0: angle = deg90;    x = 0.0f; y = 1.0f; z = 0.0f; break;
+            case 1: angle = degNeg90; x = 1.0f; y = 0.0f; z = 0.0f; break;
+            case 2: // table entry not recovered from binary; mapped to the same block as case 3
+            case 3: angle = degNeg90; x = 0.0f; y = 1.0f; z = 0.0f; break;
+            case 4: angle = deg90;    x = 1.0f; y = 0.0f; z = 0.0f; break;
+            default: angle = deg180;  x = 0.0f; y = 1.0f; z = 0.0f; break; // case 5
+        }
+        glRotatef(angle, x, y, z);
+    }
+
+    void* obj3c = lift_field<void*>(self, 0x3c);
+    if (obj3c != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj3c);
+        auto child = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtbl[0x58 / sizeof(void*)]);
+        child(obj3c, arg);
+    }
+
+    glPopMatrix();
+    return f;
+}
+} // namespace lift_0053D870
