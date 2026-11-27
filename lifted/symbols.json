@@ -30337,6 +30337,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00584490 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0055C3B0": {
+    "name": "Unknown::ConstructPrefixedExceptionMessage",
+    "class": "unknown",
+    "signature": "void* fn_0055C3B0(void* self, const void* arg1)",
+    "summary": "Builds msg = arg1 + literal string, constructs the exception-style object at self from msg via fn_00403560, sets the vtable to 0x0092E2E0, and default-constructs the std::string member at +0x28. Returns self.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055C490": {
     "name": "sub_0055C490",
     "class": "Tree",

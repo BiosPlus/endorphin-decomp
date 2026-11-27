@@ -2588,3 +2588,57 @@ extern void __fastcall fn_0055DE80(void* self) {
     ext_006BB750(target, preset);
 }
 } // namespace lift_0055DE80
+
+// [0x0055C3B0] sub_0055C3B0 (152 bytes)
+namespace lift_0055C3B0 {
+// Known callee 0x00403560: StringExceptionWithMember::ctor (Construct an exception-style object from a std::string: store c_str() as the exception message, set the vtable, and copy-construct the std::string member at +0x0C. Returns self.)
+extern void ext_00403560();
+void* fn_00403560(void* self, const void* src);
+extern void ext_005DF940();
+extern void ext_006A6DD2();
+extern int mem_00A85480;
+
+// Imported MSVCP80 entry points (original asm called through IAT slots).
+extern void* ext_basic_string_ctor_cstr(void* self, const char* s);                  // mem_00924FE4
+extern void* ext_basic_string_concat(void* ret, const void* lhs, const void* rhs);  // mem_00924FD0
+extern void ext_basic_string_dtor(void* self);                                       // mem_00924FF4
+extern void* ext_basic_string_ctor_default(void* self);                              // mem_00924FE8
+
+// String literal in .rdata (VA 0x009583C0) passed to the basic_string(const char*) ctor.
+extern const char mem_009583C0[];
+
+extern int mem_00924FE4;
+extern int mem_00924FD0;
+extern int mem_00924FF4;
+extern int mem_00924FE8;
+
+// @name Unknown::ConstructPrefixedExceptionMessage
+// @class unknown
+// @summary Builds msg = arg1 + literal string, constructs the exception-style object at self from msg via fn_00403560, sets the vtable to 0x0092E2E0, and default-constructs the std::string member at +0x28. Returns self.
+// @field unknown +0x00 uint32_t vptr
+// @field unknown +0x28 std::string field_0x28
+void* fn_0055C3B0(void* self, const void* arg1) {
+    // IAT slots referenced by the original indirect calls (metadata only).
+    (void)&mem_00924FE4;
+    (void)&mem_00924FD0;
+    (void)&mem_00924FF4;
+    (void)&mem_00924FE8;
+    (void)&mem_00A85480;
+    (void)&ext_005DF940;
+    (void)&ext_006A6DD2;
+
+    alignas(8) uint8_t lit[0x1C];  // std::string built from the literal
+    alignas(8) uint8_t msg[0x1C];  // std::string = arg1 + lit
+
+    ext_basic_string_ctor_cstr(lit, mem_009583C0);
+    ext_basic_string_concat(msg, arg1, lit);
+    (void)&ext_00403560;
+    fn_00403560(self, msg);
+    ext_basic_string_dtor(msg);
+    ext_basic_string_dtor(lit);
+
+    lift_field<uint32_t>(self, 0x00) = 0x0092E2E0u;
+    ext_basic_string_ctor_default(static_cast<uint8_t*>(self) + 0x28);
+    return self;
+}
+} // namespace lift_0055C3B0

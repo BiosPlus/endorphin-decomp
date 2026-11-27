@@ -1,0 +1,28 @@
+{
+  "va": "0x0055C3B0",
+  "size": 152,
+  "orig_symbol": "sub_0055C3B0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::ConstructPrefixedExceptionMessage",
+  "class": "unknown",
+  "signature": "void* fn_0055C3B0(void* self, const void* arg1)",
+  "summary": "Builds msg = arg1 + literal string, constructs the exception-style object at self from msg via fn_00403560, sets the vtable to 0x0092E2E0, and default-constructs the std::string member at +0x28. Returns self.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:50:48Z"
+}
