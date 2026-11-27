@@ -82,7 +82,7 @@ struct NMData_FixedPathJointData_Fields {
     // +0x228 uint32_t                 field_0x228  (evidence: 0x005EDFD0)
     // +0x22C uint32_t                 field_0x22c  (evidence: 0x005EB920, 0x005EDFD0)
     // +0x230 uint8_t                  field_0x230  (evidence: 0x005EDFD0)
-    // +0x234 void*                    field_0x234  (evidence: 0x005E4710)
+    // +0x234 void*                    field_0x234  (evidence: 0x005E24F0, 0x005E4710)
     // +0x23C uint8_t field_0x23c (float-array container; address passed to getElementPtr)  (evidence: 0x005EE760)
     // +0x294 uint32_t                 field_0x294  (evidence: 0x005EDFD0)
     // +0x298 uint32_t                 field_0x298  (evidence: 0x005EDFD0)

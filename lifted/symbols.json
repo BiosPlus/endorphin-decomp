@@ -22258,6 +22258,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
   },
+  "0x004D0BB0": {
+    "name": "NMData::TransitionEventData::vfunc_22",
+    "class": "NMData::TransitionEventData",
+    "signature": "void* __thiscall fn_004D0BB0(void* self, void* node)",
+    "summary": "Serializes TransitionEventData fields to an XML node and delegates to TriggeredEventData::vfunc_22.",
+    "lifted_path": "lifted/NMData/TransitionEventData.cpp"
+  },
   "0x004D0C80": {
     "name": "NMData::TransitionEventData::vfunc_14",
     "class": "NMData::TransitionEventData",
@@ -53113,6 +53120,13 @@
     "signature": "void fn_005E2470(void* self)",
     "summary": "One-time guarded init of static object 0x00B45DC0 (registering its cleanup), then forwards self to ext_005E0380 and caches self-\u003efield_0x178 into mem_00B45E04.",
     "lifted_path": "lifted/NMData/RPROMagnetData.cpp"
+  },
+  "0x005E24F0": {
+    "name": "NMData::FixedPathJointData::vfunc_2",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void* __thiscall fn_005E24F0(void* self, void* arg0, void* arg1)",
+    "summary": "Forwards to AnimatableTransform::vfunc_2 and conditionally updates arg0 from field_0x234.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
   "0x005E2770": {
     "name": "descriptiveName_005E2770",

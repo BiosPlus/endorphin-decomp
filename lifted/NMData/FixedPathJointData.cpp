@@ -1214,3 +1214,49 @@ void __thiscall fn_005ECD10(void* self, const float* arg)
     ext_005E4990(self, &val);
 }
 } // namespace lift_005ECD10
+
+// [0x005E24F0]
+namespace lift_005E24F0 {
+extern uint32_t mem_00B599BC;
+void* __thiscall ext_0058A370(void* self, void* arg0, void* arg1);
+void* __cdecl ext_006798D0(void* out, void* arg1, void* arg2, void* self);
+void* __thiscall ext_00679030(void* self);
+void* __thiscall ext_0041CF50(void* self, void* other);
+void* __thiscall ext_005EBDD0(void* self);
+void* __thiscall ext_005ED960(void* self);
+void* __thiscall ext_005EDA00(void* self);
+
+// @name NMData::FixedPathJointData::vfunc_2
+// @class NMData::FixedPathJointData
+// @summary Forwards to AnimatableTransform::vfunc_2 and conditionally updates arg0 from field_0x234.
+// @field NMData::FixedPathJointData +0x234 void* field_0x234
+void* __thiscall fn_005E24F0(void* self, void* arg0, void* arg1) {
+    ext_0058A370(self, arg0, arg1);
+
+    uint32_t tag = lift_field<uint32_t>(arg0, 0x4);
+    if (tag == 0 || tag == mem_00B599BC) {
+        void* obj = lift_field<void*>(self, 0x234);
+        void* sub = obj ? static_cast<char*>(obj) + 0x8 : nullptr;
+
+        struct LocalPair {
+            uint32_t f0;
+            void* f4;
+        } local_obj{};
+
+        void* res = ext_006798D0(&local_obj, sub, arg1, self);
+        void* val = ext_00679030(res);
+        ext_0041CF50(arg0, val);
+
+        if (local_obj.f4 != nullptr) {
+            using ReleaseFn = void(__thiscall*)(void*, void*);
+            void** vtable = *reinterpret_cast<void***>(local_obj.f4);
+            reinterpret_cast<ReleaseFn>(vtable[0x78 / sizeof(void*)])(local_obj.f4, &local_obj.f0);
+        }
+    }
+
+    (void)&ext_005EBDD0;
+    (void)&ext_005ED960;
+    (void)&ext_005EDA00;
+    return arg0;
+}
+} // namespace lift_005E24F0
