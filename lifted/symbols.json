@@ -35821,6 +35821,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0054E360 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00534D20": {
+    "name": "OglRenderer::vfunc_96",
+    "class": "OglRenderer",
+    "signature": "uint8_t* __thiscall fn_00534D20(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Creates or retrieves an object via ext_005343A0, initializes it via ext_0053AFA0, and links its +0x38 field into the object returned by ext_00532E90 at +0x1C.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x005353F0": {
     "name": "OglRenderer::vfunc_11",
     "class": "OglRenderer",
