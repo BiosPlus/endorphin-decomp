@@ -12991,6 +12991,13 @@
     "summary": "std::lower_bound-style binary search over a 32-bit element array, comparing projected element against key; returns first index not less than key.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A6A10": {
+    "name": "OwnedPointerRange::destroyAndReset",
+    "class": "OwnedPointerRange",
+    "signature": "void fn_004A6A10(void* self)",
+    "summary": "Validates the [first, last] bounds, destroys the owned slot range, frees the saved first pointer if non-null, then clears the three range fields.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A6A90": {
     "name": "Vector::destroyAndEraseRange",
     "class": "Vector",

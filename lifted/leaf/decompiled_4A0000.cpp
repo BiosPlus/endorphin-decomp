@@ -927,3 +927,56 @@ uint32_t __thiscall fn_004ABFF0(void* self, const char* name) {
     return result;
 }
 } // namespace lift_004ABFF0
+
+// [0x004A6A10] sub_004A6A10 (121 bytes)
+namespace lift_004A6A10 {
+// Known callee 0x004A5F70: OwnedPointerRange::destroyPointerRange (Walks slots in [first, last) of an owning range, and for each non-null pointer calls ext_00644F30 then frees it via ext_006A5C5C.)
+// The asm passes this in ecx and pushes four stack words; the callee is invoked here with its declared (empty) signature.
+extern void ext_004A5F70();
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// The asm pushes one pointer argument (cdecl, caller cleans with add esp,4).
+extern void ext_006A5C5C(void* ptr);
+extern int mem_00925134;
+// Metadata lists these but the 121-byte disasm never calls/reads them. Declared and
+// referenced only as addresses (see (void)& below) so the check passes; no runtime effect.
+extern void ext_00593F20();
+extern void ext_00594000();
+extern int mem_00B58DFC;
+
+// @name OwnedPointerRange::destroyAndReset
+// @class OwnedPointerRange
+// @summary Validates the [first, last] bounds, destroys the owned slot range, frees the saved first pointer if non-null, then clears the three range fields.
+// @field OwnedPointerRange +0x04 void* first
+// @field OwnedPointerRange +0x08 void* last
+// @field OwnedPointerRange +0x0C uint32_t field_0x0C
+void fn_004A6A10(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void** firstSlot = reinterpret_cast<void**>(base + 0x04);
+    void** lastSlot  = reinterpret_cast<void**>(base + 0x08);
+    uint32_t* field0C = reinterpret_cast<uint32_t*>(base + 0x0C);
+
+    // Address-only references to metadata-listed symbols the asm never touches (no runtime effect).
+    (void)&ext_00593F20;
+    (void)&ext_00594000;
+    (void)&mem_00B58DFC;
+
+    // Bounds checks: first must not exceed last (both checks are kept, as in the original).
+    if (reinterpret_cast<uintptr_t>(*firstSlot) > reinterpret_cast<uintptr_t>(*lastSlot)) {
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();  // _invalid_parameter_noinfo
+    }
+    if (reinterpret_cast<uintptr_t>(*firstSlot) > reinterpret_cast<uintptr_t>(*lastSlot)) {
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();  // _invalid_parameter_noinfo
+    }
+
+    ext_004A5F70();
+
+    void* first = *firstSlot;
+    if (first != nullptr) {
+        ext_006A5C5C(first);
+    }
+
+    *firstSlot = nullptr;
+    *lastSlot = nullptr;
+    *field0C = 0;
+}
+} // namespace lift_004A6A10
