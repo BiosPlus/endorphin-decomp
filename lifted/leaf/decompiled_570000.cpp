@@ -2683,3 +2683,41 @@ void __thiscall sub_0057FD60(void* self, uint32_t val) {
     ext_0057FA30(self, &out_iter, self, last, val);
 }
 } // namespace lift_0057FD60
+
+// [0x0057FEC0]
+namespace lift_0057FEC0 {
+// @name Vector_56B::push_back
+// @class Vector_56B
+// @summary Appends a 0x38-byte element to the vector, growing via ext_0057FBA0 if at capacity.
+// @field Vector_56B +0x04 uint8_t* begin
+// @field Vector_56B +0x08 uint8_t* end
+// @field Vector_56B +0x0C uint8_t* capacity_end
+
+
+void ext_0057E740(void* dst, uint32_t count, void* arg1, void* self, void* arg2, uint32_t flag);
+void __thiscall ext_0057FBA0(void* self, void* out_iter, void* self_iter, void* pos, void* val);
+extern void (*mem_00925134)();
+
+void __thiscall fn_0057FEC0(void* self, void* val) {
+    auto* begin = lift_field<uint8_t*>(self, 0x04);
+    auto* end = lift_field<uint8_t*>(self, 0x08);
+    int32_t size = begin ? static_cast<int32_t>((end - begin) / 0x38) : 0;
+
+    if (begin != nullptr) {
+        auto* cap_end = lift_field<uint8_t*>(self, 0x0C);
+        int32_t capacity = static_cast<int32_t>((cap_end - begin) / 0x38);
+        if (static_cast<uint32_t>(size) < static_cast<uint32_t>(capacity)) {
+            ext_0057E740(end, 1, val, self, val, 0);
+            lift_field<uint8_t*>(self, 0x08) = end + 0x38;
+            return;
+        }
+    }
+
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    uint8_t iter_buf[8]{};
+    ext_0057FBA0(self, iter_buf, self, end, val);
+}
+} // namespace lift_0057FEC0

@@ -1,0 +1,34 @@
+{
+  "va": "0x0057FEC0",
+  "size": 166,
+  "orig_symbol": "sub_0057FEC0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Vector_56B::push_back",
+  "class": "Vector_56B",
+  "signature": "void __thiscall fn_0057FEC0(void* self, void* val)",
+  "summary": "Appends a 0x38-byte element to the vector, growing via ext_0057FBA0 if at capacity.",
+  "fields": [
+    {
+      "class": "Vector_56B",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "begin"
+    },
+    {
+      "class": "Vector_56B",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end"
+    },
+    {
+      "class": "Vector_56B",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "capacity_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:20:21Z"
+}
