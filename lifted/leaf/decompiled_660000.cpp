@@ -3057,3 +3057,38 @@ void* fn_00665EE0(void* self) {
     return self;
 }
 } // namespace lift_00665EE0
+
+// [0x00662B70] sub_00662B70 (125 bytes)
+namespace lift_00662B70 {
+extern int mem_00924FE0;
+extern int mem_00924EAC;
+extern int mem_0092500C;
+extern int mem_00924EC0;
+
+// @name AppendBackslashIfMissing
+// @summary Copy-constructs the MSVC std::string at out from src, then appends '\' to out unless its last character already is '\'; returns out.
+void* fn_00662B70(void* out, const void* src) {
+    // MSVCP80 member functions, reached through the IAT slots the original code calls indirectly.
+    using CopyCtorFn   = void(__thiscall*)(void* self, const void* other);   // basic_string(const basic_string&)
+    using SizeFn       = uint32_t(__thiscall*)(const void* self);            // size()
+    using IndexFn      = char*(__thiscall*)(void* self, uint32_t index);     // operator[](size_t)
+    using AppendCharFn = void*(__thiscall*)(void* self, char ch);            // operator+=(char)
+
+    auto copyCtor   = *reinterpret_cast<CopyCtorFn*>(&mem_00924FE0);
+    auto sizeFn     = *reinterpret_cast<SizeFn*>(&mem_00924EAC);
+    auto indexFn    = *reinterpret_cast<IndexFn*>(&mem_0092500C);
+    auto appendChar = *reinterpret_cast<AppendCharFn*>(&mem_00924EC0);
+
+    // out = src (copy-construct into the caller-provided string storage)
+    copyCtor(out, src);
+
+    // if (out[out.size() - 1] != '\\') out += '\\';
+    uint32_t last = sizeFn(out) - 1u;
+    const char* lastChar = indexFn(out, last);
+    if (*lastChar != '\\') {
+        appendChar(out, '\\');
+    }
+
+    return out;
+}
+} // namespace lift_00662B70

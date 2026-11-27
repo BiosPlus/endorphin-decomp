@@ -50347,6 +50347,12 @@
     "summary": "Appends a trailing backslash to a std::string if not already present and copy-constructs the result into sret",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00662B70": {
+    "name": "AppendBackslashIfMissing",
+    "signature": "void* fn_00662B70(void* out, const void* src)",
+    "summary": "Copy-constructs the MSVC std::string at out from src, then appends '\\' to out unless its last character already is '\\'; returns out.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00662BF0": {
     "name": "GetCurrentDirectoryString",
     "signature": "extern \"C\" void* __cdecl sub_00662BF0(void* out)",
