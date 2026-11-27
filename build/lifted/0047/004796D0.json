@@ -1,0 +1,13 @@
+{
+  "va": "0x004796D0",
+  "size": 254,
+  "orig_symbol": "sub_004796D0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "sub_004796D0",
+  "signature": "extern \"C\" void* fn_004796D0(void* self, void* out, MsvcString arg_str)",
+  "summary": "Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:32:33Z"
+}
