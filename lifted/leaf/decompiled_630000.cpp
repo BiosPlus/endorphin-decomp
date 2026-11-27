@@ -1046,3 +1046,23 @@ void* fn_0063E980(void* self, const void* src) {
     return self;
 }
 } // namespace lift_0063E980
+
+// [0x0063E610]
+namespace lift_0063E610 {
+// @name Unknown::Unknown(uint32_t, const std::string&, const std::string&)
+// @class Unknown
+// @summary Constructor calling base ctor ext_0063E0C0, setting vtable 0x0097CBEC, and copy-constructing std::string at +0x24.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x24 std::string field_0x24
+
+
+void* __thiscall ext_0063E0C0(void* self, uint32_t arg0, const void* arg1);
+extern void* (__thiscall* mem_00924FE0)(void* self, const void* src);
+
+void* __thiscall fn_0063E610(void* self, uint32_t arg0, const void* arg1, const void* arg2) {
+    ext_0063E0C0(self, arg0, arg1);
+    lift_field<uint32_t>(self, 0x00) = 0x0097CBECu;
+    mem_00924FE0(static_cast<uint8_t*>(self) + 0x24, arg2);
+    return self;
+}
+} // namespace lift_0063E610

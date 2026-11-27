@@ -1,0 +1,28 @@
+{
+  "va": "0x0063E610",
+  "size": 94,
+  "orig_symbol": "sub_0063E610",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::Unknown(uint32_t, const std::string\u0026, const std::string\u0026)",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_0063E610(void* self, uint32_t arg0, const void* arg1, const void* arg2)",
+  "summary": "Constructor calling base ctor ext_0063E0C0, setting vtable 0x0097CBEC, and copy-constructing std::string at +0x24.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "std::string",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:52:37Z"
+}
