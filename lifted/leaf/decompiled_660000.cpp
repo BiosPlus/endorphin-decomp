@@ -2640,3 +2640,36 @@ void* __cdecl sub_00662AB0(void* out_str) {
     return out_str;
 }
 } // namespace lift_00662AB0
+
+// [0x00668150] sub_00668150 (117 bytes)
+namespace lift_00668150 {
+// Known callee 0x00668D80: SearchableMap<NM::Vector4, GetNameFromAttribute<NM::Vector4>>::vfunc_0
+// (Auto-lifted identical-shape clone of 0x0042E7B0.)
+extern void* ext_00668D80(void* self, const void* key);
+// Known callee 0x00667F80 (thiscall, no stack args): one-time initializer for the guarded global.
+void ext_00667F80(void* self);
+// Known callee 0x006A6C87 (cdecl, one stack arg): called after the initializer.
+void ext_006A6C87(const void* arg);
+extern int mem_00B594A4;
+extern DWORD mem_00B594B4;
+
+// @name lookupVector4MapOrFallback
+// @summary Forwards (index, key) to the Vector4 SearchableMap lookup at base+index*16+8; if that yields null, runs a one-time guarded init of mem_00B594A4 and returns its address.
+void* fn_00668150(void* self, int32_t index, const void* key) {
+    // Original asm: SEH frame setup/teardown (fs:[0] push/pop and try-level writes)
+    // is bookkeeping only and is elided; no observable effect on return value or globals.
+    char* entry = static_cast<char*>(self) + (static_cast<uint32_t>(index) << 4) + 8;
+    void* found = ext_00668D80(entry, key);
+    if (found != nullptr) {
+        return found;
+    }
+
+    // One-time guarded initialization (bit 0 of mem_00B594B4 is the "done" flag).
+    if ((mem_00B594B4 & 1u) == 0) {
+        mem_00B594B4 |= 1u;
+        ext_00667F80(&mem_00B594A4);
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00921650)));
+    }
+    return &mem_00B594A4;
+}
+} // namespace lift_00668150

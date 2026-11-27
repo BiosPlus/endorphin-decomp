@@ -1,0 +1,13 @@
+{
+  "va": "0x00668150",
+  "size": 117,
+  "orig_symbol": "sub_00668150",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "lookupVector4MapOrFallback",
+  "signature": "void* fn_00668150(void* self, int32_t index, const void* key)",
+  "summary": "Forwards (index, key) to the Vector4 SearchableMap lookup at base+index*16+8; if that yields null, runs a one-time guarded init of mem_00B594A4 and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:07:01Z"
+}

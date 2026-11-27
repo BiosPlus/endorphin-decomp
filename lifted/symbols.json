@@ -47799,6 +47799,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/SearchableMap.cpp"
   },
+  "0x00668150": {
+    "name": "lookupVector4MapOrFallback",
+    "signature": "void* fn_00668150(void* self, int32_t index, const void* key)",
+    "summary": "Forwards (index, key) to the Vector4 SearchableMap lookup at base+index*16+8; if that yields null, runs a one-time guarded init of mem_00B594A4 and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00668D10": {
     "name": "Tree::find",
     "class": "Tree",
