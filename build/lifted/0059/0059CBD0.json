@@ -1,0 +1,14 @@
+{
+  "va": "0x0059CBD0",
+  "size": 140,
+  "orig_symbol": "IdentityNode::vfunc_3_off_4",
+  "src_path": "src/classes/IdentityNode.cpp",
+  "lifted_path": "lifted/classes/IdentityNode.cpp",
+  "name": "IdentityNode::vfunc_3_off_4",
+  "class": "IdentityNode",
+  "signature": "void* fn_0059CBD0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006265C0 (TransformRefNode::vfunc_3_off_4).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T04:29:14Z"
+}

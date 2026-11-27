@@ -32551,6 +32551,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xE8 and tail-calls World::vfunc_0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0059CBD0": {
+    "name": "IdentityNode::vfunc_3_off_4",
+    "class": "IdentityNode",
+    "signature": "void* fn_0059CBD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006265C0 (TransformRefNode::vfunc_3_off_4).",
+    "lifted_path": "lifted/classes/IdentityNode.cpp"
+  },
   "0x0059CC60": {
     "name": "IdentityNode::vfunc_2_off_4",
     "class": "IdentityNode",
