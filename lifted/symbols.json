@@ -55428,6 +55428,13 @@
     "summary": "Delegates to FixedPathJointData::vfunc_12_off_C unless field_0x180-\u003evfunc_0x28() is true, in which case zeroes matching entries in arg2 and returns 0.",
     "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
   },
+  "0x005EE290": {
+    "name": "NMData::FixedPathJointData::vfunc_39",
+    "class": "NMData::FixedPathJointData",
+    "signature": "uint32_t __thiscall fn_005EE290(void* self, uint32_t arg)",
+    "summary": "Prepares fixed path joint data, applies an update with one argument, and finalizes via sub_005EDA00.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EE2F0": {
     "name": "NMData::SkeletalJointData::vfunc_33",
     "class": "NMData::SkeletalJointData",
