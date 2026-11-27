@@ -11953,3 +11953,27 @@ void fn_005C7730(void* self) {
     lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B444D8));
 }
 } // namespace lift_005C7730
+
+// [0x005B8940] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationSE(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B8940 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);  // thiscall: ECX = self, one stack arg
+extern DWORD mem_00B43D20;  // init-guard flags (bit 0 = initialized/started)
+extern DWORD mem_00B43D1C;  // static accessor object (first DWORD = vtable 0x009626DC)
+
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationSE(class NM::Vector3 const &), 0}>
+// @summary One-time guarded init of the static accessor object at mem_00B43D1C (vtable 0x009626DC), then stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005B8940(void* holder) {
+    // Guard bit 0 of mem_00B43D20: first call constructs the static accessor.
+    if ((mem_00B43D20 & 1u) == 0) {
+        mem_00B43D20 |= 1u;
+        ext_0067A670(&mem_00B43D1C, 0u);
+        mem_00B43D1C = 0x009626DCu;  // vtable for the accessor object
+    }
+
+    // Both paths bind holder+0x04 to the static accessor object.
+    lift_field<void*>(holder, 0x04) = static_cast<void*>(&mem_00B43D1C);
+}
+} // namespace lift_005B8940
