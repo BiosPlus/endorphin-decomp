@@ -1,0 +1,13 @@
+{
+  "va": "0x0040AC20",
+  "size": 131,
+  "orig_symbol": "sub_0040AC20",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "BuildFormattedString",
+  "signature": "void* __stdcall fn_0040AC20(void* out_str)",
+  "summary": "Concatenates a string literal with a global std::string, dispatches via StringBeginEndDispatch, and copies the result to out.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:22:35Z"
+}

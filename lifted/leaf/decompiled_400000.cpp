@@ -2305,3 +2305,33 @@ void fn_0040F0F0(void* pDis, RECT rc, COLORREF color) {
     ext_006A5FF2();
 }
 } // namespace lift_0040F0F0
+
+// [0x0040AC20]
+namespace lift_0040AC20 {
+// @name BuildFormattedString
+// @summary Concatenates a string literal with a global std::string, dispatches via StringBeginEndDispatch, and copies the result to out.
+
+
+extern void* ext_00665010(void* self);
+extern uint32_t mem_00924FCC;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00B59208;
+extern uint32_t mem_00924FF4;
+
+void* __stdcall fn_0040AC20(void* out_str) {
+    uint8_t temp_str[32]{};
+    using OpPlusFn = void* (__cdecl*)(void* ret_buf, const char* lhs, const void* rhs);
+    using CopyCtorFn = void* (__thiscall*)(void* self, const void* other);
+    using DtorFn = void (__thiscall*)(void* self);
+
+    reinterpret_cast<OpPlusFn>(mem_00924FCC)(
+        temp_str,
+        reinterpret_cast<const char*>(0x0092AB70),
+        &mem_00B59208);
+
+    void* dispatched = ext_00665010(temp_str);
+    reinterpret_cast<CopyCtorFn>(mem_00924FE0)(out_str, dispatched);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(temp_str);
+    return out_str;
+}
+} // namespace lift_0040AC20
