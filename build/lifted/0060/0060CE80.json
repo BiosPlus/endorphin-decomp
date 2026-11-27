@@ -1,0 +1,28 @@
+{
+  "va": "0x0060CE80",
+  "size": 126,
+  "orig_symbol": "NMData::EffectorWithMemoryData::vfunc_22",
+  "src_path": "src/NMData/EffectorWithMemoryData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp",
+  "name": "NMData::EffectorWithMemoryData::vfunc_22",
+  "class": "NMData::EffectorWithMemoryData",
+  "signature": "void fn_0060CE80(void* self, void* a1, void* a2, void* a3)",
+  "summary": "Dynamic-casts a1 to EffectorWithMemoryData, then forwards this/other memory span and integral gradient to two helpers.",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "m_integralGradient"
+    },
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "m_memorySpan"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:03:54Z"
+}

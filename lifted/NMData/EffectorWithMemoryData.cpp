@@ -140,3 +140,42 @@ void __thiscall fn_0060C910(void* self, void* arg1) {
     ext_0046C0A0(&slot, &lift_field<float>(self, 0x5C), &slot);
 }
 } // namespace lift_0060C910
+
+// [0x0060CE80] NMData::EffectorWithMemoryData::vfunc_22 (126 bytes)
+namespace lift_0060CE80 {
+// __thiscall helpers: self = ecx, remaining args pushed (callee pops).
+extern void ext_0060C820(void* self, void* a1, void* a2, void* a3);
+extern void ext_0060C070(void* self, void* p0, void* p1, const char* name);
+extern void ext_00487A30(void* self, float p0, float p1, const char* name);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args).
+extern void* ext_006A6E9E(void* inptr, ptrdiff_t vfDelta, void* srcType, void* targetType, int isReference);
+extern int mem_00A94EC4;
+extern int mem_00A93790;
+extern int mem_00972380;
+extern int mem_0097236C;
+
+// @name NMData::EffectorWithMemoryData::vfunc_22
+// @class NMData::EffectorWithMemoryData
+// @summary Dynamic-casts a1 to EffectorWithMemoryData, then forwards this/other memory span and integral gradient to two helpers.
+// @field NMData::EffectorWithMemoryData +0x5C float m_integralGradient
+// @field NMData::EffectorWithMemoryData +0x60 uint32_t m_memorySpan
+void fn_0060CE80(void* self, void* a1, void* a2, void* a3) {
+    ext_0060C820(self, a1, a2, a3);
+
+    void* other = ext_006A6E9E(a1, 0, &mem_00A93790, &mem_00A94EC4, 1);
+
+    uint32_t selfMemorySpan = lift_field<uint32_t>(self, 0x60);
+    uint32_t otherMemorySpan = lift_field<uint32_t>(other, 0x60);
+    ext_0060C070(&a2,
+                 &selfMemorySpan,
+                 &otherMemorySpan,
+                 reinterpret_cast<const char*>(&mem_00972380));
+
+    float selfIntegralGradient = lift_field<float>(self, 0x5C);
+    float otherIntegralGradient = lift_field<float>(other, 0x5C);
+    ext_00487A30(&a2,
+                 selfIntegralGradient,
+                 otherIntegralGradient,
+                 reinterpret_cast<const char*>(&mem_0097236C));
+}
+} // namespace lift_0060CE80

@@ -59805,6 +59805,13 @@
     "summary": "If arg3 is null, allocates and constructs a 0x60-byte object; then fills it from arg1 and this, invokes its vtable slot 0x30 with this, stores it at this+0x40 and returns it.",
     "lifted_path": "lifted/NMData/EffectorData.cpp"
   },
+  "0x0060CE80": {
+    "name": "NMData::EffectorWithMemoryData::vfunc_22",
+    "class": "NMData::EffectorWithMemoryData",
+    "signature": "void fn_0060CE80(void* self, void* a1, void* a2, void* a3)",
+    "summary": "Dynamic-casts a1 to EffectorWithMemoryData, then forwards this/other memory span and integral gradient to two helpers.",
+    "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp"
+  },
   "0x0060D280": {
     "name": "NMData::EffectorGroupData::vfunc_14",
     "class": "NMData::EffectorGroupData",
