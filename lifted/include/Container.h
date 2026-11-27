@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct Container_Fields {
     // +0x8   uint32_t*                begin  (evidence: 0x00412E60) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 end_ptr  (evidence: 0x004B4930) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x004E3140, 0x00536230) // CONFLICT: multiple definitions at +0x8
     // +0x8   uintptr_t                field_0x08  (evidence: 0x004B6680) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t*                end  (evidence: 0x00412E60)

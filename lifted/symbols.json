@@ -14006,6 +14006,12 @@
     "summary": "Lazily caches a value from ext_004B4710 in a global on first call, then forwards it with the self+8 subobject to ext_0055DA20 on the second stack argument; returns that second argument.",
     "lifted_path": "lifted/NMData/GraphEngineData.cpp"
   },
+  "0x004B4930": {
+    "name": "destroyStringPtrRange",
+    "signature": "extern \"C\" void __stdcall fn_004B4930(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Destroys and frees a range of heap-allocated objects containing a std::string at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B4A40": {
     "name": "InitOnceGlobalString_004B4A40",
     "signature": "void* fn_004B4A40()",

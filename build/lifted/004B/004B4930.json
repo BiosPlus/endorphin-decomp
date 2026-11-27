@@ -1,0 +1,21 @@
+{
+  "va": "0x004B4930",
+  "size": 100,
+  "orig_symbol": "sub_004B4930",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "destroyStringPtrRange",
+  "signature": "extern \"C\" void __stdcall fn_004B4930(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Destroys and frees a range of heap-allocated objects containing a std::string at +0x04.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:02:48Z"
+}

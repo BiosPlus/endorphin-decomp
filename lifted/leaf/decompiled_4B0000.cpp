@@ -1219,3 +1219,50 @@ int fn_004B72D0(void* self) {
 }
 } // namespace lift_005C3FB0
 } // namespace lift_004B72D0
+
+// [0x004B4930]
+namespace lift_004B4930 {
+// @name destroyStringPtrRange
+// @summary Destroys and frees a range of heap-allocated objects containing a std::string at +0x04.
+// @field Container +0x08 uint32_t end_ptr
+
+extern void ext_006A5C5C(void* ptr);
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924FF4;
+
+extern void __stdcall fn_004B4930(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    auto invalid_parameter_noinfo = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    auto string_dtor = reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4);
+
+    uint32_t esi = arg1;
+    uint32_t ebx = arg2;
+
+    while (true) {
+        if (esi == 0 || esi != arg3) {
+            invalid_parameter_noinfo();
+        }
+        if (ebx == arg4) {
+            break;
+        }
+        uint32_t edi = ebx;
+        if (esi == 0) {
+            invalid_parameter_noinfo();
+        }
+        if (ebx >= lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(esi)), 0x8)) {
+            invalid_parameter_noinfo();
+        }
+        ebx += 4;
+        if (esi == 0) {
+            invalid_parameter_noinfo();
+        }
+        if (edi >= lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(esi)), 0x8)) {
+            invalid_parameter_noinfo();
+        }
+        uint32_t obj = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(edi));
+        if (obj != 0) {
+            string_dtor(reinterpret_cast<void*>(static_cast<uintptr_t>(obj + 4)));
+            ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        }
+    }
+}
+} // namespace lift_004B4930
