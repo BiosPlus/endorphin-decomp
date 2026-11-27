@@ -822,3 +822,98 @@ void fn_00565060(void* self) {
     reinterpret_cast<SetFloatFn>(ext_007C56F4)(info, static_cast<float>(endFrame));
 }
 } // namespace lift_00565060
+
+// [0x00567070]
+namespace lift_00567070 {
+// @name findItemByName
+// @summary Linearly searches a vector of pointers for an item whose std::string at +0x8 matches the given name
+// @field Self +0x08 uint32_t* vec_begin
+// @field Self +0x0C uint32_t* vec_end
+
+
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924FC4;
+
+uint32_t __thiscall sub_00567070(void* self, const void* name) {
+    auto* invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    auto* str_eq = reinterpret_cast<bool(__cdecl*)(const void*, const void*)>(mem_00924FC4);
+
+    uint32_t* vec = reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x4);
+    uint32_t* it = reinterpret_cast<uint32_t*>(vec[1]);
+    if (it > reinterpret_cast<uint32_t*>(vec[2])) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uint32_t* end = reinterpret_cast<uint32_t*>(vec[2]);
+        if (reinterpret_cast<uint32_t*>(vec[1]) > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            return 0;
+        }
+        if (it >= reinterpret_cast<uint32_t*>(vec[2])) {
+            invalid_param();
+        }
+        uint32_t item = *it;
+        const void* item_name = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(item)) + 0x8;
+        if (str_eq(item_name, name)) {
+            if (it >= reinterpret_cast<uint32_t*>(vec[2])) {
+                invalid_param();
+            }
+            return *it;
+        }
+        if (it >= reinterpret_cast<uint32_t*>(vec[2])) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_00567070
+
+// [0x00567100]
+namespace lift_00567100 {
+extern void* mem_00925134;
+extern void* mem_00924FC4;
+
+// @name findByName
+// @summary Searches a vector of item pointers at +0x14 for an item whose std::string at +0x8 matches key
+// @field Self +0x14 void* vec_proxy
+// @field Self +0x18 uint32_t* vec_begin
+// @field Self +0x1c uint32_t* vec_end
+uint32_t __thiscall sub_00567100(void* self, const void* key) {
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    auto str_eq = reinterpret_cast<uint8_t(__cdecl*)(const void*, const void*)>(mem_00924FC4);
+
+    uint32_t* esi = lift_field<uint32_t*>(self, 0x18);
+    if (esi > lift_field<uint32_t*>(self, 0x1c)) {
+        invalid_param();
+    }
+
+    uint8_t* edi = reinterpret_cast<uint8_t*>(self) + 0x14;
+    for (;;) {
+        uint32_t* ebx = lift_field<uint32_t*>(edi, 0x8);
+        if (lift_field<uint32_t*>(edi, 0x4) > ebx) {
+            invalid_param();
+        }
+        if (esi == ebx) {
+            return 0;
+        }
+        if (esi >= lift_field<uint32_t*>(edi, 0x8)) {
+            invalid_param();
+        }
+        uint32_t item = *esi;
+        const void* item_name = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(item)) + 0x8;
+        if (str_eq(item_name, key) != 0) {
+            if (esi >= lift_field<uint32_t*>(edi, 0x8)) {
+                invalid_param();
+            }
+            return *esi;
+        }
+        if (esi >= lift_field<uint32_t*>(edi, 0x8)) {
+            invalid_param();
+        }
+        esi += 1;
+    }
+}
+} // namespace lift_00567100

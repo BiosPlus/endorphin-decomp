@@ -28543,6 +28543,18 @@
     "summary": "Writes vtable 0x00958C0C into self, copies byte +0x04 and four 32-bit words +0x08..+0x14 from src, returns self.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x00567070": {
+    "name": "findItemByName",
+    "signature": "uint32_t __thiscall sub_00567070(void* self, const void* name)",
+    "summary": "Linearly searches a vector of pointers for an item whose std::string at +0x8 matches the given name",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
+  "0x00567100": {
+    "name": "findByName",
+    "signature": "uint32_t __thiscall sub_00567100(void* self, const void* key)",
+    "summary": "Searches a vector of item pointers at +0x14 for an item whose std::string at +0x8 matches key",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00567190": {
     "name": "numberChildrenRecursive",
     "class": "Unknown",
