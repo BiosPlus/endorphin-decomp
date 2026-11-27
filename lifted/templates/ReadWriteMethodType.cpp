@@ -11502,3 +11502,30 @@ void __stdcall fn_0058F9E0(void* holder) {
     lift_field<uint32_t>(holder, 4) = 0x00B3F96Cu;
 }
 } // namespace lift_0058F9E0
+
+// [0x0058FE00] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerX(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_0058FE00 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = &mem_00B3F974; constructs the function-local static accessor object.)
+extern void __thiscall ext_0067A670(void* self);
+// Guard dword for the function-local static accessor (bit 0 = initialized).
+extern uint32_t mem_00B3F978;
+// Static accessor object; first dword is its vtable pointer.
+extern uint32_t mem_00B3F974;
+
+// @name ExprParser::ReadWriteMethodType<TransformNode>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerX(float), 0}>
+// @summary Lazily initializes the function-local static accessor object (guarded by a bit in mem_00B3F978) and stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<TransformNode> +0x04 void* field_0x04
+void __stdcall fn_0058FE00(void* holder) {
+    // Thread-safe-static style guard: first call constructs the accessor object.
+    if ((mem_00B3F978 & 1u) == 0) {
+        mem_00B3F978 |= 1u;
+        ext_0067A670(&mem_00B3F974);
+        mem_00B3F974 = 0x0095C394u;  // vtable pointer for the accessor object
+    }
+
+    // holder+0x04 <- address of the static accessor object.
+    auto* slot = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(holder) + 0x04);
+    *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B3F974));
+}
+} // namespace lift_0058FE00
