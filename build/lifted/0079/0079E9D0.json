@@ -1,0 +1,21 @@
+{
+  "va": "0x0079E9D0",
+  "size": 144,
+  "orig_symbol": "sub_0079E9D0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "CacheObjectInIndexTable",
+  "signature": "extern \"C\" uint8_t mem_009977ED;   // element count (u8) extern \"C\" uint8_t mem_00B61219;   // flag: continue with table init even if calloc failed extern \"C\" uintptr_t mem_00B6114C; // pointer to dword table allocated by calloc extern \"C\" uint8_t mem_00B61150;   // next slot counter void fn_0079E9D0(void* obj)",
+  "summary": "Lazily initialises the dword index table, claims the first free slot for obj (zero entry), stores that slot number at obj+0x0C, and advances mem_00B61150 when the slot equals it.",
+  "fields": [
+    {
+      "class": "CacheObjectInIndexTable",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:15:57Z"
+}

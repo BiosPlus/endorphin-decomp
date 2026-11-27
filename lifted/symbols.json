@@ -84134,6 +84134,12 @@
     "summary": "Callocs a dword table of mem_009977ED entries into mem_00B6114C, zeroes every entry, and clears two flag bytes; on calloc failure it calls ext_007AA510(1) and only proceeds if mem_00B61219 is set.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079E9D0": {
+    "name": "CacheObjectInIndexTable",
+    "signature": "extern \"C\" uint8_t mem_009977ED;   // element count (u8) extern \"C\" uint8_t mem_00B61219;   // flag: continue with table init even if calloc failed extern \"C\" uintptr_t mem_00B6114C; // pointer to dword table allocated by calloc extern \"C\" uint8_t mem_00B61150;   // next slot counter void fn_0079E9D0(void* obj)",
+    "summary": "Lazily initialises the dword index table, claims the first free slot for obj (zero entry), stores that slot number at obj+0x0C, and advances mem_00B61150 when the slot equals it.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079EA60": {
     "name": "UnknownClass::releaseSlotIfOwned",
     "class": "UnknownClass",

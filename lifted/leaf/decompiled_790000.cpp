@@ -2000,3 +2000,56 @@ void* fn_0079F230(void) {
 }
 } // namespace lift_0078D740
 } // namespace lift_0079F230
+
+// [0x0079E9D0] sub_0079E9D0 (144 bytes)
+namespace lift_0079E9D0 {
+// Known callee 0x0079E950: AllocAndClearIndexTable (Callocs a dword table of mem_009977ED entries into mem_00B6114C, zeroes every entry, and clears two flag bytes; on calloc failure it calls ext_007AA510(1) and only proceeds if mem_00B61219 is set.)
+extern void ext_0079E950();
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+extern uint8_t mem_009977ED;   // element count (u8)
+extern uint8_t mem_00B61219;   // flag: continue with table init even if calloc failed
+extern uintptr_t mem_00B6114C; // pointer to dword table allocated by calloc
+extern uint8_t mem_00B61150;   // next slot counter
+
+// @name CacheObjectInIndexTable
+// @summary Lazily initialises the dword index table, claims the first free slot for obj (zero entry), stores that slot number at obj+0x0C, and advances mem_00B61150 when the slot equals it.
+// @field CacheObjectInIndexTable +0x0C uint8_t field_0x0C
+
+void fn_0079E9D0(void* obj) {
+    uint32_t* table = reinterpret_cast<uint32_t*>(mem_00B6114C);
+    if (table == nullptr) {
+        ext_0079E950();
+        table = reinterpret_cast<uint32_t*>(mem_00B6114C);
+    }
+
+    // Scan for the first zero entry, bounded by mem_00B61150.
+    uint8_t slot = 0;
+    const uint8_t limit = mem_00B61150;
+    if (limit != 0) {
+        for (;;) {
+            if (table[slot] == 0) {
+                break;
+            }
+            ++slot;
+            if (slot >= limit) {
+                break;
+            }
+        }
+    }
+
+    if (slot >= mem_009977ED) {
+        ext_007AA510(0x13);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+        table = reinterpret_cast<uint32_t*>(mem_00B6114C);
+    }
+
+    table[slot] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+    lift_field<uint8_t>(obj, 0x0C) = slot;
+    if (slot == mem_00B61150) {
+        mem_00B61150 = static_cast<uint8_t>(mem_00B61150 + 1);
+    }
+}
+} // namespace lift_0079E9D0
