@@ -5436,6 +5436,13 @@
     "summary": "If two lookups agree, forward to vtable slot 2; otherwise clamp a computed range into out[0..3] via a callee on obj and return out.",
     "lifted_path": "lifted/MultiTrackView/RangeMarker.cpp"
   },
+  "0x00442860": {
+    "name": "MultiTrackView::SimpleRangeMarker::vfunc_1",
+    "class": "MultiTrackView::SimpleRangeMarker",
+    "signature": "void* __thiscall fn_00442860(void* self, void* arg1, void* arg2, void* arg3)",
+    "summary": "Formats or builds a range marker representation into arg1 using local state, or delegates to vfunc_2 when the marker value matches.",
+    "lifted_path": "lifted/MultiTrackView/SimpleRangeMarker.cpp"
+  },
   "0x00442960": {
     "name": "Unknown::InitWithTag",
     "class": "Unknown",
@@ -24196,6 +24203,13 @@
     "class": "NMData::AnimationEventData",
     "signature": "extern \"C\" void __thiscall fn_004DDED0(void* self, void* a)",
     "summary": "Computes r = ext_006404E0(a, global at mem_00A9ED30), then calls this-\u003evtable[22](r).",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
+  "0x004DDF00": {
+    "name": "NMData::AnimationEventData::vfunc_22",
+    "class": "NMData::AnimationEventData",
+    "signature": "void* __thiscall fn_004DDF00(void* self, void* node)",
+    "summary": "Serializes AnimationEventData properties and embedded subobjects to an XML/data node.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
   "0x004DE0F0": {
@@ -55749,6 +55763,13 @@
     "signature": "extern \"C\" void __fastcall fn_005EF8D0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::HingeData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005EFB30": {
+    "name": "NMData::HingeData::vfunc_17_off_C",
+    "class": "NMData::HingeData",
+    "signature": "extern \"C\" void* __thiscall fn_005EFB30(void* self)",
+    "summary": "Clones a HingeData object, copying its properties, transform/constraint state, and sub-objects.",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
   },
   "0x005EFF60": {
     "name": "NMData::FixedPathJointData::vfunc_59",

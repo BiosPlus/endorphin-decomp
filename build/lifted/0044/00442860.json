@@ -1,0 +1,22 @@
+{
+  "va": "0x00442860",
+  "size": 255,
+  "orig_symbol": "MultiTrackView::SimpleRangeMarker::vfunc_1",
+  "src_path": "src/MultiTrackView/SimpleRangeMarker.cpp",
+  "lifted_path": "lifted/MultiTrackView/SimpleRangeMarker.cpp",
+  "name": "MultiTrackView::SimpleRangeMarker::vfunc_1",
+  "class": "MultiTrackView::SimpleRangeMarker",
+  "signature": "void* __thiscall fn_00442860(void* self, void* arg1, void* arg2, void* arg3)",
+  "summary": "Formats or builds a range marker representation into arg1 using local state, or delegates to vfunc_2 when the marker value matches.",
+  "fields": [
+    {
+      "class": "MultiTrackView::SimpleRangeMarker",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:27:56Z"
+}
