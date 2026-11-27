@@ -20192,6 +20192,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_004F1210.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x004F0B10": {
+    "name": "Unknown::ResetOwnedBuffers",
+    "class": "Unknown",
+    "signature": "void fn_004F0B10(void* self)",
+    "summary": "Tidies the string vector at +0x1C, releases the pointer held at +0x10 (if any), zeroes +0x10..+0x18, then notifies the subobject at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F0FB0": {
     "name": "TreeMap::eraseSubtree",
     "class": "TreeMap",

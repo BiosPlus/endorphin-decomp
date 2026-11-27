@@ -1359,3 +1359,46 @@ void fn_004F1BD0(void* self) {
     lift_field<uint32_t>(self, 0x0C) = 0;
 }
 } // namespace lift_004F1BD0
+
+// [0x004F0B10] sub_004F0B10 (143 bytes)
+namespace lift_004F0B10 {
+// Known callee 0x004026E0: std_vector_string_Tidy (Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.)
+extern void ext_004026E0(void* this_ptr);
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+
+// @name Unknown::ResetOwnedBuffers
+// @class Unknown
+// @summary Tidies the string vector at +0x1C, releases the pointer held at +0x10 (if any), zeroes +0x10..+0x18, then notifies the subobject at +0x04.
+// @field Unknown +0x04 void field_0x04
+// @field Unknown +0x10 DWORD field_0x10
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x18 DWORD field_0x18
+// @field Unknown +0x1C std_vector_string field_0x1C
+void fn_004F0B10(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    // Destroy the std::string vector embedded at +0x1C.
+    ext_004026E0(base + 0x1C);
+
+    // Release the owned handle at +0x10, if present.
+    DWORD held = lift_field<DWORD>(self, 0x10);
+    if (held != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(held)));
+    }
+
+    // Reset the three owned fields.
+    lift_field<DWORD>(self, 0x10) = 0;
+    lift_field<DWORD>(self, 0x14) = 0;
+    lift_field<DWORD>(self, 0x18) = 0;
+
+    // Notify the subobject at +0x04 (the null branch passes a null receiver).
+    if (self != nullptr) {
+        ext_0065F440(base + 0x04);
+    } else {
+        ext_0065F440(nullptr);
+    }
+}
+} // namespace lift_004F0B10

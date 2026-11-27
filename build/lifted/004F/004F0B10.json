@@ -1,0 +1,46 @@
+{
+  "va": "0x004F0B10",
+  "size": 143,
+  "orig_symbol": "sub_004F0B10",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "Unknown::ResetOwnedBuffers",
+  "class": "Unknown",
+  "signature": "void fn_004F0B10(void* self)",
+  "summary": "Tidies the string vector at +0x1C, releases the pointer held at +0x10 (if any), zeroes +0x10..+0x18, then notifies the subobject at +0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "std_vector_string",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:51Z"
+}
