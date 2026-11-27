@@ -1475,6 +1475,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00412CE0": {
+    "name": "Unknown::updateCountFromVector",
+    "class": "Unknown",
+    "signature": "void fn_00412CE0(void* self)",
+    "summary": "Looks up a target object via ext_00594000, fetches a C-string from the embedded source at +0x18 into a temporary std::string, passes it to ext_00594620, and stores the element count of the self vector (end-begin)/4 into the returned object at +0x4E8.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00412E20": {
     "name": "frontOrZero",
     "class": "Unknown",

@@ -403,6 +403,7 @@ struct Unknown_Fields {
     // +0x8   void*                    subobject  (evidence: 0x004AECC0, 0x0067B1F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t                  subobject_0x08  (evidence: 0x00670FD0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 value_a2  (evidence: 0x004B75A0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   DWORD                    vec_begin  (evidence: 0x00412CE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    vec_z_base  (evidence: 0x008044A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x8
     // +0x9   BYTE                     field_0x09  (evidence: 0x004E9BB0)
@@ -489,6 +490,7 @@ struct Unknown_Fields {
     // +0xC   std::string field_0x0C (copied into a local string in the catch path; type inferred from ctor/c_str usage)  (evidence: 0x00432490) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string field_0x0C (copied into a local string in the catch path; type inferred from ctor/c_str/dtor IAT usage)  (evidence: 0x00432910) // CONFLICT: multiple definitions at +0xC
     // +0xC   pointer                  vecHolder  (evidence: 0x0067A670, 0x0067AEB0, 0x0067AEF0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   DWORD                    vec_end  (evidence: 0x00412CE0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0c (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0xC
     // +0xC   WriteFn                  writeChunk  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0xC
@@ -635,6 +637,7 @@ struct Unknown_Fields {
     // +0x18  void*                    embedded  (evidence: 0x00537A30) // CONFLICT: multiple definitions at +0x18
     // +0x18  DWORD                    entryCount  (evidence: 0x006FC250) // CONFLICT: multiple definitions at +0x18
     // +0x18  void* field_0x18 (record vector; passed to ext_00559C80)  (evidence: 0x0055B720) // CONFLICT: multiple definitions at +0x18
+    // +0x18  BYTE                     field_0x18  (evidence: 0x00412CE0) // CONFLICT: multiple definitions at +0x18
     // +0x18  BYTE*                    field_0x18  (evidence: 0x00550520) // CONFLICT: multiple definitions at +0x18
     // +0x18  DWORD                    field_0x18  (evidence: 0x0041C630, 0x005172A0, 0x005555D0, 0x005B34C0, 0x006FC200, 0x006FC950) // CONFLICT: multiple definitions at +0x18
     // +0x18  double                   field_0x18  (evidence: 0x0050F970, 0x006722B0, 0x0067B2F0, 0x0067B310, 0x0067B390, 0x00766240, 0x0077FB40) // CONFLICT: multiple definitions at +0x18
@@ -1862,6 +1865,7 @@ struct Unknown_Fields {
     // +0x494 void*                    scene  (evidence: 0x00564FE0, 0x00565060) // CONFLICT: multiple definitions at +0x494
     // +0x4C4 uint32_t                 field_0x4C4  (evidence: 0x004030F0, 0x00408050, 0x0040BE90)
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
+    // +0x4E8 int32_t field_0x4E8 (on the object returned by ext_00594620)  (evidence: 0x00412CE0)
     // +0x518 DWORD                    field_0x518  (evidence: 0x00702790)
     // +0x531 uint8_t                  field_0x531  (evidence: 0x00434610)
     // +0x564 int32_t                  field_0x564  (evidence: 0x004030F0, 0x00405160, 0x0040BE90) // CONFLICT: multiple definitions at +0x564

@@ -1,0 +1,40 @@
+{
+  "va": "0x00412CE0",
+  "size": 139,
+  "orig_symbol": "sub_00412CE0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::updateCountFromVector",
+  "class": "Unknown",
+  "signature": "void fn_00412CE0(void* self)",
+  "summary": "Looks up a target object via ext_00594000, fetches a C-string from the embedded source at +0x18 into a temporary std::string, passes it to ext_00594620, and stores the element count of the self vector (end-begin)/4 into the returned object at +0x4E8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "vec_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "vec_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "BYTE",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4E8",
+      "type": "int32_t field_0x4E8 (on the object returned by",
+      "name": "ext_00594620)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:49Z"
+}

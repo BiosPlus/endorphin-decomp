@@ -3060,3 +3060,58 @@ extern void __thiscall fn_00416710(void* self) {
     ext_006A61D2(base);
 }
 } // namespace lift_00416710
+
+// [0x00412CE0] sub_00412CE0 (139 bytes)
+namespace lift_00412CE0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x00594620: sub_00594620 (Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A4A0.)
+extern void* ext_00594620(void* self, void* out);
+// MFC80 ord_876 / MSVCP80 basic_string ctor / dtor import slots (read as function pointers).
+extern int mem_00924300;
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+namespace {
+using CStrGetter = const char* (__thiscall*)(void* self);
+using StrCtor = void (__thiscall*)(void* self, const char* s);
+using StrDtor = void (__thiscall*)(void* self);
+}
+
+// @name Unknown::updateCountFromVector
+// @class Unknown
+// @summary Looks up a target object via ext_00594000, fetches a C-string from the embedded source at +0x18 into a temporary std::string, passes it to ext_00594620, and stores the element count of the self vector (end-begin)/4 into the returned object at +0x4E8.
+// @field Unknown +0x08 DWORD vec_begin
+// @field Unknown +0x0C DWORD vec_end
+// @field Unknown +0x18 BYTE field_0x18
+// @field Unknown +0x4E8 int32_t field_0x4E8 (on the object returned by ext_00594620)
+void fn_00412CE0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Target object: returned int32 interpreted as a pointer (passed as `this` to ext_00594620).
+    void* target = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+
+    // Temporary std::string (MSVC layout, 0x1C bytes).
+    alignas(8) uint8_t str[0x1C];
+
+    auto getCStr = *reinterpret_cast<CStrGetter*>(&mem_00924300);
+    const char* cs = getCStr(base + 0x18);
+
+    auto strCtor = *reinterpret_cast<StrCtor*>(&mem_00924FE4);
+    strCtor(str, cs);
+
+    void* result = ext_00594620(target, str);
+    if (result != nullptr) {
+        uint32_t begin = lift_field<uint32_t>(base, 0x08);
+        uint32_t end = lift_field<uint32_t>(base, 0x0C);
+        int32_t count = 0;
+        if (begin != 0) {
+            count = static_cast<int32_t>(end - begin) >> 2;
+        }
+        lift_field<int32_t>(result, 0x4E8) = count;
+    }
+
+    auto strDtor = *reinterpret_cast<StrDtor*>(&mem_00924FF4);
+    strDtor(str);
+}
+} // namespace lift_00412CE0
