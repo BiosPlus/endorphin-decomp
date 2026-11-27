@@ -3720,3 +3720,56 @@ void __thiscall fn_0043E090(void* self, void* arg) {
     }
 }
 } // namespace lift_0043E090
+
+// [0x0043CF30] sub_0043CF30 (103 bytes)
+namespace lift_0043CF30 {
+// Known callee 0x00455F40: Unknown::returnTrueIfNeitherCheckMatches_00455F40 (Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.)
+extern int __fastcall ext_00455F40(void* self);
+// Known callee 0x006A65F8: thunk_MFC80_ord_5987 (IAT jump thunk forwarding to MFC80!ord_5987.)
+// Thiscall, four stack arguments, callee-cleaned (the original does not pop them).
+extern void __thiscall ext_006A65F8(void* self, int32_t a0, int32_t a1, int32_t a2, int32_t a3);
+// IAT slots: USER32!GetClientRect and USER32!ShowScrollBar (values are the resolved thunk addresses).
+extern uint32_t mem_0092566C;
+extern uint32_t mem_00925710;
+
+// @name updateVerticalScrollBar_0043CF30
+// @class Unknown
+// @summary Shows or hides the vertical scroll bar based on client height vs field +0xF8, then calls ext_006A65F8 (MFC scroll-size setter) with range +0xF8.
+// @field Unknown +0x20 uint32_t hwnd
+// @field Unknown +0xF8 int32_t field_0xf8
+// @field Unknown +0x18C uint32_t field_0x18c
+void fn_0043CF30(void* self) {
+    struct Rect {
+        int32_t left;
+        int32_t top;
+        int32_t right;
+        int32_t bottom;
+    } rect;
+
+    using GetClientRectFn = int32_t(__stdcall*)(uint32_t, Rect*);
+    using ShowScrollBarFn = int32_t(__stdcall*)(uint32_t, int32_t, int32_t);
+
+    const uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
+    auto get_client_rect = reinterpret_cast<GetClientRectFn>(static_cast<uintptr_t>(mem_0092566C));
+    get_client_rect(hwnd, &rect);
+
+    // ecx = [self+0x18C] is passed as the callee's self pointer.
+    const uint32_t child = lift_field<uint32_t>(self, 0x18C);
+    const int32_t has_child = ext_00455F40(reinterpret_cast<void*>(static_cast<uintptr_t>(child)));
+
+    auto show_scroll_bar = reinterpret_cast<ShowScrollBarFn>(static_cast<uintptr_t>(mem_00925710));
+    constexpr int32_t SB_VERT = 1;
+
+    if (has_child != 0) {
+        const int32_t client_height = rect.bottom - rect.top;
+        const int32_t range = lift_field<int32_t>(self, 0xF8);
+        const int32_t show = (range > client_height) ? 1 : 0;
+        show_scroll_bar(hwnd, SB_VERT, show);
+    } else {
+        show_scroll_bar(hwnd, SB_VERT, 0);
+    }
+
+    const int32_t range = lift_field<int32_t>(self, 0xF8);
+    ext_006A65F8(self, 1, 0, range, 1);
+}
+} // namespace lift_0043CF30
