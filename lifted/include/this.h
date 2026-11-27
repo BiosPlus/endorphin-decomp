@@ -24,5 +24,7 @@ struct this_Fields {
     // +0x114 void*                    child  (evidence: 0x00430260, 0x00430310, 0x00433B70) // CONFLICT: multiple definitions at +0x114
     // +0x114 uint32_t                 field_0x114  (evidence: 0x0041B540) // CONFLICT: multiple definitions at +0x114
     // +0x118 uint32_t                 field_0x118  (evidence: 0x0041B540)
+    // +0x17C std::string              field_0x17c  (evidence: 0x005C3EA0)
+    // +0x198 uint32_t                 field_0x198  (evidence: 0x005C3EA0)
 };
 } // namespace lifted_layout

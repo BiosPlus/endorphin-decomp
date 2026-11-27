@@ -1588,3 +1588,32 @@ int fn_005C3FB0(void* self) {
     }
 }
 } // namespace lift_005C3FB0
+
+// [0x005C3EA0]
+namespace lift_005C3EA0 {
+// @name sub_005C3EA0
+// @summary Stores an index at +0x198 and copies the corresponding string from global vector mem_00B44C08 into +0x17c
+// @field this +0x17c std::string field_0x17c
+// @field this +0x198 uint32_t field_0x198
+
+
+extern uint32_t mem_00B44C08;
+extern uint32_t mem_00B44C0C;
+
+extern void (__cdecl* ext_00925134)();
+extern void* (__thiscall* ext_00924FDC)(void* self, const void* rhs);
+
+void __thiscall sub_005C3EA0(void* self, uint32_t index) {
+    lift_field<uint32_t>(self, 0x198) = index;
+
+    uint32_t begin = mem_00B44C08;
+    if (begin == 0 || index >= static_cast<uint32_t>(static_cast<int32_t>(mem_00B44C0C - begin) / 28)) {
+        ext_00925134();
+        begin = mem_00B44C08;
+    }
+
+    const void* src = reinterpret_cast<const void*>(begin + index * 28);
+    void* dst = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x17c);
+    ext_00924FDC(dst, src);
+}
+} // namespace lift_005C3EA0

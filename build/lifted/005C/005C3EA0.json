@@ -1,0 +1,27 @@
+{
+  "va": "0x005C3EA0",
+  "size": 99,
+  "orig_symbol": "sub_005C3EA0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "sub_005C3EA0",
+  "signature": "void __thiscall sub_005C3EA0(void* self, uint32_t index)",
+  "summary": "Stores an index at +0x198 and copies the corresponding string from global vector mem_00B44C08 into +0x17c",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x17C",
+      "type": "std::string",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "this",
+      "offset": "+0x198",
+      "type": "uint32_t",
+      "name": "field_0x198"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:02:28Z"
+}
