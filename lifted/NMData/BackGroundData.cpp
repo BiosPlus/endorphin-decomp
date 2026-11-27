@@ -815,3 +815,187 @@ extern void __thiscall fn_005A4810(uint8_t* self) {
     }
 }
 } // namespace lift_005A4810
+
+// [0x005A68B0]
+namespace lift_005A68B0 {
+// @name NMData::BackGroundData::vfunc_19
+// @class NMData::BackGroundData
+// @summary Copies background data sub-elements and bone/transform mappings from another BackGroundData instance.
+// @field NMData::BackGroundData +0x158 uint32_t field_0x158
+// @field NMData::BackGroundData +0x15C void* field_0x15c
+// @field NMData::BackGroundData +0x160 void* field_0x160
+// @field NMData::BackGroundData +0x334 void** field_0x334
+// @field NMData::BackGroundData +0x338 void** field_0x338
+// @field NMData::BackGroundData +0x598 void* field_0x598
+// @field NMData::BackGroundData +0x59C void* field_0x59c
+
+extern void* ext_004EBE30(void* self);
+extern void* ext_005DF5C0(void* self, ...);
+extern void ext_005A1BA0(void* self, void* key, void* val);
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_005CC390(void* self, void* other);
+extern void ext_005BE710(void* list, void* name);
+extern void ext_005BF400(void* self, void* obj);
+extern void ext_00673C20(void* iter);
+extern void* ext_005C1060(void* self, void* other);
+extern void ext_00587920(void* self, void* item, uint32_t flag);
+extern void ext_005A3540(void* self, void* obj);
+extern void ext_005BE460(void* self, void* parent, void* arg);
+extern void ext_005A6220(void* dst, void* src);
+extern void ext_005F15D0(void* self, void* arg);
+extern void ext_004EC1F0(void* self, void* out_iter, void* first, void* self2, void* last);
+extern void ext_006A5C5C(void* ptr);
+
+extern uint32_t mem_0093BED0;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924FC8;
+
+struct MsvcpString {
+    uint8_t data[0x1c];
+};
+
+struct LocalMap {
+    uint32_t vtable;
+    uint32_t alloc;
+    void* head;
+    uint32_t size;
+};
+
+struct ListIter {
+    void* container;
+    void* node;
+};
+
+static inline void msvcp_str_ctor_cstr(MsvcpString* s, const char* cstr) {
+    using Fn = void(__thiscall*)(MsvcpString*, const char*);
+    reinterpret_cast<Fn>(mem_00924FE4)(s, cstr);
+}
+
+static inline void msvcp_str_ctor_copy(MsvcpString* s, const void* other) {
+    using Fn = void(__thiscall*)(MsvcpString*, const void*);
+    reinterpret_cast<Fn>(mem_00924FE0)(s, other);
+}
+
+static inline void msvcp_str_dtor(MsvcpString* s) {
+    using Fn = void(__thiscall*)(MsvcpString*);
+    reinterpret_cast<Fn>(mem_00924FF4)(s);
+}
+
+static inline bool msvcp_str_neq_cstr(const void* s, const char* cstr) {
+    using Fn = bool(__cdecl*)(const void*, const char*);
+    return reinterpret_cast<Fn>(mem_00924FC8)(s, cstr);
+}
+
+static inline void* call_vfunc_9(void* obj) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using Fn = void*(__thiscall*)(void*);
+    return reinterpret_cast<Fn>(vtbl[9])(obj);
+}
+
+void __thiscall fn_005A68B0(void* self, void* arg1) {
+    LocalMap local_map;
+    local_map.vtable = 0x0094B890u;
+    void* head = ext_004EBE30(&local_map.alloc);
+    local_map.head = head;
+    lift_field<uint8_t>(head, 0x45) = 1;
+    lift_field<void*>(head, 0x4) = head;
+    lift_field<void*>(head, 0x0) = head;
+    lift_field<void*>(head, 0x8) = head;
+    local_map.size = 0;
+
+    const char* empty_cstr = reinterpret_cast<const char*>(mem_0093BED0);
+
+    MsvcpString tmp_str1;
+    msvcp_str_ctor_cstr(&tmp_str1, empty_cstr);
+    MsvcpString arg_str1;
+    msvcp_str_ctor_copy(&arg_str1, &tmp_str1);
+    void* v14 = ext_005DF5C0(reinterpret_cast<uint8_t*>(self) + 0x598, arg_str1);
+    msvcp_str_dtor(&tmp_str1);
+
+    MsvcpString tmp_str2;
+    msvcp_str_ctor_cstr(&tmp_str2, empty_cstr);
+    MsvcpString arg_str2;
+    msvcp_str_ctor_copy(&arg_str2, &tmp_str2);
+    void* target_obj = ext_005DF5C0(reinterpret_cast<uint8_t*>(arg1) + 0x598, arg_str2);
+    msvcp_str_dtor(&tmp_str2);
+
+    MsvcpString map_key, map_val;
+    msvcp_str_ctor_cstr(&map_key, empty_cstr);
+    msvcp_str_ctor_cstr(&map_val, empty_cstr);
+    ext_005A1BA0(&local_map, &map_key, &map_val);
+    msvcp_str_dtor(&map_val);
+    msvcp_str_dtor(&map_key);
+
+    void* list1_head = lift_field<void*>(target_obj, 0x160);
+    ListIter it1 = { reinterpret_cast<uint8_t*>(target_obj) + 0x15c, lift_field<void*>(list1_head, 0x0) };
+    while (it1.node != list1_head) {
+        void* item = lift_field<void*>(it1.node, 0x28);
+        void* item_name = call_vfunc_9(item);
+        if (msvcp_str_neq_cstr(item_name, reinterpret_cast<const char*>(mem_0093BED0))) {
+            void* raw = ext_006A5C62(0x1a0);
+            void* new_obj = raw ? ext_005CC390(raw, item) : nullptr;
+            void* new_name = call_vfunc_9(new_obj);
+            ext_005BE710(reinterpret_cast<uint8_t*>(target_obj) + 0x15c, new_name);
+            ext_005BF400(v14, new_obj);
+        } else {
+            MsvcpString arg_s;
+            msvcp_str_ctor_cstr(&arg_s, reinterpret_cast<const char*>(mem_0093BED0));
+            void* found = ext_005DF5C0(reinterpret_cast<uint8_t*>(self) + 0x15c, arg_s);
+            if (!found) {
+                void* raw = ext_006A5C62(0x1a0);
+                void* new_obj = raw ? ext_005CC390(raw, item) : nullptr;
+                ext_005BF400(v14, new_obj);
+            }
+        }
+        ext_00673C20(&it1);
+    }
+
+    void* list2_head = lift_field<void*>(arg1, 0x59c);
+    ListIter it2 = { reinterpret_cast<uint8_t*>(arg1) + 0x598, lift_field<void*>(list2_head, 0x0) };
+    while (it2.node != lift_field<void*>(arg1, 0x59c)) {
+        void* item = lift_field<void*>(it2.node, 0x28);
+        void* item_name = call_vfunc_9(item);
+        if (msvcp_str_neq_cstr(item_name, reinterpret_cast<const char*>(mem_0093BED0))) {
+            void* raw = ext_006A5C62(0x220);
+            void* new_sub = raw ? ext_005C1060(raw, item) : nullptr;
+
+            void* sub_head = lift_field<void*>(new_sub, 0x160);
+            ListIter sub_it = { reinterpret_cast<uint8_t*>(new_sub) + 0x15c, lift_field<void*>(sub_head, 0x0) };
+            while (sub_it.node != lift_field<void*>(new_sub, 0x160)) {
+                void* sub_item = lift_field<void*>(sub_it.node, 0x28);
+                ext_00587920(new_sub, sub_item, 0);
+                ext_00673C20(&sub_it);
+            }
+
+            MsvcpString sub_name_copy;
+            msvcp_str_ctor_copy(&sub_name_copy, call_vfunc_9(new_sub));
+            ext_005BE710(reinterpret_cast<uint8_t*>(arg1) + 0x598, call_vfunc_9(new_sub));
+            ext_005A1BA0(&local_map, &sub_name_copy, call_vfunc_9(new_sub));
+            ext_005A3540(self, new_sub);
+            uint32_t sub_158 = lift_field<uint32_t>(new_sub, 0x158);
+            ext_005BE460(new_sub, self, reinterpret_cast<void*>(sub_158 + 0x24));
+            msvcp_str_dtor(&sub_name_copy);
+        }
+        ext_00673C20(&it2);
+    }
+
+    void** vec_cur = lift_field<void**>(arg1, 0x334);
+    void** vec_end = lift_field<void**>(arg1, 0x338);
+    while (vec_cur != vec_end) {
+        LocalMap map_copy;
+        map_copy.vtable = 0x0094B890u;
+        ext_005A6220(&map_copy.alloc, &local_map);
+        ext_005F15D0(*vec_cur, reinterpret_cast<uint8_t*>(self) + 0x160);
+        ++vec_cur;
+        vec_end = lift_field<void**>(arg1, 0x338);
+    }
+
+    void* dummy_iter[2];
+    ext_004EC1F0(&local_map.alloc, dummy_iter, lift_field<void*>(local_map.head, 0x0), &local_map.alloc, local_map.head);
+    ext_006A5C5C(local_map.head);
+    (void)mem_00925134;
+}
+} // namespace lift_005A68B0

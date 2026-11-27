@@ -1,0 +1,58 @@
+{
+  "va": "0x005A68B0",
+  "size": 1382,
+  "orig_symbol": "NMData::BackGroundData::vfunc_19",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_19",
+  "class": "NMData::BackGroundData",
+  "signature": "static inline void msvcp_str_ctor_cstr(MsvcpString* s, const char* cstr)",
+  "summary": "Copies background data sub-elements and bone/transform mappings from another BackGroundData instance.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x158",
+      "type": "uint32_t",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x160",
+      "type": "void*",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x334",
+      "type": "void**",
+      "name": "field_0x334"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x338",
+      "type": "void**",
+      "name": "field_0x338"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x598",
+      "type": "void*",
+      "name": "field_0x598"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x59C",
+      "type": "void*",
+      "name": "field_0x59c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:59:19Z"
+}

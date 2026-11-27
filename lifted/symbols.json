@@ -43800,6 +43800,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A68B0": {
+    "name": "NMData::BackGroundData::vfunc_19",
+    "class": "NMData::BackGroundData",
+    "signature": "static inline void msvcp_str_ctor_cstr(MsvcpString* s, const char* cstr)",
+    "summary": "Copies background data sub-elements and bone/transform mappings from another BackGroundData instance.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x005A6E20": {
     "name": "sub_005A6E20",
     "class": "UnknownClass",
@@ -47653,6 +47660,13 @@
     "class": "NMData::MetaBodyData",
     "signature": "void* __thiscall fn_005C1410(void* self)",
     "summary": "Allocates a 0x220-byte object, initialises it via sub_005C1060, copies 64 bytes from the TransformInterface-supplied buffer into the new object's buffer, then calls its slot 1 with flag 0.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
+  "0x005C14B0": {
+    "name": "NMData::MetaBodyData::vfunc_16_off_C",
+    "class": "NMData::MetaBodyData",
+    "signature": "void* __thiscall fn_005C14B0(void* self, void* arg0)",
+    "summary": "Clones MetaBodyData and creates/attaches its associated render/proxy object",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
   "0x005C16C0": {
