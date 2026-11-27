@@ -70574,6 +70574,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DC200": {
+    "name": "Unknown::initWithCStringAndInt_006DC200",
+    "class": "Unknown",
+    "signature": "void* fn_006DC200(void* self, int32_t unused, const char* s, int32_t arg3)",
+    "summary": "Constructs object by calling base initializer, initializing two range sub-objects at +0xB8 and +0xD0, setting +0xE8 to -1, +0xEC to arg3, and vtable to 0x993BE8.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DC2A0": {
     "name": "sub_006DC2A0",
     "signature": "extern \"C\" void* __fastcall fn_006DC2A0(void* self, int edx_unused, unsigned int flags)",
