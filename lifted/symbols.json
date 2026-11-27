@@ -25518,6 +25518,13 @@
     "summary": "Calls virtual method at +0x74 on this and tail-calls virtual method at +0x3c on field_0x88 if non-null",
     "lifted_path": "lifted/classes/ForceApplicationTool.cpp"
   },
+  "0x00544130": {
+    "name": "Unknown::dtor_00544130",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_00544130(void* self)",
+    "summary": "Destructor: installs vtables, tears down subobject at +0xb0, deletes object at +0xa8, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005441C0": {
     "name": "ForceApplicationTool::vfunc_28",
     "class": "ForceApplicationTool",

@@ -1571,3 +1571,36 @@ void fn_00543C00(void* self) {
     }
 }
 } // namespace lift_00543C00
+
+// [0x00544130]
+namespace lift_00544130 {
+extern uint8_t mem_00956364[];
+extern uint8_t mem_00956264[];
+void __fastcall ext_0054A0E0(void* self);
+void __fastcall ext_00543320(void* self);
+
+// @name Unknown::dtor_00544130
+// @class Unknown
+// @summary Destructor: installs vtables, tears down subobject at +0xb0, deletes object at +0xa8, and calls base destructor.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x98 void* vtable_0x98
+// @field Unknown +0xa8 void* field_0xa8
+// @field Unknown +0xb0 uint8_t field_0xb0
+
+void __fastcall fn_00544130(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    *reinterpret_cast<void**>(base + 0x00) = mem_00956364;
+    *reinterpret_cast<void**>(base + 0x98) = mem_00956264;
+
+    ext_0054A0E0(base + 0xb0);
+
+    void* obj = *reinterpret_cast<void**>(base + 0xa8);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[1])(obj, 1);
+    }
+
+    ext_00543320(self);
+}
+} // namespace lift_00544130
