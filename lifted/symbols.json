@@ -17988,6 +17988,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049EDF0 (PointainerVectorType::vfunc_10).",
     "lifted_path": "lifted/templates/PointainerVectorType.cpp"
   },
+  "0x004B5360": {
+    "name": "AllocConstructAndNotify_004B5360",
+    "signature": "int32_t fn_004B5360(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4)",
+    "summary": "Allocates a 0x28-byte object, and if the allocation succeeded constructs it via sub_004B4EE0 (passing this and four stack args); then passes the construction result through sub_00665870 and sub_00666670 and returns the second stack argument.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B53E0": {
     "name": "VectorFindAndErase",
     "signature": "int32_t __thiscall fn_004B53E0(void* self, const uint32_t* target_ptr)",

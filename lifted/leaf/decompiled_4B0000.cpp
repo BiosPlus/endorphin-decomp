@@ -2577,3 +2577,31 @@ void* fn_004B77E0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
     return ext_00666670(helper_self, created);
 }
 } // namespace lift_004B77E0
+
+// [0x004B5360] sub_004B5360 (126 bytes)
+namespace lift_004B5360 {
+// Known callee 0x004B4EE0: sub_004B4EE0 (thiscall, this = allocated object in ecx; five stack args: caller this, a1..a4; ret 0x14).
+// Known callee 0x00665870: thunk-free helper (one stack arg; returns int32 from global mem_00B59420).
+// Known callee 0x00666670: sub_00666670 (thiscall, this = result of 0x00665870; return value unused).
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (cdecl, one stack arg = allocation size; returns allocated pointer).
+extern void* ext_006A5C62(size_t size);
+extern int32_t ext_004B4EE0(void* self, void* obj, int32_t a1, int32_t a2, int32_t a3, int32_t a4);
+extern int32_t ext_00665870(int32_t arg);
+extern void ext_00666670(int32_t self);
+
+// @name AllocConstructAndNotify_004B5360
+// @summary Allocates a 0x28-byte object, and if the allocation succeeded constructs it via sub_004B4EE0 (passing this and four stack args); then passes the construction result through sub_00665870 and sub_00666670 and returns the second stack argument.
+int32_t fn_004B5360(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4) {
+    void* obj = ext_006A5C62(0x28);
+
+    int32_t constructed = 0;
+    if (obj != nullptr) {
+        constructed = ext_004B4EE0(obj, self, a1, a2, a3, a4);
+    }
+
+    int32_t notified = ext_00665870(constructed);
+    ext_00666670(notified);
+
+    return a2;
+}
+} // namespace lift_004B5360
