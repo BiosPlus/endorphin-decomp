@@ -148,3 +148,45 @@ void fn_004CF320(void* self) {
     }
 }
 } // namespace lift_004CF320
+
+// [0x004CE860] NMData::IncarnationEventData::vfunc_0_off_154 (87 bytes)
+namespace lift_004CE860 {
+// Known callee 0x00494000: setDwordTriple (Stores three stack arguments into the first three DWORD slots of the object at ECX and returns that object.)
+extern void* ext_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+// Known callee 0x004940E0: Unknown::ToggleMaskIfTestMismatch (Tests whether any bit in mask is set in the dword at [this]; XORs mask into it when that differs from flag.)
+extern void ext_004940E0(void* self, uint32_t mask, uint8_t flag);
+// Listed in CALLEES metadata but NOT called by the 87-byte disassembly (metadata mismatch).
+// Referenced by address only, so no call is made and behavior is unchanged.
+extern DWORD* ext_004C3410(void* self, DWORD* out, DWORD key);
+extern void ext_004CFDC0(uint8_t* out, uint32_t value);
+extern void ext_004CFDE0(DWORD* out, DWORD value);
+extern void ext_00671F30(uint32_t* out);
+
+// @name NMData::IncarnationEventData::vfunc_0_off_154
+// @class NMData::IncarnationEventData
+// @summary Builds a 3-dword record into out from a temporary triple, flags out[1]=1 after a mask toggle, and copies the record into out2.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_004CE860(uint32_t* out, uint32_t* out2) {
+    (void)&ext_004C3410;
+    (void)&ext_004CFDC0;
+    (void)&ext_004CFDE0;
+    (void)&ext_00671F30;
+
+    uint32_t tmp[3] = {0, 0, 0};
+    uint32_t* src = static_cast<uint32_t*>(ext_00494000(tmp, 0x40, 0, 0));
+
+    out[0] = src[0];
+    out[1] = src[1];
+    out[2] = src[2];
+
+    ext_004940E0(out, 0x1000, 0);
+
+    out[1] = 1;
+
+    out2[0] = out[0];
+    out2[1] = out[1];
+    out2[2] = out[2];
+}
+} // namespace lift_004CE860

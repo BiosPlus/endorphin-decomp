@@ -18407,6 +18407,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005E2A90 (NMData::HingeData::vfunc_14).",
     "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
   },
+  "0x004CE860": {
+    "name": "NMData::IncarnationEventData::vfunc_0_off_154",
+    "class": "NMData::IncarnationEventData",
+    "signature": "void fn_004CE860(uint32_t* out, uint32_t* out2)",
+    "summary": "Builds a 3-dword record into out from a temporary triple, flags out[1]=1 after a mask toggle, and copies the record into out2.",
+    "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
   "0x004CE8C0": {
     "name": "NMData::IncarnationEventData::vfunc_88",
     "class": "NMData::IncarnationEventData",
