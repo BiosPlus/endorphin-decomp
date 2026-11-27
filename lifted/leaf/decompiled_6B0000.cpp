@@ -2569,3 +2569,30 @@ extern uint32_t __thiscall fn_006B9B40(void* self, uint32_t len, const uint8_t* 
     return result;
 }
 } // namespace lift_006B9B40
+
+// [0x006B9DE0] sub_006B9DE0 (80 bytes)
+namespace lift_006B9DE0 {
+// Known callee 0x006B9910: Unknown::sub_006B9910 (Zero-initializes two dword fields and sets the vtable pointer to mem_00B5D2B8.)
+extern void ext_006B9910(void* self);
+// Known callee 0x006B99D0: Unknown::allocBufferAndForward (Allocates a buffer of the given length via allocBuffer (which may rewrite the length argument through its out pointer), then forwards the resulting length to the MFC80 ord_764 thunk and returns the allocBuffer status.)
+extern uint32_t ext_006B99D0(void* self, uint32_t len);
+
+// @name Unknown::initFillBuffer_006B9DE0
+// @class Unknown
+// @summary Resets self, allocates a buffer of count bytes, and fills it with the byte value; returns self.
+// @field Unknown +0x00 uint8_t* field_0x00
+void* fn_006B9DE0(void* self, uint8_t fill, uint32_t count) {
+    ext_006B9910(self);
+    if (count == 0) {
+        return self;
+    }
+    if (ext_006B99D0(self, count) != 0) {
+        return self;
+    }
+    uint8_t* dst = lift_field<uint8_t*>(self, 0x00);
+    // rep stosd (count / 4 dwords of fill replicated) followed by rep stosb
+    // (count % 4 bytes) writes exactly `count` bytes of `fill`.
+    std::memset(dst, fill, count);
+    return self;
+}
+} // namespace lift_006B9DE0
