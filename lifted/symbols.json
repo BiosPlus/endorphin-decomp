@@ -56092,6 +56092,13 @@
     "summary": "Closes every HANDLE in the [begin,end) array, frees the array buffer via ext_006A5C5C, and zeroes the three pointer fields.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067B1F0": {
+    "name": "Unknown::closeHandlesAndCleanup",
+    "class": "Unknown",
+    "signature": "void fn_0067B1F0(void* self)",
+    "summary": "Runs the base-object cleanup, closes and frees the owned HandleArray if present, then cleans up the embedded sub-object at +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067B260": {
     "name": "RuntimeEngine::NullThread::vfunc_0",
     "class": "RuntimeEngine::NullThread",

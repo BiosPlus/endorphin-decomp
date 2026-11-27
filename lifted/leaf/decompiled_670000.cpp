@@ -2556,3 +2556,44 @@ void fn_0067B090(void* self) {
     lift_field<uint32_t>(self, 0x0C) = 0;
 }
 } // namespace lift_0067B090
+
+// [0x0067B1F0] sub_0067B1F0 (110 bytes)
+namespace lift_0067B1F0 {
+// Known callee 0x0067B050: SubObject::ClearFlagThenVirtualSlot2 (clears byte flag at +0x04, calls ext_0067AE50 on self, then dispatches virtual slot 2).
+extern void ext_0067B050(void* self);
+// Known callee 0x0067B090: HandleArray::CloseAllAndRelease (closes every HANDLE in the [begin,end) array, frees the buffer, zeroes the pointer fields).
+extern void ext_0067B090(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; frees the handle array buffer).
+extern void ext_006A5C5C(void* p);
+// Known callee 0x0065C620: sub_0065C620 (25 bytes).
+extern void ext_0065C620(void* self);
+// Vtable address written into the object at entry.
+extern int mem_0098C5C8;
+
+// @name Unknown::closeHandlesAndCleanup
+// @class Unknown
+// @summary Runs the base-object cleanup, closes and frees the owned HandleArray if present, then cleans up the embedded sub-object at +0x08.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x08 void* subobject
+// @field Unknown +0x0c void* handles
+void fn_0067B1F0(void* self) {
+    // The original sets up an MSVC SEH frame (fs:[0] handler 0x008B4A86) and a
+    // scope-state slot; those are unwinding boilerplate and are omitted here.
+
+    // mov dword ptr [esi], 0x98c5c8
+    *reinterpret_cast<void**>(self) = reinterpret_cast<void*>(&mem_0098C5C8);
+
+    // call sub_0067B050(self)
+    ext_0067B050(self);
+
+    // mov edi, dword ptr [esi + 0xc]; if (edi != 0) { CloseAll(edi); free(edi); }
+    void* handles = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x0c);
+    if (handles != nullptr) {
+        ext_0067B090(handles);
+        ext_006A5C5C(handles);
+    }
+
+    // lea ecx, [esi + 8]; call sub_0065C620(ecx)
+    ext_0065C620(static_cast<char*>(self) + 0x08);
+}
+} // namespace lift_0067B1F0

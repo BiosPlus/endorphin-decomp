@@ -1,0 +1,34 @@
+{
+  "va": "0x0067B1F0",
+  "size": 110,
+  "orig_symbol": "sub_0067B1F0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Unknown::closeHandlesAndCleanup",
+  "class": "Unknown",
+  "signature": "void fn_0067B1F0(void* self)",
+  "summary": "Runs the base-object cleanup, closes and frees the owned HandleArray if present, then cleans up the embedded sub-object at +0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "handles"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:20:31Z"
+}
