@@ -1,0 +1,22 @@
+{
+  "va": "0x0042C0D0",
+  "size": 243,
+  "orig_symbol": "sub_0042C0D0",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "TreeMap::insertUnique",
+  "class": "TreeMap",
+  "signature": "extern \"C\" InsertResult* __thiscall fn_0042C0D0(void* self, InsertResult* ret, const void* val)",
+  "summary": "std::map\u003cstd::string,...\u003e::insert (unique): finds slot, inserts if key absent, returns pair\u003citerator,bool\u003e.",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:40:56Z"
+}

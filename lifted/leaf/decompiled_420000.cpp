@@ -2443,3 +2443,57 @@ bool fn_00429350(void* self, const void* key, const uint32_t* value, uint8_t thr
     return false;
 }
 } // namespace lift_00429350
+
+// [0x0042C0D0]
+namespace lift_0042C0D0 {
+extern void __thiscall ext_004273F0(void* self);
+extern void* __thiscall ext_0042BED0(void* self, void* outIter, bool addLeft, void* whereNode, const void* val);
+extern void* mem_00924EF4; // MSVCP80 operator<(const string&, const string&)
+
+typedef bool (__cdecl *StrLessFn)(const void*, const void*);
+
+struct TreeIter { void* cont; uint8_t* node; };
+struct InsertResult { void* cont; void* node; bool inserted; };
+
+// @name TreeMap::insertUnique
+// @class TreeMap
+// @summary std::map<std::string,...>::insert (unique): finds slot, inserts if key absent, returns pair<iterator,bool>.
+// @field TreeMap +0x04 void* head
+extern InsertResult* __thiscall fn_0042C0D0(void* self, InsertResult* ret, const void* val) {
+    StrLessFn strLess = (StrLessFn)mem_00924EF4;
+    uint8_t* head = *(uint8_t**)((uint8_t*)self + 0x4);
+    uint8_t* node = *(uint8_t**)(head + 0x4);
+    uint8_t* where = head;
+    bool addLeft = true;
+    while (*(node + 0x59) == 0) {
+        where = node;
+        addLeft = strLess(val, node + 0xc);
+        node = addLeft ? *(uint8_t**)(node + 0x0) : *(uint8_t**)(node + 0x8);
+    }
+    TreeIter it;
+    it.cont = self;
+    it.node = where;
+    TreeIter tmp;
+    if (addLeft) {
+        if (where == **(uint8_t***)((uint8_t*)self + 0x4)) {
+            TreeIter* r = (TreeIter*)ext_0042BED0(self, &tmp, true, where, val);
+            ret->cont = r->cont;
+            ret->node = r->node;
+            ret->inserted = true;
+            return ret;
+        }
+        ext_004273F0(&it);
+    }
+    if (strLess(it.node + 0xc, val)) {
+        TreeIter* r = (TreeIter*)ext_0042BED0(self, &tmp, addLeft, where, val);
+        ret->cont = r->cont;
+        ret->node = r->node;
+        ret->inserted = true;
+        return ret;
+    }
+    ret->cont = it.cont;
+    ret->node = it.node;
+    ret->inserted = false;
+    return ret;
+}
+} // namespace lift_0042C0D0

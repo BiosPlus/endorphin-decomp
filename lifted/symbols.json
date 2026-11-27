@@ -3451,6 +3451,13 @@
     "summary": "Inserts a (string, uint32_t) pair into a sorted unique vector; optionally throws on duplicate.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x0042C0D0": {
+    "name": "TreeMap::insertUnique",
+    "class": "TreeMap",
+    "signature": "extern \"C\" InsertResult* __thiscall fn_0042C0D0(void* self, InsertResult* ret, const void* val)",
+    "summary": "std::map\u003cstd::string,...\u003e::insert (unique): finds slot, inserts if key absent, returns pair\u003citerator,bool\u003e.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042E7B0": {
     "name": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0",
     "class": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
