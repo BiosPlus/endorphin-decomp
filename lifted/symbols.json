@@ -49931,6 +49931,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0050BE20 (Vector_eraseTailChecked).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00675430": {
+    "name": "sub_00675430",
+    "signature": "void fn_00675430(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B66E0 (DestroyOwnedRangeAndFree).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00675650": {
     "name": "sub_00675650",
     "signature": "extern \"C\" void fn_00675650(void)",

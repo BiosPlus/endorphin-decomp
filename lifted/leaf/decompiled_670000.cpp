@@ -2056,3 +2056,41 @@ void fn_00672C20(void* first, void* last) {
     }
 }
 } // namespace lift_00672C20
+
+// [0x00675430] sub_00675430 (121 bytes)
+namespace lift_00675430 {
+// @name sub_00675430
+// @summary Auto-lifted identical-shape clone of 0x004B66E0 (DestroyOwnedRangeAndFree).
+namespace lift_004B66E0 {
+// Known callee 0x004B6680: DestroyOwnedRange (Iterates [first, last) over a container of owned object pointers (debug-checked iterators), calling each non-null element's virtual slot 0x234 with flag 1 (scalar deleting destructor).)
+extern void ext_00675240(uintptr_t container, uintptr_t first, uintptr_t container2, uintptr_t last);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.) Called cdecl with one argument (the buffer to free).
+extern void ext_006A5C5C(uintptr_t block);
+extern int mem_00925134;
+
+// @name DestroyOwnedRangeAndFree
+// @summary Destroys the owned objects in [begin, end), frees the begin buffer if non-null, and zeroes begin/end/+0xC.
+// @field Unknown +0x04 uint32_t begin
+// @field Unknown +0x08 uint32_t end
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_00675430(void* self) {
+    // The MSVC SEH frame setup/teardown and the debug invalid-parameter guards
+    // (begin <= end checks calling _invalid_parameter_noinfo via mem_00925134) are CRT boilerplate and are omitted.
+    (void)&mem_00925134;
+    const uintptr_t selfVal = reinterpret_cast<uintptr_t>(self);
+    uint32_t& begin = lift_field<uint32_t>(self, 0x4);
+    uint32_t& end = lift_field<uint32_t>(self, 0x8);
+
+    ext_00675240(selfVal, begin, selfVal, end);
+
+    // Re-read begin after the range destruction, as the original does.
+    if (begin != 0) {
+        ext_006A5C5C(begin);
+    }
+
+    begin = 0;
+    end = 0;
+    lift_field<uint32_t>(self, 0xC) = 0;
+}
+} // namespace lift_004B66E0
+} // namespace lift_00675430
