@@ -1,0 +1,13 @@
+{
+  "va": "0x00427640",
+  "size": 98,
+  "orig_symbol": "sub_00427640",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "checkStringEqualsConst",
+  "signature": "extern \"C\" void __cdecl fn_00427640(void* /*arg0*/, void* obj, uint8_t* out)",
+  "summary": "Gets a std::string via ext_004275C0, compares it with mem_0092F10C, and stores the boolean result in *out.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:00:08Z"
+}
