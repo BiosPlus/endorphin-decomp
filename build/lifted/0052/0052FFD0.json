@@ -1,0 +1,34 @@
+{
+  "va": "0x0052FFD0",
+  "size": 114,
+  "orig_symbol": "sub_0052FFD0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::newAnimationDerived_0052FFD0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* ext_006A5C62(uint32_t size);  // IAT thunk -\u003e MFC80!ord_762 (allocator), cdecl void* ext_0053B240(void* self);                // Unknown::initAnimationDerived_0053B240 void* fn_0052FFD0(void)",
+  "summary": "Allocates a 0x40-byte object, base-initializes it, installs two vtable pointers and clears +0x3C; returns the object or null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "vftable_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:03:44Z"
+}

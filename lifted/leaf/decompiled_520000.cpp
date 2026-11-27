@@ -1661,3 +1661,27 @@ void* __thiscall sub_00527D60(void* self, void* ret_iter, void* container, uintp
     return ret_iter;
 }
 } // namespace lift_00527D60
+
+// [0x0052FFD0]
+namespace lift_0052FFD0 {
+extern void* ext_006A5C62(uint32_t size);  // IAT thunk -> MFC80!ord_762 (allocator), cdecl
+void* ext_0053B240(void* self);                // Unknown::initAnimationDerived_0053B240
+
+// @name Unknown::newAnimationDerived_0052FFD0
+// @class Unknown
+// @summary Allocates a 0x40-byte object, base-initializes it, installs two vtable pointers and clears +0x3C; returns the object or null.
+// @field Unknown +0x00 uint32_t vftable_0x00
+// @field Unknown +0x14 uint32_t vftable_0x14
+// @field Unknown +0x3C uint32_t field_0x3C
+void* fn_0052FFD0(void) {
+    void* obj = ext_006A5C62(0x40);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    ext_0053B240(obj);
+    lift_field<uint32_t>(obj, 0x00) = 0x953f94;
+    lift_field<uint32_t>(obj, 0x14) = 0x953f8c;
+    lift_field<uint32_t>(obj, 0x3C) = 0;
+    return obj;
+}
+} // namespace lift_0052FFD0
