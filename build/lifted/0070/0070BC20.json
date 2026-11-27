@@ -1,0 +1,14 @@
+{
+  "va": "0x0070BC20",
+  "size": 80,
+  "orig_symbol": "sub_0070BC20",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::SetValueTriple",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_0070BC20(void* self, const double* values)",
+  "summary": "Resolves a child object via GetValueIfCountPositive, converts three doubles at values[0..2] to floats, and applies each through sub-object setters (ext_006C9810, ext_006C9830, ext_006C9850) followed by ext_006CD330.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-carbon@low",
+  "lifted_at": "2026-11-27T13:46:41Z"
+}

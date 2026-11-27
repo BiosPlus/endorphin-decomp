@@ -98432,6 +98432,13 @@
     "summary": "Resolves a value index via GetValueIfCountPositive, then reads three float getters through chained sub-object lookups and stores them as doubles into the caller-supplied buffer at offsets 0x00, 0x08 and 0x10; returns that buffer.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070BC20": {
+    "name": "Unknown::SetValueTriple",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_0070BC20(void* self, const double* values)",
+    "summary": "Resolves a child object via GetValueIfCountPositive, converts three doubles at values[0..2] to floats, and applies each through sub-object setters (ext_006C9810, ext_006C9830, ext_006C9850) followed by ext_006CD330.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070BC70": {
     "name": "Unknown::FillValueTriple",
     "class": "Unknown",
