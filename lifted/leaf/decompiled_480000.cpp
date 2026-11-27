@@ -3745,3 +3745,54 @@ void fn_004836C0(void* self, IterResult* out, void* a2, uint8_t* a3, uint32_t a4
 }
 } // namespace lift_00475710
 } // namespace lift_004836C0
+
+// [0x00484E90] sub_00484E90 (131 bytes)
+namespace lift_00484E90 {
+// Known callee 0x00481770: replicateBlock64ToSlots_00481770.
+// Called cdecl with six stack arguments (caller cleans up with add esp,0x18).
+extern void ext_00481770(uint32_t a0, uint32_t a1, uint32_t a2,
+                             uint32_t a3, uint32_t a4, uint32_t a5);
+// Known callee 0x00483630: sub_00483630 (insert/grow path).
+// Called with ECX = this and four stack arguments (callee cleans up: ret 0x10).
+extern void ext_00483630(void* ecx_this, uint32_t* valueRef, void* self,
+                             uint32_t end, uint32_t value);
+// Import slot for _invalid_parameter_noinfo (called indirectly at 0x484EF2).
+extern int mem_00925134;
+
+// @name Vector::PushBack64Block_00484E90
+// @class Vector
+// @summary Appends one 64-byte block to a Vector of 64-byte elements: if capacity allows, calls the slot helper at the end pointer and advances end by 0x40; otherwise validates the range and calls the grow/insert helper.
+// @field Vector +0x04 uint32_t begin
+// @field Vector +0x08 uint32_t end
+// @field Vector +0x0C uint32_t capEnd
+void fn_00484E90(void* self, uint32_t value) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x04);
+
+    // Fast path: begin != 0 and size < capacity (both in 64-byte units).
+    if (begin != 0) {
+        const uint32_t end = lift_field<uint32_t>(self, 0x08);
+        const uint32_t capEnd = lift_field<uint32_t>(self, 0x0C);
+        const uint32_t size = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 6);
+        const uint32_t cap = static_cast<uint32_t>(static_cast<int32_t>(capEnd - begin) >> 6);
+        if (size < cap) {
+            // Original pushes a zeroed byte (stored at [esp+8]) as a dword.
+            uint32_t flag = 0;
+            const uint32_t selfAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+            ext_00481770(end, 1, value, selfAddr, value, flag);
+            lift_field<uint32_t>(self, 0x08) = end + 0x40;
+            return;
+        }
+    }
+
+    // Slow path: if begin > end (unsigned) the original calls the CRT
+    // invalid-parameter handler (noreturn).
+    const uint32_t end = lift_field<uint32_t>(self, 0x08);
+    if (begin > end) {
+        (void)&mem_00925134;
+        std::abort();
+    }
+
+    // Grow/insert path: ECX = this, args (&value, this, end, value).
+    ext_00483630(self, &value, self, end, value);
+}
+} // namespace lift_00484E90

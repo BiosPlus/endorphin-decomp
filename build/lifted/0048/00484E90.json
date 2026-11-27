@@ -1,0 +1,34 @@
+{
+  "va": "0x00484E90",
+  "size": 131,
+  "orig_symbol": "sub_00484E90",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Vector::PushBack64Block_00484E90",
+  "class": "Vector",
+  "signature": "void fn_00484E90(void* self, uint32_t value)",
+  "summary": "Appends one 64-byte block to a Vector of 64-byte elements: if capacity allows, calls the slot helper at the end pointer and advances end by 0x40; otherwise validates the range and calls the grow/insert helper.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "capEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:21Z"
+}

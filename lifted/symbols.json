@@ -11814,6 +11814,13 @@
     "summary": "Clears self's pointer vector, reserves for src's element count, then appends each src element that dynamic-casts to the target type.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00484E90": {
+    "name": "Vector::PushBack64Block_00484E90",
+    "class": "Vector",
+    "signature": "void fn_00484E90(void* self, uint32_t value)",
+    "summary": "Appends one 64-byte block to a Vector of 64-byte elements: if capacity allows, calls the slot helper at the end pointer and advances end by 0x40; otherwise validates the range and calls the grow/insert helper.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00484FB0": {
     "name": "sub_00484FB0",
     "signature": "static inline void invalid_parameter_noinfo()",
