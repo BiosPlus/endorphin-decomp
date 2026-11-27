@@ -1,0 +1,22 @@
+{
+  "va": "0x00532400",
+  "size": 37,
+  "orig_symbol": "HasBufferedTMPtr::vfunc_2",
+  "src_path": "src/classes/HasBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp",
+  "name": "HasBufferedTMPtr::CopyBufferedElement",
+  "class": "HasBufferedTMPtr",
+  "signature": "void __thiscall fn_00532400(void* self, void* dst)",
+  "summary": "Fetches the element at this-\u003eindex via the global buffer wrapper and copies its 64 bytes (16 dwords) into dst.",
+  "fields": [
+    {
+      "class": "HasBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "index"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:26Z"
+}

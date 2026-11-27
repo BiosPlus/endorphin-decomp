@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/classes/HasBufferedTMPtr.cpp
 #include "lift_compat.h"
+#include <cstring>
 
 // [0x00532430]
 namespace lift_00532430 {
@@ -72,3 +73,24 @@ uint32_t fn_005324B0(void* self, void* arg) {
     return fn(arg, value);
 }
 } // namespace lift_005324B0
+
+// [0x00532400] HasBufferedTMPtr::vfunc_2 (37 bytes)
+namespace lift_00532400 {
+// Known callee 0x00661B50: sub_00661B50 (Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index)
+extern uint32_t ext_00661B50(void* this_ptr, uint32_t index);
+extern uint32_t mem_00AEE8A8;
+extern int mem_009253D0; // .rdata ">sb"; not accessed by code, referenced only for metadata
+
+// @name HasBufferedTMPtr::CopyBufferedElement
+// @class HasBufferedTMPtr
+// @summary Fetches the element at this->index via the global buffer wrapper and copies its 64 bytes (16 dwords) into dst.
+// @field HasBufferedTMPtr +0x04 uint32_t index
+void __thiscall fn_00532400(void* self, void* dst) {
+    (void)&mem_009253D0;
+    const uint32_t index = lift_field<uint32_t>(self, 0x4);
+    void* wrapper = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00AEE8A8));
+    const uint32_t src_addr = ext_00661B50(wrapper, index);
+    const void* src = reinterpret_cast<const void*>(static_cast<uintptr_t>(src_addr));
+    std::memcpy(dst, src, 16 * sizeof(uint32_t));
+}
+} // namespace lift_00532400
