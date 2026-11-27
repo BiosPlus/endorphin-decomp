@@ -1221,3 +1221,52 @@ void fn_005D1020(void* self, float value) {
     ext_0065C650(lock);
 }
 } // namespace lift_005D1020
+
+// [0x005D10C0] sub_005D10C0 (152 bytes)
+namespace lift_005D10C0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x005B11D0: UnknownClass::getElementPtr (Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.)
+extern uint32_t* ext_005B11D0(uintptr_t self, uint32_t index);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+
+// @name UnknownClass::setElement0AndDispatch
+// @class UnknownClass
+// @summary If the flag at +0x1F1 is clear, store a float into element 0 of the inline array at +0x210, set the flag at +0x214, and dispatch on the global object under a critical section.
+// @field UnknownClass +0x1F1 uint8_t field_0x1f1
+// @field UnknownClass +0x210 uint32_t inlineArray
+// @field UnknownClass +0x214 uint8_t flag214
+void fn_005D10C0(void* self, float value) {
+    // Skip entirely if the guard byte is set.
+    if (lift_field<uint8_t>(self, 0x1f1) != 0) {
+        return;
+    }
+
+    // Global object returned by ext_00594000 (used as a pointer).
+    uint8_t* obj = reinterpret_cast<uint8_t*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+
+    // Object held at obj+0x258; load it and call its vtable slot at +0x1D8.
+    void* target = *reinterpret_cast<void**>(obj + 0x258);
+    void** vtbl = *reinterpret_cast<void***>(target);
+    void* slotFn = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x1d8);
+    void* cs = reinterpret_cast<void* (*)(void*)>(slotFn)(target);
+
+    ext_0065C640(cs);
+
+    // Element 0 of the inline array at self+0x210, stored as float.
+    uint32_t* elem = ext_005B11D0(reinterpret_cast<uintptr_t>(self) + 0x210, 2u);
+    *reinterpret_cast<float*>(elem) = value;
+
+    lift_field<uint8_t>(self, 0x214) = 1;
+
+    ext_00493EE0(obj + 0x258);
+
+    ext_0065C650(cs);
+}
+} // namespace lift_005D10C0
