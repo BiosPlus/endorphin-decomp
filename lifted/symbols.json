@@ -49689,6 +49689,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00672C20": {
+    "name": "DestroyStringElementRange",
+    "class": "Element",
+    "signature": "void fn_00672C20(void* first, void* last)",
+    "summary": "Iterates [first, last) over 0x2C-byte elements; for each element with a non-null owner at +0x28, calls its vtable slot 0x78 with (owner, \u0026element+0x24), then destroys the std::string at element+0x00.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672D10": {
     "name": "StdVectorStringTidy",
     "signature": "void fn_00672D10(void* self)",

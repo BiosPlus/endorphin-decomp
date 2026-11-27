@@ -1,0 +1,34 @@
+{
+  "va": "0x00672C20",
+  "size": 120,
+  "orig_symbol": "sub_00672C20",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "DestroyStringElementRange",
+  "class": "Element",
+  "signature": "void fn_00672C20(void* first, void* last)",
+  "summary": "Iterates [first, last) over 0x2C-byte elements; for each element with a non-null owner at +0x28, calls its vtable slot 0x78 with (owner, \u0026element+0x24), then destroys the std::string at element+0x00.",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x0",
+      "type": "std::string name (basic_string destroyed each",
+      "name": "iteration)"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x24",
+      "type": "uint32_t subobject (address passed to the virtual",
+      "name": "call)"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x28",
+      "type": "uint32_t owner (receiver of virtual call; skipped when",
+      "name": "null)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:14:52Z"
+}

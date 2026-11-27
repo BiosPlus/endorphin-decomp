@@ -14,6 +14,7 @@ struct Element_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00404EA0, 0x004DE370, 0x006878E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  field_0x00[0x1C]  (evidence: 0x004C72D0, 0x004CF910) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 firstDword  (evidence: 0x00555420) // CONFLICT: multiple definitions at +0x0
+    // +0x0   std::string name (basic_string destroyed each iteration)  (evidence: 0x00672C20) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t*                 obj  (evidence: 0x00688670) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint8_t[28] field_0x04 (std::string sub-object, assigned via ext_MSVCP80_string_assign)  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x00404EA0, 0x00503BC0, 0x00508BC0, 0x00509C50, 0x0050C4D0, 0x005567D0) // CONFLICT: multiple definitions at +0x4
@@ -30,6 +31,8 @@ struct Element_Fields {
     // +0x1C  std::string              field_0x1c  (evidence: 0x00621090, 0x00621680) // CONFLICT: multiple definitions at +0x1C
     // +0x20  float                    field_0x20  (evidence: 0x00503BC0, 0x00508BC0, 0x00509C50, 0x0050C4D0) // CONFLICT: multiple definitions at +0x20
     // +0x20  std::string              field_0x20  (evidence: 0x00404EA0, 0x005567D0) // CONFLICT: multiple definitions at +0x20
+    // +0x24  uint32_t subobject (address passed to the virtual call)  (evidence: 0x00672C20)
+    // +0x28  uint32_t owner (receiver of virtual call; skipped when null)  (evidence: 0x00672C20)
     // +0x34  uint32_t                 field_0x34  (evidence: 0x006FA830)
     // +0x38  double                   field_0x38  (evidence: 0x00621090) // CONFLICT: multiple definitions at +0x38
     // +0x38  std::string              field_0x38  (evidence: 0x00575230) // CONFLICT: multiple definitions at +0x38

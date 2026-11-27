@@ -2011,3 +2011,48 @@ void* __thiscall sub_00673C90(void* self, const void* other) {
     return self;
 }
 } // namespace lift_00673C90
+
+// [0x00672C20] sub_00672C20 (120 bytes)
+namespace lift_00672C20 {
+extern int mem_00924FF4;
+
+// @name DestroyStringElementRange
+// @class Element
+// @summary Iterates [first, last) over 0x2C-byte elements; for each element with a non-null owner at +0x28, calls its vtable slot 0x78 with (owner, &element+0x24), then destroys the std::string at element+0x00.
+// @field Element +0x00 std::string name (basic_string destroyed each iteration)
+// @field Element +0x24 uint32_t subobject (address passed to the virtual call)
+// @field Element +0x28 uint32_t owner (receiver of virtual call; skipped when null)
+void fn_00672C20(void* first, void* last) {
+    // Element stride is 0x2C bytes.
+    constexpr uintptr_t kStride = 0x2C;
+
+    // Imported std::string destructor; the IAT constant holds the guest target address.
+    using StringDtor = void(__thiscall*)(void* self);
+    // Virtual slot 0x78 (index 30) on the owner's vtable; takes one stack argument.
+    using VirtualSlot78 = void(__thiscall*)(void* self, void* arg);
+
+    uintptr_t it = reinterpret_cast<uintptr_t>(first);
+    const uintptr_t end = reinterpret_cast<uintptr_t>(last);
+
+    while (it != end) {
+        void* elem = reinterpret_cast<void*>(it);
+
+        const uint32_t owner = lift_field<uint32_t>(elem, 0x28);
+        if (owner != 0) {
+            void* ownerObj = reinterpret_cast<void*>(static_cast<uintptr_t>(owner));
+            const uint32_t vtbl = lift_field<uint32_t>(ownerObj, 0x00);
+            const uint32_t slot =
+                lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x78);
+            auto fn = reinterpret_cast<VirtualSlot78>(static_cast<uintptr_t>(slot));
+            void* subobj = static_cast<uint8_t*>(elem) + 0x24;
+            fn(ownerObj, subobj);
+        }
+
+        auto dtor = reinterpret_cast<StringDtor>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        dtor(elem);
+
+        it += kStride;
+    }
+}
+} // namespace lift_00672C20
