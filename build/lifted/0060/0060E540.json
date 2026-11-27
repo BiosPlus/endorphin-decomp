@@ -1,0 +1,52 @@
+{
+  "va": "0x0060E540",
+  "size": 66,
+  "orig_symbol": "NMData::SensorData::vfunc_62",
+  "src_path": "src/NMData/SensorData.cpp",
+  "lifted_path": "lifted/NMData/SensorData.cpp",
+  "name": "NMData::SensorData::vfunc_62",
+  "class": "NMData::SensorData",
+  "signature": "extern \"C\" void __thiscall fn_0060E540(uint8_t* self)",
+  "summary": "Clears two string fields and resets sensor data fields to default values.",
+  "fields": [
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x14",
+      "type": "std::string",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0xE8",
+      "type": "int32_t",
+      "name": "field_0xe8"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x154",
+      "type": "std::string",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "field_0x174"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x178",
+      "type": "float",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:35:21Z"
+}
