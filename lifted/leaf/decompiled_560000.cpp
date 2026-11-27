@@ -1053,3 +1053,26 @@ void* fn_005691C0(void* first, void* last, void* dest) {
     return out;
 }
 } // namespace lift_005691C0
+
+// [0x0056DBE0] sub_0056DBE0 (95 bytes)
+namespace lift_0056DBE0 {
+extern void ext_00662610(void* a1, void* a2);
+extern void ext_006A6C87(void* a1);
+extern int mem_00B3B4B0;
+extern int mem_00B3B494;
+
+// @name InitOnce_0056DBE0
+// @summary One-time guarded init: sets bit 0 of mem_00B3B4B0, runs ext_00662610 and ext_006A6C87 on first call, returns &mem_00B3B494.
+int* fn_0056DBE0() {
+    // The original asm wraps this in an SEH frame (fs:[0] push/pop). That
+    // frame is exception-handling bookkeeping only; the try-level store is
+    // dropped, the guarded logic is preserved exactly.
+    if ((mem_00B3B4B0 & 1) == 0) {
+        mem_00B3B4B0 |= 1;
+        ext_00662610(&mem_00B3B494,
+                     reinterpret_cast<void*>(static_cast<uintptr_t>(0x00A85658)));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091C700)));
+    }
+    return &mem_00B3B494;
+}
+} // namespace lift_0056DBE0

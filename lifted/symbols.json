@@ -37269,6 +37269,12 @@
     "summary": "Formats or resolves a path/string using sub_00640390 and delegates to NMFileIO::vfunc_3, returning arg0.",
     "lifted_path": "lifted/classes/BVHIO.cpp"
   },
+  "0x0056DBE0": {
+    "name": "InitOnce_0056DBE0",
+    "signature": "int* fn_0056DBE0()",
+    "summary": "One-time guarded init: sets bit 0 of mem_00B3B4B0, runs ext_00662610 and ext_006A6C87 on first call, returns \u0026mem_00B3B494.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00570350": {
     "name": "CDLCharacterIO::vfunc_3",
     "class": "CDLCharacterIO",
