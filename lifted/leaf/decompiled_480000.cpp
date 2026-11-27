@@ -3553,3 +3553,61 @@ void* fn_00481FD0(void* self, const void* arg0) {
 }
 } // namespace lift_00479620
 } // namespace lift_00481FD0
+
+// [0x0048D260] sub_0048D260 (173 bytes)
+namespace lift_0048D260 {
+extern void ext_0048CF10(void* self, void* owner, uint8_t* where, int count, const void* value);
+extern int mem_00925134;
+
+// Stands in for MSVCR80!_invalid_parameter_noinfo (IAT slot mem_00925134): the CRT
+// handler never returns, so this aborts.
+[[noreturn]] static void invalid_parameter() {
+    (void)&mem_00925134;
+    std::abort();
+}
+
+// @name ElementVector_InsertAt_0048D260
+// @class ElementVector
+// @summary Inserts one 0x68-byte element at iterator `where` (index = (where - first) / 0x68), writes the {container, new-position} iterator to `out`, and returns `out`.
+// @field ElementVector +0x04 uint8_t* first
+// @field ElementVector +0x08 uint8_t* last
+void* fn_0048D260(void* self, void* out, void* owner, uint8_t* where, const void* value) {
+    constexpr intptr_t kElemSize = 0x68;
+
+    const uint8_t* first = lift_field<uint8_t*>(self, 0x4);
+    const uintptr_t firstAddr = reinterpret_cast<uintptr_t>(first);
+    const uintptr_t lastAddr = reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x8));
+
+    intptr_t index = 0;
+    if (first == nullptr || static_cast<int32_t>(lastAddr - firstAddr) / kElemSize == 0) {
+        index = 0;
+    } else {
+        if (firstAddr > lastAddr) {
+            invalid_parameter();
+        }
+        if (owner != self) {
+            invalid_parameter();
+        }
+        const auto offset = static_cast<int32_t>(reinterpret_cast<uintptr_t>(where) - firstAddr);
+        index = offset / kElemSize;
+    }
+
+    ext_0048CF10(self, owner, where, 1, value);
+
+    const uintptr_t newFirstAddr = reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x4));
+    const uintptr_t newLastAddr = reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x8));
+    if (newFirstAddr > newLastAddr) {
+        invalid_parameter();
+    }
+
+    const uintptr_t resultAddr =
+        newFirstAddr + static_cast<uintptr_t>(static_cast<intptr_t>(index) * kElemSize);
+    if (resultAddr > newLastAddr || resultAddr < newFirstAddr) {
+        invalid_parameter();
+    }
+
+    lift_field<void*>(out, 0) = self;
+    lift_field<void*>(out, 4) = reinterpret_cast<void*>(resultAddr);
+    return out;
+}
+} // namespace lift_0048D260

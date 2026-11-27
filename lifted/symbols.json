@@ -12726,6 +12726,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048D260": {
+    "name": "ElementVector_InsertAt_0048D260",
+    "class": "ElementVector",
+    "signature": "[[noreturn]] static void invalid_parameter()",
+    "summary": "Inserts one 0x68-byte element at iterator `where` (index = (where - first) / 0x68), writes the {container, new-position} iterator to `out`, and returns `out`.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048D310": {
     "name": "ElementRange::ReleaseAndReset",
     "class": "ElementRange",

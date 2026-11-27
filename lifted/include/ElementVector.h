@@ -8,8 +8,10 @@
 // Recovered field layout for ElementVector:
 namespace lifted_layout {
 struct ElementVector_Fields {
-    // +0x4   uint32_t*                vec_first  (evidence: 0x0043F9E0)
-    // +0x8   uint32_t*                vec_last  (evidence: 0x0043F9E0)
+    // +0x4   uint8_t*                 first  (evidence: 0x0048D260) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t*                vec_first  (evidence: 0x0043F9E0) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint8_t*                 last  (evidence: 0x0048D260) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t*                vec_last  (evidence: 0x0043F9E0) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t*                vec_end  (evidence: 0x0043F9E0)
 };
 } // namespace lifted_layout
