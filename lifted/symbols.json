@@ -26285,6 +26285,13 @@
     "summary": "Destructor: installs vtable, deletes the GLU quadric at +0x18, tears down subobject at +0x1c, then calls sub_00552850.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054A330": {
+    "name": "ToolGraphics::RotateHandleGraphic::initQuadrics",
+    "class": "ToolGraphics::RotateHandleGraphic",
+    "signature": "static inline void* u32ToPtr(uint32_t v)",
+    "summary": "Resets the handle graphic base, installs the derived vtable, creates two GLU quadrics (line-style and fill-style smooth-normal), and runs the vfunc_1 refresh.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054A3B0": {
     "name": "ToolGraphics::RotateHandleGraphic::vfunc_0",
     "class": "ToolGraphics::RotateHandleGraphic",

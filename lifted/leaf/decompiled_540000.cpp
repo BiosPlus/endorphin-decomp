@@ -1757,3 +1757,52 @@ void fn_00543220(void* self, int index, uint8_t flag) {
     lift_field<int>(self, 0x00) = index;
 }
 } // namespace lift_00543220
+
+// [0x0054A330] sub_0054A330 (125 bytes)
+namespace lift_0054A330 {
+// Known callee 0x00549910: ToolGraphics::RotateHandleGraphic::vfunc_1 (thiscall, no args beyond this).
+extern void __fastcall ext_00549910(void* self);
+// Known callee 0x005528E0: HandleGraphic::setVtableAndReset (fastcall, returns self).
+extern void* __fastcall ext_005528E0(void* self);
+// Known callee 0x0063E000: thunk_GLU32_gluNewQuadric (stdcall, returns GLUquadric*).
+extern void* __stdcall ext_0063E000(void);
+// Known callee 0x0063E00C: thunk_GLU32_gluQuadricNormals (stdcall, (GLUquadric*, GLenum)).
+extern void __stdcall ext_0063E00C(void* quadric, GLenum normals);
+// Known callee 0x0063E012: thunk_GLU32_gluQuadricDrawStyle (stdcall, (GLUquadric*, GLenum)).
+extern void __stdcall ext_0063E012(void* quadric, GLenum drawStyle);
+
+// GLU constants used by the original code.
+static constexpr GLenum kGluSmooth = 100000;   // 0x186A0
+static constexpr GLenum kGluLine   = 100011;   // 0x186AB
+static constexpr GLenum kGluFill   = 100012;   // 0x186AC
+
+static inline void* u32ToPtr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+static inline uint32_t ptrToU32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ToolGraphics::RotateHandleGraphic::initQuadrics
+// @class ToolGraphics::RotateHandleGraphic
+// @summary Resets the handle graphic base, installs the derived vtable, creates two GLU quadrics (line-style and fill-style smooth-normal), and runs the vfunc_1 refresh.
+// @field ToolGraphics::RotateHandleGraphic +0x00 uint32_t vtable
+// @field ToolGraphics::RotateHandleGraphic +0x18 uint32_t quadricLine
+// @field ToolGraphics::RotateHandleGraphic +0x1c uint32_t quadricFill
+void* fn_0054A330(void* self) {
+    ext_005528E0(self);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00956CE4u;
+
+    lift_field<uint32_t>(self, 0x18) = ptrToU32(ext_0063E000());
+    ext_0063E012(u32ToPtr(lift_field<uint32_t>(self, 0x18)), kGluLine);
+
+    lift_field<uint32_t>(self, 0x1C) = ptrToU32(ext_0063E000());
+    ext_0063E012(u32ToPtr(lift_field<uint32_t>(self, 0x1C)), kGluFill);
+    ext_0063E00C(u32ToPtr(lift_field<uint32_t>(self, 0x1C)), kGluSmooth);
+
+    ext_00549910(self);
+
+    return self;
+}
+} // namespace lift_0054A330

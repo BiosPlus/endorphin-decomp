@@ -1,0 +1,34 @@
+{
+  "va": "0x0054A330",
+  "size": 125,
+  "orig_symbol": "sub_0054A330",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "ToolGraphics::RotateHandleGraphic::initQuadrics",
+  "class": "ToolGraphics::RotateHandleGraphic",
+  "signature": "static inline void* u32ToPtr(uint32_t v)",
+  "summary": "Resets the handle graphic base, installs the derived vtable, creates two GLU quadrics (line-style and fill-style smooth-normal), and runs the vfunc_1 refresh.",
+  "fields": [
+    {
+      "class": "ToolGraphics::RotateHandleGraphic",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "ToolGraphics::RotateHandleGraphic",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "quadricLine"
+    },
+    {
+      "class": "ToolGraphics::RotateHandleGraphic",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "quadricFill"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:53:53Z"
+}
