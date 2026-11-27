@@ -186668,3 +186668,56 @@ bool fn_00513740(void* self, void** arg0, void* arg1) {
     return result;
 }
 } // namespace lift_00513740
+
+// [0x005B38C0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_44 (164 bytes)
+namespace lift_005B38C0 {
+// Known callee 0x006720E0: sub_006720E0 (43B). Constructs temp value object from `value`.
+extern void ext_006720E0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04 / field_0x00).
+extern void ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object with fixed message).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exception, void* throw_info);
+// RDATA throw-info descriptor at 0x009DEC1C.
+extern uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType::vfunc_44
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Gets a value from the held object's sub-object via vfunc slot 8, copies it into self via Unknown::assignFromOther, releases the temp, then forwards to vfunc slot 44 of self's field_0x04 (throws if field_0x00 is null).
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0> +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0c
+void* fn_005B38C0(void* self, void* arg2) {
+    void* x = lift_field<void*>(self, 0x00);
+    if (x == nullptr) {
+        // Throw path: build DerivedException and raise it through MSVC's CxxThrowException.
+        alignas(8) uint8_t exc[16]{};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    // p = x->field_0x0c; v = p->vfunc[8](); (vtable slot 0x20)
+    void* p = lift_field<void*>(x, 0x0c);
+    void** vt = *reinterpret_cast<void***>(p);
+    void* v = reinterpret_cast<void* (*)(void*)>(vt[0x20 / sizeof(void*)])(p);
+
+    // Temp object: field_0x04 at +4 holds an owned pointer.
+    alignas(8) uint8_t tmp[16]{};
+    ext_006720E0(tmp, v);
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's field_0x04 via its vtable slot 0x78.
+    void* tmp4 = lift_field<void*>(tmp, 0x04);
+    if (tmp4 != nullptr) {
+        void** vt2 = *reinterpret_cast<void***>(tmp4);
+        reinterpret_cast<void (*)(void*, void*)>(vt2[0x78 / sizeof(void*)])(tmp4, tmp);
+    }
+
+    // Forward: self->field_0x04->vfunc[0xB0](self, arg2) (vtable slot 0xB0)
+    void* f4 = lift_field<void*>(self, 0x04);
+    void** vt3 = *reinterpret_cast<void***>(f4);
+    return reinterpret_cast<void* (*)(void*, void*, void*)>(vt3[0xB0 / sizeof(void*)])(f4, self, arg2);
+}
+} // namespace lift_005B38C0

@@ -1,0 +1,22 @@
+{
+  "va": "0x005B38C0",
+  "size": 164,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e::vfunc_44",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType::vfunc_44",
+  "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+  "signature": "void* fn_005B38C0(void* self, void* arg2)",
+  "summary": "Gets a value from the held object's sub-object via vfunc slot 8, copies it into self via Unknown::assignFromOther, releases the temp, then forwards to vfunc slot 44 of self's field_0x04 (throws if field_0x00 is null).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:48:51Z"
+}
