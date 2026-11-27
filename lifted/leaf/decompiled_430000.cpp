@@ -4652,3 +4652,54 @@ void fn_004334D0(void* self) {
     reinterpret_cast<void(__thiscall*)(void*, int)>(slot)(obj, 0);
 }
 } // namespace lift_004334D0
+
+// [0x00432880] sub_00432880 (134 bytes)
+namespace lift_00432880 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+extern void* ext_00465B40(void);
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+extern void ext_006A5E60(const char* text);
+// MSVCP80 IAT slots (values hold the resolved function addresses).
+extern int mem_00924FE0; // std::string copy constructor
+extern int mem_00924FF0; // std::string::c_str
+extern int mem_00924FF4; // std::string destructor
+
+namespace {
+
+using VirtualSlotFn = void (*)(void* self, int arg);
+using StringCopyCtorFn = void (*)(void* self, const void* src);
+using StringCStrFn = const char* (*)(void* self);
+using StringDtorFn = void (*)(void* self);
+
+template <typename Fn>
+Fn msvcp_fn(int slot_value) {
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(static_cast<uint32_t>(slot_value)));
+}
+
+} // namespace
+
+// Unwind/cleanup funclet (asm 0x004328CC..0x004328FF). It is only reached through the
+// SEH unwinder; the normal path never enters it. It copies the std::string at self+0x0C,
+// passes its c_str() to ext_006A5E60, then destroys the temporary.
+[[maybe_unused]] static void fn_00432880_unwind(void* self) {
+    alignas(8) unsigned char tmp[0x1C]; // MSVC VS2005 std::string layout
+    auto* src = static_cast<unsigned char*>(self) + 0x0C;
+    msvcp_fn<StringCopyCtorFn>(mem_00924FE0)(tmp, src);
+    const char* text = msvcp_fn<StringCStrFn>(mem_00924FF0)(tmp);
+    ext_006A5E60(text);
+    msvcp_fn<StringDtorFn>(mem_00924FF4)(tmp);
+}
+
+// @name invokeVirtualSlot1ECOnSharedObject
+// @class Unknown
+// @summary Obtains a shared object from ext_00465B40 and calls its virtual slot at byte offset 0x1EC with argument 1.
+// @field Unknown +0x00 void** vtable (vtable pointer of the object returned by ext_00465B40)
+// @field Unknown +0x0C std::string field_0x0c (read only by the unwind funclet fn_00432880_unwind)
+void fn_00432880(void* self) {
+    (void)self; // the normal path does not read the argument
+    void* obj = ext_00465B40();
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto slot = *reinterpret_cast<VirtualSlotFn*>(reinterpret_cast<unsigned char*>(vtbl) + 0x1EC);
+    slot(obj, 1);
+}
+} // namespace lift_00432880

@@ -3685,6 +3685,13 @@
     "summary": "SEH handler: copy-constructs a std::string from ctx+0x0C, passes its c_str() to ext_006A5E60, then destroys the string.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00432880": {
+    "name": "invokeVirtualSlot1ECOnSharedObject",
+    "class": "Unknown",
+    "signature": "Fn msvcp_fn(int slot_value)",
+    "summary": "Obtains a shared object from ext_00465B40 and calls its virtual slot at byte offset 0x1EC with argument 1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00432910": {
     "name": "callVirtualSlot1E4WithArg1CatchLog",
     "signature": "int fn_00432910(void)",
