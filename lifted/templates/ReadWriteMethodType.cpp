@@ -11107,3 +11107,24 @@ void fn_00509650(void* out) {
     lift_field<void*>(out, 4) = &mem_00AEBC8C;
 }
 } // namespace lift_00509650
+
+// [0x00504CF0] ExprParser::ReadWriteMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, int, &public: void __thiscall Interpreter::printThroughProperties(int)>::vfunc_40 (122 bytes)
+namespace lift_00504CF0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AEBB70;
+extern int mem_00AEBB6C;
+
+// @name ReadWriteMethodType_vfunc_40
+// @class ExprParser::ReadWriteMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, int, &public: void __thiscall Interpreter::printThroughProperties(int)>
+// @summary One-time initialization of the 0xAEBB6C global (guarded by bit 0 of 0xAEBB70), then stores the global's address into the object's +0x04 slot.
+// @field ExprParser::ReadWriteMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, int, &public: void __thiscall Interpreter::printThroughProperties(int)> +0x04 DWORD field_0x04
+void fn_00504CF0(void* self) {
+    if (!(mem_00AEBB70 & 1)) {
+        mem_00AEBB70 |= 1;
+        ext_0067A670(&mem_00AEBB6C, 0);
+        mem_00AEBB6C = 0x0094F1FC;
+    }
+    lift_field<DWORD>(self, 4) = 0x00AEBB6C;
+}
+} // namespace lift_00504CF0

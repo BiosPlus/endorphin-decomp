@@ -9301,6 +9301,12 @@
     "summary": "Stores a flag byte into the owner object at self-\u003e+0x28 (+0x1C), then assigns the string argument to that owner via std::string::operator=.",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x004773D0": {
+    "name": "sub_004773D0",
+    "signature": "extern \"C\" void __fastcall fn_004773D0(void* self)",
+    "summary": "Destroys four std::string members and calls base destructor sub_0065F440.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477450": {
     "name": "NMData::MaterialPair::vfunc_0",
     "class": "NMData::MaterialPair",
@@ -20358,6 +20364,13 @@
     "signature": "extern \"C\" uint32_t mem_00AEBB68;  // one-time-init guard word (bit 0) extern \"C\" char mem_00AEBB4C[];    // function-local static string storage void* fn_00504C90()",
     "summary": "Lazily builds a process-lifetime bool string once and returns its storage address.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00504CF0": {
+    "name": "ReadWriteMethodType_vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, int, \u0026public: void __thiscall Interpreter::printThroughProperties(int)\u003e",
+    "signature": "void fn_00504CF0(void* self)",
+    "summary": "One-time initialization of the 0xAEBB6C global (guarded by bit 0 of 0xAEBB70), then stores the global's address into the object's +0x04 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00504D70": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_2 (Interpreter::bogus)",

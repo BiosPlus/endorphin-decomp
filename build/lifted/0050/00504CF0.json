@@ -1,0 +1,14 @@
+{
+  "va": "0x00504CF0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, int, \u0026public: void __thiscall Interpreter::printThroughProperties(int)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType_vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, int, \u0026public: void __thiscall Interpreter::printThroughProperties(int)\u003e",
+  "signature": "void fn_00504CF0(void* self)",
+  "summary": "One-time initialization of the 0xAEBB6C global (guarded by bit 0 of 0xAEBB70), then stores the global's address into the object's +0x04 slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:24:12Z"
+}
