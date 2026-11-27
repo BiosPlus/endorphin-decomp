@@ -454,3 +454,82 @@ void __thiscall fn_0051D360(void* self, void* owner, float arg2) {
     *reinterpret_cast<float*>(static_cast<uint8_t*>(self) + 0x3C) = mem_00952174;
 }
 } // namespace lift_0051D360
+
+// [0x0051AC80]
+namespace lift_0051AC80 {
+extern void* __thiscall ext_006404E0(void* self, uint32_t tag);
+extern void* __thiscall ext_00519FA0(void* self, void* out);
+extern void __cdecl ext_0067EF60(void* node, float value, uint32_t a, uint32_t b);
+extern void __cdecl ext_0067F0F0(void* node, const void* quat);
+
+// Additional callees tracked in metadata for 0x0051AC80
+extern void ext_004275E0();
+extern void ext_00427A60();
+extern void ext_0046C0A0();
+extern void ext_00519D10();
+extern void ext_00519EC0();
+extern void ext_0051D130();
+extern void ext_0063EFE0();
+extern void ext_00665570();
+extern void ext_0067EE80();
+extern void ext_0067EFD0();
+extern void ext_0067F080();
+extern void ext_00694330();
+extern void ext_00694A70();
+
+extern uint32_t mem_00A9F1D8;
+extern uint32_t mem_00A9F010;
+extern uint32_t mem_00A9FA00;
+extern uint32_t mem_00A9F508;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00925134;
+extern uint32_t mem_009251F0;
+extern uint32_t mem_00952174;
+
+// @name NMData::QuatChannel::vfunc_2
+// @class NMData::QuatChannel
+// @summary Serializes the quaternion channel header and each 20-byte (time, quat) keyframe into an output node.
+// @field NMData::QuatChannel +0x30 uint8_t* keyBegin
+// @field NMData::QuatChannel +0x34 uint8_t* keyEnd
+void* __thiscall fn_0051AC80(void* self, void* out) {
+    (void)&ext_004275E0;
+    (void)&ext_00427A60;
+    (void)&ext_0046C0A0;
+    (void)&ext_00519D10;
+    (void)&ext_00519EC0;
+    (void)&ext_0051D130;
+    (void)&ext_0063EFE0;
+    (void)&ext_00665570;
+    (void)&ext_0067EE80;
+    (void)&ext_0067EFD0;
+    (void)&ext_0067F080;
+    (void)&ext_00694330;
+    (void)&ext_00694A70;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FE8;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+    (void)&mem_00925134;
+    (void)&mem_009251F0;
+    (void)&mem_00952174;
+
+    void* node = ext_006404E0(out, mem_00A9F1D8);
+    ext_00519FA0(self, node);
+
+    uint8_t* key = lift_field<uint8_t*>(self, 0x30);
+    uint8_t* keyEnd = lift_field<uint8_t*>(self, 0x34);
+
+    while (key != keyEnd) {
+        void* keyNode = ext_006404E0(node, mem_00A9F010);
+        float timeVal = *reinterpret_cast<const float*>(key);
+        ext_0067EF60(keyNode, timeVal, mem_00A9F508, mem_00A9FA00);
+        ext_0067F0F0(keyNode, key + 0x4);
+        key += 0x14;
+    }
+
+    return node;
+}
+} // namespace lift_0051AC80

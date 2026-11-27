@@ -1,0 +1,28 @@
+{
+  "va": "0x0051AC80",
+  "size": 180,
+  "orig_symbol": "NMData::QuatChannel::vfunc_2",
+  "src_path": "src/NMData/QuatChannel.cpp",
+  "lifted_path": "lifted/NMData/QuatChannel.cpp",
+  "name": "NMData::QuatChannel::vfunc_2",
+  "class": "NMData::QuatChannel",
+  "signature": "void* __thiscall fn_0051AC80(void* self, void* out)",
+  "summary": "Serializes the quaternion channel header and each 20-byte (time, quat) keyframe into an output node.",
+  "fields": [
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x30",
+      "type": "uint8_t*",
+      "name": "keyBegin"
+    },
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x34",
+      "type": "uint8_t*",
+      "name": "keyEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-27T12:44:52Z"
+}

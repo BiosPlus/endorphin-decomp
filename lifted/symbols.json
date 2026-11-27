@@ -25349,6 +25349,13 @@
     "summary": "Clears the [begin,end) range at +0x984/+0x988, re-wires subobject +0xC to a peer from the call on the TransformInterface vtable, dynamic-casts the peer and stores +0x934 into it, then forwards through two helpers and the +0x2FC table; returns the last helper result (or 0).",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004E4ED0": {
+    "name": "NMData::AnimationEventData::vfunc_21",
+    "class": "NMData::AnimationEventData",
+    "signature": "static bool is_sentinel(uint32_t val)",
+    "summary": "Loads AnimationEventData properties from an XML/data node and updates related subobjects.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004E6900": {
     "name": "NMData::AnimationEventData::vfunc_0_off_158",
     "class": "NMData::AnimationEventData",
