@@ -418,3 +418,32 @@ void fn_005EB890(void* self, uint32_t arg1, uint8_t arg2) {
     }
 }
 } // namespace lift_005EB890
+
+// [0x005E1CD0] NMData::FixedPathJointData::vfunc_54 (128 bytes)
+namespace lift_005E1CD0 {
+extern void ext_005B5780(void* self, uint32_t arg);
+extern void ext_005E0380(void* self, void* arg);
+extern void ext_006A6C87(void* fn);
+extern int mem_00B45D1C;
+extern uint8_t mem_00B45D14;
+
+// @name NMData::FixedPathJointData::vfunc_54
+// @class NMData::FixedPathJointData
+// @summary Lazily constructs the static object at 0xB45CD0 (guarded by bit 0 of mem_00B45D1C), runs sub_005E0380 on this with it, caches this->field_0x178 into mem_00B45D14, and returns the static object's address.
+// @field NMData::FixedPathJointData +0x178 uint8_t field_0x178
+void* fn_005E1CD0(void* self) {
+    void* const static_obj = reinterpret_cast<void*>(0x00B45CD0);
+
+    // One-time initialization guard (bit 0 of the flag dword).
+    if ((mem_00B45D1C & 1) == 0) {
+        mem_00B45D1C |= 1;
+        ext_005B5780(static_obj, 0x0C);
+        ext_006A6C87(reinterpret_cast<void*>(0x0091E410));
+    }
+
+    ext_005E0380(self, static_obj);
+
+    *reinterpret_cast<uint8_t*>(&mem_00B45D14) = lift_field<uint8_t>(self, 0x178);
+    return static_obj;
+}
+} // namespace lift_005E1CD0

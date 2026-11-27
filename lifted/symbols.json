@@ -51623,6 +51623,13 @@
     "summary": "One-time guarded init of the static object at 0xB45C80 (ext_005B5780 with arg 10, then atexit-style registration via ext_006A6C87); always calls ext_005E0380(this, \u0026obj), caches the byte at this+0x178 into mem_00B45CC4, and returns \u0026obj.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005E1CD0": {
+    "name": "NMData::FixedPathJointData::vfunc_54",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void* fn_005E1CD0(void* self)",
+    "summary": "Lazily constructs the static object at 0xB45CD0 (guarded by bit 0 of mem_00B45D1C), runs sub_005E0380 on this with it, caches this-\u003efield_0x178 into mem_00B45D14, and returns the static object's address.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E20F0": {
     "name": "NMData::SkeletalJointData::isAxisUnlocked",
     "class": "NMData::SkeletalJointData",

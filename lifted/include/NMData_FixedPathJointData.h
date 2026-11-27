@@ -22,7 +22,8 @@ struct NMData_FixedPathJointData_Fields {
     // +0x168 void* field_0x168 (address taken; vector container base for erase)  (evidence: 0x005EEDB0)
     // +0x16C uint32_t field_0x16c (erase range begin)  (evidence: 0x005EEDB0)
     // +0x170 uint32_t field_0x170 (erase range end)  (evidence: 0x005EEDB0)
-    // +0x178 void*                    field_0x178  (evidence: 0x005E1060)
+    // +0x178 uint8_t                  field_0x178  (evidence: 0x005E1CD0) // CONFLICT: multiple definitions at +0x178
+    // +0x178 void*                    field_0x178  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0x178
     // +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x184 void*                    field_0x184  (evidence: 0x005E02D0)
