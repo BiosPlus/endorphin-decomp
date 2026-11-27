@@ -479,3 +479,31 @@ void fn_00742E60(void* self, void* arg0) {
     }
 }
 } // namespace lift_00742E60
+
+// [0x0074B3B0]
+namespace lift_0074B3B0 {
+extern void __cdecl ext_006D80A0(void);
+extern int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name appendNonNegativeId
+// @summary Appends a non-negative int32_t value to the DynamicArray at +0x88 and increments the counter at +0x64.
+// @field self +0x64 int32_t field_0x64
+// @field self +0x88 int32_t field_0x88
+extern uint8_t __thiscall fn_0074B3B0(void* self, int32_t val, int32_t arg2, int32_t arg3, int32_t arg4) {
+    (void)arg2;
+    (void)arg3;
+    (void)arg4;
+
+    if (val < 0) {
+        ext_006D80A0();
+        return 0;
+    }
+
+    int32_t count = lift_field<int32_t>(self, 0x88);
+    void* arr = static_cast<uint8_t*>(self) + 0x88;
+    ext_006D2170(arr, count, &val);
+    lift_field<int32_t>(self, 0x64) += 1;
+    ext_006D80A0();
+    return 1;
+}
+} // namespace lift_0074B3B0

@@ -1,0 +1,27 @@
+{
+  "va": "0x0074B3B0",
+  "size": 144,
+  "orig_symbol": "sub_0074B3B0",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "appendNonNegativeId",
+  "signature": "extern \"C\" uint8_t __thiscall fn_0074B3B0(void* self, int32_t val, int32_t arg2, int32_t arg3, int32_t arg4)",
+  "summary": "Appends a non-negative int32_t value to the DynamicArray at +0x88 and increments the counter at +0x64.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x64",
+      "type": "int32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "self",
+      "offset": "+0x88",
+      "type": "int32_t",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:13:05Z"
+}
