@@ -5483,6 +5483,13 @@
     "summary": "Calls sub_0043C900 on the object's +0x08 member, releases mouse capture, and clears the byte at +0x30.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp"
   },
+  "0x00442C90": {
+    "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_4",
+    "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+    "signature": "uint8_t __thiscall fn_00442C90(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+    "summary": "Commits or updates the move state via sub_0043F520, resets the state manager to index 0, and returns 1.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp"
+  },
   "0x00442CC0": {
     "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_2",
     "class": "MultiTrackView::MultiTrackViewStates::PanState",
@@ -19578,6 +19585,13 @@
     "signature": "void fn_004BF710(void* self)",
     "summary": "Copies fields from the object at this+0x04 into the object whose pointer is stored at this+0x00, then destroys the embedded object at this+0x04.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004BF800": {
+    "name": "NMData::AnimationEventData::vfunc_3",
+    "class": "NMData::AnimationEventData",
+    "signature": "void* __thiscall fn_004BF800(void* self, void* out_str)",
+    "summary": "Prepends \"Events.\" to the event name string at +0x14",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
   "0x004BFBD0": {
     "name": "sub_004BFBD0",

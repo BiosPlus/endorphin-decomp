@@ -449,3 +449,25 @@ void* __thiscall fn_004E1C50(void* self, void* out, uint32_t key) {
     return out;
 }
 } // namespace lift_004E1C50
+
+// [0x004BF800]
+namespace lift_004BF800 {
+extern const char mem_009443C8[];
+extern void* (__cdecl* mem_00924FCC)(void*, const char*, const void*);
+extern uint8_t mem_00AE29D0[];
+
+extern void ext_0047C480();
+extern void ext_004C1AF0();
+
+// @name NMData::AnimationEventData::vfunc_3
+// @class NMData::AnimationEventData
+// @summary Prepends "Events." to the event name string at +0x14
+// @field NMData::AnimationEventData +0x14 void* field_0x14
+void* __thiscall fn_004BF800(void* self, void* out_str) {
+    (void)ext_0047C480;
+    (void)ext_004C1AF0;
+    (void)mem_00AE29D0;
+    mem_00924FCC(out_str, mem_009443C8, static_cast<const char*>(self) + 0x14);
+    return out_str;
+}
+} // namespace lift_004BF800
