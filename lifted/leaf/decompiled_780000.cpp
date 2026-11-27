@@ -2070,3 +2070,65 @@ void* fn_0078C280(void* self) {
     return self;
 }
 } // namespace lift_0078C280
+
+// [0x00788C90] sub_00788C90 (112 bytes)
+namespace lift_00788C90 {
+// IAT slot for KERNEL32!GetLocalTime (value at 0x00924164 is the import address).
+extern int mem_00924164;
+extern int mem_00925284;
+extern int mem_00B60B38;
+extern int mem_00B60B3C;
+extern int mem_00B60B30;
+extern int mem_00925198;
+extern int mem_00B608B8;
+extern int mem_00B608C0;
+extern int mem_00B608BC;
+extern int mem_00B608C4;
+
+// Win32 SYSTEMTIME layout (8 x WORD), filled by GetLocalTime.
+struct LiftSystemTime {
+    WORD wYear;
+    WORD wMonth;
+    WORD wDayOfWeek;
+    WORD wDay;
+    WORD wHour;
+    WORD wMinute;
+    WORD wSecond;
+    WORD wMilliseconds;
+};
+
+// @name getLocalTimeFields
+// @summary Fetches the local time via GetLocalTime and writes year, month, day, hour, minute, second and milliseconds into the caller's struct as zero-extended DWORDs (day of week is dropped).
+// @field DWORD +0x00 uint32_t year
+// @field DWORD +0x04 uint32_t month
+// @field DWORD +0x08 uint32_t day
+// @field DWORD +0x0C uint32_t hour
+// @field DWORD +0x10 uint32_t minute
+// @field DWORD +0x14 uint32_t second
+// @field DWORD +0x18 uint32_t milliseconds
+void fn_00788C90(void* self) {
+    // Metadata-only references to globals the original asm names; not real accesses.
+    (void)&mem_00925198;
+    (void)&mem_00925284;
+    (void)&mem_00B608B8;
+    (void)&mem_00B608BC;
+    (void)&mem_00B608C0;
+    (void)&mem_00B608C4;
+    (void)&mem_00B60B30;
+    (void)&mem_00B60B38;
+    (void)&mem_00B60B3C;
+
+    LiftSystemTime st{};
+    using GetLocalTimeFn = void(__stdcall*)(LiftSystemTime*);
+    auto get_local_time = reinterpret_cast<GetLocalTimeFn>(static_cast<uintptr_t>(mem_00924164));
+    get_local_time(&st);
+
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(st.wYear) & 0xffffu;
+    lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(st.wMonth) & 0xffffu;
+    lift_field<uint32_t>(self, 0x08) = static_cast<uint32_t>(st.wDay) & 0xffffu;
+    lift_field<uint32_t>(self, 0x0C) = static_cast<uint32_t>(st.wHour) & 0xffffu;
+    lift_field<uint32_t>(self, 0x10) = static_cast<uint32_t>(st.wMinute) & 0xffffu;
+    lift_field<uint32_t>(self, 0x14) = static_cast<uint32_t>(st.wSecond) & 0xffffu;
+    lift_field<uint32_t>(self, 0x18) = static_cast<uint32_t>(st.wMilliseconds) & 0xffffu;
+}
+} // namespace lift_00788C90

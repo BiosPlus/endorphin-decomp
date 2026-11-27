@@ -70315,6 +70315,12 @@
     "summary": "Destructor tail-call: restores vtable mem_00996F6C and tail-calls base destructor sub_00785430.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00788C90": {
+    "name": "getLocalTimeFields",
+    "signature": "void fn_00788C90(void* self)",
+    "summary": "Fetches the local time via GetLocalTime and writes year, month, day, hour, minute, second and milliseconds into the caller's struct as zero-extended DWORDs (day of week is dropped).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00788D00": {
     "name": "Unknown::resetCounters",
     "class": "Unknown",

@@ -1,0 +1,57 @@
+{
+  "va": "0x00788C90",
+  "size": 112,
+  "orig_symbol": "sub_00788C90",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "getLocalTimeFields",
+  "signature": "void fn_00788C90(void* self)",
+  "summary": "Fetches the local time via GetLocalTime and writes year, month, day, hour, minute, second and milliseconds into the caller's struct as zero-extended DWORDs (day of week is dropped).",
+  "fields": [
+    {
+      "class": "DWORD",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "year"
+    },
+    {
+      "class": "DWORD",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "month"
+    },
+    {
+      "class": "DWORD",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "day"
+    },
+    {
+      "class": "DWORD",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "hour"
+    },
+    {
+      "class": "DWORD",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "minute"
+    },
+    {
+      "class": "DWORD",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "second"
+    },
+    {
+      "class": "DWORD",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "milliseconds"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:25Z"
+}
