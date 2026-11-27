@@ -87247,3 +87247,68 @@ void* fn_0046D3F0(void* self, void* arg2) {
     return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xAC))(child, self, arg2);
 }
 } // namespace lift_0046D3F0
+
+// [0x0046CB60] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_43 (167 bytes)
+namespace lift_0046CB60 {
+// External callees (original asm: ext_0046C070, ext_006720A0, ext_0041CF50, ext_0046C3C0, ext_006A6DD2).
+extern uint8_t ext_0046C070(void* self);
+extern void ext_006720A0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of other's field_0x04 into self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(object, throwInfo)).
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+// EH frame scope-table reference (boilerplate, kept as a referenced global).
+extern int mem_008A5428;
+// .rdata throw-info descriptor passed to the throw thunk.
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, isEnabled, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Validates the first stack argument's inner pointer (throws DerivedException if null), tests it through ext_0046C070, stores the flag in a temporary, assigns that into the argument and forwards to vtable slot 43 of arg1's field_0x04 object.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+uint32_t fn_0046CB60(void* self, void* arg1, void* arg2) {
+    (void)self;
+    (void)&mem_008A5428;
+
+    void* inner = lift_field<void*>(arg1, 0x00);
+    if (inner == nullptr) {
+        // Throw path: DerivedException constructed in the frame slot and thrown.
+        // Object size is not recovered; 0x24 bytes is the span between the slot and the frame end.
+        alignas(8) unsigned char exc[0x24];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(&mem_009DEC1C));
+        return 0;
+    }
+
+    uint8_t flag = ext_0046C070(inner);
+    // Original writes the flag byte over the low byte of arg1's stack slot and reads the dword back.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg1));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(flag);
+
+    // Temporary object: field_0x00 at +0, field_0x04 at +4.
+    alignas(8) unsigned char tmp[8];
+    ext_006720A0(tmp, slot);
+    ext_0041CF50(arg1, tmp);
+
+    // Release the temporary's field_0x04 through its vtable slot 0x78.
+    void* rel = lift_field<void*>(tmp, 0x04);
+    if (rel != nullptr) {
+        void* relVt = lift_field<void*>(rel, 0x00);
+        using ReleaseFn = void (*)(void* self, void* arg);
+        auto release = reinterpret_cast<ReleaseFn>(
+            reinterpret_cast<uintptr_t>(lift_field<void*>(relVt, 0x78)));
+        release(rel, tmp);
+    }
+
+    // Forward to vtable slot 0xAC (index 43) of arg1's field_0x04 object.
+    void* recv = lift_field<void*>(arg1, 0x04);
+    void* recvVt = lift_field<void*>(recv, 0x00);
+    using ForwardFn = uint32_t (*)(void* self, void* a, void* b);
+    auto forward = reinterpret_cast<ForwardFn>(
+        reinterpret_cast<uintptr_t>(lift_field<void*>(recvVt, 0xAC)));
+    return forward(recv, arg1, arg2);
+}
+} // namespace lift_0046CB60

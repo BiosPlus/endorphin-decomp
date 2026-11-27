@@ -1,0 +1,28 @@
+{
+  "va": "0x0046CB60",
+  "size": 167,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e::vfunc_43",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, isEnabled, 0\u003e::vfunc_43",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e",
+  "signature": "uint32_t fn_0046CB60(void* self, void* arg1, void* arg2)",
+  "summary": "Validates the first stack argument's inner pointer (throws DerivedException if null), tests it through ext_0046C070, stores the flag in a temporary, assigns that into the argument and forwards to vtable slot 43 of arg1's field_0x04 object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:47:54Z"
+}
