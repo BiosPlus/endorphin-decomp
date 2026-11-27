@@ -3092,3 +3092,42 @@ void* fn_00662B70(void* out, const void* src) {
     return out;
 }
 } // namespace lift_00662B70
+
+// [0x00664840] sub_00664840 (125 bytes)
+namespace lift_00664840 {
+extern const char mem_0097CD20[];
+extern int mem_009251E0;  // IAT slot: MSVCR80!_snprintf (replaced by std::snprintf)
+extern int mem_009252DC;  // IAT slot: MSVCR80!strchr (replaced by std::strchr)
+extern int mem_00924FE4;  // IAT slot: MSVCP80 basic_string(const char*) ctor (replaced by placement new)
+
+// @name formatFloatTrimmedString
+// @summary Formats a float with the format at mem_0097CD20 into a 50-byte buffer, strips trailing '0' chars after the decimal point (keeping at least one digit), and placement-constructs a std::string at the caller's sret slot, returning it.
+std::string* fn_00664840(std::string* out, float value) {
+    (void)&mem_009251E0;
+    (void)&mem_009252DC;
+    (void)&mem_00924FE4;
+
+    char buf[0x32];
+    std::snprintf(buf, sizeof(buf), mem_0097CD20, static_cast<double>(value));
+
+    const uintptr_t bufAddr = reinterpret_cast<uintptr_t>(buf);
+    const uintptr_t dotAddr = reinterpret_cast<uintptr_t>(std::strchr(buf, '.'));
+    const uintptr_t limit = dotAddr + 1;
+    const size_t len = std::strlen(buf);
+    uintptr_t p = bufAddr + len - 1;
+
+    if (p > limit) {
+        do {
+            char* c = reinterpret_cast<char*>(p);
+            if (*c != '0') {
+                break;
+            }
+            *c = '\0';
+            --p;
+        } while (p > limit);
+    }
+
+    new (out) std::string(buf);
+    return out;
+}
+} // namespace lift_00664840

@@ -1,0 +1,13 @@
+{
+  "va": "0x00664840",
+  "size": 125,
+  "orig_symbol": "sub_00664840",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "formatFloatTrimmedString",
+  "signature": "extern \"C\" int mem_009251E0;  // IAT slot: MSVCR80!_snprintf (replaced by std::snprintf) extern \"C\" int mem_009252DC;  // IAT slot: MSVCR80!strchr (replaced by std::strchr) extern \"C\" int mem_00924FE4;  // IAT slot: MSVCP80 basic_string(const char*) ctor (replaced by placement new) std::string* fn_00664840(std::string* out, float value)",
+  "summary": "Formats a float with the format at mem_0097CD20 into a 50-byte buffer, strips trailing '0' chars after the decimal point (keeping at least one digit), and placement-constructs a std::string at the caller's sret slot, returning it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:54:29Z"
+}

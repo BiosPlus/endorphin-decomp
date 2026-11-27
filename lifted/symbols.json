@@ -50442,6 +50442,12 @@
     "summary": "Pure jump thunk forwarding to sub_006633B0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00664840": {
+    "name": "formatFloatTrimmedString",
+    "signature": "extern \"C\" int mem_009251E0;  // IAT slot: MSVCR80!_snprintf (replaced by std::snprintf) extern \"C\" int mem_009252DC;  // IAT slot: MSVCR80!strchr (replaced by std::strchr) extern \"C\" int mem_00924FE4;  // IAT slot: MSVCP80 basic_string(const char*) ctor (replaced by placement new) std::string* fn_00664840(std::string* out, float value)",
+    "summary": "Formats a float with the format at mem_0097CD20 into a 50-byte buffer, strips trailing '0' chars after the decimal point (keeping at least one digit), and placement-constructs a std::string at the caller's sret slot, returning it.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006648C0": {
     "name": "MakeFormattedStdString",
     "signature": "void* fn_006648C0(int32_t arg_04, double value, int32_t ivalue, int32_t arg_14, int32_t arg_18, int32_t arg_1C, void* out)",
