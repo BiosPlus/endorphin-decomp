@@ -8,6 +8,7 @@
 // Recovered field layout for ReadWriteMethodType:
 namespace lifted_layout {
 struct ReadWriteMethodType_Fields {
-    // +0x4   DWORD                    vtableObjPtr  (evidence: 0x004F64D0)
+    // +0x4   void*                    field_0x04  (evidence: 0x00504C10) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    vtableObjPtr  (evidence: 0x004F64D0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

@@ -11037,3 +11037,27 @@ void fn_004F6D40(void* self) {
     lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9F14));
 }
 } // namespace lift_004F6D40
+
+// [0x00504C10] ExprParser::ReadWriteMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall Interpreter::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_40 (122 bytes)
+namespace lift_00504C10 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; calls ext_00672000 on self).
+// The original passes self in ECX only; no stack argument is pushed for this call.
+extern void __thiscall ext_0067A670(void* self);
+
+// Init guard (dword at 0xAEBB48, bit 0 tested) and the static object at 0xAEBB44 (first DWORD = vtable).
+extern uint32_t mem_00AEBB48;
+extern uint32_t mem_00AEBB44;
+
+// @name ExprParser::ReadWriteMethodType<Interpreter>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall Interpreter::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>
+// @summary One-time lazy init of the shared static at 0xAEBB44 (vtable 0x94F3AC), then stores a pointer to it into obj+4.
+// @field ReadWriteMethodType +0x04 void* field_0x04
+void fn_00504C10(void* obj) {
+    if ((mem_00AEBB48 & 1u) == 0) {
+        mem_00AEBB48 |= 1u;
+        ext_0067A670(&mem_00AEBB44);
+        mem_00AEBB44 = 0x0094F3ACu;
+    }
+    lift_field<uint32_t>(obj, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AEBB44));
+}
+} // namespace lift_00504C10
