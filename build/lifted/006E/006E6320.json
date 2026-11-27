@@ -1,0 +1,14 @@
+{
+  "va": "0x006E6320",
+  "size": 32,
+  "orig_symbol": "sub_006E6320",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::assignCStringPair_006E6320",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_006E6320(void* self, const char* s)",
+  "summary": "Assigns the same C string to this and to the sub-object at this+0x4C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:48:31Z"
+}

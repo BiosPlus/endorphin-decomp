@@ -69319,6 +69319,13 @@
     "summary": "Stores a DWORD into +0x60 of this and of every node reached by following the +0x40 link chain.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E6320": {
+    "name": "Unknown::assignCStringPair_006E6320",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_006E6320(void* self, const char* s)",
+    "summary": "Assigns the same C string to this and to the sub-object at this+0x4C.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E6340": {
     "name": "sub_006E6340",
     "signature": "extern \"C\" void __fastcall fn_006E6340(void* self)",

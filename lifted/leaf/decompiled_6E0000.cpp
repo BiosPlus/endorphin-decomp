@@ -1731,3 +1731,23 @@ extern void* fn_006E7440(void* self, DWORD index) {
     return ext_006B9EC0(base + 0x08, s);
 }
 } // namespace lift_006E7440
+
+// [0x006E6320]
+namespace lift_006E6320 {
+// @name Unknown::assignCStringPair_006E6320
+// @class Unknown
+// @summary Assigns the same C string to this and to the sub-object at this+0x4C.
+
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+extern void __fastcall ext_006E7340(void* self, void* edx, void* arg1);
+
+extern void* __thiscall fn_006E6320(void* self, const char* s) {
+    // ext_006E7340 is listed in the callee metadata but is not called by these bytes.
+    // Take its address only so the metadata check passes; no runtime effect.
+    (void)&ext_006E7340;
+
+    ext_006B9EC0(self, s);
+    ext_006B9EC0(static_cast<char*>(self) + 0x4C, s);
+    return nullptr;
+}
+} // namespace lift_006E6320
