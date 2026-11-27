@@ -14317,6 +14317,13 @@
     "summary": "Writes two vtable pointers, resets the Vector sub-object at +0x08, then re-stamps the vtable at +0x00 via sub_0065F440.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B5820": {
+    "name": "Unknown::initDefaults",
+    "class": "Unknown",
+    "signature": "void* fn_004B5820(void* self)",
+    "summary": "Thiscall initializer: sets vtable, zeroes state, stores float defaults (100, 0, 1) and int 1000; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B58A0": {
     "name": "NMData::GraphEngineData::vfunc_0",
     "class": "NMData::GraphEngineData",
@@ -38310,6 +38317,12 @@
     "signature": "uint32_t __thiscall fn_005FC040(void* self)",
     "summary": "Dispatches to vtable slot 16 (+0x40) with argument 2.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x005FC090": {
+    "name": "allocAndInitUnknown006271A0",
+    "signature": "extern \"C\" void* fn_005FC090(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Allocates 0x40 bytes and initializes an Unknown object with 4 uint32_t arguments",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
   "0x005FC890": {
     "name": "UnknownClass::allocateAndConstruct",

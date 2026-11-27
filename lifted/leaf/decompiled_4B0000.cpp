@@ -1672,3 +1672,52 @@ void fn_004BC430(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_004BC430
+
+// [0x004B5820] sub_004B5820 (122 bytes)
+namespace lift_004B5820 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+extern float mem_00943350;
+
+// @name Unknown::initDefaults
+// @class Unknown
+// @summary Thiscall initializer: sets vtable, zeroes state, stores float defaults (100, 0, 1) and int 1000; returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint32_t vtable2
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint8_t field_0x18
+// @field Unknown +0x19 uint8_t field_0x19
+// @field Unknown +0x1c float field_0x1c
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2c float field_0x2c
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+void* fn_004B5820(void* self) {
+    // Original SEH frame prologue/epilogue (fs:[0] push/restore) is boilerplate; dropped.
+    ext_00661980(self);
+
+    const float hundred = mem_00943350;
+
+    lift_field<uint32_t>(self, 0x00) = 0x009432FC;
+    lift_field<uint32_t>(self, 0x04) = 0x00942064;
+    lift_field<uint32_t>(self, 0x04) = 0x009432F0;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<float>(self, 0x2c) = hundred;
+    lift_field<float>(self, 0x1c) = 0.0f;
+    lift_field<uint8_t>(self, 0x18) = 1;
+    lift_field<float>(self, 0x24) = 0.0f;
+    lift_field<uint8_t>(self, 0x19) = 1;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<float>(self, 0x20) = hundred;
+    lift_field<uint32_t>(self, 0x34) = 1000;
+    lift_field<float>(self, 0x28) = 1.0f;
+
+    return self;
+}
+} // namespace lift_004B5820
