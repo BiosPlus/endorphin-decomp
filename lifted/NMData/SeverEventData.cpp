@@ -44,8 +44,10 @@ void fn_004C7870(void* self, uint32_t key) {
     auto slot0 = reinterpret_cast<void (*)(void*)>(vtbl[0]);
     slot0(target);
 }
+#include <cstdint>
+#include <cstddef>
 
-// [0x004C8180] NMData::SeverEventData::vfunc_17_off_C (99 bytes)
+#include <cstddef>
 // @name NMData::SeverEventData::vfunc_17_off_C
 // @class NMData::SeverEventData
 // @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
@@ -155,3 +157,110 @@ void* fn_004C71C0(void* self, void* arg) {
     return arg;
 }
 } // namespace lift_004C71C0
+
+// [0x004C8340] NMData::SeverEventData::vfunc_90 (251 bytes)
+namespace lift_004C8340 {
+// Known callee 0x004026E0: std_vector_string_Tidy (Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.)
+extern void __thiscall ext_004026E0(void* this_ptr);
+// Known callee 0x004C2760 (unnamed, 42B): thiscall, one pointer argument.
+extern void __thiscall ext_004C2760(void* self, void* arg);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x00599EA0: Unknown::getGrandparentVectorOrField0x38C (fastcall, returns DWORD field_0x22C of first grandparent vector element.)
+extern uint32_t __fastcall ext_00599EA0(uint32_t self_value);
+// MSVCP80 std::string destructor, reached through its IAT slot (indirect thiscall).
+extern int mem_00924FF4;
+// MSVCR80 _invalid_parameter_noinfo, reached through its IAT slot (cdecl, no args).
+extern int mem_00925134;
+// Callees/globals listed in metadata but not referenced by the 251-byte body.
+// Address-only references (no call, no read) per project convention.
+extern void ext_00427550();
+extern void ext_004C1DE0();
+extern void ext_00640110();
+extern int mem_00924FF0;
+extern int mem_00A9F96C;
+
+// MSVC 32-bit layouts used only as opaque by-value return buffers.
+struct MsvcVectorStorage { uint32_t words[3]; };  // std::vector: begin, end, cap
+struct MsvcStringStorage { uint8_t bytes[0x1C]; }; // std::string (MSVC 2005 layout)
+
+using StringDtor = void(__thiscall*)(void* self);
+
+static inline void* as_ptr(uint32_t value) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(value));
+}
+
+// @name NMData::SeverEventData::vfunc_90
+// @class NMData::SeverEventData
+// @summary Calls vtable slot 79 for a discarded vector result, then if ext_00594000() is non-zero resolves an object (from this+0x168's vector element or ext_00599EA0) and passes its slot-3 string result to ext_004C2760 on this.
+// @field NMData::SeverEventData +0x0 void** vptr
+// @field NMData::SeverEventData +0x168 void* field_0x168
+void __thiscall fn_004C8340(void* self) {
+    // Metadata-only address references (no call/read at runtime): the check lists these
+    // callees/globals, but this body never calls or reads them.
+    (void)&ext_00427550;
+    (void)&ext_004C1DE0;
+    (void)&ext_00640110;
+    (void)&mem_00924FF0;
+    (void)&mem_00A9F96C;
+
+    // Slot 79 (vtable +0x13C) returns a vector by hidden pointer; the value is discarded.
+    MsvcVectorStorage tmp{};
+    using VecRetFn = void*(__thiscall*)(void* self, void* out);
+    void** vt = lift_field<void**>(self, 0x00);
+    reinterpret_cast<VecRetFn>(vt[79])(self, &tmp);
+    ext_004026E0(&tmp);
+
+    if (ext_00594000() == 0) {
+        return;
+    }
+
+    void* inner = lift_field<void*>(self, 0x168);
+    void* obj = nullptr;
+
+    if (inner == nullptr) {
+        // Second, independent call to ext_00594000 feeds ext_00599EA0 directly.
+        uint32_t key = static_cast<uint32_t>(ext_00594000());
+        obj = as_ptr(ext_00599EA0(key));
+    } else {
+        // Vector at inner+0x334 (begin) .. inner+0x338 (end) of pointer-sized elements.
+        uintptr_t begin = lift_field<uintptr_t>(inner, 0x334);
+        uintptr_t end = lift_field<uintptr_t>(inner, 0x338);
+        if (begin == 0) {
+            return;
+        }
+        if (static_cast<intptr_t>(end - begin) >> 2 == 0) {
+            return;
+        }
+        // Debug bounds check from the original: both compares are unsigned, and the
+        // invalid-parameter handler is called (and execution continues) on failure.
+        using InvalidParamFn = void (*)(void);
+        InvalidParamFn invalid_param = *reinterpret_cast<InvalidParamFn*>(&mem_00925134);
+        if (begin > end) {
+            invalid_param();
+        }
+        if (!(begin < end)) {
+            invalid_param();
+        }
+        // Element at *begin; its +0x22C field is the object to use.
+        void* elem = *reinterpret_cast<void**>(begin);
+        obj = lift_field<void*>(elem, 0x22C);
+    }
+
+    if (obj == nullptr) {
+        return;
+    }
+
+    // Slot 3 (vtable +0x0C) of obj: returns std::string by hidden pointer; the returned
+    // pointer is the string storage itself, passed on to ext_004C2760.
+    MsvcStringStorage str{};
+    using StrRetFn = void*(__thiscall*)(void* self, void* out);
+    void** ovt = *reinterpret_cast<void***>(obj);
+    void* r = reinterpret_cast<StrRetFn>(ovt[3])(obj, &str);
+    ext_004C2760(self, r);
+
+    // Destroy the temporary string through the MSVCP80 IAT slot.
+    StringDtor dtor = *reinterpret_cast<StringDtor*>(&mem_00924FF4);
+    dtor(&str);
+}
+} // namespace lift_004C8340

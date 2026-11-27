@@ -1,0 +1,28 @@
+{
+  "va": "0x004C8340",
+  "size": 251,
+  "orig_symbol": "NMData::SeverEventData::vfunc_90",
+  "src_path": "src/NMData/SeverEventData.cpp",
+  "lifted_path": "lifted/NMData/SeverEventData.cpp",
+  "name": "NMData::SeverEventData::vfunc_90",
+  "class": "NMData::SeverEventData",
+  "signature": "static inline void* as_ptr(uint32_t value)",
+  "summary": "Calls vtable slot 79 for a discarded vector result, then if ext_00594000() is non-zero resolves an object (from this+0x168's vector element or ext_00599EA0) and passes its slot-3 string result to ext_004C2760 on this.",
+  "fields": [
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:50:14Z"
+}

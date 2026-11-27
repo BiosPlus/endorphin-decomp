@@ -20826,6 +20826,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004C80A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C8340": {
+    "name": "NMData::SeverEventData::vfunc_90",
+    "class": "NMData::SeverEventData",
+    "signature": "static inline void* as_ptr(uint32_t value)",
+    "summary": "Calls vtable slot 79 for a discarded vector result, then if ext_00594000() is non-zero resolves an object (from this+0x168's vector element or ext_00599EA0) and passes its slot-3 string result to ext_004C2760 on this.",
+    "lifted_path": "lifted/NMData/SeverEventData.cpp"
+  },
   "0x004C8440": {
     "name": "NMData::BehaviourData::vfunc_1_off_154",
     "class": "NMData::BehaviourData",
