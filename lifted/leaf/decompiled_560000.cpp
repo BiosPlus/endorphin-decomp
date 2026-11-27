@@ -604,3 +604,89 @@ void* __thiscall fn_00565120(void* self, void* nameSource) {
     return model;
 }
 } // namespace lift_00565120
+
+// [0x00566F70]
+namespace lift_00566F70 {
+extern void* mem_009250EC;
+extern void* mem_009250E4;
+extern void* mem_009250E8;
+extern void* mem_00924FC0;
+extern void* mem_00924FD8;
+extern void* mem_00924EC0;
+
+// @name sub_00566F70
+// @summary Reads characters from an istream into a target object's string at +0x3c until a ':'-prefixed token matches the sentinel string at 0x00958BFC.
+// @field Obj +0x00 void* field_0x00
+// @field Obj +0x04 uint8_t[1] field_0x04
+uint8_t __thiscall fn_00566F70(void* self, void* istream_ptr) {
+    using istream_get_fn = int(__thiscall*)(void*);
+    using istream_putback_fn = void*(__thiscall*)(void*, char);
+    using istream_read_str_fn = void*(__cdecl*)(void*, void*);
+    using str_eq_cstr_fn = uint8_t(__cdecl*)(void*, const char*);
+    using str_append_str_fn = void*(__thiscall*)(void*, void*);
+    using str_append_char_fn = void*(__thiscall*)(void*, char);
+
+    auto get_fn = reinterpret_cast<istream_get_fn>(mem_009250E4);
+    auto putback_fn = reinterpret_cast<istream_putback_fn>(mem_009250E8);
+    auto read_str_fn = reinterpret_cast<istream_read_str_fn>(mem_009250EC);
+    auto eq_cstr_fn = reinterpret_cast<str_eq_cstr_fn>(mem_00924FC0);
+    auto append_str_fn = reinterpret_cast<str_append_str_fn>(mem_00924FD8);
+    auto append_char_fn = reinterpret_cast<str_append_char_fn>(mem_00924EC0);
+
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* token_str = obj + 0x04;
+
+    while (true) {
+        int ch = get_fn(istream_ptr);
+        char c = static_cast<char>(ch);
+        if (c == ':') {
+            putback_fn(istream_ptr, ':');
+            read_str_fn(istream_ptr, token_str);
+            if (eq_cstr_fn(token_str, reinterpret_cast<const char*>(0x00958BFC)) != 0) {
+                return 1;
+            }
+            uint8_t* target = *reinterpret_cast<uint8_t**>(obj);
+            append_str_fn(target + 0x3c, token_str);
+        } else {
+            uint8_t* target = *reinterpret_cast<uint8_t**>(obj);
+            append_char_fn(target + 0x3c, c);
+        }
+    }
+}
+} // namespace lift_00566F70
+
+// [0x00567210]
+namespace lift_00567210 {
+extern uintptr_t mem_00925134;
+extern void __thiscall ext_00567210(void* self, uint32_t node, uint32_t arg2);
+
+// @name sub_00567210
+// @summary Recursively traverses a node's child vector at +0x24 with an unused second argument
+// @field Node +0x24 uintptr_t children_vec
+void __thiscall fn_00567210(void* self, uint32_t node, uint32_t arg2) {
+    uint8_t* vec = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(node) + 0x24);
+    uint32_t it = *reinterpret_cast<uint32_t*>(vec + 0x4);
+    if (it > *reinterpret_cast<uint32_t*>(vec + 0x8)) {
+        reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+    }
+
+    for (;;) {
+        uint32_t end = *reinterpret_cast<uint32_t*>(vec + 0x8);
+        if (*reinterpret_cast<uint32_t*>(vec + 0x4) > end) {
+            reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint32_t*>(vec + 0x8)) {
+            reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+        }
+        uint32_t child = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(it));
+        ext_00567210(self, child, arg2);
+        if (it >= *reinterpret_cast<uint32_t*>(vec + 0x8)) {
+            reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+        }
+        it += 4;
+    }
+}
+} // namespace lift_00567210
