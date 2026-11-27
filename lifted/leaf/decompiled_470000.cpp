@@ -905,3 +905,29 @@ void fn_00476770(void* self) {
     dtor(self);
 }
 } // namespace lift_00476770
+
+// [0x00478410] sub_00478410 (95 bytes)
+namespace lift_00478410 {
+// Callees (ext_ references from original asm)
+void ext_005170D0(void* self, void* arg);
+void ext_00678D70(void* self, int arg);
+
+// IAT slot for _invalid_parameter_noinfo (bounds-check boilerplate; metadata-only reference)
+extern void* mem_00925134;
+
+// @name ForEachEntryThenVfunc1 (descriptive; owner class not yet identified)
+// @summary Calls ext_005170D0(self, entry) for each pointer in the range struct's [begin, end) list, then calls ext_00678D70(self, 1).
+void fn_00478410(void* self, void* range) {
+    // range is an untyped struct: +0x04 = begin pointer, +0x08 = end pointer.
+    // Original bounds checks (_invalid_parameter_noinfo on begin > end / cursor past end)
+    // are CRT boilerplate and are omitted here.
+    (void)&mem_00925134;
+    auto* r = static_cast<unsigned char*>(range);
+    void** cur = *reinterpret_cast<void***>(r + 0x04);
+    while (cur != *reinterpret_cast<void***>(r + 0x08)) {
+        ext_005170D0(self, *cur);
+        ++cur;
+    }
+    ext_00678D70(self, 1);
+}
+} // namespace lift_00478410

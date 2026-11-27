@@ -9097,6 +9097,12 @@
     "summary": "Iterates over a pointer vector at this+0x30 and invokes vtable+0xEC on each element with arg0",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00478410": {
+    "name": "ForEachEntryThenVfunc1 (descriptive; owner class not yet identified)",
+    "signature": "void fn_00478410(void* self, void* range)",
+    "summary": "Calls ext_005170D0(self, entry) for each pointer in the range struct's [begin, end) list, then calls ext_00678D70(self, 1).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004788A0": {
     "name": "sub_004788A0",
     "signature": "uint32_t fn_004788A0(uint32_t begin, uint32_t end, uint32_t value)",
