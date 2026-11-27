@@ -1,0 +1,13 @@
+{
+  "va": "0x004786B0",
+  "size": 174,
+  "orig_symbol": "sub_004786B0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "InsertionSortWithComparator",
+  "signature": "extern \"C\" void __cdecl fn_004786B0(uint32_t* first, uint32_t* last, uint32_t comp)",
+  "summary": "Insertion sort of a dword range [first,last) using a by-value comparator object; shifts via rotate helper.",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:48:58Z"
+}

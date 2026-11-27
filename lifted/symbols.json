@@ -11786,6 +11786,12 @@
     "summary": "Calls ext_005170D0(self, entry) for each pointer in the range struct's [begin, end) list, then calls ext_00678D70(self, 1).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x004786B0": {
+    "name": "InsertionSortWithComparator",
+    "signature": "extern \"C\" void __cdecl fn_004786B0(uint32_t* first, uint32_t* last, uint32_t comp)",
+    "summary": "Insertion sort of a dword range [first,last) using a by-value comparator object; shifts via rotate helper.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004788A0": {
     "name": "sub_004788A0",
     "signature": "uint32_t fn_004788A0(uint32_t begin, uint32_t end, uint32_t value)",
@@ -40616,6 +40622,13 @@
     "class": "Vector",
     "signature": "void fn_00578080(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x00578FD0": {
+    "name": "Vector84::insert",
+    "class": "Vector84",
+    "signature": "Vector84Iter* __thiscall sub_00578FD0( void* self, Vector84Iter* out_iter, void* where_container, uintptr_t where_ptr, const void* val)",
+    "summary": "Inserts a single 84-byte element at the given iterator position and returns an iterator to the inserted element",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x005795D0": {

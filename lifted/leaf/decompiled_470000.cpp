@@ -2732,3 +2732,33 @@ void* fn_00473C70(void* self, void* out, uint8_t insertLeft, void* hint, const v
     return out;
 }
 } // namespace lift_00473C70
+
+// [0x004786B0]
+namespace lift_004786B0 {
+extern bool __thiscall ext_00476860(void* comp, uint32_t a, uint32_t b);
+extern void __cdecl ext_00609850(uint32_t* first, uint32_t* mid, uint32_t* last, int a, int b);
+
+// @name InsertionSortWithComparator
+// @summary Insertion sort of a dword range [first,last) using a by-value comparator object; shifts via rotate helper.
+extern void __cdecl fn_004786B0(uint32_t* first, uint32_t* last, uint32_t comp)
+{
+    if (first == last) return;
+    for (uint32_t* i = first + 1; i != last; ++i) {
+        uint32_t* next = i + 1;
+        if (ext_00476860(&comp, *i, *first)) {
+            if (first != i && i != next)
+                ext_00609850(first, i, next, 0, 0);
+            continue;
+        }
+        uint32_t* edi = i - 1;
+        if (!ext_00476860(&comp, *i, *edi)) continue;
+        uint32_t* hole;
+        do {
+            hole = edi;
+            --edi;
+        } while (ext_00476860(&comp, *i, *edi));
+        if (hole != i && i != next)
+            ext_00609850(hole, i, next, 0, 0);
+    }
+}
+} // namespace lift_004786B0
