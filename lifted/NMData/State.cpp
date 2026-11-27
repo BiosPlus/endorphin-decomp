@@ -614,3 +614,95 @@ void* __thiscall fn_004A0150(void* self, void* out, uint32_t prop_id) {
     }
 }
 } // namespace lift_004A0150
+
+// [0x004A0350]
+namespace lift_004A0350 {
+// Known callee 0x0041A920: vector push_back-style helper; thiscall on the output vector with a pointer to the element slot.
+extern void __thiscall ext_0041A920(void* self, DWORD* elem);
+// Known callee 0x004A02D0: thiscall on the list node's +8 sub-object, takes two stack args (both the output vector).
+extern void __thiscall ext_004A02D0(void* self, void* a, void* b);
+// Known callee 0x00596660: eraseInt32Range(self=vector, out, a2, first, a4, last).
+extern void __thiscall ext_00596660(void* self, void** out, void* a2, void* first, void* a4, void* last);
+// Known callee 0x0059A140: slow-path insert into the vector at position `pos` (reallocating).
+extern void __thiscall ext_0059A140(void* self, void* out, void* a2, void* pos, DWORD* elem);
+// Debug-iterator assertion pointer (MSVCR80!_invalid_parameter_noinfo); only referenced by the original asm's checks.
+extern int mem_00925134;
+
+namespace {
+
+inline void* P(DWORD v) { return reinterpret_cast<void*>(static_cast<uintptr_t>(v)); }
+inline DWORD D(const void* p) { return static_cast<DWORD>(reinterpret_cast<uintptr_t>(p)); }
+
+// Virtual call through vtable slot 0x54 (index 21) of the object at `obj`, thiscall with one stack arg.
+inline bool callVirt21(void* obj, void* arg) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto fn = reinterpret_cast<bool (__thiscall*)(void*, void*)>(vtbl[21]);
+    return fn(obj, arg);
+}
+
+} // namespace
+
+// [0x004A0350] NMData::State::vfunc_15_off_8 (448 bytes)
+// @name NMData::State::vfunc_15_off_8
+// @class NMData::State
+// @summary Clears the caller's DWORD vector (arg1), then walks the list at +0xD8 and the list at +0xCC collecting elements whose vfunc slot 21 accepts arg1 (appending them to the vector); returns true if the vector ends up non-empty.
+// @field NMData::State +0xCC void* field_0xCC
+// @field NMData::State +0xD8 void* field_0xD8
+bool fn_004A0350(void* self, void* vec, DWORD /*arg2: scratch only, never read*/) {
+    (void)&mem_00925134;  // debug-iterator checks in the original are no-ops on the success path
+    DWORD scratch[2] = {0, 0};
+    DWORD elem = 0;
+
+    // Erase [begin, end) of the vector: it is rebuilt from scratch below.
+    DWORD begin = lift_field<DWORD>(vec, 0x4);
+    DWORD end = lift_field<DWORD>(vec, 0x8);
+    ext_00596660(vec, reinterpret_cast<void**>(scratch), vec, P(begin), vec, P(end));
+
+    // First list: head sentinel stored at this+0xD8.
+    DWORD sentinel1 = lift_field<DWORD>(self, 0xD8);
+    DWORD cur = lift_field<DWORD>(P(sentinel1), 0);
+    while (cur != sentinel1) {
+        void* node = P(cur);
+        void* obj = static_cast<uint8_t*>(node) + 0x10;
+        if (callVirt21(obj, vec)) {
+            elem = D(obj);
+            ext_0041A920(vec, &elem);
+        }
+        ext_004A02D0(static_cast<uint8_t*>(node) + 0x8, vec, vec);
+        cur = lift_field<DWORD>(node, 0);
+    }
+
+    // Second list: head sentinel stored at this+0xCC; element object at node+8.
+    DWORD sentinel2 = lift_field<DWORD>(self, 0xCC);
+    cur = lift_field<DWORD>(P(sentinel2), 0);
+    while (cur != sentinel2) {
+        void* node = P(cur);
+        void* obj = static_cast<uint8_t*>(node) + 0x8;
+        if (callVirt21(obj, vec)) {
+            elem = D(obj);
+            DWORD b = lift_field<DWORD>(vec, 0x4);
+            DWORD e = lift_field<DWORD>(vec, 0x8);
+            DWORD cap = lift_field<DWORD>(vec, 0xC);
+            int32_t size = static_cast<int32_t>(e - b) >> 2;
+            int32_t capCount = static_cast<int32_t>(cap - b) >> 2;
+            if (b != 0 && size < capCount) {
+                // Fast path: room available, append in place.
+                *reinterpret_cast<DWORD*>(P(e)) = elem;
+                lift_field<DWORD>(vec, 0x8) = e + 4;
+            } else {
+                // Slow path: grow/insert at end.
+                ext_0059A140(vec, scratch, vec, P(e), &elem);
+            }
+        }
+        cur = lift_field<DWORD>(node, 0);
+    }
+
+    // Result: true iff the output vector is non-empty.
+    DWORD b = lift_field<DWORD>(vec, 0x4);
+    if (b == 0) {
+        return false;
+    }
+    DWORD e = lift_field<DWORD>(vec, 0x8);
+    return (static_cast<int32_t>(e - b) >> 2) != 0;
+}
+} // namespace lift_004A0350

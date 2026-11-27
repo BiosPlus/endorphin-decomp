@@ -15795,6 +15795,13 @@
     "summary": "Dispatches property lookup on NMData::State by property ID, returning a property handle/value in out.",
     "lifted_path": "lifted/NMData/State.cpp"
   },
+  "0x004A0350": {
+    "name": "NMData::State::vfunc_15_off_8",
+    "class": "NMData::State",
+    "signature": "inline void* P(DWORD v)",
+    "summary": "Clears the caller's DWORD vector (arg1), then walks the list at +0xD8 and the list at +0xCC collecting elements whose vfunc slot 21 accepts arg1 (appending them to the vector); returns true if the vector ends up non-empty.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x004A0620": {
     "name": "sub_004A0620",
     "class": "\u003cClassName\u003e (unknown; no class name recovered from this function)",

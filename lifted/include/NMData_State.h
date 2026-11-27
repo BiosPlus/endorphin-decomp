@@ -23,9 +23,9 @@ struct NMData_State_Fields {
     // +0x80  uint32_t*                field_0x80  (evidence: 0x0049FC80)
     // +0x84  uint32_t*                field_0x84  (evidence: 0x0049FC80)
     // +0x98  uint8_t                  field_0x98  (evidence: 0x004A0150)
-    // +0xCC  void*                    field_0xCC  (evidence: 0x0049F140)
+    // +0xCC  void*                    field_0xCC  (evidence: 0x0049F140, 0x004A0350)
     // +0xD0  void*                    list_head  (evidence: 0x0049FCF0)
-    // +0xD8  void*                    field_0xD8  (evidence: 0x0049F140)
+    // +0xD8  void*                    field_0xD8  (evidence: 0x0049F140, 0x004A0350)
     // +0xE0  float                    field_0xE0  (evidence: 0x0049AF70, 0x0049AFD0, 0x0049E000, 0x0049E0D0, 0x0049E190, 0x0049FAC0) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  float                    rect_x1  (evidence: 0x0049CD30) // CONFLICT: multiple definitions at +0xE0
     // +0xE4  float                    field_0xE4  (evidence: 0x0049AF70, 0x0049AFD0, 0x0049E0D0, 0x0049E190, 0x0049FAC0) // CONFLICT: multiple definitions at +0xE4
