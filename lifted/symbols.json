@@ -26580,6 +26580,13 @@
     "summary": "If mode == 5, clear flags 0xE4/0xE5 and dispatch vtable slot 0x80; otherwise forward to SetIndexInRange on sub-object 0xB8 (flag set) or 0x98 (flag clear), then dispatch vtable slot 0x80 when the flag is clear.",
     "lifted_path": "lifted/classes/RotateTool.cpp"
   },
+  "0x005467E0": {
+    "name": "RotateTool::vfunc_21",
+    "class": "RotateTool",
+    "signature": "inline void lift_vcall_void(void* obj)",
+    "summary": "Updates the mode flag at +0xE4 from the stack flag bit 3 (when it was clear), sets the float at +0xA4 to 0.3f or 1.0f, then either sets +0xE5 or dispatches vtable +0x80 on self; finally dispatches vtable +0x5C on the sub-object at +0x88. Returns 1.",
+    "lifted_path": "lifted/classes/RotateTool.cpp"
+  },
   "0x00546860": {
     "name": "RotateTool::vfunc_7",
     "class": "RotateTool",

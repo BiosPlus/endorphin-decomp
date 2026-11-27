@@ -52,3 +52,58 @@ void fn_00546780(void* self, int32_t /*arg1*/, int32_t mode) {
     slot80(self);
 }
 } // namespace lift_00546780
+
+// [0x005467E0] RotateTool::vfunc_21 (128 bytes)
+namespace lift_005467E0 {
+// Float constant 0.3f read from .rdata at 0x00940690.
+extern int mem_00940690;
+
+// Virtual slot dispatch on an object: vtable slot at byte offset `Offset` (thiscall, no args).
+template <std::size_t Offset>
+inline void lift_vcall_void(void* obj) {
+    void** vt = lift_field<void**>(obj, 0);
+    reinterpret_cast<void (*)(void*)>(vt[Offset / sizeof(void*)])(obj);
+}
+
+// @name RotateTool::vfunc_21
+// @class RotateTool
+// @summary Updates the mode flag at +0xE4 from the stack flag bit 3 (when it was clear), sets the float at +0xA4 to 0.3f or 1.0f, then either sets +0xE5 or dispatches vtable +0x80 on self; finally dispatches vtable +0x5C on the sub-object at +0x88. Returns 1.
+// @field RotateTool +0x88 void* field_0x88
+// @field RotateTool +0xA4 float field_0xA4
+// @field RotateTool +0xE4 uint8_t field_0xE4
+// @field RotateTool +0xE5 uint8_t field_0xE5
+// @field RotateTool +0xE6 uint8_t field_0xE6
+int fn_005467E0(void* self, uint32_t /*arg1*/, uint32_t arg2) {
+    uint8_t& flagE4 = lift_field<uint8_t>(self, 0xE4);
+    uint8_t& flagE5 = lift_field<uint8_t>(self, 0xE5);
+    uint8_t& flagE6 = lift_field<uint8_t>(self, 0xE6);
+    float& valA4 = lift_field<float>(self, 0xA4);
+
+    const uint8_t oldE4 = flagE4;
+    flagE6 = 1;
+    if (oldE4 == 0) {
+        flagE6 = static_cast<uint8_t>((arg2 >> 3) & 1u);
+    }
+
+    if (flagE6 != 0) {
+        const uint8_t newE4 = (oldE4 == 0) ? 1 : 0;
+        flagE4 = newE4;
+        if (newE4 != 0) {
+            valA4 = *reinterpret_cast<const float*>(&mem_00940690);
+        } else {
+            valA4 = 1.0f;
+        }
+
+        if (flagE4 != 0) {
+            flagE5 = 1;
+        } else {
+            lift_vcall_void<0x80>(self);
+        }
+
+        void* sub = lift_field<void*>(self, 0x88);
+        lift_vcall_void<0x5C>(sub);
+    }
+
+    return 1;
+}
+} // namespace lift_005467E0
