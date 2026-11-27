@@ -886,3 +886,39 @@ extern int32_t fn_004CE590(const void* str) {
     return 7;
 }
 } // namespace lift_004CE590
+
+// [0x004C7200] sub_004C7200 (106 bytes)
+namespace lift_004C7200 {
+// Known callee 0x00401C60: std::logic_error::logic_error (copy constructor of the base exception)
+extern void* __thiscall ext_00401C60(void* self, const void* other);
+// MSVCP80 std::string copy-constructor import slot (used by the original via indirect call;
+// the portable version copy-constructs the std::string members with placement new instead).
+extern int mem_00924FE0;
+
+// @name StringExceptionWithMember::copy_ctor
+// @class StringExceptionWithMember
+// @summary Copy constructor: copies the base exception, sets the vtable, and copy-constructs two std::string members.
+// @field StringExceptionWithMember +0x00 void* vftable
+// @field StringExceptionWithMember +0x28 std::string str_a
+// @field StringExceptionWithMember +0x44 std::string str_b
+void* fn_004C7200(void* self, const void* other) {
+    (void)&mem_00924FE0;
+
+    // Base copy constructor (thiscall, one stack argument).
+    ext_00401C60(self, other);
+
+    auto* dst = static_cast<unsigned char*>(self);
+    const auto* src = static_cast<const unsigned char*>(other);
+
+    // Vtable pointer for this class (original stores the 32-bit image address).
+    lift_field<uint32_t>(dst, 0x00) = 0x00945A5Cu;
+
+    // First std::string member: copy from other+0x28.
+    new (dst + 0x28) std::string(*reinterpret_cast<const std::string*>(src + 0x28));
+
+    // Second std::string member: copy from other+0x44.
+    new (dst + 0x44) std::string(*reinterpret_cast<const std::string*>(src + 0x44));
+
+    return self;
+}
+} // namespace lift_004C7200

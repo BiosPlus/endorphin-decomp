@@ -15220,6 +15220,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/SeverEventData.cpp"
   },
+  "0x004C7200": {
+    "name": "StringExceptionWithMember::copy_ctor",
+    "class": "StringExceptionWithMember",
+    "signature": "void* fn_004C7200(void* self, const void* other)",
+    "summary": "Copy constructor: copies the base exception, sets the vtable, and copy-constructs two std::string members.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C72D0": {
     "name": "CopyRangeBackward_004C72D0",
     "signature": "extern uint8_t* __cdecl fn_004C72D0(uint8_t* first, uint8_t* last, uint8_t* d_last)",

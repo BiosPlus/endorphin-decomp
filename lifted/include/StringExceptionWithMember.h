@@ -8,9 +8,12 @@
 // Recovered field layout for StringExceptionWithMember:
 namespace lifted_layout {
 struct StringExceptionWithMember_Fields {
-    // +0x0   std::string              member0  (evidence: 0x00476770)
+    // +0x0   std::string              member0  (evidence: 0x00476770) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vftable  (evidence: 0x004C7200) // CONFLICT: multiple definitions at +0x0
     // +0x1C  std::string              member1  (evidence: 0x00476770)
+    // +0x28  std::string              str_a  (evidence: 0x004C7200)
     // +0x38  std::string              member2  (evidence: 0x00476770)
+    // +0x44  std::string              str_b  (evidence: 0x004C7200)
     // +0x54  std::string              member3  (evidence: 0x00476770)
 };
 } // namespace lifted_layout

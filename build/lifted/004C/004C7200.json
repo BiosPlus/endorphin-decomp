@@ -1,0 +1,34 @@
+{
+  "va": "0x004C7200",
+  "size": 106,
+  "orig_symbol": "sub_004C7200",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "StringExceptionWithMember::copy_ctor",
+  "class": "StringExceptionWithMember",
+  "signature": "void* fn_004C7200(void* self, const void* other)",
+  "summary": "Copy constructor: copies the base exception, sets the vtable, and copy-constructs two std::string members.",
+  "fields": [
+    {
+      "class": "StringExceptionWithMember",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "StringExceptionWithMember",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "str_a"
+    },
+    {
+      "class": "StringExceptionWithMember",
+      "offset": "+0x44",
+      "type": "std::string",
+      "name": "str_b"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:56:45Z"
+}
