@@ -1,0 +1,22 @@
+{
+  "va": "0x0056D860",
+  "size": 190,
+  "orig_symbol": "NMCIO::vfunc_10",
+  "src_path": "src/classes/NMCIO.cpp",
+  "lifted_path": "lifted/classes/NMCIO.cpp",
+  "name": "NMCIO::vfunc_10",
+  "class": "NMCIO",
+  "signature": "void __thiscall fn_0056D860(void* self, void* arg)",
+  "summary": "Forwards the argument to virtual slot 7 of the object at this+0x414, then passes two local std::string copies (from .rdata literals) to virtual slots 23 and 24 of that object's +4 base subobject, bumps a global counter, and destroys the strings.",
+  "fields": [
+    {
+      "class": "NMCIO",
+      "offset": "+0x414",
+      "type": "void*",
+      "name": "field_0x414"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:58:56Z"
+}
