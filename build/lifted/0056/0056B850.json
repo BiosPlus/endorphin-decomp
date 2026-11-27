@@ -1,0 +1,22 @@
+{
+  "va": "0x0056B850",
+  "size": 106,
+  "orig_symbol": "sub_0056B850",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "Unknown::getStrOrVirtualConcat",
+  "class": "Unknown",
+  "signature": "inline void* iat_slot_value(const int\u0026 slot)",
+  "summary": "Compares the virtual-slot-9 string of self against getStrPtrOrFallback(self); if they differ, returns a copy of the fallback string, otherwise returns virtual-slot-9(\u0026global) concatenated with the global string. Result is written to the caller-provided return slot.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:57:39Z"
+}

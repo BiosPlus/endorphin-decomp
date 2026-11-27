@@ -26685,6 +26685,13 @@
     "summary": "Checks whether field_0x1E0 is zero and the pointer range [0x28, 0x2C) is empty.",
     "lifted_path": "lifted/ASFData/Bone.cpp"
   },
+  "0x0056B850": {
+    "name": "Unknown::getStrOrVirtualConcat",
+    "class": "Unknown",
+    "signature": "inline void* iat_slot_value(const int\u0026 slot)",
+    "summary": "Compares the virtual-slot-9 string of self against getStrPtrOrFallback(self); if they differ, returns a copy of the fallback string, otherwise returns virtual-slot-9(\u0026global) concatenated with the global string. Result is written to the caller-provided return slot.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x0056B8C0": {
     "name": "Acclaim2CharacterIO::vfunc_48",
     "class": "Acclaim2CharacterIO",

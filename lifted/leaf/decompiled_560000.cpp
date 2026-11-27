@@ -483,3 +483,82 @@ BOOL fn_00564600(void* self, void* str) {
     return r == 0;
 }
 } // namespace lift_00564600
+
+// [0x0056B850] sub_0056B850 (106 bytes)
+namespace lift_0056B850 {
+// Known callee 0x00584BD0: Unknown::getStrPtrOrFallback (Returns a pointer to the std::string at +0x4C if it differs from a fixed literal, else a pointer to the std::string at +0x14.)
+extern void ext_00584BD0();
+// IAT slot: std::operator!=(const std::string&, const std::string&)
+extern int mem_00924FB0;
+// IAT slot: std::string::basic_string(const std::string&) copy constructor (thiscall)
+extern int mem_00924FE0;
+// IAT slot: std::operator+(const std::string&, const std::string&) (returns by value)
+extern int mem_00924FD0;
+// Global std::string constant
+extern int mem_00B3A9F4;
+// RDATA constants listed for this function's region; not read by the code path itself.
+extern int mem_00924EC0;
+extern int mem_00924FC0;
+extern int mem_00924FD8;
+extern int mem_009250E4;
+extern int mem_009250E8;
+extern int mem_009250EC;
+
+// @name Unknown::getStrOrVirtualConcat
+// @class Unknown
+// @summary Compares the virtual-slot-9 string of self against getStrPtrOrFallback(self); if they differ, returns a copy of the fallback string, otherwise returns virtual-slot-9(&global) concatenated with the global string. Result is written to the caller-provided return slot.
+// @field Unknown +0x00 void* field_0x00
+
+namespace {
+
+// Thiscall: self in ECX, one stack arg.
+using VirtualStrFn = void* (__thiscall*)(void* self, const void* arg);
+// Thiscall: self in ECX, no stack args.
+using GetStrFn = void* (__thiscall*)(void* self);
+// Cdecl: two stack args, returns bool.
+using StrNotEqualFn = bool (__cdecl*)(const void* lhs, const void* rhs);
+// Thiscall: self (destination string) in ECX, source on stack.
+using StrCopyCtorFn = void (__thiscall*)(void* self, const void* src);
+// Cdecl: hidden return slot first, then two string operands.
+using StrConcatFn = void (__cdecl*)(void* ret, const void* lhs, const void* rhs);
+
+// Resolve an IAT slot (a global holding the imported function pointer) to a callable address.
+inline void* iat_slot_value(const int& slot) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(slot)));
+}
+
+} // namespace
+
+void* fn_0056B850(void* out, void* self) {
+    // Metadata-only references (not accesses on this path).
+    (void)&mem_00924EC0;
+    (void)&mem_00924FC0;
+    (void)&mem_00924FD8;
+    (void)&mem_009250E4;
+    (void)&mem_009250E8;
+    (void)&mem_009250EC;
+
+    // vtable slot 9 (byte offset 0x24) on the object.
+    void* const vtable = lift_field<void*>(self, 0x00);
+    auto const virtualStr = reinterpret_cast<VirtualStrFn>(lift_field<void*>(vtable, 0x24));
+
+    void* const keyed = virtualStr(self, nullptr);
+    void* const fallback = reinterpret_cast<GetStrFn>(&ext_00584BD0)(self);
+
+    auto const notEqual = reinterpret_cast<StrNotEqualFn>(iat_slot_value(mem_00924FB0));
+    if (notEqual(keyed, fallback)) {
+        // Strings differ: copy-construct the fallback string into the return slot.
+        void* const src = reinterpret_cast<GetStrFn>(&ext_00584BD0)(self);
+        auto const copyCtor = reinterpret_cast<StrCopyCtorFn>(iat_slot_value(mem_00924FE0));
+        copyCtor(out, src);
+        return out;
+    }
+
+    // Strings equal: return virtualStr(&global) + global.
+    void* const global = reinterpret_cast<void*>(&mem_00B3A9F4);
+    void* const lhs = virtualStr(self, global);
+    auto const concat = reinterpret_cast<StrConcatFn>(iat_slot_value(mem_00924FD0));
+    concat(out, lhs, global);
+    return out;
+}
+} // namespace lift_0056B850
