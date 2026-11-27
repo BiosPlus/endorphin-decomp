@@ -11977,3 +11977,27 @@ void fn_005B8940(void* holder) {
     lift_field<void*>(holder, 0x04) = static_cast<void*>(&mem_00B43D1C);
 }
 } // namespace lift_005B8940
+
+// [0x005C7D80] ExprParser::ReadWriteMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005C7D80 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores the single stack argument into the first DWORD of self and returns it).
+extern void __thiscall ext_0067A670(void* self, uint32_t value);
+extern uint32_t mem_00B44514;   // one-time initialisation guard flags
+extern uint32_t mem_00B44510;   // static accessor object (first DWORD = vtable 0x00964B94)
+
+// @name ExprParser::ReadWriteMethodType<NMData::CollisionModelDataBase>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary On first call, initialises the static accessor object at mem_00B44510 (guarded by mem_00B44514 bit 0); then stores that accessor's address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005C7D80(void* holder) {
+    // One-time setup of the static accessor object (the original's SEH frame is dropped).
+    if ((mem_00B44514 & 1u) == 0) {
+        mem_00B44514 |= 1u;
+        ext_0067A670(&mem_00B44510, 0u);
+        mem_00B44510 = 0x00964B94u;   // vtable pointer
+    }
+
+    // holder+0x04 = &mem_00B44510
+    lift_field<uint32_t>(holder, 0x04) = 0x00B44510u;
+}
+} // namespace lift_005C7D80

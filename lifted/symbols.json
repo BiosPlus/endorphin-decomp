@@ -34295,6 +34295,13 @@
     "summary": "Lazily initializes the global string at 0x00B444F0 once and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C7D80": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelDataBase\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelDataBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern \"C\" uint32_t mem_00B44510;   // static accessor object (first DWORD = vtable 0x00964B94) void fn_005C7D80(void* holder)",
+    "summary": "On first call, initialises the static accessor object at mem_00B44510 (guarded by mem_00B44514 bit 0); then stores that accessor's address into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005C7E00": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0\u003e",
