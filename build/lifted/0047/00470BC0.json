@@ -1,0 +1,14 @@
+{
+  "va": "0x00470BC0",
+  "size": 84,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRuntimeEngine,float,getSimulationFrameRate,0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, getSimulationFrameRate, 0\u003e",
+  "signature": "extern \"C\" float ext_0046F860(void* self);                          // RuntimeEngine::getSimulationFrameRate (unlifted, thiscall) extern \"C\" void* ext_0046C390(void* out, float value);              // formatFloatTrimmedStringWrapper extern \"C\" void* ext_0046C3C0(void* self);                          // DerivedException::DerivedException extern \"C\" void ext_006A6DD2(void* obj, const void* throwInfo);     // thunk_MSVCR80__CxxThrowException extern \"C\" char mem_009DEC1C[];                                     // exception type info extern \"C\" void* fn_00470BC0(void* out, void** holder)",
+  "summary": "Formats RuntimeEngine::getSimulationFrameRate() into the output string; throws DerivedException when the holder's engine pointer is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:01:32Z"
+}

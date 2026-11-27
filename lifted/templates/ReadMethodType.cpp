@@ -19,6 +19,7 @@ void* fn_00617340(void* self) {
 #include <new>
 #include <memory>
 #include <cstddef>
+#include "../include/lift_compat.h"
 
 // [0x00504DA0] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_3 (43 bytes)
 namespace lift_00504DA0 {
@@ -62903,3 +62904,29 @@ void* fn_004B2170(void* out, void* arg) {
     return out;
 }
 } // namespace lift_004B2170
+
+// [0x00470BC0]
+namespace lift_00470BC0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine,float,getSimulationFrameRate,0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, getSimulationFrameRate, 0>
+// @summary Formats RuntimeEngine::getSimulationFrameRate() into the output string; throws DerivedException when the holder's engine pointer is null.
+
+extern float ext_0046F860(void* self);                          // RuntimeEngine::getSimulationFrameRate (unlifted, thiscall)
+extern void* ext_0046C390(void* out, float value);              // formatFloatTrimmedStringWrapper
+extern void* ext_0046C3C0(void* self);                          // DerivedException::DerivedException
+extern void ext_006A6DD2(void* obj, const void* throwInfo);     // thunk_MSVCR80__CxxThrowException
+extern char mem_009DEC1C[];                                     // exception type info
+
+extern void* fn_00470BC0(void* out, void** holder) {
+    void* engine = *holder;
+    if (engine == nullptr) {
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return nullptr;
+    }
+    float rate = ext_0046F860(engine);
+    ext_0046C390(out, rate);
+    return out;
+}
+} // namespace lift_00470BC0
