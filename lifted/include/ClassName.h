@@ -10,5 +10,6 @@ namespace lifted_layout {
 struct ClassName_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x00503BC0, 0x005086E0, 0x00508790)
     // +0x4   std::string              field_0x04  (evidence: 0x00503BC0, 0x005086E0, 0x00508790)
+    // +0x10  void*                    field_0x10  (evidence: 0x00724E80)
 };
 } // namespace lifted_layout

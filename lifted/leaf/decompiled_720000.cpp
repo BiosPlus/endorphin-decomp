@@ -4,6 +4,7 @@ extern "C" void __fastcall ext_0072D640(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
 #include <cstring>
+#include <ctime>
 
 // [0x0072D620] sub_0072D620 (32 bytes)
 // @name sub_0072D620
@@ -903,3 +904,47 @@ void fn_0072BFD0(void* self, int32_t a1, int32_t a2, uint8_t a3, int32_t a4, int
     lift_field<uint8_t>(self, 0x65) = a3;
 }
 } // namespace lift_0072BFD0
+
+// [0x00724E80] sub_00724E80 (128 bytes)
+namespace lift_00724E80 {
+extern void* mem_009251B8; // MSVCR80!_time32 (IAT slot)
+extern void* mem_00925180; // MSVCR80!srand   (IAT slot)
+extern void* mem_009252B4; // MSVCR80!rand    (IAT slot)
+
+// @name ClassName::FillRandomAndCopyPair
+// @class ClassName
+// @summary Seeds rand() from time, fills a 160-byte random word buffer, passes it to vtable slot 7 of self->+0x10, then writes a {A,B,B,A} dword quad to out.
+// @field ClassName +0x10 void* field_0x10
+void fn_00724E80(void* self, uint32_t* out) {
+    using TimeFn = int32_t(__cdecl*)(int32_t*);
+    using SrandFn = void(__cdecl*)(uint32_t);
+    using RandFn = int(__cdecl*)();
+    using VSlot7Fn = void(__thiscall*)(void* /*this*/, void* /*buf*/, uint32_t /*size*/);
+
+    uint16_t buf[80];
+
+    // srand(_time32(NULL))
+    const int32_t t = reinterpret_cast<TimeFn>(mem_009251B8)(nullptr);
+    reinterpret_cast<SrandFn>(mem_00925180)(static_cast<uint32_t>(t));
+
+    // for (i = 0x50; i != 0; --i) buf[k++] = (uint16_t)rand();
+    RandFn rnd = reinterpret_cast<RandFn>(mem_009252B4);
+    for (int i = 0; i < 80; ++i) {
+        buf[i] = static_cast<uint16_t>(rnd());
+    }
+
+    // obj = self->+0x10; obj->vtable[7](buf, 0xa0)  (thiscall)
+    void* obj = lift_field<void*>(self, 0x10);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<VSlot7Fn>(vtbl[7])(obj, buf, 0xa0);
+
+    // Copy: A = dword at buf+0x26, B = dword at buf+0x2A; out = {A, B, B, A}
+    uint32_t a, b;
+    std::memcpy(&a, reinterpret_cast<uint8_t*>(buf) + 0x26, sizeof(a));
+    std::memcpy(&b, reinterpret_cast<uint8_t*>(buf) + 0x2A, sizeof(b));
+    out[0] = a;
+    out[1] = b;
+    out[2] = b;
+    out[3] = a;
+}
+} // namespace lift_00724E80
