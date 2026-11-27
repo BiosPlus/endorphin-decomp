@@ -35195,6 +35195,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005CFAE0": {
+    "name": "setFloat40AndDispatchUnderLock",
+    "signature": "void fn_005CFAE0(void* self, float value)",
+    "summary": "Gets the global owner object, calls its slot 0x1D8 to obtain a lock object, stores the float argument at self+0x40 while holding that lock, then runs the 0x154 dispatch on the owner's +0x258 sub-object and releases the lock.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CFB60": {
     "name": "GlobalSubobjectLockedDispatch",
     "signature": "void fn_005CFB60(void* self, uint8_t flag)",

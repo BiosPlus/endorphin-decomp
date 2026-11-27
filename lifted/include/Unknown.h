@@ -819,7 +819,7 @@ struct Unknown_Fields {
     // +0x40  Buffer                   field_0x40  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x40
     // +0x40  DWORD                    field_0x40  (evidence: 0x00518030, 0x0051C5A0, 0x00540F60, 0x007C8490, 0x007C9930, 0x007CAF70) // CONFLICT: multiple definitions at +0x40
     // +0x40  double                   field_0x40  (evidence: 0x00620F80, 0x00622B40, 0x00766240) // CONFLICT: multiple definitions at +0x40
-    // +0x40  float                    field_0x40  (evidence: 0x0051CCC0, 0x0053C4C0, 0x00543C00, 0x0055CD10, 0x005DC650, 0x00622B40, 0x006296D0, 0x0063D950, 0x0063D970, 0x0063DB50, 0x0063DDF0, 0x007CAF70, 0x007CCAB0, 0x007D48A0, 0x007D8590) // CONFLICT: multiple definitions at +0x40
+    // +0x40  float                    field_0x40  (evidence: 0x0051CCC0, 0x0053C4C0, 0x00543C00, 0x0055CD10, 0x005CFAE0, 0x005DC650, 0x00622B40, 0x006296D0, 0x0063D950, 0x0063D970, 0x0063DB50, 0x0063DDF0, 0x007CAF70, 0x007CCAB0, 0x007D48A0, 0x007D8590) // CONFLICT: multiple definitions at +0x40
     // +0x40  float*                   field_0x40  (evidence: 0x00802D40) // CONFLICT: multiple definitions at +0x40
     // +0x40  float[4]                 field_0x40  (evidence: 0x007C9D80, 0x007CAF70) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint16_t                 field_0x40  (evidence: 0x007AF200, 0x007AF500) // CONFLICT: multiple definitions at +0x40

@@ -1738,3 +1738,34 @@ void fn_005CFB60(void* self, uint8_t flag) {
     ext_0065C650(lock);
 }
 } // namespace lift_005CFB60
+
+// [0x005CFAE0] sub_005CFAE0 (124 bytes)
+namespace lift_005CFAE0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field.)
+extern void ext_0065C650(void* self);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result.)
+extern void* ext_00493EE0(void* ecx);
+
+// @name setFloat40AndDispatchUnderLock
+// @summary Gets the global owner object, calls its slot 0x1D8 to obtain a lock object, stores the float argument at self+0x40 while holding that lock, then runs the 0x154 dispatch on the owner's +0x258 sub-object and releases the lock.
+// @field Unknown +0x40 float field_0x40
+void fn_005CFAE0(void* self, float value) {
+    uintptr_t ownerAddr = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000()));
+    void* owner = reinterpret_cast<void*>(ownerAddr);
+
+    // ecx = [owner + 0x258]; the sub-object is used both as `this` for slot 0x1D8 and as the dispatch target.
+    void* subObject = lift_field<void*>(owner, 0x258);
+    void* vtbl = lift_field<void*>(subObject, 0);
+    void* slot1D8 = lift_field<void*>(vtbl, 0x1D8);
+    void* lockObj = reinterpret_cast<void* (*)(void*)>(slot1D8)(subObject);
+
+    ext_0065C640(lockObj);
+    lift_field<float>(self, 0x40) = value;
+    ext_00493EE0(&lift_field<void*>(owner, 0x258));
+    ext_0065C650(lockObj);
+}
+} // namespace lift_005CFAE0
