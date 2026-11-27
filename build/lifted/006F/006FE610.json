@@ -1,0 +1,13 @@
+{
+  "va": "0x006FE610",
+  "size": 144,
+  "orig_symbol": "sub_006FE610",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "extractDirname_006FE610",
+  "signature": "extern \"C\" void* fn_006FE610(void* out_str, const char* path)",
+  "summary": "Extracts the directory portion of a file path into a string object and returns it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:14:04Z"
+}

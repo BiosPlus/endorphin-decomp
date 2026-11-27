@@ -74217,6 +74217,12 @@
     "summary": "Returns the index of the ordinal-th (0-based) entry in the pointer array at +0x20 (length at +0x10) whose GetDwordByIndex(entry, index) is nonzero, or -1 if there is no such entry.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FE610": {
+    "name": "extractDirname_006FE610",
+    "signature": "extern \"C\" void* fn_006FE610(void* out_str, const char* path)",
+    "summary": "Extracts the directory portion of a file path into a string object and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FECE0": {
     "name": "splitPathComponents",
     "signature": "extern \"C\" int32_t __cdecl fn_006FECE0(void* pathObj, char** outParts)",
@@ -80885,6 +80891,12 @@
     "name": "destroyTwoPointerBuffersArray",
     "signature": "void __thiscall sub_0078D2D0(void* self)",
     "summary": "Releases two pointer buffers on the object and runs vector destruction on 2 elements of size 0x18.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
+  "0x0078D420": {
+    "name": "fn_0078D420",
+    "signature": "void __thiscall fn_0078D420(void* self, int32_t idx1, int32_t idx2, int32_t arg3, int32_t arg4)",
+    "summary": "Inserts symmetric edge/link entries into two indexed DynamicArrays at offsets +0x10 and +0x28.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x0078D4E0": {

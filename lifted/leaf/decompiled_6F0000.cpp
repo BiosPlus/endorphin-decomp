@@ -2887,3 +2887,31 @@ uint8_t fn_006FF7E0(uint16_t* out, int maxIndex, const uint16_t* src, const uint
     return 0;
 }
 } // namespace lift_006FF7E0
+
+// [0x006FE610]
+namespace lift_006FE610 {
+// @name extractDirname_006FE610
+// @summary Extracts the directory portion of a file path into a string object and returns it.
+
+
+extern void* ext_006B9D80(void* ecx, const char* s);
+extern char* (*mem_00925278)(char*, int);
+
+extern void* fn_006FE610(void* out_str, const char* path) {
+    char buf[1024];
+    std::strcpy(buf, path);
+
+    char* sep = mem_00925278(buf, '/');
+    if (!sep) {
+        sep = mem_00925278(buf, '\\');
+    }
+    if (sep) {
+        *sep = '\0';
+    } else {
+        buf[0] = '\0';
+    }
+
+    ext_006B9D80(out_str, buf);
+    return out_str;
+}
+} // namespace lift_006FE610
