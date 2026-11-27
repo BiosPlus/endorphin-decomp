@@ -1,0 +1,22 @@
+{
+  "va": "0x00665090",
+  "size": 150,
+  "orig_symbol": "sub_00665090",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "std::remove_copy_if_char_iter_checked",
+  "class": "std",
+  "signature": "StringIter* __cdecl sub_00665090( StringIter* out_iter, void* dst_container, const char* first, void* dst_container_check, const char* last, ByteTestFn pred)",
+  "summary": "Scans for first matching byte, validates destination string iterator, and copies remaining bytes skipping matches",
+  "fields": [
+    {
+      "class": "std::string",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "size"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:12:04Z"
+}

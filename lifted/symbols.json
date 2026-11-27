@@ -54698,6 +54698,13 @@
     "summary": "Takes begin() and end() iterators of the std::string at self, packs them into a pair, calls 0x00664D40 with the string twice, and returns self.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00665090": {
+    "name": "std::remove_copy_if_char_iter_checked",
+    "class": "std",
+    "signature": "StringIter* __cdecl sub_00665090( StringIter* out_iter, void* dst_container, const char* first, void* dst_container_check, const char* last, ByteTestFn pred)",
+    "summary": "Scans for first matching byte, validates destination string iterator, and copies remaining bytes skipping matches",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006657F0": {
     "name": "Unknown::InitVtblAndArg",
     "class": "Unknown",

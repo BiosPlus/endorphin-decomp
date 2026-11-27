@@ -3746,3 +3746,74 @@ void* __cdecl sub_00664910(void* out_str, int value) {
     return out_str;
 }
 } // namespace lift_00664910
+
+// [0x00665090]
+namespace lift_00665090 {
+// @name std::remove_copy_if_char_iter_checked
+// @summary Scans for first matching byte, validates destination string iterator, and copies remaining bytes skipping matches
+// @field std::string +0x14 uint32_t size
+
+
+struct StringIter {
+    void* container;
+    char* ptr;
+};
+
+using ByteTestFn = uint8_t (__cdecl*)(uint32_t);
+using InvalidParamFn = void (__cdecl*)();
+using MyptrFn = char* (__thiscall*)(void*);
+
+extern const uint8_t* __cdecl ext_00664BF0(const uint8_t* begin, const uint8_t* end, ByteTestFn pred);
+extern StringIter* __cdecl ext_00664DB0(
+    StringIter* out_iter,
+    const char* first,
+    const char* last,
+    void* dst_container,
+    char* dst_ptr,
+    ByteTestFn pred,
+    uint32_t extra);
+
+extern InvalidParamFn mem_00925134;
+extern MyptrFn mem_00924E44;
+
+StringIter* __cdecl sub_00665090(
+    StringIter* out_iter,
+    void* dst_container,
+    const char* first,
+    void* dst_container_check,
+    const char* last,
+    ByteTestFn pred)
+{
+    const uint8_t* pos = ext_00664BF0(
+        reinterpret_cast<const uint8_t*>(first),
+        reinterpret_cast<const uint8_t*>(last),
+        pred);
+
+    if (dst_container != reinterpret_cast<void*>(-2)) {
+        if (dst_container == nullptr || dst_container != dst_container_check) {
+            mem_00925134();
+        }
+    }
+
+    char* pos_char = reinterpret_cast<char*>(const_cast<uint8_t*>(pos));
+    if (pos_char == last) {
+        out_iter->container = dst_container;
+        out_iter->ptr = pos_char;
+        return out_iter;
+    }
+
+    if (dst_container != reinterpret_cast<void*>(-2)) {
+        if (dst_container == nullptr) {
+            mem_00925134();
+        }
+        char* base = mem_00924E44(dst_container);
+        uint32_t len = lift_field<uint32_t>(dst_container, 0x14);
+        if (pos_char >= base + len) {
+            mem_00925134();
+        }
+    }
+
+    ext_00664DB0(out_iter, pos_char + 1, last, dst_container, pos_char, pred, 0);
+    return out_iter;
+}
+} // namespace lift_00665090
