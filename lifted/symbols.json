@@ -34406,6 +34406,13 @@
     "summary": "Returns flag-state predicate for mode 0/1/2 based on bits 0x8/0x18 of flags at +0x1C; 0 otherwise.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053ABF0": {
+    "name": "Primitives::Animation::vfunc_30",
+    "class": "Primitives::Animation",
+    "signature": "float* __thiscall fn_0053ABF0(void* self, uint32_t /*unused*/, uint32_t flags)",
+    "summary": "Dispatches to sub_0053A930 and optionally copies 3 floats + 0.5f into global color/vector buffer",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
   "0x0053ACF0": {
     "name": "SetMaskBitsToMatchFlag",
     "class": "Unknown",
@@ -62869,6 +62876,13 @@
     "signature": "void __thiscall fn_00622940(void* self, void* serializer, uint32_t arg1, uint32_t arg2)",
     "summary": "Serializes or compares three float calibration fields via vtable calls and sub_00487A30.",
     "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
+  },
+  "0x006229C0": {
+    "name": "NMData::SkeletalCalibrationVariables::vfunc_29",
+    "class": "NMData::SkeletalCalibrationVariables",
+    "signature": "static inline void forward_field(void* self, void* obj, ptrdiff_t vtbl_off, const void* key, ptrdiff_t field_off)",
+    "summary": "Reads ten float values from obj via virtual getters and forwards each one with the matching field of self to ext_00487A30.",
+    "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp"
   },
   "0x00622B40": {
     "name": "ComputeFloatIntoField30",

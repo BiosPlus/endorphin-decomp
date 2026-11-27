@@ -1,0 +1,76 @@
+{
+  "va": "0x006229C0",
+  "size": 373,
+  "orig_symbol": "NMData::SkeletalCalibrationVariables::vfunc_29",
+  "src_path": "src/NMData/SkeletalCalibrationVariables.cpp",
+  "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp",
+  "name": "NMData::SkeletalCalibrationVariables::vfunc_29",
+  "class": "NMData::SkeletalCalibrationVariables",
+  "signature": "static inline void forward_field(void* self, void* obj, ptrdiff_t vtbl_off, const void* key, ptrdiff_t field_off)",
+  "summary": "Reads ten float values from obj via virtual getters and forwards each one with the matching field of self to ext_00487A30.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:37:28Z"
+}
