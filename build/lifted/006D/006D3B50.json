@@ -1,0 +1,28 @@
+{
+  "va": "0x006D3B50",
+  "size": 64,
+  "orig_symbol": "sub_006D3B50",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::insertVirtualResultIntoArray_006D3B50",
+  "class": "Unknown",
+  "signature": "int32_t fn_006D3B50(void* self, int32_t arg1)",
+  "summary": "Calls virtual slot 0x48 on self with arg1; if it returns non-zero, appends that result to the DynamicArray at +0xdc. Returns the virtual call's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "DynamicArray",
+      "name": "items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:16Z"
+}
