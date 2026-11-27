@@ -8,6 +8,8 @@
 // Recovered field layout for TreeHeader:
 namespace lifted_layout {
 struct TreeHeader_Fields {
-    // +0x4   uint8_t*                 field_0x04  (evidence: 0x00596B20)
+    // +0x0   void*                    leftmost  (evidence: 0x00476050)
+    // +0x4   uint8_t*                 field_0x04  (evidence: 0x00596B20) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    root  (evidence: 0x00476050) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

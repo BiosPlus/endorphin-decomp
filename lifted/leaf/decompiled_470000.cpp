@@ -2511,3 +2511,78 @@ bool fn_00475960(void* self, const void* a1, const void* a2, bool a3) {
     return false;
 }
 } // namespace lift_00475960
+
+// [0x00476050] sub_00476050 (243 bytes)
+namespace lift_00476050 {
+// Known callee 0x00475E50: StringMapTree insert-at helper (sub_00475E50). thiscall, 4 stack args (out, flag, insertPos, key), ret 0x10.
+extern void* ext_00475E50(void* self, void* out, uint8_t flag, void* pos, const void* key);
+// Known callee 0x00666C00: TreeIterator::operator-- (Decrements a red-black tree iterator to the previous node, validating against nil/end.)
+extern void ext_00666C00(void* self);
+// MSVCP80 std::operator<(const std::string&, const std::string&) IAT slot (cdecl).
+extern int mem_00924EF4;
+
+// @name StringMapTree::lowerBoundInsertPos
+// @class StringMapTree
+// @summary Walks the red-black tree for key (lower-bound style), steps back one node if needed, and returns {tree, node, inserted} via out: inserts at the found position when key is greater, else returns the existing node with inserted=false.
+// @field StringMapTree +0x04 void* header
+// @field TreeHeader +0x00 void* leftmost
+// @field TreeHeader +0x04 void* root
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0C std::string key
+// @field TreeNode +0x39 uint8_t isNil
+void* fn_00476050(void* self, void* out, const void* key) {
+    using StringLessFn = bool (__cdecl*)(const void* lhs, const void* rhs);
+    // Slot value holds the MSVCP80 operator< entry point; the original calls it through [0x924EF4].
+    const auto string_less = reinterpret_cast<StringLessFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924EF4)));
+
+    auto keyOf = [](void* node) -> const void* {
+        return static_cast<uint8_t*>(node) + 0x0C;
+    };
+
+    void* head = lift_field<void*>(self, 0x04);
+    void* y = head;
+    void* x = lift_field<void*>(head, 0x04);
+    uint8_t comp = 1;
+
+    while (lift_field<uint8_t>(x, 0x39) == 0) {
+        y = x;
+        comp = string_less(key, keyOf(x)) ? 1 : 0;
+        x = comp ? lift_field<void*>(x, 0x00) : lift_field<void*>(x, 0x08);
+    }
+
+    auto writeOut = [&](void* tree, void* node, uint8_t inserted) {
+        lift_field<void*>(out, 0x00) = tree;
+        lift_field<void*>(out, 0x04) = node;
+        lift_field<uint8_t>(out, 0x08) = inserted;
+        return out;
+    };
+
+    // Iterator {tree, node} as built on the stack at [esp+0x14].
+    struct TreeIterator {
+        void* tree;
+        void* node;
+    } it{self, y};
+
+    void* j = y;
+    if (comp) {
+        if (y == lift_field<void*>(head, 0x00)) {
+            // Insert at leftmost position.
+            alignas(8) uint8_t tmp[16] = {};
+            void* r = ext_00475E50(self, tmp, 1, y, key);
+            return writeOut(lift_field<void*>(r, 0x00), lift_field<void*>(r, 0x04), 1);
+        }
+        ext_00666C00(&it);
+        j = it.node;
+    }
+
+    if (!string_less(keyOf(j), key)) {
+        return writeOut(self, j, 0);
+    }
+
+    alignas(8) uint8_t tmp[16] = {};
+    void* r = ext_00475E50(self, tmp, comp, y, key);
+    return writeOut(lift_field<void*>(r, 0x00), lift_field<void*>(r, 0x04), 1);
+}
+} // namespace lift_00476050

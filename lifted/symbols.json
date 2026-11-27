@@ -11523,6 +11523,13 @@
     "summary": "Lazily constructs the static object at mem_00AD9054, builds a temporary string from the argument, calls sub_00475960 on this-\u003e[0] with it, and destroys the string.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476050": {
+    "name": "StringMapTree::lowerBoundInsertPos",
+    "class": "StringMapTree",
+    "signature": "void* fn_00476050(void* self, void* out, const void* key)",
+    "summary": "Walks the red-black tree for key (lower-bound style), steps back one node if needed, and returns {tree, node, inserted} via out: inserts at the found position when key is greater, else returns the existing node with inserted=false.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476150": {
     "name": "RBTree::insertWithHint",
     "class": "RBTree",

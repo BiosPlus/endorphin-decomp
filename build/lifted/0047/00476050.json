@@ -1,0 +1,58 @@
+{
+  "va": "0x00476050",
+  "size": 243,
+  "orig_symbol": "sub_00476050",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "StringMapTree::lowerBoundInsertPos",
+  "class": "StringMapTree",
+  "signature": "void* fn_00476050(void* self, void* out, const void* key)",
+  "summary": "Walks the red-black tree for key (lower-bound style), steps back one node if needed, and returns {tree, node, inserted} via out: inserts at the found position when key is greater, else returns the existing node with inserted=false.",
+  "fields": [
+    {
+      "class": "StringMapTree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "header"
+    },
+    {
+      "class": "TreeHeader",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "leftmost"
+    },
+    {
+      "class": "TreeHeader",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "root"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "key"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:46:24Z"
+}
