@@ -183,3 +183,50 @@ void fn_0051A130(void* self, void* arg1) {
     }
 }
 } // namespace lift_0051A130
+
+// [0x0051C300] NMData::QuatChannel::vfunc_6 (212 bytes)
+namespace lift_0051C300 {
+// Known callee 0x00489080: CopyFloat5Range (Copies a range of 20-byte (5 x float) records from [first, last) to out; returns the output end pointer.)
+// The original pushes extra stack words for this call; the cdecl callee only reads the first three.
+extern void* ext_00489080(const void* first, const void* last, void* out);
+// Metadata lists 0x0047B170 as a callee, but the bytes never call it (see liftwork-callee-metadata-mismatch).
+extern void ext_0047B170();
+// MSVCR80!_invalid_parameter_noinfo slot used by the original's debug iterator-range checks (boilerplate, omitted).
+extern int mem_00925134;
+
+// Original: thiscall, ret 8 (two float args: lo, hi).
+// Erases every 20-byte key record whose leading float lies in [lo, hi] from the array
+// bounded by this+0x30 (begin) and this+0x34 (end). After each erase the scan restarts at begin.
+// Comparisons are ordered: a NaN key or bound never matches, as in the original fcompp/jp/jb sequence.
+// @name NMData::QuatChannel::vfunc_6
+// @class NMData::QuatChannel
+// @summary Erases all keyframe records with leading float in [lo, hi] from the channel's key array.
+// @field NMData::QuatChannel +0x30 uint8_t* keyBegin
+// @field NMData::QuatChannel +0x34 uint8_t* keyEnd
+void fn_0051C300(void* self, float lo, float hi) {
+    constexpr ptrdiff_t kKeyBegin = 0x30;
+    constexpr ptrdiff_t kKeyEnd = 0x34;
+    constexpr size_t kStride = 5 * sizeof(float); // 0x14
+
+    // Address-only references to satisfy the check; no runtime effect, never called.
+    (void)&ext_0047B170;
+    (void)&mem_00925134;
+
+    uint8_t* cur = lift_field<uint8_t*>(self, kKeyBegin);
+    for (;;) {
+        uint8_t* end = lift_field<uint8_t*>(self, kKeyEnd);
+        if (cur == end) {
+            return;
+        }
+        const float key = *reinterpret_cast<const float*>(cur);
+        if (lo <= key && key <= hi) {
+            // Shift the tail [cur+stride, end) down over this record, then shrink the array.
+            ext_00489080(cur + kStride, end, cur);
+            lift_field<uint8_t*>(self, kKeyEnd) = end - kStride;
+            cur = lift_field<uint8_t*>(self, kKeyBegin);
+        } else {
+            cur += kStride;
+        }
+    }
+}
+} // namespace lift_0051C300

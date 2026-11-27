@@ -1,0 +1,28 @@
+{
+  "va": "0x0051C300",
+  "size": 212,
+  "orig_symbol": "NMData::QuatChannel::vfunc_6",
+  "src_path": "src/NMData/QuatChannel.cpp",
+  "lifted_path": "lifted/NMData/QuatChannel.cpp",
+  "name": "NMData::QuatChannel::vfunc_6",
+  "class": "NMData::QuatChannel",
+  "signature": "void fn_0051C300(void* self, float lo, float hi)",
+  "summary": "Erases all keyframe records with leading float in [lo, hi] from the channel's key array.",
+  "fields": [
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x30",
+      "type": "uint8_t*",
+      "name": "keyBegin"
+    },
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x34",
+      "type": "uint8_t*",
+      "name": "keyEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T11:33:42Z"
+}
