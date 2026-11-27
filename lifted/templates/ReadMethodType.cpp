@@ -86235,3 +86235,45 @@ void* fn_00683C70(void* self, void* arg2) {
 }
 } // namespace lift_004C0960
 } // namespace lift_00683C70
+
+// [0x005D21F0] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_46 (157 bytes)
+namespace lift_005D21F0 {
+extern void* ext_006720E0(void* tmp, void* src);
+extern void* ext_0041CF50(void* self, void* other);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType::vfunc_46
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Copies the value held at self->field_0x00 into a temp, assigns it to self, releases the temp, then forwards to field_0x04's vtable slot 46 (throws DerivedException if field_0x00 is null).
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void* fn_005D21F0(void* self, void* arg2) {
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner == nullptr) {
+        unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009dec1cu)));
+        return nullptr;
+    }
+
+    // Temp holder built from inner+0x04.
+    unsigned char tmp[8] = {};
+    ext_006720E0(tmp, static_cast<unsigned char*>(inner) + 0x04);
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's owned object via its vtable slot 0x78 when present.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(heldVt, 0x78));
+        release(held, tmp);
+    }
+
+    // Forward to field_0x04's vtable slot 46 (0xB8): (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void* targetVt = lift_field<void*>(target, 0x00);
+    auto forward = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xB8));
+    return forward(target, self, arg2);
+}
+} // namespace lift_005D21F0

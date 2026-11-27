@@ -41002,6 +41002,13 @@
     "summary": "Forwards to the inner object's vfunc at vtable slot 42 (offset 0xA8) using the field at inner+0x04; throws DerivedException when the inner pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D21F0": {
+    "name": "ExprParser::ReadMethodType::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
+    "signature": "void* fn_005D21F0(void* self, void* arg2)",
+    "summary": "Copies the value held at self-\u003efield_0x00 into a temp, assigns it to self, releases the temp, then forwards to field_0x04's vtable slot 46 (throws DerivedException if field_0x00 is null).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D2290": {
     "name": "ReadWriteMethodType\u003cVideoPlaneData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getStartFrame(void) const, int, \u0026public: void __thiscall NMData::VideoPlaneData::setStartFrame(int)\u003e",
