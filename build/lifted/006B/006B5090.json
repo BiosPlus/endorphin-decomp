@@ -1,0 +1,45 @@
+{
+  "va": "0x006B5090",
+  "size": 132,
+  "orig_symbol": "sub_006B5090",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006B5090_dtor",
+  "signature": "extern \"C\" void __thiscall fn_006B5090(void* self)",
+  "summary": "Destructor that resets vtables, deletes member at +0xd4, destroys member at +0x68, destroys member at +0x5c via MFC80_ord_1934, and calls base destructor MFC80_ord_760.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "vtable_54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "member_5c_vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "uint8_t",
+      "name": "member_68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD4",
+      "type": "void*",
+      "name": "member_d4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:31:40Z"
+}

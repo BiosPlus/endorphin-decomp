@@ -2090,3 +2090,38 @@ void* fn_006B0490(void* arg1, void* /*arg2: never read by the original*/, void* 
     return arg1;
 }
 } // namespace lift_006B0490
+
+// [0x006B5090]
+namespace lift_006B5090 {
+// @name sub_006B5090_dtor
+// @summary Destructor that resets vtables, deletes member at +0xd4, destroys member at +0x68, destroys member at +0x5c via MFC80_ord_1934, and calls base destructor MFC80_ord_760.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x54 uint32_t vtable_54
+// @field Unknown +0x5c uint32_t member_5c_vtable
+// @field Unknown +0x68 uint8_t member_68
+// @field Unknown +0xd4 void* member_d4
+
+extern void __thiscall ext_006A5FF2(void* self);
+extern void __thiscall ext_006A6310(void* self);
+extern void __thiscall ext_006B0CD0(void* self);
+
+extern void __thiscall fn_006B5090(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0099202Cu;
+    lift_field<uint32_t>(self, 0x54) = 0x00992024u;
+
+    void* member_d4 = lift_field<void*>(self, 0xD4);
+    if (member_d4 != nullptr) {
+        using DeletingDtor = void(__thiscall*)(void*, int);
+        void** vtable = *reinterpret_cast<void***>(member_d4);
+        reinterpret_cast<DeletingDtor>(vtable[1])(member_d4, 1);
+    }
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_006B0CD0(base + 0x68);
+
+    lift_field<uint32_t>(self, 0x5C) = 0x0092A23Cu;
+    ext_006A5FF2(base + 0x5C);
+
+    ext_006A6310(self);
+}
+} // namespace lift_006B5090
