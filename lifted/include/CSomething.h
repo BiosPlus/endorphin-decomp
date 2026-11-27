@@ -8,6 +8,13 @@
 // Recovered field layout for CSomething:
 namespace lifted_layout {
 struct CSomething_Fields {
+    // +0x0   void*                    vtable  (evidence: 0x00461E20)
     // +0x60  void*                    field_0x60  (evidence: 0x00419B90)
+    // +0x74  void*                    field_0x74  (evidence: 0x00461E20)
+    // +0x78  void*                    field_0x78  (evidence: 0x00461E20)
+    // +0x7C  void*                    field_0x7c  (evidence: 0x00461E20)
+    // +0x80  void*                    field_0x80  (evidence: 0x00461E20)
+    // +0x84  void*                    field_0x84  (evidence: 0x00461E20)
+    // +0xD8  void*                    field_0xD8  (evidence: 0x00461E20)
 };
 } // namespace lifted_layout

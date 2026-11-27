@@ -2206,3 +2206,46 @@ void fn_00466910(void* self) {
     reinterpret_cast<DestroyFn>(ext_00466870)(static_cast<uint8_t*>(self) + 0x04);
 }
 } // namespace lift_00466910
+
+// [0x00461E20] sub_00461E20 (140 bytes)
+namespace lift_00461E20 {
+// Known callee 0x006A5DFA: thunk_MFC80_ord_587 (IAT jump thunk forwarding to MFC80!ord_587.)
+extern void ext_006A5DFA();
+// Known callee 0x006A5EFC: thunk_MFC80_ord_741 (IAT jump thunk forwarding to MFC80!ord_741.)
+extern void ext_006A5EFC();
+// Known callee 0x006A5F6E: thunk_MFC80_ord_605 (IAT jump thunk forwarding to MFC80!ord_605.)
+extern void ext_006A5F6E();
+extern int mem_009242F4;
+
+// @name CSomething::CSomething (ctor-style init of embedded sub-objects)
+// @class CSomething
+// @summary Sets vtable, initializes sub-object at +0xD8/+0x84 via MFC80 thunks, then releases four slots at +0x74..+0x80 through the IAT ord_578 pointer and finishes with ord_605.
+// @field CSomething +0x00 void* vtable
+// @field CSomething +0x74 void* field_0x74
+// @field CSomething +0x78 void* field_0x78
+// @field CSomething +0x7c void* field_0x7c
+// @field CSomething +0x80 void* field_0x80
+// @field CSomething +0x84 void* field_0x84
+// @field CSomething +0xD8 void* field_0xD8
+void fn_00461E20(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Vtable pointer for this class (0x009389D4).
+    lift_field<uint32_t>(base, 0x00) = 0x009389D4u;
+
+    // Sub-object at +0xD8 and +0x84 are initialized through MFC80 thunks.
+    ext_006A5DFA();
+    ext_006A5EFC();
+
+    // Four embedded slots at +0x80, +0x7C, +0x78, +0x74 are each handed to
+    // the IAT-resolved MFC80!ord_578 routine (pointer stored at mem_009242F4).
+    auto ord578 = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_009242F4));
+    ord578();
+    ord578();
+    ord578();
+    ord578();
+
+    // Final MFC80!ord_605 call on the object itself.
+    ext_006A5F6E();
+}
+} // namespace lift_00461E20

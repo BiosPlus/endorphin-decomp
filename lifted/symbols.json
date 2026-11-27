@@ -7577,6 +7577,13 @@
     "summary": "Returns address of global mem_0093898C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00461E20": {
+    "name": "CSomething::CSomething (ctor-style init of embedded sub-objects)",
+    "class": "CSomething",
+    "signature": "void fn_00461E20(void* self)",
+    "summary": "Sets vtable, initializes sub-object at +0xD8/+0x84 via MFC80 thunks, then releases four slots at +0x74..+0x80 through the IAT ord_578 pointer and finishes with ord_605.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00461F80": {
     "name": "UpgradeCharacterDialog::vfunc_1",
     "class": "UpgradeCharacterDialog",

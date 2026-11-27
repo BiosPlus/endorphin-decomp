@@ -1,0 +1,58 @@
+{
+  "va": "0x00461E20",
+  "size": 140,
+  "orig_symbol": "sub_00461E20",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "CSomething::CSomething (ctor-style init of embedded sub-objects)",
+  "class": "CSomething",
+  "signature": "void fn_00461E20(void* self)",
+  "summary": "Sets vtable, initializes sub-object at +0xD8/+0x84 via MFC80 thunks, then releases four slots at +0x74..+0x80 through the IAT ord_578 pointer and finishes with ord_605.",
+  "fields": [
+    {
+      "class": "CSomething",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0x78",
+      "type": "void*",
+      "name": "field_0x78"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0x7C",
+      "type": "void*",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0x80",
+      "type": "void*",
+      "name": "field_0x80"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0x84",
+      "type": "void*",
+      "name": "field_0x84"
+    },
+    {
+      "class": "CSomething",
+      "offset": "+0xD8",
+      "type": "void*",
+      "name": "field_0xD8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:26:03Z"
+}
