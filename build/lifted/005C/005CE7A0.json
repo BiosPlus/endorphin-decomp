@@ -1,0 +1,28 @@
+{
+  "va": "0x005CE7A0",
+  "size": 205,
+  "orig_symbol": "NMData::InertialBodyData::vfunc_0_off_4",
+  "src_path": "src/NMData/InertialBodyData.cpp",
+  "lifted_path": "lifted/NMData/InertialBodyData.cpp",
+  "name": "NMData::InertialBodyData::vfunc_0_off_4",
+  "class": "NMData::InertialBodyData",
+  "signature": "void __thiscall fn_005CE7A0(void* self)",
+  "summary": "Guarded update: reads a 3-float vector from this+0x20 (via OglRenderer::vfunc_118), calls vtable slot 5 of the sub-object at this-\u003em_0xac+0xC with (x,y,z,1), then calls ext_00528B60, ext_00594000 and ext_005866C0 on the same chain.",
+  "fields": [
+    {
+      "class": "NMData::InertialBodyData",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NMData::InertialBodyData",
+      "offset": "+0xAC",
+      "type": "void*",
+      "name": "field_0xac"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:32:07Z"
+}

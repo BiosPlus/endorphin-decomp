@@ -48633,6 +48633,13 @@
     "summary": "If id == 0x9C, forwards this+0x24 to ext_00661650 on a; if id == 0xB7, forwards this to it; otherwise calls ext_0046F7D0(a). Returns a.",
     "lifted_path": "lifted/NMData/InertialBodyData.cpp"
   },
+  "0x005CE7A0": {
+    "name": "NMData::InertialBodyData::vfunc_0_off_4",
+    "class": "NMData::InertialBodyData",
+    "signature": "void __thiscall fn_005CE7A0(void* self)",
+    "summary": "Guarded update: reads a 3-float vector from this+0x20 (via OglRenderer::vfunc_118), calls vtable slot 5 of the sub-object at this-\u003em_0xac+0xC with (x,y,z,1), then calls ext_00528B60, ext_00594000 and ext_005866C0 on the same chain.",
+    "lifted_path": "lifted/NMData/InertialBodyData.cpp"
+  },
   "0x005CE8B0": {
     "name": "sub_005CE8B0",
     "signature": "extern \"C\" void __fastcall fn_005CE8B0(void* self)",
