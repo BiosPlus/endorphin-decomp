@@ -1,0 +1,14 @@
+{
+  "va": "0x0062BF80",
+  "size": 141,
+  "orig_symbol": "sub_0062BF80",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Node::constructArray",
+  "class": "Node",
+  "signature": "extern \"C\" void fn_0062BF80(void* first, uint32_t count, void* arg)",
+  "summary": "Constructs count 16-byte Node objects in-place using arg, destroying constructed elements on exception.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:19:57Z"
+}

@@ -28336,6 +28336,12 @@
     "summary": "Delegates to vfunc_15 of *arg2 with (arg1, arg3) and returns arg1.",
     "lifted_path": "lifted/templates/TerminalParentType.cpp"
   },
+  "0x004FDF80": {
+    "name": "sub_004FDF80",
+    "signature": "uint32_t __thiscall fn_004FDF80(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Allocates and constructs a 0x28-byte object via ext_004FDD70 and registers it with ext_00666670 on the global manager from ext_00665870.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FE080": {
     "name": "Commands::RemoveCollisionModelCommand::vfunc_0",
     "class": "Commands::RemoveCollisionModelCommand",
@@ -66332,6 +66338,12 @@
     "summary": "Serializes AxisDefineSensorData fields and axis pair list into an archive node.",
     "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
   },
+  "0x0062BD30": {
+    "name": "uninitializedCopyLinkedNodeRange",
+    "signature": "void* __cdecl fn_0062BD30(const void* first, const void* last, void* dest)",
+    "summary": "Uninitialized-copies a range of 16-byte linked-node objects, destroying constructed elements on exception.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062BDC0": {
     "name": "Sensors::HorizontalAxisSensor::vfunc_27",
     "class": "Sensors::HorizontalAxisSensor",
@@ -66343,6 +66355,13 @@
     "name": "sub_0062BF30",
     "signature": "void* fn_0062BF30(uint8_t* first, uint8_t* last, uint8_t* d_last)",
     "summary": "Auto-lifted identical-shape clone of 0x00510830 (CopyRangeBackwardAndComputeDestBegin).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062BF80": {
+    "name": "Node::constructArray",
+    "class": "Node",
+    "signature": "extern \"C\" void fn_0062BF80(void* first, uint32_t count, void* arg)",
+    "summary": "Constructs count 16-byte Node objects in-place using arg, destroying constructed elements on exception.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x0062C010": {

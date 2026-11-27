@@ -3394,3 +3394,69 @@ void* __thiscall fn_006273B0(void* self, uint32_t arg0, uint32_t arg1, uint32_t 
     return self;
 }
 } // namespace lift_006273B0
+
+// [0x0062BF80]
+namespace lift_0062BF80 {
+// @name Node::constructArray
+// @summary Constructs count 16-byte Node objects in-place using arg, destroying constructed elements on exception.
+
+extern void __thiscall ext_0062B800(void* self, void* arg);
+extern void __thiscall ext_0062B6F0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void fn_0062BF80(void* first, uint32_t count, void* arg) {
+    uint8_t* start = static_cast<uint8_t*>(first);
+    uint8_t* cur = start;
+
+    try {
+        while (count > 0) {
+            if (cur != nullptr) {
+                ext_0062B800(cur, arg);
+            }
+            --count;
+            cur += 0x10;
+        }
+    } catch (...) {
+        for (uint8_t* p = start; p != cur; p += 0x10) {
+            ext_0062B6F0(p);
+        }
+        ext_006A6DD2(nullptr, nullptr);
+    }
+}
+} // namespace lift_0062BF80
+
+// [0x0062BD30]
+namespace lift_0062BD30 {
+// @name uninitializedCopyLinkedNodeRange
+// @summary Uninitialized-copies a range of 16-byte linked-node objects, destroying constructed elements on exception.
+
+
+void __thiscall ext_0062B800(void* self, const void* src);
+void __thiscall ext_0062B6F0(void* self);
+void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+void* __cdecl fn_0062BD30(const void* first, const void* last, void* dest) {
+    const uint8_t* src = static_cast<const uint8_t*>(first);
+    const uint8_t* srcEnd = static_cast<const uint8_t*>(last);
+    uint8_t* dst = static_cast<uint8_t*>(dest);
+    uint8_t* dstStart = dst;
+
+    try {
+        while (src != srcEnd) {
+            if (dst != nullptr) {
+                ext_0062B800(dst, src);
+            }
+            dst += 0x10;
+            src += 0x10;
+        }
+    } catch (...) {
+        for (uint8_t* cur = dstStart; cur != dst; cur += 0x10) {
+            ext_0062B6F0(cur);
+        }
+        ext_006A6DD2(nullptr, nullptr);
+        throw;
+    }
+
+    return dst;
+}
+} // namespace lift_0062BD30
