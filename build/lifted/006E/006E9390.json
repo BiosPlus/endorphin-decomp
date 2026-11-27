@@ -1,0 +1,34 @@
+{
+  "va": "0x006E9390",
+  "size": 144,
+  "orig_symbol": "sub_006E9390",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::releaseEntry_006E9390",
+  "class": "Unknown",
+  "signature": "uint8_t __fastcall fn_006E9390(void* self, void* /*edx*/, uint32_t key)",
+  "summary": "Searches the DynArray at +0x4C for an entry matching key, decrements its refcount at +4, and removes/frees it if zero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "void**",
+      "name": "data"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "uint8_t",
+      "name": "errorReporter"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:13:06Z"
+}

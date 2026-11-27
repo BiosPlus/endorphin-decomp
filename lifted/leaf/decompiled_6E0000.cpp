@@ -2356,3 +2356,48 @@ bool fn_006E8F70(void* self, uint32_t value) {
     return true;
 }
 } // namespace lift_006E8F70
+
+// [0x006E9390]
+namespace lift_006E9390 {
+// @name Unknown::releaseEntry_006E9390
+// @class Unknown
+// @summary Searches the DynArray at +0x4C for an entry matching key, decrements its refcount at +4, and removes/frees it if zero.
+// @field Unknown +0x4C int32_t count
+// @field Unknown +0x5C void** data
+// @field Unknown +0x94 uint8_t errorReporter
+
+
+extern void ext_006A5C5C(void* ptr);
+extern void __fastcall ext_006D2200(void* self, void* /*edx*/, int32_t index);
+extern void* __fastcall ext_006E7440(void* self, void* /*edx*/, uint32_t index);
+
+uint8_t __fastcall fn_006E9390(void* self, void* /*edx*/, uint32_t key) {
+    int32_t count = lift_field<int32_t>(self, 0x4C);
+    void* dynArray = static_cast<uint8_t*>(self) + 0x4C;
+    int32_t index = 0;
+
+    if (count > 0) {
+        uint32_t** entries = lift_field<uint32_t**>(self, 0x5C);
+        for (; index < count; ++index) {
+            if (*entries[index] == key) {
+                uint8_t* entry = reinterpret_cast<uint8_t*>(lift_field<void**>(self, 0x5C)[index]);
+                int32_t refCount = lift_field<int32_t>(entry, 0x4) - 1;
+                lift_field<int32_t>(entry, 0x4) = refCount;
+
+                if (lift_field<int32_t>(entry, 0x4) != 0) {
+                    ext_006E7440(static_cast<uint8_t*>(self) + 0x94, nullptr, 8);
+                    return 0;
+                }
+
+                void* toDelete = lift_field<void**>(dynArray, 0x10)[index];
+                ext_006D2200(dynArray, nullptr, index);
+                ext_006A5C5C(toDelete);
+                return 1;
+            }
+        }
+    }
+
+    ext_006E7440(static_cast<uint8_t*>(self) + 0x94, nullptr, 9);
+    return 0;
+}
+} // namespace lift_006E9390
