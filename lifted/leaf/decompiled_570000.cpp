@@ -2757,3 +2757,63 @@ void* __thiscall fn_0057CCE0(void* self, uint32_t key)
     return node + 0x1c;
 }
 } // namespace lift_0057CCE0
+
+// [0x00578FD0]
+namespace lift_00578FD0 {
+// @name Vector84::insert
+// @class Vector84
+// @summary Inserts a single 84-byte element at the given iterator position and returns an iterator to the inserted element
+// @field Vector84 +0x04 uintptr_t first
+// @field Vector84 +0x08 uintptr_t last
+
+
+extern void __thiscall ext_00578450(void* self, void* where_container, void* where_ptr, uint32_t count, const void* val);
+extern void (__cdecl *mem_00925134)();
+
+struct Vector84Iter {
+    void* container;
+    uintptr_t ptr;
+};
+
+Vector84Iter* __thiscall sub_00578FD0(
+    void* self,
+    Vector84Iter* out_iter,
+    void* where_container,
+    uintptr_t where_ptr,
+    const void* val)
+{
+    uintptr_t first = lift_field<uintptr_t>(self, 0x04);
+    int32_t index = 0;
+
+    if (first != 0) {
+        uintptr_t last = lift_field<uintptr_t>(self, 0x08);
+        int32_t count = static_cast<int32_t>(last - first) / 0x54;
+        if (count != 0) {
+            if (first > last) {
+                mem_00925134();
+            }
+            if (where_container == nullptr || where_container != self) {
+                mem_00925134();
+            }
+            index = static_cast<int32_t>(where_ptr - first) / 0x54;
+        }
+    }
+
+    ext_00578450(self, where_container, reinterpret_cast<void*>(where_ptr), 1, val);
+
+    uintptr_t new_first = lift_field<uintptr_t>(self, 0x04);
+    if (new_first > lift_field<uintptr_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    uintptr_t result_ptr = new_first + static_cast<uintptr_t>(index * 0x54);
+    if (result_ptr > lift_field<uintptr_t>(self, 0x08) ||
+        result_ptr < lift_field<uintptr_t>(self, 0x04)) {
+        mem_00925134();
+    }
+
+    out_iter->container = self;
+    out_iter->ptr = result_ptr;
+    return out_iter;
+}
+} // namespace lift_00578FD0

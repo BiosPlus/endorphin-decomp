@@ -8,8 +8,10 @@
 // Recovered field layout for Vector84:
 namespace lifted_layout {
 struct Vector84_Fields {
-    // +0x4   void*                    _Myfirst  (evidence: 0x005586F0)
-    // +0x8   void*                    _Mylast  (evidence: 0x005586F0)
+    // +0x4   void*                    _Myfirst  (evidence: 0x005586F0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uintptr_t                first  (evidence: 0x00578FD0) // CONFLICT: multiple definitions at +0x4
+    // +0x8   void*                    _Mylast  (evidence: 0x005586F0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uintptr_t                last  (evidence: 0x00578FD0) // CONFLICT: multiple definitions at +0x8
     // +0xC   void*                    _Myend  (evidence: 0x005586F0)
 };
 } // namespace lifted_layout

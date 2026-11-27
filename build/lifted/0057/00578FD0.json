@@ -1,0 +1,28 @@
+{
+  "va": "0x00578FD0",
+  "size": 173,
+  "orig_symbol": "sub_00578FD0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Vector84::insert",
+  "class": "Vector84",
+  "signature": "Vector84Iter* __thiscall sub_00578FD0( void* self, Vector84Iter* out_iter, void* where_container, uintptr_t where_ptr, const void* val)",
+  "summary": "Inserts a single 84-byte element at the given iterator position and returns an iterator to the inserted element",
+  "fields": [
+    {
+      "class": "Vector84",
+      "offset": "+0x4",
+      "type": "uintptr_t",
+      "name": "first"
+    },
+    {
+      "class": "Vector84",
+      "offset": "+0x8",
+      "type": "uintptr_t",
+      "name": "last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:48:58Z"
+}
