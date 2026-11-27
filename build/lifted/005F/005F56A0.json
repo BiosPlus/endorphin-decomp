@@ -1,0 +1,22 @@
+{
+  "va": "0x005F56A0",
+  "size": 32,
+  "orig_symbol": "sub_005F56A0",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "Unknown::CallSubobjectVirtual3ThenSetPaddedMatrix",
+  "class": "Unknown",
+  "signature": "void fn_005F56A0(void* self, uint32_t arg)",
+  "summary": "Calls virtual slot +0x0C of the object at self+0x04 with (self+0x04, mem_00B40640, arg), then passes the returned pointer as `self` to fn_0067E5B0 together with arg.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:31Z"
+}

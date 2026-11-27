@@ -1909,3 +1909,24 @@ void fn_005F56E0(void* self, const void* p) {
     ext_0067E560(r, p);
 }
 } // namespace lift_005F56E0
+
+// [0x005F56A0] sub_005F56A0 (32 bytes)
+namespace lift_005F56A0 {
+// Known callee 0x0067E5B0: setPaddedMatrixFromAdjustedIdentity (Builds a packed 3x3 identity, adjusts it via sub_006951A0 using the stack argument, then copies it into self's padded 4-stride matrix.)
+extern void ext_0067E5B0(void* self, uint32_t arg);
+extern int mem_00B40640;
+
+// @name Unknown::CallSubobjectVirtual3ThenSetPaddedMatrix
+// @class Unknown
+// @summary Calls virtual slot +0x0C of the object at self+0x04 with (self+0x04, mem_00B40640, arg), then passes the returned pointer as `self` to fn_0067E5B0 together with arg.
+// @field Unknown +0x04 void* field_0x04
+using SubobjectVirtual3 = void* (*)(void* self, int global, uint32_t arg);
+
+void fn_005F56A0(void* self, uint32_t arg) {
+    auto* base = static_cast<unsigned char*>(self);
+    void* sub = *reinterpret_cast<void**>(base + 0x04);
+    auto fn = *reinterpret_cast<SubobjectVirtual3*>(static_cast<unsigned char*>(sub) + 0x0C);
+    void* result = fn(base + 0x04, mem_00B40640, arg);
+    ext_0067E5B0(result, arg);
+}
+} // namespace lift_005F56A0
