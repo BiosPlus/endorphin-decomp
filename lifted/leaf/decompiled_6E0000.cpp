@@ -1689,3 +1689,20 @@ int32_t fn_006E89B0(void* self, int32_t index, const void* elem) {
     return result;
 }
 } // namespace lift_006E89B0
+
+// [0x006E7470] sub_006E7470 (32 bytes)
+namespace lift_006E7470 {
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* ext_006B9EC0(void* self, const char* s);
+
+// @name Unknown::resetAndAssignCString_006E7470
+// @class Unknown
+// @summary Sets the leading dword to -1, then assigns a constant C string to the sub-object at +0x08 via ext_006B9EC0.
+// @field Unknown +0x00 int32_t field_0x00
+void* fn_006E7470(void* self) {
+    *reinterpret_cast<int32_t*>(self) = -1;
+    auto* sub = static_cast<unsigned char*>(self) + 0x08;
+    const char* str = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00B5D2C0));
+    return ext_006B9EC0(sub, str);
+}
+} // namespace lift_006E7470

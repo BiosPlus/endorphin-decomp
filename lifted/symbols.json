@@ -69463,6 +69463,13 @@
     "summary": "Getter returning int32_t field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E7470": {
+    "name": "Unknown::resetAndAssignCString_006E7470",
+    "class": "Unknown",
+    "signature": "void* fn_006E7470(void* self)",
+    "summary": "Sets the leading dword to -1, then assigns a constant C string to the sub-object at +0x08 via ext_006B9EC0.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7730": {
     "name": "Unknown::destroySubobjects",
     "class": "Unknown",
