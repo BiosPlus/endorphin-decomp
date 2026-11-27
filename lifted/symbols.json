@@ -76349,6 +76349,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0043D2E0 (throwStringLiteralException).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067F630": {
+    "name": "ExprParser::Operators::Assign::vfunc_3",
+    "class": "ExprParser::Operators::Assign",
+    "signature": "void __stdcall fn_0067F630(void* self_out, void* other)",
+    "summary": "Evaluates assignment operator on operands and assigns result into output",
+    "lifted_path": "lifted/ExprParser/Operators/Assign.cpp"
+  },
   "0x0067F8F0": {
     "name": "Unknown::PopBackIfSpanAtLeast4",
     "class": "Unknown",

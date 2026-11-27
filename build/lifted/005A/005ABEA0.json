@@ -1,0 +1,46 @@
+{
+  "va": "0x005ABEA0",
+  "size": 132,
+  "orig_symbol": "NMData::Characterization::vfunc_17_off_C",
+  "src_path": "src/NMData/Characterization.cpp",
+  "lifted_path": "lifted/NMData/Characterization.cpp",
+  "name": "NMData::Characterization::vfunc_17_off_C",
+  "class": "NMData::Characterization",
+  "signature": "extern \"C\" void* __thiscall fn_005ABEA0(uint8_t* self_off_C)",
+  "summary": "Allocates and copy-constructs a new NMData::Characterization instance from the +0xC subobject this pointer",
+  "fields": [
+    {
+      "class": "NMData::Characterization",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr_00"
+    },
+    {
+      "class": "NMData::Characterization",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vptr_04"
+    },
+    {
+      "class": "NMData::Characterization",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "vptr_08"
+    },
+    {
+      "class": "NMData::Characterization",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "vptr_0C"
+    },
+    {
+      "class": "NMData::Characterization",
+      "offset": "+0x150",
+      "type": "uint32_t",
+      "name": "vptr_150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:45:05Z"
+}
