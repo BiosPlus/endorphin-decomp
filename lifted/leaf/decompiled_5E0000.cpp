@@ -1497,3 +1497,41 @@ void __thiscall fn_005ED2C0(void* self, void* out, void* keyArg) {
     lift_field<uint32_t>(out, 0x04) = bound;
 }
 } // namespace lift_005ED2C0
+
+// [0x005ECD40] sub_005ECD40 (122 bytes)
+namespace lift_005ECD40 {
+// Known callee 0x00554510: Unknown::getVec4At30_w1 (Writes a vec4 to the caller-supplied return buffer: xyz copied from self+0x30..0x38, w = 1.0f.)
+extern void ext_00554510(const void* self, float* out);
+// Known callee 0x0047FFA0: Vector4Subtract_0047FFA0 (Component-wise float subtraction of two 4-float vectors: out[i] = a[i] - b[i] for i in 0..3.)
+extern void ext_0047FFA0(const float* a, float* out, const float* b);
+extern void ext_005EBDD0(void* self, const float* vec);
+extern int mem_00B40640;
+
+// @name ComputeDeltaVec4ViaSubobjectVtable
+// @summary Queries a vec4 from the object returned by subobject slot 4, subtracts it from dst's vec4 (dst via getVec4At30_w1), passes the delta to ext_005EBDD0, then calls subobject slot 0 with dst.
+// @field Unknown +0x04 void* subobjectVtable
+void fn_005ECD40(void* self, void* dst) {
+    // Subobject lives at self+0x04; its first dword is the vtable pointer.
+    uint8_t* subobj = reinterpret_cast<uint8_t*>(self) + 0x04;
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(subobj);
+
+    float tmpA[4];   // local at [esp+0x3C] in asm: scratch arg to slot 4
+    float vX[4];     // local at [esp+0x0C]: vec4 of object returned by slot 4
+    float vDst[4];   // local at [esp+0x1C]: vec4 of dst
+    float vDiff[4];  // local at [esp+0x2C]: vDst - vX
+
+    using Slot4Fn = void* (*)(void* self, float* out, int zero, int g);
+    using Slot0Fn = void (*)(void* self, int zero, void* dst, int g);
+
+    void* slot4 = *reinterpret_cast<void**>(vtbl + 0x10);
+    void* obj = reinterpret_cast<Slot4Fn>(slot4)(subobj, tmpA, 0, mem_00B40640);
+
+    ext_00554510(obj, vX);
+    ext_00554510(dst, vDst);
+    ext_0047FFA0(vDst, vDiff, vX);
+    ext_005EBDD0(self, vDiff);
+
+    void* slot0 = *reinterpret_cast<void**>(vtbl + 0x00);
+    reinterpret_cast<Slot0Fn>(slot0)(subobj, 0, dst, mem_00B40640);
+}
+} // namespace lift_005ECD40

@@ -256,6 +256,7 @@ struct Unknown_Fields {
     // +0x4   void*                    subVptr  (evidence: 0x0079ADA0, 0x0079C1F0, 0x0079DCE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   ptr                      subobject  (evidence: 0x00486980, 0x006721D0, 0x006722B0, 0x006722D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 subobjectVtable  (evidence: 0x004F0A90) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    subobjectVtable  (evidence: 0x005ECD40) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              text0  (evidence: 0x004030F0, 0x00404E40) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 vptr_04  (evidence: 0x004ED750) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 vptr_0x04  (evidence: 0x00670FD0) // CONFLICT: multiple definitions at +0x4

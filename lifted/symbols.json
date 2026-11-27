@@ -37813,6 +37813,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005ECD40": {
+    "name": "ComputeDeltaVec4ViaSubobjectVtable",
+    "signature": "void fn_005ECD40(void* self, void* dst)",
+    "summary": "Queries a vec4 from the object returned by subobject slot 4, subtracts it from dst's vec4 (dst via getVec4At30_w1), passes the delta to ext_005EBDD0, then calls subobject slot 0 with dst.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005ECDC0": {
     "name": "Unknown::MarkVectorElementsFlag4",
     "class": "Unknown",
