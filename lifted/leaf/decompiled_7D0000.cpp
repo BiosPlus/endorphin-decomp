@@ -1224,3 +1224,45 @@ int32_t* sub_007D6660(int32_t eax, void* esi) {
     return &arr[idx];
 }
 } // namespace lift_007D6660
+
+// [0x007DB6C0]
+namespace lift_007DB6C0 {
+// @name destroyListNode
+// @summary Releases a node's element array, backing buffer, and unlinks it from its circular doubly-linked list.
+// @field Node +0x0c void* field_0x0c
+// @field Node +0x10 void* field_0x10
+// @field Node +0x14 uint32_t** field_0x14
+// @field Node +0x1c int32_t field_0x1c
+
+
+extern void ext_007CC9E0(uint32_t* p);
+extern void ext_007CC930(void* node);
+
+void __cdecl sub_007DB6C0(void* node) {
+    if (!node) {
+        return;
+    }
+
+    int32_t count = lift_field<int32_t>(node, 0x1c);
+    for (int32_t i = 0; i < count; ++i) {
+        uint32_t** items = lift_field<uint32_t**>(node, 0x14);
+        uint32_t* item = items[i];
+        if (!item) {
+            break;
+        }
+        ext_007CC9E0(item);
+    }
+
+    void* ctx = lift_field<void*>(node, 0x0c);
+    void* alloc = lift_field<void*>(ctx, 0xb0);
+    auto free_items = lift_field<void(__cdecl*)(void*)>(alloc, 0x0c);
+    free_items(lift_field<void*>(node, 0x14));
+
+    ctx = lift_field<void*>(node, 0x0c);
+    alloc = lift_field<void*>(ctx, 0xb0);
+    auto free_data = lift_field<void(__cdecl*)(void*)>(alloc, 0x10);
+    free_data(lift_field<void*>(node, 0x10));
+
+    ext_007CC930(node);
+}
+} // namespace lift_007DB6C0
