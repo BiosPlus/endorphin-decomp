@@ -867,3 +867,23 @@ extern void __fastcall fn_004AFE50(void* self) {
     }
 }
 } // namespace lift_004AFE50
+
+// [0x004A5C00]
+namespace lift_004A5C00 {
+extern uint32_t mem_00ADEBE0;
+extern uint8_t mem_00ADEBC4[];
+
+extern void* ext_0066AD10(void* out_str, uintptr_t arg2);
+extern int ext_006A6C87(uintptr_t dtor);
+
+// @name getStaticString_00ADEBC4
+// @summary Lazily initializes and returns the static string object at 0x00ADEBC4 with atexit cleanup.
+void* fn_004A5C00(void) {
+    if ((mem_00ADEBE0 & 1u) == 0u) {
+        mem_00ADEBE0 |= 1u;
+        ext_0066AD10(mem_00ADEBC4, 0x00A36678u);
+        ext_006A6C87(0x00917E10u);
+    }
+    return mem_00ADEBC4;
+}
+} // namespace lift_004A5C00

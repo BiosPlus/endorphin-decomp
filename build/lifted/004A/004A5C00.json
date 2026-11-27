@@ -1,0 +1,13 @@
+{
+  "va": "0x004A5C00",
+  "size": 95,
+  "orig_symbol": "sub_004A5C00",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "getStaticString_00ADEBC4",
+  "signature": "void* fn_004A5C00(void)",
+  "summary": "Lazily initializes and returns the static string object at 0x00ADEBC4 with atexit cleanup.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:53:49Z"
+}

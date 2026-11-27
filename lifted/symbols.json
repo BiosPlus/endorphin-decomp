@@ -8960,6 +8960,12 @@
     "summary": "Lazily initializes static object at 0x00AD907C with atexit cleanup and returns it.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476FD0": {
+    "name": "getStaticBoolString",
+    "signature": "void* fn_00476FD0(void)",
+    "summary": "Lazily initializes a static string/object at 0x00AD909C, registers its destructor, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477030": {
     "name": "InitOnceGlobalString_00477030",
     "signature": "void* fn_00477030()",
@@ -12680,6 +12686,12 @@
     "class": "Unknown",
     "signature": "void fn_004A5BE0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004A5C00": {
+    "name": "getStaticString_00ADEBC4",
+    "signature": "void* fn_004A5C00(void)",
+    "summary": "Lazily initializes and returns the static string object at 0x00ADEBC4 with atexit cleanup.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004A5F70": {
