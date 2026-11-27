@@ -1,0 +1,22 @@
+{
+  "va": "0x0051D360",
+  "size": 1376,
+  "orig_symbol": "NMData::QuatChannel::vfunc_1",
+  "src_path": "src/NMData/QuatChannel.cpp",
+  "lifted_path": "lifted/NMData/QuatChannel.cpp",
+  "name": "NMData::QuatChannel::vfunc_1",
+  "class": "NMData::QuatChannel",
+  "signature": "bool is_sentinel(const void* p)",
+  "summary": "Initializes a QuatChannel from owner attributes or child keyframe items, parsing quaternion or Euler values.",
+  "fields": [
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:36:14Z"
+}

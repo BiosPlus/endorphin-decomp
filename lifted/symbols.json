@@ -15865,6 +15865,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00569970 (ReleaseAndClearHandles).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A09E0": {
+    "name": "NMData::State::vfunc_20_off_8",
+    "class": "NMData::State",
+    "signature": "void __thiscall fn_004A09E0(void* self, void* ctx)",
+    "summary": "Renders an NMData::State node and its child transitions/sub-states in the GUI.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x004A1860": {
     "name": "sub_004A1860",
     "class": "Unknown",
@@ -32126,6 +32133,13 @@
     "signature": "void fn_0051D310(void* const* self, void* src)",
     "summary": "Auto-lifted identical-shape clone of 0x00635740 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredQuat -\u003e setDesiredQuat)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x0051D360": {
+    "name": "NMData::QuatChannel::vfunc_1",
+    "class": "NMData::QuatChannel",
+    "signature": "bool is_sentinel(const void* p)",
+    "summary": "Initializes a QuatChannel from owner attributes or child keyframe items, parsing quaternion or Euler values.",
+    "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
   "0x0051D8C0": {
     "name": "NMData::QuatChannel::vfunc_8",

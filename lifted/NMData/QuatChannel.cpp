@@ -280,3 +280,177 @@ void fn_0051C3E0(void* self, void* arg) {
     }
 }
 } // namespace lift_0051C3E0
+
+// [0x0051D360]
+namespace lift_0051D360 {
+// @name NMData::QuatChannel::vfunc_1
+// @class NMData::QuatChannel
+// @summary Initializes a QuatChannel from owner attributes or child keyframe items, parsing quaternion or Euler values.
+// @field NMData::QuatChannel +0x3C float field_0x3C
+
+    void ext_00519EC0(void* self, void* owner, uint32_t unusedArg2);
+    void* ext_0063EFE0(void* self, const char* name);
+    uint32_t ext_00519D10(const void* str);
+    void ext_0046C0A0(float* out_val, void* item_ptr_ptr);
+    void ext_004275E0(void* dst, void* obj);
+    void ext_00665570(void* str, void* delim, void* out_vec);
+    void ext_00694A70(void* out_mat, uint32_t flags, const float* euler);
+    void ext_00694330(float* out_quat, const void* mat);
+    void ext_0051D130(void* self, float time, const float* quat);
+    void ext_006A5C5C(void* ptr);
+    void ext_00427A60(void* iter);
+    float ext_0067EE80(void* item, uint32_t a, uint32_t b);
+    float* ext_0067F080(void* out_buf, void* item);
+    float* ext_0067EFD0(void* out_buf, void* item);
+
+    extern uint32_t mem_00924FF4;
+    extern uint32_t mem_00924FE8;
+    extern uint32_t mem_00924FE4;
+    extern uint32_t mem_00924FF0;
+    extern uint32_t mem_00925134;
+    extern uint32_t mem_009251F0;
+    extern uint32_t mem_00A9FA00;
+    extern uint32_t mem_00A9F508;
+    extern float mem_00952174;
+
+namespace {
+struct MsvcString {
+    uint8_t data[28];
+};
+
+struct MsvcStringVec {
+    void* proxy;
+    MsvcString* first;
+    MsvcString* last;
+    MsvcString* end;
+};
+
+struct CheckedIter {
+    void* container;
+    void* container_ref;
+    uint8_t* ptr;
+};
+
+bool is_sentinel(const void* p) {
+    uintptr_t v = reinterpret_cast<uintptr_t>(p);
+    return v == 0x00B53A34 || v == 0x00B53B30 || v == 0x00B53AB0 ||
+           v == 0x00B53A70 || v == 0x00B53AF0;
+}
+
+float parse_msvc_str(MsvcString* s) {
+    using c_str_fn = const char* (__thiscall*)(void*);
+    using atof_fn = double (__cdecl*)(const char*);
+    const char* cstr = reinterpret_cast<c_str_fn>(mem_00924FF0)(s);
+    return static_cast<float>(reinterpret_cast<atof_fn>(mem_009251F0)(cstr));
+}
+} // namespace
+
+void __thiscall fn_0051D360(void* self, void* owner, float arg2) {
+    using dtor_fn = void (__thiscall*)(void*);
+    using ctor_fn = void (__thiscall*)(void*);
+    using ctor_cstr_fn = void (__thiscall*)(void*, const char*);
+    using get_str_vfn = void* (__thiscall*)(void*, MsvcString*);
+
+    ext_00519EC0(self, owner, std::bit_cast<uint32_t>(arg2));
+
+    float t = 0.0f;
+    float quat[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+    float euler[3] = {0.0f, 0.0f, 0.0f};
+    float mat[9] = {
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 1.0f
+    };
+
+    void* mode_item = ext_0063EFE0(owner, reinterpret_cast<const char*>(0x0095261C));
+    MsvcString mode_str{};
+    void** mode_vtbl = *reinterpret_cast<void***>(mode_item);
+    void* mode_str_ret = reinterpret_cast<get_str_vfn>(mode_vtbl[2])(mode_item, &mode_str);
+    uint32_t mode = ext_00519D10(mode_str_ret);
+    reinterpret_cast<dtor_fn>(mem_00924FF4)(&mode_str);
+
+    void* data_item = ext_0063EFE0(owner, reinterpret_cast<const char*>(0x009525C0));
+    if (!is_sentinel(data_item)) {
+        void* step_item = ext_0063EFE0(owner, reinterpret_cast<const char*>(0x0094539C));
+        if (!is_sentinel(step_item)) {
+            ext_0046C0A0(&arg2, &step_item);
+        }
+
+        MsvcString str{};
+        reinterpret_cast<ctor_fn>(mem_00924FE8)(&str);
+        ext_004275E0(&str, data_item);
+
+        MsvcStringVec vec{nullptr, nullptr, nullptr, nullptr};
+        MsvcString delim{};
+        reinterpret_cast<ctor_cstr_fn>(mem_00924FE4)(
+            &delim, reinterpret_cast<const char*>(0x009525BC));
+        ext_00665570(&str, &delim, &vec);
+        reinterpret_cast<dtor_fn>(mem_00924FF4)(&delim);
+
+        for (MsvcString* it = vec.first; it != vec.last; ++it) {
+            if (mode == 0) {
+                quat[0] = parse_msvc_str(it);
+                ++it;
+                quat[1] = parse_msvc_str(it);
+                ++it;
+                quat[2] = parse_msvc_str(it);
+                ++it;
+                quat[3] = parse_msvc_str(it);
+            } else {
+                euler[0] = parse_msvc_str(it);
+                ++it;
+                euler[1] = parse_msvc_str(it);
+                ++it;
+                euler[2] = parse_msvc_str(it);
+                ext_00694A70(mat, 0, euler);
+                ext_00694330(quat, mat);
+            }
+            ext_0051D130(self, t, quat);
+            t += arg2;
+        }
+
+        if (vec.first != nullptr) {
+            for (MsvcString* it = vec.first; it != vec.last; ++it) {
+                reinterpret_cast<dtor_fn>(mem_00924FF4)(it);
+            }
+            ext_006A5C5C(vec.first);
+        }
+        reinterpret_cast<dtor_fn>(mem_00924FF4)(&str);
+    }
+
+    uint8_t* children = static_cast<uint8_t*>(owner) + 0x24;
+    CheckedIter it{children, children, *reinterpret_cast<uint8_t**>(children + 0x04)};
+    ext_00427A60(&it);
+    CheckedIter end_it{children, children, *reinterpret_cast<uint8_t**>(children + 0x08)};
+    ext_00427A60(&end_it);
+
+    while (it.ptr < end_it.ptr) {
+        if (it.container_ref != end_it.container_ref) {
+            reinterpret_cast<void (__cdecl*)()>(mem_00925134)();
+        }
+        void* item = *reinterpret_cast<void**>(it.ptr);
+        float key_t = ext_0067EE80(item, mem_00A9F508, mem_00A9FA00);
+        if (mode == 0) {
+            float tmp_q[4];
+            float* q = ext_0067F080(tmp_q, item);
+            quat[0] = q[0];
+            quat[1] = q[1];
+            quat[2] = q[2];
+            quat[3] = q[3];
+        } else {
+            float tmp_e[3];
+            float* e = ext_0067EFD0(tmp_e, item);
+            euler[0] = e[0];
+            euler[1] = e[1];
+            euler[2] = e[2];
+            ext_00694A70(mat, 0, euler);
+            ext_00694330(quat, mat);
+        }
+        ext_0051D130(self, key_t, quat);
+        it.ptr += 4;
+        ext_00427A60(&it);
+    }
+
+    *reinterpret_cast<float*>(static_cast<uint8_t*>(self) + 0x3C) = mem_00952174;
+}
+} // namespace lift_0051D360

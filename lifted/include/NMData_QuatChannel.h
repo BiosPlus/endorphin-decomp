@@ -17,6 +17,7 @@ struct NMData_QuatChannel_Fields {
     // +0x34  uint32_t                 field_0x34  (evidence: 0x0051ADC0, 0x0051C7A0, 0x0051C7C0) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint32_t                 keyEnd  (evidence: 0x0051C3E0) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint8_t*                 keyEnd  (evidence: 0x0051C300) // CONFLICT: multiple definitions at +0x34
+    // +0x3C  float                    field_0x3C  (evidence: 0x0051D360)
     // +0x5C  uint32_t                 field_0x5C  (evidence: 0x0051C7C0)
     // +0x60  uint32_t                 field_0x60  (evidence: 0x0051C7C0)
 };
