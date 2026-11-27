@@ -1761,3 +1761,42 @@ uint32_t fn_00799010(uint32_t self, uint32_t key1, uint32_t arg3) {
     return fn(self, key1, arg3);
 }
 } // namespace lift_00799010
+
+// [0x0079DAC0] sub_0079DAC0 (54 bytes)
+namespace lift_0079DAC0 {
+// Known callee 0x007853D0: Unknown::initWithSubobject_007853D0 (Stores arg1 at +0x08, zeroes +0x10..+0x1C, initializes the sub-object at +0x20 via ext_006E73B0(arg2, arg3), sets the vtable pointer at +0x00, and returns this.)
+void* ext_007853D0(void* self, DWORD arg1, DWORD arg2, DWORD arg3);
+
+extern int mem_00AAFEEC;
+extern int mem_00AAFEF4;
+extern int mem_009976F8;
+
+// @name Unknown::initTimeShiftAndScaleFilter_0079DAC0
+// @class Unknown
+// @summary Initializes the sub-object with the "TimeShiftAndScaleFilter" name and two static arguments, sets the vtable pointer, zeroes three dword fields, sets +0x84:+0x80 to the double 1.0, and returns this.
+// @field Unknown +0x00 DWORD vtable_ptr
+// @field Unknown +0x78 DWORD field_0x78
+// @field Unknown +0x7C DWORD field_0x7C
+// @field Unknown +0x80 DWORD field_0x80
+// @field Unknown +0x84 DWORD field_0x84
+void* fn_0079DAC0(void* self) {
+    // Sub-object initialization (original pushes 2, &mem_00AAFEEC, &mem_00AAFEF4 and calls ext_007853D0 with this).
+    ext_007853D0(self,
+                 static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AAFEF4)),
+                 static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AAFEEC)),
+                 2);
+
+    // Set vtable pointer at +0x00 (original immediate 0x009976F8).
+    lift_field<DWORD>(self, 0x00) = 0x009976F8u;
+
+    // Zero the dword fields at +0x78, +0x7C, +0x80.
+    lift_field<DWORD>(self, 0x78) = 0;
+    lift_field<DWORD>(self, 0x7C) = 0;
+    lift_field<DWORD>(self, 0x80) = 0;
+
+    // High dword of IEEE-754 double 1.0 (0x3FF00000_00000000) at +0x84; low dword at +0x80 is zero.
+    lift_field<DWORD>(self, 0x84) = 0x3FF00000u;
+
+    return self;
+}
+} // namespace lift_0079DAC0

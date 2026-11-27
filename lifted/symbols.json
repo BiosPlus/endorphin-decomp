@@ -80731,6 +80731,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0079D730.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079DAC0": {
+    "name": "Unknown::initTimeShiftAndScaleFilter_0079DAC0",
+    "class": "Unknown",
+    "signature": "void* fn_0079DAC0(void* self)",
+    "summary": "Initializes the sub-object with the \"TimeShiftAndScaleFilter\" name and two static arguments, sets the vtable pointer, zeroes three dword fields, sets +0x84:+0x80 to the double 1.0, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079DB00": {
     "name": "sub_0079DB00",
     "signature": "extern \"C\" void* __fastcall fn_0079DB00(void* self, int edx_unused, unsigned int flags)",
