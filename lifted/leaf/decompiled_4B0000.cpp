@@ -2108,3 +2108,39 @@ void* __thiscall fn_004B76A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t 
     return self;
 }
 } // namespace lift_004B76A0
+
+// [0x004B49A0] sub_004B49A0 (146 bytes)
+namespace lift_004B49A0 {
+// @name Unknown::InitWithCastAndArgs
+// @class Unknown
+// @summary Calls ext_006657F0(self, 0), stores arg1 at +0x10, the RTDynamicCast result at +0x14, zero at +0x18/+0x20, arg3 at +0x1C and arg4 at +0x24; if the cast result is 0 also stores arg2 at +0x08. Returns self.
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (thiscall, one stack arg, callee cleans)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 stack args, caller cleans)
+extern uint32_t ext_006A6E9E(uint32_t obj, uint32_t vfDelta, uint32_t srcType, uint32_t targetType, uint32_t isReference);
+
+void* fn_004B49A0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    ext_006657F0(self, 0);
+    lift_field<uint32_t>(self, 0x00) = 0x00943298u;
+    lift_field<uint32_t>(self, 0x10) = arg1;
+    uint32_t castResult = ext_006A6E9E(arg2, 0u, 0x00A2F4F4u, 0x00A38288u, 0u);
+    lift_field<uint32_t>(self, 0x14) = castResult;
+    lift_field<uint32_t>(self, 0x18) = 0u;
+    lift_field<uint32_t>(self, 0x1C) = arg3;
+    lift_field<uint32_t>(self, 0x20) = 0u;
+    lift_field<uint32_t>(self, 0x24) = arg4;
+    if (castResult == 0u) {
+        lift_field<uint32_t>(self, 0x08) = arg2;
+    }
+    return self;
+}
+} // namespace lift_004B49A0
