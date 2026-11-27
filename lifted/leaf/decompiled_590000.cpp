@@ -2076,3 +2076,64 @@ void __thiscall sub_0059E2B0(void* self) {
     lift_field<uint8_t*>(self, 0x04) = parent;
 }
 } // namespace lift_0059E2B0
+
+// [0x00597860] sub_00597860 (141 bytes)
+namespace lift_00597860 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764), cdecl, one argument.
+extern void ext_006A5C5C(void* p);
+// Indirect IAT slot 0x00924FF4: holds the address of MSVCP80 basic_string<char> destructor (thiscall).
+extern uint32_t mem_00924FF4;
+
+// Node field accessors (32-bit guest layout; pointers are stored as uint32_t).
+static inline uint32_t u32_at(const uint8_t* base, std::ptrdiff_t off) {
+    return lift_field<uint32_t>(base, off);
+}
+static inline uint8_t u8_at(const uint8_t* base, std::ptrdiff_t off) {
+    return lift_field<uint8_t>(base, off);
+}
+static inline uint8_t* ptr_at(const uint8_t* base, std::ptrdiff_t off) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(u32_at(base, off)));
+}
+
+// @name Unknown::processNodeList
+// @class Unknown
+// @summary Walks a singly linked node list starting at arg (next at +0x00); recursively processes each node's +0x08 child, invokes vfunc slot 30 on the object at +0x2C if non-null, destroys the std::string at +0x0C, then calls ext_006A5C5C(node). Stops when a node's flag at +0x31 is nonzero.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C std::basic_string<char> field_0x0c
+// @field Unknown +0x2C uint32_t field_0x2c
+// @field Unknown +0x31 uint8_t field_0x31
+void fn_00597860(void* self, void* arg) {
+    uint8_t* edi = static_cast<uint8_t*>(arg);
+
+    while (u8_at(edi, 0x31) == 0) {
+        uint8_t* esi = edi;
+
+        // Recurse into child at +0x08 with the same `this`.
+        fn_00597860(self, reinterpret_cast<void*>(static_cast<uintptr_t>(u32_at(esi, 0x08))));
+
+        // Advance to next node.
+        esi = ptr_at(esi, 0x00);
+
+        uint8_t* const ebp = edi + 0x0C;
+
+        // Optional virtual call on the object at +0x2C (vtable slot 30, byte offset 0x78).
+        if (u32_at(edi, 0x2C) != 0) {
+            uint8_t* obj = ptr_at(edi, 0x2C);
+            uint8_t* vtbl = ptr_at(obj, 0x00);
+            uint32_t slot = u32_at(vtbl, 0x78);
+            using VFunc = void (*)(void* self, void* arg);
+            reinterpret_cast<VFunc>(static_cast<uintptr_t>(slot))(obj, edi + 0x28);
+        }
+
+        // Destroy the std::string member at +0x0C (MSVCP80 basic_string dtor via IAT slot).
+        using DtorFn = void (*)(void* self);
+        reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(ebp);
+
+        ext_006A5C5C(edi);
+
+        // Continue with the next node (loop condition re-checks its flag at +0x31).
+        edi = esi;
+    }
+}
+} // namespace lift_00597860
