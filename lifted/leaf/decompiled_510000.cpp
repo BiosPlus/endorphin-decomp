@@ -1466,3 +1466,100 @@ UnguardedPartitionResult* __cdecl fn_00518B00(
     return out;
 }
 } // namespace lift_00518B00
+
+// [0x00518D70] sub_00518D70 (438 bytes)
+namespace lift_00518D70 {
+// @name sub_00518D70
+// @summary Auto-lifted identical-shape clone of 0x00518B00 (unguardedPartition).
+namespace lift_00518B00 {
+// @name unguardedPartition
+// @summary Performs MSVC std::_Unguarded_partition (3-way quicksort partition) on a range of uint32_t indices using comparator pred.
+
+struct UnguardedPartitionResult {
+    uint32_t* first;
+    uint32_t* second;
+};
+
+extern int __thiscall ext_005185D0(void* self, uint32_t idxA, uint32_t idxB);
+extern void __cdecl ext_00518950(uint32_t* first, uint32_t* mid, uint32_t* lastMinusOne, void* pred);
+
+UnguardedPartitionResult* __cdecl fn_00518D70(
+    UnguardedPartitionResult* out,
+    uint32_t* first,
+    uint32_t* last,
+    void* pred) {
+    uint32_t* mid = first + ((last - first) / 2);
+    ext_00518950(first, mid, last - 1, pred);
+
+    uint32_t* pfirst = mid;
+    uint32_t* plast = pfirst + 1;
+
+    while (first < pfirst
+        && static_cast<uint8_t>(ext_005185D0(&pred, *(pfirst - 1), *pfirst)) == 0
+        && static_cast<uint8_t>(ext_005185D0(&pred, *pfirst, *(pfirst - 1))) == 0) {
+        --pfirst;
+    }
+
+    while (plast < last
+        && static_cast<uint8_t>(ext_005185D0(&pred, *plast, *pfirst)) == 0
+        && static_cast<uint8_t>(ext_005185D0(&pred, *pfirst, *plast)) == 0) {
+        ++plast;
+    }
+
+    uint32_t* gfirst = plast;
+    uint32_t* glast = pfirst;
+
+    for (;;) {
+        for (; gfirst < last; ++gfirst) {
+            if (static_cast<uint8_t>(ext_005185D0(&pred, *pfirst, *gfirst)) != 0) {
+                continue;
+            }
+            if (static_cast<uint8_t>(ext_005185D0(&pred, *gfirst, *pfirst)) != 0) {
+                break;
+            }
+            std::swap(*plast++, *gfirst);
+        }
+
+        for (; first < glast; --glast) {
+            if (static_cast<uint8_t>(ext_005185D0(&pred, *(glast - 1), *pfirst)) != 0) {
+                continue;
+            }
+            if (static_cast<uint8_t>(ext_005185D0(&pred, *pfirst, *(glast - 1))) != 0) {
+                break;
+            }
+            std::swap(*--pfirst, *(glast - 1));
+        }
+
+        if (glast == first) {
+            if (gfirst == last) {
+                break;
+            }
+            if (plast != gfirst) {
+                std::swap(*pfirst, *plast);
+            }
+            std::swap(*pfirst, *gfirst);
+            ++plast;
+            ++pfirst;
+            ++gfirst;
+        } else {
+            --glast;
+            if (gfirst == last) {
+                --pfirst;
+                if (glast != pfirst) {
+                    std::swap(*glast, *pfirst);
+                }
+                --plast;
+                std::swap(*pfirst, *plast);
+            } else {
+                std::swap(*gfirst, *glast);
+                ++gfirst;
+            }
+        }
+    }
+
+    out->first = pfirst;
+    out->second = plast;
+    return out;
+}
+} // namespace lift_00518B00
+} // namespace lift_00518D70

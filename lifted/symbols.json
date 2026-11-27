@@ -19842,6 +19842,13 @@
     "summary": "Dispatches property/member lookup by key to return a pointer-pair for fields at +0x04, +0x20, or +0x3C, or a default empty pair.",
     "lifted_path": "lifted/NMData/MaterialPair.cpp"
   },
+  "0x004BAF90": {
+    "name": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_3",
+    "class": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e, Properties::GetTerminalParent\u003e",
+    "signature": "void __stdcall fn_004BAF90(void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B4D90 (PointainerVectorType::vfunc_3).",
+    "lifted_path": "lifted/templates/SetType.cpp"
+  },
   "0x004BBB00": {
     "name": "std::vector\u003cstd::string*\u003e::erase_and_delete",
     "class": "std::vector\u003cstd::string*\u003e",
@@ -29003,6 +29010,13 @@
     "summary": "Serializes EvolveEngineData fields and lastBestIndividual to an XML node.",
     "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
   },
+  "0x00500C50": {
+    "name": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_3",
+    "class": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e, Properties::GetTerminalParent\u003e",
+    "signature": "void __stdcall fn_00500C50(void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B4D90 (PointainerVectorType::vfunc_3).",
+    "lifted_path": "lifted/templates/SetType.cpp"
+  },
   "0x00500DA0": {
     "name": "SortedVector::find_string",
     "class": "SortedVector",
@@ -30294,6 +30308,13 @@
     "class": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::TaskTemplateParam\u003e\u003e, Properties::GetPropertySource\u003e",
     "signature": "static inline void* lift_ptr(uint32_t v)",
     "summary": "Auto-lifted identical-shape clone of 0x0049EDF0 (PointainerVectorType::vfunc_10).",
+    "lifted_path": "lifted/templates/PointainerVectorType.cpp"
+  },
+  "0x0050B7F0": {
+    "name": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_3",
+    "class": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e",
+    "signature": "void __stdcall fn_0050B7F0(void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B4D90 (PointainerVectorType::vfunc_3).",
     "lifted_path": "lifted/templates/PointainerVectorType.cpp"
   },
   "0x0050B8C0": {
@@ -31995,6 +32016,12 @@
     "name": "unguardedPartition",
     "signature": "UnguardedPartitionResult* __cdecl fn_00518B00( UnguardedPartitionResult* out, uint32_t* first, uint32_t* last, void* pred)",
     "summary": "Performs MSVC std::_Unguarded_partition (3-way quicksort partition) on a range of uint32_t indices using comparator pred.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
+  "0x00518D70": {
+    "name": "sub_00518D70",
+    "signature": "UnguardedPartitionResult* __cdecl fn_00518D70( UnguardedPartitionResult* out, uint32_t* first, uint32_t* last, void* pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00518B00 (unguardedPartition).",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x00519060": {

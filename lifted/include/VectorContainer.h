@@ -8,7 +8,7 @@
 // Recovered field layout for VectorContainer:
 namespace lifted_layout {
 struct VectorContainer_Fields {
-    // +0x4   uint32_t*                begin  (evidence: 0x004B4D90)
-    // +0x8   uint32_t*                end  (evidence: 0x004B4D90)
+    // +0x4   uint32_t*                begin  (evidence: 0x004B4D90, 0x004BAF90, 0x00500C50, 0x0050B7F0)
+    // +0x8   uint32_t*                end  (evidence: 0x004B4D90, 0x004BAF90, 0x00500C50, 0x0050B7F0)
 };
 } // namespace lifted_layout

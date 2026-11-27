@@ -1,0 +1,28 @@
+{
+  "va": "0x004BAF90",
+  "size": 208,
+  "orig_symbol": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_3",
+  "src_path": "src/templates/SetType.cpp",
+  "lifted_path": "lifted/templates/SetType.cpp",
+  "name": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_3",
+  "class": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e, Properties::GetTerminalParent\u003e",
+  "signature": "void __stdcall fn_004BAF90(void* arg1, void* arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B4D90 (PointainerVectorType::vfunc_3).",
+  "fields": [
+    {
+      "class": "VectorContainer",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "begin"
+    },
+    {
+      "class": "VectorContainer",
+      "offset": "+0x8",
+      "type": "uint32_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:22:50Z"
+}
