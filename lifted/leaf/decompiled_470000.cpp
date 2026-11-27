@@ -1438,3 +1438,54 @@ void* fn_00475A40(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t
     return node;
 }
 } // namespace lift_00475A40
+
+// [0x004736F0]
+namespace lift_004736F0 {
+// @name sub_004736F0
+// @summary Locks critical section, computes ceil(field_0x28 / field_0x24) * field_0x24 + iterator_value + 1, and unlocks
+// @field Self +0x24 uint32_t field_0x24
+// @field Self +0x28 uint32_t field_0x28
+// @field Self +0xf8 uint8_t* field_0xf8
+// @field Self +0x154 uint8_t field_0x154
+
+
+extern void ext_0065C640(void* self);
+extern void ext_0065C650(void* self);
+extern int32_t ext_006A6DE0(double val);
+
+using CeilFn = double (*)(double);
+extern CeilFn mem_0092520C;
+
+using InvalidParamFn = void (*)();
+extern InvalidParamFn mem_00925134;
+
+uint32_t fn_004736F0(void* self) {
+    uint8_t* lock = static_cast<uint8_t*>(self) + 0x154;
+    ext_0065C640(lock);
+
+    uint32_t num = lift_field<uint32_t>(self, 0x28);
+    uint32_t den = lift_field<uint32_t>(self, 0x24);
+    double ratio = static_cast<double>(num) / static_cast<double>(den);
+    int32_t count = ext_006A6DE0(mem_0092520C(ratio));
+
+    uint32_t scaled = den * static_cast<uint32_t>(count);
+
+    uint8_t* obj = lift_field<uint8_t*>(self, 0xf8);
+    uint8_t* iter = obj + 0xd4;
+
+    uint32_t* container = lift_field<uint32_t*>(iter, 0x0);
+    if (container == nullptr) {
+        mem_00925134();
+    }
+    uint32_t* node = lift_field<uint32_t*>(iter, 0x4);
+    if (node == lift_field<uint32_t*>(container, 0x4)) {
+        mem_00925134();
+    }
+
+    uint32_t val = lift_field<uint32_t>(node, 0x8);
+    uint32_t result = val + scaled + 1;
+
+    ext_0065C650(lock);
+    return result;
+}
+} // namespace lift_004736F0

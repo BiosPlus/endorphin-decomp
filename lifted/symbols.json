@@ -9965,6 +9965,12 @@
     "summary": "Allocates a 0x48-byte record, stores three DWORDs and a byte flag, and copy-constructs the string pair from src; returns the record or null.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x004736F0": {
+    "name": "sub_004736F0",
+    "signature": "uint32_t fn_004736F0(void* self)",
+    "summary": "Locks critical section, computes ceil(field_0x28 / field_0x24) * field_0x24 + iterator_value + 1, and unlocks",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00473C30": {
     "name": "RuntimeEngine::CaptureTicker::vfunc_0",
     "class": "RuntimeEngine::CaptureTicker",

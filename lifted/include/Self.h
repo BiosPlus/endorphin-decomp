@@ -95,10 +95,10 @@ struct Self_Fields {
     // +0x20  void*                    tree_base  (evidence: 0x005A71E0) // CONFLICT: multiple definitions at +0x20
     // +0x24  BYTE                     field_0x24  (evidence: 0x004A5A50) // CONFLICT: multiple definitions at +0x24
     // +0x24  int32_t*                 field_0x24  (evidence: 0x006767D0) // CONFLICT: multiple definitions at +0x24
-    // +0x24  uint32_t                 field_0x24  (evidence: 0x0048F590, 0x00495AB0, 0x00676780, 0x00681820) // CONFLICT: multiple definitions at +0x24
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x004736F0, 0x0048F590, 0x00495AB0, 0x00676780, 0x00681820) // CONFLICT: multiple definitions at +0x24
     // +0x24  void*                    tree_head  (evidence: 0x005A71E0) // CONFLICT: multiple definitions at +0x24
     // +0x28  int32_t*                 field_0x28  (evidence: 0x006767D0) // CONFLICT: multiple definitions at +0x28
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x0048F590, 0x00676780, 0x00681820) // CONFLICT: multiple definitions at +0x28
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x004736F0, 0x0048F590, 0x00676780, 0x00681820) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint8_t*                 field_0x28  (evidence: 0x00629530) // CONFLICT: multiple definitions at +0x28
     // +0x28  void*                    field_0x28  (evidence: 0x00466870, 0x00622B40, 0x00627450, 0x00627510) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t                 tree_size  (evidence: 0x005A71E0) // CONFLICT: multiple definitions at +0x28
@@ -158,7 +158,8 @@ struct Self_Fields {
     // +0xC8  uint8_t[0x54]            field_0xC8  (evidence: 0x0042F3C0) // CONFLICT: multiple definitions at +0xC8
     // +0xEC  uint32_t                 field_0xEC  (evidence: 0x005971D0)
     // +0xF6  uint8_t                  field_0xf6  (evidence: 0x00630510)
-    // +0xF8  std::string              field_0xf8  (evidence: 0x00551A20)
+    // +0xF8  std::string              field_0xf8  (evidence: 0x00551A20) // CONFLICT: multiple definitions at +0xF8
+    // +0xF8  uint8_t*                 field_0xf8  (evidence: 0x004736F0) // CONFLICT: multiple definitions at +0xF8
     // +0xFC  int32_t                  field_0xfc  (evidence: 0x00533F50)
     // +0x100 void*                    field_0x100  (evidence: 0x00430900)
     // +0x10C uint32_t                 field_0x10c  (evidence: 0x007025C0)
@@ -169,6 +170,7 @@ struct Self_Fields {
     // +0x11C int32_t                  field_0x11c  (evidence: 0x004329A0) // CONFLICT: multiple definitions at +0x11C
     // +0x11C uint8_t                  field_0x11c  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x11C
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687260, 0x00687280)
+    // +0x154 uint8_t                  field_0x154  (evidence: 0x004736F0)
     // +0x158 BYTE field_0x158 (address taken only, passed to ext_00661A90; not dereferenced here)  (evidence: 0x005947B0, 0x0059DC60)
     // +0x15C DWORD                    field_0x15C  (evidence: 0x007B1E20)
     // +0x160 DWORD                    field_0x160  (evidence: 0x007B1E20) // CONFLICT: multiple definitions at +0x160

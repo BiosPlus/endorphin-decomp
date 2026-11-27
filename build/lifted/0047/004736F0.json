@@ -1,0 +1,39 @@
+{
+  "va": "0x004736F0",
+  "size": 152,
+  "orig_symbol": "sub_004736F0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "sub_004736F0",
+  "signature": "uint32_t fn_004736F0(void* self)",
+  "summary": "Locks critical section, computes ceil(field_0x28 / field_0x24) * field_0x24 + iterator_value + 1, and unlocks",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xF8",
+      "type": "uint8_t*",
+      "name": "field_0xf8"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x154",
+      "type": "uint8_t",
+      "name": "field_0x154"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:21:03Z"
+}
