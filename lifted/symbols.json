@@ -28583,6 +28583,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x16C and tail-calls sub_00406FC0.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00558B50": {
+    "name": "destroyAndClearRange_00558B50",
+    "class": "Unknown",
+    "signature": "void fn_00558B50(void* self)",
+    "summary": "If the dword at +0x08 is non-zero, destroys the struct range [+0x08, +0x0C) via ext_00556740, then calls ext_006A5C5C with the begin value; finally zeroes the dwords at +0x08, +0x0C and +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00558B90": {
     "name": "destroyStringAndRecordVector",
     "signature": "void __thiscall fn_00558B90(void* self)",

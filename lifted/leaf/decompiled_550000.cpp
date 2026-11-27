@@ -2276,3 +2276,34 @@ void __stdcall sub_005505B0(FILE* file, void* obj, char* buf) {
     } while (mem_009252C0(buf, 0x800, file) != nullptr);
 }
 } // namespace lift_005505B0
+
+// [0x00558B50] sub_00558B50 (64 bytes)
+namespace lift_00558B50 {
+// Known callee 0x00556740: destroyStructArray_00556740 (Destroys a contiguous range of 0xa0-byte structs containing four std::string members)
+// Called with four stack arguments: [self+8], [self+0xC], self+4, and self.
+extern void ext_00556740(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg0);
+
+// @name destroyAndClearRange_00558B50
+// @class Unknown
+// @summary If the dword at +0x08 is non-zero, destroys the struct range [+0x08, +0x0C) via ext_00556740, then calls ext_006A5C5C with the begin value; finally zeroes the dwords at +0x08, +0x0C and +0x10.
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_00558B50(void* self) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x08);
+    if (begin != 0) {
+        const uint32_t end = lift_field<uint32_t>(self, 0x0C);
+        ext_00556740(
+            begin,
+            end,
+            static_cast<uint32_t>(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(self) + 0x04)),
+            static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)));
+        ext_006A5C5C(begin);
+    }
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+}
+} // namespace lift_00558B50
