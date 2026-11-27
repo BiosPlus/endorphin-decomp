@@ -1,0 +1,40 @@
+{
+  "va": "0x006B9A00",
+  "size": 144,
+  "orig_symbol": "sub_006B9A00",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::allocBuffer",
+  "class": "Unknown",
+  "signature": "uint32_t __thiscall fn_006B9A00(void* ecx, int32_t len, uint32_t* out)",
+  "summary": "Detaches any existing buffer and allocates an inline or heap buffer of the requested length, returning 0 on success or 1 on error.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "char*",
+      "name": "data"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "capacity"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "char[64]",
+      "name": "inlineBuf"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:40:26Z"
+}
