@@ -1,0 +1,14 @@
+{
+  "va": "0x004F6090",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setMagnitude(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType_MatrixWithProperties_vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setMagnitude(float)\u003e",
+  "signature": "extern \"C\" int mem_00AE9ED8;  // one-time-initialization guard flags (bit 0 = initialized/in progress) extern \"C\" int mem_00AE9ED4;  // function-local static object; first DWORD is its vtable pointer void fn_004F6090(void* self)",
+  "summary": "Lazily initializes a function-local static object (guarded by mem_00AE9ED8), then stores its address into this+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:21Z"
+}

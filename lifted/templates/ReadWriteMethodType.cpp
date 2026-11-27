@@ -10702,3 +10702,28 @@ void fn_004F64D0(void* self) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9EF4));
 }
 } // namespace lift_004F64D0
+
+// [0x004F6090] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, &public: void __thiscall MatrixWithProperties::setMagnitude(float)>::vfunc_40 (122 bytes)
+namespace lift_004F6090 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+// The original asm passes the static object address in ECX and no stack arguments to this call.
+extern void ext_0067A670();
+extern int mem_00AE9ED8;  // one-time-initialization guard flags (bit 0 = initialized/in progress)
+extern int mem_00AE9ED4;  // function-local static object; first DWORD is its vtable pointer
+
+// @name ReadWriteMethodType_MatrixWithProperties_vfunc_40
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, &public: void __thiscall MatrixWithProperties::setMagnitude(float)>
+// @summary Lazily initializes a function-local static object (guarded by mem_00AE9ED8), then stores its address into this+0x04.
+// @field ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, &public: void __thiscall MatrixWithProperties::setMagnitude(float)> +0x04 void* field_0x04
+void fn_004F6090(void* self) {
+    // The original MSVC EH frame setup/teardown (fs:[0] push/restore, trylevel) is
+    // a compiler-generated guard around the static init and has no portable equivalent.
+    if ((mem_00AE9ED8 & 1) == 0) {
+        mem_00AE9ED8 |= 1;
+        ext_0067A670();                       // ECX = &mem_00AE9ED4 in the original; not expressible here
+        mem_00AE9ED4 = 0x0094CF64;            // vtable pointer for the static object
+    }
+    lift_field<DWORD>(self, 4) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9ED4));
+}
+} // namespace lift_004F6090

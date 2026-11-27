@@ -19151,6 +19151,13 @@
     "summary": "Reads the wrapped object pointer; if null throws a default-message exception, otherwise invokes the helper and throws the default-message exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F6090": {
+    "name": "ReadWriteMethodType_MatrixWithProperties_vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setMagnitude(float)\u003e",
+    "signature": "extern \"C\" int mem_00AE9ED8;  // one-time-initialization guard flags (bit 0 = initialized/in progress) extern \"C\" int mem_00AE9ED4;  // function-local static object; first DWORD is its vtable pointer void fn_004F6090(void* self)",
+    "summary": "Lazily initializes a function-local static object (guarded by mem_00AE9ED8), then stores its address into this+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004F6190": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties\u003e",
