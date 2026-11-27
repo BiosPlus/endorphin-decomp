@@ -1,0 +1,46 @@
+{
+  "va": "0x004413E0",
+  "size": 586,
+  "orig_symbol": "MultiTrackView::TriangleMarker::vfunc_1",
+  "src_path": "src/MultiTrackView/TriangleMarker.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriangleMarker.cpp",
+  "name": "MultiTrackView::TriangleMarker::vfunc_1",
+  "class": "MultiTrackView::TriangleMarker",
+  "signature": "int32_t* fn_004413E0(void* self, int32_t* out, void* dc, const int32_t* src)",
+  "summary": "Computes an apex-up triangle from src (apex at (x0,y0), base at y0+H, half-width round(H/2)); if x0 \u003c view-\u003efield_0xfc it returns that bounding box in out, otherwise it sets two colour vectors, draws the triangle with GDI Polygon on dc, and returns out with the same box.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriangleMarker",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "field_0x48"
+    },
+    {
+      "class": "MultiTrackView::TriangleMarker",
+      "offset": "+0x70",
+      "type": "void*",
+      "name": "field_0x70"
+    },
+    {
+      "class": "MultiTrackView::TriangleMarker",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "MultiTrackView::TriangleMarker",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "MultiTrackView::TriangleMarker",
+      "offset": "+0x8B",
+      "type": "uint8_t",
+      "name": "field_0x8b"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:01:32Z"
+}

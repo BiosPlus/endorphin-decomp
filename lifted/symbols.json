@@ -5354,6 +5354,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004409F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x004413E0": {
+    "name": "MultiTrackView::TriangleMarker::vfunc_1",
+    "class": "MultiTrackView::TriangleMarker",
+    "signature": "int32_t* fn_004413E0(void* self, int32_t* out, void* dc, const int32_t* src)",
+    "summary": "Computes an apex-up triangle from src (apex at (x0,y0), base at y0+H, half-width round(H/2)); if x0 \u003c view-\u003efield_0xfc it returns that bounding box in out, otherwise it sets two colour vectors, draws the triangle with GDI Polygon on dc, and returns out with the same box.",
+    "lifted_path": "lifted/MultiTrackView/TriangleMarker.cpp"
+  },
   "0x004416C0": {
     "name": "MultiTrackView::DiamondMarker::vfunc_0",
     "class": "MultiTrackView::DiamondMarker",
