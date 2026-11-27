@@ -2218,3 +2218,37 @@ void fn_007C79E0(void* self, uint32_t status, void* owner, uint32_t i) {
     fn(self, i, context);
 }
 } // namespace lift_007C79E0
+
+// [0x007CC3F0]
+namespace lift_007CC3F0 {
+extern const void* ext_007D48A0(void*);
+extern double mem_0099DCA0;
+extern double mem_0092C180;
+
+// @name ClampOrFallbackVec3
+// @summary Computes dot product of a vec3 and object's +0x20 vec3; if >= threshold, outputs object's +0x30 vec3, else scales input vec3 by mem_0092C180
+// @field Obj +0x20 float field_0x20
+// @field Obj +0x24 float field_0x24
+// @field Obj +0x28 float field_0x28
+// @field Obj +0x30 float field_0x30
+// @field Obj +0x34 float field_0x34
+// @field Obj +0x38 float field_0x38
+extern float* sub_007CC3F0(void* arg0, const float* in_vec, float* out_vec) {
+    const void* obj = ext_007D48A0(arg0);
+    float dot = lift_field<float>(obj, 0x24) * in_vec[1]
+              + in_vec[0] * lift_field<float>(obj, 0x20)
+              + lift_field<float>(obj, 0x28) * in_vec[2];
+
+    if (static_cast<double>(dot) < mem_0099DCA0) {
+        double scale = mem_0092C180;
+        out_vec[0] = static_cast<float>(static_cast<double>(in_vec[0]) * scale);
+        out_vec[1] = static_cast<float>(static_cast<double>(in_vec[1]) * scale);
+        out_vec[2] = static_cast<float>(static_cast<double>(in_vec[2]) * scale);
+    } else {
+        out_vec[0] = lift_field<float>(obj, 0x30);
+        out_vec[1] = lift_field<float>(obj, 0x34);
+        out_vec[2] = lift_field<float>(obj, 0x38);
+    }
+    return out_vec;
+}
+} // namespace lift_007CC3F0

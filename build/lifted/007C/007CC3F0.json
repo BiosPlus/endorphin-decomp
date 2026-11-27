@@ -1,0 +1,51 @@
+{
+  "va": "0x007CC3F0",
+  "size": 143,
+  "orig_symbol": "sub_007CC3F0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "ClampOrFallbackVec3",
+  "signature": "extern \"C\" float* sub_007CC3F0(void* arg0, const float* in_vec, float* out_vec)",
+  "summary": "Computes dot product of a vec3 and object's +0x20 vec3; if \u003e= threshold, outputs object's +0x30 vec3, else scales input vec3 by mem_0092C180",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:36:09Z"
+}
