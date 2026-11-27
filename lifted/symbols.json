@@ -78078,6 +78078,12 @@
     "summary": "Returns 0x02000000 if the CPU reports SSE support (CPUID leaf 1, EDX bit 25), otherwise 0.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F14B0": {
+    "name": "fn_007F14B0",
+    "signature": "bool fn_007F14B0()",
+    "summary": "Guarded (SEH-style) routine that always reports success (returns true).",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F36C0": {
     "name": "accumulateStridedProducts",
     "signature": "void fn_007F36C0(float* out, const unsigned char* base, const float* mat, int idx)",

@@ -635,3 +635,18 @@ int fn_007FB7E0(void* eax, void* ecx, void* edx, void* esi, float arg) {
     return (s <= d) ? 1 : 0;
 }
 } // namespace lift_007FB7E0
+
+// [0x007F14B0] sub_007F14B0 (124 bytes)
+namespace lift_007F14B0 {
+// @name fn_007F14B0
+// @summary Guarded (SEH-style) routine that always reports success (returns true).
+//          The original asm only sets up/tears down an exception frame and a
+//          security cookie around `mov al, 1`; the cookie and frame bookkeeping
+//          are compiler boilerplate and do not affect the result.
+extern int mem_00AA7E40;
+
+bool fn_007F14B0() {
+    (void)&mem_00AA7E40; // security cookie read by the compiler prologue; metadata only
+    return true;
+}
+} // namespace lift_007F14B0
