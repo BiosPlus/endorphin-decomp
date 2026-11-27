@@ -22785,6 +22785,13 @@
     "summary": "One-time (guarded by bit 0 of mem_00AED2C8) construction of a static accessor object at mem_00AED2C4 with vtable 0x95306c, then stores its address into holder+0x04.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005249E0": {
+    "name": "ReadWriteMethodType_NetworkConnectorData_setName_vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::NetworkConnectorData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall NMData::NetworkConnectorData::setName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e",
+    "signature": "void fn_005249E0(void* holder)",
+    "summary": "Lazily initializes the static accessor object at 0x00AED2CC (once, guarded by bit 0 of 0x00AED2D0) and stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00524A60": {
     "name": "Unknown::getDoubleAsFloat_00524A60",
     "class": "Unknown",

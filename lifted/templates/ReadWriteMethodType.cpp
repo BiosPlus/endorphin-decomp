@@ -11355,3 +11355,29 @@ void fn_0058C7A0(void* obj) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B3F924));
 }
 } // namespace lift_0058C7A0
+
+// [0x005249E0] ExprParser::ReadWriteMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::NetworkConnectorData::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_40 (122 bytes)
+namespace lift_005249E0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores the single stack argument into the first DWORD of self; returns that value).
+extern void ext_0067A670();
+extern int mem_00AED2D0;
+extern int mem_00AED2CC;
+
+// @name ReadWriteMethodType_NetworkConnectorData_setName_vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::NetworkConnectorData::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>
+// @summary Lazily initializes the static accessor object at 0x00AED2CC (once, guarded by bit 0 of 0x00AED2D0) and stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 DWORD field_0x04
+void fn_005249E0(void* holder) {
+    DWORD& guard = lift_field<DWORD>(&mem_00AED2D0, 0);
+    if ((guard & 1u) == 0) {
+        guard |= 1u;
+        // Construct the static object: ext_0067A670 is thiscall (ECX = obj, stack arg = 0).
+        using StoreFn = DWORD (*)(void* self, DWORD value);
+        reinterpret_cast<StoreFn>(reinterpret_cast<uintptr_t>(&ext_0067A670))(
+            static_cast<void*>(&mem_00AED2CC), 0u);
+        lift_field<DWORD>(&mem_00AED2CC, 0) = 0x0095321Cu; // vtable for the accessor object
+    }
+    lift_field<DWORD>(holder, 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AED2CC));
+}
+} // namespace lift_005249E0
