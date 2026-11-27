@@ -76168,6 +76168,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008685C0": {
+    "name": "isGenuineIntelWithFeatureBit30",
+    "signature": "extern \"C\" uint32_t sub_008685C0()",
+    "summary": "Checks CPUID support, GenuineIntel vendor string, and CPUID leaf 1 EDX bit 30.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00868690": {
     "name": "_aullshr (unsigned 64-bit logical shift right)",
     "signature": "uint64_t fn_00868690(uint32_t lo, uint32_t hi, uint32_t n)",

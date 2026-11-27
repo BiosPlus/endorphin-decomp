@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <cstdint>
 #include <bit>
+#include <cpuid.h>
 
 // [0x0086086B] sub_0086086B (5 bytes)
 // @name sub_0086086B
@@ -1240,3 +1241,31 @@ void fn_00869E50(uint32_t* out, uint32_t count, const uint8_t* src, int32_t len)
     }
 }
 } // namespace lift_00869E50
+
+// [0x008685C0]
+namespace lift_008685C0 {
+// @name isGenuineIntelWithFeatureBit30
+// @summary Checks CPUID support, GenuineIntel vendor string, and CPUID leaf 1 EDX bit 30.
+
+
+#if (defined(__GNUC__) || defined(__clang__)) && (defined(__i386__) || defined(__x86_64__))
+#endif
+
+extern uint32_t sub_008685C0() {
+#if (defined(__GNUC__) || defined(__clang__)) && (defined(__i386__) || defined(__x86_64__))
+    unsigned int eax = 0, ebx = 0, ecx = 0, edx = 0;
+    if (!__get_cpuid(0, &eax, &ebx, &ecx, &edx)) {
+        return 0;
+    }
+    if (ebx != 0x756e6547u || edx != 0x49656e69u || ecx != 0x6c65746eu) {
+        return 0;
+    }
+    if (!__get_cpuid(1, &eax, &ebx, &ecx, &edx)) {
+        return 0;
+    }
+    return (edx & 0x40000000u) ? 1u : 0u;
+#else
+    return 0;
+#endif
+}
+} // namespace lift_008685C0
