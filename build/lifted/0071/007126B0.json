@@ -1,0 +1,34 @@
+{
+  "va": "0x007126B0",
+  "size": 138,
+  "orig_symbol": "sub_007126B0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "LookupKeyedEntry_007126B0",
+  "class": "\u003cClassName\u003e (unknown; thiscall member taking one stack arg)",
+  "signature": "void* fn_007126B0(void* self, uint32_t arg)",
+  "summary": "Looks up an entry by index (flag bit 0 selects absolute vs. base-relative index), verifies its key pair, and returns the matched object if its virtual method at vtable[0x14] accepts the global token mem_00B5EB78; otherwise returns null.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x10",
+      "type": "\u003cEntry*\u003e",
+      "name": "entries"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x14",
+      "type": "\u003cint\u003e",
+      "name": "base_index"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x34",
+      "type": "\u003cuint8_t\u003e",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:36:11Z"
+}

@@ -2694,3 +2694,53 @@ uint32_t __fastcall fn_0071CA70(void* self) {
     return target(o);
 }
 } // namespace lift_0071CA70
+
+// [0x007126B0] sub_007126B0 (138 bytes)
+namespace lift_007126B0 {
+extern int mem_00B5EB78;
+
+// @name LookupKeyedEntry_007126B0
+// @class <ClassName> (unknown; thiscall member taking one stack arg)
+// @summary Looks up an entry by index (flag bit 0 selects absolute vs. base-relative index), verifies its key pair, and returns the matched object if its virtual method at vtable[0x14] accepts the global token mem_00B5EB78; otherwise returns null.
+// @field <ClassName> +0x10 <Entry*> entries
+// @field <ClassName> +0x14 <int> base_index
+// @field <ClassName> +0x34 <uint8_t> flags
+void* fn_007126B0(void* self, uint32_t arg) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint8_t flags = *(base + 0x34);
+
+    uint32_t index;
+    if (flags & 1) {
+        index = arg;
+    } else {
+        index = *reinterpret_cast<uint32_t*>(base + 0x14) + arg;
+    }
+
+    // Entry = 12 bytes: { int32 key; Node* node; uint32 pad; }
+    auto* entries = *reinterpret_cast<uint8_t**>(base + 0x10);
+    uint8_t* entry = entries + static_cast<size_t>(index) * 12;
+
+    // Node = { int32 key; Object* obj; }
+    auto* node = *reinterpret_cast<uint8_t**>(entry + 4);
+    if (node == nullptr) {
+        return nullptr;
+    }
+    if (*reinterpret_cast<int32_t*>(node) != *reinterpret_cast<int32_t*>(entry)) {
+        return nullptr;
+    }
+
+    auto* obj = *reinterpret_cast<uint8_t**>(node + 4);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    // Virtual call: obj->vtable[0x14 / 4](mem_00B5EB78), thiscall on obj.
+    using VMethod = bool (__thiscall*)(void* self, int token);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    auto fn = reinterpret_cast<VMethod>(vtable[5]);
+    if (!fn(obj, mem_00B5EB78)) {
+        return nullptr;
+    }
+    return obj;
+}
+} // namespace lift_007126B0

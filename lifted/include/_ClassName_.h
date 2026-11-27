@@ -40,8 +40,10 @@ struct _ClassName__Fields {
     // +0xC   float                    field_0x0C  (evidence: 0x00533FE0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x004A0620, 0x00569970) // CONFLICT: multiple definitions at +0xC
     // +0x10  float field_0x10 (float array base; element stride 4)  (evidence: 0x005B11E0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  <Entry*>                 entries  (evidence: 0x007126B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  float                    field_0x10  (evidence: 0x00533FE0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00468A00) // CONFLICT: multiple definitions at +0x10
+    // +0x14  <int>                    base_index  (evidence: 0x007126B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  float                    field_0x14  (evidence: 0x00533FE0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    field_0x14  (evidence: 0x00468A00) // CONFLICT: multiple definitions at +0x14
     // +0x18  float                    field_0x18  (evidence: 0x00533FE0) // CONFLICT: multiple definitions at +0x18
@@ -60,7 +62,8 @@ struct _ClassName__Fields {
     // +0x2C  u32                      field_0x2c  (evidence: 0x0067A670)
     // +0x30  double                   field_0x30  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x30
     // +0x30  u32                      field_0x30  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x30
-    // +0x34  float                    field_0x34  (evidence: 0x0054E3D0)
+    // +0x34  float                    field_0x34  (evidence: 0x0054E3D0) // CONFLICT: multiple definitions at +0x34
+    // +0x34  <uint8_t>                flags  (evidence: 0x007126B0) // CONFLICT: multiple definitions at +0x34
     // +0x36  WORD                     field_0x36  (evidence: 0x007BC4F0)
     // +0x38  uint32_t                 field_0x38  (evidence: 0x004ED640)
     // +0x3C  DWORD                    field_0x3C  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x3C

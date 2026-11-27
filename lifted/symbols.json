@@ -3661,6 +3661,12 @@
     "summary": "Gets the global value via fn_00465B30, resolves an object with fn_00468660, then calls its vtable slot 1 and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00432130": {
+    "name": "appOnFileSaveOrAction",
+    "signature": "void __cdecl fn_00432130(void)",
+    "summary": "Invokes vtable+0x1d0(0) on the object returned by sub_00465B40 and displays any caught exception message via AfxMessageBox.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00432400": {
     "name": "fn_00432400 (call-object virtual method 0x1EC with arg 0)",
     "signature": "void fn_00432400(void* self)",
@@ -73302,6 +73308,13 @@
     "signature": "uint32_t fn_007126A0(void* self)",
     "summary": "Returns the dword at +0x14 if bit 0 of the byte at +0x34 is set, otherwise the dword at +0x18.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007126B0": {
+    "name": "LookupKeyedEntry_007126B0",
+    "class": "\u003cClassName\u003e (unknown; thiscall member taking one stack arg)",
+    "signature": "void* fn_007126B0(void* self, uint32_t arg)",
+    "summary": "Looks up an entry by index (flag bit 0 selects absolute vs. base-relative index), verifies its key pair, and returns the matched object if its virtual method at vtable[0x14] accepts the global token mem_00B5EB78; otherwise returns null.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00712780": {
     "name": "Unknown::DispatchByFlag34",
