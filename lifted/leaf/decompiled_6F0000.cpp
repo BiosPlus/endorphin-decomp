@@ -2563,3 +2563,33 @@ uint32_t __thiscall fn_006FAD00(void* self, uint32_t a1, uint32_t a2, uint32_t a
     return 1;
 }
 } // namespace lift_006FAD00
+
+// [0x006FDE80] sub_006FDE80 (112 bytes)
+namespace lift_006FDE80 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006FC7E0: Unknown::initVtableAndClearFields (Writes vtable pointer 0x00995180 to +0x00 and zeroes the six dwords at +0x04..+0x18.)
+extern void ext_006FC7E0();
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern void ext_006D2170();
+
+// @name Unknown::allocAndInsert_006FDE80
+// @class Unknown
+// @summary Allocates a 0x1C-byte object, initializes it, and inserts its pointer into the DynamicArray at +0x10.
+// @field Unknown +0x10 DynamicArray field_0x10
+void* fn_006FDE80(void* self) {
+    // ext_006A5C62 is operator new(0x1C) (cdecl, single stack arg).
+    void* elem = ((void* (*)(size_t))(void*)ext_006A5C62)(0x1C);
+    if (elem != nullptr) {
+        // Construct: vtable + zeroed fields (thiscall, this = elem).
+        ((void (*)(void*))(void*)ext_006FC7E0)(elem);
+    }
+    void* slot = elem;
+
+    // DynamicArray at self+0x10: index = its first dword (count), elem = &slot.
+    char* arr = reinterpret_cast<char*>(self) + 0x10;
+    int32_t index = *reinterpret_cast<int32_t*>(arr);
+    int32_t result = ((int32_t (*)(void*, int32_t, const void*))(void*)ext_006D2170)(arr, index, &slot);
+    return reinterpret_cast<void*>(static_cast<intptr_t>(result));
+}
+} // namespace lift_006FDE80

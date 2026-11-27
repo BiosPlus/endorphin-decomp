@@ -1,0 +1,22 @@
+{
+  "va": "0x006FDE80",
+  "size": 112,
+  "orig_symbol": "sub_006FDE80",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::allocAndInsert_006FDE80",
+  "class": "Unknown",
+  "signature": "void* fn_006FDE80(void* self)",
+  "summary": "Allocates a 0x1C-byte object, initializes it, and inserts its pointer into the DynamicArray at +0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "DynamicArray",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:46:55Z"
+}
