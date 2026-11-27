@@ -3218,3 +3218,25 @@ void fn_0066A4E0(void* self) {
     f[2] = 1.0f - f[2];
 }
 } // namespace lift_0066A4E0
+
+// [0x0066A2E0] sub_0066A2E0 (47 bytes)
+namespace lift_0066A2E0 {
+// Known callee 0x0066A220: ClampFourFloatsToUnitRange (Clamps the four consecutive float32 values at self+0x00..+0x0C to [0.0, 1.0] in place; values above 1.0 become 1.0, values below 0.0 become 0.0, NaN and in-range values are left unchanged)
+extern void ext_0066A220(void* self);
+
+// @name Unknown::AddFourFloatsAndClamp_0066A2E0
+// @class Unknown
+// @summary Adds the four float32 values at rhs+0x00..+0x0C into self+0x00..+0x0C, clamps the result to [0,1] via ext_0066A220, and returns self
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+void* fn_0066A2E0(void* self, const void* rhs) {
+    lift_field<float>(self, 0x00) = lift_field<float>(rhs, 0x00) + lift_field<float>(self, 0x00);
+    lift_field<float>(self, 0x04) = lift_field<float>(rhs, 0x04) + lift_field<float>(self, 0x04);
+    lift_field<float>(self, 0x08) = lift_field<float>(rhs, 0x08) + lift_field<float>(self, 0x08);
+    lift_field<float>(self, 0x0C) = lift_field<float>(rhs, 0x0C) + lift_field<float>(self, 0x0C);
+    ext_0066A220(self);
+    return self;
+}
+} // namespace lift_0066A2E0

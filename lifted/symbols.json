@@ -52226,6 +52226,13 @@
     "summary": "Clamps the four consecutive float32 values at self+0x00..+0x0C to [0.0, 1.0] in place; values above 1.0 become 1.0, values below 0.0 become 0.0, NaN and in-range values are left unchanged",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x0066A2E0": {
+    "name": "Unknown::AddFourFloatsAndClamp_0066A2E0",
+    "class": "Unknown",
+    "signature": "void* fn_0066A2E0(void* self, const void* rhs)",
+    "summary": "Adds the four float32 values at rhs+0x00..+0x0C into self+0x00..+0x0C, clamps the result to [0,1] via ext_0066A220, and returns self",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x0066A310": {
     "name": "identityVec4Init",
     "signature": "void fn_0066A310(void* self)",
