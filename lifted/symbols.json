@@ -18778,6 +18778,13 @@
     "summary": "Returns 0x15E, plus 1 when the argument equals 0x67 (thiscall, one stack arg, callee pops 4).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004EC9B0": {
+    "name": "CharacterSelection::vfunc_0_off_18",
+    "class": "CharacterSelection",
+    "signature": "void fn_004EC9B0(void* self, uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4)",
+    "summary": "Builds a 3-DWORD record from a fixed template, applies two mask toggles, copies it to a2, copies this-\u003efield_0x20 into a1[1], and writes 6 to a3 and a4.",
+    "lifted_path": "lifted/classes/CharacterSelection.cpp"
+  },
   "0x004ECA40": {
     "name": "Vector8::operator[]",
     "class": "Vector8",

@@ -1,0 +1,22 @@
+{
+  "va": "0x004EC9B0",
+  "size": 124,
+  "orig_symbol": "CharacterSelection::vfunc_0_off_18",
+  "src_path": "src/classes/CharacterSelection.cpp",
+  "lifted_path": "lifted/classes/CharacterSelection.cpp",
+  "name": "CharacterSelection::vfunc_0_off_18",
+  "class": "CharacterSelection",
+  "signature": "void fn_004EC9B0(void* self, uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4)",
+  "summary": "Builds a 3-DWORD record from a fixed template, applies two mask toggles, copies it to a2, copies this-\u003efield_0x20 into a1[1], and writes 6 to a3 and a4.",
+  "fields": [
+    {
+      "class": "CharacterSelection",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:50:50Z"
+}
