@@ -1,0 +1,22 @@
+{
+  "va": "0x006BC410",
+  "size": 32,
+  "orig_symbol": "sub_006BC410",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "forwardGetItemByTypeAndIndex_006BC410",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __fastcall fn_006BC410(void* self, void* /*edx*/, int32_t index, int32_t type)",
+  "summary": "Forwards (index, type) to getItemByTypeAndIndex on the subobject pointer stored at +0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:01Z"
+}

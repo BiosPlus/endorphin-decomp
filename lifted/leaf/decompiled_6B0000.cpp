@@ -2498,3 +2498,21 @@ extern void* __thiscall fn_006B9EA0(void* self, uint8_t value) {
     return self;
 }
 } // namespace lift_006B9EA0
+
+// [0x006BC410] sub_006BC410 (32 bytes)
+namespace lift_006BC410 {
+// Known callee 0x006E9730: getItemByTypeAndIndex (Returns the index-th item in the array at +0x8c matching the given type (or any type if type is 0).)
+extern void ext_006E9730();
+
+using GetItemByTypeAndIndexFn = void* (__fastcall *)(void* self, void* edx, int32_t index, int32_t type);
+
+// @name forwardGetItemByTypeAndIndex_006BC410
+// @class Unknown
+// @summary Forwards (index, type) to getItemByTypeAndIndex on the subobject pointer stored at +0x04.
+// @field Unknown +0x04 void* field_0x04
+extern void* __fastcall fn_006BC410(void* self, void* /*edx*/, int32_t index, int32_t type) {
+    void* const subobject = lift_field<void*>(self, 0x04);
+    auto const getItem = reinterpret_cast<GetItemByTypeAndIndexFn>(ext_006E9730);
+    return getItem(subobject, nullptr, index, type);
+}
+} // namespace lift_006BC410

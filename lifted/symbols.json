@@ -66375,6 +66375,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BC3F0 (ForwardCountItemsByType).",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BC410": {
+    "name": "forwardGetItemByTypeAndIndex_006BC410",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_006BC410(void* self, void* /*edx*/, int32_t index, int32_t type)",
+    "summary": "Forwards (index, type) to getItemByTypeAndIndex on the subobject pointer stored at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BC430": {
     "name": "sub_006BC430",
     "class": "Unknown",
