@@ -1,0 +1,13 @@
+{
+  "va": "0x00434F30",
+  "size": 28,
+  "orig_symbol": "sub_00434F30",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00434F30",
+  "signature": "void fn_00434F30(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00434E50 (CallTokenDispatchThenForwardToChild).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:14:53Z"
+}

@@ -449,6 +449,20 @@
     "summary": "Destroys five std::string members (highest offset first) and the std::vector\u003cstd::string\u003e at +0x38; the MSVC SEH/unwind frame is dropped.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00402CF0": {
+    "name": "sub_00402CF0",
+    "class": "Unknown",
+    "signature": "void fn_00402CF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
+  "0x00402DD0": {
+    "name": "sub_00402DD0",
+    "class": "Unknown",
+    "signature": "void fn_00402DD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00403020": {
     "name": "NMFileIO::vfunc_0",
     "class": "NMFileIO",
@@ -1766,6 +1780,13 @@
     "summary": "Thiscall: reads the owned pointer at +0x04, walks it via ext_00414E60 and ext_005DF840 (re-reading the pointer and its first dword before each), releases the pointer via ext_006A5C5C, then zeroes +0x04 and +0x08.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00415250": {
+    "name": "sub_00415250",
+    "class": "Unknown",
+    "signature": "void fn_00415250(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004152D0": {
     "name": "MappedFile::close",
     "class": "MappedFile",
@@ -2213,6 +2234,13 @@
     "class": "Unknown",
     "signature": "static inline uint32_t guest_u32(uint32_t addr, ptrdiff_t off)",
     "summary": "Looks up the tree's lower_bound for a 32-bit key and returns the 32-bit value stored at node+0x10; returns 0 when the tree is empty or no node matches.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
+  "0x0041ACE0": {
+    "name": "sub_0041ACE0",
+    "class": "Unknown",
+    "signature": "void fn_0041ACE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
   "0x0041AD60": {
@@ -4375,6 +4403,54 @@
     "name": "CallTokenDispatchThenForwardToChild",
     "signature": "void fn_00434E50(void* self)",
     "summary": "Fetches a token via ext_00465B30, passes it with stack arg 1 to ext_00469410, then forwards self with arg 1 to ext_00433B70.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434E70": {
+    "name": "sub_00434E70",
+    "signature": "void fn_00434E70(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434E50 (CallTokenDispatchThenForwardToChild).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434E90": {
+    "name": "sub_00434E90",
+    "signature": "void fn_00434E90(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434E50 (CallTokenDispatchThenForwardToChild).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434ED0": {
+    "name": "sub_00434ED0",
+    "signature": "void fn_00434ED0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434E50 (CallTokenDispatchThenForwardToChild).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434EF0": {
+    "name": "sub_00434EF0",
+    "signature": "void fn_00434EF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434E50 (CallTokenDispatchThenForwardToChild).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434F10": {
+    "name": "sub_00434F10",
+    "signature": "void fn_00434F10(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434E50 (CallTokenDispatchThenForwardToChild).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434F30": {
+    "name": "sub_00434F30",
+    "signature": "void fn_00434F30(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434E50 (CallTokenDispatchThenForwardToChild).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434F50": {
+    "name": "sub_00434F50",
+    "signature": "void fn_00434F50(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434E50 (CallTokenDispatchThenForwardToChild).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434F70": {
+    "name": "sub_00434F70",
+    "signature": "void fn_00434F70(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434E50 (CallTokenDispatchThenForwardToChild).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00434F90": {
@@ -11580,6 +11656,12 @@
     "summary": "Compares two (begin,end) uint32_t vector-like ranges for equal size and contents, with MSVC8 checked-iterator bounds checks; returns 1 if equal, else 0",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00481FD0": {
+    "name": "sub_00481FD0",
+    "signature": "void* fn_00481FD0(void* self, const void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x00479620 (ResolveOrThrowMissing).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004820D0": {
     "name": "sub_004820D0",
     "signature": "DWORD* __thiscall fn_004820D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -14835,6 +14917,13 @@
     "summary": "Reads the target pointer at self+0x00 (throws if null), obtains a value via the sub-object at +8, runs the assign/release helpers, then dispatches vtable slot 0xAC on the object at self+0x04 with (self, arg).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049D630": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
+    "signature": "void fn_0049D630(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049D580 (ExprParser::ReadMethodType\u003cNMData::State, std::string const \u0026, NMData::State::vcall{4}, 0\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049D6E0": {
     "name": "ReadMethodType::vfunc_47",
     "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
@@ -14854,6 +14943,20 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
     "signature": "void fn_0049D7F0(void* self)",
     "summary": "Reads the held object pointer; if non-null, forwards to a virtual slot-1 call and throws its message, otherwise throws a fixed-type exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0049D8D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
+    "signature": "void fn_0049D8D0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049D580 (ExprParser::ReadMethodType\u003cNMData::State, std::string const \u0026, NMData::State::vcall{4}, 0\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0049D980": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
+    "signature": "void fn_0049D980(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049D580 (ExprParser::ReadMethodType\u003cNMData::State, std::string const \u0026, NMData::State::vcall{4}, 0\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0049DA30": {
@@ -33853,6 +33956,12 @@
     "summary": "Zero-initializes fields, constructs subobject at +0x18 with 0.05f and flags (1, 1), and sets +0x34/+0x38; returns this.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00541580": {
+    "name": "sub_00541580",
+    "signature": "void* fn_00541580(void* self, const void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x00479620 (ResolveOrThrowMissing).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00541AB0": {
     "name": "sub_00541AB0",
     "signature": "void fn_00541AB0(void* self)",
@@ -41184,6 +41293,18 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A0640": {
+    "name": "sub_005A0640",
+    "signature": "void* fn_005A0640(void* self, const void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x00479620 (ResolveOrThrowMissing).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005A06F0": {
+    "name": "sub_005A06F0",
+    "signature": "void* fn_005A06F0(void* self, const void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x00479620 (ResolveOrThrowMissing).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A07A0": {
     "name": "sub_005A07A0",
     "class": "TreeMap",
@@ -41196,6 +41317,12 @@
     "class": "Unknown",
     "signature": "void fn_005A1600(void* self)",
     "summary": "If the flag at +0x5EC is set, runs forEachNodeCallWithOffset over the node range at +0x598 with callback 0x5B67A0 and zero offset.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005A1F90": {
+    "name": "sub_005A1F90",
+    "signature": "void* fn_005A1F90(void* self, const void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x00479620 (ResolveOrThrowMissing).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A2BD0": {
@@ -41243,6 +41370,20 @@
     "signature": "extern \"C\" void (*mem_00925134)(); // MSVCR80!_invalid_parameter_noinfo (IAT slot) void fn_005A5400(void* self, void* arg)",
     "summary": "Validates the argument's range fields (+4 \u003c= +8), then forwards the argument and this-owned state to ext_00479C80.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
+  "0x005A6650": {
+    "name": "sub_005A6650",
+    "class": "Unknown",
+    "signature": "void fn_005A6650(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005A66D0": {
+    "name": "sub_005A66D0",
+    "class": "Unknown",
+    "signature": "void fn_005A66D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A6E20": {
     "name": "sub_005A6E20",
@@ -57288,6 +57429,13 @@
     "signature": "extern \"C\" void* __fastcall fn_0060F170(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0060ED60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x0060F3B0": {
+    "name": "sub_0060F3B0",
+    "class": "Unknown",
+    "signature": "void* fn_0060F3B0(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00501140 (ValidatedCursorAdvance_00501140).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060F540": {
     "name": "NMData::CompoundSensorData::vfunc_1_off_C",

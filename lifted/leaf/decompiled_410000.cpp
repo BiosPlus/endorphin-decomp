@@ -4196,3 +4196,89 @@ void fn_004151D0(void* self) {
     lift_field<uint32_t>(self, 0x08) = 0;
 }
 } // namespace lift_004151D0
+
+// [0x00415250] sub_00415250 (126 bytes)
+namespace lift_00415250 {
+// @name sub_00415250
+// @summary Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).
+namespace lift_004151D0 {
+// Known callee 0x00414E60: TreeIterator::releaseChildrenUntil (thiscall: ecx = this, then four stack words).
+extern void ext_00414E00(uint32_t ecx, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
+// Callee 0x005DF840 (thiscall: ecx = this, then five stack words; a0 is an out-slot pointer).
+extern void ext_005AEC70(uint32_t ecx, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764, cdecl, one arg).
+extern void ext_006A5C5C(uint32_t p);
+// SEH scope table referenced only by the frame prologue/epilogue (boilerplate).
+extern int mem_00875928;
+
+// @name ReleaseOwnedNode_004151D0
+// @summary Thiscall: reads the owned pointer at +0x04, walks it via ext_00414E60 and ext_005DF840 (re-reading the pointer and its first dword before each), releases the pointer via ext_006A5C5C, then zeroes +0x04 and +0x08.
+// @class Unknown
+// @field Unknown +0x04 uint32_t ownedPtr
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_00415250(void* self) {
+    (void)&mem_00875928;
+
+    // First pass: ext_00414E60(this, this, *owned, this, owned)
+    uint32_t p1 = lift_field<uint32_t>(self, 0x04);
+    uint32_t v1 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(p1));
+    uint32_t self32 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    ext_00414E00(self32, self32, v1, self32, p1);
+
+    // Second pass: ext_005DF840(this, &out, this, *owned, this, owned)
+    uint32_t p2 = lift_field<uint32_t>(self, 0x04);
+    uint32_t v2 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(p2));
+    uint32_t out = 0;
+    ext_005AEC70(self32, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&out)),
+                 self32, v2, self32, p2);
+
+    // Release the owned pointer, then clear the fields.
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x04));
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+}
+} // namespace lift_004151D0
+} // namespace lift_00415250
+
+// [0x0041ACE0] sub_0041ACE0 (126 bytes)
+namespace lift_0041ACE0 {
+// @name sub_0041ACE0
+// @summary Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).
+namespace lift_004151D0 {
+// Known callee 0x00414E60: TreeIterator::releaseChildrenUntil (thiscall: ecx = this, then four stack words).
+extern void ext_0041A200(uint32_t ecx, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
+// Callee 0x005DF840 (thiscall: ecx = this, then five stack words; a0 is an out-slot pointer).
+extern void ext_005DF840(uint32_t ecx, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764, cdecl, one arg).
+extern void ext_006A5C5C(uint32_t p);
+// SEH scope table referenced only by the frame prologue/epilogue (boilerplate).
+extern int mem_00872E38;
+
+// @name ReleaseOwnedNode_004151D0
+// @summary Thiscall: reads the owned pointer at +0x04, walks it via ext_00414E60 and ext_005DF840 (re-reading the pointer and its first dword before each), releases the pointer via ext_006A5C5C, then zeroes +0x04 and +0x08.
+// @class Unknown
+// @field Unknown +0x04 uint32_t ownedPtr
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_0041ACE0(void* self) {
+    (void)&mem_00872E38;
+
+    // First pass: ext_00414E60(this, this, *owned, this, owned)
+    uint32_t p1 = lift_field<uint32_t>(self, 0x04);
+    uint32_t v1 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(p1));
+    uint32_t self32 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    ext_0041A200(self32, self32, v1, self32, p1);
+
+    // Second pass: ext_005DF840(this, &out, this, *owned, this, owned)
+    uint32_t p2 = lift_field<uint32_t>(self, 0x04);
+    uint32_t v2 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(p2));
+    uint32_t out = 0;
+    ext_005DF840(self32, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&out)),
+                 self32, v2, self32, p2);
+
+    // Release the owned pointer, then clear the fields.
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x04));
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+}
+} // namespace lift_004151D0
+} // namespace lift_0041ACE0

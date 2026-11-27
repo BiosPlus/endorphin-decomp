@@ -1,0 +1,28 @@
+{
+  "va": "0x0060F3B0",
+  "size": 102,
+  "orig_symbol": "sub_0060F3B0",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "sub_0060F3B0",
+  "class": "Unknown",
+  "signature": "void* fn_0060F3B0(void* self, DWORD arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00501140 (ValidatedCursorAdvance_00501140).",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "self",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:14:53Z"
+}

@@ -78,8 +78,10 @@ uint32_t sub_005A3DC0(uint32_t ebp) {
 }
 } // namespace lift_005A3DC0
 #include <exception>
+#include <iostream>
+#include <streambuf>
 
-// [0x005AA8D0] sub_005AA8D0 (45 bytes)
+#include <streambuf>
 namespace lift_005AA8D0 {
 // Import slot for std::basic_string<char> copy-assignment (MSVCP80), used as thiscall.
 extern int mem_00924FDC;
@@ -1451,3 +1453,245 @@ void fn_005AED40(void* self) {
 }
 } // namespace lift_0048AFE0
 } // namespace lift_005AED40
+
+// [0x005A0640] sub_005A0640 (168 bytes)
+namespace lift_005A0640 {
+// @name sub_005A0640
+// @summary Auto-lifted identical-shape clone of 0x00479620 (ResolveOrThrowMissing).
+namespace lift_00479620 {
+// Callee 0x005DF5C0: thiscall(self) -> void* (non-null means "found").
+extern void* __thiscall ext_005DF5C0(void* self);
+// Callee 0x0041FF30: thiscall(self = exception object, msg, other); callee pops its 2 stack args.
+extern void __thiscall ext_0041FF30(void* self, void* msg, void* other);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// IAT slots (MSVCP80 std::string): copy-ctor, ctor(const char*), dtor.
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00924FE4;
+// .data global holding a const char* used to build the message string.
+extern uint32_t mem_00A2E458;
+
+namespace {
+using CopyCtorFn = void(__thiscall*)(void* self, const void* src);
+using CharCtorFn = void(__thiscall*)(void* self, const char* src);
+using DtorFn = void(__thiscall*)(void* self);
+} // namespace
+
+// @name ResolveOrThrowMissing
+// @summary Copies the std::string argument into a local, calls sub_005DF5C0(self); returns its non-null result, otherwise builds an error string from a global and throws it.
+void* fn_005A0640(void* self, const void* arg0) {
+    // Local frame, addressed with the same offsets as the original esp-relative slots:
+    //   +0x00 string copy of arg0, +0x08 message string, +0x24 exception object,
+    //   +0x70 unwind state, +0x78 string slot.
+    unsigned char frame[0x9C] = {};
+
+    reinterpret_cast<CopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0))(frame, arg0);
+
+    void* result = ext_005DF5C0(self);
+    if (result != nullptr) {
+        lift_field<int32_t>(frame, 0x70) = -1;
+        reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(frame + 0x78);
+        return result;
+    }
+
+    const char* message = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A2E458));
+    reinterpret_cast<CharCtorFn>(static_cast<uintptr_t>(mem_00924FE4))(frame + 0x08, message);
+    lift_field<uint8_t>(frame, 0x70) = 1;
+    ext_0041FF30(frame + 0x24, frame + 0x08, frame + 0x78);
+    // Throw with the RTTI/ThrowInfo immediate 0x009D3748.
+    ext_006A6DD2(frame + 0x24, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009D3748u)));
+}
+} // namespace lift_00479620
+} // namespace lift_005A0640
+
+// [0x005A06F0] sub_005A06F0 (168 bytes)
+namespace lift_005A06F0 {
+// @name sub_005A06F0
+// @summary Auto-lifted identical-shape clone of 0x00479620 (ResolveOrThrowMissing).
+namespace lift_00479620 {
+// Callee 0x005DF5C0: thiscall(self) -> void* (non-null means "found").
+extern void* __thiscall ext_005DF5C0(void* self);
+// Callee 0x0041FF30: thiscall(self = exception object, msg, other); callee pops its 2 stack args.
+extern void __thiscall ext_0041FF30(void* self, void* msg, void* other);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// IAT slots (MSVCP80 std::string): copy-ctor, ctor(const char*), dtor.
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00924FE4;
+// .data global holding a const char* used to build the message string.
+extern uint32_t mem_00A9FB00;
+
+namespace {
+using CopyCtorFn = void(__thiscall*)(void* self, const void* src);
+using CharCtorFn = void(__thiscall*)(void* self, const char* src);
+using DtorFn = void(__thiscall*)(void* self);
+} // namespace
+
+// @name ResolveOrThrowMissing
+// @summary Copies the std::string argument into a local, calls sub_005DF5C0(self); returns its non-null result, otherwise builds an error string from a global and throws it.
+void* fn_005A06F0(void* self, const void* arg0) {
+    // Local frame, addressed with the same offsets as the original esp-relative slots:
+    //   +0x00 string copy of arg0, +0x08 message string, +0x24 exception object,
+    //   +0x70 unwind state, +0x78 string slot.
+    unsigned char frame[0x9C] = {};
+
+    reinterpret_cast<CopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0))(frame, arg0);
+
+    void* result = ext_005DF5C0(self);
+    if (result != nullptr) {
+        lift_field<int32_t>(frame, 0x70) = -1;
+        reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(frame + 0x78);
+        return result;
+    }
+
+    const char* message = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FB00));
+    reinterpret_cast<CharCtorFn>(static_cast<uintptr_t>(mem_00924FE4))(frame + 0x08, message);
+    lift_field<uint8_t>(frame, 0x70) = 1;
+    ext_0041FF30(frame + 0x24, frame + 0x08, frame + 0x78);
+    // Throw with the RTTI/ThrowInfo immediate 0x009D3748.
+    ext_006A6DD2(frame + 0x24, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009D3748u)));
+}
+} // namespace lift_00479620
+} // namespace lift_005A06F0
+
+// [0x005A1F90] sub_005A1F90 (168 bytes)
+namespace lift_005A1F90 {
+// @name sub_005A1F90
+// @summary Auto-lifted identical-shape clone of 0x00479620 (ResolveOrThrowMissing).
+namespace lift_00479620 {
+// Callee 0x005DF5C0: thiscall(self) -> void* (non-null means "found").
+extern void* __thiscall ext_005DF5C0(void* self);
+// Callee 0x0041FF30: thiscall(self = exception object, msg, other); callee pops its 2 stack args.
+extern void __thiscall ext_0041FF30(void* self, void* msg, void* other);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// IAT slots (MSVCP80 std::string): copy-ctor, ctor(const char*), dtor.
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00924FE4;
+// .data global holding a const char* used to build the message string.
+extern uint32_t mem_00A2E464;
+
+namespace {
+using CopyCtorFn = void(__thiscall*)(void* self, const void* src);
+using CharCtorFn = void(__thiscall*)(void* self, const char* src);
+using DtorFn = void(__thiscall*)(void* self);
+} // namespace
+
+// @name ResolveOrThrowMissing
+// @summary Copies the std::string argument into a local, calls sub_005DF5C0(self); returns its non-null result, otherwise builds an error string from a global and throws it.
+void* fn_005A1F90(void* self, const void* arg0) {
+    // Local frame, addressed with the same offsets as the original esp-relative slots:
+    //   +0x00 string copy of arg0, +0x08 message string, +0x24 exception object,
+    //   +0x70 unwind state, +0x78 string slot.
+    unsigned char frame[0x9C] = {};
+
+    reinterpret_cast<CopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0))(frame, arg0);
+
+    void* result = ext_005DF5C0(self);
+    if (result != nullptr) {
+        lift_field<int32_t>(frame, 0x70) = -1;
+        reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(frame + 0x78);
+        return result;
+    }
+
+    const char* message = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A2E464));
+    reinterpret_cast<CharCtorFn>(static_cast<uintptr_t>(mem_00924FE4))(frame + 0x08, message);
+    lift_field<uint8_t>(frame, 0x70) = 1;
+    ext_0041FF30(frame + 0x24, frame + 0x08, frame + 0x78);
+    // Throw with the RTTI/ThrowInfo immediate 0x009D3748.
+    ext_006A6DD2(frame + 0x24, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009D3748u)));
+}
+} // namespace lift_00479620
+} // namespace lift_005A1F90
+
+// [0x005A6650] sub_005A6650 (126 bytes)
+namespace lift_005A6650 {
+// @name sub_005A6650
+// @summary Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).
+namespace lift_004151D0 {
+// Known callee 0x00414E60: TreeIterator::releaseChildrenUntil (thiscall: ecx = this, then four stack words).
+extern void ext_005A0910(uint32_t ecx, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
+// Callee 0x005DF840 (thiscall: ecx = this, then five stack words; a0 is an out-slot pointer).
+extern void ext_005AEC70(uint32_t ecx, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764, cdecl, one arg).
+extern void ext_006A5C5C(uint32_t p);
+// SEH scope table referenced only by the frame prologue/epilogue (boilerplate).
+extern int mem_00875928;
+
+// @name ReleaseOwnedNode_004151D0
+// @summary Thiscall: reads the owned pointer at +0x04, walks it via ext_00414E60 and ext_005DF840 (re-reading the pointer and its first dword before each), releases the pointer via ext_006A5C5C, then zeroes +0x04 and +0x08.
+// @class Unknown
+// @field Unknown +0x04 uint32_t ownedPtr
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_005A6650(void* self) {
+    (void)&mem_00875928;
+
+    // First pass: ext_00414E60(this, this, *owned, this, owned)
+    uint32_t p1 = lift_field<uint32_t>(self, 0x04);
+    uint32_t v1 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(p1));
+    uint32_t self32 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    ext_005A0910(self32, self32, v1, self32, p1);
+
+    // Second pass: ext_005DF840(this, &out, this, *owned, this, owned)
+    uint32_t p2 = lift_field<uint32_t>(self, 0x04);
+    uint32_t v2 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(p2));
+    uint32_t out = 0;
+    ext_005AEC70(self32, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&out)),
+                 self32, v2, self32, p2);
+
+    // Release the owned pointer, then clear the fields.
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x04));
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+}
+} // namespace lift_004151D0
+} // namespace lift_005A6650
+
+// [0x005A66D0] sub_005A66D0 (126 bytes)
+namespace lift_005A66D0 {
+// @name sub_005A66D0
+// @summary Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).
+namespace lift_004151D0 {
+// Known callee 0x00414E60: TreeIterator::releaseChildrenUntil (thiscall: ecx = this, then four stack words).
+extern void ext_005A0970(uint32_t ecx, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
+// Callee 0x005DF840 (thiscall: ecx = this, then five stack words; a0 is an out-slot pointer).
+extern void ext_005AEC70(uint32_t ecx, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764, cdecl, one arg).
+extern void ext_006A5C5C(uint32_t p);
+// SEH scope table referenced only by the frame prologue/epilogue (boilerplate).
+extern int mem_00875928;
+
+// @name ReleaseOwnedNode_004151D0
+// @summary Thiscall: reads the owned pointer at +0x04, walks it via ext_00414E60 and ext_005DF840 (re-reading the pointer and its first dword before each), releases the pointer via ext_006A5C5C, then zeroes +0x04 and +0x08.
+// @class Unknown
+// @field Unknown +0x04 uint32_t ownedPtr
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_005A66D0(void* self) {
+    (void)&mem_00875928;
+
+    // First pass: ext_00414E60(this, this, *owned, this, owned)
+    uint32_t p1 = lift_field<uint32_t>(self, 0x04);
+    uint32_t v1 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(p1));
+    uint32_t self32 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    ext_005A0970(self32, self32, v1, self32, p1);
+
+    // Second pass: ext_005DF840(this, &out, this, *owned, this, owned)
+    uint32_t p2 = lift_field<uint32_t>(self, 0x04);
+    uint32_t v2 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(p2));
+    uint32_t out = 0;
+    ext_005AEC70(self32, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&out)),
+                 self32, v2, self32, p2);
+
+    // Release the owned pointer, then clear the fields.
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x04));
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+}
+} // namespace lift_004151D0
+} // namespace lift_005A66D0

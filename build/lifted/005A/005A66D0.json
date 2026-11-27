@@ -1,0 +1,28 @@
+{
+  "va": "0x005A66D0",
+  "size": 126,
+  "orig_symbol": "sub_005A66D0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005A66D0",
+  "class": "Unknown",
+  "signature": "void fn_005A66D0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "ownedPtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:14:53Z"
+}
