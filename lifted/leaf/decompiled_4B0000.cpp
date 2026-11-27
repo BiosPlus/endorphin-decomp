@@ -1398,3 +1398,70 @@ extern void fn_004BBC90(void* self) {
     field_u32(self, 0xc) = 0;
 }
 } // namespace lift_004BBC90
+
+// [0x004BBB00]
+namespace lift_004BBB00 {
+// @name std::vector<std::string*>::erase_and_delete
+// @summary Erases an element from a vector of std::string*, destroying and freeing the string if non-null, and returns the updated iterator.
+// @field Vector +0x08 uint32_t end_ptr
+
+extern void ext_006A5C5C(void* ptr);
+extern uintptr_t mem_00925134;
+extern uintptr_t mem_00924FF4;
+extern uintptr_t mem_009251EC;
+extern uintptr_t mem_00924FE0;
+extern uintptr_t mem_00924FE8;
+extern uintptr_t mem_00AE1D18;
+extern uintptr_t mem_00AE1D1C;
+
+struct CheckedIter {
+    uint32_t container;
+    uint32_t ptr;
+};
+
+void* __thiscall fn_004BBB00(void* self, CheckedIter* out_iter, uint32_t container, uint32_t elem_ptr) {
+    using InvalidParamFn = void (__cdecl*)(void);
+    using StringDtorFn = void (__thiscall*)(void*);
+    using MemmoveSFn = int (__cdecl*)(void*, size_t, const void*, size_t);
+
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(mem_00925134);
+    if (container == 0) {
+        invalid_param();
+    }
+    uint32_t container_end = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(container)), 0x8);
+    if (elem_ptr >= container_end) {
+        invalid_param();
+    }
+
+    uint32_t str_ptr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(elem_ptr));
+    if (str_ptr != 0) {
+        auto string_dtor = reinterpret_cast<StringDtorFn>(mem_00924FF4);
+        string_dtor(reinterpret_cast<void*>(static_cast<uintptr_t>(str_ptr)));
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(str_ptr)));
+    }
+
+    (void)mem_00924FE0;
+    (void)mem_00924FE8;
+    (void)mem_00AE1D18;
+    (void)mem_00AE1D1C;
+
+    int32_t end_ptr = static_cast<int32_t>(lift_field<uint32_t>(self, 0x8));
+    uint32_t next_ptr = elem_ptr + 4;
+    int32_t count = (end_ptr - static_cast<int32_t>(next_ptr)) >> 2;
+    if (count > 0) {
+        size_t bytes = static_cast<size_t>(count) * 4;
+        auto memmove_s_fn = reinterpret_cast<MemmoveSFn>(mem_009251EC);
+        memmove_s_fn(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(elem_ptr)),
+            bytes,
+            reinterpret_cast<const void*>(static_cast<uintptr_t>(next_ptr)),
+            bytes
+        );
+    }
+
+    lift_field<uint32_t>(self, 0x8) -= 4;
+    out_iter->container = container;
+    out_iter->ptr = elem_ptr;
+    return out_iter;
+}
+} // namespace lift_004BBB00

@@ -14754,6 +14754,13 @@
     "summary": "Forwards (arg1, arg2) to ext_004BA230 (result discarded) and returns arg1 unchanged.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BBB00": {
+    "name": "std::vector\u003cstd::string*\u003e::erase_and_delete",
+    "class": "std::vector\u003cstd::string*\u003e",
+    "signature": "void* __thiscall fn_004BBB00(void* self, CheckedIter* out_iter, uint32_t container, uint32_t elem_ptr)",
+    "summary": "Erases an element from a vector of std::string*, destroying and freeing the string if non-null, and returns the updated iterator.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BBB70": {
     "name": "std_binary_search_string",
     "signature": "uint32_t __cdecl sub_004BBB70(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5)",
