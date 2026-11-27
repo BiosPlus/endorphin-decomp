@@ -1,0 +1,58 @@
+{
+  "va": "0x005DF300",
+  "size": 696,
+  "orig_symbol": "sub_005DF300",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "_Tree::erase",
+  "class": "_Tree",
+  "signature": "TreeIter* __fastcall fn_005DF300(Tree* self, void* /*edx*/, TreeIter* ret, void* cont, TreeNode* where)",
+  "summary": "Red-black tree erase(iterator): unlinks node, rebalances, frees it, decrements size, returns successor iterator.",
+  "fields": [
+    {
+      "class": "_Tree",
+      "offset": "+0x4",
+      "type": "TreeNode*",
+      "name": "head"
+    },
+    {
+      "class": "_Tree",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "TreeNode*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "TreeNode*",
+      "name": "parent"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "TreeNode*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "color"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "isnil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:45:22Z"
+}

@@ -1397,3 +1397,169 @@ void fn_005D9EA0(void* self, float value) {
     ext_005D1020(self, scaled);
 }
 } // namespace lift_005D9EA0
+
+// [0x005DF300]
+namespace lift_005DF300 {
+extern void ext_006A6DD2(void* obj, void* info);
+extern void ext_00419F50(void* self);
+extern void* ext_00401AF0(void* arg);
+extern void* ext_0043CB50(void* a);
+extern void ext_0045DB00(void* self, void* node);
+extern void ext_0041A0A0(void* self, void* node);
+extern void ext_006A5C5C(void* p);
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_009251C4;
+extern uint32_t mem_00924FE0;
+
+struct TreeNode {
+    TreeNode* left;    // +0x00
+    TreeNode* parent;  // +0x04
+    TreeNode* right;   // +0x08
+    uint8_t pad[8];
+    uint8_t color;     // +0x14 (0 = red, 1 = black)
+    uint8_t isnil;     // +0x15
+};
+
+struct TreeIter {
+    void* cont;
+    TreeNode* node;
+};
+
+struct Tree {
+    void* field_0x00;
+    TreeNode* head;  // +0x04
+    uint32_t size;   // +0x08
+};
+
+// @name _Tree::erase
+// @class _Tree
+// @summary Red-black tree erase(iterator): unlinks node, rebalances, frees it, decrements size, returns successor iterator.
+// @field _Tree +0x04 TreeNode* head
+// @field _Tree +0x08 uint32_t size
+// @field TreeNode +0x00 TreeNode* left
+// @field TreeNode +0x04 TreeNode* parent
+// @field TreeNode +0x08 TreeNode* right
+// @field TreeNode +0x14 uint8_t color
+// @field TreeNode +0x15 uint8_t isnil
+TreeIter* __fastcall fn_005DF300(Tree* self, void* /*edx*/, TreeIter* ret, void* cont, TreeNode* where)
+{
+    if (where->isnil) {
+        (void)&mem_00924FE4;
+        (void)&mem_009251C4;
+        (void)&mem_00924FE0;
+        ext_006A6DD2(nullptr, nullptr);  // throw out_of_range("invalid map/set<T> iterator")
+    }
+    TreeIter it{cont, where};
+    TreeNode* erased = where;
+    ext_00419F50(&it);
+
+    TreeNode* fix;
+    TreeNode* fixParent;
+    TreeNode* pnode = erased;
+    if (pnode->left->isnil) {
+        fix = pnode->right;
+    } else if (pnode->right->isnil) {
+        fix = pnode->left;
+    } else {
+        pnode = it.node;
+        fix = pnode->right;
+    }
+
+    if (pnode == erased) {
+        fixParent = erased->parent;
+        if (!fix->isnil) fix->parent = fixParent;
+        TreeNode* head = self->head;
+        if (head->parent == erased) head->parent = fix;
+        else if (fixParent->left == erased) fixParent->left = fix;
+        else fixParent->right = fix;
+
+        head = self->head;
+        if (head->left == erased)
+            head->left = fix->isnil ? fixParent : (TreeNode*)ext_00401AF0(fix);
+        head = self->head;
+        if (head->right == erased)
+            head->right = fix->isnil ? fixParent : (TreeNode*)ext_0043CB50(fix);
+    } else {
+        erased->left->parent = pnode;
+        pnode->left = erased->left;
+        if (pnode == erased->right) {
+            fixParent = pnode;
+        } else {
+            fixParent = pnode->parent;
+            if (!fix->isnil) fix->parent = fixParent;
+            fixParent->left = fix;
+            pnode->right = erased->right;
+            erased->right->parent = pnode;
+        }
+        TreeNode* head = self->head;
+        if (head->parent == erased) head->parent = pnode;
+        else if (erased->parent->left == erased) erased->parent->left = pnode;
+        else erased->parent->right = pnode;
+        pnode->parent = erased->parent;
+        uint8_t c = pnode->color;
+        pnode->color = erased->color;
+        erased->color = c;
+    }
+
+    if (erased->color == 1) {
+        for (; fix != self->head->parent && fix->color == 1; fix = fixParent, fixParent = fixParent->parent) {
+            if (fix == fixParent->left) {
+                TreeNode* w = fixParent->right;
+                if (w->color == 0) {
+                    w->color = 1;
+                    fixParent->color = 0;
+                    ext_0045DB00(self, fixParent);
+                    w = fixParent->right;
+                }
+                if (w->isnil) continue;
+                if (w->left->color == 1 && w->right->color == 1) {
+                    w->color = 0;
+                    continue;
+                }
+                if (w->right->color == 1) {
+                    w->left->color = 1;
+                    w->color = 0;
+                    ext_0041A0A0(self, w);
+                    w = fixParent->right;
+                }
+                w->color = fixParent->color;
+                fixParent->color = 1;
+                w->right->color = 1;
+                ext_0045DB00(self, fixParent);
+                break;
+            } else {
+                TreeNode* w = fixParent->left;
+                if (w->color == 0) {
+                    w->color = 1;
+                    fixParent->color = 0;
+                    ext_0041A0A0(self, fixParent);
+                    w = fixParent->left;
+                }
+                if (w->isnil) continue;
+                if (w->right->color == 1 && w->left->color == 1) {
+                    w->color = 0;
+                    continue;
+                }
+                if (w->left->color == 1) {
+                    w->right->color = 1;
+                    w->color = 0;
+                    ext_0045DB00(self, w);
+                    w = fixParent->left;
+                }
+                w->color = fixParent->color;
+                fixParent->color = 1;
+                w->left->color = 1;
+                ext_0041A0A0(self, fixParent);
+                break;
+            }
+        }
+        fix->color = 1;
+    }
+
+    ext_006A5C5C(erased);
+    if (self->size > 0) self->size = self->size - 1;
+    ret->cont = it.cont;
+    ret->node = it.node;
+    return ret;
+}
+} // namespace lift_005DF300

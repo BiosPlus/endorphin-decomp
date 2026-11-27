@@ -54752,6 +54752,13 @@
     "summary": "Recursively erases and frees all non-nil nodes in a red-black tree subtree",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005DF300": {
+    "name": "_Tree::erase",
+    "class": "_Tree",
+    "signature": "TreeIter* __fastcall fn_005DF300(Tree* self, void* /*edx*/, TreeIter* ret, void* cont, TreeNode* where)",
+    "summary": "Red-black tree erase(iterator): unlinks node, rebalances, frees it, decrements size, returns successor iterator.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DF6B0": {
     "name": "TreeLowerBoundIter (descriptive; owner class not yet identified)",
     "signature": "inline uint32_t\u0026 node_u32(uint32_t p, ptrdiff_t off)",

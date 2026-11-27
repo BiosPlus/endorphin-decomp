@@ -9,7 +9,8 @@
 namespace lifted_layout {
 struct _Tree_Fields {
     // +0x4   uint32_t                 _Myhead  (evidence: 0x005ED2C0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   TreeNode*                head  (evidence: 0x005DF300) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    head  (evidence: 0x0046A810, 0x0046A970, 0x0048AC80, 0x004A6AF0, 0x004AE420, 0x005A5690, 0x005AE4E0, 0x005AEC70) // CONFLICT: multiple definitions at +0x4
-    // +0x8   uint32_t                 size  (evidence: 0x0046A810, 0x0046A970, 0x0048AC80, 0x004A6AF0, 0x004AE420, 0x005A5690, 0x005AE4E0, 0x005AEC70)
+    // +0x8   uint32_t                 size  (evidence: 0x0046A810, 0x0046A970, 0x0048AC80, 0x004A6AF0, 0x004AE420, 0x005A5690, 0x005AE4E0, 0x005AEC70, 0x005DF300)
 };
 } // namespace lifted_layout
