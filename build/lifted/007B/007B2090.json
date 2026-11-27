@@ -1,0 +1,22 @@
+{
+  "va": "0x007B2090",
+  "size": 96,
+  "orig_symbol": "sub_007B2090",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::initFromArgAndFlag_007B2090",
+  "class": "Unknown",
+  "signature": "void* fn_007B2090(void* self, void* arg, uint32_t flag)",
+  "summary": "Initializes this object via ext_006B9D10, runs ext_006B9E60 with the first argument, then stores the low byte of the second argument at +0x4C; returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "uint8_t",
+      "name": "field_0x4C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:54:46Z"
+}

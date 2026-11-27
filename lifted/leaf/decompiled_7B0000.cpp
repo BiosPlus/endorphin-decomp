@@ -1908,3 +1908,22 @@ uint32_t fn_007B0F30(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_
     return 1;
 }
 } // namespace lift_007B0F30
+
+// [0x007B2090] sub_007B2090 (96 bytes)
+namespace lift_007B2090 {
+// Known callee 0x006B9D10: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+extern void* ext_006B9D10(void* self);
+// Known callee 0x006B9E60: Unknown::conditionalAllocAndCopy_006B9E60 (If the argument's type tag check passes, copies its getter values into this object's allocator; otherwise calls sub_006B9920 on this. Returns this.)
+extern void* ext_006B9E60(void* self, void* arg);
+
+// @name Unknown::initFromArgAndFlag_007B2090
+// @class Unknown
+// @summary Initializes this object via ext_006B9D10, runs ext_006B9E60 with the first argument, then stores the low byte of the second argument at +0x4C; returns this.
+// @field Unknown +0x4C uint8_t field_0x4C
+void* fn_007B2090(void* self, void* arg, uint32_t flag) {
+    ext_006B9D10(self);
+    ext_006B9E60(self, arg);
+    lift_field<uint8_t>(self, 0x4C) = static_cast<uint8_t>(flag);
+    return self;
+}
+} // namespace lift_007B2090
