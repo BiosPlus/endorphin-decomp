@@ -48006,6 +48006,13 @@
     "summary": "If the slot at arg1 holds a non-null string pointer, copy-construct a std::string into arg1 from it; otherwise construct an empty-literal std::string in place. Returns arg1.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x0066B320": {
+    "name": "ExprParser::StringType::vfunc_23",
+    "class": "ExprParser::StringType",
+    "signature": "void* fn_0066B320(void* self, void* rec, DWORD unused1, DWORD unused2, DWORD unused3)",
+    "summary": "Forwards (rec + 0x2C, 0) to ext_006720E0 on self and returns self.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066B4A0": {
     "name": "ExprParser::StringType::vfunc_33",
     "class": "ExprParser::StringType",

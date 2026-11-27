@@ -257,3 +257,23 @@ bool fn_0066B290(void* self) {
     return false;
 }
 } // namespace lift_0066B290
+
+// [0x0066B320] ExprParser::StringType::vfunc_23 (36 bytes)
+namespace lift_0066B320 {
+// Callee 0x006720E0 (sub_006720E0, 43 bytes): receives self in ecx, then two stack args.
+extern void ext_006720E0(void* self, const void* arg0, DWORD arg1);
+extern void ext_0041CE40();
+
+// @name ExprParser::StringType::vfunc_23
+// @class ExprParser::StringType
+// @summary Forwards (rec + 0x2C, 0) to ext_006720E0 on self and returns self.
+// @field ExprParser::StringType +0x2C void* field_0x2C
+// Note: rec (stack arg 1) is not known to be StringType; the +0x2C read is on that argument.
+void* fn_0066B320(void* self, void* rec, DWORD unused1, DWORD unused2, DWORD unused3) {
+    // Metadata-only reference (no call emitted; 0x0041CE40 is not called in the bytes).
+    (void)&ext_0041CE40;
+    const uint8_t* src = reinterpret_cast<const uint8_t*>(rec);
+    ext_006720E0(self, src + 0x2C, 0);
+    return self;
+}
+} // namespace lift_0066B320
