@@ -9179,6 +9179,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D4AD0 (ExprParser::DynamicEnumType::vfunc_42).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046D3F0": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ImageExporter::getDestination(void) const, 0}, 0\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ImageExporter::getDestination(void) const, 0}, 0\u003e",
+    "signature": "inline void* load_ptr(const void* base, ptrdiff_t offset)",
+    "summary": "Wrapper: resolves the source value from self-\u003efield_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self-\u003efield_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046D530": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, const std::string\u0026, \u0026ImageExporter::getDestination, 0\u003e::vfunc_47",
     "class": "ExprParser::ReadMethodType",

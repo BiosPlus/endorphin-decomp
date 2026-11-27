@@ -87184,3 +87184,66 @@ uint32_t fn_0046CD70(void* self) {
     return reinterpret_cast<ForwardFn>(lift_field<void*>(targetVtbl, 0xBC))(target, self);
 }
 } // namespace lift_0046CD70
+
+// [0x0046D3F0] ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43 (159 bytes)
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_0042F6E0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720E0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_0046D3F0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_0042F6E0(src);
+    ext_006720E0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xAC))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
