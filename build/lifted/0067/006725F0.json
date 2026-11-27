@@ -1,0 +1,13 @@
+{
+  "va": "0x006725F0",
+  "size": 148,
+  "orig_symbol": "sub_006725F0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "sortThreeByName",
+  "signature": "static void compareAndSwap(void** lhs, void** rhs)",
+  "summary": "Sorts three object pointers in ascending order by their virtual name string (vtable +0x24).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:07:37Z"
+}

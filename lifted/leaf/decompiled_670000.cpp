@@ -2907,3 +2907,34 @@ void __thiscall sub_0067BB00(float* self, const float* other) {
     ext_00694880(basis, self);
 }
 } // namespace lift_0067BB00
+
+// [0x006725F0]
+namespace lift_006725F0 {
+// @name sortThreeByName
+// @summary Sorts three object pointers in ascending order by their virtual name string (vtable +0x24).
+
+extern uint32_t mem_00924EF4;
+
+using GetNameFn = const void* (__thiscall*)(void* self);
+using StringLessFn = uint8_t (__cdecl*)(const void* lhs, const void* rhs);
+
+static void compareAndSwap(void** lhs, void** rhs) {
+    void* objL = *lhs;
+    void* objR = *rhs;
+    auto getNameL = (*reinterpret_cast<GetNameFn**>(objL))[0x24 / sizeof(void*)];
+    const void* nameL = getNameL(objL);
+    auto getNameR = (*reinterpret_cast<GetNameFn**>(objR))[0x24 / sizeof(void*)];
+    const void* nameR = getNameR(objR);
+    auto stringLess = reinterpret_cast<StringLessFn>(mem_00924EF4);
+    if (stringLess(nameR, nameL) != 0) {
+        *lhs = objR;
+        *rhs = objL;
+    }
+}
+
+void __cdecl sub_006725F0(void** a, void** b, void** c) {
+    compareAndSwap(a, b);
+    compareAndSwap(b, c);
+    compareAndSwap(a, b);
+}
+} // namespace lift_006725F0
