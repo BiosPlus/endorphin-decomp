@@ -665,3 +665,30 @@ void __stdcall fn_00497930(void* arg) {
     ext_006A6DE0(biased);
 }
 } // namespace lift_00497930
+
+// [0x0049B2C0] ExprParser::PrimitiveProxyType<bool>::vfunc_10 (45 bytes)
+namespace lift_0049B2C0 {
+// Known callee 0x0049B170: StringEqualsEitherLiteral_0049B170 (Builds a local std::string temporary, returns true if it equals either of two literals (short-circuit OR), then destroys the temporary.)
+extern uint8_t ext_0049B170();
+
+// Import slot (IAT entry) for MSVCP80 std::basic_string<char>::basic_string(const basic_string&).
+extern uint32_t mem_00924FE0;
+
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_10
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Copy-constructs a std::string temporary from the argument, evaluates fn_0049B170, and stores the bool result through the value_ptr held by the first argument.
+// @field ExprParser::ValuePtrType +0x00 uint8_t* value_ptr
+void __stdcall fn_0049B2C0(uint8_t** out_holder, const void* str_src) {
+    using StrCopyCtorFn = void(__thiscall*)(void* this_str, const void* src);
+
+    // 0x1C-byte MSVC std::string temporary (VS2005 layout); constructed as a copy of str_src.
+    alignas(8) unsigned char temp_str[0x1C];
+    auto copy_ctor = reinterpret_cast<StrCopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0));
+    copy_ctor(temp_str, str_src);
+
+    uint8_t result = ext_0049B170();
+
+    uint8_t* dst = out_holder[0];
+    *dst = result;
+}
+} // namespace lift_0049B2C0

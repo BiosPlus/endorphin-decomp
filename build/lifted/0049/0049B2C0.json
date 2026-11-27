@@ -1,0 +1,22 @@
+{
+  "va": "0x0049B2C0",
+  "size": 45,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_10",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_10",
+  "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+  "signature": "void __stdcall fn_0049B2C0(uint8_t** out_holder, const void* str_src)",
+  "summary": "Copy-constructs a std::string temporary from the argument, evaluates fn_0049B170, and stores the bool result through the value_ptr held by the first argument.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:28Z"
+}
