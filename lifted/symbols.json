@@ -37559,6 +37559,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00536540 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0054F6F0": {
+    "name": "std_vector_104B::insert",
+    "class": "std_vector_104B",
+    "signature": "extern \"C\" uint32_t* __thiscall sub_0054F6F0( void* self, uint32_t* ret_iter, uint32_t where_cont, uint32_t where_ptr, uint32_t val)",
+    "summary": "Inserts a single 104-byte element into a vector at the given iterator position and returns the new iterator.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F7A0": {
     "name": "Unknown::emplaceBack_0054F7A0",
     "class": "Unknown",
@@ -39950,6 +39957,13 @@
     "class": "Vector20",
     "signature": "void __thiscall sub_0057FD60(void* self, uint32_t val)",
     "summary": "Appends a 20-byte element to the vector, growing capacity if needed.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057FEC0": {
+    "name": "Vector_56B::push_back",
+    "class": "Vector_56B",
+    "signature": "void __thiscall fn_0057FEC0(void* self, void* val)",
+    "summary": "Appends a 0x38-byte element to the vector, growing via ext_0057FBA0 if at capacity.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x00581750": {
@@ -61241,6 +61255,13 @@
     "signature": "extern \"C\" void* __fastcall fn_0060F970(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0060F5E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x0060F990": {
+    "name": "ArrayOf56::copyCtor",
+    "class": "ArrayOf56",
+    "signature": "void* __thiscall fn_0060F990(void* self, const void* other)",
+    "summary": "Copy-constructs an ArrayOf56 (vector of 56-byte elements) from another instance.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060FA40": {
     "name": "Unknown::ReleaseHandleAndThrowNull",

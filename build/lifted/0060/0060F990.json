@@ -1,0 +1,28 @@
+{
+  "va": "0x0060F990",
+  "size": 176,
+  "orig_symbol": "sub_0060F990",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "ArrayOf56::copyCtor",
+  "class": "ArrayOf56",
+  "signature": "void* __thiscall fn_0060F990(void* self, const void* other)",
+  "summary": "Copy-constructs an ArrayOf56 (vector of 56-byte elements) from another instance.",
+  "fields": [
+    {
+      "class": "ArrayOf56",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "ArrayOf56",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:20:21Z"
+}

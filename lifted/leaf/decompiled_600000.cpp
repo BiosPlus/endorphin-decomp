@@ -3085,3 +3085,43 @@ uint32_t __thiscall fn_0060B080(void* self, uint32_t arg1, uint32_t arg2, uint32
 }
 } // namespace lift_00517970
 } // namespace lift_0060B080
+
+// [0x0060F990]
+namespace lift_0060F990 {
+// @name ArrayOf56::copyCtor
+// @class ArrayOf56
+// @summary Copy-constructs an ArrayOf56 (vector of 56-byte elements) from another instance.
+// @field ArrayOf56 +0x04 void* begin
+// @field ArrayOf56 +0x08 void* end
+
+
+bool ext_00687DC0(void* self, uint32_t count);
+void* ext_005558E0(void* src_begin, void* src_end, void* dst_begin, void* dst_obj, uint32_t arg4, uint32_t arg5);
+extern void (*mem_00925134)();
+
+void* __thiscall fn_0060F990(void* self, const void* other) {
+    uint8_t* begin = lift_field<uint8_t*>(other, 0x04);
+    uint32_t count = 0;
+    if (begin != nullptr) {
+        uint8_t* end = lift_field<uint8_t*>(other, 0x08);
+        count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) / 56);
+    }
+
+    if (ext_00687DC0(self, count)) {
+        uint8_t* src_end = lift_field<uint8_t*>(other, 0x08);
+        if (lift_field<uint8_t*>(other, 0x04) > src_end) {
+            mem_00925134();
+        }
+        uint8_t* src_begin = lift_field<uint8_t*>(other, 0x04);
+        if (src_begin > lift_field<uint8_t*>(other, 0x08)) {
+            mem_00925134();
+        }
+        void* dst_begin = lift_field<void*>(self, 0x04);
+        uint32_t tail = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(other)) & ~0xFFu;
+        void* new_end = ext_005558E0(src_begin, src_end, dst_begin, self, tail, tail);
+        lift_field<void*>(self, 0x08) = new_end;
+    }
+
+    return self;
+}
+} // namespace lift_0060F990

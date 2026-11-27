@@ -8,8 +8,10 @@
 // Recovered field layout for ArrayOf56:
 namespace lifted_layout {
 struct ArrayOf56_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00687DC0)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00687DC0)
+    // +0x4   void*                    begin  (evidence: 0x0060F990) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00687DC0) // CONFLICT: multiple definitions at +0x4
+    // +0x8   void*                    end  (evidence: 0x0060F990) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00687DC0) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00687DC0)
 };
 } // namespace lifted_layout
