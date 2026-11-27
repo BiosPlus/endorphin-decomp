@@ -1860,3 +1860,49 @@ void fn_00595AF0(void* self) {
     lift_field<void*>(self, 0x04) = p;
 }
 } // namespace lift_00595AF0
+
+// [0x00596B20] sub_00596B20 (88 bytes)
+namespace lift_00596B20 {
+// Known callee 0x00595AF0: TreeIterator::advanceToSuccessor (Advances a red-black-tree iterator to its in-order successor (stored at this+0x04), with _invalid_parameter_noinfo reporting on null/sentinel inputs.)
+extern void ext_00595AF0(void* self);
+extern int mem_00925134;
+extern int mem_00924FDC;
+
+// @name CopyTreeStringRange_00596B20
+// @summary Copies the std::string value of each tree node in [it, end) into consecutive 28-byte slots starting at dest, advancing the iterator after each copy; reports invalid parameters on null or mismatched head/sentinel.
+// @field TreeHeader +0x04 uint8_t* field_0x04
+// @field TreeNode +0x0C std::string value
+uint8_t* fn_00596B20(uint8_t* head, uint8_t* node, uint8_t* expectedHead, uint8_t* end, uint8_t* dest) {
+    // it[0] = head (container), it[1] = current node; the iterator advance reads/writes it[1] via this+4.
+    using string_assign_fn = void* (__thiscall*)(void* self, const void* src);
+    auto invalid_parameter = [] {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    };
+
+    uint8_t* it[2] = {head, node};
+    uint8_t* out = dest;
+
+    for (;;) {
+        uint8_t* h = it[0];
+        if (h == nullptr || h != expectedHead) {
+            invalid_parameter();
+        }
+
+        uint8_t* cur = it[1];
+        if (cur == end) {
+            return out;
+        }
+
+        if (h == nullptr) {
+            invalid_parameter();
+        }
+        if (cur == lift_field<uint8_t*>(h, 0x04)) {
+            invalid_parameter();
+        }
+
+        reinterpret_cast<string_assign_fn>(static_cast<uintptr_t>(mem_00924FDC))(out, cur + 0x0C);
+        out += 0x1C;
+        ext_00595AF0(it);
+    }
+}
+} // namespace lift_00596B20

@@ -31029,6 +31029,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00596B20": {
+    "name": "CopyTreeStringRange_00596B20",
+    "signature": "uint8_t* fn_00596B20(uint8_t* head, uint8_t* node, uint8_t* expectedHead, uint8_t* end, uint8_t* dest)",
+    "summary": "Copies the std::string value of each tree node in [it, end) into consecutive 28-byte slots starting at dest, advancing the iterator after each copy; reports invalid parameters on null or mismatched head/sentinel.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596C50": {
     "name": "VectorNotifyElementsAndRaiseMax",
     "class": "Unknown (layout not recovered)",

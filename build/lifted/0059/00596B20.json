@@ -1,0 +1,27 @@
+{
+  "va": "0x00596B20",
+  "size": 88,
+  "orig_symbol": "sub_00596B20",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "CopyTreeStringRange_00596B20",
+  "signature": "uint8_t* fn_00596B20(uint8_t* head, uint8_t* node, uint8_t* expectedHead, uint8_t* end, uint8_t* dest)",
+  "summary": "Copies the std::string value of each tree node in [it, end) into consecutive 28-byte slots starting at dest, advancing the iterator after each copy; reports invalid parameters on null or mismatched head/sentinel.",
+  "fields": [
+    {
+      "class": "TreeHeader",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:09:37Z"
+}
