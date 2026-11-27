@@ -1,0 +1,33 @@
+{
+  "va": "0x0049ECB0",
+  "size": 120,
+  "orig_symbol": "sub_0049ECB0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "destroyEntryRange",
+  "signature": "void fn_0049ECB0(void* begin, void* end)",
+  "summary": "Walks [begin,end) in 0x24-byte entries; calls vtable slot 30 on each non-null object at +0x20, then destroys the std::string at +0x00.",
+  "fields": [
+    {
+      "class": "Entry",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:12:07Z"
+}

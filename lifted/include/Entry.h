@@ -8,6 +8,7 @@
 // Recovered field layout for Entry:
 namespace lifted_layout {
 struct Entry_Fields {
+    // +0x0   std::string              field_0x00  (evidence: 0x0049ECB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007AF580, 0x007F0B60) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  flag_0x00  (evidence: 0x00427270) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  flag_0x01  (evidence: 0x00427270)
@@ -21,7 +22,9 @@ struct Entry_Fields {
     // +0xC   std::string              field_0x0C  (evidence: 0x005224E0, 0x0052F7D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0xC
     // +0x10  uint32_t                 field_0x10  (evidence: 0x007F0B60)
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x007C8490, 0x007C8850, 0x007CAF70)
+    // +0x1C  uint8_t                  field_0x1c  (evidence: 0x0049ECB0)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x007C8490, 0x007C8850, 0x007CAF70) // CONFLICT: multiple definitions at +0x20
+    // +0x20  void*                    field_0x20  (evidence: 0x0049ECB0) // CONFLICT: multiple definitions at +0x20
     // +0x154 void*                    field_0x154  (evidence: 0x0051DF60)
 };
 } // namespace lifted_layout

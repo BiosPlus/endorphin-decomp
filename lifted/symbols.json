@@ -12349,6 +12349,12 @@
     "summary": "Writes into `out` either a value from the override object at +0x11C (virtual slot 2), or the value found by name in the list at +0x10C, or a default.",
     "lifted_path": "lifted/NMData/State.cpp"
   },
+  "0x0049ECB0": {
+    "name": "destroyEntryRange",
+    "signature": "void fn_0049ECB0(void* begin, void* end)",
+    "summary": "Walks [begin,end) in 0x24-byte entries; calls vtable slot 30 on each non-null object at +0x20, then destroys the std::string at +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049ED30": {
     "name": "sub_0049ED30",
     "signature": "extern \"C\" void __fastcall fn_0049ED30(void* self)",

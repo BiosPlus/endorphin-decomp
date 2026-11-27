@@ -1729,3 +1729,32 @@ void __thiscall fn_00495AB0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_00495AB0
+
+// [0x0049ECB0] sub_0049ECB0 (120 bytes)
+namespace lift_0049ECB0 {
+extern int mem_00924FF4;
+
+// @name destroyEntryRange
+// @summary Walks [begin,end) in 0x24-byte entries; calls vtable slot 30 on each non-null object at +0x20, then destroys the std::string at +0x00.
+// @field Entry +0x00 std::string field_0x00
+// @field Entry +0x1c uint8_t field_0x1c
+// @field Entry +0x20 void* field_0x20
+void fn_0049ECB0(void* begin, void* end) {
+    // MSVCP80 ~basic_string import slot (thiscall; passed as a plain pointer here).
+    using DtorFn = void (*)(void*);
+    auto dtor = reinterpret_cast<DtorFn>(
+        static_cast<std::uintptr_t>(static_cast<std::uint32_t>(mem_00924FF4)));
+
+    std::uint8_t* const last = static_cast<std::uint8_t*>(end);
+    for (std::uint8_t* p = static_cast<std::uint8_t*>(begin); p != last; p += 0x24) {
+        void* obj = lift_field<void*>(p, 0x20);
+        if (obj != nullptr) {
+            void** vtbl = *static_cast<void***>(obj);
+            using VFn = void (*)(void*, void*);
+            // Slot 30 == byte offset 0x78 in the original 32-bit vtable.
+            reinterpret_cast<VFn>(vtbl[30])(obj, p + 0x1c);
+        }
+        dtor(p);
+    }
+}
+} // namespace lift_0049ECB0
