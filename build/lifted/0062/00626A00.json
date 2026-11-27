@@ -1,0 +1,14 @@
+{
+  "va": "0x00626A00",
+  "size": 253,
+  "orig_symbol": "NMData::EffectorSkeletalData::vfunc_18",
+  "src_path": "src/NMData/EffectorSkeletalData.cpp",
+  "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp",
+  "name": "NMData::EffectorSkeletalData::vfunc_18",
+  "class": "NMData::EffectorSkeletalData",
+  "signature": "static inline void call_float_vmethod(void* self, ptrdiff_t slot, float value)",
+  "summary": "Auto-lifted identical-shape clone of 0x00626900 (NMData::EffectorSkeletalData::vfunc_17).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:47:33Z"
+}

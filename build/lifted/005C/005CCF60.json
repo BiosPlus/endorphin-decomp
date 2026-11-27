@@ -1,0 +1,52 @@
+{
+  "va": "0x005CCF60",
+  "size": 306,
+  "orig_symbol": "NMData::FluidObjectData::vfunc_12_off_C",
+  "src_path": "src/NMData/FluidObjectData.cpp",
+  "lifted_path": "lifted/NMData/FluidObjectData.cpp",
+  "name": "NMData::FluidObjectData::vfunc_12_off_C",
+  "class": "NMData::FluidObjectData",
+  "signature": "bool fn_005CCF60(void* self, void* arg1, uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x005CCE20 (NMData::CollisionModelData::vfunc_12_off_C).",
+  "fields": [
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x78",
+      "type": "uint32_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x78",
+      "type": "uint32_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:47:33Z"
+}

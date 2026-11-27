@@ -10,6 +10,6 @@
 // Recovered field layout for AssignAdd:
 namespace lifted_layout {
 struct AssignAdd_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x006A0E20)
+    // +0x4   void*                    field_0x04  (evidence: 0x006A0E20, 0x006A0F10, 0x006A1000)
 };
 } // namespace lifted_layout

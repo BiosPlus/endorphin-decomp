@@ -29860,6 +29860,27 @@
     "summary": "Resolves a method-type value pointer, copies it into this object's slot, then forwards to the target's vfunc at byte offset 0xAC with the second argument.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00513890": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+    "signature": "void* fn_00513890(void* self, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005137E0 (ReadMethodType::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00513940": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+    "signature": "void* fn_00513940(void* self, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005137E0 (ReadMethodType::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005139F0": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+    "signature": "void* fn_005139F0(void* self, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005137E0 (ReadMethodType::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00513AA0": {
     "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0\u003e",
@@ -42138,6 +42159,27 @@
     "summary": "If *p is null throws a DerivedException; otherwise builds a temp from ext_0059DEB0((*p)+4), self-assigns p from it via ext_0041CF50, then calls vtable slot 0xAC of p-\u003efield_0x04 with (p, b).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059FA10": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "void fn_0059FA10(void* p, void* b)",
+    "summary": "Auto-lifted identical-shape clone of 0x0059F960 (ExprParser::ReadMethodType::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0059FAC0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "void fn_0059FAC0(void* p, void* b)",
+    "summary": "Auto-lifted identical-shape clone of 0x0059F960 (ExprParser::ReadMethodType::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0059FB70": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "void fn_0059FB70(void* p, void* b)",
+    "summary": "Auto-lifted identical-shape clone of 0x0059F960 (ExprParser::ReadMethodType::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059FCD0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, ...\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
@@ -46078,6 +46120,13 @@
     "summary": "Forwards (a, b) to the CollisionModelDataBase::vfunc_15 implementation on this object and returns a.",
     "lifted_path": "lifted/NMData/FluidObjectData.cpp"
   },
+  "0x005C32E0": {
+    "name": "NMData::FluidObjectData::vfunc_13_off_C",
+    "class": "NMData::FluidObjectData",
+    "signature": "bool __thiscall fn_005C32E0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C31D0 (NMData::CollisionModelData::vfunc_13_off_C).",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
+  },
   "0x005C3380": {
     "name": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_13",
     "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
@@ -48191,6 +48240,13 @@
     "signature": "bool fn_005CCE20(void* self, void* arg1, uint32_t value)",
     "summary": "Queries an optional sub-object for a flag, zeroes matching dwords in a local-relative range, rebuilds a temp vector from this+0x74..0x78, notifies an interface, and forwards a non-null error code to thunk_MFC80_ord_764. Returns true on success.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
+  "0x005CCF60": {
+    "name": "NMData::FluidObjectData::vfunc_12_off_C",
+    "class": "NMData::FluidObjectData",
+    "signature": "bool fn_005CCF60(void* self, void* arg1, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005CCE20 (NMData::CollisionModelData::vfunc_12_off_C).",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
   },
   "0x005CD120": {
     "name": "Vector::InsertSortedUnique_005CD120",
@@ -53937,6 +53993,13 @@
     "summary": "Dispatches property/attribute codes 0x25D, 0x33B, 0x33E, and 0x356 to static-object helpers, delegating all other codes to NMData::FixedPathJointData::vfunc_15.",
     "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
   },
+  "0x005EE590": {
+    "name": "NMData::MagnetJointData::vfunc_33",
+    "class": "NMData::MagnetJointData",
+    "signature": "void fn_005EE590(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EE2F0 (NMData::SkeletalJointData::vfunc_33).",
+    "lifted_path": "lifted/NMData/MagnetJointData.cpp"
+  },
   "0x005EE600": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RelationshipData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::RelationshipData::setMetaBodyName0(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RelationshipData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::RelationshipData::setMetaBodyName0(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
@@ -57036,6 +57099,27 @@
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
     "signature": "inline void* vslot(void* obj, ptrdiff_t off)",
     "summary": "Reads a float from the field_0x00 object via vtable slot 0x38, builds a temp from it, assigns that temp into self, releases the temp, then forwards to field_0x04's vtable slot 0xAC with (self, arg2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00605070": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
+    "signature": "inline void* vslot(void* obj, ptrdiff_t off)",
+    "summary": "Auto-lifted identical-shape clone of 0x00604FB0 (ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00605130": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
+    "signature": "inline void* vslot(void* obj, ptrdiff_t off)",
+    "summary": "Auto-lifted identical-shape clone of 0x00604FB0 (ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006051F0": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
+    "signature": "inline void* vslot(void* obj, ptrdiff_t off)",
+    "summary": "Auto-lifted identical-shape clone of 0x00604FB0 (ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00605360": {
@@ -62235,6 +62319,27 @@
     "summary": "Reads the colliding flag from the sensor held in ctx+0x00, then re-assigns ctx's held value through the sensor-derived helper and forwards to ctx+0x04's vfunc_43; throws if the sensor pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00625300": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",
+    "signature": "void fn_00625300(void* self, void* ctx, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00625240 (ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006253C0": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",
+    "signature": "void fn_006253C0(void* self, void* ctx, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00625240 (ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00625480": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",
+    "signature": "void fn_00625480(void* self, void* ctx, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00625240 (ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006255F0": {
     "name": "sub_006255F0",
     "signature": "void* fn_006255F0()",
@@ -62339,6 +62444,13 @@
     "class": "NMData::EffectorSkeletalData",
     "signature": "static inline void call_float_vmethod(void* self, ptrdiff_t slot, float value)",
     "summary": "Allocates a 0x2C-byte object, constructs it, applies nine float-valued vtable setters (1000 or 10000), and returns it (or null if allocation returned null).",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
+  },
+  "0x00626A00": {
+    "name": "NMData::EffectorSkeletalData::vfunc_18",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "static inline void call_float_vmethod(void* self, ptrdiff_t slot, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x00626900 (NMData::EffectorSkeletalData::vfunc_17).",
     "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
   },
   "0x00626D00": {
@@ -73344,6 +73456,20 @@
     "summary": "Reads the float behind ctx-\u003efield_0x00 into a temporary, releases the temporary, copies the context's field_0x04 into ctx via the assign helper, then forwards (ctx, value) to field_0x04's vtable slot 43; throws DerivedException when field_0x00 is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066F0C0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "static inline void* vtable_entry(void* obj, size_t byteOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066F010 (ExprParser::ReadMethodType\u003cNM::Vector3,float,getX\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0066F170": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "static inline void* vtable_entry(void* obj, size_t byteOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066F010 (ExprParser::ReadMethodType\u003cNM::Vector3,float,getX\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0066F2D0": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e",
@@ -73601,6 +73727,13 @@
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
     "signature": "void fn_006707A0(void* self)",
     "summary": "Reads the Vector3 value pointer at +0; if non-null, dereferences its float x component (value unused), then always constructs and throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00670880": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "static inline void* vtable_entry(void* obj, size_t byteOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066F010 (ExprParser::ReadMethodType\u003cNM::Vector3,float,getX\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00670930": {
@@ -77080,6 +77213,27 @@
     "summary": "Always throws: resolves the wrapped record index via GetRecordByIndex and throws a DerivedException with a fixed message.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0068F390": {
+    "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e",
+    "signature": "void* fn_0068F390(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0068F140 (ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0068F440": {
+    "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e",
+    "signature": "void* fn_0068F440(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0068F140 (ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0068F4F0": {
+    "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e",
+    "signature": "void* fn_0068F4F0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0068F140 (ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0068F700": {
     "name": "sub_0068F700",
     "class": "Unknown",
@@ -77390,6 +77544,27 @@
     "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
     "signature": "void* __stdcall fn_00695A70(void* out, const void* self)",
     "summary": "Reads the double behind the object's value pointer as a float and forwards it with the sret slot to 0x0046C390; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00695AD0": {
+    "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+    "signature": "float fn_00695AD0(void* self, void* extra)",
+    "summary": "Auto-lifted identical-shape clone of 0x00695830 (ExprParser::ReadMethodType\u003cDoubleWithProperties\u003e::vfunc_45).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00695B80": {
+    "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+    "signature": "float fn_00695B80(void* self, void* extra)",
+    "summary": "Auto-lifted identical-shape clone of 0x00695830 (ExprParser::ReadMethodType\u003cDoubleWithProperties\u003e::vfunc_45).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00695C30": {
+    "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+    "signature": "float fn_00695C30(void* self, void* extra)",
+    "summary": "Auto-lifted identical-shape clone of 0x00695830 (ExprParser::ReadMethodType\u003cDoubleWithProperties\u003e::vfunc_45).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00695CE0": {
@@ -77981,6 +78156,20 @@
     "signature": "inline R vcall(void* obj, std::size_t offset, A... args)",
     "summary": "Assign-add step: if the rhs object reports type 0xF, copy the pair from self, call its vslot 0xAC with rhs, then release it; otherwise run the fallback path. Finishes with the guarded self-assignment copy.",
     "lifted_path": "lifted/ExprParser/Operators/AssignAdd.cpp"
+  },
+  "0x006A0F10": {
+    "name": "ExprParser::Operators::AssignSubtract::vfunc_3",
+    "class": "ExprParser::Operators::AssignSubtract",
+    "signature": "inline R vcall(void* obj, std::size_t offset, A... args)",
+    "summary": "Auto-lifted identical-shape clone of 0x006A0E20 (ExprParser::Operators::AssignAdd::vfunc_3).",
+    "lifted_path": "lifted/ExprParser/Operators/AssignSubtract.cpp"
+  },
+  "0x006A1000": {
+    "name": "ExprParser::Operators::AssignMultiply::vfunc_3",
+    "class": "ExprParser::Operators::AssignMultiply",
+    "signature": "inline R vcall(void* obj, std::size_t offset, A... args)",
+    "summary": "Auto-lifted identical-shape clone of 0x006A0E20 (ExprParser::Operators::AssignAdd::vfunc_3).",
+    "lifted_path": "lifted/ExprParser/Operators/AssignMultiply.cpp"
   },
   "0x006A1240": {
     "name": "ExprParser::Operators::Modulus::vfunc_3",

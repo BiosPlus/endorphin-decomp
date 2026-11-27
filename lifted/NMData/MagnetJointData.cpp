@@ -70,3 +70,47 @@ void* fn_005F0D40(void* dst) {
     return dst;
 }
 } // namespace lift_005F0D40
+
+// [0x005EE590] NMData::MagnetJointData::vfunc_33 (104 bytes)
+namespace lift_005EE590 {
+// @name NMData::MagnetJointData::vfunc_33
+// @class NMData::MagnetJointData
+// @summary Auto-lifted identical-shape clone of 0x005EE2F0 (NMData::SkeletalJointData::vfunc_33).
+// @field NMData::MagnetJointData +0x17C void* field_0x17c
+// @field NMData::MagnetJointData +0x180 void* field_0x180
+// @field NMData::MagnetJointData +0x184 void* field_0x184
+// @field NMData::MagnetJointData +0x2FC uint32_t field_0x2FC
+namespace lift_005EE2F0 {
+// Known callee 0x005EDFD0: NMData::FixedPathJointData::vfunc_33 (thiscall, no stack args)
+extern void __thiscall ext_005EDFD0(void* self);
+// Known callee 0x00587920: sub_00587920 (thiscall, two stack args: (value, 0))
+extern void __thiscall ext_00587920(void* self, void* value, uint32_t flag);
+
+// @name NMData::SkeletalJointData::vfunc_33
+// @class NMData::SkeletalJointData
+// @summary Runs the FixedPathJointData base step, invokes vtable slot 33 on the three owned sub-objects at +0x17C/+0x180/+0x184, sets +0x308 to 0x700, then calls sub_00587920 on the sub-objects.
+// @field NMData::SkeletalJointData +0x17C void* field_0x17c
+// @field NMData::SkeletalJointData +0x180 void* field_0x180
+// @field NMData::SkeletalJointData +0x184 void* field_0x184
+// @field NMData::SkeletalJointData +0x308 uint32_t field_0x308
+void fn_005EE590(void* self) {
+    using VSlot33 = void(__thiscall*)(void* self);
+
+    auto invoke_slot33 = [](void* obj) {
+        void** vtable = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<VSlot33>(vtable[33])(obj);  // vtable offset 0x84
+    };
+
+    ext_005EDFD0(self);
+
+    invoke_slot33(lift_field<void*>(self, 0x17C));
+    invoke_slot33(lift_field<void*>(self, 0x180));
+    invoke_slot33(lift_field<void*>(self, 0x184));
+
+    lift_field<uint32_t>(self, 0x2FC) = 0x0;
+
+    ext_00587920(self, lift_field<void*>(self, 0x180), 0);
+    ext_00587920(lift_field<void*>(self, 0x17C), lift_field<void*>(self, 0x184), 0);
+}
+} // namespace lift_005EE2F0
+} // namespace lift_005EE590

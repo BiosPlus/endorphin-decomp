@@ -1,0 +1,22 @@
+{
+  "va": "0x006A0F10",
+  "size": 235,
+  "orig_symbol": "ExprParser::Operators::AssignSubtract::vfunc_3",
+  "src_path": "src/ExprParser/Operators/AssignSubtract.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/AssignSubtract.cpp",
+  "name": "ExprParser::Operators::AssignSubtract::vfunc_3",
+  "class": "ExprParser::Operators::AssignSubtract",
+  "signature": "inline R vcall(void* obj, std::size_t offset, A... args)",
+  "summary": "Auto-lifted identical-shape clone of 0x006A0E20 (ExprParser::Operators::AssignAdd::vfunc_3).",
+  "fields": [
+    {
+      "class": "AssignAdd",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:47:33Z"
+}

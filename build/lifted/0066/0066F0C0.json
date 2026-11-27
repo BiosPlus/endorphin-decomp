@@ -1,0 +1,28 @@
+{
+  "va": "0x0066F0C0",
+  "size": 167,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_44",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_44",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+  "signature": "static inline void* vtable_entry(void* obj, size_t byteOffset)",
+  "summary": "Auto-lifted identical-shape clone of 0x0066F010 (ExprParser::ReadMethodType\u003cNM::Vector3,float,getX\u003e::vfunc_43).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float* field_0x00 (pointer to the float value to",
+      "name": "read)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (object whose vtable slot 43 receives the forwarded",
+      "name": "call)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:47:33Z"
+}

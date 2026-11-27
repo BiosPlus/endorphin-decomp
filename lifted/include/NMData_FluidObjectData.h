@@ -11,6 +11,10 @@
 namespace lifted_layout {
 struct NMData_FluidObjectData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004801F0, 0x00480220, 0x00480250, 0x0048DF90, 0x0048DFC0, 0x0048E0F0, 0x004A96B0, 0x004AFDE0, 0x004B00E0, 0x005AC640, 0x005AC6B0, 0x005AC720, 0x005AC750, 0x005AC7C0, 0x005AC7F0, 0x005C3270, 0x0065F5E0, 0x0065F790, 0x0065F7C0)
+    // +0x14  std::string              field_0x14  (evidence: 0x005C32E0)
+    // +0x74  uint32_t                 field_0x74  (evidence: 0x005CCF60)
+    // +0x78  uint32_t                 field_0x78  (evidence: 0x005CCF60)
+    // +0x158 void*                    field_0x158  (evidence: 0x005CCF60)
     // +0x17C std::string              field_0x17c  (evidence: 0x005C44A0)
     // +0x198 u32                      field_0x198  (evidence: 0x005C44A0)
 };

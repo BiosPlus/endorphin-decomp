@@ -124,7 +124,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 ptrToSrcPlus8  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr_0x00  (evidence: 0x006E86E0, 0x006E8790) // CONFLICT: multiple definitions at +0x0
     // +0x0   double field_0x00[] (indexed by arg, stride 8; element type inferred from fld qword)  (evidence: 0x0077FAE0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   float* field_0x00 (pointer to the float value to read)  (evidence: 0x0066F010) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float* field_0x00 (pointer to the float value to read)  (evidence: 0x0066F010, 0x0066F0C0, 0x0066F170, 0x00670880) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  records  (evidence: 0x008635C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 selector  (evidence: 0x007155B0, 0x0071A790) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    self  (evidence: 0x00493EE0, 0x00700FA0) // CONFLICT: multiple definitions at +0x0
@@ -213,7 +213,7 @@ struct Unknown_Fields {
     // +0x4   void*                    begin  (evidence: 0x00503BC0, 0x0050B960, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void** field_0x04 (container element begin)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 cachedChild  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void* field_0x04 (object whose vtable slot 43 receives the forwarded call)  (evidence: 0x0066F010) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* field_0x04 (object whose vtable slot 43 receives the forwarded call)  (evidence: 0x0066F010, 0x0066F0C0, 0x0066F170, 0x00670880) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    callback  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* next (next node in chain)  (evidence: 0x006FACA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 child  (evidence: 0x0071CA70) // CONFLICT: multiple definitions at +0x4

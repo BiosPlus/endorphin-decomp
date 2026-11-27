@@ -12,5 +12,9 @@ namespace lifted_layout {
 struct NMData_MagnetJointData_Fields {
     // +0x4   void*                    vptr_TransformInterface  (evidence: 0x005F0FA0)
     // +0x148 uint8_t                  field_0x148  (evidence: 0x005F0FA0)
+    // +0x17C void*                    field_0x17c  (evidence: 0x005EE590)
+    // +0x180 void*                    field_0x180  (evidence: 0x005EE590)
+    // +0x184 void*                    field_0x184  (evidence: 0x005EE590)
+    // +0x2FC uint32_t                 field_0x2FC  (evidence: 0x005EE590)
 };
 } // namespace lifted_layout

@@ -128,3 +128,54 @@ void* fn_00626900(void* self) {
     return obj;
 }
 } // namespace lift_00626900
+
+// [0x00626A00] NMData::EffectorSkeletalData::vfunc_18 (253 bytes)
+namespace lift_00626A00 {
+// @name NMData::EffectorSkeletalData::vfunc_18
+// @class NMData::EffectorSkeletalData
+// @summary Auto-lifted identical-shape clone of 0x00626900 (NMData::EffectorSkeletalData::vfunc_17).
+namespace lift_00626900 {
+// Known callee 0x00622290: sub_00622290 (constructor-like init; returns self)
+extern void* ext_00622290(void* self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT thunk to MFC80!ord_762, operator new-style allocator)
+extern void* ext_006A5C62(uint32_t size);
+extern float mem_009518E0; // .rdata float 1000.0f
+extern float mem_009518E0; // .rdata float 10000.0f
+
+// Thiscall virtual method taking one float by value and returning nothing.
+// __thiscall is empty on non-MSVC builds (see lift_compat.h).
+using FloatSetterFn = void(__thiscall*)(void* self, float value);
+
+// Calls the virtual method at byte offset `slot` of the vtable of `self` with `value`.
+static inline void call_float_vmethod(void* self, ptrdiff_t slot, float value) {
+    void* vtbl = lift_field<void*>(self, 0);
+    void* method = lift_field<void*>(vtbl, slot);
+    reinterpret_cast<FloatSetterFn>(method)(self, value);
+}
+
+// @name NMData::EffectorSkeletalData::vfunc_17
+// @class NMData::EffectorSkeletalData
+// @summary Allocates a 0x2C-byte object, constructs it, applies nine float-valued vtable setters (1000 or 10000), and returns it (or null if allocation returned null).
+void* fn_00626A00(void* self) {
+    (void)self; // incoming ecx is only saved/restored for the SEH frame
+
+    void* obj = nullptr;
+    void* mem = ext_006A5C62(0x2c);
+    if (mem != nullptr) {
+        obj = ext_00622290(mem);
+    }
+
+    call_float_vmethod(obj, 0x44, mem_009518E0);
+    call_float_vmethod(obj, 0x60, mem_009518E0);
+    call_float_vmethod(obj, 0x40, mem_009518E0);
+    call_float_vmethod(obj, 0x50, mem_009518E0);
+    call_float_vmethod(obj, 0x58, mem_009518E0);
+    call_float_vmethod(obj, 0x48, mem_009518E0);
+    call_float_vmethod(obj, 0x54, mem_009518E0);
+    call_float_vmethod(obj, 0x5c, mem_009518E0);
+    call_float_vmethod(obj, 0x4c, mem_009518E0);
+
+    return obj;
+}
+} // namespace lift_00626900
+} // namespace lift_00626A00

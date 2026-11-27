@@ -1,0 +1,64 @@
+{
+  "va": "0x005EE590",
+  "size": 104,
+  "orig_symbol": "NMData::MagnetJointData::vfunc_33",
+  "src_path": "src/NMData/MagnetJointData.cpp",
+  "lifted_path": "lifted/NMData/MagnetJointData.cpp",
+  "name": "NMData::MagnetJointData::vfunc_33",
+  "class": "NMData::MagnetJointData",
+  "signature": "void fn_005EE590(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005EE2F0 (NMData::SkeletalJointData::vfunc_33).",
+  "fields": [
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x2FC",
+      "type": "uint32_t",
+      "name": "field_0x2FC"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x308",
+      "type": "uint32_t",
+      "name": "field_0x308"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:47:33Z"
+}
