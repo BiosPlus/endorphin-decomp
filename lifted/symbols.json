@@ -59071,6 +59071,13 @@
     "summary": "Allocates a new EffectorData instance, constructs it, and copies all fields from this.",
     "lifted_path": "lifted/NMData/EffectorData.cpp"
   },
+  "0x0060C640": {
+    "name": "NMData::EffectorData::vfunc_13",
+    "class": "NMData::EffectorData",
+    "signature": "inline bool is_sentinel(uint32_t v)",
+    "summary": "Initializes base data from arg1, then reads float/int/bool attributes (names from mem_ globals) into this+0x44..+0x58.",
+    "lifted_path": "lifted/NMData/EffectorData.cpp"
+  },
   "0x0060CC60": {
     "name": "GetOnceInitString_0060CC60",
     "signature": "void* GetOnceInitString_0060CC60()",

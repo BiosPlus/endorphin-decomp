@@ -1,0 +1,52 @@
+{
+  "va": "0x0060C640",
+  "size": 475,
+  "orig_symbol": "NMData::EffectorData::vfunc_13",
+  "src_path": "src/NMData/EffectorData.cpp",
+  "lifted_path": "lifted/NMData/EffectorData.cpp",
+  "name": "NMData::EffectorData::vfunc_13",
+  "class": "NMData::EffectorData",
+  "signature": "inline bool is_sentinel(uint32_t v)",
+  "summary": "Initializes base data from arg1, then reads float/int/bool attributes (names from mem_ globals) into this+0x44..+0x58.",
+  "fields": [
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x58",
+      "type": "uint8_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:38:05Z"
+}

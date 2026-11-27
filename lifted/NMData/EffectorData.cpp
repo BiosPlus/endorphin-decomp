@@ -194,3 +194,111 @@ void* fn_0060CDE0(void* self, void* arg1, uint32_t arg2, void* arg3) {
     return obj;
 }
 } // namespace lift_0060CDE0
+
+// [0x0060C640] NMData::EffectorData::vfunc_13 (475 bytes)
+namespace lift_0060C640 {
+// Known callee 0x0060BA80: NMData::EffectorBaseData::vfunc_13 (thiscall, one stack arg)
+extern void __thiscall ext_0060BA80(void* self, void* arg1);
+// Known callee 0x0063EFE0: sub_0063EFE0 (thiscall; searches item vector at +0x3c by name, returns item or sentinel)
+extern uint32_t __thiscall ext_0063EFE0(void* self, uint32_t name);
+// Known callee 0x0063F530: sub_0063F530 (thiscall; 3 stack args: name, a, b; returns a found value or sentinel)
+extern uint32_t __thiscall ext_0063F530(void* self, uint32_t name, uint32_t a, uint32_t b);
+// Known callee 0x0053F5F0: parseIntFromStringProp (cdecl; stores an int at *out; second arg is a pointer to the item slot)
+extern void ext_0053F5F0(void* out, const uint32_t* slot);
+// Known callee 0x0046C0A0: parseFloatFromString (cdecl; stores a float at *out; second arg is a pointer to the item slot)
+extern void ext_0046C0A0(float* out, const uint32_t* slot);
+// Known callee 0x00427640: checkStringEqualsConst (cdecl; stores a bool at *out; second arg is a pointer to the item slot)
+extern void ext_00427640(uint8_t* out, const uint32_t* slot);
+
+// .data pointer-valued globals (C-string addresses used as lookup keys).
+extern const uint32_t mem_00A9F5CC;
+extern const uint32_t mem_00A9EF5C;
+extern const uint32_t mem_00A9EF60;
+extern const uint32_t mem_00A9ED5C;
+extern const uint32_t mem_00A9F43C;
+extern const uint32_t mem_00A9EE38;
+
+namespace lift_0060C640 {
+
+// Sentinel values returned by the lookup helper (sub_0063F530 / sub_0063EFE0).
+constexpr uint32_t kSentinelNotFound = 0x00B53A34;
+constexpr uint32_t kSentinelDefault  = 0x00B53B30;
+constexpr uint32_t kSentinelB        = 0x00B53AB0;
+constexpr uint32_t kSentinelC        = 0x00B53A70;
+constexpr uint32_t kSentinelD        = 0x00B53AF0;
+
+// True when the lookup result is one of the five "no value" sentinels.
+inline bool is_sentinel(uint32_t v) {
+    return v == kSentinelNotFound || v == kSentinelDefault ||
+           v == kSentinelB || v == kSentinelC || v == kSentinelD;
+}
+
+// Maps any sentinel result to the default sentinel; other values pass through.
+inline uint32_t normalize_sentinel(uint32_t v) {
+    return is_sentinel(v) ? kSentinelDefault : v;
+}
+
+} // namespace lift_0060C640
+
+// @name NMData::EffectorData::vfunc_13
+// @class NMData::EffectorData
+// @summary Initializes base data from arg1, then reads float/int/bool attributes (names from mem_ globals) into this+0x44..+0x58.
+// @field NMData::EffectorData +0x44 uint32_t field_0x44
+// @field NMData::EffectorData +0x48 float field_0x48
+// @field NMData::EffectorData +0x4C float field_0x4c
+// @field NMData::EffectorData +0x50 float field_0x50
+// @field NMData::EffectorData +0x54 float field_0x54
+// @field NMData::EffectorData +0x58 uint8_t field_0x58
+void __thiscall fn_0060C640(uint8_t* self, uint8_t* arg1) {
+    using lift_0060C640::normalize_sentinel;
+    using lift_0060C640::is_sentinel;
+
+    // Base initialization (m_name / m_jointName) from arg1.
+    ext_0060BA80(self, arg1);
+
+    // Integer attribute -> self+0x44.
+    {
+        uint32_t item = ext_0063EFE0(arg1, mem_00A9F5CC);
+        ext_0053F5F0(&lift_field<uint32_t>(self, 0x44), &item);
+    }
+
+    // Float attribute -> self+0x48.
+    {
+        uint32_t found = normalize_sentinel(ext_0063F530(arg1, mem_00A9EF5C, 0, 1));
+        float value = 0.0f;
+        ext_0046C0A0(&value, &found);
+        lift_field<float>(self, 0x48) = value;
+    }
+
+    // Float attribute -> self+0x4C.
+    {
+        uint32_t found = normalize_sentinel(ext_0063F530(arg1, mem_00A9EF60, 0, 1));
+        float value = 0.0f;
+        ext_0046C0A0(&value, &found);
+        lift_field<float>(self, 0x4C) = value;
+    }
+
+    // Float attribute -> self+0x50.
+    {
+        uint32_t found = normalize_sentinel(ext_0063F530(arg1, mem_00A9ED5C, 0, 1));
+        float value = 0.0f;
+        ext_0046C0A0(&value, &found);
+        lift_field<float>(self, 0x50) = value;
+    }
+
+    // String-equality flag -> self+0x58, only when the item is present.
+    {
+        uint32_t item = ext_0063EFE0(arg1, mem_00A9F43C);
+        if (!is_sentinel(item)) {
+            item = ext_0063EFE0(arg1, mem_00A9F43C);
+            ext_00427640(&lift_field<uint8_t>(self, 0x58), &item);
+        }
+    }
+
+    // Float attribute -> self+0x54 (written directly through the out pointer).
+    {
+        uint32_t found = normalize_sentinel(ext_0063F530(arg1, mem_00A9EE38, 0, 1));
+        ext_0046C0A0(&lift_field<float>(self, 0x54), &found);
+    }
+}
+} // namespace lift_0060C640
