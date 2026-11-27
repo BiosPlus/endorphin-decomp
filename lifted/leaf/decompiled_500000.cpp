@@ -2522,3 +2522,45 @@ extern void __fastcall fn_00504B80(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_00504B80
+
+// [0x0050E4E0]
+namespace lift_0050E4E0 {
+extern uint32_t mem_00924FDC;
+
+// @name sub_0050E4E0_copyAssign
+// @summary Copy assignment operator copying scalar fields and three std::string members
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C float field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 char[28] field_0x20
+// @field Unknown +0x3C char[28] field_0x3C
+// @field Unknown +0x58 char[28] field_0x58
+// @field Unknown +0x74 uint32_t field_0x74
+void* __thiscall sub_0050E4E0(void* self, const void* other) {
+    using StringAssignFn = void* (__thiscall*)(void*, const void*);
+    auto string_assign = reinterpret_cast<StringAssignFn>(mem_00924FDC);
+
+    auto* dst = static_cast<uint8_t*>(self);
+    const auto* src = static_cast<const uint8_t*>(other);
+
+    lift_field<uint32_t>(dst, 0x04) = lift_field<uint32_t>(src, 0x04);
+    lift_field<uint32_t>(dst, 0x08) = lift_field<uint32_t>(src, 0x08);
+    lift_field<float>(dst, 0x0C) = lift_field<float>(src, 0x0C);
+    lift_field<float>(dst, 0x10) = lift_field<float>(src, 0x10);
+    lift_field<float>(dst, 0x14) = lift_field<float>(src, 0x14);
+    lift_field<uint32_t>(dst, 0x18) = lift_field<uint32_t>(src, 0x18);
+    lift_field<float>(dst, 0x1C) = lift_field<float>(src, 0x1C);
+
+    string_assign(dst + 0x20, src + 0x20);
+    string_assign(dst + 0x3C, src + 0x3C);
+    string_assign(dst + 0x58, src + 0x58);
+
+    lift_field<uint32_t>(dst, 0x74) = lift_field<uint32_t>(src, 0x74);
+
+    return self;
+}
+} // namespace lift_0050E4E0
