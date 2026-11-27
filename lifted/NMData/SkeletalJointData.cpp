@@ -159,3 +159,38 @@ int fn_005E0970(void* self) {
     return count;
 }
 } // namespace lift_005E0970
+
+// [0x005EE3F0]
+namespace lift_005EE3F0 {
+// @name NMData::SkeletalJointData::vfunc_15
+// @class NMData::SkeletalJointData
+// @summary Dispatches property/attribute codes 0x25D, 0x33B, 0x33E, and 0x356 to static-object helpers, delegating all other codes to NMData::FixedPathJointData::vfunc_15.
+
+
+extern void ext_005EC930(void* out, uint32_t value);
+extern void ext_005EC950(DWORD* out, DWORD value);
+extern void ext_005EC970(DWORD* dst, DWORD value);
+extern void ext_005EC990(DWORD* dst, DWORD value);
+extern uint32_t __thiscall ext_005EE360(void* self, uint32_t out, uint32_t code);
+
+uint32_t __thiscall fn_005EE3F0(void* self, uint32_t out, uint32_t code) {
+    uint32_t val = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    switch (code) {
+        case 0x25D:
+            ext_005EC990(reinterpret_cast<DWORD*>(static_cast<uintptr_t>(out)), val);
+            return out;
+        case 0x33B:
+            ext_005EC950(reinterpret_cast<DWORD*>(static_cast<uintptr_t>(out)), val);
+            return out;
+        case 0x33E:
+            ext_005EC970(reinterpret_cast<DWORD*>(static_cast<uintptr_t>(out)), val);
+            return out;
+        case 0x356:
+            ext_005EC930(reinterpret_cast<void*>(static_cast<uintptr_t>(out)), val);
+            return out;
+        default:
+            ext_005EE360(self, out, code);
+            return out;
+    }
+}
+} // namespace lift_005EE3F0

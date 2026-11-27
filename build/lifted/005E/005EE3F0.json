@@ -1,0 +1,14 @@
+{
+  "va": "0x005EE3F0",
+  "size": 143,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_15",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_15",
+  "class": "NMData::SkeletalJointData",
+  "signature": "uint32_t __thiscall fn_005EE3F0(void* self, uint32_t out, uint32_t code)",
+  "summary": "Dispatches property/attribute codes 0x25D, 0x33B, 0x33E, and 0x356 to static-object helpers, delegating all other codes to NMData::FixedPathJointData::vfunc_15.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:50:13Z"
+}
