@@ -10,6 +10,9 @@
 // Recovered field layout for NMData::NetworkConnectorData:
 namespace lifted_layout {
 struct NMData_NetworkConnectorData_Fields {
+    // +0x38  uint8_t[20]              field_0x38  (evidence: 0x005246E0)
+    // +0x4C  uint8_t[20]              field_0x4c  (evidence: 0x005246E0)
     // +0x60  void*                    field_0x60  (evidence: 0x005261E0, 0x005270D0)
+    // +0xA4  std::string              field_0xa4  (evidence: 0x005246E0)
 };
 } // namespace lifted_layout
