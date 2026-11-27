@@ -1,0 +1,46 @@
+{
+  "va": "0x004F0430",
+  "size": 105,
+  "orig_symbol": "sub_004F0430",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "Unknown::clearStringPairsAndRelease",
+  "class": "Unknown",
+  "signature": "void fn_004F0430(void* self)",
+  "summary": "Clears the embedded StringPairList at +0x18, releases its head block at +0x1C, releases the block at +0x0C if set, and zeroes the +0x0C/+0x10/+0x14 slots.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "StringPairList",
+      "name": "stringPairs"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "stringPairsHead"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:22:54Z"
+}

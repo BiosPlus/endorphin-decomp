@@ -937,3 +937,37 @@ void fn_004FDB40(void* first, void* last, const void* value) {
     }
 }
 } // namespace lift_004FDB40
+
+// [0x004F0430]
+namespace lift_004F0430 {
+// Known callee 0x004EFDF0: StringPairList::clear (clears all nodes of a doubly-linked string-pair list and resets size to zero).
+extern void ext_004EFDF0(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; releases a heap block).
+extern void ext_006A5C5C(void* p);
+
+// @name Unknown::clearStringPairsAndRelease
+// @summary Clears the embedded StringPairList at +0x18, releases its head block at +0x1C, releases the block at +0x0C if set, and zeroes the +0x0C/+0x10/+0x14 slots.
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 StringPairList stringPairs
+// @field Unknown +0x1C uint32_t stringPairsHead
+void fn_004F0430(void* self) {
+    // Clear the embedded StringPairList at this+0x18.
+    ext_004EFDF0(static_cast<uint8_t*>(self) + 0x18);
+
+    // Release the list's head block at this+0x1C and clear the slot.
+    uint32_t& head = lift_field<uint32_t>(self, 0x1C);
+    ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(head)));
+    head = 0;
+
+    // Release the block at this+0x0C if present, then clear the slots.
+    uint32_t& p0c = lift_field<uint32_t>(self, 0x0C);
+    if (p0c != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(p0c)));
+    }
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+}
+} // namespace lift_004F0430
