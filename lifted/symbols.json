@@ -10199,6 +10199,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x3B4 and tail-calls sub_004A6710.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00480700": {
+    "name": "Unknown::dispatchToGlobalObject",
+    "class": "Unknown",
+    "signature": "inline void* addr_to_ptr(uint32_t addr)",
+    "summary": "Forwards self to dispatchToChildren and ChildRangeVisit using the global object's sub-objects (no-op when self is null).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00480750": {
     "name": "sub_00480750",
     "class": "Unknown",

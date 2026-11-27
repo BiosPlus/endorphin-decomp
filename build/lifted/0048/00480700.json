@@ -1,0 +1,34 @@
+{
+  "va": "0x00480700",
+  "size": 74,
+  "orig_symbol": "sub_00480700",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::dispatchToGlobalObject",
+  "class": "Unknown",
+  "signature": "inline void* addr_to_ptr(uint32_t addr)",
+  "summary": "Forwards self to dispatchToChildren and ChildRangeVisit using the global object's sub-objects (no-op when self is null).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xFC",
+      "type": "uint8_t",
+      "name": "field_0xfc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x168",
+      "type": "uint8_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "uint32_t",
+      "name": "field_0x26c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:27:50Z"
+}

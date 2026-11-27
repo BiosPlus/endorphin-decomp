@@ -2669,3 +2669,41 @@ int fn_00481E60(void* a, void* b) {
     return eq ? 1 : 0;
 }
 } // namespace lift_00481E60
+
+// [0x00480700] sub_00480700 (74 bytes)
+namespace lift_00480700 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Callee 0x0065D120: sub_0065D120 (16B), thiscall, no stack args.
+extern void __thiscall ext_0065D120(void* self);
+// Known callee 0x00586540: Unknown::dispatchToChildren (If the interface at +0x04 reports true, forward (arg1, arg2) to the interface at +0x08, then recurse into every child pointer in the [+0x80, +0x84) array.)
+extern void __thiscall ext_00586540(void* self, void* arg1, void* arg2);
+// Known callee 0x00586440: ChildRangeVisit (Visits this+0x4 and this+0x8 children, then recursively visits each element of the pointer range [begin, end) stored at this+0x80/this+0x84.)
+extern void __thiscall ext_00586440(void* self, void* arg1);
+
+// Convert a 32-bit guest address to a host pointer (target is 32-bit).
+inline void* addr_to_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// @name Unknown::dispatchToGlobalObject
+// @class Unknown
+// @summary Forwards self to dispatchToChildren and ChildRangeVisit using the global object's sub-objects (no-op when self is null).
+// @field Unknown +0xfc uint8_t field_0xfc
+// @field Unknown +0x168 uint8_t field_0x168
+// @field Unknown +0x26c uint32_t field_0x26c
+void fn_00480700(void* self) {
+    if (self == nullptr) {
+        return;
+    }
+
+    void* obj = addr_to_ptr(static_cast<uint32_t>(ext_00594000()));
+    ext_0065D120(static_cast<char*>(obj) + 0xfc);
+
+    const uint32_t p = lift_field<uint32_t>(obj, 0x26c);
+    void* arg1 = (p != 0) ? addr_to_ptr(p + 8) : nullptr;
+    ext_00586540(self, arg1, nullptr);
+
+    ext_00586440(self, static_cast<char*>(obj) + 0x168);
+}
+} // namespace lift_00480700
