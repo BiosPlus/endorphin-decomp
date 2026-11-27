@@ -1,0 +1,39 @@
+{
+  "va": "0x00799040",
+  "size": 144,
+  "orig_symbol": "sub_00799040",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "validateCachedEntry",
+  "signature": "uint32_t fn_00799040(uint32_t self, uint32_t key1)",
+  "summary": "Validates a cached entry for key1 and reports an error via ext_0079B140 if missing or invalid.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0xE",
+      "type": "uint8_t",
+      "name": "field_0x0e"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:48:35Z"
+}

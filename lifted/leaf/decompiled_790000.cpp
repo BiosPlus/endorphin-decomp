@@ -1622,3 +1622,121 @@ uint32_t fn_00798750(uint8_t* self, uint32_t height) {
     return ext_00798840(self) * height;
 }
 } // namespace lift_00798750
+
+// [0x0079E520]
+namespace lift_0079E520 {
+// @name getFirstEntryCopy
+// @summary Constructs a temporary object from the first entry (index 0) of this->field_0x0->field_0xD8, copies it to out, and returns out.
+// @field Unknown +0x00 void* field_0x0
+
+
+extern uint32_t __fastcall ext_006C3590(void* self, int edx_unused, int32_t idx);
+extern void __thiscall ext_006D2370(void* self);
+extern void* __thiscall ext_006D2390(void* self, void* arg1);
+extern void __cdecl ext_006D80A0(void);
+extern void __thiscall ext_007873F0(void* self, uint32_t arg1);
+extern uint32_t __thiscall ext_00714AE0(void* self);
+
+void* __fastcall fn_0079E520(void* self, int edx_unused, void* out) {
+    (void)edx_unused;
+    uint8_t local_obj[0x20];
+    ext_006D2370(local_obj);
+
+    void* inner = lift_field<void*>(self, 0x00);
+    uint32_t container = ext_00714AE0(inner);
+    uint32_t entry = ext_006C3590(reinterpret_cast<void*>(static_cast<uintptr_t>(container)), 0, 0);
+    ext_007873F0(local_obj, entry);
+
+    ext_006D2390(out, local_obj);
+    ext_006D80A0();
+    return out;
+}
+} // namespace lift_0079E520
+
+// [0x00799040]
+namespace lift_00799040 {
+// @name validateCachedEntry
+// @summary Validates a cached entry for key1 and reports an error via ext_0079B140 if missing or invalid.
+// @field Self +0x00 uint32_t field_0x00
+// @field Self +0x0C uint8_t field_0x0c
+// @field Entry +0x0E uint8_t field_0x0e
+// @field Entry +0x10 uint32_t field_0x10
+
+
+extern uint32_t ext_007AF580(uint32_t self, uint32_t key1, uint32_t key2);
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+
+extern uint8_t mem_00AAFA4C[];
+extern uint8_t mem_00AAFA78[];
+extern uint8_t mem_00AAFA88[];
+extern uint8_t mem_00AAFAA0[];
+extern uint8_t mem_00B5D2C0[];
+
+uint32_t fn_00799040(uint32_t self, uint32_t key1) {
+    const void* self_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(self));
+    uint32_t entry = ext_007AF580(self, key1, 0);
+    if (entry == 0) {
+        uint32_t msg = (key1 > 0xFFFFu)
+            ? static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00AAFAA0))
+            : static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B5D2C0));
+        (void)msg;
+        ext_0079B140(
+            static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00AAFA78)),
+            static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00AAFA88)),
+            lift_field<uint32_t>(self_ptr, 0x0));
+        return 0;
+    }
+
+    if (key1 == 0x101u) {
+        return 1;
+    }
+    if ((lift_field<uint8_t>(self_ptr, 0xC) & 0x40u) == 0) {
+        return 1;
+    }
+
+    const void* entry_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(entry));
+    if (lift_field<uint8_t>(entry_ptr, 0xE) != 0) {
+        return 1;
+    }
+
+    (void)lift_field<uint32_t>(entry_ptr, 0x10);
+    ext_0079B140(
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00AAFA78)),
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00AAFA4C)),
+        lift_field<uint32_t>(self_ptr, 0x0));
+    return 0;
+}
+} // namespace lift_00799040
+
+// [0x0079EAE0]
+namespace lift_0079EAE0 {
+// @name findEntryByName
+// @summary Searches a global pointer array for an entry whose name at +0x04 matches the given string.
+// @field Entry +0x04 const char* name
+
+
+extern uint8_t mem_00B61150[];
+extern uint8_t mem_00B6114C[];
+
+void* sub_0079EAE0(const char* name) {
+    uint8_t count = *reinterpret_cast<const uint8_t*>(mem_00B61150);
+    if (count == 0) {
+        return nullptr;
+    }
+
+    void** entries = *reinterpret_cast<void***>(mem_00B6114C);
+    uint8_t idx = 0;
+    do {
+        void* entry = entries[idx];
+        if (entry != nullptr) {
+            const char* entry_name = lift_field<const char*>(entry, 0x04);
+            if (std::strcmp(entry_name, name) == 0) {
+                return entries[idx];
+            }
+        }
+        idx++;
+    } while (idx < *reinterpret_cast<const uint8_t*>(mem_00B61150));
+
+    return nullptr;
+}
+} // namespace lift_0079EAE0
