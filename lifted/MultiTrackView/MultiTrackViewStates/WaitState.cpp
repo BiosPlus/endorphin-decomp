@@ -84,3 +84,61 @@ uint8_t __thiscall fn_00442B20(void* self, uint32_t arg1) {
     return 0;
 }
 } // namespace lift_00442B20
+
+// [0x00443200] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_12 (153 bytes)
+namespace lift_00443200 {
+// Known callee 0x004429C0: resetOwnerTimer (Calls helper on owner, clears byte flag at +0x0D, kills owner timer, then restarts it with owner's +0x168 interval.)
+extern void ext_004429C0(void* self);
+// Known callee 0x0043CA00: CWindow::trackMouseLeave (Registers the window to receive a WM_MOUSELEAVE notification via TrackMouseEvent.)
+extern void ext_0043CA00(void* self);
+// Unlifted callee 0x0043D900: thiscall(owner, int* out) -> object pointer
+extern void* ext_0043D900(void* self, int32_t* out);
+// Known callee 0x0043C900: SetCursorFromTable (Loads a cursor handle from the object's table at +0x128 (indexed by arg) and tail-calls SetCursor through the IAT slot at 0x925704.)
+extern HCURSOR ext_0043C900(void* self, uint32_t index);
+// Unlifted callee 0x0043D620: stdcall(int* in) -> object pointer
+extern void* ext_0043D620(int32_t* in);
+// IAT slot for USER32!InvalidateRect (holds the resolved function pointer at runtime)
+extern int mem_00925688;
+
+using InvalidateRectFn = int(__stdcall*)(HWND, const void*, int);
+
+// @name MultiTrackView::MultiTrackViewStates::WaitState::vfunc_12
+// @class MultiTrackView::MultiTrackViewStates::WaitState
+// @summary Re-arms the wait state when the owner is enabled: resets the owner timer, invalidates the owner window, updates the cursor from a hit-test table, and flags a matching item.
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x08 void* field_0x08
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x0C uint8_t field_0x0c
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x10 uint32_t field_0x10
+uint8_t fn_00443200(void* self, int32_t a, int32_t b, int32_t c) {
+    (void)c;
+    void* owner = lift_field<void*>(self, 0x08);
+    if (lift_field<uint8_t>(owner, 0x190) != 0) {
+        ext_004429C0(self);
+        lift_field<uint8_t>(self, 0x0C) = 1;
+
+        uint32_t hwnd = lift_field<uint32_t>(owner, 0x20);
+        (*reinterpret_cast<InvalidateRectFn*>(&mem_00925688))(
+            reinterpret_cast<HWND>(static_cast<uintptr_t>(hwnd)), nullptr, 1);
+
+        ext_0043CA00(owner);
+
+        uint32_t index = 0;
+        void* obj = ext_0043D900(owner, &b);
+        if (obj != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(obj);
+            using VFnThis = uint32_t(__thiscall*)(void*, int32_t*);
+            index = reinterpret_cast<VFnThis>(vtbl[3])(obj, &b);
+        }
+
+        ext_0043C900(owner, index);
+
+        if (b < lift_field<int32_t>(owner, 0xFC) && (a & 1) != 0) {
+            void* item = ext_0043D620(&b);
+            if (item != nullptr &&
+                lift_field<int32_t>(item, 0x14) == lift_field<int32_t>(self, 0x10)) {
+                lift_field<uint8_t>(item, 0x38) = 1;
+            }
+        }
+    }
+    return 1;
+}
+} // namespace lift_00443200

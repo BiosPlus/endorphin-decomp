@@ -5525,6 +5525,13 @@
     "summary": "Toggles the owner's redraw timer based on the armed byte at +0x0D, then, if the left button is held and the cursor is left of owner+0xfc, marks the hit item at +0x38 when its id matches +0x10.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp"
   },
+  "0x00443200": {
+    "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_12",
+    "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+    "signature": "uint8_t fn_00443200(void* self, int32_t a, int32_t b, int32_t c)",
+    "summary": "Re-arms the wait state when the owner is enabled: resets the owner timer, invalidates the owner window, updates the cursor from a hit-test table, and flags a matching item.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp"
+  },
   "0x004432D0": {
     "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_1",
     "class": "MultiTrackView::MultiTrackViewStates::PanState",

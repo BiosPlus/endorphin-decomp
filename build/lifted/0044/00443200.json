@@ -1,0 +1,34 @@
+{
+  "va": "0x00443200",
+  "size": 153,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_12",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_12",
+  "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+  "signature": "uint8_t fn_00443200(void* self, int32_t a, int32_t b, int32_t c)",
+  "summary": "Re-arms the wait state when the owner is enabled: resets the owner timer, invalidates the owner window, updates the cursor from a hit-test table, and flags a matching item.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:45:12Z"
+}
