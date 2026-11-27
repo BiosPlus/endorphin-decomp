@@ -726,3 +726,27 @@ void fn_005D0760(void* self, void* str) {
     ext_005D02D0(self, index);
 }
 } // namespace lift_005D0760
+
+// [0x005DD310] sub_005DD310 (34 bytes)
+namespace lift_005DD310 {
+// @name sub_005DD310
+// @summary Auto-lifted identical-shape clone of 0x005D0760 (Unknown::conditionalFindAndStore_005D0760).
+namespace lift_005D0760 {
+// Known callee 0x005CFDB0: findStringInTable (Compares the std::string at arg to literal mem_0092F10C (returns 1 on match), else to 4 table entries at mem_00B45938 (stride 0x1C) returning the matching index, else 0.)
+extern int __stdcall ext_005CFCE0(void* str);
+// Known callee 0x005D02D0: Unknown::storeArgAfterEnterAndDispatch_005D02D0 (stores its int argument at self+0x208 and dispatches; see leaf).
+extern void ext_005DD2D0(void* self, int32_t arg);
+
+// @name Unknown::conditionalFindAndStore_005D0760
+// @class Unknown
+// @summary If the byte at self+0x1f1 is zero, looks up the string argument with findStringInTable and forwards the resulting index to storeArgAfterEnterAndDispatch; otherwise does nothing. Callee cleans the one stack argument.
+// @field Unknown +0x1f1 uint8_t flag1f1
+void fn_005DD310(void* self, void* str) {
+    if (lift_field<uint8_t>(self, 0x1f1) != 0) {
+        return;
+    }
+    int32_t index = ext_005CFCE0(str);
+    ext_005DD2D0(self, index);
+}
+} // namespace lift_005D0760
+} // namespace lift_005DD310

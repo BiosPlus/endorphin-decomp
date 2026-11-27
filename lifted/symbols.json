@@ -37829,6 +37829,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005DD310": {
+    "name": "sub_005DD310",
+    "class": "Unknown",
+    "signature": "void fn_005DD310(void* self, void* str)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D0760 (Unknown::conditionalFindAndStore_005D0760).",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DF1F0": {
     "name": "AnimatableTransform::vfunc_15",
     "class": "AnimatableTransform",

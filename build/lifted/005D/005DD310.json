@@ -1,0 +1,22 @@
+{
+  "va": "0x005DD310",
+  "size": 34,
+  "orig_symbol": "sub_005DD310",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "sub_005DD310",
+  "class": "Unknown",
+  "signature": "void fn_005DD310(void* self, void* str)",
+  "summary": "Auto-lifted identical-shape clone of 0x005D0760 (Unknown::conditionalFindAndStore_005D0760).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1F1",
+      "type": "uint8_t",
+      "name": "flag1f1"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:09:59Z"
+}
