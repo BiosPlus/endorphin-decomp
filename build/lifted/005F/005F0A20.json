@@ -1,0 +1,46 @@
+{
+  "va": "0x005F0A20",
+  "size": 186,
+  "orig_symbol": "NMData::RPROJointData::vfunc_17_off_C",
+  "src_path": "src/NMData/RPROJointData.cpp",
+  "lifted_path": "lifted/NMData/RPROJointData.cpp",
+  "name": "NMData::RPROJointData::vfunc_17_off_C",
+  "class": "NMData::RPROJointData",
+  "signature": "extern \"C\" void ext_0065F280(void* self, void* arg); // this-adjustor thunk -\u003e sub_0065F2A0 void* fn_005F0A20(void* self)",
+  "summary": "Clone-style factory: allocates and constructs a 0x2FC-byte object, initializes its 0x178 flag and 0xE4..0xEC members from this RPROJointData, calls the sub-object's vfunc slot 23 and vfunc slot 8, and returns the new object. Entered with the RenderObjectOwner subobject (+0xC) as this.",
+  "fields": [
+    {
+      "class": "NMData::RPROJointData",
+      "offset": "+0xE4",
+      "type": "void*",
+      "name": "field_0xe4"
+    },
+    {
+      "class": "NMData::RPROJointData",
+      "offset": "+0xE8",
+      "type": "uint32_t",
+      "name": "field_0xe8"
+    },
+    {
+      "class": "NMData::RPROJointData",
+      "offset": "+0xEC",
+      "type": "uint32_t",
+      "name": "field_0xec"
+    },
+    {
+      "class": "NMData::RPROJointData",
+      "offset": "+0x148",
+      "type": "uint8_t",
+      "name": "field_0x148"
+    },
+    {
+      "class": "NMData::RPROJointData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:16Z"
+}

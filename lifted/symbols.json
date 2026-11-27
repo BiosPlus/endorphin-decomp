@@ -55022,6 +55022,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::SkeletalJointData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005F0A20": {
+    "name": "NMData::RPROJointData::vfunc_17_off_C",
+    "class": "NMData::RPROJointData",
+    "signature": "extern \"C\" void ext_0065F280(void* self, void* arg); // this-adjustor thunk -\u003e sub_0065F2A0 void* fn_005F0A20(void* self)",
+    "summary": "Clone-style factory: allocates and constructs a 0x2FC-byte object, initializes its 0x178 flag and 0xE4..0xEC members from this RPROJointData, calls the sub-object's vfunc slot 23 and vfunc slot 8, and returns the new object. Entered with the RenderObjectOwner subobject (+0xC) as this.",
+    "lifted_path": "lifted/NMData/RPROJointData.cpp"
+  },
   "0x005F0D20": {
     "name": "NMData::MagnetJointData::vfunc_8",
     "class": "NMData::MagnetJointData",

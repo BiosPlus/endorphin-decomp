@@ -10,7 +10,11 @@
 // Recovered field layout for NMData::RPROJointData:
 namespace lifted_layout {
 struct NMData_RPROJointData_Fields {
-    // +0x178 uint8_t                  field_0x178  (evidence: 0x005E23F0)
+    // +0xE4  void*                    field_0xe4  (evidence: 0x005F0A20)
+    // +0xE8  uint32_t                 field_0xe8  (evidence: 0x005F0A20)
+    // +0xEC  uint32_t                 field_0xec  (evidence: 0x005F0A20)
+    // +0x148 uint8_t                  field_0x148  (evidence: 0x005F0A20)
+    // +0x178 uint8_t                  field_0x178  (evidence: 0x005E23F0, 0x005F0A20)
     // +0x194 int32_t                  field_0x194  (evidence: 0x005EC2A0)
 };
 } // namespace lifted_layout

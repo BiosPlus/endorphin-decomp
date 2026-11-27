@@ -61,3 +61,60 @@ void* fn_005E23F0(void* self) {
     return static_cast<void*>(mem_00B45D70);
 }
 } // namespace lift_005E23F0
+
+// [0x005F0A20] NMData::RPROJointData::vfunc_17_off_C (186 bytes)
+namespace lift_005F0A20 {
+extern void* ext_006A5C62(uint32_t size);        // IAT thunk -> MFC80!ord_762 (operator new)
+extern void* ext_005F0960(void* mem);            // ctor: constructs object at mem, returns it
+extern void ext_005881D0(void* self, void* arg);
+extern void ext_0065F280(void* self, void* arg); // this-adjustor thunk -> sub_0065F2A0
+
+// @name NMData::RPROJointData::vfunc_17_off_C
+// @class NMData::RPROJointData
+// @summary Clone-style factory: allocates and constructs a 0x2FC-byte object, initializes its 0x178 flag and 0xE4..0xEC members from this RPROJointData, calls the sub-object's vfunc slot 23 and vfunc slot 8, and returns the new object. Entered with the RenderObjectOwner subobject (+0xC) as this.
+// @field NMData::RPROJointData +0x0E4 void* field_0xe4
+// @field NMData::RPROJointData +0x0E8 uint32_t field_0xe8
+// @field NMData::RPROJointData +0x0EC uint32_t field_0xec
+// @field NMData::RPROJointData +0x148 uint8_t field_0x148
+// @field NMData::RPROJointData +0x178 uint8_t field_0x178
+void* fn_005F0A20(void* self) {
+    // self is the +0xC subobject; the full object starts 0xC bytes before it.
+    uint8_t* obj = static_cast<uint8_t*>(self) - 0xC;
+
+    // new object (0x2FC bytes) + constructor. Original null check kept: ctor skipped if alloc returned null.
+    void* mem = ext_006A5C62(0x2FCu);
+    void* inst = nullptr;
+    if (mem != nullptr) {
+        inst = ext_005F0960(mem);
+    }
+
+    // inst->vtbl[23](inst, self + 8)
+    {
+        using VFn = void(__thiscall*)(void*, void*);
+        void** vt = *reinterpret_cast<void***>(inst);
+        reinterpret_cast<VFn>(vt[23])(inst, static_cast<uint8_t*>(self) + 8);
+    }
+
+    // inst->0x178 = obj->0x178; ext_005881D0(inst, obj)
+    lift_field<uint8_t>(inst, 0x178) = lift_field<uint8_t>(obj, 0x178);
+    ext_005881D0(inst, obj);
+
+    // ext_0065F280(inst + 0xE4, obj + 0xE4)
+    ext_0065F280(static_cast<uint8_t*>(inst) + 0xE4, obj + 0xE4);
+
+    // copy 0xE8 and 0xEC dwords
+    lift_field<uint32_t>(inst, 0xE8) = lift_field<uint32_t>(obj, 0xE8);
+    lift_field<uint32_t>(inst, 0xEC) = lift_field<uint32_t>(obj, 0xEC);
+
+    // sub = self - 8 (obj + 4); result = sub->vtbl[8](sub); inst->0x148 = result
+    {
+        using VFn = uint8_t(__thiscall*)(void*);
+        void* sub = static_cast<uint8_t*>(self) - 8;
+        void** vt = *reinterpret_cast<void***>(sub);
+        uint8_t r = reinterpret_cast<VFn>(vt[8])(sub);
+        lift_field<uint8_t>(inst, 0x148) = r;
+    }
+
+    return inst;
+}
+} // namespace lift_005F0A20
