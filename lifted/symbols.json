@@ -18687,6 +18687,13 @@
     "summary": "One-time (guarded) initialization of a global object at mem_00AE5CFC; stores its address into the +0x04 slot of the argument.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004D4AD0": {
+    "name": "ExprParser::DynamicEnumType::vfunc_42",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}\u003e",
+    "signature": "bool fn_004D4AD0(void* arg1)",
+    "summary": "Reads the object pointer stored at arg, queries it through ext_004D3CF0 and a temp wrapper's vfunc 42, releases the result via vfunc 30, and returns the bool from vfunc 42; throws if the object pointer is null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004D4D50": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e::vfunc_1",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e",

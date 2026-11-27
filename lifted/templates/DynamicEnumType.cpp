@@ -2573,3 +2573,52 @@ int __stdcall fn_005167F0(void* arg0) {
 }
 } // namespace lift_004B1CA0
 } // namespace lift_005167F0
+
+// [0x004D4AD0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_42 (156 bytes)
+namespace lift_004D4AD0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+extern void ext_004D3CF0();
+extern void ext_006720C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Reads the object pointer stored at arg, queries it through ext_004D3CF0 and a temp wrapper's vfunc 42, releases the result via vfunc 30, and returns the bool from vfunc 42; throws if the object pointer is null.
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+bool fn_004D4AD0(void* arg1) {
+    // Object pointer held at *arg1 (asm: mov ecx, [eax]).
+    void* obj = *reinterpret_cast<void**>(arg1);
+
+    if (obj == nullptr) {
+        // Null object: construct a DerivedException on the stack and throw it.
+        alignas(8) unsigned char exc[64] = {};
+        reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(exc);
+        reinterpret_cast<void (*)(void*, const void*)>(ext_006A6DD2)(
+            exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1CU)));
+        return false;
+    }
+
+    // p = obj->sub_004D3CF0(); temp = wrapper(p)
+    void* p = reinterpret_cast<void* (*)(void*)>(ext_004D3CF0)(obj);
+    alignas(8) unsigned char temp[32] = {};
+    reinterpret_cast<void (*)(void*, void*)>(ext_006720C0)(temp, p);
+
+    // vfunc slot 42 (byte offset 0xA8) on temp: writes result via hidden pointer, returns bool.
+    void* vtbl = *reinterpret_cast<void**>(temp);
+    void* slot42 = lift_field<void*>(vtbl, 0xA8);
+    void* result = nullptr;
+    bool ok = reinterpret_cast<bool (*)(void*, void**, void*)>(slot42)(temp, &result, arg1);
+
+    // Release result through its vfunc slot 30 (byte offset 0x78).
+    if (result != nullptr) {
+        void* result_vtbl = *reinterpret_cast<void**>(result);
+        void* slot30 = lift_field<void*>(result_vtbl, 0x78);
+        void* scratch = nullptr;
+        reinterpret_cast<void (*)(void*, void**)>(slot30)(result, &scratch);
+    }
+
+    return ok;
+}
+} // namespace lift_004D4AD0
