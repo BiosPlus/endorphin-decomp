@@ -4466,3 +4466,44 @@ void* __stdcall fn_006670A0(uint32_t a0, uint32_t a1, uint32_t a2, const void* s
     return obj;
 }
 } // namespace lift_006670A0
+
+// [0x006667E0] sub_006667E0 (156 bytes)
+namespace lift_006667E0 {
+// IAT slot holding the MSVC80 std::basic_string<char> copy-constructor address.
+extern uint32_t mem_00924FE0;
+
+// MSVC thiscall: `this` in ECX, one stack argument (callee cleans).
+typedef void (__thiscall* StringCopyCtorFn)(void* self, const void* src);
+
+// @name Unknown::ConstructSixStrings
+// @class Unknown
+// @summary Copy-constructs MSVC std::string members at +0x00/+0x1C/+0x38/+0x54/+0x74 from args a/b/f/d/c, stores arg e at +0x70, zeroes +0x94, returns this. The SEH frame of the original is omitted.
+// @field Unknown +0x00 MsvcStdString field_0x00
+// @field Unknown +0x1C MsvcStdString field_0x1c
+// @field Unknown +0x38 MsvcStdString field_0x38
+// @field Unknown +0x54 MsvcStdString field_0x54
+// @field Unknown +0x70 uint8_t field_0x70
+// @field Unknown +0x74 MsvcStdString field_0x74
+// @field Unknown +0x94 uint32_t field_0x94
+void* __thiscall fn_006667E0(void* self,
+                             const void* a,
+                             const void* b,
+                             const void* c,
+                             const void* d,
+                             uint8_t e,
+                             const void* f) {
+    const auto copy_string = [](void* dst, const void* src) {
+        reinterpret_cast<StringCopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0))(dst, src);
+    };
+
+    copy_string(self, a);                                   // +0x00 <- a
+    copy_string(&lift_field<uint8_t>(self, 0x1C), b);       // +0x1C <- b
+    copy_string(&lift_field<uint8_t>(self, 0x38), f);       // +0x38 <- f
+    copy_string(&lift_field<uint8_t>(self, 0x54), d);       // +0x54 <- d
+    lift_field<uint8_t>(self, 0x70) = e;                    // +0x70 <- e
+    copy_string(&lift_field<uint8_t>(self, 0x74), c);       // +0x74 <- c
+    lift_field<uint32_t>(self, 0x94) = 0;
+
+    return self;
+}
+} // namespace lift_006667E0

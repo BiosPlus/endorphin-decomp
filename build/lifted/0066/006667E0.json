@@ -1,0 +1,58 @@
+{
+  "va": "0x006667E0",
+  "size": 156,
+  "orig_symbol": "sub_006667E0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::ConstructSixStrings",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_006667E0(void* self, const void* a, const void* b, const void* c, const void* d, uint8_t e, const void* f)",
+  "summary": "Copy-constructs MSVC std::string members at +0x00/+0x1C/+0x38/+0x54/+0x74 from args a/b/f/d/c, stores arg e at +0x70, zeroes +0x94, returns this. The SEH frame of the original is omitted.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "MsvcStdString",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "MsvcStdString",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "MsvcStdString",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "MsvcStdString",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "MsvcStdString",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "uint32_t",
+      "name": "field_0x94"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:28:57Z"
+}

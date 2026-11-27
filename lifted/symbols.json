@@ -57605,6 +57605,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_006667A0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x006667E0": {
+    "name": "Unknown::ConstructSixStrings",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006667E0(void* self, const void* a, const void* b, const void* c, const void* d, uint8_t e, const void* f)",
+    "summary": "Copy-constructs MSVC std::string members at +0x00/+0x1C/+0x38/+0x54/+0x74 from args a/b/f/d/c, stores arg e at +0x70, zeroes +0x94, returns this. The SEH frame of the original is omitted.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006668B0": {
     "name": "ReleaseFiveStringMembers_006668B0",
     "signature": "void fn_006668B0(void* self)",
