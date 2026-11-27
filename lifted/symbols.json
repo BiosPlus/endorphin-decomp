@@ -48030,6 +48030,13 @@
     "summary": "Returns 1 when arg == 1; otherwise tail-forwards arg to ext_004701E0 (AnimatableTransform::vfunc_13_off_C) and returns its result.",
     "lifted_path": "lifted/AdvXMLParser/Element.cpp"
   },
+  "0x0063E3E0": {
+    "name": "Unknown::InitStateAndCopyTail_0063E3E0",
+    "class": "Unknown",
+    "signature": "extern uint32_t mem_00A9B148;   // .data u32 0x00B53B30 (passed as arg0) extern uint32_t mem_00924FE4;   // .rdata u32 0x00629122 (MSVCP80 string ctor IAT slot) extern uint32_t mem_00924FF4;   // .rdata u32 0x00628FF0 (MSVCP80 string dtor IAT slot) extern uint32_t mem_00924FE0;   // .rdata u32 0x0062916E (MSVCP80 string copy-ctor IAT slot) void* fn_0063E3E0(void* self, uint32_t stackArg)",
+    "summary": "Stamps the object vtable, runs the string-copy ctor stub with a global seed, and copy-constructs a string member at +0x24.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E460": {
     "name": "Unknown::Unknown(uint32_t, const std::string\u0026) (derived ctor)",
     "class": "Unknown",

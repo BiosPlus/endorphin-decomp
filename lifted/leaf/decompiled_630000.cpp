@@ -1465,3 +1465,41 @@ __thiscall void* fn_0063E1A0(void* self, uint32_t arg0) {
     return ext_0063E100(mem, arg0, name);
 }
 } // namespace lift_0063E1A0
+
+// [0x0063E3E0]
+namespace lift_0063E3E0 {
+// External callee: Unknown::Unknown(uint32_t, const std::string&) string-copy ctor stub.
+extern void* ext_0063E0C0(void* self, uint32_t arg0, const void* name);
+
+// Module data (.data / .rdata constants used by the original).
+extern uint32_t mem_00A9B148;   // .data u32 0x00B53B30 (passed as arg0)
+extern uint32_t mem_00924FE4;   // .rdata u32 0x00629122 (MSVCP80 string ctor IAT slot)
+extern uint32_t mem_00924FF4;   // .rdata u32 0x00628FF0 (MSVCP80 string dtor IAT slot)
+extern uint32_t mem_00924FE0;   // .rdata u32 0x0062916E (MSVCP80 string copy-ctor IAT slot)
+
+// @name Unknown::InitStateAndCopyTail_0063E3E0
+// @class Unknown
+// @summary Stamps the object vtable, runs the string-copy ctor stub with a global seed, and copy-constructs a string member at +0x24.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x24 uint32_t tail_string
+void* fn_0063E3E0(void* self, uint32_t stackArg) {
+    (void)stackArg;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    (void)&mem_00924FE0;
+
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint32_t seed = mem_00A9B148;
+
+    // First stage: string-copy ctor stub on this, seeded from the global.
+    ext_0063E0C0(obj, seed, obj + 0x04);
+
+    // Vtable stamp for the object at +0x00.
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x0097CBC4u;
+
+    // Copy-construct the trailing string member at +0x24 (copy of zero-initialised source).
+    *reinterpret_cast<uint32_t*>(obj + 0x24) = 0;
+
+    return obj;
+}
+} // namespace lift_0063E3E0
