@@ -8,7 +8,7 @@
 // Recovered field layout for StringPairList:
 namespace lifted_layout {
 struct StringPairList_Fields {
-    // +0x4   DWORD                    field_0x04  (evidence: 0x004F02A0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    field_0x04  (evidence: 0x004EFDD0, 0x004F02A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    head  (evidence: 0x004EFDF0) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 size  (evidence: 0x004EFDF0)
 };

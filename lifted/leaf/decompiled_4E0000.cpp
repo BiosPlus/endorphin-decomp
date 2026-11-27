@@ -1192,3 +1192,26 @@ extern void __cdecl fn_004E7540(void** arr, int32_t start, int32_t len, void* va
     ext_004E7430(arr, hole, start, val);
 }
 } // namespace lift_004E7540
+
+// [0x004EFDD0] sub_004EFDD0 (29 bytes)
+namespace lift_004EFDD0 {
+// @name sub_004EFDD0
+// @summary Auto-lifted identical-shape clone of 0x004F02A0 (StringPairList::clearAndReleaseHandle).
+namespace lift_004F02A0 {
+// Known callee 0x004EFDF0: StringPairList::clear (Clears all nodes in a doubly-linked list of string pairs and resets size to zero.)
+extern void ext_004AEE60(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(DWORD arg);
+
+// @name StringPairList::clearAndReleaseHandle
+// @class StringPairList
+// @summary Clears the string pair list, passes the value at +0x04 to MFC80 ord_764, then zeroes +0x04.
+// @field StringPairList +0x04 DWORD field_0x04
+void fn_004EFDD0(void* self) {
+    ext_004AEE60(self);
+    DWORD value = lift_field<DWORD>(self, 0x04);
+    ext_006A5C5C(value);
+    lift_field<DWORD>(self, 0x04) = 0;
+}
+} // namespace lift_004F02A0
+} // namespace lift_004EFDD0

@@ -20698,6 +20698,13 @@
     "summary": "Walk ancestor chain via +0x38 to find first matching entry in tree at +0x240, or return +0x230",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004EFDD0": {
+    "name": "sub_004EFDD0",
+    "class": "StringPairList",
+    "signature": "void fn_004EFDD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F02A0 (StringPairList::clearAndReleaseHandle).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EFDF0": {
     "name": "StringPairList::clear",
     "class": "StringPairList",
