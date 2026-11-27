@@ -2533,3 +2533,42 @@ void* __thiscall sub_0041CE40(void* self, const char* str) {
     return self;
 }
 } // namespace lift_0041CE40
+
+// [0x004167A0] sub_004167A0 (117 bytes)
+namespace lift_004167A0 {
+// Known callee 0x006A5F4A: thunk_MFC80_ord_3761 (IAT jump thunk forwarding to MFC80!ord_3761.)
+extern void ext_006A5F4A();
+extern int mem_009242FC;  // MFC80!ord_310 (CString temp ctor), IAT slot
+extern int mem_00924300;  // MFC80!ord_876 (CString -> LPCSTR), IAT slot
+extern int mem_009242F4;  // MFC80!ord_578 (CString dtor), IAT slot
+extern int mem_009251E4;  // MSVCR80!atoi, IAT slot
+
+// @name CommandParser::setIntFromCStringArg
+// @class CommandParser
+// @summary Builds a CString temp, forwards it to member at +0xdc, then atoi()s it into the int at [[self+0x184]+0x17c].
+// @field CommandParser +0xdc void* field_0xdc
+// @field CommandParser +0x184 void* field_0x184
+void fn_004167A0(void* self) {
+    auto* const base = static_cast<unsigned char*>(self);
+
+    // CString tmp; (MFC80 ord_310 ctor; no portable equivalent, modeled as an opaque pointer slot)
+    const char* tmp = nullptr;
+    (void)&mem_009242FC;
+
+    // thiscall: ecx = self+0xdc, one stack arg = &tmp; callee cleans with ret 4.
+    using ThunkFn = void (*)(void* thisPtr, const char** arg);
+    reinterpret_cast<ThunkFn>(&ext_006A5F4A)(base + 0xdc, &tmp);
+
+    // int value = atoi(LPCSTR(tmp)); (MFC80 ord_876 performs the LPCSTR conversion)
+    (void)&mem_00924300;
+    (void)&mem_009251E4;
+    const int value = std::atoi(tmp != nullptr ? tmp : "");
+
+    // *(int*)(*(self+0x184) + 0x17c) = value;
+    auto* const target = *reinterpret_cast<unsigned char**>(base + 0x184);
+    lift_field<int>(target, 0x17c) = value;
+
+    // ~CString tmp; (MFC80 ord_578 dtor)
+    (void)&mem_009242F4;
+}
+} // namespace lift_004167A0

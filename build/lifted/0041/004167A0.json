@@ -1,0 +1,28 @@
+{
+  "va": "0x004167A0",
+  "size": 117,
+  "orig_symbol": "sub_004167A0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "CommandParser::setIntFromCStringArg",
+  "class": "CommandParser",
+  "signature": "extern \"C\" int mem_009242FC;  // MFC80!ord_310 (CString temp ctor), IAT slot extern \"C\" int mem_00924300;  // MFC80!ord_876 (CString -\u003e LPCSTR), IAT slot extern \"C\" int mem_009242F4;  // MFC80!ord_578 (CString dtor), IAT slot extern \"C\" int mem_009251E4;  // MSVCR80!atoi, IAT slot void fn_004167A0(void* self)",
+  "summary": "Builds a CString temp, forwards it to member at +0xdc, then atoi()s it into the int at [[self+0x184]+0x17c].",
+  "fields": [
+    {
+      "class": "CommandParser",
+      "offset": "+0xDC",
+      "type": "void*",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "CommandParser",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:07:18Z"
+}
