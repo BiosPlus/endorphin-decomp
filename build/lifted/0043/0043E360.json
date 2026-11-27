@@ -1,0 +1,13 @@
+{
+  "va": "0x0043E360",
+  "size": 51,
+  "orig_symbol": "sub_0043E360",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "ConstructElementRangeEnd",
+  "signature": "uint32_t* __stdcall fn_0043E360(uint32_t* base, uint32_t count, uint32_t arg)",
+  "summary": "Constructs count 4-byte elements in base[] via ext_0043D870 and returns base + count.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:50:23Z"
+}

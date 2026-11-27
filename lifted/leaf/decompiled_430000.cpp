@@ -5479,3 +5479,17 @@ void* __thiscall fn_0043BB40(void* self, uint32_t arg1, uint32_t arg2, uint32_t 
     return self;
 }
 } // namespace lift_0043BB40
+
+// [0x0043E360]
+namespace lift_0043E360 {
+// @name ConstructElementRangeEnd
+// @summary Constructs count 4-byte elements in base[] via ext_0043D870 and returns base + count.
+
+
+extern void ext_0043D870(uint32_t* base, uint32_t count, uint32_t arg);
+
+uint32_t* __stdcall fn_0043E360(uint32_t* base, uint32_t count, uint32_t arg) {
+    ext_0043D870(base, count, arg);
+    return base + count;
+}
+} // namespace lift_0043E360
