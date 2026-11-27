@@ -35504,6 +35504,13 @@
     "summary": "Reads the VideoPlaneData X-scale field and returns 1 if it is at least 1e-6 (else 0); throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D2B80": {
+    "name": "ExprParser::ReadWriteMethodType\u003cVideoPlaneData, float\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, float, \u0026public: void __thiscall NMData::VideoPlaneData::setYScale(float)\u003e",
+    "signature": "extern \"C\" int mem_00B459F0;   // static accessor object (first DWORD = value, then vtable) void fn_005D2B80(void* holder)",
+    "summary": "One-time init of the static accessor object at 0xB459F0, then binds holder+0x04 to it.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005D2C00": {
     "name": "ExprParser::ReadMethodType\u003cVideoPlaneData, getYScale\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e",

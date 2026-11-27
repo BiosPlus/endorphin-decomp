@@ -12300,3 +12300,36 @@ void fn_005D1CE0(void* self) {
     lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B459B0));
 }
 } // namespace lift_005D1CE0
+
+// [0x005D2B80] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYScale(float)>::vfunc_40 (122 bytes)
+namespace lift_005D2B80 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = &static accessor object, one stack arg: stores arg into first DWORD of that object)
+extern void ext_0067A670();
+extern int mem_00B459F4;   // init guard byte/dword for static accessor object
+extern int mem_00B459F0;   // static accessor object (first DWORD = value, then vtable)
+
+// @name ExprParser::ReadWriteMethodType<VideoPlaneData, float>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYScale(float)>
+// @summary One-time init of the static accessor object at 0xB459F0, then binds holder+0x04 to it.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_005D2B80(void* holder) {
+    // SEH frame (fs:[0] push/pop, scope 0x008A53CE) is dropped; it only guards the init path.
+    // Function-local static guard: if already initialised, skip straight to the bind.
+    if (lift_field<uint8_t>(&mem_00B459F4, 0) & 1u) {
+        lift_field<void*>(holder, 0x04) = &mem_00B459F0;
+        return;
+    }
+
+    // Set init-done bit.
+    lift_field<uint32_t>(&mem_00B459F4, 0) |= 1u;
+
+    // Store 0 into the first DWORD of the static object via the thiscall helper (ECX = &mem_00B459F0, arg = 0).
+    ext_0067A670();
+
+    // Object vtable pointer (0x009669EC) overwrites the first DWORD.
+    lift_field<uintptr_t>(&mem_00B459F0, 0) = 0x009669ECu;
+
+    // Bind holder+0x04 to the static object.
+    lift_field<void*>(holder, 0x04) = &mem_00B459F0;
+}
+} // namespace lift_005D2B80
