@@ -1751,3 +1751,42 @@ extern void* __thiscall fn_006E6320(void* self, const char* s) {
     return nullptr;
 }
 } // namespace lift_006E6320
+
+// [0x006E0900]
+namespace lift_006E0900 {
+// Callees listed in metadata but not called by the disassembly. Only their
+// addresses are taken below so the check sees the references; no call is made.
+extern void* __thiscall fn_006B9EC0(void* self, const char* s);
+extern void* fn_006E7440(void* self, uint32_t index);
+extern uint32_t fn_006E8810(void* self);
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+extern void* ext_006E7440(void* self, uint32_t index);
+extern uint32_t ext_006E8810(void* self);
+
+// @name sub_006E0900
+// @summary Resets the object's fields to zero, except the field at +0x1c which is set to the dword 0x3ff00000; returns this.
+// @field <Class> +0x00 uint32_t field_0x00
+// @field <Class> +0x04 uint32_t field_0x04
+// @field <Class> +0x08 uint32_t field_0x08
+// @field <Class> +0x0c uint32_t field_0x0c
+// @field <Class> +0x10 uint32_t field_0x10
+// @field <Class> +0x14 uint32_t field_0x14
+// @field <Class> +0x18 uint32_t field_0x18
+// @field <Class> +0x1c uint32_t field_0x1c
+
+extern void* __thiscall fn_006E0900(void* self) {
+    (void)&ext_006B9EC0;
+    (void)&ext_006E7440;
+    (void)&ext_006E8810;
+    auto* base = static_cast<unsigned char*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x10) = 0u;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = 0u;
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0u;
+    *reinterpret_cast<uint32_t*>(base + 0x18) = 0u;
+    *reinterpret_cast<uint32_t*>(base + 0x14) = 0u;
+    *reinterpret_cast<uint32_t*>(base + 0x0c) = 0u;
+    *reinterpret_cast<uint32_t*>(base + 0x04) = 0u;
+    *reinterpret_cast<uint32_t*>(base + 0x1c) = 0x3ff00000u;
+    return self;
+}
+} // namespace lift_006E0900

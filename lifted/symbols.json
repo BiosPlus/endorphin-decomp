@@ -69302,6 +69302,12 @@
     "summary": "Writes out[i] = src[i] * scale for the four doubles of a Vec4d (scale passed by value).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E0900": {
+    "name": "sub_006E0900",
+    "signature": "extern \"C\" void* __thiscall fn_006E0900(void* self)",
+    "summary": "Resets the object's fields to zero, except the field at +0x1c which is set to the dword 0x3ff00000; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E0940": {
     "name": "quatToYAxis",
     "signature": "void __cdecl sub_006E0940(double* dst, const double* q)",

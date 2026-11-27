@@ -9,8 +9,16 @@
 namespace lifted_layout {
 struct _Class__Fields {
     // +0x0   DWORD field_0x00 (dereferenced as the forwarded argument)  (evidence: 0x00537EC0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x006E0900) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x00433680) // CONFLICT: multiple definitions at +0x0
-    // +0x8   float field_0x08 (written: abs-like result of the float argument)  (evidence: 0x007C9D00)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x006E0900)
+    // +0x8   float field_0x08 (written: abs-like result of the float argument)  (evidence: 0x007C9D00) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x006E0900) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint32_t                 field_0x0c  (evidence: 0x006E0900)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x006E0900)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x006E0900)
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x006E0900)
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x006E0900)
     // +0x44  uint8_t* field_0x44 (pointer dereferenced as byte)  (evidence: 0x007C6F20)
     // +0xDC  DWORD field_0xdc (array; element stride 4, indexed by field_0x194*15)  (evidence: 0x00533CF0)
     // +0x194 DWORD                    field_0x194  (evidence: 0x00533CF0)

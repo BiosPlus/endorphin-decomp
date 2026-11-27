@@ -1,0 +1,63 @@
+{
+  "va": "0x006E0900",
+  "size": 32,
+  "orig_symbol": "sub_006E0900",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E0900",
+  "signature": "extern \"C\" void* __thiscall fn_006E0900(void* self)",
+  "summary": "Resets the object's fields to zero, except the field at +0x1c which is set to the dword 0x3ff00000; returns this.",
+  "fields": [
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:49:49Z"
+}
