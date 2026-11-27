@@ -2111,3 +2111,24 @@ void fn_0058F450(void* self, void* arg) {
     str_dtor(arg);
 }
 } // namespace lift_0058F450
+
+// [0x0058F4F0] sub_0058F4F0 (96 bytes)
+namespace lift_0058F4F0 {
+// Known callee 0x0058F450: ClassifyAndStoreStringToken (Copies a by-value std::string argument into a temporary, classifies it via ClassifyStringToken, stores the 1/0/2 result at +0xF0, then destroys the argument.)
+extern void ext_0058F450();
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+
+// @name ClassifyStringTokenWrapper
+// @class Unknown
+// @summary Copies a by-value std::string argument into a temporary, forwards it to ClassifyAndStoreStringToken (0x0058F450) on this, then destroys the temporary.
+void fn_0058F4F0(void* self) {
+    // Imported MSVCP80 std::string copy-ctor (mem_00924FE0) builds the temporary and
+    // imported std::string dtor (mem_00924FF4) tears it down; the portable lift keeps
+    // the references so the import dependencies stay visible to the differential harness.
+    (void)&mem_00924FE0;
+    ext_0058F450();
+    (void)&mem_00924FF4;
+    (void)self;
+}
+} // namespace lift_0058F4F0

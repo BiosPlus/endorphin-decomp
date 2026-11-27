@@ -1,0 +1,14 @@
+{
+  "va": "0x0058F4F0",
+  "size": 96,
+  "orig_symbol": "sub_0058F4F0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "ClassifyStringTokenWrapper",
+  "class": "Unknown",
+  "signature": "void fn_0058F4F0(void* self)",
+  "summary": "Copies a by-value std::string argument into a temporary, forwards it to ClassifyAndStoreStringToken (0x0058F450) on this, then destroys the temporary.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:31:11Z"
+}

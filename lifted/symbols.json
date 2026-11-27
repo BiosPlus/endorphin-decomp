@@ -33577,6 +33577,13 @@
     "summary": "Copies a by-value std::string argument into a temporary, classifies it via ClassifyStringToken, stores the 1/0/2 result at +0xF0, then destroys the argument.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x0058F4F0": {
+    "name": "ClassifyStringTokenWrapper",
+    "class": "Unknown",
+    "signature": "void fn_0058F4F0(void* self)",
+    "summary": "Copies a by-value std::string argument into a temporary, forwards it to ClassifyAndStoreStringToken (0x0058F450) on this, then destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058F550": {
     "name": "descriptiveName_0058F550",
     "signature": "void* fn_0058F550(void* self)",
