@@ -1944,3 +1944,45 @@ void fn_007C53C0(void* self) {
     lift_field<uint8_t>(self, 0x1c) = (sumA <= (sumB >> 2)) ? 1 : 0;
 }
 } // namespace lift_007C53C0
+
+// [0x007C1F90] sub_007C1F90 (128 bytes)
+namespace lift_007C1F90 {
+// @name Unknown::TransferFromSourceStream
+// @class Unknown
+// @summary Copies min(src->remaining, self->count) bytes from self->src stream into self's output cursor and advances both sides.
+// @field Unknown +0x0c uint8_t* out_cursor
+// @field Unknown +0x10 uint32_t count
+// @field Unknown +0x14 uint32_t transferred
+// @field Unknown +0x1c SrcStream* src
+// @field SrcStream +0x08 uint8_t* base
+// @field SrcStream +0x10 uint8_t* in_cursor
+// @field SrcStream +0x14 uint32_t remaining
+void fn_007C1F90(void* self) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+    uint8_t* a = *reinterpret_cast<uint8_t**>(s + 0x1c);
+
+    uint32_t n = *reinterpret_cast<uint32_t*>(a + 0x14);
+    uint32_t count = *reinterpret_cast<uint32_t*>(s + 0x10);
+    if (n > count) {
+        n = count;
+    }
+    if (n == 0) {
+        return;
+    }
+
+    uint8_t* in = *reinterpret_cast<uint8_t**>(a + 0x10);
+    uint8_t* out = *reinterpret_cast<uint8_t**>(s + 0x0c);
+    std::memcpy(out, in, n);
+
+    *reinterpret_cast<uint8_t**>(s + 0x0c) = out + n;
+    *reinterpret_cast<uint8_t**>(a + 0x10) = in + n;
+
+    *reinterpret_cast<uint32_t*>(s + 0x14) += n;
+    *reinterpret_cast<uint32_t*>(s + 0x10) -= n;
+    *reinterpret_cast<uint32_t*>(a + 0x14) -= n;
+
+    if (*reinterpret_cast<uint32_t*>(a + 0x14) == 0) {
+        *reinterpret_cast<uint8_t**>(a + 0x10) = *reinterpret_cast<uint8_t**>(a + 0x08);
+    }
+}
+} // namespace lift_007C1F90

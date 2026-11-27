@@ -78127,6 +78127,13 @@
     "summary": "Writes a 16-bit unsigned integer in big-endian order to a buffer and advances the write offset by 2.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C1F90": {
+    "name": "Unknown::TransferFromSourceStream",
+    "class": "Unknown",
+    "signature": "void fn_007C1F90(void* self)",
+    "summary": "Copies min(src-\u003eremaining, self-\u003ecount) bytes from self-\u003esrc stream into self's output cursor and advances both sides.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C2E50": {
     "name": "readFloatPtr",
     "class": "unknown",

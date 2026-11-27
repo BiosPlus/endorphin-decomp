@@ -1,0 +1,58 @@
+{
+  "va": "0x007C1F90",
+  "size": 128,
+  "orig_symbol": "sub_007C1F90",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::TransferFromSourceStream",
+  "class": "Unknown",
+  "signature": "void fn_007C1F90(void* self)",
+  "summary": "Copies min(src-\u003eremaining, self-\u003ecount) bytes from self-\u003esrc stream into self's output cursor and advances both sides.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "out_cursor"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "transferred"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "SrcStream*",
+      "name": "src"
+    },
+    {
+      "class": "SrcStream",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "base"
+    },
+    {
+      "class": "SrcStream",
+      "offset": "+0x10",
+      "type": "uint8_t*",
+      "name": "in_cursor"
+    },
+    {
+      "class": "SrcStream",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "remaining"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:16:12Z"
+}
