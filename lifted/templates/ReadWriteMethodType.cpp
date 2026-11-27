@@ -18048,3 +18048,36 @@ void fn_00695660(void* holder) {
 }
 } // namespace lift_005D2970
 } // namespace lift_00695660
+
+// [0x00488480] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::AnimationEventData::`vcall'{324, {flat}}, 0}>::vfunc_41 (134 bytes)
+namespace lift_00488480 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (returns its first argument)
+extern uint32_t ext_0046E780(void* ret, const void* a1, void* const* a2);
+// Known callee 0x00488260: sub_00488260 (virtual dispatch thunk: forwards to vtable slot at +0x144)
+extern uint32_t ext_00488260(void* self, void* ret);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception with fixed message)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException)
+extern void ext_006A6DD2(void* obj, uintptr_t throw_info);
+// IAT slot holding std::basic_string dtor (MSVCP80); the temporary's dtor is not modeled portably.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::AnimationEventData::`vcall'{324, {flat}}, 0}>
+// @summary Dereferences the holder's object pointer and, if non-null, virtually calls slot +0x144 with a temporary return buffer; otherwise throws DerivedException.
+uint32_t fn_00488480(void* const* holder, const void* arg2) {
+    void* self = *holder;
+    if (self == nullptr) {
+        alignas(8) uint8_t exc[0x20] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1CU);
+        return 0;
+    }
+
+    alignas(8) uint8_t tmp[0x30] = {};
+    uint32_t ret_buf = ext_0046E780(tmp, arg2, holder);
+    uint32_t result = ext_00488260(self, reinterpret_cast<void*>(static_cast<uintptr_t>(ret_buf)));
+    (void)&mem_00924FF4;
+    return result;
+}
+} // namespace lift_00488480
