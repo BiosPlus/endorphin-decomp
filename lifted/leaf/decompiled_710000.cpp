@@ -2808,3 +2808,19 @@ extern void* __fastcall fn_00711C60(void* self, uint32_t /*edx*/, uint8_t create
     return lift_field<void*>(ext_0071E680(self), 0x2c);
 }
 } // namespace lift_00711C60
+
+// [0x00717DB0] sub_00717DB0 (33 bytes)
+namespace lift_00717DB0 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* self, const char* s);
+
+// Constant string passed to the callee (original: push 0xaac46c).
+extern char mem_00AAC46C[];
+
+// @name Unknown::initFromCStringConst_00717DB0
+// @class Unknown
+// @summary Calls initAssignCString on the object with a fixed C string constant and returns the object.
+void fn_00717DB0(void* self) {
+    ext_006B9D80(self, reinterpret_cast<const char*>(&mem_00AAC46C));
+}
+} // namespace lift_00717DB0
