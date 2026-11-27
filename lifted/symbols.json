@@ -12038,6 +12038,12 @@
     "summary": "Returns the byte at this+0xB4 and resets it to zero.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004974E0": {
+    "name": "refreshNamedFloatValues",
+    "signature": "void fn_004974E0(void* self, void* container)",
+    "summary": "Looks up two named items in the container (names at mem_00A9FAE8 and mem_00A9FAEC) and parses a float from each via ext_0046C0A0.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00497530": {
     "name": "Unknown::computeRatioPair",
     "class": "Unknown",

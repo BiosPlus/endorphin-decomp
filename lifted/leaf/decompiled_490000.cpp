@@ -2204,3 +2204,28 @@ float* fn_0049CE90(float* self, float* out, float* other) {
     return out;
 }
 } // namespace lift_0049CE90
+
+// [0x004974E0] sub_004974E0 (79 bytes)
+namespace lift_004974E0 {
+// Known callee 0x0046C0A0: parseFloatFromString (Calls ext_004275C0 to get a std::string, converts it with atof, and stores the float result.)
+extern void ext_0046C0A0(uint32_t unused, float* out_val);
+// Known callee 0x0063EFE0: sub_0063EFE0 (Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.)
+extern uint32_t ext_0063EFE0(void* self, const char* name);
+extern uint32_t mem_00A9FAE8;
+extern uint32_t mem_00A9FAEC;
+
+// @name refreshNamedFloatValues
+// @summary Looks up two named items in the container (names at mem_00A9FAE8 and mem_00A9FAEC) and parses a float from each via ext_0046C0A0.
+void fn_004974E0(void* self, void* container) {
+    const char* name1 = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FAE8));
+    const char* name2 = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FAEC));
+    uint32_t self_arg = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    float out = 0.0f;
+
+    (void)ext_0063EFE0(container, name1);
+    ext_0046C0A0(self_arg, &out);
+
+    (void)ext_0063EFE0(container, name2);
+    ext_0046C0A0(self_arg, &out);
+}
+} // namespace lift_004974E0
