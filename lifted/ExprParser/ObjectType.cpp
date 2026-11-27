@@ -31,3 +31,44 @@ void* __thiscall fn_006990C0(void* self, void* out_str, uint32_t arg2) {
     return out_str;
 }
 } // namespace lift_006990C0
+
+// [0x00699650]
+namespace lift_00699650 {
+// @name ExprParser::ObjectType::vfunc_23
+// @class ExprParser::ObjectType
+// @summary Resolves a sub-object from arg1+0x2c, updates it via virtual calls if found, and initializes out.
+// @field arg1 +0x2c uint8_t field_0x2c
+// @field arg1 +0x48 uint8_t field_0x48
+// @field arg1 +0x4c void* field_0x4c
+
+
+void* __cdecl ext_006993A0(void* a0, uint32_t a1, uint32_t a2);
+uint32_t __thiscall ext_006992E0(void* self, void* out, void* obj);
+void __cdecl ext_00671F30(void* out);
+
+void* __thiscall fn_00699650(void* self, void* out, void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    (void)arg2;
+    (void)arg3;
+    (void)arg4;
+
+    void* esi = ext_006993A0(static_cast<uint8_t*>(arg1) + 0x2c, 0, 0);
+    if (esi == nullptr) {
+        ext_00671F30(out);
+        return out;
+    }
+
+    void* obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(arg1) + 0x4c);
+    void** obj_vtable = *reinterpret_cast<void***>(obj);
+    using ObjVfunc = uint32_t(__thiscall*)(void*, void*);
+    auto obj_fn = reinterpret_cast<ObjVfunc>(obj_vtable[0x60 / sizeof(void*)]);
+    uint32_t val = obj_fn(obj, static_cast<uint8_t*>(arg1) + 0x48);
+
+    void** esi_vtable = *reinterpret_cast<void***>(esi);
+    using EsiVfunc = void(__thiscall*)(void*, uint32_t);
+    auto esi_fn = reinterpret_cast<EsiVfunc>(esi_vtable[0x28 / sizeof(void*)]);
+    esi_fn(esi, val);
+
+    ext_006992E0(self, out, esi);
+    return out;
+}
+} // namespace lift_00699650
