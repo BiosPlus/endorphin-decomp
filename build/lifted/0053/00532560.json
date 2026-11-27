@@ -1,0 +1,28 @@
+{
+  "va": "0x00532560",
+  "size": 33,
+  "orig_symbol": "HasCustomBufferedTMPtr::vfunc_10",
+  "src_path": "src/classes/HasCustomBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp",
+  "name": "HasCustomBufferedTMPtr::vfunc_10",
+  "class": "HasCustomBufferedTMPtr",
+  "signature": "uint32_t fn_00532560(void* self, void* arg)",
+  "summary": "Fetches field_0x4 and field_0x8, resolves an element via ext_00661B50, then forwards it to the vtable slot at +0x10 of the argument object.",
+  "fields": [
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    },
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:18Z"
+}

@@ -26359,6 +26359,13 @@
     "summary": "Fetches the value at +0x4 as an index into the wrapper at +0x8 and passes the resolved element to glMultMatrixf",
     "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
   },
+  "0x00532560": {
+    "name": "HasCustomBufferedTMPtr::vfunc_10",
+    "class": "HasCustomBufferedTMPtr",
+    "signature": "uint32_t fn_00532560(void* self, void* arg)",
+    "summary": "Fetches field_0x4 and field_0x8, resolves an element via ext_00661B50, then forwards it to the vtable slot at +0x10 of the argument object.",
+    "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
+  },
   "0x00532770": {
     "name": "Unknown::resetVtableDestroyStringNotifyDialog_00532770",
     "class": "Unknown",
