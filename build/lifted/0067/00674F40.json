@@ -1,0 +1,27 @@
+{
+  "va": "0x00674F40",
+  "size": 184,
+  "orig_symbol": "sub_00674F40",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "sub_00674F40",
+  "signature": "static void call_invalid_parameter_noinfo()",
+  "summary": "Auto-lifted identical-shape clone of 0x0050AFA0 (ForEachPtrVectorApply_0050AFA0).",
+  "fields": [
+    {
+      "class": "PtrVector",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "begin"
+    },
+    {
+      "class": "PtrVector",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:26:11Z"
+}

@@ -31,6 +31,7 @@ uint8_t descriptiveName_00553960(void* arg) {
 #include <memory>
 #include <cmath>
 #include <cstdlib>
+#include <istream>
 
 // [0x00554CE0] sub_00554CE0 (27 bytes)
 namespace lift_00554CE0 {
@@ -2823,3 +2824,114 @@ void fn_00559BF0(void* self) {
 }
 } // namespace lift_0042E820
 } // namespace lift_00559BF0
+
+// [0x005568E0] sub_005568E0 (102 bytes)
+namespace lift_005568E0 {
+// @name sub_005568E0
+// @summary Auto-lifted identical-shape clone of 0x00501140 (ValidatedCursorAdvance_00501140).
+namespace lift_00501140 {
+extern void ext_00556500(void* self, DWORD* out, DWORD arg);
+extern void (*mem_00925134)();
+
+// @name ValidatedCursorAdvance_00501140
+// @class Unknown
+// @summary Calls ext_00500DA0 to fetch an (owner, cursor) pair, validates the range at self+0x04/+0x08 and the owner, and returns cursor+0x1C (or null when cursor == end). Invalid states call mem_00925134 and continue.
+// @field self +0x04 DWORD field_0x04
+// @field self +0x08 DWORD field_0x08
+void* fn_005568E0(void* self, DWORD arg) {
+    DWORD pair[2] = {0, 0}; // pair[0] = owner, pair[1] = cursor
+    ext_00556500(self, pair, arg);
+
+    const DWORD begin = lift_field<DWORD>(self, 0x04);
+    const DWORD end = lift_field<DWORD>(self, 0x08);
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    const DWORD owner = pair[0];
+    const DWORD self_bits = static_cast<DWORD>(reinterpret_cast<uintptr_t>(self));
+    if (owner == 0 || owner != self_bits) {
+        mem_00925134();
+    }
+
+    const DWORD cursor = pair[1];
+    if (cursor == end) {
+        return nullptr;
+    }
+
+    if (owner == 0 ||
+        cursor >= lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(owner)), 0x08)) {
+        mem_00925134();
+    }
+
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(cursor + 0x4));
+}
+} // namespace lift_00501140
+} // namespace lift_005568E0
+
+// [0x00557710] sub_00557710 (143 bytes)
+namespace lift_00557710 {
+// @name sub_00557710
+// @summary Auto-lifted identical-shape clone of 0x00475710 (Vector::InsertAndGetIterator_00475710).
+namespace lift_00475710 {
+extern void ext_00556EF0(void* self, void* a2, uint8_t* a3, uint32_t one, uint32_t a4);
+extern int mem_00925134;  // IAT slot for MSVCR80!_invalid_parameter_noinfo
+
+// @name Vector::InsertAndGetIterator_00475710
+// @class Vector
+// @summary Validates the vector range, calls ext_00475240 to insert one element at a3, then writes {container, iterator} to out.
+// @field Vector +0x04 uint8_t* begin
+// @field Vector +0x08 uint8_t* end
+
+namespace {
+
+struct VecHeader {
+    void*    field_0x00;
+    uint8_t* begin;   // +0x04
+    uint8_t* end;     // +0x08
+};
+
+struct IterResult {
+    void*    container;  // written from this
+    uint8_t* pos;        // +0x04 in out struct
+};
+
+[[noreturn]] void invalid_parameter_noinfo() {
+    (void)&mem_00925134;  // original: call dword ptr [0x925134]
+    std::abort();
+}
+
+} // namespace
+
+void fn_00557710(void* self, IterResult* out, void* a2, uint8_t* a3, uint32_t a4) {
+    auto* vec = static_cast<VecHeader*>(self);
+
+    uint8_t* begin = vec->begin;
+    ptrdiff_t index = 0;
+    if (begin != nullptr && ((vec->end - begin) >> 5) != 0) {
+        if (begin > vec->end) {
+            invalid_parameter_noinfo();
+        }
+        if (a2 == nullptr || a2 != self) {
+            invalid_parameter_noinfo();
+        }
+        index = (a3 - begin) >> 5;
+    }
+
+    ext_00556EF0(self, a2, a3, 1, a4);
+
+    begin = vec->begin;
+    if (begin > vec->end) {
+        invalid_parameter_noinfo();
+    }
+
+    uint8_t* newpos = begin + (index << 5);
+    if (newpos > vec->end || newpos < vec->begin) {
+        invalid_parameter_noinfo();
+    }
+
+    out->pos = newpos;
+    out->container = self;
+}
+} // namespace lift_00475710
+} // namespace lift_00557710
