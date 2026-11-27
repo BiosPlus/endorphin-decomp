@@ -21953,6 +21953,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004CCF10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CD4A0": {
+    "name": "NMData::MetaBodyConstraintData::vfunc_21",
+    "class": "NMData::MetaBodyConstraintData",
+    "signature": "inline bool is_sentinel(uint32_t v)",
+    "summary": "Loads MetaBodyConstraintData properties from XML/data node, sets boolean flag at +0x1A0, resolves index from name, calls TriggeredEventData::vfunc_21, and reads two vec3 fields (+0x188, +0x194) and a property at +0x16C.",
+    "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
+  },
   "0x004CD730": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}\u003e",

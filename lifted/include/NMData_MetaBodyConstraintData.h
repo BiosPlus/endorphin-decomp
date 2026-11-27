@@ -13,10 +13,17 @@ struct NMData_MetaBodyConstraintData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004CA380, 0x004CCFB0, 0x004CD0D0)
     // +0x30  int                      field_0x30  (evidence: 0x004CD190)
     // +0x168 void*                    field_0x168  (evidence: 0x004CD0D0)
+    // +0x16C uint8_t                  field_0x16c  (evidence: 0x004CD4A0)
     // +0x180 void*                    field_0x180  (evidence: 0x0048DE30, 0x004CD090, 0x004CE390, 0x005CF3E0)
     // +0x184 int                      field_0x184  (evidence: 0x004A9B50, 0x004CA3D0)
-    // +0x188 void*                    field_0x188  (evidence: 0x004CA310, 0x004CA6A0)
-    // +0x194 void*                    field_0x194  (evidence: 0x004CA310, 0x004CA6A0)
-    // +0x1A0 uint8_t                  field_0x1a0  (evidence: 0x004CA6A0)
+    // +0x188 float                    field_0x188  (evidence: 0x004CD4A0) // CONFLICT: multiple definitions at +0x188
+    // +0x188 void*                    field_0x188  (evidence: 0x004CA310, 0x004CA6A0) // CONFLICT: multiple definitions at +0x188
+    // +0x18C float                    field_0x18c  (evidence: 0x004CD4A0)
+    // +0x190 float                    field_0x190  (evidence: 0x004CD4A0)
+    // +0x194 float                    field_0x194  (evidence: 0x004CD4A0) // CONFLICT: multiple definitions at +0x194
+    // +0x194 void*                    field_0x194  (evidence: 0x004CA310, 0x004CA6A0) // CONFLICT: multiple definitions at +0x194
+    // +0x198 float                    field_0x198  (evidence: 0x004CD4A0)
+    // +0x19C float                    field_0x19c  (evidence: 0x004CD4A0)
+    // +0x1A0 uint8_t                  field_0x1a0  (evidence: 0x004CA6A0, 0x004CD4A0)
 };
 } // namespace lifted_layout

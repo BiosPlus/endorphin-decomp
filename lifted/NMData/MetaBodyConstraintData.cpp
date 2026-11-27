@@ -322,3 +322,119 @@ void* __thiscall fn_004CA6A0(void* self, void* arg1) {
     return arg1;
 }
 } // namespace lift_004CA6A0
+
+// [0x004CD4A0]
+namespace lift_004CD4A0 {
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+extern void __cdecl ext_00427640(void* out, void* prop);
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern void __thiscall ext_004CA590(void* self, void* name);
+extern void __thiscall ext_004C24C0(void* self, void* arg);
+extern uint32_t __thiscall ext_0063F530(void* self, uint32_t key, uint32_t a, uint32_t b);
+extern float* __cdecl ext_0067EFD0(void* out_vec, void* node);
+extern void __cdecl ext_0049F540(uint32_t result, void* dst, uint32_t key, uint32_t zero);
+
+extern uint32_t mem_00A9F74C;
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_00AE29D0;
+extern uint32_t mem_00A9F838;
+extern uint32_t mem_00A9F788;
+extern uint32_t mem_00A9F1B8;
+extern uint32_t mem_00A9ED1C;
+extern uint32_t mem_00A9F0C0;
+extern uint32_t mem_00A9F0C4;
+extern uint32_t mem_00924FF4;
+
+namespace {
+
+struct MsvcStringStorage {
+    uint8_t bytes[0x1C];
+};
+
+struct Vec3Storage {
+    float data[3];
+};
+
+inline bool is_sentinel(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+inline uint32_t normalize_sentinel(uint32_t v) {
+    return is_sentinel(v) ? 0x00B53B30u : v;
+}
+
+inline void* as_ptr(uint32_t va) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(va));
+}
+
+inline const char* as_cstr(uint32_t va) {
+    return reinterpret_cast<const char*>(static_cast<uintptr_t>(va));
+}
+
+} // namespace
+
+// @name NMData::MetaBodyConstraintData::vfunc_21
+// @class NMData::MetaBodyConstraintData
+// @summary Loads MetaBodyConstraintData properties from XML/data node, sets boolean flag at +0x1A0, resolves index from name, calls TriggeredEventData::vfunc_21, and reads two vec3 fields (+0x188, +0x194) and a property at +0x16C.
+// @field NMData::MetaBodyConstraintData +0x16C uint8_t field_0x16c
+// @field NMData::MetaBodyConstraintData +0x188 float field_0x188
+// @field NMData::MetaBodyConstraintData +0x18C float field_0x18c
+// @field NMData::MetaBodyConstraintData +0x190 float field_0x190
+// @field NMData::MetaBodyConstraintData +0x194 float field_0x194
+// @field NMData::MetaBodyConstraintData +0x198 float field_0x198
+// @field NMData::MetaBodyConstraintData +0x19C float field_0x19c
+// @field NMData::MetaBodyConstraintData +0x1A0 uint8_t field_0x1a0
+void __thiscall fn_004CD4A0(void* self, void* arg) {
+    auto* edi = static_cast<uint8_t*>(self);
+
+    uint32_t item0 = ext_0063EFE0(arg, as_cstr(mem_00A9F74C));
+    if (is_sentinel(item0)) {
+        lift_field<uint8_t>(edi, 0x1A0) = 1;
+    } else {
+        ext_00427640(edi + 0x1A0, &item0);
+    }
+
+    MsvcStringStorage str{};
+    using StringCtor = void(__thiscall*)(void*);
+    using StringDtor = void(__thiscall*)(void*);
+    auto ctor = *reinterpret_cast<StringCtor*>(&mem_00924FE8);
+    auto dtor = *reinterpret_cast<StringDtor*>(&mem_00924FF4);
+    ctor(&str);
+
+    auto* g = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(mem_00AE29D0));
+    uint32_t key_name = (g != nullptr && lift_field<int32_t>(g, 0x538) < 5)
+                            ? mem_00A9F838
+                            : mem_00A9F788;
+    uint32_t name_item = ext_0063EFE0(arg, as_cstr(key_name));
+    ext_004275E0(&str, as_ptr(name_item));
+    ext_004CA590(edi, &str);
+
+    ext_004C24C0(edi, arg);
+
+    uint32_t node1 = normalize_sentinel(ext_0063F530(arg, mem_00A9F1B8, 0, 1));
+    if (!is_sentinel(node1)) {
+        Vec3Storage vec_buf{};
+        float* v = ext_0067EFD0(&vec_buf, as_ptr(node1));
+        lift_field<float>(edi, 0x188) = v[0];
+        lift_field<float>(edi, 0x18C) = v[1];
+        lift_field<float>(edi, 0x190) = v[2];
+    }
+
+    uint32_t node2 = normalize_sentinel(ext_0063F530(arg, mem_00A9ED1C, 0, 1));
+    if (!is_sentinel(node1)) {
+        Vec3Storage vec_buf{};
+        float* v = ext_0067EFD0(&vec_buf, as_ptr(node2));
+        lift_field<float>(edi, 0x194) = v[0];
+        lift_field<float>(edi, 0x198) = v[1];
+        lift_field<float>(edi, 0x19C) = v[2];
+    }
+
+    uint32_t node3 = normalize_sentinel(ext_0063F530(arg, mem_00A9F0C0, 0, 1));
+    if (!is_sentinel(node3)) {
+        ext_0049F540(node3, edi + 0x16C, mem_00A9F0C4, 0);
+    }
+
+    dtor(&str);
+}
+} // namespace lift_004CD4A0

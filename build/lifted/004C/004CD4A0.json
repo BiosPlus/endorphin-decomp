@@ -1,0 +1,64 @@
+{
+  "va": "0x004CD4A0",
+  "size": 654,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_21",
+  "src_path": "src/NMData/MetaBodyConstraintData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_21",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "inline bool is_sentinel(uint32_t v)",
+  "summary": "Loads MetaBodyConstraintData properties from XML/data node, sets boolean flag at +0x1A0, resolves index from name, calls TriggeredEventData::vfunc_21, and reads two vec3 fields (+0x188, +0x194) and a property at +0x16C.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x16C",
+      "type": "uint8_t",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x188",
+      "type": "float",
+      "name": "field_0x188"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x18C",
+      "type": "float",
+      "name": "field_0x18c"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x190",
+      "type": "float",
+      "name": "field_0x190"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x194",
+      "type": "float",
+      "name": "field_0x194"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x198",
+      "type": "float",
+      "name": "field_0x198"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x19C",
+      "type": "float",
+      "name": "field_0x19c"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x1A0",
+      "type": "uint8_t",
+      "name": "field_0x1a0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-27T13:04:59Z"
+}
