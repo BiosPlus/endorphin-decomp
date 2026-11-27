@@ -29215,6 +29215,12 @@
     "summary": "For each DWORD in [begin, end), calls cb(*entry + base); then writes (cb, base) to out[0], out[1].",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00596A70": {
+    "name": "forEachTreeNode",
+    "signature": "void** fn_00596A70(void** out_fn, void* begin_container, void* begin_node, void* end_container, void* end_node, void* fn)",
+    "summary": "Iterates over a checked tree iterator range, invoking a callback on each node's value at +0x28.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596AE0": {
     "name": "sub_00596AE0",
     "signature": "void fn_00596AE0(void* it, void* last, void* guard, void* end, int32_t* counter)",
