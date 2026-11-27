@@ -1,0 +1,27 @@
+{
+  "va": "0x0049E8D0",
+  "size": 62,
+  "orig_symbol": "sub_0049E8D0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "StdListClear",
+  "signature": "void __thiscall fn_0049E8D0(void* ecx)",
+  "summary": "Clears a doubly-linked list by unlinking its sentinel head, destroying each element, and freeing each node.",
+  "fields": [
+    {
+      "class": "StdList",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "StdList",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:25:22Z"
+}
