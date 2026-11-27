@@ -83556,3 +83556,55 @@ void fn_004BCD80(void* self, void* owner, void* out) {
     vfunc43(obj, owner, out);
 }
 } // namespace lift_004BCD80
+
+// [0x004BCF60] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_46 (157 bytes)
+namespace lift_004BCF60 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x004BC770: sub_004BC770 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_004BC770(void* self, const void* src);
+// Callee 0x006720E0 (sub_006720E0, 43B): thiscall on the temp object with one argument.
+extern void ext_006720E0(void* self, void* arg);
+// MSVCP80 std::basic_string<char> destructor, read from its IAT slot at runtime (the original calls through [0x924FF4]).
+extern uint32_t mem_00924FF4;
+
+// Calling-convention shapes for vtable/IAT dispatch. __thiscall is empty on non-MSVC builds, so these
+// compile as plain function pointers there and keep the MSVC ABI on Windows.
+using ThisCallDtor = void(__thiscall*)(void* self);
+using ThisCallRelease = void(__thiscall*)(void* self, void* arg);
+using ThisCallDelegate = void(__thiscall*)(void* self, void* arg0, void* arg1);
+
+// @name ExprParser::ReadMethodType<NMData::MaterialPair>::vfunc_46 (NMData::MaterialPair::generateDisplayName)
+// @class ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>
+// @summary Builds a display string from the value at self->field_0x00, assigns it into self's pointer slot, then forwards vfunc_46 (self, out) to the object at self->field_0x04.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004BCF60(void* self, void* out) {
+    // Temporary std::string (MSVC layout, 0x1C bytes); destroyed at the end.
+    alignas(8) unsigned char strBuf[0x20] = {};
+    // Temporary ValuePtr-like object: +0x00 field_0x00, +0x04 field_0x04.
+    alignas(8) unsigned char tmp[8] = {};
+
+    void* src = lift_field<void*>(self, 0x00);
+    void* strPtr = ext_004BC770(strBuf, src);
+    ext_006720E0(tmp, strPtr);
+    ext_0041CF50(self, tmp);
+
+    // Release the temporary's held object through its vtable slot 0x78.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        auto release = reinterpret_cast<ThisCallRelease>(lift_field<void*>(heldVt, 0x78));
+        release(held, tmp);
+    }
+
+    auto dtor = reinterpret_cast<ThisCallDtor>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(strBuf);
+
+    // Delegate: self->field_0x04->vfunc_46(self, out) via vtable slot 0xB8.
+    void* obj = lift_field<void*>(self, 0x04);
+    void* objVt = lift_field<void*>(obj, 0x00);
+    auto delegate = reinterpret_cast<ThisCallDelegate>(lift_field<void*>(objVt, 0xB8));
+    delegate(obj, self, out);
+}
+} // namespace lift_004BCF60
