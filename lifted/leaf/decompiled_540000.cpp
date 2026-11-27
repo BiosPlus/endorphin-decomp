@@ -2677,3 +2677,73 @@ extern uint32_t* __thiscall sub_0054F6F0(
     return ret_iter;
 }
 } // namespace lift_0054F6F0
+
+// [0x00541630]
+namespace lift_00541630 {
+// @name TreeMap::eraseAndDeleteByKey
+// @class TreeMap
+// @summary Finds a key in a std::map<std::string, T*>, throws if missing, otherwise deletes the mapped pointer and erases the entry.
+// @field TreeMap +0x04 void* head
+// @field TreeNode +0x28 void* value
+
+extern void* fn_005A07A0(void* self, void* out_iter, const void* key);
+extern void* fn_005AE1B0(void* self, void* out_iter, void* it_proxy, void* it_node);
+extern void fn_0041FF30(void* self, const void* msg, const void* key);
+extern void fn_006A6DD2(void* exc, void* throw_info);
+
+extern void* mem_00925134;
+extern void* mem_00AF166C;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+#define ext_005A07A0 fn_005A07A0
+#define ext_005AE1B0 fn_005AE1B0
+#define ext_0041FF30 fn_0041FF30
+#define ext_006A6DD2 fn_006A6DD2
+
+struct TreeIter {
+    void* proxy;
+    void* node;
+};
+
+void __thiscall fn_00541630(void* self, uint8_t key_buf[28]) {
+    TreeIter it{};
+    ext_005A07A0(self, &it, key_buf);
+
+    void* edi = it.proxy;
+    void* ebp = lift_field<void*>(self, 0x4);
+    if (!edi || edi != self) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* ebx = it.node;
+    if (ebx == ebp) {
+        uint8_t msg_buf[28]{};
+        const char* err_str = lift_field<const char*>(&mem_00AF166C, 0);
+        reinterpret_cast<void(__thiscall*)(void*, const char*)>(mem_00924FE4)(msg_buf, err_str);
+
+        uint8_t exc_buf[64]{};
+        ext_0041FF30(exc_buf, msg_buf, key_buf);
+        ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009D3748));
+        return;
+    }
+
+    if (!edi) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    if (ebx == lift_field<void*>(edi, 0x4)) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* val = lift_field<void*>(ebx, 0x28);
+    if (val) {
+        void** vtable = *reinterpret_cast<void***>(val);
+        reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0])(val, 1);
+    }
+
+    TreeIter out_iter{};
+    ext_005AE1B0(self, &out_iter, edi, ebx);
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(key_buf);
+}
+} // namespace lift_00541630
