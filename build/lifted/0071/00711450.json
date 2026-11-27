@@ -1,0 +1,21 @@
+{
+  "va": "0x00711450",
+  "size": 143,
+  "orig_symbol": "sub_00711450",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "setDoubleValue",
+  "signature": "extern \"C\" uint8_t __fastcall fn_00711450(void* self, uint32_t /*edx*/, double value)",
+  "summary": "Dispatches a double value to the appropriate setter vtable method based on object type.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:35:18Z"
+}

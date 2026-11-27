@@ -2744,3 +2744,45 @@ void* fn_007126B0(void* self, uint32_t arg) {
     return obj;
 }
 } // namespace lift_007126B0
+
+// [0x00711450]
+namespace lift_00711450 {
+// @name setDoubleValue
+// @summary Dispatches a double value to the appropriate setter vtable method based on object type.
+// @field Object +0x00 void** vtable
+
+
+extern uint32_t __fastcall ext_00711DB0(void* self);
+
+extern uint8_t __fastcall fn_00711450(void* self, uint32_t /*edx*/, double value) {
+    uint32_t kind = ext_00711DB0(self);
+    uint32_t idx = kind - 1;
+    if (idx > 0xFu) {
+        return 0;
+    }
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    switch (kind) {
+        case 1: {
+            using Fn = uint8_t(__fastcall*)(void*, uint32_t, int32_t);
+            auto fn = reinterpret_cast<Fn>(vtable[0x78 / 4]);
+            return fn(self, 0, static_cast<int32_t>(value));
+        }
+        case 2: {
+            double tmp = value;
+            using Fn = void(__fastcall*)(void*, uint32_t, double*, uint32_t, uint32_t, uint32_t);
+            auto fn = reinterpret_cast<Fn>(vtable[0x8C / 4]);
+            fn(self, 0, &tmp, 0, 0, 0);
+            return 1;
+        }
+        case 3: {
+            using Fn = void(__fastcall*)(void*, uint32_t, double*, uint32_t, uint32_t, uint32_t);
+            auto fn = reinterpret_cast<Fn>(vtable[0x8C / 4]);
+            fn(self, 0, &value, 0, 0, 0);
+            return 1;
+        }
+        default:
+            return 0;
+    }
+}
+} // namespace lift_00711450

@@ -73969,6 +73969,12 @@
     "summary": "Selects a mode from a table keyed by getSubobjectField28; invokes vtable slot 35 with a flag or the argument address and returns 1, or 0 when out of range.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711450": {
+    "name": "setDoubleValue",
+    "signature": "extern \"C\" uint8_t __fastcall fn_00711450(void* self, uint32_t /*edx*/, double value)",
+    "summary": "Dispatches a double value to the appropriate setter vtable method based on object type.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711A20": {
     "name": "Unknown::CompareArgWithSubObjectField",
     "class": "Unknown",
