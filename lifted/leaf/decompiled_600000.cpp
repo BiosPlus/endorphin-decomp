@@ -1298,3 +1298,23 @@ __thiscall void* fn_0060CCC0(void* self) {
     return self;
 }
 } // namespace lift_0060CCC0
+
+// [0x0060BA10]
+namespace lift_0060BA10 {
+extern void* mem_009720F4;
+extern void (__thiscall *mem_00924FF4)(void*);
+void __fastcall ext_0065F440(void* self);
+
+// @name UnknownClass::~UnknownClass
+// @class UnknownClass
+// @summary Destructor that resets vtable, destroys two std::string members at +0x20 and +0x4, and calls base destructor.
+// @field UnknownClass +0x00 void* vtable
+// @field UnknownClass +0x04 std::string field_0x04
+// @field UnknownClass +0x20 std::string field_0x20
+extern void __fastcall fn_0060BA10(void* self) {
+    lift_field<void*>(self, 0x00) = &mem_009720F4;
+    mem_00924FF4(static_cast<uint8_t*>(self) + 0x20);
+    mem_00924FF4(static_cast<uint8_t*>(self) + 0x04);
+    ext_0065F440(self);
+}
+} // namespace lift_0060BA10
