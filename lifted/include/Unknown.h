@@ -36,7 +36,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (container header pointer, passed through to compareIndexedElementsGreater)  (evidence: 0x00518700) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t ptr_0x00 (pointer value used as "self" for copyFieldsFrom)  (evidence: 0x004BF710) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   int32_t                  count  (evidence: 0x00783940, 0x008635C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int32_t                  count  (evidence: 0x00783940, 0x007839F0, 0x008635C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count  (evidence: 0x006D2300, 0x007B3120, 0x0085BEC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count_00  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    cursor_ptr  (evidence: 0x004BF6A0) // CONFLICT: multiple definitions at +0x0
@@ -564,6 +564,7 @@ struct Unknown_Fields {
     // +0x10  uint32_t                 flags  (evidence: 0x006C1BB0, 0x006C9D60, 0x006C9DA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    forwardTarget  (evidence: 0x004586E0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 grow_extra  (evidence: 0x0085BB40) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void**                   items  (evidence: 0x007839F0) // CONFLICT: multiple definitions at +0x10
     // +0x10  DWORD subtable_records (pointer to 16-byte records; first DWORD of each record is the key)  (evidence: 0x0078D510) // CONFLICT: multiple definitions at +0x10
     // +0x10  float                    m10  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 nodePoolCount  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x10
@@ -661,6 +662,7 @@ struct Unknown_Fields {
     // +0x18  DWORD field_0x18         (zeroed)  (evidence: 0x00517AD0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint8_t field_0x18 (3 bytes, indexed by 0..2)  (evidence: 0x005539B0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t flags (read through GetFlag08)  (evidence: 0x006DE5F0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  void*                    activeIterator  (evidence: 0x007839F0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint8_t* field_0x18 (begin of element-pointer array)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 arrayBase  (evidence: 0x00729A00) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    chain  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x18
