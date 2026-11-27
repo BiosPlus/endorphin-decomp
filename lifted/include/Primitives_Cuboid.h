@@ -11,6 +11,6 @@
 namespace lifted_layout {
 struct Primitives_Cuboid_Fields {
     // +0x20  int32_t                  field_0x20  (evidence: 0x0053B4F0)
-    // +0x3C  float[3] field_0x3C (vertex array base; vertex i is at +0x3C + 12*i, i signed byte)  (evidence: 0x0053B4F0)
+    // +0x3C  float[3]                 field_0x3C  (evidence: 0x0053B4F0)
 };
 } // namespace lifted_layout

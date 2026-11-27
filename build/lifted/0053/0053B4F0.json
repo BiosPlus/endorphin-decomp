@@ -1,0 +1,28 @@
+{
+  "va": "0x0053B4F0",
+  "size": 150,
+  "orig_symbol": "Primitives::Cuboid::vfunc_28",
+  "src_path": "src/Primitives/Cuboid.cpp",
+  "lifted_path": "lifted/Primitives/Cuboid.cpp",
+  "name": "Primitives::Cuboid::render",
+  "class": "Primitives::Cuboid",
+  "signature": "void __thiscall fn_0053B4F0(void* self, int32_t /*unused*/)",
+  "summary": "Renders the cuboid using OpenGL immediate-mode quads if field_0x20 is non-null.",
+  "fields": [
+    {
+      "class": "Primitives::Cuboid",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::Cuboid",
+      "offset": "+0x3C",
+      "type": "float[3]",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:11:14Z"
+}
