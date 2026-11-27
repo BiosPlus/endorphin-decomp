@@ -1738,3 +1738,29 @@ extern void* fn_005731F0(uint32_t count) {
     return ext_006A5C62(count * 0x30u);
 }
 } // namespace lift_005731F0
+
+// [0x0057BF20]
+namespace lift_0057BF20 {
+// @name std_lower_bound_string_0x2c
+// @summary Binary search (lower_bound) for a 0x2c-byte element by its leading std::string
+
+extern uint8_t (__cdecl *mem_00924EF4)(const void*, const void*);
+
+void* __cdecl sub_0057BF20(void* first, void* last, const void* val) {
+    char* cur = static_cast<char*>(first);
+    int32_t count = static_cast<int32_t>(static_cast<char*>(last) - cur) / 0x2c;
+
+    while (count > 0) {
+        int32_t half = count / 2;
+        char* mid = cur + half * 0x2c;
+        if (mem_00924EF4(mid, val) != 0) {
+            cur = mid + 0x2c;
+            count = count - half - 1;
+        } else {
+            count = half;
+        }
+    }
+
+    return cur;
+}
+} // namespace lift_0057BF20

@@ -1,0 +1,13 @@
+{
+  "va": "0x0057BF20",
+  "size": 95,
+  "orig_symbol": "sub_0057BF20",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "std_lower_bound_string_0x2c",
+  "signature": "void* __cdecl sub_0057BF20(void* first, void* last, const void* val)",
+  "summary": "Binary search (lower_bound) for a 0x2c-byte element by its leading std::string",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:56:25Z"
+}
