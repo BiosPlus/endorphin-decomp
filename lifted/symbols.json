@@ -38000,6 +38000,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00687E50 (copyStringRecordRangeAdvance_00687E50).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057E4D0": {
+    "name": "ArrayCopyConstruct_0057E4D0",
+    "signature": "void* fn_0057E4D0(const void* src, const void* srcEnd, void* dst)",
+    "summary": "Copy-constructs 0x38-byte elements from [src, srcEnd) into dst; on exception destroys already-built elements and rethrows. Returns one past the last element written.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057E560": {
     "name": "sub_0057E560",
     "signature": "uint32_t fn_0057E560(uint32_t begin, uint32_t end, uint32_t value)",

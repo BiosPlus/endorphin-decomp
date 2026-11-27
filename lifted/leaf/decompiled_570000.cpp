@@ -2446,3 +2446,40 @@ void* fn_00571E20() {
     return &mem_00B3C15C;
 }
 } // namespace lift_00571E20
+
+// [0x0057E4D0] sub_0057E4D0 (141 bytes)
+namespace lift_0057E4D0 {
+// Known callee 0x00557280: Unknown::ReleaseStringMembers_00557280 (Releases the StringArray at +0x28 and destroys the std::string at +0x0C of the object.)
+extern void ext_00557280(void* self);
+// Callee 0x005572F0 (sub_005572F0, 104B): per-element copy/construct helper. Called with this=dst (ecx), one stack arg=src.
+extern void ext_005572F0(void* self, const void* src);
+
+// @name ArrayCopyConstruct_0057E4D0
+// @summary Copy-constructs 0x38-byte elements from [src, srcEnd) into dst; on exception destroys already-built elements and rethrows. Returns one past the last element written.
+void* fn_0057E4D0(const void* src, const void* srcEnd, void* dst) {
+    constexpr ptrdiff_t kStride = 0x38;
+
+    const uint8_t* s = static_cast<const uint8_t*>(src);
+    const uint8_t* const sEnd = static_cast<const uint8_t*>(srcEnd);
+    uint8_t* d = static_cast<uint8_t*>(dst);
+    uint8_t* const dstBegin = d;
+
+    try {
+        while (s != sEnd) {
+            if (d != nullptr) {
+                ext_005572F0(d, s);
+            }
+            d += kStride;
+            s += kStride;
+        }
+    } catch (...) {
+        // Destroy the fully constructed prefix [dstBegin, d) and propagate.
+        for (uint8_t* p = dstBegin; p != d; p += kStride) {
+            ext_00557280(p);
+        }
+        throw;
+    }
+
+    return d;
+}
+} // namespace lift_0057E4D0
