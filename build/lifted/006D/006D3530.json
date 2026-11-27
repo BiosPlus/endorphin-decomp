@@ -1,0 +1,28 @@
+{
+  "va": "0x006D3530",
+  "size": 48,
+  "orig_symbol": "sub_006D3530",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "sub_006D3530_appendVirtualSlot1Result",
+  "class": "Unknown",
+  "signature": "int32_t fn_006D3530(void* self)",
+  "summary": "Calls vtable slot 1 of this (no args); if the result is non-zero, appends it to the DynamicArray at this+0x04 via InsertAt(count, \u0026result). Returns the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DynamicArray",
+      "name": "array"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:43:49Z"
+}
