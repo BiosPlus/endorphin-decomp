@@ -2144,3 +2144,38 @@ void* fn_004B49A0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint3
     return self;
 }
 } // namespace lift_004B49A0
+
+// [0x004B0F80]
+namespace lift_004B0F80 {
+extern uint32_t mem_00A9F628;
+extern uint32_t mem_00A9F578;
+extern uint32_t mem_00A9F704;
+extern uint32_t mem_00A9F464;
+
+void __cdecl ext_004275E0(void* dst, uint32_t obj);
+void __cdecl ext_00427640(void* out, uint32_t* obj);
+void __cdecl ext_0053F5F0(void* out, uint32_t* obj);
+uint32_t __thiscall ext_0063EFE0(void* self, uint32_t name);
+
+// @name deserializeProps
+// @summary Deserializes string, integer, and two boolean properties from a property container into object fields.
+// @field Self +0x01 uint8_t field_0x01
+// @field Self +0x02 uint8_t field_0x02
+// @field Self +0x04 uint32_t field_0x04
+// @field Self +0x20 int32_t field_0x20
+void __thiscall fn_004B0F80(void* self, void* src) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    uint32_t item = ext_0063EFE0(src, mem_00A9F628);
+    ext_004275E0(base + 0x4, item);
+
+    uint32_t int_item = ext_0063EFE0(src, mem_00A9F578);
+    ext_0053F5F0(base + 0x20, &int_item);
+
+    uint32_t bool1_item = ext_0063EFE0(src, mem_00A9F704);
+    ext_00427640(base + 0x1, &bool1_item);
+
+    uint32_t bool2_item = ext_0063EFE0(src, mem_00A9F464);
+    ext_00427640(base + 0x2, &bool2_item);
+}
+} // namespace lift_004B0F80

@@ -1,0 +1,39 @@
+{
+  "va": "0x004B0F80",
+  "size": 144,
+  "orig_symbol": "sub_004B0F80",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "deserializeProps",
+  "signature": "void __thiscall fn_004B0F80(void* self, void* src)",
+  "summary": "Deserializes string, integer, and two boolean properties from a property container into object fields.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x2",
+      "type": "uint8_t",
+      "name": "field_0x02"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:38:24Z"
+}
