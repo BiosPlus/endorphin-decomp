@@ -27172,6 +27172,13 @@
     "summary": "Invokes sub_0054F030 on each 0x68-byte element in [begin, end) with arg.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054F210": {
+    "name": "Unknown::CopyRangeAndDestroyTail_0054F210",
+    "class": "Unknown",
+    "signature": "void fn_0054F210(void* self, uint8_t** out, uint8_t* arg2, uint8_t* arg3, uint8_t* arg4, uint8_t* arg5)",
+    "summary": "Guards two checked iterator args, copies [srcBegin, this-\u003eend) to dest via ext_0054F0D0, destroys the stale tail elements (virtual dtor with flag 0) and updates this-\u003eend; returns the pair {checked first, srcBegin} (or {arg2, arg3} when no copy is needed).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F290": {
     "name": "Unknown::RelocateRangeBackwardWrapper_0054F290",
     "class": "Unknown",

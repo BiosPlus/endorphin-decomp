@@ -1806,3 +1806,51 @@ void* fn_0054A330(void* self) {
     return self;
 }
 } // namespace lift_0054A330
+
+// [0x0054F210] sub_0054F210 (127 bytes)
+namespace lift_0054F210 {
+// Known callee 0x0054F0D0: CopyRangeOf104ByteElements_0054F0D0 (Invokes the per-element copy routine over [begin, end) in 0x68-byte steps, writing to dest; returns dest + count*0x68.)
+extern void* ext_0054F0D0(const uint8_t* begin, const uint8_t* end, uint8_t* dest);
+// CRT invalid-parameter handler slot (IAT entry for _invalid_parameter_noinfo).
+extern int mem_00925134;
+
+// Thiscall with 5 stack args (ret 0x14). Arg1 is a hidden result pointer receiving two pointers.
+// @name Unknown::CopyRangeAndDestroyTail_0054F210
+// @class Unknown
+// @summary Guards two checked iterator args, copies [srcBegin, this->end) to dest via ext_0054F0D0, destroys the stale tail elements (virtual dtor with flag 0) and updates this->end; returns the pair {checked first, srcBegin} (or {arg2, arg3} when no copy is needed).
+// @field Unknown +0x08 uint8_t* elemEnd
+void fn_0054F210(void* self, uint8_t** out, uint8_t* arg2, uint8_t* arg3, uint8_t* arg4, uint8_t* arg5) {
+    uint8_t*& end = lift_field<uint8_t*>(self, 0x08);
+
+    // Checked-iterator guard: arg2 must be non-null and equal to arg4.
+    // On failure the CRT invalid-parameter handler is invoked and execution continues.
+    if (arg2 == nullptr || arg2 != arg4) {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    }
+
+    // Nothing to copy when dest == srcBegin.
+    if (arg3 == arg5) {
+        out[0] = arg2;
+        out[1] = arg3;
+        return;
+    }
+
+    // The original clears the low byte of the arg4 stack slot (byte store of 0) and reads it back
+    // as a dword; that value is both passed to the copy helper and returned as the first pointer.
+    uint8_t* const firstOut = reinterpret_cast<uint8_t*>(
+        reinterpret_cast<uintptr_t>(arg4) & ~static_cast<uintptr_t>(0xFF));
+
+    // Copy [srcBegin, end) to arg3. The helper returns the new end of the destination range.
+    uint8_t* const newEnd = static_cast<uint8_t*>(ext_0054F0D0(arg5, end, arg3));
+
+    // Destroy the stale tail [newEnd, end) in 0x68-byte steps via vtable slot 0 (flag 0 = no free).
+    for (uint8_t* p = newEnd; p != end; p += 0x68) {
+        void** vtbl = *reinterpret_cast<void***>(p);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[0])(p, 0);
+    }
+
+    end = newEnd;
+    out[0] = firstOut;
+    out[1] = arg5;
+}
+} // namespace lift_0054F210

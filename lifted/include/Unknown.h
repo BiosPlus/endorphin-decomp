@@ -297,6 +297,7 @@ struct Unknown_Fields {
     // +0x8   int32_t                  cursor  (evidence: 0x0077F4E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   std::string*             dst  (evidence: 0x006408F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float field_0x08 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t*                 elemEnd  (evidence: 0x0054F210) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 element  (evidence: 0x0048DFF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 elements[]  (evidence: 0x007D48A0, 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    end  (evidence: 0x005947B0, 0x005991D0) // CONFLICT: multiple definitions at +0x8

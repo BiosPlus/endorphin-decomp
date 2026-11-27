@@ -1,0 +1,22 @@
+{
+  "va": "0x0054F210",
+  "size": 127,
+  "orig_symbol": "sub_0054F210",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::CopyRangeAndDestroyTail_0054F210",
+  "class": "Unknown",
+  "signature": "void fn_0054F210(void* self, uint8_t** out, uint8_t* arg2, uint8_t* arg3, uint8_t* arg4, uint8_t* arg5)",
+  "summary": "Guards two checked iterator args, copies [srcBegin, this-\u003eend) to dest via ext_0054F0D0, destroys the stale tail elements (virtual dtor with flag 0) and updates this-\u003eend; returns the pair {checked first, srcBegin} (or {arg2, arg3} when no copy is needed).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "elemEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:06:43Z"
+}
