@@ -325,3 +325,32 @@ void* __thiscall fn_0074AE00(void* self, uint32_t a, uint32_t b, uint32_t c) {
     return self;
 }
 } // namespace lift_0074AE00
+
+// [0x00742A70]
+namespace lift_00742A70 {
+extern int32_t __fastcall ext_006E7460(void* self);
+extern int32_t __thiscall ext_006BA660(const char* const* self, const char* other);
+extern void __fastcall ext_006B9D70(void* self);
+
+struct ByValObj742A70 {
+    uint8_t data[0x4c];
+};
+
+// @name findStringIndex
+// @summary Search an array of string pointers for a matching string, returning its index or -1.
+// @field ArrayStruct +0x00 int32_t count
+// @field ArrayStruct +0x10 void** items
+extern int32_t __stdcall fn_00742A70(ByValObj742A70 key, void* list) {
+    int32_t count = lift_field<int32_t>(list, 0x00);
+    for (int32_t i = 0; i < count; ++i) {
+        const char* const* const* items = lift_field<const char* const* const*>(list, 0x10);
+        const char* key_str = reinterpret_cast<const char*>(static_cast<uintptr_t>(ext_006E7460(&key)));
+        if (ext_006BA660(items[i], key_str) == 0) {
+            ext_006B9D70(&key);
+            return i;
+        }
+    }
+    ext_006B9D70(&key);
+    return -1;
+}
+} // namespace lift_00742A70

@@ -1,0 +1,27 @@
+{
+  "va": "0x00742A70",
+  "size": 144,
+  "orig_symbol": "sub_00742A70",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "findStringIndex",
+  "signature": "extern \"C\" int32_t __stdcall fn_00742A70(ByValObj742A70 key, void* list)",
+  "summary": "Search an array of string pointers for a matching string, returning its index or -1.",
+  "fields": [
+    {
+      "class": "ArrayStruct",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "ArrayStruct",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:45:06Z"
+}
