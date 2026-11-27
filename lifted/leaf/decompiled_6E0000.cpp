@@ -1847,3 +1847,24 @@ DWORD fn_006E8E20(void* self, int32_t index) {
     return 0;
 }
 } // namespace lift_006E8E20
+
+// [0x006E9000] sub_006E9000 (48 bytes)
+namespace lift_006E9000 {
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::getTableEntryFirstWord_006E9000
+// @class Unknown
+// @summary Returns the first dword of the table entry at index (if in range), else calls ext_006E7440 on this+0x94 with index 3 and returns 0.
+// @field Unknown +0x34 int32_t entryCount
+// @field Unknown +0x44 DWORD* entryTable
+DWORD fn_006E9000(void* self, int32_t index) {
+    if (index >= 0 && index < lift_field<int32_t>(self, 0x34)) {
+        DWORD* table = reinterpret_cast<DWORD*>(lift_field<uintptr_t>(self, 0x44));
+        DWORD* entry = reinterpret_cast<DWORD*>(static_cast<uintptr_t>(table[index]));
+        return *entry;
+    }
+    ext_006E7440(static_cast<uint8_t*>(self) + 0x94, 3);
+    return 0;
+}
+} // namespace lift_006E9000
