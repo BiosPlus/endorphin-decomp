@@ -1,0 +1,28 @@
+{
+  "va": "0x0060D3E0",
+  "size": 140,
+  "orig_symbol": "NMData::EffectorWithMemoryData::vfunc_15",
+  "src_path": "src/NMData/EffectorWithMemoryData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp",
+  "name": "NMData::EffectorWithMemoryData::vfunc_15",
+  "class": "NMData::EffectorWithMemoryData",
+  "signature": "extern \"C\" void* __thiscall fn_0060D3E0(void* self, void* arg1, uint32_t arg2, void* arg3)",
+  "summary": "Stdcall (ret 0xC, ECX = this): allocates and constructs a 0x88-byte object, copies this+0x5C (float) into object+0x60 and this+0x60 into object+0x68, then forwards to NMData::EffectorData::vfunc_15 with the new object as arg3 and returns its result.",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:31:55Z"
+}
