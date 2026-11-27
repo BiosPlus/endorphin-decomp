@@ -1,0 +1,14 @@
+{
+  "va": "0x006B9DA0",
+  "size": 32,
+  "orig_symbol": "sub_006B9DA0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::initAndAssignInt_006B9DA0",
+  "class": "Unknown",
+  "signature": "void* fn_006B9DA0(void* self, int value)",
+  "summary": "Zero-inits this via sub_006B9910, then assigns the int argument via assignInt_006B9F00; returns this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:49:44Z"
+}

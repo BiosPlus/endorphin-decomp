@@ -2821,3 +2821,20 @@ void* fn_006B9F40(void* self, uint32_t a, uint32_t b) {
     return reinterpret_cast<AssignFn>(reinterpret_cast<void*>(ext_006B9EC0))(self, s);
 }
 } // namespace lift_006B9F40
+
+// [0x006B9DA0] sub_006B9DA0 (32 bytes)
+namespace lift_006B9DA0 {
+// Known callee 0x006B9910: Unknown::sub_006B9910 (Zero-initializes two dword fields and sets the vtable pointer to mem_00B5D2B8.)
+extern void ext_006B9910(void* ecx);
+// Known callee 0x006B9F00: Unknown::assignInt_006B9F00 (Formats an integer as a decimal string into a local buffer and assigns it via assignCString; returns the callee's result (this).)
+extern void* ext_006B9F00(void* self, int value);
+
+// @name Unknown::initAndAssignInt_006B9DA0
+// @class Unknown
+// @summary Zero-inits this via sub_006B9910, then assigns the int argument via assignInt_006B9F00; returns this.
+void* fn_006B9DA0(void* self, int value) {
+    ext_006B9910(self);
+    ext_006B9F00(self, value);
+    return self;
+}
+} // namespace lift_006B9DA0
