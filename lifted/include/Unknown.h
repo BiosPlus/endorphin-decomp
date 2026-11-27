@@ -2300,6 +2300,7 @@ struct Unknown_Fields {
     // +0x4E8 int32_t field_0x4E8 (on the object returned by ext_00594620)  (evidence: 0x00412CE0)
     // +0x518 DWORD                    field_0x518  (evidence: 0x00702790)
     // +0x531 uint8_t                  field_0x531  (evidence: 0x00434610)
+    // +0x550 uint8_t[] field_0x550 (address only; passed as self to ext_005A1E90)  (evidence: 0x005A34C0)
     // +0x564 int32_t                  field_0x564  (evidence: 0x004030F0, 0x00405160, 0x0040BE90) // CONFLICT: multiple definitions at +0x564
     // +0x564 DWORD                    recordsBegin  (evidence: 0x004030F0, 0x0040BE90) // CONFLICT: multiple definitions at +0x564
     // +0x568 int32_t                  field_0x568  (evidence: 0x004030F0, 0x00405160, 0x0040BE90) // CONFLICT: multiple definitions at +0x568

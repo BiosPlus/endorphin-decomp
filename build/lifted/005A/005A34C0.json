@@ -1,0 +1,22 @@
+{
+  "va": "0x005A34C0",
+  "size": 50,
+  "orig_symbol": "sub_005A34C0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "Unknown::forwardVirtualStringToMember_005A34C0",
+  "class": "Unknown",
+  "signature": "void fn_005A34C0(void* self, void* arg)",
+  "summary": "If arg is non-null, calls arg's vtable slot 0x24 to get a std::string, copy-constructs it, and forwards it to the member at this+0x550 via ext_005A1E90.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x550",
+      "type": "uint8_t[] field_0x550 (address only; passed as self to",
+      "name": "ext_005A1E90)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:41:40Z"
+}

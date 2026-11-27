@@ -44659,6 +44659,13 @@
     "summary": "Resolves a named value via AnimatableTransform::vfunc_2 and, when no usable object is found, looks the key up in the +0x564/+0x570 tables and +0x540 provider, assigning a C-string or copying the (value, object) pair into the key-result argument.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x005A34C0": {
+    "name": "Unknown::forwardVirtualStringToMember_005A34C0",
+    "class": "Unknown",
+    "signature": "void fn_005A34C0(void* self, void* arg)",
+    "summary": "If arg is non-null, calls arg's vtable slot 0x24 to get a std::string, copy-constructs it, and forwards it to the member at this+0x550 via ext_005A1E90.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A3610": {
     "name": "sub_005A3610",
     "signature": "void fn_005A3610()",

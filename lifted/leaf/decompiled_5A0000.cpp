@@ -2861,3 +2861,40 @@ extern void* fn_005A2540(void* self, void* out, MsvcString arg_str) {
 }
 } // namespace lift_004796D0
 } // namespace lift_005A2540
+
+// [0x005A34C0] sub_005A34C0 (50 bytes)
+namespace lift_005A34C0 {
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+// Known callee 0x005A1E90: sub_005A1E90 (Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).)
+extern void* ext_005A1E90(void* self, void* out, MsvcString arg_str);
+extern int mem_00924FE0;
+
+// @name Unknown::forwardVirtualStringToMember_005A34C0
+// @class Unknown
+// @summary If arg is non-null, calls arg's vtable slot 0x24 to get a std::string, copy-constructs it, and forwards it to the member at this+0x550 via ext_005A1E90.
+// @field Unknown +0x550 uint8_t[] field_0x550 (address only; passed as self to ext_005A1E90)
+void fn_005A34C0(void* self, void* arg) {
+    using StringCopyCtorFn = void(__thiscall*)(void* self, const void* src);
+    using VirtualStringGetterFn = void* (*)(void* obj);
+
+    if (arg == nullptr) {
+        return;
+    }
+
+    uint8_t* vtable = *reinterpret_cast<uint8_t**>(arg);
+    auto getter = *reinterpret_cast<VirtualStringGetterFn*>(vtable + 0x24);
+    void* src = getter(arg);
+
+    auto copy_ctor = *reinterpret_cast<StringCopyCtorFn*>(&mem_00924FE0);
+    MsvcString tmp{};
+    copy_ctor(&tmp, src);
+
+    // Callee takes ownership of the by-value string argument; the asm does not destroy tmp here.
+    ext_005A1E90(static_cast<uint8_t*>(self) + 0x550, &tmp, tmp);
+}
+} // namespace lift_005A34C0
