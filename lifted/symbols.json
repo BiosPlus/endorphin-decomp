@@ -68075,6 +68075,12 @@
     "summary": "Stores a double into an 8-byte-stride array at ecx, indexed by the first stack argument (ret 0xc: callee pops index + value).",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2410": {
+    "name": "ScaleVec4d",
+    "signature": "static void split_double(double v, uint32_t\u0026 lo, uint32_t\u0026 hi)",
+    "summary": "Multiplies a 4-double vector by a scalar and forwards the result into an output buffer.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D24A0": {
     "name": "Vec4d::scale",
     "class": "Vec4d",
