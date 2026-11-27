@@ -1698,3 +1698,40 @@ void fn_00476F10(void* self) {
     }
 }
 } // namespace lift_00476F10
+
+// [0x00475B90] sub_00475B90 (165 bytes)
+namespace lift_00475B90 {
+extern void ext_00475960();
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00AD9040;
+extern int mem_00AD903C;
+extern int mem_00924FE4; // MSVCP80 basic_string(const char*) ctor thunk slot (replaced by std::string)
+extern int mem_00924FF4; // MSVCP80 basic_string dtor thunk slot (replaced by std::string)
+
+// @name StaticInitOnce_00475B90
+// @summary One-time guard that constructs the static object at 0x00AD903C, then builds a std::string from the stack argument and forwards it through sub_00475960.
+// @field UnknownClass +0x00 void* field_0x00
+void fn_00475B90(void* self, const char* name) {
+    // Thread-unsafe one-time init guard (bit 0 of mem_00AD9040), replacing the MSVC static-local guard.
+    if ((mem_00AD9040 & 1) == 0) {
+        mem_00AD9040 |= 1;
+        // Original passes &mem_00AD903C as ECX (thiscall); the stub signature takes no arguments.
+        ext_0067A670();
+        mem_00AD903C = 0x93b5fc;
+    }
+
+    // First field of self is the callee's receiver (original: mov ecx, [esi]).
+    void* const receiver = lift_field<void*>(self, 0);
+    (void)receiver;
+    // Metadata-only references to the original import slots; not real accesses.
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+
+    // Temporary std::string built from the stack argument (original: MSVCP80 basic_string(const char*) ctor).
+    std::string tmp(name);
+
+    // Original calls sub_00475960 with the receiver, &tmp and the constant 1; the stub signature takes no arguments.
+    ext_00475960();
+}
+} // namespace lift_00475B90

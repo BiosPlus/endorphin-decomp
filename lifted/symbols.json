@@ -10706,6 +10706,12 @@
     "summary": "Lazily initializes a function-local static string object, builds a temporary std::string from the stack argument, dispatches to ext_00475960 with this-\u003efield_0x00, then destroys the temporary.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475B90": {
+    "name": "StaticInitOnce_00475B90",
+    "signature": "extern \"C\" int mem_00924FE4; // MSVCP80 basic_string(const char*) ctor thunk slot (replaced by std::string) extern \"C\" int mem_00924FF4; // MSVCP80 basic_string dtor thunk slot (replaced by std::string) void fn_00475B90(void* self, const char* name)",
+    "summary": "One-time guard that constructs the static object at 0x00AD903C, then builds a std::string from the stack argument and forwards it through sub_00475960.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476430": {
     "name": "Unknown::lookupStringKeyedValue",
     "class": "Unknown",

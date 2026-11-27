@@ -12,7 +12,7 @@ struct UnknownClass_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00404D70, 0x0042E820, 0x0045FF80, 0x0047D4D0, 0x0048BB60, 0x00493D80, 0x00494050, 0x004A7520, 0x004AEA80, 0x00558B10, 0x00559BF0, 0x005A6E20, 0x005AFAF0, 0x00667FC0, 0x00668DF0, 0x00679730, 0x00682820, 0x007AA7F0, 0x00859300) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  field_0x00  (evidence: 0x004B10D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t[0x1C]            field_0x00  (evidence: 0x00476530) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x00  (evidence: 0x00465B20, 0x00468730, 0x00492A50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x00465B20, 0x00468730, 0x00475B90, 0x00492A50) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD field_0x00 (array of 24-byte elements; element +0x10 holds table pointer)  (evidence: 0x0078D4E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    self  (evidence: 0x00467300) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    stream  (evidence: 0x0079EF70) // CONFLICT: multiple definitions at +0x0
