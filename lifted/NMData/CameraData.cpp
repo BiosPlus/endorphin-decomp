@@ -327,3 +327,93 @@ void fn_005DDA40(void* self, const void* arg1) {
     dtor(temp);
 }
 } // namespace lift_005DDA40
+
+// [0x005D0D30]
+namespace lift_005D0D30 {
+// @name NMData::CameraData::vfunc_22
+// @class NMData::CameraData
+// @summary Serializes camera data properties and sub-objects into a target data node.
+// @field NMData::CameraData +0x1A8 uint8_t field_0x1a8
+// @field NMData::CameraData +0x1F0 uint8_t field_0x1f0
+// @field NMData::CameraData +0x1F1 uint8_t field_0x1f1
+// @field NMData::CameraData +0x1F4 float field_0x1f4
+// @field NMData::CameraData +0x1F8 float field_0x1f8
+// @field NMData::CameraData +0x1FC float field_0x1fc
+// @field NMData::CameraData +0x200 float field_0x200
+// @field NMData::CameraData +0x204 float field_0x204
+// @field NMData::CameraData +0x208 uint32_t field_0x208
+// @field NMData::CameraData +0x210 uint8_t field_0x210
+// @field NMData::CameraData +0x25C uint32_t field_0x25c
+// @field NMData::CameraData +0x260 uint32_t field_0x260
+
+
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern void __thiscall ext_0058F650(void* self, void* node);
+extern float __thiscall ext_005B11E0(void* self, int32_t index);
+extern void* __stdcall ext_005CFCC0(uint32_t index);
+extern uint32_t __thiscall ext_005CFE50(void* self);
+extern void __thiscall ext_005D0980(void* self, void* node);
+extern void* __thiscall ext_00640110(void* self, uint32_t key);
+extern void* __thiscall ext_006404E0(void* self, uint32_t key);
+extern void __cdecl ext_00640A80(void* node, uint32_t flag);
+extern void __cdecl ext_00640BC0(void* node, float value);
+
+extern uint32_t mem_00A9ED7C;
+extern uint32_t mem_00A9FA6C;
+extern const char* (__thiscall* mem_00924FF0)(void* self);
+extern uint32_t mem_00A9F808;
+extern uint32_t mem_00A9F45C;
+extern uint32_t mem_00A9F460;
+extern uint32_t mem_00A9F9A8;
+extern uint32_t mem_00A9F870;
+extern uint32_t mem_00A9F668;
+extern uint32_t mem_00A9F550;
+extern uint32_t mem_00A9F698;
+extern uint32_t mem_00A9F47C;
+extern uint32_t mem_00A9F648;
+extern uint32_t mem_00A9FACC;
+extern uint32_t mem_00A9F66C;
+extern uint32_t mem_00A9F634;
+extern uint32_t mem_00A9F97C;
+
+void* __thiscall fn_005D0D30(void* self, void* arg0) {
+    void* esi = ext_006404E0(arg0, mem_00A9ED7C);
+    ext_0058F650(self, esi);
+
+    void* child = ext_00640110(esi, mem_00A9FA6C);
+    void* rec = ext_005CFCC0(lift_field<uint32_t>(self, 0x260));
+    ext_00427550(&child, mem_00924FF0(rec));
+
+    child = ext_00640110(esi, mem_00A9F808);
+    uint32_t idx1 = lift_field<uint32_t>(self, 0x25C);
+    void* str1 = reinterpret_cast<void*>(0x00B45890u + idx1 * 28u);
+    ext_00427550(&child, mem_00924FF0(str1));
+
+    void* arr = static_cast<char*>(self) + 0x210;
+    ext_00640BC0(ext_00640110(esi, mem_00A9F45C), ext_005B11E0(arr, 1));
+    ext_00640BC0(ext_00640110(esi, mem_00A9F460), ext_005B11E0(arr, 2));
+    ext_00640BC0(ext_00640110(esi, mem_00A9F9A8), ext_005B11E0(arr, 5));
+    ext_00640BC0(ext_00640110(esi, mem_00A9F870), lift_field<float>(self, 0x204));
+    ext_00640BC0(ext_00640110(esi, mem_00A9F668), ext_005B11E0(arr, 0));
+    ext_00640BC0(ext_00640110(esi, mem_00A9F550), lift_field<float>(self, 0x1F4));
+    ext_00640BC0(ext_00640110(esi, mem_00A9F698), ext_005B11E0(arr, 3));
+    ext_00640BC0(ext_00640110(esi, mem_00A9F47C), ext_005B11E0(arr, 4));
+
+    child = ext_00640110(esi, mem_00A9F648);
+    uint32_t idx2 = lift_field<uint32_t>(self, 0x208);
+    void* str2 = reinterpret_cast<void*>(0x00B45938u + idx2 * 28u);
+    ext_00427550(&child, mem_00924FF0(str2));
+
+    ext_00640A80(ext_00640110(esi, mem_00A9FACC), lift_field<uint8_t>(self, 0x1F0));
+    ext_00640A80(ext_00640110(esi, 0x00965D30u), lift_field<uint8_t>(self, 0x1F1));
+    ext_00640A80(ext_00640110(esi, 0x00965D20u), ext_005CFE50(self));
+
+    ext_005D0980(static_cast<char*>(self) + 0x1A8, esi);
+
+    ext_00640BC0(ext_00640110(esi, mem_00A9F66C), lift_field<float>(self, 0x1FC));
+    ext_00640BC0(ext_00640110(esi, mem_00A9F634), lift_field<float>(self, 0x1F8));
+    ext_00640BC0(ext_00640110(esi, mem_00A9F97C), lift_field<float>(self, 0x200));
+
+    return esi;
+}
+} // namespace lift_005D0D30
