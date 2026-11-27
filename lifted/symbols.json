@@ -3775,6 +3775,13 @@
     "summary": "Gets an object from sub_00465B40 and calls its vtable slot 0x208 with a 0 argument; SEH unwind funclet at 0x43351C is lifted separately.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004335F0": {
+    "name": "fn_004335F0",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_004335F0(void* self)",
+    "summary": "Gets the object returned by ext_00465B40, invokes its vtable slot 0x208 with argument 2.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00433990": {
     "name": "Unknown::CallbackAtField168IfNot2",
     "class": "Unknown",

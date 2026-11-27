@@ -1,0 +1,22 @@
+{
+  "va": "0x004335F0",
+  "size": 134,
+  "orig_symbol": "sub_004335F0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "fn_004335F0",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_004335F0(void* self)",
+  "summary": "Gets the object returned by ext_00465B40, invokes its vtable slot 0x208 with argument 2.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "\u003ctype\u003e",
+      "name": "\u003cfieldName\u003e"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:36:21Z"
+}

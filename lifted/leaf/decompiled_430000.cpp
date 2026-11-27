@@ -4766,3 +4766,42 @@ void __cdecl fn_004321C0(void) {
     }
 }
 } // namespace lift_004321C0
+
+// [0x004335F0] sub_004335F0 (134 bytes)
+namespace lift_004335F0 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+extern void ext_00465B40();
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+extern void ext_006A5E60();
+extern int mem_00924FE0;
+extern int mem_00924FF0;
+extern int mem_00924FF4;
+
+// @name fn_004335F0
+// @class <ClassName> (optional)
+// @summary Gets the object returned by ext_00465B40, invokes its vtable slot 0x208 with argument 2.
+// @field <ClassName> +0x00 <type> <fieldName>
+void fn_004335F0(void* self) {
+    (void)self;
+    // Main path: obtain object from ext_00465B40 (returned in eax), then
+    // thiscall through vtable[0x208 / 4] with argument 2.
+    void* obj = reinterpret_cast<void* (*)()>(reinterpret_cast<void*>(&ext_00465B40))();
+    auto* vtable = *reinterpret_cast<uint8_t**>(obj);
+    using VSlot = void (*)(void*, int);
+    VSlot slot = nullptr;
+    std::memcpy(&slot, vtable + 0x208, sizeof(slot));
+    slot(obj, 2);
+}
+
+// Exception-handler funclet at 0x0043363C. State is the value of [ebp-0x14] in the
+// owning frame; the string is built at state+0x0C, passed to ext_006A5E60, then destroyed.
+// The MSVCP80 IAT slots are the original copy-ctor (mem_00924FE0), c_str (mem_00924FF0)
+// and dtor (mem_00924FF4); their roles are expressed by std::string below.
+void fn_004335F0_handler(void* state) {
+    (void)mem_00924FE0;
+    (void)mem_00924FF0;
+    (void)mem_00924FF4;
+    std::string tmp(*reinterpret_cast<const std::string*>(static_cast<uint8_t*>(state) + 0x0C));
+    reinterpret_cast<void (*)(const char*)>(reinterpret_cast<void*>(&ext_006A5E60))(tmp.c_str());
+}
+} // namespace lift_004335F0
