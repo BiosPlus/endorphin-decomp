@@ -68345,6 +68345,13 @@
     "summary": "Calls virtual slot 12 on self; if it returns non-null, appends that value to the DynamicArray embedded at +0x4c via InsertAt at the current count.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D3CB0": {
+    "name": "Unknown::appendVirtualResultToArray_006D3CB0",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D3CB0(void* self, int32_t arg)",
+    "summary": "Calls virtual slot +0x50 with the argument; if it returns non-zero, inserts the result into the DynamicArray at this+0x124 (index = its count field) and returns the result.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D3CF0": {
     "name": "Unknown::appendVirtualResultToArray_006D3CF0",
     "class": "Unknown",

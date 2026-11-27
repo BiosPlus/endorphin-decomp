@@ -2961,3 +2961,33 @@ int32_t __thiscall fn_006D3CF0(void* self) {
     return value;
 }
 } // namespace lift_006D3CF0
+
+// [0x006D3CB0] sub_006D3CB0 (64 bytes)
+namespace lift_006D3CB0 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern void ext_006D2170();
+
+// @name Unknown::appendVirtualResultToArray_006D3CB0
+// @class Unknown
+// @summary Calls virtual slot +0x50 with the argument; if it returns non-zero, inserts the result into the DynamicArray at this+0x124 (index = its count field) and returns the result.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x124 DynamicArray field_0x124
+int32_t fn_006D3CB0(void* self, int32_t arg) {
+    using VirtualFn = int32_t(__thiscall*)(void*, int32_t);
+    using InsertFn = int32_t(__thiscall*)(void*, int32_t, const void*);
+
+    // Virtual call: vtable[+0x50](this, arg) with thiscall convention.
+    void* vtable = lift_field<void*>(self, 0x00);
+    auto slot = reinterpret_cast<VirtualFn>(*reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtable) + 0x50));
+    int32_t result = slot(self, arg);
+
+    if (result != 0) {
+        // Insert result at index [this+0x124] into the array located at this+0x124.
+        void* array = &lift_field<uint8_t>(self, 0x124);
+        int32_t index = lift_field<int32_t>(self, 0x124);
+        reinterpret_cast<InsertFn>(ext_006D2170)(array, index, &result);
+    }
+
+    return result;
+}
+} // namespace lift_006D3CB0
