@@ -1604,3 +1604,40 @@ void __fastcall fn_00544130(void* self) {
     ext_00543320(self);
 }
 } // namespace lift_00544130
+
+// [0x0054D220] sub_0054D220 (122 bytes)
+namespace lift_0054D220 {
+// MSVCP80 std::basic_string<char> default-constructor import slot (IAT entry at 0x924FE8).
+extern int mem_00924FE8;
+
+// @name ConstructStringBlocks_0054D220
+// @class Unknown
+// @summary Thiscall constructor body: sets vtable, default-constructs three std::string members, zeroes trailing flags, returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x3d uint8_t flag_3d
+// @field Unknown +0x18 std::string str_18
+// @field Unknown +0x60 std::string str_60
+// @field Unknown +0x9c std::string str_9c
+// @field Unknown +0xd0 uint32_t field_0xd0
+// @field Unknown +0xd4 uint32_t field_0xd4
+// @field Unknown +0xd8 uint8_t field_0xd8
+void* fn_0054D220(void* self) {
+    using StringCtorFn = void(__thiscall*)(void* thisPtr);
+    auto strCtor = reinterpret_cast<StringCtorFn>(static_cast<uintptr_t>(mem_00924FE8));
+
+    lift_field<uint32_t>(self, 0x00) = 0x00956E2C;
+
+    strCtor(static_cast<uint8_t*>(self) + 0x18);
+
+    lift_field<uint8_t>(self, 0x3D) = 0;
+
+    strCtor(static_cast<uint8_t*>(self) + 0x60);
+    strCtor(static_cast<uint8_t*>(self) + 0x9C);
+
+    lift_field<uint32_t>(self, 0xD0) = 0;
+    lift_field<uint32_t>(self, 0xD4) = 0;
+    lift_field<uint8_t>(self, 0xD8) = 0;
+
+    return self;
+}
+} // namespace lift_0054D220

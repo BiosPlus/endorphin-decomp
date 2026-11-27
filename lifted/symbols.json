@@ -26388,6 +26388,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0054C890 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0054D220": {
+    "name": "ConstructStringBlocks_0054D220",
+    "class": "Unknown",
+    "signature": "void* fn_0054D220(void* self)",
+    "summary": "Thiscall constructor body: sets vtable, default-constructs three std::string members, zeroes trailing flags, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054E340": {
     "name": "IsFloatFieldAt44Zero",
     "signature": "int fn_0054E340(const void* self)",
