@@ -71910,6 +71910,12 @@
     "summary": "Calls fn_0071E680(self) and returns the 32-bit value at offset +0x08 of the returned pointer.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711FE0": {
+    "name": "AssignStringToSubobject",
+    "signature": "void fn_00711FE0(const char* src)",
+    "summary": "Resolves the subobject at +0x40 of the argument and assigns the argument string into it.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00712000": {
     "name": "getSubobjectField_00712000",
     "signature": "extern \"C\" uint32_t __fastcall fn_00712000(void* self)",

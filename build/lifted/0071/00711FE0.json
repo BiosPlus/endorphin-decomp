@@ -1,0 +1,13 @@
+{
+  "va": "0x00711FE0",
+  "size": 32,
+  "orig_symbol": "sub_00711FE0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "AssignStringToSubobject",
+  "signature": "void fn_00711FE0(const char* src)",
+  "summary": "Resolves the subobject at +0x40 of the argument and assigns the argument string into it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:14:31Z"
+}

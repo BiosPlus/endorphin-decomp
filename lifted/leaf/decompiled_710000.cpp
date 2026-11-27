@@ -2429,3 +2429,18 @@ int32_t __thiscall fn_00711BE0(void* self, int32_t index) {
     return ext_006E7460(childObj);
 }
 } // namespace lift_00711BE0
+
+// [0x00711FE0] sub_00711FE0 (32 bytes)
+namespace lift_00711FE0 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* ext_0071E680(void* self);
+// Known callee 0x007110C0: AssignStrdupReplace_007110C0 (Frees the string held at +0x8 and replaces it with a malloc'd copy of src; sets +0x8 to null when src is null or empty.)
+extern void ext_007110C0(void* self, const char* src);
+
+// @name AssignStringToSubobject
+// @summary Resolves the subobject at +0x40 of the argument and assigns the argument string into it.
+void fn_00711FE0(const char* src) {
+    void* sub = ext_0071E680((void*)src);
+    ext_007110C0(sub, src);
+}
+} // namespace lift_00711FE0
