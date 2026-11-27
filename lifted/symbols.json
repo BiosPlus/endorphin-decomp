@@ -438,6 +438,13 @@
     "summary": "Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00402730": {
+    "name": "Tree::assignFrom",
+    "class": "Tree",
+    "signature": "static inline bool tree_node_isnil(const void* node)",
+    "summary": "Replaces this tree's root with a deep clone of the source tree's root, re-establishes the header's leftmost/rightmost links, and copies the source's +0x08 word.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00402800": {
     "name": "ArrayBlock::assignFrom",
     "class": "ArrayBlock",

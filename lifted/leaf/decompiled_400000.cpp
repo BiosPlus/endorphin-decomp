@@ -2961,3 +2961,60 @@ void* fn_00402800(void* self, void* src) {
     return self;
 }
 } // namespace lift_00402800
+
+// [0x00402730] sub_00402730 (117 bytes)
+namespace lift_00402730 {
+// Known callee 0x00402500: Tree::cloneSubtree (Recursively clones a red-black tree subtree (non-nil nodes) into newly allocated nodes, linking child pointers; on unwind erases the partial clone and rethrows.)
+extern void* ext_00402500(void* self, void* rec, void* arg1);
+
+// Node layout: +0x00 left, +0x08 right, +0x15 isnil.
+static inline bool tree_node_isnil(const void* node) {
+    return lift_field<uint8_t>(node, 0x15) != 0;
+}
+
+// @name Tree::assignFrom
+// @class Tree
+// @summary Replaces this tree's root with a deep clone of the source tree's root, re-establishes the header's leftmost/rightmost links, and copies the source's +0x08 word.
+// @field Tree +0x04 void* head
+// @field Tree +0x08 void* field_0x08
+void fn_00402730(void* self, void* arg1) {
+    void* const dstHead = lift_field<void*>(self, 0x04);
+    void* const srcHead = lift_field<void*>(arg1, 0x04);
+    void* const srcRoot = lift_field<void*>(srcHead, 0x04);
+
+    // Clone the source subtree under the destination header.
+    void* const clonedRoot = ext_00402500(self, srcRoot, dstHead);
+    lift_field<void*>(dstHead, 0x04) = clonedRoot;
+
+    lift_field<void*>(self, 0x08) = lift_field<void*>(arg1, 0x08);
+
+    void* const newRoot = lift_field<void*>(dstHead, 0x04);
+    if (tree_node_isnil(newRoot)) {
+        lift_field<void*>(dstHead, 0x00) = dstHead;
+        lift_field<void*>(dstHead, 0x08) = dstHead;
+        return;
+    }
+
+    // Leftmost search (literal translation of the original nil-skipping loop).
+    void* p = newRoot;
+    void* q = lift_field<void*>(p, 0x00);
+    if (tree_node_isnil(q)) {
+        do {
+            p = q;
+            q = lift_field<void*>(p, 0x00);
+        } while (tree_node_isnil(q));
+    }
+    lift_field<void*>(dstHead, 0x00) = p;
+
+    // Rightmost search (literal translation of the original nil-skipping loop).
+    void* c = newRoot;
+    void* r = lift_field<void*>(c, 0x08);
+    if (tree_node_isnil(r)) {
+        do {
+            c = r;
+            r = lift_field<void*>(c, 0x08);
+        } while (tree_node_isnil(r));
+    }
+    lift_field<void*>(dstHead, 0x08) = c;
+}
+} // namespace lift_00402730
