@@ -1581,3 +1581,87 @@ extern int32_t fn_006E9C30(void* self, int32_t index) {
     return ext_006E7460(element);
 }
 } // namespace lift_006E9C30
+
+// [0x006E9730]
+namespace lift_006E9730 {
+// @name getItemByTypeAndIndex
+// @summary Returns the index-th item in the array at +0x8c matching the given type (or any type if type is 0).
+// @field +0x7c int32_t field_0x7c
+// @field +0x8c void*** field_0x8c
+
+
+extern int32_t __fastcall ext_006E9610(void* self, void* /*edx*/, int32_t type);
+extern int32_t __fastcall ext_00710300(void* self);
+
+extern void* __fastcall fn_006E9730(void* self, void* /*edx*/, int32_t index, int32_t type) {
+    if (index < 0) {
+        return nullptr;
+    }
+
+    int32_t count = ext_006E9610(self, nullptr, type);
+    if (index >= count || type < 0 || type >= 3) {
+        return nullptr;
+    }
+
+    int32_t total = lift_field<int32_t>(self, 0x7c);
+    void*** items = lift_field<void***>(self, 0x8c);
+    int32_t matchCount = 0;
+
+    for (int32_t i = 0; i < total; ++i) {
+        if (type != 0) {
+            void* item = *items[i];
+            if (ext_00710300(item) != type) {
+                continue;
+            }
+        }
+        if (matchCount == index) {
+            return *items[i];
+        }
+        ++matchCount;
+    }
+
+    return nullptr;
+}
+} // namespace lift_006E9730
+
+// [0x006E9A40]
+namespace lift_006E9A40 {
+// @name Unknown::DestroyArrayAndBase
+// @class Unknown
+// @summary Destructor that destroys elements in an array at +0x1C (count at +0x0C), resets/frees the subobject at +0x0C, and calls base destructor 0x0077FA20.
+// @field Unknown +0x00 void* vftable
+// @field Unknown +0x0C uint32_t count
+// @field Unknown +0x1C void** items
+
+
+    extern uint32_t mem_00993D08;
+
+    void __cdecl ext_006A5C5C(void* ptr);
+    void __fastcall ext_006B9D70(void* self);
+    void __fastcall ext_006D2160(void* self);
+    void __fastcall ext_006D2250(void* self);
+    void __fastcall ext_0077FA20(void* self);
+
+extern void __fastcall fn_006E9A40(void* self) {
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00993D08));
+
+    void* subobj = static_cast<uint8_t*>(self) + 0x0C;
+    uint32_t count = lift_field<uint32_t>(self, 0x0C);
+
+    if (count != 0) {
+        void** items = lift_field<void**>(subobj, 0x10);
+        while (count != 0) {
+            --count;
+            void* item = items[count];
+            if (item != nullptr) {
+                ext_006B9D70(item);
+                ext_006A5C5C(item);
+            }
+        }
+    }
+
+    ext_006D2250(subobj);
+    ext_006D2160(subobj);
+    ext_0077FA20(self);
+}
+} // namespace lift_006E9A40

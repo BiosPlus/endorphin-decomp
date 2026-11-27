@@ -1,0 +1,13 @@
+{
+  "va": "0x006E9730",
+  "size": 144,
+  "orig_symbol": "sub_006E9730",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "getItemByTypeAndIndex",
+  "signature": "extern \"C\" void* __fastcall fn_006E9730(void* self, void* /*edx*/, int32_t index, int32_t type)",
+  "summary": "Returns the index-th item in the array at +0x8c matching the given type (or any type if type is 0).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:43:37Z"
+}
