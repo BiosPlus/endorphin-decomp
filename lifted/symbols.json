@@ -82406,6 +82406,12 @@
     "summary": "Re-parents the two 20-byte-element child lists of element i into element j, tagging each moved object with j, then folds element i's totals into element j.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F13F0": {
+    "name": "CpuidVendorLeaf0",
+    "signature": "uint8_t fn_007F13F0(void* self)",
+    "summary": "Executes CPUID leaf 0 and stores EBX, EDX, ECX (vendor string dwords) into out[0..2]; returns true.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F1480": {
     "name": "CPU::hasSSE",
     "class": "CPU",

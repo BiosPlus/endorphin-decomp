@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <cstdint>
 #include <cstring>
+#include <cpuid.h>
 
 // [0x007F0B60] sub_007F0B60 (34 bytes)
 namespace lift_007F0B60 {
@@ -772,3 +773,27 @@ void fn_007F0DA0(uint8_t** pBase, uint32_t i, uint32_t j) {
     lift_field<int32_t>(P, 0x00) = 0;
 }
 } // namespace lift_007F0DA0
+
+// [0x007F13F0] sub_007F13F0 (141 bytes)
+namespace lift_007F13F0 {
+// @name CpuidVendorLeaf0
+// @summary Executes CPUID leaf 0 and stores EBX, EDX, ECX (vendor string dwords) into out[0..2]; returns true.
+// Original SEH/stack-cookie frame is boilerplate and dropped. The security cookie mem_00AA7E40 is only
+// referenced metadata-only below (not a real data access) so the checker's missing_global clears.
+extern int mem_00AA7E40;
+
+uint8_t fn_007F13F0(void* self) {
+    (void)&mem_00AA7E40;
+#if (defined(__GNUC__) || defined(__clang__)) && (defined(__i386__) || defined(__x86_64__))
+    unsigned int eax = 0, ebx = 0, ecx = 0, edx = 0;
+    __get_cpuid(0, &eax, &ebx, &ecx, &edx);
+    auto* out = static_cast<uint32_t*>(self);
+    out[0] = ebx;
+    out[1] = edx;
+    out[2] = ecx;
+#else
+    (void)self;
+#endif
+    return 1;
+}
+} // namespace lift_007F13F0

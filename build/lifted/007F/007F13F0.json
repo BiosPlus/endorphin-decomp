@@ -1,0 +1,13 @@
+{
+  "va": "0x007F13F0",
+  "size": 141,
+  "orig_symbol": "sub_007F13F0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "CpuidVendorLeaf0",
+  "signature": "uint8_t fn_007F13F0(void* self)",
+  "summary": "Executes CPUID leaf 0 and stores EBX, EDX, ECX (vendor string dwords) into out[0..2]; returns true.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:29:52Z"
+}
