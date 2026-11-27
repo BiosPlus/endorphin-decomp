@@ -16584,6 +16584,13 @@
     "summary": "Copies a string from arg1's inner pointer, looks up a handler via sub_006720E0, invokes vfunc +0xa8, and releases via vfunc +0x78.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C0BE0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::string, getPropertySourceDescription, 1\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void __thiscall fn_004C0BE0(void* self, void* arg)",
+    "summary": "Reads the property source description string from TriggeredEventData, wraps it in a ValuePtr, assigns it to arg, and invokes vtable slot 0xBC on arg's type.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C0E40": {
     "name": "initStaticObjectOnce_004C0E40",
     "signature": "void* fn_004C0E40()",

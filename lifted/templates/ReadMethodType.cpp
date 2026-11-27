@@ -68907,3 +68907,46 @@ void __thiscall fn_004BD000(void* self, void* arg1) {
     fn_bc(field_04, arg1);
 }
 } // namespace lift_004BD000
+
+// [0x004C0BE0]
+namespace lift_004C0BE0 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, std::string, getPropertySourceDescription, 1>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads the property source description string from TriggeredEventData, wraps it in a ValuePtr, assigns it to arg, and invokes vtable slot 0xBC on arg's type.
+// @field ValuePtr +0x00 void* field_0x00
+// @field ValuePtr +0x04 void* field_0x04
+
+void* __stdcall ext_004C0280(void* dst_str, void* data);
+void* __thiscall ext_006720E0(void* self, void* str);
+void* __thiscall ext_0041CF50(void* self, void* other);
+extern void (__thiscall* mem_00924FF4)(void* self);
+
+struct ValuePtr {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+void __thiscall fn_004C0BE0(void* self, void* arg) {
+    (void)self;
+    ValuePtr* target = static_cast<ValuePtr*>(arg);
+    uint8_t str_buf[0x1C];
+    void* str_ptr = ext_004C0280(str_buf, target->field_0x00);
+
+    ValuePtr temp_val;
+    ext_006720E0(&temp_val, str_ptr);
+    ext_0041CF50(target, &temp_val);
+
+    if (temp_val.field_0x04 != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(temp_val.field_0x04);
+        auto release_fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        release_fn(temp_val.field_0x04, &temp_val);
+    }
+
+    mem_00924FF4(str_buf);
+
+    void* target_type = target->field_0x04;
+    void** type_vtable = *reinterpret_cast<void***>(target_type);
+    auto vfunc_bc = reinterpret_cast<void(__thiscall*)(void*, void*)>(type_vtable[0xBC / 4]);
+    vfunc_bc(target_type, target);
+}
+} // namespace lift_004C0BE0
