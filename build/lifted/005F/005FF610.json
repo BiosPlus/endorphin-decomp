@@ -1,0 +1,27 @@
+{
+  "va": "0x005FF610",
+  "size": 119,
+  "orig_symbol": "sub_005FF610",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "Sub_00629850_New",
+  "signature": "void* fn_005FF610(uint32_t p0, uint32_t p1, uint32_t p2, uint32_t p3)",
+  "summary": "Allocates a 0x78-byte Sub_00629850 object, runs its constructor with four args, then overrides its vtable pointers; returns null if allocation fails.",
+  "fields": [
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vfptr"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "vfptr_30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:24Z"
+}

@@ -38927,6 +38927,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FF610": {
+    "name": "Sub_00629850_New",
+    "signature": "void* fn_005FF610(uint32_t p0, uint32_t p1, uint32_t p2, uint32_t p3)",
+    "summary": "Allocates a 0x78-byte Sub_00629850 object, runs its constructor with four args, then overrides its vtable pointers; returns null if allocation fails.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FF790": {
     "name": "sub_005FF790",
     "signature": "void* fn_005FF790(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
@@ -59046,6 +59052,13 @@
     "signature": "void __fastcall fn_006B6270(void* self, void* edx, int arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00454BE0 (SetValueAndForward).",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
+  "0x006B6720": {
+    "name": "GWCPropInPlaceSpinEdit::vfunc_66",
+    "class": "GWCPropInPlaceSpinEdit",
+    "signature": "extern \"C\" void __thiscall fn_006B6720(void* self, void* pMsg)",
+    "summary": "Redirects WM_KEYDOWN messages to the embedded child control's HWND before calling base PreTranslateMessage.",
+    "lifted_path": "lifted/classes/GWCPropInPlaceSpinEdit.cpp"
   },
   "0x006B67E0": {
     "name": "SendWindowMessage_006B67E0",

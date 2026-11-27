@@ -8,8 +8,10 @@
 // Recovered field layout for Sub_00629850:
 namespace lifted_layout {
 struct Sub_00629850_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x00629850)
-    // +0x30  uint32_t                 field_0x30  (evidence: 0x00629850)
+    // +0x0   uint32_t                 vfptr  (evidence: 0x005FF610) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x00629850) // CONFLICT: multiple definitions at +0x0
+    // +0x30  uint32_t                 field_0x30  (evidence: 0x00629850) // CONFLICT: multiple definitions at +0x30
+    // +0x30  uint32_t                 vfptr_30  (evidence: 0x005FF610) // CONFLICT: multiple definitions at +0x30
     // +0x34  float                    field_0x34  (evidence: 0x00629850)
     // +0x38  float                    field_0x38  (evidence: 0x00629850)
     // +0x3C  float                    field_0x3c  (evidence: 0x00629850)

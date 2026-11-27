@@ -1813,3 +1813,28 @@ uintptr_t fn_005FCA90(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3
 }
 } // namespace lift_005FC890
 } // namespace lift_005FCA90
+
+// [0x005FF610] sub_005FF610 (119 bytes)
+namespace lift_005FF610 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Operator new(size_t): called with the object size (0x78).
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629850: Sub_00629850::Sub_00629850 (Constructor: initializes MetaBodySensor base, installs vtables at +0x00/+0x30, and initializes float fields at +0x34..+0x70.)
+// Thiscall-style constructor: self in ecx, four stack args.
+extern void* ext_00629850(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4);
+
+// @name Sub_00629850_New
+// @summary Allocates a 0x78-byte Sub_00629850 object, runs its constructor with four args, then overrides its vtable pointers; returns null if allocation fails.
+// @field Sub_00629850 +0x00 uint32_t vfptr
+// @field Sub_00629850 +0x30 uint32_t vfptr_30
+void* fn_005FF610(uint32_t p0, uint32_t p1, uint32_t p2, uint32_t p3) {
+    void* obj = ext_006A5C62(0x78);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    ext_00629850(obj, p0, p1, p2, p3);
+    lift_field<uint32_t>(obj, 0x00) = 0x0096EEF4u;
+    lift_field<uint32_t>(obj, 0x30) = 0x0096EEDCu;
+    return obj;
+}
+} // namespace lift_005FF610
