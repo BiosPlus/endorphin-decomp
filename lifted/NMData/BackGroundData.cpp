@@ -492,3 +492,39 @@ void __thiscall fn_005A1AA0(void* self) {
     }
 }
 } // namespace lift_005A1AA0
+
+// [0x0059D6A0]
+namespace lift_0059D6A0 {
+// @name NMData::BackGroundData::vfunc_56_off_4
+// @class NMData::BackGroundData
+// @summary Returns a float from field_0x5f4 using a string from TransitionFactorSource(+0x15c) if field_0x5f4 matches ext_00594000(), else 0.0f.
+// @field NMData::BackGroundData +0x15c void* field_0x15c
+// @field NMData::BackGroundData +0x5f4 int32_t field_0x5f4
+
+
+extern int32_t __cdecl ext_00594000(void);
+extern void* __thiscall ext_0058A200(void* self, void* out_str, int32_t arg);
+extern float __thiscall ext_005946C0(void* self, void* arg);
+extern uint32_t mem_00924FF4;
+
+float __thiscall fn_0059D6A0(void* self) {
+    int32_t f5f4 = lift_field<int32_t>(self, 0x5f4);
+    if (f5f4 == 0) {
+        return 0.0f;
+    }
+
+    int32_t val = ext_00594000();
+    if (f5f4 != val) {
+        return 0.0f;
+    }
+
+    uint8_t str_buf[28] = {};
+    void* str_ret = ext_0058A200(static_cast<uint8_t*>(self) + 0x15c, str_buf, 3);
+    float result = ext_005946C0(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(f5f4))), str_ret);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    return result;
+}
+} // namespace lift_0059D6A0

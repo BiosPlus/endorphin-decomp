@@ -20550,6 +20550,13 @@
     "summary": "Dispatches on a 32-bit key: 0x266 and 0x2FF call the matching static-pair store helper with (out, this); any other key forwards to DesiredPoseEventData::vfunc_15. Returns out.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C63F0": {
+    "name": "NMData::ForceEventData::vfunc_84",
+    "class": "NMData::ForceEventData",
+    "signature": "extern \"C\" void __thiscall fn_004C63F0(void* self, int32_t frame)",
+    "summary": "Triggers force event update at frame field_0x15c and finalizes at field_0x15c + 3",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C6590": {
     "name": "NMData::ForceEventData::vfunc_3_off_158",
     "class": "NMData::ForceEventData",
@@ -42383,6 +42390,13 @@
     "signature": "uint32_t fn_0059D660(void* self, uint32_t id)",
     "summary": "Returns the id unchanged if it is one of five ignored ids; otherwise tail-forwards it to vtable entry +0x54 of the object at self+0x160.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x0059D6A0": {
+    "name": "NMData::BackGroundData::vfunc_56_off_4",
+    "class": "NMData::BackGroundData",
+    "signature": "float __thiscall fn_0059D6A0(void* self)",
+    "summary": "Returns a float from field_0x5f4 using a string from TransitionFactorSource(+0x15c) if field_0x5f4 matches ext_00594000(), else 0.0f.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
   "0x0059D7D0": {
     "name": "NMData::CharacterData::vfunc_20_off_4",

@@ -1,0 +1,28 @@
+{
+  "va": "0x0059D6A0",
+  "size": 147,
+  "orig_symbol": "NMData::BackGroundData::vfunc_56_off_4",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_56_off_4",
+  "class": "NMData::BackGroundData",
+  "signature": "float __thiscall fn_0059D6A0(void* self)",
+  "summary": "Returns a float from field_0x5f4 using a string from TransitionFactorSource(+0x15c) if field_0x5f4 matches ext_00594000(), else 0.0f.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5F4",
+      "type": "int32_t",
+      "name": "field_0x5f4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:48:38Z"
+}
