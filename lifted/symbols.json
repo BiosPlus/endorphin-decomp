@@ -32304,6 +32304,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005B8EA0": {
+    "name": "forEachNodeCallWithOffset",
+    "signature": "void* fn_005B8EA0( ResultPair005B8EA0* out_result, void* first_container, void* first_node, void* last_container, void* last_node, void* fn_ptr, uint32_t offset)",
+    "summary": "Iterates a checked node cursor range, invoking a member-style callback with (node-\u003efield_0x28 + offset)",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B8F20": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1\u003e",
