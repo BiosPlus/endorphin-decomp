@@ -1,0 +1,94 @@
+{
+  "va": "0x00574D90",
+  "size": 131,
+  "orig_symbol": "sub_00574D90",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "FourStringsAndFloats::FourStringsAndFloats",
+  "class": "FourStringsAndFloats",
+  "signature": "void* __fastcall sub_00574D90(void* self)",
+  "summary": "Constructor: initializes ThreeStrings base, a fourth std::string at +0x54, and 12 floats (+0x70..+0x9C) to 0.0f",
+  "fields": [
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x54",
+      "type": "std::string",
+      "name": "field_0x54"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "field_0x70"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x74",
+      "type": "float",
+      "name": "field_0x74"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x84",
+      "type": "float",
+      "name": "field_0x84"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x88",
+      "type": "float",
+      "name": "field_0x88"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x8C",
+      "type": "float",
+      "name": "field_0x8c"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x90",
+      "type": "float",
+      "name": "field_0x90"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x94",
+      "type": "float",
+      "name": "field_0x94"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x98",
+      "type": "float",
+      "name": "field_0x98"
+    },
+    {
+      "class": "FourStringsAndFloats",
+      "offset": "+0x9C",
+      "type": "float",
+      "name": "field_0x9c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:24:53Z"
+}

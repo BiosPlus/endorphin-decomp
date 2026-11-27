@@ -2048,3 +2048,38 @@ void fn_005753B0(void* self, const float* axis, float angle) {
     ext_0067E510(self, quat);
 }
 } // namespace lift_005753B0
+
+// [0x00574D90]
+namespace lift_00574D90 {
+// @name FourStringsAndFloats::FourStringsAndFloats
+// @class FourStringsAndFloats
+// @summary Constructor: initializes ThreeStrings base, a fourth std::string at +0x54, and 12 floats (+0x70..+0x9C) to 0.0f
+// @field FourStringsAndFloats +0x54 std::string field_0x54
+// @field FourStringsAndFloats +0x70 float field_0x70
+// @field FourStringsAndFloats +0x74 float field_0x74
+// @field FourStringsAndFloats +0x78 float field_0x78
+// @field FourStringsAndFloats +0x7C float field_0x7c
+// @field FourStringsAndFloats +0x80 float field_0x80
+// @field FourStringsAndFloats +0x84 float field_0x84
+// @field FourStringsAndFloats +0x88 float field_0x88
+// @field FourStringsAndFloats +0x8C float field_0x8c
+// @field FourStringsAndFloats +0x90 float field_0x90
+// @field FourStringsAndFloats +0x94 float field_0x94
+// @field FourStringsAndFloats +0x98 float field_0x98
+// @field FourStringsAndFloats +0x9C float field_0x9c
+
+
+extern void* __fastcall ext_00574D30(void* self);
+extern void* (__fastcall *mem_00924FE8)(void*);
+
+void* __fastcall sub_00574D90(void* self) {
+    ext_00574D30(self);
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x54);
+
+    for (uintptr_t off = 0x70; off <= 0x9C; off += 4) {
+        lift_field<float>(self, off) = 0.0f;
+    }
+
+    return self;
+}
+} // namespace lift_00574D90
