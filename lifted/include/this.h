@@ -17,6 +17,7 @@ struct this_Fields {
     // +0xC   int32_t                  count  (evidence: 0x007DD0A0)
     // +0x10  uint8_t* items (stride   0x9C)  (evidence: 0x007DD0A0)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0063F480)
+    // +0x30  int32_t                  expectedCount  (evidence: 0x004EF5E0)
     // +0x34  uint32_t*                vec_first  (evidence: 0x00477F30)
     // +0x38  uint32_t*                vec_last  (evidence: 0x00477F30)
     // +0x54  uint32_t*                field_0x54  (evidence: 0x006AF8E0)

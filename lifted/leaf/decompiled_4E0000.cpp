@@ -989,3 +989,54 @@ extern bool __stdcall fn_004E7390(void* lhs, void* rhs) {
     return mem_00924EF4(lhsName, rhsName);
 }
 } // namespace lift_004E7390
+
+// [0x004EF5E0]
+namespace lift_004EF5E0 {
+extern void (*mem_00925134)(void);
+
+// @name checkVectorElementsFieldMatch
+// @summary Checks if vector size matches this+0x30 and all elements share the same +0x40->+0x48 value.
+// @field this +0x30 int32_t expectedCount
+bool __thiscall sub_004EF5E0(void* self, void* vec) {
+    uint8_t* pThis = reinterpret_cast<uint8_t*>(self);
+    uint8_t* pVec = reinterpret_cast<uint8_t*>(vec);
+
+    uint32_t begin = lift_field<uint32_t>(pVec, 0x4);
+    int32_t count = 0;
+    if (begin != 0) {
+        uint32_t end = lift_field<uint32_t>(pVec, 0x8);
+        count = static_cast<int32_t>(end - begin) >> 2;
+    }
+
+    int32_t expectedCount = lift_field<int32_t>(pThis, 0x30);
+    if (count != expectedCount) {
+        return false;
+    }
+
+    if (begin == 0 || (static_cast<int32_t>(lift_field<uint32_t>(pVec, 0x8) - begin) >> 2) == 0) {
+        mem_00925134();
+    }
+
+    uint32_t* elems = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(pVec, 0x4)));
+    uint8_t* firstElem = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(elems[0]));
+    uint8_t* firstInner = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(firstElem, 0x40)));
+    uint8_t* firstTarget = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(firstInner, 0x0)));
+    uint32_t targetVal = lift_field<uint32_t>(firstTarget, 0x48);
+
+    for (int32_t i = 1; i < expectedCount; ++i) {
+        uint32_t curBegin = lift_field<uint32_t>(pVec, 0x4);
+        if (curBegin == 0 || static_cast<uint32_t>(i) >= static_cast<uint32_t>(static_cast<int32_t>(lift_field<uint32_t>(pVec, 0x8) - curBegin) >> 2)) {
+            mem_00925134();
+        }
+        uint32_t* curElems = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(pVec, 0x4)));
+        uint8_t* curElem = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(curElems[i]));
+        uint8_t* curInner = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(curElem, 0x40)));
+        uint8_t* curTarget = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(curInner, 0x0)));
+        if (targetVal != lift_field<uint32_t>(curTarget, 0x48)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+} // namespace lift_004EF5E0

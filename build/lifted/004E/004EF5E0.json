@@ -1,0 +1,21 @@
+{
+  "va": "0x004EF5E0",
+  "size": 148,
+  "orig_symbol": "sub_004EF5E0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "checkVectorElementsFieldMatch",
+  "signature": "bool __thiscall sub_004EF5E0(void* self, void* vec)",
+  "summary": "Checks if vector size matches this+0x30 and all elements share the same +0x40-\u003e+0x48 value.",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x30",
+      "type": "int32_t",
+      "name": "expectedCount"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:06:45Z"
+}
