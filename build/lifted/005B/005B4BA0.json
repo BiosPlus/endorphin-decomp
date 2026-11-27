@@ -1,0 +1,28 @@
+{
+  "va": "0x005B4BA0",
+  "size": 299,
+  "orig_symbol": "Geometry::CylinderType::vfunc_16",
+  "src_path": "src/Geometry/CylinderType.cpp",
+  "lifted_path": "lifted/Geometry/CylinderType.cpp",
+  "name": "Geometry::CylinderType::vfunc_16",
+  "class": "Geometry::CylinderType",
+  "signature": "extern \"C\" double mem_00955090;  // 2*pi (double) void __stdcall fn_005B4BA0(void* params, void* points, int32_t stacks, int32_t slices)",
+  "summary": "Clears a Float3Vector and refills it with (stacks+1) copies of a slices-point circle of radius params[0] in the XZ plane (y = 0)",
+  "fields": [
+    {
+      "class": "Float3Vector",
+      "offset": "+0x4",
+      "type": "float*",
+      "name": "begin"
+    },
+    {
+      "class": "Float3Vector",
+      "offset": "+0x8",
+      "type": "float*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:36:21Z"
+}

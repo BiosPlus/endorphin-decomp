@@ -44448,6 +44448,13 @@
     "summary": "Generates the 8 scaled cuboid corner vertices and appends them to a vector.",
     "lifted_path": "lifted/Geometry/CuboidType.cpp"
   },
+  "0x005B4BA0": {
+    "name": "Geometry::CylinderType::vfunc_16",
+    "class": "Geometry::CylinderType",
+    "signature": "extern \"C\" double mem_00955090;  // 2*pi (double) void __stdcall fn_005B4BA0(void* params, void* points, int32_t stacks, int32_t slices)",
+    "summary": "Clears a Float3Vector and refills it with (stacks+1) copies of a slices-point circle of radius params[0] in the XZ plane (y = 0)",
+    "lifted_path": "lifted/Geometry/CylinderType.cpp"
+  },
   "0x005B4E40": {
     "name": "Geometry::SphylType::vfunc_16",
     "class": "Geometry::SphylType",

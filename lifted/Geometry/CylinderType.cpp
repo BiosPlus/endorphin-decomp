@@ -146,3 +146,62 @@ void fn_005B1170(void* self) {
     ext_00647C50(self);
 }
 } // namespace lift_005B1170
+
+// [0x005B4BA0]
+namespace lift_005B4BA0 {
+// @name Geometry::CylinderType::vfunc_16
+// @class Geometry::CylinderType
+// @summary Clears a Float3Vector and refills it with (stacks+1) copies of a slices-point circle of radius params[0] in the XZ plane (y = 0)
+// @field Float3Vector +0x04 float* begin
+// @field Float3Vector +0x08 float* end
+
+// Layout of the iterator written by Float3Vector::erase (matches leaf decl).
+struct CheckedFloat3Iter {
+    void* container;
+    float* ptr;
+};
+
+extern float __thiscall ext_005B11E0(void* self, int index);
+extern CheckedFloat3Iter* __thiscall ext_00539AA0(void* self, CheckedFloat3Iter* out_iter, void* first_container, float* first_ptr, void* last_container, float* last_ptr);
+extern void __thiscall ext_00539FB0(void* self, const float* value);
+extern void* mem_00925134;   // _invalid_parameter_noinfo function pointer
+extern double mem_00955090;  // 2*pi (double)
+
+void __stdcall fn_005B4BA0(void* params, void* points, int32_t stacks, int32_t slices) {
+    const float radius = ext_005B11E0(params, 0);
+    // The asm also reads params[1] and divides by `stacks` into a value that is
+    // only ever stored to the z slot and then overwritten before use, so the
+    // read is kept for call-order fidelity and the result is discarded.
+    (void)ext_005B11E0(params, 1);
+
+    float* begin = lift_field<float*>(points, 0x04);
+    float* end = lift_field<float*>(points, 0x08);
+    if (reinterpret_cast<std::uintptr_t>(begin) > reinterpret_cast<std::uintptr_t>(end)) {
+        // Asm performs this same check twice; one check is equivalent.
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    CheckedFloat3Iter out_iter{};
+    ext_00539AA0(points, &out_iter, points, begin, points, end);
+
+    int32_t remaining = stacks + 1;
+    if (remaining <= 0) {
+        return;
+    }
+    do {
+        if (slices > 0) {
+            for (int32_t j = 0; j < slices; ++j) {
+                const float phi = static_cast<float>(
+                    (static_cast<double>(j) * mem_00955090) / static_cast<double>(slices));
+                const float c = static_cast<float>(std::cos(static_cast<double>(phi)));
+                const float s = static_cast<float>(std::sin(static_cast<double>(phi)));
+                float p[3];
+                p[0] = c * radius;
+                p[1] = 0.0f;
+                p[2] = s * radius;
+                ext_00539FB0(points, p);
+            }
+        }
+    } while (--remaining != 0);
+}
+} // namespace lift_005B4BA0
