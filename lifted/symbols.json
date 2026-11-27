@@ -60258,6 +60258,13 @@
     "summary": "Queries the TransformInterface slot-2 object, derives a 3-vector through it using an identity 3x3 matrix, and writes the negated vector to the caller's out buffer.",
     "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
+  "0x00612A20": {
+    "name": "NMData::SecondaryTwistAndSwingConstraint::vfunc_21",
+    "class": "NMData::SecondaryTwistAndSwingConstraint",
+    "signature": "inline bool is_sentinel_key(uint32_t v)",
+    "summary": "Calls the base Constraint::vfunc_21, looks up a key on the argument, and if the key is not a sentinel, feeds it through a vtable call and forwards the interface sub-object's update calls.",
+    "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
+  },
   "0x00612B60": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_61",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

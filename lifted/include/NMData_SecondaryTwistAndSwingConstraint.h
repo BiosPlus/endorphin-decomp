@@ -10,7 +10,9 @@
 // Recovered field layout for NMData::SecondaryTwistAndSwingConstraint:
 namespace lifted_layout {
 struct NMData_SecondaryTwistAndSwingConstraint_Fields {
-    // +0x4   void* field_0x04 (interface sub-object; vtable slot 3 is called with (mem, this+0x0C, 0))  (evidence: 0x0061D4A0)
+    // +0x0   void*                    vptr  (evidence: 0x00612A20)
+    // +0x4   void* field_0x04 (interface sub-object; vtable slot 3 is called with (mem, this+0x0C, 0))  (evidence: 0x0061D4A0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x00612A20) // CONFLICT: multiple definitions at +0x4
     // +0xC   void* field_0x0c (base address passed to the interface call)  (evidence: 0x0061D4A0)
     // +0x160 void* field_0x160 (child object; vtable slots 0x120, 0x128, 0x12C and 0x104 are called)  (evidence: 0x0061D4A0)
 };

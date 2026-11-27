@@ -1,0 +1,28 @@
+{
+  "va": "0x00612A20",
+  "size": 310,
+  "orig_symbol": "NMData::SecondaryTwistAndSwingConstraint::vfunc_21",
+  "src_path": "src/NMData/SecondaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::SecondaryTwistAndSwingConstraint::vfunc_21",
+  "class": "NMData::SecondaryTwistAndSwingConstraint",
+  "signature": "inline bool is_sentinel_key(uint32_t v)",
+  "summary": "Calls the base Constraint::vfunc_21, looks up a key on the argument, and if the key is not a sentinel, feeds it through a vtable call and forwards the interface sub-object's update calls.",
+  "fields": [
+    {
+      "class": "NMData::SecondaryTwistAndSwingConstraint",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::SecondaryTwistAndSwingConstraint",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:50:48Z"
+}

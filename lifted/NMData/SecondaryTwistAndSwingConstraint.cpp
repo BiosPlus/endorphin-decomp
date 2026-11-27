@@ -214,3 +214,67 @@ void* fn_0061D4A0(void* self, void* owner) {
     return V;
 }
 } // namespace lift_0061D4A0
+
+// [0x00612A20] NMData::SecondaryTwistAndSwingConstraint::vfunc_21 (310 bytes)
+namespace lift_00612A20 {
+// Callees (signatures inferred from call sites; unverified against endorphin.exe).
+extern void ext_00612650(void* self, void* arg);                       // NMData::Constraint::vfunc_21 (thiscall, 1 stack arg)
+extern uint32_t ext_0063F530(void* self, uint32_t a, uint32_t b, uint32_t c); // sub_0063F530 (thiscall-style, 3 stack args)
+extern uint32_t ext_0067EFD0(void* out, uint32_t key);                 // sub_0067EFD0 (out buffer, key)
+extern void ext_00593910(void* self, void* arg);                       // Transform::vfunc_21 (thiscall, 1 stack arg)
+
+// Globals: the code loads their stored values and passes them as arguments.
+extern uint32_t mem_00A9F24C;
+extern uint32_t mem_00A9F34C;
+extern uint32_t mem_00B40640;
+
+namespace {
+
+// Key values that short-circuit the lookup logic.
+inline bool is_sentinel_key(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// Virtual call through the object's vtable at the given byte offset.
+template <typename R, typename... A>
+inline R vcall(void* obj, uint32_t slotByteOffset, A... args) {
+    void** vtbl = lift_field<void**>(obj, 0);
+    auto fn = reinterpret_cast<R (*)(void*, A...)>(vtbl[slotByteOffset / sizeof(void*)]);
+    return fn(obj, args...);
+}
+
+} // namespace
+
+// @name NMData::SecondaryTwistAndSwingConstraint::vfunc_21
+// @class NMData::SecondaryTwistAndSwingConstraint
+// @summary Calls the base Constraint::vfunc_21, looks up a key on the argument, and if the key is not a sentinel, feeds it through a vtable call and forwards the interface sub-object's update calls.
+// @field NMData::SecondaryTwistAndSwingConstraint +0x00 void* vptr
+// @field NMData::SecondaryTwistAndSwingConstraint +0x04 void* field_0x04
+void fn_00612A20(void* self, void* arg) {
+    ext_00612650(self, arg);
+
+    uint32_t key = ext_0063F530(arg, mem_00A9F24C, 0u, 1u);
+    if (is_sentinel_key(key)) {
+        return;
+    }
+
+    uint32_t local[3] = {0u, 0u, 0u};
+    uint32_t r = ext_0067EFD0(local, key);
+    vcall<void>(self, 0xF4u, r);
+
+    void* iface = &lift_field<uint8_t>(self, 0x04);
+    vcall<void>(iface, 0x0Cu, mem_00B40640);
+
+    uint32_t t = ext_0063F530(as_ptr(key), mem_00A9F34C, 0u, 1u);
+    if (!is_sentinel_key(t)) {
+        ext_00593910(self, as_ptr(key));
+    }
+
+    vcall<void>(iface, 0x0Cu, mem_00B40640);
+}
+} // namespace lift_00612A20
