@@ -27320,6 +27320,12 @@
     "summary": "Scales a float angle by a unit-mode selector: 0 = degrees to radians, 2 = turns to radians (2*pi), otherwise identity.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005531B0": {
+    "name": "UnitScaleByIndex",
+    "signature": "extern \"C\" const double mem_009575B0;  // 0.0254 (inches -\u003e metres) extern \"C\" const double mem_009575C0;  // 0.3048 (feet -\u003e metres) extern \"C\" const double mem_009575D0;  // 0.9144 (yards -\u003e metres) float fn_005531B0(void* self, float value)",
+    "summary": "Scales a float by a unit-conversion factor selected by the unit index at +0x2c; returns the result (unknown or 0 index passes through unchanged).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00553720": {
     "name": "NMFileIO::vfunc_3",
     "class": "NMFileIO",

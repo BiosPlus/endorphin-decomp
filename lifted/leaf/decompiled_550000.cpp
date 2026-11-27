@@ -2059,3 +2059,42 @@ float fn_005530F0(void* self, float value) {
     return static_cast<float>(static_cast<double>(value) * factor);
 }
 } // namespace lift_005530F0
+
+// [0x005531B0] sub_005531B0 (126 bytes)
+namespace lift_005531B0 {
+extern const double mem_009334D8;  // 100.0
+extern const double mem_00928E78;  // 1000.0
+extern const double mem_009575B0;  // 0.0254 (inches -> metres)
+extern const double mem_009575C0;  // 0.3048 (feet -> metres)
+extern const double mem_009575D0;  // 0.9144 (yards -> metres)
+
+// @name UnitScaleByIndex
+// @summary Scales a float by a unit-conversion factor selected by the unit index at +0x2c; returns the result (unknown or 0 index passes through unchanged).
+// @field field_0x2c int32_t unitIndex
+float fn_005531B0(void* self, float value) {
+    const int32_t unitIndex = lift_field<int32_t>(self, 0x2c);
+    float x = value;
+
+    // Each step rounds back to float, matching the original fstp dword stores.
+    switch (unitIndex) {
+    case 1:
+        x = static_cast<float>(static_cast<double>(x) / mem_009334D8);
+        break;
+    case 2:
+        x = static_cast<float>(static_cast<double>(x) / mem_00928E78);
+        break;
+    case 3:
+        x = static_cast<float>(static_cast<double>(x) * mem_009575B0);
+        break;
+    case 4:
+        x = static_cast<float>(static_cast<double>(x) * mem_009575C0);
+        break;
+    case 5:
+        x = static_cast<float>(static_cast<double>(x) * mem_009575D0);
+        break;
+    default:
+        break;
+    }
+    return x;
+}
+} // namespace lift_005531B0
