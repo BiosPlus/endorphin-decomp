@@ -3164,3 +3164,62 @@ void __thiscall fn_00557160(void* self, void* arg) {
     set_link(h, 0x08, r);
 }
 } // namespace lift_00557160
+
+// [0x005592A0] sub_005592A0 (244 bytes)
+namespace lift_005592A0 {
+// Known callee 0x00430F30: sub_00430F30 (Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).)
+extern void* ext_00430F30(void* dst);
+// Known callee 0x0043A910: sub_0043A910 (thiscall registry insert: self, key string, value pointer, flag)
+extern void __thiscall ext_0043A910(void* self, void* key, void* value, int flag);
+// Known callee 0x0043AA10: Vector::InsertSortedUniqueOrThrow_0043AA10 (thiscall: self, key string, value pointer, flag)
+extern void __thiscall ext_0043AA10(void* self, void* key, void* value, int flag);
+// Known callee 0x0043AB10: sub_0043AB10 (Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).)
+extern void* ext_0043AB10();
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint32_t flag);
+// Known callee 0x006790C0: sub_006790C0 (thiscall)
+extern void __thiscall ext_006790C0(void* self);
+// Known callee 0x006798D0: sub_006798D0 (cdecl, returns pointer)
+extern void* ext_006798D0(void* a, void* b);
+
+// MSVCP80 IAT slots (thiscall std::string members, called through the slot value).
+extern uint32_t mem_00924FEC; // std::string::empty
+extern uint32_t mem_00924FDC; // std::string::operator=
+extern uint32_t mem_00924FF4; // std::string::~string
+
+// @name registerStringKeyedEntries_005592A0
+// @summary Builds a string via forwardMakeBoolString, optionally formats it, then inserts it as a key into two entries of the registry object from sub_0043AB10 and destroys the temporaries.
+void __cdecl fn_005592A0() {
+    using EmptyFn = bool (*)(void* self);
+    using AssignFn = void* (*)(void* self, const void* src);
+    using DtorFn = void (*)(void* self);
+
+    // Frame layout (byte offsets within the original stack frame):
+    //   +0x00 std::string A, +0x1c std::string B, +0x48 std::string C, +0x64 bool / fnptr dword.
+    alignas(8) unsigned char frame[0x70] = {};
+
+    ext_0066AD10(frame, 0xa851c4u);
+    *reinterpret_cast<uint32_t*>(frame + 0x48) = 0;
+
+    if ((*reinterpret_cast<EmptyFn*>(&mem_00924FEC))(frame + 0x48)) {
+        (*reinterpret_cast<AssignFn*>(&mem_00924FDC))(frame + 0x4c, frame);
+    }
+
+    if (frame[0x64] != 0) {
+        void* formatted = ext_00430F30(frame + 0x1c);
+        frame[0x48] = 2;
+        void* obj = ext_006798D0(formatted, frame);
+        ext_006790C0(obj);
+        (*reinterpret_cast<DtorFn*>(&mem_00924FF4))(frame + 0x1c);
+    }
+
+    uint8_t* registry = static_cast<uint8_t*>(ext_0043AB10());
+
+    *reinterpret_cast<uint32_t*>(frame + 0x64) = 0x00553A50u;
+    ext_0043AA10(registry + 0x4, frame + 0x48, frame + 0x64, 1);
+    ext_0043A910(registry + 0x14, frame + 0x48, frame, 1);
+
+    (*reinterpret_cast<DtorFn*>(&mem_00924FF4))(frame);
+    (*reinterpret_cast<DtorFn*>(&mem_00924FF4))(frame + 0x48);
+}
+} // namespace lift_005592A0

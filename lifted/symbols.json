@@ -39261,6 +39261,12 @@
     "summary": "Recursively clones a red-black tree subtree, cleaning up allocated nodes on exception.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005592A0": {
+    "name": "registerStringKeyedEntries_005592A0",
+    "signature": "void __cdecl fn_005592A0()",
+    "summary": "Builds a string via forwardMakeBoolString, optionally formats it, then inserts it as a key into two entries of the registry object from sub_0043AB10 and destroys the temporaries.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559620": {
     "name": "sub_00559620",
     "class": "(none)",
