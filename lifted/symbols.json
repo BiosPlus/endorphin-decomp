@@ -28148,6 +28148,12 @@
     "summary": "Rewinds the file, skips the first line, then for each line beginning with \"v \" scans three values into the buffer whose pointer is stored in the context's vertex table; returns 0.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00550520": {
+    "name": "parseObjVertexNormals",
+    "signature": "extern \"C\" int mem_009252C4;  // MSVCR80!fseek IAT slot (metadata only) extern \"C\" int mem_009252C0;  // MSVCR80!fgets IAT slot (metadata only) extern \"C\" int mem_0092521C;  // MSVCR80!sscanf IAT slot (metadata only) extern \"C\" int mem_009570BC;  // \"vn %f %f %f\" void __stdcall fn_00550520(FILE* file, void* self, char* buf)",
+    "summary": "Rewinds a file and reads lines, sscanf-ing each \"vn x y z\" line into the float triple pointed to by the table at self+0x18.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005505B0": {
     "name": "parseObjTextureCoords",
     "signature": "void __stdcall sub_005505B0(FILE* file, void* obj, char* buf)",

@@ -1,0 +1,27 @@
+{
+  "va": "0x00550520",
+  "size": 135,
+  "orig_symbol": "sub_00550520",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "parseObjVertexNormals",
+  "signature": "extern \"C\" int mem_009252C4;  // MSVCR80!fseek IAT slot (metadata only) extern \"C\" int mem_009252C0;  // MSVCR80!fgets IAT slot (metadata only) extern \"C\" int mem_0092521C;  // MSVCR80!sscanf IAT slot (metadata only) extern \"C\" int mem_009570BC;  // \"vn %f %f %f\" void __stdcall fn_00550520(FILE* file, void* self, char* buf)",
+  "summary": "Rewinds a file and reads lines, sscanf-ing each \"vn x y z\" line into the float triple pointed to by the table at self+0x18.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "BYTE*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:24:30Z"
+}

@@ -2329,3 +2329,38 @@ void fn_00559680(void* self) {
     lift_field<uint32_t>(self, 0x10) = 0;
 }
 } // namespace lift_00559680
+
+// [0x00550520] sub_00550520 (135 bytes)
+namespace lift_00550520 {
+extern int mem_009252C4;  // MSVCR80!fseek IAT slot (metadata only)
+extern int mem_009252C0;  // MSVCR80!fgets IAT slot (metadata only)
+extern int mem_0092521C;  // MSVCR80!sscanf IAT slot (metadata only)
+extern int mem_009570BC;  // "vn %f %f %f"
+
+// @name parseObjVertexNormals
+// @summary Rewinds a file and reads lines, sscanf-ing each "vn x y z" line into the float triple pointed to by the table at self+0x18.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x18 BYTE* field_0x18
+void __stdcall fn_00550520(FILE* file, void* self, char* buf) {
+    (void)&mem_009252C4;
+    (void)&mem_009252C0;
+    (void)&mem_0092521C;
+    if (lift_field<DWORD>(self, 0x04) == 0) {
+        return;
+    }
+    fseek(file, 0, SEEK_SET);
+    if (fgets(buf, 0x800, file) == nullptr) {
+        return;
+    }
+    const char* fmt = reinterpret_cast<const char*>(&mem_009570BC);
+    BYTE* table = lift_field<BYTE*>(self, 0x18);
+    DWORD off = 0;
+    do {
+        if (buf[0] == 'v' && buf[1] == 'n') {
+            float* dst = *reinterpret_cast<float**>(table + off);
+            sscanf(buf, fmt, dst, dst + 1, dst + 2);
+            off += 4;
+        }
+    } while (fgets(buf, 0x800, file) != nullptr);
+}
+} // namespace lift_00550520
