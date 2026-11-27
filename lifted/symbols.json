@@ -14120,6 +14120,13 @@
     "summary": "Returns 1 if the wrapped GraphEngineData's getXMax() is at least 1e-6 (NaN yields 0); throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B2170": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData,float,getXMax\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0\u003e",
+    "signature": "void* fn_004B2170(void* out, void* arg)",
+    "summary": "Reads the GraphEngineData pointer held in the ValuePtrType argument, calls getXMax on it, and formats the float into the caller's string slot; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B21D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",

@@ -1,0 +1,22 @@
+{
+  "va": "0x004B2170",
+  "size": 84,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData,float,getXMax\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0\u003e",
+  "signature": "void* fn_004B2170(void* out, void* arg)",
+  "summary": "Reads the GraphEngineData pointer held in the ValuePtrType argument, calls getXMax on it, and formats the float into the caller's string slot; throws if the pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:01:45Z"
+}

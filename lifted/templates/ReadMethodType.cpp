@@ -62870,3 +62870,36 @@ void* fn_004F5B50(void* out, void* self) {
     return out;
 }
 } // namespace lift_004F5B50
+
+// [0x004B2170] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004B2170 {
+// Callees (original asm):
+//   ext_0048FAC0 : NMData::GraphEngineData::getXMax (thiscall, this in ecx, returns float in st0, no stack args)
+//   ext_0046C390 : formatFloatTrimmedStringWrapper (fn_0046C390) (out sret slot, float value)
+//   ext_0046C3C0 : DerivedException::DerivedException (fn_0046C3C0) (constructs exception in caller buffer)
+//   ext_006A6DD2 : thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException)
+extern float ext_0048FAC0(void* self);
+extern void* ext_0046C390(void* out, float value);
+extern void ext_0046C3C0(void* exceptionObj);
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo for the exception type raised on a null target (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData,float,getXMax>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the GraphEngineData pointer held in the ValuePtrType argument, calls getXMax on it, and formats the float into the caller's string slot; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_004B2170(void* out, void* arg) {
+    void* const target = static_cast<void**>(arg)[0];
+    if (target == nullptr) {
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return out;
+    }
+    const float value = ext_0048FAC0(target);
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_004B2170
