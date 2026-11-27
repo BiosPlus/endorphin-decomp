@@ -11,9 +11,9 @@
 namespace lifted_layout {
 struct UndoHistoryDialog_Fields {
     // +0x20  void*                    field_0x20  (evidence: 0x00460CE0)
-    // +0xB0  uint8_t                  field_0xb0  (evidence: 0x00460FB0)
-    // +0xD0  HWND                     field_0xd0  (evidence: 0x00460FB0)
-    // +0x200 int32_t                  field_0x200  (evidence: 0x00460FB0)
+    // +0xB0  uint8_t                  field_0xb0  (evidence: 0x00460FB0, 0x00461040)
+    // +0xD0  HWND                     field_0xd0  (evidence: 0x00460FB0, 0x00461040)
+    // +0x200 int32_t                  field_0x200  (evidence: 0x00460FB0, 0x00461040)
     // +0x280 uint8_t                  field_0x280  (evidence: 0x00460CE0)
 };
 } // namespace lifted_layout

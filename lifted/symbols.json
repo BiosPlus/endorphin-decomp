@@ -7677,6 +7677,13 @@
     "summary": "On command 0x43E, increments the counter at +0x200, formats it to a string, passes its c_str to the object at +0xB0, then calls UpdateWindow on the window at +0xD0.",
     "lifted_path": "lifted/classes/UndoHistoryDialog.cpp"
   },
+  "0x00461040": {
+    "name": "UndoHistoryDialog::vfunc_1_off_78",
+    "class": "UndoHistoryDialog",
+    "signature": "extern \"C\" void* mem_00924FF0; // MSVCP80 std::string::c_str   (__thiscall, returns const char*) extern \"C\" void* mem_00924FF4; // MSVCP80 std::string::~string (__thiscall) extern \"C\" void* mem_0092568C; // USER32 UpdateWindow          (__stdcall, returns BOOL) void fn_00461040(void* self, uint32_t id)",
+    "summary": "On command 0x43E, if the counter at +0x200 is positive, decrements it, formats it to a string, passes its c_str to the object at +0xB0, then calls UpdateWindow on the window at +0xD0.",
+    "lifted_path": "lifted/classes/UndoHistoryDialog.cpp"
+  },
   "0x00461170": {
     "name": "UndoHistoryDialog::vfunc_1",
     "class": "UndoHistoryDialog",
