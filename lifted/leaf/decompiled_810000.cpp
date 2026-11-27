@@ -407,3 +407,38 @@ int fn_008115A0(void* self, uint8_t* out, const uint32_t* table, uint32_t flags,
     return 1;
 }
 } // namespace lift_008115A0
+
+// [0x00811110] sub_00811110 (128 bytes)
+namespace lift_00811110 {
+// Known callee 0x00811190: sub_00811190 (Auto-lifted identical-shape clone of 0x0080B540 (LocalBlockResizeThunk).)
+// Called with pointers to two stack bytes/dwords (see body).
+extern uint32_t ext_00811190(void* p0, void* p1);
+// Byte table written in 256-entry rows (row base = 0x000, 0x100, ... 0xFF00).
+extern uint8_t mem_00B73EA0[];
+
+// @name sub_00811110 (Fill64KFlagTable)
+// @summary For each of 256 rows, calls ext_00811190 for every byte value 0..255 and records the values that return nonzero into mem_00B73EA0 (compacted per row, terminated by a 0 byte).
+void fn_00811110() {
+    // Stack frame: bytes at +0xc..+0xf are the argument scratch area; +0x10 is the row counter.
+    uint8_t frame[0x14] = {};
+    frame[0xf] = 0;
+    frame[0xd] = 0;
+    uint32_t row_counter = 0;   // [esp+0x10]
+    uint32_t row_base = 0;      // esi
+    uint32_t out_index = 0;     // edi (running count across rows; never reset)
+
+    while (row_base < 0x10000) {
+        frame[0xe] = static_cast<uint8_t>(row_counter);
+        for (uint32_t value = 0; value < 0x100; ++value) {   // ebx
+            frame[0xc] = static_cast<uint8_t>(value);
+            if (ext_00811190(&frame[0xe], &frame[0xc]) != 0) {
+                mem_00B73EA0[row_base + out_index] = static_cast<uint8_t>(value);
+                ++out_index;
+            }
+        }
+        mem_00B73EA0[row_base + out_index] = 0;
+        row_base += 0x100;
+        ++row_counter;
+    }
+}
+} // namespace lift_00811110

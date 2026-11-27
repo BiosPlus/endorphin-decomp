@@ -81079,6 +81079,12 @@
     "summary": "Returns c - 0x20 if c is in ['a', 'z'] (signed compare), otherwise c unchanged.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x00811110": {
+    "name": "sub_00811110 (Fill64KFlagTable)",
+    "signature": "void fn_00811110()",
+    "summary": "For each of 256 rows, calls ext_00811190 for every byte value 0..255 and records the values that return nonzero into mem_00B73EA0 (compacted per row, terminated by a 0 byte).",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x00811190": {
     "name": "sub_00811190",
     "signature": "uint32_t __cdecl fn_00811190(uint32_t handle, uint32_t size)",
