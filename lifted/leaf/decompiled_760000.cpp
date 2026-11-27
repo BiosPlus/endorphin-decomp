@@ -213,3 +213,44 @@ extern void __stdcall fn_0076AD20(
     ext_006D80A0(src_ptr);
 }
 } // namespace lift_0076AD20
+
+// [0x0076B150]
+namespace lift_0076B150 {
+// @name CopyIndexedPairsReordered
+// @summary Copies three 8-byte pairs from an array argument into a destination struct, swapping indices 1 and 2.
+// @field Dest +0x00 uint32_t field_0x00
+// @field Dest +0x04 uint32_t field_0x04
+// @field Dest +0x08 uint32_t field_0x08
+// @field Dest +0x0C uint32_t field_0x0C
+// @field Dest +0x10 uint32_t field_0x10
+// @field Dest +0x14 uint32_t field_0x14
+
+extern const uint32_t* __thiscall ext_006D23F0(void* self, uint32_t index);
+extern void __cdecl ext_006D80A0(void);
+
+struct StackPairs {
+    uint32_t data[7];
+};
+
+extern void __stdcall fn_0076B150(
+    uint32_t* dst,
+    uint32_t arg1,
+    StackPairs pairs)
+{
+    (void)arg1;
+
+    const uint32_t* p0 = ext_006D23F0(&pairs, 0);
+    dst[0] = p0[0];
+    dst[1] = p0[1];
+
+    const uint32_t* p1 = ext_006D23F0(&pairs, 1);
+    dst[4] = p1[0];
+    dst[5] = p1[1];
+
+    const uint32_t* p2 = ext_006D23F0(&pairs, 2);
+    dst[2] = p2[0];
+    dst[3] = p2[1];
+
+    ext_006D80A0();
+}
+} // namespace lift_0076B150
