@@ -2409,3 +2409,45 @@ void fn_004063F0(void* begin, uint32_t count, const void* src) {
     }
 }
 } // namespace lift_004063F0
+
+// [0x0040E6F0] sub_0040E6F0 (143 bytes)
+namespace lift_0040E6F0 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+
+// @name ConstructStringArray
+// @summary Copy-constructs `count` std::string elements (28-byte stride) at `base` from `src`; on exception, destroys already-built elements and rethrows.
+// @field std::string +0x00 (element stride 0x1c; per-element copy-ctor/dtor, no direct field access)
+void fn_0040E6F0(void* base, uint32_t count, const void* src) {
+    using CopyCtor = void(__thiscall*)(void* self, const void* other);
+    using Dtor = void(__thiscall*)(void* self);
+
+    constexpr uintptr_t kStride = 0x1c;
+
+    auto* const start = static_cast<uint8_t*>(base);
+    uint8_t* cur = start;
+
+    try {
+        while (count != 0) {
+            if (cur != nullptr) {
+                auto copy_ctor = reinterpret_cast<CopyCtor>(
+                    static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE0)));
+                copy_ctor(cur, src);
+            }
+            --count;
+            cur += kStride;
+        }
+    } catch (...) {
+        // Unwind funclet: destroy the elements that were fully constructed.
+        auto dtor = reinterpret_cast<Dtor>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        for (uint8_t* p = start; p != cur; p += kStride) {
+            dtor(p);
+        }
+        // Original tail: _CxxThrowException(nullptr, nullptr) == rethrow (ext_006A6DD2).
+        throw;
+    }
+}
+} // namespace lift_0040E6F0

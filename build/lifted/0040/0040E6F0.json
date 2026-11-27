@@ -1,0 +1,21 @@
+{
+  "va": "0x0040E6F0",
+  "size": 143,
+  "orig_symbol": "sub_0040E6F0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "ConstructStringArray",
+  "signature": "void fn_0040E6F0(void* base, uint32_t count, const void* src)",
+  "summary": "Copy-constructs `count` std::string elements (28-byte stride) at `base` from `src`; on exception, destroys already-built elements and rethrows.",
+  "fields": [
+    {
+      "class": "std::string",
+      "offset": "+0x0",
+      "type": "(element stride 0x1c; per-element copy-ctor/dtor, no direct field",
+      "name": "access)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:14Z"
+}
