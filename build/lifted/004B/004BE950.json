@@ -1,0 +1,13 @@
+{
+  "va": "0x004BE950",
+  "size": 329,
+  "orig_symbol": "sub_004BE950",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "CreateObjectFromDynamicCast",
+  "signature": "void* fn_004BE950(void* arg0)",
+  "summary": "Dynamically casts arg0 and constructs a 0x30-byte object, or constructs a default one if null, or throws StringExceptionWithMember on cast failure.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:28:56Z"
+}
