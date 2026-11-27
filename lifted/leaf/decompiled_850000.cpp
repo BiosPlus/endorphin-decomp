@@ -1333,3 +1333,36 @@ extern uint32_t fn_00859F60(uint32_t buf, uint32_t size) {
     return rec;
 }
 } // namespace lift_00859F60
+
+// [0x0085A370] sub_0085A370 (112 bytes)
+namespace lift_0085A370 {
+// Known callee 0x008596F0: LocalBlockResize (cdecl: (handle, size) -> handle)
+extern uint32_t ext_008596F0(uint32_t handle, uint32_t size);
+
+// @name Unknown::AppendEntry
+// @class Unknown
+// @summary Grows the 16-byte entry array by one slot (via LocalBlockResize) and initializes the new entry to {-1, 0, 0, 0}; returns the old count, or 0xFFFFFFFF on allocation failure.
+// @field Unknown +0x08 uint32_t count
+// @field Unknown +0x14 uint32_t entries
+uint32_t fn_0085A370(void* self) {
+    const uint32_t count = lift_field<uint32_t>(self, 0x08);
+    const uint32_t newSize = (count + 1u) << 4;
+
+    const uint32_t handle = ext_008596F0(lift_field<uint32_t>(self, 0x14), newSize);
+    if (handle == 0) {
+        return 0xFFFFFFFFu;
+    }
+
+    lift_field<uint32_t>(self, 0x14) = handle;
+
+    uint8_t* block = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(handle));
+    const uint32_t offset = count << 4;
+    lift_field<uint32_t>(block, offset + 0x0) = 0xFFFFFFFFu;
+    lift_field<uint32_t>(block, offset + 0x4) = 0;
+    lift_field<uint32_t>(block, offset + 0x8) = 0;
+    lift_field<uint32_t>(block, offset + 0xC) = 0;
+
+    lift_field<uint32_t>(self, 0x08) = count + 1u;
+    return count;
+}
+} // namespace lift_0085A370

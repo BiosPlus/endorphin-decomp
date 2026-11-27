@@ -1,0 +1,28 @@
+{
+  "va": "0x0085A370",
+  "size": 112,
+  "orig_symbol": "sub_0085A370",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "Unknown::AppendEntry",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0085A370(void* self)",
+  "summary": "Grows the 16-byte entry array by one slot (via LocalBlockResize) and initializes the new entry to {-1, 0, 0, 0}; returns the old count, or 0xFFFFFFFF on allocation failure.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:03:39Z"
+}

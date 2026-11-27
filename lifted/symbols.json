@@ -75503,6 +75503,13 @@
     "summary": "Invalidates or decrements a stored index when an element at a given index is removed.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085A370": {
+    "name": "Unknown::AppendEntry",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0085A370(void* self)",
+    "summary": "Grows the 16-byte entry array by one slot (via LocalBlockResize) and initializes the new entry to {-1, 0, 0, 0}; returns the old count, or 0xFFFFFFFF on allocation failure.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085A3E0": {
     "name": "AppendSentinelEntry",
     "class": "Unknown",
