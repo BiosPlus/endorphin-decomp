@@ -1513,3 +1513,21 @@ void fn_0054C5E0(void* self) {
     ext_00532B40(self);
 }
 } // namespace lift_0054C5E0
+
+// [0x00547820]
+namespace lift_00547820 {
+// @name Vec3::cross
+// @class Vec3
+// @summary Computes the 3D cross product of this vector and rhs, storing the result in out (with w = 0.0f) and returning out.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+// @field Vec3 +0x0c float w
+float* __thiscall sub_00547820(const float* self, float* out, const float* rhs) {
+    out[3] = 0.0f;
+    out[0] = self[1] * rhs[2] - self[2] * rhs[1];
+    out[1] = self[2] * rhs[0] - self[0] * rhs[2];
+    out[2] = self[0] * rhs[1] - self[1] * rhs[0];
+    return out;
+}
+} // namespace lift_00547820
