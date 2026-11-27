@@ -929,3 +929,93 @@ extern void __thiscall fn_0045EDB0(void* self, void* event_data, uint8_t should_
     (reinterpret_cast<VFn0*>(*reinterpret_cast<uintptr_t**>(sub_fc))[0x4 / 4])(sub_fc);
 }
 } // namespace lift_0045EDB0
+
+// [0x0045EAF0]
+namespace lift_0045EAF0 {
+// @name MultiTrackView::TriggeredEventView::vfunc_2_off_248
+// @class MultiTrackView::TriggeredEventView
+// @summary Handles triggered event data notification, creates and populates an event item, adds it to the view, and invalidates the window.
+// @field MultiTrackView::TriggeredEventView +0x20 HWND hwnd
+
+    int32_t __cdecl ext_00594000(void);
+    void* __thiscall ext_00599F10(void* self, void* arg1);
+    void* __cdecl ext_006A5C62(uint32_t size);
+    void* __thiscall ext_004114D0(void* self, void* a1, void* a2, void* a3, int32_t a4);
+    void __thiscall ext_004135A0(void* self, void* a1);
+    void* __thiscall ext_00584A10(void* self);
+    void __thiscall ext_00412C10(void* self, void* a1);
+    void* __thiscall ext_005A5760(void* self, void* out_vec);
+    void __thiscall ext_00413700(void* self, void* a1);
+    void __thiscall ext_004026E0(void* self);
+    void __thiscall ext_0043EAA0(void* self, void* item);
+
+    extern uintptr_t mem_00924C28;
+    extern uintptr_t mem_009242F4;
+    extern uintptr_t mem_00924FF0;
+    extern uintptr_t mem_009242F0;
+    extern uintptr_t mem_00925688;
+
+extern void __thiscall fn_0045EAF0(void* self, void* arg1, void* arg2) {
+    (void)arg2;
+    uint32_t flags = 0;
+    int32_t global_mgr = ext_00594000();
+    void* track_list = ext_00599F10(reinterpret_cast<void*>(static_cast<uintptr_t>(global_mgr)), arg1);
+
+    int32_t event_val = *reinterpret_cast<int32_t*>(static_cast<uint8_t*>(arg1) + 0x4E8);
+    void* item_mem = ext_006A5C62(0x64);
+
+    void* item = nullptr;
+    uint8_t cstring_buf[16] = {};
+    if (item_mem != nullptr) {
+        typedef void(__thiscall* cstr_ctor_lit_t)(void*, const char*);
+        reinterpret_cast<cstr_ctor_lit_t>(mem_00924C28)(cstring_buf, reinterpret_cast<const char*>(0x00938000));
+        flags |= 1;
+        void* base_view = static_cast<uint8_t*>(self) - 0x248;
+        item = ext_004114D0(item_mem, track_list, cstring_buf, base_view, event_val);
+    }
+
+    if ((flags & 1) != 0) {
+        typedef void(__thiscall* cstr_dtor_t)(void*);
+        reinterpret_cast<cstr_dtor_t>(mem_009242F4)(cstring_buf);
+    }
+
+    void* arg1_sub = static_cast<uint8_t*>(arg1) + 0x4;
+    typedef void*(__thiscall* get_name_t)(void*);
+    void* vtbl_sub = *reinterpret_cast<void**>(arg1_sub);
+    get_name_t get_name = *reinterpret_cast<get_name_t*>(static_cast<uint8_t*>(vtbl_sub) + 0x24);
+    void* name_str = get_name(arg1_sub);
+
+    typedef const char*(__thiscall* c_str_t)(void*);
+    const char* name_cstr = reinterpret_cast<c_str_t>(mem_00924FF0)(name_str);
+
+    uint8_t temp_cstr[16] = {};
+    typedef void(__thiscall* cstr_ctor_t)(void*, const char*);
+    typedef void(__thiscall* cstr_dtor_t)(void*);
+    reinterpret_cast<cstr_ctor_t>(mem_009242F0)(temp_cstr, name_cstr);
+    ext_004135A0(item, temp_cstr);
+    reinterpret_cast<cstr_dtor_t>(mem_009242F4)(temp_cstr);
+
+    void* fallback_str = ext_00584A10(arg1_sub);
+    const char* fallback_cstr = reinterpret_cast<c_str_t>(mem_00924FF0)(fallback_str);
+    reinterpret_cast<cstr_ctor_t>(mem_009242F0)(temp_cstr, fallback_cstr);
+    ext_00412C10(item, temp_cstr);
+    reinterpret_cast<cstr_dtor_t>(mem_009242F4)(temp_cstr);
+
+    uint8_t vec_buf[16] = {};
+    void* vec_ptr = ext_005A5760(arg1, vec_buf);
+    ext_00413700(item, vec_ptr);
+    ext_004026E0(vec_buf);
+
+    void* base_view = static_cast<uint8_t*>(self) - 0x248;
+    ext_0043EAA0(base_view, item);
+
+    typedef void(__thiscall* update_view_t)(void*);
+    void* view_vtbl = *reinterpret_cast<void**>(base_view);
+    update_view_t update_view = *reinterpret_cast<update_view_t*>(static_cast<uint8_t*>(view_vtbl) + 0x144);
+    update_view(base_view);
+
+    HWND hwnd = *reinterpret_cast<HWND*>(static_cast<uint8_t*>(self) - 0x228);
+    typedef int(__stdcall* invalidate_rect_t)(HWND, const void*, int);
+    reinterpret_cast<invalidate_rect_t>(mem_00925688)(hwnd, nullptr, 1);
+}
+} // namespace lift_0045EAF0

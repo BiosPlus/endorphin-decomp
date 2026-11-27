@@ -1,0 +1,22 @@
+{
+  "va": "0x0045EAF0",
+  "size": 417,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_2_off_248",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_2_off_248",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "extern \"C\" void __thiscall fn_0045EAF0(void* self, void* arg1, void* arg2)",
+  "summary": "Handles triggered event data notification, creates and populates an event item, adds it to the view, and invalidates the window.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:03:54Z"
+}

@@ -8344,6 +8344,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x258 and tail-calls sub_0045E690.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x0045EAF0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_2_off_248",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "extern \"C\" void __thiscall fn_0045EAF0(void* self, void* arg1, void* arg2)",
+    "summary": "Handles triggered event data notification, creates and populates an event item, adds it to the view, and invalidates the window.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045ECA0": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_3_off_248",
     "class": "MultiTrackView::TriggeredEventView",
