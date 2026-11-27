@@ -1776,3 +1776,42 @@ void __stdcall fn_00426980(void* a1, void* a2) {
     dtor(tmp);
 }
 } // namespace lift_00426980
+
+// [0x0042ECC0]
+namespace lift_0042ECC0 {
+extern void* mem_00925134;
+
+// @name sub_0042ECC0_contains
+// @summary Checks whether a 32-bit value is present in the vector at +0x54
+// @field Unknown +0x54 uint32_t vec_proxy
+// @field Unknown +0x58 uint32_t* vec_begin
+// @field Unknown +0x5c uint32_t* vec_end
+bool __thiscall sub_0042ECC0(void* self, uint32_t value) {
+    uint32_t* begin = lift_field<uint32_t*>(self, 0x58);
+    uint32_t* end = lift_field<uint32_t*>(self, 0x5c);
+
+    if (begin > end) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    uint32_t* it = begin;
+    if (it > end) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    while (it != end) {
+        if (*it == value) {
+            break;
+        }
+        ++it;
+    }
+
+    uint32_t* cur_begin = lift_field<uint32_t*>(self, 0x58);
+    uint32_t* cur_end = lift_field<uint32_t*>(self, 0x5c);
+    if (cur_begin > cur_end) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    return it != cur_end;
+}
+} // namespace lift_0042ECC0
