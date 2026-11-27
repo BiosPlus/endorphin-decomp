@@ -2548,3 +2548,25 @@ extern void __thiscall fn_00700EC0(void* self, void* a1) {
     ext_00732CB0(static_cast<int>(reinterpret_cast<uintptr_t>(a1)));
 }
 } // namespace lift_00700EC0
+
+// [0x00704A70]
+namespace lift_00704A70 {
+extern void* (*mem_00925208)(size_t);
+extern void* (*mem_00925290)(void*, size_t);
+
+// @name setStringField
+// @summary Copies a C-string into field_0x81c, allocating or reallocating as needed.
+// @field Unknown +0x81c char* field_0x81c
+void __thiscall sub_00704A70(void* self, const char* src) {
+    char* dst = lift_field<char*>(self, 0x81c);
+    size_t src_len = std::strlen(src);
+    if (dst == nullptr) {
+        dst = static_cast<char*>(mem_00925208(src_len + 1));
+        lift_field<char*>(self, 0x81c) = dst;
+    } else if (std::strlen(dst) < src_len) {
+        dst = static_cast<char*>(mem_00925290(dst, src_len + 1));
+        lift_field<char*>(self, 0x81c) = dst;
+    }
+    std::memcpy(dst, src, src_len + 1);
+}
+} // namespace lift_00704A70

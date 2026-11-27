@@ -1,0 +1,21 @@
+{
+  "va": "0x00704A70",
+  "size": 143,
+  "orig_symbol": "sub_00704A70",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "setStringField",
+  "signature": "void __thiscall sub_00704A70(void* self, const char* src)",
+  "summary": "Copies a C-string into field_0x81c, allocating or reallocating as needed.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x81C",
+      "type": "char*",
+      "name": "field_0x81c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:34:49Z"
+}
