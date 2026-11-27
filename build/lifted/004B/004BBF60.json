@@ -1,0 +1,13 @@
+{
+  "va": "0x004BBF60",
+  "size": 111,
+  "orig_symbol": "sub_004BBF60",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004BBF60",
+  "signature": "void fn_004BBF60(uint32_t key)",
+  "summary": "Auto-lifted identical-shape clone of 0x0055CAC0 (UnknownClass::ThrowIfKeyNotFound).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:12:11Z"
+}

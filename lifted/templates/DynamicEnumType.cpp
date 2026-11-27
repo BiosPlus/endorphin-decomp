@@ -2677,3 +2677,575 @@ bool fn_004D4870(void* self, int32_t arg) {
     return result != 0;
 }
 } // namespace lift_004D4870
+
+// [0x00494BD0] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_47 (154 bytes)
+namespace lift_00494BD0 {
+// @name ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_47
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004A47B0 (ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47).
+namespace lift_004A47B0 {
+extern void* ext_006AD970(void* self);
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Validates the held value pointer; if null throws a DerivedException, otherwise re-assigns the held value through the guarded copy helper and then invokes the vfunc at slot 0xBC of the object at +0x04.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ValuePtrType +0x04 void* field_0x04
+int fn_00494BD0(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        // Throw path: construct the exception object on the stack and raise it.
+        alignas(8) uint8_t exc[32] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0; // not reached
+    }
+
+    // Temporaries: A receives the value produced by ext_0049AA40, B is the
+    // copy source for ext_0041CF50.
+    alignas(8) uint8_t a[8] = {};
+    alignas(8) uint8_t b[8] = {};
+
+    void* r = ext_006AD970(lift_field<void*>(self, 0x00));
+    ext_006720C0(a, r);
+
+    ext_0041CF50(self, b);
+
+    void* p = lift_field<void*>(a, 0x00);
+    if (p != nullptr) {
+        void* vtbl = lift_field<void*>(p, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x78);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(slot);
+        release(p, b);
+    }
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void* objVtbl = lift_field<void*>(obj, 0x00);
+    void* slot47 = lift_field<void*>(objVtbl, 0xBC);
+    auto vfunc47 = reinterpret_cast<int (*)(void*, void*)>(slot47);
+    return vfunc47(obj, self);
+}
+} // namespace lift_004A47B0
+} // namespace lift_00494BD0
+
+// [0x00494E10] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_42 (156 bytes)
+namespace lift_00494E10 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_42
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004D4AD0 (ExprParser::DynamicEnumType::vfunc_42).
+namespace lift_004D4AD0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+extern void ext_006AD970();
+extern void ext_006720C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Reads the object pointer stored at arg, queries it through ext_004D3CF0 and a temp wrapper's vfunc 42, releases the result via vfunc 30, and returns the bool from vfunc 42; throws if the object pointer is null.
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+bool fn_00494E10(void* arg1) {
+    // Object pointer held at *arg1 (asm: mov ecx, [eax]).
+    void* obj = *reinterpret_cast<void**>(arg1);
+
+    if (obj == nullptr) {
+        // Null object: construct a DerivedException on the stack and throw it.
+        alignas(8) unsigned char exc[64] = {};
+        reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(exc);
+        reinterpret_cast<void (*)(void*, const void*)>(ext_006A6DD2)(
+            exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1CU)));
+        return false;
+    }
+
+    // p = obj->sub_004D3CF0(); temp = wrapper(p)
+    void* p = reinterpret_cast<void* (*)(void*)>(ext_006AD970)(obj);
+    alignas(8) unsigned char temp[32] = {};
+    reinterpret_cast<void (*)(void*, void*)>(ext_006720C0)(temp, p);
+
+    // vfunc slot 42 (byte offset 0xA8) on temp: writes result via hidden pointer, returns bool.
+    void* vtbl = *reinterpret_cast<void**>(temp);
+    void* slot42 = lift_field<void*>(vtbl, 0xA8);
+    void* result = nullptr;
+    bool ok = reinterpret_cast<bool (*)(void*, void**, void*)>(slot42)(temp, &result, arg1);
+
+    // Release result through its vfunc slot 30 (byte offset 0x78).
+    if (result != nullptr) {
+        void* result_vtbl = *reinterpret_cast<void**>(result);
+        void* slot30 = lift_field<void*>(result_vtbl, 0x78);
+        void* scratch = nullptr;
+        reinterpret_cast<void (*)(void*, void**)>(slot30)(result, &scratch);
+    }
+
+    return ok;
+}
+} // namespace lift_004D4AD0
+} // namespace lift_00494E10
+
+// [0x004AB3E0] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_42 (156 bytes)
+namespace lift_004AB3E0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004D4AD0 (ExprParser::DynamicEnumType::vfunc_42).
+namespace lift_004D4AD0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+extern void ext_004A9CE0();
+extern void ext_006720C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Reads the object pointer stored at arg, queries it through ext_004D3CF0 and a temp wrapper's vfunc 42, releases the result via vfunc 30, and returns the bool from vfunc 42; throws if the object pointer is null.
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+bool fn_004AB3E0(void* arg1) {
+    // Object pointer held at *arg1 (asm: mov ecx, [eax]).
+    void* obj = *reinterpret_cast<void**>(arg1);
+
+    if (obj == nullptr) {
+        // Null object: construct a DerivedException on the stack and throw it.
+        alignas(8) unsigned char exc[64] = {};
+        reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(exc);
+        reinterpret_cast<void (*)(void*, const void*)>(ext_006A6DD2)(
+            exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1CU)));
+        return false;
+    }
+
+    // p = obj->sub_004D3CF0(); temp = wrapper(p)
+    void* p = reinterpret_cast<void* (*)(void*)>(ext_004A9CE0)(obj);
+    alignas(8) unsigned char temp[32] = {};
+    reinterpret_cast<void (*)(void*, void*)>(ext_006720C0)(temp, p);
+
+    // vfunc slot 42 (byte offset 0xA8) on temp: writes result via hidden pointer, returns bool.
+    void* vtbl = *reinterpret_cast<void**>(temp);
+    void* slot42 = lift_field<void*>(vtbl, 0xA8);
+    void* result = nullptr;
+    bool ok = reinterpret_cast<bool (*)(void*, void**, void*)>(slot42)(temp, &result, arg1);
+
+    // Release result through its vfunc slot 30 (byte offset 0x78).
+    if (result != nullptr) {
+        void* result_vtbl = *reinterpret_cast<void**>(result);
+        void* slot30 = lift_field<void*>(result_vtbl, 0x78);
+        void* scratch = nullptr;
+        reinterpret_cast<void (*)(void*, void**)>(slot30)(result, &scratch);
+    }
+
+    return ok;
+}
+} // namespace lift_004D4AD0
+} // namespace lift_004AB3E0
+
+// [0x004AB520] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_47 (154 bytes)
+namespace lift_004AB520 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_47
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004A47B0 (ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47).
+namespace lift_004A47B0 {
+extern void* ext_004A9CE0(void* self);
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Validates the held value pointer; if null throws a DerivedException, otherwise re-assigns the held value through the guarded copy helper and then invokes the vfunc at slot 0xBC of the object at +0x04.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ValuePtrType +0x04 void* field_0x04
+int fn_004AB520(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        // Throw path: construct the exception object on the stack and raise it.
+        alignas(8) uint8_t exc[32] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0; // not reached
+    }
+
+    // Temporaries: A receives the value produced by ext_0049AA40, B is the
+    // copy source for ext_0041CF50.
+    alignas(8) uint8_t a[8] = {};
+    alignas(8) uint8_t b[8] = {};
+
+    void* r = ext_004A9CE0(lift_field<void*>(self, 0x00));
+    ext_006720C0(a, r);
+
+    ext_0041CF50(self, b);
+
+    void* p = lift_field<void*>(a, 0x00);
+    if (p != nullptr) {
+        void* vtbl = lift_field<void*>(p, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x78);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(slot);
+        release(p, b);
+    }
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void* objVtbl = lift_field<void*>(obj, 0x00);
+    void* slot47 = lift_field<void*>(objVtbl, 0xBC);
+    auto vfunc47 = reinterpret_cast<int (*)(void*, void*)>(slot47);
+    return vfunc47(obj, self);
+}
+} // namespace lift_004A47B0
+} // namespace lift_004AB520
+
+// [0x004B9C90] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_47 (154 bytes)
+namespace lift_004B9C90 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_47
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004A47B0 (ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47).
+namespace lift_004A47B0 {
+extern void* ext_004B72D0(void* self);
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Validates the held value pointer; if null throws a DerivedException, otherwise re-assigns the held value through the guarded copy helper and then invokes the vfunc at slot 0xBC of the object at +0x04.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ValuePtrType +0x04 void* field_0x04
+int fn_004B9C90(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        // Throw path: construct the exception object on the stack and raise it.
+        alignas(8) uint8_t exc[32] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0; // not reached
+    }
+
+    // Temporaries: A receives the value produced by ext_0049AA40, B is the
+    // copy source for ext_0041CF50.
+    alignas(8) uint8_t a[8] = {};
+    alignas(8) uint8_t b[8] = {};
+
+    void* r = ext_004B72D0(lift_field<void*>(self, 0x00));
+    ext_006720C0(a, r);
+
+    ext_0041CF50(self, b);
+
+    void* p = lift_field<void*>(a, 0x00);
+    if (p != nullptr) {
+        void* vtbl = lift_field<void*>(p, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x78);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(slot);
+        release(p, b);
+    }
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void* objVtbl = lift_field<void*>(obj, 0x00);
+    void* slot47 = lift_field<void*>(objVtbl, 0xBC);
+    auto vfunc47 = reinterpret_cast<int (*)(void*, void*)>(slot47);
+    return vfunc47(obj, self);
+}
+} // namespace lift_004A47B0
+} // namespace lift_004B9C90
+
+// [0x004B9DC0] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_42 (156 bytes)
+namespace lift_004B9DC0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004D4AD0 (ExprParser::DynamicEnumType::vfunc_42).
+namespace lift_004D4AD0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+extern void ext_004B72D0();
+extern void ext_006720C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Reads the object pointer stored at arg, queries it through ext_004D3CF0 and a temp wrapper's vfunc 42, releases the result via vfunc 30, and returns the bool from vfunc 42; throws if the object pointer is null.
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+bool fn_004B9DC0(void* arg1) {
+    // Object pointer held at *arg1 (asm: mov ecx, [eax]).
+    void* obj = *reinterpret_cast<void**>(arg1);
+
+    if (obj == nullptr) {
+        // Null object: construct a DerivedException on the stack and throw it.
+        alignas(8) unsigned char exc[64] = {};
+        reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(exc);
+        reinterpret_cast<void (*)(void*, const void*)>(ext_006A6DD2)(
+            exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1CU)));
+        return false;
+    }
+
+    // p = obj->sub_004D3CF0(); temp = wrapper(p)
+    void* p = reinterpret_cast<void* (*)(void*)>(ext_004B72D0)(obj);
+    alignas(8) unsigned char temp[32] = {};
+    reinterpret_cast<void (*)(void*, void*)>(ext_006720C0)(temp, p);
+
+    // vfunc slot 42 (byte offset 0xA8) on temp: writes result via hidden pointer, returns bool.
+    void* vtbl = *reinterpret_cast<void**>(temp);
+    void* slot42 = lift_field<void*>(vtbl, 0xA8);
+    void* result = nullptr;
+    bool ok = reinterpret_cast<bool (*)(void*, void**, void*)>(slot42)(temp, &result, arg1);
+
+    // Release result through its vfunc slot 30 (byte offset 0x78).
+    if (result != nullptr) {
+        void* result_vtbl = *reinterpret_cast<void**>(result);
+        void* slot30 = lift_field<void*>(result_vtbl, 0x78);
+        void* scratch = nullptr;
+        reinterpret_cast<void (*)(void*, void**)>(slot30)(result, &scratch);
+    }
+
+    return ok;
+}
+} // namespace lift_004D4AD0
+} // namespace lift_004B9DC0
+
+// [0x004D4FC0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_47 (154 bytes)
+namespace lift_004D4FC0 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_47
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004A47B0 (ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47).
+namespace lift_004A47B0 {
+extern void* ext_004D3CE0(void* self);
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Validates the held value pointer; if null throws a DerivedException, otherwise re-assigns the held value through the guarded copy helper and then invokes the vfunc at slot 0xBC of the object at +0x04.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ValuePtrType +0x04 void* field_0x04
+int fn_004D4FC0(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        // Throw path: construct the exception object on the stack and raise it.
+        alignas(8) uint8_t exc[32] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0; // not reached
+    }
+
+    // Temporaries: A receives the value produced by ext_0049AA40, B is the
+    // copy source for ext_0041CF50.
+    alignas(8) uint8_t a[8] = {};
+    alignas(8) uint8_t b[8] = {};
+
+    void* r = ext_004D3CE0(lift_field<void*>(self, 0x00));
+    ext_006720C0(a, r);
+
+    ext_0041CF50(self, b);
+
+    void* p = lift_field<void*>(a, 0x00);
+    if (p != nullptr) {
+        void* vtbl = lift_field<void*>(p, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x78);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(slot);
+        release(p, b);
+    }
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void* objVtbl = lift_field<void*>(obj, 0x00);
+    void* slot47 = lift_field<void*>(objVtbl, 0xBC);
+    auto vfunc47 = reinterpret_cast<int (*)(void*, void*)>(slot47);
+    return vfunc47(obj, self);
+}
+} // namespace lift_004A47B0
+} // namespace lift_004D4FC0
+
+// [0x004D5280] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_47 (154 bytes)
+namespace lift_004D5280 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_47
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004A47B0 (ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47).
+namespace lift_004A47B0 {
+extern void* ext_004D3CF0(void* self);
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Validates the held value pointer; if null throws a DerivedException, otherwise re-assigns the held value through the guarded copy helper and then invokes the vfunc at slot 0xBC of the object at +0x04.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ValuePtrType +0x04 void* field_0x04
+int fn_004D5280(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        // Throw path: construct the exception object on the stack and raise it.
+        alignas(8) uint8_t exc[32] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0; // not reached
+    }
+
+    // Temporaries: A receives the value produced by ext_0049AA40, B is the
+    // copy source for ext_0041CF50.
+    alignas(8) uint8_t a[8] = {};
+    alignas(8) uint8_t b[8] = {};
+
+    void* r = ext_004D3CF0(lift_field<void*>(self, 0x00));
+    ext_006720C0(a, r);
+
+    ext_0041CF50(self, b);
+
+    void* p = lift_field<void*>(a, 0x00);
+    if (p != nullptr) {
+        void* vtbl = lift_field<void*>(p, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x78);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(slot);
+        release(p, b);
+    }
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void* objVtbl = lift_field<void*>(obj, 0x00);
+    void* slot47 = lift_field<void*>(objVtbl, 0xBC);
+    auto vfunc47 = reinterpret_cast<int (*)(void*, void*)>(slot47);
+    return vfunc47(obj, self);
+}
+} // namespace lift_004A47B0
+} // namespace lift_004D5280
+
+// [0x005C8C90] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_42 (156 bytes)
+namespace lift_005C8C90 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004D4AD0 (ExprParser::DynamicEnumType::vfunc_42).
+namespace lift_004D4AD0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+extern void ext_005C3FB0();
+extern void ext_006720C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Reads the object pointer stored at arg, queries it through ext_004D3CF0 and a temp wrapper's vfunc 42, releases the result via vfunc 30, and returns the bool from vfunc 42; throws if the object pointer is null.
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+bool fn_005C8C90(void* arg1) {
+    // Object pointer held at *arg1 (asm: mov ecx, [eax]).
+    void* obj = *reinterpret_cast<void**>(arg1);
+
+    if (obj == nullptr) {
+        // Null object: construct a DerivedException on the stack and throw it.
+        alignas(8) unsigned char exc[64] = {};
+        reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(exc);
+        reinterpret_cast<void (*)(void*, const void*)>(ext_006A6DD2)(
+            exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1CU)));
+        return false;
+    }
+
+    // p = obj->sub_004D3CF0(); temp = wrapper(p)
+    void* p = reinterpret_cast<void* (*)(void*)>(ext_005C3FB0)(obj);
+    alignas(8) unsigned char temp[32] = {};
+    reinterpret_cast<void (*)(void*, void*)>(ext_006720C0)(temp, p);
+
+    // vfunc slot 42 (byte offset 0xA8) on temp: writes result via hidden pointer, returns bool.
+    void* vtbl = *reinterpret_cast<void**>(temp);
+    void* slot42 = lift_field<void*>(vtbl, 0xA8);
+    void* result = nullptr;
+    bool ok = reinterpret_cast<bool (*)(void*, void**, void*)>(slot42)(temp, &result, arg1);
+
+    // Release result through its vfunc slot 30 (byte offset 0x78).
+    if (result != nullptr) {
+        void* result_vtbl = *reinterpret_cast<void**>(result);
+        void* slot30 = lift_field<void*>(result_vtbl, 0x78);
+        void* scratch = nullptr;
+        reinterpret_cast<void (*)(void*, void**)>(slot30)(result, &scratch);
+    }
+
+    return ok;
+}
+} // namespace lift_004D4AD0
+} // namespace lift_005C8C90
+
+// [0x005C8E70] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_47 (154 bytes)
+namespace lift_005C8E70 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_47
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004A47B0 (ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47).
+namespace lift_004A47B0 {
+extern void* ext_005C3FB0(void* self);
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Validates the held value pointer; if null throws a DerivedException, otherwise re-assigns the held value through the guarded copy helper and then invokes the vfunc at slot 0xBC of the object at +0x04.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ValuePtrType +0x04 void* field_0x04
+int fn_005C8E70(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        // Throw path: construct the exception object on the stack and raise it.
+        alignas(8) uint8_t exc[32] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0; // not reached
+    }
+
+    // Temporaries: A receives the value produced by ext_0049AA40, B is the
+    // copy source for ext_0041CF50.
+    alignas(8) uint8_t a[8] = {};
+    alignas(8) uint8_t b[8] = {};
+
+    void* r = ext_005C3FB0(lift_field<void*>(self, 0x00));
+    ext_006720C0(a, r);
+
+    ext_0041CF50(self, b);
+
+    void* p = lift_field<void*>(a, 0x00);
+    if (p != nullptr) {
+        void* vtbl = lift_field<void*>(p, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x78);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(slot);
+        release(p, b);
+    }
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void* objVtbl = lift_field<void*>(obj, 0x00);
+    void* slot47 = lift_field<void*>(objVtbl, 0xBC);
+    auto vfunc47 = reinterpret_cast<int (*)(void*, void*)>(slot47);
+    return vfunc47(obj, self);
+}
+} // namespace lift_004A47B0
+} // namespace lift_005C8E70

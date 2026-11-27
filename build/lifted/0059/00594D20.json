@@ -1,0 +1,22 @@
+{
+  "va": "0x00594D20",
+  "size": 156,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e",
+  "signature": "bool fn_00594D20(void* arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x004D4AD0 (ExprParser::DynamicEnumType::vfunc_42).",
+  "fields": [
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:12:11Z"
+}

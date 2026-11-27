@@ -24,6 +24,7 @@ void* fn_004B6C90(void* self, void* dst, void* arg2) {
 } // namespace lift_004B6C90
 #include <memory>
 #include <cstddef>
+#include <cstdio>
 
 // [0x004B7030]
 namespace lift_004B7030 {
@@ -2309,3 +2310,40 @@ int32_t __thiscall fn_004B53E0(void* self, const uint32_t* target_ptr) {
     return index;
 }
 } // namespace lift_004B53E0
+
+// [0x004BBF60] sub_004BBF60 (111 bytes)
+namespace lift_004BBF60 {
+// @name sub_004BBF60
+// @summary Auto-lifted identical-shape clone of 0x0055CAC0 (UnknownClass::ThrowIfKeyNotFound).
+namespace lift_0055CAC0 {
+// Known callee 0x005DF940: UnknownClass::LowerBoundValue (Tree lower-bound lookup: returns value field (+0x10) of the first node with key >= key, or 0 if tree is empty or no node matches.)
+extern uint32_t ext_004BBF50(uint32_t key);
+// Known callee 0x0055C3B0: Unknown::ConstructPrefixedExceptionMessage (Builds msg = arg1 + literal string, constructs the exception-style object at self from msg via fn_00403560, sets the vtable to 0x0092E2E0, and default-constructs the std::string member at +0x28. Returns self.)
+extern void* ext_0041FF30(void* self, const void* arg1);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+extern int mem_00A9F070;
+extern int mem_00924FE4;
+
+// @name UnknownClass::ThrowIfKeyNotFound
+// @summary Returns if the tree lookup for key finds a value; otherwise builds a prefixed exception message from the literal pointed to by mem_00A85480 and throws it.
+// @field none (no direct field accesses; the exception object is a local buffer)
+void fn_004BBF60(uint32_t key) {
+    if (ext_004BBF50(key) != 0) {
+        return;
+    }
+
+    // Import slot for std::string(const char*) in MSVCP80; the string is built natively below.
+    (void)&mem_00924FE4;
+
+    const char* literal = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F070));
+    std::string prefix(literal);
+
+    alignas(16) unsigned char exception[0x48] = {};
+    ext_0041FF30(exception, &prefix);
+
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009D3748u));
+    ext_006A6DD2(exception, throwInfo);
+}
+} // namespace lift_0055CAC0
+} // namespace lift_004BBF60
