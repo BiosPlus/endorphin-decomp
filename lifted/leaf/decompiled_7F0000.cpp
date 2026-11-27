@@ -569,3 +569,14 @@ void fn_007F36C0(float* out, const unsigned char* base, const float* mat, int id
     }
 }
 } // namespace lift_007F36C0
+
+// [0x007F9E30]
+namespace lift_007F9E30 {
+// @name vec_add_f32
+// @summary Add src float array into dst float array element-wise
+void __cdecl sub_007F9E30(int32_t count, float* dst, const float* src) {
+    for (int32_t i = 0; i < count; ++i) {
+        dst[i] += src[i];
+    }
+}
+} // namespace lift_007F9E30
