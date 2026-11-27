@@ -18793,6 +18793,13 @@
     "summary": "Iterates over a vector of pointers at +0x8 and sets each element's byte at +0x1 to (byte at +0x2 == 0)",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B4D90": {
+    "name": "PointainerVectorType::vfunc_3",
+    "class": "Properties::PointainerVectorType",
+    "signature": "void __stdcall fn_004B4D90(void* arg1, void* arg2)",
+    "summary": "Iterates over a vector of pointers, transforms each element via ext_004B4C00, and invokes visitor vfunc_0 until it returns false.",
+    "lifted_path": "lifted/templates/PointainerVectorType.cpp"
+  },
   "0x004B4E60": {
     "name": "Unknown::AllocateAndInit",
     "class": "Unknown",
@@ -31983,6 +31990,12 @@
     "signature": "void fn_00518A80(uint32_t* base, int32_t i, int32_t hi, uint32_t val, void* ctx)",
     "summary": "Sift-down of index at slot i in a heap-style (children 2i+1, 2i+2) uint32 array up to hi, then sift-up to i via siftUpIndexArray.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00518B00": {
+    "name": "unguardedPartition",
+    "signature": "UnguardedPartitionResult* __cdecl fn_00518B00( UnguardedPartitionResult* out, uint32_t* first, uint32_t* last, void* pred)",
+    "summary": "Performs MSVC std::_Unguarded_partition (3-way quicksort partition) on a range of uint32_t indices using comparator pred.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x00519060": {
     "name": "sub_00519060",
