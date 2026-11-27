@@ -12603,3 +12603,28 @@ void fn_005D3390(void* holder) {
     lift_field<DWORD>(holder, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B45A00));
 }
 } // namespace lift_005D3390
+
+// [0x005D20D0]
+namespace lift_005D20D0 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, std::string>::vfunc_40
+// @class ExprParser::ValuePtrType
+// @summary Lazily initializes the static fileName accessor object (guarded by a one-bit flag) and binds holder+0x04 to it.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B459BC;
+extern DWORD mem_00B459B8;
+extern DWORD mem_00B459C0;
+extern DWORD mem_00B459C4;
+
+void fn_005D20D0(void* holder) {
+    (void)&mem_00B459C0;  // metadata-only reference (see RDATA_CONSTANTS)
+    (void)&mem_00B459C4;
+    if (!(mem_00B459BC & 1)) {
+        mem_00B459BC |= 1;
+        ext_0067A670(&mem_00B459B8, 0);
+        mem_00B459B8 = 0x00965E1C;
+    }
+    *reinterpret_cast<DWORD*>(static_cast<char*>(holder) + 0x04) = 0x00B459B8;
+}
+} // namespace lift_005D20D0
