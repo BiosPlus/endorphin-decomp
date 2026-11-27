@@ -90,11 +90,13 @@ struct _ClassName__Fields {
     // +0x58  int32_t                  enableFlag  (evidence: 0x007AEEC0) // CONFLICT: multiple definitions at +0x58
     // +0x58  float                    field_0x58  (evidence: 0x0054E3D0) // CONFLICT: multiple definitions at +0x58
     // +0x58  int32_t                  field_0x58  (evidence: 0x007AEE50) // CONFLICT: multiple definitions at +0x58
-    // +0x58  uint32_t                 field_0x58  (evidence: 0x00648400) // CONFLICT: multiple definitions at +0x58
+    // +0x58  uint32_t                 field_0x58  (evidence: 0x004AC0A0, 0x00648400) // CONFLICT: multiple definitions at +0x58
     // +0x5C  float                    field_0x5C  (evidence: 0x0054E3D0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  int32_t                  field_0x5C  (evidence: 0x007AEE50) // CONFLICT: multiple definitions at +0x5C
+    // +0x5C  uint32_t                 field_0x5c  (evidence: 0x004AC0A0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  int32_t                  maxLimit  (evidence: 0x007AEEC0) // CONFLICT: multiple definitions at +0x5C
     // +0x60  int32_t                  field_0x60  (evidence: 0x007AEE50) // CONFLICT: multiple definitions at +0x60
+    // +0x60  uint32_t                 field_0x60  (evidence: 0x004AC0A0) // CONFLICT: multiple definitions at +0x60
     // +0x60  int32_t                  value  (evidence: 0x007AEEC0) // CONFLICT: multiple definitions at +0x60
     // +0x74  DWORD                    field_0x74  (evidence: 0x0044CF80)
     // +0x7C  DWORD                    field_0x7C  (evidence: 0x007C6FF0)

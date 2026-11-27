@@ -1303,3 +1303,29 @@ void* __thiscall sub_004AEAC0(void* self) {
     return self;
 }
 } // namespace lift_004AEAC0
+
+// [0x004AC0A0] sub_004AC0A0 (48 bytes)
+namespace lift_004AC0A0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+// Known callee 0x004ED6B0: sub_004ED6B0_dtor (Destructor that resets vtables, tidies a std::vector<std::string> at +0x3c, destroys a std::string at +0x1c, and calls base destructor 0x00692BA0.)
+extern void ext_004ED6B0(void* thisPtr);
+
+// @name ReleaseHeldAndReset
+// @class <ClassName> (optional)
+// @summary If the pointer at +0x58 is non-null, passes it to ext_006A5C5C (cdecl), zeroes +0x58/+0x5C/+0x60, then tail-calls ext_004ED6B0 with self.
+// @field <ClassName> +0x58 uint32_t field_0x58
+// @field <ClassName> +0x5C uint32_t field_0x5c
+// @field <ClassName> +0x60 uint32_t field_0x60
+void fn_004AC0A0(void* self) {
+    // 32-bit target: the slot holds a 4-byte handle, not a host pointer.
+    uint32_t held = lift_field<uint32_t>(self, 0x58);
+    if (held != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(held)));
+    }
+    lift_field<uint32_t>(self, 0x58) = 0;
+    lift_field<uint32_t>(self, 0x5C) = 0;
+    lift_field<uint32_t>(self, 0x60) = 0;
+    ext_004ED6B0(self);
+}
+} // namespace lift_004AC0A0

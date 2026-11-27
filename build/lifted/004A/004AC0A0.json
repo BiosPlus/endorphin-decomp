@@ -1,0 +1,34 @@
+{
+  "va": "0x004AC0A0",
+  "size": 48,
+  "orig_symbol": "sub_004AC0A0",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "ReleaseHeldAndReset",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_004AC0A0(void* self)",
+  "summary": "If the pointer at +0x58 is non-null, passes it to ext_006A5C5C (cdecl), zeroes +0x58/+0x5C/+0x60, then tail-calls ext_004ED6B0 with self.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:14Z"
+}

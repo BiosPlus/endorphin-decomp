@@ -14672,6 +14672,13 @@
     "summary": "Reports invalid parameters if the two range fields are out of order, then forwards to IsElementValidAndNotLess_005F3E70 with the range bounds and the value pointer.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004AC0A0": {
+    "name": "ReleaseHeldAndReset",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_004AC0A0(void* self)",
+    "summary": "If the pointer at +0x58 is non-null, passes it to ext_006A5C5C (cdecl), zeroes +0x58/+0x5C/+0x60, then tail-calls ext_004ED6B0 with self.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AC240": {
     "name": "NMData::BehaviourData::vfunc_0_off_158",
     "class": "NMData::BehaviourData",
