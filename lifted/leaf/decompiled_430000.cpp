@@ -5923,3 +5923,34 @@ void fn_0043F9E0(void* self, uint32_t value) {
     ext_0043F820(self, &scratch, self, last, value);
 }
 } // namespace lift_0043F9E0
+
+// [0x0043B720] sub_0043B720 (162 bytes)
+namespace lift_0043B720 {
+// Known callee 0x0043B5D0: fn_0043B5D0 (three-way conditional sort of object slots)
+extern void ext_0043B5D0(void** a, void** b, void** c);
+
+// @name PivotNinther_0043B720
+// @summary Partitions a void* slot range by sorting sampled slots: small ranges (<=40 slots) get one 3-slot sort; larger ranges sort three triples of samples spaced n/8 apart.
+// @field none (no struct field accesses; pointer arithmetic on slot arrays only)
+void fn_0043B720(void** first, void** second, void** last, void* ctx) {
+    (void)ctx; // arg4 is forwarded to callees in the asm but ignored by them
+
+    // Element count of [first, last); asm: (last - first) >> 2 on 4-byte slots.
+    const ptrdiff_t n = last - first;
+    if (n <= 40) {
+        ext_0043B5D0(first, second, last);
+        return;
+    }
+
+    // asm: k = (n + 1) / 8 (signed, n + 1 > 0 on this path).
+    const ptrdiff_t k = (n + 1) / 8;
+
+    ext_0043B5D0(first, first + k, first + 2 * k);
+    ext_0043B5D0(second - k, second, second + k);
+
+    // asm: esi = end - [arg3]; both operands are `last`, so this is 0 and is
+    // passed as the first argument (a raw integer value, not a pointer offset).
+    void** zeroArg = reinterpret_cast<void**>(static_cast<uintptr_t>(last - last));
+    ext_0043B5D0(zeroArg, last - k, last);
+}
+} // namespace lift_0043B720

@@ -4723,6 +4723,12 @@
     "summary": "Copies a range of 32-bit elements using memmove_s and returns the end pointer of the destination range.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043B720": {
+    "name": "PivotNinther_0043B720",
+    "signature": "void fn_0043B720(void** first, void** second, void** last, void* ctx)",
+    "summary": "Partitions a void* slot range by sorting sampled slots: small ranges (\u003c=40 slots) get one 3-slot sort; larger ranges sort three triples of samples spaced n/8 apart.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043BAF0": {
     "name": "sub_0043BAF0",
     "signature": "void fn_0043BAF0(uint32_t* first, uint32_t* last, uint32_t pred)",
