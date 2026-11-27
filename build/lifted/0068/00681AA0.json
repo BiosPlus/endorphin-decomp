@@ -1,0 +1,14 @@
+{
+  "va": "0x00681AA0",
+  "size": 90,
+  "orig_symbol": "sub_00681AA0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Singleton::ensureInitialized",
+  "class": "Singleton",
+  "signature": "void* fn_00681AA0(void)",
+  "summary": "One-time guarded initializer for the global object at 0x00B5A1C0; registers a follow-up hook on first call and returns the object address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:20:23Z"
+}

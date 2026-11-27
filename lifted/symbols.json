@@ -56399,6 +56399,13 @@
     "summary": "Initializes object fields, sub-objects, a PerformanceTimer, and a std::string.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00681AA0": {
+    "name": "Singleton::ensureInitialized",
+    "class": "Singleton",
+    "signature": "void* fn_00681AA0(void)",
+    "summary": "One-time guarded initializer for the global object at 0x00B5A1C0; registers a follow-up hook on first call and returns the object address.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00681B00": {
     "name": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_1",
     "class": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e",

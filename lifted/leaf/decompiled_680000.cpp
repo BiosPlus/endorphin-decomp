@@ -2674,3 +2674,37 @@ void* __stdcall fn_00683100(void* out, void* obj) {
 }
 } // namespace lift_0058F770
 } // namespace lift_00683100
+
+// [0x00681AA0] sub_00681AA0 (90 bytes)
+namespace lift_00681AA0 {
+// Known callee 0x00681820: sub_00681820_ctor (Initializes object fields, sub-objects, a PerformanceTimer, and a std::string.)
+void* ext_00681820(void* self);
+void ext_006A6C87(uintptr_t fn);
+extern uint32_t mem_00B5A220;
+
+// @name Singleton::ensureInitialized
+// @summary One-time guarded initializer for the global object at 0x00B5A1C0; registers a follow-up hook on first call and returns the object address.
+// (No class fields accessed; the object at 0x00B5A1C0 is a global, not a member.)
+// The original SEH frame setup/teardown (fs:[0] push/restore) is Win32-only
+// exception bookkeeping and is intentionally not reproduced; control flow and
+// all memory/callee effects are preserved.
+void* fn_00681AA0(void) {
+    constexpr uintptr_t kObject = 0x00B5A1C0u;
+    constexpr uintptr_t kHook   = 0x00921D70u;
+
+    // test byte ptr [0xb5a220], al ; jne -> already initialized
+    if ((mem_00B5A220 & 1u) == 0) {
+        // or dword ptr [0xb5a220], eax  (set initialized bit)
+        mem_00B5A220 |= 1u;
+
+        // mov ecx, 0xb5a1c0 ; call fn_00681820 (thiscall, this = kObject)
+        ext_00681820(reinterpret_cast<void*>(kObject));
+
+        // push 0x921d70 ; call ext_006A6C87
+        ext_006A6C87(kHook);
+    }
+
+    // mov eax, 0xb5a1c0
+    return reinterpret_cast<void*>(kObject);
+}
+} // namespace lift_00681AA0
