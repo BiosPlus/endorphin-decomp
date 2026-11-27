@@ -14317,6 +14317,12 @@
     "summary": "One-time initializer for global string at mem_00AE163C; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B75A0": {
+    "name": "InitVtblAndCopyStrings",
+    "signature": "void* fn_004B75A0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Initializes the object: calls base init, stores two uint32 values, and copy-constructs two std::strings from the given pointers.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B77C0": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand::vfunc_4",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand",

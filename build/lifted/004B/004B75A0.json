@@ -1,0 +1,51 @@
+{
+  "va": "0x004B75A0",
+  "size": 120,
+  "orig_symbol": "sub_004B75A0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "InitVtblAndCopyStrings",
+  "signature": "void* fn_004B75A0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "Initializes the object: calls base init, stores two uint32 values, and copy-constructs two std::strings from the given pointers.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "value_a2"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "value_a1"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "src_ptr_a3"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "std::string",
+      "name": "str_a"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "std::string",
+      "name": "str_b"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:12:24Z"
+}

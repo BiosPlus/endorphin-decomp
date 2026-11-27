@@ -1266,3 +1266,44 @@ extern void __stdcall fn_004B4930(uint32_t arg1, uint32_t arg2, uint32_t arg3, u
     }
 }
 } // namespace lift_004B4930
+
+// [0x004B75A0] sub_004B75A0 (120 bytes)
+namespace lift_004B75A0 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// IAT slot for MSVCP80 std::basic_string<char> copy constructor.
+extern int mem_00924FE0;
+
+// Copy constructor signature (thiscall: this in ECX, source pointer on stack).
+using StringCopyCtor = void(__thiscall*)(void* self, const void* src);
+
+// @name InitVtblAndCopyStrings
+// @summary Initializes the object: calls base init, stores two uint32 values, and copy-constructs two std::strings from the given pointers.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t value_a2
+// @field Unknown +0x10 uint32_t value_a1
+// @field Unknown +0x14 uint32_t src_ptr_a3
+// @field Unknown +0x18 std::string str_a
+// @field Unknown +0x34 std::string str_b
+void* fn_004B75A0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    // Base init: sets vtable to 0x00987A04, +0x04 = 0, zeroes +0x08/+0x0C.
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x10) = a1;
+
+    // Derived vtable, then copy-construct str_a from *a3 (original order preserved).
+    lift_field<uint32_t>(self, 0x00) = 0x009435D8u;
+    lift_field<uint32_t>(self, 0x14) = a3;
+    void* str_a = &lift_field<uint8_t>(self, 0x18);
+    reinterpret_cast<StringCopyCtor>(static_cast<uintptr_t>(mem_00924FE0))(
+        str_a, reinterpret_cast<const void*>(static_cast<uintptr_t>(a3)));
+
+    // Copy-construct str_b from *a4.
+    void* str_b = &lift_field<uint8_t>(self, 0x34);
+    reinterpret_cast<StringCopyCtor>(static_cast<uintptr_t>(mem_00924FE0))(
+        str_b, reinterpret_cast<const void*>(static_cast<uintptr_t>(a4)));
+
+    lift_field<uint32_t>(self, 0x08) = a2;
+    return self;
+}
+} // namespace lift_004B75A0
