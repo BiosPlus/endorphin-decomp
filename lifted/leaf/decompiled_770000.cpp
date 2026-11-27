@@ -596,3 +596,42 @@ extern void __thiscall fn_007720F0(void* self) {
     ext_00754FA0(self);
 }
 } // namespace lift_007720F0
+
+// [0x00772150] sub_00772150 (84 bytes)
+namespace lift_00772150 {
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* __thiscall ext_006E7440(void* self, DWORD index);
+extern int mem_009252A8;
+
+// @name Unknown::openFileOrAssignFallback_00772150
+// @class Unknown
+// @summary Opens the named file with fopen (after releasing any previous handle via vtable slot 2); on success stores the FILE* at +0xAC, assigns the path to +0xB0 and returns TRUE; on failure assigns index 1 into the string table at +8 and returns FALSE.
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0xAC void* file_handle
+// @field Unknown +0xB0 uint8_t field_0xB0
+extern BOOLEAN __thiscall fn_00772150(void* self, const char* path) {
+    // Release a previously opened handle through vtable slot 2 (thiscall, no args).
+    if (lift_field<void*>(self, 0xAC) != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(self);
+        auto release = reinterpret_cast<void(__thiscall*)(void*)>(vtable[2]);
+        release(self);
+    }
+
+    // fopen is reached through its import slot mem_009252A8; mode string lives at 0x00AAEB4C.
+    using FopenFn = FILE* (__cdecl*)(const char*, const char*);
+    auto fopen_fn = reinterpret_cast<FopenFn>(static_cast<uintptr_t>(mem_009252A8));
+    auto mode = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AAEB4Cu));
+    void* handle = fopen_fn(path, mode);
+    lift_field<void*>(self, 0xAC) = handle;
+
+    if (handle != nullptr) {
+        ext_006B9EC0(&lift_field<uint8_t>(self, 0xB0), path);
+        return TRUE;
+    }
+
+    ext_006E7440(&lift_field<uint8_t>(self, 0x08), 1);
+    return FALSE;
+}
+} // namespace lift_00772150

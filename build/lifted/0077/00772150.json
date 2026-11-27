@@ -1,0 +1,34 @@
+{
+  "va": "0x00772150",
+  "size": 84,
+  "orig_symbol": "sub_00772150",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::openFileOrAssignFallback_00772150",
+  "class": "Unknown",
+  "signature": "extern \"C\" BOOLEAN __thiscall fn_00772150(void* self, const char* path)",
+  "summary": "Opens the named file with fopen (after releasing any previous handle via vtable slot 2); on success stores the FILE* at +0xAC, assigns the path to +0xB0 and returns TRUE; on failure assigns index 1 into the string table at +8 and returns FALSE.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "void*",
+      "name": "file_handle"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint8_t",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:55:00Z"
+}

@@ -78895,6 +78895,13 @@
     "summary": "Stamps vtable 0x996C98 into this, runs closeFileAndResetString on this, calls the +0xb0 sub-object thunk, then runs the destructor on this.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x00772150": {
+    "name": "Unknown::openFileOrAssignFallback_00772150",
+    "class": "Unknown",
+    "signature": "extern \"C\" BOOLEAN __thiscall fn_00772150(void* self, const char* path)",
+    "summary": "Opens the named file with fopen (after releasing any previous handle via vtable slot 2); on success stores the FILE* at +0xAC, assigns the path to +0xB0 and returns TRUE; on failure assigns index 1 into the string table at +8 and returns FALSE.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x007721B0": {
     "name": "Unknown::closeFileAndResetString_007721B0",
     "class": "Unknown",
