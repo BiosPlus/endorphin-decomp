@@ -50500,6 +50500,13 @@
     "summary": "Walks the command list anchored at this+0x30 and invokes virtual slot 1 on each element's command object.",
     "lifted_path": "lifted/classes/MacroCommand.cpp"
   },
+  "0x00665A90": {
+    "name": "MacroCommand::vfunc_2",
+    "class": "MacroCommand",
+    "signature": "void fn_00665A90(void* self)",
+    "summary": "Walks the command list anchored at this+0x30 backwards (via prev links) and invokes virtual slot 2 on each element's command object.",
+    "lifted_path": "lifted/classes/MacroCommand.cpp"
+  },
   "0x00665B10": {
     "name": "MacroCommand::vfunc_4",
     "class": "MacroCommand",

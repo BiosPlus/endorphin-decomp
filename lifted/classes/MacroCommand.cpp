@@ -90,3 +90,33 @@ void fn_00665B10(void* self) {
     }
 }
 } // namespace lift_00665B10
+
+// [0x00665A90] MacroCommand::vfunc_2 (124 bytes)
+namespace lift_00665A90 {
+extern void* mem_00925134;
+
+// @name MacroCommand::vfunc_2
+// @class MacroCommand
+// @summary Walks the command list anchored at this+0x30 backwards (via prev links) and invokes virtual slot 2 on each element's command object.
+// @field MacroCommand +0x30 void* field_0x30
+void fn_00665A90(void* self) {
+    (void)&mem_00925134;  // metadata-only: IAT slot for _invalid_parameter_noinfo (iterator-debug checks omitted)
+
+    // Circular list: field_0x30 points at the sentinel node.
+    // Node layout (as used here): +0x0 next, +0x4 prev, +0x8 element pointer.
+    void* sentinel = lift_field<void*>(self, 0x30);
+    void* first = *reinterpret_cast<void**>(sentinel);   // sentinel->next
+
+    // Iterate from the sentinel back toward the first real node; stop once the
+    // cursor reaches the first node (each step handles cur->prev).
+    void* cur = sentinel;
+    while (cur != first) {
+        void* node = *reinterpret_cast<void**>(static_cast<uint8_t*>(cur) + 0x4); // cur->prev
+        void* elem = lift_field<void*>(node, 0x8);                                // command object
+        void** vtbl = *reinterpret_cast<void***>(elem);
+        auto slot2 = reinterpret_cast<void(__thiscall*)(void*)>(vtbl[2]);
+        slot2(elem);
+        cur = node;
+    }
+}
+} // namespace lift_00665A90
