@@ -1005,3 +1005,24 @@ void* __thiscall sub_004765B0(void* self, const void* arg1, const void* arg2, co
     return self;
 }
 } // namespace lift_004765B0
+
+// [0x004773D0]
+namespace lift_004773D0 {
+extern void __fastcall ext_0065F440(void* self);
+extern void(__fastcall* mem_00924FF4)(void* self);
+
+// @name sub_004773D0
+// @summary Destroys four std::string members and calls base destructor sub_0065F440.
+// @field self +0x4 std::string field_0x04
+// @field self +0x20 std::string field_0x20
+// @field self +0x3c std::string field_0x3C
+// @field self +0x58 std::string field_0x58
+extern void __fastcall fn_004773D0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    mem_00924FF4(base + 0x58);
+    mem_00924FF4(base + 0x3c);
+    mem_00924FF4(base + 0x20);
+    mem_00924FF4(base + 0x04);
+    ext_0065F440(self);
+}
+} // namespace lift_004773D0

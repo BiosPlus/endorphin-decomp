@@ -1,0 +1,27 @@
+{
+  "va": "0x0041BAE0",
+  "size": 119,
+  "orig_symbol": "sub_0041BAE0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "OnEditChange_0041BAE0",
+  "signature": "extern \"C\" void* mem_009242FC; // MFC80!ord_310 (CString::CString) extern \"C\" void* mem_00924300; // MFC80!ord_876 (CString::operator const char*) extern \"C\" void* mem_009251E4; // MSVCR80!atoi extern \"C\" void* mem_009242F4; // MFC80!ord_578 (CString::~CString) extern \"C\" void ext_006A5F4A(void); // thunk_MFC80_ord_3761 (CWnd::GetWindowTextA) extern \"C\" void __thiscall fn_0041BAE0(void* self)",
+  "summary": "Reads integer text from control at +0x188 and passes it to virtual method +0x44 on object at +0x1EC.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x188",
+      "type": "void*",
+      "name": "field_0x188"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x1EC",
+      "type": "void*",
+      "name": "field_0x1EC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:24:03Z"
+}
