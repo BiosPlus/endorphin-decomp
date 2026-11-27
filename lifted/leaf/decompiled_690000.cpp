@@ -1640,3 +1640,58 @@ extern DWORD fn_00692180(const UCHAR* name) {
     }
 }
 } // namespace lift_00692180
+
+// [0x00699A50] sub_00699A50 (141 bytes)
+namespace lift_00699A50 {
+extern int mem_00924FDC;
+
+// @name CopyAssignElementRange
+// @class Unknown
+// @summary Copy-assigns *src into each 0x2C-byte element in [first, last): string at +0x00 via MSVCP80 operator=, dwords at +0x1C/+0x20, and a pointer pair at +0x24/+0x28 (release old +0x28, take src +0x28, clone via vtbl[0x70]).
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 void* field_0x24
+// @field Unknown +0x28 void* field_0x28
+extern void fn_00699A50(uint8_t* first, uint8_t* last, uint8_t* src) {
+    using StringAssignFn = void* (__thiscall*)(void* self, const void* rhs);
+    using ReleaseFn      = void (__thiscall*)(void* self, void* slot);
+    using CloneFn        = void (__thiscall*)(void* self, void** out, void* slot);
+
+    StringAssignFn string_assign =
+        reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+
+    for (uint8_t* dst = first; dst != last; dst += 0x2C) {
+        string_assign(dst, src);
+        lift_field<uint32_t>(dst, 0x1C) = lift_field<uint32_t>(src, 0x1C);
+        lift_field<uint32_t>(dst, 0x20) = lift_field<uint32_t>(src, 0x20);
+
+        // Self-assignment of the pointer pair is skipped.
+        if (dst + 0x24 == src + 0x24) {
+            continue;
+        }
+
+        void* old_b = lift_field<void*>(dst, 0x28);
+        if (old_b != nullptr) {
+            void* vtable = *reinterpret_cast<void**>(old_b);
+            ReleaseFn release = reinterpret_cast<ReleaseFn>(
+                *reinterpret_cast<void**>(static_cast<char*>(vtable) + 0x78));
+            release(old_b, dst + 0x24);
+        }
+
+        lift_field<void*>(dst, 0x28) = lift_field<void*>(src, 0x28);
+
+        void* new_a = nullptr;
+        void* src_b = lift_field<void*>(src, 0x28);
+        if (src_b != nullptr) {
+            void* vtable = *reinterpret_cast<void**>(src_b);
+            CloneFn clone = reinterpret_cast<CloneFn>(
+                *reinterpret_cast<void**>(static_cast<char*>(vtable) + 0x70));
+            void* out = nullptr;
+            clone(src_b, &out, src + 0x24);
+            new_a = out;
+        }
+        lift_field<void*>(dst, 0x24) = new_a;
+    }
+}
+} // namespace lift_00699A50

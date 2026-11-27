@@ -58876,6 +58876,13 @@
     "summary": "One-time guarded initializer for the global string at 0xB5C9A8; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00699A50": {
+    "name": "CopyAssignElementRange",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_00699A50(uint8_t* first, uint8_t* last, uint8_t* src)",
+    "summary": "Copy-assigns *src into each 0x2C-byte element in [first, last): string at +0x00 via MSVCP80 operator=, dwords at +0x1C/+0x20, and a pointer pair at +0x24/+0x28 (release old +0x28, take src +0x28, clone via vtbl[0x70]).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699B80": {
     "name": "allocateEntryArray",
     "signature": "bool fn_00699B80(void* self, uint32_t count)",
