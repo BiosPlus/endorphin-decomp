@@ -11403,3 +11403,35 @@ void __stdcall fn_0058C130(void* self) {
     lift_field<void*>(self, 0x04) = static_cast<void*>(&mem_00B3F904);
 }
 } // namespace lift_0058C130
+
+// [0x0058C060] ExprParser::ReadWriteMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, NM::Vector4 const &, {protected: void __thiscall AnimatableTransform::setQuat(class NM::Vector4 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_0058C060 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00B3F900;
+extern int mem_00B3F8FC;
+
+// Thiscall view of ext_0067A670: ECX = self, one stack argument.
+using StaticInitFn = void(__thiscall*)(void* self, uint32_t value);
+
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, NM::Vector4 const &, {protected: void __thiscall AnimatableTransform::setQuat(class NM::Vector4 const &), 0}>
+// @summary Lazily constructs the static accessor object at mem_00B3F8FC (guarded by bit 0 of mem_00B3F900, vtable 0x0095B41C), then stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_0058C060(void* holder) {
+    // One-time construction guarded by bit 0 of mem_00B3F900.
+    if ((mem_00B3F900 & 1) == 0) {
+        mem_00B3F900 |= 1;
+
+        // Construct the accessor object: thiscall ext_0067A670 with ECX = &object, stack arg 0.
+        StaticInitFn init = reinterpret_cast<StaticInitFn>(&ext_0067A670);
+        init(&mem_00B3F8FC, 0u);
+
+        // Install the vtable pointer into the object's first dword.
+        mem_00B3F8FC = 0x0095B41C;
+    }
+
+    // holder+0x04 <- address of the static accessor object (0x00B3F8FC).
+    lift_field<uint32_t>(holder, 4) = 0x00B3F8FCu;
+}
+} // namespace lift_0058C060
