@@ -3249,3 +3249,50 @@ int fn_005C8E70(void* self) {
 }
 } // namespace lift_004A47B0
 } // namespace lift_005C8E70
+
+// [0x00516230] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_42 (154 bytes)
+namespace lift_00516230 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006720C0: sub_006720C0 (18B, thiscall: writes a handle into *self from one stack argument)
+extern void ext_006720C0(void* self, void* arg);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, void* throw_info);
+// Throw info data for the exception raised on a null reference.
+extern char mem_009DEC1C[];
+
+// @name ExprParser::DynamicEnumType::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Dereferences the value pointer argument, builds a temporary handle from its field at +0x0C, invokes that handle's vtable slot 42 and releases it via slot 30; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x0C void* field_0x0c
+BOOLEAN fn_00516230(void* self, void** arg1, void* arg2) {
+    (void)self;
+    (void)arg2;
+
+    void* obj = *arg1;
+    if (obj == nullptr) {
+        void* exception_object = nullptr;
+        ext_0046C3C0(&exception_object);
+        ext_006A6DD2(&exception_object, mem_009DEC1C);
+        return 0;
+    }
+
+    void* field = lift_field<void*>(obj, 0x0C);
+
+    void* handle = nullptr;
+    ext_006720C0(&handle, field);
+
+    void* out = nullptr;
+    void** vtbl = *reinterpret_cast<void***>(handle);
+    using VFunc42 = BOOLEAN (*)(void*, void*, void**);
+    BOOLEAN result = reinterpret_cast<VFunc42>(vtbl[42])(handle, &out, arg1);
+
+    if (handle != nullptr) {
+        void** vtbl2 = *reinterpret_cast<void***>(handle);
+        using VFunc30 = void (*)(void*, void*);
+        reinterpret_cast<VFunc30>(vtbl2[30])(handle, &out);
+    }
+
+    return result;
+}
+} // namespace lift_00516230
