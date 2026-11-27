@@ -1,0 +1,28 @@
+{
+  "va": "0x00595AF0",
+  "size": 127,
+  "orig_symbol": "sub_00595AF0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "TreeIterator::advanceToSuccessor",
+  "class": "TreeIterator",
+  "signature": "void fn_00595AF0(void* self)",
+  "summary": "Advances a red-black-tree iterator to its in-order successor (stored at this+0x04), with _invalid_parameter_noinfo reporting on null/sentinel inputs.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "currentNode"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:06:14Z"
+}

@@ -30820,6 +30820,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00595AF0": {
+    "name": "TreeIterator::advanceToSuccessor",
+    "class": "TreeIterator",
+    "signature": "void fn_00595AF0(void* self)",
+    "summary": "Advances a red-black-tree iterator to its in-order successor (stored at this+0x04), with _invalid_parameter_noinfo reporting on null/sentinel inputs.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00595C50": {
     "name": "sub_00595C50",
     "signature": "void* fn_00595C50()",

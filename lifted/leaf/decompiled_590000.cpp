@@ -1807,3 +1807,56 @@ void fn_00598A90(void* self) {
     }
 }
 } // namespace lift_00598A90
+
+// [0x00595AF0] sub_00595AF0 (127 bytes)
+namespace lift_00595AF0 {
+extern uintptr_t mem_00925134;
+
+// @name TreeIterator::advanceToSuccessor
+// @class TreeIterator
+// @summary Advances a red-black-tree iterator to its in-order successor (stored at this+0x04), with _invalid_parameter_noinfo reporting on null/sentinel inputs.
+// @field TreeIterator +0x00 void* field_0x00
+// @field TreeIterator +0x04 void* currentNode
+void fn_00595AF0(void* self) {
+    // mem_00925134 holds the imported _invalid_parameter_noinfo pointer.
+    auto invalid_parameter = reinterpret_cast<void (*)()>(mem_00925134);
+
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        invalid_parameter();
+    }
+
+    // Node layout: +0x00 left/link, +0x04 parent, +0x08 right, +0xB9 isNil flag.
+    void* node = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(node, 0xB9) != 0) {
+        invalid_parameter();
+        return;
+    }
+
+    void* cur = lift_field<void*>(node, 0x08);
+    if (lift_field<uint8_t>(cur, 0xB9) == 0) {
+        // Right subtree exists: take its leftmost node.
+        void* next = lift_field<void*>(cur, 0x00);
+        if (lift_field<uint8_t>(next, 0xB9) == 0) {
+            do {
+                cur = next;
+                next = lift_field<void*>(cur, 0x00);
+            } while (lift_field<uint8_t>(next, 0xB9) == 0);
+        }
+        lift_field<void*>(self, 0x04) = cur;
+        return;
+    }
+
+    // No right subtree: climb parents while we are the right child.
+    void* p = lift_field<void*>(node, 0x04);
+    if (lift_field<uint8_t>(p, 0xB9) == 0) {
+        while (lift_field<void*>(self, 0x04) == lift_field<void*>(p, 0x08)) {
+            lift_field<void*>(self, 0x04) = p;
+            p = lift_field<void*>(p, 0x04);
+            if (lift_field<uint8_t>(p, 0xB9) != 0) {
+                break;
+            }
+        }
+    }
+    lift_field<void*>(self, 0x04) = p;
+}
+} // namespace lift_00595AF0
