@@ -1,0 +1,14 @@
+{
+  "va": "0x005521E0",
+  "size": 99,
+  "orig_symbol": "NMCamera::Perspective::vfunc_2",
+  "src_path": "src/NMCamera/Perspective.cpp",
+  "lifted_path": "lifted/NMCamera/Perspective.cpp",
+  "name": "NMCamera::Perspective::vfunc_2",
+  "class": "NMCamera::Perspective",
+  "signature": "void fn_005521E0(void* self, void* props)",
+  "summary": "Looks up \"fieldOfView\" on props, pushes a double from the virtual getter at vtable+0x24 into ext_00640AD0 with the lookup result, then sets the child name of a node from a global string and forwards props to Camera::vfunc_2.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:02:44Z"
+}

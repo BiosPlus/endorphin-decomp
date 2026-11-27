@@ -259,3 +259,52 @@ void __thiscall fn_005523E0(uint8_t* self, void* name) {
     ext_00517FC0(&lift_field<double>(self, 0xF8), &out);
 }
 } // namespace lift_005523E0
+
+// [0x005521E0] NMCamera::Perspective::vfunc_2 (99 bytes)
+namespace lift_005521E0 {
+// Known callee 0x00640110: thiscall lookup on props by key, returns a pointer.
+extern void* __thiscall ext_00640110(void* self, const char* key);
+// Known callee 0x00640AD0: cdecl (void* obj, double value).
+extern void __cdecl ext_00640AD0(void* obj, double value);
+// Known callee 0x00427550: ResetChildAndAssignName (thiscall; self is the address of a slot holding the child pointer).
+extern void __thiscall ext_00427550(void* self, const char* name);
+// Known callee 0x00548A20: Camera::vfunc_2 (thiscall, one stack arg).
+extern void __thiscall ext_00548A20(void* self, void* arg);
+
+// Rodata / data references.
+extern const char mem_009574E0[];    // .rdata "fieldOfView"
+extern const uint32_t mem_00A9FA6C;  // .data holding a const char* (0x00984CE0)
+extern uint8_t mem_00AF76A4[];       // global std::string object
+// IAT slot: MSVCP80 std::string::c_str (thiscall, returns const char*).
+using CStrFn = const char* (__thiscall*)(void* self);
+extern CStrFn mem_00924FF0;
+
+// Virtual slot at vtable+0x24: thiscall, returns double (st0).
+using GetDoubleFn = double (__thiscall*)(void* self);
+
+// @name NMCamera::Perspective::vfunc_2
+// @class NMCamera::Perspective
+// @summary Looks up "fieldOfView" on props, pushes a double from the virtual getter at vtable+0x24 into ext_00640AD0 with the lookup result, then sets the child name of a node from a global string and forwards props to Camera::vfunc_2.
+void fn_005521E0(void* self, void* props) {
+    // First lookup: props->get("fieldOfView").
+    void* const found = ext_00640110(props, mem_009574E0);
+
+    // value = self->vtable[+0x24](self).
+    void* const vtbl = lift_field<void*>(self, 0);
+    void* const getter = lift_field<void*>(vtbl, 0x24);
+    const double value = reinterpret_cast<GetDoubleFn>(getter)(self);
+
+    ext_00640AD0(found, value);
+
+    // Second lookup keyed by the C string stored in the global at mem_00A9FA6C.
+    const char* const key =
+        reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FA6C));
+    void* node = ext_00640110(props, key);
+
+    // Set the child name on the node, using the global std::string's c_str.
+    const char* const name = mem_00924FF0(mem_00AF76A4);
+    ext_00427550(&node, name);
+
+    ext_00548A20(self, props);
+}
+} // namespace lift_005521E0
