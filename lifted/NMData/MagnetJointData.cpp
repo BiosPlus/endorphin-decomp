@@ -114,3 +114,54 @@ void fn_005EE590(void* self) {
 }
 } // namespace lift_005EE2F0
 } // namespace lift_005EE590
+
+// [0x005E2AB0] NMData::MagnetJointData::vfunc_54 (128 bytes)
+namespace lift_005E2AB0 {
+// Callees (signatures inferred from the call sites: __thiscall(this, arg) / cdecl(arg)).
+extern void ext_005B5780(void* self, uint32_t arg);   // sub_005B5780: static-object init, called with size 0xC
+extern void ext_005E0380(void* self, void* arg);      // sub_005E0380: called on this with &mem_00B45E10
+extern void ext_006A6C87(void* fn);                   // sub_006A6C87: registers 0x0091E470 (atexit-style)
+
+// Globals
+extern uint8_t mem_00B45E10;   // static object returned by this function
+extern uint8_t mem_00B45E5C;   // init-guard byte; bit 0 = initialized
+extern uint8_t mem_00B45E54;   // cached byte copied from this->field_0x178
+
+// Metadata-only references: listed in CALLEES / RDATA_CONSTANTS but never called or read
+// by the 128-byte disassembly. Taking the address has no runtime effect.
+extern void ext_0053F5F0(int* out);
+extern void ext_00587920();
+extern void ext_005F2970();
+extern void ext_0063EFE0(uint8_t* self, const char* name);
+extern uint32_t mem_00924ECC;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF4;
+
+// @name NMData::MagnetJointData::vfunc_54
+// @class NMData::MagnetJointData
+// @summary Lazily initializes the static object at 0x00B45E10 once, caches this->field_0x178 into 0x00B45E54, and returns the static object.
+// @field NMData::MagnetJointData +0x178 uint8_t field_0x178
+void* fn_005E2AB0(void* self) {
+    // Address-only references to metadata-listed symbols (no call / no read).
+    (void)&ext_0053F5F0;
+    (void)&ext_00587920;
+    (void)&ext_005F2970;
+    (void)&ext_0063EFE0;
+    (void)&mem_00924ECC;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+
+    // One-time initialization guarded by bit 0 of mem_00B45E5C.
+    if ((mem_00B45E5C & 1u) == 0) {
+        mem_00B45E5C |= 1u;
+        ext_005B5780(&mem_00B45E10, 0xCu);
+        // 0x0091E470 is a function address; it is passed through unchanged.
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091E470u)));
+    }
+
+    ext_005E0380(self, &mem_00B45E10);
+
+    mem_00B45E54 = lift_field<uint8_t>(self, 0x178);
+    return &mem_00B45E10;
+}
+} // namespace lift_005E2AB0

@@ -52014,6 +52014,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005E2AB0": {
+    "name": "NMData::MagnetJointData::vfunc_54",
+    "class": "NMData::MagnetJointData",
+    "signature": "void* fn_005E2AB0(void* self)",
+    "summary": "Lazily initializes the static object at 0x00B45E10 once, caches this-\u003efield_0x178 into 0x00B45E54, and returns the static object.",
+    "lifted_path": "lifted/NMData/MagnetJointData.cpp"
+  },
   "0x005E2BE0": {
     "name": "TreeIterator::decrement",
     "class": "TreeIterator",

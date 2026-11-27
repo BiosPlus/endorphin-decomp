@@ -1,0 +1,22 @@
+{
+  "va": "0x005E2AB0",
+  "size": 128,
+  "orig_symbol": "NMData::MagnetJointData::vfunc_54",
+  "src_path": "src/NMData/MagnetJointData.cpp",
+  "lifted_path": "lifted/NMData/MagnetJointData.cpp",
+  "name": "NMData::MagnetJointData::vfunc_54",
+  "class": "NMData::MagnetJointData",
+  "signature": "void* fn_005E2AB0(void* self)",
+  "summary": "Lazily initializes the static object at 0x00B45E10 once, caches this-\u003efield_0x178 into 0x00B45E54, and returns the static object.",
+  "fields": [
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:00:22Z"
+}
