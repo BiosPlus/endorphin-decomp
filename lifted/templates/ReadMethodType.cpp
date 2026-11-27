@@ -62930,3 +62930,32 @@ extern void* fn_00470BC0(void* out, void** holder) {
     return out;
 }
 } // namespace lift_00470BC0
+
+// [0x004B3160] ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004B3160 {
+extern float ext_0046C080(void* self);
+extern void* ext_0046C390(void* out, float value);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void);
+
+// @name ExprParser::ReadMethodType<ImageExporter,float,getFrameRate>::vfunc_4
+// @class ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>
+// @summary Reads the frame rate from the wrapped ImageExporter (via vfunc_12), formats it into arg1, and returns arg1; throws if the wrapped pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_004B3160(void* arg1, void* arg2) {
+    (void)arg2;
+    void** holder = static_cast<void**>(arg1);
+    void* target = *holder;
+    if (target != nullptr) {
+        float value = ext_0046C080(target);
+        ext_0046C390(arg1, value);
+        return arg1;
+    }
+    // Null branch: build a local exception object (ext_0046C3C0) and throw via
+    // _CxxThrowException (ext_006A6DD2). Object size is not verified against the original stack frame.
+    alignas(8) unsigned char exc_obj[16] = {};
+    ext_0046C3C0(exc_obj);
+    ext_006A6DD2();
+    return nullptr;
+}
+} // namespace lift_004B3160
