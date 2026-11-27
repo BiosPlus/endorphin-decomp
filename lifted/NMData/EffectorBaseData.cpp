@@ -96,3 +96,38 @@ void __thiscall fn_0060BA80(uint8_t* self, uint8_t* arg1) {
     (void)mem_009722A8;
 }
 } // namespace lift_0060BA80
+
+// [0x0060C530]
+namespace lift_0060C530 {
+extern const char mem_0093F7BC[]; // "m_name"
+extern const char mem_009722A8[]; // "m_jointName"
+extern const uint32_t mem_00924ECC;
+extern const uint32_t mem_00924FD0;
+extern const uint32_t mem_00924FE4;
+extern const uint32_t mem_00924FF4;
+
+extern void __thiscall ext_00486CB0(void* ctx, const void* arg1, const void* arg2, const char* arg3);
+
+// @name NMData::EffectorBaseData::vfunc_21
+// @class NMData::EffectorBaseData
+// @summary Validates/compares m_name and m_jointName against another EffectorBaseData via ThrowIfFirstGreater
+// @field NMData::EffectorBaseData +0x04 std::string m_name
+// @field NMData::EffectorBaseData +0x20 std::string m_jointName
+void __thiscall fn_0060C530(void* this_ptr, void* arg1, uint32_t arg2, uint32_t arg3) {
+    (void)arg3;
+    (void)mem_00924ECC;
+    (void)mem_00924FD0;
+    (void)mem_00924FE4;
+    (void)mem_00924FF4;
+    uint8_t* self = static_cast<uint8_t*>(this_ptr);
+    uint8_t* other = static_cast<uint8_t*>(arg1);
+
+    using VFunc9 = const void* (__thiscall*)(void*);
+    void** vtable = *reinterpret_cast<void***>(other);
+    VFunc9 vfunc9 = reinterpret_cast<VFunc9>(vtable[9]);
+    const void* other_name = vfunc9(other);
+
+    ext_00486CB0(&arg2, self + 0x04, other_name, mem_0093F7BC);
+    ext_00486CB0(&arg2, self + 0x20, other + 0x20, mem_009722A8);
+}
+} // namespace lift_0060C530
