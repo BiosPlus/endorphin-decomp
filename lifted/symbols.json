@@ -7352,6 +7352,12 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_4189.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004647D0": {
+    "name": "openPathWithShell",
+    "signature": "extern \"C\" int mem_00924FE4;  // MSVCP80 std::string ctor import slot (replaced by std::string below) extern \"C\" int mem_00924FF0;  // MSVCP80 std::string::c_str import slot extern \"C\" int mem_00924FF4;  // MSVCP80 std::string dtor import slot extern \"C\" int mem_00925134;  // .rdata \"P",
+    "summary": "Opens the given string via ShellExecuteA with verb \"open\", SW_SHOWDEFAULT.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00464850": {
     "name": "VMCActionCommandLineInfo::vfunc_1",
     "class": "VMCActionCommandLineInfo",

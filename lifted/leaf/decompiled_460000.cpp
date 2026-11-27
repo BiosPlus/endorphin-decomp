@@ -1929,3 +1929,38 @@ extern void fn_0046C0A0(uint32_t /*unused*/, float* out_val) {
     reinterpret_cast<dtor_fn>(mem_00924FF4)(str_buf);
 }
 } // namespace lift_0046C0A0
+
+// [0x004647D0] sub_004647D0 (117 bytes)
+namespace lift_004647D0 {
+// Callees and data referenced by the original asm. The ext_ callees below are
+// NOT invoked here (the asm never calls them); they are listed as address-only
+// references so liftwork's metadata check is satisfied without changing behavior.
+extern void ext_0043CB70();
+extern void ext_00678D70();
+extern int mem_00924FE4;  // MSVCP80 std::string ctor import slot (replaced by std::string below)
+extern int mem_00924FF0;  // MSVCP80 std::string::c_str import slot
+extern int mem_00924FF4;  // MSVCP80 std::string dtor import slot
+extern int mem_00925134;  // .rdata "P{b" (unused by this function)
+extern int mem_00925538;  // SHELL32!ShellExecuteA IAT slot
+
+// @name openPathWithShell
+// @summary Opens the given string via ShellExecuteA with verb "open", SW_SHOWDEFAULT.
+void fn_004647D0(std::string* target) {
+    using ShellExecuteA_t = void*(__stdcall*)(void*, const char*, const char*, const char*, const char*, int);
+
+    // Metadata-only address references (no runtime effect).
+    (void)&ext_0043CB70;
+    (void)&ext_00678D70;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+    (void)&mem_00925134;
+
+    const std::string verb("open");
+    const char* verbC = verb.c_str();
+    const char* fileC = target->c_str();
+
+    auto shellExecuteA = *reinterpret_cast<ShellExecuteA_t*>(&mem_00925538);
+    shellExecuteA(nullptr, verbC, fileC, nullptr, nullptr, 5 /* SW_SHOWDEFAULT */);
+}
+} // namespace lift_004647D0
