@@ -354,3 +354,22 @@ extern int32_t __stdcall fn_00742A70(ByValObj742A70 key, void* list) {
     return -1;
 }
 } // namespace lift_00742A70
+
+// [0x007435A0]
+namespace lift_007435A0 {
+// @name matchStringOption
+// @summary Returns 1 if input equals mem_00AAE5C0, 2 if it equals mem_00AAE5B0, else 0.
+
+extern uint8_t mem_00AAE5B0[];
+extern uint8_t mem_00AAE5C0[];
+
+extern int __cdecl sub_007435A0(const char* str) {
+    if (std::strcmp(str, reinterpret_cast<const char*>(mem_00AAE5C0)) == 0) {
+        return 1;
+    }
+    if (std::strcmp(str, reinterpret_cast<const char*>(mem_00AAE5B0)) == 0) {
+        return 2;
+    }
+    return 0;
+}
+} // namespace lift_007435A0
