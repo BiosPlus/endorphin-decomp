@@ -2222,3 +2222,26 @@ uint32_t fn_00714AE0(void* self) {
     return lift_field<uint32_t>(self, 0xD8);
 }
 } // namespace lift_00714AE0
+
+// [0x0071A6B0]
+namespace lift_0071A6B0 {
+// @name get_enum_string_0071A6B0
+// @summary Maps an enum index (0..11) to a static string/data address, or 0 if out of range.
+uint32_t __stdcall sub_0071A6B0(uint32_t index) {
+    switch (index) {
+        case 0:  return 0x00AAC8E4u;
+        case 1:  return 0x00AAC9C8u;
+        case 2:  return 0x00AAC9BCu;
+        case 3:  return 0x00AAC9ACu;
+        case 4:  return 0x00AAC998u;
+        case 5:  return 0x00AAC984u;
+        case 6:  return 0x00AAC96Cu;
+        case 7:  return 0x00AAC95Cu;
+        case 8:  return 0x00AAC94Cu;
+        case 9:  return 0x00AAC940u;
+        case 10: return 0x00AAC934u;
+        case 11: return 0x00AAC92Cu;
+        default: return 0u;
+    }
+}
+} // namespace lift_0071A6B0
