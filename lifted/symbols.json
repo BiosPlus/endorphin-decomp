@@ -53947,6 +53947,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00667810": {
+    "name": "Unknown::destroyNodeList",
+    "class": "Unknown",
+    "signature": "void fn_00667810(void* self, void* node)",
+    "summary": "Recursively walks a singly linked node list starting at node; for each node it recurses on the child at +0x08, destroys the ObjectWithStrings at +0x28 and the std::string at +0x0C, then frees the node via MFC80!ord_764, until a node with the flag at +0xC1 set is reached.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006678A0": {
     "name": "lookupIndexedEntry",
     "signature": "void* __thiscall fn_006678A0(void* self, uint32_t index, const void* key, void* owner)",

@@ -1,0 +1,46 @@
+{
+  "va": "0x00667810",
+  "size": 141,
+  "orig_symbol": "sub_00667810",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::destroyNodeList",
+  "class": "Unknown",
+  "signature": "void fn_00667810(void* self, void* node)",
+  "summary": "Recursively walks a singly linked node list starting at node; for each node it recurses on the child at +0x08, destroys the ObjectWithStrings at +0x28 and the std::string at +0x0C, then frees the node via MFC80!ord_764, until a node with the flag at +0xC1 set is reached.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "Unknown*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "ObjectWithStrings",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC1",
+      "type": "BYTE",
+      "name": "field_0xC1"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:30:19Z"
+}
