@@ -66436,6 +66436,13 @@
     "summary": "Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BB7E0": {
+    "name": "Unknown::setIndexOrAssignDefault_006BB7E0",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006BB7E0(void* self, DWORD index)",
+    "summary": "If index is in [0, ext_006BB7D0(self)) store it in the inner object's +0x24 and return 1; otherwise assign string index 0 via ext_006E7440 on inner+0x28 and return 0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BB820": {
     "name": "GetVtableSlot24",
     "signature": "uintptr_t fn_006BB820(void* self)",

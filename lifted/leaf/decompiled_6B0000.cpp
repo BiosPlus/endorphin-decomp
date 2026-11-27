@@ -2912,3 +2912,31 @@ void* fn_006BB830(void* self, int32_t index) {
     return nullptr;
 }
 } // namespace lift_006BB830
+
+// [0x006BB7E0] sub_006BB7E0 (64 bytes)
+namespace lift_006BB7E0 {
+// Known callee 0x006BB7D0: GetVtableSlot3 (Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.)
+extern uint32_t ext_006BB7D0(void* self);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::setIndexOrAssignDefault_006BB7E0
+// @class Unknown
+// @summary If index is in [0, ext_006BB7D0(self)) store it in the inner object's +0x24 and return 1; otherwise assign string index 0 via ext_006E7440 on inner+0x28 and return 0.
+// @field Unknown +0x00 void* inner
+// @field Unknown_Inner +0x24 DWORD field_0x24
+uint8_t fn_006BB7E0(void* self, DWORD index) {
+    if (static_cast<int32_t>(index) >= 0) {
+        DWORD count = ext_006BB7D0(self);
+        if (static_cast<int32_t>(index) < static_cast<int32_t>(count)) {
+            void* inner = lift_field<void*>(self, 0x00);
+            lift_field<DWORD>(inner, 0x24) = index;
+            return 1;
+        }
+    }
+
+    void* inner = lift_field<void*>(self, 0x00);
+    ext_006E7440(static_cast<uint8_t*>(inner) + 0x28, 0);
+    return 0;
+}
+} // namespace lift_006BB7E0

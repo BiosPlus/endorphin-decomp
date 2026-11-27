@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct Unknown_Inner_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x00810270)
+    // +0x24  DWORD                    field_0x24  (evidence: 0x006BB7E0)
 };
 } // namespace lifted_layout
