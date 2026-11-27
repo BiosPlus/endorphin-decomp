@@ -1801,3 +1801,46 @@ bool __stdcall sub_00575CE0(void* stream, void* out_str, int32_t* out_val) {
     return false;
 }
 } // namespace lift_00575CE0
+
+// [0x0057CEE0]
+namespace lift_0057CEE0 {
+// @name Vector::eraseRange_0057CEE0
+// @class Vector
+// @summary Erases a range [first, last) of 0x3C-byte records from a vector and returns the resulting iterator.
+// @field Vector +0x08 void* end
+
+
+    void ext_005567D0(void* first, void* last);
+    void* ext_0057BEC0(const void* first, const void* last, void* dest);
+    extern void (*mem_00925134)();
+
+struct CheckedIterator {
+    void* container;
+    void* ptr;
+};
+
+void* __thiscall fn_0057CEE0(
+    void* self,
+    void* ret_iter,
+    void* first_container,
+    void* first_ptr,
+    void* last_container,
+    void* last_ptr)
+{
+    if (first_container == nullptr || first_container != last_container) {
+        mem_00925134();
+    }
+
+    if (first_ptr != last_ptr) {
+        void* end_ptr = lift_field<void*>(self, 0x08);
+        void* new_end = ext_0057BEC0(last_ptr, end_ptr, first_ptr);
+        ext_005567D0(new_end, lift_field<void*>(self, 0x08));
+        lift_field<void*>(self, 0x08) = new_end;
+    }
+
+    auto* out = static_cast<CheckedIterator*>(ret_iter);
+    out->container = first_container;
+    out->ptr = first_ptr;
+    return ret_iter;
+}
+} // namespace lift_0057CEE0
