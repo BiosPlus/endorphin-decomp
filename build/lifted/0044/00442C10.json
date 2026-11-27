@@ -1,0 +1,28 @@
+{
+  "va": "0x00442C10",
+  "size": 44,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_20",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_20",
+  "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+  "signature": "uint8_t __thiscall fn_00442C10(void* self, uint32_t /*unused*/)",
+  "summary": "Transitions state to index 6 if cursor is over delegate_0x8, otherwise to index 0, and returns 1.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:08:32Z"
+}
