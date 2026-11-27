@@ -310,3 +310,65 @@ void* __thiscall fn_00496F90(void* self, void* a1, void* a2) {
     return a1;
 }
 } // namespace lift_00496F90
+
+// [0x00499440] NMData::Transition::vfunc_21 (277 bytes)
+namespace lift_00499440 {
+extern void* __thiscall ext_00498B60(void* self, void* out, uint32_t arg);
+extern void* __thiscall ext_00499370(void* self, void* out, uint32_t arg);
+extern uint8_t __thiscall ext_004990C0(void* self);
+// IAT slot for _invalid_parameter_noinfo (only reached when the array is inconsistent).
+extern void* mem_00925134;
+// Float constant 0.007f (half-width of the probe box).
+extern const float mem_0094B858;
+
+// @name NMData::Transition::vfunc_21
+// @class NMData::Transition
+// @summary Thiscall, one stack arg (ret 4). Walks the float-pair array delimited by this+0x88/this+0x8C; for each pair (a,b) it probes ext_00498B60 with the box {a-k, b-k, a+k, b+k} (k=0.007) and returns true as soon as the returned rect has positive width and height. If none does, returns ext_004990C0(ext_00499370(this, ...)) != 0.
+// @field NMData::Transition +0x88 float* field_0x88
+// @field NMData::Transition +0x8C float* field_0x8C
+bool __thiscall fn_00499440(void* self, uint32_t arg) {
+    const float k = mem_0094B858;
+    // Scratch out-slot passed to both callees (the original's uninitialised frame slot).
+    uint32_t out[4] = {};
+
+    // Element count = (end - begin) >> 3 (arithmetic), or 0 when begin is null.
+    int32_t count = 0;
+    if (lift_field<uint32_t>(self, 0x88) != 0) {
+        const uint32_t diff = lift_field<uint32_t>(self, 0x8C) - lift_field<uint32_t>(self, 0x88);
+        count = static_cast<int32_t>(diff) >> 3;
+    }
+
+    for (uint32_t i = 0; static_cast<int32_t>(i) < count; ++i) {
+        // Bounds check re-reads the fields each iteration, as the original does.
+        const uint32_t begin_raw = lift_field<uint32_t>(self, 0x88);
+        if (begin_raw == 0) {
+            (void)&mem_00925134;
+            std::abort();
+        }
+        const int32_t avail = static_cast<int32_t>(lift_field<uint32_t>(self, 0x8C) - begin_raw) >> 3;
+        if (!(i < static_cast<uint32_t>(avail))) {
+            (void)&mem_00925134;
+            std::abort();
+        }
+
+        const auto* pair = reinterpret_cast<const float*>(static_cast<uintptr_t>(begin_raw + 8u * i));
+        const float a = pair[0];
+        const float b = pair[1];
+        float box[4] = {a - k, b - k, a + k, b + k};
+
+        const auto* rect = static_cast<const float*>(ext_00498B60(box, out, arg));
+        const float w = rect[2] - rect[0];
+        // x87 "fcom + C0 test" semantics: pass unless the comparison is ordered and w <= 0.
+        if (!(w <= 0.0f)) {
+            const float h = rect[3] - rect[1];
+            if (!(h <= 0.0f)) {
+                return true;
+            }
+        }
+    }
+
+    void* node = ext_00499370(self, out, arg);
+    const uint8_t al = ext_004990C0(node);
+    return al != 0;
+}
+} // namespace lift_00499440

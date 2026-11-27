@@ -1,0 +1,28 @@
+{
+  "va": "0x00499440",
+  "size": 277,
+  "orig_symbol": "NMData::Transition::vfunc_21",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_21",
+  "class": "NMData::Transition",
+  "signature": "bool __thiscall fn_00499440(void* self, uint32_t arg)",
+  "summary": "Thiscall, one stack arg (ret 4). Walks the float-pair array delimited by this+0x88/this+0x8C; for each pair (a,b) it probes ext_00498B60 with the box {a-k, b-k, a+k, b+k} (k=0.007) and returns true as soon as the returned rect has positive width and height. If none does, returns ext_004990C0(ext_00499370(this, ...)) != 0.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x88",
+      "type": "float*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x8C",
+      "type": "float*",
+      "name": "field_0x8C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:11:19Z"
+}

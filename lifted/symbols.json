@@ -14653,6 +14653,13 @@
     "summary": "Forwards to ext_004871D0 when +0xB0 is null; otherwise calls vtable slot 1 of the object at +0xB0+0x10 and returns its result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x00499440": {
+    "name": "NMData::Transition::vfunc_21",
+    "class": "NMData::Transition",
+    "signature": "bool __thiscall fn_00499440(void* self, uint32_t arg)",
+    "summary": "Thiscall, one stack arg (ret 4). Walks the float-pair array delimited by this+0x88/this+0x8C; for each pair (a,b) it probes ext_00498B60 with the box {a-k, b-k, a+k, b+k} (k=0.007) and returns true as soon as the returned rect has positive width and height. If none does, returns ext_004990C0(ext_00499370(this, ...)) != 0.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x004997E0": {
     "name": "NMData::Transition::vfunc_26",
     "class": "NMData::Transition",
