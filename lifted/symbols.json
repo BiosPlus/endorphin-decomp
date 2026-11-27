@@ -26994,6 +26994,12 @@
     "summary": "Calls fn_00558B90 on each 0x2C-byte record in [first, last) and returns (stdcall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00559C80": {
+    "name": "destroyRecordVectorAndReset",
+    "signature": "void fn_00559C80(void* self)",
+    "summary": "Destroys each 0x2C-byte record in the vector at [+4, +8), releases the buffer via MFC80 ord_764 when it is non-null, then clears the three vector pointers.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559E40": {
     "name": "Acclaim2CharacterIO::vfunc_0",
     "class": "Acclaim2CharacterIO",

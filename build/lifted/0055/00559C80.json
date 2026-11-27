@@ -1,0 +1,33 @@
+{
+  "va": "0x00559C80",
+  "size": 70,
+  "orig_symbol": "sub_00559C80",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "destroyRecordVectorAndReset",
+  "signature": "void fn_00559C80(void* self)",
+  "summary": "Destroys each 0x2C-byte record in the vector at [+4, +8), releases the buffer via MFC80 ord_764 when it is non-null, then clears the three vector pointers.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "self",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "self",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "capacity"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:17Z"
+}

@@ -16,13 +16,16 @@ struct self_Fields {
     // +0x0   void* self (not dereferenced; returned unchanged)  (evidence: 0x00419940) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x0040FE10) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtablePtr  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C480, 0x0050C4D0) // CONFLICT: multiple definitions at +0x0
+    // +0x4   uint32_t                 begin  (evidence: 0x00559C80) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x0041CEE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00870E40) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00489880, 0x00603230) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when non-null)  (evidence: 0x00528C70) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 end  (evidence: 0x00559C80) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    field_0x08  (evidence: 0x004925B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C480, 0x0050C4D0, 0x00870E40) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C480, 0x0050C4D0)
+    // +0xC   uint32_t                 capacity  (evidence: 0x00559C80) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C480, 0x0050C4D0) // CONFLICT: multiple definitions at +0xC
     // +0x10  float                    field_0x10  (evidence: 0x007C5910, 0x007C5F90, 0x007C6120, 0x007CB970, 0x007D8490) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C480, 0x0050C4D0, 0x00870E40) // CONFLICT: multiple definitions at +0x10
     // +0x10  float[3]                 row1  (evidence: 0x0067E110) // CONFLICT: multiple definitions at +0x10
