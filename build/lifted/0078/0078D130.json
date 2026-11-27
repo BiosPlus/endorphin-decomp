@@ -1,0 +1,58 @@
+{
+  "va": "0x0078D130",
+  "size": 144,
+  "orig_symbol": "sub_0078D130",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "PoolAllocator::deallocate",
+  "class": "PoolAllocator",
+  "signature": "void __thiscall sub_0078D130(void* self, void* fallbackAllocator, void* ptr)",
+  "summary": "Returns a block to the pool free-list or delegates to the fallback allocator if out of range.",
+  "fields": [
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "criticalSection"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "buckets"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "maxBlockSize"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "bucketShift"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "memoryLimit"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "allocatedBytes"
+    },
+    {
+      "class": "PoolAllocator",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "allocationCount"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:47:21Z"
+}
