@@ -4101,3 +4101,62 @@ void fn_0048BFD0(void* self, const char* name) {
     str_dtor(static_cast<void*>(str));
 }
 } // namespace lift_0048BFD0
+
+// [0x0048D410] sub_0048D410 (168 bytes)
+namespace lift_0048D410 {
+// Range search over [end, cap_end) keyed on the first dword of each element.
+extern void* ext_004898F0(void* first, void* last, const void* key, DWORD flag, DWORD extra);
+// Known callee 0x0048D260: ElementVector_InsertAt_0048D260 (Inserts one 0x68-byte element at iterator `where` (index = (where - first) / 0x68), writes the {container, new-position} iterator to `out`, and returns `out`.)
+extern void ext_0048D260(void* self, void* where, void* out);
+extern int mem_00925134;
+
+// @name ElementVector::TryInsertIfKeyLess
+// @class ElementVector
+// @summary Finds the first element in [end, cap_end) via ext_004898F0; if it is not cap_end and the key is less than that element's key, inserts a new element there and returns TRUE, otherwise returns FALSE.
+// @field ElementVector +0x04 uint8_t* end
+// @field ElementVector +0x08 uint8_t* cap_end
+BOOL fn_0048D410(void* self, const void* key) {
+    if (self == nullptr) {
+        (void)&mem_00925134;  // CRT invalid-parameter check on null this
+        std::abort();
+    }
+
+    uint8_t* cap_end = lift_field<uint8_t*>(self, 0x08);
+    if (reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x04)) >
+        reinterpret_cast<uintptr_t>(cap_end)) {
+        (void)&mem_00925134;  // end > cap_end
+        std::abort();
+    }
+
+    // Flag is passed by value as a dword whose low byte was initialised to 0.
+    DWORD flag = 0;
+    uint8_t* pos = static_cast<uint8_t*>(
+        ext_004898F0(lift_field<uint8_t*>(self, 0x04), cap_end, key, flag, 0));
+
+    cap_end = lift_field<uint8_t*>(self, 0x08);
+    if (reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x04)) >
+        reinterpret_cast<uintptr_t>(cap_end)) {
+        (void)&mem_00925134;
+        std::abort();
+    }
+
+    if (pos == cap_end) {
+        return FALSE;
+    }
+
+    if (reinterpret_cast<uintptr_t>(pos) >= reinterpret_cast<uintptr_t>(cap_end)) {
+        (void)&mem_00925134;
+        std::abort();
+    }
+
+    const uint32_t key_value = *static_cast<const uint32_t*>(key);
+    const uint32_t elem_key = *reinterpret_cast<const uint32_t*>(pos);
+    if (key_value < elem_key) {
+        void* out[2] = {nullptr, nullptr};
+        ext_0048D260(self, pos, out);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+} // namespace lift_0048D410

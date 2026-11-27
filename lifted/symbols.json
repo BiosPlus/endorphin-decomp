@@ -12910,6 +12910,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048D410": {
+    "name": "ElementVector::TryInsertIfKeyLess",
+    "class": "ElementVector",
+    "signature": "BOOL fn_0048D410(void* self, const void* key)",
+    "summary": "Finds the first element in [end, cap_end) via ext_004898F0; if it is not cap_end and the key is less than that element's key, inserts a new element there and returns TRUE, otherwise returns FALSE.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048DA40": {
     "name": "NMData::AnimationEventData::vfunc_79",
     "class": "NMData::AnimationEventData",
