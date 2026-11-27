@@ -10546,3 +10546,26 @@ void fn_004E9E30(void* obj) {
     *reinterpret_cast<DWORD*>(reinterpret_cast<uint8_t*>(obj) + 0x4) = 0x00AE711Cu;
 }
 } // namespace lift_004E9E30
+
+// [0x004E9FB0] ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)>::vfunc_40 (122 bytes)
+namespace lift_004E9FB0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack arg; stores arg into first DWORD of self; returns it)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE7128; // one-time init guard flag (bit 0)
+extern DWORD mem_00AE7124; // static object whose address is published
+
+// @name ExprParser::ReadWriteMethodType<PoseToolOptions,isCollisionEnabled,setCollisionEnabled>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)>
+// @summary One-time initializes the static accessor object at mem_00AE7124 (via ext_0067A670), then publishes its address into the argument's +0x04 slot.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004E9FB0(void* arg0) {
+    // The original wraps the guarded init in an MSVC SEH frame (fs:[0]) that only
+    // exists for the static-init machinery; it has no portable equivalent and is omitted.
+    if ((mem_00AE7128 & 1u) == 0) {
+        mem_00AE7128 |= 1u;
+        ext_0067A670(&mem_00AE7124, 0);
+    }
+    *reinterpret_cast<void**>(static_cast<unsigned char*>(arg0) + 0x04) =
+        static_cast<void*>(&mem_00AE7124);
+}
+} // namespace lift_004E9FB0

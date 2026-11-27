@@ -18402,6 +18402,13 @@
     "summary": "Stores a bool from a value object into the target's +0x05 byte, throwing if the target pointer is null, then triggers the index-5 dispatch.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004E9FB0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cPoseToolOptions,isCollisionEnabled,setCollisionEnabled\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)\u003e",
+    "signature": "extern \"C\" DWORD mem_00AE7128; // one-time init guard flag (bit 0) extern \"C\" DWORD mem_00AE7124; // static object whose address is published void fn_004E9FB0(void* arg0)",
+    "summary": "One-time initializes the static accessor object at mem_00AE7124 (via ext_0067A670), then publishes its address into the argument's +0x04 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004EA030": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",
