@@ -4563,3 +4563,49 @@ void fn_004326D0(void) {
     }
 }
 } // namespace lift_004326D0
+
+// [0x00432910] sub_00432910 (134 bytes)
+namespace lift_00432910 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+extern void* ext_00465B40(void);
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+// Called cdecl with a single const char* argument.
+extern void ext_006A5E60(const char* text);
+extern int mem_00924FE0;  // .rdata IAT slot: std::string copy ctor
+extern int mem_00924FF0;  // .rdata IAT slot: std::string::c_str
+extern int mem_00924FF4;  // .rdata IAT slot: std::string dtor
+
+// @name callVirtualSlot1E4WithArg1CatchLog
+// @summary Calls virtual slot +0x1E4 (arg 1) on the object returned by ext_00465B40; on exception, logs the std::string at obj+0x0C via thunk_MFC80_ord_1123 and returns 0x0043294B.
+// @field Unknown +0x0C std::string field_0x0C (copied into a local string in the catch path; type inferred from ctor/c_str/dtor IAT usage)
+int fn_00432910(void) {
+    using CopyCtorFn = void(__thiscall*)(void* self, const void* src);
+    using CStrFn     = const char*(__thiscall*)(void* self);
+    using DtorFn     = void(__thiscall*)(void* self);
+    using VSlotFn    = int(__thiscall*)(void* self, int arg);
+
+    void* obj = ext_00465B40();
+
+    try {
+        // mov edx,[eax]; mov ecx,eax; call [edx+0x1e4] with push 1
+        void* vtbl = *reinterpret_cast<void**>(obj);
+        auto slot = *reinterpret_cast<VSlotFn*>(reinterpret_cast<uint8_t*>(vtbl) + 0x1e4);
+        return slot(obj, 1);
+    } catch (...) {
+        // Handler (0x43295C): local std::string built from obj+0x0C (MSVC layout, 0x1C bytes).
+        alignas(4) unsigned char str[0x1c];
+
+        auto copyCtor = *reinterpret_cast<CopyCtorFn*>(&mem_00924FE0);
+        auto cStr     = *reinterpret_cast<CStrFn*>(&mem_00924FF0);
+        auto dtor     = *reinterpret_cast<DtorFn*>(&mem_00924FF4);
+
+        const void* src = reinterpret_cast<const uint8_t*>(obj) + 0x0c;
+        copyCtor(str, src);
+        ext_006A5E60(cStr(str));
+        dtor(str);
+
+        // Handler resumes at 0x0043294B (function epilogue), which yields this value as the return.
+        return 0x0043294b;
+    }
+}
+} // namespace lift_00432910

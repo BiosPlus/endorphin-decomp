@@ -472,6 +472,7 @@ struct Unknown_Fields {
     // +0xC   int32_t                  tail_value  (evidence: 0x0086D210) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 tree  (evidence: 0x0045E690) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string field_0x0C (copied into a local string in the catch path; type inferred from ctor/c_str usage)  (evidence: 0x00432490) // CONFLICT: multiple definitions at +0xC
+    // +0xC   std::string field_0x0C (copied into a local string in the catch path; type inferred from ctor/c_str/dtor IAT usage)  (evidence: 0x00432910) // CONFLICT: multiple definitions at +0xC
     // +0xC   pointer                  vecHolder  (evidence: 0x0067A670, 0x0067AEB0, 0x0067AEF0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0c (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0xC

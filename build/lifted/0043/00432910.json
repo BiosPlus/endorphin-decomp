@@ -1,0 +1,21 @@
+{
+  "va": "0x00432910",
+  "size": 134,
+  "orig_symbol": "sub_00432910",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "callVirtualSlot1E4WithArg1CatchLog",
+  "signature": "int fn_00432910(void)",
+  "summary": "Calls virtual slot +0x1E4 (arg 1) on the object returned by ext_00465B40; on exception, logs the std::string at obj+0x0C via thunk_MFC80_ord_1123 and returns 0x0043294B.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string field_0x0C (copied into a local string in the catch path; type inferred from ctor/c_str/dtor IAT",
+      "name": "usage)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:31:55Z"
+}
