@@ -1557,3 +1557,49 @@ void fn_007B8BB0() {
     mem_00B61DB8 = nullptr;
 }
 } // namespace lift_007B8BB0
+
+// [0x007BFD80] sub_007BFD80 (110 bytes)
+namespace lift_007BFD80 {
+// Known data: mem_0092525C holds the imported fprintf thunk pointer (MSVCR80.dll!fprintf).
+extern int mem_0092525C;
+
+// @name UnknownClass::debugDumpState
+// @class UnknownClass
+// @summary If flag bit 31 is set, prints a debug line describing the object's level, then invokes an optional callback stored in the info block.
+// @field UnknownClass +0x1C uint32_t flags
+// @field UnknownClass +0x1CC UnknownDebugInfo* info
+// @field UnknownDebugInfo +0x00 int32_t level
+// @field UnknownDebugInfo +0x24 void (*callback)(void* self, FILE* stream, void* arg)
+
+namespace {
+using FprintfFn = int(__cdecl*)(FILE*, const char*, ...);
+using CallbackFn = void(__cdecl*)(void*, FILE*, void*);
+}
+
+void fn_007BFD80(void* self_ptr, FILE* stream, void* arg) {
+    auto* self = static_cast<unsigned char*>(self_ptr);
+    auto fprintf_fn = *reinterpret_cast<FprintfFn*>(&mem_0092525C);
+
+    uint32_t flags = *reinterpret_cast<uint32_t*>(self + 0x1C);
+    unsigned char* info = *reinterpret_cast<unsigned char**>(self + 0x1CC);
+
+    if (flags & 0x80000000u) {
+        fprintf_fn(stream, reinterpret_cast<const char*>(uintptr_t{0x00AB261C}));
+
+        int32_t level = *reinterpret_cast<int32_t*>(info);
+        if (level == 1) {
+            fprintf_fn(stream, reinterpret_cast<const char*>(uintptr_t{0x00AB25F8}));
+        } else if (level == 2) {
+            fprintf_fn(stream, reinterpret_cast<const char*>(uintptr_t{0x00AB2600}));
+        }
+
+        level = *reinterpret_cast<int32_t*>(info);
+        fprintf_fn(stream, reinterpret_cast<const char*>(uintptr_t{0x00AB25EC}), level, level);
+    }
+
+    auto callback = *reinterpret_cast<CallbackFn*>(info + 0x24);
+    if (callback) {
+        callback(self, stream, arg);
+    }
+}
+} // namespace lift_007BFD80
