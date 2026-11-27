@@ -1,0 +1,22 @@
+{
+  "va": "0x004441E0",
+  "size": 213,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::ResizeRightState::vfunc_12",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/ResizeRightState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ResizeRightState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::ResizeRightState::vfunc_12",
+  "class": "MultiTrackView::MultiTrackViewStates::ResizeRightState",
+  "signature": "bool fn_004441E0(void* self, uint32_t arg_04, int32_t x, uint32_t arg_0c)",
+  "summary": "Pixel-to-time update of the right-resize drag: recomputes the value from x, clamps it, and if the rounded value changed invalidates the owning view's window and releases any temporary returned by the helper.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ResizeRightState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:50:03Z"
+}
