@@ -1603,3 +1603,42 @@ void fn_004B5610(void* self) {
     ext_0065F440(base);
 }
 } // namespace lift_004B5610
+
+// [0x004B6760] sub_004B6760 (92 bytes)
+namespace lift_004B6760 {
+// Known callee 0x004B66E0: DestroyOwnedRangeAndFree (Destroys the owned objects in [begin, end), frees the begin buffer if non-null, and zeroes begin/end/+0xC.)
+extern void ext_004B66E0(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Called cdecl with one argument (the buffer to free).
+extern void ext_006A5C5C(void* block);
+
+// @name Unknown::destructorBody
+// @class Unknown
+// @summary Resets the vtable, destroys the embedded sub-object at +0x20, frees the buffer at +0x14 if set, and zeroes +0x14/+0x18/+0x1C.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint8_t field_0x20
+void fn_004B6760(void* self) {
+    // The MSVC SEH frame push/pop (fs:[0] chain) and the register-save/restore
+    // prologue/epilogue are CRT boilerplate and are omitted.
+
+    // Install the vtable for this class.
+    lift_field<uint32_t>(self, 0x00) = 0x00943394u;
+
+    // Destroy the embedded sub-object at +0x20 (passed as `this`).
+    ext_004B66E0(reinterpret_cast<uint8_t*>(self) + 0x20);
+
+    // Free the owned buffer at +0x14 if present.
+    void* buffer = lift_field<void*>(self, 0x14);
+    if (buffer != nullptr) {
+        ext_006A5C5C(buffer);
+    }
+
+    // Zero the buffer pointer and the two following slots.
+    lift_field<void*>(self, 0x14) = nullptr;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+}
+} // namespace lift_004B6760
