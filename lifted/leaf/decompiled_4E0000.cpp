@@ -1040,3 +1040,51 @@ bool __thiscall sub_004EF5E0(void* self, void* vec) {
     return true;
 }
 } // namespace lift_004EF5E0
+
+// [0x004EFBA0]
+namespace lift_004EFBA0 {
+struct TreeIter {
+    void* container;
+    void* node;
+};
+
+void __thiscall ext_0041A190(void* self, TreeIter* out, void* const* key);
+extern void (__cdecl *mem_00925134)();
+
+// @name sub_004EFBA0
+// @summary Walk ancestor chain via +0x38 to find first matching entry in tree at +0x240, or return +0x230
+// @field this +0x230 uint32_t field_0x230
+// @field this +0x240 uint32_t field_0x240
+uint32_t __thiscall sub_004EFBA0(void* self, void* arg0) {
+    void* key = lift_field<void*>(arg0, 0x38);
+    if (key == nullptr) {
+        return lift_field<uint32_t>(self, 0x230);
+    }
+
+    void* tree = static_cast<uint8_t*>(self) + 0x240;
+
+    while (key != nullptr) {
+        TreeIter iter{};
+        ext_0041A190(tree, &iter, &key);
+
+        void* header = lift_field<void*>(tree, 0x4);
+        if (iter.container == nullptr || iter.container != tree) {
+            mem_00925134();
+        }
+
+        if (iter.node != header) {
+            if (iter.container == nullptr) {
+                mem_00925134();
+            }
+            if (iter.node == lift_field<void*>(iter.container, 0x4)) {
+                mem_00925134();
+            }
+            return lift_field<uint32_t>(iter.node, 0x10);
+        }
+
+        key = lift_field<void*>(key, 0x38);
+    }
+
+    return lift_field<uint32_t>(self, 0x230);
+}
+} // namespace lift_004EFBA0

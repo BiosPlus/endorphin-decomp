@@ -34,5 +34,7 @@ struct this_Fields {
     // +0x168 uint32_t                 hwnd  (evidence: 0x0044A2D0)
     // +0x17C std::string              field_0x17c  (evidence: 0x005C3EA0)
     // +0x198 uint32_t                 field_0x198  (evidence: 0x005C3EA0)
+    // +0x230 uint32_t                 field_0x230  (evidence: 0x004EFBA0)
+    // +0x240 uint32_t                 field_0x240  (evidence: 0x004EFBA0)
 };
 } // namespace lifted_layout
