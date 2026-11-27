@@ -21,9 +21,9 @@ struct NMData_AnimationEventData_Fields {
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1F90, 0x004E1A00, 0x004E1D60, 0x004E2760)
     // +0x168 int32_t                  field_0x168  (evidence: 0x00486BE0, 0x004BFBE0, 0x004DE0F0, 0x004E1D60) // CONFLICT: multiple definitions at +0x168
     // +0x168 void*                    field_0x168  (evidence: 0x004E4ED0) // CONFLICT: multiple definitions at +0x168
-    // +0x16C void*                    field_0x16c  (evidence: 0x004C1F90)
+    // +0x16C void*                    field_0x16c  (evidence: 0x004C1F90, 0x004E70B0)
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x004C1F90, 0x004E1A00, 0x004E2760)
-    // +0x180 void*                    field_0x180  (evidence: 0x004E7280)
+    // +0x180 void*                    field_0x180  (evidence: 0x004E70B0, 0x004E7280)
     // +0x184 void* field_0x184 (address only, passed to ext_00662420)  (evidence: 0x004E3BF0)
     // +0x18C uint8_t                  field_0x18c  (evidence: 0x004DDF00, 0x004E4ED0)
     // +0x2FC void* field_0x2fc (address only, passed to ext_004E3660)  (evidence: 0x004E3BF0)
@@ -34,25 +34,25 @@ struct NMData_AnimationEventData_Fields {
     // +0x990 uint8_t                  field_0x990  (evidence: 0x004DDF00, 0x004E3BF0, 0x004E4ED0)
     // +0x994 float                    field_0x994  (evidence: 0x004DDF00, 0x004E4ED0)
     // +0x998 float                    field_0x998  (evidence: 0x004DDF00, 0x004E4ED0)
-    // +0x9A0 int32_t                  field_0x9a0  (evidence: 0x004DDF00, 0x004DE0F0, 0x004E1D60, 0x004E4ED0)
+    // +0x9A0 int32_t                  field_0x9a0  (evidence: 0x004DDF00, 0x004DE0F0, 0x004E1D60, 0x004E4ED0, 0x004E70B0)
     // +0x9A4 int32_t                  field_0x9a4  (evidence: 0x004DDF00, 0x004E4ED0)
     // +0x9A8 uint8_t                  field_0x9a8  (evidence: 0x004E4ED0)
-    // +0x9B0 uint8_t[16]              field_0x9b0  (evidence: 0x004E2700, 0x004E3570, 0x004E7280)
-    // +0x9B4 uint32_t                 field_0x9b4  (evidence: 0x004E7280)
-    // +0x9B8 uint32_t                 field_0x9b8  (evidence: 0x004E7280)
+    // +0x9B0 uint8_t[16]              field_0x9b0  (evidence: 0x004E2700, 0x004E3570, 0x004E70B0, 0x004E7280)
+    // +0x9B4 uint32_t                 field_0x9b4  (evidence: 0x004E70B0, 0x004E7280)
+    // +0x9B8 uint32_t                 field_0x9b8  (evidence: 0x004E70B0, 0x004E7280)
     // +0x9C0 uint32_t                 field_0x9c0  (evidence: 0x004E2700, 0x004E3570) // CONFLICT: multiple definitions at +0x9C0
-    // +0x9C0 void*                    field_0x9c0  (evidence: 0x004E7280) // CONFLICT: multiple definitions at +0x9C0
-    // +0x9C4 uint32_t                 field_0x9c4  (evidence: 0x004E2700, 0x004E3570, 0x004E7280)
-    // +0x9C8 int32_t                  field_0x9c8  (evidence: 0x004E7280)
-    // +0x9CC int32_t                  field_0x9cc  (evidence: 0x004E2760, 0x004E7280)
+    // +0x9C0 void*                    field_0x9c0  (evidence: 0x004E70B0, 0x004E7280) // CONFLICT: multiple definitions at +0x9C0
+    // +0x9C4 uint32_t                 field_0x9c4  (evidence: 0x004E2700, 0x004E3570, 0x004E70B0, 0x004E7280)
+    // +0x9C8 int32_t                  field_0x9c8  (evidence: 0x004E70B0, 0x004E7280)
+    // +0x9CC int32_t                  field_0x9cc  (evidence: 0x004E2760, 0x004E70B0, 0x004E7280)
     // +0x9D4 uint8_t                  field_0x9d4  (evidence: 0x004E3BF0, 0x004E4ED0)
-    // +0x9D5 uint8_t                  field_0x9d5  (evidence: 0x004DDF00, 0x004E4ED0)
-    // +0x9D6 uint8_t                  field_0x9d6  (evidence: 0x004DDF00, 0x004E4ED0)
-    // +0x9D8 float                    field_0x9d8  (evidence: 0x004E7280)
-    // +0x9DC float                    field_0x9dc  (evidence: 0x004E7280)
+    // +0x9D5 uint8_t                  field_0x9d5  (evidence: 0x004DDF00, 0x004E4ED0, 0x004E70B0)
+    // +0x9D6 uint8_t                  field_0x9d6  (evidence: 0x004DDF00, 0x004E4ED0, 0x004E70B0)
+    // +0x9D8 float                    field_0x9d8  (evidence: 0x004E70B0, 0x004E7280)
+    // +0x9DC float                    field_0x9dc  (evidence: 0x004E70B0, 0x004E7280)
     // +0x9E0 void**                   field_0x9e0  (evidence: 0x004DDF00, 0x004E4ED0)
     // +0xB74 int32_t                  field_0xb74  (evidence: 0x004E2760) // CONFLICT: multiple definitions at +0xB74
-    // +0xB74 void*                    field_0xb74  (evidence: 0x004E1A00, 0x004E7280) // CONFLICT: multiple definitions at +0xB74
-    // +0xB78 void*                    field_0xb78  (evidence: 0x004E7280)
+    // +0xB74 void*                    field_0xb74  (evidence: 0x004E1A00, 0x004E70B0, 0x004E7280) // CONFLICT: multiple definitions at +0xB74
+    // +0xB78 void*                    field_0xb78  (evidence: 0x004E70B0, 0x004E7280)
 };
 } // namespace lifted_layout

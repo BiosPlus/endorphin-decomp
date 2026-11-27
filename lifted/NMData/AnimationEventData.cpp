@@ -1139,3 +1139,107 @@ void __thiscall fn_004E7280(void* self) {
     (void)ext_0058D800;
 }
 } // namespace lift_004E7280
+
+// [0x004E70B0]
+namespace lift_004E70B0 {
+void ext_004E4690(void* self);
+void ext_004DE180(void* self);
+void* ext_00594000(void);
+float ext_00594070(void* self);
+void* ext_00660A50(void* arg0, void* arg1, uint32_t arg2);
+void ext_0048BC80(void* self);
+void* ext_006A5C62(size_t size);
+void ext_004E3A30(void* self);
+void ext_004E35B0(void* self);
+void ext_006A5C5C(void* ptr);
+void ext_004E3F20(void* self, void* owner, void* vec);
+void ext_004E5C40(void* self);
+void ext_004E5AE0(void* self);
+void ext_004E5D50(void* self, void* owner, void* vec);
+void ext_00662400(void* self, void* listener);
+extern void (*mem_00925134)(void);
+
+// @name NMData::AnimationEventData::vfunc_88
+// @class NMData::AnimationEventData
+// @summary Initializes animation event data, computes timing/frame rates, builds optional event subobjects, registers frame buffer listener, and resets iterator state.
+// @field NMData::AnimationEventData +0x16C void* field_0x16c
+// @field NMData::AnimationEventData +0x180 void* field_0x180
+// @field NMData::AnimationEventData +0x9A0 int32_t field_0x9a0
+// @field NMData::AnimationEventData +0x9B0 uint8_t[16] field_0x9b0
+// @field NMData::AnimationEventData +0x9B4 uint32_t field_0x9b4
+// @field NMData::AnimationEventData +0x9B8 uint32_t field_0x9b8
+// @field NMData::AnimationEventData +0x9C0 void* field_0x9c0
+// @field NMData::AnimationEventData +0x9C4 uint32_t field_0x9c4
+// @field NMData::AnimationEventData +0x9C8 int32_t field_0x9c8
+// @field NMData::AnimationEventData +0x9CC int32_t field_0x9cc
+// @field NMData::AnimationEventData +0x9D5 uint8_t field_0x9d5
+// @field NMData::AnimationEventData +0x9D6 uint8_t field_0x9d6
+// @field NMData::AnimationEventData +0x9D8 float field_0x9d8
+// @field NMData::AnimationEventData +0x9DC float field_0x9dc
+// @field NMData::AnimationEventData +0xB74 void* field_0xb74
+// @field NMData::AnimationEventData +0xB78 void* field_0xb78
+void fn_004E70B0(void* self) {
+    ext_004E4690(self);
+    ext_004DE180(self);
+
+    lift_field<int32_t>(self, 0x9C8) = 0x7FFFFFFF;
+    lift_field<int32_t>(self, 0x9CC) = 0x7FFFFFFF;
+
+    void* mgr = ext_00594000();
+    lift_field<float>(self, 0x9DC) = ext_00594070(mgr);
+
+    float fps = lift_field<float>(mgr, 0x234);
+    int32_t frame_count = lift_field<int32_t>(self, 0x9A0);
+    lift_field<float>(self, 0x9D8) = (1.0f / fps) * static_cast<float>(frame_count);
+
+    uintptr_t local_vec[4] = {0, 0, 0, 0};
+    void* res = ext_00660A50(static_cast<uint8_t*>(self) + 0x16C, local_vec, 0);
+    ext_0048BC80(res);
+
+    if (lift_field<uint8_t>(self, 0x9D6) != 0) {
+        void* mem = ext_006A5C62(0x78);
+        void* obj = nullptr;
+        if (mem != nullptr) {
+            ext_004E3A30(mem);
+            obj = mem;
+        }
+        void* old_obj = lift_field<void*>(self, 0xB74);
+        if (obj != old_obj && old_obj != nullptr) {
+            ext_004E35B0(old_obj);
+            ext_006A5C5C(old_obj);
+        }
+        lift_field<void*>(self, 0xB74) = obj;
+        ext_004E3F20(obj, self, local_vec);
+    }
+
+    if (lift_field<uint8_t>(self, 0x9D5) != 0) {
+        void* mem = ext_006A5C62(0x1AC);
+        void* obj = nullptr;
+        if (mem != nullptr) {
+            ext_004E5C40(mem);
+            obj = mem;
+        }
+        void* old_obj = lift_field<void*>(self, 0xB78);
+        if (obj != old_obj && old_obj != nullptr) {
+            ext_004E5AE0(old_obj);
+            ext_006A5C5C(old_obj);
+        }
+        lift_field<void*>(self, 0xB78) = obj;
+        ext_004E5D50(obj, self, local_vec);
+    }
+
+    void* mgr2 = ext_00594000();
+    ext_00662400(static_cast<uint8_t*>(mgr2) + 0x168, static_cast<uint8_t*>(self) + 0x180);
+
+    uint32_t begin_ptr = lift_field<uint32_t>(self, 0x9B4);
+    if (begin_ptr > lift_field<uint32_t>(self, 0x9B8)) {
+        mem_00925134();
+    }
+    lift_field<void*>(self, 0x9C0) = static_cast<uint8_t*>(self) + 0x9B0;
+    lift_field<uint32_t>(self, 0x9C4) = begin_ptr;
+
+    if (local_vec[1] != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(local_vec[1]));
+    }
+}
+} // namespace lift_004E70B0
