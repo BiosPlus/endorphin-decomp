@@ -30652,6 +30652,13 @@
     "summary": "Calls vfunc[3] on the sub-object at +0x08 with (a1, a2[0], a2[1]), then recurses into each child pointer in the list [+0x80, +0x84) with the same arguments.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x005869C0": {
+    "name": "Unknown::forEachChildRecursive",
+    "class": "Unknown",
+    "signature": "void fn_005869C0(void* self, void* arg1, float arg2)",
+    "summary": "Recursively visits each pointer in the [+0x80, +0x84) child range, calling this function on each child with the same arguments.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00586A50": {
     "name": "forwardToChildAndRecurseRange",
     "class": "Unknown",

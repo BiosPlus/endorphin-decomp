@@ -1948,3 +1948,33 @@ void fn_00586930(void* self, DWORD a1, const float* a2) {
     }
 }
 } // namespace lift_00586930
+
+// [0x005869C0] sub_005869C0 (142 bytes)
+namespace lift_005869C0 {
+extern int mem_00925134;
+
+// @name Unknown::forEachChildRecursive
+// @class Unknown
+// @summary Recursively visits each pointer in the [+0x80, +0x84) child range, calling this function on each child with the same arguments.
+// @field Unknown +0x08 void* field_0x08 (object whose vtable slot 3 is invoked with this = self+8)
+// @field Unknown +0x80 void** childBegin
+// @field Unknown +0x84 void** childEnd
+void fn_005869C0(void* self, void* arg1, float arg2) {
+    // Virtual call: vtable slot 3 of the object at self+0x08, with this = self+0x08.
+    void* vtable = lift_field<void*>(self, 0x08);
+    auto vfn = reinterpret_cast<void (*)(void*, void*, float)>(
+        reinterpret_cast<void**>(vtable)[3]);
+    vfn(static_cast<uint8_t*>(self) + 0x08, arg1, arg2);
+
+    // Original MSVCR80 _invalid_parameter_noinfo range checks are elided; the
+    // indirect slot at mem_00925134 is referenced only as metadata.
+    (void)&mem_00925134;
+
+    // Walk the child pointer range; re-read the end pointer each iteration as the original does.
+    void** it = lift_field<void**>(self, 0x80);
+    while (it != lift_field<void**>(self, 0x84)) {
+        fn_005869C0(*it, arg1, arg2);
+        ++it;
+    }
+}
+} // namespace lift_005869C0
