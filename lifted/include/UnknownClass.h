@@ -28,6 +28,7 @@ struct UnknownClass_Fields {
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00492A50, 0x00493D80, 0x00494050, 0x00526C70, 0x0052F7D0, 0x005DF940, 0x00780250, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t                  field_0x04  (evidence: 0x00610C60) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x0041CEB0, 0x0058AB60, 0x005C3A30, 0x00602F00, 0x00602F20, 0x00630560, 0x006305C0, 0x006305E0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void**                   field_0x04  (evidence: 0x004CC6A0) // CONFLICT: multiple definitions at +0x4
     // +0x6   uint8_t                  field_0x06  (evidence: 0x007A9BD0)
     // +0x8   float[]                  field_0x08  (evidence: 0x00610C60) // CONFLICT: multiple definitions at +0x8
     // +0x8   std::string              field_0x08  (evidence: 0x00505360) // CONFLICT: multiple definitions at +0x8
@@ -35,6 +36,7 @@ struct UnknownClass_Fields {
     // +0x8   uint8_t                  field_0x08  (evidence: 0x00493D80, 0x00494050, 0x00612460) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t[]                field_0x08  (evidence: 0x006123C0, 0x00612410) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x006991A0, 0x00789590) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void**                   field_0x08  (evidence: 0x004CC6A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    field_0x08[4]  (evidence: 0x00534020) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 child  (evidence: 0x006722B0, 0x00672490) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x007DD130) // CONFLICT: multiple definitions at +0xC
@@ -52,8 +54,10 @@ struct UnknownClass_Fields {
     // +0x14  void*                    field_0x14  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0x14
     // +0x14  void**                   field_0x14  (evidence: 0x00517360) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    listHead  (evidence: 0x007B2E20, 0x007BD640) // CONFLICT: multiple definitions at +0x14
+    // +0x15  uint8_t                  field_0x15  (evidence: 0x004CC6A0)
     // +0x18  float[]                  field_0x18  (evidence: 0x00610C60) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18  (evidence: 0x00526C70, 0x0052F7D0, 0x005679D0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  void*                    field_0x18  (evidence: 0x004CC6A0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void**                   field_0x18  (evidence: 0x00517360) // CONFLICT: multiple definitions at +0x18
     // +0x1C  std::basic_string<char>  cachedKey  (evidence: 0x0049F490) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x0078CBE0) // CONFLICT: multiple definitions at +0x1C
@@ -67,15 +71,16 @@ struct UnknownClass_Fields {
     // +0x20  std::string              field_0x20  (evidence: 0x004019B0, 0x00404D70, 0x0060BA10) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x00441C10, 0x00448950, 0x004B10D0, 0x0053B4B0, 0x0069C1C0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     hwnd  (evidence: 0x006B16F0) // CONFLICT: multiple definitions at +0x20
+    // +0x24  float                    field_0x24  (evidence: 0x004CC6A0) // CONFLICT: multiple definitions at +0x24
     // +0x24  uint32_t                 field_0x24  (evidence: 0x00505360, 0x00526C70, 0x0052F7D0, 0x0067A670, 0x0069C1C0, 0x00798840) // CONFLICT: multiple definitions at +0x24
     // +0x24  uint8_t                  field_0x24  (evidence: 0x0063E290) // CONFLICT: multiple definitions at +0x24
-    // +0x28  float                    field_0x28  (evidence: 0x00505360) // CONFLICT: multiple definitions at +0x28
+    // +0x28  float                    field_0x28  (evidence: 0x004CC6A0, 0x00505360) // CONFLICT: multiple definitions at +0x28
     // +0x28  int32_t                  field_0x28  (evidence: 0x0078C410) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t                 field_0x28  (evidence: 0x00526C70, 0x0052F7D0, 0x0069C1C0) // CONFLICT: multiple definitions at +0x28
     // +0x28  void*                    field_0x28  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x28
     // +0x28  float                    field_0x28[4]  (evidence: 0x00534020) // CONFLICT: multiple definitions at +0x28
     // +0x2C  std::string              field_0x2C  (evidence: 0x0069C1C0) // CONFLICT: multiple definitions at +0x2C
-    // +0x2C  float                    field_0x2c  (evidence: 0x00505360) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  float                    field_0x2c  (evidence: 0x004CC6A0, 0x00505360) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x00526C70, 0x0052F7D0, 0x0078C410) // CONFLICT: multiple definitions at +0x2C
     // +0x30  float                    field_0x30  (evidence: 0x00505360) // CONFLICT: multiple definitions at +0x30
     // +0x30  std::string              field_0x30  (evidence: 0x004970A0) // CONFLICT: multiple definitions at +0x30

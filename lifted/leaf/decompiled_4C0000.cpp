@@ -922,3 +922,41 @@ void* fn_004C7200(void* self, const void* other) {
     return self;
 }
 } // namespace lift_004C7200
+
+// [0x004CC6A0] sub_004CC6A0 (126 bytes)
+namespace lift_004CC6A0 {
+// @name UnknownClass::SetVec3AndNotifyElements
+// @class UnknownClass
+// @summary Copies a 3-float vector into this+0x24..0x2c, sets the flag at +0x15, then calls virtual slot 42 (+0xa8) on every element pointer in the [begin,end) array at +0x4/+0x8, passing this+0x18 as the argument.
+// @field UnknownClass +0x04 void** field_0x04
+// @field UnknownClass +0x08 void** field_0x08
+// @field UnknownClass +0x15 uint8_t field_0x15
+// @field UnknownClass +0x18 void* field_0x18
+// @field UnknownClass +0x24 float field_0x24
+// @field UnknownClass +0x28 float field_0x28
+// @field UnknownClass +0x2c float field_0x2c
+extern int mem_00925134;
+
+void fn_004CC6A0(void* self, const float* src) {
+    using VirtualFn = void(__thiscall*)(void* self, void* arg);
+
+    // Metadata-only reference: the original loads the CRT _invalid_parameter_noinfo
+    // pointer from this slot for debug iterator checks, which are omitted here.
+    (void)&mem_00925134;
+
+    lift_field<float>(self, 0x24) = src[0];
+    lift_field<float>(self, 0x28) = src[1];
+    lift_field<float>(self, 0x2c) = src[2];
+    lift_field<uint8_t>(self, 0x15) = 1;
+
+    void** it = lift_field<void**>(self, 0x04);
+    while (it != lift_field<void**>(self, 0x08)) {
+        void* element = *it;
+        void* sub = lift_field<void*>(element, 0x234);
+        void* vtable = *static_cast<void**>(sub);
+        VirtualFn fn = reinterpret_cast<VirtualFn>(lift_field<void*>(vtable, 0xa8));
+        fn(sub, static_cast<uint8_t*>(self) + 0x18);
+        ++it;
+    }
+}
+} // namespace lift_004CC6A0

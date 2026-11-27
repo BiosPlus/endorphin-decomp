@@ -1,0 +1,58 @@
+{
+  "va": "0x004CC6A0",
+  "size": 126,
+  "orig_symbol": "sub_004CC6A0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "UnknownClass::SetVec3AndNotifyElements",
+  "class": "UnknownClass",
+  "signature": "void fn_004CC6A0(void* self, const float* src)",
+  "summary": "Copies a 3-float vector into this+0x24..0x2c, sets the flag at +0x15, then calls virtual slot 42 (+0xa8) on every element pointer in the [begin,end) array at +0x4/+0x8, passing this+0x18 as the argument.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:56:57Z"
+}
