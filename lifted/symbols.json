@@ -24167,6 +24167,13 @@
     "summary": "Finds the lower-bound node in a red-black tree keyed by std::string.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052A280": {
+    "name": "TreeIterator::decrement",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_0052A280(void* self)",
+    "summary": "Decrements an MSVC std::_Tree iterator to the previous in-order node.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052AC70": {
     "name": "Unknown::walkChainDestroyStrings_0052AC70",
     "class": "Unknown",
@@ -31300,6 +31307,13 @@
     "signature": "void fn_004442C0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004442C0 (descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)).",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
+  "0x005948E0": {
+    "name": "TreeIterator::decrement",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_005948E0(void* self)",
+    "summary": "Decrements a red-black tree iterator to the previous node, invoking _invalid_parameter_noinfo on invalid state.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x00594BA0": {
     "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e::vfunc_0",
