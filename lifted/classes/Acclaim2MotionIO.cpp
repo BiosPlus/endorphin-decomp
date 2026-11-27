@@ -203,3 +203,376 @@ int __thiscall fn_00583630(void* self, void* arg0) {
     return 0;
 }
 } // namespace lift_00583630
+
+// [0x00582BC0]
+namespace lift_00582BC0 {
+// @name Acclaim2MotionIO::vfunc_11
+// @class Acclaim2MotionIO
+// @summary Loads/processes Acclaim motion data, initializes skeleton/channels, and imports motion frames.
+// @field Acclaim2MotionIO +0x64 float field_0x64
+// @field Acclaim2MotionIO +0x78 float field_0x78
+// @field Acclaim2MotionIO +0x7C float field_0x7c
+// @field Acclaim2MotionIO +0x80 float field_0x80
+// @field Acclaim2MotionIO +0x84 uint32_t field_0x84
+// @field Acclaim2MotionIO +0x88 uint32_t field_0x88
+// @field Acclaim2MotionIO +0x8C uint32_t field_0x8c
+// @field Acclaim2MotionIO +0xCC uint32_t field_0xcc
+// @field Acclaim2MotionIO +0x108 uint32_t field_0x108
+// @field Acclaim2MotionIO +0x10C uint32_t field_0x10c
+// @field Acclaim2MotionIO +0x110 uint32_t field_0x110
+// @field Acclaim2MotionIO +0x114 uint8_t field_0x114
+// @field Acclaim2MotionIO +0x414 void* field_0x414
+// @field Acclaim2MotionIO +0x418 void* field_0x418
+// @field Acclaim2MotionIO +0x420 void* field_0x420
+// @field Acclaim2MotionIO +0x424 void* field_0x424
+// @field Acclaim2MotionIO +0x42C uint8_t field_0x42c
+// @field Acclaim2MotionIO +0x438 uint32_t field_0x438
+// @field Acclaim2MotionIO +0x46C float field_0x46c
+// @field Acclaim2MotionIO +0x4A8 float field_0x4a8
+// @field Acclaim2MotionIO +0x4AC float field_0x4ac
+// @field Acclaim2MotionIO +0x4B0 float field_0x4b0
+// @field Acclaim2MotionIO +0x4B4 uint32_t field_0x4b4
+// @field Acclaim2MotionIO +0x4B8 uint32_t field_0x4b8
+// @field Acclaim2MotionIO +0x4BC uint32_t field_0x4bc
+// @field Acclaim2MotionIO +0x4C0 uint8_t field_0x4c0
+// @field Acclaim2MotionIO +0x4C1 uint8_t field_0x4c1
+// @field Acclaim2MotionIO +0x4C2 uint8_t field_0x4c2
+// @field Acclaim2MotionIO +0x4C4 uint32_t field_0x4c4
+// @field Acclaim2MotionIO +0x500 uint8_t field_0x500
+// @field Acclaim2MotionIO +0x510 uint8_t field_0x510
+// @field Acclaim2MotionIO +0x54C uint32_t field_0x54c
+// @field Acclaim2MotionIO +0x550 uint8_t field_0x550
+// @field Acclaim2MotionIO +0x560 uint8_t field_0x560
+// @field Acclaim2MotionIO +0x568 uint8_t field_0x568
+
+
+struct MsvcString28 {
+    uint8_t data[28];
+};
+
+struct MsvcVec {
+    void* proxy;
+    uint8_t* first;
+    uint8_t* last;
+    uint8_t* end;
+};
+
+struct TempPairVec {
+    void* proxy;
+    uint8_t* first;
+    uint8_t* last;
+    uint8_t* end;
+};
+
+struct TempWrapper {
+    uint32_t val;
+    MsvcString28 str;
+};
+
+struct TempException {
+    void* vftable;
+    void* std_exc_data[2];
+    MsvcString28 msg;
+};
+
+void __thiscall ext_00421C00(void* self);
+void* __cdecl ext_00430EF0(void* first, void* last, const void* value);
+void* __thiscall ext_0049EEE0(void* self, void* arg);
+void __thiscall ext_00555D70(void* self, void* a, void* b, int c, void* d, void* e);
+void __thiscall ext_005576F0(void* self);
+void __thiscall ext_0055D0F0(void* self);
+void __thiscall ext_0055D2C0(void* self, void* arg);
+void* __thiscall ext_0057BB20(void* self, void* value);
+void __thiscall ext_005828C0(void* self, void* arg);
+void* __thiscall ext_005A0F70(void* self, void* arg);
+void __thiscall ext_00661A10(void* self, float val);
+void* __cdecl ext_00664ED0(void* self);
+void __thiscall ext_0067E470(void* self, MsvcString28 str, void* arg);
+void __cdecl ext_006A5C5C(void* ptr);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exc, void* throwInfo);
+
+extern void(__thiscall* mem_00924EA8)(void* str);
+extern bool(__cdecl* mem_00924FC0)(const void* a, const char* b);
+extern bool(__cdecl* mem_00924FC4)(const void* a, const void* b);
+extern void*(__thiscall* mem_00924FE0)(void* str, const void* other);
+extern void*(__thiscall* mem_00924FE4)(void* str, const char* s);
+extern const char*(__thiscall* mem_00924FF0)(const void* str);
+extern void(__thiscall* mem_00924FF4)(void* str);
+extern void*(__thiscall* mem_00925130)(void* self, const char* const* msg);
+extern void(__cdecl* mem_00925134)(void);
+extern double(__cdecl* mem_009251F0)(const char* s);
+
+void __thiscall fn_00582BC0(void* self, void* arg0) {
+    if (lift_field<uint8_t>(self, 0x560) == 0) {
+        TempWrapper tmp;
+        ext_0057BB20(&tmp, reinterpret_cast<uint8_t*>(self) + 0x46C);
+        ext_005828C0(&tmp, arg0);
+        mem_00924EA8(reinterpret_cast<uint8_t*>(self) + 0x568);
+        ext_00421C00(&tmp);
+    }
+
+    if (lift_field<uint8_t>(self, 0x4C1) != 0) {
+        float f = lift_field<float>(self, 0x4AC);
+        lift_field<uint32_t>(self, 0x84) = lift_field<uint32_t>(self, 0x4B4);
+        lift_field<float>(self, 0x7C) = f;
+    }
+
+    if (lift_field<uint8_t>(self, 0x4C0) != 0) {
+        float f = lift_field<float>(self, 0x4B0);
+        lift_field<uint32_t>(self, 0x88) = lift_field<uint32_t>(self, 0x4B8);
+        lift_field<float>(self, 0x80) = f;
+    }
+
+    if (lift_field<uint8_t>(self, 0x4C2) != 0) {
+        float f = lift_field<float>(self, 0x4A8);
+        lift_field<uint32_t>(self, 0x8C) = lift_field<uint32_t>(self, 0x4BC);
+        lift_field<float>(self, 0x78) = f;
+    }
+
+    if (lift_field<uint32_t>(self, 0x438) == 0) {
+        ext_0055D2C0(reinterpret_cast<uint8_t*>(self) + 0x42C, lift_field<void*>(self, 0x418));
+        lift_field<void*>(self, 0x414) = lift_field<void*>(self, 0x418);
+    }
+
+    void* progress = lift_field<void*>(self, 0x424);
+    if (progress != nullptr) {
+        MsvcString28 s;
+        mem_00924FE4(&s, reinterpret_cast<const char*>(0x0095A0FC));
+        void* p = lift_field<void*>(self, 0x424);
+        void** vtbl = *reinterpret_cast<void***>(p);
+        reinterpret_cast<void(__thiscall*)(void*, void*)>(vtbl[3])(p, &s);
+        mem_00924FF4(&s);
+
+        uint32_t count = lift_field<uint32_t>(self, 0x4C4);
+        uint32_t total;
+        if (lift_field<uint8_t>(self, 0x114) != 0) {
+            uint32_t a = lift_field<uint32_t>(self, 0x10C);
+            uint32_t b = lift_field<uint32_t>(self, 0x110);
+            uint32_t c = lift_field<uint32_t>(self, 0x108);
+            total = (count - 1) * a + c + (b + 3) * count;
+        } else {
+            total = count * 3;
+        }
+        p = lift_field<void*>(self, 0x424);
+        vtbl = *reinterpret_cast<void***>(p);
+        reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(vtbl[2])(p, 0, total);
+
+        mem_00924FE4(&s, reinterpret_cast<const char*>(0x0095A0E0));
+        p = lift_field<void*>(self, 0x424);
+        vtbl = *reinterpret_cast<void***>(p);
+        reinterpret_cast<void(__thiscall*)(void*, void*)>(vtbl[3])(p, &s);
+        mem_00924FF4(&s);
+    }
+
+    ext_00661A10(lift_field<void*>(self, 0x420), lift_field<float>(self, 0x64));
+
+    uint8_t* obj414 = reinterpret_cast<uint8_t*>(lift_field<void*>(self, 0x414));
+    void* obj160 = obj414 + 0x160;
+    void** vtbl160 = *reinterpret_cast<void***>(obj160);
+    void* str18 = reinterpret_cast<void*(__thiscall*)(void*)>(vtbl160[9])(obj160);
+
+    uint32_t mode = lift_field<uint32_t>(self, 0xCC);
+    if (mode == 1 || mode == 0) {
+        obj414 = reinterpret_cast<uint8_t*>(lift_field<void*>(self, 0x414));
+        void* obj8 = obj414 + 0x8;
+        void** vtbl8 = *reinterpret_cast<void***>(obj8);
+        uint8_t* target14 = reinterpret_cast<uint8_t*(__thiscall*)(void*, void*)>(vtbl8[3])(obj8, lift_field<void*>(self, 0x420));
+
+        MsvcVec* vec500 = reinterpret_cast<MsvcVec*>(reinterpret_cast<uint8_t*>(self) + 0x500);
+        if (vec500->first > vec500->last) {
+            mem_00925134();
+        }
+        for (uint8_t* it = vec500->first; ; it += 0x1C) {
+            if (vec500->first > vec500->last) {
+                mem_00925134();
+            }
+            if (it == vec500->last) {
+                break;
+            }
+            if (it >= vec500->last) {
+                mem_00925134();
+            }
+            MsvcVec* sub = reinterpret_cast<MsvcVec*>(it + 0x0C);
+            bool apply = true;
+            if (sub->first != nullptr && (sub->last - sub->first) / 0x1C != 0) {
+                if (sub->first > sub->last) {
+                    mem_00925134();
+                }
+                void* found = ext_00430EF0(sub->first, sub->last, str18);
+                if (found == sub->last) {
+                    apply = false;
+                }
+            }
+            if (apply) {
+                *reinterpret_cast<float*>(target14 + 0x30) = *reinterpret_cast<float*>(it + 0x00);
+                *reinterpret_cast<float*>(target14 + 0x34) = *reinterpret_cast<float*>(it + 0x04);
+                *reinterpret_cast<float*>(target14 + 0x38) = *reinterpret_cast<float*>(it + 0x08);
+                *reinterpret_cast<float*>(target14 + 0x3C) = 1.0f;
+            }
+            if (it >= vec500->last) {
+                mem_00925134();
+            }
+        }
+
+        MsvcVec* vec510 = reinterpret_cast<MsvcVec*>(reinterpret_cast<uint8_t*>(self) + 0x510);
+        if (vec510->first > vec510->last) {
+            mem_00925134();
+        }
+        for (uint8_t* it = vec510->first; ; it += 0x38) {
+            if (vec510->first > vec510->last) {
+                mem_00925134();
+            }
+            if (it == vec510->last) {
+                break;
+            }
+            if (it >= vec510->last) {
+                mem_00925134();
+            }
+            MsvcVec* sub = reinterpret_cast<MsvcVec*>(it + 0x28);
+            bool apply = true;
+            if (sub->first != nullptr && (sub->last - sub->first) / 0x1C != 0) {
+                if (sub->first > sub->last) {
+                    mem_00925134();
+                }
+                uint8_t* s_it = sub->first;
+                while (s_it != sub->last) {
+                    if (mem_00924FC4(s_it, str18)) {
+                        break;
+                    }
+                    s_it += 0x1C;
+                }
+                if (s_it == sub->last) {
+                    apply = false;
+                }
+            }
+            if (apply) {
+                MsvcString28 nameCopy;
+                mem_00924FE0(&nameCopy, it + 0x0C);
+                ext_0067E470(target14, nameCopy, it);
+            }
+            if (it >= vec510->last) {
+                mem_00925134();
+            }
+        }
+    }
+
+    MsvcVec* vec550 = reinterpret_cast<MsvcVec*>(reinterpret_cast<uint8_t*>(self) + 0x550);
+    if (vec550->first > vec550->last) {
+        mem_00925134();
+    }
+    uint32_t frameIdx = 0;
+    for (uint8_t* frameIt = vec550->first; ; frameIt += 0x3C) {
+        if (vec550->first > vec550->last) {
+            mem_00925134();
+        }
+        if (frameIt == vec550->last) {
+            break;
+        }
+        if (frameIt >= vec550->last) {
+            mem_00925134();
+        }
+
+        frameIdx += 1;
+        void* prog = lift_field<void*>(self, 0x424);
+        if (prog != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(prog);
+            reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtbl[1])(prog, frameIdx);
+        }
+
+        void* ctx = lift_field<void*>(self, 0x438);
+        if (ctx == nullptr) {
+            ctx = reinterpret_cast<uint8_t*>(self) + 0x42C;
+        }
+        ext_0055D0F0(ctx);
+
+        MsvcVec* boneVec = reinterpret_cast<MsvcVec*>(frameIt + 0x1C);
+        if (boneVec->first > boneVec->last) {
+            mem_00925134();
+        }
+        for (uint8_t* boneIt = boneVec->first; ; boneIt += 0x2C) {
+            if (boneVec->first > boneVec->last) {
+                mem_00925134();
+            }
+            if (boneIt == boneVec->last) {
+                break;
+            }
+            if (boneIt >= boneVec->last) {
+                mem_00925134();
+            }
+
+            void* boneObj = ext_005A0F70(lift_field<void*>(self, 0x414), boneIt);
+            if (boneObj != nullptr) {
+                void* boneObj2 = ext_005A0F70(lift_field<void*>(self, 0x414), boneIt);
+                if (boneObj2 != nullptr) {
+                    TempPairVec pairs;
+                    ext_0049EEE0(&pairs, reinterpret_cast<uint8_t*>(boneObj) + 0x168);
+
+                    MsvcVec* valVec = reinterpret_cast<MsvcVec*>(boneIt + 0x1C);
+                    if (valVec->first > valVec->last) {
+                        mem_00925134();
+                    }
+                    uint32_t valCount = 0;
+                    if (valVec->first != nullptr) {
+                        valCount = static_cast<uint32_t>((valVec->last - valVec->first) / 0x3C);
+                    }
+                    uint32_t pairCount = 0;
+                    if (pairs.first != nullptr) {
+                        pairCount = static_cast<uint32_t>((pairs.last - pairs.first) >> 3);
+                    }
+                    if (valCount < pairCount) {
+                        MsvcString28 errStr;
+                        mem_00924FE4(&errStr, reinterpret_cast<const char*>(0x0095A0CC));
+                        const char* errCStr = mem_00924FF0(&errStr);
+                        TempException exc;
+                        mem_00925130(&exc, &errCStr);
+                        exc.vftable = reinterpret_cast<void*>(0x00928EF0);
+                        mem_00924FE0(&exc.msg, &errStr);
+                        exc.std_exc_data[0] = reinterpret_cast<void*>(0x009570DC);
+                        ext_006A6DD2(&exc, reinterpret_cast<void*>(0x009F8908));
+                    }
+
+                    uint8_t* v_it = valVec->first;
+                    if (lift_field<uint32_t>(self, 0x54C) == 0) {
+                        for (uint8_t* p_it = pairs.first; p_it != pairs.last; p_it += 8, v_it += 0x3C) {
+                            const char* s = mem_00924FF0(v_it + 0x20);
+                            *reinterpret_cast<float*>(p_it + 4) = static_cast<float>(mem_009251F0(s));
+                        }
+                    } else {
+                        while (v_it != valVec->last) {
+                            for (uint8_t* p_it = pairs.first; p_it != pairs.last; p_it += 8) {
+                                MsvcString28 upperStr;
+                                mem_00924FE0(&upperStr, v_it + 4);
+                                ext_00664ED0(&upperStr);
+                                uint32_t dof = *reinterpret_cast<uint32_t*>(p_it);
+                                if ((mem_00924FC0(&upperStr, reinterpret_cast<const char*>(0x0095919C)) && dof == 0) ||
+                                    (mem_00924FC0(&upperStr, reinterpret_cast<const char*>(0x00959198)) && dof == 1) ||
+                                    (mem_00924FC0(&upperStr, reinterpret_cast<const char*>(0x00959194)) && dof == 2) ||
+                                    (mem_00924FC0(&upperStr, reinterpret_cast<const char*>(0x00959190)) && dof == 3) ||
+                                    (mem_00924FC0(&upperStr, reinterpret_cast<const char*>(0x0095918C)) && dof == 4) ||
+                                    (mem_00924FC0(&upperStr, reinterpret_cast<const char*>(0x00959188)) && dof == 5) ||
+                                    (mem_00924FC0(&upperStr, reinterpret_cast<const char*>(0x0092F1B8)) && dof == 6)) {
+                                    const char* s = mem_00924FF0(v_it + 0x20);
+                                    *reinterpret_cast<float*>(p_it + 4) = static_cast<float>(mem_009251F0(s));
+                                }
+                                mem_00924FF4(&upperStr);
+                            }
+                            v_it += 0x3C;
+                        }
+                    }
+
+                    void** boneVtbl = *reinterpret_cast<void***>(boneObj);
+                    bool flag = reinterpret_cast<bool(__thiscall*)(void*)>(boneVtbl[0x70 / 4])(boneObj);
+                    ext_00555D70(self, &pairs, boneObj2, flag ? 0 : 1, str18, nullptr);
+                    if (pairs.first != nullptr) {
+                        ext_006A5C5C(pairs.first);
+                    }
+                }
+            }
+        }
+    }
+
+    if (lift_field<uint32_t>(self, 0x438) == 0) {
+        ext_005576F0(self);
+    }
+}
+} // namespace lift_00582BC0
