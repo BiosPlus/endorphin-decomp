@@ -13371,6 +13371,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/SearchableMap.cpp"
   },
+  "0x0048BC80": {
+    "name": "collectDynamicCastMatches",
+    "signature": "void __thiscall fn_0048BC80(void* self, void* src, void* out, void* arg)",
+    "summary": "Clears the output vector, then for each 0x1C-byte element of src calls this-\u003evtbl[6](elem, arg, 0, 0), dynamic_casts the result and pushes non-null matches into out.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048BD50": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

@@ -4663,3 +4663,62 @@ void fn_0048C530(void* self, const char* arg1) {
     (*reinterpret_cast<StringDtorFn*>(&mem_00924FF4))(str);
 }
 } // namespace lift_0048C530
+
+// [0x0048BC80]
+namespace lift_0048BC80 {
+extern void* __thiscall ext_00596660(void* self, void* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr);
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+extern void __thiscall ext_0041A920(void* self, void** value);
+extern void __thiscall ext_00484E90(void* self, uint32_t value);
+extern void(__cdecl* mem_00925134)(void);
+extern int mem_00B40640;
+
+// @name collectDynamicCastMatches
+// @summary Clears the output vector, then for each 0x1C-byte element of src calls this->vtbl[6](elem, arg, 0, 0), dynamic_casts the result and pushes non-null matches into out.
+// @field Vector +0x04 void* first
+// @field Vector +0x08 void* last
+void __thiscall fn_0048BC80(void* self, void* src, void* out, void* arg) {
+    (void)&mem_00B40640;
+    (void)&ext_00484E90; // metadata-only: reached via ext_0041A920, not called directly here
+    uint8_t* outv = reinterpret_cast<uint8_t*>(out);
+    uint8_t* last = *reinterpret_cast<uint8_t**>(outv + 0x8);
+    if (*reinterpret_cast<uint8_t**>(outv + 0x4) > last) {
+        mem_00925134();
+    }
+    uint8_t* first = *reinterpret_cast<uint8_t**>(outv + 0x4);
+    if (first > *reinterpret_cast<uint8_t**>(outv + 0x8)) {
+        mem_00925134();
+    }
+    void* result_iter[2];
+    ext_00596660(out, result_iter, out, first, out, last);
+
+    uint8_t* srcv = reinterpret_cast<uint8_t*>(src);
+    uint8_t* it = *reinterpret_cast<uint8_t**>(srcv + 0x4);
+    if (it > *reinterpret_cast<uint8_t**>(srcv + 0x8)) {
+        mem_00925134();
+    }
+    for (;;) {
+        uint8_t* end = *reinterpret_cast<uint8_t**>(srcv + 0x8);
+        if (*reinterpret_cast<uint8_t**>(srcv + 0x4) > end) {
+            mem_00925134();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint8_t**>(srcv + 0x8)) {
+            mem_00925134();
+        }
+        typedef void*(__thiscall * VFunc)(void*, void*, void*, int32_t, int32_t);
+        VFunc vf = reinterpret_cast<VFunc>((*reinterpret_cast<void***>(self))[0x18 / sizeof(void*)]);
+        void* obj = vf(self, it, arg, 0, 0);
+        void* cast = ext_006A6E9E(obj, 0, reinterpret_cast<void*>(0x00A2E2F8), reinterpret_cast<void*>(0x00A2FBBC), 0);
+        if (cast != nullptr) {
+            ext_0041A920(out, &cast);
+        }
+        if (it >= *reinterpret_cast<uint8_t**>(srcv + 0x8)) {
+            mem_00925134();
+        }
+        it += 0x1C;
+    }
+}
+} // namespace lift_0048BC80

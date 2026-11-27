@@ -1,0 +1,27 @@
+{
+  "va": "0x0048BC80",
+  "size": 199,
+  "orig_symbol": "sub_0048BC80",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "collectDynamicCastMatches",
+  "signature": "void __thiscall fn_0048BC80(void* self, void* src, void* out, void* arg)",
+  "summary": "Clears the output vector, then for each 0x1C-byte element of src calls this-\u003evtbl[6](elem, arg, 0, 0), dynamic_casts the result and pushes non-null matches into out.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "first"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@medium",
+  "lifted_at": "2026-11-27T13:50:45Z"
+}
