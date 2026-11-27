@@ -1336,3 +1336,28 @@ int32_t fn_0080F040(void* a, void* b) {
     return ext_00859830(a, b) == 0 ? 1 : 0;
 }
 } // namespace lift_0080F040
+
+// [0x0080C790] sub_0080C790 (80 bytes)
+namespace lift_0080C790 {
+// Known callee 0x00859830: compareStringsOrObjects (Compares two string/object pointers by resolving their char buffers and lengths, returning char difference or length comparison (-1, 0, 1).)
+extern int32_t ext_00859830(void* a, void* b);
+extern uint32_t mem_00B73C90;   // element count
+extern void** mem_00B73C94;     // array of object pointers
+
+// @name findFirstMatchingEntry
+// @summary Scans the global pointer array and returns the first entry whose first-dword key compares equal to the argument (0 if none).
+void* fn_0080C790(void* self) {
+    uint32_t count = mem_00B73C90;
+    if (count == 0) {
+        return nullptr;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        void* entry = mem_00B73C94[i];
+        void* key = *reinterpret_cast<void**>(entry);
+        if (ext_00859830(self, key) == 0) {
+            return mem_00B73C94[i];
+        }
+    }
+    return nullptr;
+}
+} // namespace lift_0080C790

@@ -84592,6 +84592,12 @@
     "summary": "Follows a singly linked chain of first-field pointers (count - 1) hops from start, stopping early at NULL; returns the node reached (start itself when count \u003c= 1).",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080C790": {
+    "name": "findFirstMatchingEntry",
+    "signature": "void* fn_0080C790(void* self)",
+    "summary": "Scans the global pointer array and returns the first entry whose first-dword key compares equal to the argument (0 if none).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080CA10": {
     "name": "GlobalFreeForwarder",
     "signature": "void* fn_0080CA10(void* hMem)",
