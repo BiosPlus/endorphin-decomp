@@ -86746,3 +86746,33 @@ void* fn_004B1510(void* self, void* arg2) {
     return method(obj, self, arg2);
 }
 } // namespace lift_004B1510
+
+// [0x0046CED0] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>::vfunc_42 (164 bytes)
+namespace lift_0046CED0 {
+extern void ext_0046C2E0();
+extern void ext_006720A0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_42 (ImageExporter::getUseRenderer)
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>
+// @summary Reads the ImageExporter pointer from the first dword of its argument (throws if null), queries getUseRenderer through the wrapper object, and returns that bool.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_0046CED0(void* arg1) {
+    // arg1 points at a slot holding the ImageExporter instance pointer.
+    void* exporter = lift_field<void*>(arg1, 0);
+    if (exporter == nullptr) {
+        // Original builds a DerivedException and throws it via the CRT thunk.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return false;
+    }
+    // Original: sub_46C2E0(exporter) -> bool, wrapped by sub_6720A0 into a temporary,
+    // then vtable slot 0xA8 (vfunc_42) on that temporary is invoked and its bool result returned.
+    ext_0046C2E0();
+    ext_006720A0();
+    return false;
+}
+} // namespace lift_0046CED0
