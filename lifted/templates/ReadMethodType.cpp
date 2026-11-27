@@ -187898,3 +187898,55 @@ bool fn_0066FBB0(void* self, void* const* arg1, void* arg2) {
     return result;
 }
 } // namespace lift_0066FBB0
+
+// [0x0066FFC0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_47 (193 bytes)
+namespace lift_0066FFC0 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void ext_0041CF50();
+// Known callee 0x00672080: sub_00672080 (18B, thiscall with one float argument; initializes a temp object from the float.)
+extern void ext_00672080();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, calcNorm, 1>::vfunc_47
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Computes the Euclidean norm of the Vector3 referenced by this->vectorPtr, stores it into a temp value, assigns that into this->field_0x04 via ext_0041CF50 and notifies the sub-object at field_0x04 through vtable slot 0xBC; throws if vectorPtr is null.
+// @field ExprParser::ReadMethodType +0x00 NM::Vector3* vectorPtr
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void fn_0066FFC0(void* self) {
+    // Vector3 layout used here: x at +0x00, y at +0x04, z at +0x08 (floats).
+    void* vec = lift_field<void*>(self, 0x00);
+    if (vec == nullptr) {
+        // Original constructs a DerivedException in a local and throws it.
+        uint8_t exc[0x20] = {};
+        reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(exc);
+        throw std::runtime_error("ReadMethodType<NM::Vector3>::calcNorm: null vector pointer");
+    }
+
+    float x = lift_field<float>(vec, 0x00);
+    float y = lift_field<float>(vec, 0x04);
+    float z = lift_field<float>(vec, 0x08);
+    float norm = std::sqrt(x * x + y * y + z * z);
+
+    // Temp value object initialized from the norm.
+    uint8_t tmp[0x10] = {};
+    reinterpret_cast<void (*)(void*, float)>(ext_00672080)(tmp, norm);
+
+    // self->field_0x04 = tmp (guarded self-assignment).
+    reinterpret_cast<void* (*)(void*, void*)>(ext_0041CF50)(self, tmp);
+
+    // Release the object at tmp+0x04 via its vtable slot 0x78, if present.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* vt = lift_field<void*>(held, 0x00);
+        void* slot = lift_field<void*>(vt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(slot)(held, tmp);
+    }
+
+    // Notify the sub-object at self->field_0x04 via vtable slot 0xBC.
+    void* sub = lift_field<void*>(self, 0x04);
+    void* subVt = lift_field<void*>(sub, 0x00);
+    void* notify = lift_field<void*>(subVt, 0xBC);
+    reinterpret_cast<void (*)(void*, void*)>(notify)(sub, self);
+}
+} // namespace lift_0066FFC0

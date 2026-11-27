@@ -73918,6 +73918,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066FD50 (ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::calcNorm,1\u003e::vfunc_44).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066FFC0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
+    "signature": "void fn_0066FFC0(void* self)",
+    "summary": "Computes the Euclidean norm of the Vector3 referenced by this-\u003evectorPtr, stores it into a temp value, assigns that into this-\u003efield_0x04 via ext_0041CF50 and notifies the sub-object at field_0x04 through vtable slot 0xBC; throws if vectorPtr is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670090": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e",

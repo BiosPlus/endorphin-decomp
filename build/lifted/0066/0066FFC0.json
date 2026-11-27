@@ -1,0 +1,28 @@
+{
+  "va": "0x0066FFC0",
+  "size": 193,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
+  "signature": "void fn_0066FFC0(void* self)",
+  "summary": "Computes the Euclidean norm of the Vector3 referenced by this-\u003evectorPtr, stores it into a temp value, assigns that into this-\u003efield_0x04 via ext_0041CF50 and notifies the sub-object at field_0x04 through vtable slot 0xBC; throws if vectorPtr is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "NM::Vector3*",
+      "name": "vectorPtr"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:01:04Z"
+}
