@@ -1,0 +1,34 @@
+{
+  "va": "0x00480F60",
+  "size": 154,
+  "orig_symbol": "ToolEngine::vfunc_19",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_19",
+  "class": "ToolEngine",
+  "signature": "void fn_00480F60(void* self, uint32_t arg)",
+  "summary": "Calls ext_0065D120 on a sub-object of a global-derived pointer, iterates a pointer range stored at this+0x10 (via its vtable slot 4) and invokes each element's vtable slot 2 with arg, then sets this+0x108 and calls the virtual slot 0 of this+0x04 if non-null.",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ToolEngine",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "ToolEngine",
+      "offset": "+0x108",
+      "type": "uint8_t",
+      "name": "field_0x108"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:16:24Z"
+}

@@ -10817,6 +10817,13 @@
     "summary": "Calls vtable slot 11 of the subobject at +0x10 to get a range, bounds-checks its current element, and forwards that element to the delegate at +0x3B4.",
     "lifted_path": "lifted/classes/ToolEngine.cpp"
   },
+  "0x00480F60": {
+    "name": "ToolEngine::vfunc_19",
+    "class": "ToolEngine",
+    "signature": "void fn_00480F60(void* self, uint32_t arg)",
+    "summary": "Calls ext_0065D120 on a sub-object of a global-derived pointer, iterates a pointer range stored at this+0x10 (via its vtable slot 4) and invokes each element's vtable slot 2 with arg, then sets this+0x108 and calls the virtual slot 0 of this+0x04 if non-null.",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
   "0x004812B0": {
     "name": "ToolEngine::vfunc_10",
     "class": "ToolEngine",

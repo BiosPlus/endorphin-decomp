@@ -11,10 +11,12 @@
 namespace lifted_layout {
 struct ToolEngine_Fields {
     // +0x0   void*                    vptr  (evidence: 0x00480100, 0x00482480, 0x00535610, 0x00545B80, 0x005FF1C0)
-    // +0x10  void*                    field_0x10  (evidence: 0x00480060, 0x00480E40, 0x00480EA0, 0x004812B0)
+    // +0x4   void*                    field_0x04  (evidence: 0x00480F60)
+    // +0x10  void*                    field_0x10  (evidence: 0x00480060, 0x00480E40, 0x00480EA0, 0x00480F60, 0x004812B0)
     // +0x18  uint32_t                 field_0x18  (evidence: 0x004809E0)
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x004809E0)
     // +0x30  uint8_t                  field_0x30  (evidence: 0x004809E0)
+    // +0x108 uint8_t                  field_0x108  (evidence: 0x00480F60)
     // +0x218 void*                    field_0x218  (evidence: 0x00482420)
     // +0x36C uint8_t                  field_0x36C  (evidence: 0x00482420)
     // +0x3B0 void*                    field_0x3B0  (evidence: 0x004800E0, 0x00480160, 0x004801A0)

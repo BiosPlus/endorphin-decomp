@@ -283,3 +283,56 @@ void fn_004800E0(void* self) {
     ext_00530290(r);
 }
 } // namespace lift_004800E0
+
+// [0x00480F60] ToolEngine::vfunc_19 (154 bytes)
+namespace lift_00480F60 {
+// Known callee 0x00594000: ext_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x0065D120: sub_0065D120 (16B), thiscall on the sub-object at eax+0xFC.
+extern void ext_0065D120(void* self);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (debug iterator range checks).
+extern int mem_00925134;
+
+// @name ToolEngine::vfunc_19
+// @class ToolEngine
+// @summary Calls ext_0065D120 on a sub-object of a global-derived pointer, iterates a pointer range stored at this+0x10 (via its vtable slot 4) and invokes each element's vtable slot 2 with arg, then sets this+0x108 and calls the virtual slot 0 of this+0x04 if non-null.
+// @field ToolEngine +0x04 void* field_0x04
+// @field ToolEngine +0x10 void* field_0x10
+// @field ToolEngine +0x108 uint8_t field_0x108
+void fn_00480F60(void* self, uint32_t arg) {
+    // Metadata-only: CRT range-check calls through mem_00925134 are omitted.
+    (void)&mem_00925134;
+
+    // Global int32 -> base pointer; sub-object at +0xFC is passed as this.
+    int32_t base = ext_00594000();
+    ext_0065D120(reinterpret_cast<void*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(base)) + 0xFC));
+
+    // Embedded object at this+0x10: vtable slot 4 returns a range container.
+    uint8_t* embedded = static_cast<uint8_t*>(self) + 0x10;
+    void** embeddedVtbl = *reinterpret_cast<void***>(embedded);
+    auto getRange = reinterpret_cast<void* (__thiscall*)(void*)>(embeddedVtbl[4]);
+    uint8_t* range = static_cast<uint8_t*>(getRange(embedded));
+
+    // Range container: [+4] = begin, [+8] = end (re-read end each iteration).
+    uintptr_t cur = *reinterpret_cast<uint32_t*>(range + 0x04);
+    while (cur != *reinterpret_cast<uint32_t*>(range + 0x08)) {
+        uint8_t* element = reinterpret_cast<uint8_t*>(
+            static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(cur)));
+        uint8_t* sub = element + 0x0C;
+        void** subVtbl = *reinterpret_cast<void***>(sub);
+        auto invoke = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(subVtbl[2]);
+        invoke(sub, arg);
+        cur += 4;
+    }
+
+    // Flag this+0x108, then virtual slot 0 on this+0x04 if it is non-null.
+    void* field04 = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x04);
+    *(static_cast<uint8_t*>(self) + 0x108) = 1;
+    if (field04 != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(field04);
+        auto dtor = reinterpret_cast<void(__thiscall*)(void*)>(vtbl[0]);
+        dtor(field04);
+    }
+}
+} // namespace lift_00480F60
