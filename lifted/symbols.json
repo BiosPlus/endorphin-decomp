@@ -9830,6 +9830,13 @@
     "summary": "Iterates a vector of pointers at +0x30 and returns the maximum signed int32 at +0x160 (or 0 if none \u003e 0).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00477FA0": {
+    "name": "Unknown::findEntryWithField168Match",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_00925134;  // _invalid_parameter_noinfo slot (iterator-check boilerplate) bool fn_00477FA0(void* self, uint32_t arg)",
+    "summary": "Scan the pointer array at self+0x34..+0x38; return true if an entry whose vtable slot 0xF8 returns 0 has field +0x168 equal to arg.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00478410": {
     "name": "ForEachEntryThenVfunc1 (descriptive; owner class not yet identified)",
     "signature": "void fn_00478410(void* self, void* range)",

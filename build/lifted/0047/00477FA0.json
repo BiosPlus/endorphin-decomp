@@ -1,0 +1,40 @@
+{
+  "va": "0x00477FA0",
+  "size": 139,
+  "orig_symbol": "sub_00477FA0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "Unknown::findEntryWithField168Match",
+  "class": "Unknown",
+  "signature": "extern \"C\" int mem_00925134;  // _invalid_parameter_noinfo slot (iterator-check boilerplate) bool fn_00477FA0(void* self, uint32_t arg)",
+  "summary": "Scan the pointer array at self+0x34..+0x38; return true if an entry whose vtable slot 0xF8 returns 0 has field +0x168 equal to arg.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "void**",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "void**",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:39Z"
+}

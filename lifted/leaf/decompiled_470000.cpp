@@ -1117,3 +1117,38 @@ void __thiscall sub_00470090(void* self) {
     lift_field<void*>(self, 0x4) = parent;
 }
 } // namespace lift_00470090
+
+// [0x00477FA0] sub_00477FA0 (139 bytes)
+namespace lift_00477FA0 {
+extern int mem_00925134;  // _invalid_parameter_noinfo slot (iterator-check boilerplate)
+
+// @name Unknown::findEntryWithField168Match
+// @class Unknown
+// @summary Scan the pointer array at self+0x34..+0x38; return true if an entry whose vtable slot 0xF8 returns 0 has field +0x168 equal to arg.
+// @field Unknown +0x34 void** field_0x34
+// @field Unknown +0x38 void** field_0x38
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x168 uint32_t field_0x168
+bool fn_00477FA0(void* self, uint32_t arg) {
+    using VFn = int(__thiscall*)(void*);
+    (void)&mem_00925134;  // debug iterator-check failure path omitted; reference kept for metadata
+
+    void** it = lift_field<void**>(self, 0x34);
+    while (true) {
+        // End is re-read every iteration, matching the original reload of [edi+8].
+        void** end = lift_field<void**>(self, 0x38);
+        if (it == end) {
+            return false;
+        }
+
+        void* obj = *it;
+        void** vtbl = lift_field<void**>(obj, 0);
+        VFn probe = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0xF8));
+        if (probe(obj) == 0 && lift_field<uint32_t>(obj, 0x168) == arg) {
+            return true;
+        }
+
+        ++it;
+    }
+}
+} // namespace lift_00477FA0
