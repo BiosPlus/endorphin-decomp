@@ -1841,7 +1841,7 @@ void fn_004BF710(void* self) {
     // Original: ecx = [this]; esi = this + 4;
     // copyFieldsFrom(ecx, esi); destroy(esi);
     const uintptr_t first = static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x00));
-    void* embedded = static_cast<uint8_t*>(self) + 0x04;
+    void* embedded = static_cast<char*>(self) + 0x04;
 
     ext_006619D0(reinterpret_cast<void*>(first), embedded);
     ext_00466870(embedded);
