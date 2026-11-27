@@ -46759,6 +46759,13 @@
     "summary": "Handles property/data queries (0xB8, 0x39, 0x8C) on MetaBodyData, delegating to AxisDefineSensorData::vfunc_14 otherwise.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
+  "0x005C00E0": {
+    "name": "NMData::MetaBodyData::vfunc_33",
+    "class": "NMData::MetaBodyData",
+    "signature": "void fn_005C00E0(void* self)",
+    "summary": "Releases the owned object at +0x158, clears the two intrusive list members at +0x15C and +0x168 through ext_005A0910/ext_005AE480, then tail-calls ext_0058A1A0.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005C01A0": {
     "name": "NMData::MetaBodyData::vfunc_4_off_C",
     "class": "NMData::MetaBodyData",
@@ -62934,6 +62941,13 @@
     "signature": "DWORD* fn_0061F130(void* self, DWORD* dst, DWORD sel)",
     "summary": "Dispatches on selector (sel - 0x2AB) to one of eight initializers passed this as value, else zeroes dst via sub_00671F30; returns dst.",
     "lifted_path": "lifted/NMData/HingeLimit.cpp"
+  },
+  "0x0061F310": {
+    "name": "NMData::TwistAndSwingLimit::vfunc_15",
+    "class": "NMData::TwistAndSwingLimit",
+    "signature": "uint32_t* __thiscall fn_0061F310(void* self, uint32_t* out, uint32_t id)",
+    "summary": "Dispatches property/symbol ID to the corresponding TwistAndSwingLimit accessor or default zero initializer.",
+    "lifted_path": "lifted/NMData/TwistAndSwingLimit.cpp"
   },
   "0x0061F940": {
     "name": "NMData::HingeConstraint::vfunc_15",

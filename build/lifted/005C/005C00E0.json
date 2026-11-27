@@ -1,0 +1,52 @@
+{
+  "va": "0x005C00E0",
+  "size": 178,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_33",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_33",
+  "class": "NMData::MetaBodyData",
+  "signature": "void fn_005C00E0(void* self)",
+  "summary": "Releases the owned object at +0x158, clears the two intrusive list members at +0x15C and +0x168 through ext_005A0910/ext_005AE480, then tail-calls ext_0058A1A0.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x160",
+      "type": "void*",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x174",
+      "type": "void*",
+      "name": "field_0x174"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:09Z"
+}

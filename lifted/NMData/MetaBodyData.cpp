@@ -552,3 +552,72 @@ void* fn_005B8D00(void* self, void* arg0) {
     return reinterpret_cast<void*>(result);
 }
 } // namespace lift_005B8D00
+
+// [0x005C00E0] NMData::MetaBodyData::vfunc_33 (178 bytes)
+namespace lift_005C00E0 {
+// Known callee 0x0050BE20: Vector_eraseTailChecked (Validates the vector's begin/end/bound pointers, deletes the owned elements through ext_00536230, then erases the tail range via ext_00596660.)
+extern void ext_0050BE20(void* self);
+// Callee 0x005A0910: sub_005A0910 (86B, unnamed; thiscall with four stack args)
+extern void ext_005A0910(void* self, void* a0, void* a1, void* a2, void* a3);
+// Known callee 0x005AE480: ReleaseChainNodes (Recursively releases a sibling chain: for each node, releases its child chain, destroys its string member, and invokes the cleanup thunk.)
+extern void ext_005AE480(void* self, void* first);
+// Callee 0x0058A1A0: AnimatableTransform::vfunc_33 (22B), tail-called with this.
+extern void ext_0058A1A0(void* self);
+
+// @name NMData::MetaBodyData::vfunc_33
+// @class NMData::MetaBodyData
+// @summary Releases the owned object at +0x158, clears the two intrusive list members at +0x15C and +0x168 through ext_005A0910/ext_005AE480, then tail-calls ext_0058A1A0.
+// @field NMData::MetaBodyData +0x158 void* field_0x158
+// @field NMData::MetaBodyData +0x160 void* field_0x160
+// @field NMData::MetaBodyData +0x164 uint32_t field_0x164
+// @field NMData::MetaBodyData +0x16C void* field_0x16C
+// @field NMData::MetaBodyData +0x170 uint32_t field_0x170
+// @field NMData::MetaBodyData +0x174 void* field_0x174
+void fn_005C00E0(void* self) {
+    // if (self->field_0x158) self->field_0x158->vtable[0](1);  (virtual deleting dtor)
+    void* owned = lift_field<void*>(self, 0x158);
+    if (owned != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(owned);
+        reinterpret_cast<void (*)(void*, int)>(vtable[0])(owned, 1);
+    }
+    lift_field<void*>(self, 0x158) = nullptr;
+
+    // Vector_eraseTailChecked(&self->field_0x174)
+    ext_0050BE20(reinterpret_cast<uint8_t*>(self) + 0x174);
+
+    // First list at self+0x15C: head pointer at +4, size at +8.
+    void* list1 = reinterpret_cast<uint8_t*>(self) + 0x15C;
+    void* p1 = lift_field<void*>(self, 0x160);
+    void* q1 = *static_cast<void**>(p1);
+    ext_005A0910(list1, list1, q1, list1, p1);
+    ext_005AE480(list1, lift_field<void*>(lift_field<void*>(list1, 4), 4));
+
+    // Reset list1 to empty (sentinel head points to itself).
+    void* h = lift_field<void*>(list1, 4);
+    lift_field<void*>(h, 4) = h;
+    h = lift_field<void*>(list1, 4);
+    lift_field<uint32_t>(list1, 8) = 0;
+    lift_field<void*>(h, 0) = h;
+    h = lift_field<void*>(list1, 4);
+    lift_field<void*>(h, 8) = h;
+
+    // Second list at self+0x168: head pointer at +4, size at +8.
+    void* list2 = reinterpret_cast<uint8_t*>(self) + 0x168;
+    void* p2 = lift_field<void*>(self, 0x16C);
+    void* q2 = *static_cast<void**>(p2);
+    ext_005A0910(list2, list2, q2, list2, p2);
+    ext_005AE480(list2, lift_field<void*>(lift_field<void*>(list2, 4), 4));
+
+    // Reset list2 to empty.
+    h = lift_field<void*>(list2, 4);
+    lift_field<void*>(h, 4) = h;
+    h = lift_field<void*>(list2, 4);
+    lift_field<uint32_t>(list2, 8) = 0;
+    lift_field<void*>(h, 0) = h;
+    h = lift_field<void*>(list2, 4);
+    lift_field<void*>(h, 8) = h;
+
+    // Tail call AnimatableTransform::vfunc_33 with this = self.
+    ext_0058A1A0(self);
+}
+} // namespace lift_005C00E0
