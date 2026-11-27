@@ -45356,6 +45356,12 @@
     "summary": "Calls a helper on the target object, then writes a ValuePtr to out: the value from the input's object via vtable slot +0x70 if the object is non-null, otherwise a null ValuePtr.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005A4740": {
+    "name": "introsortLoopDWORD",
+    "signature": "extern \"C\" void fn_005A4740(DWORD* first, DWORD* last, int ideal)",
+    "summary": "std::sort-style introsort loop over a DWORD range: partitions via ext_005A0240, recurses on the smaller half, falls back to heapsort when depth budget is exhausted, finishes with insertion sort.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A4810": {
     "name": "NMData::BackGroundData::vfunc_33_off_4",
     "class": "NMData::BackGroundData",

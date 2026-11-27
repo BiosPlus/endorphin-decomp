@@ -3673,3 +3673,42 @@ void* fn_005AD1F0(void* self, void* out, uint32_t left_flag, void* node, void* v
 }
 } // namespace lift_00475E50
 } // namespace lift_005AD1F0
+
+// [0x005A4740]
+namespace lift_005A4740 {
+extern void ext_005A0240(DWORD** outPair, DWORD* first, DWORD* last);
+extern void ext_0059FE80(DWORD* first, DWORD* last);
+extern void ext_0059FE40(uint32_t* first, const uint32_t* last);
+extern void ext_004E7E40(DWORD* first, DWORD* last);
+
+// @name introsortLoopDWORD
+// @summary std::sort-style introsort loop over a DWORD range: partitions via ext_005A0240, recurses on the smaller half, falls back to heapsort when depth budget is exhausted, finishes with insertion sort.
+extern void fn_005A4740(DWORD* first, DWORD* last, int ideal)
+{
+    int count = (int)(last - first);
+    while (count > 32) {
+        if (ideal <= 0) {
+            if ((((char*)last - (char*)first) & ~3) > 4)
+                ext_0059FE40((uint32_t*)first, (const uint32_t*)last);
+            ext_004E7E40(first, last);
+            return;
+        }
+        DWORD* mid[2];
+        ext_005A0240(mid, first, last);
+        int half = ideal / 2;
+        ideal = half + half / 2;
+        int leftBytes = (int)(((char*)mid[0] - (char*)first) & ~3);
+        int rightBytes = (int)(((char*)last - (char*)mid[1]) & ~3);
+        if (leftBytes < rightBytes) {
+            fn_005A4740(first, mid[0], ideal);
+            first = mid[1];
+        } else {
+            fn_005A4740(mid[1], last, ideal);
+            last = mid[0];
+        }
+        count = (int)(last - first);
+    }
+    if (count > 1)
+        ext_0059FE80(first, last);
+}
+} // namespace lift_005A4740
