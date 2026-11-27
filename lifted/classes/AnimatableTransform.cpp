@@ -273,3 +273,33 @@ void __thiscall AnimatableTransform_vfunc_29(void* self, void* outStr) {
     }
 }
 } // namespace lift_00584B60
+
+// [0x0058A370] AnimatableTransform::vfunc_2 (78 bytes)
+namespace lift_0058A370 {
+extern uint32_t __thiscall ext_0058A2B0(void* self, uint32_t arg);
+
+// @name AnimatableTransform::vfunc_2
+// @class AnimatableTransform
+// @summary Auto-lifted identical-shape clone of 0x005CFE70 (NMData::CameraData::vfunc_2).
+// @field AnimatableTransform +0xF4 uint8_t field_0xF4
+namespace lift_005CFE70 {
+uint32_t __stdcall ext_0058A2B0(const void* arg);
+void* __cdecl ext_006721F0(void* self, uintptr_t value);
+void* __thiscall ext_0065F450(void* self, void* out, const void* name);
+
+// @name NMData::CameraData::vfunc_2
+// @class NMData::CameraData
+// @summary Resolves a named camera property pointer at +0x264 + idx*8, or delegates to AnimatableTransform::vfunc_2.
+// @field NMData::CameraData +0x264 uint8_t field_0x264
+void* __thiscall fn_0058A370(void* self, void* out, const void* name) {
+    uint32_t idx = ext_0058A2B0(name);
+    if (idx != 8) {
+        void* prop = static_cast<uint8_t*>(self) + 0xF4 + idx * 8;
+        ext_006721F0(out, reinterpret_cast<uintptr_t>(prop));
+        return out;
+    }
+    ext_0065F450(self, out, name);
+    return out;
+}
+} // namespace lift_005CFE70
+} // namespace lift_0058A370

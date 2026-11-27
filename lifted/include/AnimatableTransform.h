@@ -28,5 +28,6 @@ struct AnimatableTransform_Fields {
     // +0xE0  uint32_t                 field_0xE0  (evidence: 0x0058A670, 0x00593680, 0x00593D00)
     // +0xE4  uint32_t                 field_0xE4  (evidence: 0x004020A0, 0x0058A670, 0x00593680, 0x00593D00)
     // +0xEC  uint8_t                  field_0xEC  (evidence: 0x0058A670)
+    // +0xF4  uint8_t                  field_0xF4  (evidence: 0x0058A370)
 };
 } // namespace lifted_layout

@@ -226,6 +226,7 @@ void* fn_006053C0() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_006053C0
+#include <cstdarg>
 
 // [0x00605420] sub_00605420 (87 bytes)
 namespace lift_00605420 {
@@ -3059,3 +3060,28 @@ void fn_0060A550(void** first, void** second, void** last, void* ctx) {
 }
 } // namespace lift_0043B720
 } // namespace lift_0060A550
+
+// [0x0060B080] sub_0060B080 (111 bytes)
+namespace lift_0060B080 {
+// @name sub_0060B080
+// @summary Auto-lifted identical-shape clone of 0x00517970 (AllocInterpreterAndForward_00517970).
+namespace lift_00517970 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762; cdecl, one size argument, returns the allocated block or null).
+extern void* __cdecl ext_006A5C62(uint32_t size);
+// Known callee 0x00506030: Interpreter::Interpreter (thiscall constructor; runs the base-class initializer, sets the vtable, default-constructs the std::string at +0x04, zeroes the dwords at +0x24..+0x34; returns this).
+extern void* __thiscall ext_006098F0(void* self);
+// Known callee 0x00517890: sub_00517890 (thiscall, four stack args; auto-lifted clone of 0x0049EE60).
+extern uint32_t __thiscall ext_0060AFD0(void* self, uint32_t a1, void* a2, uint32_t a3, uint32_t a4);
+
+// @name AllocInterpreterAndForward_00517970
+// @summary Allocates a 0x38-byte block; if the allocation succeeds it constructs an Interpreter in it, then forwards (arg1, interpreter-or-null, arg2, arg3) to ext_00517890 on this and returns that result. Takes three stack arguments.
+uint32_t __thiscall fn_0060B080(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* interp = nullptr;
+    void* block = ext_006A5C62(0x3C);
+    if (block != nullptr) {
+        interp = ext_006098F0(block);
+    }
+    return ext_0060AFD0(self, arg1, interp, arg2, arg3);
+}
+} // namespace lift_00517970
+} // namespace lift_0060B080

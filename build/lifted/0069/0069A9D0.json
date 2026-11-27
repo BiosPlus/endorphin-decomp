@@ -1,0 +1,28 @@
+{
+  "va": "0x0069A9D0",
+  "size": 174,
+  "orig_symbol": "sub_0069A9D0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "sub_0069A9D0",
+  "class": "Vector",
+  "signature": "bool fn_0069A9D0(void* self, const void* value)",
+  "summary": "Auto-lifted identical-shape clone of 0x005CD120 (Vector::InsertSortedUnique_005CD120).",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:15:17Z"
+}

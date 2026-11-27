@@ -1,0 +1,34 @@
+{
+  "va": "0x005699B0",
+  "size": 131,
+  "orig_symbol": "sub_005699B0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "sub_005699B0",
+  "class": "Vector",
+  "signature": "void fn_005699B0(void* self, uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x00484E90 (Vector::PushBack64Block_00484E90).",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "capEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:15:17Z"
+}

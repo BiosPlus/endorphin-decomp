@@ -1,0 +1,28 @@
+{
+  "va": "0x0058A370",
+  "size": 78,
+  "orig_symbol": "AnimatableTransform::vfunc_2",
+  "src_path": "src/classes/AnimatableTransform.cpp",
+  "lifted_path": "lifted/classes/AnimatableTransform.cpp",
+  "name": "AnimatableTransform::vfunc_2",
+  "class": "AnimatableTransform",
+  "signature": "void* __thiscall fn_0058A370(void* self, void* out, const void* name)",
+  "summary": "Auto-lifted identical-shape clone of 0x005CFE70 (NMData::CameraData::vfunc_2).",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0xF4",
+      "type": "uint8_t",
+      "name": "field_0xF4"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x264",
+      "type": "uint8_t",
+      "name": "field_0x264"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:15:17Z"
+}

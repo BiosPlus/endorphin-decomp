@@ -5971,3 +5971,62 @@ void fn_0043F2C0(void* self, void* arg) {
 }
 } // namespace lift_00451AE0
 } // namespace lift_0043F2C0
+
+// [0x0043A840] sub_0043A840 (174 bytes)
+namespace lift_0043A840 {
+// @name sub_0043A840
+// @summary Auto-lifted identical-shape clone of 0x005CD120 (Vector::InsertSortedUnique_005CD120).
+namespace lift_005CD120 {
+// Known callee 0x0051A670: std::lower_bound over std::string elements (32-byte stride).
+extern uint8_t* __cdecl ext_0060ECF0(uint8_t* first, uint8_t* last, const void* value);
+// Known callee 0x00475710: Vector::InsertAndGetIterator (thiscall, callee pops 1 stack arg).
+extern void __thiscall ext_0043A4C0(void* self, void* out);
+// Import slots: MSVCR80!_invalid_parameter_noinfo and MSVCP80 std::string operator<.
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924EF4;
+
+// @name Vector::InsertSortedUnique_005CD120
+// @class Vector
+// @summary Inserts a std::string into the sorted vector unless an equal element exists; returns true if inserted.
+// @field Vector +0x04 uint8_t* field_0x04
+// @field Vector +0x08 uint8_t* field_0x08
+bool fn_0043A840(void* self, const void* value) {
+    auto invalid_parameter = []() {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    };
+
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x04);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x08);
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(end)) {
+        invalid_parameter();
+    }
+
+    uint8_t* it = ext_0060ECF0(begin, end, value);
+
+    begin = lift_field<uint8_t*>(self, 0x04);
+    end = lift_field<uint8_t*>(self, 0x08);
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(end)) {
+        invalid_parameter();
+    }
+
+    bool insert;
+    if (reinterpret_cast<uintptr_t>(it) == reinterpret_cast<uintptr_t>(end)) {
+        insert = true;
+    } else {
+        if (!(reinterpret_cast<uintptr_t>(it) < reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x08)))) {
+            invalid_parameter();
+        }
+        auto less = reinterpret_cast<bool (*)(const void*, const void*)>(static_cast<uintptr_t>(mem_00924EF4));
+        insert = less(value, it);
+    }
+
+    if (!insert) {
+        return false;
+    }
+
+    uint32_t out[2];
+    ext_0043A4C0(self, out);
+    return true;
+}
+} // namespace lift_005CD120
+} // namespace lift_0043A840

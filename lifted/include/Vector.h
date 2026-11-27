@@ -9,25 +9,25 @@
 namespace lifted_layout {
 struct Vector_Fields {
     // +0x4   uintptr_t*               _Myfirst  (evidence: 0x00527EC0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 begin  (evidence: 0x0041C7C0, 0x00484E90, 0x00527AF0, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 begin  (evidence: 0x0041C7C0, 0x00484E90, 0x00527AF0, 0x0052F7D0, 0x005699B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t*                begin  (evidence: 0x004B53E0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t*                 begin  (evidence: 0x00475710, 0x00483630, 0x004836C0, 0x00557710, 0x00560270) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t*                 begin  (evidence: 0x00475710, 0x00483630, 0x004836C0, 0x00557710, 0x00560270, 0x005697A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uintptr_t                begin  (evidence: 0x004026E0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x004065D0, 0x00441C10, 0x0044C500, 0x00481C50, 0x0048D350, 0x00490920, 0x00490B80, 0x004A6A90, 0x004B51F0, 0x004B5270, 0x005015E0, 0x00506CD0, 0x0050BE20, 0x0050C610, 0x0051EC00, 0x0051FEB0, 0x00578080, 0x0057CF80, 0x0057E9A0, 0x006753D0, 0x00688E90, 0x00688EE0, 0x00688F20, 0x0069A260) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t*                 field_0x04  (evidence: 0x00484F20, 0x005CD120) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x004065D0, 0x00441C10, 0x0044C500, 0x00481C50, 0x0048D350, 0x00490920, 0x00490B80, 0x004A6A90, 0x004B51F0, 0x004B5270, 0x005015E0, 0x00506CD0, 0x0050BE20, 0x0050C610, 0x0051EC00, 0x0051FEB0, 0x0056AFE0, 0x0056B0C0, 0x00578080, 0x0057CF80, 0x0057E9A0, 0x006753D0, 0x00688E90, 0x00688EE0, 0x00688F20, 0x0069A260) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t*                 field_0x04  (evidence: 0x0043A840, 0x00484F20, 0x005CD120, 0x0069A9D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 first  (evidence: 0x00428A60) // CONFLICT: multiple definitions at +0x4
     // +0x8   uintptr_t*               _Mylast  (evidence: 0x00527EC0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 end  (evidence: 0x0041C7C0, 0x00484E90, 0x00527AF0, 0x0052F7D0, 0x005947B0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 end  (evidence: 0x0041C7C0, 0x00484E90, 0x00527AF0, 0x0052F7D0, 0x005699B0, 0x005947B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t*                end  (evidence: 0x004B53E0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint8_t*                 end  (evidence: 0x00475710, 0x00483630, 0x004836C0, 0x0052F7D0, 0x00557710, 0x00560270) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t*                 end  (evidence: 0x00475710, 0x00483630, 0x004836C0, 0x0052F7D0, 0x00557710, 0x00560270, 0x005697A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uintptr_t                end  (evidence: 0x004026E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    end  (evidence: 0x00577B10, 0x0057CEE0, 0x0057EA40, 0x0057EAB0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 end_ptr  (evidence: 0x004B5180, 0x004BBB00) // CONFLICT: multiple definitions at +0x8
     // +0x8   uintptr_t                end_ptr  (evidence: 0x00527D60) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x004065D0, 0x00441C10, 0x0044C500, 0x00481C50, 0x0048D350, 0x00490920, 0x00490B80, 0x004A6A90, 0x004B51F0, 0x004B5270, 0x005015E0, 0x00506CD0, 0x0050BE20, 0x0050C610, 0x0051EC00, 0x0051FEB0, 0x00578080, 0x0057CF80, 0x0057E9A0, 0x006753D0, 0x00688E90, 0x00688EE0, 0x00688F20, 0x0069A260) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint8_t*                 field_0x08  (evidence: 0x00484F20, 0x005CD120) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x004065D0, 0x00441C10, 0x0044C500, 0x00481C50, 0x0048D350, 0x00490920, 0x00490B80, 0x004A6A90, 0x004B51F0, 0x004B5270, 0x005015E0, 0x00506CD0, 0x0050BE20, 0x0050C610, 0x0051EC00, 0x0051FEB0, 0x0056AFE0, 0x0056B0C0, 0x00578080, 0x0057CF80, 0x0057E9A0, 0x006753D0, 0x00688E90, 0x00688EE0, 0x00688F20, 0x0069A260) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t*                 field_0x08  (evidence: 0x0043A840, 0x00484F20, 0x005CD120, 0x0069A9D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 last  (evidence: 0x00428A60) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uint32_t                 capEnd  (evidence: 0x00484E90) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 capEnd  (evidence: 0x00484E90, 0x005699B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uintptr_t                capacity_end  (evidence: 0x004026E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 end  (evidence: 0x00428A60) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t*                 field_0x0C  (evidence: 0x00484F20) // CONFLICT: multiple definitions at +0xC

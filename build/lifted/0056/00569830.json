@@ -1,0 +1,22 @@
+{
+  "va": "0x00569830",
+  "size": 89,
+  "orig_symbol": "sub_00569830",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "sub_00569830",
+  "class": "Unknown",
+  "signature": "VectorIterator* __thiscall fn_00569830(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+  "summary": "Auto-lifted identical-shape clone of 0x00681410 (sub_00681410).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:15:17Z"
+}

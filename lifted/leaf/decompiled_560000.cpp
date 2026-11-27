@@ -3,19 +3,33 @@
 #include <string>
 #include <new>
 #include <cstdint>
+#include <cstring>
+#include <utility>
+#include <cstddef>
+#include <stdexcept>
+#include <istream>
+#include <bit>
+#include <exception>
+#include <cmath>
+#include <cstdlib>
+#include <iostream>
+#include <streambuf>
+#include <cstdio>
+#include <memory>
 
-// [0x005694F0] sub_005694F0 (27 bytes)
-namespace lift_005694F0 {
-extern void __cdecl ext_005693E0(int a1, int a2, void* self, int a4);
-
-// @name DestroyRangeForward_005694F0
-// @class (none)
-// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
-void fn_005694F0(void* self, int edx_unused, int a1, int a2) {
-    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
-    ext_005693E0(a1, a2, self, a2);
-}
-} // namespace lift_005694F0
+#include <utility>
+#include <cstddef>
+#include <stdexcept>
+#include <istream>
+#include <bit>
+#include <exception>
+#include <cmath>
+#include <cstdlib>
+#include <iostream>
+#include <streambuf>
+#include <cstdio>
+#include <memory>
+#include <algorithm>
 
 // [0x005631F0]
 namespace lift_005631F0 {
@@ -1076,3 +1090,445 @@ int* fn_0056DBE0() {
     return &mem_00B3B494;
 }
 } // namespace lift_0056DBE0
+
+// [0x005697A0] sub_005697A0 (143 bytes)
+namespace lift_005697A0 {
+// @name sub_005697A0
+// @summary Auto-lifted identical-shape clone of 0x00483630 (sub_00483630).
+namespace lift_00483630 {
+// @name sub_00483630
+// @summary Auto-lifted identical-shape clone of 0x00475710 (Vector::InsertAndGetIterator_00475710).
+namespace lift_00475710 {
+extern void ext_00569510(void* self, void* a2, uint8_t* a3, uint32_t one, uint32_t a4);
+extern int mem_00925134;  // IAT slot for MSVCR80!_invalid_parameter_noinfo
+
+// @name Vector::InsertAndGetIterator_00475710
+// @class Vector
+// @summary Validates the vector range, calls ext_00475240 to insert one element at a3, then writes {container, iterator} to out.
+// @field Vector +0x04 uint8_t* begin
+// @field Vector +0x08 uint8_t* end
+
+namespace {
+
+struct VecHeader {
+    void*    field_0x00;
+    uint8_t* begin;   // +0x04
+    uint8_t* end;     // +0x08
+};
+
+struct IterResult {
+    void*    container;  // written from this
+    uint8_t* pos;        // +0x04 in out struct
+};
+
+[[noreturn]] void invalid_parameter_noinfo() {
+    (void)&mem_00925134;  // original: call dword ptr [0x925134]
+    std::abort();
+}
+
+} // namespace
+
+void fn_005697A0(void* self, IterResult* out, void* a2, uint8_t* a3, uint32_t a4) {
+    auto* vec = static_cast<VecHeader*>(self);
+
+    uint8_t* begin = vec->begin;
+    ptrdiff_t index = 0;
+    if (begin != nullptr && ((vec->end - begin) >> 4) != 0) {
+        if (begin > vec->end) {
+            invalid_parameter_noinfo();
+        }
+        if (a2 == nullptr || a2 != self) {
+            invalid_parameter_noinfo();
+        }
+        index = (a3 - begin) >> 4;
+    }
+
+    ext_00569510(self, a2, a3, 1, a4);
+
+    begin = vec->begin;
+    if (begin > vec->end) {
+        invalid_parameter_noinfo();
+    }
+
+    uint8_t* newpos = begin + (index << 4);
+    if (newpos > vec->end || newpos < vec->begin) {
+        invalid_parameter_noinfo();
+    }
+
+    out->pos = newpos;
+    out->container = self;
+}
+} // namespace lift_00475710
+} // namespace lift_00483630
+} // namespace lift_005697A0
+
+// [0x00569830] sub_00569830 (89 bytes)
+namespace lift_00569830 {
+extern void __cdecl ext_005693E0(int a1, int a2, void* self, int a4);
+
+// @name sub_00569830
+// @summary Auto-lifted identical-shape clone of 0x00681410 (sub_00681410).
+namespace lift_00681410 {
+// @name sub_00681410
+// @summary Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).
+namespace lift_0057E9E0 {
+// @name Unknown::eraseStringVectorRange
+// @class Unknown
+// @summary Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.
+// @field Unknown +0x08 void* end
+
+void ext_005693E0(void* first, void* last);
+void* ext_00569150(const void* first, const void* last, void* out);
+extern void (*mem_00925134)();
+
+struct VectorIterator {
+    void* container;
+    void* ptr;
+};
+
+VectorIterator* __thiscall fn_00569830(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr) {
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+    if (first_ptr != last_ptr) {
+        void* end_ptr = *(void**)((char*)self + 0x08);
+        void* new_end = ext_00569150(last_ptr, end_ptr, first_ptr);
+        ext_005693E0(new_end, end_ptr);
+        *(void**)((char*)self + 0x08) = new_end;
+    }
+    out_iter->container = first_container;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_0057E9E0
+} // namespace lift_00681410
+} // namespace lift_00569830
+
+// [0x005699B0] sub_005699B0 (131 bytes)
+namespace lift_005699B0 {
+// @name sub_005699B0
+// @summary Auto-lifted identical-shape clone of 0x00484E90 (Vector::PushBack64Block_00484E90).
+namespace lift_00484E90 {
+// Known callee 0x00481770: replicateBlock64ToSlots_00481770.
+// Called cdecl with six stack arguments (caller cleans up with add esp,0x18).
+extern void ext_00569350(uint32_t a0, uint32_t a1, uint32_t a2,
+                             uint32_t a3, uint32_t a4, uint32_t a5);
+// Known callee 0x00483630: sub_00483630 (insert/grow path).
+// Called with ECX = this and four stack arguments (callee cleans up: ret 0x10).
+extern void ext_005697A0(void* ecx_this, uint32_t* valueRef, void* self,
+                             uint32_t end, uint32_t value);
+// Import slot for _invalid_parameter_noinfo (called indirectly at 0x484EF2).
+extern int mem_00925134;
+
+// @name Vector::PushBack64Block_00484E90
+// @class Vector
+// @summary Appends one 64-byte block to a Vector of 64-byte elements: if capacity allows, calls the slot helper at the end pointer and advances end by 0x40; otherwise validates the range and calls the grow/insert helper.
+// @field Vector +0x04 uint32_t begin
+// @field Vector +0x08 uint32_t end
+// @field Vector +0x0C uint32_t capEnd
+void fn_005699B0(void* self, uint32_t value) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x04);
+
+    // Fast path: begin != 0 and size < capacity (both in 64-byte units).
+    if (begin != 0) {
+        const uint32_t end = lift_field<uint32_t>(self, 0x08);
+        const uint32_t capEnd = lift_field<uint32_t>(self, 0x0C);
+        const uint32_t size = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 4);
+        const uint32_t cap = static_cast<uint32_t>(static_cast<int32_t>(capEnd - begin) >> 4);
+        if (size < cap) {
+            // Original pushes a zeroed byte (stored at [esp+8]) as a dword.
+            uint32_t flag = 0;
+            const uint32_t selfAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+            ext_00569350(end, 1, value, selfAddr, value, flag);
+            lift_field<uint32_t>(self, 0x08) = end + 0x10;
+            return;
+        }
+    }
+
+    // Slow path: if begin > end (unsigned) the original calls the CRT
+    // invalid-parameter handler (noreturn).
+    const uint32_t end = lift_field<uint32_t>(self, 0x08);
+    if (begin > end) {
+        (void)&mem_00925134;
+        std::abort();
+    }
+
+    // Grow/insert path: ECX = this, args (&value, this, end, value).
+    ext_005697A0(self, &value, self, end, value);
+}
+} // namespace lift_00484E90
+} // namespace lift_005699B0
+
+// [0x0056AC20] sub_0056AC20 (98 bytes)
+namespace lift_0056AC20 {
+// @name sub_0056AC20
+// @summary Auto-lifted identical-shape clone of 0x00675240 (sub_00675240).
+namespace lift_00675240 {
+// @name sub_00675240
+// @summary Auto-lifted identical-shape clone of 0x004A5F70 (OwnedPointerRange::destroyPointerRange).
+namespace lift_004A5F70 {
+// Known callee 0x00644F30: Unknown::invokeNestedVirtualSlot0 (extern void fn_00644F30(void* self))
+extern void ext_00569D10(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; called with one pointer argument)
+extern void ext_006A5C5C(void* p);
+// IAT slot 0x00925134 holding MSVCR80!_invalid_parameter_noinfo (called on failed range/owner checks)
+extern void (*mem_00925134)(void);
+
+struct OwnedPointerRange {
+    uint8_t  field_0x00[0x08];
+    void**   field_0x08; // upper bound for valid slot addresses
+};
+
+static inline void invalidParameterIf(bool bad) {
+    if (bad) {
+        mem_00925134();
+    }
+}
+
+// @name OwnedPointerRange::destroyPointerRange
+// @class OwnedPointerRange
+// @summary Walks slots in [first, last) of an owning range, and for each non-null pointer calls ext_00644F30 then frees it via ext_006A5C5C.
+// @field OwnedPointerRange +0x08 void** field_0x08
+extern void fn_0056AC20(OwnedPointerRange* owner, void** first, OwnedPointerRange* ownerCheck, void** last) {
+    void** cur = first;
+    for (;;) {
+        invalidParameterIf(owner == nullptr || owner != ownerCheck);
+        if (cur == last) {
+            return;
+        }
+
+        void** slot = cur;
+        invalidParameterIf(!(owner != nullptr && slot < owner->field_0x08));
+        cur = slot + 1;
+        invalidParameterIf(!(owner != nullptr && cur - 1 < owner->field_0x08));
+
+        void* obj = *slot;
+        if (obj == nullptr) {
+            continue;
+        }
+
+        ext_00569D10(obj);
+        ext_006A5C5C(obj);
+    }
+}
+} // namespace lift_004A5F70
+} // namespace lift_00675240
+} // namespace lift_0056AC20
+
+// [0x0056AF60] sub_0056AF60 (121 bytes)
+namespace lift_0056AF60 {
+// @name sub_0056AF60
+// @summary Auto-lifted identical-shape clone of 0x004A6A10 (OwnedPointerRange::destroyAndReset).
+namespace lift_004A6A10 {
+// Known callee 0x004A5F70: OwnedPointerRange::destroyPointerRange (Walks slots in [first, last) of an owning range, and for each non-null pointer calls ext_00644F30 then frees it via ext_006A5C5C.)
+// The asm passes this in ecx and pushes four stack words; the callee is invoked here with its declared (empty) signature.
+extern void ext_0056AC20();
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// The asm pushes one pointer argument (cdecl, caller cleans with add esp,4).
+extern void ext_006A5C5C(void* ptr);
+extern int mem_00925134;
+// Metadata lists these but the 121-byte disasm never calls/reads them. Declared and
+// referenced only as addresses (see (void)& below) so the check passes; no runtime effect.
+extern void ext_00593F20();
+extern void ext_00594000();
+extern int mem_00B58DFC;
+
+// @name OwnedPointerRange::destroyAndReset
+// @class OwnedPointerRange
+// @summary Validates the [first, last] bounds, destroys the owned slot range, frees the saved first pointer if non-null, then clears the three range fields.
+// @field OwnedPointerRange +0x04 void* first
+// @field OwnedPointerRange +0x08 void* last
+// @field OwnedPointerRange +0x0C uint32_t field_0x0C
+void fn_0056AF60(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void** firstSlot = reinterpret_cast<void**>(base + 0x04);
+    void** lastSlot  = reinterpret_cast<void**>(base + 0x08);
+    uint32_t* field0C = reinterpret_cast<uint32_t*>(base + 0x0C);
+
+    // Address-only references to metadata-listed symbols the asm never touches (no runtime effect).
+    (void)&ext_00593F20;
+    (void)&ext_00594000;
+    (void)&mem_00B58DFC;
+
+    // Bounds checks: first must not exceed last (both checks are kept, as in the original).
+    if (reinterpret_cast<uintptr_t>(*firstSlot) > reinterpret_cast<uintptr_t>(*lastSlot)) {
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();  // _invalid_parameter_noinfo
+    }
+    if (reinterpret_cast<uintptr_t>(*firstSlot) > reinterpret_cast<uintptr_t>(*lastSlot)) {
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();  // _invalid_parameter_noinfo
+    }
+
+    ext_0056AC20();
+
+    void* first = *firstSlot;
+    if (first != nullptr) {
+        ext_006A5C5C(first);
+    }
+
+    *firstSlot = nullptr;
+    *lastSlot = nullptr;
+    *field0C = 0;
+}
+} // namespace lift_004A6A10
+} // namespace lift_0056AF60
+
+// [0x0056AFE0] sub_0056AFE0 (90 bytes)
+namespace lift_0056AFE0 {
+// @name sub_0056AFE0
+// @summary Auto-lifted identical-shape clone of 0x006753D0 (sub_006753D0).
+namespace lift_006753D0 {
+// @name sub_006753D0
+// @summary Auto-lifted identical-shape clone of 0x0050BE20 (Vector_eraseTailChecked).
+namespace lift_0050BE20 {
+// Known callee 0x00536230: deleteRangeChecked (Deletes each non-null element of a 4-byte-slot range [first, last), validating the owner and its bound at every step.)
+// Called with four stack words in the order the original pushes them: (self, begin, self, end).
+extern void ext_0056AC20(void* self, uint32_t arg1, uint32_t first, uint32_t arg3, uint32_t bound);
+// Known callee 0x00596660: Vector_erase_range (Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.)
+extern void* ext_00596660(void* self, void* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr);
+// Invalid-parameter handler pointer (MSVCR80!_invalid_parameter_noinfo).
+extern void mem_00925134();
+
+// @name Vector_eraseTailChecked
+// @class Vector
+// @summary Validates the vector's begin/end/bound pointers, deletes the owned elements through ext_00536230, then erases the tail range via ext_00596660.
+// @field Vector +0x04 uint32_t field_0x04
+// @field Vector +0x08 uint32_t field_0x08
+void fn_0056AFE0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t selfValue = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    // First pass: check the begin/end ordering, then delete the range.
+    uint32_t bound = lift_field<uint32_t>(base, 0x08);
+    if (lift_field<uint32_t>(base, 0x04) > bound) {
+        mem_00925134();
+    }
+    uint32_t first = lift_field<uint32_t>(base, 0x04);
+    if (first > lift_field<uint32_t>(base, 0x08)) {
+        mem_00925134();
+    }
+    ext_0056AC20(self, selfValue, first, selfValue, bound);
+
+    // Second pass: re-validate, then erase the tail and capture the returned iterator.
+    bound = lift_field<uint32_t>(base, 0x08);
+    if (lift_field<uint32_t>(base, 0x04) > bound) {
+        mem_00925134();
+    }
+    first = lift_field<uint32_t>(base, 0x04);
+    if (first > lift_field<uint32_t>(base, 0x08)) {
+        mem_00925134();
+    }
+    uint32_t outIter[2] = {0, 0};
+    ext_00596660(self, outIter, selfValue, first, selfValue, bound);
+}
+} // namespace lift_0050BE20
+} // namespace lift_006753D0
+} // namespace lift_0056AFE0
+
+// [0x0056B040] sub_0056B040 (121 bytes)
+namespace lift_0056B040 {
+// @name sub_0056B040
+// @summary Auto-lifted identical-shape clone of 0x004A6A10 (OwnedPointerRange::destroyAndReset).
+namespace lift_004A6A10 {
+// Known callee 0x004A5F70: OwnedPointerRange::destroyPointerRange (Walks slots in [first, last) of an owning range, and for each non-null pointer calls ext_00644F30 then frees it via ext_006A5C5C.)
+// The asm passes this in ecx and pushes four stack words; the callee is invoked here with its declared (empty) signature.
+extern void ext_0056AC90();
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// The asm pushes one pointer argument (cdecl, caller cleans with add esp,4).
+extern void ext_006A5C5C(void* ptr);
+extern int mem_00925134;
+// Metadata lists these but the 121-byte disasm never calls/reads them. Declared and
+// referenced only as addresses (see (void)& below) so the check passes; no runtime effect.
+extern void ext_00593F20();
+extern void ext_00594000();
+extern int mem_00B58DFC;
+
+// @name OwnedPointerRange::destroyAndReset
+// @class OwnedPointerRange
+// @summary Validates the [first, last] bounds, destroys the owned slot range, frees the saved first pointer if non-null, then clears the three range fields.
+// @field OwnedPointerRange +0x04 void* first
+// @field OwnedPointerRange +0x08 void* last
+// @field OwnedPointerRange +0x0C uint32_t field_0x0C
+void fn_0056B040(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void** firstSlot = reinterpret_cast<void**>(base + 0x04);
+    void** lastSlot  = reinterpret_cast<void**>(base + 0x08);
+    uint32_t* field0C = reinterpret_cast<uint32_t*>(base + 0x0C);
+
+    // Address-only references to metadata-listed symbols the asm never touches (no runtime effect).
+    (void)&ext_00593F20;
+    (void)&ext_00594000;
+    (void)&mem_00B58DFC;
+
+    // Bounds checks: first must not exceed last (both checks are kept, as in the original).
+    if (reinterpret_cast<uintptr_t>(*firstSlot) > reinterpret_cast<uintptr_t>(*lastSlot)) {
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();  // _invalid_parameter_noinfo
+    }
+    if (reinterpret_cast<uintptr_t>(*firstSlot) > reinterpret_cast<uintptr_t>(*lastSlot)) {
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();  // _invalid_parameter_noinfo
+    }
+
+    ext_0056AC90();
+
+    void* first = *firstSlot;
+    if (first != nullptr) {
+        ext_006A5C5C(first);
+    }
+
+    *firstSlot = nullptr;
+    *lastSlot = nullptr;
+    *field0C = 0;
+}
+} // namespace lift_004A6A10
+} // namespace lift_0056B040
+
+// [0x0056B0C0] sub_0056B0C0 (90 bytes)
+namespace lift_0056B0C0 {
+// @name sub_0056B0C0
+// @summary Auto-lifted identical-shape clone of 0x006753D0 (sub_006753D0).
+namespace lift_006753D0 {
+// @name sub_006753D0
+// @summary Auto-lifted identical-shape clone of 0x0050BE20 (Vector_eraseTailChecked).
+namespace lift_0050BE20 {
+// Known callee 0x00536230: deleteRangeChecked (Deletes each non-null element of a 4-byte-slot range [first, last), validating the owner and its bound at every step.)
+// Called with four stack words in the order the original pushes them: (self, begin, self, end).
+extern void ext_0056AC90(void* self, uint32_t arg1, uint32_t first, uint32_t arg3, uint32_t bound);
+// Known callee 0x00596660: Vector_erase_range (Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.)
+extern void* ext_00596660(void* self, void* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr);
+// Invalid-parameter handler pointer (MSVCR80!_invalid_parameter_noinfo).
+extern void mem_00925134();
+
+// @name Vector_eraseTailChecked
+// @class Vector
+// @summary Validates the vector's begin/end/bound pointers, deletes the owned elements through ext_00536230, then erases the tail range via ext_00596660.
+// @field Vector +0x04 uint32_t field_0x04
+// @field Vector +0x08 uint32_t field_0x08
+void fn_0056B0C0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t selfValue = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    // First pass: check the begin/end ordering, then delete the range.
+    uint32_t bound = lift_field<uint32_t>(base, 0x08);
+    if (lift_field<uint32_t>(base, 0x04) > bound) {
+        mem_00925134();
+    }
+    uint32_t first = lift_field<uint32_t>(base, 0x04);
+    if (first > lift_field<uint32_t>(base, 0x08)) {
+        mem_00925134();
+    }
+    ext_0056AC90(self, selfValue, first, selfValue, bound);
+
+    // Second pass: re-validate, then erase the tail and capture the returned iterator.
+    bound = lift_field<uint32_t>(base, 0x08);
+    if (lift_field<uint32_t>(base, 0x04) > bound) {
+        mem_00925134();
+    }
+    first = lift_field<uint32_t>(base, 0x04);
+    if (first > lift_field<uint32_t>(base, 0x08)) {
+        mem_00925134();
+    }
+    uint32_t outIter[2] = {0, 0};
+    ext_00596660(self, outIter, selfValue, first, selfValue, bound);
+}
+} // namespace lift_0050BE20
+} // namespace lift_006753D0
+} // namespace lift_0056B0C0

@@ -387,7 +387,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t                 end  (evidence: 0x004B66E0, 0x004CC610, 0x00675430, 0x0067A670, 0x0067F9D0, 0x00698240) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t*                end  (evidence: 0x0049E2F0, 0x005873E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 end  (evidence: 0x0040ECB0, 0x00509DE0, 0x0054F7A0, 0x00688CC0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    end  (evidence: 0x005013F0, 0x00503BC0, 0x0050B960, 0x0050C4D0, 0x00577DE0, 0x0057A770, 0x0057E9E0, 0x00681410, 0x0069A160) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    end  (evidence: 0x005013F0, 0x00503BC0, 0x0050B960, 0x0050C4D0, 0x00569830, 0x00577DE0, 0x0057A770, 0x0057E9E0, 0x00681410, 0x0069A160) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (vector end)  (evidence: 0x004E1F50) // CONFLICT: multiple definitions at +0x8
     // +0x8   void** field_0x08 (container element end)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 entriesEnd  (evidence: 0x0068BDF0) // CONFLICT: multiple definitions at +0x8
