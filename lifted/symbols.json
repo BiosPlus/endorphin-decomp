@@ -28996,6 +28996,13 @@
     "summary": "Serializes EvolveEngineData fields and lastBestIndividual to an XML node.",
     "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
   },
+  "0x00500DA0": {
+    "name": "SortedVector::find_string",
+    "class": "SortedVector",
+    "signature": "uint32_t* __thiscall sub_00500DA0(void* self, uint32_t* out_iter, uint32_t key)",
+    "summary": "Binary-searches a sorted string vector for key and returns an iterator to the matching element or end().",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00501090": {
     "name": "copyConstructElementRangeEnd",
     "signature": "uint8_t* fn_00501090(uint8_t* begin, uint32_t count, const void* rhs)",
@@ -33758,6 +33765,12 @@
     "class": "Unknown",
     "signature": "void fn_0052AC70(void* self, void* arg)",
     "summary": "Walks a linked chain of nodes from arg (until a node with flag +0x61 is set), recursing on each node's +0x08 payload, resetting the subobject at +0x28 and destroying the std::string at +0x0C, then notifying via thunk_MFC80_ord_764.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x0052ADB0": {
+    "name": "MapInsertOrThrow_0052ADB0",
+    "signature": "void* __thiscall fn_0052ADB0(void* self, void* key, const void* val)",
+    "summary": "Inserts an entry into the map at +0x04 using a key and value, throwing an exception if insertion fails, and returns a pointer to the mapped value (+0x28).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x0052EBA0": {

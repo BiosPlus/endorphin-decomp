@@ -1,0 +1,28 @@
+{
+  "va": "0x00500DA0",
+  "size": 198,
+  "orig_symbol": "sub_00500DA0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "SortedVector::find_string",
+  "class": "SortedVector",
+  "signature": "uint32_t* __thiscall sub_00500DA0(void* self, uint32_t* out_iter, uint32_t key)",
+  "summary": "Binary-searches a sorted string vector for key and returns an iterator to the matching element or end().",
+  "fields": [
+    {
+      "class": "SortedVector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin_ptr"
+    },
+    {
+      "class": "SortedVector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:21:40Z"
+}

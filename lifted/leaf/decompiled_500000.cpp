@@ -3816,3 +3816,58 @@ void fn_00508210(void* dst, void* src) {
     );
 }
 } // namespace lift_00508210
+
+// [0x00500DA0]
+namespace lift_00500DA0 {
+extern uint32_t ext_004FFE30(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5);
+extern uintptr_t mem_00925134;
+extern uintptr_t mem_00924EF4;
+
+// @name SortedVector::find_string
+// @class SortedVector
+// @summary Binary-searches a sorted string vector for key and returns an iterator to the matching element or end().
+// @field SortedVector +0x04 uint32_t begin_ptr
+// @field SortedVector +0x08 uint32_t end_ptr
+uint32_t* __thiscall sub_00500DA0(void* self, uint32_t* out_iter, uint32_t key) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t end_ptr = lift_field<uint32_t>(base, 0x08);
+    if (lift_field<uint32_t>(base, 0x04) > end_ptr) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    uint32_t begin_ptr = lift_field<uint32_t>(base, 0x04);
+    if (begin_ptr > lift_field<uint32_t>(base, 0x08)) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    uint32_t found = ext_004FFE30(begin_ptr, end_ptr, key, 0, 0);
+    uint32_t cur_end = lift_field<uint32_t>(base, 0x08);
+    if (lift_field<uint32_t>(base, 0x04) > cur_end) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    if (found != cur_end) {
+        if (!base) {
+            reinterpret_cast<void (*)()>(mem_00925134)();
+        }
+        if (found >= lift_field<uint32_t>(base, 0x08)) {
+            reinterpret_cast<void (*)()>(mem_00925134)();
+        }
+        bool less = reinterpret_cast<bool (*)(uint32_t, uint32_t)>(mem_00924EF4)(key, found);
+        if (!less) {
+            out_iter[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base));
+            out_iter[1] = found;
+            return out_iter;
+        }
+    }
+
+    uint32_t final_end = lift_field<uint32_t>(base, 0x08);
+    out_iter[0] = 0;
+    if (lift_field<uint32_t>(base, 0x04) > final_end) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    out_iter[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base));
+    out_iter[1] = final_end;
+    return out_iter;
+}
+} // namespace lift_00500DA0
