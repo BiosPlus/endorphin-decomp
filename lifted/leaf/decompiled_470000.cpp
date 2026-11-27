@@ -24,6 +24,7 @@ DWORD* __thiscall fn_0047A010(void* self, const DWORD* first, const DWORD* last,
 } // namespace lift_0044C4D0
 } // namespace lift_0047A010
 #include <cstring>
+#include <stdexcept>
 
 // [0x00479A90]
 namespace lift_00479A90 {
@@ -2586,3 +2587,148 @@ void* fn_00476050(void* self, void* out, const void* key) {
     return writeOut(lift_field<void*>(r, 0x00), lift_field<void*>(r, 0x04), 1);
 }
 } // namespace lift_00476050
+
+// [0x00473C70] sub_00473C70 (508 bytes)
+namespace lift_00473C70 {
+// Known callee 0x004727D0 (lifted): Unknown::createCopyRecord
+extern void* __stdcall ext_004727D0(uint32_t a1, uint32_t a2, uint32_t a3, const void* src, uint8_t a5);
+// Metadata-only callees (listed in CALLEES, never called by the disassembly; address taken only)
+extern void ext_0046FF90();
+extern void ext_00475A40();
+extern void ext_004EF730();
+// Metadata-only RDATA/IAT slots of the replaced throw path (address taken only)
+extern int mem_00924FE0;
+extern int mem_00924FE4;
+extern int mem_009251C4;
+// Unlifted callee 0x0046FFE0: tree rotate-left (thiscall: this in ecx, node as one stack arg)
+extern void ext_0046FFE0(void* self, void* node);
+// Unlifted callee 0x00470030: tree rotate-right (thiscall: this in ecx, node as one stack arg)
+extern void ext_00470030(void* self, void* node);
+
+namespace {
+
+// Red-black node layout (MSVC std::_Tree style): left +0x00, parent +0x04, right +0x08,
+// color +0x44 (0 = red, 1 = black), isnil +0x45.
+constexpr uint8_t kRed = 0;
+constexpr uint8_t kBlack = 1;
+
+inline uint32_t addr32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+inline void*& left(void* n) { return lift_field<void*>(n, 0x00); }
+inline void*& parent(void* n) { return lift_field<void*>(n, 0x04); }
+inline void*& right(void* n) { return lift_field<void*>(n, 0x08); }
+inline uint8_t& color(void* n) { return lift_field<uint8_t>(n, 0x44); }
+inline uint8_t& isnil(void* n) { return lift_field<uint8_t>(n, 0x45); }
+
+} // namespace
+
+// @name StringMapTree::insertNode_00473C70
+// @class StringMapTree
+// @summary Inserts a new node carrying value into the red-black tree (hint-based insert), rebalances, and returns the pair {tree, node} via out.
+// @field StringMapTree +0x04 void* head
+// @field StringMapTree +0x08 uint32_t size
+// @field StringMapNode +0x00 void* left
+// @field StringMapNode +0x04 void* parent
+// @field StringMapNode +0x08 void* right
+// @field StringMapNode +0x44 uint8_t color
+// @field StringMapNode +0x45 uint8_t isNil
+void* fn_00473C70(void* self, void* out, uint8_t insertLeft, void* hint, const void* value) {
+    // Metadata-only references (no runtime effect).
+    (void)&ext_0046FF90;
+    (void)&ext_00475A40;
+    (void)&ext_004EF730;
+    (void)&mem_00924FE0;
+    (void)&mem_00924FE4;
+    (void)&mem_009251C4;
+
+    if (lift_field<uint32_t>(self, 0x08) >= 0x4924923u) {
+        throw std::length_error("map/set<T> too long");
+    }
+
+    void* head = lift_field<void*>(self, 0x04);
+    void* node = ext_004727D0(addr32(head), addr32(hint), addr32(head), value, 0);
+    lift_field<uint32_t>(self, 0x08) += 1;
+
+    if (hint == head) {
+        parent(head) = node;
+        left(head) = node;
+        right(head) = node;
+    } else if (insertLeft == 0) {
+        right(hint) = node;
+        if (hint == right(head)) {
+            right(head) = node;
+        }
+    } else {
+        left(hint) = node;
+        if (hint == left(head)) {
+            left(head) = node;
+        }
+    }
+
+    void* z = node;
+    while (color(parent(z)) == kRed) {
+        void* p = parent(z);
+        void* g = parent(p);
+        if (p == left(g)) {
+            void* u = right(g);
+            if (color(u) == kRed) {
+                color(p) = kBlack;
+                color(u) = kBlack;
+                color(g) = kRed;
+                z = g;
+            } else {
+                if (z == right(p)) {
+                    z = p;
+                    ext_0046FFE0(self, z);
+                }
+                color(parent(z)) = kBlack;
+                void* gg = parent(parent(z));
+                color(gg) = kRed;
+                ext_00470030(self, gg);
+            }
+        } else {
+            void* u = left(g);
+            if (color(u) == kRed) {
+                color(p) = kBlack;
+                color(u) = kBlack;
+                color(g) = kRed;
+                z = g;
+            } else {
+                if (z == left(p)) {
+                    z = p;
+                    ext_00470030(self, z);
+                }
+                color(parent(z)) = kBlack;
+                void* gg = parent(parent(z));
+                color(gg) = kRed;
+
+                // Inline rotate-left about gg.
+                void* x = right(gg);
+                right(gg) = left(x);
+                void* xl = left(x);
+                if (isnil(xl) == 0) {
+                    parent(xl) = gg;
+                }
+                parent(x) = parent(gg);
+                void* h = lift_field<void*>(self, 0x04);
+                if (gg == parent(h)) {
+                    parent(h) = x;
+                } else if (gg == left(parent(gg))) {
+                    left(parent(gg)) = x;
+                } else {
+                    right(parent(gg)) = x;
+                }
+                left(x) = gg;
+                parent(gg) = x;
+            }
+        }
+    }
+
+    color(parent(lift_field<void*>(self, 0x04))) = kBlack;
+
+    lift_field<void*>(out, 0x00) = self;
+    lift_field<void*>(out, 0x04) = node;
+    return out;
+}
+} // namespace lift_00473C70

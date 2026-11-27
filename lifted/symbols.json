@@ -11392,6 +11392,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_00472EB0.",
     "lifted_path": "lifted/RuntimeEngine/auto_tiny.cpp"
   },
+  "0x00473C70": {
+    "name": "StringMapTree::insertNode_00473C70",
+    "class": "StringMapTree",
+    "signature": "inline uint32_t addr32(const void* p)",
+    "summary": "Inserts a new node carrying value into the red-black tree (hint-based insert), rebalances, and returns the pair {tree, node} via out.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00473E70": {
     "name": "RuntimeEngine::vfunc_1",
     "class": "RuntimeEngine",
