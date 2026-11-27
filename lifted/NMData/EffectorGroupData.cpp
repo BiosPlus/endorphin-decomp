@@ -130,3 +130,34 @@ void fn_0060D5A0(void* self) {
     ext_00406510(range, sret, range, begin, range, tail);
 }
 } // namespace lift_0060D5A0
+
+// [0x0060D500]
+namespace lift_0060D500 {
+// @name NMData::EffectorGroupData::vfunc_20
+// @class NMData::EffectorGroupData
+// @summary Returns (literal_A + this->field_0x04 + literal_B) as a std::string.
+// @field NMData::EffectorGroupData +0x04 std::string field_0x04
+
+extern const char mem_00972450[];
+extern const char mem_0093BF0C[];
+// MSVCP80 IAT slots used by the original (basic_string ctor / operator+ / dtor).
+extern void* mem_00924ECC;
+extern void* mem_00924FD0;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+// Original is __thiscall with a hidden return slot (std::string) as the first
+// stack argument; the trailing second stack argument is unused by the body.
+// Portable form: self is the EffectorGroupData instance, result is returned by value.
+// The MSVCP80 import calls (ctor, operator+ x2, dtor) are expressed with std::string.
+std::string NMData_EffectorGroupData_vfunc_20(const void* self) {
+    (void)&mem_00924ECC;
+    (void)&mem_00924FD0;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    std::string a(mem_00972450);
+    const std::string& name = lift_field<std::string>(self, 0x04);
+    std::string tmp = a + name;
+    return tmp + std::string(mem_0093BF0C);
+}
+} // namespace lift_0060D500

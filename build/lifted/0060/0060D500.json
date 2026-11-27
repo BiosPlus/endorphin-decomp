@@ -1,0 +1,22 @@
+{
+  "va": "0x0060D500",
+  "size": 157,
+  "orig_symbol": "NMData::EffectorGroupData::vfunc_20",
+  "src_path": "src/NMData/EffectorGroupData.cpp",
+  "lifted_path": "lifted/NMData/EffectorGroupData.cpp",
+  "name": "NMData::EffectorGroupData::vfunc_20",
+  "class": "NMData::EffectorGroupData",
+  "signature": "std::string NMData_EffectorGroupData_vfunc_20(const void* self)",
+  "summary": "Returns (literal_A + this-\u003efield_0x04 + literal_B) as a std::string.",
+  "fields": [
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:37:06Z"
+}

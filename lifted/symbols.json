@@ -47620,6 +47620,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
     "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
   },
+  "0x0060D500": {
+    "name": "NMData::EffectorGroupData::vfunc_20",
+    "class": "NMData::EffectorGroupData",
+    "signature": "std::string NMData_EffectorGroupData_vfunc_20(const void* self)",
+    "summary": "Returns (literal_A + this-\u003efield_0x04 + literal_B) as a std::string.",
+    "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
+  },
   "0x0060D5A0": {
     "name": "NMData::EffectorGroupData::vfunc_19",
     "class": "NMData::EffectorGroupData",
