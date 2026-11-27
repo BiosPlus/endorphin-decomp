@@ -78188,6 +78188,12 @@
     "summary": "Computes tmp[i] = mem_00B61F8C[i] * x + mem_00B61F7C[i] and returns the result of the function pointer at mem_00B61FA0 applied to tmp.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007FB7E0": {
+    "name": "clampAndCompareFloatPair",
+    "signature": "int fn_007FB7E0(void* eax, void* ecx, void* edx, void* esi, float arg)",
+    "summary": "Scales -ecx.f08 by stack float, clamps *edx or *esi against it by sign of eax.f08, returns (*esi \u003c= *edx).",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007FC290": {
     "name": "copyVec3Float",
     "signature": "void copyVec3Float(const float* src, float* dst)",

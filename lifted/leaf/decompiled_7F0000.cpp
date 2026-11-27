@@ -602,3 +602,36 @@ float fn_007FA1B0(float x) {
     return reinterpret_cast<float(__cdecl*)(float*)>(mem_00B61FA0)(tmp);
 }
 } // namespace lift_007FA1B0
+
+// [0x007FB7E0] sub_007FB7E0 (123 bytes)
+namespace lift_007FB7E0 {
+// @name clampAndCompareFloatPair
+// @summary Scales -ecx.f08 by stack float, clamps *edx or *esi against it by sign of eax.f08, returns (*esi <= *edx).
+// @field Unknown +0x08 float field_0x08
+int fn_007FB7E0(void* eax, void* ecx, void* edx, void* esi, float arg) {
+    const float a = lift_field<float>(eax, 0x08);
+    const float c = lift_field<float>(ecx, 0x08);
+    const float b = -c * arg;
+
+    if (a > 0.0f) {
+        float& d = lift_field<float>(edx, 0);
+        if (d > b) {
+            d = b;
+        }
+    } else if (a < 0.0f) {
+        float& s = lift_field<float>(esi, 0);
+        if (s < b) {
+            s = b;
+        }
+    } else {
+        // a == 0 or unordered (NaN)
+        if (0.0f < c) {
+            return 0;
+        }
+    }
+
+    const float s = lift_field<float>(esi, 0);
+    const float d = lift_field<float>(edx, 0);
+    return (s <= d) ? 1 : 0;
+}
+} // namespace lift_007FB7E0

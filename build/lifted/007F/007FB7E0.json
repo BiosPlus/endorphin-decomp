@@ -1,0 +1,21 @@
+{
+  "va": "0x007FB7E0",
+  "size": 123,
+  "orig_symbol": "sub_007FB7E0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "clampAndCompareFloatPair",
+  "signature": "int fn_007FB7E0(void* eax, void* ecx, void* edx, void* esi, float arg)",
+  "summary": "Scales -ecx.f08 by stack float, clamps *edx or *esi against it by sign of eax.f08, returns (*esi \u003c= *edx).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:50:59Z"
+}
