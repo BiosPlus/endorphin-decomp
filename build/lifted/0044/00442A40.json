@@ -1,0 +1,28 @@
+{
+  "va": "0x00442A40",
+  "size": 161,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_6",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_6",
+  "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+  "signature": "uint8_t __thiscall fn_00442A40(void* self, uint32_t flags, int32_t x, int32_t y)",
+  "summary": "Handles mouse/input event in WaitState, dispatching to owner or switching state on Alt+click",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "owner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:17:51Z"
+}

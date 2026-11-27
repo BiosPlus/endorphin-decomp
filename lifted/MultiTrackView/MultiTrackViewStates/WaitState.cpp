@@ -215,3 +215,63 @@ BOOLEAN fn_004430A0(void* self, int32_t arg1, int32_t arg2, int32_t arg3) {
     return 1;
 }
 } // namespace lift_004430A0
+
+// [0x00442A40]
+namespace lift_00442A40 {
+extern void (__thiscall *ext_004429C0)(void* self);
+extern uint32_t (__thiscall *ext_0043D620)(void* self, int32_t* pt);
+extern uint8_t (__thiscall *ext_0041C880)(void* self, uint32_t index);
+extern void (__thiscall *ext_0043C950)(void* self, uint32_t hit, uint32_t flags, int32_t x, int32_t y);
+extern void* ext_00412F50;
+extern void* ext_004132D0;
+extern void* ext_0043C920;
+extern void* ext_0043C9B0;
+extern void* ext_0043DA60;
+extern void* ext_0043DC90;
+extern uint32_t mem_009256E4;
+extern uint32_t mem_0092568C;
+
+// @name MultiTrackView::MultiTrackViewStates::WaitState::vfunc_6
+// @class MultiTrackView::MultiTrackViewStates::WaitState
+// @summary Handles mouse/input event in WaitState, dispatching to owner or switching state on Alt+click
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x04 void* field_0x04
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x08 void* owner
+uint8_t __thiscall fn_00442A40(void* self, uint32_t flags, int32_t x, int32_t y) {
+    int32_t pt[2] = {x, y};
+    ext_004429C0(self);
+
+    void* owner = lift_field<void*>(self, 0x8);
+    if (pt[0] <= lift_field<int32_t>(owner, 0xfc)) {
+        ext_0043D620(owner, pt);
+        owner = lift_field<void*>(self, 0x8);
+        void** vtable = lift_field<void**>(owner, 0x0);
+        auto vfunc_14c = reinterpret_cast<void(__thiscall*)(void*, int32_t*, uint32_t)>(
+            reinterpret_cast<uintptr_t>(vtable[0x14c / 4]));
+        vfunc_14c(owner, pt, flags);
+    } else {
+        using GetAsyncKeyStateFn = int16_t(__stdcall*)(int);
+        auto getAsyncKeyState = reinterpret_cast<GetAsyncKeyStateFn>(static_cast<uintptr_t>(mem_009256E4));
+        if (((static_cast<uint32_t>(getAsyncKeyState(0x12)) >> 15) & 1) != 0 && (flags & 4) == 0) {
+            ext_0041C880(lift_field<void*>(self, 0x4), 2);
+        } else if (((static_cast<uint32_t>(getAsyncKeyState(0x12)) >> 15) & 1) != 0 && (flags & 4) != 0) {
+            ext_0041C880(lift_field<void*>(self, 0x4), 3);
+        }
+    }
+
+    uint32_t hit = ext_0043D620(lift_field<void*>(self, 0x8), pt);
+    if (hit != 0) {
+        ext_0043C950(lift_field<void*>(self, 0x8), hit, flags, pt[0], pt[1]);
+    }
+    volatile bool unused_refs = false;
+    if (unused_refs) {
+        (void)ext_00412F50;
+        (void)ext_004132D0;
+        (void)ext_0043C920;
+        (void)ext_0043C9B0;
+        (void)ext_0043DA60;
+        (void)ext_0043DC90;
+        (void)mem_0092568C;
+    }
+    return 1;
+}
+} // namespace lift_00442A40

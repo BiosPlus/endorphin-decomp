@@ -10,9 +10,9 @@
 // Recovered field layout for MultiTrackView::MultiTrackViewStates::WaitState:
 namespace lifted_layout {
 struct MultiTrackView_MultiTrackViewStates_WaitState_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x00442B20)
+    // +0x4   void*                    field_0x04  (evidence: 0x00442A40, 0x00442B20)
     // +0x8   void*                    field_0x08  (evidence: 0x00442B20, 0x00442DC0, 0x00443200) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    owner  (evidence: 0x004430A0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    owner  (evidence: 0x00442A40, 0x004430A0) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint8_t                  field_0x0c  (evidence: 0x00442B20, 0x00443200)
     // +0xD   uint8_t                  field_0x0d  (evidence: 0x00442DC0)
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00442DC0, 0x00443200)
