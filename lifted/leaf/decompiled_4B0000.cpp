@@ -1642,3 +1642,33 @@ void fn_004B6760(void* self) {
     lift_field<uint32_t>(self, 0x1C) = 0;
 }
 } // namespace lift_004B6760
+
+// [0x004BC430] sub_004BC430 (108 bytes)
+namespace lift_004BC430 {
+// Known callee 0x004026E0: std_vector_string_Tidy (Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.)
+extern void ext_004026E0(void* this_ptr);
+// Known callee 0x004BBC90: StringPtrVector::ClearAndFree (Destroys all string pointers in [begin, end), frees the begin buffer if non-null, and zeroes begin/end/capacity.)
+extern void ext_004BBC90(void* this_ptr);
+// Known callee 0x006246B0: OwnedPointerRange::clearAndFreeChecked (Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.)
+extern void ext_006246B0(void* this_ptr);
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* this_ptr);
+
+// @name EngineData::destructorBody
+// @class EngineData
+// @summary Destroys the owned members at +0x70, +0x60 and +0x50 in that order, then rebases the object vtable to PropertySource via ext_0065F440.
+// @field EngineData +0x00 uint32_t vtable_ptr
+// @field EngineData +0x50 std::vector<std::string> field_0x50
+// @field EngineData +0x60 StringPtrVector field_0x60
+// @field EngineData +0x70 OwnedPointerRange field_0x70
+void fn_004BC430(void* self) {
+    // Primary vtable of EngineData (0x009441E4) is installed before member teardown.
+    lift_field<uint32_t>(self, 0x0) = 0x009441E4u;
+
+    ext_006246B0(static_cast<char*>(self) + 0x70);
+    ext_004BBC90(static_cast<char*>(self) + 0x60);
+    ext_004026E0(static_cast<char*>(self) + 0x50);
+
+    ext_0065F440(self);
+}
+} // namespace lift_004BC430

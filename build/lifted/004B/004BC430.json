@@ -1,0 +1,40 @@
+{
+  "va": "0x004BC430",
+  "size": 108,
+  "orig_symbol": "sub_004BC430",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "EngineData::destructorBody",
+  "class": "EngineData",
+  "signature": "void fn_004BC430(void* self)",
+  "summary": "Destroys the owned members at +0x70, +0x60 and +0x50 in that order, then rebases the object vtable to PropertySource via ext_0065F440.",
+  "fields": [
+    {
+      "class": "EngineData",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_ptr"
+    },
+    {
+      "class": "EngineData",
+      "offset": "+0x50",
+      "type": "std::vector\u003cstd::string\u003e",
+      "name": "field_0x50"
+    },
+    {
+      "class": "EngineData",
+      "offset": "+0x60",
+      "type": "StringPtrVector",
+      "name": "field_0x60"
+    },
+    {
+      "class": "EngineData",
+      "offset": "+0x70",
+      "type": "OwnedPointerRange",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:55Z"
+}
