@@ -14195,6 +14195,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004B5030 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x004B5180": {
+    "name": "VectorEraseElement",
+    "signature": "extern \"C\" VectorIterator* __thiscall fn_004B5180(void* self, VectorIterator* out_iter, void* container, uint32_t* elem_ptr)",
+    "summary": "Erases an element from a pointer vector, destroying the object and shifting remaining elements.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B51F0": {
     "name": "sub_004B51F0",
     "class": "Vector",
