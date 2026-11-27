@@ -2652,3 +2652,18 @@ extern void* fn_0062C510(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2
     return self;
 }
 } // namespace lift_0062C510
+
+// [0x0062C4D0] sub_0062C4D0 (54 bytes)
+namespace lift_0062C4D0 {
+// Known callee 0x0062C3F0: MetaBodySensor_sub_0062C3F0 (Constructor for a MetaBodySensor-derived class (vtable 0x0097900C) that initializes float fields at +0x30..+0x38, stores arg2 at +0x3C, and zeroes fields at +0x44..+0x4C.)
+extern void* ext_0062C3F0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name ctor_wrap_0062C4D0
+// @summary Forwards four args to the base constructor ext_0062C3F0, then sets the object vtable to 0x00979084 and returns this.
+// @field Object +0x00 uint32_t vtable
+void* fn_0062C4D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    ext_0062C3F0(self, arg0, arg1, arg2, arg3);
+    lift_field<uint32_t>(self, 0x00) = 0x00979084u;
+    return self;
+}
+} // namespace lift_0062C4D0

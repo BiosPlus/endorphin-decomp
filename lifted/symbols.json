@@ -41867,6 +41867,12 @@
     "summary": "Constructor for a MetaBodySensor-derived class (vtable 0x0097900C) that initializes float fields at +0x30..+0x38, stores arg2 at +0x3C, and zeroes fields at +0x44..+0x4C.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062C4D0": {
+    "name": "ctor_wrap_0062C4D0",
+    "signature": "void* fn_0062C4D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards four args to the base constructor ext_0062C3F0, then sets the object vtable to 0x00979084 and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062C510": {
     "name": "Sub_0062C510::Sub_0062C510",
     "class": "Sub_0062C510",
