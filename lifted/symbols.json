@@ -57879,6 +57879,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F40C0 (EffectorGroup::vfunc_22).",
     "lifted_path": "lifted/classes/EffectorGroup.cpp"
   },
+  "0x005F4480": {
+    "name": "ObjectList::applyFloatToFiltered",
+    "class": "ObjectList",
+    "signature": "void __fastcall fn_005F4480(uint8_t* self, void* /*edx*/, float value)",
+    "summary": "For each object in vector at +0x2c, calls vtable slot 0x64 with a float if the global filter set is null or contains the object",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005F4930": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e",

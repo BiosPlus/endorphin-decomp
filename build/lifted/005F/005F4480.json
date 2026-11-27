@@ -1,0 +1,22 @@
+{
+  "va": "0x005F4480",
+  "size": 236,
+  "orig_symbol": "sub_005F4480",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "ObjectList::applyFloatToFiltered",
+  "class": "ObjectList",
+  "signature": "void __fastcall fn_005F4480(uint8_t* self, void* /*edx*/, float value)",
+  "summary": "For each object in vector at +0x2c, calls vtable slot 0x64 with a float if the global filter set is null or contains the object",
+  "fields": [
+    {
+      "class": "ObjectList",
+      "offset": "+0x2C",
+      "type": "VecHdr",
+      "name": "items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:45:09Z"
+}

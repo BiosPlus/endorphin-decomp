@@ -2008,3 +2008,47 @@ void* __cdecl fn_005FC050(void* out)
     return out;
 }
 } // namespace lift_005FC050
+
+// [0x005F4480]
+namespace lift_005F4480 {
+extern uint32_t ext_005F3E70(void* iter_container, void* first, void* expected_container, void* last, void* key_ptr, void* pred);
+extern uint8_t* mem_00B46790;
+extern uint8_t mem_00925134[];
+
+struct VecHdr {
+    void* proxy;
+    void** first;
+    void** last;
+};
+
+// @name ObjectList::applyFloatToFiltered
+// @class ObjectList
+// @summary For each object in vector at +0x2c, calls vtable slot 0x64 with a float if the global filter set is null or contains the object
+// @field ObjectList +0x2c VecHdr items
+void __fastcall fn_005F4480(uint8_t* self, void* /*edx*/, float value) {
+    (void)&mem_00925134;
+    VecHdr* vec =reinterpret_cast<VecHdr*>(self + 0x2c);
+    void** it = vec->first;
+    void** end = vec->last;
+    while (it != end) {
+        uint8_t* filter = mem_00B46790;
+        bool doCall = true;
+        if (filter) {
+            VecHdr* fv = reinterpret_cast<VecHdr*>(filter);
+            uint32_t bits;
+            __builtin_memcpy(&bits, &value, 4);
+            uint8_t found = (uint8_t)ext_005F3E70(filter, fv->first, filter, fv->last,
+                                                  it, reinterpret_cast<void*>((uintptr_t)bits));
+            doCall = found != 0;
+        }
+        if (doCall) {
+            void* obj = *it;
+            using Fn = void(__thiscall*)(void*, float);
+            Fn f = reinterpret_cast<Fn>((*reinterpret_cast<void***>(obj))[0x64 / 4]);
+            f(obj, value);
+        }
+        ++it;
+        end = vec->last;
+    }
+}
+} // namespace lift_005F4480
