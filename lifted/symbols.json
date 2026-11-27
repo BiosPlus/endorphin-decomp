@@ -75305,6 +75305,13 @@
     "summary": "36-byte read-only lookup table (not executable code): 22 index/value bytes followed by 9 0x90 padding bytes.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x008115A0": {
+    "name": "Unknown::EnumerateIndexedFlags",
+    "class": "Unknown",
+    "signature": "int fn_008115A0(void* self, uint8_t* out, const uint32_t* table, uint32_t flags, int32_t maxCount)",
+    "summary": "Walks indices from self+0x0C, calling self+0x04(self, \u0026index) each step; writes each visited index byte to out, NUL-terminates out, returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008522E0": {
     "name": "fn_008522E0",
     "signature": "void fn_008522E0(uint8_t b19, uint8_t b1a, uint8_t b1b, uint8_t b1c)",

@@ -225,6 +225,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (pointer to inner object)  (evidence: 0x00788E50, 0x00810460) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    owner  (evidence: 0x00524BC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    peer  (evidence: 0x00528B90) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void(*)(void*,int32_t*)  pfnCallback  (evidence: 0x008115A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   float* field_0x04 (begin pointer)  (evidence: 0x00607F20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (begin pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (self -> link pointer)  (evidence: 0x00810200) // CONFLICT: multiple definitions at +0x4
@@ -337,6 +338,7 @@ struct Unknown_Fields {
     // +0xC   void*                    capacity  (evidence: 0x00503BC0, 0x0050B960, 0x0050C4D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 counter  (evidence: 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
+    // +0xC   int32_t                  currentIndex  (evidence: 0x008115A0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0C (count, decremented)  (evidence: 0x00640CD0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 embedded_array_base  (evidence: 0x006E99C0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (capacity end)  (evidence: 0x005053D0) // CONFLICT: multiple definitions at +0xC

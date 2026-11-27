@@ -374,3 +374,36 @@ int fn_008101C0(void* self) {
     return static_cast<int>((flags >> 4) & 1u);
 }
 } // namespace lift_008101C0
+
+// [0x008115A0] sub_008115A0 (112 bytes)
+namespace lift_008115A0 {
+// @name Unknown::EnumerateIndexedFlags
+// @class Unknown
+// @summary Walks indices from self+0x0C, calling self+0x04(self, &index) each step; writes each visited index byte to out, NUL-terminates out, returns 1.
+// @field Unknown +0x04 void(*)(void*,int32_t*) pfnCallback
+// @field Unknown +0x0C int32_t currentIndex
+int fn_008115A0(void* self, uint8_t* out, const uint32_t* table, uint32_t flags, int32_t maxCount) {
+    using Callback = void (*)(void*, int32_t*);
+
+    int32_t index = lift_field<int32_t>(self, 0x0C);
+    int32_t count = 0;
+    const uint32_t bit5 = (flags >> 5) & 1u;
+
+    for (;;) {
+        if (maxCount != 0 && count >= maxCount) break;
+        if (index == -1) break;
+
+        const uint32_t isZero = (table[index] == 0) ? 1u : 0u;
+        if ((isZero ^ bit5) != 0) break;
+
+        if (out) out[count] = static_cast<uint8_t>(index);
+
+        auto callback = lift_field<Callback>(self, 0x04);
+        callback(self, &index);
+        ++count;
+    }
+
+    if (out) out[count] = 0;
+    return 1;
+}
+} // namespace lift_008115A0
