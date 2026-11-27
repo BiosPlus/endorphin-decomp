@@ -1,0 +1,46 @@
+{
+  "va": "0x0060C360",
+  "size": 112,
+  "orig_symbol": "sub_0060C360",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "CopyCtor_0060C360",
+  "class": "Class_0060C360",
+  "signature": "void* fn_0060C360(void* self, const void* other)",
+  "summary": "Copy constructor: runs base copy ctor 0x0060BBA0, sets vtable 0x00972234, copies +0x5c/+0x7c/+0x80 floats/dword and copy-constructs the std::string at +0x60; returns this.",
+  "fields": [
+    {
+      "class": "Class_0060C360",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Class_0060C360",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Class_0060C360",
+      "offset": "+0x60",
+      "type": "std::string",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Class_0060C360",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "Class_0060C360",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:23Z"
+}

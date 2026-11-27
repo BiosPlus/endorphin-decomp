@@ -1318,3 +1318,36 @@ extern void __fastcall fn_0060BA10(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_0060BA10
+
+// [0x0060C360] sub_0060C360 (112 bytes)
+namespace lift_0060C360 {
+// Known callee 0x0060BBA0: CopyCtor_0060BBA0 (Copy constructor calling base copy constructor 0x0060B990, setting vtable 0x0097215C, and copying fields at +0x44..+0x58.)
+extern void* ext_0060BBA0(void* self, const void* other);
+extern int mem_00924FE0;
+
+// @name CopyCtor_0060C360
+// @class Class_0060C360
+// @summary Copy constructor: runs base copy ctor 0x0060BBA0, sets vtable 0x00972234, copies +0x5c/+0x7c/+0x80 floats/dword and copy-constructs the std::string at +0x60; returns this.
+// @field Class_0060C360 +0x00 uint32_t vtable
+// @field Class_0060C360 +0x5c uint32_t field_0x5c
+// @field Class_0060C360 +0x60 std::string field_0x60
+// @field Class_0060C360 +0x7c float field_0x7c
+// @field Class_0060C360 +0x80 float field_0x80
+void* fn_0060C360(void* self, const void* other) {
+    ext_0060BBA0(self, other);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00972234u;
+    lift_field<uint32_t>(self, 0x5c) = lift_field<const uint32_t>(other, 0x5c);
+
+    // The std::string copy constructor is imported from MSVCP80 (mem_00924FE0);
+    // it is performed here as a placement copy-construction of the string at +0x60.
+    (void)&mem_00924FE0;
+    new (&lift_field<std::string>(self, 0x60))
+        std::string(lift_field<const std::string>(other, 0x60));
+
+    lift_field<float>(self, 0x7c) = lift_field<const float>(other, 0x7c);
+    lift_field<float>(self, 0x80) = lift_field<const float>(other, 0x80);
+
+    return self;
+}
+} // namespace lift_0060C360

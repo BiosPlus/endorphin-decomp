@@ -39082,6 +39082,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0060E7B0 (NMData::AxisDefineSensorData::vfunc_2).",
     "lifted_path": "lifted/NMData/EffectorBaseData.cpp"
   },
+  "0x0060C360": {
+    "name": "CopyCtor_0060C360",
+    "class": "Class_0060C360",
+    "signature": "void* fn_0060C360(void* self, const void* other)",
+    "summary": "Copy constructor: runs base copy ctor 0x0060BBA0, sets vtable 0x00972234, copies +0x5c/+0x7c/+0x80 floats/dword and copy-constructs the std::string at +0x60; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060C490": {
     "name": "NMData::EffectorWithModesData::vfunc_19",
     "class": "NMData::EffectorWithModesData",
