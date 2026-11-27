@@ -87125,3 +87125,62 @@ uint8_t __stdcall fn_0046E090(void** holder, void* unused) {
     return result;
 }
 } // namespace lift_0046E090
+
+// [0x0046CD70] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_47 (162 bytes)
+namespace lift_0046CD70 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(obj, throwInfo))
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+// Known callee 0x0046C3C0: DerivedException::DerivedException
+extern void* ext_0046C3C0(void* self);
+// Unlifted callees (sub_0046C070 / sub_006720A0) kept as ext_ references.
+extern uint8_t ext_0046C070(void* self);
+extern void ext_006720A0(void* self, uint32_t value);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_47
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the pointer at +0x00 (throws DerivedException if null), converts sub_0046C070's bool result into a temporary value object, assigns it into self, releases the temporary's inner object, then forwards vfunc slot 0xBC of the object at +0x04 with self as argument.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+uint32_t fn_0046CD70(void* self) {
+    // mov ecx, [esi]; test ecx, ecx; je throw
+    void* source = lift_field<void*>(self, 0x00);
+    if (source == nullptr) {
+        // Build a DerivedException on the stack and throw it.
+        alignas(8) uint8_t exception[0x10] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0;
+    }
+
+    // call sub_0046C070 (this = source); store its low byte as the converted value.
+    uint8_t flag = ext_0046C070(source);
+
+    // mov eax, dword ptr [esp+0x44] after "mov byte ptr [esp+0x44], al":
+    // the low byte of the saved argument slot is replaced by flag, the rest is unchanged.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    slot = (slot & ~0xFFu) | flag;
+
+    // Temporary value object (8 bytes: field_0x00 at +0, field_0x04 at +4).
+    alignas(8) uint8_t temp[8] = {};
+    ext_006720A0(temp, slot);
+
+    // assign temp into self
+    ext_0041CF50(self, temp);
+
+    // Release temp's field_0x04 via vtable slot 0x78 with &temp as argument.
+    void* inner = lift_field<void*>(temp, 0x04);
+    if (inner != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        using ReleaseFn = void (*)(void* self, void* other);
+        reinterpret_cast<ReleaseFn>(lift_field<void*>(vtbl, 0x78))(inner, temp);
+    }
+
+    // mov ecx, [esi+4]; mov eax,[ecx]; call [eax+0xbc] with esi as argument.
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVtbl = *reinterpret_cast<void***>(target);
+    using ForwardFn = uint32_t (*)(void* self, void* arg);
+    return reinterpret_cast<ForwardFn>(lift_field<void*>(targetVtbl, 0xBC))(target, self);
+}
+} // namespace lift_0046CD70

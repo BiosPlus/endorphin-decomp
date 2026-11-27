@@ -9102,6 +9102,13 @@
     "summary": "Reads the ImageExporter pointer held by the value-pointer argument and returns its isEnabled result; throws if that pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046CD70": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e",
+    "signature": "uint32_t fn_0046CD70(void* self)",
+    "summary": "Reads the pointer at +0x00 (throws DerivedException if null), converts sub_0046C070's bool result into a temporary value object, assigns it into self, releases the temporary's inner object, then forwards vfunc slot 0xBC of the object at +0x04 with self as argument.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046CE20": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
