@@ -1,0 +1,52 @@
+{
+  "va": "0x00666C00",
+  "size": 132,
+  "orig_symbol": "sub_00666C00",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "TreeIterator::operator--",
+  "class": "TreeIterator",
+  "signature": "void __thiscall sub_00666C00(void* self)",
+  "summary": "Decrements a red-black tree iterator to the previous node, validating against nil/end.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "container"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "uintptr_t",
+      "name": "ptr"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "uintptr_t",
+      "name": "parent"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "uintptr_t",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "isnil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:31:42Z"
+}

@@ -3463,3 +3463,66 @@ extern void __cdecl fn_00664E40(CopyResult* out, const char* begin, const char* 
     out->container = container;
 }
 } // namespace lift_00664E40
+
+// [0x00666C00]
+namespace lift_00666C00 {
+// @name TreeIterator::operator--
+// @class TreeIterator
+// @summary Decrements a red-black tree iterator to the previous node, validating against nil/end.
+// @field TreeIterator +0x00 uint32_t container
+// @field TreeIterator +0x04 uintptr_t ptr
+// @field TreeNode +0x00 uintptr_t left
+// @field TreeNode +0x04 uintptr_t parent
+// @field TreeNode +0x08 uintptr_t right
+// @field TreeNode +0x39 uint8_t isnil
+
+
+extern uintptr_t mem_00925134; // MSVCR80!_invalid_parameter_noinfo
+
+void __thiscall sub_00666C00(void* self) {
+    using InvalidParamFn = void(__cdecl*)();
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(mem_00925134);
+
+    if (lift_field<uint32_t>(self, 0x0) == 0) {
+        invalid_param();
+    }
+
+    uintptr_t ptr = lift_field<uintptr_t>(self, 0x4);
+    if (lift_field<uint8_t>(reinterpret_cast<void*>(ptr), 0x39) != 0) {
+        ptr = lift_field<uintptr_t>(reinterpret_cast<void*>(ptr), 0x8);
+        lift_field<uintptr_t>(self, 0x4) = ptr;
+        if (lift_field<uint8_t>(reinterpret_cast<void*>(ptr), 0x39) != 0) {
+            invalid_param();
+        }
+        return;
+    }
+
+    uintptr_t left = lift_field<uintptr_t>(reinterpret_cast<void*>(ptr), 0x0);
+    if (lift_field<uint8_t>(reinterpret_cast<void*>(left), 0x39) == 0) {
+        uintptr_t right = lift_field<uintptr_t>(reinterpret_cast<void*>(left), 0x8);
+        while (lift_field<uint8_t>(reinterpret_cast<void*>(right), 0x39) == 0) {
+            left = right;
+            right = lift_field<uintptr_t>(reinterpret_cast<void*>(left), 0x8);
+        }
+        lift_field<uintptr_t>(self, 0x4) = left;
+        return;
+    }
+
+    uintptr_t parent = lift_field<uintptr_t>(reinterpret_cast<void*>(ptr), 0x4);
+    while (lift_field<uint8_t>(reinterpret_cast<void*>(parent), 0x39) == 0) {
+        uintptr_t cur = lift_field<uintptr_t>(self, 0x4);
+        if (cur != lift_field<uintptr_t>(reinterpret_cast<void*>(parent), 0x0)) {
+            break;
+        }
+        lift_field<uintptr_t>(self, 0x4) = parent;
+        parent = lift_field<uintptr_t>(reinterpret_cast<void*>(parent), 0x4);
+    }
+
+    uintptr_t cur = lift_field<uintptr_t>(self, 0x4);
+    if (lift_field<uint8_t>(reinterpret_cast<void*>(cur), 0x39) != 0) {
+        invalid_param();
+        return;
+    }
+    lift_field<uintptr_t>(self, 0x4) = parent;
+}
+} // namespace lift_00666C00
