@@ -1965,3 +1965,42 @@ void __thiscall fn_0045BE30(void* self) {
     send(lift_field<uint32_t>(self, 0x20), 0x1114, 0, r);
 }
 } // namespace lift_0045BE30
+
+// [0x0045F4B0]
+namespace lift_0045F4B0 {
+extern void* ext_0043D780();
+
+// @name InitDualTreeAndPair
+// @summary Initializes two tree sentinel heads at +0x04/+0x10 with zeroed sizes and stores two 32-bit arguments at +0x18/+0x1C.
+// @field unknown +0x04 void* field_0x04
+// @field unknown +0x08 uint32_t field_0x08
+// @field unknown +0x10 void* field_0x10
+// @field unknown +0x14 uint32_t field_0x14
+// @field unknown +0x18 uint32_t field_0x18
+// @field unknown +0x1C uint32_t field_0x1C
+void* __thiscall fn_0045F4B0(void* self, uint32_t arg0, uint32_t arg1) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    void* head0 = ext_0043D780();
+    *reinterpret_cast<void**>(base + 0x04) = head0;
+    *reinterpret_cast<uint8_t*>(static_cast<uint8_t*>(head0) + 0x15) = 1;
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(head0) + 0x04) = head0;
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(head0) + 0x00) = head0;
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(head0) + 0x08) = head0;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = 0;
+
+    uint8_t* second = base + 0x0C;
+    void* head1 = ext_0043D780();
+    *reinterpret_cast<void**>(second + 0x04) = head1;
+    *reinterpret_cast<uint8_t*>(static_cast<uint8_t*>(head1) + 0x15) = 1;
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(head1) + 0x04) = head1;
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(head1) + 0x00) = head1;
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(head1) + 0x08) = head1;
+    *reinterpret_cast<uint32_t*>(second + 0x08) = 0;
+
+    *reinterpret_cast<uint32_t*>(base + 0x1C) = arg1;
+    *reinterpret_cast<uint32_t*>(base + 0x18) = arg0;
+
+    return self;
+}
+} // namespace lift_0045F4B0

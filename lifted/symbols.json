@@ -5292,6 +5292,12 @@
     "summary": "Recursively traverses a node hierarchy, dynamically casting each node and invoking a virtual method if cast succeeds.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00446430": {
+    "name": "propagateNodeFlagRecursive",
+    "signature": "void __thiscall fn_00446430(void* self, void* node, DWORD arg1)",
+    "summary": "Dynamically cast node, invoke virtual method 0x2C with flag 0x80000 and set flag on subobject, then recurse on children",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004464D0": {
     "name": "traverseAndApplyToSubobject",
     "signature": "void __thiscall fn_004464D0(void* self, void* node, uint32_t arg2)",
@@ -7646,6 +7652,12 @@
     "signature": "extern \"C\" void __fastcall fn_0045E930(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x258 and tail-calls sub_0045E690.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
+  "0x0045F4B0": {
+    "name": "InitDualTreeAndPair",
+    "signature": "void* __thiscall fn_0045F4B0(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Initializes two tree sentinel heads at +0x04/+0x10 with zeroed sizes and stores two 32-bit arguments at +0x18/+0x1C.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
   "0x0045F600": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_1_off_248",
