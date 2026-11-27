@@ -10,11 +10,11 @@
 // Recovered field layout for NMData::SensorData:
 namespace lifted_layout {
 struct NMData_SensorData_Fields {
-    // +0x14  std::string              field_0x14  (evidence: 0x0060E540)
+    // +0x14  std::string              field_0x14  (evidence: 0x0060E540, 0x0060E590)
     // +0xE8  int32_t                  field_0xe8  (evidence: 0x0060E540)
-    // +0x154 std::string              field_0x154  (evidence: 0x0060E540)
+    // +0x154 std::string              field_0x154  (evidence: 0x0060E540, 0x0060E590)
     // +0x170 uint32_t                 field_0x170  (evidence: 0x0060E540)
-    // +0x174 float                    field_0x174  (evidence: 0x0060E540)
-    // +0x178 float                    field_0x178  (evidence: 0x0060E540)
+    // +0x174 float                    field_0x174  (evidence: 0x0060E540, 0x0060E590)
+    // +0x178 float                    field_0x178  (evidence: 0x0060E540, 0x0060E590)
 };
 } // namespace lifted_layout

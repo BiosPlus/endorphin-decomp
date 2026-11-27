@@ -1,0 +1,40 @@
+{
+  "va": "0x0060E590",
+  "size": 240,
+  "orig_symbol": "NMData::SensorData::vfunc_22",
+  "src_path": "src/NMData/SensorData.cpp",
+  "lifted_path": "lifted/NMData/SensorData.cpp",
+  "name": "NMData::SensorData::vfunc_22",
+  "class": "NMData::SensorData",
+  "signature": "void* __thiscall fn_0060E590(void* self, void* target)",
+  "summary": "Serializes SensorData string fields and non-default float range (0x174, 0x178) into the target node.",
+  "fields": [
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x14",
+      "type": "std::string",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x154",
+      "type": "std::string",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "field_0x174"
+    },
+    {
+      "class": "NMData::SensorData",
+      "offset": "+0x178",
+      "type": "float",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:20:04Z"
+}
