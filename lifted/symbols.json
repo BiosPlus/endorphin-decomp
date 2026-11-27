@@ -22421,6 +22421,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050C6C0": {
+    "name": "sub_0050C6C0",
+    "signature": "uint8_t* fn_0050C6C0(uint8_t* begin, uint32_t count, const void* rhs)",
+    "summary": "Auto-lifted identical-shape clone of 0x00501090 (copyConstructElementRangeEnd).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050C770": {
     "name": "NMData::Task::~Task (scalar deleting destructor)",
     "class": "NMData::Task",
@@ -27528,6 +27534,13 @@
     "signature": "extern \"C\" void __fastcall fn_00545A70(void* self)",
     "summary": "Runs the member-subobject teardown at this+0x9C, then the base teardown on this (MSVC EH-guarded).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x00545AC0": {
+    "name": "ResizeTool::vfunc_31",
+    "class": "ResizeTool",
+    "signature": "inline Fn vslot(void* obj, std::size_t index)",
+    "summary": "Auto-lifted identical-shape clone of 0x00547110 (TranslateTool::vfunc_31).",
+    "lifted_path": "lifted/classes/ResizeTool.cpp"
   },
   "0x00545B50": {
     "name": "ResizeTool::vfunc_26",
@@ -57769,6 +57782,12 @@
     "name": "DestroyStringRange",
     "signature": "void fn_00688BE0(uint8_t* begin, uint8_t* end)",
     "summary": "Destroys the std::string member (at +0x08) of each 0x24-byte element in [begin, end).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00688C10": {
+    "name": "sub_00688C10",
+    "signature": "uint8_t* fn_00688C10(uint8_t* begin, uint32_t count, const void* rhs)",
+    "summary": "Auto-lifted identical-shape clone of 0x00501090 (copyConstructElementRangeEnd).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00688C50": {

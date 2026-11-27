@@ -10,7 +10,15 @@
 // Recovered field layout for ResizeTool:
 namespace lifted_layout {
 struct ResizeTool_Fields {
+    // +0x4   float[16]                field_0x04  (evidence: 0x00545AC0)
+    // +0x34  float                    field_0x34  (evidence: 0x00545AC0)
+    // +0x38  float                    field_0x38  (evidence: 0x00545AC0)
+    // +0x3C  float                    field_0x3C  (evidence: 0x00545AC0)
+    // +0x40  float                    field_0x40  (evidence: 0x00545AC0)
+    // +0x84  void*                    field_0x84  (evidence: 0x00545AC0)
     // +0x88  void*                    field_0x88  (evidence: 0x00535610, 0x00545B80)
+    // +0x9C  void*                    field_0x9C  (evidence: 0x00545AC0)
+    // +0xA4  float                    field_0xA4  (evidence: 0x00545AC0)
     // +0xAC  int32_t                  field_0xAC  (evidence: 0x00535610, 0x00545A60, 0x00545B80, 0x005FF1C0)
     // +0xB0  int32_t                  field_0xB0  (evidence: 0x00545B50)
     // +0xB4  float                    field_0xB4  (evidence: 0x00545B50)

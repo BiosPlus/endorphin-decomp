@@ -2708,3 +2708,20 @@ void* fn_00681AA0(void) {
     return reinterpret_cast<void*>(kObject);
 }
 } // namespace lift_00681AA0
+
+// [0x00688C10] sub_00688C10 (54 bytes)
+namespace lift_00688C10 {
+// @name sub_00688C10
+// @summary Auto-lifted identical-shape clone of 0x00501090 (copyConstructElementRangeEnd).
+namespace lift_00501090 {
+// Known callee 0x005003A0: copyConstructElementRange (Copy-constructs count 0x24-byte elements starting at begin from rhs (skipping null slots); on exception destroys the already-constructed prefix and rethrows.)
+extern void ext_006887E0(uint8_t* begin, uint32_t count, const void* rhs);
+
+// @name copyConstructElementRangeEnd
+// @summary Copy-constructs count 0x24-byte elements from rhs into begin and returns the one-past-end pointer (begin + count * 0x24).
+uint8_t* fn_00688C10(uint8_t* begin, uint32_t count, const void* rhs) {
+    ext_006887E0(begin, count, rhs);
+    return begin + static_cast<size_t>(count) * 0x24;
+}
+} // namespace lift_00501090
+} // namespace lift_00688C10
