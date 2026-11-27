@@ -5674,3 +5674,22 @@ void* fn_0043AB10() {
 }
 } // namespace lift_004C9860
 } // namespace lift_0043AB10
+
+// [0x00434E50] sub_00434E50 (28 bytes)
+namespace lift_00434E50 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t ext_00465B30(void);
+// Callee 0x00469410 (206B, unlifted): receiver in ecx, one stack argument (ret 4).
+extern void ext_00469410(int32_t this_ptr, int32_t stackArg);
+// Known callee 0x00433B70: forwardToChildAt114IfPresent (If the pointer at this+0x114 is non-null, forward this pointer to ext_004444B0; then return (ret 4 pops one stack argument).)
+// Original is __thiscall with one stack argument; the receiver is the first argument here.
+extern void ext_00433B70(void* self, int32_t stackArg);
+
+// @name CallTokenDispatchThenForwardToChild
+// @summary Fetches a token via ext_00465B30, passes it with stack arg 1 to ext_00469410, then forwards self with arg 1 to ext_00433B70.
+void fn_00434E50(void* self) {
+    int32_t token = ext_00465B30();
+    ext_00469410(token, 1);
+    ext_00433B70(self, 1);
+}
+} // namespace lift_00434E50
