@@ -2802,3 +2802,23 @@ void __stdcall fn_0067B4A0(void* arg0, void* self, void* arg2, void* arg3, void*
     ext_0065C650(lock);
 }
 } // namespace lift_0067B4A0
+
+// [0x0067BEC0]
+namespace lift_0067BEC0 {
+// @name Vec3::mulMat3
+// @class Vec3
+// @summary Multiplies a 3D row vector by a 3x3 matrix and writes the result to out.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+float* __thiscall sub_0067BEC0(void* self, float* out, const float* mat) {
+    float x = lift_field<float>(self, 0x0);
+    float y = lift_field<float>(self, 0x4);
+    float z = lift_field<float>(self, 0x8);
+
+    out[0] = x * mat[0] + y * mat[3] + z * mat[6];
+    out[1] = x * mat[1] + y * mat[4] + z * mat[7];
+    out[2] = x * mat[2] + y * mat[5] + z * mat[8];
+    return out;
+}
+} // namespace lift_0067BEC0
