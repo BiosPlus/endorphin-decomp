@@ -1843,3 +1843,30 @@ void fn_005180D0(void* self) {
     ext_0050F990(self);
 }
 } // namespace lift_005180D0
+
+// [0x005179E0] sub_005179E0 (114 bytes)
+namespace lift_005179E0 {
+// Known callee 0x006246B0: OwnedPointerRange::clearAndFreeChecked (Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.)
+extern void ext_006246B0(void* self);
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+// Known callee 0x0065C660: sub_0065C660 (Stores address of mem_00928E8C into field at offset +0x0.)
+extern void ext_0065C660(void* self);
+
+// @name RangeOwner::destroyOwnedRange
+// @class RangeOwner
+// @summary Re-stamps this object's vtable slots, releases the owned pointer range at +0x10, then finalizes the object via ext_0065C660.
+// @field RangeOwner +0x00 uint32_t vtblPrimary
+// @field RangeOwner +0x08 uint32_t vtblSecondary
+// @field RangeOwner +0x0C uint32_t vtblEmbedded
+// @field RangeOwner +0x10 OwnedPointerRange ownedRange
+void fn_005179E0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x00952018u;
+    lift_field<uint32_t>(self, 0x08) = 0x0095200Cu;
+    lift_field<uint32_t>(self, 0x0C) = 0x00951FB4u;
+
+    ext_006246B0(static_cast<uint8_t*>(self) + 0x10);
+    ext_0065F440(static_cast<uint8_t*>(self) + 0x0C);
+    ext_0065C660(self);
+}
+} // namespace lift_005179E0

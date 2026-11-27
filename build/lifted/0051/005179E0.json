@@ -1,0 +1,40 @@
+{
+  "va": "0x005179E0",
+  "size": 114,
+  "orig_symbol": "sub_005179E0",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "RangeOwner::destroyOwnedRange",
+  "class": "RangeOwner",
+  "signature": "void fn_005179E0(void* self)",
+  "summary": "Re-stamps this object's vtable slots, releases the owned pointer range at +0x10, then finalizes the object via ext_0065C660.",
+  "fields": [
+    {
+      "class": "RangeOwner",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtblPrimary"
+    },
+    {
+      "class": "RangeOwner",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "vtblSecondary"
+    },
+    {
+      "class": "RangeOwner",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "vtblEmbedded"
+    },
+    {
+      "class": "RangeOwner",
+      "offset": "+0x10",
+      "type": "OwnedPointerRange",
+      "name": "ownedRange"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:44Z"
+}
