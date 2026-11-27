@@ -2668,3 +2668,42 @@ void* fn_006B9E60(void* self, void* arg) {
     return self;
 }
 } // namespace lift_006B9E60
+
+// [0x006BB0C0] sub_006BB0C0 (96 bytes)
+namespace lift_006BB0C0 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::appendUniqueToArray_006BB0C0
+// @class Unknown
+// @summary Appends a non-zero value to the DynamicArray at +0x9C unless it is already present; then calls virtual slot 0x20 on self with the value.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x9C int32_t field_0x9c
+// @field Unknown +0xAC uint32_t* field_0xac
+void fn_006BB0C0(void* self, uint32_t value) {
+    if (value == 0) {
+        return;
+    }
+
+    const int32_t count = lift_field<int32_t>(self, 0x9C);
+    const uint32_t* data = lift_field<const uint32_t*>(self, 0xAC);
+
+    for (int32_t i = 0; i < count; ++i) {
+        if (data[i] == value) {
+            return;  // already present
+        }
+    }
+
+    // Not found: append via DynamicArray::InsertAt(index = count, elem = &value).
+    // The original passes ecx = this+0x9C as the array's self.
+    uint32_t slot = value;
+    ext_006D2170(static_cast<uint8_t*>(self) + 0x9C, count, &slot);
+
+    // Virtual call: (*this)->vtable[0x20](value) with this as self.
+    void** vtable = lift_field<void**>(self, 0x00);
+    using VirtFn = void (*)(void*, uint32_t);
+    VirtFn fn = reinterpret_cast<VirtFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtable) + 0x20));
+    fn(self, value);
+}
+} // namespace lift_006BB0C0

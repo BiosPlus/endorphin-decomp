@@ -1,0 +1,34 @@
+{
+  "va": "0x006BB0C0",
+  "size": 96,
+  "orig_symbol": "sub_006BB0C0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::appendUniqueToArray_006BB0C0",
+  "class": "Unknown",
+  "signature": "void fn_006BB0C0(void* self, uint32_t value)",
+  "summary": "Appends a non-zero value to the DynamicArray at +0x9C unless it is already present; then calls virtual slot 0x20 on self with the value.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "int32_t",
+      "name": "field_0x9c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t*",
+      "name": "field_0xac"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:46:57Z"
+}

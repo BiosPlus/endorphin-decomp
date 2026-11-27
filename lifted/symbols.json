@@ -66275,6 +66275,13 @@
     "summary": "Getter returning int32_t field at offset +0x9C.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BB0C0": {
+    "name": "Unknown::appendUniqueToArray_006BB0C0",
+    "class": "Unknown",
+    "signature": "void fn_006BB0C0(void* self, uint32_t value)",
+    "summary": "Appends a non-zero value to the DynamicArray at +0x9C unless it is already present; then calls virtual slot 0x20 on self with the value.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BB150": {
     "name": "findItemByKey",
     "signature": "uint32_t __thiscall sub_006BB150(uint32_t self, uint32_t arg0)",
