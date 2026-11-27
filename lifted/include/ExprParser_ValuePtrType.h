@@ -47,6 +47,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x0   void*                    value_ptr  (evidence: 0x00494DE0, 0x00515E80, 0x005161E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x005B7BC0, 0x0064F0C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x005B7BC0, 0x005F3600, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0
+    // +0x4   void*                    accessor  (evidence: 0x005B87A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-object used as this for the slot-25 dispatch)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x0059EF40) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_04  (evidence: 0x005B7BC0, 0x0063CB90, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x004D1710, 0x004D5DC0, 0x004DFC60, 0x00511F00, 0x005249E0, 0x00585430) // CONFLICT: multiple definitions at +0x4

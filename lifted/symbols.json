@@ -32778,6 +32778,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType\u003cHelperGraphic\u003e::vfunc_41 (HelperGraphic::getPosition -\u003e setPosition)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005B87A0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationTS(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005B87A0(void* holder)",
+    "summary": "Lazily initializes a static accessor object (guarded by a one-shot flag at 0x00B43D10, vtable 0x0096237C) and stores its address into the holder's +0x04 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005B8820": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const \u0026), 0}\u003e",

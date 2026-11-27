@@ -12205,3 +12205,32 @@ void fn_005B8BB0(void* self) {
     lift_field<DWORD>(self, 4) = 0x00B43D34;
 }
 } // namespace lift_005B8BB0
+
+// [0x005B87A0] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTS(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B87A0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670(void* self, uint32_t arg);
+
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTS(class NM::Vector3 const &), 0}>
+// @summary Lazily initializes a static accessor object (guarded by a one-shot flag at 0x00B43D10, vtable 0x0096237C) and stores its address into the holder's +0x04 slot.
+// @field ExprParser::ValuePtrType +0x04 void* accessor
+void fn_005B87A0(void* holder) {
+    // Static accessor object lives at absolute address 0x00B43D0C; init flag byte at 0x00B43D10.
+    constexpr std::uintptr_t kAccessorAddr = 0x00B43D0Cu;
+    constexpr std::uintptr_t kInitFlagAddr = 0x00B43D10u;
+    constexpr std::uint32_t  kAccessorVtbl = 0x0096237Cu;
+
+    std::uint8_t& initFlags = lift_field<std::uint8_t>(static_cast<void*>(nullptr), static_cast<ptrdiff_t>(kInitFlagAddr));
+    if ((initFlags & 0x01u) == 0) {
+        initFlags |= 0x01u;
+        // Callee initializes the accessor object (ECX = accessor address).
+        ext_0067A670(reinterpret_cast<void*>(kAccessorAddr), 0u);
+        // Accessor's first dword becomes its vtable pointer.
+        lift_field<std::uint32_t>(static_cast<void*>(nullptr), static_cast<ptrdiff_t>(kAccessorAddr)) = kAccessorVtbl;
+    }
+
+    // Holder+0x04 is bound to the static accessor object in both paths.
+    lift_field<std::uint32_t>(holder, 0x04) = static_cast<std::uint32_t>(kAccessorAddr);
+}
+} // namespace lift_005B87A0
