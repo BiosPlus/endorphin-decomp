@@ -142,3 +142,53 @@ void __thiscall fn_00516E10(void* this_ptr, void* item, uint32_t /*unused*/) {
     }
 }
 } // namespace lift_00516E10
+
+// [0x005173B0] EvolvedIndividual::vfunc_1_off_C (134 bytes)
+namespace lift_005173B0 {
+// MSVCR80!_invalid_parameter_noinfo IAT slot.
+extern uint32_t mem_00925134;
+// MSVCP80 std::operator==(const std::string&, const std::string&) IAT slot.
+extern uint32_t mem_00924FC4;
+
+// @name EvolvedIndividual::vfunc_1_off_C
+// @class EvolvedIndividual
+// @summary Scans the 32-bit element range [begin,end) and returns the first element whose vtable slot 9 result compares equal to arg; returns null if none match.
+// @field EvolvedIndividual +0x08 uint32_t rangeBegin
+// @field EvolvedIndividual +0x0C uint32_t rangeEnd
+void* fn_005173B0(void* self, void* arg) {
+    auto invalid_param = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134));
+    auto string_eq = reinterpret_cast<bool (*)(const void*, const void*)>(
+        static_cast<uintptr_t>(mem_00924FC4));
+
+    const uint32_t begin = lift_field<uint32_t>(self, 0x08);
+    const uint32_t end = lift_field<uint32_t>(self, 0x0C);
+    if (begin > end) {
+        invalid_param();
+    }
+    if (begin == end) {
+        return nullptr;
+    }
+
+    for (uint32_t cur = begin;; cur += 4) {
+        if (cur == end) {
+            return nullptr;
+        }
+        if (cur > end) {
+            invalid_param();
+        }
+
+        // Element pointer stored at cur.
+        const uint32_t obj = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cur));
+        // Vtable pointer of the element, then vtable slot 9 (+0x24).
+        const uint32_t vtbl = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(obj));
+        const uint32_t slot9 = *reinterpret_cast<const uint32_t*>(
+            static_cast<uintptr_t>(vtbl + 0x24));
+        auto vfn = reinterpret_cast<void* (*)(void*)>(static_cast<uintptr_t>(slot9));
+        const void* result = vfn(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+
+        if (string_eq(result, arg)) {
+            return reinterpret_cast<void*>(static_cast<uintptr_t>(obj));
+        }
+    }
+}
+} // namespace lift_005173B0

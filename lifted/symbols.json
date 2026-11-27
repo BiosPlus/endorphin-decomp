@@ -23142,6 +23142,13 @@
     "summary": "Walks the object-pointer range at this+0x14..this+0x18 and calls virtual slot +0x6C on each element, invoking the invalid-parameter handler on bounds violations.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x005173B0": {
+    "name": "EvolvedIndividual::vfunc_1_off_C",
+    "class": "EvolvedIndividual",
+    "signature": "void* fn_005173B0(void* self, void* arg)",
+    "summary": "Scans the 32-bit element range [begin,end) and returns the first element whose vtable slot 9 result compares equal to arg; returns null if none match.",
+    "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
+  },
   "0x00517510": {
     "name": "CallSlot3OnEachEntryThenDispatch",
     "signature": "void fn_00517510(void* self, void* arg)",

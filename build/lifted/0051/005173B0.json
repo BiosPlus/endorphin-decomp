@@ -1,0 +1,28 @@
+{
+  "va": "0x005173B0",
+  "size": 134,
+  "orig_symbol": "EvolvedIndividual::vfunc_1_off_C",
+  "src_path": "src/classes/EvolvedIndividual.cpp",
+  "lifted_path": "lifted/classes/EvolvedIndividual.cpp",
+  "name": "EvolvedIndividual::vfunc_1_off_C",
+  "class": "EvolvedIndividual",
+  "signature": "void* fn_005173B0(void* self, void* arg)",
+  "summary": "Scans the 32-bit element range [begin,end) and returns the first element whose vtable slot 9 result compares equal to arg; returns null if none match.",
+  "fields": [
+    {
+      "class": "EvolvedIndividual",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "rangeBegin"
+    },
+    {
+      "class": "EvolvedIndividual",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "rangeEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:24:13Z"
+}
