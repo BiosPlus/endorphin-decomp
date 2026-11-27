@@ -1,0 +1,34 @@
+{
+  "va": "0x00507850",
+  "size": 161,
+  "orig_symbol": "sub_00507850",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "TypedVectorEmplaceBack_00507850",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00507850(void* self, void* arg)",
+  "summary": "Appends one 0x68-byte element to a vector-like container (begin/end/capacity at +0x04/+0x08/+0x0C). Fast path (spare capacity) calls ext_005064D0 and bumps end; otherwise calls ext_00507490 to grow/insert. Takes one stack argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:24:16Z"
+}

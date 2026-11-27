@@ -3218,3 +3218,46 @@ void* fn_00503A30(void* str) {
     return str;
 }
 } // namespace lift_00503A30
+
+// [0x00507850] sub_00507850 (161 bytes)
+namespace lift_00507850 {
+extern void __cdecl ext_005064D0(void* end, uint32_t one, void* arg0, void* self, void* arg1, uint32_t flag);
+extern void __thiscall ext_00507490(void* self, void* outFlag, void* selfCopy, void* end, void* arg);
+extern int mem_00925134;
+
+// @name TypedVectorEmplaceBack_00507850
+// @class Unknown
+// @summary Appends one 0x68-byte element to a vector-like container (begin/end/capacity at +0x04/+0x08/+0x0C). Fast path (spare capacity) calls ext_005064D0 and bumps end; otherwise calls ext_00507490 to grow/insert. Takes one stack argument.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0c
+void __thiscall fn_00507850(void* self, void* arg) {
+    constexpr ptrdiff_t kElemSize = 0x68;
+
+    void* begin = lift_field<void*>(self, 0x04);
+    void* end = lift_field<void*>(self, 0x08);
+
+    bool hasSpace = false;
+    if (begin != nullptr) {
+        const ptrdiff_t count = (static_cast<uint8_t*>(end) - static_cast<uint8_t*>(begin)) / kElemSize;
+        void* capEnd = lift_field<void*>(self, 0x0C);
+        const ptrdiff_t capacity = (static_cast<uint8_t*>(capEnd) - static_cast<uint8_t*>(begin)) / kElemSize;
+        hasSpace = count < capacity;
+    }
+
+    if (hasSpace) {
+        uint8_t flag = 0;
+        ext_005064D0(end, 1, arg, self, arg, static_cast<uint32_t>(flag));
+        lift_field<void*>(self, 0x08) = static_cast<uint8_t*>(end) + kElemSize;
+        return;
+    }
+
+    // Slow path: begin > end is the CRT invalid-parameter guard (MSVCR80 IAT slot
+    // mem_00925134); the port keeps the reference but does not invoke the handler.
+    if (static_cast<uint8_t*>(begin) > static_cast<uint8_t*>(end)) {
+        (void)&mem_00925134;
+    }
+    uint8_t outFlag = 0;
+    ext_00507490(self, &outFlag, self, end, arg);
+}
+} // namespace lift_00507850

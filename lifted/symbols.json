@@ -28051,6 +28051,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00523160 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00507850": {
+    "name": "TypedVectorEmplaceBack_00507850",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00507850(void* self, void* arg)",
+    "summary": "Appends one 0x68-byte element to a vector-like container (begin/end/capacity at +0x04/+0x08/+0x0C). Fast path (spare capacity) calls ext_005064D0 and bumps end; otherwise calls ext_00507490 to grow/insert. Takes one stack argument.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00507E80": {
     "name": "EvolvedIndividual::vfunc_6",
     "class": "EvolvedIndividual",
