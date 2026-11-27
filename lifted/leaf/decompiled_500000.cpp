@@ -3918,3 +3918,62 @@ void fn_00502860(void* self, const char* name) {
     ext_00475960(lift_field<void*>(self, 0x0), &key, &singleton, 1);
 }
 } // namespace lift_00502860
+
+// [0x00506BD0]
+namespace lift_00506BD0 {
+// Callee prototypes (shapes taken from the callee metadata above).
+extern void* ext_00506B70(void);                              // static object getter
+extern void* ext_00505D50(void* self, const void* key);       // map lookup, returns &value
+extern void* ext_004C6F60(void* self);
+extern void* ext_004C7200(void* self, const void* other);     // StringExceptionWithMember copy ctor
+extern void* ext_00504A30(void* a1);
+extern void  ext_0066AC90(void* str);
+extern void  ext_006A6DD2(void* exc, const void* throw_info); // _CxxThrowException thunk
+
+// MSVCP80 std::string copy ctor, read through its IAT slot.
+extern int mem_00924FE0;
+
+// @name DispatchNamedCallback_00506BD0
+// @class StaticObject_00AEBB94
+// @summary Looks up key in the static registry map; if found, invokes the stored callback with arg2. If not found and flag is set, builds a StringExceptionWithMember from key and throws it.
+// @field StaticObject_00AEBB94 +0x04 void* field_0x04
+void fn_00506BD0(const void* key, const void* arg2, uint8_t flag) {
+    // Static registry object (lazily initialised by the getter).
+    void* registry = ext_00506B70();
+
+    // Key lookup in the map sub-object at +0x04.
+    void* slot = ext_00505D50(static_cast<uint8_t*>(registry) + 0x04, key);
+    if (slot != nullptr) {
+        // The stored value is a callback pointer; call it with arg2.
+        auto cb = *reinterpret_cast<void (**)(const void*)>(slot);
+        cb(arg2);
+        return;
+    }
+
+    if (flag == 0) {
+        return;
+    }
+
+    // Temporary MSVCP80 std::string buffers (0x18 bytes each, padded to 0x1C as in the asm).
+    alignas(8) uint8_t s_copy[0x1C] = {};
+    alignas(8) uint8_t s_name[0x1C] = {};
+    alignas(8) uint8_t s_ret[0x1C] = {};
+    alignas(8) uint8_t s_src[0x1C] = {};
+
+    // s_copy = std::string(key)
+    (*reinterpret_cast<void* (**)(void*, const void*)>(&mem_00924FE0))(static_cast<void*>(s_copy), key);
+
+    // Build the type-info name string and forward it.
+    ext_00504A30(static_cast<void*>(s_ret));
+    ext_0066AC90(static_cast<void*>(s_name));
+
+    // Exception object (base + two std::string members; size not verified).
+    alignas(8) uint8_t exc[0x50] = {};
+    void* src = ext_004C6F60(static_cast<void*>(s_src));
+    ext_004C7200(static_cast<void*>(exc), src);
+
+    // Throw: _CxxThrowException(exc, &throw_info) with throw info at 0x009E9404.
+    ext_006A6DD2(static_cast<void*>(exc),
+                 reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009E9404u)));
+}
+} // namespace lift_00506BD0

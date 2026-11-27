@@ -30165,6 +30165,13 @@
     "summary": "Lazily constructs static object at 0x00AEBB94 (guarded by bit 0 of 0x00AEBBB8), registers its atexit cleanup 0x00919D10, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00506BD0": {
+    "name": "DispatchNamedCallback_00506BD0",
+    "class": "StaticObject_00AEBB94",
+    "signature": "void fn_00506BD0(const void* key, const void* arg2, uint8_t flag)",
+    "summary": "Looks up key in the static registry map; if found, invokes the stored callback with arg2. If not found and flag is set, builds a StringExceptionWithMember from key and throws it.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00506CD0": {
     "name": "sub_00506CD0",
     "class": "Vector",

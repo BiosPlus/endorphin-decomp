@@ -1,0 +1,22 @@
+{
+  "va": "0x00506BD0",
+  "size": 246,
+  "orig_symbol": "sub_00506BD0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "DispatchNamedCallback_00506BD0",
+  "class": "StaticObject_00AEBB94",
+  "signature": "void fn_00506BD0(const void* key, const void* arg2, uint8_t flag)",
+  "summary": "Looks up key in the static registry map; if found, invokes the stored callback with arg2. If not found and flag is set, builds a StringExceptionWithMember from key and throws it.",
+  "fields": [
+    {
+      "class": "StaticObject_00AEBB94",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:45:25Z"
+}
