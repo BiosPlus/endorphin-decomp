@@ -68065,6 +68065,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x54 and tail-calls sub_006C9A40.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D0450": {
+    "name": "Unknown::appendArg1AndArg2ToArrays_006D0450",
+    "class": "Unknown",
+    "signature": "void fn_006D0450(void* self, int32_t arg1, int32_t arg2)",
+    "summary": "Appends arg1 to the DynamicArray at +0x68 and arg2 to the DynamicArray at +0x80, each via DynamicArray::InsertAt at index = current count.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D0490": {
     "name": "Unknown::RemoveParallelEntry",
     "class": "Unknown",

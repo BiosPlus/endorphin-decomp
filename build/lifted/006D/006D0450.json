@@ -1,0 +1,28 @@
+{
+  "va": "0x006D0450",
+  "size": 64,
+  "orig_symbol": "sub_006D0450",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::appendArg1AndArg2ToArrays_006D0450",
+  "class": "Unknown",
+  "signature": "void fn_006D0450(void* self, int32_t arg1, int32_t arg2)",
+  "summary": "Appends arg1 to the DynamicArray at +0x68 and arg2 to the DynamicArray at +0x80, each via DynamicArray::InsertAt at index = current count.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "DynamicArray",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "DynamicArray",
+      "name": "field_0x80"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:15Z"
+}

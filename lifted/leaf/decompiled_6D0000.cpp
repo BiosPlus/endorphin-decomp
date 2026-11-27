@@ -2991,3 +2991,29 @@ int32_t fn_006D3CB0(void* self, int32_t arg) {
     return result;
 }
 } // namespace lift_006D3CB0
+
+// [0x006D0450] sub_006D0450 (64 bytes)
+namespace lift_006D0450 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern void ext_006D2170();
+
+// @name Unknown::appendArg1AndArg2ToArrays_006D0450
+// @class Unknown
+// @summary Appends arg1 to the DynamicArray at +0x68 and arg2 to the DynamicArray at +0x80, each via DynamicArray::InsertAt at index = current count.
+// @field Unknown +0x68 DynamicArray field_0x68
+// @field Unknown +0x80 DynamicArray field_0x80
+void fn_006D0450(void* self, int32_t arg1, int32_t arg2) {
+    using InsertAtFn = int32_t (*)(void* self, int32_t index, const void* elem);
+    auto insertAt = reinterpret_cast<InsertAtFn>(reinterpret_cast<void*>(ext_006D2170));
+
+    // First array at +0x68: index is the current count (first dword of DynamicArray).
+    int32_t value1 = arg1;
+    void* array68 = static_cast<char*>(self) + 0x68;
+    insertAt(array68, lift_field<int32_t>(self, 0x68), &value1);
+
+    // Second array at +0x80: index read after the first insert, as in the original.
+    int32_t value2 = arg2;
+    void* array80 = static_cast<char*>(self) + 0x80;
+    insertAt(array80, lift_field<int32_t>(self, 0x80), &value2);
+}
+} // namespace lift_006D0450
