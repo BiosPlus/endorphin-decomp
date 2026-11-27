@@ -12413,6 +12413,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049F490": {
+    "name": "UnknownClass::cacheKeyAndAssignEntries",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_0049F490(void* self, const void* key)",
+    "summary": "Returns 1 if the cached key equals the argument; otherwise looks the key up in the owner at +0xFC, and if absent stores it as the cached key and runs assignAllEntriesFromLists on the owner.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049FA70": {
     "name": "NMData::State::vfunc_6",
     "class": "NMData::State",

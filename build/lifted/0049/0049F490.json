@@ -1,0 +1,28 @@
+{
+  "va": "0x0049F490",
+  "size": 77,
+  "orig_symbol": "sub_0049F490",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "UnknownClass::cacheKeyAndAssignEntries",
+  "class": "UnknownClass",
+  "signature": "uintptr_t fn_0049F490(void* self, const void* key)",
+  "summary": "Returns 1 if the cached key equals the argument; otherwise looks the key up in the owner at +0xFC, and if absent stores it as the cached key and runs assignAllEntriesFromLists on the owner.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C",
+      "type": "std::basic_string\u003cchar\u003e",
+      "name": "cachedKey"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xFC",
+      "type": "void*",
+      "name": "entryOwner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:14:59Z"
+}

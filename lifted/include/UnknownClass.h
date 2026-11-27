@@ -55,6 +55,7 @@ struct UnknownClass_Fields {
     // +0x18  float[]                  field_0x18  (evidence: 0x00610C60) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18  (evidence: 0x00526C70, 0x0052F7D0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void**                   field_0x18  (evidence: 0x00517360) // CONFLICT: multiple definitions at +0x18
+    // +0x1C  std::basic_string<char>  cachedKey  (evidence: 0x0049F490) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x0078CBE0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x004019B0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x00526C70, 0x0052F7D0) // CONFLICT: multiple definitions at +0x1C
@@ -135,6 +136,7 @@ struct UnknownClass_Fields {
     // +0xE0  uint32_t                 field_0xe0  (evidence: 0x0049EFC0)
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x0058AB60)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594040, 0x0059DE20)
+    // +0xFC  void*                    entryOwner  (evidence: 0x0049F490)
     // +0x108 uint32_t                 field_0x108  (evidence: 0x0043CC60)
     // +0x114 uint32_t                 field_0x114  (evidence: 0x00419840)
     // +0x11C uint8_t                  field_0x11c  (evidence: 0x00419840)

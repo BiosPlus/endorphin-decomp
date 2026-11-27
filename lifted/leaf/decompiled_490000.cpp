@@ -1841,3 +1841,50 @@ void fn_0049EFC0(void* self) {
     }
 }
 } // namespace lift_0049EFC0
+
+// [0x0049F490] sub_0049F490 (77 bytes)
+namespace lift_0049F490 {
+// Known callee 0x0049ED70: findNodeValueByKey (Searches the list at this+0xdc for a node matching key and returns a pointer to its value (node+8) or null.)
+extern uintptr_t ext_0049ED70(void* self, const void* key);
+// Known callee 0x0049EFC0: UnknownClass::assignAllEntriesFromLists (Walks the list at +0xD4 calling ext_004970A0 on each entry, then walks the list at +0xDC/+0xE0 and, for each node, walks its sub-list at node+0xD0 calling ext_004970A0 on each entry.)
+extern void ext_0049EFC0(void* self);
+extern int mem_00924FC4;
+extern int mem_00924FDC;
+
+// Import slots: the asm calls through these pointers (call dword ptr [slot]).
+using StrEqFn = bool (*)(const void* lhs, const void* rhs);
+using StrAssignFn = void* (*)(void* self, const void* rhs);
+
+// @name UnknownClass::cacheKeyAndAssignEntries
+// @class UnknownClass
+// @summary Returns 1 if the cached key equals the argument; otherwise looks the key up in the owner at +0xFC, and if absent stores it as the cached key and runs assignAllEntriesFromLists on the owner.
+// @field UnknownClass +0x1c std::basic_string<char> cachedKey
+// @field UnknownClass +0xfc void* entryOwner
+uintptr_t fn_0049F490(void* self, const void* key) {
+    void* cachedKey = static_cast<uint8_t*>(self) + 0x1c;
+
+    StrEqFn strEq = *reinterpret_cast<StrEqFn*>(&mem_00924FC4);
+    if (strEq(key, cachedKey)) {
+        return 1;
+    }
+
+    void* owner = lift_field<void*>(self, 0xfc);
+    if (owner) {
+        uintptr_t found = ext_0049ED70(owner, key);
+        if (found) {
+            return found;
+        }
+    }
+
+    StrAssignFn strAssign = *reinterpret_cast<StrAssignFn*>(&mem_00924FDC);
+    void* assigned = strAssign(cachedKey, key);
+
+    owner = lift_field<void*>(self, 0xfc);
+    if (owner) {
+        // The asm leaves eax clobbered after this call; the return value
+        // is only meaningful on the paths above.
+        ext_0049EFC0(owner);
+    }
+    return reinterpret_cast<uintptr_t>(assigned);
+}
+} // namespace lift_0049F490
