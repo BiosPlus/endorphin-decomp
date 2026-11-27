@@ -1,0 +1,22 @@
+{
+  "va": "0x004F9D20",
+  "size": 14,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_98",
+  "src_path": "src/VMCSModes/auto_tiny.cpp",
+  "lifted_path": "lifted/VMCSModes/auto_tiny.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_98",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "void fn_004F9D20(void* self)",
+  "summary": "Follows self-\u003e+0x08 -\u003e -\u003e+0x14 -\u003e -\u003e+0x34 and tail-forwards the resulting object to ext_00480700.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:29:45Z"
+}

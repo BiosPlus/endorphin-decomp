@@ -20971,6 +20971,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9E50 (VMCSModes::DefaultImplementation::vfunc_133).",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004F9D20": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_98",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_004F9D20(void* self)",
+    "summary": "Follows self-\u003e+0x08 -\u003e -\u003e+0x14 -\u003e -\u003e+0x34 and tail-forwards the resulting object to ext_00480700.",
+    "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
   "0x004F9E50": {
     "name": "VMCSModes::DefaultImplementation::vfunc_133",
     "class": "VMCSModes::DefaultImplementation",

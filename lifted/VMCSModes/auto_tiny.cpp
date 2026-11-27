@@ -230,3 +230,22 @@ uint32_t __thiscall fn_004F9BE0(void* this_ptr) {
 }
 } // namespace lift_004F9BD0
 } // namespace lift_004F9BE0
+
+// [0x004F9D20] VMCSModes::DefaultImplementation::vfunc_98 (14 bytes)
+namespace lift_004F9D20 {
+// Known callee 0x00480700: Unknown::dispatchToGlobalObject (Forwards self to dispatchToChildren and ChildRangeVisit using the global object's sub-objects (no-op when self is null).)
+extern void ext_00480700(void* self);
+
+// @name VMCSModes::DefaultImplementation::vfunc_98
+// @class VMCSModes::DefaultImplementation
+// @summary Follows self->+0x08 -> ->+0x14 -> ->+0x34 and tail-forwards the resulting object to ext_00480700.
+// @field VMCSModes::DefaultImplementation +0x08 uint32_t field_0x08
+void fn_004F9D20(void* self) {
+    // Guest pointers are 32-bit; read them as uint32_t to match the original layout.
+    uint32_t p = lift_field<uint32_t>(self, 0x08);
+    uint32_t q = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(p)), 0x14);
+    uint32_t r = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(q)), 0x34);
+    // Tail call (jmp): the callee receives r as its self and returns directly to our caller.
+    ext_00480700(reinterpret_cast<void*>(static_cast<uintptr_t>(r)));
+}
+} // namespace lift_004F9D20
