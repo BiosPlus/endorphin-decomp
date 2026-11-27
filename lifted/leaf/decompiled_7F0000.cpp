@@ -536,3 +536,14 @@ void fn_007FC4E0(const float* src, float* dst) {
     }
 }
 } // namespace lift_007FC4E0
+
+// [0x007F9F30] sub_007F9F30 (116 bytes)
+namespace lift_007F9F30 {
+// @name scaleFloatArray
+// @summary Writes dst[i] = src[i] * scale for i in [0, count) (cdecl; count<=0 writes nothing).
+void fn_007F9F30(int32_t count, float* dst, const float* src, float scale) {
+    for (int32_t i = 0; i < count; ++i) {
+        dst[i] = src[i] * scale;
+    }
+}
+} // namespace lift_007F9F30

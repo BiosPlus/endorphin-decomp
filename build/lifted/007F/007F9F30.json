@@ -1,0 +1,13 @@
+{
+  "va": "0x007F9F30",
+  "size": 116,
+  "orig_symbol": "sub_007F9F30",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "scaleFloatArray",
+  "signature": "void fn_007F9F30(int32_t count, float* dst, const float* src, float scale)",
+  "summary": "Writes dst[i] = src[i] * scale for i in [0, count) (cdecl; count\u003c=0 writes nothing).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:06:41Z"
+}

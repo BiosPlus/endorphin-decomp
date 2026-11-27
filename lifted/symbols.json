@@ -24521,6 +24521,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00532B90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0053F5F0": {
+    "name": "parseIntFromStringProp",
+    "signature": "extern \"C\" void fn_0053F5F0(int* out)",
+    "summary": "Calls ext_004275C0 to get a string, converts it with atoi, and stores the integer at *out.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053F660": {
     "name": "SelectionTool::vfunc_22",
     "class": "SelectionTool",
@@ -74820,6 +74826,12 @@
     "name": "negateFloatArray",
     "signature": "void __cdecl sub_007F9DB0(int32_t count, float* dst, const float* src)",
     "summary": "Negates an array of single-precision floats from src into dst.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x007F9F30": {
+    "name": "scaleFloatArray",
+    "signature": "void fn_007F9F30(int32_t count, float* dst, const float* src, float scale)",
+    "summary": "Writes dst[i] = src[i] * scale for i in [0, count) (cdecl; count\u003c=0 writes nothing).",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x007FC290": {
