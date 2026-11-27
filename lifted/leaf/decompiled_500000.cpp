@@ -3149,3 +3149,27 @@ void* fn_00501140(void* self, DWORD arg) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(cursor + 0x1C));
 }
 } // namespace lift_00501140
+
+// [0x005047A0] sub_005047A0 (90 bytes)
+namespace lift_005047A0 {
+// Known callee 0x00504640: thiscall constructor-like initializer for the object at 0x00AEBB1C.
+// Known callee 0x006A6C87: cdecl fatal/diagnostic call taking one const char* argument (0x00919CF0).
+extern void __thiscall ext_00504640(void* self);
+extern void ext_006A6C87(const void* msg);
+extern int mem_00AEBB40;
+
+// @name GetOnceInitializedObject_005047A0
+// @summary One-time lazy initializer guarded by bit 0 of mem_00AEBB40; returns the address of the singleton object at 0x00AEBB1C.
+// Note: the original fs:[0] SEH frame push/pop is Win32 exception bookkeeping and is intentionally omitted (not portable).
+void* fn_005047A0() {
+    constexpr uintptr_t kObjectAddr = 0x00AEBB1CU;
+
+    if ((mem_00AEBB40 & 1) == 0) {
+        mem_00AEBB40 |= 1;
+        ext_00504640(reinterpret_cast<void*>(kObjectAddr));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00919CF0U)));
+    }
+
+    return reinterpret_cast<void*>(kObjectAddr);
+}
+} // namespace lift_005047A0

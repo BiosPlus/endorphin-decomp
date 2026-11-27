@@ -27396,6 +27396,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00517DE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005047A0": {
+    "name": "GetOnceInitializedObject_005047A0",
+    "signature": "void* fn_005047A0()",
+    "summary": "One-time lazy initializer guarded by bit 0 of mem_00AEBB40; returns the address of the singleton object at 0x00AEBB1C.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00504930": {
     "name": "sub_00504930",
     "signature": "void fn_00504930(void)",
