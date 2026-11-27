@@ -1,0 +1,33 @@
+{
+  "va": "0x004462D0",
+  "size": 144,
+  "orig_symbol": "sub_004462D0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "fn_004462D0",
+  "signature": "void __thiscall fn_004462D0(void* self, void* node, void* arg2)",
+  "summary": "Recursively traverses a node hierarchy, dynamically casting each node and invoking a virtual method if cast succeeds.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x7C",
+      "type": "uint32_t",
+      "name": "vector_begin_or_alloc"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x80",
+      "type": "void**",
+      "name": "children_begin"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x84",
+      "type": "void**",
+      "name": "children_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:36:31Z"
+}
