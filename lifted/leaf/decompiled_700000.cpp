@@ -2694,3 +2694,39 @@ void __thiscall fn_0070F2E0(void* self, int32_t a, int32_t b, int32_t c) {
     ext_006D2170(static_cast<char*>(self) + 0x2e8, idx2, &b_copy);
 }
 } // namespace lift_0070F2E0
+
+// [0x00707A10] sub_00707A10 (115 bytes)
+namespace lift_00707A10 {
+// Known callee 0x006FAC10: sub_006FAC10 (Dispatches virtual slot 15 to field_0x08 if present and flag 0x10 at +0x34 is clear, otherwise walks the node chain at +0x3c and invokes slot 15 on its head object.)
+uint32_t __thiscall ext_006FAC10(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6);
+
+// @name Unknown::dispatchGuardedSlot_00707A10
+// @class Unknown
+// @summary If the pointer at +0x4C is non-null and its first word matches +0x48, invokes vtable slot 74 (+0x128) on the object at node+0x4 with the six args; then always tail-forwards the same args to ext_006FAC10 and returns its result.
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0x4C uint32_t field_0x4c
+
+static inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+uint32_t fn_00707A10(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6) {
+    // mov eax, [esi+0x4c] ; test eax,eax ; je skip
+    const uint32_t node = lift_field<uint32_t>(self, 0x4C);
+
+    // cmp [node], [self+0x48] ; jne skip
+    if (node != 0 && lift_field<uint32_t>(as_ptr(node), 0x0) == lift_field<uint32_t>(self, 0x48)) {
+        // mov ecx, [node+4] -> receiver object
+        void* const obj = as_ptr(lift_field<uint32_t>(as_ptr(node), 0x4));
+
+        // mov edx, [ecx] ; call dword ptr [edx+0x128]  (6 stack args, result discarded)
+        const uint32_t vtbl = lift_field<uint32_t>(obj, 0x0);
+        const uint32_t slot = lift_field<uint32_t>(as_ptr(vtbl), 0x128);
+        using SlotFn = uint32_t (*)(void* self_, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+        (void)reinterpret_cast<SlotFn>(as_ptr(slot))(obj, a1, a2, a3, a4, a5, a6);
+    }
+
+    // skip: mov ecx, esi ; call ext_006FAC10 ; ret 0x18  (result passed through in eax)
+    return ext_006FAC10(self, a1, a2, a3, a4, a5, a6);
+}
+} // namespace lift_00707A10

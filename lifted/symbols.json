@@ -74026,6 +74026,13 @@
     "summary": "If this+0x4C is non-null and its first dword equals this+0x48, invokes vtable +0x12C on the object at +0x4 of it (result discarded); then always forwards the six args to ext_006FAD00 and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00707A10": {
+    "name": "Unknown::dispatchGuardedSlot_00707A10",
+    "class": "Unknown",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "If the pointer at +0x4C is non-null and its first word matches +0x48, invokes vtable slot 74 (+0x128) on the object at node+0x4 with the six args; then always tail-forwards the same args to ext_006FAC10 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00707F50": {
     "name": "Unknown::ContainsUnorderedPair_00707F50",
     "class": "Unknown",
