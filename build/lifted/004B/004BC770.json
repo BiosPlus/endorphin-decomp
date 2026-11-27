@@ -1,0 +1,13 @@
+{
+  "va": "0x004BC770",
+  "size": 138,
+  "orig_symbol": "sub_004BC770",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004BC770",
+  "signature": "void* lift_string_copy_ctor(void* self, const void* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:33:11Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x00626650",
+  "size": 138,
+  "orig_symbol": "TransformRefNode::vfunc_12_off_4",
+  "src_path": "src/classes/TransformRefNode.cpp",
+  "lifted_path": "lifted/classes/TransformRefNode.cpp",
+  "name": "TransformRefNode::vfunc_12_off_4",
+  "class": "TransformRefNode",
+  "signature": "void* fn_00626650(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00593D90 (IdentityNode::initIdentityMatrixOnce).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:33:11Z"
+}

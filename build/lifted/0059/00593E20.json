@@ -1,0 +1,14 @@
+{
+  "va": "0x00593E20",
+  "size": 138,
+  "orig_symbol": "IdentityNode::vfunc_9_off_4",
+  "src_path": "src/classes/IdentityNode.cpp",
+  "lifted_path": "lifted/classes/IdentityNode.cpp",
+  "name": "IdentityNode::vfunc_9_off_4",
+  "class": "IdentityNode",
+  "signature": "void* fn_00593E20(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00593D90 (IdentityNode::initIdentityMatrixOnce).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:33:11Z"
+}

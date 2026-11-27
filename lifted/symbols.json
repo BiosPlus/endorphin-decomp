@@ -15577,6 +15577,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00528370 (PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_1).",
     "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
+  "0x004BC770": {
+    "name": "sub_004BC770",
+    "signature": "void* lift_string_copy_ctor(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BC8E0": {
     "name": "NMData::EngineData::vfunc_0",
     "class": "NMData::EngineData",
@@ -22276,6 +22282,18 @@
     "signature": "void* fn_00511930(void* self, void** ptr_to_obj, DWORD arg2)",
     "summary": "Calls ext_00695E20 on the object pointed to by the second argument, passing (self, arg2, 0), and returns self.",
     "lifted_path": "lifted/templates/TerminalParentType.cpp"
+  },
+  "0x00511960": {
+    "name": "sub_00511960",
+    "signature": "void* lift_string_copy_ctor(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
+  "0x005119F0": {
+    "name": "sub_005119F0",
+    "signature": "void* lift_string_copy_ctor(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x00511A80": {
     "name": "sub_00511A80",
@@ -31192,6 +31210,13 @@
     "class": "IdentityNode",
     "signature": "void* fn_00593D90(void* self)",
     "summary": "One-time init of a global 4x4 identity float matrix at mem_00B40C78 (guarded by bit 0 of mem_00B40CB8); calls ext_006A6C87 on first init. Returns the matrix address.",
+    "lifted_path": "lifted/classes/IdentityNode.cpp"
+  },
+  "0x00593E20": {
+    "name": "IdentityNode::vfunc_9_off_4",
+    "class": "IdentityNode",
+    "signature": "void* fn_00593E20(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00593D90 (IdentityNode::initIdentityMatrixOnce).",
     "lifted_path": "lifted/classes/IdentityNode.cpp"
   },
   "0x00593EB0": {
@@ -46116,6 +46141,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D3070 (NMData::TransitionEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/classes/TransformRefNode.cpp"
   },
+  "0x00626650": {
+    "name": "TransformRefNode::vfunc_12_off_4",
+    "class": "TransformRefNode",
+    "signature": "void* fn_00626650(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00593D90 (IdentityNode::initIdentityMatrixOnce).",
+    "lifted_path": "lifted/classes/TransformRefNode.cpp"
+  },
+  "0x006266E0": {
+    "name": "TransformRefNode::vfunc_11_off_4",
+    "class": "TransformRefNode",
+    "signature": "void* fn_006266E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00593D90 (IdentityNode::initIdentityMatrixOnce).",
+    "lifted_path": "lifted/classes/TransformRefNode.cpp"
+  },
   "0x00626770": {
     "name": "findStringIndex",
     "signature": "uint32_t sub_00626770(uint32_t arg0)",
@@ -52441,6 +52480,20 @@
     "summary": "Pure jump thunk forwarding to sub_0065D110.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0065D190": {
+    "name": "HasBufferedTM::vfunc_2",
+    "class": "HasBufferedTM",
+    "signature": "void* fn_0065D190(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00593D90 (IdentityNode::initIdentityMatrixOnce).",
+    "lifted_path": "lifted/classes/HasBufferedTM.cpp"
+  },
+  "0x0065D220": {
+    "name": "HasBufferedTM::vfunc_1",
+    "class": "HasBufferedTM",
+    "signature": "void* fn_0065D220(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00593D90 (IdentityNode::initIdentityMatrixOnce).",
+    "lifted_path": "lifted/classes/HasBufferedTM.cpp"
+  },
   "0x0065DAD0": {
     "name": "Unknown::assignCopyOfRange",
     "class": "Unknown",
@@ -56232,6 +56285,12 @@
     "signature": "extern \"C\" void __fastcall fn_006830F0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_00682FD0.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
+  "0x00683100": {
+    "name": "sub_00683100",
+    "signature": "void* lift_string_copy_ctor(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00683190": {
     "name": "sub_00683190",

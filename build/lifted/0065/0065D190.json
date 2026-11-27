@@ -1,0 +1,14 @@
+{
+  "va": "0x0065D190",
+  "size": 138,
+  "orig_symbol": "HasBufferedTM::vfunc_2",
+  "src_path": "src/classes/HasBufferedTM.cpp",
+  "lifted_path": "lifted/classes/HasBufferedTM.cpp",
+  "name": "HasBufferedTM::vfunc_2",
+  "class": "HasBufferedTM",
+  "signature": "void* fn_0065D190(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00593D90 (IdentityNode::initIdentityMatrixOnce).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:33:11Z"
+}

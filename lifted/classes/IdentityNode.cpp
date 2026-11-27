@@ -87,3 +87,63 @@ void* fn_00593D90(void* self) {
     return &mem_00B40C78;
 }
 } // namespace lift_00593D90
+
+// [0x00593E20] IdentityNode::vfunc_9_off_4 (138 bytes)
+namespace lift_00593E20 {
+// @name IdentityNode::vfunc_9_off_4
+// @class IdentityNode
+// @summary Auto-lifted identical-shape clone of 0x00593D90 (IdentityNode::initIdentityMatrixOnce).
+namespace lift_00593D90 {
+extern void ext_006A6C87(const void* arg);
+extern const char mem_0091D550;
+extern int mem_00B40D00;
+extern float mem_00B40CC0;
+extern float mem_00B40CC4;
+extern float mem_00B40CC8;
+extern float mem_00B40CCC;
+extern float mem_00B40CD0;
+extern float mem_00B40CD4;
+extern float mem_00B40CD8;
+extern float mem_00B40CDC;
+extern float mem_00B40CE0;
+extern float mem_00B40CE4;
+extern float mem_00B40CE8;
+extern float mem_00B40CEC;
+extern float mem_00B40CF0;
+extern float mem_00B40CF4;
+extern float mem_00B40CF8;
+extern float mem_00B40CFC;
+
+// @name IdentityNode::initIdentityMatrixOnce
+// @class IdentityNode
+// @summary One-time init of a global 4x4 identity float matrix at mem_00B40C78 (guarded by bit 0 of mem_00B40CB8); calls ext_006A6C87 on first init. Returns the matrix address.
+void* fn_00593E20(void* self) {
+    (void)self;
+    if ((mem_00B40D00 & 1) != 0) {
+        return &mem_00B40CC0;
+    }
+    mem_00B40D00 |= 1;
+
+    // Row-major 4x4 identity: 0x78 + 4*(4*row + col).
+    mem_00B40CC0 = 1.0f;
+    mem_00B40CC4 = 0.0f;
+    mem_00B40CC8 = 0.0f;
+    mem_00B40CCC = 0.0f;
+    mem_00B40CD0 = 0.0f;
+    mem_00B40CD4 = 1.0f;
+    mem_00B40CD8 = 0.0f;
+    mem_00B40CDC = 0.0f;
+    mem_00B40CE0 = 0.0f;
+    mem_00B40CE4 = 0.0f;
+    mem_00B40CE8 = 1.0f;
+    mem_00B40CEC = 0.0f;
+    mem_00B40CF0 = 0.0f;
+    mem_00B40CF4 = 0.0f;
+    mem_00B40CF8 = 0.0f;
+    mem_00B40CFC = 1.0f;
+
+    ext_006A6C87(&mem_0091D550);
+    return &mem_00B40CC0;
+}
+} // namespace lift_00593D90
+} // namespace lift_00593E20
