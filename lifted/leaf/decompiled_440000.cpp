@@ -2527,3 +2527,54 @@ extern void sub_0044B5E0(void* self) {
     ext_0065C650(lock);
 }
 } // namespace lift_0044B5E0
+
+// [0x0044DCF0] sub_0044DCF0 (126 bytes)
+namespace lift_0044DCF0 {
+// Known callees / data (all indirect through IAT slots or rdata):
+//   mem_00925694 -> USER32!SendMessageA
+//   mem_00924FE4 -> MSVCP80 std::basic_string<char>::basic_string(const char*)
+//   mem_00924FE0 -> MSVCP80 std::basic_string<char>::basic_string(const basic_string&)
+//   mem_00928B5D -> rdata address of the empty C string literal
+extern int mem_00925694;
+extern int mem_00924FE0;
+extern int mem_00924FE4;
+extern int mem_00928B5D;
+
+namespace {
+using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+using StrCtorCStrFn = void(__thiscall*)(void* self, const char* s);
+using StrCopyCtorFn = void(__thiscall*)(void* self, const std::string* src);
+using GetItemStringFn = const std::string* (__thiscall*)(void* self);
+} // namespace
+
+// @name Unknown::listBoxItemString
+// @class Unknown
+// @summary Returns the string for list-box item `index` of the list box at this+0x98c via the item's virtual getter (slot 9); returns "" if index is -1, the list is empty, or the item has no data.
+// @field Unknown +0x98c HWND hwnd
+std::string* fn_0044DCF0(void* self, std::string* out, int index) {
+    const HWND hwnd = lift_field<HWND>(self, 0x98c);
+
+    const auto sendMessage = *reinterpret_cast<SendMessageAFn*>(&mem_00925694);
+    const auto ctorCStr = *reinterpret_cast<StrCtorCStrFn*>(&mem_00924FE4);
+    const auto ctorCopy = *reinterpret_cast<StrCopyCtorFn*>(&mem_00924FE0);
+    const char* const empty = reinterpret_cast<const char*>(&mem_00928B5D);
+
+    // LB_GETCOUNT
+    const LRESULT count = sendMessage(hwnd, 0x18B, 0, 0);
+    if (count != 0 && index != -1) {
+        // LB_GETITEMDATA
+        const LRESULT item = sendMessage(hwnd, 0x199, static_cast<WPARAM>(index), 0);
+        if (item != 0) {
+            void* obj = reinterpret_cast<void*>(item);
+            void** vtbl = *reinterpret_cast<void***>(obj);
+            // vtable slot 9 (offset 0x24)
+            const auto getString = reinterpret_cast<GetItemStringFn>(vtbl[9]);
+            ctorCopy(out, getString(obj));
+            return out;
+        }
+    }
+
+    ctorCStr(out, empty);
+    return out;
+}
+} // namespace lift_0044DCF0

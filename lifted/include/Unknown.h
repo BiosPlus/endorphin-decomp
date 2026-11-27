@@ -1651,6 +1651,7 @@ struct Unknown_Fields {
     // +0x804 std::string              field_0x804  (evidence: 0x0054FCB0)
     // +0x81C void*                    field_0x81C  (evidence: 0x00704A20, 0x0070AD00)
     // +0x820 void*                    field_0x820  (evidence: 0x0054FCB0)
+    // +0x98C HWND                     hwnd  (evidence: 0x0044DCF0)
     // +0x9C0 uint8_t                  field_0x9C0  (evidence: 0x00441C10, 0x0044CE90)
     // +0xC80 uint8_t                  field_0xC80  (evidence: 0x00441C10, 0x0044CEC0)
     // +0xD28 double                   field_0xD28  (evidence: 0x007155B0, 0x0071C250)

@@ -1,0 +1,22 @@
+{
+  "va": "0x0044DCF0",
+  "size": 126,
+  "orig_symbol": "sub_0044DCF0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::listBoxItemString",
+  "class": "Unknown",
+  "signature": "std::string* fn_0044DCF0(void* self, std::string* out, int index)",
+  "summary": "Returns the string for list-box item `index` of the list box at this+0x98c via the item's virtual getter (slot 9); returns \"\" if index is -1, the list is empty, or the item has no data.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x98C",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:54:47Z"
+}
