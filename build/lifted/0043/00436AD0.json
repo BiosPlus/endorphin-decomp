@@ -1,0 +1,22 @@
+{
+  "va": "0x00436AD0",
+  "size": 25,
+  "orig_symbol": "sub_00436AD0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::toggleFlagF4AndIterate_00436AD0",
+  "class": "Unknown",
+  "signature": "void fn_00436AD0(void* self)",
+  "summary": "Toggles the byte flag at this+0xF4 (0 -\u003e 1, nonzero -\u003e 0), then calls ext_00436A50 with the new flag value as arg and flag=1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "uint8_t",
+      "name": "field_0xF4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:08:47Z"
+}

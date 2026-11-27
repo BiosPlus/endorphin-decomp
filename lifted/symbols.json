@@ -3916,6 +3916,13 @@
     "summary": "Walks the circular node list headed at this+0xEC, invokes vfunc +0x178 on each node's object with arg, then if flag is set invokes vfunc +0x150 with 1.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00436AD0": {
+    "name": "Unknown::toggleFlagF4AndIterate_00436AD0",
+    "class": "Unknown",
+    "signature": "void fn_00436AD0(void* self)",
+    "summary": "Toggles the byte flag at this+0xF4 (0 -\u003e 1, nonzero -\u003e 0), then calls ext_00436A50 with the new flag value as arg and flag=1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00436F20": {
     "name": "sub_00436F20",
     "signature": "extern \"C\" void fn_00436F20(void)",

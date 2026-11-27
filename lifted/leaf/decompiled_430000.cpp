@@ -4125,3 +4125,29 @@ void fn_00436A50(void* self, int arg, uint8_t flag) {
     }
 }
 } // namespace lift_00436A50
+
+// [0x00436AD0]
+namespace lift_00436AD0 {
+// Known callee 0x00436A50: Unknown::iterateNodesDispatchThenFlag
+// (Walks the circular node list headed at this+0xEC, invokes vfunc +0x178 on each node's object with arg, then if flag is set invokes vfunc +0x150 with 1.)
+extern void ext_00436A50(void* self, int arg, uint8_t flag);
+
+// @name Unknown::toggleFlagF4AndIterate_00436AD0
+// @class Unknown
+// @summary Toggles the byte flag at this+0xF4 (0 -> 1, nonzero -> 0), then calls ext_00436A50 with the new flag value as arg and flag=1.
+// @field Unknown +0xF4 uint8_t field_0xF4
+void fn_00436AD0(void* self) {
+    auto* flagByte = reinterpret_cast<uint8_t*>(static_cast<char*>(self) + 0xF4);
+
+    // cmp byte ptr [ecx+0xF4], 0 ; sete al  -> al = (old == 0)
+    uint8_t newFlag = (*flagByte == 0) ? 1 : 0;
+
+    // mov byte ptr [ecx+0xF4], al
+    *flagByte = newFlag;
+
+    // push 1; push eax; call sub_00436A50
+    // NOTE: the asm pushes full eax, but only AL is defined here; upper bits are unmodeled.
+    // Passing the zero-extended low byte as `arg`.
+    ext_00436A50(self, static_cast<int>(newFlag), 1);
+}
+} // namespace lift_00436AD0
