@@ -229,3 +229,64 @@ void fn_005EE2F0(void* self) {
     ext_00587920(lift_field<void*>(self, 0x17C), lift_field<void*>(self, 0x184), 0);
 }
 } // namespace lift_005EE2F0
+
+// [0x005E4BB0] NMData::SkeletalJointData::vfunc_66 (182 bytes)
+namespace lift_005E4BB0 {
+extern void* ext_00435D00(void* os, const char* text);
+extern void* ext_0067E9E0(void* os, void* value);
+extern void* mem_00924E90;          // std::endl manipulator (function address)
+extern void* mem_00924FA0;          // std::cout object address
+extern void* mem_00924E98;          // ostream::operator<<(manip) (__thiscall, returns ostream&)
+extern void* mem_00B40640;          // global value passed to sub-object vtable slot 5
+extern const char mem_0096AD54[];   // .rdata string literal
+extern const char mem_0096AD3C[];   // .rdata string literal
+
+// @name NMData::SkeletalJointData::vfunc_66
+// @class NMData::SkeletalJointData
+// @summary Dumps two debug blocks to std::cout: a header string, then the result of the
+//          sub-object at +0x17C (vtable slot 5), a header string, then the result of the
+//          sub-object at +0x180 (vtable slot 5); each block is followed by std::endl.
+// @field NMData::SkeletalJointData +0x17C void* field_0x17c
+// @field NMData::SkeletalJointData +0x180 void* field_0x180
+
+namespace {
+
+// std::ostream& operator<<(std::ostream& (*)(std::ostream&)) -- __thiscall member
+using OstreamManipFn = void* (__thiscall*)(void* os, void* manip);
+// Virtual slot 5 on the sub-object interface -- __thiscall, one argument
+using SubObjectSlot5Fn = void* (__thiscall*)(void* iface, void* arg);
+
+inline void* put_endl(void* os) {
+    auto fn = reinterpret_cast<OstreamManipFn>(reinterpret_cast<uintptr_t>(mem_00924E98));
+    return fn(os, mem_00924E90);
+}
+
+// Sub-object pointer at self+offset; its interface lives at +4 and its vtable pointer is at iface[0].
+inline void* call_sub_slot5(void* self, ptrdiff_t offset) {
+    void* sub = lift_field<void*>(self, offset);
+    void* iface = static_cast<uint8_t*>(sub) + 4;
+    void** vtbl = *reinterpret_cast<void***>(iface);
+    auto fn = reinterpret_cast<SubObjectSlot5Fn>(vtbl[5]);
+    return fn(iface, mem_00B40640);
+}
+
+}  // namespace
+
+void fn_005E4BB0(void* self) {
+    void* cout_obj = mem_00924FA0;
+
+    // std::cout << "<header A>" << std::endl;
+    put_endl(ext_00435D00(cout_obj, mem_0096AD54));
+
+    // ext_0067E9E0(std::cout, call_sub_slot5(field_0x17c)) << std::endl;
+    void* value_a = call_sub_slot5(self, 0x17C);
+    put_endl(ext_0067E9E0(cout_obj, value_a));
+
+    // std::cout << "<header B>" << std::endl;
+    put_endl(ext_00435D00(cout_obj, mem_0096AD3C));
+
+    // ext_0067E9E0(std::cout, call_sub_slot5(field_0x180)) << std::endl;
+    void* value_b = call_sub_slot5(self, 0x180);
+    put_endl(ext_0067E9E0(cout_obj, value_b));
+}
+} // namespace lift_005E4BB0
