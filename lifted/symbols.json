@@ -29397,6 +29397,13 @@
     "summary": "Three-argument compare/swap network over records keyed by the std::string at +0x04: for each pair (other, self), (third, other), (other, self) whose strings compare equal, swaps the whole records via swapStringAndFloat.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050B710": {
+    "name": "NMData::TaskManager::vfunc_3_off_4",
+    "class": "NMData::TaskManager",
+    "signature": "extern \"C\" void* __thiscall fn_0050B710(void* self, void* arg)",
+    "summary": "Resolves a value from the object's +0x08 index into a name table, runs the sub-object setup and vector walk, then assigns the resolved object and name into the child via ResetChildAndAssignName; returns the original argument.",
+    "lifted_path": "lifted/NMData/TaskManager.cpp"
+  },
   "0x0050B780": {
     "name": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::TaskTemplateParam\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_10",
     "class": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::TaskTemplateParam\u003e\u003e, Properties::GetPropertySource\u003e",

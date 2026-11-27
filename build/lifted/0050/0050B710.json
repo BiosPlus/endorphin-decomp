@@ -1,0 +1,34 @@
+{
+  "va": "0x0050B710",
+  "size": 106,
+  "orig_symbol": "NMData::TaskManager::vfunc_3_off_4",
+  "src_path": "src/NMData/TaskManager.cpp",
+  "lifted_path": "lifted/NMData/TaskManager.cpp",
+  "name": "NMData::TaskManager::vfunc_3_off_4",
+  "class": "NMData::TaskManager",
+  "signature": "extern \"C\" void* __thiscall fn_0050B710(void* self, void* arg)",
+  "summary": "Resolves a value from the object's +0x08 index into a name table, runs the sub-object setup and vector walk, then assigns the resolved object and name into the child via ResetChildAndAssignName; returns the original argument.",
+  "fields": [
+    {
+      "class": "NMData::TaskManager",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMData::TaskManager",
+      "offset": "+0xC",
+      "type": "unknown",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "NMData::TaskManager",
+      "offset": "+0x20",
+      "type": "unknown",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:45:07Z"
+}

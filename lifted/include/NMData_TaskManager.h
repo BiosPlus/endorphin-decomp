@@ -10,6 +10,8 @@
 // Recovered field layout for NMData::TaskManager:
 namespace lifted_layout {
 struct NMData_TaskManager_Fields {
-    // +0x8   void*                    field_0x08  (evidence: 0x0050D8B0)
+    // +0x8   void*                    field_0x08  (evidence: 0x0050B710)
+    // +0xC   unknown                  field_0x0C  (evidence: 0x0050B710)
+    // +0x20  unknown                  field_0x20  (evidence: 0x0050B710)
 };
 } // namespace lifted_layout
