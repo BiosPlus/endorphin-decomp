@@ -2621,3 +2621,40 @@ void fn_00493970(void* self) {
     fields[2] = 0;
 }
 } // namespace lift_00493970
+
+// [0x00496DF0] sub_00496DF0 (140 bytes)
+namespace lift_00496DF0 {
+// Thiscall targets: the implicit `this` is passed as the first parameter.
+extern void ext_00662610(void* str, const char* lit);          // std::string ctor from literal (cdecl)
+extern void* ext_00474F00(void* self, void* str, const char* s); // resolves/returns string slot at this+0x18
+extern void* ext_00476360(void* self, void* str);                // result stored to *out
+
+extern const char mem_00A349BC[];                                 // literal passed to ext_00662610
+// Indirect calls through IAT-style slots: [0x924FD4] -> 0x00629266 (basic_string::operator=(const char*)),
+// [0x924FF4] -> 0x00628FF0 (basic_string::~basic_string).
+extern void* (*mem_00924FD4)(void* self, const char* s);
+extern void (*mem_00924FF4)(void* self);
+
+// @name ResolveNameIntoOutput_00496DF0
+// @summary Builds a temporary string from a literal, optionally assigns arg s into a member string slot, then stores the subobject lookup result into *out and returns out.
+// @field Unknown +0x08 uint8_t field_0x08 (subobject; passed by address to ext_00476360)
+// @field Unknown +0x18 uint8_t field_0x18 (subobject; passed by address to ext_00474F00)
+void** __thiscall fn_00496DF0(void* self, void** out, const char* s) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // 0x1C-byte std::string temporary (MSVC basic_string frame slot at esp+4).
+    alignas(8) uint8_t local[0x1C];
+
+    ext_00662610(local, mem_00A349BC);
+
+    if (s != nullptr) {
+        void* tgt = ext_00474F00(base + 0x18, local, s);
+        mem_00924FD4(tgt, s);
+    }
+
+    *out = ext_00476360(base + 0x08, local);
+
+    mem_00924FF4(local);
+    return out;
+}
+} // namespace lift_00496DF0

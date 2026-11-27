@@ -13602,6 +13602,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00496DF0": {
+    "name": "ResolveNameIntoOutput_00496DF0",
+    "signature": "void** __thiscall fn_00496DF0(void* self, void** out, const char* s)",
+    "summary": "Builds a temporary string from a literal, optionally assigns arg s into a member string slot, then stores the subobject lookup result into *out and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00496F00": {
     "name": "sub_00496F00",
     "signature": "extern \"C\" void __fastcall fn_00496F00(void* self)",

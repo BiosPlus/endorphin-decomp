@@ -386,6 +386,7 @@ struct Unknown_Fields {
     // +0x8   void* field_0x08 (vector end)  (evidence: 0x004E1F50) // CONFLICT: multiple definitions at +0x8
     // +0x8   void** field_0x08 (container element end)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 entriesEnd  (evidence: 0x0068BDF0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t field_0x08 (subobject; passed by address to ext_00476360)  (evidence: 0x00496DF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    f2  (evidence: 0x0066A4E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0, 0x006E73B0, 0x006F8B30, 0x006FC200, 0x00714920, 0x007155B0, 0x0071F070, 0x00754F20) // CONFLICT: multiple definitions at +0x8
     // +0x8   Buffer                   field_0x08  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x8
@@ -711,6 +712,7 @@ struct Unknown_Fields {
     // +0x18  std::uint32_t            elemScale  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    embedded  (evidence: 0x00537A30) // CONFLICT: multiple definitions at +0x18
     // +0x18  DWORD                    entryCount  (evidence: 0x006FC250) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint8_t field_0x18 (subobject; passed by address to ext_00474F00)  (evidence: 0x00496DF0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void* field_0x18 (record vector; passed to ext_00559C80)  (evidence: 0x0055B720) // CONFLICT: multiple definitions at +0x18
     // +0x18  BYTE                     field_0x18  (evidence: 0x00412CE0) // CONFLICT: multiple definitions at +0x18
     // +0x18  BYTE*                    field_0x18  (evidence: 0x00550520) // CONFLICT: multiple definitions at +0x18

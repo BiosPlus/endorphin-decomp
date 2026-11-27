@@ -1,0 +1,27 @@
+{
+  "va": "0x00496DF0",
+  "size": 140,
+  "orig_symbol": "sub_00496DF0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "ResolveNameIntoOutput_00496DF0",
+  "signature": "void** __thiscall fn_00496DF0(void* self, void** out, const char* s)",
+  "summary": "Builds a temporary string from a literal, optionally assigns arg s into a member string slot, then stores the subobject lookup result into *out and returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t field_0x08 (subobject; passed by address to",
+      "name": "ext_00476360)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t field_0x18 (subobject; passed by address to",
+      "name": "ext_00474F00)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:13:27Z"
+}
