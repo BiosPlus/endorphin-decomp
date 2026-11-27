@@ -18028,6 +18028,13 @@
     "summary": "Allocates and initializes a 0x3C-byte red-black tree node.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004ADB20": {
+    "name": "sub_004ADB20",
+    "class": "RBTree",
+    "signature": "inline void* getPtr(void* n, ptrdiff_t off)",
+    "summary": "Auto-lifted identical-shape clone of 0x00475E50 (RBTree::insertAt_00475E50).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AE110": {
     "name": "sub_004AE110",
     "class": "TreeMap",
@@ -32631,6 +32638,13 @@
     "summary": "Forwards its argument to CallSlot3OnEachEntry (0x005170D0) on this, then calls 0x00678D70 on this with flag 1.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00517600": {
+    "name": "sub_00517600",
+    "class": "Unknown",
+    "signature": "[[noreturn]] static inline void invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x004BB6C0 (Unknown::InitWithCastAndSearch).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x00517750": {
     "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_3",
     "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
@@ -40320,6 +40334,13 @@
     "summary": "Export skeleton hierarchy and motion frames to a BVH file.",
     "lifted_path": "lifted/classes/BVHIO.cpp"
   },
+  "0x0056EE50": {
+    "name": "sub_0056EE50",
+    "class": "RBTree",
+    "signature": "inline void* getPtr(void* n, ptrdiff_t off)",
+    "summary": "Auto-lifted identical-shape clone of 0x00475E50 (RBTree::insertAt_00475E50).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x0056F050": {
     "name": "sub_0056F050",
     "class": "TreeMap",
@@ -45120,6 +45141,13 @@
     "summary": "For each element pointer in the +0x74..+0x78 range, calls vslot 9(arg) and vslot 10(arg, 1) on the element's +0x0C subobject.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x005A0000": {
+    "name": "sub_005A0000",
+    "class": "RBTree",
+    "signature": "inline void* getPtr(void* n, ptrdiff_t off)",
+    "summary": "Auto-lifted identical-shape clone of 0x00475E50 (RBTree::insertAt_00475E50).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A0200": {
     "name": "copyStringRangeFromTreeIteratorWrapper",
     "signature": "void* fn_005A0200(void* container, void* node, void* expectedContainer, void* endNode, std::string* out)",
@@ -46146,6 +46174,13 @@
     "name": "fill_qword_range",
     "signature": "uint32_t sub_005AD1C0(uint32_t first, uint32_t last, const uint32_t* val)",
     "summary": "Fills a range [first, last) with an 8-byte value pointed to by val.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005AD1F0": {
+    "name": "sub_005AD1F0",
+    "class": "RBTree",
+    "signature": "inline void* getPtr(void* n, ptrdiff_t off)",
+    "summary": "Auto-lifted identical-shape clone of 0x00475E50 (RBTree::insertAt_00475E50).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005ADD30": {
@@ -62332,6 +62367,13 @@
     "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0060A6A0(void* self, void* /*edx*/, void* result)",
     "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
     "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
+  "0x0060ACD0": {
+    "name": "sub_0060ACD0",
+    "class": "Unknown",
+    "signature": "[[noreturn]] static inline void invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x004BB6C0 (Unknown::InitWithCastAndSearch).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060AE20": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_4",

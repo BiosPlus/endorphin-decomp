@@ -2348,3 +2348,168 @@ TreeIterator* __thiscall fn_004AE210(void* self, TreeIterator* ret, void* whereC
     return ret;
 }
 } // namespace lift_004AE210
+
+// [0x004ADB20] sub_004ADB20 (508 bytes)
+namespace lift_004ADB20 {
+// @name sub_004ADB20
+// @summary Auto-lifted identical-shape clone of 0x00475E50 (RBTree::insertAt_00475E50).
+namespace lift_00475E50 {
+// Lifted callee 0x00475A40: allocNode_00475A40 (allocates and initializes a 0x3C-byte tree node).
+extern void* ext_004ADA80(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5);
+// Lifted callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+// Unlifted tree rotations (thiscall: ecx = self, one stack arg = node).
+extern void __thiscall ext_0046FF90(void* self, void* node);   // rotate left at node
+extern void __thiscall ext_004EF730(void* self, void* node);   // rotate right at node
+// Referenced only (not called on this path): 0x00476EC0, 0x0059F520, 0x006244E0.
+extern void ext_00476EC0();
+extern void ext_0059F520();
+extern void ext_006244E0();
+extern int mem_0088F4C2;
+extern int mem_0092C530;
+extern int mem_00924FE4;
+extern int mem_009251C4;
+extern int mem_00928ECC;
+extern int mem_00924FE0;
+extern int mem_009CDF20;
+extern int mem_00928ED8;
+
+namespace {
+// Node/tree layout (MSVC std::_Tree style):
+//   node +0x00 left, +0x04 parent, +0x08 right, +0x38 color (0 = red, 1 = black), +0x39 isnil
+//   tree +0x04 head (header node: left = leftmost, parent = root, right = rightmost), +0x08 size
+constexpr uint8_t kRed = 0;
+constexpr uint8_t kBlack = 1;
+
+inline void* getPtr(void* n, ptrdiff_t off) { return lift_field<void*>(n, off); }
+inline void setPtr(void* n, ptrdiff_t off, void* v) { lift_field<void*>(n, off) = v; }
+inline uint8_t getByte(void* n, ptrdiff_t off) { return lift_field<uint8_t>(n, off); }
+inline void setByte(void* n, ptrdiff_t off, uint8_t v) { lift_field<uint8_t>(n, off) = v; }
+} // namespace
+
+// @name RBTree::insertAt_00475E50
+// @class RBTree
+// @summary Allocates a red node for val, links it under `node` (left child if left_flag is set, else right), updates head's leftmost/rightmost/root, increments size, and rebalances; writes {tree, newNode} to out and returns out.
+// @field RBTree +0x04 void* head
+// @field RBTree +0x08 uint32_t size
+// @field Node +0x00 void* left
+// @field Node +0x04 void* parent
+// @field Node +0x08 void* right
+// @field Node +0x38 uint8_t color
+// @field Node +0x39 uint8_t isnil
+void* fn_004ADB20(void* self, void* out, uint32_t left_flag, void* node, void* val) {
+    // Size check: map/set<T> too long -> throw (std::length_error path).
+    if (lift_field<uint32_t>(self, 0x08) >= 0x5D1745Cu) {
+        (void)&ext_00476EC0;
+        (void)&ext_0059F520;
+        (void)&ext_006244E0;
+        (void)&mem_0088F4C2;
+        (void)&mem_0092C530;
+        (void)&mem_00924FE4;
+        (void)&mem_009251C4;
+        (void)&mem_00928ECC;
+        (void)&mem_00924FE0;
+        (void)&mem_00928ED8;
+        ext_006A6DD2(nullptr, &mem_009CDF20);
+    }
+
+    void* head = getPtr(self, 0x04);
+    void* newnode = ext_004ADA80(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(head)),
+                                static_cast<uint32_t>(reinterpret_cast<uintptr_t>(node)),
+                                static_cast<uint32_t>(reinterpret_cast<uintptr_t>(head)),
+                                val, 0);
+    lift_field<uint32_t>(self, 0x08) += 1;
+
+    if (node == head) {
+        // Empty tree: header points at the new node on all three links.
+        setPtr(head, 0x04, newnode);
+        setPtr(head, 0x00, newnode);
+        setPtr(head, 0x08, newnode);
+    } else if (static_cast<uint8_t>(left_flag) != 0) {
+        setPtr(node, 0x00, newnode);
+        if (node == getPtr(head, 0x00)) {
+            setPtr(head, 0x00, newnode);
+        }
+    } else {
+        setPtr(node, 0x08, newnode);
+        if (node == getPtr(head, 0x08)) {
+            setPtr(head, 0x08, newnode);
+        }
+    }
+
+    // Rebalance: while the parent of z is red.
+    void* z = newnode;
+    while (getByte(getPtr(z, 0x04), 0x38) == kRed) {
+        void* p = getPtr(z, 0x04);
+        void* g = getPtr(p, 0x04);
+
+        if (p == getPtr(g, 0x00)) {
+            void* u = getPtr(g, 0x08);
+            if (getByte(u, 0x38) == kRed) {
+                setByte(p, 0x38, kBlack);
+                setByte(u, 0x38, kBlack);
+                setByte(g, 0x38, kRed);
+                z = g;
+            } else {
+                void* cur = z;
+                if (z == getPtr(p, 0x08)) {
+                    ext_0046FF90(self, p);
+                    cur = p;
+                }
+                setByte(getPtr(cur, 0x04), 0x38, kBlack);
+                setByte(getPtr(getPtr(cur, 0x04), 0x04), 0x38, kRed);
+                ext_004EF730(self, getPtr(getPtr(cur, 0x04), 0x04));
+                z = cur;
+            }
+        } else {
+            void* u = getPtr(g, 0x00);
+            if (getByte(u, 0x38) == kRed) {
+                setByte(p, 0x38, kBlack);
+                setByte(u, 0x38, kBlack);
+                setByte(g, 0x38, kRed);
+                z = g;
+            } else {
+                void* cur = z;
+                if (z == getPtr(p, 0x00)) {
+                    ext_004EF730(self, p);
+                    cur = p;
+                }
+                void* par = getPtr(cur, 0x04);
+                setByte(par, 0x38, kBlack);
+                void* gg = getPtr(par, 0x04);
+                setByte(gg, 0x38, kRed);
+
+                // Inline left rotation at gg.
+                void* x = getPtr(gg, 0x08);
+                void* y = getPtr(x, 0x00);
+                setPtr(gg, 0x08, y);
+                if (getByte(y, 0x39) == 0) {
+                    setPtr(y, 0x04, gg);
+                }
+                setPtr(x, 0x04, getPtr(gg, 0x04));
+                if (gg == getPtr(head, 0x04)) {
+                    setPtr(head, 0x04, x);
+                } else {
+                    void* gp = getPtr(gg, 0x04);
+                    if (gg == getPtr(gp, 0x00)) {
+                        setPtr(gp, 0x00, x);
+                    } else {
+                        setPtr(gp, 0x08, x);
+                    }
+                }
+                setPtr(x, 0x00, gg);
+                setPtr(gg, 0x04, x);
+                z = cur;
+            }
+        }
+    }
+
+    // Root is always black.
+    setByte(getPtr(getPtr(self, 0x04), 0x04), 0x38, kBlack);
+
+    setPtr(out, 0x04, newnode);
+    setPtr(out, 0x00, self);
+    return out;
+}
+} // namespace lift_00475E50
+} // namespace lift_004ADB20

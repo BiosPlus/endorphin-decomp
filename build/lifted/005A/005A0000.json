@@ -1,0 +1,58 @@
+{
+  "va": "0x005A0000",
+  "size": 508,
+  "orig_symbol": "sub_005A0000",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005A0000",
+  "class": "RBTree",
+  "signature": "inline void* getPtr(void* n, ptrdiff_t off)",
+  "summary": "Auto-lifted identical-shape clone of 0x00475E50 (RBTree::insertAt_00475E50).",
+  "fields": [
+    {
+      "class": "RBTree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "RBTree",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x38",
+      "type": "uint8_t",
+      "name": "color"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "isnil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:52:00Z"
+}

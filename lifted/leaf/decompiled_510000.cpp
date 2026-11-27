@@ -2397,3 +2397,81 @@ extern void** __fastcall fn_0051C4F0(uint8_t* self, void* /*edx*/, void** result
     return result;
 }
 } // namespace lift_0051C4F0
+
+// [0x00517600] sub_00517600 (326 bytes)
+namespace lift_00517600 {
+// @name sub_00517600
+// @summary Auto-lifted identical-shape clone of 0x004BB6C0 (Unknown::InitWithCastAndSearch).
+namespace lift_004BB6C0 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (thiscall-style: self in ecx, one stack arg, returns self)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args -> MSVCR80!__RTDynamicCast)
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, uint32_t srcType, uint32_t targetType, int32_t isReference);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (used only on the invalid-iterator paths)
+extern int mem_00925134;
+
+// Original SEH frame push/pop (fs:[0] chain) is omitted: no exception unwinding is modeled.
+[[noreturn]] static inline void invalid_parameter_noinfo() {
+    (void)&mem_00925134;
+    std::abort();
+}
+
+// @name Unknown::InitWithCastAndSearch
+// @class Unknown
+// @summary Initializes vtable and fields, runs an RTTI dynamic_cast on arg2, and stores a 1-based index/count of arg4 within the vector at +0x10.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x08 void* fallbackPtr
+// @field Unknown +0x10 void* vecPtr
+// @field Unknown +0x14 void* castResult
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 int32_t count
+// @field Unknown +0x24 uint32_t field_0x24
+void* fn_00517600(void* self, void* a1, void* a2, uint32_t a3, uint32_t a4, uint32_t a5) {
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x00) = 0x951F98u;   // vtable
+    lift_field<void*>(self, 0x10) = a1;
+
+    void* castResult = ext_006A6E9E(a2, 0, 0x00A2F4F4u, 0xA42F88u, 0);
+    lift_field<void*>(self, 0x14) = castResult;
+    lift_field<uint32_t>(self, 0x18) = a3;
+    lift_field<uint32_t>(self, 0x1c) = a3;
+    lift_field<uint32_t>(self, 0x24) = a5;
+    if (castResult == nullptr) {
+        lift_field<void*>(self, 0x08) = a2;
+    }
+
+    if (a4 == 0) {
+        // Count of elements: (end - begin) / 4, or 0 when begin is null.
+        uint8_t* begin = lift_field<uint8_t*>(a1, 4);
+        uint8_t* end = lift_field<uint8_t*>(a1, 8);
+        int32_t count = 0;
+        if (begin != nullptr) {
+            count = static_cast<int32_t>(end - begin) >> 2;
+        }
+        lift_field<int32_t>(self, 0x20) = count;
+    } else {
+        if (a1 == nullptr) {
+            invalid_parameter_noinfo();
+        }
+        uint8_t* begin = lift_field<uint8_t*>(a1, 4);
+        uint8_t* end = lift_field<uint8_t*>(a1, 8);
+        if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(end)) {
+            invalid_parameter_noinfo();
+        }
+
+        // Linear search for a4 among 4-byte elements in [begin, end).
+        uint8_t* it = begin;
+        while (it != end && *reinterpret_cast<uint32_t*>(it) != a4) {
+            it += 4;
+        }
+
+        // 1-based index of the match, or one past the last element when not found.
+        lift_field<int32_t>(self, 0x20) = static_cast<int32_t>((it - begin) >> 2) + 1;
+    }
+
+    return self;
+}
+} // namespace lift_004BB6C0
+} // namespace lift_00517600
