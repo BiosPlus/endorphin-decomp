@@ -20158,6 +20158,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::TriggeredEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C28F0": {
+    "name": "NMData::AnimationEventData::vfunc_92",
+    "class": "NMData::AnimationEventData",
+    "signature": "void __thiscall fn_004C28F0(void* self, const void* str_arg)",
+    "summary": "Copies the input string, passes it to ext_004C2790 and vfunc at +0x5C, then destroys the copy",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004C3410": {
     "name": "NMData::DesiredPoseEventData::vfunc_15",
     "class": "NMData::DesiredPoseEventData",
@@ -20526,6 +20533,13 @@
     "class": "NMData::SeverEventData",
     "signature": "extern \"C\" void __thiscall fn_004C7190(void* self, void* a)",
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
+    "lifted_path": "lifted/NMData/SeverEventData.cpp"
+  },
+  "0x004C71C0": {
+    "name": "NMData::SeverEventData::vfunc_22",
+    "class": "NMData::SeverEventData",
+    "signature": "void* fn_004C71C0(void* self, void* arg)",
+    "summary": "Forwards the argument to the TriggeredEventData base vfunc_22, then resets the child name at this+0x180 via ResetChildAndAssignName and returns the argument.",
     "lifted_path": "lifted/NMData/SeverEventData.cpp"
   },
   "0x004C7200": {

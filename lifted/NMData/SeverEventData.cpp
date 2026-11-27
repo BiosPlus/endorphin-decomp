@@ -126,3 +126,32 @@ extern void __thiscall fn_004CA1C0(void* self) {
     ext_004C9560(new_obj, self);
 }
 } // namespace lift_004CA1C0
+
+// [0x004C71C0] NMData::SeverEventData::vfunc_22 (60 bytes)
+namespace lift_004C71C0 {
+// Known callee 0x004C1DE0: NMData::TriggeredEventData::vfunc_22 (432B)
+extern void ext_004C1DE0(void* self, void* arg);
+// Known callee 0x00640110: sub_00640110 (296B)
+extern void* ext_00640110(void* self, void* arg);
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+extern void ext_00427550(void* self, const char* name);
+extern uint32_t mem_00A9F96C;
+extern void* mem_00924FF0;
+
+// @name NMData::SeverEventData::vfunc_22
+// @class NMData::SeverEventData
+// @summary Forwards the argument to the TriggeredEventData base vfunc_22, then resets the child name at this+0x180 via ResetChildAndAssignName and returns the argument.
+// @field NMData::SeverEventData +0x180 std::string field_0x180
+void* fn_004C71C0(void* self, void* arg) {
+    ext_004C1DE0(self, arg);
+
+    void* slot = ext_00640110(arg, reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00A9F96C)));
+
+    void* str = &lift_field<uint8_t>(self, 0x180);
+    auto c_str = reinterpret_cast<const char* (*)(void*)>(mem_00924FF0);
+    const char* name = c_str(str);
+
+    ext_00427550(&slot, name);
+    return arg;
+}
+} // namespace lift_004C71C0

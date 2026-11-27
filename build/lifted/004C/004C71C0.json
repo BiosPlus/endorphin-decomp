@@ -1,0 +1,22 @@
+{
+  "va": "0x004C71C0",
+  "size": 60,
+  "orig_symbol": "NMData::SeverEventData::vfunc_22",
+  "src_path": "src/NMData/SeverEventData.cpp",
+  "lifted_path": "lifted/NMData/SeverEventData.cpp",
+  "name": "NMData::SeverEventData::vfunc_22",
+  "class": "NMData::SeverEventData",
+  "signature": "void* fn_004C71C0(void* self, void* arg)",
+  "summary": "Forwards the argument to the TriggeredEventData base vfunc_22, then resets the child name at this+0x180 via ResetChildAndAssignName and returns the argument.",
+  "fields": [
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x180",
+      "type": "std::string",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:40:32Z"
+}
