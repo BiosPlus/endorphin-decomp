@@ -1325,3 +1325,16 @@ void* fn_00865C00(void* pair, void* table) {
     return table;
 }
 } // namespace lift_00865C00
+
+// [0x0086B220] sub_0086B220 (128 bytes)
+namespace lift_0086B220 {
+// @name CopyFiveDwords
+// @summary Copies five consecutive 32-bit words from src to dst (offsets 0x00..0x10).
+void fn_0086B220(void* src, void* dst) {
+    const auto* s = static_cast<const std::uint32_t*>(src);
+    auto* d = static_cast<std::uint32_t*>(dst);
+    for (int i = 0; i < 5; ++i) {
+        d[i] = s[i];
+    }
+}
+} // namespace lift_0086B220

@@ -81897,6 +81897,12 @@
     "summary": "Zeroes five consecutive DWORD slots starting at the target buffer.",
     "lifted_path": "lifted/leaf/tiny_860000.cpp"
   },
+  "0x0086B220": {
+    "name": "CopyFiveDwords",
+    "signature": "void fn_0086B220(void* src, void* dst)",
+    "summary": "Copies five consecutive 32-bit words from src to dst (offsets 0x00..0x10).",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086BF40": {
     "name": "checkEmptyArrayAndFlag",
     "signature": "extern \"C\" uint16_t sub_0086BF40(const uint8_t* obj)",
