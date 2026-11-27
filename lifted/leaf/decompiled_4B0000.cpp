@@ -2064,3 +2064,47 @@ void* fn_004BA0D0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4
     return self;
 }
 } // namespace lift_004BA0D0
+
+// [0x004B76A0] sub_004B76A0 (146 bytes)
+namespace lift_004B76A0 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (stores vtable 0x00987A04, stack arg at +0x04, zeroes +0x08/+0x0C; returns self).
+extern void* __thiscall ext_006657F0(void* self, uint32_t arg0);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk to MSVCR80!__RTDynamicCast).
+extern void ext_006A6E9E();
+
+// @name Unknown::ctor_DynamicCastPair
+// @class Unknown
+// @summary Initializes the object: calls ext_006657F0(self, 0), sets the vtable to 0x00943660, stores arg0 at +0x10, runs __RTDynamicCast on arg1 and stores the result at +0x14, stores arg2/arg3 at +0x1C/+0x24, and sets +0x08 to arg1 only when the cast fails. Returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t uncastPtr
+// @field Unknown +0x10 uint32_t arg0Value
+// @field Unknown +0x14 uint32_t castResult
+// @field Unknown +0x18 uint32_t zero18
+// @field Unknown +0x1C uint32_t arg2Value
+// @field Unknown +0x20 uint32_t zero20
+// @field Unknown +0x24 uint32_t arg3Value
+void* __thiscall fn_004B76A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00943660u;
+    lift_field<uint32_t>(self, 0x10) = arg0;
+
+    using RTDynamicCast_t = uint32_t(__cdecl*)(uint32_t inptr, int32_t vfDelta,
+                                               uint32_t srcType, uint32_t targetType,
+                                               int32_t isReference);
+    uint32_t castResult = reinterpret_cast<RTDynamicCast_t>(ext_006A6E9E)(
+        arg1, 0, 0x00A2F4F4u, 0x00A38B38u, 0);
+
+    lift_field<uint32_t>(self, 0x14) = castResult;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = arg2;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = arg3;
+
+    if (castResult == 0) {
+        lift_field<uint32_t>(self, 0x08) = arg1;
+    }
+
+    return self;
+}
+} // namespace lift_004B76A0

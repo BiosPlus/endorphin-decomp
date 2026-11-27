@@ -15430,6 +15430,13 @@
     "summary": "Initializes the object: calls base init, stores two uint32 values, and copy-constructs two std::strings from the given pointers.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B76A0": {
+    "name": "Unknown::ctor_DynamicCastPair",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_004B76A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Initializes the object: calls ext_006657F0(self, 0), sets the vtable to 0x00943660, stores arg0 at +0x10, runs __RTDynamicCast on arg1 and stores the result at +0x14, stores arg2/arg3 at +0x1C/+0x24, and sets +0x08 to arg1 only when the cast fails. Returns self.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B7740": {
     "name": "Unknown::Unknown(uint32_t, uint32_t, const Object*, uint32_t)",
     "class": "Unknown",
