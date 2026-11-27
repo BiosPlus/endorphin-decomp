@@ -1,0 +1,22 @@
+{
+  "va": "0x004FADD0",
+  "size": 27,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_17",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_17",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "uint32_t fn_004FADD0(void* self)",
+  "summary": "Calls ext_004667A0(this-\u003e+0x4, 3), then tail-dispatches vtable slot 17 (+0x44) of the object at this-\u003e+0x4-\u003e+0xC with that object as 'this'.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:55:41Z"
+}

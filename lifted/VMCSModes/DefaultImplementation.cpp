@@ -384,3 +384,27 @@ bool VMCSModes_DefaultImplementation_vfunc_72(void* self) {
     return ext_00477FA0(ebx, elem);
 }
 } // namespace lift_004FAAB0
+
+// [0x004FADD0] VMCSModes::DefaultImplementation::vfunc_17 (27 bytes)
+namespace lift_004FADD0 {
+extern void ext_004667A0(void* self, uint32_t arg);
+
+// @name VMCSModes::DefaultImplementation::vfunc_17
+// @class VMCSModes::DefaultImplementation
+// @summary Calls ext_004667A0(this->+0x4, 3), then tail-dispatches vtable slot 17 (+0x44) of the object at this->+0x4->+0xC with that object as 'this'.
+// @field VMCSModes::DefaultImplementation +0x04 void* field_0x04
+uint32_t fn_004FADD0(void* self) {
+    // ecx = this->+0x4; push 3; call ext_004667A0
+    void* p = lift_field<void*>(self, 0x04);
+    ext_004667A0(p, 3);
+
+    // eax = this->+0x4 (reloaded after the call); ecx = eax->+0xC
+    void* q = lift_field<void*>(lift_field<void*>(self, 0x04), 0x0C);
+
+    // edx = [ecx] (vtable); eax = [edx + 0x44] (slot 17); jmp eax with ecx = q
+    void* vtable = lift_field<void*>(q, 0x00);
+    using VFn = uint32_t (__thiscall*)(void* self_ptr);
+    VFn slot = reinterpret_cast<VFn>(lift_field<void*>(vtable, 0x44));
+    return slot(q);
+}
+} // namespace lift_004FADD0

@@ -25848,6 +25848,13 @@
     "summary": "Looks up a range via this-\u003e+0x8-\u003e+0x14-\u003e+0x34 renderer chain; returns fn_00477FA0(field 0x26C of global object, first element of range) if the range is non-empty, else false.",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004FADD0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_17",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FADD0(void* self)",
+    "summary": "Calls ext_004667A0(this-\u003e+0x4, 3), then tail-dispatches vtable slot 17 (+0x44) of the object at this-\u003e+0x4-\u003e+0xC with that object as 'this'.",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004FD800": {
     "name": "WriteZeroThroughPtrField",
     "class": "Unknown",
