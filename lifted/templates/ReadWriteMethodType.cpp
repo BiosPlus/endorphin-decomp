@@ -11061,3 +11061,25 @@ void fn_00504C10(void* obj) {
     lift_field<uint32_t>(obj, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AEBB44));
 }
 } // namespace lift_00504C10
+
+// [0x00511F00] ExprParser::ReadWriteMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall Chromosome::Descriptor::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_00511F00 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00AEBE00;
+extern int mem_00AEBDFC;
+
+// @name ReadWriteMethodType<Chromosome::Descriptor, std::string const &>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall Chromosome::Descriptor::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary One-time guarded init of the static at mem_00AEBDFC (vtable 0x009514A4), then stores its address into self+4.
+// @field ExprParser::ValuePtrType +0x04 DWORD field_0x04
+void fn_00511F00(void* self) {
+    // Guard bit in mem_00AEBE00: run the one-time initialisation only once.
+    if ((mem_00AEBE00 & 1) == 0) {
+        mem_00AEBE00 |= 1;
+        ext_0067A670();                       // thiscall on &mem_00AEBDFC (ECX), no stack args
+        mem_00AEBDFC = 0x009514A4;            // vtable pointer for the static object
+    }
+    lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AEBDFC));
+}
+} // namespace lift_00511F00

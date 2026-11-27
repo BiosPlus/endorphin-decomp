@@ -21386,6 +21386,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00511F00": {
+    "name": "ReadWriteMethodType\u003cChromosome::Descriptor, std::string const \u0026\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall Chromosome::Descriptor::setName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_00511F00(void* self)",
+    "summary": "One-time guarded init of the static at mem_00AEBDFC (vtable 0x009514A4), then stores its address into self+4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00511F80": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_13",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
