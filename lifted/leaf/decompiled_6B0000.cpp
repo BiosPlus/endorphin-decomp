@@ -2037,3 +2037,56 @@ uint32_t fn_006B6480(void* self, void* obj, uint32_t arg2, uint32_t arg3) {
     return lift_field<uint32_t>(element, 4);
 }
 } // namespace lift_006B6480
+
+// [0x006B0490] sub_006B0490 (136 bytes)
+namespace lift_006B0490 {
+// IAT slots for MFC80 ordinals, called indirectly. Each slot's value is the import address.
+extern uint32_t mem_0092478C;  // MFC80!ord_6703 (thiscall, no stack args)
+extern uint32_t mem_00924788;  // MFC80!ord_299  (thiscall, one stack arg)
+extern uint32_t mem_0092431C;  // MFC80!ord_2902 (thiscall, no stack args)
+extern uint32_t mem_00924300;  // MFC80!ord_876  (thiscall, one stack arg)
+extern uint32_t mem_00924784;  // MFC80!ord_6118 (one stack arg; ecx not set at call site)
+extern uint32_t mem_00924780;  // MFC80!ord_1489 (three stack args)
+
+// @name callMfcChainReturnFirstArg
+// @summary Runs a fixed chain of MFC80 imports on arg1/arg3 (ordinals 6703, 299, 2902, 876, 6118, 1489) and returns arg1.
+void* fn_006B0490(void* arg1, void* /*arg2: never read by the original*/, void* arg3) {
+    // SEH frame setup/teardown and the local scratch stores at [esp+8] / [esp+0x14]
+    // from the original asm are compiler boilerplate and are intentionally omitted.
+
+    using ThisCall0 = uint32_t(__thiscall*)(void* self);
+    using ThisCall1 = uint32_t(__thiscall*)(void* self, uint32_t a);
+    using StdCall1 = uint32_t(__stdcall*)(uint32_t a);
+    using StdCall3 = uint32_t(__stdcall*)(uint32_t a, void* b, void* c);
+
+    auto import_6703 = reinterpret_cast<ThisCall0>(static_cast<uintptr_t>(mem_0092478C));
+    auto import_299 = reinterpret_cast<ThisCall1>(static_cast<uintptr_t>(mem_00924788));
+    auto import_2902 = reinterpret_cast<ThisCall0>(static_cast<uintptr_t>(mem_0092431C));
+    auto import_876 = reinterpret_cast<ThisCall1>(static_cast<uintptr_t>(mem_00924300));
+    auto import_6118 = reinterpret_cast<StdCall1>(static_cast<uintptr_t>(mem_00924784));
+    auto import_1489 = reinterpret_cast<StdCall3>(static_cast<uintptr_t>(mem_00924780));
+
+    // ecx = arg3; MFC80!ord_6703 on arg3.
+    const uint32_t r0 = import_6703(arg3);
+
+    // ecx = arg1; MFC80!ord_299 on arg1 with r0.
+    import_299(arg1, r0);
+
+    // ecx = arg3; MFC80!ord_2902 on arg3.
+    const uint32_t r1 = import_2902(arg3);
+
+    // ecx = arg3; MFC80!ord_876 on arg3 with r1.
+    const uint32_t r2 = import_876(arg3, r1);
+
+    // MFC80!ord_6118 with arg3 on the stack (ecx was not set by the original; the
+    // extra pushed value r2 is removed by the caller's add esp,4 and is not read).
+    const uint32_t r3 = import_6118(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)));
+    (void)r2;
+
+    // MFC80!ord_1489 with (r3, arg3, arg1).
+    import_1489(r3, arg3, arg1);
+
+    // Original returns arg1 (mov eax, edi).
+    return arg1;
+}
+} // namespace lift_006B0490

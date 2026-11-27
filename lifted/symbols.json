@@ -63276,6 +63276,12 @@
     "summary": "Tail-dispatch thunk: loads this-\u003evtable[+0x28] and returns that slot's code address (asm jmp target).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B0490": {
+    "name": "callMfcChainReturnFirstArg",
+    "signature": "extern uint32_t mem_0092478C;  // MFC80!ord_6703 (thiscall, no stack args) extern uint32_t mem_00924788;  // MFC80!ord_299  (thiscall, one stack arg) extern uint32_t mem_0092431C;  // MFC80!ord_2902 (thiscall, no stack args) extern uint32_t mem_00924300;  // MFC80!ord_876  (thiscall, one stack arg) extern uint32_t mem_00924784;  // MFC80!ord_6118 (one stack arg; ecx not set at call site) extern uint32_t mem_00924780;  // MFC80!ord_1489 (three stack args) void* fn_006B0490(void* arg1, void* /*arg2: never read by the original*/, void* arg3)",
+    "summary": "Runs a fixed chain of MFC80 imports on arg1/arg3 (ordinals 6703, 299, 2902, 876, 6118, 1489) and returns arg1.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B06A0": {
     "name": "Unknown::~Unknown_006B06A0",
     "class": "Unknown",
