@@ -1,0 +1,13 @@
+{
+  "va": "0x00555160",
+  "size": 122,
+  "orig_symbol": "sub_00555160",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "copyBackward32ByteElements",
+  "signature": "void* fn_00555160(void* first, void* last, void* dLast)",
+  "summary": "Backward (overlap-safe) copy of 0x20-byte elements from [first,last) to end at dLast; returns new dst begin, or dLast if empty.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:26:01Z"
+}

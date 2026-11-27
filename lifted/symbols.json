@@ -26965,6 +26965,12 @@
     "summary": "Copies the 0x1F-byte record at src into every 0x20-byte slot in [dst, end), stepping by 0x20 until end is reached.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00555160": {
+    "name": "copyBackward32ByteElements",
+    "signature": "void* fn_00555160(void* first, void* last, void* dLast)",
+    "summary": "Backward (overlap-safe) copy of 0x20-byte elements from [first,last) to end at dLast; returns new dst begin, or dLast if empty.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00555420": {
     "name": "LowerBound32ByFirstDword_00555420",
     "class": "Element",

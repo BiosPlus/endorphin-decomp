@@ -1945,3 +1945,40 @@ void __thiscall fn_0055B720(void* this_ptr) {
     ext_00559C80(self + 0x18);
 }
 } // namespace lift_0055B720
+
+// [0x00555160] sub_00555160 (122 bytes)
+namespace lift_00555160 {
+// @name copyBackward32ByteElements
+// @summary Backward (overlap-safe) copy of 0x20-byte elements from [first,last) to end at dLast; returns new dst begin, or dLast if empty.
+void* fn_00555160(void* first, void* last, void* dLast) {
+    if (first == last) {
+        return dLast;
+    }
+
+    uint8_t* src = static_cast<uint8_t*>(last);
+    uint8_t* dst = static_cast<uint8_t*>(dLast);
+
+    do {
+        uint8_t* s = src - 0x20;
+        uint8_t* d = dst - 0x20;
+
+        // Same per-element copy order as the original: 0x04, 0x08, 0x00, 0x0C..0x1E.
+        // Offset 0x1F is not touched by the original code and is intentionally skipped.
+        lift_field<uint32_t>(d, 0x04) = lift_field<uint32_t>(s, 0x04);
+        lift_field<uint32_t>(d, 0x08) = lift_field<uint32_t>(s, 0x08);
+        lift_field<uint32_t>(d, 0x00) = lift_field<uint32_t>(s, 0x00);
+        lift_field<uint32_t>(d, 0x0C) = lift_field<uint32_t>(s, 0x0C);
+        lift_field<uint32_t>(d, 0x10) = lift_field<uint32_t>(s, 0x10);
+        lift_field<uint32_t>(d, 0x14) = lift_field<uint32_t>(s, 0x14);
+        lift_field<uint32_t>(d, 0x18) = lift_field<uint32_t>(s, 0x18);
+        lift_field<uint8_t>(d, 0x1C) = lift_field<uint8_t>(s, 0x1C);
+        lift_field<uint8_t>(d, 0x1D) = lift_field<uint8_t>(s, 0x1D);
+        lift_field<uint8_t>(d, 0x1E) = lift_field<uint8_t>(s, 0x1E);
+
+        src = s;
+        dst = d;
+    } while (src != first);
+
+    return dst;
+}
+} // namespace lift_00555160
