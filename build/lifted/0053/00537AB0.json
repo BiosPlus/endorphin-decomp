@@ -1,0 +1,28 @@
+{
+  "va": "0x00537AB0",
+  "size": 96,
+  "orig_symbol": "sub_00537AB0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::destroyRangeOwnerAndBase",
+  "class": "Unknown",
+  "signature": "void fn_00537AB0(void* self)",
+  "summary": "Tears down the embedded range-owner subobject at +0x18, deletes the object at +0x14 via vtable slot 0 (flag 1) if non-null, then runs the base Unknown destructor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "ownedObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:20:30Z"
+}

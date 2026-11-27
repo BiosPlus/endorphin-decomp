@@ -24065,6 +24065,13 @@
     "summary": "Forwards vfunc_13 call to the child object at +0x14.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537AB0": {
+    "name": "Unknown::destroyRangeOwnerAndBase",
+    "class": "Unknown",
+    "signature": "void fn_00537AB0(void* self)",
+    "summary": "Tears down the embedded range-owner subobject at +0x18, deletes the object at +0x14 via vtable slot 0 (flag 1) if non-null, then runs the base Unknown destructor.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00537B10": {
     "name": "Unknown::ctor_00537B10",
     "class": "Unknown",

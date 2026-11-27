@@ -1735,3 +1735,33 @@ extern void fn_00531AE0(void* self) {
     lift_field<uint32_t>(self, 0xc) = 0;
 }
 } // namespace lift_00531AE0
+
+// [0x00537AB0] sub_00537AB0 (96 bytes)
+namespace lift_00537AB0 {
+// Known callee 0x0054C5E0: DerivedRangeOwner::destroyOwnedRangeAndBase (Sets the derived vtable (0x00956D8C), clears and frees the owned pointer range at +0x14, then runs the base Unknown destructor on this object.)
+extern void ext_0054C5E0(void* self);
+// Known callee 0x00532B40: Unknown::dtor_00532B40 (Sets vtable to 0x009543E4 and unlinks peer at +0x08 if it points back to this at +0x04.)
+extern void ext_00532B40(void* self);
+
+// @name Unknown::destroyRangeOwnerAndBase
+// @class Unknown
+// @summary Tears down the embedded range-owner subobject at +0x18, deletes the object at +0x14 via vtable slot 0 (flag 1) if non-null, then runs the base Unknown destructor.
+// @field Unknown +0x14 void* ownedObject
+// @field Unknown +0x18 uint8_t field_0x18
+void fn_00537AB0(void* self) {
+    auto* bytes = static_cast<unsigned char*>(self);
+
+    // Destroy embedded subobject at +0x18 (ecx = esi + 0x18).
+    ext_0054C5E0(bytes + 0x18);
+
+    // Owned object at +0x14: if non-null, call its virtual deleting destructor with flag 1.
+    void* owned = lift_field<void*>(self, 0x14);
+    if (owned != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(owned);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[0])(owned, 1);
+    }
+
+    // Base Unknown destructor on this object.
+    ext_00532B40(self);
+}
+} // namespace lift_00537AB0
