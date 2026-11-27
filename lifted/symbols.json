@@ -10802,6 +10802,12 @@
     "summary": "Allocates count*0x7C bytes via MFC80 ord_762; throws std::exception on multiplication overflow.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048FC00": {
+    "name": "copy_ref_pairs",
+    "signature": "extern \"C\" RefPair* __cdecl sub_0048FC00(RefPair* first, RefPair* last, RefPair* dest)",
+    "summary": "Copies a range of 8-byte ref-counted/managed pairs, releasing old targets and acquiring new ones via vtable calls.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048FE80": {
     "name": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e",

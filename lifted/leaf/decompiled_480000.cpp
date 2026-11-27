@@ -2383,3 +2383,46 @@ uint8_t* __cdecl sub_00486F20(uint8_t* first, uint8_t* last) {
     return result + 0x1c;
 }
 } // namespace lift_00486F20
+
+// [0x0048FC00]
+namespace lift_0048FC00 {
+// @name copy_ref_pairs
+// @summary Copies a range of 8-byte ref-counted/managed pairs, releasing old targets and acquiring new ones via vtable calls.
+// @field RefPair +0x00 uint32_t field_0x00
+// @field RefPair +0x04 void* field_0x04
+
+
+struct RefPair {
+    uint32_t field_0x00;
+    void* field_0x04;
+};
+
+using ReleaseFn = void(__thiscall*)(void* self, RefPair* item);
+using AcquireFn = uint32_t*(__thiscall*)(void* self, uint32_t* out, RefPair* src);
+
+extern RefPair* __cdecl sub_0048FC00(RefPair* first, RefPair* last, RefPair* dest) {
+    while (first != last) {
+        if (dest != first) {
+            if (dest->field_0x04 != nullptr) {
+                auto vtbl = *reinterpret_cast<void***>(dest->field_0x04);
+                auto release = reinterpret_cast<ReleaseFn>(vtbl[0x78 / sizeof(void*)]);
+                release(dest->field_0x04, dest);
+            }
+
+            dest->field_0x04 = first->field_0x04;
+            if (first->field_0x04 != nullptr) {
+                uint32_t tmp = 0;
+                auto vtbl = *reinterpret_cast<void***>(first->field_0x04);
+                auto acquire = reinterpret_cast<AcquireFn>(vtbl[0x70 / sizeof(void*)]);
+                uint32_t* res = acquire(first->field_0x04, &tmp, first);
+                dest->field_0x00 = *res;
+            } else {
+                dest->field_0x00 = 0;
+            }
+        }
+        ++first;
+        ++dest;
+    }
+    return dest;
+}
+} // namespace lift_0048FC00
