@@ -1,0 +1,21 @@
+{
+  "va": "0x0079B9C0",
+  "size": 73,
+  "orig_symbol": "sub_0079B9C0",
+  "src_path": "src/clones/auto_clones_790000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_790000.cpp",
+  "name": "ctor_0079B9C0",
+  "signature": "extern \"C\" void* __fastcall fn_0079B9C0(void* self)",
+  "summary": "Constructor: calls base ctor, installs vtable 0x997530, then runs init routine",
+  "fields": [
+    {
+      "class": "ctor_0079B9C0",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:52:53Z"
+}

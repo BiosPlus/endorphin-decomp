@@ -237,3 +237,20 @@ void __cdecl fn_0079BB80(void)
 }
 } // namespace lift_0072D210
 } // namespace lift_0079BB80
+
+// [0x0079B9C0]
+namespace lift_0079B9C0 {
+extern void* __fastcall ext_007052F0(void* self);
+extern void __fastcall ext_0079BAA0(void* self);
+
+// @name ctor_0079B9C0
+// @summary Constructor: calls base ctor, installs vtable 0x997530, then runs init routine
+// @field ctor_0079B9C0 +0x00 void* vtable
+extern void* __fastcall fn_0079B9C0(void* self)
+{
+    ext_007052F0(self);
+    *(uint32_t*)self = 0x997530u;
+    ext_0079BAA0(self);
+    return self;
+}
+} // namespace lift_0079B9C0

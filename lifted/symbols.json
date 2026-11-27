@@ -104828,6 +104828,12 @@
     "summary": "Stores four constant 32-bit values into the mem_00B60FB0..FBC global block.",
     "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
+  "0x0079B9C0": {
+    "name": "ctor_0079B9C0",
+    "signature": "extern \"C\" void* __fastcall fn_0079B9C0(void* self)",
+    "summary": "Constructor: calls base ctor, installs vtable 0x997530, then runs init routine",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
+  },
   "0x0079BA10": {
     "name": "IsSentinelValue_0079BA10",
     "signature": "bool fn_0079BA10(int value)",
