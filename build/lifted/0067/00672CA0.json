@@ -1,0 +1,28 @@
+{
+  "va": "0x00672CA0",
+  "size": 107,
+  "orig_symbol": "ExprParser::DeclarationsParser::vfunc_2",
+  "src_path": "src/ExprParser/DeclarationsParser.cpp",
+  "lifted_path": "lifted/ExprParser/DeclarationsParser.cpp",
+  "name": "ExprParser::DeclarationsParser::vfunc_2",
+  "class": "ExprParser::DeclarationsParser",
+  "signature": "uint32_t fn_00672CA0(void* self, uint32_t unused_arg1, uint32_t arg2)",
+  "summary": "Looks up an index via ext_00505D50, fetches the element at this-\u003efield_0x18[index] and forwards arg2 to it (returns arg2); on lookup failure forwards arg2 to fn_00671F30 instead.",
+  "fields": [
+    {
+      "class": "ExprParser::DeclarationsParser",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "ExprParser::DeclarationsParser",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:45:27Z"
+}

@@ -35,3 +35,44 @@ void __thiscall fn_00672EC0(void* self, const void* value) {
     }
 }
 } // namespace lift_00672EC0
+
+// [0x00672CA0] ExprParser::DeclarationsParser::vfunc_2 (107 bytes)
+namespace lift_00672CA0 {
+// Callees (original asm call targets):
+//   ext_00505D50  thiscall(this+4), 2 stack args (arg2, this), ret 8; returns uint32_t* or NULL
+//   ext_00685900  thiscall(element), 3 stack args (arg2, 0, 1), ret 12
+//   fn_00671F30  cdecl, 1 stack arg (uint32_t* out); lifted
+//   mem_00925134 IAT slot for MSVCR80!_invalid_parameter_noinfo (noreturn)
+extern uint32_t* ext_00505D50(void* self, uint32_t a, void* b);
+extern void ext_00685900(void* self, uint32_t a, uint32_t b, uint32_t c);
+extern void mem_00925134();
+extern void ext_00671F30(uint32_t* out);
+
+// @name ExprParser::DeclarationsParser::vfunc_2
+// @class ExprParser::DeclarationsParser
+// @summary Looks up an index via ext_00505D50, fetches the element at this->field_0x18[index] and forwards arg2 to it (returns arg2); on lookup failure forwards arg2 to fn_00671F30 instead.
+// @field ExprParser::DeclarationsParser +0x18 void* field_0x18
+// @field ExprParser::DeclarationsParser +0x1C uint32_t field_0x1c
+uint32_t fn_00672CA0(void* self, uint32_t unused_arg1, uint32_t arg2) {
+    (void)unused_arg1;
+
+    uint32_t* found = ext_00505D50(static_cast<unsigned char*>(self) + 0x4, arg2, self);
+    if (found == nullptr) {
+        ext_00671F30(reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg2)));
+        return arg2;
+    }
+
+    uint32_t index = *found;
+    uint32_t begin = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(lift_field<void*>(self, 0x18)));
+    uint32_t end = lift_field<uint32_t>(self, 0x1C);
+    uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
+    if (begin == 0 || index >= count) {
+        mem_00925134();  // _invalid_parameter_noinfo; does not return
+    }
+
+    uint32_t* array = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(begin));
+    uint32_t element = array[index];
+    ext_00685900(reinterpret_cast<void*>(static_cast<uintptr_t>(element)), arg2, 0, 1);
+    return arg2;
+}
+} // namespace lift_00672CA0
