@@ -1,0 +1,28 @@
+{
+  "va": "0x00412EC0",
+  "size": 129,
+  "orig_symbol": "sub_00412EC0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::FindElementContainingPoint",
+  "class": "Unknown",
+  "signature": "void* fn_00412EC0(void* self, const POINT* pt)",
+  "summary": "Linear scan over a [begin,end) pointer vector at self+0x08; returns the first element whose RECT at +0x30 contains the POINT, else nullptr.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void**",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:16:53Z"
+}

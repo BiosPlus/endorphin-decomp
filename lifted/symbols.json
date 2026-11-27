@@ -1468,6 +1468,13 @@
     "summary": "Returns the 32-bit element at the given index from a vector-like container, or 0 if out of bounds.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00412EC0": {
+    "name": "Unknown::FindElementContainingPoint",
+    "class": "Unknown",
+    "signature": "void* fn_00412EC0(void* self, const POINT* pt)",
+    "summary": "Linear scan over a [begin,end) pointer vector at self+0x08; returns the first element whose RECT at +0x30 contains the POINT, else nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004136E0": {
     "name": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
     "class": "MultiTrackView::CompositeMarkerTrack",

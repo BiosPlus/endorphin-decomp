@@ -2907,3 +2907,34 @@ void __thiscall fn_0041B9E0(void* self) {
     (*reinterpret_cast<ThisCallVoid*>(&mem_009242F4))(&cstr);
 }
 } // namespace lift_0041B9E0
+
+// [0x00412EC0] sub_00412EC0 (129 bytes)
+namespace lift_00412EC0 {
+// Import slot for USER32!PtInRect (IAT entry at 0x00925628).
+extern int mem_00925628;
+// Import slot for MSVCR80!_invalid_parameter_noinfo (iterator debug checks, elided).
+extern int mem_00925134;
+
+// @name Unknown::FindElementContainingPoint
+// @class Unknown
+// @summary Linear scan over a [begin,end) pointer vector at self+0x08; returns the first element whose RECT at +0x30 contains the POINT, else nullptr.
+// @field Unknown +0x08 void** begin
+// @field Unknown +0x0C void** end
+typedef BOOL(__stdcall* PtInRectFn)(const RECT*, POINT);
+
+void* fn_00412EC0(void* self, const POINT* pt) {
+    (void)&mem_00925134;  // debug iterator checks -> _invalid_parameter_noinfo; not a real access
+    PtInRectFn pt_in_rect = *reinterpret_cast<PtInRectFn*>(&mem_00925628);
+
+    void** it = lift_field<void**>(self, 0x08);
+    void** end = lift_field<void**>(self, 0x0C);
+    for (; it != end; ++it) {
+        uint8_t* elem = static_cast<uint8_t*>(*it);
+        const RECT* rc = reinterpret_cast<const RECT*>(elem + 0x30);
+        if (pt_in_rect(rc, *pt)) {
+            return elem;
+        }
+    }
+    return nullptr;
+}
+} // namespace lift_00412EC0
