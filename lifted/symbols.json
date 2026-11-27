@@ -77886,6 +77886,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_720000.cpp"
   },
+  "0x0072B820": {
+    "name": "Unknown::initAssignCString_0072B820",
+    "class": "Unknown",
+    "signature": "void* fn_0072B820()",
+    "summary": "Thunk: passes the address of the constant C string mem_00B5D2C0 and object mem_00B600B8 to initAssignCString_006B9D80 and returns its result.",
+    "lifted_path": "lifted/clones/auto_clones_720000.cpp"
+  },
   "0x0072B840": {
     "name": "tailCall_006B9D70_mem_00B600B8",
     "signature": "void fn_0072B840(void)",

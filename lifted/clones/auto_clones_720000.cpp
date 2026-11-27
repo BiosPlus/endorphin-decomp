@@ -186,3 +186,20 @@ void __cdecl fn_0072D210(void)
     (void)&mem_00B602FC;
 }
 } // namespace lift_0072D210
+
+// [0x0072B820] sub_0072B820 (16 bytes)
+namespace lift_0072B820 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+extern int mem_00B5D2C0;
+extern int mem_00B600B8;
+
+// @name Unknown::initAssignCString_0072B820
+// @class Unknown
+// @summary Thunk: passes the address of the constant C string mem_00B5D2C0 and object mem_00B600B8 to initAssignCString_006B9D80 and returns its result.
+void* fn_0072B820() {
+    return ext_006B9D80(
+        reinterpret_cast<void*>(&mem_00B600B8),
+        reinterpret_cast<const char*>(&mem_00B5D2C0));
+}
+} // namespace lift_0072B820
