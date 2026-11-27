@@ -506,3 +506,42 @@ void __thiscall fn_005ECE20(void* self) {
     }
 }
 } // namespace lift_005ECE20
+
+// [0x005EB920] NMData::FixedPathJointData::vfunc_63 (184 bytes)
+namespace lift_005EB920 {
+extern void ext_005C2BE0(int32_t a1, int32_t a2);
+extern int mem_00925134; // MSVC _invalid_parameter_noinfo IAT slot (debug iterator checks; metadata only)
+
+// @name NMData::FixedPathJointData::vfunc_63
+// @class NMData::FixedPathJointData
+// @summary Returns early if a1 == field_0x194; otherwise optionally calls ext_005C2BE0(a1, a2), dispatches a1/a2 to virtual slot 68 or 69 on self, then calls virtual slot 63 on each child pointer in the vector at +0x1D4..+0x1D8.
+// @field NMData::FixedPathJointData +0x00 void* vtable
+// @field NMData::FixedPathJointData +0x194 int32_t field_0x194
+// @field NMData::FixedPathJointData +0x1D4 void** field_0x1d4
+// @field NMData::FixedPathJointData +0x1D8 void** field_0x1d8
+// @field NMData::FixedPathJointData +0x22C uint32_t field_0x22c
+void fn_005EB920(void* self, int32_t a1, int32_t a2) {
+    using VFn = void (*)(void*, int32_t, int32_t);
+    (void)&mem_00925134;
+
+    if (a1 == lift_field<int32_t>(self, 0x194)) {
+        return;
+    }
+
+    if (lift_field<uint32_t>(self, 0x22C) != 0) {
+        ext_005C2BE0(a1, a2);
+    }
+
+    void** vt = *reinterpret_cast<void***>(self);
+    int slot = (lift_field<int32_t>(self, 0x194) >= a1) ? 68 : 69;
+    reinterpret_cast<VFn>(vt[slot])(self, a1, a2);
+
+    void** it = lift_field<void**>(self, 0x1D4);
+    while (it != lift_field<void**>(self, 0x1D8)) {
+        void* child = *it;
+        void** cvt = *reinterpret_cast<void***>(child);
+        reinterpret_cast<VFn>(cvt[63])(child, a1, a2);
+        ++it;
+    }
+}
+} // namespace lift_005EB920

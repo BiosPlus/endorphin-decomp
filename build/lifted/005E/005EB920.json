@@ -1,0 +1,46 @@
+{
+  "va": "0x005EB920",
+  "size": 184,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_63",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_63",
+  "class": "NMData::FixedPathJointData",
+  "signature": "extern \"C\" int mem_00925134; // MSVC _invalid_parameter_noinfo IAT slot (debug iterator checks; metadata only) void fn_005EB920(void* self, int32_t a1, int32_t a2)",
+  "summary": "Returns early if a1 == field_0x194; otherwise optionally calls ext_005C2BE0(a1, a2), dispatches a1/a2 to virtual slot 68 or 69 on self, then calls virtual slot 63 on each child pointer in the vector at +0x1D4..+0x1D8.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x194",
+      "type": "int32_t",
+      "name": "field_0x194"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1D4",
+      "type": "void**",
+      "name": "field_0x1d4"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1D8",
+      "type": "void**",
+      "name": "field_0x1d8"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x22C",
+      "type": "uint32_t",
+      "name": "field_0x22c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:31:47Z"
+}

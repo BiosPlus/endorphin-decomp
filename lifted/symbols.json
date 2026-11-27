@@ -54131,6 +54131,13 @@
     "summary": "Iterates the child pointer array [field_0x74, field_0x78); unless arg2 is set, children whose vfunc_c4 returns true are skipped, otherwise the child's +0xC sub-object gets vfunc_24(arg1) and vfunc_28(arg1, 1).",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005EB920": {
+    "name": "NMData::FixedPathJointData::vfunc_63",
+    "class": "NMData::FixedPathJointData",
+    "signature": "extern \"C\" int mem_00925134; // MSVC _invalid_parameter_noinfo IAT slot (debug iterator checks; metadata only) void fn_005EB920(void* self, int32_t a1, int32_t a2)",
+    "summary": "Returns early if a1 == field_0x194; otherwise optionally calls ext_005C2BE0(a1, a2), dispatches a1/a2 to virtual slot 68 or 69 on self, then calls virtual slot 63 on each child pointer in the vector at +0x1D4..+0x1D8.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EBEA0": {
     "name": "NMData::RootRelationshipData::vfunc_22",
     "class": "NMData::RootRelationshipData",
