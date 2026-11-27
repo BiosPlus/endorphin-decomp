@@ -59481,6 +59481,13 @@
     "summary": "Stores a byte at this+0x328+index, calls vtable slot 79, then if ext_00468180() is nonzero tail-calls ext_00469530(result, 5, 0).",
     "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
   },
+  "0x00611CE0": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_79",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "void lift_child_pair(void* self, ptrdiff_t childOff, ptrdiff_t flagOff)",
+    "summary": "Calls vtable slots 12 and 11 on up to four child objects (+0x32C, +0x330, +0x334, +0x338), passing 0x1000, a flag byte, and a global.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x00611E00": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_9_off_C",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

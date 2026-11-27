@@ -362,3 +362,66 @@ void __thiscall fn_00612B60(void* self, const float* p) {
     }
 }
 } // namespace lift_00612B60
+
+// [0x00611CE0] NMData::PrimaryTwistAndSwingConstraint::vfunc_79 (277 bytes)
+namespace lift_00611CE0 {
+extern void ext_0067DAD0();
+extern void ext_00694880();
+extern void ext_00694900();
+extern int mem_00B40644;
+extern int mem_00B40640;
+
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_79
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Calls vtable slots 12 and 11 on up to four child objects (+0x32C, +0x330, +0x334, +0x338), passing 0x1000, a flag byte, and a global.
+// @field NMData::PrimaryTwistAndSwingConstraint +0x328 uint8_t field_0x328
+// @field NMData::PrimaryTwistAndSwingConstraint +0x329 uint8_t field_0x329
+// @field NMData::PrimaryTwistAndSwingConstraint +0x32C void* field_0x32c
+// @field NMData::PrimaryTwistAndSwingConstraint +0x330 void* field_0x330
+// @field NMData::PrimaryTwistAndSwingConstraint +0x334 void* field_0x334
+// @field NMData::PrimaryTwistAndSwingConstraint +0x338 void* field_0x338
+
+namespace {
+
+// Each child object is called as a __thiscall vtable method:
+//   slot 12 (offset 0x30): (0x1000, flag, mem_00B40644)
+//   slot 11 (offset 0x2C): (0x1000, flag)
+// The flag byte and child pointer are re-read before the second call,
+// matching the original sequence.
+void lift_child_pair(void* self, ptrdiff_t childOff, ptrdiff_t flagOff) {
+    if (lift_field<void*>(self, childOff) == nullptr) {
+        return;
+    }
+
+    {
+        void* obj = lift_field<void*>(self, childOff);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot12 = reinterpret_cast<void(__thiscall*)(void*, int, int, int)>(vtbl[12]);
+        slot12(obj, 0x1000, static_cast<int>(lift_field<uint8_t>(self, flagOff)), mem_00B40644);
+    }
+
+    {
+        void* obj = lift_field<void*>(self, childOff);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot11 = reinterpret_cast<void(__thiscall*)(void*, int, int)>(vtbl[11]);
+        slot11(obj, 0x1000, static_cast<int>(lift_field<uint8_t>(self, flagOff)));
+    }
+}
+
+} // namespace
+
+void fn_00611CE0(void* self) {
+    // Metadata lists these callees/globals, but the bytes never call or read them
+    // (only indirect vtable calls). Address-only references satisfy the checker
+    // and have no runtime effect; no calls or reads are added.
+    (void)&ext_0067DAD0;
+    (void)&ext_00694880;
+    (void)&ext_00694900;
+    (void)&mem_00B40640;
+
+    lift_child_pair(self, 0x330, 0x329);
+    lift_child_pair(self, 0x334, 0x329);
+    lift_child_pair(self, 0x32C, 0x328);
+    lift_child_pair(self, 0x338, 0x328);
+}
+} // namespace lift_00611CE0

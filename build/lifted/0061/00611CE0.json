@@ -1,0 +1,52 @@
+{
+  "va": "0x00611CE0",
+  "size": 277,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_79",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_79",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "void lift_child_pair(void* self, ptrdiff_t childOff, ptrdiff_t flagOff)",
+  "summary": "Calls vtable slots 12 and 11 on up to four child objects (+0x32C, +0x330, +0x334, +0x338), passing 0x1000, a flag byte, and a global.",
+  "fields": [
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x328",
+      "type": "uint8_t",
+      "name": "field_0x328"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x329",
+      "type": "uint8_t",
+      "name": "field_0x329"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x32C",
+      "type": "void*",
+      "name": "field_0x32c"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x330",
+      "type": "void*",
+      "name": "field_0x330"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x334",
+      "type": "void*",
+      "name": "field_0x334"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x338",
+      "type": "void*",
+      "name": "field_0x338"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:34:54Z"
+}
