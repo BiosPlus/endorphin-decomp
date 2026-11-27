@@ -15314,6 +15314,13 @@
     "summary": "Builds a rect from the first point of a point array (pts+4 = begin, pts+8 = end) extended by this object's (+0xE8-+0xE0, +0xEC-+0xE4) extent, normalizes it via Rect2D::initNormalized, and stores the result back into +0xE0..+0xEC.",
     "lifted_path": "lifted/NMData/State.cpp"
   },
+  "0x0049E190": {
+    "name": "NMData::State::vfunc_32_off_8",
+    "class": "NMData::State",
+    "signature": "void __thiscall fn_0049E190(void* self, const float* delta)",
+    "summary": "Clamps a 2D delta against the [0, 1] box bounds and shifts the rect at +0xE0..+0xEC.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049E2E0": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_38",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",

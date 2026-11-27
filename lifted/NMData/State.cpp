@@ -385,3 +385,60 @@ void* __thiscall fn_0049F140(void* self, uint32_t arg) {
     return ext_0049F0C0(base, arg);
 }
 } // namespace lift_0049F140
+
+// [0x0049E190]
+namespace lift_0049E190 {
+// @name NMData::State::vfunc_32_off_8
+// @class NMData::State
+// @summary Clamps a 2D delta against the [0, 1] box bounds and shifts the rect at +0xE0..+0xEC.
+// @field NMData::State +0xE0 float field_0xE0
+// @field NMData::State +0xE4 float field_0xE4
+// @field NMData::State +0xE8 float field_0xE8
+// @field NMData::State +0xEC float field_0xEC
+
+extern float* __thiscall ext_0049CE90(float* self, float* out, float* other);
+
+void __thiscall fn_0049E190(void* self, const float* delta)
+{
+    float* rect = reinterpret_cast<float*>(reinterpret_cast<char*>(self) + 0xE0);
+
+    float dx = delta[0];
+    float dy = delta[1];
+
+    float x = dx;
+    if (dx > 0.0f) {
+        if (rect[2] + dx > 1.0f) {
+            x = 1.0f - rect[2];
+        }
+    } else if (dx < 0.0f) {
+        if (dx + rect[0] < 0.0f) {
+            x = -rect[0];
+        }
+    }
+
+    float y = dy;
+    if (dy > 0.0f) {
+        if (dy + rect[3] > 1.0f) {
+            y = 1.0f - rect[3];
+        }
+    } else if (dy < 0.0f) {
+        if (dy + rect[1] < 0.0f) {
+            y = -rect[1];
+        }
+    }
+
+    float other[4] = { x, y, 0.0f, 0.0f };
+    float out[4];
+    ext_0049CE90(rect, out, other);
+
+    if (out[0] < 0.0f) out[0] = 0.0f;
+    if (out[1] < 0.0f) out[1] = 0.0f;
+    if (out[2] > 1.0f) out[2] = 1.0f;
+    if (out[3] > 1.0f) out[3] = 1.0f;
+
+    rect[0] = out[0];
+    rect[1] = out[1];
+    rect[2] = out[2];
+    rect[3] = out[3];
+}
+} // namespace lift_0049E190
