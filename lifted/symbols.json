@@ -76231,6 +76231,13 @@
     "summary": "Calls CriticalSectionBuckets::ClearBuckets on every entry of the array at +0x10 of the global object, for count entries at +0x00.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078CEB0": {
+    "name": "CriticalSectionBuckets::Destroy",
+    "class": "CriticalSectionBuckets",
+    "signature": "void fn_0078CEB0(void* self)",
+    "summary": "Clears all buckets, frees the bucket array, then deletes and frees the critical section at +0x00 and nulls it.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CEF0": {
     "name": "CriticalSectionBuckets::ClearBuckets",
     "class": "CriticalSectionBuckets",

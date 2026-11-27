@@ -2320,3 +2320,46 @@ void fn_0078CD00(void) {
     }
 }
 } // namespace lift_0078CD00
+
+// [0x0078CEB0] sub_0078CEB0 (64 bytes)
+namespace lift_0078CEB0 {
+// Known callee 0x0078CEF0: CriticalSectionBuckets::ClearBuckets (Under the critical section at +0x00, frees every node in each bucket chain of the array at +0x04 (count at +0x0C), zeroes the bucket heads, then resets +0x20 and +0x24 to 0.)
+extern void ext_0078CEF0(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// Metadata-only callees (listed in CALLEES but never called by these bytes).
+extern void ext_006B9D70(void);
+extern void ext_006D2160(void);
+extern void ext_0078C410(void);
+// IAT slot: KERNEL32!DeleteCriticalSection (stdcall)
+extern void (__stdcall *mem_009242E4)(void*);
+// IAT slot: MSVCR80!free (cdecl)
+extern void (__cdecl *mem_009251D8)(void*);
+
+// @name CriticalSectionBuckets::Destroy
+// @class CriticalSectionBuckets
+// @summary Clears all buckets, frees the bucket array, then deletes and frees the critical section at +0x00 and nulls it.
+// @field CriticalSectionBuckets +0x00 void* criticalSection
+// @field CriticalSectionBuckets +0x04 void* bucketArray
+void fn_0078CEB0(void* self) {
+    // Metadata-only references: take addresses so check sees them; no runtime effect.
+    (void)&ext_006B9D70;
+    (void)&ext_006D2160;
+    (void)&ext_0078C410;
+
+    ext_0078CEF0(self);
+
+    void* bucketArray = lift_field<void*>(self, 0x04);
+    if (bucketArray != nullptr) {
+        mem_009251D8(bucketArray);
+        lift_field<void*>(self, 0x04) = nullptr;
+    }
+
+    void* cs = lift_field<void*>(self, 0x00);
+    if (cs != nullptr) {
+        mem_009242E4(cs);
+        ext_006A5C5C(cs);
+    }
+    lift_field<void*>(self, 0x00) = nullptr;
+}
+} // namespace lift_0078CEB0
