@@ -8,11 +8,11 @@
 // Recovered field layout for ValuePtr:
 namespace lifted_layout {
 struct ValuePtr_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004C0BE0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004C0BE0, 0x00594AA0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr  (evidence: 0x004B4C30, 0x005A46E0, 0x005B7320, 0x005B7BC0) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    ctrl  (evidence: 0x005B7320) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x005B7490, 0x005B7BC0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x04  (evidence: 0x004C0BE0, 0x005B7BC0, 0x00692FD0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x004C0BE0, 0x00594AA0, 0x005B7BC0, 0x00692FD0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    obj  (evidence: 0x005A46E0, 0x005B7BC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    type  (evidence: 0x004B4C30) // CONFLICT: multiple definitions at +0x4
 };

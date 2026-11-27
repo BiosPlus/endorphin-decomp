@@ -114,3 +114,75 @@ void* __stdcall fn_004EE390(void* arg1, void* arg2, void* arg3, void* arg4) {
     return arg1;
 }
 } // namespace lift_004EE390
+
+// [0x00594AA0] ExprParser::Function2Type<World, ValuePtr, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_49 (252 bytes)
+namespace lift_00594AA0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern void* __thiscall ext_0046E780(void* self, void* a1, void* a2, void* a3);
+// Callee 0x00593F90 (102B): thiscall, three stack args, returns a pointer to the result object.
+extern void* __thiscall ext_00593F90(void* self, void* a1, void* a2, void* a3);
+// Listed in the callee metadata but not called by the disassembled bytes; only the address is taken below.
+extern void ext_004EDE30();
+extern void ext_006720A0();
+// Import slot 0x00924FF4 holding the std::string destructor entry point.
+extern uint32_t mem_00924FF4;
+
+// @name ExprParser::Function2Type::vfunc_49
+// @class ExprParser::Function2Type<World, ValuePtr, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Resolves two string arguments through helper calls, invokes the sensor lookup on the first result, and writes a ValuePtr into the out buffer
+// @field ValuePtr +0x00 void* field_0x00
+// @field ValuePtr +0x04 void* field_0x04
+void* __thiscall fn_00594AA0(void* self, void* arg0, void* out, void* a, void* b) {
+    (void)self;
+    (void)arg0;
+    // Address-only references: metadata lists these callees, but the bytes never call them.
+    (void)&ext_004EDE30;
+    (void)&ext_006720A0;
+
+    using VFunc70 = void* (__thiscall*)(void* self, void* a1, void* a2);
+    using VFunc78 = void (__thiscall*)(void* self, void* a1);
+    using DtorFn = void (__thiscall*)(void* self);
+
+    // Stack temporaries: two std::string objects and one ValuePtr.
+    alignas(8) unsigned char x1[28];
+    alignas(8) unsigned char x2[28];
+    void* x3[2] = {nullptr, nullptr};
+
+    void* this_obj = lift_field<void*>(out, 0);
+
+    // First string temporary is filled from b via the helper at 0x0046E780.
+    void* x1_ptr = ext_0046E780(lift_field<void*>(b, 4), x1, b, out);
+
+    // Second string temporary is filled from a via the same helper.
+    void* x2_ptr = ext_0046E780(lift_field<void*>(b, 4), x2, b, a);
+
+    // Lookup against this_obj writes its result into x3 and returns the result object.
+    void* r = ext_00593F90(this_obj, x3, x2_ptr, x1_ptr);
+
+    void* y = nullptr;
+    void* value_src = &y;
+    void* r_obj = lift_field<void*>(r, 4);
+    if (r_obj != nullptr) {
+        void** vt = *reinterpret_cast<void***>(r_obj);
+        VFunc70 fn = reinterpret_cast<VFunc70>(vt[0x70 / sizeof(void*)]);
+        value_src = fn(r_obj, &y, r);
+    }
+    void* value = lift_field<void*>(value_src, 0);
+
+    lift_field<void*>(out, 0) = value;
+    lift_field<void*>(out, 4) = lift_field<void*>(r, 4);
+
+    // Release the ValuePtr temporary through its object's slot 0x78.
+    if (x3[1] != nullptr) {
+        void** vt = *reinterpret_cast<void***>(x3[1]);
+        VFunc78 release = reinterpret_cast<VFunc78>(vt[0x78 / sizeof(void*)]);
+        release(x3[1], x3);
+    }
+
+    // Destroy the two std::string temporaries through the import slot.
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(x2);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(x1);
+
+    return out;
+}
+} // namespace lift_00594AA0

@@ -1,0 +1,28 @@
+{
+  "va": "0x00594AA0",
+  "size": 252,
+  "orig_symbol": "ExprParser::Function2Type\u003cWorld, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_49",
+  "src_path": "src/templates/Function2Type.cpp",
+  "lifted_path": "lifted/templates/Function2Type.cpp",
+  "name": "ExprParser::Function2Type::vfunc_49",
+  "class": "ExprParser::Function2Type\u003cWorld, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+  "signature": "void* __thiscall fn_00594AA0(void* self, void* arg0, void* out, void* a, void* b)",
+  "summary": "Resolves two string arguments through helper calls, invokes the sensor lookup on the first result, and writes a ValuePtr into the out buffer",
+  "fields": [
+    {
+      "class": "ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ValuePtr",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:51:23Z"
+}
