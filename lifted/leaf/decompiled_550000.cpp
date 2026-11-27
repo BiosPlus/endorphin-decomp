@@ -29,6 +29,7 @@ uint8_t descriptiveName_00553960(void* arg) {
 #include <cstdio>
 #include <cstddef>
 #include <memory>
+#include <cmath>
 
 // [0x00554CE0] sub_00554CE0 (27 bytes)
 namespace lift_00554CE0 {
@@ -2543,3 +2544,47 @@ void* __stdcall fn_00558820(uint32_t arg1, uint32_t arg2, uint32_t arg3, const v
     return node;
 }
 } // namespace lift_00558820
+
+// [0x0055DE80]
+namespace lift_0055DE80 {
+// @name SetFrameRatePreset
+// @summary Maps the float frame rate at +0x174 to a preset index and stores it via the +0x470 subobject.
+// @field self +0x174 float frame_rate
+// @field self +0x470 void* target_obj
+
+extern int32_t __fastcall ext_006A6DE0(void);
+extern double ext_006A6E92(double x);
+extern void __stdcall ext_006BB750(uint32_t** self, uint32_t value);
+extern int32_t __fastcall ext_006BC7F0(void* self);
+
+static const double mem_00993828 = 0.5;
+static const double mem_00958790 = 29.97;
+
+extern void __fastcall fn_0055DE80(void* self) {
+    float raw = *reinterpret_cast<const float*>(reinterpret_cast<const uint8_t*>(self) + 0x174);
+    float rounded = static_cast<float>(ext_006A6E92(static_cast<double>(static_cast<float>(static_cast<double>(raw) + mem_00993828))));
+    (void)rounded;
+    int32_t fps = ext_006A6DE0();
+
+    uint32_t preset = 6;
+    if (fps == 24) {
+        preset = 11;
+    } else if (fps == 25) {
+        preset = 10;
+    } else if (static_cast<double>(fps) == mem_00958790) {
+        preset = 9;
+    } else if (fps == 30) {
+        preset = 6;
+    } else if (fps == 50) {
+        preset = 4;
+    } else if (fps == 60) {
+        preset = 3;
+    } else if (fps == 120) {
+        preset = 1;
+    }
+
+    void* sub = *reinterpret_cast<void* const*>(reinterpret_cast<const uint8_t*>(self) + 0x470);
+    uint32_t** target = reinterpret_cast<uint32_t**>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_006BC7F0(sub))));
+    ext_006BB750(target, preset);
+}
+} // namespace lift_0055DE80

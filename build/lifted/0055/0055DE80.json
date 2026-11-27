@@ -1,0 +1,27 @@
+{
+  "va": "0x0055DE80",
+  "size": 151,
+  "orig_symbol": "sub_0055DE80",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "SetFrameRatePreset",
+  "signature": "extern \"C\" void __fastcall fn_0055DE80(void* self)",
+  "summary": "Maps the float frame rate at +0x174 to a preset index and stores it via the +0x470 subobject.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "frame_rate"
+    },
+    {
+      "class": "self",
+      "offset": "+0x470",
+      "type": "void*",
+      "name": "target_obj"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:16:51Z"
+}
