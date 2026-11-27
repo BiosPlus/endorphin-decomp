@@ -1,0 +1,13 @@
+{
+  "va": "0x00783700",
+  "size": 144,
+  "orig_symbol": "sub_00783700",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "removeUtf8File",
+  "signature": "int32_t __cdecl fn_00783700(void* arg0)",
+  "summary": "Converts a UTF-8 file path to UTF-16 and deletes the file via _wremove.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:46:39Z"
+}
