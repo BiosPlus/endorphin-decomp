@@ -24,3 +24,29 @@ void* __stdcall fn_0055DE20(void* out) {
     return out;
 }
 } // namespace lift_0055DE20
+
+// [0x005E1830] NMData::NullRelationshipData::vfunc_54 (128 bytes)
+namespace lift_005E1830 {
+// @name NMData::NullRelationshipData::vfunc_54
+// @class NMData::NullRelationshipData
+// @summary One-time guarded initialisation (flag bit 0 of mem_00B45C2C), then calls ext_005E0380 on self and caches self+0x178 into mem_00B45C24.
+// @field NMData::NullRelationshipData +0x178 uint8_t field_0x178
+
+extern void ext_005B5780(void* ecx, uint32_t arg);
+extern void ext_006A6C87(const void* arg);
+extern void ext_005E0380(void* ecx, void* arg);
+extern uint32_t mem_00B45C2C;
+extern uint8_t mem_00B45C24;
+extern uint8_t mem_00B45BE0;
+extern uint8_t mem_0091E3E0;
+
+void fn_005E1830(void* self) {
+    if ((mem_00B45C2C & 1u) == 0) {
+        mem_00B45C2C |= 1u;
+        ext_005B5780(&mem_00B45BE0, 0x16);
+        ext_006A6C87(&mem_0091E3E0);
+    }
+    ext_005E0380(self, &mem_00B45BE0);
+    mem_00B45C24 = lift_field<uint8_t>(self, 0x178);
+}
+} // namespace lift_005E1830

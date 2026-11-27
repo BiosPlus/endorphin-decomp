@@ -51244,6 +51244,13 @@
     "summary": "Forwards a virtual query (vtable slot 54) to the object at +0x234 if present, otherwise returns 1.",
     "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
   },
+  "0x005E1830": {
+    "name": "NMData::NullRelationshipData::vfunc_54",
+    "class": "NMData::NullRelationshipData",
+    "signature": "void fn_005E1830(void* self)",
+    "summary": "One-time guarded initialisation (flag bit 0 of mem_00B45C2C), then calls ext_005E0380 on self and caches self+0x178 into mem_00B45C24.",
+    "lifted_path": "lifted/NMData/NullRelationshipData.cpp"
+  },
   "0x005E20F0": {
     "name": "NMData::SkeletalJointData::isAxisUnlocked",
     "class": "NMData::SkeletalJointData",

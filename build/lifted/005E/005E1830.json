@@ -1,0 +1,22 @@
+{
+  "va": "0x005E1830",
+  "size": 128,
+  "orig_symbol": "NMData::NullRelationshipData::vfunc_54",
+  "src_path": "src/NMData/NullRelationshipData.cpp",
+  "lifted_path": "lifted/NMData/NullRelationshipData.cpp",
+  "name": "NMData::NullRelationshipData::vfunc_54",
+  "class": "NMData::NullRelationshipData",
+  "signature": "void fn_005E1830(void* self)",
+  "summary": "One-time guarded initialisation (flag bit 0 of mem_00B45C2C), then calls ext_005E0380 on self and caches self+0x178 into mem_00B45C24.",
+  "fields": [
+    {
+      "class": "NMData::NullRelationshipData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:01Z"
+}
