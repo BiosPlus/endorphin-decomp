@@ -1,0 +1,22 @@
+{
+  "va": "0x006A10F0",
+  "size": 324,
+  "orig_symbol": "ExprParser::Operators::AssignDivide::vfunc_3",
+  "src_path": "src/ExprParser/Operators/AssignDivide.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/AssignDivide.cpp",
+  "name": "ExprParser::Operators::AssignDivide::vfunc_3",
+  "class": "ExprParser::Operators::AssignDivide",
+  "signature": "static R vcall(void* obj, uintptr_t byteOffset, Args... args)",
+  "summary": "Computes lhs / rhs (0 when rhs == 0) and assigns it to the lhs token, using a temp-token path when the lhs type code is 0xF.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::AssignDivide",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "lhs"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:38:43Z"
+}
