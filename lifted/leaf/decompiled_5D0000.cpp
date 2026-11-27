@@ -593,3 +593,47 @@ void* fn_005DF6B0(void* self, void* out, const void* key) {
     return out;
 }
 } // namespace lift_005DF6B0
+
+// [0x005DF940] sub_005DF940 (110 bytes)
+namespace lift_005DF940 {
+// Known callee 0x005DF6B0: TreeLowerBoundIter (descriptive; owner class not yet identified) (Tree search for first node with key >= *key; returns {self, node} pair, or {self, head} when no match.)
+// Original ABI: thiscall (this in ecx), stack args (out_pair, key_ptr), ret 8.
+extern void ext_005DF6B0(void* self, uint32_t* out_pair, const uint32_t* key);
+extern int mem_00925134;
+
+// @name UnknownClass::LowerBoundValue
+// @class UnknownClass
+// @summary Tree lower-bound lookup: returns value field (+0x10) of the first node with key >= key, or 0 if tree is empty or no node matches.
+// @field UnknownClass +0x04 uint32_t field_0x04
+// @field UnknownClass +0x08 uint32_t field_0x08
+// @field TreeNode +0x10 uint32_t field_0x10
+uint32_t fn_005DF940(void* self, uint32_t key) {
+    // Empty tree: root/nil link at +0x08 is zero.
+    if (lift_field<uint32_t>(self, 0x08) == 0) {
+        return 0;
+    }
+
+    // Lower-bound search via callee; writes {self, node} into pair.
+    uint32_t pair[2] = {0, 0};
+    ext_005DF6B0(self, pair, &key);
+    const uint32_t found_self = pair[0];
+    const uint32_t node = pair[1];
+
+    // Sanity: search must return the same owner pointer.
+    const uint32_t self_u32 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    if (found_self == 0 || found_self != self_u32) {
+        (void)&mem_00925134; // _invalid_parameter_noinfo slot
+        std::abort();
+    }
+
+    // No match: callee returned the head sentinel.
+    const uint32_t head = lift_field<uint32_t>(self, 0x04);
+    if (node == head) {
+        return 0;
+    }
+
+    // Matched node: its value lives at +0x10.
+    void* node_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(node));
+    return lift_field<uint32_t>(node_ptr, 0x10);
+}
+} // namespace lift_005DF940

@@ -35179,6 +35179,13 @@
     "summary": "Walks a cursor from slot1 toward end (arg4), advancing it each step and invoking ext_006A5C5C on the element at field +0x10 of the current node; reports invalid parameters via the CRT handler.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005DF940": {
+    "name": "UnknownClass::LowerBoundValue",
+    "class": "UnknownClass",
+    "signature": "uint32_t fn_005DF940(void* self, uint32_t key)",
+    "summary": "Tree lower-bound lookup: returns value field (+0x10) of the first node with key \u003e= key, or 0 if tree is empty or no node matches.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DFE30": {
     "name": "destroyTreeNodePayloads",
     "signature": "void __stdcall fn_005DFE30(TreeIter first, TreeIter last)",
