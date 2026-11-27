@@ -1,0 +1,58 @@
+{
+  "va": "0x005004C0",
+  "size": 333,
+  "orig_symbol": "NMData::EvolveEngineData::vfunc_13_off_8",
+  "src_path": "src/NMData/EvolveEngineData.cpp",
+  "lifted_path": "lifted/NMData/EvolveEngineData.cpp",
+  "name": "NMData::EvolveEngineData::vfunc_13_off_8",
+  "class": "NMData::EvolveEngineData",
+  "signature": "void* __thiscall fn_005004C0(void* self, void* ret_buf, const void* name)",
+  "summary": "Looks up a property/symbol by name on EvolveEngineData and writes the result into the output object.",
+  "fields": [
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x24",
+      "type": "uint8_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x9C",
+      "type": "uint8_t",
+      "name": "field_0x9C"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0xD8",
+      "type": "uint8_t",
+      "name": "field_0xD8"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0xE4",
+      "type": "uint8_t",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x124",
+      "type": "uint8_t",
+      "name": "field_0x124"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x134",
+      "type": "uint32_t",
+      "name": "field_0x134"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:04:34Z"
+}

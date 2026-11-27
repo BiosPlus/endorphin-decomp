@@ -27825,6 +27825,13 @@
     "summary": "Copy-constructs 0x24-byte elements from [first,last) into dst (skipping null dst slots), returns the new end; on exception destroys the already-built elements and rethrows.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x005004C0": {
+    "name": "NMData::EvolveEngineData::vfunc_13_off_8",
+    "class": "NMData::EvolveEngineData",
+    "signature": "void* __thiscall fn_005004C0(void* self, void* ret_buf, const void* name)",
+    "summary": "Looks up a property/symbol by name on EvolveEngineData and writes the result into the output object.",
+    "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
+  },
   "0x005007C0": {
     "name": "DwordPairInitWrapper_005007C0",
     "signature": "void* fn_005007C0(void* self, void* pair, DWORD b)",
