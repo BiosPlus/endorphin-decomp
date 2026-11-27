@@ -1,0 +1,40 @@
+{
+  "va": "0x00693C30",
+  "size": 130,
+  "orig_symbol": "sub_00693C30",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "Quat::fromVector",
+  "class": "Quat",
+  "signature": "void __thiscall sub_00693C30(void* self, const float* v)",
+  "summary": "Converts a 3-component vector into a 4-component quaternion",
+  "fields": [
+    {
+      "class": "Quat",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "w"
+    },
+    {
+      "class": "Quat",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Quat",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Quat",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:22:12Z"
+}

@@ -1532,3 +1532,33 @@ void __thiscall fn_00697840(void* self, void* arg1, uint32_t idx, const void* ar
     lift_field<uint32_t>(self, 0x30) = lift_field<uint32_t>(arg1, 0x50);
 }
 } // namespace lift_00697840
+
+// [0x00693C30]
+namespace lift_00693C30 {
+extern const double mem_0092C510;
+
+// @name Quat::fromVector
+// @class Quat
+// @summary Converts a 3-component vector into a 4-component quaternion
+// @field Quat +0x00 float w
+// @field Quat +0x04 float x
+// @field Quat +0x08 float y
+// @field Quat +0x0c float z
+void __thiscall sub_00693C30(void* self, const float* v) {
+    double x = (double)v[0];
+    double y = (double)v[1];
+    double z = (double)v[2];
+
+    float syz = (float)(mem_0092C510 / (1.0 + y * y + z * z));
+    float sx = (float)(mem_0092C510 / (1.0 + x * x));
+
+    double sx_m1 = (double)sx - 1.0;
+    double syz_m1 = (double)syz - 1.0;
+
+    float* out = (float*)self;
+    out[0] = (float)(syz_m1 * sx_m1);
+    out[1] = (float)(syz_m1 * x * (double)sx);
+    out[2] = (float)((x * (double)sx * y + z * sx_m1) * (double)syz);
+    out[3] = (float)(((double)sx * x * z - sx_m1 * y) * (double)syz);
+}
+} // namespace lift_00693C30
