@@ -26352,6 +26352,13 @@
     "summary": "Looks up element at self-\u003eindex via the wrapper in mem_00AEE8A8 and issues glTranslatef with its (x, y, z) at +0x30/+0x34/+0x38.",
     "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp"
   },
+  "0x005324B0": {
+    "name": "HasBufferedTMPtr::vfunc_12",
+    "class": "HasBufferedTMPtr",
+    "signature": "uint32_t fn_005324B0(void* self, void* arg)",
+    "summary": "Calls sub_00661B50 with this-\u003efield_0x04 as index, adds 0x30 to the result, then forwards to virtual slot 7 of the argument object.",
+    "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp"
+  },
   "0x005324E0": {
     "name": "HasCustomBufferedTMPtr::vfunc_2",
     "class": "HasCustomBufferedTMPtr",

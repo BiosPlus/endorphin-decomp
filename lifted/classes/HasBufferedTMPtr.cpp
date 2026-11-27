@@ -49,3 +49,26 @@ void fn_00532450(void* self) {
     glTranslatef(x, y, z);
 }
 } // namespace lift_00532450
+
+// [0x005324B0] HasBufferedTMPtr::vfunc_12 (33 bytes)
+namespace lift_005324B0 {
+// Known callee 0x00661B50: sub_00661B50 (Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index)
+extern uint32_t ext_00661B50(void* this_ptr, uint32_t index);
+extern void* mem_00AEE8A8;
+
+// @name HasBufferedTMPtr::vfunc_12
+// @class HasBufferedTMPtr
+// @summary Calls sub_00661B50 with this->field_0x04 as index, adds 0x30 to the result, then forwards to virtual slot 7 of the argument object.
+// @field HasBufferedTMPtr +0x04 uint32_t field_0x04
+uint32_t fn_005324B0(void* self, void* arg) {
+    uint32_t index = lift_field<uint32_t>(self, 0x4);
+    uint32_t value = ext_00661B50(mem_00AEE8A8, index) + 0x30;
+
+    // Tail-jump in the original (jmp eax) becomes an ordinary virtual call
+    // through vtable slot 7 (offset 0x1C) of arg, with value as the argument.
+    void** vtbl = *reinterpret_cast<void***>(arg);
+    using VFn = uint32_t (*)(void* this_ptr, uint32_t);
+    VFn fn = reinterpret_cast<VFn>(vtbl[7]);
+    return fn(arg, value);
+}
+} // namespace lift_005324B0

@@ -1,0 +1,22 @@
+{
+  "va": "0x005324B0",
+  "size": 33,
+  "orig_symbol": "HasBufferedTMPtr::vfunc_12",
+  "src_path": "src/classes/HasBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp",
+  "name": "HasBufferedTMPtr::vfunc_12",
+  "class": "HasBufferedTMPtr",
+  "signature": "uint32_t fn_005324B0(void* self, void* arg)",
+  "summary": "Calls sub_00661B50 with this-\u003efield_0x04 as index, adds 0x30 to the result, then forwards to virtual slot 7 of the argument object.",
+  "fields": [
+    {
+      "class": "HasBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:21Z"
+}
