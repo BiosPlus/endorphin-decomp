@@ -1269,3 +1269,37 @@ void* __stdcall fn_004ADA80(uint32_t left, uint32_t parent, uint32_t right, cons
     return node;
 }
 } // namespace lift_004ADA80
+
+// [0x004AEAC0]
+namespace lift_004AEAC0 {
+// @name initDualTreePair
+// @summary Initializes two embedded RB-tree containers (head sentinel nodes and zeroed sizes) in a 0x20-byte object.
+// @field Obj +0x00 uint32_t field_0x00
+// @field Obj +0x08 void* tree1_head
+// @field Obj +0x0c uint32_t tree1_size
+// @field Obj +0x10 uint32_t field_0x10
+// @field Obj +0x18 void* tree2_head
+// @field Obj +0x1c uint32_t tree2_size
+
+
+extern void* __thiscall ext_00555470(void* self);
+
+static void init_tree(uint8_t* base) {
+    *reinterpret_cast<uint32_t*>(base) = 0x00941f10u;
+    uint8_t* tree = base + 0x4;
+    uint8_t* head = static_cast<uint8_t*>(ext_00555470(tree));
+    *reinterpret_cast<void**>(tree + 0x4) = head;
+    *(head + 0x39) = 1;
+    *reinterpret_cast<void**>(head + 0x4) = head;
+    *reinterpret_cast<void**>(head + 0x0) = head;
+    *reinterpret_cast<void**>(head + 0x8) = head;
+    *reinterpret_cast<uint32_t*>(tree + 0x8) = 0;
+}
+
+void* __thiscall sub_004AEAC0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    init_tree(obj);
+    init_tree(obj + 0x10);
+    return self;
+}
+} // namespace lift_004AEAC0

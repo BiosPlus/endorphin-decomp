@@ -2068,6 +2068,13 @@
     "summary": "Forwards pointer to field_0x68 to sub_00419DF0",
     "lifted_path": "lifted/classes/FolderDialog.cpp"
   },
+  "0x00419E30": {
+    "name": "CSomething::~CSomething",
+    "class": "CSomething",
+    "signature": "void fn_00419E30(void* self)",
+    "summary": "Destructor that frees the item ID list at +0x6c and buffer at +0x60 via IMalloc, destroys CString members, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00419ED0": {
     "name": "FolderDialog::vfunc_1",
     "class": "FolderDialog",
@@ -14740,6 +14747,12 @@
     "summary": "Allocates and initializes a 0x3C-byte red-black tree node.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004AEAC0": {
+    "name": "initDualTreePair",
+    "signature": "static void init_tree(uint8_t* base)",
+    "summary": "Initializes two embedded RB-tree containers (head sentinel nodes and zeroed sizes) in a 0x20-byte object.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AEC60": {
     "name": "thunk_004AEC60",
     "class": "Unknown",
@@ -14942,6 +14955,13 @@
     "class": "ExprParser::ValuePtrType",
     "signature": "void* fn_004B1160(void* dst, void* src)",
     "summary": "Copy-constructs the std::string held at the value pointer into the return slot; throws if the value pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B11B0": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter,getType\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter,getType\u003e",
+    "signature": "void __thiscall fn_004B11B0(void* self, void* arg1)",
+    "summary": "Evaluates Interpreter::getType on the target object, assigns the result, and invokes vtable slot 0xBC.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004B1250": {
