@@ -231,3 +231,44 @@ void fn_004DB020(void* self, int32_t arg) {
                  arg);
 }
 } // namespace lift_004DB020
+
+// [0x004DC600] NMData::RigEventData::vfunc_0_off_180 (89 bytes)
+namespace lift_004DC600 {
+extern int mem_00925134;  // CRT _invalid_parameter_noinfo import slot
+extern void __thiscall ext_004D3E40(void* self);
+extern void __thiscall ext_004DB070(void* self, uint32_t arg);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+// Asm pushes one stack argument (the begin pointer value), cdecl.
+extern int32_t __cdecl ext_00594000(uint32_t arg);
+// Known callee 0x00594620: sub_00594620 (Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A4A0.)
+// Asm passes its argument in ecx (__fastcall) and returns a pointer in eax.
+extern uint32_t __fastcall ext_00594620(uint32_t self);
+
+// @name NMData::RigEventData::vfunc_0_off_180
+// @class NMData::RigEventData
+// @summary Listener thunk: runs ext_004D3E40 on the owning RigEventData, validates the 28-byte entry vector at +0x170/+0x174, then forwards the first entry through ext_00594000/ext_00594620 and calls ext_004DB070 with the non-null result.
+// @field NMData::RigEventData +0x170 uint32_t field_0x170
+// @field NMData::RigEventData +0x174 uint32_t field_0x174
+void fn_004DC600(void* self) {
+    // `self` is the SelectionVariable::Listener subobject at RigEventData+0x180;
+    // the owning RigEventData object starts 0x180 bytes before it.
+    uint8_t* base = static_cast<uint8_t*>(self) - 0x180;
+    ext_004D3E40(base);
+
+    const uint32_t begin = lift_field<uint32_t>(self, -0x10);  // RigEventData+0x170
+    const uint32_t end = lift_field<uint32_t>(self, -0x0C);    // RigEventData+0x174
+    const int32_t count = static_cast<int32_t>(end - begin) / 28;
+
+    // Original: if begin == 0 or count == 0, call _invalid_parameter_noinfo (never returns).
+    if (begin == 0 || count == 0) {
+        (void)&mem_00925134;  // metadata-only: MSVCR80!_invalid_parameter_noinfo IAT slot
+        std::abort();
+    }
+
+    const int32_t g = ext_00594000(begin);
+    const uint32_t r = ext_00594620(static_cast<uint32_t>(g));
+    if (r != 0) {
+        ext_004DB070(base, r);
+    }
+}
+} // namespace lift_004DC600

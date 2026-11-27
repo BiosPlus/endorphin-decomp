@@ -15,6 +15,8 @@ struct NMData_RigEventData_Fields {
     // +0x15C int32_t                  field_0x15C  (evidence: 0x004DB020)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004DB020)
     // +0x16C void*                    field_0x16C  (evidence: 0x004DCD80)
+    // +0x170 uint32_t                 field_0x170  (evidence: 0x004DC600)
+    // +0x174 uint32_t                 field_0x174  (evidence: 0x004DC600)
     // +0x17C uint8_t                  field_0x17C  (evidence: 0x004DB020)
     // +0x180 void*                    SelectionVariable::Listener::vptr  (evidence: 0x004A9B50, 0x004D3D30)
     // +0x18C uint32_t                 field_0x18C  (evidence: 0x004DB020)

@@ -1,0 +1,28 @@
+{
+  "va": "0x004DC600",
+  "size": 89,
+  "orig_symbol": "NMData::RigEventData::vfunc_0_off_180",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_0_off_180",
+  "class": "NMData::RigEventData",
+  "signature": "void fn_004DC600(void* self)",
+  "summary": "Listener thunk: runs ext_004D3E40 on the owning RigEventData, validates the 28-byte entry vector at +0x170/+0x174, then forwards the first entry through ext_00594000/ext_00594620 and calls ext_004DB070 with the non-null result.",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x174",
+      "type": "uint32_t",
+      "name": "field_0x174"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:45:05Z"
+}

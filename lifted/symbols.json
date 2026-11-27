@@ -23740,6 +23740,13 @@
     "summary": "Looks up a helper object via the transform interface vtable and the self vtable, then links it back to this and stores this+0x348 into its +0x20 slot.",
     "lifted_path": "lifted/NMData/RigEventData.cpp"
   },
+  "0x004DC600": {
+    "name": "NMData::RigEventData::vfunc_0_off_180",
+    "class": "NMData::RigEventData",
+    "signature": "void fn_004DC600(void* self)",
+    "summary": "Listener thunk: runs ext_004D3E40 on the owning RigEventData, validates the 28-byte entry vector at +0x170/+0x174, then forwards the first entry through ext_00594000/ext_00594620 and calls ext_004DB070 with the non-null result.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004DC660": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e::vfunc_41",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e",
