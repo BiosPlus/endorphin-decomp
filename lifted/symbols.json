@@ -5483,6 +5483,13 @@
     "summary": "Warps the cursor to the (x, y) pair stored in this state and returns whether SetCursorPos succeeded.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00442DC0": {
+    "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_20",
+    "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+    "signature": "uint8_t fn_00442DC0(void* self, int32_t /* stack arg, popped by callee (ret 4); unused */)",
+    "summary": "Toggles the owner's redraw timer based on the armed byte at +0x0D, then, if the left button is held and the cursor is left of owner+0xfc, marks the hit item at +0x38 when its id matches +0x10.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp"
+  },
   "0x004432D0": {
     "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_1",
     "class": "MultiTrackView::MultiTrackViewStates::PanState",

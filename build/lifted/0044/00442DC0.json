@@ -1,0 +1,34 @@
+{
+  "va": "0x00442DC0",
+  "size": 167,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_20",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_20",
+  "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+  "signature": "uint8_t fn_00442DC0(void* self, int32_t /* stack arg, popped by callee (ret 4); unused */)",
+  "summary": "Toggles the owner's redraw timer based on the armed byte at +0x0D, then, if the left button is held and the cursor is left of owner+0xfc, marks the hit item at +0x38 when its id matches +0x10.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0xD",
+      "type": "uint8_t",
+      "name": "field_0x0d"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:10Z"
+}
