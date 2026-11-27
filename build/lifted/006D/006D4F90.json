@@ -1,0 +1,34 @@
+{
+  "va": "0x006D4F90",
+  "size": 123,
+  "orig_symbol": "sub_006D4F90",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::findAndRemoveValue_006D4F90",
+  "class": "Unknown",
+  "signature": "extern \"C\" BOOL __thiscall fn_006D4F90(void* self, DWORD value)",
+  "summary": "Searches the DWORD array at +0xF4 for value; if found, removes it and releases it (returns TRUE), otherwise assigns string index 0 to +0x1C4 and returns FALSE.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x104",
+      "type": "void*",
+      "name": "elements"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "void*",
+      "name": "field_0x1c4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:58:47Z"
+}

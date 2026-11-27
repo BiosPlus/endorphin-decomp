@@ -4084,3 +4084,55 @@ bool __thiscall fn_006D5010(void* self, DWORD value) {
     return true;
 }
 } // namespace lift_006D5010
+
+// [0x006D4F90] sub_006D4F90 (123 bytes)
+namespace lift_006D4F90 {
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+// Known callee 0x0072B250: Unknown::releaseOwnedHandle (Releases the handle at +0x08 of the object referenced by *this, clears that slot, then releases the object itself.)
+extern void ext_0072B250(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(DWORD ptr);
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, void* edx, int32_t index);
+
+// @name Unknown::findAndRemoveValue_006D4F90
+// @class Unknown
+// @summary Searches the DWORD array at +0xF4 for value; if found, removes it and releases it (returns TRUE), otherwise assigns string index 0 to +0x1C4 and returns FALSE.
+// @field Unknown +0xF4 int32_t count
+// @field Unknown +0x104 void* elements
+// @field Unknown +0x1C4 void* field_0x1c4
+extern BOOL __thiscall fn_006D4F90(void* self, DWORD value) {
+    char* base = static_cast<char*>(self);
+    char* arr = base + 0xF4;
+
+    int32_t count = *reinterpret_cast<int32_t*>(arr);
+    int32_t index = -1;
+
+    if (count > 0) {
+        DWORD* elems = reinterpret_cast<DWORD*>(
+            static_cast<uintptr_t>(*reinterpret_cast<DWORD*>(arr + 0x10)));
+        for (int32_t i = 0; i < count; ++i) {
+            if (elems[i] == value) {
+                index = i;
+                break;
+            }
+        }
+    }
+
+    if (index == -1) {
+        ext_006E7440(base + 0x1C4, 0);
+        return FALSE;
+    }
+
+    ext_006D2200(arr, nullptr, index);
+
+    if (value != 0) {
+        void* handle = reinterpret_cast<void*>(static_cast<uintptr_t>(value));
+        ext_0072B250(handle);
+        ext_006A5C5C(value);
+    }
+
+    return TRUE;
+}
+} // namespace lift_006D4F90
