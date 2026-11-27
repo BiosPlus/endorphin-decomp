@@ -2890,3 +2890,30 @@ void* fn_00665010(void* self) {
     return self;
 }
 } // namespace lift_00665010
+
+// [0x00662120] ConfigureAndDispatchFromSource (32 bytes)
+namespace lift_00662120 {
+// Known callee 0x00466BA0: DispatchRangeWithDefault (Dispatches arg1 (or self->+0x24 when arg1 is 0) to every object pointer in the [+0x18, +0x1C) range, then forwards arg2 to ext_00678D70.)
+void ext_00466BA0(void* self, uint32_t arg1, uint32_t arg2);
+
+// @name ConfigureAndDispatchFromSource
+// @summary Caches source->+0x60 and *(source->+0x64) into self+0x8/+0xC, sets self+0x0 flag to 1, then calls DispatchRangeWithDefault on self+0x38 with self as arg1 and 0 as arg2.
+// @field Unknown +0x00 uint8_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_00662120(void* self) {
+    uint32_t a = lift_field<uint32_t>(self, 0x04);
+    void* a_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(a));
+    uint32_t b = lift_field<uint32_t>(a_ptr, 0x64);
+    uint32_t c = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(b));
+
+    lift_field<uint32_t>(self, 0x08) = a + 0x60;
+    lift_field<uint32_t>(self, 0x0C) = c;
+    lift_field<uint8_t>(self, 0x00) = 1;
+
+    ext_00466BA0(static_cast<uint8_t*>(self) + 0x38,
+                static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)),
+                0u);
+}
+} // namespace lift_00662120

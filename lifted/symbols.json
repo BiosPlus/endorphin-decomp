@@ -47845,6 +47845,12 @@
     "summary": "Checks if a checked iterator points to the first element of its container",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00662120": {
+    "name": "ConfigureAndDispatchFromSource",
+    "signature": "void fn_00662120(void* self)",
+    "summary": "Caches source-\u003e+0x60 and *(source-\u003e+0x64) into self+0x8/+0xC, sets self+0x0 flag to 1, then calls DispatchRangeWithDefault on self+0x38 with self as arg1 and 0 as arg2.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006629B0": {
     "name": "fileExistsFromString",
     "signature": "int fn_006629B0(void* self)",
