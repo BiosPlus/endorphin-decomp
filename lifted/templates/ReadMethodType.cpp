@@ -67821,3 +67821,23 @@ bool fn_004BCB90(const void* arg) {
     return result;
 }
 } // namespace lift_004BCB90
+
+// [0x004BCCA0] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_5 (55 bytes)
+namespace lift_004BCCA0 {
+// Known callee 0x004BC770: lift_string_copy_ctor (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_004BC770(void* self, const void* src);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+
+// @name ExprParser::ReadMethodType::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>
+// @summary Copy-constructs a temporary std::string from the pointer stored at offset 0 of self, then throws the default ExceptionWithMessage.
+// @field ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1> +0x00 void* field_0x00
+void fn_004BCCA0(void* self) {
+    // 0x1c bytes = MSVC x86 std::string layout; SEH frame from the original asm is omitted.
+    unsigned char tmp[0x1c];
+    const void* src = *reinterpret_cast<void* const*>(self);
+    ext_004BC770(tmp, src);
+    ext_0046C4E0();
+}
+} // namespace lift_004BCCA0

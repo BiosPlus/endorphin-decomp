@@ -15645,6 +15645,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00683930 (ExprParser::ReadMethodType\u003cNMData::ValuePtrData\u003e::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BCCA0": {
+    "name": "ExprParser::ReadMethodType::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e",
+    "signature": "void fn_004BCCA0(void* self)",
+    "summary": "Copy-constructs a temporary std::string from the pointer stored at offset 0 of self, then throws the default ExceptionWithMessage.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004BE680": {
     "name": "sub_004BE680",
     "signature": "void __fastcall fn_004BE680(void* self)",
