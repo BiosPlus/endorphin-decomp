@@ -77409,6 +77409,13 @@
     "summary": "Always throws: resolves the wrapped record index via GetRecordByIndex and throws a DerivedException with a fixed message.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0068F2E0": {
+    "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_42 (UnitsWithProperties::getAngleUnitName)",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e",
+    "signature": "uint8_t fn_0068F2E0(void* holder, void* arg2)",
+    "summary": "Reads the UnitsWithProperties record index from the holder's target, resolves a temporary value via the record lookup, calls its vtable slot 42 and releases it through slot 30; returns the vfunc result flag.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0068F390": {
     "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e::vfunc_44",
     "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e",

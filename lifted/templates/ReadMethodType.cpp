@@ -187551,3 +187551,61 @@ void fn_006052B0(void* obj) {
     reinterpret_cast<DispatchFn>(dispatchVt[47])(dispatch, obj);
 }
 } // namespace lift_006052B0
+
+// [0x0068F2E0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_42 (163 bytes)
+namespace lift_0068F2E0 {
+// Known callee 0x0068EE60: sub_0068EE60 (Auto-lifted identical-shape clone of 0x004CE810, Unknown::GetRecordByIndex).
+extern void* ext_0068EE60(uint32_t index);
+// Known callee 0x006720E0: sub_006720E0 (thiscall helper; constructs the temporary from a record pointer).
+extern void ext_006720E0(void* self, void* record);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an exception object in caller storage).
+extern void ext_0046C3C0(void* exceptionObj);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null target (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<UnitsWithProperties>::vfunc_42 (UnitsWithProperties::getAngleUnitName)
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>
+// @summary Reads the UnitsWithProperties record index from the holder's target, resolves a temporary value via the record lookup, calls its vtable slot 42 and releases it through slot 30; returns the vfunc result flag.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field ExprParser::ValuePtrType +0x0c uint32_t field_0x0c
+// The holder's first dword is the target object; the target's +0x04 pointer leads to an object whose +0x0c dword is the record index.
+// The temporary's object pointer sits at its +0x04 slot (the original's [esp+8] after the constructor call).
+uint8_t fn_0068F2E0(void* holder, void* arg2) {
+    void* target = *static_cast<void**>(holder);
+    if (target == nullptr) {
+        // Null target: build the exception object and throw.
+        alignas(8) uint8_t exceptionObj[0x28];
+        ext_0046C3C0(exceptionObj);
+        ext_006A6DD2(exceptionObj, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0;
+    }
+
+    void* sub = lift_field<void*>(target, 0x04);
+    uint32_t index = lift_field<uint32_t>(sub, 0x0c);
+    void* record = ext_0068EE60(index);
+
+    // Temporary: [0] is the constructor's this, [1] holds the object pointer used for the vtable calls.
+    void* tmp[2] = {nullptr, nullptr};
+    ext_006720E0(&tmp[0], record);
+
+    void* obj = tmp[1];
+    uint8_t result = 0;
+    if (obj != nullptr) {
+        void** vtbl = *static_cast<void***>(obj);
+        // vfunc slot 42 (+0xa8): (this=obj, out=&tmp[0], arg=arg2 forwarded from the holder argument).
+        using VFunc42 = uint8_t (*)(void*, void*, void*);
+        result = reinterpret_cast<VFunc42>(vtbl[42])(obj, &tmp[0], holder);
+        (void)arg2;
+
+        // Release through vfunc slot 30 (+0x78) when the temporary is non-null.
+        void** vtbl2 = *static_cast<void***>(obj);
+        using VFunc30 = void (*)(void*, void*);
+        reinterpret_cast<VFunc30>(vtbl2[30])(obj, &tmp[0]);
+    }
+    return result;
+}
+} // namespace lift_0068F2E0
