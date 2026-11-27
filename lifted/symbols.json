@@ -81350,6 +81350,13 @@
     "summary": "Retrieves the local computer name into a buffer, falling back to a default string on failure.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AE190": {
+    "name": "Unknown::initDefaults_007AE190",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_007AE190(void* self)",
+    "summary": "Calls the base initializer with two data-table arguments, writes the vtable and default range fields, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AE1D0": {
     "name": "sub_007AE1D0",
     "signature": "extern \"C\" void* __fastcall fn_007AE1D0(void* self, int edx_unused, unsigned int flags)",

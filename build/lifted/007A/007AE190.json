@@ -1,0 +1,46 @@
+{
+  "va": "0x007AE190",
+  "size": 58,
+  "orig_symbol": "sub_007AE190",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Unknown::initDefaults_007AE190",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_007AE190(void* self)",
+  "summary": "Calls the base initializer with two data-table arguments, writes the vtable and default range fields, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable_ptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:58:28Z"
+}

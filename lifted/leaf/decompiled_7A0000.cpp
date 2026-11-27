@@ -1495,3 +1495,30 @@ uint32_t fn_007AE200(void* self, void* obj, uint32_t /*unused*/) {
     return reinterpret_cast<VFnProcess>(vtableOf(self)[2])(self, items, count);
 }
 } // namespace lift_007AE200
+
+// [0x007AE190]
+namespace lift_007AE190 {
+// @name Unknown::initDefaults_007AE190
+// @class Unknown
+// @summary Calls the base initializer with two data-table arguments, writes the vtable and default range fields, and returns this.
+// @field Unknown +0x00 void* vtable_ptr
+// @field Unknown +0x10 DWORD field_0x10
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x18 DWORD field_0x18
+// @field Unknown +0x1C DWORD field_0x1c
+
+void* __thiscall ext_007853D0(void* self, DWORD arg1, DWORD arg2, DWORD arg3);
+
+void* __thiscall fn_007AE190(void* self) {
+    ext_007853D0(self, 0xAB0AE0, 0xAB0A98, 5);
+
+    auto base = reinterpret_cast<unsigned char*>(self);
+    *reinterpret_cast<DWORD*>(base + 0x00) = 0x998A0C;
+    *reinterpret_cast<DWORD*>(base + 0x10) = 0x00000001;
+    *reinterpret_cast<DWORD*>(base + 0x14) = 0x80000000;
+    *reinterpret_cast<DWORD*>(base + 0x18) = 0xFFFFFFFF;
+    *reinterpret_cast<DWORD*>(base + 0x1C) = 0x7FFFFFFF;
+
+    return self;
+}
+} // namespace lift_007AE190
