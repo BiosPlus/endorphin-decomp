@@ -1247,3 +1247,44 @@ uint32_t fn_00802320(uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4, int
     return mask;
 }
 } // namespace lift_00802320
+
+// [0x0080AAF0]
+namespace lift_0080AAF0 {
+void ext_0080AB80(void);
+void* ext_0080B560(void* hMem);
+void ext_0080ABC0(void);
+
+extern uint8_t mem_00b62260[];
+extern uint8_t mem_00b6204c[];
+extern uint8_t mem_00b62034[];
+
+// @name FreeHandleSlot_0080AAF0
+// @summary Validates a 32-bit handle, frees its associated global memory block if present, and clears the slot under the global critical section.
+uint32_t fn_0080AAF0(uint32_t handle) {
+    uint32_t index = handle >> 16;
+    uint32_t tag = handle & 0xffffu;
+
+    if (index >= 0x80u) {
+        return 9u;
+    }
+
+    ext_0080AB80();
+
+    uint32_t offset = index * 0x238u;
+    if (mem_00b62260[offset] == 0 ||
+        *reinterpret_cast<uint32_t*>(mem_00b6204c + offset) != tag) {
+        ext_0080ABC0();
+        return 9u;
+    }
+
+    uint32_t mem_handle = *reinterpret_cast<uint32_t*>(mem_00b62034 + offset);
+    if (mem_handle != 0) {
+        ext_0080B560(reinterpret_cast<void*>(static_cast<uintptr_t>(mem_handle)));
+        *reinterpret_cast<uint32_t*>(mem_00b62034 + offset) = 0;
+    }
+
+    mem_00b62260[offset] = 0;
+    ext_0080ABC0();
+    return 0u;
+}
+} // namespace lift_0080AAF0
