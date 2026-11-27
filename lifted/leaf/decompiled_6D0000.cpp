@@ -4213,3 +4213,34 @@ uint8_t fn_006D4E10(void* self, DWORD value) {
     return 1;
 }
 } // namespace lift_006D4E10
+
+// [0x006D3880] sub_006D3880 (128 bytes)
+namespace lift_006D3880 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (0x40) and returns the allocated block in eax.
+extern void* __cdecl ext_006A5C62(size_t size);
+// Known callee 0x0072B280: ConstructEmbeddedBufferAndSetVtable (Runs fn_006D7880 on this with arg1, then writes the vtable pointer 0x00996810 at +0x00 and returns this.)
+extern void* __thiscall ext_0072B280(void* self, uint32_t arg1);
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::allocAndInsert_006D3880
+// @class Unknown
+// @summary Allocates a 0x40-byte object, constructs it on this, and inserts it into the array embedded at +0x7C; returns the object or null on allocation failure.
+// @field Unknown +0x7C int32_t field_0x7C
+void* __thiscall fn_006D3880(void* self) {
+    void* obj = ext_006A5C62(0x40);
+    void* result = nullptr;
+
+    if (obj != nullptr) {
+        result = ext_0072B280(obj, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)));
+    }
+
+    if (result != nullptr) {
+        int32_t& slot = lift_field<int32_t>(self, 0x7C);
+        ext_006D2170(&slot, slot, &result);
+    }
+
+    return result;
+}
+} // namespace lift_006D3880

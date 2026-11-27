@@ -68641,6 +68641,13 @@
     "summary": "Calls virtual slot 12 on self; if it returns non-null, appends that value to the DynamicArray embedded at +0x4c via InsertAt at the current count.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D3880": {
+    "name": "Unknown::allocAndInsert_006D3880",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006D3880(void* self)",
+    "summary": "Allocates a 0x40-byte object, constructs it on this, and inserts it into the array embedded at +0x7C; returns the object or null on allocation failure.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D3B00": {
     "name": "Unknown::callVtbl13AndAppend_006D3B00",
     "class": "Unknown",

@@ -1306,6 +1306,7 @@ struct Unknown_Fields {
     // +0x7C  float                    f7c  (evidence: 0x006465F0) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  DWORD                    field_0x7C  (evidence: 0x00540F60, 0x0079DAC0) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  float                    field_0x7C  (evidence: 0x0060CD40) // CONFLICT: multiple definitions at +0x7C
+    // +0x7C  int32_t                  field_0x7C  (evidence: 0x006D3880) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  DWORD                    field_0x7c  (evidence: 0x00422660) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  float                    field_0x7c  (evidence: 0x00622B40, 0x0062E290, 0x007D8600) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  int32_t                  field_0x7c  (evidence: 0x006AA890, 0x006E9610) // CONFLICT: multiple definitions at +0x7C
