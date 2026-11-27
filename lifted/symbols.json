@@ -27956,6 +27956,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00506B70": {
+    "name": "initStaticObject_00AEBB94",
+    "signature": "void* fn_00506B70(void)",
+    "summary": "Lazily constructs static object at 0x00AEBB94 (guarded by bit 0 of 0x00AEBBB8), registers its atexit cleanup 0x00919D10, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00506CD0": {
     "name": "sub_00506CD0",
     "class": "Vector",

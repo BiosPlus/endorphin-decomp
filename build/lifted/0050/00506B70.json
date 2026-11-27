@@ -1,0 +1,13 @@
+{
+  "va": "0x00506B70",
+  "size": 90,
+  "orig_symbol": "sub_00506B70",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "initStaticObject_00AEBB94",
+  "signature": "void* fn_00506B70(void)",
+  "summary": "Lazily constructs static object at 0x00AEBB94 (guarded by bit 0 of 0x00AEBBB8), registers its atexit cleanup 0x00919D10, and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:23:47Z"
+}

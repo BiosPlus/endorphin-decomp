@@ -3173,3 +3173,23 @@ void* fn_005047A0() {
     return reinterpret_cast<void*>(kObjectAddr);
 }
 } // namespace lift_005047A0
+
+// [0x00506B70] sub_00506B70 (90 bytes)
+namespace lift_00506B70 {
+extern void ext_00506450(void* self, int flag);
+extern void ext_006A6C87(void* dtor);
+extern int mem_00AEBBB8;
+
+// @name initStaticObject_00AEBB94
+// @summary Lazily constructs static object at 0x00AEBB94 (guarded by bit 0 of 0x00AEBBB8), registers its atexit cleanup 0x00919D10, and returns its address.
+void* fn_00506B70(void) {
+    // The MSVC SEH frame (fs:[0] push/restore) is compiler exception bookkeeping
+    // for the static-init guard and has no portable equivalent; it is omitted.
+    if ((mem_00AEBBB8 & 1) == 0) {
+        mem_00AEBBB8 |= 1;
+        ext_00506450(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AEBB94u)), 0);
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00919D10u)));
+    }
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AEBB94u));
+}
+} // namespace lift_00506B70
