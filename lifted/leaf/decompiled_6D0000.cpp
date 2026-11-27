@@ -2929,3 +2929,35 @@ int32_t fn_006D3D30(void* self) {
     return value;
 }
 } // namespace lift_006D3D30
+
+// [0x006D3CF0] sub_006D3CF0 (64 bytes)
+namespace lift_006D3CF0 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::appendVirtualResultToArray_006D3CF0
+// @class Unknown
+// @summary Calls virtual slot +0x58 on self; if it returns non-zero, appends that value to the DynamicArray at +0xF4 via InsertAt and returns it.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0xF4 DynamicArray arr
+int32_t __thiscall fn_006D3CF0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    // mov eax, [edi]; call [eax + 0x58]  (thiscall, no args)
+    void* vtbl = *reinterpret_cast<void**>(obj + 0x00);
+    using VirtualGetFn = int32_t(__thiscall*)(void* self);
+    auto getValue = reinterpret_cast<VirtualGetFn>(
+        *reinterpret_cast<void**>(static_cast<uint8_t*>(vtbl) + 0x58));
+    int32_t value = getValue(self);
+
+    if (value != 0) {
+        // Stage value in a local and pass its address as the element.
+        int32_t elem = value;
+        void* arr = obj + 0xF4;
+        int32_t index = *reinterpret_cast<int32_t*>(obj + 0xF4);
+        ext_006D2170(arr, index, &elem);
+    }
+
+    return value;
+}
+} // namespace lift_006D3CF0
