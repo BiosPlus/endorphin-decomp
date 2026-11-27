@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct ReloadCharacterDialog_Fields {
     // +0x74  uint32_t                 field_0x74  (evidence: 0x00448000, 0x00449F80)
-    // +0x78  uint32_t                 field_0x78  (evidence: 0x00448000, 0x00449F80)
+    // +0x78  uint32_t                 field_0x78  (evidence: 0x00448000, 0x00449F80) // CONFLICT: multiple definitions at +0x78
+    // +0x78  CString                  m_filename  (evidence: 0x00449EC0) // CONFLICT: multiple definitions at +0x78
 };
 } // namespace lifted_layout

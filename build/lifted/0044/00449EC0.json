@@ -1,0 +1,22 @@
+{
+  "va": "0x00449EC0",
+  "size": 154,
+  "orig_symbol": "ReloadCharacterDialog::vfunc_86",
+  "src_path": "src/classes/ReloadCharacterDialog.cpp",
+  "lifted_path": "lifted/classes/ReloadCharacterDialog.cpp",
+  "name": "ReloadCharacterDialog::OnOK",
+  "class": "ReloadCharacterDialog",
+  "signature": "void __thiscall fn_00449EC0(void* self)",
+  "summary": "Validates dialog data, checks if the character file exists, shows an error message if missing, or calls CDialog::OnOK.",
+  "fields": [
+    {
+      "class": "ReloadCharacterDialog",
+      "offset": "+0x78",
+      "type": "CString",
+      "name": "m_filename"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T09:02:43Z"
+}
