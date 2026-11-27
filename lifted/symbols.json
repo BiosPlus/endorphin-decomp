@@ -52336,6 +52336,13 @@
     "summary": "Clamps four float32 values at self to [0,1], then replaces the first three with 1.0f - value.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x0066A500": {
+    "name": "Unknown::AddFourFloatsAndClampOut_0066A500",
+    "class": "Unknown",
+    "signature": "void* fn_0066A500(void* self, void* out, const void* rhs)",
+    "summary": "Copies the four float32 values at self+0x00..+0x0C into a local temp, adds rhs into it via ext_0066A2E0 (which clamps to [0,1]), stores the result into out+0x00..+0x0C, and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x0066A720": {
     "name": "Unknown::AllocCountedBuffer",
     "class": "Unknown",

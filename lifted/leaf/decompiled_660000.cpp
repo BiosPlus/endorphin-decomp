@@ -3266,3 +3266,32 @@ void fn_0066A2A0(void* self, float x) {
     ext_0066A220(self);
 }
 } // namespace lift_0066A2A0
+
+// [0x0066A500] sub_0066A500 (79 bytes)
+namespace lift_0066A500 {
+// Known callee 0x0066A2E0: Unknown::AddFourFloatsAndClamp_0066A2E0 (Adds the four float32 values at rhs+0x00..+0x0C into self+0x00..+0x0C, clamps the result to [0,1] via ext_0066A220, and returns self)
+extern void* ext_0066A2E0(void* self, const void* rhs);
+
+// @name Unknown::AddFourFloatsAndClampOut_0066A500
+// @class Unknown
+// @summary Copies the four float32 values at self+0x00..+0x0C into a local temp, adds rhs into it via ext_0066A2E0 (which clamps to [0,1]), stores the result into out+0x00..+0x0C, and returns out.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+void* fn_0066A500(void* self, void* out, const void* rhs) {
+    float tmp[4];
+    tmp[0] = lift_field<float>(self, 0x00);
+    tmp[1] = lift_field<float>(self, 0x04);
+    tmp[2] = lift_field<float>(self, 0x08);
+    tmp[3] = lift_field<float>(self, 0x0C);
+
+    ext_0066A2E0(tmp, rhs);
+
+    lift_field<float>(out, 0x00) = tmp[0];
+    lift_field<float>(out, 0x04) = tmp[1];
+    lift_field<float>(out, 0x08) = tmp[2];
+    lift_field<float>(out, 0x0C) = tmp[3];
+    return out;
+}
+} // namespace lift_0066A500
