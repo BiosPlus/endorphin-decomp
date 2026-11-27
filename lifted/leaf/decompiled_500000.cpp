@@ -2813,3 +2813,103 @@ uint8_t* fn_0050C6C0(uint8_t* begin, uint32_t count, const void* rhs) {
 }
 } // namespace lift_00501090
 } // namespace lift_0050C6C0
+
+// [0x00508C30] sub_00508C30 (146 bytes)
+namespace lift_00508C30 {
+// @name sub_00508C30
+// @summary Auto-lifted identical-shape clone of 0x004BA0D0 (Unknown::InitWithDynamicCast).
+namespace lift_004BA0D0 {
+// @name Unknown::InitWithDynamicCast
+// @class Unknown
+// @summary Sets vtable and a1/a3/a4 fields, stores dynamic_cast(a2) result at +0x14, and stores a2 at +0x08 when the cast result is null; returns this.
+// @field Unknown +0x00 uint32_t vtbl
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+
+extern void* ext_006657F0(void* self, uint32_t arg);
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType,
+                              const void* targetType, int32_t isReference);
+extern const char mem_00A41420[];
+extern const char mem_00A2F4F4[];
+
+// Original is a 32-bit thiscall (this in ecx) with four stack args (ret 0x10).
+// The MSVC SEH frame setup/teardown (fs:[0] chain, try level) is compiler-generated
+// scope bookkeeping with no portable equivalent and is omitted; the data flow is kept.
+void* fn_00508C30(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    ext_006657F0(self, 0u);
+
+    lift_field<uint32_t>(self, 0x00) = 0x94FFBCu;
+    lift_field<uint32_t>(self, 0x10) = a1;
+
+    void* castSrc = reinterpret_cast<void*>(static_cast<uintptr_t>(a2));
+    void* castResult = ext_006A6E9E(castSrc, 0, mem_00A2F4F4, mem_00A41420, 0);
+    lift_field<uint32_t>(self, 0x14) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(castResult));
+
+    lift_field<uint32_t>(self, 0x18) = 0u;
+    lift_field<uint32_t>(self, 0x1c) = a3;
+    lift_field<uint32_t>(self, 0x20) = 0u;
+    lift_field<uint32_t>(self, 0x24) = a4;
+
+    if (lift_field<uint32_t>(self, 0x14) == 0u) {
+        lift_field<uint32_t>(self, 0x08) = a2;
+    }
+
+    return self;
+}
+} // namespace lift_004BA0D0
+} // namespace lift_00508C30
+
+// [0x00508D30] sub_00508D30 (146 bytes)
+namespace lift_00508D30 {
+// @name sub_00508D30
+// @summary Auto-lifted identical-shape clone of 0x004BA0D0 (Unknown::InitWithDynamicCast).
+namespace lift_004BA0D0 {
+// @name Unknown::InitWithDynamicCast
+// @class Unknown
+// @summary Sets vtable and a1/a3/a4 fields, stores dynamic_cast(a2) result at +0x14, and stores a2 at +0x08 when the cast result is null; returns this.
+// @field Unknown +0x00 uint32_t vtbl
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+
+extern void* ext_006657F0(void* self, uint32_t arg);
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType,
+                              const void* targetType, int32_t isReference);
+extern const char mem_00A416D0[];
+extern const char mem_00A2F4F4[];
+
+// Original is a 32-bit thiscall (this in ecx) with four stack args (ret 0x10).
+// The MSVC SEH frame setup/teardown (fs:[0] chain, try level) is compiler-generated
+// scope bookkeeping with no portable equivalent and is omitted; the data flow is kept.
+void* fn_00508D30(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    ext_006657F0(self, 0u);
+
+    lift_field<uint32_t>(self, 0x00) = 0x950118u;
+    lift_field<uint32_t>(self, 0x10) = a1;
+
+    void* castSrc = reinterpret_cast<void*>(static_cast<uintptr_t>(a2));
+    void* castResult = ext_006A6E9E(castSrc, 0, mem_00A2F4F4, mem_00A416D0, 0);
+    lift_field<uint32_t>(self, 0x14) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(castResult));
+
+    lift_field<uint32_t>(self, 0x18) = 0u;
+    lift_field<uint32_t>(self, 0x1c) = a3;
+    lift_field<uint32_t>(self, 0x20) = 0u;
+    lift_field<uint32_t>(self, 0x24) = a4;
+
+    if (lift_field<uint32_t>(self, 0x14) == 0u) {
+        lift_field<uint32_t>(self, 0x08) = a2;
+    }
+
+    return self;
+}
+} // namespace lift_004BA0D0
+} // namespace lift_00508D30

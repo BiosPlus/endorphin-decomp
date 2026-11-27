@@ -8,8 +8,8 @@
 // Recovered field layout for SomeContainer:
 namespace lifted_layout {
 struct SomeContainer_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x004F1BD0)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x004F1BD0)
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x004F1BD0)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0041AFF0, 0x004F1BD0)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0041AFF0, 0x004F1BD0)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0041AFF0, 0x004F1BD0)
 };
 } // namespace lifted_layout
