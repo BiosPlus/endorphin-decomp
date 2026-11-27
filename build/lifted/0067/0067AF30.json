@@ -1,0 +1,34 @@
+{
+  "va": "0x0067AF30",
+  "size": 118,
+  "orig_symbol": "EvolveEngine::vfunc_2",
+  "src_path": "src/classes/EvolveEngine.cpp",
+  "lifted_path": "lifted/classes/EvolveEngine.cpp",
+  "name": "EvolveEngine::vfunc_2",
+  "class": "EvolveEngine",
+  "signature": "extern \"C\" void __thiscall fn_0067AF30(void* self)",
+  "summary": "Stops the thread by clearing its running flag and closing its handle under a critical section lock.",
+  "fields": [
+    {
+      "class": "EvolveEngine",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "EvolveEngine",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "EvolveEngine",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:22:07Z"
+}

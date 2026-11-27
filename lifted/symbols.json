@@ -50920,6 +50920,13 @@
     "summary": "Stdcall (ret 4) epilogue fragment: restores the saved edi register and drops one stack argument; no other effect.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067AF30": {
+    "name": "EvolveEngine::vfunc_2",
+    "class": "EvolveEngine",
+    "signature": "extern \"C\" void __thiscall fn_0067AF30(void* self)",
+    "summary": "Stops the thread by clearing its running flag and closing its handle under a critical section lock.",
+    "lifted_path": "lifted/classes/EvolveEngine.cpp"
+  },
   "0x0067B050": {
     "name": "SubObject::ClearFlagThenVirtualSlot2",
     "class": "Unknown",
@@ -75254,6 +75261,13 @@
     "signature": "uint32_t fn_007D5BC0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007D5BD0": {
+    "name": "AABB::overlaps",
+    "class": "AABB",
+    "signature": "int __cdecl sub_007D5BD0(const void* a, const void* b)",
+    "summary": "Checks whether two axis-aligned bounding boxes are both enabled and strictly overlap in 3D.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D5C50": {
     "name": "ReadByteThroughPointerArg",

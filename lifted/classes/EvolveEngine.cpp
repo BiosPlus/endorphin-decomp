@@ -27,3 +27,34 @@ void* fn_005013A0(void* self, void* a1, uint32_t a2) {
 }
 } // namespace lift_0051EBB0
 } // namespace lift_005013A0
+
+// [0x0067AF30]
+namespace lift_0067AF30 {
+// @name EvolveEngine::vfunc_2
+// @class EvolveEngine
+// @summary Stops the thread by clearing its running flag and closing its handle under a critical section lock.
+// @field EvolveEngine +0x04 uint8_t field_0x04
+// @field EvolveEngine +0x08 uint8_t field_0x08
+// @field EvolveEngine +0x0C void* field_0x0c
+
+
+extern void __thiscall ext_0065C640(void* self);
+extern bool __thiscall ext_0067AE20(void* self);
+extern void __thiscall ext_0065C650(void* self);
+extern void* mem_009241E0;
+
+extern void __thiscall fn_0067AF30(void* self) {
+    void* lock = static_cast<uint8_t*>(self) + 0x8;
+    ext_0065C640(lock);
+
+    lift_field<uint8_t>(self, 0x4) = 0;
+    if (ext_0067AE20(self)) {
+        void* obj = lift_field<void*>(self, 0xC);
+        void* handle = lift_field<void*>(obj, 0x10);
+        reinterpret_cast<int(__stdcall*)(void*)>(mem_009241E0)(handle);
+        lift_field<void*>(lift_field<void*>(self, 0xC), 0x10) = nullptr;
+    }
+
+    ext_0065C650(lock);
+}
+} // namespace lift_0067AF30

@@ -10,6 +10,9 @@
 // Recovered field layout for EvolveEngine:
 namespace lifted_layout {
 struct EvolveEngine_Fields {
+    // +0x4   uint8_t                  field_0x04  (evidence: 0x0067AF30)
+    // +0x8   uint8_t                  field_0x08  (evidence: 0x0067AF30)
+    // +0xC   void*                    field_0x0c  (evidence: 0x0067AF30)
     // +0x68  uint8_t field_0x158 (sub-object; only its address is field_0x68  (evidence: 0x005013A0)
 };
 } // namespace lifted_layout
