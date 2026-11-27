@@ -66150,6 +66150,13 @@
     "summary": "Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B9D20": {
+    "name": "Unknown::initOrCopy_006B9D20",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_006B9D20(void* self, void* obj)",
+    "summary": "Initializes self; if ext_006B9940(obj) is nonzero, passes ext_006E7460(obj) as src and ext_006B99C0(obj) as len to ext_006B9B40, otherwise calls ext_006B9920. Returns self.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9D70": {
     "name": "sub_006B9D70",
     "signature": "extern \"C\" void fn_006B9D70(void)",

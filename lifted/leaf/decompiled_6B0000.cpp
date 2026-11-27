@@ -2707,3 +2707,35 @@ void fn_006BB0C0(void* self, uint32_t value) {
     fn(self, value);
 }
 } // namespace lift_006BB0C0
+
+// [0x006B9D20] sub_006B9D20 (80 bytes)
+namespace lift_006B9D20 {
+// Known callee 0x006B9910: Unknown::sub_006B9910 (Zero-initializes two dword fields and sets the vtable pointer to mem_00B5D2B8.)
+extern void ext_006B9910(void* self);
+// Known callee 0x006B9920: sub_006B9920 (32B, not lifted)
+extern void ext_006B9920(void* self);
+// Known callee 0x006B9940: Unknown::IsNotTypeTag_B5D2BC (Returns 1 if the first dword of *this differs from the constant 0xB5D2BC (global mem_00B5D2BC), else 0.)
+extern uint32_t ext_006B9940(void* self);
+// Known callee 0x006B99C0: sub_006B99C0 (Getter returning int32_t field at offset +0x4.)
+extern int32_t ext_006B99C0(void* self);
+// Known callee 0x006B9B40: Unknown::allocAndCopy_006B9B40 (Allocates len bytes via allocBuffer; on success copies len bytes from src into the buffer, then forwards the allocator's output slot to MFC80 ord_764 and returns the allocator result.)
+extern uint32_t ext_006B9B40(void* self, uint32_t len, const uint8_t* src);
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t ext_006E7460(void* self);
+
+// @name Unknown::initOrCopy_006B9D20
+// @class Unknown
+// @summary Initializes self; if ext_006B9940(obj) is nonzero, passes ext_006E7460(obj) as src and ext_006B99C0(obj) as len to ext_006B9B40, otherwise calls ext_006B9920. Returns self.
+extern void* __thiscall fn_006B9D20(void* self, void* obj) {
+    ext_006B9910(self);
+    if (ext_006B9940(obj) & 0xFF) {
+        const int32_t src = ext_006E7460(obj);
+        const int32_t len = ext_006B99C0(obj);
+        ext_006B9B40(self, static_cast<uint32_t>(len),
+                     reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(src))));
+    } else {
+        ext_006B9920(self);
+    }
+    return self;
+}
+} // namespace lift_006B9D20
