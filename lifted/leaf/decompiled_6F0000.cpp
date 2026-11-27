@@ -2324,3 +2324,35 @@ void* fn_006F9DE0(void) {
     return obj;
 }
 } // namespace lift_006F9DE0
+
+// [0x006FF760] sub_006FF760 (128 bytes)
+namespace lift_006FF760 {
+// Known callee 0x006FF730: FindU16InZeroTerminatedList (Returns true if key appears in a zero-terminated uint16 array before the terminator; false otherwise (including null list).)
+extern bool ext_006FF730(uint16_t key, const uint16_t* list);
+// IAT slot for MSVCR80!wcslen; replaced by an inline length scan (metadata-only reference).
+extern int mem_00925334;
+
+// @name CountU16NonMatchingRuns
+// @summary Counts maximal runs of consecutive characters in the zero-terminated uint16 string s that do not appear in list (membership via FindU16InZeroTerminatedList).
+uint32_t fn_006FF760(const uint16_t* s, const uint16_t* list) {
+    (void)&mem_00925334;
+    if (s == nullptr)
+        return 0;
+
+    const uint16_t* end = s;
+    while (*end != 0)
+        ++end;
+
+    uint32_t runs = 0;
+    bool inRun = false;
+    for (const uint16_t* p = s; p < end; ++p) {
+        if (ext_006FF730(*p, list)) {
+            inRun = false;
+        } else if (!inRun) {
+            ++runs;
+            inRun = true;
+        }
+    }
+    return runs;
+}
+} // namespace lift_006FF760
