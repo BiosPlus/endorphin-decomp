@@ -1,0 +1,28 @@
+{
+  "va": "0x005ECF40",
+  "size": 233,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_14_off_C",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_14_off_C",
+  "class": "NMData::FixedPathJointData",
+  "signature": "static inline R vcall(void* obj, size_t slot, Args... args)",
+  "summary": "Returns ext_005851B0 result unless the first child's vfunc_21 matches the 0x800 flag; otherwise sets each child's flag byte and calls its vfunc_11.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1F8",
+      "type": "void** field_0x1f8 (begin of child pointer",
+      "name": "vector)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1FC",
+      "type": "void** field_0x1fc (end of child pointer",
+      "name": "vector)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:49:49Z"
+}

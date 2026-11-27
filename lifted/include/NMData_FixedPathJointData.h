@@ -51,8 +51,10 @@ struct NMData_FixedPathJointData_Fields {
     // +0x1D8 void** field_0x1d8 (end of pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x1D8
     // +0x1E0 uint32_t                 field_0x1e0  (evidence: 0x005EDFD0)
     // +0x1E4 std_string_msvc          field_0x1e4  (evidence: 0x005EDFD0)
-    // +0x1F8 void**                   field_0x1f8  (evidence: 0x005ECB10)
-    // +0x1FC void**                   field_0x1fc  (evidence: 0x005ECB10)
+    // +0x1F8 void**                   field_0x1f8  (evidence: 0x005ECB10) // CONFLICT: multiple definitions at +0x1F8
+    // +0x1F8 void** field_0x1f8 (begin of child pointer vector)  (evidence: 0x005ECF40) // CONFLICT: multiple definitions at +0x1F8
+    // +0x1FC void**                   field_0x1fc  (evidence: 0x005ECB10) // CONFLICT: multiple definitions at +0x1FC
+    // +0x1FC void** field_0x1fc (end of child pointer vector)  (evidence: 0x005ECF40) // CONFLICT: multiple definitions at +0x1FC
     // +0x200 std_vector_4             field_0x200  (evidence: 0x005EDFD0)
     // +0x204 uint32_t                 field_0x204  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x204
     // +0x204 void** field_0x204 (begin of element pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x204

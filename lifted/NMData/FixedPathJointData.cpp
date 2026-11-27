@@ -856,3 +856,59 @@ void __thiscall fn_005E4710(void* self, uint32_t target_state, void* arg2) {
     }
 }
 } // namespace lift_005E4710
+
+// [0x005ECF40] NMData::FixedPathJointData::vfunc_14_off_C (233 bytes)
+namespace lift_005ECF40 {
+// Known callee 0x005851B0: AnimatableTransform::vfunc_14_off_C (Checks if field_0x5c is nonzero and if arg2 contains the bit flag for vfunc_0x2C().)
+extern uint8_t ext_005851B0(void* self, uint32_t arg1, uint32_t arg2);
+extern void ext_005E4990();
+extern void ext_005EBCF0();
+extern char mem_0093A444[];
+extern int mem_00925134;
+
+// Virtual dispatch helper: calls vtable slot `slot` of `obj` (thiscall semantics on MSVC).
+template <typename R, typename... Args>
+static inline R vcall(void* obj, size_t slot, Args... args) {
+    using Fn = R (*)(void*, Args...);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<Fn>(vtbl[slot])(obj, args...);
+}
+
+// @name NMData::FixedPathJointData::vfunc_14_off_C
+// @class NMData::FixedPathJointData
+// @summary Returns ext_005851B0 result unless the first child's vfunc_21 matches the 0x800 flag; otherwise sets each child's flag byte and calls its vfunc_11.
+// @field NMData::FixedPathJointData +0x1F8 void** field_0x1f8 (begin of child pointer vector)
+// @field NMData::FixedPathJointData +0x1FC void** field_0x1fc (end of child pointer vector)
+uint8_t fn_005ECF40(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg1;
+    // Metadata-only address references: CALLEES/RDATA list these, but the bytes never call or read them.
+    (void)&ext_005E4990;
+    (void)&ext_005EBCF0;
+    (void)&mem_00925134;
+
+    // Base-class call: result is the function's return value.
+    const uint8_t result = ext_005851B0(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_0093A444)), arg2);
+
+    void** first = lift_field<void**>(self, 0x1F8);
+    void** last  = lift_field<void**>(self, 0x1FC);
+    if (first == last) {
+        return result;
+    }
+
+    const uint8_t wantFlag = (arg2 & 0x800) == 0x800 ? 1 : 0;
+
+    // Early out when the first child already matches the requested flag state.
+    void* head = *first;
+    if (vcall<uint8_t>(head, 21, static_cast<uint32_t>(0x80000)) == wantFlag) {
+        return result;
+    }
+
+    for (void** it = first; it != last; ++it) {
+        void* child = *it;
+        vcall<void>(child, 11, static_cast<uint32_t>(0x80000), static_cast<uint32_t>(wantFlag));
+        lift_field<uint8_t>(child, 0x4) = 1;
+    }
+
+    return result;
+}
+} // namespace lift_005ECF40
