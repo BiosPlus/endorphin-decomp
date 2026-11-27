@@ -2242,3 +2242,70 @@ int32_t __thiscall fn_004BBEB0(void* self, uint32_t* elem_ptr) {
     return index;
 }
 } // namespace lift_004BBEB0
+
+// [0x004B53E0]
+namespace lift_004B53E0 {
+// @name VectorFindAndErase
+// @summary Finds an element matching *target_ptr in a pointer vector, clears and erases it, and returns its index.
+// @field Vector +0x04 uint32_t* begin
+// @field Vector +0x08 uint32_t* end
+
+
+struct VectorIterator {
+    void* container;
+    uint32_t* ptr;
+};
+
+    extern void (__cdecl* mem_00925134)();
+    VectorIterator* __thiscall ext_004B5180(void* self, VectorIterator* out_iter, void* container, uint32_t* elem_ptr);
+    void* __thiscall ext_004BBB00(void* self, void* out_iter, uint32_t container, uint32_t elem_ptr);
+
+int32_t __thiscall fn_004B53E0(void* self, const uint32_t* target_ptr) {
+    uint32_t* begin = lift_field<uint32_t*>(self, 0x04);
+    uint32_t* end = lift_field<uint32_t*>(self, 0x08);
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    uint32_t* it = lift_field<uint32_t*>(self, 0x04);
+    if (it > lift_field<uint32_t*>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    VectorIterator out_iter;
+    out_iter.container = self;
+    out_iter.ptr = it;
+
+    if (it != end) {
+        uint32_t target_val = *target_ptr;
+        while (*it != target_val) {
+            ++it;
+            if (it == end) {
+                break;
+            }
+        }
+    }
+
+    uint32_t* begin2 = lift_field<uint32_t*>(self, 0x04);
+    if (begin2 > lift_field<uint32_t*>(self, 0x08)) {
+        mem_00925134();
+    }
+    if (!self) {
+        mem_00925134();
+    }
+
+    int32_t index = static_cast<int32_t>(it - begin2);
+
+    if (!self) {
+        mem_00925134();
+    }
+    if (it >= lift_field<uint32_t*>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    *it = 0;
+    (void)ext_004BBB00;
+    ext_004B5180(self, &out_iter, self, it);
+    return index;
+}
+} // namespace lift_004B53E0
