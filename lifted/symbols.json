@@ -38477,6 +38477,13 @@
     "summary": "Loads an FBX file, extracts scene/take names, and initializes FBX import state",
     "lifted_path": "lifted/classes/FBXIO.cpp"
   },
+  "0x005607E0": {
+    "name": "FBXIO::vfunc_33",
+    "class": "FBXIO",
+    "signature": "extern \"C\" int __thiscall fn_005607E0(void* self, void* outRates, float unusedArg)",
+    "summary": "Populate a float vector with standard frame rates and return the index of the first rate greater than this-\u003efield_0x174, or size - 1.",
+    "lifted_path": "lifted/classes/FBXIO.cpp"
+  },
   "0x00562A30": {
     "name": "FBXIO::vfunc_13",
     "class": "FBXIO",
@@ -44465,6 +44472,13 @@
     "signature": "void fn_005AFAF0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0042E820 (UnknownClass::resetAndRelease).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005B0370": {
+    "name": "NMData::PoseData::vfunc_3",
+    "class": "NMData::PoseData",
+    "signature": "void serializeTransformMap(void* container, void* listNode, uint32_t itemTag)",
+    "summary": "Serializes PoseData name, flags/id, two transform maps, and root transform to an XML node.",
+    "lifted_path": "lifted/NMData/PoseData.cpp"
   },
   "0x005B0820": {
     "name": "NMData::PoseData::vfunc_1",

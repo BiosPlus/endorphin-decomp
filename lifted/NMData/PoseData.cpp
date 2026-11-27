@@ -153,3 +153,119 @@ void __thiscall sub_005B0820(uint8_t* self, void* xmlNode) {
     ext_005877B0(transform);
 }
 } // namespace lift_005B0820
+
+// [0x005B0370]
+namespace lift_005B0370 {
+// @name NMData::PoseData::vfunc_3
+// @class NMData::PoseData
+// @summary Serializes PoseData name, flags/id, two transform maps, and root transform to an XML node.
+// @field NMData::PoseData +0x08 void* field_0x08
+// @field NMData::PoseData +0x0C void* field_0x0C
+// @field NMData::PoseData +0x18 void* field_0x18
+// @field NMData::PoseData +0x1C void* field_0x1C
+// @field NMData::PoseData +0x24 uint8_t[64] field_0x24
+// @field NMData::PoseData +0x64 std::string field_0x64
+// @field NMData::PoseData +0x80 uint32_t field_0x80
+
+
+extern uint32_t mem_00A9F554;
+extern uint32_t mem_00A9F8D8;
+extern uint32_t mem_00A9F0C0;
+extern uint32_t mem_00A9F0C4;
+extern uint32_t mem_00A9F838;
+extern uint32_t mem_00A9F200;
+extern uint32_t mem_00A9F1F8;
+extern uint32_t mem_00A9ED98;
+extern uint32_t mem_00B40640;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00925134;
+
+extern void* __thiscall ext_00640110(void* self, uint32_t tag);
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern std::string* __cdecl ext_005937B0(std::string* out, uint32_t val);
+extern void* __thiscall ext_006404E0(void* self, uint32_t tag);
+extern void __thiscall ext_00593520(void* self);
+extern void* __thiscall ext_00593D00(void* self, uint32_t arg);
+extern void* __thiscall ext_00593AE0(void* self, void* xmlNode);
+extern void __thiscall ext_0063F8D0(void* self);
+extern void __thiscall ext_00640270(void* self, const std::string* name);
+extern void __thiscall ext_0065F2A0(void* self);
+extern void __thiscall ext_005877B0(void* self);
+extern void __thiscall ext_00486E30(void* self);
+
+namespace {
+
+struct TreeIter {
+    void* container;
+    void* node;
+};
+
+void serializeTransformMap(void* container, void* listNode, uint32_t itemTag) {
+    void* head = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(container) + 0x04);
+    TreeIter it{container, *reinterpret_cast<void**>(head)};
+
+    while (it.node != *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(container) + 0x04)) {
+        alignas(16) uint8_t transformBuf[0xF0];
+        ext_00593520(transformBuf);
+
+        uint8_t* entry = reinterpret_cast<uint8_t*>(it.node) + 0x0C;
+        void* dst = ext_00593D00(transformBuf + 0x04, mem_00B40640);
+        std::memcpy(dst, entry + 0x1C, 0x40);
+
+        void* itemXml = ext_006404E0(listNode, itemTag);
+        void* serialized = ext_00593AE0(transformBuf, itemXml);
+        void* nameChild = ext_00640110(serialized, mem_00A9F838);
+
+        const std::string* entryName = reinterpret_cast<const std::string*>(entry);
+        const char* nameCStr = entryName->c_str();
+        ext_0063F8D0(nameChild);
+        std::string tmpName(nameCStr);
+        ext_00640270(nameChild, &tmpName);
+
+        ext_0065F2A0(transformBuf + 0xE4);
+        ext_005877B0(transformBuf);
+
+        ext_00486E30(&it);
+    }
+}
+
+} // namespace
+
+void* __thiscall fn_005B0370(void* self, void* xmlNode) {
+    (void)mem_00924FE4;
+    (void)mem_00924FF0;
+    (void)mem_00924FF4;
+    (void)mem_00925134;
+    uint8_t* selfBytes = reinterpret_cast<uint8_t*>(self);
+
+    void* nameNode = ext_00640110(xmlNode, mem_00A9F554);
+    const std::string* selfName = reinterpret_cast<const std::string*>(selfBytes + 0x64);
+    ext_00427550(&nameNode, selfName->c_str());
+
+    std::string idStr;
+    std::string* formattedId = ext_005937B0(&idStr, *reinterpret_cast<uint32_t*>(selfBytes + 0x80));
+    void* idNode = ext_00640110(xmlNode, mem_00A9F8D8);
+    ext_00427550(&idNode, formattedId->c_str());
+
+    void* firstListNode = ext_006404E0(xmlNode, mem_00A9F0C0);
+    serializeTransformMap(selfBytes + 0x08, firstListNode, mem_00A9F0C4);
+
+    void* secondListNode = ext_006404E0(xmlNode, mem_00A9F200);
+    serializeTransformMap(selfBytes + 0x18, secondListNode, mem_00A9F1F8);
+
+    alignas(16) uint8_t rootTransform[0xF0];
+    ext_00593520(rootTransform);
+    void* rootDst = ext_00593D00(rootTransform + 0x04, mem_00B40640);
+    std::memcpy(rootDst, selfBytes + 0x24, 0x40);
+
+    void* rootXml = ext_006404E0(xmlNode, mem_00A9ED98);
+    ext_00593AE0(rootTransform, rootXml);
+
+    ext_0065F2A0(rootTransform + 0xE4);
+    ext_005877B0(rootTransform);
+
+    return xmlNode;
+}
+} // namespace lift_005B0370

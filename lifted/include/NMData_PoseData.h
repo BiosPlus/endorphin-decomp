@@ -11,9 +11,13 @@
 namespace lifted_layout {
 struct NMData_PoseData_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x005B0820)
+    // +0x8   void*                    field_0x08  (evidence: 0x005B0370)
+    // +0xC   void*                    field_0x0C  (evidence: 0x005B0370)
     // +0x14  void*                    field_0x14  (evidence: 0x005B0820)
-    // +0x24  uint8_t[64]              field_0x24  (evidence: 0x005B0820)
-    // +0x64  std::string              field_0x64  (evidence: 0x005B0820)
-    // +0x80  uint32_t                 field_0x80  (evidence: 0x005B0820)
+    // +0x18  void*                    field_0x18  (evidence: 0x005B0370)
+    // +0x1C  void*                    field_0x1C  (evidence: 0x005B0370)
+    // +0x24  uint8_t[64]              field_0x24  (evidence: 0x005B0370, 0x005B0820)
+    // +0x64  std::string              field_0x64  (evidence: 0x005B0370, 0x005B0820)
+    // +0x80  uint32_t                 field_0x80  (evidence: 0x005B0370, 0x005B0820)
 };
 } // namespace lifted_layout
