@@ -5205,6 +5205,12 @@
     "summary": "Recursively traverses a node tree, dynamic-casts each node, and invokes a virtual method on a subobject at +0x0C.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00446560": {
+    "name": "sub_00446560",
+    "signature": "void __thiscall fn_00446560(void* self, void* node, uint32_t arg2)",
+    "summary": "Recursively traverses a node tree, dynamic-casting each node and invoking virtual method +0x20 if matched",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00446740": {
     "name": "NodeView::vfunc_0_off_14C",
     "class": "NodeView",
