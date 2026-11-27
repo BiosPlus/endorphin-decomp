@@ -1,0 +1,39 @@
+{
+  "va": "0x0043D800",
+  "size": 110,
+  "orig_symbol": "sub_0043D800",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "dequeFindIndexOfValue",
+  "signature": "void fn_0043D800(void* out, uint32_t unusedArg2, void* container, uint32_t first, uint32_t unusedArg5, uint32_t unusedArg6, uint32_t last, const uint32_t* value)",
+  "summary": "Scans a block-mapped sequence from index first to last for *value; writes {0, container, index} to out.",
+  "fields": [
+    {
+      "class": "ContainerHeader",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ContainerHeader",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ContainerHeader",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "ContainerHeader",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:00:40Z"
+}

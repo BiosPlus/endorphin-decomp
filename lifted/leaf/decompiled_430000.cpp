@@ -3773,3 +3773,53 @@ void fn_0043CF30(void* self) {
     ext_006A65F8(self, 1, 0, range, 1);
 }
 } // namespace lift_0043CF30
+
+// [0x0043D800] sub_0043D800 (110 bytes)
+namespace lift_0043D800 {
+extern void ext_0043D800();
+extern int mem_00925134;
+
+// @name dequeFindIndexOfValue
+// @summary Scans a block-mapped sequence from index first to last for *value; writes {0, container, index} to out.
+// @field ContainerHeader +0x04 uint32_t* field_0x04
+// @field ContainerHeader +0x08 uint32_t field_0x08
+// @field ContainerHeader +0x0c uint32_t field_0x0c
+// @field ContainerHeader +0x10 uint32_t field_0x10
+void fn_0043D800(void* out, uint32_t unusedArg2, void* container, uint32_t first,
+                 uint32_t unusedArg5, uint32_t unusedArg6, uint32_t last, const uint32_t* value) {
+    (void)unusedArg2;
+    (void)unusedArg5;
+    (void)unusedArg6;
+
+    uint32_t pos = first;
+    for (; pos != last; ++pos) {
+        if (container == nullptr) {
+            // Original: call _invalid_parameter_noinfo via IAT slot mem_00925134, then fall through.
+            (void)&mem_00925134;
+        }
+        const uint32_t limit = lift_field<uint32_t>(container, 0x10) + lift_field<uint32_t>(container, 0x0c);
+        if (pos >= limit) {
+            (void)&mem_00925134;
+        }
+
+        uint32_t blockIndex = pos >> 2;
+        const uint32_t offsetInBlock = pos & 3;
+        const uint32_t blockStart = lift_field<uint32_t>(container, 0x08);
+        if (blockIndex >= blockStart) {
+            blockIndex -= blockStart;
+        }
+
+        uint32_t* blockMap = lift_field<uint32_t*>(container, 0x04);
+        uint32_t* block = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(blockMap[blockIndex]));
+        const uint32_t element = block[offsetInBlock];
+
+        if (element == *value) {
+            break;
+        }
+    }
+
+    lift_field<uint32_t>(out, 0x08) = pos;
+    lift_field<void*>(out, 0x04) = container;
+    lift_field<uint32_t>(out, 0x00) = 0;
+}
+} // namespace lift_0043D800

@@ -4123,6 +4123,12 @@
     "summary": "Copy-constructs a 4-byte-element range [first, last) backward into the range ending at dest_last, calling the indirect MFC80 ord_781 copy routine per element (this = destination slot, arg = source element); returns the new start of the destination range (dest_last - byte_count).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043D800": {
+    "name": "dequeFindIndexOfValue",
+    "signature": "void fn_0043D800(void* out, uint32_t unusedArg2, void* container, uint32_t first, uint32_t unusedArg5, uint32_t unusedArg6, uint32_t last, const uint32_t* value)",
+    "summary": "Scans a block-mapped sequence from index first to last for *value; writes {0, container, index} to out.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043DCC0": {
     "name": "sub_0043DCC0",
     "signature": "extern \"C\" void fn_0043DCC0(void)",
