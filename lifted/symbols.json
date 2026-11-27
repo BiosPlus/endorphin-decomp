@@ -17516,6 +17516,13 @@
     "summary": "Calls initStaticObjectOnce_004C6070 and writes its result and a second argument into the first argument's buffer.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C63A0": {
+    "name": "NMData::ForceEventData::vfunc_15",
+    "class": "NMData::ForceEventData",
+    "signature": "DWORD* __thiscall fn_004C63A0(void* self, DWORD* out, DWORD key)",
+    "summary": "Dispatches on a 32-bit key: 0x266 and 0x2FF call the matching static-pair store helper with (out, this); any other key forwards to DesiredPoseEventData::vfunc_15. Returns out.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C6590": {
     "name": "NMData::ForceEventData::vfunc_3_off_158",
     "class": "NMData::ForceEventData",

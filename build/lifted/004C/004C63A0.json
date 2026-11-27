@@ -1,0 +1,14 @@
+{
+  "va": "0x004C63A0",
+  "size": 80,
+  "orig_symbol": "NMData::ForceEventData::vfunc_15",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_15",
+  "class": "NMData::ForceEventData",
+  "signature": "DWORD* __thiscall fn_004C63A0(void* self, DWORD* out, DWORD key)",
+  "summary": "Dispatches on a 32-bit key: 0x266 and 0x2FF call the matching static-pair store helper with (out, this); any other key forwards to DesiredPoseEventData::vfunc_15. Returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:28:38Z"
+}

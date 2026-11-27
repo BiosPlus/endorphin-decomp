@@ -212,3 +212,29 @@ void fn_004C4EA0(void* self, uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t*
     *a4 = 6;
 }
 } // namespace lift_004C4EA0
+
+// [0x004C63A0] NMData::ForceEventData::vfunc_15 (80 bytes)
+namespace lift_004C63A0 {
+// Known callee 0x004C3410: NMData::DesiredPoseEventData::vfunc_15 (__thiscall: self in ecx, out and key on the stack).
+extern DWORD* __thiscall ext_004C3410(void* self, DWORD* out, DWORD key);
+// Known callee 0x004C6360: storeValueAndStaticObjectPtr (__cdecl: dst, value).
+extern void __cdecl ext_004C6360(DWORD* dst, DWORD value);
+// Known callee 0x004C6380: storeValueAndStaticObjectPtr_004C6380 (__cdecl: dst, value).
+extern void __cdecl ext_004C6380(DWORD* dst, DWORD value);
+
+// @name NMData::ForceEventData::vfunc_15
+// @class NMData::ForceEventData
+// @summary Dispatches on a 32-bit key: 0x266 and 0x2FF call the matching static-pair store helper with (out, this); any other key forwards to DesiredPoseEventData::vfunc_15. Returns out.
+DWORD* __thiscall fn_004C63A0(void* self, DWORD* out, DWORD key) {
+    const DWORD thisValue = static_cast<DWORD>(reinterpret_cast<uintptr_t>(self));
+
+    if (key == 0x266) {
+        ext_004C6360(out, thisValue);
+    } else if (key == 0x2FF) {
+        ext_004C6380(out, thisValue);
+    } else {
+        ext_004C3410(self, out, key);
+    }
+    return out;
+}
+} // namespace lift_004C63A0
