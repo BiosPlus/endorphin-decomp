@@ -1,0 +1,22 @@
+{
+  "va": "0x005C3FB0",
+  "size": 103,
+  "orig_symbol": "sub_005C3FB0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "TableFindStringIndex",
+  "class": "\u003cunknown\u003e",
+  "signature": "int fn_005C3FB0(void* self)",
+  "summary": "Returns the index of the first 28-byte element in the global array whose std::string matches self+0x17C, or 0 if none.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x17C",
+      "type": "std::string",
+      "name": "field_0x17C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:55:26Z"
+}

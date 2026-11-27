@@ -32251,6 +32251,13 @@
     "summary": "Dispatches on arg2 (0x9C, 0x199, or other) to a helper and returns arg1.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C3FB0": {
+    "name": "TableFindStringIndex",
+    "class": "\u003cunknown\u003e",
+    "signature": "int fn_005C3FB0(void* self)",
+    "summary": "Returns the index of the first 28-byte element in the global array whose std::string matches self+0x17C, or 0 if none.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C40C0": {
     "name": "ForwardToPeerIfAccepted",
     "class": "\u003cClassName\u003e (unknown)",
