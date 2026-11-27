@@ -28451,6 +28451,13 @@
     "summary": "Calls ext_00500DA0 to fetch an (owner, cursor) pair, validates the range at self+0x04/+0x08 and the owner, and returns cursor+0x1C (or null when cursor == end). Invalid states call mem_00925134 and continue.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x005012A0": {
+    "name": "NMData::EvolveEngineData::vfunc_2_off_8",
+    "class": "NMData::EvolveEngineData",
+    "signature": "inline T\u0026 at(void* base, std::size_t off)",
+    "summary": "Initialises the helper object built from this+0x138 and arg2, then, when arg1's first field is empty or matches the sentinel, obtains a replacement value from either a sub-object vtable slot or a helper call, assigns it into arg1 and releases the previous value; returns arg1.",
+    "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
+  },
   "0x005013A0": {
     "name": "EvolveEngine::vfunc_2_off_10",
     "class": "EvolveEngine",

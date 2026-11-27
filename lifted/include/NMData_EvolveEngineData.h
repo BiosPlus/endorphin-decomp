@@ -15,8 +15,9 @@ struct NMData_EvolveEngineData_Fields {
     // +0x9C  uint8_t                  field_0x9C  (evidence: 0x005004C0)
     // +0xD8  uint8_t                  field_0xD8  (evidence: 0x005004C0)
     // +0xE4  uint8_t                  field_0xE4  (evidence: 0x005004C0)
-    // +0x124 uint8_t                  field_0x124  (evidence: 0x005004C0) // CONFLICT: multiple definitions at +0x124
+    // +0x124 uint8_t                  field_0x124  (evidence: 0x005004C0, 0x005012A0) // CONFLICT: multiple definitions at +0x124
     // +0x124 void*                    field_0x124  (evidence: 0x00501D40) // CONFLICT: multiple definitions at +0x124
     // +0x134 uint32_t                 field_0x134  (evidence: 0x005004C0)
+    // +0x138 void*                    field_0x138  (evidence: 0x005012A0)
 };
 } // namespace lifted_layout

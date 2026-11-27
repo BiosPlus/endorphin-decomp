@@ -156,3 +156,82 @@ void fn_00501D40(void* self, void* arg) {
   }
 }
 } // namespace lift_00501D40
+
+// [0x005012A0] NMData::EvolveEngineData::vfunc_2_off_8 (245 bytes)
+namespace lift_005012A0 {
+// Callees (MSVC __thiscall / __stdcall ABIs, preserved from the original).
+extern void* __thiscall ext_005010D0(void* self);
+extern void* __thiscall ext_00685900(void* self, void* out, uint32_t a, uint32_t b);
+extern void __thiscall ext_00679030(void* self);
+extern void* __stdcall ext_006798D0(void* a, void* sub, void* b, void* guard);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+
+// Global compared against the first word of arg1 (.data pointer sentinel).
+extern uint32_t mem_00B599BC;
+
+namespace {
+
+template <class T>
+inline T& at(void* base, std::size_t off) {
+    return *reinterpret_cast<T*>(static_cast<uint8_t*>(base) + off);
+}
+
+}  // namespace
+
+// @name NMData::EvolveEngineData::vfunc_2_off_8
+// @class NMData::EvolveEngineData
+// @summary Initialises the helper object built from this+0x138 and arg2, then, when arg1's first field is empty or matches the sentinel, obtains a replacement value from either a sub-object vtable slot or a helper call, assigns it into arg1 and releases the previous value; returns arg1.
+// @field NMData::EvolveEngineData +0x124 uint8_t field_0x124
+// @field NMData::EvolveEngineData +0x138 void* field_0x138
+void* __thiscall fn_005012A0(void* self, void* arg1, void* arg2) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Guard: (self != 8) ? self : nullptr.
+    void* guard = (reinterpret_cast<uintptr_t>(self) != 8u) ? self : nullptr;
+
+    // Sub-object pointer at this+0x138, offset by 0x10 when present.
+    void* sub_pre = at<void*>(base, 0x138);
+    void* sub_arg = (sub_pre != nullptr) ? static_cast<uint8_t*>(sub_pre) + 0x10 : nullptr;
+
+    void* built = ext_006798D0(arg1, sub_arg, arg2, guard);
+    ext_00679030(built);
+
+    // Local slot; passed by address as an out parameter to the callees below.
+    uintptr_t flag = 1;
+
+    const uint32_t arg1_f04 = at<uint32_t>(arg1, 0x04);
+    if (arg1_f04 != 0 && arg1_f04 != mem_00B599BC) {
+        return arg1;
+    }
+
+    // Local slot receiving the replacement object from the vtable path.
+    void* b = nullptr;
+    void* other = nullptr;
+
+    void* sub_now = at<void*>(base, 0x138);
+    if (sub_now != nullptr) {
+        uint8_t* sub = static_cast<uint8_t*>(sub_now) + 0x10;
+        void* vt = *reinterpret_cast<void**>(sub);
+        using Slot2Fn = void* (__thiscall*)(void* self, void* out);
+        auto fn = reinterpret_cast<Slot2Fn>(*reinterpret_cast<void**>(static_cast<uint8_t*>(vt) + 0x8));
+        other = fn(sub, &b);
+    } else {
+        void* p = ext_005010D0(base + 0x124);
+        if (p == nullptr) {
+            return arg1;
+        }
+        other = ext_00685900(p, &flag, 0, 0);
+    }
+
+    ext_0041CF50(arg1, other);
+
+    if (b != nullptr) {
+        void* vt = *reinterpret_cast<void**>(b);
+        using Slot30Fn = void (__thiscall*)(void* self, void* out);
+        auto fn = reinterpret_cast<Slot30Fn>(*reinterpret_cast<void**>(static_cast<uint8_t*>(vt) + 0x78));
+        fn(b, &flag);
+    }
+
+    return arg1;
+}
+} // namespace lift_005012A0

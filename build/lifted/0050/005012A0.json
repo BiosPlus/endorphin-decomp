@@ -1,0 +1,28 @@
+{
+  "va": "0x005012A0",
+  "size": 245,
+  "orig_symbol": "NMData::EvolveEngineData::vfunc_2_off_8",
+  "src_path": "src/NMData/EvolveEngineData.cpp",
+  "lifted_path": "lifted/NMData/EvolveEngineData.cpp",
+  "name": "NMData::EvolveEngineData::vfunc_2_off_8",
+  "class": "NMData::EvolveEngineData",
+  "signature": "inline T\u0026 at(void* base, std::size_t off)",
+  "summary": "Initialises the helper object built from this+0x138 and arg2, then, when arg1's first field is empty or matches the sentinel, obtains a replacement value from either a sub-object vtable slot or a helper call, assigns it into arg1 and releases the previous value; returns arg1.",
+  "fields": [
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x124",
+      "type": "uint8_t",
+      "name": "field_0x124"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x138",
+      "type": "void*",
+      "name": "field_0x138"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:11:48Z"
+}
