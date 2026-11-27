@@ -11557,6 +11557,13 @@
     "summary": "Lazily constructs the static object at mem_00AD9054, builds a temporary string from the argument, calls sub_00475960 on this-\u003e[0] with it, and destroys the string.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475E50": {
+    "name": "RBTree::insertAt_00475E50",
+    "class": "RBTree",
+    "signature": "inline void* getPtr(void* n, ptrdiff_t off)",
+    "summary": "Allocates a red node for val, links it under `node` (left child if left_flag is set, else right), updates head's leftmost/rightmost/root, increments size, and rebalances; writes {tree, newNode} to out and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476050": {
     "name": "StringMapTree::lowerBoundInsertPos",
     "class": "StringMapTree",

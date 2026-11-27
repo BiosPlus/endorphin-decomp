@@ -1,0 +1,58 @@
+{
+  "va": "0x00475E50",
+  "size": 508,
+  "orig_symbol": "sub_00475E50",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "RBTree::insertAt_00475E50",
+  "class": "RBTree",
+  "signature": "inline void* getPtr(void* n, ptrdiff_t off)",
+  "summary": "Allocates a red node for val, links it under `node` (left child if left_flag is set, else right), updates head's leftmost/rightmost/root, increments size, and rebalances; writes {tree, newNode} to out and returns out.",
+  "fields": [
+    {
+      "class": "RBTree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "RBTree",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x38",
+      "type": "uint8_t",
+      "name": "color"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "isnil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:50:53Z"
+}
