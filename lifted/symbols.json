@@ -10791,6 +10791,12 @@
     "summary": "Looks up an entry via the underlying map's vfunc_0 and dereferences the result if non-null.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x00476F10": {
+    "name": "StaticInitOnce_00476F10",
+    "signature": "void fn_00476F10(void* self)",
+    "summary": "One-time guarded initializer: sets bit 0 of mem_00AD9078, then calls ext_00662610 and ext_006A6C87 (SEH frame bookkeeping omitted).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476F70": {
     "name": "getStaticString_00AD907C",
     "signature": "void* fn_00476F70()",

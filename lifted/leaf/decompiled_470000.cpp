@@ -1678,3 +1678,23 @@ void fn_004758A0(void* self, DWORD arg) {
     ext_005A6300(sub, &value);
 }
 } // namespace lift_004758A0
+
+// [0x00476F10] sub_00476F10 (95 bytes)
+namespace lift_00476F10 {
+extern void ext_00662610(void* a, const void* b);
+extern void ext_006A6C87(const void* a);
+extern int mem_00AD9078;
+extern int mem_00AD905C;
+
+// @name StaticInitOnce_00476F10
+// @summary One-time guarded initializer: sets bit 0 of mem_00AD9078, then calls ext_00662610 and ext_006A6C87 (SEH frame bookkeeping omitted).
+void fn_00476F10(void* self) {
+    (void)self;
+    if ((mem_00AD9078 & 1) == 0) {
+        mem_00AD9078 |= 1;
+        ext_00662610(&mem_00AD905C,
+                     reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A32860u)));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00916EE0u)));
+    }
+}
+} // namespace lift_00476F10

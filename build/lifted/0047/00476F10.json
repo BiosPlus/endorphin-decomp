@@ -1,0 +1,13 @@
+{
+  "va": "0x00476F10",
+  "size": 95,
+  "orig_symbol": "sub_00476F10",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "StaticInitOnce_00476F10",
+  "signature": "void fn_00476F10(void* self)",
+  "summary": "One-time guarded initializer: sets bit 0 of mem_00AD9078, then calls ext_00662610 and ext_006A6C87 (SEH frame bookkeeping omitted).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:55:42Z"
+}
