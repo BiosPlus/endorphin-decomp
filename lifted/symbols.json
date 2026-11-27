@@ -1571,6 +1571,13 @@
     "summary": "Resets self+0x4c; if self+0x37 is set, stores the +0x28 value of the max-field28 element, otherwise stores the sum of +0x28 over all elements in the pointer vector at +0x4.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004132D0": {
+    "name": "SetFlagAndRunVectorSummaries",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_004132D0(void* self, uint8_t flag)",
+    "summary": "Stores the flag byte at +0x37, walks the [+0x08, +0x0C) range in 4-byte steps with bounds asserts, then calls the two helper routines (0x00412C20, 0x00413230) on self.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004136E0": {
     "name": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
     "class": "MultiTrackView::CompositeMarkerTrack",

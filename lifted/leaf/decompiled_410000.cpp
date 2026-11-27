@@ -3699,3 +3699,52 @@ Size32* __cdecl sub_004160F0(Size32* out_size, void* str, void* dc, int32_t righ
     return out_size;
 }
 } // namespace lift_004160F0
+
+// [0x004132D0] sub_004132D0 (126 bytes)
+namespace lift_004132D0 {
+// Known callee 0x00412C20: SubobjectStringLookupSetFlag (Builds a temporary std::string from a subobject query, forwards it with an int32-derived key to sub_00594620, and stores (self->+0x37 == 0) into the returned object's +0x4E6 byte when non-null.)
+extern void __thiscall ext_00412C20(void* self);
+// Known callee 0x00413230: SumOrMaxElementField28 (Resets self+0x4c; if self+0x37 is set, stores the +0x28 value of the max-field28 element, otherwise stores the sum of +0x28 over all elements in the pointer vector at +0x4.)
+extern void __thiscall ext_00413230(void* self);
+// IAT slot: MSVCR80!_invalid_parameter_noinfo (called on failed bounds asserts)
+extern int mem_00925134;
+
+// @name SetFlagAndRunVectorSummaries
+// @class Unknown
+// @summary Stores the flag byte at +0x37, walks the [+0x08, +0x0C) range in 4-byte steps with bounds asserts, then calls the two helper routines (0x00412C20, 0x00413230) on self.
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+// @field Unknown +0x37 uint8_t flag_0x37
+void __thiscall fn_004132D0(void* self, uint8_t flag) {
+    using InvalidParamFn = void(__cdecl*)();
+    auto invalid_param = []() {
+        reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134))();
+    };
+
+    lift_field<uint8_t>(self, 0x37) = flag;
+
+    uint32_t cursor = lift_field<uint32_t>(self, 0x08);
+    for (;;) {
+        if (lift_field<uint32_t>(self, 0x08) > lift_field<uint32_t>(self, 0x0C)) {
+            invalid_param();
+        }
+        uint32_t end = lift_field<uint32_t>(self, 0x0C);
+        if (cursor == end) {
+            break;
+        }
+        if (!(cursor < lift_field<uint32_t>(self, 0x0C))) {
+            invalid_param();
+        }
+        if (lift_field<uint32_t>(self, 0x08) > lift_field<uint32_t>(self, 0x0C)) {
+            invalid_param();
+        }
+        if (!(cursor < lift_field<uint32_t>(self, 0x0C))) {
+            invalid_param();
+        }
+        cursor += 4;
+    }
+
+    ext_00412C20(self);
+    ext_00413230(self);
+}
+} // namespace lift_004132D0
