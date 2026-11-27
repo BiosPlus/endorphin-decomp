@@ -328,3 +328,56 @@ void __thiscall fn_0048DE90(void* self) {
     }
 }
 } // namespace lift_0048DE90
+
+// [0x004869D0]
+namespace lift_004869D0 {
+// @name NMData::DesiredPoseEventData::saveToXML
+// @class NMData::DesiredPoseEventData
+// @summary Serializes DesiredPoseEventData fields, pose name, float value, and subobjects to XML.
+// @field NMData::DesiredPoseEventData +0x180 uint8_t field_0x180
+// @field NMData::DesiredPoseEventData +0x19C void** field_0x19c
+// @field NMData::DesiredPoseEventData +0x220 float field_0x220
+// @field NMData::DesiredPoseEventData +0x224 uint8_t field_0x224
+
+
+void* __thiscall ext_004C1DE0(void* self, void* xmlNode);
+void* __thiscall ext_00640110(void* self, uint32_t tag);
+void __thiscall ext_00427550(void* self, const char* name);
+void __cdecl ext_0067EF60(void* xmlNode, float val, const void* attrName, const void* defaultVal);
+void* __thiscall ext_006404E0(void* self, uint32_t tag);
+void* __thiscall ext_00640390(void* self, uint32_t tag, int32_t flag);
+void __thiscall ext_004E9CB0(void* self, void* xmlNode);
+void __cdecl ext_0048BC80(void);
+void __cdecl ext_0048DDA0(void);
+void __cdecl ext_00660A50(void);
+
+extern uint32_t mem_00A9F9C4;
+extern const char* (__thiscall* mem_00924FF0)(void* self);
+extern uint32_t mem_00A9F1A4;
+extern uint32_t mem_00A9F1A8;
+
+void* __thiscall fn_004869D0(void* self, void* xmlNode) {
+    ext_004C1DE0(self, xmlNode);
+
+    void* childNode = ext_00640110(xmlNode, mem_00A9F9C4);
+    const char* nameStr = mem_00924FF0(static_cast<uint8_t*>(self) + 0x180);
+    ext_00427550(&childNode, nameStr);
+
+    float val = lift_field<float>(self, 0x220);
+    ext_0067EF60(xmlNode, val, reinterpret_cast<const void*>(0x0093C674), reinterpret_cast<const void*>(0x0093C688));
+
+    void* node1 = ext_006404E0(xmlNode, mem_00A9F1A4);
+    void* sub19c = static_cast<uint8_t*>(self) + 0x19C;
+    void** vtable19c = *reinterpret_cast<void***>(sub19c);
+    reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable19c[3])(sub19c, node1);
+
+    void* node2 = ext_00640390(xmlNode, mem_00A9F1A8, 0);
+    ext_004E9CB0(static_cast<uint8_t*>(self) + 0x224, node2);
+
+    (void)&ext_0048BC80;
+    (void)&ext_0048DDA0;
+    (void)&ext_00660A50;
+
+    return xmlNode;
+}
+} // namespace lift_004869D0

@@ -1,0 +1,40 @@
+{
+  "va": "0x004869D0",
+  "size": 149,
+  "orig_symbol": "NMData::DesiredPoseEventData::vfunc_22",
+  "src_path": "src/NMData/DesiredPoseEventData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp",
+  "name": "NMData::DesiredPoseEventData::saveToXML",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "void* __thiscall fn_004869D0(void* self, void* xmlNode)",
+  "summary": "Serializes DesiredPoseEventData fields, pose name, float value, and subobjects to XML.",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x180",
+      "type": "uint8_t",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x19C",
+      "type": "void**",
+      "name": "field_0x19c"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x220",
+      "type": "float",
+      "name": "field_0x220"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x224",
+      "type": "uint8_t",
+      "name": "field_0x224"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:49:45Z"
+}
