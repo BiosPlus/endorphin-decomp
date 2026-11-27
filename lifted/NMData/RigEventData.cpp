@@ -183,3 +183,20 @@ void* fn_004DC450(void* self, void* arg0) {
     return edi;
 }
 } // namespace lift_004DC450
+
+// [0x004DCD80]
+namespace lift_004DCD80 {
+extern uint8_t mem_00AE6004[];
+extern void ext_0040ECB0(void* self, const void* value);
+extern void ext_004DCC80(void* self, const void* value);
+
+// @name NMData::RigEventData::vfunc_83
+// @class NMData::RigEventData
+// @summary Appends global string at 0x00AE6004 to field_0x16C and calls helper 0x004DCC80 with it
+// @field NMData::RigEventData +0x16C void* field_0x16C
+void fn_004DCD80(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_0040ECB0(base + 0x16C, mem_00AE6004);
+    ext_004DCC80(self, mem_00AE6004);
+}
+} // namespace lift_004DCD80
