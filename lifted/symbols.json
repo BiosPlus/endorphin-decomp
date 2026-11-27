@@ -80194,6 +80194,13 @@
     "summary": "Throws int 2 unless vec holds at least three 8-byte entries; calls vslot 3 on self with the last three entries (oldest first), then pops the top entry twice (dispatching each) and pops a 4-byte tail.",
     "lifted_path": "lifted/ExprParser/Operators/Conditional.cpp"
   },
+  "0x006A2420": {
+    "name": "ExprParser::Operators::FunctionN::vfunc_2",
+    "class": "ExprParser::Operators::FunctionN",
+    "signature": "inline uintptr_t rd32(const void* base, ptrdiff_t off)",
+    "summary": "Walks the function's argument vector (8-byte entries, object at +4), finds the last argument reporting kind 6, dynamic-casts its child result, then shifts the remaining arguments into the child and trims both vectors.",
+    "lifted_path": "lifted/ExprParser/Operators/FunctionN.cpp"
+  },
   "0x006A2670": {
     "name": "ExprParser::Operators::FunctionNPtr::vfunc_2",
     "class": "ExprParser::Operators::FunctionNPtr",

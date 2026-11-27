@@ -1,0 +1,28 @@
+{
+  "va": "0x006A2420",
+  "size": 590,
+  "orig_symbol": "ExprParser::Operators::FunctionN::vfunc_2",
+  "src_path": "src/ExprParser/Operators/FunctionN.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/FunctionN.cpp",
+  "name": "ExprParser::Operators::FunctionN::vfunc_2",
+  "class": "ExprParser::Operators::FunctionN",
+  "signature": "inline uintptr_t rd32(const void* base, ptrdiff_t off)",
+  "summary": "Walks the function's argument vector (8-byte entries, object at +4), finds the last argument reporting kind 6, dynamic-casts its child result, then shifts the remaining arguments into the child and trims both vectors.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::FunctionN",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "argsBegin"
+    },
+    {
+      "class": "ExprParser::Operators::FunctionN",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "argsEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:00:56Z"
+}
