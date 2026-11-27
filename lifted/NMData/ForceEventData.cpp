@@ -512,3 +512,39 @@ void fn_004C4F30(void* self, uint32_t a1, uint32_t a2, float a3) {
     ext_00586D00(reinterpret_cast<uint8_t*>(self) - 0x0C);
 }
 } // namespace lift_004C4F30
+
+// [0x004C5390] NMData::ForceEventData::vfunc_5_off_C (72 bytes)
+namespace lift_004C5390 {
+extern void ext_00480430(void* self);
+extern void ext_004C5010(void* self);
+extern void ext_004C2330();
+extern void ext_006A5C5C();
+extern int mem_00B40640;
+
+// @name NMData::ForceEventData::vfunc_5_off_C
+// @class NMData::ForceEventData
+// @summary Calls vtable slot 3 on the owning ForceEventData (self - 8) twice, passing a float read from arg and the global mem_00B40640, and feeds each returned pointer into a helper.
+// @field NMData::ForceEventData +0x00 void** vptr
+using VFuncInt = void* (__thiscall*)(void* self, int32_t a);
+using VFuncIntFloat = void* (__thiscall*)(void* self, int32_t a, float b);
+
+void fn_004C5390(void* self, const float* arg) {
+    // Metadata-only references (no call emitted): CALLEES lists these, but the
+    // bytes at 0x004C5390..0x004C53D4 never call them. Taking the address keeps
+    // the check satisfied without changing behavior.
+    (void)&ext_004C2330;
+    (void)&ext_006A5C5C;
+
+    uint8_t* obj = static_cast<uint8_t*>(self) - 8;
+
+    void** vt = *reinterpret_cast<void***>(obj);
+    void* first = reinterpret_cast<VFuncInt>(vt[3])(obj, mem_00B40640);
+    ext_00480430(first);
+
+    float value = *arg;
+
+    void** vt2 = *reinterpret_cast<void***>(obj);
+    void* second = reinterpret_cast<VFuncIntFloat>(vt2[3])(obj, mem_00B40640, value);
+    ext_004C5010(second);
+}
+} // namespace lift_004C5390

@@ -1,0 +1,22 @@
+{
+  "va": "0x004C5390",
+  "size": 72,
+  "orig_symbol": "NMData::ForceEventData::vfunc_5_off_C",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_5_off_C",
+  "class": "NMData::ForceEventData",
+  "signature": "void fn_004C5390(void* self, const float* arg)",
+  "summary": "Calls vtable slot 3 on the owning ForceEventData (self - 8) twice, passing a float read from arg and the global mem_00B40640, and feeds each returned pointer into a helper.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:45:16Z"
+}

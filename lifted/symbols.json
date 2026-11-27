@@ -20323,6 +20323,13 @@
     "summary": "Computes a 4D vector with x=y=z from a subobject's float property and w=0.0f.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C5390": {
+    "name": "NMData::ForceEventData::vfunc_5_off_C",
+    "class": "NMData::ForceEventData",
+    "signature": "void fn_004C5390(void* self, const float* arg)",
+    "summary": "Calls vtable slot 3 on the owning ForceEventData (self - 8) twice, passing a float read from arg and the global mem_00B40640, and feeds each returned pointer into a helper.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C5560": {
     "name": "Properties::TerminalParentType\u003cMatrixWithProperties\u003e::vfunc_0",
     "class": "Properties::TerminalParentType\u003cMatrixWithProperties\u003e",
