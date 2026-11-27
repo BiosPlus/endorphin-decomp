@@ -2408,3 +2408,32 @@ double fn_00702D60(void* self) {
     return result;
 }
 } // namespace lift_00702D60
+
+// [0x00702BE0] sub_00702BE0 (128 bytes)
+namespace lift_00702BE0 {
+// sub_006D2370 (unlifted): called with ecx = &local, no stack arguments.
+extern void ext_006D2370(uint32_t self);
+// Known callee 0x006D23F0: Unknown::GetAddressAt8 (this + 8 * index; thiscall, one stack argument).
+extern uint32_t ext_006D23F0(uint32_t self, uint32_t index);
+// Known callee 0x006D80A0: empty function (returns immediately).
+extern void ext_006D80A0(void);
+// Known callee 0x00702A00: auto-lifted clone of 0x0070BC70 (Unknown::FillValueTriple).
+extern double* ext_00702A00(void* self, double* out);
+
+// @name Unknown::GetFirstElementAsDouble
+// @class Unknown
+// @summary Fills a local 8-byte temporary via helpers, takes element 0 of the array it addresses, and returns that element's 8 bytes reinterpreted as a double.
+double fn_00702BE0(void* self) {
+    double local = 0.0;
+    const uint32_t local_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&local));
+
+    ext_006D2370(local_addr);
+    ext_00702A00(self, &local);
+
+    const uint32_t elem_addr = ext_006D23F0(local_addr, 0);
+    const double result = *reinterpret_cast<const double*>(static_cast<uintptr_t>(elem_addr));
+
+    ext_006D80A0();
+    return result;
+}
+} // namespace lift_00702BE0

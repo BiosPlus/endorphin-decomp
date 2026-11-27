@@ -70627,6 +70627,13 @@
     "summary": "Looks up an object via ext_006DC460, then writes three doubles (each a float getter result) into out and returns out.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702BE0": {
+    "name": "Unknown::GetFirstElementAsDouble",
+    "class": "Unknown",
+    "signature": "double fn_00702BE0(void* self)",
+    "summary": "Fills a local 8-byte temporary via helpers, takes element 0 of the array it addresses, and returns that element's 8 bytes reinterpreted as a double.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702C60": {
     "name": "Unknown::GetTripleSecondValue",
     "class": "Unknown",
