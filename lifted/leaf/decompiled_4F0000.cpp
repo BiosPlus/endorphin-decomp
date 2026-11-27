@@ -889,3 +889,51 @@ void* fn_004FDE10(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4
     return self;
 }
 } // namespace lift_004FDE10
+
+// [0x004FDB40] sub_004FDB40 (129 bytes)
+namespace lift_004FDB40 {
+extern int mem_00924FDC;
+
+// @name FillElementRangeWithValue
+// @summary Assigns value into each 36-byte element in [first, last): string assign via import, then rebinds the 0x1c/0x20 handle slots.
+// @field ElementRecord36 +0x1c void* field_0x1c
+// @field ElementRecord36 +0x20 void* field_0x20
+void fn_004FDB40(void* first, void* last, const void* value) {
+    auto* const src = static_cast<unsigned char*>(const_cast<void*>(value));
+    auto* const end = static_cast<unsigned char*>(last);
+
+    using StringAssignFn = void* (__thiscall*)(void* self, const void* rhs);
+    using VirtualReleaseFn = void (__thiscall*)(void* self, void* slot);
+    using VirtualGetFn = void* (__thiscall*)(void* self, void** out, const void* in);
+
+    for (auto* p = static_cast<unsigned char*>(first); p != end; p += 0x24) {
+        // Import thunk (MSVCP80 basic_string::operator=): element string = *value.
+        reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC))(p, src);
+
+        // Skip the handle rebind when the destination is the source value itself.
+        if (p + 0x1c == src + 0x1c)
+            continue;
+
+        // Release the old 0x20 object via vtable slot 30 (0x78), passing &p->field_0x1c.
+        void* old20 = lift_field<void*>(p, 0x20);
+        if (old20 != nullptr) {
+            void** vt = *static_cast<void***>(old20);
+            reinterpret_cast<VirtualReleaseFn>(vt[30])(old20, &lift_field<void*>(p, 0x1c));
+        }
+
+        // Copy the 0x20 pointer from the source element.
+        void* src20 = lift_field<void*>(src, 0x20);
+        lift_field<void*>(p, 0x20) = src20;
+
+        // New 0x1c value: query src20 via vtable slot 28 (0x70) into a temp, then load it.
+        void* newVal = nullptr;
+        if (src20 != nullptr) {
+            void** vt = *static_cast<void***>(src20);
+            void* tmp = nullptr;
+            void* ret = reinterpret_cast<VirtualGetFn>(vt[28])(src20, &tmp, src + 0x1c);
+            newVal = *static_cast<void**>(ret);
+        }
+        lift_field<void*>(p, 0x1c) = newVal;
+    }
+}
+} // namespace lift_004FDB40

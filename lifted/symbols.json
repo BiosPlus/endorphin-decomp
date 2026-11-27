@@ -20338,6 +20338,12 @@
     "summary": "Runtime type check: dynamic-casts self to the type at mem_00A402C4 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x004FDB40": {
+    "name": "FillElementRangeWithValue",
+    "signature": "void fn_004FDB40(void* first, void* last, const void* value)",
+    "summary": "Assigns value into each 36-byte element in [first, last): string assign via import, then rebinds the 0x1c/0x20 handle slots.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FDC80": {
     "name": "Unknown::ForwardFloatToSubobjectSlot1",
     "class": "Unknown",
