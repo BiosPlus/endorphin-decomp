@@ -1,0 +1,22 @@
+{
+  "va": "0x006994A0",
+  "size": 428,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_18",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_18",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "inline void* u32_to_ptr(uint32_t v)",
+  "summary": "Looks up a key in a static searchable map; on miss, queries a virtual slot and registers the result, returning the found value or the static sentinel.",
+  "fields": [
+    {
+      "class": "ExpressionContainerType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:38:16Z"
+}

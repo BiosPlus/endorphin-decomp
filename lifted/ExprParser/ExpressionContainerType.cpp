@@ -247,3 +247,125 @@ void* __thiscall fn_0066C0B0(void* self, void* sret, void* arg1) {
     return sret;
 }
 } // namespace lift_0066C0B0
+
+// [0x006994A0] ExprParser::ExpressionContainerType::vfunc_18 (428 bytes)
+namespace lift_006994A0 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy; returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x0041E540: sub_0041E540 (Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).)
+extern void* ext_0041E540(void);
+// Known callee 0x00595C50: sub_00595C50 (Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).)
+extern void* __thiscall ext_00595C50(void* self);
+// Known callee 0x00598F40: sub_00598F40 (175B)
+extern void* __thiscall ext_00598F40(void* self, const void* key, void* value);
+// Known callee 0x0059B350: SearchableMap<ValuePtr, GetNameFromAttribute<ValuePtr>>::vfunc_0
+extern void* __thiscall ext_0059B350(void* self, const void* key);
+// Known callee 0x006720E0: sub_006720E0 (43B)
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// Known callee 0x00699360: ContainerBase::GetCheckedBegin (returns begin pointer of a 32-byte-element array, else a static sentinel)
+extern uint8_t* __thiscall ext_00699360(void* self);
+// Known callee 0x006A6C87: sub_006A6C87 (18B) (cdecl, registers a one-shot cleanup callback)
+extern void ext_006A6C87(void* fn);
+
+extern uint32_t mem_00B5C944;
+extern uint32_t mem_00B5C934;
+extern uint32_t mem_00B5C93C;
+extern uint32_t mem_00B5C940;
+extern uint32_t mem_00B599BC;
+extern uint32_t mem_00B5C92C;
+extern uint32_t mem_00B5C930;
+
+namespace {
+inline void* u32_to_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+inline uint32_t ptr_to_u32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+}  // namespace
+
+// @name ExprParser::ExpressionContainerType::vfunc_18
+// @class ExprParser::ExpressionContainerType
+// @summary Looks up a key in a static searchable map; on miss, queries a virtual slot and registers the result, returning the found value or the static sentinel.
+// @field ExpressionContainerType +0x00 void* vtable
+void* __thiscall fn_006994A0(void* self, const void* key) {
+    void* found = nullptr;
+
+    if (key != nullptr) {
+        // One-time static initialisation of the map object.
+        if (!(mem_00B5C944 & 1u)) {
+            mem_00B5C944 |= 1u;
+            mem_00B5C934 = 0x0095DA28u;
+            void* head = ext_00595C50(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B5C938u)));
+            mem_00B5C93C = ptr_to_u32(head);
+            uint8_t* h = static_cast<uint8_t*>(head);
+            h[0x31] = 1;
+            *reinterpret_cast<uint32_t*>(h + 0x04) = ptr_to_u32(head);
+            *reinterpret_cast<uint32_t*>(h + 0x00) = ptr_to_u32(head);
+            *reinterpret_cast<uint32_t*>(h + 0x08) = ptr_to_u32(head);
+            mem_00B5C940 = 0;
+            ext_006A6C87(u32_to_ptr(0x00921F70u));
+        }
+
+        // Lookup in the static map with the key's +0x2C sub-object.
+        const uint8_t* keyBytes = static_cast<const uint8_t*>(key);
+        const void* subKey = keyBytes + 0x2C;
+        found = ext_0059B350(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B5C934u)), subKey);
+        if (found != nullptr) {
+            return found;
+        }
+
+        // Miss: ask this object's virtual slot 0x5C for a value.
+        using VFn23 = void*(__thiscall*)(void* self, void* out, const void* key,
+                                         uint32_t a, uint32_t b, uint32_t c);
+        void* vt = *static_cast<void**>(self);
+        VFn23 slot23 = reinterpret_cast<VFn23>(static_cast<void**>(vt)[0x5C / 4]);
+        uint32_t sret[2] = {0, 0};
+        void* value = slot23(self, sret, key, 0, 0, 0);
+
+        found = ext_00598F40(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B5C934u)), subKey, value);
+
+        // Release the temporary returned through the sret slot, if any.
+        void* tmpObj = u32_to_ptr(sret[1]);
+        if (tmpObj != nullptr) {
+            using VFn30 = void(__thiscall*)(void* self, void* arg);
+            void** tvt = *static_cast<void***>(tmpObj);
+            VFn30 slot30 = reinterpret_cast<VFn30>(tvt[0x78 / 4]);
+            slot30(tmpObj, sret);
+        }
+
+        if (found != nullptr) {
+            return found;
+        }
+    }
+
+    // Fallback path: lazily initialise the sentinel object at 0xB5C92C.
+    if (!(mem_00B5C944 & 2u)) {
+        uint32_t cacheBase = mem_00B599BC;
+        mem_00B5C944 |= 2u;
+        mem_00B5C92C = 0;
+        mem_00B5C930 = cacheBase;
+        ext_006A6C87(u32_to_ptr(0x00921F50u));
+    }
+
+    uint32_t cached = mem_00B5C930;
+    if (cached == 0 || cached == mem_00B599BC) {
+        void* obj = ext_0041E540();
+        uint8_t* begin = ext_00699360(obj);
+        if (*reinterpret_cast<uint32_t*>(begin + 0x14) != 0) {
+            void* tmp14 = nullptr;
+            ext_006720E0(&tmp14, begin);
+            uint32_t other[2] = {0, 2};
+            ext_0041CF50(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B5C92Cu)), other);
+            if (tmp14 != nullptr) {
+                using VFn30 = void(__thiscall*)(void* self, void* arg);
+                void** tvt = *static_cast<void***>(tmp14);
+                VFn30 slot30 = reinterpret_cast<VFn30>(tvt[0x78 / 4]);
+                slot30(tmp14, other);
+            }
+        }
+    }
+
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B5C92Cu));
+}
+} // namespace lift_006994A0

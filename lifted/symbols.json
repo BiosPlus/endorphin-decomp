@@ -78802,6 +78802,13 @@
     "summary": "Returns the begin pointer of a 32-byte-element array if non-empty, else a static sentinel; calls invalid_parameter when begin \u003e= end.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006994A0": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_18",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "inline void* u32_to_ptr(uint32_t v)",
+    "summary": "Looks up a key in a static searchable map; on miss, queries a virtual slot and registers the result, returning the found value or the static sentinel.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
+  },
   "0x006996C0": {
     "name": "sub_006996C0",
     "signature": "extern \"C\" void* __cdecl fn_006996C0(void* obj)",
