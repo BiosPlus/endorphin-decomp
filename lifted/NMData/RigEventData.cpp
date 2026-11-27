@@ -335,3 +335,72 @@ void fn_004DAF20(void* self) {
     ext_0065C650(lock);
 }
 } // namespace lift_004DAF20
+
+// [0x004DC4F0] NMData::RigEventData::vfunc_1_off_154 (261 bytes)
+namespace lift_004DC4F0 {
+// Known callee 0x004DA180: sub_004DA180 (thiscall on a std::vector/string-like object, one int arg).
+extern void ext_004DA180(void* self, int32_t n);
+// Known callee 0x004C28C0: sub_004C28C0 (thiscall on the base object, one pointer arg).
+extern void ext_004C28C0(void* self, void* arg);
+// Known callee 0x004DB070: sub_004DB070 (thiscall on the base object, one DWORD arg).
+extern void ext_004DB070(void* self, uint32_t arg);
+// Known callee 0x004026E0: std_vector_string_Tidy (Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.)
+extern void ext_004026E0(void* self);
+// IAT slots: mem_00924FE4 = std::string::string(const char*), mem_00925134 = _invalid_parameter_noinfo.
+extern int mem_00924FE4;
+extern int mem_00925134;
+
+// Entered through the HasDependentSelection base (+0x154): recovers the RigEventData
+// pointer as self - 0x154, then walks arg's element list and forwards its first entry
+// to ext_004DB070. The original calls arg's vtable slots 7 (list getter) and 15 (fill a
+// local std::vector<std::string>), constructs temporary strings, and tidies the local at the end.
+// The SEH frame and unwind-state bookkeeping are not modelled.
+// @name NMData::RigEventData::vfunc_1_off_154
+// @class NMData::RigEventData
+// @summary Forwards the first element of arg's list to ext_004DB070 on the RigEventData base (self - 0x154), after filling and tidying a local string vector.
+// @field NMData::RigEventData +0x16C void* field_0x16C
+void fn_004DC4F0(void* self, void* arg) {
+    uint8_t* obj = static_cast<uint8_t*>(self) - 0x154;
+
+    void** vt = *static_cast<void***>(arg);
+    using ListGetter = void* (*)(void* self_);
+    using Filler = void (*)(void* self_, void* out);
+    using StrCtor = void (*)(void* self_, const char* s);
+    using InvalidParam = void (*)();
+
+    // First list fetch: bail out unless the list has at least one element.
+    void* list = reinterpret_cast<ListGetter>(vt[7])(arg);
+    uint32_t begin = lift_field<uint32_t>(list, 4);
+    uint32_t end = lift_field<uint32_t>(list, 8);
+    if (begin == 0 || (static_cast<int32_t>(end - begin) >> 2) == 0) {
+        return;
+    }
+
+    // Local std::vector<std::string> (zero-initialised) filled from arg.
+    alignas(4) uint8_t tmp_vec[0x1C] = {};
+    reinterpret_cast<Filler>(vt[15])(arg, tmp_vec);
+
+    // Temporary std::string built from the literal at VA 0x928B5D.
+    alignas(4) uint8_t tmp_str[0x1C] = {};
+    auto str_ctor = reinterpret_cast<StrCtor>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE4)));
+    const char* lit = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x928B5DU));
+    str_ctor(tmp_str, lit);
+    ext_004DA180(tmp_vec, 2);
+    ext_004C28C0(obj, tmp_vec);
+
+    str_ctor(tmp_str, lit);
+    ext_004DA180(static_cast<uint8_t*>(self) + 0x18, 2);
+
+    // Second list fetch: front element, with the original's begin < end check.
+    void* list2 = reinterpret_cast<ListGetter>(vt[7])(arg);
+    uint32_t begin2 = lift_field<uint32_t>(list2, 4);
+    uint32_t end2 = lift_field<uint32_t>(list2, 8);
+    if (!(begin2 < end2)) {
+        reinterpret_cast<InvalidParam>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925134)))();
+    }
+    uint32_t elem = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(begin2));
+
+    ext_004DB070(obj, elem);
+    ext_004026E0(tmp_vec);
+}
+} // namespace lift_004DC4F0

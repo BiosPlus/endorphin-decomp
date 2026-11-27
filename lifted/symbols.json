@@ -23852,6 +23852,13 @@
     "summary": "Looks up a helper object via the transform interface vtable and the self vtable, then links it back to this and stores this+0x348 into its +0x20 slot.",
     "lifted_path": "lifted/NMData/RigEventData.cpp"
   },
+  "0x004DC4F0": {
+    "name": "NMData::RigEventData::vfunc_1_off_154",
+    "class": "NMData::RigEventData",
+    "signature": "void fn_004DC4F0(void* self, void* arg)",
+    "summary": "Forwards the first element of arg's list to ext_004DB070 on the RigEventData base (self - 0x154), after filling and tidying a local string vector.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004DC600": {
     "name": "NMData::RigEventData::vfunc_0_off_180",
     "class": "NMData::RigEventData",
