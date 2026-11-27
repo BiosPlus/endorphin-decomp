@@ -1,0 +1,22 @@
+{
+  "va": "0x00415F00",
+  "size": 151,
+  "orig_symbol": "CEnTabCtrl::vfunc_84",
+  "src_path": "src/classes/CEnTabCtrl.cpp",
+  "lifted_path": "lifted/classes/CEnTabCtrl.cpp",
+  "name": "CEnTabCtrl::vfunc_84",
+  "class": "CEnTabCtrl",
+  "signature": "uint32_t fn_00415F00(void* self, uint32_t arg)",
+  "summary": "Picks a color (CEnTabCtrl+0x54 or GetSysColor(COLOR_BTNTEXT)) depending on global flags and scales it via fn_00415E30 (scale 1.4).",
+  "fields": [
+    {
+      "class": "CEnTabCtrl",
+      "offset": "+0x54",
+      "type": "int32_t",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:29:06Z"
+}

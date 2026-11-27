@@ -10,6 +10,7 @@
 // Recovered field layout for CEnTabCtrl:
 namespace lifted_layout {
 struct CEnTabCtrl_Fields {
+    // +0x54  int32_t                  field_0x54  (evidence: 0x00415F00)
     // +0x58  int32_t                  field_0x58  (evidence: 0x00416010)
 };
 } // namespace lifted_layout

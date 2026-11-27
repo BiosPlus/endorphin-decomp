@@ -34,3 +34,50 @@ extern DWORD fn_00416010(void* self, int arg) {
     return pGetSysColor(0xF);
 }
 } // namespace lift_00416010
+
+// [0x00415F00] CEnTabCtrl::vfunc_84 (151 bytes)
+namespace lift_00415F00 {
+// Tail-jump target outside the 151-byte body (je/jne at 0x415F1E).
+extern uint32_t ext_00415FDA();
+// Lifted callee 0x00415E30: ScaleRgbBytesClamped(packed, scale).
+extern uint32_t ext_00415E30(uint32_t packed, float scale_in);
+extern int mem_00AC9CD8;     // global flag word
+extern void* mem_00925680;   // IAT slot holding USER32!GetSysColor
+extern float mem_0092C8C0;   // 1.4f scale constant
+
+// @name CEnTabCtrl::vfunc_84
+// @class CEnTabCtrl
+// @summary Picks a color (CEnTabCtrl+0x54 or GetSysColor(COLOR_BTNTEXT)) depending on global flags and scales it via fn_00415E30 (scale 1.4).
+// @field CEnTabCtrl +0x54 int32_t field_0x54
+uint32_t fn_00415F00(void* self, uint32_t arg) {
+    const uint32_t flags = static_cast<uint32_t>(mem_00AC9CD8);
+    const uint32_t eax = flags & 0x2;
+    auto get_sys_color = []() -> uint32_t {
+        using GetSysColorFn = uint32_t(__stdcall*)(int);
+        return reinterpret_cast<GetSysColorFn>(mem_00925680)(15);
+    };
+
+    if (arg != 0) {
+        if ((flags & 0x4) == 0) {
+            return ext_00415FDA();
+        }
+        if (eax != 0) {
+            const int32_t c = lift_field<int32_t>(self, 0x54);
+            const uint32_t color = (c == -1) ? get_sys_color() : static_cast<uint32_t>(c);
+            return ext_00415E30(color, mem_0092C8C0);
+        }
+        return ext_00415E30(get_sys_color(), mem_0092C8C0);
+    }
+
+    if ((flags & 0x10) != 0 || (flags & 0x1) == 0) {
+        return eax;
+    }
+    const int32_t c = lift_field<int32_t>(self, 0x54);
+    if (c == -1) {
+        return get_sys_color();
+    }
+    // Block at 0x415FB3 is outside the disassembly provided; assumed to mirror the
+    // ecx-as-color path above.
+    return ext_00415E30(static_cast<uint32_t>(c), mem_0092C8C0);
+}
+} // namespace lift_00415F00

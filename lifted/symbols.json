@@ -1856,6 +1856,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0092C764 and tail-calls base destructor sub_00404650.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00415F00": {
+    "name": "CEnTabCtrl::vfunc_84",
+    "class": "CEnTabCtrl",
+    "signature": "uint32_t fn_00415F00(void* self, uint32_t arg)",
+    "summary": "Picks a color (CEnTabCtrl+0x54 or GetSysColor(COLOR_BTNTEXT)) depending on global flags and scales it via fn_00415E30 (scale 1.4).",
+    "lifted_path": "lifted/classes/CEnTabCtrl.cpp"
+  },
   "0x00415F97": {
     "name": "get_sys_color_or_field",
     "signature": "uint32_t __fastcall sub_00415F97(void* ecx_this, void* /*edx*/, uint32_t eax_val)",
