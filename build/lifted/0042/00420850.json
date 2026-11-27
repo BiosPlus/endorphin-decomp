@@ -1,0 +1,28 @@
+{
+  "va": "0x00420850",
+  "size": 102,
+  "orig_symbol": "sub_00420850",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "boundedIndexAdvance_00420850",
+  "class": "ThisObject",
+  "signature": "DWORD fn_00420850(void* self, DWORD arg)",
+  "summary": "Calls ext_004206F0 to get a (ptr, index) pair; validates ptr == self and index \u003c self-\u003efield_0x08 with invalid-parameter checks, returns 0 when index == self-\u003efield_0x08, else index + 4.",
+  "fields": [
+    {
+      "class": "ThisObject",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ThisObject",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:56:51Z"
+}

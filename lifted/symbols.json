@@ -2902,6 +2902,13 @@
     "summary": "Copy constructor for a std::logic_error-derived exception with a std::string at +0x28.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00420850": {
+    "name": "boundedIndexAdvance_00420850",
+    "class": "ThisObject",
+    "signature": "DWORD fn_00420850(void* self, DWORD arg)",
+    "summary": "Calls ext_004206F0 to get a (ptr, index) pair; validates ptr == self and index \u003c self-\u003efield_0x08 with invalid-parameter checks, returns 0 when index == self-\u003efield_0x08, else index + 4.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00421AB0": {
     "name": "sub_00421AB0",
     "signature": "extern \"C\" int* fn_00421AB0()",

@@ -2233,3 +2233,49 @@ uint32_t fn_00420600() {
     return addr_u32(&mem_00ACCBC4);
 }
 } // namespace lift_00420600
+
+// [0x00420850] sub_00420850 (102 bytes)
+namespace lift_00420850 {
+// IAT slot holding the invalid-parameter handler (_invalid_parameter_noinfo); called, then execution continues.
+extern void (*mem_00925134)();
+// __thiscall: ECX = self, two stack args (out pointer, arg); callee pops 8. Writes {first, second} to out[0..1].
+extern void ext_004206F0(void* self, DWORD* out, DWORD arg);
+
+// @name boundedIndexAdvance_00420850
+// @class ThisObject
+// @summary Calls ext_004206F0 to get a (ptr, index) pair; validates ptr == self and index < self->field_0x08 with invalid-parameter checks, returns 0 when index == self->field_0x08, else index + 4.
+// @field ThisObject +0x04 DWORD field_0x04
+// @field ThisObject +0x08 DWORD field_0x08
+DWORD fn_00420850(void* self, DWORD arg) {
+    const DWORD self_val = static_cast<DWORD>(reinterpret_cast<uintptr_t>(self));
+
+    DWORD out[2] = {0, 0};
+    ext_004206F0(self, out, arg);
+
+    const DWORD limit = lift_field<DWORD>(self, 0x08);
+    if (!(lift_field<DWORD>(self, 0x04) <= limit)) {
+        mem_00925134();
+    }
+
+    const DWORD ptr = out[0];
+    if (ptr == 0 || ptr != self_val) {
+        mem_00925134();
+    }
+
+    const DWORD index = out[1];
+    if (index == limit) {
+        return 0;
+    }
+
+    if (ptr == 0) {
+        mem_00925134();
+    }
+
+    // ptr == self was verified above, so [ptr+8] is self's field_0x08 (limit).
+    if (index >= lift_field<DWORD>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    return index + 4;
+}
+} // namespace lift_00420850
