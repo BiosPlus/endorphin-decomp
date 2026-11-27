@@ -71468,6 +71468,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006F24E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F3160": {
+    "name": "sub_006F3160",
+    "class": "Unknown",
+    "signature": "int32_t fn_006F3160(void* self, int32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x00704D60 (Unknown::forwardArgToMember_00704D60).",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F6900": {
     "name": "sub_006F6900",
     "signature": "extern uint32_t __stdcall fn_006F6900(uint32_t arg0)",

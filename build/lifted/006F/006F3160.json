@@ -1,0 +1,22 @@
+{
+  "va": "0x006F3160",
+  "size": 19,
+  "orig_symbol": "sub_006F3160",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006F3160",
+  "class": "Unknown",
+  "signature": "int32_t fn_006F3160(void* self, int32_t arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x00704D60 (Unknown::forwardArgToMember_00704D60).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "void*",
+      "name": "member"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T04:56:13Z"
+}
