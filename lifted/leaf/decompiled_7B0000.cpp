@@ -1785,3 +1785,34 @@ int32_t fn_007BC630(void* self) {
     return -1;
 }
 } // namespace lift_007BC630
+
+// [0x007BFBD0] sub_007BFBD0 (119 bytes)
+namespace lift_007BFBD0 {
+// @name applyInPlaceDifferenceFilter
+// @summary In-place 16-bit difference filter over a buffer: buf[i+k] -= buf[i] for descending i, k = filter order from object state.
+// @field Unknown +0x1CC void* field_0x1CC
+void fn_007BFBD0(void* self, int16_t* buf, int32_t byteLen) {
+    // Pointee of self+0x1CC: int32 at +0x04 is the filter order (k).
+    void* state = lift_field<void*>(self, 0x1CC);
+    const int32_t order = lift_field<int32_t>(state, 0x04);
+
+    // Original: signed byteLen/2 (cdq/sub/sar sequence == truncating division).
+    const int32_t n = byteLen / 2;
+
+    if (order <= 0 || n <= order) {
+        return;
+    }
+
+    // Original does `order` subtract-steps per outer pass, walking the
+    // buffer downward; the unrolled/jump-table form is equivalent to a plain loop.
+    int32_t idx = n - order - 1;
+    int32_t remaining = n - order;
+    do {
+        for (int32_t step = 0; step < order; ++step) {
+            buf[idx + order] = static_cast<int16_t>(buf[idx + order] - buf[idx]);
+            --idx;
+        }
+        remaining -= order;
+    } while (remaining > 0);
+}
+} // namespace lift_007BFBD0

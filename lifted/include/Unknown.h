@@ -1347,7 +1347,7 @@ struct Unknown_Fields {
     // +0x1C8 DWORD                    field_0x1C8  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0x1C8
     // +0x1C8 float                    field_0x1c8  (evidence: 0x007C2E50) // CONFLICT: multiple definitions at +0x1C8
     // +0x1CC void* field_0x1cc (pointer to a handle-holder object; freed via GlobalFree)  (evidence: 0x007BD340) // CONFLICT: multiple definitions at +0x1CC
-    // +0x1CC void*                    field_0x1CC  (evidence: 0x007BFCF0) // CONFLICT: multiple definitions at +0x1CC
+    // +0x1CC void*                    field_0x1CC  (evidence: 0x007BFBD0, 0x007BFCF0) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC uint32_t                 field_0x1cc  (evidence: 0x007BE010) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC void*                    field_0x1cc  (evidence: 0x007BEDA0, 0x007BFC60, 0x007BFC90, 0x007BFD40) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC ptr field_0x1cc (sub-object: +0x08 int chunkSize, +0x0c chunk callback, +0x18 begin hook)  (evidence: 0x007BFA10) // CONFLICT: multiple definitions at +0x1CC

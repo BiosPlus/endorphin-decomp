@@ -72726,6 +72726,12 @@
     "summary": "Calls the sub-object's begin hook; if it succeeds, feeds `count` bytes to its chunk callback in steps of the chunk size.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BFBD0": {
+    "name": "applyInPlaceDifferenceFilter",
+    "signature": "void fn_007BFBD0(void* self, int16_t* buf, int32_t byteLen)",
+    "summary": "In-place 16-bit difference filter over a buffer: buf[i+k] -= buf[i] for descending i, k = filter order from object state.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BFC60": {
     "name": "forwardToSubobjectSlots_007BFC60",
     "signature": "void fn_007BFC60(void* self, uint32_t a2, uint32_t a3, uint32_t a4)",
