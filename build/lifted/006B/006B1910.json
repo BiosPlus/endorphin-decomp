@@ -1,0 +1,14 @@
+{
+  "va": "0x006B1910",
+  "size": 155,
+  "orig_symbol": "GWCDateTimePropertiesFactory::vfunc_1",
+  "src_path": "src/classes/GWCDateTimePropertiesFactory.cpp",
+  "lifted_path": "lifted/classes/GWCDateTimePropertiesFactory.cpp",
+  "name": "GWCDateTimePropertiesFactory::vfunc_1",
+  "class": "GWCDateTimePropertiesFactory",
+  "signature": "void* fn_006B1910(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+  "summary": "Returns NULL unless arg2 is one of two sentinel ids; otherwise allocates a 0x44-byte object, constructs it via ext_006B4060, then calls its vtable slot 5 with (arg3, arg3 == 0) and returns the object.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:30Z"
+}

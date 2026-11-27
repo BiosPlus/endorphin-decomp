@@ -68389,6 +68389,13 @@
     "summary": "Sets the vtable pointer at offset 0x00 to 0x00991750 and returns this",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B1910": {
+    "name": "GWCDateTimePropertiesFactory::vfunc_1",
+    "class": "GWCDateTimePropertiesFactory",
+    "signature": "void* fn_006B1910(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+    "summary": "Returns NULL unless arg2 is one of two sentinel ids; otherwise allocates a 0x44-byte object, constructs it via ext_006B4060, then calls its vtable slot 5 with (arg3, arg3 == 0) and returns the object.",
+    "lifted_path": "lifted/classes/GWCDateTimePropertiesFactory.cpp"
+  },
   "0x006B19B0": {
     "name": "initVtable_006B19B0",
     "signature": "void* __thiscall sub_006B19B0(void* self)",
