@@ -1,0 +1,27 @@
+{
+  "va": "0x00682D80",
+  "size": 49,
+  "orig_symbol": "sub_00682D80",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "ForwardIndexedElementToHeld",
+  "signature": "void fn_00682D80(void* self, void* owner)",
+  "summary": "If field_0x8c is non-null and field_0x88 is not -1, fetches the element at index field_0x88 from the owner argument and copies it into the object held at field_0x8c.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x88",
+      "type": "uint32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x8C",
+      "type": "void*",
+      "name": "field_0x8c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:02:53Z"
+}

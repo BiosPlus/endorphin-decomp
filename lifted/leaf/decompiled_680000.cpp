@@ -2772,3 +2772,28 @@ void* __thiscall sub_00687150(void* this_ptr, void* arg1) {
     return this_ptr;
 }
 } // namespace lift_00687150
+
+// [0x00682D80] sub_00682D80 (49 bytes)
+namespace lift_00682D80 {
+// Known callee 0x00661DE0: sub_00661DE0 (Returns element at index from owner's vector if iterator is at begin, else from current list node's 8-byte element vector)
+extern uint32_t ext_00661DE0(void* this_ptr, uint32_t index);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+
+// @name ForwardIndexedElementToHeld
+// @summary If field_0x8c is non-null and field_0x88 is not -1, fetches the element at index field_0x88 from the owner argument and copies it into the object held at field_0x8c.
+// @field (unknown) +0x88 uint32_t field_0x88
+// @field (unknown) +0x8c void* field_0x8c
+void fn_00682D80(void* self, void* owner) {
+    void* held = lift_field<void*>(self, 0x8c);
+    if (held == nullptr) {
+        return;
+    }
+    uint32_t index = lift_field<uint32_t>(self, 0x88);
+    if (index == 0xFFFFFFFFu) {
+        return;
+    }
+    uint32_t element = ext_00661DE0(owner, index);
+    ext_0041CF50(held, reinterpret_cast<void*>(static_cast<uintptr_t>(element)));
+}
+} // namespace lift_00682D80

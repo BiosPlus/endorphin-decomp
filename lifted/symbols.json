@@ -58929,6 +58929,12 @@
     "summary": "If a1 == 0x280: returns 0x46 when the object at +0x28 reports vfunc slot 12 == 5; otherwise, when +0x64 is set and a3 is non-null, stores ext_0067A050(a2, self+0x50) into *a3. Returns a1 in all non-0x46 paths.",
     "lifted_path": "lifted/NMData/ValuePtrData.cpp"
   },
+  "0x00682D80": {
+    "name": "ForwardIndexedElementToHeld",
+    "signature": "void fn_00682D80(void* self, void* owner)",
+    "summary": "If field_0x8c is non-null and field_0x88 is not -1, fetches the element at index field_0x88 from the owner argument and copies it into the object held at field_0x8c.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00682DC0": {
     "name": "NMData::ValuePtrData::vfunc_0_off_4",
     "class": "NMData::ValuePtrData",
