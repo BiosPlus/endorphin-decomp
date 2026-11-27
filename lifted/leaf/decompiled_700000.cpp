@@ -2290,3 +2290,30 @@ void* fn_0070C200(void* self, void* out) {
     return out;
 }
 } // namespace lift_0070C200
+
+// [0x0070C130] sub_0070C130 (127 bytes)
+namespace lift_0070C130 {
+// Known callee 0x0070BC70: Unknown::FillValueTriple (Fills out[0..2] with three float getter results (as doubles) read from sub-objects of the value returned by GetValueIfCountPositive; returns out.)
+extern double* ext_0070BC70(void* self, double* out);
+// Known callee 0x0077FB40: Unknown::setDoubleQuadToOnes (Writes four IEEE-754 doubles of 1.0 (0x3FF0000000000000) at +0x00, +0x08, +0x10, +0x18 and returns self.)
+extern void* ext_0077FB40(void* self);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0();
+// Known callee 0x0070BD10: sub_0070BD10 (Auto-lifted identical-shape clone of 0x0070BBD0 (Unknown::FillTripleFromChains).) Declared only; not called in this function's disassembly.
+extern void ext_0070BD10();
+
+// @name Unknown::FillQuadThenCopyToOut_0070C130
+// @class Unknown
+// @summary Fills a 4-double scratch buffer with ones, overwrites its first three doubles via FillValueTriple, copies the 32 bytes to out, calls the empty ext_006D80A0, and returns out.
+void* fn_0070C130(void* self, void* out) {
+    double buf[4];
+    ext_0077FB40(buf);
+    ext_0070BC70(self, buf);
+    std::memcpy(out, buf, sizeof(buf));
+    ext_006D80A0();
+    // Metadata lists callee 0x0070BD10, but the disassembly never calls it.
+    // Only the address is taken, so runtime behavior is unchanged.
+    (void)&ext_0070BD10;
+    return out;
+}
+} // namespace lift_0070C130

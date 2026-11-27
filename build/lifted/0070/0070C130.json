@@ -1,0 +1,14 @@
+{
+  "va": "0x0070C130",
+  "size": 127,
+  "orig_symbol": "sub_0070C130",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::FillQuadThenCopyToOut_0070C130",
+  "class": "Unknown",
+  "signature": "void* fn_0070C130(void* self, void* out)",
+  "summary": "Fills a 4-double scratch buffer with ones, overwrites its first three doubles via FillValueTriple, copies the 32 bytes to out, calls the empty ext_006D80A0, and returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:09:23Z"
+}
