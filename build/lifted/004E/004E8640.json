@@ -1,0 +1,39 @@
+{
+  "va": "0x004E8640",
+  "size": 194,
+  "orig_symbol": "sub_004E8640",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "AssignDynamicCastRangeIntoSelf",
+  "signature": "void fn_004E8640(void* dst, void* self)",
+  "summary": "Validates self's [begin,end) range, erases it via fn_00596660, resizes self to the element count of dst, then for each dst element (range-checked) dynamic-casts it and forwards non-null results to ext_0041A920.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "int32_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "int32_t*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Out",
+      "offset": "+0x4",
+      "type": "int32_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Out",
+      "offset": "+0x8",
+      "type": "int32_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:25:16Z"
+}

@@ -33,6 +33,7 @@ struct Self_Fields {
     // +0x4   const char*              field_0x04  (evidence: 0x0063E050) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x004973B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x006E7340) // CONFLICT: multiple definitions at +0x4
+    // +0x4   int32_t*                 field_0x04  (evidence: 0x004E8640) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x005541A0, 0x005A71E0, 0x005B1930) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00468730, 0x004B0F80, 0x00681820, 0x0072C0B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uintptr_t                field_0x04  (evidence: 0x00661C90) // CONFLICT: multiple definitions at +0x4
@@ -47,6 +48,7 @@ struct Self_Fields {
     // +0x4   uint32_t                 vtable_0x4  (evidence: 0x00692BA0) // CONFLICT: multiple definitions at +0x4
     // +0x8   float                    field_0x08  (evidence: 0x004973B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  field_0x08  (evidence: 0x00492550) // CONFLICT: multiple definitions at +0x8
+    // +0x8   int32_t*                 field_0x08  (evidence: 0x004E8640) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x005B0E60, 0x00681820, 0x006AD3C0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t[]                field_0x08  (evidence: 0x00533F50) // CONFLICT: multiple definitions at +0x8
     // +0x8   uintptr_t                field_0x08  (evidence: 0x00661C90) // CONFLICT: multiple definitions at +0x8

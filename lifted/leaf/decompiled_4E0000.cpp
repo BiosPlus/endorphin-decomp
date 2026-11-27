@@ -1271,3 +1271,82 @@ extern uint32_t fn_004EC2C0(void* self) {
     return 0; // eax is zeroed by xor before ret
 }
 } // namespace lift_004EC2C0
+
+// [0x004E8640] sub_004E8640 (194 bytes)
+namespace lift_004E8640 {
+// Known callee 0x00596660: eraseInt32Range (erases [first,last) from a 4-byte-element buffer by shifting the tail down, sets end, writes a 2-pointer result to out).
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// Unlifted callee 0x0050ED40 (thiscall, one stack arg: element count).
+extern void ext_0050ED40(void* self, int32_t count);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk to MSVCR80!__RTDynamicCast).
+extern void* ext_006A6E9E(void* obj, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+// Unlifted callee 0x0041A920 (thiscall, one stack arg: pointer to the cast result slot).
+extern void ext_0041A920(void* self, uint32_t* slot);
+// CRT _invalid_parameter_noinfo import slot.
+extern uint32_t mem_00925134;
+
+// @name AssignDynamicCastRangeIntoSelf
+// @summary Validates self's [begin,end) range, erases it via fn_00596660, resizes self to the element count of dst, then for each dst element (range-checked) dynamic-casts it and forwards non-null results to ext_0041A920.
+// @field Self +0x04 int32_t* field_0x04
+// @field Self +0x08 int32_t* field_0x08
+// @field Out +0x04 int32_t* field_0x04
+// @field Out +0x08 int32_t* field_0x08
+void fn_004E8640(void* dst, void* self) {
+    // CRT invalid-parameter handler (loaded from the import slot, returns).
+    auto invalid_parameter = []() {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    };
+
+    // Validate self's range (original performs this check twice).
+    if (lift_field<int32_t*>(self, 0x04) > lift_field<int32_t*>(self, 0x08)) {
+        invalid_parameter();
+    }
+    if (lift_field<int32_t*>(self, 0x04) > lift_field<int32_t*>(self, 0x08)) {
+        invalid_parameter();
+    }
+
+    // Erase self's [begin,end) range.
+    int32_t* first = lift_field<int32_t*>(self, 0x04);
+    int32_t* last = lift_field<int32_t*>(self, 0x08);
+    void* out[2] = {};
+    ext_00596660(self, out, self, first, self, last);
+
+    // Element count of dst (0 when dst begin is null), used to resize self.
+    int32_t* dstBegin = lift_field<int32_t*>(dst, 0x04);
+    int32_t count = dstBegin != nullptr
+                        ? static_cast<int32_t>(lift_field<int32_t*>(dst, 0x08) - dstBegin)
+                        : 0;
+    ext_0050ED40(self, count);
+
+    // Walk dst elements.
+    int32_t* it = lift_field<int32_t*>(dst, 0x04);
+    for (;;) {
+        if (lift_field<int32_t*>(dst, 0x04) > lift_field<int32_t*>(dst, 0x08)) {
+            invalid_parameter();
+        }
+        int32_t* end = lift_field<int32_t*>(dst, 0x08);
+        if (it == end) {
+            break;
+        }
+        if (it >= lift_field<int32_t*>(dst, 0x08)) {
+            invalid_parameter();
+        }
+
+        // Element is a 32-bit object pointer; dynamic-cast it to the target type.
+        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(*it)));
+        uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(
+            ext_006A6E9E(obj, 0,
+                        reinterpret_cast<void*>(static_cast<uintptr_t>(0x00A2E2D8)),
+                        reinterpret_cast<void*>(static_cast<uintptr_t>(0x00A2E2BC)),
+                        0)));
+        if (slot != 0) {
+            ext_0041A920(self, &slot);
+        }
+
+        if (it >= lift_field<int32_t*>(dst, 0x08)) {
+            invalid_parameter();
+        }
+        it += 1;
+    }
+}
+} // namespace lift_004E8640

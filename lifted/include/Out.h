@@ -9,8 +9,10 @@
 namespace lifted_layout {
 struct Out_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00441A90)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00441A90)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00441A90)
+    // +0x4   int32_t*                 field_0x04  (evidence: 0x004E8640) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00441A90) // CONFLICT: multiple definitions at +0x4
+    // +0x8   int32_t*                 field_0x08  (evidence: 0x004E8640) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00441A90) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00441A90)
 };
 } // namespace lifted_layout
