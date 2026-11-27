@@ -1,0 +1,94 @@
+{
+  "va": "0x004E4ED0",
+  "size": 675,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_21",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_21",
+  "class": "NMData::AnimationEventData",
+  "signature": "static bool is_sentinel(uint32_t val)",
+  "summary": "Loads AnimationEventData properties from an XML/data node and updates related subobjects.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x18C",
+      "type": "uint8_t",
+      "name": "field_0x18c"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x990",
+      "type": "uint8_t",
+      "name": "field_0x990"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x994",
+      "type": "float",
+      "name": "field_0x994"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x998",
+      "type": "float",
+      "name": "field_0x998"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9A0",
+      "type": "int32_t",
+      "name": "field_0x9a0"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9A4",
+      "type": "int32_t",
+      "name": "field_0x9a4"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9A8",
+      "type": "uint8_t",
+      "name": "field_0x9a8"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9D4",
+      "type": "uint8_t",
+      "name": "field_0x9d4"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9D5",
+      "type": "uint8_t",
+      "name": "field_0x9d5"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9D6",
+      "type": "uint8_t",
+      "name": "field_0x9d6"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9E0",
+      "type": "void**",
+      "name": "field_0x9e0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:45:00Z"
+}

@@ -12,35 +12,38 @@ namespace lifted_layout {
 struct NMData_AnimationEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004D3CB0, 0x004DDED0, 0x004E3BF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x004C28F0, 0x004DE1B0) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void** field_0x04 (vptr of the TransformInterface subobject; its slot +0x0C is called)  (evidence: 0x004E3BF0)
+    // +0x4   void** field_0x04 (vptr of the TransformInterface subobject; its slot +0x0C is called)  (evidence: 0x004E3BF0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void**                   field_0x04  (evidence: 0x004E4ED0) // CONFLICT: multiple definitions at +0x4
     // +0xC   void* field_0x0c (address of embedded subobject; passed to ext_00528B90)  (evidence: 0x004E3BF0)
     // +0x10  uint32_t                 field_0x10  (evidence: 0x004E1A70)
     // +0x14  void*                    field_0x14  (evidence: 0x004BF800, 0x004C1A80, 0x004C1F90, 0x004DE1E0)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1F90, 0x004DE0F0, 0x004E1A00, 0x004E1D60)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1F90, 0x004E1A00, 0x004E1D60, 0x004E2760)
-    // +0x168 int32_t                  field_0x168  (evidence: 0x00486BE0, 0x004BFBE0, 0x004DE0F0, 0x004E1D60)
+    // +0x168 int32_t                  field_0x168  (evidence: 0x00486BE0, 0x004BFBE0, 0x004DE0F0, 0x004E1D60) // CONFLICT: multiple definitions at +0x168
+    // +0x168 void*                    field_0x168  (evidence: 0x004E4ED0) // CONFLICT: multiple definitions at +0x168
     // +0x16C void*                    field_0x16c  (evidence: 0x004C1F90)
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x004C1F90, 0x004E1A00, 0x004E2760)
     // +0x184 void* field_0x184 (address only, passed to ext_00662420)  (evidence: 0x004E3BF0)
-    // +0x18C uint8_t                  field_0x18c  (evidence: 0x004DDF00)
+    // +0x18C uint8_t                  field_0x18c  (evidence: 0x004DDF00, 0x004E4ED0)
     // +0x2FC void* field_0x2fc (address only, passed to ext_004E3660)  (evidence: 0x004E3BF0)
     // +0x934 void* field_0x934 (address only, stored at result+0x20)  (evidence: 0x004E3BF0)
     // +0x980 void* field_0x980 (address only; base of the range struct passed to ext_00596660)  (evidence: 0x004E3BF0)
     // +0x984 void* field_0x984 (range begin pointer)  (evidence: 0x004E3BF0)
     // +0x988 void* field_0x988 (range end pointer)  (evidence: 0x004E3BF0)
-    // +0x990 uint8_t                  field_0x990  (evidence: 0x004DDF00, 0x004E3BF0)
-    // +0x994 float                    field_0x994  (evidence: 0x004DDF00)
-    // +0x998 float                    field_0x998  (evidence: 0x004DDF00)
-    // +0x9A0 int32_t                  field_0x9a0  (evidence: 0x004DDF00, 0x004DE0F0, 0x004E1D60)
-    // +0x9A4 int32_t                  field_0x9a4  (evidence: 0x004DDF00)
+    // +0x990 uint8_t                  field_0x990  (evidence: 0x004DDF00, 0x004E3BF0, 0x004E4ED0)
+    // +0x994 float                    field_0x994  (evidence: 0x004DDF00, 0x004E4ED0)
+    // +0x998 float                    field_0x998  (evidence: 0x004DDF00, 0x004E4ED0)
+    // +0x9A0 int32_t                  field_0x9a0  (evidence: 0x004DDF00, 0x004DE0F0, 0x004E1D60, 0x004E4ED0)
+    // +0x9A4 int32_t                  field_0x9a4  (evidence: 0x004DDF00, 0x004E4ED0)
+    // +0x9A8 uint8_t                  field_0x9a8  (evidence: 0x004E4ED0)
     // +0x9B0 uint8_t[16]              field_0x9b0  (evidence: 0x004E2700, 0x004E3570)
     // +0x9C0 uint32_t                 field_0x9c0  (evidence: 0x004E2700, 0x004E3570)
     // +0x9C4 uint32_t                 field_0x9c4  (evidence: 0x004E2700, 0x004E3570)
     // +0x9CC int32_t                  field_0x9cc  (evidence: 0x004E2760)
-    // +0x9D4 uint8_t                  field_0x9d4  (evidence: 0x004E3BF0)
-    // +0x9D5 uint8_t                  field_0x9d5  (evidence: 0x004DDF00)
-    // +0x9D6 uint8_t                  field_0x9d6  (evidence: 0x004DDF00)
-    // +0x9E0 void**                   field_0x9e0  (evidence: 0x004DDF00)
+    // +0x9D4 uint8_t                  field_0x9d4  (evidence: 0x004E3BF0, 0x004E4ED0)
+    // +0x9D5 uint8_t                  field_0x9d5  (evidence: 0x004DDF00, 0x004E4ED0)
+    // +0x9D6 uint8_t                  field_0x9d6  (evidence: 0x004DDF00, 0x004E4ED0)
+    // +0x9E0 void**                   field_0x9e0  (evidence: 0x004DDF00, 0x004E4ED0)
     // +0xB74 int32_t                  field_0xb74  (evidence: 0x004E2760) // CONFLICT: multiple definitions at +0xB74
     // +0xB74 void*                    field_0xb74  (evidence: 0x004E1A00) // CONFLICT: multiple definitions at +0xB74
 };

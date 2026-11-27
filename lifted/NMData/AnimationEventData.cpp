@@ -928,3 +928,132 @@ void __thiscall fn_004E3570(void* self, uint32_t arg) {
     lift_field<uint32_t>(self, 0x9C4) = end_ptr;
 }
 } // namespace lift_004E3570
+
+// [0x004E4ED0]
+namespace lift_004E4ED0 {
+// @name NMData::AnimationEventData::vfunc_21
+// @class NMData::AnimationEventData
+// @summary Loads AnimationEventData properties from an XML/data node and updates related subobjects.
+// @field NMData::AnimationEventData +0x4 void** field_0x04
+// @field NMData::AnimationEventData +0x168 void* field_0x168
+// @field NMData::AnimationEventData +0x18C uint8_t field_0x18c
+// @field NMData::AnimationEventData +0x990 uint8_t field_0x990
+// @field NMData::AnimationEventData +0x994 float field_0x994
+// @field NMData::AnimationEventData +0x998 float field_0x998
+// @field NMData::AnimationEventData +0x9A0 int32_t field_0x9a0
+// @field NMData::AnimationEventData +0x9A4 int32_t field_0x9a4
+// @field NMData::AnimationEventData +0x9A8 uint8_t field_0x9a8
+// @field NMData::AnimationEventData +0x9D4 uint8_t field_0x9d4
+// @field NMData::AnimationEventData +0x9D5 uint8_t field_0x9d5
+// @field NMData::AnimationEventData +0x9D6 uint8_t field_0x9d6
+// @field NMData::AnimationEventData +0x9E0 void** field_0x9e0
+
+
+void __thiscall ext_004C24C0(void* self, void* node);
+void __thiscall ext_004C4650(void* self, void* arg);
+void __thiscall ext_004C4A40(void* self, uint32_t node, uint32_t flag);
+void __thiscall ext_004DE180(void* self);
+void __thiscall ext_004E3DE0(void* self);
+void __thiscall ext_004E4690(void* self);
+void __cdecl ext_0053F5F0(int32_t* out, uint32_t* node_ptr);
+uint8_t* __cdecl ext_00594000(void);
+uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+uint32_t __thiscall ext_0063F530(void* self, uint32_t name, uint32_t a, uint32_t b);
+void __cdecl ext_00427640(uint8_t* out, uint32_t* node_ptr);
+void __thiscall ext_0067E820(void* self);
+float __cdecl ext_0067EE80(void* node, const void* a, uint32_t b);
+
+extern uint32_t mem_00A9ED2C;
+extern uint32_t mem_00A9F43C;
+extern uint32_t mem_00A9F9C4;
+extern uint32_t mem_00A9F61C;
+extern uint32_t mem_00A9F488;
+extern uint32_t mem_00A9F684;
+extern uint32_t mem_009849BC;
+extern uint32_t mem_009849B8;
+extern uint32_t mem_00B40640;
+extern uint32_t mem_00A9EDE8;
+extern uint32_t mem_00A9F2F8;
+
+static bool is_sentinel(uint32_t val) {
+    return val == 0x00B53A34u || val == 0x00B53B30u || val == 0x00B53AB0u ||
+           val == 0x00B53A70u || val == 0x00B53AF0u;
+}
+
+void __thiscall fn_004E4ED0(void* self, void* node) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_004C24C0(self, node);
+
+    uint8_t* sub_18c = base + 0x18C;
+    ext_004C4650(sub_18c, base + 0x9A8);
+
+    uint32_t found = ext_0063F530(node, mem_00A9ED2C, 0, 1);
+    if (is_sentinel(found)) {
+        found = 0x00B53B30u;
+    }
+    ext_004C4A40(sub_18c, found, 0);
+
+    uint32_t prop = ext_0063EFE0(node, reinterpret_cast<const char*>(0x00949DA0u));
+    if (!is_sentinel(prop)) {
+        uint32_t tmp = prop;
+        ext_00427640(base + 0x9D6, &tmp);
+
+        tmp = ext_0063EFE0(node, reinterpret_cast<const char*>(mem_00A9F43C));
+        ext_00427640(base + 0x9D5, &tmp);
+
+        lift_field<float>(base, 0x998) =
+            ext_0067EE80(node, reinterpret_cast<const void*>(0x00949D94u), mem_00A9F9C4);
+    }
+
+    lift_field<float>(base, 0x994) =
+        ext_0067EE80(node, reinterpret_cast<const void*>(mem_00A9F488), mem_00A9F61C);
+
+    uint32_t tmp_a0 = ext_0063EFE0(node, reinterpret_cast<const char*>(mem_00A9F684));
+    ext_0053F5F0(&lift_field<int32_t>(base, 0x9A0), &tmp_a0);
+
+    uint32_t tmp_a4 = ext_0063EFE0(node, reinterpret_cast<const char*>(0x00949D7Cu));
+    ext_0053F5F0(&lift_field<int32_t>(base, 0x9A4), &tmp_a4);
+
+    ext_004DE180(self);
+
+    uint32_t tmp_90 = ext_0063EFE0(node, reinterpret_cast<const char*>(0x00949D68u));
+    ext_00427640(base + 0x990, &tmp_90);
+
+    uint8_t* g0 = ext_00594000();
+    uint8_t* g0_sub = lift_field<uint8_t*>(g0, 0x26C);
+    if (lift_field<uint32_t>(g0_sub, 0x538) < mem_009849BC) {
+        lift_field<uint8_t>(base, 0x9D4) = 1;
+    }
+
+    uint8_t* g1 = ext_00594000();
+    uint8_t* g1_sub = lift_field<uint8_t*>(g1, 0x26C);
+    if (lift_field<uint32_t>(g1_sub, 0x538) < mem_009849B8) {
+        uint8_t* obj_168 = lift_field<uint8_t*>(base, 0x168);
+        uint8_t* iface = obj_168 + 0x8;
+        auto vfn1 = reinterpret_cast<uint32_t(__thiscall*)(void*, uint32_t)>(
+            (*reinterpret_cast<void***>(iface))[0x14 / 4]);
+        uint32_t res = vfn1(iface, mem_00B40640);
+
+        uint8_t* tif = base + 0x4;
+        auto vfn2 = reinterpret_cast<void*(__thiscall*)(void*, uint32_t, uint32_t)>(
+            (*reinterpret_cast<void***>(tif))[0xC / 4]);
+        void* target = vfn2(tif, mem_00B40640, res);
+        ext_0067E820(target);
+    }
+
+    uint32_t sub_node = ext_0063F530(node, mem_00A9EDE8, 0, 1);
+    if (!is_sentinel(sub_node)) {
+        uint32_t child = ext_0063F530(reinterpret_cast<void*>(sub_node), mem_00A9F2F8, 0, 1);
+        if (is_sentinel(child)) {
+            child = 0x00B53B30u;
+        }
+        uint8_t* obj_9e0 = base + 0x9E0;
+        auto vfn3 = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(
+            (*reinterpret_cast<void***>(obj_9e0))[0x54 / 4]);
+        vfn3(obj_9e0, child);
+    }
+
+    ext_004E3DE0(self);
+    ext_004E4690(self);
+}
+} // namespace lift_004E4ED0
