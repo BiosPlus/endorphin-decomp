@@ -18340,3 +18340,50 @@ void fn_004CB2D0(void** arg1, void* arg2) {
     mem_00924FF4(tmp);
 }
 } // namespace lift_004CB2D0
+
+// [0x004C0EB0] ExprParser::ReadWriteMethodType<...>::vfunc_41 (134 bytes)
+namespace lift_004C0EB0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (3 stack args; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x004C0EA0: sub_004C0EA0 (thiscall dispatch thunk: forwards to vtable slot at +0x170; one stack arg).
+extern void ext_004C0EA0(void* self, uint32_t a1);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+// IAT slot holding MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Guest-visible 32-bit value of a host pointer argument (matches the 32-bit ABI of the original).
+static inline uint32_t guest32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Forwards (arg1->object, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.
+// @field ExprParser::ReadWriteMethodType +0x00 uint32_t field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t field_0x04
+extern void fn_004C0EB0(void* arg1, void* arg2) {
+    // Stack frame of the original: string temp at +0x04 (0x1C bytes),
+    // exception object at +0x20 (ctor) / +0x24 (throw argument).
+    alignas(8) uint8_t frame[0x30];
+
+    const uint32_t obj = lift_field<uint32_t>(arg1, 0x0);
+    if (obj != 0) {
+        // Original loads arg2->[+4] into ecx, then overwrites ecx; value is unused.
+        (void)lift_field<uint32_t>(arg2, 0x4);
+
+        const uint32_t ret = ext_0046E780(frame + 0x4, guest32(arg2), guest32(arg1));
+        ext_004C0EA0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), ret);
+
+        auto string_dtor = reinterpret_cast<void (*)(void*)>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+        string_dtor(frame + 0x4);
+        return;
+    }
+
+    ext_0046C3C0(frame + 0x20);
+    ext_006A6DD2(frame + 0x24, 0x009DEC1Cu);
+}
+} // namespace lift_004C0EB0

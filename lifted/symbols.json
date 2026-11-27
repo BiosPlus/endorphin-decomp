@@ -15607,6 +15607,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x170.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004C0EB0": {
+    "name": "ExprParser::ReadWriteMethodType::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}\u003e",
+    "signature": "static inline uint32_t guest32(const void* p)",
+    "summary": "Forwards (arg1-\u003eobject, arg2) through ext_0046E780 and ext_004C0EA0 when the object pointer is set; otherwise constructs and throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004C0F40": {
     "name": "ReadWriteMethodType\u003cTriggeredEventData, string\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}\u003e",
