@@ -2783,3 +2783,16 @@ void fn_005003A0(uint8_t* begin, uint32_t count, const void* rhs) {
     }
 }
 } // namespace lift_005003A0
+
+// [0x00501090] sub_00501090 (54 bytes)
+namespace lift_00501090 {
+// Known callee 0x005003A0: copyConstructElementRange (Copy-constructs count 0x24-byte elements starting at begin from rhs (skipping null slots); on exception destroys the already-constructed prefix and rethrows.)
+extern void ext_005003A0(uint8_t* begin, uint32_t count, const void* rhs);
+
+// @name copyConstructElementRangeEnd
+// @summary Copy-constructs count 0x24-byte elements from rhs into begin and returns the one-past-end pointer (begin + count * 0x24).
+uint8_t* fn_00501090(uint8_t* begin, uint32_t count, const void* rhs) {
+    ext_005003A0(begin, count, rhs);
+    return begin + static_cast<size_t>(count) * 0x24;
+}
+} // namespace lift_00501090
