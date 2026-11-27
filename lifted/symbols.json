@@ -25263,6 +25263,13 @@
     "summary": "Sums vfunc_17() across all elements in the RenderableList vector",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C1F0": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::callVfunc1OnEach",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void fn_0054C1F0(void* self, void* arg)",
+    "summary": "Walks the element pointer vector at +0x18..+0x1C and calls each element's vtable slot 1 with the given argument.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C260": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_2",
     "class": "ManagedDisplayList\u003cRenderableList\u003e",

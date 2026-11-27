@@ -234,3 +234,34 @@ void fn_0054C490(void* self) {
     }
 }
 } // namespace lift_0054C490
+
+// [0x0054C1F0] ManagedDisplayList<RenderableList>::vfunc_1 (104 bytes)
+namespace lift_0054C1F0 {
+// MSVCR80!_invalid_parameter_noinfo IAT slot; only referenced by the CRT
+// bounds checks, which are not reproduced here.
+extern int mem_00925134;
+
+// @name ManagedDisplayList<RenderableList>::callVfunc1OnEach
+// @class ManagedDisplayList<RenderableList>
+// @summary Walks the element pointer vector at +0x18..+0x1C and calls each element's vtable slot 1 with the given argument.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+void fn_0054C1F0(void* self, void* arg) {
+    (void)&mem_00925134;
+    using VSlot1Fn = void(__thiscall*)(void* /*this*/, void* /*arg*/);
+
+    void** cur = lift_field<void**>(self, 0x18);
+    for (;;) {
+        // The end pointer is re-read every iteration, as the original does.
+        void** end = lift_field<void**>(self, 0x1C);
+        if (cur == end) {
+            break;
+        }
+        void* obj = *cur;
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<VSlot1Fn>(vtbl[1]);
+        fn(obj, arg);
+        ++cur;
+    }
+}
+} // namespace lift_0054C1F0

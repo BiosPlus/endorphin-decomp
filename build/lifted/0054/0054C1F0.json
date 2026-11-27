@@ -1,0 +1,28 @@
+{
+  "va": "0x0054C1F0",
+  "size": 104,
+  "orig_symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_1",
+  "src_path": "src/templates/ManagedDisplayList.cpp",
+  "lifted_path": "lifted/templates/ManagedDisplayList.cpp",
+  "name": "ManagedDisplayList\u003cRenderableList\u003e::callVfunc1OnEach",
+  "class": "ManagedDisplayList\u003cRenderableList\u003e",
+  "signature": "void fn_0054C1F0(void* self, void* arg)",
+  "summary": "Walks the element pointer vector at +0x18..+0x1C and calls each element's vtable slot 1 with the given argument.",
+  "fields": [
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "field_0x18"
+    },
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:55:15Z"
+}
