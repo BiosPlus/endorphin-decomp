@@ -1,0 +1,22 @@
+{
+  "va": "0x0045F7F0",
+  "size": 782,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_84",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_84",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "void __thiscall fn_0045F7F0(void* self, uint32_t flags, void* items_vec)",
+  "summary": "Updates triggered event selection in the multitrack view based on the given event list and flags.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x258",
+      "type": "void*",
+      "name": "field_0x258"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:24:23Z"
+}

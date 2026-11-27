@@ -8343,6 +8343,13 @@
     "summary": "Looks up an event entry by key and dispatches it via sub_00468F50 or sub_00469000 based on flags.",
     "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
   },
+  "0x0045F7F0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_84",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "void __thiscall fn_0045F7F0(void* self, uint32_t flags, void* items_vec)",
+    "summary": "Updates triggered event selection in the multitrack view based on the given event list and flags.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045FB00": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_86",
     "class": "MultiTrackView::TriggeredEventView",

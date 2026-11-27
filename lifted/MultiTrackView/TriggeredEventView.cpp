@@ -695,3 +695,117 @@ extern void __thiscall fn_0045F740(void* self, void* arg1, uint32_t flags)
     }
 }
 } // namespace lift_0045F740
+
+// [0x0045F7F0]
+namespace lift_0045F7F0 {
+// @name MultiTrackView::TriggeredEventView::vfunc_84
+// @class MultiTrackView::TriggeredEventView
+// @summary Updates triggered event selection in the multitrack view based on the given event list and flags.
+// @field MultiTrackView::TriggeredEventView +0x258 void* field_0x258
+
+
+struct TreeIter {
+    void* container;
+    void* node;
+};
+
+struct PtrVec {
+    void* proxy;
+    void** begin;
+    void** end;
+    void** cap;
+};
+
+extern void __thiscall ext_00419F50(TreeIter* iter);
+extern void* __thiscall ext_0045E930(void* self, void* item);
+extern void __thiscall ext_00468F70(void* obj, void* item);
+extern void __thiscall ext_005A6300(PtrVec* vec, void** item);
+extern uint32_t __thiscall ext_004407B0(void* self);
+extern void* __cdecl ext_006A6E9E(uint32_t ptr, int32_t vf_delta, uint32_t src_type, uint32_t dst_type, int32_t is_ref);
+extern void* __cdecl ext_00468180(void);
+extern void __thiscall ext_00468F50(void* obj, void* item);
+extern void __thiscall ext_00469000(void* obj, PtrVec* vec, int32_t flag);
+extern void* __thiscall ext_00468660(void* obj);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void (__cdecl* mem_00925134)(void);
+
+void __thiscall fn_0045F7F0(void* self, uint32_t flags, void* items_vec) {
+    PtrVec vec1{};
+    uint8_t* tree = static_cast<uint8_t*>(self) + 0x258;
+    void* head = lift_field<void*>(tree, 0x4);
+    TreeIter iter{tree, lift_field<void*>(head, 0x0)};
+
+    while (iter.node != lift_field<void*>(tree, 0x4)) {
+        if (iter.container != tree) {
+            mem_00925134();
+        }
+        void* val = lift_field<void*>(iter.node, 0xC);
+        if (val != nullptr) {
+            ext_005A6300(&vec1, &val);
+        }
+        ext_00419F50(&iter);
+    }
+
+    PtrVec vec2{};
+    bool has_type_4 = false;
+    void** it = lift_field<void**>(items_vec, 0x4);
+    void** it_end = lift_field<void**>(items_vec, 0x8);
+
+    for (; it != it_end; ++it) {
+        void* elem = *it;
+        if (lift_field<int32_t>(elem, 0x8) == 4) {
+            has_type_4 = true;
+        }
+        uint32_t inner = ext_004407B0(elem);
+        if (ext_006A6E9E(inner, 0, 0x00A2E99C, 0x00A2E968, 0) != nullptr) {
+            void* mapped = ext_0045E930(self, elem);
+            if (mapped != nullptr) {
+                ext_005A6300(&vec2, &mapped);
+            }
+        }
+    }
+
+    void* mgr = ext_00468180();
+    void* sub14 = lift_field<void*>(mgr, 0x14);
+    void* sub34 = lift_field<void*>(sub14, 0x34);
+    void** vtbl34 = lift_field<void**>(sub34, 0x0);
+    reinterpret_cast<void(__thiscall*)(void*)>(vtbl34[0x40 / 4])(sub34);
+
+    if ((flags & 0x8) != 0) {
+        for (void** p = vec1.begin; p != vec1.end; ++p) {
+            void* item = *p;
+            bool found = false;
+            for (void** q = vec2.begin; q != vec2.end; ++q) {
+                if (*q == item) {
+                    found = true;
+                    break;
+                }
+            }
+            if (found) {
+                ext_00468F50(mgr, item);
+            } else {
+                ext_00468F70(mgr, item);
+            }
+        }
+    } else {
+        ext_00469000(mgr, &vec2, 0);
+    }
+
+    if (has_type_4) {
+        void* target = ext_00468660(mgr);
+        void** vtbl = lift_field<void**>(target, 0x0);
+        reinterpret_cast<void(__thiscall*)(void*)>(vtbl[0xC0 / 4])(target);
+    } else if (vec2.begin == nullptr || (vec2.end - vec2.begin) == 0) {
+        void* target = ext_00468660(mgr);
+        void** vtbl = lift_field<void**>(target, 0x0);
+        reinterpret_cast<void(__thiscall*)(void*)>(vtbl[0xD4 / 4])(target);
+    }
+
+    if (vec2.begin != nullptr) {
+        ext_006A5C5C(vec2.begin);
+    }
+    if (vec1.begin != nullptr) {
+        ext_006A5C5C(vec1.begin);
+    }
+}
+} // namespace lift_0045F7F0
