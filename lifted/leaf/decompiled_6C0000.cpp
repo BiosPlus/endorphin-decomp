@@ -2388,7 +2388,7 @@ void fn_006C4D70(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4) {
     (void)a3;
     (void)a4;
 
-    void* array = static_cast<uint8_t*>(self) + 0x4D0;
+    void* array = static_cast<unsigned char*>(self) + 0x4D0;
     int32_t index = lift_field<int32_t>(array, 0);
     int32_t value = a1;
     ext_006D2170(array, index, &value);
