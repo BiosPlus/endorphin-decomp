@@ -2464,3 +2464,37 @@ uint32_t fn_0071B090(void* self) {
     return slot(obj);
 }
 } // namespace lift_0071B090
+
+// [0x0071CA10] sub_0071CA10 (48 bytes)
+namespace lift_0071CA10 {
+extern uint32_t __fastcall ext_006C9520(uint32_t value);
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern int32_t __fastcall ext_006DC460(void* self);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float __fastcall ext_006C9F70(void* self);
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+extern void* __fastcall ext_00708000(void* self, const char* name);
+// String literal pushed as the name argument at 0x00AA8D10
+extern const char mem_00AA8D10[];
+
+// @name Unknown::DispatchChildFloatOrVirtual
+// @class Unknown
+// @summary If field +0x4 is non-null, returns the float getter of the callee chain on it; otherwise looks up child "mem_00AA8D10" under +0xC and tail-calls its vtable slot +0x7C.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0C
+float fn_0071CA10(void* self) {
+    void* child = lift_field<void*>(self, 0x04);
+    if (child != nullptr) {
+        int32_t value = ext_006DC460(child);
+        uint32_t mid = ext_006C9520(static_cast<uint32_t>(value));
+        return ext_006C9F70(reinterpret_cast<void*>(static_cast<uintptr_t>(mid)));
+    }
+
+    void* owner = lift_field<void*>(self, 0x0C);
+    void* target = ext_00708000(owner, mem_00AA8D10);
+    void* vtbl = lift_field<void*>(target, 0);
+    // Tail-call through vtable slot at byte offset 0x7C; return type assumed float (matches the other path).
+    auto slot = lift_field<float (__fastcall*)(void*)>(vtbl, 0x7C);
+    return slot(target);
+}
+} // namespace lift_0071CA10

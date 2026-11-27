@@ -1,0 +1,28 @@
+{
+  "va": "0x0071CA10",
+  "size": 48,
+  "orig_symbol": "sub_0071CA10",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::DispatchChildFloatOrVirtual",
+  "class": "Unknown",
+  "signature": "float fn_0071CA10(void* self)",
+  "summary": "If field +0x4 is non-null, returns the float getter of the callee chain on it; otherwise looks up child \"mem_00AA8D10\" under +0xC and tail-calls its vtable slot +0x7C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:14:35Z"
+}
