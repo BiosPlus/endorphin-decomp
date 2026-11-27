@@ -2596,3 +2596,22 @@ void* fn_006B9DE0(void* self, uint8_t fill, uint32_t count) {
     return self;
 }
 } // namespace lift_006B9DE0
+
+// [0x006B9EC0]
+namespace lift_006B9EC0 {
+extern void __thiscall ext_006B9920(void* self);
+extern uint32_t __thiscall ext_006B9B40(void* self, uint32_t len, const uint8_t* src);
+
+// @name Unknown::assignCString_006B9EC0
+// @class Unknown
+// @summary Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.
+extern void* __thiscall fn_006B9EC0(void* self, const char* s) {
+    if (s == nullptr) {
+        ext_006B9920(self);
+        return self;
+    }
+    uint32_t len = static_cast<uint32_t>(std::strlen(s));
+    ext_006B9B40(self, len, reinterpret_cast<const uint8_t*>(s));
+    return self;
+}
+} // namespace lift_006B9EC0

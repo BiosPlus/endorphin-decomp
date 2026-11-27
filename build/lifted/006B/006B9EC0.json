@@ -1,0 +1,14 @@
+{
+  "va": "0x006B9EC0",
+  "size": 64,
+  "orig_symbol": "sub_006B9EC0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::assignCString_006B9EC0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_006B9EC0(void* self, const char* s)",
+  "summary": "Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:46:46Z"
+}

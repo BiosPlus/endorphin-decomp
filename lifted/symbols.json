@@ -66170,6 +66170,13 @@
     "summary": "Calls allocBufferAndForward(1); on success writes the byte argument through this-\u003efield_0x00 and returns this.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B9EC0": {
+    "name": "Unknown::assignCString_006B9EC0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_006B9EC0(void* self, const char* s)",
+    "summary": "Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BA2C0": {
     "name": "StringBuffer::getCharPtrAt",
     "class": "StringBuffer",
