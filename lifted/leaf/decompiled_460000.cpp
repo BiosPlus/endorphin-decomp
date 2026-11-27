@@ -2425,3 +2425,21 @@ void fn_00466050(void* self) {
     reinterpret_cast<StrDtorFn>(mem_00924FF4)(tmp);
 }
 } // namespace lift_00466050
+
+// [0x00467300] sub_00467300 (27 bytes)
+namespace lift_00467300 {
+// Known callee 0x00466360: UnknownClass::ResetSubobjectAndRelease (Clears a counter in a sub-object reached via global context +0x26C, then invokes virtual slot 1 (deleting-style, arg 1) on the owned object at +0xD8 and nulls it.)
+extern void ext_00466360(void* self);
+// Known callee 0x00466050: fn_00466050 (sub_00466050) (Writes the std::string at +0x0C of the argument to std::cout followed by endl, then passes "<literal>" + that string's c_str() to thunk_MFC80_ord_1123 and destroys the temporary.)
+extern void ext_00466050(void* self, void* arg);
+
+// @name UnknownClass::tailDispatchAndReturn
+// @class UnknownClass
+// @summary Resets the sub-object via ext_00466360 on self, then calls ext_00466050(self, arg) and returns the continuation address 0x004672EF.
+// @field UnknownClass +0x00 void* self
+uintptr_t fn_00467300(void* self, void* arg) {
+    ext_00466360(self);
+    ext_00466050(self, arg);
+    return static_cast<uintptr_t>(0x004672EFu);
+}
+} // namespace lift_00467300

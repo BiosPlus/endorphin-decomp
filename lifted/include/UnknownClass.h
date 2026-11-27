@@ -14,6 +14,7 @@ struct UnknownClass_Fields {
     // +0x0   uint8_t[0x1C]            field_0x00  (evidence: 0x00476530) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00465B20, 0x00468730, 0x00492A50) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD field_0x00 (array of 24-byte elements; element +0x10 holds table pointer)  (evidence: 0x0078D4E0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    self  (evidence: 0x00467300) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vftable  (evidence: 0x0063E980) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr  (evidence: 0x00413990, 0x00413C40) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x0063E290) // CONFLICT: multiple definitions at +0x0
