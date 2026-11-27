@@ -1,0 +1,28 @@
+{
+  "va": "0x00413350",
+  "size": 154,
+  "orig_symbol": "sub_00413350",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::eraseElementAt_00413350",
+  "class": "Unknown",
+  "signature": "extern void* mem_00925134; // _invalid_parameter_noinfo import slot (debug guard, omitted) extern void* mem_009251EC; // memmove_s import slot (replaced by std::memmove) bool __thiscall fn_00413350(void* self, int32_t idx)",
+  "summary": "Erases the 4-byte pointer-vector element at index idx (vector begin +0x08, end +0x0C), shifts the tail down, shrinks end by one element, refreshes derived state via fn_00413230 and fn_00412CE0; returns false if the target is already end.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "vec_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "vec_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:03:21Z"
+}

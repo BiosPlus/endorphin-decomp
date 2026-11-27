@@ -1578,6 +1578,13 @@
     "summary": "Stores the flag byte at +0x37, walks the [+0x08, +0x0C) range in 4-byte steps with bounds asserts, then calls the two helper routines (0x00412C20, 0x00413230) on self.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00413350": {
+    "name": "Unknown::eraseElementAt_00413350",
+    "class": "Unknown",
+    "signature": "extern void* mem_00925134; // _invalid_parameter_noinfo import slot (debug guard, omitted) extern void* mem_009251EC; // memmove_s import slot (replaced by std::memmove) bool __thiscall fn_00413350(void* self, int32_t idx)",
+    "summary": "Erases the 4-byte pointer-vector element at index idx (vector begin +0x08, end +0x0C), shifts the tail down, shrinks end by one element, refreshes derived state via fn_00413230 and fn_00412CE0; returns false if the target is already end.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004136E0": {
     "name": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
     "class": "MultiTrackView::CompositeMarkerTrack",

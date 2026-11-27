@@ -3748,3 +3748,45 @@ void __thiscall fn_004132D0(void* self, uint8_t flag) {
     ext_00413230(self);
 }
 } // namespace lift_004132D0
+
+// [0x00413350]
+namespace lift_00413350 {
+// Callees (lifted separately).
+void ext_00412CE0(void* self);
+void ext_00413230(void* self);
+extern void* mem_00925134; // _invalid_parameter_noinfo import slot (debug guard, omitted)
+extern void* mem_009251EC; // memmove_s import slot (replaced by std::memmove)
+
+// @name Unknown::eraseElementAt_00413350
+// @class Unknown
+// @summary Erases the 4-byte pointer-vector element at index idx (vector begin +0x08, end +0x0C), shifts the tail down, shrinks end by one element, refreshes derived state via fn_00413230 and fn_00412CE0; returns false if the target is already end.
+// @field Unknown +0x08 uint8_t* vec_begin
+// @field Unknown +0x0C uint8_t* vec_end
+//
+// Notes: the MSVCR80 _invalid_parameter_noinfo guard calls (begin<=end, p<=end,
+// p>=begin, and the always-true self==self check) are debug assertions on
+// valid state and are omitted; no stubs are emitted.
+bool __thiscall fn_00413350(void* self, int32_t idx) {
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x08);
+    uint8_t* end   = lift_field<uint8_t*>(self, 0x0C);
+    uint8_t* p     = begin + static_cast<ptrdiff_t>(idx) * 4;
+    (void)&mem_00925134; // guard reference only; not a real access
+    (void)&mem_009251EC;
+
+    if (p == end) {
+        return false;
+    }
+
+    // Bytes strictly after the element being erased (multiple of 4).
+    ptrdiff_t tail = end - (p + 4);
+    if (tail > 0) {
+        std::memmove(p, p + 4, static_cast<size_t>(tail));
+    }
+
+    lift_field<uint8_t*>(self, 0x0C) = end - 4;
+
+    ext_00413230(self);
+    ext_00412CE0(self);
+    return true;
+}
+} // namespace lift_00413350

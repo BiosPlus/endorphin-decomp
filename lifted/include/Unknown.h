@@ -449,6 +449,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t                 uncastPtr  (evidence: 0x004B76A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 value_a2  (evidence: 0x004B75A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    vec_begin  (evidence: 0x00412CE0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t*                 vec_begin  (evidence: 0x00413350) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    vec_z_base  (evidence: 0x008044A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 vtable2  (evidence: 0x006465F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x8
@@ -545,6 +546,7 @@ struct Unknown_Fields {
     // +0xC   std::string field_0x0C (copied into a local string in the catch path; type inferred from ctor/c_str/dtor IAT usage)  (evidence: 0x00432910) // CONFLICT: multiple definitions at +0xC
     // +0xC   pointer                  vecHolder  (evidence: 0x0067A670, 0x0067AEB0, 0x0067AEF0) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD                    vec_end  (evidence: 0x00412CE0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint8_t*                 vec_end  (evidence: 0x00413350) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0c (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0xC
     // +0xC   WriteFn                  writeChunk  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0xC
