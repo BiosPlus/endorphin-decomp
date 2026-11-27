@@ -3175,3 +3175,25 @@ void fn_00660C10(void* this_ptr) {
     dtor(self);
 }
 } // namespace lift_00660C10
+
+// [0x0066A220] sub_0066A220 (127 bytes)
+namespace lift_0066A220 {
+// @name ClampFourFloatsToUnitRange
+// @summary Clamps the four consecutive float32 values at self+0x00..+0x0C to [0.0, 1.0] in place; values above 1.0 become 1.0, values below 0.0 become 0.0, NaN and in-range values are left unchanged
+// @field  +0x00 float field_0x00
+// @field  +0x04 float field_0x04
+// @field  +0x08 float field_0x08
+// @field  +0x0C float field_0x0C
+void fn_0066A220(void* self) {
+    float* v = static_cast<float*>(self);
+    for (int i = 0; i < 4; ++i) {
+        // Ordered comparisons are false for NaN, so NaN is preserved as the
+        // original fcom/jp/jne sequence does.
+        if (v[i] > 1.0f) {
+            v[i] = 1.0f;
+        } else if (v[i] < 0.0f) {
+            v[i] = 0.0f;
+        }
+    }
+}
+} // namespace lift_0066A220

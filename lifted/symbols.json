@@ -52199,6 +52199,12 @@
     "summary": "Copies four consecutive 32-bit floats from the source pointer (stack arg) into this object (ECX).",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x0066A220": {
+    "name": "ClampFourFloatsToUnitRange",
+    "signature": "void fn_0066A220(void* self)",
+    "summary": "Clamps the four consecutive float32 values at self+0x00..+0x0C to [0.0, 1.0] in place; values above 1.0 become 1.0, values below 0.0 become 0.0, NaN and in-range values are left unchanged",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x0066A310": {
     "name": "identityVec4Init",
     "signature": "void fn_0066A310(void* self)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x0066A220",
+  "size": 127,
+  "orig_symbol": "sub_0066A220",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "ClampFourFloatsToUnitRange",
+  "signature": "void fn_0066A220(void* self)",
+  "summary": "Clamps the four consecutive float32 values at self+0x00..+0x0C to [0.0, 1.0] in place; values above 1.0 become 1.0, values below 0.0 become 0.0, NaN and in-range values are left unchanged",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:06:41Z"
+}
