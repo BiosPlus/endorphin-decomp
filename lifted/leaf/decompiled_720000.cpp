@@ -960,7 +960,7 @@ extern const double mem_009967F0;
 extern const double mem_00996800;
 
 double fn_00722C20(double a, double b, double c) {
-    int32_t sign_step = (b < c) ? 1000 : -1000;
+    int sign_step = (b < c) ? 1000 : -1000;
     double t1 = static_cast<double>(sign_step);
     double x = (a + mem_009967F0) * mem_00996800;
     double scaled = ext_00722720(x, t1);
