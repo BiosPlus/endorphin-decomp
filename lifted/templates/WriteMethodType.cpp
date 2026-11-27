@@ -7334,7 +7334,7 @@ extern int mem_00B55854;
 // @name WriteMethodType::vfunc_40 (bind holder+0x04 to static accessor object)
 // @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}>
 // @summary One-time guarded init of static accessor object at 0x00B55854 (vtable 0x0097F67C), then stores its address into holder+0x04.
-// @field holder(arg0) +0x04 void* field_0x04
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
 void fn_0064C280(void* holder) {
     // Function-local static init guard: bit 0 of mem_00B55858.
     if ((mem_00B55858 & 1) == 0) {
