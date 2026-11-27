@@ -1,0 +1,34 @@
+{
+  "va": "0x00530400",
+  "size": 149,
+  "orig_symbol": "Input::vfunc_0_off_4",
+  "src_path": "src/classes/Input.cpp",
+  "lifted_path": "lifted/classes/Input.cpp",
+  "name": "Input::vfunc_0_off_4",
+  "class": "Input",
+  "signature": "void __thiscall fn_00530400(void* self, void* arg0)",
+  "summary": "Acquires critical section lock, updates Input state from arg0, and releases lock.",
+  "fields": [
+    {
+      "class": "Input",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Input",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Input",
+      "offset": "+0x70",
+      "type": "uint32_t",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:10:02Z"
+}
