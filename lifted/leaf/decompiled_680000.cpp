@@ -2415,3 +2415,42 @@ extern void* __cdecl fn_00681DD0(void* out, DWORD value, uint8_t flag) {
     return out;
 }
 } // namespace lift_00681DD0
+
+// [0x00681E50] sub_00681E50 (119 bytes)
+namespace lift_00681E50 {
+// Known callee 0x00681DD0: BuildStaticObjectPair (Fills out-record {DWORD value; void* obj} and returns out; obj comes from fn_00681C50 when flag != 0, otherwise from fn_004989F0. The MSVC SEH frame in the original is dropped (its handler does no work on the normal path).)
+extern void* ext_00681DD0(void* out, DWORD value, uint8_t flag);
+
+// Unlifted tail-call targets. Argument layout is inferred from the forwarded
+// stack frame (the original uses jmp, so the callee sees the caller's args).
+extern DWORD ext_00681CB0(DWORD index, void* a1, void* a2);
+extern DWORD ext_00681CE0(DWORD index, void* a1, void* a2);
+extern DWORD ext_00681D10(DWORD index, void* a1, void* a2);
+extern DWORD ext_00681D40(DWORD index, void* a1, void* a2);
+extern DWORD ext_00681D70(DWORD index, void* a1, void* a2);
+extern DWORD ext_00681DA0(DWORD index, void* a1, void* a2);
+
+// @name DispatchSubcallByIndex
+// @summary Switch on index 0..6: tail-dispatches to one of six sub-handlers (0..4, 6); index 5 and out-of-range return 0.
+// Note: the instruction block at 0x00681EA0 (see fn_00681EA0 below) lies inside the
+// 119-byte span but is only reachable as jump-table data; it is not dispatched to here.
+extern DWORD fn_00681E50(DWORD index, void* a1, void* a2) {
+    switch (index) {
+    case 0: return ext_00681CB0(index, a1, a2);
+    case 1: return ext_00681CE0(index, a1, a2);
+    case 2: return ext_00681D10(index, a1, a2);
+    case 3: return ext_00681D40(index, a1, a2);
+    case 4: return ext_00681D70(index, a1, a2);
+    case 6: return ext_00681DA0(index, a1, a2);
+    default: return 0; // case 5 and index > 6
+    }
+}
+
+// Code at 0x00681EA0 (not reached via the switch above).
+// Stack-based helper: writes fn_00681DD0(out, *in, 1) and returns out.
+extern void* fn_00681EA0(void* out, DWORD* in) {
+    DWORD value = *in;
+    ext_00681DD0(out, value, 1);
+    return out;
+}
+} // namespace lift_00681E50

@@ -53664,6 +53664,12 @@
     "summary": "Fills out-record {DWORD value; void* obj} and returns out; obj comes from fn_00681C50 when flag != 0, otherwise from fn_004989F0. The MSVC SEH frame in the original is dropped (its handler does no work on the normal path).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00681E50": {
+    "name": "DispatchSubcallByIndex",
+    "signature": "extern \"C\" DWORD fn_00681E50(DWORD index, void* a1, void* a2)",
+    "summary": "Switch on index 0..6: tail-dispatches to one of six sub-handlers (0..4, 6); index 5 and out-of-range return 0.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00681FE0": {
     "name": "sub_00681FE0",
     "signature": "void* fn_00681FE0(void* self)",
