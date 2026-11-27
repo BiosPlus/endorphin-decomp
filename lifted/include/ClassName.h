@@ -9,9 +9,16 @@
 namespace lifted_layout {
 struct ClassName_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x00503BC0, 0x005086E0, 0x00508790) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x00506450) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x004093D0) // CONFLICT: multiple definitions at +0x0
     // +0x4   std::string              field_0x04  (evidence: 0x00503BC0, 0x005086E0, 0x00508790)
-    // +0x10  void*                    field_0x10  (evidence: 0x00724E80)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00506450)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00506450)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00506450) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void*                    field_0x10  (evidence: 0x00724E80) // CONFLICT: multiple definitions at +0x10
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x00506450)
+    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x00506450)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x00506450)
     // +0x12C void*                    ptr_begin  (evidence: 0x004093D0)
     // +0x1B0 void*                    member_1b0  (evidence: 0x004093D0)
     // +0x1B8 void*                    member_1b8  (evidence: 0x004093D0)

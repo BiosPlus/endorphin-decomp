@@ -3493,3 +3493,48 @@ void fn_0050D2B0(void* self, const void* value) {
     ext_0050D130(self, &flag, self, end, value);
 }
 } // namespace lift_0050D2B0
+
+// [0x00506450] sub_00506450 (128 bytes)
+namespace lift_00506450 {
+// Known callee 0x0040ECB0: Unknown::PushBackString_0040ECB0 (push_back of one 28-byte std::string onto a vector-like {begin,end,capacity} container; fast path constructs in place, slow path defers to ext_0040EBF0.)
+extern void ext_0040ECB0(void* self, const void* value);
+// Known callee 0x00504A30: ResolveTypeInfoNameAndForward_00504A30 (Gets the name of the global type_info node, builds a std::string from it, passes that string plus the first argument to ext_0066AC90, and returns the first argument.)
+extern void* ext_00504A30(void* a1);
+extern uint8_t mem_00B5962C[];
+extern int mem_00924FF4;
+
+// @name ClassName::methodName
+// @class ClassName
+// @summary Initializes the object header and fields, builds a temporary string from the type_info name, pushes it onto the global string vector, then releases the temporary.
+// @field ClassName +0x00 uint32_t vtable
+// @field ClassName +0x08 uint32_t field_0x08
+// @field ClassName +0x0C uint32_t field_0x0C
+// @field ClassName +0x10 uint32_t field_0x10
+// @field ClassName +0x18 uint32_t field_0x18
+// @field ClassName +0x1C uint32_t field_0x1C
+// @field ClassName +0x20 uint32_t field_0x20
+void* fn_00506450(void* self) {
+    // Object header and member initialisation (all zeroed except the vtable).
+    lift_field<uint32_t>(self, 0x00) = 0x0094F634u;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Temporary 28-byte std::string storage (MSVC std::string layout).
+    alignas(8) uint8_t tmp[28] = {};
+    void* name = ext_00504A30(tmp);
+
+    // Push the temporary onto the global vector at mem_00B5962C.
+    ext_0040ECB0(mem_00B5962C, name);
+
+    // Destroy the temporary: the original calls the MSVCP80 basic_string
+    // destructor through the IAT slot mem_00924FF4. No portable equivalent
+    // is available here, so the slot is only referenced.
+    (void)&mem_00924FF4;
+
+    return self;
+}
+} // namespace lift_00506450

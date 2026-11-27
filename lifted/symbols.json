@@ -28185,6 +28185,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00506090 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00506450": {
+    "name": "ClassName::methodName",
+    "class": "ClassName",
+    "signature": "void* fn_00506450(void* self)",
+    "summary": "Initializes the object header and fields, builds a temporary string from the type_info name, pushes it onto the global string vector, then releases the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00506740": {
     "name": "sub_00506740",
     "signature": "int32_t fn_00506740(int32_t arg1, int32_t arg2, int32_t arg3)",
