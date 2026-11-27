@@ -1,0 +1,22 @@
+{
+  "va": "0x006B1840",
+  "size": 147,
+  "orig_symbol": "GWCHotKeyPropertiesFactory::vfunc_1",
+  "src_path": "src/classes/GWCHotKeyPropertiesFactory.cpp",
+  "lifted_path": "lifted/classes/GWCHotKeyPropertiesFactory.cpp",
+  "name": "GWCHotKeyPropertiesFactory::vfunc_1",
+  "class": "GWCHotKeyPropertiesFactory",
+  "signature": "extern \"C\" void* __thiscall fn_006B1840(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Creates a hot key properties object if the type ID matches 0x12C and initializes it via vfunc_5.",
+  "fields": [
+    {
+      "class": "GWCHotKeyPropertiesFactory",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:05:13Z"
+}
