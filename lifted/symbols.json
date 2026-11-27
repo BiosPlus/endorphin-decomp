@@ -17316,6 +17316,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004ABAE0": {
+    "name": "NMData::BehaviourData::vfunc_84",
+    "class": "NMData::BehaviourData",
+    "signature": "void __thiscall fn_004ABAE0(void* self, int32_t arg0)",
+    "summary": "Updates behaviour data state and notifies dependent objects for a given index.",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
   "0x004ABDF0": {
     "name": "NMData::BehaviourData::vfunc_15",
     "class": "NMData::BehaviourData",
@@ -38736,6 +38743,13 @@
     "signature": "int* fn_0056DBE0()",
     "summary": "One-time guarded init: sets bit 0 of mem_00B3B4B0, runs ext_00662610 and ext_006A6C87 on first call, returns \u0026mem_00B3B494.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
+  "0x0056E310": {
+    "name": "BVHIO::vfunc_14",
+    "class": "BVHIO",
+    "signature": "static void init_bvh_node_vtables(uint8_t* node)",
+    "summary": "Parses a BVH file hierarchy (ROOT/JOINT nodes) from a file stream and initializes the skeleton/timeline.",
+    "lifted_path": "lifted/classes/BVHIO.cpp"
   },
   "0x0056EAC0": {
     "name": "BVHIO::vfunc_13",

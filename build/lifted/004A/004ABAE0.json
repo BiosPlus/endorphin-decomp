@@ -1,0 +1,70 @@
+{
+  "va": "0x004ABAE0",
+  "size": 769,
+  "orig_symbol": "NMData::BehaviourData::vfunc_84",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_84",
+  "class": "NMData::BehaviourData",
+  "signature": "void __thiscall fn_004ABAE0(void* self, int32_t arg0)",
+  "summary": "Updates behaviour data state and notifies dependent objects for a given index.",
+  "fields": [
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x328",
+      "type": "std::string",
+      "name": "field_0x328"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x360",
+      "type": "uint8_t",
+      "name": "field_0x360"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x364",
+      "type": "uint8_t",
+      "name": "field_0x364"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3C8",
+      "type": "uint8_t",
+      "name": "field_0x3c8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:33:59Z"
+}

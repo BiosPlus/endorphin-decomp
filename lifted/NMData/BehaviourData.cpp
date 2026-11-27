@@ -624,3 +624,171 @@ void __thiscall fn_004AB9D0(void* self, void* xmlNode) {
     ext_004C1DE0(self, xmlNode);
 }
 } // namespace lift_004AB9D0
+
+// [0x004ABAE0]
+namespace lift_004ABAE0 {
+// @name NMData::BehaviourData::vfunc_84
+// @class NMData::BehaviourData
+// @summary Updates behaviour data state and notifies dependent objects for a given index.
+// @field NMData::BehaviourData +0x15c int32_t field_0x15c
+// @field NMData::BehaviourData +0x160 int32_t field_0x160
+// @field NMData::BehaviourData +0x168 void* field_0x168
+// @field NMData::BehaviourData +0x17c uint8_t field_0x17c
+// @field NMData::BehaviourData +0x184 void* field_0x184
+// @field NMData::BehaviourData +0x328 std::string field_0x328
+// @field NMData::BehaviourData +0x360 uint8_t field_0x360
+// @field NMData::BehaviourData +0x364 uint8_t field_0x364
+// @field NMData::BehaviourData +0x3c8 uint8_t field_0x3c8
+
+
+void* __thiscall ext_0041CE40(void* self, const char* str);
+uint32_t* __thiscall ext_00489320(uint32_t* self, uint32_t* out);
+void* __thiscall ext_004ECA30(void* self);
+void __thiscall ext_0051E3D0(void* self);
+void __thiscall ext_0051E440(void* self);
+void __thiscall ext_0051EAC0(void* self);
+void* __cdecl ext_00594000(void);
+void* __fastcall ext_00594640(void* self);
+void __thiscall ext_005F3590(void* self);
+void* __thiscall ext_005F3A30(void* self, void* arg);
+void* __cdecl ext_00660A50(void);
+void* __thiscall ext_00660D10(void* self, void* arg);
+void __thiscall ext_00660D40(void* self);
+
+extern uintptr_t mem_00925134;
+extern uintptr_t mem_00A8F2B8;
+extern uintptr_t mem_00924FE4;
+extern uintptr_t mem_00924FF4;
+
+void __thiscall fn_004ABAE0(void* self, int32_t arg0) {
+    char* edi = (char*)self;
+    if (*(uint32_t*)(edi + 0x184) == 0 || *(uint8_t*)(edi + 0x17c) == 0) {
+        return;
+    }
+
+    uint8_t guard1[4] = {};
+    uint8_t guard2[4] = {};
+    void* tmp_364 = ext_004ECA30(edi + 0x364);
+    ext_00660D10(guard1, tmp_364);
+    ext_005F3A30(guard2, edi + 0x3c8);
+
+    void* mgr = ext_00594000();
+    void* state_obj = ext_00594640(mgr);
+    if (*(int32_t*)((char*)state_obj + 0x5f4) != 6) {
+        ext_005F3590(guard2);
+        ext_00660D40(guard1);
+        return;
+    }
+
+    int32_t start_idx = *(int32_t*)(edi + 0x15c);
+    int32_t end_idx = *(int32_t*)(edi + 0x160);
+    void* target = *(void**)(edi + 0x184);
+
+    if ((arg0 == -1 && start_idx == 0) || (arg0 == start_idx && start_idx != 0)) {
+        if (*(uint8_t*)((char*)target + 9) != 0) {
+            ext_0051E440(target);
+        }
+        ext_0051E3D0(*(void**)(edi + 0x184));
+    } else if (arg0 > start_idx && arg0 < end_idx) {
+        if (*(uint8_t*)((char*)target + 9) == 0) {
+            ext_0051E3D0(target);
+        }
+    }
+
+    start_idx = *(int32_t*)(edi + 0x15c);
+    end_idx = *(int32_t*)(edi + 0x160);
+    if (arg0 >= start_idx && arg0 < end_idx) {
+        void* t = *(void**)(edi + 0x184);
+        if (*(uint8_t*)((char*)t + 9) == 0) {
+            ext_0051E3D0(t);
+        }
+        ext_0051EAC0(*(void**)(edi + 0x184));
+    } else if (arg0 == end_idx) {
+        ext_0051E440(*(void**)(edi + 0x184));
+        void* disp = ext_00660A50();
+        void* field_168 = *(void**)(edi + 0x168);
+        void* vec_owner = *(void**)((char*)field_168 + 0x5ec);
+        uint32_t* vec = (uint32_t*)((char*)vec_owner + 0x18);
+
+        uint32_t cursor[2] = {};
+        ext_00489320(vec, cursor);
+        uint32_t* container = (uint32_t*)(uintptr_t)cursor[0];
+        uint32_t* it = (uint32_t*)(uintptr_t)cursor[1];
+
+        typedef void(__cdecl* invalid_param_fn)(void);
+        typedef void(__thiscall* str_ctor_fn)(void*, const char*);
+        typedef void(__thiscall* str_dtor_fn)(void*);
+        invalid_param_fn invalid_param = (invalid_param_fn)mem_00925134;
+        str_ctor_fn str_ctor = (str_ctor_fn)mem_00924FE4;
+        str_dtor_fn str_dtor = (str_dtor_fn)mem_00924FF4;
+
+        while (true) {
+            uint32_t* vec_end = (uint32_t*)(uintptr_t)vec[2];
+            if (vec[1] > (uintptr_t)vec_end) {
+                invalid_param();
+            }
+            if (!container || container != vec) {
+                invalid_param();
+            }
+            if (it == vec_end) {
+                break;
+            }
+
+            if (*(uint8_t*)(edi + 0x360) == 0) {
+                char str_buf[32];
+                str_ctor(str_buf, *(const char**)(uintptr_t)mem_00A8F2B8);
+                if (!container) {
+                    invalid_param();
+                }
+                if ((uintptr_t)it >= container[2]) {
+                    invalid_param();
+                }
+                void* item = (void*)(uintptr_t)*it;
+                void** vtbl = *(void***)item;
+                ((void(__thiscall*)(void*, void*))vtbl[0x3c / 4])(item, str_buf);
+                str_dtor(str_buf);
+            } else {
+                void* unk_pair[2] = {};
+                ext_0041CE40(unk_pair, *(const char**)(uintptr_t)mem_00A8F2B8);
+                char str_buf2[32];
+                str_ctor(str_buf2, (const char*)(uintptr_t)0x0093E0EC);
+                if (!container) {
+                    invalid_param();
+                }
+                if ((uintptr_t)it >= container[2]) {
+                    invalid_param();
+                }
+                void* item = (void*)(uintptr_t)*it;
+                void** disp_vtbl = *(void***)disp;
+                void* res_pair[2] = {};
+                void* res = ((void*(__thiscall*)(void*, void*, void*, void*, void*, uint32_t))disp_vtbl[0x14 / 4])(
+                    disp, res_pair, unk_pair, str_buf2, item, 0);
+                void* res_obj = ((void**)res)[1];
+                void** res_vtbl = *(void***)res_obj;
+                void* out_tmp[2] = {};
+                ((void(__thiscall*)(void*, void*, void*))res_vtbl[0xa4 / 4])(res_obj, res, out_tmp);
+
+                if (res_pair[1]) {
+                    void** v = *(void***)res_pair[1];
+                    void* dummy[2] = {};
+                    ((void(__thiscall*)(void*, void*))v[0x78 / 4])(res_pair[1], dummy);
+                }
+                str_dtor(str_buf2);
+                if (unk_pair[0]) {
+                    void** v = *(void***)unk_pair[0];
+                    void* dummy[2] = {};
+                    ((void(__thiscall*)(void*, void*))v[0x78 / 4])(unk_pair[0], dummy);
+                }
+            }
+
+            if ((uintptr_t)it >= container[2]) {
+                invalid_param();
+            }
+            it++;
+        }
+    }
+
+    ext_005F3590(guard2);
+    ext_00660D40(guard1);
+}
+} // namespace lift_004ABAE0
