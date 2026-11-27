@@ -1,0 +1,34 @@
+{
+  "va": "0x0062BDC0",
+  "size": 354,
+  "orig_symbol": "Sensors::HorizontalAxisSensor::vfunc_27",
+  "src_path": "src/Sensors/HorizontalAxisSensor.cpp",
+  "lifted_path": "lifted/Sensors/HorizontalAxisSensor.cpp",
+  "name": "Sensors::HorizontalAxisSensor::vfunc_27",
+  "class": "Sensors::HorizontalAxisSensor",
+  "signature": "void __thiscall fn_0062BDC0(void* self)",
+  "summary": "Accumulates vector differences across sensor elements and updates output_vec via ext_0067B7F0 when magnitude equals mem_00993838.",
+  "fields": [
+    {
+      "class": "Sensors::HorizontalAxisSensor",
+      "offset": "+0x30",
+      "type": "float[3]",
+      "name": "output_vec"
+    },
+    {
+      "class": "Sensors::HorizontalAxisSensor",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "elements_begin"
+    },
+    {
+      "class": "Sensors::HorizontalAxisSensor",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "elements_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:05:46Z"
+}

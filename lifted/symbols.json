@@ -63771,6 +63771,13 @@
     "summary": "Copies a 0x38-byte record range via sub_0062B8B0, then returns dest advanced by the record count times 0x38.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062BDC0": {
+    "name": "Sensors::HorizontalAxisSensor::vfunc_27",
+    "class": "Sensors::HorizontalAxisSensor",
+    "signature": "void __thiscall fn_0062BDC0(void* self)",
+    "summary": "Accumulates vector differences across sensor elements and updates output_vec via ext_0067B7F0 when magnitude equals mem_00993838.",
+    "lifted_path": "lifted/Sensors/HorizontalAxisSensor.cpp"
+  },
   "0x0062BF30": {
     "name": "sub_0062BF30",
     "signature": "void* fn_0062BF30(uint8_t* first, uint8_t* last, uint8_t* d_last)",
@@ -104184,6 +104191,13 @@
     "signature": "void __stdcall fn_007F3870( ArthurOutState* out_x, ArthurVecDesc* out_w, ArthurMatrixDesc matrix, ArthurAuxDesc aux, ArthurVecDesc lo, ArthurVecDesc hi, ArthurVecDesc diag_c, const float* rhs_b, int32_t num_rows, uint32_t rhs_b_field_0x08, const float* inv_diag, uint32_t inv_diag_field_0x04, uint32_t inv_diag_field_0x08, float c2, float c1, float eps, float tol, int32_t max_iter)",
     "summary": "Vanilla Arthur iterative LCP solver: initializes x=0 and w=-b, then iteratively selects and updates pivot rows via ext_007F3440 and ext_007F2F80 until convergence or 2*max_iter.",
     "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp"
+  },
+  "0x007F4330": {
+    "name": "MdtArthur::arthurSolver_sse::vfunc_1",
+    "class": "MdtArthur::arthurSolver_sse",
+    "signature": "void __stdcall fn_007F4330( float* out, int32_t count, uint32_t unused_10, ArthurSolverParams params, const uint8_t* esi, uint32_t unused_94, uint32_t unused_98, uint32_t unused_9c, const float* in_vec, uint32_t unused_a4, uint32_t unused_a8, float bias, float scale)",
+    "summary": "Computes 4-wide SSE reciprocal of scaled/biased input plus strided matrix-block products.",
+    "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp"
   },
   "0x007F44C0": {
     "name": "MdtArthur::arthurSolver_sse::vfunc_2",
