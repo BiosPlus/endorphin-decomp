@@ -47622,6 +47622,13 @@
     "summary": "One-time lazy init of the static accessor object at mem_00B55844 (guard bit in mem_00B55848), then binds holder+0x04 to that accessor.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064C280": {
+    "name": "WriteMethodType::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}\u003e",
+    "signature": "void fn_0064C280(void* holder)",
+    "summary": "One-time guarded init of static accessor object at 0x00B55854 (vtable 0x0097F67C), then stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064C900": {
     "name": "fillRecordsFromSource",
     "signature": "void fn_0064C900(void* dst, uint32_t count, const void* src)",

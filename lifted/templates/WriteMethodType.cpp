@@ -7323,3 +7323,26 @@ void fn_0064C180(void* self, void* holder) {
     lift_field<uint32_t>(holder, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B55844));
 }
 } // namespace lift_0064C180
+
+// [0x0064C280] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_0064C280 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670(void* self, DWORD value);
+extern int mem_00B55858;
+extern int mem_00B55854;
+
+// @name WriteMethodType::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}>
+// @summary One-time guarded init of static accessor object at 0x00B55854 (vtable 0x0097F67C), then stores its address into holder+0x04.
+// @field holder(arg0) +0x04 void* field_0x04
+void fn_0064C280(void* holder) {
+    // Function-local static init guard: bit 0 of mem_00B55858.
+    if ((mem_00B55858 & 1) == 0) {
+        mem_00B55858 |= 1;
+        ext_0067A670(&mem_00B55854, 0);
+        mem_00B55854 = 0x0097F67C;
+    }
+    lift_field<uint32_t>(holder, 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B55854));
+}
+} // namespace lift_0064C280
