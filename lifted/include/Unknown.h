@@ -400,7 +400,7 @@ struct Unknown_Fields {
     // +0x8   float                    src_z  (evidence: 0x007C8490, 0x007CA310, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    str_obj  (evidence: 0x00648A20) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    stringPtr  (evidence: 0x00640940) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    subObject  (evidence: 0x00711BC0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    subObject  (evidence: 0x00586930, 0x00711BC0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    subobject  (evidence: 0x004AECC0, 0x0067B1F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t                  subobject_0x08  (evidence: 0x00670FD0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 value_a2  (evidence: 0x004B75A0) // CONFLICT: multiple definitions at +0x8
@@ -1180,6 +1180,7 @@ struct Unknown_Fields {
     // +0x7C  HWND                     hwnd  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x7C
     // +0x80  DWORD                    cachedA  (evidence: 0x007051F0) // CONFLICT: multiple definitions at +0x80
     // +0x80  uint32_t                 childBegin  (evidence: 0x00586AD0) // CONFLICT: multiple definitions at +0x80
+    // +0x80  DWORD                    childFirst  (evidence: 0x00586930) // CONFLICT: multiple definitions at +0x80
     // +0x80  uint32_t                 children_begin  (evidence: 0x00586440, 0x005864C0) // CONFLICT: multiple definitions at +0x80
     // +0x80  void**                   elemBegin  (evidence: 0x005860B0, 0x005865D0) // CONFLICT: multiple definitions at +0x80
     // +0x80  uint8_t*                 elementsBegin  (evidence: 0x00586660) // CONFLICT: multiple definitions at +0x80
@@ -1194,6 +1195,7 @@ struct Unknown_Fields {
     // +0x84  uint32_t child_count_at_0xf8 (child+0xf8)  (evidence: 0x00543C00) // CONFLICT: multiple definitions at +0x84
     // +0x84  DWORD                    cachedB  (evidence: 0x007051F0) // CONFLICT: multiple definitions at +0x84
     // +0x84  void*                    child  (evidence: 0x00543C00) // CONFLICT: multiple definitions at +0x84
+    // +0x84  DWORD                    childEnd  (evidence: 0x00586930) // CONFLICT: multiple definitions at +0x84
     // +0x84  uint32_t                 childEnd  (evidence: 0x00586AD0) // CONFLICT: multiple definitions at +0x84
     // +0x84  uint32_t                 children_end  (evidence: 0x00586440, 0x005864C0) // CONFLICT: multiple definitions at +0x84
     // +0x84  uint32_t[19] field_0x84 (destination block, written by copy)  (evidence: 0x007D48A0, 0x007D85E0) // CONFLICT: multiple definitions at +0x84

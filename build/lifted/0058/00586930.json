@@ -1,0 +1,34 @@
+{
+  "va": "0x00586930",
+  "size": 139,
+  "orig_symbol": "sub_00586930",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "walkChildrenInvokeVfunc3",
+  "class": "Unknown",
+  "signature": "void fn_00586930(void* self, DWORD a1, const float* a2)",
+  "summary": "Calls vfunc[3] on the sub-object at +0x08 with (a1, a2[0], a2[1]), then recurses into each child pointer in the list [+0x80, +0x84) with the same arguments.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "subObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "DWORD",
+      "name": "childFirst"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "DWORD",
+      "name": "childEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:58Z"
+}

@@ -30491,6 +30491,13 @@
     "summary": "Invokes the virtual slot 0x8c on self, then on every pointer element in the range [self+0x80, self+0x84).",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00586930": {
+    "name": "walkChildrenInvokeVfunc3",
+    "class": "Unknown",
+    "signature": "void fn_00586930(void* self, DWORD a1, const float* a2)",
+    "summary": "Calls vfunc[3] on the sub-object at +0x08 with (a1, a2[0], a2[1]), then recurses into each child pointer in the list [+0x80, +0x84) with the same arguments.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00586A50": {
     "name": "forwardToChildAndRecurseRange",
     "class": "Unknown",

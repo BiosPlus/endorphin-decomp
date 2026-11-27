@@ -1908,3 +1908,43 @@ void fn_005873E0(void* self, const uint32_t* key) {
     ext_00596660(self, out2, a2, first, self, reinterpret_cast<int32_t*>(end));
 }
 } // namespace lift_005873E0
+
+// [0x00586930] sub_00586930 (139 bytes)
+namespace lift_00586930 {
+extern void ext_00586930(void* self, DWORD a1, const float* a2);
+extern int mem_00925134;
+
+// @name walkChildrenInvokeVfunc3
+// @class Unknown
+// @summary Calls vfunc[3] on the sub-object at +0x08 with (a1, a2[0], a2[1]), then recurses into each child pointer in the list [+0x80, +0x84) with the same arguments.
+// @field Unknown +0x08 void* subObject
+// @field Unknown +0x80 DWORD childFirst
+// @field Unknown +0x84 DWORD childEnd
+void fn_00586930(void* self, DWORD a1, const float* a2) {
+    using VFn3 = void(__thiscall*)(void* self, DWORD a1, float x, float y);
+
+    // The original asm guards with MSVCR80!_invalid_parameter_noinfo (IAT slot 0x925134)
+    // on out-of-range iterator checks. Those are CRT boilerplate and are omitted here;
+    // the reference is kept only so the IAT slot is accounted for.
+    (void)&mem_00925134;
+
+    // Sub-object at +0x08: invoke virtual slot 3 (offset 0x0c) with a1 and the two floats.
+    DWORD obj = lift_field<DWORD>(self, 0x08);
+    DWORD vtbl = *reinterpret_cast<DWORD*>(static_cast<uintptr_t>(obj));
+    DWORD slot3 = *reinterpret_cast<DWORD*>(static_cast<uintptr_t>(vtbl) + 0x0c);
+    reinterpret_cast<VFn3>(static_cast<uintptr_t>(slot3))(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), a1, a2[0], a2[1]);
+
+    // Walk the child-pointer list [+0x80, +0x84) and recurse on each child.
+    DWORD cur = lift_field<DWORD>(self, 0x80);
+    for (;;) {
+        DWORD end = lift_field<DWORD>(self, 0x84);
+        if (cur == end) {
+            break;
+        }
+        DWORD child = *reinterpret_cast<DWORD*>(static_cast<uintptr_t>(cur));
+        ext_00586930(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), a1, a2);
+        cur += 4;
+    }
+}
+} // namespace lift_00586930
