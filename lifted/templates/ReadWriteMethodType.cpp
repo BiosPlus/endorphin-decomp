@@ -12001,3 +12001,29 @@ void fn_005C7D80(void* holder) {
     lift_field<uint32_t>(holder, 0x04) = 0x00B44510u;
 }
 } // namespace lift_005C7D80
+
+// [0x005B8A10] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientation(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B8A10 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B43D28;
+extern DWORD mem_00B43D24;
+
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData>::vfunc_40 (static-init guard, bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientation(class NM::Vector3 const &), 0}>
+// @summary One-time guarded initializer: on first call, sets the guard bit, initializes the static accessor object at 0x00B43D24, then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_005B8A10(void* holder) {
+    // The original wraps this in an SEH frame (fs:[0] push/restore) whose handler
+    // only unwinds the guard on exception; that scaffolding has no portable
+    // equivalent and is omitted here.
+    if ((mem_00B43D28 & 1u) == 0) {
+        mem_00B43D28 |= 1u;
+        ext_0067A670(&mem_00B43D24, 0u);
+        mem_00B43D24 = 0x0096288Cu;
+        lift_field<DWORD>(holder, 0x04) = 0x00B43D24u;
+        return;
+    }
+    lift_field<DWORD>(holder, 0x04) = 0x00B43D24u;
+}
+} // namespace lift_005B8A10
