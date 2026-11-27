@@ -1,0 +1,22 @@
+{
+  "va": "0x006990C0",
+  "size": 62,
+  "orig_symbol": "ExprParser::ObjectType::vfunc_4",
+  "src_path": "src/ExprParser/ObjectType.cpp",
+  "lifted_path": "lifted/ExprParser/ObjectType.cpp",
+  "name": "ExprParser::ObjectType::getSubObjectString",
+  "class": "ExprParser::ObjectType",
+  "signature": "void* __thiscall fn_006990C0(void* self, void* out_str, uint32_t arg2)",
+  "summary": "Looks up a sub-object via vtable+0x60 and invokes its vtable+0x20 method on out_str, or default-constructs an empty std::string in out_str if null.",
+  "fields": [
+    {
+      "class": "ExprParser::ObjectType",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-27T11:35:57Z"
+}
