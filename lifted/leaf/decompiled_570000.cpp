@@ -2641,3 +2641,45 @@ void fn_0057B100(void* self, uint32_t arg0) {
     ext_0057B050(self, &tmp, self, end, arg0);
 }
 } // namespace lift_0057B100
+
+// [0x0057FD60]
+namespace lift_0057FD60 {
+// @name Vector20::push_back
+// @class Vector20
+// @summary Appends a 20-byte element to the vector, growing capacity if needed.
+// @field Vector20 +0x04 uint32_t first
+// @field Vector20 +0x08 uint32_t last
+// @field Vector20 +0x0c uint32_t end
+
+
+void __cdecl ext_0057E5F0(uint32_t dst, uint32_t count, uint32_t val1, void* vec, uint32_t val2, uint32_t flag);
+void __thiscall ext_0057FA30(void* self, uint32_t* out_iter, void* vec, uint32_t pos, uint32_t val);
+extern uintptr_t mem_00925134;
+
+void __thiscall sub_0057FD60(void* self, uint32_t val) {
+    uint32_t first = lift_field<uint32_t>(self, 0x04);
+    uint32_t size = 0;
+    if (first != 0) {
+        uint32_t last = lift_field<uint32_t>(self, 0x08);
+        size = static_cast<uint32_t>(static_cast<int32_t>(last - first) / 20);
+    }
+
+    if (first != 0) {
+        uint32_t end = lift_field<uint32_t>(self, 0x0c);
+        uint32_t cap = static_cast<uint32_t>(static_cast<int32_t>(end - first) / 20);
+        if (size < cap) {
+            uint32_t last = lift_field<uint32_t>(self, 0x08);
+            ext_0057E5F0(last, 1, val, self, val, 0);
+            lift_field<uint32_t>(self, 0x08) = last + 0x14;
+            return;
+        }
+    }
+
+    uint32_t last = lift_field<uint32_t>(self, 0x08);
+    if (first > last) {
+        reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+    }
+    uint32_t out_iter = 0;
+    ext_0057FA30(self, &out_iter, self, last, val);
+}
+} // namespace lift_0057FD60

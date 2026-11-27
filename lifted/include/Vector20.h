@@ -8,7 +8,10 @@
 // Recovered field layout for Vector20:
 namespace lifted_layout {
 struct Vector20_Fields {
-    // +0x4   uint32_t                 begin  (evidence: 0x005774B0)
-    // +0x8   uint32_t                 end  (evidence: 0x005774B0)
+    // +0x4   uint32_t                 begin  (evidence: 0x005774B0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 first  (evidence: 0x0057FD60) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 end  (evidence: 0x005774B0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 last  (evidence: 0x0057FD60) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint32_t                 end  (evidence: 0x0057FD60)
 };
 } // namespace lifted_layout
