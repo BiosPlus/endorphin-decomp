@@ -44128,6 +44128,13 @@
     "summary": "Calls virtual slot 5 (vtable +0x14) with one argument on each object in the child-pointer range at +0x28..+0x2C.",
     "lifted_path": "lifted/AdvXMLParser/NodeContainer.cpp"
   },
+  "0x00640F50": {
+    "name": "AdvXMLParser::Attribute::vfunc_5",
+    "class": "AdvXMLParser::Attribute",
+    "signature": "void fn_00640F50(void* self, void* arg)",
+    "summary": "Assigns this attribute's name into the string held at arg+0x08, clears arg+0x11, calls NodeContainer::vfunc_5(arg) on self, then assigns a constant string to the same string at arg+0x08.",
+    "lifted_path": "lifted/AdvXMLParser/Attribute.cpp"
+  },
   "0x006410D0": {
     "name": "AdvXMLParser::Document::vfunc_5",
     "class": "AdvXMLParser::Document",

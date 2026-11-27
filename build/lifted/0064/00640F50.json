@@ -1,0 +1,22 @@
+{
+  "va": "0x00640F50",
+  "size": 74,
+  "orig_symbol": "AdvXMLParser::Attribute::vfunc_5",
+  "src_path": "src/AdvXMLParser/Attribute.cpp",
+  "lifted_path": "lifted/AdvXMLParser/Attribute.cpp",
+  "name": "AdvXMLParser::Attribute::vfunc_5",
+  "class": "AdvXMLParser::Attribute",
+  "signature": "void fn_00640F50(void* self, void* arg)",
+  "summary": "Assigns this attribute's name into the string held at arg+0x08, clears arg+0x11, calls NodeContainer::vfunc_5(arg) on self, then assigns a constant string to the same string at arg+0x08.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::Attribute",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:56:45Z"
+}
