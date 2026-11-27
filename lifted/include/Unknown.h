@@ -220,6 +220,7 @@ struct Unknown_Fields {
     // +0x4   MSVCP80_basic_string     field_0x04  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x4
     // +0x4   char                     field_0x04  (evidence: 0x00780090) // CONFLICT: multiple definitions at +0x4
     // +0x4   char[0x1C]               field_0x04  (evidence: 0x00509C10) // CONFLICT: multiple definitions at +0x4
+    // +0x4   char[16]                 field_0x04  (evidence: 0x00871450) // CONFLICT: multiple definitions at +0x4
     // +0x4   char[28]                 field_0x04  (evidence: 0x00519CB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x00402630, 0x0043B3E0, 0x00489DC0, 0x00497530, 0x004976D0, 0x0049ACB0, 0x004B10D0, 0x004B7030, 0x00519E50, 0x0052EF50, 0x00535610, 0x00545B80, 0x00553980, 0x00553A10, 0x00622750, 0x00669E60, 0x0066A2A0, 0x0066A2E0, 0x0066A310, 0x0066A330, 0x0066A500, 0x0067B8D0, 0x0067DB10, 0x0067DBF0, 0x006C1BB0, 0x006C9A90, 0x007C9C90, 0x007E4870, 0x007E80E0, 0x007FC290, 0x007FC490, 0x00803B60) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x00404D50, 0x00476BA0, 0x0049AD70, 0x004BF680, 0x00504990, 0x00504A80, 0x005184D0, 0x00540E10, 0x0054C770, 0x00553E60, 0x00567190, 0x00620F60, 0x006455B0, 0x006616D0, 0x006722B0, 0x00672490, 0x0067A670, 0x0067B070, 0x00682E20, 0x00689570, 0x0068BDF0, 0x00698840, 0x006D2130, 0x006D8280, 0x006D8680, 0x006D8940, 0x00784650, 0x007C2E50, 0x007C9E50, 0x007CD040, 0x007D4720, 0x007D48A0, 0x007D8470, 0x007DD000, 0x00802D40) // CONFLICT: multiple definitions at +0x4
@@ -617,6 +618,7 @@ struct Unknown_Fields {
     // +0x14  uint32_t                 str_array  (evidence: 0x0078C690) // CONFLICT: multiple definitions at +0x14
     // +0x14  void* field_0x14 (pointer to holder whose +0x04 is the lookup table)  (evidence: 0x0080D220) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 transferred  (evidence: 0x007C1F90) // CONFLICT: multiple definitions at +0x14
+    // +0x14  int32_t                  type  (evidence: 0x00871450) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 vftable_0x14  (evidence: 0x0052FFD0) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 vptr_secondary  (evidence: 0x0052F7D0, 0x0052FC10) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 vtable1  (evidence: 0x0052FEB0) // CONFLICT: multiple definitions at +0x14
@@ -665,6 +667,7 @@ struct Unknown_Fields {
     // +0x18  int32_t                  flag  (evidence: 0x007D4720) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t flags (of the stack argument `arg`; class not identified)  (evidence: 0x004561C0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    indexList  (evidence: 0x00783940) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint32_t                 length  (evidence: 0x00871450) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    m12  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x18
     // +0x18  std::string              name  (evidence: 0x005327F0) // CONFLICT: multiple definitions at +0x18
     // +0x18  StringPairList           pairs  (evidence: 0x004F0250) // CONFLICT: multiple definitions at +0x18

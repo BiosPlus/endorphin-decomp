@@ -519,3 +519,42 @@ bool fn_00871980(void* self, void* cursor, uint32_t dst_addr) {
     return false;
 }
 } // namespace lift_00871980
+
+// [0x00871450] sub_00871450 (142 bytes)
+namespace lift_00871450 {
+// Known callee 0x00870E40: sub_00870E40 (Builds a 0x14-byte exception object from this-fields +0x10/+0x08/+0x04/+0x14 and a stack argument, then throws it.)
+extern void ext_00870E40(void* self, uint32_t arg1);
+// Callee 0x00871130: called with ecx=self and one stack argument; returns bool in al.
+extern uint8_t fn_00871130(void* self, void* arg);
+
+// @name Unknown::checkXmlTagAndThrow
+// @summary If fn_00871130(self, obj) succeeds and obj has type 3 whose first three chars equal "xml" (case-insensitive), calls ext_00870E40(self, 0x19); returns 1 on success path, 0 if ext_00871130 fails.
+// @field Unknown +0x04 char[16] field_0x04
+// @field Unknown +0x14 int32_t type
+// @field Unknown +0x18 uint32_t length
+uint8_t fn_00871450(void* self, void* obj) {
+    uint8_t* base = static_cast<uint8_t*>(obj);
+
+    if (!fn_00871130(self, obj)) {
+        return 0;
+    }
+    if (*reinterpret_cast<int32_t*>(base + 0x14) != 3) {
+        return 1;
+    }
+
+    const uint32_t length = *reinterpret_cast<uint32_t*>(base + 0x18);
+    // Short strings are stored inline at +0x04; long strings use a heap pointer at +0x04.
+    const uint8_t* chars = (length >= 0x10)
+        ? *reinterpret_cast<const uint8_t* const*>(base + 0x04)
+        : base + 0x04;
+
+    auto lower = [](uint8_t c) -> uint8_t {
+        return static_cast<uint8_t>((static_cast<uint8_t>(c - 'A') <= 0x19) ? c + 0x20 : c);
+    };
+
+    if (lower(chars[0]) == 'x' && lower(chars[1]) == 'm' && lower(chars[2]) == 'l') {
+        ext_00870E40(self, 0x19);
+    }
+    return 1;
+}
+} // namespace lift_00871450
