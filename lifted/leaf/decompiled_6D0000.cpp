@@ -4410,3 +4410,36 @@ void* fn_006D6B70(void* self, DWORD arg) {
     return self;
 }
 } // namespace lift_006D6B70
+
+// [0x006D8490]
+namespace lift_006D8490 {
+// @name Unknown::forwardArgToSubobject_006D8490
+// @class Unknown
+// @summary Checks subobject via 006FDF70 and 006FC930, copies 16-byte arg via 0077FAC0, and forwards it to 006D89D0 on 006D89C0.
+
+
+extern void* __fastcall ext_006D89C0(void* self);
+extern int32_t __fastcall ext_006D89D0(void* self, int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4);
+extern void* __fastcall ext_006FDF70(void* self, int32_t arg1);
+extern int32_t __fastcall ext_006FC930(void* self);
+extern void* __fastcall ext_0077FAC0(void* self, uint32_t arg1);
+extern void __cdecl ext_006D80A0(void);
+
+struct Arg16_006D8490 {
+    int32_t d[4];
+};
+
+extern void __fastcall fn_006D8490(void* self, Arg16_006D8490 arg) {
+    if (ext_006FDF70(self, 0) != nullptr) {
+        void* obj = ext_006FDF70(self, 0);
+        void* target = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_006FC930(obj))));
+        if (target != nullptr) {
+            Arg16_006D8490 copy{};
+            ext_0077FAC0(&copy, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&arg)));
+            void* sub = ext_006D89C0(target);
+            ext_006D89D0(sub, copy.d[0], copy.d[1], copy.d[2], copy.d[3]);
+        }
+    }
+    ext_006D80A0();
+}
+} // namespace lift_006D8490
