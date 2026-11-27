@@ -1,0 +1,46 @@
+{
+  "va": "0x004ED6B0",
+  "size": 110,
+  "orig_symbol": "sub_004ED6B0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "sub_004ED6B0_dtor",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_004ED6B0(void* this_ptr)",
+  "summary": "Destructor that resets vtables, tidies a std::vector\u003cstd::string\u003e at +0x3c, destroys a std::string at +0x1c, and calls base destructor 0x00692BA0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable_00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vftable_04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "vftable_18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint8_t",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:15:37Z"
+}

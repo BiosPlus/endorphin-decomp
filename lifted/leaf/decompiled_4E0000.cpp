@@ -1134,3 +1134,32 @@ extern void __cdecl fn_004E7430(void** arr, int32_t holeIndex, int32_t topIndex,
     arr[holeIndex] = val;
 }
 } // namespace lift_004E7430
+
+// [0x004ED6B0]
+namespace lift_004ED6B0 {
+// @name sub_004ED6B0_dtor
+// @class Unknown
+// @summary Destructor that resets vtables, tidies a std::vector<std::string> at +0x3c, destroys a std::string at +0x1c, and calls base destructor 0x00692BA0.
+// @field Unknown +0x00 uint32_t vftable_00
+// @field Unknown +0x04 uint32_t vftable_04
+// @field Unknown +0x18 uint32_t vftable_18
+// @field Unknown +0x1c uint8_t field_0x1c
+// @field Unknown +0x3c uint8_t field_0x3c
+
+
+extern void __thiscall ext_004026E0(void* this_ptr);
+extern void __thiscall ext_00692BA0(void* this_ptr);
+extern void (__thiscall* mem_00924FF4)(void* this_ptr);
+
+void __thiscall fn_004ED6B0(void* this_ptr) {
+    uint8_t* self = static_cast<uint8_t*>(this_ptr);
+
+    lift_field<uint32_t>(self, 0x00) = 0x009451B4u;
+    lift_field<uint32_t>(self, 0x04) = 0x00945184u;
+    lift_field<uint32_t>(self, 0x18) = 0x00945174u;
+
+    ext_004026E0(self + 0x3C);
+    mem_00924FF4(self + 0x1C);
+    ext_00692BA0(self);
+}
+} // namespace lift_004ED6B0
