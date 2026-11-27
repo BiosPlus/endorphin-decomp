@@ -1,0 +1,13 @@
+{
+  "va": "0x0040E890",
+  "size": 60,
+  "orig_symbol": "sub_0040E890",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "UninitializedFillNString",
+  "signature": "void* fn_0040E890(void* base, uint32_t count, const void* src)",
+  "summary": "Fills `count` std::string elements (28-byte stride) at `base` from `src` and returns the end pointer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:51:12Z"
+}

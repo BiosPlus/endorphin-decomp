@@ -1216,6 +1216,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040E890": {
+    "name": "UninitializedFillNString",
+    "signature": "void* fn_0040E890(void* base, uint32_t count, const void* src)",
+    "summary": "Fills `count` std::string elements (28-byte stride) at `base` from `src` and returns the end pointer.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040EF90": {
     "name": "sub_0040EF90",
     "signature": "extern \"C\" void __fastcall fn_0040EF90(void* self)",
@@ -83782,6 +83788,12 @@
     "summary": "Forwards two stored values to the object at this-\u003efield_0x08-\u003efield_0xb0, calls the external helper with this-\u003efield_0x2c, then invokes this's vtable slot 0 with 0 and finally notifies the same object with this.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DD0A0": {
+    "name": "setItemFlagAndLink",
+    "signature": "uint8_t __thiscall sub_007DD0A0(void* self, int32_t index, uint8_t enable)",
+    "summary": "Validates an item index and sets or clears bit 0 of its flags, linking or unlinking it from the list at +0xC0.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DD130": {
     "name": "UnknownClass_isIndexedEntryFlagSet",
     "signature": "bool fn_007DD130(void* self, int32_t index)",
@@ -84266,6 +84278,12 @@
     "name": "LookupSlotHandleUnderCriticalSection",
     "signature": "uint32_t fn_0080AA80(uint32_t packed, uint32_t* out)",
     "summary": "Splits a packed (index\u003c\u003c16 | key) argument, validates index \u003c 0x80, and under the global critical section looks up the table entry whose key matches and whose active byte is set, storing its handle to *out. Returns 0 on success, 9 on failure.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080AAF0": {
+    "name": "FreeHandleSlot_0080AAF0",
+    "signature": "uint32_t fn_0080AAF0(uint32_t handle)",
+    "summary": "Validates a 32-bit handle, frees its associated global memory block if present, and clears the slot under the global critical section.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x0080AB80": {

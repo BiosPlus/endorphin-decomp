@@ -2567,3 +2567,15 @@ void fn_00402B60(void* self) {
     ext_004026E0(base + 0x38);
 }
 } // namespace lift_00402B60
+
+// [0x0040E890]
+namespace lift_0040E890 {
+extern void ext_0040E6F0(void* base, uint32_t count, const void* src);
+
+// @name UninitializedFillNString
+// @summary Fills `count` std::string elements (28-byte stride) at `base` from `src` and returns the end pointer.
+void* fn_0040E890(void* base, uint32_t count, const void* src) {
+    ext_0040E6F0(base, count, src);
+    return static_cast<uint8_t*>(base) + count * 28u;
+}
+} // namespace lift_0040E890
