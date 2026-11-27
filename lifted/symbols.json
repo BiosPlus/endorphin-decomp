@@ -74874,6 +74874,12 @@
     "summary": "Discards 4 bytes of stack, then transfers control to the function pointer stored at [esi].",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00852AD0": {
+    "name": "init_tagged_vec4",
+    "signature": "int32_t sub_00852AD0(void* dst, uint8_t tag, const void* src)",
+    "summary": "Validates a 1..3 tag byte, writes it to dst[0], and copies or zeroes 16 bytes at dst+1.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00853680": {
     "name": "sha1Init",
     "signature": "extern \"C\" void __cdecl sub_00853680(uint8_t* ctx)",
