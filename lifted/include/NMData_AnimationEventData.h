@@ -20,7 +20,7 @@ struct NMData_AnimationEventData_Fields {
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1F90, 0x004DE0F0, 0x004E1A00, 0x004E1D60)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1F90, 0x004E1A00, 0x004E1D60, 0x004E2760)
     // +0x168 int32_t                  field_0x168  (evidence: 0x00486BE0, 0x004BFBE0, 0x004DE0F0, 0x004E1D60) // CONFLICT: multiple definitions at +0x168
-    // +0x168 void*                    field_0x168  (evidence: 0x004E4ED0) // CONFLICT: multiple definitions at +0x168
+    // +0x168 void*                    field_0x168  (evidence: 0x004D30E0, 0x004E4ED0) // CONFLICT: multiple definitions at +0x168
     // +0x16C void*                    field_0x16c  (evidence: 0x004C1F90, 0x004E70B0)
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x004C1F90, 0x004E1A00, 0x004E2760)
     // +0x180 void*                    field_0x180  (evidence: 0x004E70B0, 0x004E7280)

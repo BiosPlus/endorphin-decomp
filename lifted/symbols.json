@@ -22840,6 +22840,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
   },
+  "0x004D30E0": {
+    "name": "NMData::AnimationEventData::collectAnimationNames",
+    "class": "NMData::AnimationEventData",
+    "signature": "void fn_004D30E0(void* self)",
+    "summary": "Collects strings from field_0x168+0x160 and the tree at field_0x168+0x5A4 into a temporary vector, passes it to ext_004C28C0, and destroys the vector.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004D3350": {
     "name": "NMData::TransitionEventData::vfunc_0",
     "class": "NMData::TransitionEventData",
@@ -47611,6 +47618,13 @@
     "class": "NMData::MetaBodyData",
     "signature": "extern \"C\" void (*mem_00924FE4)(void* self, const char* s);    // basic_string(const char*) extern \"C\" void* (*mem_00924FDC)(void* self, const void* src); // basic_string::operator=(const basic_string\u0026) extern \"C\" void (*mem_00924FF4)(void* self);                   // basic_string::~basic_string extern \"C\" void (*mem_00924FE0)(void* self, const void* src);  // basic_string(const basic_string\u0026) extern \"C\" const char mem_00928B5D[];                          // .rdata string literal used by this function inline bool vcall_bool(void* obj, ptrdiff_t slotOffset)",
     "summary": "Conditionally tears down a subobject through its vtable, then clears related state and copies a name string.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
+  "0x005C0A50": {
+    "name": "NMData::MetaBodyData::vfunc_21",
+    "class": "NMData::MetaBodyData",
+    "signature": "static bool is_sentinel_node(uint32_t addr)",
+    "summary": "Deserializes MetaBodyData child objects, name property, and default sub-object from an input data node.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
   "0x005C0E00": {

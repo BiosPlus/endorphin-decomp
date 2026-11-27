@@ -1243,3 +1243,116 @@ void fn_004E70B0(void* self) {
     }
 }
 } // namespace lift_004E70B0
+
+// [0x004D30E0] NMData::AnimationEventData::vfunc_90 (351 bytes)
+namespace lift_004D30E0 {
+extern void __thiscall ext_0040ECB0(void* self, const void* value);
+extern void __thiscall ext_004C28C0(void* self, void* vec);
+extern void __thiscall ext_00673C20(void* iter);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void ext_0048BC80();
+extern void ext_004DE180();
+extern void ext_004E35B0();
+extern void ext_004E3A30();
+extern void ext_004E3F20();
+extern void ext_004E4690();
+extern void ext_004E5AE0();
+extern void ext_004E5C40();
+extern void ext_004E5D50();
+extern void ext_00594000();
+extern void ext_00594070();
+extern void ext_00660A50();
+extern void ext_00662400();
+extern void ext_006A5C62();
+extern uintptr_t mem_00924FF4;
+extern uintptr_t mem_00925134;
+
+// @name NMData::AnimationEventData::collectAnimationNames
+// @class NMData::AnimationEventData
+// @summary Collects strings from field_0x168+0x160 and the tree at field_0x168+0x5A4 into a temporary vector, passes it to ext_004C28C0, and destroys the vector.
+// @field NMData::AnimationEventData +0x168 void* field_0x168
+void fn_004D30E0(void* self) {
+    void* target = lift_field<void*>(self, 0x168);
+    if (target == nullptr) {
+        return;
+    }
+
+    using StringDtorFn = void (__thiscall*)(void*);
+    using InvalidParamFn = void (__cdecl*)(void);
+    using GetStringFn = void* (__thiscall*)(void*, void*);
+
+    auto string_dtor = reinterpret_cast<StringDtorFn>(mem_00924FF4);
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(mem_00925134);
+
+    // MSVC8 std::string is 28 bytes; std::vector<std::string> is {proxy, begin, end, cap}.
+    uint32_t vec[4] = {0, 0, 0, 0};
+    uint8_t temp_str[28];
+
+    void* sub160 = static_cast<uint8_t*>(target) + 0x160;
+    void** sub160_vtbl = lift_field<void**>(sub160, 0);
+    void* ret_str = reinterpret_cast<GetStringFn>(sub160_vtbl[3])(sub160, temp_str);
+    ext_0040ECB0(&vec[1], ret_str);
+    string_dtor(temp_str);
+
+    void* tree = static_cast<uint8_t*>(lift_field<void*>(self, 0x168)) + 0x5A4;
+    void* head = lift_field<void*>(tree, 0x4);
+    void* first_node = lift_field<void*>(head, 0x0);
+
+    struct TreeIterator {
+        void* container;
+        void* node;
+    };
+    TreeIterator iter{tree, first_node};
+
+    for (;;) {
+        void* tree_head = lift_field<void*>(tree, 0x4);
+        if (iter.container == nullptr || iter.container != tree) {
+            invalid_param();
+        }
+        if (iter.node == tree_head) {
+            break;
+        }
+        if (iter.container == nullptr) {
+            invalid_param();
+        }
+        if (iter.node == lift_field<void*>(iter.container, 0x4)) {
+            invalid_param();
+        }
+
+        void* entry_obj = lift_field<void*>(iter.node, 0x28);
+        void** entry_vtbl = lift_field<void**>(entry_obj, 0);
+        void* entry_str = reinterpret_cast<GetStringFn>(entry_vtbl[3])(entry_obj, temp_str);
+        ext_0040ECB0(&vec[1], entry_str);
+        string_dtor(temp_str);
+
+        ext_00673C20(&iter);
+    }
+
+    ext_004C28C0(self, vec);
+
+    auto* begin = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(vec[1]));
+    if (begin != nullptr) {
+        auto* end = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(vec[2]));
+        for (uint8_t* cur = begin; cur != end; cur += 0x1C) {
+            string_dtor(cur);
+        }
+        ext_006A5C5C(begin);
+    }
+
+    // Callees recorded in liftwork metadata for this entry (not directly called in 0x004D30E0..0x004D323E).
+    (void)&ext_0048BC80;
+    (void)&ext_004DE180;
+    (void)&ext_004E35B0;
+    (void)&ext_004E3A30;
+    (void)&ext_004E3F20;
+    (void)&ext_004E4690;
+    (void)&ext_004E5AE0;
+    (void)&ext_004E5C40;
+    (void)&ext_004E5D50;
+    (void)&ext_00594000;
+    (void)&ext_00594070;
+    (void)&ext_00660A50;
+    (void)&ext_00662400;
+    (void)&ext_006A5C62;
+}
+} // namespace lift_004D30E0

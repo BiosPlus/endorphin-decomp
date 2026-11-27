@@ -1,0 +1,22 @@
+{
+  "va": "0x004D30E0",
+  "size": 351,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_90",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::collectAnimationNames",
+  "class": "NMData::AnimationEventData",
+  "signature": "void fn_004D30E0(void* self)",
+  "summary": "Collects strings from field_0x168+0x160 and the tree at field_0x168+0x5A4 into a temporary vector, passes it to ext_004C28C0, and destroys the vector.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-27T12:53:40Z"
+}
