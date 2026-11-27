@@ -1779,3 +1779,54 @@ extern void __cdecl fn_004519B0(void) {
     }
 }
 } // namespace lift_004519B0
+
+// [0x0045BC70] sub_0045BC70 (126 bytes)
+namespace lift_0045BC70 {
+// Known callee 0x006A6826: thunk_MFC80_ord_2884 (IAT jump thunk forwarding to MFC80!ord_2884.)
+extern void ext_006A6826(void* self, uint32_t* slot, uint32_t value);
+extern int mem_00925694;
+extern int mem_00924300;
+extern int mem_00924FE4;
+extern int mem_009242F4;
+
+namespace {
+
+// IAT slots: the linker places the imported function pointer at the address named by mem_X.
+template <class F>
+F importAt(int& slot) {
+    return *reinterpret_cast<F*>(&slot);
+}
+
+using SendMessageAFn = uint32_t (*)(uint32_t hwnd, uint32_t msg, uint32_t wparam, uint32_t lparam);
+using MfcOrd876Fn = uint32_t (*)(void* self);
+using StringCtorFn = void (*)(void* self, const char* s);
+using MfcOrd578Fn = void (*)(void* self);
+
+} // namespace
+
+// @name getWindowStringIntoSret
+// @class CWindowHolder
+// @summary Sends a 0x110a message to the window handle at +0x20, passes the result through MFC80 ord_2884, then builds a std::string from the MFC80 ord_876 result into the caller-supplied return buffer.
+// @field CWindowHolder +0x20 uint32_t hwnd
+void* fn_0045BC70(void* self, void* sret) {
+    uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
+
+    SendMessageAFn sendMessageA = importAt<SendMessageAFn>(mem_00925694);
+    uint32_t result = sendMessageA(hwnd, 0x110a, 9, 0);
+
+    uint32_t slot = 0;
+    ext_006A6826(self, &slot, result);
+
+    uint32_t local = 0;
+    MfcOrd876Fn ord876 = importAt<MfcOrd876Fn>(mem_00924300);
+    uint32_t text = ord876(&local);
+
+    StringCtorFn stringCtor = importAt<StringCtorFn>(mem_00924FE4);
+    stringCtor(sret, reinterpret_cast<const char*>(static_cast<uintptr_t>(text)));
+
+    MfcOrd578Fn ord578 = importAt<MfcOrd578Fn>(mem_009242F4);
+    ord578(&local);
+
+    return sret;
+}
+} // namespace lift_0045BC70

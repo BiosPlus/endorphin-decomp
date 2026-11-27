@@ -1,0 +1,22 @@
+{
+  "va": "0x0045BC70",
+  "size": 126,
+  "orig_symbol": "sub_0045BC70",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "getWindowStringIntoSret",
+  "class": "CWindowHolder",
+  "signature": "F importAt(int\u0026 slot)",
+  "summary": "Sends a 0x110a message to the window handle at +0x20, passes the result through MFC80 ord_2884, then builds a std::string from the MFC80 ord_876 result into the caller-supplied return buffer.",
+  "fields": [
+    {
+      "class": "CWindowHolder",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:54:56Z"
+}

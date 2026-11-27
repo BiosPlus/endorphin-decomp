@@ -6914,6 +6914,13 @@
     "summary": "Sends WM_USER-range message 0x110B (wParam 9) twice and then 0x1114 (wParam 0) to the window handle at this+0x20, all with the given lParam.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045BC70": {
+    "name": "getWindowStringIntoSret",
+    "class": "CWindowHolder",
+    "signature": "F importAt(int\u0026 slot)",
+    "summary": "Sends a 0x110a message to the window handle at +0x20, passes the result through MFC80 ord_2884, then builds a std::string from the MFC80 ord_876 result into the caller-supplied return buffer.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045BED0": {
     "name": "resolveStringOrQueryWindow",
     "class": "Unknown",
