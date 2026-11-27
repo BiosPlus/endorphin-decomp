@@ -2029,3 +2029,22 @@ void fn_0057E870(void* self, PointerPair* out, void* first, void* p3, void* p4, 
     out->second = p5;
 }
 } // namespace lift_0057E870
+
+// [0x005753B0] sub_005753B0 (65 bytes)
+namespace lift_005753B0 {
+// Known callee 0x00575350: Quat::setAxisAngle (Sets a quaternion (w, x, y, z) from an axis vector and rotation angle in radians.)
+extern void ext_00575350(void* self, const float* axis, float angle);
+// Known callee 0x0067E510: sub_0067E510 (Auto-lifted identical-shape clone of 0x0067E600 (buildPaddedMatrixFromParam).)
+extern void ext_0067E510(void* self, const void* p);
+
+// @name Unknown::setAxisAngleAndApply
+// @class Unknown
+// @summary Builds a zeroed 4-float quaternion, sets it from (axis, angle) via Quat::setAxisAngle, then forwards it to sub_0067E510 on self.
+void fn_005753B0(void* self, const float* axis, float angle) {
+    // Zero-initialised 4-float temporary (w, x, y, z) that setAxisAngle fills in.
+    float quat[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+
+    ext_00575350(quat, axis, angle);
+    ext_0067E510(self, quat);
+}
+} // namespace lift_005753B0

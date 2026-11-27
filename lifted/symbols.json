@@ -28194,6 +28194,13 @@
     "summary": "Sets a quaternion (w, x, y, z) from an axis vector and rotation angle in radians.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x005753B0": {
+    "name": "Unknown::setAxisAngleAndApply",
+    "class": "Unknown",
+    "signature": "void fn_005753B0(void* self, const float* axis, float angle)",
+    "summary": "Builds a zeroed 4-float quaternion, sets it from (axis, angle) via Quat::setAxisAngle, then forwards it to sub_0067E510 on self.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575C60": {
     "name": "VSTParser::vfunc_0",
     "class": "VSTParser",
