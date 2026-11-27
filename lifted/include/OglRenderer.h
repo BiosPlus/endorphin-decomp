@@ -38,15 +38,24 @@ struct OglRenderer_Fields {
     // +0x370 uint32_t                 field_0x370  (evidence: 0x005373F0)
     // +0x376 uint8_t                  field_0x376  (evidence: 0x005373F0)
     // +0x378 uint8_t                  field_0x378  (evidence: 0x005331F0, 0x00535610, 0x00545B80)
-    // +0x379 uint8_t                  field_0x379  (evidence: 0x00533340, 0x00533380, 0x005333C0, 0x00533400)
-    // +0x37C float                    field_0x37c  (evidence: 0x00533340)
-    // +0x380 float                    field_0x380  (evidence: 0x00533380)
-    // +0x384 uint32_t                 field_0x384  (evidence: 0x00533400)
-    // +0x388 uint32_t                 field_0x388  (evidence: 0x005333C0)
-    // +0x38C float                    field_0x38c  (evidence: 0x00533340)
-    // +0x390 float                    field_0x390  (evidence: 0x00533380)
-    // +0x394 uint32_t                 field_0x394  (evidence: 0x00533400)
-    // +0x398 uint32_t                 field_0x398  (evidence: 0x005333C0)
+    // +0x379 uint8_t                  field_0x379  (evidence: 0x00533340, 0x00533380, 0x005333C0, 0x00533400) // CONFLICT: multiple definitions at +0x379
+    // +0x379 uint8_t                  flag  (evidence: 0x005332A0) // CONFLICT: multiple definitions at +0x379
+    // +0x37C float                    field_0x37c  (evidence: 0x00533340) // CONFLICT: multiple definitions at +0x37C
+    // +0x37C float                    param_a_false  (evidence: 0x005332A0) // CONFLICT: multiple definitions at +0x37C
+    // +0x380 float                    field_0x380  (evidence: 0x00533380) // CONFLICT: multiple definitions at +0x380
+    // +0x380 float                    param_b_false  (evidence: 0x005332A0) // CONFLICT: multiple definitions at +0x380
+    // +0x384 uint32_t                 field_0x384  (evidence: 0x00533400) // CONFLICT: multiple definitions at +0x384
+    // +0x384 uint32_t                 param_c_false  (evidence: 0x005332A0) // CONFLICT: multiple definitions at +0x384
+    // +0x388 uint32_t                 field_0x388  (evidence: 0x005333C0) // CONFLICT: multiple definitions at +0x388
+    // +0x388 uint32_t                 param_d_false  (evidence: 0x005332A0) // CONFLICT: multiple definitions at +0x388
+    // +0x38C float                    field_0x38c  (evidence: 0x00533340) // CONFLICT: multiple definitions at +0x38C
+    // +0x38C float                    param_a_true  (evidence: 0x005332A0) // CONFLICT: multiple definitions at +0x38C
+    // +0x390 float                    field_0x390  (evidence: 0x00533380) // CONFLICT: multiple definitions at +0x390
+    // +0x390 float                    param_b_true  (evidence: 0x005332A0) // CONFLICT: multiple definitions at +0x390
+    // +0x394 uint32_t                 field_0x394  (evidence: 0x00533400) // CONFLICT: multiple definitions at +0x394
+    // +0x394 uint32_t                 param_c_true  (evidence: 0x005332A0) // CONFLICT: multiple definitions at +0x394
+    // +0x398 uint32_t                 field_0x398  (evidence: 0x005333C0) // CONFLICT: multiple definitions at +0x398
+    // +0x398 uint32_t                 param_d_true  (evidence: 0x005332A0) // CONFLICT: multiple definitions at +0x398
     // +0x39C std::string              field_0x39C  (evidence: 0x005338B0)
     // +0x3B8 uint32_t                 field_0x3B8  (evidence: 0x00533910)
     // +0x3F4 float                    field_0x3F4  (evidence: 0x00533A30, 0x00535610, 0x00545B80, 0x005FF1C0)
@@ -54,11 +63,11 @@ struct OglRenderer_Fields {
     // +0x400 float                    field_0x400  (evidence: 0x00533AE0, 0x00535610, 0x00545B80, 0x005FF1C0)
     // +0x404 float                    field_0x404  (evidence: 0x00533AC0, 0x00535610, 0x00545B80, 0x005FF1C0)
     // +0x408 float                    field_0x408  (evidence: 0x00533AD0, 0x00535610, 0x00545B80, 0x005FF1C0)
-    // +0x430 uint8_t                  field_0x430  (evidence: 0x00533340, 0x00533380, 0x005333C0, 0x00533400)
-    // +0x44C uint32_t                 field_0x44C  (evidence: 0x00533400)
-    // +0x450 uint32_t                 field_0x450  (evidence: 0x005333C0)
-    // +0x454 float                    field_0x454  (evidence: 0x00533340)
-    // +0x458 float                    field_0x458  (evidence: 0x00533380)
+    // +0x430 uint8_t                  field_0x430  (evidence: 0x005332A0, 0x00533340, 0x00533380, 0x005333C0, 0x00533400)
+    // +0x44C uint32_t                 field_0x44C  (evidence: 0x005332A0, 0x00533400)
+    // +0x450 uint32_t                 field_0x450  (evidence: 0x005332A0, 0x005333C0)
+    // +0x454 float                    field_0x454  (evidence: 0x005332A0, 0x00533340)
+    // +0x458 float                    field_0x458  (evidence: 0x005332A0, 0x00533380)
     // +0x464 uint8_t                  field_0x464  (evidence: 0x00536D00)
     // +0x498 uint32_t                 field_0x498  (evidence: 0x00533D10)
 };

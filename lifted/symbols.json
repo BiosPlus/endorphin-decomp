@@ -25757,6 +25757,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x300 and tail-calls sub_0052EB20.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005332A0": {
+    "name": "OglRenderer::vfunc_14",
+    "class": "OglRenderer",
+    "signature": "void fn_005332A0(void* self, uint8_t flag)",
+    "summary": "Stores a flag, selects between two sets of per-mode float/uint32 parameters based on it, writes them to +0x44C..+0x458, sets +0x430 = 1, then invokes the virtual slot at vtable+0x154.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00533340": {
     "name": "OglRenderer::vfunc_15",
     "class": "OglRenderer",

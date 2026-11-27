@@ -1,0 +1,100 @@
+{
+  "va": "0x005332A0",
+  "size": 147,
+  "orig_symbol": "OglRenderer::vfunc_14",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_14",
+  "class": "OglRenderer",
+  "signature": "void fn_005332A0(void* self, uint8_t flag)",
+  "summary": "Stores a flag, selects between two sets of per-mode float/uint32 parameters based on it, writes them to +0x44C..+0x458, sets +0x430 = 1, then invokes the virtual slot at vtable+0x154.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x379",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x37C",
+      "type": "float",
+      "name": "param_a_false"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x380",
+      "type": "float",
+      "name": "param_b_false"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x384",
+      "type": "uint32_t",
+      "name": "param_c_false"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x388",
+      "type": "uint32_t",
+      "name": "param_d_false"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38C",
+      "type": "float",
+      "name": "param_a_true"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x390",
+      "type": "float",
+      "name": "param_b_true"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x394",
+      "type": "uint32_t",
+      "name": "param_c_true"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x398",
+      "type": "uint32_t",
+      "name": "param_d_true"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x430",
+      "type": "uint8_t",
+      "name": "field_0x430"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x44C",
+      "type": "uint32_t",
+      "name": "field_0x44C"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x450",
+      "type": "uint32_t",
+      "name": "field_0x450"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x454",
+      "type": "float",
+      "name": "field_0x454"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x458",
+      "type": "float",
+      "name": "field_0x458"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:40:35Z"
+}

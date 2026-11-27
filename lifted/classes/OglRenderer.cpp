@@ -369,3 +369,55 @@ void __thiscall fn_005338B0(void* self, void* src) {
     ext_0054C770(subobject, hdc);
 }
 } // namespace lift_005338B0
+
+// [0x005332A0] OglRenderer::vfunc_14 (147 bytes)
+namespace lift_005332A0 {
+// @name OglRenderer::vfunc_14
+// @class OglRenderer
+// @summary Stores a flag, selects between two sets of per-mode float/uint32 parameters based on it, writes them to +0x44C..+0x458, sets +0x430 = 1, then invokes the virtual slot at vtable+0x154.
+// @field OglRenderer +0x379 uint8_t flag
+// @field OglRenderer +0x37C float param_a_false
+// @field OglRenderer +0x380 float param_b_false
+// @field OglRenderer +0x384 uint32_t param_c_false
+// @field OglRenderer +0x388 uint32_t param_d_false
+// @field OglRenderer +0x38C float param_a_true
+// @field OglRenderer +0x390 float param_b_true
+// @field OglRenderer +0x394 uint32_t param_c_true
+// @field OglRenderer +0x398 uint32_t param_d_true
+// @field OglRenderer +0x430 uint8_t field_0x430
+// @field OglRenderer +0x44C uint32_t field_0x44C
+// @field OglRenderer +0x450 uint32_t field_0x450
+// @field OglRenderer +0x454 float field_0x454
+// @field OglRenderer +0x458 float field_0x458
+void fn_005332A0(void* self, uint8_t flag) {
+    lift_field<uint8_t>(self, 0x379) = flag;
+
+    // Float pair 1: flag ? [+0x38C] : [+0x37C] -> [+0x454]
+    lift_field<float>(self, 0x454) = flag
+        ? lift_field<float>(self, 0x38C)
+        : lift_field<float>(self, 0x37C);
+
+    // Float pair 2: flag ? [+0x390] : [+0x380] -> [+0x458]
+    lift_field<float>(self, 0x458) = flag
+        ? lift_field<float>(self, 0x390)
+        : lift_field<float>(self, 0x380);
+
+    // Dword: flag ? [+0x394] : [+0x384] -> [+0x44C]
+    lift_field<uint32_t>(self, 0x44C) = flag
+        ? lift_field<uint32_t>(self, 0x394)
+        : lift_field<uint32_t>(self, 0x384);
+
+    // Dword: flag ? [+0x398] : [+0x388] -> [+0x450]
+    lift_field<uint32_t>(self, 0x450) = flag
+        ? lift_field<uint32_t>(self, 0x398)
+        : lift_field<uint32_t>(self, 0x388);
+
+    lift_field<uint8_t>(self, 0x430) = 1;
+
+    // Indirect virtual call: (*(void**)self)[+0x154](self)
+    void* vtbl = lift_field<void*>(self, 0);
+    using VFn = void(__thiscall*)(void*);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x154));
+    target(self);
+}
+} // namespace lift_005332A0
