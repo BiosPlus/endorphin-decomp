@@ -2075,3 +2075,44 @@ extern void* __cdecl sub_005FFFB0() {
     return mem_00B47078;
 }
 } // namespace lift_005FFFB0
+
+// [0x005FF8A0] sub_005FF8A0 (128 bytes)
+namespace lift_005FF8A0 {
+// Known callee 0x0040ECB0: Unknown::PushBackString_0040ECB0 (push_back of one 28-byte std::string onto a vector-like {begin,end,capacity} container; fast path constructs in place, slow path defers to ext_0040EBF0.)
+extern void ext_0040ECB0(void* self, const void* value);
+// Known callee 0x005FC050: makeFromTypeName_005FC050 (Gets the type_info name of a static type and forwards it as std::string to sub_0066AC90, returning the sret result)
+extern void* ext_005FC050(void* out);
+extern int mem_00924FF4;
+extern uint8_t mem_00B5962C[];
+
+// @name initTypeNameRecord_005FF8A0
+// @class <ClassName> (optional)
+// @summary Initializes a 0x24-byte record, builds a std::string type name via ext_005FC050, pushes it into the global string list at mem_00B5962C, destroys the temporary and returns the record.
+// @field <ClassName> +0x00 uint32_t vtable
+// @field <ClassName> +0x08 uint32_t field_0x08
+// @field <ClassName> +0x0C uint32_t field_0x0C
+// @field <ClassName> +0x10 uint32_t field_0x10
+// @field <ClassName> +0x18 uint32_t field_0x18
+// @field <ClassName> +0x1C uint32_t field_0x1C
+// @field <ClassName> +0x20 uint32_t field_0x20
+void* fn_005FF8A0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0096F3F4u;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+    lift_field<uint32_t>(self, 0x0C) = 0u;
+    lift_field<uint32_t>(self, 0x10) = 0u;
+    lift_field<uint32_t>(self, 0x18) = 0u;
+    lift_field<uint32_t>(self, 0x1C) = 0u;
+    lift_field<uint32_t>(self, 0x20) = 0u;
+
+    // 28-byte std::string temporary (MSVC 2005 layout).
+    alignas(8) unsigned char tmp[28] = {};
+    void* value = ext_005FC050(tmp);
+    ext_0040ECB0(mem_00B5962C, value);
+
+    // Destroy the temporary through the basic_string destructor slot.
+    auto dtor = reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(tmp);
+
+    return self;
+}
+} // namespace lift_005FF8A0

@@ -60494,6 +60494,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FF8A0": {
+    "name": "initTypeNameRecord_005FF8A0",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void* fn_005FF8A0(void* self)",
+    "summary": "Initializes a 0x24-byte record, builds a std::string type name via ext_005FC050, pushes it into the global string list at mem_00B5962C, destroys the temporary and returns the record.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FF920": {
     "name": "sub_005FF920",
     "signature": "void* fn_005FF920(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",

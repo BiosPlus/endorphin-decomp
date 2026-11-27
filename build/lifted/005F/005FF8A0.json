@@ -1,0 +1,58 @@
+{
+  "va": "0x005FF8A0",
+  "size": 128,
+  "orig_symbol": "sub_005FF8A0",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "initTypeNameRecord_005FF8A0",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void* fn_005FF8A0(void* self)",
+  "summary": "Initializes a 0x24-byte record, builds a std::string type name via ext_005FC050, pushes it into the global string list at mem_00B5962C, destroys the temporary and returns the record.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:53:00Z"
+}
