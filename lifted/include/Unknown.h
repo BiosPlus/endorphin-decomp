@@ -32,6 +32,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 bucketBase  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    buffer  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (container header pointer, passed through to compareIndexedElementsGreater)  (evidence: 0x00518700) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t ptr_0x00 (pointer value used as "self" for copyFieldsFrom)  (evidence: 0x004BF710) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int32_t                  count  (evidence: 0x00783940, 0x008635C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count  (evidence: 0x006D2300, 0x007B3120, 0x0085BEC0) // CONFLICT: multiple definitions at +0x0
@@ -291,6 +292,7 @@ struct Unknown_Fields {
     // +0x4   ptr                      subobject  (evidence: 0x00486980, 0x006721D0, 0x006722B0, 0x006722D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 subobjectVtable  (evidence: 0x004F0A90) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    subobjectVtable  (evidence: 0x005ECD40) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t field_0x04 (embedded object; only its address is taken)  (evidence: 0x004BF710) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              text0  (evidence: 0x004030F0, 0x00404E40) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    vec4[4]  (evidence: 0x0054F3A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    vec_y_base  (evidence: 0x008044A0) // CONFLICT: multiple definitions at +0x4

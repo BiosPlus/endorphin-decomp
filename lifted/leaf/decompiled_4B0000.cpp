@@ -1824,3 +1824,26 @@ void* __stdcall fn_004BC770(void* out, void* obj) {
 }
 } // namespace lift_0058F770
 } // namespace lift_004BC770
+
+// [0x004BF710] sub_004BF710 (77 bytes)
+namespace lift_004BF710 {
+// Known callee 0x006619D0: Unknown::copyFieldsFrom (Copy-assigns the three DWORD fields from src into self (skipping self-assignment) and sets the flag byte at +0x00 to 1; returns self.)
+extern void* __thiscall ext_006619D0(void* self, const void* src);
+// Known callee 0x00466870: destroyTwoMembers_00466870 (Destroys two embedded 0x28-byte member objects at +0x38 and +0x10 by freeing their +0x18 buffers and calling sub_00678DE0.)
+extern void __thiscall ext_00466870(void* self);
+
+// @name Unknown::copyFromFirstThenDestroyEmbedded
+// @class Unknown
+// @summary Copies fields from the object at this+0x04 into the object whose pointer is stored at this+0x00, then destroys the embedded object at this+0x04.
+// @field Unknown +0x00 uint32_t ptr_0x00 (pointer value used as "self" for copyFieldsFrom)
+// @field Unknown +0x04 uint8_t field_0x04 (embedded object; only its address is taken)
+void fn_004BF710(void* self) {
+    // Original: ecx = [this]; esi = this + 4;
+    // copyFieldsFrom(ecx, esi); destroy(esi);
+    const uintptr_t first = static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x00));
+    void* embedded = static_cast<uint8_t*>(self) + 0x04;
+
+    ext_006619D0(reinterpret_cast<void*>(first), embedded);
+    ext_00466870(embedded);
+}
+} // namespace lift_004BF710

@@ -15712,6 +15712,13 @@
     "summary": "Initializes object state: sets dword +0x00 to 0x0C, dword +0x04 to 0, byte +0x08 to 1; returns this in eax.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004BF710": {
+    "name": "Unknown::copyFromFirstThenDestroyEmbedded",
+    "class": "Unknown",
+    "signature": "void fn_004BF710(void* self)",
+    "summary": "Copies fields from the object at this+0x04 into the object whose pointer is stored at this+0x00, then destroys the embedded object at this+0x04.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BFBD0": {
     "name": "sub_004BFBD0",
     "signature": "extern \"C\" void fn_004BFBD0(void)",

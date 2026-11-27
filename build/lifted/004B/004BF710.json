@@ -1,0 +1,28 @@
+{
+  "va": "0x004BF710",
+  "size": 77,
+  "orig_symbol": "sub_004BF710",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::copyFromFirstThenDestroyEmbedded",
+  "class": "Unknown",
+  "signature": "void fn_004BF710(void* self)",
+  "summary": "Copies fields from the object at this+0x04 into the object whose pointer is stored at this+0x00, then destroys the embedded object at this+0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t ptr_0x00 (pointer value used as \"self\" for",
+      "name": "copyFieldsFrom)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t field_0x04 (embedded object; only its address is",
+      "name": "taken)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:36:12Z"
+}
