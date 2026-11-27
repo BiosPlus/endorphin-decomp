@@ -1927,3 +1927,21 @@ void fn_00559C80(void* self) {
     capacity = 0;
 }
 } // namespace lift_00559C80
+
+// [0x0055B720]
+namespace lift_0055B720 {
+// @name Unknown::ResetContainers
+// @class Unknown
+// @summary Destroys the string vector at +0x28 and the record vector at +0x18 (SEH cleanup frame omitted).
+// @field Unknown +0x18 void* field_0x18 (record vector; passed to ext_00559C80)
+// @field Unknown +0x28 void* field_0x28 (std::vector<std::string>; passed to ext_004026E0)
+
+void ext_004026E0(void* this_ptr);
+void ext_00559C80(void* self);
+
+void __thiscall fn_0055B720(void* this_ptr) {
+    auto* self = reinterpret_cast<uint8_t*>(this_ptr);
+    ext_004026E0(self + 0x28);
+    ext_00559C80(self + 0x18);
+}
+} // namespace lift_0055B720

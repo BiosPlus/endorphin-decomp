@@ -537,6 +537,7 @@ struct Unknown_Fields {
     // +0x18  std::uint32_t            elemScale  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    embedded  (evidence: 0x00537A30) // CONFLICT: multiple definitions at +0x18
     // +0x18  DWORD                    entryCount  (evidence: 0x006FC250) // CONFLICT: multiple definitions at +0x18
+    // +0x18  void* field_0x18 (record vector; passed to ext_00559C80)  (evidence: 0x0055B720) // CONFLICT: multiple definitions at +0x18
     // +0x18  DWORD                    field_0x18  (evidence: 0x0041C630, 0x005172A0, 0x005555D0, 0x005B34C0, 0x006FC200, 0x006FC950) // CONFLICT: multiple definitions at +0x18
     // +0x18  double                   field_0x18  (evidence: 0x0050F970, 0x006722B0, 0x0067B2F0, 0x0067B310, 0x0067B390, 0x00766240, 0x0077FB40) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    field_0x18  (evidence: 0x004CCC30, 0x004CF910, 0x00538CF0, 0x00549A10, 0x0054A070, 0x0055CD10, 0x005B1B60, 0x005B1B90, 0x005B1FA0, 0x00610C10, 0x0067B8D0, 0x0067DBF0, 0x006C9DC0, 0x007C8490, 0x007CAF70, 0x007CAFD0, 0x007CB010, 0x007CCAB0, 0x007CCBB0, 0x007E4870, 0x007E80E0, 0x007FC490) // CONFLICT: multiple definitions at +0x18
@@ -673,6 +674,7 @@ struct Unknown_Fields {
     // +0x28  void**                   data_28  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x28
     // +0x28  int32_t                  elementCount  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t cursor (0 = needs recompute; written on exit)  (evidence: 0x00796660) // CONFLICT: multiple definitions at +0x28
+    // +0x28  void* field_0x28 (std::vector<std::string>; passed to ext_004026E0)  (evidence: 0x0055B720) // CONFLICT: multiple definitions at +0x28
     // +0x28  Buffer                   field_0x28  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x28
     // +0x28  DWORD                    field_0x28  (evidence: 0x005B34C0, 0x0063EC10, 0x0078C230, 0x0078C3A0, 0x00798710) // CONFLICT: multiple definitions at +0x28
     // +0x28  StringArray              field_0x28  (evidence: 0x00557280) // CONFLICT: multiple definitions at +0x28
