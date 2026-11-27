@@ -2893,3 +2893,23 @@ void* __thiscall fn_007853D0(void* self, DWORD arg1, DWORD arg2, DWORD arg3) {
     return self;
 }
 } // namespace lift_007853D0
+
+// [0x007877E0]
+namespace lift_007877E0 {
+// @name Unknown::initSubobjectsAndSetVtable_007877E0
+// @class Unknown
+// @summary Initializes two sub-objects via ext_007853D0, sets the vtable pointer at +0x00, runs ext_00788C40 on this, and returns this.
+// @field Unknown +0x00 DWORD vtable
+
+extern void* ext_007853D0(void* self, DWORD arg1, DWORD arg2, DWORD arg3);
+extern void ext_00788C40(void* self);
+
+void* fn_007877E0(void* self) {
+    // Original asm: SEH frame setup (fs:[0] push/pop) and try-level bookkeeping
+    // are omitted; they carry no data semantics for the leaf.
+    ext_007853D0(self, 0x00AAF550, 0x00AAF520, 4);
+    lift_field<DWORD>(self, 0x00) = 0x00996F6C;
+    ext_00788C40(self);
+    return self;
+}
+} // namespace lift_007877E0

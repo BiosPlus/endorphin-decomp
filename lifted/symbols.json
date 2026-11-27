@@ -79859,6 +79859,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
+  "0x007877E0": {
+    "name": "Unknown::initSubobjectsAndSetVtable_007877E0",
+    "class": "Unknown",
+    "signature": "void* fn_007877E0(void* self)",
+    "summary": "Initializes two sub-objects via ext_007853D0, sets the vtable pointer at +0x00, runs ext_00788C40 on this, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00787840": {
     "name": "sub_00787840",
     "signature": "extern \"C\" void* __fastcall fn_00787840(void* self, int edx_unused, unsigned int flags)",
