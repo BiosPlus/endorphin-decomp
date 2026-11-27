@@ -1,0 +1,14 @@
+{
+  "va": "0x004F6D40",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setZ(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType_MatrixWithProperties_InitStatic",
+  "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setZ(float)\u003e",
+  "signature": "void fn_004F6D40(void* self)",
+  "summary": "One-time lazy init of the shared static ReadWriteMethodType object, then stores its address into the argument's +0x04 slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:24:05Z"
+}

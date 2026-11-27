@@ -11013,3 +11013,27 @@ void fn_005222B0(void* self) {
     *slot = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_00AED28C));
 }
 } // namespace lift_005222B0
+
+// [0x004F6D40] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, float, &public: void __thiscall MatrixWithProperties::setZ(float)>::vfunc_40 (122 bytes)
+namespace lift_004F6D40 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AE9F18;
+extern int mem_00AE9F14;
+
+// @name ReadWriteMethodType_MatrixWithProperties_InitStatic
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, float, &public: void __thiscall MatrixWithProperties::setZ(float)>
+// @summary One-time lazy init of the shared static ReadWriteMethodType object, then stores its address into the argument's +0x04 slot.
+// @field ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, float, &public: void __thiscall MatrixWithProperties::setZ(float)> +0x04 void* field_0x04
+void fn_004F6D40(void* self) {
+    // Guard: initialize the static object exactly once (bit 0 of the guard dword).
+    if ((mem_00AE9F18 & 1) == 0) {
+        mem_00AE9F18 |= 1;
+        ext_0067A670(&mem_00AE9F14, 0);
+        // Install the vtable pointer for the static object.
+        mem_00AE9F14 = 0x0094DCE4;
+    }
+    // Both paths: arg->+0x04 = &static object.
+    lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9F14));
+}
+} // namespace lift_004F6D40
