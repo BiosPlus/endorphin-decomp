@@ -906,6 +906,12 @@
     "summary": "Copies one of two member strings by index (0 or 1) into the output string, or constructs from a default C-string.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040AC20": {
+    "name": "BuildFormattedString",
+    "signature": "void* __stdcall fn_0040AC20(void* out_str)",
+    "summary": "Concatenates a string literal with a global std::string, dispatches via StringBeginEndDispatch, and copies the result to out.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040AE10": {
     "name": "sub_0040AE10",
     "signature": "extern \"C\" void __fastcall fn_0040AE10(void* self)",
@@ -79556,6 +79562,12 @@
     "summary": "Three-way signed int compare: returns -1 if a \u003c b, 1 if a \u003e b, else 0.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CA080": {
+    "name": "transformPointBetweenObjects",
+    "signature": "void fn_007CA080(const void* fromObj, const float* src, const void* toObj, float* out)",
+    "summary": "Transforms a 3D point from one object's local space to another's using their 4x4 matrices at +0x110, or copies it if both objects are null.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CA110": {
     "name": "sub_007CA110",
     "signature": "extern \"C\" void fn_007CA110(void)",
@@ -80559,6 +80571,13 @@
     "class": "NM::Vector3",
     "signature": "void fn_007E4770(void* self)",
     "summary": "Scales the 3-float vector at self to unit length in place; a zero-length vector is left unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
+  },
+  "0x007E47E0": {
+    "name": "Transform34::inverseTransformPoint",
+    "class": "Transform34",
+    "signature": "void __thiscall sub_007E47E0(const void* self, const float* src, float* dst)",
+    "summary": "Transforms a 3D point by the inverse of a 3x4 rigid transform (subtract translation, multiply by 3x3 transpose).",
     "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
   },
   "0x007E4870": {

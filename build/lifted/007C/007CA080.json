@@ -1,0 +1,21 @@
+{
+  "va": "0x007CA080",
+  "size": 130,
+  "orig_symbol": "sub_007CA080",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "transformPointBetweenObjects",
+  "signature": "void fn_007CA080(const void* fromObj, const float* src, const void* toObj, float* out)",
+  "summary": "Transforms a 3D point from one object's local space to another's using their 4x4 matrices at +0x110, or copies it if both objects are null.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x110",
+      "type": "float[16]",
+      "name": "worldMatrix"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:22:31Z"
+}

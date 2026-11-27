@@ -2078,3 +2078,42 @@ void fn_007C7010(void* self, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)
     }
 }
 } // namespace lift_007C7010
+
+// [0x007CA080]
+namespace lift_007CA080 {
+// @name transformPointBetweenObjects
+// @summary Transforms a 3D point from one object's local space to another's using their 4x4 matrices at +0x110, or copies it if both objects are null.
+// @field Object +0x110 float[16] worldMatrix
+
+
+extern void ext_007DB640(const float* src, const float* m, float* out);
+extern void ext_007FC440(const float* src, const float* m, float* out);
+
+void fn_007CA080(const void* fromObj, const float* src, const void* toObj, float* out) {
+    if (fromObj != nullptr) {
+        const float* fromMatrix = reinterpret_cast<const float*>(
+            reinterpret_cast<const uint8_t*>(fromObj) + 0x110);
+        if (toObj != nullptr) {
+            float temp[3];
+            ext_007FC440(src, fromMatrix, temp);
+            const float* toMatrix = reinterpret_cast<const float*>(
+                reinterpret_cast<const uint8_t*>(toObj) + 0x110);
+            ext_007DB640(temp, toMatrix, out);
+        } else {
+            ext_007FC440(src, fromMatrix, out);
+        }
+        return;
+    }
+
+    if (toObj != nullptr) {
+        const float* toMatrix = reinterpret_cast<const float*>(
+            reinterpret_cast<const uint8_t*>(toObj) + 0x110);
+        ext_007DB640(src, toMatrix, out);
+        return;
+    }
+
+    out[0] = src[0];
+    out[1] = src[1];
+    out[2] = src[2];
+}
+} // namespace lift_007CA080
