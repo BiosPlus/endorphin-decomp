@@ -1912,3 +1912,39 @@ void fn_0079EF70(void* self) {
     }
 }
 } // namespace lift_0079EF70
+
+// [0x0079E950] sub_0079E950 (128 bytes)
+namespace lift_0079E950 {
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+
+extern int mem_0092522C;       // IAT slot for MSVCR80!calloc (metadata only; calloc used directly)
+extern uint8_t mem_009977ED;   // element count (u8), also used as calloc num and loop bound
+extern uintptr_t mem_00B6114C; // pointer to dword table allocated by calloc
+extern uint8_t mem_00B61219;   // flag: continue with table init even if calloc failed
+extern uint8_t mem_00B61150;   // cleared on exit
+extern uint8_t mem_00B61151;   // cleared on exit
+
+// @name AllocAndClearIndexTable
+// @summary Callocs a dword table of mem_009977ED entries into mem_00B6114C, zeroes every entry, and clears two flag bytes; on calloc failure it calls ext_007AA510(1) and only proceeds if mem_00B61219 is set.
+void fn_0079E950() {
+    (void)&mem_0092522C;
+
+    uint32_t* table = static_cast<uint32_t*>(std::calloc(mem_009977ED, sizeof(uint32_t)));
+    mem_00B6114C = reinterpret_cast<uintptr_t>(table);
+
+    if (table == nullptr) {
+        ext_007AA510(1);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+    }
+
+    for (uint8_t i = 0; i < mem_009977ED; ++i) {
+        table[i] = 0;
+    }
+
+    mem_00B61150 = 0;
+    mem_00B61151 = 0;
+}
+} // namespace lift_0079E950

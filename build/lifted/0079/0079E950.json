@@ -1,0 +1,13 @@
+{
+  "va": "0x0079E950",
+  "size": 128,
+  "orig_symbol": "sub_0079E950",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "AllocAndClearIndexTable",
+  "signature": "extern \"C\" int mem_0092522C;       // IAT slot for MSVCR80!calloc (metadata only; calloc used directly) extern \"C\" uint8_t mem_009977ED;   // element count (u8), also used as calloc num and loop bound extern \"C\" uintptr_t mem_00B6114C; // pointer to dword table allocated by calloc extern \"C\" uint8_t mem_00B61219;   // flag: continue with table init even if calloc failed extern \"C\" uint8_t mem_00B61150;   // cleared on exit extern \"C\" uint8_t mem_00B61151;   // cleared on exit void fn_0079E950()",
+  "summary": "Callocs a dword table of mem_009977ED entries into mem_00B6114C, zeroes every entry, and clears two flag bytes; on calloc failure it calls ext_007AA510(1) and only proceeds if mem_00B61219 is set.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:13:57Z"
+}
