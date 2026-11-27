@@ -1,0 +1,22 @@
+{
+  "va": "0x006B1250",
+  "size": 147,
+  "orig_symbol": "GWCRGBPropertiesFactory::vfunc_1",
+  "src_path": "src/classes/GWCRGBPropertiesFactory.cpp",
+  "lifted_path": "lifted/classes/GWCRGBPropertiesFactory.cpp",
+  "name": "GWCRGBPropertiesFactory::vfunc_1",
+  "class": "GWCRGBPropertiesFactory",
+  "signature": "extern \"C\" void* __thiscall fn_006B1250(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+  "summary": "Creates and initializes an RGB properties object when type matches 0x64",
+  "fields": [
+    {
+      "class": "GWCRGBPropertiesFactory",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:04:49Z"
+}
