@@ -1,0 +1,27 @@
+{
+  "va": "0x007AF420",
+  "size": 151,
+  "orig_symbol": "sub_007AF420",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "AppendAndSortPtrArray",
+  "signature": "void __cdecl fn_007AF420(void* obj, uintptr_t base, int32_t count)",
+  "summary": "Appends pointers to 0x14-byte elements into a GlobalAlloc pointer array and sorts it if previously non-empty.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x214",
+      "type": "void*",
+      "name": "field_0x214"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x218",
+      "type": "int32_t",
+      "name": "field_0x218"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:17:15Z"
+}

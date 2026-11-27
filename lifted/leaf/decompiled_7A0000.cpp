@@ -1546,3 +1546,48 @@ void* fn_007AB2F0(void* self) {
     return self;
 }
 } // namespace lift_007AB2F0
+
+// [0x007AF420]
+namespace lift_007AF420 {
+extern void* __cdecl ext_0079AF60(void* src, uint32_t size);
+extern uint32_t __cdecl ext_0079AF40(uint32_t size);
+extern uintptr_t mem_00925298;
+
+// @name AppendAndSortPtrArray
+// @summary Appends pointers to 0x14-byte elements into a GlobalAlloc pointer array and sorts it if previously non-empty.
+// @field Obj +0x214 void* field_0x214
+// @field Obj +0x218 int32_t field_0x218
+void __cdecl fn_007AF420(void* obj, uintptr_t base, int32_t count) {
+    int32_t old_count = lift_field<int32_t>(obj, 0x218);
+    uintptr_t buf = 0;
+    if (old_count > 0) {
+        uint32_t new_bytes = static_cast<uint32_t>(old_count + count) << 2;
+        buf = reinterpret_cast<uintptr_t>(
+            ext_0079AF60(lift_field<void*>(obj, 0x214), new_bytes));
+    } else {
+        uint32_t new_bytes = static_cast<uint32_t>(count) << 2;
+        buf = static_cast<uintptr_t>(ext_0079AF40(new_bytes));
+    }
+
+    int32_t cur_count = lift_field<int32_t>(obj, 0x218);
+    lift_field<uintptr_t>(obj, 0x214) = buf;
+
+    uint32_t* dst = reinterpret_cast<uint32_t*>(buf + static_cast<intptr_t>(cur_count) * 4);
+    if (count > 0) {
+        uintptr_t elem = base;
+        for (int32_t i = 0; i < count; ++i) {
+            *dst++ = static_cast<uint32_t>(elem);
+            elem += 0x14;
+        }
+    }
+
+    int32_t prev_count = lift_field<int32_t>(obj, 0x218);
+    int32_t total = prev_count + count;
+    lift_field<int32_t>(obj, 0x218) = total;
+    if (prev_count > 0) {
+        using QsortFn = void(__cdecl*)(void*, uint32_t, uint32_t, uintptr_t);
+        auto qsort_fn = reinterpret_cast<QsortFn>(mem_00925298);
+        qsort_fn(lift_field<void*>(obj, 0x214), static_cast<uint32_t>(total), 4, 0x007AF4C0);
+    }
+}
+} // namespace lift_007AF420
