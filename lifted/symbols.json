@@ -84931,6 +84931,13 @@
     "summary": "Returns address of global mem_00AB6B0C.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080EFD0": {
+    "name": "findMatchingNode_0080EFD0",
+    "class": "ListNode",
+    "signature": "void* fn_0080EFD0(void* arg1, void* arg2)",
+    "summary": "Calls optional hook 0, walks the global list at mem_00B83EA8 comparing each node's key with arg1 via areStringsOrObjectsEqual, optionally stores the matching node into *arg2, calls optional hook 1, and returns the matching node (or null).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080F040": {
     "name": "areStringsOrObjectsEqual",
     "signature": "int32_t fn_0080F040(void* a, void* b)",

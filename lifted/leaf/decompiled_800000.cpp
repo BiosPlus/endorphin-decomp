@@ -1361,3 +1361,44 @@ void* fn_0080C790(void* self) {
     return nullptr;
 }
 } // namespace lift_0080C790
+
+// [0x0080EFD0] sub_0080EFD0 (112 bytes)
+namespace lift_0080EFD0 {
+// Known callee 0x0080F040: areStringsOrObjectsEqual (Returns 1 if compareStringsOrObjects(a, b) == 0, 0 if either pointer is null or the comparison is nonzero.)
+extern int32_t ext_0080F040(void* a, void* b);
+
+// Global hook slots and list head referenced by this function.
+// mem_00B83EA0 / mem_00B83EA4: optional cleanup/notify callbacks, invoked with 0.
+// mem_00B83EA8: head of a singly linked list of ListNode.
+extern void (*mem_00B83EA0)(int32_t);
+extern void (*mem_00B83EA4)(int32_t);
+extern void* mem_00B83EA8;
+
+// @name findMatchingNode_0080EFD0
+// @class ListNode
+// @summary Calls optional hook 0, walks the global list at mem_00B83EA8 comparing each node's key with arg1 via areStringsOrObjectsEqual, optionally stores the matching node into *arg2, calls optional hook 1, and returns the matching node (or null).
+// @field ListNode +0x00 void* next
+// @field ListNode +0x08 void* key
+void* fn_0080EFD0(void* arg1, void* arg2) {
+    if (mem_00B83EA0 != nullptr) {
+        mem_00B83EA0(0);
+    }
+
+    uint8_t* node = static_cast<uint8_t*>(mem_00B83EA8);
+    while (node != nullptr) {
+        void* key = lift_field<void*>(node, 0x08);
+        if (ext_0080F040(key, arg1) != 0) {
+            break;
+        }
+        if (arg2 != nullptr) {
+            *static_cast<void**>(arg2) = node;
+        }
+        node = static_cast<uint8_t*>(lift_field<void*>(node, 0x00));
+    }
+
+    if (mem_00B83EA4 != nullptr) {
+        mem_00B83EA4(0);
+    }
+    return node;
+}
+} // namespace lift_0080EFD0

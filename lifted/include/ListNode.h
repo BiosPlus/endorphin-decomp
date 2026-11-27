@@ -14,7 +14,7 @@ struct ListNode_Fields {
     // +0x0   uint32_t                 key  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t next (previous head of bucket list)  (evidence: 0x007F0B30) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 next  (evidence: 0x0049DB60) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    next  (evidence: 0x00456C70, 0x0049BEE0, 0x0049DBA0, 0x005BED50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    next  (evidence: 0x00456C70, 0x0049BEE0, 0x0049DBA0, 0x005BED50, 0x0080EFD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    prev  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint8_t*                 field_0x04  (evidence: 0x007AF8F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    next  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x4
@@ -23,6 +23,7 @@ struct ListNode_Fields {
     // +0x8   void* payload (object; vptr at offset 0, predicate in vtable slot 10 at +0x28)  (evidence: 0x0049BEE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_08  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x007C8690, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    key  (evidence: 0x0080EFD0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 next  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    next  (evidence: 0x007F6830) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    object  (evidence: 0x00456C70) // CONFLICT: multiple definitions at +0x8
