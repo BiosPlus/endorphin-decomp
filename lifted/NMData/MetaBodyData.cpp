@@ -513,3 +513,42 @@ void fn_005C01A0(void* self, uint32_t arg) {
     ext_005BEDD0(base, arg);
 }
 } // namespace lift_005C01A0
+
+// [0x005B8D00]
+namespace lift_005B8D00 {
+uintptr_t ext_00493E40(void* self);
+void ext_00528B90(void* self, void* peer);
+uintptr_t ext_005B5AF0(uintptr_t arg);
+
+// @name NMData::MetaBodyData::vfunc_34
+// @class NMData::MetaBodyData
+// @summary Creates or retrieves a render object via TransformInterface, links it to RenderObjectOwner, and returns it.
+// @field NMData::MetaBodyData +0x04 void* transformInterface_vptr
+// @field NMData::MetaBodyData +0x0C void* renderObjectOwner_vptr
+// @field NMData::MetaBodyData +0x158 void* field_0x158
+void* fn_005B8D00(void* self, void* arg0) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* field_158 = *reinterpret_cast<void**>(base + 0x158);
+    void* transform_iface = base + 0x04;
+    void* render_owner = base + 0x0C;
+
+    void** vtable = *reinterpret_cast<void***>(transform_iface);
+    using VFunc11 = uintptr_t (*)(void* self, void* owner, uint32_t zero);
+    VFunc11 fn = reinterpret_cast<VFunc11>(vtable[0x2C / 4]);
+    uintptr_t vcall_res = fn(transform_iface, render_owner, 0);
+
+    uintptr_t result;
+    if (field_158 != nullptr) {
+        result = ext_00493E40(arg0);
+        uint8_t* sub = static_cast<uint8_t*>(*reinterpret_cast<void**>(base + 0x158));
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(result) + 0x20) = sub + 0x24;
+    } else {
+        uintptr_t tmp = ext_005B5AF0(vcall_res);
+        (void)tmp;
+        result = ext_00493E40(arg0);
+    }
+
+    ext_00528B90(render_owner, reinterpret_cast<void*>(result));
+    return reinterpret_cast<void*>(result);
+}
+} // namespace lift_005B8D00
