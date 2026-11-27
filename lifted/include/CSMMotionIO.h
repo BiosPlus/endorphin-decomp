@@ -10,6 +10,7 @@
 // Recovered field layout for CSMMotionIO:
 namespace lifted_layout {
 struct CSMMotionIO_Fields {
+    // +0x5C  uint8_t[4]               field_0x5c  (evidence: 0x00572CC0)
     // +0x16C int32_t                  field_0x16c  (evidence: 0x005722F0)
     // +0x170 int32_t                  field_0x170  (evidence: 0x005722F0)
     // +0x414 void*                    field_0x414  (evidence: 0x005722F0)

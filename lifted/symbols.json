@@ -38846,6 +38846,13 @@
     "summary": "Allocates a 0x3C-byte record, stores three dwords, copies a string into the embedded sub-object, sets a flag byte, and returns the record (NULL on allocation failure).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00572CC0": {
+    "name": "CSMMotionIO::vfunc_11",
+    "class": "CSMMotionIO",
+    "signature": "void __fastcall fn_00572CC0(void* self, void* arg0)",
+    "summary": "Reads motion data from a file stream into a bone-name map and frame/joint arrays.",
+    "lifted_path": "lifted/classes/CSMMotionIO.cpp"
+  },
   "0x00573180": {
     "name": "sub_00573180",
     "class": "Unknown",
@@ -44381,6 +44388,13 @@
     "signature": "void fn_005AFAF0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0042E820 (UnknownClass::resetAndRelease).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005B0820": {
+    "name": "NMData::PoseData::vfunc_1",
+    "class": "NMData::PoseData",
+    "signature": "bool is_xml_sentinel(void* p)",
+    "summary": "Deserializes PoseData from an XML node, loading name, mode, two transform maps, and root transform matrix",
+    "lifted_path": "lifted/NMData/PoseData.cpp"
   },
   "0x005B0E60": {
     "name": "getTypeName",

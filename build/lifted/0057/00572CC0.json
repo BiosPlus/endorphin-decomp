@@ -1,0 +1,22 @@
+{
+  "va": "0x00572CC0",
+  "size": 1157,
+  "orig_symbol": "CSMMotionIO::vfunc_11",
+  "src_path": "src/classes/CSMMotionIO.cpp",
+  "lifted_path": "lifted/classes/CSMMotionIO.cpp",
+  "name": "CSMMotionIO::vfunc_11",
+  "class": "CSMMotionIO",
+  "signature": "void __fastcall fn_00572CC0(void* self, void* arg0)",
+  "summary": "Reads motion data from a file stream into a bone-name map and frame/joint arrays.",
+  "fields": [
+    {
+      "class": "CSMMotionIO",
+      "offset": "+0x5C",
+      "type": "uint8_t[4]",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:35:07Z"
+}
