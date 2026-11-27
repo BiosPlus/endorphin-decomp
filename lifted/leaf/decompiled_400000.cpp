@@ -2201,3 +2201,49 @@ extern void fn_004034B0(void* self) {
     lift_field<uint32_t>(self, 0xD8) = 0;
 }
 } // namespace lift_004034B0
+
+// [0x00406510]
+namespace lift_00406510 {
+// @name Unknown::copyStringRangeTruncate
+// @class Unknown
+// @summary Copies a std::string range through sub_00406090, destroys the old tail past the new end, stores the new end at this+0x08 and writes {a2, a3} to the sret pair at a1.
+// @field Unknown +0x08 uint32_t field_0x08
+
+extern uint32_t ext_00406090(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+extern uint32_t mem_00925134; // IAT slot: _invalid_parameter_noinfo
+extern uint32_t mem_00924FF4; // IAT slot: std::string destructor
+
+namespace {
+constexpr uint32_t kStdStringSize = 0x1c;
+}
+
+uint32_t __thiscall fn_00406510(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5) {
+    // Parameter validation: a2 must be non-null and equal to a4.
+    if (a2 == 0 || a2 != a4) {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    }
+
+    if (a3 != a5) {
+        uint32_t oldEnd = lift_field<uint32_t>(self, 0x08);
+
+        // The original clears the low byte of the a4 stack slot before pushing it.
+        a4 &= 0xFFFFFF00u;
+
+        uint32_t newEnd = ext_00406090(a5, oldEnd, a3, a1, a2, a4);
+
+        // Destroy elements in [newEnd, oldEnd).
+        for (uint32_t p = newEnd; p != oldEnd; p += kStdStringSize) {
+            reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(mem_00924FF4))(
+                reinterpret_cast<void*>(static_cast<uintptr_t>(p)));
+        }
+
+        lift_field<uint32_t>(self, 0x08) = newEnd;
+    }
+
+    // Write the pair {a2, a3} to the return slot and return it in eax.
+    auto* out = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(a1));
+    out[0] = a2;
+    out[1] = a3;
+    return a1;
+}
+} // namespace lift_00406510

@@ -690,6 +690,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00406510": {
+    "name": "Unknown::copyStringRangeTruncate",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall fn_00406510(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+    "summary": "Copies a std::string range through sub_00406090, destroys the old tail past the new end, stores the new end at this+0x08 and writes {a2, a3} to the sret pair at a1.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406590": {
     "name": "sub_00406590",
     "signature": "void fn_00406590(void* self, uint32_t flag)",
