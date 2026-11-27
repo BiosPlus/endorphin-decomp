@@ -1052,3 +1052,63 @@ void fn_006AD580(void* self, void* arg1, RECT* arg2, RECT* arg3) {
     drawFrameControl(hdc, arg3, 4u, state);
 }
 } // namespace lift_006AD580
+
+// [0x006AA890] sub_006AA890 (129 bytes)
+namespace lift_006AA890 {
+extern void ext_006A8980(void* self);
+extern void ext_006A6790(void* self, int32_t a, int32_t b);
+extern void ext_006A60EE(void* self);
+extern uint32_t mem_00925688;
+
+// @name Unknown::NotifyChildrenAndReset
+// @class Unknown
+// @summary Bumps a counter, ext_006A8980 prologue, notifies each child in the +0x78 array via vtable slot 1 with arg 1, resets state fields, then invalidates the window at +0x20 via USER32!InvalidateRect.
+// @field Unknown +0x19c int32_t field_0x19c
+// @field Unknown +0x20 void* field_0x20
+// @field Unknown +0x54 int32_t field_0x54
+// @field Unknown +0x58 int32_t field_0x58
+// @field Unknown +0x5c int32_t field_0x5c
+// @field Unknown +0x60 int32_t field_0x60
+// @field Unknown +0x64 int32_t field_0x64
+// @field Unknown +0x68 int32_t field_0x68
+// @field Unknown +0x74 uint8_t field_0x74
+// @field Unknown +0x78 void** field_0x78
+// @field Unknown +0x7c int32_t field_0x7c
+// @field Unknown +0x100 int32_t field_0x100
+void fn_006AA890(void* self) {
+    lift_field<int32_t>(self, 0x19c) += 1;
+
+    ext_006A8980(self);
+
+    for (int32_t i = 0; i < lift_field<int32_t>(self, 0x7c); ++i) {
+        if (i < 0 || i >= lift_field<int32_t>(self, 0x7c)) {
+            ext_006A60EE(self);
+            return;
+        }
+        void** items = lift_field<void**>(self, 0x78);
+        void* item = items[i];
+        if (item != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(item);
+            auto notify = reinterpret_cast<void (*)(void*, int32_t)>(vtbl[1]);
+            notify(item, 1);
+        }
+    }
+
+    ext_006A6790(&lift_field<uint8_t>(self, 0x74), 0, -1);
+
+    lift_field<int32_t>(self, 0x68) = 0;
+    lift_field<int32_t>(self, 0x60) = 0;
+    lift_field<int32_t>(self, 0x64) = 0;
+    lift_field<int32_t>(self, 0x58) = 0;
+    lift_field<int32_t>(self, 0x5c) = 0;
+    lift_field<int32_t>(self, 0x100) = 0;
+    lift_field<int32_t>(self, 0x54) = 0;
+
+    void* hwnd = lift_field<void*>(self, 0x20);
+    if (hwnd != nullptr) {
+        auto invalidateRect = reinterpret_cast<int (__stdcall*)(void*, const void*, int)>(
+            static_cast<uintptr_t>(mem_00925688));
+        invalidateRect(hwnd, nullptr, 1);
+    }
+}
+} // namespace lift_006AA890

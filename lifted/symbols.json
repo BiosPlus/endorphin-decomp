@@ -62139,6 +62139,13 @@
     "summary": "Locks or unlocks redraw of this object's window via LockWindowUpdate and sets the locked flag at +0x198.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AA890": {
+    "name": "Unknown::NotifyChildrenAndReset",
+    "class": "Unknown",
+    "signature": "void fn_006AA890(void* self)",
+    "summary": "Bumps a counter, ext_006A8980 prologue, notifies each child in the +0x78 array via vtable slot 1 with arg 1, resets state fields, then invalidates the window at +0x20 via USER32!InvalidateRect.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AAC90": {
     "name": "Unknown::UpdateValueAndInvalidate",
     "class": "Unknown",

@@ -1,0 +1,88 @@
+{
+  "va": "0x006AA890",
+  "size": 129,
+  "orig_symbol": "sub_006AA890",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::NotifyChildrenAndReset",
+  "class": "Unknown",
+  "signature": "void fn_006AA890(void* self)",
+  "summary": "Bumps a counter, ext_006A8980 prologue, notifies each child in the +0x78 array via vtable slot 1 with arg 1, resets state fields, then invalidates the window at +0x20 via USER32!InvalidateRect.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x19C",
+      "type": "int32_t",
+      "name": "field_0x19c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "int32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "int32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "int32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "int32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "int32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint8_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "void**",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "int32_t",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "int32_t",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:18:04Z"
+}
