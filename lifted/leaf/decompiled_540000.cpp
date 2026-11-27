@@ -1900,3 +1900,31 @@ void fn_0054F300(void* self) {
     ext_0054F210(iter, out, iter, begin, iter, end);
 }
 } // namespace lift_0054F300
+
+// [0x0054F3A0] sub_0054F3A0 (90 bytes)
+namespace lift_0054F3A0 {
+// Known callee 0x0054F300: Unknown::InitStateAndCopyTail_0054F300 (Sets the state flags, stores the float4 {0,0,0,1} at self+0x04, then runs the checked iterator guard and tail copy via ext_0054F210 on the iterator at self+0x18.)
+extern void ext_0054F300(void* self);
+// Known callee 0x0066A310: identityVec4Init (Writes the 4-float vector (0, 0, 0, 1) into the object at self (identity quaternion-style init).)
+extern void ext_0066A310(void* self);
+// Vtable address 0x0095704C stored at offset 0 of the object.
+extern int mem_0095704C;
+
+// @name Unknown::InitIdentityAndState_0054F3A0
+// @class Unknown
+// @summary Stores the class vtable, writes identity vec4 at +0x04, zeroes three dwords at +0x1c/+0x20/+0x24, then calls ext_0054F300 on self; returns self.
+// @field Unknown +0x00 void* vptr
+// @field Unknown +0x04 float vec4[4]
+// @field Unknown +0x1c DWORD field_0x1c
+// @field Unknown +0x20 DWORD field_0x20
+// @field Unknown +0x24 DWORD field_0x24
+extern void* fn_0054F3A0(void* self) {
+    lift_field<void*>(self, 0x00) = &mem_0095704C;
+    ext_0066A310(static_cast<uint8_t*>(self) + 0x04);
+    lift_field<DWORD>(self, 0x1c) = 0;
+    lift_field<DWORD>(self, 0x20) = 0;
+    lift_field<DWORD>(self, 0x24) = 0;
+    ext_0054F300(self);
+    return self;
+}
+} // namespace lift_0054F3A0

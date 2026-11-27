@@ -27240,6 +27240,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054F3A0": {
+    "name": "Unknown::InitIdentityAndState_0054F3A0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_0054F3A0(void* self)",
+    "summary": "Stores the class vtable, writes identity vec4 at +0x04, zeroes three dwords at +0x1c/+0x20/+0x24, then calls ext_0054F300 on self; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F400": {
     "name": "LightList::vfunc_0",
     "class": "LightList",

@@ -1,0 +1,46 @@
+{
+  "va": "0x0054F3A0",
+  "size": 90,
+  "orig_symbol": "sub_0054F3A0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::InitIdentityAndState_0054F3A0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* fn_0054F3A0(void* self)",
+  "summary": "Stores the class vtable, writes identity vec4 at +0x04, zeroes three dwords at +0x1c/+0x20/+0x24, then calls ext_0054F300 on self; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "vec4[4]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "DWORD",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:10:39Z"
+}
