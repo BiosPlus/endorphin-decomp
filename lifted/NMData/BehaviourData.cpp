@@ -307,3 +307,48 @@ void __thiscall fn_004ABE70(void* self, uint8_t al) {
     ext_00493EE0(ecx);
 }
 } // namespace lift_004ABE70
+
+// [0x004AA020] NMData::BehaviourData::vfunc_34 (148 bytes)
+namespace lift_004AA020 {
+// Known callee 0x00493E40: forwardVtableSlot194 (tail-jumps to a vtable slot, forwarding one stack argument)
+extern uintptr_t ext_00493E40(void* self, uintptr_t arg);
+// Known callee 0x00493E70: forwardVtable198_viaFirstField (dispatches to the first-field object's vtable slot +0x198)
+extern uintptr_t ext_00493E70(void* self);
+// Known callee 0x00528B90: Unknown::setPeerWithBackLink (stores peer at this+0x04; if non-null, writes this into peer+0x08)
+extern void ext_00528B90(void* self, void* peer);
+// Callee 0x005B5AF0 (sub_005B5AF0, 92B): one stack argument, returns a value
+extern uintptr_t ext_005B5AF0(uintptr_t arg);
+extern int mem_00B40640;
+
+// Virtual slot 3 of the embedded interface subobject at this+0x04.
+using InterfaceSlot3Fn = uintptr_t (*)(void* self, uintptr_t a, uintptr_t b, uintptr_t c);
+
+// @name NMData::BehaviourData::vfunc_34
+// @class NMData::BehaviourData
+// @summary Calls interface slot 3 on this+0x04, resolves the result through helpers; if the resolved object is non-null, forwards its peer link to this+0x0C and returns it.
+// @field NMData::BehaviourData +0x04 void** field_0x04
+// @field NMData::BehaviourData +0x0C void* field_0x0c
+uintptr_t fn_004AA020(void* self, void* obj) {
+    char* base = static_cast<char*>(self);
+
+    // Argument pointer: this+0x0C when self is non-null, otherwise null.
+    void* ptrA = self ? static_cast<void*>(base + 0x0C) : nullptr;
+
+    // Interface subobject at this+0x04: load its vptr and call slot 3 with this = &this->field_0x04.
+    void** vptr = lift_field<void**>(self, 0x04);
+    auto slot3 = reinterpret_cast<InterfaceSlot3Fn>(vptr[3]);
+    uintptr_t g = static_cast<uint32_t>(mem_00B40640);
+    uintptr_t r1 = slot3(base + 0x04, g, reinterpret_cast<uintptr_t>(ptrA), 0);
+
+    uintptr_t t = ext_005B5AF0(r1);
+
+    uintptr_t r2 = ext_00493E40(obj, t);
+    if (r2 == 0) {
+        return 0;
+    }
+
+    void* resolved = reinterpret_cast<void*>(ext_00493E70(obj));
+    ext_00528B90(base + 0x0C, resolved);
+    return reinterpret_cast<uintptr_t>(resolved);
+}
+} // namespace lift_004AA020

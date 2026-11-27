@@ -1,0 +1,28 @@
+{
+  "va": "0x004AA020",
+  "size": 148,
+  "orig_symbol": "NMData::BehaviourData::vfunc_34",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_34",
+  "class": "NMData::BehaviourData",
+  "signature": "uintptr_t fn_004AA020(void* self, void* obj)",
+  "summary": "Calls interface slot 3 on this+0x04, resolves the result through helpers; if the resolved object is non-null, forwards its peer link to this+0x0C and returns it.",
+  "fields": [
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:23Z"
+}

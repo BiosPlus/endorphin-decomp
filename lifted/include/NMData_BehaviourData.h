@@ -11,6 +11,8 @@
 namespace lifted_layout {
 struct NMData_BehaviourData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004A9A70, 0x004A9B70)
+    // +0x4   void**                   field_0x04  (evidence: 0x004AA020)
+    // +0xC   void*                    field_0x0c  (evidence: 0x004AA020)
     // +0x10  void*                    field_0x10  (evidence: 0x004ABF60)
     // +0x5C  uint8_t                  field_0x5c  (evidence: 0x004ABE70)
     // +0x168 uint32_t                 field_0x168  (evidence: 0x00486C20, 0x004A9C60, 0x004A9C90)
