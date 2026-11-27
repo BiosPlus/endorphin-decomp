@@ -22011,6 +22011,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x13C and tail-calls sub_00515B70.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x00500150": {
+    "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17",
+    "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e",
+    "signature": "void* fn_00500150(void* self, void* out_pair, void* src_obj)",
+    "summary": "Dynamic-casts input to NMData::EvolveParams, throws on failure, else writes bool* at +0x1D and type ptr to out pair.",
+    "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp"
+  },
   "0x00500290": {
     "name": "ExprParser::WriteMethodType\u003cEvolveEngine,float,stopWithFitness\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e",

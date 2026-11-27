@@ -1,0 +1,14 @@
+{
+  "va": "0x00500150",
+  "size": 151,
+  "orig_symbol": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17",
+  "src_path": "src/templates/PrimitiveProxyCreator.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp",
+  "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e::vfunc_17",
+  "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::EvolveParams, bool, 29\u003e",
+  "signature": "void* fn_00500150(void* self, void* out_pair, void* src_obj)",
+  "summary": "Dynamic-casts input to NMData::EvolveParams, throws on failure, else writes bool* at +0x1D and type ptr to out pair.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:16:15Z"
+}
