@@ -26394,6 +26394,13 @@
     "summary": "Fetches field_0x4 and field_0x8, resolves an element via ext_00661B50, then forwards it to the vtable slot at +0x10 of the argument object.",
     "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
   },
+  "0x00532590": {
+    "name": "HasCustomBufferedTMPtr::vfunc_12",
+    "class": "HasCustomBufferedTMPtr",
+    "signature": "uint32_t fn_00532590(void* self, void* target)",
+    "summary": "Fetches an element via ext_00661B50 at field_0x4, offsets it by 0x30, and tail-dispatches vtable slot 7 on the target object.",
+    "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
+  },
   "0x00532700": {
     "name": "HasCustomBufferedTMPtr::vfunc_1",
     "class": "HasCustomBufferedTMPtr",

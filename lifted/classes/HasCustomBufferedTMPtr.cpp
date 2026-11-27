@@ -160,3 +160,28 @@ uint32_t __thiscall fn_00532700(void* self, uint32_t arg) {
     return arg;
 }
 } // namespace lift_00532700
+
+// [0x00532590] HasCustomBufferedTMPtr::vfunc_12 (30 bytes)
+namespace lift_00532590 {
+// Known callee 0x00661B50: sub_00661B50 (Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index)
+extern uint32_t ext_00661B50(void* self, uint32_t index);
+
+// @name HasCustomBufferedTMPtr::vfunc_12
+// @class HasCustomBufferedTMPtr
+// @summary Fetches an element via ext_00661B50 at field_0x4, offsets it by 0x30, and tail-dispatches vtable slot 7 on the target object.
+// @field HasCustomBufferedTMPtr +0x04 uint32_t field_0x4
+// @field HasCustomBufferedTMPtr +0x08 uint32_t field_0x8
+uint32_t fn_00532590(void* self, void* target) {
+    const uint32_t index = lift_field<uint32_t>(self, 0x4);
+    const uint32_t wrapper = lift_field<uint32_t>(self, 0x8);
+    const uint32_t elem = ext_00661B50(reinterpret_cast<void*>(static_cast<uintptr_t>(wrapper)), index);
+
+    const uint32_t arg = elem + 0x30;
+
+    // Tail-dispatch: target->vtable[0x1c / 4] (slot 7) with the computed value.
+    void** vtbl = lift_field<void**>(target, 0);
+    using VFn = uint32_t (*)(void*, uint32_t);
+    VFn fn = reinterpret_cast<VFn>(vtbl[7]);
+    return fn(target, arg);
+}
+} // namespace lift_00532590

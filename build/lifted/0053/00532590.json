@@ -1,0 +1,28 @@
+{
+  "va": "0x00532590",
+  "size": 30,
+  "orig_symbol": "HasCustomBufferedTMPtr::vfunc_12",
+  "src_path": "src/classes/HasCustomBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp",
+  "name": "HasCustomBufferedTMPtr::vfunc_12",
+  "class": "HasCustomBufferedTMPtr",
+  "signature": "uint32_t fn_00532590(void* self, void* target)",
+  "summary": "Fetches an element via ext_00661B50 at field_0x4, offsets it by 0x30, and tail-dispatches vtable slot 7 on the target object.",
+  "fields": [
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    },
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:26Z"
+}
