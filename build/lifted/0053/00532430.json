@@ -1,0 +1,22 @@
+{
+  "va": "0x00532430",
+  "size": 23,
+  "orig_symbol": "HasBufferedTMPtr::vfunc_11",
+  "src_path": "src/classes/HasBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp",
+  "name": "HasBufferedTMPtr::vfunc_11",
+  "class": "HasBufferedTMPtr",
+  "signature": "void HasBufferedTMPtr_vfunc_11(void* self)",
+  "summary": "Reads a field from this, fetches a value from a global object via ext_00661B50, and passes it to glMultMatrixf.",
+  "fields": [
+    {
+      "class": "HasBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:06Z"
+}

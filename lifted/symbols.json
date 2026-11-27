@@ -26338,6 +26338,13 @@
     "summary": "Calls glTranslatef with the translation vector (+0x30..+0x38) of the objects referenced by fields +0x4 and +0x8.",
     "lifted_path": "lifted/classes/HasRelativeTMPtr.cpp"
   },
+  "0x00532430": {
+    "name": "HasBufferedTMPtr::vfunc_11",
+    "class": "HasBufferedTMPtr",
+    "signature": "void HasBufferedTMPtr_vfunc_11(void* self)",
+    "summary": "Reads a field from this, fetches a value from a global object via ext_00661B50, and passes it to glMultMatrixf.",
+    "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp"
+  },
   "0x00532770": {
     "name": "Unknown::resetVtableDestroyStringNotifyDialog_00532770",
     "class": "Unknown",
