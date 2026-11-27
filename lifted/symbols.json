@@ -79741,6 +79741,12 @@
     "summary": "Forwards to ReplaceGlobalBlock with a size of twice the count argument (count * 2 bytes).",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x00799040": {
+    "name": "validateCachedEntry",
+    "signature": "uint32_t fn_00799040(uint32_t self, uint32_t key1)",
+    "summary": "Validates a cached entry for key1 and reports an error via ext_0079B140 if missing or invalid.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x007990F0": {
     "name": "dispatchIfKeyEnabled",
     "signature": "inline void* toPtr(uint32_t addr)",
