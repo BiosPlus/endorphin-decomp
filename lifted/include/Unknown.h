@@ -1613,7 +1613,8 @@ struct Unknown_Fields {
     // +0x1EC void*                    field_0x1ec  (evidence: 0x0041B960) // CONFLICT: multiple definitions at +0x1EC
     // +0x1EC void* field_0x1ec (object pointer; vtable slot 15 = +0x3c takes a float)  (evidence: 0x0041B9E0) // CONFLICT: multiple definitions at +0x1EC
     // +0x1F0 uint32_t                 field_0x1F0  (evidence: 0x006C0580)
-    // +0x1F1 uint8_t                  flag1f1  (evidence: 0x005D0760, 0x005DD310)
+    // +0x1F1 uint8_t                  field_0x1f1  (evidence: 0x005D0240) // CONFLICT: multiple definitions at +0x1F1
+    // +0x1F1 uint8_t                  flag1f1  (evidence: 0x005D0760, 0x005DD310) // CONFLICT: multiple definitions at +0x1F1
     // +0x1F4 float                    field_0x1F4  (evidence: 0x005CFF60) // CONFLICT: multiple definitions at +0x1F4
     // +0x1F4 uint32_t                 field_0x1F4  (evidence: 0x006C0580) // CONFLICT: multiple definitions at +0x1F4
     // +0x1F4 uint8_t                  field_0x1F4  (evidence: 0x005B6C50) // CONFLICT: multiple definitions at +0x1F4
@@ -1623,7 +1624,7 @@ struct Unknown_Fields {
     // +0x200 DWORD                    field_0x200  (evidence: 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x200
     // +0x200 uint32_t                 field_0x200  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x200
     // +0x204 DWORD                    field_0x204  (evidence: 0x004A57F0, 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x204
-    // +0x204 float                    field_0x204  (evidence: 0x005D0610, 0x005D0670) // CONFLICT: multiple definitions at +0x204
+    // +0x204 float                    field_0x204  (evidence: 0x005D0240, 0x005D0610, 0x005D0670) // CONFLICT: multiple definitions at +0x204
     // +0x204 void*                    field_0x204  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x204
     // +0x204 DWORD                    vecBegin  (evidence: 0x005ECDC0) // CONFLICT: multiple definitions at +0x204
     // +0x208 DWORD                    field_0x208  (evidence: 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x208

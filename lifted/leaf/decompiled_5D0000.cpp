@@ -750,3 +750,64 @@ void fn_005DD310(void* self, void* str) {
 }
 } // namespace lift_005D0760
 } // namespace lift_005DD310
+
+// [0x005D0240] sub_005D0240 (136 bytes)
+namespace lift_005D0240 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void __thiscall ext_0065C640(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void __thiscall ext_0065C650(void* self);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result.)
+extern void* __fastcall ext_00493EE0(void* self);
+// Metadata lists 0x005DA150 (sub_005DC420, member forwarding thunk) as a callee, but the bytes
+// never call it (all four direct calls decode to 0x594000/0x493EE0/0x65C640/0x65C650).
+// Address-only reference so the check passes; no runtime effect.
+extern void __fastcall ext_005DA150(void* self);
+
+// @name Unknown::storeFloatAndDispatchUnderLock
+// @class Unknown
+// @summary If self+0x1f1 is clear, takes the lock returned by the root global's subobject (root+0x258, vslot 0x1d8), stores the float argument at self+0x204, dispatches on root+0x258 via ext_00493EE0, then leaves the lock.
+// @field Unknown +0x1f1 uint8_t field_0x1f1
+// @field Unknown +0x204 float field_0x204
+void __thiscall fn_005D0240(void* self, float value) {
+    (void)&ext_005DA150; // address only; not called by this function's bytes
+
+    // cmp byte [ebx+0x1f1], 0 ; jne epilogue
+    if (lift_field<uint8_t>(self, 0x1f1) != 0) {
+        return;
+    }
+
+    // call sub_00594000 -> eax = global root object handle (32-bit pointer value)
+    void* root = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+
+    // mov ecx, [root+0x258] -> subobject; lea esi, [root+0x258] -> slot address
+    void* sub = lift_field<void*>(root, 0x258);
+    void* slotField = static_cast<uint8_t*>(root) + 0x258;
+
+    // mov eax, [sub]; mov edx, [eax+0x1d8]; call edx (thiscall with ecx = sub) -> lock object
+    void* vtable = *static_cast<void**>(sub);
+    void* slot = *reinterpret_cast<void**>(static_cast<uint8_t*>(vtable) + 0x1d8);
+    using LockGetterFn = void* (__thiscall*)(void* self);
+    void* lock = reinterpret_cast<LockGetterFn>(slot)(sub);
+
+    // call sub_0065C640 (enter lock)
+    ext_0065C640(lock);
+
+    // Leave the lock on scope exit, matching the original SEH __finally-style cleanup
+    // (replaces fs:[0] frame setup/teardown, which is not portable).
+    struct LeaveOnExit {
+        void* lock;
+        ~LeaveOnExit() { ext_0065C650(lock); }
+    } leaveOnExit{lock};
+
+    // fstp dword [ebx+0x204], value
+    lift_field<float>(self, 0x204) = value;
+
+    // call sub_00493EE0 with ecx = slotField; return value is discarded by the original
+    (void)ext_00493EE0(slotField);
+
+    // leaveOnExit destructor: call sub_0065C650 (leave lock) with ecx = lock
+}
+} // namespace lift_005D0240
