@@ -26422,6 +26422,13 @@
     "summary": "Looks up an element via the global owner at mem_00AEE8A8 using this-\u003e+0x04 as index, then copies its Vec3 into out as Vec4 (w = 0); returns out.",
     "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp"
   },
+  "0x005326B0": {
+    "name": "HasBufferedTMPtr::vfunc_3",
+    "class": "HasBufferedTMPtr",
+    "signature": "void* __thiscall fn_005326B0(void* self, void* out)",
+    "summary": "Resets the 3x3 float block at out to identity (out[0]/[4]/[8] = 1.0, rest 0.0 in the layout written by the asm), then looks up an element via the global owner at mem_00AEE8A8 using this-\u003e+0x04 as index and passes it to ext_0067DAD0; returns out.",
+    "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp"
+  },
   "0x00532700": {
     "name": "HasCustomBufferedTMPtr::vfunc_1",
     "class": "HasCustomBufferedTMPtr",

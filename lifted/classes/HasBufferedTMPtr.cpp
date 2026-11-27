@@ -138,3 +138,35 @@ void __thiscall fn_00532480(void* self, void* arg) {
     vfn(arg, value);
 }
 } // namespace lift_00532480
+
+// [0x005326B0] HasBufferedTMPtr::vfunc_3 (72 bytes)
+namespace lift_005326B0 {
+// Known callee 0x00661B50: sub_00661B50 (Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index)
+extern uint32_t __thiscall ext_00661B50(void* this_ptr, uint32_t index);
+// Known callee 0x0067DAD0: sub_0067DAD0 (59B; thiscall taking the element pointer in ecx, no stack args)
+extern void __thiscall ext_0067DAD0(void* self);
+extern int mem_00AEE8A8;
+
+// @name HasBufferedTMPtr::vfunc_3
+// @class HasBufferedTMPtr
+// @summary Resets the 3x3 float block at out to identity (out[0]/[4]/[8] = 1.0, rest 0.0 in the layout written by the asm), then looks up an element via the global owner at mem_00AEE8A8 using this->+0x04 as index and passes it to ext_0067DAD0; returns out.
+// @field HasBufferedTMPtr +0x04 uint32_t index
+void* __thiscall fn_005326B0(void* self, void* out) {
+    // Identity-style initialisation of the output block (offsets as in the original asm).
+    lift_field<float>(out, 0x00) = 1.0f;
+    lift_field<float>(out, 0x04) = 0.0f;
+    lift_field<float>(out, 0x08) = 0.0f;
+    lift_field<float>(out, 0x0C) = 0.0f;
+    lift_field<float>(out, 0x10) = 1.0f;
+    lift_field<float>(out, 0x14) = 0.0f;
+    lift_field<float>(out, 0x18) = 0.0f;
+    lift_field<float>(out, 0x1C) = 0.0f;
+    lift_field<float>(out, 0x20) = 1.0f;
+
+    const uint32_t index = lift_field<uint32_t>(self, 0x04);
+    void* owner = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00AEE8A8)));
+    const uint32_t elem = ext_00661B50(owner, index);
+    ext_0067DAD0(reinterpret_cast<void*>(static_cast<uintptr_t>(elem)));
+    return out;
+}
+} // namespace lift_005326B0
