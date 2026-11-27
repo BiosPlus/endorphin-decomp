@@ -346,3 +346,84 @@ void fn_0051BA70(void* self, float a, float b) {
     }
 }
 } // namespace lift_0051BA70
+
+// [0x0051CB50] NMData::RealChannel::vfunc_5 (358 bytes)
+namespace lift_0051CB50 {
+// Fallback/lookup helpers are caller-cleaned; self is the sub-vector at this+0x2C.
+// ext_0051C820(self, &arg1, &arg2, 1): fallback path, writes through the float arguments.
+extern void ext_0051C820(void* self, float* a, float* b, uint32_t mode);
+// ext_0051A780(self, &cursor, arg1, 0.001f): finds the entry matching arg1; *cursor is in/out.
+extern void ext_0051A780(void* self, void** cursor, float a, float b);
+// ext_00492A50(&{cursor, begin}): validates the pair and returns the element pointer (begin).
+extern void* ext_00492A50(void* pair);
+// CRT _invalid_parameter_noinfo, loaded from the IAT slot.
+extern void (*mem_00925134)();
+// Tolerance constant 0.001f.
+extern float mem_00A430F0;
+
+// @name NMData::RealChannel::vfunc_5
+// @class NMData::RealChannel
+// @summary Matches arg1 against the entry range at +0x30..+0x34 and stores arg2 into the matched entry's second float, otherwise falls back to ext_0051C820.
+// @field NMData::RealChannel +0x30 uint32_t begin
+// @field NMData::RealChannel +0x34 uint32_t end
+void fn_0051CB50(void* self, float arg1, float arg2) {
+    uint8_t* const vec = static_cast<uint8_t*>(self) + 0x2C;
+    const uint32_t begin = lift_field<uint32_t>(self, 0x30);
+    const uint32_t end = lift_field<uint32_t>(self, 0x34);
+
+    // Empty range: begin is null, or (end - begin) >> 3 == 0.
+    if (begin == 0 || (static_cast<int32_t>(end - begin) >> 3) == 0) {
+        ext_0051C820(vec, &arg1, &arg2, 1);
+        return;
+    }
+
+    // Range guards; each failing check calls the CRT invalid-parameter handler.
+    if (begin > end) {
+        mem_00925134();
+    }
+    if (end <= begin) {
+        mem_00925134();
+    }
+    const uint32_t last_addr = end - 8;
+    if (last_addr >= end) {
+        mem_00925134();
+    }
+    const float last = *reinterpret_cast<const float*>(static_cast<uintptr_t>(last_addr));
+    if (arg1 - mem_00A430F0 > last) {
+        ext_0051C820(vec, &arg1, &arg2, 1);
+        return;
+    }
+
+    if (begin >= end) {
+        mem_00925134();
+    }
+    const float first = *reinterpret_cast<const float*>(static_cast<uintptr_t>(begin));
+    if (mem_00A430F0 + arg1 < first) {
+        ext_0051C820(vec, &arg1, &arg2, 1);
+        return;
+    }
+
+    // Locate the matching entry; cursor is in/out.
+    void* cursor = vec;
+    ext_0051A780(vec, &cursor, arg1, mem_00A430F0);
+    if (cursor == nullptr) {
+        mem_00925134();
+    }
+    if (begin >= lift_field<uint32_t>(cursor, 8)) {
+        mem_00925134();
+    }
+
+    if (arg1 - mem_00A430F0 > first) {
+        ext_0051C820(vec, &arg1, &arg2, 1);
+        return;
+    }
+
+    // Success: the element's second float becomes arg2.
+    struct CursorPair {
+        void* cursor;
+        uint32_t begin;
+    } pair{cursor, begin};
+    void* elem = ext_00492A50(&pair);
+    lift_field<float>(elem, 4) = arg2;
+}
+} // namespace lift_0051CB50

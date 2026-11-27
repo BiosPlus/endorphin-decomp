@@ -31777,6 +31777,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory\u003cCompoundSensor\u003e::ctor).",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x0051CB50": {
+    "name": "NMData::RealChannel::vfunc_5",
+    "class": "NMData::RealChannel",
+    "signature": "void fn_0051CB50(void* self, float arg1, float arg2)",
+    "summary": "Matches arg1 against the entry range at +0x30..+0x34 and stores arg2 into the matched entry's second float, otherwise falls back to ext_0051C820.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051CCC0": {
     "name": "Unknown::InitDefaultsFloatMax",
     "class": "Unknown",
