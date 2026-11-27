@@ -2485,3 +2485,29 @@ void fn_004155E0(void* self) {
     ext_00458FE0(self);
 }
 } // namespace lift_004155E0
+
+// [0x0041D9E0]
+namespace lift_0041D9E0 {
+// @name allocArray56
+// @summary Allocates an array of 56-byte elements with overflow check, throwing std::bad_alloc on overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void* mem_00925130;
+extern uint32_t mem_00928EC0;
+extern uint32_t mem_009CDF94;
+
+extern void* fn_0041D9E0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0x38u) {
+        const char* msg = nullptr;
+        uintptr_t exc[3];
+        using ctor_t = void(__thiscall*)(void*, const char**);
+        reinterpret_cast<ctor_t>(mem_00925130)(exc, &msg);
+        exc[0] = reinterpret_cast<uintptr_t>(&mem_00928EC0);
+        ext_006A6DD2(exc, &mem_009CDF94);
+        return nullptr;
+    }
+    return ext_006A5C62(count * 0x38u);
+}
+} // namespace lift_0041D9E0
