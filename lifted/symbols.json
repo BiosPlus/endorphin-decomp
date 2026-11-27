@@ -76259,6 +76259,13 @@
     "summary": "Returns the dword at index this-\u003efield_0x1C if 0 \u003c= index \u003c ext_006E7460(this), else 0.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078CC90": {
+    "name": "Unknown::DestroyAllBucketSets",
+    "class": "Unknown",
+    "signature": "void fn_0078CC90(void)",
+    "summary": "Clears every bucket set, destroys each CriticalSectionBuckets entry and its critical section, then nulls the global table pointer.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CD00": {
     "name": "Unknown::ClearAllBucketSets",
     "class": "Unknown",

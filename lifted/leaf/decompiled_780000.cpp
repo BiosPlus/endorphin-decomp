@@ -2363,3 +2363,49 @@ void fn_0078CEB0(void* self) {
     lift_field<void*>(self, 0x00) = nullptr;
 }
 } // namespace lift_0078CEB0
+
+// [0x0078CC90] sub_0078CC90 (112 bytes)
+namespace lift_0078CC90 {
+// Known callee 0x0078CD00: Unknown::ClearAllBucketSets (Calls CriticalSectionBuckets::ClearBuckets on every entry of the array at +0x10 of the global object, for count entries at +0x00.)
+extern void ext_0078CD00(void);
+// Known callee 0x0078CEB0: CriticalSectionBuckets::Destroy (Clears all buckets, frees the bucket array, then deletes and frees the critical section at +0x00 and nulls it.)
+extern void ext_0078CEB0(void* self);
+// Known callee 0x0074ADF0: sub_0074ADF0 (Pure jump thunk forwarding to sub_006D2160.) Called thiscall (this in ECX).
+extern void ext_0074ADF0(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.) Called cdecl with one argument.
+extern void ext_006A5C5C(void* p);
+// Global pointer to the Unknown bucket-set table (VA 0x00B60DBC).
+extern void* mem_00B60DBC;
+
+// @name Unknown::DestroyAllBucketSets
+// @class Unknown
+// @summary Clears every bucket set, destroys each CriticalSectionBuckets entry and its critical section, then nulls the global table pointer.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x10 void** field_0x10
+void fn_0078CC90(void) {
+    ext_0078CD00();
+
+    void* cur = mem_00B60DBC;
+    if (cur == nullptr) {
+        return;
+    }
+
+    int32_t count = lift_field<int32_t>(cur, 0x00);
+    for (int32_t i = 0; i < count; ++i) {
+        void** entries = lift_field<void**>(cur, 0x10);
+        void* entry = entries[i];
+        if (entry != nullptr) {
+            ext_0078CEB0(entry);
+            ext_006A5C5C(entry);
+            cur = mem_00B60DBC;
+        }
+    }
+
+    if (cur != nullptr) {
+        ext_0074ADF0(cur);
+        ext_006A5C5C(cur);
+    }
+
+    mem_00B60DBC = nullptr;
+}
+} // namespace lift_0078CC90
