@@ -1117,3 +1117,62 @@ void* fn_005B8EA0(
     return out_result;
 }
 } // namespace lift_005B8EA0
+
+// [0x005B3500] sub_005B3500 (137 bytes)
+namespace lift_005B3500 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+// Import slot for std::basic_string<char> default constructor (MSVCP80); holds the ctor address.
+extern int mem_00924FE8;
+
+// @name Unknown::ctor_005B3500
+// @class Unknown
+// @summary Runs ext_00661980 on this, sets flag +0x04, installs vtable 0x0095F88C, zeroes +0x0C/+0x48, default-constructs a std::string at +0x28, and zeroes the float block +0x10..+0x24.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x04 BYTE flag04
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 std::string field_0x28
+// @field Unknown +0x44 BYTE flag44
+// @field Unknown +0x48 DWORD field_0x48
+void* fn_005B3500(void* self) {
+    // Base-stage initialisation.
+    ext_00661980(self);
+
+    lift_field<BYTE>(self, 0x04) = 1;
+    lift_field<DWORD>(self, 0x00) = 0x0095F88Cu;
+    lift_field<void*>(self, 0x0C) = nullptr;
+
+    // Default-construct std::string at +0x28 via the imported ctor address.
+    using StrCtor = void (__thiscall*)(void* thisPtr);
+    auto strCtor = reinterpret_cast<StrCtor>(static_cast<uintptr_t>(mem_00924FE8));
+    strCtor(static_cast<uint8_t*>(self) + 0x28);
+
+    // Release the object held at +0x0C if it is non-null (scalar-deleting dtor, flag 1).
+    // Note: +0x0C was zeroed above, so this branch is not taken on this path.
+    void* obj = lift_field<void*>(self, 0x0C);
+    if (obj != nullptr) {
+        void** vtbl = *static_cast<void***>(obj);
+        using VDtor = void (__thiscall*)(void* thisPtr, int flags);
+        reinterpret_cast<VDtor>(vtbl[0])(obj, 1);
+    }
+    lift_field<void*>(self, 0x0C) = nullptr;
+    lift_field<DWORD>(self, 0x48) = 0;
+    lift_field<BYTE>(self, 0x44) = 1;
+
+    // Zero the float block (fldz / fst stores of +0.0f).
+    lift_field<float>(self, 0x10) = 0.0f;
+    lift_field<float>(self, 0x14) = 0.0f;
+    lift_field<float>(self, 0x18) = 0.0f;
+    lift_field<float>(self, 0x1C) = 0.0f;
+    lift_field<float>(self, 0x20) = 0.0f;
+    lift_field<float>(self, 0x24) = 0.0f;
+
+    return self;
+}
+} // namespace lift_005B3500

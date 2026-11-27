@@ -33533,6 +33533,13 @@
     "summary": "Returns TRUE if the three 16-byte entries at this+0x04, +0x14, +0x24 all hold empty ranges (begin==0 or (end-begin)\u003e\u003e2 == 0); FALSE otherwise.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B3500": {
+    "name": "Unknown::ctor_005B3500",
+    "class": "Unknown",
+    "signature": "void* fn_005B3500(void* self)",
+    "summary": "Runs ext_00661980 on this, sets flag +0x04, installs vtable 0x0095F88C, zeroes +0x0C/+0x48, default-constructs a std::string at +0x28, and zeroes the float block +0x10..+0x24.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B3590": {
     "name": "Geometry::vfunc_0",
     "class": "Geometry",
