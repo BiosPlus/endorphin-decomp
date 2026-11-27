@@ -61369,3 +61369,37 @@ std::string* fn_005B2410(std::string* out, void** self) {
     return ext_0046C390(out, value);
 }
 } // namespace lift_005B2410
+
+// [0x004B9450] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_004B9450 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot).
+extern void* ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable).
+extern void ext_0046C3C0(void* exceptionObj);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception type raised on a null target (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData>::vfunc_4 (NMData::EngineData::getUnitLength)
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the pointer held in the first stack argument; if non-null, formats the float at +0x44 of that object into the argument slot and returns it, otherwise throws a C++ exception.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float field_0x44
+void* fn_004B9450(void* slot, void* unused) {
+    (void)unused;
+    void* obj = *static_cast<void**>(slot);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x44);
+        ext_0046C390(slot, value);
+        return slot;
+    }
+
+    // Null target: build a local exception object and throw it through the CRT thunk.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+    return slot;
+}
+} // namespace lift_004B9450

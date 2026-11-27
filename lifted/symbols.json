@@ -14913,6 +14913,13 @@
     "summary": "Returns 1 if the EngineData float at +0x44 is \u003e= 1e-6 (false for NaN); throws if the EngineData pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B9450": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_4 (NMData::EngineData::getUnitLength)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0\u003e",
+    "signature": "void* fn_004B9450(void* slot, void* unused)",
+    "summary": "Reads the pointer held in the first stack argument; if non-null, formats the float at +0x44 of that object into the argument slot and returns it, otherwise throws a C++ exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B94A0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_5 (NMData::EngineData::getUnitLength)",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0\u003e",

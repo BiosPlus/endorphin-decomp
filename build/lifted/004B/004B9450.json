@@ -1,0 +1,28 @@
+{
+  "va": "0x004B9450",
+  "size": 74,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_4 (NMData::EngineData::getUnitLength)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0\u003e",
+  "signature": "void* fn_004B9450(void* slot, void* unused)",
+  "summary": "Reads the pointer held in the first stack argument; if non-null, formats the float at +0x44 of that object into the argument slot and returns it, otherwise throws a C++ exception.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:41Z"
+}
