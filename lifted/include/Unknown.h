@@ -24,6 +24,7 @@ struct Unknown_Fields {
     // +0x0   void* vtable (read to dispatch the virtual call at slot 0xF4)  (evidence: 0x00708FF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable vtable pointer (slot 0 called with arg 1)  (evidence: 0x006DE130) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer written from vtable call result; later passed to CriticalSectionLock::enter)  (evidence: 0x004030F0, 0x0040A8E0, 0x0040BE90) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (owner pointer forwarded to 0x00475960 as ECX)  (evidence: 0x0048C480) // CONFLICT: multiple definitions at +0x0
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    __vfptr  (evidence: 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006F7930, 0x006FC200) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t[0x1C] m_str0 (std::string copy of arg a)  (evidence: 0x006738D0) // CONFLICT: multiple definitions at +0x0

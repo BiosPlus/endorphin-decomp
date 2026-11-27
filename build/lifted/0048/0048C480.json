@@ -1,0 +1,22 @@
+{
+  "va": "0x0048C480",
+  "size": 165,
+  "orig_symbol": "sub_0048C480",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::registerNamedString_0048C480",
+  "class": "Unknown",
+  "signature": "extern \"C\" int mem_00AD9EB0;  // init guard (bit 0) extern \"C\" int mem_00AD9EAC;  // static object (first DWORD holds its vtable) extern \"C\" int mem_00924FE4;  // IAT slot: std::basic_string\u003cchar\u003e::basic_string(const char*) extern \"C\" int mem_00924FF4;  // IAT slot: std::basic_string\u003cchar\u003e::~basic_string() void fn_0048C480(void* self, const char* name)",
+  "summary": "Lazily initializes the static object at mem_00AD9EAC once, builds a temporary std::string from the C-string argument, passes it with *self to 0x00475960, then destroys the temporary.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (owner pointer forwarded to 0x00475960 as",
+      "name": "ECX)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:45:35Z"
+}

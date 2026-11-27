@@ -11850,6 +11850,12 @@
     "summary": "Iterates a checked vector of items, allocates a wrapper for each whose name matches targetName, and appends it to outVec",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x0047B6A0": {
+    "name": "collectMatchingElements",
+    "signature": "extern \"C\" void __cdecl fn_0047B6A0(void* src, void* dstVec, const char* nameFilter, uint8_t clearFirst)",
+    "summary": "Iterates a filtered vector at src+0x24, clones matching elements by name into 0x18C-byte objects, and appends them to dstVec.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x0047D4D0": {
     "name": "sub_0047D4D0",
     "class": "UnknownClass",
@@ -13378,6 +13384,13 @@
     "class": "Unknown",
     "signature": "extern void fn_0048C400(uint32_t this_ptr, uint32_t arg0)",
     "summary": "Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x0048C480": {
+    "name": "Unknown::registerNamedString_0048C480",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_00AD9EB0;  // init guard (bit 0) extern \"C\" int mem_00AD9EAC;  // static object (first DWORD holds its vtable) extern \"C\" int mem_00924FE4;  // IAT slot: std::basic_string\u003cchar\u003e::basic_string(const char*) extern \"C\" int mem_00924FF4;  // IAT slot: std::basic_string\u003cchar\u003e::~basic_string() void fn_0048C480(void* self, const char* name)",
+    "summary": "Lazily initializes the static object at mem_00AD9EAC once, builds a temporary std::string from the C-string argument, passes it with *self to 0x00475960, then destroys the temporary.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x0048C5E0": {

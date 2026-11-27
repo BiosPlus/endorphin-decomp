@@ -4583,3 +4583,42 @@ extern TreeIter* __thiscall fn_0048AC80(void* self, TreeIter* ret, void* firstCo
 }
 } // namespace lift_0046A810
 } // namespace lift_0048AC80
+
+// [0x0048C480] sub_0048C480 (165 bytes)
+namespace lift_0048C480 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (ECX = self, one stack arg; stores the arg into the first DWORD of self).
+extern void ext_0067A670(void* self, void* value);
+// Callee 0x00475960: called with ECX = *self and three stack args (temp string, pointer-to-slot, flag 1).
+extern void ext_00475960(void* self, void* tmpStr, void** slot, int flag);
+extern int mem_00AD9EB0;  // init guard (bit 0)
+extern int mem_00AD9EAC;  // static object (first DWORD holds its vtable)
+extern int mem_00924FE4;  // IAT slot: std::basic_string<char>::basic_string(const char*)
+extern int mem_00924FF4;  // IAT slot: std::basic_string<char>::~basic_string()
+
+// @name Unknown::registerNamedString_0048C480
+// @class Unknown
+// @summary Lazily initializes the static object at mem_00AD9EAC once, builds a temporary std::string from the C-string argument, passes it with *self to 0x00475960, then destroys the temporary.
+// @field Unknown +0x00 void* field_0x00 (owner pointer forwarded to 0x00475960 as ECX)
+void fn_0048C480(void* self, const char* name) {
+    using StrCtorFn = void (*)(void* thisObj, const char* s);
+    using StrDtorFn = void (*)(void* thisObj);
+
+    if ((mem_00AD9EB0 & 1) == 0) {
+        mem_00AD9EB0 |= 1;
+        ext_0067A670(&mem_00AD9EAC, self);
+        mem_00AD9EAC = 0x0093C854;
+    }
+
+    alignas(16) unsigned char tmpStr[0x1C] = {};
+    void* staticRef = &mem_00AD9EAC;
+
+    auto ctor = *reinterpret_cast<StrCtorFn*>(&mem_00924FE4);
+    ctor(tmpStr, name);
+
+    void* owner = *static_cast<void**>(self);
+    ext_00475960(owner, tmpStr, &staticRef, 1);
+
+    auto dtor = *reinterpret_cast<StrDtorFn*>(&mem_00924FF4);
+    dtor(tmpStr);
+}
+} // namespace lift_0048C480
