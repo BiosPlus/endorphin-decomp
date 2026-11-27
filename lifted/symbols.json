@@ -51749,6 +51749,13 @@
     "summary": "Updates the joint's child object via ext_00587450, preserving and restoring its transform matrix when the parent state counter is below mem_009849A8.",
     "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
   },
+  "0x005E23F0": {
+    "name": "NMData::RPROJointData::vfunc_54",
+    "class": "NMData::RPROJointData",
+    "signature": "void* fn_005E23F0(void* self)",
+    "summary": "Lazily constructs the shared static object at 0xB45D70 (guarded by mem_00B45DBC), binds it to self, caches self+0x178 into mem_00B45DB4, and returns the object.",
+    "lifted_path": "lifted/NMData/RPROJointData.cpp"
+  },
   "0x005E2770": {
     "name": "descriptiveName_005E2770",
     "signature": "float fn_005E2770(void* self)",

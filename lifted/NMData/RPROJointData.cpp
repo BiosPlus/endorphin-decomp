@@ -36,3 +36,28 @@ std::string* fn_00584FD0(std::string* out) {
     return out;
 }
 } // namespace lift_00584FD0
+
+// [0x005E23F0] NMData::RPROJointData::vfunc_54 (128 bytes)
+namespace lift_005E23F0 {
+extern void ext_005B5780(void* self, uint32_t size);
+extern void ext_005E0380(void* self, void* arg);
+extern void ext_006A6C87(const void* fn);
+extern uint8_t mem_00B45DBC;
+extern uint8_t mem_00B45DB4;
+extern uint8_t mem_00B45D70[];
+
+// @name NMData::RPROJointData::vfunc_54
+// @class NMData::RPROJointData
+// @summary Lazily constructs the shared static object at 0xB45D70 (guarded by mem_00B45DBC), binds it to self, caches self+0x178 into mem_00B45DB4, and returns the object.
+// @field NMData::RPROJointData +0x178 uint8_t field_0x178
+void* fn_005E23F0(void* self) {
+    if ((mem_00B45DBC & 1u) == 0) {
+        mem_00B45DBC |= 1u;
+        ext_005B5780(mem_00B45D70, 0x0Cu);
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x0091E450u)));
+    }
+    ext_005E0380(self, mem_00B45D70);
+    mem_00B45DB4 = lift_field<uint8_t>(self, 0x178);
+    return static_cast<void*>(mem_00B45D70);
+}
+} // namespace lift_005E23F0

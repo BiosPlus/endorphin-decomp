@@ -1,0 +1,22 @@
+{
+  "va": "0x005E23F0",
+  "size": 128,
+  "orig_symbol": "NMData::RPROJointData::vfunc_54",
+  "src_path": "src/NMData/RPROJointData.cpp",
+  "lifted_path": "lifted/NMData/RPROJointData.cpp",
+  "name": "NMData::RPROJointData::vfunc_54",
+  "class": "NMData::RPROJointData",
+  "signature": "void* fn_005E23F0(void* self)",
+  "summary": "Lazily constructs the shared static object at 0xB45D70 (guarded by mem_00B45DBC), binds it to self, caches self+0x178 into mem_00B45DB4, and returns the object.",
+  "fields": [
+    {
+      "class": "NMData::RPROJointData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:48:19Z"
+}
