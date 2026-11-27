@@ -19059,6 +19059,12 @@
     "summary": "Dispatches on the second stack argument (0xA5 / 0xE3 / 0xE6 cases) to sub-object helpers and returns one of the stack arguments.",
     "lifted_path": "lifted/NMData/EngineData.cpp"
   },
+  "0x004BA440": {
+    "name": "AllocAndInitDynCast_004BA440",
+    "signature": "uint32_t fn_004BA440(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Allocates a 0x28-byte object; if allocation succeeds, initializes it via ext_004BA0D0 with (self, a1, a2, a3), then passes the result and the global value from ext_00665870 to ext_00666670 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BA580": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",

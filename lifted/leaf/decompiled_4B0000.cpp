@@ -2689,3 +2689,38 @@ void fn_004B7860(void* self, uint32_t a1, void* a2, uint32_t a3) {
     ext_00666670(status);
 }
 } // namespace lift_004B7860
+
+// [0x004BA440] sub_004BA440 (117 bytes)
+namespace lift_004BA440 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (cdecl allocator, called with size 0x28)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x004BA0D0: Unknown::InitWithDynamicCast (Sets vtable and a1/a3/a4 fields, stores dynamic_cast(a2) result at +0x14, and stores a2 at +0x08 when the cast result is null; returns this.)
+// Thiscall: ecx = allocated object, then four stack args (outer this, a1, a2, a3).
+extern void* ext_004BA0D0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x00665870: sub_00665870 (Returns global int32 value from mem_00B59420.)
+extern int32_t ext_00665870(void);
+// Known callee 0x00666670: sub_00666670 (292 bytes; signature not recovered, modeled as thiscall with one stack arg)
+extern uint32_t ext_00666670(void* self, uint32_t arg);
+// SEH scope table referenced by the prolog (push 0x008A7A5B).
+extern int mem_008A7A5B;
+
+// @name AllocAndInitDynCast_004BA440
+// @summary Allocates a 0x28-byte object; if allocation succeeds, initializes it via ext_004BA0D0 with (self, a1, a2, a3), then passes the result and the global value from ext_00665870 to ext_00666670 and returns its result.
+// (No direct field accesses on self; self is only forwarded as an argument, so no @field lines.)
+// Note: the SEH frame (fs:[0] push/restore and trylevel bookkeeping) is not reproduced; portable C++ has no equivalent.
+uint32_t fn_004BA440(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    (void)&mem_008A7A5B;  // SEH scope table address from prolog; frame itself omitted.
+
+    void* obj = ext_006A5C62(0x28);
+    void* result = nullptr;
+    if (obj != nullptr) {
+        result = ext_004BA0D0(obj,
+                              static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)),
+                              a1, a2, a3);
+    }
+
+    int32_t g = ext_00665870();
+    void* ctx = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(g)));
+    return ext_00666670(ctx, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(result)));
+}
+} // namespace lift_004BA440
