@@ -3153,3 +3153,60 @@ void fn_00629530(void* self) {
     }
 }
 } // namespace lift_00629530
+
+// [0x00629720] sub_00629720 (136 bytes)
+namespace lift_00629720 {
+// Known callee 0x00673C20: sub_00673C20 (Auto-lifted identical-shape clone of 0x00667030 (advanceCursorSkipFlagged).)
+extern void ext_00673C20(void* self);
+// Known callee 0x00648480: GetIndirectField_0x5c_0x00 (Loads the object pointer at self+0x5C, reads the dword it points to, and returns GetField_0x44Thunk applied to that value.)
+extern void* ext_00648480(void* self);
+// Import slot holding the address of MSVCR80!_invalid_parameter_noinfo (a function pointer value).
+extern void* mem_00925134;
+
+// @name Unknown::refreshChainVec3
+// @class Unknown
+// @summary Runs ext_00673C20 on a (ptr,ptr) pair derived from this->+0x28 for this->+0x3C iterations, validates the pair, then copies 3 floats from ext_00648480's result into this+0x30 and returns &this->+0x30.
+// @field Unknown +0x28 void* field_0x28
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3C int32_t field_0x3c
+void* fn_00629720(void* self) {
+    using InvalidParamFn = void (*)();
+
+    // a = this->+0x28; b = *(a->+0x160); pair = { a+0x15C, *b }
+    void* a = lift_field<void*>(self, 0x28);
+    void* b = lift_field<void*>(a, 0x160);
+    void* ebp = static_cast<uint8_t*>(a) + 0x15c;
+    void* ebx = lift_field<void*>(b, 0);
+    void* pair[2] = {ebp, ebx};
+
+    // Loop: call ext_00673C20 with &pair, re-reading the count each iteration.
+    for (int32_t i = 0; i < lift_field<int32_t>(self, 0x3c); ++i) {
+        ext_00673C20(pair);
+    }
+    ebp = pair[0];
+    ebx = pair[1];
+
+    // Validation: invalid_parameter is called when ebp is null or ebx == ebp->+4.
+    // The original does not return from the handler, so no fallthrough is intended.
+    if (ebp == nullptr) {
+        reinterpret_cast<InvalidParamFn>(mem_00925134)();
+    }
+    if (ebx == lift_field<void*>(ebp, 4)) {
+        reinterpret_cast<InvalidParamFn>(mem_00925134)();
+    }
+
+    // src = ext_00648480(ebx->+0x28->+0x16C)
+    void* edx = lift_field<void*>(ebx, 0x28);
+    void* arg = lift_field<void*>(edx, 0x16c);
+    uint8_t* dest = static_cast<uint8_t*>(self) + 0x30;
+    uint8_t* src = static_cast<uint8_t*>(ext_00648480(arg));
+
+    // Copy three floats src+0x30..0x38 -> dest+0..8 (fld/fstp sequence).
+    lift_field<float>(dest, 0) = lift_field<float>(src, 0x30);
+    lift_field<float>(dest, 4) = lift_field<float>(src, 0x34);
+    lift_field<float>(dest, 8) = lift_field<float>(src, 0x38);
+    return dest;
+}
+} // namespace lift_00629720

@@ -46374,6 +46374,13 @@
     "summary": "Calls base initializer with arg0, sets vtable, zeroes/ones float fields at +0x30..+0x50, and stores arg2 at +0x54; returns self.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00629720": {
+    "name": "Unknown::refreshChainVec3",
+    "class": "Unknown",
+    "signature": "void* fn_00629720(void* self)",
+    "summary": "Runs ext_00673C20 on a (ptr,ptr) pair derived from this-\u003e+0x28 for this-\u003e+0x3C iterations, validates the pair, then copies 3 floats from ext_00648480's result into this+0x30 and returns \u0026this-\u003e+0x30.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006297B0": {
     "name": "Unknown::advanceCursorRangeAndNotify",
     "class": "Unknown",

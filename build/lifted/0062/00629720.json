@@ -1,0 +1,46 @@
+{
+  "va": "0x00629720",
+  "size": 136,
+  "orig_symbol": "sub_00629720",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::refreshChainVec3",
+  "class": "Unknown",
+  "signature": "void* fn_00629720(void* self)",
+  "summary": "Runs ext_00673C20 on a (ptr,ptr) pair derived from this-\u003e+0x28 for this-\u003e+0x3C iterations, validates the pair, then copies 3 floats from ext_00648480's result into this+0x30 and returns \u0026this-\u003e+0x30.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "int32_t",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:30:02Z"
+}
