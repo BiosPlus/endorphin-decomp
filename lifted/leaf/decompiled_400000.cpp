@@ -2076,3 +2076,46 @@ void* fn_00404D70(void* self, const void* src) {
     return self;
 }
 } // namespace lift_00404D70
+
+// [0x00402630] sub_00402630 (117 bytes)
+namespace lift_00402630 {
+// @name copyRecordRange
+// @class Unknown
+// @summary Copies 0x20-byte records from [src_begin, src_end) to dst (skipping the copy when dst is null), returns dst advanced past the last record written (or dst unchanged if the range is empty).
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0c float field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint16_t field_0x1c
+// @field Unknown +0x1e uint8_t field_0x1e
+void* fn_00402630(const void* src_begin, const void* src_end, void* dst) {
+    const uint8_t* src = static_cast<const uint8_t*>(src_begin);
+    const uint8_t* const end = static_cast<const uint8_t*>(src_end);
+    uint8_t* out = static_cast<uint8_t*>(dst);
+
+    if (src == end) {
+        return dst;
+    }
+
+    do {
+        if (out != nullptr) {
+            lift_field<uint32_t>(out, 0x00) = lift_field<uint32_t>(src, 0x00);
+            lift_field<float>(out, 0x04) = lift_field<float>(src, 0x04);
+            lift_field<float>(out, 0x08) = lift_field<float>(src, 0x08);
+            lift_field<float>(out, 0x0c) = lift_field<float>(src, 0x0c);
+            lift_field<uint32_t>(out, 0x10) = lift_field<uint32_t>(src, 0x10);
+            lift_field<uint32_t>(out, 0x14) = lift_field<uint32_t>(src, 0x14);
+            lift_field<uint32_t>(out, 0x18) = lift_field<uint32_t>(src, 0x18);
+            lift_field<uint16_t>(out, 0x1c) = lift_field<uint16_t>(src, 0x1c);
+            lift_field<uint8_t>(out, 0x1e) = lift_field<uint8_t>(src, 0x1e);
+        }
+        src += 0x20;
+        out += 0x20;
+    } while (src != end);
+
+    return out;
+}
+} // namespace lift_00402630

@@ -406,6 +406,13 @@
     "summary": "Copy constructor for a std::logic_error subclass, calling base copy constructor and setting vtable.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00402630": {
+    "name": "copyRecordRange",
+    "class": "Unknown",
+    "signature": "void* fn_00402630(const void* src_begin, const void* src_end, void* dst)",
+    "summary": "Copies 0x20-byte records from [src_begin, src_end) to dst (skipping the copy when dst is null), returns dst advanced past the last record written (or dst unchanged if the range is empty).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004026E0": {
     "name": "std_vector_string_Tidy",
     "signature": "void __thiscall fn_004026E0(void* this_ptr)",
