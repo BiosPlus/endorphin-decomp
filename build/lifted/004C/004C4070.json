@@ -1,0 +1,28 @@
+{
+  "va": "0x004C4070",
+  "size": 140,
+  "orig_symbol": "sub_004C4070",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "LiteralKeyedLookup",
+  "class": "UnknownClass",
+  "signature": "uint32_t* __thiscall fn_004C4070(uint8_t* self, uint32_t* out, uint32_t arg2)",
+  "summary": "Builds a scratch string from a literal, forwards it with arg2 to ext_00474F00 (+0x18) when arg2 is nonzero, stores ext_00476360(+0x08, scratch) into *out, destroys the scratch string and returns out.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:30:08Z"
+}

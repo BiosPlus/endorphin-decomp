@@ -19906,6 +19906,13 @@
     "summary": "Switches on a 32-bit key and forwards the output pointer plus the receiver's address to one of the static-pair store helpers (default: zero the output); returns the output pointer.",
     "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
   },
+  "0x004C4070": {
+    "name": "LiteralKeyedLookup",
+    "class": "UnknownClass",
+    "signature": "uint32_t* __thiscall fn_004C4070(uint8_t* self, uint32_t* out, uint32_t arg2)",
+    "summary": "Builds a scratch string from a literal, forwards it with arg2 to ext_00474F00 (+0x18) when arg2 is nonzero, stores ext_00476360(+0x08, scratch) into *out, destroys the scratch string and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C4390": {
     "name": "sub_004C4390",
     "signature": "void* sub_004C4390(void* self)",

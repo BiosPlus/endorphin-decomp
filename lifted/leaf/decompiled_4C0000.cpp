@@ -1476,3 +1476,35 @@ void fn_004CDD00(void* self, const char* name) {
     ext_00475960(lift_field<void*>(self, 0), &tmp, &obj, 1);
 }
 } // namespace lift_004CDD00
+
+// [0x004C4070] sub_004C4070 (140 bytes)
+namespace lift_004C4070 {
+void* __thiscall ext_00474F00(void* self, void* scratch, uint32_t arg2);
+uint32_t __thiscall ext_00476360(void* self, void* scratch);
+void ext_00662610(void* scratch, const char* literal);
+extern uint32_t mem_00924FD4;
+extern uint32_t mem_00924FF4;
+extern const char mem_00A32860[];
+
+// @name LiteralKeyedLookup
+// @class UnknownClass
+// @summary Builds a scratch string from a literal, forwards it with arg2 to ext_00474F00 (+0x18) when arg2 is nonzero, stores ext_00476360(+0x08, scratch) into *out, destroys the scratch string and returns out.
+// @field UnknownClass +0x08 uint8_t field_0x08
+// @field UnknownClass +0x18 uint8_t field_0x18
+uint32_t* __thiscall fn_004C4070(uint8_t* self, uint32_t* out, uint32_t arg2) {
+    alignas(8) uint8_t scratch[0x1C] = {};
+    ext_00662610(scratch, mem_00A32860);
+
+    if (arg2 != 0) {
+        void* result = ext_00474F00(self + 0x18, scratch, arg2);
+        using AssignFn = void (*)(void*);
+        reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FD4))(result);
+    }
+
+    *out = ext_00476360(self + 0x08, scratch);
+
+    using DtorFn = void (*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(scratch);
+    return out;
+}
+} // namespace lift_004C4070
