@@ -36993,6 +36993,12 @@
     "summary": "Walks a uint32 node array delimited by self+0x18 (begin) and self+0x1C (end), calling ext_00567210 on each entry with arg2 = 0.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x005691C0": {
+    "name": "std_string_range_uninitialized_copy",
+    "signature": "void* fn_005691C0(void* first, void* last, void* dest)",
+    "summary": "Copy-constructs 16-byte string elements from [first, last) into dest, advancing dest; on exception destroys the already-built prefix and rethrows. Returns one past the last constructed element.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00569350": {
     "name": "ConstructRangeWithRollback",
     "signature": "void fn_00569350(void* begin, uint32_t count, uint32_t arg)",

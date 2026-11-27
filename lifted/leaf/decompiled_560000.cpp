@@ -1016,3 +1016,40 @@ void fn_00569350(void* begin, uint32_t count, uint32_t arg) {
     }
 }
 } // namespace lift_00569350
+
+// [0x005691C0] sub_005691C0 (141 bytes)
+namespace lift_005691C0 {
+// Known callee 0x004026E0: std_vector_string_Tidy (Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.)
+// Used here as the per-element destructor (thiscall, ECX = element) during exception cleanup.
+extern void ext_004026E0(void* self);
+// Callee 0x00402800: sub_00402800 (176B) — thiscall, ECX = destination element, one stack argument = source element.
+extern void ext_00402800(void* self, void* src);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Original rethrow (_CxxThrowException(NULL, NULL)) is expressed as a C++ `throw;` below.
+
+// @name std_string_range_uninitialized_copy
+// @summary Copy-constructs 16-byte string elements from [first, last) into dest, advancing dest; on exception destroys the already-built prefix and rethrows. Returns one past the last constructed element.
+void* fn_005691C0(void* first, void* last, void* dest) {
+    auto* src = static_cast<uint8_t*>(first);
+    auto* const end = static_cast<uint8_t*>(last);
+    auto* out = static_cast<uint8_t*>(dest);
+    uint8_t* const origin = out;
+
+    try {
+        while (src != end) {
+            if (out != nullptr) {
+                ext_00402800(out, src);
+            }
+            out += 16;
+            src += 16;
+        }
+    } catch (...) {
+        for (uint8_t* p = origin; p != out; p += 16) {
+            ext_004026E0(p);
+        }
+        throw;
+    }
+
+    return out;
+}
+} // namespace lift_005691C0
