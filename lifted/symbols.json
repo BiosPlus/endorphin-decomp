@@ -2056,6 +2056,12 @@
     "summary": "Reads an integer from a child window's text and passes it to a virtual method on field_0x1ec.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041BAE0": {
+    "name": "OnEditChange_0041BAE0",
+    "signature": "extern \"C\" void* mem_009242FC; // MFC80!ord_310 (CString::CString) extern \"C\" void* mem_00924300; // MFC80!ord_876 (CString::operator const char*) extern \"C\" void* mem_009251E4; // MSVCR80!atoi extern \"C\" void* mem_009242F4; // MFC80!ord_578 (CString::~CString) extern \"C\" void ext_006A5F4A(void); // thunk_MFC80_ord_3761 (CWnd::GetWindowTextA) extern \"C\" void __thiscall fn_0041BAE0(void* self)",
+    "summary": "Reads integer text from control at +0x188 and passes it to virtual method +0x44 on object at +0x1EC.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041BBB0": {
     "name": "GridPropertyPage::vfunc_86",
     "class": "GridPropertyPage",
