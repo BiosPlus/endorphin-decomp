@@ -1,0 +1,22 @@
+{
+  "va": "0x0048E4D0",
+  "size": 163,
+  "orig_symbol": "Commands::SetPlaybackStartFrameCommand::vfunc_3",
+  "src_path": "src/Commands/SetPlaybackStartFrameCommand.cpp",
+  "lifted_path": "lifted/Commands/SetPlaybackStartFrameCommand.cpp",
+  "name": "Commands::SetPlaybackStartFrameCommand::vfunc_3",
+  "class": "Commands::SetPlaybackStartFrameCommand",
+  "signature": "void* __thiscall fn_0048E4D0(void* self, void* out)",
+  "summary": "Formats the command description string with the playback start frame.",
+  "fields": [
+    {
+      "class": "Commands::SetPlaybackStartFrameCommand",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:20:08Z"
+}

@@ -13529,6 +13529,13 @@
     "summary": "Builds the string \"\u003ctext\u003e\u003cframe\u003e\" via an ostringstream (ext_00435D00 writes the text, then the frame number is streamed) and returns it by value through the sret buffer.",
     "lifted_path": "lifted/Commands/GoToFrameCommand.cpp"
   },
+  "0x0048E4D0": {
+    "name": "Commands::SetPlaybackStartFrameCommand::vfunc_3",
+    "class": "Commands::SetPlaybackStartFrameCommand",
+    "signature": "void* __thiscall fn_0048E4D0(void* self, void* out)",
+    "summary": "Formats the command description string with the playback start frame.",
+    "lifted_path": "lifted/Commands/SetPlaybackStartFrameCommand.cpp"
+  },
   "0x0048E790": {
     "name": "Commands::DestroyTriggeredEventCommand::vfunc_0",
     "class": "Commands::DestroyTriggeredEventCommand",

@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct Commands_SetPlaybackStartFrameCommand_Fields {
     // +0x10  void*                    field_0x10  (evidence: 0x0048E080)
+    // +0x14  int32_t                  field_0x14  (evidence: 0x0048E4D0)
     // +0x18  uintptr_t                field_0x18  (evidence: 0x0048E080)
 };
 } // namespace lifted_layout
