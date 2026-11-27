@@ -1,0 +1,14 @@
+{
+  "va": "0x005D1C10",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFieldOfView(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, ...\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFieldOfView(float), 0}\u003e",
+  "signature": "void fn_005D1C10(void* self)",
+  "summary": "Binds holder+0x04 to the static accessor object at mem_00B459A8, running its one-time initialization (guarded by bit 0 of mem_00B459AC) on first use.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:45:18Z"
+}

@@ -12256,3 +12256,26 @@ void fn_005CEE00(void* self) {
     lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B44C14));
 }
 } // namespace lift_005CEE00
+
+// [0x005D1C10] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFieldOfView(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005D1C10 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into the first DWORD of self).
+extern void ext_0067A670();
+// Static-init guard flag (bit 0) and the static accessor object it guards.
+extern int mem_00B459AC;
+extern int mem_00B459A8;
+
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, ...>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFieldOfView(float), 0}>
+// @summary Binds holder+0x04 to the static accessor object at mem_00B459A8, running its one-time initialization (guarded by bit 0 of mem_00B459AC) on first use.
+// @field ExprParser::ReadWriteMethodType<NMData::CameraData, float, ...> +0x04 void* accessor_ptr
+void fn_005D1C10(void* self) {
+    if (!(mem_00B459AC & 1)) {
+        mem_00B459AC |= 1;
+        // thiscall: ECX = &mem_00B459A8, one stack argument = 0
+        reinterpret_cast<void (*)(void*, int)>(&ext_0067A670)(&mem_00B459A8, 0);
+        mem_00B459A8 = 0x96884c;
+    }
+    lift_field<void*>(self, 4) = static_cast<void*>(&mem_00B459A8);
+}
+} // namespace lift_005D1C10
