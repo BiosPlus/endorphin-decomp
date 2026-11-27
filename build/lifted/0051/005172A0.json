@@ -1,0 +1,28 @@
+{
+  "va": "0x005172A0",
+  "size": 104,
+  "orig_symbol": "sub_005172A0",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::invokeVirtual24OnRange",
+  "class": "Unknown",
+  "signature": "void fn_005172A0(void* self, void* arg)",
+  "summary": "Iterates the 4-byte element range [+0x14, +0x18) of self; for each element pointer, calls its vtable slot 24 (offset 0x60) with arg. Iterator-debug guards from the original are omitted.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:55:17Z"
+}

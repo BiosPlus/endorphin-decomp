@@ -21069,6 +21069,13 @@
     "summary": "Copy-constructs the global string (from InitOnceGlobalString_00516F90) into the caller-supplied string object and returns that object's address.",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x005170D0": {
+    "name": "CallSlot3OnEachEntry",
+    "class": "Unknown",
+    "signature": "void fn_005170D0(void* self, void* arg)",
+    "summary": "Walks the pointer array bounded by this+0x18 (begin) and this+0x1C (end) and calls vtable slot 3 (+0x0C) on each object with the argument.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x005171B0": {
     "name": "EvolvedIndividual::vfunc_13_off_C",
     "class": "EvolvedIndividual",
@@ -21081,6 +21088,13 @@
     "class": "Container",
     "signature": "extern \"C\" int mem_00925134;  // IAT slot for MSVCR80!_invalid_parameter_noinfo (metadata only) void fn_00517230(void* self, void* arg)",
     "summary": "Walks the pointer array at this+0x14..this+0x18 and calls virtual slot 0x5C (index 23) on each element with the single argument.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x005172A0": {
+    "name": "Unknown::invokeVirtual24OnRange",
+    "class": "Unknown",
+    "signature": "void fn_005172A0(void* self, void* arg)",
+    "summary": "Iterates the 4-byte element range [+0x14, +0x18) of self; for each element pointer, calls its vtable slot 24 (offset 0x60) with arg. Iterator-debug guards from the original are omitted.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
   "0x00517310": {

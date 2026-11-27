@@ -1666,3 +1666,54 @@ void fn_00517230(void* self, void* arg) {
     }
 }
 } // namespace lift_00517230
+
+// [0x005170D0] sub_005170D0 (104 bytes)
+namespace lift_005170D0 {
+extern int mem_00925134;
+
+// @name CallSlot3OnEachEntry
+// @class Unknown
+// @summary Walks the pointer array bounded by this+0x18 (begin) and this+0x1C (end) and calls vtable slot 3 (+0x0C) on each object with the argument.
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+void fn_005170D0(void* self, void* arg) {
+    // Original bounds-check failure path (_invalid_parameter_noinfo) is omitted;
+    // the reference is metadata only.
+    (void)&mem_00925134;
+
+    // Range over 4-byte object-pointer slots stored in the target's array.
+    uint32_t cur = lift_field<uint32_t>(self, 0x18);
+    const uint32_t end = lift_field<uint32_t>(self, 0x1C);
+
+    for (; cur != end; cur += sizeof(uint32_t)) {
+        auto* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(
+            *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cur))));
+        auto** vtbl = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<void (*)(void*, void*)>(vtbl[3]);
+        fn(obj, arg);
+    }
+}
+} // namespace lift_005170D0
+
+// [0x005172A0] sub_005172A0 (104 bytes)
+namespace lift_005172A0 {
+// Import slot for _invalid_parameter_noinfo (iterator-debug guards); metadata only.
+extern int mem_00925134;
+
+// @name Unknown::invokeVirtual24OnRange
+// @class Unknown
+// @summary Iterates the 4-byte element range [+0x14, +0x18) of self; for each element pointer, calls its vtable slot 24 (offset 0x60) with arg. Iterator-debug guards from the original are omitted.
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x18 DWORD field_0x18
+void fn_005172A0(void* self, void* arg) {
+    (void)&mem_00925134;
+    DWORD cursor = lift_field<DWORD>(self, 0x14);
+    while (cursor != lift_field<DWORD>(self, 0x18)) {
+        void* obj = *reinterpret_cast<void**>(static_cast<uintptr_t>(cursor));
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto method = reinterpret_cast<void (*)(void*, void*)>(vtbl[0x60 / sizeof(void*)]);
+        method(obj, arg);
+        cursor += 4;
+    }
+}
+} // namespace lift_005172A0
