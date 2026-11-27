@@ -1,0 +1,39 @@
+{
+  "va": "0x006D2410",
+  "size": 144,
+  "orig_symbol": "sub_006D2410",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "ScaleVec4d",
+  "signature": "static void split_double(double v, uint32_t\u0026 lo, uint32_t\u0026 hi)",
+  "summary": "Multiplies a 4-double vector by a scalar and forwards the result into an output buffer.",
+  "fields": [
+    {
+      "class": "Vec4d",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:40:50Z"
+}
