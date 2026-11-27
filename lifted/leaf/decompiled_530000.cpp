@@ -1978,3 +1978,47 @@ void fn_00532900(void* self, const void* src) {
     lift_field<uint8_t>(obj, 0x34) = lift_field<const uint8_t>(s, 0x34);
 }
 } // namespace lift_00532900
+
+// [0x005302D0] sub_005302D0 (156 bytes)
+namespace lift_005302D0 {
+// Known callee 0x005434F0: CUnknown::LatchFlagsAndDispatch (Latches 0x93..0x95 to 1 when the matching 0x90..0x92 flag bytes are set, then tail-calls virtual slot 15 on this.)
+extern DWORD ext_005434F0(void* self, void* arg1, void* arg2, DWORD arg3);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+
+// @name CUnknown::LockedLatchAndCommit
+// @class CUnknown
+// @summary Under a CriticalSectionLock at +0x98, if the flag byte at +0xA8 is set, clear it, run LatchFlagsAndDispatch on +0x4C (and on +0x68 if that returned 0), then copy the QWORD at +0xA0 into +0x14.
+// @field CUnknown +0x14 QWORD latchDst
+// @field CUnknown +0x4C void* dispatchPrimary
+// @field CUnknown +0x68 void* dispatchSecondary
+// @field CUnknown +0x98 CriticalSectionLock lock
+// @field CUnknown +0x9C DWORD latchArg
+// @field CUnknown +0xA0 QWORD latchSrc
+// @field CUnknown +0xA8 BYTE pendingFlag
+void fn_005302D0(void* self) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+    void* lock = s + 0x98;
+
+    ext_0065C640(lock);
+
+    if (*(uint8_t*)(s + 0xA8) != 0) {
+        *(uint8_t*)(s + 0xA8) = 0;
+
+        void* dst = s + 0x14;
+        void* src = s + 0xA0;
+        DWORD arg3 = *(DWORD*)(s + 0x9C);
+
+        DWORD r = ext_005434F0(*(void**)(s + 0x4C), dst, src, arg3);
+        if (r == 0) {
+            ext_005434F0(*(void**)(s + 0x68), dst, src, *(DWORD*)(s + 0x9C));
+        }
+
+        memcpy(s + 0x14, s + 0xA0, sizeof(QWORD));
+    }
+
+    ext_0065C650(lock);
+}
+} // namespace lift_005302D0

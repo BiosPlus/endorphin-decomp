@@ -1,0 +1,58 @@
+{
+  "va": "0x005302D0",
+  "size": 156,
+  "orig_symbol": "sub_005302D0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "CUnknown::LockedLatchAndCommit",
+  "class": "CUnknown",
+  "signature": "void fn_005302D0(void* self)",
+  "summary": "Under a CriticalSectionLock at +0x98, if the flag byte at +0xA8 is set, clear it, run LatchFlagsAndDispatch on +0x4C (and on +0x68 if that returned 0), then copy the QWORD at +0xA0 into +0x14.",
+  "fields": [
+    {
+      "class": "CUnknown",
+      "offset": "+0x14",
+      "type": "QWORD",
+      "name": "latchDst"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "dispatchPrimary"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "dispatchSecondary"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x98",
+      "type": "CriticalSectionLock",
+      "name": "lock"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x9C",
+      "type": "DWORD",
+      "name": "latchArg"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0xA0",
+      "type": "QWORD",
+      "name": "latchSrc"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0xA8",
+      "type": "BYTE",
+      "name": "pendingFlag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:21Z"
+}

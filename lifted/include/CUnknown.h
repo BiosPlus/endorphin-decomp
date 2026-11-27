@@ -8,11 +8,18 @@
 // Recovered field layout for CUnknown:
 namespace lifted_layout {
 struct CUnknown_Fields {
+    // +0x14  QWORD                    latchDst  (evidence: 0x005302D0)
+    // +0x4C  void*                    dispatchPrimary  (evidence: 0x005302D0)
+    // +0x68  void*                    dispatchSecondary  (evidence: 0x005302D0)
     // +0x90  BYTE                     field_0x90  (evidence: 0x005434F0)
     // +0x91  BYTE                     field_0x91  (evidence: 0x005434F0)
     // +0x92  BYTE                     field_0x92  (evidence: 0x005434F0)
     // +0x93  BYTE                     field_0x93  (evidence: 0x005434F0)
     // +0x94  BYTE                     field_0x94  (evidence: 0x005434F0)
     // +0x95  BYTE                     field_0x95  (evidence: 0x005434F0)
+    // +0x98  CriticalSectionLock      lock  (evidence: 0x005302D0)
+    // +0x9C  DWORD                    latchArg  (evidence: 0x005302D0)
+    // +0xA0  QWORD                    latchSrc  (evidence: 0x005302D0)
+    // +0xA8  BYTE                     pendingFlag  (evidence: 0x005302D0)
 };
 } // namespace lifted_layout
