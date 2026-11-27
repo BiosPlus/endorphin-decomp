@@ -1883,3 +1883,44 @@ void* __thiscall fn_004EB8C0(void* self, void* out, void* arg) {
     return out;
 }
 } // namespace lift_004EB8C0
+
+// [0x004EED30] sub_004EED30 (140 bytes)
+namespace lift_004EED30 {
+// Known callee 0x00662610: sub_00662610 (builds a std::string temp from a literal; args: temp, literal)
+extern void ext_00662610(void* self, void* tmp, const char* text);
+// Known callee 0x00474F00: sub_00474F00 (thiscall; this = self+0x18, args: temp, arg; returns string object to assign into)
+extern void* ext_00474F00(void* self, void* tmp, const char* arg);
+// Known callee 0x00476360: sub_00476360 (thiscall; this = self+0x08, arg = temp; returns a value stored to *out)
+extern void* ext_00476360(void* self, void* tmp);
+// Literal string at 0x00A3F2B0 passed to ext_00662610.
+extern const char mem_00A3F2B0[];
+// MSVCP80 std::string import slots (IAT values): operator=(const char*) and ~basic_string().
+extern uint32_t mem_00924FD4;
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::assignFromInputAndForward_004EED30
+// @class Unknown
+// @summary Builds a temp std::string from literal 0xA3F2B0; if p is non-null, runs 474F00 on this+0x18 and assigns p into the returned string via the operator= slot; then calls 476360 on this+0x8 with the temp, stores the result at *out, destroys the temp and returns out.
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0x18 uint8_t field_0x18
+void* fn_004EED30(void* self, void* out, const char* p) {
+    // MSVC80 std::string temporary (24 bytes).
+    alignas(4) uint8_t tmp[0x18];
+
+    ext_00662610(self, tmp, mem_00A3F2B0);
+
+    if (p != nullptr) {
+        void* str = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, tmp, p);
+        using AssignFn = void(__thiscall*)(void* self, const char* s);
+        reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FD4))(str, p);
+    }
+
+    void* result = ext_00476360(static_cast<uint8_t*>(self) + 0x08, tmp);
+    lift_field<void*>(out, 0) = result;
+
+    using DtorFn = void(__thiscall*)(void* self);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(tmp);
+
+    return out;
+}
+} // namespace lift_004EED30

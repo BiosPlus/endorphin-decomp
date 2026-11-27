@@ -27256,6 +27256,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046CD70 (ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_47).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EED30": {
+    "name": "Unknown::assignFromInputAndForward_004EED30",
+    "class": "Unknown",
+    "signature": "void* fn_004EED30(void* self, void* out, const char* p)",
+    "summary": "Builds a temp std::string from literal 0xA3F2B0; if p is non-null, runs 474F00 on this+0x18 and assigns p into the returned string via the operator= slot; then calls 476360 on this+0x8 with the temp, stores the result at *out, destroys the temp and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EF2B0": {
     "name": "CopyPairOut",
     "class": "\u003cUnknown\u003e (free function; self is passed in ECX)",

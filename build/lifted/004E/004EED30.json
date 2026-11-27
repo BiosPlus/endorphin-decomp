@@ -1,0 +1,28 @@
+{
+  "va": "0x004EED30",
+  "size": 140,
+  "orig_symbol": "sub_004EED30",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "Unknown::assignFromInputAndForward_004EED30",
+  "class": "Unknown",
+  "signature": "void* fn_004EED30(void* self, void* out, const char* p)",
+  "summary": "Builds a temp std::string from literal 0xA3F2B0; if p is non-null, runs 474F00 on this+0x18 and assigns p into the returned string via the operator= slot; then calls 476360 on this+0x8 with the temp, stores the result at *out, destroys the temp and returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:53:09Z"
+}
