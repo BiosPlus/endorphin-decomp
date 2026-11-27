@@ -1881,3 +1881,49 @@ void fn_006767D0(void* self) {
     lift_field<uint32_t>(base, 0x00) = 0;
 }
 } // namespace lift_006767D0
+
+// [0x0067F960] sub_0067F960 (104 bytes)
+namespace lift_0067F960 {
+extern uint32_t mem_00B5A120;
+extern uint32_t mem_00B5A124;
+extern uint32_t mem_00B5A11C;
+extern uint32_t mem_00925134;
+
+// @name GlobalArrayGetLastElement
+// @summary Returns the last DWORD of the global range [mem_00B5A120, mem_00B5A124); returns 0 when the range is empty or unset, and calls the CRT invalid-parameter handler on out-of-range access.
+uint32_t fn_0067F960(void) {
+    // Invalid-parameter handler (CRT _invalid_parameter_noinfo, loaded from the import slot).
+    auto invalid_parameter = []() {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    };
+
+    uint32_t begin = mem_00B5A120;
+    uint32_t end = mem_00B5A124;
+
+    // Empty or unset range: return 0.
+    if (begin == 0 || (static_cast<int32_t>(end - begin) >> 2) == 0) {
+        return 0;
+    }
+
+    // begin must not be past end.
+    if (begin > end) {
+        invalid_parameter();
+        end = mem_00B5A124;
+        begin = mem_00B5A120;
+    }
+
+    // Candidate element is end - 4; it must lie within [begin, end].
+    uint32_t elem = end - 4;
+    if (elem > end || elem < begin) {
+        invalid_parameter();
+    }
+
+    elem -= 4;
+    // Container at mem_00B5A11C: the end pointer sits at +8 (== mem_00B5A124).
+    if (elem >= reinterpret_cast<uint32_t*>(&mem_00B5A11C)[2]) {
+        invalid_parameter();
+    }
+
+    return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(elem));
+}
+} // namespace lift_0067F960

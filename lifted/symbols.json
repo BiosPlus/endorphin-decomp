@@ -49825,6 +49825,12 @@
     "summary": "Returns a pointer to the last 8-byte element of the vector with MSVC8 checked-iterator bounds validation.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067F960": {
+    "name": "GlobalArrayGetLastElement",
+    "signature": "uint32_t fn_0067F960(void)",
+    "summary": "Returns the last DWORD of the global range [mem_00B5A120, mem_00B5A124); returns 0 when the range is empty or unset, and calls the CRT invalid-parameter handler on out-of-range access.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067F9D0": {
     "name": "Unknown::notifyAndPopBack",
     "class": "Unknown",
@@ -73942,6 +73948,12 @@
     "name": "QueryFunctionThenForward_007DB4C0",
     "signature": "DWORD fn_007DB4C0(void* self, DWORD a1, float a2)",
     "summary": "Calls the function pointer at (self-\u003e+0xB0)-\u003e+0x08 with (0x4C, 0x10); if it returns nonzero, forwards (result, self, a1, a2) to sub_007DAE80, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
+  "0x007DB6C0": {
+    "name": "destroyListNode",
+    "signature": "void __cdecl sub_007DB6C0(void* node)",
+    "summary": "Releases a node's element array, backing buffer, and unlinks it from its circular doubly-linked list.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007DB720": {
