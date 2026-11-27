@@ -2158,3 +2158,32 @@ void* fn_0057BF80(uint8_t* first, uint8_t* last, uint8_t* dst) {
     return cur;
 }
 } // namespace lift_0057BF80
+
+// [0x0057CAC0] sub_0057CAC0 (141 bytes)
+namespace lift_0057CAC0 {
+// Known callee 0x005541A0: sub_005541A0_dtor (Destructor that destroys std::string members at +0x20 and +0x04)
+extern void ext_005541A0(void* self);
+// Known callee 0x005541F0: sub_005541F0_copy_ctor (Copy constructor for a struct with two uint8_t flags and two std::string fields)
+extern void* ext_005541F0(void* self, const void* src);
+
+// @name CopyConstructElementRange
+// @summary Copy-constructs `count` 0x3C-byte elements from `src` into the array at `begin`; on exception, destroys already-constructed elements and rethrows.
+void fn_0057CAC0(uint8_t* begin, uint32_t count, const void* src) {
+    uint8_t* cur = begin;
+    try {
+        while (count != 0) {
+            if (cur != nullptr) {
+                ext_005541F0(cur, src);
+            }
+            --count;
+            cur += 0x3C;
+        }
+    } catch (...) {
+        // Unwind: destroy elements [begin, cur) that were already constructed.
+        for (uint8_t* p = begin; p != cur; p += 0x3C) {
+            ext_005541A0(p);
+        }
+        throw;
+    }
+}
+} // namespace lift_0057CAC0
