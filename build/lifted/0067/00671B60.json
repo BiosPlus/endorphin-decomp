@@ -1,0 +1,28 @@
+{
+  "va": "0x00671B60",
+  "size": 128,
+  "orig_symbol": "ExprParser::SubComponentType::vfunc_40",
+  "src_path": "src/ExprParser/SubComponentType.cpp",
+  "lifted_path": "lifted/ExprParser/SubComponentType.cpp",
+  "name": "ExprParser::SubComponentType::vfunc_40",
+  "class": "ExprParser::SubComponentType",
+  "signature": "void __thiscall fn_00671B60(void* self, void* out)",
+  "summary": "Resolves a sub-component value from field_0x04 and field_0x08 and stores it into out-\u003efield_0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::SubComponentType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::SubComponentType",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:44:55Z"
+}

@@ -249,3 +249,37 @@ uint32_t fn_0066BE90(void* self, uint32_t arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_0066BE90
+
+// [0x00671B60]
+namespace lift_00671B60 {
+// @name ExprParser::SubComponentType::vfunc_40
+// @class ExprParser::SubComponentType
+// @summary Resolves a sub-component value from field_0x04 and field_0x08 and stores it into out->field_0x04.
+// @field ExprParser::SubComponentType +0x04 void* field_0x04
+// @field ExprParser::SubComponentType +0x08 void* field_0x08
+
+
+void __thiscall ext_00672060(void* self);
+uint32_t __cdecl ext_00671AA0(void* arg0, void* arg1);
+
+struct SubComponentPair {
+    void* f0;
+    void* f4;
+};
+
+void __thiscall fn_00671B60(void* self, void* out) {
+    SubComponentPair pair;
+    pair.f0 = nullptr;
+    pair.f4 = lift_field<void*>(self, 0x04);
+    ext_00672060(&pair);
+
+    uint32_t res = ext_00671AA0(pair.f4, lift_field<void*>(self, 0x08));
+    lift_field<uint32_t>(out, 0x04) = res;
+
+    if (pair.f4 != nullptr) {
+        using VFunc30 = void(__thiscall*)(void*, void*);
+        void** vtable = *reinterpret_cast<void***>(pair.f4);
+        reinterpret_cast<VFunc30>(vtable[0x78 / 4])(pair.f4, &pair.f0);
+    }
+}
+} // namespace lift_00671B60

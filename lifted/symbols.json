@@ -75067,6 +75067,13 @@
     "summary": "Calls the helper on the destination object, then copies three floats from src into the destination's float buffer.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x00671B60": {
+    "name": "ExprParser::SubComponentType::vfunc_40",
+    "class": "ExprParser::SubComponentType",
+    "signature": "void __thiscall fn_00671B60(void* self, void* out)",
+    "summary": "Resolves a sub-component value from field_0x04 and field_0x08 and stores it into out-\u003efield_0x04.",
+    "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
+  },
   "0x00671BE0": {
     "name": "sub_00671BE0",
     "class": "Unknown",
