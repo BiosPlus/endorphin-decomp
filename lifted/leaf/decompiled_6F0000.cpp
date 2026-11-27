@@ -2205,3 +2205,37 @@ uint32_t __stdcall fn_006FACA0(void* node, uint32_t a2, uint32_t a3, uint32_t a4
     return method(obj, a2, a3, a4, a5, a6, a7);
 }
 } // namespace lift_006FACA0
+
+// [0x006FCD50] sub_006FCD50 (112 bytes)
+namespace lift_006FCD50 {
+// Known callee 0x006D2130: sub_006D2130 (InitClampedMin1: zeroes +0x00/+0x04/+0x10,
+// stores max(arg1,1) at +0x08 and arg2 at +0x0C of the object passed as self.)
+extern void ext_006D2130(void* self, int32_t arg1, int32_t arg2);
+
+// @name Unknown::InitTwoEmbeddedSubobjects
+// @class Unknown
+// @summary Zeroes the two leading dwords, initializes embedded sub-objects at +0x08 and +0x20 via ext_006D2130(16, 4), stores a self-node pointer at +0x1C and +0x34, and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x34 uint32_t field_0x34
+void* fn_006FCD50(void* self) {
+    // Helper: 32-bit address of (base + off), as stored by the original 32-bit code.
+    auto addr_of = [](void* base, ptrdiff_t off) -> uint32_t {
+        return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(base) + off));
+    };
+
+    lift_field<uint32_t>(self, 0x00) = 0;
+    lift_field<uint32_t>(self, 0x04) = 0;
+
+    // First embedded sub-object at self+0x08; its node sits at self+0x18.
+    ext_006D2130(static_cast<uint8_t*>(self) + 0x08, 0x10, 4);
+    lift_field<uint32_t>(self, 0x1C) = addr_of(self, 0x18);
+
+    // Second embedded sub-object at self+0x20; its node sits at self+0x30.
+    ext_006D2130(static_cast<uint8_t*>(self) + 0x20, 0x10, 4);
+    lift_field<uint32_t>(self, 0x34) = addr_of(self, 0x30);
+
+    return self;
+}
+} // namespace lift_006FCD50

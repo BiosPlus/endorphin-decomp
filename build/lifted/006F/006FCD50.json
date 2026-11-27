@@ -1,0 +1,40 @@
+{
+  "va": "0x006FCD50",
+  "size": 112,
+  "orig_symbol": "sub_006FCD50",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::InitTwoEmbeddedSubobjects",
+  "class": "Unknown",
+  "signature": "void* fn_006FCD50(void* self)",
+  "summary": "Zeroes the two leading dwords, initializes embedded sub-objects at +0x08 and +0x20 via ext_006D2130(16, 4), stores a self-node pointer at +0x1C and +0x34, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:33Z"
+}

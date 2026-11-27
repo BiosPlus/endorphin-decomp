@@ -64780,6 +64780,13 @@
     "summary": "Setter storing int32_t argument into field at offset +0x18.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FCD50": {
+    "name": "Unknown::InitTwoEmbeddedSubobjects",
+    "class": "Unknown",
+    "signature": "void* fn_006FCD50(void* self)",
+    "summary": "Zeroes the two leading dwords, initializes embedded sub-objects at +0x08 and +0x20 via ext_006D2130(16, 4), stores a self-node pointer at +0x1C and +0x34, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FCF10": {
     "name": "initWithArgAndSelfSubobject",
     "class": "Unknown",
