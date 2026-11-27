@@ -1,0 +1,76 @@
+{
+  "va": "0x00485D80",
+  "size": 155,
+  "orig_symbol": "sub_00485D80",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "ResetCleanupPointers",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_00485D80(void* self)",
+  "summary": "Releases non-null pointers at +0x54, +0x44 and sub-object +0x18 (+0x30), zeroes their slots, resets the sub-object, then calls two helpers.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "ptr44"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "ptr54"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x18",
+      "type": "uint8_t sub[0x18] (sub-object passed as `this` to",
+      "name": "ext_00678DE0)"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x30",
+      "type": "void* ptr30 (sub-object",
+      "name": "+0x18)"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x34",
+      "type": "uint32_t field_0x34 (sub-object",
+      "name": "+0x1C)"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x38",
+      "type": "uint32_t field_0x38 (sub-object",
+      "name": "+0x20)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:18:39Z"
+}

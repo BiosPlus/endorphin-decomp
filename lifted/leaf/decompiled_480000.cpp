@@ -2742,3 +2742,62 @@ void fn_00486CB0(const void* arg1, const void* arg2, const char* arg3) {
     ext_006A6DD2(exc, mem_009DFD38);
 }
 } // namespace lift_00486CB0
+
+// [0x00485D80] sub_00485D80 (155 bytes)
+namespace lift_00485D80 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// Known callee 0x00678DE0: sub_00678DE0 (Auto-lifted identical-shape clone of 0x00503CD0 (fn_00503CD0).)
+extern void ext_00678DE0(void* self);
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void ext_00665810(void* self);
+extern int mem_0088A1E8;
+
+// @name ResetCleanupPointers
+// @class <ClassName> (optional)
+// @summary Releases non-null pointers at +0x54, +0x44 and sub-object +0x18 (+0x30), zeroes their slots, resets the sub-object, then calls two helpers.
+// @field <ClassName> +0x44 void* ptr44
+// @field <ClassName> +0x48 uint32_t field_0x48
+// @field <ClassName> +0x4C uint32_t field_0x4C
+// @field <ClassName> +0x54 void* ptr54
+// @field <ClassName> +0x58 uint32_t field_0x58
+// @field <ClassName> +0x5C uint32_t field_0x5C
+// @field <ClassName> +0x18 uint8_t sub[0x18] (sub-object passed as `this` to ext_00678DE0)
+// @field <ClassName> +0x30 void* ptr30 (sub-object +0x18)
+// @field <ClassName> +0x34 uint32_t field_0x34 (sub-object +0x1C)
+// @field <ClassName> +0x38 uint32_t field_0x38 (sub-object +0x20)
+void fn_00485D80(void* self) {
+    // The original SEH frame setup/teardown (fs:[0] push/pop, mem_0088A1E8 scope
+    // table) is compiler boilerplate and is not reproduced; the reference is kept
+    // so the global stays declared and referenced.
+    (void)&mem_0088A1E8;
+
+    void* p54 = lift_field<void*>(self, 0x54);
+    if (p54 != nullptr) {
+        ext_006A5C5C(p54);
+    }
+    lift_field<void*>(self, 0x54) = nullptr;
+    lift_field<uint32_t>(self, 0x58) = 0;
+    lift_field<uint32_t>(self, 0x5C) = 0;
+
+    void* p44 = lift_field<void*>(self, 0x44);
+    if (p44 != nullptr) {
+        ext_006A5C5C(p44);
+    }
+    lift_field<void*>(self, 0x44) = nullptr;
+    lift_field<uint32_t>(self, 0x48) = 0;
+    lift_field<uint32_t>(self, 0x4C) = 0;
+
+    void* sub = static_cast<uint8_t*>(self) + 0x18;
+    void* p30 = lift_field<void*>(sub, 0x18);
+    if (p30 != nullptr) {
+        ext_006A5C5C(p30);
+    }
+    lift_field<void*>(sub, 0x18) = nullptr;
+    lift_field<uint32_t>(sub, 0x1C) = 0;
+    lift_field<uint32_t>(sub, 0x20) = 0;
+
+    ext_00678DE0(sub);
+    ext_00665810(self);
+}
+} // namespace lift_00485D80

@@ -10975,6 +10975,13 @@
     "summary": "Pure jump thunk forwarding to sub_004825C0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00485D80": {
+    "name": "ResetCleanupPointers",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_00485D80(void* self)",
+    "summary": "Releases non-null pointers at +0x54, +0x44 and sub-object +0x18 (+0x30), zeroes their slots, resets the sub-object, then calls two helpers.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00485E20": {
     "name": "Commands::BufferTransformsCommand::vfunc_0",
     "class": "Commands::BufferTransformsCommand",
