@@ -330,3 +330,81 @@ void __thiscall fn_00562A30(void* self, void* arg0) {
     ext_0055E990(self, arg0);
 }
 } // namespace lift_00562A30
+
+// [0x005607E0]
+namespace lift_005607E0 {
+// @name FBXIO::vfunc_33
+// @class FBXIO
+// @summary Populate a float vector with standard frame rates and return the index of the first rate greater than this->field_0x174, or size - 1.
+// @field FBXIO +0x174 float field_0x174
+
+extern int __thiscall ext_0041CD60(void* self);
+extern void __thiscall ext_0047B170(void* self, const float* val);
+extern void (*mem_00925134)(void);
+extern void ext_00403560(void);
+extern void ext_0055E180(void);
+extern void ext_0055E490(void);
+extern void ext_0055F2C0(void);
+extern void ext_00562A80(void);
+extern void ext_00662120(void);
+extern void ext_00663B30(void);
+extern void ext_006A6DD2(void);
+extern void ext_006BC800(void);
+extern void ext_006BC970(void);
+extern void ext_006D2130(void);
+extern void ext_006D2160(void);
+extern void ext_006E7460(void);
+extern uint32_t mem_00924FD0;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00B37F40;
+
+extern int __thiscall fn_005607E0(void* self, void* outRates, float unusedArg) {
+    (void)unusedArg;
+    (void)&ext_00403560; (void)&ext_0055E180; (void)&ext_0055E490; (void)&ext_0055F2C0;
+    (void)&ext_00562A80; (void)&ext_00662120; (void)&ext_00663B30; (void)&ext_006A6DD2;
+    (void)&ext_006BC800; (void)&ext_006BC970; (void)&ext_006D2130; (void)&ext_006D2160;
+    (void)&ext_006E7460;
+    (void)&mem_00924FD0; (void)&mem_00924FE0; (void)&mem_00924FE4;
+    (void)&mem_00924FF0; (void)&mem_00924FF4; (void)&mem_00B37F40;
+
+    static const float kRates[] = {
+        120.0f,
+        60.0f,
+        50.0f,
+        30.0f,
+        29.97f,
+        25.0f,
+        24.0f,
+    };
+
+    for (float rate : kRates) {
+        ext_0047B170(outRates, &rate);
+    }
+
+    float target = lift_field<float>(self, 0x174);
+    int count = ext_0041CD60(outRates);
+    for (int i = 0; i < count; ++i) {
+        float* begin = lift_field<float*>(outRates, 0x04);
+        float* end = lift_field<float*>(outRates, 0x08);
+        if (!begin || static_cast<uint32_t>(i) >= static_cast<uint32_t>(end - begin)) {
+            mem_00925134();
+        }
+        begin = lift_field<float*>(outRates, 0x04);
+        float diff = begin[i] - target;
+        if (diff > 0.0f) {
+            return i;
+        }
+        count = ext_0041CD60(outRates);
+    }
+
+    float* begin = lift_field<float*>(outRates, 0x04);
+    if (!begin) {
+        return -1;
+    }
+    float* end = lift_field<float*>(outRates, 0x08);
+    return static_cast<int>(end - begin) - 1;
+}
+} // namespace lift_005607E0

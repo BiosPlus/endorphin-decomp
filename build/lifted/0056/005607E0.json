@@ -1,0 +1,22 @@
+{
+  "va": "0x005607E0",
+  "size": 305,
+  "orig_symbol": "FBXIO::vfunc_33",
+  "src_path": "src/classes/FBXIO.cpp",
+  "lifted_path": "lifted/classes/FBXIO.cpp",
+  "name": "FBXIO::vfunc_33",
+  "class": "FBXIO",
+  "signature": "extern \"C\" int __thiscall fn_005607E0(void* self, void* outRates, float unusedArg)",
+  "summary": "Populate a float vector with standard frame rates and return the index of the first rate greater than this-\u003efield_0x174, or size - 1.",
+  "fields": [
+    {
+      "class": "FBXIO",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "field_0x174"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:44:03Z"
+}
