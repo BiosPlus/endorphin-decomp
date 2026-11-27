@@ -11529,3 +11529,28 @@ void __stdcall fn_0058FE00(void* holder) {
     *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B3F974));
 }
 } // namespace lift_0058FE00
+
+// [0x005901D0] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerY(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005901D0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00B3F980;
+extern int mem_00B3F97C;
+
+// @name ExprParser::ReadWriteMethodType<TransformNode>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerY(float), 0}>
+// @summary One-time guarded init of the static accessor object at mem_00B3F97C; then binds self+0x04 to its address.
+// @field ExprParser::ReadWriteMethodType +0x04 uint32_t holder_accessor
+//
+// Original SEH frame (fs:[0] push/pop, trylevel stores) is omitted: it is
+// exception-handling scaffolding with no portable C++ equivalent.
+void fn_005901D0(void* self) {
+    // Init-once guard: bit 0 of mem_00B3F980.
+    if ((mem_00B3F980 & 1) == 0) {
+        mem_00B3F980 |= 1;
+        ext_0067A670();                                   // thiscall on &mem_00B3F97C
+        mem_00B3F97C = 0x0095C544;                        // vtable pointer of the accessor object
+    }
+    lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B3F97C));
+}
+} // namespace lift_005901D0
