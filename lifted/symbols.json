@@ -38626,6 +38626,13 @@
     "summary": "Loads Acclaim2 character data, processes skeleton/nodes based on version, and copies transform/bounds fields.",
     "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
   },
+  "0x0056D620": {
+    "name": "Acclaim2CharacterIO::vfunc_13",
+    "class": "Acclaim2CharacterIO",
+    "signature": "void __thiscall fn_0056D620(void* self, void* arg1)",
+    "summary": "Exports/serializes an Acclaim2 character from the scene/character data into the target file/path.",
+    "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
+  },
   "0x0056D840": {
     "name": "sub_0056D840",
     "class": "Unknown",

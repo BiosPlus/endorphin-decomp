@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/classes/Acclaim2CharacterIO.cpp
 #include "lift_compat.h"
 #include <string>
+#include <cstdint>
 
 // [0x0056B8C0] Acclaim2CharacterIO::vfunc_48
 namespace lift_0056B8C0 {
@@ -154,3 +155,127 @@ int __thiscall fn_0056BD50(void* self, void* arg0) {
     return 0;
 }
 } // namespace lift_0056BD50
+
+// [0x0056D620]
+namespace lift_0056D620 {
+void __thiscall ext_00493D90(void* self);
+uint32_t __thiscall ext_00566FE0(void* self, uint32_t value);
+void __thiscall ext_00567910(void* self);
+void __thiscall ext_005679D0(void* self);
+void __thiscall ext_00568460(void* self, void* arg1);
+void __thiscall ext_0056B360(void* self);
+void __thiscall ext_0056D3B0(void* self, void* arg1);
+void* __thiscall ext_00584A10(void* self);
+void __thiscall ext_005A3610(void* self);
+void __thiscall ext_00662120(void* self);
+void __thiscall ext_00673C20(void* self);
+
+extern uintptr_t mem_00924FC0;
+extern uintptr_t mem_00924FDC;
+extern uintptr_t mem_00925134;
+extern float mem_00955998;
+
+// @name Acclaim2CharacterIO::vfunc_13
+// @class Acclaim2CharacterIO
+// @summary Exports/serializes an Acclaim2 character from the scene/character data into the target file/path.
+// @field Acclaim2CharacterIO +0x8 uint8_t field_0x8
+// @field Acclaim2CharacterIO +0x188 float field_0x188
+// @field Acclaim2CharacterIO +0x18C float field_0x18c
+// @field Acclaim2CharacterIO +0x190 float field_0x190
+// @field Acclaim2CharacterIO +0x194 uint32_t field_0x194
+// @field Acclaim2CharacterIO +0x198 uint32_t field_0x198
+// @field Acclaim2CharacterIO +0x19C uint32_t field_0x19c
+// @field Acclaim2CharacterIO +0x414 void* field_0x414
+// @field Acclaim2CharacterIO +0x420 void* field_0x420
+// @field Acclaim2CharacterIO +0x46C float field_0x46c
+// @field Acclaim2CharacterIO +0x490 float field_0x490
+// @field Acclaim2CharacterIO +0x494 float field_0x494
+// @field Acclaim2CharacterIO +0x498 float field_0x498
+// @field Acclaim2CharacterIO +0x49C uint32_t field_0x49c
+// @field Acclaim2CharacterIO +0x4A0 uint32_t field_0x4a0
+// @field Acclaim2CharacterIO +0x4A4 uint32_t field_0x4a4
+// @field Acclaim2CharacterIO +0x4A8 uint8_t field_0x4a8
+// @field Acclaim2CharacterIO +0x4C4 uint8_t field_0x4c4
+// @field Acclaim2CharacterIO +0x4F0 uint8_t field_0x4f0
+// @field Acclaim2CharacterIO +0x4F4 uint32_t field_0x4f4
+void __thiscall fn_0056D620(void* self, void* arg1) {
+    (void)mem_00924FC0;
+    uint8_t* base = static_cast<uint8_t*>(self);
+    auto str_assign = reinterpret_cast<void(__thiscall*)(void*, const void*)>(mem_00924FDC);
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+
+    ext_00662120(lift_field<void*>(base, 0x420));
+
+    float* field_46c = reinterpret_cast<float*>(base + 0x46C);
+    ext_0056B360(field_46c);
+
+    if (lift_field<uint32_t>(base, 0x4F4) == 1) {
+        *field_46c = mem_00955998;
+    }
+
+    uint8_t* obj_414 = lift_field<uint8_t*>(base, 0x414);
+    void* name_str = ext_00584A10(obj_414 + 4);
+    str_assign(base + 0x4C4, name_str);
+
+    lift_field<float>(base, 0x498) = lift_field<float>(base, 0x190);
+    lift_field<uint32_t>(base, 0x4A0) = lift_field<uint32_t>(base, 0x198);
+    lift_field<uint32_t>(base, 0x4A4) = lift_field<uint32_t>(base, 0x19C);
+    lift_field<float>(base, 0x490) = lift_field<float>(base, 0x188);
+    lift_field<uint32_t>(base, 0x49C) = lift_field<uint32_t>(base, 0x194);
+    lift_field<float>(base, 0x494) = lift_field<float>(base, 0x18C);
+
+    str_assign(base + 0x4A8, base + 0x8);
+
+    ext_0056D3B0(self, lift_field<uint8_t*>(base, 0x414) + 0x160);
+
+    if (*field_46c >= mem_00955998) {
+        uint8_t* list_container = lift_field<uint8_t*>(base, 0x414) + 0x58C;
+        struct ListIter {
+            uint8_t* container;
+            uint8_t* node;
+        } iter;
+        uint8_t* head = lift_field<uint8_t*>(list_container, 0x4);
+        iter.container = list_container;
+        iter.node = lift_field<uint8_t*>(head, 0x0);
+
+        while (true) {
+            uint8_t* end_node = lift_field<uint8_t*>(list_container, 0x4);
+            if (!iter.container || iter.container != list_container) {
+                invalid_param();
+            }
+            if (iter.node == end_node) {
+                break;
+            }
+            if (!iter.container) {
+                invalid_param();
+            }
+            if (iter.node == lift_field<uint8_t*>(iter.container, 0x4)) {
+                invalid_param();
+            }
+
+            void* item = lift_field<void*>(iter.node, 0x28);
+            auto vfunc_1c = reinterpret_cast<bool(__thiscall*)(void*)>(
+                (*reinterpret_cast<void***>(item))[0x70 / 4]);
+            if (vfunc_1c(item)) {
+                if (iter.node == lift_field<uint8_t*>(iter.container, 0x4)) {
+                    invalid_param();
+                }
+                ext_0056D3B0(self, lift_field<void*>(iter.node, 0x28));
+            }
+            ext_00673C20(&iter);
+        }
+    }
+
+    lift_field<uint8_t>(base, 0x4F0) = 1;
+    ext_005A3610(lift_field<void*>(base, 0x414));
+
+    uint32_t local_writer[4] = {};
+    ext_00566FE0(local_writer, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(field_46c)));
+    ext_005679D0(field_46c);
+    ext_00567910(field_46c);
+    ext_00568460(local_writer, arg1);
+
+    str_assign(lift_field<uint8_t*>(base, 0x414) + 0x4AC, arg1);
+    ext_00493D90(local_writer);
+}
+} // namespace lift_0056D620
