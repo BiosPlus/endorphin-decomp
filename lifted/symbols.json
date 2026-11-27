@@ -36322,6 +36322,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00633AE0 (ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D69B0": {
+    "name": "ExprParser::ReadMethodType\u003cEffector,float,getScaledDesiredDisplacement\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e",
+    "signature": "void* fn_005D69B0(void* out, void** holder)",
+    "summary": "Formats the scaled desired displacement of the Effector held in *holder into out; throws if the Effector pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D6A00": {
     "name": "ExprParser::ReadMethodType\u003cEffector,getScaledDesiredDisplacement\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026Effector::getScaledDesiredDisplacement, 0\u003e",

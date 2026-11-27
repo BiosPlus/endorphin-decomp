@@ -61403,3 +61403,35 @@ void* fn_004B9450(void* slot, void* unused) {
     return slot;
 }
 } // namespace lift_004B9450
+
+// [0x005D69B0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_005D69B0 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// Throw-info / message constant referenced at 0x009DEC1C (.rdata)
+extern unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<Effector,float,getScaledDesiredDisplacement>::vfunc_4
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>
+// @summary Formats the scaled desired displacement of the Effector held in *holder into out; throws if the Effector pointer is null.
+// @field Effector +0x2c float field_0x2c
+void* fn_005D69B0(void* out, void** holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Construct exception object in a local frame, then throw it.
+        unsigned char frame[0x24] = {};
+        reinterpret_cast<void (*)(void*)>(reinterpret_cast<void*>(ext_0046C3C0))(frame);
+        reinterpret_cast<void (*)(void*, void*)>(reinterpret_cast<void*>(ext_006A6DD2))(
+            frame + 4, static_cast<void*>(mem_009DEC1C));
+        return nullptr; // not reached: _CxxThrowException does not return
+    }
+
+    float value = *reinterpret_cast<float*>(static_cast<unsigned char*>(obj) + 0x2c);
+    reinterpret_cast<void* (*)(void*, float)>(reinterpret_cast<void*>(ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_005D69B0
