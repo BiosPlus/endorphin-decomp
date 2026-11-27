@@ -3796,3 +3796,35 @@ void fn_00484E90(void* self, uint32_t value) {
     ext_00483630(self, &value, self, end, value);
 }
 } // namespace lift_00484E90
+
+// [0x0048BE70] sub_0048BE70 (165 bytes)
+namespace lift_0048BE70 {
+extern void ext_00475960(void* inner, void* out, void* str, int flag);
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack arg; stores arg into first DWORD of self).
+extern void ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AD9E88;
+extern DWORD mem_00AD9E84;
+extern DWORD mem_00924FE4;  // MSVCP80 std::string ctor import slot (modeled by std::string below)
+extern DWORD mem_00924FF4;  // MSVCP80 std::string dtor import slot (modeled by RAII below)
+
+// @name Object_InitStaticAndCall_0048BE70
+// @class Object
+// @summary Runs a one-time static guard initialization of mem_00AD9E84 (sentinel 0x0093DBBC), then builds a temporary std::string from the name argument and passes it to ext_00475960 together with this->inner and flag 1; thiscall, one stack arg (callee pops 4).
+// @field Object +0x00 void* inner
+void __thiscall fn_0048BE70(void* self, const char* name) {
+    // Function-local static guard: first call constructs mem_00AD9E84 and sets its sentinel.
+    if ((mem_00AD9E88 & 1u) == 0) {
+        mem_00AD9E88 |= 1u;
+        ext_0067A670(&mem_00AD9E84, static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+        mem_00AD9E84 = 0x0093DBBCu;
+    }
+
+    // Original: MSVCP80 ctor via [0x924FE4] and dtor via [0x924FF4]; modeled by RAII std::string.
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    std::string local(name);
+    void* inner = *reinterpret_cast<void**>(self);
+    DWORD out_slot = 0;
+    ext_00475960(inner, &out_slot, &local, 1);
+}
+} // namespace lift_0048BE70

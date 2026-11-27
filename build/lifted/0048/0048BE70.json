@@ -1,0 +1,22 @@
+{
+  "va": "0x0048BE70",
+  "size": 165,
+  "orig_symbol": "sub_0048BE70",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Object_InitStaticAndCall_0048BE70",
+  "class": "Object",
+  "signature": "extern \"C\" DWORD mem_00924FE4;  // MSVCP80 std::string ctor import slot (modeled by std::string below) extern \"C\" DWORD mem_00924FF4;  // MSVCP80 std::string dtor import slot (modeled by RAII below) void __thiscall fn_0048BE70(void* self, const char* name)",
+  "summary": "Runs a one-time static guard initialization of mem_00AD9E84 (sentinel 0x0093DBBC), then builds a temporary std::string from the name argument and passes it to ext_00475960 together with this-\u003einner and flag 1; thiscall, one stack arg (callee pops 4).",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:24Z"
+}

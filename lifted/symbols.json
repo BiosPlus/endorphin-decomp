@@ -12654,6 +12654,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0048BE70": {
+    "name": "Object_InitStaticAndCall_0048BE70",
+    "class": "Object",
+    "signature": "extern \"C\" DWORD mem_00924FE4;  // MSVCP80 std::string ctor import slot (modeled by std::string below) extern \"C\" DWORD mem_00924FF4;  // MSVCP80 std::string dtor import slot (modeled by RAII below) void __thiscall fn_0048BE70(void* self, const char* name)",
+    "summary": "Runs a one-time static guard initialization of mem_00AD9E84 (sentinel 0x0093DBBC), then builds a temporary std::string from the name argument and passes it to ext_00475960 together with this-\u003einner and flag 1; thiscall, one stack arg (callee pops 4).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048C120": {
     "name": "NMData::PoseData::vfunc_6",
     "class": "NMData::PoseData",
