@@ -1673,3 +1673,31 @@ void* fn_004C98C0(void* key, void* arg2, uint8_t throwIfNotFound) {
     return nullptr;
 }
 } // namespace lift_004C98C0
+
+// [0x004CE420]
+namespace lift_004CE420 {
+extern void __cdecl ext_00662610(void* outStr, const char* src);
+extern void* __fastcall ext_00474F00(void* self, void* edx, void* key);
+extern uint32_t __fastcall ext_00476360(void* self, void* edx, void* key);
+extern uint32_t mem_00924FD4;  // IAT: std::string::operator=(const char*)
+extern uint32_t mem_00924FF4;  // IAT: std::string::~basic_string()
+
+typedef void* (__thiscall* StrAssignFn)(void* self, const char* s);
+typedef void (__thiscall* StrDtorFn)(void* self);
+
+// @name Unknown::SetStringAndLookup
+// @class Unknown
+// @summary Builds a temp string from a constant, optionally assigns value into map at +0x18 for it, then looks it up in +0x08 and stores the result in *out.
+// @field Unknown +0x08 uint8_t field_0x08 (container, ext_00476360)
+// @field Unknown +0x18 uint8_t field_0x18 (container, ext_00474F00)
+void __fastcall fn_004CE420(void* self, void* /*edx*/, uint32_t* out, const char* value) {
+    alignas(4) uint8_t tmp[0x1c];
+    ext_00662610(tmp, reinterpret_cast<const char*>(0x00A3B654));
+    if (value != nullptr) {
+        void* slot = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, nullptr, tmp);
+        reinterpret_cast<StrAssignFn>(*reinterpret_cast<uintptr_t*>(&mem_00924FD4))(slot, value);
+    }
+    *out = ext_00476360(static_cast<uint8_t*>(self) + 0x08, nullptr, tmp);
+    reinterpret_cast<StrDtorFn>(*reinterpret_cast<uintptr_t*>(&mem_00924FF4))(tmp);
+}
+} // namespace lift_004CE420

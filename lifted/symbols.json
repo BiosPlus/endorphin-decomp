@@ -22411,6 +22411,13 @@
     "summary": "Allocates and initializes a 0x30-byte helper object, replaces field_0x180, and updates it with this.",
     "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
   },
+  "0x004CE420": {
+    "name": "Unknown::SetStringAndLookup",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_004CE420(void* self, void* /*edx*/, uint32_t* out, const char* value)",
+    "summary": "Builds a temp string from a constant, optionally assigns value into map at +0x18 for it, then looks it up in +0x08 and stores the result in *out.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CE570": {
     "name": "sub_004CE570",
     "signature": "extern \"C\" void __fastcall fn_004CE570(void* self, int edx_unused, float value)",

@@ -1,0 +1,28 @@
+{
+  "va": "0x004CE420",
+  "size": 140,
+  "orig_symbol": "sub_004CE420",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "Unknown::SetStringAndLookup",
+  "class": "Unknown",
+  "signature": "void __fastcall fn_004CE420(void* self, void* /*edx*/, uint32_t* out, const char* value)",
+  "summary": "Builds a temp string from a constant, optionally assigns value into map at +0x18 for it, then looks it up in +0x08 and stores the result in *out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t field_0x08 (container,",
+      "name": "ext_00476360)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t field_0x18 (container,",
+      "name": "ext_00474F00)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:41:03Z"
+}
