@@ -3568,3 +3568,47 @@ bool fn_006D4AC0(void* self, void* /*edx*/, void* entry) {
     return true;
 }
 } // namespace lift_006D4AC0
+
+// [0x006D4C20] sub_006D4C20 (110 bytes)
+namespace lift_006D4C20 {
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, int32_t index);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, uint32_t index);
+
+// @name Unknown::removeEntryAndRelease_006D4C20
+// @class Unknown
+// @summary Searches the pointer array at this+0x7c for key; if found, removes it and releases key via its vtable slot 1, returning true. If not found, assigns string index 0 on the subobject at +0x1c4 and returns false.
+// @field Unknown +0x7c int32_t m_entryCount
+// @field Unknown +0x8c void** m_entryData
+// @field Unknown +0x1c4 uint8_t field_0x1c4
+extern uint8_t fn_006D4C20(void* self, void* key) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    const int32_t count = lift_field<int32_t>(base, 0x7c);
+
+    int32_t found = -1;
+    if (count > 0) {
+        void** entries = lift_field<void**>(base, 0x8c);
+        for (int32_t i = 0; i < count; ++i) {
+            if (entries[i] == key) {
+                found = i;
+                break;
+            }
+        }
+    }
+
+    if (found == -1) {
+        ext_006E7440(base + 0x1c4, 0);
+        return 0;
+    }
+
+    ext_006D2200(base + 0x7c, found);
+
+    if (key != nullptr) {
+        using ReleaseFn = void*(__thiscall*)(void* self, uint32_t flags);
+        void** vtable = *static_cast<void***>(key);
+        reinterpret_cast<ReleaseFn>(vtable[1])(key, 1u);
+    }
+    return 1;
+}
+} // namespace lift_006D4C20

@@ -1,0 +1,34 @@
+{
+  "va": "0x006D4C20",
+  "size": 110,
+  "orig_symbol": "sub_006D4C20",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::removeEntryAndRelease_006D4C20",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint8_t fn_006D4C20(void* self, void* key)",
+  "summary": "Searches the pointer array at this+0x7c for key; if found, removes it and releases key via its vtable slot 1, returning true. If not found, assigns string index 0 on the subobject at +0x1c4 and returns false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "int32_t",
+      "name": "m_entryCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "void**",
+      "name": "m_entryData"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "uint8_t",
+      "name": "field_0x1c4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:54:57Z"
+}

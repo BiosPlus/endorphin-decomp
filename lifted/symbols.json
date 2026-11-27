@@ -68688,6 +68688,13 @@
     "summary": "Linearly searches the DWORD array at +0x5C (count at +0x4C) for the given value; if found, removes it and releases the item via its vtable slot 0 (deleting dtor, flag 1); otherwise calls the sub-object at +0x1C4 with index 0. Returns true when found, false otherwise.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D4C20": {
+    "name": "Unknown::removeEntryAndRelease_006D4C20",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint8_t fn_006D4C20(void* self, void* key)",
+    "summary": "Searches the pointer array at this+0x7c for key; if found, removes it and releases key via its vtable slot 1, returning true. If not found, assigns string index 0 on the subobject at +0x1c4 and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D55F0": {
     "name": "sub_006D55F0",
     "signature": "extern \"C\" int32_t __fastcall fn_006D55F0(void* self)",
