@@ -1112,3 +1112,60 @@ void fn_006AA890(void* self) {
     }
 }
 } // namespace lift_006AA890
+
+// [0x006AD440]
+namespace lift_006AD440 {
+// @name sub_006AD440
+// @summary Retrieves three color or style values from the associated window/control based on focus state.
+// @field Self +0x14 uint32_t field_0x14
+// @field Self +0x48 uint32_t field_0x48
+
+
+extern uint32_t __thiscall ext_006A7C00(uint32_t self);
+extern uint32_t __stdcall ext_006A5E00(uint32_t hwnd);
+extern uint32_t __thiscall ext_006A7D10(uint32_t self);
+extern uint32_t __thiscall ext_006A7D30(uint32_t self);
+extern uint32_t __thiscall ext_006A7D50(uint32_t self);
+extern uint32_t __thiscall ext_006A7D70(uint32_t self);
+
+extern uint32_t mem_00925654;
+extern uint32_t mem_009256BC;
+
+extern void __thiscall fn_006AD440(void* self, uint32_t* out1, uint32_t* out2, uint32_t* out3) {
+    using GetFocusFn = uint32_t(__stdcall*)();
+    using IsChildFn = uint32_t(__stdcall*)(uint32_t, uint32_t);
+
+    uint32_t ctrl = lift_field<uint32_t>(self, 0x14);
+    uint32_t active = ext_006A7C00(ctrl);
+    uint32_t val1 = 0;
+
+    if (active == static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self))) {
+        uint32_t focusHwnd = reinterpret_cast<GetFocusFn>(static_cast<uintptr_t>(mem_00925654))();
+        uint32_t focusWnd = ext_006A5E00(focusHwnd);
+        uint32_t targetCtrl = lift_field<uint32_t>(self, 0x14);
+
+        bool isFocused = (focusWnd == targetCtrl);
+        if (!isFocused) {
+            uint32_t childHwnd = focusWnd ? lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(focusWnd)), 0x20) : 0;
+            uint32_t parentHwnd = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(targetCtrl)), 0x20);
+            isFocused = (reinterpret_cast<IsChildFn>(static_cast<uintptr_t>(mem_009256BC))(parentHwnd, childHwnd) != 0);
+        }
+
+        if (isFocused) {
+            *out2 = ext_006A7D70(lift_field<uint32_t>(self, 0x14));
+            val1 = ext_006A7D10(lift_field<uint32_t>(self, 0x14));
+            *out1 = val1;
+            *out3 = ext_006A7D50(lift_field<uint32_t>(self, 0x14));
+            return;
+        }
+
+        *out2 = ext_006A7D50(lift_field<uint32_t>(self, 0x14));
+    } else {
+        *out2 = lift_field<uint32_t>(self, 0x48);
+    }
+
+    val1 = ext_006A7D30(lift_field<uint32_t>(self, 0x14));
+    *out1 = val1;
+    *out3 = ext_006A7D50(lift_field<uint32_t>(self, 0x14));
+}
+} // namespace lift_006AD440

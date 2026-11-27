@@ -71223,6 +71223,12 @@
     "summary": "Follows the pointer at this+0x268 and returns 1 if the byte at that object's +0x270 is zero, else 0.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702660": {
+    "name": "sub_00702660",
+    "signature": "void __thiscall sub_00702660(void* self, uint32_t mode)",
+    "summary": "Sets a mode/state field on the sub-object at +0x268 based on the input value (1..5, else 0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702700": {
     "name": "getSubStateCode",
     "class": "Unknown",
