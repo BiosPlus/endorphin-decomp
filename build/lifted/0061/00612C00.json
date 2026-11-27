@@ -1,0 +1,40 @@
+{
+  "va": "0x00612C00",
+  "size": 151,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_68",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_68",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "float* __thiscall fn_00612C00(void* self, float* out)",
+  "summary": "Zeroes the caller's float[3] output, runs a virtual call on the +0x04 sub-object into a unit quaternion-like buffer, post-processes it via ext_0067DAD0/ext_00694900/ext_00694880, then divides each output component by this-\u003efield_0x154/0x158/0x15c and returns the output pointer.",
+  "fields": [
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x154",
+      "type": "float",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x158",
+      "type": "float",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x15C",
+      "type": "float",
+      "name": "field_0x15c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:17Z"
+}

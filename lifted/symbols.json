@@ -59355,6 +59355,13 @@
     "summary": "Lazily initializes and returns a static singleton object at 0x00B48E90.",
     "lifted_path": "lifted/NMData/Constraint.cpp"
   },
+  "0x00612C00": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_68",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "float* __thiscall fn_00612C00(void* self, float* out)",
+    "summary": "Zeroes the caller's float[3] output, runs a virtual call on the +0x04 sub-object into a unit quaternion-like buffer, post-processes it via ext_0067DAD0/ext_00694900/ext_00694880, then divides each output component by this-\u003efield_0x154/0x158/0x15c and returns the output pointer.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x00612E80": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_59",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

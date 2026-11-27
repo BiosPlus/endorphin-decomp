@@ -276,3 +276,42 @@ void* __stdcall fn_00611B80(void* out, uint32_t mode) {
     return out;
 }
 } // namespace lift_00611B80
+
+// [0x00612C00] NMData::PrimaryTwistAndSwingConstraint::vfunc_68 (151 bytes)
+namespace lift_00612C00 {
+extern void ext_0067DAD0(void* self);
+extern void ext_00694900(void* self);
+extern void ext_00694880(void* self, float* out);
+extern int mem_00B40640;
+
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_68
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Zeroes the caller's float[3] output, runs a virtual call on the +0x04 sub-object into a unit quaternion-like buffer, post-processes it via ext_0067DAD0/ext_00694900/ext_00694880, then divides each output component by this->field_0x154/0x158/0x15c and returns the output pointer.
+// @field NMData::PrimaryTwistAndSwingConstraint +0x04 void* field_0x04
+// @field NMData::PrimaryTwistAndSwingConstraint +0x154 float field_0x154
+// @field NMData::PrimaryTwistAndSwingConstraint +0x158 float field_0x158
+// @field NMData::PrimaryTwistAndSwingConstraint +0x15c float field_0x15c
+float* __thiscall fn_00612C00(void* self, float* out) {
+    out[0] = 0.0f;
+    out[1] = 0.0f;
+    out[2] = 0.0f;
+
+    // Scratch buffer seeded with (1, 0, 0, 0) and passed to the callees below.
+    float t[4] = {1.0f, 0.0f, 0.0f, 0.0f};
+
+    // Virtual call: slot 2 of the vtable at this+4, thiscall with (mem_00B40640, &t).
+    uint8_t* sub = reinterpret_cast<uint8_t*>(self) + 0x04;
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    auto slot2 = reinterpret_cast<void* (*)(void*, uint32_t, float*)>(vtbl[2]);
+    void* obj = slot2(sub, static_cast<uint32_t>(mem_00B40640), t);
+
+    ext_0067DAD0(obj);
+    ext_00694900(t);
+    ext_00694880(t, out);
+
+    out[0] = out[0] / lift_field<float>(self, 0x154);
+    out[1] = out[1] / lift_field<float>(self, 0x158);
+    out[2] = out[2] / lift_field<float>(self, 0x15c);
+    return out;
+}
+} // namespace lift_00612C00
