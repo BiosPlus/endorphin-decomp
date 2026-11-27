@@ -1150,7 +1150,7 @@ struct Unknown_Fields {
     // +0x54  int32_t                  field_0x54  (evidence: 0x006AA890) // CONFLICT: multiple definitions at +0x54
     // +0x54  std::string              field_0x54  (evidence: 0x004767E0, 0x00553FF0) // CONFLICT: multiple definitions at +0x54
     // +0x54  std::uint32_t            field_0x54  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x54
-    // +0x54  uint32_t                 field_0x54  (evidence: 0x004030F0, 0x0040BE90, 0x00415F97, 0x0053B1F0, 0x00622B40, 0x006296D0, 0x006B6290, 0x006BB5D0, 0x006BB5F0, 0x006F99B0, 0x0078D7A0) // CONFLICT: multiple definitions at +0x54
+    // +0x54  uint32_t                 field_0x54  (evidence: 0x004030F0, 0x0040BE90, 0x00415F97, 0x0053B1F0, 0x00622B40, 0x006296D0, 0x006B6290, 0x006BB5D0, 0x006BB5F0, 0x006F99B0, 0x00709F90, 0x0078D7A0) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint8_t                  field_0x54  (evidence: 0x00610D10, 0x006B6320, 0x006D0370) // CONFLICT: multiple definitions at +0x54
     // +0x54  void*                    field_0x54  (evidence: 0x004584C0, 0x00458650, 0x00458670, 0x00458840, 0x00458A00, 0x0045C130, 0x006A92F0, 0x006AAC90, 0x006B0EC0, 0x006B4CB0) // CONFLICT: multiple definitions at +0x54
     // +0x54  DWORD*                   stringTable  (evidence: 0x006E7440) // CONFLICT: multiple definitions at +0x54
@@ -1342,6 +1342,7 @@ struct Unknown_Fields {
     // +0x80  float                    field_0x80  (evidence: 0x0060CD40, 0x00622B40, 0x0062E290, 0x007D8600) // CONFLICT: multiple definitions at +0x80
     // +0x80  int32_t                  field_0x80  (evidence: 0x007C8490, 0x007CAF70, 0x007CDB70) // CONFLICT: multiple definitions at +0x80
     // +0x80  uint32_t                 field_0x80  (evidence: 0x006080D0, 0x006B7DC0, 0x006F99B0) // CONFLICT: multiple definitions at +0x80
+    // +0x80  uint8_t                  field_0x80  (evidence: 0x00709F90) // CONFLICT: multiple definitions at +0x80
     // +0x80  uint8_t[1]               field_0x80  (evidence: 0x005480F0) // CONFLICT: multiple definitions at +0x80
     // +0x80  void*                    field_0x80  (evidence: 0x006D0490) // CONFLICT: multiple definitions at +0x80
     // +0x80  void**                   field_0x80  (evidence: 0x00586540, 0x00587110) // CONFLICT: multiple definitions at +0x80

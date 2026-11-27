@@ -3155,3 +3155,54 @@ void fn_0070EB40(void* self, void* args) {
     ext_006B9D70(arg + 0x4c);
 }
 } // namespace lift_0070EB40
+
+// [0x00709F90]
+namespace lift_00709F90 {
+// @name sub_00709F90
+// @summary Dispatches vtable notifications (0x14, 0x15) and updates subobject at +0x80 or +0x40 depending on field +0x54
+// @field Unknown +0x54 uint32_t field_0x54
+// @field Unknown +0x80 uint8_t field_0x80
+
+
+extern void* __thiscall ext_006B9D20(void* self, void* obj);
+extern void* __thiscall ext_006B9E60(void* self, void* arg);
+extern int32_t __fastcall ext_006BC380(void* self);
+extern void* __fastcall ext_0071E680(void* self);
+
+namespace {
+struct StackObj_00709F90 {
+    uint8_t data[0x4c];
+};
+} // namespace
+
+extern void __thiscall fn_00709F90(
+    void* self,
+    void* arg0,
+    uint32_t /*arg1*/,
+    uint32_t /*arg2*/,
+    uint32_t /*arg3*/)
+{
+    using VtableFn38 = void(__thiscall*)(void* self, uint32_t a, uint32_t b, void* c, void* d, void* e, uint32_t f);
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto vfn38 = reinterpret_cast<VtableFn38>(vtable[0x38 / sizeof(void*)]);
+
+    void* field80 = reinterpret_cast<uint8_t*>(self) + 0x80;
+    vfn38(self, 0, 0x14, self, arg0, field80, 0);
+
+    if (lift_field<uint32_t>(self, 0x54) != 0) {
+        StackObj_00709F90 tmp{};
+        ext_006B9D20(&tmp, arg0);
+        void* sub40 = ext_0071E680(self);
+        int32_t val = ext_006BC380(self);
+        using Sub40Fn14 = void(__thiscall*)(void* ecx_val, StackObj_00709F90 obj);
+        auto fn14 = *reinterpret_cast<Sub40Fn14*>(reinterpret_cast<uint8_t*>(sub40) + 0x14);
+        fn14(reinterpret_cast<void*>(static_cast<intptr_t>(val)), tmp);
+    } else {
+        ext_006B9E60(field80, arg0);
+    }
+
+    vtable = *reinterpret_cast<void***>(self);
+    vfn38 = reinterpret_cast<VtableFn38>(vtable[0x38 / sizeof(void*)]);
+    vfn38(self, 0, 0x15, self, arg0, nullptr, 0);
+}
+} // namespace lift_00709F90
