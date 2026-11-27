@@ -26366,6 +26366,13 @@
     "summary": "Fetches the value at +0x4 as an index into the wrapper at +0x8 and passes the resolved element to glMultMatrixf",
     "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
   },
+  "0x00532530": {
+    "name": "HasCustomBufferedTMPtr::vfunc_13",
+    "class": "HasCustomBufferedTMPtr",
+    "signature": "void fn_00532530(void* self)",
+    "summary": "Fetches a 3-float translation from the wrapper returned by ext_00661B50 and calls glTranslatef with it",
+    "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
+  },
   "0x00532560": {
     "name": "HasCustomBufferedTMPtr::vfunc_10",
     "class": "HasCustomBufferedTMPtr",
@@ -55173,6 +55180,13 @@
     "name": "sub_00661C90",
     "signature": "static inline void call_invalid_param()",
     "summary": "Look up element by index from either a fallback vector or the current list node's vector",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00661DE0": {
+    "name": "sub_00661DE0",
+    "class": "UnknownClass",
+    "signature": "uint32_t __thiscall sub_00661DE0(void* this_ptr, uint32_t index)",
+    "summary": "Returns element at index from owner's vector if iterator is at begin, else from current list node's 8-byte element vector",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00661E80": {

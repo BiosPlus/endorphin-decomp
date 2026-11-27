@@ -70,3 +70,32 @@ void fn_005324E0(void* self, void* dest) {
     }
 }
 } // namespace lift_005324E0
+
+// [0x00532530] HasCustomBufferedTMPtr::vfunc_13 (44 bytes)
+namespace lift_00532530 {
+// Known callee 0x00661B50: sub_00661B50 (Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index)
+extern void* ext_00661B50(void* this_ptr, uint32_t index);
+extern int mem_009253D0;
+
+// @name HasCustomBufferedTMPtr::vfunc_13
+// @class HasCustomBufferedTMPtr
+// @summary Fetches a 3-float translation from the wrapper returned by ext_00661B50 and calls glTranslatef with it
+// @field HasCustomBufferedTMPtr +0x04 uint32_t field_0x4
+// @field HasCustomBufferedTMPtr +0x08 uint32_t field_0x8
+void fn_00532530(void* self) {
+    // Original: index = [self+0x4]; wrapper = [self+0x8]; p = ext_00661B50(wrapper, index)
+    const uint32_t index = lift_field<uint32_t>(self, 0x4);
+    const uint32_t wrapper = lift_field<uint32_t>(self, 0x8);
+    void* p = ext_00661B50(reinterpret_cast<void*>(static_cast<uintptr_t>(wrapper)), index);
+
+    // Translation components are read from p+0x30 (x), p+0x34 (y), p+0x38 (z).
+    const float x = lift_field<float>(p, 0x30);
+    const float y = lift_field<float>(p, 0x34);
+    const float z = lift_field<float>(p, 0x38);
+
+    // glTranslatef is imported through the pointer slot at mem_009253D0.
+    using GlTranslatefFn = void (*)(float, float, float);
+    auto glTranslatef = *reinterpret_cast<GlTranslatefFn*>(&mem_009253D0);
+    glTranslatef(x, y, z);
+}
+} // namespace lift_00532530
