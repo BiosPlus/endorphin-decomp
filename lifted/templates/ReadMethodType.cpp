@@ -87312,3 +87312,66 @@ uint32_t fn_0046CB60(void* self, void* arg1, void* arg2) {
     return forward(recv, arg1, arg2);
 }
 } // namespace lift_0046CB60
+
+// [0x004B8F20]
+namespace lift_004B8F20 {
+// Callee 0x00672080 (sub_00672080): builds a float-valued object into the holder slot passed as `self`.
+extern void ext_00672080(void* self, float value);
+// Callee 0x0046C3C0: DerivedException::DerivedException; constructs the exception temporary in place.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// SEH scope table for this function's try-frame (EH boilerplate, referenced only for fidelity).
+extern int mem_008A5428;
+
+namespace {
+
+// Runs the holder's vtable slot 0x78 (release) on scope exit, covering both normal return and unwinding,
+// matching the original's SEH frame cleanup.
+struct HolderReleaseOnExit {
+    void* holder;
+    void* outSlot;
+
+    ~HolderReleaseOnExit() {
+        if (holder != nullptr) {
+            using ReleaseFn = void(__thiscall*)(void* self, void* out);
+            void* vtable = *static_cast<void**>(holder);
+            ReleaseFn release = reinterpret_cast<ReleaseFn>(lift_field<void*>(vtable, 0x78));
+            release(holder, outSlot);
+        }
+    }
+};
+
+} // namespace
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getTimeZoomFactor>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>
+// @summary Reads the float at EngineData+0x24 (time zoom factor) from the object referenced by *pobj, wraps it in a holder via ext_00672080, and returns the bool from the holder's vtable slot 42; throws if the object pointer is null.
+// @field NMData::EngineData +0x24 float field_0x24
+bool fn_004B8F20(void** pobj, void* unused) {
+    (void)unused;
+    (void)&mem_008A5428;
+
+    void* obj = *pobj;
+    if (obj == nullptr) {
+        // Null path: build the exception object and throw (never returns).
+        alignas(8) std::uint8_t exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(std::uintptr_t{0x009DEC1Cu}));
+        return false;
+    }
+
+    float value = lift_field<float>(obj, 0x24);
+
+    void* holder = nullptr;
+    ext_00672080(&holder, value);
+
+    uint32_t outSlot = 0;
+    HolderReleaseOnExit guard{holder, &outSlot};
+
+    using EvalFn = bool(__thiscall*)(void* self, void* out, float v);
+    void* vtable = *static_cast<void**>(holder);
+    EvalFn eval = reinterpret_cast<EvalFn>(lift_field<void*>(vtable, 0xa8));
+    return eval(holder, &outSlot, value);
+}
+} // namespace lift_004B8F20
