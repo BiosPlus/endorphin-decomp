@@ -2288,3 +2288,39 @@ void* __thiscall fn_006FA4A0(void* this_ptr, void* arg) {
     return nullptr;
 }
 } // namespace lift_006FA4A0
+
+// [0x006F9DE0]
+namespace lift_006F9DE0 {
+// Callees and globals referenced by the original asm.
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006D2130(void* self, int32_t arg1, int32_t arg2);
+extern void* mem_00B5E41C;
+
+// @name GetOrCreateSingleton_006F9DE0
+// @class Unknown
+// @summary Lazily allocates a 0x24-byte Unknown object into mem_00B5E41C on first call and returns the global pointer.
+// @field Unknown +0x14 void* self_link_ptr
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint8_t flag_0x20
+void* fn_006F9DE0(void) {
+    if (mem_00B5E41C != nullptr) {
+        return mem_00B5E41C;
+    }
+
+    void* obj = ext_006A5C62(0x24);
+    if (obj == nullptr) {
+        mem_00B5E41C = nullptr;
+        return nullptr;
+    }
+
+    ext_006D2130(obj, 0x10, 4);
+    *(void**)((uint8_t*)obj + 0x14) = (uint8_t*)obj + 0x10;
+    *(uint32_t*)((uint8_t*)obj + 0x18) = 0;
+    *(uint32_t*)((uint8_t*)obj + 0x1c) = 0;
+    *(uint8_t*)((uint8_t*)obj + 0x20) = 0;
+
+    mem_00B5E41C = obj;
+    return obj;
+}
+} // namespace lift_006F9DE0

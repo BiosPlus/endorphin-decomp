@@ -69682,6 +69682,13 @@
     "summary": "Initializes three 32-bit fields and one 8-bit field on the object and returns this.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F9DE0": {
+    "name": "GetOrCreateSingleton_006F9DE0",
+    "class": "Unknown",
+    "signature": "void* fn_006F9DE0(void)",
+    "summary": "Lazily allocates a 0x24-byte Unknown object into mem_00B5E41C on first call and returns the global pointer.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F9E90": {
     "name": "Lazy-initialize critical section",
     "class": "CriticalSectionHolder",
