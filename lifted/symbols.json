@@ -25839,6 +25839,12 @@
     "summary": "Destroys std::string at this+0x54, then calls ext_00663060 to destroy the remaining string members.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00554140": {
+    "name": "allocate_60byte_array",
+    "signature": "extern \"C\" void* fn_00554140(uint32_t count)",
+    "summary": "Allocates an array of 60-byte elements with overflow check, throwing std::bad_alloc on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005541A0": {
     "name": "sub_005541A0_dtor",
     "signature": "void __thiscall sub_005541A0(void* self)",
