@@ -5298,6 +5298,13 @@
     "summary": "Returns ext_00441040(self) - ext_00441020(self), computed with wrapping 32-bit arithmetic.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x004410E0": {
+    "name": "MultiTrackView::DiamondMarker::vfunc_4",
+    "class": "MultiTrackView::DiamondMarker",
+    "signature": "extern \"C\" int32_t __thiscall fn_004410E0(void* self, const Point2D* pt)",
+    "summary": "Hit-tests a point against the diamond marker's bounds and left/right handles, returning a hit code (0, 1, 2, or 3).",
+    "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp"
+  },
   "0x004413C0": {
     "name": "MultiTrackView::TriangleMarker::vfunc_0",
     "class": "MultiTrackView::TriangleMarker",

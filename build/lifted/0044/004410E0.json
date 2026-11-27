@@ -1,0 +1,46 @@
+{
+  "va": "0x004410E0",
+  "size": 318,
+  "orig_symbol": "MultiTrackView::DiamondMarker::vfunc_4",
+  "src_path": "src/MultiTrackView/DiamondMarker.cpp",
+  "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp",
+  "name": "MultiTrackView::DiamondMarker::vfunc_4",
+  "class": "MultiTrackView::DiamondMarker",
+  "signature": "extern \"C\" int32_t __thiscall fn_004410E0(void* self, const Point2D* pt)",
+  "summary": "Hit-tests a point against the diamond marker's bounds and left/right handles, returning a hit code (0, 1, 2, or 3).",
+  "fields": [
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "field_0x48"
+    },
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x60",
+      "type": "RECT",
+      "name": "field_0x60"
+    },
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x89",
+      "type": "uint8_t",
+      "name": "field_0x89"
+    },
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x8C",
+      "type": "uint8_t",
+      "name": "field_0x8c"
+    },
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x8D",
+      "type": "uint8_t",
+      "name": "field_0x8d"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:03:48Z"
+}

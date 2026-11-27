@@ -11,5 +11,10 @@
 namespace lifted_layout {
 struct MultiTrackView_DiamondMarker_Fields {
     // +0x0   void*                    vtable  (evidence: 0x00440940)
+    // +0x48  void*                    field_0x48  (evidence: 0x004410E0)
+    // +0x60  RECT                     field_0x60  (evidence: 0x004410E0)
+    // +0x89  uint8_t                  field_0x89  (evidence: 0x004410E0)
+    // +0x8C  uint8_t                  field_0x8c  (evidence: 0x004410E0)
+    // +0x8D  uint8_t                  field_0x8d  (evidence: 0x004410E0)
 };
 } // namespace lifted_layout
