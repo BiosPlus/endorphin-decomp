@@ -73722,6 +73722,13 @@
     "summary": "Reads the Vector3 pointed to by field_0x00, stores its length into a scratch slot, assigns that slot to this object's field_0x04 and dispatches vfunc_43 on it; throws DerivedException when field_0x00 is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066FD50": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::calcNorm,1\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::calcNorm,1\u003e",
+    "signature": "void fn_0066FD50(void* holder, void* arg2)",
+    "summary": "Computes the length of the Vector3 referenced by holder-\u003efield_0x00, stores it in a temp ValuePtr, assigns that into holder, then dispatches vfunc 44 on holder-\u003efield_0x04.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670090": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e",

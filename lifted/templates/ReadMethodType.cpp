@@ -187001,3 +187001,55 @@ void fn_0066F220(void* holder) {
     reinterpret_cast<DispatchFn>(childVtbl[0xBC / sizeof(void*)])(child, holder);
 }
 } // namespace lift_0066F220
+
+// [0x0066FD50] ExprParser::ReadMethodType<NM::Vector3, float, calcNorm, 1>::vfunc_44 (198 bytes)
+namespace lift_0066FD50 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// Known callee 0x00672080: sub_00672080 (18B). Initializes the temp ValuePtr-like slot at its first argument from a float.
+extern void ext_00672080(void* slot, float value);
+// Known callee 0x0041CF50: Unknown::assignFromOther (Self-assignment guarded copy of field_0x04/field_0x00 from other; returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Exception type info for the null-vector throw.
+extern char mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>::vfunc_44
+// @class ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>
+// @summary Computes the length of the Vector3 referenced by holder->field_0x00, stores it in a temp ValuePtr, assigns that into holder, then dispatches vfunc 44 on holder->field_0x04.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NM::Vector3 +0x00 float field_0x00
+// @field NM::Vector3 +0x04 float field_0x04
+// @field NM::Vector3 +0x08 float field_0x08
+void fn_0066FD50(void* holder, void* arg2) {
+    void* const vec = lift_field<void*>(holder, 0x00);
+    if (vec == nullptr) {
+        // Exception object storage: the original constructs it in the frame at [ebp-0x34 .. frame-end).
+        alignas(8) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+    }
+
+    const float x = lift_field<float>(vec, 0x00);
+    const float y = lift_field<float>(vec, 0x04);
+    const float z = lift_field<float>(vec, 0x08);
+    const float len = std::sqrt(x * x + y * y + z * z);
+
+    // Temp ValuePtr-like pair: tmp[0] = field_0x00, tmp[1] = field_0x04.
+    void* tmp[2] = {nullptr, nullptr};
+    ext_00672080(&tmp[0], len);
+    ext_0041CF50(holder, &tmp[0]);
+
+    void* const obj = tmp[1];
+    if (obj != nullptr) {
+        void* const vt = lift_field<void*>(obj, 0x00);
+        reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78))(obj, &tmp[0]);
+    }
+
+    void* const sub = lift_field<void*>(holder, 0x04);
+    void* const subVt = lift_field<void*>(sub, 0x00);
+    reinterpret_cast<void (*)(void*, void*, void*)>(lift_field<void*>(subVt, 0xB0))(sub, holder, arg2);
+}
+} // namespace lift_0066FD50
