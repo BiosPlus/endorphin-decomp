@@ -21371,6 +21371,12 @@
     "summary": "Destructor tail-call: restores vtable mem_0094F084 and tail-calls base destructor sub_00503CD0.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x00517FC0": {
+    "name": "parseDoubleFromObject",
+    "signature": "extern \"C\" void fn_00517FC0(void* /*unused*/, double* outVal)",
+    "summary": "Converts an object's string representation to double via atof and stores it at outVal",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00518030": {
     "name": "sub_005136C0",
     "class": "Unknown (vtable 0x0095219C)",

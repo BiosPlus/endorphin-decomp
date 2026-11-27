@@ -1753,3 +1753,20 @@ void* fn_00517AD0(void* self) {
     return self;
 }
 } // namespace lift_00517AD0
+
+// [0x00517FC0]
+namespace lift_00517FC0 {
+// @name parseDoubleFromObject
+// @summary Converts an object's string representation to double via atof and stores it at outVal
+extern void* __thiscall ext_004275C0(void* self, void* outStr);
+extern const char* (__thiscall* mem_00924FF0)(const void* str);
+extern void (__thiscall* mem_00924FF4)(void* str);
+extern double (__cdecl* mem_009251F0)(const char* s);
+
+extern void fn_00517FC0(void* /*unused*/, double* outVal) {
+    uint8_t tmp[0x1c];
+    void* s = ext_004275C0(outVal, tmp);
+    *outVal = mem_009251F0(mem_00924FF0(s));
+    mem_00924FF4(tmp);
+}
+} // namespace lift_00517FC0

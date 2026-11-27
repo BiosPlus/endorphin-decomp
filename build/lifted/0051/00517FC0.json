@@ -1,0 +1,13 @@
+{
+  "va": "0x00517FC0",
+  "size": 101,
+  "orig_symbol": "sub_00517FC0",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "parseDoubleFromObject",
+  "signature": "extern \"C\" void fn_00517FC0(void* /*unused*/, double* outVal)",
+  "summary": "Converts an object's string representation to double via atof and stores it at outVal",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:04:06Z"
+}
