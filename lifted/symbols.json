@@ -62046,6 +62046,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x0061F130": {
+    "name": "NMData::HingeLimit::vfunc_15",
+    "class": "NMData::HingeLimit",
+    "signature": "DWORD* fn_0061F130(void* self, DWORD* dst, DWORD sel)",
+    "summary": "Dispatches on selector (sel - 0x2AB) to one of eight initializers passed this as value, else zeroes dst via sub_00671F30; returns dst.",
+    "lifted_path": "lifted/NMData/HingeLimit.cpp"
+  },
   "0x0061F940": {
     "name": "NMData::HingeConstraint::vfunc_15",
     "class": "NMData::HingeConstraint",

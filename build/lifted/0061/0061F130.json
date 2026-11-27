@@ -1,0 +1,14 @@
+{
+  "va": "0x0061F130",
+  "size": 232,
+  "orig_symbol": "NMData::HingeLimit::vfunc_15",
+  "src_path": "src/NMData/HingeLimit.cpp",
+  "lifted_path": "lifted/NMData/HingeLimit.cpp",
+  "name": "NMData::HingeLimit::vfunc_15",
+  "class": "NMData::HingeLimit",
+  "signature": "DWORD* fn_0061F130(void* self, DWORD* dst, DWORD sel)",
+  "summary": "Dispatches on selector (sel - 0x2AB) to one of eight initializers passed this as value, else zeroes dst via sub_00671F30; returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:01:15Z"
+}
