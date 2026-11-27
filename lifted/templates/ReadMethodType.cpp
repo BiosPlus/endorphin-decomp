@@ -184554,8 +184554,8 @@ extern int mem_009DEC1C;
 // @name ExprParser::ReadMethodType<DoubleWithProperties>::vfunc_45
 // @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
 // @summary Reads the double behind field_0x00, stores it as float through a temp holder, assigns the holder into self, and forwards to vtable slot 45 of self->field_0x04.
-// @field ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0> +0x00 double* field_0x00
-// @field ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0> +0x04 void* field_0x04
+// @field ExprParser::ValuePtrType +0x00 double* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
 float fn_00695830(void* self, void* extra) {
     (void)extra;          // second stack arg is not read by the original (ret 8 pops it)
     (void)&mem_008A5428;  // SEH frame scope table: boilerplate, not part of the logic
