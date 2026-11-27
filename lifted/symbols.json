@@ -74943,6 +74943,13 @@
     "summary": "Tail-calls vtable slot 4 (+0x10) of the object stored at this+0xF4; returns its result.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007101F0": {
+    "name": "Unknown::initAssignCStringFromField_007101F0",
+    "class": "Unknown",
+    "signature": "void* fn_007101F0(void* self, const char* s)",
+    "summary": "Calls a virtual getter (slot +0x130) on the object at +0xF4, then forwards the result as a C string to initAssignCString_006B9D80; returns the original string argument.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x007102F0": {
     "name": "sub_007102F0",
     "signature": "extern \"C\" void __fastcall fn_007102F0(void* self, int edx_unused, uint8_t value)",

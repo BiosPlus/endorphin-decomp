@@ -2840,3 +2840,23 @@ void* fn_0071D530(void* self) {
     return self;
 }
 } // namespace lift_0071D530
+
+// [0x007101F0] sub_007101F0 (43 bytes)
+namespace lift_007101F0 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+
+// @name Unknown::initAssignCStringFromField_007101F0
+// @class Unknown
+// @summary Calls a virtual getter (slot +0x130) on the object at +0xF4, then forwards the result as a C string to initAssignCString_006B9D80; returns the original string argument.
+// @field Unknown +0xF4 void* field_0xf4
+void* fn_007101F0(void* self, const char* s) {
+    void* obj = lift_field<void*>(self, 0xF4);
+    void* vtable = lift_field<void*>(obj, 0);
+    using VirtualGetFn = void* (*)(void* ecx, int arg);
+    auto getter = reinterpret_cast<VirtualGetFn>(lift_field<void*>(vtable, 0x130));
+    void* str = getter(obj, 0);
+    ext_006B9D80(reinterpret_cast<void*>(const_cast<char*>(s)), reinterpret_cast<const char*>(str));
+    return reinterpret_cast<void*>(const_cast<char*>(s));
+}
+} // namespace lift_007101F0
