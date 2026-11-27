@@ -1,0 +1,28 @@
+{
+  "va": "0x00532510",
+  "size": 20,
+  "orig_symbol": "HasCustomBufferedTMPtr::vfunc_11",
+  "src_path": "src/classes/HasCustomBufferedTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp",
+  "name": "HasCustomBufferedTMPtr::vfunc_11",
+  "class": "HasCustomBufferedTMPtr",
+  "signature": "void fn_00532510(void* self)",
+  "summary": "Fetches the value at +0x4 as an index into the wrapper at +0x8 and passes the resolved element to glMultMatrixf",
+  "fields": [
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    },
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:16Z"
+}

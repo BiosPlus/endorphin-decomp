@@ -26352,6 +26352,13 @@
     "summary": "Looks up element at self-\u003eindex via the wrapper in mem_00AEE8A8 and issues glTranslatef with its (x, y, z) at +0x30/+0x34/+0x38.",
     "lifted_path": "lifted/classes/HasBufferedTMPtr.cpp"
   },
+  "0x00532510": {
+    "name": "HasCustomBufferedTMPtr::vfunc_11",
+    "class": "HasCustomBufferedTMPtr",
+    "signature": "void fn_00532510(void* self)",
+    "summary": "Fetches the value at +0x4 as an index into the wrapper at +0x8 and passes the resolved element to glMultMatrixf",
+    "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
+  },
   "0x00532770": {
     "name": "Unknown::resetVtableDestroyStringNotifyDialog_00532770",
     "class": "Unknown",
