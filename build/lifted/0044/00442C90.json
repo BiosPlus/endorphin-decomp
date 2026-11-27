@@ -1,0 +1,34 @@
+{
+  "va": "0x00442C90",
+  "size": 33,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_4",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/MoveState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_4",
+  "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+  "signature": "uint8_t __thiscall fn_00442C90(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+  "summary": "Commits or updates the move state via sub_0043F520, resets the state manager to index 0, and returns 1.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "stateManager"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:34:33Z"
+}

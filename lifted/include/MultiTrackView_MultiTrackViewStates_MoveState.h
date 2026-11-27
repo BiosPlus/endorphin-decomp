@@ -10,7 +10,9 @@
 // Recovered field layout for MultiTrackView::MultiTrackViewStates::MoveState:
 namespace lifted_layout {
 struct MultiTrackView_MultiTrackViewStates_MoveState_Fields {
-    // +0x8   void*                    field_0x08  (evidence: 0x00442C70)
+    // +0x4   void*                    stateManager  (evidence: 0x00442C90)
+    // +0x8   void*                    field_0x08  (evidence: 0x00442C70, 0x00442C90)
+    // +0xC   uint8_t                  field_0x0c  (evidence: 0x00442C90)
     // +0x1C  int32_t                  field_0x1c  (evidence: 0x00443650)
     // +0x30  uint8_t                  field_0x30  (evidence: 0x00442C70)
 };

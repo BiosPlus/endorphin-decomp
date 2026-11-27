@@ -55,3 +55,24 @@ bool MultiTrackView_MultiTrackViewStates_MoveState_vfunc_7(void* self,
     return ok != 0;
 }
 } // namespace lift_00443650
+
+// [0x00442C90]
+namespace lift_00442C90 {
+extern void __thiscall ext_0043F520(void* self, void* arg0, uint32_t arg1);
+extern uint8_t __thiscall ext_0041C880(void* self, uint32_t index);
+
+// @name MultiTrackView::MultiTrackViewStates::MoveState::vfunc_4
+// @class MultiTrackView::MultiTrackViewStates::MoveState
+// @summary Commits or updates the move state via sub_0043F520, resets the state manager to index 0, and returns 1.
+// @field MultiTrackView::MultiTrackViewStates::MoveState +0x04 void* stateManager
+// @field MultiTrackView::MultiTrackViewStates::MoveState +0x08 void* field_0x08
+// @field MultiTrackView::MultiTrackViewStates::MoveState +0x0c uint8_t field_0x0c
+uint8_t __thiscall fn_00442C90(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    (void)arg0;
+    (void)arg1;
+    (void)arg2;
+    ext_0043F520(lift_field<void*>(self, 0x8), static_cast<uint8_t*>(self) + 0xc, 0);
+    ext_0041C880(lift_field<void*>(self, 0x4), 0);
+    return 1;
+}
+} // namespace lift_00442C90
