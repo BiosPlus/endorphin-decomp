@@ -70295,3 +70295,54 @@ void* fn_004A3B00(void* src) {
     return fn47(inner, src);
 }
 } // namespace lift_004A3B00
+
+// [0x004A47B0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_47 (154 bytes)
+namespace lift_004A47B0 {
+extern void* ext_0049AA40(void* self);
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<FSMEditView,int,getDrawDepth,0>::vfunc_47
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Validates the held value pointer; if null throws a DerivedException, otherwise re-assigns the held value through the guarded copy helper and then invokes the vfunc at slot 0xBC of the object at +0x04.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ValuePtrType +0x04 void* field_0x04
+int fn_004A47B0(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        // Throw path: construct the exception object on the stack and raise it.
+        alignas(8) uint8_t exc[32] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0; // not reached
+    }
+
+    // Temporaries: A receives the value produced by ext_0049AA40, B is the
+    // copy source for ext_0041CF50.
+    alignas(8) uint8_t a[8] = {};
+    alignas(8) uint8_t b[8] = {};
+
+    void* r = ext_0049AA40(lift_field<void*>(self, 0x00));
+    ext_006720C0(a, r);
+
+    ext_0041CF50(self, b);
+
+    void* p = lift_field<void*>(a, 0x00);
+    if (p != nullptr) {
+        void* vtbl = lift_field<void*>(p, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x78);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(slot);
+        release(p, b);
+    }
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void* objVtbl = lift_field<void*>(obj, 0x00);
+    void* slot47 = lift_field<void*>(objVtbl, 0xBC);
+    auto vfunc47 = reinterpret_cast<int (*)(void*, void*)>(slot47);
+    return vfunc47(obj, self);
+}
+} // namespace lift_004A47B0
