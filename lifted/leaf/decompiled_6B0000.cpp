@@ -2877,3 +2877,38 @@ void* fn_006B9DC0(void* self, uint32_t a, uint32_t b) {
     return self;
 }
 } // namespace lift_006B9DC0
+
+// [0x006BB830] sub_006BB830 (64 bytes)
+namespace lift_006BB830 {
+// Known callee 0x006BB7D0: GetVtableSlot3 (Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.)
+extern uint32_t ext_006BB7D0(void* self);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::getVtableTableEntry_006BB830
+// @class Unknown
+// @summary Returns table[index] from the array pointed to by vtable+0x1C when 0 <= index < ext_006BB7D0(this); otherwise calls ext_006E7440 on (vtable + 0x28) with index 0 and returns 0.
+// @field Unknown +0x00 void* vtable
+void* fn_006BB830(void* self, int32_t index) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    // test edi,edi; jl -> fail ; call ext_006BB7D0 ; cmp edi,eax; jge -> fail
+    if (index >= 0) {
+        int32_t count = static_cast<int32_t>(ext_006BB7D0(self));
+        if (index < count) {
+            // mov eax,[esi]; mov ecx,[eax+0x1c]; mov eax,[ecx+4*edi]
+            uint32_t vtblRaw = *reinterpret_cast<uint32_t*>(obj);
+            uint8_t* vtbl = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(vtblRaw));
+            uint32_t tableRaw = *reinterpret_cast<uint32_t*>(vtbl + 0x1C);
+            const uint32_t* table = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(tableRaw));
+            return reinterpret_cast<void*>(static_cast<uintptr_t>(table[index]));
+        }
+    }
+
+    // fail: mov ecx,[esi]; push 0; add ecx,0x28; call ext_006E7440; xor eax,eax
+    uint32_t vtblRaw = *reinterpret_cast<uint32_t*>(obj);
+    uint8_t* sub = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(vtblRaw)) + 0x28;
+    (void)ext_006E7440(sub, 0);
+    return nullptr;
+}
+} // namespace lift_006BB830

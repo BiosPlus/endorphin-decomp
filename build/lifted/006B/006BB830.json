@@ -1,0 +1,22 @@
+{
+  "va": "0x006BB830",
+  "size": 64,
+  "orig_symbol": "sub_006BB830",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::getVtableTableEntry_006BB830",
+  "class": "Unknown",
+  "signature": "void* fn_006BB830(void* self, int32_t index)",
+  "summary": "Returns table[index] from the array pointed to by vtable+0x1C when 0 \u003c= index \u003c ext_006BB7D0(this); otherwise calls ext_006E7440 on (vtable + 0x28) with index 0 and returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:51:21Z"
+}

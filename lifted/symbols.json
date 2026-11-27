@@ -66435,6 +66435,13 @@
     "summary": "Returns the pointer-sized word at vtable offset 0x24 (slot 9) of the object's vtable.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BB830": {
+    "name": "Unknown::getVtableTableEntry_006BB830",
+    "class": "Unknown",
+    "signature": "void* fn_006BB830(void* self, int32_t index)",
+    "summary": "Returns table[index] from the array pointed to by vtable+0x1C when 0 \u003c= index \u003c ext_006BB7D0(this); otherwise calls ext_006E7440 on (vtable + 0x28) with index 0 and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BB9B0": {
     "name": "initHugeVectorGlobals",
     "signature": "void sub_006BB9B0(void)",
