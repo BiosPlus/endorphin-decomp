@@ -1,0 +1,28 @@
+{
+  "va": "0x0051BA70",
+  "size": 160,
+  "orig_symbol": "NMData::RealChannel::vfunc_6",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_6",
+  "class": "NMData::RealChannel",
+  "signature": "extern \"C\" int mem_00925134;                      // IAT slot: MSVCR80!_invalid_parameter_noinfo (address-only) extern void ext_invalid_parameter_noinfo(void);   // CRT invalid-parameter handler, called on range violations void fn_0051BA70(void* self, float a, float b)",
+  "summary": "Removes every 8-byte entry in the [begin, end) range whose leading float key lies within [a, b] (a \u003c= key \u003c= b), preserving order; calls the CRT invalid-parameter handler on range violations.",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:48:44Z"
+}

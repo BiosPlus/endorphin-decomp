@@ -299,3 +299,50 @@ void __thiscall fn_0051C2A0(void* self, void* arg) {
     }
 }
 } // namespace lift_0051C2A0
+
+// [0x0051BA70] NMData::RealChannel::vfunc_6 (160 bytes)
+namespace lift_0051BA70 {
+extern int mem_00925134;                      // IAT slot: MSVCR80!_invalid_parameter_noinfo (address-only)
+extern void ext_invalid_parameter_noinfo(void);   // CRT invalid-parameter handler, called on range violations
+
+// @name NMData::RealChannel::vfunc_6
+// @class NMData::RealChannel
+// @summary Removes every 8-byte entry in the [begin, end) range whose leading float key lies within [a, b] (a <= key <= b), preserving order; calls the CRT invalid-parameter handler on range violations.
+// @field NMData::RealChannel +0x30 uint32_t begin
+// @field NMData::RealChannel +0x34 uint32_t end
+void fn_0051BA70(void* self, float a, float b) {
+    (void)&mem_00925134;
+
+    for (;;) {
+        // Restart scan from the beginning of the range.
+        uint32_t begin = lift_field<uint32_t>(self, 0x30);
+        uint32_t end = lift_field<uint32_t>(self, 0x34);
+        if (begin > end) ext_invalid_parameter_noinfo();
+        uint32_t cursor = begin;
+
+        for (;;) {
+            end = lift_field<uint32_t>(self, 0x34);
+            if (begin > end) ext_invalid_parameter_noinfo();
+            if (cursor == end) return;
+            if (cursor >= end) ext_invalid_parameter_noinfo();
+
+            float key = *reinterpret_cast<float*>(static_cast<uintptr_t>(cursor));
+
+            // Keep the entry unless a <= key <= b (ordered comparisons; NaN keeps the entry).
+            if (!(a <= key && key <= b)) {
+                cursor += 8;
+                continue;
+            }
+
+            // Remove the entry: shift the tail [cursor+8, end) down by one 8-byte slot.
+            if (cursor + 8 != end) {
+                std::memmove(reinterpret_cast<void*>(static_cast<uintptr_t>(cursor)),
+                             reinterpret_cast<const void*>(static_cast<uintptr_t>(cursor + 8)),
+                             static_cast<size_t>(end - (cursor + 8)));
+            }
+            lift_field<uint32_t>(self, 0x34) = end - 8;
+            break; // rescan from begin
+        }
+    }
+}
+} // namespace lift_0051BA70

@@ -31127,6 +31127,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A47B0 (ExprParser::ReadMethodType\u003cFSMEditView,int,getDrawDepth,0\u003e::vfunc_47).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0051BA70": {
+    "name": "NMData::RealChannel::vfunc_6",
+    "class": "NMData::RealChannel",
+    "signature": "extern \"C\" int mem_00925134;                      // IAT slot: MSVCR80!_invalid_parameter_noinfo (address-only) extern void ext_invalid_parameter_noinfo(void);   // CRT invalid-parameter handler, called on range violations void fn_0051BA70(void* self, float a, float b)",
+    "summary": "Removes every 8-byte entry in the [begin, end) range whose leading float key lies within [a, b] (a \u003c= key \u003c= b), preserving order; calls the CRT invalid-parameter handler on range violations.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051BED0": {
     "name": "NMData::RealChannel::vfunc_9",
     "class": "NMData::RealChannel",
