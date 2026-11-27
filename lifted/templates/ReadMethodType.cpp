@@ -67569,3 +67569,29 @@ void* fn_0066FAE0(void* out, void* unused) {
     return out;
 }
 } // namespace lift_0066FAE0
+
+// [0x006839B0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_5 (55 bytes)
+namespace lift_006839B0 {
+// Known callee 0x00683100: sub_00683100 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_00683100(void* self, const void* src);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Copies the string referenced by the first field of the argument into a local temporary, then throws a default-message ExceptionWithMessage.
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1> +0x00 const void* field_0x00
+void fn_006839B0(void* self) {
+    // Local std::string-sized temporary (0x1c bytes, matching the sub esp, 0x1c frame).
+    alignas(8) unsigned char tmp[0x1c];
+
+    // Load the source pointer stored at the first dword of the argument.
+    const void* src = *reinterpret_cast<const void* const*>(self);
+
+    // Copy-construct the temporary from src.
+    ext_00683100(tmp, src);
+
+    // Build a default ExceptionWithMessage and throw it (does not return).
+    ext_0046C4E0();
+}
+} // namespace lift_006839B0
