@@ -11849,3 +11849,30 @@ void fn_005B30F0(void* self) {
     lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B4353C));
 }
 } // namespace lift_005B30F0
+
+// [0x005B86D0] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setPosition(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B86D0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B43D08;  // one-time-init guard flag (bit 0)
+extern DWORD mem_00B43D04;  // static accessor object; first DWORD is its vtable pointer
+
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setPosition(class NM::Vector3 const &), 0}>
+// @summary Lazily initialises the process-wide static accessor object (guarded by bit 0 of mem_00B43D08, sets its vtable once) and stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005B86D0(void* holder) {
+    // One-time initialisation of the static accessor object.
+    if ((mem_00B43D08 & 1u) == 0) {
+        mem_00B43D08 |= 1u;
+        // Original: call 0x67A670 with ECX = &mem_00B43D04 and a zero argument.
+        ext_0067A670(reinterpret_cast<void*>(&mem_00B43D04), 0u);
+        // Install the accessor's vtable pointer.
+        mem_00B43D04 = 0x009621CCu;
+    }
+
+    // Both paths bind holder+0x04 to the static accessor object.
+    lift_field<DWORD>(holder, 0x04) =
+        static_cast<DWORD>(reinterpret_cast<std::uintptr_t>(&mem_00B43D04));
+}
+} // namespace lift_005B86D0
