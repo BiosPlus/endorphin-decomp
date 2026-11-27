@@ -1861,10 +1861,10 @@ extern uint32_t mem_00A9F6F8;
 
 // @name assignNamedStringsFromLookup
 // @summary Looks up four fixed name keys in the lookup container and assigns each result's string into this object at +0x04, +0x20, +0x3C and +0x58.
-// @field uint8_t field_0x04 (std::string destination 1)
-// @field uint8_t field_0x20 (std::string destination 2)
-// @field uint8_t field_0x3C (std::string destination 3)
-// @field uint8_t field_0x58 (std::string destination 4)
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x20 uint8_t field_0x20
+// @field Unknown +0x3C uint8_t field_0x3C
+// @field Unknown +0x58 uint8_t field_0x58
 void fn_004B6EC0(void* self, void* lookup) {
     auto* base = static_cast<uint8_t*>(self);
 
