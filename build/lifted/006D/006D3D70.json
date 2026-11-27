@@ -1,0 +1,28 @@
+{
+  "va": "0x006D3D70",
+  "size": 64,
+  "orig_symbol": "sub_006D3D70",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::appendVirtualResultToArray_006D3D70",
+  "class": "Unknown",
+  "signature": "void* fn_006D3D70(void* self)",
+  "summary": "Calls virtual slot +0x60 on self; if it returns non-null, inserts that result into the DynamicArray at self+0x154, then returns it.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x154",
+      "type": "DynamicArray",
+      "name": "field_0x154"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:07Z"
+}
