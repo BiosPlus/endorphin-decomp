@@ -1,0 +1,27 @@
+{
+  "va": "0x004AEE60",
+  "size": 62,
+  "orig_symbol": "sub_004AEE60",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "sub_004AEE60",
+  "signature": "void __thiscall fn_004AEE60(void* ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049E8D0 (StdListClear).",
+  "fields": [
+    {
+      "class": "StdList",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "StdList",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:27:49Z"
+}

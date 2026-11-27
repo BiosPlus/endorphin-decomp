@@ -9,8 +9,8 @@
 namespace lifted_layout {
 struct StdList_Fields {
     // +0x4   void*                    _Myhead  (evidence: 0x00665990) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    head  (evidence: 0x0049E8D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    head  (evidence: 0x0049E8D0, 0x004A1390, 0x004AEE60) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 _Mysize  (evidence: 0x00665990) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 size  (evidence: 0x0049E8D0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 size  (evidence: 0x0049E8D0, 0x004A1390, 0x004AEE60) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout

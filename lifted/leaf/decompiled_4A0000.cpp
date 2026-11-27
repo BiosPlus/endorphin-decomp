@@ -1860,3 +1860,73 @@ void fn_004A1A10(void* self) {
     ext_004A1270(&slot, mem_00940638);
 }
 } // namespace lift_004A1A10
+
+// [0x004A1390] sub_004A1390 (62 bytes)
+namespace lift_004A1390 {
+// @name sub_004A1390
+// @summary Auto-lifted identical-shape clone of 0x0049E8D0 (StdListClear).
+namespace lift_0049E8D0 {
+void __thiscall ext_0049F8D0(void* ecx);
+void __cdecl ext_006A5C5C(void* ptr);
+
+// @name StdListClear
+// @summary Clears a doubly-linked list by unlinking its sentinel head, destroying each element, and freeing each node.
+// @field StdList +0x04 void* head
+// @field StdList +0x08 uint32_t size
+void __thiscall fn_004A1390(void* ecx) {
+    uint8_t* self = static_cast<uint8_t*>(ecx);
+    void** head = lift_field<void**>(self, 0x4);
+    void* node = head[0];
+    head[0] = head;
+    head = lift_field<void**>(self, 0x4);
+    head[1] = head;
+    lift_field<uint32_t>(self, 0x8) = 0;
+
+    if (node == lift_field<void*>(self, 0x4)) {
+        return;
+    }
+
+    do {
+        void* next = *static_cast<void**>(node);
+        ext_0049F8D0(static_cast<uint8_t*>(node) + 0x8);
+        ext_006A5C5C(node);
+        node = next;
+    } while (node != lift_field<void*>(self, 0x4));
+}
+} // namespace lift_0049E8D0
+} // namespace lift_004A1390
+
+// [0x004AEE60] sub_004AEE60 (62 bytes)
+namespace lift_004AEE60 {
+// @name sub_004AEE60
+// @summary Auto-lifted identical-shape clone of 0x0049E8D0 (StdListClear).
+namespace lift_0049E8D0 {
+void __thiscall ext_00673AB0(void* ecx);
+void __cdecl ext_006A5C5C(void* ptr);
+
+// @name StdListClear
+// @summary Clears a doubly-linked list by unlinking its sentinel head, destroying each element, and freeing each node.
+// @field StdList +0x04 void* head
+// @field StdList +0x08 uint32_t size
+void __thiscall fn_004AEE60(void* ecx) {
+    uint8_t* self = static_cast<uint8_t*>(ecx);
+    void** head = lift_field<void**>(self, 0x4);
+    void* node = head[0];
+    head[0] = head;
+    head = lift_field<void**>(self, 0x4);
+    head[1] = head;
+    lift_field<uint32_t>(self, 0x8) = 0;
+
+    if (node == lift_field<void*>(self, 0x4)) {
+        return;
+    }
+
+    do {
+        void* next = *static_cast<void**>(node);
+        ext_00673AB0(static_cast<uint8_t*>(node) + 0x8);
+        ext_006A5C5C(node);
+        node = next;
+    } while (node != lift_field<void*>(self, 0x4));
+}
+} // namespace lift_0049E8D0
+} // namespace lift_004AEE60

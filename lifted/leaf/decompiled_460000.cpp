@@ -2617,3 +2617,114 @@ void __thiscall fn_00462E10(void* self, void* arg) {
     }
 }
 } // namespace lift_00462E10
+
+// [0x00462E80] sub_00462E80 (64 bytes)
+namespace lift_00462E80 {
+// @name sub_00462E80
+// @summary Auto-lifted identical-shape clone of 0x00462E10 (DispatchActionByState).
+namespace lift_00462E10 {
+// @name DispatchActionByState
+// @summary Dispatches to ext_00401930 with c_str() when state==1, or tail-calls ext_00462BA0 when state==2 and field_0x08 is active.
+// @field Self +0x04 void* state_obj
+// @field Self +0x08 void* field_0x08
+// @field Self +0x0C void* field_0x0C
+
+extern uint8_t __thiscall ext_00462A60(void* self);
+extern void __thiscall ext_00462BE0(void* self, void* arg);
+extern uint32_t __thiscall ext_00401930(void* self, const char* arg);
+extern const char* (__thiscall * const mem_00924FF0)(void* self);
+
+void __thiscall fn_00462E80(void* self, void* arg) {
+    auto* state_obj = lift_field<void*>(self, 0x04);
+    uint32_t state = lift_field<uint32_t>(state_obj, 0x04);
+
+    if (state == 1) {
+        const char* str = mem_00924FF0(arg);
+        void* target = lift_field<void*>(self, 0x0C);
+        ext_00401930(target, str);
+        return;
+    }
+
+    if (state == 2) {
+        void* obj = lift_field<void*>(self, 0x08);
+        if (obj != nullptr && ext_00462A60(obj) != 0) {
+            ext_00462BE0(obj, arg);
+        }
+    }
+}
+} // namespace lift_00462E10
+} // namespace lift_00462E80
+
+// [0x00462EC0] sub_00462EC0 (64 bytes)
+namespace lift_00462EC0 {
+// @name sub_00462EC0
+// @summary Auto-lifted identical-shape clone of 0x00462E10 (DispatchActionByState).
+namespace lift_00462E10 {
+// @name DispatchActionByState
+// @summary Dispatches to ext_00401930 with c_str() when state==1, or tail-calls ext_00462BA0 when state==2 and field_0x08 is active.
+// @field Self +0x04 void* state_obj
+// @field Self +0x08 void* field_0x08
+// @field Self +0x0C void* field_0x0C
+
+extern uint8_t __thiscall ext_00462A60(void* self);
+extern void __thiscall ext_00462C30(void* self, void* arg);
+extern uint32_t __thiscall ext_00401950(void* self, const char* arg);
+extern const char* (__thiscall * const mem_00924FF0)(void* self);
+
+void __thiscall fn_00462EC0(void* self, void* arg) {
+    auto* state_obj = lift_field<void*>(self, 0x04);
+    uint32_t state = lift_field<uint32_t>(state_obj, 0x04);
+
+    if (state == 1) {
+        const char* str = mem_00924FF0(arg);
+        void* target = lift_field<void*>(self, 0x0C);
+        ext_00401950(target, str);
+        return;
+    }
+
+    if (state == 2) {
+        void* obj = lift_field<void*>(self, 0x08);
+        if (obj != nullptr && ext_00462A60(obj) != 0) {
+            ext_00462C30(obj, arg);
+        }
+    }
+}
+} // namespace lift_00462E10
+} // namespace lift_00462EC0
+
+// [0x00462F00] sub_00462F00 (64 bytes)
+namespace lift_00462F00 {
+// @name sub_00462F00
+// @summary Auto-lifted identical-shape clone of 0x00462E10 (DispatchActionByState).
+namespace lift_00462E10 {
+// @name DispatchActionByState
+// @summary Dispatches to ext_00401930 with c_str() when state==1, or tail-calls ext_00462BA0 when state==2 and field_0x08 is active.
+// @field Self +0x04 void* state_obj
+// @field Self +0x08 void* field_0x08
+// @field Self +0x0C void* field_0x0C
+
+extern uint8_t __thiscall ext_00462A60(void* self);
+extern void __thiscall ext_00462C80(void* self, void* arg);
+extern uint32_t __thiscall ext_00401960(void* self, const char* arg);
+extern const char* (__thiscall * const mem_00924FF0)(void* self);
+
+void __thiscall fn_00462F00(void* self, void* arg) {
+    auto* state_obj = lift_field<void*>(self, 0x04);
+    uint32_t state = lift_field<uint32_t>(state_obj, 0x04);
+
+    if (state == 1) {
+        const char* str = mem_00924FF0(arg);
+        void* target = lift_field<void*>(self, 0x0C);
+        ext_00401960(target, str);
+        return;
+    }
+
+    if (state == 2) {
+        void* obj = lift_field<void*>(self, 0x08);
+        if (obj != nullptr && ext_00462A60(obj) != 0) {
+            ext_00462C80(obj, arg);
+        }
+    }
+}
+} // namespace lift_00462E10
+} // namespace lift_00462F00

@@ -10,8 +10,8 @@
 // Recovered field layout for RenameElementCommand:
 namespace lifted_layout {
 struct RenameElementCommand_Fields {
-    // +0x10  void*                    field_0x10  (evidence: 0x004BC980)
-    // +0x14  void*                    field_0x14  (evidence: 0x004BC980)
-    // +0x34  char                     field_0x34  (evidence: 0x004BC980)
+    // +0x10  void*                    field_0x10  (evidence: 0x004BC980, 0x004BC9C0, 0x00502130, 0x00502170)
+    // +0x14  void*                    field_0x14  (evidence: 0x004BC980, 0x004BC9C0, 0x00502130, 0x00502170)
+    // +0x34  char                     field_0x34  (evidence: 0x004BC980, 0x004BC9C0, 0x00502130, 0x00502170)
 };
 } // namespace lifted_layout

@@ -1,0 +1,34 @@
+{
+  "va": "0x00502170",
+  "size": 56,
+  "orig_symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::RenameElementCommand::vfunc_2",
+  "src_path": "src/templates/RenameElementCommand.cpp",
+  "lifted_path": "lifted/templates/RenameElementCommand.cpp",
+  "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::RenameElementCommand::vfunc_2",
+  "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::RenameElementCommand",
+  "signature": "void __thiscall fn_00502170(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004BC980 (PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RenameElementCommand::vfunc_1).",
+  "fields": [
+    {
+      "class": "RenameElementCommand",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "RenameElementCommand",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "RenameElementCommand",
+      "offset": "+0x34",
+      "type": "char",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:27:49Z"
+}

@@ -1,0 +1,33 @@
+{
+  "va": "0x00462EC0",
+  "size": 64,
+  "orig_symbol": "sub_00462EC0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_00462EC0",
+  "signature": "void __thiscall fn_00462EC0(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00462E10 (DispatchActionByState).",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "state_obj"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:27:49Z"
+}
