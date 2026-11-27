@@ -48320,6 +48320,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004AD970 (Unknown::DestroyStringAndArray).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00666A60": {
+    "name": "Unknown::initStringRecordAndDispatchVfunc5",
+    "class": "Unknown",
+    "signature": "void* fn_00666A60(void* self, void* out_string)",
+    "summary": "Default-constructs the std::string at out_string, builds an 18-byte record referencing it via initRecord_ptrDefaultsWord0C, passes the record to vtable slot 5 of self, and returns out_string.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00666C90": {
     "name": "Unknown::FindParentOfFirstFlaggedChild",
     "class": "Unknown",
@@ -68760,6 +68767,12 @@
     "name": "GetIndexedStaticAddress",
     "signature": "extern \"C\" void* __stdcall fn_0071A610(unsigned int a1)",
     "summary": "Returns a fixed static address selected by index 0..10; returns 0 for any other index.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x0071A6B0": {
+    "name": "get_enum_string_0071A6B0",
+    "signature": "uint32_t __stdcall sub_0071A6B0(uint32_t index)",
+    "summary": "Maps an enum index (0..11) to a static string/data address, or 0 if out of range.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071A760": {

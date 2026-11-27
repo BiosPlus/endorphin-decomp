@@ -1,0 +1,22 @@
+{
+  "va": "0x00666A60",
+  "size": 121,
+  "orig_symbol": "sub_00666A60",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::initStringRecordAndDispatchVfunc5",
+  "class": "Unknown",
+  "signature": "void* fn_00666A60(void* self, void* out_string)",
+  "summary": "Default-constructs the std::string at out_string, builds an 18-byte record referencing it via initRecord_ptrDefaultsWord0C, passes the record to vtable slot 5 of self, and returns out_string.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:19:06Z"
+}

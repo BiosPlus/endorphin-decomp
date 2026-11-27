@@ -2977,3 +2977,36 @@ bool fn_00661F10(void* self) {
     return true;
 }
 } // namespace lift_00661F10
+
+// [0x00666A60] (121 bytes)
+namespace lift_00666A60 {
+// Known callee 0x006408C0: initRecord_ptrDefaultsWord0C (Initializes a 18-byte record at self: stores arg2 at +0x00, arg1 at +0x04 (defaulting to &mem_0092F67C when zero), arg0 at +0x08, zeroes +0x0C and the two flag bytes at +0x10/+0x11.)
+extern void ext_006408C0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+// Import slot holding the MSVCP80 std::basic_string<char> default-ctor thunk 0x006290D8 (thiscall, this in ecx).
+extern uint32_t mem_00924FE8;
+// Default record pointer target used by initRecord_ptrDefaultsWord0C.
+extern int mem_0092F67C;
+
+// @name Unknown::initStringRecordAndDispatchVfunc5
+// @class Unknown
+// @summary Default-constructs the std::string at out_string, builds an 18-byte record referencing it via initRecord_ptrDefaultsWord0C, passes the record to vtable slot 5 of self, and returns out_string.
+// @field Unknown +0x00 uint32_t vtable
+void* fn_00666A60(void* self, void* out_string) {
+    // Default-construct the std::string at out_string (thiscall through the import slot).
+    reinterpret_cast<void (__thiscall*)(void*)>(static_cast<uintptr_t>(mem_00924FE8))(out_string);
+
+    // Build the 18-byte record: arg2 = 2, arg1 = 0 (defaults to &mem_0092F67C), arg0 = out_string.
+    alignas(4) uint8_t record[18] = {};
+    ext_006408C0(record,
+                static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out_string)),
+                0,
+                2);
+
+    // Indirect call: vtable slot at +0x14 (index 5) of self, this = self, one stack arg = &record.
+    const uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    const uint32_t slot = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable) + 0x14);
+    reinterpret_cast<void (__thiscall*)(void*, void*)>(static_cast<uintptr_t>(slot))(self, record);
+
+    return out_string;
+}
+} // namespace lift_00666A60
