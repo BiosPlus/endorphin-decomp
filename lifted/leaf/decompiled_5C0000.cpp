@@ -1954,3 +1954,55 @@ void fn_005CF2B0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_005CF2B0
+
+// [0x005CFEC0] sub_005CFEC0 (147 bytes)
+namespace lift_005CFEC0 {
+extern DWORD mem_00B40644;
+extern void* __fastcall ext_0053B470(void* self, int edx_unused, void* p, float f);
+extern void ext_00547080(const float* a, float* out, const float* b);
+
+// @name Unknown::transformAndDispatch_005CFEC0
+// @class Unknown
+// @summary Returns early if flag +0x1F1 is set; otherwise fetches a 4x4 matrix from the embedded object's vtable slot 5, derives a transformed point via sub_0053B470 and Vector4Add, then calls vtable slot 0 of the embedded object with the matrix buffer and global mem_00B40644.
+// @field Unknown +0x4 unknown field_0x4
+// @field Unknown +0x1F1 uint8_t field_0x1F1
+// @field Unknown +0x1F4 float field_0x1F4
+extern void __fastcall fn_005CFEC0(void* self, int edx_unused, const float* a) {
+    (void)edx_unused;
+
+    if (lift_field<uint8_t>(self, 0x1F1) != 0) {
+        return;
+    }
+
+    using Method5 = void* (__fastcall*)(void* self, int edx_unused, void* arg);
+    using Method0 = void (__fastcall*)(void* self, int edx_unused, int zero, void* buf, void* arg);
+
+    // Embedded object lives at this+0x4; its first dword is the vtable pointer.
+    unsigned char* const obj = static_cast<unsigned char*>(self) + 0x4;
+    void** const vt = lift_field<void**>(obj, 0);
+
+    // Frame scratch area (0x60 bytes), addressed by byte offset as in the original stack frame.
+    alignas(16) unsigned char frame[0x60] = {};
+
+    // m = obj->vtbl[5](obj, mem_00B40644); the result is a 16-float (4x4) matrix.
+    void* const g0 = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00B40644));
+    const float* const m = static_cast<const float*>(reinterpret_cast<Method5>(vt[5])(obj, 0, g0));
+    std::memcpy(frame + 0x20, m, 0x40);
+
+    const float f = lift_field<float>(self, 0x1F4);
+    void* const p = ext_0053B470(frame + 0x40, 0, frame, f);
+
+    float* const out = reinterpret_cast<float*>(frame + 0x10);
+    ext_00547080(a, out, static_cast<const float*>(p));
+
+    // Build homogeneous point {x, y, z, 1.0} from the result at frame+0x50.
+    float* const vec = reinterpret_cast<float*>(frame + 0x50);
+    vec[0] = out[0];
+    vec[1] = out[1];
+    vec[2] = out[2];
+    vec[3] = 1.0f;
+
+    void* const g1 = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00B40644));
+    reinterpret_cast<Method0>(vt[0])(obj, 0, 0, frame + 0x20, g1);
+}
+} // namespace lift_005CFEC0
