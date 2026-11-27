@@ -2790,3 +2790,18 @@ int32_t fn_0070AF30(void* self, int32_t arg1) {
 }
 } // namespace lift_00704D60
 } // namespace lift_0070AF30
+
+// [0x007008D0] sub_007008D0 (32 bytes)
+namespace lift_007008D0 {
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+
+// @name Unknown::assignCStringWrapper_007008D0
+// @class Unknown
+// @summary Forwards a C string to the subobject at this+0x10 via assignCString_006B9EC0 and returns true.
+// (No direct field access: this+0x10 is only passed as the callee's `this`.)
+bool __thiscall fn_007008D0(void* self, const char* s) {
+    ext_006B9EC0(static_cast<unsigned char*>(self) + 0x10, s);
+    return true;
+}
+} // namespace lift_007008D0
