@@ -52,7 +52,8 @@ struct Object_Fields {
     // +0x10  float                    field_0x10  (evidence: 0x00533FB0, 0x007DEC00) // CONFLICT: multiple definitions at +0x10
     // +0x10  float[]                  field_0x10  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0x10
     // +0x10  int32_t                  field_0x10  (evidence: 0x00533F10) // CONFLICT: multiple definitions at +0x10
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x004B08A0, 0x00602EC0, 0x00622B40, 0x0062CD30, 0x00645E20, 0x00713EC0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x004B08A0, 0x00602EC0, 0x00622B40, 0x0062CD30, 0x00645E20) // CONFLICT: multiple definitions at +0x10
+    // +0x10  unsigned int             field_0x10  (evidence: 0x00713EC0) // CONFLICT: multiple definitions at +0x10
     // +0x10  float                    vec4_z  (evidence: 0x00532900) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    child  (evidence: 0x00468730, 0x00468A30) // CONFLICT: multiple definitions at +0x14
     // +0x14  float                    field_0x14  (evidence: 0x00533FB0, 0x00602EC0, 0x007DEC00) // CONFLICT: multiple definitions at +0x14

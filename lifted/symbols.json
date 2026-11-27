@@ -94527,8 +94527,8 @@
   "0x00713EC0": {
     "name": "Object::initWithArg_00713EC0",
     "class": "Object",
-    "signature": "uint32_t* fn_00713EC0(void* self, void* arg)",
-    "summary": "Calls the helper 0x007131E0 with the single stack argument, installs the vtable pointer 0x0099612C at +0x00, stores the global word at 0x00AAC08C into +0x10, and returns this.",
+    "signature": "void* fn_00713EC0(void* self, void* arg)",
+    "summary": "Calls helper 0x007131E0 with the single stack argument, writes vtable 0x0099612C to +0x00, copies the global word at 0x00AAC08C into +0x10, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00713EF0": {

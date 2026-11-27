@@ -3003,19 +3003,19 @@ void fn_0071CC60(void* self, double value) {
 
 // [0x00713EC0] sub_00713EC0 (34 bytes)
 namespace lift_00713EC0 {
-// Known callee 0x007131E0: sub_007131E0 (383 bytes, unnamed; takes one pointer-sized argument and returns through ret-less cleanup of its own stack).
+// Known callee 0x007131E0: sub_007131E0 (383 bytes, unnamed; called with one pointer-sized stack argument).
 extern void ext_007131E0(void* arg);
-extern uint32_t mem_00AAC08C;
+extern unsigned int mem_00AAC08C;
 
 // @name Object::initWithArg_00713EC0
 // @class Object
-// @summary Calls the helper 0x007131E0 with the single stack argument, installs the vtable pointer 0x0099612C at +0x00, stores the global word at 0x00AAC08C into +0x10, and returns this.
+// @summary Calls helper 0x007131E0 with the single stack argument, writes vtable 0x0099612C to +0x00, copies the global word at 0x00AAC08C into +0x10, and returns this.
 // @field Object +0x00 void* vtable
-// @field Object +0x10 uint32_t field_0x10
-uint32_t* fn_00713EC0(void* self, void* arg) {
+// @field Object +0x10 unsigned int field_0x10
+void* fn_00713EC0(void* self, void* arg) {
     ext_007131E0(arg);
-    lift_field<uintptr_t>(self, 0x00) = static_cast<uintptr_t>(0x0099612Cu);
-    lift_field<uint32_t>(self, 0x10) = mem_00AAC08C;
-    return static_cast<uint32_t*>(self);
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(0x0099612Cu);
+    lift_field<unsigned int>(self, 0x10) = mem_00AAC08C;
+    return self;
 }
 } // namespace lift_00713EC0
