@@ -1420,7 +1420,7 @@ struct Unknown_Fields {
     // +0xAC  int32_t                  field_0xac  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t                 field_0xac  (evidence: 0x005B6FC0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t*                field_0xac  (evidence: 0x006BA780, 0x006BB0C0, 0x006BB150) // CONFLICT: multiple definitions at +0xAC
-    // +0xAC  void*                    field_0xac  (evidence: 0x005B6980, 0x005CE8D0) // CONFLICT: multiple definitions at +0xAC
+    // +0xAC  void*                    field_0xac  (evidence: 0x005B6980, 0x005CE8D0, 0x007721B0) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t field_0xac (read from the child at +0x158; becomes `this` for the forward)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t field_0xac (read from the sub-object at self+0x158, not from self)  (evidence: 0x005B6FE0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xB0  uint32_t                 field_0xB0  (evidence: 0x007C58E0, 0x007C8690, 0x007CAF70, 0x007CC5D0, 0x007D48A0, 0x007D8470, 0x007D8710, 0x007DADA0, 0x007DEC80) // CONFLICT: multiple definitions at +0xB0
@@ -1429,7 +1429,7 @@ struct Unknown_Fields {
     // +0xB0  void*                    field_0xB0  (evidence: 0x007C8490, 0x007CAF70, 0x007CB890, 0x007CC1C0, 0x007DAE50) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  float                    field_0xb0  (evidence: 0x00611100) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint32_t                 field_0xb0  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xB0
-    // +0xB0  uint8_t                  field_0xb0  (evidence: 0x00544130) // CONFLICT: multiple definitions at +0xB0
+    // +0xB0  uint8_t                  field_0xb0  (evidence: 0x00544130, 0x007721B0) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  void*                    field_0xb0  (evidence: 0x007CA750, 0x007DB4C0) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8_t field_0xb0 (embedded sub-object; its address is passed, not read)  (evidence: 0x006A8800) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8_t[?] subobject (address-only; passed as this to ord_4066 thunk)  (evidence: 0x006A8840) // CONFLICT: multiple definitions at +0xB0

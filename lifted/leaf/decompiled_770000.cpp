@@ -476,3 +476,34 @@ bool __stdcall sub_00771FC0(char** str)
     return true;
 }
 } // namespace lift_00771FC0
+
+// [0x007721B0]
+namespace lift_007721B0 {
+// @name Unknown::closeFileAndResetString_007721B0
+// @class Unknown
+// @summary Closes the FILE* at +0xac if set (clearing it), then assigns the string at 0x00B5D2C0 to the sub-object at +0xb0; returns true if no fclose error occurred.
+// @field Unknown +0xac void* field_0xac
+// @field Unknown +0xb0 uint8_t field_0xb0
+
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+extern uint32_t mem_00925264;
+
+extern bool __thiscall fn_007721B0(void* self)
+{
+    uint8_t* const base = static_cast<uint8_t*>(self);
+    int result = 0;
+
+    void* file = *reinterpret_cast<void**>(base + 0xac);
+    if (file != nullptr) {
+        using fclose_fn = int(__cdecl*)(void*);
+        auto fclose_p = reinterpret_cast<fclose_fn>(static_cast<uintptr_t>(mem_00925264));
+        result = fclose_p(file);
+    }
+
+    const char* str = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00B5D2C0u));
+    *reinterpret_cast<void**>(base + 0xac) = nullptr;
+    ext_006B9EC0(base + 0xb0, str);
+
+    return result == 0;
+}
+} // namespace lift_007721B0

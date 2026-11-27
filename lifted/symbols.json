@@ -78351,6 +78351,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007720F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x007721B0": {
+    "name": "Unknown::closeFileAndResetString_007721B0",
+    "class": "Unknown",
+    "signature": "extern \"C\" bool __thiscall fn_007721B0(void* self)",
+    "summary": "Closes the FILE* at +0xac if set (clearing it), then assigns the string at 0x00B5D2C0 to the sub-object at +0xb0; returns true if no fclose error occurred.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x007721F0": {
     "name": "sub_007721F0",
     "signature": "void* fn_007721F0()",
