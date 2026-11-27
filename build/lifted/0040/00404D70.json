@@ -1,0 +1,40 @@
+{
+  "va": "0x00404D70",
+  "size": 111,
+  "orig_symbol": "sub_00404D70",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "UnknownClass::UnknownClass",
+  "class": "UnknownClass",
+  "signature": "void* fn_00404D70(void* self, const void* src)",
+  "summary": "Copy-constructs fields from a source struct (u32 at +0x00, three std::string members at +0x04/+0x20/+0x3C); returns this.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:00:28Z"
+}
