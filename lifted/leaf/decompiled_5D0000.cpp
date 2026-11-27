@@ -671,3 +671,38 @@ void fn_005D0530(void* self, const float* offset) {
     reinterpret_cast<DispatchFn>(vtbl[0])(subObject, 0, m, mem_00B40644);
 }
 } // namespace lift_005D0530
+
+// [0x005D02D0] sub_005D02D0 (127 bytes)
+namespace lift_005D02D0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+// The asm treats the returned EAX as a pointer (dereferences [eax+0x258]), so it is typed as void*.
+extern void* ext_00594000(void);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+
+// @name Unknown::storeArgAfterEnterAndDispatch_005D02D0
+// @class Unknown
+// @summary Fetches a global object, calls its virtual slot 0x1d8 to get a critical-section pointer, enters that section, stores the stack argument at self+0x208, dispatches through the subobject at global+0x258, then leaves the section (also on unwind).
+// @field Unknown +0x208 int32_t field_0x208
+void fn_005D02D0(void* self, int32_t arg) {
+    void* global = ext_00594000();
+    void* obj = lift_field<void*>(global, 0x258);
+    void* subobjSlot = &lift_field<void*>(global, 0x258);
+
+    using GetFn = void* (*)(void*);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    GetFn get = reinterpret_cast<GetFn>(vtable[0x1d8 / sizeof(void*)]);
+    void* cs = get(obj);
+
+    ext_0065C640(cs);
+
+    lift_field<int32_t>(self, 0x208) = arg;
+    ext_00493EE0(subobjSlot);
+
+    ext_0065C650(cs);
+}
+} // namespace lift_005D02D0

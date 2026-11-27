@@ -36140,6 +36140,13 @@
     "summary": "Gets a 16-float matrix from the embedded object at +0x04 (vtable slot 0x14), transforms it with a negated float at +0x1F4 via sub_0053B470 and Vector4Add, and copies the resulting 4 floats into +0x274.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005D02D0": {
+    "name": "Unknown::storeArgAfterEnterAndDispatch_005D02D0",
+    "class": "Unknown",
+    "signature": "void fn_005D02D0(void* self, int32_t arg)",
+    "summary": "Fetches a global object, calls its virtual slot 0x1d8 to get a critical-section pointer, enters that section, stores the stack argument at self+0x208, dispatches through the subobject at global+0x258, then leaves the section (also on unwind).",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D0530": {
     "name": "UnknownOwner::applyTranslationOffsetAndDispatch",
     "class": "UnknownOwner",

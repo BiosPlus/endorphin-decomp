@@ -1,0 +1,22 @@
+{
+  "va": "0x005D02D0",
+  "size": 127,
+  "orig_symbol": "sub_005D02D0",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "Unknown::storeArgAfterEnterAndDispatch_005D02D0",
+  "class": "Unknown",
+  "signature": "void fn_005D02D0(void* self, int32_t arg)",
+  "summary": "Fetches a global object, calls its virtual slot 0x1d8 to get a critical-section pointer, enters that section, stores the stack argument at self+0x208, dispatches through the subobject at global+0x258, then leaves the section (also on unwind).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x208",
+      "type": "int32_t",
+      "name": "field_0x208"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T03:07:56Z"
+}

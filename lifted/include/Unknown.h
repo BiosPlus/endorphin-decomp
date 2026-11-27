@@ -1521,6 +1521,7 @@ struct Unknown_Fields {
     // +0x204 DWORD                    vecBegin  (evidence: 0x005ECDC0) // CONFLICT: multiple definitions at +0x204
     // +0x208 DWORD                    field_0x208  (evidence: 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x208
     // +0x208 float                    field_0x208  (evidence: 0x007C76B0) // CONFLICT: multiple definitions at +0x208
+    // +0x208 int32_t                  field_0x208  (evidence: 0x005D02D0) // CONFLICT: multiple definitions at +0x208
     // +0x208 void*                    field_0x208  (evidence: 0x0070AD00, 0x0070ED10) // CONFLICT: multiple definitions at +0x208
     // +0x208 DWORD                    vecEnd  (evidence: 0x005ECDC0) // CONFLICT: multiple definitions at +0x208
     // +0x20C DWORD                    field_0x20C  (evidence: 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x20C
