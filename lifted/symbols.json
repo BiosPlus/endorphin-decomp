@@ -1596,6 +1596,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00411590 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00411A80": {
+    "name": "MultiTrackView::CompositeEventTrack::vfunc_7",
+    "class": "MultiTrackView::CompositeEventTrack",
+    "signature": "extern int32_t (__stdcall *mem_00925688)(void*, void*, int32_t); // USER32!InvalidateRect } void __thiscall fn_00411A80(void* self, POINT pt, int32_t frame)",
+    "summary": "Builds and displays the context menu for a composite event track and dispatches the selected command.",
+    "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp"
+  },
   "0x00412690": {
     "name": "Container_EmplaceOrGrow_00412690",
     "class": "Unknown",
@@ -11611,6 +11618,13 @@
     "signature": "void fn_00478D00(uint32_t* first, uint32_t* last)",
     "summary": "Heap-sort tail loop over a uint32 range: repeatedly moves the max to the end and re-sifts the shrinking heap via ext_00477280.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
+  "0x00478D50": {
+    "name": "NMData::SceneData::vfunc_3",
+    "class": "NMData::SceneData",
+    "signature": "void report_progress_str(void* progress, const char* msg)",
+    "summary": "Serializes SceneData and its child objects to an XML node while updating progress.",
+    "lifted_path": "lifted/NMData/SceneData.cpp"
   },
   "0x00479620": {
     "name": "ResolveOrThrowMissing",
