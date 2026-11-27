@@ -1,0 +1,39 @@
+{
+  "va": "0x00558B90",
+  "size": 118,
+  "orig_symbol": "sub_00558B90",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "destroyStringAndRecordVector",
+  "signature": "void __thiscall fn_00558B90(void* self)",
+  "summary": "Destroys a vector of 0x3C-byte string-pair records and the owning std::string.",
+  "fields": [
+    {
+      "class": "RecordOwner",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "RecordOwner",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "vec_first"
+    },
+    {
+      "class": "RecordOwner",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "vec_last"
+    },
+    {
+      "class": "RecordOwner",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "vec_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:20:17Z"
+}

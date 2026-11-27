@@ -1848,3 +1848,29 @@ void __stdcall fn_00550420(FILE* fp, int* counts, char* buf) {
     } while (fgets(buf, 0x800, fp) != nullptr);
 }
 } // namespace lift_00550420
+
+// [0x00558B90]
+namespace lift_00558B90 {
+extern void ext_005567D0(void* first, void* last);
+extern void ext_006A5C5C(void);
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+// @name destroyStringAndRecordVector
+// @summary Destroys a vector of 0x3C-byte string-pair records and the owning std::string.
+// @field RecordOwner +0x1c uint32_t field_0x1c
+// @field RecordOwner +0x20 void* vec_first
+// @field RecordOwner +0x24 void* vec_last
+// @field RecordOwner +0x28 void* vec_end
+void __thiscall fn_00558B90(void* self) {
+    void* first = lift_field<void*>(self, 0x20);
+    if (first != nullptr) {
+        void* last = lift_field<void*>(self, 0x24);
+        ext_005567D0(first, last);
+        ext_006A5C5C();
+    }
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = 0;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    mem_00924FF4(self);
+}
+} // namespace lift_00558B90
