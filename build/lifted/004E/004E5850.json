@@ -1,0 +1,28 @@
+{
+  "va": "0x004E5850",
+  "size": 140,
+  "orig_symbol": "sub_004E5850",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "Unknown::assignFromInputAndForward",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_004E5850(void* self, void* out, const char* p)",
+  "summary": "Builds a temp std::string from a literal, assigns the optional input string into the sub-object at +0x18 when non-null, forwards the temp to the sub-object at +0x08, stores the result in *out, destroys the temp, and returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:45:12Z"
+}

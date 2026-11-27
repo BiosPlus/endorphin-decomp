@@ -26087,6 +26087,13 @@
     "summary": "Loads AnimationEventData properties from an XML/data node and updates related subobjects.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004E5850": {
+    "name": "Unknown::assignFromInputAndForward",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_004E5850(void* self, void* out, const char* p)",
+    "summary": "Builds a temp std::string from a literal, assigns the optional input string into the sub-object at +0x18 when non-null, forwards the temp to the sub-object at +0x08, stores the result in *out, destroys the temp, and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E6900": {
     "name": "NMData::AnimationEventData::vfunc_0_off_158",
     "class": "NMData::AnimationEventData",

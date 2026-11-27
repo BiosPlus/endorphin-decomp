@@ -1803,3 +1803,44 @@ extern void fn_004E8EA0(void* src, void* self) {
     }
 }
 } // namespace lift_004E8EA0
+
+// [0x004E5850]
+namespace lift_004E5850 {
+// Known callee 0x00662610: sub_00662610 (cdecl; builds a std::string temp from a literal; args: temp, literal)
+extern void __cdecl ext_00662610(void* dst, const char* src);
+// Known callee 0x00474F00: sub_00474F00 (thiscall; this = self+0x18, arg = temp; returns string object to assign into)
+extern void* __thiscall ext_00474F00(void* self, void* tmp);
+// Known callee 0x00476360: sub_00476360 (thiscall; this = self+0x08, arg = temp; returns a value stored to *out)
+extern void* __thiscall ext_00476360(void* self, void* tmp);
+// Literal string at 0x00A3E65C passed to ext_00662610.
+extern const char mem_00A3E65C[];
+// MSVCP80 std::string import slots (IAT values): operator=(const char*) and ~basic_string().
+extern uint32_t mem_00924FD4;
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::assignFromInputAndForward
+// @class Unknown
+// @summary Builds a temp std::string from a literal, assigns the optional input string into the sub-object at +0x18 when non-null, forwards the temp to the sub-object at +0x08, stores the result in *out, destroys the temp, and returns out.
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0x18 uint8_t field_0x18
+void* __thiscall fn_004E5850(void* self, void* out, const char* p) {
+    // MSVC80 std::string temporary (24 bytes).
+    alignas(4) uint8_t tmp[0x18];
+
+    ext_00662610(tmp, mem_00A3E65C);
+
+    if (p != nullptr) {
+        void* str = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, tmp);
+        using AssignFn = void(__thiscall*)(void* self, const char* s);
+        reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FD4))(str, p);
+    }
+
+    void* result = ext_00476360(static_cast<uint8_t*>(self) + 0x08, tmp);
+    lift_field<void*>(out, 0) = result;
+
+    using DtorFn = void(__thiscall*)(void* self);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(tmp);
+
+    return out;
+}
+} // namespace lift_004E5850
