@@ -41459,6 +41459,13 @@
     "summary": "Forwards code 0x22F to FixedPathJointData::vfunc_15; otherwise calls fillPairWithStaticObject, then returns self.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005EE3F0": {
+    "name": "NMData::SkeletalJointData::vfunc_15",
+    "class": "NMData::SkeletalJointData",
+    "signature": "uint32_t __thiscall fn_005EE3F0(void* self, uint32_t out, uint32_t code)",
+    "summary": "Dispatches property/attribute codes 0x25D, 0x33B, 0x33E, and 0x356 to static-object helpers, delegating all other codes to NMData::FixedPathJointData::vfunc_15.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005EE600": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RelationshipData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::RelationshipData::setMetaBodyName0(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RelationshipData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::RelationshipData::setMetaBodyName0(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
