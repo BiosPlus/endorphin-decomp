@@ -53324,6 +53324,13 @@
     "summary": "Checks if a checked iterator points to the first element of its container",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00661E80": {
+    "name": "Unknown::advanceCursorAndDispatch",
+    "class": "Unknown",
+    "signature": "bool fn_00661E80(void* self)",
+    "summary": "Validates the cursor/header pair, advances the cursor one node, marks the object active, and dispatches the range via fn_00466BA0; returns false when the cursor range is exhausted.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00661F10": {
     "name": "Unknown::AdvanceNodeAndDispatch",
     "class": "Unknown",

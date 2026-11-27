@@ -3526,3 +3526,62 @@ void __thiscall sub_00666C00(void* self) {
     lift_field<uintptr_t>(self, 0x4) = parent;
 }
 } // namespace lift_00666C00
+
+// [0x00661E80] sub_00661E80 (138 bytes)
+namespace lift_00661E80 {
+// Known callee 0x00466BA0: DispatchRangeWithDefault (Dispatches arg1 (or self->+0x24 when arg1 is 0) to every object pointer in the [+0x18, +0x1C) range, then forwards arg2 to ext_00678D70.)
+void ext_00466BA0(void* self, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00925134;
+
+// @name Unknown::advanceCursorAndDispatch
+// @class Unknown
+// @summary Validates the cursor/header pair, advances the cursor one node, marks the object active, and dispatches the range via fn_00466BA0; returns false when the cursor range is exhausted.
+// @field Unknown +0x00 uint8_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x64 uint32_t field_0x64
+bool fn_00661E80(void* self) {
+    auto invalid_parameter = [] {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    };
+    auto ptr = [](uint32_t v) {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+    };
+
+    // Header (self->+0x8) must be non-null and its +0x4 must differ from cursor (self->+0xC).
+    if (lift_field<uint32_t>(self, 0x8) == 0) {
+        invalid_parameter();
+    }
+    void* hdr = ptr(lift_field<uint32_t>(self, 0x8));
+    if (lift_field<uint32_t>(self, 0xC) == lift_field<uint32_t>(hdr, 0x4)) {
+        invalid_parameter();
+    }
+
+    // obj = self->+0x4; ref = obj->+0x64; compare ref->+0x4 against ref.
+    void* obj = ptr(lift_field<uint32_t>(self, 0x4));
+    uint32_t ref_val = lift_field<uint32_t>(obj, 0x64);
+    void* ref = ptr(ref_val);
+    if (lift_field<uint32_t>(ref, 0x4) == ref_val) {
+        invalid_parameter();
+    }
+
+    // Range exhaustion: cursor+8 equal to ref->+4 + 8 means nothing left.
+    uint32_t cursor_end = lift_field<uint32_t>(self, 0xC) + 8;
+    uint32_t ref_end = lift_field<uint32_t>(ref, 0x4) + 8;
+    if (cursor_end == ref_end) {
+        return false;
+    }
+
+    // Remaining header/cursor checks were already established above and self is
+    // unchanged since, so they are not repeated here.
+    uint32_t cursor = lift_field<uint32_t>(self, 0xC);
+    uint32_t next = lift_field<uint32_t>(ptr(cursor), 0);
+    lift_field<uint32_t>(self, 0xC) = next;
+
+    lift_field<uint8_t>(self, 0x0) = 1;
+    ext_00466BA0(static_cast<uint8_t*>(self) + 0x38,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)), 0);
+    return true;
+}
+} // namespace lift_00661E80
