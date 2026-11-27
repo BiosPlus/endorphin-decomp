@@ -1906,3 +1906,51 @@ void __thiscall fn_005CF9E0(void* self, float value) {
     ext_0065C650(cs);
 }
 } // namespace lift_005CF9E0
+
+// [0x005CF2B0] sub_005CF2B0 (136 bytes)
+namespace lift_005CF2B0 {
+// Known callee 0x005B1870: Geometry::~Geometry (Destructor: sets the Geometry vptr, destroys the embedded std::string at +0x28, deletes the object at +0x0C through its virtual deleting destructor (slot 0) if non-null, then runs the base-class teardown ext_0065F440.)
+extern void ext_005B1870(void* self);
+// Known callee 0x00648300: UnknownDerived::~UnknownDerived (Derived-class destructor: deletes owned object at +0xa4 (if set), destroys the std::string at +0x4c, then runs the Geometry base destructor.)
+extern void ext_00648300(void* self);
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764 = operator delete.)
+extern void ext_006A5C5C(void* p);
+// IAT slot holding the address of basic_string<char>::~basic_string.
+extern uint32_t mem_00924FF4;
+
+// @name UnknownHolder::~UnknownHolder
+// @class UnknownHolder
+// @summary Destructor: sets vptrs, deletes owned object at +0xAC (if set), destroys the Geometry subobject at +0x24 and the std::string at +0x08, then runs the base teardown ext_0065F440.
+// @field UnknownHolder +0x00 uint32_t vptr_primary
+// @field UnknownHolder +0x04 uint32_t vptr_secondary
+// @field UnknownHolder +0x08 uint8_t field_0x08
+// @field UnknownHolder +0x24 Geometry geometry
+// @field UnknownHolder +0xAC uint32_t owned_ptr
+void fn_005CF2B0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    // Vtable pointers (32-bit layout: stored as 32-bit values).
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x965c7c;
+    *reinterpret_cast<uint32_t*>(base + 0x04) = 0x965c70;
+
+    // Owned object at +0xAC: destroy via its destructor, then free it.
+    uint32_t owned = *reinterpret_cast<uint32_t*>(base + 0xAC);
+    if (owned != 0) {
+        void* p = reinterpret_cast<void*>(static_cast<uintptr_t>(owned));
+        ext_00648300(p);
+        ext_006A5C5C(p);
+    }
+
+    // Geometry subobject at +0x24.
+    ext_005B1870(base + 0x24);
+
+    // std::string at +0x08: call the destructor whose address is stored in mem_00924FF4.
+    auto string_dtor = reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(mem_00924FF4));
+    string_dtor(base + 0x08);
+
+    // Base teardown (stores its vptr at +0x00).
+    ext_0065F440(self);
+}
+} // namespace lift_005CF2B0

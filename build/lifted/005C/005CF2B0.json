@@ -1,0 +1,46 @@
+{
+  "va": "0x005CF2B0",
+  "size": 136,
+  "orig_symbol": "sub_005CF2B0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "UnknownHolder::~UnknownHolder",
+  "class": "UnknownHolder",
+  "signature": "void fn_005CF2B0(void* self)",
+  "summary": "Destructor: sets vptrs, deletes owned object at +0xAC (if set), destroys the Geometry subobject at +0x24 and the std::string at +0x08, then runs the base teardown ext_0065F440.",
+  "fields": [
+    {
+      "class": "UnknownHolder",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr_primary"
+    },
+    {
+      "class": "UnknownHolder",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vptr_secondary"
+    },
+    {
+      "class": "UnknownHolder",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownHolder",
+      "offset": "+0x24",
+      "type": "Geometry",
+      "name": "geometry"
+    },
+    {
+      "class": "UnknownHolder",
+      "offset": "+0xAC",
+      "type": "uint32_t",
+      "name": "owned_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:26:59Z"
+}

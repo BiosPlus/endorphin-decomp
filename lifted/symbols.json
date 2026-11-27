@@ -36514,6 +36514,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0048FFD0 (ExprParser::ReadMethodType\u003cGraphEngine\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005CF2B0": {
+    "name": "UnknownHolder::~UnknownHolder",
+    "class": "UnknownHolder",
+    "signature": "void fn_005CF2B0(void* self)",
+    "summary": "Destructor: sets vptrs, deletes owned object at +0xAC (if set), destroys the Geometry subobject at +0x24 and the std::string at +0x08, then runs the base teardown ext_0065F440.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CF3E0": {
     "name": "sub_005CF3E0",
     "class": "NMData::DesiredPoseEventData",
