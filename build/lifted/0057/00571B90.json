@@ -1,0 +1,28 @@
+{
+  "va": "0x00571B90",
+  "size": 565,
+  "orig_symbol": "CDLCharacterIO::vfunc_10",
+  "src_path": "src/classes/CDLCharacterIO.cpp",
+  "lifted_path": "lifted/classes/CDLCharacterIO.cpp",
+  "name": "CDLCharacterIO::vfunc_10",
+  "class": "CDLCharacterIO",
+  "signature": "void fn_00571B90(void* self, const std::string* filename)",
+  "summary": "Open a character file, initialize progress/logging, parse sections, and throw on failure.",
+  "fields": [
+    {
+      "class": "CDLCharacterIO",
+      "offset": "+0x414",
+      "type": "void*",
+      "name": "field_0x414"
+    },
+    {
+      "class": "CDLCharacterIO",
+      "offset": "+0x424",
+      "type": "void*",
+      "name": "field_0x424"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:09:57Z"
+}
