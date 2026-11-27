@@ -222,3 +222,35 @@ void fn_00499830(void* self, const float* delta) {
     ext_004996E0(self);
 }
 } // namespace lift_00499830
+
+// [0x004997E0]
+namespace lift_004997E0 {
+// @name NMData::Transition::vfunc_26
+// @class NMData::Transition
+// @summary Sets an 8-byte element at index in the transition's vector and updates state.
+// @field NMData::Transition +0x88 uint8_t* field_0x88
+// @field NMData::Transition +0x8C uint8_t* field_0x8C
+
+extern void (__cdecl* mem_00925134)();
+extern void __thiscall ext_004996E0(void* self);
+
+void __thiscall fn_004997E0(void* self, const void* value, uint32_t index) {
+    auto* begin = lift_field<uint8_t*>(self, 0x88);
+    if (begin == nullptr) {
+        mem_00925134();
+    } else {
+        auto* end = lift_field<uint8_t*>(self, 0x8C);
+        uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 3);
+        if (index >= count) {
+            mem_00925134();
+        }
+    }
+
+    auto* dst = lift_field<uint32_t*>(self, 0x88);
+    const auto* src = static_cast<const uint32_t*>(value);
+    dst[2 * index] = src[0];
+    dst[2 * index + 1] = src[1];
+
+    ext_004996E0(self);
+}
+} // namespace lift_004997E0

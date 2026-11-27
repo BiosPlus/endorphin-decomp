@@ -14513,6 +14513,13 @@
     "summary": "Forwards to ext_004871D0 when +0xB0 is null; otherwise calls vtable slot 1 of the object at +0xB0+0x10 and returns its result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x004997E0": {
+    "name": "NMData::Transition::vfunc_26",
+    "class": "NMData::Transition",
+    "signature": "void __thiscall fn_004997E0(void* self, const void* value, uint32_t index)",
+    "summary": "Sets an 8-byte element at index in the transition's vector and updates state.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x00499830": {
     "name": "NMData::Transition::vfunc_32",
     "class": "NMData::Transition",

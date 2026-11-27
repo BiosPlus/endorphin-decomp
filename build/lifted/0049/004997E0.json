@@ -1,0 +1,28 @@
+{
+  "va": "0x004997E0",
+  "size": 73,
+  "orig_symbol": "NMData::Transition::vfunc_26",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_26",
+  "class": "NMData::Transition",
+  "signature": "void __thiscall fn_004997E0(void* self, const void* value, uint32_t index)",
+  "summary": "Sets an 8-byte element at index in the transition's vector and updates state.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x88",
+      "type": "uint8_t*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x8C",
+      "type": "uint8_t*",
+      "name": "field_0x8C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:36:55Z"
+}
