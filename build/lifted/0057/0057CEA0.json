@@ -1,0 +1,13 @@
+{
+  "va": "0x0057CEA0",
+  "size": 58,
+  "orig_symbol": "sub_0057CEA0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "CopyConstructElementRangeEnd",
+  "signature": "__stdcall uint8_t* fn_0057CEA0(uint8_t* begin, uint32_t count, const void* src)",
+  "summary": "Copy-constructs `count` 0x3C-byte elements from `src` at `begin` via fn_0057CAC0 and returns the one-past-end pointer (begin + count * 0x3C). Stdcall, 3 args (ret 0xC).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:30:01Z"
+}

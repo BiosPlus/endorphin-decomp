@@ -30059,6 +30059,12 @@
     "summary": "Copy-constructs `count` 0x3C-byte elements from `src` into the array at `begin`; on exception, destroys already-constructed elements and rethrows.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057CEA0": {
+    "name": "CopyConstructElementRangeEnd",
+    "signature": "__stdcall uint8_t* fn_0057CEA0(uint8_t* begin, uint32_t count, const void* src)",
+    "summary": "Copy-constructs `count` 0x3C-byte elements from `src` at `begin` via fn_0057CAC0 and returns the one-past-end pointer (begin + count * 0x3C). Stdcall, 3 args (ret 0xC).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057CEE0": {
     "name": "Vector::eraseRange_0057CEE0",
     "class": "Vector",

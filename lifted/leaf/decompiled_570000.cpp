@@ -2224,3 +2224,16 @@ void fn_00576E50(void* begin, std::uint32_t count, const void* other) {
     }
 }
 } // namespace lift_00576E50
+
+// [0x0057CEA0] sub_0057CEA0 (58 bytes)
+namespace lift_0057CEA0 {
+// Known callee 0x0057CAC0: CopyConstructElementRange (Copy-constructs `count` 0x3C-byte elements from `src` into the array at `begin`; on exception, destroys already-constructed elements and rethrows.)
+void ext_0057CAC0(uint8_t* begin, uint32_t count, const void* src);
+
+// @name CopyConstructElementRangeEnd
+// @summary Copy-constructs `count` 0x3C-byte elements from `src` at `begin` via fn_0057CAC0 and returns the one-past-end pointer (begin + count * 0x3C). Stdcall, 3 args (ret 0xC).
+__stdcall uint8_t* fn_0057CEA0(uint8_t* begin, uint32_t count, const void* src) {
+    ext_0057CAC0(begin, count, src);
+    return begin + static_cast<uint32_t>(count * 0x3Cu);
+}
+} // namespace lift_0057CEA0
