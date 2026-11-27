@@ -1,0 +1,27 @@
+{
+  "va": "0x00503B20",
+  "size": 153,
+  "orig_symbol": "sub_00503B20",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "uninitialized_fill_n_string_pair",
+  "signature": "void fn_00503B20(uint8_t* dst, uint32_t count, const uint8_t* src)",
+  "summary": "Uninitialized-fills N 32-byte (std::string + u32) elements, destroying constructed elements on exception",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "str"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T08:50:15Z"
+}
