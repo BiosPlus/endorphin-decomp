@@ -26661,6 +26661,13 @@
     "summary": "Resets the vtable slot, tears down the sub-object at +0x820, then destroys the std::string at +0x804.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x005503A0": {
+    "name": "copyStringAndCountTokens",
+    "class": "\u003cClassName\u003e",
+    "signature": "uintptr_t fn_005503A0(void* self, const char* src)",
+    "summary": "Copies the source string into self+0x04, and if the copy is non-empty returns the strtok token count (tokens after the first, using two delimiter sets); if the first strtok finds no token, returns the source pointer instead.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00550420": {
     "name": "ParseFileLineCounts",
     "signature": "void __stdcall fn_00550420(FILE* fp, int* counts, char* buf)",

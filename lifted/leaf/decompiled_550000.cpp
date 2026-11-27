@@ -1982,3 +1982,53 @@ void* fn_00555160(void* first, void* last, void* dLast) {
     return dst;
 }
 } // namespace lift_00555160
+
+// [0x005503A0] sub_005503A0 (124 bytes)
+namespace lift_005503A0 {
+// strtok import slot (holds the address of MSVCR80!strtok).
+extern uint32_t mem_009252BC;
+// Delimiter strings used by the two strtok calls.
+extern const char mem_009525BC[];
+extern const char mem_009570A8[];
+
+// @name copyStringAndCountTokens
+// @class <ClassName>
+// @summary Copies the source string into self+0x04, and if the copy is non-empty returns the strtok token count (tokens after the first, using two delimiter sets); if the first strtok finds no token, returns the source pointer instead.
+// @field <ClassName> +0x04 char[] field_0x04
+uintptr_t fn_005503A0(void* self, const char* src) {
+    char* dst = reinterpret_cast<char*>(self) + 0x04;
+
+    // strcpy(dst, src), including the terminating NUL.
+    {
+        char* d = dst;
+        const char* s = src;
+        char c;
+        do {
+            c = *s++;
+            *d++ = c;
+        } while (c != '\0');
+    }
+
+    // Empty copy -> return 0.
+    if (dst[0] == '\0') {
+        return 0;
+    }
+
+    using strtok_fn_t = char* (*)(char*, const char*);
+    auto strtok_fn = reinterpret_cast<strtok_fn_t>(static_cast<uintptr_t>(mem_009252BC));
+
+    uintptr_t count;
+    if (strtok_fn(dst, mem_009525BC) == nullptr) {
+        count = reinterpret_cast<uintptr_t>(src);
+    } else {
+        count = 0;
+    }
+
+    char* tok = strtok_fn(nullptr, mem_009570A8);
+    while (tok != nullptr) {
+        ++count;
+        tok = strtok_fn(nullptr, mem_009570A8);
+    }
+    return count;
+}
+} // namespace lift_005503A0

@@ -1,0 +1,22 @@
+{
+  "va": "0x005503A0",
+  "size": 124,
+  "orig_symbol": "sub_005503A0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "copyStringAndCountTokens",
+  "class": "\u003cClassName\u003e",
+  "signature": "uintptr_t fn_005503A0(void* self, const char* src)",
+  "summary": "Copies the source string into self+0x04, and if the copy is non-empty returns the strtok token count (tokens after the first, using two delimiter sets); if the first strtok finds no token, returns the source pointer instead.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "char[]",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:50:51Z"
+}

@@ -22,6 +22,7 @@ struct _ClassName__Fields {
     // +0x1   uint8_t                  flag1  (evidence: 0x004B0F50)
     // +0x2   uint8_t                  flag2  (evidence: 0x004B0F50)
     // +0x3   uint8_t                  flag3  (evidence: 0x004B0F50)
+    // +0x4   char[]                   field_0x04  (evidence: 0x005503A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x005539D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x00553F70, 0x00672410, 0x00675DB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x4
