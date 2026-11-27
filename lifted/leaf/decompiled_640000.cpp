@@ -2732,3 +2732,22 @@ void fn_00640AA0(void* a, uint32_t b) {
     ext_00427550(static_cast<void*>(&a), buf);
 }
 } // namespace lift_00640AA0
+
+// [0x00640A50] sub_00640A50 (44 bytes)
+namespace lift_00640A50 {
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+extern void ext_00427550(void* self, const char* name);
+// IAT slot for MSVCR80!sprintf (the import thunk pointer at 0x00925218).
+extern uintptr_t mem_00925218;
+// Format string literal at .rdata 0x0097CD14.
+extern const char mem_0097CD14[];
+
+// @name FormatAndAssignChildName
+// @summary Formats the int argument into a 16-byte buffer with sprintf and assigns the result as the child name of the object referenced by the first argument.
+void fn_00640A50(void* unused, int a1) {
+    using SprintfFn = int (*)(char*, const char*, ...);
+    char buf[16];
+    reinterpret_cast<SprintfFn>(mem_00925218)(buf, mem_0097CD14, a1);
+    ext_00427550(&unused, buf);
+}
+} // namespace lift_00640A50

@@ -1,0 +1,13 @@
+{
+  "va": "0x00640A50",
+  "size": 44,
+  "orig_symbol": "sub_00640A50",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "FormatAndAssignChildName",
+  "signature": "void fn_00640A50(void* unused, int a1)",
+  "summary": "Formats the int argument into a 16-byte buffer with sprintf and assigns the result as the child name of the object referenced by the first argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:41:09Z"
+}

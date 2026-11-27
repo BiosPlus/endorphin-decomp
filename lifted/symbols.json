@@ -50493,6 +50493,12 @@
     "summary": "Appends '\u0026' + this-\u003efield_0x04 + ';' to the string at arg+0x08 and clears the byte flag at arg+0x11 before each append (builds an XML entity reference \"\u0026\u003ctext\u003e;\").",
     "lifted_path": "lifted/AdvXMLParser/EntityRef.cpp"
   },
+  "0x00640A50": {
+    "name": "FormatAndAssignChildName",
+    "signature": "void fn_00640A50(void* unused, int a1)",
+    "summary": "Formats the int argument into a 16-byte buffer with sprintf and assigns the result as the child name of the object referenced by the first argument.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00640A80": {
     "name": "ResetChildNameFromBool",
     "class": "\u003cClassName\u003e (optional)",
