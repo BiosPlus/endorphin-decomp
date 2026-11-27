@@ -26,6 +26,7 @@ void* fn_00530070() {
 #include <cstddef>
 #include <cstdlib>
 #include <bit>
+#include <cmath>
 
 // [0x005300D0] sub_005300D0 (86 bytes)
 namespace lift_005300D0 {
@@ -2072,3 +2073,58 @@ void fn_0053FB40(void* self) {
 }
 } // namespace lift_00493970
 } // namespace lift_0053FB40
+
+// [0x005319E0] sub_005319E0 (254 bytes)
+namespace lift_005319E0 {
+// @name sub_005319E0
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00AF166C;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005319E0(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00AF166C);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005319E0

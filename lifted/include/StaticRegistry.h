@@ -8,6 +8,6 @@
 // Recovered field layout for StaticRegistry:
 namespace lifted_layout {
 struct StaticRegistry_Fields {
-    // +0x4   void*                    lookupTable  (evidence: 0x004C98C0)
+    // +0x4   void*                    lookupTable  (evidence: 0x004C98C0, 0x0051D940, 0x0060DE00, 0x0060FF90, 0x00610630)
 };
 } // namespace lifted_layout

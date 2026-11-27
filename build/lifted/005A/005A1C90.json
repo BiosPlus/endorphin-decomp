@@ -1,0 +1,13 @@
+{
+  "va": "0x005A1C90",
+  "size": 254,
+  "orig_symbol": "sub_005A1C90",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005A1C90",
+  "signature": "extern void* fn_005A1C90(void* self, void* out, MsvcString arg_str)",
+  "summary": "Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:39:48Z"
+}

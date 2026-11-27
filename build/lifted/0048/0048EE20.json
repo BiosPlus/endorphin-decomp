@@ -1,0 +1,13 @@
+{
+  "va": "0x0048EE20",
+  "size": 254,
+  "orig_symbol": "sub_0048EE20",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "sub_0048EE20",
+  "signature": "extern void* fn_0048EE20(void* self, void* out, MsvcString arg_str)",
+  "summary": "Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:39:48Z"
+}

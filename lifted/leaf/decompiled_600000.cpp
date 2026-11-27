@@ -3613,3 +3613,350 @@ void* fn_0060FD40(void* arg0) {
 }
 } // namespace lift_004BE950
 } // namespace lift_0060FD40
+
+// [0x006083F0] sub_006083F0 (211 bytes)
+namespace lift_006083F0 {
+// @name sub_006083F0
+// @summary Auto-lifted identical-shape clone of 0x00429350 (Map::InsertUnique_00429350).
+namespace lift_00429350 {
+// @name Map::InsertUnique_00429350
+// @class Map
+// @summary Inserts a (string, uint32_t) pair into a sorted unique vector; optionally throws on duplicate.
+
+    void ext_004142E0(void* self, void* a1, void* a2);
+    void* ext_004276B0(void* dst, const void* src);
+    void* ext_00605AC0();
+    bool ext_005CD120(void* self, const void* value);
+    void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+    extern uintptr_t mem_00924FE0;
+    extern uintptr_t mem_00924FF4;
+    extern uint32_t mem_00ACD9DC, mem_00ACD9E0, mem_00ACD9E4, mem_00ACD9E8;
+    extern uint32_t mem_00ACD9EC, mem_00ACD9F0, mem_00ACD9F4, mem_00ACD9F8;
+    extern uint32_t mem_00ACD9FC, mem_00ACDA00, mem_00ACDA04, mem_00ACDA08;
+    extern uint32_t mem_00ACDA0C, mem_00ACDA10, mem_00ACDA14, mem_00ACDA18;
+    extern uint32_t mem_00ACDA1C, mem_00ACDA20, mem_00ACDA24, mem_00ACDA28;
+    extern uint32_t mem_00ACDA2C, mem_00ACDA30, mem_00ACDA34, mem_00ACDA38;
+    extern uint32_t mem_00ACDA3C, mem_00ACDA40, mem_00ACDA44, mem_00ACDA48;
+    extern uint32_t mem_00ACDA4C, mem_00ACDA50, mem_00ACDA54, mem_00ACDA58;
+    extern uint32_t mem_00ACDA5C, mem_00ACDA60, mem_00ACDA64, mem_00ACDA68;
+    extern uint32_t mem_00ACDA6C, mem_00ACDA70, mem_00ACDA74, mem_00ACDA78;
+    extern uint32_t mem_00ACDA7C, mem_00ACDA80, mem_00ACDA84, mem_00ACDA88;
+    extern uint32_t mem_00ACDA8C, mem_00ACDA90, mem_00ACDA94, mem_00ACDA98;
+    extern uint32_t mem_00ACDA9C, mem_00ACDAA0, mem_00ACDAA4, mem_00ACDAA8;
+    extern uint32_t mem_00ACDAAC;
+
+bool fn_006083F0(void* self, const void* key, const uint32_t* value, uint8_t throw_on_dup) {
+    (void)&mem_00ACD9DC; (void)&mem_00ACD9E0; (void)&mem_00ACD9E4; (void)&mem_00ACD9E8;
+    (void)&mem_00ACD9EC; (void)&mem_00ACD9F0; (void)&mem_00ACD9F4; (void)&mem_00ACD9F8;
+    (void)&mem_00ACD9FC; (void)&mem_00ACDA00; (void)&mem_00ACDA04; (void)&mem_00ACDA08;
+    (void)&mem_00ACDA0C; (void)&mem_00ACDA10; (void)&mem_00ACDA14; (void)&mem_00ACDA18;
+    (void)&mem_00ACDA1C; (void)&mem_00ACDA20; (void)&mem_00ACDA24; (void)&mem_00ACDA28;
+    (void)&mem_00ACDA2C; (void)&mem_00ACDA30; (void)&mem_00ACDA34; (void)&mem_00ACDA38;
+    (void)&mem_00ACDA3C; (void)&mem_00ACDA40; (void)&mem_00ACDA44; (void)&mem_00ACDA48;
+    (void)&mem_00ACDA4C; (void)&mem_00ACDA50; (void)&mem_00ACDA54; (void)&mem_00ACDA58;
+    (void)&mem_00ACDA5C; (void)&mem_00ACDA60; (void)&mem_00ACDA64; (void)&mem_00ACDA68;
+    (void)&mem_00ACDA6C; (void)&mem_00ACDA70; (void)&mem_00ACDA74; (void)&mem_00ACDA78;
+    (void)&mem_00ACDA7C; (void)&mem_00ACDA80; (void)&mem_00ACDA84; (void)&mem_00ACDA88;
+    (void)&mem_00ACDA8C; (void)&mem_00ACDA90; (void)&mem_00ACDA94; (void)&mem_00ACDA98;
+    (void)&mem_00ACDA9C; (void)&mem_00ACDAA0; (void)&mem_00ACDAA4; (void)&mem_00ACDAA8;
+    (void)&mem_00ACDAAC;
+
+    struct Entry {
+        uint8_t str[0x1C];
+        uint32_t val;
+    } entry;
+
+    using CopyCtorFn = void(__thiscall*)(void*, const void*);
+    using DtorFn = void(__thiscall*)(void*);
+
+    reinterpret_cast<CopyCtorFn>(mem_00924FE0)(entry.str, key);
+    entry.val = *value;
+
+    bool inserted = ext_005CD120(self, &entry);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(entry.str);
+
+    if (inserted) {
+        return true;
+    }
+
+    if (throw_on_dup != 0) {
+        uint8_t tmp_str[0x1C];
+        uint8_t exc_obj[0x28];
+        void* s1 = ext_004276B0(tmp_str, key);
+        void* s2 = ext_00605AC0();
+        ext_004142E0(exc_obj, s2, s1);
+        ext_006A6DD2(exc_obj, reinterpret_cast<void*>(0x009D1278));
+    }
+
+    return false;
+}
+} // namespace lift_00429350
+} // namespace lift_006083F0
+
+// [0x0060DCC0] sub_0060DCC0 (211 bytes)
+namespace lift_0060DCC0 {
+// @name sub_0060DCC0
+// @summary Auto-lifted identical-shape clone of 0x00429350 (Map::InsertUnique_00429350).
+namespace lift_00429350 {
+// @name Map::InsertUnique_00429350
+// @class Map
+// @summary Inserts a (string, uint32_t) pair into a sorted unique vector; optionally throws on duplicate.
+
+    void ext_004142E0(void* self, void* a1, void* a2);
+    void* ext_004276B0(void* dst, const void* src);
+    void* ext_0060CC60();
+    bool ext_005CD120(void* self, const void* value);
+    void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+    extern uintptr_t mem_00924FE0;
+    extern uintptr_t mem_00924FF4;
+    extern uint32_t mem_00ACD9DC, mem_00ACD9E0, mem_00ACD9E4, mem_00ACD9E8;
+    extern uint32_t mem_00ACD9EC, mem_00ACD9F0, mem_00ACD9F4, mem_00ACD9F8;
+    extern uint32_t mem_00ACD9FC, mem_00ACDA00, mem_00ACDA04, mem_00ACDA08;
+    extern uint32_t mem_00ACDA0C, mem_00ACDA10, mem_00ACDA14, mem_00ACDA18;
+    extern uint32_t mem_00ACDA1C, mem_00ACDA20, mem_00ACDA24, mem_00ACDA28;
+    extern uint32_t mem_00ACDA2C, mem_00ACDA30, mem_00ACDA34, mem_00ACDA38;
+    extern uint32_t mem_00ACDA3C, mem_00ACDA40, mem_00ACDA44, mem_00ACDA48;
+    extern uint32_t mem_00ACDA4C, mem_00ACDA50, mem_00ACDA54, mem_00ACDA58;
+    extern uint32_t mem_00ACDA5C, mem_00ACDA60, mem_00ACDA64, mem_00ACDA68;
+    extern uint32_t mem_00ACDA6C, mem_00ACDA70, mem_00ACDA74, mem_00ACDA78;
+    extern uint32_t mem_00ACDA7C, mem_00ACDA80, mem_00ACDA84, mem_00ACDA88;
+    extern uint32_t mem_00ACDA8C, mem_00ACDA90, mem_00ACDA94, mem_00ACDA98;
+    extern uint32_t mem_00ACDA9C, mem_00ACDAA0, mem_00ACDAA4, mem_00ACDAA8;
+    extern uint32_t mem_00ACDAAC;
+
+bool fn_0060DCC0(void* self, const void* key, const uint32_t* value, uint8_t throw_on_dup) {
+    (void)&mem_00ACD9DC; (void)&mem_00ACD9E0; (void)&mem_00ACD9E4; (void)&mem_00ACD9E8;
+    (void)&mem_00ACD9EC; (void)&mem_00ACD9F0; (void)&mem_00ACD9F4; (void)&mem_00ACD9F8;
+    (void)&mem_00ACD9FC; (void)&mem_00ACDA00; (void)&mem_00ACDA04; (void)&mem_00ACDA08;
+    (void)&mem_00ACDA0C; (void)&mem_00ACDA10; (void)&mem_00ACDA14; (void)&mem_00ACDA18;
+    (void)&mem_00ACDA1C; (void)&mem_00ACDA20; (void)&mem_00ACDA24; (void)&mem_00ACDA28;
+    (void)&mem_00ACDA2C; (void)&mem_00ACDA30; (void)&mem_00ACDA34; (void)&mem_00ACDA38;
+    (void)&mem_00ACDA3C; (void)&mem_00ACDA40; (void)&mem_00ACDA44; (void)&mem_00ACDA48;
+    (void)&mem_00ACDA4C; (void)&mem_00ACDA50; (void)&mem_00ACDA54; (void)&mem_00ACDA58;
+    (void)&mem_00ACDA5C; (void)&mem_00ACDA60; (void)&mem_00ACDA64; (void)&mem_00ACDA68;
+    (void)&mem_00ACDA6C; (void)&mem_00ACDA70; (void)&mem_00ACDA74; (void)&mem_00ACDA78;
+    (void)&mem_00ACDA7C; (void)&mem_00ACDA80; (void)&mem_00ACDA84; (void)&mem_00ACDA88;
+    (void)&mem_00ACDA8C; (void)&mem_00ACDA90; (void)&mem_00ACDA94; (void)&mem_00ACDA98;
+    (void)&mem_00ACDA9C; (void)&mem_00ACDAA0; (void)&mem_00ACDAA4; (void)&mem_00ACDAA8;
+    (void)&mem_00ACDAAC;
+
+    struct Entry {
+        uint8_t str[0x1C];
+        uint32_t val;
+    } entry;
+
+    using CopyCtorFn = void(__thiscall*)(void*, const void*);
+    using DtorFn = void(__thiscall*)(void*);
+
+    reinterpret_cast<CopyCtorFn>(mem_00924FE0)(entry.str, key);
+    entry.val = *value;
+
+    bool inserted = ext_005CD120(self, &entry);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(entry.str);
+
+    if (inserted) {
+        return true;
+    }
+
+    if (throw_on_dup != 0) {
+        uint8_t tmp_str[0x1C];
+        uint8_t exc_obj[0x28];
+        void* s1 = ext_004276B0(tmp_str, key);
+        void* s2 = ext_0060CC60();
+        ext_004142E0(exc_obj, s2, s1);
+        ext_006A6DD2(exc_obj, reinterpret_cast<void*>(0x009D1278));
+    }
+
+    return false;
+}
+} // namespace lift_00429350
+} // namespace lift_0060DCC0
+
+// [0x0060DE00] sub_0060DE00 (246 bytes)
+namespace lift_0060DE00 {
+// @name sub_0060DE00
+// @summary Auto-lifted identical-shape clone of 0x004C98C0 (findAndInvokeFactory_004C98C0).
+namespace lift_004C98C0 {
+// @name findAndInvokeFactory_004C98C0
+// @summary Looks up a factory/creator entry by key in the static registry, invokes it with arg2 if found, or throws/returns nullptr if not found.
+// @field StaticRegistry +0x04 void* lookupTable
+
+
+extern void* ext_0060DDA0(void);
+extern void* __thiscall ext_00505D50(void* self, void* key);
+extern void* ext_0060C130(void* arg);
+extern void ext_0066AC90(void* arg);
+extern void* __thiscall ext_004C6F60(void* self, ...);
+extern void* __thiscall ext_004C7200(void* self, const void* other);
+extern void ext_006A6DD2(void);
+
+extern void* mem_00924FE0;
+
+using FactoryFn = void* (*)(void*);
+using StringCopyCtor = void* (__thiscall*)(void* self, const void* other);
+
+void* fn_0060DE00(void* key, void* arg2, uint8_t throwIfNotFound) {
+    void* registry = ext_0060DDA0();
+    void* entry = ext_00505D50(static_cast<char*>(registry) + 0x04, key);
+    if (entry != nullptr) {
+        FactoryFn fn = *reinterpret_cast<FactoryFn*>(entry);
+        return fn(arg2);
+    }
+
+    if (throwIfNotFound == 0) {
+        return nullptr;
+    }
+
+    uint8_t keyCopy[0x1C]{};
+    reinterpret_cast<StringCopyCtor>(mem_00924FE0)(keyCopy, key);
+
+    uint8_t typeNameBuf[0x1C]{};
+    uint8_t typeArgBuf[0x1C]{};
+    ext_0060C130(typeArgBuf);
+    ext_0066AC90(typeNameBuf);
+
+    uint8_t excTemp[0x60]{};
+    void* excObj = ext_004C6F60(excTemp);
+
+    uint8_t excCopy[0x60]{};
+    ext_004C7200(excCopy, excObj);
+    ext_006A6DD2();
+
+    return nullptr;
+}
+} // namespace lift_004C98C0
+} // namespace lift_0060DE00
+
+// [0x0060FC60] sub_0060FC60 (211 bytes)
+namespace lift_0060FC60 {
+// @name sub_0060FC60
+// @summary Auto-lifted identical-shape clone of 0x00429350 (Map::InsertUnique_00429350).
+namespace lift_00429350 {
+// @name Map::InsertUnique_00429350
+// @class Map
+// @summary Inserts a (string, uint32_t) pair into a sorted unique vector; optionally throws on duplicate.
+
+    void ext_004142E0(void* self, void* a1, void* a2);
+    void* ext_004276B0(void* dst, const void* src);
+    void* ext_0060EB30();
+    bool ext_005CD120(void* self, const void* value);
+    void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+    extern uintptr_t mem_00924FE0;
+    extern uintptr_t mem_00924FF4;
+    extern uint32_t mem_00ACD9DC, mem_00ACD9E0, mem_00ACD9E4, mem_00ACD9E8;
+    extern uint32_t mem_00ACD9EC, mem_00ACD9F0, mem_00ACD9F4, mem_00ACD9F8;
+    extern uint32_t mem_00ACD9FC, mem_00ACDA00, mem_00ACDA04, mem_00ACDA08;
+    extern uint32_t mem_00ACDA0C, mem_00ACDA10, mem_00ACDA14, mem_00ACDA18;
+    extern uint32_t mem_00ACDA1C, mem_00ACDA20, mem_00ACDA24, mem_00ACDA28;
+    extern uint32_t mem_00ACDA2C, mem_00ACDA30, mem_00ACDA34, mem_00ACDA38;
+    extern uint32_t mem_00ACDA3C, mem_00ACDA40, mem_00ACDA44, mem_00ACDA48;
+    extern uint32_t mem_00ACDA4C, mem_00ACDA50, mem_00ACDA54, mem_00ACDA58;
+    extern uint32_t mem_00ACDA5C, mem_00ACDA60, mem_00ACDA64, mem_00ACDA68;
+    extern uint32_t mem_00ACDA6C, mem_00ACDA70, mem_00ACDA74, mem_00ACDA78;
+    extern uint32_t mem_00ACDA7C, mem_00ACDA80, mem_00ACDA84, mem_00ACDA88;
+    extern uint32_t mem_00ACDA8C, mem_00ACDA90, mem_00ACDA94, mem_00ACDA98;
+    extern uint32_t mem_00ACDA9C, mem_00ACDAA0, mem_00ACDAA4, mem_00ACDAA8;
+    extern uint32_t mem_00ACDAAC;
+
+bool fn_0060FC60(void* self, const void* key, const uint32_t* value, uint8_t throw_on_dup) {
+    (void)&mem_00ACD9DC; (void)&mem_00ACD9E0; (void)&mem_00ACD9E4; (void)&mem_00ACD9E8;
+    (void)&mem_00ACD9EC; (void)&mem_00ACD9F0; (void)&mem_00ACD9F4; (void)&mem_00ACD9F8;
+    (void)&mem_00ACD9FC; (void)&mem_00ACDA00; (void)&mem_00ACDA04; (void)&mem_00ACDA08;
+    (void)&mem_00ACDA0C; (void)&mem_00ACDA10; (void)&mem_00ACDA14; (void)&mem_00ACDA18;
+    (void)&mem_00ACDA1C; (void)&mem_00ACDA20; (void)&mem_00ACDA24; (void)&mem_00ACDA28;
+    (void)&mem_00ACDA2C; (void)&mem_00ACDA30; (void)&mem_00ACDA34; (void)&mem_00ACDA38;
+    (void)&mem_00ACDA3C; (void)&mem_00ACDA40; (void)&mem_00ACDA44; (void)&mem_00ACDA48;
+    (void)&mem_00ACDA4C; (void)&mem_00ACDA50; (void)&mem_00ACDA54; (void)&mem_00ACDA58;
+    (void)&mem_00ACDA5C; (void)&mem_00ACDA60; (void)&mem_00ACDA64; (void)&mem_00ACDA68;
+    (void)&mem_00ACDA6C; (void)&mem_00ACDA70; (void)&mem_00ACDA74; (void)&mem_00ACDA78;
+    (void)&mem_00ACDA7C; (void)&mem_00ACDA80; (void)&mem_00ACDA84; (void)&mem_00ACDA88;
+    (void)&mem_00ACDA8C; (void)&mem_00ACDA90; (void)&mem_00ACDA94; (void)&mem_00ACDA98;
+    (void)&mem_00ACDA9C; (void)&mem_00ACDAA0; (void)&mem_00ACDAA4; (void)&mem_00ACDAA8;
+    (void)&mem_00ACDAAC;
+
+    struct Entry {
+        uint8_t str[0x1C];
+        uint32_t val;
+    } entry;
+
+    using CopyCtorFn = void(__thiscall*)(void*, const void*);
+    using DtorFn = void(__thiscall*)(void*);
+
+    reinterpret_cast<CopyCtorFn>(mem_00924FE0)(entry.str, key);
+    entry.val = *value;
+
+    bool inserted = ext_005CD120(self, &entry);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(entry.str);
+
+    if (inserted) {
+        return true;
+    }
+
+    if (throw_on_dup != 0) {
+        uint8_t tmp_str[0x1C];
+        uint8_t exc_obj[0x28];
+        void* s1 = ext_004276B0(tmp_str, key);
+        void* s2 = ext_0060EB30();
+        ext_004142E0(exc_obj, s2, s1);
+        ext_006A6DD2(exc_obj, reinterpret_cast<void*>(0x009D1278));
+    }
+
+    return false;
+}
+} // namespace lift_00429350
+} // namespace lift_0060FC60
+
+// [0x0060FF90] sub_0060FF90 (246 bytes)
+namespace lift_0060FF90 {
+// @name sub_0060FF90
+// @summary Auto-lifted identical-shape clone of 0x004C98C0 (findAndInvokeFactory_004C98C0).
+namespace lift_004C98C0 {
+// @name findAndInvokeFactory_004C98C0
+// @summary Looks up a factory/creator entry by key in the static registry, invokes it with arg2 if found, or throws/returns nullptr if not found.
+// @field StaticRegistry +0x04 void* lookupTable
+
+
+extern void* ext_0060FF30(void);
+extern void* __thiscall ext_00505D50(void* self, void* key);
+extern void* ext_0060E7E0(void* arg);
+extern void ext_0066AC90(void* arg);
+extern void* __thiscall ext_004C6F60(void* self, ...);
+extern void* __thiscall ext_004C7200(void* self, const void* other);
+extern void ext_006A6DD2(void);
+
+extern void* mem_00924FE0;
+
+using FactoryFn = void* (*)(void*);
+using StringCopyCtor = void* (__thiscall*)(void* self, const void* other);
+
+void* fn_0060FF90(void* key, void* arg2, uint8_t throwIfNotFound) {
+    void* registry = ext_0060FF30();
+    void* entry = ext_00505D50(static_cast<char*>(registry) + 0x04, key);
+    if (entry != nullptr) {
+        FactoryFn fn = *reinterpret_cast<FactoryFn*>(entry);
+        return fn(arg2);
+    }
+
+    if (throwIfNotFound == 0) {
+        return nullptr;
+    }
+
+    uint8_t keyCopy[0x1C]{};
+    reinterpret_cast<StringCopyCtor>(mem_00924FE0)(keyCopy, key);
+
+    uint8_t typeNameBuf[0x1C]{};
+    uint8_t typeArgBuf[0x1C]{};
+    ext_0060E7E0(typeArgBuf);
+    ext_0066AC90(typeNameBuf);
+
+    uint8_t excTemp[0x60]{};
+    void* excObj = ext_004C6F60(excTemp);
+
+    uint8_t excCopy[0x60]{};
+    ext_004C7200(excCopy, excObj);
+    ext_006A6DD2();
+
+    return nullptr;
+}
+} // namespace lift_004C98C0
+} // namespace lift_0060FF90

@@ -2421,3 +2421,443 @@ void* __thiscall fn_005A6220(void* self, const void* other) {
     return self;
 }
 } // namespace lift_005A6220
+
+// [0x005A1C90] sub_005A1C90 (254 bytes)
+namespace lift_005A1C90 {
+// @name sub_005A1C90
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00A2E458;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005A1C90(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00A2E458);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A1C90
+
+// [0x005A1D90] sub_005A1D90 (254 bytes)
+namespace lift_005A1D90 {
+// @name sub_005A1D90
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00A2E45C;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005A1D90(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00A2E45C);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A1D90
+
+// [0x005A1E90] sub_005A1E90 (254 bytes)
+namespace lift_005A1E90 {
+// @name sub_005A1E90
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00A2E460;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005A1E90(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00A2E460);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A1E90
+
+// [0x005A2040] sub_005A2040 (254 bytes)
+namespace lift_005A2040 {
+// @name sub_005A2040
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00A2E464;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005A2040(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00A2E464);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A2040
+
+// [0x005A2140] sub_005A2140 (254 bytes)
+namespace lift_005A2140 {
+// @name sub_005A2140
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00A2E468;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005A2140(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00A2E468);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A2140
+
+// [0x005A2340] sub_005A2340 (254 bytes)
+namespace lift_005A2340 {
+// @name sub_005A2340
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00AC74E4;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005A2340(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00AC74E4);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A2340
+
+// [0x005A2440] sub_005A2440 (254 bytes)
+namespace lift_005A2440 {
+// @name sub_005A2440
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00A2E470;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005A2440(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00A2E470);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A2440
+
+// [0x005A2540] sub_005A2540 (254 bytes)
+namespace lift_005A2540 {
+// @name sub_005A2540
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00A9FB00;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005A2540(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00A9FB00);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A2540

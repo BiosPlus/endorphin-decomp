@@ -1,0 +1,13 @@
+{
+  "va": "0x006F73A0",
+  "size": 203,
+  "orig_symbol": "sub_006F73A0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006F73A0",
+  "signature": "extern void* __stdcall fn_006F73A0(void* out_obj)",
+  "summary": "Auto-lifted identical-shape clone of 0x006EA230 (initAndPopulateFromString_006EA230).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:39:48Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x004BED90",
+  "size": 211,
+  "orig_symbol": "sub_004BED90",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004BED90",
+  "class": "Map",
+  "signature": "bool fn_004BED90(void* self, const void* key, const uint32_t* value, uint8_t throw_on_dup)",
+  "summary": "Auto-lifted identical-shape clone of 0x00429350 (Map::InsertUnique_00429350).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:39:48Z"
+}
