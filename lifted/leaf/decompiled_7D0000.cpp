@@ -1296,3 +1296,41 @@ void fn_007DB640(const float* src, const float* m, float* out) {
     out[2] = (m[8] * t0 + m[9] * t1) + m[10] * t2;
 }
 } // namespace lift_007DB640
+
+// [0x007D5DD0]
+namespace lift_007D5DD0 {
+extern uintptr_t mem_0092419C; // KERNEL32!GetExitCodeThread
+extern uintptr_t mem_009241A0; // KERNEL32!TerminateThread
+
+// @name terminateWorkerThreads
+// @summary Terminates active worker threads in the thread pool and resets thread pool state.
+// @field ThreadPool +0x294 int32_t field_0x294
+// @field ThreadPool +0x298 int32_t field_0x298
+// @field ThreadPool +0x29c int32_t threadCount
+// @field ThreadPool +0x2a0 int32_t field_0x2a0
+// @field ThreadPool +0x56c void* threadHandles[]
+void sub_007D5DD0(void* self) {
+    using GetExitCodeThread_t = int32_t(__stdcall*)(void*, uint32_t*);
+    using TerminateThread_t = int32_t(__stdcall*)(void*, uint32_t);
+
+    if (lift_field<int32_t>(self, 0x294) != 0) {
+        int32_t count = lift_field<int32_t>(self, 0x29c);
+        lift_field<int32_t>(self, 0x294) = 0;
+        if (count > 0) {
+            auto getExitCodeThread = reinterpret_cast<GetExitCodeThread_t>(mem_0092419C);
+            auto terminateThread = reinterpret_cast<TerminateThread_t>(mem_009241A0);
+            void** handles = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x56c);
+            for (int32_t i = 0; i < count; ++i) {
+                uint32_t exitCode = 0;
+                int32_t ok = getExitCodeThread(handles[i], &exitCode);
+                terminateThread(handles[i], static_cast<uint32_t>(ok));
+            }
+        }
+    }
+
+    lift_field<int32_t>(self, 0x298) = 0;
+    lift_field<int32_t>(self, 0x2a0) = 0;
+    lift_field<int32_t>(self, 0x294) = 0;
+    lift_field<int32_t>(self, 0x29c) = 1;
+}
+} // namespace lift_007D5DD0
