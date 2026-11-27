@@ -1983,3 +1983,31 @@ void fn_0067F5B0(void) {
 }
 } // namespace lift_0043D2E0
 } // namespace lift_0067F5B0
+
+// [0x00673C90]
+namespace lift_00673C90 {
+// @name copyConstructStringPairAndFields
+// @summary Copy-constructs two std::string members at +0x00 and +0x1C and copies three 32-bit fields at +0x38, +0x3C, and +0x40.
+// @field +0x00 uint8_t[0x1C] field_0x00
+// @field +0x1C uint8_t[0x1C] field_0x1C
+// @field +0x38 uint32_t field_0x38
+// @field +0x3C uint32_t field_0x3C
+// @field +0x40 uint32_t field_0x40
+
+extern uintptr_t mem_00924FE0;
+
+typedef void* (__thiscall* std_string_copy_ctor_t)(void* self, const void* other);
+
+void* __thiscall sub_00673C90(void* self, const void* other) {
+    auto string_copy_ctor = reinterpret_cast<std_string_copy_ctor_t>(mem_00924FE0);
+    string_copy_ctor(self, other);
+    string_copy_ctor(
+        static_cast<uint8_t*>(self) + 0x1C,
+        static_cast<const uint8_t*>(other) + 0x1C
+    );
+    lift_field<uint32_t>(self, 0x38) = lift_field<const uint32_t>(other, 0x38);
+    lift_field<uint32_t>(self, 0x3C) = lift_field<const uint32_t>(other, 0x3C);
+    lift_field<uint32_t>(self, 0x40) = lift_field<const uint32_t>(other, 0x40);
+    return self;
+}
+} // namespace lift_00673C90

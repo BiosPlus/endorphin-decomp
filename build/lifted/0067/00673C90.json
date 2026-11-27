@@ -1,0 +1,13 @@
+{
+  "va": "0x00673C90",
+  "size": 101,
+  "orig_symbol": "sub_00673C90",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "copyConstructStringPairAndFields",
+  "signature": "void* __thiscall sub_00673C90(void* self, const void* other)",
+  "summary": "Copy-constructs two std::string members at +0x00 and +0x1C and copies three 32-bit fields at +0x38, +0x3C, and +0x40.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:06:31Z"
+}
