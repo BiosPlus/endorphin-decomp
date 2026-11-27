@@ -2523,3 +2523,33 @@ void* fn_004622F0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     return self;
 }
 } // namespace lift_004622F0
+
+// [0x00464CC0]
+namespace lift_00464CC0 {
+// @name sub_00464CC0_dtor
+// @summary Destructor: destroys member objects at +0x218, +0x1C4, +0x170, +0x11C, restores vtable mem_0092A23C at +0x114, and calls base destructor.
+// @field unknown +0x114 uint32_t field_0x114
+// @field unknown +0x11C void* field_0x11C
+// @field unknown +0x170 void* field_0x170
+// @field unknown +0x1C4 void* field_0x1C4
+// @field unknown +0x218 void* field_0x218
+
+
+extern uint32_t mem_0092A23C;
+
+extern void __fastcall ext_0040EF90(void* self);
+extern void __fastcall ext_006A5EFC(void* self);
+extern void __fastcall ext_006A5FF2(void* self);
+extern void __fastcall ext_006A624A(void* self);
+
+extern void __fastcall fn_00464CC0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_0040EF90(base + 0x218);
+    ext_006A5EFC(base + 0x1C4);
+    ext_006A5EFC(base + 0x170);
+    ext_006A5EFC(base + 0x11C);
+    lift_field<uint32_t>(self, 0x114) = mem_0092A23C;
+    ext_006A5FF2(base + 0x114);
+    ext_006A624A(self);
+}
+} // namespace lift_00464CC0

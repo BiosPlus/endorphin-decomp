@@ -8195,6 +8195,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00464630 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00464CC0": {
+    "name": "sub_00464CC0_dtor",
+    "signature": "extern \"C\" void __fastcall fn_00464CC0(void* self)",
+    "summary": "Destructor: destroys member objects at +0x218, +0x1C4, +0x170, +0x11C, restores vtable mem_0092A23C at +0x114, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00464DC0": {
     "name": "sub_00464DC0",
     "signature": "extern \"C\" void* __cdecl fn_00464DC0(void)",

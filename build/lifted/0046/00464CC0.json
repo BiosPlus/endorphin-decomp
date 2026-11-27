@@ -1,0 +1,45 @@
+{
+  "va": "0x00464CC0",
+  "size": 149,
+  "orig_symbol": "sub_00464CC0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_00464CC0_dtor",
+  "signature": "extern \"C\" void __fastcall fn_00464CC0(void* self)",
+  "summary": "Destructor: destroys member objects at +0x218, +0x1C4, +0x170, +0x11C, restores vtable mem_0092A23C at +0x114, and calls base destructor.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x114",
+      "type": "uint32_t",
+      "name": "field_0x114"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x11C",
+      "type": "void*",
+      "name": "field_0x11C"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x170",
+      "type": "void*",
+      "name": "field_0x170"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x1C4",
+      "type": "void*",
+      "name": "field_0x1C4"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x218",
+      "type": "void*",
+      "name": "field_0x218"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:08:45Z"
+}
