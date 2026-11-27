@@ -1,0 +1,21 @@
+{
+  "va": "0x007A9920",
+  "size": 48,
+  "orig_symbol": "sub_007A9920",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "SetFlagByteFromGlobal",
+  "signature": "void fn_007A9920(void* self)",
+  "summary": "If arg is non-null, copies global byte mem_00998070 into arg+5; if arg is null, first caches index 2 via ext_007AA510 and only then performs the same copy when mem_00B61219 is nonzero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:13:28Z"
+}

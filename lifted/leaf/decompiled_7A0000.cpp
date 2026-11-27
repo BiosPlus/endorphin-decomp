@@ -1722,3 +1722,26 @@ void fn_007A95C0(void* p) {
     lift_field<uint8_t>(p, 4) = mem_00998070;
 }
 } // namespace lift_007A95C0
+
+// [0x007A9920] sub_007A9920 (48 bytes)
+namespace lift_007A9920 {
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+extern uint8_t mem_00998070;
+extern uint8_t mem_00B61219;
+
+// @name SetFlagByteFromGlobal
+// @summary If arg is non-null, copies global byte mem_00998070 into arg+5; if arg is null, first caches index 2 via ext_007AA510 and only then performs the same copy when mem_00B61219 is nonzero.
+// @field Unknown +0x05 uint8_t field_0x05
+void fn_007A9920(void* self) {
+    if (self == nullptr) {
+        ext_007AA510(2);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+    }
+    // Original asm writes through esi+5 even when esi == 0 on the fall-through path.
+    auto* dst = reinterpret_cast<uint8_t*>(reinterpret_cast<uintptr_t>(self) + 5);
+    *dst = mem_00998070;
+}
+} // namespace lift_007A9920
