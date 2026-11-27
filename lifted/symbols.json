@@ -36209,6 +36209,13 @@
     "summary": "Classifies the argument via 0x005CFD60; if the result is 3, forwards to AnimatableTransform::vfunc_57, otherwise returns a pointer into the 8-byte-stride table at this+0x264 indexed by the result.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005D0760": {
+    "name": "Unknown::conditionalFindAndStore_005D0760",
+    "class": "Unknown",
+    "signature": "void fn_005D0760(void* self, void* str)",
+    "summary": "If the byte at self+0x1f1 is zero, looks up the string argument with findStringInTable and forwards the resulting index to storeArgAfterEnterAndDispatch; otherwise does nothing. Callee cleans the one stack argument.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D07E0": {
     "name": "Unknown::GetRecordByCurrentIndex",
     "class": "Unknown",

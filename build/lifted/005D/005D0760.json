@@ -1,0 +1,22 @@
+{
+  "va": "0x005D0760",
+  "size": 34,
+  "orig_symbol": "sub_005D0760",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "Unknown::conditionalFindAndStore_005D0760",
+  "class": "Unknown",
+  "signature": "void fn_005D0760(void* self, void* str)",
+  "summary": "If the byte at self+0x1f1 is zero, looks up the string argument with findStringInTable and forwards the resulting index to storeArgAfterEnterAndDispatch; otherwise does nothing. Callee cleans the one stack argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1F1",
+      "type": "uint8_t",
+      "name": "flag1f1"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:08:49Z"
+}
