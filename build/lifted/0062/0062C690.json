@@ -1,0 +1,28 @@
+{
+  "va": "0x0062C690",
+  "size": 564,
+  "orig_symbol": "NMData::AxisDefineSensorData::vfunc_21",
+  "src_path": "src/NMData/AxisDefineSensorData.cpp",
+  "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
+  "name": "NMData::AxisDefineSensorData::vfunc_21",
+  "class": "NMData::AxisDefineSensorData",
+  "signature": "static inline void* addr_to_ptr(uint32_t addr)",
+  "summary": "Calls MetaBodySensorData::vfunc_21, looks up a sentinel-normalised helper object, clears the vector at +0x1D8, then rebuilds it with one (string, string) pair per matching entry in the helper's range.",
+  "fields": [
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x1DC",
+      "type": "uint32_t",
+      "name": "field_0x1dc"
+    },
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x1E0",
+      "type": "uint32_t",
+      "name": "field_0x1e0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:59:14Z"
+}
