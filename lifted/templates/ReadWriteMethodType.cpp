@@ -12466,3 +12466,28 @@ void fn_005D2310(void* holder) {
     *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(holder) + 0x04) = 0x00B459C8u;
 }
 } // namespace lift_005D2310
+
+// [0x005D2290] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getStartFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setStartFrame(int)>::vfunc_40 (122 bytes)
+namespace lift_005D2290 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B459C0;   // static accessor object (first DWORD = vtable pointer)
+extern BYTE  mem_00B459C4;   // one-time initialization flag (bit 0)
+
+// @name ReadWriteMethodType<VideoPlaneData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getStartFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setStartFrame(int)>
+// @summary Lazily initializes the static accessor object for VideoPlaneData start-frame access and binds it into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, ...> +0x04 DWORD accessorPtr
+void __stdcall fn_005D2290(void* self) {
+    // One-time init: if the flag is clear, set it, run the accessor-object
+    // constructor (SEH link slot passed as 0; the SEH frame itself is boilerplate
+    // and omitted), then install the vtable pointer.
+    if ((mem_00B459C4 & 1) == 0) {
+        mem_00B459C4 = static_cast<BYTE>(mem_00B459C4 | 1);
+        ext_0067A670(&mem_00B459C0, 0);
+        mem_00B459C0 = 0x00965FCC;
+    }
+    // Bind holder+0x04 to the static accessor object (both paths).
+    *reinterpret_cast<DWORD*>(static_cast<BYTE*>(self) + 0x04) = 0x00B459C0;
+}
+} // namespace lift_005D2290

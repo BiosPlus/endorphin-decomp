@@ -35420,6 +35420,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D2290": {
+    "name": "ReadWriteMethodType\u003cVideoPlaneData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getStartFrame(void) const, int, \u0026public: void __thiscall NMData::VideoPlaneData::setStartFrame(int)\u003e",
+    "signature": "extern \"C\" DWORD mem_00B459C0;   // static accessor object (first DWORD = vtable pointer) extern \"C\" BYTE  mem_00B459C4;   // one-time initialization flag (bit 0) void __stdcall fn_005D2290(void* self)",
+    "summary": "Lazily initializes the static accessor object for VideoPlaneData start-frame access and binds it into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005D2310": {
     "name": "ReadWriteMethodType\u003cVideoPlaneData,int\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, int, \u0026public: void __thiscall NMData::VideoPlaneData::setEndFrame(int)\u003e",
