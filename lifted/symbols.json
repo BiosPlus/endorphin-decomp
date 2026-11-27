@@ -19592,6 +19592,13 @@
     "summary": "If the int32 at this+0x168 is nonzero, call ext_00594000 and pass its result as `self` to ext_00599F10; otherwise return 0.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004BFC00": {
+    "name": "NMData::AnimationEventData::vfunc_12_off_C",
+    "class": "NMData::AnimationEventData",
+    "signature": "uint8_t __thiscall fn_004BFC00(void* self, uint32_t /*arg1*/, void* rangeObj)",
+    "summary": "Removes this AnimationEventData from the given range and notifies the global manager, returning true.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004C0280": {
     "name": "Unknown::copyStringFromDocumentOrThrow",
     "class": "Unknown",
