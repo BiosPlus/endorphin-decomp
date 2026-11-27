@@ -15,6 +15,7 @@ struct MultiTrackView_TriggeredEventView_Fields {
     // +0x64  uint8_t                  field_0x64  (evidence: 0x0043C6D0, 0x0043CAB0)
     // +0x1B4 int32_t*                 field_0x1B4  (evidence: 0x0045F0A0)
     // +0x1B8 int32_t*                 field_0x1B8  (evidence: 0x0045F0A0)
+    // +0x258 void*                    field_0x258  (evidence: 0x0045FB00)
     // +0x2D0 void*                    field_0x2D0  (evidence: 0x0045E470)
     // +0xFFFFFFFC void*                    field_0xFFFFFFFC  (evidence: 0x0045F0A0)
 };

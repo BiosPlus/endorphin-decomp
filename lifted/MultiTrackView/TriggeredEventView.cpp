@@ -34,6 +34,7 @@ void fn_0045D8B0(void* self, void* ret_slot) {
     lift_field<uint32_t>(ret_slot, 0) = 0u;
     lift_field<int32_t>(ret_slot, 4) = value + 9;
 }
+#include <cstdint>
 
 // [0x0045E470] MultiTrackView::TriggeredEventView::vfunc_80 (36 bytes)
 // @name MultiTrackView::TriggeredEventView::ForwardToMemberWithArg
@@ -312,3 +313,126 @@ void fn_0045F0A0(void* self, void* arg) {
     reinterpret_cast<void (*)(void*)>(sub_vtable[1])(sub);
 }
 } // namespace lift_0045F0A0
+
+// [0x0045FB00]
+namespace lift_0045FB00 {
+// @name MultiTrackView::TriggeredEventView::vfunc_86
+// @class MultiTrackView::TriggeredEventView
+// @summary Formats event label strings into a vector and returns the selected field value.
+// @field MultiTrackView::TriggeredEventView +0x258 void* field_0x258
+
+
+void* __cdecl ext_00404F00(void* out_str, int32_t value);
+void __thiscall ext_0043F9E0(void* self, void* value);
+uint32_t __thiscall ext_004407C0(void* self);
+int32_t __thiscall ext_00441020(void* self);
+int32_t __thiscall ext_00441040(void* self);
+void* __thiscall ext_0045E690(void* self, void* key);
+void* __cdecl ext_006A6E9E(void* ptr, int32_t vf_delta, void* src_type, void* dst_type, int32_t is_ref);
+
+extern uint32_t mem_009242F0;
+extern uint32_t mem_009242F4;
+extern uint32_t mem_00924300;
+extern uint32_t mem_00924ED0;
+extern uint32_t mem_00924FD4;
+extern uint32_t mem_00924FD8;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+
+namespace {
+using str_ctor_cstr_t = void* (__thiscall*)(void*, const char*);
+using str_ctor_copy_t = void* (__thiscall*)(void*, const void*);
+using str_cstr_t = const char* (__thiscall*)(const void*);
+using str_assign_cstr_t = void* (__thiscall*)(void*, const char*);
+using str_append_cstr_t = void* (__thiscall*)(void*, const char*);
+using str_append_str_t = void* (__thiscall*)(void*, const void*);
+using str_dtor_t = void (__thiscall*)(void*);
+using cstr_ctor_t = void* (__thiscall*)(void*, const char*);
+using cstr_dtor_t = void (__thiscall*)(void*);
+using cstr_get_t = const char* (__thiscall*)(void*);
+
+inline void push_cstr(void* vec, const void* std_str) {
+    uint8_t cstr[8];
+    const char* s = reinterpret_cast<str_cstr_t>(mem_00924FF0)(std_str);
+    reinterpret_cast<cstr_ctor_t>(mem_009242F0)(cstr, s);
+    ext_0043F9E0(vec, cstr);
+    reinterpret_cast<cstr_dtor_t>(mem_009242F4)(cstr);
+}
+
+inline void append_int(void* std_str, int32_t val) {
+    uint8_t tmp[32];
+    void* p = ext_00404F00(tmp, val);
+    reinterpret_cast<str_append_str_t>(mem_00924FD8)(std_str, p);
+    reinterpret_cast<str_dtor_t>(mem_00924FF4)(tmp);
+}
+} // namespace
+
+uint32_t __thiscall fn_0045FB00(void* self, void* arg1, void* arg2) {
+    void* edi = ext_0045E690(&lift_field<uint8_t>(self, 0x258), arg1);
+    uint8_t str[32];
+
+    if (edi == nullptr) {
+        void* cast_res = ext_006A6E9E(
+            arg1,
+            0,
+            reinterpret_cast<void*>(0x00A2F6F8),
+            reinterpret_cast<void*>(0x00A30548),
+            0
+        );
+        if (cast_res != nullptr) {
+            reinterpret_cast<str_ctor_cstr_t>(mem_00924FE4)(str, reinterpret_cast<const char*>(0x00938018));
+            push_cstr(arg2, str);
+
+            reinterpret_cast<str_assign_cstr_t>(mem_00924FD4)(str, reinterpret_cast<const char*>(0x00938010));
+            append_int(str, ext_00441020(arg1));
+            push_cstr(arg2, str);
+
+            uint32_t res = ext_004407C0(arg1);
+            reinterpret_cast<str_dtor_t>(mem_00924FF4)(str);
+            return res;
+        } else {
+            void* p = lift_field<void*>(arg1, 0x44);
+            const char* s = reinterpret_cast<cstr_get_t>(mem_00924300)(&lift_field<uint8_t>(p, 0x8));
+            reinterpret_cast<str_ctor_cstr_t>(mem_00924FE4)(str, s);
+            push_cstr(arg2, str);
+
+            int32_t v1 = ext_00441020(arg1);
+            int32_t v2 = ext_00441040(arg1);
+            if (v1 != v2) {
+                reinterpret_cast<str_assign_cstr_t>(mem_00924FD4)(str, reinterpret_cast<const char*>(0x00938004));
+                append_int(str, ext_00441020(arg1));
+                reinterpret_cast<str_append_cstr_t>(mem_00924ED0)(str, reinterpret_cast<const char*>(0x0092F150));
+                append_int(str, ext_00441040(arg1));
+                push_cstr(arg2, str);
+            }
+
+            uint32_t res = ext_004407C0(arg1);
+            reinterpret_cast<str_dtor_t>(mem_00924FF4)(str);
+            return res;
+        }
+    } else {
+        reinterpret_cast<str_ctor_copy_t>(mem_00924FE0)(str, &lift_field<uint8_t>(arg1, 0xC));
+        push_cstr(arg2, str);
+
+        using vfn_t = int32_t(__thiscall*)(void*);
+        void** vtable = *reinterpret_cast<void***>(edi);
+        int32_t kind = reinterpret_cast<vfn_t>(vtable[0xF8 / sizeof(void*)])(edi);
+        if (kind == 0 || kind == 3 || kind == 5) {
+            reinterpret_cast<str_assign_cstr_t>(mem_00924FD4)(str, reinterpret_cast<const char*>(0x00938010));
+            append_int(str, lift_field<int32_t>(edi, 0x15C));
+        } else {
+            reinterpret_cast<str_assign_cstr_t>(mem_00924FD4)(str, reinterpret_cast<const char*>(0x00938004));
+            append_int(str, lift_field<int32_t>(edi, 0x15C));
+            reinterpret_cast<str_append_cstr_t>(mem_00924ED0)(str, reinterpret_cast<const char*>(0x0092F150));
+            append_int(str, lift_field<int32_t>(edi, 0x160));
+        }
+
+        push_cstr(arg2, str);
+        uint32_t res = ext_004407C0(arg1);
+        reinterpret_cast<str_dtor_t>(mem_00924FF4)(str);
+        return res;
+    }
+}
+} // namespace lift_0045FB00

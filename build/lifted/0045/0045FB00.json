@@ -1,0 +1,22 @@
+{
+  "va": "0x0045FB00",
+  "size": 1140,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_86",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_86",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "inline void push_cstr(void* vec, const void* std_str)",
+  "summary": "Formats event label strings into a vector and returns the selected field value.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x258",
+      "type": "void*",
+      "name": "field_0x258"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:31:51Z"
+}
