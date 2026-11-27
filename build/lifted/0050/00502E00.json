@@ -1,0 +1,52 @@
+{
+  "va": "0x00502E00",
+  "size": 692,
+  "orig_symbol": "NMData::EvolveEngineData::vfunc_1",
+  "src_path": "src/NMData/EvolveEngineData.cpp",
+  "lifted_path": "lifted/NMData/EvolveEngineData.cpp",
+  "name": "NMData::EvolveEngineData::vfunc_1",
+  "class": "NMData::EvolveEngineData",
+  "signature": "static uint32_t normalize_xml_sentinel(uint32_t val)",
+  "summary": "Loads EvolveEngineData fields and optional script/config data from an XML node.",
+  "fields": [
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0xA8",
+      "type": "void**",
+      "name": "field_0xA8"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0xE0",
+      "type": "void**",
+      "name": "field_0xE0"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x110",
+      "type": "std::string",
+      "name": "field_0x110"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x12C",
+      "type": "void*",
+      "name": "field_0x12C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:52:08Z"
+}

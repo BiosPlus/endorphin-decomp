@@ -14,6 +14,7 @@ void fn_004BED30(void* self) {
     new (self) std::string(mem_00A9EEA0);
 }
 #include <cstdint>
+#include <iostream>
 
 // [0x004FDA70] NMData::EvolveEngineData::vfunc_7 (21 bytes)
 // @name NMData::EvolveEngineData::vfunc_7
@@ -288,3 +289,109 @@ void* __thiscall fn_00500BA0(void* self, void* node) {
     return node;
 }
 } // namespace lift_00500BA0
+
+// [0x00502E00]
+namespace lift_00502E00 {
+// @name NMData::EvolveEngineData::vfunc_1
+// @class NMData::EvolveEngineData
+// @summary Loads EvolveEngineData fields and optional script/config data from an XML node.
+// @field NMData::EvolveEngineData +0x0C void* field_0x0C
+// @field NMData::EvolveEngineData +0x2C void* field_0x2C
+// @field NMData::EvolveEngineData +0xA8 void** field_0xA8
+// @field NMData::EvolveEngineData +0xE0 void** field_0xE0
+// @field NMData::EvolveEngineData +0x110 std::string field_0x110
+// @field NMData::EvolveEngineData +0x12C void* field_0x12C
+
+
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern std::ostream& __cdecl ext_00435D00(std::ostream& os, const char* str);
+extern void __thiscall ext_004FD8A0(void* self, uint32_t node);
+extern void __cdecl ext_00501F20(uint32_t node, void* dst, uint32_t arg2, uint32_t arg3);
+extern void __thiscall ext_00502D60(void* self);
+extern void __thiscall ext_0050E550(void* self, uint32_t node);
+extern void* __thiscall ext_0063EFE0(void* self, const char* name);
+extern uint32_t __thiscall ext_0063F530(void* self, uint32_t name, uint32_t a2, uint32_t a3);
+extern uint8_t __cdecl ext_006629B0(void* str);
+extern void __cdecl ext_00662D00(std::string* out, void* base, void* rel);
+extern void* __thiscall ext_00668150(void* self, int32_t index, const void* key);
+extern void* __cdecl ext_006690D0();
+extern void __thiscall ext_00669470(void* self, void* dst);
+
+extern uint32_t mem_00A9EEA4;
+extern uint32_t mem_00A9F1A0;
+extern uint32_t mem_00A9F304;
+extern const char* mem_00A9EFC0;
+extern uint32_t mem_00A9F3B4;
+extern uint32_t mem_00A9F3B0;
+extern uint32_t mem_00924E90;
+extern uint32_t mem_00924E94;
+extern uint32_t mem_00924E98;
+extern uint32_t mem_00924FA0;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FEC;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00925134;
+extern const char mem_0094EE4C[];
+extern const char mem_0094EEDC[];
+
+static uint32_t normalize_xml_sentinel(uint32_t val) {
+    if (val == 0x00B53A34u || val == 0x00B53B30u || val == 0x00B53AB0u ||
+        val == 0x00B53A70u || val == 0x00B53AF0u) {
+        return 0x00B53B30u;
+    }
+    return val;
+}
+
+void __thiscall fn_00502E00(uint8_t* self, void* xmlNode) {
+    uint32_t n0 = normalize_xml_sentinel(ext_0063F530(xmlNode, mem_00A9EEA4, 0, 1));
+    ext_004FD8A0(self + 0x0C, n0);
+
+    uint32_t n1 = normalize_xml_sentinel(ext_0063F530(xmlNode, mem_00A9F1A0, 0, 1));
+    ext_0050E550(self + 0x2C, n1);
+
+    uint32_t n2 = normalize_xml_sentinel(ext_0063F530(xmlNode, mem_00A9F304, 0, 1));
+    void** vtblA8 = *reinterpret_cast<void***>(self + 0xA8);
+    reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtblA8[1])(self + 0xA8, n2);
+
+    void* field110 = self + 0x110;
+    ext_004275E0(field110, ext_0063EFE0(xmlNode, mem_0094EE4C));
+
+    {
+        std::string key(mem_00A9EFC0);
+        void* mgr = ext_006690D0();
+        uint8_t* entry = static_cast<uint8_t*>(ext_00668150(mgr, 0, &key));
+        if (*reinterpret_cast<uint32_t*>(entry + 0x0C) != 0) {
+            uint32_t* head = *reinterpret_cast<uint32_t**>(entry + 0x08);
+            uint8_t* node = reinterpret_cast<uint8_t*>(*head);
+            ext_00669470(node + 0x28, self + 0xE0);
+        }
+    }
+
+    std::string path;
+    uint8_t* mgr = static_cast<uint8_t*>(ext_006690D0());
+    ext_00662D00(&path, mgr + 0x48, field110);
+
+    if (!path.empty() && ext_006629B0(&path)) {
+        try {
+            void** vtblE0 = *reinterpret_cast<void***>(self + 0xE0);
+            reinterpret_cast<void(__thiscall*)(void*, std::string*)>(vtblE0[8])(self + 0xE0, &path);
+            ext_00435D00(std::cout, mem_0094EEDC) << path << std::endl;
+        } catch (const std::exception& e) {
+            std::cout << e.what() << std::endl;
+        }
+    }
+
+    uint32_t n3 = normalize_xml_sentinel(ext_0063F530(xmlNode, mem_00A9F3B4, 0, 1));
+    ext_00501F20(n3, self + 0x12C, mem_00A9F3B0, 1);
+    ext_00502D60(self);
+
+    (void)mem_00924E90;
+    (void)mem_00924E94;
+    (void)mem_00924E98;
+    (void)mem_00924FA0;
+    (void)mem_00924FE4;
+    (void)mem_00924FEC;
+    (void)mem_00924FF4;
+    (void)mem_00925134;
+}
+} // namespace lift_00502E00
