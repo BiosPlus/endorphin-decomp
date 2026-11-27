@@ -1195,3 +1195,33 @@ void fn_008522E0(uint8_t b19, uint8_t b1a, uint8_t b1b, uint8_t b1c) {
     ext_00852345(packed);
 }
 } // namespace lift_008522E0
+
+// [0x00852AD0]
+namespace lift_00852AD0 {
+// @name init_tagged_vec4
+// @summary Validates a 1..3 tag byte, writes it to dst[0], and copies or zeroes 16 bytes at dst+1.
+int32_t sub_00852AD0(void* dst, uint8_t tag, const void* src) {
+    if (tag != 1 && tag != 2 && tag != 3) {
+        return -4;
+    }
+
+    auto* out = static_cast<uint8_t*>(dst);
+    out[0] = tag;
+
+    auto* out_words = reinterpret_cast<uint32_t*>(out + 1);
+    if (src != nullptr) {
+        const auto* in_words = static_cast<const uint32_t*>(src);
+        out_words[0] = in_words[0];
+        out_words[1] = in_words[1];
+        out_words[2] = in_words[2];
+        out_words[3] = in_words[3];
+    } else {
+        out_words[0] = 0;
+        out_words[1] = 0;
+        out_words[2] = 0;
+        out_words[3] = 0;
+    }
+
+    return 1;
+}
+} // namespace lift_00852AD0
