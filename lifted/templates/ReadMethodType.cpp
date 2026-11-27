@@ -83258,3 +83258,58 @@ void* fn_004C0B40(void* node, void* out) {
     return reinterpret_cast<void* (*)(void*, void*, void*)>(vfunc46)(obj, node, out);
 }
 } // namespace lift_004C0B40
+
+// [0x004B1C00]
+namespace lift_004B1C00 {
+// Known callee 0x006720C0: thiscall constructor of a temporary 8-byte value holder, built from one dword.
+extern void ext_006720C0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException(obj, throwInfo)).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null source (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// Signature of a virtual slot 0xB0 on the child object: int (thiscall)(this, self, out).
+using VFnChild = int (*)(void* thisp, void* self, void* out);
+
+// @name ExprParser::ReadMethodType<GraphEntryData,int,getColor>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the source's dword at +0x20 into a temporary value, assigns it to self, releases the temporary, then forwards to child->vfunc_44(self, out) and returns its result; throws if self->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+int fn_004B1C00(void* self, void* out) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // Temporary value holder built from the source's dword at +0x20.
+    uint32_t value = lift_field<uint32_t>(src, 0x20);
+    alignas(8) uint8_t tmp[8];
+    ext_006720C0(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Destroy temporary: release tmp.field_0x04 via its vtable slot 0x78, passing &tmp.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0x00);
+        void* releaseFn = lift_field<void*>(heldVt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(releaseFn)(held, tmp);
+    }
+
+    // Forward to child (self->field_0x04) virtual slot 0xB0 and return its result.
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVt = lift_field<void*>(child, 0x00);
+    void* vfn = lift_field<void*>(childVt, 0xB0);
+    return reinterpret_cast<VFnChild>(vfn)(child, self, out);
+}
+} // namespace lift_004B1C00
