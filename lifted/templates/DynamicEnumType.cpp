@@ -2622,3 +2622,58 @@ bool fn_004D4AD0(void* arg1) {
     return ok;
 }
 } // namespace lift_004D4AD0
+
+// [0x004D4870] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_42 (156 bytes)
+namespace lift_004D4870 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x004D3CE0: sub_004D3CE0 (thiscall on held object, returns int key)
+extern void ext_004D3CE0();
+// Known callee 0x006720C0: sub_006720C0 (thiscall ctor of temp holder from int key)
+extern void ext_006720C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// Metadata: _ThrowInfo for DerivedException, passed to CxxThrowException.
+extern char mem_009DEC1C[];
+
+// @name ExprParser::DynamicEnumType::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Throws DerivedException if the held object pointer is null; otherwise derives an int key from it, builds a temp holder, invokes virtual slot 42 on the temp's held object, releases that object via slot 30, and returns slot 42's result.
+// @field ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}> +0x00 void* field_0x00
+
+using ThisIntFn     = int32_t (__thiscall*)(void* self);
+using ThisCtorIntFn = void (__thiscall*)(void* self, int32_t key);
+using ThisSlot42Fn  = uint8_t (__thiscall*)(void* self, void* out, int32_t arg);
+using ThisSlot30Fn  = void (__thiscall*)(void* self, void* out);
+using ThisCtorFn    = void* (__thiscall*)(void* self);
+using CxxThrowFn    = void (__cdecl*)(void* exc, const void* throwInfo);
+
+static inline void* vslot(void* obj, size_t index) {
+    return (*reinterpret_cast<void***>(obj))[index];
+}
+
+bool fn_004D4870(void* self, int32_t arg) {
+    void* held = lift_field<void*>(self, 0);
+    if (held == nullptr) {
+        alignas(8) unsigned char exc[0x20] = {};
+        reinterpret_cast<ThisCtorFn>(&ext_0046C3C0)(exc);
+        reinterpret_cast<CxxThrowFn>(&ext_006A6DD2)(exc, mem_009DEC1C);
+        return false;
+    }
+
+    const int32_t key = reinterpret_cast<ThisIntFn>(&ext_004D3CE0)(held);
+
+    alignas(8) unsigned char tmp[0x30] = {};
+    reinterpret_cast<ThisCtorIntFn>(&ext_006720C0)(tmp, key);
+
+    void* inner = lift_field<void*>(tmp, 4);
+    const uint8_t result = reinterpret_cast<ThisSlot42Fn>(vslot(inner, 42))(inner, tmp, arg);
+
+    void* released = lift_field<void*>(tmp, 4);
+    if (released != nullptr) {
+        reinterpret_cast<ThisSlot30Fn>(vslot(released, 30))(released, tmp);
+    }
+
+    return result != 0;
+}
+} // namespace lift_004D4870
