@@ -1815,3 +1815,45 @@ bool __thiscall sub_0042ECC0(void* self, uint32_t value) {
     return it != cur_end;
 }
 } // namespace lift_0042ECC0
+
+// [0x0042EE90]
+namespace lift_0042EE90 {
+// @name sub_0042EE90
+// @summary Constructor: initializes MFC base, sets vtable, zeroes vector at +0x54 and calls eraseInt32Range.
+// @field sub_0042EE90 +0x00 uint32_t vftable
+// @field sub_0042EE90 +0x54 void* field_0x54
+// @field sub_0042EE90 +0x58 int32_t* field_0x58
+// @field sub_0042EE90 +0x5C int32_t* field_0x5C
+// @field sub_0042EE90 +0x60 int32_t* field_0x60
+
+
+extern void ext_006A5C6E(void);
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+extern void (*mem_00925134)(void);
+
+void* fn_0042EE90(void* self) {
+    ext_006A5C6E();
+
+    lift_field<uint32_t>(self, 0x00) = 0x0092F51C;
+
+    uint8_t* vec = static_cast<uint8_t*>(self) + 0x54;
+    int32_t* zero = nullptr;
+    lift_field<int32_t*>(vec, 0x04) = zero;
+    lift_field<int32_t*>(vec, 0x08) = zero;
+    lift_field<int32_t*>(vec, 0x0C) = zero;
+
+    if (zero > zero) {
+        mem_00925134();
+    }
+
+    int32_t* first = lift_field<int32_t*>(vec, 0x04);
+    if (first > lift_field<int32_t*>(vec, 0x08)) {
+        mem_00925134();
+    }
+
+    void* out[2] = {};
+    ext_00596660(vec, out, vec, first, vec, zero);
+
+    return self;
+}
+} // namespace lift_0042EE90
