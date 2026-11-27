@@ -78780,6 +78780,13 @@
     "summary": "Takes the last entry of the input vector (8-byte elements), evaluates it via this-\u003evtable[3], then pops the last 4-byte entry off the output vector.",
     "lifted_path": "lifted/ExprParser/Operators/Abs.cpp"
   },
+  "0x006A1EA0": {
+    "name": "ExprParser::Operators::RightParenthesis::vfunc_2",
+    "class": "ExprParser::Operators::RightParenthesis",
+    "signature": "void __stdcall fn_006A1EA0(void* range, void* arg)",
+    "summary": "Walks the element range from its last entry: probes the last element via vfunc_0 (stops on 0xC), calls its vfunc_2, and repeats until the range is empty; then drops the last entry. Throws int 3 on an invalid range.",
+    "lifted_path": "lifted/ExprParser/Operators/RightParenthesis.cpp"
+  },
   "0x006A2250": {
     "name": "ExprParser::Operators::Add::vfunc_2",
     "class": "ExprParser::Operators::Add",

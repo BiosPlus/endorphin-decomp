@@ -1,0 +1,28 @@
+{
+  "va": "0x006A1EA0",
+  "size": 271,
+  "orig_symbol": "ExprParser::Operators::RightParenthesis::vfunc_2",
+  "src_path": "src/ExprParser/Operators/RightParenthesis.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/RightParenthesis.cpp",
+  "name": "ExprParser::Operators::RightParenthesis::vfunc_2",
+  "class": "ExprParser::Operators::RightParenthesis",
+  "signature": "void __stdcall fn_006A1EA0(void* range, void* arg)",
+  "summary": "Walks the element range from its last entry: probes the last element via vfunc_0 (stops on 0xC), calls its vfunc_2, and repeats until the range is empty; then drops the last entry. Throws int 3 on an invalid range.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::RightParenthesis",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::Operators::RightParenthesis",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:01:39Z"
+}
