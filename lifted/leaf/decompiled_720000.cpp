@@ -819,3 +819,22 @@ double fn_007226A0(double a, double b, double c) {
     return q + r;
 }
 } // namespace lift_007226A0
+
+// [0x00722730] sub_00722730 (128 bytes)
+namespace lift_00722730 {
+// Known callee 0x00722660: BlendTwoValuesOverRange100 (Returns 0.5 * ((100 - a) * 0.01 * c + (100 + a) * 0.01 * b), a weighted blend of b and c with a in [-100, 100] (double return in ST0).)
+extern double ext_00722660(double a, double b, double c);
+// Known callee 0x00722720: mulSquareDouble (Computes (a * a) * b for two double-precision arguments.)
+extern double ext_00722720(double a, double b);
+extern double mem_009967F0;
+extern double mem_00996800;
+
+// @name ComputeBlendPlusSquaredOffset
+// @summary Returns BlendTwoValuesOverRange100(a, b, c) plus mulSquareDouble of an offset of a scaled by -0.002, signed by whether b > c (+/-1000).
+double fn_00722730(double a, double b, double c) {
+    const double sign = (b > c) ? -1000.0 : 1000.0;
+    const double x = (a + mem_009967F0) * mem_00996800;
+    const double squared = ext_00722720(x, sign);
+    return ext_00722660(a, b, c) + squared;
+}
+} // namespace lift_00722730
