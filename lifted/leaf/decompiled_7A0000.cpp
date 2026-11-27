@@ -1394,3 +1394,27 @@ int32_t fn_007AF660(void* obj, uint32_t arg2) {
     return -1;
 }
 } // namespace lift_007AF660
+
+// [0x007AA990] sub_007AA990 (112 bytes)
+namespace lift_007AA990 {
+// Known callee 0x006B9E60: Unknown::conditionalAllocAndCopy_006B9E60 (If the argument's type tag check passes, copies its getter values into this object's allocator; otherwise calls sub_006B9920 on this. Returns this.)
+extern void* ext_006B9E60(void* self, void* arg);
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void ext_006B9D70(void* self);
+
+// @name Unknown::copyArgToIndexedSlot_007AA990
+// @class Unknown
+// @summary For 0 < idx < 18, hands the by-value 76-byte argument to the slot at this+0x1dc+76*idx via ext_006B9E60; then runs ext_006B9D70 on the argument (cleanup). Void; takes 80 bytes of stack args (idx + 76-byte struct).
+// @field Unknown +0x1dc uint8_t field_0x1dc
+struct Arg76 {
+    uint8_t bytes[76];
+};
+
+void fn_007AA990(void* self, int32_t idx, Arg76 arg) {
+    if (idx > 0 && idx < 18) {
+        uint8_t* slot = static_cast<uint8_t*>(self) + 0x1dc + 76 * static_cast<ptrdiff_t>(idx);
+        ext_006B9E60(slot, &arg);
+    }
+    ext_006B9D70(&arg);
+}
+} // namespace lift_007AA990

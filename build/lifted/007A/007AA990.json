@@ -1,0 +1,22 @@
+{
+  "va": "0x007AA990",
+  "size": 112,
+  "orig_symbol": "sub_007AA990",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Unknown::copyArgToIndexedSlot_007AA990",
+  "class": "Unknown",
+  "signature": "void fn_007AA990(void* self, int32_t idx, Arg76 arg)",
+  "summary": "For 0 \u003c idx \u003c 18, hands the by-value 76-byte argument to the slot at this+0x1dc+76*idx via ext_006B9E60; then runs ext_006B9D70 on the argument (cleanup). Void; takes 80 bytes of stack args (idx + 76-byte struct).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1DC",
+      "type": "uint8_t",
+      "name": "field_0x1dc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:57:03Z"
+}
