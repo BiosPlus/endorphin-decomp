@@ -4934,6 +4934,13 @@
     "summary": "Returns the address of the std::string at +0x28 when it is non-empty; otherwise returns the address of the subobject at +0x0c.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x004407A0": {
+    "name": "sub_004407A0",
+    "class": "Unknown",
+    "signature": "extern int32_t __fastcall fn_004407A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007266A0 (Unknown::ForwardSubObject0x250Value).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x004407B0": {
     "name": "GetPointerChainDword10",
     "class": "\u003cClassName\u003e (unknown; receiver type not yet identified)",
@@ -47475,6 +47482,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
     "lifted_path": "lifted/NMData/EffectorData.cpp"
   },
+  "0x0060BC20": {
+    "name": "NMData::EffectorBaseData::vfunc_20",
+    "class": "NMData::EffectorBaseData",
+    "signature": "std::string fn_0060BC20(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0060C2C0 (NMData::EffectorWithMemoryData::vfunc_20).",
+    "lifted_path": "lifted/NMData/EffectorBaseData.cpp"
+  },
   "0x0060BCC0": {
     "name": "sub_0060BCC0",
     "signature": "extern \"C\" void __fastcall fn_0060BCC0(void* self)",
@@ -70915,6 +70929,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0079DB50 (ThunkCallVirtualSlot4OverArray).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C1B10": {
+    "name": "sub_006C1B10",
+    "class": "Unknown",
+    "signature": "int32_t fn_006C1B10(void* self, int32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x00704B00 (sub_00704B00).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C1B40": {
     "name": "LookupStringPtrByIndex",
     "signature": "extern \"C\" uint32_t __stdcall fn_006C1B40(uint32_t index)",
@@ -72100,6 +72121,12 @@
     "signature": "extern \"C\" void* __cdecl fn_006CA0C0(int32_t n)",
     "summary": "Adds n to the global running total at mem_00B5D768, then returns calloc(n, 1).",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
+  "0x006CA0E0": {
+    "name": "sub_006CA0E0",
+    "signature": "void* fn_006CA0E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x007721F0 (sub_007721F0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006CA230": {
     "name": "sub_006CA230",
@@ -74261,6 +74288,13 @@
     "class": "Unknown",
     "signature": "bool Unknown_acquireOrInsertValue_006E97C0(void* self, uint32_t value)",
     "summary": "Searches the pointer array at +0x8C (count at +0x7C) for an object whose first dword equals value; if found, bumps its refcount at +0x04 and returns true. Otherwise allocates and initializes a new object via SetValueAndFlag, appends its pointer to the array, and returns true (the pointer is null if allocation failed).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E9840": {
+    "name": "sub_006E9840",
+    "class": "Unknown",
+    "signature": "uint8_t __fastcall fn_006E9840(void* self, void* /*edx*/, uint32_t key)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E9150 (Unknown::releaseItemByKey_006E9150).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E99C0": {
@@ -82606,6 +82640,13 @@
     "summary": "Returns address of global mem_00B600A8.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B7F0": {
+    "name": "sub_0072B7F0",
+    "class": "Unknown",
+    "signature": "int32_t fn_0072B7F0(void* self, int32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x00704B00 (sub_00704B00).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B810": {
     "name": "sub_0072B810",
     "signature": "void fn_0072B810(void)",
@@ -82721,6 +82762,12 @@
     "class": "Unknown",
     "signature": "void* fn_0072CB00(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00702F60 (sub_00702F60).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
+  "0x0072CB90": {
+    "name": "sub_0072CB90",
+    "signature": "void* fn_0072CB90()",
+    "summary": "Auto-lifted identical-shape clone of 0x007721F0 (sub_007721F0).",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x0072CC90": {
@@ -84243,6 +84290,13 @@
     "summary": "Setter storing int32_t argument into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00789C40": {
+    "name": "sub_00789C40",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00789C40(void* self, uint32_t key)",
+    "summary": "Auto-lifted identical-shape clone of 0x00736C90 (Unknown::FindInEmbeddedSortedArray).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00789C80": {
     "name": "ForwardSortedArrayFindValue",
     "signature": "uint32_t __thiscall fn_00789C80(void* self, uint32_t key, int32_t* outIndex)",
@@ -85318,6 +85372,18 @@
     "name": "freeStructWithBuffers",
     "signature": "void sub_007A1940(uint32_t* pPtr)",
     "summary": "Frees four optional buffer fields (+0x30, +0x34, +0x40, +0x44) and the struct itself, then nulls the pointer.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
+  "0x007A19A0": {
+    "name": "sub_007A19A0",
+    "signature": "int32_t fn_007A19A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AF640 (sub_007AF640).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
+  "0x007A2560": {
+    "name": "sub_007A2560",
+    "signature": "int32_t fn_007A2560(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AF640 (sub_007AF640).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007A5EF0": {
@@ -87542,6 +87608,12 @@
     "signature": "void setWordField24(uint8_t* self, uint16_t value)",
     "summary": "Stores a 16-bit value into the object at offset +0x24.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C71C0": {
+    "name": "sub_007C71C0",
+    "signature": "void* fn_007C71C0(void* hMem)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080CA10 (GlobalFreeForwarder).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C7690": {
     "name": "getField_0x214",

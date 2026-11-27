@@ -1917,3 +1917,45 @@ uint32_t sub_007A5F20(uint32_t self)
     return count;
 }
 } // namespace lift_007A5F20
+
+// [0x007A19A0] sub_007A19A0 (32 bytes)
+namespace lift_007A19A0 {
+// @name sub_007A19A0
+// @summary Auto-lifted identical-shape clone of 0x007AF640 (sub_007AF640).
+namespace lift_007AF640 {
+// @name sub_007AF640
+// @summary Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).
+namespace lift_007AF730 {
+// Known callee 0x007AF750: Unknown::DispatchRecordByKey16 (Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.)
+// The call site pushes only two arguments (self, key constant); the third is not set here.
+extern int32_t ext_007B2A10(void* self, uint32_t key);
+
+// @name ForwardDispatchRecordByKey16Const
+// @summary Forwards its first argument and the constant key 0x00AB10C4 to DispatchRecordByKey16 and returns that result.
+int32_t fn_007A19A0(void* self) {
+    return ext_007B2A10(self, 0xB005u);
+}
+} // namespace lift_007AF730
+} // namespace lift_007AF640
+} // namespace lift_007A19A0
+
+// [0x007A2560] sub_007A2560 (32 bytes)
+namespace lift_007A2560 {
+// @name sub_007A2560
+// @summary Auto-lifted identical-shape clone of 0x007AF640 (sub_007AF640).
+namespace lift_007AF640 {
+// @name sub_007AF640
+// @summary Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).
+namespace lift_007AF730 {
+// Known callee 0x007AF750: Unknown::DispatchRecordByKey16 (Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.)
+// The call site pushes only two arguments (self, key constant); the third is not set here.
+extern int32_t ext_007B2A10(void* self, uint32_t key);
+
+// @name ForwardDispatchRecordByKey16Const
+// @summary Forwards its first argument and the constant key 0x00AB10C4 to DispatchRecordByKey16 and returns that result.
+int32_t fn_007A2560(void* self) {
+    return ext_007B2A10(self, 0xB002u);
+}
+} // namespace lift_007AF730
+} // namespace lift_007AF640
+} // namespace lift_007A2560

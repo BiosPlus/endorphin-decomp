@@ -1,0 +1,22 @@
+{
+  "va": "0x00789C40",
+  "size": 32,
+  "orig_symbol": "sub_00789C40",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_00789C40",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00789C40(void* self, uint32_t key)",
+  "summary": "Auto-lifted identical-shape clone of 0x00736C90 (Unknown::FindInEmbeddedSortedArray).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "SortedArray",
+      "name": "field_0xB8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:45:44Z"
+}

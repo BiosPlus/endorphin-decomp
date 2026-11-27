@@ -1,0 +1,13 @@
+{
+  "va": "0x007A2560",
+  "size": 32,
+  "orig_symbol": "sub_007A2560",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "sub_007A2560",
+  "signature": "int32_t fn_007A2560(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007AF640 (sub_007AF640).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:45:44Z"
+}

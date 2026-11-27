@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::EffectorWithMemoryData:
 namespace lifted_layout {
 struct NMData_EffectorWithMemoryData_Fields {
-    // +0x4   std::string              field_0x04  (evidence: 0x0060C2C0)
+    // +0x4   std::string              field_0x04  (evidence: 0x0060BC20, 0x0060C2C0)
 };
 } // namespace lifted_layout

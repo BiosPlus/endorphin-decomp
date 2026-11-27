@@ -22,8 +22,10 @@ bool fn_006CA060(void* self) {
 #include <cstdlib>
 #include <cstdio>
 #include <cstddef>
+#include <new>
+#include <string>
 
-// [0x006C3450] sub_006C3450 (32 bytes)
+#include <string>
 namespace lift_006C3450 {
 // @name Unknown::GetEntryAddress
 // @class Unknown
@@ -2455,3 +2457,55 @@ void fn_006C5940(void* self, const char* s) {
     ext_006D2170(dynArray, index, &obj);
 }
 } // namespace lift_006C5940
+
+// [0x006C1B10] sub_006C1B10 (19 bytes)
+namespace lift_006C1B10 {
+// @name sub_006C1B10
+// @summary Auto-lifted identical-shape clone of 0x00704B00 (sub_00704B00).
+namespace lift_00704B00 {
+// @name sub_00704B00
+// @summary Auto-lifted identical-shape clone of 0x00704D60 (Unknown::forwardArgToMember_00704D60).
+namespace lift_00704D60 {
+// Known callee 0x006D3B50: Unknown::insertVirtualResultIntoArray_006D3B50 (Calls virtual slot 0x48 on self with arg1; if it returns non-zero, appends that result to the DynamicArray at +0xdc. Returns the virtual call's result.)
+extern int32_t ext_006DC8E0(void* self, int32_t arg1);
+
+// @name Unknown::forwardArgToMember_00704D60
+// @class Unknown
+// @summary Forwards arg1 to fn_006D3B50 using the object pointer stored at this+0xb4 as its receiver; returns that call's result.
+// @field Unknown +0xb4 void* member
+int32_t fn_006C1B10(void* self, int32_t arg1) {
+    // mov ecx, [ecx+0xb4]; push arg1; call fn_006D3B50; ret 4 (callee result left in eax)
+    void* inner = lift_field<void*>(self, 0x20F8);
+    return ext_006DC8E0(inner, arg1);
+}
+} // namespace lift_00704D60
+} // namespace lift_00704B00
+} // namespace lift_006C1B10
+
+// [0x006CA0E0] sub_006CA0E0 (96 bytes)
+namespace lift_006CA0E0 {
+// @name sub_006CA0E0
+// @summary Auto-lifted identical-shape clone of 0x007721F0 (sub_007721F0).
+namespace lift_007721F0 {
+// @name sub_007721F0
+// @summary Auto-lifted identical-shape clone of 0x00771F60 (allocAndConstructObject).
+namespace lift_00771F60 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Cdecl, one argument (0x34 pushed by caller), returns an allocated block or NULL.
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x00771B90: sub_00771B90 (Constructor that initializes base via sub_007ABC20, initializes a 20-byte member at +0x1C, sets inline pointer at +0x30, and sets vtable mem_00996C88.)
+// __thiscall: object pointer in ecx, returns the object pointer.
+extern void* ext_006CA140(void* self);
+
+// @name allocAndConstructObject
+// @summary Allocates a 0x34-byte object; if allocation succeeds, runs its constructor and returns it, otherwise returns NULL.
+void* fn_006CA0E0() {
+    void* obj = ext_006A5C62(0x98);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_006CA140(obj);
+}
+} // namespace lift_00771F60
+} // namespace lift_007721F0
+} // namespace lift_006CA0E0

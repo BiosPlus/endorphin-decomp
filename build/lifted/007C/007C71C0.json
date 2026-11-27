@@ -1,0 +1,13 @@
+{
+  "va": "0x007C71C0",
+  "size": 12,
+  "orig_symbol": "sub_007C71C0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "sub_007C71C0",
+  "signature": "void* fn_007C71C0(void* hMem)",
+  "summary": "Auto-lifted identical-shape clone of 0x0080CA10 (GlobalFreeForwarder).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:45:44Z"
+}

@@ -131,3 +131,39 @@ void __thiscall fn_0060C530(void* this_ptr, void* arg1, uint32_t arg2, uint32_t 
     ext_00486CB0(&arg2, self + 0x20, other + 0x20, mem_009722A8);
 }
 } // namespace lift_0060C530
+
+// [0x0060BC20] NMData::EffectorBaseData::vfunc_20 (157 bytes)
+namespace lift_0060BC20 {
+extern const char mem_0097214C[];
+extern const char mem_0093BF0C[];
+
+// @name NMData::EffectorBaseData::vfunc_20
+// @class NMData::EffectorBaseData
+// @summary Auto-lifted identical-shape clone of 0x0060C2C0 (NMData::EffectorWithMemoryData::vfunc_20).
+// @field NMData::EffectorBaseData +0x4 std::string field_0x04
+namespace lift_0060C2C0 {
+// .rdata string literals (0x00972218 prefix, 0x0093BF0C suffix).
+extern const char mem_0097214C[];
+extern const char mem_0093BF0C[];
+// MSVCP80 IAT slots (std::string ctor / concat / dtor). Replaced by portable std::string ops below.
+extern void* mem_00924ECC;
+extern void* mem_00924FD0;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+// @name NMData::EffectorWithMemoryData::vfunc_20
+// @class NMData::EffectorWithMemoryData
+// @summary Builds a descriptive std::string: literal prefix + this member string at +0x04 + literal suffix, returned by value.
+// @field NMData::EffectorWithMemoryData +0x04 std::string field_0x04
+std::string fn_0060BC20(void* self) {
+    (void)&mem_00924ECC;
+    (void)&mem_00924FD0;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    auto* base = static_cast<unsigned char*>(self);
+    const auto& member = *reinterpret_cast<const std::string*>(base + 0x04);
+    std::string result = std::string(mem_0097214C) + member;
+    return result + std::string(mem_0093BF0C);
+}
+} // namespace lift_0060C2C0
+} // namespace lift_0060BC20

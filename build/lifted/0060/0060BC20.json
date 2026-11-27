@@ -1,0 +1,28 @@
+{
+  "va": "0x0060BC20",
+  "size": 157,
+  "orig_symbol": "NMData::EffectorBaseData::vfunc_20",
+  "src_path": "src/NMData/EffectorBaseData.cpp",
+  "lifted_path": "lifted/NMData/EffectorBaseData.cpp",
+  "name": "NMData::EffectorBaseData::vfunc_20",
+  "class": "NMData::EffectorBaseData",
+  "signature": "std::string fn_0060BC20(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0060C2C0 (NMData::EffectorWithMemoryData::vfunc_20).",
+  "fields": [
+    {
+      "class": "NMData::EffectorBaseData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:45:44Z"
+}

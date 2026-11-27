@@ -21,6 +21,7 @@ void fn_007C97A0(void* self, uint32_t value) {
     }
 }
 } // namespace lift_007C97A0
+#include <cstdio>
 
 // [0x007C9930]
 namespace lift_007C9930 {
@@ -2451,3 +2452,19 @@ void fn_007C6150(void* self, float* out) {
     out[2] = p[0x118 / 4] * v0 + p[0x128 / 4] * v1 + p[0x138 / 4] * v2 + p[0x148 / 4];
 }
 } // namespace lift_007C6150
+
+// [0x007C71C0] sub_007C71C0 (12 bytes)
+namespace lift_007C71C0 {
+// @name sub_007C71C0
+// @summary Auto-lifted identical-shape clone of 0x0080CA10 (GlobalFreeForwarder).
+namespace lift_0080CA10 {
+// Known callee 0x00859730: sub_00859730 (Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).)
+extern void* ext_007C7150(void* hMem);
+
+// @name GlobalFreeForwarder
+// @summary Forwards its single stack argument to ext_00859730 (GlobalFreeWrapper) and returns the callee's result unchanged.
+void* fn_007C71C0(void* hMem) {
+    return ext_007C7150(hMem);
+}
+} // namespace lift_0080CA10
+} // namespace lift_007C71C0

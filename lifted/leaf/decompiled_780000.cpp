@@ -3163,3 +3163,22 @@ void fn_0078FF40(void* self, const int32_t* idx, const double* vals, int32_t arg
     }
 }
 } // namespace lift_0078FF40
+
+// [0x00789C40] sub_00789C40 (32 bytes)
+namespace lift_00789C40 {
+// @name sub_00789C40
+// @summary Auto-lifted identical-shape clone of 0x00736C90 (Unknown::FindInEmbeddedSortedArray).
+namespace lift_00736C90 {
+// Known callee 0x00782E70: sub_00782E70 (Auto-lifted identical-shape clone of 0x007846D0 (SortedArray::findValue).)
+extern uint32_t ext_00782EC0(void* self, uint32_t key, int32_t* outIndex);
+
+// @name Unknown::FindInEmbeddedSortedArray
+// @class Unknown
+// @summary Forwards a key lookup to the SortedArray embedded at this+0xB8 and returns its result (no out-index).
+// @field Unknown +0xB8 SortedArray field_0xB8
+uint32_t fn_00789C40(void* self, uint32_t key) {
+    // Equivalent of: push 0; push key; this += 0xB8; call findValue; ret 4
+    return ext_00782EC0(static_cast<uint8_t*>(self) + 0x4, key, nullptr);
+}
+} // namespace lift_00736C90
+} // namespace lift_00789C40

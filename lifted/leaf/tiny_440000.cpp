@@ -56,8 +56,10 @@ extern "C" uintptr_t mem_00924FDC;
 #include <cstdint>
 #include <cstddef>
 #include <cstring>
+#include <ctime>
+#include <cstdio>
 
-// [0x00448F20] sub_00448F20 (6 bytes)
+#include <cstdio>
 // @name GetStringLiteral_00448F20
 // @summary Returns the address of the read-only string "$aj" in .rdata.
 extern "C" const char* __cdecl fn_00448F20() {
@@ -829,3 +831,25 @@ void fn_004474D0(void* self) {
     }
 }
 } // namespace lift_004474D0
+
+// [0x004407A0] sub_004407A0 (15 bytes)
+namespace lift_004407A0 {
+// @name sub_004407A0
+// @summary Auto-lifted identical-shape clone of 0x007266A0 (Unknown::ForwardSubObject0x250Value).
+namespace lift_007266A0 {
+// @name Unknown::ForwardSubObject0x250Value
+// @class Unknown
+// @summary Reads the pointer-sized value at this+0x250; if non-zero, tail-forwards to fn_006BC380 with that value as self, otherwise returns 0.
+// @field Unknown +0x250 int32_t field_0x250
+
+extern int32_t __fastcall ext_0043B400(void* self);
+
+extern int32_t __fastcall fn_004407A0(void* self) {
+    int32_t v = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x44);
+    if (v != 0) {
+        return ext_0043B400(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
+    }
+    return 0;
+}
+} // namespace lift_007266A0
+} // namespace lift_004407A0
