@@ -58,3 +58,27 @@ void fn_00519EC0(void* self, void* owner, uint32_t unusedArg2) {
     lift_field<int32_t>(self, 0x20) = ext_00519C00(&tmp);
 }
 } // namespace lift_00519EC0
+
+// [0x0051A730]
+namespace lift_0051A730 {
+extern void __thiscall ext_00486CB0(void* ctx, const void* a, const void* b, const char* name);
+extern void __thiscall ext_004769F0(void* ctx, const uint32_t* a, const uint32_t* b, const char* name);
+extern char mem_00952560[];
+extern char mem_0095254C[];
+
+// @name NMData::Channel::vfunc_17
+// @class NMData::Channel
+// @summary Compares m_channelName and m_interpolationType against another Channel and throws if mismatched.
+// @field NMData::Channel +0x04 uint8_t m_channelName
+// @field NMData::Channel +0x20 uint32_t m_interpolationType
+void __thiscall fn_0051A730(void* self, const void* other, void* arg2, void* arg3) {
+    (void)arg3;
+    const void* self_name = reinterpret_cast<const uint8_t*>(self) + 0x04;
+    const void* other_name = reinterpret_cast<const uint8_t*>(other) + 0x04;
+    ext_00486CB0(&arg2, self_name, other_name, mem_00952560);
+
+    uint32_t self_interp = lift_field<uint32_t>(self, 0x20);
+    uint32_t other_interp = lift_field<uint32_t>(other, 0x20);
+    ext_004769F0(&arg2, &self_interp, &other_interp, mem_0095254C);
+}
+} // namespace lift_0051A730
