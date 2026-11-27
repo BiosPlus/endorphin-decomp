@@ -53469,6 +53469,18 @@
     "summary": "Builds a row-major 3x3 float matrix at out from three 16-byte-strided rows of self and returns out.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067E510": {
+    "name": "sub_0067E510",
+    "signature": "void fn_0067E510(void* self, const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x0067E600 (buildPaddedMatrixFromParam).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x0067E560": {
+    "name": "sub_0067E560",
+    "signature": "void fn_0067E560(void* self, const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x0067E600 (buildPaddedMatrixFromParam).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067E5B0": {
     "name": "setPaddedMatrixFromAdjustedIdentity",
     "signature": "void fn_0067E5B0(void* self, uint32_t arg)",
