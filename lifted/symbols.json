@@ -50857,6 +50857,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0065A200 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006465F0": {
+    "name": "ConstructStateObjectDefaults",
+    "class": "Unknown",
+    "signature": "void fn_006465F0(void* self)",
+    "summary": "Runs the base constructor, installs three vtable pointers, and sets the default float/int state fields.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00646FA0": {
     "name": "sub_00646FA0",
     "signature": "extern \"C\" void* __fastcall fn_00646FA0(void* self, int edx_unused, unsigned int flags)",

@@ -1,0 +1,136 @@
+{
+  "va": "0x006465F0",
+  "size": 119,
+  "orig_symbol": "sub_006465F0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "ConstructStateObjectDefaults",
+  "class": "Unknown",
+  "signature": "void fn_006465F0(void* self)",
+  "summary": "Runs the base constructor, installs three vtable pointers, and sets the default float/int state fields.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vtable1"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "vtable2"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "flag64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "f6c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "f70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "float",
+      "name": "f74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "f78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "f7c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "f80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "float",
+      "name": "f84"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "float",
+      "name": "f88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "float",
+      "name": "f8c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "float",
+      "name": "f90"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "float",
+      "name": "f94"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "float",
+      "name": "f98"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "float",
+      "name": "f9c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "float",
+      "name": "fa0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "float",
+      "name": "fa4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA8",
+      "type": "float",
+      "name": "fa8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:00Z"
+}

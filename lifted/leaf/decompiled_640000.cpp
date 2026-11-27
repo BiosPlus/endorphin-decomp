@@ -2598,3 +2598,61 @@ void fn_00645E20(void* self) {
     lift_field<float>(self, 0x58) = 1.0f;
 }
 } // namespace lift_00645E20
+
+// [0x006465F0] sub_006465F0 (119 bytes)
+namespace lift_006465F0 {
+// Known callee 0x00645E20: ConstructDefaultStateObject (Initializes vtable pointers, zeroes integer state, and sets float fields to 1.0f/0.0f defaults (thiscall, no args).)
+extern void ext_00645E20();
+
+// @name ConstructStateObjectDefaults
+// @class Unknown
+// @summary Runs the base constructor, installs three vtable pointers, and sets the default float/int state fields.
+// @field Unknown +0x00 uint32_t vtable0
+// @field Unknown +0x04 uint32_t vtable1
+// @field Unknown +0x08 uint32_t vtable2
+// @field Unknown +0x64 uint8_t flag64
+// @field Unknown +0x6c float f6c
+// @field Unknown +0x70 float f70
+// @field Unknown +0x74 float f74
+// @field Unknown +0x78 float f78
+// @field Unknown +0x7c float f7c
+// @field Unknown +0x80 float f80
+// @field Unknown +0x84 float f84
+// @field Unknown +0x88 float f88
+// @field Unknown +0x8c float f8c
+// @field Unknown +0x90 float f90
+// @field Unknown +0x94 float f94
+// @field Unknown +0x98 float f98
+// @field Unknown +0x9c float f9c
+// @field Unknown +0xa0 float fa0
+// @field Unknown +0xa4 float fa4
+// @field Unknown +0xa8 float fa8
+void fn_006465F0(void* self) {
+    ext_00645E20();
+
+    lift_field<uint32_t>(self, 0x00) = 0x0097DF8Cu;
+    lift_field<uint32_t>(self, 0x04) = 0x0097DF74u;
+    lift_field<uint32_t>(self, 0x08) = 0x0097DF40u;
+    lift_field<uint8_t>(self, 0x64) = 0;
+
+    const float one = 1.0f;
+    const float zero = 0.0f;
+
+    lift_field<float>(self, 0x6c) = one;
+    lift_field<float>(self, 0x70) = zero;
+    lift_field<float>(self, 0x74) = zero;
+    lift_field<float>(self, 0x78) = zero;
+    lift_field<float>(self, 0x7c) = zero;
+    lift_field<float>(self, 0x80) = one;
+    lift_field<float>(self, 0x84) = zero;
+    lift_field<float>(self, 0x88) = zero;
+    lift_field<float>(self, 0x8c) = zero;
+    lift_field<float>(self, 0x90) = zero;
+    lift_field<float>(self, 0x94) = one;
+    lift_field<float>(self, 0x98) = zero;
+    lift_field<float>(self, 0x9c) = zero;
+    lift_field<float>(self, 0xa0) = zero;
+    lift_field<float>(self, 0xa4) = zero;
+    lift_field<float>(self, 0xa8) = one;
+}
+} // namespace lift_006465F0
