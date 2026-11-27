@@ -3078,3 +3078,62 @@ void __thiscall fn_0078D420(void* self, int32_t idx1, int32_t idx2, int32_t arg3
     ext_006D2170(dyn2, *reinterpret_cast<int32_t*>(dyn2), &entry2);
 }
 } // namespace lift_0078D420
+
+// [0x00787430]
+namespace lift_00787430 {
+// @name Unknown::copy32Bytes
+// @class Unknown
+// @summary Copies 8 32-bit values (32 bytes) from stack arguments into this+0x00..+0x1C.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+
+
+extern void* ext_006E73B0(void* self, uint32_t arg1, uint32_t arg2);
+extern void ext_006A5C62(void);
+extern int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_009252AC;
+extern uint32_t mem_00996EDC;
+extern double mem_00B60B30;
+extern uint32_t mem_00B60B38;
+extern uint32_t mem_00B60B3C;
+
+void __thiscall fn_00787430(
+    void* self,
+    uint32_t a0,
+    uint32_t a1,
+    uint32_t a2,
+    uint32_t a3,
+    uint32_t a4,
+    uint32_t a5,
+    uint32_t a6,
+    uint32_t a7)
+{
+    if (false) {
+        (void)ext_006E73B0;
+        (void)ext_006A5C62;
+        (void)ext_006D2170;
+        (void)mem_00925284;
+        (void)mem_009252AC;
+        (void)mem_00996EDC;
+        (void)mem_00B60B30;
+        (void)mem_00B60B38;
+        (void)mem_00B60B3C;
+    }
+    lift_field<uint32_t>(self, 0x00) = a0;
+    lift_field<uint32_t>(self, 0x04) = a1;
+    lift_field<uint32_t>(self, 0x08) = a2;
+    lift_field<uint32_t>(self, 0x0C) = a3;
+    lift_field<uint32_t>(self, 0x10) = a4;
+    lift_field<uint32_t>(self, 0x14) = a5;
+    lift_field<uint32_t>(self, 0x18) = a6;
+    lift_field<uint32_t>(self, 0x1C) = a7;
+}
+} // namespace lift_00787430
