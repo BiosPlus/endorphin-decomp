@@ -360,3 +360,20 @@ extern void __thiscall fn_004DE1E0(void* self, uint32_t* dst_a, uint32_t* dst_b,
     *status_b = 6;
 }
 } // namespace lift_004DE1E0
+
+// [0x004BFC00]
+namespace lift_004BFC00 {
+extern void* mem_00AE29D0;
+extern void (__thiscall *ext_00481BD0)(void* self, uint32_t value);
+extern void (__thiscall *ext_00479550)(void* self, void* arg);
+
+// @name NMData::AnimationEventData::vfunc_12_off_C
+// @class NMData::AnimationEventData
+// @summary Removes this AnimationEventData from the given range and notifies the global manager, returning true.
+uint8_t __thiscall fn_004BFC00(void* self, uint32_t /*arg1*/, void* rangeObj) {
+    void* base = static_cast<uint8_t*>(self) - 0xC;
+    ext_00481BD0(rangeObj, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base)));
+    ext_00479550(mem_00AE29D0, base);
+    return 1;
+}
+} // namespace lift_004BFC00
