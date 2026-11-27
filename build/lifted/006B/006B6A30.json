@@ -1,0 +1,46 @@
+{
+  "va": "0x006B6A30",
+  "size": 128,
+  "orig_symbol": "sub_006B6A30",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::Init_006B6A30",
+  "class": "Unknown",
+  "signature": "void fn_006B6A30(void* self)",
+  "summary": "Sets vtables, optionally notifies an owned object (vtbl slot 1), tears down member at +0x70, and re-inits sub-objects at +0x58 and +0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "vtable_sub"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x61",
+      "type": "uint8_t",
+      "name": "field_0x61"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "void*",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:10:35Z"
+}

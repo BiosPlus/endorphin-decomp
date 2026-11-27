@@ -1884,3 +1884,46 @@ void fn_006B06A0(void* self) {
     ext_006B3350(self);
 }
 } // namespace lift_006B06A0
+
+// [0x006B6A30] sub_006B6A30 (128 bytes)
+namespace lift_006B6A30 {
+// Known callee 0x006A5FF2: thunk_MFC80_ord_1934 (IAT jump thunk forwarding to MFC80!ord_1934.)
+extern void ext_006A5FF2(void* self);
+// Known callee 0x006A6310: thunk_MFC80_ord_760 (IAT jump thunk forwarding to MFC80!ord_760.)
+extern void ext_006A6310(void* self);
+// Known callee 0x006B0CD0: sub_006B0CD0_dtor (Destructor that resets vtable, destroys member at +0x64 via MFC80_ord_1934, and calls base destructor MFC80_ord_620.)
+extern void ext_006B0CD0(void* self);
+
+// @name Unknown::Init_006B6A30
+// @class Unknown
+// @summary Sets vtables, optionally notifies an owned object (vtbl slot 1), tears down member at +0x70, and re-inits sub-objects at +0x58 and +0x00.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x58 uint32_t vtable_sub
+// @field Unknown +0x61 uint8_t field_0x61
+// @field Unknown +0x6c void* field_0x6c
+// @field Unknown +0x70 uint8_t field_0x70
+void fn_006B6A30(void* self) {
+    // The original MSVC SEH frame (fs:[0] push/pop, cookie 0x8b7c4e) is
+    // exception-handling boilerplate and is not modelled here.
+    uint8_t* esi = reinterpret_cast<uint8_t*>(self);
+
+    lift_field<uint32_t>(esi, 0x00) = 0x0099263Cu;
+
+    if (lift_field<uint8_t>(esi, 0x61) == 0) {
+        void* obj = lift_field<void*>(esi, 0x6C);
+        if (obj != nullptr) {
+            // Virtual call: obj->vtbl[1](obj, 1)
+            uint8_t* vt = *reinterpret_cast<uint8_t**>(obj);
+            uintptr_t fp = *reinterpret_cast<uint32_t*>(vt + 4);
+            reinterpret_cast<void (*)(void*, int)>(fp)(obj, 1);
+        }
+    }
+
+    ext_006B0CD0(esi + 0x70);
+
+    lift_field<uint32_t>(esi, 0x58) = 0x0092A23Cu;
+    ext_006A5FF2(esi + 0x58);
+
+    ext_006A6310(esi);
+}
+} // namespace lift_006B6A30
