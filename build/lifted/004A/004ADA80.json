@@ -1,0 +1,51 @@
+{
+  "va": "0x004ADA80",
+  "size": 147,
+  "orig_symbol": "sub_004ADA80",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "allocRbTreeNode",
+  "signature": "void* __stdcall fn_004ADA80(uint32_t left, uint32_t parent, uint32_t right, const void* src, uint8_t color)",
+  "summary": "Allocates and initializes a 0x3C-byte red-black tree node.",
+  "fields": [
+    {
+      "class": "RbTreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "left"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "parent"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "right"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0xC",
+      "type": "char[0x2C]",
+      "name": "value"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0x38",
+      "type": "uint8_t",
+      "name": "color"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:14:27Z"
+}

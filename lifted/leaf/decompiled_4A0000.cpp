@@ -1233,3 +1233,39 @@ void* fn_004ADA20(void* self, const void* src) {
 }
 } // namespace lift_0052A140
 } // namespace lift_004ADA20
+
+// [0x004ADA80]
+namespace lift_004ADA80 {
+// @name allocRbTreeNode
+// @summary Allocates and initializes a 0x3C-byte red-black tree node.
+// @field RbTreeNode +0x00 uint32_t left
+// @field RbTreeNode +0x04 uint32_t parent
+// @field RbTreeNode +0x08 uint32_t right
+// @field RbTreeNode +0x0C char[0x2C] value
+// @field RbTreeNode +0x38 uint8_t color
+// @field RbTreeNode +0x39 uint8_t isNil
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_004ADA20(void* self, const void* src);
+extern void ext_006A5C5C(void* ptr);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+void* __stdcall fn_004ADA80(uint32_t left, uint32_t parent, uint32_t right, const void* src, uint8_t color) {
+    uint8_t* node = static_cast<uint8_t*>(ext_006A5C62(0x3C));
+    if (node != nullptr) {
+        try {
+            lift_field<uint32_t>(node, 0x00) = left;
+            lift_field<uint32_t>(node, 0x04) = parent;
+            lift_field<uint32_t>(node, 0x08) = right;
+            ext_004ADA20(node + 0x0C, src);
+            lift_field<uint8_t>(node, 0x38) = color;
+            lift_field<uint8_t>(node, 0x39) = 0;
+        } catch (...) {
+            ext_006A5C5C(node);
+            ext_006A6DD2(nullptr, nullptr);
+        }
+    }
+    return node;
+}
+} // namespace lift_004ADA80

@@ -14722,6 +14722,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004ADA80": {
+    "name": "allocRbTreeNode",
+    "signature": "void* __stdcall fn_004ADA80(uint32_t left, uint32_t parent, uint32_t right, const void* src, uint8_t color)",
+    "summary": "Allocates and initializes a 0x3C-byte red-black tree node.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AEC60": {
     "name": "thunk_004AEC60",
     "class": "Unknown",
@@ -29577,6 +29583,12 @@
     "name": "sub_005587E0",
     "signature": "void fn_005587E0(void* self, uint32_t flag)",
     "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x00558820": {
+    "name": "allocNode_00558820",
+    "signature": "void* __stdcall fn_00558820(uint32_t arg1, uint32_t arg2, uint32_t arg3, const void* arg4, uint8_t arg5)",
+    "summary": "Allocates a 0x3C-byte node, initializes header links, constructs payload at +0x0C, and sets flags at +0x38/+0x39",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x005588C0": {
@@ -69826,6 +69838,13 @@
     "signature": "extern \"C\" int32_t __fastcall fn_006DC550(void* self)",
     "summary": "Getter returning int32_t field at offset +0xB8.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006DC560": {
+    "name": "Unknown::removeElementAt_006DC560",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint8_t __thiscall fn_006DC560(void* self, int32_t index)",
+    "summary": "Validates index (\u003e 0 and \u003c count at +0xb8), removes and destroys the element from the DynArray at +0xb8, adjusts +0xe8 if it matched index, and reports errors via +0xec.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006DCF80": {
     "name": "Unknown::insertVirtualItemsIntoArray_006DCF80",
