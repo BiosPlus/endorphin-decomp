@@ -2246,3 +2246,35 @@ void fn_00648300(void* self) {
     ext_005B1870(self);
 }
 } // namespace lift_00648300
+
+// [0x006406D0] sub_006406D0 (112 bytes)
+namespace lift_006406D0 {
+// Callee 0x00640240 (sub_00640240): thiscall, one stack argument, ret 4. ecx = arg (the 'self' passed in), stack = result of virtual call.
+void __thiscall ext_00640240(void* self, uint32_t value);
+
+// Global: IAT slot 0x00925134 (MSVCR80!_invalid_parameter_noinfo). Only used by the MSVC debug iterator checks, which are dropped; referenced for metadata only.
+extern int mem_00925134;
+
+// @name Unknown::forEachPointerVirtualSlot4ThenDispatch (descriptive; owner class not identified)
+// @class Unknown
+// @summary Walks the pointer array delimited by +0x28 (begin) and +0x2C (end) (end re-read each iteration); for each element obj it calls vtable slot 4 (+0x10) on obj with the stack argument, then forwards that result to ext_00640240 with the argument as this.
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2C
+void fn_006406D0(void* self, void* arg) {
+    using VirtualFn = uint32_t(__thiscall*)(void* thisPtr, void* a);
+    (void)&mem_00925134;
+
+    uint32_t cur = lift_field<uint32_t>(self, 0x28);
+    while (cur < lift_field<uint32_t>(self, 0x2C)) {
+        uint32_t* slot = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cur));
+        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(*slot));
+
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        VirtualFn fn = reinterpret_cast<VirtualFn>(vtbl[4]);
+        uint32_t result = fn(obj, arg);
+
+        ext_00640240(arg, result);
+        cur += 4;
+    }
+}
+} // namespace lift_006406D0

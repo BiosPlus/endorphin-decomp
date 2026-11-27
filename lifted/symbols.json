@@ -2267,6 +2267,12 @@
     "summary": "Copy-assigns each 0x20-byte record in [first, last) to dest (std::string at +0x00, u32 at +0x1c) and returns the dest end pointer (dest itself when the range is empty).",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041CE40": {
+    "name": "sub_0041CE40",
+    "signature": "void* __thiscall sub_0041CE40(void* self, const char* str)",
+    "summary": "Constructs a temporary std::string from a C-string, passes it to ext_006720E0, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CEB0": {
     "name": "UnknownClass::forwardToSubobjectSlot4",
     "class": "UnknownClass",
@@ -44250,6 +44256,13 @@
     "signature": "extern \"C\" void fn_00640100(void)",
     "summary": "Pure jump thunk forwarding to sub_006400A0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x006406D0": {
+    "name": "Unknown::forEachPointerVirtualSlot4ThenDispatch (descriptive; owner class not identified)",
+    "class": "Unknown",
+    "signature": "void fn_006406D0(void* self, void* arg)",
+    "summary": "Walks the pointer array delimited by +0x28 (begin) and +0x2C (end) (end re-read each iteration); for each element obj it calls vtable slot 4 (+0x10) on obj with the stack argument, then forwards that result to ext_00640240 with the argument as this.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00640740": {
     "name": "sub_00640740",

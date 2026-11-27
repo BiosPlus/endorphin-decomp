@@ -1,0 +1,28 @@
+{
+  "va": "0x006406D0",
+  "size": 112,
+  "orig_symbol": "sub_006406D0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::forEachPointerVirtualSlot4ThenDispatch (descriptive; owner class not identified)",
+  "class": "Unknown",
+  "signature": "void fn_006406D0(void* self, void* arg)",
+  "summary": "Walks the pointer array delimited by +0x28 (begin) and +0x2C (end) (end re-read each iteration); for each element obj it calls vtable slot 4 (+0x10) on obj with the stack argument, then forwards that result to ext_00640240 with the argument as this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:30Z"
+}
