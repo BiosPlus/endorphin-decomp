@@ -3723,3 +3723,48 @@ void fn_005027E0(void* self, const char* name) {
     strDtor(tmpStr);
 }
 } // namespace lift_005027E0
+
+// [0x00505D50]
+namespace lift_00505D50 {
+void __thiscall ext_00505C00(void* self, void* out_iter, void* key);
+extern void (__cdecl* mem_00925134)(void);
+
+// @name sub_00505D50
+// @summary Finds an element by key and returns a pointer to offset 0x1C of the element, or nullptr if not found.
+// @field Container +0x04 uint32_t field_0x04
+// @field Container +0x08 uint32_t field_0x08
+void* __thiscall sub_00505D50(void* self, void* key) {
+    struct Iter {
+        void* container;
+        uint32_t ptr;
+    } iter{};
+
+    ext_00505C00(self, &iter, key);
+
+    uint32_t end_ptr = lift_field<uint32_t>(self, 0x08);
+    uint32_t begin_ptr = lift_field<uint32_t>(self, 0x04);
+    auto invalid_param = mem_00925134;
+
+    if (begin_ptr > end_ptr) {
+        invalid_param();
+    }
+
+    if (iter.container == nullptr || iter.container != self) {
+        invalid_param();
+    }
+
+    if (iter.ptr == end_ptr) {
+        return nullptr;
+    }
+
+    if (iter.container == nullptr) {
+        invalid_param();
+    }
+
+    if (iter.ptr >= lift_field<uint32_t>(iter.container, 0x08)) {
+        invalid_param();
+    }
+
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(iter.ptr) + 0x1c);
+}
+} // namespace lift_00505D50

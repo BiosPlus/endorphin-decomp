@@ -29392,6 +29392,12 @@
     "summary": "Destroys each 0x68-byte element in the [begin, end) range via its vtable slot 0 (deleting-dtor flag 0), frees the begin buffer, and nulls begin/end/capacity.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00505D50": {
+    "name": "sub_00505D50",
+    "signature": "void* __thiscall sub_00505D50(void* self, void* key)",
+    "summary": "Finds an element by key and returns a pointer to offset 0x1C of the element, or nullptr if not found.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00505DC0": {
     "name": "Unknown::DestroyElementsAndReset_00505DC0",
     "class": "Unknown",

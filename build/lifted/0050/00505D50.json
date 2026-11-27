@@ -1,0 +1,27 @@
+{
+  "va": "0x00505D50",
+  "size": 102,
+  "orig_symbol": "sub_00505D50",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "sub_00505D50",
+  "signature": "void* __thiscall sub_00505D50(void* self, void* key)",
+  "summary": "Finds an element by key and returns a pointer to offset 0x1C of the element, or nullptr if not found.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:18:45Z"
+}
