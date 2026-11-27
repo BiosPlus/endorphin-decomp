@@ -1927,3 +1927,55 @@ void* fn_007B2090(void* self, void* arg, uint32_t flag) {
     return self;
 }
 } // namespace lift_007B2090
+
+// [0x007BF4E0] sub_007BF4E0 (144 bytes)
+namespace lift_007BF4E0 {
+// Known callee 0x007AF420: AppendAndSortPtrArray (Appends pointers to 0x14-byte elements into a GlobalAlloc pointer array and sorts it if previously non-empty.)
+extern void ext_007AF420(void* obj, uintptr_t base, int32_t count);
+
+// @name InitSnapshotRecordAndSwapCallbacks
+// @summary Appends self to the 0x999c40 pointer array, then copies four callback-slot pairs from self into the sub-record at self+0x1cc and installs new callback pointers in self.
+// @field LiftSelf +0x18c uint32_t field_0x18c
+// @field LiftSelf +0x194 uint32_t field_0x194
+// @field LiftSelf +0x1cc uint8_t* subRecord
+// @field LiftSelf +0x21c uint32_t field_0x21c
+// @field LiftSelf +0x220 uint32_t field_0x220
+// @field LiftSelf +0x224 uint32_t field_0x224
+// @field SubRecord +0x00 uint32_t field_0x00
+// @field SubRecord +0x0c uint32_t field_0x0c
+// @field SubRecord +0x1c uint32_t field_0x1c
+// @field SubRecord +0x20 uint32_t field_0x20
+// @field SubRecord +0x24 uint32_t field_0x24
+// @field SubRecord +0x28 uint32_t field_0x28
+// @field SubRecord +0x2c uint32_t field_0x2c
+int32_t fn_007BF4E0(void* self) {
+    // Sub-record pointer is read before the callee runs, as in the original.
+    uint8_t* sub = lift_field<uint8_t*>(self, 0x1cc);
+
+    ext_007AF420(self, 0x999c40u, 1);
+
+    lift_field<uint32_t>(sub, 0x1c) = lift_field<uint32_t>(self, 0x220);
+
+    uint32_t old21c = lift_field<uint32_t>(self, 0x21c);
+    lift_field<uint32_t>(self, 0x220) = 0x007BFD40u;
+    lift_field<uint32_t>(sub, 0x20) = old21c;
+
+    uint32_t old224 = lift_field<uint32_t>(self, 0x224);
+    lift_field<uint32_t>(self, 0x21c) = 0x007BFCF0u;
+    lift_field<uint32_t>(sub, 0x24) = old224;
+
+    uint32_t old18c = lift_field<uint32_t>(self, 0x18c);
+    lift_field<uint32_t>(self, 0x224) = 0x007BFD80u;
+    lift_field<uint32_t>(sub, 0x28) = old18c;
+
+    uint32_t old194 = lift_field<uint32_t>(self, 0x194);
+    lift_field<uint32_t>(self, 0x18c) = 0x007BF570u;
+    lift_field<uint32_t>(sub, 0x2c) = old194;
+
+    lift_field<uint32_t>(self, 0x194) = 0x007BF6D0u;
+
+    lift_field<uint32_t>(sub, 0x00) = 1;
+    lift_field<uint32_t>(sub, 0x0c) = 0;
+    return 1;
+}
+} // namespace lift_007BF4E0

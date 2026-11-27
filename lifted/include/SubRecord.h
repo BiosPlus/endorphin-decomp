@@ -8,9 +8,15 @@
 // Recovered field layout for SubRecord:
 namespace lifted_layout {
 struct SubRecord_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x0053F8A0)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x0053F8A0, 0x007BF4E0)
     // +0x4   uint32_t                 field_0x04  (evidence: 0x0053F8A0)
+    // +0xC   uint32_t                 field_0x0c  (evidence: 0x007BF4E0)
     // +0x10  uint32_t                 field_0x10  (evidence: 0x0053F8A0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x0053F8A0)
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x007BF4E0)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x007BF4E0)
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x007BF4E0)
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x007BF4E0)
+    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x007BF4E0)
 };
 } // namespace lifted_layout

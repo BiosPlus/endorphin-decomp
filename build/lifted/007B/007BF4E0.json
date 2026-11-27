@@ -1,0 +1,93 @@
+{
+  "va": "0x007BF4E0",
+  "size": 144,
+  "orig_symbol": "sub_007BF4E0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "InitSnapshotRecordAndSwapCallbacks",
+  "signature": "int32_t fn_007BF4E0(void* self)",
+  "summary": "Appends self to the 0x999c40 pointer array, then copies four callback-slot pairs from self into the sub-record at self+0x1cc and installs new callback pointers in self.",
+  "fields": [
+    {
+      "class": "LiftSelf",
+      "offset": "+0x18C",
+      "type": "uint32_t",
+      "name": "field_0x18c"
+    },
+    {
+      "class": "LiftSelf",
+      "offset": "+0x194",
+      "type": "uint32_t",
+      "name": "field_0x194"
+    },
+    {
+      "class": "LiftSelf",
+      "offset": "+0x1CC",
+      "type": "uint8_t*",
+      "name": "subRecord"
+    },
+    {
+      "class": "LiftSelf",
+      "offset": "+0x21C",
+      "type": "uint32_t",
+      "name": "field_0x21c"
+    },
+    {
+      "class": "LiftSelf",
+      "offset": "+0x220",
+      "type": "uint32_t",
+      "name": "field_0x220"
+    },
+    {
+      "class": "LiftSelf",
+      "offset": "+0x224",
+      "type": "uint32_t",
+      "name": "field_0x224"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:47:04Z"
+}

@@ -83381,6 +83381,12 @@
     "summary": "Adds scale * field_0x1D0 to field_0x1E0 and subtracts it from field_0x1E4; returns 1.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BF4E0": {
+    "name": "InitSnapshotRecordAndSwapCallbacks",
+    "signature": "int32_t fn_007BF4E0(void* self)",
+    "summary": "Appends self to the 0x999c40 pointer array, then copies four callback-slot pairs from self into the sub-record at self+0x1cc and installs new callback pointers in self.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BF890": {
     "name": "Unknown::AccumulateStridedWords",
     "class": "Unknown",
