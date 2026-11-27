@@ -1,0 +1,13 @@
+{
+  "va": "0x0059FE80",
+  "size": 142,
+  "orig_symbol": "sub_0059FE80",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "InsertionSortDwordRange",
+  "signature": "void fn_0059FE80(DWORD* first, DWORD* last)",
+  "summary": "Insertion sort of a DWORD range [first, last): elements below *first are block-shifted to the front via memmove_s, others are shifted into place by unguarded-style linear scan.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:30:32Z"
+}

@@ -2137,3 +2137,36 @@ void fn_00597860(void* self, void* arg) {
     }
 }
 } // namespace lift_00597860
+
+// [0x0059FE80] sub_0059FE80 (142 bytes)
+namespace lift_0059FE80 {
+// .idata IAT slot for MSVCR80!memmove_s
+extern int (*mem_009251EC)(void* dest, size_t destSize, const void* src, size_t count);
+
+// @name InsertionSortDwordRange
+// @summary Insertion sort of a DWORD range [first, last): elements below *first are block-shifted to the front via memmove_s, others are shifted into place by unguarded-style linear scan.
+void fn_0059FE80(DWORD* first, DWORD* last) {
+    if (first == last) {
+        return;
+    }
+    DWORD* it = first + 1;
+    if (it == last) {
+        return;
+    }
+    for (; it != last; ++it) {
+        const DWORD v = *it;
+        if (v < *first) {
+            const size_t bytes = reinterpret_cast<uintptr_t>(it) - reinterpret_cast<uintptr_t>(first);
+            mem_009251EC(first + 1, bytes, first, bytes);
+            *first = v;
+        } else {
+            DWORD* p = it;
+            while (v < p[-1]) {
+                p[0] = p[-1];
+                --p;
+            }
+            *p = v;
+        }
+    }
+}
+} // namespace lift_0059FE80

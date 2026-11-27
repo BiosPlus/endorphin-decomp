@@ -32997,6 +32997,12 @@
     "summary": "Heapify a uint32 range [first, last): for each index from count/2 down to 1, call ext_0059F310 (sift-down) with that element as the value.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x0059FE80": {
+    "name": "InsertionSortDwordRange",
+    "signature": "void fn_0059FE80(DWORD* first, DWORD* last)",
+    "summary": "Insertion sort of a DWORD range [first, last): elements below *first are block-shifted to the front via memmove_s, others are shifted into place by unguarded-style linear scan.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059FF10": {
     "name": "Unknown::GetElementAddress_0059FF10",
     "class": "Unknown",
