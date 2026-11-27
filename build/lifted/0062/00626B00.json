@@ -1,0 +1,88 @@
+{
+  "va": "0x00626B00",
+  "size": 501,
+  "orig_symbol": "NMData::EffectorSkeletalData::vfunc_14",
+  "src_path": "src/NMData/EffectorSkeletalData.cpp",
+  "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp",
+  "name": "NMData::EffectorSkeletalData::vfunc_14",
+  "class": "NMData::EffectorSkeletalData",
+  "signature": "void* __thiscall fn_00626B00(void* self, void* arg1)",
+  "summary": "Serializes EffectorSkeletalData properties and calibration float fields into a node created via ext_006404E0.",
+  "fields": [
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x78",
+      "type": "uint32_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x7C",
+      "type": "uint8_t",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x84",
+      "type": "float",
+      "name": "field_0x84"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x88",
+      "type": "float",
+      "name": "field_0x88"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x8C",
+      "type": "float",
+      "name": "field_0x8c"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x90",
+      "type": "float",
+      "name": "field_0x90"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x94",
+      "type": "float",
+      "name": "field_0x94"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x98",
+      "type": "float",
+      "name": "field_0x98"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x9C",
+      "type": "float",
+      "name": "field_0x9c"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0xA0",
+      "type": "float",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-27T13:10:47Z"
+}

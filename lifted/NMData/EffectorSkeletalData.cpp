@@ -413,3 +413,88 @@ void __thiscall fn_00626EB0(uint8_t* self, uint8_t* arg1) {
     str_dtor(str_tmp);
 }
 } // namespace lift_00626EB0
+
+// [0x00626B00] NMData::EffectorSkeletalData::vfunc_14 (501 bytes)
+namespace lift_00626B00 {
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern void __thiscall ext_0060BAD0(void* self, void* node);
+extern void* __thiscall ext_00640110(void* self, uint32_t key);
+extern void* __thiscall ext_006404E0(void* self, uint32_t key);
+// Known callee 0x00640A80: ResetChildNameFromBool (Resets the child object's name to "true" or "false" depending on the boolean argument.)
+extern void __cdecl ext_00640A80(void* node, uint8_t flag);
+extern void __cdecl ext_0067EF60(void* obj, float value, uint32_t a, uint32_t b);
+extern void ext_006301E0();
+extern void ext_005A0FF0();
+
+extern uint32_t mem_00A9EE64;
+extern uint32_t mem_00A9FA6C;
+extern uint32_t mem_00A9F43C;
+extern uint32_t mem_00A9F774;
+extern uint32_t mem_00A9F458;
+extern uint32_t mem_00A9ED74;
+extern uint32_t mem_00A9F4AC;
+extern uint32_t mem_00A9F780;
+extern uint32_t mem_00A9F770;
+extern uint32_t mem_00A9F9FC;
+extern uint32_t mem_00A9FA5C;
+extern uint32_t mem_00A9F9EC;
+extern uint32_t mem_00A9FA44;
+extern uint32_t mem_00A9F77C;
+extern uint32_t mem_00A9F4A8;
+extern uint32_t mem_00A9F9F4;
+extern uint32_t mem_00A9F4FC;
+extern uint32_t mem_00A9FA4C;
+extern uint32_t mem_00A9F514;
+extern const char* mem_00A97F70[];
+
+// @name NMData::EffectorSkeletalData::vfunc_14
+// @class NMData::EffectorSkeletalData
+// @summary Serializes EffectorSkeletalData properties and calibration float fields into a node created via ext_006404E0.
+// @field NMData::EffectorSkeletalData +0x74 uint32_t field_0x74
+// @field NMData::EffectorSkeletalData +0x78 uint32_t field_0x78
+// @field NMData::EffectorSkeletalData +0x7C uint8_t field_0x7c
+// @field NMData::EffectorSkeletalData +0x80 float field_0x80
+// @field NMData::EffectorSkeletalData +0x84 float field_0x84
+// @field NMData::EffectorSkeletalData +0x88 float field_0x88
+// @field NMData::EffectorSkeletalData +0x8C float field_0x8c
+// @field NMData::EffectorSkeletalData +0x90 float field_0x90
+// @field NMData::EffectorSkeletalData +0x94 float field_0x94
+// @field NMData::EffectorSkeletalData +0x98 float field_0x98
+// @field NMData::EffectorSkeletalData +0x9C float field_0x9c
+// @field NMData::EffectorSkeletalData +0xA0 float field_0xa0
+void* __thiscall fn_00626B00(void* self, void* arg1) {
+    (void)&ext_006301E0;
+    (void)&ext_005A0FF0;
+
+    void* node = ext_006404E0(arg1, mem_00A9EE64);
+    ext_0060BAD0(self, node);
+
+    void* child = ext_00640110(node, mem_00A9FA6C);
+    ext_00427550(&child, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x009719E4u)));
+
+    void* bool_child = ext_00640110(node, mem_00A9F43C);
+    ext_00640A80(bool_child, lift_field<uint8_t>(self, 0x7C));
+
+    child = ext_00640110(node, mem_00A9F774);
+    ext_00427550(&child, mem_00A97F70[lift_field<uint32_t>(self, 0x74)]);
+
+    child = ext_00640110(node, mem_00A9F458);
+    ext_00427550(&child, mem_00A97F70[lift_field<uint32_t>(self, 0x78)]);
+
+    void* cal_node = ext_006404E0(node, mem_00A9ED74);
+
+    ext_0067EF60(cal_node, lift_field<float>(self, 0x80), mem_00A9F4AC, mem_00A9F780);
+    ext_0067EF60(cal_node, lift_field<float>(self, 0x84), 0x00972CD0u, mem_00A9F770);
+    ext_0067EF60(cal_node, lift_field<float>(self, 0x88), 0x00972D14u, mem_00A9F9FC);
+    ext_0067EF60(cal_node, lift_field<float>(self, 0x8C), 0x00972D24u, mem_00A9FA5C);
+    ext_0067EF60(cal_node, lift_field<float>(self, 0x90), 0x00972CE0u, mem_00A9F9EC);
+    ext_0067EF60(cal_node, lift_field<float>(self, 0x94), 0x00972CF0u, mem_00A9FA44);
+    ext_0067EF60(cal_node, lift_field<float>(self, 0xA0), mem_00A9F4A8, mem_00A9F77C);
+    ext_0067EF60(cal_node, lift_field<float>(self, 0x98), mem_00A9F4FC, mem_00A9F9F4);
+    ext_0067EF60(cal_node, lift_field<float>(self, 0x9C), mem_00A9F514, mem_00A9FA4C);
+    ext_0067EF60(cal_node, lift_field<float>(self, 0x9C), 0x0097705Cu, 0x00977068u);
+
+    return node;
+}
+} // namespace lift_00626B00

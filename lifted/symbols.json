@@ -65120,6 +65120,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00626900 (NMData::EffectorSkeletalData::vfunc_17).",
     "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
   },
+  "0x00626B00": {
+    "name": "NMData::EffectorSkeletalData::vfunc_14",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "void* __thiscall fn_00626B00(void* self, void* arg1)",
+    "summary": "Serializes EffectorSkeletalData properties and calibration float fields into a node created via ext_006404E0.",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
+  },
   "0x00626D00": {
     "name": "NMData::EffectorSkeletalData::vfunc_19",
     "class": "NMData::EffectorSkeletalData",
