@@ -22964,6 +22964,13 @@
     "summary": "Allocates a 0x1D4-byte object (replacing any previous one at +0x18C) and initializes it via sub_004D2BE0, then stores it at +0x18C, calls sub_004D3370 on it, and resets +0x184 to INT32_MAX.",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
   },
+  "0x004D3880": {
+    "name": "sub_004D3880",
+    "class": "Unknown",
+    "signature": "uint32_t* fn_004D3880(void* self, uint32_t* out, uint32_t key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049A930 (Unknown::lookupStringKeyedValue_0049A930).",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D3940": {
     "name": "ClassifyStringFieldStore (sub_004D3940)",
     "class": "\u003cClass\u003e (if member)",
@@ -24388,6 +24395,13 @@
     "signature": "extern \"C\" void fn_004DCE40(void)",
     "summary": "Pure jump thunk forwarding to sub_004DCB90.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x004DDB40": {
+    "name": "sub_004DDB40",
+    "class": "Unknown",
+    "signature": "uint32_t* fn_004DDB40(void* self, uint32_t* out, uint32_t key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049A930 (Unknown::lookupStringKeyedValue_0049A930).",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
   "0x004DDD30": {
     "name": "NMData::RigEventData::vfunc_88",
@@ -56651,6 +56665,27 @@
     "class": "EffectorGroup",
     "signature": "void __thiscall fn_005F40C0(void* self, float arg)",
     "summary": "Forwards vfunc_22(float) to each child effector in the group, optionally filtered by global set mem_00B46790",
+    "lifted_path": "lifted/classes/EffectorGroup.cpp"
+  },
+  "0x005F41B0": {
+    "name": "EffectorGroup::vfunc_23",
+    "class": "EffectorGroup",
+    "signature": "void __thiscall fn_005F41B0(void* self, float arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005F40C0 (EffectorGroup::vfunc_22).",
+    "lifted_path": "lifted/classes/EffectorGroup.cpp"
+  },
+  "0x005F42A0": {
+    "name": "EffectorGroup::vfunc_24",
+    "class": "EffectorGroup",
+    "signature": "void __thiscall fn_005F42A0(void* self, float arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005F40C0 (EffectorGroup::vfunc_22).",
+    "lifted_path": "lifted/classes/EffectorGroup.cpp"
+  },
+  "0x005F4390": {
+    "name": "EffectorGroup::vfunc_21",
+    "class": "EffectorGroup",
+    "signature": "void __thiscall fn_005F4390(void* self, float arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005F40C0 (EffectorGroup::vfunc_22).",
     "lifted_path": "lifted/classes/EffectorGroup.cpp"
   },
   "0x005F4930": {

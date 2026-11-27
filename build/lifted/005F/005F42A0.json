@@ -1,0 +1,22 @@
+{
+  "va": "0x005F42A0",
+  "size": 236,
+  "orig_symbol": "EffectorGroup::vfunc_24",
+  "src_path": "src/classes/EffectorGroup.cpp",
+  "lifted_path": "lifted/classes/EffectorGroup.cpp",
+  "name": "EffectorGroup::vfunc_24",
+  "class": "EffectorGroup",
+  "signature": "void __thiscall fn_005F42A0(void* self, float arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x005F40C0 (EffectorGroup::vfunc_22).",
+  "fields": [
+    {
+      "class": "EffectorGroup",
+      "offset": "+0x2C",
+      "type": "std::vector\u003cvoid*\u003e",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:17:43Z"
+}

@@ -10,6 +10,6 @@
 // Recovered field layout for EffectorGroup:
 namespace lifted_layout {
 struct EffectorGroup_Fields {
-    // +0x2C  std::vector<void*>       field_0x2c  (evidence: 0x005F40C0)
+    // +0x2C  std::vector<void*>       field_0x2c  (evidence: 0x005F40C0, 0x005F41B0, 0x005F42A0, 0x005F4390)
 };
 } // namespace lifted_layout

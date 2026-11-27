@@ -1,0 +1,28 @@
+{
+  "va": "0x004DDB40",
+  "size": 140,
+  "orig_symbol": "sub_004DDB40",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "sub_004DDB40",
+  "class": "Unknown",
+  "signature": "uint32_t* fn_004DDB40(void* self, uint32_t* out, uint32_t key)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049A930 (Unknown::lookupStringKeyedValue_0049A930).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "subobject",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "subobject",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:17:43Z"
+}
