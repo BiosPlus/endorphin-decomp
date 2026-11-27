@@ -11777,3 +11777,29 @@ void vfunc_40_005B2C80(void* holder) {
     *reinterpret_cast<uint32_t*>(static_cast<unsigned char*>(holder) + 0x04) = 0x00B4352Cu;
 }
 } // namespace lift_005B2C80
+
+// [0x0059EBF0] ExprParser::ReadWriteMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::CharacterData::`vcall'{96, {flat}}, 4}>::vfunc_40 (122 bytes)
+namespace lift_0059EBF0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B414A0;  // one-time-init guard flag (bit 0)
+extern int mem_00B4149C;  // static accessor object; first DWORD holds its vtable
+
+// @name ExprParser::ReadWriteMethodType<CharacterData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::CharacterData::`vcall'{96, {flat}}, 4}>
+// @summary Lazily initializes the static accessor object at mem_00B4149C once, then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_0059EBF0(void* holder) {
+    // The MSVC SEH frame setup/teardown (fs:[0] push/pop, scope index -1,
+    // handler 0x008A163E) only guards the init call; it is not lifted here.
+    if ((mem_00B414A0 & 1) == 0) {
+        mem_00B414A0 |= 1;
+        // The value argument is overwritten by the vtable store below,
+        // so 0 is passed.
+        ext_0067A670(&mem_00B4149C, 0);
+        mem_00B4149C = 0x0095E45C;
+    }
+    lift_field<DWORD>(holder, 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B4149C));
+}
+} // namespace lift_0059EBF0
