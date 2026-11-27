@@ -2917,3 +2917,63 @@ void fn_00662120(void* self) {
                 0u);
 }
 } // namespace lift_00662120
+
+// [0x00661F10] sub_00661F10 (91 bytes)
+namespace lift_00661F10 {
+// Known callee 0x00466BA0: DispatchRangeWithDefault (Dispatches arg1 (or self->+0x24 when arg1 is 0) to every object pointer in the [+0x18, +0x1C) range, then forwards arg2 to ext_00678D70.)
+extern void ext_00466BA0(void* self, uint32_t arg1, uint32_t arg2);
+
+// Import slot for MSVCR80!_invalid_parameter_noinfo
+extern uint32_t mem_00925134;
+
+// @name Unknown::AdvanceNodeAndDispatch
+// @class Unknown
+// @summary Validates the links at self+0x08 and self+0x0C, advances self+0x0C to its successor, sets self+0x00 to 1, dispatches via ext_00466BA0 on the subobject at self+0x38, and returns true; returns false when the current node's count is <= 1.
+// @field Unknown +0x00 uint8_t flag
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+bool fn_00661F10(void* self) {
+    auto invalid_parameter = [] {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    };
+    // 32-bit guest address -> host pointer
+    auto at = [](uint32_t addr) {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+    };
+
+    if (lift_field<uint32_t>(self, 0x08) == 0) {
+        invalid_parameter();
+    }
+    {
+        uint32_t a = lift_field<uint32_t>(self, 0x08);
+        uint32_t b = lift_field<uint32_t>(self, 0x0C);
+        if (b == lift_field<uint32_t>(at(a), 0x04)) {
+            invalid_parameter();
+        }
+    }
+
+    if (lift_field<int32_t>(at(lift_field<uint32_t>(self, 0x0C)), 0x08) <= 1) {
+        return false;
+    }
+
+    if (lift_field<uint32_t>(self, 0x08) == 0) {
+        invalid_parameter();
+    }
+
+    uint32_t next = lift_field<uint32_t>(at(lift_field<uint32_t>(self, 0x0C)), 0x04);
+    lift_field<uint32_t>(self, 0x0C) = next;
+
+    {
+        uint32_t a = lift_field<uint32_t>(self, 0x08);
+        if (next == lift_field<uint32_t>(at(a), 0x04)) {
+            invalid_parameter();
+        }
+    }
+
+    lift_field<uint8_t>(self, 0x00) = 1;
+    ext_00466BA0(static_cast<uint8_t*>(self) + 0x38,
+                static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)),
+                0);
+    return true;
+}
+} // namespace lift_00661F10

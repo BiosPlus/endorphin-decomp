@@ -47859,6 +47859,13 @@
     "summary": "Checks if a checked iterator points to the first element of its container",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00661F10": {
+    "name": "Unknown::AdvanceNodeAndDispatch",
+    "class": "Unknown",
+    "signature": "bool fn_00661F10(void* self)",
+    "summary": "Validates the links at self+0x08 and self+0x0C, advances self+0x0C to its successor, sets self+0x00 to 1, dispatches via ext_00466BA0 on the subobject at self+0x38, and returns true; returns false when the current node's count is \u003c= 1.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00662120": {
     "name": "ConfigureAndDispatchFromSource",
     "signature": "void fn_00662120(void* self)",

@@ -1,0 +1,34 @@
+{
+  "va": "0x00661F10",
+  "size": 91,
+  "orig_symbol": "sub_00661F10",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::AdvanceNodeAndDispatch",
+  "class": "Unknown",
+  "signature": "bool fn_00661F10(void* self)",
+  "summary": "Validates the links at self+0x08 and self+0x0C, advances self+0x0C to its successor, sets self+0x00 to 1, dispatches via ext_00466BA0 on the subobject at self+0x38, and returns true; returns false when the current node's count is \u003c= 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:16:49Z"
+}
