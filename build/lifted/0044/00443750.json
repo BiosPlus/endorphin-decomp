@@ -1,0 +1,28 @@
+{
+  "va": "0x00443750",
+  "size": 528,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_4",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/DragSelectState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/DragSelectState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_4",
+  "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+  "signature": "bool fn_00443750(void* self, uint32_t flags, int32_t a, int32_t b)",
+  "summary": "Maps the two int range args through the view's time conversion, then either dispatches the selection list (flag 0x8, optionally with flag 0x4 scanning) or runs the hit-test fallback, and invalidates the window.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:14:43Z"
+}

@@ -5672,6 +5672,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00497090 (NMData::Transition::vfunc_37).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00443750": {
+    "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_4",
+    "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+    "signature": "bool fn_00443750(void* self, uint32_t flags, int32_t a, int32_t b)",
+    "summary": "Maps the two int range args through the view's time conversion, then either dispatches the selection list (flag 0x8, optionally with flag 0x4 scanning) or runs the hit-test fallback, and invalidates the window.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/DragSelectState.cpp"
+  },
   "0x00443960": {
     "name": "InitDerivedWithTag",
     "signature": "void* fn_00443960(void* self, uint32_t arg, uint32_t unused_arg)",
