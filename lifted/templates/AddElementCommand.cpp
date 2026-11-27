@@ -253,3 +253,56 @@ void fn_00501ED0(void* self) {
 }
 } // namespace lift_00528370
 } // namespace lift_00501ED0
+
+// [0x00517910]
+namespace lift_00517910 {
+// @name PointainerWithUndo<UndoablePointainerVector<Interpreter>>::AddElementCommand::vfunc_2
+// @class PointainerWithUndo<UndoablePointainerVector<Interpreter>>::AddElementCommand
+// @summary Swaps the pending element pointer at +0x1C into +0x18 (releasing the old one via its vfunc_0), updates the container via ext_00527EC0, then fires the optional callback object at +0x24 and ext_00517510 on +0x14.
+// @field PointainerWithUndo<UndoablePointainerVector<Interpreter>>::AddElementCommand +0x10 void* field_0x10
+// @field PointainerWithUndo<UndoablePointainerVector<Interpreter>>::AddElementCommand +0x14 void* field_0x14
+// @field PointainerWithUndo<UndoablePointainerVector<Interpreter>>::AddElementCommand +0x18 void* field_0x18
+// @field PointainerWithUndo<UndoablePointainerVector<Interpreter>>::AddElementCommand +0x1C void* field_0x1c
+// @field PointainerWithUndo<UndoablePointainerVector<Interpreter>>::AddElementCommand +0x20 uint32_t field_0x20
+// @field PointainerWithUndo<UndoablePointainerVector<Interpreter>>::AddElementCommand +0x24 void* field_0x24
+
+extern int32_t __thiscall ext_00527EC0(void* self, uintptr_t* target_ptr);
+extern void __thiscall ext_00517510(void* self, void* arg);
+
+namespace lift_00517910 {
+
+void __thiscall fn_00517910(void* self) {
+    auto* esi = static_cast<unsigned char*>(self);
+    auto field = [&](std::ptrdiff_t off) -> uintptr_t& {
+        return *reinterpret_cast<uintptr_t*>(esi + off);
+    };
+
+    uintptr_t ebx = field(0x1C);
+    uintptr_t ecx = field(0x18);
+    if (ebx != ecx && ecx != 0) {
+        void* obj = reinterpret_cast<void*>(ecx);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VFunc0 = void(__thiscall*)(void* self_, int32_t flag);
+        reinterpret_cast<VFunc0>(vtbl[0])(obj, 1);
+    }
+    field(0x18) = ebx;
+
+    ext_00527EC0(reinterpret_cast<void*>(field(0x10)),
+                 reinterpret_cast<uintptr_t*>(esi + 0x1C));
+
+    if (field(0x24) != 0) {
+        void* obj = reinterpret_cast<void*>(field(0x24));
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VFunc1 = void(__thiscall*)(void* self_, uintptr_t a, uint32_t b);
+        reinterpret_cast<VFunc1>(vtbl[1])(obj, field(0x1C),
+                                          *reinterpret_cast<uint32_t*>(esi + 0x20));
+    }
+
+    if (field(0x14) != 0) {
+        ext_00517510(reinterpret_cast<void*>(field(0x14)),
+                     reinterpret_cast<void*>(field(0x1C)));
+    }
+}
+
+} // namespace lift_00517910
+} // namespace lift_00517910

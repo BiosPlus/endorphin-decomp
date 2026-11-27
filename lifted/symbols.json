@@ -24219,6 +24219,13 @@
     "summary": "Forwards its argument to CallSlot3OnEachEntry (0x005170D0) on this, then calls 0x00678D70 on this with flag 1.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00517910": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_2",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
+    "signature": "void __thiscall fn_00517910(void* self)",
+    "summary": "Swaps the pending element pointer at +0x1C into +0x18 (releasing the old one via its vfunc_0), updates the container via ext_00527EC0, then fires the optional callback object at +0x24 and ext_00517510 on +0x14.",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
+  },
   "0x005179E0": {
     "name": "RangeOwner::destroyOwnedRange",
     "class": "RangeOwner",

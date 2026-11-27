@@ -1,0 +1,52 @@
+{
+  "va": "0x00517910",
+  "size": 84,
+  "orig_symbol": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_2",
+  "src_path": "src/templates/AddElementCommand.cpp",
+  "lifted_path": "lifted/templates/AddElementCommand.cpp",
+  "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_2",
+  "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
+  "signature": "void __thiscall fn_00517910(void* self)",
+  "summary": "Swaps the pending element pointer at +0x1C into +0x18 (releasing the old one via its vfunc_0), updates the container via ext_00527EC0, then fires the optional callback object at +0x24 and ext_00517510 on +0x14.",
+  "fields": [
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:25Z"
+}
