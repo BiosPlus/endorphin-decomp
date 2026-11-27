@@ -2943,6 +2943,12 @@
     "summary": "Copies a range of 36-byte structs backward, assigning their embedded std::string fields.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00427550": {
+    "name": "ResetChildAndAssignName",
+    "signature": "void fn_00427550(void* self, const char* name)",
+    "summary": "Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004275C0": {
     "name": "sub_00421AB0",
     "class": "Unknown",

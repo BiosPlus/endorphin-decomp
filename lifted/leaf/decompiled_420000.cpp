@@ -1998,3 +1998,102 @@ void __thiscall sub_004273F0(void* self) {
     lift_field<uint8_t*>(it, 0x4) = parent;
 }
 } // namespace lift_004273F0
+
+// [0x00427550] sub_00427550 (105 bytes)
+namespace lift_00427550 {
+// Known callee 0x0063F8D0: clearOwnedObjects (Deletes all non-null objects in the vector at +0x24 and clears it.)
+extern void ext_0063F8D0(void* self);
+// Known callee 0x00640270: Unknown::assignOrCreateChild (If this+0x34 holds a child, assigns name into child+0x24; otherwise allocates a 0x40-byte Unknown, constructs it from (this, name), and passes it to sub_00640240.)
+extern void ext_00640270(void* self, void* name);
+
+// IAT slots for MSVCP80 std::string ctor/dtor (replaced by std::string below).
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+// .rdata/global data referenced by the original routine's data table; metadata only.
+extern int mem_00ACD9DC;
+extern int mem_00ACD9E0;
+extern int mem_00ACD9E4;
+extern int mem_00ACD9E8;
+extern int mem_00ACD9EC;
+extern int mem_00ACD9F0;
+extern int mem_00ACD9F4;
+extern int mem_00ACD9F8;
+extern int mem_00ACD9FC;
+extern int mem_00ACDA00;
+extern int mem_00ACDA04;
+extern int mem_00ACDA08;
+extern int mem_00ACDA0C;
+extern int mem_00ACDA10;
+extern int mem_00ACDA14;
+extern int mem_00ACDA18;
+extern int mem_00ACDA1C;
+extern int mem_00ACDA20;
+extern int mem_00ACDA24;
+extern int mem_00ACDA28;
+extern int mem_00ACDA2C;
+extern int mem_00ACDA30;
+extern int mem_00ACDA34;
+extern int mem_00ACDA38;
+extern int mem_00ACDA3C;
+extern int mem_00ACDA40;
+extern int mem_00ACDA44;
+extern int mem_00ACDA48;
+extern int mem_00ACDA4C;
+extern int mem_00ACDA50;
+extern int mem_00ACDA54;
+extern int mem_00ACDA58;
+extern int mem_00ACDA5C;
+extern int mem_00ACDA60;
+extern int mem_00ACDA64;
+extern int mem_00ACDA68;
+extern int mem_00ACDA6C;
+extern int mem_00ACDA70;
+extern int mem_00ACDA74;
+extern int mem_00ACDA78;
+extern int mem_00ACDA7C;
+extern int mem_00ACDA80;
+extern int mem_00ACDA84;
+extern int mem_00ACDA88;
+extern int mem_00ACDA8C;
+extern int mem_00ACDA90;
+extern int mem_00ACDA94;
+extern int mem_00ACDA98;
+extern int mem_00ACDA9C;
+extern int mem_00ACDAA0;
+extern int mem_00ACDAA4;
+extern int mem_00ACDAA8;
+extern int mem_00ACDAAC;
+
+// @name ResetChildAndAssignName
+// @summary Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.
+// @field Self +0x00 void* field_0x00
+void fn_00427550(void* self, const char* name) {
+    // The owner pointer at this+0x00 is passed as `this` to both callees (thiscall).
+    void* owner = lift_field<void*>(self, 0x00);
+
+    ext_0063F8D0(owner);
+
+    // MSVC std::string temporary (ctor from const char*, dtor at scope end)
+    // replaces the MSVCP80 IAT calls; SEH frame setup/teardown is boilerplate and omitted.
+    std::string str(name);
+    ext_00640270(owner, &str);
+
+    // Metadata-only references to the original data operands (not real accesses).
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    (void)&mem_00ACD9DC; (void)&mem_00ACD9E0; (void)&mem_00ACD9E4; (void)&mem_00ACD9E8;
+    (void)&mem_00ACD9EC; (void)&mem_00ACD9F0; (void)&mem_00ACD9F4; (void)&mem_00ACD9F8;
+    (void)&mem_00ACD9FC; (void)&mem_00ACDA00; (void)&mem_00ACDA04; (void)&mem_00ACDA08;
+    (void)&mem_00ACDA0C; (void)&mem_00ACDA10; (void)&mem_00ACDA14; (void)&mem_00ACDA18;
+    (void)&mem_00ACDA1C; (void)&mem_00ACDA20; (void)&mem_00ACDA24; (void)&mem_00ACDA28;
+    (void)&mem_00ACDA2C; (void)&mem_00ACDA30; (void)&mem_00ACDA34; (void)&mem_00ACDA38;
+    (void)&mem_00ACDA3C; (void)&mem_00ACDA40; (void)&mem_00ACDA44; (void)&mem_00ACDA48;
+    (void)&mem_00ACDA4C; (void)&mem_00ACDA50; (void)&mem_00ACDA54; (void)&mem_00ACDA58;
+    (void)&mem_00ACDA5C; (void)&mem_00ACDA60; (void)&mem_00ACDA64; (void)&mem_00ACDA68;
+    (void)&mem_00ACDA6C; (void)&mem_00ACDA70; (void)&mem_00ACDA74; (void)&mem_00ACDA78;
+    (void)&mem_00ACDA7C; (void)&mem_00ACDA80; (void)&mem_00ACDA84; (void)&mem_00ACDA88;
+    (void)&mem_00ACDA8C; (void)&mem_00ACDA90; (void)&mem_00ACDA94; (void)&mem_00ACDA98;
+    (void)&mem_00ACDA9C; (void)&mem_00ACDAA0; (void)&mem_00ACDAA4; (void)&mem_00ACDAA8;
+    (void)&mem_00ACDAAC;
+}
+} // namespace lift_00427550
