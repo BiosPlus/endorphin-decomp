@@ -1,0 +1,34 @@
+{
+  "va": "0x006B43F0",
+  "size": 46,
+  "orig_symbol": "sub_006B43F0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::initVtableAndFlag_006B43F0",
+  "class": "Unknown",
+  "signature": "__thiscall void* fn_006B43F0(void* self, DWORD arg1, DWORD arg2, BYTE arg3)",
+  "summary": "Thiscall initializer: calls ext_006ADBF0(this, arg1, arg2), stores vtable at +0x00, zeroes DWORD at +0x44, stores BYTE arg3 at +0x48, returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "DWORD",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "BYTE",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:43:52Z"
+}

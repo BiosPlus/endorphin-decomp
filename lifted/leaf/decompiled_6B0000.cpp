@@ -2437,3 +2437,26 @@ uint32_t __thiscall fn_006B9A00(void* ecx, int32_t len, uint32_t* out) {
     return 0;
 }
 } // namespace lift_006B9A00
+
+// [0x006B43F0] sub_006B43F0 (46 bytes)
+namespace lift_006B43F0 {
+// Known callee 0x006ADBF0: sub_006ADBF0 (Constructor initializing vtable, std::map-like tree at +0xc, MFC object at +0x18, and fields)
+extern void ext_006ADBF0(void* self, DWORD arg1, DWORD arg2);
+// Vtable address stored at +0x00 (data in .rdata)
+extern const char mem_00991A38[];
+
+// @name Unknown::initVtableAndFlag_006B43F0
+// @class Unknown
+// @summary Thiscall initializer: calls ext_006ADBF0(this, arg1, arg2), stores vtable at +0x00, zeroes DWORD at +0x44, stores BYTE arg3 at +0x48, returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x44 DWORD field_0x44
+// @field Unknown +0x48 BYTE field_0x48
+
+__thiscall void* fn_006B43F0(void* self, DWORD arg1, DWORD arg2, BYTE arg3) {
+    ext_006ADBF0(self, arg1, arg2);
+    *reinterpret_cast<DWORD*>(self) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_00991A38));
+    lift_field<DWORD>(self, 0x44) = 0;
+    lift_field<BYTE>(self, 0x48) = arg3;
+    return self;
+}
+} // namespace lift_006B43F0

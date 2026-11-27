@@ -65469,6 +65469,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B4080 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B43F0": {
+    "name": "Unknown::initVtableAndFlag_006B43F0",
+    "class": "Unknown",
+    "signature": "__thiscall void* fn_006B43F0(void* self, DWORD arg1, DWORD arg2, BYTE arg3)",
+    "summary": "Thiscall initializer: calls ext_006ADBF0(this, arg1, arg2), stores vtable at +0x00, zeroes DWORD at +0x44, stores BYTE arg3 at +0x48, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B4420": {
     "name": "sub_006B4420",
     "signature": "extern \"C\" void __fastcall fn_006B4420(void* self)",
