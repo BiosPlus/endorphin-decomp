@@ -1,0 +1,28 @@
+{
+  "va": "0x0045ECA0",
+  "size": 272,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_3_off_248",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_3_off_248",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "void fn_0045ECA0(void* self, uint32_t arg)",
+  "summary": "Looks up a key in the view's tree; if found, forwards each nested item to ext_0045EA60, calls the node's vtable slot 0 with 1, and invalidates the view window.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x258",
+      "type": "void*",
+      "name": "field_0x258"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:50:48Z"
+}

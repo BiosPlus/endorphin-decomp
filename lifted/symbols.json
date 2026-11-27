@@ -8218,6 +8218,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x258 and tail-calls sub_0045E690.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x0045ECA0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_3_off_248",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "void fn_0045ECA0(void* self, uint32_t arg)",
+    "summary": "Looks up a key in the view's tree; if found, forwards each nested item to ext_0045EA60, calls the node's vtable slot 0 with 1, and invalidates the view window.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045F0A0": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_3_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

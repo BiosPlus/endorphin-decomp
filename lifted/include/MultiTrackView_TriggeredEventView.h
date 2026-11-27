@@ -11,11 +11,12 @@
 namespace lifted_layout {
 struct MultiTrackView_TriggeredEventView_Fields {
     // +0x0   (unused) self is not     dereferenced  (evidence: 0x0045D8B0)
-    // +0x20  HWND                     field_0x20  (evidence: 0x0045DEB0)
+    // +0x20  HWND                     field_0x20  (evidence: 0x0045DEB0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  HWND                     hwnd  (evidence: 0x0045ECA0) // CONFLICT: multiple definitions at +0x20
     // +0x64  uint8_t                  field_0x64  (evidence: 0x0043C6D0, 0x0043CAB0)
     // +0x1B4 int32_t*                 field_0x1B4  (evidence: 0x0045F0A0)
     // +0x1B8 int32_t*                 field_0x1B8  (evidence: 0x0045F0A0)
-    // +0x258 void*                    field_0x258  (evidence: 0x0045FB00)
+    // +0x258 void*                    field_0x258  (evidence: 0x0045ECA0, 0x0045FB00)
     // +0x2D0 void*                    field_0x2D0  (evidence: 0x0045E470)
     // +0xFFFFFF11 uint8_t                  field_0xFFFFFF11  (evidence: 0x0045DFF0)
     // +0xFFFFFF14 int32_t                  field_0xFFFFFF14  (evidence: 0x0045DFF0)

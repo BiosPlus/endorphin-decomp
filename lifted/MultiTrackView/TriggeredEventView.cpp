@@ -534,3 +534,84 @@ void fn_0045DFF0(void* self, void* arg) {
     }
 }
 } // namespace lift_0045DFF0
+
+// [0x0045ECA0] MultiTrackView::TriggeredEventView::vfunc_3_off_248 (272 bytes)
+namespace lift_0045ECA0 {
+extern int32_t ext_00594000(void);
+extern uint32_t ext_00599F10(uint32_t value);
+extern void* ext_0043DCF0(void* self, uint32_t key);
+extern void ext_0043F8B0(void* self, void* node);
+extern void ext_0045EA60(void* self, uint32_t item);
+extern void ext_0041C9A0();
+extern void ext_00442990();
+extern void ext_00442B60();
+extern void ext_00442B80();
+extern void ext_00442BB0();
+extern void ext_00442BD0();
+extern void ext_00442C40();
+extern void ext_004436B0();
+extern void ext_00443700();
+extern void ext_00443960();
+extern void ext_006A5C62();
+extern int mem_00925134;
+extern int mem_00925688;
+
+// @name MultiTrackView::TriggeredEventView::vfunc_3_off_248
+// @class MultiTrackView::TriggeredEventView
+// @summary Looks up a key in the view's tree; if found, forwards each nested item to ext_0045EA60, calls the node's vtable slot 0 with 1, and invalidates the view window.
+// @field MultiTrackView::TriggeredEventView +0x20 HWND hwnd
+// @field MultiTrackView::TriggeredEventView +0x258 void* field_0x258
+void fn_0045ECA0(void* self, uint32_t arg) {
+    (void)arg; // stack argument is pushed by the original but never read
+    (void)&mem_00925134; // CRT _invalid_parameter_noinfo pointer; only used by debug-bounds asserts, dropped
+    // Metadata-only references: these callees are listed for this address but the
+    // bytes never call them. Taking the address changes nothing at runtime.
+    (void)&ext_0041C9A0; (void)&ext_00442990; (void)&ext_00442B60; (void)&ext_00442B80;
+    (void)&ext_00442BB0; (void)&ext_00442BD0; (void)&ext_00442C40; (void)&ext_004436B0;
+    (void)&ext_00443700; (void)&ext_00443960; (void)&ext_006A5C62;
+
+    // Converts a 32-bit address value read from guest-layout memory to a pointer.
+    auto as_ptr = [](uint32_t v) -> void* {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+    };
+
+    // `self` is the ContainerObserver<CharacterData> subobject at +0x248.
+    void* tev = static_cast<uint8_t*>(self) - 0x248;
+
+    int32_t g = ext_00594000();
+    uint32_t key = ext_00599F10(static_cast<uint32_t>(g));
+    void* node = ext_0043DCF0(tev, key);
+    if (node == nullptr) {
+        return;
+    }
+
+    // node: +0x08 = first slot, +0x0C = last slot (4-byte entries).
+    uint32_t cur = lift_field<uint32_t>(node, 0x08);
+    const uint32_t last = lift_field<uint32_t>(node, 0x0C);
+    while (cur != last) {
+        // Each slot holds a pointer to an element; element +0x18..+0x1C is a
+        // begin/end range of 4-byte items.
+        void* elem = as_ptr(lift_field<uint32_t>(as_ptr(cur), 0));
+        uint32_t it = lift_field<uint32_t>(elem, 0x18);
+        const uint32_t end = lift_field<uint32_t>(elem, 0x1C);
+        while (it != end) {
+            ext_0045EA60(static_cast<uint8_t*>(self) + 0x10,
+                         lift_field<uint32_t>(as_ptr(it), 0));
+            it += 4;
+        }
+        cur += 4;
+    }
+
+    ext_0043F8B0(tev, node);
+
+    // Virtual call: node->vtable[0](node, 1).
+    void* vtbl = lift_field<void*>(node, 0);
+    using VFn = void (*)(void*, uint32_t);
+    reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0))(node, 1);
+
+    // InvalidateRect(hwnd, NULL, TRUE) through the IAT slot.
+    void* hwnd = lift_field<void*>(self, -0x228);
+    using InvalidateFn = int (*)(void*, const void*, int);
+    reinterpret_cast<InvalidateFn>(as_ptr(static_cast<uint32_t>(mem_00925688)))(hwnd, nullptr, 1);
+}
+} // namespace lift_0045ECA0
