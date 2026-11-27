@@ -353,6 +353,7 @@ struct Unknown_Fields {
     // +0x8   void*                    ownedB  (evidence: 0x0050EDF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    ownedObjectA  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    parent  (evidence: 0x005942D0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void* field_0x08 (child object pointer passed as this in the flagged path)  (evidence: 0x00711BE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    peer  (evidence: 0x00532B40) // CONFLICT: multiple definitions at +0x8
     // +0x8   float* field_0x08 (end-of-data pointer)  (evidence: 0x00607F20) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (end pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x8

@@ -71837,6 +71837,13 @@
     "summary": "Loads the sub-object at this+0x8; if it is null returns 0, otherwise calls its vtable slot 0 with (0, 0x98ABD146) and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711BE0": {
+    "name": "Unknown::LookupIndexedChildValue",
+    "class": "Unknown",
+    "signature": "int32_t __thiscall fn_00711BE0(void* self, int32_t index)",
+    "summary": "If CompareSubObjectWith0x40 is false and subobject flag bit 9 is set, calls the function pointer at subobject +0x2c with self+0x08 and index; otherwise returns ext_006E7460 of child[index] from the list at subobject +0x2c, or 0 if the list is null or index \u003e= its count.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711CF0": {
     "name": "SetOrClearFlags78",
     "signature": "void SetOrClearFlags78(SetOrClearFlags78Self* self, uint32_t mask, uint8_t flag)",

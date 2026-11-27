@@ -1,0 +1,22 @@
+{
+  "va": "0x00711BE0",
+  "size": 128,
+  "orig_symbol": "sub_00711BE0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::LookupIndexedChildValue",
+  "class": "Unknown",
+  "signature": "int32_t __thiscall fn_00711BE0(void* self, int32_t index)",
+  "summary": "If CompareSubObjectWith0x40 is false and subobject flag bit 9 is set, calls the function pointer at subobject +0x2c with self+0x08 and index; otherwise returns ext_006E7460 of child[index] from the list at subobject +0x2c, or 0 if the list is null or index \u003e= its count.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (child object pointer passed as this in the flagged",
+      "name": "path)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:13:03Z"
+}

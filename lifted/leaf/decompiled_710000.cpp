@@ -2378,3 +2378,54 @@ void fn_0071B870(void* self, double x) {
     }
 }
 } // namespace lift_0071B870
+
+// [0x00711BE0] sub_00711BE0 (128 bytes)
+namespace lift_00711BE0 {
+// Known callee 0x00711A80: Unknown::CompareSubObjectWith0x40 (Forwards the constant 0x40 as the argument to CompareArgWithSubObjectField and returns its result.)
+extern uint8_t __fastcall ext_00711A80(void* self);
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall ext_0071E680(void* self);
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t __fastcall ext_006E7460(void* self);
+
+// @name Unknown::LookupIndexedChildValue
+// @class Unknown
+// @summary If CompareSubObjectWith0x40 is false and subobject flag bit 9 is set, calls the function pointer at subobject +0x2c with self+0x08 and index; otherwise returns ext_006E7460 of child[index] from the list at subobject +0x2c, or 0 if the list is null or index >= its count.
+// @field Unknown +0x08 void* field_0x08 (child object pointer passed as this in the flagged path)
+//
+// Subobject (ext_0071E680(self), i.e. self+0x40) offsets used here, not yet named:
+//   +0x00 uint32_t flags (bit 9 selects the function-pointer path)
+//   +0x2c pointer: function pointer in the flagged path, otherwise list pointer
+//   list +0x04 int32_t count; list +0x14 uint32_t child-pointer array (32-bit pointers)
+using IndexedCallFn = int32_t(__thiscall*)(void*, int32_t);
+
+int32_t __thiscall fn_00711BE0(void* self, int32_t index) {
+    if (ext_00711A80(self) == 0) {
+        void* flagSub = ext_0071E680(self);
+        if (((lift_field<uint32_t>(flagSub, 0x0) >> 9) & 1u) != 0) {
+            void* sub = ext_0071E680(self);
+            IndexedCallFn fn = lift_field<IndexedCallFn>(sub, 0x2c);
+            void* child = lift_field<void*>(self, 0x8);
+            return fn(child, index);
+        }
+    }
+
+    void* sub1 = ext_0071E680(self);
+    if (lift_field<void*>(sub1, 0x2c) == nullptr) {
+        return 0;
+    }
+    void* sub2 = ext_0071E680(self);
+    if (index >= lift_field<int32_t>(lift_field<void*>(sub2, 0x2c), 0x4)) {
+        return 0;
+    }
+    void* sub3 = ext_0071E680(self);
+    void* list = lift_field<void*>(sub3, 0x2c);
+    if (index >= lift_field<int32_t>(list, 0x4)) {
+        return 0;
+    }
+    void* array = lift_field<void*>(list, 0x14);
+    const uint32_t childAddr = lift_field<uint32_t>(array, static_cast<ptrdiff_t>(index) * 4);
+    void* childObj = reinterpret_cast<void*>(static_cast<uintptr_t>(childAddr));
+    return ext_006E7460(childObj);
+}
+} // namespace lift_00711BE0
