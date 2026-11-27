@@ -2176,3 +2176,33 @@ void __thiscall fn_00466870(void* self) {
     destroy_member(base + 0x10);
 }
 } // namespace lift_00466870
+
+// [0x00466910] sub_00466910 (86 bytes)
+namespace lift_00466910 {
+// Known callee 0x006619D0: Unknown::copyFieldsFrom (Copy-assigns the three DWORD fields from src into self (skipping self-assignment) and sets the flag byte at +0x00 to 1; returns self.)
+extern void ext_006619D0();
+// Known callee 0x00466870: destroyTwoMembers_00466870 (Destroys two embedded 0x28-byte member objects at +0x38 and +0x10 by freeing their +0x18 buffers and calling sub_00678DE0.)
+extern void ext_00466870();
+
+// @name Unknown::copyAndReset
+// @class Unknown
+// @summary Copy-assigns the embedded object at +0x04 into the object pointed to by +0x00, sets that object's flag byte to 1, then destroys the embedded object at +0x04.
+// @field Unknown +0x00 void* target
+// @field Unknown +0x04 uint8_t member[0x28]
+void fn_00466910(void* self) {
+    using CopyFn = void* (*)(void* dst, const void* src);
+    using DestroyFn = void (*)(void* member);
+
+    void* target = lift_field<void*>(self, 0x00);
+    void* member = static_cast<uint8_t*>(self) + 0x04;
+
+    // Copy fields from member into *target (returns target; result unused).
+    reinterpret_cast<CopyFn>(ext_006619D0)(target, member);
+
+    // Target pointer is re-read after the copy call, matching the original code.
+    void* reloaded = lift_field<void*>(self, 0x00);
+    lift_field<uint8_t>(reloaded, 0x00) = 1;
+
+    reinterpret_cast<DestroyFn>(ext_00466870)(static_cast<uint8_t*>(self) + 0x04);
+}
+} // namespace lift_00466910

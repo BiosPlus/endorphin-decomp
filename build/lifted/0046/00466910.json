@@ -1,0 +1,28 @@
+{
+  "va": "0x00466910",
+  "size": 86,
+  "orig_symbol": "sub_00466910",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::copyAndReset",
+  "class": "Unknown",
+  "signature": "void fn_00466910(void* self)",
+  "summary": "Copy-assigns the embedded object at +0x04 into the object pointed to by +0x00, sets that object's flag byte to 1, then destroys the embedded object at +0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "member[0x28]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:36:06Z"
+}

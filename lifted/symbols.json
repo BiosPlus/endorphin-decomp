@@ -7960,6 +7960,13 @@
     "summary": "Destroys two embedded 0x28-byte member objects at +0x38 and +0x10 by freeing their +0x18 buffers and calling sub_00678DE0.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00466910": {
+    "name": "Unknown::copyAndReset",
+    "class": "Unknown",
+    "signature": "void fn_00466910(void* self)",
+    "summary": "Copy-assigns the embedded object at +0x04 into the object pointed to by +0x00, sets that object's flag byte to 1, then destroys the embedded object at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00466BA0": {
     "name": "DispatchRangeWithDefault",
     "signature": "void fn_00466BA0(void* self, uint32_t arg1, uint32_t arg2)",
@@ -49254,6 +49261,12 @@
     "class": "Unknown",
     "signature": "extern \"C\" int mem_00925134;   // IAT slot for _invalid_parameter_noinfo (indirect call target) [[noreturn]] static void invalid_parameter_noinfo()",
     "summary": "Scans forward from an iterator (proxy,ptr) up to the range end at self+0x2C, returning true if value is found.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x0063EFE0": {
+    "name": "sub_0063EFE0",
+    "signature": "uint32_t __thiscall sub_0063EFE0(uint8_t* self, const char* name)",
+    "summary": "Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063F350": {

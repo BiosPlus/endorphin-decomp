@@ -117,6 +117,7 @@ struct Unknown_Fields {
     // +0x0   uint8_t* field_0x00 (pointer to range-holder struct)  (evidence: 0x0067A670, 0x0067F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    subobject  (evidence: 0x006616C0, 0x0079E410) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    table  (evidence: 0x0077F4E0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    target  (evidence: 0x00466910) // CONFLICT: multiple definitions at +0x0
     // +0x0   <unknown> (not accessed directly; the frame-local at [ebp-0x18] is passed as the release target)  (evidence: 0x00559A30) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to a sub-object; dereferenced to reach the target)  (evidence: 0x006BB780) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* obj (node's object pointer; vtable dispatched as this)  (evidence: 0x006FACA0) // CONFLICT: multiple definitions at +0x0
@@ -250,6 +251,7 @@ struct Unknown_Fields {
     // +0x4   void*                    linked  (evidence: 0x006BA780, 0x006BDAF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    m01  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    m_begin  (evidence: 0x00503BC0, 0x00505DC0, 0x0050C4D0, 0x00518030, 0x0051E560) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t                  member[0x28]  (evidence: 0x00466910) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              name  (evidence: 0x00503BC0, 0x005088D0, 0x005DC650) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 next  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    obj_ptr  (evidence: 0x0058A960) // CONFLICT: multiple definitions at +0x4
