@@ -61567,3 +61567,32 @@ void* __stdcall fn_005D76B0(void* out, void** holder) {
     return out;
 }
 } // namespace lift_005D76B0
+
+// [0x005D74A0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_005D74A0 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern std::string* ext_0046C390(std::string* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_obj, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<VideoPlaneData,getYScale>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>
+// @summary Formats the Y scale of the wrapped VideoPlaneData as a trimmed string into out; throws DerivedException if the wrapped pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::VideoPlaneData +0x38 float field_0x38
+std::string* fn_005D74A0(std::string* out, void* self) {
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x38);
+        return ext_0046C390(out, value);
+    }
+
+    // Null path: build a DerivedException on the stack and throw it.
+    alignas(8) uint8_t exc[0x20] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    return out;
+}
+} // namespace lift_005D74A0

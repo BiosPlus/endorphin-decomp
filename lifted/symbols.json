@@ -36406,6 +36406,13 @@
     "summary": "Validity check: dereferences the holder to a VideoPlaneData, returns 1 if its float at +0x38 is \u003e= 1e-6 (NaN yields 0), else 0; a null holder throws.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D74A0": {
+    "name": "ExprParser::ReadMethodType\u003cVideoPlaneData,getYScale\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e",
+    "signature": "std::string* fn_005D74A0(std::string* out, void* self)",
+    "summary": "Formats the Y scale of the wrapped VideoPlaneData as a trimmed string into out; throws DerivedException if the wrapped pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D7650": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
