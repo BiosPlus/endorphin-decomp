@@ -24763,6 +24763,13 @@
     "summary": "For key 0x280, if the receiver is absent from the global 32-bit registry (mem_00AE29D0 +0x34..+0x38) store it via ext_004E1B30; otherwise (or for other keys) forward to ext_004C3410. Returns out.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004E1D60": {
+    "name": "NMData::AnimationEventData::vfunc_73",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" void __thiscall fn_004E1D60(void* self, const int32_t* range)",
+    "summary": "If field +0x160 equals range[1], adds (range[0] - field +0x15C) into field +0x9A0; then runs ForceEventData::vfunc_73, sub_004E1AD0 and the slot-0x154 dispatch on ext_00594000()+0x258; finally tail-calls ext_0047C480 on mem_00AE29D0 with field +0x168.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004E1F50": {
     "name": "SubobjectListDrainAndDispatch",
     "class": "Unknown",

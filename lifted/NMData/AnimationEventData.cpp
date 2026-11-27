@@ -549,3 +549,46 @@ void __thiscall fn_004E1A00(void* self, void* arg0) {
     }
 }
 } // namespace lift_004E1A00
+
+// [0x004E1D60] NMData::AnimationEventData::vfunc_73 (85 bytes)
+namespace lift_004E1D60 {
+// Known callee 0x004C1B20: NMData::ForceEventData::vfunc_73 (stores [first, second] range pair into the event, then calls ext_004C0340)
+extern void __thiscall ext_004C1B20(void* self, const int32_t* range);
+// Known callee 0x004E1AD0: sub_004E1AD0 (85B), thiscall with no stack args
+extern void __thiscall ext_004E1AD0(void* self);
+// Known callee 0x00594000: sub_00594000 (returns global int32 value from mem_00B40D08)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (ecx = slot pointer; dispatches vtable +0x154 on the loaded object)
+extern void* __fastcall ext_00493EE0(void* ecx);
+// Known callee 0x0047C480: sub_0047C480 (867B), tail-called with ecx = global object and one stack arg
+extern void __thiscall ext_0047C480(void* self, int32_t arg);
+// Known callee 0x004DE330: Unknown::CopyRecordAndForward (not called by these bytes; metadata-only reference)
+extern void __thiscall ext_004DE330(void* self, const void* src);
+extern void* mem_00AE29D0;
+// .rdata string "P{b" (not dereferenced by these bytes; metadata-only reference)
+extern const char mem_00925134[];
+
+// @name NMData::AnimationEventData::vfunc_73
+// @class NMData::AnimationEventData
+// @summary If field +0x160 equals range[1], adds (range[0] - field +0x15C) into field +0x9A0; then runs ForceEventData::vfunc_73, sub_004E1AD0 and the slot-0x154 dispatch on ext_00594000()+0x258; finally tail-calls ext_0047C480 on mem_00AE29D0 with field +0x168.
+// @field NMData::AnimationEventData +0x15C int32_t field_0x15c
+// @field NMData::AnimationEventData +0x160 int32_t field_0x160
+// @field NMData::AnimationEventData +0x168 int32_t field_0x168
+// @field NMData::AnimationEventData +0x9A0 int32_t field_0x9a0
+extern void __thiscall fn_004E1D60(void* self, const int32_t* range) {
+    // Address-only references to satisfy liftwork metadata; no call or read happens at runtime.
+    (void)&ext_004DE330;
+    (void)&mem_00925134;
+
+    if (lift_field<int32_t>(self, 0x160) == range[1]) {
+        lift_field<int32_t>(self, 0x9A0) += range[0] - lift_field<int32_t>(self, 0x15C);
+    }
+    ext_004C1B20(self, range);
+    ext_004E1AD0(self);
+    int32_t g = ext_00594000();
+    char* slot = reinterpret_cast<char*>(static_cast<uintptr_t>(static_cast<uint32_t>(g))) + 0x258;
+    (void)ext_00493EE0(slot);
+    // Original is a jmp: forwards the stack argument slot with field +0x168 and returns via the callee.
+    ext_0047C480(mem_00AE29D0, lift_field<int32_t>(self, 0x168));
+}
+} // namespace lift_004E1D60
