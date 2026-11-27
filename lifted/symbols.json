@@ -31076,6 +31076,13 @@
     "summary": "Calls vtable slot 3, looks up two names in the owner's item vector, copies the first match's string into this+0x04, and stores the string-table index of the second match at this+0x20 (skipped if the second lookup hits a sentinel).",
     "lifted_path": "lifted/NMData/Channel.cpp"
   },
+  "0x00519FA0": {
+    "name": "NMData::Channel::vfunc_2",
+    "class": "NMData::Channel",
+    "signature": "void* __thiscall fn_00519FA0(void* self, void* out)",
+    "summary": "Serializes channel name and interpolation type into an output node.",
+    "lifted_path": "lifted/NMData/Channel.cpp"
+  },
   "0x0051A000": {
     "name": "Unknown::ApplyFloatFromNodeOrDefault",
     "class": "Unknown",
