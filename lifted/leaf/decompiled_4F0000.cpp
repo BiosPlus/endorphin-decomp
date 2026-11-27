@@ -1550,3 +1550,22 @@ void* fn_004F9EA0(void) {
     return static_cast<void*>(mem_00AEA594);
 }
 } // namespace lift_004F9EA0
+
+// [0x004FDF80]
+namespace lift_004FDF80 {
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_004FDD70(void* self, void* a1, uint32_t a2, uint32_t a3, uint32_t a4);
+extern void* __cdecl ext_00665870(void);
+extern uint32_t __thiscall ext_00666670(void* self, void* obj);
+
+// @name sub_004FDF80
+// @summary Allocates and constructs a 0x28-byte object via ext_004FDD70 and registers it with ext_00666670 on the global manager from ext_00665870.
+uint32_t __thiscall fn_004FDF80(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    void* obj = ext_006A5C62(0x28);
+    if (obj != nullptr) {
+        obj = ext_004FDD70(obj, self, a1, a2, a3);
+    }
+    void* mgr = ext_00665870();
+    return ext_00666670(mgr, obj);
+}
+} // namespace lift_004FDF80

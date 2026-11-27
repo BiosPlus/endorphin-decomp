@@ -1,0 +1,13 @@
+{
+  "va": "0x004FDF80",
+  "size": 117,
+  "orig_symbol": "sub_004FDF80",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "sub_004FDF80",
+  "signature": "uint32_t __thiscall fn_004FDF80(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Allocates and constructs a 0x28-byte object via ext_004FDD70 and registers it with ext_00666670 on the global manager from ext_00665870.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:19:58Z"
+}
