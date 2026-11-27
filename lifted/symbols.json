@@ -14008,6 +14008,12 @@
     "summary": "Lazily constructs the shared static object on first use, then stores its address into the out argument at +0x04.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004B74E0": {
+    "name": "InitOnceGlobalString_004B74E0",
+    "signature": "void* fn_004B74E0()",
+    "summary": "One-time guarded initializer for the global object at 0x00AE161C; registers its teardown via ext_006A6C87 and returns the global's address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B7540": {
     "name": "InitOnceGlobalString_004B7540",
     "signature": "void* fn_004B7540()",
@@ -15829,6 +15835,12 @@
     "signature": "extern \"C\" void __fastcall fn_004CE570(void* self, int edx_unused, float value)",
     "summary": "Setter storing float argument into field at offset +0x18C.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
+  "0x004CE590": {
+    "name": "findStringTableIndex",
+    "signature": "extern \"C\" int32_t fn_004CE590(const void* str)",
+    "summary": "Searches two 7-entry std::string tables for a matching string and returns its 0-based index, or 7 if not found.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
   "0x004CE710": {
     "name": "NMData::IncarnationEventData::vfunc_59",

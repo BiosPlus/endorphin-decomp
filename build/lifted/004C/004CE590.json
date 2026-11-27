@@ -1,0 +1,13 @@
+{
+  "va": "0x004CE590",
+  "size": 95,
+  "orig_symbol": "sub_004CE590",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "findStringTableIndex",
+  "signature": "extern \"C\" int32_t fn_004CE590(const void* str)",
+  "summary": "Searches two 7-entry std::string tables for a matching string and returns its 0-based index, or 7 if not found.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:54:47Z"
+}

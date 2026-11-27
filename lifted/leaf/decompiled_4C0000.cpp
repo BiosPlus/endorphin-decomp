@@ -853,3 +853,36 @@ int __stdcall sub_004CE7B0(const void *str) {
     return 0;
 }
 } // namespace lift_004CE7B0
+
+// [0x004CE590]
+namespace lift_004CE590 {
+// @name findStringTableIndex
+// @summary Searches two 7-entry std::string tables for a matching string and returns its 0-based index, or 7 if not found.
+
+extern uint8_t mem_00924FC4[];
+extern uint8_t mem_00AE51C8[];
+extern uint8_t mem_00AE5290[];
+extern void ext_0067DAD0(void);
+
+extern int32_t fn_004CE590(const void* str) {
+    (void)&ext_0067DAD0;
+    using StringEqFn = uint8_t(__cdecl*)(const void*, const void*);
+    auto string_eq = reinterpret_cast<StringEqFn>(*reinterpret_cast<const uint32_t*>(mem_00924FC4));
+
+    const uint8_t* entry = mem_00AE51C8;
+    for (int32_t i = 0; i < 7; ++i, entry += 0x1C) {
+        if (string_eq(str, entry) != 0) {
+            return i;
+        }
+    }
+
+    entry = mem_00AE5290;
+    for (int32_t i = 0; i < 7; ++i, entry += 0x1C) {
+        if (string_eq(str, entry) != 0) {
+            return i;
+        }
+    }
+
+    return 7;
+}
+} // namespace lift_004CE590
