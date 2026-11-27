@@ -1,0 +1,28 @@
+{
+  "va": "0x00472250",
+  "size": 154,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRuntimeEngine,int,getNumTicksToRun\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "void __thiscall fn_00472250(void* self, void* arg)",
+  "summary": "Reads RuntimeEngine::getNumTicksToRun() into the expression value wrapper and invokes its virtual update method, or throws if the target object is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T09:03:18Z"
+}
