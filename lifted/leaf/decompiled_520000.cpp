@@ -1763,3 +1763,45 @@ void __thiscall sub_0052A1C0(void* self) {
     lift_field<uint8_t*>(it, 0x04) = parent;
 }
 } // namespace lift_0052A1C0
+
+// [0x00527690]
+namespace lift_00527690 {
+// @name sub_00527690
+// @summary Iterates over a vector of objects at +0x14 and invokes vtable[2](arg0, arg1) on each
+// @field Class +0x18 uint32_t* field_0x18
+// @field Class +0x1c uint32_t* field_0x1c
+
+
+extern void (*mem_00925134)();
+
+void __thiscall sub_00527690(void* self, uint32_t arg0, uint32_t arg1) {
+    uint8_t* esi = reinterpret_cast<uint8_t*>(self) + 0x14;
+    uint32_t* edi = *reinterpret_cast<uint32_t**>(esi + 0x4);
+    if (edi > *reinterpret_cast<uint32_t**>(esi + 0x8)) {
+        mem_00925134();
+    }
+
+    for (;;) {
+        uint32_t* ebx = *reinterpret_cast<uint32_t**>(esi + 0x8);
+        if (*reinterpret_cast<uint32_t**>(esi + 0x4) > ebx) {
+            mem_00925134();
+        }
+        if (edi == ebx) {
+            break;
+        }
+        if (edi >= *reinterpret_cast<uint32_t**>(esi + 0x8)) {
+            mem_00925134();
+        }
+
+        void* obj = reinterpret_cast<void*>(*edi);
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(vtable[2]);
+        fn(obj, arg0, arg1);
+
+        if (edi >= *reinterpret_cast<uint32_t**>(esi + 0x8)) {
+            mem_00925134();
+        }
+        ++edi;
+    }
+}
+} // namespace lift_00527690

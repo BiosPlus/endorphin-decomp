@@ -1,0 +1,27 @@
+{
+  "va": "0x00527690",
+  "size": 109,
+  "orig_symbol": "sub_00527690",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "sub_00527690",
+  "signature": "void __thiscall sub_00527690(void* self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Iterates over a vector of objects at +0x14 and invokes vtable[2](arg0, arg1) on each",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x18",
+      "type": "uint32_t*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x1C",
+      "type": "uint32_t*",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:16:22Z"
+}
