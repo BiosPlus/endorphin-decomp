@@ -6191,3 +6191,48 @@ bool fn_0043AA10(void* self, const void* arg1, const void* arg2, bool arg3) {
     return false;
 }
 } // namespace lift_0043AA10
+
+// [0x00435380]
+namespace lift_00435380 {
+extern void __thiscall ext_00433B70(void* self, int32_t stackArg);
+extern uint32_t __thiscall ext_0044B730(void* self);
+extern uint8_t __thiscall ext_0044B760(void* self);
+extern void* __cdecl ext_00465B30(void);
+extern void __thiscall ext_00469410(void* self, uint32_t index);
+extern uint8_t __thiscall ext_004694E0(void* self, uint32_t index);
+
+// @name resetChildAndSyncDefaultFlags
+// @summary Releases child at +0x100 if active, then ensures global bit flags 0, 1, 5 are set and 2, 4, 12 are cleared, forwarding updates to self.
+// @field Unknown +0x100 void* field_0x100
+extern void __thiscall fn_00435380(void* self) {
+    void* child = lift_field<void*>(self, 0x100);
+    if (child != nullptr && ext_0044B760(child) != 0) {
+        ext_0044B730(lift_field<void*>(self, 0x100));
+    }
+
+    if (ext_004694E0(ext_00465B30(), 0) == 0) {
+        ext_00469410(ext_00465B30(), 0);
+        ext_00433B70(self, 0);
+    }
+    if (ext_004694E0(ext_00465B30(), 1) == 0) {
+        ext_00469410(ext_00465B30(), 1);
+        ext_00433B70(self, 1);
+    }
+    if (ext_004694E0(ext_00465B30(), 5) == 0) {
+        ext_00469410(ext_00465B30(), 5);
+        ext_00433B70(self, 5);
+    }
+    if (ext_004694E0(ext_00465B30(), 2) != 0) {
+        ext_00469410(ext_00465B30(), 2);
+        ext_00433B70(self, 2);
+    }
+    if (ext_004694E0(ext_00465B30(), 4) != 0) {
+        ext_00469410(ext_00465B30(), 4);
+        ext_00433B70(self, 4);
+    }
+    if (ext_004694E0(ext_00465B30(), 0xC) != 0) {
+        ext_00469410(ext_00465B30(), 0xC);
+        ext_00433B70(self, 0xC);
+    }
+}
+} // namespace lift_00435380

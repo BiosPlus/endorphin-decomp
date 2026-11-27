@@ -1,0 +1,21 @@
+{
+  "va": "0x00435380",
+  "size": 281,
+  "orig_symbol": "sub_00435380",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "resetChildAndSyncDefaultFlags",
+  "signature": "extern \"C\" void __thiscall fn_00435380(void* self)",
+  "summary": "Releases child at +0x100 if active, then ensures global bit flags 0, 1, 5 are set and 2, 4, 12 are cleared, forwarding updates to self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "void*",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:52:57Z"
+}
