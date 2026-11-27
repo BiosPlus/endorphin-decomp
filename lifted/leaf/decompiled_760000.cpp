@@ -254,3 +254,34 @@ extern void __stdcall fn_0076B150(
     ext_006D80A0();
 }
 } // namespace lift_0076B150
+
+// [0x007643C0] sub_007643C0 (62 bytes)
+namespace lift_007643C0 {
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* ext_006B9EC0(void* self, const char* s);
+// .rdata string literal passed as the second argument (0x00B5D2C0)
+extern const char mem_00B5D2C0[];
+// IAT slot for MSVCR80 fclose (original: call dword ptr [0x925264]); replaced by standard fclose below
+extern int mem_00925264;
+
+// @name Unknown::resetStream_007643C0
+// @class Unknown
+// @summary Closes the FILE* at +0xac (if any), clears it, then assigns the string literal at 0x00B5D2C0 into the subobject at +0xb4; returns true when the fclose result was 0 (or no stream was open).
+// @field Unknown +0xac FILE* stream
+// @field Unknown +0xb4 void* field_0xb4
+bool fn_007643C0(void* self) {
+    (void)&mem_00925264;
+    auto* base = static_cast<unsigned char*>(self);
+    FILE** stream_slot = reinterpret_cast<FILE**>(base + 0xac);
+
+    int result = 0;
+    if (*stream_slot != nullptr) {
+        result = fclose(*stream_slot);
+    }
+    *stream_slot = nullptr;
+
+    ext_006B9EC0(base + 0xb4, mem_00B5D2C0);
+
+    return result == 0;
+}
+} // namespace lift_007643C0

@@ -1424,6 +1424,7 @@ struct Unknown_Fields {
     // +0xAC  void*                    field_0xac  (evidence: 0x005B6980, 0x005CE8D0, 0x007721B0) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t field_0xac (read from the child at +0x158; becomes `this` for the forward)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t field_0xac (read from the sub-object at self+0x158, not from self)  (evidence: 0x005B6FE0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
+    // +0xAC  FILE*                    stream  (evidence: 0x007643C0) // CONFLICT: multiple definitions at +0xAC
     // +0xB0  uint32_t                 field_0xB0  (evidence: 0x007C58E0, 0x007C8690, 0x007CAF70, 0x007CC5D0, 0x007D48A0, 0x007D8470, 0x007D8710, 0x007DADA0, 0x007DEC80) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8                    field_0xB0  (evidence: 0x00687230) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  void                     field_0xB0  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0xB0
@@ -1439,6 +1440,7 @@ struct Unknown_Fields {
     // +0xB4  float                    field_0xB4  (evidence: 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void*                    field_0xB4  (evidence: 0x0053F9D0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  float                    field_0xb4  (evidence: 0x00547220, 0x00611100) // CONFLICT: multiple definitions at +0xB4
+    // +0xB4  void*                    field_0xb4  (evidence: 0x007643C0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void*                    member  (evidence: 0x00701DF0, 0x00704B00, 0x00704D60, 0x0070AF30) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  int32_t                  mode  (evidence: 0x00464780, 0x004647A0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void** entries (array of entry pointers)  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0xB4

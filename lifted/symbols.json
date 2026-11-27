@@ -78273,6 +78273,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007642D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_760000.cpp"
   },
+  "0x007643C0": {
+    "name": "Unknown::resetStream_007643C0",
+    "class": "Unknown",
+    "signature": "bool fn_007643C0(void* self)",
+    "summary": "Closes the FILE* at +0xac (if any), clears it, then assigns the string literal at 0x00B5D2C0 into the subobject at +0xb4; returns true when the fclose result was 0 (or no stream was open).",
+    "lifted_path": "lifted/leaf/decompiled_760000.cpp"
+  },
   "0x00764400": {
     "name": "sub_00764400",
     "signature": "void* fn_00764400()",
