@@ -45364,6 +45364,13 @@
     "summary": "Reads the object pointer from the argument holder; if non-null, forwards to virtual slot 14 (0x38) on that object, otherwise raises a C++ exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005FCFF0": {
+    "name": "ReadMethodType::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
+    "signature": "void fn_005FCFF0(void* arg)",
+    "summary": "Reads the pointer at arg+0x00; if null throws a DerivedException. Otherwise calls vtable slot 14 on it, initializes a temp from the result, assigns the temp into arg's field_0x04 holder, releases the temp's field_0x04 via vtable slot 30, then dispatches vtable slot 47 of arg's field_0x04 with arg as `this`.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005FD090": {
     "name": "sub_005FD090",
     "signature": "void* fn_005FD090()",

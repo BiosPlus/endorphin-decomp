@@ -83045,3 +83045,57 @@ uint8_t __stdcall fn_0063A270(void** holder, void* arg2) {
 }
 } // namespace lift_00674D80
 } // namespace lift_0063A270
+
+// [0x005FCFF0] ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>::vfunc_47 (156 bytes)
+namespace lift_005FCFF0 {
+// Known callee 0x00672110: sub_00672110 (52B) - initializes a temp holder from a value
+extern void ext_00672110();
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void ext_0041CF50();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>
+// @summary Reads the pointer at arg+0x00; if null throws a DerivedException. Otherwise calls vtable slot 14 on it, initializes a temp from the result, assigns the temp into arg's field_0x04 holder, releases the temp's field_0x04 via vtable slot 30, then dispatches vtable slot 47 of arg's field_0x04 with arg as `this`.
+// @field ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1> +0x04 void* field_0x04
+void fn_005FCFF0(void* arg) {
+    void* v = lift_field<void*>(arg, 0x00);
+    if (v == nullptr) {
+        // Null source: build a DerivedException and throw it with the RTTI/ThrowInfo global.
+        alignas(8) unsigned char exc[16] = {};
+        reinterpret_cast<void (*)(void*)>(&ext_0046C3C0)(exc);
+        reinterpret_cast<void (*)(void*, void*)>(&ext_006A6DD2)(exc, &mem_009DEC1C);
+        return;
+    }
+
+    // v->vtable[14]() (asm offset 0x38), thiscall with v as `this`.
+    void** vt = *reinterpret_cast<void***>(v);
+    using SlotFn0 = void* (*)(void* self);
+    void* r = reinterpret_cast<SlotFn0>(vt[14])(v);
+
+    // temp = holder initialized from r.
+    alignas(8) unsigned char temp[16] = {};
+    reinterpret_cast<void (*)(void*, void*)>(&ext_00672110)(temp, r);
+
+    // arg->assignFromOther(&temp)
+    reinterpret_cast<void (*)(void*, void*)>(&ext_0041CF50)(arg, temp);
+
+    // Release temp.field_0x04 via its vtable slot 30 (asm offset 0x78), passing &temp.
+    void* tf4 = lift_field<void*>(temp, 0x04);
+    if (tf4 != nullptr) {
+        void** vt2 = *reinterpret_cast<void***>(tf4);
+        reinterpret_cast<void (*)(void*, void*)>(vt2[30])(tf4, temp);
+    }
+
+    // arg->field_0x04->vtable[47](arg) (asm offset 0xBC).
+    void* q = lift_field<void*>(arg, 0x04);
+    void** vt3 = *reinterpret_cast<void***>(q);
+    reinterpret_cast<void (*)(void*, void*)>(vt3[47])(q, arg);
+}
+} // namespace lift_005FCFF0
