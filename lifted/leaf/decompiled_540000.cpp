@@ -2232,3 +2232,94 @@ extern void __fastcall fn_00544920(void* self) {
     ext_00543320(esi);
 }
 } // namespace lift_00544920
+
+// [0x00543350] sub_00543350 (152 bytes)
+namespace lift_00543350 {
+// @name InitialVariableValues::ResetDefaults
+// @class InitialVariableValues
+// @summary Resets a block of float and byte state fields to their default values (1.0f or 0.0f) and clears the int at +0x88.
+// @field InitialVariableValues +0x04 float field_0x04
+// @field InitialVariableValues +0x08 float field_0x08
+// @field InitialVariableValues +0x0C float field_0x0C
+// @field InitialVariableValues +0x10 float field_0x10
+// @field InitialVariableValues +0x14 float field_0x14
+// @field InitialVariableValues +0x18 float field_0x18
+// @field InitialVariableValues +0x1C float field_0x1C
+// @field InitialVariableValues +0x20 float field_0x20
+// @field InitialVariableValues +0x24 float field_0x24
+// @field InitialVariableValues +0x28 float field_0x28
+// @field InitialVariableValues +0x2C float field_0x2C
+// @field InitialVariableValues +0x30 float field_0x30
+// @field InitialVariableValues +0x34 float field_0x34
+// @field InitialVariableValues +0x38 float field_0x38
+// @field InitialVariableValues +0x3C float field_0x3C
+// @field InitialVariableValues +0x40 float field_0x40
+// @field InitialVariableValues +0x44 float field_0x44
+// @field InitialVariableValues +0x48 float field_0x48
+// @field InitialVariableValues +0x4C float field_0x4C
+// @field InitialVariableValues +0x50 float field_0x50
+// @field InitialVariableValues +0x54 float field_0x54
+// @field InitialVariableValues +0x58 float field_0x58
+// @field InitialVariableValues +0x5C float field_0x5C
+// @field InitialVariableValues +0x60 float field_0x60
+// @field InitialVariableValues +0x64 float field_0x64
+// @field InitialVariableValues +0x68 float field_0x68
+// @field InitialVariableValues +0x6C float field_0x6C
+// @field InitialVariableValues +0x70 float field_0x70
+// @field InitialVariableValues +0x74 float field_0x74
+// @field InitialVariableValues +0x78 float field_0x78
+// @field InitialVariableValues +0x7C float field_0x7C
+// @field InitialVariableValues +0x80 float field_0x80
+// @field InitialVariableValues +0x88 int32_t field_0x88
+// @field InitialVariableValues +0x90 uint8_t field_0x90
+// @field InitialVariableValues +0x91 uint8_t field_0x91
+// @field InitialVariableValues +0x92 uint8_t field_0x92
+// @field InitialVariableValues +0x93 uint8_t field_0x93
+// @field InitialVariableValues +0x94 uint8_t field_0x94
+// @field InitialVariableValues +0x95 uint8_t field_0x95
+void fn_00543350(void* self) {
+    // Float defaults: 1.0f at +0x04,+0x18,+0x2C,+0x40,+0x44,+0x58,+0x6C,+0x80; 0.0f elsewhere.
+    lift_field<float>(self, 0x04) = 1.0f;
+    lift_field<float>(self, 0x08) = 0.0f;
+    lift_field<float>(self, 0x0C) = 0.0f;
+    lift_field<float>(self, 0x10) = 0.0f;
+    lift_field<float>(self, 0x14) = 0.0f;
+    lift_field<float>(self, 0x18) = 1.0f;
+    lift_field<float>(self, 0x1C) = 0.0f;
+    lift_field<float>(self, 0x20) = 0.0f;
+    lift_field<float>(self, 0x24) = 0.0f;
+    lift_field<float>(self, 0x28) = 0.0f;
+    lift_field<float>(self, 0x2C) = 1.0f;
+    lift_field<float>(self, 0x30) = 0.0f;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x3C) = 0.0f;
+    lift_field<float>(self, 0x40) = 1.0f;
+    lift_field<float>(self, 0x44) = 1.0f;
+    lift_field<float>(self, 0x48) = 0.0f;
+    lift_field<float>(self, 0x4C) = 0.0f;
+    lift_field<float>(self, 0x50) = 0.0f;
+    lift_field<float>(self, 0x54) = 0.0f;
+    lift_field<float>(self, 0x58) = 1.0f;
+    lift_field<float>(self, 0x5C) = 0.0f;
+    lift_field<float>(self, 0x60) = 0.0f;
+    lift_field<float>(self, 0x64) = 0.0f;
+    lift_field<float>(self, 0x68) = 0.0f;
+    lift_field<float>(self, 0x6C) = 1.0f;
+    lift_field<float>(self, 0x70) = 0.0f;
+    lift_field<float>(self, 0x74) = 0.0f;
+    lift_field<float>(self, 0x78) = 0.0f;
+    lift_field<float>(self, 0x7C) = 0.0f;
+    lift_field<float>(self, 0x80) = 1.0f;
+
+    lift_field<int32_t>(self, 0x88) = 0;
+
+    // Byte flags cleared (original uses al, which is 0 from xor eax,eax).
+    lift_field<uint8_t>(self, 0x90) = 0;
+    lift_field<uint8_t>(self, 0x91) = 0;
+    lift_field<uint8_t>(self, 0x92) = 0;
+    lift_field<uint8_t>(self, 0x93) = 0;
+    lift_field<uint8_t>(self, 0x94) = 0;
+    lift_field<uint8_t>(self, 0x95) = 0;
+}
+} // namespace lift_00543350

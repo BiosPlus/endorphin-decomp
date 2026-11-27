@@ -1,0 +1,250 @@
+{
+  "va": "0x00543350",
+  "size": 152,
+  "orig_symbol": "sub_00543350",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "InitialVariableValues::ResetDefaults",
+  "class": "InitialVariableValues",
+  "signature": "void fn_00543350(void* self)",
+  "summary": "Resets a block of float and byte state fields to their default values (1.0f or 0.0f) and clears the int at +0x88.",
+  "fields": [
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "field_0x60"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x64",
+      "type": "float",
+      "name": "field_0x64"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "field_0x6C"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "field_0x70"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x74",
+      "type": "float",
+      "name": "field_0x74"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7C"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x88",
+      "type": "int32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "field_0x90"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x91",
+      "type": "uint8_t",
+      "name": "field_0x91"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x92",
+      "type": "uint8_t",
+      "name": "field_0x92"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x93",
+      "type": "uint8_t",
+      "name": "field_0x93"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x94",
+      "type": "uint8_t",
+      "name": "field_0x94"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x95",
+      "type": "uint8_t",
+      "name": "field_0x95"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:49:44Z"
+}

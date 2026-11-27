@@ -11,7 +11,46 @@
 namespace lifted_layout {
 struct InitialVariableValues_Fields {
     // +0x0   void**                   vtable  (evidence: 0x005272B0, 0x00535610, 0x00545B80)
-    // +0x40  void**                   field_0x40  (evidence: 0x005272C0)
-    // +0x44  void**                   field_0x44  (evidence: 0x005272C0)
+    // +0x4   float                    field_0x04  (evidence: 0x00543350)
+    // +0x8   float                    field_0x08  (evidence: 0x00543350)
+    // +0xC   float                    field_0x0C  (evidence: 0x00543350)
+    // +0x10  float                    field_0x10  (evidence: 0x00543350)
+    // +0x14  float                    field_0x14  (evidence: 0x00543350)
+    // +0x18  float                    field_0x18  (evidence: 0x00543350)
+    // +0x1C  float                    field_0x1C  (evidence: 0x00543350)
+    // +0x20  float                    field_0x20  (evidence: 0x00543350)
+    // +0x24  float                    field_0x24  (evidence: 0x00543350)
+    // +0x28  float                    field_0x28  (evidence: 0x00543350)
+    // +0x2C  float                    field_0x2C  (evidence: 0x00543350)
+    // +0x30  float                    field_0x30  (evidence: 0x00543350)
+    // +0x34  float                    field_0x34  (evidence: 0x00543350)
+    // +0x38  float                    field_0x38  (evidence: 0x00543350)
+    // +0x3C  float                    field_0x3C  (evidence: 0x00543350)
+    // +0x40  float                    field_0x40  (evidence: 0x00543350) // CONFLICT: multiple definitions at +0x40
+    // +0x40  void**                   field_0x40  (evidence: 0x005272C0) // CONFLICT: multiple definitions at +0x40
+    // +0x44  float                    field_0x44  (evidence: 0x00543350) // CONFLICT: multiple definitions at +0x44
+    // +0x44  void**                   field_0x44  (evidence: 0x005272C0) // CONFLICT: multiple definitions at +0x44
+    // +0x48  float                    field_0x48  (evidence: 0x00543350)
+    // +0x4C  float                    field_0x4C  (evidence: 0x00543350)
+    // +0x50  float                    field_0x50  (evidence: 0x00543350)
+    // +0x54  float                    field_0x54  (evidence: 0x00543350)
+    // +0x58  float                    field_0x58  (evidence: 0x00543350)
+    // +0x5C  float                    field_0x5C  (evidence: 0x00543350)
+    // +0x60  float                    field_0x60  (evidence: 0x00543350)
+    // +0x64  float                    field_0x64  (evidence: 0x00543350)
+    // +0x68  float                    field_0x68  (evidence: 0x00543350)
+    // +0x6C  float                    field_0x6C  (evidence: 0x00543350)
+    // +0x70  float                    field_0x70  (evidence: 0x00543350)
+    // +0x74  float                    field_0x74  (evidence: 0x00543350)
+    // +0x78  float                    field_0x78  (evidence: 0x00543350)
+    // +0x7C  float                    field_0x7C  (evidence: 0x00543350)
+    // +0x80  float                    field_0x80  (evidence: 0x00543350)
+    // +0x88  int32_t                  field_0x88  (evidence: 0x00543350)
+    // +0x90  uint8_t                  field_0x90  (evidence: 0x00543350)
+    // +0x91  uint8_t                  field_0x91  (evidence: 0x00543350)
+    // +0x92  uint8_t                  field_0x92  (evidence: 0x00543350)
+    // +0x93  uint8_t                  field_0x93  (evidence: 0x00543350)
+    // +0x94  uint8_t                  field_0x94  (evidence: 0x00543350)
+    // +0x95  uint8_t                  field_0x95  (evidence: 0x00543350)
 };
 } // namespace lifted_layout

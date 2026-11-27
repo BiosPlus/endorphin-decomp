@@ -28062,6 +28062,13 @@
     "summary": "Stores address of mem_009560E4 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00543350": {
+    "name": "InitialVariableValues::ResetDefaults",
+    "class": "InitialVariableValues",
+    "signature": "void fn_00543350(void* self)",
+    "summary": "Resets a block of float and byte state fields to their default values (1.0f or 0.0f) and clears the int at +0x88.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005433F0": {
     "name": "CameraTool::vfunc_33",
     "class": "CameraTool",
