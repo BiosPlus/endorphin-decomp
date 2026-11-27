@@ -982,3 +982,125 @@ void fn_005E0430(void* self, const float* delta) {
     }
 }
 } // namespace lift_005E0430
+
+// [0x00493E50] stack args: (root, this->field_0xe8, this+0x0C, 0); self = param.
+namespace lift_005EE760 {
+// Callees (MSVC __thiscall / stack-argument conventions preserved by the differential harness).
+
+extern void* ext_00493E50(void* self, ...);
+// [0x00493E40] stack args: (root or arr, X-or-B, this+0x0C or 0, ...); self = param.
+extern void* ext_00493E40(void* self, ...);
+// [0x00528B90] Unknown::setPeerWithBackLink(self = this+0x0C, peer)
+extern void ext_00528B90(void* self, void* peer);
+// [0x00584AE0] descriptiveName_00584AE0(self) -> int (non-zero when global flag set and obj+0x8C clear)
+extern int ext_00584AE0(void* self);
+// [0x00596660] eraseInt32Range(self, out, a2, first, a4, last)
+extern void ext_00596660(void* self, void** out, void* a2, uint32_t first, void* a4, uint32_t last);
+// [0x005B11D0] UnknownClass::getElementPtr(self, index) -> uint32_t* into inline array at +0x10
+extern uint32_t* ext_005B11D0(void* self, uint32_t index);
+// [0x005E0380] sub_005E0380(self, arr) (176B, non-virtual)
+extern void ext_005E0380(void* self, void* arr);
+// [0x005E0EB0] computeClampedScaledLength(self, const float* vec) -> float
+extern float ext_005E0EB0(void* self, const float* vec);
+// [0x00480920] sub_00480920(a, b) -> void* (138B)
+extern void* ext_00480920(void* a, uint32_t b);
+// [0x00493E70] forwardVtable198_viaFirstField(self, a) -> void*
+extern void* ext_00493E70(void* self, void* a);
+// [0x0041A920] container insert: self = this+0x200, arg = pointer to {first, second} pair
+extern void ext_0041A920(void* self, void* pair);
+// Global object pointer read from .data at 0x00B40640.
+extern void* mem_00B40640;
+// IAT slot for MSVCR80!_invalid_parameter_noinfo, reached only from the iterator-debug
+// bounds asserts (which are no-ops on the success path). Referenced for metadata only.
+extern void* mem_00925134;
+
+using ThisFnRet = void* (__thiscall*)(void*);
+using ThisFnRet1 = void* (__thiscall*)(void*, void*);
+using ThisFnBool = uint8_t (__thiscall*)(void*);
+using ThisFnVoid1 = void (__thiscall*)(void*, void*);
+
+// Reads the vtable pointer stored at obj[0] and returns the slot at byteOffset.
+static inline void* vslot(void* obj, size_t byteOffset) {
+    uint8_t* vt = *reinterpret_cast<uint8_t**>(obj);
+    return *reinterpret_cast<void**>(vt + byteOffset);
+}
+
+// [0x005EE760] NMData::FixedPathJointData::vfunc_34 (564 bytes)
+// @name NMData::FixedPathJointData::vfunc_34
+// @class NMData::FixedPathJointData
+// @summary Resolves a per-frame value through virtual calls, then rebuilds the 0x23C float-triplet array and interface pointers for each entry in the 0x1D0 container, finally erasing the 0x200 range.
+// @field NMData::FixedPathJointData +0x00 void* vtable
+// @field NMData::FixedPathJointData +0x04 void* field_0x04 (TransformInterface vptr; virtual calls via this+0x04)
+// @field NMData::FixedPathJointData +0x0C uint8_t field_0x0c (RenderObjectOwner/Updateable sub-object; address passed)
+// @field NMData::FixedPathJointData +0xE8 void* field_0xe8
+// @field NMData::FixedPathJointData +0x1D4 void** field_0x1d4 (begin of object-pointer container)
+// @field NMData::FixedPathJointData +0x1D8 void** field_0x1d8 (end of object-pointer container)
+// @field NMData::FixedPathJointData +0x200 uint8_t field_0x200 (container base; address passed to erase/insert)
+// @field NMData::FixedPathJointData +0x204 uint32_t field_0x204 (erase range begin)
+// @field NMData::FixedPathJointData +0x208 uint32_t field_0x208 (erase range end)
+// @field NMData::FixedPathJointData +0x23C uint8_t field_0x23c (float-array container; address passed to getElementPtr)
+void* fn_005EE760(void* self, void* param) {
+    (void)&mem_00925134;  // debug-assert IAT slot; see declaration above
+    uint8_t* selfb = static_cast<uint8_t*>(self);
+    void* ifaceThis = selfb + 0x04;   // TransformInterface sub-object (its first word is a vptr)
+
+    // Root value: self->vtable[0xD8/4](self)
+    void* root = reinterpret_cast<ThisFnRet>(vslot(self, 0xD8))(self);
+
+    void* res = nullptr;
+
+    // Choose source value by interface predicate at slot 0x1C.
+    uint8_t flag = reinterpret_cast<ThisFnBool>(vslot(ifaceThis, 0x1C))(ifaceThis);
+    void* a;
+    if (flag) {
+        a = ext_00493E50(param, root, lift_field<void*>(self, 0xE8), selfb + 0x0C, 0);
+    } else {
+        void* x = reinterpret_cast<ThisFnRet1>(vslot(ifaceThis, 0x0C))(ifaceThis, mem_00B40640);
+        a = ext_00493E40(param, root, x, selfb + 0x0C, 0);
+    }
+    res = a;
+    ext_00528B90(selfb + 0x0C, a);
+
+    // Erase the full [begin, end) range of the 0x200 container.
+    uint32_t first = lift_field<uint32_t>(self, 0x204);
+    uint32_t last = lift_field<uint32_t>(self, 0x208);
+    void* erased[2] = {nullptr, nullptr};
+    ext_00596660(selfb + 0x200, erased, selfb + 0x200, first, selfb + 0x200, last);
+
+    // Iterate the object-pointer container at 0x1D0 (begin 0x1D4, end 0x1D8).
+    void** it = lift_field<void**>(self, 0x1D4);
+    while (it != lift_field<void**>(self, 0x1D8)) {
+        void* obj = *it;
+        if (ext_00584AE0(obj) == 0) {
+            uint8_t* objb = static_cast<uint8_t*>(obj);
+            void* objIface = objb + 0x04;
+            void* x = reinterpret_cast<ThisFnRet1>(vslot(objIface, 0x0C))(objIface, mem_00B40640);
+            float* vec = reinterpret_cast<float*>(static_cast<uint8_t*>(x) + 0x30);
+            float vx = vec[0];
+            float vy = vec[1];
+            float vz = vec[2];
+
+            void* arr = selfb + 0x23C;
+            *reinterpret_cast<float*>(ext_005B11D0(arr, 0)) = vx;
+            *reinterpret_cast<float*>(ext_005B11D0(arr, 1)) = vy;
+            *reinterpret_cast<float*>(ext_005B11D0(arr, 2)) = vz;
+            float* p3 = reinterpret_cast<float*>(ext_005B11D0(arr, 3));
+            float r = ext_005E0EB0(self, vec);
+            *p3 = r;
+            ext_005E0380(self, arr);
+
+            void* b = ext_00480920(selfb + 0x0C, 0);
+            void* g = ext_00493E40(param, arr, b);
+
+            void* old = res;
+            res = nullptr;
+            void* h = ext_00493E70(param, old);
+            void* pair[2] = {h, g};
+            ext_0041A920(selfb + 0x200, &pair[1]);
+            reinterpret_cast<ThisFnVoid1>(vslot(h, 0x0C))(h, g);
+        }
+        ++it;
+    }
+    return res;
+}
+} // namespace lift_005EE760

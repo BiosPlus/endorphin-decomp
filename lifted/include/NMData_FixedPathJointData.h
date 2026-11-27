@@ -13,12 +13,15 @@ struct NMData_FixedPathJointData_Fields {
     // +0x0   none (no direct field access; only the this-0xC base adjustment)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (vptr; vfunc_60 at slot +0xF0 is the element count)  (evidence: 0x005EEDB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x005E4C80) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    vtable  (evidence: 0x005EB920) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void*                    TransformInterface_vptr  (evidence: 0x005E4710)
+    // +0x0   void*                    vtable  (evidence: 0x005EB920, 0x005EE760) // CONFLICT: multiple definitions at +0x0
+    // +0x4   void*                    TransformInterface_vptr  (evidence: 0x005E4710) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* field_0x04 (TransformInterface vptr; virtual calls via this+0x04)  (evidence: 0x005EE760) // CONFLICT: multiple definitions at +0x4
+    // +0xC   uint8_t field_0x0c (RenderObjectOwner/Updateable sub-object; address passed)  (evidence: 0x005EE760)
     // +0x74  void** field_0x74 (begin of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
     // +0x78  void** field_0x78 (end of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
     // +0xE0  void* field_0xe0 (object pointer; its vtable slot at +0xAC is called)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  void*                    field_0xe0  (evidence: 0x005E0E70) // CONFLICT: multiple definitions at +0xE0
+    // +0xE8  void*                    field_0xe8  (evidence: 0x005EE760)
     // +0x140 int32_t                  field_0x140  (evidence: 0x005E0E70) // CONFLICT: multiple definitions at +0x140
     // +0x140 int32_t field_0x140 (non-zero disables the function)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0x140
     // +0x154 void*                    FrameBufferTickEventListener_base  (evidence: 0x005E4710) // CONFLICT: multiple definitions at +0x154
@@ -44,9 +47,11 @@ struct NMData_FixedPathJointData_Fields {
     // +0x198 std_string_msvc          field_0x198  (evidence: 0x005EDFD0)
     // +0x1B4 std_string_msvc          field_0x1b4  (evidence: 0x005EDFD0)
     // +0x1D0 std_vector_4             field_0x1d0  (evidence: 0x005EDFD0)
+    // +0x1D4 void** field_0x1d4 (begin of object-pointer container)  (evidence: 0x005EE760) // CONFLICT: multiple definitions at +0x1D4
     // +0x1D4 uint32_t                 field_0x1d4  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x1D4
     // +0x1D4 void**                   field_0x1d4  (evidence: 0x005EB920) // CONFLICT: multiple definitions at +0x1D4
     // +0x1D4 void** field_0x1d4 (begin of pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x1D4
+    // +0x1D8 void** field_0x1d8 (end of object-pointer container)  (evidence: 0x005EE760) // CONFLICT: multiple definitions at +0x1D8
     // +0x1D8 uint32_t                 field_0x1d8  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x1D8
     // +0x1D8 void**                   field_0x1d8  (evidence: 0x005EB920) // CONFLICT: multiple definitions at +0x1D8
     // +0x1D8 void** field_0x1d8 (end of pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x1D8
@@ -56,9 +61,12 @@ struct NMData_FixedPathJointData_Fields {
     // +0x1F8 void** field_0x1f8 (begin of child pointer vector)  (evidence: 0x005ECF40) // CONFLICT: multiple definitions at +0x1F8
     // +0x1FC void**                   field_0x1fc  (evidence: 0x005ECB10) // CONFLICT: multiple definitions at +0x1FC
     // +0x1FC void** field_0x1fc (end of child pointer vector)  (evidence: 0x005ECF40) // CONFLICT: multiple definitions at +0x1FC
-    // +0x200 std_vector_4             field_0x200  (evidence: 0x005EDFD0)
+    // +0x200 uint8_t field_0x200 (container base; address passed to erase/insert)  (evidence: 0x005EE760) // CONFLICT: multiple definitions at +0x200
+    // +0x200 std_vector_4             field_0x200  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x200
+    // +0x204 uint32_t field_0x204 (erase range begin)  (evidence: 0x005EE760) // CONFLICT: multiple definitions at +0x204
     // +0x204 uint32_t                 field_0x204  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x204
     // +0x204 void** field_0x204 (begin of element pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x204
+    // +0x208 uint32_t field_0x208 (erase range end)  (evidence: 0x005EE760) // CONFLICT: multiple definitions at +0x208
     // +0x208 uint32_t                 field_0x208  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x208
     // +0x208 void** field_0x208 (end of element pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x208
     // +0x210 float                    field_0x210  (evidence: 0x005EDFD0)
@@ -71,6 +79,7 @@ struct NMData_FixedPathJointData_Fields {
     // +0x22C uint32_t                 field_0x22c  (evidence: 0x005EB920, 0x005EDFD0)
     // +0x230 uint8_t                  field_0x230  (evidence: 0x005EDFD0)
     // +0x234 void*                    field_0x234  (evidence: 0x005E4710)
+    // +0x23C uint8_t field_0x23c (float-array container; address passed to getElementPtr)  (evidence: 0x005EE760)
     // +0x294 uint32_t                 field_0x294  (evidence: 0x005EDFD0)
     // +0x298 uint32_t                 field_0x298  (evidence: 0x005EDFD0)
 };

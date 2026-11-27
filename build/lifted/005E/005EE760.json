@@ -1,0 +1,76 @@
+{
+  "va": "0x005EE760",
+  "size": 564,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_34",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_34",
+  "class": "NMData::FixedPathJointData",
+  "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+  "summary": "Resolves a per-frame value through virtual calls, then rebuilds the 0x23C float-triplet array and interface pointers for each entry in the 0x1D0 container, finally erasing the 0x200 range.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (TransformInterface vptr; virtual calls via",
+      "name": "this+0x04)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0xC",
+      "type": "uint8_t field_0x0c (RenderObjectOwner/Updateable sub-object; address",
+      "name": "passed)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0xE8",
+      "type": "void*",
+      "name": "field_0xe8"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1D4",
+      "type": "void** field_0x1d4 (begin of object-pointer",
+      "name": "container)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1D8",
+      "type": "void** field_0x1d8 (end of object-pointer",
+      "name": "container)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x200",
+      "type": "uint8_t field_0x200 (container base; address passed to",
+      "name": "erase/insert)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x204",
+      "type": "uint32_t field_0x204 (erase range",
+      "name": "begin)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x208",
+      "type": "uint32_t field_0x208 (erase range",
+      "name": "end)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x23C",
+      "type": "uint8_t field_0x23c (float-array container; address passed to",
+      "name": "getElementPtr)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:59:27Z"
+}

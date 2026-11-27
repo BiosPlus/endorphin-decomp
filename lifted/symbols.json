@@ -55211,6 +55211,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005EE760": {
+    "name": "NMData::FixedPathJointData::vfunc_34",
+    "class": "NMData::FixedPathJointData",
+    "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+    "summary": "Resolves a per-frame value through virtual calls, then rebuilds the 0x23C float-triplet array and interface pointers for each entry in the 0x1D0 container, finally erasing the 0x200 range.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EEBC0": {
     "name": "NMData::RootRelationshipData::vfunc_67",
     "class": "NMData::RootRelationshipData",
