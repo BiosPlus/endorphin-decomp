@@ -69962,3 +69962,178 @@ void __thiscall fn_0046D530(void* self, void* arg1) {
     reinterpret_cast<VFuncBC>(vtbl2[0xBC / 4])(obj2, arg1);
 }
 } // namespace lift_0046D530
+
+// [0x0046D7F0]
+namespace lift_0046D7F0 {
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern int __thiscall ext_006ACFB0(void* self);
+extern void* __thiscall ext_006720C0(void* self, int val);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getEndFrame>::vfunc_47
+// @class ExprParser::ReadMethodType<ImageExporter, int, getEndFrame>
+// @summary Reads an int via ImageExporter::getEndFrame() into the expression value wrapper, or throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __thiscall fn_0046D7F0(void* self, void* arg0) {
+    (void)self;
+    void* obj = lift_field<void*>(arg0, 0x00);
+    if (!obj) {
+        alignas(16) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return;
+    }
+
+    int val = ext_006ACFB0(obj);
+    void* local_obj[2] = { nullptr, nullptr };
+    ext_006720C0(local_obj, val);
+    ext_0041CF50(arg0, local_obj);
+
+    if (local_obj[1]) {
+        void** vtable = *reinterpret_cast<void***>(local_obj[1]);
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / sizeof(void*)]);
+        release(local_obj[1], local_obj);
+    }
+
+    void* field4 = lift_field<void*>(arg0, 0x04);
+    void** vtable4 = *reinterpret_cast<void***>(field4);
+    auto vfunc_bc = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable4[0xBC / sizeof(void*)]);
+    vfunc_bc(field4, arg0);
+}
+} // namespace lift_0046D7F0
+
+// [0x00472250]
+namespace lift_00472250 {
+extern int __thiscall ext_0046F7C0(void* self);
+extern void* __thiscall ext_006720C0(void* self, int val);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine,int,getNumTicksToRun>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads RuntimeEngine::getNumTicksToRun() into the expression value wrapper and invokes its virtual update method, or throws if the target object is null.
+// @field ExprParser::ValuePtr +0x00 void* field_0x00
+// @field ExprParser::ValuePtr +0x04 void* field_0x04
+void __thiscall fn_00472250(void* self, void* arg)
+{
+    (void)self;
+    void* obj = lift_field<void*>(arg, 0x00);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return;
+    }
+
+    int val = ext_0046F7C0(obj);
+    uint8_t tmp[8];
+    ext_006720C0(tmp, val);
+    ext_0041CF50(arg, tmp);
+
+    void* tmp_obj = lift_field<void*>(tmp, 0x04);
+    if (tmp_obj) {
+        void** vtable = *reinterpret_cast<void***>(tmp_obj);
+        using ReleaseFn = void(__thiscall*)(void*, void*);
+        reinterpret_cast<ReleaseFn>(vtable[0x78 / 4])(tmp_obj, tmp);
+    }
+
+    void* arg_obj = lift_field<void*>(arg, 0x04);
+    void** arg_vtable = *reinterpret_cast<void***>(arg_obj);
+    using UpdateFn = void(__thiscall*)(void*, void*);
+    reinterpret_cast<UpdateFn>(arg_vtable[0xBC / 4])(arg_obj, arg);
+}
+} // namespace lift_00472250
+
+// [0x0046DE70]
+namespace lift_0046DE70 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getImageWidth>::vfunc_47
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getImageWidth>
+// @summary Reads ImageExporter::getImageWidth from arg1[0], wraps it via ext_006720C0, assigns to arg1, and dispatches vfunc_47 on arg1[1].
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern int __thiscall ext_0046C090(void* self);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void* __thiscall ext_006720C0(void* self, int value);
+extern void ext_006A6DD2(void* exc, void* throw_info);
+
+void __thiscall fn_0046DE70(void* self, void* arg1) {
+    (void)self;
+    void* target = lift_field<void*>(arg1, 0x00);
+    if (!target) {
+        uint8_t exc[0x30];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return;
+    }
+
+    int value = ext_0046C090(target);
+    void* temp[2] = {nullptr, nullptr};
+    ext_006720C0(&temp[1], value);
+    ext_0041CF50(arg1, temp);
+
+    if (temp[1]) {
+        void** vtbl = *reinterpret_cast<void***>(temp[1]);
+        auto release_fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtbl[0x78 / 4]);
+        release_fn(temp[1], temp);
+    }
+
+    void* field4 = lift_field<void*>(arg1, 0x04);
+    void** vtbl4 = *reinterpret_cast<void***>(field4);
+    auto vfunc_47 = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtbl4[0xBC / 4]);
+    vfunc_47(field4, arg1);
+}
+} // namespace lift_0046DE70
+
+// [0x0046EFE0]
+namespace lift_0046EFE0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getImageHeight>::vfunc_47
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getImageHeight>
+// @summary Evaluates ImageExporter::getImageHeight via the bound object in arg0, or throws DerivedException if null.
+// @field arg0 +0x00 void* field_0x00
+// @field arg0 +0x04 void* field_0x04
+
+
+void* __thiscall ext_0041CF50(void* self, void* other);
+void* __thiscall ext_0046C3C0(void* self);
+void* __thiscall ext_006720C0(void* self, void* arg0);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exc, void* throw_info);
+void* __thiscall ext_006AD1C0(void* self);
+
+struct TmpPair_0046EFE0 {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+int __thiscall fn_0046EFE0(void* self, void* arg0) {
+    (void)self;
+    void* obj = lift_field<void*>(arg0, 0x00);
+    if (!obj) {
+        alignas(4) uint8_t exc[0x28]{};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+    }
+
+    void* val = ext_006AD1C0(obj);
+    TmpPair_0046EFE0 tmp{};
+    ext_006720C0(&tmp, val);
+    ext_0041CF50(arg0, &tmp);
+
+    void* mgr = tmp.field_0x04;
+    if (mgr) {
+        void** vtbl = *reinterpret_cast<void***>(mgr);
+        using ReleaseFn = void(__thiscall*)(void*, void*);
+        reinterpret_cast<ReleaseFn>(vtbl[0x78 / 4])(mgr, &tmp);
+    }
+
+    void* target = lift_field<void*>(arg0, 0x04);
+    void** target_vtbl = *reinterpret_cast<void***>(target);
+    using CallFn = int(__thiscall*)(void*, void*);
+    return reinterpret_cast<CallFn>(target_vtbl[0xBC / 4])(target, arg0);
+}
+} // namespace lift_0046EFE0

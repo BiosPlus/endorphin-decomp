@@ -1,0 +1,28 @@
+{
+  "va": "0x0046D7F0",
+  "size": 154,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, int, getEndFrame\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, int, getEndFrame\u003e",
+  "signature": "void __thiscall fn_0046D7F0(void* self, void* arg0)",
+  "summary": "Reads an int via ImageExporter::getEndFrame() into the expression value wrapper, or throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T09:03:16Z"
+}
