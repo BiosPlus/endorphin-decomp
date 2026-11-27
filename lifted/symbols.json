@@ -3217,6 +3217,13 @@
     "summary": "Looks up a string key in the embedded tree map; returns the node payload (node+0x28), or null if the map is empty or the key is absent.",
     "lifted_path": "lifted/templates/SearchableMap.cpp"
   },
+  "0x0042E820": {
+    "name": "UnknownClass::resetAndRelease",
+    "class": "UnknownClass",
+    "signature": "void fn_0042E820(void* self)",
+    "summary": "Installs vtable at +0x00, calls sub_0042C770 with the pointer at +0x08, passes that pointer to thunk_MFC80_ord_764, then clears +0x08 and +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042E920": {
     "name": "KeyMappingManager::vfunc_6",
     "class": "KeyMappingManager",
