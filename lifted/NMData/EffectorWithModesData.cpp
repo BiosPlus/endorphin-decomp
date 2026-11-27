@@ -89,3 +89,42 @@ std::string* fn_0060C3D0(void* self, std::string* ret, void* unused) {
 }
 } // namespace lift_00626850
 } // namespace lift_0060C3D0
+
+// [0x0060DC00] NMData::EffectorWithModesData::vfunc_15 (184 bytes)
+namespace lift_0060DC00 {
+// Known callee 0x00608350: Unknown::ctor_00608350 (runs base ctor, sets vtable, builds members; returns this).
+extern void* ext_00608350(void* self);
+// Known callee 0x0060CDE0: NMData::EffectorData::vfunc_15 (fills and returns a 0x60-byte object stored at this+0x40).
+extern void* ext_0060CDE0(void* self, void* arg1, uint32_t arg2, void* arg3);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 = operator new).
+extern void* ext_006A5C62(size_t size);
+// Unlifted callees (thiscall-style: ecx = self, remaining args on the stack).
+extern void ext_0063D5D0(void* self, int32_t value);
+extern void ext_0063D460(void* self, void* str);
+extern void ext_0063D480(void* self, float value);
+
+// @name NMData::EffectorWithModesData::vfunc_15
+// @class NMData::EffectorWithModesData
+// @summary Allocates and constructs a 0xB4-byte object, runs setup calls on it from this's +0x5C/+0x60/+0x80 fields, copies this's +0x7C float into it at +0xAC, then forwards to EffectorData::vfunc_15 and returns its result.
+// @field NMData::EffectorWithModesData +0x5C int field_0x5C
+// @field NMData::EffectorWithModesData +0x60 std::string field_0x60
+// @field NMData::EffectorWithModesData +0x7C float field_0x7C
+// @field NMData::EffectorWithModesData +0x80 float field_0x80
+void* fn_0060DC00(void* self, void* arg1, uint32_t arg2, uint32_t /*arg3: stack slot popped by callee, never read*/) {
+    // Allocate the new object (operator new(0xB4)) and construct it if allocation succeeded.
+    void* obj = ext_006A5C62(0xB4);
+    void* esi = nullptr;
+    if (obj != nullptr) {
+        esi = ext_00608350(obj);
+    }
+
+    // Setup calls on the new object, driven by this's fields.
+    ext_0063D5D0(esi, lift_field<int32_t>(self, 0x5C));
+    ext_0063D460(esi, static_cast<uint8_t*>(self) + 0x60);
+    ext_0063D480(esi, lift_field<float>(self, 0x80));
+
+    // Copy this+0x7C into the new object's +0xAC, then forward to vfunc_15.
+    lift_field<float>(esi, 0xAC) = lift_field<float>(self, 0x7C);
+    return ext_0060CDE0(self, arg1, arg2, esi);
+}
+} // namespace lift_0060DC00

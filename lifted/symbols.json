@@ -58965,6 +58965,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory\u003cCompoundSensor\u003e::ctor).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060DC00": {
+    "name": "NMData::EffectorWithModesData::vfunc_15",
+    "class": "NMData::EffectorWithModesData",
+    "signature": "void* fn_0060DC00(void* self, void* arg1, uint32_t arg2, uint32_t /*arg3: stack slot popped by callee, never read*/)",
+    "summary": "Allocates and constructs a 0xB4-byte object, runs setup calls on it from this's +0x5C/+0x60/+0x80 fields, copies this's +0x7C float into it at +0xAC, then forwards to EffectorData::vfunc_15 and returns its result.",
+    "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
+  },
   "0x0060DDA0": {
     "name": "sub_0060DDA0",
     "signature": "void* fn_0060DDA0()",
