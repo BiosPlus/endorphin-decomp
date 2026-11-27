@@ -36021,6 +36021,13 @@
     "summary": "Gets a 16-float matrix from the embedded object at +0x04 (vtable slot 0x14), transforms it with a negated float at +0x1F4 via sub_0053B470 and Vector4Add, and copies the resulting 4 floats into +0x274.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005D0530": {
+    "name": "UnknownOwner::applyTranslationOffsetAndDispatch",
+    "class": "UnknownOwner",
+    "signature": "void fn_005D0530(void* self, const float* offset)",
+    "summary": "Fetches a 4x4 matrix from sub-object vfunc 5, subtracts a vec4 offset from its translation row, and forwards it to sub-object vfunc 0.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D05B0": {
     "name": "Unknown::wrapVirtualFloatCall_005D05B0",
     "class": "Unknown",

@@ -637,3 +637,37 @@ uint32_t fn_005DF940(void* self, uint32_t key) {
     return lift_field<uint32_t>(node_ptr, 0x10);
 }
 } // namespace lift_005DF940
+
+// [0x005D0530] sub_005D0530 (126 bytes)
+namespace lift_005D0530 {
+extern int mem_00B40644;
+
+// @name UnknownOwner::applyTranslationOffsetAndDispatch
+// @class UnknownOwner
+// @summary Fetches a 4x4 matrix from sub-object vfunc 5, subtracts a vec4 offset from its translation row, and forwards it to sub-object vfunc 0.
+// @field UnknownOwner +0x04 void* subObject (embedded object; first dword is its vtable pointer)
+// @field UnknownOwner +0x1F1 uint8_t disabledFlag (non-zero: return without doing anything)
+void fn_005D0530(void* self, const float* offset) {
+    if (lift_field<uint8_t>(self, 0x1F1) != 0) {
+        return;
+    }
+
+    void* subObject = static_cast<uint8_t*>(self) + 0x04;
+    void** vtbl = *reinterpret_cast<void***>(subObject);
+
+    using GetMatrixFn = const void* (__thiscall*)(void* thisPtr, int arg);
+    const float* src = static_cast<const float*>(
+        reinterpret_cast<GetMatrixFn>(vtbl[5])(subObject, mem_00B40644));
+
+    float m[16];
+    std::memcpy(m, src, sizeof(m));
+
+    m[12] -= offset[0];
+    m[13] -= offset[1];
+    m[14] -= offset[2];
+    m[15] -= offset[3];
+
+    using DispatchFn = void (__thiscall*)(void* thisPtr, int zero, float* matrix, int global);
+    reinterpret_cast<DispatchFn>(vtbl[0])(subObject, 0, m, mem_00B40644);
+}
+} // namespace lift_005D0530

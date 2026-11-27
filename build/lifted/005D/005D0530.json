@@ -1,0 +1,28 @@
+{
+  "va": "0x005D0530",
+  "size": 126,
+  "orig_symbol": "sub_005D0530",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "UnknownOwner::applyTranslationOffsetAndDispatch",
+  "class": "UnknownOwner",
+  "signature": "void fn_005D0530(void* self, const float* offset)",
+  "summary": "Fetches a 4x4 matrix from sub-object vfunc 5, subtracts a vec4 offset from its translation row, and forwards it to sub-object vfunc 0.",
+  "fields": [
+    {
+      "class": "UnknownOwner",
+      "offset": "+0x4",
+      "type": "void* subObject (embedded object; first dword is its vtable",
+      "name": "pointer)"
+    },
+    {
+      "class": "UnknownOwner",
+      "offset": "+0x1F1",
+      "type": "uint8_t disabledFlag (non-zero: return without doing",
+      "name": "anything)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:04:07Z"
+}
