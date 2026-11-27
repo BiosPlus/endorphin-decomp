@@ -30768,6 +30768,12 @@
     "summary": "Returns arg1; if arg2 == 0x199 calls sub_00661650 on arg1, otherwise calls AnimatableTransform::vfunc_13 on self with (arg1, arg2).",
     "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
   },
+  "0x0058F770": {
+    "name": "descriptiveName_0058F770",
+    "signature": "void* lift_string_copy_ctor(void* self, const void* src)",
+    "summary": "Throws DerivedException if obj is null; otherwise fills a temp string via ext_0058F550(obj), copy-constructs *out from it, destroys the temp, and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058F800": {
     "name": "ExprParser::ReadWriteMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerX(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerX(float), 0}\u003e",
