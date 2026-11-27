@@ -1,0 +1,28 @@
+{
+  "va": "0x007140B0",
+  "size": 34,
+  "orig_symbol": "sub_007140B0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_007140B0_ctor",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_007140B0(void* self, uint32_t arg1)",
+  "summary": "Constructor calling base class constructor, setting vtable and field_0x10",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:23:39Z"
+}

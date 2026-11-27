@@ -3048,3 +3048,23 @@ void __fastcall fn_0071CCB0(void* self, double value) {
     }
 }
 } // namespace lift_0071CCB0
+
+// [0x007140B0]
+namespace lift_007140B0 {
+// @name sub_007140B0_ctor
+// @class Unknown
+// @summary Constructor calling base class constructor, setting vtable and field_0x10
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x10 uint32_t field_0x10
+
+
+extern void __thiscall ext_007131E0(void* self, uint32_t arg1);
+extern uint32_t mem_00AAC08C;
+
+void* __thiscall fn_007140B0(void* self, uint32_t arg1) {
+    ext_007131E0(self, arg1);
+    lift_field<uint32_t>(self, 0x00) = 0x00996154u;
+    lift_field<uint32_t>(self, 0x10) = mem_00AAC08C;
+    return self;
+}
+} // namespace lift_007140B0
