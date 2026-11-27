@@ -4731,6 +4731,13 @@
     "summary": "Returns the address of the global data slot mem_00933000 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00447F20": {
+    "name": "Unknown::ctor (owner class not yet identified)",
+    "class": "Unknown",
+    "signature": "void fn_00447F20(void* self)",
+    "summary": "Constructor: installs two vtable pointers and runs three member-init thunks (MFC80 ord_741/715/605) on sub-objects at +0xCC, +0x78 and this.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00447F90": {
     "name": "GetConstantAddress_00447F90",
     "signature": "extern \"C\" const unsigned int* __cdecl fn_00447F90()",

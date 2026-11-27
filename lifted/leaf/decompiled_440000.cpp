@@ -2313,3 +2313,33 @@ int32_t fn_0044E100(void* self) {
     return sendMessageA(hwnd, 0x187, 0, 0) == 0 ? 1 : 0;
 }
 } // namespace lift_0044E100
+
+// [0x00447F20] sub_00447F20 (105 bytes)
+namespace lift_00447F20 {
+// Known callee 0x006A5EFC: thunk_MFC80_ord_741 (IAT jump thunk forwarding to MFC80!ord_741.)
+extern void ext_006A5EFC();
+// Known callee 0x006A5F6E: thunk_MFC80_ord_605 (IAT jump thunk forwarding to MFC80!ord_605.)
+extern void ext_006A5F6E();
+// Known callee 0x006A6622: thunk_MFC80_ord_715 (IAT jump thunk forwarding to MFC80!ord_715.)
+extern void ext_006A6622();
+
+// @name Unknown::ctor (owner class not yet identified)
+// @class Unknown
+// @summary Constructor: installs two vtable pointers and runs three member-init thunks (MFC80 ord_741/715/605) on sub-objects at +0xCC, +0x78 and this.
+// @field Unknown +0x00 uint32_t vftable_primary
+// @field Unknown +0x74 uint32_t vftable_secondary
+// @field Unknown +0x78 void member_78
+// @field Unknown +0xCC void member_cc
+//
+// Note: the original SEH frame setup/teardown (fs:[0] push/restore) and the
+// stack-passed arguments written to [esp+0x10] (1, 0, -1) to the thunks are not
+// representable in portable C++ and are omitted; the thunk calls are kept.
+void fn_00447F20(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x933064u;
+    lift_field<uint32_t>(self, 0x74) = 0x93304Cu;
+
+    ext_006A5EFC(); // ecx = self + 0xCC
+    ext_006A6622(); // ecx = self + 0x78
+    ext_006A5F6E(); // ecx = self
+}
+} // namespace lift_00447F20
