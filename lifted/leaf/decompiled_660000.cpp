@@ -3334,3 +3334,20 @@ void __thiscall fn_00666170(void* self, const void* arg1) {
     ++*refCount;
 }
 } // namespace lift_00666170
+
+// [0x00666320]
+namespace lift_00666320 {
+// @name Unknown::InitWithAcquiredObject
+// @class Unknown
+// @summary Stores arg1 at +0x00, calls AcquireConstructedObject on arg1 with arg2, and returns self.
+// @field Unknown +0x00 void* field_0x00
+
+
+extern void __thiscall ext_00666170(void* self, const void* arg1);
+
+void* __thiscall fn_00666320(void* self, void* arg1, const void* arg2) {
+    lift_field<void*>(self, 0x00) = arg1;
+    ext_00666170(arg1, arg2);
+    return self;
+}
+} // namespace lift_00666320

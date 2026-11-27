@@ -1,0 +1,22 @@
+{
+  "va": "0x00666320",
+  "size": 25,
+  "orig_symbol": "sub_00666320",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::InitWithAcquiredObject",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_00666320(void* self, void* arg1, const void* arg2)",
+  "summary": "Stores arg1 at +0x00, calls AcquireConstructedObject on arg1 with arg2, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:19:38Z"
+}

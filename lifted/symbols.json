@@ -46223,6 +46223,12 @@
     "summary": "Constructor for a MetaBodySensor-derived class (vtable 0x0097900C) that initializes float fields at +0x30..+0x38, stores arg2 at +0x3C, and zeroes fields at +0x44..+0x4C.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062C450": {
+    "name": "sub_0062C450",
+    "signature": "extern \"C\" void __fastcall fn_0062C450(void* self)",
+    "summary": "Destructor/cleanup that destroys and frees the 16-byte record array at +0x40..+0x4C and delegates base cleanup to ext_005FF040.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062C4D0": {
     "name": "ctor_wrap_0062C4D0",
     "signature": "void* fn_0062C4D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
@@ -52305,6 +52311,13 @@
     "class": "Unknown",
     "signature": "void __thiscall fn_00666170(void* self, const void* arg1)",
     "summary": "On first use (refCount at +0x04 is zero) allocates 0x48 bytes, constructs the object from arg1, replaces and deletes any previous object at +0x00, then increments the reference count at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00666320": {
+    "name": "Unknown::InitWithAcquiredObject",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_00666320(void* self, void* arg1, const void* arg2)",
+    "summary": "Stores arg1 at +0x00, calls AcquireConstructedObject on arg1 with arg2, and returns self.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00666340": {
