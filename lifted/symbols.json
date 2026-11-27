@@ -68219,6 +68219,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006D2FB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D3780": {
+    "name": "Unknown::appendVirtualResultToArray_006D3780",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D3780(void* self)",
+    "summary": "Calls virtual slot 11 on self; if it returns non-zero, inserts that value into the DynamicArray embedded at +0x34 and returns the value.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D4140": {
     "name": "sub_006D4140",
     "signature": "void* __thiscall fn_006D4140(void* self)",
