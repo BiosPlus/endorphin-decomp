@@ -18840,6 +18840,13 @@
     "summary": "Clears the OwnedPointerRange members at +0x24 and +0x14, re-stamps the markers at +0x10 and +0x04, then re-stamps the marker at +0x00.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BEBE0": {
+    "name": "initTypeNameEntry_004BEBE0",
+    "class": "Unknown",
+    "signature": "void* fn_004BEBE0(void* self)",
+    "summary": "Constructor-style init: sets vtable at +0x00, zeroes the +0x08..+0x20 fields, fetches a type_info name into a temp std::string, forwards it to ext_0040ECB0 on the global at mem_00B5962C, then destroys the temp.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BED30": {
     "name": "NMData::EvolveEngineData::vfunc_6",
     "class": "NMData::EvolveEngineData",

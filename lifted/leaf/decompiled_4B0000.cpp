@@ -2387,3 +2387,43 @@ void* fn_004BE7C0(void* esi) {
     return esi;
 }
 } // namespace lift_004BE7C0
+
+// [0x004BEBE0] sub_004BEBE0 (128 bytes)
+namespace lift_004BEBE0 {
+extern void ext_0040ECB0(void* self, void* arg);
+// Known callee 0x004BE7C0: TypeInfoName_004BE7C0 (Fetches type_info name at 0xa328b0 (MSVC runtime), builds a temp std::string, passes the incoming esi-register value to ext_0066AC90, and returns it unchanged.)
+extern void* ext_004BE7C0(void* arg);
+extern int mem_00924FF4;
+extern int mem_009442B4;
+extern int mem_00B5962C;
+
+// @name initTypeNameEntry_004BEBE0
+// @class Unknown
+// @summary Constructor-style init: sets vtable at +0x00, zeroes the +0x08..+0x20 fields, fetches a type_info name into a temp std::string, forwards it to ext_0040ECB0 on the global at mem_00B5962C, then destroys the temp.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+void* fn_004BEBE0(void* self) {
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(&mem_009442B4);
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1c) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    alignas(std::string) unsigned char tmp[sizeof(std::string)];
+    void* name = ext_004BE7C0(tmp);
+    ext_0040ECB0(reinterpret_cast<void*>(&mem_00B5962C), name);
+    using TmpString = std::string;
+    reinterpret_cast<TmpString*>(tmp)->~TmpString();
+    // Original asm read the MSVCP80 ~basic_string IAT slot (mem_00924FF4) here;
+    // the real destructor above replaces that import. Metadata-only reference.
+    (void)&mem_00924FF4;
+    return self;
+}
+} // namespace lift_004BEBE0
