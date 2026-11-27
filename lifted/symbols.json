@@ -29777,6 +29777,13 @@
     "summary": "Validates a checked std::string iterator against its container and returns its pointer.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00573300": {
+    "name": "std_vector_string::Construct_n",
+    "class": "std_vector_string",
+    "signature": "void __thiscall fn_00573300(void* this_ptr, uint32_t count, const void* src)",
+    "summary": "Allocates space for n std::string elements, copy-constructs them from src, and tidies up on exception.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005733D0": {
     "name": "copyRangeBackward48",
     "signature": "extern \"C\" uint32_t sub_005733D0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
@@ -53843,6 +53850,13 @@
     "name": "ComputeDeltaAndDispatch",
     "signature": "extern \"C\" void* __cdecl fn_00664D40(void* a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6)",
     "summary": "Packs two args into a pair, calls sub_0065F7F0 with (a3 - a2) to produce two result words, stores them into the out pointer, then calls sub_00664BA0 with masked a3 and returns the out pointer.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00664DB0": {
+    "name": "std::remove_copy_if_char_iter",
+    "class": "std",
+    "signature": "StringIter* __cdecl sub_00664DB0( StringIter* out_iter, const char* first, const char* last, void* dst_container, char* dst_ptr, uint8_t (__cdecl* pred)(uint32_t))",
+    "summary": "Copies characters from [first, last) to a checked string iterator, skipping those where pred(ch) is non-zero",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00664E40": {

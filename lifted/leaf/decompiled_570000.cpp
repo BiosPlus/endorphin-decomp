@@ -2237,3 +2237,34 @@ __stdcall uint8_t* fn_0057CEA0(uint8_t* begin, uint32_t count, const void* src) 
     return begin + static_cast<uint32_t>(count * 0x3Cu);
 }
 } // namespace lift_0057CEA0
+
+// [0x00573300]
+namespace lift_00573300 {
+// @name std_vector_string::Construct_n
+// @class std_vector_string
+// @summary Allocates space for n std::string elements, copy-constructs them from src, and tidies up on exception.
+// @field std_vector_string +0x04 void* begin
+// @field std_vector_string +0x08 void* end
+
+
+extern bool __thiscall ext_00402480(void* self, uint32_t n);
+extern void __thiscall ext_004026E0(void* this_ptr);
+extern void ext_0040E6F0(void* base, uint32_t count, const void* src);
+extern void ext_006A6DD2(void);
+
+void __thiscall fn_00573300(void* this_ptr, uint32_t count, const void* src) {
+    if (!ext_00402480(this_ptr, count)) {
+        return;
+    }
+
+    uint8_t* begin = lift_field<uint8_t*>(this_ptr, 0x04);
+    try {
+        ext_0040E6F0(begin, count, src);
+    } catch (...) {
+        ext_004026E0(this_ptr);
+        ext_006A6DD2();
+    }
+
+    lift_field<uint8_t*>(this_ptr, 0x08) = begin + static_cast<size_t>(count) * 28;
+}
+} // namespace lift_00573300

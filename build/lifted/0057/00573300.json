@@ -1,0 +1,28 @@
+{
+  "va": "0x00573300",
+  "size": 139,
+  "orig_symbol": "sub_00573300",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "std_vector_string::Construct_n",
+  "class": "std_vector_string",
+  "signature": "void __thiscall fn_00573300(void* this_ptr, uint32_t count, const void* src)",
+  "summary": "Allocates space for n std::string elements, copy-constructs them from src, and tidies up on exception.",
+  "fields": [
+    {
+      "class": "std_vector_string",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "std_vector_string",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:34:12Z"
+}
