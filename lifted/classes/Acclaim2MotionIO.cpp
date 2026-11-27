@@ -25,6 +25,7 @@ bool fn_0055BBF0(void* self) {
     void* sub = lift_field<void*>(self, 0x584);
     return lift_vcall<bool, 48>(sub); // vtable +0xC0 (tail call)
 }
+#include <cstdint>
 
 // [0x00582B60] Acclaim2MotionIO::vfunc_3 (38 bytes)
 // @name Acclaim2MotionIO::vfunc_3
@@ -576,3 +577,281 @@ void __thiscall fn_00582BC0(void* self, void* arg0) {
     }
 }
 } // namespace lift_00582BC0
+
+// [0x00583ED0]
+namespace lift_00583ED0 {
+// @name Acclaim2MotionIO::vfunc_13
+// @class Acclaim2MotionIO
+// @summary Exports Acclaim motion/skeleton data, applying scale/offset/rotation adjustments and writing frames.
+// @field Acclaim2MotionIO +0x8 std::string field_0x8
+// @field Acclaim2MotionIO +0x5C void* field_0x5c
+// @field Acclaim2MotionIO +0x16C uint32_t field_0x16c
+// @field Acclaim2MotionIO +0x170 uint32_t field_0x170
+// @field Acclaim2MotionIO +0x174 float field_0x174
+// @field Acclaim2MotionIO +0x17C float field_0x17c
+// @field Acclaim2MotionIO +0x188 float field_0x188
+// @field Acclaim2MotionIO +0x18C float field_0x18c
+// @field Acclaim2MotionIO +0x190 float field_0x190
+// @field Acclaim2MotionIO +0x194 uint32_t field_0x194
+// @field Acclaim2MotionIO +0x198 uint32_t field_0x198
+// @field Acclaim2MotionIO +0x19C uint32_t field_0x19c
+// @field Acclaim2MotionIO +0x1DC uint32_t field_0x1dc
+// @field Acclaim2MotionIO +0x1F8 std::string field_0x1f8
+// @field Acclaim2MotionIO +0x214 uint8_t field_0x214
+// @field Acclaim2MotionIO +0x414 void* field_0x414
+// @field Acclaim2MotionIO +0x420 void* field_0x420
+// @field Acclaim2MotionIO +0x424 void* field_0x424
+// @field Acclaim2MotionIO +0x46C float field_0x46c
+// @field Acclaim2MotionIO +0x470 std::string field_0x470
+// @field Acclaim2MotionIO +0x4A8 float field_0x4a8
+// @field Acclaim2MotionIO +0x4AC float field_0x4ac
+// @field Acclaim2MotionIO +0x4B0 float field_0x4b0
+// @field Acclaim2MotionIO +0x4B4 uint32_t field_0x4b4
+// @field Acclaim2MotionIO +0x4B8 uint32_t field_0x4b8
+// @field Acclaim2MotionIO +0x4BC uint32_t field_0x4bc
+// @field Acclaim2MotionIO +0x4C0 uint8_t field_0x4c0
+// @field Acclaim2MotionIO +0x4C1 uint8_t field_0x4c1
+// @field Acclaim2MotionIO +0x4C2 uint8_t field_0x4c2
+// @field Acclaim2MotionIO +0x4C8 int32_t field_0x4c8
+// @field Acclaim2MotionIO +0x4D4 uint8_t field_0x4d4
+// @field Acclaim2MotionIO +0x4F0 void* field_0x4f0
+// @field Acclaim2MotionIO +0x500 void* field_0x500
+// @field Acclaim2MotionIO +0x510 void* field_0x510
+// @field Acclaim2MotionIO +0x530 std::string field_0x530
+// @field Acclaim2MotionIO +0x54C uint32_t field_0x54c
+// @field Acclaim2MotionIO +0x560 uint8_t field_0x560
+// @field Acclaim2MotionIO +0x564 uint32_t field_0x564
+
+
+extern void* mem_00924E90;
+extern void* mem_00924E98;
+extern void* mem_00924EA8;
+extern void* mem_00924ECC;
+extern void* mem_00924FA0;
+extern void* mem_00924FCC;
+extern void* mem_00924FD4;
+extern void* mem_00924FDC;
+extern void* mem_00924FE4;
+extern void* mem_00924FE8;
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_00925134;
+
+extern void __thiscall ext_004026E0(void* this_ptr);
+extern void __thiscall ext_00406FC0(void* this_ptr, void* arg0);
+extern void __thiscall ext_0040ECB0(void* this_ptr, const void* value);
+extern void* __cdecl ext_00435D00(void* os, const char* str);
+extern void __thiscall ext_00493D90(void* this_ptr);
+extern void __thiscall ext_004F4E50(void* this_ptr, int32_t arg0, void* arg1);
+extern uint8_t __thiscall ext_00553760(void* this_ptr);
+extern void __thiscall ext_00557280(void* this_ptr);
+extern uint32_t __thiscall ext_00566FE0(void* this_ptr, void* value);
+extern void* __thiscall ext_0057D7F0(void* this_ptr);
+extern void __thiscall ext_0057D840(void* this_ptr, void* arg0);
+extern void __thiscall ext_0057FD60(void* this_ptr, void* arg0);
+extern void __thiscall ext_0057FE10(void* this_ptr, void* arg0);
+extern void __thiscall ext_0057FEC0(void* this_ptr, void* arg0);
+extern void __thiscall ext_00581D90(void* this_ptr);
+extern bool __thiscall ext_00582A20(const float* m);
+extern bool __thiscall ext_00582A70(void* this_ptr, uint32_t tol);
+extern void __thiscall ext_00583DD0(void* this_ptr, int32_t frame);
+extern bool __thiscall ext_00661E80(void* this_ptr);
+extern void __thiscall ext_00661F70(void* this_ptr, uint32_t arg0);
+extern int __cdecl ext_006629B0(void* str);
+extern void* __cdecl ext_006629F0(void* out, const char* from, const char* to);
+extern void __cdecl ext_00663690(const char* path, void* out_dir, int32_t arg2);
+extern void* __thiscall ext_0067E110(const void* this_ptr, void* out);
+extern int32_t ext_006A6DE0(float val);
+
+void __thiscall fn_00583ED0(void* this_ptr, void* arg0) {
+    using StrCtorDefault = void* (__thiscall*)(void*);
+    using StrCtorCStr = void* (__thiscall*)(void*, const char*);
+    using StrDtor = void (__thiscall*)(void*);
+    using StrClear = void (__thiscall*)(void*);
+    using StrCStr = const char* (__thiscall*)(const void*);
+    using StrAssignStr = void* (__thiscall*)(void*, const void*);
+    using StrAssignCStr = void* (__thiscall*)(void*, const char*);
+    using StrAddCStrStr = void* (__cdecl*)(void*, const char*, const void*);
+    using StrAddStrCStr = void* (__cdecl*)(void*, const void*, const char*);
+
+    uint8_t* self = static_cast<uint8_t*>(this_ptr);
+
+    if (!ext_00553760(self)) {
+        void* os = ext_00435D00(mem_00924FA0, reinterpret_cast<const char*>(0x0095978C));
+        using OstreamManipFn = void* (__thiscall*)(void*, void*);
+        reinterpret_cast<OstreamManipFn>(mem_00924E98)(os, mem_00924E90);
+        return;
+    }
+
+    uint8_t* f16c = self + 0x16C;
+    bool handled_existing = false;
+
+    if (lift_field<uint8_t>(self, 0x214) != 0) {
+        if (ext_006629B0(f16c + 0x8C) != 0) {
+            uint8_t* f1f8 = self + 0x1F8;
+            if (ext_006629B0(f1f8) != 0) {
+                using Vfunc38 = void (__thiscall*)(void*, void*);
+                (*reinterpret_cast<Vfunc38**>(self))[0x38 / 4](self, f1f8);
+                ext_00406FC0(f16c, self + 0x5C);
+            }
+            handled_existing = true;
+        }
+    }
+
+    if (!handled_existing) {
+        uint8_t* f46c = self + 0x46C;
+        ext_00581D90(f46c);
+
+        uint8_t* obj414 = lift_field<uint8_t*>(self, 0x414);
+        void* path4ac = obj414 + 0x4AC;
+        if (ext_006629B0(path4ac) != 0) {
+            uint8_t dir[28];
+            uint8_t rel[28];
+            reinterpret_cast<StrCtorDefault>(mem_00924FE8)(dir);
+            const char* arg_cstr = reinterpret_cast<StrCStr>(mem_00924FF0)(arg0);
+            ext_00663690(arg_cstr, dir, 0);
+            const char* to_cstr = reinterpret_cast<StrCStr>(mem_00924FF0)(path4ac);
+            const char* from_cstr = reinterpret_cast<StrCStr>(mem_00924FF0)(dir);
+            void* rel_ptr = ext_006629F0(rel, from_cstr, to_cstr);
+            reinterpret_cast<StrAssignStr>(mem_00924FDC)(self + 0x530, rel_ptr);
+            reinterpret_cast<StrDtor>(mem_00924FF4)(rel);
+            reinterpret_cast<StrDtor>(mem_00924FF4)(dir);
+        }
+
+        if (lift_field<uint32_t>(self, 0x564) == 1) {
+            lift_field<uint32_t>(self, 0x54C) = 1;
+            *reinterpret_cast<float*>(f46c) = 2.0f;
+        }
+
+        void* f470 = self + 0x470;
+        reinterpret_cast<StrClear>(mem_00924EA8)(f470);
+        uint8_t tmp1[28];
+        uint8_t tmp2[28];
+        void* s1 = reinterpret_cast<StrAddCStrStr>(mem_00924FCC)(tmp1, reinterpret_cast<const char*>(0x0095A130), self + 0x8);
+        void* s2 = reinterpret_cast<StrAddStrCStr>(mem_00924ECC)(tmp2, s1, reinterpret_cast<const char*>(0x00941F08));
+        reinterpret_cast<StrAssignStr>(mem_00924FDC)(f470, s2);
+        reinterpret_cast<StrDtor>(mem_00924FF4)(tmp2);
+        reinterpret_cast<StrDtor>(mem_00924FF4)(tmp1);
+
+        lift_field<int32_t>(self, 0x4C8) = ext_006A6DE0(lift_field<float>(self, 0x174));
+        lift_field<float>(self, 0x4AC) = lift_field<float>(self, 0x18C);
+        lift_field<uint32_t>(self, 0x4B4) = lift_field<uint32_t>(self, 0x194);
+        lift_field<float>(self, 0x4B0) = lift_field<float>(self, 0x190);
+        lift_field<uint32_t>(self, 0x4B8) = lift_field<uint32_t>(self, 0x198);
+        lift_field<uint32_t>(self, 0x4BC) = lift_field<uint32_t>(self, 0x19C);
+        lift_field<uint8_t>(self, 0x4D4) = 1;
+        lift_field<uint8_t>(self, 0x4C1) = 1;
+        lift_field<uint8_t>(self, 0x4C0) = 1;
+        lift_field<uint8_t>(self, 0x4C2) = 1;
+        lift_field<float>(self, 0x4A8) = lift_field<float>(self, 0x188);
+    }
+
+    int32_t ebp = 0;
+
+    float scale = lift_field<float>(self, 0x17C);
+    if (scale != 1.0f) {
+        struct { uint32_t a, b, c; } vec = { 0, 0, 0 };
+        uint8_t* sub = lift_field<uint8_t*>(self, 0x414) + 0x160;
+        using GetNameFn = void* (__thiscall*)(void*);
+        void* name_str = (*reinterpret_cast<GetNameFn**>(sub))[0x24 / 4](sub);
+        ext_0040ECB0(&vec, name_str);
+        ext_0057FD60(self + 0x4F0, &scale);
+        ext_004026E0(&vec);
+    }
+
+    if (lift_field<uint32_t>(self, 0x1DC) == 1) {
+        uint8_t* obj414_8 = lift_field<uint8_t*>(self, 0x414) + 0x8;
+        using GetMatFn = void* (__thiscall*)(void*, void*);
+        void* mat = (*reinterpret_cast<GetMatFn**>(obj414_8))[0x14 / 4](obj414_8, lift_field<void*>(self, 0x420));
+
+        if (!ext_00582A70(mat, 0x358637BDu)) {
+            struct { uint32_t a, b, c; } vec = { 0, 0, 0 };
+            float trans[3] = {
+                lift_field<float>(mat, 0x30),
+                lift_field<float>(mat, 0x34),
+                lift_field<float>(mat, 0x38)
+            };
+
+            if (trans[0] != 0.0f || trans[1] != 0.0f || trans[2] != 0.0f) {
+                uint8_t* sub = lift_field<uint8_t*>(self, 0x414) + 0x160;
+                using GetNameFn = void* (__thiscall*)(void*);
+                void* name_str = (*reinterpret_cast<GetNameFn**>(sub))[0x24 / 4](sub);
+                ext_0040ECB0(&vec, name_str);
+                ext_0057FE10(self + 0x500, trans);
+            }
+
+            uint8_t pfs[0x3C];
+            ext_0057D7F0(pfs);
+
+            float m3x3[9];
+            void* m = ext_0067E110(mat, m3x3);
+            if (!ext_00582A20(static_cast<const float*>(m))) {
+                ext_004F4E50(mat, 0, pfs);
+                uint8_t* sub = lift_field<uint8_t*>(self, 0x414) + 0x160;
+                using GetNameFn = void* (__thiscall*)(void*);
+                void* name_str = (*reinterpret_cast<GetNameFn**>(sub))[0x24 / 4](sub);
+                ext_0040ECB0(pfs + 0x2C, name_str);
+                reinterpret_cast<StrAssignCStr>(mem_00924FD4)(pfs + 0x0C, reinterpret_cast<const char*>(0x009590F4));
+                ext_0057FEC0(self + 0x510, pfs);
+            }
+
+            ext_00557280(pfs);
+            ext_004026E0(&vec);
+        }
+    }
+
+    void* p424 = lift_field<void*>(self, 0x424);
+    if (p424 != nullptr) {
+        uint8_t s[28];
+        reinterpret_cast<StrCtorCStr>(mem_00924FE4)(s, reinterpret_cast<const char*>(0x0095A114));
+        using VfuncC = void (__thiscall*)(void*, void*);
+        (*reinterpret_cast<VfuncC**>(p424))[0xC / 4](p424, s);
+        reinterpret_cast<StrDtor>(mem_00924FF4)(s);
+
+        using Vfunc8 = void (__thiscall*)(void*, uint32_t, uint32_t);
+        (*reinterpret_cast<Vfunc8**>(p424))[0x8 / 4](
+            p424,
+            lift_field<uint32_t>(self, 0x16C),
+            lift_field<uint32_t>(self, 0x170)
+        );
+    }
+
+    ext_00661F70(lift_field<void*>(self, 0x420), lift_field<uint32_t>(self, 0x16C) + 1);
+
+    for (;;) {
+        ebp += 1;
+        ext_00583DD0(self, ebp);
+
+        void* cur424 = lift_field<void*>(self, 0x424);
+        if (cur424 != nullptr) {
+            using Vfunc4 = void (__thiscall*)(void*, int32_t);
+            (*reinterpret_cast<Vfunc4**>(cur424))[0x4 / 4](cur424, ebp);
+        }
+
+        if (!ext_00661E80(lift_field<void*>(self, 0x420))) {
+            break;
+        }
+
+        uint8_t* p420 = lift_field<uint8_t*>(self, 0x420);
+        uint32_t* node = *reinterpret_cast<uint32_t**>(p420 + 0x8);
+        uint32_t* cur = *reinterpret_cast<uint32_t**>(p420 + 0xC);
+        if (node == nullptr || cur == reinterpret_cast<uint32_t*>(node[1])) {
+            using InvalidParamFn = void (__cdecl*)();
+            reinterpret_cast<InvalidParamFn>(mem_00925134)();
+        }
+
+        int32_t val = static_cast<int32_t>(cur[2]);
+        int32_t limit = static_cast<int32_t>(lift_field<uint32_t>(self, 0x170)) + 1;
+        if (val > limit) {
+            break;
+        }
+    }
+
+    lift_field<uint8_t>(self, 0x560) = 1;
+
+    uint8_t obj[12];
+    ext_00566FE0(obj, self + 0x46C);
+    ext_0057D840(obj, arg0);
+    ext_00493D90(obj);
+}
+} // namespace lift_00583ED0

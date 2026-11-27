@@ -39745,6 +39745,13 @@
     "summary": "Loads/updates motion properties, resolves motion file path, and applies bone/frame overrides.",
     "lifted_path": "lifted/classes/Acclaim2MotionIO.cpp"
   },
+  "0x00583ED0": {
+    "name": "Acclaim2MotionIO::vfunc_13",
+    "class": "Acclaim2MotionIO",
+    "signature": "void __thiscall fn_00583ED0(void* this_ptr, void* arg0)",
+    "summary": "Exports Acclaim motion/skeleton data, applying scale/offset/rotation adjustments and writing frames.",
+    "lifted_path": "lifted/classes/Acclaim2MotionIO.cpp"
+  },
   "0x00584500": {
     "name": "Acclaim2CharacterIO::vfunc_1",
     "class": "Acclaim2CharacterIO",
