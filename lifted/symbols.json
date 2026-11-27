@@ -41433,6 +41433,13 @@
     "summary": "Evaluates whether an Effector's virtual method at vtable+0x38 returns a float \u003e= 1e-6, throwing if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00604E50": {
+    "name": "ExprParser::ReadMethodType\u003cEffector,float,getPoseRawDesiredDisplacement,1\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
+    "signature": "void* fn_00604E50(void* /*unused*/, void* out)",
+    "summary": "Reads the float value of an Effector pose-raw-desired-displacement getter through a held pointer and formats it into the caller's string slot; throws if the held pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00604EB0": {
     "name": "ExprParser::ReadMethodType\u003cEffector,float,getPoseRawDesiredDisplacement\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",

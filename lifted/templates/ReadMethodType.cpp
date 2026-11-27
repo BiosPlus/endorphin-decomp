@@ -67494,3 +67494,41 @@ void* fn_0059FCD0(void* out, void* obj) {
     return out; // not reached: _CxxThrowException does not return
 }
 } // namespace lift_0059FCD0
+
+// [0x00604E50] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_4 (85 bytes)
+namespace lift_00604E50 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void* ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Data: RTTI/throw-info descriptor referenced at 0x009DEC1C
+extern char mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Effector,float,getPoseRawDesiredDisplacement,1>::vfunc_4
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>
+// @summary Reads the float value of an Effector pose-raw-desired-displacement getter through a held pointer and formats it into the caller's string slot; throws if the held pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* vtable
+// Stack args: (unused, out) — ret 0x8; `out` is the caller's string/sret slot and also holds the object pointer.
+void* fn_00604E50(void* /*unused*/, void* out) {
+    void* obj = *static_cast<void**>(out);
+    if (obj == nullptr) {
+        unsigned char exc_buf[0x10] = {};
+        ext_0046C3C0(exc_buf);
+        ext_006A6DD2(exc_buf + 4, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    // vtable slot +0x38 (index 14): virtual getter taking a scratch buffer, returns float*.
+    void** vt = lift_field<void**>(obj, 0);
+    using GetFloatFn = const float* (*)(void* self, void* scratch);
+    alignas(8) unsigned char scratch[0x38] = {};
+    auto get = reinterpret_cast<GetFloatFn>(vt[14]);
+    const float* p = get(obj, scratch);
+    float value = *p;
+
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_00604E50

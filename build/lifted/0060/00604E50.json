@@ -1,0 +1,22 @@
+{
+  "va": "0x00604E50",
+  "size": 85,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffector,float,getPoseRawDesiredDisplacement,1\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
+  "signature": "void* fn_00604E50(void* /*unused*/, void* out)",
+  "summary": "Reads the float value of an Effector pose-raw-desired-displacement getter through a held pointer and formats it into the caller's string slot; throws if the held pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:04:01Z"
+}
