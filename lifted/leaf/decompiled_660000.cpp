@@ -3717,3 +3717,32 @@ void* fn_00666BA0(void* self, const void* src) {
 }
 } // namespace lift_0052A140
 } // namespace lift_00666BA0
+
+// [0x00664910]
+namespace lift_00664910 {
+// @name formatHex8
+// @summary Formats a 32-bit integer as an 8-character zero-padded hex string into a std::string
+
+extern uint32_t mem_00925230; // MSVCR80!_itoa
+extern uint32_t mem_0092506C; // MSVCP80!std::string::basic_string(size_t, char)
+extern uint32_t mem_00924ED0; // MSVCP80!std::string::operator+=(const char*)
+
+using itoa_fn_t = char* (__cdecl*)(int val, char* buf, int radix);
+using str_ctor_fill_fn_t = void (__thiscall*)(void* self, uint32_t count, char ch);
+using str_append_cstr_fn_t = void* (__thiscall*)(void* self, const char* s);
+
+void* __cdecl sub_00664910(void* out_str, int value) {
+    char buf[32];
+    reinterpret_cast<itoa_fn_t>(mem_00925230)(value, buf, 16);
+
+    uint32_t len = 0;
+    while (buf[len] != '\0') {
+        ++len;
+    }
+
+    uint32_t pad = 8 - len;
+    reinterpret_cast<str_ctor_fill_fn_t>(mem_0092506C)(out_str, pad, '0');
+    reinterpret_cast<str_append_cstr_fn_t>(mem_00924ED0)(out_str, buf);
+    return out_str;
+}
+} // namespace lift_00664910

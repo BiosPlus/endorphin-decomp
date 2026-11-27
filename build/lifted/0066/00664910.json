@@ -1,0 +1,13 @@
+{
+  "va": "0x00664910",
+  "size": 149,
+  "orig_symbol": "sub_00664910",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "formatHex8",
+  "signature": "void* __cdecl sub_00664910(void* out_str, int value)",
+  "summary": "Formats a 32-bit integer as an 8-character zero-padded hex string into a std::string",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:10:25Z"
+}

@@ -54566,6 +54566,12 @@
     "summary": "Formats an int and a double with _snprintf into a 50-byte stack buffer, constructs the std::string at `out` from it, and returns `out`.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00664910": {
+    "name": "formatHex8",
+    "signature": "void* __cdecl sub_00664910(void* out_str, int value)",
+    "summary": "Formats a 32-bit integer as an 8-character zero-padded hex string into a std::string",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006649B0": {
     "name": "sub_006649B0_isWhitespace",
     "signature": "int sub_006649B0_isWhitespace(unsigned char c)",
