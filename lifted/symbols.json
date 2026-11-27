@@ -73896,6 +73896,13 @@
     "summary": "Loads the pointer at this+0xF0 and returns the byte at ptr+0x7CD in the low 8 bits of EAX (upper 24 bits keep the pointer's upper bits).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00705170": {
+    "name": "Unknown::assignCStringForward_00705170",
+    "class": "Unknown",
+    "signature": "void* fn_00705170(void* self, const char* s)",
+    "summary": "Forwards a C string to ext_006B9EC0 on the sub-object at this+0xF0 (offset +0x7D0 into it) and returns that call's result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00705190": {
     "name": "GetChildInt32At0x7D0",
     "class": "Unknown",
