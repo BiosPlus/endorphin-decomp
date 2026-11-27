@@ -39612,6 +39612,13 @@
     "summary": "Returns 2 if the std::string at this+0x568 is empty, otherwise 3.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00583630": {
+    "name": "Acclaim2MotionIO::vfunc_14",
+    "class": "Acclaim2MotionIO",
+    "signature": "int __thiscall fn_00583630(void* self, void* arg0)",
+    "summary": "Loads/updates motion properties, resolves motion file path, and applies bone/frame overrides.",
+    "lifted_path": "lifted/classes/Acclaim2MotionIO.cpp"
+  },
   "0x00584500": {
     "name": "Acclaim2CharacterIO::vfunc_1",
     "class": "Acclaim2CharacterIO",

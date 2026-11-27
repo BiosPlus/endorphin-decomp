@@ -1,0 +1,214 @@
+{
+  "va": "0x00583630",
+  "size": 878,
+  "orig_symbol": "Acclaim2MotionIO::vfunc_14",
+  "src_path": "src/classes/Acclaim2MotionIO.cpp",
+  "lifted_path": "lifted/classes/Acclaim2MotionIO.cpp",
+  "name": "Acclaim2MotionIO::vfunc_14",
+  "class": "Acclaim2MotionIO",
+  "signature": "int __thiscall fn_00583630(void* self, void* arg0)",
+  "summary": "Loads/updates motion properties, resolves motion file path, and applies bone/frame overrides.",
+  "fields": [
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x64",
+      "type": "float",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x88",
+      "type": "uint32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x8C",
+      "type": "uint32_t",
+      "name": "field_0x8c"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x27C",
+      "type": "void*",
+      "name": "field_0x27c"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x414",
+      "type": "void*",
+      "name": "field_0x414"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x46C",
+      "type": "float",
+      "name": "field_0x46c"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4A8",
+      "type": "float",
+      "name": "field_0x4a8"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4AC",
+      "type": "float",
+      "name": "field_0x4ac"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4B0",
+      "type": "float",
+      "name": "field_0x4b0"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4B4",
+      "type": "uint32_t",
+      "name": "field_0x4b4"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4B8",
+      "type": "uint32_t",
+      "name": "field_0x4b8"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4BC",
+      "type": "uint32_t",
+      "name": "field_0x4bc"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4C0",
+      "type": "uint8_t",
+      "name": "field_0x4c0"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4C1",
+      "type": "uint8_t",
+      "name": "field_0x4c1"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4C2",
+      "type": "uint8_t",
+      "name": "field_0x4c2"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4C8",
+      "type": "int32_t",
+      "name": "field_0x4c8"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4CC",
+      "type": "uint32_t",
+      "name": "field_0x4cc"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4D0",
+      "type": "uint32_t",
+      "name": "field_0x4d0"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4D4",
+      "type": "uint8_t",
+      "name": "field_0x4d4"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x4F0",
+      "type": "void*",
+      "name": "field_0x4f0"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x530",
+      "type": "std::string",
+      "name": "field_0x530"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x568",
+      "type": "std::string",
+      "name": "field_0x568"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x584",
+      "type": "void*",
+      "name": "field_0x584"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x5E0",
+      "type": "void*",
+      "name": "field_0x5e0"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x800",
+      "type": "void*",
+      "name": "field_0x800"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:42:20Z"
+}
