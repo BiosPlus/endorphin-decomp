@@ -1,0 +1,64 @@
+{
+  "va": "0x007D4680",
+  "size": 150,
+  "orig_symbol": "sub_007D4680",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "BlockPool::init",
+  "class": "BlockPool",
+  "signature": "extern \"C\" void sub_007D4680(void* pool, int32_t capacity, int32_t blockSize, int32_t alignment, void* allocator)",
+  "summary": "Initializes a fixed-size block pool with optional alignment and allocator callbacks.",
+  "fields": [
+    {
+      "class": "BlockPool",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "BlockPool",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "buffer"
+    },
+    {
+      "class": "BlockPool",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "freeList"
+    },
+    {
+      "class": "BlockPool",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "BlockPool",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "blockSize"
+    },
+    {
+      "class": "BlockPool",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "capacity"
+    },
+    {
+      "class": "BlockPool",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "isAligned"
+    },
+    {
+      "class": "BlockPool",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "allocator"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:12:42Z"
+}

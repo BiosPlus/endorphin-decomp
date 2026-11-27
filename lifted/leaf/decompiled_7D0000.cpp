@@ -1643,3 +1643,54 @@ uint8_t __thiscall sub_007DD0A0(void* self, int32_t index, uint8_t enable) {
     return 1;
 }
 } // namespace lift_007DD0A0
+
+// [0x007D4680]
+namespace lift_007D4680 {
+extern void ext_007D4650(void* pool);
+
+// @name BlockPool::init
+// @class BlockPool
+// @summary Initializes a fixed-size block pool with optional alignment and allocator callbacks.
+// @field BlockPool +0x00 int32_t field_0x00
+// @field BlockPool +0x04 void* buffer
+// @field BlockPool +0x08 void* freeList
+// @field BlockPool +0x0c int32_t field_0x0c
+// @field BlockPool +0x10 int32_t blockSize
+// @field BlockPool +0x14 int32_t capacity
+// @field BlockPool +0x18 int32_t isAligned
+// @field BlockPool +0x1c void* allocator
+extern void sub_007D4680(void* pool, int32_t capacity, int32_t blockSize, int32_t alignment, void* allocator) {
+    int32_t alignedSize = 0;
+    lift_field<void*>(pool, 0x1c) = allocator;
+
+    if (capacity > 0) {
+        alignedSize = blockSize;
+        void* buffer = nullptr;
+        if (alignment == 0) {
+            using AllocFn = void* (__cdecl*)(int32_t);
+            AllocFn alloc = lift_field<AllocFn>(allocator, 0x00);
+            buffer = alloc(capacity * alignedSize);
+            lift_field<int32_t>(pool, 0x18) = 0;
+        } else {
+            int32_t rem = alignedSize % alignment;
+            if (rem != 0) {
+                alignedSize = alignedSize - rem + alignment;
+            }
+            using AlignedAllocFn = void* (__cdecl*)(int32_t, int32_t);
+            AlignedAllocFn alignedAlloc = lift_field<AlignedAllocFn>(allocator, 0x08);
+            buffer = alignedAlloc(alignedSize * capacity, alignment);
+            lift_field<int32_t>(pool, 0x18) = 1;
+        }
+        lift_field<void*>(pool, 0x04) = buffer;
+        using AllocFn = void* (__cdecl*)(int32_t);
+        AllocFn alloc = lift_field<AllocFn>(allocator, 0x00);
+        lift_field<void*>(pool, 0x08) = alloc(4 * capacity);
+    }
+
+    lift_field<int32_t>(pool, 0x10) = alignedSize;
+    lift_field<int32_t>(pool, 0x14) = capacity;
+    lift_field<int32_t>(pool, 0x00) = 1;
+    ext_007D4650(pool);
+    lift_field<int32_t>(pool, 0x0c) = 0;
+}
+} // namespace lift_007D4680
