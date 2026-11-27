@@ -1935,3 +1935,33 @@ void fn_0045C130(void* self, uint32_t unusedArg, uint32_t arg1, uint32_t arg2) {
     }
 }
 } // namespace lift_0045C130
+
+// [0x0045BE30] sub_0045BE30 (145 bytes)
+namespace lift_0045BE30 {
+// Known callee 0x006A6442: thunk_MFC80_ord_5868 (IAT jump thunk forwarding to MFC80!ord_5868.)
+// Thiscall: this in ecx, eight stack arguments.
+extern void __thiscall ext_006A6442(void* self, uint32_t a1, uint32_t a2, uint32_t a3,
+                                        uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7,
+                                        uint32_t a8);
+// SendMessageA IAT slot pointer (value 0x0062861A in .rdata).
+extern uint32_t mem_00925694;
+
+typedef uint32_t(__stdcall* SendMessageFn)(uint32_t hwnd, uint32_t msg, uint32_t wparam, uint32_t lparam);
+
+// @name sendWindowRefreshMessages
+// @class <ClassName> (optional)
+// @summary Sends a sequence of SendMessageA calls (0x110A/0x110B/0x1114) to the window handle at +0x20, interleaved with two ext_006A6442 calls.
+// @field <ClassName> +0x20 uint32_t hwnd
+void __thiscall fn_0045BE30(void* self) {
+    auto send = reinterpret_cast<SendMessageFn>(static_cast<uintptr_t>(mem_00925694));
+
+    uint32_t r = send(lift_field<uint32_t>(self, 0x20), 0x110A, 0, 0);
+    r = send(lift_field<uint32_t>(self, 0x20), 0x110B, 9, r);
+    r = send(lift_field<uint32_t>(self, 0x20), 0x110A, 0, 0);
+    ext_006A6442(self, r, 8, 0, 0, 0, 2, 2, 0);
+    r = send(lift_field<uint32_t>(self, 0x20), 0x110A, 0, 0);
+    ext_006A6442(self, r, 8, 0, 0, 0, 0x10, 0x10, 0);
+    r = send(lift_field<uint32_t>(self, 0x20), 0x110A, 0, 0);
+    send(lift_field<uint32_t>(self, 0x20), 0x1114, 0, r);
+}
+} // namespace lift_0045BE30

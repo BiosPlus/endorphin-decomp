@@ -7378,6 +7378,13 @@
     "summary": "Sends a 0x110a message to the window handle at +0x20, passes the result through MFC80 ord_2884, then builds a std::string from the MFC80 ord_876 result into the caller-supplied return buffer.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045BE30": {
+    "name": "sendWindowRefreshMessages",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void __thiscall fn_0045BE30(void* self)",
+    "summary": "Sends a sequence of SendMessageA calls (0x110A/0x110B/0x1114) to the window handle at +0x20, interleaved with two ext_006A6442 calls.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045BED0": {
     "name": "resolveStringOrQueryWindow",
     "class": "Unknown",

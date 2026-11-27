@@ -1,0 +1,22 @@
+{
+  "va": "0x0045BE30",
+  "size": 145,
+  "orig_symbol": "sub_0045BE30",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "sendWindowRefreshMessages",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void __thiscall fn_0045BE30(void* self)",
+  "summary": "Sends a sequence of SendMessageA calls (0x110A/0x110B/0x1114) to the window handle at +0x20, interleaved with two ext_006A6442 calls.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:36:59Z"
+}

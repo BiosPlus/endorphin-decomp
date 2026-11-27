@@ -54,6 +54,7 @@ struct _ClassName__Fields {
     // +0x20  HWND                     field_0x20  (evidence: 0x00422C00) // CONFLICT: multiple definitions at +0x20
     // +0x20  float                    field_0x20  (evidence: 0x00533FE0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004B0F50) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint32_t                 hwnd  (evidence: 0x0045BE30) // CONFLICT: multiple definitions at +0x20
     // +0x24  float                    field_0x24  (evidence: 0x00533FE0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x24
     // +0x24  u32                      field_0x24  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x24
     // +0x28  WORD                     field_0x28  (evidence: 0x007BC4F0) // CONFLICT: multiple definitions at +0x28
