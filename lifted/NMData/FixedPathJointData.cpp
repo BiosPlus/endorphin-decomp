@@ -341,3 +341,42 @@ void fn_005EEDB0(void* self) {
     }
 }
 } // namespace lift_005EEDB0
+
+// [0x005ECB10] NMData::FixedPathJointData::vfunc_9_off_C (136 bytes)
+namespace lift_005ECB10 {
+// Known callee 0x00528C30: AnimatableTransform::vfunc_9_off_C (If the sub-object at +0x4 is non-null, forwards the call (same stack argument) to its vtable slot 8; otherwise returns 0.)
+extern std::uint32_t ext_00528C30(void* self, std::uint32_t arg0);
+// MSVCR80 _invalid_parameter_noinfo IAT slot; only used by MSVC bounds checks, not a real data access.
+extern int mem_00925134;
+
+// @name NMData::FixedPathJointData::vfunc_9_off_C
+// @class NMData::FixedPathJointData
+// @summary Remaps arg (1->3, 2->4), forwards it to the base callee, then calls vtable slot 8 with the remapped arg on each object in the vector at +0x1F8.
+// @field NMData::FixedPathJointData +0x1F8 void** field_0x1f8
+// @field NMData::FixedPathJointData +0x1FC void** field_0x1fc
+void fn_005ECB10(void* self, std::uint32_t arg0) {
+    (void)&mem_00925134;
+
+    std::uint32_t mode = arg0;
+    if (arg0 == 1) {
+        mode = 3;
+    } else if (arg0 == 2) {
+        mode = 4;
+    }
+
+    ext_00528C30(self, mode);
+
+    auto* base = static_cast<unsigned char*>(self);
+    void** it = *reinterpret_cast<void***>(base + 0x1F8);
+    void** const end = *reinterpret_cast<void***>(base + 0x1FC);
+
+    for (; it != end; ++it) {
+        auto* obj = static_cast<unsigned char*>(*it);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        // vtable slot 8 (byte offset 0x20): thiscall(this, arg)
+        using Slot8 = void(__thiscall*)(void*, std::uint32_t);
+        auto fn = reinterpret_cast<Slot8>(vtbl[8]);
+        fn(obj, mode);
+    }
+}
+} // namespace lift_005ECB10
