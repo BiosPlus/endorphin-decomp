@@ -1,0 +1,28 @@
+{
+  "va": "0x0046EFE0",
+  "size": 154,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getImageHeight\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getImageHeight\u003e",
+  "signature": "int __thiscall fn_0046EFE0(void* self, void* arg0)",
+  "summary": "Evaluates ImageExporter::getImageHeight via the bound object in arg0, or throws DerivedException if null.",
+  "fields": [
+    {
+      "class": "arg0",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "arg0",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T09:03:17Z"
+}
