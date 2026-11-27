@@ -3275,3 +3275,69 @@ void* fn_00475E50(void* self, void* out, uint32_t left_flag, void* node, void* v
     return out;
 }
 } // namespace lift_00475E50
+
+// [0x00478A10]
+namespace lift_00478A10 {
+extern void* ext_006404E0(void* self, void* arg);
+extern void ext_00673C20(void* self);
+extern void (*mem_00925134)(void);
+extern uint8_t mem_00B53B30[];
+
+// @name serializeMapEntries
+// @summary Iterates a tree-map container, invoking vtable[3] on each entry's value with a context node and notifying an optional callback.
+// @field MapContainer +0x04 void* headNode
+// @field MapContainer +0x08 uint32_t size
+// @field MapNode +0x00 void* leftmost
+// @field MapNode +0x28 void* value
+void* fn_00478A10(void* container, void* context, void* groupTag, void* itemTag, void* progressCallback) {
+    if (lift_field<uint32_t>(container, 0x08) == 0) {
+        return mem_00B53B30;
+    }
+
+    void* targetContext = groupTag ? ext_006404E0(context, groupTag) : context;
+
+    void* endNode = lift_field<void*>(container, 0x04);
+    struct TreeIterator {
+        void* owner;
+        void* node;
+    };
+    TreeIterator iter{ container, lift_field<void*>(endNode, 0x00) };
+
+    while (true) {
+        if (!iter.owner || iter.owner != container) {
+            mem_00925134();
+        }
+        if (iter.node == endNode) {
+            break;
+        }
+
+        if (!iter.owner) {
+            mem_00925134();
+        }
+        if (iter.node == lift_field<void*>(iter.owner, 0x04)) {
+            mem_00925134();
+        }
+
+        void* item = lift_field<void*>(iter.node, 0x28);
+        auto vtable = lift_field<void**>(item, 0x00);
+        auto itemMethod = reinterpret_cast<void (*)(void*, void*)>(vtable[3]);
+
+        if (itemTag) {
+            void* itemContext = ext_006404E0(targetContext, itemTag);
+            itemMethod(item, itemContext);
+        } else {
+            itemMethod(item, targetContext);
+        }
+
+        if (progressCallback) {
+            auto cbVtable = lift_field<void**>(progressCallback, 0x00);
+            auto cbMethod = reinterpret_cast<void (*)(void*)>(cbVtable[0]);
+            cbMethod(progressCallback);
+        }
+
+        ext_00673C20(&iter);
+    }
+
+    return targetContext;
+}
+} // namespace lift_00478A10
