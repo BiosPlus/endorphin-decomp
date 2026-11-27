@@ -13401,6 +13401,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049C570": {
+    "name": "ExprParser::ReadMethodType::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::State::getFileName(void) const, 0}, 0\u003e",
+    "signature": "uint32_t fn_0049C570(void* out)",
+    "summary": "Resolves the value at out+0x00 through a helper into a temporary Unknown, assigns it into out, releases the temporary via vtable slot 0x78, then tail-dispatches vtable slot 47 of out+0x04 with out as the argument; throws DerivedException when out+0x00 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049C610": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::State, bool, isDeactivated, bool, setIsDeactivated\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}\u003e",

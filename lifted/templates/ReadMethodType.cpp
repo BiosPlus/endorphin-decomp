@@ -70137,3 +70137,50 @@ int __thiscall fn_0046EFE0(void* self, void* arg0) {
     return reinterpret_cast<CallFn>(target_vtbl[0xBC / 4])(target, arg0);
 }
 } // namespace lift_0046EFE0
+
+// [0x0049C570] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_47 (154 bytes)
+namespace lift_0049C570 {
+extern void* ext_0049AA10(void* self);
+extern void ext_006720E0(void* self, void* key);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Resolves the value at out+0x00 through a helper into a temporary Unknown, assigns it into out, releases the temporary via vtable slot 0x78, then tail-dispatches vtable slot 47 of out+0x04 with out as the argument; throws DerivedException when out+0x00 is null.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+uint32_t fn_0049C570(void* out) {
+    void* const value = lift_field<void*>(out, 0x00);
+    if (value == nullptr) {
+        // Construct the exception object and throw it (never returns).
+        alignas(void*) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return 0;
+    }
+
+    void* const key = ext_0049AA10(value);
+
+    // Temporary Unknown: tmp[0] = field_0x00, tmp[1] = field_0x04.
+    void* tmp[2] = {nullptr, nullptr};
+    ext_006720E0(&tmp[1], key);
+    ext_0041CF50(out, tmp);
+
+    void* const released = tmp[1];
+    if (released != nullptr) {
+        void** const vtbl = *reinterpret_cast<void***>(released);
+        using ReleaseFn = void (*)(void* self, void* other);
+        reinterpret_cast<ReleaseFn>(vtbl[0x78 / sizeof(void*)])(released, tmp);
+    }
+
+    void* const target = lift_field<void*>(out, 0x04);
+    void** const vtbl = *reinterpret_cast<void***>(target);
+    using VSlot47Fn = uint32_t (*)(void* self, void* arg);
+    return reinterpret_cast<VSlot47Fn>(vtbl[0xBC / sizeof(void*)])(target, out);
+}
+} // namespace lift_0049C570
