@@ -3060,3 +3060,39 @@ void* fn_006BAAF0(void* self, void* out, uint32_t mode) {
     return out;
 }
 } // namespace lift_006BAAF0
+
+// [0x006BB870] sub_006BB870 (144 bytes)
+namespace lift_006BB870 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762; used as operator new(size)).
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006BB5F0: Unknown::initCopyFields_006BB5F0 (thiscall: runs initOrCopy on this with src, copies +0x50, +0x54, +0x58 from src; returns this).
+extern void* ext_006BB5F0(void* self, void* src);
+// Known callee 0x006D2170: DynamicArray::InsertAt (thiscall: inserts elem at index, clamped to count).
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+// Known callee 0x006B9D70: sub_006B9D70 (jump thunk to sub_006B9970; destroys the temp at its ecx).
+extern void ext_006B9D70(void* self);
+
+// @name Unknown::allocCopyAndAppend_006BB870
+// @class Unknown
+// @summary Allocates a 0x60-byte object, copy-initializes it from a stack temp, and appends its pointer to the DynamicArray at (*this)+0x0C.
+// @field Unknown +0x00 void* arrayOwner (dereferenced; the DynamicArray lives at *(this)+0x0C)
+void fn_006BB870(void* self) {
+    // Stack temp used as the copy source; initCopyFields reads +0x50..+0x58, so it must be at least 0x59 bytes.
+    alignas(8) uint8_t temp[0x60];
+
+    void* obj = ext_006A5C62(0x60);
+    if (obj != nullptr) {
+        obj = ext_006BB5F0(obj, temp);
+    } else {
+        obj = nullptr;
+    }
+
+    void* owner = lift_field<void*>(self, 0x00);
+    void* array = static_cast<uint8_t*>(owner) + 0x0C;
+    int32_t index = lift_field<int32_t>(array, 0x00);
+
+    ext_006D2170(array, index, &obj);
+
+    ext_006B9D70(temp);
+}
+} // namespace lift_006BB870

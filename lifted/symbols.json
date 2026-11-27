@@ -66613,6 +66613,13 @@
     "summary": "Returns table[index] from the array pointed to by vtable+0x1C when 0 \u003c= index \u003c ext_006BB7D0(this); otherwise calls ext_006E7440 on (vtable + 0x28) with index 0 and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BB870": {
+    "name": "Unknown::allocCopyAndAppend_006BB870",
+    "class": "Unknown",
+    "signature": "void fn_006BB870(void* self)",
+    "summary": "Allocates a 0x60-byte object, copy-initializes it from a stack temp, and appends its pointer to the DynamicArray at (*this)+0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BB9B0": {
     "name": "initHugeVectorGlobals",
     "signature": "void sub_006BB9B0(void)",

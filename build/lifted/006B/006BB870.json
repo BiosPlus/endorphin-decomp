@@ -1,0 +1,22 @@
+{
+  "va": "0x006BB870",
+  "size": 144,
+  "orig_symbol": "sub_006BB870",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::allocCopyAndAppend_006BB870",
+  "class": "Unknown",
+  "signature": "void fn_006BB870(void* self)",
+  "summary": "Allocates a 0x60-byte object, copy-initializes it from a stack temp, and appends its pointer to the DynamicArray at (*this)+0x0C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* arrayOwner (dereferenced; the DynamicArray lives at*",
+      "name": "(this)+0x0C)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:05:08Z"
+}

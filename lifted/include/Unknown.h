@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct Unknown_Fields {
     // +0x0   FILE* file               (inner+0x00)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* arrayOwner (dereferenced; the DynamicArray lives at* (this)+0x0C)  (evidence: 0x006BB870) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t vtable          (vptr)  (evidence: 0x006BB7D0, 0x006E7F90, 0x006E7FB0, 0x006E7FC0, 0x006E7FD0, 0x006E7FE0, 0x006E7FF0, 0x006E8000, 0x006E8010, 0x006E8020, 0x006E8030, 0x006E8040, 0x006E86B0, 0x006E8810, 0x0072B1C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to subobject; dereferenced to reach +0x04/+0x08)  (evidence: 0x0072B1E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)  (evidence: 0x006E7F90, 0x006E8050, 0x006E8060, 0x006E8070, 0x006E8080) // CONFLICT: multiple definitions at +0x0
