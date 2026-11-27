@@ -190,3 +190,45 @@ void fn_004CE860(uint32_t* out, uint32_t* out2) {
     out2[2] = out[2];
 }
 } // namespace lift_004CE860
+
+// [0x004CFE20] NMData::IncarnationEventData::vfunc_15 (105 bytes)
+namespace lift_004CFE20 {
+// Known callee 0x004C3410: NMData::DesiredPoseEventData::vfunc_15 (thiscall; self in ecx, out + key on stack)
+extern DWORD* __thiscall ext_004C3410(void* self, DWORD* out, DWORD key);
+// Known callee 0x004CFDC0: storeValueAndCalleeResult (cdecl; writes value to out[0..3] and ext_004CF910(0) to out[4..7])
+extern void ext_004CFDC0(uint8_t* out, uint32_t value);
+// Known callee 0x004CFDE0: storeStaticObjectPair_004CFDE0 (cdecl; stores value into out[0] and the static object address into out[1])
+extern void ext_004CFDE0(DWORD* out, DWORD value);
+// Known callee 0x00671F30: sub_00671F30 (cdecl; zeroes out[0] and stores global mem_00B599BC into out[1])
+extern void ext_00671F30(uint32_t* out);
+// Listed in CALLEES metadata (NMData::SeverEventData::vfunc_14) but NOT called by the 105-byte body.
+// Taking its address only; it does not run and does not change behavior.
+extern void* __thiscall ext_004C2070(void* self, void* arg1, uint32_t arg2);
+
+// @name NMData::IncarnationEventData::vfunc_15
+// @class NMData::IncarnationEventData
+// @summary Dispatches on a 32-bit key: 0x2EC stores self via ext_004CFDC0, 0x317 stores self via ext_004CFDE0 when self+0x180 == 4 (else zeroes out via ext_00671F30), any other key forwards to DesiredPoseEventData::vfunc_15; always returns out.
+// @field NMData::IncarnationEventData +0x180 uint32_t field_0x180
+DWORD* __thiscall fn_004CFE20(void* self, DWORD* out, DWORD key) {
+    (void)&ext_004C2070;  // metadata-only callee; not called by this function
+
+    const DWORD selfValue = static_cast<DWORD>(reinterpret_cast<uintptr_t>(self));
+
+    if (key == 0x2ECu) {
+        ext_004CFDC0(reinterpret_cast<uint8_t*>(out), selfValue);
+        return out;
+    }
+
+    if (key == 0x317u) {
+        if (lift_field<uint32_t>(self, 0x180) == 4u) {
+            ext_004CFDE0(out, selfValue);
+        } else {
+            ext_00671F30(reinterpret_cast<uint32_t*>(out));
+        }
+        return out;
+    }
+
+    ext_004C3410(self, out, key);
+    return out;
+}
+} // namespace lift_004CFE20

@@ -1,0 +1,22 @@
+{
+  "va": "0x004CFE20",
+  "size": 105,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_15",
+  "src_path": "src/NMData/IncarnationEventData.cpp",
+  "lifted_path": "lifted/NMData/IncarnationEventData.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_15",
+  "class": "NMData::IncarnationEventData",
+  "signature": "DWORD* __thiscall fn_004CFE20(void* self, DWORD* out, DWORD key)",
+  "summary": "Dispatches on a 32-bit key: 0x2EC stores self via ext_004CFDC0, 0x317 stores self via ext_004CFDE0 when self+0x180 == 4 (else zeroes out via ext_00671F30), any other key forwards to DesiredPoseEventData::vfunc_15; always returns out.",
+  "fields": [
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x180",
+      "type": "uint32_t",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T09:29:52Z"
+}

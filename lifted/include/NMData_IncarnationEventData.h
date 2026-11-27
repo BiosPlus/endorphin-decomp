@@ -14,6 +14,7 @@ struct NMData_IncarnationEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004CE710) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x004A9B50, 0x004CE8C0, 0x004CF310) // CONFLICT: multiple definitions at +0x0
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x004CF320)
+    // +0x180 uint32_t                 field_0x180  (evidence: 0x004CFE20)
     // +0x184 void*                    field_0x184  (evidence: 0x004CF320, 0x004CFCA0, 0x004CFE90)
     // +0x188 uint8_t                  field_0x188  (evidence: 0x004CF320, 0x004CFE90)
 };

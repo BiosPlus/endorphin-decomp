@@ -18662,6 +18662,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004CFB90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CFE20": {
+    "name": "NMData::IncarnationEventData::vfunc_15",
+    "class": "NMData::IncarnationEventData",
+    "signature": "DWORD* __thiscall fn_004CFE20(void* self, DWORD* out, DWORD key)",
+    "summary": "Dispatches on a 32-bit key: 0x2EC stores self via ext_004CFDC0, 0x317 stores self via ext_004CFDE0 when self+0x180 == 4 (else zeroes out via ext_00671F30), any other key forwards to DesiredPoseEventData::vfunc_15; always returns out.",
+    "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
   "0x004CFE90": {
     "name": "NMData::IncarnationEventData::vfunc_86",
     "class": "NMData::IncarnationEventData",
