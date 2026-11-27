@@ -1701,3 +1701,65 @@ void __fastcall fn_004CE420(void* self, void* /*edx*/, uint32_t* out, const char
     reinterpret_cast<StrDtorFn>(*reinterpret_cast<uintptr_t*>(&mem_00924FF4))(tmp);
 }
 } // namespace lift_004CE420
+
+// [0x004CDF40] sub_004CDF40 (246 bytes)
+namespace lift_004CDF40 {
+// Known callee 0x004C6F60: sub_004C6F60 (397B, no lifted name)
+extern void ext_004C6F60();
+// Known callee 0x004C7200: StringExceptionWithMember::copy_ctor (Copy constructor: copies the base exception, sets the vtable, and copy-constructs two std::string members.)
+extern void ext_004C7200();
+// Known callee 0x004CA3E0: Lifted_004CA3E0 (Gets the decorated type name of the type_info at mem_00A2FBBC, copies it to a std::string, passes it with self to ext_0066AC90, and returns self.)
+extern void ext_004CA3E0();
+// Known callee 0x004CDEE0: initStaticObjectOnce_004CDEE0 (One-time initializer for the static object at 0x00AE4520, guarded by bit 0 of the flag dword at 0x00AE4544; runs ext_004CD9F0 on the object and registers 0x00918C00 via ext_006A6C87, then returns the object's address.)
+extern void ext_004CDEE0();
+// Known callee 0x00505D50: sub_00505D50 (Finds an element by key and returns a pointer to offset 0x1C of the element, or nullptr if not found.)
+extern void ext_00505D50();
+// Known callee 0x0066AC90: sub_0066AC90 (115B, no lifted name)
+extern void ext_0066AC90();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// IAT slot 0x00924FE0: MSVCP80 std::string copy constructor
+extern int mem_00924FE0;
+
+// @name dispatchKeyedOrThrow_004CDF40
+// @summary Looks up key in the static registry; if found, calls the element's stored function pointer with value; otherwise, if flag is set, builds a decorated StringExceptionWithMember and throws it.
+// @field UnknownStaticObject +0x04 void* field_0x04
+// @field UnknownRegistryElement +0x00 void* field_0x00
+void fn_004CDF40(void* key, void* value, bool flag) {
+    // Static object address (returned in eax); registry lives at +0x04.
+    void* obj = reinterpret_cast<void* (*)()>(&ext_004CDEE0)();
+    void* base = static_cast<unsigned char*>(obj) + 0x04;
+
+    void* elem = reinterpret_cast<void* (__thiscall*)(void*, void*)>(&ext_00505D50)(base, key);
+    if (elem != nullptr) {
+        // Original: mov edx,[eax]; push ecx; call edx  (ecx == value, pushed as the one argument)
+        auto target = *reinterpret_cast<void (__thiscall**)(void*, void*)>(elem);
+        target(value, value);
+        return;
+    }
+
+    if (!flag) {
+        return;
+    }
+
+    // Copy the key into a temporary std::string via the MSVCP80 IAT slot.
+    unsigned char msg[0x1c];
+    reinterpret_cast<void (__thiscall*)(void*, const void*)>(
+        static_cast<uintptr_t>(mem_00924FE0))(msg, key);
+
+    // Decorated type name of the type_info; result copied and passed to ext_0066AC90.
+    unsigned char decorated[0x1c];
+    reinterpret_cast<void* (*)(void*)>(&ext_004CA3E0)(decorated);
+    reinterpret_cast<void (*)(void*)>(&ext_0066AC90)(msg);
+
+    // Build the source exception object and copy-construct the thrown exception from it.
+    unsigned char src_obj[0x28];
+    void* src = reinterpret_cast<void* (__thiscall*)(void*)>(&ext_004C6F60)(src_obj);
+    unsigned char exc[0x40];
+    reinterpret_cast<void* (__thiscall*)(void*, void*)>(&ext_004C7200)(exc, src);
+
+    // _CxxThrowException(exc, &ThrowInfo@0x009E9404); does not return.
+    reinterpret_cast<void (*)(void*, const void*)>(&ext_006A6DD2)(
+        exc, reinterpret_cast<const void*>(uintptr_t{0x009E9404}));
+}
+} // namespace lift_004CDF40

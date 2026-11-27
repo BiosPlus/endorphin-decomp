@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct UnknownStaticObject_Fields {
     // +0x0   DWORD                    field_0x00  (evidence: 0x00487FF0)
+    // +0x4   void*                    field_0x04  (evidence: 0x004CDF40)
 };
 } // namespace lifted_layout

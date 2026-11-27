@@ -22424,6 +22424,12 @@
     "summary": "One-time initializer for the static object at 0x00AE4520, guarded by bit 0 of the flag dword at 0x00AE4544; runs ext_004CD9F0 on the object and registers 0x00918C00 via ext_006A6C87, then returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004CDF40": {
+    "name": "dispatchKeyedOrThrow_004CDF40",
+    "signature": "void fn_004CDF40(void* key, void* value, bool flag)",
+    "summary": "Looks up key in the static registry; if found, calls the element's stored function pointer with value; otherwise, if flag is set, builds a decorated StringExceptionWithMember and throws it.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CE390": {
     "name": "NMData::MetaBodyConstraintData::vfunc_88",
     "class": "NMData::MetaBodyConstraintData",

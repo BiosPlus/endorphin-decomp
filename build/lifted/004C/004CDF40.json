@@ -1,0 +1,27 @@
+{
+  "va": "0x004CDF40",
+  "size": 246,
+  "orig_symbol": "sub_004CDF40",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "dispatchKeyedOrThrow_004CDF40",
+  "signature": "void fn_004CDF40(void* key, void* value, bool flag)",
+  "summary": "Looks up key in the static registry; if found, calls the element's stored function pointer with value; otherwise, if flag is set, builds a decorated StringExceptionWithMember and throws it.",
+  "fields": [
+    {
+      "class": "UnknownStaticObject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownRegistryElement",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:41:35Z"
+}
