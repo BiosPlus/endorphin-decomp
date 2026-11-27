@@ -2774,3 +2774,27 @@ void* __thiscall fn_006B9F00(void* self, int value) {
     return ext_006B9EC0(self, buf);
 }
 } // namespace lift_006B9F00
+
+// [0x006BB5F0]
+namespace lift_006BB5F0 {
+// Callees (lifted)
+// 0x006B9D20 = Unknown::initOrCopy_006B9D20
+extern void* ext_006B9D20(void* self, void* obj);
+
+// @name Unknown::initCopyFields_006BB5F0
+// @class Unknown
+// @summary Runs initOrCopy on this with src, then copies the fields at +0x50, +0x54 and the byte at +0x58 from src into this; returns this.
+// @field Unknown +0x50 uint32_t field_0x50
+// @field Unknown +0x54 uint32_t field_0x54
+// @field Unknown +0x58 uint8_t field_0x58
+extern void* fn_006BB5F0(void* ecx, void* src) {
+    void* self = ecx;
+    ext_006B9D20(self, src);
+
+    lift_field<uint32_t>(self, 0x50) = lift_field<uint32_t>(src, 0x50);
+    lift_field<uint32_t>(self, 0x54) = lift_field<uint32_t>(src, 0x54);
+    lift_field<uint8_t>(self, 0x58) = lift_field<uint8_t>(src, 0x58);
+
+    return self;
+}
+} // namespace lift_006BB5F0
