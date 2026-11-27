@@ -1,0 +1,13 @@
+{
+  "va": "0x0079BE90",
+  "size": 96,
+  "orig_symbol": "sub_0079BE90",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "sub_0079BE90",
+  "signature": "void* fn_0079BE90(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x0078D740 (allocAndConstructObject0x250).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:15:12Z"
+}

@@ -5,8 +5,10 @@
 #include <cstdarg>
 #include <cstring>
 #include <cstdlib>
+#include <bit>
+#include <cmath>
 
-// [0x0079DD30] sub_0079DD30 (32 bytes)
+#include <cmath>
 namespace lift_0079DD30 {
 // @name InitValueWithUnitDouble
 // @summary thiscall: stores one DWORD argument at +0x00, writes 0 to +0x08 and 0x3FF00000 to +0x0C (double 1.0 at +0x08), returns this.
@@ -1948,3 +1950,53 @@ void fn_0079E950() {
     mem_00B61151 = 0;
 }
 } // namespace lift_0079E950
+
+// [0x0079BE90] sub_0079BE90 (96 bytes)
+namespace lift_0079BE90 {
+// @name sub_0079BE90
+// @summary Auto-lifted identical-shape clone of 0x0078D740 (allocAndConstructObject0x250).
+namespace lift_0078D740 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (0x250); returns the allocated block or NULL.
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x0078D7A0: sub_0078D7A0 (Initializes object fields and sets vtable to 0x0099708C)
+// __thiscall: `self` is passed in ECX; returns self.
+extern void* ext_0079BEF0(void* self);
+
+// @name allocAndConstructObject0x250
+// @summary Allocates a 0x250-byte object via ext_006A5C62 and runs ext_0078D7A0 on it; returns the object, or NULL if allocation failed.
+// The original SEH frame (fs:[0] push/restore, try-level slot) is omitted: it is exception bookkeeping only and not portable.
+void* fn_0079BE90(void) {
+    void* obj = ext_006A5C62(0xF8C);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_0079BEF0(obj);
+}
+} // namespace lift_0078D740
+} // namespace lift_0079BE90
+
+// [0x0079F230] sub_0079F230 (96 bytes)
+namespace lift_0079F230 {
+// @name sub_0079F230
+// @summary Auto-lifted identical-shape clone of 0x0078D740 (allocAndConstructObject0x250).
+namespace lift_0078D740 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (0x250); returns the allocated block or NULL.
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x0078D7A0: sub_0078D7A0 (Initializes object fields and sets vtable to 0x0099708C)
+// __thiscall: `self` is passed in ECX; returns self.
+extern void* ext_0079F290(void* self);
+
+// @name allocAndConstructObject0x250
+// @summary Allocates a 0x250-byte object via ext_006A5C62 and runs ext_0078D7A0 on it; returns the object, or NULL if allocation failed.
+// The original SEH frame (fs:[0] push/restore, try-level slot) is omitted: it is exception bookkeeping only and not portable.
+void* fn_0079F230(void) {
+    void* obj = ext_006A5C62(0x7E0);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_0079F290(obj);
+}
+} // namespace lift_0078D740
+} // namespace lift_0079F230
