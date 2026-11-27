@@ -1,0 +1,22 @@
+{
+  "va": "0x004133F0",
+  "size": 132,
+  "orig_symbol": "sub_004133F0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "SubobjectNameLookupSetFlag",
+  "class": "Unknown",
+  "signature": "extern int mem_00924300;  // IAT slot: MFC80!ord_876 (thiscall, returns const char*) extern int mem_00924FE4;  // IAT slot: MSVCP80 basic_string(const char*) ctor extern int mem_00924FF4;  // IAT slot: MSVCP80 basic_string dtor namespace",
+  "summary": "Builds a temporary std::string from the string at this+0x18, looks up a subobject via sub_00594620 keyed by the global from sub_00594000; when found, calls fn_004132D0 with flag = (subobject+0x4E6 byte == 0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:14:57Z"
+}

@@ -1585,6 +1585,13 @@
     "summary": "Erases the 4-byte pointer-vector element at index idx (vector begin +0x08, end +0x0C), shifts the tail down, shrinks end by one element, refreshes derived state via fn_00413230 and fn_00412CE0; returns false if the target is already end.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004133F0": {
+    "name": "SubobjectNameLookupSetFlag",
+    "class": "Unknown",
+    "signature": "extern int mem_00924300;  // IAT slot: MFC80!ord_876 (thiscall, returns const char*) extern int mem_00924FE4;  // IAT slot: MSVCP80 basic_string(const char*) ctor extern int mem_00924FF4;  // IAT slot: MSVCP80 basic_string dtor namespace",
+    "summary": "Builds a temporary std::string from the string at this+0x18, looks up a subobject via sub_00594620 keyed by the global from sub_00594000; when found, calls fn_004132D0 with flag = (subobject+0x4E6 byte == 0).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004136E0": {
     "name": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
     "class": "MultiTrackView::CompositeMarkerTrack",

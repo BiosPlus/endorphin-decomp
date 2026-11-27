@@ -3790,3 +3790,56 @@ bool __thiscall fn_00413350(void* self, int32_t idx) {
     return true;
 }
 } // namespace lift_00413350
+
+// [0x004133F0] sub_004133F0 (132 bytes)
+namespace lift_004133F0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Known callee 0x00594620: sub_00594620 (Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A4A0.)
+// Actual ABI at call site: this in ecx, one stack argument (string pointer), returns pointer in eax.
+extern uint8_t* ext_00594620(void* self, void* str);
+// Known callee 0x004132D0: SetFlagAndRunVectorSummaries (thiscall, uint8 flag on stack).
+void __thiscall ext_004132D0(void* self, uint8_t flag);
+extern int mem_00924300;  // IAT slot: MFC80!ord_876 (thiscall, returns const char*)
+extern int mem_00924FE4;  // IAT slot: MSVCP80 basic_string(const char*) ctor
+extern int mem_00924FF4;  // IAT slot: MSVCP80 basic_string dtor
+
+namespace {
+
+// Read an IAT slot's stored function pointer.
+inline void* iat_target(const int& slot) {
+    return *reinterpret_cast<void* const*>(&slot);
+}
+
+using OrdFn = const char* (__thiscall*)(void* self);
+using StrCtorFn = void (__thiscall*)(void* self, const char* s);
+using StrDtorFn = void (__thiscall*)(void* self);
+
+}  // namespace
+
+// @name SubobjectNameLookupSetFlag
+// @class Unknown
+// @summary Builds a temporary std::string from the string at this+0x18, looks up a subobject via sub_00594620 keyed by the global from sub_00594000; when found, calls fn_004132D0 with flag = (subobject+0x4E6 byte == 0).
+// @field Unknown +0x18 uint8_t field_0x18
+void fn_004133F0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Key from global lookup (original: edi = eax, passed as ecx to sub_00594620).
+    const uint32_t key = static_cast<uint32_t>(ext_00594000());
+
+    // Temporary MSVC80 std::string (sizeof 0x18) built from ord_876(this + 0x18).
+    alignas(8) uint8_t str[0x18];
+    const char* text = reinterpret_cast<OrdFn>(iat_target(mem_00924300))(base + 0x18);
+    reinterpret_cast<StrCtorFn>(iat_target(mem_00924FE4))(str, text);
+
+    uint8_t* result = ext_00594620(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(key)), str);
+
+    if (result != nullptr) {
+        const uint8_t flag = (lift_field<uint8_t>(result, 0x4E6) == 0) ? 1 : 0;
+        ext_004132D0(self, flag);
+    }
+
+    reinterpret_cast<StrDtorFn>(iat_target(mem_00924FF4))(str);
+}
+} // namespace lift_004133F0
