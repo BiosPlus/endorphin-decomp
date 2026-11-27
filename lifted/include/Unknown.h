@@ -451,6 +451,7 @@ struct Unknown_Fields {
     // +0x8   void* field_0x08 (subobject field; old value released, then replaced with result)  (evidence: 0x0072B1E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (object whose vtable slot 3 is invoked with this = self+8)  (evidence: 0x005869C0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    self_2  (evidence: 0x0049CE90) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    slotTable  (evidence: 0x005417E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    src_z  (evidence: 0x007C8490, 0x007CA310, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    str_obj  (evidence: 0x00648A20) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    stringPtr  (evidence: 0x00640940) // CONFLICT: multiple definitions at +0x8
@@ -1776,6 +1777,7 @@ struct Unknown_Fields {
     // +0xF8  uint8_t                  field_0xf8  (evidence: 0x0070EB40) // CONFLICT: multiple definitions at +0xF8
     // +0xF8  DWORD field_0xF8 (element index)  (evidence: 0x00540D00) // CONFLICT: multiple definitions at +0xF8
     // +0xF8  uint8_t field_0xF8 (subobject; address taken only, not loaded)  (evidence: 0x00630E60, 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0xF8
+    // +0xF8  uint32_t                 slotIndex  (evidence: 0x005417E0) // CONFLICT: multiple definitions at +0xF8
     // +0xFC  void*                    child  (evidence: 0x00497030) // CONFLICT: multiple definitions at +0xFC
     // +0xFC  void* field_0xFC (pointer to holder struct; owner class not established)  (evidence: 0x006D7380) // CONFLICT: multiple definitions at +0xFC
     // +0xFC  DWORD                    field_0xFC  (evidence: 0x0074F850) // CONFLICT: multiple definitions at +0xFC
@@ -1820,6 +1822,7 @@ struct Unknown_Fields {
     // +0x110 double                   field_0x110  (evidence: 0x0043CA30) // CONFLICT: multiple definitions at +0x110
     // +0x110 uint32_t                 field_0x110  (evidence: 0x0077FFD0) // CONFLICT: multiple definitions at +0x110
     // +0x110 void*                    field_0x110  (evidence: 0x004352B0, 0x00541AB0) // CONFLICT: multiple definitions at +0x110
+    // +0x110 void*                    listSentinelPtr  (evidence: 0x005417E0) // CONFLICT: multiple definitions at +0x110
     // +0x114 uint32_t                 field_0x114  (evidence: 0x006B6290, 0x0077FFD0) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    field_0x114  (evidence: 0x004197A0, 0x004331D0) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    selectionBuffer  (evidence: 0x006B6480) // CONFLICT: multiple definitions at +0x114
@@ -1881,7 +1884,8 @@ struct Unknown_Fields {
     // +0x13C std::string              field_0x13c  (evidence: 0x00455AD0, 0x004584C0) // CONFLICT: multiple definitions at +0x13C
     // +0x13C uint8_t                  field_0x13c  (evidence: 0x00455860) // CONFLICT: multiple definitions at +0x13C
     // +0x13C uint8_t                  string_0x13c  (evidence: 0x00455B50) // CONFLICT: multiple definitions at +0x13C
-    // +0x13D uint8_t                  field_0x13d  (evidence: 0x00541AB0)
+    // +0x13D uint8_t                  field_0x13d  (evidence: 0x00541AB0) // CONFLICT: multiple definitions at +0x13D
+    // +0x13D uint8_t                  useListFlag  (evidence: 0x005417E0) // CONFLICT: multiple definitions at +0x13D
     // +0x144 uint8_t*                 elems_begin  (evidence: 0x00688670) // CONFLICT: multiple definitions at +0x144
     // +0x144 uint32_t                 entries_begin  (evidence: 0x006885F0) // CONFLICT: multiple definitions at +0x144
     // +0x144 DWORD                    field_0x144  (evidence: 0x00544E20) // CONFLICT: multiple definitions at +0x144

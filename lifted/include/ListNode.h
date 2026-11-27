@@ -35,7 +35,8 @@ struct ListNode_Fields {
     // +0x14  void*                    field_0x14  (evidence: 0x007B8D80) // CONFLICT: multiple definitions at +0x14
     // +0x14  DWORD                    next  (evidence: 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x14
     // +0x24  std::string              key  (evidence: 0x0049DB60)
-    // +0x28  void*                    peer  (evidence: 0x005BED50)
+    // +0x28  void*                    peer  (evidence: 0x005BED50) // CONFLICT: multiple definitions at +0x28
+    // +0x28  void*                    target  (evidence: 0x005417E0) // CONFLICT: multiple definitions at +0x28
     // +0x2D  uint8_t                  isNil  (evidence: 0x005E0060)
 };
 } // namespace lifted_layout

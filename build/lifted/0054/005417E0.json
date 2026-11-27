@@ -1,0 +1,46 @@
+{
+  "va": "0x005417E0",
+  "size": 171,
+  "orig_symbol": "sub_005417E0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::forwardScaleToItems_005417E0",
+  "class": "Unknown",
+  "signature": "void fn_005417E0(void* self, float scale)",
+  "summary": "Forwards scale to the target of each list node (node+0x28) when flag +0x13D is set, otherwise forwards it to the indexed slot selected by +0xF8; list walk stops when cursor reaches the sentinel at +0x110.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "slotTable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "uint32_t",
+      "name": "slotIndex"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x110",
+      "type": "void*",
+      "name": "listSentinelPtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x13D",
+      "type": "uint8_t",
+      "name": "useListFlag"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:45:18Z"
+}
