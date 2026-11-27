@@ -507,3 +507,44 @@ extern uint8_t __thiscall fn_0074B3B0(void* self, int32_t val, int32_t arg2, int
     return 1;
 }
 } // namespace lift_0074B3B0
+
+// [0x0074F850] sub_0074F850 (156 bytes)
+namespace lift_0074F850 {
+// Callee 0x0072CF30: Unknown::ctorInitSubobjects_0072CF30 (thiscall, one stack argument).
+extern void* ext_0072CF30(void* self, DWORD arg1);
+// Callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (ecx = object, one stack argument).
+extern void* ext_006B9D80(void* ecx, const char* s);
+// Callee 0x007ABC20: sub_007ABC20 (thiscall constructor, no stack arguments).
+extern void* ext_007ABC20(void* self);
+// Callee 0x00782D00: sub_00782D00 (thiscall, one stack DWORD argument, ret 4).
+extern void ext_00782D00(void* self, DWORD arg);
+
+// Address literals referenced by the original code.
+extern const char mem_00B5D2C0[];
+extern const char mem_00996BBC[];
+
+// @name Unknown::ctor_0074F850
+// @class Unknown
+// @summary Thiscall constructor: runs ext_0072CF30(this, arg1), initializes subobjects at +0xB0/+0x104/+0x128, sets vtable 0x996BBC, zeroes 256 DWORDs at +0x13C, and returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0xAC DWORD field_0xAC
+// @field Unknown +0xB0 uint8_t field_0xB0 (subobject; address only)
+// @field Unknown +0xFC DWORD field_0xFC
+// @field Unknown +0x100 DWORD field_0x100
+// @field Unknown +0x104 uint8_t field_0x104 (subobject; address only)
+// @field Unknown +0x128 uint8_t field_0x128 (subobject; address only)
+// @field Unknown +0x13C uint8_t field_0x13C (zeroed block of 0x400 bytes, +0x13C..+0x53B)
+void* fn_0074F850(void* self, DWORD arg1) {
+    // The SEH frame push/pop on fs:[0] is compiler bookkeeping; it has no effect on the object.
+    ext_0072CF30(self, arg1);
+    lift_field<DWORD>(self, 0xAC) = 0;
+    ext_006B9D80(static_cast<uint8_t*>(self) + 0xB0, mem_00B5D2C0);
+    lift_field<DWORD>(self, 0xFC) = 0;
+    lift_field<DWORD>(self, 0x100) = 0;
+    ext_007ABC20(static_cast<uint8_t*>(self) + 0x104);
+    ext_00782D00(static_cast<uint8_t*>(self) + 0x128, 0x14);
+    lift_field<DWORD>(self, 0x00) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_00996BBC));
+    std::memset(static_cast<uint8_t*>(self) + 0x13C, 0, 0x100 * sizeof(DWORD));
+    return self;
+}
+} // namespace lift_0074F850

@@ -82445,6 +82445,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D2AA0 (ForwardIndexedElementToCallee).",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x0074F850": {
+    "name": "Unknown::ctor_0074F850",
+    "class": "Unknown",
+    "signature": "void* fn_0074F850(void* self, DWORD arg1)",
+    "summary": "Thiscall constructor: runs ext_0072CF30(this, arg1), initializes subobjects at +0xB0/+0x104/+0x128, sets vtable 0x996BBC, zeroes 256 DWORDs at +0x13C, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074F8F0": {
     "name": "sub_0074F8F0",
     "signature": "extern \"C\" void* __fastcall fn_0074F8F0(void* self, int edx_unused, unsigned int flags)",
