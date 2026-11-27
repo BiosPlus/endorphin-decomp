@@ -8834,6 +8834,12 @@
     "summary": "Constructor-style init: stores vtable and arg, allocates 8-byte object, runs sub_00462840 on it, frees previous +0x08 pointer if different; returns this.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00462E10": {
+    "name": "DispatchActionByState",
+    "signature": "void __thiscall fn_00462E10(void* self, void* arg)",
+    "summary": "Dispatches to ext_00401930 with c_str() when state==1, or tail-calls ext_00462BA0 when state==2 and field_0x08 is active.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00462E50": {
     "name": "Dispatch::forwardStringIfInnerCountOne",
     "class": "Dispatch",
@@ -15902,6 +15908,12 @@
     "signature": "void* __thiscall fn_0049E860(void* self, void* out, void* unused)",
     "summary": "Writes into `out` either a value from the override object at +0x11C (virtual slot 2), or the value found by name in the list at +0x10C, or a default.",
     "lifted_path": "lifted/NMData/State.cpp"
+  },
+  "0x0049E8D0": {
+    "name": "StdListClear",
+    "signature": "void __thiscall fn_0049E8D0(void* ecx)",
+    "summary": "Clears a doubly-linked list by unlinking its sentinel head, destroying each element, and freeing each node.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x0049ECB0": {
     "name": "destroyEntryRange",

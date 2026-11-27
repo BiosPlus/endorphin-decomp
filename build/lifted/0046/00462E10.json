@@ -1,0 +1,33 @@
+{
+  "va": "0x00462E10",
+  "size": 64,
+  "orig_symbol": "sub_00462E10",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "DispatchActionByState",
+  "signature": "void __thiscall fn_00462E10(void* self, void* arg)",
+  "summary": "Dispatches to ext_00401930 with c_str() when state==1, or tail-calls ext_00462BA0 when state==2 and field_0x08 is active.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "state_obj"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:25:17Z"
+}
