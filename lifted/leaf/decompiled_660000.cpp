@@ -2735,3 +2735,48 @@ void __fastcall fn_00665CA0(void* self) {
     ext_00665B80(self);
 }
 } // namespace lift_00665CA0
+
+// [0x00665DC0] sub_00665DC0 (119 bytes)
+namespace lift_00665DC0 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
+extern void* ext_006657F0(void* self, uint32_t arg);
+extern uint32_t ext_006658D0(void* self);
+extern int mem_00924FE0;
+
+// @name Unknown::Construct
+// @class Unknown
+// @summary Constructs the object: runs the base init (ext_006657F0), sets the vtable to 0x00987A1C, copy-constructs a string at +0x10 from arg1, initializes the sub-object at +0x2C, and zeroes +0x3C/+0x40/+0x44. Returns self.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x10 uint8_t field_0x10
+// @field Unknown +0x2C uint8_t field_0x2C
+// @field Unknown +0x30 void* field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x3C uint32_t field_0x3C
+// @field Unknown +0x40 uint32_t field_0x40
+// @field Unknown +0x44 uint32_t field_0x44
+void* fn_00665DC0(void* self, const void* arg1, uint32_t arg2) {
+    uint8_t* const base = static_cast<uint8_t*>(self);
+
+    // Base init: vtable 0x00987A04, arg2 stored at +0x04.
+    ext_006657F0(self, arg2);
+
+    // Final vtable for this class.
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x00987A1Cu));
+
+    // Copy-construct the string member at +0x10 from arg1 (thiscall, function pointer read from mem_00924FE0).
+    auto string_copy_ctor = reinterpret_cast<void (*)(void*, const void*)>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE0)));
+    string_copy_ctor(base + 0x10, arg1);
+
+    // Sub-object at +0x2C: initialized by ext_006658D0, its result stored at +0x30, +0x34 zeroed.
+    uint32_t sub_result = ext_006658D0(base + 0x2C);
+    lift_field<uint32_t>(self, 0x30) = sub_result;
+    lift_field<uint32_t>(self, 0x34) = 0;
+
+    lift_field<uint32_t>(self, 0x3C) = 0;
+    lift_field<uint32_t>(self, 0x40) = 0;
+    lift_field<uint32_t>(self, 0x44) = 0;
+
+    return self;
+}
+} // namespace lift_00665DC0
