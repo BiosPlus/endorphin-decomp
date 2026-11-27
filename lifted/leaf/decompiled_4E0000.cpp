@@ -1568,3 +1568,88 @@ void fn_004EC460(void* self) {
     lift_field<uint32_t>(esi, 0x08) = 0u;                       // self+0x0C
 }
 } // namespace lift_004EC460
+
+// [0x004E8D00] sub_004E8D00 (194 bytes)
+namespace lift_004E8D00 {
+// Known callee 0x00596660: eraseInt32Range (lifted as fn_00596660 in lifted/leaf/decompiled_590000.cpp; ext_ spelling required by check)
+void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// Callee 0x0050ED40: sub_0050ED40 (172B, not lifted yet). Thiscall: ecx = self, one stack arg.
+extern void ext_0050ED40(void* self, int32_t count);
+// Known callee 0x006A6E9E: IAT jump thunk to MSVCR80!__RTDynamicCast (5 stack args, cdecl).
+extern void* ext_006A6E9E(void* obj, ptrdiff_t vfDelta, const void* srcType, const void* targetType, int isReference);
+// Callee 0x0041A920: sub_0041A920 (106B, not lifted yet). Thiscall: ecx = self, one stack arg.
+extern void ext_0041A920(void* self, void** slot);
+extern int mem_00A2FB54;
+extern int mem_00A2E2D8;
+extern int mem_00925134;  // IAT slot for _invalid_parameter_noinfo (lifted as std::abort)
+
+namespace {
+
+inline uint32_t& u32_at(void* base, ptrdiff_t off) {
+    return lift_field<uint32_t>(base, off);
+}
+
+// 32-bit guest address -> host pointer (guest pointers are 4 bytes wide).
+inline void* guest_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+} // namespace
+
+// @name EraseAndDynCastDispatch_004E8D00
+// @class VecU32
+// @summary Erases [self.begin,self.end) from self via eraseInt32Range, then for each 4-byte element of arg0 in [begin,end) dynamic-casts it to the target type and passes non-null results to sub_0041A920(self, &result); aborts on invalid ranges.
+// @field VecU32 +0x04 uint32_t field_0x04
+// @field VecU32 +0x08 uint32_t field_0x08
+void fn_004E8D00(void* arg0, void* self) {
+    (void)&mem_00925134;  // Original calls _invalid_parameter_noinfo via this slot; lifted as std::abort().
+    // Range check on self (_invalid_parameter_noinfo path in the original).
+    if (u32_at(self, 0x4) > u32_at(self, 0x8)) {
+        std::abort();
+    }
+
+    void* out[2] = {nullptr, nullptr};
+    ext_00596660(self, out, self,
+                static_cast<int32_t*>(guest_ptr(u32_at(self, 0x4))),
+                self,
+                static_cast<int32_t*>(guest_ptr(u32_at(self, 0x8))));
+
+    // Element count of arg0 (signed (end - begin) >> 2, or 0 when begin is null).
+    const uint32_t arg0_begin = u32_at(arg0, 0x4);
+    int32_t count = 0;
+    if (arg0_begin != 0) {
+        count = static_cast<int32_t>(u32_at(arg0, 0x8) - arg0_begin) >> 2;
+    }
+    ext_0050ED40(self, count);
+
+    uint32_t it = u32_at(arg0, 0x4);
+    if (it > u32_at(arg0, 0x8)) {
+        std::abort();
+    }
+
+    for (;;) {
+        const uint32_t end = u32_at(arg0, 0x8);
+        if (u32_at(arg0, 0x4) > end) {
+            std::abort();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= end) {
+            std::abort();
+        }
+
+        const uint32_t obj_value = *static_cast<uint32_t*>(guest_ptr(it));
+        void* casted = ext_006A6E9E(guest_ptr(obj_value), 0,
+                                    &mem_00A2E2D8, &mem_00A2FB54, 0);
+        if (casted != nullptr) {
+            ext_0041A920(self, &casted);
+        }
+
+        if (it >= u32_at(arg0, 0x8)) {
+            std::abort();
+        }
+        it += 4;
+    }
+}
+} // namespace lift_004E8D00
