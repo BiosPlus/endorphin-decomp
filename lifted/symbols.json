@@ -5629,6 +5629,13 @@
     "summary": "Runs the base init helper ext_00442960 with (self, arg, unused_arg), installs this class's vtable at self+0x00, zeroes the fields at +0x10, +0x14, +0x18 and the flag byte at +0x30, and returns self.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00444090": {
+    "name": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_4",
+    "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+    "signature": "bool fn_00444090(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+    "summary": "Resize-left state step: passes owner+0xA0 through two owner helpers, switches the state manager to index 0, forwards a nonzero scratch result to MFC80, returns true.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp"
+  },
   "0x004442C0": {
     "name": "descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)",
     "signature": "void fn_004442C0(void* self)",

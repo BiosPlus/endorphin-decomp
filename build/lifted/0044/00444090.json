@@ -1,0 +1,28 @@
+{
+  "va": "0x00444090",
+  "size": 134,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_4",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_4",
+  "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+  "signature": "bool fn_00444090(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+  "summary": "Resize-left state step: passes owner+0xA0 through two owner helpers, switches the state manager to index 0, forwards a nonzero scratch result to MFC80, returns true.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "owner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:45:10Z"
+}
