@@ -230,3 +230,57 @@ void fn_0048B580(void* self) {
     }
 }
 } // namespace lift_0048B580
+
+// [0x00487B00]
+namespace lift_00487B00 {
+// @name NMData::DesiredPoseEventData::vfunc_21
+// @class NMData::DesiredPoseEventData
+// @summary Loads DesiredPoseEventData properties from XML/data node.
+// @field NMData::DesiredPoseEventData +0x180 uint8_t field_0x180
+// @field NMData::DesiredPoseEventData +0x19C void** field_0x19c
+// @field NMData::DesiredPoseEventData +0x220 float field_0x220
+// @field NMData::DesiredPoseEventData +0x224 uint8_t field_0x224
+
+
+extern void __thiscall ext_004C24C0(void* self, void* arg0);
+extern uint32_t __thiscall ext_0063EFE0(void* self, uint32_t name);
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern uint32_t __thiscall ext_0063F530(void* self, uint32_t name, uint32_t a1, uint32_t a2);
+extern void __thiscall ext_004E9BD0(void* self, uint32_t arg0);
+extern float __cdecl ext_0067EE80(void* arg0, uint32_t a1, uint32_t a2);
+
+extern uint32_t mem_00A9F9C4;
+extern uint32_t mem_00A9F1A4;
+extern uint32_t mem_00A9F1A8;
+
+static inline bool is_sentinel_00487B00(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+void __thiscall fn_00487B00(void* self, void* arg0) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    ext_004C24C0(self, arg0);
+
+    uint32_t obj = ext_0063EFE0(arg0, mem_00A9F9C4);
+    ext_004275E0(base + 0x180, reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+
+    uint32_t val1 = ext_0063F530(arg0, mem_00A9F1A4, 0, 1);
+    if (is_sentinel_00487B00(val1)) {
+        val1 = 0x00B53B30u;
+    }
+
+    void* sub19c = base + 0x19C;
+    void** vtable19c = *reinterpret_cast<void***>(sub19c);
+    using Vfunc1 = void(__thiscall*)(void*, uint32_t);
+    reinterpret_cast<Vfunc1>(vtable19c[1])(sub19c, val1);
+
+    uint32_t val2 = ext_0063F530(arg0, mem_00A9F1A8, 0, 1);
+    if (!is_sentinel_00487B00(val2)) {
+        ext_004E9BD0(base + 0x224, val2);
+    }
+
+    *reinterpret_cast<float*>(base + 0x220) = ext_0067EE80(arg0, 0x0093C674u, 0x0093C688u);
+}
+} // namespace lift_00487B00

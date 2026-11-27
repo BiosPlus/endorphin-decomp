@@ -12375,6 +12375,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F4A10 (ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradientCaps(float)\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00487B00": {
+    "name": "NMData::DesiredPoseEventData::vfunc_21",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "static inline bool is_sentinel_00487B00(uint32_t v)",
+    "summary": "Loads DesiredPoseEventData properties from XML/data node.",
+    "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
   "0x00487C00": {
     "name": "sub_00487C00",
     "class": "Tree",
@@ -20288,6 +20295,13 @@
     "signature": "extern DWORD mem_00AE3068;  // one-time-init guard flags (bit 0 = already initialized/in progress) extern DWORD mem_00AE3064;  // static object storage (first DWORD is overwritten with 0x00944AA4) DWORD ext_0067A670(void* self, DWORD value);  // thiscall: stores value into first DWORD of self void* initStaticObjectOnce_004C1D80(void)",
     "summary": "One-time initializer for the static object at 0x00AE3064; sets a guard bit, runs ext_0067A670 on the object, then stamps its vtable-like first DWORD with 0x00944AA4. Returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
+  "0x004C1F90": {
+    "name": "NMData::AnimationEventData::vfunc_94",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" void __thiscall fn_004C1F90(void* self, void* arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Compares fields of two AnimationEventData objects and delegates to ext_0058D800.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
   "0x004C2070": {
     "name": "NMData::SeverEventData::vfunc_14",
