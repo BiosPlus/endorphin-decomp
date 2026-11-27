@@ -2840,3 +2840,28 @@ void fn_00687470(void* a, void* b) {
     dtor(tmp);
 }
 } // namespace lift_00687470
+
+// [0x006879E0] sub_006879E0 (90 bytes)
+namespace lift_006879E0 {
+// Known callee 0x00687470: Unknown::SwapStringPair_00687470 (Swaps two {std::string, std::string} pairs: copy-constructs a temp from a, assigns a from b and b from the temp, then destroys the temp.)
+extern void ext_00687470(void* a, void* b);
+// Comparator function pointer stored in .rdata at 0x00924EF4 (std::string operator> template instance, MSVCP80).
+extern int mem_00924EF4;
+
+// @name SortThreeStringPairs_006879E0
+// @summary Three-element compare-exchange network over string pairs: swaps (b,a), (c,b), then (b,a) when the comparator reports the earlier element as greater.
+void fn_006879E0(void* a, void* b, void* c) {
+    using CmpFn = bool (__cdecl*)(const void*, const void*);
+    CmpFn cmp = reinterpret_cast<CmpFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924EF4)));
+
+    if (cmp(b, a)) {
+        ext_00687470(b, a);
+    }
+    if (cmp(c, b)) {
+        ext_00687470(c, b);
+    }
+    if (cmp(b, a)) {
+        ext_00687470(b, a);
+    }
+}
+} // namespace lift_006879E0

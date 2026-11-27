@@ -1,0 +1,13 @@
+{
+  "va": "0x006879E0",
+  "size": 90,
+  "orig_symbol": "sub_006879E0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "SortThreeStringPairs_006879E0",
+  "signature": "void fn_006879E0(void* a, void* b, void* c)",
+  "summary": "Three-element compare-exchange network over string pairs: swaps (b,a), (c,b), then (b,a) when the comparator reports the earlier element as greater.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:28:43Z"
+}

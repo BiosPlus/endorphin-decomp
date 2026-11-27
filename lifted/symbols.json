@@ -61518,6 +61518,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0050A720 (CopyBackwardElements24Wrapper).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x006879E0": {
+    "name": "SortThreeStringPairs_006879E0",
+    "signature": "void fn_006879E0(void* a, void* b, void* c)",
+    "summary": "Three-element compare-exchange network over string pairs: swaps (b,a), (c,b), then (b,a) when the comparator reports the earlier element as greater.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687DC0": {
     "name": "ArrayOf56::reserve",
     "class": "ArrayOf56",
