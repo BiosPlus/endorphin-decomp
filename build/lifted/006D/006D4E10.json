@@ -1,0 +1,34 @@
+{
+  "va": "0x006D4E10",
+  "size": 123,
+  "orig_symbol": "sub_006D4E10",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::removeEntryAndReleaseIfFound_006D4E10",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006D4E10(void* self, DWORD value)",
+  "summary": "Searches the DWORD list at +0xEC (count at +0xDC) for value; if found removes it from the list and releases value's object, else calls the fallback at +0x1C4 and returns FALSE.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "int32_t",
+      "name": "itemCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEC",
+      "type": "DWORD",
+      "name": "itemsPtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "uint8_t",
+      "name": "field_0x1C4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:59:09Z"
+}

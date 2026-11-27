@@ -4165,3 +4165,51 @@ extern void* __thiscall fn_006D5640(void* self, const char* name) {
     return nullptr;
 }
 } // namespace lift_006D5640
+
+// [0x006D4E10] sub_006D4E10 (123 bytes)
+namespace lift_006D4E10 {
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, void* edx, int32_t index);
+// Known callee 0x006E67E0: Unknown::releaseSubobjectAt08 (Destroys the object pointed to by this+0x08 (if non-null) and then frees its storage.)
+extern void ext_006E67E0(void* ecx);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; called with one stack argument, cdecl.)
+extern void ext_006A5C5C(void* arg);
+
+// @name Unknown::removeEntryAndReleaseIfFound_006D4E10
+// @class Unknown
+// @summary Searches the DWORD list at +0xEC (count at +0xDC) for value; if found removes it from the list and releases value's object, else calls the fallback at +0x1C4 and returns FALSE.
+// @field Unknown +0xDC int32_t itemCount
+// @field Unknown +0xEC DWORD itemsPtr
+// @field Unknown +0x1C4 uint8_t field_0x1C4
+uint8_t fn_006D4E10(void* self, DWORD value) {
+    const int32_t count = lift_field<int32_t>(self, 0xDC);
+    int32_t index = -1;
+
+    if (count > 0) {
+        DWORD* items = reinterpret_cast<DWORD*>(
+            static_cast<uintptr_t>(lift_field<DWORD>(self, 0xEC)));
+        for (int32_t i = 0; i < count; ++i) {
+            if (items[i] == value) {
+                index = i;
+                break;
+            }
+        }
+    }
+
+    if (index == -1) {
+        ext_006E7440(&lift_field<uint8_t>(self, 0x1C4), 0);
+        return 0;
+    }
+
+    ext_006D2200(&lift_field<uint8_t>(self, 0xDC), nullptr, index);
+
+    if (value != 0) {
+        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(value));
+        ext_006E67E0(obj);
+        ext_006A5C5C(obj);
+    }
+    return 1;
+}
+} // namespace lift_006D4E10
