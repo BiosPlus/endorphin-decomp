@@ -42653,6 +42653,13 @@
     "summary": "Assigns the incoming string to the member at +0x170, then if the object at +0x190 is non-null invokes its vtable slot 0.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005AA900": {
+    "name": "NMData::RigNode::vfunc_14",
+    "class": "NMData::RigNode",
+    "signature": "void* fn_005AA900(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Dispatches on arg2: 0x134/0x0D gated by a virtual check on the sub-object at +0x190 and mode at +0x154 to ext_00661680; other values forward to ext_0058F6B0; the fallback initializes arg1 via ext_0046F7D0. Always returns arg1.",
+    "lifted_path": "lifted/NMData/RigNode.cpp"
+  },
   "0x005AA9E0": {
     "name": "sub_005AA9E0",
     "class": "Unknown",

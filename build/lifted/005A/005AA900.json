@@ -1,0 +1,40 @@
+{
+  "va": "0x005AA900",
+  "size": 210,
+  "orig_symbol": "NMData::RigNode::vfunc_14",
+  "src_path": "src/NMData/RigNode.cpp",
+  "lifted_path": "lifted/NMData/RigNode.cpp",
+  "name": "NMData::RigNode::vfunc_14",
+  "class": "NMData::RigNode",
+  "signature": "void* fn_005AA900(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Dispatches on arg2: 0x134/0x0D gated by a virtual check on the sub-object at +0x190 and mode at +0x154 to ext_00661680; other values forward to ext_0058F6B0; the fallback initializes arg1 via ext_0046F7D0. Always returns arg1.",
+  "fields": [
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x154",
+      "type": "uint32_t",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x158",
+      "type": "uint8_t",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x164",
+      "type": "uint8_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:00:28Z"
+}
