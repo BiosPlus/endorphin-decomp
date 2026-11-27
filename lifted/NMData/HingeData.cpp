@@ -329,3 +329,87 @@ void* __thiscall fn_005EBEC0(void* self, void* arg) {
     return arg;
 }
 } // namespace lift_005EBEC0
+
+// [0x005F2F80] NMData::HingeData::vfunc_21 (326 bytes)
+namespace lift_005F2F80 {
+// NMData::NullRelationshipData::vfunc_21 (direct base-class call; thiscall(self, arg1)).
+extern void ext_005F2970(void* self, void* arg1);
+// sub_005E0C10: thiscall(ident, eps) -> bool; used as "is ident within eps" test.
+extern uint8_t ext_005E0C10(void* self, float eps);
+// sub_0067DAD0: thiscall(this=ret-of-TI-slot3, float[9] ident).
+extern void ext_0067DAD0(void* self, float* m);
+// sub_0067DE10: thiscall(this=ret-of-TI-slot3).
+extern void ext_0067DE10(void* self);
+
+extern const double mem_00A8F2C0;   // .data double 1e-5
+extern const double mem_00996B98;   // .rdata double 10.0
+extern const uint32_t mem_00B40640; // global DWORD passed to TransformInterface slot 3
+extern void* mem_00924ECC;          // IAT slot: MSVCP80 basic_string operator+(const string&, const char*)
+extern void* mem_00924FF4;          // IAT slot: MSVCP80 basic_string::~basic_string
+extern const char mem_0096B500[];   // string literal (rhs of first concat)
+extern const char mem_0096B4F4[];   // string literal (rhs of second concat)
+
+// MSVC 32-bit thiscall signatures, expressed as plain function pointers.
+using ThisVoidPtr = void (__thiscall*)(void* self, void* arg);
+using ThisPtrU32  = void* (__thiscall*)(void* self, uint32_t arg);
+using ConcatFn    = void* (__cdecl*)(void* ret, void* lhs, const char* rhs);
+using DtorFn      = void (__thiscall*)(void* self);
+
+// Vtable entry at byte offset `off` (32-bit MSVC layout: 4-byte entries).
+inline void* vslot(void* obj, uint32_t off) {
+    void* const* vt = *reinterpret_cast<void* const* const*>(obj);
+    return vt[off / 4];
+}
+
+// @name NMData::HingeData::vfunc_21
+// @class NMData::HingeData
+// @summary Forwards arg to base vfunc_21 and to the object at +0x17C; if the 3x3 identity test with eps 1e-4 fails, resets via TransformInterface; then forwards two "<+0x14 string> + literal" strings to vslot 0x5C of the objects at +0x17C and +0x180.
+// @field NMData::HingeData +0x04 void* transform_interface_vptr
+// @field NMData::HingeData +0x14 uint8_t field_0x14
+// @field NMData::HingeData +0x17C void* field_0x17c
+// @field NMData::HingeData +0x180 void* field_0x180
+void fn_005F2F80(void* self, void* arg1) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    // NullRelationshipData::vfunc_21(arg1)
+    ext_005F2970(self, arg1);
+
+    // field_0x17c->vfunc_21(arg1)   (vslot 0x54)
+    void* p17c = lift_field<void*>(self, 0x17c);
+    reinterpret_cast<ThisVoidPtr>(vslot(p17c, 0x54))(p17c, arg1);
+
+    // eps = (float)(1e-5 * 10.0)
+    const float eps = static_cast<float>(mem_00A8F2C0 * mem_00996B98);
+
+    // 3x3 row-major identity buffer (diagonal at float indices 0, 4, 8).
+    float ident[9] = {1.0f, 0.0f, 0.0f,
+                      0.0f, 1.0f, 0.0f,
+                      0.0f, 0.0f, 1.0f};
+
+    // TransformInterface (self+4) slot 3, arg = mem_00B40640.
+    void* ti = base + 0x4;
+    void* r = reinterpret_cast<ThisPtrU32>(vslot(ti, 0x0C))(ti, mem_00B40640);
+    ext_0067DAD0(r, ident);
+
+    if (!ext_005E0C10(ident, eps)) {
+        void* r2 = reinterpret_cast<ThisPtrU32>(vslot(ti, 0x0C))(ti, mem_00B40640);
+        ext_0067DE10(r2);
+    }
+
+    // std::string tmpA = <self+0x14> + "mem_0096B500"; field_0x17c->vslot_0x5C(&tmpA); ~tmpA
+    auto concat = reinterpret_cast<ConcatFn>(mem_00924ECC);
+    auto dtor   = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    alignas(4) uint8_t tmpA[0x1C];
+    concat(tmpA, base + 0x14, mem_0096B500);
+    reinterpret_cast<ThisVoidPtr>(vslot(p17c, 0x5C))(p17c, tmpA);
+    dtor(tmpA);
+
+    // std::string tmpB = <self+0x14> + "mem_0096B4F4"; field_0x180->vslot_0x5C(&tmpB); ~tmpB
+    void* p180 = lift_field<void*>(self, 0x180);
+    alignas(4) uint8_t tmpB[0x1C];
+    concat(tmpB, base + 0x14, mem_0096B4F4);
+    reinterpret_cast<ThisVoidPtr>(vslot(p180, 0x5C))(p180, tmpB);
+    dtor(tmpB);
+}
+} // namespace lift_005F2F80

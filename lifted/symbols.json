@@ -55596,6 +55596,13 @@
     "summary": "Calls base NullRelationshipData::vfunc_21 and defaults field_0x14 to \"root\" if empty",
     "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
   },
+  "0x005F2F80": {
+    "name": "NMData::HingeData::vfunc_21",
+    "class": "NMData::HingeData",
+    "signature": "inline void* vslot(void* obj, uint32_t off)",
+    "summary": "Forwards arg to base vfunc_21 and to the object at +0x17C; if the 3x3 identity test with eps 1e-4 fails, resets via TransformInterface; then forwards two \"\u003c+0x14 string\u003e + literal\" strings to vslot 0x5C of the objects at +0x17C and +0x180.",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
   "0x005F30D0": {
     "name": "NMData::FixedPathJointData::vfunc_21",
     "class": "NMData::FixedPathJointData",

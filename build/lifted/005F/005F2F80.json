@@ -1,0 +1,40 @@
+{
+  "va": "0x005F2F80",
+  "size": 326,
+  "orig_symbol": "NMData::HingeData::vfunc_21",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_21",
+  "class": "NMData::HingeData",
+  "signature": "inline void* vslot(void* obj, uint32_t off)",
+  "summary": "Forwards arg to base vfunc_21 and to the object at +0x17C; if the 3x3 identity test with eps 1e-4 fails, resets via TransformInterface; then forwards two \"\u003c+0x14 string\u003e + literal\" strings to vslot 0x5C of the objects at +0x17C and +0x180.",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "transform_interface_vptr"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:15:15Z"
+}
