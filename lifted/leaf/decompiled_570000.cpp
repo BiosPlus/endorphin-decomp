@@ -2530,3 +2530,46 @@ void fn_00573E00(void* self, uint32_t arg1) {
     ext_00573D40(self, &local, self, end, arg1);
 }
 } // namespace lift_00573E00
+
+// [0x0057DCE0] sub_0057DCE0 (166 bytes)
+namespace lift_0057DCE0 {
+// Known callee 0x0057CAC0: CopyConstructElementRange (Copy-constructs `count` 0x3C-byte elements from `src` into the array at `begin`; on exception, destroys already-constructed elements and rethrows.)
+extern void ext_0057CAC0(uint8_t* begin, uint32_t count, const void* src);
+// Known callee 0x0057D9C0: reallocating insert helper (thiscall; takes a pointer to a temp slot, the owner, the insertion position and the source element; cleans its own stack).
+extern void __thiscall ext_0057D9C0(void* self, void* tmp_slot, void* owner, uint8_t* pos, const void* value);
+extern int mem_00925134;
+
+// @name std_vector_0x3C::push_back
+// @class std_vector_0x3C
+// @summary Appends a copy of the 0x3C-byte element at src: copy-constructs in place when spare capacity exists, otherwise calls the reallocating insert helper ext_0057D9C0.
+// @field std_vector_0x3C +0x04 uint8_t* begin
+// @field std_vector_0x3C +0x08 uint8_t* end
+// @field std_vector_0x3C +0x0C uint8_t* end_of_storage
+void __thiscall fn_0057DCE0(void* self, const void* src) {
+    constexpr std::ptrdiff_t kElem = 0x3C;
+
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x04);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x08);
+    uint8_t* cap = lift_field<uint8_t*>(self, 0x0C);
+
+    if (begin != nullptr) {
+        const std::ptrdiff_t size = (end - begin) / kElem;
+        const std::ptrdiff_t capacity = (cap - begin) / kElem;
+        if (size < capacity) {
+            ext_0057CAC0(end, 1, src);
+            lift_field<uint8_t*>(self, 0x08) = end + kElem;
+            return;
+        }
+    }
+
+    end = lift_field<uint8_t*>(self, 0x08);
+    if (begin > end) {
+        // Original calls MSVCR80!_invalid_parameter_noinfo through the IAT slot mem_00925134; it does not return.
+        (void)&mem_00925134;
+        std::abort();
+    }
+
+    std::uint8_t tmp_slot[4] = {};
+    ext_0057D9C0(self, tmp_slot, self, end, src);
+}
+} // namespace lift_0057DCE0

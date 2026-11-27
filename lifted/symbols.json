@@ -38031,6 +38031,13 @@
     "summary": "Default constructor: zeroes three floats at +0x00/+0x04/+0x08, default-constructs a std::string at +0x0c, and zeroes three dwords at +0x2c/+0x30/+0x34. Returns this.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057DCE0": {
+    "name": "std_vector_0x3C::push_back",
+    "class": "std_vector_0x3C",
+    "signature": "void __thiscall fn_0057DCE0(void* self, const void* src)",
+    "summary": "Appends a copy of the 0x3C-byte element at src: copy-constructs in place when spare capacity exists, otherwise calls the reallocating insert helper ext_0057D9C0.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057DDF0": {
     "name": "sub_0057DDF0",
     "signature": "extern char* __cdecl fn_0057DDF0(char* first, char* last, char* dest)",

@@ -1,0 +1,34 @@
+{
+  "va": "0x0057DCE0",
+  "size": 166,
+  "orig_symbol": "sub_0057DCE0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "std_vector_0x3C::push_back",
+  "class": "std_vector_0x3C",
+  "signature": "void __thiscall fn_0057DCE0(void* self, const void* src)",
+  "summary": "Appends a copy of the 0x3C-byte element at src: copy-constructs in place when spare capacity exists, otherwise calls the reallocating insert helper ext_0057D9C0.",
+  "fields": [
+    {
+      "class": "std_vector_0x3C",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "begin"
+    },
+    {
+      "class": "std_vector_0x3C",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end"
+    },
+    {
+      "class": "std_vector_0x3C",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "end_of_storage"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:30:58Z"
+}
