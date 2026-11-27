@@ -2220,3 +2220,29 @@ extern void* fn_006455D0(uint32_t count) {
     return ext_006A5C62(count * 0x18u);
 }
 } // namespace lift_006455D0
+
+// [0x00648300] sub_00648300 (110 bytes)
+namespace lift_00648300 {
+extern void ext_005B1870(void* self);   // Geometry::~Geometry (base-class teardown)
+extern void ext_0065A9A0(void* self);   // thunk -> sub_0065A8E0 (teardown of object at +0xa4)
+extern void ext_006A5C5C(void* p);      // thunk -> MFC80!ord_764 (operator delete)
+extern uint32_t mem_00924FF4;           // IAT slot holding basic_string<char> dtor address
+
+// @name UnknownDerived::~UnknownDerived
+// @class UnknownDerived
+// @summary Derived-class destructor: deletes owned object at +0xa4 (if set), destroys the std::string at +0x4c, then runs the Geometry base destructor.
+// @field UnknownDerived +0x4c std::string field_0x4c
+// @field UnknownDerived +0xa4 void* field_0xa4
+void fn_00648300(void* self) {
+    void* owned = lift_field<void*>(self, 0xa4);
+    if (owned != nullptr) {
+        ext_0065A9A0(owned);
+        ext_006A5C5C(owned);
+    }
+
+    auto stringDtor = reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(mem_00924FF4));
+    stringDtor(static_cast<uint8_t*>(self) + 0x4c);
+
+    ext_005B1870(self);
+}
+} // namespace lift_00648300

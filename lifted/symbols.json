@@ -45092,6 +45092,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00648300": {
+    "name": "UnknownDerived::~UnknownDerived",
+    "class": "UnknownDerived",
+    "signature": "extern \"C\" void ext_005B1870(void* self);   // Geometry::~Geometry (base-class teardown) extern \"C\" void ext_0065A9A0(void* self);   // thunk -\u003e sub_0065A8E0 (teardown of object at +0xa4) extern \"C\" void ext_006A5C5C(void* p);      // thunk -\u003e MFC80!ord_764 (operator delete) extern \"C\" uint32_t mem_00924FF4;           // IAT slot holding basic_string\u003cchar\u003e dtor address void fn_00648300(void* self)",
+    "summary": "Derived-class destructor: deletes owned object at +0xa4 (if set), destroys the std::string at +0x4c, then runs the Geometry base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648370": {
     "name": "sub_00648370",
     "signature": "uint32_t __thiscall sub_00648370(void* self, uint32_t arg1, uint32_t arg2)",
