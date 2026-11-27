@@ -1371,3 +1371,29 @@ void fn_005D1160(void* self, float value) {
     ext_0065C650(reinterpret_cast<void*>(cs));
 }
 } // namespace lift_005D1160
+
+// [0x005D9EA0] sub_005D9EA0 (69 bytes)
+namespace lift_005D9EA0 {
+// Known callee 0x005D0710: no-argument thiscall returning float (sub_005D0710).
+extern float __thiscall ext_005D0710(void* this_);
+// Known callee 0x005B11E0: ReadFloatArrayElement (thiscall, one int arg, returns float).
+extern float __thiscall ext_005B11E0(void* this_, int32_t index);
+// Known callee 0x005D1020: Unknown::UpdateFloatAndDispatch (thiscall, one float arg).
+extern void __thiscall ext_005D1020(void* this_, float value);
+
+// @name Unknown::ScaleFloatAndDispatch
+// @class Unknown
+// @summary If the flag at +0x1f1 is clear, computes (element 1 of the float array at +0x210) * (value / ext_005D0710()) and passes the result to UpdateFloatAndDispatch.
+// @field Unknown +0x1f1 uint8_t flag1f1
+void fn_005D9EA0(void* self, float value) {
+    uint8_t flag = *reinterpret_cast<uint8_t*>(static_cast<char*>(self) + 0x1f1);
+    if (flag != 0) {
+        return;
+    }
+    float divisor = ext_005D0710(self);
+    void* array = static_cast<char*>(self) + 0x210;
+    float element = ext_005B11E0(array, 1);
+    float scaled = element * (value / divisor);
+    ext_005D1020(self, scaled);
+}
+} // namespace lift_005D9EA0

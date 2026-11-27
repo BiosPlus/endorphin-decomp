@@ -1,0 +1,22 @@
+{
+  "va": "0x005D9EA0",
+  "size": 69,
+  "orig_symbol": "sub_005D9EA0",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "Unknown::ScaleFloatAndDispatch",
+  "class": "Unknown",
+  "signature": "void fn_005D9EA0(void* self, float value)",
+  "summary": "If the flag at +0x1f1 is clear, computes (element 1 of the float array at +0x210) * (value / ext_005D0710()) and passes the result to UpdateFloatAndDispatch.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1F1",
+      "type": "uint8_t",
+      "name": "flag1f1"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:23Z"
+}

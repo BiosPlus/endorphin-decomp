@@ -40292,6 +40292,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D9EA0": {
+    "name": "Unknown::ScaleFloatAndDispatch",
+    "class": "Unknown",
+    "signature": "void fn_005D9EA0(void* self, float value)",
+    "summary": "If the flag at +0x1f1 is clear, computes (element 1 of the float array at +0x210) * (value / ext_005D0710()) and passes the result to UpdateFloatAndDispatch.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D9EF0": {
     "name": "CObject::InitTimerFloor",
     "class": "CObject",
