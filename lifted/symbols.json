@@ -18347,6 +18347,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_004F1210.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x004F0FB0": {
+    "name": "TreeMap::eraseSubtree",
+    "class": "TreeMap",
+    "signature": "void __thiscall fn_004F0FB0(void* self, void* node)",
+    "summary": "Recursively erases a red-black tree node and its left/right subtrees, freeing associated value buffer and string key.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F1210": {
     "name": "sub_004F1210",
     "signature": "extern \"C\" void* __fastcall fn_004F1210(void* self, int edx_unused, unsigned int flags)",
@@ -19981,6 +19988,12 @@
     "signature": "void __stdcall fn_00508C10(DWORD arg)",
     "summary": "Forwards its single stdcall argument to sub_005087F0 (tail call) when the argument is \u003c= 2 unsigned; otherwise returns immediately, popping the 4-byte argument.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
+  "0x00508CD0": {
+    "name": "getStaticString_00AEBC14",
+    "signature": "void* fn_00508CD0()",
+    "summary": "Thread-unsafe static initialization guard for string at 0x00AEBC14 with atexit registration.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00508DD0": {
     "name": "InitOnceGlobalString_00508DD0",

@@ -799,3 +799,51 @@ extern void __fastcall fn_004FDE90(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_004FDE90
+
+// [0x004F0FB0]
+namespace lift_004F0FB0 {
+// @name TreeMap::eraseSubtree
+// @class TreeMap
+// @summary Recursively erases a red-black tree node and its left/right subtrees, freeing associated value buffer and string key.
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0C std::string key
+// @field TreeNode +0x2C void* value_ptr
+// @field TreeNode +0x30 uint32_t field_0x30
+// @field TreeNode +0x34 uint32_t field_0x34
+// @field TreeNode +0x39 uint8_t is_nil
+
+
+extern void ext_006A5C5C(void* ptr);
+extern uintptr_t mem_00924FF4;
+
+void __thiscall fn_004F0FB0(void* self, void* node) {
+    uint8_t* cur = static_cast<uint8_t*>(node);
+    if (lift_field<uint8_t>(cur, 0x39) != 0) {
+        return;
+    }
+
+    do {
+        void* right = lift_field<void*>(cur, 0x08);
+        fn_004F0FB0(self, right);
+
+        uint8_t* next = lift_field<uint8_t*>(cur, 0x00);
+        uint8_t* key_ptr = cur + 0x0C;
+
+        void* val_ptr = lift_field<void*>(cur, 0x2C);
+        if (val_ptr != nullptr) {
+            ext_006A5C5C(val_ptr);
+        }
+
+        lift_field<uint32_t>(key_ptr, 0x20) = 0;
+        lift_field<uint32_t>(key_ptr, 0x24) = 0;
+        lift_field<uint32_t>(key_ptr, 0x28) = 0;
+
+        using DtorFn = void(__thiscall*)(void*);
+        reinterpret_cast<DtorFn>(mem_00924FF4)(key_ptr);
+
+        ext_006A5C5C(cur);
+        cur = next;
+    } while (lift_field<uint8_t>(cur, 0x39) == 0);
+}
+} // namespace lift_004F0FB0

@@ -1,0 +1,58 @@
+{
+  "va": "0x004F0FB0",
+  "size": 95,
+  "orig_symbol": "sub_004F0FB0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "TreeMap::eraseSubtree",
+  "class": "TreeMap",
+  "signature": "void __thiscall fn_004F0FB0(void* self, void* node)",
+  "summary": "Recursively erases a red-black tree node and its left/right subtrees, freeing associated value buffer and string key.",
+  "fields": [
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "key"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "value_ptr"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:54:34Z"
+}
