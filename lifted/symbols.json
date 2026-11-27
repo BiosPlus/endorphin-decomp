@@ -5333,6 +5333,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00440A00 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x004416E0": {
+    "name": "MultiTrackView::DiamondMarker::vfunc_1",
+    "class": "MultiTrackView::DiamondMarker",
+    "signature": "DiamondRect* __thiscall fn_004416E0(void* self, DiamondRect* outRect, void* pDC, const DiamondRect* inRect)",
+    "summary": "Draws a diamond marker on the given DC and returns its bounding rectangle.",
+    "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp"
+  },
   "0x00441A40": {
     "name": "MultiTrackView::SimpleRangeMarker::vfunc_0",
     "class": "MultiTrackView::SimpleRangeMarker",
