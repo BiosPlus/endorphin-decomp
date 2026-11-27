@@ -3080,3 +3080,32 @@ void fn_00503B20(uint8_t* dst, uint32_t count, const uint8_t* src) {
     }
 }
 } // namespace lift_00503B20
+
+// [0x00504070] sub_00504070 (75 bytes)
+namespace lift_00504070 {
+// Known callee 0x00503D30: ext_00503D30 (CopyVector8Buffer: resets self to empty, then allocates a fresh 8-byte-element buffer sized to src and memmove_s-copies src's contents into it; returns self.)
+extern void* ext_00503D30(void* self, void* src);
+
+// @name CopyConstructFromSource
+// @summary Copies a source object's scalar fields and its Vector8 member into self, writing the base vtable before and the derived vtable after the vector copy; returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 Vector8 vec
+// @field Unknown +0x20 uint8_t field_0x20
+// @field Unknown +0x21 uint8_t field_0x21
+// @field Unknown +0x28 double field_0x28
+// @field Unknown +0x30 uint32_t field_0x30
+void* fn_00504070(void* self, void* src) {
+    lift_field<uint32_t>(self, 0x00) = 0x0094F074;
+    lift_field<uint32_t>(self, 0x08) = lift_field<uint32_t>(src, 0x08);
+    lift_field<uint32_t>(self, 0x0C) = lift_field<uint32_t>(src, 0x0C);
+    ext_00503D30(static_cast<uint8_t*>(self) + 0x10, static_cast<uint8_t*>(src) + 0x10);
+    lift_field<uint8_t>(self, 0x20) = lift_field<uint8_t>(src, 0x20);
+    lift_field<uint8_t>(self, 0x21) = lift_field<uint8_t>(src, 0x21);
+    lift_field<double>(self, 0x28) = lift_field<double>(src, 0x28);
+    lift_field<uint32_t>(self, 0x00) = 0x0094F084;
+    lift_field<uint32_t>(self, 0x30) = lift_field<uint32_t>(src, 0x30);
+    return self;
+}
+} // namespace lift_00504070

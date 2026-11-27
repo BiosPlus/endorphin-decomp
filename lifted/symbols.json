@@ -22387,6 +22387,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00503CD0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00504070": {
+    "name": "CopyConstructFromSource",
+    "signature": "void* fn_00504070(void* self, void* src)",
+    "summary": "Copies a source object's scalar fields and its Vector8 member into self, writing the base vtable before and the derived vtable after the vector copy; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005040C0": {
     "name": "PhysicalEvaluator::vfunc_0",
     "class": "PhysicalEvaluator",
