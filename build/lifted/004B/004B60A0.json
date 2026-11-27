@@ -1,0 +1,22 @@
+{
+  "va": "0x004B60A0",
+  "size": 114,
+  "orig_symbol": "sub_004B60A0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::constructStringAndDispatch_004B60A0",
+  "class": "Unknown",
+  "signature": "void fn_004B60A0(void* self, const char* arg1)",
+  "summary": "Fetches the static object via initStaticObjectOnce_004B1880, builds a temporary std::string from the C-string argument, calls sub_00475960 on the first dword of self with (temp string, \u0026static object, 1), then destroys the temporary string.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:13:12Z"
+}

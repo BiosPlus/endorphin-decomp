@@ -2458,3 +2458,39 @@ void fn_004B4E60(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     ext_00666670(u32_to_ptr(static_cast<uint32_t>(global)));
 }
 } // namespace lift_004B4E60
+
+// [0x004B60A0] sub_004B60A0 (114 bytes)
+namespace lift_004B60A0 {
+// Known callee 0x004B1880: initStaticObjectOnce_004B1880 (One-time initializer for the static object at 0x00AE0CE8; guarded by flag bit 0 at 0x00AE0CEC, sets its vtable to 0x00942074, and returns its address.)
+extern void ext_004B1880();
+// Known callee 0x00475960: sub_00475960 (211B; thiscall, ECX = this, three stack args: std::string*, void** out-slot, flag.)
+extern void ext_00475960();
+// RDATA IAT slots holding MSVCP80 function addresses:
+//   mem_00924FE4 = std::basic_string<char>::basic_string(const char*)
+//   mem_00924FF4 = std::basic_string<char>::~basic_string()
+extern uintptr_t mem_00924FE4;
+extern uintptr_t mem_00924FF4;
+
+// @name Unknown::constructStringAndDispatch_004B60A0
+// @class Unknown
+// @summary Fetches the static object via initStaticObjectOnce_004B1880, builds a temporary std::string from the C-string argument, calls sub_00475960 on the first dword of self with (temp string, &static object, 1), then destroys the temporary string.
+// @field Unknown +0x00 void* field_0x00
+void fn_004B60A0(void* self, const char* arg1) {
+    using StringCtor = void(__thiscall*)(void*, const char*);
+    using StringDtor = void(__thiscall*)(void*);
+    using Callee = void(__thiscall*)(void*, void*, void*, int);
+
+    // Original: obj stored in a local slot, its address is passed to the callee.
+    void* obj = reinterpret_cast<void* (*)()>(&ext_004B1880)();
+
+    // Temporary MSVC std::string (0x1C bytes) occupying the local frame.
+    alignas(8) unsigned char str[0x1C];
+    reinterpret_cast<StringCtor>(mem_00924FE4)(str, arg1);
+
+    // Callee this = first dword of self.
+    void* thisPtr = lift_field<void*>(self, 0);
+    reinterpret_cast<Callee>(&ext_00475960)(thisPtr, str, &obj, 1);
+
+    reinterpret_cast<StringDtor>(mem_00924FF4)(str);
+}
+} // namespace lift_004B60A0
