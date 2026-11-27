@@ -2210,3 +2210,25 @@ void __fastcall fn_00544F30(void* self) {
     ext_00543320(self);
 }
 } // namespace lift_00544F30
+
+// [0x00544920]
+namespace lift_00544920 {
+extern void __fastcall ext_00543320(void* self);
+extern void __fastcall ext_00544F30(void* self);
+extern char mem_0095651C[];
+extern char mem_0095641C[];
+
+// @name Unknown::ctor_00544920
+// @class Unknown
+// @summary Sets two vtable pointers, runs subobject destructor ext_00544F30 on this+0x9C, then calls ext_00543320 on this.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer, set to mem_0095651C)
+// @field Unknown +0x98 uint32_t field_0x98 (vtable pointer, set to mem_0095641C)
+// @field Unknown +0x9C uint8_t field_0x9c (subobject passed as this to ext_00544F30)
+extern void __fastcall fn_00544920(void* self) {
+    char* esi = static_cast<char*>(self);
+    *reinterpret_cast<uint32_t*>(esi + 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_0095651C));
+    *reinterpret_cast<uint32_t*>(esi + 0x98) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_0095641C));
+    ext_00544F30(esi + 0x9C);
+    ext_00543320(esi);
+}
+} // namespace lift_00544920

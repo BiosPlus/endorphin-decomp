@@ -28149,6 +28149,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00544130 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544920": {
+    "name": "Unknown::ctor_00544920",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_00544920(void* self)",
+    "summary": "Sets two vtable pointers, runs subobject destructor ext_00544F30 on this+0x9C, then calls ext_00543320 on this.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00544980": {
     "name": "ReshapeTool::vfunc_28",
     "class": "ReshapeTool",

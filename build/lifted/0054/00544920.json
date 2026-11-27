@@ -1,0 +1,34 @@
+{
+  "va": "0x00544920",
+  "size": 95,
+  "orig_symbol": "sub_00544920",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::ctor_00544920",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_00544920(void* self)",
+  "summary": "Sets two vtable pointers, runs subobject destructor ext_00544F30 on this+0x9C, then calls ext_00543320 on this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (vtable pointer, set to",
+      "name": "mem_0095651C)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "uint32_t field_0x98 (vtable pointer, set to",
+      "name": "mem_0095641C)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "uint8_t field_0x9c (subobject passed as this to",
+      "name": "ext_00544F30)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:19Z"
+}

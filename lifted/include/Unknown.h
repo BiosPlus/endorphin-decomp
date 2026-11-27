@@ -104,6 +104,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 lo  (evidence: 0x006DBDF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    m00  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (written with mem_009326EC)  (evidence: 0x00441C10, 0x00442C40, 0x00443700) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t field_0x00 (vtable pointer, set to mem_0095651C)  (evidence: 0x00544920) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    next  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 next_or_head  (evidence: 0x00783800, 0x00783820, 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    object  (evidence: 0x00493EA0, 0x00666170) // CONFLICT: multiple definitions at +0x0
@@ -1444,10 +1445,12 @@ struct Unknown_Fields {
     // +0x98  uint8_t[0x4c]            field_0x98  (evidence: 0x0072AF80) // CONFLICT: multiple definitions at +0x98
     // +0x98  void*                    field_0x98  (evidence: 0x007C8490, 0x007C9370, 0x007CAF70) // CONFLICT: multiple definitions at +0x98
     // +0x98  ToolGraphics::TranslateHandleGraphic handle_graphic  (evidence: 0x00547220) // CONFLICT: multiple definitions at +0x98
+    // +0x98  uint32_t field_0x98 (vtable pointer, set to mem_0095641C)  (evidence: 0x00544920) // CONFLICT: multiple definitions at +0x98
     // +0x98  void*                    subobject_vtable_0x98  (evidence: 0x00544F30) // CONFLICT: multiple definitions at +0x98
     // +0x98  void* field_0x98 (embedded object; address only, passed as this)  (evidence: 0x0072B0A0) // CONFLICT: multiple definitions at +0x98
     // +0x98  void*                    vtable_0x98  (evidence: 0x00544130) // CONFLICT: multiple definitions at +0x98
     // +0x9C  void* field_0x9C (range sub-object passed to InitClampedMin1)  (evidence: 0x006BAB80) // CONFLICT: multiple definitions at +0x9C
+    // +0x9C  uint8_t field_0x9c (subobject passed as this to ext_00544F30)  (evidence: 0x00544920) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  float                    f9c  (evidence: 0x006465F0) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  char                     field_0x9C  (evidence: 0x005457B0) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  unknown                  field_0x9C  (evidence: 0x00545A70) // CONFLICT: multiple definitions at +0x9C
