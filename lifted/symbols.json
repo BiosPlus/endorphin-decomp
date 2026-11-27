@@ -19806,6 +19806,13 @@
     "summary": "Increments counter +0x28, zeroes +0x24, erases the int32 range [begin,end) at +0x0C/+0x10 via ext_00596660, then tail-calls StringPairList::clear on this+0x18.",
     "lifted_path": "lifted/Properties/TestControl.cpp"
   },
+  "0x004F06C0": {
+    "name": "Unknown::eraseFromBeginToEnd8",
+    "class": "Unknown",
+    "signature": "void fn_004F06C0(void* self)",
+    "summary": "Validates that begin \u003c= end on a vector-like container (fields +0x04/+0x08), then erases [begin, end) via ext_004F0340, using the container itself as both sentinels.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F0A90": {
     "name": "Unknown::ctor_004F0A90",
     "class": "Unknown",

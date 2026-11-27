@@ -1168,3 +1168,39 @@ uint8_t** fn_004F0340(void* self, uint8_t** out, uint8_t* sentinelA, uint8_t* fi
     return out;
 }
 } // namespace lift_004F0340
+
+// [0x004F06C0] sub_004F06C0 (59 bytes)
+namespace lift_004F06C0 {
+// Known callee 0x004F0340: Unknown::eraseRange8 (descriptive; owner class not yet identified) (Erases the 8-byte-element range [first,last) from a vector-like container whose end pointer is at +0x08: moves the tail down onto first, destroys the now-stale trailing elements via ext_00493D90, updates end, and returns the pair {first-or-a2, first} through the hidden out pointer. Calls invalid_parameter when the first sentinel is null or differs from the second sentinel.)
+extern uint8_t** __thiscall ext_004F0340(void* self, uint8_t** out, uint8_t* sentinelA,
+                                             uint8_t* first, uint8_t* sentinelB, uint8_t* last);
+
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (loaded into ebp in the original).
+extern uint32_t mem_00925134;
+
+// @name Unknown::eraseFromBeginToEnd8
+// @class Unknown
+// @summary Validates that begin <= end on a vector-like container (fields +0x04/+0x08), then erases [begin, end) via ext_004F0340, using the container itself as both sentinels.
+// @field Unknown +0x04 uint8_t* field_0x04
+// @field Unknown +0x08 uint8_t* m_end
+void fn_004F06C0(void* self) {
+    using InvalidParamFn = void (*)();
+    auto invalid_parameter = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    // Both checks compare begin against end and call invalid_parameter if begin is above end.
+    if (reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x04)) >
+        reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x08))) {
+        invalid_parameter();
+    }
+    if (reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x04)) >
+        reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x08))) {
+        invalid_parameter();
+    }
+
+    // Hidden out-pointer buffer (the two pointers the callee writes back).
+    uint8_t* result[2] = {nullptr, nullptr};
+    uint8_t* self_ptr = reinterpret_cast<uint8_t*>(self);
+    ext_004F0340(self, result, self_ptr, lift_field<uint8_t*>(self, 0x04), self_ptr,
+                 lift_field<uint8_t*>(self, 0x08));
+}
+} // namespace lift_004F06C0
