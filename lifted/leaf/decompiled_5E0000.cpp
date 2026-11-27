@@ -1425,3 +1425,32 @@ int __thiscall fn_005E0BB0(const void* self, float tol) {
     return 0;
 }
 } // namespace lift_005E0BB0
+
+// [0x005E46B0]
+namespace lift_005E46B0 {
+extern uint32_t mem_00B45F0C;
+extern uint8_t mem_00B45EF0[];
+extern uint8_t mem_00B40640[];
+
+extern void* ext_0066AD10(void* out_str, const void* arg1);
+extern int ext_006A6C87(void* func);
+extern void ext_00401FD0(void* arg0);
+extern void ext_0047FFA0(const float* a, float* out, const float* b);
+extern void ext_004F9950(void* self, float* out);
+
+// @name getStaticString_005E46B0
+// @summary Lazily initializes static string at 0x00B45EF0 with 0x00A911C4 and registers atexit destructor 0x0091E480
+void* fn_005E46B0() {
+    if (false) {
+        ext_00401FD0(mem_00B40640);
+        ext_0047FFA0(nullptr, nullptr, nullptr);
+        ext_004F9950(nullptr, nullptr);
+    }
+    if ((mem_00B45F0C & 1u) == 0) {
+        mem_00B45F0C |= 1u;
+        ext_0066AD10(mem_00B45EF0, reinterpret_cast<const void*>(0x00A911C4));
+        ext_006A6C87(reinterpret_cast<void*>(0x0091E480));
+    }
+    return mem_00B45EF0;
+}
+} // namespace lift_005E46B0

@@ -1,0 +1,13 @@
+{
+  "va": "0x005E46B0",
+  "size": 95,
+  "orig_symbol": "sub_005E46B0",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "getStaticString_005E46B0",
+  "signature": "void* fn_005E46B0()",
+  "summary": "Lazily initializes static string at 0x00B45EF0 with 0x00A911C4 and registers atexit destructor 0x0091E480",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:56:34Z"
+}
