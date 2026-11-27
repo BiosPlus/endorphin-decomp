@@ -1,0 +1,22 @@
+{
+  "va": "0x005E0430",
+  "size": 309,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_2_off_C",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_2_off_C",
+  "class": "NMData::FixedPathJointData",
+  "signature": "inline Fn lift_vslot(void* obj, size_t index)",
+  "summary": "Calls the sub-object at this-8 (slot 3 / 4 / 0 / 7 / 11) to measure a vector delta against mem_00B40640-derived data, then adds the difference into the object returned by slot 11; finally forwards to the object at +0x184 (slot 35) if set.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x184",
+      "type": "void* field_0x184 (non-null object; its vtable slot 35 is",
+      "name": "called)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:51:04Z"
+}

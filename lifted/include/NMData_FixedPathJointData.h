@@ -35,7 +35,8 @@ struct NMData_FixedPathJointData_Fields {
     // +0x17A uint8_t                  field_0x17a  (evidence: 0x005EDFD0)
     // +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)  (evidence: 0x005E1060, 0x005E29F0)
-    // +0x184 void*                    field_0x184  (evidence: 0x005E02D0)
+    // +0x184 void* field_0x184 (non-null object; its vtable slot 35 is called)  (evidence: 0x005E0430) // CONFLICT: multiple definitions at +0x184
+    // +0x184 void*                    field_0x184  (evidence: 0x005E02D0) // CONFLICT: multiple definitions at +0x184
     // +0x18C void*                    field_0x18c  (evidence: 0x005E4710, 0x005E4C80)
     // +0x190 void*                    field_0x190  (evidence: 0x005E4710)
     // +0x194 int32_t                  field_0x194  (evidence: 0x005E4850, 0x005EB920) // CONFLICT: multiple definitions at +0x194

@@ -912,3 +912,73 @@ uint8_t fn_005ECF40(void* self, uint32_t arg1, uint32_t arg2) {
     return result;
 }
 } // namespace lift_005ECF40
+
+// [0x005E0430] NMData::FixedPathJointData::vfunc_2_off_C (309 bytes)
+namespace lift_005E0430 {
+extern void ext_0067DDB0(void* self);
+extern void ext_00586D00(void* self);
+extern uint32_t mem_00B40640;
+
+// Fetch virtual slot `index` of obj's vtable as a callable function pointer.
+template <typename Fn>
+inline Fn lift_vslot(void* obj, size_t index) {
+    void** vtable = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<Fn>(vtable[index]);
+}
+
+// @name NMData::FixedPathJointData::vfunc_2_off_C
+// @class NMData::FixedPathJointData
+// @summary Calls the sub-object at this-8 (slot 3 / 4 / 0 / 7 / 11) to measure a vector delta against mem_00B40640-derived data, then adds the difference into the object returned by slot 11; finally forwards to the object at +0x184 (slot 35) if set.
+// @field NMData::FixedPathJointData +0x184 void* field_0x184 (non-null object; its vtable slot 35 is called)
+void fn_005E0430(void* self, const float* delta) {
+    uint8_t* const base = reinterpret_cast<uint8_t*>(self);
+    void* const sub = base - 8;
+
+    // First vector: P1 = sub->vt[3](g); a = { P1+0x30, P1+0x34, P1+0x38 }.
+    const uint32_t g = mem_00B40640;
+    void* p1 = lift_vslot<void* (*)(void*, uint32_t)>(sub, 3)(sub, g);
+    const float a[3] = {
+        lift_field<float>(p1, 0x30),
+        lift_field<float>(p1, 0x34),
+        lift_field<float>(p1, 0x38),
+    };
+
+    // Output vector b = sub->vt[4](&b, 0).
+    float b[3];
+    lift_vslot<void (*)(void*, void*, uint32_t)>(sub, 4)(sub, b, 0);
+
+    // The original accumulates *delta into a stack temporary that is never
+    // read again afterwards; the result is dead, so the delta read is dropped.
+    (void)delta;
+
+    ext_0067DDB0(b);
+
+    lift_vslot<void (*)(void*, uint32_t, void*, uint32_t)>(sub, 0)(sub, 0, b, mem_00B40640);
+
+    ext_00586D00(base - 0xC);
+
+    if (lift_vslot<uint8_t (*)(void*)>(sub, 7)(sub) != 0) {
+        // Second vector: P2 = sub->vt[3](g); q = { P2+0x30, P2+0x34, P2+0x38 }.
+        const uint32_t g3 = mem_00B40640;
+        void* p2 = lift_vslot<void* (*)(void*, uint32_t)>(sub, 3)(sub, g3);
+        const float q[3] = {
+            lift_field<float>(p2, 0x30),
+            lift_field<float>(p2, 0x34),
+            lift_field<float>(p2, 0x38),
+        };
+
+        const float d[3] = {q[0] - a[0], q[1] - a[1], q[2] - a[2]};
+
+        // Add d into the object returned by sub->vt[11]().
+        void* r = lift_vslot<void* (*)(void*)>(sub, 11)(sub);
+        lift_field<float>(r, 0x30) += d[0];
+        lift_field<float>(r, 0x34) += d[1];
+        lift_field<float>(r, 0x38) += d[2];
+    }
+
+    void* obj = lift_field<void*>(self, 0x184);
+    if (obj != nullptr) {
+        lift_vslot<void (*)(void*)>(obj, 35)(obj);
+    }
+}
+} // namespace lift_005E0430

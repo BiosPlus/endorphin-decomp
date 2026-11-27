@@ -52602,6 +52602,13 @@
     "summary": "Stores the single stack argument at +0x294, zeroes the float block at +0x29C..+0x2E4, and clears the DWORDs at +0x2C0 and +0x2E8.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E0430": {
+    "name": "NMData::FixedPathJointData::vfunc_2_off_C",
+    "class": "NMData::FixedPathJointData",
+    "signature": "inline Fn lift_vslot(void* obj, size_t index)",
+    "summary": "Calls the sub-object at this-8 (slot 3 / 4 / 0 / 7 / 11) to measure a vector delta against mem_00B40640-derived data, then adds the difference into the object returned by slot 11; finally forwards to the object at +0x184 (slot 35) if set.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E0570": {
     "name": "CheckChildAtField190Matches",
     "class": "Unknown",
