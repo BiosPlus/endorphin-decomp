@@ -1,0 +1,34 @@
+{
+  "va": "0x00567190",
+  "size": 125,
+  "orig_symbol": "sub_00567190",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "numberChildrenRecursive",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00567190(void* ecx_this, void* self, int32_t* counter)",
+  "summary": "Walks a node's child-pointer array, stamping each child with the running counter and recursing into it.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void**",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void**",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:53:58Z"
+}

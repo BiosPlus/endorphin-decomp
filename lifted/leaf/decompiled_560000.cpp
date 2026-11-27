@@ -742,3 +742,27 @@ bool fn_0056B690(void* self, float a, float b, float c, double d) {
     return true;
 }
 } // namespace lift_0056B690
+
+// [0x00567190] sub_00567190 (125 bytes)
+namespace lift_00567190 {
+extern int mem_00925134;
+
+// @name numberChildrenRecursive
+// @class Unknown
+// @summary Walks a node's child-pointer array, stamping each child with the running counter and recursing into it.
+// @field Unknown +0x28 void** field_0x28
+// @field Unknown +0x2C void** field_0x2C
+// @field Unknown +0x04 int32_t field_0x04
+void __thiscall fn_00567190(void* ecx_this, void* self, int32_t* counter) {
+    // Original bounds-check failure path calls through the _invalid_parameter_noinfo import slot; not a real access.
+    (void)&mem_00925134;
+    for (void** it = lift_field<void**>(self, 0x28);
+         it != lift_field<void**>(self, 0x2C);
+         ++it) {
+        void* child = *it;
+        lift_field<int32_t>(child, 0x04) = *counter;
+        ++*counter;
+        fn_00567190(ecx_this, *it, counter);
+    }
+}
+} // namespace lift_00567190

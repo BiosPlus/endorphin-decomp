@@ -27777,6 +27777,13 @@
     "summary": "Writes vtable 0x00958C0C into self, copies byte +0x04 and four 32-bit words +0x08..+0x14 from src, returns self.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x00567190": {
+    "name": "numberChildrenRecursive",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00567190(void* ecx_this, void* self, int32_t* counter)",
+    "summary": "Walks a node's child-pointer array, stamping each child with the running counter and recursing into it.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00567210": {
     "name": "sub_00567210",
     "signature": "void __thiscall fn_00567210(void* self, uint32_t node, uint32_t arg2)",
