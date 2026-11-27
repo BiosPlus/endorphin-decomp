@@ -68988,3 +68988,468 @@ void __stdcall fn_004D6BE0(void* arg1) {
     notify(field4, arg1);
 }
 } // namespace lift_004D6BE0
+
+// [0x005092C0] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_47 (152 bytes)
+namespace lift_005092C0 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47).
+namespace lift_004B1CA0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads the GraphEntryData color into the target value wrapper or throws if the source pointer is null.
+// @field ValueWrapper +0x00 void* field_0x00
+// @field ValueWrapper +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_006720C0(void* self, uint32_t arg);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+int __stdcall fn_005092C0(void* arg0) {
+    uint32_t* esi = static_cast<uint32_t*>(arg0);
+    uint32_t obj = esi[0];
+    if (obj == 0) {
+        uint8_t exc[48];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    uint32_t local_pair[2] = {0, 0};
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0x14);
+    ext_006720C0(&local_pair[1], val);
+    ext_0041CF50(esi, local_pair);
+
+    uint32_t ecx = local_pair[1];
+    if (ecx != 0) {
+        auto vtable = *reinterpret_cast<uint32_t**>(ecx);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        fn(reinterpret_cast<void*>(ecx), local_pair);
+    }
+
+    uint32_t target = esi[1];
+    auto vtable = *reinterpret_cast<uint32_t**>(target);
+    auto fn = reinterpret_cast<int(__thiscall*)(void*, void*)>(vtable[0xBC / 4]);
+    return fn(reinterpret_cast<void*>(target), esi);
+}
+} // namespace lift_004B1CA0
+} // namespace lift_005092C0
+
+// [0x00512F80] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_47 (152 bytes)
+namespace lift_00512F80 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_47
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47).
+// @field ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1> +0x4 void* field_0x04
+namespace lift_004D6BE0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads a RigEventData::getUserRetargetRefFrame string value from the expression parser target, updates the target wrapper, and notifies its observer.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+
+
+extern void* __stdcall ext_00511960(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+void __stdcall fn_00512F80(void* arg1) {
+    uint8_t str_buf[28];
+    uint32_t obj[2] = {0, 0};
+
+    void* str_ptr = ext_00511960(str_buf, lift_field<void*>(arg1, 0x00));
+    ext_006720E0(obj, str_ptr);
+    ext_0041CF50(arg1, obj);
+
+    void* inner = reinterpret_cast<void*>(obj[1]);
+    if (inner != nullptr) {
+        using ReleaseFn = void (__thiscall*)(void*, void*);
+        auto release = *reinterpret_cast<ReleaseFn*>(*reinterpret_cast<uintptr_t*>(inner) + 0x78);
+        release(inner, obj);
+    }
+
+    mem_00924FF4(str_buf);
+
+    void* field4 = lift_field<void*>(arg1, 0x04);
+    using NotifyFn = void (__thiscall*)(void*, void*);
+    auto notify = *reinterpret_cast<NotifyFn*>(*reinterpret_cast<uintptr_t*>(field4) + 0xBC);
+    notify(field4, arg1);
+}
+} // namespace lift_004D6BE0
+} // namespace lift_00512F80
+
+// [0x00513620] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_47 (152 bytes)
+namespace lift_00513620 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_47
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47).
+// @field ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1> +0x4 void* field_0x04
+namespace lift_004D6BE0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads a RigEventData::getUserRetargetRefFrame string value from the expression parser target, updates the target wrapper, and notifies its observer.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+
+
+extern void* __stdcall ext_005119F0(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+void __stdcall fn_00513620(void* arg1) {
+    uint8_t str_buf[28];
+    uint32_t obj[2] = {0, 0};
+
+    void* str_ptr = ext_005119F0(str_buf, lift_field<void*>(arg1, 0x00));
+    ext_006720E0(obj, str_ptr);
+    ext_0041CF50(arg1, obj);
+
+    void* inner = reinterpret_cast<void*>(obj[1]);
+    if (inner != nullptr) {
+        using ReleaseFn = void (__thiscall*)(void*, void*);
+        auto release = *reinterpret_cast<ReleaseFn*>(*reinterpret_cast<uintptr_t*>(inner) + 0x78);
+        release(inner, obj);
+    }
+
+    mem_00924FF4(str_buf);
+
+    void* field4 = lift_field<void*>(arg1, 0x04);
+    using NotifyFn = void (__thiscall*)(void*, void*);
+    auto notify = *reinterpret_cast<NotifyFn*>(*reinterpret_cast<uintptr_t*>(field4) + 0xBC);
+    notify(field4, arg1);
+}
+} // namespace lift_004D6BE0
+} // namespace lift_00513620
+
+// [0x00522440] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_47 (155 bytes)
+namespace lift_00522440 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47).
+namespace lift_004B1CA0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads the GraphEntryData color into the target value wrapper or throws if the source pointer is null.
+// @field ValueWrapper +0x00 void* field_0x00
+// @field ValueWrapper +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_006720C0(void* self, uint32_t arg);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+int __stdcall fn_00522440(void* arg0) {
+    uint32_t* esi = static_cast<uint32_t*>(arg0);
+    uint32_t obj = esi[0];
+    if (obj == 0) {
+        uint8_t exc[48];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    uint32_t local_pair[2] = {0, 0};
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0xC4);
+    ext_006720C0(&local_pair[1], val);
+    ext_0041CF50(esi, local_pair);
+
+    uint32_t ecx = local_pair[1];
+    if (ecx != 0) {
+        auto vtable = *reinterpret_cast<uint32_t**>(ecx);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        fn(reinterpret_cast<void*>(ecx), local_pair);
+    }
+
+    uint32_t target = esi[1];
+    auto vtable = *reinterpret_cast<uint32_t**>(target);
+    auto fn = reinterpret_cast<int(__thiscall*)(void*, void*)>(vtable[0xBC / 4]);
+    return fn(reinterpret_cast<void*>(target), esi);
+}
+} // namespace lift_004B1CA0
+} // namespace lift_00522440
+
+// [0x0058FD60] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_47 (152 bytes)
+namespace lift_0058FD60 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47).
+// @field ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0> +0x4 void* field_0x04
+namespace lift_004D6BE0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads a RigEventData::getUserRetargetRefFrame string value from the expression parser target, updates the target wrapper, and notifies its observer.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+
+
+extern void* __stdcall ext_0058F770(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+void __stdcall fn_0058FD60(void* arg1) {
+    uint8_t str_buf[28];
+    uint32_t obj[2] = {0, 0};
+
+    void* str_ptr = ext_0058F770(str_buf, lift_field<void*>(arg1, 0x00));
+    ext_006720E0(obj, str_ptr);
+    ext_0041CF50(arg1, obj);
+
+    void* inner = reinterpret_cast<void*>(obj[1]);
+    if (inner != nullptr) {
+        using ReleaseFn = void (__thiscall*)(void*, void*);
+        auto release = *reinterpret_cast<ReleaseFn*>(*reinterpret_cast<uintptr_t*>(inner) + 0x78);
+        release(inner, obj);
+    }
+
+    mem_00924FF4(str_buf);
+
+    void* field4 = lift_field<void*>(arg1, 0x04);
+    using NotifyFn = void (__thiscall*)(void*, void*);
+    auto notify = *reinterpret_cast<NotifyFn*>(*reinterpret_cast<uintptr_t*>(field4) + 0xBC);
+    notify(field4, arg1);
+}
+} // namespace lift_004D6BE0
+} // namespace lift_0058FD60
+
+// [0x005B3420] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_47 (152 bytes)
+namespace lift_005B3420 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47).
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0> +0x4 void* field_0x04
+namespace lift_004D6BE0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads a RigEventData::getUserRetargetRefFrame string value from the expression parser target, updates the target wrapper, and notifies its observer.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+
+
+extern void* __stdcall ext_005B1220(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+void __stdcall fn_005B3420(void* arg1) {
+    uint8_t str_buf[28];
+    uint32_t obj[2] = {0, 0};
+
+    void* str_ptr = ext_005B1220(str_buf, lift_field<void*>(arg1, 0x00));
+    ext_006720E0(obj, str_ptr);
+    ext_0041CF50(arg1, obj);
+
+    void* inner = reinterpret_cast<void*>(obj[1]);
+    if (inner != nullptr) {
+        using ReleaseFn = void (__thiscall*)(void*, void*);
+        auto release = *reinterpret_cast<ReleaseFn*>(*reinterpret_cast<uintptr_t*>(inner) + 0x78);
+        release(inner, obj);
+    }
+
+    mem_00924FF4(str_buf);
+
+    void* field4 = lift_field<void*>(arg1, 0x04);
+    using NotifyFn = void (__thiscall*)(void*, void*);
+    auto notify = *reinterpret_cast<NotifyFn*>(*reinterpret_cast<uintptr_t*>(field4) + 0xBC);
+    notify(field4, arg1);
+}
+} // namespace lift_004D6BE0
+} // namespace lift_005B3420
+
+// [0x005D24C0] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_47 (152 bytes)
+namespace lift_005D24C0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47).
+namespace lift_004B1CA0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads the GraphEntryData color into the target value wrapper or throws if the source pointer is null.
+// @field ValueWrapper +0x00 void* field_0x00
+// @field ValueWrapper +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_006720C0(void* self, uint32_t arg);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+int __stdcall fn_005D24C0(void* arg0) {
+    uint32_t* esi = static_cast<uint32_t*>(arg0);
+    uint32_t obj = esi[0];
+    if (obj == 0) {
+        uint8_t exc[48];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    uint32_t local_pair[2] = {0, 0};
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0x28);
+    ext_006720C0(&local_pair[1], val);
+    ext_0041CF50(esi, local_pair);
+
+    uint32_t ecx = local_pair[1];
+    if (ecx != 0) {
+        auto vtable = *reinterpret_cast<uint32_t**>(ecx);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        fn(reinterpret_cast<void*>(ecx), local_pair);
+    }
+
+    uint32_t target = esi[1];
+    auto vtable = *reinterpret_cast<uint32_t**>(target);
+    auto fn = reinterpret_cast<int(__thiscall*)(void*, void*)>(vtable[0xBC / 4]);
+    return fn(reinterpret_cast<void*>(target), esi);
+}
+} // namespace lift_004B1CA0
+} // namespace lift_005D24C0
+
+// [0x005DABF0] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_47 (152 bytes)
+namespace lift_005DABF0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47).
+namespace lift_004B1CA0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads the GraphEntryData color into the target value wrapper or throws if the source pointer is null.
+// @field ValueWrapper +0x00 void* field_0x00
+// @field ValueWrapper +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_006720C0(void* self, uint32_t arg);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+int __stdcall fn_005DABF0(void* arg0) {
+    uint32_t* esi = static_cast<uint32_t*>(arg0);
+    uint32_t obj = esi[0];
+    if (obj == 0) {
+        uint8_t exc[48];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    uint32_t local_pair[2] = {0, 0};
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0x24);
+    ext_006720C0(&local_pair[1], val);
+    ext_0041CF50(esi, local_pair);
+
+    uint32_t ecx = local_pair[1];
+    if (ecx != 0) {
+        auto vtable = *reinterpret_cast<uint32_t**>(ecx);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        fn(reinterpret_cast<void*>(ecx), local_pair);
+    }
+
+    uint32_t target = esi[1];
+    auto vtable = *reinterpret_cast<uint32_t**>(target);
+    auto fn = reinterpret_cast<int(__thiscall*)(void*, void*)>(vtable[0xBC / 4]);
+    return fn(reinterpret_cast<void*>(target), esi);
+}
+} // namespace lift_004B1CA0
+} // namespace lift_005DABF0
+
+// [0x006353E0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_47 (155 bytes)
+namespace lift_006353E0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47).
+namespace lift_004B1CA0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads the GraphEntryData color into the target value wrapper or throws if the source pointer is null.
+// @field ValueWrapper +0x00 void* field_0x00
+// @field ValueWrapper +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_006720C0(void* self, uint32_t arg);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+int __stdcall fn_006353E0(void* arg0) {
+    uint32_t* esi = static_cast<uint32_t*>(arg0);
+    uint32_t obj = esi[0];
+    if (obj == 0) {
+        uint8_t exc[48];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    uint32_t local_pair[2] = {0, 0};
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0xC0);
+    ext_006720C0(&local_pair[1], val);
+    ext_0041CF50(esi, local_pair);
+
+    uint32_t ecx = local_pair[1];
+    if (ecx != 0) {
+        auto vtable = *reinterpret_cast<uint32_t**>(ecx);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        fn(reinterpret_cast<void*>(ecx), local_pair);
+    }
+
+    uint32_t target = esi[1];
+    auto vtable = *reinterpret_cast<uint32_t**>(target);
+    auto fn = reinterpret_cast<int(__thiscall*)(void*, void*)>(vtable[0xBC / 4]);
+    return fn(reinterpret_cast<void*>(target), esi);
+}
+} // namespace lift_004B1CA0
+} // namespace lift_006353E0
+
+// [0x00683D10] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_47 (152 bytes)
+namespace lift_00683D10 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47).
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1> +0x4 void* field_0x04
+namespace lift_004D6BE0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads a RigEventData::getUserRetargetRefFrame string value from the expression parser target, updates the target wrapper, and notifies its observer.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+
+
+extern void* __stdcall ext_00683100(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+void __stdcall fn_00683D10(void* arg1) {
+    uint8_t str_buf[28];
+    uint32_t obj[2] = {0, 0};
+
+    void* str_ptr = ext_00683100(str_buf, lift_field<void*>(arg1, 0x00));
+    ext_006720E0(obj, str_ptr);
+    ext_0041CF50(arg1, obj);
+
+    void* inner = reinterpret_cast<void*>(obj[1]);
+    if (inner != nullptr) {
+        using ReleaseFn = void (__thiscall*)(void*, void*);
+        auto release = *reinterpret_cast<ReleaseFn*>(*reinterpret_cast<uintptr_t*>(inner) + 0x78);
+        release(inner, obj);
+    }
+
+    mem_00924FF4(str_buf);
+
+    void* field4 = lift_field<void*>(arg1, 0x04);
+    using NotifyFn = void (__thiscall*)(void*, void*);
+    auto notify = *reinterpret_cast<NotifyFn*>(*reinterpret_cast<uintptr_t*>(field4) + 0xBC);
+    notify(field4, arg1);
+}
+} // namespace lift_004D6BE0
+} // namespace lift_00683D10

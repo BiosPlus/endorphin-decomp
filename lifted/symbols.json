@@ -22820,6 +22820,13 @@
     "summary": "Throws an exception when the held task pointer is invoked through the vfunc; reports the field at +0x14 of the held object if non-null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005092C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
+    "signature": "int __stdcall fn_005092C0(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00509360": {
     "name": "sub_00509360",
     "signature": "void* fn_00509360()",
@@ -23674,6 +23681,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D8860 (ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_42).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00512F80": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1\u003e",
+    "signature": "void __stdcall fn_00512F80(void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_47).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00513020": {
     "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, ...\u003e::vfunc_0 (Chromosome::Descriptor::getTypicalMutationSize)",
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e",
@@ -23721,6 +23735,13 @@
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e",
     "signature": "bool __stdcall fn_00513300(void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x004D8860 (ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_42).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00513620": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e",
+    "signature": "void __stdcall fn_00513620(void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_47).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005136C0": {
@@ -24047,6 +24068,13 @@
     "summary": "Returns the individual description string for the value held behind the pointer-to-pointer argument; throws if that pointer is null.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x005164B0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e::vfunc_47",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e",
+    "signature": "int __stdcall fn_005164B0(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00516550": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e::vfunc_2",
     "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",
@@ -24066,6 +24094,13 @@
     "class": "ExprParser::DynamicEnumType",
     "signature": "extern \"C\" void* fn_005165C0(void* out_str, void** ptr_ref)",
     "summary": "If the wrapped read-method pointer is non-null, forwards to fn_0046C500 with its field at +0x08 and returns the sret buffer; otherwise builds a temporary and throws.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x005167F0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e::vfunc_47",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",
+    "signature": "int __stdcall fn_005167F0(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x00516B10": {
@@ -25036,6 +25071,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
     "signature": "void fn_00522400(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00515EB0 (ExprParser::DynamicEnumType::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00522440": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
+    "signature": "int __stdcall fn_00522440(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005224E0": {
@@ -32524,6 +32566,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C06D0 (ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::string, getPropertySourceDescription, 1\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0058FD60": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e",
+    "signature": "void __stdcall fn_0058FD60(void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_47).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0058FE00": {
     "name": "ExprParser::ReadWriteMethodType\u003cTransformNode\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
     "class": "ExprParser::ReadWriteMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerX(float), 0}\u003e",
@@ -35403,6 +35452,13 @@
     "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e",
     "signature": "void* fn_005B3300(void* dst, const void* src)",
     "summary": "Builds a std::string result in dst: reads the object from src, fills a temporary string via 0x005B1220, copy-constructs dst from it, destroys the temporary, and returns dst.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005B3420": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e",
+    "signature": "void __stdcall fn_005B3420(void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_47).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005B34C0": {
@@ -39043,6 +39099,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B12D0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D24C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e",
+    "signature": "int __stdcall fn_005D24C0(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D2560": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, float, \u0026public: void __thiscall NMData::VideoPlaneData::setFrameRate(float)\u003e",
@@ -40124,6 +40187,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
     "signature": "uint8_t fn_005DAA70(void* self)",
     "summary": "Returns whether the held VideoPlaneData pointer's field at +0x24 is nonzero; throws if the held pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005DABF0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
+    "signature": "int __stdcall fn_005DABF0(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005DAC90": {
@@ -49834,6 +49904,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00508EE0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006353E0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e",
+    "signature": "int __stdcall fn_006353E0(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00635480": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTimeDelay(float)\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTimeDelay(float)\u003e",
@@ -58613,6 +58690,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e",
     "signature": "bool __stdcall fn_006839F0(void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x004D8860 (ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_42).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00683D10": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e",
+    "signature": "void __stdcall fn_00683D10(void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D6BE0 (ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_47).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00683E50": {

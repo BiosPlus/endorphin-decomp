@@ -219,6 +219,7 @@ std::uint32_t fn_00516170(void* self) {
     return *reinterpret_cast<std::uint32_t*>(static_cast<std::uint8_t*>(target) + 0x0C);
 }
 } // namespace lift_00516170
+#include "../include/lift_compat.h"
 
 // [0x004AB340] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_2 (47 bytes)
 namespace lift_004AB340 {
@@ -2476,3 +2477,99 @@ double fn_00515FD0(void* self) {
     return static_cast<double>(lift_field<int32_t>(target, 0x08));
 }
 } // namespace lift_00515FD0
+
+// [0x005164B0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_47 (152 bytes)
+namespace lift_005164B0 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_47
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47).
+namespace lift_004B1CA0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads the GraphEntryData color into the target value wrapper or throws if the source pointer is null.
+// @field ValueWrapper +0x00 void* field_0x00
+// @field ValueWrapper +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_006720C0(void* self, uint32_t arg);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+int __stdcall fn_005164B0(void* arg0) {
+    uint32_t* esi = static_cast<uint32_t*>(arg0);
+    uint32_t obj = esi[0];
+    if (obj == 0) {
+        uint8_t exc[48];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    uint32_t local_pair[2] = {0, 0};
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0xC);
+    ext_006720C0(&local_pair[1], val);
+    ext_0041CF50(esi, local_pair);
+
+    uint32_t ecx = local_pair[1];
+    if (ecx != 0) {
+        auto vtable = *reinterpret_cast<uint32_t**>(ecx);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        fn(reinterpret_cast<void*>(ecx), local_pair);
+    }
+
+    uint32_t target = esi[1];
+    auto vtable = *reinterpret_cast<uint32_t**>(target);
+    auto fn = reinterpret_cast<int(__thiscall*)(void*, void*)>(vtable[0xBC / 4]);
+    return fn(reinterpret_cast<void*>(target), esi);
+}
+} // namespace lift_004B1CA0
+} // namespace lift_005164B0
+
+// [0x005167F0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_47 (152 bytes)
+namespace lift_005167F0 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_47
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47).
+namespace lift_004B1CA0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads the GraphEntryData color into the target value wrapper or throws if the source pointer is null.
+// @field ValueWrapper +0x00 void* field_0x00
+// @field ValueWrapper +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_006720C0(void* self, uint32_t arg);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+int __stdcall fn_005167F0(void* arg0) {
+    uint32_t* esi = static_cast<uint32_t*>(arg0);
+    uint32_t obj = esi[0];
+    if (obj == 0) {
+        uint8_t exc[48];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    uint32_t local_pair[2] = {0, 0};
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0x8);
+    ext_006720C0(&local_pair[1], val);
+    ext_0041CF50(esi, local_pair);
+
+    uint32_t ecx = local_pair[1];
+    if (ecx != 0) {
+        auto vtable = *reinterpret_cast<uint32_t**>(ecx);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        fn(reinterpret_cast<void*>(ecx), local_pair);
+    }
+
+    uint32_t target = esi[1];
+    auto vtable = *reinterpret_cast<uint32_t**>(target);
+    auto fn = reinterpret_cast<int(__thiscall*)(void*, void*)>(vtable[0xBC / 4]);
+    return fn(reinterpret_cast<void*>(target), esi);
+}
+} // namespace lift_004B1CA0
+} // namespace lift_005167F0

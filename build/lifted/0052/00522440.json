@@ -1,0 +1,28 @@
+{
+  "va": "0x00522440",
+  "size": 155,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
+  "signature": "int __stdcall fn_00522440(void* arg0)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B1CA0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47).",
+  "fields": [
+    {
+      "class": "ValueWrapper",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ValueWrapper",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T08:45:29Z"
+}
