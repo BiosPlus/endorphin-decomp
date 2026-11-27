@@ -3768,3 +3768,51 @@ void* __thiscall sub_00505D50(void* self, void* key) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(iter.ptr) + 0x1c);
 }
 } // namespace lift_00505D50
+
+// [0x00508210]
+namespace lift_00508210 {
+// @name Vector_copyAssign
+// @summary Clears destination vector, reserves space for source vector size, validates source iterators, and copies elements.
+// @field Vector +0x04 void* begin
+// @field Vector +0x08 void* end
+
+
+extern void ext_0050BE20(void* self);
+extern void ext_0050ED40(void* self, int32_t count);
+extern void ext_00508180(void* out_iter, void* src1, void* src_begin, void* src2, void* src_end, void* dst);
+extern void (*mem_00925134)();
+
+void fn_00508210(void* dst, void* src) {
+    ext_0050BE20(dst);
+
+    uint8_t* src_bytes = reinterpret_cast<uint8_t*>(src);
+    uint32_t begin_addr = *reinterpret_cast<uint32_t*>(src_bytes + 0x04);
+    int32_t count = 0;
+    if (begin_addr != 0) {
+        uint32_t end_addr = *reinterpret_cast<uint32_t*>(src_bytes + 0x08);
+        count = static_cast<int32_t>(end_addr - begin_addr) >> 2;
+    }
+
+    ext_0050ED40(dst, count);
+
+    uint32_t end_val = *reinterpret_cast<uint32_t*>(src_bytes + 0x08);
+    if (*reinterpret_cast<uint32_t*>(src_bytes + 0x04) > end_val) {
+        mem_00925134();
+    }
+
+    uint32_t begin_val = *reinterpret_cast<uint32_t*>(src_bytes + 0x04);
+    if (begin_val > *reinterpret_cast<uint32_t*>(src_bytes + 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t tmp_iter[2] = {0, 0};
+    ext_00508180(
+        tmp_iter,
+        src,
+        reinterpret_cast<void*>(static_cast<uintptr_t>(begin_val)),
+        src,
+        reinterpret_cast<void*>(static_cast<uintptr_t>(end_val)),
+        dst
+    );
+}
+} // namespace lift_00508210
