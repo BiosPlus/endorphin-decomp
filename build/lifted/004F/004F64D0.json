@@ -1,0 +1,22 @@
+{
+  "va": "0x004F64D0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getBeta(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setBeta(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, {public: float __thiscall MatrixWithProperties::getBeta(void) const, 0}, float, {public: void __thiscall MatrixWithProperties::setBeta(float), 0}\u003e",
+  "signature": "void fn_004F64D0(void* self)",
+  "summary": "One-time initializes the shared static ReadWriteMethodType vtable object (guarded by bit 0 of mem_00AE9EF8) and points self+4 at it.",
+  "fields": [
+    {
+      "class": "ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "vtableObjPtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:16Z"
+}

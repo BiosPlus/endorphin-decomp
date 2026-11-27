@@ -19172,6 +19172,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004F64D0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, {public: float __thiscall MatrixWithProperties::getBeta(void) const, 0}, float, {public: void __thiscall MatrixWithProperties::setBeta(float), 0}\u003e",
+    "signature": "void fn_004F64D0(void* self)",
+    "summary": "One-time initializes the shared static ReadWriteMethodType vtable object (guarded by bit 0 of mem_00AE9EF8) and points self+4 at it.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004F6550": {
     "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getGamma(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setGamma(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getGamma(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setGamma(float)\u003e",

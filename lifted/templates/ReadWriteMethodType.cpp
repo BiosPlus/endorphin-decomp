@@ -10678,3 +10678,27 @@ void fn_004ECD70(void* self) {
     lift_field<DWORD>(self, 0x04) = 0x00AE79D4u;
 }
 } // namespace lift_004ECD70
+
+// [0x004F64D0] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, {public: float __thiscall MatrixWithProperties::getBeta(void) const, 0}, float, {public: void __thiscall MatrixWithProperties::setBeta(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_004F64D0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE9EF8;
+extern DWORD mem_00AE9EF4;
+
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, {public: float __thiscall MatrixWithProperties::getBeta(void) const, 0}, float, {public: void __thiscall MatrixWithProperties::setBeta(float), 0}>
+// @summary One-time initializes the shared static ReadWriteMethodType vtable object (guarded by bit 0 of mem_00AE9EF8) and points self+4 at it.
+// @field ReadWriteMethodType +0x04 DWORD vtableObjPtr
+void fn_004F64D0(void* self) {
+    // The original SEH frame push/pop on fs:[0] (try-level -1, handler 0x89044E)
+    // is unwinding bookkeeping only and is not reproduced here.
+    if (!(mem_00AE9EF8 & 1u)) {
+        mem_00AE9EF8 |= 1u;
+        ext_0067A670(&mem_00AE9EF4, 0u);
+        mem_00AE9EF4 = 0x0094D624u;
+    }
+    *reinterpret_cast<DWORD*>(static_cast<char*>(self) + 0x4) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE9EF4));
+}
+} // namespace lift_004F64D0
