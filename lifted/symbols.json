@@ -43762,6 +43762,13 @@
     "summary": "Walks a debug-checked node list from this-\u003efield_0x26C and, for each node, calls a vtable slot (+0x30) and ext_00519CF0 on the node's object, then advances the iterator via fn_00673C20.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x005990D0": {
+    "name": "TreeMap::eraseAndDeleteOrThrow",
+    "class": "TreeMap",
+    "signature": "void fn_005990D0(void* self, std::string key)",
+    "summary": "Looks up key (throws std::out_of_range-style exception if absent), deletes the node's owned value via its virtual deleting destructor, then erases the node.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x005991D0": {
     "name": "Unknown::EraseAtAndWritePair",
     "class": "Unknown",

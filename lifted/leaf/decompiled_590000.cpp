@@ -2599,3 +2599,70 @@ void* fn_005949D0(void) {
     return &mem_00B4137C;
 }
 } // namespace lift_005949D0
+
+// [0x005990D0] sub_005990D0 (247 bytes)
+namespace lift_005990D0 {
+// Callee signatures match the lifted/auto-lifted clones they call.
+extern void* ext_005A07A0(void* self, void* out_iter, const void* key);
+extern void* ext_005AE1B0(void* self, void* out_iter, void* it_proxy, void* it_node);
+extern void ext_0041FF30(void* exc_this, const void* key, const void* msg);
+extern void ext_006A6DD2(void* exc_obj, const void* throw_info);
+extern int mem_00A32778;
+// CRT import slots used by the original asm (string ctor/dtor, _invalid_parameter_noinfo).
+// Replaced by std::string and std::abort(); referenced only so the global map stays in sync.
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+extern int mem_00925134;
+
+struct TreeMapIter {
+    void* tree;
+    void* node;
+};
+
+// @name TreeMap::eraseAndDeleteOrThrow
+// @class TreeMap
+// @summary Looks up key (throws std::out_of_range-style exception if absent), deletes the node's owned value via its virtual deleting destructor, then erases the node.
+// @field TreeMap +0x04 void* head
+// @field TreeNode +0x28 void* field_0x28
+void fn_005990D0(void* self, std::string key) {
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    (void)&mem_00925134;
+
+    TreeMapIter it{};
+    ext_005A07A0(self, &it, &key);
+
+    // Iterator must belong to this map.
+    if (it.tree == nullptr || it.tree != self) {
+        std::abort();
+    }
+
+    void* head = lift_field<void*>(self, 0x04);
+    void* node = it.node;
+
+    if (node == head) {
+        // Key not found: build the exception and throw it.
+        std::string msg(reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A32778)));
+        unsigned char exc[0x48];
+        ext_0041FF30(exc + 0x08, &key, &msg);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009D3748)));
+        std::abort();  // unreachable: thrown above
+    }
+
+    // Node must not be the head sentinel.
+    if (it.tree == nullptr || node == lift_field<void*>(it.tree, 0x04)) {
+        std::abort();
+    }
+
+    // Delete owned value through its vtable slot 0 (deleting destructor, flag 1).
+    void* value = lift_field<void*>(node, 0x28);
+    if (value != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(value);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[0])(value, 1);
+    }
+
+    // Erase the node from the tree.
+    TreeMapIter out{};
+    ext_005AE1B0(self, &out, it.tree, node);
+}
+} // namespace lift_005990D0

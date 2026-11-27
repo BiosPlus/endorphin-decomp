@@ -1,0 +1,28 @@
+{
+  "va": "0x005990D0",
+  "size": 247,
+  "orig_symbol": "sub_005990D0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "TreeMap::eraseAndDeleteOrThrow",
+  "class": "TreeMap",
+  "signature": "void fn_005990D0(void* self, std::string key)",
+  "summary": "Looks up key (throws std::out_of_range-style exception if absent), deletes the node's owned value via its virtual deleting destructor, then erases the node.",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:42:12Z"
+}

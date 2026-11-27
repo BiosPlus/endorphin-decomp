@@ -66,7 +66,7 @@ struct TreeNode_Fields {
     // +0x28  void*                    _Value  (evidence: 0x0052A650) // CONFLICT: multiple definitions at +0x28
     // +0x28  void*                    entry  (evidence: 0x0047A4E0) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t                 field_0x28  (evidence: 0x00624640) // CONFLICT: multiple definitions at +0x28
-    // +0x28  void*                    field_0x28  (evidence: 0x00414E00) // CONFLICT: multiple definitions at +0x28
+    // +0x28  void*                    field_0x28  (evidence: 0x00414E00, 0x005990D0) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint8_t[28]              value  (evidence: 0x004EC160) // CONFLICT: multiple definitions at +0x28
     // +0x28  void*                    value  (evidence: 0x00541630, 0x00596A70) // CONFLICT: multiple definitions at +0x28
     // +0x2C  void*                    value_ptr  (evidence: 0x004F0FB0)
