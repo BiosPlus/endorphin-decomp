@@ -435,3 +435,35 @@ void __thiscall fn_0054C330(void* self, uint32_t arg0, uint32_t arg1) {
     }
 }
 } // namespace lift_0054C330
+
+// [0x0054C4E0]
+namespace lift_0054C4E0 {
+extern char mem_0093A444;
+extern int mem_00925134;  // MSVCR80!_invalid_parameter_noinfo import slot (guard calls omitted)
+
+// @name ManagedDisplayList<RenderableList>::vfunc_23
+// @class ManagedDisplayList<RenderableList>
+// @summary Walks the pointer range [field_0x18, field_0x1C) and calls each element's virtual slot 23 with (&mem_0093A444, arg); sets the +0x04 flag if any call returns true and returns that flag.
+// @field ManagedDisplayList +0x04 uint8_t field_0x04
+// @field ManagedDisplayList +0x18 void** field_0x18
+// @field ManagedDisplayList +0x1C void** field_0x1C
+
+typedef uint8_t (__thiscall *ElementVFunc23)(void* self, const void* key, uint32_t value);
+
+uint8_t fn_0054C4E0(void* self, uint32_t unused_arg0, uint32_t arg) {
+    (void)unused_arg0;
+    (void)&mem_00925134;
+
+    void** it = lift_field<void**>(self, 0x18);
+    while (it != lift_field<void**>(self, 0x1C)) {
+        void* elem = *it;
+        void** vtbl = *reinterpret_cast<void***>(elem);
+        auto fn = reinterpret_cast<ElementVFunc23>(vtbl[23]);
+        if (fn(elem, &mem_0093A444, arg)) {
+            lift_field<uint8_t>(self, 0x04) = 1;
+        }
+        ++it;
+    }
+    return lift_field<uint8_t>(self, 0x04);
+}
+} // namespace lift_0054C4E0

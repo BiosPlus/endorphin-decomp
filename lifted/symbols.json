@@ -27409,6 +27409,13 @@
     "summary": "Calls vfunc_24() on every element of the RenderableList vector at +0x18..+0x1C.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C4E0": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_23",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "uint8_t fn_0054C4E0(void* self, uint32_t unused_arg0, uint32_t arg)",
+    "summary": "Walks the pointer range [field_0x18, field_0x1C) and calls each element's virtual slot 23 with (\u0026mem_0093A444, arg); sets the +0x04 flag if any call returns true and returns that flag.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C570": {
     "name": "Unknown::ctor_0054C570",
     "class": "Unknown",
@@ -71346,6 +71353,12 @@
     "class": "Unknown",
     "signature": "float fn_00700A20(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x007009E0 (Unknown::GetChainedFloat).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x00700EC0": {
+    "name": "removeNamedItemsFromObject",
+    "signature": "extern \"C\" void __thiscall fn_00700EC0(void* self, void* a1)",
+    "summary": "Removes four specific named items from the object returned by ext_006C9360 and notifies ext_00732CB0.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x007010B0": {
