@@ -3867,3 +3867,72 @@ void fn_006651D0(void* self) {
     erase_fn(self, &erase_result, *new_end, end_for_erase);
 }
 } // namespace lift_006651D0
+
+// [0x00661B50]
+namespace lift_00661B50 {
+extern uint32_t mem_00925134;
+
+// @name sub_00661B50
+// @summary Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index
+// @field Obj +0x04 uint32_t field_0x04
+// @field Obj +0x08 uint32_t field_0x08
+// @field Obj +0x0c uint32_t field_0x0c
+uint32_t __thiscall sub_00661B50(void* this_ptr, uint32_t index) {
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    uint8_t* self = reinterpret_cast<uint8_t*>(this_ptr);
+
+    uint32_t obj = lift_field<uint32_t>(self, 0x04);
+    uint32_t end_ptr = lift_field<uint32_t>(reinterpret_cast<uint8_t*>(obj), 0x64);
+    uint32_t vec_ptr = obj + 0x60;
+    uint32_t sentinel = lift_field<uint32_t>(reinterpret_cast<uint8_t*>(end_ptr), 0x00);
+
+    uint32_t iter_owner = lift_field<uint32_t>(self, 0x08);
+    if (iter_owner == 0 || iter_owner != vec_ptr) {
+        invalid_param();
+    }
+
+    if (lift_field<uint32_t>(self, 0x0C) == sentinel) {
+        uint8_t* target = reinterpret_cast<uint8_t*>(lift_field<uint32_t>(self, 0x04));
+        uint32_t begin = lift_field<uint32_t>(target, 0x04);
+        if (begin == 0) {
+            invalid_param();
+        } else {
+            uint32_t end = lift_field<uint32_t>(target, 0x08);
+            uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
+            if (index >= count) {
+                invalid_param();
+            }
+        }
+        uint32_t arr = lift_field<uint32_t>(target, 0x04);
+        uint32_t elem = lift_field<uint32_t>(reinterpret_cast<uint8_t*>(arr + index * 4), 0x00);
+        uint32_t vtable = lift_field<uint32_t>(reinterpret_cast<uint8_t*>(elem), 0x00);
+        auto fn = reinterpret_cast<uint32_t(__thiscall*)(uint32_t)>(
+            lift_field<uint32_t>(reinterpret_cast<uint8_t*>(vtable), 0x08));
+        return fn(elem);
+    }
+
+    if (lift_field<uint32_t>(self, 0x08) == 0) {
+        invalid_param();
+    }
+    uint32_t owner = lift_field<uint32_t>(self, 0x08);
+    uint32_t node = lift_field<uint32_t>(self, 0x0C);
+    if (node == lift_field<uint32_t>(reinterpret_cast<uint8_t*>(owner), 0x04)) {
+        invalid_param();
+    }
+
+    uint8_t* inner = reinterpret_cast<uint8_t*>(lift_field<uint32_t>(self, 0x0C));
+    uint32_t begin = lift_field<uint32_t>(inner, 0x10);
+    uint8_t* vec = inner + 0x0C;
+    if (begin == 0) {
+        invalid_param();
+    } else {
+        uint32_t end = lift_field<uint32_t>(vec, 0x08);
+        uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 6);
+        if (index >= count) {
+            invalid_param();
+        }
+    }
+
+    return lift_field<uint32_t>(vec, 0x04) + (index << 6);
+}
+} // namespace lift_00661B50
