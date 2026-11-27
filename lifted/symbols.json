@@ -38860,6 +38860,13 @@
     "summary": "Copy constructor setting vtable 0x009720F4, copying two std::string fields, and zeroing fields at +0x3c and +0x40.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060BA10": {
+    "name": "UnknownClass::~UnknownClass",
+    "class": "UnknownClass",
+    "signature": "extern \"C\" void __fastcall fn_0060BA10(void* self)",
+    "summary": "Destructor that resets vtable, destroys two std::string members at +0x20 and +0x4, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060BB80": {
     "name": "NMData::EffectorBaseData::vfunc_4",
     "class": "NMData::EffectorBaseData",

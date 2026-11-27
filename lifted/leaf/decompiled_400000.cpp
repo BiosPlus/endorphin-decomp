@@ -1968,3 +1968,29 @@ void* fn_00404C60(void* self, uint32_t tag) {
     return self;
 }
 } // namespace lift_00404C60
+
+// [0x00401E80]
+namespace lift_00401E80 {
+// @name allocArray28
+// @summary Allocates an array of 28-byte elements via MFC80::operator new, throwing std::bad_alloc on size overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00925130;
+extern uint32_t mem_009CDF94;
+extern uint32_t mem_00928EC0;
+
+extern void* fn_00401E80(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 28u) {
+        const char* msg = nullptr;
+        uint32_t exc[3];
+        using ExcCtor = void(__thiscall*)(void*, const char* const*);
+        reinterpret_cast<ExcCtor>(static_cast<uintptr_t>(mem_00925130))(exc, &msg);
+        exc[0] = mem_00928EC0;
+        ext_006A6DD2(exc, &mem_009CDF94);
+    }
+    return ext_006A5C62(count * 28u);
+}
+} // namespace lift_00401E80
