@@ -1226,3 +1226,32 @@ uint8_t __thiscall sub_00476940(const void* self, const void* other) {
     return 0;
 }
 } // namespace lift_00476940
+
+// [0x00476BC0] sub_00476BC0 (106 bytes)
+namespace lift_00476BC0 {
+// Known callee 0x00476940: std_string_isEqualOrDotPrefix (Checks if arg1 equals this string or starts with this string followed by '.')
+extern uint8_t ext_00476940(const void* self, const void* other);
+// MSVCP80 std::string destructor IAT slot (0x924FF4 holds the resolved thunk address).
+extern uint32_t mem_00924FF4;
+
+// @name std_string_findInRange
+// @summary Linear search over [begin, end) of 28-byte std::string elements; returns the first element matching the key at a 0x1C-byte stride, or end if none match.
+void* fn_00476BC0(void* begin, void* end) {
+    // Key is the std::string object the original frame keeps at ESP+0x20 (constructed by the caller).
+    // It is not a parameter in this calling convention, so it is modeled as an opaque 28-byte buffer.
+    alignas(4) uint8_t key[0x1C] = {};
+    // Original calls the key's destructor through this IAT slot; the destructor body is not modeled here.
+    (void)&mem_00924FF4;
+
+    uint8_t* cur = static_cast<uint8_t*>(begin);
+    uint8_t* last = static_cast<uint8_t*>(end);
+
+    while (cur != last) {
+        if (ext_00476940(key, cur) != 0) {
+            return cur;
+        }
+        cur += 0x1C;
+    }
+    return last;
+}
+} // namespace lift_00476BC0

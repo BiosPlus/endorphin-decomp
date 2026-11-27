@@ -1,0 +1,13 @@
+{
+  "va": "0x00476BC0",
+  "size": 106,
+  "orig_symbol": "sub_00476BC0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "std_string_findInRange",
+  "signature": "void* fn_00476BC0(void* begin, void* end)",
+  "summary": "Linear search over [begin, end) of 28-byte std::string elements; returns the first element matching the key at a 0x1C-byte stride, or end if none match.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:40:56Z"
+}

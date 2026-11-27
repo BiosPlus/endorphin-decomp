@@ -9992,6 +9992,12 @@
     "summary": "Returns (field_0x08 - field_0x04) / 3 as int32, or 0 when field_0x04 is 0.",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00476BC0": {
+    "name": "std_string_findInRange",
+    "signature": "void* fn_00476BC0(void* begin, void* end)",
+    "summary": "Linear search over [begin, end) of 28-byte std::string elements; returns the first element matching the key at a 0x1C-byte stride, or end if none match.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476CA0": {
     "name": "pushHeap",
     "signature": "extern \"C\" void __cdecl sub_00476CA0(uint32_t* arr, int32_t holeIndex, int32_t topIndex, uint32_t val, uint32_t pred)",
