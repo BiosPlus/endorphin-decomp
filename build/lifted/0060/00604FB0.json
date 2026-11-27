@@ -1,0 +1,14 @@
+{
+  "va": "0x00604FB0",
+  "size": 179,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_43",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_43",
+  "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
+  "signature": "inline void* vslot(void* obj, ptrdiff_t off)",
+  "summary": "Reads a float from the field_0x00 object via vtable slot 0x38, builds a temp from it, assigns that temp into self, releases the temp, then forwards to field_0x04's vtable slot 0xAC with (self, arg2).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:41:29Z"
+}

@@ -57003,6 +57003,13 @@
     "summary": "Reads the wrapped Effector pointer; if non-null, calls its vtable slot 14 for a float and passes it to ext_0046C4E0, then always builds a DerivedException and throws it via _CxxThrowException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00604FB0": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
+    "signature": "inline void* vslot(void* obj, ptrdiff_t off)",
+    "summary": "Reads a float from the field_0x00 object via vtable slot 0x38, builds a temp from it, assigns that temp into self, releases the temp, then forwards to field_0x04's vtable slot 0xAC with (self, arg2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00605360": {
     "name": "ExprParser::WriteMethodType\u003cEffector, float, vcall112\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",

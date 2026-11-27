@@ -184881,3 +184881,66 @@ void* fn_005FCD30(void* self, void* arg2) {
     return reinterpret_cast<ThisCall2>(targetVt[43])(target, self, arg2);
 }
 } // namespace lift_005FCD30
+
+// [0x00604FB0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_43 (179 bytes)
+namespace lift_00604FB0 {
+// Known callee 0x00672080 (sub_00672080, 18B): thiscall-style; ecx = constructed temp, one float on stack.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const uint8_t* typeInfo);
+// RTTI type descriptor referenced by the throw path.
+extern const uint8_t mem_009DEC1C[];
+
+namespace {
+
+// Reads the vtable slot at byte offset `off` (32-bit MSVC layout: 4-byte slots).
+inline void* vslot(void* obj, ptrdiff_t off) {
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    return lift_field<void*>(vtbl, off);
+}
+
+}  // namespace
+
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_43
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>
+// @summary Reads a float from the field_0x00 object via vtable slot 0x38, builds a temp from it, assigns that temp into self, releases the temp, then forwards to field_0x04's vtable slot 0xAC with (self, arg2).
+// @field ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1> +0x04 void* field_0x04
+float fn_00604FB0(void* self, uint32_t arg2) {
+    using GetFloatPtrFn = float* (*)(void* self_obj, void* out);
+    using ReleaseFn = void (*)(void* self_obj, void* arg);
+    using ForwardFn = float (*)(void* self_obj, void* a, uint32_t b);
+
+    void* obj0 = lift_field<void*>(self, 0x00);
+    if (obj0 == nullptr) {
+        // Null field_0x00: construct the exception object and throw it.
+        alignas(8) uint8_t exc[0x20];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return 0.0f;  // not reached
+    }
+
+    // value = *obj0->vfunc_0x38(scratch)
+    alignas(8) uint8_t scratch[0x30];
+    const float value = *reinterpret_cast<GetFloatPtrFn>(vslot(obj0, 0x38))(obj0, scratch);
+
+    // Temp { field_0x00; field_0x04 } built from `value`.
+    alignas(8) uint8_t tmp[8];
+    ext_00672080(tmp, value);
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's field_0x04 object via its vtable slot 0x78.
+    void* tmp4 = lift_field<void*>(tmp, 0x04);
+    if (tmp4 != nullptr) {
+        reinterpret_cast<ReleaseFn>(vslot(tmp4, 0x78))(tmp4, tmp);
+    }
+
+    // Forward to self->field_0x04->vfunc_0xAC(self, arg2).
+    void* obj4 = lift_field<void*>(self, 0x04);
+    return reinterpret_cast<ForwardFn>(vslot(obj4, 0xAC))(obj4, self, arg2);
+}
+} // namespace lift_00604FB0
