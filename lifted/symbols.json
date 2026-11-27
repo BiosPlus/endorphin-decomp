@@ -79263,6 +79263,12 @@
     "summary": "If +0x20 is zero, returns atoi(strings[index]) (0 if out of range); otherwise reads a",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078C830": {
+    "name": "sub_0078C830",
+    "signature": "uint64_t __thiscall sub_0078C830(void* self, int32_t index, uint8_t swap)",
+    "summary": "Reads a 64-bit integer from a binary buffer or parses it from a string table",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078C8C0": {
     "name": "Unknown::getIndexedFieldPointer",
     "class": "Unknown",
