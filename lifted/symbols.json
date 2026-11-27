@@ -47802,6 +47802,13 @@
     "summary": "Returns true when the argument equals 3; otherwise forwards the call (same args) to AnimatableTransform::vfunc_13_off_C.",
     "lifted_path": "lifted/AdvXMLParser/Text.cpp"
   },
+  "0x0063E1A0": {
+    "name": "Unknown::allocateAndInit_0063E1A0",
+    "class": "Unknown",
+    "signature": "__thiscall void* fn_0063E1A0(void* self, uint32_t arg0)",
+    "summary": "Allocates a 0x40-byte Unknown object, constructs it with arg0 and this+0x24 as its name string, and returns the new object (or null if allocation failed).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E210": {
     "name": "AdvXMLParser::Text::vfunc_4",
     "class": "AdvXMLParser::Text",

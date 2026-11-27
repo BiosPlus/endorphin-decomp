@@ -1444,3 +1444,24 @@ void* fn_0063E460(void* self, uint32_t arg0, const void* name) {
     return self;
 }
 } // namespace lift_0063E460
+
+// [0x0063E1A0] sub_0063E1A0 (105 bytes)
+namespace lift_0063E1A0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (allocator; takes byte size, returns block or null).
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x0063E100: Unknown::Unknown(uint32_t, const std::string&) (ctor; this in ecx, returns self).
+extern void* ext_0063E100(void* self, uint32_t arg0, const void* name);
+
+// @name Unknown::allocateAndInit_0063E1A0
+// @class Unknown
+// @summary Allocates a 0x40-byte Unknown object, constructs it with arg0 and this+0x24 as its name string, and returns the new object (or null if allocation failed).
+// @field Unknown +0x24 std::string field_0x24
+__thiscall void* fn_0063E1A0(void* self, uint32_t arg0) {
+    void* mem = ext_006A5C62(0x40);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    const void* name = static_cast<const uint8_t*>(self) + 0x24;
+    return ext_0063E100(mem, arg0, name);
+}
+} // namespace lift_0063E1A0
