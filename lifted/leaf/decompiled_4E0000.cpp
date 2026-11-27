@@ -1721,3 +1721,42 @@ void fn_004E8DD0(void* src, void* dst) {
     }
 }
 } // namespace lift_004E8DD0
+
+// [0x004EF9B0]
+namespace lift_004EF9B0 {
+// @name createListNode0x70
+// @summary Allocates a 0x70-byte node, initializes two header fields, and constructs its payload at +0x08
+// @field Node +0x00 uint32_t field_0x00
+// @field Node +0x04 uint32_t field_0x04
+// @field Node +0x08 uint8_t payload
+
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void __thiscall ext_004EF310(void* self, uint32_t arg);
+
+extern void* __stdcall fn_004EF9B0(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint8_t* node = static_cast<uint8_t*>(ext_006A5C62(0x70));
+    if (node != nullptr) {
+        *reinterpret_cast<uint32_t*>(node) = arg1;
+    }
+
+    uint32_t* field4 = reinterpret_cast<uint32_t*>(node + 0x4);
+    if (field4 != nullptr) {
+        *field4 = arg2;
+    }
+
+    try {
+        uint8_t* payload = node + 0x8;
+        if (payload != nullptr) {
+            ext_004EF310(payload, arg3);
+        }
+    } catch (...) {
+        ext_006A5C5C(node);
+        ext_006A6DD2(nullptr, nullptr);
+    }
+
+    return node;
+}
+} // namespace lift_004EF9B0

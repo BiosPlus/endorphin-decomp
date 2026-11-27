@@ -1,0 +1,33 @@
+{
+  "va": "0x004EF9B0",
+  "size": 144,
+  "orig_symbol": "sub_004EF9B0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "createListNode0x70",
+  "signature": "extern \"C\" void* __stdcall fn_004EF9B0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Allocates a 0x70-byte node, initializes two header fields, and constructs its payload at +0x08",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "payload"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:28:32Z"
+}
