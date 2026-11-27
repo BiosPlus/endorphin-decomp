@@ -1434,3 +1434,80 @@ uint16_t fn_00860210(uint8_t key, uint8_t* buf, uint32_t len) {
     return 0;
 }
 } // namespace lift_00860210
+
+// [0x008680B0]
+namespace lift_008680B0 {
+extern uint32_t ext_0085E1F0(const char* str);
+extern uint8_t ext_0085E690(uint8_t ch);
+extern const char* ext_00868140(const char* haystack, const char* needle);
+
+extern const char mem_00AC0668[];
+extern const char mem_00AC0670[];
+
+// @name IsIpBeforeNetbios
+// @summary Uppercases a string in-place and checks whether "IP" (not "IPX") is absent/before "NETBIOS".
+uint32_t __cdecl fn_008680B0(char* str) {
+    uint16_t i = 0;
+    if (ext_0085E1F0(str) != 0) {
+        do {
+            char* p = str + i;
+            i = static_cast<uint16_t>(i + 1);
+            *p = static_cast<char>(ext_0085E690(static_cast<uint8_t>(*p)));
+        } while (ext_0085E1F0(str) > static_cast<uint32_t>(i));
+    }
+
+    const char* netbios = ext_00868140(str, mem_00AC0668);
+    const char* ip = ext_00868140(str, mem_00AC0670);
+    if (ip == nullptr) {
+        return netbios == nullptr ? 1u : 0u;
+    }
+
+    if (ip[2] == 'X') {
+        return 0u;
+    }
+    if (netbios == nullptr || ip < netbios) {
+        return 1u;
+    }
+    return 0u;
+}
+} // namespace lift_008680B0
+
+// [0x008602A0]
+namespace lift_008602A0 {
+// @name GetModeDivmodPair
+// @summary Selects a pair of global constants based on a mode byte and writes clamped divmod results to two output pointers.
+// @field Mode +0x00 uint8_t mode
+
+
+extern void ext_00860330(int32_t a, int32_t b, int32_t* out_divisor, int32_t* out_quotient);
+
+extern int32_t mem_00AB990C;
+extern int32_t mem_00AB9910;
+extern int32_t mem_00AB9B20;
+extern int32_t mem_00AB9B24;
+extern int32_t mem_00AB9F30;
+extern int32_t mem_00AB9F34;
+
+void fn_008602A0(const uint8_t* mode_ptr, int32_t* out_quotient, int32_t* out_divisor) {
+    int32_t local_quotient = 0;
+    int32_t local_divisor = 0;
+
+    int32_t a;
+    int32_t b;
+    uint8_t mode = *mode_ptr;
+    if (mode == 1) {
+        a = mem_00AB9B20;
+        b = mem_00AB9B24;
+    } else if (mode == 4 || mode == 8) {
+        a = mem_00AB9F30;
+        b = mem_00AB9F34;
+    } else {
+        a = mem_00AB990C;
+        b = mem_00AB9910;
+    }
+
+    ext_00860330(a, b, &local_divisor, &local_quotient);
+    *out_quotient = local_quotient;
+    *out_divisor = local_divisor;
+}
+} // namespace lift_008602A0
