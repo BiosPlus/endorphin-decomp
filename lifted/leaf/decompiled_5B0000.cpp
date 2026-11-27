@@ -1176,3 +1176,63 @@ void* fn_005B3500(void* self) {
     return self;
 }
 } // namespace lift_005B3500
+
+// [0x005B1220] sub_005B1220 (138 bytes)
+namespace lift_005B1220 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall, self in ECX, no stack args)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x005B0E60: getTypeName (thiscall: self in ECX, out string pointer on stack; returns out)
+extern void* ext_005B0E60(void* self, void* out);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (cdecl: exception object, throw info)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// MSVCP80 basic_string<char> copy-ctor / dtor import slots (function pointers stored in .rdata).
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+
+namespace {
+
+// MSVCP80 basic_string(const basic_string&), thiscall, via import slot mem_00924FE0.
+using StringCopyCtorFn = void* (__thiscall*)(void* self, const void* src);
+// MSVCP80 ~basic_string(), thiscall, via import slot mem_00924FF4.
+using StringDtorFn = void (__thiscall*)(void* self);
+
+void* lift_string_copy_ctor(void* self, const void* src) {
+    auto fn = reinterpret_cast<StringCopyCtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE0)));
+    return fn(self, src);
+}
+
+void lift_string_dtor(void* self) {
+    auto fn = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    fn(self);
+}
+
+// Null-object path: build the DerivedException in a frame-local buffer and throw it.
+// The asm's frame places this object at esp+0x20 .. esp+0x4C (0x2C bytes).
+[[noreturn]] void lift_throw_derived_exception() {
+    alignas(8) unsigned char exc[0x2C];
+    ext_0046C3C0(exc);
+#ifdef _MSC_VER
+    // Throw info constant pushed as the second argument of the asm call.
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+#endif
+    std::abort();  // _CxxThrowException does not return; unreachable on MSVC.
+}
+
+}  // namespace
+
+// @name getTypeNameOrThrow
+// @summary Throws DerivedException if obj is null; otherwise fills a temp string via getTypeName(obj), copy-constructs *out from it, destroys the temp, and returns out.
+// Stdcall with two stack args: out (hidden string return slot) and obj (self, loaded into ECX for the callee).
+void* __stdcall fn_005B1220(void* out, void* obj) {
+    if (obj == nullptr) {
+        lift_throw_derived_exception();
+    }
+
+    // Temp std::string on the frame (asm esp+4 .. esp+0x20, 0x1C bytes).
+    alignas(8) unsigned char tmp[0x1C];
+    void* src = ext_005B0E60(obj, tmp);
+    lift_string_copy_ctor(out, src);
+    lift_string_dtor(tmp);
+    return out;
+}
+} // namespace lift_005B1220

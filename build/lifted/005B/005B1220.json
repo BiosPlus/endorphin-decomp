@@ -1,0 +1,13 @@
+{
+  "va": "0x005B1220",
+  "size": 138,
+  "orig_symbol": "sub_005B1220",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "getTypeNameOrThrow",
+  "signature": "void* lift_string_copy_ctor(void* self, const void* src)",
+  "summary": "Throws DerivedException if obj is null; otherwise fills a temp string via getTypeName(obj), copy-constructs *out from it, destroys the temp, and returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:36:33Z"
+}
