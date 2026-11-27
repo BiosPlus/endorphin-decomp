@@ -255,3 +255,42 @@ extern void __thiscall fn_004D2A20(void* self, int32_t arg) {
     lift_field<int32_t>(self, 0x184) = arg;
 }
 } // namespace lift_004D2A20
+
+// [0x004D37E0] NMData::TransitionEventData::vfunc_88 (149 bytes)
+namespace lift_004D37E0 {
+// Known callee 0x004D2BE0 (sub_004D2BE0): thiscall, self in ecx, returns object pointer in eax.
+extern void* __thiscall ext_004D2BE0(void* self);
+// Known callee 0x004D3370 (sub_004D3370): thiscall, self in ecx, one stack arg.
+extern void __thiscall ext_004D3370(void* self, void* owner);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.), cdecl allocator.
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x004D2B40 (sub_004D2B40): thiscall, self in ecx.
+extern void __thiscall ext_004D2B40(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.), cdecl free.
+extern void ext_006A5C5C(void* p);
+
+// @name NMData::TransitionEventData::vfunc_88
+// @class NMData::TransitionEventData
+// @summary Allocates a 0x1D4-byte object (replacing any previous one at +0x18C) and initializes it via sub_004D2BE0, then stores it at +0x18C, calls sub_004D3370 on it, and resets +0x184 to INT32_MAX.
+// @field NMData::TransitionEventData +0x184 int32_t field_0x184
+// @field NMData::TransitionEventData +0x18C void* field_0x18c
+extern void __thiscall fn_004D37E0(void* self) {
+    // Allocate the new sub-object (0x1D4 bytes); initialize it if allocation succeeded.
+    void* created = ext_006A5C62(0x1D4);
+    void* newObj = nullptr;
+    if (created != nullptr) {
+        newObj = ext_004D2BE0(created);
+    }
+
+    // Release the previously held object at +0x18C, unless it is the same pointer or null.
+    void* old = lift_field<void*>(self, 0x18C);
+    if (newObj != old && old != nullptr) {
+        ext_004D2B40(old);
+        ext_006A5C5C(old);
+    }
+
+    lift_field<void*>(self, 0x18C) = newObj;
+    ext_004D3370(newObj, self);
+    lift_field<int32_t>(self, 0x184) = 0x7FFFFFFF;
+}
+} // namespace lift_004D37E0

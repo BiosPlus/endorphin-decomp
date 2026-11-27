@@ -1,0 +1,28 @@
+{
+  "va": "0x004D37E0",
+  "size": 149,
+  "orig_symbol": "NMData::TransitionEventData::vfunc_88",
+  "src_path": "src/NMData/TransitionEventData.cpp",
+  "lifted_path": "lifted/NMData/TransitionEventData.cpp",
+  "name": "NMData::TransitionEventData::vfunc_88",
+  "class": "NMData::TransitionEventData",
+  "signature": "extern \"C\" void __thiscall fn_004D37E0(void* self)",
+  "summary": "Allocates a 0x1D4-byte object (replacing any previous one at +0x18C) and initializes it via sub_004D2BE0, then stores it at +0x18C, calls sub_004D3370 on it, and resets +0x184 to INT32_MAX.",
+  "fields": [
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x184",
+      "type": "int32_t",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:10:10Z"
+}
