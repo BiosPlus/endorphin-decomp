@@ -2673,3 +2673,65 @@ void* fn_00668150(void* self, int32_t index, const void* key) {
     return &mem_00B594A4;
 }
 } // namespace lift_00668150
+
+// [0x00665CA0]
+namespace lift_00665CA0 {
+// Differentially tested against endorphin.exe; 32-bit x86 layout assumed.
+extern void __cdecl ext_006A5C5C(void* ptr);       // IAT thunk -> MFC80!ord_764
+extern void __fastcall ext_00665B80(void* self);   // Unknown::ReleaseElements_00665B80
+extern uint8_t mem_00925134[];                     // .rdata "P{b" / MSVCR80 IAT slot
+
+// @name Unknown::DrainFront_00665CA0
+// @class Unknown
+// @summary While index at +0x8 is not -1 and count at +0x18 exceeds it, unlinks the front list node, frees it, releases its value via virtual slot 0, then tail-calls ReleaseElements_00665B80.
+// @field Unknown +0x08 int32_t index
+// @field Unknown +0x14 void* head
+// @field Unknown +0x18 int32_t count
+void __fastcall fn_00665CA0(void* self) {
+    struct Node {
+        Node* next;   // +0x0
+        Node* prev;   // +0x4
+        void* value;  // +0x8
+    };
+
+    (void)&mem_00925134;  // CRT invalid-parameter slot; reached only on corrupt list state
+
+    auto* base = static_cast<uint8_t*>(self);
+    auto& index = *reinterpret_cast<int32_t*>(base + 0x08);
+    auto& count = *reinterpret_cast<int32_t*>(base + 0x18);
+
+    while (index != -1) {
+        if (count <= index) {
+            break;
+        }
+
+        Node* head = *reinterpret_cast<Node**>(base + 0x14);
+        Node* first = head->next;
+        if (first == head) {
+            std::abort();  // _invalid_parameter_noinfo
+        }
+        void* value = first->value;
+
+        head = *reinterpret_cast<Node**>(base + 0x14);
+        first = head->next;
+        if (first == head) {
+            std::abort();  // _invalid_parameter_noinfo
+        }
+
+        if (first != *reinterpret_cast<Node**>(base + 0x14)) {
+            first->prev->next = first->next;
+            first->next->prev = first->prev;
+            ext_006A5C5C(first);
+            count -= 1;
+        }
+
+        if (value != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(value);
+            auto slot0 = reinterpret_cast<void (*)(void*, int)>(vtbl[0]);
+            slot0(value, 1);
+        }
+    }
+
+    ext_00665B80(self);
+}
+} // namespace lift_00665CA0

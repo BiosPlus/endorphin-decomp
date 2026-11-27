@@ -1,0 +1,34 @@
+{
+  "va": "0x00665CA0",
+  "size": 119,
+  "orig_symbol": "sub_00665CA0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::DrainFront_00665CA0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __cdecl ext_006A5C5C(void* ptr);       // IAT thunk -\u003e MFC80!ord_764 extern \"C\" void __fastcall ext_00665B80(void* self);   // Unknown::ReleaseElements_00665B80 extern \"C\" uint8_t mem_00925134[];                     // .rdata \"P",
+  "summary": "While index at +0x8 is not -1 and count at +0x18 exceeds it, unlinks the front list node, frees it, releases its value via virtual slot 0, then tail-calls ReleaseElements_00665B80.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "index"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:12:05Z"
+}

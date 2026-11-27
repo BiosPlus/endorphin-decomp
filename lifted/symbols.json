@@ -47818,6 +47818,13 @@
     "summary": "Walks the pointer vector at this+0x2C..this+0x30 and invokes virtual slot 0 on each element.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00665CA0": {
+    "name": "Unknown::DrainFront_00665CA0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __cdecl ext_006A5C5C(void* ptr);       // IAT thunk -\u003e MFC80!ord_764 extern \"C\" void __fastcall ext_00665B80(void* self);   // Unknown::ReleaseElements_00665B80 extern \"C\" uint8_t mem_00925134[];                     // .rdata \"P",
+    "summary": "While index at +0x8 is not -1 and count at +0x18 exceeds it, unlinks the front list node, frees it, releases its value via virtual slot 0, then tail-calls ReleaseElements_00665B80.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00665D20": {
     "name": "destroyOwnedListElements",
     "signature": "void fn_00665D20(void* self)",
@@ -71198,6 +71205,12 @@
     "signature": "extern \"C\" DWORD __cdecl fn_0079ADC0(DWORD hFile)",
     "summary": "Returns the low 32 bits of the file size for the handle passed on the stack (GetFileSize(hFile, NULL)).",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x0079ADD0": {
+    "name": "MapFileReadOnly",
+    "signature": "extern \"C\" int __cdecl fn_0079ADD0(void* hFile, void** outView, DWORD* outSize)",
+    "summary": "Maps a file handle into memory read-only and outputs its view pointer and size.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079AE40": {
     "name": "UnmapViewOfFileThunk_0079AE40",

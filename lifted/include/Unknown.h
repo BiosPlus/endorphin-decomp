@@ -312,6 +312,7 @@ struct Unknown_Fields {
     // +0x8   void*                    getterContext  (evidence: 0x007051F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    head  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (vector end, via holder)  (evidence: 0x0067A670, 0x0067AEB0, 0x0067AEF0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   int32_t                  index  (evidence: 0x00665CA0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 index  (evidence: 0x00524A60, 0x00524BC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    list_head  (evidence: 0x0079E620) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    m02  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x8
@@ -485,6 +486,7 @@ struct Unknown_Fields {
     // +0x14  void*                    field_14  (evidence: 0x005C3130, 0x007BD640) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint8_t                  flag  (evidence: 0x006D8FD0) // CONFLICT: multiple definitions at +0x14
     // +0x14  BYTE                     flags14  (evidence: 0x008597B0, 0x00859E50) // CONFLICT: multiple definitions at +0x14
+    // +0x14  void*                    head  (evidence: 0x00665CA0) // CONFLICT: multiple definitions at +0x14
     // +0x14  float field_0x14 (float array base; indexed by idx)  (evidence: 0x006C9E70) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    inner  (evidence: 0x004689B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  std::string field_0x14 (returned address when the +0x4C string equals the literal)  (evidence: 0x00584BD0) // CONFLICT: multiple definitions at +0x14
@@ -517,6 +519,7 @@ struct Unknown_Fields {
     // +0x18  uint8_t* field_0x18 (begin of element-pointer array)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 arrayBase  (evidence: 0x00729A00) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    chain  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  int32_t                  count  (evidence: 0x00665CA0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 count_18  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 defaultValue  (evidence: 0x0045E690) // CONFLICT: multiple definitions at +0x18
     // +0x18  std::uint32_t            elemScale  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x18
