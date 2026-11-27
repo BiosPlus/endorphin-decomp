@@ -699,3 +699,18 @@ void fn_007FC670(const float* a, const float* b, float* dst) {
     }
 }
 } // namespace lift_007FC670
+
+// [0x007FC5E0] sub_007FC5E0 (135 bytes)
+namespace lift_007FC5E0 {
+// @name Vec4::componentwiseMin
+// @summary Componentwise select over four floats: out[i] = !(a[i] < b[i]) ? b[i] : a[i] (NaN-safe as in the x87 original).
+// @field Vec4 +0x00 float field_0x00
+// @field Vec4 +0x04 float field_0x04
+// @field Vec4 +0x08 float field_0x08
+// @field Vec4 +0x0c float field_0x0c
+void fn_007FC5E0(const float* a, const float* b, float* out) {
+    for (int i = 0; i < 4; ++i) {
+        out[i] = !(a[i] < b[i]) ? b[i] : a[i];
+    }
+}
+} // namespace lift_007FC5E0

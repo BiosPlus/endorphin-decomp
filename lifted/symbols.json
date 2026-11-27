@@ -3736,6 +3736,12 @@
     "summary": "Toggles a boolean state via virtual calls on the global sub-object and invalidates the view window.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434090": {
+    "name": "callAppVtable20CWithSeh",
+    "signature": "extern void __cdecl fn_00434090(void)",
+    "summary": "Calls vtable +0x20C on the object returned by fn_00465B40 inside a try-catch block.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004342A0": {
     "name": "Unknown::dispatchWithOwnerQuery",
     "class": "Unknown",
@@ -81263,6 +81269,13 @@
     "name": "copy16Floats",
     "signature": "void fn_007FC4E0(const float* src, float* dst)",
     "summary": "Copies 16 consecutive 32-bit floats (64 bytes) from src to dst.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x007FC5E0": {
+    "name": "Vec4::componentwiseMin",
+    "class": "Vec4",
+    "signature": "void fn_007FC5E0(const float* a, const float* b, float* out)",
+    "summary": "Componentwise select over four floats: out[i] = !(a[i] \u003c b[i]) ? b[i] : a[i] (NaN-safe as in the x87 original).",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x007FC670": {
