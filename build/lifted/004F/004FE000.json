@@ -1,0 +1,14 @@
+{
+  "va": "0x004FE000",
+  "size": 117,
+  "orig_symbol": "sub_004FE000",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "Unknown::CreateAndRegisterChild",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_004FE000(void* self, void* edx, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Allocates a 0x50-byte object, initializes it with this and three args, and registers it with the global manager.",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:48:30Z"
+}

@@ -29010,6 +29010,13 @@
     "summary": "Allocates and constructs a 0x28-byte object via ext_004FDD70 and registers it with ext_00666670 on the global manager from ext_00665870.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004FE000": {
+    "name": "Unknown::CreateAndRegisterChild",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_004FE000(void* self, void* edx, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Allocates a 0x50-byte object, initializes it with this and three args, and registers it with the global manager.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FE080": {
     "name": "Commands::RemoveCollisionModelCommand::vfunc_0",
     "class": "Commands::RemoveCollisionModelCommand",

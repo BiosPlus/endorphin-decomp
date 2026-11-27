@@ -1569,3 +1569,26 @@ uint32_t __thiscall fn_004FDF80(void* self, uint32_t a1, uint32_t a2, uint32_t a
     return ext_00666670(mgr, obj);
 }
 } // namespace lift_004FDF80
+
+// [0x004FE000]
+namespace lift_004FE000 {
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __fastcall ext_004FDE10(void* self, void* edx, void* owner, uint32_t a1, uint32_t a2, uint32_t a3);
+extern int32_t __cdecl ext_00665870(void);
+extern void __fastcall ext_00666670(void* self, void* edx, void* obj);
+
+// @name Unknown::CreateAndRegisterChild
+// @class Unknown
+// @summary Allocates a 0x50-byte object, initializes it with this and three args, and registers it with the global manager.
+extern void __fastcall fn_004FE000(void* self, void* edx, uint32_t a1, uint32_t a2, uint32_t a3)
+{
+    (void)edx;
+    void* mem = ext_006A5C62(0x50);
+    void* obj = nullptr;
+    if (mem) {
+        obj = ext_004FDE10(mem, nullptr, self, a1, a2, a3);
+    }
+    void* mgr = (void*)(uintptr_t)ext_00665870();
+    ext_00666670(mgr, nullptr, obj);
+}
+} // namespace lift_004FE000
