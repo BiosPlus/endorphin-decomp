@@ -3367,3 +3367,25 @@ void* fn_006DBE10(void* self, DWORD /*unused*/, void* arg) {
     return arg;
 }
 } // namespace lift_006DBE10
+
+// [0x006DC370] sub_006DC370 (80 bytes)
+namespace lift_006DC370 {
+// Known callee 0x006E7410: Unknown::assignStringByIndexAndForward_006E7410 (Passes the first stack argument as the index to assignStringByIndex (006E7440) on self, then forwards the second stack argument to the subobject call (006E7430) on self and returns its result.)
+extern void* ext_006E7410(void* self, uint32_t arg1, uint32_t arg2);
+
+// @name Unknown::setIndexOrReset_006DC370
+// @class Unknown
+// @summary If index is in [0, count) store it at +0xe8 and return true; otherwise forward 0 and 0xaa87e4 to the subobject at +0xec, clear +0xe8 and return false.
+// @field Unknown +0xb8 int32_t count
+// @field Unknown +0xe8 int32_t currentIndex
+// @field Unknown +0xec void* subobject
+uint8_t fn_006DC370(void* self, int32_t index) {
+    if (index >= 0 && index < lift_field<int32_t>(self, 0xb8)) {
+        lift_field<int32_t>(self, 0xe8) = index;
+        return 1;
+    }
+    ext_006E7410(lift_field<void*>(self, 0xec), 0, 0xaa87e4u);
+    lift_field<int32_t>(self, 0xe8) = 0;
+    return 0;
+}
+} // namespace lift_006DC370

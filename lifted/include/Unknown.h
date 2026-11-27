@@ -1461,6 +1461,7 @@ struct Unknown_Fields {
     // +0xB4  void*                    member  (evidence: 0x00701DF0, 0x00704B00, 0x00704D60, 0x0070AF30) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  int32_t                  mode  (evidence: 0x00464780, 0x004647A0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void** entries (array of entry pointers)  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0xB4
+    // +0xB8  int32_t                  count  (evidence: 0x006DC370) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  int32_t countGetter (read via ext_006DC550)  (evidence: 0x006DC510) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  Buffer                   field_0xB8  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  DWORD                    field_0xB8  (evidence: 0x00540F60) // CONFLICT: multiple definitions at +0xB8
@@ -1547,6 +1548,7 @@ struct Unknown_Fields {
     // +0xE4  Unknown                  field_0xE4  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0xE4
     // +0xE4  uint8_t[0x4c]            field_0xe4  (evidence: 0x0072AF80) // CONFLICT: multiple definitions at +0xE4
     // +0xE4  void*                    field_0xe4  (evidence: 0x004030F0, 0x00403400, 0x0040A910, 0x0040BE90) // CONFLICT: multiple definitions at +0xE4
+    // +0xE8  int32_t                  currentIndex  (evidence: 0x006DC370) // CONFLICT: multiple definitions at +0xE8
     // +0xE8  Buffer                   field_0xE8  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xE8
     // +0xE8  double                   field_0xE8  (evidence: 0x0043DD60, 0x0043DDF0) // CONFLICT: multiple definitions at +0xE8
     // +0xE8  int32_t                  field_0xE8  (evidence: 0x006AA500) // CONFLICT: multiple definitions at +0xE8
@@ -1560,7 +1562,7 @@ struct Unknown_Fields {
     // +0xEC  float                    field_0xEC  (evidence: 0x007C8490, 0x007C9AA0, 0x007CAF70) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  DWORD                    field_0xec  (evidence: 0x00441C10, 0x00448420) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  void*                    listHead  (evidence: 0x00436A50) // CONFLICT: multiple definitions at +0xEC
-    // +0xEC  void*                    subobject  (evidence: 0x006DC480) // CONFLICT: multiple definitions at +0xEC
+    // +0xEC  void*                    subobject  (evidence: 0x006DC370, 0x006DC480) // CONFLICT: multiple definitions at +0xEC
     // +0xF0  int32_t field_0xF0 (indexed array base; element stride 4, indices 1..17)  (evidence: 0x007AA7F0, 0x007AA8F0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  DWORD                    field_0xF0  (evidence: 0x006C3390) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  double                   field_0xF0  (evidence: 0x0043DD60, 0x0043DDF0) // CONFLICT: multiple definitions at +0xF0

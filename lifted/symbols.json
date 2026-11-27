@@ -69119,6 +69119,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006DC2C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DC370": {
+    "name": "Unknown::setIndexOrReset_006DC370",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006DC370(void* self, int32_t index)",
+    "summary": "If index is in [0, count) store it at +0xe8 and return true; otherwise forward 0 and 0xaa87e4 to the subobject at +0xec, clear +0xe8 and return false.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DC460": {
     "name": "Unknown::GetValueIfCountPositive",
     "class": "Unknown",
@@ -85352,6 +85359,12 @@
     "summary": "Five-byte no-op: `add eax, 0` (opcode 05 with imm32 0), which leaves the register value unchanged; no observable effect beyond flags.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085E050": {
+    "name": "initGlobalState",
+    "signature": "void sub_0085E050()",
+    "summary": "Initializes global state flags, counters, and magic values in .data.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085E1F0": {
     "name": "strlen",
     "signature": "uint32_t fn_0085E1F0(const char* str)",
@@ -85452,6 +85465,12 @@
     "name": "XorBufferThenRotateBitstream",
     "signature": "uint16_t fn_00860210(uint8_t key, uint8_t* buf, uint32_t len)",
     "summary": "XOR every buffer byte with a key, then rotate the buffer right (bit-serial, carry chained) (key \u0026 0xF)+1 times; returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x008602A0": {
+    "name": "GetModeDivmodPair",
+    "signature": "void fn_008602A0(const uint8_t* mode_ptr, int32_t* out_quotient, int32_t* out_divisor)",
+    "summary": "Selects a pair of global constants based on a mode byte and writes clamped divmod results to two output pointers.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x00860330": {
@@ -85567,6 +85586,12 @@
     "signature": "void sub_00867850(int32_t* val, int32_t min_val, int32_t max_val)",
     "summary": "Clamps a signed 32-bit integer in-place to the inclusive range [min_val, max_val].",
     "lifted_path": "lifted/leaf/tiny_860000.cpp"
+  },
+  "0x008680B0": {
+    "name": "IsIpBeforeNetbios",
+    "signature": "uint32_t __cdecl fn_008680B0(char* str)",
+    "summary": "Uppercases a string in-place and checks whether \"IP\" (not \"IPX\") is absent/before \"NETBIOS\".",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x00868140": {
     "name": "strstr_impl",
