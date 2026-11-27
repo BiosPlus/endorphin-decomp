@@ -1,0 +1,51 @@
+{
+  "va": "0x00558820",
+  "size": 147,
+  "orig_symbol": "sub_00558820",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "allocNode_00558820",
+  "signature": "void* __stdcall fn_00558820(uint32_t arg1, uint32_t arg2, uint32_t arg3, const void* arg4, uint8_t arg5)",
+  "summary": "Allocates a 0x3C-byte node, initializes header links, constructs payload at +0x0C, and sets flags at +0x38/+0x39",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Node",
+      "offset": "+0xC",
+      "type": "uint8_t[0x2C]",
+      "name": "payload"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x38",
+      "type": "uint8_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "field_0x39"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:14:28Z"
+}

@@ -2504,3 +2504,42 @@ void* fn_005588C0(void* self, const void* src) {
 }
 } // namespace lift_0052A140
 } // namespace lift_005588C0
+
+// [0x00558820]
+namespace lift_00558820 {
+// @name allocNode_00558820
+// @summary Allocates a 0x3C-byte node, initializes header links, constructs payload at +0x0C, and sets flags at +0x38/+0x39
+// @field Node +0x00 uint32_t field_0x00
+// @field Node +0x04 uint32_t field_0x04
+// @field Node +0x08 uint32_t field_0x08
+// @field Node +0x0C uint8_t[0x2C] payload
+// @field Node +0x38 uint8_t field_0x38
+// @field Node +0x39 uint8_t field_0x39
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A5C5C(void* ptr);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void* ext_00557200(void* self, const void* src);
+
+void* __stdcall fn_00558820(uint32_t arg1, uint32_t arg2, uint32_t arg3, const void* arg4, uint8_t arg5) {
+    uint8_t* node = static_cast<uint8_t*>(ext_006A5C62(0x3C));
+    if (!node) {
+        return nullptr;
+    }
+
+    try {
+        lift_field<uint32_t>(node, 0x00) = arg1;
+        lift_field<uint32_t>(node, 0x04) = arg2;
+        lift_field<uint32_t>(node, 0x08) = arg3;
+        ext_00557200(node + 0x0C, arg4);
+        lift_field<uint8_t>(node, 0x38) = arg5;
+        lift_field<uint8_t>(node, 0x39) = 0;
+    } catch (...) {
+        ext_006A5C5C(node);
+        ext_006A6DD2(nullptr, nullptr);
+    }
+
+    return node;
+}
+} // namespace lift_00558820

@@ -9,7 +9,7 @@
 // Recovered field layout for Node:
 namespace lifted_layout {
 struct Node_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x005AD0E0, 0x007CAF70) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00558820, 0x005AD0E0, 0x007CAF70) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00401AF0, 0x00420590, 0x004275C0, 0x0046FBA0, 0x00486D60, 0x004928E0, 0x005014B0, 0x0052A070, 0x0055E8C0, 0x00594310, 0x0059DE00, 0x005AC840, 0x005E0B00, 0x005E2C70, 0x00624D10) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 flags  (evidence: 0x00859AF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 header_flags  (evidence: 0x0085C1C0) // CONFLICT: multiple definitions at +0x0
@@ -18,14 +18,14 @@ struct Node_Fields {
     // +0x0   Node*                    next  (evidence: 0x007837A0, 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 next  (evidence: 0x00673EA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x00586240, 0x005862A0) // CONFLICT: multiple definitions at +0x0
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x005AD0E0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00558820, 0x005AD0E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    linkA  (evidence: 0x0062B6F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 prev  (evidence: 0x00673EA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    prev  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 right  (evidence: 0x007D48C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    subobject_0x04  (evidence: 0x00586300) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 counter_08  (evidence: 0x007837A0, 0x00788E50) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x005AD0E0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00558820, 0x005AD0E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uintptr_t                field_0x08  (evidence: 0x004275C0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x006FAC10) // CONFLICT: multiple definitions at +0x8
     // +0x8   Node*                    next  (evidence: 0x004A58E0) // CONFLICT: multiple definitions at +0x8
@@ -41,6 +41,7 @@ struct Node_Fields {
     // +0xC   void*                    linkB  (evidence: 0x0062B6F0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    list  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    next  (evidence: 0x00673B90) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint8_t[0x2C]            payload  (evidence: 0x00558820) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    vtable_or_subobj  (evidence: 0x00446240) // CONFLICT: multiple definitions at +0xC
     // +0x10  intptr_t                 field_0x10  (evidence: 0x00673B90) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    field_0x10  (evidence: 0x007DB6C0) // CONFLICT: multiple definitions at +0x10
@@ -58,6 +59,8 @@ struct Node_Fields {
     // +0x28  uint8_t                  field_0x28  (evidence: 0x005AD0E0) // CONFLICT: multiple definitions at +0x28
     // +0x29  uint8_t                  field_0x29  (evidence: 0x005AD0E0)
     // +0x34  uint8_t                  flags  (evidence: 0x006FAC10, 0x006FAD00)
+    // +0x38  uint8_t                  field_0x38  (evidence: 0x00558820)
+    // +0x39  uint8_t                  field_0x39  (evidence: 0x00558820)
     // +0x3C  void*                    chainHead  (evidence: 0x006FAC10) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  void*                    childChain  (evidence: 0x006FAD00) // CONFLICT: multiple definitions at +0x3C
     // +0x51  uint8_t                  isNil  (evidence: 0x005ED330)
