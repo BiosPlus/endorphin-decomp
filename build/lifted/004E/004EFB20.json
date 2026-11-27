@@ -1,0 +1,27 @@
+{
+  "va": "0x004EFB20",
+  "size": 126,
+  "orig_symbol": "sub_004EFB20",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "StringRangesEqualChecked",
+  "signature": "extern void (*mem_00925134)();  // MSVCR80!_invalid_parameter_noinfo (IAT slot) bool fn_004EFB20(const uint8_t* first1, const uint8_t* last1, void* range, const uint8_t* first2)",
+  "summary": "std::equal over two 28-byte std::string ranges; first2 + count*28 must lie within the bounds at `range` (else CRT invalid-parameter), returns true when all elements match.",
+  "fields": [
+    {
+      "class": "StringRangeContainer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "StringRangeContainer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:57:38Z"
+}

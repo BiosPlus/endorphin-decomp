@@ -19073,6 +19073,12 @@
     "summary": "Destroys a checked iterator range of pointers by calling the virtual deleting destructor at +4",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004EFB20": {
+    "name": "StringRangesEqualChecked",
+    "signature": "extern void (*mem_00925134)();  // MSVCR80!_invalid_parameter_noinfo (IAT slot) bool fn_004EFB20(const uint8_t* first1, const uint8_t* last1, void* range, const uint8_t* first2)",
+    "summary": "std::equal over two 28-byte std::string ranges; first2 + count*28 must lie within the bounds at `range` (else CRT invalid-parameter), returns true when all elements match.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EFE80": {
     "name": "OwnedPointerRange::clearAndFree",
     "class": "OwnedPointerRange",

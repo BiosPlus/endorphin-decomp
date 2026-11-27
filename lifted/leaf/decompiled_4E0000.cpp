@@ -812,3 +812,44 @@ void fn_004E3A30(void* self) {
     lift_field<float>(self, 0x74) = 1.0f;
 }
 } // namespace lift_004E3A30
+
+// [0x004EFB20] sub_004EFB20 (126 bytes)
+namespace lift_004EFB20 {
+// Known callee 0x004EF790: MismatchStringRanges (std::mismatch over two ranges of 28-byte std::string elements; returns the first differing iterator pair.)
+struct MismatchResult {
+    const uint8_t* first1;
+    const uint8_t* first2;
+};
+
+extern MismatchResult* ext_004EF790(MismatchResult* out, const uint8_t* first1,
+                                        const uint8_t* last1, const uint8_t* first2);
+extern void (*mem_00925134)();  // MSVCR80!_invalid_parameter_noinfo (IAT slot)
+
+// @name StringRangesEqualChecked
+// @summary std::equal over two 28-byte std::string ranges; first2 + count*28 must lie within the bounds at `range` (else CRT invalid-parameter), returns true when all elements match.
+// @field StringRangeContainer +0x04 uint32_t field_0x04
+// @field StringRangeContainer +0x08 uint32_t field_0x08
+bool fn_004EFB20(const uint8_t* first1, const uint8_t* last1, void* range, const uint8_t* first2) {
+    // Element count of the first range: byte distance / sizeof(std::string) (28), truncated toward zero.
+    const int32_t byte_diff = static_cast<int32_t>(reinterpret_cast<uintptr_t>(last1) -
+                                                   reinterpret_cast<uintptr_t>(first1));
+    const int32_t count = byte_diff / 28;
+
+    if (range == nullptr) {
+        mem_00925134();
+    }
+
+    // Expected end of the second range: first2 + count * 28.
+    const uint32_t last2 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(first2)) +
+                           static_cast<uint32_t>(count) * 28u;
+    const uint32_t lo = lift_field<uint32_t>(range, 4);
+    const uint32_t hi = lift_field<uint32_t>(range, 8);
+    if (last2 > hi || last2 < lo) {
+        mem_00925134();
+    }
+
+    MismatchResult res{};
+    ext_004EF790(&res, first1, last1, first2);
+    return res.first1 == last1;
+}
+} // namespace lift_004EFB20
