@@ -10,6 +10,9 @@
 // Recovered field layout for NMData::Constraint:
 namespace lifted_layout {
 struct NMData_Constraint_Fields {
-    // +0x154 uint8_t                  field_0x154  (evidence: 0x00611270)
+    // +0x154 float                    field_0x154  (evidence: 0x00612650) // CONFLICT: multiple definitions at +0x154
+    // +0x154 uint8_t                  field_0x154  (evidence: 0x00611270) // CONFLICT: multiple definitions at +0x154
+    // +0x158 float                    field_0x158  (evidence: 0x00612650)
+    // +0x15C float                    field_0x15c  (evidence: 0x00612650)
 };
 } // namespace lifted_layout

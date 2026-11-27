@@ -165,3 +165,46 @@ void* __thiscall fn_00612880(void* self) {
     return &mem_00B48E90;
 }
 } // namespace lift_00612880
+
+// [0x00612650] NMData::Constraint::vfunc_21 (219 bytes)
+namespace lift_00612650 {
+extern uint32_t ext_0063F530(void* self, uint32_t value, uint32_t zero, uint32_t one);
+extern float*   ext_0067EFD0(void* outVec, uint32_t key);
+extern uint32_t mem_00A9EDEC;
+
+// Five sentinel values the lookup may return; a match means "no update".
+static bool is_sentinel(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+// @name NMData::Constraint::vfunc_21
+// @class NMData::Constraint
+// @summary Makes a virtual call on this, then looks up a key from a global value and the argument; if the key is not a sentinel, copies the returned float triple into this+0x154..0x15c.
+// @field NMData::Constraint +0x154 float field_0x154
+// @field NMData::Constraint +0x158 float field_0x158
+// @field NMData::Constraint +0x15c float field_0x15c
+void fn_00612650(void* self, void* arg1) {
+    // Virtual call on this at vtable slot 0x84 (index 33); return value unused.
+    void** vtbl = *reinterpret_cast<void***>(self);
+    auto vfn = reinterpret_cast<uint32_t (*)(void*)>(vtbl[33]);
+    (void)vfn(self);
+
+    // First lookup: if the result is a sentinel, nothing to update.
+    if (is_sentinel(ext_0063F530(arg1, mem_00A9EDEC, 0, 1))) {
+        return;
+    }
+
+    // Second lookup: a sentinel result is replaced by the canonical key.
+    uint32_t key = ext_0063F530(arg1, mem_00A9EDEC, 0, 1);
+    if (is_sentinel(key)) {
+        key = 0x00B53B30u;
+    }
+
+    float tmp[3] = {0.0f, 0.0f, 0.0f};
+    const float* v = ext_0067EFD0(tmp, key);
+    lift_field<float>(self, 0x154) = v[0];
+    lift_field<float>(self, 0x158) = v[1];
+    lift_field<float>(self, 0x15c) = v[2];
+}
+} // namespace lift_00612650

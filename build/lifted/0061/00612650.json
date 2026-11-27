@@ -1,0 +1,34 @@
+{
+  "va": "0x00612650",
+  "size": 219,
+  "orig_symbol": "NMData::Constraint::vfunc_21",
+  "src_path": "src/NMData/Constraint.cpp",
+  "lifted_path": "lifted/NMData/Constraint.cpp",
+  "name": "NMData::Constraint::vfunc_21",
+  "class": "NMData::Constraint",
+  "signature": "static bool is_sentinel(uint32_t v)",
+  "summary": "Makes a virtual call on this, then looks up a key from a global value and the argument; if the key is not a sentinel, copies the returned float triple into this+0x154..0x15c.",
+  "fields": [
+    {
+      "class": "NMData::Constraint",
+      "offset": "+0x154",
+      "type": "float",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::Constraint",
+      "offset": "+0x158",
+      "type": "float",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::Constraint",
+      "offset": "+0x15C",
+      "type": "float",
+      "name": "field_0x15c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:31:45Z"
+}

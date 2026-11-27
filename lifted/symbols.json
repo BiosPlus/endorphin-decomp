@@ -59383,6 +59383,13 @@
     "summary": "Builds a local 3x3 identity matrix in a frame struct, calls two helpers, then divides the three floats at +0x160/+0x164/+0x168 by the scale floats at +0x154/+0x158/+0x15c.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00612650": {
+    "name": "NMData::Constraint::vfunc_21",
+    "class": "NMData::Constraint",
+    "signature": "static bool is_sentinel(uint32_t v)",
+    "summary": "Makes a virtual call on this, then looks up a key from a global value and the argument; if the key is not a sentinel, copies the returned float triple into this+0x154..0x15c.",
+    "lifted_path": "lifted/NMData/Constraint.cpp"
+  },
   "0x00612730": {
     "name": "NMData::Constraint::vfunc_72",
     "class": "NMData::Constraint",
