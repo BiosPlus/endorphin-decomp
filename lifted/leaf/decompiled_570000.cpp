@@ -1985,3 +1985,47 @@ void* __thiscall fn_0057EAB0(
 }
 } // namespace lift_0057CEE0
 } // namespace lift_0057EAB0
+
+// [0x0057E870] sub_0057E870 (105 bytes)
+namespace lift_0057E870 {
+// Known callee 0x00558B90: destroyStringAndRecordVector (Destroys a vector of 0x3C-byte string-pair records and the owning std::string.)
+extern void ext_00558B90(void* self);
+// Known callee 0x0057E320: sub_0057E320 (Auto-lifted identical-shape clone of 0x00687E50 (copyStringRecordRangeAdvance_00687E50).)
+extern void* ext_0057E320(const void* first, const void* last, void* dest);
+// MSVCR80 _invalid_parameter_noinfo import slot (metadata only; not a real access)
+extern int mem_00925134;
+
+// Two-pointer result written through the hidden out-pointer.
+struct PointerPair {
+    void* first;
+    void* second;
+};
+
+// @name Unknown::copyRangeAndDestroyTail_0057E870
+// @class Unknown
+// @summary Validates a range begin pointer, copies [p5, end) into p3 via ext_0057E320, destroys the stale tail records, updates end, and returns (begin, p5) through out.
+// @field Unknown +0x08 void* field_0x08
+void fn_0057E870(void* self, PointerPair* out, void* first, void* p3, void* p4, void* p5) {
+    if (first == nullptr || first != p4) {
+        // _invalid_parameter_noinfo in the original; the call returns, so execution continues.
+        (void)&mem_00925134;
+    }
+
+    if (p3 != p5) {
+        void** endSlot = reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x8);
+        void* oldEnd = *endSlot;
+        void* newEnd = ext_0057E320(p5, oldEnd, p3);
+
+        // Destroy the stale records in [newEnd, oldEnd), stride 0x2C.
+        for (unsigned char* it = static_cast<unsigned char*>(newEnd);
+             it != static_cast<unsigned char*>(oldEnd);
+             it += 0x2C) {
+            ext_00558B90(it);
+        }
+        *endSlot = newEnd;
+    }
+
+    out->first = p4;
+    out->second = p5;
+}
+} // namespace lift_0057E870

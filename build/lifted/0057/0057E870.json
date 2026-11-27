@@ -1,0 +1,22 @@
+{
+  "va": "0x0057E870",
+  "size": 105,
+  "orig_symbol": "sub_0057E870",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Unknown::copyRangeAndDestroyTail_0057E870",
+  "class": "Unknown",
+  "signature": "void fn_0057E870(void* self, PointerPair* out, void* first, void* p3, void* p4, void* p5)",
+  "summary": "Validates a range begin pointer, copies [p5, end) into p3 via ext_0057E320, destroys the stale tail records, updates end, and returns (begin, p5) through out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:35Z"
+}
