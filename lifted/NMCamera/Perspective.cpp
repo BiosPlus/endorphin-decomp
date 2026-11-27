@@ -218,3 +218,44 @@ void fn_00552490(void* self, const float* arg) {
     (void)slot5(self, &sf);
 }
 } // namespace lift_00552490
+
+// [0x005523E0]
+namespace lift_005523E0 {
+void __thiscall ext_00548390(void* self, void* arg);
+uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+uint32_t __thiscall ext_0063F530(void* self, uint32_t a, uint32_t b, uint32_t c);
+void __cdecl ext_00517FC0(void* unused, double* outVal);
+extern uint32_t mem_00A9EEE4;
+
+static inline bool is_lookup_hit(uint32_t v) {
+    return v == 0xB53A34u || v == 0xB53B30u || v == 0xB53AB0u || v == 0xB53A70u;
+}
+
+// @name NMCamera::Perspective::vfunc_1
+// @class NMCamera::Perspective
+// @summary Calls Camera::vfunc_1 on this with the argument, looks up a key string in the argument object, resolves the result through a second lookup on mismatch, then parses a double into the +0xF8 field.
+// @field NMCamera::Perspective +0xF8 double field_0xF8
+void __thiscall fn_005523E0(uint8_t* self, void* name) {
+    ext_00548390(self, name);
+
+    const char* key = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x009574E0u));
+    uint32_t eax = ext_0063EFE0(name, key);
+
+    if (is_lookup_hit(eax) || eax == 0xB53AF0u) {
+        uint32_t r = ext_0063F530(name, mem_00A9EEE4, 0u, 1u);
+        if (is_lookup_hit(r) || r == 0xB53AF0u) {
+            eax = 0xB53B30u;
+        } else {
+            eax = r;
+        }
+    } else {
+        eax = ext_0063EFE0(name, key);
+    }
+
+    // Stack temporary receiving eax; the callee writes a double through outVal.
+    double out = 0.0;
+    uint32_t v = eax;
+    std::memcpy(&out, &v, sizeof(v));
+    ext_00517FC0(&lift_field<double>(self, 0xF8), &out);
+}
+} // namespace lift_005523E0

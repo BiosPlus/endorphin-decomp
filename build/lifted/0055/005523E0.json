@@ -1,0 +1,22 @@
+{
+  "va": "0x005523E0",
+  "size": 166,
+  "orig_symbol": "NMCamera::Perspective::vfunc_1",
+  "src_path": "src/NMCamera/Perspective.cpp",
+  "lifted_path": "lifted/NMCamera/Perspective.cpp",
+  "name": "NMCamera::Perspective::vfunc_1",
+  "class": "NMCamera::Perspective",
+  "signature": "static inline bool is_lookup_hit(uint32_t v)",
+  "summary": "Calls Camera::vfunc_1 on this with the argument, looks up a key string in the argument object, resolves the result through a second lookup on mismatch, then parses a double into the +0xF8 field.",
+  "fields": [
+    {
+      "class": "NMCamera::Perspective",
+      "offset": "+0xF8",
+      "type": "double",
+      "name": "field_0xF8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:16Z"
+}
