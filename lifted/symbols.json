@@ -77461,6 +77461,13 @@
     "summary": "Initializes six 32-bit fields on the object from three arguments and constants",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x00792880": {
+    "name": "Unknown::initDerivedObjectFields",
+    "class": "Unknown",
+    "signature": "void* fn_00792880(void* self)",
+    "summary": "Runs base initializer ext_0078D7A0, sets vtable to 0x00997388, zeroes 11 dword fields at +0x250..+0x27C, returns self",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x007928E0": {
     "name": "sub_007928E0",
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",

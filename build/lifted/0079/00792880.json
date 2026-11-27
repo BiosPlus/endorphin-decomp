@@ -1,0 +1,88 @@
+{
+  "va": "0x00792880",
+  "size": 86,
+  "orig_symbol": "sub_00792880",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "Unknown::initDerivedObjectFields",
+  "class": "Unknown",
+  "signature": "void* fn_00792880(void* self)",
+  "summary": "Runs base initializer ext_0078D7A0, sets vtable to 0x00997388, zeroes 11 dword fields at +0x250..+0x27C, returns self",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x250",
+      "type": "uint32_t",
+      "name": "field_0x250"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x254",
+      "type": "uint32_t",
+      "name": "field_0x254"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x258",
+      "type": "uint32_t",
+      "name": "field_0x258"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x25C",
+      "type": "uint32_t",
+      "name": "field_0x25C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x260",
+      "type": "uint32_t",
+      "name": "field_0x260"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x264",
+      "type": "uint32_t",
+      "name": "field_0x264"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "uint32_t",
+      "name": "field_0x268"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "uint32_t",
+      "name": "field_0x26C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x270",
+      "type": "uint32_t",
+      "name": "field_0x270"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x278",
+      "type": "uint32_t",
+      "name": "field_0x278"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x27C",
+      "type": "uint32_t",
+      "name": "field_0x27C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:33:46Z"
+}

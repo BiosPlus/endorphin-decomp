@@ -1471,3 +1471,46 @@ void fn_0079E0B0(void* self, uint32_t arg1, uint32_t arg2) {
     ext_006D80A0();
 }
 } // namespace lift_0079E0B0
+
+// [0x00792880] sub_00792880 (86 bytes)
+namespace lift_00792880 {
+// Known callee 0x0078D7A0: sub_0078D7A0 (Initializes object fields and sets vtable to 0x0099708C)
+extern void* ext_0078D7A0(void* self);
+extern int mem_00997388;
+
+// @name Unknown::initDerivedObjectFields
+// @class Unknown
+// @summary Runs base initializer ext_0078D7A0, sets vtable to 0x00997388, zeroes 11 dword fields at +0x250..+0x27C, returns self
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x250 uint32_t field_0x250
+// @field Unknown +0x254 uint32_t field_0x254
+// @field Unknown +0x258 uint32_t field_0x258
+// @field Unknown +0x25C uint32_t field_0x25C
+// @field Unknown +0x260 uint32_t field_0x260
+// @field Unknown +0x264 uint32_t field_0x264
+// @field Unknown +0x268 uint32_t field_0x268
+// @field Unknown +0x26C uint32_t field_0x26C
+// @field Unknown +0x270 uint32_t field_0x270
+// @field Unknown +0x278 uint32_t field_0x278
+// @field Unknown +0x27C uint32_t field_0x27C
+void* fn_00792880(void* self) {
+    ext_0078D7A0(self);
+
+    (void)&mem_00997388; // vtable address 0x00997388 is written as an immediate below
+    lift_field<uint32_t>(self, 0x00) = 0x00997388u;
+
+    lift_field<uint32_t>(self, 0x250) = 0;
+    lift_field<uint32_t>(self, 0x254) = 0;
+    lift_field<uint32_t>(self, 0x258) = 0;
+    lift_field<uint32_t>(self, 0x25C) = 0;
+    lift_field<uint32_t>(self, 0x260) = 0;
+    lift_field<uint32_t>(self, 0x264) = 0;
+    lift_field<uint32_t>(self, 0x268) = 0;
+    lift_field<uint32_t>(self, 0x26C) = 0;
+    lift_field<uint32_t>(self, 0x270) = 0;
+    lift_field<uint32_t>(self, 0x278) = 0;
+    lift_field<uint32_t>(self, 0x27C) = 0;
+
+    return self;
+}
+} // namespace lift_00792880
