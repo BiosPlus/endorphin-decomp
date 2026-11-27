@@ -372,3 +372,87 @@ bool __thiscall fn_00499440(void* self, uint32_t arg) {
     return al != 0;
 }
 } // namespace lift_00499440
+
+// [0x00499560] NMData::Transition::vfunc_10 (375 bytes)
+namespace lift_00499560 {
+// Callee sub_00498A50: thiscall (ecx = this), one stack argument, callee-cleans (ret 4). Returns a signed value; -1 means "not found".
+extern int32_t __thiscall ext_00498A50(void* self, void* arg);
+// Callee sub_00499370: thiscall (ecx = this), one stack argument (scratch out-buffer), callee-cleans (ret 4). Returns a pointer to a float rect (x1,y1,x2,y2).
+extern void* __thiscall ext_00499370(void* self, void* out);
+// Known callee 0x004976D0: Unknown::PointInRectInclusive (Returns true if the 2D point (arg[0], arg[1]) lies inside the float rect at this (x1,y1,x2,y2), inclusive; any NaN yields false.)
+extern uint8_t __thiscall ext_004976D0(const void* self, const void* point);
+// Known callee 0x0067F910: Vector8::back (Returns a pointer to the last 8-byte element of the vector with MSVC8 checked-iterator bounds validation.)
+extern uintptr_t __thiscall ext_0067F910(uintptr_t self);
+// Callee sub_00498C50: thiscall (ecx = this), two stack arguments (scratch out-buffer, index), callee-cleans. Returns a pointer to an 8-byte float pair (x, y).
+extern void* __thiscall ext_00498C50(void* self, void* out, uintptr_t index);
+// IAT slot 0x00925134: MSVCR80!_invalid_parameter_noinfo (called through the slot when the checked index is out of range).
+extern int mem_00925134;
+// Float constant 0.007 at 0x0094B858 (u32 0x3BE56042).
+extern int mem_0094B858;
+// Double constant 4.0 at 0x0093F7B0.
+extern int mem_0093F7B0;
+
+// Builds the inclusive rect (x-m, y-m, x+m, y+m) and tests the point against it.
+static bool margin_rect_contains(float x, float y, float m, const void* point) {
+    float rect[4] = {x - m, y - m, x + m, y + m};
+    return ext_004976D0(rect, point) != 0;
+}
+
+// Margin m = (float)(0.007f * 4.0) as computed by the original x87 sequence.
+static float load_margin() {
+    const float seven_thousandths = *reinterpret_cast<const float*>(&mem_0094B858);
+    const double four = *reinterpret_cast<const double*>(&mem_0093F7B0);
+    return static_cast<float>(static_cast<double>(seven_thousandths) * four);
+}
+
+// @name NMData::Transition::vfunc_10
+// @class NMData::Transition
+// @summary Returns 1 if the point arg is inside the rect from sub_00499370, else if +0xBC is set and the point from Vector8::back(+0x84) mapped through +0xBC+0xE8 is within a 0.028 margin, else if +0xB8 is set the same test on the +0x88 index entry of +0xB8+0xE8; returns 0 otherwise.
+// @field NMData::Transition +0x84 void* field_0x84
+// @field NMData::Transition +0x88 uint32_t field_0x88
+// @field NMData::Transition +0x8C uint32_t field_0x8C
+// @field NMData::Transition +0xB8 void* field_0xB8
+// @field NMData::Transition +0xBC void* field_0xBC
+uint8_t fn_00499560(void* self, void* arg) {
+    alignas(8) uint8_t scratch[16] = {};
+
+    if (ext_00498A50(self, arg) != -1) {
+        return 1;
+    }
+
+    void* rect = ext_00499370(self, scratch);
+    if (ext_004976D0(rect, arg) != 0) {
+        return 1;
+    }
+
+    const float margin = load_margin();
+
+    void* sub = lift_field<void*>(self, 0xBC);
+    if (sub != nullptr) {
+        uintptr_t last = ext_0067F910(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(self) + 0x84));
+        void* pair = ext_00498C50(static_cast<uint8_t*>(sub) + 0xE8, scratch, last);
+        float x = lift_field<float>(pair, 0);
+        float y = lift_field<float>(pair, 4);
+        if (margin_rect_contains(x, y, margin, arg)) {
+            return 1;
+        }
+    }
+
+    // Fallback: uses the +0xB8 sub-object and its checked index at +0x88 (bounded by +0x8C).
+    void* sub2 = lift_field<void*>(self, 0xB8);
+    if (sub2 == nullptr) {
+        return 0;
+    }
+    uint32_t index = lift_field<uint32_t>(self, 0x88);
+    uint32_t end = lift_field<uint32_t>(self, 0x8C);
+    if (index >= end) {
+        // Checked-iterator failure: original calls _invalid_parameter_noinfo through the IAT slot and continues.
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925134)))();
+    }
+
+    void* pair2 = ext_00498C50(static_cast<uint8_t*>(sub2) + 0xE8, scratch, index);
+    float x2 = lift_field<float>(pair2, 0);
+    float y2 = lift_field<float>(pair2, 4);
+    return margin_rect_contains(x2, y2, margin, arg) ? 1 : 0;
+}
+} // namespace lift_00499560

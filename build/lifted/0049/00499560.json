@@ -1,0 +1,46 @@
+{
+  "va": "0x00499560",
+  "size": 375,
+  "orig_symbol": "NMData::Transition::vfunc_10",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_10",
+  "class": "NMData::Transition",
+  "signature": "static bool margin_rect_contains(float x, float y, float m, const void* point)",
+  "summary": "Returns 1 if the point arg is inside the rect from sub_00499370, else if +0xBC is set and the point from Vector8::back(+0x84) mapped through +0xBC+0xE8 is within a 0.028 margin, else if +0xB8 is set the same test on the +0x88 index entry of +0xB8+0xE8; returns 0 otherwise.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x84",
+      "type": "void*",
+      "name": "field_0x84"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x88",
+      "type": "uint32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x8C",
+      "type": "uint32_t",
+      "name": "field_0x8C"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xB8",
+      "type": "void*",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xBC",
+      "type": "void*",
+      "name": "field_0xBC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:14:32Z"
+}

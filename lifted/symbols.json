@@ -14660,6 +14660,13 @@
     "summary": "Thiscall, one stack arg (ret 4). Walks the float-pair array delimited by this+0x88/this+0x8C; for each pair (a,b) it probes ext_00498B60 with the box {a-k, b-k, a+k, b+k} (k=0.007) and returns true as soon as the returned rect has positive width and height. If none does, returns ext_004990C0(ext_00499370(this, ...)) != 0.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x00499560": {
+    "name": "NMData::Transition::vfunc_10",
+    "class": "NMData::Transition",
+    "signature": "static bool margin_rect_contains(float x, float y, float m, const void* point)",
+    "summary": "Returns 1 if the point arg is inside the rect from sub_00499370, else if +0xBC is set and the point from Vector8::back(+0x84) mapped through +0xBC+0xE8 is within a 0.028 margin, else if +0xB8 is set the same test on the +0x88 index entry of +0xB8+0xE8; returns 0 otherwise.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x004997E0": {
     "name": "NMData::Transition::vfunc_26",
     "class": "NMData::Transition",
