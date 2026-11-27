@@ -34500,6 +34500,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0053BE80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053D0D0": {
+    "name": "Primitives::SkeletalJoint::vfunc_28",
+    "class": "Primitives::SkeletalJoint",
+    "signature": "extern \"C\" const double mem_0092A280; // 0.009999999776482582 (scale for width) extern \"C\" const double mem_00955C80; // 0.6499999761581421   (scale for radius) extern \"C\" const double mem_0092C508; // 0.10000000149011612  (scale for cap height) extern \"C\" const float  mem_00955A30; // 90.0f                (rotation angle) extern \"C\" void* const mem_0092546C; // OPENGL32!glPushAttrib extern \"C\" void* const mem_00925520; // OPENGL32!glLineWidth extern \"C\" void* const mem_00925414; // OPENGL32!glPushMatrix extern \"C\" void* const mem_009254CC; // OPENGL32!glRotatef extern \"C\" void* const mem_009253D0; // OPENGL32!glTranslatef extern \"C\" void* const mem_00925404; // OPENGL32!glPopMatrix extern \"C\" void* const mem_0092552C; // OPENGL32!glPopAttrib void fn_0053D0D0(void* self, uint32_t arg1)",
+    "summary": "Draws the base hinge primitive, then, when flag 0x20000 is set, draws a rotated pair of cylinders (line-width scaled) using the joint's quadric and slice/stack fields.",
+    "lifted_path": "lifted/Primitives/SkeletalJoint.cpp"
+  },
   "0x0053D1E0": {
     "name": "Primitives::RadiusLimit::vfunc_23",
     "class": "Primitives::RadiusLimit",

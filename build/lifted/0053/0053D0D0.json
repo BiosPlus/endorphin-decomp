@@ -1,0 +1,46 @@
+{
+  "va": "0x0053D0D0",
+  "size": 271,
+  "orig_symbol": "Primitives::SkeletalJoint::vfunc_28",
+  "src_path": "src/Primitives/SkeletalJoint.cpp",
+  "lifted_path": "lifted/Primitives/SkeletalJoint.cpp",
+  "name": "Primitives::SkeletalJoint::vfunc_28",
+  "class": "Primitives::SkeletalJoint",
+  "signature": "extern \"C\" const double mem_0092A280; // 0.009999999776482582 (scale for width) extern \"C\" const double mem_00955C80; // 0.6499999761581421   (scale for radius) extern \"C\" const double mem_0092C508; // 0.10000000149011612  (scale for cap height) extern \"C\" const float  mem_00955A30; // 90.0f                (rotation angle) extern \"C\" void* const mem_0092546C; // OPENGL32!glPushAttrib extern \"C\" void* const mem_00925520; // OPENGL32!glLineWidth extern \"C\" void* const mem_00925414; // OPENGL32!glPushMatrix extern \"C\" void* const mem_009254CC; // OPENGL32!glRotatef extern \"C\" void* const mem_009253D0; // OPENGL32!glTranslatef extern \"C\" void* const mem_00925404; // OPENGL32!glPopMatrix extern \"C\" void* const mem_0092552C; // OPENGL32!glPopAttrib void fn_0053D0D0(void* self, uint32_t arg1)",
+  "summary": "Draws the base hinge primitive, then, when flag 0x20000 is set, draws a rotated pair of cylinders (line-width scaled) using the joint's quadric and slice/stack fields.",
+  "fields": [
+    {
+      "class": "Primitives::SkeletalJoint",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "flags"
+    },
+    {
+      "class": "Primitives::SkeletalJoint",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::SkeletalJoint",
+      "offset": "+0xCC",
+      "type": "uint32_t",
+      "name": "field_0xcc"
+    },
+    {
+      "class": "Primitives::SkeletalJoint",
+      "offset": "+0xD0",
+      "type": "uint32_t",
+      "name": "field_0xd0"
+    },
+    {
+      "class": "Primitives::SkeletalJoint",
+      "offset": "+0xD4",
+      "type": "void*",
+      "name": "field_0xd4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:01:09Z"
+}
