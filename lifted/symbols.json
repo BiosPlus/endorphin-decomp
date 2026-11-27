@@ -84962,6 +84962,12 @@
     "summary": "If the global sink object pointer is non-null, forward arg to its vtable slot 5 (+0x14) and return.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x008587C0": {
+    "name": "init_sbox_008587C0",
+    "signature": "void __cdecl sub_008587C0(const uint8_t* key, int32_t key_len, uint8_t* sbox)",
+    "summary": "Initializes a 256-byte S-box permutation using a key and key length.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00858B60": {
     "name": "sub_00858B60",
     "signature": "uint32_t __cdecl fn_00858B60(uint32_t selector)",

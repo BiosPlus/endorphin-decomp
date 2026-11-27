@@ -1288,3 +1288,37 @@ uint32_t fn_0080AAF0(uint32_t handle) {
     return 0u;
 }
 } // namespace lift_0080AAF0
+
+// [0x0080C2C0]
+namespace lift_0080C2C0 {
+// @name filterBase64Chars
+// @summary Copies valid base64-range characters from src to dst while skipping up to max_ws whitespace characters.
+int __cdecl sub_0080C2C0(char* dst, const char* src, int src_len, uint32_t max_ws) {
+    if (src_len <= 0) {
+        return 0;
+    }
+
+    uint32_t ws_count = 0;
+    int out_len = 0;
+
+    for (int i = 0; i < src_len; ++i) {
+        uint8_t c = static_cast<uint8_t>(src[i]);
+        bool is_valid = (c >= 0x41 && c <= 0x5A) ||
+                        (c >= 0x61 && c <= 0x7A) ||
+                        (c >= 0x30 && c <= 0x39) ||
+                        (c >= 0x2B && c <= 0x3D);
+        if (is_valid) {
+            dst[out_len++] = static_cast<char>(c);
+        } else if (c == ' ' || c == '\t' || c == '\r' || c == '\n') {
+            ++ws_count;
+            if (ws_count > max_ws) {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    }
+
+    return out_len;
+}
+} // namespace lift_0080C2C0
