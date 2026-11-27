@@ -62165,6 +62165,13 @@
     "summary": "Reads the object pointer held in *self; if non-null, invokes virtual slot 17 and throws via ext_0046C4E0 with field +0x30; otherwise throws a fixed-message exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00625240": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",
+    "signature": "void fn_00625240(void* self, void* ctx, void* arg)",
+    "summary": "Reads the colliding flag from the sensor held in ctx+0x00, then re-assigns ctx's held value through the sensor-derived helper and forwards to ctx+0x04's vfunc_43; throws if the sensor pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006255F0": {
     "name": "sub_006255F0",
     "signature": "void* fn_006255F0()",

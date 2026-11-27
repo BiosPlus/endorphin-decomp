@@ -184593,3 +184593,59 @@ float fn_00695830(void* self, void* extra) {
     return vfunc45(inner, self, value);
 }
 } // namespace lift_00695830
+
+// [0x00625240] ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>::vfunc_43 (178 bytes)
+namespace lift_00625240 {
+extern void ext_006720A0(void* self, uint32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith>::vfunc_43
+// @class ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>
+// @summary Reads the colliding flag from the sensor held in ctx+0x00, then re-assigns ctx's held value through the sensor-derived helper and forwards to ctx+0x04's vfunc_43; throws if the sensor pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field Sensors::SensorIsCollidingWith +0x30 uint8_t field_0x30
+void fn_00625240(void* self, void* ctx, void* arg) {
+    (void)self; // ecx is not read on entry
+
+    void* sensor = lift_field<void*>(ctx, 0x00);
+    if (sensor == nullptr) {
+        alignas(8) uint8_t exception[16] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, reinterpret_cast<void*>(&mem_009DEC1C));
+        return;
+    }
+
+    // Virtual call at vtable slot 0x44 on the sensor; its float result is discarded.
+    void** sensorVtable = *reinterpret_cast<void***>(sensor);
+    using GetFloatFn = float (*)(void*);
+    (void)reinterpret_cast<GetFloatFn>(lift_field<void*>(sensorVtable, 0x44))(sensor);
+
+    const uint32_t flag = static_cast<uint32_t>(lift_field<uint8_t>(sensor, 0x30));
+
+    alignas(8) uint8_t tmp1[16] = {};
+    alignas(8) uint8_t tmp2[16] = {};
+    ext_006720A0(tmp1, flag);
+    ext_0041CF50(ctx, tmp2);
+
+    // Release the first temporary's held object via its vtable slot 0x78.
+    void* held = *reinterpret_cast<void**>(tmp1);
+    if (held != nullptr) {
+        void** heldVtable = *reinterpret_cast<void***>(held);
+        using ReleaseFn = void (*)(void*, void*);
+        reinterpret_cast<ReleaseFn>(lift_field<void*>(heldVtable, 0x78))(held, tmp2);
+    }
+
+    // Forward to vtable slot 0xAC of ctx+0x04 with (ctx, arg) as stack arguments.
+    void* next = lift_field<void*>(ctx, 0x04);
+    void** nextVtable = *reinterpret_cast<void***>(next);
+    using ForwardFn = void (*)(void*, void*, void*);
+    reinterpret_cast<ForwardFn>(lift_field<void*>(nextVtable, 0xAC))(next, ctx, arg);
+}
+} // namespace lift_00625240
