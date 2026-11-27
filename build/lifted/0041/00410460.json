@@ -1,0 +1,22 @@
+{
+  "va": "0x00410460",
+  "size": 58,
+  "orig_symbol": "MultiTrackView::CompositeEventTrack::vfunc_11",
+  "src_path": "src/MultiTrackView/CompositeEventTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp",
+  "name": "MultiTrackView::CompositeEventTrack::vfunc_11",
+  "class": "MultiTrackView::CompositeEventTrack",
+  "signature": "void fn_00410460(void* self, int32_t arg0, int32_t arg1, int32_t arg2, int32_t arg3)",
+  "summary": "Calls ext_004686A0 on the object from ext_00468180 with ext_0043CEB0(arg2), then invokes vtable slot 0x98 with 5 on the object returned by ext_00468660.",
+  "fields": [
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:02:51Z"
+}

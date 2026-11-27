@@ -267,3 +267,59 @@ void* fn_00410B50(void* self, void* vec, uint8_t flag) {
     return result;
 }
 } // namespace lift_00410B50
+
+// [0x00410460] MultiTrackView::CompositeEventTrack::vfunc_11 (58 bytes)
+namespace lift_00410460 {
+extern int32_t ext_00468180(void);
+extern int32_t ext_0043CEB0(int32_t arg);
+extern void ext_004686A0(void* self, int32_t arg);
+extern void* ext_00468660(void* self);
+// Metadata-only references (CALLEES list / RDATA_CONSTANTS); the disassembly never calls or reads these.
+extern void ext_004407A0();
+extern void ext_00441020();
+extern void ext_00441040();
+extern void ext_0045E930();
+extern void ext_0048F870();
+extern void ext_00665DC0();
+extern void ext_00666570();
+extern void ext_006A5C62();
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+extern int mem_0092BE1C;
+
+// @name MultiTrackView::CompositeEventTrack::vfunc_11
+// @class MultiTrackView::CompositeEventTrack
+// @summary Calls ext_004686A0 on the object from ext_00468180 with ext_0043CEB0(arg2), then invokes vtable slot 0x98 with 5 on the object returned by ext_00468660.
+// @field MultiTrackView::CompositeEventTrack +0x30 void* field_0x30
+void fn_00410460(void* self, int32_t arg0, int32_t arg1, int32_t arg2, int32_t arg3) {
+    (void)arg0;
+    (void)arg1;
+    (void)arg3;
+
+    // Loaded into ecx before a cdecl-style call that does not consume it; value is unused.
+    (void)lift_field<void*>(self, 0x30);
+
+    // Address-only references to metadata callees/globals; no call or read happens.
+    (void)&ext_004407A0;
+    (void)&ext_00441020;
+    (void)&ext_00441040;
+    (void)&ext_0045E930;
+    (void)&ext_0048F870;
+    (void)&ext_00665DC0;
+    (void)&ext_00666570;
+    (void)&ext_006A5C62;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    (void)&mem_0092BE1C;
+
+    void* const owner = reinterpret_cast<void*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_00468180())));
+    const int32_t scaled = ext_0043CEB0(arg2);
+    ext_004686A0(owner, scaled);
+
+    void* const obj = ext_00468660(owner);
+    void* const vptr = lift_field<void*>(obj, 0);
+    auto const vfn = reinterpret_cast<void (*)(void*, int32_t)>(lift_field<void*>(vptr, 0x98));
+    vfn(obj, 5);
+}
+} // namespace lift_00410460

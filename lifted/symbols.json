@@ -1521,6 +1521,13 @@
     "summary": "Returns 0 if the virtual predicate at vtable+0x28 is true or ext_00410390 returns true; otherwise returns 1.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00410460": {
+    "name": "MultiTrackView::CompositeEventTrack::vfunc_11",
+    "class": "MultiTrackView::CompositeEventTrack",
+    "signature": "void fn_00410460(void* self, int32_t arg0, int32_t arg1, int32_t arg2, int32_t arg3)",
+    "summary": "Calls ext_004686A0 on the object from ext_00468180 with ext_0043CEB0(arg2), then invokes vtable slot 0x98 with 5 on the object returned by ext_00468660.",
+    "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp"
+  },
   "0x004104A0": {
     "name": "MultiTrackView::CompositeEventTrack::vfunc_1",
     "class": "MultiTrackView::CompositeEventTrack",
