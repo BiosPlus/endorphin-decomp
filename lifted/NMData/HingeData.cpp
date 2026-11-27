@@ -215,3 +215,72 @@ extern float __thiscall fn_005E1970(void* self, int32_t index) {
     return a[index];
 }
 } // namespace lift_005E1970
+
+// [0x005ED550] NMData::HingeData::vfunc_14_off_C (123 bytes)
+namespace lift_005ED550 {
+// Known callee 0x005ECF40: NMData::FixedPathJointData::vfunc_14_off_C (thiscall: ecx = self, two stack args: a pointer to mem_0093A444 and the flags DWORD).
+extern uint8_t ext_005ECF40(void* self, void* tag, uint32_t flags);
+// Known callee 0x00528BD0: sub_00528BD0 (thiscall: ecx = self, one stack arg 0x20000; returns a byte in AL).
+extern uint32_t ext_00528BD0(void* self, uint32_t arg0);
+// Known callee 0x00584C00: sub_00584C00 (thiscall: ecx = the object at self+0x174; returns a byte in AL).
+extern uint8_t ext_00584C00(void* self);
+// Known callee 0x00528BB0: descriptiveName_00528BB0 (forwardVirtual0x2CIfNonNull; thiscall, two stack args, callee pops 8).
+extern uint32_t ext_00528BB0(void* self, uint32_t arg0, uint32_t arg1);
+// Known callee 0x00528C70: setFlagOnPointedObject (thiscall: ecx = self).
+extern void ext_00528C70(void* self);
+
+extern int mem_0093A444; // .rdata u32 0x005E0AD0; its address is passed as the tag argument to ext_005ECF40
+extern int mem_00B40640; // (global) listed in metadata; not referenced by the bytes
+
+// Callees listed in metadata but never called by the 123 bytes at 0x005ED550 (decoded: only
+// 0x005ECF40, 0x00528BD0, 0x00584C00, 0x00528BB0, 0x00528C70 are called). Address-only references below; no calls.
+extern void ext_00466910();
+extern void ext_00466F00();
+extern void ext_0053B470();
+extern void ext_00586D00();
+extern void ext_00661B10();
+extern void ext_00662120();
+extern void ext_0067E6C0();
+
+// @name NMData::HingeData::vfunc_14_off_C
+// @class NMData::HingeData
+// @summary Gate on ext_005ECF40; when it succeeds, recomputes a flag from ext_00528BD0 and (if flags & 0x200) ext_00584C00 on self+0x174, and when that flag changes it re-dispatches via ext_00528BB0 and ext_00528C70. Returns the gate result.
+// @field NMData::HingeData +0x174 void* field_0x174
+uint8_t fn_005ED550(void* self, uint32_t unusedArg0, uint32_t flags) {
+    (void)unusedArg0; // stack slot is caller-owned and never read by the original code
+    (void)&mem_0093A444;
+    // Metadata-only references (see note above); taking the address has no runtime effect.
+    (void)&mem_00B40640;
+    (void)&ext_00466910;
+    (void)&ext_00466F00;
+    (void)&ext_0053B470;
+    (void)&ext_00586D00;
+    (void)&ext_00661B10;
+    (void)&ext_00662120;
+    (void)&ext_0067E6C0;
+
+    const uint8_t gate = ext_005ECF40(self, reinterpret_cast<void*>(&mem_0093A444), flags);
+    if (gate == 0) {
+        return gate;
+    }
+
+    const uint8_t prev = static_cast<uint8_t>(ext_00528BD0(self, 0x20000));
+
+    uint8_t cur = 0;
+    if ((flags & 0x200u) != 0) {
+        void* child = lift_field<void*>(self, 0x174);
+        cur = ext_00584C00(child) != 0 ? 1 : 0;
+    }
+
+    if (cur != prev) {
+        // The original writes only the low byte of a spilled dword slot that still holds the
+        // saved `this` pointer, then passes that dword as the argument. Reproduce those upper bits.
+        const uint32_t selfBits = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+        const uint32_t spilled = (selfBits & 0xFFFFFF00u) | cur;
+        ext_00528BB0(self, 0x20000, spilled);
+        ext_00528C70(self);
+    }
+
+    return gate;
+}
+} // namespace lift_005ED550

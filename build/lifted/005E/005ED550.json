@@ -1,0 +1,22 @@
+{
+  "va": "0x005ED550",
+  "size": 123,
+  "orig_symbol": "NMData::HingeData::vfunc_14_off_C",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_14_off_C",
+  "class": "NMData::HingeData",
+  "signature": "uint8_t fn_005ED550(void* self, uint32_t unusedArg0, uint32_t flags)",
+  "summary": "Gate on ext_005ECF40; when it succeeds, recomputes a flag from ext_00528BD0 and (if flags \u0026 0x200) ext_00584C00 on self+0x174, and when that flag changes it re-dispatches via ext_00528BB0 and ext_00528C70. Returns the gate result.",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x174",
+      "type": "void*",
+      "name": "field_0x174"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:03:58Z"
+}
