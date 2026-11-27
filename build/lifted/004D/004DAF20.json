@@ -1,0 +1,34 @@
+{
+  "va": "0x004DAF20",
+  "size": 243,
+  "orig_symbol": "NMData::RigEventData::vfunc_87",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_87",
+  "class": "NMData::RigEventData",
+  "signature": "void fn_004DAF20(void* self)",
+  "summary": "Deletes the object at +0x18C (clearing the slot), then under a critical section calls ext_00528B60 on each element subobject (elem + 0xC) of the array at +0x334..+0x338.",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18C"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x334",
+      "type": "void**",
+      "name": "field_0x334"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x338",
+      "type": "void**",
+      "name": "field_0x338"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:49:25Z"
+}

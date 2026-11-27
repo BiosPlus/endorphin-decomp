@@ -272,3 +272,66 @@ void fn_004DC600(void* self) {
     }
 }
 } // namespace lift_004DC600
+
+// [0x004DAF20] NMData::RigEventData::vfunc_87 (243 bytes)
+namespace lift_004DAF20 {
+// Thiscall helpers: first argument is the implicit `this` (ECX).
+extern void ext_004DA090(void* self);
+extern void ext_004DA2B0(void* self);
+// Known callee 0x00528B60: sub_00528B60 (36B) — invoked on element subobject (elem + 0xC).
+extern void ext_00528B60(void* self);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (cdecl; IAT jump thunk forwarding to MFC80!ord_764, used as delete(ptr).)
+extern void ext_006A5C5C(void* ptr);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (debug iterator guards; never taken in valid use, so omitted).
+extern int mem_00925134;
+
+// @name NMData::RigEventData::vfunc_87
+// @class NMData::RigEventData
+// @summary Deletes the object at +0x18C (clearing the slot), then under a critical section calls ext_00528B60 on each element subobject (elem + 0xC) of the array at +0x334..+0x338.
+// @field NMData::RigEventData +0x18C void* field_0x18C
+// @field NMData::RigEventData +0x334 void** field_0x334
+// @field NMData::RigEventData +0x338 void** field_0x338
+void fn_004DAF20(void* self) {
+    (void)&mem_00925134;  // metadata-only reference (debug-iterator guard IAT slot)
+
+    // Step 1: if a pending object exists, run its method, destroy it and clear the slot.
+    if (lift_field<void*>(self, 0x18C) == nullptr) {
+        return;
+    }
+    ext_004DA090(lift_field<void*>(self, 0x18C));
+
+    void* pending = lift_field<void*>(self, 0x18C);
+    if (pending != nullptr) {
+        ext_004DA2B0(pending);
+        ext_006A5C5C(pending);
+    }
+    lift_field<void*>(self, 0x18C) = nullptr;
+
+    // Step 2: obtain the lock object via a virtual call on the global manager's subobject.
+    // Slot 0x1D8 is vtable index 0x76.
+    void* manager = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+    void* owner = lift_field<void*>(manager, 0x258);
+    void** vtbl = *reinterpret_cast<void***>(owner);
+    using GetLockFn = void* (__thiscall*)(void*);
+    void* lock = reinterpret_cast<GetLockFn>(vtbl[0x1D8 / sizeof(void*)])(owner);
+
+    ext_0065C640(lock);
+
+    // Step 3: iterate the pointer array [begin, end) and invoke ext_00528B60 on elem + 0xC.
+    void** it = lift_field<void**>(self, 0x334);
+    void** end = lift_field<void**>(self, 0x338);
+    while (it != end) {
+        void* elem = *it;
+        ext_00528B60(reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(elem) + 0xC));
+        ++it;
+    }
+
+    ext_0065C650(lock);
+}
+} // namespace lift_004DAF20

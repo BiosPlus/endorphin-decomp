@@ -23803,6 +23803,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::RigEventData::vfunc_22.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004DAF20": {
+    "name": "NMData::RigEventData::vfunc_87",
+    "class": "NMData::RigEventData",
+    "signature": "void fn_004DAF20(void* self)",
+    "summary": "Deletes the object at +0x18C (clearing the slot), then under a critical section calls ext_00528B60 on each element subobject (elem + 0xC) of the array at +0x334..+0x338.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004DB020": {
     "name": "NMData::RigEventData::vfunc_84",
     "class": "NMData::RigEventData",
