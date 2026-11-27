@@ -397,3 +397,55 @@ extern uint8_t __thiscall fn_004BFC20(void* self, uint32_t /*unused*/) {
     return 1;
 }
 } // namespace lift_004BFC20
+
+// [0x004E1C50] NMData::AnimationEventData::vfunc_15 (188 bytes)
+namespace lift_004E1C50 {
+// Known callee 0x004E1B30: sub_004E1B30 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern void* ext_004E1B30(void* dst, uint32_t value);
+// Known callee 0x004C3410: NMData::DesiredPoseEventData::vfunc_15 (thiscall; forwards out+key to static-pair store helpers.)
+extern void* __thiscall ext_004C3410(void* self, void* out, uint32_t key);
+extern void* mem_00AE29D0;
+// CRT _invalid_parameter_noinfo import slot (only used by the omitted range asserts).
+extern void* mem_00925134;
+// Metadata-listed callees that the disassembly never calls; referenced by address only below.
+extern void ext_004DE160();
+extern void ext_00661F70();
+
+// @name NMData::AnimationEventData::vfunc_15
+// @class NMData::AnimationEventData
+// @summary For key 0x280, if the receiver is absent from the global 32-bit registry (mem_00AE29D0 +0x34..+0x38) store it via ext_004E1B30; otherwise (or for other keys) forward to ext_004C3410. Returns out.
+// @field <unknown global mem_00AE29D0> +0x34 uint32_t field_0x34
+// @field <unknown global mem_00AE29D0> +0x38 uint32_t field_0x38
+void* __thiscall fn_004E1C50(void* self, void* out, uint32_t key) {
+    // CRT _invalid_parameter_noinfo range asserts from the original (begin <= end, container
+    // identity) are invariant checks that never fire on the non-error path; omitted.
+    // Address-only references (no runtime effect): the disassembly does not call these callees
+    // or read this slot; the metadata lists them anyway.
+    (void)&mem_00925134;
+    (void)&ext_004DE160;
+    (void)&ext_00661F70;
+
+    const uint32_t selfVal = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    if (key == 0x280) {
+        void* g = mem_00AE29D0;
+        if (g != nullptr) {
+            // Registry is a contiguous array of 32-bit element values, [begin, end).
+            const uint32_t end = lift_field<uint32_t>(g, 0x38);
+            uint32_t it = lift_field<uint32_t>(g, 0x34);
+            while (it != end &&
+                   *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(it)) != selfVal) {
+                it += sizeof(uint32_t);
+            }
+            if (it == end) {
+                // Not registered: store the receiver.
+                ext_004E1B30(out, selfVal);
+                return out;
+            }
+        }
+    }
+
+    ext_004C3410(self, out, key);
+    return out;
+}
+} // namespace lift_004E1C50

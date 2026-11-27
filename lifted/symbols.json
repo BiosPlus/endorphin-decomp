@@ -24567,6 +24567,13 @@
     "summary": "Backward-copies the 8-byte-slot range [first,last) into dest, then returns dest rewound by the range size in bytes (rounded down to a whole slot).",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E1C50": {
+    "name": "NMData::AnimationEventData::vfunc_15",
+    "class": "NMData::AnimationEventData",
+    "signature": "void* __thiscall fn_004E1C50(void* self, void* out, uint32_t key)",
+    "summary": "For key 0x280, if the receiver is absent from the global 32-bit registry (mem_00AE29D0 +0x34..+0x38) store it via ext_004E1B30; otherwise (or for other keys) forward to ext_004C3410. Returns out.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004E1F50": {
     "name": "SubobjectListDrainAndDispatch",
     "class": "Unknown",

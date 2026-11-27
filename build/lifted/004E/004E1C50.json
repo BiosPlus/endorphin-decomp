@@ -1,0 +1,14 @@
+{
+  "va": "0x004E1C50",
+  "size": 188,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_15",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_15",
+  "class": "NMData::AnimationEventData",
+  "signature": "void* __thiscall fn_004E1C50(void* self, void* out, uint32_t key)",
+  "summary": "For key 0x280, if the receiver is absent from the global 32-bit registry (mem_00AE29D0 +0x34..+0x38) store it via ext_004E1B30; otherwise (or for other keys) forward to ext_004C3410. Returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T11:33:48Z"
+}
