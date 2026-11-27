@@ -1,0 +1,34 @@
+{
+  "va": "0x006DC480",
+  "size": 64,
+  "orig_symbol": "sub_006DC480",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::getIndexedEntryOrAssign_006DC480",
+  "class": "Unknown",
+  "signature": "int32_t fn_006DC480(void* self)",
+  "summary": "Returns entries[index] when index (+0xE8) is non-negative and below the getter limit (ext_006DC550); otherwise forwards +0xEC subobject with (0, 0xAA93EC) and returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "int32_t*",
+      "name": "entries"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE8",
+      "type": "int32_t",
+      "name": "index"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEC",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:51:18Z"
+}
