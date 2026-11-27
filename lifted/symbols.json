@@ -9710,6 +9710,13 @@
     "summary": "RB-tree insert of a new node beside 'where' (left if addLeft), rebalance, return iterator; throws length_error when too large.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046AB70": {
+    "name": "_Tree::insertUnique",
+    "class": "_Tree",
+    "signature": "extern \"C\" void* __thiscall fn_0046AB70(void* this_, void* ret, const uint32_t* val)",
+    "summary": "Unique-key RB-tree insert (uint32 key): finds position, inserts if absent, returns pair\u003citerator,bool\u003e.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046AC30": {
     "name": "sub_0046AC30",
     "signature": "extern \"C\" void fn_0046AC30(void)",

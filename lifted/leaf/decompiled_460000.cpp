@@ -2892,3 +2892,52 @@ extern void** __thiscall fn_0046A970(void* this_, void** ret, bool addLeft, void
     return ret;
 }
 } // namespace lift_0046A970
+
+// [0x0046AB70]
+namespace lift_0046AB70 {
+extern void** __thiscall ext_0046A970(void* this_, void** ret, bool addLeft, void* whereP, const void* val);
+extern void __thiscall ext_0046A8E0(void* this_);
+
+// @name _Tree::insertUnique
+// @class _Tree
+// @summary Unique-key RB-tree insert (uint32 key): finds position, inserts if absent, returns pair<iterator,bool>.
+// @field _Tree +0x04 void* head
+extern void* __thiscall fn_0046AB70(void* this_, void* ret, const uint32_t* val)
+{
+    uint8_t* head = *(uint8_t**)((uint8_t*)this_ + 4);
+    uint8_t* where = head;
+    uint8_t* node = *(uint8_t**)(head + 4);
+    bool addLeft = true;
+    while (*(node + 0x11) == 0) {
+        where = node;
+        addLeft = *val < *(uint32_t*)(node + 0xc);
+        node = addLeft ? *(uint8_t**)node : *(uint8_t**)(node + 8);
+    }
+    void* it[2] = { this_, where };
+    void** r;
+    if (addLeft) {
+        if (where == **(uint8_t***)((uint8_t*)this_ + 4)) {
+            r = ext_0046A970(this_, it, true, where, val);
+            goto inserted;
+        }
+        ext_0046A8E0(it);
+    }
+    if (*(uint32_t*)((uint8_t*)it[1] + 0xc) < *val) {
+        r = ext_0046A970(this_, it, addLeft, where, val);
+        goto inserted;
+    }
+    ((void**)ret)[0] = it[0];
+    ((void**)ret)[1] = it[1];
+    *((uint8_t*)ret + 8) = 0;
+    return ret;
+inserted:
+    {
+        void* a = r[0];
+        void* b = r[1];
+        ((void**)ret)[0] = a;
+        ((void**)ret)[1] = b;
+        *((uint8_t*)ret + 8) = 1;
+    }
+    return ret;
+}
+} // namespace lift_0046AB70

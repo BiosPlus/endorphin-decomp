@@ -1,0 +1,22 @@
+{
+  "va": "0x0046AB70",
+  "size": 185,
+  "orig_symbol": "sub_0046AB70",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "_Tree::insertUnique",
+  "class": "_Tree",
+  "signature": "extern \"C\" void* __thiscall fn_0046AB70(void* this_, void* ret, const uint32_t* val)",
+  "summary": "Unique-key RB-tree insert (uint32 key): finds position, inserts if absent, returns pair\u003citerator,bool\u003e.",
+  "fields": [
+    {
+      "class": "_Tree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:48:59Z"
+}
