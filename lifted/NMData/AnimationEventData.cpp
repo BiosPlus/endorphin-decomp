@@ -377,3 +377,23 @@ uint8_t __thiscall fn_004BFC00(void* self, uint32_t /*arg1*/, void* rangeObj) {
     return 1;
 }
 } // namespace lift_004BFC00
+
+// [0x004BFC20]
+namespace lift_004BFC20 {
+// @name NMData::AnimationEventData::vfunc_13_off_C
+// @class NMData::AnimationEventData
+// @summary Adjusts this pointer from +0xC subobject, passes it to ext_0047D7C0 with global mem_00AE29D0, and returns true
+
+extern void* mem_00AE29D0;
+extern void __thiscall ext_0047D7C0(void* self, void* arg);
+extern int32_t __cdecl ext_00594000(void);
+extern void __cdecl ext_00599F10(void);
+
+extern uint8_t __thiscall fn_004BFC20(void* self, uint32_t /*unused*/) {
+    (void)&ext_00594000;
+    (void)&ext_00599F10;
+    void* obj = static_cast<uint8_t*>(self) - 0xC;
+    ext_0047D7C0(mem_00AE29D0, obj);
+    return 1;
+}
+} // namespace lift_004BFC20

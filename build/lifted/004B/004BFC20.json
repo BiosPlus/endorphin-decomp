@@ -1,0 +1,14 @@
+{
+  "va": "0x004BFC20",
+  "size": 20,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_13_off_C",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_13_off_C",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" uint8_t __thiscall fn_004BFC20(void* self, uint32_t /*unused*/)",
+  "summary": "Adjusts this pointer from +0xC subobject, passes it to ext_0047D7C0 with global mem_00AE29D0, and returns true",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:32:01Z"
+}
