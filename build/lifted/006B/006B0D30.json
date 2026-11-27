@@ -1,0 +1,22 @@
+{
+  "va": "0x006B0D30",
+  "size": 129,
+  "orig_symbol": "GWCPropInPlaceEdit::vfunc_66",
+  "src_path": "src/classes/GWCPropInPlaceEdit.cpp",
+  "lifted_path": "lifted/classes/GWCPropInPlaceEdit.cpp",
+  "name": "GWCPropInPlaceEdit::PreTranslateMessage",
+  "class": "GWCPropInPlaceEdit",
+  "signature": "extern \"C\" int __thiscall fn_006B0D30(void* self, void* pMsg)",
+  "summary": "Handles keydown messages (Escape, Return, Tab, Up/Down) to transfer focus to parent or forward to CEdit::PreTranslateMessage.",
+  "fields": [
+    {
+      "class": "GWCPropInPlaceEdit",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "m_hWnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:34:25Z"
+}
