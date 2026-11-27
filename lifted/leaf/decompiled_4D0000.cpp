@@ -878,3 +878,36 @@ void* fn_004D01C0(void* self) {
     return self;
 }
 } // namespace lift_004D01C0
+
+// [0x004D3940] sub_004D3940 (103 bytes)
+namespace lift_004D3940 {
+// Known callee 0x00593710: ClassifyStringToken (Uppercases a by-value std::string argument in place, then maps it to 1, 0 or 2 by comparing against three literals (default 2).)
+// The by-value std::string (28 bytes, MSVC layout) is passed on the stack; caller cleans up.
+struct StdStringValue {
+    uint8_t raw[0x1C];
+};
+extern int ext_00593710(StdStringValue value);
+
+// MSVCP80 imports, read through their IAT slots (mem_00924FE0 / mem_00924FF4).
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+
+// @name ClassifyStringFieldStore (sub_004D3940)
+// @class <Class> (if member)
+// @summary Copies the by-value std::string argument, classifies it via ClassifyStringToken (0x00593710), stores the int result at this+0x394, then destroys the argument; thiscall, callee pops 0x1C.
+// @field <Class> +0x394 int32_t classifyResult
+void __thiscall fn_004D3940(void* self, void* arg) {
+    using CopyCtorFn = void (__thiscall*)(void* thisPtr, const void* src);
+    using DtorFn = void (__thiscall*)(void* thisPtr);
+
+    alignas(4) StdStringValue temp{};
+    auto copyCtor = reinterpret_cast<CopyCtorFn>(*reinterpret_cast<void**>(&mem_00924FE0));
+    auto dtor = reinterpret_cast<DtorFn>(*reinterpret_cast<void**>(&mem_00924FF4));
+
+    copyCtor(&temp, arg);
+    int32_t result = ext_00593710(temp);
+    lift_field<int32_t>(self, 0x394) = result;
+
+    dtor(arg);
+}
+} // namespace lift_004D3940
