@@ -1603,3 +1603,38 @@ void fn_007BFD80(void* self_ptr, FILE* stream, void* arg) {
     }
 }
 } // namespace lift_007BFD80
+
+// [0x007BA200] sub_007BA200 (112 bytes)
+namespace lift_007BA200 {
+// @name Unknown::BuildMaskedValueResult
+// @class Unknown
+// @summary Writes a 12-byte result record {u16 tag, u16 kind, u32 1, u32 value}; value is raw (kind 4) or masked and optionally shifted by a field of self (kind 3).
+// @field Unknown +0x150 uint16_t field_0x150 (compared against 0x4D4D)
+// @field Unknown +0x15C uint32_t field_0x15c (pointer; its +0xC dword is the shift count)
+// @field Unknown +0x160 uint32_t field_0x160 (pointer; its +0xC dword is the mask source)
+void fn_007BA200(void* self, uint16_t tag, void* out, uint32_t mask) {
+    lift_field<uint16_t>(out, 0x00) = tag;
+    lift_field<uint32_t>(out, 0x04) = 1;
+
+    if (mask > 0xFFFFu) {
+        lift_field<uint32_t>(out, 0x08) = mask;
+        lift_field<uint16_t>(out, 0x02) = 4;
+        return;
+    }
+
+    lift_field<uint16_t>(out, 0x02) = 3;
+
+    const uint32_t tbl_addr = lift_field<uint32_t>(self, 0x160);
+    const void* tbl = reinterpret_cast<const void*>(static_cast<uintptr_t>(tbl_addr));
+    uint32_t value = lift_field<uint32_t>(tbl, 0x0C) & mask;
+
+    if (lift_field<uint16_t>(self, 0x150) == 0x4D4D) {
+        const uint32_t sh_addr = lift_field<uint32_t>(self, 0x15C);
+        const void* sh = reinterpret_cast<const void*>(static_cast<uintptr_t>(sh_addr));
+        const uint32_t count = lift_field<uint32_t>(sh, 0x0C);
+        value <<= (count & 31u);
+    }
+
+    lift_field<uint32_t>(out, 0x08) = value;
+}
+} // namespace lift_007BA200

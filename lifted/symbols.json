@@ -72191,6 +72191,13 @@
     "summary": "Walks the global node list from mem_00B61DB8 and returns the first node whose u16 key matches, or null.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BA200": {
+    "name": "Unknown::BuildMaskedValueResult",
+    "class": "Unknown",
+    "signature": "void fn_007BA200(void* self, uint16_t tag, void* out, uint32_t mask)",
+    "summary": "Writes a 12-byte result record {u16 tag, u16 kind, u32 1, u32 value}; value is raw (kind 4) or masked and optionally shifted by a field of self (kind 3).",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BADD0": {
     "name": "sub_007BADD0",
     "signature": "uint32_t __cdecl sub_007BADD0(uintptr_t arg0)",

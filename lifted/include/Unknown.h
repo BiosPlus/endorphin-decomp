@@ -1215,6 +1215,7 @@ struct Unknown_Fields {
     // +0x14C float                    field_0x14c  (evidence: 0x00630420) // CONFLICT: multiple definitions at +0x14C
     // +0x14C BYTE field_0x14C[] (indexed by arg index; byte store target)  (evidence: 0x006D74E0) // CONFLICT: multiple definitions at +0x14C
     // +0x14F uint8_t                  field_0x14F  (evidence: 0x006D6CB0)
+    // +0x150 uint16_t field_0x150 (compared against 0x4D4D)  (evidence: 0x007BA200) // CONFLICT: multiple definitions at +0x150
     // +0x150 int32_t                  field_0x150  (evidence: 0x0072BC70) // CONFLICT: multiple definitions at +0x150
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x006877B0, 0x006D6CB0) // CONFLICT: multiple definitions at +0x150
     // +0x150 uint8_t                  field_0x150  (evidence: 0x0046F930) // CONFLICT: multiple definitions at +0x150
@@ -1235,6 +1236,7 @@ struct Unknown_Fields {
     // +0x158 uint32_t field_0x158 (child pointer; non-null selects the forward path)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0x158
     // +0x158 void*                    subObject  (evidence: 0x005B68F0) // CONFLICT: multiple definitions at +0x158
     // +0x15C int32_t                  count  (evidence: 0x0074D800) // CONFLICT: multiple definitions at +0x15C
+    // +0x15C uint32_t field_0x15c (pointer; its +0xC dword is the shift count)  (evidence: 0x007BA200) // CONFLICT: multiple definitions at +0x15C
     // +0x15C int32_t                  field_0x15C  (evidence: 0x007648F0) // CONFLICT: multiple definitions at +0x15C
     // +0x15C uint32_t                 field_0x15C  (evidence: 0x00434A00) // CONFLICT: multiple definitions at +0x15C
     // +0x15C void*                    field_0x15c  (evidence: 0x005C3C00) // CONFLICT: multiple definitions at +0x15C
@@ -1244,6 +1246,7 @@ struct Unknown_Fields {
     // +0x160 double                   field_0x160  (evidence: 0x006D9060) // CONFLICT: multiple definitions at +0x160
     // +0x160 uint32_t*                field_0x160  (evidence: 0x0072BC70) // CONFLICT: multiple definitions at +0x160
     // +0x160 void*                    field_0x160  (evidence: 0x0046F930) // CONFLICT: multiple definitions at +0x160
+    // +0x160 uint32_t field_0x160 (pointer; its +0xC dword is the mask source)  (evidence: 0x007BA200) // CONFLICT: multiple definitions at +0x160
     // +0x160 void*                    subobject  (evidence: 0x005947B0, 0x0059D660) // CONFLICT: multiple definitions at +0x160
     // +0x164 DWORD                    field_0x164  (evidence: 0x005C39B0, 0x006D9030) // CONFLICT: multiple definitions at +0x164
     // +0x164 uint32_t                 field_0x164  (evidence: 0x007BD640, 0x007BEA10) // CONFLICT: multiple definitions at +0x164
