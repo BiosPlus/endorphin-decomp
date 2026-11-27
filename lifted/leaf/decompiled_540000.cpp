@@ -2017,3 +2017,46 @@ void* fn_0054B6D0(void* self) {
     return self;
 }
 } // namespace lift_0054B6D0
+
+// [0x00547AF0] sub_00547AF0 (124 bytes)
+namespace lift_00547AF0 {
+// Known callee 0x00547AD0: Unknown::VirtualLookupEqualsGlobalKey (Looks up a global key via virtual slot 7 and compares the resulting std::string against that same key.)
+extern BOOLEAN ext_00547AD0(void* self);
+// Known callee 0x005CFEC0: Unknown::transformAndDispatch_005CFEC0 (Returns early if flag +0x1F1 is set; otherwise fetches a 4x4 matrix from the embedded object's vtable slot 5, derives a transformed point via sub_0053B470 and Vector4Add, then calls vtable slot 0 of the embedded object with the matrix buffer and global mem_00B40644.)
+extern void ext_005CFEC0(void* self, int edx_unused, const float* a);
+
+// @name Unknown::forwardOrStoreVec4_00547AF0
+// @class Unknown
+// @summary If embedded object at +0xA0 exists, forward arg to it; otherwise optionally store a 4-float vector at +0x80 and notify via vtable slot 17, or pass it to vtable slot 18 when flag==1.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x80 float vec4_x
+// @field Unknown +0x84 float vec4_y
+// @field Unknown +0x88 float vec4_z
+// @field Unknown +0x8C float vec4_w
+// @field Unknown +0xA0 void* embedded
+void fn_00547AF0(void* self, const float* a, int flag) {
+    void* embedded = lift_field<void*>(self, 0xA0);
+    if (embedded != nullptr) {
+        ext_005CFEC0(embedded, 0, a);
+        return;
+    }
+
+    void** vtbl = lift_field<void**>(self, 0);
+
+    if (flag != 0 && !ext_00547AD0(self)) {
+        if (flag == 1) {
+            using SlotWithArg = void (*)(void*, const float*);
+            reinterpret_cast<SlotWithArg>(vtbl[0x48 / sizeof(void*)])(self, a);
+        }
+        return;
+    }
+
+    lift_field<float>(self, 0x80) = a[0];
+    lift_field<float>(self, 0x84) = a[1];
+    lift_field<float>(self, 0x88) = a[2];
+    lift_field<float>(self, 0x8C) = a[3];
+
+    using SlotNoArg = void (*)(void*);
+    reinterpret_cast<SlotNoArg>(vtbl[0x44 / sizeof(void*)])(self);
+}
+} // namespace lift_00547AF0

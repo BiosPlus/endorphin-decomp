@@ -28171,6 +28171,13 @@
     "summary": "Looks up a global key via virtual slot 7 and compares the resulting std::string against that same key.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00547AF0": {
+    "name": "Unknown::forwardOrStoreVec4_00547AF0",
+    "class": "Unknown",
+    "signature": "void fn_00547AF0(void* self, const float* a, int flag)",
+    "summary": "If embedded object at +0xA0 exists, forward arg to it; otherwise optionally store a 4-float vector at +0x80 and notify via vtable slot 17, or pass it to vtable slot 18 when flag==1.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00547B70": {
     "name": "Unknown::applyXRotation_00547B70",
     "class": "Unknown",
