@@ -281,3 +281,175 @@ void __stdcall fn_007F4330(
     }
 }
 } // namespace lift_007F4330
+
+// [0x007F3BA0]
+namespace lift_007F3BA0 {
+extern void ext_007F2F80();
+extern void ext_007F3F00();
+extern void ext_007F4160();
+
+// @name MdtArthur::arthurSolver_sse::vfunc_0
+// @class MdtArthur::arthurSolver_sse
+// @summary SSE-accelerated Arthur solver step accumulating and updating 4-wide vector blocks
+void __stdcall MdtArthur_arthurSolver_sse_vfunc_0(
+    void* arg0,
+    int32_t arg1,
+    uint32_t arg2,
+    const void* arg_struct_00,
+    const void* arg_struct_04,
+    const void* arg_struct_08,
+    const void* arg_struct_0c,
+    const void* arg_struct_10,
+    const void* arg_struct_14,
+    const void* arg_struct_18,
+    const void* arg_struct_1c,
+    const void* arg_struct_20,
+    const void* arg_struct_24,
+    const int32_t* arg_struct_28,
+    const void* arg_struct_2c,
+    const void* arg_struct_30,
+    const void* arg_struct_34,
+    const void* arg_struct_38,
+    const void* arg_struct_3c,
+    const void* arg_struct_40,
+    const void* arg_struct_44,
+    const void* arg_struct_48,
+    const int32_t* arg_struct_4c,
+    const void* arg_struct_50,
+    const void* arg_struct_54,
+    const void* arg_struct_58,
+    const void* arg_struct_5c,
+    const void* arg_struct_60,
+    const void* arg_struct_64,
+    const void* arg_struct_68,
+    const void* arg_struct_6c,
+    int32_t arg_struct_70,
+    const void* arg_struct_74,
+    const void* arg_struct_78,
+    const __m128* arg_90,
+    const void* arg_94,
+    const void* arg_98,
+    const __m128* arg_9c,
+    const void* arg_a0,
+    const void* arg_a4,
+    const __m128* arg_a8,
+    const void* arg_ac,
+    const void* arg_b0,
+    const uint8_t* arg_b4,
+    const void* arg_b8,
+    const void* arg_bc,
+    const float* arg_c0,
+    const void* arg_c4,
+    const void* arg_c8,
+    float arg_cc,
+    float arg_d0)
+{
+    (void)arg2;
+    (void)ext_007F2F80;
+    (void)ext_007F3F00;
+    (void)ext_007F4160;
+    (void)arg_struct_04; (void)arg_struct_08; (void)arg_struct_0c;
+    (void)arg_struct_10; (void)arg_struct_14; (void)arg_struct_18; (void)arg_struct_1c;
+    (void)arg_struct_20; (void)arg_struct_24; (void)arg_struct_2c; (void)arg_struct_30;
+    (void)arg_struct_34; (void)arg_struct_38; (void)arg_struct_3c; (void)arg_struct_40;
+    (void)arg_struct_44; (void)arg_struct_48; (void)arg_struct_50; (void)arg_struct_54;
+    (void)arg_struct_58; (void)arg_struct_5c; (void)arg_struct_60; (void)arg_struct_64;
+    (void)arg_struct_68; (void)arg_struct_6c; (void)arg_struct_74; (void)arg_struct_78;
+    (void)arg_94; (void)arg_98; (void)arg_a0; (void)arg_a4;
+    (void)arg_ac; (void)arg_b0; (void)arg_b8; (void)arg_bc;
+    (void)arg_c4; (void)arg_c8;
+
+    __m128* out = reinterpret_cast<__m128*>(arg0);
+    int32_t n_vec = arg1 / 4;
+    if (n_vec != 0) {
+        __m128 zero = _mm_setzero_ps();
+        for (int32_t i = 0; i < n_vec; ++i) {
+            out[i] = zero;
+        }
+    }
+
+    int32_t outer_count = arg_struct_70;
+    if (outer_count != 0) {
+        const int32_t* ebx_ptr = arg_struct_4c;
+        const float* eax_ptr = arg_c0;
+        const uint8_t* esi_ptr = arg_b4 + 0x20;
+        const int32_t* idx_ptr = arg_struct_28;
+        uint8_t* base_ptr = reinterpret_cast<uint8_t*>(const_cast<void*>(arg_struct_00));
+        int32_t edx_idx = 0;
+
+        for (int32_t outer = 0; outer < outer_count; ++outer) {
+            int32_t inner_count = *ebx_ptr;
+            if (inner_count != 0) {
+                uint8_t* ecx_ptr = base_ptr + edx_idx * 96 + 0x20;
+                for (int32_t edi = 0; edi < inner_count; ++edi) {
+                    __m128 xmm0 = _mm_load_ps(eax_ptr);
+                    __m128 xmm1 = _mm_load_ps(eax_ptr + 4);
+                    __m128 xmm3 = _mm_load_ps(reinterpret_cast<const float*>(ecx_ptr - 0x10));
+                    __m128 xmm4 = _mm_load_ps(reinterpret_cast<const float*>(ecx_ptr - 0x20));
+
+                    int32_t idx = idx_ptr[edi];
+
+                    __m128 xmm2 = _mm_mul_ps(_mm_shuffle_ps(xmm0, xmm0, 0x55), xmm3);
+                    xmm2 = _mm_add_ps(xmm2, _mm_mul_ps(_mm_shuffle_ps(xmm0, xmm0, 0x00), xmm4));
+                    xmm2 = _mm_add_ps(xmm2, _mm_mul_ps(_mm_shuffle_ps(xmm0, xmm0, 0xaa), _mm_load_ps(reinterpret_cast<const float*>(ecx_ptr))));
+                    xmm2 = _mm_add_ps(xmm2, _mm_mul_ps(_mm_shuffle_ps(xmm1, xmm1, 0x00), _mm_load_ps(reinterpret_cast<const float*>(ecx_ptr + 0x10))));
+                    xmm2 = _mm_add_ps(xmm2, _mm_mul_ps(_mm_shuffle_ps(xmm1, xmm1, 0x55), _mm_load_ps(reinterpret_cast<const float*>(ecx_ptr + 0x20))));
+                    xmm2 = _mm_add_ps(xmm2, _mm_mul_ps(_mm_shuffle_ps(xmm1, xmm1, 0xaa), _mm_load_ps(reinterpret_cast<const float*>(ecx_ptr + 0x30))));
+
+                    out[idx] = _mm_add_ps(xmm2, out[idx]);
+
+                    __m128 s0 = _mm_load_ps(reinterpret_cast<const float*>(esi_ptr - 0x20));
+                    __m128 s0_w = _mm_shuffle_ps(s0, s0, 0xff);
+                    _mm_store_ps(reinterpret_cast<float*>(ecx_ptr - 0x20), _mm_mul_ps(_mm_load_ps(reinterpret_cast<const float*>(ecx_ptr - 0x20)), s0_w));
+                    _mm_store_ps(reinterpret_cast<float*>(ecx_ptr - 0x10), _mm_mul_ps(_mm_load_ps(reinterpret_cast<const float*>(ecx_ptr - 0x10)), s0_w));
+                    _mm_store_ps(reinterpret_cast<float*>(ecx_ptr), _mm_mul_ps(_mm_load_ps(reinterpret_cast<const float*>(ecx_ptr)), s0_w));
+
+                    __m128 c1 = _mm_load_ps(reinterpret_cast<const float*>(ecx_ptr + 0x10));
+                    __m128 c2 = _mm_load_ps(reinterpret_cast<const float*>(ecx_ptr + 0x20));
+                    __m128 c3 = _mm_load_ps(reinterpret_cast<const float*>(ecx_ptr + 0x30));
+
+                    __m128 s0_x = _mm_shuffle_ps(s0, s0, 0x00);
+                    __m128 s0_y = _mm_shuffle_ps(s0, s0, 0x55);
+                    __m128 s0_z = _mm_shuffle_ps(s0, s0, 0xaa);
+
+                    __m128 s1 = _mm_load_ps(reinterpret_cast<const float*>(esi_ptr - 0x10));
+                    __m128 s1_y = _mm_shuffle_ps(s1, s1, 0x55);
+                    __m128 s1_z = _mm_shuffle_ps(s1, s1, 0xaa);
+
+                    __m128 s2 = _mm_load_ps(reinterpret_cast<const float*>(esi_ptr));
+                    __m128 s2_z = _mm_shuffle_ps(s2, s2, 0xaa);
+
+                    __m128 new_c1 = _mm_add_ps(_mm_mul_ps(s0_z, c3), _mm_add_ps(_mm_mul_ps(s0_y, c2), _mm_mul_ps(s0_x, c1)));
+                    __m128 new_c2 = _mm_add_ps(_mm_add_ps(_mm_mul_ps(s1_y, c2), _mm_mul_ps(s0_y, c1)), _mm_mul_ps(s1_z, c3));
+                    __m128 new_c3 = _mm_add_ps(_mm_mul_ps(s2_z, c3), _mm_add_ps(_mm_mul_ps(s1_z, c2), _mm_mul_ps(s0_z, c1)));
+
+                    _mm_store_ps(reinterpret_cast<float*>(ecx_ptr + 0x10), new_c1);
+                    _mm_store_ps(reinterpret_cast<float*>(ecx_ptr + 0x20), new_c2);
+                    _mm_store_ps(reinterpret_cast<float*>(ecx_ptr + 0x30), new_c3);
+
+                    edx_idx += 1;
+                    ecx_ptr += 0x60;
+                }
+            }
+            idx_ptr += *ebx_ptr;
+            eax_ptr += 8;
+            esi_ptr += 0x30;
+            ebx_ptr += 1;
+        }
+    }
+
+    if (n_vec != 0) {
+        __m128 inv = _mm_set1_ps(arg_cc);
+        __m128 rcp = _mm_rcp_ps(inv);
+        __m128 nr = _mm_mul_ps(_mm_mul_ps(rcp, inv), rcp);
+        __m128 scale = _mm_sub_ps(_mm_add_ps(rcp, rcp), nr);
+        __m128 add_val = _mm_set1_ps(arg_d0);
+
+        for (int32_t i = 0; i < n_vec; ++i) {
+            __m128 t = _mm_mul_ps(_mm_add_ps(arg_90[i], add_val), arg_a8[i]);
+            __m128 res = _mm_sub_ps(_mm_mul_ps(_mm_sub_ps(arg_9c[i], _mm_mul_ps(t, scale)), scale), out[i]);
+            out[i] = res;
+        }
+    }
+}
+} // namespace lift_007F3BA0

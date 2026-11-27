@@ -1,0 +1,14 @@
+{
+  "va": "0x007F3BA0",
+  "size": 854,
+  "orig_symbol": "MdtArthur::arthurSolver_sse::vfunc_0",
+  "src_path": "src/MdtArthur/arthurSolver_sse.cpp",
+  "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp",
+  "name": "MdtArthur::arthurSolver_sse::vfunc_0",
+  "class": "MdtArthur::arthurSolver_sse",
+  "signature": "void __stdcall MdtArthur_arthurSolver_sse_vfunc_0( void* arg0, int32_t arg1, uint32_t arg2, const void* arg_struct_00, const void* arg_struct_04, const void* arg_struct_08, const void* arg_struct_0c, const void* arg_struct_10, const void* arg_struct_14, const void* arg_struct_18, const void* arg_struct_1c, const void* arg_struct_20, const void* arg_struct_24, const int32_t* arg_struct_28, const void* arg_struct_2c, const void* arg_struct_30, const void* arg_struct_34, const void* arg_struct_38, const void* arg_struct_3c, const void* arg_struct_40, const void* arg_struct_44, const void* arg_struct_48, const int32_t* arg_struct_4c, const void* arg_struct_50, const void* arg_struct_54, const void* arg_struct_58, const void* arg_struct_5c, const void* arg_struct_60, const void* arg_struct_64, const void* arg_struct_68, const void* arg_struct_6c, int32_t arg_struct_70, const void* arg_struct_74, const void* arg_struct_78, const __m128* arg_90, const void* arg_94, const void* arg_98, const __m128* arg_9c, const void* arg_a0, const void* arg_a4, const __m128* arg_a8, const void* arg_ac, const void* arg_b0, const uint8_t* arg_b4, const void* arg_b8, const void* arg_bc, const float* arg_c0, const void* arg_c4, const void* arg_c8, float arg_cc, float arg_d0)",
+  "summary": "SSE-accelerated Arthur solver step accumulating and updating 4-wide vector blocks",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:15:20Z"
+}
