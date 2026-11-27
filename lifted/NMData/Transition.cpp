@@ -254,3 +254,21 @@ void __thiscall fn_004997E0(void* self, const void* value, uint32_t index) {
     ext_004996E0(self);
 }
 } // namespace lift_004997E0
+
+// [0x00499D00] NMData::Transition::vfunc_31 (30 bytes)
+namespace lift_00499D00 {
+// Callee sub_00505F00: thiscall (ecx = receiver), one stack argument, callee-cleans (ret 4).
+extern uint32_t ext_00505F00(void* self, void* arg);
+// Callee sub_004996E0: thiscall (ecx = receiver), no stack arguments.
+extern uint32_t ext_004996E0(void* self);
+
+// @name NMData::Transition::vfunc_31
+// @class NMData::Transition
+// @summary Passes the stack argument to ext_00505F00 with this+0x84 as receiver, then forwards this to ext_004996E0 and returns its result.
+// @field NMData::Transition +0x84 void* field_0x84
+uint32_t fn_00499D00(void* self, void* a1) {
+    void* sub = static_cast<uint8_t*>(self) + 0x84;
+    ext_00505F00(sub, a1);
+    return ext_004996E0(self);
+}
+} // namespace lift_00499D00

@@ -11,7 +11,7 @@
 namespace lifted_layout {
 struct NMData_Transition_Fields {
     // +0x60  uint8_t                  field_0x60  (evidence: 0x004991A0)
-    // +0x84  void*                    field_0x84  (evidence: 0x004991A0, 0x00499CE0)
+    // +0x84  void*                    field_0x84  (evidence: 0x004991A0, 0x00499CE0, 0x00499D00)
     // +0x88  float*                   field_0x88  (evidence: 0x00499830) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint8_t*                 field_0x88  (evidence: 0x004997E0) // CONFLICT: multiple definitions at +0x88
     // +0x88  void*                    field_0x88  (evidence: 0x00497680, 0x004991A0) // CONFLICT: multiple definitions at +0x88

@@ -1,0 +1,22 @@
+{
+  "va": "0x00499D00",
+  "size": 30,
+  "orig_symbol": "NMData::Transition::vfunc_31",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_31",
+  "class": "NMData::Transition",
+  "signature": "uint32_t fn_00499D00(void* self, void* a1)",
+  "summary": "Passes the stack argument to ext_00505F00 with this+0x84 as receiver, then forwards this to ext_004996E0 and returns its result.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x84",
+      "type": "void*",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:40:04Z"
+}

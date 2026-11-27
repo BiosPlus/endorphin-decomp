@@ -14604,6 +14604,13 @@
     "summary": "Forwards the first argument as the receiver to ext_00505F00, passing the address of the sub-object at this+0x84 as its stack argument, and returns the callee's result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x00499D00": {
+    "name": "NMData::Transition::vfunc_31",
+    "class": "NMData::Transition",
+    "signature": "uint32_t fn_00499D00(void* self, void* a1)",
+    "summary": "Passes the stack argument to ext_00505F00 with this+0x84 as receiver, then forwards this to ext_004996E0 and returns its result.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x0049A930": {
     "name": "Unknown::lookupStringKeyedValue_0049A930",
     "class": "Unknown",
@@ -32001,6 +32008,13 @@
     "summary": "Constructor setting vtable 0x0094F484, initializing two 32-bit fields and a std::string at +0x0C",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x005246E0": {
+    "name": "NMData::NetworkConnectorData::vfunc_22",
+    "class": "NMData::NetworkConnectorData",
+    "signature": "int __thiscall fn_005246E0(void* self, void* arg0)",
+    "summary": "Serializes/interprets NetworkConnectorData fields (name at +0xa4, fields at +0x38 and +0x4c) and delegates to Interpreter::vfunc_22",
+    "lifted_path": "lifted/NMData/NetworkConnectorData.cpp"
+  },
   "0x00524750": {
     "name": "sub_00524750",
     "signature": "void* fn_00524750()",
@@ -42501,6 +42515,13 @@
     "signature": "uintptr_t NMData_CharacterData_vfunc_34_off_4(void* self)",
     "summary": "Looks up a handle via the object at this+0x04, stores this+0x4F4 into the result's +0x20, links the result back to this+0x0C, and returns the result.",
     "lifted_path": "lifted/NMData/CharacterData.cpp"
+  },
+  "0x0059F420": {
+    "name": "NMData::BackGroundData::vfunc_12_off_10",
+    "class": "NMData::BackGroundData",
+    "signature": "uint8_t __thiscall fn_0059F420(void* self, void* arg0, void* arg1)",
+    "summary": "Removes this object's TransformNode from arg1's dword range and notifies field_0x5f8 if not active",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
   "0x0059F490": {
     "name": "NMData::BackGroundData::vfunc_14_off_4",
@@ -78957,6 +78978,13 @@
     "signature": "DWORD* __thiscall fn_0069A1C0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x0069A1F0": {
+    "name": "ExprParser::ExpressionContainer::vfunc_2",
+    "class": "ExprParser::ExpressionContainer",
+    "signature": "void* __thiscall fn_0069A1F0(void* self, void* out, uint32_t key)",
+    "summary": "Looks up an expression entry by key and initializes the output handle with the matching element or an empty handle.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainer.cpp"
   },
   "0x0069A260": {
     "name": "sub_0069A260",
