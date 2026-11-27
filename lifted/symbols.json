@@ -4552,6 +4552,13 @@
     "summary": "Look up a 32-bit signed key in an embedded MSVC-style red-black tree at this+0xa4 and return the node value, or 0 if absent",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043DD60": {
+    "name": "Unknown::clampAndDispatchFloatPair",
+    "class": "Unknown",
+    "signature": "void fn_0043DD60(void* self, double arg1, double arg2)",
+    "summary": "Clamps arg1 to \u003e= -1 and arg2 to [10, 100000], stores both as doubles at +0xE8/+0xF0, then passes them as a float pair to the sub-object at +0x13C.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043DDF0": {
     "name": "Unknown::updateRangeAndDispatch",
     "class": "Unknown",

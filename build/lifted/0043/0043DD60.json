@@ -1,0 +1,28 @@
+{
+  "va": "0x0043DD60",
+  "size": 134,
+  "orig_symbol": "sub_0043DD60",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::clampAndDispatchFloatPair",
+  "class": "Unknown",
+  "signature": "void fn_0043DD60(void* self, double arg1, double arg2)",
+  "summary": "Clamps arg1 to \u003e= -1 and arg2 to [10, 100000], stores both as doubles at +0xE8/+0xF0, then passes them as a float pair to the sub-object at +0x13C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xE8",
+      "type": "double",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "double",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:24:04Z"
+}

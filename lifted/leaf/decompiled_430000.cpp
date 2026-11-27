@@ -5190,3 +5190,45 @@ extern void fn_00432640(void) {
     }
 }
 } // namespace lift_00432640
+
+// [0x0043DD60] sub_0043DD60 (134 bytes)
+namespace lift_0043DD60 {
+// Known callee 0x00466BA0: DispatchRangeWithDefault (Dispatches arg1 (or self->+0x24 when arg1 is 0) to every object pointer in the [+0x18, +0x1C) range, then forwards arg2 to ext_00678D70.)
+extern void ext_00466BA0(void* self, uint32_t arg1, uint32_t arg2);
+
+// Rodata constants loaded by the original code.
+extern const double mem_00993830; // -1
+extern const double mem_00996B98; // 10
+extern const double mem_009320F0; // 100000
+
+// @name Unknown::clampAndDispatchFloatPair
+// @class Unknown
+// @summary Clamps arg1 to >= -1 and arg2 to [10, 100000], stores both as doubles at +0xE8/+0xF0, then passes them as a float pair to the sub-object at +0x13C.
+// @field Unknown +0xE8 double field_0xE8
+// @field Unknown +0xF0 double field_0xF0
+void fn_0043DD60(void* self, double arg1, double arg2) {
+    // arg1: clamp lower bound -1 (NaN passes through unchanged).
+    const double lo1 = mem_00993830;
+    const double c1 = (arg1 < lo1) ? lo1 : arg1;
+
+    // arg2: clamp to [10, 100000]; NaN maps to the upper bound.
+    const double lo2 = mem_00996B98;
+    const double hi2 = mem_009320F0;
+    double c2;
+    if (lo2 > arg2) {
+        c2 = lo2;
+    } else if (!(arg2 <= hi2)) {
+        c2 = hi2;
+    } else {
+        c2 = arg2;
+    }
+
+    lift_field<double>(self, 0xE8) = c1;
+    lift_field<double>(self, 0xF0) = c2;
+
+    // Pass the two values as a contiguous float pair (x87 fstp dword) to the sub-object.
+    float pair[2] = {static_cast<float>(c1), static_cast<float>(c2)};
+    void* sub = static_cast<uint8_t*>(self) + 0x13C;
+    ext_00466BA0(sub, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(pair)), 0u);
+}
+} // namespace lift_0043DD60
