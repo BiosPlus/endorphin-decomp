@@ -3909,3 +3909,31 @@ bool fn_006D4BA0(void* self, uint32_t item) {
     return true;
 }
 } // namespace lift_006D4BA0
+
+// [0x006D59C0] sub_006D59C0 (122 bytes)
+namespace lift_006D59C0 {
+// Known callee 0x006B9D10: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+extern void* ext_006B9D10(void* self);
+// Known callee 0x006E73B0: Unknown::initWithArgs_006E73B0 (Initializes the sub-object at +0x08, stores two constructor arguments at +0x04 and +0x54, runs the reset helper, and returns this.)
+extern void* ext_006E73B0(void* self, DWORD arg1, DWORD arg2);
+
+// @name Unknown::initWithSubobjectAndArg_006D59C0
+// @class Unknown
+// @summary Sets the vtable, initializes the sub-object at +0x04, initializes members at +0x5C and +0xB0, stores the single stack argument at +0xA8 (zeroing +0xAC), and returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x5C DWORD field_0x5C
+// @field Unknown +0xA8 DWORD field_0xA8
+// @field Unknown +0xAC DWORD field_0xAC
+// @field Unknown +0xB0 DWORD field_0xB0
+void* fn_006D59C0(void* self, DWORD arg) {
+    // Original MSVC SEH frame (fs:[0] push/restore, EH state slots) is omitted; it has no portable equivalent.
+    auto* base = static_cast<uint8_t*>(self);
+    ext_006E73B0(base + 0x04, 0x00AA8E88u, 0x0Bu);
+    ext_006B9D10(base + 0x5C);
+    lift_field<DWORD>(self, 0xA8) = arg;
+    lift_field<DWORD>(self, 0xAC) = 0;
+    ext_006B9D10(base + 0xB0);
+    lift_field<DWORD>(self, 0x00) = 0x0099393Cu;
+    return self;
+}
+} // namespace lift_006D59C0
