@@ -1,0 +1,13 @@
+{
+  "va": "0x007BB140",
+  "size": 143,
+  "orig_symbol": "sub_007BB140",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "fn_007BB140",
+  "signature": "int32_t fn_007BB140(double x, uint32_t y)",
+  "summary": "Maps a double x to an int: 1023 for x \u003e= 15.742, 0 for x \u003c= 0.00024283 (or NaN); otherwise",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:14:24Z"
+}

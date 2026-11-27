@@ -16,6 +16,7 @@ extern const uint8_t mem_007B7084[12] = {
 #include <cstdlib>
 #include <bit>
 #include <cstdio>
+#include <cmath>
 
 // [0x007B5224] sub_007B5224 (16 bytes)
 namespace lift_007B5224 {
@@ -2353,3 +2354,50 @@ void fn_007B2C20(void** slot) {
     lift_field<uint8_t>(block, 0x19) = flag;
 }
 } // namespace lift_007B2C20
+
+// [0x007BB140] sub_007BB140 (143 bytes)
+namespace lift_007BB140 {
+// Known callee 0x007AA510: sub_007AA510 (metadata reference only; not called by this function's asm).
+extern void ext_007AA510();
+// Data references from original asm metadata (not dereferenced by this function's code path).
+extern int mem_00925208;
+extern int mem_009252B4;
+extern int mem_00B61219;
+
+// @name fn_007BB140
+// @summary Maps a double x to an int: 1023 for x >= 15.742, 0 for x <= 0.00024283 (or NaN); otherwise
+//          64*(log2(x)+12), truncated, optionally jittered by rand()/32768 - 0.5 when y != 0.
+// Original asm calls:
+//   ext_00872828 (IAT thunk to MSVCR80!_ftol)  -> replaced by a truncating int64 cast (low 32 bits, as eax).
+//   mem_009252B4 (IAT slot for MSVCR80!rand)   -> replaced by std::rand() (same CRT function).
+// Original rdata constants are inlined as literals (15.742, 0.00024283, 1/ln2, 12, 64, 1/32768, 0.5).
+int32_t fn_007BB140(double x, uint32_t y) {
+    (void)&ext_007AA510;
+    (void)&mem_00925208;
+    (void)&mem_009252B4;
+    (void)&mem_00B61219;
+
+    // fcomp x, 15.742 ; jne -> continue when x < 15.742 or unordered; else return 1023.
+    if (!(x >= 15.742)) {
+        // fcomp x, 0.00024283 ; return 0 when x <= c or unordered.
+        if (!(x > 0.00024283)) {
+            return 0;
+        }
+    } else {
+        return 1023;
+    }
+
+    // ln(x) * (1/ln2) == log2(x); T = (log2(x) + 12) * 64.
+    const double log2x = std::log(x) * 1.4426950408889634;
+    const double t = (log2x + 12.0) * 64.0;
+
+    if (y == 0) {
+        // ftol(T): truncate toward zero, keep low 32 bits.
+        return static_cast<int32_t>(static_cast<int64_t>(t));
+    }
+
+    // rand() * (1/32768) + T - 0.5, truncated.
+    const double r = static_cast<double>(std::rand()) * 3.051850947599719e-05;
+    return static_cast<int32_t>(static_cast<int64_t>((r + t) - 0.5));
+}
+} // namespace lift_007BB140
