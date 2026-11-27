@@ -67,6 +67,7 @@ void __thiscall fn_004A9C60(void* self, uint32_t arg) {
     uint32_t field_0x168 = lift_field<uint32_t>(self, 0x168);
     ext_0047D300(mem_00AE29D0, field_0x168);
 }
+#include <cstdint>
 
 // [0x004A9C90] NMData::BehaviourData::vfunc_73 (35 bytes)
 // @name NMData::BehaviourData::vfunc_73
@@ -792,3 +793,129 @@ void __thiscall fn_004ABAE0(void* self, int32_t arg0) {
     ext_00660D40(guard1);
 }
 } // namespace lift_004ABAE0
+
+// [0x004AD080]
+namespace lift_004AD080 {
+// @name NMData::BehaviourData::vfunc_21
+// @class NMData::BehaviourData
+// @summary Loads BehaviourData properties, target selection, and named sub-properties from XML/data node.
+// @field NMData::BehaviourData +0x00 void** vptr
+// @field NMData::BehaviourData +0x168 void* field_0x168
+// @field NMData::BehaviourData +0x180 void* field_0x180
+// @field NMData::BehaviourData +0x304 int32_t field_0x304
+// @field NMData::BehaviourData +0x30C std::string field_0x30c
+// @field NMData::BehaviourData +0x328 std::string field_0x328
+// @field NMData::BehaviourData +0x368 void** field_0x368
+
+void __thiscall ext_004C24C0(void* self, void* node);
+uint32_t __thiscall ext_0063F530(void* self, const void* name, uint32_t a, uint32_t b);
+uint32_t __thiscall ext_0063EFE0(void* self, const void* name);
+void __cdecl ext_004275E0(void* dst, void* obj);
+void __cdecl ext_0053F5F0(int32_t* out, uint32_t* prop);
+void __thiscall ext_004AC270(void* self);
+void __cdecl ext_0049FE40(uint32_t val, void* vec, uint32_t tag, uint32_t flag);
+uint32_t __thiscall ext_004ABFF0(void* self, const char* name);
+void __thiscall ext_00685AE0(void* self, const std::string* str);
+void __thiscall ext_00682E00(void* self, const std::string* str);
+void __thiscall ext_004EC300(void* self, std::string* str);
+
+extern const char mem_00941C04[];
+extern uint8_t mem_00B53A34[];
+extern uint8_t mem_00B53B30[];
+extern uint8_t mem_00B53AB0[];
+extern uint8_t mem_00B53A70[];
+extern uint8_t mem_00B53AF0[];
+extern uint8_t* mem_00AE29D0;
+extern uint32_t mem_00A9F838;
+extern uint32_t mem_00A9F480;
+extern uint32_t mem_00A9F6D4;
+extern uint32_t mem_00A9F17C;
+extern uint32_t mem_00A9F3B0;
+extern const char* mem_00ADF9BC[];
+extern const char* mem_00ADF9E0[];
+extern void* mem_00924FDC;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+static bool is_sentinel(uint32_t val) {
+    return val == static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B53A34)) ||
+           val == static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B53B30)) ||
+           val == static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B53AB0)) ||
+           val == static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B53A70)) ||
+           val == static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B53AF0));
+}
+
+static uint32_t normalize_sentinel(uint32_t val) {
+    return is_sentinel(val) ? static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B53B30)) : val;
+}
+
+void __thiscall fn_004AD080(void* self, void* node) {
+    ext_004C24C0(self, node);
+
+    uint32_t target_sel = normalize_sentinel(ext_0063F530(node, mem_00941C04, 0, 1));
+    void** obj368 = lift_field<void**>(self, 0x368);
+    using vfunc1_t = void(__thiscall*)(void*, uint32_t);
+    reinterpret_cast<vfunc1_t>(obj368[1])(reinterpret_cast<uint8_t*>(self) + 0x368, target_sel);
+
+    uint32_t name_key = mem_00A9F480;
+    if (mem_00AE29D0 != nullptr && *reinterpret_cast<int32_t*>(mem_00AE29D0 + 0x538) < 5) {
+        name_key = mem_00A9F838;
+    }
+    uint32_t str_prop = ext_0063EFE0(node, reinterpret_cast<const void*>(static_cast<uintptr_t>(name_key)));
+    ext_004275E0(reinterpret_cast<uint8_t*>(self) + 0x30C, reinterpret_cast<void*>(static_cast<uintptr_t>(str_prop)));
+
+    uint32_t int_prop = ext_0063EFE0(node, reinterpret_cast<const void*>(static_cast<uintptr_t>(mem_00A9F6D4)));
+    ext_0053F5F0(&lift_field<int32_t>(self, 0x304), &int_prop);
+
+    uint8_t* obj168 = lift_field<uint8_t*>(self, 0x168);
+    if (obj168 != nullptr) {
+        void** vtbl168 = *reinterpret_cast<void***>(obj168 + 0x4);
+        using get_str_t = const std::string*(__thiscall*)(void*);
+        const std::string* s = reinterpret_cast<get_str_t>(vtbl168[0x24 / 4])(obj168 + 0x4);
+        using str_assign_t = void*(__thiscall*)(void*, const void*);
+        reinterpret_cast<str_assign_t>(mem_00924FDC)(reinterpret_cast<uint8_t*>(self) + 0x328, s);
+    }
+
+    ext_004AC270(self);
+
+    uint32_t check_val = normalize_sentinel(
+        ext_0063F530(node, reinterpret_cast<const void*>(static_cast<uintptr_t>(mem_00A9F17C)), 0, 1));
+    if (!is_sentinel(check_val)) {
+        uint8_t* vec = lift_field<uint8_t*>(self, 0x180) + 0x11C;
+        uint32_t val2 = normalize_sentinel(
+            ext_0063F530(node, reinterpret_cast<const void*>(static_cast<uintptr_t>(mem_00A9F17C)), 0, 1));
+        ext_0049FE40(val2, vec, mem_00A9F3B0, 1);
+    }
+
+    for (const char** it = mem_00ADF9BC; it < mem_00ADF9E0; ++it) {
+        const char* prop_name = *it;
+        void* item = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_004ABFF0(self, prop_name)));
+        if (item == nullptr) {
+            continue;
+        }
+        uint32_t prop = ext_0063EFE0(node, prop_name);
+        if (!is_sentinel(prop)) {
+            void* prop_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(prop));
+            void** prop_vtbl = *reinterpret_cast<void***>(prop_obj);
+            using get_tmp_str_t = std::string*(__thiscall*)(void*, std::string*);
+            using str_dtor_t = void(__thiscall*)(void*);
+            uint8_t tmp[28];
+            reinterpret_cast<get_tmp_str_t>(prop_vtbl[2])(prop_obj, reinterpret_cast<std::string*>(tmp));
+            ext_00685AE0(item, reinterpret_cast<const std::string*>(tmp));
+            reinterpret_cast<str_dtor_t>(mem_00924FF4)(tmp);
+        }
+        using str_ctor_t = void*(__thiscall*)(void*, const char*);
+        using str_dtor_t = void(__thiscall*)(void*);
+        uint8_t name_str[28];
+        reinterpret_cast<str_ctor_t>(mem_00924FE4)(name_str, prop_name);
+        ext_00682E00(item, reinterpret_cast<const std::string*>(name_str));
+        reinterpret_cast<str_dtor_t>(mem_00924FF4)(name_str);
+    }
+
+    void** vtbl = lift_field<void**>(self, 0x0);
+    using vfunc148_t = void(__thiscall*)(void*, void*);
+    reinterpret_cast<vfunc148_t>(vtbl[0x148 / 4])(self, lift_field<void*>(self, 0x168));
+
+    ext_004EC300(lift_field<void*>(self, 0x180), &lift_field<std::string>(self, 0x328));
+}
+} // namespace lift_004AD080

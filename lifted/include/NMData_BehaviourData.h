@@ -10,7 +10,7 @@
 // Recovered field layout for NMData::BehaviourData:
 namespace lifted_layout {
 struct NMData_BehaviourData_Fields {
-    // +0x0   void**                   vptr  (evidence: 0x004A9A70, 0x004A9B70)
+    // +0x0   void**                   vptr  (evidence: 0x004A9A70, 0x004A9B70, 0x004AD080)
     // +0x4   void**                   field_0x04  (evidence: 0x004AA020)
     // +0xC   void*                    field_0x0c  (evidence: 0x004AA020)
     // +0x10  void*                    field_0x10  (evidence: 0x004ABF60)
@@ -19,9 +19,9 @@ struct NMData_BehaviourData_Fields {
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004ABAE0)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004ABAE0)
     // +0x168 uint32_t                 field_0x168  (evidence: 0x00486C20, 0x004A9C60, 0x004A9C90, 0x004ACCD0) // CONFLICT: multiple definitions at +0x168
-    // +0x168 void*                    field_0x168  (evidence: 0x004ABAE0) // CONFLICT: multiple definitions at +0x168
+    // +0x168 void*                    field_0x168  (evidence: 0x004ABAE0, 0x004AD080) // CONFLICT: multiple definitions at +0x168
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x00486C20, 0x004ABAE0)
-    // +0x180 void*                    field_0x180  (evidence: 0x004A9A70, 0x004AB9D0, 0x004ACCD0)
+    // +0x180 void*                    field_0x180  (evidence: 0x004A9A70, 0x004AB9D0, 0x004ACCD0, 0x004AD080)
     // +0x184 uint32_t                 field_0x184  (evidence: 0x004ABF60) // CONFLICT: multiple definitions at +0x184
     // +0x184 void*                    field_0x184  (evidence: 0x004ABAE0) // CONFLICT: multiple definitions at +0x184
     // +0x228 void*                    field_0x228  (evidence: 0x004A9B50)
@@ -30,13 +30,13 @@ struct NMData_BehaviourData_Fields {
     // +0x2F8 uint32_t                 field_0x2f8  (evidence: 0x004ACCD0)
     // +0x2FC uint32_t                 field_0x2fc  (evidence: 0x004ACCD0)
     // +0x300 uint32_t                 field_0x300  (evidence: 0x004ACCD0)
-    // +0x304 int32_t                  field_0x304  (evidence: 0x004AB9D0, 0x004ACCD0)
+    // +0x304 int32_t                  field_0x304  (evidence: 0x004AB9D0, 0x004ACCD0, 0x004AD080)
     // +0x308 uint32_t                 field_0x308  (evidence: 0x004ACCD0)
-    // +0x30C std::string              field_0x30c  (evidence: 0x004AB9D0, 0x004ACCD0)
-    // +0x328 std::string              field_0x328  (evidence: 0x004A9A70, 0x004ABAE0)
+    // +0x30C std::string              field_0x30c  (evidence: 0x004AB9D0, 0x004ACCD0, 0x004AD080)
+    // +0x328 std::string              field_0x328  (evidence: 0x004A9A70, 0x004ABAE0, 0x004AD080)
     // +0x360 uint8_t                  field_0x360  (evidence: 0x004ABAE0)
     // +0x364 uint8_t                  field_0x364  (evidence: 0x004ABAE0, 0x004ACCD0)
-    // +0x368 void**                   field_0x368  (evidence: 0x004AB9D0)
+    // +0x368 void**                   field_0x368  (evidence: 0x004AB9D0, 0x004AD080)
     // +0x3C8 uint8_t                  field_0x3c8  (evidence: 0x004ABAE0)
     // +0x3D0 void**                   field_0x3d0  (evidence: 0x004ABE70)
     // +0x3D4 void**                   field_0x3d4  (evidence: 0x004ABE70)
