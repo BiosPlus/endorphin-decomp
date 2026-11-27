@@ -3161,3 +3161,40 @@ void* fn_004935F0(void* self, void* out, void* first_tree, void* first_node,
     return out;
 }
 } // namespace lift_004935F0
+
+// [0x0049A7D0] sub_0049A7D0 (165 bytes)
+namespace lift_0049A7D0 {
+// Known callee 0x00475960: Vector::InsertUniqueOrThrow_00475960 (thiscall, 3 stack args: a1 string, a2 slot, a3 flag)
+extern void ext_00475960(void* self, void* a1, void** a2, int a3);
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self)
+extern void ext_0067A670(void* self);
+extern uint32_t mem_00ADD180; // init-guard flags (bit 0 = initialized/started)
+extern uint32_t mem_00ADD17C; // static object storage (first dword = vptr)
+extern uint32_t mem_00924FE4; // .rdata: std::string(const char*) import thunk address
+extern uint32_t mem_00924FF4; // .rdata: std::string dtor import thunk address
+
+// @name Unknown::insertStaticNameOrThrow_0049A7D0
+// @class Unknown
+// @summary Lazily constructs the static object at mem_00ADD17C, builds a temporary std::string from the argument, inserts it into this->[0] via ext_00475960 (throw on duplicate), and destroys the temporary.
+// @field Unknown +0x00 void* field_0x00
+void fn_0049A7D0(void* self, const char* text) {
+    // One-time construction of the static object guarded by bit 0 of mem_00ADD180.
+    if ((mem_00ADD180 & 1u) == 0) {
+        mem_00ADD180 |= 1u;
+        ext_0067A670(&mem_00ADD17C);
+        mem_00ADD17C = 0x93f434;
+    }
+
+    // Temporary string object (MSVC std::string layout, 0x18 bytes) built from text.
+    alignas(8) unsigned char str[0x18];
+    void* slot = &mem_00ADD17C;
+    using CtorFn = void (*)(void* self, const char* text);
+    using DtorFn = void (*)(void* self);
+    reinterpret_cast<CtorFn>(static_cast<uintptr_t>(mem_00924FE4))(str, text);
+
+    void* inner = lift_field<void*>(self, 0);
+    ext_00475960(inner, str, &slot, 1);
+
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str);
+}
+} // namespace lift_0049A7D0

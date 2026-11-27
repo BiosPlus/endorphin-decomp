@@ -15308,6 +15308,13 @@
     "summary": "Loads Transition data from an XML node, clamping vector pairs to minimum thresholds and zeroing vec4 at +0x84.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x0049A7D0": {
+    "name": "Unknown::insertStaticNameOrThrow_0049A7D0",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t mem_00ADD180; // init-guard flags (bit 0 = initialized/started) extern \"C\" uint32_t mem_00ADD17C; // static object storage (first dword = vptr) extern \"C\" uint32_t mem_00924FE4; // .rdata: std::string(const char*) import thunk address extern \"C\" uint32_t mem_00924FF4; // .rdata: std::string dtor import thunk address void fn_0049A7D0(void* self, const char* text)",
+    "summary": "Lazily constructs the static object at mem_00ADD17C, builds a temporary std::string from the argument, inserts it into this-\u003e[0] via ext_00475960 (throw on duplicate), and destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049A930": {
     "name": "Unknown::lookupStringKeyedValue_0049A930",
     "class": "Unknown",
