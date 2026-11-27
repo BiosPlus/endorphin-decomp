@@ -26,6 +26,7 @@ struct Element_Fields {
     // +0x10  std::string              field_0x10  (evidence: 0x00679EB0, 0x0067A670)
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x004C72D0, 0x004CF910) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  std::string              field_0x1C  (evidence: 0x00575230) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  int32_t                  field_0x1c  (evidence: 0x00660180) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  std::string              field_0x1c  (evidence: 0x00621090, 0x00621680) // CONFLICT: multiple definitions at +0x1C
     // +0x20  float                    field_0x20  (evidence: 0x00503BC0, 0x00508BC0, 0x00509C50, 0x0050C4D0) // CONFLICT: multiple definitions at +0x20
     // +0x20  std::string              field_0x20  (evidence: 0x00404EA0, 0x005567D0) // CONFLICT: multiple definitions at +0x20

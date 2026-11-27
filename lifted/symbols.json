@@ -46531,6 +46531,12 @@
     "summary": "Lazily initializes and returns a static std::string singleton",
     "lifted_path": "lifted/classes/CalibrationManager.cpp"
   },
+  "0x00660180": {
+    "name": "buildHeapHalf",
+    "signature": "void fn_00660180(uint8_t* begin, uint8_t* end)",
+    "summary": "Loops over the first half of a 32-byte-record array (n/2-1 down to 0), copying each record and calling sub_0065FE50(begin, j, n) for sift-down style reordering.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006601E0": {
     "name": "sub_006601E0_dtor",
     "signature": "void __thiscall sub_006601E0(void* self)",

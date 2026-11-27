@@ -1,0 +1,21 @@
+{
+  "va": "0x00660180",
+  "size": 91,
+  "orig_symbol": "sub_00660180",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "buildHeapHalf",
+  "signature": "void fn_00660180(uint8_t* begin, uint8_t* end)",
+  "summary": "Loops over the first half of a 32-byte-record array (n/2-1 down to 0), copying each record and calling sub_0065FE50(begin, j, n) for sift-down style reordering.",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:45:41Z"
+}

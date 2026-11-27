@@ -2578,3 +2578,34 @@ void fn_00660710(void* first, void* last) {
     } while (static_cast<int32_t>(reinterpret_cast<uintptr_t>(p) + 0x20 - first_addr) >> 5 > 1);
 }
 } // namespace lift_00660710
+
+// [0x00660180] sub_00660180 (91 bytes)
+namespace lift_00660180 {
+// Known callee 0x0065FE50: sub_0065FE50 (252 bytes, cdecl: begin, index, count).
+extern void ext_0065FE50(uint8_t* begin, int32_t index, int32_t count);
+
+// Import slot 0x00924FE0 (MSVCP80): std::string copy constructor, thiscall(this, const string&).
+// Called through the IAT pointer, so it is modelled as a function-pointer global.
+extern void (__thiscall* mem_00924FE0)(void* self, const void* src);
+
+// Heapify-style loop: for j = n/2-1 down to 0, copy element j (32-byte records)
+// into a temporary and call sub_0065FE50(begin, j, n), where n = (end - begin) / 32.
+// @name buildHeapHalf
+// @summary Loops over the first half of a 32-byte-record array (n/2-1 down to 0), copying each record and calling sub_0065FE50(begin, j, n) for sift-down style reordering.
+// @field Element +0x1C int32_t field_0x1c
+void fn_00660180(uint8_t* begin, uint8_t* end) {
+    const int32_t n = static_cast<int32_t>(end - begin) / 32;  // sar 5, signed
+    const int32_t half = n / 2;                                   // sign-corrected sar 1
+
+    for (int32_t j = half - 1; j >= 0; --j) {
+        uint8_t* elem = begin + static_cast<ptrdiff_t>(j) * 32;
+
+        // Temporary record: std::string copy (first 0x1C bytes) + int at +0x1C.
+        alignas(8) uint8_t tmp[0x20];
+        mem_00924FE0(tmp, elem);
+        lift_field<int32_t>(tmp, 0x1C) = lift_field<int32_t>(elem, 0x1C);
+
+        ext_0065FE50(begin, j, n);
+    }
+}
+} // namespace lift_00660180
