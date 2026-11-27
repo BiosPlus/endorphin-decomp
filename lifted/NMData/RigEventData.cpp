@@ -590,3 +590,195 @@ void* fn_004D4310(void* self, void* out) {
     return out;
 }
 } // namespace lift_004D4310
+
+// [0x004DBE80]
+namespace lift_004DBE80 {
+// @name NMData::RigEventData::vfunc_21
+// @class NMData::RigEventData
+// @summary Loads RigEventData properties from XML/data node, resolves rig/joint/event references, and updates selection/dirty state.
+// @field NMData::RigEventData +0x04 void* field_0x04
+// @field NMData::RigEventData +0x14 std::string field_0x14
+// @field NMData::RigEventData +0x16C void* field_0x16C
+// @field NMData::RigEventData +0x170 void* field_0x170
+// @field NMData::RigEventData +0x180 void* field_0x180
+// @field NMData::RigEventData +0x188 uint8_t field_0x188
+// @field NMData::RigEventData +0x190 uint8_t field_0x190
+// @field NMData::RigEventData +0x191 uint8_t field_0x191
+// @field NMData::RigEventData +0x192 uint8_t field_0x192
+// @field NMData::RigEventData +0x193 uint8_t field_0x193
+// @field NMData::RigEventData +0x194 uint8_t field_0x194
+// @field NMData::RigEventData +0x195 uint8_t field_0x195
+// @field NMData::RigEventData +0x198 float field_0x198
+// @field NMData::RigEventData +0x19C uint8_t field_0x19C
+// @field NMData::RigEventData +0x340 int32_t field_0x340
+// @field NMData::RigEventData +0x344 int32_t field_0x344
+// @field NMData::RigEventData +0x394 uint32_t field_0x394
+// @field NMData::RigEventData +0x398 uint8_t field_0x398
+// @field NMData::RigEventData +0x3E8 uint8_t field_0x3E8
+// @field NMData::RigEventData +0x400 void* field_0x400
+// @field NMData::RigEventData +0x438 uint8_t field_0x438
+// @field NMData::RigEventData +0x43C int32_t field_0x43C
+// @field NMData::RigEventData +0x440 uint32_t field_0x440
+
+
+void __thiscall ext_004C24C0(void* self, void* arg);
+void __thiscall ext_004DA180(void* self, uint32_t count, std::string val);
+void __thiscall ext_004EE590(void* self, void* str_ptr);
+uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+void __cdecl ext_004275E0(void* dst, void* obj);
+void __thiscall ext_004DA510(void* self);
+int32_t __thiscall ext_004D8C30(void* self, void* str_ptr);
+void* __thiscall ext_0047A4A0(void* self, void* str_ptr);
+void __thiscall ext_004D42A0(void* self, void* arg);
+uint32_t __thiscall ext_004D8D70(void* self, void* str_ptr);
+uint32_t __thiscall ext_004D4190(void* self);
+std::string* __thiscall ext_004D4060(void* self, std::string* out);
+void __thiscall ext_004DB940(void* self, void* str_ptr);
+void __cdecl ext_00427640(void* out, void* obj_ptr);
+void __cdecl ext_0046C0A0(void* out, void* obj_ptr);
+void __cdecl ext_0053F5F0(void* out, void* obj_ptr);
+void __thiscall ext_004D3940(void* self, std::string val);
+void __thiscall ext_00587920(void* self, void* arg0, uint32_t arg1);
+void __thiscall ext_00586300(void* self, uint32_t arg0, void* arg1, void* arg2);
+
+extern const char mem_00928B5D[];
+extern const char* mem_00A3464C;
+extern const char* mem_00A34650;
+extern const char* mem_00A34648;
+extern void* mem_00AE29D0;
+extern int32_t mem_009849B4;
+extern const char* mem_00A9FA74;
+extern const char mem_00948520[];
+extern const char* mem_00A9F720;
+extern const char mem_00948514[];
+extern const char* mem_00A9F71C;
+extern const char* mem_00A9F734;
+extern const char* mem_00A9F924;
+extern const char* mem_00A9F6DC;
+extern const char* mem_00A9F89C;
+extern const char* mem_00A9F6A0;
+extern const char* mem_00A9F690;
+extern const char* mem_00A9F914;
+extern void* mem_00B40640;
+extern void* mem_00924FCC;
+extern void* mem_00924FD4;
+extern void* mem_00924FDC;
+extern void* mem_00924FE0;
+extern void* mem_00924FE4;
+extern void* mem_00924FE8;
+extern void* mem_00924FF4;
+extern void* mem_00925134;
+
+static bool is_sentinel(uint32_t val) {
+    return val == 0x00B53A34 || val == 0x00B53B30 || val == 0x00B53AB0 ||
+           val == 0x00B53A70 || val == 0x00B53AF0;
+}
+
+void __thiscall fn_004DBE80(uint8_t* self, void* arg) {
+    (void)mem_00924FCC;
+    (void)mem_00924FD4;
+    (void)mem_00924FDC;
+    (void)mem_00924FE0;
+    (void)mem_00924FE4;
+    (void)mem_00924FE8;
+    (void)mem_00924FF4;
+    (void)mem_00925134;
+    ext_004C24C0(self, arg);
+
+    ext_004DA180(self + 0x16C, 2, std::string(mem_00928B5D));
+
+    uint8_t* vec_begin = lift_field<uint8_t*>(self, 0x170);
+    ext_004EE590(self + 0x3E8, vec_begin);
+    ext_004EE590(self + 0x398, vec_begin + 0x1C);
+
+    std::string str1(mem_00A3464C);
+    std::string str2(mem_00A34650);
+
+    uint8_t* global_obj = static_cast<uint8_t*>(mem_00AE29D0);
+    if (lift_field<int32_t>(global_obj, 0x538) < mem_009849B4) {
+        str1 = mem_00A3464C;
+        str2 = std::string(mem_00A34648) + lift_field<std::string>(self, 0x14);
+    } else {
+        uint32_t found1 = ext_0063EFE0(arg, mem_00A9FA74);
+        if (!is_sentinel(found1)) {
+            ext_004275E0(&str1, reinterpret_cast<void*>(found1));
+        }
+        uint32_t found2 = ext_0063EFE0(arg, mem_00948520);
+        if (!is_sentinel(found2)) {
+            ext_004275E0(&str2, reinterpret_cast<void*>(found2));
+        }
+    }
+
+    ext_004DA510(self);
+    lift_field<int32_t>(self, 0x43C) = ext_004D8C30(self, &str1);
+
+    void** vtable_400 = lift_field<void**>(self, 0x400);
+    using GetVecFn = uint8_t*(__thiscall*)(void*);
+    uint8_t* sub_vec = reinterpret_cast<GetVecFn>(vtable_400[2])(self + 0x400);
+    void* elem0 = lift_field<void*>(sub_vec, 0x04);
+    void* res = ext_0047A4A0(mem_00AE29D0, elem0);
+    ext_004D42A0(self, res);
+
+    uint32_t val_440 = ext_004D8D70(self, &str2);
+    lift_field<uint32_t>(self, 0x440) = val_440;
+    if (val_440 == ext_004D4190(self)) {
+        lift_field<uint32_t>(self, 0x440) = 0;
+    }
+
+    std::string tmp;
+    ext_004DB940(self, ext_004D4060(self, &tmp));
+
+    uint32_t prop_obj = 0;
+    prop_obj = ext_0063EFE0(arg, mem_00A9F720);
+    ext_00427640(self + 0x190, &prop_obj);
+
+    prop_obj = ext_0063EFE0(arg, mem_00948514);
+    ext_00427640(self + 0x191, &prop_obj);
+
+    prop_obj = ext_0063EFE0(arg, mem_00A9F71C);
+    ext_00427640(self + 0x192, &prop_obj);
+
+    prop_obj = ext_0063EFE0(arg, mem_00A9F734);
+    ext_00427640(self + 0x193, &prop_obj);
+
+    prop_obj = ext_0063EFE0(arg, mem_00A9F924);
+    ext_0046C0A0(self + 0x198, &prop_obj);
+
+    prop_obj = ext_0063EFE0(arg, mem_00A9F6DC);
+    ext_0053F5F0(self + 0x344, &prop_obj);
+
+    prop_obj = ext_0063EFE0(arg, mem_00A9F89C);
+    ext_0053F5F0(self + 0x340, &prop_obj);
+
+    prop_obj = ext_0063EFE0(arg, mem_00A9F6A0);
+    ext_00427640(self + 0x194, &prop_obj);
+
+    prop_obj = ext_0063EFE0(arg, mem_00A9F690);
+    ext_00427640(self + 0x195, &prop_obj);
+
+    lift_field<uint32_t>(self, 0x394) = 1;
+
+    uint32_t found3 = ext_0063EFE0(arg, mem_00A9F914);
+    if (!is_sentinel(found3)) {
+        std::string s;
+        uint32_t obj3 = ext_0063EFE0(arg, mem_00A9F914);
+        ext_004275E0(&s, reinterpret_cast<void*>(obj3));
+        ext_004D3940(self, s);
+    }
+
+    ext_00587920(self, self + 0x19C, 0);
+
+    void** vtable_04 = lift_field<void**>(self, 0x04);
+    using GetArgFn = void*(__thiscall*)(void*, void*);
+    void* a1 = reinterpret_cast<GetArgFn>(vtable_04[3])(self + 0x04, mem_00B40640);
+    void* a2 = reinterpret_cast<GetArgFn>(vtable_04[3])(self + 0x04, mem_00B40640);
+    ext_00586300(self + 0x19C, 2, a2, a1);
+
+    void** vtable_180 = lift_field<void**>(self, 0x180);
+    using NotifyFn = void(__thiscall*)(void*);
+    reinterpret_cast<NotifyFn>(vtable_180[0])(self + 0x180);
+
+    lift_field<uint8_t>(self, 0x438) = 0;
+    lift_field<uint8_t>(self, 0x188) = 1;
+}
+} // namespace lift_004DBE80

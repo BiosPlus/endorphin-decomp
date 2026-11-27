@@ -1,0 +1,154 @@
+{
+  "va": "0x004DBE80",
+  "size": 1260,
+  "orig_symbol": "NMData::RigEventData::vfunc_21",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_21",
+  "class": "NMData::RigEventData",
+  "signature": "static bool is_sentinel(uint32_t val)",
+  "summary": "Loads RigEventData properties from XML/data node, resolves rig/joint/event references, and updates selection/dirty state.",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x14",
+      "type": "std::string",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x170",
+      "type": "void*",
+      "name": "field_0x170"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x188",
+      "type": "uint8_t",
+      "name": "field_0x188"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x190",
+      "type": "uint8_t",
+      "name": "field_0x190"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x191",
+      "type": "uint8_t",
+      "name": "field_0x191"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x192",
+      "type": "uint8_t",
+      "name": "field_0x192"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x193",
+      "type": "uint8_t",
+      "name": "field_0x193"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x194",
+      "type": "uint8_t",
+      "name": "field_0x194"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x195",
+      "type": "uint8_t",
+      "name": "field_0x195"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x198",
+      "type": "float",
+      "name": "field_0x198"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x19C",
+      "type": "uint8_t",
+      "name": "field_0x19C"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x340",
+      "type": "int32_t",
+      "name": "field_0x340"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x344",
+      "type": "int32_t",
+      "name": "field_0x344"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x394",
+      "type": "uint32_t",
+      "name": "field_0x394"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x398",
+      "type": "uint8_t",
+      "name": "field_0x398"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x3E8",
+      "type": "uint8_t",
+      "name": "field_0x3E8"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x400",
+      "type": "void*",
+      "name": "field_0x400"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x438",
+      "type": "uint8_t",
+      "name": "field_0x438"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x43C",
+      "type": "int32_t",
+      "name": "field_0x43C"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x440",
+      "type": "uint32_t",
+      "name": "field_0x440"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:53:07Z"
+}
