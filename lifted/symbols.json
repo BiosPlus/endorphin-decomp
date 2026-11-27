@@ -7711,6 +7711,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00449A00 (RegistrationDialog::initOnceAndGetCounter).",
     "lifted_path": "lifted/classes/UpdateAvailableDialog.cpp"
   },
+  "0x00461510": {
+    "name": "Unknown::ctor_CreateSolidBrushWindow",
+    "class": "Unknown",
+    "signature": "void* fn_00461510(void* self, uint32_t arg)",
+    "summary": "Constructs the object: initializes MFC80 base via thunk, sets vtables, creates a solid brush and passes it to ord_1280; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004615B0": {
     "name": "sub_004615B0_dtor",
     "signature": "extern \"C\" void __fastcall fn_004615B0(void* self)",

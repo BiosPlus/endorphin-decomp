@@ -2296,3 +2296,45 @@ void* fn_00462D50(void* self, DWORD arg) {
     return self;
 }
 } // namespace lift_00462D50
+
+// [0x00461510] sub_00461510 (147 bytes)
+namespace lift_00461510 {
+// Known callee 0x0040F0B0: Unknown::initVtableAndInit (thiscall; MFC80 base-class init, sets vtable, returns this)
+extern void* ext_0040F0B0(void* self);
+// Known callee 0x006A5FFE: thunk_MFC80_ord_1280 (thiscall-style: this in ecx, one stack arg)
+extern void ext_006A5FFE(void* self, HBRUSH brush);
+// Known callee 0x006A6250: thunk_MFC80_ord_350 (cdecl, three stack args)
+extern void ext_006A6250(uint32_t a0, uint32_t a1, uint32_t a2);
+extern int mem_0093A0E8;
+extern int mem_0092407C;
+
+using CreateSolidBrushFn = HBRUSH (*)(COLORREF);
+
+// @name Unknown::ctor_CreateSolidBrushWindow
+// @class Unknown
+// @summary Constructs the object: initializes MFC80 base via thunk, sets vtables, creates a solid brush and passes it to ord_1280; returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x74 void* vtable_74
+// @field Unknown +0x114 void* vtable_114
+// @field Unknown +0x118 uint32_t field_0x118
+void* fn_00461510(void* self, uint32_t arg) {
+    ext_006A6250(0x31e, 0x32f, arg);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00938764;
+    lift_field<uint32_t>(self, 0x74) = 0x00938734;
+
+    void* sub = reinterpret_cast<uint8_t*>(self) + 0x114;
+    lift_field<uint32_t>(sub, 0x04) = 0;
+    lift_field<uint32_t>(sub, 0x00) = 0x0092A254;
+
+    ext_0040F0B0(reinterpret_cast<uint8_t*>(self) + 0x11C);
+
+    auto createSolidBrush =
+        reinterpret_cast<CreateSolidBrushFn>(static_cast<uintptr_t>(mem_0092407C));
+    HBRUSH brush = createSolidBrush(static_cast<COLORREF>(mem_0093A0E8));
+
+    ext_006A5FFE(sub, brush);
+
+    return self;
+}
+} // namespace lift_00461510
