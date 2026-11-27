@@ -1,0 +1,46 @@
+{
+  "va": "0x00500BA0",
+  "size": 168,
+  "orig_symbol": "NMData::EvolveEngineData::vfunc_3",
+  "src_path": "src/NMData/EvolveEngineData.cpp",
+  "lifted_path": "lifted/NMData/EvolveEngineData.cpp",
+  "name": "EvolveEngineData::vfunc_3",
+  "class": "NMData::EvolveEngineData",
+  "signature": "void* __thiscall fn_00500BA0(void* self, void* node)",
+  "summary": "Serializes EvolveEngineData fields and lastBestIndividual to an XML node.",
+  "fields": [
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0xA8",
+      "type": "void**",
+      "name": "field_0xA8"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x110",
+      "type": "void*",
+      "name": "field_0x110"
+    },
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x12C",
+      "type": "void*",
+      "name": "field_0x12C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:17:42Z"
+}

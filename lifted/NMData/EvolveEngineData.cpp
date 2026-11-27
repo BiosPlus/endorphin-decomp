@@ -235,3 +235,56 @@ void* __thiscall fn_005012A0(void* self, void* arg1, void* arg2) {
     return arg1;
 }
 } // namespace lift_005012A0
+
+// [0x00500BA0]
+namespace lift_00500BA0 {
+// @name EvolveEngineData::vfunc_3
+// @class NMData::EvolveEngineData
+// @summary Serializes EvolveEngineData fields and lastBestIndividual to an XML node.
+// @field NMData::EvolveEngineData +0x0C void* field_0x0C
+// @field NMData::EvolveEngineData +0x2C void* field_0x2C
+// @field NMData::EvolveEngineData +0xA8 void** field_0xA8
+// @field NMData::EvolveEngineData +0x110 void* field_0x110
+// @field NMData::EvolveEngineData +0x12C void* field_0x12C
+
+
+extern uint32_t mem_00A9EEA4;
+extern uint32_t mem_00A9F1A0;
+extern uint32_t mem_00A9F304;
+extern uint32_t mem_00A9F3B0;
+extern uint32_t mem_00A9F3B4;
+extern const char* mem_0094EE4C;
+extern void* mem_00924FF0;
+
+extern void* (__thiscall* ext_00640390)(void* self, uint32_t name, uint32_t flags);
+extern void (__thiscall* ext_004FD9A0)(void* self, void* child);
+extern void (__thiscall* ext_0050E680)(void* self, void* child);
+extern void (__cdecl* ext_005006E0)(void* field, void* node, uint32_t a, uint32_t b, uint32_t flags);
+extern void* (__thiscall* ext_00640110)(void* self, const char* name);
+extern void (__thiscall* ext_00427550)(void* self, const char* name);
+
+void* __thiscall fn_00500BA0(void* self, void* node) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    void* child0 = ext_00640390(node, mem_00A9EEA4, 0);
+    ext_004FD9A0(base + 0x0C, child0);
+
+    void* child1 = ext_00640390(node, mem_00A9F1A0, 0);
+    ext_0050E680(base + 0x2C, child1);
+
+    void* child2 = ext_00640390(node, mem_00A9F304, 0);
+    void* obj_a8 = base + 0xA8;
+    void** vtable_a8 = *reinterpret_cast<void***>(obj_a8);
+    auto vfunc3 = reinterpret_cast<void (__thiscall*)(void*, void*)>(vtable_a8[3]);
+    vfunc3(obj_a8, child2);
+
+    ext_005006E0(base + 0x12C, node, mem_00A9F3B4, mem_00A9F3B0, 0);
+
+    void* last_best = ext_00640110(node, mem_0094EE4C);
+    auto c_str_fn = reinterpret_cast<const char* (__thiscall*)(void*)>(mem_00924FF0);
+    const char* name_str = c_str_fn(base + 0x110);
+    ext_00427550(&last_best, name_str);
+
+    return node;
+}
+} // namespace lift_00500BA0
