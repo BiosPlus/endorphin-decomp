@@ -1,0 +1,28 @@
+{
+  "va": "0x004B4C30",
+  "size": 151,
+  "orig_symbol": "ExprParser::PrimitiveProxyCreator\u003cNMData::GraphEngineData, bool, 25\u003e::vfunc_17",
+  "src_path": "src/templates/PrimitiveProxyCreator.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyCreator.cpp",
+  "name": "ExprParser::PrimitiveProxyCreator\u003cNMData::GraphEngineData, bool, 25\u003e::vfunc_17",
+  "class": "ExprParser::PrimitiveProxyCreator\u003cNMData::GraphEngineData, bool, 25\u003e",
+  "signature": "void* __thiscall fn_004B4C30(void* /*self*/, ValuePtrResult* out, void* obj)",
+  "summary": "Dynamic-casts an input object to NMData::GraphEngineData, throwing on failure, and writes the field pointer at +0x19 and type proxy into the output ValuePtr.",
+  "fields": [
+    {
+      "class": "ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ValuePtr",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "type"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:15:51Z"
+}
