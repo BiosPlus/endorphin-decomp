@@ -7320,6 +7320,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x74 and tail-calls sub_00462B10.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x004624C0": {
+    "name": "Unknown::Unknown",
+    "class": "Unknown",
+    "signature": "void* fn_004624C0(void* self, uint32_t a1, uint32_t a2)",
+    "summary": "Constructor body (thiscall, ret 8): calls MFC80 ord_354(0x256, a2), installs vtables at +0x00, +0x78 and +0xCC (initialising the +0x78 and +0xCC sub-objects via MFC80 ord_572), stores a1 at +0x74, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00462540": {
     "name": "VersionControlDialog::vfunc_1",
     "class": "VersionControlDialog",

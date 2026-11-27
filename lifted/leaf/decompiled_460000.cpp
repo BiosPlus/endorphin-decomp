@@ -2027,3 +2027,40 @@ std::string* fn_0046C390(std::string* out, float value) {
     return out;
 }
 } // namespace lift_0046C390
+
+// [0x004624C0] sub_004624C0 (127 bytes)
+namespace lift_004624C0 {
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+extern void ext_006A5C6E();
+// Known callee 0x006A5FC2: thunk_MFC80_ord_354 (IAT jump thunk forwarding to MFC80!ord_354.)
+extern void ext_006A5FC2();
+
+// @name Unknown::Unknown
+// @class Unknown
+// @summary Constructor body (thiscall, ret 8): calls MFC80 ord_354(0x256, a2), installs vtables at +0x00, +0x78 and +0xCC (initialising the +0x78 and +0xCC sub-objects via MFC80 ord_572), stores a1 at +0x74, returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x74 uint32_t field_0x74
+// @field Unknown +0x78 uint32_t field_0x78
+// @field Unknown +0xCC uint32_t field_0xCC
+void* fn_004624C0(void* self, uint32_t a1, uint32_t a2) {
+    // ord_354 (stdcall-style, 2 stack args: 0x256, a2). Return value unused.
+    reinterpret_cast<void (__stdcall*)(uint32_t, uint32_t)>(&ext_006A5FC2)(0x256u, a2);
+
+    // ord_572 is called with ecx = sub-object pointer (thiscall); ecx is passed as the first arg.
+    auto call_ord_572 = [](void* obj) {
+        reinterpret_cast<void (__fastcall*)(void*, void*)>(&ext_006A5C6E)(obj, nullptr);
+    };
+
+    lift_field<uint32_t>(self, 0x00) = 0x938bc4u;
+
+    call_ord_572(static_cast<uint8_t*>(self) + 0x78);
+    lift_field<uint32_t>(self, 0x78) = 0x929cb4u;
+
+    void* subCC = static_cast<uint8_t*>(self) + 0xCC;
+    call_ord_572(subCC);
+    lift_field<uint32_t>(self, 0xCC) = 0x9287e4u;
+
+    lift_field<uint32_t>(self, 0x74) = a1;
+    return self;
+}
+} // namespace lift_004624C0
