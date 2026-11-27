@@ -68695,6 +68695,13 @@
     "summary": "Linearly searches the DWORD array at +0x5C (count at +0x4C) for the given value; if found, removes it and releases the item via its vtable slot 0 (deleting dtor, flag 1); otherwise calls the sub-object at +0x1C4 with index 0. Returns true when found, false otherwise.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D4BA0": {
+    "name": "Unknown::removeItemIfPresent_006D4BA0",
+    "class": "Unknown",
+    "signature": "inline R lift_vcall(void* obj, A... args)",
+    "summary": "Searches the DynArray at +0x64 for the item pointer; if found, removes it, calls vtable slots 1 and 5 (destroy) on it and returns true; otherwise calls ext_006E7440(this+0x1C4, 0) and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D4C20": {
     "name": "Unknown::removeEntryAndRelease_006D4C20",
     "class": "Unknown",

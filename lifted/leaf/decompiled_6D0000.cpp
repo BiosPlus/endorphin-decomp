@@ -3859,3 +3859,53 @@ uint8_t fn_006D4F10(void* self, void* arg) {
     return 0;
 }
 } // namespace lift_006D4F10
+
+// [0x006D4BA0] sub_006D4BA0 (117 bytes)
+namespace lift_006D4BA0 {
+// Virtual dispatch helper: calls vtable slot `Slot` of `obj`, passing obj as the implicit this.
+template <typename R, std::size_t Slot, typename... A>
+inline R lift_vcall(void* obj, A... args) {
+    void** vt = lift_field<void**>(obj, 0);
+    using Fn = R (*)(void*, A...);
+    return reinterpret_cast<Fn>(vt[Slot])(obj, args...);
+}
+
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, void* edx, int32_t index);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, uint32_t index);
+
+// @name Unknown::removeItemIfPresent_006D4BA0
+// @class Unknown
+// @summary Searches the DynArray at +0x64 for the item pointer; if found, removes it, calls vtable slots 1 and 5 (destroy) on it and returns true; otherwise calls ext_006E7440(this+0x1C4, 0) and returns false.
+// @field Unknown +0x64 int32_t itemCount
+// @field Unknown +0x74 uint32_t itemData
+// @field Unknown +0x1C4 void* field_0x1c4
+bool fn_006D4BA0(void* self, uint32_t item) {
+    const int32_t count = lift_field<int32_t>(self, 0x64);
+    const uint32_t data = lift_field<uint32_t>(self, 0x74);
+    const void* dataBase = reinterpret_cast<const void*>(static_cast<uintptr_t>(data));
+
+    int32_t index = 0;
+    if (count > 0) {
+        for (; index < count; ++index) {
+            if (lift_field<uint32_t>(dataBase, static_cast<ptrdiff_t>(index) * 4) == item)
+                break;
+        }
+    }
+
+    if (count <= 0 || index >= count) {
+        // Not found: ext_006E7440(this + 0x1C4, 0), result discarded; return false.
+        (void)ext_006E7440(&lift_field<uint8_t>(self, 0x1C4), 0);
+        return false;
+    }
+
+    // Found: remove at index, then dispatch vtable slot 1 on item, and slot 5 (flag 1) if non-null.
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(item));
+    ext_006D2200(self, nullptr, index);
+    lift_vcall<void, 1>(obj);
+    if (obj)
+        lift_vcall<void, 5>(obj, 1);
+    return true;
+}
+} // namespace lift_006D4BA0
