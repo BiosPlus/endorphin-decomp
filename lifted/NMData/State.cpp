@@ -4,8 +4,10 @@
 #include <string>
 extern "C" const char* mem_00AA237C;
 #include <cstring>
+#include <cstdint>
+#include <sstream>
 
-// [0x0049FAC0] NMData::State::vfunc_2_off_8 (42 bytes)
+#include <sstream>
 // @name NMData::State::vfunc_2_off_8
 // @class NMData::State
 // @summary Copies the four dwords at this+0xE0..0xEC into the caller-supplied 16-byte output buffer.
@@ -706,3 +708,237 @@ bool fn_004A0350(void* self, void* vec, DWORD /*arg2: scratch only, never read*/
     return (static_cast<int32_t>(e - b) >> 2) != 0;
 }
 } // namespace lift_004A0350
+
+// [0x004A09E0]
+namespace lift_004A09E0 {
+extern void* mem_00ADD190;
+extern const float mem_00940634;
+extern const float mem_009324A4;
+extern const double mem_00993828;
+extern const double mem_0092BD70;
+
+extern void __cdecl ext_00435D00(void* oss, const char* str);
+extern void __thiscall ext_00493D90(void* self);
+extern void __thiscall ext_0049A0D0(void* self, void* ctx, int32_t index);
+extern uint8_t __thiscall ext_0049ABC0(void* self);
+extern void __thiscall ext_0049CCE0(void* self, const std::string* label, void* field, void* oss);
+extern void __thiscall ext_0049E070(void* self, void* ctx);
+extern void __thiscall ext_004A0780(void* self, void* oss);
+extern float* __thiscall ext_0066A330(void* self, float a0, float a1, float a2, float a3);
+
+// @name NMData::State::vfunc_20_off_8
+// @class NMData::State
+// @summary Renders an NMData::State node and its child transitions/sub-states in the GUI.
+// @field NMData::State +0x5C uint8_t field_0x5C
+// @field NMData::State +0x5D uint8_t field_0x5D
+// @field NMData::State +0x68 void* field_0x68
+// @field NMData::State +0x84 void* field_0x84
+// @field NMData::State +0xA0 void* field_0xA0
+// @field NMData::State +0xC8 void* field_0xC8
+// @field NMData::State +0xCC void* field_0xCC
+// @field NMData::State +0xD4 void* field_0xD4
+// @field NMData::State +0xD8 void* field_0xD8
+// @field NMData::State +0xE0 float rect_x1
+// @field NMData::State +0xE4 float rect_y1
+// @field NMData::State +0xE8 float rect_x2
+// @field NMData::State +0xEC float rect_y2
+// @field NMData::State +0xF4 void* field_0xF4
+// @field NMData::State +0x118 void* field_0x118
+// @field NMData::State +0x11C void* overrideObj
+void __thiscall fn_004A09E0(void* self, void* ctx) {
+    uint8_t* edi = reinterpret_cast<uint8_t*>(self);
+    uint8_t* esi = reinterpret_cast<uint8_t*>(ctx);
+
+    float color[4];
+    ext_0066A330(color, 0.0f, 0.0f, 0.0f, 1.0f);
+
+    int32_t borderWidth = 1;
+    using VFunc10 = uint8_t(__thiscall*)(void*);
+    VFunc10 vfunc10 = reinterpret_cast<VFunc10>(
+        *reinterpret_cast<uintptr_t*>(*reinterpret_cast<uintptr_t*>(edi) + 0x10));
+    if (vfunc10(edi) != 0) {
+        float tmp[4];
+        float* p = ext_0066A330(tmp, mem_00940634, 0.0f, 0.0f, 1.0f);
+        color[0] = p[0];
+        color[1] = p[1];
+        color[2] = p[2];
+        color[3] = p[3];
+        ext_00493D90(tmp);
+        borderWidth = 2;
+    }
+
+    if (ext_0049ABC0(edi - 8) != 0) {
+        float tmp[4];
+        float* p = ext_0066A330(tmp, 0.0f, 0.0f, mem_00940634, 1.0f);
+        color[0] = p[0];
+        color[1] = p[1];
+        color[2] = p[2];
+        color[3] = p[3];
+        ext_00493D90(tmp);
+        borderWidth += 1;
+    }
+
+    if (*reinterpret_cast<uint8_t*>(edi + 0x5D) != 0) {
+        float tmp[4];
+        float* p = ext_0066A330(tmp, 0.0f, mem_009324A4, 0.0f, 1.0f);
+        color[0] = p[0];
+        color[1] = p[1];
+        color[2] = p[2];
+        color[3] = p[3];
+        ext_00493D90(tmp);
+        borderWidth = 1;
+    }
+
+    void* f4 = *reinterpret_cast<void**>(edi + 0xF4);
+    int32_t flag = (f4 != nullptr && *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(f4) + 0x68) == 1) ? 1 : 0;
+
+    float rect[4];
+    rect[0] = *reinterpret_cast<float*>(edi + 0xE0);
+    rect[1] = *reinterpret_cast<float*>(edi + 0xE4);
+    rect[2] = *reinterpret_cast<float*>(edi + 0xE8);
+    rect[3] = *reinterpret_cast<float*>(edi + 0xEC);
+
+    if (*reinterpret_cast<int32_t*>(esi + 0x38) == 0) {
+        rect[0] = 0.0f;
+        rect[1] = 0.0f;
+        rect[2] = 1.0f;
+        rect[3] = 1.0f;
+    }
+
+    using CtxDrawBox = void(__thiscall*)(void*, float*, float*, int32_t, int32_t);
+    CtxDrawBox drawBox = reinterpret_cast<CtxDrawBox>(
+        *reinterpret_cast<uintptr_t*>(*reinterpret_cast<uintptr_t*>(esi) + 0x04));
+    drawBox(esi, rect, color, borderWidth, flag);
+
+    uint8_t* globalObj = reinterpret_cast<uint8_t*>(mem_00ADD190);
+    int32_t val = (globalObj != nullptr) ? (*reinterpret_cast<int32_t*>(globalObj + 0x24) * 10) : 100;
+
+    int32_t depth = *reinterpret_cast<int32_t*>(esi + 0x38);
+    double d = static_cast<double>(depth * 15) + mem_00993828 - static_cast<double>(val) + mem_0092BD70;
+    int32_t fontSize = static_cast<int32_t>(d);
+    if (fontSize < 1) {
+        fontSize = 1;
+    }
+
+    float bounds[4] = {};
+    {
+        std::string emptyStr("");
+        using CtxMeasure = void(__thiscall*)(void*, float*, const std::string*, int32_t, int32_t);
+        CtxMeasure measure = reinterpret_cast<CtxMeasure>(
+            *reinterpret_cast<uintptr_t*>(*reinterpret_cast<uintptr_t*>(esi) + 0x24));
+        measure(esi, bounds, &emptyStr, 1, fontSize);
+    }
+
+    float dx = bounds[2] - bounds[0];
+    float dy = static_cast<float>((bounds[3] - bounds[1]) * mem_00993828);
+
+    float rect2[4];
+    rect2[0] = rect[0] + dx;
+    rect2[1] = rect[1] + dy;
+    rect2[2] = rect[2] - dy;
+    rect2[3] = rect[3] - dy;
+
+    using SelfGetColor = void*(__thiscall*)(void*, float*, float*);
+    SelfGetColor selfGetColor = reinterpret_cast<SelfGetColor>(
+        *reinterpret_cast<uintptr_t*>(*reinterpret_cast<uintptr_t*>(edi) + 0x04));
+
+    using CtxSetColor = void(__thiscall*)(void*, void*);
+    CtxSetColor ctxSetColor = reinterpret_cast<CtxSetColor>(
+        *reinterpret_cast<uintptr_t*>(*reinterpret_cast<uintptr_t*>(esi) + 0x10));
+
+    using CtxDrawText = void(__thiscall*)(void*, const std::string*, float*, float*, int32_t, int32_t);
+    CtxDrawText ctxDrawText = reinterpret_cast<CtxDrawText>(
+        *reinterpret_cast<uintptr_t*>(*reinterpret_cast<uintptr_t*>(esi) + 0x10));
+
+    if (*reinterpret_cast<uint8_t*>(edi + 0x5C) != 0) {
+        float tmpColor[4];
+        void* c = selfGetColor(edi, tmpColor, color);
+        ctxSetColor(esi, c);
+
+        std::string label = std::string("[") + reinterpret_cast<const char*>(edi + 0x40);
+        ctxDrawText(esi, &label, rect2, color, 1, fontSize);
+    } else {
+        float tmpColor[4];
+        void* c = selfGetColor(edi, tmpColor, color);
+        ctxSetColor(esi, c);
+
+        if (globalObj != nullptr) {
+            fontSize -= 5;
+            if (fontSize < 1) {
+                fontSize = 1;
+            }
+
+            std::ostringstream oss;
+            ext_00435D00(&oss, "");
+
+            if (*reinterpret_cast<uint8_t*>(globalObj + 0x2C) != 0) {
+                uint8_t* vecBegin = *reinterpret_cast<uint8_t**>(edi + 0x118);
+                uint8_t* vecEnd = *reinterpret_cast<uint8_t**>(edi + 0x11C);
+                if (vecBegin != nullptr && ((vecEnd - vecBegin) >> 2) != 0) {
+                    ext_004A0780(edi - 8, &oss);
+                }
+            }
+
+            if (*reinterpret_cast<uint8_t*>(globalObj + 0x2D) != 0) {
+                std::string s1("entry");
+                ext_0049CCE0(edi - 8, &s1, edi + 0x68, &oss);
+                std::string s2("during");
+                ext_0049CCE0(edi - 8, &s2, edi + 0x84, &oss);
+                std::string s3("exit");
+                ext_0049CCE0(edi - 8, &s3, edi + 0xA0, &oss);
+            }
+
+            std::string text = oss.str();
+            ctxDrawText(esi, &text, rect2, color, 1, fontSize);
+        }
+    }
+
+    float savedRect[4];
+    savedRect[0] = *reinterpret_cast<float*>(esi + 0x20);
+    savedRect[1] = *reinterpret_cast<float*>(esi + 0x24);
+    savedRect[2] = *reinterpret_cast<float*>(esi + 0x28);
+    savedRect[3] = *reinterpret_cast<float*>(esi + 0x2C);
+    int32_t savedDepth = *reinterpret_cast<int32_t*>(esi + 0x38);
+
+    *reinterpret_cast<int32_t*>(esi + 0x38) = savedDepth + 1;
+    float w = savedRect[2] - savedRect[0];
+    float h = savedRect[3] - savedRect[1];
+    *reinterpret_cast<float*>(esi + 0x20) = rect[0] * w + savedRect[0];
+    *reinterpret_cast<float*>(esi + 0x24) = rect[1] * h + savedRect[1];
+    *reinterpret_cast<float*>(esi + 0x28) = rect[2] * w + savedRect[0];
+    *reinterpret_cast<float*>(esi + 0x2C) = rect[3] * h + savedRect[1];
+
+    int32_t maxDepth = (globalObj != nullptr) ? *reinterpret_cast<int32_t*>(globalObj + 0x20) : 2;
+    if (savedDepth < maxDepth && *reinterpret_cast<uint8_t*>(edi + 0x5D) == 0) {
+        void* list1Head = *reinterpret_cast<void**>(edi + 0xCC);
+        void* list1Sentinel = *reinterpret_cast<void**>(edi + 0xCC);
+        uint8_t* node = *reinterpret_cast<uint8_t**>(list1Head);
+        int32_t idx = 0;
+        while (node != list1Sentinel) {
+            idx += 1;
+            ext_0049A0D0(node + 8, esi, idx);
+            node = *reinterpret_cast<uint8_t**>(node);
+        }
+
+        void* list2Head = *reinterpret_cast<void**>(edi + 0xD8);
+        void* list2Sentinel = *reinterpret_cast<void**>(edi + 0xD8);
+        uint8_t* node2 = *reinterpret_cast<uint8_t**>(list2Head);
+        while (node2 != list2Sentinel) {
+            ext_0049E070(node2 + 8, esi);
+            using NodeVFunc50 = void(__thiscall*)(void*, void*);
+            NodeVFunc50 vfunc50 = reinterpret_cast<NodeVFunc50>(
+                *reinterpret_cast<uintptr_t*>(*reinterpret_cast<uintptr_t*>(node2 + 0x10) + 0x50));
+            vfunc50(node2 + 0x10, esi);
+            node2 = *reinterpret_cast<uint8_t**>(node2);
+        }
+    }
+
+    *reinterpret_cast<float*>(esi + 0x20) = savedRect[0];
+    *reinterpret_cast<float*>(esi + 0x24) = savedRect[1];
+    *reinterpret_cast<float*>(esi + 0x28) = savedRect[2];
+    *reinterpret_cast<float*>(esi + 0x2C) = savedRect[3];
+    *reinterpret_cast<int32_t*>(esi + 0x38) = savedDepth;
+
+    ext_00493D90(color);
+}
+} // namespace lift_004A09E0

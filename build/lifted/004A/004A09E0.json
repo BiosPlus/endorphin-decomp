@@ -1,0 +1,112 @@
+{
+  "va": "0x004A09E0",
+  "size": 1819,
+  "orig_symbol": "NMData::State::vfunc_20_off_8",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_20_off_8",
+  "class": "NMData::State",
+  "signature": "void __thiscall fn_004A09E0(void* self, void* ctx)",
+  "summary": "Renders an NMData::State node and its child transitions/sub-states in the GUI.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0x5C",
+      "type": "uint8_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x5D",
+      "type": "uint8_t",
+      "name": "field_0x5D"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x84",
+      "type": "void*",
+      "name": "field_0x84"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xA0"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xC8",
+      "type": "void*",
+      "name": "field_0xC8"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xCC",
+      "type": "void*",
+      "name": "field_0xCC"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xD4",
+      "type": "void*",
+      "name": "field_0xD4"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xD8",
+      "type": "void*",
+      "name": "field_0xD8"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "rect_x1"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE4",
+      "type": "float",
+      "name": "rect_y1"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE8",
+      "type": "float",
+      "name": "rect_x2"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "rect_y2"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xF4",
+      "type": "void*",
+      "name": "field_0xF4"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x118",
+      "type": "void*",
+      "name": "field_0x118"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x11C",
+      "type": "void*",
+      "name": "overrideObj"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:36:19Z"
+}
