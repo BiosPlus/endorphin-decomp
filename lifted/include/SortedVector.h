@@ -8,7 +8,9 @@
 // Recovered field layout for SortedVector:
 namespace lifted_layout {
 struct SortedVector_Fields {
-    // +0x4   uint32_t                 begin_ptr  (evidence: 0x00500DA0)
-    // +0x8   uint32_t                 end_ptr  (evidence: 0x00500DA0)
+    // +0x4   uint32_t*                begin  (evidence: 0x0041DFC0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 begin_ptr  (evidence: 0x00500DA0) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t*                end  (evidence: 0x0041DFC0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 end_ptr  (evidence: 0x00500DA0) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout

@@ -1,0 +1,28 @@
+{
+  "va": "0x0041DFC0",
+  "size": 168,
+  "orig_symbol": "sub_0041DFC0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "SortedVector::insertUnique",
+  "class": "SortedVector",
+  "signature": "bool __thiscall fn_0041DFC0(void* self, const uint32_t* val)",
+  "summary": "Inserts a uint32_t into a sorted vector if not already present, returning true if inserted",
+  "fields": [
+    {
+      "class": "SortedVector",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "begin"
+    },
+    {
+      "class": "SortedVector",
+      "offset": "+0x8",
+      "type": "uint32_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:28:47Z"
+}

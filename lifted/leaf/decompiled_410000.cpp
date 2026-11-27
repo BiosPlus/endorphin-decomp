@@ -4282,3 +4282,59 @@ void fn_0041ACE0(void* self) {
 }
 } // namespace lift_004151D0
 } // namespace lift_0041ACE0
+
+// [0x0041DFC0]
+namespace lift_0041DFC0 {
+// @name SortedVector::insertUnique
+// @class SortedVector
+// @summary Inserts a uint32_t into a sorted vector if not already present, returning true if inserted
+// @field SortedVector +0x04 uint32_t* begin
+// @field SortedVector +0x08 uint32_t* end
+
+
+    extern uint32_t (*mem_00925134)(void);
+    uint32_t __cdecl ext_00477A30(uint32_t begin, uint32_t end, const uint32_t* val, uint32_t hint, uint32_t zero);
+    void __thiscall ext_004115D0(void* self, uint32_t* out_iter, void* container, uint32_t pos, const uint32_t* val);
+
+bool __thiscall fn_0041DFC0(void* self, const uint32_t* val) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+    uint8_t local_flag = 0;
+    uint32_t local_out = 0;
+
+    uint32_t end = lift_field<uint32_t>(s, 0x08);
+    if (lift_field<uint32_t>(s, 0x04) > end) {
+        mem_00925134();
+    }
+
+    uint32_t begin = lift_field<uint32_t>(s, 0x04);
+    if (begin > lift_field<uint32_t>(s, 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t pos = ext_00477A30(begin, end, val, static_cast<uint32_t>(local_flag), 0);
+
+    end = lift_field<uint32_t>(s, 0x08);
+    if (lift_field<uint32_t>(s, 0x04) > end) {
+        mem_00925134();
+    }
+
+    if (s == nullptr) {
+        mem_00925134();
+    }
+
+    if (pos != end) {
+        if (s == nullptr) {
+            mem_00925134();
+        }
+        if (pos >= lift_field<uint32_t>(s, 0x08)) {
+            mem_00925134();
+        }
+        if (*val >= *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(pos))) {
+            return false;
+        }
+    }
+
+    ext_004115D0(s, &local_out, s, pos, val);
+    return true;
+}
+} // namespace lift_0041DFC0
