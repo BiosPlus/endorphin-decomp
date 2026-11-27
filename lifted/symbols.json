@@ -31860,6 +31860,12 @@
     "summary": "Decrements an MSVC std::_Tree iterator to the previous in-order node.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052A310": {
+    "name": "InitOnceStringGlobal_0052A310",
+    "signature": "void fn_0052A310(void* self)",
+    "summary": "One-time guarded initializer: on first call, fills the global string at 0x00AEDC0C from the literal at 0x00A4415C and registers teardown 0x0091A2D0 via ext_006A6C87.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052A370": {
     "name": "Unknown::createPairObject",
     "class": "Unknown",

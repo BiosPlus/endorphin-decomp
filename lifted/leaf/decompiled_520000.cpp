@@ -2108,3 +2108,23 @@ int32_t __thiscall sub_00527EC0(void* self, uintptr_t* target_ptr) {
     return index;
 }
 } // namespace lift_00527EC0
+
+// [0x0052A310] sub_0052A310 (95 bytes)
+namespace lift_0052A310 {
+extern void ext_00662610(void* str, const char* text);
+extern void ext_006A6C87(const void* arg);
+extern int mem_00AEDC28;
+extern int mem_00AEDC0C;
+
+// @name InitOnceStringGlobal_0052A310
+// @summary One-time guarded initializer: on first call, fills the global string at 0x00AEDC0C from the literal at 0x00A4415C and registers teardown 0x0091A2D0 via ext_006A6C87.
+void fn_0052A310(void* self) {
+    (void)self;
+    if ((mem_00AEDC28 & 1) == 0) {
+        mem_00AEDC28 |= 1;
+        ext_00662610(reinterpret_cast<void*>(&mem_00AEDC0C),
+                     reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00A4415Cu)));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x0091A2D0u)));
+    }
+}
+} // namespace lift_0052A310
