@@ -3015,3 +3015,54 @@ void __thiscall fn_00446240(void* this_ptr, void* node, uint32_t arg1) {
     }
 }
 } // namespace lift_00446240
+
+// [0x00446560]
+namespace lift_00446560 {
+// @name sub_00446560
+// @summary Recursively traverses a node tree, dynamic-casting each node and invoking virtual method +0x20 if matched
+// @field Node +0x7c void* children_vec_base
+// @field Node +0x80 void** children_begin
+// @field Node +0x84 void** children_end
+
+
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfdelta, void* src_type, void* target_type, int32_t is_reference);
+extern void(__cdecl* mem_00925134)(void);
+
+void __thiscall fn_00446560(void* self, void* node, uint32_t arg2) {
+    void* casted = ext_006A6E9E(node, 0, reinterpret_cast<void*>(0x00A2E2BC), reinterpret_cast<void*>(0x00A2FBE4), 0);
+    if (casted != nullptr) {
+        void* iface = static_cast<uint8_t*>(casted) + 0x0C;
+        void** vtable = *reinterpret_cast<void***>(iface);
+        using Fn = void(__thiscall*)(void*, uint32_t);
+        reinterpret_cast<Fn>(vtable[0x20 / 4])(iface, arg2);
+    }
+
+    auto invalid_param = mem_00925134;
+    void** begin = lift_field<void**>(node, 0x80);
+    void** end = lift_field<void**>(node, 0x84);
+    void** it = begin;
+    if (it > end) {
+        invalid_param();
+    }
+
+    for (;;) {
+        end = lift_field<void**>(node, 0x84);
+        begin = lift_field<void**>(node, 0x80);
+        if (begin > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= end) {
+            invalid_param();
+        }
+        fn_00446560(self, *it, arg2);
+        end = lift_field<void**>(node, 0x84);
+        if (it >= end) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_00446560
