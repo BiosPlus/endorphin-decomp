@@ -43905,6 +43905,13 @@
     "summary": "Gets a value from the held object's sub-object via vfunc slot 8, copies it into self via Unknown::assignFromOther, releases the temp, then forwards to vfunc slot 44 of self's field_0x04 (throws if field_0x00 is null).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B3AD0": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_47 (Geometry::getFileName)",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+    "signature": "void* fn_005B3AD0(void* self)",
+    "summary": "Pulls a value from the held object's vtable slot 0x20, assigns it into self's handle (field_0x04), then forwards to the target's vfunc_47; throws DerivedException when the held pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B3B70": {
     "name": "ExprParser::ReadMethodType\u003cGeometry, std::string const \u0026, \u0026Geometry::getFileName, 0\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType",

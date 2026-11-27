@@ -186827,3 +186827,67 @@ bool fn_005B3C00(void* pp, void* out) {
     return result;
 }
 } // namespace lift_005B3C00
+
+// [0x005B3AD0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_47 (159 bytes)
+namespace lift_005B3AD0 {
+// Callees referenced by the original asm (kept as ext_/mem_ for differential testing).
+// Known callee 0x006720E0: sub_006720E0 (thiscall, builds the temporary holder from a source value)
+extern void __thiscall ext_006720E0(void* self, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(obj, throwInfo))
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// Throw-info descriptor for DerivedException (address only, pushed as the second argument of the throw).
+extern char mem_009DEC1C;
+
+namespace {
+
+// Temporary holder built by ext_006720E0; field_0x04 is an object with a vtable that must be released.
+struct ReadMethodTemp {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+} // namespace
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_47 (Geometry::getFileName)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Pulls a value from the held object's vtable slot 0x20, assigns it into self's handle (field_0x04), then forwards to the target's vfunc_47; throws DerivedException when the held pointer is null.
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0> +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0C
+void* fn_005B3AD0(void* self) {
+    void* held = lift_field<void*>(self, 0x00);
+    if (held == nullptr) {
+        // Build a DerivedException in a local slot, then throw it via the CRT throw thunk.
+        // Storage size is not recovered; 0x20 is a placeholder within the original frame slot.
+        alignas(8) unsigned char exception[0x20];
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, &mem_009DEC1C);
+    }
+
+    // held->+0x0C is a sub-object; its vtable slot 0x20 yields the source value.
+    void* inner = lift_field<void*>(held, 0x0C);
+    void* inner_vtable = lift_field<void*>(inner, 0x00);
+    void* get_slot = lift_field<void*>(inner_vtable, 0x20);
+    void* value = reinterpret_cast<void* (__thiscall*)(void*)>(get_slot)(inner);
+
+    // Build the temporary, assign it into self's handle, then release the temporary's field_0x04.
+    ReadMethodTemp tmp{};
+    ext_006720E0(&tmp, value);
+    ext_0041CF50(self, &tmp);
+    if (tmp.field_0x04 != nullptr) {
+        void* tmp_vtable = lift_field<void*>(tmp.field_0x04, 0x00);
+        void* release_slot = lift_field<void*>(tmp_vtable, 0x78);
+        reinterpret_cast<void(__thiscall*)(void*, void*)>(release_slot)(tmp.field_0x04, &tmp);
+    }
+
+    // Forward to the target (self->+0x04) vfunc_47 (vtable offset 0xBC), passing self as the argument.
+    void* target = lift_field<void*>(self, 0x04);
+    void* target_vtable = lift_field<void*>(target, 0x00);
+    void* vfunc47_slot = lift_field<void*>(target_vtable, 0xBC);
+    return reinterpret_cast<void* (__thiscall*)(void*, void*)>(vfunc47_slot)(target, self);
+}
+} // namespace lift_005B3AD0
