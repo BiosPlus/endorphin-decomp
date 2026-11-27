@@ -2417,3 +2417,60 @@ int fn_00593710(void* self) {
     return result;
 }
 } // namespace lift_00593710
+
+// [0x00597D00] sub_00597D00 (156 bytes)
+namespace lift_00597D00 {
+// Known callee 0x00595C90: sub_00595C90 (Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).)
+extern void ext_00595C90();
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C();
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+namespace {
+
+using AllocFn = void* (*)(size_t);
+using SubInitFn = void* (*)(void* self, const void* src);
+using ReleaseFn = void (*)(void*);
+using ThrowFn = void (*)(void*, void*);
+
+// Unwind/exception funnel from the original (reached only through the SEH
+// unwind path, never from the normal return path). Kept so the thunk
+// references survive; not called from fn_00597D00's normal flow.
+[[maybe_unused]] void unwind_release_and_throw(void* obj) {
+    reinterpret_cast<ReleaseFn>(ext_006A5C5C)(obj);
+    reinterpret_cast<ThrowFn>(ext_006A6DD2)(nullptr, nullptr);
+}
+
+} // namespace
+
+// @name NewCopyObject0xBC
+// @class Unknown
+// @summary Allocates a 0xBC-byte object, stores three dwords, copy-initializes the sub-object at +0x0C from a3, then stores a flag byte at +0xB8 and clears +0xB9. Returns the object, or null if allocation failed.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C Unknown field_0x0C
+// @field Unknown +0xB8 uint8_t field_0xB8
+// @field Unknown +0xB9 uint8_t field_0xB9
+void* fn_00597D00(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4) {
+    void* obj = reinterpret_cast<AllocFn>(ext_006A5C62)(0xBC);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    lift_field<uint32_t>(obj, 0x00) = a0;
+    lift_field<uint32_t>(obj, 0x04) = a1;
+    lift_field<uint32_t>(obj, 0x08) = a2;
+
+    reinterpret_cast<SubInitFn>(ext_00595C90)(
+        static_cast<uint8_t*>(obj) + 0x0C,
+        reinterpret_cast<const void*>(static_cast<uintptr_t>(a3)));
+
+    lift_field<uint8_t>(obj, 0xB8) = a4;
+    lift_field<uint8_t>(obj, 0xB9) = 0;
+    return obj;
+}
+} // namespace lift_00597D00

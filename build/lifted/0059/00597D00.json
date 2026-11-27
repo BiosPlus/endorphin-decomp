@@ -1,0 +1,52 @@
+{
+  "va": "0x00597D00",
+  "size": 156,
+  "orig_symbol": "sub_00597D00",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "NewCopyObject0xBC",
+  "class": "Unknown",
+  "signature": "[[maybe_unused]] void unwind_release_and_throw(void* obj)",
+  "summary": "Allocates a 0xBC-byte object, stores three dwords, copy-initializes the sub-object at +0x0C from a3, then stores a flag byte at +0xB8 and clears +0xB9. Returns the object, or null if allocation failed.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "Unknown",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "uint8_t",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB9",
+      "type": "uint8_t",
+      "name": "field_0xB9"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:27:13Z"
+}
