@@ -13274,6 +13274,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0048DC60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0048DE90": {
+    "name": "NMData::DesiredPoseEventData::vfunc_88",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "void __thiscall fn_0048DE90(void* self)",
+    "summary": "Updates desired pose event data from field_0x16c and frees temporary buffer if allocated.",
+    "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
   "0x0048DF90": {
     "name": "Commands::BufferPoseCommand::vfunc_3",
     "class": "Commands::BufferPoseCommand",
@@ -53343,6 +53350,13 @@
     "class": "NMData::SkeletalJointData",
     "signature": "bool __thiscall fn_005E20F0(void* self, uint32_t axis)",
     "summary": "Checks whether a specified joint axis/DOF (0..6) is unlocked based on TransformInterface state and joint lock flags.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
+  "0x005E22C0": {
+    "name": "NMData::SkeletalJointData::vfunc_54",
+    "class": "NMData::SkeletalJointData",
+    "signature": "void* __thiscall fn_005E22C0(void* self)",
+    "summary": "Lazily initializes static object at 0x00B45D20, calls sub_005E0380 with it, copies field_0x178 to 0x00B45D64, and returns 0x00B45D20.",
     "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
   },
   "0x005E2340": {

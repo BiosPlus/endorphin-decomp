@@ -1,0 +1,22 @@
+{
+  "va": "0x005E22C0",
+  "size": 128,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_54",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_54",
+  "class": "NMData::SkeletalJointData",
+  "signature": "void* __thiscall fn_005E22C0(void* self)",
+  "summary": "Lazily initializes static object at 0x00B45D20, calls sub_005E0380 with it, copies field_0x178 to 0x00B45D64, and returns 0x00B45D20.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:40:31Z"
+}

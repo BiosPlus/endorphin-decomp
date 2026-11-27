@@ -594,3 +594,61 @@ extern void* __fastcall fn_005F0620(void* self) {
     return clone;
 }
 } // namespace lift_005F0620
+
+// [0x005E22C0]
+namespace lift_005E22C0 {
+// @name NMData::SkeletalJointData::vfunc_54
+// @class NMData::SkeletalJointData
+// @summary Lazily initializes static object at 0x00B45D20, calls sub_005E0380 with it, copies field_0x178 to 0x00B45D64, and returns 0x00B45D20.
+// @field NMData::SkeletalJointData +0x178 uint8_t field_0x178
+
+
+extern uint32_t mem_00B45D6C;
+extern uint8_t mem_00B45D64;
+extern uint8_t mem_00B45D20[];
+extern uint8_t mem_0091E420[];
+extern uint32_t mem_00924ECC;
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00A8F2B4;
+extern uint32_t mem_00A8F2B8;
+extern uint32_t mem_00A9EE64;
+
+extern void __thiscall ext_005B5780(void* self, int32_t arg);
+extern void __cdecl ext_006A6C87(void* fn);
+extern void __thiscall ext_005E0380(void* self, void* arg);
+extern void ext_005A2F70(void);
+extern void ext_005A3500(void);
+extern void ext_005A7320(void);
+extern void ext_005DF5C0(void);
+extern void* ext_006267B0(void* self);
+extern void ext_006A5C62(void);
+
+void* __thiscall fn_005E22C0(void* self) {
+    if ((mem_00B45D6C & 1) == 0) {
+        mem_00B45D6C |= 1;
+        ext_005B5780(mem_00B45D20, 9);
+        ext_006A6C87(mem_0091E420);
+    }
+
+    ext_005E0380(self, mem_00B45D20);
+    mem_00B45D64 = lift_field<uint8_t>(self, 0x178);
+
+    (void)ext_005A2F70;
+    (void)ext_005A3500;
+    (void)ext_005A7320;
+    (void)ext_005DF5C0;
+    (void)ext_006267B0;
+    (void)ext_006A5C62;
+    (void)mem_00924ECC;
+    (void)mem_00924FDC;
+    (void)mem_00924FE0;
+    (void)mem_00924FF4;
+    (void)mem_00A8F2B4;
+    (void)mem_00A8F2B8;
+    (void)mem_00A9EE64;
+
+    return mem_00B45D20;
+}
+} // namespace lift_005E22C0
