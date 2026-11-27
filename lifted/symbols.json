@@ -5998,6 +5998,13 @@
     "summary": "Packs stack args 1 and 2 into a local pair and forwards its address to virtual slot 0 of the embedded object at +0x58.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C260": {
+    "name": "RenderView::vfunc_0_off_60",
+    "class": "RenderView",
+    "signature": "void fn_0044C260(void* self, const uint8_t* src)",
+    "summary": "Stores a byte flag from *src into self+0x14, updates a flag on the subobject at self+0x4 when present, then forwards to ext_0044BC60 on the primary base (self-0x60).",
+    "lifted_path": "lifted/classes/RenderView.cpp"
+  },
   "0x0044C2A0": {
     "name": "DWORD_RangeCopy (descriptive; sub_0044C2A0)",
     "signature": "DWORD* fn_0044C2A0(const DWORD* first, const DWORD* last, DWORD* out)",

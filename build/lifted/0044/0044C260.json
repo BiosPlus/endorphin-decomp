@@ -1,0 +1,28 @@
+{
+  "va": "0x0044C260",
+  "size": 58,
+  "orig_symbol": "RenderView::vfunc_0_off_60",
+  "src_path": "src/classes/RenderView.cpp",
+  "lifted_path": "lifted/classes/RenderView.cpp",
+  "name": "RenderView::vfunc_0_off_60",
+  "class": "RenderView",
+  "signature": "void fn_0044C260(void* self, const uint8_t* src)",
+  "summary": "Stores a byte flag from *src into self+0x14, updates a flag on the subobject at self+0x4 when present, then forwards to ext_0044BC60 on the primary base (self-0x60).",
+  "fields": [
+    {
+      "class": "RenderView",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "RenderView",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:03Z"
+}
