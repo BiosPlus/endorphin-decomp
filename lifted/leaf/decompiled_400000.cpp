@@ -1994,3 +1994,29 @@ extern void* fn_00401E80(uint32_t count) {
     return ext_006A5C62(count * 28u);
 }
 } // namespace lift_00401E80
+
+// [0x00406380] sub_00406380 (111 bytes)
+namespace lift_00406380 {
+// IAT slot mem_00924FF4 holds the address of MSVCP80 std::basic_string<char>::~basic_string (thiscall, 0x00628FF0).
+extern int mem_00924FF4;
+
+static inline void call_string_dtor(void* self) {
+    using DtorFn = void (*)(void*);
+    DtorFn fn = *reinterpret_cast<DtorFn const*>(&mem_00924FF4);
+    fn(self);
+}
+
+// @name std::_Destroy_range_strings (destroy array of records with 3 std::string members)
+// @class <none>
+// @summary Destroys each 0x58-byte record in [begin, end): strings at +0x3C, +0x20, +0x04 are destructed in that order.
+// @field <Record> +0x04 std::string name_a
+// @field <Record> +0x20 std::string name_b
+// @field <Record> +0x3C std::string name_c
+void fn_00406380(char* begin, char* end) {
+    for (char* p = begin; p != end; p += 0x58) {
+        call_string_dtor(p + 0x3c);
+        call_string_dtor(p + 0x20);
+        call_string_dtor(p + 0x04);
+    }
+}
+} // namespace lift_00406380
