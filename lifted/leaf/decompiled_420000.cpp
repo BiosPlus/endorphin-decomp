@@ -2192,3 +2192,44 @@ void fn_0042E820(void* self) {
     lift_field<uint32_t>(self, 0x0C) = 0;
 }
 } // namespace lift_0042E820
+
+// [0x00420600] sub_00420600 (95 bytes)
+namespace lift_00420600 {
+// Known callee 0x00662610: called with (&mem_00ACCBC4, &mem_00A2F228), cdecl (caller cleans).
+extern void ext_00662610(uint32_t arg0, uint32_t arg1);
+// Known callee 0x006A6C87: called with (&mem_00914C40), cdecl (caller cleans).
+extern void ext_006A6C87(uint32_t arg0);
+extern uint32_t mem_00ACCBE0;  // init flag dword; bit 0 = already initialized
+extern uint32_t mem_00ACCBC4;  // guarded static object; its address is the return value
+extern uint32_t mem_00A2F228;  // .data u32 0x009908FC (its address is passed as an argument)
+extern uint32_t mem_00914C40;  // global whose address is passed to ext_006A6C87
+// SEH handler referenced by the original exception frame (0x00877D2E).
+extern void ext_00877D2E();
+
+static inline uint32_t addr_u32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name StaticInitOnce_00420600
+// @summary One-time guarded initializer: on first call sets bit 0 of mem_00ACCBE0, calls ext_00662610(&mem_00ACCBC4, &mem_00A2F228) and ext_006A6C87(&mem_00914C40); always returns &mem_00ACCBC4. The SEH frame is modeled as a local record (handler = ext_00877D2E); it is not linked into fs:[0] since that is runtime exception plumbing and not portable C++.
+struct SehFrameRecord {
+    uint32_t prev;
+    uint32_t handler;
+    int32_t trylevel;
+};
+
+uint32_t fn_00420600() {
+    SehFrameRecord frame{};
+    frame.prev = 0;
+    frame.handler = addr_u32(reinterpret_cast<const void*>(&ext_00877D2E));
+    frame.trylevel = -1;
+
+    if ((mem_00ACCBE0 & 1u) == 0) {
+        frame.trylevel = 0;
+        mem_00ACCBE0 |= 1u;
+        ext_00662610(addr_u32(&mem_00ACCBC4), addr_u32(&mem_00A2F228));
+        ext_006A6C87(addr_u32(&mem_00914C40));
+    }
+    return addr_u32(&mem_00ACCBC4);
+}
+} // namespace lift_00420600

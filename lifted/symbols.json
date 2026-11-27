@@ -2847,6 +2847,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00472730 (Tree::lowerBound).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00420600": {
+    "name": "StaticInitOnce_00420600",
+    "signature": "static inline uint32_t addr_u32(const void* p)",
+    "summary": "One-time guarded initializer: on first call sets bit 0 of mem_00ACCBE0, calls ext_00662610(\u0026mem_00ACCBC4, \u0026mem_00A2F228) and ext_006A6C87(\u0026mem_00914C40); always returns \u0026mem_00ACCBC4. The SEH frame is modeled as a local record (handler = ext_00877D2E); it is not linked into fs:[0] since that is runtime exception plumbing and not portable C++.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00420660": {
     "name": "ExprParser::ExpressionException::vfunc_0",
     "class": "ExprParser::ExpressionException",
