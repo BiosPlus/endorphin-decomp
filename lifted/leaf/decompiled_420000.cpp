@@ -1583,3 +1583,29 @@ void* fn_004277B0(uint32_t count) {
     return ext_006A5C62(count * 0x24u);
 }
 } // namespace lift_004277B0
+
+// [0x00427700]
+namespace lift_00427700 {
+// @name getStaticBoolStringInit
+// @summary Lazily initializes a static string/object at 0x00ACDAE8 with 0x00A2F2F0, registers atexit cleanup 0x00914FC0, and returns 0x00ACDAE8.
+
+
+extern uint32_t mem_00ACDB04;
+extern uint8_t mem_00ACDAE8[];
+extern uint8_t mem_00A2F2F0[];
+extern void (*mem_00914FC0)(void);
+
+extern void* ext_0066AD10(void* out_str, void* arg2);
+extern int ext_006A6C87(void (*fn)(void));
+extern void ext_00878D7E();
+
+void* fn_00427700() {
+    (void)ext_00878D7E;
+    if ((mem_00ACDB04 & 1u) == 0u) {
+        mem_00ACDB04 |= 1u;
+        ext_0066AD10(mem_00ACDAE8, mem_00A2F2F0);
+        ext_006A6C87(mem_00914FC0);
+    }
+    return mem_00ACDAE8;
+}
+} // namespace lift_00427700

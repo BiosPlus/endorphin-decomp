@@ -1,0 +1,13 @@
+{
+  "va": "0x00427700",
+  "size": 95,
+  "orig_symbol": "sub_00427700",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "getStaticBoolStringInit",
+  "signature": "void* fn_00427700()",
+  "summary": "Lazily initializes a static string/object at 0x00ACDAE8 with 0x00A2F2F0, registers atexit cleanup 0x00914FC0, and returns 0x00ACDAE8.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:53:27Z"
+}
