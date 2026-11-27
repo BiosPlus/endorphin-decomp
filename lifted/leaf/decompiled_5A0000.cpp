@@ -1033,3 +1033,43 @@ extern void* __stdcall fn_005AD0E0(uint32_t a1, uint32_t a2, uint32_t a3, uint32
     return obj;
 }
 } // namespace lift_005AD0E0
+
+// [0x005AC4D0] sub_005AC4D0 (125 bytes)
+namespace lift_005AC4D0 {
+// Known callee 0x00664A80: replaceString (Replaces occurrences of a substring in a std::string and returns the replacement count.)
+extern int ext_00664A80(void* str, const char* find_str, const char* replace_str, bool only_first);
+// MSVCP80 std::basic_string<char> copy constructor and destructor, reached through their IAT slots.
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+// Data slots holding the .rdata string literal addresses used as find / replace.
+extern int mem_00A88880;
+extern int mem_00A88884;
+
+// @name ReplaceAllInStringCopy
+// @summary Copies the by-value std::string argument into the hidden return slot after running replaceString on it (find/replace literals from data slots, only_first = false), then destroys the temporary.
+// (No direct field accesses: the function only touches the std::string objects through their MSVCP80 member functions.)
+void* fn_005AC4D0(void* dst, void* src) {
+    using CopyCtorFn = void(__thiscall*)(void* self, const void* other);
+    using DtorFn = void(__thiscall*)(void* self);
+
+    const char* find_str =
+        reinterpret_cast<const char*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00A88880)));
+    const char* replace_str =
+        reinterpret_cast<const char*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00A88884)));
+
+    // replaceString(&src, find, replace, false); the count result is unused.
+    (void)ext_00664A80(src, find_str, replace_str, false);
+
+    // dst->basic_string(src)
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE0)));
+    copy_ctor(dst, src);
+
+    // src->~basic_string()
+    auto dtor = reinterpret_cast<DtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(src);
+
+    return dst;
+}
+} // namespace lift_005AC4D0

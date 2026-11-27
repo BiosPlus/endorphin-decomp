@@ -35025,6 +35025,12 @@
     "summary": "Initializes a 4x4 float matrix from four 4-float vector pointers and returns this.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005AC4D0": {
+    "name": "ReplaceAllInStringCopy",
+    "signature": "void* fn_005AC4D0(void* dst, void* src)",
+    "summary": "Copies the by-value std::string argument into the hidden return slot after running replaceString on it (find/replace literals from data slots, only_first = false), then destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AC550": {
     "name": "sub_005AC550",
     "signature": "extern \"C\" void fn_005AC550(void)",
