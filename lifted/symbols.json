@@ -658,6 +658,12 @@
     "summary": "Forwards (first, last, dest) to the std::string range-copy helper and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004062C0": {
+    "name": "copyConstructRange",
+    "signature": "void* fn_004062C0(const void* first, const void* last, void* dest)",
+    "summary": "Copy-constructs 0x58-byte UnknownClass elements from [first, last) into dest, returning the end of the written range; on exception destroys the already-constructed elements and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406350": {
     "name": "sub_00406350",
     "signature": "uint32_t fn_00406350(uint32_t begin, uint32_t end, uint32_t value)",

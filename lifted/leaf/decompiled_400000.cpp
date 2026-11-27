@@ -2335,3 +2335,42 @@ void* __stdcall fn_0040AC20(void* out_str) {
     return out_str;
 }
 } // namespace lift_0040AC20
+
+// [0x004062C0] sub_004062C0 (141 bytes)
+namespace lift_004062C0 {
+// Known callee 0x00404CD0: sub_00404CD0 (Destroys three std::string members at offsets +0x3c, +0x20, and +0x04)
+extern void ext_00404CD0(void* self);
+// Known callee 0x00404D70: UnknownClass::UnknownClass (Copy-constructs fields from a source struct (u32 at +0x00, three std::string members at +0x04/+0x20/+0x3C); returns this.)
+extern void* ext_00404D70(void* self, const void* src);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name copyConstructRange
+// @summary Copy-constructs 0x58-byte UnknownClass elements from [first, last) into dest, returning the end of the written range; on exception destroys the already-constructed elements and rethrows.
+// @field none
+void* fn_004062C0(const void* first, const void* last, void* dest) {
+    const uint8_t* src = static_cast<const uint8_t*>(first);
+    const uint8_t* const srcEnd = static_cast<const uint8_t*>(last);
+    uint8_t* out = static_cast<uint8_t*>(dest);
+    uint8_t* const origDest = out;
+
+    try {
+        while (src != srcEnd) {
+            if (out != nullptr) {
+                ext_00404D70(out, src);
+            }
+            out += 0x58;
+            src += 0x58;
+        }
+    } catch (...) {
+        // Destroy every element constructed so far: [origDest, out).
+        for (uint8_t* p = origDest; p != out; p += 0x58) {
+            ext_00404CD0(p);
+        }
+        // Rethrow the active exception (CxxThrowException with null args).
+        ext_006A6DD2();
+    }
+
+    return out;
+}
+} // namespace lift_004062C0
