@@ -2549,3 +2549,121 @@ void* fn_0078D740(void) {
     return ext_0078D7A0(obj);
 }
 } // namespace lift_0078D740
+
+// [0x00783700]
+namespace lift_00783700 {
+// @name removeUtf8File
+// @summary Converts a UTF-8 file path to UTF-16 and deletes the file via _wremove.
+
+
+    int32_t __fastcall ext_006E7460(void* self);
+    void __fastcall ext_006B9D70(void* self);
+    extern int32_t (__stdcall* mem_009241FC)(
+        uint32_t CodePage,
+        uint32_t dwFlags,
+        const char* lpMultiByteStr,
+        int32_t cbMultiByte,
+        wchar_t* lpWideCharStr,
+        int32_t cchWideChar);
+    extern int32_t (__cdecl* mem_0092519C)(const wchar_t* path);
+
+int32_t __cdecl fn_00783700(void* arg0) {
+    wchar_t wbuf[0x400];
+    const char* path = reinterpret_cast<const char*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_006E7460(reinterpret_cast<uint8_t*>(&arg0) + 0xC))));
+    mem_009241FC(0xFDE9u, 0u, path, -1, wbuf, 0x400);
+    int32_t result = mem_0092519C(wbuf);
+    ext_006B9D70(&arg0);
+    return result;
+}
+} // namespace lift_00783700
+
+// [0x0078B180]
+namespace lift_0078B180 {
+// @name hash_mix_u64
+// @summary Mixes two 32-bit values using a 4-round GF(2^8)-style byte-shift and XOR hash.
+uint32_t __cdecl sub_0078B180(uint32_t a0, uint32_t a1) {
+    uint32_t edi = 0;
+    uint32_t eax = 0;
+    for (int32_t ebx = 0; ebx < 2; ++ebx) {
+        eax = (ebx == 0) ? a1 : a0;
+        edi ^= eax;
+        for (int32_t ebp = 4; ebp > 0; --ebp) {
+            uint8_t cl = static_cast<uint8_t>(edi >> 24);
+            uint32_t edx = cl;
+            uint32_t t1 = (cl & 0x80) ? 0x4Du : 0u;
+            uint32_t esi = ((edx & 0x7Fu) << 1) ^ t1;
+            uint32_t ecx = ((cl & 1u) ? 0xA6u : 0u) ^ (edx >> 1) ^ esi;
+
+            eax = ecx;
+            eax = (eax << 8) ^ esi;
+            eax = (eax << 8) ^ ecx;
+            eax ^= edi;
+            eax = (eax << 8) ^ edx;
+            edi = eax;
+        }
+    }
+    return eax;
+}
+} // namespace lift_0078B180
+
+// [0x007839F0]
+namespace lift_007839F0 {
+// @name Unknown::dispatchCallbacksReverse
+// @class Unknown
+// @summary Iterates callbacks in reverse order with active iterator linking, stopping early if arg2+0x4 is non-zero.
+// @field Unknown +0x00 int32_t count
+// @field Unknown +0x10 void** items
+// @field Unknown +0x18 void* activeIterator
+
+
+extern void* __fastcall ext_00783790(void* self, int edx_unused);
+
+namespace {
+struct ActiveIterator {
+    void* prev;
+    void* owner;
+    int32_t index;
+    int32_t endIndex;
+};
+} // namespace
+
+extern uint32_t __fastcall fn_007839F0(void* self, int edx_unused, void* arg1, void* arg2) {
+    ActiveIterator iter;
+    ext_00783790(&iter, 0);
+
+    iter.prev = lift_field<void*>(self, 0x18);
+    lift_field<void*>(self, 0x18) = &iter;
+
+    int32_t index = lift_field<int32_t>(self, 0x00) - 1;
+    int32_t endIndex = iter.endIndex;
+    iter.owner = self;
+    iter.index = index;
+
+    if (index >= endIndex) {
+        using CallbackFn = void(__fastcall*)(void* target, int edx_unused, void* a1, void* a2);
+        do {
+            if (!iter.owner) {
+                return 0;
+            }
+            void** items = lift_field<void**>(self, 0x10);
+            void* entry = items[index];
+            void* target = lift_field<void*>(entry, 0x00);
+            CallbackFn fn = lift_field<CallbackFn>(entry, 0x04);
+            fn(target, 0, arg1, arg2);
+
+            if (arg2 && lift_field<uint8_t>(arg2, 0x04) != 0) {
+                break;
+            }
+            index = iter.index - 1;
+            endIndex = iter.endIndex;
+            iter.index = index;
+        } while (index >= endIndex);
+    }
+
+    if (iter.owner) {
+        lift_field<void*>(self, 0x18) = iter.prev;
+    }
+    return 0;
+}
+} // namespace lift_007839F0

@@ -78702,6 +78702,13 @@
     "summary": "Passes each pointer in the +0x10 array (count at +0x00) to the MFC thunk, releases the buffer, then resets the chain at +0x18 if present.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x007839F0": {
+    "name": "Unknown::dispatchCallbacksReverse",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __fastcall fn_007839F0(void* self, int edx_unused, void* arg1, void* arg2)",
+    "summary": "Iterates callbacks in reverse order with active iterator linking, stopping early if arg2+0x4 is non-zero.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783A80": {
     "name": "LazyInitSharedObject",
     "signature": "void fn_00783A80(void)",

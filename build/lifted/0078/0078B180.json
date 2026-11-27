@@ -1,0 +1,13 @@
+{
+  "va": "0x0078B180",
+  "size": 144,
+  "orig_symbol": "sub_0078B180",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "hash_mix_u64",
+  "signature": "uint32_t __cdecl sub_0078B180(uint32_t a0, uint32_t a1)",
+  "summary": "Mixes two 32-bit values using a 4-round GF(2^8)-style byte-shift and XOR hash.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:46:40Z"
+}
