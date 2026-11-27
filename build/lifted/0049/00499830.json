@@ -1,0 +1,28 @@
+{
+  "va": "0x00499830",
+  "size": 203,
+  "orig_symbol": "NMData::Transition::vfunc_32",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_32",
+  "class": "NMData::Transition",
+  "signature": "void fn_00499830(void* self, const float* delta)",
+  "summary": "Adds a float delta pair to every (x,y) pair in the range [+0x88, +0x8C), clamps each component to [0,1], then calls ext_004996E0 on self.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x88",
+      "type": "float*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x8C",
+      "type": "float*",
+      "name": "field_0x8C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:31:51Z"
+}

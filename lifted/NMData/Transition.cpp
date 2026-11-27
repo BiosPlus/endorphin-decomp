@@ -178,3 +178,47 @@ Pair64* fn_00497680(void* self, uint32_t index, Pair64* out) {
     return out;
 }
 } // namespace lift_00497680
+
+// [0x00499830] NMData::Transition::vfunc_32 (203 bytes)
+namespace lift_00499830 {
+// Callee sub_004996E0: thiscall (ecx = object), no stack arguments.
+extern void ext_004996E0(void* ecx);
+// MSVC debug iterator checks (_invalid_parameter_noinfo slot) were dropped; they cannot fire
+// for valid ranges. Referenced only for metadata, not accessed.
+extern int mem_00925134;
+
+// @name NMData::Transition::vfunc_32
+// @class NMData::Transition
+// @summary Adds a float delta pair to every (x,y) pair in the range [+0x88, +0x8C), clamps each component to [0,1], then calls ext_004996E0 on self.
+// @field NMData::Transition +0x88 float* field_0x88
+// @field NMData::Transition +0x8C float* field_0x8C
+void fn_00499830(void* self, const float* delta) {
+    (void)&mem_00925134;
+    float* cur = lift_field<float*>(self, 0x88);
+    while (cur != lift_field<float*>(self, 0x8C)) {
+        float x = cur[0] + delta[0];
+        float y = cur[1] + delta[1];
+
+        // Clamp x to [0, 1]: negatives go to 0, values above 1 (or NaN) go to 1.
+        if (x < 0.0f) {
+            x = 0.0f;
+        }
+        if (!(x <= 1.0f)) {
+            x = 1.0f;
+        }
+
+        // Clamp y to [0, 1] with the same rules.
+        if (y < 0.0f) {
+            y = 0.0f;
+        }
+        if (!(y <= 1.0f)) {
+            y = 1.0f;
+        }
+
+        cur[0] = x;
+        cur[1] = y;
+        cur += 2;
+    }
+    ext_004996E0(self);
+}
+} // namespace lift_00499830

@@ -14492,6 +14492,13 @@
     "summary": "Forwards to ext_004871D0 when +0xB0 is null; otherwise calls vtable slot 1 of the object at +0xB0+0x10 and returns its result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x00499830": {
+    "name": "NMData::Transition::vfunc_32",
+    "class": "NMData::Transition",
+    "signature": "void fn_00499830(void* self, const float* delta)",
+    "summary": "Adds a float delta pair to every (x,y) pair in the range [+0x88, +0x8C), clamps each component to [0,1], then calls ext_004996E0 on self.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x00499AB0": {
     "name": "GuiBaseElement::vfunc_19",
     "class": "GuiBaseElement",
