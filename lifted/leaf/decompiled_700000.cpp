@@ -2345,3 +2345,35 @@ double fn_00702E60(void* self) {
     return result;
 }
 } // namespace lift_00702E60
+
+// [0x00702C60] sub_00702C60 (128 bytes)
+namespace lift_00702C60 {
+// Known callee 0x006D2370: sub_006D2370 (constructs the local out-buffer; thiscall, no stack args)
+extern void ext_006D2370(void* self);
+// Known callee 0x006D23F0: Unknown::GetAddressAt8 (Returns this + 8 * index; thiscall, one stack argument, callee pops 4.)
+extern void* ext_006D23F0(void* self, uint32_t index);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0(void);
+// Known callee 0x00702A00: sub_00702A00 (Auto-lifted identical-shape clone of 0x0070BC70 (Unknown::FillValueTriple).)
+extern double* ext_00702A00(void* self, double* out);
+
+// @name Unknown::GetTripleSecondValue
+// @class Unknown
+// @summary Fills a local value triple from self and returns the double stored at element index 1 (byte offset 8).
+double fn_00702C60(void* self) {
+    // Local out-buffer for FillValueTriple (SEH frame / EH state bookkeeping dropped).
+    double local[3];
+    ext_006D2370(local);
+    ext_00702A00(self, local);
+
+    // GetAddressAt8(&local, 1) -> &local[1] (8-byte elements).
+    double* elem = static_cast<double*>(ext_006D23F0(local, 1));
+
+    // Original passes the element's two dwords as stack args to an empty cdecl
+    // function; the callee ignores them, so only the call itself is kept.
+    ext_006D80A0();
+
+    // Original returns the element via `fld qword ptr [esp]`, i.e. *elem.
+    return *elem;
+}
+} // namespace lift_00702C60
