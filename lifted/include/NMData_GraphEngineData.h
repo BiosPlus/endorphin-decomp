@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::GraphEngineData:
 namespace lifted_layout {
 struct NMData_GraphEngineData_Fields {
-    // +0x8   void*                    field_0x08  (evidence: 0x004B48E0)
+    // +0x8   void*                    field_0x08  (evidence: 0x004B48E0, 0x004B5940)
+    // +0xC   void*                    field_0x0c  (evidence: 0x004B5940)
 };
 } // namespace lifted_layout

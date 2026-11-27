@@ -18427,6 +18427,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004B5610 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004B5940": {
+    "name": "NMData::GraphEngineData::vfunc_0_off_4",
+    "class": "NMData::GraphEngineData",
+    "signature": "extern \"C\" void ext_006A5C5C(void* ptr);   // IAT thunk to MFC80!ord_764 (operator delete) extern \"C\" int mem_00925134;               // MSVCR80!_invalid_parameter_noinfo (boilerplate range checks) extern \"C\" int32_t mem_00A372AC;           // table length (0x0C) extern \"C\" int32_t mem_00A372B0[];         // table of int32 values, indices [0, mem_00A372AC) struct IntVecScratch",
+    "summary": "Collects entry keys into a sorted scratch vector, then writes a table value chosen by entry count and key collisions to out+0x20.",
+    "lifted_path": "lifted/NMData/GraphEngineData.cpp"
+  },
   "0x004B60A0": {
     "name": "Unknown::constructStringAndDispatch_004B60A0",
     "class": "Unknown",
