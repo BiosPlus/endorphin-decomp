@@ -21,6 +21,15 @@ struct EffectorSkeletal_Fields {
     // +0xA8  void*                    field_0xA8  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x0062E480, 0x00636470, 0x00639730, 0x006399F0, 0x00695740) // CONFLICT: multiple definitions at +0xA8
     // +0xAC  float                    desiredLinearVelocity_y  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x00633140)
     // +0xB0  float                    desiredLinearVelocity_z  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x00633140)
+    // +0xCC  float                    field_0xCC  (evidence: 0x006309E0)
+    // +0xD0  float                    field_0xD0  (evidence: 0x006309E0)
+    // +0xD4  float                    field_0xD4  (evidence: 0x006309E0)
+    // +0xD8  float                    field_0xD8  (evidence: 0x006309E0)
+    // +0xDC  float                    field_0xDC  (evidence: 0x006309E0)
+    // +0xE0  float                    field_0xE0  (evidence: 0x006309E0)
+    // +0xE4  float                    field_0xE4  (evidence: 0x006309E0)
+    // +0xE8  float                    field_0xE8  (evidence: 0x006309E0)
+    // +0xEC  float                    field_0xEC  (evidence: 0x006309E0)
     // +0xF0  float                    field_0xF0  (evidence: 0x00630D00, 0x00630D40)
 };
 } // namespace lifted_layout

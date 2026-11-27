@@ -100,3 +100,31 @@ void fn_00630D40(void* self, void* arg) {
     ext_00630CB0(self, f0);
 }
 } // namespace lift_00630D40
+
+// [0x006309E0]
+namespace lift_006309E0 {
+// @name EffectorSkeletal::vfunc_28
+// @class EffectorSkeletal
+// @summary Scales 9 float fields (offsets 0xCC..0xEC) by a scalar factor.
+// @field EffectorSkeletal +0xCC float field_0xCC
+// @field EffectorSkeletal +0xD0 float field_0xD0
+// @field EffectorSkeletal +0xD4 float field_0xD4
+// @field EffectorSkeletal +0xD8 float field_0xD8
+// @field EffectorSkeletal +0xDC float field_0xDC
+// @field EffectorSkeletal +0xE0 float field_0xE0
+// @field EffectorSkeletal +0xE4 float field_0xE4
+// @field EffectorSkeletal +0xE8 float field_0xE8
+// @field EffectorSkeletal +0xEC float field_0xEC
+
+void __thiscall fn_006309E0(void* self, float scale) {
+    lift_field<float>(self, 0xD0) *= scale;
+    lift_field<float>(self, 0xEC) *= scale;
+    lift_field<float>(self, 0xCC) *= scale;
+    lift_field<float>(self, 0xDC) *= scale;
+    lift_field<float>(self, 0xE4) *= scale;
+    lift_field<float>(self, 0xD4) *= scale;
+    lift_field<float>(self, 0xE0) *= scale;
+    lift_field<float>(self, 0xE8) *= scale;
+    lift_field<float>(self, 0xD8) *= scale;
+}
+} // namespace lift_006309E0

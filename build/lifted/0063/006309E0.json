@@ -1,0 +1,70 @@
+{
+  "va": "0x006309E0",
+  "size": 131,
+  "orig_symbol": "EffectorSkeletal::vfunc_28",
+  "src_path": "src/classes/EffectorSkeletal.cpp",
+  "lifted_path": "lifted/classes/EffectorSkeletal.cpp",
+  "name": "EffectorSkeletal::vfunc_28",
+  "class": "EffectorSkeletal",
+  "signature": "void __thiscall fn_006309E0(void* self, float scale)",
+  "summary": "Scales 9 float fields (offsets 0xCC..0xEC) by a scalar factor.",
+  "fields": [
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xCC",
+      "type": "float",
+      "name": "field_0xCC"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xD0",
+      "type": "float",
+      "name": "field_0xD0"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xD4",
+      "type": "float",
+      "name": "field_0xD4"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xD8",
+      "type": "float",
+      "name": "field_0xD8"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xDC",
+      "type": "float",
+      "name": "field_0xDC"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "field_0xE0"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xE4",
+      "type": "float",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xE8",
+      "type": "float",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "field_0xEC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:25:14Z"
+}
