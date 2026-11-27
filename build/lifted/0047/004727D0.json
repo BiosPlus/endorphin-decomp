@@ -1,0 +1,46 @@
+{
+  "va": "0x004727D0",
+  "size": 147,
+  "orig_symbol": "sub_004727D0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "Unknown::createCopyRecord",
+  "class": "Unknown",
+  "signature": "void* __stdcall fn_004727D0(uint32_t a1, uint32_t a2, uint32_t a3, const void* src, uint8_t a5)",
+  "summary": "Allocates a 0x48-byte record, stores three DWORDs and a byte flag, and copy-constructs the string pair from src; returns the record or null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "field_0x45"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:41:03Z"
+}

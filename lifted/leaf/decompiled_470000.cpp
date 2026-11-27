@@ -1255,3 +1255,40 @@ void* fn_00476BC0(void* begin, void* end) {
     return last;
 }
 } // namespace lift_00476BC0
+
+// [0x004727D0] sub_004727D0 (147 bytes)
+namespace lift_004727D0 {
+// Known callee 0x006981A0: Unknown::CopyConstructPair_006981A0 (Copy-constructs two std::string members (at +0x00 and +0x1C) from the matching strings of src; returns this.)
+extern void* ext_006981A0(void* self, const void* src);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 = operator new.)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764 = operator delete.)
+extern void ext_006A5C5C(void* p);
+
+// @name Unknown::createCopyRecord
+// @class Unknown
+// @summary Allocates a 0x48-byte record, stores three DWORDs and a byte flag, and copy-constructs the string pair from src; returns the record or null.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x44 uint8_t field_0x44
+// @field Unknown +0x45 uint8_t field_0x45
+void* __stdcall fn_004727D0(uint32_t a1, uint32_t a2, uint32_t a3, const void* src, uint8_t a5) {
+    void* self = ext_006A5C62(0x48);
+    if (self == nullptr) {
+        return nullptr;
+    }
+    try {
+        lift_field<uint32_t>(self, 0x00) = a1;
+        lift_field<uint32_t>(self, 0x04) = a2;
+        lift_field<uint32_t>(self, 0x08) = a3;
+        ext_006981A0(static_cast<uint8_t*>(self) + 0x0C, src);
+        lift_field<uint8_t>(self, 0x44) = a5;
+        lift_field<uint8_t>(self, 0x45) = 0;
+        return self;
+    } catch (...) {
+        ext_006A5C5C(self);
+        throw;
+    }
+}
+} // namespace lift_004727D0

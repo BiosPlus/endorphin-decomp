@@ -9856,6 +9856,13 @@
     "summary": "Walks the red-black tree and returns the first node whose key is not less than the probe key, or the header node if none.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x004727D0": {
+    "name": "Unknown::createCopyRecord",
+    "class": "Unknown",
+    "signature": "void* __stdcall fn_004727D0(uint32_t a1, uint32_t a2, uint32_t a3, const void* src, uint8_t a5)",
+    "summary": "Allocates a 0x48-byte record, stores three DWORDs and a byte flag, and copy-constructs the string pair from src; returns the record or null.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00473C30": {
     "name": "RuntimeEngine::CaptureTicker::vfunc_0",
     "class": "RuntimeEngine::CaptureTicker",
