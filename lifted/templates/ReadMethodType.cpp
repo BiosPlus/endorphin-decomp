@@ -68472,3 +68472,43 @@ uint8_t __stdcall fn_004BCCE0(const void* arg1, void* arg2) {
     return result;
 }
 } // namespace lift_004BCCE0
+
+// [0x004D8860]
+namespace lift_004D8860 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_42
+// @class ExprParser::ReadMethodType
+// @summary Evaluates a RigEventData::getUserRetargetRefFrame expression by resolving the target object and forwarding to its vfunc_42.
+
+
+extern void* __stdcall ext_004D5560(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern uint32_t mem_00924FF4;
+
+struct LocalRef {
+    void* obj;
+    uint32_t aux;
+};
+
+bool __stdcall fn_004D8860(void* arg1, void* arg2) {
+    uint8_t str_buf[0x1c]{};
+    void* str_ptr = ext_004D5560(str_buf, *reinterpret_cast<void**>(arg1));
+
+    LocalRef ref{nullptr, 0};
+    ext_006720E0(&ref, str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    using Vfunc42 = uint8_t(__thiscall*)(void*, void*, void*);
+    auto* vtbl = *reinterpret_cast<void***>(ref.obj);
+    uint8_t result = reinterpret_cast<Vfunc42>(vtbl[0xa8 / 4])(ref.obj, &ref, arg2);
+
+    if (ref.obj != nullptr) {
+        using Vfunc30 = void(__thiscall*)(void*, void*);
+        auto* vtbl2 = *reinterpret_cast<void***>(ref.obj);
+        reinterpret_cast<Vfunc30>(vtbl2[0x78 / 4])(ref.obj, &ref);
+    }
+
+    return result != 0;
+}
+} // namespace lift_004D8860

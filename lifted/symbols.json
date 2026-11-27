@@ -18978,6 +18978,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006839B0 (ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D8860": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "bool __stdcall fn_004D8860(void* arg1, void* arg2)",
+    "summary": "Evaluates a RigEventData::getUserRetargetRefFrame expression by resolving the target object and forwarding to its vfunc_42.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D8A40": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0\u003e",

@@ -1,0 +1,14 @@
+{
+  "va": "0x004BCCE0",
+  "size": 149,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::MaterialPair,std::string,\u0026NMData::MaterialPair::generateDisplayName,1\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair,std::string,\u0026NMData::MaterialPair::generateDisplayName,1\u003e",
+  "signature": "uint8_t __stdcall fn_004BCCE0(const void* arg1, void* arg2)",
+  "summary": "Copies a string from arg1, looks up a value object via sub_006720E0, forwards vfunc +0xA8, and cleans up via vfunc +0x78.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:09:08Z"
+}
