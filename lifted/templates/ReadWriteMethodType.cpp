@@ -11674,3 +11674,30 @@ void* fn_005B2A50(void* holder) {
     return holder;
 }
 } // namespace lift_005B2A50
+
+// [0x005AADD0] ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setHoldModeFromNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005AADD0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00B42208;
+extern int mem_00B42204;
+
+// @name ExprParser::ReadWriteMethodType<RigNode>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: void __thiscall NMData::RigNode::setHoldModeFromNameProperty(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary One-time guarded init of a static accessor object (guard bit 0 of mem_00B42208), then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_005AADD0(void* holder) {
+    // Guard flag: bit 0 of the dword at mem_00B42208 (asm: test byte / or dword with eax=1).
+    uint32_t* guard = reinterpret_cast<uint32_t*>(&mem_00B42208);
+    if ((*guard & 1u) == 0) {
+        *guard |= 1u;
+        // Constructs the static object (asm: ECX = &mem_00B42204, call ext_0067A670).
+        ext_0067A670();
+        // Object vtable pointer (asm: mov dword [0xb42204], 0x95f03c).
+        *reinterpret_cast<uint32_t*>(&mem_00B42204) = 0x0095F03Cu;
+    }
+    // holder+0x04 = &static object (asm: mov dword [eax+4], 0xb42204).
+    uint8_t* h = reinterpret_cast<uint8_t*>(holder);
+    *reinterpret_cast<uintptr_t*>(h + 0x04) = reinterpret_cast<uintptr_t>(&mem_00B42204);
+}
+} // namespace lift_005AADD0
