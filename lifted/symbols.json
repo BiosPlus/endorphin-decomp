@@ -14151,6 +14151,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x8 and tail-calls sub_004E78B0.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004AFB60": {
+    "name": "Unknown::scanChildrenForFlag",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* mem_00925134;  // _invalid_parameter_noinfo slot (debug bounds checks omitted) void fn_004AFB60(void* self)",
+    "summary": "Calls a getter on the sub-object at +0x08 to get an item range; returns true (+0x361 = 1) on the first item lacking flag 0x40 for which fn_00494070(0xC0, item) succeeds, else +0x361 = 0.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AFDE0": {
     "name": "ChangeSecondarySelectionCommand::vfunc_3",
     "class": "ChangeSecondarySelectionCommand",
@@ -77239,6 +77246,12 @@
     "name": "initSelfRefAt14",
     "signature": "uint32_t fn_0078D720(void* self, int32_t arg1)",
     "summary": "Initializes the object via ext_006D2130(self, arg1, 4), then stores a pointer to self+0x10 at self+0x14; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
+  "0x0078D7A0": {
+    "name": "sub_0078D7A0",
+    "signature": "void* __thiscall sub_0078D7A0(void* self)",
+    "summary": "Initializes object fields and sets vtable to 0x0099708C",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x0078D830": {

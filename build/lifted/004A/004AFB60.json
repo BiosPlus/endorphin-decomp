@@ -1,0 +1,28 @@
+{
+  "va": "0x004AFB60",
+  "size": 138,
+  "orig_symbol": "sub_004AFB60",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "Unknown::scanChildrenForFlag",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* mem_00925134;  // _invalid_parameter_noinfo slot (debug bounds checks omitted) void fn_004AFB60(void* self)",
+  "summary": "Calls a getter on the sub-object at +0x08 to get an item range; returns true (+0x361 = 1) on the first item lacking flag 0x40 for which fn_00494070(0xC0, item) succeeds, else +0x361 = 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x361",
+      "type": "uint8_t",
+      "name": "field_0x361"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:32:05Z"
+}

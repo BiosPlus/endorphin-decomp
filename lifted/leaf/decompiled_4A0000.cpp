@@ -1081,3 +1081,49 @@ void __thiscall fn_004A5920(void* self) {
     lift_field<uint8_t*>(obj, 0x04) = a;
 }
 } // namespace lift_004A5920
+
+// [0x004AFB60]
+namespace lift_004AFB60 {
+// @name Unknown::scanChildrenForFlag
+// @class Unknown
+// @summary Calls a getter on the sub-object at +0x08 to get an item range; returns true (+0x361 = 1) on the first item lacking flag 0x40 for which fn_00494070(0xC0, item) succeeds, else +0x361 = 0.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x361 uint8_t field_0x361
+
+extern void* ext_00494070(uint32_t mask, void* obj);
+extern void* mem_00925134;  // _invalid_parameter_noinfo slot (debug bounds checks omitted)
+
+void fn_004AFB60(void* self) {
+    using GetRangeFn = void* (__thiscall*)(void*);
+    using FlagsFn    = uint8_t (__thiscall*)(void*);
+    (void)&mem_00925134;
+
+    // Receiver for the range getter is the address of self+0x08.
+    void* recv = static_cast<uint8_t*>(self) + 0x08;
+    void* sub  = lift_field<void*>(self, 0x08);
+    GetRangeFn getRange = lift_field<GetRangeFn>(sub, 0x08);
+    void* range = getRange(recv);
+
+    // Range layout: +0x04 = begin, +0x08 = end (pointers to item slots).
+    uint8_t* cur = lift_field<uint8_t*>(range, 0x04);
+    for (;;) {
+        uint8_t* end = lift_field<uint8_t*>(range, 0x08);
+        if (cur == end) {
+            lift_field<uint8_t>(self, 0x361) = 0;
+            return;
+        }
+
+        void* obj = *reinterpret_cast<void**>(cur);
+        void** vt = lift_field<void**>(obj, 0x00);
+        FlagsFn getFlags = lift_field<FlagsFn>(vt, 0x50);
+        uint8_t flags = getFlags(obj);
+
+        if (!(flags & 0x40) && ext_00494070(0xC0, obj) != nullptr) {
+            lift_field<uint8_t>(self, 0x361) = 1;
+            return;
+        }
+
+        cur += sizeof(void*);
+    }
+}
+} // namespace lift_004AFB60
