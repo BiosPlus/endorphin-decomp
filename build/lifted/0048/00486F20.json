@@ -1,0 +1,13 @@
+{
+  "va": "0x00486F20",
+  "size": 98,
+  "orig_symbol": "sub_00486F20",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "unique_strings",
+  "signature": "uint8_t* __cdecl sub_00486F20(uint8_t* first, uint8_t* last)",
+  "summary": "Deduplicates adjacent equal std::string elements in a contiguous range [first, last)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:59:43Z"
+}

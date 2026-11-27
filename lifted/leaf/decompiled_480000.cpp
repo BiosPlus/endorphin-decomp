@@ -2339,3 +2339,47 @@ void* fn_0048FB80(uint32_t count) {
     return ext_006A5C62(size);
 }
 } // namespace lift_0048FB80
+
+// [0x00486F20]
+namespace lift_00486F20 {
+// @name unique_strings
+// @summary Deduplicates adjacent equal std::string elements in a contiguous range [first, last)
+
+using StringEqFn = uint8_t (__cdecl *)(const void*, const void*);
+using StringAssignFn = void* (__thiscall *)(void*, const void*);
+
+extern StringEqFn mem_00924FC4;
+extern StringAssignFn mem_00924FDC;
+
+uint8_t* __cdecl sub_00486F20(uint8_t* first, uint8_t* last) {
+    uint8_t* result = first;
+    uint8_t* cur = first;
+    if (cur == last) {
+        return last;
+    }
+
+    for (;;) {
+        cur += 0x1c;
+        if (cur == last) {
+            return last;
+        }
+        if (mem_00924FC4(result, cur) != 0) {
+            break;
+        }
+        result = cur;
+    }
+
+    cur += 0x1c;
+    if (cur != last) {
+        do {
+            if (mem_00924FC4(result, cur) == 0) {
+                result += 0x1c;
+                mem_00924FDC(result, cur);
+            }
+            cur += 0x1c;
+        } while (cur != last);
+    }
+
+    return result + 0x1c;
+}
+} // namespace lift_00486F20
