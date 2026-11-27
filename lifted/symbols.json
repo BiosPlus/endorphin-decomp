@@ -14542,6 +14542,12 @@
     "summary": "Adds two 4-float records (self and other) into out[0..3] pairwise, then orders out[0]\u003c=out[2] and out[1]\u003c=out[3]; returns out.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049CF60": {
+    "name": "NewAndInitDynCastObject",
+    "signature": "uint32_t fn_0049CF60(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Allocates a 0x28-byte object; if allocation succeeds, initializes it via InitDynCastFields with (self, a1, a2, a3), then passes the result and the global value from ext_00665870 to ext_00666670.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049CFE0": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",

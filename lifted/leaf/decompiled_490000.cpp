@@ -2456,3 +2456,34 @@ extern uint8_t __thiscall fn_00492480(void* self, float a0, float a1, float a2, 
     return 1;
 }
 } // namespace lift_00492480
+
+// [0x0049CF60] sub_0049CF60 (117 bytes)
+namespace lift_0049CF60 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (cdecl allocator, called with size 0x28)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x0049B400: Unknown::InitDynCastFields (thiscall-style: self in ecx, four stack args)
+extern void* ext_0049B400(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x00665870: sub_00665870 (returns global int32 value from mem_00B59420)
+extern int32_t ext_00665870(void);
+// Known callee 0x00666670: sub_00666670 (292 bytes; signature not recovered, modeled as thiscall with one stack arg)
+extern uint32_t ext_00666670(void* self, uint32_t arg);
+
+// @name NewAndInitDynCastObject
+// @summary Allocates a 0x28-byte object; if allocation succeeds, initializes it via InitDynCastFields with (self, a1, a2, a3), then passes the result and the global value from ext_00665870 to ext_00666670.
+// (No direct field accesses on self; self is only forwarded as an argument, so no @field lines.)
+uint32_t fn_0049CF60(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    void* obj = ext_006A5C62(0x28);
+
+    uint32_t result = 0;
+    if (obj != nullptr) {
+        void* init = ext_0049B400(obj,
+                                  static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)),
+                                  a1, a2, a3);
+        result = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(init));
+    }
+
+    int32_t global = ext_00665870();
+    void* ctx = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(global)));
+    return ext_00666670(ctx, result);
+}
+} // namespace lift_0049CF60

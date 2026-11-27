@@ -1,0 +1,13 @@
+{
+  "va": "0x0049CF60",
+  "size": 117,
+  "orig_symbol": "sub_0049CF60",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "NewAndInitDynCastObject",
+  "signature": "uint32_t fn_0049CF60(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Allocates a 0x28-byte object; if allocation succeeds, initializes it via InitDynCastFields with (self, a1, a2, a3), then passes the result and the global value from ext_00665870 to ext_00666670.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:56:15Z"
+}
