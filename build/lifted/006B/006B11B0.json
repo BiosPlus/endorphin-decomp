@@ -1,0 +1,14 @@
+{
+  "va": "0x006B11B0",
+  "size": 147,
+  "orig_symbol": "GWCPropertiesFactory::vfunc_1",
+  "src_path": "src/classes/GWCPropertiesFactory.cpp",
+  "lifted_path": "lifted/classes/GWCPropertiesFactory.cpp",
+  "name": "GWCPropertiesFactory::vfunc_1",
+  "class": "GWCPropertiesFactory",
+  "signature": "extern \"C\" void* __thiscall fn_006B11B0(void* self, uint32_t arg1, int32_t arg2, uint32_t arg3)",
+  "summary": "Creates and initializes a properties object if the requested index/type is within bounds",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:04:50Z"
+}

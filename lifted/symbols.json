@@ -57402,6 +57402,13 @@
     "summary": "Looks up three named items in the container and parses each item's string as a float into this+0x00, this+0x04 and this+0x08.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067BB00": {
+    "name": "Vec3::buildBasisFromCross",
+    "class": "Vec3",
+    "signature": "void __thiscall sub_0067BB00(float* self, const float* other)",
+    "summary": "Computes cross(this, other), builds a 3x3 basis matrix [this, other, cross], and passes it to ext_00694880.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067BCE0": {
     "name": "Unknown::InitIdentity3x3AndDispatch_0067BCE0",
     "class": "Unknown",
@@ -59202,6 +59209,12 @@
     "name": "ctor_00944E74",
     "signature": "void* fn_00692B50(void* self)",
     "summary": "Constructor that initializes base vtable via ext_00661980, sets vtables 0x00944E74 and 0x00944E44, and zeroes fields at +0x0c, +0x10, +0x14.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00692BA0": {
+    "name": "sub_00692BA0",
+    "signature": "extern \"C\" void __fastcall fn_00692BA0(void* self)",
+    "summary": "Destructor that dispatches virtual cleanup on vector elements, frees the buffer, and resets base vtables.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x00692D90": {
