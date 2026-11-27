@@ -1842,3 +1842,21 @@ void fn_004A7560(void* /*a1: unused stack argument*/, void* self) {
     }
 }
 } // namespace lift_004A7560
+
+// [0x004A1A10] sub_004A1A10 (33 bytes)
+namespace lift_004A1A10 {
+// Known callee 0x004A1860: sub_004A1860 (Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).)
+extern uint32_t* ext_004A1860(void* self, uint32_t* out, uint32_t key);
+// Known callee 0x004A1270: sub_004A1270 (165B, unlifted; thiscall taking one string argument.)
+extern void ext_004A1270(void* self, const char* text);
+// .rdata string at 0x00940638: "disabled"
+extern const char mem_00940638[];
+
+// @name LookupAndApplyDisabledString_004A1A10
+// @summary Looks up key 0 via fn_004A1860 into a local slot, then passes that slot and the "disabled" rdata string to ext_004A1270.
+void fn_004A1A10(void* self) {
+    uint32_t slot = 0;
+    ext_004A1860(self, &slot, 0);
+    ext_004A1270(&slot, mem_00940638);
+}
+} // namespace lift_004A1A10

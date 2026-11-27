@@ -1,0 +1,13 @@
+{
+  "va": "0x004A1A10",
+  "size": 33,
+  "orig_symbol": "sub_004A1A10",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "LookupAndApplyDisabledString_004A1A10",
+  "signature": "void fn_004A1A10(void* self)",
+  "summary": "Looks up key 0 via fn_004A1860 into a local slot, then passes that slot and the \"disabled\" rdata string to ext_004A1270.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:45Z"
+}
