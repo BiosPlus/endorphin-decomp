@@ -1332,3 +1332,89 @@ void* fn_00585270() {
     return mem_00B3EB64;
 }
 } // namespace lift_00585270
+
+// [0x00586440] sub_00586440 (122 bytes)
+namespace lift_00586440 {
+extern uint32_t mem_00925134;   // IAT slot holding _invalid_parameter_noinfo
+
+// @name ChildRangeVisit
+// @class Unknown
+// @summary Visits this+0x4 and this+0x8 children, then recursively visits each element of the pointer range [begin, end) stored at this+0x80/this+0x84.
+// @field Unknown +0x04 void* child_a
+// @field Unknown +0x08 void* child_b
+// @field Unknown +0x80 uint32_t children_begin
+// @field Unknown +0x84 uint32_t children_end
+
+namespace {
+
+inline void* addr_to_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// Reads a 32-bit pointer-sized field at base+off (x86 layout).
+inline uint32_t u32_at(void* base, ptrdiff_t off) {
+    return lift_field<uint32_t>(base, off);
+}
+
+// Loads the vtable entry at slot byte offset `slot_off` for object `obj`.
+inline void* vslot(void* obj, ptrdiff_t slot_off) {
+    const uint32_t vtbl = u32_at(obj, 0);
+    return addr_to_ptr(u32_at(addr_to_ptr(vtbl), slot_off));
+}
+
+} // namespace
+
+void fn_00586440(void* self, uint32_t arg) {
+    // mov esi, ecx ; mov eax, [esi+4] ; mov edx, [eax+0x1c] ; lea ecx, [esi+4] ; call edx
+    using BoolThisFn = uint8_t (*)(void* thisPtr);
+    void* child_a = addr_to_ptr(u32_at(self, 0x04));
+    BoolThisFn slot_a = reinterpret_cast<BoolThisFn>(vslot(child_a, 0x1c));
+    const uint8_t ok = slot_a(static_cast<uint8_t*>(self) + 0x04);
+
+    // test al,al ; je -> skip ; else [esi+8] vtbl+0x18 called with (ecx=this+8, push arg)
+    if (ok != 0) {
+        using ArgThisFn = void (*)(void* thisPtr, uint32_t a);
+        void* child_b = addr_to_ptr(u32_at(self, 0x08));
+        ArgThisFn slot_b = reinterpret_cast<ArgThisFn>(vslot(child_b, 0x18));
+        slot_b(static_cast<uint8_t*>(self) + 0x08, arg);
+    }
+
+    // Range walk over [this+0x80, this+0x84). Each failed bounds check in the
+    // original calls _invalid_parameter_noinfo (via the IAT pointer); we mirror
+    // that by calling through mem_00925134.
+    using InvalidParamFn = void (*)(void);
+    const InvalidParamFn invalid_param =
+        reinterpret_cast<InvalidParamFn>(addr_to_ptr(mem_00925134));
+
+    uint32_t cur = u32_at(self, 0x80);               // edi = [this+0x80]
+    if (cur > u32_at(self, 0x84)) {                  // cmp edi,[esi+8] ; jbe
+        invalid_param();
+    }
+
+    for (;;) {
+        // mov ebx,[esi+8] ; cmp [esi+4],ebx ; jbe  (stored begin must not exceed end)
+        const uint32_t end = u32_at(self, 0x84);
+        if (u32_at(self, 0x80) > end) {
+            invalid_param();
+        }
+        // cmp esi,esi ; je  -> always taken; the following call ebp is dead.
+
+        if (cur == end) {                            // cmp edi,ebx ; je done
+            break;
+        }
+        if (cur >= u32_at(self, 0x84)) {             // cmp edi,[esi+8] ; jb
+            invalid_param();
+        }
+
+        // push arg ; mov ecx,[edi] ; call sub_00586440  (recursive self-visit)
+        const uint32_t elem = u32_at(addr_to_ptr(cur), 0);
+        fn_00586440(addr_to_ptr(elem), arg);
+
+        if (cur >= u32_at(self, 0x84)) {             // cmp edi,[esi+8] ; jb
+            invalid_param();
+        }
+        cur += 4;                                    // add edi,4 ; jmp loop
+    }
+    // pop edi/esi/ebp/ebx ; ret 4  (void, one stack arg)
+}
+} // namespace lift_00586440

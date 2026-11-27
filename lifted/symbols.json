@@ -28676,6 +28676,13 @@
     "summary": "Calls virtual method at +0xA8 on this node, then recursively traverses child nodes in vector at +0x7C.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00586440": {
+    "name": "ChildRangeVisit",
+    "class": "Unknown",
+    "signature": "inline void* addr_to_ptr(uint32_t addr)",
+    "summary": "Visits this+0x4 and this+0x8 children, then recursively visits each element of the pointer range [begin, end) stored at this+0x80/this+0x84.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00586660": {
     "name": "Unknown::CallVirtual8COnSelfAndElements",
     "class": "Unknown",

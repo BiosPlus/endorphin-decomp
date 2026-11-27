@@ -1,0 +1,40 @@
+{
+  "va": "0x00586440",
+  "size": 122,
+  "orig_symbol": "sub_00586440",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "ChildRangeVisit",
+  "class": "Unknown",
+  "signature": "inline void* addr_to_ptr(uint32_t addr)",
+  "summary": "Visits this+0x4 and this+0x8 children, then recursively visits each element of the pointer range [begin, end) stored at this+0x80/this+0x84.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "child_a"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "child_b"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "children_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "children_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:26:06Z"
+}
