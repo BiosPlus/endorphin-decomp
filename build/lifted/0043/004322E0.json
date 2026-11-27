@@ -1,0 +1,13 @@
+{
+  "va": "0x004322E0",
+  "size": 134,
+  "orig_symbol": "sub_004322E0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_004322E0",
+  "signature": "void __cdecl fn_004322E0(void)",
+  "summary": "Calls vtable +0x1f0(0) on object from sub_00465B40, catching exceptions to show message box.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:36:30Z"
+}
