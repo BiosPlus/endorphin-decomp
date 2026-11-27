@@ -1,0 +1,14 @@
+{
+  "va": "0x00513110",
+  "size": 148,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor,std::string,getTypicalMutationSize,1\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "int32_t fn_00513110(void* self, void* arg0)",
+  "summary": "Parses a string value pointer as a float, rounds to nearest integer, and returns it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:06:49Z"
+}
