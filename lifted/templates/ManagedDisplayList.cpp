@@ -298,3 +298,43 @@ void __thiscall fn_0054C3A0(void* self, void* a1, void* a2, void* a3) {
     }
 }
 } // namespace lift_0054C3A0
+
+// [0x0054C0F0]
+namespace lift_0054C0F0 {
+// @name ManagedDisplayList<RenderableList>::vfunc_18
+// @class ManagedDisplayList<RenderableList>
+// @summary Checks if any child element in the list returns non-zero from vfunc_18(arg)
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+
+
+extern void (*mem_00925134)(void);
+
+int __thiscall fn_0054C0F0(void* this_ptr, int arg) {
+    void** begin = lift_field<void**>(this_ptr, 0x18);
+    void** end = lift_field<void**>(this_ptr, 0x1C);
+    if (begin > end) {
+        mem_00925134();
+    }
+    for (void** it = begin; it != end; ++it) {
+        if (it >= end) {
+            mem_00925134();
+        }
+        void* item = *it;
+        void** vtable = *reinterpret_cast<void***>(item);
+        using VFunc18 = int(__thiscall*)(void*, int);
+        auto vfunc = reinterpret_cast<VFunc18>(vtable[0x48 / 4]);
+        if (vfunc(item, arg) != 0) {
+            return 1;
+        }
+        if (it >= end) {
+            mem_00925134();
+        }
+        end = lift_field<void**>(this_ptr, 0x1C);
+        if (lift_field<void**>(this_ptr, 0x18) > end) {
+            mem_00925134();
+        }
+    }
+    return 0;
+}
+} // namespace lift_0054C0F0
