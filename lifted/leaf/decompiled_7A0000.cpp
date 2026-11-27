@@ -1286,3 +1286,22 @@ int32_t fn_007AF500(void* self) {
     }
 }
 } // namespace lift_007AF500
+
+// [0x007AEBE0] sub_007AEBE0 (79 bytes)
+namespace lift_007AEBE0 {
+// Known callee 0x007AEC60: sub_007AEC60 (Zeroes three dword fields (+0x58, +0x5c, +0x60) of the object passed in ECX.)
+extern void ext_007AEC60(void* self);
+// Known callee 0x00783270: FileStreamRefOwner::~FileStreamRefOwner (Destructor body: sets vtable, closes the FileStream ref at +0x00, releases the handle at +0x04, then tears down the sub-object at +0x0C.)
+extern void ext_00783270(void* self);
+
+// @name Unknown::~Unknown
+// @class Unknown
+// @summary Destructor wrapper: installs vtable 0x998a30, runs sub_007AEC60 reset, then chains to FileStreamRefOwner::~FileStreamRefOwner on the same object.
+// @field Unknown +0x00 uint32_t vtable
+void fn_007AEBE0(void* self) {
+    // Exception-frame setup (fs:[0] push/pop, state cookie) is MSVC SEH boilerplate and is omitted.
+    lift_field<uint32_t>(self, 0x00) = 0x998a30u;  // vtable pointer
+    ext_007AEC60(self);
+    ext_00783270(self);
+}
+} // namespace lift_007AEBE0

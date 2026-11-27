@@ -71711,6 +71711,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007AEBE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AEBE0": {
+    "name": "Unknown::~Unknown",
+    "class": "Unknown",
+    "signature": "void fn_007AEBE0(void* self)",
+    "summary": "Destructor wrapper: installs vtable 0x998a30, runs sub_007AEC60 reset, then chains to FileStreamRefOwner::~FileStreamRefOwner on the same object.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AEC30": {
     "name": "sub_007AEC30",
     "signature": "bool __thiscall sub_007AEC30(void* self, uint32_t arg1, uint32_t arg2)",
