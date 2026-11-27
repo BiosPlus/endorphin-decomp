@@ -138,7 +138,7 @@ struct Unknown_Fields {
     // +0x0   void*                    vfptr  (evidence: 0x004030F0, 0x0040A910, 0x0040BE90) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vfptr_primary  (evidence: 0x0041B480) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x00455EB0, 0x00458A00, 0x0048E2E0, 0x004B49A0, 0x00547220, 0x0063FFF0, 0x006B6290, 0x006B8210, 0x006BA780) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    vftable  (evidence: 0x005327F0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vftable  (evidence: 0x004197A0, 0x005327F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vftable  (evidence: 0x00436A50) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable_0x00  (evidence: 0x0052FFD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable_primary  (evidence: 0x00447F20) // CONFLICT: multiple definitions at +0x0
@@ -1203,7 +1203,7 @@ struct Unknown_Fields {
     // +0x74  uint8_t                  field_0x74  (evidence: 0x0041FC70, 0x006AA890) // CONFLICT: multiple definitions at +0x74
     // +0x74  uint8_t[4]               field_0x74  (evidence: 0x00449C90) // CONFLICT: multiple definitions at +0x74
     // +0x74  void                     field_0x74  (evidence: 0x00441C10, 0x00449D00) // CONFLICT: multiple definitions at +0x74
-    // +0x74  void*                    field_0x74  (evidence: 0x004188C0, 0x00441C10, 0x00447E30) // CONFLICT: multiple definitions at +0x74
+    // +0x74  void*                    field_0x74  (evidence: 0x004188C0, 0x004197A0, 0x00441C10, 0x00447E30) // CONFLICT: multiple definitions at +0x74
     // +0x74  void* vfn_74 (virtual method invoked with out pointer)  (evidence: 0x006992E0) // CONFLICT: multiple definitions at +0x74
     // +0x74  void*                    vfptr_secondary  (evidence: 0x0041B480) // CONFLICT: multiple definitions at +0x74
     // +0x74  uint32_t                 vftable_secondary  (evidence: 0x00447F20) // CONFLICT: multiple definitions at +0x74
@@ -1551,11 +1551,12 @@ struct Unknown_Fields {
     // +0x110 uint32_t                 field_0x110  (evidence: 0x0077FFD0) // CONFLICT: multiple definitions at +0x110
     // +0x110 void*                    field_0x110  (evidence: 0x004352B0) // CONFLICT: multiple definitions at +0x110
     // +0x114 uint32_t                 field_0x114  (evidence: 0x006B6290, 0x0077FFD0) // CONFLICT: multiple definitions at +0x114
-    // +0x114 void*                    field_0x114  (evidence: 0x004331D0) // CONFLICT: multiple definitions at +0x114
+    // +0x114 void*                    field_0x114  (evidence: 0x004197A0, 0x004331D0) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    selectionBuffer  (evidence: 0x006B6480) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    sub114  (evidence: 0x006305A0) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    vfptr_embedded  (evidence: 0x0041B480) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    vtable_114  (evidence: 0x00461510) // CONFLICT: multiple definitions at +0x114
+    // +0x118 DWORD                    field_0x118  (evidence: 0x004197A0) // CONFLICT: multiple definitions at +0x118
     // +0x118 double                   field_0x118  (evidence: 0x0043CA30) // CONFLICT: multiple definitions at +0x118
     // +0x118 uint32_t                 field_0x118  (evidence: 0x00461510, 0x0077FFD0) // CONFLICT: multiple definitions at +0x118
     // +0x118 uint8_t                  field_0x118  (evidence: 0x006C2C60) // CONFLICT: multiple definitions at +0x118

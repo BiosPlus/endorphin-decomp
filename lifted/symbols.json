@@ -1977,6 +1977,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00464670 (CAboutDlg::vfunc_7_off_74).",
     "lifted_path": "lifted/classes/ExportUnavailableDialog.cpp"
   },
+  "0x004197A0": {
+    "name": "Unknown::initWithSolidBrush",
+    "class": "Unknown",
+    "signature": "void* fn_004197A0(void* self, DWORD a1)",
+    "summary": "Runs the MFC80 base init on sub-object at +0x114, sets vtables at +0x00/+0x74/+0x114, initializes +0x11C, and creates a GDI solid brush passed to the +0x114 sub-object.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00419840": {
     "name": "Destructor_00419840",
     "signature": "extern \"C\" void __fastcall fn_00419840(void* self)",

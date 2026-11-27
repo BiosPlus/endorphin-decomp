@@ -1,0 +1,40 @@
+{
+  "va": "0x004197A0",
+  "size": 147,
+  "orig_symbol": "sub_004197A0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::initWithSolidBrush",
+  "class": "Unknown",
+  "signature": "void* fn_004197A0(void* self, DWORD a1)",
+  "summary": "Runs the MFC80 base init on sub-object at +0x114, sets vtables at +0x00/+0x74/+0x114, initializes +0x11C, and creates a GDI solid brush passed to the +0x114 sub-object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x114",
+      "type": "void*",
+      "name": "field_0x114"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x118",
+      "type": "DWORD",
+      "name": "field_0x118"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:39:05Z"
+}
