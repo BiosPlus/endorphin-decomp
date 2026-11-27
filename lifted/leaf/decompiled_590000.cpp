@@ -1550,3 +1550,51 @@ void fn_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int
     (void)&ext_0059DE60; // callee listed in metadata; not called by the disassembly
 }
 } // namespace lift_00596660
+
+// [0x00599EA0]
+namespace lift_00599EA0 {
+// @name Unknown::getGrandparentVectorOrField0x38C
+// @class Unknown
+// @summary Returns field_0x22C of the first element in grandparent's vector at +0x330, or falls back to ext_00599E70.
+// @field Unknown +0x26C void* field_0x26C
+
+
+extern void* mem_00925134;
+DWORD __fastcall ext_00599E70(void* self);
+
+DWORD __fastcall sub_00599EA0(void* self) {
+    uint8_t* node = lift_field<uint8_t*>(self, 0x26C);
+    if (lift_field<uint32_t>(node, 0x20) == 0) {
+        return 0;
+    }
+
+    uint8_t* list_head = lift_field<uint8_t*>(node, 0x1C);
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+
+    uint8_t* first = lift_field<uint8_t*>(list_head, 0x0);
+    if (first == list_head) {
+        invalid_param();
+    }
+
+    uint8_t* obj = lift_field<uint8_t*>(first, 0x28);
+    uint32_t vec_first = lift_field<uint32_t>(obj, 0x334);
+    uint8_t* vec = obj + 0x330;
+
+    if (vec_first == 0) {
+        return ext_00599E70(self);
+    }
+
+    int32_t count = static_cast<int32_t>(lift_field<uint32_t>(vec, 0x8) - vec_first) >> 2;
+    if (count == 0) {
+        return ext_00599E70(self);
+    }
+
+    if (static_cast<uint32_t>(count) == 0) {
+        invalid_param();
+    }
+
+    uint8_t* elem_ptr = lift_field<uint8_t*>(vec, 0x4);
+    uint8_t* elem = lift_field<uint8_t*>(elem_ptr, 0x0);
+    return lift_field<DWORD>(elem, 0x22C);
+}
+} // namespace lift_00599EA0
