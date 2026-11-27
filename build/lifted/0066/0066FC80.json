@@ -1,0 +1,28 @@
+{
+  "va": "0x0066FC80",
+  "size": 198,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e::vfunc_43",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType::vfunc_43",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "void* __stdcall fn_0066FC80(void* obj, void* arg2)",
+  "summary": "Reads the Vector3 pointed to by field_0x00, stores its length into a scratch slot, assigns that slot to this object's field_0x04 and dispatches vfunc_43 on it; throws DerivedException when field_0x00 is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:41:04Z"
+}

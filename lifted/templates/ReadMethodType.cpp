@@ -184757,3 +184757,73 @@ void* fn_0068F140(void* self, void* out) {
     return reinterpret_cast<void* (*)(void*, void*, void*)>(vfunc)(target, self, out);
 }
 } // namespace lift_0068F140
+
+// [0x0066FC80] ExprParser::ReadMethodType::vfunc_43 (198 bytes)
+namespace lift_0066FC80 {
+// Callees
+// 0x0041CF50: Unknown::assignFromOther_0041CF50 (thiscall: self, other) - returns self.
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// 0x0046C3C0: DerivedException::DerivedException (thiscall: self) - in-place construction.
+extern void* __thiscall ext_0046C3C0(void* self);
+// 0x00672080: sub_00672080 (thiscall: ecx = slot to fill, one float argument).
+extern void __thiscall ext_00672080(void* slot, float value);
+// 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(obj, throwInfo)).
+extern void __cdecl ext_006A6DD2(void* exc, const void* throwInfo);
+// 0x006A7250: thunk_MSVCR80__CIsqrt (forwards to _CIsqrt; result is the sqrt of the argument).
+extern double __cdecl ext_006A7250(double value);
+
+// Exception ThrowInfo for the DerivedException being thrown.
+extern const uint8_t mem_009DEC1C[];
+
+// Two-slot scratch record: `other` is the address of this record, and
+// field_0x04 holds the sub-object filled by ext_00672080.
+struct ScratchPair {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+// @name ExprParser::ReadMethodType::vfunc_43
+// @class ExprParser::ReadMethodType
+// @summary Reads the Vector3 pointed to by field_0x00, stores its length into a scratch slot, assigns that slot to this object's field_0x04 and dispatches vfunc_43 on it; throws DerivedException when field_0x00 is null.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void* __stdcall fn_0066FC80(void* obj, void* arg2) {
+    void** self_slots = reinterpret_cast<void**>(obj);
+    auto* vec = static_cast<const float*>(self_slots[0]);
+
+    if (vec == nullptr) {
+        // Build a DerivedException in a scratch buffer and throw it.
+        // Object size is not recovered; the buffer is oversized for safety.
+        alignas(16) uint8_t exc[0x40] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return nullptr;
+    }
+
+    // Length of the vector: sqrt(x*x + y*y + z*z), computed in double then rounded to float.
+    double x = static_cast<double>(vec[0]);
+    double y = static_cast<double>(vec[1]);
+    double z = static_cast<double>(vec[2]);
+    float len = static_cast<float>(ext_006A7250(x * x + y * y + z * z));
+
+    ScratchPair pair{};
+    pair.field_0x00 = nullptr;
+    pair.field_0x04 = nullptr;
+    ext_00672080(&pair.field_0x04, len);
+
+    // Assign the scratch pair into obj (copies pair.field_0x04 into obj->field_0x04).
+    ext_0041CF50(obj, &pair);
+
+    // Release the previous sub-object held by the scratch pair, if any.
+    if (pair.field_0x04 != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(pair.field_0x04);
+        reinterpret_cast<void(__thiscall*)(void*, void*)>(vtbl[30])(pair.field_0x04, &pair);
+    }
+
+    // Dispatch vfunc_43 on obj->field_0x04 with (obj, arg2).
+    void* sub = self_slots[1];
+    void** sub_vtbl = *reinterpret_cast<void***>(sub);
+    using VFn43 = void* (__thiscall*)(void*, void*, void*);
+    return reinterpret_cast<VFn43>(sub_vtbl[43])(sub, obj, arg2);
+}
+} // namespace lift_0066FC80

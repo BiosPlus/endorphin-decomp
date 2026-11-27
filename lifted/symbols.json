@@ -73421,6 +73421,13 @@
     "summary": "Reads the Vector3 pointer behind self; if non-null computes its Euclidean norm and reports it, otherwise throws a DerivedException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066FC80": {
+    "name": "ExprParser::ReadMethodType::vfunc_43",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void* __stdcall fn_0066FC80(void* obj, void* arg2)",
+    "summary": "Reads the Vector3 pointed to by field_0x00, stores its length into a scratch slot, assigns that slot to this object's field_0x04 and dispatches vfunc_43 on it; throws DerivedException when field_0x00 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670090": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e",
