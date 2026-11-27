@@ -2949,3 +2949,22 @@ void* fn_00704FF0(void* self) {
     return self;
 }
 } // namespace lift_00704FF0
+
+// [0x00705790] sub_00705790 (32 bytes)
+namespace lift_00705790 {
+// Known callee 0x006FA350: sub_006FA350 (Returns self when the first stack argument is 0, 2, or 0xDE1947F3; otherwise returns nullptr. Callee takes two stack args (ret 8); the second is unused.)
+extern void* ext_006FA350(void* self, DWORD arg0, DWORD arg1);
+// Known callee 0x006B9960: metadata-only reference (not called by this function's asm).
+extern void ext_006B9960();
+
+// @name Unknown::returnSelfIfMagicOrForward_00705790
+// @class Unknown
+// @summary Returns self when arg0 equals 0x98ABD146; otherwise forwards (arg0, arg1) to ext_006FA350 with the same self and returns its result.
+void* fn_00705790(void* ecx, DWORD arg0, DWORD arg1) {
+    (void)&ext_006B9960;
+    if (arg0 == 0x98ABD146u) {
+        return ecx;
+    }
+    return ext_006FA350(ecx, arg0, arg1);
+}
+} // namespace lift_00705790

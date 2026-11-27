@@ -74182,6 +74182,13 @@
     "summary": "Calls virtual slot 0xBC with (this-\u003efield_0x84 \u0026 ~1), then zeroes field_0xDC.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00705790": {
+    "name": "Unknown::returnSelfIfMagicOrForward_00705790",
+    "class": "Unknown",
+    "signature": "void* fn_00705790(void* ecx, DWORD arg0, DWORD arg1)",
+    "summary": "Returns self when arg0 equals 0x98ABD146; otherwise forwards (arg0, arg1) to ext_006FA350 with the same self and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007057C0": {
     "name": "sub_007057C0",
     "signature": "extern \"C\" int32_t __stdcall fn_007057C0(int a1, int a2, int a3)",
