@@ -76,3 +76,37 @@ std::optional<uint8_t> fn_007511F4(uint32_t key) {
     return kDataTable_007511F4[idx];
 }
 } // namespace lift_007511F4
+
+// [0x00757D60] sub_00757D60 (96 bytes)
+namespace lift_00757D60 {
+// Known callee 0x006B9D20: Unknown::initOrCopy_006B9D20 (Initializes self; if ext_006B9940(obj) is nonzero, passes ext_006E7460(obj) as src and ext_006B99C0(obj) as len to ext_006B9B40, otherwise calls ext_006B9920. Returns self.)
+extern void* __thiscall ext_006B9D20(void* self, void* obj);
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void __thiscall ext_006B9D70(void* self);
+
+// SEH scope-table/handler address pushed by the original prologue (frame boilerplate, kept as a metadata reference only).
+extern int mem_008C1B08;
+
+// @name Unknown::initWithByValueArg_00757D60
+// @class Unknown
+// @summary Stores the first DWORD of a by-value 0x50-byte argument into +0x00, initializes the sub-object at +0x04 from the remaining 0x4C bytes, then destroys the argument; returns this (thiscall, ret 0x50).
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 BYTE field_0x04
+// Calling convention: thiscall, self in ecx. The 0x50-byte argument is passed by value on the stack;
+// `arg` is its address (arg[0..3] = first DWORD, arg[4..0x4F] = the 0x4C-byte tail). Callee pops 0x50 bytes.
+// The original SEH frame (fs:[0] push/restore, try state 0 -> -1) is dropped; cleanup is the explicit destructor call below.
+void* __thiscall fn_00757D60(void* self, void* arg) {
+    (void)&mem_008C1B08;
+
+    // self->field_0x00 = first DWORD of the by-value argument.
+    lift_field<DWORD>(self, 0x00) = *static_cast<DWORD*>(arg);
+
+    // Initialize sub-object at self+4 from the argument tail (arg+4).
+    ext_006B9D20(static_cast<uint8_t*>(self) + 0x04, static_cast<uint8_t*>(arg) + 0x04);
+
+    // Destroy the by-value argument.
+    ext_006B9D70(arg);
+
+    return self;
+}
+} // namespace lift_00757D60

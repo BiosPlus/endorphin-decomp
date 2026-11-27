@@ -1,0 +1,28 @@
+{
+  "va": "0x00757D60",
+  "size": 96,
+  "orig_symbol": "sub_00757D60",
+  "src_path": "src/leaf/decompiled_750000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_750000.cpp",
+  "name": "Unknown::initWithByValueArg_00757D60",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_00757D60(void* self, void* arg)",
+  "summary": "Stores the first DWORD of a by-value 0x50-byte argument into +0x00, initializes the sub-object at +0x04 from the remaining 0x4C bytes, then destroys the argument; returns this (thiscall, ret 0x50).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "BYTE",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:55:02Z"
+}

@@ -78758,6 +78758,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
     "lifted_path": "lifted/clones/auto_clones_750000.cpp"
   },
+  "0x00757D60": {
+    "name": "Unknown::initWithByValueArg_00757D60",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_00757D60(void* self, void* arg)",
+    "summary": "Stores the first DWORD of a by-value 0x50-byte argument into +0x00, initializes the sub-object at +0x04 from the remaining 0x4C bytes, then destroys the argument; returns this (thiscall, ret 0x50).",
+    "lifted_path": "lifted/leaf/decompiled_750000.cpp"
+  },
   "0x00761710": {
     "name": "sub_00761710",
     "signature": "extern void* fn_00761710(void* arg)",
