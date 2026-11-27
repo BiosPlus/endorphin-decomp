@@ -2023,6 +2023,13 @@
     "summary": "Calls the MFC80 thunk, then tail-calls sub_004349D0 with the global at 0x00ACDB40 as its ECX argument.",
     "lifted_path": "lifted/classes/GettingStartedDialog.cpp"
   },
+  "0x0041B480": {
+    "name": "Unknown::DestroyMembersAndBase",
+    "class": "Unknown",
+    "signature": "void fn_0041B480(void* self)",
+    "summary": "Destructor body: installs this class's vtable, destroys the members at +0x194 and +0x120, installs the embedded vtable at +0x114, then runs the base-class teardown thunks.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041B540": {
     "name": "fn_0041B540",
     "signature": "uint32_t __thiscall fn_0041B540(void* pThis, void* pDC, void* pWnd, uint32_t nCtlColor)",

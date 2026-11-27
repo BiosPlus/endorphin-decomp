@@ -2938,3 +2938,47 @@ void* fn_00412EC0(void* self, const POINT* pt) {
     return nullptr;
 }
 } // namespace lift_00412EC0
+
+// [0x0041B480] sub_0041B480 (130 bytes)
+namespace lift_0041B480 {
+// Vtable images referenced by the original asm (stored as immediate addresses).
+extern std::uint8_t mem_0092D5C4;
+extern std::uint8_t mem_0092D594;
+extern std::uint8_t mem_0092A23C;
+
+// Known callee 0x0040FD00: sub_0040FD00 (Destructor tail-call: restores vtable mem_0092B9D4 and tail-calls base destructor thunk_MFC80_ord_587.)
+extern void __fastcall ext_0040FD00(void* self);
+// Known callee 0x0040EF90: sub_0040EF90 (Destructor tail-call: restores vtable mem_0092B7F4 and tail-calls base destructor thunk_MFC80_ord_587.)
+extern void __fastcall ext_0040EF90(void* self);
+// Known callee 0x006A5FF2: thunk_MFC80_ord_1934 (IAT jump thunk forwarding to MFC80!ord_1934.)
+extern void ext_006A5FF2(void);
+// Known callee 0x006A624A: thunk_MFC80_ord_604 (IAT jump thunk forwarding to MFC80!ord_604.) Called with this in ECX.
+extern void __fastcall ext_006A624A(void* self);
+
+// @name Unknown::DestroyMembersAndBase
+// @class Unknown
+// @summary Destructor body: installs this class's vtable, destroys the members at +0x194 and +0x120, installs the embedded vtable at +0x114, then runs the base-class teardown thunks.
+// @field Unknown +0x00 void* vfptr_primary
+// @field Unknown +0x74 void* vfptr_secondary
+// @field Unknown +0x114 void* vfptr_embedded
+// @field Unknown +0x120 void* field_0x120
+// @field Unknown +0x194 void* field_0x194
+void fn_0041B480(void* self) {
+    // The original prolog/epilog (SEH frame push/pop on fs:[0], unwind-state
+    // slots, saved ecx/esi spills) is compiler boilerplate and is not lifted.
+    auto* s = static_cast<std::uint8_t*>(self);
+
+    lift_field<std::uint32_t>(s, 0x00) =
+        static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_0092D5C4));
+    lift_field<std::uint32_t>(s, 0x74) =
+        static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_0092D594));
+
+    ext_0040EF90(s + 0x194);
+    ext_0040FD00(s + 0x120);
+
+    lift_field<std::uint32_t>(s, 0x114) =
+        static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_0092A23C));
+    ext_006A5FF2();
+    ext_006A624A(self);
+}
+} // namespace lift_0041B480
