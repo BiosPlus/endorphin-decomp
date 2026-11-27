@@ -4030,3 +4030,46 @@ void* fn_0041E4C0(void* self) {
     return self;
 }
 } // namespace lift_0041E4C0
+
+// [0x00412690] sub_00412690 (131 bytes)
+namespace lift_00412690 {
+// sub_004115D0: thiscall (this in ecx), 4 stack args, callee-cleaned.
+extern void ext_004115D0(void* self, uint32_t* arg1_ref, uint32_t self_value, uint32_t end, uint32_t arg1);
+// sub_00596300: cdecl, 6 stack args (caller cleans up with add esp, 0x18).
+extern void ext_00596300(uint32_t end, uint32_t one, uint32_t arg1_a, uint32_t self_value, uint32_t arg1_b, uint32_t zero_slot);
+// RDATA/IAT slot holding the MSVCR80!_invalid_parameter_noinfo function pointer.
+extern int mem_00925134;
+
+// @name Container_EmplaceOrGrow_00412690
+// @class Unknown
+// @summary Appends an 8-byte element when capacity allows (via sub_00596300, advancing end); otherwise calls sub_004115D0 to handle growth.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_00412690(void* self, uint32_t arg1) {
+    const uint32_t self_value = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    const uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    const uint32_t end = lift_field<uint32_t>(self, 0x08);
+    const uint32_t cap = lift_field<uint32_t>(self, 0x0C);
+
+    // Fast path: begin != 0 and (end - begin) / 8 < (cap - begin) / 8 (arithmetic shifts).
+    if (begin != 0) {
+        const uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 3);
+        const uint32_t capacity = static_cast<uint32_t>(static_cast<int32_t>(cap - begin) >> 3);
+        if (count < capacity) {
+            // Original stores 0 into the low byte of a stack slot and reloads it as a dword.
+            uint32_t zero_slot = 0;
+            ext_00596300(end, 1, arg1, self_value, arg1, zero_slot);
+            lift_field<uint32_t>(self, 0x08) = end + 8;
+            return;
+        }
+    }
+
+    // Slow path: if begin > end the original calls the invalid-parameter handler.
+    if (begin > end) {
+        using invalid_param_fn = void (*)();
+        (*reinterpret_cast<invalid_param_fn*>(&mem_00925134))();
+    }
+    ext_004115D0(self, &arg1, self_value, end, arg1);
+}
+} // namespace lift_00412690
