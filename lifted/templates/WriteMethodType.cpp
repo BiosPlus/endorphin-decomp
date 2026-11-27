@@ -7274,3 +7274,24 @@ void fn_0063AF70(void* holder) {
     lift_field<DWORD>(holder, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B52A94));
 }
 } // namespace lift_0063AF70
+
+// [0x0063CC60] ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>::vfunc_40 (122 bytes)
+namespace lift_0063CC60 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670(void* self);
+extern DWORD mem_00B53188;  // one-time init guard flags (bit 0)
+extern DWORD mem_00B53184;  // static accessor object storage (its first DWORD is the vptr)
+
+// @name ExprParser::WriteMethodType<EffectorWithMemory, float>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>
+// @summary Lazily constructs the static accessor object (guarded by a bit flag) and binds this holder's +0x04 slot to it.
+// @field ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)> +0x04 void* accessorObj
+void fn_0063CC60(void* self) {
+    if ((mem_00B53188 & 1u) == 0) {
+        mem_00B53188 |= 1u;
+        ext_0067A670(&mem_00B53184);
+        mem_00B53184 = 0x0097C91Cu;  // vtable of the static accessor object
+    }
+    *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x04) = 0x00B53184u;
+}
+} // namespace lift_0063CC60

@@ -45284,6 +45284,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005FD150 (sub_005FD150).",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063CC60": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e",
+    "signature": "extern \"C\" DWORD mem_00B53188;  // one-time init guard flags (bit 0) extern \"C\" DWORD mem_00B53184;  // static accessor object storage (its first DWORD is the vptr) void fn_0063CC60(void* self)",
+    "summary": "Lazily constructs the static accessor object (guarded by a bit flag) and binds this holder's +0x04 slot to it.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0063D8F0": {
     "name": "initFields",
     "signature": "void __thiscall sub_0063D8F0(void* self)",

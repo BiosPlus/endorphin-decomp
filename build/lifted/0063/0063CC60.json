@@ -1,0 +1,14 @@
+{
+  "va": "0x0063CC60",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e",
+  "signature": "extern \"C\" DWORD mem_00B53188;  // one-time init guard flags (bit 0) extern \"C\" DWORD mem_00B53184;  // static accessor object storage (its first DWORD is the vptr) void fn_0063CC60(void* self)",
+  "summary": "Lazily constructs the static accessor object (guarded by a bit flag) and binds this holder's +0x04 slot to it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:44:37Z"
+}
