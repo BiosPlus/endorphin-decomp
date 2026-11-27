@@ -2724,3 +2724,39 @@ uint32_t fn_004BA440(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     return ext_00666670(ctx, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(result)));
 }
 } // namespace lift_004BA440
+
+// [0x004BBDB0] sub_004BBDB0 (126 bytes)
+namespace lift_004BBDB0 {
+// Allocator thunk (MFC80 ord_762, operator new-style): returns a block of the requested size.
+extern void* ext_006A5C62(size_t size);
+// Callee 0x004BB6C0 (sub_004BB6C0): thiscall, ECX = new object, 5 stack args
+// (outer receiver, a1, a2, a3, a4); callee cleans its stack.
+extern int32_t ext_004BB6C0(void* receiver, void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4);
+// Known callee 0x00665870: fn_00665870 (Returns global int32 value from mem_00B59420.)
+extern int32_t ext_00665870(void);
+// Callee 0x00666670 (sub_00666670): thiscall, ECX = receiver, 1 stack arg; callee cleans its stack.
+extern void ext_00666670(int32_t receiver, int32_t arg);
+
+// @name AllocAndConstruct_004BBDB0
+// @class Unknown
+// @summary Allocates a 0x28-byte object, constructs it via ext_004BB6C0 forwarding this and the four arguments when the allocation succeeds, then notifies ext_00666670 with the global value from fn_00665870 and the construction result; returns the second argument.
+int32_t fn_004BBDB0(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4) {
+    // SEH frame setup/teardown (fs:[0] push/pop and try-state slot) is boilerplate and dropped.
+
+    // Allocate the 0x28-byte object.
+    void* obj = ext_006A5C62(0x28);
+
+    // Construct it when the allocation succeeded; otherwise the result is 0.
+    int32_t result = 0;
+    if (obj != nullptr) {
+        result = ext_004BB6C0(obj, self, a1, a2, a3, a4);
+    }
+
+    // Notify the callee on the global-derived receiver with the construction result.
+    const int32_t receiver = ext_00665870();
+    ext_00666670(receiver, result);
+
+    // The original returns the second argument (kept in EDI across the body).
+    return a2;
+}
+} // namespace lift_004BBDB0

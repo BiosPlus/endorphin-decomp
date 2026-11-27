@@ -1,0 +1,14 @@
+{
+  "va": "0x004BBDB0",
+  "size": 126,
+  "orig_symbol": "sub_004BBDB0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "AllocAndConstruct_004BBDB0",
+  "class": "Unknown",
+  "signature": "int32_t fn_004BBDB0(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4)",
+  "summary": "Allocates a 0x28-byte object, constructs it via ext_004BB6C0 forwarding this and the four arguments when the allocation succeeds, then notifies ext_00666670 with the global value from fn_00665870 and the construction result; returns the second argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:31:11Z"
+}
