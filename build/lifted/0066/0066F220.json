@@ -1,0 +1,28 @@
+{
+  "va": "0x0066F220",
+  "size": 162,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType_Vector3_getX::vfunc_47",
+  "class": "ExprParser::ValuePtrType",
+  "signature": "void fn_0066F220(void* holder)",
+  "summary": "Reads the float behind holder-\u003efield_0x00, assigns it through a temporary into holder, releases the temporary, then dispatches vtable slot 47 of holder-\u003efield_0x04 with holder; throws if field_0x00 is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:49:46Z"
+}

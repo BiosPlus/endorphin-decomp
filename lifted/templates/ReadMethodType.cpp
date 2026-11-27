@@ -186947,3 +186947,57 @@ void* fn_0068F5A0(void* self) {
     return vfunc47(obj, self);
 }
 } // namespace lift_0068F5A0
+
+// [0x0066F220] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_47 (162 bytes)
+namespace lift_0066F220 {
+extern void ext_00672080(void* self, float value);
+extern void* ext_0041CF50(void* self, void* other);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exception, const void* throw_info);
+extern const uint8_t mem_009DEC1C[];
+
+// Temporary value object built from a float; field_0x04 holds the owned pointer.
+struct ValuePtrTemp {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+// @name ReadMethodType_Vector3_getX::vfunc_47
+// @class ExprParser::ValuePtrType
+// @summary Reads the float behind holder->field_0x00, assigns it through a temporary into holder, releases the temporary, then dispatches vtable slot 47 of holder->field_0x04 with holder; throws if field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0066F220(void* holder) {
+    auto* h = static_cast<uint8_t*>(holder);
+    void** slot0 = reinterpret_cast<void**>(h + 0x00);
+    void** slot4 = reinterpret_cast<void**>(h + 0x04);
+
+    const float* src = static_cast<const float*>(*slot0);
+    if (src == nullptr) {
+        // Null source: build an exception object and throw it.
+        char exception[16] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, mem_009DEC1C);
+    }
+
+    float value = *src;
+
+    ValuePtrTemp temp = {};
+    ext_00672080(&temp.field_0x04, value);
+
+    ext_0041CF50(holder, &temp);
+
+    // Release the temporary's owned pointer through vtable slot 0x78.
+    if (temp.field_0x04 != nullptr) {
+        void** vtbl = *static_cast<void***>(temp.field_0x04);
+        using ReleaseFn = void (*)(void* self, void* arg);
+        reinterpret_cast<ReleaseFn>(vtbl[0x78 / sizeof(void*)])(temp.field_0x04, &temp);
+    }
+
+    // Dispatch vtable slot 0xBC (47) on holder->field_0x04, passing holder.
+    void* child = *slot4;
+    void** childVtbl = *static_cast<void***>(child);
+    using DispatchFn = void (*)(void* self, void* arg);
+    reinterpret_cast<DispatchFn>(childVtbl[0xBC / sizeof(void*)])(child, holder);
+}
+} // namespace lift_0066F220

@@ -73568,6 +73568,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066F010 (ExprParser::ReadMethodType\u003cNM::Vector3,float,getX\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066F220": {
+    "name": "ReadMethodType_Vector3_getX::vfunc_47",
+    "class": "ExprParser::ValuePtrType",
+    "signature": "void fn_0066F220(void* holder)",
+    "summary": "Reads the float behind holder-\u003efield_0x00, assigns it through a temporary into holder, releases the temporary, then dispatches vtable slot 47 of holder-\u003efield_0x04 with holder; throws if field_0x00 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0066F2D0": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e",
