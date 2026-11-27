@@ -25107,6 +25107,12 @@
     "summary": "Erases an element from a vector of pointers, deleting the pointed-to object if non-null.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00527EC0": {
+    "name": "VectorPtrFindAndErase",
+    "signature": "int32_t __thiscall sub_00527EC0(void* self, uintptr_t* target_ptr)",
+    "summary": "Finds a pointer in a vector, clears it to null, erases it via VectorPtrErase, and returns its index.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00528040": {
     "name": "Unknown::Destructor_00528040",
     "class": "Unknown",
@@ -27002,6 +27008,13 @@
     "signature": "void fn_0053B4B0(void* self)",
     "summary": "For k in 0..23: out[k] = elem(self-\u003e+0x20, k % 3) * table[k], stored at self-\u003e+0x3C + 4k.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
+  "0x0053B4F0": {
+    "name": "Primitives::Cuboid::render",
+    "class": "Primitives::Cuboid",
+    "signature": "void __thiscall fn_0053B4F0(void* self, int32_t /*unused*/)",
+    "summary": "Renders the cuboid using OpenGL immediate-mode quads if field_0x20 is non-null.",
+    "lifted_path": "lifted/Primitives/Cuboid.cpp"
   },
   "0x0053B590": {
     "name": "Primitives::Plane::vfunc_28",

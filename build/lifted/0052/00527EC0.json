@@ -1,0 +1,27 @@
+{
+  "va": "0x00527EC0",
+  "size": 150,
+  "orig_symbol": "sub_00527EC0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "VectorPtrFindAndErase",
+  "signature": "int32_t __thiscall sub_00527EC0(void* self, uintptr_t* target_ptr)",
+  "summary": "Finds a pointer in a vector, clears it to null, erases it via VectorPtrErase, and returns its index.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uintptr_t*",
+      "name": "_Myfirst"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uintptr_t*",
+      "name": "_Mylast"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:11:10Z"
+}

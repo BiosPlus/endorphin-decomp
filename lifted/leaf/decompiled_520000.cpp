@@ -2052,3 +2052,59 @@ void* fn_0052A370(uint32_t arg0, uint32_t arg1, uint32_t arg2, const void* arg3,
     return obj;
 }
 } // namespace lift_0052A370
+
+// [0x00527EC0]
+namespace lift_00527EC0 {
+// @name VectorPtrFindAndErase
+// @summary Finds a pointer in a vector, clears it to null, erases it via VectorPtrErase, and returns its index.
+// @field Vector +0x04 uintptr_t* _Myfirst
+// @field Vector +0x08 uintptr_t* _Mylast
+
+extern void* __thiscall ext_00527D60(void* self, void* ret_iter, void* container, uintptr_t* pos);
+extern void* mem_00925134;
+
+int32_t __thiscall sub_00527EC0(void* self, uintptr_t* target_ptr) {
+    auto _invalid_parameter_noinfo = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+
+    uintptr_t* last = lift_field<uintptr_t*>(self, 0x08);
+    if (lift_field<uintptr_t*>(self, 0x04) > last) {
+        _invalid_parameter_noinfo();
+    }
+
+    uintptr_t* it = lift_field<uintptr_t*>(self, 0x04);
+    if (it > lift_field<uintptr_t*>(self, 0x08)) {
+        _invalid_parameter_noinfo();
+    }
+
+    if (it != last) {
+        uintptr_t target = *target_ptr;
+        while (*it != target) {
+            ++it;
+            if (it == last) {
+                break;
+            }
+        }
+    }
+
+    uintptr_t* first = lift_field<uintptr_t*>(self, 0x04);
+    if (first > lift_field<uintptr_t*>(self, 0x08)) {
+        _invalid_parameter_noinfo();
+    }
+    if (!self) {
+        _invalid_parameter_noinfo();
+    }
+
+    int32_t index = static_cast<int32_t>(it - first);
+    if (!self) {
+        _invalid_parameter_noinfo();
+    }
+    if (it >= lift_field<uintptr_t*>(self, 0x08)) {
+        _invalid_parameter_noinfo();
+    }
+
+    *it = 0;
+    uintptr_t* ret_iter[2];
+    ext_00527D60(self, ret_iter, self, it);
+    return index;
+}
+} // namespace lift_00527EC0
