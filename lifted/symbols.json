@@ -438,6 +438,13 @@
     "summary": "Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00402800": {
+    "name": "ArrayBlock::assignFrom",
+    "class": "ArrayBlock",
+    "signature": "void* fn_00402800(void* self, void* src)",
+    "summary": "Copy-assigns the 28-byte element range of src into self: reallocates self for src's element count, copy-constructs the range, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004028B0": {
     "name": "sub_004028B0",
     "signature": "void fn_004028B0(void* self)",

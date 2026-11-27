@@ -1,0 +1,28 @@
+{
+  "va": "0x00402800",
+  "size": 176,
+  "orig_symbol": "sub_00402800",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "ArrayBlock::assignFrom",
+  "class": "ArrayBlock",
+  "signature": "void* fn_00402800(void* self, void* src)",
+  "summary": "Copy-assigns the 28-byte element range of src into self: reallocates self for src's element count, copy-constructs the range, and returns self.",
+  "fields": [
+    {
+      "class": "ArrayBlock",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "ArrayBlock",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:28:11Z"
+}

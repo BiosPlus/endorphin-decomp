@@ -2916,3 +2916,48 @@ void* fn_00402500(void* self, void* rec, void* arg1) {
     return r;
 }
 } // namespace lift_00402500
+
+// [0x00402800] sub_00402800 (176 bytes)
+namespace lift_00402800 {
+// Known callee 0x004023D0: CopyConstructStringRange (Copy-constructs std::string elements from [first,last) into dest (0x1C stride); null dest slots are skipped but still advanced. On exception, destroys already-built elements and rethrows.)
+extern void* ext_004023D0(void* first, void* last, void* dest);
+// Known callee 0x00402480: ArrayBlock::allocate28 (Clears three block pointers, then allocates n 28-byte elements and sets begin/end; returns false when n is 0.)
+extern bool ext_00402480(void* self, uint32_t n);
+// CRT import slot (MSVCR80!_invalid_parameter_noinfo), called only on a failed begin <= end check.
+extern int mem_00925134;
+
+// @name ArrayBlock::assignFrom
+// @class ArrayBlock
+// @summary Copy-assigns the 28-byte element range of src into self: reallocates self for src's element count, copy-constructs the range, and returns self.
+// @field ArrayBlock +0x04 void* begin
+// @field ArrayBlock +0x08 void* end
+void* fn_00402800(void* self, void* src) {
+    // Element count of src: (end - begin) / 28 (signed), or 0 when src is empty.
+    // The SEH frame setup/teardown is omitted (no locals need unwinding).
+    int32_t count = 0;
+    void* srcBegin = lift_field<void*>(src, 0x04);
+    void* srcEnd = lift_field<void*>(src, 0x08);
+    if (srcBegin != nullptr) {
+        count = static_cast<int32_t>(reinterpret_cast<intptr_t>(srcEnd) -
+                                     reinterpret_cast<intptr_t>(srcBegin)) / 28;
+    }
+
+    // Reallocate self's storage; returns false when count is 0, in which case
+    // there is nothing to copy.
+    if (!ext_00402480(self, static_cast<uint32_t>(count))) {
+        return self;
+    }
+
+    // Debug-style range check: begin must not exceed end. Only the CRT invalid-parameter
+    // handler is reached on failure, through its import slot.
+    if (reinterpret_cast<uintptr_t>(srcBegin) > reinterpret_cast<uintptr_t>(srcEnd)) {
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();
+    }
+
+    // Copy-construct src's [begin, end) range into self's new storage; the copy
+    // routine returns the new end pointer.
+    void* destBegin = lift_field<void*>(self, 0x04);
+    lift_field<void*>(self, 0x08) = ext_004023D0(srcBegin, srcEnd, destBegin);
+    return self;
+}
+} // namespace lift_00402800
