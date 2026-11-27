@@ -1,0 +1,13 @@
+{
+  "va": "0x007B5158",
+  "size": 132,
+  "orig_symbol": "sub_007B5158",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "sub_007B5158",
+  "signature": "void sub_007B5158()",
+  "summary": "Data table misidentified as code (no return instruction)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:32:11Z"
+}

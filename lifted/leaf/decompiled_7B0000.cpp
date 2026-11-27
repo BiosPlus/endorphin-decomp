@@ -1859,3 +1859,15 @@ void fn_007BF890(void* self, uint8_t* buffer, int32_t a) {
     } while (rem > 0);
 }
 } // namespace lift_007BF890
+
+// [0x007B5158]
+namespace lift_007B5158 {
+// @name sub_007B5158
+// @summary Data table misidentified as code (no return instruction)
+
+
+void sub_007B5158() {
+    volatile int not_code = 0;
+    (void)not_code;
+}
+} // namespace lift_007B5158
