@@ -2502,3 +2502,23 @@ void* fn_00508CD0() {
     return mem_00AEBC14;
 }
 } // namespace lift_00508CD0
+
+// [0x00504B80]
+namespace lift_00504B80 {
+// @name sub_00504B80_dtor
+// @summary Destroys std::string at +0x8 and invokes base/member destructors at +0x4 and +0x0
+// @field Self +0x0 void* field_0x0
+// @field Self +0x4 void* field_0x4
+// @field Self +0x8 std::string field_0x8
+
+
+extern void* mem_00924FF4;
+extern void __fastcall ext_0065F440(void* self);
+extern void __fastcall ext_0065C660(void* self);
+
+extern void __fastcall fn_00504B80(void* self) {
+    reinterpret_cast<void(__fastcall*)(void*)>(mem_00924FF4)(static_cast<char*>(self) + 0x8);
+    ext_0065F440(self ? static_cast<char*>(self) + 0x4 : nullptr);
+    ext_0065C660(self);
+}
+} // namespace lift_00504B80

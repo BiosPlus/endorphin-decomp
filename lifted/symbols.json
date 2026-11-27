@@ -234,6 +234,12 @@
     "summary": "Copy constructor for a std::logic_error subclass, calling base copy constructor and setting vtable to 0x00928ED8.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00401E80": {
+    "name": "allocArray28",
+    "signature": "extern \"C\" void* fn_00401E80(uint32_t count)",
+    "summary": "Allocates an array of 28-byte elements via MFC80::operator new, throwing std::bad_alloc on size overflow.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00401EF0": {
     "name": "ExceptionCopyCtor",
     "class": "Exception",
@@ -19736,6 +19742,12 @@
     "name": "allocate_40byte_elements",
     "signature": "extern \"C\" void* fn_00504AA0(uint32_t count)",
     "summary": "Allocates count * 40 bytes via operator new, throwing std::bad_alloc on 32-bit overflow.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00504B80": {
+    "name": "sub_00504B80_dtor",
+    "signature": "extern \"C\" void __fastcall fn_00504B80(void* self)",
+    "summary": "Destroys std::string at +0x8 and invokes base/member destructors at +0x4 and +0x0",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00504C90": {

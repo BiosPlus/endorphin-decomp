@@ -1,0 +1,33 @@
+{
+  "va": "0x00504B80",
+  "size": 97,
+  "orig_symbol": "sub_00504B80",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "sub_00504B80_dtor",
+  "signature": "extern \"C\" void __fastcall fn_00504B80(void* self)",
+  "summary": "Destroys std::string at +0x8 and invokes base/member destructors at +0x4 and +0x0",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x0"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x4"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:58:50Z"
+}
