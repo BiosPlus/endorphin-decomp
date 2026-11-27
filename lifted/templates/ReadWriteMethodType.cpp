@@ -12720,7 +12720,7 @@ extern int mem_00B45A30;
 // @name ReadWriteMethodType<CameraData, float>::vfunc_40 (bind holder+0x04 to static accessor object)
 // @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureX(float), 0}>
 // @summary Lazily constructs the static accessor object at 0x00B45A30 (guarded by bit 0 of 0x00B45A34) and stores its address into holder+0x04.
-// @field ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureX(float), 0}> +0x04 void* field_0x04
+// @field ReadWriteMethodType +0x04 void* field_0x04
 //
 // `holder` is the single stack argument (ret 0x4) read at [esp+0x10] in the
 // original; the original ECX is overwritten before any use, so it is not an input.
