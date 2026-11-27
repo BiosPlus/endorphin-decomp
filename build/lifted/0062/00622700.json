@@ -1,0 +1,13 @@
+{
+  "va": "0x00622700",
+  "size": 80,
+  "orig_symbol": "sub_00622700",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "copyBackward20",
+  "signature": "uint32_t sub_00622700(uint32_t src_begin_addr, uint32_t src_end_addr, uint32_t dst_end_addr)",
+  "summary": "Backward-copies a range of 20-byte structs (one 32-bit int and four floats)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:03:30Z"
+}

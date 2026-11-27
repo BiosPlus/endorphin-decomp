@@ -2765,3 +2765,38 @@ uint32_t fn_00624640(void* self, const void* key) {
     return lift_field<uint32_t>(addr_of(node), 0x28);
 }
 } // namespace lift_00624640
+
+// [0x00622700]
+namespace lift_00622700 {
+// @name copyBackward20
+// @summary Backward-copies a range of 20-byte structs (one 32-bit int and four floats)
+
+
+struct Elem20 {
+    uint32_t field_0x00;
+    float field_0x04;
+    float field_0x08;
+    float field_0x0c;
+    float field_0x10;
+};
+
+uint32_t sub_00622700(uint32_t src_begin_addr, uint32_t src_end_addr, uint32_t dst_end_addr) {
+    uint8_t* src_begin = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(src_begin_addr));
+    uint8_t* src = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(src_end_addr));
+    uint8_t* dst = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(dst_end_addr));
+
+    while (src != src_begin) {
+        src -= 0x14;
+        dst -= 0x14;
+        const auto* s = reinterpret_cast<const Elem20*>(src);
+        auto* d = reinterpret_cast<Elem20*>(dst);
+        d->field_0x00 = s->field_0x00;
+        d->field_0x04 = s->field_0x04;
+        d->field_0x08 = s->field_0x08;
+        d->field_0x0c = s->field_0x0c;
+        d->field_0x10 = s->field_0x10;
+    }
+
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(dst));
+}
+} // namespace lift_00622700
