@@ -62330,6 +62330,13 @@
     "summary": "Calls TransformInterface slot 3 (subobject this+0x0C or 0), passes the result and this+0x184 to 0x493E40 to obtain an object, stores this+0x184 at obj+0x20, calls 0x528B90(this+0x0C, obj), then forwards the byte at this+0x160 to 0x586AD0 and 0x586A50; returns obj.",
     "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
+  "0x0061D4A0": {
+    "name": "NMData::SecondaryTwistAndSwingConstraint::vfunc_34",
+    "class": "NMData::SecondaryTwistAndSwingConstraint",
+    "signature": "void* fn_0061D4A0(void* self, void* owner)",
+    "summary": "Builds two local helper objects, wires them with sub-objects of this+0x04 and this+0x160 and the owner, lazily initializes a static 4x4 matrix once, and returns the object produced by the first forwarding chain.",
+    "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
+  },
   "0x0061D980": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_1_off_C",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
