@@ -2511,3 +2511,25 @@ extern void* fn_0041D9E0(uint32_t count) {
     return ext_006A5C62(count * 0x38u);
 }
 } // namespace lift_0041D9E0
+
+// [0x0041CE40]
+namespace lift_0041CE40 {
+// @name sub_0041CE40
+// @summary Constructs a temporary std::string from a C-string, passes it to ext_006720E0, and returns this.
+
+
+void __thiscall ext_006720E0(void* self, void* str);
+extern uintptr_t mem_00924FE4;
+extern uintptr_t mem_00924FF4;
+
+void* __thiscall sub_0041CE40(void* self, const char* str) {
+    alignas(4) uint8_t local_str[0x1C];
+    using StringCtorFn = void(__thiscall*)(void*, const char*);
+    using StringDtorFn = void(__thiscall*)(void*);
+
+    reinterpret_cast<StringCtorFn>(mem_00924FE4)(local_str, str);
+    ext_006720E0(self, local_str);
+    reinterpret_cast<StringDtorFn>(mem_00924FF4)(local_str);
+    return self;
+}
+} // namespace lift_0041CE40
