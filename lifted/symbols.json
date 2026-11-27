@@ -18755,6 +18755,13 @@
     "summary": "Lazily initializes the function-local static object at mem_00AE79CC (once, guarded by bit 0 of mem_00AE79D0), then stores its address into this+0x4.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004ECD70": {
+    "name": "ReadWriteMethodType_vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, int, {public: void __thiscall SelectionVariable::setNumRequiredObjects(int), 0}\u003e",
+    "signature": "void fn_004ECD70(void* self)",
+    "summary": "One-time guarded init of a static object's vtable, then stores its address into the argument object at +0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004ECDF0": {
     "name": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e",

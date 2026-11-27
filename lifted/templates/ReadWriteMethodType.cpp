@@ -10653,3 +10653,28 @@ void fn_004ECCF0(void* self)
     lift_field<DWORD>(self, 0x4) = 0x00AE79CCu;
 }
 } // namespace lift_004ECCF0
+
+// [0x004ECD70] ExprParser::ReadWriteMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, int, {public: void __thiscall SelectionVariable::setNumRequiredObjects(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_004ECD70 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00AE79D8;
+extern int mem_00AE79D4;
+
+// @name ReadWriteMethodType_vfunc_40
+// @class ExprParser::ReadWriteMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, int, {public: void __thiscall SelectionVariable::setNumRequiredObjects(int), 0}>
+// @summary One-time guarded init of a static object's vtable, then stores its address into the argument object at +0x04.
+// @field ExprParser::ReadWriteMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, int, {public: void __thiscall SelectionVariable::setNumRequiredObjects(int), 0}> +0x04 DWORD field_0x04
+void fn_004ECD70(void* self) {
+    // Guard bit 0 of mem_00AE79D8: on first call, set it and initialise the static object at mem_00AE79D4.
+    if ((mem_00AE79D8 & 1) == 0) {
+        mem_00AE79D8 |= 1;
+        // Callee ext_0067A670 is called with ECX = &mem_00AE79D4 and one stack argument of 0;
+        // its effect on mem_00AE79D4 is overwritten by the vtable store below.
+        ext_0067A670();
+        mem_00AE79D4 = 0x0094BE84; // vtable address
+    }
+    // Store the static object's address (VA 0x00AE79D4) into self+0x04 in both paths.
+    lift_field<DWORD>(self, 0x04) = 0x00AE79D4u;
+}
+} // namespace lift_004ECD70
