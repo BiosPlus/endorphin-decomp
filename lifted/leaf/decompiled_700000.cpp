@@ -2317,3 +2317,31 @@ void* fn_0070C130(void* self, void* out) {
     return out;
 }
 } // namespace lift_0070C130
+
+// [0x00702E60] sub_00702E60 (128 bytes)
+namespace lift_00702E60 {
+// Constructs the local 3-double triple object (thiscall, ecx = &tmp, no stack args).
+extern void ext_006D2370(void* self);
+// Known callee 0x006D23F0: Unknown::GetAddressAt8 (Returns this + 8 * index (32-bit address of an 8-byte element in an array based at this); thiscall, one stack argument, callee pops 4.)
+extern void* ext_006D23F0(void* self, uint32_t index);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0();
+// Known callee 0x00702AA0: FillDoubleTripleFromCounter (writes three doubles into out; thiscall, returns out.)
+extern double* ext_00702AA0(void* self, double* out);
+
+// @name Unknown::GetFirstDoubleFromCounterTriple
+// @class Unknown
+// @summary Fills a local 3-double triple via FillDoubleTripleFromCounter and returns its first double.
+double fn_00702E60(void* self) {
+    // The original's SEH frame (mem_008BFD88 scope table) is exception-handling boilerplate and is not needed here.
+    double tmp[3] = {0.0, 0.0, 0.0};  // local object at esp+0xc in the original
+    ext_006D2370(tmp);                 // construct local (thiscall, ecx = &tmp)
+    ext_00702AA0(self, tmp);           // fill tmp with three doubles
+
+    // GetAddressAt8(&tmp, 0) == &tmp[0]; the original copies that 8-byte element and returns it in st(0).
+    double result = *static_cast<double*>(ext_006D23F0(tmp, 0));
+
+    ext_006D80A0();                    // empty callee
+    return result;
+}
+} // namespace lift_00702E60
