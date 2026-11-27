@@ -1562,3 +1562,29 @@ void __thiscall sub_00693C30(void* self, const float* v) {
     out[3] = (float)(((double)sx * x * z - sx_m1 * y) * (double)syz);
 }
 } // namespace lift_00693C30
+
+// [0x006947B0] sub_006947B0 (135 bytes)
+namespace lift_006947B0 {
+extern uint8_t ext_0056B670(double a, double b, double c);
+extern int mem_00957788;
+
+// @name fn_006947B0 (descriptive name unknown)
+// @summary Calls ext_0056B670 at p4, p4-2pi and p4+2pi (same p3, p2); returns 1 if any call returns nonzero, else 0.
+extern uint8_t fn_006947B0(double /*+0x04*/ unused0, double /*+0x0C*/ unused1,
+                               double p2 /*+0x14*/, double p3 /*+0x1C*/, double p4 /*+0x24*/) {
+    (void)unused0;
+    (void)unused1;
+    const double two_pi = *reinterpret_cast<const double*>(&mem_00957788);
+
+    if (ext_0056B670(p3, p4, p2)) {
+        return 1;
+    }
+    if (ext_0056B670(p3, p4 - two_pi, p2)) {
+        return 1;
+    }
+    if (ext_0056B670(p3, p4 + two_pi, p2)) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_006947B0

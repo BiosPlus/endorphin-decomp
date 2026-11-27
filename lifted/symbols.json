@@ -57261,6 +57261,12 @@
     "summary": "Normalizes a 4-component float vector/quaternion in place if its length is non-zero, returning this.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006947B0": {
+    "name": "fn_006947B0 (descriptive name unknown)",
+    "signature": "extern \"C\" uint8_t fn_006947B0(double /*+0x04*/ unused0, double /*+0x0C*/ unused1, double p2 /*+0x14*/, double p3 /*+0x1C*/, double p4 /*+0x24*/)",
+    "summary": "Calls ext_0056B670 at p4, p4-2pi and p4+2pi (same p3, p2); returns 1 if any call returns nonzero, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00695620": {
     "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
