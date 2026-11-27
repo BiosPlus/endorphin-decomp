@@ -3015,3 +3015,48 @@ uint32_t __thiscall fn_006B9B90(void* ecx, uint32_t a1, uint32_t a2, uint32_t a3
     return status;
 }
 } // namespace lift_006B9B90
+
+// [0x006BAAF0] sub_006BAAF0 (144 bytes)
+namespace lift_006BAAF0 {
+// @name Unknown::trimAndAssign_006BAAF0
+// @class Unknown
+// @summary If IsNotTypeTag(self) is zero, calls initOrCopy(out, self); otherwise copies the [begin, begin+len) range of self into out via resetOrAllocCopy after trimming isspace chars (left unless mode==0, right unless mode==1). Returns out.
+// @field Unknown +0x00 char* field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+
+extern uint32_t ext_006B9940(void* self);
+extern void* ext_006B9D20(void* self, void* obj);
+extern void* ext_006B9E30(void* self, const char* src, uint32_t len);
+extern int mem_0092531C;
+
+void* fn_006BAAF0(void* self, void* out, uint32_t mode) {
+    if (ext_006B9940(self) == 0) {
+        ext_006B9D20(out, self);
+        return out;
+    }
+
+    // mem_0092531C holds the isspace function pointer (imported from the CRT).
+    auto isspace_fn = reinterpret_cast<int (*)(int)>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_0092531C)));
+
+    char* begin = lift_field<char*>(self, 0x00);
+    char* end = begin + lift_field<uint32_t>(self, 0x04);
+
+    // Trim trailing whitespace unless mode == 1.
+    if (mode != 1 && end != begin) {
+        while (end != begin && isspace_fn(static_cast<int>(end[-1]))) {
+            --end;
+        }
+    }
+
+    // Trim leading whitespace unless mode == 0.
+    if (mode != 0 && end != begin) {
+        while (begin != end && isspace_fn(static_cast<int>(*begin))) {
+            ++begin;
+        }
+    }
+
+    ext_006B9E30(out, begin, static_cast<uint32_t>(end - begin));
+    return out;
+}
+} // namespace lift_006BAAF0
