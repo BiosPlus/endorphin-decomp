@@ -26380,6 +26380,13 @@
     "summary": "Fetches field_0x4 and field_0x8, resolves an element via ext_00661B50, then forwards it to the vtable slot at +0x10 of the argument object.",
     "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
   },
+  "0x00532720": {
+    "name": "HasCustomBufferedTMPtr::vfunc_3",
+    "class": "HasCustomBufferedTMPtr",
+    "signature": "void* fn_00532720(void* self, void* out)",
+    "summary": "Writes a fixed float template (1.0/0.0 pattern) into the out buffer, then calls sub_00661B50 and sub_0067DAD0 using this+4/this+8; returns out.",
+    "lifted_path": "lifted/classes/HasCustomBufferedTMPtr.cpp"
+  },
   "0x00532770": {
     "name": "Unknown::resetVtableDestroyStringNotifyDialog_00532770",
     "class": "Unknown",

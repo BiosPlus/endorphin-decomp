@@ -99,3 +99,41 @@ void fn_00532530(void* self) {
     glTranslatef(x, y, z);
 }
 } // namespace lift_00532530
+
+// [0x00532720] HasCustomBufferedTMPtr::vfunc_3 (69 bytes)
+namespace lift_00532720 {
+// Known callee 0x00661B50: sub_00661B50 (Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index)
+extern uint32_t ext_00661B50(void* this_ptr, uint32_t index);
+// Known callee 0x0067DAD0: sub_0067DAD0
+extern void ext_0067DAD0(void* this_ptr);
+
+// @name HasCustomBufferedTMPtr::vfunc_3
+// @class HasCustomBufferedTMPtr
+// @summary Writes a fixed float template (1.0/0.0 pattern) into the out buffer, then calls sub_00661B50 and sub_0067DAD0 using this+4/this+8; returns out.
+// @field HasCustomBufferedTMPtr +0x04 uint32_t field_0x4
+// @field HasCustomBufferedTMPtr +0x08 uint32_t field_0x8
+void* fn_00532720(void* self, void* out) {
+    // Out buffer (float fields): +0x00=1.0, +0x04=0.0, +0x08=0.0, +0x0C=0.0,
+    // +0x10=1.0, +0x14=0.0, +0x18=0.0, +0x1C=0.0, +0x20=1.0
+    lift_field<float>(out, 0x08) = 0.0f;
+    lift_field<float>(out, 0x04) = 0.0f;
+    lift_field<float>(out, 0x00) = 1.0f;
+    lift_field<float>(out, 0x10) = 1.0f;
+    lift_field<float>(out, 0x14) = 0.0f;
+    lift_field<float>(out, 0x0C) = 0.0f;
+    lift_field<float>(out, 0x20) = 1.0f;
+    lift_field<float>(out, 0x1C) = 0.0f;
+    lift_field<float>(out, 0x18) = 0.0f;
+
+    // eax = [self+4] (index); ecx = [self+8] (this for callee)
+    const uint32_t index = lift_field<uint32_t>(self, 0x04);
+    const uint32_t wrapper = lift_field<uint32_t>(self, 0x08);
+
+    const uint32_t element = ext_00661B50(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(wrapper)), index);
+
+    ext_0067DAD0(reinterpret_cast<void*>(static_cast<uintptr_t>(element)));
+
+    return out;
+}
+} // namespace lift_00532720
