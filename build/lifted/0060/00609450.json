@@ -1,0 +1,28 @@
+{
+  "va": "0x00609450",
+  "size": 140,
+  "orig_symbol": "sub_00609450",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "sub_00609450",
+  "class": "Unknown",
+  "signature": "uint32_t* fn_00609450(void* self, uint32_t* out, uint32_t key)",
+  "summary": "Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "subobject",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "subobject",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:54:32Z"
+}

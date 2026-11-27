@@ -154,8 +154,10 @@ uint32_t __fastcall sub_00609670(uint32_t this_ptr, uint32_t /*edx*/, uint32_t o
     return 0;
 }
 } // namespace lift_00609670
+#include <iostream>
+#include <streambuf>
 
-// [0x00602F70] sub_00602F70 (91 bytes)
+#include <streambuf>
 namespace lift_00602F70 {
 // Known callee 0x00602EC0: sub_00602EC0_ctor (Initializes vtable and zeroes integer and float fields of an object)
 extern void ext_00602EC0(void* self);
@@ -182,8 +184,10 @@ void* fn_00602F70(void* self) {
     return self;
 }
 } // namespace lift_00602F70
+#include <utility>
+#include <exception>
 
-// [0x006053C0] sub_006053C0 (87 bytes)
+#include <exception>
 namespace lift_006053C0 {
 // @name sub_006053C0
 // @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
@@ -1635,3 +1639,971 @@ void* fn_00608350(void* self) {
     return self;
 }
 } // namespace lift_00608350
+
+// [0x00602D60] sub_00602D60 (140 bytes)
+namespace lift_00602D60 {
+// @name sub_00602D60
+// @summary Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).
+namespace lift_00476430 {
+// Known callee 0x00474F00: sub_00474F00 (thiscall on this+0x18; takes (std::string* str, uint32 key); returns a pointer used as the receiver of the follow-up assign import)
+extern void* ext_00474F00(void* self, void* str, uint32_t key);
+// Known callee 0x00476360: sub_00476360 (thiscall on this+0x08; takes (std::string* str); returns a 32-bit value)
+extern uint32_t ext_00476360(void* self, void* str);
+// Known callee 0x00662610: sub_00662610 (cdecl helper that fills a std::string from a C string literal)
+extern void ext_00662610(void* str, const char* text);
+// Import slot holding the MSVCP80 thiscall target invoked on the object returned by ext_00474F00 (no stack args)
+extern int mem_00924FD4;
+// Import slot holding the MSVCP80 std::string destructor (thiscall, no stack args)
+extern int mem_00924FF4;
+
+// @name Unknown::lookupStringKeyedValue
+// @class Unknown
+// @summary Builds a std::string from literal 0x00A3273C, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.
+// @field Unknown +0x08 subobject field_0x08
+// @field Unknown +0x18 subobject field_0x18
+uint32_t* fn_00602D60(void* self, uint32_t* out, uint32_t key) {
+    // Local std::string (28-byte MSVC 2005 layout) in the frame.
+    alignas(8) uint8_t str[0x1C] = {};
+    ext_00662610(str, reinterpret_cast<const char*>(static_cast<uintptr_t>(0xA936F8u)));
+
+    if (key != 0) {
+        void* resolved = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, str, key);
+
+        using ThisOnlyFn = void (__thiscall*)(void*);
+        auto assign = reinterpret_cast<ThisOnlyFn>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FD4)));
+        assign(resolved);
+    }
+
+    uint32_t value = ext_00476360(static_cast<uint8_t*>(self) + 0x08, str);
+    *out = value;
+
+    using StringDtorFn = void (__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(str);
+
+    return out;
+}
+} // namespace lift_00476430
+} // namespace lift_00602D60
+
+// [0x006033E0] sub_006033E0 (60 bytes)
+namespace lift_006033E0 {
+// @name sub_006033E0
+// @summary Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).
+namespace lift_0041CDA0 {
+// 28-byte MSVC std::string (x86) passed by value on the stack.
+struct StdString28 {
+    unsigned char bytes[28];
+};
+
+extern void ext_0066AC90(void* dst, StdString28 value);
+extern int mem_00925354;  // IAT: std::type_info::_name_internal_method
+extern int mem_00924FE4;  // IAT: std::basic_string<char>::basic_string(const char*)
+extern int mem_00A93750;  // global std::type_info object
+extern int mem_00B5CE94;  // __type_info_node pointer constant
+extern int mem_00924FD0;
+extern int mem_00924FF4;
+
+// @name ExprParser::GetTypeNameInto
+// @summary Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.
+void* fn_006033E0(void* dst) {
+    using NameInternalMethodFn = const char* (__thiscall*)(void* self, const void* node);
+    using StringCtorFn = void (__thiscall*)(void* self, const char* s);
+
+    // Metadata-only refs (not accessed by this function's asm).
+    (void)&mem_00924FD0;
+    (void)&mem_00924FF4;
+
+    auto name_internal = *reinterpret_cast<NameInternalMethodFn*>(&mem_00925354);
+    const char* name = name_internal(reinterpret_cast<void*>(&mem_00A93750),
+                                     reinterpret_cast<const void*>(&mem_00B5CE94));
+
+    StdString28 str{};
+    auto string_ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE4);
+    string_ctor(static_cast<void*>(&str), name);
+
+    ext_0066AC90(dst, str);
+    return dst;
+}
+} // namespace lift_0041CDA0
+} // namespace lift_006033E0
+
+// [0x00608990] sub_00608990 (114 bytes)
+namespace lift_00608990 {
+// @name sub_00608990
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_006053C0();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608990(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_006053C0();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608990
+
+// [0x00608A10] sub_00608A10 (114 bytes)
+namespace lift_00608A10 {
+// @name sub_00608A10
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_00605420();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608A10(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_00605420();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608A10
+
+// [0x00608A90] sub_00608A90 (114 bytes)
+namespace lift_00608A90 {
+// @name sub_00608A90
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_00605480();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608A90(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_00605480();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608A90
+
+// [0x00608B10] sub_00608B10 (114 bytes)
+namespace lift_00608B10 {
+// @name sub_00608B10
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_006054E0();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608B10(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_006054E0();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608B10
+
+// [0x00608B90] sub_00608B90 (114 bytes)
+namespace lift_00608B90 {
+// @name sub_00608B90
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_00605540();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608B90(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_00605540();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608B90
+
+// [0x00608C10] sub_00608C10 (114 bytes)
+namespace lift_00608C10 {
+// @name sub_00608C10
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_006055A0();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608C10(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_006055A0();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608C10
+
+// [0x00608C90] sub_00608C90 (114 bytes)
+namespace lift_00608C90 {
+// @name sub_00608C90
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_00605600();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608C90(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_00605600();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608C90
+
+// [0x00608D10] sub_00608D10 (114 bytes)
+namespace lift_00608D10 {
+// @name sub_00608D10
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_00605660();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608D10(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_00605660();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608D10
+
+// [0x00608D90] sub_00608D90 (114 bytes)
+namespace lift_00608D90 {
+// @name sub_00608D90
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_006056C0();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608D90(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_006056C0();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608D90
+
+// [0x00608E10] sub_00608E10 (114 bytes)
+namespace lift_00608E10 {
+// @name sub_00608E10
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_00605720();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608E10(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_00605720();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608E10
+
+// [0x00608E90] sub_00608E90 (114 bytes)
+namespace lift_00608E90 {
+// @name sub_00608E90
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_00605780();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608E90(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_00605780();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608E90
+
+// [0x00608F10] sub_00608F10 (114 bytes)
+namespace lift_00608F10 {
+// @name sub_00608F10
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_006057E0();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608F10(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_006057E0();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608F10
+
+// [0x00608F90] sub_00608F90 (114 bytes)
+namespace lift_00608F90 {
+// @name sub_00608F90
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_00605840();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00608F90(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_00605840();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00608F90
+
+// [0x00609010] sub_00609010 (114 bytes)
+namespace lift_00609010 {
+// @name sub_00609010
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_006058A0();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00609010(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_006058A0();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00609010
+
+// [0x00609090] sub_00609090 (114 bytes)
+namespace lift_00609090 {
+// @name sub_00609090
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_00605900();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_00609090(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_00605900();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_00609090
+
+// [0x006093C0] sub_006093C0 (140 bytes)
+namespace lift_006093C0 {
+// @name sub_006093C0
+// @summary Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).
+namespace lift_00476430 {
+// Known callee 0x00474F00: sub_00474F00 (thiscall on this+0x18; takes (std::string* str, uint32 key); returns a pointer used as the receiver of the follow-up assign import)
+extern void* ext_00474F00(void* self, void* str, uint32_t key);
+// Known callee 0x00476360: sub_00476360 (thiscall on this+0x08; takes (std::string* str); returns a 32-bit value)
+extern uint32_t ext_00476360(void* self, void* str);
+// Known callee 0x00662610: sub_00662610 (cdecl helper that fills a std::string from a C string literal)
+extern void ext_00662610(void* str, const char* text);
+// Import slot holding the MSVCP80 thiscall target invoked on the object returned by ext_00474F00 (no stack args)
+extern int mem_00924FD4;
+// Import slot holding the MSVCP80 std::string destructor (thiscall, no stack args)
+extern int mem_00924FF4;
+
+// @name Unknown::lookupStringKeyedValue
+// @class Unknown
+// @summary Builds a std::string from literal 0x00A3273C, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.
+// @field Unknown +0x08 subobject field_0x08
+// @field Unknown +0x18 subobject field_0x18
+uint32_t* fn_006093C0(void* self, uint32_t* out, uint32_t key) {
+    // Local std::string (28-byte MSVC 2005 layout) in the frame.
+    alignas(8) uint8_t str[0x1C] = {};
+    ext_00662610(str, reinterpret_cast<const char*>(static_cast<uintptr_t>(0xA94860u)));
+
+    if (key != 0) {
+        void* resolved = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, str, key);
+
+        using ThisOnlyFn = void (__thiscall*)(void*);
+        auto assign = reinterpret_cast<ThisOnlyFn>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FD4)));
+        assign(resolved);
+    }
+
+    uint32_t value = ext_00476360(static_cast<uint8_t*>(self) + 0x08, str);
+    *out = value;
+
+    using StringDtorFn = void (__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(str);
+
+    return out;
+}
+} // namespace lift_00476430
+} // namespace lift_006093C0
+
+// [0x00609450] sub_00609450 (140 bytes)
+namespace lift_00609450 {
+// @name sub_00609450
+// @summary Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).
+namespace lift_00476430 {
+// Known callee 0x00474F00: sub_00474F00 (thiscall on this+0x18; takes (std::string* str, uint32 key); returns a pointer used as the receiver of the follow-up assign import)
+extern void* ext_00474F00(void* self, void* str, uint32_t key);
+// Known callee 0x00476360: sub_00476360 (thiscall on this+0x08; takes (std::string* str); returns a 32-bit value)
+extern uint32_t ext_00476360(void* self, void* str);
+// Known callee 0x00662610: sub_00662610 (cdecl helper that fills a std::string from a C string literal)
+extern void ext_00662610(void* str, const char* text);
+// Import slot holding the MSVCP80 thiscall target invoked on the object returned by ext_00474F00 (no stack args)
+extern int mem_00924FD4;
+// Import slot holding the MSVCP80 std::string destructor (thiscall, no stack args)
+extern int mem_00924FF4;
+
+// @name Unknown::lookupStringKeyedValue
+// @class Unknown
+// @summary Builds a std::string from literal 0x00A3273C, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.
+// @field Unknown +0x08 subobject field_0x08
+// @field Unknown +0x18 subobject field_0x18
+uint32_t* fn_00609450(void* self, uint32_t* out, uint32_t key) {
+    // Local std::string (28-byte MSVC 2005 layout) in the frame.
+    alignas(8) uint8_t str[0x1C] = {};
+    ext_00662610(str, reinterpret_cast<const char*>(static_cast<uintptr_t>(0xA9487Cu)));
+
+    if (key != 0) {
+        void* resolved = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, str, key);
+
+        using ThisOnlyFn = void (__thiscall*)(void*);
+        auto assign = reinterpret_cast<ThisOnlyFn>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FD4)));
+        assign(resolved);
+    }
+
+    uint32_t value = ext_00476360(static_cast<uint8_t*>(self) + 0x08, str);
+    *out = value;
+
+    using StringDtorFn = void (__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(str);
+
+    return out;
+}
+} // namespace lift_00476430
+} // namespace lift_00609450
+
+// [0x0060B620] sub_0060B620 (114 bytes)
+namespace lift_0060B620 {
+// @name sub_0060B620
+// @summary Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).
+namespace lift_0048C1A0 {
+// Known callee 0x00487ED0: EnsureStaticInit_00487ED0 (One-time guarded init of the global at mem_00AD9DEC; returns the address of the global.)
+extern uint32_t ext_0060A1E0();
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00924FE4; // std::string(const char*) ctor thunk (IAT slot)
+extern uint32_t mem_00924FF4; // std::string dtor thunk (IAT slot)
+
+using std_string_ctor_fn = void (__thiscall*)(uint32_t, const char*);
+using std_string_dtor_fn = void (__thiscall*)(uint32_t);
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+extern void fn_0060B620(uint32_t this_ptr, uint32_t arg0) {
+    // Static-init global address, held in a local slot whose address is passed on.
+    uint32_t init_slot = ext_0060A1E0();
+    uint32_t init_slot_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    uint8_t str_buf[0x20];
+    uint32_t str_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(str_buf));
+    reinterpret_cast<std_string_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+        str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(arg0)));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(this_ptr));
+    ext_00475960(self_ecx, str_ptr, init_slot_ptr, 1);
+
+    reinterpret_cast<std_string_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+}
+} // namespace lift_0048C1A0
+} // namespace lift_0060B620
+
+// [0x0060B800] sub_0060B800 (140 bytes)
+namespace lift_0060B800 {
+// @name sub_0060B800
+// @summary Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).
+namespace lift_00476430 {
+// Known callee 0x00474F00: sub_00474F00 (thiscall on this+0x18; takes (std::string* str, uint32 key); returns a pointer used as the receiver of the follow-up assign import)
+extern void* ext_00474F00(void* self, void* str, uint32_t key);
+// Known callee 0x00476360: sub_00476360 (thiscall on this+0x08; takes (std::string* str); returns a 32-bit value)
+extern uint32_t ext_00476360(void* self, void* str);
+// Known callee 0x00662610: sub_00662610 (cdecl helper that fills a std::string from a C string literal)
+extern void ext_00662610(void* str, const char* text);
+// Import slot holding the MSVCP80 thiscall target invoked on the object returned by ext_00474F00 (no stack args)
+extern int mem_00924FD4;
+// Import slot holding the MSVCP80 std::string destructor (thiscall, no stack args)
+extern int mem_00924FF4;
+
+// @name Unknown::lookupStringKeyedValue
+// @class Unknown
+// @summary Builds a std::string from literal 0x00A3273C, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.
+// @field Unknown +0x08 subobject field_0x08
+// @field Unknown +0x18 subobject field_0x18
+uint32_t* fn_0060B800(void* self, uint32_t* out, uint32_t key) {
+    // Local std::string (28-byte MSVC 2005 layout) in the frame.
+    alignas(8) uint8_t str[0x1C] = {};
+    ext_00662610(str, reinterpret_cast<const char*>(static_cast<uintptr_t>(0xA94E4Cu)));
+
+    if (key != 0) {
+        void* resolved = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, str, key);
+
+        using ThisOnlyFn = void (__thiscall*)(void*);
+        auto assign = reinterpret_cast<ThisOnlyFn>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FD4)));
+        assign(resolved);
+    }
+
+    uint32_t value = ext_00476360(static_cast<uint8_t*>(self) + 0x08, str);
+    *out = value;
+
+    using StringDtorFn = void (__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(str);
+
+    return out;
+}
+} // namespace lift_00476430
+} // namespace lift_0060B800
+
+// [0x0060C130] sub_0060C130 (60 bytes)
+namespace lift_0060C130 {
+// @name sub_0060C130
+// @summary Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).
+namespace lift_0041CDA0 {
+// 28-byte MSVC std::string (x86) passed by value on the stack.
+struct StdString28 {
+    unsigned char bytes[28];
+};
+
+extern void ext_0066AC90(void* dst, StdString28 value);
+extern int mem_00925354;  // IAT: std::type_info::_name_internal_method
+extern int mem_00924FE4;  // IAT: std::basic_string<char>::basic_string(const char*)
+extern int mem_00A93768;  // global std::type_info object
+extern int mem_00B5CE94;  // __type_info_node pointer constant
+extern int mem_00924FD0;
+extern int mem_00924FF4;
+
+// @name ExprParser::GetTypeNameInto
+// @summary Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.
+void* fn_0060C130(void* dst) {
+    using NameInternalMethodFn = const char* (__thiscall*)(void* self, const void* node);
+    using StringCtorFn = void (__thiscall*)(void* self, const char* s);
+
+    // Metadata-only refs (not accessed by this function's asm).
+    (void)&mem_00924FD0;
+    (void)&mem_00924FF4;
+
+    auto name_internal = *reinterpret_cast<NameInternalMethodFn*>(&mem_00925354);
+    const char* name = name_internal(reinterpret_cast<void*>(&mem_00A93768),
+                                     reinterpret_cast<const void*>(&mem_00B5CE94));
+
+    StdString28 str{};
+    auto string_ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE4);
+    string_ctor(static_cast<void*>(&str), name);
+
+    ext_0066AC90(dst, str);
+    return dst;
+}
+} // namespace lift_0041CDA0
+} // namespace lift_0060C130
+
+// [0x0060E7E0] sub_0060E7E0 (60 bytes)
+namespace lift_0060E7E0 {
+// @name sub_0060E7E0
+// @summary Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).
+namespace lift_0041CDA0 {
+// 28-byte MSVC std::string (x86) passed by value on the stack.
+struct StdString28 {
+    unsigned char bytes[28];
+};
+
+extern void ext_0066AC90(void* dst, StdString28 value);
+extern int mem_00925354;  // IAT: std::type_info::_name_internal_method
+extern int mem_00924FE4;  // IAT: std::basic_string<char>::basic_string(const char*)
+extern int mem_00A94FCC;  // global std::type_info object
+extern int mem_00B5CE94;  // __type_info_node pointer constant
+extern int mem_00924FD0;
+extern int mem_00924FF4;
+
+// @name ExprParser::GetTypeNameInto
+// @summary Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.
+void* fn_0060E7E0(void* dst) {
+    using NameInternalMethodFn = const char* (__thiscall*)(void* self, const void* node);
+    using StringCtorFn = void (__thiscall*)(void* self, const char* s);
+
+    // Metadata-only refs (not accessed by this function's asm).
+    (void)&mem_00924FD0;
+    (void)&mem_00924FF4;
+
+    auto name_internal = *reinterpret_cast<NameInternalMethodFn*>(&mem_00925354);
+    const char* name = name_internal(reinterpret_cast<void*>(&mem_00A94FCC),
+                                     reinterpret_cast<const void*>(&mem_00B5CE94));
+
+    StdString28 str{};
+    auto string_ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE4);
+    string_ctor(static_cast<void*>(&str), name);
+
+    ext_0066AC90(dst, str);
+    return dst;
+}
+} // namespace lift_0041CDA0
+} // namespace lift_0060E7E0
+
+// [0x0060E820] sub_0060E820 (60 bytes)
+namespace lift_0060E820 {
+// @name sub_0060E820
+// @summary Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).
+namespace lift_0041CDA0 {
+// 28-byte MSVC std::string (x86) passed by value on the stack.
+struct StdString28 {
+    unsigned char bytes[28];
+};
+
+extern void ext_0066AC90(void* dst, StdString28 value);
+extern int mem_00925354;  // IAT: std::type_info::_name_internal_method
+extern int mem_00924FE4;  // IAT: std::basic_string<char>::basic_string(const char*)
+extern int mem_00A94FEC;  // global std::type_info object
+extern int mem_00B5CE94;  // __type_info_node pointer constant
+extern int mem_00924FD0;
+extern int mem_00924FF4;
+
+// @name ExprParser::GetTypeNameInto
+// @summary Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.
+void* fn_0060E820(void* dst) {
+    using NameInternalMethodFn = const char* (__thiscall*)(void* self, const void* node);
+    using StringCtorFn = void (__thiscall*)(void* self, const char* s);
+
+    // Metadata-only refs (not accessed by this function's asm).
+    (void)&mem_00924FD0;
+    (void)&mem_00924FF4;
+
+    auto name_internal = *reinterpret_cast<NameInternalMethodFn*>(&mem_00925354);
+    const char* name = name_internal(reinterpret_cast<void*>(&mem_00A94FEC),
+                                     reinterpret_cast<const void*>(&mem_00B5CE94));
+
+    StdString28 str{};
+    auto string_ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE4);
+    string_ctor(static_cast<void*>(&str), name);
+
+    ext_0066AC90(dst, str);
+    return dst;
+}
+} // namespace lift_0041CDA0
+} // namespace lift_0060E820

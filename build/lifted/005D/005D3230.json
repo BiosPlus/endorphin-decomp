@@ -1,0 +1,34 @@
+{
+  "va": "0x005D3230",
+  "size": 168,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e::vfunc_46",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e::vfunc_46",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
+  "signature": "void fn_005D3230(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B7DE0 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_44).",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "void* source (pointer to the source value",
+      "name": "object)"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x4",
+      "type": "void* target (object whose vfunc_44 is",
+      "name": "dispatched)"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x1C",
+      "type": "float value (field read from the source",
+      "name": "object)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:54:32Z"
+}

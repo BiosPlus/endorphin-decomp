@@ -43,8 +43,10 @@ void fn_00437DE0() {
 }
 } // namespace lift_00437DE0
 #include <exception>
+#include <iostream>
+#include <streambuf>
 
-// [0x0043CB80]
+#include <streambuf>
 namespace lift_0043CB80 {
 // @name call_MFC80_ord_1903_ret8
 // @summary Calls thunk_MFC80_ord_1903 and returns, cleaning 8 bytes of stack arguments.
@@ -5545,3 +5547,45 @@ bool fn_00437230(void* self, void* a1, uint32_t a2, uint32_t a3, uint32_t a4, ui
     return true;
 }
 } // namespace lift_00437230
+
+// [0x00430F30] sub_00430F30 (60 bytes)
+namespace lift_00430F30 {
+// @name sub_00430F30
+// @summary Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).
+namespace lift_0041CDA0 {
+// 28-byte MSVC std::string (x86) passed by value on the stack.
+struct StdString28 {
+    unsigned char bytes[28];
+};
+
+extern void ext_0066AC90(void* dst, StdString28 value);
+extern int mem_00925354;  // IAT: std::type_info::_name_internal_method
+extern int mem_00924FE4;  // IAT: std::basic_string<char>::basic_string(const char*)
+extern int mem_00A2E24C;  // global std::type_info object
+extern int mem_00B5CE94;  // __type_info_node pointer constant
+extern int mem_00924FD0;
+extern int mem_00924FF4;
+
+// @name ExprParser::GetTypeNameInto
+// @summary Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.
+void* fn_00430F30(void* dst) {
+    using NameInternalMethodFn = const char* (__thiscall*)(void* self, const void* node);
+    using StringCtorFn = void (__thiscall*)(void* self, const char* s);
+
+    // Metadata-only refs (not accessed by this function's asm).
+    (void)&mem_00924FD0;
+    (void)&mem_00924FF4;
+
+    auto name_internal = *reinterpret_cast<NameInternalMethodFn*>(&mem_00925354);
+    const char* name = name_internal(reinterpret_cast<void*>(&mem_00A2E24C),
+                                     reinterpret_cast<const void*>(&mem_00B5CE94));
+
+    StdString28 str{};
+    auto string_ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE4);
+    string_ctor(static_cast<void*>(&str), name);
+
+    ext_0066AC90(dst, str);
+    return dst;
+}
+} // namespace lift_0041CDA0
+} // namespace lift_00430F30

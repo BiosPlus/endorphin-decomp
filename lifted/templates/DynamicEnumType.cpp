@@ -3833,3 +3833,1635 @@ uint32_t fn_00516750(void* holder, void* arg2) {
 }
 } // namespace lift_00516030
 } // namespace lift_00516750
+
+// [0x00494A90] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_44 (159 bytes)
+namespace lift_00494A90 {
+// @name ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_44
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_006AD970(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_00494A90(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_006AD970(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB0))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_00494A90
+
+// [0x00494B30] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_46 (159 bytes)
+namespace lift_00494B30 {
+// @name ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_46
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_006AD970(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_00494B30(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_006AD970(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB8))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_00494B30
+
+// [0x00494EB0] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_43 (159 bytes)
+namespace lift_00494EB0 {
+// @name ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_43
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_006AD970(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_00494EB0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_006AD970(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xAC))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_00494EB0
+
+// [0x00494F50] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_45 (159 bytes)
+namespace lift_00494F50 {
+// @name ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_45
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_006AD970(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_00494F50(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_006AD970(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB4))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_00494F50
+
+// [0x004AB480] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_45 (159 bytes)
+namespace lift_004AB480 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_45
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004A9CE0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004AB480(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004A9CE0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB4))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004AB480
+
+// [0x004AB6A0] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_43 (159 bytes)
+namespace lift_004AB6A0 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_43
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004A9CE0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004AB6A0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004A9CE0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xAC))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004AB6A0
+
+// [0x004AB740] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_44 (159 bytes)
+namespace lift_004AB740 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_44
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004A9CE0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004AB740(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004A9CE0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB0))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004AB740
+
+// [0x004AB7E0] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_46 (159 bytes)
+namespace lift_004AB7E0 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_46
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004A9CE0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004AB7E0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004A9CE0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB8))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004AB7E0
+
+// [0x004B9BF0] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_46 (159 bytes)
+namespace lift_004B9BF0 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_46
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004B72D0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004B9BF0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004B72D0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB8))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004B9BF0
+
+// [0x004B9E60] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_43 (159 bytes)
+namespace lift_004B9E60 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_43
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004B72D0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004B9E60(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004B72D0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xAC))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004B9E60
+
+// [0x004B9F00] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_44 (159 bytes)
+namespace lift_004B9F00 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_44
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004B72D0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004B9F00(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004B72D0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB0))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004B9F00
+
+// [0x004B9FA0] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_45 (159 bytes)
+namespace lift_004B9FA0 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_45
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004B72D0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004B9FA0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004B72D0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB4))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004B9FA0
+
+// [0x004D4910] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_44 (159 bytes)
+namespace lift_004D4910 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_44
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004D3CE0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004D4910(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004D3CE0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB0))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004D4910
+
+// [0x004D49B0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_46 (159 bytes)
+namespace lift_004D49B0 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_46
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004D3CE0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004D49B0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004D3CE0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB8))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004D49B0
+
+// [0x004D4B70] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_43 (159 bytes)
+namespace lift_004D4B70 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_43
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004D3CF0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004D4B70(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004D3CF0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xAC))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004D4B70
+
+// [0x004D4C10] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_44 (159 bytes)
+namespace lift_004D4C10 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_44
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004D3CF0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004D4C10(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004D3CF0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB0))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004D4C10
+
+// [0x004D4CB0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_46 (159 bytes)
+namespace lift_004D4CB0 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_46
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004D3CF0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004D4CB0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004D3CF0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB8))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004D4CB0
+
+// [0x004D4E80] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_43 (159 bytes)
+namespace lift_004D4E80 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_43
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004D3CE0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004D4E80(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004D3CE0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xAC))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004D4E80
+
+// [0x004D4F20] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_45 (159 bytes)
+namespace lift_004D4F20 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_45
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004D3CE0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004D4F20(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004D3CE0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB4))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004D4F20
+
+// [0x004D51E0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_45 (159 bytes)
+namespace lift_004D51E0 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_45
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_004D3CF0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_004D51E0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_004D3CF0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB4))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_004D51E0
+
+// [0x005C8AD0] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_43 (159 bytes)
+namespace lift_005C8AD0 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_43
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_005C3FB0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_005C8AD0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_005C3FB0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xAC))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_005C8AD0
+
+// [0x005C8B70] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_45 (159 bytes)
+namespace lift_005C8B70 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_45
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_005C3FB0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_005C8B70(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_005C3FB0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB4))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_005C8B70
+
+// [0x005C8D30] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_44 (159 bytes)
+namespace lift_005C8D30 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_44
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_005C3FB0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_005C8D30(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_005C3FB0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB0))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_005C8D30
+
+// [0x005C8DD0] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_46 (159 bytes)
+namespace lift_005C8DD0 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_46
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D3F0 (ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43).
+namespace lift_0046D3F0 {
+// Known callee 0x0042F6E0: sub_0042F6E0 (thiscall, ecx = src, returns eax)
+extern void* ext_005C3FB0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (thiscall, ecx = &tmp, stack arg = value; constructs tmp)
+extern void* ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+// Throw info for the null-source exception path (0x009DEC1C).
+extern char mem_009DEC1C;
+
+// 32-bit pointer load (target is 32-bit x86; pointers and vtable slots are 4 bytes).
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Reads the vtable slot at byte offset `slot_off` of object `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t slot_off) {
+    void* vtable = load_ptr(obj, 0x00);
+    return load_ptr(vtable, slot_off);
+}
+
+using ThiscallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThiscallPtr2 = void*(__thiscall*)(void* self, void* a, void* b);
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Wrapper: resolves the source value from self->field_0x00 into a temporary, assigns it into self, releases the temporary, then forwards (self, arg2) to self->field_0x04's vfunc at slot 0x AC; throws DerivedException if the source is null.
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x04 void* field_0x04
+// Note: the wrapper takes its object as the first stack argument (ecx is unused); ret 8.
+void* fn_005C8DD0(void* self, void* arg2) {
+    void* src = load_ptr(self, 0x00);
+    if (src == nullptr) {
+        // Null source: throw DerivedException.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        std::abort();
+    }
+
+    // Build temporary {field_0x00, field_0x04} from the source value.
+    alignas(8) unsigned char tmp[8] = {};
+    void* value = ext_005C3FB0(src);
+    ext_006720C0(tmp, value);
+
+    // Assign into self, then release the temporary's field_0x04 if present.
+    ext_0041CF50(self, tmp);
+    void* release_obj = load_ptr(tmp, 0x04);
+    if (release_obj != nullptr) {
+        reinterpret_cast<ThiscallVoid1>(vtable_slot(release_obj, 0x78))(release_obj, tmp);
+    }
+
+    // Forward to self->field_0x04's vfunc at slot 0xAC with (self, arg2).
+    void* child = load_ptr(self, 0x04);
+    return reinterpret_cast<ThiscallPtr2>(vtable_slot(child, 0xB8))(child, self, arg2);
+}
+} // namespace lift_0046D3F0
+} // namespace lift_005C8DD0

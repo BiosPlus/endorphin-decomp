@@ -26,6 +26,7 @@ extern void fn_00450A80(uint32_t arg1, uint32_t arg2) {
 }
 } // namespace lift_0043CB80
 } // namespace lift_00450A80
+#include <cstddef>
 
 // [0x0045E4A0] sub_0045E4A0 (14 bytes)
 namespace lift_0045E4A0 {
@@ -2004,3 +2005,45 @@ void* __thiscall fn_0045F4B0(void* self, uint32_t arg0, uint32_t arg1) {
     return self;
 }
 } // namespace lift_0045F4B0
+
+// [0x0045FF80] sub_0045FF80 (59 bytes)
+namespace lift_0045FF80 {
+// @name sub_0045FF80
+// @summary Auto-lifted identical-shape clone of 0x0042E820 (UnknownClass::resetAndRelease).
+namespace lift_0042E820 {
+// Callee 0x0042C770: sub_0042C770 (thiscall-style, 5 stack args, callee-cleaned)
+extern void ext_005AEC70(void* self, void* out, void* a2, uint32_t a3, void* a4, void* a5);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+extern int mem_00938028;
+
+// @name UnknownClass::resetAndRelease
+// @class UnknownClass
+// @summary Installs vtable at +0x00, calls sub_0042C770 with the pointer at +0x08, passes that pointer to thunk_MFC80_ord_764, then clears +0x08 and +0x0C.
+// @field UnknownClass +0x00 uint32_t field_0x00
+// @field UnknownClass +0x08 void* field_0x08
+// @field UnknownClass +0x0C uint32_t field_0x0C
+void fn_0045FF80(void* self) {
+    // esi = ecx + 4
+    void* const sub = static_cast<uint8_t*>(self) + 4;
+
+    // mov dword ptr [ecx], 0x92f330
+    lift_field<uint32_t>(self, 0x00) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00938028));
+
+    // eax = [esi+4] (= [ecx+8]); ecx = [eax]
+    void* const p = lift_field<void*>(self, 0x08);
+    const uint32_t pval = lift_field<uint32_t>(p, 0);
+
+    uint32_t local[2] = {0, 0};  // [esp+0x0] .. reserved by "sub esp, 8"
+    ext_005AEC70(sub, local, sub, pval, sub, p);
+
+    // push [esi+4]; call thunk; add esp, 4
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x08));
+
+    // [esi+4] = 0; [esi+8] = 0
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_0042E820
+} // namespace lift_0045FF80

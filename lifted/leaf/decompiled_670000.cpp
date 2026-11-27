@@ -3046,3 +3046,141 @@ void* fn_00675B70(void* arg1, void* arg2, void* arg3, void* arg4) {
     return arg1;
 }
 } // namespace lift_00675B70
+
+// [0x00671BE0] sub_00671BE0 (140 bytes)
+namespace lift_00671BE0 {
+// @name sub_00671BE0
+// @summary Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).
+namespace lift_00476430 {
+// Known callee 0x00474F00: sub_00474F00 (thiscall on this+0x18; takes (std::string* str, uint32 key); returns a pointer used as the receiver of the follow-up assign import)
+extern void* ext_00474F00(void* self, void* str, uint32_t key);
+// Known callee 0x00476360: sub_00476360 (thiscall on this+0x08; takes (std::string* str); returns a 32-bit value)
+extern uint32_t ext_00476360(void* self, void* str);
+// Known callee 0x00662610: sub_00662610 (cdecl helper that fills a std::string from a C string literal)
+extern void ext_00662610(void* str, const char* text);
+// Import slot holding the MSVCP80 thiscall target invoked on the object returned by ext_00474F00 (no stack args)
+extern int mem_00924FD4;
+// Import slot holding the MSVCP80 std::string destructor (thiscall, no stack args)
+extern int mem_00924FF4;
+
+// @name Unknown::lookupStringKeyedValue
+// @class Unknown
+// @summary Builds a std::string from literal 0x00A3273C, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.
+// @field Unknown +0x08 subobject field_0x08
+// @field Unknown +0x18 subobject field_0x18
+uint32_t* fn_00671BE0(void* self, uint32_t* out, uint32_t key) {
+    // Local std::string (28-byte MSVC 2005 layout) in the frame.
+    alignas(8) uint8_t str[0x1C] = {};
+    ext_00662610(str, reinterpret_cast<const char*>(static_cast<uintptr_t>(0xAA18D4u)));
+
+    if (key != 0) {
+        void* resolved = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, str, key);
+
+        using ThisOnlyFn = void (__thiscall*)(void*);
+        auto assign = reinterpret_cast<ThisOnlyFn>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FD4)));
+        assign(resolved);
+    }
+
+    uint32_t value = ext_00476360(static_cast<uint8_t*>(self) + 0x08, str);
+    *out = value;
+
+    using StringDtorFn = void (__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(str);
+
+    return out;
+}
+} // namespace lift_00476430
+} // namespace lift_00671BE0
+
+// [0x00678CB0] sub_00678CB0 (140 bytes)
+namespace lift_00678CB0 {
+// @name sub_00678CB0
+// @summary Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).
+namespace lift_00476430 {
+// Known callee 0x00474F00: sub_00474F00 (thiscall on this+0x18; takes (std::string* str, uint32 key); returns a pointer used as the receiver of the follow-up assign import)
+extern void* ext_00474F00(void* self, void* str, uint32_t key);
+// Known callee 0x00476360: sub_00476360 (thiscall on this+0x08; takes (std::string* str); returns a 32-bit value)
+extern uint32_t ext_00476360(void* self, void* str);
+// Known callee 0x00662610: sub_00662610 (cdecl helper that fills a std::string from a C string literal)
+extern void ext_00662610(void* str, const char* text);
+// Import slot holding the MSVCP80 thiscall target invoked on the object returned by ext_00474F00 (no stack args)
+extern int mem_00924FD4;
+// Import slot holding the MSVCP80 std::string destructor (thiscall, no stack args)
+extern int mem_00924FF4;
+
+// @name Unknown::lookupStringKeyedValue
+// @class Unknown
+// @summary Builds a std::string from literal 0x00A3273C, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.
+// @field Unknown +0x08 subobject field_0x08
+// @field Unknown +0x18 subobject field_0x18
+uint32_t* fn_00678CB0(void* self, uint32_t* out, uint32_t key) {
+    // Local std::string (28-byte MSVC 2005 layout) in the frame.
+    alignas(8) uint8_t str[0x1C] = {};
+    ext_00662610(str, reinterpret_cast<const char*>(static_cast<uintptr_t>(0xAA1DACu)));
+
+    if (key != 0) {
+        void* resolved = ext_00474F00(static_cast<uint8_t*>(self) + 0x18, str, key);
+
+        using ThisOnlyFn = void (__thiscall*)(void*);
+        auto assign = reinterpret_cast<ThisOnlyFn>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FD4)));
+        assign(resolved);
+    }
+
+    uint32_t value = ext_00476360(static_cast<uint8_t*>(self) + 0x08, str);
+    *out = value;
+
+    using StringDtorFn = void (__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(str);
+
+    return out;
+}
+} // namespace lift_00476430
+} // namespace lift_00678CB0
+
+// [0x00679730] sub_00679730 (59 bytes)
+namespace lift_00679730 {
+// @name sub_00679730
+// @summary Auto-lifted identical-shape clone of 0x0042E820 (UnknownClass::resetAndRelease).
+namespace lift_0042E820 {
+// Callee 0x0042C770: sub_0042C770 (thiscall-style, 5 stack args, callee-cleaned)
+extern void ext_00679660(void* self, void* out, void* a2, uint32_t a3, void* a4, void* a5);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+extern int mem_0098C47C;
+
+// @name UnknownClass::resetAndRelease
+// @class UnknownClass
+// @summary Installs vtable at +0x00, calls sub_0042C770 with the pointer at +0x08, passes that pointer to thunk_MFC80_ord_764, then clears +0x08 and +0x0C.
+// @field UnknownClass +0x00 uint32_t field_0x00
+// @field UnknownClass +0x08 void* field_0x08
+// @field UnknownClass +0x0C uint32_t field_0x0C
+void fn_00679730(void* self) {
+    // esi = ecx + 4
+    void* const sub = static_cast<uint8_t*>(self) + 4;
+
+    // mov dword ptr [ecx], 0x92f330
+    lift_field<uint32_t>(self, 0x00) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0098C47C));
+
+    // eax = [esi+4] (= [ecx+8]); ecx = [eax]
+    void* const p = lift_field<void*>(self, 0x08);
+    const uint32_t pval = lift_field<uint32_t>(p, 0);
+
+    uint32_t local[2] = {0, 0};  // [esp+0x0] .. reserved by "sub esp, 8"
+    ext_00679660(sub, local, sub, pval, sub, p);
+
+    // push [esi+4]; call thunk; add esp, 4
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x08));
+
+    // [esi+4] = 0; [esi+8] = 0
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_0042E820
+} // namespace lift_00679730

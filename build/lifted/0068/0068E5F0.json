@@ -1,0 +1,22 @@
+{
+  "va": "0x0068E5F0",
+  "size": 114,
+  "orig_symbol": "sub_0068E5F0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_0068E5F0",
+  "class": "Unknown",
+  "signature": "extern void fn_0068E5F0(uint32_t this_ptr, uint32_t arg0)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:54:32Z"
+}

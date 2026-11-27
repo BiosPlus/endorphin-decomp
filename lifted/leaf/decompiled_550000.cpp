@@ -30,6 +30,7 @@ uint8_t descriptiveName_00553960(void* arg) {
 #include <cstddef>
 #include <memory>
 #include <cmath>
+#include <cstdlib>
 
 // [0x00554CE0] sub_00554CE0 (27 bytes)
 namespace lift_00554CE0 {
@@ -2738,3 +2739,87 @@ extern void* __stdcall fn_005554B0(DWORD a0, DWORD a1, DWORD a2, const void* src
     return obj;
 }
 } // namespace lift_005554B0
+
+// [0x00558B10] sub_00558B10 (59 bytes)
+namespace lift_00558B10 {
+// @name sub_00558B10
+// @summary Auto-lifted identical-shape clone of 0x0042E820 (UnknownClass::resetAndRelease).
+namespace lift_0042E820 {
+// Callee 0x0042C770: sub_0042C770 (thiscall-style, 5 stack args, callee-cleaned)
+extern void ext_005AEC70(void* self, void* out, void* a2, uint32_t a3, void* a4, void* a5);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+extern int mem_009577C0;
+
+// @name UnknownClass::resetAndRelease
+// @class UnknownClass
+// @summary Installs vtable at +0x00, calls sub_0042C770 with the pointer at +0x08, passes that pointer to thunk_MFC80_ord_764, then clears +0x08 and +0x0C.
+// @field UnknownClass +0x00 uint32_t field_0x00
+// @field UnknownClass +0x08 void* field_0x08
+// @field UnknownClass +0x0C uint32_t field_0x0C
+void fn_00558B10(void* self) {
+    // esi = ecx + 4
+    void* const sub = static_cast<uint8_t*>(self) + 4;
+
+    // mov dword ptr [ecx], 0x92f330
+    lift_field<uint32_t>(self, 0x00) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_009577C0));
+
+    // eax = [esi+4] (= [ecx+8]); ecx = [eax]
+    void* const p = lift_field<void*>(self, 0x08);
+    const uint32_t pval = lift_field<uint32_t>(p, 0);
+
+    uint32_t local[2] = {0, 0};  // [esp+0x0] .. reserved by "sub esp, 8"
+    ext_005AEC70(sub, local, sub, pval, sub, p);
+
+    // push [esi+4]; call thunk; add esp, 4
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x08));
+
+    // [esi+4] = 0; [esi+8] = 0
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_0042E820
+} // namespace lift_00558B10
+
+// [0x00559BF0] sub_00559BF0 (59 bytes)
+namespace lift_00559BF0 {
+// @name sub_00559BF0
+// @summary Auto-lifted identical-shape clone of 0x0042E820 (UnknownClass::resetAndRelease).
+namespace lift_0042E820 {
+// Callee 0x0042C770: sub_0042C770 (thiscall-style, 5 stack args, callee-cleaned)
+extern void ext_004F15A0(void* self, void* out, void* a2, uint32_t a3, void* a4, void* a5);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+extern int mem_009577C8;
+
+// @name UnknownClass::resetAndRelease
+// @class UnknownClass
+// @summary Installs vtable at +0x00, calls sub_0042C770 with the pointer at +0x08, passes that pointer to thunk_MFC80_ord_764, then clears +0x08 and +0x0C.
+// @field UnknownClass +0x00 uint32_t field_0x00
+// @field UnknownClass +0x08 void* field_0x08
+// @field UnknownClass +0x0C uint32_t field_0x0C
+void fn_00559BF0(void* self) {
+    // esi = ecx + 4
+    void* const sub = static_cast<uint8_t*>(self) + 4;
+
+    // mov dword ptr [ecx], 0x92f330
+    lift_field<uint32_t>(self, 0x00) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_009577C8));
+
+    // eax = [esi+4] (= [ecx+8]); ecx = [eax]
+    void* const p = lift_field<void*>(self, 0x08);
+    const uint32_t pval = lift_field<uint32_t>(p, 0);
+
+    uint32_t local[2] = {0, 0};  // [esp+0x0] .. reserved by "sub esp, 8"
+    ext_004F15A0(sub, local, sub, pval, sub, p);
+
+    // push [esi+4]; call thunk; add esp, 4
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x08));
+
+    // [esi+4] = 0; [esi+8] = 0
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_0042E820
+} // namespace lift_00559BF0

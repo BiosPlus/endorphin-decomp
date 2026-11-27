@@ -1,0 +1,34 @@
+{
+  "va": "0x004A7520",
+  "size": 59,
+  "orig_symbol": "sub_004A7520",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "sub_004A7520",
+  "class": "UnknownClass",
+  "signature": "void fn_004A7520(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0042E820 (UnknownClass::resetAndRelease).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T09:54:32Z"
+}
