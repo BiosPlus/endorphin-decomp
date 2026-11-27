@@ -11599,3 +11599,26 @@ void fn_00590420(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B3F984));
 }
 } // namespace lift_00590420
+
+// [0x005B2E50] ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, float, &private: void __thiscall Geometry::setParam2(float)>::vfunc_40 (122 bytes)
+namespace lift_005B2E50 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B43538;
+extern DWORD mem_00B43534;
+
+// @name ExprParser::ReadWriteMethodType<Geometry>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, float, &private: void __thiscall Geometry::setParam2(float)>
+// @summary One-time static-init guard for the accessor object at mem_00B43534, then binds holder+0x04 to that object.
+// @field ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, float, &private: void __thiscall Geometry::setParam2(float)> +0x04 DWORD field_0x04
+void fn_005B2E50(void* holder) {
+    // Compiler-generated SEH frame (fs:[0] push/pop around the init) is omitted:
+    // it only guards the static initializer and has no portable equivalent.
+    if ((mem_00B43538 & 1u) == 0) {
+        mem_00B43538 |= 1u;
+        ext_0067A670(&mem_00B43534, 0u);
+        mem_00B43534 = 0x0096040Cu; // vtable pointer of the accessor object
+    }
+    lift_field<DWORD>(holder, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B43534));
+}
+} // namespace lift_005B2E50
