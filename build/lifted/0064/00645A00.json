@@ -1,0 +1,28 @@
+{
+  "va": "0x00645A00",
+  "size": 119,
+  "orig_symbol": "sub_00645A00",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "ZeroDoubleTripleRange",
+  "class": "Unknown",
+  "signature": "void fn_00645A00(void* self)",
+  "summary": "Zeroes the three doubles (+0x00, +0x08, +0x10) of every 24-byte entry in the range [begin, end) held at this+0x10/this+0x14.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:12:03Z"
+}

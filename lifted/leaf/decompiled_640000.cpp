@@ -2365,3 +2365,54 @@ uint8_t __thiscall sub_00648640(void* self, uint32_t value) {
     return (it != end2) ? 1 : 0;
 }
 } // namespace lift_00648640
+
+// [0x00645A00] sub_00645A00 (119 bytes)
+namespace lift_00645A00 {
+extern int mem_00925134;
+
+// @name ZeroDoubleTripleRange
+// @class Unknown
+// @summary Zeroes the three doubles (+0x00, +0x08, +0x10) of every 24-byte entry in the range [begin, end) held at this+0x10/this+0x14.
+// @field Unknown +0x10 uint32_t begin
+// @field Unknown +0x14 uint32_t end
+void fn_00645A00(void* self) {
+    // Element stride is 24 bytes (three doubles). The CRT call through
+    // mem_00925134 (MSVCR80!_invalid_parameter_noinfo) is kept on the
+    // unreachable "bad pointer / index out of range" path.
+    auto invalid_parameter = []() {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    };
+    auto store_double = [](uint32_t addr, double value) {
+        *reinterpret_cast<double*>(static_cast<uintptr_t>(addr)) = value;
+    };
+
+    const double zero = 0.0;
+    int32_t index = 0;
+    uint32_t offset = 0;
+
+    for (;;) {
+        uint32_t begin = lift_field<uint32_t>(self, 0x10);
+        if (begin == 0) {
+            break;
+        }
+        int32_t count = static_cast<int32_t>(lift_field<uint32_t>(self, 0x14) - begin) / 24;
+        if (index >= count) {
+            break;
+        }
+
+        begin = lift_field<uint32_t>(self, 0x10);
+        count = static_cast<int32_t>(lift_field<uint32_t>(self, 0x14) - begin) / 24;
+        if (begin == 0 || index >= count) {
+            invalid_parameter();
+        }
+
+        begin = lift_field<uint32_t>(self, 0x10);
+        store_double(begin + offset + 0x10, zero);
+        store_double(begin + offset + 0x08, zero);
+        store_double(begin + offset + 0x00, zero);
+
+        index += 1;
+        offset += 0x18;
+    }
+}
+} // namespace lift_00645A00

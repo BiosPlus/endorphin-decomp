@@ -409,6 +409,7 @@ struct Unknown_Fields {
     // +0x10  uint32_t                 arg  (evidence: 0x0048DFF0) // CONFLICT: multiple definitions at +0x10
     // +0x10  DWORD group_table_entries (24-byte stride; each entry's first DWORD is a pointer to a subtable array)  (evidence: 0x0078D510) // CONFLICT: multiple definitions at +0x10
     // +0x10  std::uint32_t            base  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t                 begin  (evidence: 0x00645A00) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t field_0x10 (one-shot byte)  (evidence: 0x00640CD0, 0x00648A20) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    child  (evidence: 0x00441020, 0x0044B780, 0x0044B7A0, 0x0044B7C0, 0x006722B0, 0x00672490, 0x00675D60) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 count  (evidence: 0x00796660) // CONFLICT: multiple definitions at +0x10
@@ -463,6 +464,7 @@ struct Unknown_Fields {
     // +0x14  uint32_t field_0x14 (vtable pointer 0x955BD4)  (evidence: 0x0053C910) // CONFLICT: multiple definitions at +0x14
     // +0x14  int32_t                  count  (evidence: 0x006FC200, 0x007D4720) // CONFLICT: multiple definitions at +0x14
     // +0x14  BYTE                     enabled  (evidence: 0x00540510) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t                 end  (evidence: 0x00645A00) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 entries  (evidence: 0x0085A370) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t node_pool_count (number of nodes allocated so far)  (evidence: 0x007F0B30) // CONFLICT: multiple definitions at +0x14
     // +0x14  DWORD                    field_0x14  (evidence: 0x0041C630, 0x00468730, 0x00468AC0, 0x005172A0, 0x005539F0, 0x005555D0, 0x005B34C0, 0x006ACFE0, 0x006FBD30, 0x006FC200, 0x006FC950, 0x007D48A0, 0x007D8470, 0x007DB130, 0x007DB740) // CONFLICT: multiple definitions at +0x14

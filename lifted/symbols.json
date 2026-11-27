@@ -45177,6 +45177,13 @@
     "summary": "Allocates count * 24 bytes with overflow check, throwing std::bad_alloc on overflow.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00645A00": {
+    "name": "ZeroDoubleTripleRange",
+    "class": "Unknown",
+    "signature": "void fn_00645A00(void* self)",
+    "summary": "Zeroes the three doubles (+0x00, +0x08, +0x10) of every 24-byte entry in the range [begin, end) held at this+0x10/this+0x14.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00645A80": {
     "name": "NullRelationship::vfunc_48",
     "class": "NullRelationship",
