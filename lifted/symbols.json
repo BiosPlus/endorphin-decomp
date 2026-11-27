@@ -78339,6 +78339,13 @@
     "summary": "Calls sub_00700980 on its second argument with value 0 and returns true.",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x00747580": {
+    "name": "Unknown::setFlagAndForwardField_00747580",
+    "class": "Unknown",
+    "signature": "bool fn_00747580(void* self, void* obj)",
+    "summary": "Stores 2 into obj via ext_00700980, then if self-\u003e+0x3C-\u003e+0x40 is nonzero forwards self-\u003e+0x3C-\u003e+0x44 as a C string to ext_007008D0; always returns true.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074ADF0": {
     "name": "sub_0074ADF0",
     "signature": "extern \"C\" void fn_0074ADF0(void)",

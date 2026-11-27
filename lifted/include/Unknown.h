@@ -1002,7 +1002,7 @@ struct Unknown_Fields {
     // +0x3C  std::uint32_t            field_0x3c  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  uint32_t                 field_0x3c  (evidence: 0x005B51E0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  uint8_t*                 field_0x3c  (evidence: 0x006AD580) // CONFLICT: multiple definitions at +0x3C
-    // +0x3C  void*                    field_0x3c  (evidence: 0x0052F9C0, 0x006DEB50) // CONFLICT: multiple definitions at +0x3C
+    // +0x3C  void*                    field_0x3c  (evidence: 0x0052F9C0, 0x006DEB50, 0x00747580) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  float                    m33  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  QuadricRenderer          quadric  (evidence: 0x0052F3C0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  OwnedPointerRange        range  (evidence: 0x00528040) // CONFLICT: multiple definitions at +0x3C
@@ -1019,6 +1019,7 @@ struct Unknown_Fields {
     // +0x40  int32_t                  field_0x40  (evidence: 0x0070CED0) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint16_t                 field_0x40  (evidence: 0x007AF200, 0x007AF500) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint32_t                 field_0x40  (evidence: 0x00518080, 0x005B51E0, 0x0063F960, 0x00665DC0, 0x006738D0, 0x006DEC60, 0x007C9270) // CONFLICT: multiple definitions at +0x40
+    // +0x40  uint8_t                  field_0x40  (evidence: 0x00747580) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    field_0x40  (evidence: 0x00660C10, 0x007D8890) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint8_t                  flag  (evidence: 0x00526960, 0x0052F7D0) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    nextNode  (evidence: 0x006E62A0, 0x006EFEA0) // CONFLICT: multiple definitions at +0x40
@@ -1030,6 +1031,7 @@ struct Unknown_Fields {
     // +0x42  uint16_t                 field_0x42  (evidence: 0x007AF500)
     // +0x44  DWORD*                   entryTable  (evidence: 0x006E9000) // CONFLICT: multiple definitions at +0x44
     // +0x44  DWORD                    field_0x44  (evidence: 0x006B43F0) // CONFLICT: multiple definitions at +0x44
+    // +0x44  const char*              field_0x44  (evidence: 0x00747580) // CONFLICT: multiple definitions at +0x44
     // +0x44  float                    field_0x44  (evidence: 0x004E3A30, 0x0051CCC0, 0x0053C4C0, 0x0054E340, 0x0054E400, 0x0055CD10, 0x00622B40, 0x006267B0, 0x006296D0, 0x0063D950, 0x0063D970, 0x0063DB50, 0x0063DDF0, 0x007D48A0, 0x007D8590) // CONFLICT: multiple definitions at +0x44
     // +0x44  float[4]                 field_0x44  (evidence: 0x0043B450) // CONFLICT: multiple definitions at +0x44
     // +0x44  int32_t                  field_0x44  (evidence: 0x005DC650, 0x00660C10) // CONFLICT: multiple definitions at +0x44

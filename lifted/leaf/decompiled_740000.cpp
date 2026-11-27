@@ -373,3 +373,25 @@ extern int __cdecl sub_007435A0(const char* str) {
     return 0;
 }
 } // namespace lift_007435A0
+
+// [0x00747580] sub_00747580 (48 bytes)
+namespace lift_00747580 {
+// Known callee 0x007008D0: Unknown::assignCStringWrapper_007008D0 (Forwards a C string to the subobject at this+0x10 via assignCString_006B9EC0 and returns true.)
+extern bool ext_007008D0(void* self, const char* s);
+// Known callee 0x00700980: sub_00700980 (Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).)
+extern void ext_00700980(void* self, uint32_t value);
+
+// @name Unknown::setFlagAndForwardField_00747580
+// @summary Stores 2 into obj via ext_00700980, then if self->+0x3C->+0x40 is nonzero forwards self->+0x3C->+0x44 as a C string to ext_007008D0; always returns true.
+// @field Unknown +0x3C void* field_0x3c
+// @field Unknown +0x40 uint8_t field_0x40
+// @field Unknown +0x44 const char* field_0x44
+bool fn_00747580(void* self, void* obj) {
+    ext_00700980(obj, 2);
+    void* inner = lift_field<void*>(self, 0x3C);
+    if (lift_field<uint8_t>(inner, 0x40) != 0) {
+        ext_007008D0(obj, lift_field<const char*>(inner, 0x44));
+    }
+    return true;
+}
+} // namespace lift_00747580
