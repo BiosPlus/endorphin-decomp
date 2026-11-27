@@ -75,15 +75,20 @@ struct unknown_Fields {
     // +0x50  uint32_t                 field_0x50  (evidence: 0x0060D730)
     // +0x58  std::string              field_0x58  (evidence: 0x004B7340, 0x004BE680) // CONFLICT: multiple definitions at +0x58
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AA7F0, 0x007AEC30) // CONFLICT: multiple definitions at +0x58
-    // +0x5C  uint32_t                 field_0x5C  (evidence: 0x007AA7F0, 0x007AEC30)
+    // +0x58  void*                    field_0x58  (evidence: 0x00448600) // CONFLICT: multiple definitions at +0x58
+    // +0x5C  uint32_t                 field_0x5C  (evidence: 0x007AA7F0, 0x007AEC30) // CONFLICT: multiple definitions at +0x5C
+    // +0x5C  uint8_t                  field_0x5c  (evidence: 0x00448600) // CONFLICT: multiple definitions at +0x5C
     // +0x60  uint32_t                 field_0x60  (evidence: 0x007AA7F0, 0x007AEC30)
     // +0x64  uint32_t                 field_0x64  (evidence: 0x0043D1D0) // CONFLICT: multiple definitions at +0x64
     // +0x64  void*                    field_0x64  (evidence: 0x00441C10, 0x0044B730, 0x0044C0D0) // CONFLICT: multiple definitions at +0x64
     // +0x68  void*                    field_0x68  (evidence: 0x00441C10, 0x0044BA00)
     // +0x78  AddCharacterDialog       field_0x78  (evidence: 0x004406C0)
+    // +0x7C  uint32_t                 field_0x7c  (evidence: 0x00448600)
     // +0xB4  void*                    field_0xB4  (evidence: 0x0053F6A0)
     // +0xCC  void*                    field_0xCC  (evidence: 0x0046FC10)
     // +0xD4  void                     field_0xD4  (evidence: 0x0046FC10)
+    // +0xD8  uint8_t                  field_0xd8  (evidence: 0x00448600)
+    // +0xDC  uint32_t                 field_0xdc  (evidence: 0x00448600)
     // +0xE0  void* field_0xE0 (list head->next, used as iterator end sentinel)  (evidence: 0x0049DFA0)
     // +0xFC  void*                    field_0xfc  (evidence: 0x006D66A0)
     // +0x100 uint8_t                  field_0x100  (evidence: 0x006D66A0)

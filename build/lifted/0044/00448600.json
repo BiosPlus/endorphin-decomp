@@ -1,0 +1,45 @@
+{
+  "va": "0x00448600",
+  "size": 149,
+  "orig_symbol": "sub_00448600",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_00448600",
+  "signature": "int32_t __thiscall fn_00448600(void* self, uint32_t /*unused*/)",
+  "summary": "OnCreate handler creating child controls and setting font on child window",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x5C",
+      "type": "uint8_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x7C",
+      "type": "uint32_t",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0xD8",
+      "type": "uint8_t",
+      "name": "field_0xd8"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0xDC",
+      "type": "uint32_t",
+      "name": "field_0xdc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:08:39Z"
+}
