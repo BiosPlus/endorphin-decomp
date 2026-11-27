@@ -2381,3 +2381,47 @@ void fn_00465FB0(void* self) {
     str_dtor(&tmp);
 }
 } // namespace lift_00465FB0
+
+// [0x00466050] sub_00466050 (147 bytes)
+namespace lift_00466050 {
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+// Stdcall-style: one const char* argument, callee pops it.
+extern void ext_006A5E60(const char* text);
+
+// IAT slots (values read from these addresses are used as function pointers / object pointers).
+extern void* mem_00924E90; // MSVCP80 std::endl manipulator (function address)
+extern void* mem_00924FA0; // MSVCP80 std::cout object address
+extern void* mem_00924E94; // MSVCP80 operator<<(ostream&, const string&)  (cdecl, returns ostream&)
+extern void* mem_00924E98; // MSVCP80 ostream::operator<<(manip)          (__thiscall, returns ostream&)
+extern void* mem_00924FCC; // MSVCP80 operator+(const char*, const string&) (cdecl, hidden return ptr)
+extern void* mem_00924FF0; // MSVCP80 std::string::c_str                 (__thiscall, returns const char*)
+extern void* mem_00924FF4; // MSVCP80 std::string::~string               (__thiscall)
+
+// @name fn_00466050 (sub_00466050)
+// @summary Writes the std::string at +0x0C of the argument to std::cout followed by endl, then passes "<literal>" + that string's c_str() to thunk_MFC80_ord_1123 and destroys the temporary.
+// @field Unknown +0x0C std::string field_0x0c
+void fn_00466050(void* self) {
+    using OstreamStrFn = void* (*)(void* os, void* str);
+    using ManipFn = void* (*)(void* os, void* manip);
+    using ConcatFn = void* (*)(void* ret, const char* lhs, void* rhs);
+    using CStrFn = const char* (*)(void* str);
+    using StrDtorFn = void (*)(void* str);
+
+    // Temporary std::string (MSVC80 layout is 0x1C bytes).
+    alignas(8) unsigned char tmp[32];
+
+    void* str = static_cast<uint8_t*>(self) + 0x0C;
+
+    // std::cout << str << std::endl;
+    void* os = reinterpret_cast<OstreamStrFn>(mem_00924E94)(mem_00924FA0, str);
+    reinterpret_cast<ManipFn>(mem_00924E98)(os, mem_00924E90);
+
+    // tmp = "<literal at 0x939C6C>" + str;
+    reinterpret_cast<ConcatFn>(mem_00924FCC)(tmp, reinterpret_cast<const char*>(0x939C6C), str);
+
+    const char* text = reinterpret_cast<CStrFn>(mem_00924FF0)(tmp);
+    ext_006A5E60(text);
+
+    reinterpret_cast<StrDtorFn>(mem_00924FF4)(tmp);
+}
+} // namespace lift_00466050

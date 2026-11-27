@@ -8267,6 +8267,12 @@
     "summary": "Writes the std::string at self+0x0C to std::cout followed by endl, then passes \"\u003cliteral\u003e\" + that string's c_str() to ext_006A5E60.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00466050": {
+    "name": "fn_00466050 (sub_00466050)",
+    "signature": "extern void* mem_00924E90; // MSVCP80 std::endl manipulator (function address) extern void* mem_00924FA0; // MSVCP80 std::cout object address extern void* mem_00924E94; // MSVCP80 operator\u003c\u003c(ostream\u0026, const string\u0026)  (cdecl, returns ostream\u0026) extern void* mem_00924E98; // MSVCP80 ostream::operator\u003c\u003c(manip)          (__thiscall, returns ostream\u0026) extern void* mem_00924FCC; // MSVCP80 operator+(const char*, const string\u0026) (cdecl, hidden return ptr) extern void* mem_00924FF0; // MSVCP80 std::string::c_str                 (__thiscall, returns const char*) extern void* mem_00924FF4; // MSVCP80 std::string::~string               (__thiscall) void fn_00466050(void* self)",
+    "summary": "Writes the std::string at +0x0C of the argument to std::cout followed by endl, then passes \"\u003cliteral\u003e\" + that string's c_str() to thunk_MFC80_ord_1123 and destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00466360": {
     "name": "UnknownClass::ResetSubobjectAndRelease",
     "class": "UnknownClass",
