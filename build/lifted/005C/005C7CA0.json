@@ -1,0 +1,22 @@
+{
+  "va": "0x005C7CA0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{104, {flat}}, 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{104, {flat}}, 0}\u003e",
+  "signature": "void fn_005C7CA0(void* holder)",
+  "summary": "One-time guarded init of a static accessor object (vtable 0x00965254, first DWORD set via storeArgIntoFirstDword), then stores its address into holder+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:44:45Z"
+}

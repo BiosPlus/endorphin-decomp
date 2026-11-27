@@ -34205,6 +34205,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005C73F0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithAncestors(bool), 0}\u003e",
+    "signature": "void fn_005C73F0(void* arg)",
+    "summary": "Lazily initializes a static accessor object at 0x00B444D0 (guarded by bit 0 of 0x00B444D4) and stores its address into arg+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005C7470": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0\u003e",
@@ -34308,6 +34315,13 @@
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{104, {flat}}, 0}\u003e",
     "signature": "void fn_005C7C50(void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005C7CA0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{104, {flat}}, 0}\u003e",
+    "signature": "void fn_005C7CA0(void* holder)",
+    "summary": "One-time guarded init of a static accessor object (vtable 0x00965254, first DWORD set via storeArgIntoFirstDword), then stores its address into holder+0x04.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x005C7D20": {
