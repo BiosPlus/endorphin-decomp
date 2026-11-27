@@ -48136,6 +48136,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005CD120": {
+    "name": "Vector::InsertSortedUnique_005CD120",
+    "class": "Vector",
+    "signature": "bool fn_005CD120(void* self, const void* value)",
+    "summary": "Inserts a std::string into the sorted vector unless an equal element exists; returns true if inserted.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CE760": {
     "name": "NMData::InertialBodyData::vfunc_14",
     "class": "NMData::InertialBodyData",
