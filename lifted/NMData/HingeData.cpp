@@ -413,3 +413,73 @@ void fn_005F2F80(void* self, void* arg1) {
     dtor(tmpB);
 }
 } // namespace lift_005F2F80
+
+// [0x005EECA0]
+namespace lift_005EECA0 {
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924ECC;
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00A8F2B4;
+extern uint32_t mem_00A8F2B8;
+extern uint32_t mem_00A9EE64;
+extern uint32_t __thiscall ext_0048EF80(void* self, uint32_t ret_iter, uint32_t first_proxy, uint32_t first_ptr, uint32_t last_proxy, uint32_t last_ptr);
+extern void __thiscall ext_00412690(void* self, uint32_t arg1);
+extern void ext_005A2F70(void);
+extern void ext_005A3500(void);
+extern void ext_005A7320(void);
+extern void ext_005DF5C0(void);
+extern void* __thiscall ext_0060C570(void* self);
+extern void ext_006A5C62(void);
+
+struct HingeAxisEntry {
+    uint32_t index;
+    float value;
+};
+
+// @name NMData::HingeData::vfunc_67
+// @class NMData::HingeData
+// @summary Clears the vector at +0x168 and appends three zero-initialized axis entries (indices 0, 1, 2).
+// @field NMData::HingeData +0x168 void* field_0x168
+void __thiscall fn_005EECA0(void* self) {
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    uint8_t* vec = static_cast<uint8_t*>(self) + 0x168;
+
+    uint32_t last = lift_field<uint32_t>(vec, 0x8);
+    if (lift_field<uint32_t>(vec, 0x4) > last) {
+        invalid_param();
+    }
+    uint32_t first = lift_field<uint32_t>(vec, 0x4);
+    if (first > lift_field<uint32_t>(vec, 0x8)) {
+        invalid_param();
+    }
+
+    HingeAxisEntry entry{};
+    ext_0048EF80(vec, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&entry)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(vec)), first,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(vec)), last);
+
+    for (uint32_t i = 0; i < 3; ++i) {
+        entry.index = i;
+        entry.value = 0.0f;
+        ext_00412690(vec, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&entry)));
+    }
+
+    (void)ext_005A2F70;
+    (void)ext_005A3500;
+    (void)ext_005A7320;
+    (void)ext_005DF5C0;
+    (void)ext_0060C570;
+    (void)ext_006A5C62;
+    (void)mem_00924ECC;
+    (void)mem_00924FDC;
+    (void)mem_00924FE0;
+    (void)mem_00924FE4;
+    (void)mem_00924FF4;
+    (void)mem_00A8F2B4;
+    (void)mem_00A8F2B8;
+    (void)mem_00A9EE64;
+}
+} // namespace lift_005EECA0

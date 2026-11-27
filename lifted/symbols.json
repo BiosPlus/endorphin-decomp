@@ -55526,6 +55526,13 @@
     "summary": "Clears the 8-byte element vector at self+0x168 and refills it with six {id, 0.0f} entries (ids 3, 4, 5, 0, 1, 2).",
     "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
   },
+  "0x005EECA0": {
+    "name": "NMData::HingeData::vfunc_67",
+    "class": "NMData::HingeData",
+    "signature": "void __thiscall fn_005EECA0(void* self)",
+    "summary": "Clears the vector at +0x168 and appends three zero-initialized axis entries (indices 0, 1, 2).",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
   "0x005EEDB0": {
     "name": "NMData::FixedPathJointData::vfunc_67",
     "class": "NMData::FixedPathJointData",

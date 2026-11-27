@@ -1,0 +1,22 @@
+{
+  "va": "0x005EECA0",
+  "size": 141,
+  "orig_symbol": "NMData::HingeData::vfunc_67",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_67",
+  "class": "NMData::HingeData",
+  "signature": "void __thiscall fn_005EECA0(void* self)",
+  "summary": "Clears the vector at +0x168 and appends three zero-initialized axis entries (indices 0, 1, 2).",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:17:06Z"
+}
