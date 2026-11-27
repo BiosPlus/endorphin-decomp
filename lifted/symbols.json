@@ -38441,6 +38441,13 @@
     "summary": "Walks elements of 0x38 bytes in [begin, end): destroys each 0x1C-byte record in the element's array at +0x2C..+0x30, frees the array via ext_006A5C5C, then destroys the element's string at +0x0C and zeroes the array pointers.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005590D0": {
+    "name": "TreeMap::copySubtree",
+    "class": "TreeMap",
+    "signature": "void* __thiscall fn_005590D0(void* self, void* srcNode, void* parent)",
+    "summary": "Recursively clones a red-black tree subtree, cleaning up allocated nodes on exception.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559620": {
     "name": "sub_00559620",
     "class": "(none)",

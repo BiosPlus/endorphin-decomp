@@ -2988,3 +2988,48 @@ void* fn_00556A00(void* self, void* node, DWORD owner) {
     return ret;
 }
 } // namespace lift_00556A00
+
+// [0x005590D0]
+namespace lift_005590D0 {
+// @name TreeMap::copySubtree
+// @class TreeMap
+// @summary Recursively clones a red-black tree subtree, cleaning up allocated nodes on exception.
+// @field TreeMap +0x04 void* nil
+// @field TreeMapNode +0x00 void* left
+// @field TreeMapNode +0x08 void* right
+// @field TreeMapNode +0x0C uint8_t payload
+// @field TreeMapNode +0x38 uint8_t color
+// @field TreeMapNode +0x39 uint8_t isNil
+
+
+extern void __thiscall ext_004F0FB0(void* self, void* node);
+extern void* __stdcall ext_00558820(uint32_t arg1, uint32_t arg2, uint32_t arg3, const void* arg4, uint8_t arg5);
+extern void ext_006A6DD2(void);
+
+void* __thiscall fn_005590D0(void* self, void* srcNode, void* parent) {
+    void* nilNode = lift_field<void*>(self, 0x04);
+    void* result = nilNode;
+
+    if (lift_field<uint8_t>(srcNode, 0x39) == 0) {
+        uint8_t color = lift_field<uint8_t>(srcNode, 0x38);
+        const void* payload = reinterpret_cast<const uint8_t*>(srcNode) + 0x0C;
+        uint32_t nilVal = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(nilNode));
+        uint32_t parentVal = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(parent));
+
+        void* newNode = ext_00558820(nilVal, parentVal, nilVal, payload, color);
+        if (lift_field<uint8_t>(result, 0x39) != 0) {
+            result = newNode;
+        }
+
+        try {
+            lift_field<void*>(newNode, 0x00) = fn_005590D0(self, lift_field<void*>(srcNode, 0x00), newNode);
+            lift_field<void*>(newNode, 0x08) = fn_005590D0(self, lift_field<void*>(srcNode, 0x08), newNode);
+        } catch (...) {
+            ext_004F0FB0(self, result);
+            ext_006A6DD2();
+        }
+    }
+
+    return result;
+}
+} // namespace lift_005590D0

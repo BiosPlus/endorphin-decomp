@@ -1,0 +1,52 @@
+{
+  "va": "0x005590D0",
+  "size": 167,
+  "orig_symbol": "sub_005590D0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "TreeMap::copySubtree",
+  "class": "TreeMap",
+  "signature": "void* __thiscall fn_005590D0(void* self, void* srcNode, void* parent)",
+  "summary": "Recursively clones a red-black tree subtree, cleaning up allocated nodes on exception.",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "nil"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "payload"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x38",
+      "type": "uint8_t",
+      "name": "color"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:21:47Z"
+}
