@@ -83720,6 +83720,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00860210": {
+    "name": "XorBufferThenRotateBitstream",
+    "signature": "uint16_t fn_00860210(uint8_t key, uint8_t* buf, uint32_t len)",
+    "summary": "XOR every buffer byte with a key, then rotate the buffer right (bit-serial, carry chained) (key \u0026 0xF)+1 times; returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00860330": {
     "name": "ClampedDivmodPair",
     "signature": "void fn_00860330(int32_t a, int32_t b, int32_t* out_divisor, int32_t* out_quotient)",

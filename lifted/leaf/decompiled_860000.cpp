@@ -1385,3 +1385,52 @@ void fn_0086EE30(void* src, void* dst) {
     ext_0086B220(s + 0x14, d + 0x14);
 }
 } // namespace lift_0086EE30
+
+// [0x00860210]
+namespace lift_00860210 {
+// @name XorBufferThenRotateBitstream
+// @summary XOR every buffer byte with a key, then rotate the buffer right (bit-serial, carry chained) (key & 0xF)+1 times; returns 0.
+uint16_t fn_00860210(uint8_t key, uint8_t* buf, uint32_t len) {
+    // Pass 1: XOR the key into each byte (16-bit index, loop while index < len)
+    if (len != 0) {
+        uint16_t i = 0;
+        do {
+            buf[i] ^= key;
+            i++;
+        } while ((uint32_t)i < len);
+    }
+
+    uint16_t len16 = (uint16_t)len;
+    uint16_t passes = key & 0xF;
+
+    // Pass 2: rotate-right-through-carry over the whole buffer, repeated 'passes'+1 times
+    do {
+        uint8_t carry = 0;
+        if (len16 != 0) {
+            uint16_t cnt = len16 - 1;
+            uint8_t* p = buf;
+            uint16_t bp;
+            do {
+                bp = cnt;
+                cnt--;
+                uint8_t b = *p;
+                uint8_t out = (uint8_t)((b >> 1) | (carry << 7));
+                carry = b & 1;
+                *p = out;
+                p++;
+            } while (bp != 0);
+        }
+        if (carry) {
+            buf[0] |= 0x80;
+        }
+
+        uint16_t cur = passes;
+        passes--;
+        if (cur == 0) {
+            break;
+        }
+    } while (true);
+
+    return 0;
+}
+} // namespace lift_00860210
