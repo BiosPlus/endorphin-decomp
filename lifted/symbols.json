@@ -8273,6 +8273,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFDB8 and tail-calls sub_0045F150.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0045F6F0": {
+    "name": "MultiTrackView::TriggeredEventView::ResetAndRepaint",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "void fn_0045F6F0(void* self, void* arg)",
+    "summary": "Runs two helpers on the TriggeredEventView base (this-0x250) with the stack argument, invalidates and updates the view's HWND, then calls a helper on the base with -1.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045FB00": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_86",
     "class": "MultiTrackView::TriggeredEventView",

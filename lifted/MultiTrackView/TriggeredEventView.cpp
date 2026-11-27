@@ -615,3 +615,38 @@ void fn_0045ECA0(void* self, uint32_t arg) {
     reinterpret_cast<InvalidateFn>(as_ptr(static_cast<uint32_t>(mem_00925688)))(hwnd, nullptr, 1);
 }
 } // namespace lift_0045ECA0
+
+// [0x0045F6F0] MultiTrackView::TriggeredEventView::vfunc_0_off_250 (76 bytes)
+namespace lift_0045F6F0 {
+// Callees (differentially tested against endorphin.exe; do not inline).
+// MSVC thiscall: ecx = object, one stack argument, callee cleans up (ret 4).
+// Portable form passes `this` explicitly as the first parameter.
+extern void ext_0045F610(void* self, void* arg);
+extern void ext_0045E570(void* self, void* arg);
+extern void ext_0043DC90(void* self, int32_t arg);
+
+// IAT slots (USER32 imports)
+extern uintptr_t mem_00925688; // USER32!InvalidateRect
+extern uintptr_t mem_0092568C; // USER32!UpdateWindow
+
+// @name MultiTrackView::TriggeredEventView::ResetAndRepaint
+// @class MultiTrackView::TriggeredEventView
+// @summary Runs two helpers on the TriggeredEventView base (this-0x250) with the stack argument, invalidates and updates the view's HWND, then calls a helper on the base with -1.
+// @field MultiTrackView::TriggeredEventView +0x20 HWND hwnd
+void fn_0045F6F0(void* self, void* arg) {
+    // edi = this - 0x250: the TriggeredEventView base object.
+    void* tev = static_cast<uint8_t*>(self) - 0x250;
+
+    ext_0045F610(tev, arg);
+    ext_0045E570(tev, arg);
+
+    // hwnd = [this - 0x230] == TriggeredEventView +0x20.
+    void* hwnd = lift_field<void*>(self, -0x230);
+    using InvalidateRectFn = int32_t (__stdcall*)(void*, const void*, int32_t);
+    using UpdateWindowFn = int32_t (__stdcall*)(void*);
+    reinterpret_cast<InvalidateRectFn>(static_cast<uintptr_t>(mem_00925688))(hwnd, nullptr, 1);
+    reinterpret_cast<UpdateWindowFn>(static_cast<uintptr_t>(mem_0092568C))(hwnd);
+
+    ext_0043DC90(tev, -1);
+}
+} // namespace lift_0045F6F0
