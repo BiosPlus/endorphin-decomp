@@ -1,0 +1,14 @@
+{
+  "va": "0x005ECCF0",
+  "size": 26,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_4_off_C",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_4_off_C",
+  "class": "NMData::FixedPathJointData",
+  "signature": "uint32_t __thiscall fn_005ECCF0(void* self, const float* value_ptr)",
+  "summary": "Adjusts this by -0xC and forwards dereferenced float argument to sub_005EBC10",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:32:02Z"
+}

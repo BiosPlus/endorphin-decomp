@@ -545,3 +545,21 @@ void fn_005EB920(void* self, int32_t a1, int32_t a2) {
     }
 }
 } // namespace lift_005EB920
+
+// [0x005ECCF0]
+namespace lift_005ECCF0 {
+// @name NMData::FixedPathJointData::vfunc_4_off_C
+// @class NMData::FixedPathJointData
+// @summary Adjusts this by -0xC and forwards dereferenced float argument to sub_005EBC10
+
+
+extern const uint32_t mem_00924FE4;
+extern uint32_t __thiscall ext_005EBC10(void* self, float* value);
+
+uint32_t __thiscall fn_005ECCF0(void* self, const float* value_ptr) {
+    (void)mem_00924FE4;
+    float value = *value_ptr;
+    void* adjusted_self = static_cast<char*>(self) - 0xC;
+    return ext_005EBC10(adjusted_self, &value);
+}
+} // namespace lift_005ECCF0
