@@ -29184,6 +29184,12 @@
     "summary": "Calls ext_00500DA0 to fetch an (owner, cursor) pair, validates the range at self+0x04/+0x08 and the owner, and returns cursor+0x1C (or null when cursor == end). Invalid states call mem_00925134 and continue.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x005011B0": {
+    "name": "LookupOrThrow_005011B0",
+    "signature": "void* __thiscall fn_005011B0(void* self, const void* key)",
+    "summary": "Advances/looks up cursor via ext_00501140 and throws an exception if null.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005012A0": {
     "name": "NMData::EvolveEngineData::vfunc_2_off_8",
     "class": "NMData::EvolveEngineData",
@@ -90637,6 +90643,12 @@
     "class": "Unknown",
     "signature": "int32_t fn_006D3530(void* self)",
     "summary": "Calls vtable slot 1 of this (no args); if the result is non-zero, appends it to the DynamicArray at this+0x04 via InsertAt(count, \u0026result). Returns the result.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D3560": {
+    "name": "sub_006D3560",
+    "signature": "extern \"C\" void* __thiscall fn_006D3560(void* self, void* arg1)",
+    "summary": "Formats a temporary object, looks up or creates an item via vtable+0x8, notifies field_0x1b4, and inserts into DynamicArray at +0x1c.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D3600": {

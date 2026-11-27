@@ -3871,3 +3871,30 @@ uint32_t* __thiscall sub_00500DA0(void* self, uint32_t* out_iter, uint32_t key) 
     return out_iter;
 }
 } // namespace lift_00500DA0
+
+// [0x005011B0]
+namespace lift_005011B0 {
+extern void* __thiscall ext_00501140(void* self, DWORD arg);
+extern void* __cdecl ext_004276B0(void* dst, const void* src);
+extern void* __cdecl ext_004FDCA0();
+extern void __thiscall ext_0041FF30(void* self, const void* arg1, const void* arg2);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+extern char mem_009D3748[];
+
+// @name LookupOrThrow_005011B0
+// @summary Advances/looks up cursor via ext_00501140 and throws an exception if null.
+void* __thiscall fn_005011B0(void* self, const void* key) {
+    void* result = ext_00501140(self, static_cast<DWORD>(reinterpret_cast<uintptr_t>(key)));
+    if (result != nullptr) {
+        return result;
+    }
+
+    uint8_t str_buf[0x1C];
+    uint8_t exc_buf[0x40];
+    void* copied_str = ext_004276B0(str_buf, key);
+    void* global_str = ext_004FDCA0();
+    ext_0041FF30(exc_buf, global_str, copied_str);
+    ext_006A6DD2(exc_buf, mem_009D3748);
+    return nullptr;
+}
+} // namespace lift_005011B0
