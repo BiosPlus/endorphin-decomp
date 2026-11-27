@@ -32474,6 +32474,13 @@
     "summary": "Linear interpolation between the key at `key` (time, value) and the following key; returns the key's value when t \u003c= key time + 1e-6 or the following key is the end sentinel.",
     "lifted_path": "lifted/Interpolator/Linear.cpp"
   },
+  "0x00528730": {
+    "name": "Interpolator::Linear::vfunc_2",
+    "class": "Interpolator::Linear",
+    "signature": "__thiscall void* fn_00528730(void* self, void* a1, void* a2, uint32_t key, float t)",
+    "summary": "Blend between the key at `key` and the following key (stride 0x14, value at +4) into `self`; returns `self`, or the key's value address when t is at/before the key or the key is the last one.",
+    "lifted_path": "lifted/Interpolator/Linear.cpp"
+  },
   "0x00528AB0": {
     "name": "sub_00528AB0",
     "signature": "extern \"C\" void __fastcall fn_00528AB0(void* self)",

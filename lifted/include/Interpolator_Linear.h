@@ -10,7 +10,7 @@
 // Recovered field layout for Interpolator::Linear:
 namespace lifted_layout {
 struct Interpolator_Linear_Fields {
-    // +0x4   uint32_t                 keys_begin  (evidence: 0x00528640)
-    // +0x8   uint32_t                 keys_end  (evidence: 0x00528640)
+    // +0x4   uint32_t                 keys_begin  (evidence: 0x00528640, 0x00528730)
+    // +0x8   uint32_t                 keys_end  (evidence: 0x00528640, 0x00528730)
 };
 } // namespace lifted_layout

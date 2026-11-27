@@ -63,3 +63,72 @@ __stdcall float fn_00528640(void* self, void* other, uint32_t key, float t) {
     return (1.0f - f) * v0 + f * v1;
 }
 } // namespace lift_00528640
+
+// [0x00528730] Interpolator::Linear::vfunc_2 (234 bytes)
+namespace lift_00528730 {
+// Callee: 396-byte helper that blends the two key values into `self` (thiscall, callee-cleans 3 stack args).
+extern void __thiscall ext_00693DB0(void* self, uint32_t value0, uint32_t value1, float factor);
+
+// CRT invalid-parameter handler (MSVCR80!_invalid_parameter_noinfo); never returns.
+extern void (*mem_00925134)(void);
+// 1e-06 .rdata constant, added to the key time before the early-out comparison.
+extern const double mem_009533E0;
+
+// @name Interpolator::Linear::vfunc_2
+// @class Interpolator::Linear
+// @summary Blend between the key at `key` and the following key (stride 0x14, value at +4) into `self`; returns `self`, or the key's value address when t is at/before the key or the key is the last one.
+// @field Interpolator::Linear +0x04 uint32_t keys_begin
+// @field Interpolator::Linear +0x08 uint32_t keys_end
+// Note: `a1` and `a2` must point at the same Linear (the asm asserts it). Keys are 32-bit guest
+// addresses; each key is {float time; float value; 3 more floats} and the next key is at +0x14.
+__thiscall void* fn_00528730(void* self, void* a1, void* a2, uint32_t key, float t) {
+    auto key_ptr = [](uint32_t addr) {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+    };
+
+    const float k0 = lift_field<float>(key_ptr(key), 0x00);
+    // Early out: t <= key time + 1e-6 (unordered compares fall through, as in the asm).
+    const bool early = static_cast<double>(t) <= static_cast<double>(k0) + mem_009533E0;
+
+    if (!early) {
+        if (lift_field<uint32_t>(a1, 0x04) > lift_field<uint32_t>(a1, 0x08)) {
+            mem_00925134();
+        }
+        if (a2 != a1) {
+            mem_00925134();
+        }
+
+        const uint32_t keys_end = lift_field<uint32_t>(a1, 0x08);
+        const uint32_t next = key + 0x14;
+        if (next != keys_end) {
+            // Bounds checks against the container end, in the same order as the asm.
+            if (key >= lift_field<uint32_t>(a2, 0x08)) {
+                mem_00925134();
+            }
+            if (next >= lift_field<uint32_t>(a2, 0x08)) {
+                mem_00925134();
+            }
+            if (key >= lift_field<uint32_t>(a2, 0x08)) {
+                mem_00925134();
+            }
+
+            const float k1 = lift_field<float>(key_ptr(next), 0x00);
+            const float factor = static_cast<float>(
+                (static_cast<double>(t) - static_cast<double>(k0)) /
+                (static_cast<double>(k1) - static_cast<double>(k0)));
+
+            if (key >= lift_field<uint32_t>(a2, 0x08)) {
+                mem_00925134();
+            }
+            ext_00693DB0(self, key + 0x04, next + 0x04, factor);
+            return self;
+        }
+    }
+
+    // Early-out / last-key path: bounds check, then return the key's value address.
+    if (key >= lift_field<uint32_t>(a2, 0x08)) {
+        mem_00925134();
+    }
+    return key_ptr(key + 0x04);
+}
+} // namespace lift_00528730

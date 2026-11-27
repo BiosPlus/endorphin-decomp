@@ -1,0 +1,28 @@
+{
+  "va": "0x00528730",
+  "size": 234,
+  "orig_symbol": "Interpolator::Linear::vfunc_2",
+  "src_path": "src/Interpolator/Linear.cpp",
+  "lifted_path": "lifted/Interpolator/Linear.cpp",
+  "name": "Interpolator::Linear::vfunc_2",
+  "class": "Interpolator::Linear",
+  "signature": "__thiscall void* fn_00528730(void* self, void* a1, void* a2, uint32_t key, float t)",
+  "summary": "Blend between the key at `key` and the following key (stride 0x14, value at +4) into `self`; returns `self`, or the key's value address when t is at/before the key or the key is the last one.",
+  "fields": [
+    {
+      "class": "Interpolator::Linear",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "keys_begin"
+    },
+    {
+      "class": "Interpolator::Linear",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "keys_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:35:35Z"
+}
