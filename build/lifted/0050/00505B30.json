@@ -1,0 +1,28 @@
+{
+  "va": "0x00505B30",
+  "size": 206,
+  "orig_symbol": "Properties::SequenceType\u003cstd::vector\u003cChromosome, std::allocator\u003cChromosome\u003e\u003e, Properties::GetPropertySource, DeRefValue\u003e::vfunc_3",
+  "src_path": "src/templates/SequenceType.cpp",
+  "lifted_path": "lifted/templates/SequenceType.cpp",
+  "name": "SequenceType_VectorChromosome_vfunc_3",
+  "class": "Properties::SequenceType\u003cstd::vector\u003cChromosome, std::allocator\u003cChromosome\u003e\u003e, Properties::GetPropertySource, DeRefValue\u003e",
+  "signature": "void __stdcall sub_00505B30(uint32_t* vec_ptr, void* visitor)",
+  "summary": "Iterates over a vector of Chromosome elements and invokes the visitor's vfunc_0 on each until it returns false.",
+  "fields": [
+    {
+      "class": "std::vector\u003cChromosome\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "_Myfirst"
+    },
+    {
+      "class": "std::vector\u003cChromosome\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "_Mylast"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:22:02Z"
+}

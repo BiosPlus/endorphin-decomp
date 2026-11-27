@@ -27,3 +27,52 @@ void fn_004C2160(void* self) {
     // continuation and is therefore not modelled.
 }
 } // namespace lift_004C2160
+
+// [0x00505B30]
+namespace lift_00505B30 {
+extern uint32_t mem_00925134;
+extern uint32_t __thiscall ext_00494FF0(void* self, void* arg1, uint32_t arg2);
+extern void __thiscall ext_00493D90(void* self);
+
+// @name SequenceType_VectorChromosome_vfunc_3
+// @class Properties::SequenceType<std::vector<Chromosome, std::allocator<Chromosome>>, Properties::GetPropertySource, DeRefValue>
+// @summary Iterates over a vector of Chromosome elements and invokes the visitor's vfunc_0 on each until it returns false.
+// @field std::vector<Chromosome> +0x04 uint32_t _Myfirst
+// @field std::vector<Chromosome> +0x08 uint32_t _Mylast
+void __stdcall sub_00505B30(uint32_t* vec_ptr, void* visitor) {
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    uint8_t* vec = reinterpret_cast<uint8_t*>(*vec_ptr);
+    uint32_t cur = lift_field<uint32_t>(vec, 0x04);
+    if (cur > lift_field<uint32_t>(vec, 0x08)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uint32_t end = lift_field<uint32_t>(vec, 0x08);
+        if (lift_field<uint32_t>(vec, 0x04) > end) {
+            invalid_param();
+        }
+        if (cur == end) {
+            break;
+        }
+        if (cur >= lift_field<uint32_t>(vec, 0x08)) {
+            invalid_param();
+        }
+
+        uint8_t tmp[16]{};
+        uint32_t* pair = reinterpret_cast<uint32_t*>(ext_00494FF0(tmp, tmp + 4, cur));
+        void** vtable = *reinterpret_cast<void***>(visitor);
+        auto visit_fn = reinterpret_cast<uint8_t(__thiscall*)(void*, uint32_t, uint32_t)>(vtable[0]);
+        uint8_t keep_going = visit_fn(visitor, pair[0], pair[1]);
+        ext_00493D90(tmp + 4);
+
+        if (!keep_going) {
+            break;
+        }
+        if (cur >= lift_field<uint32_t>(vec, 0x08)) {
+            invalid_param();
+        }
+        cur += 0x68;
+    }
+}
+} // namespace lift_00505B30

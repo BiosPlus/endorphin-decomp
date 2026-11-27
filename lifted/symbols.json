@@ -29491,6 +29491,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00505B30": {
+    "name": "SequenceType_VectorChromosome_vfunc_3",
+    "class": "Properties::SequenceType\u003cstd::vector\u003cChromosome, std::allocator\u003cChromosome\u003e\u003e, Properties::GetPropertySource, DeRefValue\u003e",
+    "signature": "void __stdcall sub_00505B30(uint32_t* vec_ptr, void* visitor)",
+    "summary": "Iterates over a vector of Chromosome elements and invokes the visitor's vfunc_0 on each until it returns false.",
+    "lifted_path": "lifted/templates/SequenceType.cpp"
+  },
   "0x00505D00": {
     "name": "Unknown::DestroyElementsAndFreeStorage_00505D00",
     "class": "Unknown",
@@ -38360,6 +38367,13 @@
     "class": "Unknown (optional)",
     "signature": "void fn_00557A10(void* self)",
     "summary": "Releases the handle held by self via ext_00557920, then raises a C++ exception with null object and null ThrowInfo.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x005586F0": {
+    "name": "Vector84::Vector84",
+    "class": "Vector84",
+    "signature": "void* __thiscall fn_005586F0(void* self, const void* other)",
+    "summary": "Copy-constructs a std::vector of 0x54-byte records, allocating storage and rolling back on exception.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x005587E0": {
