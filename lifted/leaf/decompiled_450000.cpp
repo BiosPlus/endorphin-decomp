@@ -1830,3 +1830,53 @@ void* fn_0045BC70(void* self, void* sret) {
     return sret;
 }
 } // namespace lift_0045BC70
+
+// [0x0045AE60] sub_0045AE60 (126 bytes)
+namespace lift_0045AE60 {
+// Known callee 0x006A5F4A: thunk_MFC80_ord_3761 (IAT jump thunk forwarding to MFC80!ord_3761.)
+extern void ext_006A5F4A();
+extern int mem_009251E4;   // IAT slot: MSVCR80!atoi
+extern int mem_009242FC;   // IAT slot: MFC80!ord_310 (CString default ctor)
+extern int mem_00924300;   // IAT slot: MFC80!ord_876 (CString -> LPCSTR)
+extern int mem_009242F4;   // IAT slot: MFC80!ord_578 (CString dtor)
+
+// Calling-convention signatures for the imported/lifted callees.
+// __thiscall is a no-op on non-MSVC builds (see lift_compat.h).
+using CStringCtorFn  = void (__thiscall*)(void* self);
+using CStringGetFn   = const char* (__thiscall*)(void* self);
+using CStringDtorFn  = void (__thiscall*)(void* self);
+using AtoiFn         = int (__cdecl*)(const char* text);
+using ConsumeStrFn   = void (__thiscall*)(void* self, void* cstr);
+using VirtualIntFn   = void (__thiscall*)(void* self, int value);
+
+// @name SettingsHolder::applyIntSettingFromString
+// @class (unknown)
+// @summary Reads a string via this+0x32C, converts it with atoi, and if positive calls virtual slot 0x9C on the object at this+0x88.
+// @field (unknown) +0x32C uint8_t field_0x32c
+// @field (unknown) +0x88 void* field_0x88
+void fn_0045AE60(void* self) {
+    // Local MFC CString (a single data pointer in MFC 8.0).
+    void* cstr = nullptr;
+
+    // Default-construct the local CString.
+    (*reinterpret_cast<CStringCtorFn*>(&mem_009242FC))(&cstr);
+
+    // Pass the local string to the member object at this+0x32C.
+    void* sub = static_cast<uint8_t*>(self) + 0x32C;
+    reinterpret_cast<ConsumeStrFn>(ext_006A5F4A)(sub, &cstr);
+
+    // Get the C string pointer and convert it to int.
+    const char* text = (*reinterpret_cast<CStringGetFn*>(&mem_00924300))(&cstr);
+    int value = (*reinterpret_cast<AtoiFn*>(&mem_009251E4))(text);
+
+    if (value > 0) {
+        void* obj = lift_field<void*>(self, 0x88);
+        void* vtable = lift_field<void*>(obj, 0);
+        auto vfn = reinterpret_cast<VirtualIntFn>(lift_field<void*>(vtable, 0x9C));
+        vfn(obj, value);
+    }
+
+    // Destroy the local CString.
+    (*reinterpret_cast<CStringDtorFn*>(&mem_009242F4))(&cstr);
+}
+} // namespace lift_0045AE60
