@@ -1,0 +1,14 @@
+{
+  "va": "0x00870870",
+  "size": 180,
+  "orig_symbol": "NMData::Marker::vfunc_54",
+  "src_path": "src/NMData/Marker.cpp",
+  "lifted_path": "lifted/NMData/Marker.cpp",
+  "name": "NMData::Marker::vfunc_54",
+  "class": "NMData::Marker",
+  "signature": "void* __attribute__((thiscall)) fn_00870870(void* self)",
+  "summary": "Lazily initializes the global object at 0x00BC8130 (once, guarded by bit 0 of 0x00BC817C), then assigns the literal string at 0x009349BC into it and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:08Z"
+}
