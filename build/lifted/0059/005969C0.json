@@ -1,0 +1,22 @@
+{
+  "va": "0x005969C0",
+  "size": 100,
+  "orig_symbol": "sub_005969C0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "BaseEventDispatcher::dispatchToRange",
+  "class": "BaseEventDispatcher",
+  "signature": "void __thiscall fn_005969C0(void* self, void* range, uint32_t extra)",
+  "summary": "Walks the [begin, end) range struct passed as the first stack argument, calling sub_00527690(self, element, extra) for each element, then calls ext_00678D70(self, 1). Bounds failures abort.",
+  "fields": [
+    {
+      "class": "BaseEventDispatcher",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:45Z"
+}

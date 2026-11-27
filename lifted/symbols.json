@@ -29576,6 +29576,13 @@
     "summary": "Validates (self-pointer) args, erases [first,last) from a 4-byte-element buffer by shifting the tail down, sets end, and writes a 2-pointer result to out.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x005969C0": {
+    "name": "BaseEventDispatcher::dispatchToRange",
+    "class": "BaseEventDispatcher",
+    "signature": "void __thiscall fn_005969C0(void* self, void* range, uint32_t extra)",
+    "summary": "Walks the [begin, end) range struct passed as the first stack argument, calling sub_00527690(self, element, extra) for each element, then calls ext_00678D70(self, 1). Bounds failures abort.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596A30": {
     "name": "CallForEachOffsetPlusBase",
     "signature": "void fn_00596A30(uint32_t* out, uint32_t /*stack slot +0x08, unused*/, const uint32_t* begin, uint32_t /*stack slot +0x10, unused*/, const uint32_t* end, OffsetCallback cb, uint32_t base)",

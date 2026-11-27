@@ -1686,3 +1686,46 @@ void** fn_00596A70(void** out_fn, void* begin_container, void* begin_node, void*
     return out_fn;
 }
 } // namespace lift_00596A70
+
+// [0x005969C0] sub_005969C0 (100 bytes)
+namespace lift_005969C0 {
+// Known callee 0x00527690: sub_00527690 (Iterates over a vector of objects at +0x14 and invokes vtable[2](arg0, arg1) on each)
+extern void __thiscall ext_00527690(void* self, uint32_t arg0, uint32_t arg1);
+// Known callee 0x00678D70: BaseEventDispatcher::vfunc_1 (Invokes virtual slot 0 on every object pointer in the dispatcher's [begin, end) list, passing the single argument.)
+extern void __thiscall ext_00678D70(void* self, uint32_t arg);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (referenced on the bounds-check failure paths)
+extern int mem_00925134;
+
+// @name BaseEventDispatcher::dispatchToRange
+// @class BaseEventDispatcher
+// @summary Walks the [begin, end) range struct passed as the first stack argument, calling sub_00527690(self, element, extra) for each element, then calls ext_00678D70(self, 1). Bounds failures abort.
+// @field BaseEventDispatcher +0x00 void* field_0x00
+void __thiscall fn_005969C0(void* self, void* range, uint32_t extra) {
+    // Range struct: +0x04 = begin, +0x08 = end (32-bit guest addresses).
+    auto invalidParameter = []() {
+        (void)&mem_00925134;
+        std::abort();
+    };
+
+    uint32_t begin = lift_field<uint32_t>(range, 0x04);
+    uint32_t end = lift_field<uint32_t>(range, 0x08);
+    if (begin > end) {
+        invalidParameter();
+    }
+
+    uint32_t cur = begin;
+    while (cur != lift_field<uint32_t>(range, 0x08)) {
+        if (cur >= lift_field<uint32_t>(range, 0x08)) {
+            invalidParameter();
+        }
+        uint32_t element = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(cur)), 0);
+        ext_00527690(self, element, extra);
+        if (cur >= lift_field<uint32_t>(range, 0x08)) {
+            invalidParameter();
+        }
+        cur += 4;
+    }
+
+    ext_00678D70(self, 1);
+}
+} // namespace lift_005969C0
