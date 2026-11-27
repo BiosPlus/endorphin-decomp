@@ -76224,6 +76224,13 @@
     "summary": "Returns the dword at index this-\u003efield_0x1C if 0 \u003c= index \u003c ext_006E7460(this), else 0.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078CD00": {
+    "name": "Unknown::ClearAllBucketSets",
+    "class": "Unknown",
+    "signature": "void fn_0078CD00(void)",
+    "summary": "Calls CriticalSectionBuckets::ClearBuckets on every entry of the array at +0x10 of the global object, for count entries at +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CEF0": {
     "name": "CriticalSectionBuckets::ClearBuckets",
     "class": "CriticalSectionBuckets",

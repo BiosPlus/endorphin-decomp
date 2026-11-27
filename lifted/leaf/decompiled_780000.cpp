@@ -2299,3 +2299,24 @@ uint8_t __cdecl fn_00783160(FILE** out, const char* path, const char* mode) {
     return fp != nullptr ? 1 : 0;
 }
 } // namespace lift_00783160
+
+// [0x0078CD00] sub_0078CD00 (48 bytes)
+namespace lift_0078CD00 {
+// Known callee 0x0078CEF0: CriticalSectionBuckets::ClearBuckets (Under the critical section at +0x00, frees every node in each bucket chain of the array at +0x04 (count at +0x0C), zeroes the bucket heads, then resets +0x20 and +0x24 to 0.)
+extern void ext_0078CEF0(void* self);
+extern void* mem_00B60DBC;
+
+// @name Unknown::ClearAllBucketSets
+// @class Unknown
+// @summary Calls CriticalSectionBuckets::ClearBuckets on every entry of the array at +0x10 of the global object, for count entries at +0x00.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x10 void** field_0x10
+void fn_0078CD00(void) {
+    void* obj = mem_00B60DBC;
+    int32_t count = lift_field<int32_t>(obj, 0x00);
+    for (int32_t i = 0; i < count; ++i) {
+        void** entries = lift_field<void**>(obj, 0x10);
+        ext_0078CEF0(entries[i]);
+    }
+}
+} // namespace lift_0078CD00
