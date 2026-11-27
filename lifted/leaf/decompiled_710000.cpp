@@ -2932,3 +2932,21 @@ void* fn_0071CC10(void* self, uint32_t a1, uint32_t a2) {
     return ret;
 }
 } // namespace lift_0071CC10
+
+// [0x00713DC0] sub_00713DC0 (34 bytes)
+namespace lift_00713DC0 {
+extern void* __thiscall ext_00713360(void* self_ptr, int32_t count);
+extern uint32_t mem_00AAC090;
+
+// @name Unknown::Ctor_00713DC0
+// @class Unknown
+// @summary Calls sub_00713360(this, arg), installs vtable 0x00996118 at +0x00, and copies the global dword at mem_00AAC090 into +0x10; returns this.
+// @field Unknown +0x00 uint32_t vfptr
+// @field Unknown +0x10 uint32_t field_0x10
+extern void* __thiscall fn_00713DC0(void* self, uint32_t arg) {
+    ext_00713360(self, static_cast<int32_t>(arg));
+    lift_field<uint32_t>(self, 0x00) = 0x00996118u;
+    lift_field<uint32_t>(self, 0x10) = mem_00AAC090;
+    return self;
+}
+} // namespace lift_00713DC0

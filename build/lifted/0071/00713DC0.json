@@ -1,0 +1,28 @@
+{
+  "va": "0x00713DC0",
+  "size": 34,
+  "orig_symbol": "sub_00713DC0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::Ctor_00713DC0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_00713DC0(void* self, uint32_t arg)",
+  "summary": "Calls sub_00713360(this, arg), installs vtable 0x00996118 at +0x00, and copies the global dword at mem_00AAC090 into +0x10; returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vfptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:40Z"
+}

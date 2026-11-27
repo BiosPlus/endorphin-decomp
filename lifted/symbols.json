@@ -94194,6 +94194,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713DC0": {
+    "name": "Unknown::Ctor_00713DC0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_00713DC0(void* self, uint32_t arg)",
+    "summary": "Calls sub_00713360(this, arg), installs vtable 0x00996118 at +0x00, and copies the global dword at mem_00AAC090 into +0x10; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00713DF0": {
     "name": "sub_00713DF0",
     "signature": "void fn_00713DF0(void)",
