@@ -143,3 +143,93 @@ std::string* __thiscall fn_008704D0(void* self, std::string* out) {
     return out;
 }
 } // namespace lift_008704D0
+
+// [0x00870650] NMData::Marker::vfunc_21 (412 bytes)
+namespace lift_00870650 {
+// Known callee 0x0058F630: NMData::CollisionModelDataBase::vfunc_21 (thiscall, one stack argument)
+extern void __thiscall ext_0058F630(void* self, void* arg);
+// Known callee 0x0063EFE0: sub_0063EFE0 (Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.)
+extern uint32_t __thiscall ext_0063EFE0(void* self, uint32_t name);
+// Known callee 0x004275E0: assignVirtualString (Calls vtable[2] on obj to obtain a temporary std::string, assigns it to dst, and destroys the temporary.)
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+// Known callee 0x0063F530: sub_0063F530 (thiscall, three stack arguments)
+extern uint32_t __thiscall ext_0063F530(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x0067B930: loadThreeNamedFloats (Looks up three named items in the container and parses each item's string as a float into this+0x00, this+0x04 and this+0x08.)
+extern void __thiscall ext_0067B930(void* self, uint32_t container);
+extern uint32_t mem_00A9F7F4;
+extern uint32_t mem_00A9F744;
+extern uint32_t mem_00A9F1B0;
+extern uint32_t mem_00A9F3B8;
+extern uint32_t mem_00B40640;
+
+namespace lift_00870650 {
+
+// Sentinel "not found" addresses returned by the lookup helpers.
+constexpr uint32_t kSentinelA = 0x00B53A34;
+constexpr uint32_t kSentinelB = 0x00B53B30;
+constexpr uint32_t kSentinelC = 0x00B53AB0;
+constexpr uint32_t kSentinelD = 0x00B53A70;
+constexpr uint32_t kSentinelE = 0x00B53AF0;
+
+inline bool isSentinel(uint32_t r) {
+    return r == kSentinelA || r == kSentinelB || r == kSentinelC ||
+           r == kSentinelD || r == kSentinelE;
+}
+
+inline void* asPtr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+} // namespace lift_00870650
+
+// @name NMData::Marker::vfunc_21
+// @class NMData::Marker
+// @summary Looks up named entries in the owner list (falling back to a second key), stores a 0/1 flag at +0x170, assigns a name string into +0x154, then loads three named floats and writes them plus 1.0 into the object returned by the TransformInterface vtable slot 3 call.
+// @field NMData::Marker +0x04 void* field_0x04
+// @field NMData::Marker +0x154 std::string field_0x154
+// @field NMData::Marker +0x170 uint32_t field_0x170
+void __thiscall fn_00870650(void* self, void* owner) {
+    using namespace lift_00870650;
+
+    ext_0058F630(self, owner);
+
+    uint32_t key = mem_00A9F7F4;
+    uint32_t r = ext_0063EFE0(owner, key);
+    bool assign = true;
+    if (!isSentinel(r)) {
+        lift_field<uint32_t>(self, 0x170) = 0;
+    } else {
+        key = mem_00A9F744;
+        r = ext_0063EFE0(owner, key);
+        if (isSentinel(r)) {
+            assign = false;
+        } else {
+            lift_field<uint32_t>(self, 0x170) = 1;
+        }
+    }
+
+    if (assign) {
+        uint32_t found = ext_0063EFE0(owner, key);
+        ext_004275E0(static_cast<uint8_t*>(self) + 0x154, asPtr(found));
+    }
+
+    uint32_t r4 = ext_0063F530(owner, mem_00A9F1B0, 0, 1);
+    if (isSentinel(r4)) {
+        return;
+    }
+
+    float f[3] = {0.0f, 0.0f, 0.0f};
+    uint32_t r5 = ext_0063F530(asPtr(r4), mem_00A9F3B8, 0, 1);
+    uint32_t container = isSentinel(r5) ? kSentinelB : r5;
+    ext_0067B930(f, container);
+
+    void* iface = static_cast<uint8_t*>(self) + 0x4;
+    void** vtbl = *reinterpret_cast<void***>(iface);
+    auto fn = reinterpret_cast<uint32_t (*)(void*, uint32_t)>(vtbl[3]);
+    void* obj = asPtr(fn(iface, mem_00B40640));
+    lift_field<float>(obj, 0x30) = f[0];
+    lift_field<float>(obj, 0x34) = f[1];
+    lift_field<float>(obj, 0x38) = f[2];
+    lift_field<float>(obj, 0x3C) = 1.0f;
+}
+} // namespace lift_00870650

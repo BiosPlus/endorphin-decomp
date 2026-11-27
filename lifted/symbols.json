@@ -106572,6 +106572,13 @@
     "summary": "Asks the sub-object at this+0x174 (+4) to fill the out string, then builds out = out_seed + global + \"\" + this-\u003evfunc_9() via std::string concatenation and assigns it to out.",
     "lifted_path": "lifted/NMData/Marker.cpp"
   },
+  "0x00870650": {
+    "name": "NMData::Marker::vfunc_21",
+    "class": "NMData::Marker",
+    "signature": "inline bool isSentinel(uint32_t r)",
+    "summary": "Looks up named entries in the owner list (falling back to a second key), stores a 0/1 flag at +0x170, assigns a name string into +0x154, then loads three named floats and writes them plus 1.0 into the object returned by the TransformInterface vtable slot 3 call.",
+    "lifted_path": "lifted/NMData/Marker.cpp"
+  },
   "0x00870870": {
     "name": "NMData::Marker::vfunc_54",
     "class": "NMData::Marker",

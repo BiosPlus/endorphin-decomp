@@ -1,0 +1,34 @@
+{
+  "va": "0x00870650",
+  "size": 412,
+  "orig_symbol": "NMData::Marker::vfunc_21",
+  "src_path": "src/NMData/Marker.cpp",
+  "lifted_path": "lifted/NMData/Marker.cpp",
+  "name": "NMData::Marker::vfunc_21",
+  "class": "NMData::Marker",
+  "signature": "inline bool isSentinel(uint32_t r)",
+  "summary": "Looks up named entries in the owner list (falling back to a second key), stores a 0/1 flag at +0x170, assigns a name string into +0x154, then loads three named floats and writes them plus 1.0 into the object returned by the TransformInterface vtable slot 3 call.",
+  "fields": [
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x154",
+      "type": "std::string",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:38:32Z"
+}
