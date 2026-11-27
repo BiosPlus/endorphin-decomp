@@ -2860,3 +2860,50 @@ void fn_004188C0(void* self) {
     lift_field<uint8_t>(lift_field<void*>(self, 0x78), 0xA8) = checked ? 1 : 0;
 }
 } // namespace lift_004188C0
+
+// [0x0041B9E0] sub_0041B9E0 (128 bytes)
+namespace lift_0041B9E0 {
+// Known callee 0x006A5F4A: thunk_MFC80_ord_3761 (IAT jump thunk forwarding to MFC80!ord_3761.)
+extern void ext_006A5F4A();
+extern int mem_009242FC; // IAT slot: MFC80!ord_310 (CString ctor, thiscall)
+extern int mem_00924300; // IAT slot: MFC80!ord_876 (CString -> LPCTSTR, thiscall)
+extern int mem_009251F0; // IAT slot: MSVCR80!atof (cdecl)
+extern int mem_009242F4; // IAT slot: MFC80!ord_578 (CString dtor, thiscall)
+
+namespace {
+using ThisCallVoid = void(__thiscall*)(void* self);
+using ThisCallWithPtr = void(__thiscall*)(void* self, void* arg);
+using ThisCallWithFloat = void(__thiscall*)(void* self, float arg);
+using ThisCallStrRet = const char*(__thiscall*)(void* self);
+using CdeclAtof = double(__cdecl*)(const char* s);
+} // namespace
+
+// @name Unknown::SetFloatFromString_0041B9E0
+// @class Unknown
+// @summary Reads a CString from embedded object +0xe0, converts it with atof, and passes the float to the virtual method at vtable slot 15 of the object at +0x1ec.
+// @field Unknown +0xe0 uint8_t field_0xe0 (embedded object; its address is passed as `this` to the thunk)
+// @field Unknown +0x1ec void* field_0x1ec (object pointer; vtable slot 15 = +0x3c takes a float)
+void __thiscall fn_0041B9E0(void* self) {
+    // MFC CString is a single pointer on x86.
+    void* cstr = nullptr;
+
+    // CString::CString()
+    (*reinterpret_cast<ThisCallVoid*>(&mem_009242FC))(&cstr);
+
+    // Thunk to MFC80!ord_3761, this = self+0xe0, one pointer argument (&cstr).
+    reinterpret_cast<ThisCallWithPtr>(&ext_006A5F4A)(&lift_field<uint8_t>(self, 0xe0), &cstr);
+
+    // CString -> LPCTSTR
+    const char* text = (*reinterpret_cast<ThisCallStrRet*>(&mem_00924300))(&cstr);
+
+    float value = static_cast<float>((*reinterpret_cast<CdeclAtof*>(&mem_009251F0))(text));
+
+    // Virtual call: target = self->field_0x1ec; target->vtbl[+0x3c](target, value)
+    void* target = lift_field<void*>(self, 0x1ec);
+    ThisCallWithFloat* vtbl = *reinterpret_cast<ThisCallWithFloat**>(target);
+    vtbl[15](target, value); // +0x3c on x86 (4-byte slots)
+
+    // CString::~CString()
+    (*reinterpret_cast<ThisCallVoid*>(&mem_009242F4))(&cstr);
+}
+} // namespace lift_0041B9E0

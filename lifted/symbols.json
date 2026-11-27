@@ -2091,6 +2091,13 @@
     "summary": "Reads a string via MFC CString helpers, converts it with atof, and forwards the float to a virtual method on the object at +0x1ec.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041B9E0": {
+    "name": "Unknown::SetFloatFromString_0041B9E0",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_009242FC; // IAT slot: MFC80!ord_310 (CString ctor, thiscall) extern \"C\" int mem_00924300; // IAT slot: MFC80!ord_876 (CString -\u003e LPCTSTR, thiscall) extern \"C\" int mem_009251F0; // IAT slot: MSVCR80!atof (cdecl) extern \"C\" int mem_009242F4; // IAT slot: MFC80!ord_578 (CString dtor, thiscall) namespace",
+    "summary": "Reads a CString from embedded object +0xe0, converts it with atof, and passes the float to the virtual method at vtable slot 15 of the object at +0x1ec.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041BA60": {
     "name": "sub_0041BA60",
     "signature": "void sub_0041BA60(void* self)",

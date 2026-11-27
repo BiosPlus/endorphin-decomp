@@ -1281,6 +1281,7 @@ struct Unknown_Fields {
     // +0xE0  uint32_t                 field_0xe0  (evidence: 0x004561C0) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  void*                    field_0xe0  (evidence: 0x00431330, 0x004313A0, 0x004313D0, 0x00433260, 0x00434380, 0x00434640, 0x00434680, 0x004346C0, 0x00434900) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  DWORD                    listEnd  (evidence: 0x0049F040) // CONFLICT: multiple definitions at +0xE0
+    // +0xE0  uint8_t field_0xe0 (embedded object; its address is passed as `this` to the thunk)  (evidence: 0x0041B9E0) // CONFLICT: multiple definitions at +0xE0
     // +0xE4  Unknown                  field_0xE4  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0xE4
     // +0xE4  void*                    field_0xe4  (evidence: 0x004030F0, 0x00403400, 0x0040A910, 0x0040BE90) // CONFLICT: multiple definitions at +0xE4
     // +0xE8  Buffer                   field_0xE8  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xE8
@@ -1537,6 +1538,7 @@ struct Unknown_Fields {
     // +0x1EC uint32_t                 field_0x1EC  (evidence: 0x006C0580) // CONFLICT: multiple definitions at +0x1EC
     // +0x1EC int32_t                  field_0x1ec  (evidence: 0x004D3DE0) // CONFLICT: multiple definitions at +0x1EC
     // +0x1EC void*                    field_0x1ec  (evidence: 0x0041B960) // CONFLICT: multiple definitions at +0x1EC
+    // +0x1EC void* field_0x1ec (object pointer; vtable slot 15 = +0x3c takes a float)  (evidence: 0x0041B9E0) // CONFLICT: multiple definitions at +0x1EC
     // +0x1F0 uint32_t                 field_0x1F0  (evidence: 0x006C0580)
     // +0x1F1 uint8_t                  flag1f1  (evidence: 0x005D0760, 0x005DD310)
     // +0x1F4 float                    field_0x1F4  (evidence: 0x005CFF60) // CONFLICT: multiple definitions at +0x1F4
