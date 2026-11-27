@@ -2819,3 +2819,31 @@ int32_t fn_006D3720(void* self) {
     return value;
 }
 } // namespace lift_006D3720
+
+// [0x006D37B0]
+namespace lift_006D37B0 {
+// @name Unknown::insertVirtualResultIntoArray_006D37B0
+// @class Unknown
+// @summary Calls virtual slot 12 on self; if it returns non-null, appends that value to the DynamicArray embedded at +0x4c via InsertAt at the current count.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x4c int32_t arrayCount
+
+
+extern int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+using VirtualSlot12Fn = int32_t(__thiscall*)(void* self);
+
+int32_t __thiscall fn_006D37B0(void* self) {
+    auto vtable = lift_field<void**>(self, 0x00);
+    auto getValue = reinterpret_cast<VirtualSlot12Fn>(vtable[0x30 / sizeof(void*)]);
+    int32_t value = getValue(self);
+
+    if (value != 0) {
+        int32_t count = lift_field<int32_t>(self, 0x4c);
+        void* array = static_cast<uint8_t*>(self) + 0x4c;
+        ext_006D2170(array, count, &value);
+    }
+
+    return value;
+}
+} // namespace lift_006D37B0
