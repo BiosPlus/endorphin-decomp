@@ -3333,3 +3333,24 @@ void* fn_004197A0(void* self, DWORD a1) {
     return self;
 }
 } // namespace lift_004197A0
+
+// [0x004198C0] sub_004198C0 (91 bytes)
+namespace lift_004198C0 {
+// Known callee 0x004197A0: Unknown::initWithSolidBrush (Runs the MFC80 base init on sub-object at +0x114, sets vtables at +0x00/+0x74/+0x114, initializes +0x11C, and creates a GDI solid brush passed to the +0x114 sub-object.)
+extern void* ext_004197A0(void* self, DWORD a1);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Allocator: cdecl, one byte-count argument; returns NULL on failure.
+extern void* __cdecl ext_006A5C62(size_t size);
+
+// @name Unknown::allocInitWithSolidBrush
+// @class Unknown
+// @summary Allocates a 0x190-byte object and, if the allocation succeeds, passes it to Unknown::initWithSolidBrush (a1 = 0); returns that result, or NULL when allocation fails.
+void* fn_004198C0() {
+    // Original MSVC SEH frame (fs:[0] push/pop and the unwind-state slot) is compiler scaffolding and is omitted.
+    void* obj = ext_006A5C62(0x190);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_004197A0(obj, 0);
+}
+} // namespace lift_004198C0
