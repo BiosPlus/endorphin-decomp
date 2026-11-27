@@ -1696,3 +1696,36 @@ void* fn_0049F040(void* self, DWORD key) {
     return ptrFromDword(node + 8);
 }
 } // namespace lift_0049F040
+
+// [0x00495AB0]
+namespace lift_00495AB0 {
+// @name sub_00495AB0
+// @summary Destructor that resets vtable, frees field_0x1c if non-null, tidies vector at +0x8, and calls base destructor.
+// @field Self +0x00 void* vtable
+// @field Self +0x08 void* vec_strings
+// @field Self +0x1C void* field_0x1c
+// @field Self +0x20 uint32_t field_0x20
+// @field Self +0x24 uint32_t field_0x24
+
+
+    extern uint8_t mem_0093F0FC[];
+    void __thiscall ext_004026E0(void* this_ptr);
+    void __fastcall ext_0065F440(void* self);
+    void __cdecl ext_006A5C5C(void* ptr);
+
+void __thiscall fn_00495AB0(void* self) {
+    lift_field<void*>(self, 0x00) = mem_0093F0FC;
+
+    void* ptr = lift_field<void*>(self, 0x1C);
+    if (ptr != nullptr) {
+        ext_006A5C5C(ptr);
+    }
+
+    lift_field<void*>(self, 0x1C) = nullptr;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = 0;
+
+    ext_004026E0(static_cast<uint8_t*>(self) + 0x08);
+    ext_0065F440(self);
+}
+} // namespace lift_00495AB0

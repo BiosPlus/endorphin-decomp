@@ -11301,6 +11301,12 @@
     "summary": "Constructor: runs the PropertySource base constructor, installs the RigManager vtable (0x0093F0FC), zeroes the member fields, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00495AB0": {
+    "name": "sub_00495AB0",
+    "signature": "void __thiscall fn_00495AB0(void* self)",
+    "summary": "Destructor that resets vtable, frees field_0x1c if non-null, tidies vector at +0x8, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00496130": {
     "name": "RigManager::vfunc_0",
     "class": "RigManager",
