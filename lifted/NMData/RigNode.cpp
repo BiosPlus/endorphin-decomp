@@ -233,3 +233,77 @@ void __thiscall fn_005AAB90(void* self, void* arg) {
     lift_field<float>(self, 0x16C) = p2[2];
 }
 } // namespace lift_005AAB90
+
+// [0x005AA6C0]
+namespace lift_005AA6C0 {
+// @name NMData::RigNode::vfunc_22
+// @class NMData::RigNode
+// @summary Serializes RigNode properties (collision model, type, flag, optional string, and two float/vec3 fields) into a child node.
+// @field NMData::RigNode +0x00 void* vtable
+// @field NMData::RigNode +0x154 int32_t field_0x154
+// @field NMData::RigNode +0x158 float field_0x158
+// @field NMData::RigNode +0x164 float field_0x164
+// @field NMData::RigNode +0x170 uint8_t field_0x170[28]
+// @field NMData::RigNode +0x18C uint8_t field_0x18C
+
+void ext_00427550(void* self, const char* name);
+void ext_0058F650(void* self, void* node);
+void* ext_00640110(void* self, void* key);
+void* ext_00640390(void* self, void* key, int32_t zero, void* data);
+void* ext_006404E0(void* self, const char* name);
+void ext_00640A80(void* child, uint8_t flag);
+void ext_0067F040(void* node);
+
+extern void* mem_00924FEC;
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_00A9ED1C;
+extern void* mem_00A9F1B8;
+extern void* mem_00A9F6BC;
+extern void* mem_00A9F7F4;
+
+void* fn_005AA6C0(void* self, void* arg0) {
+    void** vtable = lift_field<void**>(self, 0x00);
+    auto vfunc_28 = reinterpret_cast<uint8_t (*)(void*)>(vtable[0x70 / 4]);
+    void* edi = nullptr;
+
+    if (vfunc_28(self)) {
+        edi = arg0;
+    } else {
+        uint8_t temp_str[28]{};
+        auto vfunc_8 = reinterpret_cast<void* (*)(void*, void*)>(vtable[0x20 / 4]);
+        void* str_ptr = vfunc_8(self, temp_str);
+        auto c_str_fn = reinterpret_cast<const char* (*)(void*)>(mem_00924FF0);
+        const char* name = c_str_fn(str_ptr);
+        edi = ext_006404E0(arg0, name);
+        auto dtor_fn = reinterpret_cast<void (*)(void*)>(mem_00924FF4);
+        dtor_fn(temp_str);
+    }
+
+    ext_0058F650(self, edi);
+
+    int32_t idx = lift_field<int32_t>(self, 0x154);
+    void* str_entry = reinterpret_cast<uint8_t*>(0x00B42600) + (idx * 28);
+    void* child = ext_00640110(edi, mem_00A9F6BC);
+    auto c_str_fn = reinterpret_cast<const char* (*)(void*)>(mem_00924FF0);
+    ext_00427550(&child, c_str_fn(str_entry));
+
+    void* flag_child = ext_00640110(edi, reinterpret_cast<void*>(0x0095EF48));
+    ext_00640A80(flag_child, lift_field<uint8_t>(self, 0x18C));
+
+    void* str_0x170 = static_cast<uint8_t*>(self) + 0x170;
+    auto empty_fn = reinterpret_cast<uint8_t (*)(void*)>(mem_00924FEC);
+    if (!empty_fn(str_0x170)) {
+        void* opt_child = ext_00640110(edi, mem_00A9F7F4);
+        ext_00427550(&opt_child, c_str_fn(str_0x170));
+    }
+
+    void* res1 = ext_00640390(edi, mem_00A9F1B8, 0, static_cast<uint8_t*>(self) + 0x158);
+    ext_0067F040(res1);
+
+    void* res2 = ext_00640390(edi, mem_00A9ED1C, 0, static_cast<uint8_t*>(self) + 0x164);
+    ext_0067F040(res2);
+
+    return edi;
+}
+} // namespace lift_005AA6C0

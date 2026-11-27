@@ -1,0 +1,52 @@
+{
+  "va": "0x005AA6C0",
+  "size": 360,
+  "orig_symbol": "NMData::RigNode::vfunc_22",
+  "src_path": "src/NMData/RigNode.cpp",
+  "lifted_path": "lifted/NMData/RigNode.cpp",
+  "name": "NMData::RigNode::vfunc_22",
+  "class": "NMData::RigNode",
+  "signature": "void* fn_005AA6C0(void* self, void* arg0)",
+  "summary": "Serializes RigNode properties (collision model, type, flag, optional string, and two float/vec3 fields) into a child node.",
+  "fields": [
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x154",
+      "type": "int32_t",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x158",
+      "type": "float",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x164",
+      "type": "float",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x170",
+      "type": "uint8_t",
+      "name": "field_0x170[28]"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x18C",
+      "type": "uint8_t",
+      "name": "field_0x18C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:28:21Z"
+}

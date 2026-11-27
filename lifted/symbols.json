@@ -43776,6 +43776,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0095EEF4 and tail-calls base destructor sub_0065C660.",
     "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
   },
+  "0x005AA6C0": {
+    "name": "NMData::RigNode::vfunc_22",
+    "class": "NMData::RigNode",
+    "signature": "void* fn_005AA6C0(void* self, void* arg0)",
+    "summary": "Serializes RigNode properties (collision model, type, flag, optional string, and two float/vec3 fields) into a child node.",
+    "lifted_path": "lifted/NMData/RigNode.cpp"
+  },
   "0x005AA830": {
     "name": "ObjectWithChild::setValueAndNotifyChild",
     "class": "ObjectWithChild",
