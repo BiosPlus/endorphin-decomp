@@ -68272,3 +68272,132 @@ int32_t fn_00513110(void* self, void* arg0) {
     return result;
 }
 } // namespace lift_00513110
+
+// [0x0058FAE0] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_2 (148 bytes)
+namespace lift_0058FAE0 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C06D0 (ExprParser::ReadMethodType<NMData::TriggeredEventData, std::string, getPropertySourceDescription, 1>::vfunc_2).
+namespace lift_004C06D0 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, std::string, getPropertySourceDescription, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads a property source description string, converts it to float via atof, rounds to nearest integer, and returns it.
+
+
+extern void* __stdcall ext_0058F770(void* arg1, void* arg2);
+extern int32_t __cdecl ext_006A6DE0(double val);
+
+extern const uint32_t mem_00924FF0;
+extern const uint32_t mem_009251F0;
+extern const double mem_00993828;
+extern const uint32_t mem_00924FF4;
+
+int32_t __thiscall fn_0058FAE0(void* this_ptr, void** arg1) {
+    (void)this_ptr;
+    uint8_t local_str[28];
+
+    void* str_ptr = ext_0058F770(local_str, *arg1);
+
+    using c_str_fn = const char* (__thiscall*)(void*);
+    const char* cstr = reinterpret_cast<c_str_fn>(static_cast<uintptr_t>(mem_00924FF0))(str_ptr);
+
+    using atof_fn = double (__cdecl*)(const char*);
+    float val = static_cast<float>(reinterpret_cast<atof_fn>(static_cast<uintptr_t>(mem_009251F0))(cstr));
+
+    double rounded = (val < 0.0f) ? (static_cast<double>(val) - mem_00993828)
+                                  : (static_cast<double>(val) + mem_00993828);
+    int32_t result = ext_006A6DE0(rounded);
+
+    using dtor_fn = void (__thiscall*)(void*);
+    reinterpret_cast<dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(local_str);
+
+    return result;
+}
+} // namespace lift_004C06D0
+} // namespace lift_0058FAE0
+
+// [0x005B3260] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_2 (148 bytes)
+namespace lift_005B3260 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C06D0 (ExprParser::ReadMethodType<NMData::TriggeredEventData, std::string, getPropertySourceDescription, 1>::vfunc_2).
+namespace lift_004C06D0 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, std::string, getPropertySourceDescription, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads a property source description string, converts it to float via atof, rounds to nearest integer, and returns it.
+
+
+extern void* __stdcall ext_005B1220(void* arg1, void* arg2);
+extern int32_t __cdecl ext_006A6DE0(double val);
+
+extern const uint32_t mem_00924FF0;
+extern const uint32_t mem_009251F0;
+extern const double mem_00993828;
+extern const uint32_t mem_00924FF4;
+
+int32_t __thiscall fn_005B3260(void* this_ptr, void** arg1) {
+    (void)this_ptr;
+    uint8_t local_str[28];
+
+    void* str_ptr = ext_005B1220(local_str, *arg1);
+
+    using c_str_fn = const char* (__thiscall*)(void*);
+    const char* cstr = reinterpret_cast<c_str_fn>(static_cast<uintptr_t>(mem_00924FF0))(str_ptr);
+
+    using atof_fn = double (__cdecl*)(const char*);
+    float val = static_cast<float>(reinterpret_cast<atof_fn>(static_cast<uintptr_t>(mem_009251F0))(cstr));
+
+    double rounded = (val < 0.0f) ? (static_cast<double>(val) - mem_00993828)
+                                  : (static_cast<double>(val) + mem_00993828);
+    int32_t result = ext_006A6DE0(rounded);
+
+    using dtor_fn = void (__thiscall*)(void*);
+    reinterpret_cast<dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(local_str);
+
+    return result;
+}
+} // namespace lift_004C06D0
+} // namespace lift_005B3260
+
+// [0x00683800] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_2 (148 bytes)
+namespace lift_00683800 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C06D0 (ExprParser::ReadMethodType<NMData::TriggeredEventData, std::string, getPropertySourceDescription, 1>::vfunc_2).
+namespace lift_004C06D0 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, std::string, getPropertySourceDescription, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads a property source description string, converts it to float via atof, rounds to nearest integer, and returns it.
+
+
+extern void* __stdcall ext_00683100(void* arg1, void* arg2);
+extern int32_t __cdecl ext_006A6DE0(double val);
+
+extern const uint32_t mem_00924FF0;
+extern const uint32_t mem_009251F0;
+extern const double mem_00993828;
+extern const uint32_t mem_00924FF4;
+
+int32_t __thiscall fn_00683800(void* this_ptr, void** arg1) {
+    (void)this_ptr;
+    uint8_t local_str[28];
+
+    void* str_ptr = ext_00683100(local_str, *arg1);
+
+    using c_str_fn = const char* (__thiscall*)(void*);
+    const char* cstr = reinterpret_cast<c_str_fn>(static_cast<uintptr_t>(mem_00924FF0))(str_ptr);
+
+    using atof_fn = double (__cdecl*)(const char*);
+    float val = static_cast<float>(reinterpret_cast<atof_fn>(static_cast<uintptr_t>(mem_009251F0))(cstr));
+
+    double rounded = (val < 0.0f) ? (static_cast<double>(val) - mem_00993828)
+                                  : (static_cast<double>(val) + mem_00993828);
+    int32_t result = ext_006A6DE0(rounded);
+
+    using dtor_fn = void (__thiscall*)(void*);
+    reinterpret_cast<dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(local_str);
+
+    return result;
+}
+} // namespace lift_004C06D0
+} // namespace lift_00683800
