@@ -25050,6 +25050,13 @@
     "summary": "Reads the object pointer from the holder argument; if non-null, throws a default-message exception via ext_0046C4E0, otherwise constructs and throws a DerivedException.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00516030": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e::vfunc_44",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",
+    "signature": "static inline void* vtable_slot(void* obj, size_t byte_off)",
+    "summary": "Reads the inner object from holder-\u003efield_0x00 (throws DerivedException if null), builds a temporary from its field at +0x08, assigns it into holder, releases the temporary, then forwards to holder-\u003efield_0x04's vtable slot 0x2C(holder, arg2) and returns its result.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00516170": {
     "name": "ExprParser::DynamicEnumType\u003cEvolverRuntimeOptions\u003e::vfunc_2",
     "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e",

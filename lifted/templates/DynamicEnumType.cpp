@@ -3401,3 +3401,63 @@ void fn_00515EE0(void* self, int value) {
     forward(target, self, value);
 }
 } // namespace lift_00515EE0
+
+// [0x00516030] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>::vfunc_44 (157 bytes)
+namespace lift_00516030 {
+extern void* ext_0041CF50(void* self, void* other);
+extern void ext_006720C0(void* self, uint32_t arg);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void);
+
+// Two-slot temporary built by ext_006720C0 and consumed by ext_0041CF50.
+// field_0x00 is the value returned by the vtable slot 0x70 path; field_0x04 is an
+// object pointer whose vtable is released (slot 0x78) at the end of the call.
+struct LiftPairTemp {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+// Loads the vtable of obj and returns the function pointer stored at byte offset byte_off.
+static inline void* vtable_slot(void* obj, size_t byte_off) {
+    auto* vt = *reinterpret_cast<uint8_t**>(obj);
+    return *reinterpret_cast<void**>(vt + byte_off);
+}
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_44
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Reads the inner object from holder->field_0x00 (throws DerivedException if null), builds a temporary from its field at +0x08, assigns it into holder, releases the temporary, then forwards to holder->field_0x04's vtable slot 0x2C(holder, arg2) and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t fn_00516030(void* holder, void* arg2) {
+    auto* h = static_cast<uint8_t*>(holder);
+
+    void* inner = *reinterpret_cast<void**>(h + 0x00);
+    if (inner == nullptr) {
+        // Original constructs a DerivedException in place and throws it through the CRT thunk.
+        // Exception object size is not recoverable from the listing, so a conservative buffer is used.
+        alignas(8) uint8_t exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return 0; // not reached: the CRT throw does not return
+    }
+
+    uint32_t value = *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(inner) + 0x08);
+    LiftPairTemp tmp{};
+    ext_006720C0(&tmp, value);
+
+    ext_0041CF50(holder, &tmp);
+
+    if (tmp.field_0x04 != nullptr) {
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(
+            vtable_slot(tmp.field_0x04, 0x78));
+        release(tmp.field_0x04, &tmp);
+    }
+
+    // holder->field_0x04 may have been replaced by ext_0041CF50, so reload it here.
+    void* target = *reinterpret_cast<void**>(h + 0x04);
+    auto forward = reinterpret_cast<uint32_t(__thiscall*)(void*, void*, void*)>(
+        vtable_slot(target, 0xB0));
+    return forward(target, holder, arg2);
+}
+} // namespace lift_00516030
