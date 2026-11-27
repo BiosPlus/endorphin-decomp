@@ -1,0 +1,28 @@
+{
+  "va": "0x006AD890",
+  "size": 142,
+  "orig_symbol": "sub_006AD890",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::ForwardToChildOrSelf",
+  "class": "Unknown",
+  "signature": "static inline void* vtable_entry(void* obj, ptrdiff_t byteOffset)",
+  "summary": "Returns early for a null this; otherwise calls a1's vtable slot +0x38 with this-\u003efield_0x3C, then forwards (a1, *a2, a3, a4) to vtable slot +0x04 of this-\u003efield_0x30 (or of this itself when that child pointer is null).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:44Z"
+}

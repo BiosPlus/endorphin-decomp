@@ -64332,6 +64332,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006AD3C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006AD890": {
+    "name": "Unknown::ForwardToChildOrSelf",
+    "class": "Unknown",
+    "signature": "static inline void* vtable_entry(void* obj, ptrdiff_t byteOffset)",
+    "summary": "Returns early for a null this; otherwise calls a1's vtable slot +0x38 with this-\u003efield_0x3C, then forwards (a1, *a2, a3, a4) to vtable slot +0x04 of this-\u003efield_0x30 (or of this itself when that child pointer is null).",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AD950": {
     "name": "fn_006AD950",
     "class": "UnknownObject",

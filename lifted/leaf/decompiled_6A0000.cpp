@@ -1206,3 +1206,43 @@ void fn_006A02B0(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_006A02B0
+
+// [0x006AD890] sub_006AD890 (142 bytes)
+namespace lift_006AD890 {
+// @name Unknown::ForwardToChildOrSelf
+// @class Unknown
+// @summary Returns early for a null this; otherwise calls a1's vtable slot +0x38 with this->field_0x3C, then forwards (a1, *a2, a3, a4) to vtable slot +0x04 of this->field_0x30 (or of this itself when that child pointer is null).
+// @field Unknown +0x30 void* field_0x30
+// @field Unknown +0x3C uint32_t field_0x3C
+
+struct Vec16 {
+    uint32_t d[4];
+};
+
+// Thiscall-style slot signatures (this in ECX, stack args in order).
+using VSlotObjU32 = void (*)(void* self, uint32_t arg);
+using VSlotForward = void (*)(void* self, void* a1, Vec16 payload, uint32_t a3, uint32_t a4);
+
+// Reads the function pointer stored at byteOffset within the vtable of obj.
+static inline void* vtable_entry(void* obj, ptrdiff_t byteOffset) {
+    uint8_t* vt = *reinterpret_cast<uint8_t* const*>(obj);
+    return *reinterpret_cast<void* const*>(vt + byteOffset);
+}
+
+void fn_006AD890(void* self, void* a1, const Vec16* a2, uint32_t a3, uint32_t a4) {
+    if (self == nullptr) {
+        return;
+    }
+
+    uint32_t value = lift_field<uint32_t>(self, 0x3C);
+    reinterpret_cast<VSlotObjU32>(vtable_entry(a1, 0x38))(a1, value);
+
+    Vec16 payload = *a2;
+    void* child = lift_field<void*>(self, 0x30);
+    if (child == nullptr) {
+        reinterpret_cast<VSlotForward>(vtable_entry(self, 0x04))(self, a1, payload, a3, a4);
+    } else {
+        reinterpret_cast<VSlotForward>(vtable_entry(child, 0x04))(child, a1, payload, a3, a4);
+    }
+}
+} // namespace lift_006AD890
