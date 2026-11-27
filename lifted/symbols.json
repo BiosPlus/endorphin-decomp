@@ -78424,6 +78424,13 @@
     "summary": "Frees all entries in two EntryTable members at +0xc4 and +0xd8 using MFC80!ord_764 (operator delete).",
     "lifted_path": "lifted/leaf/decompiled_760000.cpp"
   },
+  "0x00764190": {
+    "name": "Unknown::initFromCStringAndWords_00764190",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_00764190(void* ecx, const char* a1, uint32_t a2, uint32_t a3)",
+    "summary": "Stores two 32-bit arguments at +0x00 and +0x04, initializes the sub-object at +0x08 from a C string, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_760000.cpp"
+  },
   "0x007641C0": {
     "name": "sub_007641C0",
     "signature": "extern \"C\" void __fastcall fn_007641C0(void* self)",

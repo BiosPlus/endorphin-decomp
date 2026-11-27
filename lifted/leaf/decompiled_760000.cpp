@@ -285,3 +285,23 @@ bool fn_007643C0(void* self) {
     return result == 0;
 }
 } // namespace lift_007643C0
+
+// [0x00764190]
+namespace lift_00764190 {
+// @name Unknown::initFromCStringAndWords_00764190
+// @class Unknown
+// @summary Stores two 32-bit arguments at +0x00 and +0x04, initializes the sub-object at +0x08 from a C string, and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint8_t field_0x08
+
+extern void* ext_006B9D80(void* ecx, const char* s);
+
+extern void* fn_00764190(void* ecx, const char* a1, uint32_t a2, uint32_t a3) {
+    uint8_t* self = static_cast<uint8_t*>(ecx);
+    *reinterpret_cast<uint32_t*>(self + 0x00) = a2;
+    *reinterpret_cast<uint32_t*>(self + 0x04) = a3;
+    ext_006B9D80(self + 0x08, a1);
+    return self;
+}
+} // namespace lift_00764190
