@@ -1546,3 +1546,32 @@ void fn_004B66E0(void* self) {
     lift_field<uint32_t>(self, 0xC) = 0;
 }
 } // namespace lift_004B66E0
+
+// [0x004B73A0]
+namespace lift_004B73A0 {
+extern uint32_t mem_00AE1D18;
+extern uint32_t mem_00AE1D1C;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FE8;
+
+// @name getGlobalStringByIndex
+// @summary Returns a copy of a global std::string vector element by index, or an empty string if out of bounds.
+uint32_t __stdcall fn_004B73A0(uint32_t out_str, uint32_t index) {
+    using StrCopyCtorFn = void(__thiscall*)(uint32_t, uint32_t);
+    using StrDefaultCtorFn = void(__thiscall*)(uint32_t);
+
+    uint32_t begin = mem_00AE1D18;
+    if (begin != 0) {
+        int32_t byte_len = static_cast<int32_t>(mem_00AE1D1C - begin);
+        uint32_t count = static_cast<uint32_t>(byte_len / 28);
+        if (index < count) {
+            uint32_t elem = begin + index * 28u;
+            reinterpret_cast<StrCopyCtorFn>(mem_00924FE0)(out_str, elem);
+            return out_str;
+        }
+    }
+
+    reinterpret_cast<StrDefaultCtorFn>(mem_00924FE8)(out_str);
+    return out_str;
+}
+} // namespace lift_004B73A0
