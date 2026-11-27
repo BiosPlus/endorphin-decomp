@@ -110,3 +110,26 @@ void* __thiscall fn_00757D60(void* self, void* arg) {
     return self;
 }
 } // namespace lift_00757D60
+
+// [0x00754F20] sub_00754F20 (93 bytes)
+namespace lift_00754F20 {
+// Known callee 0x006B9D10: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+extern void* ext_006B9D10(void* self);
+// Known callee 0x006E73B0: Unknown::initWithArgs_006E73B0 (Initializes the sub-object at +0x08, stores two constructor arguments at +0x04 and +0x54, runs the reset helper, and returns this.)
+extern void* ext_006E73B0(void* self, DWORD arg1, DWORD arg2);
+
+// @name Unknown::initWithArgsAndInitSubobject_00754F20
+// @class Unknown
+// @summary Stores arg1 at +0x04, initializes the sub-object at +0x08 with constant args (0x00AAE878, 6), initializes the sub-object at +0x60, sets the vtable to 0x00996BF0, and returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x04 DWORD arg1Value
+// @field Unknown +0x08 BYTE field_0x08
+// @field Unknown +0x60 BYTE field_0x60
+void* fn_00754F20(void* self, DWORD arg1) {
+    lift_field<DWORD>(self, 0x04) = arg1;
+    ext_006E73B0(&lift_field<BYTE>(self, 0x08), 0x00AAE878u, 6u);
+    ext_006B9D10(&lift_field<BYTE>(self, 0x60));
+    lift_field<DWORD>(self, 0x00) = 0x00996BF0u;
+    return self;
+}
+} // namespace lift_00754F20

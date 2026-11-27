@@ -1,0 +1,40 @@
+{
+  "va": "0x00754F20",
+  "size": 93,
+  "orig_symbol": "sub_00754F20",
+  "src_path": "src/leaf/decompiled_750000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_750000.cpp",
+  "name": "Unknown::initWithArgsAndInitSubobject_00754F20",
+  "class": "Unknown",
+  "signature": "void* fn_00754F20(void* self, DWORD arg1)",
+  "summary": "Stores arg1 at +0x04, initializes the sub-object at +0x08 with constant args (0x00AAE878, 6), initializes the sub-object at +0x60, sets the vtable to 0x00996BF0, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "arg1Value"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "BYTE",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "BYTE",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:57:00Z"
+}

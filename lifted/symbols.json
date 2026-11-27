@@ -78751,6 +78751,13 @@
     "summary": "Static 49-byte lookup table (values 0x00-0x07 and filler 0x08) followed by 11 bytes of 0x90 padding; not executable code.",
     "lifted_path": "lifted/leaf/decompiled_750000.cpp"
   },
+  "0x00754F20": {
+    "name": "Unknown::initWithArgsAndInitSubobject_00754F20",
+    "class": "Unknown",
+    "signature": "void* fn_00754F20(void* self, DWORD arg1)",
+    "summary": "Stores arg1 at +0x04, initializes the sub-object at +0x08 with constant args (0x00AAE878, 6), initializes the sub-object at +0x60, sets the vtable to 0x00996BF0, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_750000.cpp"
+  },
   "0x00754F80": {
     "name": "sub_00754F80",
     "signature": "extern \"C\" void* __fastcall fn_00754F80(void* self, int edx_unused, unsigned int flags)",
