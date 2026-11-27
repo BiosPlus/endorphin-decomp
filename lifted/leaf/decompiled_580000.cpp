@@ -1312,3 +1312,23 @@ uint32_t __thiscall fn_005861D0(uint8_t* self) {
     return total;
 }
 } // namespace lift_005861D0
+
+// [0x00585270]
+namespace lift_00585270 {
+extern uint32_t mem_00B3EB80;
+extern uint8_t mem_00B3EB64[];
+
+extern void* ext_0066AD10(void* out_str, uint32_t arg2);
+extern int ext_006A6C87(void (*func)());
+
+// @name getStaticBoolString_00B3EB64
+// @summary Lazily initializes and returns a static string/object at 0x00B3EB64, registering its destructor via atexit.
+void* fn_00585270() {
+    if ((mem_00B3EB80 & 1u) == 0) {
+        mem_00B3EB80 |= 1u;
+        ext_0066AD10(mem_00B3EB64, 0x00A85C84u);
+        ext_006A6C87(reinterpret_cast<void (*)()>(0x0091D140u));
+    }
+    return mem_00B3EB64;
+}
+} // namespace lift_00585270

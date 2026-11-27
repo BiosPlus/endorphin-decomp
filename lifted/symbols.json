@@ -27041,6 +27041,12 @@
     "summary": "Copies a range of 0x3C-byte records from [first, last) to dest and returns dest past the last copied record.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057BF20": {
+    "name": "std_lower_bound_string_0x2c",
+    "signature": "void* __cdecl sub_0057BF20(void* first, void* last, const void* val)",
+    "summary": "Binary search (lower_bound) for a 0x2c-byte element by its leading std::string",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057C010": {
     "name": "sub_0057C010",
     "signature": "extern uint32_t fn_0057C010(uint32_t first, uint32_t last, uint32_t dest)",
@@ -27400,6 +27406,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00585250(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_005F09E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x00585270": {
+    "name": "getStaticBoolString_00B3EB64",
+    "signature": "void* fn_00585270()",
+    "summary": "Lazily initializes and returns a static string/object at 0x00B3EB64, registering its destructor via atexit.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x005853E0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, bool, getVisibility, bool, vcall32\u003e::vfunc_41",
@@ -40913,6 +40925,12 @@
     "signature": "int32_t fn_00620F60(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
+  },
+  "0x00620F80": {
+    "name": "sub_00620F80",
+    "signature": "void* __thiscall sub_00620F80(void* self, const void* other)",
+    "summary": "Copy constructor copying two std::string fields and two double fields",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00620FE0": {
     "name": "allocArray72",
