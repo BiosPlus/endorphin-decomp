@@ -10,7 +10,32 @@
 // Recovered field layout for NMData::EffectorSkeletalData:
 namespace lifted_layout {
 struct NMData_EffectorSkeletalData_Fields {
-    // +0x4   std::string              field_0x04  (evidence: 0x0060C3D0, 0x00626850)
-    // +0x44  char                     field_0x44  (evidence: 0x00626D00)
+    // +0x4   std::string              field_0x04  (evidence: 0x0060C3D0, 0x00626850, 0x00626D20)
+    // +0x20  std::string              field_0x20  (evidence: 0x00626D20)
+    // +0x44  char                     field_0x44  (evidence: 0x00626D00) // CONFLICT: multiple definitions at +0x44
+    // +0x44  float                    field_0x44  (evidence: 0x00626D20) // CONFLICT: multiple definitions at +0x44
+    // +0x48  float                    field_0x48  (evidence: 0x00626D20)
+    // +0x4C  float                    field_0x4c  (evidence: 0x00626D20)
+    // +0x50  float                    field_0x50  (evidence: 0x00626D20)
+    // +0x54  float                    field_0x54  (evidence: 0x00626D20)
+    // +0x58  float                    field_0x58  (evidence: 0x00626D20)
+    // +0x5C  float                    field_0x5c  (evidence: 0x00626D20)
+    // +0x60  float                    field_0x60  (evidence: 0x00626D20)
+    // +0x64  float                    field_0x64  (evidence: 0x00626D20)
+    // +0x68  float                    field_0x68  (evidence: 0x00626D20)
+    // +0x6C  float                    field_0x6c  (evidence: 0x00626D20)
+    // +0x70  float                    field_0x70  (evidence: 0x00626D20)
+    // +0x74  uint32_t                 field_0x74  (evidence: 0x00626D20)
+    // +0x78  uint32_t                 field_0x78  (evidence: 0x00626D20)
+    // +0x7C  uint8_t                  field_0x7c  (evidence: 0x00626D20)
+    // +0x80  float                    field_0x80  (evidence: 0x00626D20)
+    // +0x84  float                    field_0x84  (evidence: 0x00626D20)
+    // +0x88  float                    field_0x88  (evidence: 0x00626D20)
+    // +0x8C  float                    field_0x8c  (evidence: 0x00626D20)
+    // +0x90  float                    field_0x90  (evidence: 0x00626D20)
+    // +0x94  float                    field_0x94  (evidence: 0x00626D20)
+    // +0x98  float                    field_0x98  (evidence: 0x00626D20)
+    // +0x9C  float                    field_0x9c  (evidence: 0x00626D20)
+    // +0xA0  float                    field_0xa0  (evidence: 0x00626D20)
 };
 } // namespace lifted_layout

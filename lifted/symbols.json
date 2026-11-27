@@ -58720,6 +58720,13 @@
     "summary": "Clears the base-class strings, range-checks the string range at this+0x44 against this+0x4c, then calls copyStringRangeTruncate on it.",
     "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
   },
+  "0x0060D5F0": {
+    "name": "NMData::EffectorGroupData::vfunc_13",
+    "class": "NMData::EffectorGroupData",
+    "signature": "void __thiscall fn_0060D5F0(void* self, void* src)",
+    "summary": "Populates field_0x04 and vector at +0x44 from matching elements in source container",
+    "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
+  },
   "0x0060D730": {
     "name": "unknown::ctorWithTailFields",
     "class": "unknown",
@@ -62773,6 +62780,13 @@
     "class": "NMData::EffectorSkeletalData",
     "signature": "void fn_00626D00(void* self)",
     "summary": "Clears base-class string members, then initializes the sub-object at +0x44 via initFields.",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
+  },
+  "0x00626D20": {
+    "name": "NMData::EffectorSkeletalData::clone",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "void* fn_00626D20(void* self)",
+    "summary": "Allocates and returns a copy of this EffectorSkeletalData instance.",
     "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
   },
   "0x00626E60": {
@@ -78807,6 +78821,13 @@
     "signature": "void __stdcall fn_006A1EA0(void* range, void* arg)",
     "summary": "Walks the element range from its last entry: probes the last element via vfunc_0 (stops on 0xC), calls its vfunc_2, and repeats until the range is empty; then drops the last entry. Throws int 3 on an invalid range.",
     "lifted_path": "lifted/ExprParser/Operators/RightParenthesis.cpp"
+  },
+  "0x006A2100": {
+    "name": "ExprParser::Operators::Method2::vfunc_2",
+    "class": "ExprParser::Operators::Method2",
+    "signature": "void __thiscall fn_006A2100(void* self, uint8_t* arg1, uint8_t* arg2)",
+    "summary": "Pops 3 expression tokens from the operand stack, invokes virtual method 0xc4 on the first token's object with all 3 tokens, destroys the temporary result and the 3 popped tokens, and pops 1 entry from arg1.",
+    "lifted_path": "lifted/ExprParser/Operators/Method2.cpp"
   },
   "0x006A2250": {
     "name": "ExprParser::Operators::Add::vfunc_2",

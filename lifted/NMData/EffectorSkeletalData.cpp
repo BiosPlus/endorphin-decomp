@@ -179,3 +179,65 @@ void* fn_00626A00(void* self) {
 }
 } // namespace lift_00626900
 } // namespace lift_00626A00
+
+// [0x00626D20]
+namespace lift_00626D20 {
+// @name NMData::EffectorSkeletalData::clone
+// @class NMData::EffectorSkeletalData
+// @summary Allocates and returns a copy of this EffectorSkeletalData instance.
+// @field NMData::EffectorSkeletalData +0x04 std::string field_0x04
+// @field NMData::EffectorSkeletalData +0x20 std::string field_0x20
+// @field NMData::EffectorSkeletalData +0x44 float field_0x44
+// @field NMData::EffectorSkeletalData +0x48 float field_0x48
+// @field NMData::EffectorSkeletalData +0x4c float field_0x4c
+// @field NMData::EffectorSkeletalData +0x50 float field_0x50
+// @field NMData::EffectorSkeletalData +0x54 float field_0x54
+// @field NMData::EffectorSkeletalData +0x58 float field_0x58
+// @field NMData::EffectorSkeletalData +0x5c float field_0x5c
+// @field NMData::EffectorSkeletalData +0x60 float field_0x60
+// @field NMData::EffectorSkeletalData +0x64 float field_0x64
+// @field NMData::EffectorSkeletalData +0x68 float field_0x68
+// @field NMData::EffectorSkeletalData +0x6c float field_0x6c
+// @field NMData::EffectorSkeletalData +0x70 float field_0x70
+// @field NMData::EffectorSkeletalData +0x74 uint32_t field_0x74
+// @field NMData::EffectorSkeletalData +0x78 uint32_t field_0x78
+// @field NMData::EffectorSkeletalData +0x7c uint8_t field_0x7c
+// @field NMData::EffectorSkeletalData +0x80 float field_0x80
+// @field NMData::EffectorSkeletalData +0x84 float field_0x84
+// @field NMData::EffectorSkeletalData +0x88 float field_0x88
+// @field NMData::EffectorSkeletalData +0x8c float field_0x8c
+// @field NMData::EffectorSkeletalData +0x90 float field_0x90
+// @field NMData::EffectorSkeletalData +0x94 float field_0x94
+// @field NMData::EffectorSkeletalData +0x98 float field_0x98
+// @field NMData::EffectorSkeletalData +0x9c float field_0x9c
+// @field NMData::EffectorSkeletalData +0xa0 float field_0xa0
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_006267B0(void* self);
+extern uintptr_t mem_00924FDC;
+
+void* fn_00626D20(void* self) {
+    void* raw = ext_006A5C62(0xa8);
+    void* copy = raw ? ext_006267B0(raw) : nullptr;
+
+    using StringAssignFn = void* (__thiscall*)(void*, const void*);
+    auto string_assign = reinterpret_cast<StringAssignFn>(mem_00924FDC);
+    string_assign(static_cast<uint8_t*>(copy) + 0x04, static_cast<const uint8_t*>(self) + 0x04);
+    string_assign(static_cast<uint8_t*>(copy) + 0x20, static_cast<const uint8_t*>(self) + 0x20);
+
+    static constexpr uintptr_t kFloatOffsets[] = {
+        0x50, 0x54, 0x58, 0x44, 0x48, 0x4c, 0x5c, 0x60, 0x64, 0x68, 0x6c, 0x70,
+        0x80, 0x84, 0x88, 0x8c, 0x90, 0x94, 0x98, 0x9c, 0xa0
+    };
+    for (uintptr_t off : kFloatOffsets) {
+        lift_field<float>(copy, off) = lift_field<float>(self, off);
+    }
+
+    lift_field<uint8_t>(copy, 0x7c) = lift_field<uint8_t>(self, 0x7c);
+    lift_field<uint32_t>(copy, 0x74) = lift_field<uint32_t>(self, 0x74);
+    lift_field<uint32_t>(copy, 0x78) = lift_field<uint32_t>(self, 0x78);
+
+    return copy;
+}
+} // namespace lift_00626D20
