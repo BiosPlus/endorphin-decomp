@@ -67668,3 +67668,56 @@ void fn_005132C0(void* self) {
     ext_0046C4E0();
 }
 } // namespace lift_005132C0
+
+// [0x004C0770] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_3 (130 bytes)
+namespace lift_004C0770 {
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void ext_004C0280();
+// MSVCP80 IAT slots: operator==(const std::string&, const char*) and std::string::~string()
+extern int mem_00924FC0;
+extern int mem_00924FF4;
+
+namespace {
+
+using CopyStringFn = void*(__stdcall*)(void* outString, void* document);
+using StringEqualsFn = bool(__cdecl*)(const void* str, const char* literal);
+using StringDtorFn = void(__thiscall*)(void* self);
+
+inline StringEqualsFn importStringEquals() {
+    return reinterpret_cast<StringEqualsFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FC0)));
+}
+
+inline StringDtorFn importStringDtor() {
+    return reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+}
+
+}  // namespace
+
+// @name ExprParser::ReadMethodType::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the property source description from the document and returns true if it equals either of two fixed literal strings.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+__stdcall bool fn_004C0770(void* self) {
+    // Local std::string storage (MSVC x86 layout is 0x1C bytes).
+    alignas(8) unsigned char description[0x1C];
+
+    void* document = *reinterpret_cast<void**>(self);
+
+    auto copyString = reinterpret_cast<CopyStringFn>(&ext_004C0280);
+    void* result = copyString(description, document);
+
+    auto stringEquals = importStringEquals();
+    const auto* literalA = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0092F10Cu));
+    const auto* literalB = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0093A810u));
+
+    bool matched = stringEquals(result, literalA);
+    if (!matched) {
+        matched = stringEquals(result, literalB);
+    }
+
+    importStringDtor()(description);
+    return matched;
+}
+} // namespace lift_004C0770

@@ -15781,6 +15781,13 @@
     "summary": "Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C0770": {
+    "name": "ExprParser::ReadMethodType::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",
+    "signature": "inline StringEqualsFn importStringEquals()",
+    "summary": "Copies the property source description from the document and returns true if it equals either of two fixed literal strings.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C0800": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",
