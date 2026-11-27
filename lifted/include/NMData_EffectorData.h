@@ -10,6 +10,13 @@
 // Recovered field layout for NMData::EffectorData:
 namespace lifted_layout {
 struct NMData_EffectorData_Fields {
-    // +0x44  uint32_t                 field_0x44  (evidence: 0x0060BDF0)
+    // +0x4   std::string              field_0x04  (evidence: 0x0060C5A0)
+    // +0x20  std::string              field_0x20  (evidence: 0x0060C5A0)
+    // +0x44  uint32_t                 field_0x44  (evidence: 0x0060BDF0, 0x0060C5A0)
+    // +0x48  float                    field_0x48  (evidence: 0x0060C5A0)
+    // +0x4C  float                    field_0x4c  (evidence: 0x0060C5A0)
+    // +0x50  float                    field_0x50  (evidence: 0x0060C5A0)
+    // +0x54  float                    field_0x54  (evidence: 0x0060C5A0)
+    // +0x58  uint8_t                  field_0x58  (evidence: 0x0060C5A0)
 };
 } // namespace lifted_layout

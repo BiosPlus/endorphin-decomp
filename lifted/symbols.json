@@ -34255,6 +34255,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005ACD80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
   },
+  "0x005AD0E0": {
+    "name": "allocAndInitNode_005AD0E0",
+    "signature": "extern \"C\" void* __stdcall fn_005AD0E0(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint8_t a5)",
+    "summary": "Allocates a 0x2c-byte object, initializes its fields and std::string member, and frees/rethrows on exception.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AD180": {
     "name": "sub_005AD180",
     "signature": "void* fn_005AD180()",
@@ -39888,6 +39894,12 @@
     "summary": "Releases the owned object at +0x44 (if any), destroys the std::string at +0x04, then re-initializes the object via sub_0065F440.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005DC730": {
+    "name": "copyConstruct_00968AD4",
+    "signature": "void* __thiscall fn_005DC730(void* self, const void* other)",
+    "summary": "Copy-constructs an object with vtable 0x00968AD4, copying its std::string at +0x04 and scalar fields.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DC930": {
     "name": "ResetOwnedField0x44",
     "signature": "void fn_005DC930(void* self)",
@@ -44637,6 +44649,13 @@
     "signature": "__thiscall void* fn_0060C570(void* self)",
     "summary": "Runs the base constructor ext_0060B910 on self, stamps vtable 0x0097215C, clears the dword at +0x44, initializes the embedded record at +0x48 via ext_0060BCD0, and returns self.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060C5A0": {
+    "name": "NMData::EffectorData::clone",
+    "class": "NMData::EffectorData",
+    "signature": "void* __thiscall fn_0060C5A0(void* self)",
+    "summary": "Allocates a new EffectorData instance, constructs it, and copies all fields from this.",
+    "lifted_path": "lifted/NMData/EffectorData.cpp"
   },
   "0x0060CC60": {
     "name": "GetOnceInitString_0060CC60",
@@ -56665,6 +56684,12 @@
     "class": "Unknown",
     "signature": "void __thiscall fn_00672590(uint8_t* self)",
     "summary": "Auto-lifted identical-shape clone of 0x005940E0 (Unknown::destructorBody_005940E0).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x006725F0": {
+    "name": "sortThreeByName",
+    "signature": "static void compareAndSwap(void** lhs, void** rhs)",
+    "summary": "Sorts three object pointers in ascending order by their virtual name string (vtable +0x24).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00672690": {

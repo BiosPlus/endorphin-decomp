@@ -114,3 +114,45 @@ std::string fn_0060BBF0(const void* /*self*/) {
 }
 } // namespace lift_0047DB90
 } // namespace lift_0060BBF0
+
+// [0x0060C5A0]
+namespace lift_0060C5A0 {
+// @name NMData::EffectorData::clone
+// @class NMData::EffectorData
+// @summary Allocates a new EffectorData instance, constructs it, and copies all fields from this.
+// @field NMData::EffectorData +0x04 std::string field_0x04
+// @field NMData::EffectorData +0x20 std::string field_0x20
+// @field NMData::EffectorData +0x44 uint32_t field_0x44
+// @field NMData::EffectorData +0x48 float field_0x48
+// @field NMData::EffectorData +0x4c float field_0x4c
+// @field NMData::EffectorData +0x50 float field_0x50
+// @field NMData::EffectorData +0x54 float field_0x54
+// @field NMData::EffectorData +0x58 uint8_t field_0x58
+
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_0060C570(void* self);
+extern void* (__thiscall *mem_00924FDC)(void* self, const void* other);
+
+void* __thiscall fn_0060C5A0(void* self) {
+    uint8_t* src = static_cast<uint8_t*>(self);
+    void* mem = ext_006A5C62(0x5c);
+    uint8_t* dst = nullptr;
+    if (mem != nullptr) {
+        dst = static_cast<uint8_t*>(ext_0060C570(mem));
+    }
+
+    lift_field<uint32_t>(dst, 0x44) = lift_field<uint32_t>(src, 0x44);
+
+    mem_00924FDC(dst + 0x04, src + 0x04);
+    mem_00924FDC(dst + 0x20, src + 0x20);
+
+    lift_field<float>(dst, 0x48) = lift_field<float>(src, 0x48);
+    lift_field<float>(dst, 0x4c) = lift_field<float>(src, 0x4c);
+    lift_field<float>(dst, 0x50) = lift_field<float>(src, 0x50);
+    lift_field<uint8_t>(dst, 0x58) = lift_field<uint8_t>(src, 0x58);
+    lift_field<float>(dst, 0x54) = lift_field<float>(src, 0x54);
+
+    return dst;
+}
+} // namespace lift_0060C5A0

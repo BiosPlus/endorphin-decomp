@@ -1,0 +1,64 @@
+{
+  "va": "0x0060C5A0",
+  "size": 148,
+  "orig_symbol": "NMData::EffectorData::vfunc_12",
+  "src_path": "src/NMData/EffectorData.cpp",
+  "lifted_path": "lifted/NMData/EffectorData.cpp",
+  "name": "NMData::EffectorData::clone",
+  "class": "NMData::EffectorData",
+  "signature": "void* __thiscall fn_0060C5A0(void* self)",
+  "summary": "Allocates a new EffectorData instance, constructs it, and copies all fields from this.",
+  "fields": [
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x58",
+      "type": "uint8_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:07:32Z"
+}
