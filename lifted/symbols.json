@@ -84607,6 +84607,12 @@
     "summary": "Returns address of global mem_00AB6B0C.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080F040": {
+    "name": "areStringsOrObjectsEqual",
+    "signature": "int32_t fn_0080F040(void* a, void* b)",
+    "summary": "Returns 1 if compareStringsOrObjects(a, b) == 0, 0 if either pointer is null or the comparison is nonzero.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080F440": {
     "name": "TableStepsExactlyToArg",
     "signature": "extern \"C\" uint32_t fn_0080F440(int32_t arg)",

@@ -1322,3 +1322,17 @@ int __cdecl sub_0080C2C0(char* dst, const char* src, int src_len, uint32_t max_w
     return out_len;
 }
 } // namespace lift_0080C2C0
+
+// [0x0080F040] sub_0080F040 (48 bytes)
+namespace lift_0080F040 {
+extern int32_t ext_00859830(void* a, void* b);
+
+// @name areStringsOrObjectsEqual
+// @summary Returns 1 if compareStringsOrObjects(a, b) == 0, 0 if either pointer is null or the comparison is nonzero.
+int32_t fn_0080F040(void* a, void* b) {
+    if (a == nullptr || b == nullptr) {
+        return 0;
+    }
+    return ext_00859830(a, b) == 0 ? 1 : 0;
+}
+} // namespace lift_0080F040
