@@ -1,0 +1,28 @@
+{
+  "va": "0x00443460",
+  "size": 158,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::DragZoomState::vfunc_7",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/DragZoomState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/DragZoomState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::DragZoomState::vfunc_7",
+  "class": "MultiTrackView::MultiTrackViewStates::DragZoomState",
+  "signature": "UCHAR fn_00443460(void* self, DWORD flags, INT arg2, INT arg3)",
+  "summary": "If flags bit 4 is set and the two pixel positions span more than 1.0 time unit, clamps the pair and invalidates the owner window; then switches the state manager to index 0.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::DragZoomState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::DragZoomState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:48:38Z"
+}

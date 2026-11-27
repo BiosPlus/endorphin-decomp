@@ -10,6 +10,7 @@
 // Recovered field layout for MultiTrackView::MultiTrackViewStates::DragZoomState:
 namespace lifted_layout {
 struct MultiTrackView_MultiTrackViewStates_DragZoomState_Fields {
-    // +0x8   void*                    field_0x08  (evidence: 0x00443440)
+    // +0x4   void*                    field_0x04  (evidence: 0x00443460)
+    // +0x8   void*                    field_0x08  (evidence: 0x00443440, 0x00443460)
 };
 } // namespace lifted_layout

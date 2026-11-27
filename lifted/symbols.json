@@ -5497,6 +5497,13 @@
     "summary": "Invalidates the window of the owner object, then releases mouse capture.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/DragZoomState.cpp"
   },
+  "0x00443460": {
+    "name": "MultiTrackView::MultiTrackViewStates::DragZoomState::vfunc_7",
+    "class": "MultiTrackView::MultiTrackViewStates::DragZoomState",
+    "signature": "UCHAR fn_00443460(void* self, DWORD flags, INT arg2, INT arg3)",
+    "summary": "If flags bit 4 is set and the two pixel positions span more than 1.0 time unit, clamps the pair and invalidates the owner window; then switches the state manager to index 0.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/DragZoomState.cpp"
+  },
   "0x00443500": {
     "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12",
     "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
