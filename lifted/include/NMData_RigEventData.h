@@ -12,8 +12,14 @@ namespace lifted_layout {
 struct NMData_RigEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004D3D00, 0x004DC450)
     // +0x4   void*                    field_0x04  (evidence: 0x004DC450)
+    // +0x15C int32_t                  field_0x15C  (evidence: 0x004DB020)
+    // +0x160 int32_t                  field_0x160  (evidence: 0x004DB020)
     // +0x16C void*                    field_0x16C  (evidence: 0x004DCD80)
+    // +0x17C uint8_t                  field_0x17C  (evidence: 0x004DB020)
     // +0x180 void*                    SelectionVariable::Listener::vptr  (evidence: 0x004A9B50, 0x004D3D30)
+    // +0x18C uint32_t                 field_0x18C  (evidence: 0x004DB020)
+    // +0x192 uint8_t                  field_0x192  (evidence: 0x004DB020)
+    // +0x193 uint8_t                  field_0x193  (evidence: 0x004DB020)
     // +0x398 uint8_t                  field_0x398  (evidence: 0x004D3C60)
 };
 } // namespace lifted_layout

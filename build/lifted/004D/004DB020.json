@@ -1,0 +1,52 @@
+{
+  "va": "0x004DB020",
+  "size": 74,
+  "orig_symbol": "NMData::RigEventData::vfunc_84",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_84",
+  "class": "NMData::RigEventData",
+  "signature": "void fn_004DB020(void* self, int32_t arg)",
+  "summary": "Range-checks an int argument against this+0x15C/0x160 when enabled (this+0x17C, this+0x18C set) and dispatches to ext_004DA740 with flag bytes; otherwise calls ext_004DA060.",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15C"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17C"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x18C",
+      "type": "uint32_t",
+      "name": "field_0x18C"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x192",
+      "type": "uint8_t",
+      "name": "field_0x192"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x193",
+      "type": "uint8_t",
+      "name": "field_0x193"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:44:32Z"
+}

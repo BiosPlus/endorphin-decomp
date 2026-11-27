@@ -23705,6 +23705,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::RigEventData::vfunc_22.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004DB020": {
+    "name": "NMData::RigEventData::vfunc_84",
+    "class": "NMData::RigEventData",
+    "signature": "void fn_004DB020(void* self, int32_t arg)",
+    "summary": "Range-checks an int argument against this+0x15C/0x160 when enabled (this+0x17C, this+0x18C set) and dispatches to ext_004DA740 with flag bytes; otherwise calls ext_004DA060.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004DB920": {
     "name": "NMData::RigEventData::vfunc_0",
     "class": "NMData::RigEventData",

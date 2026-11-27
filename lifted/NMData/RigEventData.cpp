@@ -200,3 +200,34 @@ void fn_004DCD80(void* self) {
     ext_004DCC80(self, mem_00AE6004);
 }
 } // namespace lift_004DCD80
+
+// [0x004DB020] NMData::RigEventData::vfunc_84 (74 bytes)
+namespace lift_004DB020 {
+extern void ext_004DA060();
+extern void ext_004DA740(uint8_t b192, uint8_t b193, int32_t arg);
+
+// @name NMData::RigEventData::vfunc_84
+// @class NMData::RigEventData
+// @summary Range-checks an int argument against this+0x15C/0x160 when enabled (this+0x17C, this+0x18C set) and dispatches to ext_004DA740 with flag bytes; otherwise calls ext_004DA060.
+// @field NMData::RigEventData +0x15C int32_t field_0x15C
+// @field NMData::RigEventData +0x160 int32_t field_0x160
+// @field NMData::RigEventData +0x17C uint8_t field_0x17C
+// @field NMData::RigEventData +0x18C uint32_t field_0x18C
+// @field NMData::RigEventData +0x192 uint8_t field_0x192
+// @field NMData::RigEventData +0x193 uint8_t field_0x193
+void fn_004DB020(void* self, int32_t arg) {
+    if (lift_field<uint32_t>(self, 0x18C) == 0) {
+        return;
+    }
+    if (lift_field<uint8_t>(self, 0x17C) == 0) {
+        return;
+    }
+    if (arg < lift_field<int32_t>(self, 0x15C) || arg >= lift_field<int32_t>(self, 0x160)) {
+        ext_004DA060();
+        return;
+    }
+    ext_004DA740(lift_field<uint8_t>(self, 0x192),
+                 lift_field<uint8_t>(self, 0x193),
+                 arg);
+}
+} // namespace lift_004DB020
