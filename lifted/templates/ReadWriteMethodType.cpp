@@ -12052,3 +12052,28 @@ void fn_005B8C80(void* self) {
     *reinterpret_cast<int**>(static_cast<char*>(self) + 0x04) = &mem_00B43D3C;
 }
 } // namespace lift_005B8C80
+
+// [0x005C7950] ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithSiblings(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_005C7950 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; stores the arg into self's first DWORD and returns it)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B444E4;  // one-time init guard flags (bit 0 = initialized)
+extern DWORD mem_00B444E0;  // static accessor object (vtable pointer at +0)
+extern DWORD mem_00B444E8;
+extern DWORD mem_00B444EC;
+
+// @name ReadWriteMethodType<CollisionModelData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithSiblings(bool), 0}>
+// @summary One-time static-init guard that constructs the shared accessor object, then stores its address into the holder's +0x04 slot.
+// @field ExprParser::ReadWriteMethodType<...CollisionModelData...> +0x04 DWORD accessor_ptr
+void fn_005C7950(void* holder) {
+    (void)&mem_00B444E8;  // metadata-only reference from original asm (not accessed here)
+    (void)&mem_00B444EC;
+    if ((mem_00B444E4 & 1u) == 0) {
+        mem_00B444E4 |= 1u;
+        ext_0067A670(&mem_00B444E0, 0);
+        mem_00B444E0 = 0x009650A4u;  // vtable of the accessor object
+    }
+    lift_field<DWORD>(holder, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B444E0));
+}
+} // namespace lift_005C7950
