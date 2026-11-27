@@ -26087,6 +26087,13 @@
     "summary": "Copies a 4x4 matrix into the top slot of the matrix stack and loads it into OpenGL.",
     "lifted_path": "lifted/classes/NMMatrixStackManager.cpp"
   },
+  "0x0054EC30": {
+    "name": "NMMatrixStackManager::resetTopMatrixToIdentity",
+    "class": "NMMatrixStackManager",
+    "signature": "void fn_0054EC30(void* self)",
+    "summary": "Validates the matrix window [lower, end), writes an identity 4x4 float matrix at end-0x40, then calls glLoadIdentity.",
+    "lifted_path": "lifted/classes/NMMatrixStackManager.cpp"
+  },
   "0x0054ECF0": {
     "name": "NMMatrixStackManager::popMatrix",
     "class": "NMMatrixStackManager",

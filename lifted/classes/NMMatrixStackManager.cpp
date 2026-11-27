@@ -114,3 +114,38 @@ void __thiscall fn_0054EB50(void* self, const float* matrix) {
     mem_009254B4(matrix);
 }
 } // namespace lift_0054EB50
+
+// [0x0054EC30] NMMatrixStackManager::vfunc_6 (121 bytes)
+namespace lift_0054EC30 {
+// Import slots (IAT entries) for the CRT invalid-parameter handler and glLoadIdentity.
+extern void (*mem_00925134)();
+extern void (*mem_009253D4)();
+
+// @name NMMatrixStackManager::resetTopMatrixToIdentity
+// @class NMMatrixStackManager
+// @summary Validates the matrix window [lower, end), writes an identity 4x4 float matrix at end-0x40, then calls glLoadIdentity.
+// @field NMMatrixStackManager +0x08 uint32_t field_0x08 (window lower bound)
+// @field NMMatrixStackManager +0x0C uint32_t field_0x0C (window end; matrix block is [end-0x40, end))
+void fn_0054EC30(void* self) {
+    const uint32_t lower = lift_field<uint32_t>(self, 0x08);
+    const uint32_t end = lift_field<uint32_t>(self, 0x0C);
+
+    // Window checks: each failing check calls the CRT invalid-parameter handler
+    // (which does not return in practice); execution then continues as in the original.
+    if (lower > end) mem_00925134();
+
+    const uint32_t block = end - 0x40;
+    if (block > end || block < lower) mem_00925134();
+    if (block >= end) mem_00925134();
+
+    // Identity 4x4 float matrix at the block address (16 floats, offsets 0x00..0x3C).
+    float* m = reinterpret_cast<float*>(static_cast<uintptr_t>(block));
+    m[0]  = 1.0f; m[1]  = 0.0f; m[2]  = 0.0f; m[3]  = 0.0f;
+    m[4]  = 0.0f; m[5]  = 1.0f; m[6]  = 0.0f; m[7]  = 0.0f;
+    m[8]  = 0.0f; m[9]  = 0.0f; m[10] = 1.0f; m[11] = 0.0f;
+    m[12] = 0.0f; m[13] = 0.0f; m[14] = 0.0f; m[15] = 1.0f;
+
+    // Tail-call equivalent: original ends with jmp [glLoadIdentity].
+    mem_009253D4();
+}
+} // namespace lift_0054EC30

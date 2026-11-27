@@ -1,0 +1,28 @@
+{
+  "va": "0x0054EC30",
+  "size": 121,
+  "orig_symbol": "NMMatrixStackManager::vfunc_6",
+  "src_path": "src/classes/NMMatrixStackManager.cpp",
+  "lifted_path": "lifted/classes/NMMatrixStackManager.cpp",
+  "name": "NMMatrixStackManager::resetTopMatrixToIdentity",
+  "class": "NMMatrixStackManager",
+  "signature": "void fn_0054EC30(void* self)",
+  "summary": "Validates the matrix window [lower, end), writes an identity 4x4 float matrix at end-0x40, then calls glLoadIdentity.",
+  "fields": [
+    {
+      "class": "NMMatrixStackManager",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08 (window lower",
+      "name": "bound)"
+    },
+    {
+      "class": "NMMatrixStackManager",
+      "offset": "+0xC",
+      "type": "uint32_t field_0x0C (window end; matrix block is [end-0x40,",
+      "name": "end))"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:16:45Z"
+}
