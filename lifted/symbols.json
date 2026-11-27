@@ -23175,6 +23175,13 @@
     "summary": "If the object's first dword is non-zero, throw the default-message exception; otherwise build a DerivedException and throw it.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005050B0": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter,int,bogus\u003e::vfunc_43",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+    "signature": "void fn_005050B0(void* self, void* arg2)",
+    "summary": "If self's first dword is zero, throws via the CRT thunk; otherwise assigns a temporary Unknown into self (assignFromOther), then calls vtable slot 0xAC of self's field_0x04 object with (self, arg2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005051F0": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026Interpreter::bogus, 0\u003e::vfunc_47",
     "class": "ExprParser::ReadMethodType",

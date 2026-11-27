@@ -82691,3 +82691,49 @@ int fn_00504F10(void* self, void* arg2) {
     return 0;
 }
 } // namespace lift_00504F10
+
+// [0x005050B0] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_43 (155 bytes)
+namespace lift_005050B0 {
+// Known callee 0x006720C0: thiscall helper, initialises the Unknown temporary at ecx from an int32 argument.
+extern void ext_006720C0(void* self, int32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy, returns self).
+extern void ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in caller buffer).
+extern void ext_0046C3C0(void* exceptionObj);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Interpreter,int,bogus>::vfunc_43
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary If self's first dword is zero, throws via the CRT thunk; otherwise assigns a temporary Unknown into self (assignFromOther), then calls vtable slot 0xAC of self's field_0x04 object with (self, arg2).
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 void* field_0x04
+void fn_005050B0(void* self, void* arg2) {
+    if (lift_field<uint32_t>(self, 0x00) == 0) {
+        uint8_t exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return;
+    }
+
+    // Temporary Unknown object (field_0x00 at +0, field_0x04 at +4).
+    uint8_t tmp[8] = {};
+    ext_006720C0(tmp, 0);
+    ext_0041CF50(self, tmp);
+
+    // Release the temporary's field_0x04 object (vtable slot 0x78, owner = tmp).
+    void* old = lift_field<void*>(tmp, 0x04);
+    if (old != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(old);
+        using ReleaseFn = void(__thiscall*)(void* self_, void* owner);
+        reinterpret_cast<ReleaseFn>(vtbl[0x78 / 4])(old, tmp);
+    }
+
+    // Dispatch vtable slot 0xAC on self's field_0x04 object with (self, arg2).
+    void* obj = lift_field<void*>(self, 0x04);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using DispatchFn = void(__thiscall*)(void* self_, void* a, void* b);
+    reinterpret_cast<DispatchFn>(vtbl[0xAC / 4])(obj, self, arg2);
+}
+} // namespace lift_005050B0
