@@ -1,0 +1,13 @@
+{
+  "va": "0x00664A80",
+  "size": 153,
+  "orig_symbol": "sub_00664A80",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "replaceString",
+  "signature": "int __cdecl sub_00664A80(void* str, const char* find_str, const char* replace_str, bool only_first)",
+  "summary": "Replaces occurrences of a substring in a std::string and returns the replacement count.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T09:01:24Z"
+}
