@@ -7253,3 +7253,24 @@ void __stdcall fn_0064C100(void* holder) {
     *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B5583C));
 }
 } // namespace lift_0064C100
+
+// [0x0063AF70] ExprParser::WriteMethodType<EffectorSkeletal, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_0063AF70 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into the first DWORD of self).
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B52A98;   // init-guard flag (bit 0)
+extern int mem_00B52A94;   // static accessor object; first dword = vtable 0x0097A1C4
+
+// @name ExprParser::WriteMethodType<EffectorSkeletal>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorSkeletal, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}>
+// @summary Lazily initializes the static accessor object (guarded by a bit flag) and stores its address into the holder's +0x04 slot.
+// @field ExprParser::WriteMethodType<EffectorSkeletal> +0x04 DWORD staticAccessor
+void fn_0063AF70(void* holder) {
+    if (!(mem_00B52A98 & 1)) {
+        mem_00B52A98 |= 1;
+        ext_0067A670(&mem_00B52A94, 0);
+        mem_00B52A94 = 0x0097A1C4;
+    }
+    lift_field<DWORD>(holder, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B52A94));
+}
+} // namespace lift_0063AF70

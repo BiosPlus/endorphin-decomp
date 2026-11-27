@@ -45201,6 +45201,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0063AF70": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorSkeletal\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorSkeletal, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}\u003e",
+    "signature": "extern \"C\" int mem_00B52A98;   // init-guard flag (bit 0) extern \"C\" int mem_00B52A94;   // static accessor object; first dword = vtable 0x0097A1C4 void fn_0063AF70(void* holder)",
+    "summary": "Lazily initializes the static accessor object (guarded by a bit flag) and stores its address into the holder's +0x04 slot.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0063AFF0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0\u003e",

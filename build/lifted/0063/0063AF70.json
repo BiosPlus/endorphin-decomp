@@ -1,0 +1,22 @@
+{
+  "va": "0x0063AF70",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorSkeletal, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorSkeletal\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorSkeletal, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}\u003e",
+  "signature": "extern \"C\" int mem_00B52A98;   // init-guard flag (bit 0) extern \"C\" int mem_00B52A94;   // static accessor object; first dword = vtable 0x0097A1C4 void fn_0063AF70(void* holder)",
+  "summary": "Lazily initializes the static accessor object (guarded by a bit flag) and stores its address into the holder's +0x04 slot.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType\u003cEffectorSkeletal\u003e",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "staticAccessor"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:44:34Z"
+}
