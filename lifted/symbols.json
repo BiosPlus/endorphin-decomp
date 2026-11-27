@@ -43711,6 +43711,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005A2FB0": {
+    "name": "NMData::BackGroundData::vfunc_3",
+    "class": "NMData::BackGroundData",
+    "signature": "void* __thiscall fn_005A2FB0(void* self, void* node)",
+    "summary": "Serializes BackGroundData properties, child components, and scene elements to an XML node.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x005A32F0": {
     "name": "NMData::BackGroundData::vfunc_2_off_4",
     "class": "NMData::BackGroundData",

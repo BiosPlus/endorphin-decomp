@@ -1,0 +1,148 @@
+{
+  "va": "0x005A2FB0",
+  "size": 823,
+  "orig_symbol": "NMData::BackGroundData::vfunc_3",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_3",
+  "class": "NMData::BackGroundData",
+  "signature": "void* __thiscall fn_005A2FB0(void* self, void* node)",
+  "summary": "Serializes BackGroundData properties, child components, and scene elements to an XML node.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "base_transform_node"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x18",
+      "type": "std::string",
+      "name": "field_0x18"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x160",
+      "type": "void*",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x2F8",
+      "type": "std::string",
+      "name": "field_0x2f8"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x314",
+      "type": "std::string",
+      "name": "field_0x314"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x334",
+      "type": "void*",
+      "name": "field_0x334"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x338",
+      "type": "void*",
+      "name": "field_0x338"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x458",
+      "type": "std::string",
+      "name": "field_0x458"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x490",
+      "type": "void*",
+      "name": "field_0x490"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4AC",
+      "type": "void*",
+      "name": "field_0x4ac"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4E0",
+      "type": "uint8_t",
+      "name": "field_0x4e0"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4E6",
+      "type": "uint8_t",
+      "name": "field_0x4e6"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4E8",
+      "type": "uint32_t",
+      "name": "field_0x4e8"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4EC",
+      "type": "float",
+      "name": "field_0x4ec"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4F0",
+      "type": "float",
+      "name": "field_0x4f0"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x550",
+      "type": "void*",
+      "name": "field_0x550"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x55C",
+      "type": "void*",
+      "name": "field_0x55c"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x58C",
+      "type": "void*",
+      "name": "field_0x58c"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x590",
+      "type": "void*",
+      "name": "field_0x590"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x598",
+      "type": "void*",
+      "name": "field_0x598"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5E0",
+      "type": "void*",
+      "name": "field_0x5e0"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5FC",
+      "type": "void*",
+      "name": "field_0x5fc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:59:29Z"
+}

@@ -999,3 +999,170 @@ void __thiscall fn_005A68B0(void* self, void* arg1) {
     (void)mem_00925134;
 }
 } // namespace lift_005A68B0
+
+// [0x005A2FB0]
+namespace lift_005A2FB0 {
+// @name NMData::BackGroundData::vfunc_3
+// @class NMData::BackGroundData
+// @summary Serializes BackGroundData properties, child components, and scene elements to an XML node.
+// @field NMData::BackGroundData +0x04 void* base_transform_node
+// @field NMData::BackGroundData +0x18 std::string field_0x18
+// @field NMData::BackGroundData +0x160 void* field_0x160
+// @field NMData::BackGroundData +0x2F8 std::string field_0x2f8
+// @field NMData::BackGroundData +0x314 std::string field_0x314
+// @field NMData::BackGroundData +0x334 void* field_0x334
+// @field NMData::BackGroundData +0x338 void* field_0x338
+// @field NMData::BackGroundData +0x458 std::string field_0x458
+// @field NMData::BackGroundData +0x490 void* field_0x490
+// @field NMData::BackGroundData +0x4AC void* field_0x4ac
+// @field NMData::BackGroundData +0x4E0 uint8_t field_0x4e0
+// @field NMData::BackGroundData +0x4E6 uint8_t field_0x4e6
+// @field NMData::BackGroundData +0x4E8 uint32_t field_0x4e8
+// @field NMData::BackGroundData +0x4EC float field_0x4ec
+// @field NMData::BackGroundData +0x4F0 float field_0x4f0
+// @field NMData::BackGroundData +0x550 void* field_0x550
+// @field NMData::BackGroundData +0x55C void* field_0x55c
+// @field NMData::BackGroundData +0x58C void* field_0x58c
+// @field NMData::BackGroundData +0x590 void* field_0x590
+// @field NMData::BackGroundData +0x598 void* field_0x598
+// @field NMData::BackGroundData +0x5E0 void* field_0x5e0
+// @field NMData::BackGroundData +0x5FC void* field_0x5fc
+
+
+void __thiscall ext_00427550(void* self, const char* name);
+void __thiscall ext_0058F650(void* self, void* node);
+void __thiscall ext_005A0490(void* self, void* node);
+void __cdecl ext_005A09D0(void* field, void* node, uint32_t tag, uint32_t a4, uint32_t a5);
+void __cdecl ext_005A0AC0(void* field, void* node, uint32_t tag, uint32_t a4, uint32_t a5);
+void __thiscall ext_005A13F0(void* self, void* node);
+void __thiscall ext_005A1490(void* self, void* node);
+void __thiscall ext_005A1530(void* self, void* node);
+void* __thiscall ext_00640110(void* node, uint32_t tag);
+void* __thiscall ext_00640390(void* node, uint32_t tag, uint32_t a3);
+void* __thiscall ext_006404E0(void* node, uint32_t tag);
+void __cdecl ext_00640A50(void* node, uint32_t val);
+void __cdecl ext_00640A80(void* node, uint8_t flag);
+void __cdecl ext_00640AA0(void* node, uint32_t val);
+void __cdecl ext_00640BC0(void* node, float val);
+void __cdecl ext_00662810(void* node, uint32_t tag, void* field);
+void __thiscall ext_00673C20(void* iter);
+void __thiscall ext_00675020(void* self, void* node);
+
+extern uint32_t mem_00924FEC;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00925134;
+extern uint32_t mem_009849A4;
+extern uint32_t mem_00A9EE74;
+extern uint32_t mem_00A9EEC8;
+extern uint32_t mem_00A9F068;
+extern uint32_t mem_00A9F0C0;
+extern uint32_t mem_00A9F200;
+extern uint32_t mem_00A9F224;
+extern uint32_t mem_00A9F26C;
+extern uint32_t mem_00A9F288;
+extern uint32_t mem_00A9F558;
+extern uint32_t mem_00A9F590;
+extern uint32_t mem_00A9F72C;
+extern uint32_t mem_00A9F838;
+extern uint32_t mem_00A9FA74;
+
+void* __thiscall fn_005A2FB0(void* self, void* node) {
+    using c_str_fn = const char* (__thiscall*)(void*);
+    using empty_fn = uint8_t (__thiscall*)(void*);
+    using vfunc_bool_fn = uint8_t (__thiscall*)(void*);
+    using vfunc_save_fn = void (__thiscall*)(void*, void*);
+
+    auto* base = static_cast<uint8_t*>(self);
+    auto c_str = reinterpret_cast<c_str_fn>(mem_00924FF0);
+    auto is_empty = reinterpret_cast<empty_fn>(mem_00924FEC);
+
+    ext_0058F650(base + 0x4, node);
+
+    void* tmp = ext_00640110(node, mem_00A9F838);
+    ext_00427550(&tmp, c_str(base + 0x18));
+
+    tmp = ext_00640110(node, mem_00A9FA74);
+    ext_00427550(&tmp, c_str(base + 0x458));
+
+    ext_00662810(node, 0x0095E770u, base + 0x490);
+    ext_00662810(node, 0x0095E768u, base + 0x4AC);
+
+    void* attr = ext_00640110(node, mem_00A9F558);
+    ext_00640AA0(attr, mem_009849A4);
+
+    if (lift_field<uint8_t>(self, 0x4E0) == 0) {
+        tmp = ext_00640110(node, mem_00A9F590);
+        ext_00427550(&tmp, reinterpret_cast<const char*>(0x0093A808u));
+    }
+
+    attr = ext_00640110(node, mem_00A9F72C);
+    ext_00640A80(attr, lift_field<uint8_t>(self, 0x4E6));
+
+    attr = ext_00640110(node, 0x0095E754u);
+    ext_00640A50(attr, lift_field<uint32_t>(self, 0x4E8));
+
+    attr = ext_00640110(node, 0x0095E748u);
+    ext_00640BC0(attr, lift_field<float>(self, 0x4EC));
+
+    attr = ext_00640110(node, 0x0095E738u);
+    ext_00640BC0(attr, lift_field<float>(self, 0x4F0));
+
+    ext_00662810(node, mem_00A9F838, base + 0x18);
+
+    ext_005A09D0(base + 0x5E0, node, mem_00A9F068, 0, 0);
+    ext_005A09D0(base + 0x550, node, mem_00A9F26C, 0, 0);
+    ext_005A0AC0(base + 0x55C, node, mem_00A9EE74, 0, 0);
+
+    ext_005A13F0(self, node);
+    ext_005A1490(self, node);
+    ext_005A1530(self, node);
+
+    struct ListIter {
+        void* container;
+        void* node_ptr;
+    };
+    using invalid_param_fn = void (__cdecl*)();
+    auto invalid_param = reinterpret_cast<invalid_param_fn>(mem_00925134);
+    void* sentinel = lift_field<void*>(self, 0x590);
+    ListIter iter{ base + 0x58C, *static_cast<void**>(sentinel) };
+    if (iter.container != base + 0x58C) {
+        invalid_param();
+    }
+    while (iter.node_ptr != sentinel) {
+        void* item = lift_field<void*>(iter.node_ptr, 0x28);
+        void** item_vt = *static_cast<void***>(item);
+        auto check_fn = reinterpret_cast<vfunc_bool_fn>(item_vt[0x70 / 4]);
+        if (check_fn(item) != 0) {
+            void* child = ext_00640390(node, mem_00A9F200, 0);
+            void* sub_child = ext_006404E0(child, mem_00A9F224);
+            void** vt2 = *static_cast<void***>(item);
+            reinterpret_cast<vfunc_save_fn>(vt2[0x58 / 4])(item, sub_child);
+        } else {
+            void* child = ext_00640390(node, mem_00A9F200, 0);
+            void** vt2 = *static_cast<void***>(item);
+            reinterpret_cast<vfunc_save_fn>(vt2[0x58 / 4])(item, child);
+        }
+        ext_00673C20(&iter);
+    }
+
+    ext_005A09D0(base + 0x598, node, mem_00A9F0C0, 0, 0);
+
+    uint32_t vec_begin = lift_field<uint32_t>(self, 0x334);
+    uint32_t vec_end = lift_field<uint32_t>(self, 0x338);
+    if (!is_empty(base + 0x2F8) || !is_empty(base + 0x314) ||
+        (vec_begin != 0 && (static_cast<int32_t>(vec_end - vec_begin) >> 2) != 0)) {
+        void* sub_node = ext_006404E0(node, mem_00A9F288);
+        void* obj160 = base + 0x160;
+        void** vt160 = *reinterpret_cast<void***>(lift_field<void*>(self, 0x160));
+        reinterpret_cast<vfunc_save_fn>(vt160[0x58 / 4])(obj160, sub_node);
+    }
+
+    void* child_node = ext_00640390(node, mem_00A9EEC8, 0);
+    ext_00675020(lift_field<void*>(self, 0x5FC), child_node);
+
+    void* extra_node = ext_00640390(node, 0x0095E720u, 0);
+    ext_005A0490(self, extra_node);
+
+    return node;
+}
+} // namespace lift_005A2FB0
