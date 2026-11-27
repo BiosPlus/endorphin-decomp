@@ -1,0 +1,22 @@
+{
+  "va": "0x00422130",
+  "size": 153,
+  "orig_symbol": "HotkeyEditDialog::vfunc_66",
+  "src_path": "src/classes/HotkeyEditDialog.cpp",
+  "lifted_path": "lifted/classes/HotkeyEditDialog.cpp",
+  "name": "HotkeyEditDialog::vfunc_66",
+  "class": "HotkeyEditDialog",
+  "signature": "int fn_00422130(void* self, void* msg)",
+  "summary": "WM_KEYDOWN handler: forwards key plus Shift/Ctrl/Alt state to the edit control (WM_USER+1), else defers to the base class.",
+  "fields": [
+    {
+      "class": "HotkeyEditDialog",
+      "offset": "+0x94",
+      "type": "HWND",
+      "name": "field_0x94"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:50:02Z"
+}

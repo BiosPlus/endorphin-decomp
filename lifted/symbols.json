@@ -2840,6 +2840,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00421C10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00422130": {
+    "name": "HotkeyEditDialog::vfunc_66",
+    "class": "HotkeyEditDialog",
+    "signature": "int fn_00422130(void* self, void* msg)",
+    "summary": "WM_KEYDOWN handler: forwards key plus Shift/Ctrl/Alt state to the edit control (WM_USER+1), else defers to the base class.",
+    "lifted_path": "lifted/classes/HotkeyEditDialog.cpp"
+  },
   "0x004225D0": {
     "name": "sub_004225D0",
     "signature": "extern \"C\" void __fastcall fn_004225D0(void* self)",
