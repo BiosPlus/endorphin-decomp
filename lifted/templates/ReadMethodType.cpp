@@ -186780,3 +186780,50 @@ void* fn_005FCE90(void* holder, void* arg2) {
     return reinterpret_cast<ForwardFn>(vtable_slot(target, 45))(target, holder, arg2);
 }
 } // namespace lift_005FCE90
+
+// [0x005B3C00] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_42 (161 bytes)
+namespace lift_005B3C00 {
+// Known callee 0x006720E0: sub_006720E0 (thiscall: initialises a 2-dword temp from a value; object pointer lands in tmp[1])
+extern void ext_006720E0(void* tmp, void* value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, void* throwInfo);
+extern int mem_008A5428;
+
+// Vtable slot lookup by 32-bit byte offset of the slot (e.g. +0xa8 -> slot 42).
+static inline void* vslot(void* self, int slot) {
+    return static_cast<void**>(*static_cast<void**>(self))[slot];
+}
+
+// @name ExprParser::ReadMethodType::vfunc_42 (Geometry::getFileName)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Reads the holder's inner object via vslot +0x20, wraps the result in a temp, forwards to vslot +0xA8 with the out pointer, then releases the temp via vslot +0x78; throws if the holder is null.
+// @field ExprParser::ValuePtrType +0x0c void* field_0x0c
+bool fn_005B3C00(void* pp, void* out) {
+    void* obj = *static_cast<void**>(pp);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_008A5428);
+        return false;
+    }
+
+    void* inner = lift_field<void*>(obj, 0x0c);
+    using ValueFn = void* (*)(void*);
+    void* value = reinterpret_cast<ValueFn>(vslot(inner, 8))(inner);
+
+    void* tmp[2] = {};
+    ext_006720E0(tmp, value);
+    void* obj2 = tmp[1];
+
+    using ForwardFn = bool (*)(void*, void*, void*);
+    bool result = reinterpret_cast<ForwardFn>(vslot(obj2, 42))(obj2, tmp, out);
+
+    if (obj2 != nullptr) {
+        using ReleaseFn = void (*)(void*, void*);
+        reinterpret_cast<ReleaseFn>(vslot(obj2, 30))(obj2, tmp);
+    }
+    return result;
+}
+} // namespace lift_005B3C00

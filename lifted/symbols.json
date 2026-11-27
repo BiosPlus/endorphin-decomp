@@ -43919,6 +43919,13 @@
     "summary": "Reads the wrapped object pointer, calls its vtable slot 8 (getFileName-like accessor) and returns it; throws a default ExceptionWithMessage if the wrapped pointer is null (the vtable call result is passed to the throw builder).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B3C00": {
+    "name": "ExprParser::ReadMethodType::vfunc_42 (Geometry::getFileName)",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+    "signature": "static inline void* vslot(void* self, int slot)",
+    "summary": "Reads the holder's inner object via vslot +0x20, wraps the result in a temp, forwards to vslot +0xA8 with the out pointer, then releases the temp via vslot +0x78; throws if the holder is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B3CB0": {
     "name": "getSingleton_005B3CB0",
     "signature": "void* fn_005B3CB0()",
