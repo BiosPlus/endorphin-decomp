@@ -2555,3 +2555,42 @@ uint32_t fn_0071B0D0(void* self) {
     return method(obj);
 }
 } // namespace lift_0071B0D0
+
+// [0x0071CAA0] sub_0071CAA0 (48 bytes)
+namespace lift_0071CAA0 {
+extern uint32_t ext_006C9550(void* self);
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern uint32_t ext_006DC460(void* self);
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+extern uint32_t ext_00708000(void* self, const char* name);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+// String literal referenced by the name argument at 0x00AA8D3C.
+extern const char mem_00AA8D3C[];
+
+static inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// @name Unknown::GetValueOrFindChildValue
+// @class Unknown
+// @summary If the +0x04 object has a nonzero count, chain through ext_006DC460 -> ext_006C9550 -> ext_006C9F70; otherwise find child "name" at +0x0C and tail-dispatch its vtable slot +0x7C.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x0C uint32_t field_0x0C
+uint32_t fn_0071CAA0(void* self) {
+    const uint32_t child = lift_field<uint32_t>(self, 0x04);
+    if (child != 0) {
+        const uint32_t a = ext_006DC460(as_ptr(child));
+        const uint32_t b = ext_006C9550(as_ptr(a));
+        const float f = ext_006C9F70(as_ptr(b));
+        return std::bit_cast<uint32_t>(f);
+    }
+
+    const uint32_t owner = lift_field<uint32_t>(self, 0x0C);
+    const uint32_t obj = ext_00708000(as_ptr(owner), mem_00AA8D3C);
+    const uint32_t vtbl = lift_field<uint32_t>(as_ptr(obj), 0x00);
+    const uint32_t slot = lift_field<uint32_t>(as_ptr(vtbl), 0x7C);
+    using Method = uint32_t (*)(void*);
+    return reinterpret_cast<Method>(static_cast<uintptr_t>(slot))(as_ptr(obj));
+}
+} // namespace lift_0071CAA0

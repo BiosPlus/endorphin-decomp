@@ -74150,6 +74150,13 @@
     "summary": "If field +0x4 is non-null, returns the float getter of the callee chain on it; otherwise looks up child \"mem_00AA8D10\" under +0xC and tail-calls its vtable slot +0x7C.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071CAA0": {
+    "name": "Unknown::GetValueOrFindChildValue",
+    "class": "Unknown",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "If the +0x04 object has a nonzero count, chain through ext_006DC460 -\u003e ext_006C9550 -\u003e ext_006C9F70; otherwise find child \"name\" at +0x0C and tail-dispatch its vtable slot +0x7C.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071CAD0": {
     "name": "Unknown::ResolveChainedFloat",
     "class": "Unknown",
