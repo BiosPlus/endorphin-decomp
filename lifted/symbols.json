@@ -21679,6 +21679,13 @@
     "summary": "Resets state flag, allocates and initializes a 12-byte object, frees any previous object at +0x184, and registers the new one.",
     "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
   },
+  "0x004CFF00": {
+    "name": "NMData::IncarnationEventData::AppendStringRangeAndForward",
+    "class": "NMData::IncarnationEventData",
+    "signature": "void fn_004CFF00(void* self)",
+    "summary": "Copies the string range at this+0x170..0x174 into the container at this+0x16C, pushes the first copied string, then stores a child pointer at this+0x168 and forwards to it if its sub-object count is below the limit.",
+    "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
   "0x004CFFE0": {
     "name": "sub_004CFFE0",
     "class": "NMData::SkeletalCalibrationVariables",

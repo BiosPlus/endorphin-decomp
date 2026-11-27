@@ -232,3 +232,58 @@ DWORD* __thiscall fn_004CFE20(void* self, DWORD* out, DWORD key) {
     return out;
 }
 } // namespace lift_004CFE20
+
+// [0x004CFF00] NMData::IncarnationEventData::vfunc_81 (209 bytes)
+namespace lift_004CFF00 {
+// Known callee 0x00406510: Unknown::copyStringRangeTruncate (Copies a std::string range through sub_00406090, destroys the old tail past the new end, stores the new end at this+0x08 and writes {a2, a3} to the sret pair at a1.)
+extern void ext_00406510(void* self, void** sret, void* a2, void* a3, void* a4, void* a5);
+// Known callee 0x0040ECB0: Unknown::PushBackString_0040ECB0 (push_back of one 28-byte std::string onto a vector-like {begin,end,capacity} container; fast path constructs in place, slow path defers to ext_0040EBF0.)
+extern void ext_0040ECB0(void* self, const void* value);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Known callee 0x00594640: sub_00594640 (Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A580.)
+extern void* ext_00594640(void* self);
+// Known callee 0x00586A50: forwardToChildAndRecurseRange (Forwards (arg0, arg1) to the sub-object at this+0x0C via 0x00528BB0, then recursively calls itself on each DWORD pointer in the range [this->field_0x80, this->field_0x84).)
+extern void ext_00586A50(void* self, DWORD arg0, DWORD arg1);
+extern uint32_t mem_009849C0;
+extern int mem_00925134;
+
+// @name NMData::IncarnationEventData::AppendStringRangeAndForward
+// @class NMData::IncarnationEventData
+// @summary Copies the string range at this+0x170..0x174 into the container at this+0x16C, pushes the first copied string, then stores a child pointer at this+0x168 and forwards to it if its sub-object count is below the limit.
+// @field NMData::IncarnationEventData +0x168 void* field_0x168
+// @field NMData::IncarnationEventData +0x170 uint8_t* string_range_begin
+// @field NMData::IncarnationEventData +0x174 uint8_t* string_range_end
+void fn_004CFF00(void* self) {
+    // The original asm's _invalid_parameter_noinfo range checks (via mem_00925134) are CRT guards and are omitted.
+    (void)&mem_00925134;
+    uint8_t* const container = static_cast<uint8_t*>(self) + 0x16C;
+
+    uint8_t* begin = lift_field<uint8_t*>(container, 0x4);
+    uint8_t* end   = lift_field<uint8_t*>(container, 0x8);
+
+    void* pair[2] = {nullptr, nullptr};
+    ext_00406510(container, pair, container, begin, container, end);
+    ext_0040ECB0(container, pair[0]);
+
+    end   = lift_field<uint8_t*>(container, 0x8);
+    begin = lift_field<uint8_t*>(container, 0x4);
+    if (begin == end) {
+        return;
+    }
+
+    // Original pushes the begin value before the call to ext_00594000; that push is not consumed by the callee.
+    void* const owner_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_00594000()));
+    void* sub = ext_00594640(owner_obj);
+    lift_field<void*>(self, 0x168) = sub;
+
+    uint8_t* const global = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(ext_00594000()));
+    uint8_t* const owner = lift_field<uint8_t*>(global, 0x26C);
+    uint32_t const count = lift_field<uint32_t>(owner, 0x538);
+    if (count >= mem_009849C0) {
+        return;
+    }
+
+    ext_00586A50(static_cast<uint8_t*>(sub) + 0x4, 0x200000, 1);
+}
+} // namespace lift_004CFF00
