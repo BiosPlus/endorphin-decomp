@@ -20155,6 +20155,13 @@
     "summary": "Initializes a 3x3 identity matrix, passes it to sub_0067DAD0, and returns the Euclidean norm of the first row.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C51E0": {
+    "name": "NMData::ForceEventData::vfunc_54",
+    "class": "NMData::ForceEventData",
+    "signature": "void* __attribute__((thiscall)) fn_004C51E0(void* self)",
+    "summary": "Once-only (guarded by bit 0 of mem_00AE36F4) initialization of the global object at 0x00AE36A8 with four derived float constants, then assigns the literal string at 0x00934804 into it and returns that object.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C5350": {
     "name": "NMData::ForceEventData::vfunc_6_off_C",
     "class": "NMData::ForceEventData",

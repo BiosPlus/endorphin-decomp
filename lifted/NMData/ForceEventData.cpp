@@ -238,3 +238,59 @@ DWORD* __thiscall fn_004C63A0(void* self, DWORD* out, DWORD key) {
     return out;
 }
 } // namespace lift_004C63A0
+
+// [0x004C51E0] NMData::ForceEventData::vfunc_54 (204 bytes)
+namespace lift_004C51E0 {
+// Known callee 0x005B18E0: AssignStringAndSetFlag (copy-assigns the std::string argument into this+0x28 and sets the byte flag at this+0x04 to 1). thiscall, callee-cleans.
+extern void ext_005B18E0(void* self, const void* src);
+// Callee 0x005B5810 (thiscall, callee-cleans): (int n, float* v) on the global object.
+extern void ext_005B5810(void* self, int n, float* v);
+// Callee 0x006A6C87 (cdecl): registers the destructor entry at mem_009189D0 for atexit-style teardown.
+extern void ext_006A6C87(const void* dtor_entry);
+
+extern int mem_00AE36F4;   // guard dword; bit 0 = initialized
+extern int mem_00AE36A8;   // global object (this for the callees; returned)
+extern int mem_00A3A108;   // .data float 50
+extern int mem_0092C508;   // .rdata double 0.1
+extern int mem_009453D0;   // .rdata double 0.07
+extern int mem_00924FE4;   // IAT slot: MSVCP80 basic_string(const char*) ctor
+extern int mem_00924FF4;   // IAT slot: MSVCP80 basic_string dtor
+extern int mem_00934804;   // .rdata string literal
+extern int mem_009189D0;   // dtor registration entry
+
+typedef void* (__attribute__((thiscall)) *string_ctor_t)(void* self, const char* s);
+typedef void (__attribute__((thiscall)) *string_dtor_t)(void* self);
+
+// @name NMData::ForceEventData::vfunc_54
+// @class NMData::ForceEventData
+// @summary Once-only (guarded by bit 0 of mem_00AE36F4) initialization of the global object at 0x00AE36A8 with four derived float constants, then assigns the literal string at 0x00934804 into it and returns that object.
+void* __attribute__((thiscall)) fn_004C51E0(void* self) {
+    (void)self;  // not dereferenced; the function operates on globals only
+
+    uint32_t* guard = reinterpret_cast<uint32_t*>(&mem_00AE36F4);
+    void* const obj = reinterpret_cast<void*>(&mem_00AE36A8);
+
+    // v[0] = 1/50, v[1] = v[0], v[2] = 0.1 * v[0], v[3] = 0.07 * v[0]
+    float v[4];
+    v[0] = 1.0f / *reinterpret_cast<float*>(&mem_00A3A108);
+    v[1] = v[0];
+    v[2] = static_cast<float>(*reinterpret_cast<double*>(&mem_0092C508) * static_cast<double>(v[0]));
+    v[3] = static_cast<float>(*reinterpret_cast<double*>(&mem_009453D0) * static_cast<double>(v[0]));
+
+    if ((*reinterpret_cast<uint8_t*>(guard) & 1u) == 0) {
+        *guard |= 1u;
+        ext_005B5810(obj, 14, &v[1]);
+        ext_006A6C87(reinterpret_cast<const void*>(&mem_009189D0));
+    }
+
+    // Temporary std::string (MSVC layout, 0x1C bytes) built from the literal.
+    alignas(8) unsigned char tmp[0x1C];
+    string_ctor_t ctor = *reinterpret_cast<string_ctor_t*>(&mem_00924FE4);
+    string_dtor_t dtor = *reinterpret_cast<string_dtor_t*>(&mem_00924FF4);
+    ctor(tmp, reinterpret_cast<const char*>(&mem_00934804));
+    ext_005B18E0(obj, tmp);
+    dtor(tmp);
+
+    return obj;
+}
+} // namespace lift_004C51E0

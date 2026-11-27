@@ -1,0 +1,14 @@
+{
+  "va": "0x004C51E0",
+  "size": 204,
+  "orig_symbol": "NMData::ForceEventData::vfunc_54",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_54",
+  "class": "NMData::ForceEventData",
+  "signature": "void* __attribute__((thiscall)) fn_004C51E0(void* self)",
+  "summary": "Once-only (guarded by bit 0 of mem_00AE36F4) initialization of the global object at 0x00AE36A8 with four derived float constants, then assigns the literal string at 0x00934804 into it and returns that object.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:31:39Z"
+}
