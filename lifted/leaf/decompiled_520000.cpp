@@ -1685,3 +1685,37 @@ void* fn_0052FFD0(void) {
     return obj;
 }
 } // namespace lift_0052FFD0
+
+// [0x00524A60]
+namespace lift_00524A60 {
+extern void (*mem_00925134)(void);
+extern void ext_006A5C62(void);
+extern void* ext_0053B240(void* self);
+
+// @name Unknown::getDoubleAsFloat_00524A60
+// @class Unknown
+// @summary Returns element [index] of the first entry's double array in the referenced container as a float, or 0 if no container.
+// @field Unknown +0x04 void* container
+// @field Unknown +0x08 uint32_t index
+float __fastcall fn_00524A60(void* self)
+{
+    (void)&mem_00925134;
+    (void)&ext_0053B240;
+    char* container = lift_field<char*>(self, 0x04);
+    if (!container) return 0.0f;
+
+    char* vbegin = lift_field<char*>(container, 0x24);
+    if (!vbegin || (lift_field<char*>(container, 0x28) - vbegin) / 52 == 0)
+        ext_006A5C62();
+
+    char* elem = lift_field<char*>(container, 0x24);
+    unsigned idx = lift_field<unsigned>(self, 0x08);
+    char* dbeg = lift_field<char*>(elem, 0x08);
+    char* dend = lift_field<char*>(elem, 0x0C);
+    if (!dbeg || idx >= (unsigned)((dend - dbeg) >> 3))
+        ext_006A5C62();
+
+    dbeg = lift_field<char*>(elem, 0x08);
+    return (float)((double*)dbeg)[idx];
+}
+} // namespace lift_00524A60

@@ -161,6 +161,7 @@ struct Unknown_Fields {
     // +0x4   void*                    callback  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* next (next node in chain)  (evidence: 0x006FACA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child  (evidence: 0x00528AE0, 0x0052F7D0, 0x005DA150, 0x005DA170, 0x006305A0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    container  (evidence: 0x00524A60) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  count  (evidence: 0x0077F4E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    cursor  (evidence: 0x005943D0, 0x00667030, 0x00673C20) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to subobject, dereferenced)  (evidence: 0x00661A40) // CONFLICT: multiple definitions at +0x4
@@ -311,7 +312,7 @@ struct Unknown_Fields {
     // +0x8   void*                    getterContext  (evidence: 0x007051F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    head  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (vector end, via holder)  (evidence: 0x0067A670, 0x0067AEB0, 0x0067AEF0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 index  (evidence: 0x00524BC0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 index  (evidence: 0x00524A60, 0x00524BC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    list_head  (evidence: 0x0079E620) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    m02  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    m_end  (evidence: 0x00503BC0, 0x00505DC0, 0x0050C4D0, 0x00518030, 0x0051E560) // CONFLICT: multiple definitions at +0x8
@@ -835,6 +836,7 @@ struct Unknown_Fields {
     // +0x54  uint32_t                 field_0x54  (evidence: 0x004030F0, 0x0040BE90, 0x00415F97, 0x0053B1F0, 0x00622B40, 0x006296D0, 0x006F99B0) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint8_t                  field_0x54  (evidence: 0x00610D10, 0x006D0370) // CONFLICT: multiple definitions at +0x54
     // +0x54  void*                    field_0x54  (evidence: 0x004584C0, 0x00458650, 0x00458670, 0x00458840, 0x00458A00, 0x006A92F0, 0x006AAC90) // CONFLICT: multiple definitions at +0x54
+    // +0x54  uint32_t                 vec_proxy  (evidence: 0x0042ECC0) // CONFLICT: multiple definitions at +0x54
     // +0x58  DWORD                    buffer  (evidence: 0x007AEE00) // CONFLICT: multiple definitions at +0x58
     // +0x58  void* field_58 (embedded object's vptr; slot 0 is called)  (evidence: 0x00441C10, 0x0044C230) // CONFLICT: multiple definitions at +0x58
     // +0x58  void**                   children_end  (evidence: 0x00469530) // CONFLICT: multiple definitions at +0x58
@@ -850,6 +852,7 @@ struct Unknown_Fields {
     // +0x58  void*                    field_0x58  (evidence: 0x00441C10, 0x006B53D0, 0x006BA780) // CONFLICT: multiple definitions at +0x58
     // +0x58  void**                   field_0x58  (evidence: 0x0043E090) // CONFLICT: multiple definitions at +0x58
     // +0x58  DWORD                    field_58  (evidence: 0x007AEEB0) // CONFLICT: multiple definitions at +0x58
+    // +0x58  uint32_t*                vec_begin  (evidence: 0x0042ECC0) // CONFLICT: multiple definitions at +0x58
     // +0x5C  DWORD                    capacity_end  (evidence: 0x007AEE00) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  DWORD                    field_0x5C  (evidence: 0x0051CCC0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  float                    field_0x5C  (evidence: 0x0060CCC0, 0x006267B0) // CONFLICT: multiple definitions at +0x5C
@@ -864,6 +867,7 @@ struct Unknown_Fields {
     // +0x5C  void**                   field_0x5c  (evidence: 0x0043E090) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t                 member_vftable  (evidence: 0x006B8210, 0x006BA780) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  void*                    ownedPtrB  (evidence: 0x00648790) // CONFLICT: multiple definitions at +0x5C
+    // +0x5C  uint32_t*                vec_end  (evidence: 0x0042ECC0) // CONFLICT: multiple definitions at +0x5C
     // +0x60  uint32_t                 arg1_saved  (evidence: 0x004030F0, 0x0040BE90) // CONFLICT: multiple definitions at +0x60
     // +0x60  DWORD                    chainValue  (evidence: 0x006E62A0, 0x006EFEA0) // CONFLICT: multiple definitions at +0x60
     // +0x60  DWORD                    cursor  (evidence: 0x007AEE00) // CONFLICT: multiple definitions at +0x60
