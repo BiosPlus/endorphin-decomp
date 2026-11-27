@@ -69849,6 +69849,13 @@
     "summary": "Stores a 32-bit argument at +0x00, sets the flag word at +0x04 to 1, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E8E20": {
+    "name": "Unknown::getFirstDwordAtIndex_006E8E20",
+    "class": "Unknown",
+    "signature": "DWORD fn_006E8E20(void* self, int32_t index)",
+    "summary": "Returns the first DWORD of the element at table[index] if index is in [0, count); otherwise calls ext_006E7440 on (this + 0x94) with index 3 and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E9420": {
     "name": "sub_006E9420",
     "signature": "extern \"C\" int32_t __fastcall fn_006E9420(void* self)",

@@ -1821,3 +1821,29 @@ void* fn_006EA200(void* self) {
     return self;
 }
 } // namespace lift_006EA200
+
+// [0x006E8E20] sub_006E8E20 (48 bytes)
+namespace lift_006E8E20 {
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+// Called as ext_006E7440(this + 0x94, 3) in the original asm (ECX = sub-object, index pushed on stack).
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::getFirstDwordAtIndex_006E8E20
+// @class Unknown
+// @summary Returns the first DWORD of the element at table[index] if index is in [0, count); otherwise calls ext_006E7440 on (this + 0x94) with index 3 and returns 0.
+// @field Unknown +0x1c int32_t count
+// @field Unknown +0x2c void** table
+// @field Unknown +0x94 uint8_t field_0x94
+DWORD fn_006E8E20(void* self, int32_t index) {
+    const int32_t count = lift_field<int32_t>(self, 0x1c);
+    if (index >= 0 && index < count) {
+        void** table = lift_field<void**>(self, 0x2c);
+        void* element = table[index];
+        return *reinterpret_cast<const DWORD*>(element);
+    }
+
+    void* sub = reinterpret_cast<uint8_t*>(self) + 0x94;
+    ext_006E7440(sub, 3);
+    return 0;
+}
+} // namespace lift_006E8E20
