@@ -35672,6 +35672,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D3D10": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFocalLength(float), 0}\u003e",
+    "signature": "void __stdcall fn_005D3D10(void* holder)",
+    "summary": "One-time initialises the static CameraData accessor object (guarded by bit 0 of mem_00B45A2C) and stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005D3D90": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0\u003e",

@@ -12678,3 +12678,34 @@ void fn_005D3890(void* self) {
     lift_field<void*>(self, 4) = accessor;
 }
 } // namespace lift_005D3890
+
+// [0x005D3D10] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFocalLength(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005D3D10 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern int mem_00B45A2C;
+extern int mem_00B45A28;
+
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFocalLength(float), 0}>
+// @summary One-time initialises the static CameraData accessor object (guarded by bit 0 of mem_00B45A2C) and stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_005D3D10(void* holder) {
+    DWORD& guard = reinterpret_cast<DWORD&>(mem_00B45A2C);
+    void* accessor = &mem_00B45A28;
+    uint8_t* h = static_cast<uint8_t*>(holder);
+
+    if ((guard & 1u) != 0) {
+        // Already initialised: just bind holder+0x04 to the accessor object.
+        *reinterpret_cast<DWORD*>(h + 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(accessor));
+        return;
+    }
+
+    // First call: mark initialised, run the accessor's init routine, then
+    // install its vtable pointer (0x009675BC) as the object's first dword.
+    guard |= 1u;
+    ext_0067A670(accessor, 0);
+    *reinterpret_cast<DWORD*>(accessor) = 0x009675BCu;
+    *reinterpret_cast<DWORD*>(h + 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(accessor));
+}
+} // namespace lift_005D3D10
