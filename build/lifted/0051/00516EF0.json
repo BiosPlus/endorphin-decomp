@@ -1,0 +1,64 @@
+{
+  "va": "0x00516EF0",
+  "size": 146,
+  "orig_symbol": "sub_00516EF0",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::initVtblAndDynCastArgs",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_00516EF0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "Thiscall init: calls ext_006657F0(this, 0), sets vtable 0x00951F80, stores a1 at +0x10, stores RTDynamicCast(a2, 0, 0x00A2F4F4, 0x00A42F88, 0) at +0x14, zeroes +0x18 and +0x20, stores a3/a4 at +0x1C/+0x24, writes a2 to +0x08 when the cast result is null, returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:38:54Z"
+}

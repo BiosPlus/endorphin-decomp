@@ -2261,3 +2261,49 @@ void* fn_0065DAD0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_0065DAD0
+
+// [0x00516EF0]
+namespace lift_00516EF0 {
+// @name Unknown::initVtblAndDynCastArgs
+// @class Unknown
+// @summary Thiscall init: calls ext_006657F0(this, 0), sets vtable 0x00951F80, stores a1 at +0x10, stores RTDynamicCast(a2, 0, 0x00A2F4F4, 0x00A42F88, 0) at +0x14, zeroes +0x18 and +0x20, stores a3/a4 at +0x1C/+0x24, writes a2 to +0x08 when the cast result is null, returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+
+// Callee: void* __thiscall ext_006657F0(void* self, uint32_t arg) — sets vtable 0x987A04, arg at +0x04, zeroes +0x08/+0x0C; returns self.
+void* __thiscall ext_006657F0(void* self, uint32_t arg);
+
+// IAT thunk to MSVCR80!__RTDynamicCast (cdecl, 5 args, pushed right-to-left).
+void* ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+
+void* __thiscall fn_00516EF0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00951F80u;   // vtable
+    lift_field<uint32_t>(self, 0x10) = a1;
+
+    void* srcType = reinterpret_cast<void*>(static_cast<uintptr_t>(0x00A2F4F4u));
+    void* dstType = reinterpret_cast<void*>(static_cast<uintptr_t>(0x00A42F88u));
+    void* casted = ext_006A6E9E(reinterpret_cast<void*>(static_cast<uintptr_t>(a2)),
+                                0, srcType, dstType, 0);
+    uint32_t result = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(casted));
+
+    lift_field<uint32_t>(self, 0x14) = result;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = a3;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = a4;
+
+    if (result == 0) {
+        lift_field<uint32_t>(self, 0x08) = a2;
+    }
+
+    return self;
+}
+} // namespace lift_00516EF0
