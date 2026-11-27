@@ -3658,3 +3658,42 @@ uint8_t fn_006D9070(void* self, const double* src) {
     return 1;
 }
 } // namespace lift_006D9070
+
+// [0x006DCFD0] sub_006DCFD0 (112 bytes)
+namespace lift_006DCFD0 {
+// Known callee 0x006BB0C0: Unknown::appendUniqueToArray_006BB0C0 (Appends a non-zero value to the DynamicArray at +0x9C unless it is already present; then calls virtual slot 0x20 on self with the value.)
+extern void ext_006BB0C0(void* self, void* value);
+// Known callee 0x006BB150: findItemByKey (Searches an array of object pointers at +0xac (count at +0x9c) using ext_006E6E40 and returns the first matching pointer or 0.)
+extern void* ext_006BB150(void* self, void* arg0);
+extern void ext_006FC9A0(void* self, void* arg0);
+
+// @name Unknown::appendUnresolvedChildren_006DCFD0
+// @class Unknown
+// @summary For each entry of the source object returned by vtable slot 0x0C, skip entries already found by ext_006BB150, otherwise resolve via vtable slot 0x38, append the result, and call ext_006FC9A0 on it with the source.
+// @field Unknown +0xC0 int32_t field_0xC0 (source object: entry count)
+// @field Unknown +0xD0 void** field_0xD0 (source object: entry pointer array)
+void fn_006DCFD0(void* self) {
+    using GetSourceFn = void* (*)(void*);
+    using ResolveFn = void* (*)(void*, void*);
+
+    void** vtbl = *reinterpret_cast<void***>(self);
+    void* src = reinterpret_cast<GetSourceFn>(vtbl[0x0C / sizeof(void*)])(self);
+    if (src == nullptr) {
+        return;
+    }
+
+    int32_t count = lift_field<int32_t>(src, 0xC0);
+    for (int32_t i = 0; i < count; ++i) {
+        void* item = lift_field<void**>(src, 0xD0)[i];
+        if (ext_006BB150(self, item) != nullptr) {
+            continue;
+        }
+        void* resolved = reinterpret_cast<ResolveFn>(vtbl[0x38 / sizeof(void*)])(self, item);
+        if (resolved == nullptr) {
+            continue;
+        }
+        ext_006BB0C0(self, resolved);
+        ext_006FC9A0(resolved, src);
+    }
+}
+} // namespace lift_006DCFD0

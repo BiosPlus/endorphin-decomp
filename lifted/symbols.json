@@ -69284,6 +69284,13 @@
     "summary": "Gets a container via vtable slot 3 of self, then inserts each of its items into the array passed as the stack argument using DynamicArray::InsertAt.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DCFD0": {
+    "name": "Unknown::appendUnresolvedChildren_006DCFD0",
+    "class": "Unknown",
+    "signature": "void fn_006DCFD0(void* self)",
+    "summary": "For each entry of the source object returned by vtable slot 0x0C, skip entries already found by ext_006BB150, otherwise resolve via vtable slot 0x38, append the result, and call ext_006FC9A0 on it with the source.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DD240": {
     "name": "Unknown::RemoveAndDeleteItem",
     "class": "Unknown",

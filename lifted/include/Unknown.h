@@ -1494,6 +1494,7 @@ struct Unknown_Fields {
     // +0xBC  uint32_t                 field_0xbc  (evidence: 0x0051DDB0) // CONFLICT: multiple definitions at +0xBC
     // +0xBC  void*                    lookupResult  (evidence: 0x00497030) // CONFLICT: multiple definitions at +0xBC
     // +0xC0  int32_t                  count  (evidence: 0x00708D70, 0x0070AD00) // CONFLICT: multiple definitions at +0xC0
+    // +0xC0  int32_t field_0xC0 (source object: entry count)  (evidence: 0x006DCFD0) // CONFLICT: multiple definitions at +0xC0
     // +0xC0  float                    field_0xC0  (evidence: 0x00535690) // CONFLICT: multiple definitions at +0xC0
     // +0xC0  int                      field_0xC0  (evidence: 0x00705740) // CONFLICT: multiple definitions at +0xC0
     // +0xC0  int32_t                  field_0xC0  (evidence: 0x00700F50, 0x00708000, 0x00708C10, 0x00708CC0) // CONFLICT: multiple definitions at +0xC0
@@ -1520,6 +1521,7 @@ struct Unknown_Fields {
     // +0xCC  uint8_t                  field_0xcc  (evidence: 0x0041FC70) // CONFLICT: multiple definitions at +0xCC
     // +0xCC  void*                    field_0xcc  (evidence: 0x0046FDA0, 0x0046FDC0, 0x0046FF50) // CONFLICT: multiple definitions at +0xCC
     // +0xCC  void                     member_cc  (evidence: 0x00447F20) // CONFLICT: multiple definitions at +0xCC
+    // +0xD0  void** field_0xD0 (source object: entry pointer array)  (evidence: 0x006DCFD0) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  unknown field_0xd0 (embedded sub-object; its address is passed as this to the callee)  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  void**                   entries  (evidence: 0x00708D70, 0x0070AD00) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  Buffer                   field_0xD0  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xD0

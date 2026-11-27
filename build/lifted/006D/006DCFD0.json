@@ -1,0 +1,28 @@
+{
+  "va": "0x006DCFD0",
+  "size": 112,
+  "orig_symbol": "sub_006DCFD0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::appendUnresolvedChildren_006DCFD0",
+  "class": "Unknown",
+  "signature": "void fn_006DCFD0(void* self)",
+  "summary": "For each entry of the source object returned by vtable slot 0x0C, skip entries already found by ext_006BB150, otherwise resolve via vtable slot 0x38, append the result, and call ext_006FC9A0 on it with the source.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "int32_t field_0xC0 (source object: entry",
+      "name": "count)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "void** field_0xD0 (source object: entry pointer",
+      "name": "array)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:55:28Z"
+}
