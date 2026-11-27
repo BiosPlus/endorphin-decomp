@@ -24460,6 +24460,13 @@
     "summary": "Thiscall constructor: sets vtable, flag at +0x04, forwards four floats to SetFloat4 on the subobject at +0x08, copy-constructs a std::string at +0x18 from the pointer in the first argument, clears the flag at +0x34, and returns self.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00532870": {
+    "name": "Unknown::Unknown_00532870",
+    "class": "Unknown",
+    "signature": "void* fn_00532870(void* self, float a0, float a1, float a2, float a3, uint8_t a4, const void* a5)",
+    "summary": "Constructor initializing vtable, flag, 4 floats, std::string copy, and trailing byte.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00532B40": {
     "name": "Unknown::dtor_00532B40",
     "class": "Unknown",

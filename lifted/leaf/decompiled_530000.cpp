@@ -1830,3 +1830,29 @@ void* fn_005327F0(void* self, uint32_t a0, float a1, float a2, float a3, uint32_
     return self;
 }
 } // namespace lift_005327F0
+
+// [0x00532870]
+namespace lift_00532870 {
+extern void ext_0066A330(void* self, float a0, float a1, float a2, float a3);
+extern void (*mem_00924FE0)(void* self, const void* src);
+
+// @name Unknown::Unknown_00532870
+// @class Unknown
+// @summary Constructor initializing vtable, flag, 4 floats, std::string copy, and trailing byte.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 uint8_t[0x1C] field_0x18
+// @field Unknown +0x34 uint8_t field_0x34
+void* fn_00532870(void* self, float a0, float a1, float a2, float a3, uint8_t a4, const void* a5) {
+    lift_field<uint8_t>(self, 0x04) = 1;
+    lift_field<uint32_t>(self, 0x00) = 0x009543B4;
+    ext_0066A330(static_cast<uint8_t*>(self) + 0x08, a0, a1, a2, a3);
+    mem_00924FE0(static_cast<uint8_t*>(self) + 0x18, a5);
+    lift_field<uint8_t>(self, 0x34) = a4;
+    return self;
+}
+} // namespace lift_00532870
