@@ -1,0 +1,34 @@
+{
+  "va": "0x0069A1F0",
+  "size": 105,
+  "orig_symbol": "ExprParser::ExpressionContainer::vfunc_2",
+  "src_path": "src/ExprParser/ExpressionContainer.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainer.cpp",
+  "name": "ExprParser::ExpressionContainer::vfunc_2",
+  "class": "ExprParser::ExpressionContainer",
+  "signature": "void* __thiscall fn_0069A1F0(void* self, void* out, uint32_t key)",
+  "summary": "Looks up an expression entry by key and initializes the output handle with the matching element or an empty handle.",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x1C",
+      "type": "uint8_t*",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "ExprParser::ExpressionContainer",
+      "offset": "+0x20",
+      "type": "uint8_t*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:40:03Z"
+}
