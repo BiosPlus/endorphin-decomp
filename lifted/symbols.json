@@ -78633,6 +78633,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0072B990 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072BA60": {
+    "name": "Unknown::initPoseName_0072BA60",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_0072BA60(void* self, void* dst)",
+    "summary": "Builds a pose-name string in a temporary (\"BindPose\", or \"RestPose\" when the byte at +0x14C is 'r') and initializes dst from it, then tears the temporary down. Returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072BC70": {
     "name": "Unknown::getIndexedDword",
     "class": "Unknown",

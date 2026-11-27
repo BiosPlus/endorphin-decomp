@@ -1366,3 +1366,40 @@ extern void* fn_00725D60(void* ecx, void* target) {
     return target;
 }
 } // namespace lift_00725D60
+
+// [0x0072BA60] sub_0072BA60 (139 bytes)
+namespace lift_0072BA60 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* ext_006B9EC0(void* self, const char* s);
+// Known callee 0x006B9D20: Unknown::initOrCopy_006B9D20 (Initializes self; if ext_006B9940(obj) is nonzero, copies from obj; otherwise calls ext_006B9920. Returns self.)
+extern void* ext_006B9D20(void* self, void* obj);
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970; used here as the teardown of the temporary.)
+extern void ext_006B9D70(void* self);
+// String literals in .data
+extern const char mem_00AAD100[];  // "BindPose"
+extern const char mem_00AAD0F4[];  // "RestPose"
+
+// @name Unknown::initPoseName_0072BA60
+// @class Unknown
+// @summary Builds a pose-name string in a temporary ("BindPose", or "RestPose" when the byte at +0x14C is 'r') and initializes dst from it, then tears the temporary down. Returns dst.
+// @field Unknown +0x14C uint8_t field_0x14c
+extern void* __thiscall fn_0072BA60(void* self, void* dst) {
+    // Temporary string object; its exact size is not recovered, the frame reserves 0x50 bytes for it.
+    alignas(8) unsigned char tmp[0x50] = {};
+
+    ext_006B9D80(tmp, mem_00AAD100);
+
+    const uint8_t flag = *reinterpret_cast<const uint8_t*>(static_cast<const unsigned char*>(self) + 0x14C);
+    if (flag == 0x72) {  // 'r'
+        ext_006B9EC0(tmp, mem_00AAD0F4);
+    }
+
+    ext_006B9D20(dst, tmp);
+    ext_006B9D70(tmp);
+
+    // SEH frame setup/teardown (fs:[0] push/pop, state flags) omitted as compiler boilerplate.
+    return dst;
+}
+} // namespace lift_0072BA60

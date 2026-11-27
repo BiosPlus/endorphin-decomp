@@ -1,0 +1,22 @@
+{
+  "va": "0x0072BA60",
+  "size": 139,
+  "orig_symbol": "sub_0072BA60",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::initPoseName_0072BA60",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_0072BA60(void* self, void* dst)",
+  "summary": "Builds a pose-name string in a temporary (\"BindPose\", or \"RestPose\" when the byte at +0x14C is 'r') and initializes dst from it, then tears the temporary down. Returns dst.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14C",
+      "type": "uint8_t",
+      "name": "field_0x14c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:01:27Z"
+}
