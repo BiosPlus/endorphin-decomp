@@ -2094,3 +2094,48 @@ void fn_00675430(void* self) {
 }
 } // namespace lift_004B66E0
 } // namespace lift_00675430
+
+// [0x006724B0] sub_006724B0 (121 bytes)
+namespace lift_006724B0 {
+extern int mem_00924EF4;
+
+// @name pushHeapByKey
+// @summary Sift-up heap insertion (std::__push_heap shape) of an object pointer into an array, ordered by std::string operator> on each object's virtual key (vtable slot +0x24).
+// @field none (no class; objects are accessed only via vtable +0x00 and +0x24)
+void fn_006724B0(void** first, int holeIndex, int topIndex, void* value) {
+    using KeyFn = void* (__thiscall*)(void*);
+    using GreaterFn = bool (__cdecl*)(const void*, const void*);
+
+    // Virtual key accessor: obj->vtbl[+0x24](obj)
+    auto keyOf = [](void* obj) -> const void* {
+        uint8_t* vtbl = *reinterpret_cast<uint8_t**>(obj);
+        KeyFn fn = *reinterpret_cast<KeyFn*>(vtbl + 0x24);
+        return fn(obj);
+    };
+
+    // Indirect call through import slot mem_00924EF4 (std::string operator>).
+    GreaterFn greater = reinterpret_cast<GreaterFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924EF4)));
+
+    if (topIndex >= holeIndex) {
+        first[holeIndex] = value;
+        return;
+    }
+
+    int parent = (holeIndex - 1) / 2;
+    while (true) {
+        const void* valueKey = keyOf(value);
+        const void* parentKey = keyOf(first[parent]);
+        if (!greater(parentKey, valueKey)) {
+            break;
+        }
+        first[holeIndex] = first[parent];
+        holeIndex = parent;
+        parent = (holeIndex - 1) / 2;
+        if (!(topIndex < holeIndex)) {
+            break;
+        }
+    }
+    first[holeIndex] = value;
+}
+} // namespace lift_006724B0

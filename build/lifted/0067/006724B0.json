@@ -1,0 +1,13 @@
+{
+  "va": "0x006724B0",
+  "size": 121,
+  "orig_symbol": "sub_006724B0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "pushHeapByKey",
+  "signature": "void fn_006724B0(void** first, int holeIndex, int topIndex, void* value)",
+  "summary": "Sift-up heap insertion (std::__push_heap shape) of an object pointer into an array, ordered by std::string operator\u003e on each object's virtual key (vtable slot +0x24).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:19:31Z"
+}

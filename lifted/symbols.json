@@ -50019,6 +50019,12 @@
     "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x006724B0": {
+    "name": "pushHeapByKey",
+    "signature": "void fn_006724B0(void** first, int holeIndex, int topIndex, void* value)",
+    "summary": "Sift-up heap insertion (std::__push_heap shape) of an object pointer into an array, ordered by std::string operator\u003e on each object's virtual key (vtable slot +0x24).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672530": {
     "name": "GetOnceInitString_00672530",
     "signature": "void* fn_00672530(void* self)",
