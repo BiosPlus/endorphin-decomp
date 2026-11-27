@@ -1,0 +1,22 @@
+{
+  "va": "0x00785810",
+  "size": 85,
+  "orig_symbol": "sub_00785810",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::initWithSubobjectAndDefaults_00785810",
+  "class": "Unknown",
+  "signature": "void* fn_00785810(void* self)",
+  "summary": "Calls ext_007853D0(self, 0x00AAF418, 0x00AAF410, 2), stores vtable 0x00996F00 at +0x00, calls ext_00785E00(self), and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:58:41Z"
+}

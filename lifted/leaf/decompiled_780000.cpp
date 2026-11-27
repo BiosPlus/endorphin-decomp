@@ -2913,3 +2913,33 @@ void* fn_007877E0(void* self) {
     return self;
 }
 } // namespace lift_007877E0
+
+// [0x00785810] sub_00785810 (85 bytes)
+namespace lift_00785810 {
+// Known callee 0x007853D0: Unknown::initWithSubobject_007853D0 (Stores arg1 at +0x08, zeroes +0x10..+0x1C, initializes the sub-object at +0x20 via ext_006E73B0(arg2, arg3), sets the vtable pointer at +0x00, and returns this.)
+extern void* __thiscall ext_007853D0(void* self, DWORD arg1, DWORD arg2, DWORD arg3);
+// Known callee 0x00785E00: initDefaultParameters (Initializes six 64-bit fields and two byte flags on the object, then tail-calls ext_007857F0.)
+extern void __thiscall ext_00785E00(void* self);
+
+// @name Unknown::initWithSubobjectAndDefaults_00785810
+// @class Unknown
+// @summary Calls ext_007853D0(self, 0x00AAF418, 0x00AAF410, 2), stores vtable 0x00996F00 at +0x00, calls ext_00785E00(self), and returns self.
+// @field Unknown +0x00 DWORD vtable
+void* fn_00785810(void* self) {
+    // push -1 / SEH frame setup / restore: exception-frame bookkeeping, not program logic; omitted.
+
+    // push 2; push 0xaaf410; push 0xaaf418; call 0x7853d0 (this = self)
+    ext_007853D0(self, 0x00AAF418u, 0x00AAF410u, 2u);
+
+    // mov dword ptr [esp+0x10], 0 : SEH state slot, omitted.
+
+    // mov dword ptr [esi], 0x996f00 : store vtable pointer at +0x00
+    lift_field<DWORD>(self, 0x00) = 0x00996F00u;
+
+    // call 0x785e00 (this = self)
+    ext_00785E00(self);
+
+    // mov eax, esi : return self
+    return self;
+}
+} // namespace lift_00785810

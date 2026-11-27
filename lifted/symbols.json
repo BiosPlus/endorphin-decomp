@@ -79774,6 +79774,13 @@
     "summary": "Walks a uint32 array and calls virtual slot 4 on this for each element, alternating which return values are kept; returns the final flag (initially true).",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00785810": {
+    "name": "Unknown::initWithSubobjectAndDefaults_00785810",
+    "class": "Unknown",
+    "signature": "void* fn_00785810(void* self)",
+    "summary": "Calls ext_007853D0(self, 0x00AAF418, 0x00AAF410, 2), stores vtable 0x00996F00 at +0x00, calls ext_00785E00(self), and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00785870": {
     "name": "sub_00785870",
     "signature": "extern \"C\" void* __fastcall fn_00785870(void* self, int edx_unused, unsigned int flags)",
