@@ -185060,3 +185060,52 @@ void fn_0066F010(void* ctx, void* arg2) {
     reinterpret_cast<ThisCallVfunc43>(vtable_entry(obj4, 0xAC))(obj4, ctx, value);
 }
 } // namespace lift_0066F010
+
+// [0x0059F960] ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_43 (173 bytes)
+namespace lift_0059F960 {
+// Known callee 0x0059DEB0: sub_0059DEB0 (Virtual dispatch thunk: forwards to vtable slot at +0x80.)
+extern float ext_0059DEB0(void* self);
+// Known callee 0x00672080: sub_00672080 (thiscall: builds a temp from a float argument.)
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy; returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException.)
+extern void ext_006A6DD2(void* object, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>
+// @summary If *p is null throws a DerivedException; otherwise builds a temp from ext_0059DEB0((*p)+4), self-assigns p from it via ext_0041CF50, then calls vtable slot 0xAC of p->field_0x04 with (p, b).
+// @field ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0> +0x04 void* field_0x04
+void fn_0059F960(void* p, void* b) {
+    void* a = lift_field<void*>(p, 0x00);
+    if (a == nullptr) {
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+    }
+
+    float f = ext_0059DEB0(static_cast<unsigned char*>(a) + 0x04);
+
+    alignas(8) unsigned char tmp[16] = {};
+    ext_00672080(tmp, f);
+    ext_0041CF50(p, tmp);
+
+    // Release tmp.field_0x04 (if set) via its vtable slot 0x78.
+    void* t4 = lift_field<void*>(tmp, 0x04);
+    if (t4 != nullptr) {
+        void* t4vt = lift_field<void*>(t4, 0x00);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(t4vt, 0x78));
+        release(t4, tmp);
+    }
+
+    // Virtual call: p->field_0x04->vtable[0xAC](p, b).
+    void* o = lift_field<void*>(p, 0x04);
+    void* ovt = lift_field<void*>(o, 0x00);
+    auto vfn = reinterpret_cast<void (*)(void*, void*, void*)>(lift_field<void*>(ovt, 0xAC));
+    vfn(o, p, b);
+}
+} // namespace lift_0059F960

@@ -1,0 +1,14 @@
+{
+  "va": "0x0059F960",
+  "size": 173,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_43",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType::vfunc_43",
+  "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+  "signature": "void fn_0059F960(void* p, void* b)",
+  "summary": "If *p is null throws a DerivedException; otherwise builds a temp from ext_0059DEB0((*p)+4), self-assigns p from it via ext_0041CF50, then calls vtable slot 0xAC of p-\u003efield_0x04 with (p, b).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:41:44Z"
+}
