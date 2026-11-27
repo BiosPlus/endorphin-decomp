@@ -948,3 +948,22 @@ void fn_00724E80(void* self, uint32_t* out) {
     out[3] = a;
 }
 } // namespace lift_00724E80
+
+// [0x00722C20]
+namespace lift_00722C20 {
+// @name ComputeBlendPlusScaledSquare
+// @summary Returns BlendTwoValuesOverRange100(a, b, c) plus (x*x)*t1, where x = (a+500)*-0.002 and t1 = (b<c) ? 1000 : -1000.
+
+extern double ext_00722660(double a, double b, double c);
+extern double ext_00722720(double a, double b);
+extern const double mem_009967F0;
+extern const double mem_00996800;
+
+double fn_00722C20(double a, double b, double c) {
+    int32_t sign_step = (b < c) ? 1000 : -1000;
+    double t1 = static_cast<double>(sign_step);
+    double x = (a + mem_009967F0) * mem_00996800;
+    double scaled = ext_00722720(x, t1);
+    return ext_00722660(a, b, c) + scaled;
+}
+} // namespace lift_00722C20

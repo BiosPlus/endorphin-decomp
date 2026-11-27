@@ -74337,6 +74337,12 @@
     "summary": "Returns BlendTwoValuesOverRange100(a, b, c) + mulSquareDouble((a - 500) * 0.002, sign) where sign is -1000 if b \u003c c (or unordered) else +1000.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00722C20": {
+    "name": "ComputeBlendPlusScaledSquare",
+    "signature": "double fn_00722C20(double a, double b, double c)",
+    "summary": "Returns BlendTwoValuesOverRange100(a, b, c) plus (x*x)*t1, where x = (a+500)*-0.002 and t1 = (b\u003cc) ? 1000 : -1000.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00722F60": {
     "name": "sub_00722F60",
     "signature": "extern \"C\" void* __fastcall fn_00722F60(void* self, int edx_unused, unsigned int flags)",
