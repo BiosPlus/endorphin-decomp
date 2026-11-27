@@ -2117,3 +2117,54 @@ void __thiscall fn_00547D10(void* self, float scale) {
     reinterpret_cast<void(__thiscall*)(void* self)>(slot44)(self);
 }
 } // namespace lift_00547D10
+
+// [0x00541AB0]
+namespace lift_00541AB0 {
+// @name sub_00541AB0
+// @summary If flag at +0x13d is set, iterate over tree at +0x10c calling ext_00547E50 on each node's +0x28 pointer; otherwise call ext_00547E50 on the element at +0x8 + idx*0x3c.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0xf8 uint32_t field_0xf8
+// @field Unknown +0x10c void* field_0x10c
+// @field Unknown +0x110 void* field_0x110
+// @field Unknown +0x13d uint8_t field_0x13d
+
+
+extern void* mem_00925134;
+void ext_00547E50(void* self);
+void ext_00673C20(void* self);
+
+void fn_00541AB0(void* self) {
+    if (lift_field<uint8_t>(self, 0x13d) == 0) {
+        uint32_t idx = lift_field<uint32_t>(self, 0xf8);
+        void* target = lift_field<void*>(self, 0x8 + idx * 0x3c);
+        ext_00547E50(target);
+        return;
+    }
+
+    auto invalid_param = reinterpret_cast<void (*)()>(mem_00925134);
+    void* cont = static_cast<char*>(self) + 0x10c;
+    void* head = lift_field<void*>(self, 0x110);
+    struct {
+        void* cont;
+        void* node;
+    } it = { cont, lift_field<void*>(head, 0x0) };
+
+    for (;;) {
+        void* end_node = lift_field<void*>(cont, 0x4);
+        if (it.cont == nullptr || it.cont != cont) {
+            invalid_param();
+        }
+        if (it.node == end_node) {
+            break;
+        }
+        if (it.cont == nullptr) {
+            invalid_param();
+        }
+        if (it.node == lift_field<void*>(it.cont, 0x4)) {
+            invalid_param();
+        }
+        ext_00547E50(lift_field<void*>(it.node, 0x28));
+        ext_00673C20(&it);
+    }
+}
+} // namespace lift_00541AB0

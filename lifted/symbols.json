@@ -15500,6 +15500,12 @@
     "summary": "Validates begin/end/bound ordering, destroys the element range via ext_004B4930, releases the storage through ext_006A5C5C when it is non-null, then resets the three pointers to null.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B53E0": {
+    "name": "VectorFindAndErase",
+    "signature": "int32_t __thiscall fn_004B53E0(void* self, const uint32_t* target_ptr)",
+    "summary": "Finds an element matching *target_ptr in a pointer vector, clears and erases it, and returns its index.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B54F0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e",
@@ -27579,6 +27585,12 @@
     "summary": "Zero-initializes fields, constructs subobject at +0x18 with 0.05f and flags (1, 1), and sets +0x34/+0x38; returns this.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00541AB0": {
+    "name": "sub_00541AB0",
+    "signature": "void fn_00541AB0(void* self)",
+    "summary": "If flag at +0x13d is set, iterate over tree at +0x10c calling ext_00547E50 on each node's +0x28 pointer; otherwise call ext_00547E50 on the element at +0x8 + idx*0x3c.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005431B0": {
     "name": "ViewportManager::vfunc_6",
     "class": "ViewportManager",
@@ -31312,6 +31324,12 @@
     "class": "Node",
     "signature": "void __thiscall fn_00586300(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
     "summary": "Recursively processes a node and its child nodes using vtable calls on subobject +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x005863A0": {
+    "name": "sub_005863A0",
+    "signature": "uint32_t __thiscall fn_005863A0(void* self)",
+    "summary": "Counts elements in vector at +0x7c passing vtable+0xc4 check, RTDynamicCast, and ext_00584C10",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x00586440": {
