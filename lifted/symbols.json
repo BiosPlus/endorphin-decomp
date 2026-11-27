@@ -92426,6 +92426,12 @@
     "summary": "Searches the DWORD array at this+0x19c for item; if found, removes it and calls item's vtable slot 3 with 1; otherwise calls ext_006E7440(this+0x1c4, 0). Returns true when removed.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D5210": {
+    "name": "findNthItemByFormattedName",
+    "signature": "extern \"C\" void* __fastcall fn_006D5210(void* self, void* /*edx*/, int32_t nameArg, int32_t nth)",
+    "summary": "Formats a name from arg via sub_006D57D0, then returns the Nth entry in the item array whose name matches; on miss resets the field at +0x1C4 and returns null.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D55F0": {
     "name": "sub_006D55F0",
     "signature": "extern \"C\" int32_t __fastcall fn_006D55F0(void* self)",

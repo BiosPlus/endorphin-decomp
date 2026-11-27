@@ -825,6 +825,7 @@ struct Unknown_Fields {
     // +0x1C  bool                     flag  (evidence: 0x004CF910) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  HMODULE                  hModule  (evidence: 0x00401920) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    hwnd  (evidence: 0x00458DF0, 0x00458FE0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  int32_t                  itemCount  (evidence: 0x006D5210) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void**                   items  (evidence: 0x006E9A40) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t*                 iterBegin  (evidence: 0x0054F300) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t* field_0x1C (end of element-pointer array, re-read every iteration)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x1C
@@ -974,6 +975,7 @@ struct Unknown_Fields {
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0056B900, 0x00597860, 0x005B51E0, 0x0060B240, 0x0063D990, 0x0063DAD0, 0x0063F350, 0x00697840, 0x00790D60, 0x00790F40, 0x007911E0, 0x007966D0, 0x0079ADA0, 0x0079DCE0, 0x007AF180) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint8_t                  field_0x2c  (evidence: 0x0041CAB0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void*                    field_0x2c  (evidence: 0x0058A9A0, 0x0058AA20, 0x006488A0, 0x0074AEF0) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  void**                   items  (evidence: 0x006D5210) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  float                    m23  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 mode  (evidence: 0x005530F0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t entriesBase (address of array of 32-bit entry pointers)  (evidence: 0x006E8E50, 0x006E9030, 0x006E9210) // CONFLICT: multiple definitions at +0x2C
@@ -2061,7 +2063,7 @@ struct Unknown_Fields {
     // +0x1C3 uint8_t                  field_0x1C3  (evidence: 0x006D7CC0)
     // +0x1C4 void*                    fallbackHelper  (evidence: 0x006D5110) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C4 uint32_t                 field_0x1C4  (evidence: 0x007C2E50, 0x007C6780) // CONFLICT: multiple definitions at +0x1C4
-    // +0x1C4 uint8_t                  field_0x1C4  (evidence: 0x005B6B90, 0x006D4E10, 0x006D5090, 0x006D7CE0) // CONFLICT: multiple definitions at +0x1C4
+    // +0x1C4 uint8_t                  field_0x1C4  (evidence: 0x005B6B90, 0x006D4E10, 0x006D5090, 0x006D5210, 0x006D7CE0) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C4 void*                    field_0x1C4  (evidence: 0x006D4B30, 0x006D4C90, 0x006D4D10, 0x006D4E90) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C4 int32_t                  field_0x1c4  (evidence: 0x006D8210, 0x006D8280) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C4 std::uint8_t             field_0x1c4  (evidence: 0x007DA820) // CONFLICT: multiple definitions at +0x1C4

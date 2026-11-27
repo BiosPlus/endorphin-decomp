@@ -4652,3 +4652,41 @@ extern void* __thiscall fn_006D3560(void* self, void* arg1) {
     return edi;
 }
 } // namespace lift_006D3560
+
+// [0x006D5210]
+namespace lift_006D5210 {
+extern void __fastcall ext_006B9D70(void* self);
+extern void* __fastcall ext_006BADB0(void* self);
+extern void __cdecl ext_006D57D0(void* out, const char* fmt, int32_t arg);
+extern void* ext_006E7440(void* self, DWORD index);
+extern int32_t __fastcall ext_006E7460(void* self);
+extern char mem_00AA8704[];
+
+// @name findNthItemByFormattedName
+// @summary Formats a name from arg via sub_006D57D0, then returns the Nth entry in the item array whose name matches; on miss resets the field at +0x1C4 and returns null.
+// @field Unknown +0x1C int32_t itemCount
+// @field Unknown +0x2C void** items
+// @field Unknown +0x1C4 uint8_t field_0x1C4
+extern void* __fastcall fn_006D5210(void* self, void* /*edx*/, int32_t nameArg, int32_t nth)
+{
+    uint8_t local[0x40];
+    uint8_t* s = (uint8_t*)self;
+    ext_006D57D0(local, mem_00AA8704, nameArg);
+    int32_t count = 0;
+    for (int32_t i = 0; i < *(int32_t*)(s + 0x1C); ++i) {
+        void* item = (*(void***)(s + 0x2C))[i];
+        const char* a = (const char*)(uintptr_t)ext_006E7460(local);
+        const char* b = (const char*)ext_006BADB0(item);
+        if (std::strcmp(b, a) == 0) {
+            if (count == nth) {
+                ext_006B9D70(local);
+                return item;
+            }
+            ++count;
+        }
+    }
+    ext_006E7440(s + 0x1C4, 0);
+    ext_006B9D70(local);
+    return nullptr;
+}
+} // namespace lift_006D5210
