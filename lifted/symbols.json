@@ -28198,6 +28198,13 @@
     "summary": "Swaps the stored element at +0x1C into +0x18 (releasing the previous one via its virtual dtor), removes the element from the container at +0x10 recording its index in +0x20, notifies the object at +0x24, and forwards the element to the handler at +0x14.",
     "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
   },
+  "0x00501D40": {
+    "name": "NMData::EvolveEngineData::vfunc_7_off_8",
+    "class": "NMData::EvolveEngineData",
+    "signature": "void fn_00501D40(void* self, void* arg)",
+    "summary": "Calls base vfunc_7 and appends the result of vfunc_9 for each element in the vector at +0x124.",
+    "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
+  },
   "0x00501EC0": {
     "name": "EvolveEngine::vfunc_0_off_10",
     "class": "EvolveEngine",
@@ -59437,6 +59444,13 @@
     "signature": "void* fn_0060F3B0(void* self, DWORD arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00501140 (ValidatedCursorAdvance_00501140).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060F420": {
+    "name": "NMData::AxisDefineSensorData::vfunc_61",
+    "class": "NMData::AxisDefineSensorData",
+    "signature": "void __fastcall fn_0060F420(void* this_ptr, void* /*edx*/, void* /*arg1*/, void* arg2)",
+    "summary": "Conditionally registers a string at +0x180 into arg2+0x598 if +0x154 matches one of four axis names",
+    "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
   },
   "0x0060F540": {
     "name": "NMData::CompoundSensorData::vfunc_1_off_C",

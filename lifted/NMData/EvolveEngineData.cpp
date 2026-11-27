@@ -107,3 +107,52 @@ void* __thiscall fn_005004C0(void* self, void* ret_buf, const void* name) {
     return ret_buf;
 }
 } // namespace lift_005004C0
+
+// [0x00501D40]
+namespace lift_00501D40 {
+void ext_0065F550(void* self, void* arg);
+void ext_0040ECB0(void* self, const void* value);
+extern void (*mem_00925134)(void);
+
+// @name NMData::EvolveEngineData::vfunc_7_off_8
+// @class NMData::EvolveEngineData
+// @summary Calls base vfunc_7 and appends the result of vfunc_9 for each element in the vector at +0x124.
+// @field NMData::EvolveEngineData +0x124 void* field_0x124
+void fn_00501D40(void* self, void* arg) {
+  ext_0065F550(self, arg);
+
+  uint8_t* vec = static_cast<uint8_t*>(self) + 0x124;
+  uint32_t* it = *reinterpret_cast<uint32_t**>(vec + 0x4);
+  uint32_t* end = *reinterpret_cast<uint32_t**>(vec + 0x8);
+
+  if (it > end) {
+    mem_00925134();
+  }
+
+  for (;;) {
+    end = *reinterpret_cast<uint32_t**>(vec + 0x8);
+    if (*reinterpret_cast<uint32_t**>(vec + 0x4) > end) {
+      mem_00925134();
+    }
+    if (it == end) {
+      break;
+    }
+    if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+      mem_00925134();
+    }
+
+    void* elem = reinterpret_cast<void*>(*it);
+    void** vtable = *reinterpret_cast<void***>(elem);
+    using VFunc9 = const void* (*)(void*);
+    VFunc9 vfunc9 = reinterpret_cast<VFunc9>(vtable[0x24 / sizeof(void*)]);
+    const void* str = vfunc9(elem);
+
+    ext_0040ECB0(arg, str);
+
+    if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+      mem_00925134();
+    }
+    ++it;
+  }
+}
+} // namespace lift_00501D40

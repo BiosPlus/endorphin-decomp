@@ -1,0 +1,22 @@
+{
+  "va": "0x00501D40",
+  "size": 118,
+  "orig_symbol": "NMData::EvolveEngineData::vfunc_7_off_8",
+  "src_path": "src/NMData/EvolveEngineData.cpp",
+  "lifted_path": "lifted/NMData/EvolveEngineData.cpp",
+  "name": "NMData::EvolveEngineData::vfunc_7_off_8",
+  "class": "NMData::EvolveEngineData",
+  "signature": "void fn_00501D40(void* self, void* arg)",
+  "summary": "Calls base vfunc_7 and appends the result of vfunc_9 for each element in the vector at +0x124.",
+  "fields": [
+    {
+      "class": "NMData::EvolveEngineData",
+      "offset": "+0x124",
+      "type": "void*",
+      "name": "field_0x124"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:44:23Z"
+}
