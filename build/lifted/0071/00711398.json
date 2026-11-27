@@ -1,0 +1,21 @@
+{
+  "va": "0x00711398",
+  "size": 147,
+  "orig_symbol": "sub_00711398",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getValueAsDouble",
+  "signature": "extern \"C\" double __fastcall fn_00711398(void* self)",
+  "summary": "Dispatches on subobject field +0x28 to return an integer or double value from vtable methods, or a default double.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:05:15Z"
+}

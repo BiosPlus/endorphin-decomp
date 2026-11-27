@@ -2860,3 +2860,35 @@ void* fn_007101F0(void* self, const char* s) {
     return reinterpret_cast<void*>(const_cast<char*>(s));
 }
 } // namespace lift_007101F0
+
+// [0x00711398]
+namespace lift_00711398 {
+// @name getValueAsDouble
+// @summary Dispatches on subobject field +0x28 to return an integer or double value from vtable methods, or a default double.
+// @field Self +0x00 void** vtable
+
+
+extern uint32_t __fastcall ext_00711DB0(void* self);
+extern uint8_t mem_0092A278[];
+
+extern double __fastcall fn_00711398(void* self) {
+    uint32_t kind = ext_00711DB0(self) - 1;
+    if (kind > 0xFu) {
+        return *reinterpret_cast<const double*>(mem_0092A278);
+    }
+    void** vtable = *reinterpret_cast<void***>(self);
+    switch (kind) {
+        case 0: {
+            using Fn74 = int32_t(__thiscall*)(void*);
+            int32_t val = reinterpret_cast<Fn74>(vtable[0x74 / 4])(self);
+            return static_cast<double>(val);
+        }
+        default: {
+            using Fn88 = void(__thiscall*)(void*, double*, uint32_t, uint32_t, uint32_t);
+            double val = 0.0;
+            reinterpret_cast<Fn88>(vtable[0x88 / 4])(self, &val, 0, 0, 0);
+            return val;
+        }
+    }
+}
+} // namespace lift_00711398
