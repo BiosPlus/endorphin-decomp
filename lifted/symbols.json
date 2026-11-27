@@ -54117,6 +54117,12 @@
     "summary": "Forwards to AnimatableTransform::vfunc_2 and conditionally updates arg0 from field_0x234.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E25B0": {
+    "name": "sub_005E25B0",
+    "signature": "extern \"C\" int32_t __thiscall fn_005E25B0(void* self)",
+    "summary": "Computes a float from this via ext_005E1A50 and passes it to ext_00678130 on field_0x2E0 of the global object from ext_00594000.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E2770": {
     "name": "descriptiveName_005E2770",
     "signature": "float fn_005E2770(void* self)",

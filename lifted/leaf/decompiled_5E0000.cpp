@@ -1714,3 +1714,19 @@ uint8_t fn_005E0570(void* self) {
     return ext_005863A0(child) == 1 ? 1 : 0;
 }
 } // namespace lift_005E0570
+
+// [0x005E25B0]
+namespace lift_005E25B0 {
+extern int32_t __cdecl ext_00594000(void);
+extern float __thiscall ext_005E1A50(void* self);
+extern int32_t __thiscall ext_00678130(void* self, float value);
+
+// @name sub_005E25B0
+// @summary Computes a float from this via ext_005E1A50 and passes it to ext_00678130 on field_0x2E0 of the global object from ext_00594000.
+// @field GlobalObj +0x2E0 uint8_t field_0x2E0
+extern int32_t __thiscall fn_005E25B0(void* self) {
+    uintptr_t obj = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000()));
+    float val = ext_005E1A50(self);
+    return ext_00678130(reinterpret_cast<void*>(obj + 0x2E0), val);
+}
+} // namespace lift_005E25B0
