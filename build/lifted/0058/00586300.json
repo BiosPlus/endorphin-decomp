@@ -1,0 +1,34 @@
+{
+  "va": "0x00586300",
+  "size": 149,
+  "orig_symbol": "sub_00586300",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Node::sub_00586300",
+  "class": "Node",
+  "signature": "void __thiscall fn_00586300(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+  "summary": "Recursively processes a node and its child nodes using vtable calls on subobject +0x04.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "subobject_0x04"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x80",
+      "type": "uint32_t*",
+      "name": "children_begin"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x84",
+      "type": "uint32_t*",
+      "name": "children_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:10:09Z"
+}

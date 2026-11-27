@@ -1978,3 +1978,38 @@ void fn_005869C0(void* self, void* arg1, float arg2) {
     }
 }
 } // namespace lift_005869C0
+
+// [0x00586300]
+namespace lift_00586300 {
+extern uint32_t mem_00B40640;
+extern void (*mem_00925134)();
+
+// @name Node::sub_00586300
+// @class Node
+// @summary Recursively processes a node and its child nodes using vtable calls on subobject +0x04.
+// @field Node +0x04 void* subobject_0x04
+// @field Node +0x80 uint32_t* children_begin
+// @field Node +0x84 uint32_t* children_end
+void __thiscall fn_00586300(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    uint8_t* subobj = reinterpret_cast<uint8_t*>(self) + 0x4;
+    void** vtable = *reinterpret_cast<void***>(subobj);
+    using Fn38 = void(__thiscall*)(void*, uint32_t*, uint32_t, uint32_t);
+    reinterpret_cast<Fn38>(vtable[0x38 / 4])(subobj, &arg0, arg1, arg2);
+
+    uint32_t* it = *reinterpret_cast<uint32_t**>(reinterpret_cast<uint8_t*>(self) + 0x80);
+    uint32_t* end = *reinterpret_cast<uint32_t**>(reinterpret_cast<uint8_t*>(self) + 0x84);
+    if (it > end) {
+        mem_00925134();
+    }
+
+    while (it != end) {
+        void** sub_vt = *reinterpret_cast<void***>(subobj);
+        using Fn14 = uint32_t(__thiscall*)(void*, uint32_t, uint32_t);
+        uint32_t res = reinterpret_cast<Fn14>(sub_vt[0x14 / 4])(subobj, mem_00B40640, arg2);
+
+        void* child = reinterpret_cast<void*>(static_cast<uintptr_t>(*it));
+        fn_00586300(child, arg1, res, arg2);
+        ++it;
+    }
+}
+} // namespace lift_00586300

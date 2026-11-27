@@ -20509,6 +20509,12 @@
     "summary": "std::equal over two 28-byte std::string ranges; first2 + count*28 must lie within the bounds at `range` (else CRT invalid-parameter), returns true when all elements match.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004EFBA0": {
+    "name": "sub_004EFBA0",
+    "signature": "uint32_t __thiscall sub_004EFBA0(void* self, void* arg0)",
+    "summary": "Walk ancestor chain via +0x38 to find first matching entry in tree at +0x240, or return +0x230",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EFDF0": {
     "name": "StringPairList::clear",
     "class": "StringPairList",
@@ -31267,6 +31273,13 @@
     "class": "Node",
     "signature": "void __thiscall sub_005862A0(void* self)",
     "summary": "Calls virtual method at +0xA8 on this node, then recursively traverses child nodes in vector at +0x7C.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x00586300": {
+    "name": "Node::sub_00586300",
+    "class": "Node",
+    "signature": "void __thiscall fn_00586300(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+    "summary": "Recursively processes a node and its child nodes using vtable calls on subobject +0x04.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x00586440": {
