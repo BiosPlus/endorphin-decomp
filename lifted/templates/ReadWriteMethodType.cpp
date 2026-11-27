@@ -19889,3 +19889,49 @@ void fn_0059EB60(void* holder, void* arg2) {
     dtor(tmp);
 }
 } // namespace lift_0059EB60
+
+// [0x00524950] ExprParser::ReadWriteMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::NetworkConnectorData::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41 (139 bytes)
+namespace lift_00524950 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+// IAT slots: std::string::operator=(const string&) and std::string::~string() (MSVCP80).
+extern void* mem_00924FDC;
+extern void* mem_00924FF4;
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::NetworkConnectorData::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>
+// @summary Writes a string value (built via forwardVtableSlot4) into NetworkConnectorData::name, throwing if the target object pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field NetworkConnectorData +0xa4 std::string name
+void fn_00524950(void* arg1, void* arg2) {
+    // arg1 is a holder whose first word is the target object pointer.
+    uint8_t* target = *reinterpret_cast<uint8_t**>(arg1);
+    if (target == nullptr) {
+        // Original: construct a DerivedException in a local and throw it via _CxxThrowException.
+        alignas(8) uint8_t exc[0x20] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return;  // not reached: the throw does not return
+    }
+
+    // Temp std::string (MSVC layout, 0x1C bytes) populated by the callee; it is returned as the first arg.
+    alignas(8) uint8_t temp[0x1C] = {};
+    uint32_t r = ext_0046E780(temp,
+                              static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)),
+                              static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg1)),
+                              0);
+    void* rhs = reinterpret_cast<void*>(static_cast<uintptr_t>(r));
+
+    // target->name = rhs  (operator= via IAT slot, thiscall)
+    auto assign = reinterpret_cast<void* (__thiscall*)(void*, void*)>(mem_00924FDC);
+    assign(target + 0xa4, rhs);
+
+    // ~temp  (dtor via IAT slot, thiscall)
+    auto dtor = reinterpret_cast<void (__thiscall*)(void*)>(mem_00924FF4);
+    dtor(temp);
+}
+} // namespace lift_00524950
