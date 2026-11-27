@@ -100,11 +100,14 @@ struct unknown_Fields {
     // +0x118 uint8_t                  field_0x118  (evidence: 0x006C2CB0, 0x006C2E30, 0x0070AD00, 0x0070EBC0, 0x0070EBF0)
     // +0x11C void*                    field_0x11C  (evidence: 0x00464CC0)
     // +0x130 uint32_t                 field_0x130  (evidence: 0x0049DFA0)
+    // +0x148 uint8_t[0x20]            field_0x148  (evidence: 0x0070F210)
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x006872A0)
     // +0x154 uint32_t                 field_0x154  (evidence: 0x005CFC80)
     // +0x158 uint32_t                 field_0x158  (evidence: 0x005CFC80)
-    // +0x168 uint32_t                 field_0x168  (evidence: 0x007D8470)
+    // +0x168 uint32_t                 field_0x168  (evidence: 0x007D8470) // CONFLICT: multiple definitions at +0x168
+    // +0x168 uint8_t[0x20]            field_0x168  (evidence: 0x0070F210) // CONFLICT: multiple definitions at +0x168
     // +0x170 void*                    field_0x170  (evidence: 0x00464CC0)
+    // +0x188 uint8_t[0x20]            field_0x188  (evidence: 0x0070F210)
     // +0x18C void*                    field_0x18c  (evidence: 0x005E0EB0)
     // +0x198 uint32_t                 field_0x198  (evidence: 0x006F74E0)
     // +0x19C uint32_t                 field_0x19c  (evidence: 0x006F74E0)

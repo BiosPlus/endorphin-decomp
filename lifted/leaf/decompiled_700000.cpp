@@ -3248,3 +3248,21 @@ uint8_t __stdcall fn_0070C380(void* self, const uint32_t* values) {
 } // namespace lift_0079DB50
 } // namespace lift_006C1AF0
 } // namespace lift_0070C380
+
+// [0x0070F210]
+namespace lift_0070F210 {
+// @name sub_0070F210
+// @summary Constructs or initializes an output object from fields at +0x148, +0x168, and +0x188 via ext_00717570.
+// @field unknown +0x148 uint8_t[0x20] field_0x148
+// @field unknown +0x168 uint8_t[0x20] field_0x168
+// @field unknown +0x188 uint8_t[0x20] field_0x188
+
+
+extern void __thiscall ext_00717570(void* self, void* a1, void* a2, void* a3);
+
+void* __thiscall sub_0070F210(void* self, void* out) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_00717570(out, base + 0x148, base + 0x168, base + 0x188);
+    return out;
+}
+} // namespace lift_0070F210

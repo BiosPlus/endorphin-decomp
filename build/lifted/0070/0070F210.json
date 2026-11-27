@@ -1,0 +1,33 @@
+{
+  "va": "0x0070F210",
+  "size": 48,
+  "orig_symbol": "sub_0070F210",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_0070F210",
+  "signature": "void* __thiscall sub_0070F210(void* self, void* out)",
+  "summary": "Constructs or initializes an output object from fields at +0x148, +0x168, and +0x188 via ext_00717570.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x148",
+      "type": "uint8_t[0x20]",
+      "name": "field_0x148"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x168",
+      "type": "uint8_t[0x20]",
+      "name": "field_0x168"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x188",
+      "type": "uint8_t[0x20]",
+      "name": "field_0x188"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:24:56Z"
+}
