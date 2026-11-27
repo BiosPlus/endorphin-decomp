@@ -62653,3 +62653,37 @@ void* __stdcall fn_0048FFD0(void* out, void* holder) {
     return out;
 }
 } // namespace lift_0048FFD0
+
+// [0x004F5430] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>::vfunc_4 (76 bytes)
+namespace lift_004F5430 {
+// Callee 0x004F4DB0 (sub_004F4DB0): called with the held object in ECX; returns the float result in ST(0).
+extern float ext_004F4DB0(void* self);
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void* ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// RTTI ThrowInfo for the exception raised on a null target (VA 0x009DEC1C).
+static constexpr std::uintptr_t kThrowInfoVA = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType<MatrixWithProperties,float,getPhi>::vfunc_4
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>
+// @summary Reads the object pointed to by the ValuePtrType argument; if non-null, formats its getPhi() float into the result slot (arg), else throws.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// The result slot is the second argument (arg); the first argument is never read.
+void* fn_004F5430(void* unused, void* arg) {
+    (void)unused;
+    void* obj = *static_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(16) unsigned char exception_obj[64] = {};
+        ext_0046C3C0(exception_obj);
+        ext_006A6DD2(exception_obj, reinterpret_cast<const void*>(kThrowInfoVA));
+        return nullptr;
+    }
+    float value = ext_004F4DB0(obj);
+    ext_0046C390(arg, value);
+    return arg;
+}
+} // namespace lift_004F5430

@@ -19302,6 +19302,13 @@
     "summary": "Evaluates getPhi on a MatrixWithProperties pointer and returns whether it is \u003e= 1e-6, throwing if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F5430": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties,float,getPhi\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, 0\u003e",
+    "signature": "void* fn_004F5430(void* unused, void* arg)",
+    "summary": "Reads the object pointed to by the ValuePtrType argument; if non-null, formats its getPhi() float into the result slot (arg), else throws.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F5740": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e",
