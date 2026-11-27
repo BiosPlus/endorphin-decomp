@@ -734,3 +734,50 @@ void* fn_00774A70(void* self, DWORD arg1, DWORD arg2) {
     return self;
 }
 } // namespace lift_00774A70
+
+// [0x0077E760]
+namespace lift_0077E760 {
+// @name Unknown::configureMaterial_0077E760
+// @class Unknown
+// @summary Configures a "Material" entry on the sub-object at +0xAC+0x4 using properties from the passed object.
+// @field Unknown +0xAC void* field_0xAC
+
+
+extern void* __fastcall ext_006BADB0(void* self);
+extern void __thiscall ext_007279A0(void* self, int32_t value);
+extern void __thiscall ext_00728410(void* self);
+extern void __thiscall ext_007284D0(void* self);
+extern void __thiscall ext_007275F0(void* self, const char* name);
+extern int32_t __fastcall ext_006E7460(void* self);
+extern void __thiscall ext_006B9D70(void* self);
+extern void __thiscall ext_007283B0(void* self);
+
+extern const char mem_00AAD40C[];
+
+extern void __thiscall fn_0077E760(void* self, void* arg) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    auto getTarget = [base]() -> void* {
+        uint8_t* ptr = lift_field<uint8_t*>(base, 0xAC);
+        return ptr + 0x4;
+    };
+
+    ext_007275F0(getTarget(), mem_00AAD40C);
+
+    void* val1 = ext_006BADB0(arg);
+    ext_007279A0(getTarget(), static_cast<int32_t>(reinterpret_cast<uintptr_t>(val1)));
+
+    uint8_t local_obj[0x48];
+    void** vtable = *reinterpret_cast<void***>(arg);
+    using VSlot6Fn = void* (__thiscall*)(void*, void*);
+    void* res = reinterpret_cast<VSlot6Fn>(vtable[6])(arg, local_obj);
+
+    int32_t val2 = ext_006E7460(res);
+    ext_007279A0(getTarget(), val2);
+
+    ext_006B9D70(local_obj);
+
+    ext_00728410(getTarget());
+    ext_007284D0(getTarget());
+    ext_007283B0(getTarget());
+}
+} // namespace lift_0077E760

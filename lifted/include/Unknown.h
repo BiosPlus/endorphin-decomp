@@ -1546,7 +1546,7 @@ struct Unknown_Fields {
     // +0xAC  int32_t                  field_0xAC  (evidence: 0x007CDB70) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t                 field_0xAC  (evidence: 0x005CE940, 0x0072DB80, 0x007554F0) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint8_t                  field_0xAC  (evidence: 0x00441C10, 0x0044CE90) // CONFLICT: multiple definitions at +0xAC
-    // +0xAC  void*                    field_0xAC  (evidence: 0x005B67C0, 0x005B7000, 0x005B7020) // CONFLICT: multiple definitions at +0xAC
+    // +0xAC  void*                    field_0xAC  (evidence: 0x005B67C0, 0x005B7000, 0x005B7020, 0x0077E760) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  DWORD                    field_0xac  (evidence: 0x00772050, 0x00774A70) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  float                    field_0xac  (evidence: 0x00608350, 0x00611100) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  int32_t                  field_0xac  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0xAC

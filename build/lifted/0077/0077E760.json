@@ -1,0 +1,22 @@
+{
+  "va": "0x0077E760",
+  "size": 208,
+  "orig_symbol": "sub_0077E760",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::configureMaterial_0077E760",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_0077E760(void* self, void* arg)",
+  "summary": "Configures a \"Material\" entry on the sub-object at +0xAC+0x4 using properties from the passed object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "void*",
+      "name": "field_0xAC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:18:13Z"
+}
