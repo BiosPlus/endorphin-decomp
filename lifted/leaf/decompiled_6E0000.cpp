@@ -1918,3 +1918,42 @@ DWORD fn_006E91E0(void* self, DWORD index) {
     return 0;
 }
 } // namespace lift_006E91E0
+
+// [0x006E8820] sub_006E8820 (64 bytes)
+namespace lift_006E8820 {
+// Known callee 0x006E8810: sub_006E8810 (Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).)
+extern uint32_t ext_006E8810(void* self);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::getTableEntryPtr_006E8820
+// @class Unknown
+// @summary Bounds-checks a signed index against ext_006E8810(this); on success returns inner->table(+0x88) + 72*index, otherwise calls ext_006E7440(inner+0x90, 0) and returns NULL.
+// @field Unknown +0x00 DWORD innerPtr
+void* fn_006E8820(void* self, DWORD index) {
+    // mov esi, ecx; mov edi, [esp+4]   -> self = this (ecx), index = first stack arg
+    // test edi, edi; jl fail            -> index must be >= 0 (signed)
+    if (static_cast<int32_t>(index) >= 0) {
+        // call sub_006E8810 (ecx still = this); cmp edi, eax; jge fail -> index < count (signed)
+        uint32_t count = ext_006E8810(self);
+        if (static_cast<int32_t>(index) < static_cast<int32_t>(count)) {
+            // mov eax, [esi]        -> inner = *(DWORD*)this (sub-object pointer)
+            uint32_t innerVal = lift_field<uint32_t>(self, 0x00);
+            void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerVal));
+            // mov edx, [eax+0x88]   -> table base = *(DWORD*)(inner + 0x88)
+            uint32_t table = lift_field<uint32_t>(inner, 0x88);
+            // lea ecx, [edi+8*edi] -> ecx = 9*index; lea eax, [edx+8*ecx] -> table + 72*index
+            uint32_t offset = static_cast<uint32_t>(index) * 72u;
+            return reinterpret_cast<void*>(static_cast<uintptr_t>(table + offset));
+        }
+    }
+
+    // fail: mov ecx, [esi]; add ecx, 0x90; push 0; call sub_006E7440
+    uint32_t innerVal = lift_field<uint32_t>(self, 0x00);
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerVal));
+    void* sub = static_cast<unsigned char*>(inner) + 0x90;
+    (void)ext_006E7440(sub, 0);
+    // xor eax, eax
+    return nullptr;
+}
+} // namespace lift_006E8820

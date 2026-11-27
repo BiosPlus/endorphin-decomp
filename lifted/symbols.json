@@ -69863,6 +69863,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8820": {
+    "name": "Unknown::getTableEntryPtr_006E8820",
+    "class": "Unknown",
+    "signature": "void* fn_006E8820(void* self, DWORD index)",
+    "summary": "Bounds-checks a signed index against ext_006E8810(this); on success returns inner-\u003etable(+0x88) + 72*index, otherwise calls ext_006E7440(inner+0x90, 0) and returns NULL.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E8900": {
     "name": "sub_006E8900",
     "class": "Unknown",
