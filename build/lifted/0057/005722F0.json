@@ -1,0 +1,46 @@
+{
+  "va": "0x005722F0",
+  "size": 661,
+  "orig_symbol": "CSMMotionIO::vfunc_13",
+  "src_path": "src/classes/CSMMotionIO.cpp",
+  "lifted_path": "lifted/classes/CSMMotionIO.cpp",
+  "name": "CSMMotionIO::vfunc_13",
+  "class": "CSMMotionIO",
+  "signature": "void __thiscall fn_005722F0(void* self, const void* filename_str)",
+  "summary": "Export motion data to a file using an output file stream and optional progress callback.",
+  "fields": [
+    {
+      "class": "CSMMotionIO",
+      "offset": "+0x16C",
+      "type": "int32_t",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "CSMMotionIO",
+      "offset": "+0x170",
+      "type": "int32_t",
+      "name": "field_0x170"
+    },
+    {
+      "class": "CSMMotionIO",
+      "offset": "+0x414",
+      "type": "void*",
+      "name": "field_0x414"
+    },
+    {
+      "class": "CSMMotionIO",
+      "offset": "+0x420",
+      "type": "void*",
+      "name": "field_0x420"
+    },
+    {
+      "class": "CSMMotionIO",
+      "offset": "+0x424",
+      "type": "void*",
+      "name": "field_0x424"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:33:18Z"
+}
