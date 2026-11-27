@@ -1,0 +1,58 @@
+{
+  "va": "0x0059F520",
+  "size": 156,
+  "orig_symbol": "sub_0059F520",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "Record0x30::Create",
+  "class": "Record0x30",
+  "signature": "void* fn_0059F520(uint32_t a0, uint32_t a1, uint32_t a2, const void* src, uint8_t flag)",
+  "summary": "Allocates a 0x30-byte record, stores three dwords and a copy of a source string plus a source dword/flag; frees and rethrows if the string copy throws.",
+  "fields": [
+    {
+      "class": "Record0x30",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "str"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x2C",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Record0x30",
+      "offset": "+0x2D",
+      "type": "uint8_t",
+      "name": "field_0x2d"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:27:22Z"
+}

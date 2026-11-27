@@ -2474,3 +2474,50 @@ void* fn_00597D00(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4
     return obj;
 }
 } // namespace lift_00597D00
+
+// [0x0059F520] sub_0059F520 (156 bytes)
+namespace lift_0059F520 {
+// operator new(size) (MFC80 ord_762, via IAT thunk ext_006A5C62)
+extern void* ext_006A5C62(size_t size);
+// operator delete(ptr) (MFC80 ord_764, via IAT thunk ext_006A5C5C)
+extern void ext_006A5C5C(void* ptr);
+// MSVCP80 std::basic_string<char> copy constructor, called through IAT slot mem_00924FE0
+extern int mem_00924FE0;
+
+// @name Record0x30::Create
+// @class Record0x30
+// @summary Allocates a 0x30-byte record, stores three dwords and a copy of a source string plus a source dword/flag; frees and rethrows if the string copy throws.
+// @field Record0x30 +0x00 uint32_t field_0x00
+// @field Record0x30 +0x04 uint32_t field_0x04
+// @field Record0x30 +0x08 uint32_t field_0x08
+// @field Record0x30 +0x0c std::string str
+// @field Record0x30 +0x1c uint32_t field_0x1c
+// @field Record0x30 +0x2c uint8_t flag
+// @field Record0x30 +0x2d uint8_t field_0x2d
+void* fn_0059F520(uint32_t a0, uint32_t a1, uint32_t a2, const void* src, uint8_t flag) {
+    using StrCopyCtorFn = void(__thiscall*)(void* self, const void* src);
+
+    void* obj = ext_006A5C62(0x30);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    try {
+        lift_field<uint32_t>(obj, 0x04) = a1;
+        lift_field<uint32_t>(obj, 0x00) = a0;
+        lift_field<uint32_t>(obj, 0x08) = a2;
+
+        void* str = &lift_field<uint8_t>(obj, 0x0c);
+        (*reinterpret_cast<StrCopyCtorFn*>(&mem_00924FE0))(str, src);
+
+        lift_field<uint32_t>(obj, 0x1c) = lift_field<uint32_t>(src, 0x1c);
+        lift_field<uint8_t>(obj, 0x2c) = flag;
+        lift_field<uint8_t>(obj, 0x2d) = 0;
+    } catch (...) {
+        ext_006A5C5C(obj);
+        throw;
+    }
+
+    return obj;
+}
+} // namespace lift_0059F520

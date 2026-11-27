@@ -35209,6 +35209,13 @@
     "summary": "Handles property 0x14B if ext_0059E060 succeeds by calling ext_00661650 on field at +0x61C; otherwise delegates to ext_0058F6B0.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x0059F520": {
+    "name": "Record0x30::Create",
+    "class": "Record0x30",
+    "signature": "void* fn_0059F520(uint32_t a0, uint32_t a1, uint32_t a2, const void* src, uint8_t flag)",
+    "summary": "Allocates a 0x30-byte record, stores three dwords and a copy of a source string plus a source dword/flag; frees and rethrows if the string copy throws.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059F600": {
     "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
