@@ -558,3 +558,44 @@ uint8_t fn_00871450(void* self, void* obj) {
     return 1;
 }
 } // namespace lift_00871450
+
+// [0x008716C0] sub_008716C0 (146 bytes)
+namespace lift_008716C0 {
+// MSVCP80 std::basic_string<char>::compare(pos, n, const char*, n2) IAT slot (0x00925118)
+static auto& mem_00925118 = *reinterpret_cast<int(__thiscall**)(void*, size_t, size_t, const char*, size_t)>(0x00925118);
+// MSVCP80 std::basic_string<char>::~basic_string IAT slot (0x00924FF4)
+static auto& mem_00924FF4 = *reinterpret_cast<void(__thiscall**)(void*)>(0x00924FF4);
+
+// String literals in .rdata (9 and 8 chars)
+extern const char mem_0099F154[];
+extern const char mem_0099F148[];
+
+// @name Unknown::checkNameAndSetFlag4C
+// @class Unknown
+// @summary If arg's name string at +0x04 equals "mem_0099F154" (len 9 at +0x18), calls virtual slot 2 on arg to get an object, compares its string at +0x00 against "mem_0099F148" (len 8 at +0x14), and stores the boolean result to self+0x4C.
+// @field Unknown +0x4C bool flag4C
+// @field Unknown +0x00 void* vtable (arg object)
+// @field Unknown +0x04 std::string name (arg object)
+// @field Unknown +0x18 uint32_t nameLen (arg object)
+void fn_008716C0(void* self, void* arg) {
+    // Compare arg->name (len arg->+0x18) with the 9-char literal.
+    if (mem_00925118(reinterpret_cast<uint8_t*>(arg) + 0x04, 0,
+                     lift_field<uint32_t>(arg, 0x18), mem_0099F154, 9) != 0) {
+        return;
+    }
+
+    // Virtual slot 2 of arg's vtable: returns object pointer, writes a string into tmp.
+    alignas(4) uint8_t tmp[0x18];
+    void* vtbl = *reinterpret_cast<void**>(arg);
+    auto vfn = reinterpret_cast<void*(__thiscall*)(void*, void*)>(
+        reinterpret_cast<void**>(vtbl)[2]);
+    void* obj = vfn(arg, tmp);
+
+    // Compare obj's string (at +0x00, length at +0x14) with the 8-char literal.
+    int cmp = mem_00925118(obj, 0, lift_field<uint32_t>(obj, 0x14), mem_0099F148, 8);
+    lift_field<uint8_t>(self, 0x4C) = (cmp == 0) ? 1 : 0;
+
+    // Destroy tmp string.
+    mem_00924FF4(tmp);
+}
+} // namespace lift_008716C0

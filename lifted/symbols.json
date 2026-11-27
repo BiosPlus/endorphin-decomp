@@ -56431,6 +56431,12 @@
     "summary": "Copy-constructs two std::string members at +0x00 and +0x1C and copies three 32-bit fields at +0x38, +0x3C, and +0x40.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00673EA0": {
+    "name": "allocAndConstructListNode",
+    "signature": "extern \"C\" void* __stdcall fn_00673EA0(uint32_t nextPtr, uint32_t prevPtr, const void* val)",
+    "summary": "Allocates a 0x4C-byte node, sets two pointer fields at +0x00/+0x04, and copy-constructs the payload at +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x006744A0": {
     "name": "NMData::State::vfunc_7",
     "class": "NMData::State",
@@ -84823,6 +84829,13 @@
     "class": "Unknown",
     "signature": "uint8_t fn_00871450(void* self, void* obj)",
     "summary": "If fn_00871130(self, obj) succeeds and obj has type 3 whose first three chars equal \"xml\" (case-insensitive), calls ext_00870E40(self, 0x19); returns 1 on success path, 0 if ext_00871130 fails.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
+  "0x008716C0": {
+    "name": "Unknown::checkNameAndSetFlag4C",
+    "class": "Unknown",
+    "signature": "void fn_008716C0(void* self, void* arg)",
+    "summary": "If arg's name string at +0x04 equals \"mem_0099F154\" (len 9 at +0x18), calls virtual slot 2 on arg to get an object, compares its string at +0x00 against \"mem_0099F148\" (len 8 at +0x14), and stores the boolean result to self+0x4C.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
   "0x00871860": {

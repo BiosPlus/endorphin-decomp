@@ -97,6 +97,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 next_or_head  (evidence: 0x00783800, 0x00783820, 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    object  (evidence: 0x00493EA0, 0x00666170) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to the array-owning object)  (evidence: 0x0077FF70, 0x0077FFB0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* vtable (arg        object)  (evidence: 0x008716C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 owner  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (pointer to grid owner)  (evidence: 0x007F63D0) // CONFLICT: multiple definitions at +0x0
@@ -266,6 +267,7 @@ struct Unknown_Fields {
     // +0x4   uint8_t*                 next  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    obj_ptr  (evidence: 0x0058A960) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    object  (evidence: 0x0041CF00) // CONFLICT: multiple definitions at +0x4
+    // +0x4   std::string name (arg    object)  (evidence: 0x008716C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (pointer to index-holder object)  (evidence: 0x007F63D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t field_0x04 (enable flag on inner object)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to holder object)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x4
@@ -677,6 +679,7 @@ struct Unknown_Fields {
     // +0x18  uint32_t                 length  (evidence: 0x00871450) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    m12  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x18
     // +0x18  std::string              name  (evidence: 0x005327F0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint32_t nameLen (arg    object)  (evidence: 0x008716C0) // CONFLICT: multiple definitions at +0x18
     // +0x18  StringPairList           pairs  (evidence: 0x004F0250) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    quadric  (evidence: 0x0054A0E0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 range2_end  (evidence: 0x00526960, 0x0052F7D0) // CONFLICT: multiple definitions at +0x18
@@ -1035,6 +1038,7 @@ struct Unknown_Fields {
     // +0x4C  void**                   field_0x4c  (evidence: 0x006BA780, 0x006BC6F0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint8_t                  field_0x4c[0x11]  (evidence: 0x00602F70) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint32_t                 flag  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x4C
+    // +0x4C  bool                     flag4C  (evidence: 0x008716C0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  void*                    ownedPtrA  (evidence: 0x00648790) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint32_t field_0x4c (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x4C
     // +0x4E  WORD                     field_0x4e  (evidence: 0x00798710) // CONFLICT: multiple definitions at +0x4E
