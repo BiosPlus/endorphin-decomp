@@ -79914,6 +79914,13 @@
     "summary": "Stores -_HUGE (negated MSVCR80 _HUGE double) into four global double slots.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00786270": {
+    "name": "sub_00786270",
+    "class": "Unknown",
+    "signature": "void* fn_00786270(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00785810 (Unknown::initWithSubobjectAndDefaults_00785810).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007862D0": {
     "name": "sub_007862D0",
     "signature": "extern \"C\" void* __fastcall fn_007862D0(void* self, int edx_unused, unsigned int flags)",

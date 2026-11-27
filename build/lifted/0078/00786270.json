@@ -1,0 +1,22 @@
+{
+  "va": "0x00786270",
+  "size": 85,
+  "orig_symbol": "sub_00786270",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_00786270",
+  "class": "Unknown",
+  "signature": "void* fn_00786270(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00785810 (Unknown::initWithSubobjectAndDefaults_00785810).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T04:59:58Z"
+}
