@@ -1,0 +1,28 @@
+{
+  "va": "0x00681DD0",
+  "size": 125,
+  "orig_symbol": "sub_00681DD0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "BuildStaticObjectPair",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __cdecl fn_00681DD0(void* out, DWORD value, uint8_t flag)",
+  "summary": "Fills out-record {DWORD value; void* obj} and returns out; obj comes from fn_00681C50 when flag != 0, otherwise from fn_004989F0. The MSVC SEH frame in the original is dropped (its handler does no work on the normal path).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:54:08Z"
+}

@@ -2387,3 +2387,31 @@ StringRecordIter* __thiscall fn_00688C50(
     return out_iter;
 }
 } // namespace lift_00688C50
+
+// [0x00681DD0] sub_00681DD0 (125 bytes)
+namespace lift_00681DD0 {
+extern DWORD mem_00B599BC;
+extern void* ext_004989F0();
+extern void* ext_00681C50();
+
+// @name BuildStaticObjectPair
+// @class Unknown
+// @summary Fills out-record {DWORD value; void* obj} and returns out; obj comes from fn_00681C50 when flag != 0, otherwise from fn_004989F0. The MSVC SEH frame in the original is dropped (its handler does no work on the normal path).
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+extern void* __cdecl fn_00681DD0(void* out, DWORD value, uint8_t flag) {
+    lift_field<DWORD>(out, 0x00) = 0;
+    lift_field<DWORD>(out, 0x04) = mem_00B599BC;
+
+    void* obj;
+    if (flag != 0) {
+        obj = ext_00681C50();
+    } else {
+        obj = ext_004989F0();
+    }
+
+    lift_field<DWORD>(out, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+    lift_field<DWORD>(out, 0x00) = value;
+    return out;
+}
+} // namespace lift_00681DD0

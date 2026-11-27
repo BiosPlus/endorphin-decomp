@@ -53505,6 +53505,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00681DD0": {
+    "name": "BuildStaticObjectPair",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __cdecl fn_00681DD0(void* out, DWORD value, uint8_t flag)",
+    "summary": "Fills out-record {DWORD value; void* obj} and returns out; obj comes from fn_00681C50 when flag != 0, otherwise from fn_004989F0. The MSVC SEH frame in the original is dropped (its handler does no work on the normal path).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00681FE0": {
     "name": "sub_00681FE0",
     "signature": "void* fn_00681FE0(void* self)",
