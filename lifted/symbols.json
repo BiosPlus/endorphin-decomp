@@ -11419,6 +11419,13 @@
     "summary": "Refreshes per-frame state from the handle in `obj`: resolves normalized",
     "lifted_path": "lifted/classes/RuntimeEngine.cpp"
   },
+  "0x00474540": {
+    "name": "StringMapTree::insertUnique_00474540",
+    "class": "StringMapTree",
+    "signature": "inline uint32_t addr32(const void* p)",
+    "summary": "Unique-key insert into a string-keyed red-black tree: finds the insert position by string comparison and returns {iterator, inserted} via out (inserted=false if the key already exists).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00474A00": {
     "name": "StringMapTree::insertWithHint_00474A00",
     "class": "StringMapTree",

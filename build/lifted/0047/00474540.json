@@ -1,0 +1,52 @@
+{
+  "va": "0x00474540",
+  "size": 243,
+  "orig_symbol": "sub_00474540",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "StringMapTree::insertUnique_00474540",
+  "class": "StringMapTree",
+  "signature": "inline uint32_t addr32(const void* p)",
+  "summary": "Unique-key insert into a string-keyed red-black tree: finds the insert position by string comparison and returns {iterator, inserted} via out (inserted=false if the key already exists).",
+  "fields": [
+    {
+      "class": "StringMapTree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "StringMapNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "StringMapNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "StringMapNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "StringMapNode",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "key"
+    },
+    {
+      "class": "StringMapNode",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:50:29Z"
+}

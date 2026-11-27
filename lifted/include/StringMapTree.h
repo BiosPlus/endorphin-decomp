@@ -8,7 +8,7 @@
 // Recovered field layout for StringMapTree:
 namespace lifted_layout {
 struct StringMapTree_Fields {
-    // +0x4   void*                    head  (evidence: 0x00473C70, 0x00474A00) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    head  (evidence: 0x00473C70, 0x00474540, 0x00474A00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    header  (evidence: 0x00476050) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    myhead  (evidence: 0x005A27F0) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 size  (evidence: 0x00473C70, 0x00474A00)

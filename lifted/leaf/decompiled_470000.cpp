@@ -3016,3 +3016,101 @@ void* fn_00474A00(void* self, void* out, void* hint_tree, void* hint_node, const
     return out;
 }
 } // namespace lift_00474A00
+
+// [0x00474540] sub_00474540 (243 bytes)
+namespace lift_00474540 {
+// Known callee 0x00470090: TreeIterator::decrement (thiscall: iterator in ecx)
+extern void ext_00470090(void* self);
+// Known callee 0x00473C70: StringMapTree::insertNode_00473C70 (thiscall: out slot, insertLeft, hint, value; returns pointer to {tree, node})
+extern void* ext_00473C70(void* self, void* out, uint8_t insertLeft, void* hint, const void* value);
+// Metadata-only callees (listed in CALLEES, never called by the disassembly; address taken only)
+extern void ext_00475E50();
+extern void ext_00666C00();
+// MSVCP80 std::string operator< import slot (cdecl); the slot's value is the function pointer
+extern void* mem_00924EF4;
+
+namespace {
+
+using StrLessFn = bool(__cdecl*)(const void*, const void*);
+
+inline uint32_t addr32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+inline void* addrPtr(uint32_t a) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(a));
+}
+
+// Red-black node layout (MSVC std::_Tree style): left +0x00, parent +0x04, right +0x08, key +0x0c, isNil +0x45.
+inline void* left(void* n) { return lift_field<void*>(n, 0x00); }
+inline void* right(void* n) { return lift_field<void*>(n, 0x08); }
+inline uint8_t isNil(void* n) { return lift_field<uint8_t>(n, 0x45); }
+inline const void* keyOf(void* n) { return &lift_field<uint8_t>(n, 0x0c); }
+
+inline bool strLess(const void* a, const void* b) {
+    return reinterpret_cast<StrLessFn>(mem_00924EF4)(a, b);
+}
+
+// Writes {R[0], R[1], true} into out and returns out.
+void* insertAt(void* self, void* out, uint8_t insertLeft, void* hint, const void* key) {
+    uint32_t slot[2] = {0, 0};
+    void* r = ext_00473C70(self, slot, insertLeft, hint, key);
+    lift_field<uint32_t>(out, 0x0) = lift_field<uint32_t>(r, 0x0);
+    lift_field<uint32_t>(out, 0x4) = lift_field<uint32_t>(r, 0x4);
+    lift_field<uint8_t>(out, 0x8) = 1;
+    return out;
+}
+
+// Writes {self, pos, false} into out and returns out (key already present).
+void* duplicate(void* self, void* out, void* pos) {
+    lift_field<uint32_t>(out, 0x0) = addr32(self);
+    lift_field<uint32_t>(out, 0x4) = addr32(pos);
+    lift_field<uint8_t>(out, 0x8) = 0;
+    return out;
+}
+
+} // namespace
+
+// @name StringMapTree::insertUnique_00474540
+// @class StringMapTree
+// @summary Unique-key insert into a string-keyed red-black tree: finds the insert position by string comparison and returns {iterator, inserted} via out (inserted=false if the key already exists).
+// @field StringMapTree +0x04 void* head
+// @field StringMapNode +0x00 void* left
+// @field StringMapNode +0x04 void* parent
+// @field StringMapNode +0x08 void* right
+// @field StringMapNode +0x0c std::string key
+// @field StringMapNode +0x45 uint8_t isNil
+void* fn_00474540(void* self, void* out, const void* key) {
+    // Metadata-only references (no runtime effect).
+    (void)&ext_00475E50;
+    (void)&ext_00666C00;
+
+    void* head = lift_field<void*>(self, 0x04);
+    void* node = head;
+    void* cur = lift_field<void*>(head, 0x04);  // root
+    bool goLeft = true;
+    while (isNil(cur) == 0) {
+        node = cur;
+        goLeft = strLess(key, keyOf(cur));
+        cur = goLeft ? left(cur) : right(cur);
+    }
+
+    if (goLeft) {
+        if (node == left(head)) {
+            return insertAt(self, out, 1, node, key);
+        }
+        // iterator {container, node}; decrement moves node to its predecessor
+        uint32_t iter[2] = {addr32(self), addr32(node)};
+        ext_00470090(iter);
+        void* pred = addrPtr(iter[1]);
+        if (!strLess(keyOf(pred), key)) {
+            return duplicate(self, out, pred);
+        }
+        return insertAt(self, out, 1, node, key);
+    }
+
+    if (!strLess(keyOf(node), key)) {
+        return duplicate(self, out, node);
+    }
+    return insertAt(self, out, 0, node, key);
+}
+} // namespace lift_00474540
