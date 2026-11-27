@@ -3047,3 +3047,39 @@ extern int32_t __thiscall fn_0070CF50(void* self, int32_t index) {
     return 0;
 }
 } // namespace lift_0070CF50
+
+// [0x0070C860] sub_0070C860 (112 bytes)
+namespace lift_0070C860 {
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5ED40;
+extern uint32_t mem_00B5ED44;
+extern double mem_00B5ED38;
+
+// @name initDefaultsAndClearFlag_0070C860
+// @summary Calls Unknown::assignCString_006B9EC0 on the sub-object at +0xF4 with the literal string at 0x00AABD8C, then clears the byte flag at +0x198.
+// @field Unknown +0xF4 uint8_t field_0xF4
+// @field Unknown +0x198 uint8_t field_0x198
+void __thiscall fn_0070C860(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* sub = obj + 0xF4;
+    ext_006B9EC0(sub, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AABD8Cu)));
+    obj[0x198] = 0;
+}
+
+// [0x0070C890] reachable only via jmp at 0x0070C880 (separate block in the same 112B region)
+// Copies the two dwords at *(mem_00925284) into mem_00B5ED40 / mem_00B5ED44.
+void fn_0070C890() {
+    uint32_t* src = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5ED40 = src[0];
+    mem_00B5ED44 = src[1];
+}
+
+// [0x0070C8C0] reachable only via jmp at 0x0070C8B0 (separate block in the same 112B region)
+// Stores the negation of the double at *(mem_00925284) into mem_00B5ED38.
+void fn_0070C8C0() {
+    const double* src = reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5ED38 = -(*src);
+}
+} // namespace lift_0070C860

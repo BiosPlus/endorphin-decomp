@@ -1600,7 +1600,7 @@ struct Unknown_Fields {
     // +0xF4  float                    field_0xF4  (evidence: 0x007C8490, 0x007C9AA0, 0x007CAF70) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  int                      field_0xF4  (evidence: 0x004090C0, 0x00455CB0) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  uint32_t                 field_0xF4  (evidence: 0x007155B0, 0x0071C700) // CONFLICT: multiple definitions at +0xF4
-    // +0xF4  uint8_t                  field_0xF4  (evidence: 0x00436AD0) // CONFLICT: multiple definitions at +0xF4
+    // +0xF4  uint8_t                  field_0xF4  (evidence: 0x00436AD0, 0x0070C860) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  void*                    field_0xF4  (evidence: 0x0044ACE0) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  std::string              field_0xf4  (evidence: 0x00402B60) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  uint8_t                  field_0xf4  (evidence: 0x00430260, 0x00430430, 0x00441C10) // CONFLICT: multiple definitions at +0xF4
@@ -1814,7 +1814,8 @@ struct Unknown_Fields {
     // +0x194 uint8_t                  field_0x194  (evidence: 0x005B6A10) // CONFLICT: multiple definitions at +0x194
     // +0x194 void*                    field_0x194  (evidence: 0x0041B480, 0x004CB400) // CONFLICT: multiple definitions at +0x194
     // +0x194 DWORD                    field_0x194[18]  (evidence: 0x007AA7F0, 0x007AA970) // CONFLICT: multiple definitions at +0x194
-    // +0x198 float                    field_0x198  (evidence: 0x007C8490, 0x007CAF70)
+    // +0x198 float                    field_0x198  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x198
+    // +0x198 uint8_t                  field_0x198  (evidence: 0x0070C860) // CONFLICT: multiple definitions at +0x198
     // +0x19C int32_t                  field_0x19c  (evidence: 0x006AA890)
     // +0x1A0 RowFn                    callback  (evidence: 0x007BBB40, 0x007BBB90) // CONFLICT: multiple definitions at +0x1A0
     // +0x1A0 uint32_t                 field_0x1a0  (evidence: 0x006F7680) // CONFLICT: multiple definitions at +0x1A0

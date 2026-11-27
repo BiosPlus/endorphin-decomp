@@ -74827,6 +74827,12 @@
     "summary": "Pure jump thunk forwarding to sub_0070BF00.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070C860": {
+    "name": "initDefaultsAndClearFlag_0070C860",
+    "signature": "void __thiscall fn_0070C860(void* self)",
+    "summary": "Calls Unknown::assignCString_006B9EC0 on the sub-object at +0xF4 with the literal string at 0x00AABD8C, then clears the byte flag at +0x198.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070C8E0": {
     "name": "initHugeBounds",
     "signature": "void sub_0070C8E0()",

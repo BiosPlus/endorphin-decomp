@@ -1,0 +1,27 @@
+{
+  "va": "0x0070C860",
+  "size": 112,
+  "orig_symbol": "sub_0070C860",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "initDefaultsAndClearFlag_0070C860",
+  "signature": "void __thiscall fn_0070C860(void* self)",
+  "summary": "Calls Unknown::assignCString_006B9EC0 on the sub-object at +0xF4 with the literal string at 0x00AABD8C, then clears the byte flag at +0x198.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "uint8_t",
+      "name": "field_0xF4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x198",
+      "type": "uint8_t",
+      "name": "field_0x198"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:55:31Z"
+}
