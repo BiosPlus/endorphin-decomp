@@ -11,9 +11,13 @@
 namespace lifted_layout {
 struct MultiTrackView_MultiTrackViewStates_MoveState_Fields {
     // +0x4   void*                    stateManager  (evidence: 0x00442C90)
-    // +0x8   void*                    field_0x08  (evidence: 0x00442C70, 0x00442C90)
-    // +0xC   uint8_t                  field_0x0c  (evidence: 0x00442C90)
-    // +0x1C  int32_t                  field_0x1c  (evidence: 0x00443650)
-    // +0x30  uint8_t                  field_0x30  (evidence: 0x00442C70)
+    // +0x8   void*                    field_0x08  (evidence: 0x00442C70, 0x00442C90, 0x00443EE0)
+    // +0xC   uint8_t                  field_0x0c  (evidence: 0x00442C90, 0x00443EE0)
+    // +0x10  void**                   field_0x10  (evidence: 0x00443EE0)
+    // +0x14  void**                   field_0x14  (evidence: 0x00443EE0)
+    // +0x1C  POINT                    field_0x1c  (evidence: 0x00443EE0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  int32_t                  field_0x1c  (evidence: 0x00443650) // CONFLICT: multiple definitions at +0x1C
+    // +0x28  double                   field_0x28  (evidence: 0x00443EE0)
+    // +0x30  uint8_t                  field_0x30  (evidence: 0x00442C70, 0x00443EE0)
 };
 } // namespace lifted_layout

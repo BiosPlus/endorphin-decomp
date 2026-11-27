@@ -1,0 +1,58 @@
+{
+  "va": "0x00443EE0",
+  "size": 422,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_1",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/MoveState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_1",
+  "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+  "signature": "void fn_00443EE0(void* self)",
+  "summary": "Starts mouse capture, erases the tracked pointer range, and for each entry feeds the",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "field_0x10"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x14",
+      "type": "void**",
+      "name": "field_0x14"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x1C",
+      "type": "POINT",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x28",
+      "type": "double",
+      "name": "field_0x28"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:58:58Z"
+}
