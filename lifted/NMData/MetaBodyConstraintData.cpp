@@ -206,3 +206,72 @@ extern void __thiscall fn_004CE390(void* self) {
     ext_004CE040(new_obj, self);
 }
 } // namespace lift_004CE390
+
+// [0x004CD0D0] NMData::MetaBodyConstraintData::vfunc_90 (188 bytes)
+namespace lift_004CD0D0 {
+// Known callee 0x004026E0: std_vector_string_Tidy (destroys vector<string> elements and frees the buffer)
+extern void __thiscall ext_004026E0(void* self);
+// Known callee 0x00594000: sub_00594000 (returns global int32 from mem_00B40D08), __cdecl, no args
+extern int32_t ext_00594000();
+// Known callee 0x00599E70: Unknown::getGrandparentField0x38C (thiscall, returns DWORD or 0)
+extern uint32_t __thiscall ext_00599E70(void* self);
+// Known callee 0x004C2760: thiscall with one stack argument (result unused)
+extern void __thiscall ext_004C2760(void* self, uint32_t arg);
+// Metadata-only callees (see note in fn body)
+extern void ext_004CC720();
+extern void ext_004CC9E0();
+// IAT slot for MSVCP80 std::basic_string<char> destructor; call target is the slot's value
+extern void* mem_00924FF4;
+
+static inline void* P(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// @name NMData::MetaBodyConstraintData::vfunc_90
+// @class NMData::MetaBodyConstraintData
+// @summary Fetches a vector<string> via vtbl[79], tidies it, and if the global int32 is nonzero, resolves an object (this+0x168->+0x38C, else ext_00599E70) and passes the string from its vtbl[3] to ext_004C2760.
+// @field NMData::MetaBodyConstraintData +0x00 void** vptr
+// @field NMData::MetaBodyConstraintData +0x168 void* field_0x168
+extern void __thiscall fn_004CD0D0(void* self) {
+    using VFnOut = void(__thiscall*)(void* self, void* out);   // vtbl slot 79 (0x13C / 4)
+    using VFnRet = uint32_t(__thiscall*)(void* self, void* out); // vtbl slot 3 (0x0C / 4)
+    using DtorFn = void(__thiscall*)(void* self);
+
+    // vector<string> temporary (12 bytes used, 16 zeroed like the original frame).
+    uint32_t vec[4] = {0, 0, 0, 0};
+    void** vt = *reinterpret_cast<void***>(self);
+    reinterpret_cast<VFnOut>(vt[79])(self, vec);
+    ext_004026E0(vec);
+
+    if (ext_00594000() == 0) {
+        return;
+    }
+
+    uint32_t cur;
+    uint32_t obj = lift_field<uint32_t>(self, 0x168);
+    if (obj != 0) {
+        cur = lift_field<uint32_t>(P(obj), 0x38C);
+    } else {
+        uint32_t g = static_cast<uint32_t>(ext_00594000());
+        cur = ext_00599E70(P(g));
+    }
+    if (cur == 0) {
+        return;
+    }
+
+    // std::string temporary (24 bytes) returned via vtbl slot 3.
+    uint32_t str[6] = {0, 0, 0, 0, 0, 0};
+    void* item = P(cur);
+    void** itemVt = *reinterpret_cast<void***>(item);
+    uint32_t r = reinterpret_cast<VFnRet>(itemVt[3])(item, str);
+    ext_004C2760(self, r);
+
+    // Destroy the string via the IAT slot.
+    reinterpret_cast<DtorFn>(mem_00924FF4)(str);
+
+    // Metadata lists 0x004CC720 / 0x004CC9E0 as callees, but the disassembly never calls them.
+    // Only take their addresses so nothing changes at runtime.
+    (void)&ext_004CC720;
+    (void)&ext_004CC9E0;
+}
+} // namespace lift_004CD0D0

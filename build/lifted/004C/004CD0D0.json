@@ -1,0 +1,28 @@
+{
+  "va": "0x004CD0D0",
+  "size": 188,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_90",
+  "src_path": "src/NMData/MetaBodyConstraintData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_90",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "static inline void* P(uint32_t v)",
+  "summary": "Fetches a vector\u003cstring\u003e via vtbl[79], tidies it, and if the global int32 is nonzero, resolves an object (this+0x168-\u003e+0x38C, else ext_00599E70) and passes the string from its vtbl[3] to ext_004C2760.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:34Z"
+}

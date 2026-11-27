@@ -21554,6 +21554,13 @@
     "summary": "Cleans up, destroys, and clears the subobject at +0x180 if non-null.",
     "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
   },
+  "0x004CD0D0": {
+    "name": "NMData::MetaBodyConstraintData::vfunc_90",
+    "class": "NMData::MetaBodyConstraintData",
+    "signature": "static inline void* P(uint32_t v)",
+    "summary": "Fetches a vector\u003cstring\u003e via vtbl[79], tidies it, and if the global int32 is nonzero, resolves an object (this+0x168-\u003e+0x38C, else ext_00599E70) and passes the string from its vtbl[3] to ext_004C2760.",
+    "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
+  },
   "0x004CD190": {
     "name": "NMData::MetaBodyConstraintData::vfunc_1_off_154",
     "class": "NMData::MetaBodyConstraintData",

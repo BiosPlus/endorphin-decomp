@@ -10,8 +10,9 @@
 // Recovered field layout for NMData::MetaBodyConstraintData:
 namespace lifted_layout {
 struct NMData_MetaBodyConstraintData_Fields {
-    // +0x0   void**                   vptr  (evidence: 0x004CA380, 0x004CCFB0)
+    // +0x0   void**                   vptr  (evidence: 0x004CA380, 0x004CCFB0, 0x004CD0D0)
     // +0x30  int                      field_0x30  (evidence: 0x004CD190)
+    // +0x168 void*                    field_0x168  (evidence: 0x004CD0D0)
     // +0x180 void*                    field_0x180  (evidence: 0x0048DE30, 0x004CD090, 0x004CE390, 0x005CF3E0)
     // +0x184 int                      field_0x184  (evidence: 0x004A9B50, 0x004CA3D0)
     // +0x188 void*                    field_0x188  (evidence: 0x004CA310)
