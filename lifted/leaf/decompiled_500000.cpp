@@ -3261,3 +3261,79 @@ void __thiscall fn_00507850(void* self, void* arg) {
     ext_00507490(self, &outFlag, self, end, arg);
 }
 } // namespace lift_00507850
+
+// [0x0050AFA0] sub_0050AFA0 (184 bytes)
+namespace lift_0050AFA0 {
+// Known callee 0x0050AA50: sub_0050AA50 (thiscall, one stack arg; invoked on each element pointer).
+// Known callee 0x006404E0: sub_006404E0 (thiscall, one stack arg; returns a pointer-sized value).
+// Data 0x00925134: IAT slot for MSVCR80!_invalid_parameter_noinfo (called on bounds failures).
+extern void ext_0050AA50(void* self, void* arg);
+extern void* ext_006404E0(void* self, void* arg);
+extern int mem_00925134;
+
+// Calls through the IAT slot 0x00925134 (MSVCR80!_invalid_parameter_noinfo).
+static void call_invalid_parameter_noinfo() {
+    using Fn = void (*)();
+    Fn fn = *reinterpret_cast<Fn*>(&mem_00925134);
+    fn();
+}
+
+// @name ForEachPtrVectorApply_0050AFA0
+// @summary Walks a vector of 4-byte element pointers, applying sub_0050AA50 to each element with a transformed value (optionally via sub_006404E0), then invokes the vtable slot 0 of an optional callback object; returns a0-derived value or a sentinel when the vector is empty.
+// @field PtrVector +0x04 void** begin
+// @field PtrVector +0x08 void** end
+void* fn_0050AFA0(void* vec, void* a2, void* a3, void* a4, void* a5) {
+    void** begin = lift_field<void**>(vec, 0x04);
+    void** end = lift_field<void**>(vec, 0x08);
+
+    // Empty or null range: return sentinel address 0x00B53B30.
+    if (begin == nullptr || begin == end) {
+        return reinterpret_cast<void*>(uintptr_t{0x00B53B30u});
+    }
+
+    // Base value: transform a2 via sub_006404E0 when a3 is non-null, else use a2 directly.
+    void* ebp;
+    if (a3 != nullptr) {
+        ebp = ext_006404E0(a2, a3);
+    } else {
+        ebp = a2;
+    }
+
+    if (!(begin <= end)) {
+        call_invalid_parameter_noinfo();
+    }
+    void** limit = end;
+    if (!(begin <= limit)) {
+        call_invalid_parameter_noinfo();
+    }
+
+    void* b = a4;
+    void** cur = begin;
+    while (cur != limit) {
+        if (b != nullptr) {
+            if (!(cur < end)) {
+                call_invalid_parameter_noinfo();
+            }
+            void* pushed = ext_006404E0(ebp, b);
+            ext_0050AA50(*cur, pushed);
+        } else {
+            if (!(cur < end)) {
+                call_invalid_parameter_noinfo();
+            }
+            ext_0050AA50(*cur, ebp);
+        }
+
+        if (a5 != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(a5);
+            reinterpret_cast<void (*)(void*)>(vtbl[0])(a5);
+        }
+
+        if (!(cur < end)) {
+            call_invalid_parameter_noinfo();
+        }
+        cur += 1;
+    }
+
+    return ebp;
+}
+} // namespace lift_0050AFA0

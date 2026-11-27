@@ -1,0 +1,27 @@
+{
+  "va": "0x0050AFA0",
+  "size": 184,
+  "orig_symbol": "sub_0050AFA0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "ForEachPtrVectorApply_0050AFA0",
+  "signature": "static void call_invalid_parameter_noinfo()",
+  "summary": "Walks a vector of 4-byte element pointers, applying sub_0050AA50 to each element with a transformed value (optionally via sub_006404E0), then invokes the vtable slot 0 of an optional callback object; returns a0-derived value or a sentinel when the vector is empty.",
+  "fields": [
+    {
+      "class": "PtrVector",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "begin"
+    },
+    {
+      "class": "PtrVector",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:25:08Z"
+}

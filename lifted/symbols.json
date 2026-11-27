@@ -28648,6 +28648,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050AFA0": {
+    "name": "ForEachPtrVectorApply_0050AFA0",
+    "signature": "static void call_invalid_parameter_noinfo()",
+    "summary": "Walks a vector of 4-byte element pointers, applying sub_0050AA50 to each element with a transformed value (optionally via sub_006404E0), then invokes the vtable slot 0 of an optional callback object; returns a0-derived value or a sentinel when the vector is empty.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050B060": {
     "name": "Unknown::copyRecordRangeAndAdvance_0050B060",
     "class": "Unknown",
