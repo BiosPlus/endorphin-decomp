@@ -1,0 +1,51 @@
+{
+  "va": "0x0044A000",
+  "size": 149,
+  "orig_symbol": "sub_0044A000",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_0044A000",
+  "signature": "extern \"C\" void __thiscall fn_0044A000(void* self)",
+  "summary": "Destructor for an MFC dialog/window class, tearing down member controls and base class.",
+  "fields": [
+    {
+      "class": "sub_0044A000",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "sub_0044A000",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "sub_0044A000",
+      "offset": "+0xF4",
+      "type": "uint8_t",
+      "name": "field_0xF4"
+    },
+    {
+      "class": "sub_0044A000",
+      "offset": "+0x148",
+      "type": "uint8_t",
+      "name": "field_0x148"
+    },
+    {
+      "class": "sub_0044A000",
+      "offset": "+0x19C",
+      "type": "uint8_t",
+      "name": "field_0x19C"
+    },
+    {
+      "class": "sub_0044A000",
+      "offset": "+0x1F8",
+      "type": "uint8_t",
+      "name": "field_0x1F8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:08:37Z"
+}

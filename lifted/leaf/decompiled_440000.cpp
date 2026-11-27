@@ -3258,3 +3258,72 @@ void fn_004447E0(void* self) {
     lift_field<BYTE>(self, 0x1b8) = 1;
 }
 } // namespace lift_004447E0
+
+// [0x0044A000]
+namespace lift_0044A000 {
+extern void __thiscall ext_006A5DFA(void* self);
+extern void __thiscall ext_006A6640(void* self);
+extern void __thiscall ext_006A5F38(void* self);
+extern void __thiscall ext_006A64A2(void* self);
+extern void __thiscall ext_006A61D2(void* self);
+
+// @name sub_0044A000
+// @summary Destructor for an MFC dialog/window class, tearing down member controls and base class.
+// @field sub_0044A000 +0x00 uint32_t vftable
+// @field sub_0044A000 +0x88 uint8_t field_0x88
+// @field sub_0044A000 +0xF4 uint8_t field_0xF4
+// @field sub_0044A000 +0x148 uint8_t field_0x148
+// @field sub_0044A000 +0x19C uint8_t field_0x19C
+// @field sub_0044A000 +0x1F8 uint8_t field_0x1F8
+extern void __thiscall fn_0044A000(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x00933CFC;
+    ext_006A5DFA(static_cast<uint8_t*>(self) + 0x1F8);
+    ext_006A5DFA(static_cast<uint8_t*>(self) + 0x19C);
+    ext_006A6640(static_cast<uint8_t*>(self) + 0x148);
+    ext_006A5F38(static_cast<uint8_t*>(self) + 0xF4);
+    ext_006A64A2(static_cast<uint8_t*>(self) + 0x88);
+    ext_006A61D2(self);
+}
+} // namespace lift_0044A000
+
+// [0x00448600]
+namespace lift_00448600 {
+int32_t __thiscall ext_006A5EA8(void* self);
+int32_t __thiscall ext_006A6184(void* self, uint32_t dwStyle, const void* lpRect, void* pParentWnd, uint32_t nID);
+extern uint32_t mem_00925694;
+
+// @name sub_00448600
+// @summary OnCreate handler creating child controls and setting font on child window
+// @field unknown +0x58 void* field_0x58
+// @field unknown +0x5C uint8_t field_0x5c
+// @field unknown +0x7C uint32_t field_0x7c
+// @field unknown +0xD8 uint8_t field_0xd8
+// @field unknown +0xDC uint32_t field_0xdc
+int32_t __thiscall fn_00448600(void* self, uint32_t /*unused*/) {
+    int32_t res = ext_006A5EA8(self);
+    if (res == -1) {
+        return -1;
+    }
+
+    uint32_t rect[4] = {0, 0, 0, 0};
+    ext_006A6184(static_cast<uint8_t*>(self) + 0x5c, 0x50000000u, rect, self, 1);
+
+    uint8_t* font_holder = static_cast<uint8_t*>(self) + 0xd8;
+    uint32_t hfont = font_holder ? *reinterpret_cast<uint32_t*>(font_holder + 4) : 0;
+    uint32_t hwnd = lift_field<uint32_t>(self, 0x7c);
+
+    using SendMessageA_t = int32_t(__stdcall*)(uint32_t, uint32_t, uint32_t, int32_t);
+    reinterpret_cast<SendMessageA_t>(mem_00925694)(hwnd, 0x30u, hfont, 1);
+
+    void* obj = lift_field<void*>(self, 0x58);
+    rect[0] = 0;
+    rect[1] = 0;
+    rect[2] = 0;
+    rect[3] = 0;
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using VMethod_t = int32_t(__thiscall*)(void*, uint32_t, const void*, void*, uint32_t);
+    reinterpret_cast<VMethod_t>(vtable[0x13c / 4])(obj, 0x50000020u, rect, self, 2);
+
+    return 0;
+}
+} // namespace lift_00448600
