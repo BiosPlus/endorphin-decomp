@@ -3936,3 +3936,75 @@ uint32_t __thiscall sub_00661B50(void* this_ptr, uint32_t index) {
     return lift_field<uint32_t>(vec, 0x04) + (index << 6);
 }
 } // namespace lift_00661B50
+
+// [0x00661C90]
+namespace lift_00661C90 {
+// @name sub_00661C90
+// @summary Look up element by index from either a fallback vector or the current list node's vector
+// @field Self +0x04 uintptr_t field_0x04
+// @field Self +0x08 uintptr_t field_0x08
+// @field Self +0x0C uintptr_t field_0x0C
+
+
+extern uintptr_t mem_00925134;
+
+static inline void call_invalid_param() {
+    reinterpret_cast<void (*)()>(mem_00925134)();
+}
+
+uint32_t __thiscall sub_00661C90(void* self, uint32_t index) {
+    uintptr_t obj = lift_field<uintptr_t>(self, 0x04);
+    uintptr_t list_ptr = obj + 0x60;
+    uintptr_t head_ptr = lift_field<uintptr_t>(reinterpret_cast<void*>(obj), 0x64);
+    uintptr_t end_node = *reinterpret_cast<uintptr_t*>(head_ptr);
+
+    uintptr_t iter_container = lift_field<uintptr_t>(self, 0x08);
+    if (iter_container == 0 || iter_container != list_ptr) {
+        call_invalid_param();
+    }
+
+    uintptr_t iter_node = lift_field<uintptr_t>(self, 0x0C);
+    if (iter_node == end_node) {
+        uintptr_t vec_base = obj + 0x30;
+        uintptr_t first = lift_field<uintptr_t>(reinterpret_cast<void*>(obj), 0x34);
+        if (first == 0) {
+            call_invalid_param();
+        } else {
+            uintptr_t last = lift_field<uintptr_t>(reinterpret_cast<void*>(vec_base), 0x08);
+            uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(last - first) >> 2);
+            if (index >= count) {
+                call_invalid_param();
+            }
+        }
+        uintptr_t data = lift_field<uintptr_t>(reinterpret_cast<void*>(vec_base), 0x04);
+        uintptr_t elem = *reinterpret_cast<uintptr_t*>(data + static_cast<uintptr_t>(index) * 4);
+        uintptr_t vtable = *reinterpret_cast<uintptr_t*>(elem);
+        using fn_t = uint32_t(__thiscall*)(void*);
+        return reinterpret_cast<fn_t>(*reinterpret_cast<uintptr_t*>(vtable))(reinterpret_cast<void*>(elem));
+    } else {
+        uintptr_t container = lift_field<uintptr_t>(self, 0x08);
+        if (container == 0) {
+            call_invalid_param();
+        }
+        container = lift_field<uintptr_t>(self, 0x08);
+        uintptr_t node = lift_field<uintptr_t>(self, 0x0C);
+        if (node == lift_field<uintptr_t>(reinterpret_cast<void*>(container), 0x04)) {
+            call_invalid_param();
+        }
+        uintptr_t cur_node = lift_field<uintptr_t>(self, 0x0C);
+        uintptr_t vec_base = cur_node + 0x4C;
+        uintptr_t first = lift_field<uintptr_t>(reinterpret_cast<void*>(cur_node), 0x50);
+        if (first == 0) {
+            call_invalid_param();
+        } else {
+            uintptr_t last = lift_field<uintptr_t>(reinterpret_cast<void*>(vec_base), 0x08);
+            uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(last - first) >> 2);
+            if (index >= count) {
+                call_invalid_param();
+            }
+        }
+        uintptr_t data = lift_field<uintptr_t>(reinterpret_cast<void*>(vec_base), 0x04);
+        return *reinterpret_cast<uint32_t*>(data + static_cast<uintptr_t>(index) * 4);
+    }
+}
+} // namespace lift_00661C90
