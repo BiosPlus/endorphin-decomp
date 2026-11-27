@@ -184481,3 +184481,59 @@ bool fn_00678AA0(void* const* slot, uint32_t arg2) {
 }
 } // namespace lift_004B1460
 } // namespace lift_00678AA0
+
+// [0x005137E0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_43 (162 bytes)
+namespace lift_005137E0 {
+// Known callee 0x00682ED0: VirtualSlot9Thunk (returns vtable[0x24] code address of its receiver)
+extern void* ext_00682ED0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (43B; thiscall-style init of a stack slot from a code pointer)
+extern void ext_006720E0(void* slot, void* code);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException)
+extern void ext_006A6DD2(void* object, void* throwInfo);
+
+// @name ReadMethodType::vfunc_43
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>
+// @summary Resolves a method-type value pointer, copies it into this object's slot, then forwards to the target's vfunc at byte offset 0xAC with the second argument.
+// @field ExprParser::ReadMethodType +0x00 void* valuePtr
+// @field ExprParser::ReadMethodType +0x04 void* target
+void* fn_005137E0(void* self, void* arg2) {
+    unsigned char* const s = static_cast<unsigned char*>(self);
+
+    // Null value pointer: construct the exception object and throw.
+    if (*reinterpret_cast<void**>(s) == nullptr) {
+        unsigned char exception[16] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, reinterpret_cast<void*>(0x009DEC1C));
+        return nullptr;
+    }
+
+    // Code pointer from the value object's vtable slot 0x24 (receiver = valuePtr + 4).
+    void* const code = ext_00682ED0(*reinterpret_cast<unsigned char**>(s) + 4);
+
+    void* slot = nullptr;
+    ext_006720E0(&slot, code);
+
+    // Copy-assign into this object's slot 0x04 from the initialized slot.
+    ext_0041CF50(self, &slot);
+
+    // Release the temporary via its vtable slot 0x78 when present.
+    if (slot != nullptr) {
+        void* const tmp = slot;
+        void* const* const vt = *reinterpret_cast<void* const* const*>(tmp);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(
+            *reinterpret_cast<void* const*>(reinterpret_cast<const unsigned char*>(vt) + 0x78));
+        release(tmp, &slot);
+    }
+
+    // Forward to target (field 0x04) vtable slot 0xAC with (self, arg2).
+    void* const target = *reinterpret_cast<void**>(s + 4);
+    void* const* const tvt = *reinterpret_cast<void* const* const*>(target);
+    auto fn = reinterpret_cast<void* (*)(void*, void*, void*)>(
+        *reinterpret_cast<void* const*>(reinterpret_cast<const unsigned char*>(tvt) + 0xAC));
+    return fn(target, self, arg2);
+}
+} // namespace lift_005137E0
