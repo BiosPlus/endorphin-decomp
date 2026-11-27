@@ -1,0 +1,34 @@
+{
+  "va": "0x004BB060",
+  "size": 126,
+  "orig_symbol": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_10",
+  "src_path": "src/templates/SetType.cpp",
+  "lifted_path": "lifted/templates/SetType.cpp",
+  "name": "Properties::SetType::vfunc_10",
+  "class": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e, Properties::GetTerminalParent\u003e",
+  "signature": "static inline void* as_ptr(uint32_t v)",
+  "summary": "If ext_006616B0(arg3) is true, selects the last element of the PointainerSet referenced by *arg1 (or the early-out value when empty); otherwise selects arg3-\u003e+0x04. Then dynamic-casts arg4 and forwards to ext_004BA440.",
+  "fields": [
+    {
+      "class": "PointainerSet\u003cNMData::MaterialInteraction\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "PointainerSet\u003cNMData::MaterialInteraction\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Properties::PropertyIteratorType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:41:55Z"
+}

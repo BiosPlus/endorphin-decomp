@@ -20046,6 +20046,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B4D90 (PointainerVectorType::vfunc_3).",
     "lifted_path": "lifted/templates/SetType.cpp"
   },
+  "0x004BB060": {
+    "name": "Properties::SetType::vfunc_10",
+    "class": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e, Properties::GetTerminalParent\u003e",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "If ext_006616B0(arg3) is true, selects the last element of the PointainerSet referenced by *arg1 (or the early-out value when empty); otherwise selects arg3-\u003e+0x04. Then dynamic-casts arg4 and forwards to ext_004BA440.",
+    "lifted_path": "lifted/templates/SetType.cpp"
+  },
   "0x004BBB00": {
     "name": "std::vector\u003cstd::string*\u003e::erase_and_delete",
     "class": "std::vector\u003cstd::string*\u003e",
