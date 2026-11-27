@@ -5877,3 +5877,49 @@ void fn_00434F70(void* self) {
 }
 } // namespace lift_00434E50
 } // namespace lift_00434F70
+
+// [0x0043F9E0] sub_0043F9E0 (131 bytes)
+namespace lift_0043F9E0 {
+// Known callee 0x0043D870: ConstructElementRange (Constructs count 4-byte elements in base[] via MFC80 ord_297(arg); on exception destroys the already-constructed prefix via MFC80 ord_578 and rethrows through ext_006A6DD2.)
+extern void ext_0043D870(uint32_t* base, uint32_t count, uint32_t arg);
+// Known callee 0x0043F820: sub_0043F820 (141B), slow-path reallocate-and-insert helper (thiscall, 4 stack args).
+extern void ext_0043F820(void* self, uint32_t* scratch, void* self2, uint32_t* end, uint32_t value);
+// MSVCR80!_invalid_parameter_noinfo is reached through the IAT slot at 0x00925134.
+extern int mem_00925134;
+
+// @name ElementVector::EmplaceBack_0043F9E0
+// @class ElementVector
+// @summary Appends one uint32 to a vector-like buffer, constructing it in place when spare capacity exists and otherwise taking the reallocating insert path.
+// @field ElementVector +0x04 uint32_t* vec_first
+// @field ElementVector +0x08 uint32_t* vec_last
+// @field ElementVector +0x0C uint32_t* vec_end
+void fn_0043F9E0(void* self, uint32_t value) {
+    uint32_t** first_slot = &lift_field<uint32_t*>(self, 0x04);
+    uint32_t* first = *first_slot;
+    uint32_t* last = lift_field<uint32_t*>(self, 0x08);
+    uint32_t* cap_end = lift_field<uint32_t*>(self, 0x0C);
+
+    // Element count: (last - first) when first is set, else 0.
+    ptrdiff_t count = 0;
+    if (first != nullptr) {
+        count = last - first;
+    }
+
+    // Fast path: non-empty buffer with spare capacity.
+    if (first != nullptr && static_cast<uint64_t>(count) < static_cast<uint64_t>(cap_end - first)) {
+        ext_0043D870(last, 1, value);
+        lift_field<uint32_t*>(self, 0x08) = last + 1;
+        return;
+    }
+
+    // Slow path: first must not be past last.
+    if (first > last) {
+        // Original calls _invalid_parameter_noinfo through the IAT slot here;
+        // the handler is a no-op for normal execution so it is elided.
+        (void)&mem_00925134;
+    }
+
+    uint32_t scratch = 0;
+    ext_0043F820(self, &scratch, self, last, value);
+}
+} // namespace lift_0043F9E0
