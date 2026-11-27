@@ -38372,11 +38372,137 @@
     "summary": "Allocates 0x40 bytes via MFC80::operator new and initializes the object with fn_00627240.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FC190": {
+    "name": "sub_005FC190",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC190(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC210": {
+    "name": "sub_005FC210",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC210(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC290": {
+    "name": "sub_005FC290",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC290(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC310": {
+    "name": "sub_005FC310",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC310(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC390": {
+    "name": "sub_005FC390",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC390(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC410": {
+    "name": "sub_005FC410",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC410(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC490": {
+    "name": "sub_005FC490",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC490(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC510": {
+    "name": "sub_005FC510",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC510(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC590": {
+    "name": "sub_005FC590",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC590(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC610": {
+    "name": "sub_005FC610",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC610(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC690": {
+    "name": "sub_005FC690",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC690(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC710": {
+    "name": "sub_005FC710",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC710(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC790": {
+    "name": "sub_005FC790",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC790(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC810": {
+    "name": "sub_005FC810",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC810(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FC890": {
     "name": "UnknownClass::allocateAndConstruct",
     "class": "UnknownClass",
     "signature": "uintptr_t fn_005FC890(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
     "summary": "Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC910": {
+    "name": "sub_005FC910",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC910(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FC990": {
+    "name": "sub_005FC990",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FC990(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FCA10": {
+    "name": "sub_005FCA10",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FCA10(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FCA90": {
+    "name": "sub_005FCA90",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_005FCA90(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
   "0x005FCB30": {

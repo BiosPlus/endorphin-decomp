@@ -1381,3 +1381,435 @@ void* fn_005FC110(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3) {
     return ext_00627240(obj, a0, a1, a2, a3);
 }
 } // namespace lift_005FC110
+
+// [0x005FC190] sub_005FC190 (121 bytes)
+namespace lift_005FC190 {
+// @name sub_005FC190
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_006273B0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC190(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0xA0);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_006273B0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC190
+
+// [0x005FC210] sub_005FC210 (121 bytes)
+namespace lift_005FC210 {
+// @name sub_005FC210
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_00627970(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC210(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x88);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_00627970(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC210
+
+// [0x005FC290] sub_005FC290 (118 bytes)
+namespace lift_005FC290 {
+// @name sub_005FC290
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_006291D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC290(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x78);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_006291D0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC290
+
+// [0x005FC310] sub_005FC310 (118 bytes)
+namespace lift_005FC310 {
+// @name sub_005FC310
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_00629370(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC310(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_00629370(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC310
+
+// [0x005FC390] sub_005FC390 (118 bytes)
+namespace lift_005FC390 {
+// @name sub_005FC390
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_006293A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC390(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_006293A0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC390
+
+// [0x005FC410] sub_005FC410 (118 bytes)
+namespace lift_005FC410 {
+// @name sub_005FC410
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_006294D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC410(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x38);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_006294D0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC410
+
+// [0x005FC490] sub_005FC490 (118 bytes)
+namespace lift_005FC490 {
+// @name sub_005FC490
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_006295E0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC490(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x38);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_006295E0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC490
+
+// [0x005FC510] sub_005FC510 (118 bytes)
+namespace lift_005FC510 {
+// @name sub_005FC510
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_00624E50(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC510(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x38);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_00624E50(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC510
+
+// [0x005FC590] sub_005FC590 (118 bytes)
+namespace lift_005FC590 {
+// @name sub_005FC590
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_00624EA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC590(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_00624EA0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC590
+
+// [0x005FC610] sub_005FC610 (118 bytes)
+namespace lift_005FC610 {
+// @name sub_005FC610
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_006296D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC610(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x58);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_006296D0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC610
+
+// [0x005FC690] sub_005FC690 (118 bytes)
+namespace lift_005FC690 {
+// @name sub_005FC690
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_006296A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC690(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_006296A0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC690
+
+// [0x005FC710] sub_005FC710 (118 bytes)
+namespace lift_005FC710 {
+// @name sub_005FC710
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_00629850(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC710(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x78);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_00629850(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC710
+
+// [0x005FC790] sub_005FC790 (121 bytes)
+namespace lift_005FC790 {
+// @name sub_005FC790
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_00629AA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC790(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x80);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_00629AA0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC790
+
+// [0x005FC810] sub_005FC810 (118 bytes)
+namespace lift_005FC810 {
+// @name sub_005FC810
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_00629D00(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC810(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_00629D00(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC810
+
+// [0x005FC910] sub_005FC910 (118 bytes)
+namespace lift_005FC910 {
+// @name sub_005FC910
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_0062A0C0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC910(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_0062A0C0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC910
+
+// [0x005FC990] sub_005FC990 (118 bytes)
+namespace lift_005FC990 {
+// @name sub_005FC990
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_0062B250(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FC990(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x50);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_0062B250(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FC990
+
+// [0x005FCA10] sub_005FCA10 (118 bytes)
+namespace lift_005FCA10 {
+// @name sub_005FCA10
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_0062C4D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FCA10(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x50);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_0062C4D0(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FCA10
+
+// [0x005FCA90] sub_005FCA90 (118 bytes)
+namespace lift_005FCA90 {
+// @name sub_005FCA90
+// @summary Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).
+namespace lift_005FC890 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 — operator new; takes a size and returns the allocation in eax.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x00629E20: UnknownClass::constructWithVtable (Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.)
+// Original is __thiscall (ECX = this) with four stack args; expressed here with this as the first parameter.
+extern uintptr_t ext_0062C510(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name UnknownClass::allocateAndConstruct
+// @class UnknownClass
+// @summary Allocates a 0x38-byte object, and if the allocation succeeds, constructs it with the four stack arguments; returns the constructed object or 0.
+uintptr_t fn_005FCA90(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x50);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return ext_0062C510(obj, arg0, arg1, arg2, arg3);
+}
+} // namespace lift_005FC890
+} // namespace lift_005FCA90

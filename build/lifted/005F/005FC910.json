@@ -1,0 +1,14 @@
+{
+  "va": "0x005FC910",
+  "size": 118,
+  "orig_symbol": "sub_005FC910",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "sub_005FC910",
+  "class": "UnknownClass",
+  "signature": "uintptr_t fn_005FC910(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Auto-lifted identical-shape clone of 0x005FC890 (UnknownClass::allocateAndConstruct).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T02:21:40Z"
+}
