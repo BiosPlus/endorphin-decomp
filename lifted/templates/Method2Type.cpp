@@ -1139,3 +1139,26 @@ void fn_0066DF50(void* holder) {
     lift_field<DWORD>(holder, 0x04) = 0x00B59750u;
 }
 } // namespace lift_0066DF50
+
+// [0x0066D530] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationShoulderEulersAtoB(class NM::Vector3 const &, NM::Vector3 const &)>::vfunc_40 (122 bytes)
+namespace lift_0066D530 {
+// Known callee 0x0067A670: thiscall, takes the static accessor object in ECX (no stack args).
+extern void ext_0067A670(void* self);
+// Init guard (bit 0) and static accessor object storage.
+extern uint32_t mem_00B596BC;
+extern uint32_t mem_00B596B8;
+
+// @name Method2Type::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationShoulderEulersAtoB(class NM::Vector3 const &, NM::Vector3 const &)>
+// @summary One-time guarded init of the static accessor object (vtable 0x988D3C), then stores its address into holder+0x04.
+// @field ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationShoulderEulersAtoB(class NM::Vector3 const &, NM::Vector3 const &)> +0x04 uint32_t accessor_ptr
+void __stdcall fn_0066D530(void* self) {
+    // SEH frame setup/teardown from the original asm is compiler boilerplate and is omitted.
+    if ((mem_00B596BC & 1u) == 0) {
+        mem_00B596BC |= 1u;
+        ext_0067A670(&mem_00B596B8);
+        lift_field<uint32_t>(&mem_00B596B8, 0) = 0x00988D3Cu;
+    }
+    lift_field<uint32_t>(self, 0x04) = 0x00B596B8u;
+}
+} // namespace lift_0066D530
