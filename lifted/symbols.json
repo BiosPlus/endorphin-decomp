@@ -2341,6 +2341,12 @@
     "summary": "Lazily constructs a function-local static at mem_00ACC524 on first call (guard bit 0 in mem_00ACC540), registers its teardown, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041D9E0": {
+    "name": "allocArray56",
+    "signature": "extern \"C\" void* fn_0041D9E0(uint32_t count)",
+    "summary": "Allocates an array of 56-byte elements with overflow check, throwing std::bad_alloc on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041DA50": {
     "name": "getFirstVectorElementOrZero",
     "signature": "extern \"C\" int32_t __cdecl fn_0041DA50(void)",
