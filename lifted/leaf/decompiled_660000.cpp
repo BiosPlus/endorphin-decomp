@@ -4303,3 +4303,69 @@ void fn_00665E40(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_00665E40
+
+// [0x00665130] sub_00665130 (154 bytes)
+namespace lift_00665130 {
+// Known callee 0x00664E40: copyCharsSkippingDelimiter (Copies bytes from [begin,end) into dest, skipping bytes equal to ch; each store is validated against the std::string container (esi) like MSVC debug iterator checks; returns {container, dest_end} through the out pointer.)
+// Stack args (cdecl, 7): out, dest_begin, end, container, found, ch, container_tag.
+extern void ext_00664E40(void* out, char* dest, char* end, void* container, char* found, uint32_t ch, uint32_t tag);
+// IAT slots: MSVCR80!_invalid_parameter_noinfo and MSVCP80 std::string::_Myptr (thiscall).
+extern int mem_00925134;
+extern int mem_00924E44;
+
+// @name copyAfterFirstDelimiter
+// @summary Scans the checked string range [begin,end) for the first delimiter ch; if none is found returns {container,end} through out, otherwise copies the tail after the delimiter via copyCharsSkippingDelimiter.
+// @field std::string +0x14 uint32_t field_0x14
+
+using MyptrFn = char* (*)(void* self);
+
+static inline uint32_t addr32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+static inline void invalid_parameter_noinfo_call() {
+    (*reinterpret_cast<void (* const*)()>(&mem_00925134))();
+}
+
+void* fn_00665130(void* out, void* container, char* begin, void* expected, char* end, int ch_arg) {
+    const uint32_t edi = addr32(container);
+    const char ch = static_cast<char>(ch_arg);
+    char* esi = begin;
+
+    // Find first occurrence of ch in [begin,end); esi ends at match or end.
+    for (; esi != end; ++esi) {
+        if (*esi == ch) break;
+    }
+
+    // Container validation (skipped when container == -2).
+    if (edi != 0xFFFFFFFEu) {
+        if (edi == 0 || edi != addr32(expected)) {
+            invalid_parameter_noinfo_call();
+        }
+    }
+
+    if (esi == end) {
+        // Not found: return {container, end}.
+        lift_field<uint32_t>(out, 0) = edi;
+        lift_field<uint32_t>(out, 4) = addr32(esi);
+        return out;
+    }
+
+    // Range check of found position against string data end.
+    if (edi != 0xFFFFFFFEu) {
+        if (edi == 0) {
+            invalid_parameter_noinfo_call();
+        }
+        MyptrFn myptr = *reinterpret_cast<MyptrFn const*>(&mem_00924E44);
+        char* limit = myptr(container) + lift_field<uint32_t>(container, 0x14);
+        if (!(addr32(esi) < addr32(limit))) {
+            invalid_parameter_noinfo_call();
+        }
+    }
+
+    // Copy tail after delimiter, skipping ch.
+    const uint32_t tag = edi & 0xFFFFFF00u;
+    ext_00664E40(out, esi + 1, end, container, esi, static_cast<uint32_t>(ch_arg), tag);
+    return out;
+}
+} // namespace lift_00665130

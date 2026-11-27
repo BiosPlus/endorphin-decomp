@@ -1,0 +1,21 @@
+{
+  "va": "0x00665130",
+  "size": 154,
+  "orig_symbol": "sub_00665130",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "copyAfterFirstDelimiter",
+  "signature": "static inline uint32_t addr32(const void* p)",
+  "summary": "Scans the checked string range [begin,end) for the first delimiter ch; if none is found returns {container,end} through out, otherwise copies the tail after the delimiter via copyCharsSkippingDelimiter.",
+  "fields": [
+    {
+      "class": "std::string",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:19:45Z"
+}
