@@ -128,3 +128,60 @@ void* fn_0060DC00(void* self, void* arg1, uint32_t arg2, uint32_t /*arg3: stack 
     return ext_0060CDE0(self, arg1, arg2, esi);
 }
 } // namespace lift_0060DC00
+
+// [0x0060C9C0] NMData::EffectorWithModesData::vfunc_13 (328 bytes)
+namespace lift_0060C9C0 {
+// Known callee 0x004275E0: assignVirtualString (Calls vtable[2] on obj to obtain a temporary std::string, assigns it to dst, and destroys the temporary.)
+extern void ext_004275E0(void* dst, void* obj);
+// Known callee 0x0046C0A0: parseFloatFromString (Calls ext_004275C0 to get a std::string, converts it with atof, and stores the float result.)
+extern void ext_0046C0A0(void* dst, uint32_t* key);
+// Known callee 0x0053F5F0: parseIntFromStringProp (Calls ext_004275C0 to get a string, converts it with atoi, and stores the integer at *out.)
+extern void ext_0053F5F0(void* dst, uint32_t* key);
+// Known callee 0x0060C640: NMData::EffectorData::vfunc_13 (Initializes base data from arg1, then reads float/int/bool attributes (names from mem_ globals) into this+0x44..+0x58.)
+extern void ext_0060C640(void* self, void* arg1);
+// Callee 0x0063F530 (thiscall-style, callee cleans 3 stack args; returns a status/value compared against sentinels).
+extern uint32_t ext_0063F530(void* self, uint32_t key, int zero, int one);
+extern uint32_t mem_00A9F0BC;
+extern uint32_t mem_00A9F408;
+extern uint32_t mem_00A9F40C;
+extern uint32_t mem_00A9F094;
+
+// Maps any of the five sentinel result values to the canonical 0x00B53B30 value; other values pass through.
+static uint32_t normalize_result(uint32_t v) {
+    switch (v) {
+        case 0x00B53A34u:
+        case 0x00B53B30u:
+        case 0x00B53AB0u:
+        case 0x00B53A70u:
+        case 0x00B53AF0u:
+            return 0x00B53B30u;
+        default:
+            return v;
+    }
+}
+
+// @name NMData::EffectorWithModesData::vfunc_13
+// @class NMData::EffectorWithModesData
+// @summary Initializes base data from arg, then reads string/int/float attributes into this+0x5C, +0x60, +0x7C and +0x80.
+// @field NMData::EffectorWithModesData +0x5C int field_0x5C
+// @field NMData::EffectorWithModesData +0x60 std::string field_0x60
+// @field NMData::EffectorWithModesData +0x7C float field_0x7C
+// @field NMData::EffectorWithModesData +0x80 float field_0x80
+void fn_0060C9C0(void* self, void* arg1) {
+    ext_0060C640(self, arg1);
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    uint32_t v = normalize_result(ext_0063F530(arg1, mem_00A9F0BC, 0, 1));
+    ext_0053F5F0(base + 0x5C, &v);
+
+    v = normalize_result(ext_0063F530(arg1, mem_00A9F408, 0, 1));
+    ext_004275E0(base + 0x60, reinterpret_cast<void*>(static_cast<uintptr_t>(v)));
+
+    v = normalize_result(ext_0063F530(arg1, mem_00A9F40C, 0, 1));
+    ext_0046C0A0(base + 0x80, &v);
+
+    v = normalize_result(ext_0063F530(arg1, mem_00A9F094, 0, 1));
+    ext_0046C0A0(base + 0x7C, &v);
+}
+} // namespace lift_0060C9C0

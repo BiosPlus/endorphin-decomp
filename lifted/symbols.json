@@ -59183,6 +59183,13 @@
     "summary": "Initializes base data from arg1, then reads float/int/bool attributes (names from mem_ globals) into this+0x44..+0x58.",
     "lifted_path": "lifted/NMData/EffectorData.cpp"
   },
+  "0x0060C9C0": {
+    "name": "NMData::EffectorWithModesData::vfunc_13",
+    "class": "NMData::EffectorWithModesData",
+    "signature": "static uint32_t normalize_result(uint32_t v)",
+    "summary": "Initializes base data from arg, then reads string/int/float attributes into this+0x5C, +0x60, +0x7C and +0x80.",
+    "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
+  },
   "0x0060CC60": {
     "name": "GetOnceInitString_0060CC60",
     "signature": "void* GetOnceInitString_0060CC60()",
