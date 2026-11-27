@@ -25419,6 +25419,13 @@
     "summary": "Allocates a 0xB7C-byte object, constructs it from the primary subobject (this-0xC), runs sub_004E4E40 on the result and returns it (NULL if allocation fails).",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004E70B0": {
+    "name": "NMData::AnimationEventData::vfunc_88",
+    "class": "NMData::AnimationEventData",
+    "signature": "void fn_004E70B0(void* self)",
+    "summary": "Initializes animation event data, computes timing/frame rates, builds optional event subobjects, registers frame buffer listener, and resets iterator state.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004E7280": {
     "name": "NMData::AnimationEventData::vfunc_87",
     "class": "NMData::AnimationEventData",
@@ -28813,6 +28820,13 @@
     "signature": "void fn_005027E0(void* self, const char* name)",
     "summary": "Fetches the static singleton, builds a temporary std::string from the name argument, passes the singleton slot, string and flag 1 to ext_00475960 on this-\u003efield_0x00, then destroys the temporary.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00502E00": {
+    "name": "NMData::EvolveEngineData::vfunc_1",
+    "class": "NMData::EvolveEngineData",
+    "signature": "static uint32_t normalize_xml_sentinel(uint32_t val)",
+    "summary": "Loads EvolveEngineData fields and optional script/config data from an XML node.",
+    "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
   },
   "0x00503A10": {
     "name": "Evaluator::vfunc_1",
@@ -38545,6 +38559,13 @@
     "class": "FBXIO",
     "signature": "void __thiscall fn_00562A30(void* self, void* arg0)",
     "summary": "Initializes FBXIO if needed and delegates to sub_0055E990 with arg0.",
+    "lifted_path": "lifted/classes/FBXIO.cpp"
+  },
+  "0x00562C50": {
+    "name": "FBXIO::vfunc_11",
+    "class": "FBXIO",
+    "signature": "extern \"C\" void __fastcall fn_00562C50(void* self, void* /*edx*/, void* arg0)",
+    "summary": "Imports FBX animation frames over the loaded time range and dispatches frame updates.",
     "lifted_path": "lifted/classes/FBXIO.cpp"
   },
   "0x00562F80": {

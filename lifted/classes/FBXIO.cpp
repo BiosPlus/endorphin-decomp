@@ -408,3 +408,174 @@ extern int __thiscall fn_005607E0(void* self, void* outRates, float unusedArg) {
     return static_cast<int>(end - begin) - 1;
 }
 } // namespace lift_005607E0
+
+// [0x00562C50]
+namespace lift_00562C50 {
+// @name FBXIO::vfunc_11
+// @class FBXIO
+// @summary Imports FBX animation frames over the loaded time range and dispatches frame updates.
+// @field FBXIO +0x40 uint8_t[4] field_0x40
+// @field FBXIO +0xA4 int32_t field_0xa4
+// @field FBXIO +0xAC uint8_t field_0xac
+// @field FBXIO +0x420 void* field_0x420
+// @field FBXIO +0x424 void* field_0x424
+// @field FBXIO +0x46C void* field_0x46c
+// @field FBXIO +0x470 void* field_0x470
+// @field FBXIO +0x474 void* field_0x474
+// @field FBXIO +0x4C0 uint8_t[12] field_0x4c0
+
+    extern void* mem_00924FF0;
+    extern double mem_00928E78;
+    extern void* mem_00924E90;
+    extern void* mem_00924FA0;
+    extern char mem_00958968[];
+    extern void* mem_00924E98;
+    extern double mem_00993828;
+    extern double mem_0092C528;
+    extern double mem_00993868;
+    extern void* mem_00925134;
+    extern char mem_00928B5D[];
+    extern void* mem_00924FD4;
+
+    void __thiscall ext_0055E490(void* self, void* fbx46c, void* fbx470, const char* path);
+    void __thiscall ext_0055F2C0(void* self, void* arg0);
+    int32_t __thiscall ext_006BC7F0(void* self);
+    int32_t __thiscall ext_006BB760(int32_t val);
+    double __cdecl ext_006D98F0(int32_t id);
+    void* __thiscall ext_006BC370(void* self);
+    void* __thiscall ext_0055DF80(void* self, void* arg);
+    void __thiscall ext_006D2130(void* self, int32_t arg1, int32_t arg2);
+    void __thiscall ext_006BC970(void* self, void* outVec);
+    int32_t __thiscall ext_006E7460(void* self);
+    void __thiscall ext_006BC800(void* self, int32_t val);
+    void* __cdecl ext_00435D00(void* ostream, const char* str);
+    int32_t __cdecl ext_006A7310(int64_t a, int64_t b);
+    double __cdecl ext_006A6E92(double x);
+    int32_t __cdecl ext_006A6DE0(double x);
+    void __thiscall ext_00662120(void* self);
+    void __thiscall ext_00661F70(void* self, int32_t arg);
+    void __thiscall ext_006DAE00(void* self, double scale);
+    void __thiscall ext_00562580(void* self, void* elem, void* arg, int32_t flag);
+    void __thiscall ext_006620E0(void* self);
+    void __thiscall ext_0055E180(void* self, void** objRef);
+    void __thiscall ext_00661A10(void* self, float arg);
+    void __thiscall ext_006D2160(void* self);
+
+extern void __fastcall fn_00562C50(void* self, void* /*edx*/, void* arg0) {
+    int32_t frameIdx = 0;
+    float timeMs = 0.0f;
+    float local_18 = 0.0f;
+
+    void* p470 = static_cast<uint8_t*>(self) + 0x470;
+    void* p46c = static_cast<uint8_t*>(self) + 0x46C;
+
+    auto c_str_fn = reinterpret_cast<const char* (__thiscall*)(void*)>(mem_00924FF0);
+    const char* path = c_str_fn(arg0);
+    ext_0055E490(self, p46c, p470, path);
+    ext_0055F2C0(self, arg0);
+
+    int32_t id = ext_006BC7F0(*reinterpret_cast<void**>(p470));
+    int32_t mappedId = ext_006BB760(id);
+    float frameRate = static_cast<float>(ext_006D98F0(mappedId));
+    float stepMs = static_cast<float>(mem_00928E78 / static_cast<double>(frameRate));
+
+    void* animStack = ext_006BC370(*reinterpret_cast<void**>(p470));
+    void* animData = ext_0055DF80(self, static_cast<uint8_t*>(self) + 0xAC);
+
+    uint8_t vecObj[0x18]{};
+    ext_006D2130(vecObj, 0x10, 4);
+    *reinterpret_cast<void**>(vecObj + 0x14) = vecObj + 0x10;
+
+    ext_006BC970(*reinterpret_cast<void**>(p470), vecObj);
+
+    int32_t idx = lift_field<int32_t>(self, 0xA4);
+    void** vecArr = *reinterpret_cast<void***>(vecObj + 0x10);
+    int32_t layerVal = ext_006E7460(vecArr[idx]);
+    ext_006BC800(*reinterpret_cast<void**>(p470), layerVal);
+
+    int64_t startTime = 0x7FFFFFFFFFFFFFFFLL;
+    int64_t endTime = static_cast<int64_t>(0x8000000000000001ULL);
+
+    using GetTimeRangeFn = bool (__thiscall*)(void*, int64_t*, int64_t*);
+    auto getTimeRange = reinterpret_cast<GetTimeRangeFn>((*reinterpret_cast<void***>(animStack))[0x30 / 4]);
+
+    int32_t frameCount;
+    if (!getTimeRange(animStack, &startTime, &endTime)) {
+        void* os = ext_00435D00(mem_00924FA0, mem_00958968);
+        auto endl_op = reinterpret_cast<void (__thiscall*)(void*, void*)>(mem_00924E98);
+        endl_op(os, mem_00924E90);
+        frameCount = 1;
+    } else {
+        int32_t t0 = ext_006A7310(startTime, 0x2C0BEAELL);
+        int32_t t1 = ext_006A7310(endTime, 0x2C0BEAELL);
+        float duration = static_cast<float>(t1 - t0);
+        float f = static_cast<float>(ext_006A6E92(static_cast<double>(duration / stepMs) + mem_00993828));
+        (void)f;
+        frameCount = ext_006A6DE0(static_cast<double>(t0)) + 1;
+    }
+
+    void* p420 = lift_field<void*>(self, 0x420);
+    ext_00662120(p420);
+    ext_00661F70(p420, 1);
+
+    void* p424 = lift_field<void*>(self, 0x424);
+    if (p424 != nullptr) {
+        using VFunc2 = void (__thiscall*)(void*, int32_t, int32_t);
+        auto vf2 = reinterpret_cast<VFunc2>((*reinterpret_cast<void***>(p424))[0x08 / 4]);
+        vf2(p424, 0, frameCount * 2);
+    }
+
+    int32_t maxFrameIdx = frameCount - 1;
+    timeMs = static_cast<float>(0) + static_cast<float>(static_cast<double>(stepMs) * mem_0092C528);
+
+    if (maxFrameIdx >= 0) {
+        uint8_t* list4C0 = static_cast<uint8_t*>(self) + 0x4C0;
+        do {
+            void* cur424 = lift_field<void*>(self, 0x424);
+            if (cur424 != nullptr) {
+                using VFunc1 = void (__thiscall*)(void*, int32_t);
+                auto vf1 = reinterpret_cast<VFunc1>((*reinterpret_cast<void***>(cur424))[0x04 / 4]);
+                vf1(cur424, frameIdx);
+            }
+
+            ext_006DAE00(lift_field<void*>(self, 0x474), static_cast<double>(timeMs) * mem_00993868);
+
+            auto invalid_param = reinterpret_cast<void (__cdecl*)()>(mem_00925134);
+            uint32_t it = *reinterpret_cast<uint32_t*>(list4C0 + 0x04);
+            if (it > *reinterpret_cast<uint32_t*>(list4C0 + 0x08)) {
+                invalid_param();
+            }
+            for (;;) {
+                uint32_t endIt = *reinterpret_cast<uint32_t*>(list4C0 + 0x08);
+                if (*reinterpret_cast<uint32_t*>(list4C0 + 0x04) > endIt) {
+                    invalid_param();
+                }
+                if (it == endIt) {
+                    break;
+                }
+                if (it >= *reinterpret_cast<uint32_t*>(list4C0 + 0x08)) {
+                    invalid_param();
+                }
+                void* elem = *reinterpret_cast<void**>(static_cast<uintptr_t>(it));
+                ext_00562580(self, elem, animData, 1);
+                if (it >= *reinterpret_cast<uint32_t*>(list4C0 + 0x08)) {
+                    invalid_param();
+                }
+                it += 4;
+            }
+
+            if (frameIdx < maxFrameIdx) {
+                ext_006620E0(lift_field<void*>(self, 0x420));
+            }
+            frameIdx += 1;
+            timeMs += stepMs;
+        } while (frameIdx <= maxFrameIdx);
+    }
+
+    auto str_assign = reinterpret_cast<void* (__thiscall*)(void*, const char*)>(mem_00924FD4);
+    str_assign(static_cast<uint8_t*>(self) + 0x40, mem_00928B5D);
+    ext_0055E180(self, static_cast<void**>(p46c));
+    ext_00661A10(lift_field<void*>(self, 0x420), local_18);
+    ext_006D2160(vecObj);
+}
+} // namespace lift_00562C50
