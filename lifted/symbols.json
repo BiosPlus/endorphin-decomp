@@ -21796,6 +21796,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005086E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00508950": {
+    "name": "loadNamedStringAndFloats",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00508950(void* self, void* container)",
+    "summary": "Looks up three named items in the container: assigns the first item's string to this+0x04, then stores parsed floats at this+0x20 and this+0x24.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00508A30": {
     "name": "NMData::TaskParam::vfunc_0",
     "class": "NMData::TaskParam",

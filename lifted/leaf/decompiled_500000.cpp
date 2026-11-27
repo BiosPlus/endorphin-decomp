@@ -2685,3 +2685,38 @@ void fn_0050B6A0(void* self, void* other, void* third) {
     }
 }
 } // namespace lift_0050B6A0
+
+// [0x00508950] sub_00508950 (109 bytes)
+namespace lift_00508950 {
+// Known callee 0x004275E0: assignVirtualString (Calls vtable[2] on obj to obtain a temporary std::string, assigns it to dst, and destroys the temporary.)
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+// Known callee 0x0063EFE0: sub_0063EFE0 (Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.)
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+// Known callee 0x0046C0A0: parseFloatFromString (Calls ext_004275C0 to get a std::string, converts it with atof, and stores the float result.)
+extern void __cdecl ext_0046C0A0(uint32_t unused, float* out_val);
+extern uint32_t mem_00A9FA04;
+extern uint32_t mem_00A9F790;
+extern uint32_t mem_00A9FA90;
+
+// @name loadNamedStringAndFloats
+// @class Unknown
+// @summary Looks up three named items in the container: assigns the first item's string to this+0x04, then stores parsed floats at this+0x20 and this+0x24.
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+void __thiscall fn_00508950(void* self, void* container) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Item 1: assign its string into this+0x04.
+    uint32_t item = ext_0063EFE0(container, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FA04)));
+    ext_004275E0(base + 0x04, reinterpret_cast<void*>(static_cast<uintptr_t>(item)));
+
+    // Item 2: parse its string as a float into this+0x20.
+    uint32_t slot = ext_0063EFE0(container, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F790)));
+    ext_0046C0A0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x20)), reinterpret_cast<float*>(&slot));
+
+    // Item 3: parse its string as a float into this+0x24.
+    slot = ext_0063EFE0(container, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FA90)));
+    ext_0046C0A0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x24)), reinterpret_cast<float*>(&slot));
+}
+} // namespace lift_00508950
