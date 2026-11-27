@@ -24929,6 +24929,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049D7F0 (ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00514130": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, ptrdiff_t slot_off, void* arg)",
+    "summary": "Resolves a target via vtable slot 0x24 of (self-\u003efield_0x00 + 4), stores it into a temp object, assigns it into self, releases the temp, then forwards to self-\u003efield_0x04's vfunc at slot 0xbc. Throws DerivedException when field_0x00 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005141D0": {
     "name": "Chromosome::vfunc_13",
     "class": "Chromosome",

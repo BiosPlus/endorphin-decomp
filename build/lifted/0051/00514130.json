@@ -1,0 +1,14 @@
+{
+  "va": "0x00514130",
+  "size": 157,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+  "signature": "inline void* vcall1(void* obj, ptrdiff_t slot_off, void* arg)",
+  "summary": "Resolves a target via vtable slot 0x24 of (self-\u003efield_0x00 + 4), stores it into a temp object, assigns it into self, releases the temp, then forwards to self-\u003efield_0x04's vfunc at slot 0xbc. Throws DerivedException when field_0x00 is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:37:04Z"
+}

@@ -86331,3 +86331,60 @@ void* __stdcall fn_0062E730(void* self, void* arg) {
     return innerFn(inner, self, arg);
 }
 } // namespace lift_0062E730
+
+// [0x00514130] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_47 (157 bytes)
+namespace lift_00514130 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_47
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>
+// @summary Resolves a target via vtable slot 0x24 of (self->field_0x00 + 4), stores it into a temp object, assigns it into self, releases the temp, then forwards to self->field_0x04's vfunc at slot 0xbc. Throws DerivedException when field_0x00 is null.
+// @field ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0> +0x04 void* field_0x04
+
+extern void* ext_00682ED0(void* self);
+extern void ext_006720E0(void* self, void* arg);
+extern void* ext_0041CF50(void* self, void* other);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throw_info);
+extern unsigned char mem_009DEC1C[];
+
+namespace {
+
+// Calls the virtual slot at byte offset `slot_off` of obj's vtable with one stack argument.
+using VCall1 = void* (*)(void* self, void* arg);
+
+inline void* vcall1(void* obj, ptrdiff_t slot_off, void* arg) {
+    void* vtbl = lift_field<void*>(obj, 0);
+    VCall1 fn = reinterpret_cast<VCall1>(lift_field<void*>(vtbl, slot_off));
+    return fn(obj, arg);
+}
+
+} // namespace
+
+void fn_00514130(void* self) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        // Null source: construct a DerivedException and throw it (ThrowInfo mem_009DEC1C).
+        alignas(8) unsigned char exc[64] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return;
+    }
+
+    // Resolve target from the vtable of (src + 4), then store it into a temp.
+    void* target = ext_00682ED0(static_cast<unsigned char*>(src) + 0x04);
+    void* tmp = nullptr;
+    ext_006720E0(&tmp, target);
+
+    // Assign tmp into self (guarded copy).
+    ext_0041CF50(self, &tmp);
+
+    // Release tmp via vtable slot 0x78.
+    if (tmp != nullptr) {
+        vcall1(tmp, 0x78, &tmp);
+    }
+
+    // Forward to field_0x04's vfunc at slot 0xbc, passing self.
+    void* child = lift_field<void*>(self, 0x04);
+    vcall1(child, 0xbc, self);
+}
+} // namespace lift_00514130
