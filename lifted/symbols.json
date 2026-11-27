@@ -47725,6 +47725,13 @@
     "summary": "Stores the vtable VA 0x0097CB4C into the object, then tail-calls the std::string destructor on the embedded string at +0x04.",
     "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
+  "0x0063E100": {
+    "name": "Unknown::Unknown(uint32_t, const std::string\u0026)",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_00924FE4; // std::string::basic_string(const char*) extern \"C\" int mem_00924FF4; // std::string::~basic_string() extern \"C\" int mem_00924FE0; // std::string::basic_string(const std::string\u0026) namespace",
+    "summary": "Constructor: stamps vtable, builds a temporary std::string from an empty literal, forwards arg0 and the temp into ext_0063E0C0, then copy-constructs this+0x24 from the name argument.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E180": {
     "name": "AdvXMLParser::Text::vfunc_3",
     "class": "AdvXMLParser::Text",

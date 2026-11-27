@@ -1301,3 +1301,56 @@ void fn_0063DAD0(void* self) {
     lift_field<float>(self, 0x38) = (b > a) ? b : a;
 }
 } // namespace lift_0063DAD0
+
+// [0x0063E100] sub_0063E100 (126 bytes)
+namespace lift_0063E100 {
+// Known callee 0x0063E0C0: Unknown::Unknown(uint32_t, const std::string&) (string-copy ctor stub) (Stamps vtable 0x0097CB4C at +0x00, copy-constructs a std::string from the second argument into this+0x04, stores the first argument at +0x20, and returns this.)
+extern void* ext_0063E0C0(void* self, uint32_t arg0, const void* name);
+// MSVCP80 import slots (IAT entries holding the real function pointers).
+extern int mem_00924FE4; // std::string::basic_string(const char*)
+extern int mem_00924FF4; // std::string::~basic_string()
+extern int mem_00924FE0; // std::string::basic_string(const std::string&)
+
+// @name Unknown::Unknown(uint32_t, const std::string&)
+// @class Unknown
+// @summary Constructor: stamps vtable, builds a temporary std::string from an empty literal, forwards arg0 and the temp into ext_0063E0C0, then copy-constructs this+0x24 from the name argument.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 std::string field_0x24
+
+namespace {
+
+using StrCtorCStr = void* (*)(void* self, const char* s);
+using StrCtorCopy = void* (*)(void* self, const void* src);
+using StrDtor     = void (*)(void* self);
+
+// Resolve an IAT slot (address of a mem_ symbol) to the function pointer it holds.
+inline void* iat_slot(const int* slot) {
+    return *reinterpret_cast<void* const*>(slot);
+}
+
+} // namespace
+
+// @ 0x0063E100: __thiscall (self in ecx), 2 stack args, callee-cleans (ret 8).
+void* fn_0063E100(void* self, uint32_t arg0, const void* name) {
+    // Temporary std::string (MSVC 8 layout, 0x1C bytes) built from literal at 0x0097CB80.
+    alignas(8) uint8_t tmp[0x1C] = {};
+    reinterpret_cast<StrCtorCStr>(iat_slot(&mem_00924FE4))(
+        tmp, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0097CB80u)));
+
+    // Ext ctor: stamps vtable 0x0097CB4C, copies tmp into this+0x04, stores arg0 at +0x20.
+    ext_0063E0C0(self, arg0, tmp);
+
+    // Destroy temporary.
+    reinterpret_cast<StrDtor>(iat_slot(&mem_00924FF4))(tmp);
+
+    // Final vtable for this class.
+    lift_field<uint32_t>(self, 0x00) = 0x0097CB68u;
+
+    // Copy-construct this+0x24 from name.
+    reinterpret_cast<StrCtorCopy>(iat_slot(&mem_00924FE0))(
+        static_cast<uint8_t*>(self) + 0x24, name);
+
+    return self;
+}
+} // namespace lift_0063E100
