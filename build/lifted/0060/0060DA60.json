@@ -1,0 +1,46 @@
+{
+  "va": "0x0060DA60",
+  "size": 179,
+  "orig_symbol": "NMData::EffectorGroupData::vfunc_12",
+  "src_path": "src/NMData/EffectorGroupData.cpp",
+  "lifted_path": "lifted/NMData/EffectorGroupData.cpp",
+  "name": "NMData::EffectorGroupData::vfunc_12",
+  "class": "NMData::EffectorGroupData",
+  "signature": "void* fn_0060DA60()",
+  "summary": "Factory: allocates a 0x54-byte EffectorGroupData, constructs it, stamps the vtable, clears the +0x44 vector-like container fields, and returns it (nullptr if allocation fails).",
+  "fields": [
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:57:31Z"
+}

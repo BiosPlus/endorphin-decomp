@@ -58594,6 +58594,13 @@
     "summary": "Constructor: runs the base ctor ext_0060B910 on this, stamps vtable 0x009723F4 at this+0, and zeroes the dwords at this+0x48, +0x4C and +0x50; returns this. The original SEH frame setup/teardown is omitted.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060DA60": {
+    "name": "NMData::EffectorGroupData::vfunc_12",
+    "class": "NMData::EffectorGroupData",
+    "signature": "void* fn_0060DA60()",
+    "summary": "Factory: allocates a 0x54-byte EffectorGroupData, constructs it, stamps the vtable, clears the +0x44 vector-like container fields, and returns it (nullptr if allocation fails).",
+    "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
+  },
   "0x0060DB20": {
     "name": "NMData::EffectorGroupData::vfunc_0",
     "class": "NMData::EffectorGroupData",

@@ -161,3 +161,55 @@ std::string NMData_EffectorGroupData_vfunc_20(const void* self) {
     return tmp + std::string(mem_0093BF0C);
 }
 } // namespace lift_0060D500
+
+// [0x0060DA60] NMData::EffectorGroupData::vfunc_12 (179 bytes)
+namespace lift_0060DA60 {
+// Known callee 0x0040ECB0: push_back of one 28-byte std::string onto a vector-like container at this+0x44.
+extern void ext_0040ECB0(void* self, const void* value);
+// Known callee 0x0060B910: constructor (stamps base vtable, default-constructs std::string members, returns this).
+extern void* ext_0060B910(void* self);
+// Known callee 0x006A5C62: IAT thunk to MFC80!ord_762 (operator new, cdecl, size on stack).
+extern void* ext_006A5C62(size_t size);
+// Pointer slot to MSVCR80!_invalid_parameter_noinfo (debug iterator checks; metadata-only here).
+extern int mem_00925134;
+
+// @name NMData::EffectorGroupData::vfunc_12
+// @class NMData::EffectorGroupData
+// @summary Factory: allocates a 0x54-byte EffectorGroupData, constructs it, stamps the vtable, clears the +0x44 vector-like container fields, and returns it (nullptr if allocation fails).
+// @field NMData::EffectorGroupData +0x00 uint32_t vtable
+// @field NMData::EffectorGroupData +0x44 uint32_t field_0x44
+// @field NMData::EffectorGroupData +0x48 uint32_t field_0x48
+// @field NMData::EffectorGroupData +0x4C uint32_t field_0x4C
+// @field NMData::EffectorGroupData +0x50 uint32_t field_0x50
+void* fn_0060DA60() {
+    void* obj = ext_006A5C62(0x54);
+    if (obj == nullptr) {
+        // The original reads [0+0x48] here (faults); unreachable with a throwing operator new.
+        return nullptr;
+    }
+
+    (void)&mem_00925134;  // debug-check slot only; not a real access in the portable lift
+    ext_0060B910(obj);
+
+    lift_field<uint32_t>(obj, 0x00) = 0x009723F4u;  // EffectorGroupData vtable
+    lift_field<uint32_t>(obj, 0x48) = 0;
+    lift_field<uint32_t>(obj, 0x4C) = 0;
+    lift_field<uint32_t>(obj, 0x50) = 0;
+
+    // Loop over the container range [end, cap) at +0x48..+0x4C, pushing each
+    // 28-byte element into the container at +0x44. The MSVC debug iterator
+    // checks (invalid_parameter calls via mem_00925134) are omitted.
+    uint32_t cur = lift_field<uint32_t>(obj, 0x48);
+    for (;;) {
+        uint32_t last = lift_field<uint32_t>(obj, 0x4C);
+        if (cur == last) {
+            break;
+        }
+        ext_0040ECB0(static_cast<uint8_t*>(obj) + 0x44,
+                     reinterpret_cast<const void*>(static_cast<uintptr_t>(cur)));
+        cur += 0x1C;
+    }
+
+    return obj;
+}
+} // namespace lift_0060DA60
