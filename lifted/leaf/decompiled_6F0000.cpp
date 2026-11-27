@@ -2653,3 +2653,20 @@ extern void* __stdcall fn_006F98A0(void* self) {
     return self;
 }
 } // namespace lift_006F98A0
+
+// [0x006F7370] sub_006F7370 (33 bytes)
+namespace lift_006F7370 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+
+// String literal at 0x00AAA374 (pushed as the C string argument to the callee).
+extern const char mem_00AAA374[];
+
+// @name Unknown::initAssignCString_006F7370
+// @class Unknown
+// @summary Calls the initAssignCString helper on self with the literal at 0x00AAA374 and returns self.
+void* fn_006F7370(void* self) {
+    ext_006B9D80(self, mem_00AAA374);
+    return self;
+}
+} // namespace lift_006F7370

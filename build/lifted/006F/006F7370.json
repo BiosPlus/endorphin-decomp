@@ -1,0 +1,14 @@
+{
+  "va": "0x006F7370",
+  "size": 33,
+  "orig_symbol": "sub_006F7370",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::initAssignCString_006F7370",
+  "class": "Unknown",
+  "signature": "void* fn_006F7370(void* self)",
+  "summary": "Calls the initAssignCString helper on self with the literal at 0x00AAA374 and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:50:00Z"
+}

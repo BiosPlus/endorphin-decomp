@@ -71249,6 +71249,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006F7280 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F7370": {
+    "name": "Unknown::initAssignCString_006F7370",
+    "class": "Unknown",
+    "signature": "void* fn_006F7370(void* self)",
+    "summary": "Calls the initAssignCString helper on self with the literal at 0x00AAA374 and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F74E0": {
     "name": "sub_006F74E0",
     "signature": "void __thiscall sub_006F74E0(uint32_t self, uint32_t mode, uint32_t target)",
@@ -81054,6 +81061,12 @@
     "name": "CheckKeyOrForwardToCallback",
     "signature": "uint32_t fn_007B06A0(void* a1, void* a2, uint32_t a3)",
     "summary": "Returns 1 if a3 equals a2-\u003efield_0x04; otherwise looks up an entry for (a1, a2-\u003efield_0x00), forwards (a1-\u003efield_0x00, 0xAB1430, entry-\u003efield_0x10) to the callback, and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007B0F30": {
+    "name": "ComputeNormalizedRatioOrError",
+    "signature": "uint32_t fn_007B0F30(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+    "summary": "Divides a3 by a4 into *a5 as float (unsigned a3 if a2-\u003efield_0x02 == 5, else signed), or reports an error if a4 == 0.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B0FC0": {
