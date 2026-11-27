@@ -1088,3 +1088,49 @@ uint32_t __thiscall sub_004EFBA0(void* self, void* arg0) {
     return lift_field<uint32_t>(self, 0x230);
 }
 } // namespace lift_004EFBA0
+
+// [0x004E74D0]
+namespace lift_004E74D0 {
+// @name medianOfThreeObjects
+// @summary Sorts three object pointers in-place (median-of-three) using compareObjectsByTypeOrName.
+
+
+extern bool __stdcall ext_004E7390(void* lhs, void* rhs);
+
+static inline void swapPtrs(void** a, void** b) {
+    void* tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+extern void __cdecl fn_004E74D0(void** first, void** mid, void** last) {
+    if (ext_004E7390(*mid, *first)) {
+        swapPtrs(first, mid);
+    }
+    if (ext_004E7390(*last, *mid)) {
+        swapPtrs(mid, last);
+    }
+    if (ext_004E7390(*mid, *first)) {
+        swapPtrs(first, mid);
+    }
+}
+} // namespace lift_004E74D0
+
+// [0x004E7430]
+namespace lift_004E7430 {
+// @name pushHeapByTypeOrName
+// @summary Inserts a pointer into a max-heap array by sifting up using compareObjectsByTypeOrName.
+
+
+extern bool __stdcall ext_004E7390(void* lhs, void* rhs);
+
+extern void __cdecl fn_004E7430(void** arr, int32_t holeIndex, int32_t topIndex, void* val) {
+    int32_t parent = (holeIndex - 1) / 2;
+    while (topIndex < holeIndex && ext_004E7390(arr[parent], val)) {
+        arr[holeIndex] = arr[parent];
+        holeIndex = parent;
+        parent = (parent - 1) / 2;
+    }
+    arr[holeIndex] = val;
+}
+} // namespace lift_004E7430

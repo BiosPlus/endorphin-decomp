@@ -1,0 +1,13 @@
+{
+  "va": "0x004E74D0",
+  "size": 100,
+  "orig_symbol": "sub_004E74D0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "medianOfThreeObjects",
+  "signature": "static inline void swapPtrs(void** a, void** b)",
+  "summary": "Sorts three object pointers in-place (median-of-three) using compareObjectsByTypeOrName.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:15:07Z"
+}

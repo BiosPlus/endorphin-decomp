@@ -19969,6 +19969,18 @@
     "summary": "Compares two polymorphic objects by dynamic-casted fields (+0x98, +0x9C) or falls back to comparing their vtable+0x24 string pointers.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E7430": {
+    "name": "pushHeapByTypeOrName",
+    "signature": "extern \"C\" void __cdecl fn_004E7430(void** arr, int32_t holeIndex, int32_t topIndex, void* val)",
+    "summary": "Inserts a pointer into a max-heap array by sifting up using compareObjectsByTypeOrName.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
+  "0x004E74D0": {
+    "name": "medianOfThreeObjects",
+    "signature": "static inline void swapPtrs(void** a, void** b)",
+    "summary": "Sorts three object pointers in-place (median-of-three) using compareObjectsByTypeOrName.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E7DF0": {
     "name": "sub_004E7DF0",
     "signature": "void fn_004E7DF0(uint32_t* first, uint32_t* last, uint32_t pred)",
