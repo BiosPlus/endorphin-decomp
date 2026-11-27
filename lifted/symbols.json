@@ -65383,6 +65383,13 @@
     "summary": "Reserves capacity for n more elements (realloc when needed), zero-fills the newly exposed tail, and advances the element count by n.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D2300": {
+    "name": "Unknown::SetCount_006D2300",
+    "class": "Unknown",
+    "signature": "void fn_006D2300(void* self, uint32_t n)",
+    "summary": "Sets the element count to n; if n exceeds the current count, grows the container by the difference first.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2390": {
     "name": "ForwardArgToCalleeReturnThis",
     "signature": "void* fn_006D2390(void* self, uint32_t arg1)",

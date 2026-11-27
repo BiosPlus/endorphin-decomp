@@ -34,7 +34,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (container header pointer, passed through to compareIndexedElementsGreater)  (evidence: 0x00518700) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int32_t                  count  (evidence: 0x00783940) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 count  (evidence: 0x007B3120) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 count  (evidence: 0x006D2300, 0x007B3120) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count_00  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t[19]             entries  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x0

@@ -1,0 +1,22 @@
+{
+  "va": "0x006D2300",
+  "size": 32,
+  "orig_symbol": "sub_006D2300",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::SetCount_006D2300",
+  "class": "Unknown",
+  "signature": "void fn_006D2300(void* self, uint32_t n)",
+  "summary": "Sets the element count to n; if n exceeds the current count, grows the container by the difference first.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:10:26Z"
+}

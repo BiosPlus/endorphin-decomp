@@ -2150,3 +2150,22 @@ void __thiscall fn_006D2280(void* self, uint32_t n) {
     count += n;
 }
 } // namespace lift_006D2280
+
+// [0x006D2300] sub_006D2300 (32 bytes)
+namespace lift_006D2300 {
+// Known callee 0x006D2280: Unknown::GrowAndZeroFill_006D2280 (Reserves capacity for n more elements (realloc when needed), zero-fills the newly exposed tail, and advances the element count by n.)
+extern void __thiscall ext_006D2280(void* self, uint32_t n);
+
+// @name Unknown::SetCount_006D2300
+// @class Unknown
+// @summary Sets the element count to n; if n exceeds the current count, grows the container by the difference first.
+// @field Unknown +0x00 uint32_t count
+void fn_006D2300(void* self, uint32_t n) {
+    uint32_t& count = lift_field<uint32_t>(self, 0x00);
+    if (n > count) {
+        ext_006D2280(self, n - count);
+        return;
+    }
+    count = n;
+}
+} // namespace lift_006D2300
