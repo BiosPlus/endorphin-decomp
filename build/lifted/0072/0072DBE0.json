@@ -1,0 +1,58 @@
+{
+  "va": "0x0072DBE0",
+  "size": 97,
+  "orig_symbol": "sub_0072DBE0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::conditionalCopyPairs_0072DBE0",
+  "class": "Unknown",
+  "signature": "uint8_t fn_0072DBE0(void* self, void* arg1, void* arg2, void* arg3, void* arg4)",
+  "summary": "If the flag byte at +0x108 is set, runs ext_006B9E60 on two sub-objects and copies two 8-byte pairs into the caller's out-buffers; returns the flag.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x108",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10C",
+      "type": "uint8_t field_0x10c (only its address is passed to",
+      "name": "ext_006B9E60)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "uint8_t field_0x158 (only its address is passed to",
+      "name": "ext_006B9E60)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1A8",
+      "type": "uint32_t",
+      "name": "field_0x1a8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1AC",
+      "type": "uint32_t",
+      "name": "field_0x1ac"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1B0",
+      "type": "uint32_t",
+      "name": "field_0x1b0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1B4",
+      "type": "uint32_t",
+      "name": "field_0x1b4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:54:52Z"
+}

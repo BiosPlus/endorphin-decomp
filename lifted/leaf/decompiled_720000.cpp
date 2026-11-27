@@ -1151,3 +1151,36 @@ void __thiscall fn_0072C060(uint8_t* self, void* arg) {
     ext_006B9D70(guard_frame, &arg, nullptr, -1);
 }
 } // namespace lift_0072C060
+
+// [0x0072DBE0] sub_0072DBE0 (97 bytes)
+namespace lift_0072DBE0 {
+// Known callee 0x006B9E60: Unknown::conditionalAllocAndCopy_006B9E60 (If the argument's type tag check passes, copies its getter values into this object's allocator; otherwise calls sub_006B9920 on this. Returns this.)
+extern void* __thiscall ext_006B9E60(void* self, void* arg);
+
+// @name Unknown::conditionalCopyPairs_0072DBE0
+// @class Unknown
+// @summary If the flag byte at +0x108 is set, runs ext_006B9E60 on two sub-objects and copies two 8-byte pairs into the caller's out-buffers; returns the flag.
+// @field Unknown +0x108 uint8_t flag
+// @field Unknown +0x10c uint8_t field_0x10c (only its address is passed to ext_006B9E60)
+// @field Unknown +0x158 uint8_t field_0x158 (only its address is passed to ext_006B9E60)
+// @field Unknown +0x1a8 uint32_t field_0x1a8
+// @field Unknown +0x1ac uint32_t field_0x1ac
+// @field Unknown +0x1b0 uint32_t field_0x1b0
+// @field Unknown +0x1b4 uint32_t field_0x1b4
+uint8_t fn_0072DBE0(void* self, void* arg1, void* arg2, void* arg3, void* arg4) {
+    (void)arg4;
+    auto* base = static_cast<uint8_t*>(self);
+
+    if (lift_field<uint8_t>(self, 0x108) != 0) {
+        ext_006B9E60(arg1, base + 0x10c);
+        ext_006B9E60(arg2, base + 0x158);
+
+        lift_field<uint32_t>(arg2, 0) = lift_field<uint32_t>(self, 0x1a8);
+        lift_field<uint32_t>(arg2, 4) = lift_field<uint32_t>(self, 0x1ac);
+        lift_field<uint32_t>(arg3, 0) = lift_field<uint32_t>(self, 0x1b0);
+        lift_field<uint32_t>(arg3, 4) = lift_field<uint32_t>(self, 0x1b4);
+    }
+
+    return lift_field<uint8_t>(self, 0x108);
+}
+} // namespace lift_0072DBE0
