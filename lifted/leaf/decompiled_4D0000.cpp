@@ -531,3 +531,44 @@ void* fn_004D41C0(void* self, void* out, uint32_t index) {
     return out;
 }
 } // namespace lift_004D41C0
+
+// [0x004D4060] sub_004D4060 (121 bytes)
+namespace lift_004D4060 {
+// Known callee 0x0041CCC0: Vector28::at (Checked element access for a 28-byte element vector)
+extern void* ext_0041CCC0(void* self, uint32_t index);
+// Rdata/data constant 0x00A3464C: pointer to the fallback C string literal (0x0092B6B4)
+extern int mem_00A3464C;
+// Import slots (MSVCP80 basic_string ctors) replaced by std::string copy/literal construction.
+extern int mem_00924FE0;
+extern int mem_00924FE4;
+
+// @name Owner::getElementOrDefault
+// @class Owner
+// @summary Copy-constructs the string at index field_0x43C of the 28-byte-element vector at +0x444 into *out; returns an empty-literal string when the index is out of range.
+// @field Owner +0x43C int32_t index
+// @field Owner +0x448 int32_t vector_begin
+// @field Owner +0x44C int32_t vector_end
+std::string* fn_004D4060(void* self, std::string* out) {
+    (void)&mem_00924FE0; // metadata-only: original asm referenced import slot (basic_string copy ctor)
+    (void)&mem_00924FE4; // metadata-only: original asm referenced import slot (basic_string(const char*))
+
+    const int32_t index = lift_field<int32_t>(self, 0x43C);
+    const int32_t begin = lift_field<int32_t>(self, 0x448);
+    const int32_t end = lift_field<int32_t>(self, 0x44C);
+
+    int32_t count = 0;
+    if (begin != 0) {
+        count = (end - begin) / 28;
+    }
+
+    if (index >= 0 && index <= count - 1) {
+        void* elem = ext_0041CCC0(static_cast<uint8_t*>(self) + 0x444,
+                                  static_cast<uint32_t>(index));
+        return new (out) std::string(*static_cast<const std::string*>(elem));
+    }
+
+    const char* fallback = reinterpret_cast<const char*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00A3464C)));
+    return new (out) std::string(fallback);
+}
+} // namespace lift_004D4060

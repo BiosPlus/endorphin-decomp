@@ -16827,6 +16827,13 @@
     "summary": "Dynamically casts the input object pointer to NMData::RigEventData using __RTDynamicCast.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004D4060": {
+    "name": "Owner::getElementOrDefault",
+    "class": "Owner",
+    "signature": "std::string* fn_004D4060(void* self, std::string* out)",
+    "summary": "Copy-constructs the string at index field_0x43C of the 28-byte-element vector at +0x444 into *out; returns an empty-literal string when the index is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D41C0": {
     "name": "Unknown::getStringElement (descriptive; owner class not yet identified)",
     "class": "Unknown",

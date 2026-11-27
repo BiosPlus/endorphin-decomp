@@ -1,0 +1,34 @@
+{
+  "va": "0x004D4060",
+  "size": 121,
+  "orig_symbol": "sub_004D4060",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "Owner::getElementOrDefault",
+  "class": "Owner",
+  "signature": "std::string* fn_004D4060(void* self, std::string* out)",
+  "summary": "Copy-constructs the string at index field_0x43C of the 28-byte-element vector at +0x444 into *out; returns an empty-literal string when the index is out of range.",
+  "fields": [
+    {
+      "class": "Owner",
+      "offset": "+0x43C",
+      "type": "int32_t",
+      "name": "index"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x448",
+      "type": "int32_t",
+      "name": "vector_begin"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x44C",
+      "type": "int32_t",
+      "name": "vector_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:15:26Z"
+}
