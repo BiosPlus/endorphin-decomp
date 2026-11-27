@@ -2563,3 +2563,47 @@ void* __thiscall fn_0048F2F0(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32
     return self;
 }
 } // namespace lift_0048F2F0
+
+// [0x0048F740]
+namespace lift_0048F740 {
+// @name Unknown::InitObject
+// @class Unknown
+// @summary Initializes vtable, fields, and retrieves a vector element at index 0.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint8_t field_0x14
+// @field Unknown +0x15 uint8_t field_0x15
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+
+
+extern int32_t __cdecl ext_00468180(void);
+extern uint32_t __thiscall ext_00469570(uint8_t* self, uint32_t index);
+extern void* __thiscall ext_006657F0(void* self, uint32_t arg);
+extern uint32_t mem_0093E748;
+
+extern void* __thiscall fn_0048F740(void* self, uint32_t arg1, uint8_t arg2, uint32_t arg3) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+    ext_006657F0(s, 0);
+
+    lift_field<uint32_t>(s, 0x00) = mem_0093E748;
+    lift_field<uint32_t>(s, 0x10) = arg1;
+    lift_field<uint8_t>(s, 0x14) = arg2;
+    lift_field<uint32_t>(s, 0x1c) = 0;
+    lift_field<uint32_t>(s, 0x20) = 0;
+    lift_field<uint32_t>(s, 0x24) = 0;
+    lift_field<uint32_t>(s, 0x28) = arg3;
+
+    int32_t vec = ext_00468180();
+    uint32_t elem = ext_00469570(reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(vec))), 0);
+    lift_field<uint32_t>(s, 0x08) = elem;
+
+    uint8_t* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(s, 0x10)));
+    lift_field<uint8_t>(s, 0x15) = lift_field<uint8_t>(obj, 0x17c);
+
+    return self;
+}
+} // namespace lift_0048F740

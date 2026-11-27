@@ -1,0 +1,70 @@
+{
+  "va": "0x0048F740",
+  "size": 133,
+  "orig_symbol": "sub_0048F740",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::InitObject",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_0048F740(void* self, uint32_t arg1, uint8_t arg2, uint32_t arg3)",
+  "summary": "Initializes vtable, fields, and retrieves a vector element at index 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:33:44Z"
+}
