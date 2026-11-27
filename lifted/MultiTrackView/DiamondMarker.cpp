@@ -101,3 +101,114 @@ extern int32_t __thiscall fn_004410E0(void* self, const Point2D* pt) {
     return 2;
 }
 } // namespace lift_004410E0
+
+// [0x004416E0]
+namespace lift_004416E0 {
+// @name MultiTrackView::DiamondMarker::vfunc_1
+// @class MultiTrackView::DiamondMarker
+// @summary Draws a diamond marker on the given DC and returns its bounding rectangle.
+// @field MultiTrackView::DiamondMarker +0x48 void* field_0x48
+// @field MultiTrackView::DiamondMarker +0x70 float* field_0x70
+// @field MultiTrackView::DiamondMarker +0x74 float* field_0x74
+// @field MultiTrackView::DiamondMarker +0x88 uint8_t field_0x88
+// @field MultiTrackView::DiamondMarker +0x8b uint8_t field_0x8b
+
+
+void __thiscall ext_0066A310(void* self);
+void __thiscall ext_00669E40(void* self, float a0, float a1, float a2, float a3);
+uint32_t __thiscall ext_0066A180(void* self);
+void __thiscall ext_006A61AE(void* self, uint32_t color);
+void __thiscall ext_006A6148(void* self, int style, int width, uint32_t color);
+void* __thiscall ext_006A61A8(void* self, void* obj);
+void* __thiscall ext_006A610C(void* self, void* obj);
+void __thiscall ext_006A5FF2(void* self);
+void __thiscall ext_00493D90(void* self);
+
+extern float mem_009324A4;
+extern float mem_00932478;
+extern void* mem_009240D8;
+
+struct DiamondRect {
+    int32_t left;
+    int32_t top;
+    int32_t right;
+    int32_t bottom;
+};
+
+struct DiamondPoint {
+    int32_t x;
+    int32_t y;
+};
+
+DiamondRect* __thiscall fn_004416E0(void* self, DiamondRect* outRect, void* pDC, const DiamondRect* inRect) {
+    int32_t height = inRect->bottom;
+    int32_t top = inRect->top;
+    int32_t left = inRect->left;
+    int32_t halfH = (height + (height % 2)) / 2;
+
+    DiamondPoint pts[4] = {
+        { left, top - 1 },
+        { left + halfH, top + halfH - 1 },
+        { left, top + 2 * halfH - 1 },
+        { left - halfH, top + halfH - 1 },
+    };
+
+    int32_t diamondLeft = left - halfH;
+    int32_t diamondRight = left + halfH;
+    int32_t diamondBottom = top + height;
+
+    void* field48 = lift_field<void*>(self, 0x48);
+    int32_t minX = lift_field<int32_t>(field48, 0xfc);
+    if (left < minX) {
+        outRect->left = diamondLeft;
+        outRect->top = top;
+        outRect->right = diamondRight;
+        outRect->bottom = diamondBottom;
+        return outRect;
+    }
+
+    uint8_t vec1[16];
+    uint8_t vec2[16];
+    ext_0066A310(vec1);
+    ext_0066A310(vec2);
+
+    if (lift_field<uint8_t>(self, 0x88) != 0) {
+        float* c = lift_field<float*>(self, 0x74);
+        ext_00669E40(vec1, c[0], c[1], c[2], 1.0f);
+        ext_00669E40(vec2, 0.0f, 0.0f, 0.0f, 1.0f);
+    } else if (lift_field<uint8_t>(self, 0x8b) == 0) {
+        ext_00669E40(vec1, mem_009324A4, mem_009324A4, mem_009324A4, 1.0f);
+        ext_00669E40(vec2, mem_00932478, mem_00932478, mem_00932478, 1.0f);
+    } else {
+        float* c = lift_field<float*>(self, 0x70);
+        ext_00669E40(vec1, c[0], c[1], c[2], 1.0f);
+        ext_00669E40(vec2, 0.0f, 0.0f, 0.0f, 1.0f);
+    }
+
+    uint8_t brush[8];
+    uint8_t pen[8];
+    ext_006A61AE(brush, ext_0066A180(vec1));
+    ext_006A6148(pen, 0, 1, ext_0066A180(vec2));
+
+    void* oldBrush = ext_006A61A8(pDC, brush);
+    void* oldPen = ext_006A610C(pDC, pen);
+
+    typedef int (__stdcall *PolygonFn)(void* hdc, const DiamondPoint* apt, int cpt);
+    ((PolygonFn)mem_009240D8)(lift_field<void*>(pDC, 0x4), pts, 4);
+
+    ext_006A61A8(pDC, oldBrush);
+    ext_006A610C(pDC, oldPen);
+
+    outRect->left = diamondLeft;
+    outRect->top = top;
+    outRect->right = diamondRight;
+    outRect->bottom = diamondBottom;
+
+    ext_006A5FF2(pen);
+    ext_006A5FF2(brush);
+    ext_00493D90(vec2);
+    ext_00493D90(vec1);
+
+    return outRect;
+}
+} // namespace lift_004416E0

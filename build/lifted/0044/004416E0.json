@@ -1,0 +1,46 @@
+{
+  "va": "0x004416E0",
+  "size": 699,
+  "orig_symbol": "MultiTrackView::DiamondMarker::vfunc_1",
+  "src_path": "src/MultiTrackView/DiamondMarker.cpp",
+  "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp",
+  "name": "MultiTrackView::DiamondMarker::vfunc_1",
+  "class": "MultiTrackView::DiamondMarker",
+  "signature": "DiamondRect* __thiscall fn_004416E0(void* self, DiamondRect* outRect, void* pDC, const DiamondRect* inRect)",
+  "summary": "Draws a diamond marker on the given DC and returns its bounding rectangle.",
+  "fields": [
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "field_0x48"
+    },
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x70",
+      "type": "float*",
+      "name": "field_0x70"
+    },
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x74",
+      "type": "float*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x8B",
+      "type": "uint8_t",
+      "name": "field_0x8b"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:06:26Z"
+}
