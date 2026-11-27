@@ -15788,6 +15788,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00683930 (ExprParser::ReadMethodType\u003cNMData::ValuePtrData\u003e::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C0880": {
+    "name": "ExprParser::ReadMethodType::vfunc_5 (getPropertySourceDescription wrapper)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",
+    "signature": "void fn_004C0880(void* self)",
+    "summary": "Reads the pointer stored at arg, copies the string via copyStringFromDocumentOrThrow into a local, then throws a default ExceptionWithMessage.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C0E40": {
     "name": "initStaticObjectOnce_004C0E40",
     "signature": "void* fn_004C0E40()",

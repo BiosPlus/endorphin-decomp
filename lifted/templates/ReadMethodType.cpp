@@ -67595,3 +67595,28 @@ void fn_006839B0(void* self) {
     ext_0046C4E0();
 }
 } // namespace lift_006839B0
+
+// [0x004C0880] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_5 (55 bytes)
+namespace lift_004C0880 {
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* ext_004C0280(void* arg1, void* arg2);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+
+// @name ExprParser::ReadMethodType::vfunc_5 (getPropertySourceDescription wrapper)
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the pointer stored at arg, copies the string via copyStringFromDocumentOrThrow into a local, then throws a default ExceptionWithMessage.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 void* field_0x00
+void fn_004C0880(void* self) {
+    // Dereference the slot at self to obtain the document pointer (asm: mov eax,[arg]; mov edx,[eax]).
+    void* document = *static_cast<void**>(self);
+
+    // Copy the string into a local buffer; the callee throws on a null document.
+    alignas(std::max_align_t) unsigned char local[16] = {};
+    void* copied = ext_004C0280(local, document);
+    (void)copied;
+
+    // The original always falls through into the default-exception throw.
+    ext_0046C4E0();
+}
+} // namespace lift_004C0880
