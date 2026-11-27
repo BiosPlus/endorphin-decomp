@@ -1,0 +1,22 @@
+{
+  "va": "0x004ABFF0",
+  "size": 112,
+  "orig_symbol": "sub_004ABFF0",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "lookupNameViaField180",
+  "class": "Unknown",
+  "signature": "uint32_t __thiscall fn_004ABFF0(void* self, const char* name)",
+  "summary": "Builds a temporary std::string from a C string and searches the vector at this-\u003efield_0x180 + 0x11c with findByName; returns its result",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x180",
+      "type": "uint32_t",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:20Z"
+}

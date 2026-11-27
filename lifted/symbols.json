@@ -13257,6 +13257,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004ABFF0": {
+    "name": "lookupNameViaField180",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall fn_004ABFF0(void* self, const char* name)",
+    "summary": "Builds a temporary std::string from a C string and searches the vector at this-\u003efield_0x180 + 0x11c with findByName; returns its result",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AC060": {
     "name": "Unknown::isRangeValidAndNotLess_004AC060",
     "class": "Unknown",

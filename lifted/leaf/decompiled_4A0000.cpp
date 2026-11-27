@@ -887,3 +887,43 @@ void* fn_004A5C00(void) {
     return mem_00ADEBC4;
 }
 } // namespace lift_004A5C00
+
+// [0x004ABFF0] sub_004ABFF0 (112 bytes)
+namespace lift_004ABFF0 {
+// Known callee 0x0049E2F0: findByName (Searches a vector of objects for one whose vtable+0x24 name matches the given std::string)
+extern void ext_0049E2F0();
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name lookupNameViaField180
+// @class Unknown
+// @summary Builds a temporary std::string from a C string and searches the vector at this->field_0x180 + 0x11c with findByName; returns its result
+// @field Unknown +0x180 uint32_t field_0x180
+
+// Temporary MSVC std::string storage (MSVCP80 layout, 0x18 bytes on the 32-bit target).
+struct TempStdString {
+    alignas(8) uint8_t bytes[0x18];
+};
+
+uint32_t __thiscall fn_004ABFF0(void* self, const char* name) {
+    using StrCtorFn = void(__thiscall*)(void* str, const char* s);
+    using StrDtorFn = void(__thiscall*)(void* str);
+    using FindByNameFn = uint32_t(__thiscall*)(void* vec, uint32_t target_str);
+
+    auto str_ctor = reinterpret_cast<StrCtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE4)));
+    auto str_dtor = reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    auto find_by_name = reinterpret_cast<FindByNameFn>(&ext_0049E2F0);
+
+    TempStdString str{};
+    str_ctor(&str, name);
+
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint32_t vec_base = lift_field<uint32_t>(obj, 0x180);
+    void* vec = reinterpret_cast<void*>(static_cast<uintptr_t>(vec_base + 0x11c));
+
+    uint32_t result = find_by_name(vec, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&str)));
+
+    str_dtor(&str);
+    return result;
+}
+} // namespace lift_004ABFF0
