@@ -10917,6 +10917,13 @@
     "summary": "Lazily initializes a static global, builds a temporary string from the name argument, forwards it with this-\u003efield_0x00 to ext_00475960, then destroys the temporary.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475DA0": {
+    "name": "Unknown::invokeWithStaticArg_00475DA0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void ext_0067A670(void* self);                          // static object base ctor (thiscall) extern \"C\" void ext_00475960(void* self, void* out, void** slot, int flag); // thiscall, 3 stack args extern \"C\" uint32_t mem_00924FE4;                                  // .rdata: std::string(const char*) thunk address extern \"C\" uint32_t mem_00924FF4;                                  // .rdata: std::string dtor thunk address extern \"C\" uint32_t mem_00AD9058;                                  // one-time init flag (bit 0) extern \"C\" uint32_t mem_00AD9054;                                  // static object (first dword = vptr) void fn_00475DA0(void* self, const char* text)",
+    "summary": "Lazily constructs the static object at mem_00AD9054, builds a temporary string from the argument, calls sub_00475960 on this-\u003e[0] with it, and destroys the string.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476430": {
     "name": "Unknown::lookupStringKeyedValue",
     "class": "Unknown",

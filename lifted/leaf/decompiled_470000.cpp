@@ -1992,3 +1992,38 @@ void fn_00475710(void* self, IterResult* out, void* a2, uint8_t* a3, uint32_t a4
     out->container = self;
 }
 } // namespace lift_00475710
+
+// [0x00475DA0] sub_00475DA0 (165 bytes)
+namespace lift_00475DA0 {
+extern void ext_0067A670(void* self);                          // static object base ctor (thiscall)
+extern void ext_00475960(void* self, void* out, void** slot, int flag); // thiscall, 3 stack args
+extern uint32_t mem_00924FE4;                                  // .rdata: std::string(const char*) thunk address
+extern uint32_t mem_00924FF4;                                  // .rdata: std::string dtor thunk address
+extern uint32_t mem_00AD9058;                                  // one-time init flag (bit 0)
+extern uint32_t mem_00AD9054;                                  // static object (first dword = vptr)
+
+// @name Unknown::invokeWithStaticArg_00475DA0
+// @class Unknown
+// @summary Lazily constructs the static object at mem_00AD9054, builds a temporary string from the argument, calls sub_00475960 on this->[0] with it, and destroys the string.
+// @field Unknown +0x00 void* field_0x00
+void fn_00475DA0(void* self, const char* text) {
+    // One-time construction of the static object guarded by bit 0 of mem_00AD9058.
+    if ((mem_00AD9058 & 1u) == 0) {
+        mem_00AD9058 |= 1u;
+        ext_0067A670(&mem_00AD9054);
+        mem_00AD9054 = 0x93bb0c;
+    }
+
+    // Temporary string object (MSVC std::string layout, 0x18 bytes) built from text.
+    alignas(8) unsigned char str[0x18];
+    void* slot = &mem_00AD9054;
+    using CtorFn = void (*)(void* self, const char* text);
+    using DtorFn = void (*)(void* self);
+    reinterpret_cast<CtorFn>(static_cast<uintptr_t>(mem_00924FE4))(str, text);
+
+    void* inner = lift_field<void*>(self, 0);
+    ext_00475960(inner, str, &slot, 1);
+
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str);
+}
+} // namespace lift_00475DA0
