@@ -1,0 +1,34 @@
+{
+  "va": "0x0041E0D0",
+  "size": 131,
+  "orig_symbol": "sub_0041E0D0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "std::vector\u003c32-byte element\u003e::push_back_slow_or_fill",
+  "class": "vector32",
+  "signature": "void fn_0041E0D0(void* self, const uint8_t* item)",
+  "summary": "Appends one 32-byte element to a vector-like container; fills in place when capacity allows, otherwise defers to ext_00475710 (reallocating insert).",
+  "fields": [
+    {
+      "class": "vector32",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "begin"
+    },
+    {
+      "class": "vector32",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end"
+    },
+    {
+      "class": "vector32",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "end_of_storage"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:12:45Z"
+}

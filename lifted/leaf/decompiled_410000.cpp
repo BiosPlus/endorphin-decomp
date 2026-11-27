@@ -4114,3 +4114,46 @@ void* fn_0041E540() {
 }
 } // namespace lift_004C9860
 } // namespace lift_0041E540
+
+// [0x0041E0D0] sub_0041E0D0 (131 bytes)
+namespace lift_0041E0D0 {
+extern void ext_00475710(void* self, const uint8_t* const* item_ref, uint8_t* end, const uint8_t* item);
+// Known callee 0x00503B20: uninitialized_fill_n_string_pair (Uninitialized-fills N 32-byte (std::string + u32) elements, destroying constructed elements on exception)
+extern void ext_00503B20(uint8_t* dst, uint32_t count, const uint8_t* src);
+extern int mem_00925134;
+
+// @name std::vector<32-byte element>::push_back_slow_or_fill
+// @class vector32
+// @summary Appends one 32-byte element to a vector-like container; fills in place when capacity allows, otherwise defers to ext_00475710 (reallocating insert).
+// @field vector32 +0x04 uint8_t* begin
+// @field vector32 +0x08 uint8_t* end
+// @field vector32 +0x0C uint8_t* end_of_storage
+void fn_0041E0D0(void* self, const uint8_t* item) {
+    uint8_t*& begin = lift_field<uint8_t*>(self, 0x4);
+    uint8_t*& end = lift_field<uint8_t*>(self, 0x8);
+    uint8_t* cap = lift_field<uint8_t*>(self, 0xC);
+
+    // Size and capacity are in 32-byte elements; an empty (null-begin) container takes the slow path.
+    uint32_t size = 0;
+    if (begin != nullptr) {
+        size = static_cast<uint32_t>((end - begin) >> 5);
+    }
+
+    if (begin != nullptr) {
+        uint32_t capacity = static_cast<uint32_t>((cap - begin) >> 5);
+        if (size < capacity) {
+            // Room available: construct the new element in place at end, then bump end by one element.
+            ext_00503B20(end, 1, item);
+            end += 0x20;
+            return;
+        }
+    }
+
+    // Slow path (no room / null begin): sanity check begin <= end, then hand off to the reallocating helper.
+    if (begin > end) {
+        // Original calls the MSVCR80 _invalid_parameter_noinfo import here (boilerplate CRT handler); omitted, only referenced.
+        (void)&mem_00925134;
+    }
+    ext_00475710(self, &item, end, item);
+}
+} // namespace lift_0041E0D0
