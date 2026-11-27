@@ -15074,6 +15074,13 @@
     "summary": "Reads the wrapped GraphEntryData pointer and returns its int field at +0x20 as a float; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1CA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026NMData::GraphEntryData::getColor, 0\u003e",
+    "signature": "int __stdcall fn_004B1CA0(void* arg0)",
+    "summary": "Reads the GraphEntryData color into the target value wrapper or throws if the source pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1D40": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e",
@@ -16369,6 +16376,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair,std::string,\u0026NMData::MaterialPair::generateDisplayName,1\u003e",
     "signature": "uint8_t __stdcall fn_004BCCE0(const void* arg1, void* arg2)",
     "summary": "Copies a string from arg1, looks up a value object via sub_006720E0, forwards vfunc +0xA8, and cleans up via vfunc +0x78.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004BD000": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MaterialPair,std::string,\u0026NMData::MaterialPair::generateDisplayName,1\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair,std::string,\u0026NMData::MaterialPair::generateDisplayName,1\u003e",
+    "signature": "void __thiscall fn_004BD000(void* self, void* arg1)",
+    "summary": "Copies the string at arg1+0x00 into a temporary wrapper, assigns it to arg1 via ext_0041CF50, cleans up, and invokes vtable slot 0xbc on arg1+0x04.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004BE680": {

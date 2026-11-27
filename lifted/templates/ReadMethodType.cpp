@@ -68825,3 +68825,85 @@ void __thiscall fn_004B11B0(void* self, void* arg1) {
     reinterpret_cast<Vfunc47Fn>(vtable[0xBC / 4])(field04, target);
 }
 } // namespace lift_004B11B0
+
+// [0x004B1CA0]
+namespace lift_004B1CA0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads the GraphEntryData color into the target value wrapper or throws if the source pointer is null.
+// @field ValueWrapper +0x00 void* field_0x00
+// @field ValueWrapper +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_006720C0(void* self, uint32_t arg);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+int __stdcall fn_004B1CA0(void* arg0) {
+    uint32_t* esi = static_cast<uint32_t*>(arg0);
+    uint32_t obj = esi[0];
+    if (obj == 0) {
+        uint8_t exc[48];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    uint32_t local_pair[2] = {0, 0};
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0x20);
+    ext_006720C0(&local_pair[1], val);
+    ext_0041CF50(esi, local_pair);
+
+    uint32_t ecx = local_pair[1];
+    if (ecx != 0) {
+        auto vtable = *reinterpret_cast<uint32_t**>(ecx);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        fn(reinterpret_cast<void*>(ecx), local_pair);
+    }
+
+    uint32_t target = esi[1];
+    auto vtable = *reinterpret_cast<uint32_t**>(target);
+    auto fn = reinterpret_cast<int(__thiscall*)(void*, void*)>(vtable[0xBC / 4]);
+    return fn(reinterpret_cast<void*>(target), esi);
+}
+} // namespace lift_004B1CA0
+
+// [0x004BD000]
+namespace lift_004BD000 {
+// @name ExprParser::ReadMethodType<NMData::MaterialPair,std::string,&NMData::MaterialPair::generateDisplayName,1>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::MaterialPair,std::string,&NMData::MaterialPair::generateDisplayName,1>
+// @summary Copies the string at arg1+0x00 into a temporary wrapper, assigns it to arg1 via ext_0041CF50, cleans up, and invokes vtable slot 0xbc on arg1+0x04.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __cdecl ext_004BC770(void* self, const void* src);
+extern void* __thiscall ext_006720E0(void* self, void* src);
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+void __thiscall fn_004BD000(void* self, void* arg1) {
+    (void)self;
+    uint8_t str_buf[28];
+    void* tmp[2];
+
+    void* str_ptr = ext_004BC770(str_buf, *reinterpret_cast<void**>(arg1));
+    ext_006720E0(&tmp[1], str_ptr);
+    ext_0041CF50(arg1, tmp);
+
+    void* obj = tmp[1];
+    if (obj != nullptr) {
+        auto** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        fn(obj, &tmp[0]);
+    }
+
+    mem_00924FF4(str_buf);
+
+    void* field_04 = lift_field<void*>(arg1, 0x04);
+    auto** vtable_04 = *reinterpret_cast<void***>(field_04);
+    auto fn_bc = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable_04[0xbc / 4]);
+    fn_bc(field_04, arg1);
+}
+} // namespace lift_004BD000

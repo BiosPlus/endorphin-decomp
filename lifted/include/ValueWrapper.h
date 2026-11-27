@@ -8,6 +8,7 @@
 // Recovered field layout for ValueWrapper:
 namespace lifted_layout {
 struct ValueWrapper_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0064F790)
+    // +0x0   void*                    field_0x00  (evidence: 0x004B1CA0)
+    // +0x4   void*                    field_0x04  (evidence: 0x004B1CA0)
 };
 } // namespace lifted_layout
