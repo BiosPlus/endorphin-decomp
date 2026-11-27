@@ -1,0 +1,14 @@
+{
+  "va": "0x006E62C0",
+  "size": 96,
+  "orig_symbol": "sub_006E62C0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::initAndAssignCString_006E62C0",
+  "class": "Unknown",
+  "signature": "void* fn_006E62C0(void* self, const char* s)",
+  "summary": "Initializes this and the sub-object at +0x4C, assigns the given C string via ext_006E6320, and returns this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:54:37Z"
+}

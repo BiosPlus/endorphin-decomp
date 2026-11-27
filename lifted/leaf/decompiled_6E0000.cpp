@@ -2021,3 +2021,21 @@ void* fn_006EA7C0(void* self, void* arg) {
     return self;
 }
 } // namespace lift_006EA7C0
+
+// [0x006E62C0] sub_006E62C0 (96 bytes)
+namespace lift_006E62C0 {
+// Known callee 0x006B9D10: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+extern void* ext_006B9D10(void* ecx);
+// Known callee 0x006E6320: Unknown::assignCStringPair_006E6320 (Assigns the same C string to this and to the sub-object at this+0x4C.)
+extern void* ext_006E6320(void* self, const char* s);
+
+// @name Unknown::initAndAssignCString_006E62C0
+// @class Unknown
+// @summary Initializes this and the sub-object at +0x4C, assigns the given C string via ext_006E6320, and returns this.
+void* fn_006E62C0(void* self, const char* s) {
+    ext_006B9D10(self);
+    ext_006B9D10(static_cast<uint8_t*>(self) + 0x4C);
+    ext_006E6320(self, s);
+    return self;
+}
+} // namespace lift_006E62C0
