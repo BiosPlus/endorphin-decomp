@@ -1,0 +1,22 @@
+{
+  "va": "0x005E1C50",
+  "size": 128,
+  "orig_symbol": "NMData::HingeData::vfunc_54",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_54",
+  "class": "NMData::HingeData",
+  "signature": "void* __thiscall fn_005E1C50(void* self)",
+  "summary": "One-time guarded init of the static object at 0xB45C80 (ext_005B5780 with arg 10, then atexit-style registration via ext_006A6C87); always calls ext_005E0380(this, \u0026obj), caches the byte at this+0x178 into mem_00B45CC4, and returns \u0026obj.",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:32:46Z"
+}

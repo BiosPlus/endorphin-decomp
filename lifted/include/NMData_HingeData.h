@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct NMData_HingeData_Fields {
     // +0x4   void* transform_interface_vptr (TransformInterface subobject; vtable slot 7 at +0x1c is called)  (evidence: 0x005E05F0)
+    // +0x178 uint8_t                  field_0x178  (evidence: 0x005E1C50)
     // +0x17A uint8_t                  hinge_flag  (evidence: 0x005E05F0)
 };
 } // namespace lifted_layout

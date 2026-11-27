@@ -100,3 +100,36 @@ std::string fn_005EF8A0(const void* /*self*/) {
 }
 } // namespace lift_0047DB90
 } // namespace lift_005EF8A0
+
+// [0x005E1C50] NMData::HingeData::vfunc_54 (128 bytes)
+namespace lift_005E1C50 {
+extern void __thiscall ext_005B5780(void* self, uint32_t arg);
+extern void __thiscall ext_005E0380(void* self, void* arg);
+extern int __cdecl ext_006A6C87(void* fn);
+extern uint32_t mem_00B45CCC;
+extern uint8_t mem_00B45CC4;
+extern uint8_t mem_00B45C80;
+
+// @name NMData::HingeData::vfunc_54
+// @class NMData::HingeData
+// @summary One-time guarded init of the static object at 0xB45C80 (ext_005B5780 with arg 10, then atexit-style registration via ext_006A6C87); always calls ext_005E0380(this, &obj), caches the byte at this+0x178 into mem_00B45CC4, and returns &obj.
+// @field NMData::HingeData +0x178 uint8_t field_0x178
+// Note: the MSVC SEH frame (fs:[0] push/pop, -1 state slot, esp bookkeeping) is
+// unwinding/state bookkeeping and is not modeled. The "or dword" init flag write
+// is kept as a 32-bit store to match the original. The hinge_flag known at +0x17A
+// is not accessed by this function; the byte read here is at +0x178.
+void* __thiscall fn_005E1C50(void* self) {
+    // One-time initialization guarded by bit 0 of mem_00B45CCC.
+    if ((mem_00B45CCC & 1u) == 0) {
+        mem_00B45CCC |= 1u;
+        ext_005B5780(&mem_00B45C80, 10u);
+        // Registers the teardown callback for mem_00B45C80 (address 0x0091E400).
+        ext_006A6C87(reinterpret_cast<void*>(uintptr_t{0x0091E400u}));
+    }
+
+    ext_005E0380(self, &mem_00B45C80);
+
+    mem_00B45CC4 = lift_field<uint8_t>(self, 0x178);
+    return &mem_00B45C80;
+}
+} // namespace lift_005E1C50

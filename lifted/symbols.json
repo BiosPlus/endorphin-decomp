@@ -51526,6 +51526,13 @@
     "summary": "One-time guarded initialisation (flag bit 0 of mem_00B45C2C), then calls ext_005E0380 on self and caches self+0x178 into mem_00B45C24.",
     "lifted_path": "lifted/NMData/NullRelationshipData.cpp"
   },
+  "0x005E1C50": {
+    "name": "NMData::HingeData::vfunc_54",
+    "class": "NMData::HingeData",
+    "signature": "void* __thiscall fn_005E1C50(void* self)",
+    "summary": "One-time guarded init of the static object at 0xB45C80 (ext_005B5780 with arg 10, then atexit-style registration via ext_006A6C87); always calls ext_005E0380(this, \u0026obj), caches the byte at this+0x178 into mem_00B45CC4, and returns \u0026obj.",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
   "0x005E20F0": {
     "name": "NMData::SkeletalJointData::isAxisUnlocked",
     "class": "NMData::SkeletalJointData",
