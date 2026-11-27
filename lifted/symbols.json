@@ -29056,6 +29056,12 @@
     "summary": "Loads the target object pointer from the proxy's first dword and forwards it to the shared method-invoke helper (randomizeNow path); pops 8 bytes of stack args.",
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
+  "0x0050F550": {
+    "name": "InitOnceGlobal_0050F550",
+    "signature": "void* fn_0050F550()",
+    "summary": "One-time guarded initializer for the global object at 0x00AEBD5C; on first call sets guard bit 0 of mem_00AEBD80, runs the object init via ext_0050F1A0 and registers a teardown via ext_006A6C87, then returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050F970": {
     "name": "InitZeroedStateWithVTable",
     "signature": "void fn_0050F970(void* self)",

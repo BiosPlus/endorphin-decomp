@@ -3337,3 +3337,22 @@ void* fn_0050AFA0(void* vec, void* a2, void* a3, void* a4, void* a5) {
     return ebp;
 }
 } // namespace lift_0050AFA0
+
+// [0x0050F550] sub_0050F550 (90 bytes)
+namespace lift_0050F550 {
+extern void __thiscall ext_0050F1A0(void* self);
+extern void __cdecl ext_006A6C87(void* arg);
+extern int mem_00AEBD80;
+
+// @name InitOnceGlobal_0050F550
+// @summary One-time guarded initializer for the global object at 0x00AEBD5C; on first call sets guard bit 0 of mem_00AEBD80, runs the object init via ext_0050F1A0 and registers a teardown via ext_006A6C87, then returns the object's address.
+void* fn_0050F550() {
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AEBD5Cu));
+    if ((mem_00AEBD80 & 1) == 0) {
+        mem_00AEBD80 |= 1;
+        ext_0050F1A0(obj);
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00919D80u)));
+    }
+    return obj;
+}
+} // namespace lift_0050F550
