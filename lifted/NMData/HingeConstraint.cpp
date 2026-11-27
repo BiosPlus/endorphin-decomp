@@ -171,3 +171,31 @@ std::string* fn_00611580(std::string* out, int which) {
     return out;
 }
 } // namespace lift_00611580
+
+// [0x00611650]
+namespace lift_00611650 {
+// @name NMData::HingeConstraint::vfunc_66
+// @class NMData::HingeConstraint
+// @summary Sets flag byte at +0x160, propagates state 0x1000 to child trees, and dispatches notification (5, 0) if global manager is present.
+// @field NMData::HingeConstraint +0x160 uint8_t field_0x160
+
+
+extern uint32_t mem_00B40644;
+
+extern int32_t __cdecl ext_00468180(void);
+extern void ext_00586AD0(void* self, uint32_t a0, uint32_t a1, uint32_t a2);
+extern void ext_00586A50(void* self, uint32_t arg0, uint32_t arg1);
+extern void __thiscall ext_00469530(void* self, unsigned int index, int arg);
+
+void __thiscall fn_00611650(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg1;
+    lift_field<uint8_t>(self, 0x160) = static_cast<uint8_t>(arg2);
+    ext_00586AD0(self, 0x1000, arg2, mem_00B40644);
+    ext_00586A50(self, 0x1000, arg2);
+
+    int32_t obj = ext_00468180();
+    if (obj != 0) {
+        ext_00469530(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(obj))), 5, 0);
+    }
+}
+} // namespace lift_00611650

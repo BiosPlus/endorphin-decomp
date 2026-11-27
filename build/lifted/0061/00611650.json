@@ -1,0 +1,22 @@
+{
+  "va": "0x00611650",
+  "size": 81,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_66",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_66",
+  "class": "NMData::HingeConstraint",
+  "signature": "void __thiscall fn_00611650(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Sets flag byte at +0x160, propagates state 0x1000 to child trees, and dispatches notification (5, 0) if global manager is present.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x160",
+      "type": "uint8_t",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:19:46Z"
+}
