@@ -68950,3 +68950,41 @@ void __thiscall fn_004C0BE0(void* self, void* arg) {
     vfunc_bc(target_type, target);
 }
 } // namespace lift_004C0BE0
+
+// [0x004D6BE0]
+namespace lift_004D6BE0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads a RigEventData::getUserRetargetRefFrame string value from the expression parser target, updates the target wrapper, and notifies its observer.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+
+
+extern void* __stdcall ext_004D5560(void* dst, void* src);
+extern void __thiscall ext_006720E0(void* self, void* str);
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+void __stdcall fn_004D6BE0(void* arg1) {
+    uint8_t str_buf[28];
+    uint32_t obj[2] = {0, 0};
+
+    void* str_ptr = ext_004D5560(str_buf, lift_field<void*>(arg1, 0x00));
+    ext_006720E0(obj, str_ptr);
+    ext_0041CF50(arg1, obj);
+
+    void* inner = reinterpret_cast<void*>(obj[1]);
+    if (inner != nullptr) {
+        using ReleaseFn = void (__thiscall*)(void*, void*);
+        auto release = *reinterpret_cast<ReleaseFn*>(*reinterpret_cast<uintptr_t*>(inner) + 0x78);
+        release(inner, obj);
+    }
+
+    mem_00924FF4(str_buf);
+
+    void* field4 = lift_field<void*>(arg1, 0x04);
+    using NotifyFn = void (__thiscall*)(void*, void*);
+    auto notify = *reinterpret_cast<NotifyFn*>(*reinterpret_cast<uintptr_t*>(field4) + 0xBC);
+    notify(field4, arg1);
+}
+} // namespace lift_004D6BE0

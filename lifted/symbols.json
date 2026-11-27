@@ -18870,6 +18870,13 @@
     "summary": "Parses a string from a document node into a rounded integer via atof.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D6BE0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void __stdcall fn_004D6BE0(void* arg1)",
+    "summary": "Reads a RigEventData::getUserRetargetRefFrame string value from the expression parser target, updates the target wrapper, and notifies its observer.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D6C80": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}\u003e",
