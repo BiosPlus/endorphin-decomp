@@ -38710,6 +38710,13 @@
     "summary": "Loads Acclaim2 character data, processes skeleton/nodes based on version, and copies transform/bounds fields.",
     "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
   },
+  "0x0056C9C0": {
+    "name": "Acclaim2CharacterIO::vfunc_10",
+    "class": "Acclaim2CharacterIO",
+    "signature": "void __thiscall fn_0056C9C0(void* self, void* arg0)",
+    "summary": "Loads and initializes character data, joints, and properties from an Acclaim2 source.",
+    "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
+  },
   "0x0056D620": {
     "name": "Acclaim2CharacterIO::vfunc_13",
     "class": "Acclaim2CharacterIO",

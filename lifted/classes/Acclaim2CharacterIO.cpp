@@ -279,3 +279,144 @@ void __thiscall fn_0056D620(void* self, void* arg1) {
     ext_00493D90(local_writer);
 }
 } // namespace lift_0056D620
+
+// [0x0056C9C0]
+namespace lift_0056C9C0 {
+// @name Acclaim2CharacterIO::vfunc_10
+// @class Acclaim2CharacterIO
+// @summary Loads and initializes character data, joints, and properties from an Acclaim2 source.
+// @field Acclaim2CharacterIO +0x78 float field_0x78
+// @field Acclaim2CharacterIO +0x7C float field_0x7c
+// @field Acclaim2CharacterIO +0x80 float field_0x80
+// @field Acclaim2CharacterIO +0x84 uint32_t field_0x84
+// @field Acclaim2CharacterIO +0x88 uint32_t field_0x88
+// @field Acclaim2CharacterIO +0x8C uint32_t field_0x8c
+// @field Acclaim2CharacterIO +0x414 void* field_0x414
+// @field Acclaim2CharacterIO +0x46C float field_0x46c
+// @field Acclaim2CharacterIO +0x484 void** field_0x484
+// @field Acclaim2CharacterIO +0x488 void** field_0x488
+// @field Acclaim2CharacterIO +0x490 float field_0x490
+// @field Acclaim2CharacterIO +0x494 float field_0x494
+// @field Acclaim2CharacterIO +0x498 float field_0x498
+// @field Acclaim2CharacterIO +0x49C uint32_t field_0x49c
+// @field Acclaim2CharacterIO +0x4A0 uint32_t field_0x4a0
+// @field Acclaim2CharacterIO +0x4A4 uint32_t field_0x4a4
+// @field Acclaim2CharacterIO +0x4C4 uint8_t field_0x4c4
+// @field Acclaim2CharacterIO +0x4F0 uint8_t field_0x4f0
+
+
+void __thiscall ext_00421C00(void* self);
+void __thiscall ext_0056B3F0(void* self, void* arg0);
+void __thiscall ext_0056BA90(void* self, void* arg0);
+void __thiscall ext_0056C5B0(void* self, void* arg0, void* arg1);
+void* __thiscall ext_0057BB20(void* self, uint32_t value);
+void __thiscall ext_005A3580(void* self, void* arg0);
+void* __thiscall ext_005EF640(void* self);
+void __thiscall ext_00673C20(void* self);
+void* __cdecl ext_006A5C62(uint32_t size);
+
+extern uint32_t mem_00B37F40;
+extern float mem_00955998;
+extern void (__thiscall *mem_00924FE0)(void* self, const void* rhs);
+extern void* (__thiscall *mem_00924FDC)(void* self, const void* rhs);
+extern void (__thiscall *mem_00924FF4)(void* self);
+extern void (__cdecl *mem_00925134)();
+
+struct AcclaimIter {
+    void* container;
+    void* node;
+};
+
+void __thiscall fn_0056C9C0(void* self, void* arg0) {
+    char* s = reinterpret_cast<char*>(self);
+    void* target = *reinterpret_cast<void**>(s + 0x414);
+    void* target_sub = reinterpret_cast<char*>(target) + 0x4;
+    auto vtable_sub = *reinterpret_cast<uintptr_t**>(target_sub);
+    reinterpret_cast<void(__thiscall*)(void*)>(vtable_sub[0x84 / 4])(target_sub);
+
+    if (*reinterpret_cast<uint8_t*>(s + 0x4F0) == 0) {
+        uint8_t local_buf[0x24];
+        ext_0057BB20(local_buf, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(s + 0x46C)));
+        ext_0056B3F0(local_buf, arg0);
+        ext_00421C00(local_buf);
+    }
+
+    *reinterpret_cast<uint32_t*>(s + 0x84) = *reinterpret_cast<uint32_t*>(s + 0x49C);
+    *reinterpret_cast<float*>(s + 0x7C) = *reinterpret_cast<float*>(s + 0x494);
+    *reinterpret_cast<uint32_t*>(s + 0x88) = *reinterpret_cast<uint32_t*>(s + 0x4A0);
+    *reinterpret_cast<float*>(s + 0x80) = *reinterpret_cast<float*>(s + 0x498);
+    *reinterpret_cast<uint32_t*>(s + 0x8C) = *reinterpret_cast<uint32_t*>(s + 0x4A4);
+    *reinterpret_cast<float*>(s + 0x78) = *reinterpret_cast<float*>(s + 0x490);
+
+    uint8_t str1[0x1C];
+    uint8_t str2[0x1C];
+    mem_00924FE0(str1, reinterpret_cast<const void*>(0x00B3AB44));
+    mem_00924FE0(str2, s + 0x4C4);
+
+    target = *reinterpret_cast<void**>(s + 0x414);
+    target_sub = reinterpret_cast<char*>(target) + 0x4;
+    vtable_sub = *reinterpret_cast<uintptr_t**>(target_sub);
+    reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable_sub[0x5C / 4])(target_sub, str1);
+
+    target = *reinterpret_cast<void**>(s + 0x414);
+    target_sub = reinterpret_cast<char*>(target) + 0x4;
+    vtable_sub = *reinterpret_cast<uintptr_t**>(target_sub);
+    reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable_sub[0x60 / 4])(target_sub, str2);
+
+    mem_00B37F40 += 1;
+
+    void* root_obj = reinterpret_cast<char*>(*reinterpret_cast<void**>(s + 0x414)) + 0x160;
+    void** vec_begin = *reinterpret_cast<void***>(s + 0x484);
+    void** vec_end = *reinterpret_cast<void***>(s + 0x488);
+    if (!vec_begin || vec_end == vec_begin) {
+        mem_00925134();
+    }
+    ext_0056C5B0(self, root_obj, *vec_begin);
+
+    if (*reinterpret_cast<float*>(s + 0x46C) >= mem_00955998) {
+        for (void** it = vec_begin + 1; it != vec_end; ++it) {
+            void* raw = ext_006A5C62(0x2F8);
+            void* obj = raw ? ext_005EF640(raw) : nullptr;
+            *reinterpret_cast<void**>(reinterpret_cast<char*>(obj) + 0x18C) = *reinterpret_cast<void**>(s + 0x414);
+            ext_0056C5B0(self, obj, *it);
+            ext_005A3580(*reinterpret_cast<void**>(s + 0x414), obj);
+        }
+    }
+
+    ext_0056BA90(self, root_obj);
+
+    char* list1 = reinterpret_cast<char*>(*reinterpret_cast<void**>(s + 0x414)) + 0x58C;
+    void* list1_head = *reinterpret_cast<void**>(list1 + 0x4);
+    AcclaimIter it1{list1, *reinterpret_cast<void**>(list1_head)};
+    while (it1.node != list1_head) {
+        ext_0056BA90(self, *reinterpret_cast<void**>(reinterpret_cast<char*>(it1.node) + 0x28));
+        ext_00673C20(&it1);
+    }
+
+    char* list2 = reinterpret_cast<char*>(*reinterpret_cast<void**>(s + 0x414)) + 0x5A4;
+    void* list2_head = *reinterpret_cast<void**>(list2 + 0x4);
+    AcclaimIter it2{list2, *reinterpret_cast<void**>(list2_head)};
+    while (it2.node != list2_head) {
+        ext_0056BA90(self, *reinterpret_cast<void**>(reinterpret_cast<char*>(it2.node) + 0x28));
+        ext_00673C20(&it2);
+    }
+
+    AcclaimIter it3{list2, *reinterpret_cast<void**>(list2_head)};
+    while (it3.node != list2_head) {
+        char* item = reinterpret_cast<char*>(*reinterpret_cast<void**>(reinterpret_cast<char*>(it3.node) + 0x28));
+        auto item_vt = *reinterpret_cast<uintptr_t**>(item);
+        if (!reinterpret_cast<uint8_t(__thiscall*)(void*)>(item_vt[0x70 / 4])(item)) {
+            char* sub = *reinterpret_cast<char**>(*reinterpret_cast<char**>(item + 0x190) + 0x22C);
+            *reinterpret_cast<void**>(item + 0x228) = sub;
+            auto sub_vt = *reinterpret_cast<uintptr_t**>(sub);
+            const void* str_ret = reinterpret_cast<const void*(__thiscall*)(void*)>(sub_vt[0x24 / 4])(sub);
+            mem_00924FDC(item + 0x198, str_ret);
+        }
+        ext_00673C20(&it3);
+    }
+
+    mem_00924FDC(reinterpret_cast<char*>(*reinterpret_cast<void**>(s + 0x414)) + 0x4AC, arg0);
+    mem_00924FF4(str2);
+    mem_00924FF4(str1);
+}
+} // namespace lift_0056C9C0
