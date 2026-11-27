@@ -3202,7 +3202,7 @@ int32_t fn_006D2BD0(void* self, uint32_t* args) {
 namespace lift_006D98A0 {
 // @name findValueByKey
 // @summary Scans a 12-entry table of 0x20-byte records for a matching key; returns the record's +0x08 value, or the address of mem_00B5D2C0 if no key matches.
-// @field <ClassName> +0x00 <type> <fieldName>
+// @field (free function, no class; record layout: +0x08 int32 value, +0x0C int32 key, stride 0x20 from mem_00B5D910)
 
 // Known callee 0x006D8A40 / 0x0077FAC0 are NOT called by these bytes; the
 // metadata lists them anyway. Only take their addresses (no runtime effect).
