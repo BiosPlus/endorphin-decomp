@@ -427,8 +427,8 @@ bool __thiscall fn_005C31D0(void* self, void* arg) {
     }
 
     // self is the RenderObjectOwner/Updateable sub-object at +0xC of the primary object.
-    uint8_t* primary = reinterpret_cast<uint8_t*>(self) - 0xC;
-    uint8_t* vtbl_bytes = *reinterpret_cast<uint8_t**>(primary);
+    unsigned char* primary = static_cast<unsigned char*>(self) - 0xC;
+    unsigned char* vtbl_bytes = *reinterpret_cast<unsigned char**>(primary);
     GetStringFn get_string = *reinterpret_cast<GetStringFn*>(vtbl_bytes + 0xF8);
 
     // Local std::string temp (MSVC 2005 layout, 0x1C bytes).
@@ -439,7 +439,7 @@ bool __thiscall fn_005C31D0(void* self, void* arg) {
     // String assign into self+8 (= primary+0x14) via the IAT-bound operator=.
     StringAssignFn string_assign =
         reinterpret_cast<StringAssignFn>(*reinterpret_cast<void* const*>(&mem_00924FDC));
-    string_assign(reinterpret_cast<uint8_t*>(self) + 8, src);
+    string_assign(static_cast<unsigned char*>(self) + 8, src);
 
     // Destroy the temp string via the IAT-bound destructor.
     StringDtorFn string_dtor =
