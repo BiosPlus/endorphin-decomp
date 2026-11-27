@@ -1765,3 +1765,31 @@ void fn_00537AB0(void* self) {
     ext_00532B40(self);
 }
 } // namespace lift_00537AB0
+
+// [0x00530290] sub_00530290 (56 bytes)
+namespace lift_00530290 {
+// Known callee 0x00543220: Container::setCurrentIndex (Bounds-checked index selection into a pointer vector; swaps the current element and notifies old/new via vtable.)
+extern void ext_00543220(void* self, uint32_t index, uint32_t flag);
+
+// @name Unknown::selectIndex3Adjusted
+// @class Unknown
+// @summary Selects index arg0 (remapping 3 to 7 when the field at +0x88 already equals 3), stores it at +0x70, updates the container at +0x38, then invokes vtable slot 0x154 on the object at +0x10.
+// @field Unknown +0x10 void* subject
+// @field Unknown +0x38 void container
+// @field Unknown +0x70 uint32_t currentIndex
+// @field Unknown +0x88 uint32_t lastIndex
+void fn_00530290(void* self, uint32_t arg0) {
+    uint32_t index = arg0;
+    if (index == 3 && lift_field<uint32_t>(self, 0x88) == index) {
+        index = 7;
+    }
+
+    lift_field<uint32_t>(self, 0x70) = index;
+    ext_00543220(static_cast<uint8_t*>(self) + 0x38, index, 0);
+
+    void* subject = lift_field<void*>(self, 0x10);
+    void** vtable = *reinterpret_cast<void***>(subject);
+    auto target = reinterpret_cast<void (*)(void*)>(lift_field<void*>(vtable, 0x154));
+    target(subject);
+}
+} // namespace lift_00530290

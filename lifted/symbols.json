@@ -23629,6 +23629,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052FD90 (Unknown::allocAndInitAnimation_0052FD90).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00530290": {
+    "name": "Unknown::selectIndex3Adjusted",
+    "class": "Unknown",
+    "signature": "void fn_00530290(void* self, uint32_t arg0)",
+    "summary": "Selects index arg0 (remapping 3 to 7 when the field at +0x88 already equals 3), stores it at +0x70, updates the container at +0x38, then invokes vtable slot 0x154 on the object at +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x005304A0": {
     "name": "Unknown::SetByteAt1D8",
     "class": "Unknown",
