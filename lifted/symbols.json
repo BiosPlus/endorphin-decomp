@@ -1429,6 +1429,13 @@
     "summary": "Zeroes out[0], checks self-\u003e+0x04 \u003c= self-\u003e+0x08 (unsigned, else invalid-parameter), then writes {self, self-\u003e+0x08} to out and returns out.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00410D40": {
+    "name": "Container::invokeOnFirstElement",
+    "class": "Container",
+    "signature": "static inline void invalid_parameter()",
+    "summary": "Walks the 4-byte element range [+0x08, +0x0C) with iterator-range checks; on the first element it calls MFC80!ord_781 on (element+0x0C) with (self+0x1C) as the argument.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00411590": {
     "name": "sub_00411590",
     "class": "ResourceHolder",

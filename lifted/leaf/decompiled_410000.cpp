@@ -2982,3 +2982,53 @@ void fn_0041B480(void* self) {
     ext_006A624A(self);
 }
 } // namespace lift_0041B480
+
+// [0x00410D40] sub_00410D40 (136 bytes)
+namespace lift_00410D40 {
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (called when an iterator check fails).
+extern void* mem_00925134;
+// IAT slot for MFC80!ord_781. Called thiscall: ecx = receiver, one stack argument.
+extern void* mem_009244D4;
+
+static inline void invalid_parameter() {
+    if (mem_00925134) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+}
+
+// Reads a 32-bit guest address-sized value at a 32-bit guest address.
+static inline uint32_t load_u32(uint32_t addr) {
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+// @name Container::invokeOnFirstElement
+// @class Container
+// @summary Walks the 4-byte element range [+0x08, +0x0C) with iterator-range checks; on the first element it calls MFC80!ord_781 on (element+0x0C) with (self+0x1C) as the argument.
+// @field Container +0x08 uint32_t field_0x08
+// @field Container +0x0C uint32_t field_0x0C
+void fn_00410D40(void* self) {
+    const uint32_t first = lift_field<uint32_t>(self, 0x08);
+    const uint32_t last = lift_field<uint32_t>(self, 0x0C);
+    if (first > last) {
+        invalid_parameter();
+    }
+
+    for (uint32_t it = first; it != last; it += 4) {
+        if (it >= last) {
+            invalid_parameter();
+        }
+
+        const uint32_t element = load_u32(it);
+        if (it == first) {
+            auto ord781 = reinterpret_cast<void (*)(void* self, void* arg)>(mem_009244D4);
+            void* receiver = reinterpret_cast<void*>(static_cast<uintptr_t>(element + 0x0C));
+            void* arg = reinterpret_cast<uint8_t*>(self) + 0x1C;
+            ord781(receiver, arg);
+        }
+
+        if (it >= last) {
+            invalid_parameter();
+        }
+    }
+}
+} // namespace lift_00410D40

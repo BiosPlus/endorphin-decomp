@@ -1,0 +1,28 @@
+{
+  "va": "0x00410D40",
+  "size": 136,
+  "orig_symbol": "sub_00410D40",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Container::invokeOnFirstElement",
+  "class": "Container",
+  "signature": "static inline void invalid_parameter()",
+  "summary": "Walks the 4-byte element range [+0x08, +0x0C) with iterator-range checks; on the first element it calls MFC80!ord_781 on (element+0x0C) with (self+0x1C) as the argument.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Container",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:27:29Z"
+}
