@@ -181,3 +181,35 @@ extern void __thiscall fn_00763E40(void* self) {
     }
 }
 } // namespace lift_00763E40
+
+// [0x0076AD20]
+namespace lift_0076AD20 {
+extern uint32_t __thiscall ext_006D23F0(uint32_t self, uint32_t index);
+extern void __thiscall ext_006D80A0(uint32_t self);
+
+// @name copyVec3NegateZ
+// @summary Copies a 3-element double vector from a stack-passed object to dst, swapping elements 1 and 2 and negating element 2.
+// @field Vec3d +0x00 double x
+// @field Vec3d +0x08 double neg_z
+// @field Vec3d +0x10 double y
+extern void __stdcall fn_0076AD20(
+    uint32_t dst,
+    uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4,
+    uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8) {
+    uint32_t src_arr[8] = { a1, a2, a3, a4, a5, a6, a7, a8 };
+    uint32_t src_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src_arr));
+
+    uint32_t p0 = ext_006D23F0(src_ptr, 0);
+    *reinterpret_cast<uint32_t*>(dst + 0x00) = *reinterpret_cast<const uint32_t*>(p0 + 0x00);
+    *reinterpret_cast<uint32_t*>(dst + 0x04) = *reinterpret_cast<const uint32_t*>(p0 + 0x04);
+
+    uint32_t p1 = ext_006D23F0(src_ptr, 1);
+    *reinterpret_cast<uint32_t*>(dst + 0x10) = *reinterpret_cast<const uint32_t*>(p1 + 0x00);
+    *reinterpret_cast<uint32_t*>(dst + 0x14) = *reinterpret_cast<const uint32_t*>(p1 + 0x04);
+
+    uint32_t p2 = ext_006D23F0(src_ptr, 2);
+    *reinterpret_cast<double*>(dst + 0x08) = -(*reinterpret_cast<const double*>(p2));
+
+    ext_006D80A0(src_ptr);
+}
+} // namespace lift_0076AD20
