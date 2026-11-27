@@ -4178,3 +4178,37 @@ void fn_0043B4D0(void* self) {
     ext_00493D90(base + 0x24, -1);
 }
 } // namespace lift_0043B4D0
+
+// [0x0043B650]
+namespace lift_0043B650 {
+// @name AdjustHeapByDiff
+// @summary Sift-down and sift-up heap adjustment for 32-bit element handles using ext_004410C0 as ordering predicate.
+
+
+extern void ext_0043B560(uint32_t* arr, int32_t hole, int32_t top, uint32_t value, uint32_t extra);
+extern int32_t ext_004410C0(void* self);
+
+void fn_0043B650(uint32_t* arr, int32_t hole, int32_t bottom, uint32_t value, uint32_t extra) {
+    int32_t top = hole;
+    int32_t child = 2 * hole + 2;
+
+    while (child < bottom) {
+        uint32_t right_val = arr[child];
+        uint32_t left_val = arr[child - 1];
+        if (ext_004410C0(reinterpret_cast<void*>(static_cast<uintptr_t>(right_val))) > 1 &&
+            ext_004410C0(reinterpret_cast<void*>(static_cast<uintptr_t>(left_val))) <= 1) {
+            child -= 1;
+        }
+        arr[hole] = arr[child];
+        hole = child;
+        child = 2 * child + 2;
+    }
+
+    if (child == bottom) {
+        arr[hole] = arr[bottom - 1];
+        hole = bottom - 1;
+    }
+
+    ext_0043B560(arr, hole, top, value, extra);
+}
+} // namespace lift_0043B650

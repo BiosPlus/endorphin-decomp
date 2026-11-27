@@ -4069,6 +4069,12 @@
     "summary": "Conditionally swaps three void* slots (a, b, c) using ext_004410C0 as a predicate: cswap(b,a), cswap(c,b), cswap(b,a), where cswap(x,y) swaps when ext_004410C0(*x) \u003e 1 and ext_004410C0(*y) \u003c= 1.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043B650": {
+    "name": "AdjustHeapByDiff",
+    "signature": "void fn_0043B650(uint32_t* arr, int32_t hole, int32_t bottom, uint32_t value, uint32_t extra)",
+    "summary": "Sift-down and sift-up heap adjustment for 32-bit element handles using ext_004410C0 as ordering predicate.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043B6E0": {
     "name": "copy_dword_range",
     "signature": "extern \"C\" void* __cdecl sub_0043B6E0(const void* first, const void* last, void* dest)",
@@ -5336,6 +5342,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0044A150(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0044A000 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0044A2D0": {
+    "name": "getColorRGBA",
+    "signature": "float* __thiscall sub_0044A2D0(void* self, float* out)",
+    "summary": "Reads RGB bytes from fields +0xf0..+0xf2 and alpha via SendMessageA(WM_USER), writing normalized RGBA floats to out",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044A800": {
     "name": "NMColourSwatch::vfunc_1",
@@ -7486,6 +7498,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00462F40(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00462DF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00462F60": {
+    "name": "sub_00462F60",
+    "signature": "extern \"C\" void __thiscall fn_00462F60(void* self)",
+    "summary": "Destructor that sets vtable 0x00938E5C, destroys four 0x54-byte subobjects, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x004630B0": {
     "name": "VersionControlSettingsDialog::vfunc_1",

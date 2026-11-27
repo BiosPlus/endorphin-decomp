@@ -1,0 +1,13 @@
+{
+  "va": "0x0043B650",
+  "size": 130,
+  "orig_symbol": "sub_0043B650",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "AdjustHeapByDiff",
+  "signature": "void fn_0043B650(uint32_t* arr, int32_t hole, int32_t bottom, uint32_t value, uint32_t extra)",
+  "summary": "Sift-down and sift-up heap adjustment for 32-bit element handles using ext_004410C0 as ordering predicate.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:20:12Z"
+}
