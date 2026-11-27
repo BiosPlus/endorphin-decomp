@@ -543,3 +543,33 @@ void fn_0077FA70(void* self) {
     lift_field<void*>(self, 0x04) = nullptr;
 }
 } // namespace lift_0077FA70
+
+// [0x0077FA30] sub_0077FA30 (64 bytes)
+namespace lift_0077FA30 {
+// Known callee 0x006DC510: Unknown::getElementByIndex_006DC510 (Returns element[index] of the pointer array at +0xC8 when index is in [0, count); otherwise forwards to the fallback call at 006E7410 and returns 0.)
+extern uint32_t __thiscall ext_006DC510(void* self, int32_t index);
+// Known callee 0x006DC550: sub_006DC550 (Getter returning int32_t field at offset +0xB8.)
+extern int32_t __fastcall ext_006DC550(void* self);
+
+// @name Unknown::forEachElement_0077FA30
+// @class Unknown
+// @summary For each element of the object passed in (ecx=self, arg=element source), calls vtable slot +0x10 on self with the element, repeating for every index below the getter count.
+// @field Unknown +0x00 void** vtbl
+// @field Unknown +0x04 void* field_0x04
+extern void __thiscall fn_0077FA30(void* self, void* arg) {
+    lift_field<void*>(self, 0x04) = arg;
+
+    int32_t count = ext_006DC550(arg);
+    if (count > 0) {
+        void** vtbl = lift_field<void**>(self, 0x00);
+        int32_t index = 0;
+        do {
+            uint32_t element = ext_006DC510(arg, index);
+            auto slot = lift_field<void (__thiscall*)(void*, uint32_t)>(vtbl, 0x10);
+            slot(self, element);
+            ++index;
+            count = ext_006DC550(arg);
+        } while (index < count);
+    }
+}
+} // namespace lift_0077FA30

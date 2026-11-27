@@ -1,0 +1,28 @@
+{
+  "va": "0x0077FA30",
+  "size": 64,
+  "orig_symbol": "sub_0077FA30",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::forEachElement_0077FA30",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_0077FA30(void* self, void* arg)",
+  "summary": "For each element of the object passed in (ecx=self, arg=element source), calls vtable slot +0x10 on self with the element, repeating for every index below the getter count.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtbl"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:14Z"
+}

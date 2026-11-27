@@ -78858,6 +78858,13 @@
     "summary": "Stores address of mem_00996D48 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077FA30": {
+    "name": "Unknown::forEachElement_0077FA30",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_0077FA30(void* self, void* arg)",
+    "summary": "For each element of the object passed in (ecx=self, arg=element source), calls vtable slot +0x10 on self with the element, repeating for every index below the getter count.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077FA70": {
     "name": "Unknown::flushIndexedElements_0077FA70",
     "class": "Unknown",
