@@ -409,3 +409,83 @@ void* fn_0067A980(void* self, void* out, void* value) {
     return out;
 }
 } // namespace lift_0067A980
+
+// [0x0067ABD0]
+namespace lift_0067ABD0 {
+// @name ExprParser::BoolType::vfunc_23
+// @class ExprParser::BoolType
+// @summary Evaluates/converts a BoolType expression value, optionally parsing/updating from a string and clearing default zero-like string representations.
+// @field ExprParser::BoolType +0x04 void* field_0x04
+
+
+void __thiscall ext_0048B4C0(void* self);
+void __cdecl ext_006651D0(void* str);
+BOOL __thiscall ext_00671F50(void* self, void* other);
+void __thiscall ext_0067FA00(void* self);
+void __thiscall ext_00680800(void* self);
+uint8_t __thiscall ext_00680C10(void* self, void* a1, void* a2, uint32_t a3, uint32_t a4, uint32_t a5, void* a6);
+
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FC0;
+extern uint32_t mem_00924EA8;
+extern uint32_t mem_00924FF4;
+extern const char mem_0098C5C0[];
+extern uint32_t mem_0092A0D0;
+extern const char mem_0098C5B0[];
+extern const char mem_0098C59C[];
+
+void* __thiscall fn_0067ABD0(void* self, void* arg0, void* arg1, void* arg2, void* arg3, void* arg4) {
+    void* val = (*(void* (__thiscall**)(void*, void*))(*(uintptr_t*)self + 0x48))(self, arg1);
+    void* owner = lift_field<void*>(val, 0x4);
+    void* tmp = nullptr;
+    void* ptr = nullptr;
+    if (owner != nullptr) {
+        ptr = (*(void* (__thiscall**)(void*, void**, void*))(*(uintptr_t*)owner + 0x70))(owner, &tmp, val);
+    } else {
+        tmp = nullptr;
+        ptr = &tmp;
+    }
+
+    lift_field<void*>(arg0, 0x0) = *(void**)ptr;
+    lift_field<void*>(arg0, 0x4) = owner;
+
+    if (lift_field<uint32_t>(arg1, 0x40) != 0) {
+        uint8_t local_buf[0x54];
+        ext_0067FA00(local_buf);
+        uint8_t ok = ext_00680C10(local_buf, (uint8_t*)arg1 + 0x2c, arg3, 0, 1, 0, arg2);
+        if ((ok & 0xFF) != 0) {
+            ext_00680800(local_buf);
+            void* arg0_owner = lift_field<void*>(arg0, 0x4);
+            uint32_t dummy = 0;
+            (*(void (__thiscall**)(void*, void*, void*))(*(uintptr_t*)arg0_owner + 0xa4))(arg0_owner, arg0, &dummy);
+        }
+        ext_0048B4C0(local_buf);
+    }
+
+    if (arg4 != nullptr) {
+        void* val2 = (*(void* (__thiscall**)(void*, void*))(*(uintptr_t*)self + 0x48))(self, arg1);
+        if (ext_00671F50(arg0, val2) != 0) {
+            uint8_t str_buf[32];
+            using CopyCtorFn = void (__thiscall*)(void*, const void*);
+            using EqCstrFn = bool (__cdecl*)(const void*, const char*);
+            using ClearFn = void (__thiscall*)(void*);
+            using DtorFn = void (__thiscall*)(void*);
+
+            ((CopyCtorFn)(uintptr_t)mem_00924FE0)(str_buf, arg4);
+            ext_006651D0(str_buf);
+
+            EqCstrFn eq_cstr = (EqCstrFn)(uintptr_t)mem_00924FC0;
+            if (eq_cstr(str_buf, mem_0098C5C0) ||
+                eq_cstr(str_buf, (const char*)&mem_0092A0D0) ||
+                eq_cstr(str_buf, mem_0098C5B0) ||
+                eq_cstr(str_buf, mem_0098C59C)) {
+                ((ClearFn)(uintptr_t)mem_00924EA8)(arg4);
+            }
+
+            ((DtorFn)(uintptr_t)mem_00924FF4)(str_buf);
+        }
+    }
+
+    return arg0;
+}
+} // namespace lift_0067ABD0

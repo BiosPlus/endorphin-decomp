@@ -1,0 +1,22 @@
+{
+  "va": "0x0067ABD0",
+  "size": 449,
+  "orig_symbol": "ExprParser::BoolType::vfunc_23",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_23",
+  "class": "ExprParser::BoolType",
+  "signature": "void* __thiscall fn_0067ABD0(void* self, void* arg0, void* arg1, void* arg2, void* arg3, void* arg4)",
+  "summary": "Evaluates/converts a BoolType expression value, optionally parsing/updating from a string and clearing default zero-like string representations.",
+  "fields": [
+    {
+      "class": "ExprParser::BoolType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:22:12Z"
+}
