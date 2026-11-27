@@ -186432,3 +186432,50 @@ float fn_00695C30(void* self, void* extra) {
 }
 } // namespace lift_00695830
 } // namespace lift_00695C30
+
+// [0x005FCC90] ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>::vfunc_42 (158 bytes)
+namespace lift_005FCC90 {
+// Callees (raw entry points; called through typed casts below)
+extern void ext_00672110();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// RTTI/ThrowInfo address for the exception raised on a null target (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA_005FCC90 = 0x009DEC1C;
+
+// Virtual slots used by the original (byte offset / 4 = slot index).
+using VSlotNoArgs  = void* (*)(void* self);                          // slot 14 (+0x38)
+using VSlotMatch   = bool  (*)(void* self, void** slot, void* arg2); // slot 42 (+0xA8)
+using VSlotRelease = void  (*)(void* self, void** scratch);          // slot 30 (+0x78)
+
+// @name ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, Sensor::getMutableVector3, 1>::vfunc_42
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>
+// @summary Dereferences the holder's target, obtains a value from its slot-14 virtual, wraps it via sub_00672110, asks the target's slot-42 virtual to match it against arg2, releases the wrapper, and returns the bool result; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+bool fn_005FCC90(void** holder, void* arg2) {
+    void* obj = holder[0];
+    if (obj == nullptr) {
+        // Original builds a local exception object (sub_0046C3C0), then throws via the CRT thunk.
+        alignas(8) unsigned char exc[0x28] = {};
+        reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(exc);
+        reinterpret_cast<void (*)(void*, const void*)>(ext_006A6DD2)(exc, reinterpret_cast<const void*>(kThrowInfoVA_005FCC90));
+        return false;
+    }
+
+    void* value = reinterpret_cast<VSlotNoArgs>((*static_cast<void***>(obj))[14])(obj);
+
+    void* wrapper = nullptr;
+    reinterpret_cast<void (*)(void*, void*)>(ext_00672110)(&wrapper, value);
+
+    bool result = false;
+    if (wrapper != nullptr) {
+        void* wrapped = wrapper;
+        result = reinterpret_cast<VSlotMatch>((*static_cast<void***>(wrapped))[42])(wrapped, &wrapper, arg2);
+        void* scratch = nullptr;
+        reinterpret_cast<VSlotRelease>((*static_cast<void***>(wrapped))[30])(wrapped, &scratch);
+    }
+    return result;
+}
+} // namespace lift_005FCC90
