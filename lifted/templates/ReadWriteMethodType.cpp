@@ -10625,3 +10625,31 @@ DWORD fn_004DFFF0(void* arg) {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(arg));
 }
 } // namespace lift_004DFFF0
+
+// [0x004ECCF0]
+namespace lift_004ECCF0 {
+// @name ExprParser::ReadWriteMethodType<SelectionVariable>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Lazily initializes the function-local static object at mem_00AE79CC (once, guarded by bit 0 of mem_00AE79D0), then stores its address into this+0x4.
+// @field ExprParser::ReadWriteMethodType +0x04 DWORD field_0x04
+
+
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern uint8_t mem_00AE79D0;
+extern uint8_t mem_00AE79CC;
+
+void fn_004ECCF0(void* self)
+{
+    // Guard check: initialize the static only on first use.
+    if ((lift_field<uint8_t>(&mem_00AE79D0, 0) & 1u) == 0) {
+        lift_field<DWORD>(&mem_00AE79D0, 0) |= 1u;
+
+        // Construct the static object (zero-initialized first DWORD, then vtable).
+        ext_0067A670(&mem_00AE79CC, 0);
+        lift_field<DWORD>(&mem_00AE79CC, 0) = 0x0094BCD4u;
+    }
+
+    // Publish the static's address into this+0x4.
+    lift_field<DWORD>(self, 0x4) = 0x00AE79CCu;
+}
+} // namespace lift_004ECCF0

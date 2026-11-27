@@ -1,0 +1,22 @@
+{
+  "va": "0x004ECCF0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cSelectionVariable, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall SelectionVariable::`vcall'{36, {flat}}, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall SelectionVariable::setName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cSelectionVariable\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "void fn_004ECCF0(void* self)",
+  "summary": "Lazily initializes the function-local static object at mem_00AE79CC (once, guarded by bit 0 of mem_00AE79D0), then stores its address into this+0x4.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:20:59Z"
+}
