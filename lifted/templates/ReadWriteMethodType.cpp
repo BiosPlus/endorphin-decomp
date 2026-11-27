@@ -12149,3 +12149,59 @@ void fn_005C73F0(void* arg) {
     *reinterpret_cast<void**>(static_cast<uint8_t*>(arg) + 0x04) = &mem_00B444D0;
 }
 } // namespace lift_005C73F0
+
+// [0x005B8AE0] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setMass(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B8AE0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+
+// Function-local static accessor object (at 0x00B43D2C) and its one-shot init guard (0x00B43D30, bit 0).
+extern DWORD mem_00B43D2C;
+extern DWORD mem_00B43D30;
+
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setMass(float), 0}>
+// @summary Lazily constructs the static accessor object once (guard bit 0), then stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005B8AE0(void* holder) {
+    // One-shot construction of the static accessor object. The original wraps this
+    // in an MSVC SEH frame (fs:[0] push/pop, try-level 0) purely for static-init
+    // bookkeeping; that frame has no portable equivalent and is omitted here.
+    if ((mem_00B43D30 & 1u) == 0) {
+        mem_00B43D30 |= 1u;
+
+        // Base constructor on the static object. Its stack slot value is dead:
+        // the vtable store below overwrites the first DWORD of the object.
+        ext_0067A670(&mem_00B43D2C, 0);
+
+        // Vtable pointer of the static accessor object.
+        mem_00B43D2C = 0x00962A3Cu;
+    }
+
+    // Bind holder+0x04 to the static accessor object.
+    lift_field<DWORD>(holder, 0x04) =
+        static_cast<DWORD>(reinterpret_cast<std::uintptr_t>(&mem_00B43D2C));
+}
+} // namespace lift_005B8AE0
+
+// [0x005B8BB0] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setLinearVelocityDamping(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B8BB0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B43D38;
+extern int mem_00B43D34;
+
+// @name ReadWriteMethodType<NMData::MetaBodyData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setLinearVelocityDamping(float), 0}>
+// @summary Points holder+0x04 at the static accessor object; on first use sets the accessor vtable (0x962BEC) and runs the one-time init callee ext_0067A670.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005B8BB0(void* self) {
+    // One-time static initialization guarded by bit 0 of mem_00B43D38.
+    if ((mem_00B43D38 & 1) == 0) {
+        mem_00B43D38 |= 1;
+        ext_0067A670(&mem_00B43D34, 0);
+        mem_00B43D34 = 0x00962BEC;
+    }
+    lift_field<DWORD>(self, 4) = 0x00B43D34;
+}
+} // namespace lift_005B8BB0
