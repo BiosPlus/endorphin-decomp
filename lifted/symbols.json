@@ -44497,6 +44497,13 @@
     "summary": "Clears a Float3Vector and refills it with (stacks+1) copies of a slices-point circle of radius params[0] in the XZ plane (y = 0)",
     "lifted_path": "lifted/Geometry/CylinderType.cpp"
   },
+  "0x005B4CD0": {
+    "name": "Geometry::SphereType::vfunc_16",
+    "class": "Geometry::SphereType",
+    "signature": "extern \"C\" double mem_00955090;  // 2*pi (double) struct CheckedFloat3Iter",
+    "summary": "Clears a Float3Vector and refills it with latitude rings of points on a sphere of radius params[0] (stacks latitude steps, slices points per ring, XZ-plane rings)",
+    "lifted_path": "lifted/Geometry/SphereType.cpp"
+  },
   "0x005B4E40": {
     "name": "Geometry::SphylType::vfunc_16",
     "class": "Geometry::SphylType",
