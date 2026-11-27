@@ -10,7 +10,8 @@
 // Recovered field layout for NMData::RigEventData:
 namespace lifted_layout {
 struct NMData_RigEventData_Fields {
-    // +0x0   void**                   vptr  (evidence: 0x004D3D00)
+    // +0x0   void**                   vptr  (evidence: 0x004D3D00, 0x004DC450)
+    // +0x4   void*                    field_0x04  (evidence: 0x004DC450)
     // +0x180 void*                    SelectionVariable::Listener::vptr  (evidence: 0x004A9B50, 0x004D3D30)
     // +0x398 uint8_t                  field_0x398  (evidence: 0x004D3C60)
 };

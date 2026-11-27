@@ -1,0 +1,28 @@
+{
+  "va": "0x004DC450",
+  "size": 151,
+  "orig_symbol": "NMData::RigEventData::vfunc_34",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_34",
+  "class": "NMData::RigEventData",
+  "signature": "void* fn_004DC450(void* self, void* arg0)",
+  "summary": "Looks up a helper object via the transform interface vtable and the self vtable, then links it back to this and stores this+0x348 into its +0x20 slot.",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:03Z"
+}

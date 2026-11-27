@@ -138,3 +138,48 @@ void fn_004D3D50(void* self, uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t*
     *a4 = 6;
 }
 } // namespace lift_004D3D50
+
+// [0x004DC450] NMData::RigEventData::vfunc_34 (151 bytes)
+namespace lift_004DC450 {
+extern void ext_004DC370(void* self);
+// Known callee 0x00493E40: forwardVtableSlot194 (Dereferences a pointer-to-pointer held in self, then tail-jumps to the)
+extern void* ext_00493E40(void* self, void* arg);
+// Known callee 0x00528B90: Unknown::setPeerWithBackLink (Stores the argument at this+0x04; if it is non-null, writes this into argument+0x08.)
+extern void ext_00528B90(void* self, void* peer);
+extern int mem_00B40640;
+
+// @name NMData::RigEventData::vfunc_34
+// @class NMData::RigEventData
+// @summary Looks up a helper object via the transform interface vtable and the self vtable, then links it back to this and stores this+0x348 into its +0x20 slot.
+// @field NMData::RigEventData +0x00 void** vptr
+// @field NMData::RigEventData +0x04 void* field_0x04
+void* fn_004DC450(void* self, void* arg0) {
+    // Kept as byte-offset vtable reads: slot index = byte offset / sizeof(void*) is not portable
+    // across the 32-bit original and 64-bit builds.
+    auto vslot = [](void* obj, std::ptrdiff_t byteOff) -> void* {
+        void** vt = *reinterpret_cast<void***>(obj);
+        return *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vt) + byteOff);
+    };
+
+    ext_004DC370(self);
+
+    void* sub = self ? static_cast<uint8_t*>(self) + 0xC : nullptr;
+
+    // Interface subobject at self+0x04; call its vtable slot at +0xC.
+    void* iface = static_cast<uint8_t*>(self) + 0x4;
+    auto fnIface = reinterpret_cast<void* (*)(void*, void*, void*, int)>(vslot(iface, 0xC));
+    void* globalArg = reinterpret_cast<void*>(static_cast<std::intptr_t>(mem_00B40640));
+    void* r1 = fnIface(iface, globalArg, sub, 0);
+
+    // Self vtable slot at +0xD8 with r1 as argument.
+    auto fnSelf = reinterpret_cast<void* (*)(void*, void*)>(vslot(self, 0xD8));
+    void* r2 = fnSelf(self, r1);
+
+    void* edi = ext_00493E40(arg0, r2);
+    if (edi) {
+        ext_00528B90(sub, edi);
+        lift_field<void*>(edi, 0x20) = static_cast<uint8_t*>(self) + 0x348;
+    }
+    return edi;
+}
+} // namespace lift_004DC450

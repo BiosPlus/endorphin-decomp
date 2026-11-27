@@ -4790,6 +4790,13 @@
     "summary": "Stores the result of ext_00455F40(self) into self+0xEC, then forwards the three stack arguments to ext_004564A0(self, arg0, arg1, arg2). Callee pops 12 bytes (ret 0xC).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043C6D0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_79",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "void __thiscall fn_0043C6D0(void* self)",
+    "summary": "Allocates and registers nine view-element objects into the container at +0x64.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0043C900": {
     "name": "SetCursorFromTable",
     "signature": "HCURSOR __thiscall fn_0043C900(void* self, uint32_t index)",
@@ -7785,6 +7792,13 @@
     "signature": "extern \"C\" void __fastcall fn_004593A0(void* self)",
     "summary": "Destructor tail-call: restores vtable mem_0093794C and tail-calls base destructor sub_004406C0.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
+  "0x004593B0": {
+    "name": "MultiTrackView::TimeRuler::vfunc_0_off_50",
+    "class": "MultiTrackView::TimeRuler",
+    "signature": "void __thiscall fn_004593B0(void* self)",
+    "summary": "Updates time ruler ranges, playback state, and invalidates the view rect.",
+    "lifted_path": "lifted/MultiTrackView/TimeRuler.cpp"
   },
   "0x00459900": {
     "name": "MultiTrackView::TimeRulerMarkerTrack::vfunc_0",
@@ -23501,6 +23515,13 @@
     "signature": "extern \"C\" void* __fastcall fn_004DB920(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_004DADE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x004DC450": {
+    "name": "NMData::RigEventData::vfunc_34",
+    "class": "NMData::RigEventData",
+    "signature": "void* fn_004DC450(void* self, void* arg0)",
+    "summary": "Looks up a helper object via the transform interface vtable and the self vtable, then links it back to this and stores this+0x348 into its +0x20 slot.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
   },
   "0x004DC660": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e::vfunc_41",
