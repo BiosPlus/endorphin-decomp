@@ -1416,9 +1416,9 @@ extern double mem_00993830; // .rdata double -1.0
 extern void __fastcall fn_007DEC00(int ecx_unused, void* self) {
     (void)ecx_unused;
     // Negate by multiplying with the -1.0 constant (exact for float).
-    lift_field<float>(self, 0x10) = static_cast<float>(lift_field<float>(self, 0x10) * -1.0);
-    lift_field<float>(self, 0x14) = static_cast<float>(lift_field<float>(self, 0x14) * -1.0);
-    lift_field<float>(self, 0x18) = static_cast<float>(lift_field<float>(self, 0x18) * -1.0);
+    lift_field<float>(self, 0x10) = static_cast<float>(lift_field<float>(self, 0x10) * mem_00993830);
+    lift_field<float>(self, 0x14) = static_cast<float>(lift_field<float>(self, 0x14) * mem_00993830);
+    lift_field<float>(self, 0x18) = static_cast<float>(lift_field<float>(self, 0x18) * mem_00993830);
 
     // The original re-reads the array base and count from self on every iteration.
     for (int32_t i = 0; i < lift_field<int32_t>(self, 0x0c); ++i) {
@@ -1438,9 +1438,9 @@ extern void __fastcall fn_007DEC00(int ecx_unused, void* self) {
         lift_field<uint16_t>(rec, 0x1c) = static_cast<uint16_t>(shifted + sarHi);
 
         // Negate floats at +0x0c, +0x10, +0x14.
-        lift_field<float>(rec, 0x0c) = static_cast<float>(lift_field<float>(rec, 0x0c) * -1.0);
-        lift_field<float>(rec, 0x10) = static_cast<float>(lift_field<float>(rec, 0x10) * -1.0);
-        lift_field<float>(rec, 0x14) = static_cast<float>(lift_field<float>(rec, 0x14) * -1.0);
+        lift_field<float>(rec, 0x0c) = static_cast<float>(lift_field<float>(rec, 0x0c) * mem_00993830);
+        lift_field<float>(rec, 0x10) = static_cast<float>(lift_field<float>(rec, 0x10) * mem_00993830);
+        lift_field<float>(rec, 0x14) = static_cast<float>(lift_field<float>(rec, 0x14) * mem_00993830);
     }
 }
 } // namespace lift_007DEC00
