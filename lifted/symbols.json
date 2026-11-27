@@ -20205,6 +20205,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
     "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
   },
+  "0x004BB6C0": {
+    "name": "Unknown::InitWithCastAndSearch",
+    "class": "Unknown",
+    "signature": "[[noreturn]] static inline void invalid_parameter_noinfo()",
+    "summary": "Initializes vtable and fields, runs an RTTI dynamic_cast on arg2, and stores a 1-based index/count of arg4 within the vector at +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BB810": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_3",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",
