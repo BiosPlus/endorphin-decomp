@@ -1,0 +1,63 @@
+{
+  "va": "0x00687150",
+  "size": 143,
+  "orig_symbol": "sub_00687150",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_00687150",
+  "signature": "void* __thiscall sub_00687150(void* this_ptr, void* arg1)",
+  "summary": "Constructor initializing vtable, std::string, red-black tree, ID counter, and zeroed fields.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "id"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "name"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "tree_base"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "tree_head"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "tree_size"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:34:38Z"
+}

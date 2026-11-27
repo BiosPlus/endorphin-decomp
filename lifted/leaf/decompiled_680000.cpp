@@ -2725,3 +2725,50 @@ uint8_t* fn_00688C10(uint8_t* begin, uint32_t count, const void* rhs) {
 }
 } // namespace lift_00501090
 } // namespace lift_00688C10
+
+// [0x00687150]
+namespace lift_00687150 {
+extern void* __thiscall ext_0059F5C0(void* self);
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00B5ADB0;
+
+// @name sub_00687150
+// @summary Constructor initializing vtable, std::string, red-black tree, ID counter, and zeroed fields.
+// @field Obj +0x00 uint32_t vtable
+// @field Obj +0x04 uint32_t id
+// @field Obj +0x08 std::string name
+// @field Obj +0x24 uint32_t field_0x24
+// @field Obj +0x28 void* tree_base
+// @field Obj +0x2C void* tree_head
+// @field Obj +0x30 uint32_t tree_size
+// @field Obj +0x34 uint32_t field_0x34
+void* __thiscall sub_00687150(void* this_ptr, void* arg1) {
+    uint8_t* self = static_cast<uint8_t*>(this_ptr);
+
+    lift_field<uint32_t>(self, 0x00) = 0x0098D834u;
+
+    auto ctor_str = reinterpret_cast<void(__thiscall*)(void*, void*)>(mem_00924FE0);
+    ctor_str(self + 0x08, arg1);
+
+    uint8_t* tree = self + 0x28;
+    uint8_t* head = static_cast<uint8_t*>(ext_0059F5C0(tree));
+    lift_field<void*>(tree, 0x04) = head;
+    lift_field<uint8_t>(head, 0x2D) = 1;
+
+    uint8_t* h = static_cast<uint8_t*>(lift_field<void*>(tree, 0x04));
+    lift_field<void*>(h, 0x04) = h;
+    lift_field<void*>(h, 0x00) = h;
+    lift_field<void*>(h, 0x08) = h;
+
+    lift_field<uint32_t>(tree, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+
+    uint32_t id = mem_00B5ADB0;
+    lift_field<uint32_t>(self, 0x04) = id;
+    mem_00B5ADB0 = id + 1;
+
+    lift_field<uint32_t>(self, 0x24) = 0;
+
+    return this_ptr;
+}
+} // namespace lift_00687150
