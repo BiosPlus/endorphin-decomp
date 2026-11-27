@@ -1,0 +1,13 @@
+{
+  "va": "0x00665250",
+  "size": 119,
+  "orig_symbol": "sub_00665250",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "StrutilCutAtDelimiter",
+  "signature": "extern \"C\" int mem_0092511C; // basic_string::end() extern \"C\" int mem_009250D0; // basic_string::begin() extern \"C\" int mem_009250A4; // basic_string::erase(first, last) struct StrIter",
+  "summary": "Finds the first delimiter ch in the string at str, then erases from that point to the end of the string (copying the tail via the 0x00665130 helper).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:27:05Z"
+}

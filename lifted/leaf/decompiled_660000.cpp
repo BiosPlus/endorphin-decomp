@@ -4369,3 +4369,57 @@ void* fn_00665130(void* out, void* container, char* begin, void* expected, char*
     return out;
 }
 } // namespace lift_00665130
+
+// [0x00665250] sub_00665250 (119 bytes)
+namespace lift_00665250 {
+// Known callee 0x00665130: copyAfterFirstDelimiter (Scans the checked string range [begin,end) for the first delimiter ch; if none is found returns {container,end} through out, otherwise copies the tail after the delimiter via copyCharsSkippingDelimiter.)
+extern void ext_00665130();
+// The metadata also lists 0x00435CC0 and 0x006658F0, but the disassembly never calls them
+// (only 0x665130 is called). Take their addresses only, so nothing executes at runtime.
+extern void ext_00435CC0();
+extern void ext_006658F0();
+
+// MSVCP80 std::basic_string<char> import slots used by this function.
+extern int mem_0092511C; // basic_string::end()
+extern int mem_009250D0; // basic_string::begin()
+extern int mem_009250A4; // basic_string::erase(first, last)
+
+// 8-byte _String_iterator layout: {_Ptr, _Mycont}.
+struct StrIter {
+    uint32_t ptr;
+    uint32_t cont;
+};
+
+// MSVC thiscall members returning _String_iterator by hidden pointer.
+// On non-MSVC toolchains __thiscall expands to nothing (syntax check only).
+using IterGetFn = StrIter* (__thiscall*)(void* self, StrIter* ret);
+using EraseFn   = StrIter* (__thiscall*)(void* self, StrIter* ret, StrIter first, StrIter last);
+// cdecl helper: (out, begin, end, delimiter) -> out
+using CopyFn    = StrIter* (__cdecl*)(StrIter* out, StrIter begin, StrIter end, uint32_t ch);
+
+// @name StrutilCutAtDelimiter
+// @summary Finds the first delimiter ch in the string at str, then erases from that point to the end of the string (copying the tail via the 0x00665130 helper).
+void fn_00665250(void* str, uint32_t ch) {
+    auto end_m   = *reinterpret_cast<IterGetFn*>(&mem_0092511C);
+    auto begin_m = *reinterpret_cast<IterGetFn*>(&mem_009250D0);
+    auto erase_m = *reinterpret_cast<EraseFn*>(&mem_009250A4);
+    auto copy_fn = reinterpret_cast<CopyFn>(ext_00665130);
+    (void)&ext_00435CC0; // metadata-only callee, not called by the bytes
+    (void)&ext_006658F0; // metadata-only callee, not called by the bytes
+
+    StrIter end_full{};
+    end_m(str, &end_full);
+
+    StrIter end_scan{};
+    end_m(str, &end_scan);
+
+    StrIter begin_it{};
+    begin_m(str, &begin_it);
+
+    StrIter found{};
+    StrIter* r = copy_fn(&found, begin_it, end_scan, ch);
+
+    StrIter from = *r;
+    erase_m(str, &found, from, end_full);
+}
+} // namespace lift_00665250
