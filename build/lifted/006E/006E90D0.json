@@ -1,0 +1,28 @@
+{
+  "va": "0x006E90D0",
+  "size": 128,
+  "orig_symbol": "sub_006E90D0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::findOrAllocAndInsert_006E90D0",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006E90D0(void* self, uint32_t key)",
+  "summary": "Scans the element array at +0x34 for an entry whose first dword equals key; if found, increments that entry's refcount at +4. Otherwise allocates a new entry (ext_006A5C62, 8 bytes), sets its key via SetValueAndFlag, and inserts it into the array via DynamicArray::InsertAt. Returns TRUE in all cases.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "elemCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "void**",
+      "name": "elemData"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:00:46Z"
+}

@@ -70217,6 +70217,13 @@
     "summary": "Returns the first dword of the table entry at index (if in range), else calls ext_006E7440 on this+0x94 with index 3 and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E90D0": {
+    "name": "Unknown::findOrAllocAndInsert_006E90D0",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006E90D0(void* self, uint32_t key)",
+    "summary": "Scans the element array at +0x34 for an entry whose first dword equals key; if found, increments that entry's refcount at +4. Otherwise allocates a new entry (ext_006A5C62, 8 bytes), sets its key via SetValueAndFlag, and inserts it into the array via DynamicArray::InsertAt. Returns TRUE in all cases.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E91E0": {
     "name": "Unknown::getIndexedEntryFirstDword_006E91E0",
     "class": "Unknown",

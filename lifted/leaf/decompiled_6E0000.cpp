@@ -2218,3 +2218,48 @@ bool Unknown_acquireOrInsertValue_006E97C0(void* self, uint32_t value) {
     return true;
 }
 } // namespace lift_006E97C0
+
+// [0x006E90D0] sub_006E90D0 (128 bytes)
+namespace lift_006E90D0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern void ext_006D2170();
+// Known callee 0x006E8A20: Unknown::SetValueAndFlag (Stores a 32-bit argument at +0x00, sets the flag word at +0x04 to 1, and returns this.)
+extern void ext_006E8A20();
+
+// @name Unknown::findOrAllocAndInsert_006E90D0
+// @class Unknown
+// @summary Scans the element array at +0x34 for an entry whose first dword equals key; if found, increments that entry's refcount at +4. Otherwise allocates a new entry (ext_006A5C62, 8 bytes), sets its key via SetValueAndFlag, and inserts it into the array via DynamicArray::InsertAt. Returns TRUE in all cases.
+// @field Unknown +0x34 int32_t elemCount
+// @field Unknown +0x44 void** elemData
+uint8_t fn_006E90D0(void* self, uint32_t key) {
+    // Search existing entries: each entry's first dword is its key, +4 is a refcount.
+    int32_t count = lift_field<int32_t>(self, 0x34);
+    if (count > 0) {
+        void** data = lift_field<void**>(self, 0x44);
+        for (int32_t i = 0; i < count; ++i) {
+            uint8_t* entry = static_cast<uint8_t*>(data[i]);
+            if (lift_field<uint32_t>(entry, 0) == key) {
+                lift_field<int32_t>(entry, 4) += 1;
+                return 1;
+            }
+        }
+    }
+
+    // Not found: allocate a new entry (cdecl thunk, 8 bytes) and initialize it.
+    void* alloc = reinterpret_cast<void* (*)(uint32_t)>(&ext_006A5C62)(8);
+    uint32_t stored = 0;
+    if (alloc != nullptr) {
+        // The original stores a 32-bit value; the returned pointer is truncated to that slot.
+        stored = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(
+            reinterpret_cast<void* (*)(void*, uint32_t)>(&ext_006E8A20)(alloc, key)));
+    }
+
+    // Insert &stored into the array (self = this+0x34) at index = current count.
+    int32_t index = lift_field<int32_t>(self, 0x34);
+    reinterpret_cast<int32_t (*)(void*, int32_t, const void*)>(&ext_006D2170)(
+        static_cast<uint8_t*>(self) + 0x34, index, &stored);
+    return 1;
+}
+} // namespace lift_006E90D0
