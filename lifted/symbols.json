@@ -2077,6 +2077,13 @@
     "summary": "Returns the address of the static .rdata constant mem_0092D8A8 (pointer to 0x0092D894).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041B960": {
+    "name": "Unknown::ParseFloatAndStore_0041B960",
+    "class": "Unknown",
+    "signature": "void fn_0041B960(void* self)",
+    "summary": "Reads a string via MFC CString helpers, converts it with atof, and forwards the float to a virtual method on the object at +0x1ec.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041BA60": {
     "name": "sub_0041BA60",
     "signature": "void sub_0041BA60(void* self)",

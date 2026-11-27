@@ -2758,3 +2758,58 @@ void fn_00412C20(void* self) {
     reinterpret_cast<StrDtorFn>(iat_target(mem_00924FF4))(str);
 }
 } // namespace lift_00412C20
+
+// [0x0041B960] sub_0041B960 (128 bytes)
+namespace lift_0041B960 {
+// Known callee 0x006A5F4A: thunk_MFC80_ord_3761 (IAT jump thunk forwarding to MFC80!ord_3761.)
+extern void ext_006A5F4A();
+// IAT slots (indirect imports): MFC80!ord_310, MFC80!ord_876, MSVCR80!atof, MFC80!ord_578
+extern int mem_009242FC;
+extern int mem_00924300;
+extern int mem_009251F0;
+extern int mem_009242F4;
+
+// Calling-convention shapes used below (__thiscall/__cdecl are no-ops on non-MSVC builds).
+using ThisCallVoid      = void (__thiscall*)(void* self);
+using ThisCallPtr       = void* (__thiscall*)(void* self);
+using ThisCallVoidArg   = void (__thiscall*)(void* self, void* arg);
+using ThisCallVoidFloat = void (__thiscall*)(void* self, float arg);
+using CdeclAtof         = double (__cdecl*)(const char* s);
+
+// @name Unknown::ParseFloatAndStore_0041B960
+// @class Unknown
+// @summary Reads a string via MFC CString helpers, converts it with atof, and forwards the float to a virtual method on the object at +0x1ec.
+// @field Unknown +0x8c void* field_0x8c
+// @field Unknown +0x1ec void* field_0x1ec
+void fn_0041B960(void* self) {
+    // CString temporary (single-pointer MFC CString).
+    void* str = nullptr;
+
+    // ord_310: construct the CString temporary.
+    ThisCallVoid ctorStr = reinterpret_cast<ThisCallVoid>(*reinterpret_cast<void**>(&mem_009242FC));
+    ctorStr(&str);
+
+    // Sub-object at this+0x8c receives the CString reference.
+    void* sub = lift_field<void*>(self, 0x8c);
+    ThisCallVoidArg fillFromStr = reinterpret_cast<ThisCallVoidArg>(&ext_006A5F4A);
+    fillFromStr(sub, &str);
+
+    // ord_876: CString -> const char*.
+    ThisCallPtr getStr = reinterpret_cast<ThisCallPtr>(*reinterpret_cast<void**>(&mem_00924300));
+    const char* text = static_cast<const char*>(getStr(&str));
+
+    // MSVCR80!atof (cdecl) returns double; stored as float.
+    CdeclAtof atofFn = reinterpret_cast<CdeclAtof>(*reinterpret_cast<void**>(&mem_009251F0));
+    float value = static_cast<float>(atofFn(text));
+
+    // Virtual call at vtable slot 0x40 of the object at this+0x1ec, passing the float.
+    void* obj = lift_field<void*>(self, 0x1ec);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    ThisCallVoidFloat vcall = reinterpret_cast<ThisCallVoidFloat>(vtable[0x40 / sizeof(void*)]);
+    vcall(obj, value);
+
+    // ord_578: destruct the CString temporary.
+    ThisCallVoid dtorStr = reinterpret_cast<ThisCallVoid>(*reinterpret_cast<void**>(&mem_009242F4));
+    dtorStr(&str);
+}
+} // namespace lift_0041B960

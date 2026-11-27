@@ -1,0 +1,28 @@
+{
+  "va": "0x0041B960",
+  "size": 128,
+  "orig_symbol": "sub_0041B960",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::ParseFloatAndStore_0041B960",
+  "class": "Unknown",
+  "signature": "void fn_0041B960(void* self)",
+  "summary": "Reads a string via MFC CString helpers, converts it with atof, and forwards the float to a virtual method on the object at +0x1ec.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "void*",
+      "name": "field_0x8c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1EC",
+      "type": "void*",
+      "name": "field_0x1ec"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:10:43Z"
+}
