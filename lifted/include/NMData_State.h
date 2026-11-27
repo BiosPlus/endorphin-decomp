@@ -14,9 +14,15 @@ struct NMData_State_Fields {
     // +0x8   void*                    field_0x08  (evidence: 0x0049D780) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x8  (evidence: 0x0046CE90, 0x00488E30, 0x0049D530, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x8
     // +0x1C  void*                    adjusted_base  (evidence: 0x004A9B50, 0x006744A0)
-    // +0x54  BYTE                     field_0x54  (evidence: 0x0049DF50)
+    // +0x54  BYTE                     field_0x54  (evidence: 0x0049DF50) // CONFLICT: multiple definitions at +0x54
+    // +0x54  uint8_t                  field_0x54  (evidence: 0x004A0150) // CONFLICT: multiple definitions at +0x54
+    // +0x58  uint8_t                  field_0x58  (evidence: 0x004A0150)
+    // +0x5C  uint8_t                  field_0x5C  (evidence: 0x004A0150)
+    // +0x60  uint8_t                  field_0x60  (evidence: 0x004A0150)
+    // +0x7C  uint8_t                  field_0x7C  (evidence: 0x004A0150)
     // +0x80  uint32_t*                field_0x80  (evidence: 0x0049FC80)
     // +0x84  uint32_t*                field_0x84  (evidence: 0x0049FC80)
+    // +0x98  uint8_t                  field_0x98  (evidence: 0x004A0150)
     // +0xCC  void*                    field_0xCC  (evidence: 0x0049F140)
     // +0xD0  void*                    list_head  (evidence: 0x0049FCF0)
     // +0xD8  void*                    field_0xD8  (evidence: 0x0049F140)

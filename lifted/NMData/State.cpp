@@ -554,3 +554,63 @@ void fn_0049AFD0(void* self, const float* p, uint32_t arg2) {
     lift_field<float>(self, 0xEC) = p[1];
 }
 } // namespace lift_0049AFD0
+
+// [0x004A0150]
+namespace lift_004A0150 {
+extern void ext_00671F30(void* out);
+extern void ext_0049FB70(void* out, void* base, uint32_t prop_id);
+extern void* ext_00499130(void* out, uint32_t value);
+extern void* ext_0049E440(void* self, uint32_t arg2);
+extern void* ext_0049D390(void* dst, uint32_t value);
+extern float* ext_0049CE90(float* self, float* out, float* other);
+
+// @name NMData::State::getProperty_004A0150
+// @class NMData::State
+// @summary Dispatches property lookup on NMData::State by property ID, returning a property handle/value in out.
+// @field NMData::State +0x54 uint8_t field_0x54
+// @field NMData::State +0x58 uint8_t field_0x58
+// @field NMData::State +0x5C uint8_t field_0x5C
+// @field NMData::State +0x60 uint8_t field_0x60
+// @field NMData::State +0x7C uint8_t field_0x7C
+// @field NMData::State +0x98 uint8_t field_0x98
+void* __thiscall fn_004A0150(void* self, void* out, uint32_t prop_id) {
+    (void)&ext_0049CE90;
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    if (base[0x54] != 0) {
+        if (prop_id == 0x2d4 || prop_id == 0x257) {
+            ext_0049FB70(out, base - 0x10, prop_id);
+            return out;
+        }
+        if (prop_id == 0x256) {
+            ext_0049D390(out, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x54)));
+            return out;
+        }
+        ext_00671F30(out);
+        return out;
+    }
+
+    switch (prop_id) {
+        case 0x5e:
+            ext_00499130(out, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x7c)));
+            return out;
+        case 0x69:
+            ext_00499130(out, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x60)));
+            return out;
+        case 0x70:
+            ext_00499130(out, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x98)));
+            return out;
+        case 0x232:
+            ext_0049E440(out, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x58)));
+            return out;
+        case 0x256:
+            ext_0049D390(out, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x54)));
+            return out;
+        case 0x274:
+            ext_0049D390(out, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x5c)));
+            return out;
+        default:
+            ext_0049FB70(out, base - 0x10, prop_id);
+            return out;
+    }
+}
+} // namespace lift_004A0150
