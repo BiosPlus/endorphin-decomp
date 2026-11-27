@@ -507,3 +507,128 @@ extern uint32_t __thiscall fn_0056E310(void* self, void* filePathStr) {
     return 0;
 }
 } // namespace lift_0056E310
+
+// [0x0056FD30]
+namespace lift_0056FD30 {
+// @name BVHIO::vfunc_10
+// @class BVHIO
+// @summary Loads a BVH motion file into the associated skeleton data, initializing hierarchy and channels.
+// @field BVHIO +0x414 uint32_t skeletonData
+// @field BVHIO +0x42C uint8_t field_0x42C
+// @field BVHIO +0x480 uint8_t field_0x480
+
+extern uint32_t mem_00B37F40;
+extern uint32_t mem_00924ECC;
+extern uint32_t mem_00924FCC;
+extern uint32_t mem_00924FD0;
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_009250C4;
+extern uint32_t mem_009250C8;
+extern uint32_t mem_009250CC;
+extern uint32_t mem_009250DC;
+extern uint32_t mem_00925134;
+
+void __thiscall ext_0055D600(void* self);
+void* __cdecl ext_00663B30(void* out_str, const char* path);
+void __thiscall ext_004F0FB0(void* self, void* node);
+bool __thiscall ext_0056FAA0(void* self, void* stream);
+void* __thiscall ext_00403560(void* self, const void* src);
+void __cdecl ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+void __thiscall ext_005EED30(void* self, void* out_vec);
+void __thiscall ext_0055D2C0(void* self, void* skeleton_data);
+void __thiscall ext_005A3610(void* self);
+void __cdecl ext_006A5C5C(void* ptr);
+
+void __thiscall fn_0056FD30(void* self, const std::string* filename) {
+    (void)mem_00924ECC; (void)mem_00924FCC; (void)mem_00924FD0; (void)mem_00924FDC;
+    (void)mem_00924FE0; (void)mem_00924FF0; (void)mem_00924FF4; (void)mem_009250C4;
+    (void)mem_009250C8; (void)mem_009250CC; (void)mem_009250DC; (void)mem_00925134;
+    uint8_t* self_bytes = reinterpret_cast<uint8_t*>(self);
+    ext_0055D600(self_bytes + 0x42C);
+
+    uint8_t* skeleton_data = lift_field<uint8_t*>(self, 0x414);
+    if (skeleton_data) {
+        void* iface = skeleton_data + 4;
+        uint32_t* vtbl = *reinterpret_cast<uint32_t**>(iface);
+        using vfunc_84_t = void(__thiscall*)(void*);
+        reinterpret_cast<vfunc_84_t>(vtbl[0x84 / 4])(iface);
+    }
+
+    std::string str1 = *reinterpret_cast<const std::string*>(0x00B3B704);
+    std::string dir_str;
+    ext_00663B30(&dir_str, filename->c_str());
+    std::string str2 = dir_str + *reinterpret_cast<const std::string*>(0x00B3B934);
+
+    if (skeleton_data) {
+        void* iface = skeleton_data + 4;
+        uint32_t* vtbl = *reinterpret_cast<uint32_t**>(iface);
+        using vfunc_str_t = void(__thiscall*)(void*, const std::string*);
+        reinterpret_cast<vfunc_str_t>(vtbl[0x5C / 4])(iface, &str1);
+        reinterpret_cast<vfunc_str_t>(vtbl[0x60 / 4])(iface, &str2);
+    }
+
+    mem_00B37F40 += 1;
+
+    uint8_t* tree_map = self_bytes + 0x480;
+    uint8_t* tree_head = lift_field<uint8_t*>(tree_map, 0x04);
+    void* tree_root = lift_field<void*>(tree_head, 0x04);
+    ext_004F0FB0(tree_map, tree_root);
+
+    tree_head = lift_field<uint8_t*>(tree_map, 0x04);
+    *reinterpret_cast<uint8_t**>(tree_head + 0x04) = tree_head;
+    *reinterpret_cast<uint32_t*>(tree_map + 0x08) = 0;
+    *reinterpret_cast<uint8_t**>(tree_head + 0x00) = tree_head;
+    *reinterpret_cast<uint8_t**>(tree_head + 0x08) = tree_head;
+
+    std::ifstream file(filename->c_str(), std::ios::in);
+    if (!file) {
+        std::string err_msg = std::string(reinterpret_cast<const char*>(0x009593B8)) + *filename +
+                              reinterpret_cast<const char*>(0x00941F08);
+        uint8_t exc_buf[64];
+        ext_00403560(exc_buf, &err_msg);
+        *reinterpret_cast<uint32_t*>(exc_buf) = 0x009570DC;
+        ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009F8908));
+        return;
+    }
+
+    if (!ext_0056FAA0(self, &file)) {
+        file.close();
+        std::string err_msg = std::string(reinterpret_cast<const char*>(0x00959408)) + *filename +
+                              reinterpret_cast<const char*>(0x00941F08);
+        uint8_t exc_buf[64];
+        ext_00403560(exc_buf, &err_msg);
+        *reinterpret_cast<uint32_t*>(exc_buf) = 0x009570DC;
+        ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009F8908));
+        return;
+    }
+
+    struct RawVec {
+        uint32_t proxy;
+        uint8_t** first;
+        uint8_t** last;
+        uint8_t** end;
+    } vec{0, nullptr, nullptr, nullptr};
+
+    ext_005EED30(lift_field<uint8_t*>(self, 0x414) + 0x160, &vec);
+
+    for (uint8_t** it = vec.first; it != vec.last; ++it) {
+        uint8_t* node = *it;
+        if (lift_field<uint32_t>(node, 0x228) == 0) {
+            uint8_t* parent = lift_field<uint8_t*>(node, 0x190);
+            *reinterpret_cast<uint32_t*>(node + 0x228) = lift_field<uint32_t>(parent, 0x22C);
+            *reinterpret_cast<std::string*>(node + 0x198) = *reinterpret_cast<const std::string*>(parent + 0x1B4);
+        }
+    }
+
+    file.close();
+    ext_0055D2C0(self_bytes + 0x42C, lift_field<void*>(self, 0x414));
+    ext_005A3610(lift_field<void*>(self, 0x414));
+
+    if (vec.first) {
+        ext_006A5C5C(vec.first);
+    }
+}
+} // namespace lift_0056FD30

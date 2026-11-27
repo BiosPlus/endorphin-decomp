@@ -38772,6 +38772,13 @@
     "summary": "Export skeleton hierarchy and motion frames to a BVH file.",
     "lifted_path": "lifted/classes/BVHIO.cpp"
   },
+  "0x0056FD30": {
+    "name": "BVHIO::vfunc_10",
+    "class": "BVHIO",
+    "signature": "void __thiscall fn_0056FD30(void* self, const std::string* filename)",
+    "summary": "Loads a BVH motion file into the associated skeleton data, initializing hierarchy and channels.",
+    "lifted_path": "lifted/classes/BVHIO.cpp"
+  },
   "0x00570350": {
     "name": "CDLCharacterIO::vfunc_3",
     "class": "CDLCharacterIO",

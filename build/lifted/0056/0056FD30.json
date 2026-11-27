@@ -1,0 +1,34 @@
+{
+  "va": "0x0056FD30",
+  "size": 953,
+  "orig_symbol": "BVHIO::vfunc_10",
+  "src_path": "src/classes/BVHIO.cpp",
+  "lifted_path": "lifted/classes/BVHIO.cpp",
+  "name": "BVHIO::vfunc_10",
+  "class": "BVHIO",
+  "signature": "void __thiscall fn_0056FD30(void* self, const std::string* filename)",
+  "summary": "Loads a BVH motion file into the associated skeleton data, initializing hierarchy and channels.",
+  "fields": [
+    {
+      "class": "BVHIO",
+      "offset": "+0x414",
+      "type": "uint32_t",
+      "name": "skeletonData"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x42C",
+      "type": "uint8_t",
+      "name": "field_0x42C"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x480",
+      "type": "uint8_t",
+      "name": "field_0x480"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:35:40Z"
+}
