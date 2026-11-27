@@ -129,3 +129,31 @@ void* fn_005E4AC0(void* self, void* out) {
     return out;
 }
 } // namespace lift_005E4AC0
+
+// [0x005EE250]
+namespace lift_005EE250 {
+// @name NMData::RootRelationshipData::vfunc_12_off_C
+// @class NMData::RootRelationshipData
+// @summary Delegates to FixedPathJointData::vfunc_12_off_C unless field_0x180->vfunc_0x28() is true, in which case zeroes matching entries in arg2 and returns 0.
+// @field NMData::RootRelationshipData +0x180 void* field_0x180
+
+
+extern void __thiscall ext_00481BD0(void* self, uint32_t value);
+extern uint8_t __thiscall ext_005EE110(void* self, uint32_t arg1, uint32_t arg2);
+
+uint8_t __thiscall fn_005EE250(void* self, uint32_t arg1, uint32_t arg2) {
+    void* obj = lift_field<void*>(self, 0x180);
+    if (obj != nullptr) {
+        using VFunc = uint8_t(__thiscall*)(void*);
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<VFunc>(vtable[0x28 / sizeof(void*)]);
+        if (fn(obj) != 0) {
+            void* base = reinterpret_cast<uint8_t*>(self) - 0xC;
+            ext_00481BD0(reinterpret_cast<void*>(static_cast<uintptr_t>(arg2)),
+                         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base)));
+            return 0;
+        }
+    }
+    return ext_005EE110(self, arg1, arg2);
+}
+} // namespace lift_005EE250

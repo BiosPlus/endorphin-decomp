@@ -1,0 +1,22 @@
+{
+  "va": "0x005EE250",
+  "size": 64,
+  "orig_symbol": "NMData::RootRelationshipData::vfunc_12_off_C",
+  "src_path": "src/NMData/RootRelationshipData.cpp",
+  "lifted_path": "lifted/NMData/RootRelationshipData.cpp",
+  "name": "NMData::RootRelationshipData::vfunc_12_off_C",
+  "class": "NMData::RootRelationshipData",
+  "signature": "uint8_t __thiscall fn_005EE250(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Delegates to FixedPathJointData::vfunc_12_off_C unless field_0x180-\u003evfunc_0x28() is true, in which case zeroes matching entries in arg2 and returns 0.",
+  "fields": [
+    {
+      "class": "NMData::RootRelationshipData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:34:58Z"
+}
