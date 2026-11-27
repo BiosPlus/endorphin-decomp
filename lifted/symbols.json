@@ -38687,6 +38687,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x84.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00603020": {
+    "name": "Effector::vfunc_12",
+    "class": "Effector",
+    "signature": "inline std::uint32_t\u0026 slot32(void* base, std::size_t off)",
+    "summary": "Casts the argument to the source type via RTDynamicCast and copies its 0x44..0x58 block into self's 0x34..0x5C range.",
+    "lifted_path": "lifted/classes/Effector.cpp"
+  },
   "0x00603230": {
     "name": "ClampedRateDispatch",
     "class": "(none)",

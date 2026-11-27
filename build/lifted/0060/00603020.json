@@ -1,0 +1,82 @@
+{
+  "va": "0x00603020",
+  "size": 100,
+  "orig_symbol": "Effector::vfunc_12",
+  "src_path": "src/classes/Effector.cpp",
+  "lifted_path": "lifted/classes/Effector.cpp",
+  "name": "Effector::vfunc_12",
+  "class": "Effector",
+  "signature": "inline std::uint32_t\u0026 slot32(void* base, std::size_t off)",
+  "summary": "Casts the argument to the source type via RTDynamicCast and copies its 0x44..0x58 block into self's 0x34..0x5C range.",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "gradient"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "gradientCap"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:51Z"
+}
