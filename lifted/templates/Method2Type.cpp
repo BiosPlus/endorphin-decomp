@@ -1116,3 +1116,26 @@ void fn_0066DFD0(void* holder) {
     lift_field<DWORD>(holder, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B59758));
 }
 } // namespace lift_0066DFD0
+
+// [0x0066DF50] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &public: void __thiscall NM::Vector3::radArbitraryRotateTS(class NM::Vector3 const &, float)>::vfunc_40 (122 bytes)
+namespace lift_0066DF50 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern DWORD mem_00B59754;
+extern DWORD mem_00B59750;
+
+// @name ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, radArbitraryRotateTS>::vfunc_40
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &public: void __thiscall NM::Vector3::radArbitraryRotateTS(class NM::Vector3 const &, float)>
+// @summary One-time guarded init of the static accessor object at 0xB59750, then binds holder+0x04 to it.
+// @field ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &public: void __thiscall NM::Vector3::radArbitraryRotateTS(class NM::Vector3 const &, float)> +0x04 void* field_0x04
+void fn_0066DF50(void* holder) {
+    // Guard bit 0 of mem_00B59754: initialise the static object only on first use.
+    if ((mem_00B59754 & 1u) == 0) {
+        mem_00B59754 |= 1u;
+        ext_0067A670();                       // storeArgIntoFirstDword on &mem_00B59750
+        mem_00B59750 = 0x0098AE24u;           // object's vtable pointer
+    }
+    // Bind holder+0x04 to the static object (both paths).
+    lift_field<DWORD>(holder, 0x04) = 0x00B59750u;
+}
+} // namespace lift_0066DF50

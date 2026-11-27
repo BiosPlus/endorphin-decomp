@@ -1,0 +1,14 @@
+{
+  "va": "0x0066DF50",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026public: void __thiscall NM::Vector3::radArbitraryRotateTS(class NM::Vector3 const \u0026, float)\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, radArbitraryRotateTS\u003e::vfunc_40",
+  "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026public: void __thiscall NM::Vector3::radArbitraryRotateTS(class NM::Vector3 const \u0026, float)\u003e",
+  "signature": "void fn_0066DF50(void* holder)",
+  "summary": "One-time guarded init of the static accessor object at 0xB59750, then binds holder+0x04 to it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:48:28Z"
+}
