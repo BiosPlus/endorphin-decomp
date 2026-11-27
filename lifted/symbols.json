@@ -47116,6 +47116,13 @@
     "summary": "Stdcall (ret 4) method: if the sub-object at +0x14C is set, forwards the argument to ext_005B1AB0 on its +0x24 subobject, then virtual slot 0x34 of the object at +0x04 (fed by ext_005B11F0); finally forwards to ext_005BFA80 and ext_005BEDD0 on this-0x0C.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
+  "0x005C05C0": {
+    "name": "MetaBodyData::vfunc_12_off_C",
+    "class": "NMData::MetaBodyData",
+    "signature": "extern \"C\" void (*mem_00924FE4)(void* self, const char* s);    // basic_string(const char*) extern \"C\" void* (*mem_00924FDC)(void* self, const void* src); // basic_string::operator=(const basic_string\u0026) extern \"C\" void (*mem_00924FF4)(void* self);                   // basic_string::~basic_string extern \"C\" void (*mem_00924FE0)(void* self, const void* src);  // basic_string(const basic_string\u0026) extern \"C\" const char mem_00928B5D[];                          // .rdata string literal used by this function inline bool vcall_bool(void* obj, ptrdiff_t slotOffset)",
+    "summary": "Conditionally tears down a subobject through its vtable, then clears related state and copies a name string.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005C0E00": {
     "name": "NMData::MetaBodyData::vfunc_6",
     "class": "NMData::MetaBodyData",

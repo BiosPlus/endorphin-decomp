@@ -621,3 +621,75 @@ void fn_005C00E0(void* self) {
     ext_0058A1A0(self);
 }
 } // namespace lift_005C00E0
+
+// [0x005C05C0] NMData::MetaBodyData::vfunc_12_off_C (288 bytes)
+namespace lift_005C05C0 {
+// MSVC 2005 std::string: 28 bytes, opaque layout.
+struct MsvcString {
+    uint8_t raw[0x1C];
+};
+
+// Callees (thiscall in the original; `self` is passed explicitly here).
+extern void ext_005C0360(void* self);
+// Known callee 0x00481BD0: ZeroMatchingDwordRange (Zeroes every uint32_t in [self->+0x08, self->+0x0C) equal to value; calls the invalid-parameter handler if begin > end.)
+extern void ext_00481BD0(void* self, uint32_t value);
+extern void ext_00587520(void* self, void* arg1, void* arg2);
+extern void ext_005BFEE0(void* self, MsvcString str);
+
+// MSVCP80 std::string IAT slots (function pointers loaded from the import table).
+extern void (*mem_00924FE4)(void* self, const char* s);    // basic_string(const char*)
+extern void* (*mem_00924FDC)(void* self, const void* src); // basic_string::operator=(const basic_string&)
+extern void (*mem_00924FF4)(void* self);                   // basic_string::~basic_string
+extern void (*mem_00924FE0)(void* self, const void* src);  // basic_string(const basic_string&)
+extern const char mem_00928B5D[];                          // .rdata string literal used by this function
+
+// Virtual call through the vtable of `obj`; `slotOffset` is the byte offset into the vtable.
+inline bool vcall_bool(void* obj, ptrdiff_t slotOffset) {
+    using VFn = bool (*)(void* self);
+    void* vtbl = lift_field<void*>(obj, 0);
+    void* fn = lift_field<void*>(vtbl, slotOffset);
+    return reinterpret_cast<VFn>(fn)(obj);
+}
+
+// @name MetaBodyData::vfunc_12_off_C
+// @class NMData::MetaBodyData
+// @summary Conditionally tears down a subobject through its vtable, then clears related state and copies a name string.
+// @field NMData::MetaBodyData +0x08 MsvcString field_0x08
+// @field NMData::MetaBodyData +0x200 void* field_0x200
+// (offsets are relative to `self`, the sub-object at MetaBodyData+0xC, as accessed in the original asm)
+bool fn_005C05C0(void* self, void* arg1, void* arg2) {
+    void* a = lift_field<void*>(self, 0x200);
+    void* b = lift_field<void*>(a, 0x18C);
+    if (b != nullptr) {
+        if (!vcall_bool(b, 0x40)) {
+            return false;
+        }
+        if (vcall_bool(b, 0x28)) {
+            void* a2 = lift_field<void*>(self, 0x200);
+            if (a2 != nullptr && vcall_bool(a2, 0x70)) {
+                return false;
+            }
+        }
+    }
+
+    void* outer = static_cast<uint8_t*>(self) - 0xC;
+    ext_005C0360(outer);
+    ext_00481BD0(arg2, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(outer)));
+    ext_00587520(self, arg1, arg2);
+
+    void* a3 = lift_field<void*>(self, 0x200);
+    lift_field<uint32_t>(a3, 0x22C) = 0;
+
+    MsvcString tmp;
+    mem_00924FE4(&tmp, mem_00928B5D);
+    mem_00924FDC(&lift_field<MsvcString>(a3, 0x1B4), &tmp);
+    mem_00924FF4(&tmp);
+
+    MsvcString copy;
+    mem_00924FE0(&copy, static_cast<uint8_t*>(self) + 0x8);
+    // The asm passes `this+0x598` of the vfunc_16 object `b` as the callee's self.
+    ext_005BFEE0(static_cast<uint8_t*>(b) + 0x598, copy);
+
+    return true;
+}
+} // namespace lift_005C05C0

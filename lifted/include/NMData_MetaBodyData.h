@@ -13,6 +13,7 @@ struct NMData_MetaBodyData_Fields {
     // +0x0   void*                    vtable  (evidence: 0x005B8D90)
     // +0x4   void*                    field_0x04  (evidence: 0x005BFBD0, 0x005C01A0, 0x005C16C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    transformInterface_vptr  (evidence: 0x005B8D00, 0x005C1410) // CONFLICT: multiple definitions at +0x4
+    // +0x8   MsvcString               field_0x08  (evidence: 0x005C05C0)
     // +0xC   void*                    field_0x0C  (evidence: 0x005B6F00) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    renderObjectOwner_vptr  (evidence: 0x005B6E70, 0x005B8D00) // CONFLICT: multiple definitions at +0xC
     // +0x10  void*                    field_0x10  (evidence: 0x005B6F00) // CONFLICT: multiple definitions at +0x10
@@ -28,6 +29,7 @@ struct NMData_MetaBodyData_Fields {
     // +0x16C void*                    field_0x16C  (evidence: 0x005BFC90, 0x005C00E0)
     // +0x170 uint32_t                 field_0x170  (evidence: 0x005C00E0)
     // +0x174 void*                    field_0x174  (evidence: 0x005C00E0)
+    // +0x200 void*                    field_0x200  (evidence: 0x005C05C0)
     // +0x20C void*                    field_0x20C  (evidence: 0x005C16C0) // CONFLICT: multiple definitions at +0x20C
     // +0x20C void*                    subObject  (evidence: 0x005B8D90) // CONFLICT: multiple definitions at +0x20C
 };
