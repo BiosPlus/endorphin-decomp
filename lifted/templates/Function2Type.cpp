@@ -88,3 +88,29 @@ void* fn_0068BD10(void* self) {
                         reinterpret_cast<const void*>(&mem_00AA3000), 0);
 }
 } // namespace lift_0068BD10
+
+// [0x004EE390]
+namespace lift_004EE390 {
+// @name ExprParser::Function2Type<SelectionVariable,bool,std::string const&,ValuePtr const&,SelectionVariable::getMethodForEachChild>::vfunc_49
+// @class ExprParser::Function2Type
+// @summary Evaluates SelectionVariable::getMethodForEachChild on a string and ValuePtr argument and stores the bool result into a ValuePtr.
+
+
+extern uint32_t ext_0046E780(void* self, void* out_str, void* a2, void* a3);
+extern uint8_t ext_004EDE30(void* self, void* str_arg, void* val_arg);
+extern void ext_006720A0(void* self, uint32_t val);
+extern uint32_t mem_00924FF4;
+
+void* __stdcall fn_004EE390(void* arg1, void* arg2, void* arg3, void* arg4) {
+    uint8_t str_buf[28] = {};
+    void* target = *reinterpret_cast<void**>(arg2);
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(arg3) + 0x4);
+    uint32_t str_ptr = ext_0046E780(obj, str_buf, arg3, arg2);
+    uint8_t res = ext_004EDE30(target, reinterpret_cast<void*>(str_ptr), arg4);
+    uint32_t packed = (reinterpret_cast<uintptr_t>(arg2) & ~0xFFu) | res;
+    ext_006720A0(arg1, packed);
+    using dtor_fn = void (__thiscall*)(void*);
+    reinterpret_cast<dtor_fn>(mem_00924FF4)(str_buf);
+    return arg1;
+}
+} // namespace lift_004EE390

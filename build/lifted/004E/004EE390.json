@@ -1,0 +1,14 @@
+{
+  "va": "0x004EE390",
+  "size": 145,
+  "orig_symbol": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e::vfunc_49",
+  "src_path": "src/templates/Function2Type.cpp",
+  "lifted_path": "lifted/templates/Function2Type.cpp",
+  "name": "ExprParser::Function2Type\u003cSelectionVariable,bool,std::string const\u0026,ValuePtr const\u0026,SelectionVariable::getMethodForEachChild\u003e::vfunc_49",
+  "class": "ExprParser::Function2Type",
+  "signature": "void* __stdcall fn_004EE390(void* arg1, void* arg2, void* arg3, void* arg4)",
+  "summary": "Evaluates SelectionVariable::getMethodForEachChild on a string and ValuePtr argument and stores the bool result into a ValuePtr.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:47:26Z"
+}
