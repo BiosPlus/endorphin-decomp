@@ -314,3 +314,46 @@ void fn_00551DA0(void* self, void* arg) {
     ext_00548A20(self, arg);
 }
 } // namespace lift_00551DA0
+
+// [0x00551F30]
+namespace lift_00551F30 {
+// @name NMCamera::Orthogonal::vfunc_10
+// @class NMCamera::Orthogonal
+// @summary Projects screen-space delta coordinates into world/camera space using the orthogonal scale and camera transform.
+// @field NMCamera::Orthogonal +0xB8 double field_0xb8
+
+double __thiscall ext_005480D0(void* self);
+void __thiscall ext_00548150(void* self, float* mat4);
+void __thiscall ext_004875A0(void* self, float* out_mat, float* in_mat);
+void __thiscall ext_00551D20(float* mat4);
+float* __thiscall ext_006943B0(float* self_vec4, float* out_vec4, float* mat4);
+
+void __thiscall fn_00551F30(void* self, int32_t x, int32_t y, void* target, float* out_vec4) {
+    double scale = ext_005480D0(self) / lift_field<double>(self, 0xB8);
+
+    out_vec4[0] = static_cast<float>(static_cast<double>(x) * scale);
+    out_vec4[1] = static_cast<float>(static_cast<double>(-y) * scale);
+    out_vec4[2] = 0.0f;
+    out_vec4[3] = 0.0f;
+
+    float mat4[16] = {
+        1.0f, 0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 0.0f, 1.0f,
+    };
+
+    ext_00548150(self, mat4);
+
+    float mat_5c[16];
+    ext_004875A0(target, mat_5c, mat4);
+    ext_00551D20(mat_5c);
+
+    float temp_vec4[4];
+    float* res = ext_006943B0(out_vec4, temp_vec4, mat_5c);
+    out_vec4[0] = res[0];
+    out_vec4[1] = res[1];
+    out_vec4[2] = res[2];
+    out_vec4[3] = res[3];
+}
+} // namespace lift_00551F30

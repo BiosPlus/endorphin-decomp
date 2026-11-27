@@ -29,7 +29,7 @@ struct NMCamera_Orthogonal_Fields {
     // +0x9C  float                    field_0x9c  (evidence: 0x00551DE0)
     // +0xA0  int32_t                  field_0xa0  (evidence: 0x00551AF0)
     // +0xB0  double                   field_0xb0  (evidence: 0x00551C30, 0x00551CB0)
-    // +0xB8  double                   field_0xb8  (evidence: 0x00551C30, 0x00551CB0)
+    // +0xB8  double                   field_0xb8  (evidence: 0x00551C30, 0x00551CB0, 0x00551F30)
     // +0xC0  double                   field_0xc0  (evidence: 0x00551A80, 0x00551C30)
     // +0xC8  double                   field_0xc8  (evidence: 0x00551A80)
     // +0xD0  double                   field_0xd0  (evidence: 0x00551A80)

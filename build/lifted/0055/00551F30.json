@@ -1,0 +1,22 @@
+{
+  "va": "0x00551F30",
+  "size": 228,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_10",
+  "src_path": "src/NMCamera/Orthogonal.cpp",
+  "lifted_path": "lifted/NMCamera/Orthogonal.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_10",
+  "class": "NMCamera::Orthogonal",
+  "signature": "void __thiscall fn_00551F30(void* self, int32_t x, int32_t y, void* target, float* out_vec4)",
+  "summary": "Projects screen-space delta coordinates into world/camera space using the orthogonal scale and camera transform.",
+  "fields": [
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xB8",
+      "type": "double",
+      "name": "field_0xb8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:20:05Z"
+}
