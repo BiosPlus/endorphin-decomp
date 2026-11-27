@@ -1555,3 +1555,70 @@ void* fn_004CA220(void* self, uint32_t* out, uint32_t arg2) {
     return out;
 }
 } // namespace lift_004CA220
+
+// [0x004C89D0]
+namespace lift_004C89D0 {
+// @name DynamicCastCloneOrThrow_004C89D0
+// @summary Dynamically cast input object to target type, allocate and copy-construct a 0x14-byte wrapper, or throw a type-mismatch string exception.
+// @field Wrapper +0x00 uint32_t vtable
+// @field Wrapper +0x04 uint32_t inner_member
+// @field Wrapper +0x08 uint32_t field_0x08
+// @field Wrapper +0x0C uint32_t field_0x0C
+// @field Wrapper +0x10 uint32_t field_0x10
+
+
+    void* ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+    void* ext_006A5C62(uint32_t size);
+    void* __thiscall ext_004A6970(void* self, const void* src);
+    void* ext_004C7270(void* out_str);
+    void* __thiscall ext_00403560(void* self, const void* src);
+    void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+    extern int mem_00924FE4;
+    extern int mem_00924FD0;
+
+typedef void* (__thiscall *StdStringCtorFn)(void* self, const char* s);
+typedef void* (*StdStringConcatFn)(void* out, const void* lhs, const void* rhs);
+
+extern void* fn_004C89D0(void* arg0) {
+    if (arg0 == nullptr) {
+        void* obj = ext_006A5C62(0x14);
+        if (obj == nullptr) {
+            return nullptr;
+        }
+        lift_field<uint32_t>(obj, 0x08) = 0;
+        lift_field<uint32_t>(obj, 0x0C) = 0;
+        lift_field<uint32_t>(obj, 0x10) = 0;
+        lift_field<uint32_t>(obj, 0x00) = 0x00945C40;
+        return obj;
+    }
+
+    void* casted = ext_006A6E9E(arg0, 0, reinterpret_cast<void*>(0x00A3A44C), reinterpret_cast<void*>(0x00A3A6C8), 0);
+    if (casted != nullptr) {
+        void* obj = ext_006A5C62(0x14);
+        if (obj == nullptr) {
+            return nullptr;
+        }
+        lift_field<uint32_t>(obj, 0x00) = 0x00945C38;
+        ext_004A6970(static_cast<char*>(obj) + 0x04, static_cast<const char*>(casted) + 0x04);
+        lift_field<uint32_t>(obj, 0x00) = 0x00945C40;
+        return obj;
+    }
+
+    char type_name_str[0x20];
+    void* type_str = ext_004C7270(type_name_str);
+
+    char prefix_str[0x20];
+    auto str_ctor = reinterpret_cast<StdStringCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+    void* prefix_res = str_ctor(prefix_str, reinterpret_cast<const char*>(0x0092F9D4));
+
+    char combined_str[0x20];
+    auto str_concat = reinterpret_cast<StdStringConcatFn>(static_cast<uintptr_t>(mem_00924FD0));
+    void* msg_str = str_concat(combined_str, prefix_res, type_str);
+
+    char exc_obj[0x28];
+    ext_00403560(exc_obj, msg_str);
+    ext_006A6DD2(exc_obj, reinterpret_cast<void*>(0x009D47A4));
+    return nullptr;
+}
+} // namespace lift_004C89D0

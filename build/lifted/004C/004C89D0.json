@@ -1,0 +1,45 @@
+{
+  "va": "0x004C89D0",
+  "size": 347,
+  "orig_symbol": "sub_004C89D0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "DynamicCastCloneOrThrow_004C89D0",
+  "signature": "extern \"C\" void* fn_004C89D0(void* arg0)",
+  "summary": "Dynamically cast input object to target type, allocate and copy-construct a 0x14-byte wrapper, or throw a type-mismatch string exception.",
+  "fields": [
+    {
+      "class": "Wrapper",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Wrapper",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "inner_member"
+    },
+    {
+      "class": "Wrapper",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Wrapper",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Wrapper",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:16:29Z"
+}

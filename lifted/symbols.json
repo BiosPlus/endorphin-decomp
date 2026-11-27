@@ -21204,6 +21204,12 @@
     "summary": "Thunk at +0x154 (HasDependentSelection) that queries arg0-\u003evfunc_0x34 into a local buffer, passes it to ext_004C28C0 on BehaviourData, and destroys the buffer",
     "lifted_path": "lifted/NMData/BehaviourData.cpp"
   },
+  "0x004C89D0": {
+    "name": "DynamicCastCloneOrThrow_004C89D0",
+    "signature": "extern \"C\" void* fn_004C89D0(void* arg0)",
+    "summary": "Dynamically cast input object to target type, allocate and copy-construct a 0x14-byte wrapper, or throw a type-mismatch string exception.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C9370": {
     "name": "NMData::SeverEventData::vfunc_1_off_158",
     "class": "NMData::SeverEventData",
