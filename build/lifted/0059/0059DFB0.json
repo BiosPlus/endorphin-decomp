@@ -1,0 +1,34 @@
+{
+  "va": "0x0059DFB0",
+  "size": 164,
+  "orig_symbol": "NMData::CharacterData::vfunc_24_off_4",
+  "src_path": "src/NMData/CharacterData.cpp",
+  "lifted_path": "lifted/NMData/CharacterData.cpp",
+  "name": "NMData::CharacterData::vfunc_24_off_4",
+  "class": "NMData::CharacterData",
+  "signature": "inline uintptr_t importAddr(int slot)",
+  "summary": "If key equals a fixed literal, computes a string via sub_0059D930 and, when it equals this+0x30, assigns it to this+0x30 and forwards to child slot via ext_00594600 if this+0x5F4 is non-null.",
+  "fields": [
+    {
+      "class": "NMData::CharacterData",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::CharacterData",
+      "offset": "+0x30",
+      "type": "std::string",
+      "name": "field_0x30"
+    },
+    {
+      "class": "NMData::CharacterData",
+      "offset": "+0x5F4",
+      "type": "void*",
+      "name": "field_0x5f4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:17Z"
+}

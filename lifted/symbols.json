@@ -41989,6 +41989,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x5FC and tail-calls sub_006750B0.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x0059DFB0": {
+    "name": "NMData::CharacterData::vfunc_24_off_4",
+    "class": "NMData::CharacterData",
+    "signature": "inline uintptr_t importAddr(int slot)",
+    "summary": "If key equals a fixed literal, computes a string via sub_0059D930 and, when it equals this+0x30, assigns it to this+0x30 and forwards to child slot via ext_00594600 if this+0x5F4 is non-null.",
+    "lifted_path": "lifted/NMData/CharacterData.cpp"
+  },
   "0x0059E060": {
     "name": "IsResolvedChildStateOneWithNonZeroField8",
     "signature": "int __thiscall fn_0059E060(void* self)",

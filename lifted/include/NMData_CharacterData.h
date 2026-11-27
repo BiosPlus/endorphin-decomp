@@ -13,7 +13,10 @@ struct NMData_CharacterData_Fields {
     // +0x4   uint8_t                  field_0x04  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x0059F370) // CONFLICT: multiple definitions at +0x4
     // +0xC   void*                    field_0x0c  (evidence: 0x0059F370)
+    // +0x14  void*                    field_0x14  (evidence: 0x0059DFB0)
+    // +0x30  std::string              field_0x30  (evidence: 0x0059DFB0)
     // +0x4DE uint8_t                  field_0x4de  (evidence: 0x0059D7D0)
     // +0x4F4 void*                    field_0x4f4  (evidence: 0x0059F370)
+    // +0x5F4 void*                    field_0x5f4  (evidence: 0x0059DFB0)
 };
 } // namespace lifted_layout
