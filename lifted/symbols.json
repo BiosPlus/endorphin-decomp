@@ -77634,6 +77634,13 @@
     "summary": "Copies 0x13 dwords from src into dst starting at dst+0x84 (cdecl, two pointer args).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D8600": {
+    "name": "Unknown::storeTripleAndUpdateFlag",
+    "class": "Unknown",
+    "signature": "void fn_007D8600(void* self, float a, float b, float c)",
+    "summary": "Stores three floats at this+0x78/0x7C/0x80, evaluates a polynomial-style test on the first one, and sets or clears bit 0x100 in the flags DWORD at this+0x90 depending on whether the result is greater than the constant at 0x0099E0B4.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D86F0": {
     "name": "sub_007D86F0",
     "class": "\u003cunknown\u003e",

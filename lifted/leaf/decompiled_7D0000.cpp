@@ -1362,3 +1362,41 @@ int __cdecl sub_007D5BD0(const void* a, const void* b) {
     return 1;
 }
 } // namespace lift_007D5BD0
+
+// [0x007D8600] sub_007D8600 (123 bytes)
+namespace lift_007D8600 {
+// Constant at 0x0092A278 used as a double addend (fadd qword). Only the low dword is listed in RDATA_CONSTANTS; the high dword is unverified.
+extern double mem_0092A278;
+// Constant at 0x0099E0B4: float bit pattern 0x2B8CBCCC (about 9.09e-13), compared against the computed value.
+extern uint32_t mem_0099E0B4;
+
+// @name Unknown::storeTripleAndUpdateFlag
+// @class Unknown
+// @summary Stores three floats at this+0x78/0x7C/0x80, evaluates a polynomial-style test on the first one, and sets or clears bit 0x100 in the flags DWORD at this+0x90 depending on whether the result is greater than the constant at 0x0099E0B4.
+// @field Unknown +0x78 float field_0x78
+// @field Unknown +0x7C float field_0x7c
+// @field Unknown +0x80 float field_0x80
+// @field Unknown +0x90 uint32_t field_0x90
+void fn_007D8600(void* self, float a, float b, float c) {
+    lift_field<float>(self, 0x78) = a;
+    lift_field<float>(self, 0x7C) = b;
+    lift_field<float>(self, 0x80) = c;
+
+    // p = (float)(a + K)
+    const float p = static_cast<float>(static_cast<double>(a) + mem_0092A278);
+    // q = a^4 + p, then rounded to float
+    const double a2 = static_cast<double>(a) * static_cast<double>(a);
+    const float q = static_cast<float>(a2 * a2 + static_cast<double>(p));
+    // r = q*q + q, rounded to float
+    const float r = static_cast<float>(static_cast<double>(q) * static_cast<double>(q) + static_cast<double>(q));
+
+    const float threshold = std::bit_cast<float>(mem_0099E0B4);
+
+    uint32_t& flags = lift_field<uint32_t>(self, 0x90);
+    if (r > threshold) {
+        flags |= 0x00000100u;
+    } else {
+        flags &= ~0x00000100u;
+    }
+}
+} // namespace lift_007D8600
