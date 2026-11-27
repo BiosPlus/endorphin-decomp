@@ -20822,6 +20822,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00509650": {
+    "name": "ReadWriteMethodType_TaskManager_AccumulationType::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, int, {public: void __thiscall NMData::TaskManager::setAccumulationType(int), 0}\u003e",
+    "signature": "extern \"C\" DWORD mem_00AEBC90;  // init-guard flags (bit 0 = initialized) extern \"C\" DWORD mem_00AEBC8C;  // static object storage; first DWORD is its vtable pointer void fn_00509650(void* out)",
+    "summary": "One-time guarded init of the static object at mem_00AEBC8C, then stores its address at out+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005096D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0\u003e",

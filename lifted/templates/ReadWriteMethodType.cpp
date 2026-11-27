@@ -11083,3 +11083,27 @@ void fn_00511F00(void* self) {
     lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AEBDFC));
 }
 } // namespace lift_00511F00
+
+// [0x00509650] ExprParser::ReadWriteMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, int, {public: void __thiscall NMData::TaskManager::setAccumulationType(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_00509650 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg;
+// calls ext_00672000 on self, then stores the stack argument into the first DWORD of self).
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AEBC90;  // init-guard flags (bit 0 = initialized)
+extern DWORD mem_00AEBC8C;  // static object storage; first DWORD is its vtable pointer
+
+// @name ReadWriteMethodType_TaskManager_AccumulationType::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, int, {public: void __thiscall NMData::TaskManager::setAccumulationType(int), 0}>
+// @summary One-time guarded init of the static object at mem_00AEBC8C, then stores its address at out+0x04.
+// @field ExprParser::ReadWriteMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, int, {public: void __thiscall NMData::TaskManager::setAccumulationType(int), 0}> +0x04 void* field_0x04
+void fn_00509650(void* out) {
+    // The original SEH frame (fs:[0] push/restore) is a Win32 try/finally wrapper with no
+    // observable effect on the logic below, so it is omitted.
+    if ((mem_00AEBC90 & 1u) == 0) {
+        mem_00AEBC90 |= 1u;
+        ext_0067A670(&mem_00AEBC8C, 0);
+        mem_00AEBC8C = 0x0095020Cu;  // vtable for the static object
+    }
+    lift_field<void*>(out, 4) = &mem_00AEBC8C;
+}
+} // namespace lift_00509650
