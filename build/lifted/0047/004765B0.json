@@ -1,0 +1,45 @@
+{
+  "va": "0x004765B0",
+  "size": 119,
+  "orig_symbol": "sub_004765B0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "sub_004765B0_ctor",
+  "signature": "void* __thiscall sub_004765B0(void* self, const void* arg1, const void* arg2, const void* arg3)",
+  "summary": "Constructor initializing four std::string fields (one default, three from arguments) and a bool flag at +0x70",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x38",
+      "type": "std::string",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x54",
+      "type": "std::string",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:23:51Z"
+}

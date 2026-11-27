@@ -974,3 +974,34 @@ int32_t __thiscall sub_00477F30(void* self) {
     return max_val;
 }
 } // namespace lift_00477F30
+
+// [0x004765B0]
+namespace lift_004765B0 {
+// @name sub_004765B0_ctor
+// @summary Constructor initializing four std::string fields (one default, three from arguments) and a bool flag at +0x70
+// @field Self +0x00 std::string field_0x00
+// @field Self +0x1C std::string field_0x1C
+// @field Self +0x38 std::string field_0x38
+// @field Self +0x54 std::string field_0x54
+// @field Self +0x70 uint8_t field_0x70
+
+extern uintptr_t mem_00924FE0;
+extern uintptr_t mem_00924FE8;
+
+using StringDefaultCtor = void (__thiscall*)(void*);
+using StringCopyCtor = void (__thiscall*)(void*, const void*);
+
+void* __thiscall sub_004765B0(void* self, const void* arg1, const void* arg2, const void* arg3) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto default_ctor = reinterpret_cast<StringDefaultCtor>(mem_00924FE8);
+    auto copy_ctor = reinterpret_cast<StringCopyCtor>(mem_00924FE0);
+
+    default_ctor(base);
+    copy_ctor(base + 0x1C, arg3);
+    copy_ctor(base + 0x38, arg1);
+    copy_ctor(base + 0x54, arg2);
+    *reinterpret_cast<uint8_t*>(base + 0x70) = 1;
+
+    return self;
+}
+} // namespace lift_004765B0
