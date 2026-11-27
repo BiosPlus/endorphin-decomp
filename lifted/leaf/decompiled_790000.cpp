@@ -1268,3 +1268,43 @@ extern void fn_00798F60(uint32_t* slot, const char* str)
     ext_00798F10(slot, str, len);
 }
 } // namespace lift_00798F60
+
+// [0x0079ADD0]
+namespace lift_0079ADD0 {
+// @name MapFileReadOnly
+// @summary Maps a file handle into memory read-only and outputs its view pointer and size.
+
+
+extern DWORD __cdecl ext_0079ADC0(DWORD hFile);
+
+using CreateFileMappingA_t = void* (__stdcall*)(void* hFile, void* lpFileMappingAttributes, DWORD flProtect, DWORD dwMaximumSizeHigh, DWORD dwMaximumSizeLow, const char* lpName);
+using MapViewOfFile_t = void* (__stdcall*)(void* hFileMappingObject, DWORD dwDesiredAccess, DWORD dwFileOffsetHigh, DWORD dwFileOffsetLow, uintptr_t dwNumberOfBytesToMap);
+using CloseHandle_t = int (__stdcall*)(void* hObject);
+
+extern CreateFileMappingA_t mem_0092418C;
+extern MapViewOfFile_t mem_00924188;
+extern CloseHandle_t mem_009241E0;
+
+extern int __cdecl fn_0079ADD0(void* hFile, void** outView, DWORD* outSize) {
+    DWORD fileSize = ext_0079ADC0(static_cast<DWORD>(reinterpret_cast<uintptr_t>(hFile)));
+    if (fileSize == static_cast<DWORD>(-1)) {
+        return 0;
+    }
+
+    void* hMapping = mem_0092418C(hFile, nullptr, 2 /* PAGE_READONLY */, 0, fileSize, nullptr);
+    if (!hMapping) {
+        return 0;
+    }
+
+    void* view = mem_00924188(hMapping, 4 /* FILE_MAP_READ */, 0, 0, 0);
+    *outView = view;
+    mem_009241E0(hMapping);
+
+    if (*outView == nullptr) {
+        return 0;
+    }
+
+    *outSize = fileSize;
+    return 1;
+}
+} // namespace lift_0079ADD0
