@@ -1,0 +1,34 @@
+{
+  "va": "0x006246B0",
+  "size": 121,
+  "orig_symbol": "sub_006246B0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "OwnedPointerRange::clearAndFreeChecked",
+  "class": "OwnedPointerRange",
+  "signature": "void fn_006246B0(void* self)",
+  "summary": "Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.",
+  "fields": [
+    {
+      "class": "OwnedPointerRange",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "OwnedPointerRange",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "OwnedPointerRange",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:17:16Z"
+}

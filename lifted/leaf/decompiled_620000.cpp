@@ -2827,3 +2827,44 @@ void fn_00621B70(void* self) {
     ext_004026E0(self);
 }
 } // namespace lift_00621B70
+
+// [0x006246B0] sub_006246B0 (121 bytes)
+namespace lift_006246B0 {
+// Known callee 0x00536230: deleteRangeChecked (Deletes each non-null element of a 4-byte-slot range [first, last), validating the owner and its bound at every step.)
+extern void ext_00536230(uint8_t* self, const void* owner, uint32_t* first, uint32_t* last);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo
+extern void* mem_00925134;
+
+// @name OwnedPointerRange::clearAndFreeChecked
+// @class OwnedPointerRange
+// @summary Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.
+// @field OwnedPointerRange +0x04 uint32_t begin
+// @field OwnedPointerRange +0x08 uint32_t end
+// @field OwnedPointerRange +0x0C uint32_t field_0x0c
+void fn_006246B0(void* self) {
+    auto* w = reinterpret_cast<uint32_t*>(self);
+
+    // Bounds check: begin must not exceed end (the asm performs this check twice with identical operands).
+    if (w[1] > w[2]) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    // Delete every element in [begin, end), validating owner/bound at each step.
+    ext_00536230(static_cast<uint8_t*>(self),
+                 reinterpret_cast<const void*>(static_cast<uintptr_t>(w[1])),
+                 reinterpret_cast<uint32_t*>(self),
+                 reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(w[2])));
+
+    // Free the begin block if one was allocated.
+    if (w[1] != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(w[1])));
+    }
+
+    // Reset the range to empty.
+    w[1] = 0;
+    w[2] = 0;
+    w[3] = 0;
+}
+} // namespace lift_006246B0

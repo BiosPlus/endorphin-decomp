@@ -41976,6 +41976,13 @@
     "summary": "Calls ext_005A07A0 (TreeMap::find) with an out-iterator pair; returns node-\u003e+0x28 or 0 when the node is the head sentinel. Traps via _invalid_parameter_noinfo if the iterator does not belong to this map.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x006246B0": {
+    "name": "OwnedPointerRange::clearAndFreeChecked",
+    "class": "OwnedPointerRange",
+    "signature": "void fn_006246B0(void* self)",
+    "summary": "Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006248D0": {
     "name": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e::vfunc_1",
     "class": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e",
