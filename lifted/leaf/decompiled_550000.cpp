@@ -2364,3 +2364,45 @@ void __stdcall fn_00550520(FILE* file, void* self, char* buf) {
     } while (fgets(buf, 0x800, file) != nullptr);
 }
 } // namespace lift_00550520
+
+// [0x00558FE0] sub_00558FE0 (140 bytes)
+namespace lift_00558FE0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t);
+// IAT slot (.rdata): MSVCP80 std::basic_string<char> destructor (thiscall).
+extern uint32_t mem_00924FF4;
+
+typedef void(__thiscall* StringDtorFn)(void* self);
+
+// @name Unknown::destroyEntryRange
+// @class Unknown
+// @summary Walks elements of 0x38 bytes in [begin, end): destroys each 0x1C-byte record in the element's array at +0x2C..+0x30, frees the array via ext_006A5C5C, then destroys the element's string at +0x0C and zeroes the array pointers.
+// @field Unknown +0x0C uint8_t field_0x0C
+// @field Unknown +0x2C DWORD entriesBegin
+// @field Unknown +0x30 DWORD entriesEnd
+// @field Unknown +0x34 DWORD entriesCapacity
+void fn_00558FE0(uint32_t begin, uint32_t end) {
+    StringDtorFn strDtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+
+    while (begin != end) {
+        uint8_t* elem = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(begin));
+
+        uint32_t entries = lift_field<uint32_t>(elem, 0x2C);
+        if (entries != 0) {
+            // Destroy each 0x1C-byte record in [entries, entriesEnd).
+            uint32_t entriesEnd = lift_field<uint32_t>(elem, 0x30);
+            for (uint32_t p = entries; p != entriesEnd; p += 0x1C) {
+                strDtor(reinterpret_cast<void*>(static_cast<uintptr_t>(p)));
+            }
+            ext_006A5C5C(lift_field<uint32_t>(elem, 0x2C));
+        }
+
+        lift_field<uint32_t>(elem, 0x2C) = 0;
+        lift_field<uint32_t>(elem, 0x30) = 0;
+        lift_field<uint32_t>(elem, 0x34) = 0;
+        strDtor(elem + 0x0C);
+
+        begin += 0x38;
+    }
+}
+} // namespace lift_00558FE0

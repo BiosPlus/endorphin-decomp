@@ -1,0 +1,40 @@
+{
+  "va": "0x00558FE0",
+  "size": 140,
+  "orig_symbol": "sub_00558FE0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::destroyEntryRange",
+  "class": "Unknown",
+  "signature": "void fn_00558FE0(uint32_t begin, uint32_t end)",
+  "summary": "Walks elements of 0x38 bytes in [begin, end): destroys each 0x1C-byte record in the element's array at +0x2C..+0x30, frees the array via ext_006A5C5C, then destroys the element's string at +0x0C and zeroes the array pointers.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "DWORD",
+      "name": "entriesBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "DWORD",
+      "name": "entriesEnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "DWORD",
+      "name": "entriesCapacity"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:26:18Z"
+}

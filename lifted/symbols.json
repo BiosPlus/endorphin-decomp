@@ -28808,6 +28808,13 @@
     "summary": "Destroys each 0x1c-byte element in [begin, end): runs the string destructor over its",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00558FE0": {
+    "name": "Unknown::destroyEntryRange",
+    "class": "Unknown",
+    "signature": "void fn_00558FE0(uint32_t begin, uint32_t end)",
+    "summary": "Walks elements of 0x38 bytes in [begin, end): destroys each 0x1C-byte record in the element's array at +0x2C..+0x30, frees the array via ext_006A5C5C, then destroys the element's string at +0x0C and zeroes the array pointers.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559620": {
     "name": "sub_00559620",
     "class": "(none)",
