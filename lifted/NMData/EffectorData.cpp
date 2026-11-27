@@ -156,3 +156,41 @@ void* __thiscall fn_0060C5A0(void* self) {
     return dst;
 }
 } // namespace lift_0060C5A0
+
+// [0x0060CDE0] NMData::EffectorData::vfunc_15 (156 bytes)
+namespace lift_0060CDE0 {
+// sub_005A0FF0: thiscall(arg1 in ecx) with one stack arg (pointer to this->field_0x20); returns object pointer.
+extern void* ext_005A0FF0(void* self, void* arg);
+// Known callee 0x00602F70: Unknown::ctor_00602F70 (Runs the base ctor (sub_00602EC0), sets vtable to 0x0096F8A4, zeroes floats at +0x2c/+0x30 and int at +0x34, initializes sub-records at +0x38 and +0x4c via sub_0060BCD0; returns this.)
+extern void* ext_00602F70(void* self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// cdecl, one stack arg (allocation size 0x60), returns allocated pointer in eax.
+extern void* ext_006A5C62(uint32_t size);
+
+// @name NMData::EffectorData::vfunc_15
+// @class NMData::EffectorData
+// @summary If arg3 is null, allocates and constructs a 0x60-byte object; then fills it from arg1 and this, invokes its vtable slot 0x30 with this, stores it at this+0x40 and returns it.
+// @field NMData::EffectorData +0x20 std::string field_0x20
+// @field NMData::EffectorData +0x3c uint32_t field_0x3c
+// @field NMData::EffectorData +0x40 void* field_0x40
+void* fn_0060CDE0(void* self, void* arg1, uint32_t arg2, void* arg3) {
+    void* obj = arg3;
+    if (obj == nullptr) {
+        void* mem = ext_006A5C62(0x60);
+        obj = (mem != nullptr) ? ext_00602F70(mem) : nullptr;
+    }
+
+    lift_field<uint32_t>(self, 0x3c) = arg2;
+
+    void* info = ext_005A0FF0(arg1, reinterpret_cast<uint8_t*>(self) + 0x20);
+    lift_field<uint32_t>(obj, 0x04) = lift_field<uint32_t>(info, 0x234);
+    lift_field<uint32_t>(obj, 0x08) = arg2;
+
+    void* vtbl = lift_field<void*>(obj, 0);
+    void* slot = lift_field<void*>(vtbl, 0x30);
+    reinterpret_cast<void (*)(void*, void*)>(slot)(obj, self);
+
+    lift_field<void*>(self, 0x40) = obj;
+    return obj;
+}
+} // namespace lift_0060CDE0

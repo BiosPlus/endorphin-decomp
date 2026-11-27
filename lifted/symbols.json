@@ -58755,6 +58755,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060C4C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060CDE0": {
+    "name": "NMData::EffectorData::vfunc_15",
+    "class": "NMData::EffectorData",
+    "signature": "void* fn_0060CDE0(void* self, void* arg1, uint32_t arg2, void* arg3)",
+    "summary": "If arg3 is null, allocates and constructs a 0x60-byte object; then fills it from arg1 and this, invokes its vtable slot 0x30 with this, stores it at this+0x40 and returns it.",
+    "lifted_path": "lifted/NMData/EffectorData.cpp"
+  },
   "0x0060D3A0": {
     "name": "NMData::EffectorGroupData::vfunc_22",
     "class": "NMData::EffectorGroupData",
