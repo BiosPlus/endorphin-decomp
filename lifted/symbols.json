@@ -68338,6 +68338,13 @@
     "summary": "Calls virtual slot 12 on self; if it returns non-null, appends that value to the DynamicArray embedded at +0x4c via InsertAt at the current count.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D3D30": {
+    "name": "Unknown::appendVirtualSlot23Result_006D3D30",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D3D30(void* self)",
+    "summary": "Calls vtable slot +0x5c on self; if it returns nonzero, appends that value to the DynamicArray at self+0x10c and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D3D70": {
     "name": "Unknown::appendVirtualResultToArray_006D3D70",
     "class": "Unknown",
@@ -77783,6 +77790,12 @@
     "signature": "extern \"C\" const unsigned char* sub_00736FE0()",
     "summary": "32-byte constant lookup table (misdisassembled as code); returns pointer to it",
     "lifted_path": "lifted/leaf/decompiled_730000.cpp"
+  },
+  "0x00742A70": {
+    "name": "findStringIndex",
+    "signature": "extern \"C\" int32_t __stdcall fn_00742A70(ByValObj742A70 key, void* list)",
+    "summary": "Search an array of string pointers for a matching string, returning its index or -1.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
   "0x00743440": {
     "name": "findFirstMatchingItem",

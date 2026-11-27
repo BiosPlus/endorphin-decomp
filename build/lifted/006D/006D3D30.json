@@ -1,0 +1,28 @@
+{
+  "va": "0x006D3D30",
+  "size": 64,
+  "orig_symbol": "sub_006D3D30",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::appendVirtualSlot23Result_006D3D30",
+  "class": "Unknown",
+  "signature": "int32_t fn_006D3D30(void* self)",
+  "summary": "Calls vtable slot +0x5c on self; if it returns nonzero, appends that value to the DynamicArray at self+0x10c and returns it.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10C",
+      "type": "DynamicArray",
+      "name": "field_0x10c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:09Z"
+}

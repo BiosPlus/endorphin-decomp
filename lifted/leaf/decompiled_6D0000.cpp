@@ -2900,3 +2900,32 @@ void* fn_006D3D70(void* self) {
     return result;
 }
 } // namespace lift_006D3D70
+
+// [0x006D3D30] sub_006D3D30 (64 bytes)
+namespace lift_006D3D30 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::appendVirtualSlot23Result_006D3D30
+// @class Unknown
+// @summary Calls vtable slot +0x5c on self; if it returns nonzero, appends that value to the DynamicArray at self+0x10c and returns it.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x10c DynamicArray field_0x10c
+int32_t fn_006D3D30(void* self) {
+    // Virtual call: vtable = *(void**)self, slot at byte offset 0x5c, takes only `this`.
+    void* vtable = lift_field<void*>(self, 0x00);
+    using VirtualGetFn = int32_t (*)(void* self);
+    VirtualGetFn getValue = reinterpret_cast<VirtualGetFn>(lift_field<void*>(vtable, 0x5c));
+    int32_t value = getValue(self);
+
+    if (value != 0) {
+        // DynamicArray at self+0x10c; index passed is its current count (first dword), i.e. append.
+        void* array = static_cast<uint8_t*>(self) + 0x10c;
+        int32_t count = lift_field<int32_t>(array, 0x00);
+        int32_t elem = value;
+        ext_006D2170(array, count, &elem);
+    }
+
+    return value;
+}
+} // namespace lift_006D3D30
