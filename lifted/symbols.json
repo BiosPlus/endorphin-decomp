@@ -68261,6 +68261,13 @@
     "summary": "Calls vtable slot at +0x1c on self; if it returns nonzero, appends that value to the DynamicArray at self+0x34 and returns it.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D36F0": {
+    "name": "Unknown::appendCountedValue_006D36F0",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D36F0(void* self)",
+    "summary": "Calls vtable slot 8 on self to obtain a value; if nonzero, appends it to the DynamicArray embedded at +0x34 (index = current count) and returns the value.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D3750": {
     "name": "Unknown::queryAndInsertAtEnd_006D3750",
     "class": "Unknown",

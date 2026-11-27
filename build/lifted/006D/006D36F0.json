@@ -1,0 +1,28 @@
+{
+  "va": "0x006D36F0",
+  "size": 48,
+  "orig_symbol": "sub_006D36F0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::appendCountedValue_006D36F0",
+  "class": "Unknown",
+  "signature": "int32_t fn_006D36F0(void* self)",
+  "summary": "Calls vtable slot 8 on self to obtain a value; if nonzero, appends it to the DynamicArray embedded at +0x34 (index = current count) and returns the value.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "arrayCount"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:43:49Z"
+}

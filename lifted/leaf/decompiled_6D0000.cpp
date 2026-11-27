@@ -2740,3 +2740,31 @@ int32_t fn_006D3530(void* self) {
 
 } // namespace lift_006D3530
 } // namespace lift_006D3530
+
+// [0x006D36F0] sub_006D36F0 (48 bytes)
+namespace lift_006D36F0 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern void ext_006D2170();
+int32_t __thiscall fn_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::appendCountedValue_006D36F0
+// @class Unknown
+// @summary Calls vtable slot 8 on self to obtain a value; if nonzero, appends it to the DynamicArray embedded at +0x34 (index = current count) and returns the value.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x34 int32_t arrayCount
+int32_t fn_006D36F0(void* self) {
+    using GetValueFn = int32_t(__thiscall*)(void*);
+
+    void** vtbl = lift_field<void**>(self, 0x00);
+    auto getValue = reinterpret_cast<GetValueFn>(vtbl[8]);
+    int32_t value = getValue(self);
+    if (value != 0) {
+        void* array = static_cast<uint8_t*>(self) + 0x34;
+        int32_t index = lift_field<int32_t>(self, 0x34);
+        int32_t elem = value;
+        using InsertAtFn = int32_t(__thiscall*)(void*, int32_t, const void*);
+        reinterpret_cast<InsertAtFn>(&ext_006D2170)(array, index, &elem);
+    }
+    return value;
+}
+} // namespace lift_006D36F0
