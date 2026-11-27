@@ -22097,6 +22097,12 @@
     "summary": "Returns whether the double at +0x20 of child[ix2] is less than that of child[ix1] (false on NaN).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00518700": {
+    "name": "sortThreeIndicesByValue",
+    "signature": "void fn_00518700(void* self, uint32_t* arg1, uint32_t* arg2, uint32_t* arg3)",
+    "summary": "Three-element compare-swap network (1,2),(2,3),(1,2) over the DWORDs at arg1..arg3, ordering them by the double at +0x20 of the element each index selects in the container reached through self.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x005187E0": {
     "name": "heapSiftUpIndices",
     "class": "(none)",

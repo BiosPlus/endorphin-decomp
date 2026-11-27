@@ -31,6 +31,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (pointer to inner object; inner->+0x04 holds the element array base)  (evidence: 0x0077FF90) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 bucketBase  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    buffer  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (container header pointer, passed through to compareIndexedElementsGreater)  (evidence: 0x00518700) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int32_t                  count  (evidence: 0x00783940) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count  (evidence: 0x007B3120) // CONFLICT: multiple definitions at +0x0

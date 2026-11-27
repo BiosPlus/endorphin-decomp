@@ -1,0 +1,21 @@
+{
+  "va": "0x00518700",
+  "size": 100,
+  "orig_symbol": "sub_00518700",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "sortThreeIndicesByValue",
+  "signature": "void fn_00518700(void* self, uint32_t* arg1, uint32_t* arg2, uint32_t* arg3)",
+  "summary": "Three-element compare-swap network (1,2),(2,3),(1,2) over the DWORDs at arg1..arg3, ordering them by the double at +0x20 of the element each index selects in the container reached through self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (container header pointer, passed through to",
+      "name": "compareIndexedElementsGreater)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:56:30Z"
+}

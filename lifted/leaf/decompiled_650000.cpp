@@ -2045,3 +2045,27 @@ void __cdecl fn_005187E0(uint32_t* base, int32_t hole, int32_t top, uint32_t val
     base[hole] = value;
 }
 } // namespace lift_005187E0
+
+// [0x00518700] sub_00518700 (100 bytes)
+namespace lift_00518700 {
+// Known callee 0x00518550: compareIndexedElementsGreater (Bounds-checks two indices (arg1, arg2) against the vector-like container reached through self->field_0x00, then returns 1 if the double at +0x20 of element[arg2] is greater than that of element[arg1] (NaN or unordered yields 0).)
+extern int ext_00518550(void* self, uint32_t idxA, uint32_t idxB);
+
+// @name sortThreeIndicesByValue
+// @summary Three-element compare-swap network (1,2),(2,3),(1,2) over the DWORDs at arg1..arg3, ordering them by the double at +0x20 of the element each index selects in the container reached through self.
+// @field Unknown +0x00 void* field_0x00 (container header pointer, passed through to compareIndexedElementsGreater)
+void fn_00518700(void* self, uint32_t* arg1, uint32_t* arg2, uint32_t* arg3) {
+    // ext_00518550(self, *y, *x) returns 1 when element[*x] > element[*y]; swap the two cells then.
+    auto compareSwap = [self](uint32_t* x, uint32_t* y) {
+        if (ext_00518550(self, *y, *x) != 0) {
+            uint32_t tmp = *x;
+            *x = *y;
+            *y = tmp;
+        }
+    };
+
+    compareSwap(arg1, arg2);
+    compareSwap(arg2, arg3);
+    compareSwap(arg1, arg2);
+}
+} // namespace lift_00518700
