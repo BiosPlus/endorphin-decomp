@@ -3934,6 +3934,12 @@
     "summary": "Calls obj vtbl[0](1), queries the object at this+0xE0 via vtbl[0x15C] and passes the result to obj vtbl[1].",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004343C0": {
+    "name": "DispatchSlot0ThenConditionalSlot1",
+    "signature": "void __thiscall fn_004343C0(void* self, void* target)",
+    "summary": "Samples three flags from global object +0x14 via ext_0046F890/0046F880/0046F8A0, calls CheckFieldAt60IsZero, then invokes target vtable slot 0 with that result and vtable slot 1 with (flagA \u0026\u0026 flagB \u0026\u0026 !flagC).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004345B0": {
     "name": "CallVtbl0WithField18Flag",
     "class": "Unknown",

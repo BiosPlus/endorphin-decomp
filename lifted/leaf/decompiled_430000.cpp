@@ -5314,3 +5314,47 @@ void fn_004331D0(void* self) {
     callC0(cThis, static_cast<int32_t>(forwarded));
 }
 } // namespace lift_004331D0
+
+// [0x004343C0] sub_004343C0 (141 bytes)
+namespace lift_004343C0 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t ext_00465B30(void);
+// Unlifted 7B helpers: ECX carries the int32 value read from the object at +0x14; each returns a byte in AL.
+extern uint8_t ext_0046F880(uint32_t ecx_value);
+extern uint8_t ext_0046F890(uint32_t ecx_value);
+extern uint8_t ext_0046F8A0(uint32_t ecx_value);
+// Known callee 0x00430370: CheckFieldAt60IsZero (Calls sub_004658C0 to get an object pointer, returns 1 if its int32 at +0x60 is zero, else 0.)
+extern uint8_t ext_00430370(void);
+
+// @name DispatchSlot0ThenConditionalSlot1
+// @summary Samples three flags from global object +0x14 via ext_0046F890/0046F880/0046F8A0, calls CheckFieldAt60IsZero, then invokes target vtable slot 0 with that result and vtable slot 1 with (flagA && flagB && !flagC).
+// @field Unknown +0x14 int32_t field_0x14
+void __thiscall fn_004343C0(void* self, void* target) {
+    // ECX (self) is forwarded to ext_00430370 in the original; the leaf callee takes no arguments.
+    (void)self;
+
+    auto objFromRaw = [](int32_t raw) -> void* {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(raw)));
+    };
+
+    const uint8_t flagA = ext_0046F890(static_cast<uint32_t>(
+        lift_field<int32_t>(objFromRaw(ext_00465B30()), 0x14)));
+    const uint8_t flagB = ext_0046F880(static_cast<uint32_t>(
+        lift_field<int32_t>(objFromRaw(ext_00465B30()), 0x14)));
+    const uint8_t flagC = ext_0046F8A0(static_cast<uint32_t>(
+        lift_field<int32_t>(objFromRaw(ext_00465B30()), 0x14)));
+
+    using VirtFn = void(__thiscall*)(void* self, uint32_t arg);
+    auto slot = [](void* obj, size_t index) -> VirtFn {
+        void* vtbl = *reinterpret_cast<void**>(obj);
+        return reinterpret_cast<VirtFn>(reinterpret_cast<void**>(vtbl)[index]);
+    };
+
+    const uint32_t predicate = ext_00430370();
+    slot(target, 0)(target, predicate);
+
+    const uint32_t dispatchArg =
+        (flagA != 0 && flagB != 0 && flagC == 0) ? 1u : 0u;
+    slot(target, 1)(target, dispatchArg);
+}
+} // namespace lift_004343C0
