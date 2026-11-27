@@ -15099,6 +15099,13 @@
     "summary": "Forwards the argument plus two loader fields to ext_004EBC80, using field +0x04 as the receiver.",
     "lifted_path": "lifted/NMData/NameTableLoader.cpp"
   },
+  "0x0049CD30": {
+    "name": "NMData::State::hitTest",
+    "class": "NMData::State",
+    "signature": "static inline bool point_in_box(float px, float py, float cx, float cy, float half_extent)",
+    "summary": "Hit-tests a 2D point against the state's corner handle, top-edge handle, or bounding rect.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049CE90": {
     "name": "Unknown::addPairsAndOrder",
     "class": "Unknown",

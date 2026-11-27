@@ -1,0 +1,40 @@
+{
+  "va": "0x0049CD30",
+  "size": 347,
+  "orig_symbol": "NMData::State::vfunc_9_off_8",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::hitTest",
+  "class": "NMData::State",
+  "signature": "static inline bool point_in_box(float px, float py, float cx, float cy, float half_extent)",
+  "summary": "Hit-tests a 2D point against the state's corner handle, top-edge handle, or bounding rect.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "rect_x1"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE4",
+      "type": "float",
+      "name": "rect_y1"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE8",
+      "type": "float",
+      "name": "rect_x2"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "rect_y2"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:05:29Z"
+}

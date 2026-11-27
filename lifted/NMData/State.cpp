@@ -442,3 +442,53 @@ void __thiscall fn_0049E190(void* self, const float* delta)
     rect[3] = out[3];
 }
 } // namespace lift_0049E190
+
+// [0x0049CD30]
+namespace lift_0049CD30 {
+// @name NMData::State::hitTest
+// @class NMData::State
+// @summary Hit-tests a 2D point against the state's corner handle, top-edge handle, or bounding rect.
+// @field NMData::State +0xE0 float rect_x1
+// @field NMData::State +0xE4 float rect_y1
+// @field NMData::State +0xE8 float rect_x2
+// @field NMData::State +0xEC float rect_y2
+
+extern uint8_t (__thiscall *ext_004976D0)(const void* self, const void* point);
+extern float mem_0094B858;
+extern double mem_00993828;
+extern double mem_00993840;
+
+static inline bool point_in_box(float px, float py, float cx, float cy, float half_extent) {
+    float min_x = cx - half_extent;
+    float max_x = cx + half_extent;
+    float min_y = cy - half_extent;
+    float max_y = cy + half_extent;
+    return (px >= min_x) && (px <= max_x) && (py >= min_y) && (py <= max_y);
+}
+
+int32_t __thiscall fn_0049CD30(const void* self, const void* point) {
+    const uint8_t* rect = static_cast<const uint8_t*>(self) + 0xE0;
+    float x1 = *reinterpret_cast<const float*>(rect + 0x0);
+    float y1 = *reinterpret_cast<const float*>(rect + 0x4);
+    float x2 = *reinterpret_cast<const float*>(rect + 0x8);
+    float y2 = *reinterpret_cast<const float*>(rect + 0xC);
+
+    const float* pt = static_cast<const float*>(point);
+    float px = pt[0];
+    float py = pt[1];
+
+    float base_radius = mem_0094B858;
+    float corner_radius = base_radius + base_radius;
+    if (point_in_box(px, py, x2, y2, corner_radius)) {
+        return 3;
+    }
+
+    float mid_x = static_cast<float>((x2 + x1) * mem_00993828);
+    float edge_radius = static_cast<float>(base_radius * mem_00993840);
+    if (point_in_box(px, py, mid_x, y1, edge_radius)) {
+        return 6;
+    }
+
+    return ext_004976D0(rect, point) ? 1 : 0;
+}
+} // namespace lift_0049CD30
