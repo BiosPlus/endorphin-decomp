@@ -11278,3 +11278,33 @@ void __stdcall fn_0058CB10(void* holder) {
     lift_field<uintptr_t>(holder, 4) = reinterpret_cast<uintptr_t>(&mem_00B3F92C);
 }
 } // namespace lift_0058CB10
+
+// [0x0058C200] ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerY(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_0058C200 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B3F910;
+extern DWORD mem_00B3F90C;
+
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform,float,...>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerY(float), 0}>
+// @summary One-time guarded init of the static accessor holder, then binds self+0x04 to that holder.
+// @field ExprParser::ReadWriteMethodType<AnimatableTransform,...> +0x04 void* holder
+void fn_0058C200(void* self) {
+    // One-time guard: bit 0 of mem_00B3F910 marks the static holder as initialized.
+    if ((mem_00B3F910 & 1u) == 0) {
+        mem_00B3F910 |= 1u;
+
+        // Run the holder's initializer on the static object at mem_00B3F90C.
+        // The original pushes the saved SEH link as the argument; it is overwritten
+        // by the vtable store below, so 0 is used here (no observable difference).
+        ext_0067A670(&mem_00B3F90C, 0u);
+
+        // Install the vtable pointer for the static accessor object.
+        mem_00B3F90C = 0x0095B77Cu;
+    }
+
+    // Bind holder pointer at self+0x04 to the static object.
+    lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B3F90C));
+}
+} // namespace lift_0058C200

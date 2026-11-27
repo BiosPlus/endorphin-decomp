@@ -1,0 +1,22 @@
+{
+  "va": "0x0058C200",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerY(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform,float,...\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerY(float), 0}\u003e",
+  "signature": "void fn_0058C200(void* self)",
+  "summary": "One-time guarded init of the static accessor holder, then binds self+0x04 to that holder.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform,...\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "holder"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:25:51Z"
+}

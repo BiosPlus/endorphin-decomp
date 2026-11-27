@@ -28889,6 +28889,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0058C200": {
+    "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform,float,...\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerY(float), 0}\u003e",
+    "signature": "void fn_0058C200(void* self)",
+    "summary": "One-time guarded init of the static accessor holder, then binds self+0x04 to that holder.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0058C280": {
     "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}\u003e",
