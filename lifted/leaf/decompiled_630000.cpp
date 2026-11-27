@@ -1697,3 +1697,63 @@ uint32_t __thiscall sub_0063EFE0(uint8_t* self, const char* name) {
     }
 }
 } // namespace lift_0063EFE0
+
+// [0x0063F8D0]
+namespace lift_0063F8D0 {
+extern void (*mem_00925134)();
+extern int (*mem_009251EC)(void*, size_t, const void*, size_t);
+
+// @name clearOwnedObjects
+// @summary Deletes all non-null objects in the vector at +0x24 and clears it.
+// @field Self +0x28 uint32_t* vecBegin
+// @field Self +0x2C uint32_t* vecEnd
+
+void __thiscall sub_0063F8D0(void* self) {
+    uint8_t* vec = reinterpret_cast<uint8_t*>(self) + 0x24;
+    uint32_t* it = *reinterpret_cast<uint32_t**>(vec + 0x4);
+    if (it > *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+        mem_00925134();
+    }
+
+    for (;;) {
+        uint32_t* vecEnd = *reinterpret_cast<uint32_t**>(vec + 0x8);
+        if (*reinterpret_cast<uint32_t**>(vec + 0x4) > vecEnd) {
+            mem_00925134();
+        }
+        if (it >= vecEnd) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            mem_00925134();
+        }
+        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(*it));
+        if (obj != nullptr) {
+            using DtorFn = void(__thiscall*)(void*, int);
+            DtorFn* vtable = *reinterpret_cast<DtorFn**>(obj);
+            vtable[0](obj, 1);
+        }
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            mem_00925134();
+        }
+        ++it;
+    }
+
+    uint32_t* vecEnd = *reinterpret_cast<uint32_t**>(vec + 0x8);
+    if (*reinterpret_cast<uint32_t**>(vec + 0x4) > vecEnd) {
+        mem_00925134();
+    }
+    uint32_t* vecBegin = *reinterpret_cast<uint32_t**>(vec + 0x4);
+    if (vecBegin > *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+        mem_00925134();
+    }
+    if (vecBegin != vecEnd) {
+        intptr_t count = *reinterpret_cast<uint32_t**>(vec + 0x8) - vecEnd;
+        size_t bytes = static_cast<size_t>(count) * 4;
+        uint32_t* newEnd = vecBegin + count;
+        if (count > 0) {
+            mem_009251EC(vecBegin, bytes, vecEnd, bytes);
+        }
+        *reinterpret_cast<uint32_t**>(vec + 0x8) = newEnd;
+    }
+}
+} // namespace lift_0063F8D0

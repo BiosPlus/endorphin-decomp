@@ -86,8 +86,10 @@ struct Self_Fields {
     // +0x28  uint8_t*                 field_0x28  (evidence: 0x00629530) // CONFLICT: multiple definitions at +0x28
     // +0x28  void*                    field_0x28  (evidence: 0x00466870, 0x00622B40, 0x00627450, 0x00627510) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t                 tree_size  (evidence: 0x005A71E0) // CONFLICT: multiple definitions at +0x28
+    // +0x28  uint32_t*                vecBegin  (evidence: 0x0063F8D0) // CONFLICT: multiple definitions at +0x28
     // +0x2C  uint32_t                 field_0x2C  (evidence: 0x00466870, 0x00676780) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x00681820) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  uint32_t*                vecEnd  (evidence: 0x0063F8D0) // CONFLICT: multiple definitions at +0x2C
     // +0x30  uint32_t                 field_0x30  (evidence: 0x00466870, 0x00676780, 0x006767D0, 0x00681820) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint8_t                  field_0x30  (evidence: 0x00629530) // CONFLICT: multiple definitions at +0x30
     // +0x30  void*                    field_0x30  (evidence: 0x00648A20, 0x00648A60) // CONFLICT: multiple definitions at +0x30
