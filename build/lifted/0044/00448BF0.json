@@ -1,0 +1,57 @@
+{
+  "va": "0x00448BF0",
+  "size": 145,
+  "orig_symbol": "sub_00448BF0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "ApplyAngleUnitMode",
+  "signature": "static inline void* u32_to_ptr(uint32_t v)",
+  "summary": "Resolves an object's angle-unit mode (1/2/3/other) and returns a scaled or fallback double, using ConvertAngleUnits for mode 3.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0xC8",
+      "type": "uint32_t",
+      "name": "field_0xC8"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0xFC",
+      "type": "uint32_t",
+      "name": "mode"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0xFA",
+      "type": "uint8_t",
+      "name": "flag_fa"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0xFB",
+      "type": "uint8_t",
+      "name": "flag_fb"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x108",
+      "type": "double",
+      "name": "field_0x108"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x110",
+      "type": "double",
+      "name": "field_0x110"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:37:09Z"
+}

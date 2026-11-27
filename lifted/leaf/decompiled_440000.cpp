@@ -3066,3 +3066,61 @@ void __thiscall fn_00446560(void* self, void* node, uint32_t arg2) {
     }
 }
 } // namespace lift_00446560
+
+// [0x00448BF0] sub_00448BF0 (145 bytes)
+namespace lift_00448BF0 {
+// Known callee 0x00678170: ConvertAngleUnits (Converts a float by a mode selected at self+0x0C: mode 1 multiplies by pi/180 (degrees to radians), mode 2 divides by 360 (degrees to turns), any other mode returns the input unchanged.)
+extern float ext_00678170(void* self, float value);
+// Known callee 0x006AD180: getDerefField0x4 (Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.)
+extern void* ext_006AD180(void* self);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+extern const double mem_009334D8;
+
+static inline void* u32_to_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// @name ApplyAngleUnitMode
+// @summary Resolves an object's angle-unit mode (1/2/3/other) and returns a scaled or fallback double, using ConvertAngleUnits for mode 3.
+// @field Self +0xC8 uint32_t field_0xC8
+// @field Self +0x00 uint32_t field_0x00
+double fn_00448BF0(void* self, double value) {
+    uint32_t p = lift_field<uint32_t>(self, 0xC8);
+    void* r = ext_006AD180(u32_to_ptr(p));
+    uint32_t q = *static_cast<uint32_t*>(r);
+    void* obj = u32_to_ptr(q);
+
+    // @field Obj +0xFC uint32_t mode
+    uint32_t mode = lift_field<uint32_t>(obj, 0xFC);
+
+    if (mode == 1) {
+        return lift_field<double>(obj, 0x128);
+    }
+    if (mode == 2) {
+        double field = lift_field<double>(obj, 0x128);
+        if (value == 0.0) {
+            return field;
+        }
+        return value * field;
+    }
+    if (mode == 3) {
+        double field = lift_field<double>(obj, 0x128);
+        uint32_t g = static_cast<uint32_t>(ext_00594000());
+        void* sub = u32_to_ptr(g + 0x2E0);
+        float v = static_cast<float>(field);
+        return static_cast<double>(ext_00678170(sub, v));
+    }
+
+    // @field Obj +0xFA uint8_t flag_fa
+    // @field Obj +0xFB uint8_t flag_fb
+    // @field Obj +0x108 double field_0x108
+    // @field Obj +0x110 double field_0x110
+    if (lift_field<uint8_t>(obj, 0xFB) != 0 && lift_field<uint8_t>(obj, 0xFA) != 0) {
+        double a = lift_field<double>(obj, 0x110);
+        double b = lift_field<double>(obj, 0x108);
+        return (a - b) / mem_009334D8;
+    }
+    return 1.0;
+}
+} // namespace lift_00448BF0
