@@ -1,0 +1,46 @@
+{
+  "va": "0x00640D60",
+  "size": 123,
+  "orig_symbol": "AdvXMLParser::Pi::vfunc_5",
+  "src_path": "src/AdvXMLParser/Pi.cpp",
+  "lifted_path": "lifted/AdvXMLParser/Pi.cpp",
+  "name": "AdvXMLParser::Pi::vfunc_5",
+  "class": "AdvXMLParser::Pi",
+  "signature": "extern \"C\" void __thiscall fn_00640D60(void* self, void* node)",
+  "summary": "Appends the Pi's text pieces (literal, self string at +0x04, optional space + string at +0x24 when +0x38 is nonzero, closing literal) onto the string held by node+0x08, then runs the node's newline and counter helpers.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::Pi",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "AdvXMLParser::Pi",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "AdvXMLParser::Pi",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "AdvXMLParser::Pi",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "AdvXMLParser::Pi",
+      "offset": "+0x11",
+      "type": "uint8_t",
+      "name": "field_0x11"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:49:04Z"
+}

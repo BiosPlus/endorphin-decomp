@@ -46791,6 +46791,13 @@
     "summary": "Serializes an XML comment node (\"\u003c!--\" + text + \"--\u003e\") to the output context.",
     "lifted_path": "lifted/AdvXMLParser/Comment.cpp"
   },
+  "0x00640D60": {
+    "name": "AdvXMLParser::Pi::vfunc_5",
+    "class": "AdvXMLParser::Pi",
+    "signature": "extern \"C\" void __thiscall fn_00640D60(void* self, void* node)",
+    "summary": "Appends the Pi's text pieces (literal, self string at +0x04, optional space + string at +0x24 when +0x38 is nonzero, closing literal) onto the string held by node+0x08, then runs the node's newline and counter helpers.",
+    "lifted_path": "lifted/AdvXMLParser/Pi.cpp"
+  },
   "0x00640DE0": {
     "name": "AdvXMLParser::CData::vfunc_5",
     "class": "AdvXMLParser::CData",
