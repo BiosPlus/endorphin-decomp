@@ -1,0 +1,21 @@
+{
+  "va": "0x0079EAE0",
+  "size": 144,
+  "orig_symbol": "sub_0079EAE0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "findEntryByName",
+  "signature": "void* sub_0079EAE0(const char* name)",
+  "summary": "Searches a global pointer array for an entry whose name at +0x04 matches the given string.",
+  "fields": [
+    {
+      "class": "Entry",
+      "offset": "+0x4",
+      "type": "const char*",
+      "name": "name"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:48:37Z"
+}
