@@ -1816,3 +1816,46 @@ void fn_007BFBD0(void* self, int16_t* buf, int32_t byteLen) {
     } while (remaining > 0);
 }
 } // namespace lift_007BFBD0
+
+// [0x007BF890] sub_007BF890 (129 bytes)
+namespace lift_007BF890 {
+// Known callee 0x007AF010: swapBytePairsInBuffer (Swaps the two bytes of each 16-bit pair in a buffer, for `count` pairs (cdecl, args: buffer, count).)
+extern void ext_007AF010(uint8_t* buffer, uint32_t count);
+
+// @name Unknown::AccumulateStridedWords
+// @class Unknown
+// @summary Byte-swaps n = a/2 16-bit words via ext_007AF010, then runs a stride-d prefix accumulation (buf[k+d] += buf[k]) where d = *(self->+0x1CC)->+4.
+// @field Unknown +0x1CC void* field_0x1cc
+void fn_007BF890(void* self, uint8_t* buffer, int32_t a) {
+    // Pointer at self+0x1CC -> struct; the int32 at +0x04 of that struct is the stride d.
+    // (The pointee's layout is not a known class; its +0x04 field is read here as `stride`.)
+    void* st = lift_field<void*>(self, 0x1CC);
+    int32_t stride = lift_field<int32_t>(st, 0x04);
+
+    // asm: (a - sign(a)) >> 1 with signed compare == a / 2 (truncating toward zero).
+    int32_t n = a / 2;
+
+    if (n <= stride) {
+        return;
+    }
+
+    ext_007AF010(buffer, static_cast<uint32_t>(n));
+
+    // Stride <= 0 path: the jump-table entry for stride 0 and the signed-negative
+    // fallthrough are not recovered from the disassembly, so this is not lifted here.
+    if (stride <= 0) {
+        return;
+    }
+
+    uint16_t* base = reinterpret_cast<uint16_t*>(buffer);
+    int32_t rem = n - stride;
+    do {
+        // Each block: for k in [0, stride): base[k + stride] += base[k] (16-bit wrap).
+        for (int32_t k = 0; k < stride; ++k) {
+            base[k + stride] = static_cast<uint16_t>(base[k + stride] + base[k]);
+        }
+        base += stride;
+        rem -= stride;
+    } while (rem > 0);
+}
+} // namespace lift_007BF890

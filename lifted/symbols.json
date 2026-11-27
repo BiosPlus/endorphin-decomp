@@ -78176,6 +78176,13 @@
     "summary": "Adds scale * field_0x1D0 to field_0x1E0 and subtracts it from field_0x1E4; returns 1.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BF890": {
+    "name": "Unknown::AccumulateStridedWords",
+    "class": "Unknown",
+    "signature": "void fn_007BF890(void* self, uint8_t* buffer, int32_t a)",
+    "summary": "Byte-swaps n = a/2 16-bit words via ext_007AF010, then runs a stride-d prefix accumulation (buf[k+d] += buf[k]) where d = *(self-\u003e+0x1CC)-\u003e+4.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BF930": {
     "name": "audioDeltaDecode16",
     "signature": "void __cdecl sub_007BF930(void* a1, int16_t* buf, int32_t byteCount)",
