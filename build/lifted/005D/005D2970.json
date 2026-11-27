@@ -1,0 +1,22 @@
+{
+  "va": "0x005D2970",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, \u0026public: void __thiscall NMData::VideoPlaneData::setXScale(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, \u0026public: void __thiscall NMData::VideoPlaneData::setXScale(float)\u003e",
+  "signature": "void fn_005D2970(void* holder)",
+  "summary": "Binds holder+0x04 to the static accessor object at mem_00B459E8, running its one-time initializer on first use under a local SEH frame.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:46:28Z"
+}

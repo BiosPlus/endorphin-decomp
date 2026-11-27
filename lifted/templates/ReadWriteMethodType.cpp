@@ -12541,3 +12541,43 @@ void fn_005D2740(void* self) {
     lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B459E0));
 }
 } // namespace lift_005D2740
+
+// [0x005D2970] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXScale(float)>::vfunc_40 (122 bytes)
+namespace lift_005D2970 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static accessor object below has been initialized.
+extern DWORD mem_00B459EC;
+// Static accessor object (global) whose address is stored into holder+0x04.
+extern DWORD mem_00B459E8;
+
+// @name ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXScale(float)>
+// @summary Binds holder+0x04 to the static accessor object at mem_00B459E8, running its one-time initializer on first use under a local SEH frame.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005D2970(void* holder) {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A53AEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B459EC & 1u) == 0) {
+        mem_00B459EC |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B459E8, frame[0]);
+        mem_00B459E8 = 0x96683Cu;
+    }
+
+    // Bind holder+0x04 to the static accessor object (both paths store the same address).
+    *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(holder) + 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B459E8));
+
+    mem_fs_0 = frame[0];
+}
+} // namespace lift_005D2970
