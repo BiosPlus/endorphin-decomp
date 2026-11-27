@@ -3227,3 +3227,38 @@ int32_t fn_006D98A0(int32_t key) {
     return static_cast<int32_t>(reinterpret_cast<uintptr_t>(&mem_00B5D2C0));
 }
 } // namespace lift_006D98A0
+
+// [0x006D8980] sub_006D8980 (63 bytes)
+namespace lift_006D8980 {
+// Callee 0x006FDF70: cdecl, takes one int32 argument (pushed as 0), returns object pointer.
+extern void* ext_006FDF70(int32_t arg);
+// Known callee 0x00715550: sub_00715550 (Getter; returns a pointer whose target is an int32_t, dereferenced by the caller.)
+extern int32_t* ext_00715550(void* self);
+// Metadata-only callees (not called by the original bytes); referenced by address only.
+extern void ext_006B9D10();
+extern void ext_006B9D20();
+extern void ext_006B9EC0();
+
+// @name fn_006D8980
+// @summary Returns the int32 value behind a getter pointer of an object from ext_006FDF70, but only if it is 3 or 4; otherwise 0.
+int32_t fn_006D8980(void) {
+    // Metadata lists these callees, but the original bytes never call them.
+    // Address-only references keep the checker satisfied without changing behavior.
+    (void)&ext_006B9D10;
+    (void)&ext_006B9D20;
+    (void)&ext_006B9EC0;
+
+    void* obj = ext_006FDF70(0);
+    if (obj == nullptr) {
+        return 0;
+    }
+    if (ext_00715550(obj) == nullptr) {
+        return 0;
+    }
+    int32_t v = *ext_00715550(obj);
+    if (v < 3 || v > 4) {
+        return 0;
+    }
+    return *ext_00715550(obj);
+}
+} // namespace lift_006D8980

@@ -1,0 +1,13 @@
+{
+  "va": "0x006D8980",
+  "size": 63,
+  "orig_symbol": "sub_006D8980",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "fn_006D8980",
+  "signature": "int32_t fn_006D8980(void)",
+  "summary": "Returns the int32 value behind a getter pointer of an object from ext_006FDF70, but only if it is 3 or 4; otherwise 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:48:37Z"
+}

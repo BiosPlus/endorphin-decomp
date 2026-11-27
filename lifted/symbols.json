@@ -68829,6 +68829,12 @@
     "summary": "Resolves a sub-object via two lookups; if its kind at +0x04 is 1 or 2, returns its +0x30 value, else 0.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D8980": {
+    "name": "fn_006D8980",
+    "signature": "int32_t fn_006D8980(void)",
+    "summary": "Returns the int32 value behind a getter pointer of an object from ext_006FDF70, but only if it is 3 or 4; otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D89C0": {
     "name": "sub_006D89C0",
     "signature": "extern \"C\" void* __fastcall fn_006D89C0(void* self)",
