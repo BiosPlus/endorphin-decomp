@@ -32208,6 +32208,13 @@
     "summary": "Reads Geometry* from the value pointer; if non-null, forwards Geometry+0x14 to a default-message helper, then always throws a DerivedException. Never returns normally.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B2410": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry,float,getParam2\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e",
+    "signature": "std::string* fn_005B2410(std::string* out, void** self)",
+    "summary": "Reads the float at +0x18 of the object referenced by self and returns it formatted into out; throws a DerivedException if *self is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B2510": {
     "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_0 (Geometry::getTypeNameNonConst)",
     "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e",

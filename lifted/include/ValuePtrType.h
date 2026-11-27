@@ -28,6 +28,7 @@ struct ValuePtrType_Fields {
     // +0x4   void*                    target  (evidence: 0x005B7BC0, 0x0064F2F0) // CONFLICT: multiple definitions at +0x4
     // +0x8   void*                    field_0x08  (evidence: 0x0049D4B0)
     // +0xC   void*                    field_0x0C  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740)
+    // +0x18  float                    field_0x18  (evidence: 0x005B2410)
     // +0x28  int32_t                  field_0x28  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005D6630, 0x005FCC10, 0x00639730, 0x00695740)
 };
 } // namespace lifted_layout

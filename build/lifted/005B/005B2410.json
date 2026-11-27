@@ -1,0 +1,28 @@
+{
+  "va": "0x005B2410",
+  "size": 74,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGeometry,float,getParam2\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e",
+  "signature": "std::string* fn_005B2410(std::string* out, void** self)",
+  "summary": "Reads the float at +0x18 of the object referenced by self and returns it formatted into out; throws a DerivedException if *self is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:39Z"
+}

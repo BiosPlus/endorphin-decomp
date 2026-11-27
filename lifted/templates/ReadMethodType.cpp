@@ -61337,3 +61337,35 @@ void* fn_0068F050(void* self) {
     return ext_006A6DE0(biased);
 }
 } // namespace lift_0068F050
+
+// [0x005B2410] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_005B2410 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern std::string* ext_0046C390(std::string* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// RTTI/ThrowInfo descriptor for the DerivedException throw (VA 0x009DEC1C).
+extern const char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<Geometry,float,getParam2>::vfunc_4
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>
+// @summary Reads the float at +0x18 of the object referenced by self and returns it formatted into out; throws a DerivedException if *self is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ValuePtrType +0x18 float field_0x18
+std::string* fn_005B2410(std::string* out, void** self) {
+    void* obj = self ? *self : nullptr;
+    if (obj == nullptr) {
+        // Build a local exception object in the frame, then throw it via the CRT thunk.
+        alignas(8) unsigned char exc[0x20] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        // Not reached: _CxxThrowException does not return.
+        return nullptr;
+    }
+    float value = *reinterpret_cast<float*>(static_cast<unsigned char*>(obj) + 0x18);
+    return ext_0046C390(out, value);
+}
+} // namespace lift_005B2410
