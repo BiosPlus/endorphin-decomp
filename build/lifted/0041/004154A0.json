@@ -1,0 +1,22 @@
+{
+  "va": "0x004154A0",
+  "size": 149,
+  "orig_symbol": "EditBox::vfunc_66",
+  "src_path": "src/classes/EditBox.cpp",
+  "lifted_path": "lifted/classes/EditBox.cpp",
+  "name": "EditBox::PreTranslateMessage",
+  "class": "EditBox",
+  "signature": "int32_t __thiscall fn_004154A0(void* self, void* pMsg)",
+  "summary": "Handles WM_KEYDOWN for Enter (notifying parent and selecting all if modified) and non-Tab keys (marking modified) before forwarding to CEdit::PreTranslateMessage.",
+  "fields": [
+    {
+      "class": "EditBox",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "m_hWnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:08:00Z"
+}
