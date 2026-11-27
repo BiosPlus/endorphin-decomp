@@ -1,0 +1,28 @@
+{
+  "va": "0x0063F620",
+  "size": 136,
+  "orig_symbol": "sub_0063F620",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::findElementByString",
+  "class": "Unknown",
+  "signature": "[[noreturn]] void lift_invalid_parameter()",
+  "summary": "Scans the pointer range [+0x40, +0x44) for an element whose string at element+4 equals the argument; returns that element, or 0x00B53A34 if none matches.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "uintptr_t",
+      "name": "rangeBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "uintptr_t",
+      "name": "rangeEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:30:17Z"
+}

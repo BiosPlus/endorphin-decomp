@@ -48948,6 +48948,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063F620": {
+    "name": "Unknown::findElementByString",
+    "class": "Unknown",
+    "signature": "[[noreturn]] void lift_invalid_parameter()",
+    "summary": "Scans the pointer range [+0x40, +0x44) for an element whose string at element+4 equals the argument; returns that element, or 0x00B53A34 if none matches.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063F8B0": {
     "name": "AdvXMLParser::Attribute::vfunc_0",
     "class": "AdvXMLParser::Attribute",

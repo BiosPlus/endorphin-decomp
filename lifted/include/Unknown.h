@@ -921,6 +921,7 @@ struct Unknown_Fields {
     // +0x40  void*                    field_0x40  (evidence: 0x00660C10, 0x007D8890) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint8_t                  flag  (evidence: 0x00526960, 0x0052F7D0) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    nextNode  (evidence: 0x006E62A0, 0x006EFEA0) // CONFLICT: multiple definitions at +0x40
+    // +0x40  uintptr_t                rangeBegin  (evidence: 0x0063F620) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    subObject  (evidence: 0x00711A40, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    subobject  (evidence: 0x00712010) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint32_t field_0x40 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x40
@@ -934,6 +935,7 @@ struct Unknown_Fields {
     // +0x44  uint8_t                  field_0x44  (evidence: 0x0052F340, 0x0052F7D0, 0x0052FC10) // CONFLICT: multiple definitions at +0x44
     // +0x44  void*                    field_0x44  (evidence: 0x005D0AF0, 0x005DA150, 0x005DC300, 0x005DC6C0, 0x005DC930, 0x0074AEF0) // CONFLICT: multiple definitions at +0x44
     // +0x44  void*                    imageListAddMaskedProc  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x44
+    // +0x44  uintptr_t                rangeEnd  (evidence: 0x0063F620) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint32_t field_0x44 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x44
     // +0x46  uint8_t                  field_0x46  (evidence: 0x00648800)
     // +0x48  uint32_t                 baseIndex  (evidence: 0x00796660) // CONFLICT: multiple definitions at +0x48

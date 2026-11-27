@@ -1587,3 +1587,66 @@ void __thiscall sub_00630390(void* self, const float* vec) {
     lift_field<float>(self, 0xa4) = norm[2] * scale;
 }
 } // namespace lift_00630390
+
+// [0x0063F620] sub_0063F620 (136 bytes)
+namespace lift_0063F620 {
+extern int mem_00925134;
+extern int mem_00924FC0;
+extern int mem_009251EC;
+
+namespace {
+
+// Invalid-parameter path. The asm calls the MSVCR80 handler through the import
+// slot mem_00925134; on non-MSVC hosts there is no such handler, so abort.
+[[noreturn]] void lift_invalid_parameter() {
+#ifdef _MSC_VER
+    reinterpret_cast<void (*)()>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925134)))();
+#endif
+    std::abort();
+}
+
+// MSVCP80 operator==(const std::string&, const char*), called through the
+// import slot mem_00924FC0 (__cdecl, returns bool).
+using StringEqFn = bool (__cdecl*)(const void* str, const char* rhs);
+
+bool lift_string_eq(const void* str, const char* rhs) {
+    auto fn = reinterpret_cast<StringEqFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FC0)));
+    return fn(str, rhs);
+}
+
+}  // namespace
+
+// @name Unknown::findElementByString
+// @class Unknown
+// @summary Scans the pointer range [+0x40, +0x44) for an element whose string at element+4 equals the argument; returns that element, or 0x00B53A34 if none matches.
+// @field Unknown +0x40 uintptr_t rangeBegin
+// @field Unknown +0x44 uintptr_t rangeEnd
+void* fn_0063F620(void* self, const char* needle) {
+    // mem_009251EC ("V|b") is listed in the original's rdata but never read by the asm.
+    (void)&mem_009251EC;
+
+    // Range bounds are 32-bit guest pointers.
+    uintptr_t esi = lift_field<uintptr_t>(self, 0x40);
+    if (!(esi <= lift_field<uintptr_t>(self, 0x44))) {
+        lift_invalid_parameter();
+    }
+
+    for (;;) {
+        const uintptr_t end = lift_field<uintptr_t>(self, 0x44);
+        if (lift_field<uintptr_t>(self, 0x40) > end) {
+            lift_invalid_parameter();
+        }
+        if (esi >= end) {
+            break;
+        }
+
+        const uintptr_t elem = *reinterpret_cast<uintptr_t*>(esi);
+        if (lift_string_eq(reinterpret_cast<const void*>(elem + 4), needle)) {
+            return reinterpret_cast<void*>(elem);
+        }
+        esi += 4;
+    }
+
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B53A34u));
+}
+} // namespace lift_0063F620
