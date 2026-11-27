@@ -112,3 +112,92 @@ void __thiscall fn_004591B0(void* self, int32_t a0, int32_t index, int32_t a2) {
     (*reinterpret_cast<void (__thiscall***)(void*, int32_t)>(obj))[0x98 / 4](obj, 5);
 }
 } // namespace lift_004591B0
+
+// [0x00459560]
+namespace lift_00459560 {
+extern uint32_t mem_00925630;
+extern uint32_t mem_00925634;
+extern uint32_t mem_00925638;
+extern uint32_t mem_00925688;
+extern uint32_t mem_0092BD7C;
+extern char mem_0092BF14;
+extern char mem_00937960;
+extern char mem_00937974;
+
+uint32_t __thiscall ext_0043C930(void* self, void* menu, void* pt);
+void* __cdecl ext_00468180(void);
+void* __thiscall ext_00468660(void* self);
+void __thiscall ext_00468710(void* self, uint32_t val);
+void __thiscall ext_00468730(void* self, uint32_t val);
+uint8_t __thiscall ext_00468750(void* self);
+uint8_t __thiscall ext_00468770(void* self);
+void __thiscall ext_00468790(void* self, uint32_t val);
+void __thiscall ext_00468810(void* self, int32_t val);
+void __thiscall ext_00468890(void* self, uint32_t val);
+void __thiscall ext_00468920(void* self, int32_t val);
+void __thiscall ext_006A6166(void* self);
+void __thiscall ext_006A616C(void* self, void* hMenu);
+
+// @name MultiTrackView::TimeRuler::vfunc_7
+// @class MultiTrackView::TimeRuler
+// @summary Displays the time ruler context menu and handles Zoom To Fit, Reset Save Range, and Reset Loop Range actions.
+// @field MultiTrackView::TimeRuler +0x30 void* field_0x30
+void __thiscall fn_00459560(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;
+    uint32_t pt[2] = {arg0, arg1};
+
+    void* parent = lift_field<void*>(self, 0x30);
+    void* hwnd = lift_field<void*>(parent, 0x20);
+    ((int32_t(__stdcall*)(void*, void*))mem_00925630)(hwnd, pt);
+
+    uint32_t menu[2] = {(uint32_t)(uintptr_t)&mem_0092BD7C, 0};
+    void* hMenu = ((void*(__stdcall*)(void))mem_00925638)();
+    ext_006A616C(menu, hMenu);
+
+    void* timeline = ext_00468180();
+    typedef int32_t(__stdcall* AppendMenuAFn)(uint32_t, uint32_t, uint32_t, const char*);
+    AppendMenuAFn appendMenu = (AppendMenuAFn)mem_00925634;
+
+    appendMenu(menu[1], 0, 0x65, &mem_0092BF14);
+    if (ext_00468770(timeline) != 0) {
+        appendMenu(menu[1], 0, 0x66, &mem_00937974);
+    }
+    if (ext_00468750(timeline) != 0) {
+        appendMenu(menu[1], 0, 0x67, &mem_00937960);
+    }
+
+    uint32_t cmd = ext_0043C930(lift_field<void*>(self, 0x30), menu, pt);
+    if (cmd == 0x65) {
+        void* obj = lift_field<void*>(self, 0x30);
+        void** vtbl = *(void***)obj;
+        ((void(__thiscall*)(void*))vtbl[0x144 / 4])(obj);
+    } else if (cmd == 0x66 || cmd == 0x67) {
+        if (cmd == 0x66) {
+            ext_00468730(timeline, 0);
+            ext_00468890(timeline, 0);
+            void* obj = ext_00468660(timeline);
+            void** vtbl = *(void***)obj;
+            int32_t count = ((int32_t(__thiscall*)(void*))vtbl[0xA0 / 4])(obj);
+            ext_00468920(timeline, count - 1);
+        } else {
+            ext_00468710(timeline, 0);
+            ext_00468790(timeline, 0);
+            void* obj = ext_00468660(timeline);
+            void** vtbl = *(void***)obj;
+            int32_t count = ((int32_t(__thiscall*)(void*))vtbl[0xA0 / 4])(obj);
+            ext_00468810(timeline, count - 1);
+        }
+
+        void* obj2 = ext_00468660(timeline);
+        void** vtbl2 = *(void***)obj2;
+        ((void(__thiscall*)(void*, uint32_t))vtbl2[0x98 / 4])(obj2, 5);
+
+        void* p = lift_field<void*>(self, 0x30);
+        void* h = lift_field<void*>(p, 0x20);
+        ((int32_t(__stdcall*)(void*, void*, int32_t))mem_00925688)(h, nullptr, 1);
+    }
+
+    menu[0] = (uint32_t)(uintptr_t)&mem_0092BD7C;
+    ext_006A6166(menu);
+}
+} // namespace lift_00459560
