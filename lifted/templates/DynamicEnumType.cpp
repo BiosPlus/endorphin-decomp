@@ -3296,3 +3296,58 @@ BOOLEAN fn_00516230(void* self, void** arg1, void* arg2) {
     return result;
 }
 } // namespace lift_00516230
+
+// [0x00516610]
+namespace lift_00516610 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006720C0: sub_006720C0 (thiscall: out-holder in ecx, one stack argument)
+extern void ext_006720C0(void* holder, void* arg);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// RTTI/ThrowInfo descriptor pushed for the throw below.
+extern const char mem_009DEC1C[];
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_42
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Stdcall(ret 8): dereferences arg1 to a target, throws DerivedException if it is null; otherwise obtains an inner object via ext_006720C0, calls its vfunc slot 42 with (out, arg2), releases the inner via slot 30, and returns the vfunc's bool result.
+// @field Unknown +0x08 void* field_0x08
+
+namespace {
+// Stack holder written by ext_006720C0 (ecx); the inner object lives at +0x04.
+struct InnerHolder {
+    void* field_0x00;
+    void* inner;
+};
+}  // namespace
+
+bool __stdcall fn_00516610(void* arg1, int arg2) {
+    void* target = *reinterpret_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Construct DerivedException in a stack buffer and throw it.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return false;  // not reached: CxxThrowException does not return
+    }
+
+    void* src = lift_field<void*>(target, 0x08);
+
+    InnerHolder holder{};
+    ext_006720C0(&holder, src);
+    void* inner = holder.inner;
+
+    using VSlot42 = bool(__thiscall*)(void* self, void* out, int index);
+    using VSlot30 = void(__thiscall*)(void* self, void* arg);
+
+    void* out = nullptr;
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    bool result = reinterpret_cast<VSlot42>(vtbl[42])(inner, &out, arg2);
+
+    if (inner != nullptr) {
+        void** vtbl30 = *reinterpret_cast<void***>(inner);
+        reinterpret_cast<VSlot30>(vtbl30[30])(inner, &out);
+    }
+    return result;
+}
+} // namespace lift_00516610

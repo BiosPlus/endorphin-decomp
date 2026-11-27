@@ -24852,6 +24852,13 @@
     "summary": "If the wrapped read-method pointer is non-null, forwards to fn_0046C500 with its field at +0x08 and returns the sret buffer; otherwise builds a temporary and throws.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00516610": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e::vfunc_42",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",
+    "signature": "bool __stdcall fn_00516610(void* arg1, int arg2)",
+    "summary": "Stdcall(ret 8): dereferences arg1 to a target, throws DerivedException if it is null; otherwise obtains an inner object via ext_006720C0, calls its vfunc slot 42 with (out, arg2), releases the inner via slot 30, and returns the vfunc's bool result.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x005167F0": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e::vfunc_47",
     "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",
