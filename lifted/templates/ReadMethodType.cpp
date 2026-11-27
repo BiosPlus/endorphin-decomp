@@ -67648,3 +67648,23 @@ void fn_00591320(void* self) {
     throwFn();
 }
 } // namespace lift_00591320
+
+// [0x005132C0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_5 (55 bytes)
+namespace lift_005132C0 {
+// Known callee 0x005119F0: sub_005119F0 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+// Copy-constructs a string temporary from the source value (stdcall-style: callee pops its arguments).
+extern void* ext_005119F0(void* self, const void* src);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_5 (Chromosome::Descriptor::getTypicalMutationSize)
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Copy-constructs a string temporary from the first dword of its argument, then always throws a default-message ExceptionWithMessage (never returns).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005132C0(void* self) {
+    void* src = *static_cast<void**>(self);
+    alignas(8) unsigned char tmp[32];
+    ext_005119F0(tmp, src);
+    ext_0046C4E0();
+}
+} // namespace lift_005132C0
