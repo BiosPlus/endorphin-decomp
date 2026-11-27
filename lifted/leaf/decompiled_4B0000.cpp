@@ -2367,3 +2367,23 @@ void* fn_004BEFC0() {
     return &mem_00AE1D44;
 }
 } // namespace lift_004BEFC0
+
+// [0x004BE7C0] sub_004BE7C0 (60 bytes)
+namespace lift_004BE7C0 {
+extern void ext_0066AC90(void* arg);
+extern int mem_00925354;
+extern int mem_00924FE4;
+
+// @name TypeInfoName_004BE7C0
+// @summary Fetches type_info name at 0xa328b0 (MSVC runtime), builds a temp std::string, passes the incoming esi-register value to ext_0066AC90, and returns it unchanged.
+void* fn_004BE7C0(void* esi) {
+    // Runtime import slots (MSVCR80 type_info::_name_internal_method, MSVCP80 std::string ctor)
+    // are not portable; referenced only so the metadata stays tied to the original asm.
+    (void)&mem_00925354;
+    (void)&mem_00924FE4;
+
+    // Original: push esi; call sub_0066AC90; esi restored from saved slot; return esi in eax.
+    ext_0066AC90(esi);
+    return esi;
+}
+} // namespace lift_004BE7C0
