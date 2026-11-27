@@ -1677,3 +1677,40 @@ float __thiscall fn_005E0EB0(void* self, const float* vec) {
     }
 }
 } // namespace lift_005E0EB0
+
+// [0x005E0570] sub_005E0570 (68 bytes)
+namespace lift_005E0570 {
+// Known callee 0x005863A0: sub_005863A0 (Counts elements in vector at +0x7c passing vtable+0xc4 check, RTDynamicCast, and ext_00584C10)
+extern uint32_t ext_005863A0(void* self);
+
+// @name CheckChildAtField190Matches
+// @class Unknown
+// @summary Returns 1 if self and its child at +0x190 both fail the vtable+0x70 predicate and fn_005863A0(child) returns 1; else 0.
+// @field Unknown +0x190 void* field_0x190
+
+namespace {
+// Virtual call through vtable slot +0x70 (thiscall, no args). Returns the al byte.
+inline uint8_t call_vslot_0x70(void* obj) {
+    void* vtbl = lift_field<void*>(obj, 0);
+    void* slot = lift_field<void*>(vtbl, 0x70);
+    using Fn = uint8_t(__thiscall*)(void*);
+    Fn fn = reinterpret_cast<Fn>(slot);
+    return fn(obj);
+}
+} // namespace
+
+uint8_t fn_005E0570(void* self) {
+    if (call_vslot_0x70(self) != 0) {
+        return 0;
+    }
+    void* child = lift_field<void*>(self, 0x190);
+    if (child == nullptr) {
+        return 0;
+    }
+    if (call_vslot_0x70(child) != 0) {
+        return 0;
+    }
+    child = lift_field<void*>(self, 0x190);
+    return ext_005863A0(child) == 1 ? 1 : 0;
+}
+} // namespace lift_005E0570

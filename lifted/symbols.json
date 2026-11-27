@@ -40629,6 +40629,13 @@
     "summary": "Stores the single stack argument at +0x294, zeroes the float block at +0x29C..+0x2E4, and clears the DWORDs at +0x2C0 and +0x2E8.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E0570": {
+    "name": "CheckChildAtField190Matches",
+    "class": "Unknown",
+    "signature": "inline uint8_t call_vslot_0x70(void* obj)",
+    "summary": "Returns 1 if self and its child at +0x190 both fail the vtable+0x70 predicate and fn_005863A0(child) returns 1; else 0.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E05F0": {
     "name": "NMData::HingeData::vfunc_59",
     "class": "NMData::HingeData",

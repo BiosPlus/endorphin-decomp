@@ -1,0 +1,22 @@
+{
+  "va": "0x005E0570",
+  "size": 68,
+  "orig_symbol": "sub_005E0570",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "CheckChildAtField190Matches",
+  "class": "Unknown",
+  "signature": "inline uint8_t call_vslot_0x70(void* obj)",
+  "summary": "Returns 1 if self and its child at +0x190 both fail the vtable+0x70 predicate and fn_005863A0(child) returns 1; else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:24Z"
+}
