@@ -43064,6 +43064,12 @@
     "summary": "Lazily initializes and returns the singleton object at 0x00B4135C.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x005949D0": {
+    "name": "getSingleton_005949D0",
+    "signature": "void* fn_005949D0(void)",
+    "summary": "Lazily constructs the global singleton at mem_00B4137C on first use (guarded by bit 0 of mem_00B41398), registers its destructor, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00594AA0": {
     "name": "ExprParser::Function2Type::vfunc_49",
     "class": "ExprParser::Function2Type\u003cWorld, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

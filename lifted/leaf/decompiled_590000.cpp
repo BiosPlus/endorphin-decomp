@@ -2572,3 +2572,30 @@ void* sub_00594970() {
     return &mem_00B4135C;
 }
 } // namespace lift_00594970
+
+// [0x005949D0] sub_005949D0 (95 bytes)
+namespace lift_005949D0 {
+// Known callee 0x00662610: sub_00662610 (constructor-style initializer; called with (singleton, 0x00A87370) on first use.)
+extern void ext_00662610(void* self, const void* info);
+// Known callee 0x006A6C87: sub_006A6C87 (atexit-style registrar; called with the destructor 0x0091D690.)
+extern void ext_006A6C87(void* dtor);
+
+// Lazy-init guard word; bit 0 is set on first call (original: test byte [0xb41398], al / or dword ptr [0xb41398], eax).
+extern int mem_00B41398;
+// Storage of the singleton object; its address is the return value.
+extern int mem_00B4137C;
+
+// @name getSingleton_005949D0
+// @summary Lazily constructs the global singleton at mem_00B4137C on first use (guarded by bit 0 of mem_00B41398), registers its destructor, and returns its address.
+// The original SEH frame (fs:[0] push/restore, try-state -1 -> 0 -> -1) is dropped; it only scoped the constructor call and carries no logic.
+void* fn_005949D0(void) {
+    int& guard = mem_00B41398;
+    if ((guard & 1) == 0) {
+        guard |= 1;
+        ext_00662610(&mem_00B4137C,
+                     reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A87370u)));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091D690u)));
+    }
+    return &mem_00B4137C;
+}
+} // namespace lift_005949D0

@@ -1,0 +1,13 @@
+{
+  "va": "0x005949D0",
+  "size": 95,
+  "orig_symbol": "sub_005949D0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "getSingleton_005949D0",
+  "signature": "void* fn_005949D0(void)",
+  "summary": "Lazily constructs the global singleton at mem_00B4137C on first use (guarded by bit 0 of mem_00B41398), registers its destructor, and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:41:18Z"
+}
