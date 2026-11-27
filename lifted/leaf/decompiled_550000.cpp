@@ -2162,3 +2162,23 @@ extern float fn_00554D40(void* self, float value) {
     return scaled / (f24 * f10);
 }
 } // namespace lift_00554D40
+
+// [0x00554D00] sub_00554D00 (30 bytes)
+namespace lift_00554D00 {
+// Known callee 0x005530F0: ScaleByUnitMode (Scales a float by a unit-conversion factor selected by the object's mode field at +0x2C (1..5); other modes return the input unchanged.)
+extern float ext_005530F0(void* self, float value);
+
+// @name ScaleByUnitModeAndFactors
+// @class Unknown
+// @summary Scales the input by ScaleByUnitMode(self, value), then by the two float factors stored at +0x24 and +0x10 of self.
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x24 float field_0x24
+float fn_00554D00(void* self, float value) {
+    const float scaled = ext_005530F0(self, value);
+    // x87 keeps the intermediate products at extended precision and only rounds on the final store.
+    const long double product = static_cast<long double>(scaled)
+                              * static_cast<long double>(lift_field<float>(self, 0x24))
+                              * static_cast<long double>(lift_field<float>(self, 0x10));
+    return static_cast<float>(product);
+}
+} // namespace lift_00554D00

@@ -27502,6 +27502,13 @@
     "summary": "Returns the argument passed through ext_005530B0, scaled by the float at self+0x20.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00554D00": {
+    "name": "ScaleByUnitModeAndFactors",
+    "class": "Unknown",
+    "signature": "float fn_00554D00(void* self, float value)",
+    "summary": "Scales the input by ScaleByUnitMode(self, value), then by the two float factors stored at +0x24 and +0x10 of self.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00554D20": {
     "name": "ScaleAngleByUnitModeAndDivide",
     "class": "UnknownObject",

@@ -1,0 +1,28 @@
+{
+  "va": "0x00554D00",
+  "size": 30,
+  "orig_symbol": "sub_00554D00",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "ScaleByUnitModeAndFactors",
+  "class": "Unknown",
+  "signature": "float fn_00554D00(void* self, float value)",
+  "summary": "Scales the input by ScaleByUnitMode(self, value), then by the two float factors stored at +0x24 and +0x10 of self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:05:53Z"
+}
