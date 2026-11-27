@@ -1845,3 +1845,41 @@ void* fn_00404EA0(void* begin, void* end, void* dst) {
     return out;
 }
 } // namespace lift_00404EA0
+
+// [0x0040FE10] sub_0040FE10 (93 bytes)
+namespace lift_0040FE10 {
+// Known callee 0x006A6010: thunk_MFC80_ord_5731 (IAT jump thunk forwarding to MFC80!ord_5731.)
+extern void ext_006A6010();
+
+namespace {
+
+using SlotFnWithValue = uint32_t (*)(void* self, uint32_t value);
+using SlotFnFormat = void (*)(void* self, const char* text, uint32_t len, void* buf, uint32_t count);
+
+// Returns the function pointer stored at byteOffset in obj's vtable.
+inline void* vtable_slot(void* obj, ptrdiff_t byteOffset) {
+    void* vptr = lift_field<void*>(obj, 0);
+    return lift_field<void*>(vptr, byteOffset);
+}
+
+} // namespace
+
+// @name copyTextToBuffer
+// @summary Calls vslot +0x38 with a7, calls ext_006A6010 with 1, then vslot +0x70 with (a6, strlen(a6), a2, 37), and finally vslot +0x38 with the first call's result. Stdcall, 7 args (ret 0x1c).
+// @field self +0x00 void* vptr
+void fn_0040FE10(void* self, void* a2, uint32_t a3, uint32_t a4, uint32_t a5,
+                 const char* a6, uint32_t a7) {
+    (void)a3;
+    (void)a4;
+    (void)a5;
+
+    uint32_t first = reinterpret_cast<SlotFnWithValue>(vtable_slot(self, 0x38))(self, a7);
+
+    ext_006A6010();
+
+    uint32_t len = static_cast<uint32_t>(std::strlen(a6));
+    reinterpret_cast<SlotFnFormat>(vtable_slot(self, 0x70))(self, a6, len, a2, 0x25);
+
+    reinterpret_cast<SlotFnWithValue>(vtable_slot(self, 0x38))(self, first);
+}
+} // namespace lift_0040FE10

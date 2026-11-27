@@ -1,0 +1,21 @@
+{
+  "va": "0x0040FE10",
+  "size": 93,
+  "orig_symbol": "sub_0040FE10",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "copyTextToBuffer",
+  "signature": "inline void* vtable_slot(void* obj, ptrdiff_t byteOffset)",
+  "summary": "Calls vslot +0x38 with a7, calls ext_006A6010 with 1, then vslot +0x70 with (a6, strlen(a6), a2, 37), and finally vslot +0x38 with the first call's result. Stdcall, 7 args (ret 0x1c).",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:45:37Z"
+}

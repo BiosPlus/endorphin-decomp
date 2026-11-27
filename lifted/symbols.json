@@ -1205,6 +1205,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0040FD00 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0040FE10": {
+    "name": "copyTextToBuffer",
+    "signature": "inline void* vtable_slot(void* obj, ptrdiff_t byteOffset)",
+    "summary": "Calls vslot +0x38 with a7, calls ext_006A6010 with 1, then vslot +0x70 with (a6, strlen(a6), a2, 37), and finally vslot +0x38 with the first call's result. Stdcall, 7 args (ret 0x1c).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040FE70": {
     "name": "toggleFlagAndInvalidate",
     "signature": "void fn_0040FE70(void *self)",
