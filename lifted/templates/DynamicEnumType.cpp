@@ -3461,3 +3461,55 @@ uint32_t fn_00516030(void* holder, void* arg2) {
     return forward(target, holder, arg2);
 }
 } // namespace lift_00516030
+
+// [0x005160D0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>::vfunc_46 (157 bytes)
+namespace lift_005160D0 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object, installs vtable)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006720C0: sub_006720C0 (18B; thiscall ctor-like helper, self = temp object, one stack arg)
+extern void ext_006720C0(void* self, void* arg);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException)
+extern void ext_006A6DD2(void* exc, const void* throw_info);
+// Throw info referenced by the original throw path (push 0x9dec1c)
+extern char mem_009DEC1C[];
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_46
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary If the first pointer of self is null, throws; otherwise builds a temp from it, assigns into self, releases the temp's inner object, then forwards (self, index) to the inner object's vfunc slot 46 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+uint32_t fn_005160D0(void* self, uint32_t index) {
+    void* obj = self;
+
+    void* p = lift_field<void*>(obj, 0x00);
+    if (p == nullptr) {
+        // Throw path: construct exception object and throw it.
+        alignas(16) unsigned char exc[0x10] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return 0; // not reached
+    }
+
+    // Temp object built from p->field_0x08, then assigned into obj.
+    alignas(8) unsigned char temp[0x30] = {};
+    ext_006720C0(temp, lift_field<void*>(p, 0x08));
+    ext_0041CF50(obj, temp);
+
+    // Release temp's inner object: vtable slot 0x78 (index 30 in 32-bit layout), this = inner, arg = temp.
+    void* tf04 = lift_field<void*>(temp, 0x04);
+    if (tf04 != nullptr) {
+        void** tvt = *reinterpret_cast<void***>(tf04);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(tvt[0x78 / 4]);
+        release(tf04, temp);
+    }
+
+    // Forward to inner object's vfunc slot 0xb8 (index 46): this = inner, args = (obj, index).
+    void* inner = lift_field<void*>(obj, 0x04);
+    void** ivt = *reinterpret_cast<void***>(inner);
+    auto vfunc46 = reinterpret_cast<uint32_t (*)(void*, void*, uint32_t)>(ivt[0xb8 / 4]);
+    return vfunc46(inner, obj, index);
+}
+} // namespace lift_005160D0
