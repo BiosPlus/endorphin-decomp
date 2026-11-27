@@ -2824,3 +2824,19 @@ void fn_00717DB0(void* self) {
     ext_006B9D80(self, reinterpret_cast<const char*>(&mem_00AAC46C));
 }
 } // namespace lift_00717DB0
+
+// [0x0071D530]
+namespace lift_0071D530 {
+// @name Unknown::initAssignCString_0071D530
+// @class Unknown
+// @summary Initializes the object with the C string at 0x00AACAB8 via initAssignCString_006B9D80 and returns the object pointer.
+
+
+extern void* ext_006B9D80(void* ecx, const char* s);
+
+void* fn_0071D530(void* self) {
+    const char* str = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AACAB8u));
+    ext_006B9D80(self, str);
+    return self;
+}
+} // namespace lift_0071D530

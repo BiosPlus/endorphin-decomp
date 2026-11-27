@@ -77434,6 +77434,13 @@
     "summary": "Follows the object at +0x4 through two helpers and returns a float; if +0x4 is null, looks up a child at +0xC by name and tail-dispatches a virtual getter (vtable slot +0x7C).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071D530": {
+    "name": "Unknown::initAssignCString_0071D530",
+    "class": "Unknown",
+    "signature": "void* fn_0071D530(void* self)",
+    "summary": "Initializes the object with the C string at 0x00AACAB8 via initAssignCString_006B9D80 and returns the object pointer.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071DC80": {
     "name": "sub_0071DC80",
     "signature": "bool fn_0071DC80(int value)",
