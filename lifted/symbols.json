@@ -29796,6 +29796,13 @@
     "summary": "Appends a copy of a 0x24-byte element to the vector at this: in-place copy-construct when spare capacity exists, otherwise delegates to the grow path.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050D820": {
+    "name": "NMData::TaskManager::vfunc_0_off_8",
+    "class": "NMData::TaskManager",
+    "signature": "extern \"C\" void __thiscall fn_0050D820(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Copies field +0x14 from a helper result into the argument object, runs the sub-object assign and temporary cleanups, then runs the base teardown on this-8; takes two stack arguments and returns void.",
+    "lifted_path": "lifted/NMData/TaskManager.cpp"
+  },
   "0x0050D8B0": {
     "name": "NMData::TaskManager::vfunc_1_off_8",
     "class": "NMData::TaskManager",

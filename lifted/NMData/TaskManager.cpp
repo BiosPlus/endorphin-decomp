@@ -134,3 +134,45 @@ void* __thiscall fn_0050AC30(void* self, void* arg1, void* arg2) {
     return arg1;
 }
 } // namespace lift_0050AC30
+
+// [0x0050D820] NMData::TaskManager::vfunc_0_off_8 (138 bytes)
+namespace lift_0050D820 {
+// Known callee 0x0050B960: Unknown::DestroyElementsAndReset_0050B960 (Calls vtable slot 0 (deleting-destructor style, flag 0) on each 0x24-byte element between begin and end, frees the buffer at begin, then nulls begin/end/capacity.)
+extern void __thiscall ext_0050B960(void* self);
+// sub_0050C7D0 (371B): thiscall, one stack argument.
+extern void __thiscall ext_0050C7D0(void* self, void* a);
+// sub_0050D4B0 (225B): thiscall, two stack arguments (callee pops 8), returns a pointer in EAX.
+extern void* __thiscall ext_0050D4B0(void* self, void* a, uint32_t b);
+// sub_0050D7C0 (84B): thiscall, no stack arguments.
+extern void __thiscall ext_0050D7C0(void* self);
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void __fastcall ext_0065F440(void* self);
+
+// @name NMData::TaskManager::vfunc_0_off_8
+// @class NMData::TaskManager
+// @summary Copies field +0x14 from a helper result into the argument object, runs the sub-object assign and temporary cleanups, then runs the base teardown on this-8; takes two stack arguments and returns void.
+// @field Unknown +0x14 uint32_t field_0x14
+extern void __thiscall fn_0050D820(void* self, void* arg1, uint32_t arg2) {
+    // Scratch slots for the three MSVC temporaries (sizes not recovered from the asm).
+    uint32_t tmpA[4] = {};
+    uint32_t tmpB[4] = {};
+    uint32_t tmpC[4] = {};
+
+    // Helper on this+8 returns an object pointer in EAX.
+    void* helper = ext_0050D4B0(tmpA, static_cast<char*>(self) + 0x8, 0);
+
+    // arg1 is the destination; its +0x14 field takes the helper's +0x14 field.
+    void* dst = arg1;
+    ext_0050C7D0(static_cast<char*>(dst) + 0x4, static_cast<char*>(helper) + 0x4);
+    lift_field<uint32_t>(dst, 0x14) = lift_field<uint32_t>(helper, 0x14);
+
+    // Temporary cleanups (the SEH state writes in the asm are not modeled).
+    ext_0050B960(tmpB);
+    ext_0065F440(tmpC);
+
+    // Base teardown on this-8.
+    ext_0050D7C0(static_cast<char*>(self) - 0x8);
+
+    (void)arg2;
+}
+} // namespace lift_0050D820

@@ -1,0 +1,22 @@
+{
+  "va": "0x0050D820",
+  "size": 138,
+  "orig_symbol": "NMData::TaskManager::vfunc_0_off_8",
+  "src_path": "src/NMData/TaskManager.cpp",
+  "lifted_path": "lifted/NMData/TaskManager.cpp",
+  "name": "NMData::TaskManager::vfunc_0_off_8",
+  "class": "NMData::TaskManager",
+  "signature": "extern \"C\" void __thiscall fn_0050D820(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Copies field +0x14 from a helper result into the argument object, runs the sub-object assign and temporary cleanups, then runs the base teardown on this-8; takes two stack arguments and returns void.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:10:29Z"
+}
