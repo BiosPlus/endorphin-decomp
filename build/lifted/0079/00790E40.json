@@ -1,0 +1,27 @@
+{
+  "va": "0x00790E40",
+  "size": 20,
+  "orig_symbol": "sub_00790E40",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "checkOrInitField64",
+  "signature": "uint8_t __thiscall fn_00790E40(void* self)",
+  "summary": "Checks field_0x60, calls ext_00791FF0 if non-zero, and returns byte field_0x64.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:23:16Z"
+}

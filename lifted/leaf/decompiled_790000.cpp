@@ -2093,3 +2093,22 @@ void fn_0079EEF0(void* self) {
     mem_00B61151 = 0;
 }
 } // namespace lift_0079EEF0
+
+// [0x00790E40]
+namespace lift_00790E40 {
+// @name checkOrInitField64
+// @summary Checks field_0x60, calls ext_00791FF0 if non-zero, and returns byte field_0x64.
+// @field Unknown +0x60 uint32_t field_0x60
+// @field Unknown +0x64 uint8_t field_0x64
+
+
+extern void ext_00791FF0(uint32_t);
+
+uint8_t __thiscall fn_00790E40(void* self) {
+    uint32_t val = lift_field<uint32_t>(self, 0x60);
+    if (val != 0) {
+        ext_00791FF0(val);
+    }
+    return lift_field<uint8_t>(self, 0x64);
+}
+} // namespace lift_00790E40
