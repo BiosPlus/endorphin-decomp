@@ -77230,6 +77230,13 @@
     "summary": "Loads the object at this+0x28, calls its vtable slot at +0x30 to obtain an index, and returns GetTableEntry28Address(index).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00682A00": {
+    "name": "NMData::ValuePtrData::vfunc_3_off_8",
+    "class": "NMData::ValuePtrData",
+    "signature": "void* fn_00682A00(void* self, void* arg)",
+    "summary": "Assigns child names from this+0x20/+0x48/+0x64 and forwards arg to sub-object +0x40 or +0x84 via 0x006722D0; returns arg.",
+    "lifted_path": "lifted/NMData/ValuePtrData.cpp"
+  },
   "0x00682C20": {
     "name": "NMData::ValuePtrData::vfunc_19",
     "class": "NMData::ValuePtrData",

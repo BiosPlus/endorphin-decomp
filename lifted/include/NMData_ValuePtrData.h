@@ -11,14 +11,24 @@
 namespace lifted_layout {
 struct NMData_ValuePtrData_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004BCC20, 0x004C0800, 0x004D87A0, 0x00513240, 0x0059F920, 0x005FCC10, 0x00639730, 0x00683930, 0x00695740)
-    // +0x24  void*                    field_0x24  (evidence: 0x00682DC0)
+    // +0x4   uint8_t field_0x04 (embedded sub-object; address only)  (evidence: 0x00682A00)
+    // +0x18  uint32_t field_0x18 (flag; nonzero enables 0x00682460 call)  (evidence: 0x00682A00)
+    // +0x20  void* field_0x20 (object pointer; vtable slot 12 dispatched)  (evidence: 0x00682A00)
+    // +0x24  void* field_0x24 (address only, passed to 0x00662810)  (evidence: 0x00682A00) // CONFLICT: multiple definitions at +0x24
+    // +0x24  void*                    field_0x24  (evidence: 0x00682DC0) // CONFLICT: multiple definitions at +0x24
     // +0x28  void*                    field_0x28  (evidence: 0x00682CE0)
+    // +0x40  uint8_t field_0x40 (embedded sub-object; address only)  (evidence: 0x00682A00)
     // +0x48  uint8_t field_0x48 (embedded sub-object; address only, passed to virtual call)  (evidence: 0x00682C20) // CONFLICT: multiple definitions at +0x48
     // +0x48  uint8_t                  field_0x48  (evidence: 0x00682C70) // CONFLICT: multiple definitions at +0x48
+    // +0x48  uint8_t field_0x48 (embedded std::string; c_str() taken)  (evidence: 0x00682A00) // CONFLICT: multiple definitions at +0x48
     // +0x4C  void* field_0x4c (object pointer; vtable dispatched)  (evidence: 0x00682C20) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  void*                    field_0x4c  (evidence: 0x00682C70) // CONFLICT: multiple definitions at +0x4C
     // +0x50  uint8_t field_0x50 (embedded sub-object; address only)  (evidence: 0x00682CE0)
-    // +0x64  uint32_t                 field_0x64  (evidence: 0x00682CE0)
+    // +0x5C  uint32_t field_0x5c (flag; nonzero enables name assignment)  (evidence: 0x00682A00)
+    // +0x64  uint32_t                 field_0x64  (evidence: 0x00682CE0) // CONFLICT: multiple definitions at +0x64
+    // +0x64  uint8_t field_0x64 (embedded std::string; c_str() taken)  (evidence: 0x00682A00) // CONFLICT: multiple definitions at +0x64
+    // +0x78  uint32_t field_0x78 (flag; nonzero enables name assignment)  (evidence: 0x00682A00)
+    // +0x84  void* field_0x84 (object pointer; used as target when mem_00B5A0B8 != 0)  (evidence: 0x00682A00)
     // +0x88  uint32_t                 field_0x88  (evidence: 0x00682DC0)
 };
 } // namespace lifted_layout

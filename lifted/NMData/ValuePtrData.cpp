@@ -149,3 +149,81 @@ DWORD fn_00685F80(void* self, DWORD* dst, DWORD value) {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(dst));
 }
 } // namespace lift_00685F80
+
+// [0x00682A00] NMData::ValuePtrData::vfunc_3_off_8 (208 bytes)
+namespace lift_00682A00 {
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+extern void ext_00427550(void* self, const char* name);
+// Known callee 0x00640110: sub_00640110 (296B)
+extern void* ext_00640110(void* self, uint32_t arg);
+// Known callee 0x00640A50: FormatAndAssignChildName (Formats the int argument into a 16-byte buffer with sprintf and assigns the result as the child name of the object referenced by the first argument.)
+extern void ext_00640A50(void* obj, int32_t value);
+// Known callee 0x00662810: sub_00662810 (49B)
+extern void ext_00662810(void* self, uint32_t a, void* out);
+// Known callee 0x006722D0: sub_006722D0 (Auto-lifted identical-shape clone of 0x006722B0 (sub_0067AEE8).)
+extern void ext_006722D0(void* self, void* arg);
+// Known callee 0x00682460: sub_00682460 (96B)
+extern void ext_00682460(void* self, void* obj, uint32_t a);
+extern int mem_00AA23DC;
+extern int mem_00AA2404;
+extern int mem_00AA23D4;
+extern int mem_00AA23E4;
+extern int mem_00924FF0;
+extern int mem_00AA23A0;
+extern int mem_00B5A0B8;
+
+// @name NMData::ValuePtrData::vfunc_3_off_8
+// @class NMData::ValuePtrData
+// @summary Assigns child names from this+0x20/+0x48/+0x64 and forwards arg to sub-object +0x40 or +0x84 via 0x006722D0; returns arg.
+// @field NMData::ValuePtrData +0x04 uint8_t field_0x04 (embedded sub-object; address only)
+// @field NMData::ValuePtrData +0x18 uint32_t field_0x18 (flag; nonzero enables 0x00682460 call)
+// @field NMData::ValuePtrData +0x20 void* field_0x20 (object pointer; vtable slot 12 dispatched)
+// @field NMData::ValuePtrData +0x24 void* field_0x24 (address only, passed to 0x00662810)
+// @field NMData::ValuePtrData +0x40 uint8_t field_0x40 (embedded sub-object; address only)
+// @field NMData::ValuePtrData +0x48 uint8_t field_0x48 (embedded std::string; c_str() taken)
+// @field NMData::ValuePtrData +0x5C uint32_t field_0x5c (flag; nonzero enables name assignment)
+// @field NMData::ValuePtrData +0x64 uint8_t field_0x64 (embedded std::string; c_str() taken)
+// @field NMData::ValuePtrData +0x78 uint32_t field_0x78 (flag; nonzero enables name assignment)
+// @field NMData::ValuePtrData +0x84 void* field_0x84 (object pointer; used as target when mem_00B5A0B8 != 0)
+void* fn_00682A00(void* self, void* arg) {
+    using CStrFn = const char* (*)(void*);
+    using VFn = int32_t (*)(void*);
+
+    if (lift_field<uint32_t>(self, 0x18) != 0) {
+        ext_00682460(arg, &lift_field<uint8_t>(self, 0x04),
+                     static_cast<uint32_t>(mem_00AA23DC));
+    }
+
+    void* name_obj = ext_00640110(arg, static_cast<uint32_t>(mem_00AA2404));
+    void* vobj = lift_field<void*>(self, 0x20);
+    void** vtable = *reinterpret_cast<void***>(vobj);
+    int32_t vresult = reinterpret_cast<VFn>(vtable[12])(vobj);
+    ext_00640A50(name_obj, vresult);
+
+    ext_00662810(arg, static_cast<uint32_t>(mem_00AA23D4),
+                 &lift_field<void*>(self, 0x24));
+
+    if (lift_field<uint32_t>(self, 0x5C) != 0) {
+        void* tmp = ext_00640110(arg, static_cast<uint32_t>(mem_00AA23E4));
+        const char* s = (*reinterpret_cast<CStrFn*>(&mem_00924FF0))(
+            &lift_field<uint8_t>(self, 0x48));
+        ext_00427550(&tmp, s);
+    }
+
+    if (lift_field<uint32_t>(self, 0x78) != 0) {
+        void* tmp = ext_00640110(arg, static_cast<uint32_t>(mem_00AA23A0));
+        const char* s = (*reinterpret_cast<CStrFn*>(&mem_00924FF0))(
+            &lift_field<uint8_t>(self, 0x64));
+        ext_00427550(&tmp, s);
+    }
+
+    void* target_obj = lift_field<void*>(self, 0x84);
+    void* target = &lift_field<uint8_t>(self, 0x40);
+    if (target_obj != nullptr && mem_00B5A0B8 != 0) {
+        target = target_obj;
+    }
+    ext_006722D0(target, arg);
+
+    return arg;
+}
+} // namespace lift_00682A00

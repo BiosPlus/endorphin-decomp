@@ -1,0 +1,76 @@
+{
+  "va": "0x00682A00",
+  "size": 208,
+  "orig_symbol": "NMData::ValuePtrData::vfunc_3_off_8",
+  "src_path": "src/NMData/ValuePtrData.cpp",
+  "lifted_path": "lifted/NMData/ValuePtrData.cpp",
+  "name": "NMData::ValuePtrData::vfunc_3_off_8",
+  "class": "NMData::ValuePtrData",
+  "signature": "void* fn_00682A00(void* self, void* arg)",
+  "summary": "Assigns child names from this+0x20/+0x48/+0x64 and forwards arg to sub-object +0x40 or +0x84 via 0x006722D0; returns arg.",
+  "fields": [
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x4",
+      "type": "uint8_t field_0x04 (embedded sub-object; address",
+      "name": "only)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x18",
+      "type": "uint32_t field_0x18 (flag; nonzero enables 0x00682460",
+      "name": "call)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x20",
+      "type": "void* field_0x20 (object pointer; vtable slot 12",
+      "name": "dispatched)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x24",
+      "type": "void* field_0x24 (address only, passed to",
+      "name": "0x00662810)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x40",
+      "type": "uint8_t field_0x40 (embedded sub-object; address",
+      "name": "only)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x48",
+      "type": "uint8_t field_0x48 (embedded std::string; c_str()",
+      "name": "taken)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x5C",
+      "type": "uint32_t field_0x5c (flag; nonzero enables name",
+      "name": "assignment)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x64",
+      "type": "uint8_t field_0x64 (embedded std::string; c_str()",
+      "name": "taken)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x78",
+      "type": "uint32_t field_0x78 (flag; nonzero enables name",
+      "name": "assignment)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x84",
+      "type": "void* field_0x84 (object pointer; used as target when mem_00B5A0B8 !=",
+      "name": "0)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:11:01Z"
+}
