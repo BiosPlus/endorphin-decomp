@@ -1402,3 +1402,53 @@ void fn_004F0B10(void* self) {
     }
 }
 } // namespace lift_004F0B10
+
+// [0x004FDD70] sub_004FDD70 (146 bytes)
+namespace lift_004FDD70 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (stdcall-style with one stack arg, thiscall self in ECX)
+extern void* __thiscall ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x006A6E9E: thunk to MSVCR80!__RTDynamicCast(inptr, vfDelta, srcType, targetType, isReference)
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType, const void* targetType, int32_t isReference);
+// Data: vtable for Unknown (0x0094EC74), RTTI type descriptors (0x00A2F4F4 source, 0x00A40528 target)
+extern int mem_0094EC74;
+extern int mem_00A2F4F4;
+extern int mem_00A40528;
+
+// @name Unknown::initVtblAndDynCast
+// @class Unknown
+// @summary Sets the vtable, stores two stack args, performs RTTI dynamic_cast on the second arg, and falls back to storing it when the cast fails; returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// Original MSVC SEH frame setup/teardown (fs:[0] push/pop, try-level writes) is omitted as boilerplate.
+void* fn_004FDD70(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    ext_006657F0(self, 0);
+
+    lift_field<void*>(self, 0x00) = static_cast<void*>(&mem_0094EC74);
+    lift_field<uint32_t>(self, 0x10) = a1;
+
+    void* castResult = ext_006A6E9E(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(a2)),
+        0,
+        static_cast<const void*>(&mem_00A2F4F4),
+        static_cast<const void*>(&mem_00A40528),
+        0);
+
+    lift_field<void*>(self, 0x14) = castResult;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = a3;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = a4;
+
+    if (castResult == nullptr) {
+        lift_field<uint32_t>(self, 0x08) = a2;
+    }
+
+    return self;
+}
+} // namespace lift_004FDD70
