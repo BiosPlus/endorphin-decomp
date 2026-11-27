@@ -4776,6 +4776,13 @@
     "summary": "Starting from the object at arg, follows the dword at offset 0 of each node (linked chain) until it reaches a node whose byte at +0xC1 is nonzero; returns the node preceding that node (or arg itself if the first node already matches).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004442E0": {
+    "name": "TreeIterator::operator++",
+    "class": "TreeIterator",
+    "signature": "void __thiscall fn_004442E0(void* self)",
+    "summary": "Advance a tree iterator to its in-order successor (sentinel-aware, invalid-param checks on misuse).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00444360": {
     "name": "sub_00444360",
     "class": "Unknown",

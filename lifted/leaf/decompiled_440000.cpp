@@ -2578,3 +2578,62 @@ std::string* fn_0044DCF0(void* self, std::string* out, int index) {
     return out;
 }
 } // namespace lift_0044DCF0
+
+// [0x004442E0] sub_004442E0 (127 bytes)
+namespace lift_004442E0 {
+// Import slot holding the CRT invalid-parameter handler (called indirectly).
+extern int mem_00925134;
+
+using InvalidParamFn = void (__cdecl*)();
+
+// @name TreeIterator::operator++
+// @class TreeIterator
+// @summary Advance a tree iterator to its in-order successor (sentinel-aware, invalid-param checks on misuse).
+// @field TreeIterator +0x00 void* field_0x00
+// @field TreeIterator +0x04 void* node
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0xC1 uint8_t is_nil
+void __thiscall fn_004442E0(void* self) {
+    const InvalidParamFn invalid_param =
+        reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    // Original calls the handler and keeps going (no early return).
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        invalid_param();
+    }
+
+    void* node = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(node, 0xC1) != 0) {
+        // Incrementing the sentinel is invalid.
+        invalid_param();
+        return;
+    }
+
+    void* right = lift_field<void*>(node, 0x08);
+    if (lift_field<uint8_t>(right, 0xC1) == 0) {
+        // Right subtree exists: successor is its leftmost node.
+        void* cur = right;
+        void* left = lift_field<void*>(cur, 0x00);
+        while (lift_field<uint8_t>(left, 0xC1) == 0) {
+            cur = left;
+            left = lift_field<void*>(cur, 0x00);
+        }
+        lift_field<void*>(self, 0x04) = cur;
+        return;
+    }
+
+    // No right subtree: climb while we are a right child.
+    void* p = lift_field<void*>(node, 0x04);
+    while (lift_field<uint8_t>(p, 0xC1) == 0) {
+        void* cur = lift_field<void*>(self, 0x04);
+        if (cur != lift_field<void*>(p, 0x08)) {
+            break;
+        }
+        lift_field<void*>(self, 0x04) = p;
+        p = lift_field<void*>(p, 0x04);
+    }
+    lift_field<void*>(self, 0x04) = p;
+}
+} // namespace lift_004442E0

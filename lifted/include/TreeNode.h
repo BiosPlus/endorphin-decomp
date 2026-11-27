@@ -11,12 +11,12 @@ struct TreeNode_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007D4AA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (child pointer, taken when node key >= search key)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 left  (evidence: 0x0041A190, 0x005AC8C0, 0x005D0670, 0x005DF270, 0x005FF000, 0x00624DC0, 0x007DEC80) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    left  (evidence: 0x004205B0, 0x0045E510, 0x00472730, 0x004774B0, 0x00487C00, 0x00493330, 0x004F0FB0, 0x0052A230, 0x0055C490, 0x0059B290, 0x005AD010, 0x005FD330, 0x00624F10, 0x007D48F0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    left  (evidence: 0x004205B0, 0x004442E0, 0x0045E510, 0x00472730, 0x004774B0, 0x00487C00, 0x00493330, 0x004F0FB0, 0x0052A230, 0x0055C490, 0x0059B290, 0x005AD010, 0x005FD330, 0x00624F10, 0x007D48F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (child link, traversed to leftmost)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint32_t                 field_0x04  (evidence: 0x0041A200, 0x007D4AA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00414E00) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 parent  (evidence: 0x0041A190, 0x005AC8C0, 0x005FF000, 0x00624DC0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    parent  (evidence: 0x0045E510, 0x0052A230) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    parent  (evidence: 0x004442E0, 0x0045E510, 0x0052A230) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    parent_or_root  (evidence: 0x004205B0, 0x00472730, 0x00487C00, 0x0055C490, 0x0059B290, 0x005AD010) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 right  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    right  (evidence: 0x007D48F0) // CONFLICT: multiple definitions at +0x4
@@ -27,7 +27,7 @@ struct TreeNode_Fields {
     // +0x8   uint32_t                 parent  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    parent  (evidence: 0x007D48F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 right  (evidence: 0x0041A190, 0x005AC8C0, 0x005D0670, 0x005DF270, 0x005FF000, 0x00624DC0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    right  (evidence: 0x004205B0, 0x0045E510, 0x00472730, 0x004774B0, 0x00487C00, 0x00493330, 0x004F0FB0, 0x0052A230, 0x0055C490, 0x0059B290, 0x005AD010, 0x005FD330, 0x00624F10) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    right  (evidence: 0x004205B0, 0x004442E0, 0x0045E510, 0x00472730, 0x004774B0, 0x00487C00, 0x00493330, 0x004F0FB0, 0x0052A230, 0x0055C490, 0x0059B290, 0x005AD010, 0x005FD330, 0x00624F10) // CONFLICT: multiple definitions at +0x8
     // +0xC   char[1]                  key  (evidence: 0x0052A230) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              key  (evidence: 0x004205B0, 0x00472730, 0x004774B0, 0x00487C00, 0x004F0FB0, 0x0055C490, 0x0059B290, 0x005AD010) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 key  (evidence: 0x0041A190, 0x0045E510) // CONFLICT: multiple definitions at +0xC
@@ -51,6 +51,6 @@ struct TreeNode_Fields {
     // +0x39  uint8_t                  is_nil  (evidence: 0x004205B0, 0x00472730, 0x00487C00, 0x004F0FB0, 0x0055C490, 0x0059B290, 0x005AD010)
     // +0x61  uint8_t                  isNil  (evidence: 0x0052A230) // CONFLICT: multiple definitions at +0x61
     // +0x61  uint8_t field_0x61 (end/nil sentinel flag; nonzero = nil)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x61
-    // +0xC1  uint8_t                  is_nil  (evidence: 0x004774B0)
+    // +0xC1  uint8_t                  is_nil  (evidence: 0x004442E0, 0x004774B0)
 };
 } // namespace lifted_layout

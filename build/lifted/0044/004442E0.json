@@ -1,0 +1,52 @@
+{
+  "va": "0x004442E0",
+  "size": 127,
+  "orig_symbol": "sub_004442E0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "TreeIterator::operator++",
+  "class": "TreeIterator",
+  "signature": "void __thiscall fn_004442E0(void* self)",
+  "summary": "Advance a tree iterator to its in-order successor (sentinel-aware, invalid-param checks on misuse).",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "node"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC1",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:06:24Z"
+}
