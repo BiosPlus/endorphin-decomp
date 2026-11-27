@@ -53168,6 +53168,13 @@
     "summary": "Lazily initializes static string at 0x00B45EF0 with 0x00A911C4 and registers atexit destructor 0x0091E480",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E4710": {
+    "name": "FixedPathJointData::vfunc_69",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void __thiscall fn_005E4710(void* self, uint32_t target_state, void* arg2)",
+    "summary": "Advances FixedPathJointData initialization state machine and binds target transform/frame-buffer listener on state 4.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E4850": {
     "name": "NMData::FixedPathJointData::vfunc_68",
     "class": "NMData::FixedPathJointData",

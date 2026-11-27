@@ -764,3 +764,95 @@ void* __thiscall fn_005EBF70(void* self, void* arg1) {
     return arg1;
 }
 } // namespace lift_005EBF70
+
+// [0x005E4710]
+namespace lift_005E4710 {
+extern void __thiscall ext_005E12D0(void* self);
+extern uint8_t __thiscall ext_005E1310(void* self);
+extern void __thiscall ext_00662400(void* self, void* arg);
+
+// @name FixedPathJointData::vfunc_69
+// @class NMData::FixedPathJointData
+// @summary Advances FixedPathJointData initialization state machine and binds target transform/frame-buffer listener on state 4.
+// @field NMData::FixedPathJointData +0x4 void* TransformInterface_vptr
+// @field NMData::FixedPathJointData +0x154 void* FrameBufferTickEventListener_base
+// @field NMData::FixedPathJointData +0x18C void* field_0x18c
+// @field NMData::FixedPathJointData +0x190 void* field_0x190
+// @field NMData::FixedPathJointData +0x194 uint32_t field_0x194
+// @field NMData::FixedPathJointData +0x234 void* field_0x234
+void __thiscall fn_005E4710(void* self, uint32_t target_state, void* arg2) {
+    uint32_t state = lift_field<uint32_t>(self, 0x194);
+    if (state > 5) {
+        return;
+    }
+
+    switch (state) {
+    case 0:
+        lift_field<uint32_t>(self, 0x194) = 1;
+        if (target_state == 1) {
+            return;
+        }
+        [[fallthrough]];
+    case 1:
+        lift_field<uint32_t>(self, 0x194) = 2;
+        if (target_state == 2) {
+            return;
+        }
+        [[fallthrough]];
+    case 2:
+        lift_field<uint32_t>(self, 0x194) = 3;
+        if (target_state == 3) {
+            return;
+        }
+        [[fallthrough]];
+    case 3:
+        lift_field<uint32_t>(self, 0x194) = 4;
+        if (target_state == 4) {
+            return;
+        }
+        [[fallthrough]];
+    case 4: {
+        ext_005E12D0(self);
+        void* iface = static_cast<uint8_t*>(self) + 0x4;
+        void* vtbl = lift_field<void*>(self, 0x4);
+        using Vfunc7 = uint8_t(__thiscall*)(void*);
+        auto fn7 = *reinterpret_cast<Vfunc7*>(static_cast<uint8_t*>(vtbl) + 0x1C);
+        bool skip_register = false;
+        if (fn7(iface) != 0) {
+            void* obj190 = lift_field<void*>(self, 0x190);
+            if (obj190 != nullptr) {
+                uint8_t res = ext_005E1310(obj190);
+                obj190 = lift_field<void*>(self, 0x190);
+                void* sub234 = lift_field<void*>(self, 0x234);
+                if (res != 0) {
+                    void* inner234 = lift_field<void*>(obj190, 0x234);
+                    lift_field<void*>(sub234, 0x5C) =
+                        inner234 ? (static_cast<uint8_t*>(inner234) + 0x4) : nullptr;
+                    skip_register = true;
+                } else {
+                    lift_field<void*>(sub234, 0x5C) =
+                        obj190 ? (static_cast<uint8_t*>(obj190) + 0x150) : nullptr;
+                }
+            } else {
+                void* obj18c = lift_field<void*>(self, 0x18C);
+                if (obj18c != nullptr) {
+                    void* sub234 = lift_field<void*>(self, 0x234);
+                    lift_field<void*>(sub234, 0x5C) = static_cast<uint8_t*>(obj18c) + 0x154;
+                }
+            }
+        }
+        if (!skip_register) {
+            ext_00662400(arg2, static_cast<uint8_t*>(self) + 0x154);
+        }
+        [[fallthrough]];
+    }
+    case 5:
+        lift_field<uint32_t>(self, 0x194) = 5;
+        if (target_state == 5) {
+            return;
+        }
+        lift_field<uint32_t>(self, 0x194) = 6;
+        return;
+    }
+}
+} // namespace lift_005E4710

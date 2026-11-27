@@ -1,0 +1,52 @@
+{
+  "va": "0x005E4710",
+  "size": 291,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_69",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "FixedPathJointData::vfunc_69",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void __thiscall fn_005E4710(void* self, uint32_t target_state, void* arg2)",
+  "summary": "Advances FixedPathJointData initialization state machine and binds target transform/frame-buffer listener on state 4.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "TransformInterface_vptr"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "FrameBufferTickEventListener_base"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18c"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x194",
+      "type": "uint32_t",
+      "name": "field_0x194"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:46:56Z"
+}
