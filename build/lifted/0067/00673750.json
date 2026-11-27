@@ -1,0 +1,33 @@
+{
+  "va": "0x00673750",
+  "size": 70,
+  "orig_symbol": "sub_00673750",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "sub_00673750",
+  "signature": "void fn_00673750(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00559C80 (destroyRecordVectorAndReset).",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "self",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "self",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "capacity"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T02:23:21Z"
+}

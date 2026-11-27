@@ -50501,6 +50501,18 @@
     "summary": "Pure jump thunk forwarding to sub_00672D10.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00673720": {
+    "name": "sub_00673720",
+    "signature": "void __stdcall fn_00673720(void* first, void* last)",
+    "summary": "Auto-lifted identical-shape clone of 0x00559C50 (destroyStringPairRange).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x00673750": {
+    "name": "sub_00673750",
+    "signature": "void fn_00673750(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00559C80 (destroyRecordVectorAndReset).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x006737A0": {
     "name": "sub_006737A0",
     "signature": "extern \"C\" void fn_006737A0(void)",

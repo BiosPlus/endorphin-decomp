@@ -2139,3 +2139,64 @@ void fn_006724B0(void** first, int holeIndex, int topIndex, void* value) {
     first[holeIndex] = value;
 }
 } // namespace lift_006724B0
+
+// [0x00673720] sub_00673720 (35 bytes)
+namespace lift_00673720 {
+// @name sub_00673720
+// @summary Auto-lifted identical-shape clone of 0x00559C50 (destroyStringPairRange).
+namespace lift_00559C50 {
+// Known callee 0x00558B90: destroyStringAndRecordVector (Destroys a vector of 0x3C-byte string-pair records and the owning std::string.)
+extern void ext_00673420(void* self);
+
+// @name destroyStringPairRange
+// @summary Calls fn_00558B90 on each 0x2C-byte record in [first, last) and returns (stdcall, ret 8).
+void __stdcall fn_00673720(void* first, void* last) {
+    auto* cur = static_cast<unsigned char*>(first);
+    auto* end = static_cast<unsigned char*>(last);
+    if (cur == end) {
+        return;
+    }
+    do {
+        ext_00673420(cur);
+        cur += 0x50;
+    } while (cur != end);
+}
+} // namespace lift_00559C50
+} // namespace lift_00673720
+
+// [0x00673750] sub_00673750 (70 bytes)
+namespace lift_00673750 {
+// @name sub_00673750
+// @summary Auto-lifted identical-shape clone of 0x00559C80 (destroyRecordVectorAndReset).
+namespace lift_00559C80 {
+// Known callee 0x00558B90: destroyStringAndRecordVector (Destroys a vector of 0x3C-byte string-pair records and the owning std::string.)
+extern void ext_00673420(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+
+// @name destroyRecordVectorAndReset
+// @summary Destroys each 0x2C-byte record in the vector at [+4, +8), releases the buffer via MFC80 ord_764 when it is non-null, then clears the three vector pointers.
+// @field self +0x04 uint32_t begin
+// @field self +0x08 uint32_t end
+// @field self +0x0C uint32_t capacity
+void fn_00673750(void* self) {
+    uint32_t& begin = lift_field<uint32_t>(self, 0x4);
+    uint32_t& end = lift_field<uint32_t>(self, 0x8);
+    uint32_t& capacity = lift_field<uint32_t>(self, 0xC);
+
+    if (begin != 0) {
+        uint32_t cur = begin;
+        const uint32_t last = end;
+        while (cur != last) {
+            ext_00673420(reinterpret_cast<void*>(cur));
+            cur += 0x50;
+        }
+        ext_006A5C5C(begin);
+    }
+
+    begin = 0;
+    end = 0;
+    capacity = 0;
+}
+} // namespace lift_00559C80
+} // namespace lift_00673750
