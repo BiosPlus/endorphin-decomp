@@ -458,6 +458,12 @@
     "summary": "Closes the DrawDib handle at this+0xDC via DrawDibClose, then deletes the device context at this+0xE4 via GDI32!DeleteDC (thiscall, no args).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004034B0": {
+    "name": "CleanupAviAndGdiHandles",
+    "signature": "extern \"C\" void fn_004034B0(void* self)",
+    "summary": "Deletes the GDI object at +0xE0, releases AVI stream handles at +0x90/+0x8C, closes the AVI file, then zeroes the handle slots.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00403560": {
     "name": "StringExceptionWithMember::ctor",
     "class": "StringExceptionWithMember",

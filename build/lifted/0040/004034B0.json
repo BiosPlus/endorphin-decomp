@@ -1,0 +1,13 @@
+{
+  "va": "0x004034B0",
+  "size": 123,
+  "orig_symbol": "sub_004034B0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "CleanupAviAndGdiHandles",
+  "signature": "extern \"C\" void fn_004034B0(void* self)",
+  "summary": "Deletes the GDI object at +0xE0, releases AVI stream handles at +0x90/+0x8C, closes the AVI file, then zeroes the handle slots.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:48:33Z"
+}

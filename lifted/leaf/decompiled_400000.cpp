@@ -2144,3 +2144,60 @@ void __thiscall fn_0040C490(uintptr_t self, uintptr_t rhs_ptr) {
     mem_00924FF4(str_ptr);
 }
 } // namespace lift_0040C490
+
+// [0x004034B0] sub_004034B0 (123 bytes)
+namespace lift_004034B0 {
+// Known callee 0x006A343C: thunk_AVIFIL32_AVIStreamGetFrameClose (IAT jump thunk forwarding to AVIFIL32!AVIStreamGetFrameClose.)
+extern void ext_006A343C();
+// Known callee 0x006A3436: thunk_AVIFIL32_AVIStreamRelease (IAT jump thunk forwarding to AVIFIL32!AVIStreamRelease.)
+extern void ext_006A3436();
+// Known callee 0x006A342A: thunk_AVIFIL32_AVIFileExit (IAT jump thunk forwarding to AVIFIL32!AVIFileExit.)
+extern void ext_006A342A();
+// IAT slot for GDI32!DeleteObject; holds the runtime function address.
+extern uint32_t mem_00924090;
+
+// @name CleanupAviAndGdiHandles
+// @summary Deletes the GDI object at +0xE0, releases AVI stream handles at +0x90/+0x8C, closes the AVI file, then zeroes the handle slots.
+// @field +0xE0 uint32_t field_0xE0
+// @field +0x90 uint32_t field_0x90
+// @field +0x8C uint32_t field_0x8C
+// @field +0xE8 uint32_t field_0xE8
+// @field +0xBC uint32_t field_0xBC
+// @field +0xC0 uint32_t field_0xC0
+// @field +0xC4 uint32_t field_0xC4
+// @field +0xC8 uint32_t field_0xC8
+// @field +0xCC uint32_t field_0xCC
+// @field +0xD8 uint32_t field_0xD8
+extern void fn_004034B0(void* self) {
+    uint32_t gdi_object = lift_field<uint32_t>(self, 0xE0);
+    if (gdi_object != 0) {
+        using DeleteObjectFn = int(__stdcall*)(void*);
+        auto delete_object = reinterpret_cast<DeleteObjectFn>(static_cast<uintptr_t>(mem_00924090));
+        delete_object(reinterpret_cast<void*>(static_cast<uintptr_t>(gdi_object)));
+    }
+
+    using StdcallHandleFn = void(__stdcall*)(uint32_t);
+    uint32_t stream_get_frame = lift_field<uint32_t>(self, 0x90);
+    if (stream_get_frame != 0) {
+        reinterpret_cast<StdcallHandleFn>(&ext_006A343C)(stream_get_frame);
+    }
+
+    uint32_t stream = lift_field<uint32_t>(self, 0x8C);
+    if (stream != 0) {
+        reinterpret_cast<StdcallHandleFn>(&ext_006A3436)(stream);
+    }
+
+    ext_006A342A();
+
+    lift_field<uint32_t>(self, 0xE8) = 0;
+    lift_field<uint32_t>(self, 0x8C) = 0;
+    lift_field<uint32_t>(self, 0x90) = 0;
+    lift_field<uint32_t>(self, 0xBC) = 0;
+    lift_field<uint32_t>(self, 0xC0) = 0;
+    lift_field<uint32_t>(self, 0xC4) = 0;
+    lift_field<uint32_t>(self, 0xC8) = 0;
+    lift_field<uint32_t>(self, 0xCC) = 0;
+    lift_field<uint32_t>(self, 0xE0) = 0;
+    lift_field<uint32_t>(self, 0xD8) = 0;
+}
+} // namespace lift_004034B0
