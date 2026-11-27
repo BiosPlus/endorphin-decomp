@@ -71043,6 +71043,13 @@
     "summary": "Fills a 4-double temp with 1.0s, overwrites the first three with FillTripleFromChains, copies the 32-byte temp to out, and returns out.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070C200": {
+    "name": "Unknown::FillQuadThenCopyViaTriple_0070C200",
+    "class": "Unknown",
+    "signature": "void* fn_0070C200(void* self, void* out)",
+    "summary": "Fills a 4-double scratch buffer with ones, overwrites its first three doubles via ext_0070BD10, copies the 32 bytes to out, calls the empty ext_006D80A0, and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070C2D0": {
     "name": "Unknown::fillQuadAndCopyOut_0070C2D0",
     "class": "Unknown",

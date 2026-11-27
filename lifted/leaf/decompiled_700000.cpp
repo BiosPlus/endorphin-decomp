@@ -2266,3 +2266,27 @@ void* fn_0070C2D0(void* self, void* out) {
     return out;
 }
 } // namespace lift_0070C2D0
+
+// [0x0070C200] sub_0070C200 (127 bytes)
+namespace lift_0070C200 {
+// Known callee 0x0077FB40: Unknown::setDoubleQuadToOnes (Writes four IEEE-754 doubles of 1.0 (0x3FF0000000000000) at +0x00, +0x08, +0x10, +0x18 and returns self.)
+extern void* ext_0077FB40(void* self);
+// Known callee 0x0070BD10: sub_0070BD10 (Auto-lifted identical-shape clone of 0x0070BBD0 (Unknown::FillTripleFromChains).)
+// Signature inferred from call site: ecx = self, one stack arg = double* out.
+extern void* ext_0070BD10(void* self, double* out);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+// Called with ecx = scratch buffer; body is empty.
+extern void ext_006D80A0(void* self);
+
+// @name Unknown::FillQuadThenCopyViaTriple_0070C200
+// @class Unknown
+// @summary Fills a 4-double scratch buffer with ones, overwrites its first three doubles via ext_0070BD10, copies the 32 bytes to out, calls the empty ext_006D80A0, and returns out.
+void* fn_0070C200(void* self, void* out) {
+    double buf[4];
+    ext_0077FB40(buf);
+    ext_0070BD10(self, buf);
+    std::memcpy(out, buf, sizeof(buf));
+    ext_006D80A0(buf);
+    return out;
+}
+} // namespace lift_0070C200
