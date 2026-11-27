@@ -2559,3 +2559,53 @@ uint32_t fn_006885F0(void* self, const void* name) {
     return 0;
 }
 } // namespace lift_006885F0
+
+// [0x00681820]
+namespace lift_00681820 {
+// @name sub_00681820_ctor
+// @summary Initializes object fields, sub-objects, a PerformanceTimer, and a std::string.
+// @field Self +0x04 uint32_t field_0x04
+// @field Self +0x08 uint32_t field_0x08
+// @field Self +0x0c uint32_t field_0x0c
+// @field Self +0x14 uint32_t field_0x14
+// @field Self +0x18 uint32_t field_0x18
+// @field Self +0x1c uint32_t field_0x1c
+// @field Self +0x24 uint32_t field_0x24
+// @field Self +0x28 uint32_t field_0x28
+// @field Self +0x2c uint32_t field_0x2c
+// @field Self +0x30 uint32_t field_0x30
+// @field Self +0x34 PerformanceTimer field_0x34
+// @field Self +0x38 uint8_t field_0x38
+// @field Self +0x40 float field_0x40
+// @field Self +0x44 std::string field_0x44
+
+
+    void __thiscall ext_0065C5F0(void* self);
+    void* __thiscall ext_006799F0(void* self);
+    extern uint32_t mem_00924FE8;
+
+void* __thiscall fn_00681820(void* self) {
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1c) = 0;
+
+    lift_field<uint32_t>(self, 0x24) = 0;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2c) = 0;
+
+    ext_0065C5F0(static_cast<uint8_t*>(self) + 0x30);
+    ext_006799F0(static_cast<uint8_t*>(self) + 0x34);
+
+    using StringCtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<StringCtorFn>(mem_00924FE8)(static_cast<uint8_t*>(self) + 0x44);
+
+    lift_field<float>(self, 0x40) = 0.0f;
+    lift_field<uint8_t>(self, 0x38) = 0;
+
+    return self;
+}
+} // namespace lift_00681820

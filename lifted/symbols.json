@@ -56880,6 +56880,13 @@
     "summary": "Pure jump thunk forwarding to sub_0067C170.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00693C30": {
+    "name": "Quat::fromVector",
+    "class": "Quat",
+    "signature": "void __thiscall sub_00693C30(void* self, const float* v)",
+    "summary": "Converts a 3-component vector into a 4-component quaternion",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00693CC0": {
     "name": "Quat4f::normalize",
     "class": "Quat4f",
