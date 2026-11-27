@@ -16310,6 +16310,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x60 and tail-calls sub_004BBC20.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004BBFD0": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_2",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "Replaces the pending element at +0x18 with the one at +0x1c (releasing the old one), removes the new element from the +0x10 string vector, notifies the +0x24 listener, then forwards to +0x14 if set.",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
+  },
   "0x004BC240": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RemoveElementCommand::vfunc_1",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RemoveElementCommand",

@@ -418,3 +418,63 @@ void fn_004B5480(void* self) {
     }
 }
 } // namespace lift_004B5480
+
+// [0x004BBFD0]
+namespace lift_004BBFD0 {
+// @name PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand::vfunc_2
+// @class PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand
+// @summary Replaces the pending element at +0x18 with the one at +0x1c (releasing the old one), removes the new element from the +0x10 string vector, notifies the +0x24 listener, then forwards to +0x14 if set.
+// @field PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand +0x10 uint32_t field_0x10
+// @field PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand +0x14 uint32_t field_0x14
+// @field PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand +0x18 uint32_t field_0x18
+// @field PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand +0x1c uint32_t field_0x1c
+// @field PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand +0x20 uint32_t field_0x20
+// @field PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand +0x24 uint32_t field_0x24
+
+// Callees (original asm: ext_006A5C5C, ext_004BBEB0, ext_00517510)
+extern void ext_006A5C5C(void* p);
+extern int32_t ext_004BBEB0(void* self, uint32_t* elem_ptr);
+extern void ext_00517510(void* self, void* arg);
+
+// IAT slot for MSVCP80 basic_string<char> destructor (thiscall); holds a function pointer.
+extern void (*mem_00924FF4)(void* self);
+
+static inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+extern void fn_004BBFD0(void* self) {
+    // ebx = +0x1c, edi = +0x18
+    const uint32_t new_elem = lift_field<uint32_t>(self, 0x1c);
+    const uint32_t old_elem = lift_field<uint32_t>(self, 0x18);
+
+    // Release the displaced element when it differs from the new one.
+    if (new_elem != old_elem && old_elem != 0) {
+        mem_00924FF4(as_ptr(old_elem));   // std::string::~string
+        ext_006A5C5C(as_ptr(old_elem));   // operator delete
+    }
+
+    // +0x18 = new element
+    lift_field<uint32_t>(self, 0x18) = new_elem;
+
+    // Remove new element from the string vector at +0x10.
+    uint32_t local = lift_field<uint32_t>(self, 0x1c);
+    ext_004BBEB0(as_ptr(lift_field<uint32_t>(self, 0x10)), &local);
+
+    // Notify listener at +0x24 via vtable slot 1: (new_elem, +0x20).
+    const uint32_t listener = lift_field<uint32_t>(self, 0x24);
+    if (listener != 0) {
+        const uint32_t arg20 = lift_field<uint32_t>(self, 0x20);
+        const uint32_t arg1c = lift_field<uint32_t>(self, 0x1c);
+        void* obj = as_ptr(listener);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<void (*)(void*, uint32_t, uint32_t)>(vtbl[1])(obj, arg1c, arg20);
+    }
+
+    // Forward to CallSlot3OnEachEntryThenDispatch on +0x14 if set.
+    const uint32_t target = lift_field<uint32_t>(self, 0x14);
+    if (target != 0) {
+        ext_00517510(as_ptr(target), as_ptr(lift_field<uint32_t>(self, 0x1c)));
+    }
+}
+} // namespace lift_004BBFD0
