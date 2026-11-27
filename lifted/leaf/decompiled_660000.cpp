@@ -3629,3 +3629,62 @@ void fn_00667810(void* self, void* node) {
     } while (lift_field<uint8_t>(esi, 0xC1) == 0);
 }
 } // namespace lift_00667810
+
+// [0x00664DB0]
+namespace lift_00664DB0 {
+extern uintptr_t mem_00925134;
+extern uintptr_t mem_00924E44;
+
+struct StringIter {
+    void* container;
+    char* ptr;
+};
+
+// @name std::remove_copy_if_char_iter
+// @summary Copies characters from [first, last) to a checked string iterator, skipping those where pred(ch) is non-zero
+StringIter* __cdecl sub_00664DB0(
+    StringIter* out_iter,
+    const char* first,
+    const char* last,
+    void* dst_container,
+    char* dst_ptr,
+    uint8_t (__cdecl* pred)(uint32_t))
+{
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    auto myptr = reinterpret_cast<char*(__thiscall*)(void*)>(mem_00924E44);
+
+    if (first != last) {
+        do {
+            uint8_t ch = static_cast<uint8_t>(*first);
+            if (pred(static_cast<uint32_t>(ch)) == 0) {
+                char* cur = dst_ptr;
+                if (reinterpret_cast<uintptr_t>(dst_container) != static_cast<uintptr_t>(-2)) {
+                    if (dst_container == nullptr) {
+                        invalid_param();
+                    }
+                    char* end_ptr = myptr(dst_container) + *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(dst_container) + 0x14);
+                    if (dst_ptr >= end_ptr) {
+                        invalid_param();
+                    }
+                }
+                dst_ptr = dst_ptr + 1;
+                if (reinterpret_cast<uintptr_t>(dst_container) != static_cast<uintptr_t>(-2)) {
+                    if (dst_container == nullptr) {
+                        invalid_param();
+                    }
+                    char* end_ptr = myptr(dst_container) + *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(dst_container) + 0x14);
+                    if (cur >= end_ptr) {
+                        invalid_param();
+                    }
+                }
+                *cur = *first;
+            }
+            first = first + 1;
+        } while (first != last);
+    }
+
+    out_iter->container = dst_container;
+    out_iter->ptr = dst_ptr;
+    return out_iter;
+}
+} // namespace lift_00664DB0
