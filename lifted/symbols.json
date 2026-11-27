@@ -1540,6 +1540,13 @@
     "summary": "Calls the MFC80 thunk, then passes this-\u003efield_0x1ac to the narrow-stream rdbuf and this-\u003efield_0x1b0 to the wide-stream rdbuf.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00413850": {
+    "name": "StreamBuf::InitWithBuffer",
+    "class": "StreamBuf",
+    "signature": "void* fn_00413850(void* self, void* owner)",
+    "summary": "Initializes a streambuf-derived object with a 512-byte buffer obtained from MFC80 ord_265, sets up get/put pointers and a critical section.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00413990": {
     "name": "sub_00413990",
     "class": "UnknownClass",

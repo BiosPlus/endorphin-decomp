@@ -3115,3 +3115,51 @@ void fn_00412CE0(void* self) {
     strDtor(str);
 }
 } // namespace lift_00412CE0
+
+// [0x00413850] sub_00413850 (142 bytes)
+namespace lift_00413850 {
+// Known callee 0x006A611E: thunk_MFC80_ord_265 (IAT jump thunk forwarding to MFC80!ord_265.)
+// Takes one stack argument (0x200) and returns a pointer in eax.
+extern void* ext_006A611E(DWORD size);
+// IAT slots for MSVCP80 / KERNEL32 imports (referenced, not called directly).
+extern int mem_00924F94;   // MSVCP80 basic_streambuf base ctor
+extern int mem_00924F98;   // MSVCP80 basic_streambuf::setbuf
+extern int mem_009241C0;   // KERNEL32 InitializeCriticalSection
+
+// @name StreamBuf::InitWithBuffer
+// @class StreamBuf
+// @summary Initializes a streambuf-derived object with a 512-byte buffer obtained from MFC80 ord_265, sets up get/put pointers and a critical section.
+// @field StreamBuf +0x00 DWORD vfptr
+// @field StreamBuf +0x14 void* ptrToBufferSlot
+// @field StreamBuf +0x24 void* ptrToBufferSlot2
+// @field StreamBuf +0x34 void* ptrToSizeSlot
+// @field StreamBuf +0x3c void* buffer
+// @field StreamBuf +0x40 void* owner
+// @field StreamBuf +0x44 CRITICAL_SECTION lock
+void* fn_00413850(void* self, void* owner) {
+    // Base-class constructor (IAT import) is referenced only; its effects on
+    // untouched fields are not modeled here.
+    (void)&mem_00924F94;
+
+    lift_field<DWORD>(self, 0x00) = 0x0092C1F4u;   // vfptr
+    lift_field<void*>(self, 0x40) = owner;
+
+    void* buf = ext_006A611E(0x200);
+    lift_field<void*>(self, 0x3C) = buf;
+
+    // setbuf(buf, 0x200): import call, return value discarded by the original code.
+    (void)&mem_00924F98;
+
+    buf = lift_field<void*>(self, 0x3C);
+    *static_cast<void**>(lift_field<void*>(self, 0x14)) = buf;
+    *static_cast<void**>(lift_field<void*>(self, 0x24)) = buf;
+
+    // Buffer size stored as (buf + 0x1FE) - buf == 0x1FE.
+    *static_cast<DWORD*>(lift_field<void*>(self, 0x34)) = 0x1FEu;
+
+    // InitializeCriticalSection(&this->lock) (IAT import).
+    (void)&mem_009241C0;
+
+    return self;
+}
+} // namespace lift_00413850

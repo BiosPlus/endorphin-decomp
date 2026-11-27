@@ -1,0 +1,58 @@
+{
+  "va": "0x00413850",
+  "size": 142,
+  "orig_symbol": "sub_00413850",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "StreamBuf::InitWithBuffer",
+  "class": "StreamBuf",
+  "signature": "void* fn_00413850(void* self, void* owner)",
+  "summary": "Initializes a streambuf-derived object with a 512-byte buffer obtained from MFC80 ord_265, sets up get/put pointers and a critical section.",
+  "fields": [
+    {
+      "class": "StreamBuf",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vfptr"
+    },
+    {
+      "class": "StreamBuf",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "ptrToBufferSlot"
+    },
+    {
+      "class": "StreamBuf",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "ptrToBufferSlot2"
+    },
+    {
+      "class": "StreamBuf",
+      "offset": "+0x34",
+      "type": "void*",
+      "name": "ptrToSizeSlot"
+    },
+    {
+      "class": "StreamBuf",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "buffer"
+    },
+    {
+      "class": "StreamBuf",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "StreamBuf",
+      "offset": "+0x44",
+      "type": "CRITICAL_SECTION",
+      "name": "lock"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:30:10Z"
+}
