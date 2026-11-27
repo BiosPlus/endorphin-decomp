@@ -1346,3 +1346,38 @@ uintptr_t fn_005FC890(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3
     return ext_00629E20(obj, arg0, arg1, arg2, arg3);
 }
 } // namespace lift_005FC890
+
+// [0x005FC090]
+namespace lift_005FC090 {
+// @name allocAndInitUnknown006271A0
+// @summary Allocates 0x40 bytes and initializes an Unknown object with 4 uint32_t arguments
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_006271A0(void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
+
+extern void* fn_005FC090(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    return ext_006271A0(obj, a0, a1, a2, a3);
+}
+} // namespace lift_005FC090
+
+// [0x005FC110]
+namespace lift_005FC110 {
+// @name Unknown::createAndInit
+// @summary Allocates 0x40 bytes via MFC80::operator new and initializes the object with fn_00627240.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00627240(void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
+
+void* fn_005FC110(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    return ext_00627240(obj, a0, a1, a2, a3);
+}
+} // namespace lift_005FC110
