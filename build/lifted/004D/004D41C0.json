@@ -1,0 +1,28 @@
+{
+  "va": "0x004D41C0",
+  "size": 103,
+  "orig_symbol": "sub_004D41C0",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "Unknown::getStringElement (descriptive; owner class not yet identified)",
+  "class": "Unknown",
+  "signature": "void* fn_004D41C0(void* self, void* out, uint32_t index)",
+  "summary": "Copy-constructs the std::string at index `index` of the 28-byte-stride string array delimited by the begin/end pointers at +0x448/+0x44C into `out`; invalid_parameter if the array is empty or index \u003e= count. Returns `out`.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x448",
+      "type": "uint8_t*",
+      "name": "field_0x448"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44C",
+      "type": "uint8_t*",
+      "name": "field_0x44c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:55:31Z"
+}

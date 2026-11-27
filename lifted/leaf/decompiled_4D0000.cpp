@@ -501,3 +501,33 @@ void* fn_004D4230(void* self, void* out, uint32_t index) {
     return out;
 }
 } // namespace lift_004D4230
+
+// [0x004D41C0] sub_004D41C0 (103 bytes)
+namespace lift_004D41C0 {
+// IAT slot 0x00925134: MSVCR80!_invalid_parameter_noinfo (boilerplate, noreturn in practice).
+extern void(__cdecl* mem_00925134)(void);
+// IAT slot 0x00924FE0: MSVCP80 std::basic_string<char>::basic_string(const basic_string&) (thiscall, 1 arg).
+extern void*(__thiscall* mem_00924FE0)(void* self, const void* src);
+
+// @name Unknown::getStringElement (descriptive; owner class not yet identified)
+// @summary Copy-constructs the std::string at index `index` of the 28-byte-stride string array delimited by the begin/end pointers at +0x448/+0x44C into `out`; invalid_parameter if the array is empty or index >= count. Returns `out`.
+// @field Unknown +0x448 uint8_t* field_0x448
+// @field Unknown +0x44C uint8_t* field_0x44c
+void* fn_004D41C0(void* self, void* out, uint32_t index) {
+    bool valid = false;
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x448);
+    if (begin != nullptr) {
+        uint8_t* end = lift_field<uint8_t*>(self, 0x44C);
+        // Element stride is 28 bytes (MSVC std::string); count = (end - begin) / 28, signed.
+        const int32_t count = static_cast<int32_t>(static_cast<int32_t>(end - begin) / 28);
+        valid = static_cast<uint32_t>(index) < static_cast<uint32_t>(count);
+    }
+    if (!valid) {
+        // Original falls through here after the noreturn-style call.
+        mem_00925134();
+    }
+    uint8_t* elem = lift_field<uint8_t*>(self, 0x448) + static_cast<uint32_t>(index * 28u);
+    mem_00924FE0(out, elem);
+    return out;
+}
+} // namespace lift_004D41C0
