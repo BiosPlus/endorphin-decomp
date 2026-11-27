@@ -3378,3 +3378,47 @@ void __thiscall fn_00446430(void* self, void* node, DWORD arg1) {
     }
 }
 } // namespace lift_00446430
+
+// [0x004493C0] sub_004493C0 (153 bytes)
+namespace lift_004493C0 {
+// Known callee 0x006A5F38: thunk_MFC80_ord_620 (IAT jump thunk forwarding to MFC80!ord_620.)
+extern void ext_006A5F38();
+// Known callee 0x006A5F6E: thunk_MFC80_ord_605 (IAT jump thunk forwarding to MFC80!ord_605.)
+extern void ext_006A5F6E();
+
+// @name Unknown::InitChildObjects
+// @class Unknown
+// @summary Sets two vtable pointers on self, releases the optional children at +0x124 and +0xCC via virtual slot 1, and runs the MFC80 member teardown for the embedded sub-objects at +0xD0 and +0x78 and for self.
+// @field Unknown +0x00 uint32_t vptr_00
+// @field Unknown +0x74 uint32_t vptr_74
+// @field Unknown +0x78 uint8_t field_0x78
+// @field Unknown +0xCC void* obj_cc
+// @field Unknown +0xD0 uint8_t field_0xd0
+// @field Unknown +0x124 void* obj_124
+void fn_004493C0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0093363C;
+    lift_field<uint32_t>(self, 0x74) = 0x0093362C;
+
+    void* p124 = lift_field<void*>(self, 0x124);
+    if (p124 != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(p124);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[1])(p124, 1);
+    }
+
+    // Original: ecx = self + 0xD0; thiscall into MFC80 ord_620.
+    // NOTE: the ext_ declaration takes no arguments, so the this-pointer is not forwarded.
+    ext_006A5F38();
+
+    void* pcc = lift_field<void*>(self, 0xCC);
+    if (pcc != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(pcc);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[1])(pcc, 1);
+    }
+
+    // Original: ecx = self + 0x78; thiscall into MFC80 ord_620.
+    ext_006A5F38();
+
+    // Original: ecx = self; thiscall into MFC80 ord_605.
+    ext_006A5F6E();
+}
+} // namespace lift_004493C0

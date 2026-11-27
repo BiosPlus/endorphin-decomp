@@ -5686,6 +5686,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004490F0 (readIntFromSubobject).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x004493C0": {
+    "name": "Unknown::InitChildObjects",
+    "class": "Unknown",
+    "signature": "void fn_004493C0(void* self)",
+    "summary": "Sets two vtable pointers on self, releases the optional children at +0x124 and +0xCC via virtual slot 1, and runs the MFC80 member teardown for the embedded sub-objects at +0xD0 and +0x78 and for self.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00449810": {
     "name": "RangeDialog::vfunc_1",
     "class": "RangeDialog",

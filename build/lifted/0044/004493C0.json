@@ -1,0 +1,52 @@
+{
+  "va": "0x004493C0",
+  "size": 153,
+  "orig_symbol": "sub_004493C0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::InitChildObjects",
+  "class": "Unknown",
+  "signature": "void fn_004493C0(void* self)",
+  "summary": "Sets two vtable pointers on self, releases the optional children at +0x124 and +0xCC via virtual slot 1, and runs the MFC80 member teardown for the embedded sub-objects at +0xD0 and +0x78 and for self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr_00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "vptr_74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "uint8_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xCC",
+      "type": "void*",
+      "name": "obj_cc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "uint8_t",
+      "name": "field_0xd0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x124",
+      "type": "void*",
+      "name": "obj_124"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:49:56Z"
+}
