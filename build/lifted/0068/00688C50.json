@@ -1,0 +1,22 @@
+{
+  "va": "0x00688C50",
+  "size": 107,
+  "orig_symbol": "sub_00688C50",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "StringRecordVector::eraseRange",
+  "class": "StringRecordVector",
+  "signature": "StringRecordIter* __thiscall fn_00688C50( void* this_ptr, StringRecordIter* out_iter, void* first_container, uint8_t* first_ptr, void* last_container, uint8_t* last_ptr)",
+  "summary": "Erases [first, last) from a StringRecord vector (0x2C-byte elements) and returns an iterator to the erase position.",
+  "fields": [
+    {
+      "class": "StringRecordVector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:11:58Z"
+}

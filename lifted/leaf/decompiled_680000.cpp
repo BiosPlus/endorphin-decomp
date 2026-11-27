@@ -2339,3 +2339,51 @@ bool fn_00687DC0(void* self, uint32_t count) {
     return true;
 }
 } // namespace lift_00687DC0
+
+// [0x00688C50]
+namespace lift_00688C50 {
+// @name StringRecordVector::eraseRange
+// @class StringRecordVector
+// @summary Erases [first, last) from a StringRecord vector (0x2C-byte elements) and returns an iterator to the erase position.
+// @field StringRecordVector +0x08 uint8_t* end
+
+extern void* ext_00687E50(const void* first, const void* last, void* dest);
+extern uint8_t* ext_00687EB0(uint8_t* first, uint8_t* last, uint8_t* dest);
+extern void (__cdecl *mem_00925134)();
+extern void (__thiscall *mem_00924FF4)(void* this_ptr);
+
+struct StringRecordIter {
+    void* container;
+    uint8_t* ptr;
+};
+
+StringRecordIter* __thiscall fn_00688C50(
+    void* this_ptr,
+    StringRecordIter* out_iter,
+    void* first_container,
+    uint8_t* first_ptr,
+    void* last_container,
+    uint8_t* last_ptr)
+{
+    (void)ext_00687EB0;
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+
+    uint8_t* ret_ptr = last_ptr;
+    if (first_ptr != last_ptr) {
+        uint8_t* end = lift_field<uint8_t*>(this_ptr, 0x08);
+        uint8_t* new_end = static_cast<uint8_t*>(ext_00687E50(last_ptr, end, first_ptr));
+        uint8_t* old_end = lift_field<uint8_t*>(this_ptr, 0x08);
+        for (uint8_t* p = new_end; p != old_end; p += 0x2C) {
+            mem_00924FF4(p + 0x10);
+        }
+        lift_field<uint8_t*>(this_ptr, 0x08) = new_end;
+        ret_ptr = first_ptr;
+    }
+
+    out_iter->container = first_container;
+    out_iter->ptr = ret_ptr;
+    return out_iter;
+}
+} // namespace lift_00688C50
