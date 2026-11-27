@@ -13,7 +13,7 @@ struct RemoveElementCommand_Fields {
     // +0x10  void*                    field_0x10  (evidence: 0x00527FE0)
     // +0x14  void*                    field_0x14  (evidence: 0x00527FE0)
     // +0x18  void*                    field_0x18  (evidence: 0x00527FE0)
-    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0049E370) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0049E370, 0x0049EA80, 0x004B4AD0, 0x004B5090, 0x004BB520, 0x004BB5F0, 0x004BB810, 0x004BBA30, 0x00500610, 0x00500FC0, 0x0050AE00, 0x0050AED0, 0x0050BB00, 0x0050BD20, 0x00517440, 0x00517750, 0x005279F0, 0x00527C90, 0x0060A6A0, 0x0060AE40) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uintptr_t                field_0x1c  (evidence: 0x00527FE0) // CONFLICT: multiple definitions at +0x1C
     // +0x20  int32_t                  field_0x20  (evidence: 0x00527FE0)
     // +0x24  void*                    field_0x24  (evidence: 0x00527FE0)

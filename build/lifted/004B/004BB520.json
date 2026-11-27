@@ -1,0 +1,22 @@
+{
+  "va": "0x004BB520",
+  "size": 205,
+  "orig_symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RemoveElementCommand::vfunc_3",
+  "src_path": "src/templates/RemoveElementCommand.cpp",
+  "lifted_path": "lifted/templates/RemoveElementCommand.cpp",
+  "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RemoveElementCommand::vfunc_3",
+  "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RemoveElementCommand",
+  "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_004BB520(void* self, void* /*edx*/, void* result)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+  "fields": [
+    {
+      "class": "RemoveElementCommand",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:43:58Z"
+}

@@ -4518,3 +4518,68 @@ void fn_0048C350(void* self, const char* text) {
     ((StrDtorFn)(uintptr_t)mem_00924FF4)(tmp);
 }
 } // namespace lift_0048C350
+
+// [0x0048AC80] sub_0048AC80 (203 bytes)
+namespace lift_0048AC80 {
+// @name sub_0048AC80
+// @summary Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).
+namespace lift_0046A810 {
+extern void __thiscall ext_0048A0E0(void* self, void* node);
+extern void* __thiscall ext_00489E10(void* self, void* outIter, void* cont, void* node);
+extern void __thiscall ext_00486E30(void* self);
+extern void (*mem_00925134)();
+
+struct TreeIter {
+    void* cont;
+    void* node;
+};
+
+// @name _Tree::eraseRange
+// @class _Tree
+// @summary Erases nodes in [first,last); clears whole tree fast-path when range is begin..end; returns iterator.
+// @field _Tree +0x04 void* head
+// @field _Tree +0x08 uint32_t size
+extern TreeIter* __thiscall fn_0048AC80(void* self, TreeIter* ret, void* firstCont, void* firstNode,
+                                          void* lastCont, void* lastNode)
+{
+    uint8_t* s = (uint8_t*)self;
+    TreeIter first = {firstCont, firstNode};
+    void** head = *(void***)(s + 0x4);
+    void* beginNode = head[0];
+    if (firstCont == nullptr || firstCont != self)
+        mem_00925134();
+    if (firstNode == beginNode) {
+        void* endNode = *(void**)(s + 0x4);
+        if (lastCont == nullptr || lastCont != self)
+            mem_00925134();
+        if (lastNode == endNode) {
+            void** h = *(void***)(s + 0x4);
+            ext_0048A0E0(self, h[1]);
+            h = *(void***)(s + 0x4);
+            h[1] = h;
+            *(uint32_t*)(s + 0x8) = 0;
+            h[0] = h;
+            h[2] = h;
+            h = *(void***)(s + 0x4);
+            ret->cont = self;
+            ret->node = h[0];
+            return ret;
+        }
+    }
+    for (;;) {
+        if (first.cont == nullptr || first.cont != lastCont)
+            mem_00925134();
+        if (first.node == lastNode)
+            break;
+        void* oc = first.cont;
+        void* on = first.node;
+        ext_00486E30(&first);
+        TreeIter tmp;
+        ext_00489E10(self, &tmp, oc, on);
+    }
+    ret->cont = first.cont;
+    ret->node = first.node;
+    return ret;
+}
+} // namespace lift_0046A810
+} // namespace lift_0048AC80

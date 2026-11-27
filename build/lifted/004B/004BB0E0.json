@@ -1,0 +1,34 @@
+{
+  "va": "0x004BB0E0",
+  "size": 126,
+  "orig_symbol": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_10",
+  "src_path": "src/templates/SetType.cpp",
+  "lifted_path": "lifted/templates/SetType.cpp",
+  "name": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_10",
+  "class": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e, Properties::GetPropertySource\u003e",
+  "signature": "static inline void* as_ptr(uint32_t v)",
+  "summary": "Auto-lifted identical-shape clone of 0x004BB060 (Properties::SetType::vfunc_10).",
+  "fields": [
+    {
+      "class": "PointainerSet\u003cNMData::MaterialInteraction\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "PointainerSet\u003cNMData::MaterialInteraction\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Properties::PropertyIteratorType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:43:58Z"
+}

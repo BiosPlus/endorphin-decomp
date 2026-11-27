@@ -2142,6 +2142,20 @@
     "summary": "Reads an int via readIntFromAccessor on the field at +0x8C; if positive, stores it at inner+0x168 (inner = this+0x88). Otherwise formats the stored int at inner+0x168 into a std::string and assigns its c_str() to the field at +0x8C.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00417050": {
+    "name": "sub_00417050",
+    "class": "Unknown",
+    "signature": "void fn_00417050(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00416FB0 (Unknown::readIntAndStoreOrRefreshString).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
+  "0x004170F0": {
+    "name": "sub_004170F0",
+    "class": "Unknown",
+    "signature": "void fn_004170F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00416FB0 (Unknown::readIntAndStoreOrRefreshString).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00417300": {
     "name": "GetStringConstant_00417300",
     "signature": "extern \"C\" const char* fn_00417300()",
@@ -13122,6 +13136,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00402730 (Tree::assignFrom).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048AC80": {
+    "name": "sub_0048AC80",
+    "class": "_Tree",
+    "signature": "extern TreeIter* __thiscall fn_0048AC80(void* self, TreeIter* ret, void* firstCont, void* firstNode, void* lastCont, void* lastNode)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048AD50": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}\u003e",
@@ -16060,6 +16081,13 @@
     "summary": "Initializes vtable 0x009404C0, casts arg1 via __RTDynamicCast, and computes an index into arg0's vector.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049EA80": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVectorWithFind\u003cNMData::ValuePtrData\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVectorWithFind\u003cNMData::ValuePtrData\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0049EA80(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
+  },
   "0x0049ECB0": {
     "name": "destroyEntryRange",
     "signature": "void fn_0049ECB0(void* begin, void* end)",
@@ -17132,6 +17160,13 @@
     "summary": "Validates the [+0x04, +0x08) range, destroys the owned pointers in it, then erases the range from the vector.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A6AF0": {
+    "name": "sub_004A6AF0",
+    "class": "_Tree",
+    "signature": "extern TreeIter* __thiscall fn_004A6AF0(void* self, TreeIter* ret, void* firstCont, void* firstNode, void* lastCont, void* lastNode)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A6C60": {
     "name": "sub_004A6C60",
     "signature": "extern \"C\" void fn_004A6C60(void)",
@@ -17183,6 +17218,13 @@
     "name": "AllocInitRecord0xB0",
     "signature": "void* __stdcall fn_004A8D00(DWORD a0, DWORD a1, DWORD a2, const void* a3, BYTE flag)",
     "summary": "Allocates a 0xB0-byte record, stores three dwords and runs sub_004A82D0 on the +0x0C subobject, then stores a flag byte; returns the record or null.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004A8FB0": {
+    "name": "sub_004A8FB0",
+    "class": "TreeMap",
+    "signature": "extern InsertResult* __thiscall fn_004A8FB0(void* self, InsertResult* ret, const void* val)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042C0D0 (TreeMap::insertUnique).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004A96A0": {
@@ -17876,6 +17918,20 @@
     "name": "allocRbTreeNode",
     "signature": "void* __stdcall fn_004ADA80(uint32_t left, uint32_t parent, uint32_t right, const void* src, uint8_t color)",
     "summary": "Allocates and initializes a 0x3C-byte red-black tree node.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004AE110": {
+    "name": "sub_004AE110",
+    "class": "TreeMap",
+    "signature": "extern InsertResult* __thiscall fn_004AE110(void* self, InsertResult* ret, const void* val)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042C0D0 (TreeMap::insertUnique).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004AE420": {
+    "name": "sub_004AE420",
+    "class": "_Tree",
+    "signature": "extern TreeIter* __thiscall fn_004AE420(void* self, TreeIter* ret, void* firstCont, void* firstNode, void* lastCont, void* lastNode)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004AEA80": {
@@ -18960,6 +19016,13 @@
     "summary": "Copy-constructs the caller's std::string from the lazily initialized global string and returns the destination.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B4AD0": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::RemoveElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::RemoveElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_004B4AD0(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x004B4BA0": {
     "name": "sub_004B4BA0",
     "signature": "DWORD ext_004B4770();  // ConstructOnce_0046F580 DWORD* fn_004B4BA0(DWORD* dst, DWORD value)",
@@ -19029,6 +19092,13 @@
     "signature": "extern \"C\" void __fastcall fn_004B5030(void* self)",
     "summary": "Destroys optional std::string wrapper at +0x18, frees it, and calls sub_00665810",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004B5090": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_004B5090(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
   "0x004B5160": {
     "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_0",
@@ -20073,6 +20143,41 @@
     "summary": "If ext_006616B0(arg3) is true, selects the last element of the PointainerSet referenced by *arg1 (or the early-out value when empty); otherwise selects arg3-\u003e+0x04. Then dynamic-casts arg4 and forwards to ext_004BA440.",
     "lifted_path": "lifted/templates/SetType.cpp"
   },
+  "0x004BB0E0": {
+    "name": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_10",
+    "class": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e, Properties::GetPropertySource\u003e",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BB060 (Properties::SetType::vfunc_10).",
+    "lifted_path": "lifted/templates/SetType.cpp"
+  },
+  "0x004BB520": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RemoveElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RemoveElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_004BB520(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
+  "0x004BB5F0": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::RemoveElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_004BB5F0(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
+  "0x004BB810": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_004BB810(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
+  },
+  "0x004BBA30": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_004BBA30(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
+  },
   "0x004BBB00": {
     "name": "std::vector\u003cstd::string*\u003e::erase_and_delete",
     "class": "std::vector\u003cstd::string*\u003e",
@@ -20402,10 +20507,28 @@
     "summary": "Takes a by-value name key; if it is empty, fills it from a bool-formatted string, optionally appends the type_info name when the flag byte at +0x1C is set, then registers the key with the static registry (InsertUnique at +0x4 and a second insert at +0x14), using callback 0x004BE800.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BF120": {
+    "name": "sub_004BF120",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_004BF120(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004BF220": {
+    "name": "sub_004BF220",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_004BF220(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BF320": {
     "name": "sub_004BF320",
     "signature": "void* fn_004BF320(void* arg0)",
     "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004BF470": {
+    "name": "sub_004BF470",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_004BF470(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004BF680": {
@@ -29306,6 +29429,13 @@
     "summary": "Looks up a property/symbol by name on EvolveEngineData and writes the result into the output object.",
     "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
   },
+  "0x00500610": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::RemoveElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::RemoveElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_00500610(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x005007C0": {
     "name": "DwordPairInitWrapper_005007C0",
     "signature": "void* fn_005007C0(void* self, void* pair, DWORD b)",
@@ -29373,12 +29503,26 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B4D90 (PointainerVectorType::vfunc_3).",
     "lifted_path": "lifted/templates/SetType.cpp"
   },
+  "0x00500D20": {
+    "name": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_10",
+    "class": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e, Properties::GetTerminalParent\u003e",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BB060 (Properties::SetType::vfunc_10).",
+    "lifted_path": "lifted/templates/SetType.cpp"
+  },
   "0x00500DA0": {
     "name": "SortedVector::find_string",
     "class": "SortedVector",
     "signature": "uint32_t* __thiscall sub_00500DA0(void* self, uint32_t* out_iter, uint32_t key)",
     "summary": "Binary-searches a sorted string vector for key and returns an iterator to the matching element or end().",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00500FC0": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_00500FC0(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
   "0x00501090": {
     "name": "copyConstructElementRangeEnd",
@@ -30617,6 +30761,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050AE00": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::TaskTemplateParam\u003e\u003e::RemoveElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::TaskTemplateParam\u003e\u003e::RemoveElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0050AE00(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
+  "0x0050AED0": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::Task\u003e\u003e::RemoveElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::Task\u003e\u003e::RemoveElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0050AED0(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x0050AFA0": {
     "name": "ForEachPtrVectorApply_0050AFA0",
     "signature": "static void call_invalid_parameter_noinfo()",
@@ -30706,6 +30864,20 @@
     "signature": "void fn_0050B960(void* self)",
     "summary": "Calls vtable slot 0 (deleting-destructor style, flag 0) on each 0x24-byte element between begin and end, frees the buffer at begin, then nulls begin/end/capacity.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x0050BB00": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::TaskTemplateParam\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::TaskTemplateParam\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0050BB00(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
+  },
+  "0x0050BD20": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::Task\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::Task\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0050BD20(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
   "0x0050BDF0": {
     "name": "sub_0050BDF0",
@@ -31119,6 +31291,18 @@
     "class": "Map",
     "signature": "bool fn_00510EB0(void* self, const void* key, const uint32_t* value, uint8_t throw_on_dup)",
     "summary": "Auto-lifted identical-shape clone of 0x00429350 (Map::InsertUnique_00429350).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
+  "0x00510F90": {
+    "name": "sub_00510F90",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00510F90(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
+  "0x00511090": {
+    "name": "sub_00511090",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00511090(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x00511290": {
@@ -32218,11 +32402,25 @@
     "summary": "Scans the 32-bit element range [begin,end) and returns the first element whose vtable slot 9 result compares equal to arg; returns null if none match.",
     "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
   },
+  "0x00517440": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::RemoveElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::RemoveElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_00517440(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x00517510": {
     "name": "CallSlot3OnEachEntryThenDispatch",
     "signature": "void fn_00517510(void* self, void* arg)",
     "summary": "Forwards its argument to CallSlot3OnEachEntry (0x005170D0) on this, then calls 0x00678D70 on this with flag 1.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00517750": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_00517750(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
   "0x00517820": {
     "name": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_10",
@@ -33028,6 +33226,18 @@
     "name": "sub_0051D940",
     "signature": "void* fn_0051D940(void* key, void* arg2, uint8_t throwIfNotFound)",
     "summary": "Auto-lifted identical-shape clone of 0x004C98C0 (findAndInvokeFactory_004C98C0).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
+  "0x0051DA40": {
+    "name": "sub_0051DA40",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_0051DA40(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
+  "0x0051DB40": {
+    "name": "sub_0051DB40",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_0051DB40(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x0051DDB0": {
@@ -33962,6 +34172,13 @@
     "summary": "Iterates over a vector of objects at +0x14 and invokes vtable[2](arg0, arg1) on each",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x005279F0": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::VariableValue\u003e\u003e::RemoveElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::VariableValue\u003e\u003e::RemoveElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_005279F0(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x00527AC0": {
     "name": "Unknown::forwardDispatchThenVfunc1",
     "class": "Unknown",
@@ -33974,6 +34191,13 @@
     "signature": "uint32_t __thiscall sub_00527AF0(void* self)",
     "summary": "Validates vector bounds and returns a pointer to the last 4-byte element.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x00527C90": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::VariableValue\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::VariableValue\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_00527C90(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
   "0x00527D60": {
     "name": "VectorPtrErase",
@@ -39812,6 +40036,13 @@
     "summary": "Export skeleton hierarchy and motion frames to a BVH file.",
     "lifted_path": "lifted/classes/BVHIO.cpp"
   },
+  "0x0056F050": {
+    "name": "sub_0056F050",
+    "class": "TreeMap",
+    "signature": "extern InsertResult* __thiscall fn_0056F050(void* self, InsertResult* ret, const void* val)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042C0D0 (TreeMap::insertUnique).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x0056FD30": {
     "name": "BVHIO::vfunc_10",
     "class": "BVHIO",
@@ -44610,6 +44841,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A0810": {
+    "name": "sub_005A0810",
+    "class": "TreeMap",
+    "signature": "extern InsertResult* __thiscall fn_005A0810(void* self, InsertResult* ret, const void* val)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042C0D0 (TreeMap::insertUnique).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A0BF0": {
     "name": "NMData::BackGroundData::vfunc_1_off_4",
     "class": "NMData::BackGroundData",
@@ -44733,6 +44971,20 @@
     "summary": "If arg is non-null, calls arg's vtable slot 0x24 to get a std::string, copy-constructs it, and forwards it to the member at this+0x550 via ext_005A1E90.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A3500": {
+    "name": "sub_005A3500",
+    "class": "Unknown",
+    "signature": "void fn_005A3500(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A34C0 (Unknown::forwardVirtualStringToMember_005A34C0).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005A3540": {
+    "name": "sub_005A3540",
+    "class": "Unknown",
+    "signature": "void fn_005A3540(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A34C0 (Unknown::forwardVirtualStringToMember_005A34C0).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A3610": {
     "name": "sub_005A3610",
     "signature": "void fn_005A3610()",
@@ -44793,6 +45045,13 @@
     "signature": "void __thiscall fn_005A5450(void* self, void* arg0)",
     "summary": "Calls base CharacterData::vfunc_20, looks up or creates a 0x220-byte background object, initializes it, and marks its +0x8C flag.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
+  "0x005A5690": {
+    "name": "sub_005A5690",
+    "class": "_Tree",
+    "signature": "extern TreeIter* __thiscall fn_005A5690(void* self, TreeIter* ret, void* firstCont, void* firstNode, void* lastCont, void* lastNode)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A6010": {
     "name": "NMData::BackGroundData::vfunc_58_off_4",
@@ -45579,6 +45838,13 @@
     "summary": "Fills a range [first, last) with an 8-byte value pointed to by val.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005ADD30": {
+    "name": "sub_005ADD30",
+    "class": "TreeMap",
+    "signature": "extern InsertResult* __thiscall fn_005ADD30(void* self, InsertResult* ret, const void* val)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042C0D0 (TreeMap::insertUnique).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005ADE30": {
     "name": "sub_005ADE30",
     "class": "std::_Tree_std_string",
@@ -45612,6 +45878,20 @@
     "class": "ChainNode",
     "signature": "static inline uint8_t* BytesOf(void* p)",
     "summary": "Recursively releases a sibling chain: for each node, releases its child chain, destroys its string member, and invokes the cleanup thunk.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005AE4E0": {
+    "name": "sub_005AE4E0",
+    "class": "_Tree",
+    "signature": "extern TreeIter* __thiscall fn_005AE4E0(void* self, TreeIter* ret, void* firstCont, void* firstNode, void* lastCont, void* lastNode)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005AEC70": {
+    "name": "sub_005AEC70",
+    "class": "_Tree",
+    "signature": "extern TreeIter* __thiscall fn_005AEC70(void* self, TreeIter* ret, void* firstCont, void* firstNode, void* lastCont, void* lastNode)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005AED40": {
@@ -48628,6 +48908,32 @@
     "summary": "Walks the intrusive list whose sentinel is at +0x15C; for each entry whose object at node+0x28 accepts (vtable +0x6C), forwards arg to its subobject at +0x0C (vtable +0x10).",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005BEE60": {
+    "name": "sub_005BEE60",
+    "signature": "extern void* fn_005BEE60(void* self, void* out, MsvcString arg_str)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A2540 (sub_005A2540).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005BEF60": {
+    "name": "sub_005BEF60",
+    "class": "TreeMap",
+    "signature": "void __thiscall fn_005BEF60(void* self, uint8_t key_buf[28])",
+    "summary": "Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005BF130": {
+    "name": "sub_005BF130",
+    "signature": "extern void* fn_005BF130(void* self, void* out, MsvcString arg_str)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A2540 (sub_005A2540).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005BF230": {
+    "name": "sub_005BF230",
+    "class": "TreeMap",
+    "signature": "void __thiscall fn_005BF230(void* self, uint8_t key_buf[28])",
+    "summary": "Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005BF770": {
     "name": "NMData::MetaBodyData::vfunc_13_off_C",
     "class": "NMData::MetaBodyData",
@@ -48648,6 +48954,27 @@
     "signature": "void* find_matching_entry(void* self, uint32_t container_offset)",
     "summary": "Handles property/data queries (0xB8, 0x39, 0x8C) on MetaBodyData, delegating to AxisDefineSensorData::vfunc_14 otherwise.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
+  "0x005BFDE0": {
+    "name": "sub_005BFDE0",
+    "class": "TreeMap",
+    "signature": "void __thiscall fn_005BFDE0(void* self, uint8_t key_buf[28])",
+    "summary": "Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005BFEE0": {
+    "name": "sub_005BFEE0",
+    "class": "TreeMap",
+    "signature": "void __thiscall fn_005BFEE0(void* self, uint8_t key_buf[28])",
+    "summary": "Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005BFFE0": {
+    "name": "sub_005BFFE0",
+    "class": "TreeMap",
+    "signature": "void __thiscall fn_005BFFE0(void* self, uint8_t key_buf[28])",
+    "summary": "Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
   "0x005C00E0": {
     "name": "NMData::MetaBodyData::vfunc_33",
@@ -59786,6 +60113,246 @@
     "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x00600010": {
+    "name": "sub_00600010",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600010(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600110": {
+    "name": "sub_00600110",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600110(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600210": {
+    "name": "sub_00600210",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600210(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600310": {
+    "name": "sub_00600310",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600310(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600410": {
+    "name": "sub_00600410",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600410(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600510": {
+    "name": "sub_00600510",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600510(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600610": {
+    "name": "sub_00600610",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600610(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600710": {
+    "name": "sub_00600710",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600710(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600810": {
+    "name": "sub_00600810",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600810(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600910": {
+    "name": "sub_00600910",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600910(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600A10": {
+    "name": "sub_00600A10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600A10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600B10": {
+    "name": "sub_00600B10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600B10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600C10": {
+    "name": "sub_00600C10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600C10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600D10": {
+    "name": "sub_00600D10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600D10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600E10": {
+    "name": "sub_00600E10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600E10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00600F10": {
+    "name": "sub_00600F10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600F10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601010": {
+    "name": "sub_00601010",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601010(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601110": {
+    "name": "sub_00601110",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601110(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601210": {
+    "name": "sub_00601210",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601210(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601310": {
+    "name": "sub_00601310",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601310(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601410": {
+    "name": "sub_00601410",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601410(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601510": {
+    "name": "sub_00601510",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601510(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601610": {
+    "name": "sub_00601610",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601610(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601710": {
+    "name": "sub_00601710",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601710(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601810": {
+    "name": "sub_00601810",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601810(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601910": {
+    "name": "sub_00601910",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601910(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601A10": {
+    "name": "sub_00601A10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601A10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601B10": {
+    "name": "sub_00601B10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601B10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601C10": {
+    "name": "sub_00601C10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601C10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601D10": {
+    "name": "sub_00601D10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601D10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601E10": {
+    "name": "sub_00601E10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601E10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00601F10": {
+    "name": "sub_00601F10",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601F10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00602010": {
+    "name": "sub_00602010",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00602010(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00602110": {
+    "name": "sub_00602110",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00602110(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00602210": {
+    "name": "sub_00602210",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00602210(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00602310": {
+    "name": "sub_00602310",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00602310(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00602410": {
+    "name": "sub_00602410",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00602410(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00602510": {
+    "name": "sub_00602510",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00602510(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00602610": {
+    "name": "sub_00602610",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00602610(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00602710": {
+    "name": "sub_00602710",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00602710(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00602D60": {
     "name": "sub_00602D60",
     "class": "Unknown",
@@ -61160,6 +61727,18 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x00609170": {
+    "name": "sub_00609170",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00609170(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00609270": {
+    "name": "sub_00609270",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00609270(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x006093C0": {
     "name": "sub_006093C0",
     "class": "Unknown",
@@ -61397,12 +61976,26 @@
     "summary": "Returns a property/member wrapper for DisabledCollisionPairList based on string key comparison",
     "lifted_path": "lifted/NMData/DisabledCollisionPairList.cpp"
   },
+  "0x0060A6A0": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::DisabledCollisionPair\u003e\u003e::RemoveElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::DisabledCollisionPair\u003e\u003e::RemoveElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0060A6A0(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/RemoveElementCommand.cpp"
+  },
   "0x0060AE20": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_4",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",
     "signature": "void fn_0060AE20(void* self)",
     "summary": "If field +0x14 is zero and the object at +0x08 is non-null, invoke its vtable slot 1 with argument 1.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
+  },
+  "0x0060AE40": {
+    "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::DisabledCollisionPair\u003e\u003e::AddElementCommand::vfunc_3",
+    "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::DisabledCollisionPair\u003e\u003e::AddElementCommand",
+    "signature": "extern uint32_t mem_00924E4C; // ostringstream::ostringstream(int) extern uint32_t mem_00924E54; // ostringstream::str() extern uint32_t mem_00924E58; // ostringstream::~ostringstream (vbase dtor) extern uint32_t mem_00924E94; // operator\u003c\u003c(ostream\u0026, const string\u0026) extern uint32_t mem_00924FF4; // string::~string void* __fastcall fn_0060AE40(void* self, void* /*edx*/, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049E370 (RemoveElementCommand::describe).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
   "0x0060AF10": {
     "name": "sub_0060AF10",
@@ -61891,6 +62484,36 @@
     "name": "sub_0060DE00",
     "signature": "void* fn_0060DE00(void* key, void* arg2, uint8_t throwIfNotFound)",
     "summary": "Auto-lifted identical-shape clone of 0x004C98C0 (findAndInvokeFactory_004C98C0).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060DF00": {
+    "name": "sub_0060DF00",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_0060DF00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060E000": {
+    "name": "sub_0060E000",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_0060E000(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060E100": {
+    "name": "sub_0060E100",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_0060E100(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060E200": {
+    "name": "sub_0060E200",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_0060E200(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060E300": {
+    "name": "sub_0060E300",
+    "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_0060E300(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060E540": {
@@ -92807,6 +93430,13 @@
     "summary": "Returns the first dword of the table entry at index (if in range), else calls ext_006E7440 on this+0x94 with index 3 and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E9030": {
+    "name": "sub_006E9030",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006E9030(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E8E50 (Unknown::findEntryByString).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E90D0": {
     "name": "Unknown::findOrAllocAndInsert_006E90D0",
     "class": "Unknown",
@@ -92826,6 +93456,13 @@
     "class": "Unknown",
     "signature": "DWORD fn_006E91E0(void* self, DWORD index)",
     "summary": "If 0 \u003c= index \u003c this-\u003ecount (+0x4C), returns the DWORD pointed to by table[index] (table at +0x5C); otherwise calls ext_006E7440(this+0x94, 3) and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E9210": {
+    "name": "sub_006E9210",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006E9210(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E8E50 (Unknown::findEntryByString).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E9390": {

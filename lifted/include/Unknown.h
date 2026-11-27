@@ -783,7 +783,7 @@ struct Unknown_Fields {
     // +0x1C  void*                    criticalSection  (evidence: 0x006FC200) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 default_value  (evidence: 0x0045E700) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  elementCount  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  int32_t                  entryCount  (evidence: 0x006E8E50) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  int32_t                  entryCount  (evidence: 0x006E8E50, 0x006E9030, 0x006E9210) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  <unknown> field_0x1C (copy-initialized by ext_00532900)  (evidence: 0x00475840, 0x004A82D0, 0x004ADA20, 0x0052A140, 0x00557200, 0x005588C0, 0x00595C90, 0x00666BA0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  DWORD                    field_0x1C  (evidence: 0x00622B40, 0x00624540, 0x007853D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  HWND                     field_0x1C  (evidence: 0x00458E10) // CONFLICT: multiple definitions at +0x1C
@@ -965,7 +965,7 @@ struct Unknown_Fields {
     // +0x2C  void*                    field_0x2c  (evidence: 0x0058A9A0, 0x0058AA20, 0x006488A0, 0x0074AEF0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  float                    m23  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 mode  (evidence: 0x005530F0) // CONFLICT: multiple definitions at +0x2C
-    // +0x2C  uint32_t entriesBase (address of array of 32-bit entry pointers)  (evidence: 0x006E8E50) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  uint32_t entriesBase (address of array of 32-bit entry pointers)  (evidence: 0x006E8E50, 0x006E9030, 0x006E9210) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 record_array  (evidence: 0x0078C690) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void* field_0x2c (embedded std::string)  (evidence: 0x00685890) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void**                   table  (evidence: 0x006E8E20) // CONFLICT: multiple definitions at +0x2C
@@ -1432,7 +1432,7 @@ struct Unknown_Fields {
     // +0x88  uint32_t                 field_0x88  (evidence: 0x00456C20, 0x004D01C0, 0x00608350, 0x00685890) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint8_t                  field_0x88  (evidence: 0x004407C0, 0x00441020) // CONFLICT: multiple definitions at +0x88
     // +0x88  void                     field_0x88  (evidence: 0x0074B330) // CONFLICT: multiple definitions at +0x88
-    // +0x88  void*                    field_0x88  (evidence: 0x00416FB0, 0x00456C70, 0x0045B450, 0x0045B4A0, 0x0045B4F0, 0x0045B530, 0x0045B5D0, 0x00545BE0, 0x00545C40) // CONFLICT: multiple definitions at +0x88
+    // +0x88  void*                    field_0x88  (evidence: 0x00416FB0, 0x00417050, 0x004170F0, 0x00456C70, 0x0045B450, 0x0045B4A0, 0x0045B4F0, 0x0045B530, 0x0045B5D0, 0x00545BE0, 0x00545C40) // CONFLICT: multiple definitions at +0x88
     // +0x88  void* field_0x88 (object pointer; vtable slot +0x90 is invoked with the float)  (evidence: 0x0045B580, 0x0045B620) // CONFLICT: multiple definitions at +0x88
     // +0x88  ptr field_0x88 (pointer to child object; owner class not identified)  (evidence: 0x005434C0) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint32_t                 lastIndex  (evidence: 0x00530290) // CONFLICT: multiple definitions at +0x88
@@ -1442,7 +1442,7 @@ struct Unknown_Fields {
     // +0x8C  float                    f8c  (evidence: 0x006465F0) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  int32_t                  field_0x8C  (evidence: 0x007CDB70) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  uint8_t                  field_0x8C  (evidence: 0x00410370, 0x004D01C0) // CONFLICT: multiple definitions at +0x8C
-    // +0x8C  void*                    field_0x8C  (evidence: 0x00416FB0, 0x00456DE0) // CONFLICT: multiple definitions at +0x8C
+    // +0x8C  void*                    field_0x8C  (evidence: 0x00416FB0, 0x00417050, 0x004170F0, 0x00456DE0) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  BYTE                     field_0x8c  (evidence: 0x00422660) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  float                    field_0x8c  (evidence: 0x00622B40, 0x0062E290) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  int32_t                  field_0x8c  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x8C
@@ -1472,7 +1472,7 @@ struct Unknown_Fields {
     // +0x90  void*                    subobject_vptr  (evidence: 0x006B06A0) // CONFLICT: multiple definitions at +0x90
     // +0x91  uint8_t                  field_0x91  (evidence: 0x005435A0)
     // +0x94  int32_t field_0x94 (read when flag == 0)  (evidence: 0x007C9490, 0x007CAF70) // CONFLICT: multiple definitions at +0x94
-    // +0x94  void* indexedString (sub-object passed to assignStringByIndex)  (evidence: 0x006E8E50) // CONFLICT: multiple definitions at +0x94
+    // +0x94  void* indexedString (sub-object passed to assignStringByIndex)  (evidence: 0x006E8E50, 0x006E9030, 0x006E9210) // CONFLICT: multiple definitions at +0x94
     // +0x94  Unknown                  errorReporter  (evidence: 0x006E9150, 0x006E9580, 0x006E9840) // CONFLICT: multiple definitions at +0x94
     // +0x94  uint8_t                  errorReporter  (evidence: 0x006E9390) // CONFLICT: multiple definitions at +0x94
     // +0x94  uint8_t field_0x94 (sub-object address passed to ext_006E7440)  (evidence: 0x006E8F70) // CONFLICT: multiple definitions at +0x94
@@ -2306,7 +2306,7 @@ struct Unknown_Fields {
     // +0x4E8 int32_t field_0x4E8 (on the object returned by ext_00594620)  (evidence: 0x00412CE0)
     // +0x518 DWORD                    field_0x518  (evidence: 0x00702790)
     // +0x531 uint8_t                  field_0x531  (evidence: 0x00434610)
-    // +0x550 uint8_t[] field_0x550 (address only; passed as self to ext_005A1E90)  (evidence: 0x005A34C0)
+    // +0x550 uint8_t[] field_0x550 (address only; passed as self to ext_005A1E90)  (evidence: 0x005A34C0, 0x005A3500, 0x005A3540)
     // +0x564 int32_t                  field_0x564  (evidence: 0x004030F0, 0x00405160, 0x0040BE90) // CONFLICT: multiple definitions at +0x564
     // +0x564 DWORD                    recordsBegin  (evidence: 0x004030F0, 0x0040BE90) // CONFLICT: multiple definitions at +0x564
     // +0x568 int32_t                  field_0x568  (evidence: 0x004030F0, 0x00405160, 0x0040BE90) // CONFLICT: multiple definitions at +0x568

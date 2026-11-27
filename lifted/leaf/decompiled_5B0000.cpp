@@ -1,22 +1,39 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_5B0000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <new>
+#include <string>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <cstddef>
+#include <stdexcept>
+#include <utility>
+#include <istream>
+#include <bit>
+#include <exception>
+#include <iostream>
+#include <streambuf>
+#include <cstdio>
+#include <memory>
 
-// [0x005B6970]
-namespace lift_005B6970 {
-// @name getField0x04From005B6930
-// @summary Calls sub_005B6930 and returns the float at offset +0x04 of the returned object.
+#include <string>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <cstddef>
+#include <stdexcept>
+#include <utility>
+#include <istream>
+#include <bit>
+#include <exception>
+#include <iostream>
+#include <streambuf>
+#include <cstdio>
+#include <memory>
+#include <cstdarg>
 
-
-extern uint32_t ext_005B6930();
-
-float sub_005B6970() {
-    uint32_t ptr = ext_005B6930();
-    return *reinterpret_cast<const float*>(static_cast<uintptr_t>(ptr) + 0x4);
-}
-} // namespace lift_005B6970
-
-// [0x005B67C0] sub_005B67C0 (32 bytes)
+#include <cstdarg>
 namespace lift_005B67C0 {
 void __thiscall ext_00647F50(void* self, float value);
 
@@ -1289,3 +1306,491 @@ void fn_005BEDD0(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_005BEDD0
+
+// [0x005BEE60] sub_005BEE60 (254 bytes)
+namespace lift_005BEE60 {
+// @name sub_005BEE60
+// @summary Auto-lifted identical-shape clone of 0x005A2540 (sub_005A2540).
+namespace lift_005A2540 {
+// @name sub_005A2540
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00A895A0;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005BEE60(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00A895A0);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A2540
+} // namespace lift_005BEE60
+
+// [0x005BEF60] sub_005BEF60 (247 bytes)
+namespace lift_005BEF60 {
+// @name sub_005BEF60
+// @summary Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).
+namespace lift_00541630 {
+// @name TreeMap::eraseAndDeleteByKey
+// @class TreeMap
+// @summary Finds a key in a std::map<std::string, T*>, throws if missing, otherwise deletes the mapped pointer and erases the entry.
+// @field TreeMap +0x04 void* head
+// @field TreeNode +0x28 void* value
+
+extern void* fn_005A07A0(void* self, void* out_iter, const void* key);
+extern void* fn_005AE1B0(void* self, void* out_iter, void* it_proxy, void* it_node);
+extern void fn_0041FF30(void* self, const void* msg, const void* key);
+extern void fn_006A6DD2(void* exc, void* throw_info);
+
+extern void* mem_00925134;
+extern void* mem_00A895A0;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+#define ext_005A07A0 fn_005A07A0
+#define ext_005AE1B0 fn_005AE1B0
+#define ext_0041FF30 fn_0041FF30
+#define ext_006A6DD2 fn_006A6DD2
+
+struct TreeIter {
+    void* proxy;
+    void* node;
+};
+
+void __thiscall fn_005BEF60(void* self, uint8_t key_buf[28]) {
+    TreeIter it{};
+    ext_005A07A0(self, &it, key_buf);
+
+    void* edi = it.proxy;
+    void* ebp = lift_field<void*>(self, 0x4);
+    if (!edi || edi != self) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* ebx = it.node;
+    if (ebx == ebp) {
+        uint8_t msg_buf[28]{};
+        const char* err_str = lift_field<const char*>(&mem_00A895A0, 0);
+        reinterpret_cast<void(__thiscall*)(void*, const char*)>(mem_00924FE4)(msg_buf, err_str);
+
+        uint8_t exc_buf[64]{};
+        ext_0041FF30(exc_buf, msg_buf, key_buf);
+        ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009D3748));
+        return;
+    }
+
+    if (!edi) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    if (ebx == lift_field<void*>(edi, 0x4)) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* val = lift_field<void*>(ebx, 0x28);
+    if (val) {
+        void** vtable = *reinterpret_cast<void***>(val);
+        reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0])(val, 1);
+    }
+
+    TreeIter out_iter{};
+    ext_005AE1B0(self, &out_iter, edi, ebx);
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(key_buf);
+}
+} // namespace lift_00541630
+} // namespace lift_005BEF60
+
+// [0x005BF130] sub_005BF130 (254 bytes)
+namespace lift_005BF130 {
+// @name sub_005BF130
+// @summary Auto-lifted identical-shape clone of 0x005A2540 (sub_005A2540).
+namespace lift_005A2540 {
+// @name sub_005A2540
+// @summary Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).
+namespace lift_004796D0 {
+// @name sub_004796D0
+// @summary Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.
+
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void* ext_00478910(void* self, void* out, void* str);
+extern int32_t ext_005DF5C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* mem_00924FE0;
+extern const char* mem_00A895A4;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+extern void* fn_005BF130(void* self, void* out, MsvcString arg_str) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString tmp_str{};
+        cstr_ctor(&tmp_str, mem_00A895A4);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &tmp_str, &arg_str);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp_copy{};
+    copy_ctor(&tmp_copy, &arg_str);
+
+    uint8_t local_out[0x28]{};
+    *reinterpret_cast<void**>(local_out + 0x24) = out;
+    ext_00478910(self, local_out, &tmp_copy);
+
+    dtor(&tmp_copy);
+    dtor(&arg_str);
+    return out;
+}
+} // namespace lift_004796D0
+} // namespace lift_005A2540
+} // namespace lift_005BF130
+
+// [0x005BF230] sub_005BF230 (247 bytes)
+namespace lift_005BF230 {
+// @name sub_005BF230
+// @summary Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).
+namespace lift_00541630 {
+// @name TreeMap::eraseAndDeleteByKey
+// @class TreeMap
+// @summary Finds a key in a std::map<std::string, T*>, throws if missing, otherwise deletes the mapped pointer and erases the entry.
+// @field TreeMap +0x04 void* head
+// @field TreeNode +0x28 void* value
+
+extern void* fn_005A07A0(void* self, void* out_iter, const void* key);
+extern void* fn_005AE1B0(void* self, void* out_iter, void* it_proxy, void* it_node);
+extern void fn_0041FF30(void* self, const void* msg, const void* key);
+extern void fn_006A6DD2(void* exc, void* throw_info);
+
+extern void* mem_00925134;
+extern void* mem_00A895A4;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+#define ext_005A07A0 fn_005A07A0
+#define ext_005AE1B0 fn_005AE1B0
+#define ext_0041FF30 fn_0041FF30
+#define ext_006A6DD2 fn_006A6DD2
+
+struct TreeIter {
+    void* proxy;
+    void* node;
+};
+
+void __thiscall fn_005BF230(void* self, uint8_t key_buf[28]) {
+    TreeIter it{};
+    ext_005A07A0(self, &it, key_buf);
+
+    void* edi = it.proxy;
+    void* ebp = lift_field<void*>(self, 0x4);
+    if (!edi || edi != self) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* ebx = it.node;
+    if (ebx == ebp) {
+        uint8_t msg_buf[28]{};
+        const char* err_str = lift_field<const char*>(&mem_00A895A4, 0);
+        reinterpret_cast<void(__thiscall*)(void*, const char*)>(mem_00924FE4)(msg_buf, err_str);
+
+        uint8_t exc_buf[64]{};
+        ext_0041FF30(exc_buf, msg_buf, key_buf);
+        ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009D3748));
+        return;
+    }
+
+    if (!edi) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    if (ebx == lift_field<void*>(edi, 0x4)) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* val = lift_field<void*>(ebx, 0x28);
+    if (val) {
+        void** vtable = *reinterpret_cast<void***>(val);
+        reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0])(val, 1);
+    }
+
+    TreeIter out_iter{};
+    ext_005AE1B0(self, &out_iter, edi, ebx);
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(key_buf);
+}
+} // namespace lift_00541630
+} // namespace lift_005BF230
+
+// [0x005BFDE0] sub_005BFDE0 (247 bytes)
+namespace lift_005BFDE0 {
+// @name sub_005BFDE0
+// @summary Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).
+namespace lift_00541630 {
+// @name TreeMap::eraseAndDeleteByKey
+// @class TreeMap
+// @summary Finds a key in a std::map<std::string, T*>, throws if missing, otherwise deletes the mapped pointer and erases the entry.
+// @field TreeMap +0x04 void* head
+// @field TreeNode +0x28 void* value
+
+extern void* fn_005A07A0(void* self, void* out_iter, const void* key);
+extern void* fn_005AE1B0(void* self, void* out_iter, void* it_proxy, void* it_node);
+extern void fn_0041FF30(void* self, const void* msg, const void* key);
+extern void fn_006A6DD2(void* exc, void* throw_info);
+
+extern void* mem_00925134;
+extern void* mem_00A2E458;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+#define ext_005A07A0 fn_005A07A0
+#define ext_005AE1B0 fn_005AE1B0
+#define ext_0041FF30 fn_0041FF30
+#define ext_006A6DD2 fn_006A6DD2
+
+struct TreeIter {
+    void* proxy;
+    void* node;
+};
+
+void __thiscall fn_005BFDE0(void* self, uint8_t key_buf[28]) {
+    TreeIter it{};
+    ext_005A07A0(self, &it, key_buf);
+
+    void* edi = it.proxy;
+    void* ebp = lift_field<void*>(self, 0x4);
+    if (!edi || edi != self) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* ebx = it.node;
+    if (ebx == ebp) {
+        uint8_t msg_buf[28]{};
+        const char* err_str = lift_field<const char*>(&mem_00A2E458, 0);
+        reinterpret_cast<void(__thiscall*)(void*, const char*)>(mem_00924FE4)(msg_buf, err_str);
+
+        uint8_t exc_buf[64]{};
+        ext_0041FF30(exc_buf, msg_buf, key_buf);
+        ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009D3748));
+        return;
+    }
+
+    if (!edi) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    if (ebx == lift_field<void*>(edi, 0x4)) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* val = lift_field<void*>(ebx, 0x28);
+    if (val) {
+        void** vtable = *reinterpret_cast<void***>(val);
+        reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0])(val, 1);
+    }
+
+    TreeIter out_iter{};
+    ext_005AE1B0(self, &out_iter, edi, ebx);
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(key_buf);
+}
+} // namespace lift_00541630
+} // namespace lift_005BFDE0
+
+// [0x005BFEE0] sub_005BFEE0 (247 bytes)
+namespace lift_005BFEE0 {
+// @name sub_005BFEE0
+// @summary Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).
+namespace lift_00541630 {
+// @name TreeMap::eraseAndDeleteByKey
+// @class TreeMap
+// @summary Finds a key in a std::map<std::string, T*>, throws if missing, otherwise deletes the mapped pointer and erases the entry.
+// @field TreeMap +0x04 void* head
+// @field TreeNode +0x28 void* value
+
+extern void* fn_005A07A0(void* self, void* out_iter, const void* key);
+extern void* fn_005AE1B0(void* self, void* out_iter, void* it_proxy, void* it_node);
+extern void fn_0041FF30(void* self, const void* msg, const void* key);
+extern void fn_006A6DD2(void* exc, void* throw_info);
+
+extern void* mem_00925134;
+extern void* mem_00A2E45C;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+#define ext_005A07A0 fn_005A07A0
+#define ext_005AE1B0 fn_005AE1B0
+#define ext_0041FF30 fn_0041FF30
+#define ext_006A6DD2 fn_006A6DD2
+
+struct TreeIter {
+    void* proxy;
+    void* node;
+};
+
+void __thiscall fn_005BFEE0(void* self, uint8_t key_buf[28]) {
+    TreeIter it{};
+    ext_005A07A0(self, &it, key_buf);
+
+    void* edi = it.proxy;
+    void* ebp = lift_field<void*>(self, 0x4);
+    if (!edi || edi != self) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* ebx = it.node;
+    if (ebx == ebp) {
+        uint8_t msg_buf[28]{};
+        const char* err_str = lift_field<const char*>(&mem_00A2E45C, 0);
+        reinterpret_cast<void(__thiscall*)(void*, const char*)>(mem_00924FE4)(msg_buf, err_str);
+
+        uint8_t exc_buf[64]{};
+        ext_0041FF30(exc_buf, msg_buf, key_buf);
+        ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009D3748));
+        return;
+    }
+
+    if (!edi) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    if (ebx == lift_field<void*>(edi, 0x4)) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* val = lift_field<void*>(ebx, 0x28);
+    if (val) {
+        void** vtable = *reinterpret_cast<void***>(val);
+        reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0])(val, 1);
+    }
+
+    TreeIter out_iter{};
+    ext_005AE1B0(self, &out_iter, edi, ebx);
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(key_buf);
+}
+} // namespace lift_00541630
+} // namespace lift_005BFEE0
+
+// [0x005BFFE0] sub_005BFFE0 (247 bytes)
+namespace lift_005BFFE0 {
+// @name sub_005BFFE0
+// @summary Auto-lifted identical-shape clone of 0x00541630 (TreeMap::eraseAndDeleteByKey).
+namespace lift_00541630 {
+// @name TreeMap::eraseAndDeleteByKey
+// @class TreeMap
+// @summary Finds a key in a std::map<std::string, T*>, throws if missing, otherwise deletes the mapped pointer and erases the entry.
+// @field TreeMap +0x04 void* head
+// @field TreeNode +0x28 void* value
+
+extern void* fn_005A07A0(void* self, void* out_iter, const void* key);
+extern void* fn_005AE1B0(void* self, void* out_iter, void* it_proxy, void* it_node);
+extern void fn_0041FF30(void* self, const void* msg, const void* key);
+extern void fn_006A6DD2(void* exc, void* throw_info);
+
+extern void* mem_00925134;
+extern void* mem_00AC74E4;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+#define ext_005A07A0 fn_005A07A0
+#define ext_005AE1B0 fn_005AE1B0
+#define ext_0041FF30 fn_0041FF30
+#define ext_006A6DD2 fn_006A6DD2
+
+struct TreeIter {
+    void* proxy;
+    void* node;
+};
+
+void __thiscall fn_005BFFE0(void* self, uint8_t key_buf[28]) {
+    TreeIter it{};
+    ext_005A07A0(self, &it, key_buf);
+
+    void* edi = it.proxy;
+    void* ebp = lift_field<void*>(self, 0x4);
+    if (!edi || edi != self) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* ebx = it.node;
+    if (ebx == ebp) {
+        uint8_t msg_buf[28]{};
+        const char* err_str = lift_field<const char*>(&mem_00AC74E4, 0);
+        reinterpret_cast<void(__thiscall*)(void*, const char*)>(mem_00924FE4)(msg_buf, err_str);
+
+        uint8_t exc_buf[64]{};
+        ext_0041FF30(exc_buf, msg_buf, key_buf);
+        ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009D3748));
+        return;
+    }
+
+    if (!edi) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    if (ebx == lift_field<void*>(edi, 0x4)) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    void* val = lift_field<void*>(ebx, 0x28);
+    if (val) {
+        void** vtable = *reinterpret_cast<void***>(val);
+        reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0])(val, 1);
+    }
+
+    TreeIter out_iter{};
+    ext_005AE1B0(self, &out_iter, edi, ebx);
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(key_buf);
+}
+} // namespace lift_00541630
+} // namespace lift_005BFFE0

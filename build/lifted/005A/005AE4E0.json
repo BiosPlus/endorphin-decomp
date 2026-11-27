@@ -1,0 +1,28 @@
+{
+  "va": "0x005AE4E0",
+  "size": 203,
+  "orig_symbol": "sub_005AE4E0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005AE4E0",
+  "class": "_Tree",
+  "signature": "extern TreeIter* __thiscall fn_005AE4E0(void* self, TreeIter* ret, void* firstCont, void* firstNode, void* lastCont, void* lastNode)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).",
+  "fields": [
+    {
+      "class": "_Tree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "_Tree",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:43:58Z"
+}

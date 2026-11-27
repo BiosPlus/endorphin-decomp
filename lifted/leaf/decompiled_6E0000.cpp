@@ -2715,3 +2715,105 @@ void* __thiscall fn_006E8E50(void* self) {
     return match;
 }
 } // namespace lift_006E8E50
+
+// [0x006E9030] sub_006E9030 (160 bytes)
+namespace lift_006E9030 {
+// @name sub_006E9030
+// @summary Auto-lifted identical-shape clone of 0x006E8E50 (Unknown::findEntryByString).
+namespace lift_006E8E50 {
+// Known callee 0x006B9D70: sub_006B9D70 (pure jump thunk forwarding to sub_006B9970).
+// Thiscall: ecx = String temp object; releases it.
+extern void ext_006B9D70(void* self);
+// Known callee 0x006BA660: String::compare. Thiscall: ecx = self (const char* const*), one stack arg (other C-string).
+// Returns 0 when the strings match.
+extern int32_t ext_006BA660(const char* const* self, const char* other);
+// Known callee 0x006BADB0: this-adjustor thunk (this += 4), tail-calls sub_006E6340; the result is passed on as a C-string.
+extern const char* ext_006BADB0(void* self);
+// Known callee 0x006E7440: Unknown::assignStringByIndex. Thiscall: ecx = this, one stack arg (index).
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::findEntryByString
+// @class Unknown
+// @summary Scans the 32-bit entry-pointer array at +0x2C (count at +0x1C), comparing each entry's string with a temp String; returns the first matching entry object, or assigns index 5 into the sub-object at +0x94 and returns null.
+// @field Unknown +0x1C int32_t entryCount
+// @field Unknown +0x2C uint32_t entriesBase (address of array of 32-bit entry pointers)
+// @field Unknown +0x94 void* indexedString (sub-object passed to assignStringByIndex)
+void* __thiscall fn_006E9030(void* self) {
+    // SEH frame (fs:[0] push/restore, scope table 0x008BDC58, state -1 teardown) omitted; no portable equivalent.
+    const char* strTmp = nullptr;  // Stack String temp (esp+0x20); its value is not set before the loop in the asm.
+    void* match = nullptr;
+    bool found = false;
+
+    const int32_t count = lift_field<int32_t>(self, 0x34);
+    for (int32_t i = 0; i < count && !found; ++i) {
+        const uint32_t entriesAddr = lift_field<uint32_t>(self, 0x44);
+        const auto* entries = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(entriesAddr));
+        const auto* entry = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(entries[i]));
+        void* entryObj = reinterpret_cast<void*>(static_cast<uintptr_t>(*entry));
+
+        const char* other = ext_006BADB0(entryObj);
+        if (ext_006BA660(&strTmp, other) == 0) {
+            match = entryObj;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        ext_006E7440(static_cast<uint8_t*>(self) + 0x94, 7);
+    }
+    ext_006B9D70(&strTmp);
+    return match;
+}
+} // namespace lift_006E8E50
+} // namespace lift_006E9030
+
+// [0x006E9210] sub_006E9210 (160 bytes)
+namespace lift_006E9210 {
+// @name sub_006E9210
+// @summary Auto-lifted identical-shape clone of 0x006E8E50 (Unknown::findEntryByString).
+namespace lift_006E8E50 {
+// Known callee 0x006B9D70: sub_006B9D70 (pure jump thunk forwarding to sub_006B9970).
+// Thiscall: ecx = String temp object; releases it.
+extern void ext_006B9D70(void* self);
+// Known callee 0x006BA660: String::compare. Thiscall: ecx = self (const char* const*), one stack arg (other C-string).
+// Returns 0 when the strings match.
+extern int32_t ext_006BA660(const char* const* self, const char* other);
+// Known callee 0x006BADB0: this-adjustor thunk (this += 4), tail-calls sub_006E6340; the result is passed on as a C-string.
+extern const char* ext_006BADB0(void* self);
+// Known callee 0x006E7440: Unknown::assignStringByIndex. Thiscall: ecx = this, one stack arg (index).
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::findEntryByString
+// @class Unknown
+// @summary Scans the 32-bit entry-pointer array at +0x2C (count at +0x1C), comparing each entry's string with a temp String; returns the first matching entry object, or assigns index 5 into the sub-object at +0x94 and returns null.
+// @field Unknown +0x1C int32_t entryCount
+// @field Unknown +0x2C uint32_t entriesBase (address of array of 32-bit entry pointers)
+// @field Unknown +0x94 void* indexedString (sub-object passed to assignStringByIndex)
+void* __thiscall fn_006E9210(void* self) {
+    // SEH frame (fs:[0] push/restore, scope table 0x008BDC58, state -1 teardown) omitted; no portable equivalent.
+    const char* strTmp = nullptr;  // Stack String temp (esp+0x20); its value is not set before the loop in the asm.
+    void* match = nullptr;
+    bool found = false;
+
+    const int32_t count = lift_field<int32_t>(self, 0x4C);
+    for (int32_t i = 0; i < count && !found; ++i) {
+        const uint32_t entriesAddr = lift_field<uint32_t>(self, 0x5C);
+        const auto* entries = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(entriesAddr));
+        const auto* entry = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(entries[i]));
+        void* entryObj = reinterpret_cast<void*>(static_cast<uintptr_t>(*entry));
+
+        const char* other = ext_006BADB0(entryObj);
+        if (ext_006BA660(&strTmp, other) == 0) {
+            match = entryObj;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        ext_006E7440(static_cast<uint8_t*>(self) + 0x94, 9);
+    }
+    ext_006B9D70(&strTmp);
+    return match;
+}
+} // namespace lift_006E8E50
+} // namespace lift_006E9210

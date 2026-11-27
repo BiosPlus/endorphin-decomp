@@ -1,0 +1,22 @@
+{
+  "va": "0x005A0810",
+  "size": 243,
+  "orig_symbol": "sub_005A0810",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005A0810",
+  "class": "TreeMap",
+  "signature": "extern InsertResult* __thiscall fn_005A0810(void* self, InsertResult* ret, const void* val)",
+  "summary": "Auto-lifted identical-shape clone of 0x0042C0D0 (TreeMap::insertUnique).",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:43:58Z"
+}

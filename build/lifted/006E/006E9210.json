@@ -1,0 +1,34 @@
+{
+  "va": "0x006E9210",
+  "size": 160,
+  "orig_symbol": "sub_006E9210",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E9210",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_006E9210(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006E8E50 (Unknown::findEntryByString).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "entryCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t entriesBase (address of array of 32-bit entry",
+      "name": "pointers)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "void* indexedString (sub-object passed to",
+      "name": "assignStringByIndex)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:43:58Z"
+}

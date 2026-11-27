@@ -8,6 +8,6 @@
 // Recovered field layout for Properties::PropertyIteratorType:
 namespace lifted_layout {
 struct Properties_PropertyIteratorType_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x004BB060)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x004BB060, 0x004BB0E0, 0x00500D20)
 };
 } // namespace lifted_layout

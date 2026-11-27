@@ -46,8 +46,10 @@ uint32_t fn_004A2510(void* self) {
 }
 } // namespace lift_004A2510
 #include <cstring>
+#include <stdexcept>
+#include <iostream>
 
-// [0x004A5BE0] sub_004A5BE0 (25 bytes)
+#include <iostream>
 namespace lift_004A5BE0 {
 // @name sub_004A5BE0
 // @summary Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).
@@ -1985,3 +1987,249 @@ void fn_004AC4B0(uint32_t* first, uint32_t* last, int32_t ideal, uint32_t pred) 
     }
 }
 } // namespace lift_004AC4B0
+
+// [0x004A6AF0] sub_004A6AF0 (203 bytes)
+namespace lift_004A6AF0 {
+// @name sub_004A6AF0
+// @summary Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).
+namespace lift_0046A810 {
+extern void __thiscall ext_004A68E0(void* self, void* node);
+extern void* __thiscall ext_004A6350(void* self, void* outIter, void* cont, void* node);
+extern void __thiscall ext_004A5920(void* self);
+extern void (*mem_00925134)();
+
+struct TreeIter {
+    void* cont;
+    void* node;
+};
+
+// @name _Tree::eraseRange
+// @class _Tree
+// @summary Erases nodes in [first,last); clears whole tree fast-path when range is begin..end; returns iterator.
+// @field _Tree +0x04 void* head
+// @field _Tree +0x08 uint32_t size
+extern TreeIter* __thiscall fn_004A6AF0(void* self, TreeIter* ret, void* firstCont, void* firstNode,
+                                          void* lastCont, void* lastNode)
+{
+    uint8_t* s = (uint8_t*)self;
+    TreeIter first = {firstCont, firstNode};
+    void** head = *(void***)(s + 0x4);
+    void* beginNode = head[0];
+    if (firstCont == nullptr || firstCont != self)
+        mem_00925134();
+    if (firstNode == beginNode) {
+        void* endNode = *(void**)(s + 0x4);
+        if (lastCont == nullptr || lastCont != self)
+            mem_00925134();
+        if (lastNode == endNode) {
+            void** h = *(void***)(s + 0x4);
+            ext_004A68E0(self, h[1]);
+            h = *(void***)(s + 0x4);
+            h[1] = h;
+            *(uint32_t*)(s + 0x8) = 0;
+            h[0] = h;
+            h[2] = h;
+            h = *(void***)(s + 0x4);
+            ret->cont = self;
+            ret->node = h[0];
+            return ret;
+        }
+    }
+    for (;;) {
+        if (first.cont == nullptr || first.cont != lastCont)
+            mem_00925134();
+        if (first.node == lastNode)
+            break;
+        void* oc = first.cont;
+        void* on = first.node;
+        ext_004A5920(&first);
+        TreeIter tmp;
+        ext_004A6350(self, &tmp, oc, on);
+    }
+    ret->cont = first.cont;
+    ret->node = first.node;
+    return ret;
+}
+} // namespace lift_0046A810
+} // namespace lift_004A6AF0
+
+// [0x004A8FB0] sub_004A8FB0 (248 bytes)
+namespace lift_004A8FB0 {
+// @name sub_004A8FB0
+// @summary Auto-lifted identical-shape clone of 0x0042C0D0 (TreeMap::insertUnique).
+namespace lift_0042C0D0 {
+extern void __thiscall ext_004A5D20(void* self);
+extern void* __thiscall ext_004A8DA0(void* self, void* outIter, bool addLeft, void* whereNode, const void* val);
+extern void* mem_00924EF4; // MSVCP80 operator<(const string&, const string&)
+
+typedef bool (__cdecl *StrLessFn)(const void*, const void*);
+
+struct TreeIter { void* cont; uint8_t* node; };
+struct InsertResult { void* cont; void* node; bool inserted; };
+
+// @name TreeMap::insertUnique
+// @class TreeMap
+// @summary std::map<std::string,...>::insert (unique): finds slot, inserts if key absent, returns pair<iterator,bool>.
+// @field TreeMap +0x04 void* head
+extern InsertResult* __thiscall fn_004A8FB0(void* self, InsertResult* ret, const void* val) {
+    StrLessFn strLess = (StrLessFn)mem_00924EF4;
+    uint8_t* head = *(uint8_t**)((uint8_t*)self + 0x4);
+    uint8_t* node = *(uint8_t**)(head + 0x4);
+    uint8_t* where = head;
+    bool addLeft = true;
+    while (*(node + 0xAD) == 0) {
+        where = node;
+        addLeft = strLess(val, node + 0xc);
+        node = addLeft ? *(uint8_t**)(node + 0x0) : *(uint8_t**)(node + 0x8);
+    }
+    TreeIter it;
+    it.cont = self;
+    it.node = where;
+    TreeIter tmp;
+    if (addLeft) {
+        if (where == **(uint8_t***)((uint8_t*)self + 0x4)) {
+            TreeIter* r = (TreeIter*)ext_004A8DA0(self, &tmp, true, where, val);
+            ret->cont = r->cont;
+            ret->node = r->node;
+            ret->inserted = true;
+            return ret;
+        }
+        ext_004A5D20(&it);
+    }
+    if (strLess(it.node + 0xc, val)) {
+        TreeIter* r = (TreeIter*)ext_004A8DA0(self, &tmp, addLeft, where, val);
+        ret->cont = r->cont;
+        ret->node = r->node;
+        ret->inserted = true;
+        return ret;
+    }
+    ret->cont = it.cont;
+    ret->node = it.node;
+    ret->inserted = false;
+    return ret;
+}
+} // namespace lift_0042C0D0
+} // namespace lift_004A8FB0
+
+// [0x004AE110] sub_004AE110 (243 bytes)
+namespace lift_004AE110 {
+// @name sub_004AE110
+// @summary Auto-lifted identical-shape clone of 0x0042C0D0 (TreeMap::insertUnique).
+namespace lift_0042C0D0 {
+extern void __thiscall ext_00666C00(void* self);
+extern void* __thiscall ext_004ADB20(void* self, void* outIter, bool addLeft, void* whereNode, const void* val);
+extern void* mem_00924EF4; // MSVCP80 operator<(const string&, const string&)
+
+typedef bool (__cdecl *StrLessFn)(const void*, const void*);
+
+struct TreeIter { void* cont; uint8_t* node; };
+struct InsertResult { void* cont; void* node; bool inserted; };
+
+// @name TreeMap::insertUnique
+// @class TreeMap
+// @summary std::map<std::string,...>::insert (unique): finds slot, inserts if key absent, returns pair<iterator,bool>.
+// @field TreeMap +0x04 void* head
+extern InsertResult* __thiscall fn_004AE110(void* self, InsertResult* ret, const void* val) {
+    StrLessFn strLess = (StrLessFn)mem_00924EF4;
+    uint8_t* head = *(uint8_t**)((uint8_t*)self + 0x4);
+    uint8_t* node = *(uint8_t**)(head + 0x4);
+    uint8_t* where = head;
+    bool addLeft = true;
+    while (*(node + 0x39) == 0) {
+        where = node;
+        addLeft = strLess(val, node + 0xc);
+        node = addLeft ? *(uint8_t**)(node + 0x0) : *(uint8_t**)(node + 0x8);
+    }
+    TreeIter it;
+    it.cont = self;
+    it.node = where;
+    TreeIter tmp;
+    if (addLeft) {
+        if (where == **(uint8_t***)((uint8_t*)self + 0x4)) {
+            TreeIter* r = (TreeIter*)ext_004ADB20(self, &tmp, true, where, val);
+            ret->cont = r->cont;
+            ret->node = r->node;
+            ret->inserted = true;
+            return ret;
+        }
+        ext_00666C00(&it);
+    }
+    if (strLess(it.node + 0xc, val)) {
+        TreeIter* r = (TreeIter*)ext_004ADB20(self, &tmp, addLeft, where, val);
+        ret->cont = r->cont;
+        ret->node = r->node;
+        ret->inserted = true;
+        return ret;
+    }
+    ret->cont = it.cont;
+    ret->node = it.node;
+    ret->inserted = false;
+    return ret;
+}
+} // namespace lift_0042C0D0
+} // namespace lift_004AE110
+
+// [0x004AE420] sub_004AE420 (203 bytes)
+namespace lift_004AE420 {
+// @name sub_004AE420
+// @summary Auto-lifted identical-shape clone of 0x0046A810 (_Tree::eraseRange).
+namespace lift_0046A810 {
+extern void __thiscall ext_004AE040(void* self, void* node);
+extern void* __thiscall ext_004ADD20(void* self, void* outIter, void* cont, void* node);
+extern void __thiscall ext_00667030(void* self);
+extern void (*mem_00925134)();
+
+struct TreeIter {
+    void* cont;
+    void* node;
+};
+
+// @name _Tree::eraseRange
+// @class _Tree
+// @summary Erases nodes in [first,last); clears whole tree fast-path when range is begin..end; returns iterator.
+// @field _Tree +0x04 void* head
+// @field _Tree +0x08 uint32_t size
+extern TreeIter* __thiscall fn_004AE420(void* self, TreeIter* ret, void* firstCont, void* firstNode,
+                                          void* lastCont, void* lastNode)
+{
+    uint8_t* s = (uint8_t*)self;
+    TreeIter first = {firstCont, firstNode};
+    void** head = *(void***)(s + 0x4);
+    void* beginNode = head[0];
+    if (firstCont == nullptr || firstCont != self)
+        mem_00925134();
+    if (firstNode == beginNode) {
+        void* endNode = *(void**)(s + 0x4);
+        if (lastCont == nullptr || lastCont != self)
+            mem_00925134();
+        if (lastNode == endNode) {
+            void** h = *(void***)(s + 0x4);
+            ext_004AE040(self, h[1]);
+            h = *(void***)(s + 0x4);
+            h[1] = h;
+            *(uint32_t*)(s + 0x8) = 0;
+            h[0] = h;
+            h[2] = h;
+            h = *(void***)(s + 0x4);
+            ret->cont = self;
+            ret->node = h[0];
+            return ret;
+        }
+    }
+    for (;;) {
+        if (first.cont == nullptr || first.cont != lastCont)
+            mem_00925134();
+        if (first.node == lastNode)
+            break;
+        void* oc = first.cont;
+        void* on = first.node;
+        ext_00667030(&first);
+        TreeIter tmp;
+        ext_004ADD20(self, &tmp, oc, on);
+    }
+    ret->cont = first.cont;
+    ret->node = first.node;
+    return ret;
+}
+} // namespace lift_0046A810
+} // namespace lift_004AE420

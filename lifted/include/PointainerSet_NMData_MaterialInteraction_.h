@@ -8,7 +8,7 @@
 // Recovered field layout for PointainerSet<NMData::MaterialInteraction>:
 namespace lifted_layout {
 struct PointainerSet_NMData_MaterialInteraction__Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x004BB060)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x004BB060)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x004BB060, 0x004BB0E0, 0x00500D20)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x004BB060, 0x004BB0E0, 0x00500D20)
 };
 } // namespace lifted_layout

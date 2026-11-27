@@ -1,0 +1,13 @@
+{
+  "va": "0x00601810",
+  "size": 244,
+  "orig_symbol": "sub_00601810",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "sub_00601810",
+  "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00601810(void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:43:58Z"
+}

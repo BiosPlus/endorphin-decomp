@@ -1,0 +1,13 @@
+{
+  "va": "0x005BF130",
+  "size": 254,
+  "orig_symbol": "sub_005BF130",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "sub_005BF130",
+  "signature": "extern void* fn_005BF130(void* self, void* out, MsvcString arg_str)",
+  "summary": "Auto-lifted identical-shape clone of 0x005A2540 (sub_005A2540).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:43:58Z"
+}
