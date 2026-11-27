@@ -2661,3 +2661,41 @@ void* fn_006738D0(void* self, const void* a, const void* b, uint32_t v1, uint32_
     return self;
 }
 } // namespace lift_006738D0
+
+// [0x00672690] sub_00672690 (139 bytes)
+namespace lift_00672690 {
+// Known callee 0x006724B0: pushHeapByKey (Sift-up heap insertion (std::__push_heap shape) of an object pointer into an array, ordered by std::string operator> on each object's virtual key (vtable slot +0x24).)
+extern void ext_006724B0(void** first, int holeIndex, int topIndex, void* value);
+// MSVCP80 std::string operator> import slot (IAT entry, holds the function address at runtime).
+extern int mem_00924EF4;
+
+// Virtual key accessor: vtable slot +0x24 (index 9) returns const std::string&.
+static inline const std::string& keyOf(void* obj) {
+    using KeyFn = const std::string& (__thiscall*)(void*);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<KeyFn>(vtbl[9])(obj);
+}
+
+// @name pushHeapByKey_adjust
+// @summary std::__adjust_heap shape: sift the hole at holeIndex down by child key (std::string >), then push value up via fn_006724B0.
+void fn_00672690(void** first, int holeIndex, int len, void* value) {
+    using StrGtFn = bool(__cdecl*)(const std::string&, const std::string&);
+    const StrGtFn strGreater = *reinterpret_cast<StrGtFn*>(&mem_00924EF4);
+
+    const int topIndex = holeIndex;
+    int secondChild = 2 * holeIndex + 2;
+    while (secondChild < len) {
+        if (strGreater(keyOf(first[secondChild]), keyOf(first[secondChild - 1]))) {
+            --secondChild;
+        }
+        first[holeIndex] = first[secondChild];
+        holeIndex = secondChild;
+        secondChild = 2 * (secondChild + 1);
+    }
+    if (secondChild == len) {
+        first[holeIndex] = first[len - 1];
+        holeIndex = len - 1;
+    }
+    ext_006724B0(first, holeIndex, topIndex, value);
+}
+} // namespace lift_00672690

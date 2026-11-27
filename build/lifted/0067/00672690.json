@@ -1,0 +1,13 @@
+{
+  "va": "0x00672690",
+  "size": 139,
+  "orig_symbol": "sub_00672690",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "pushHeapByKey_adjust",
+  "signature": "static inline const std::string\u0026 keyOf(void* obj)",
+  "summary": "std::__adjust_heap shape: sift the hole at holeIndex down by child key (std::string \u003e), then push value up via fn_006724B0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:58Z"
+}

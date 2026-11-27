@@ -55672,6 +55672,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005940E0 (Unknown::destructorBody_005940E0).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00672690": {
+    "name": "pushHeapByKey_adjust",
+    "signature": "static inline const std::string\u0026 keyOf(void* obj)",
+    "summary": "std::__adjust_heap shape: sift the hole at holeIndex down by child key (std::string \u003e), then push value up via fn_006724B0.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672810": {
     "name": "CopyRangeAndComputeDestEnd",
     "signature": "void* fn_00672810(const void* first, const void* last, void* dest)",
