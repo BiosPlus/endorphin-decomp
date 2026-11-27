@@ -67756,3 +67756,27 @@ bool fn_00512B10(void* self) {
     return result;
 }
 } // namespace lift_00512B10
+
+// [0x00512C20] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_5 (55 bytes)
+namespace lift_00512C20 {
+// Known callee 0x00511960: sub_00511960 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_00511960(void* self, const void* src);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_5
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Copies the string referenced by the first dword of the argument into a temporary std::string, then throws the default ExceptionWithMessage.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+void fn_00512C20(void* self) {
+    // Load the source pointer stored at the start of the argument object.
+    const void* src = *reinterpret_cast<void* const*>(self);
+
+    // Construct a temporary std::string (0x1c bytes) from src.
+    unsigned char tmp[0x1c];
+    ext_00511960(tmp, src);
+
+    // The original path unconditionally throws the default-message exception.
+    ext_0046C4E0();
+}
+} // namespace lift_00512C20

@@ -22508,6 +22508,13 @@
     "summary": "Returns a std::string by value (hidden return buffer) built from the string produced by sub_00511960 on the first pointer stored in self.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00512C20": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1\u003e",
+    "signature": "void fn_00512C20(void* self)",
+    "summary": "Copies the string referenced by the first dword of the argument into a temporary std::string, then throws the default ExceptionWithMessage.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00513020": {
     "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, ...\u003e::vfunc_0 (Chromosome::Descriptor::getTypicalMutationSize)",
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e",
