@@ -1,0 +1,64 @@
+{
+  "va": "0x00532900",
+  "size": 145,
+  "orig_symbol": "sub_00532900",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Copy-initialize from source (ctor-style copy of vec4 + string + flag)",
+  "class": "Object",
+  "signature": "void fn_00532900(void* self, const void* src)",
+  "summary": "Sets the vtable, enable flag, copies 4 floats (+0x08..+0x14), a std::string (+0x18), and a byte flag (+0x34) from the source object.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "enabled"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "vec4_x"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "vec4_y"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "vec4_z"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "vec4_w"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x18",
+      "type": "std::string",
+      "name": "name"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x34",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:36:46Z"
+}

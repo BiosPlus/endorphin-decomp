@@ -25398,6 +25398,13 @@
     "summary": "Constructor initializing vtable, flag, 4 floats, std::string copy, and trailing byte.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00532900": {
+    "name": "Copy-initialize from source (ctor-style copy of vec4 + string + flag)",
+    "class": "Object",
+    "signature": "void fn_00532900(void* self, const void* src)",
+    "summary": "Sets the vtable, enable flag, copies 4 floats (+0x08..+0x14), a std::string (+0x18), and a byte flag (+0x34) from the source object.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00532B40": {
     "name": "Unknown::dtor_00532B40",
     "class": "Unknown",

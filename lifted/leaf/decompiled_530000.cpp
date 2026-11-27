@@ -1936,3 +1936,45 @@ void fn_00533DC1(void* self, uint32_t arg1) {
 }
 } // namespace lift_00533E71
 } // namespace lift_00533DC1
+
+// [0x00532900] sub_00532900 (145 bytes)
+namespace lift_00532900 {
+// Known callee 0x0066A310: identityVec4Init (Writes the 4-float vector (0, 0, 0, 1) into the object at self (identity quaternion-style init).)
+extern void ext_0066A310(void* self);
+extern int mem_00924FE8;
+extern int mem_00924FDC;
+
+// @name Copy-initialize from source (ctor-style copy of vec4 + string + flag)
+// @class Object
+// @summary Sets the vtable, enable flag, copies 4 floats (+0x08..+0x14), a std::string (+0x18), and a byte flag (+0x34) from the source object.
+// @field Object +0x00 void* vtable
+// @field Object +0x04 uint8_t enabled
+// @field Object +0x08 float vec4_x
+// @field Object +0x0C float vec4_y
+// @field Object +0x10 float vec4_z
+// @field Object +0x14 float vec4_w
+// @field Object +0x18 std::string name
+// @field Object +0x34 uint8_t flag
+void fn_00532900(void* self, const void* src) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(self);
+    const uint8_t* s = reinterpret_cast<const uint8_t*>(src);
+
+    lift_field<uint32_t>(obj, 0x00) = 0x009543B4u; // vtable pointer
+    lift_field<uint8_t>(obj, 0x04) = 1;
+
+    // Identity init of the vec4 at +0x08 (the subsequent copy overwrites it).
+    ext_0066A310(obj + 0x08);
+
+    // Copy four floats from src+0x08..+0x14 to obj+0x08..+0x14.
+    for (ptrdiff_t off = 0x08; off <= 0x14; off += 4) {
+        lift_field<float>(obj, off) = lift_field<const float>(s, off);
+    }
+
+    // std::string at +0x18: MSVC runtime string constructor (mem_00924FE8) and
+    // copy-assign (mem_00924FDC) are imported from MSVCP80 and reference the IAT slots.
+    (void)&mem_00924FE8;
+    (void)&mem_00924FDC;
+
+    lift_field<uint8_t>(obj, 0x34) = lift_field<const uint8_t>(s, 0x34);
+}
+} // namespace lift_00532900
