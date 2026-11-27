@@ -2615,3 +2615,26 @@ extern void* __thiscall fn_006B9EC0(void* self, const char* s) {
     return self;
 }
 } // namespace lift_006B9EC0
+
+// [0x006B9E30]
+namespace lift_006B9E30 {
+// Known callee 0x006B9910: Unknown::sub_006B9910 (Zero-initializes two dword fields and sets the vtable pointer to mem_00B5D2B8.)
+extern void ext_006B9910(void* self);
+// Callee 0x006B9920: sub_006B9920 (32 bytes, not yet lifted)
+extern void ext_006B9920(void* self);
+// Known callee 0x006B9B40: Unknown::allocAndCopy_006B9B40 (Allocates len bytes, copies src on success, returns allocator result.)
+extern uint32_t ext_006B9B40(void* self, uint32_t len, const uint8_t* src);
+
+// @name Unknown::resetOrAllocCopy_006B9E30
+// @class Unknown
+// @summary Resets self via sub_006B9910; if len is zero calls sub_006B9920, otherwise allocates and copies len bytes from src via allocAndCopy_006B9B40. Returns self.
+void* __thiscall sub_006B9E30(void* self, uint32_t len, const uint8_t* src) {
+    ext_006B9910(self);
+    if (len == 0) {
+        ext_006B9920(self);
+        return self;
+    }
+    ext_006B9B40(self, len, src);
+    return self;
+}
+} // namespace lift_006B9E30

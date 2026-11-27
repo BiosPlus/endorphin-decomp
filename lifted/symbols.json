@@ -66163,6 +66163,13 @@
     "summary": "Resets self, allocates a buffer of count bytes, and fills it with the byte value; returns self.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B9E30": {
+    "name": "Unknown::resetOrAllocCopy_006B9E30",
+    "class": "Unknown",
+    "signature": "void* __thiscall sub_006B9E30(void* self, uint32_t len, const uint8_t* src)",
+    "summary": "Resets self via sub_006B9910; if len is zero calls sub_006B9920, otherwise allocates and copies len bytes from src via allocAndCopy_006B9B40. Returns self.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9EA0": {
     "name": "Unknown::storeByteIfAllocOk",
     "class": "Unknown",
@@ -78133,6 +78140,12 @@
     "name": "copyVec3NegateZ",
     "signature": "extern \"C\" void __stdcall fn_0076AD20( uint32_t dst, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8)",
     "summary": "Copies a 3-element double vector from a stack-passed object to dst, swapping elements 1 and 2 and negating element 2.",
+    "lifted_path": "lifted/leaf/decompiled_760000.cpp"
+  },
+  "0x0076B150": {
+    "name": "CopyIndexedPairsReordered",
+    "signature": "extern \"C\" void __stdcall fn_0076B150( uint32_t* dst, uint32_t arg1, StackPairs pairs)",
+    "summary": "Copies three 8-byte pairs from an array argument into a destination struct, swapping indices 1 and 2.",
     "lifted_path": "lifted/leaf/decompiled_760000.cpp"
   },
   "0x00771B90": {
