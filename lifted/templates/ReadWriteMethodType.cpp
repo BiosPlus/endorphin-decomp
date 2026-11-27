@@ -10915,3 +10915,24 @@ void fn_0051A450(void* out) {
     lift_field<DWORD>(out, 0x04) = 0x00AEC74Cu;          // out->+0x04 = &static object
 }
 } // namespace lift_0051A450
+
+// [0x005214B0] ExprParser::ReadWriteMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall PoseLoader::setPath(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005214B0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern BYTE mem_00AECC50;   // one-time initialization guard (bit 0)
+extern DWORD mem_00AECC4C;  // function-local static object (vtable slot at its first DWORD)
+
+// @name ExprParser::ReadWriteMethodType<PoseLoader>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall PoseLoader::setPath(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily initializes the static ReadWriteMethodType helper object (once, guarded by bit 0 of mem_00AECC50) and stores its address into the stack-argument object's +0x04 slot.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04 (receives &mem_00AECC4C)
+void fn_005214B0(void* self) {
+    if ((mem_00AECC50 & 1) == 0) {
+        mem_00AECC50 |= 1;
+        ext_0067A670(&mem_00AECC4C, 0);
+        mem_00AECC4C = 0x00952864; // vtable pointer for the static helper
+    }
+    lift_field<void*>(self, 0x04) = &mem_00AECC4C;
+}
+} // namespace lift_005214B0
