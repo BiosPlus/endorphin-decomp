@@ -1,0 +1,34 @@
+{
+  "va": "0x004CA6A0",
+  "size": 164,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_22",
+  "src_path": "src/NMData/MetaBodyConstraintData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_22",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "void* __thiscall fn_004CA6A0(void* self, void* arg1)",
+  "summary": "Serializes MetaBodyConstraintData fields to an XML/data node.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x188",
+      "type": "void*",
+      "name": "field_0x188"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x194",
+      "type": "void*",
+      "name": "field_0x194"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x1A0",
+      "type": "uint8_t",
+      "name": "field_0x1a0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:17:50Z"
+}

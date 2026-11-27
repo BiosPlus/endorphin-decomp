@@ -275,3 +275,50 @@ extern void __thiscall fn_004CD0D0(void* self) {
     (void)&ext_004CC9E0;
 }
 } // namespace lift_004CD0D0
+
+// [0x004CA6A0]
+namespace lift_004CA6A0 {
+// @name NMData::MetaBodyConstraintData::vfunc_22
+// @class NMData::MetaBodyConstraintData
+// @summary Serializes MetaBodyConstraintData fields to an XML/data node.
+// @field NMData::MetaBodyConstraintData +0x188 void* field_0x188
+// @field NMData::MetaBodyConstraintData +0x194 void* field_0x194
+// @field NMData::MetaBodyConstraintData +0x1A0 uint8_t field_0x1a0
+
+extern uint32_t mem_00A9F74C;
+extern uint32_t mem_00A9F788;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00A9F1B8;
+extern uint32_t mem_00A9ED1C;
+
+void* __thiscall ext_00640110(void* self, uint32_t key);
+void __cdecl ext_00640A80(void* node, uint32_t flag);
+void __thiscall ext_004C1DE0(void* self, void* arg1);
+void* __thiscall ext_004CA5E0(void* self);
+void __thiscall ext_00427550(void* self, const char* name);
+void* __thiscall ext_00640390(void* self, uint32_t key, int zero);
+void __cdecl ext_0067F040(void* node, void* value_ptr);
+
+void* __thiscall fn_004CA6A0(void* self, void* arg1) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    void* node1 = ext_00640110(arg1, mem_00A9F74C);
+    ext_00640A80(node1, static_cast<uint32_t>(lift_field<uint8_t>(base, 0x1A0)));
+
+    ext_004C1DE0(self, arg1);
+
+    void* node2 = ext_00640110(arg1, mem_00A9F788);
+    void* str_obj = ext_004CA5E0(self);
+    auto c_str_fn = reinterpret_cast<const char*(__thiscall*)(void*)>(mem_00924FF0);
+    const char* name_str = c_str_fn(str_obj);
+    ext_00427550(&node2, name_str);
+
+    void* node3 = ext_00640390(arg1, mem_00A9F1B8, 0);
+    ext_0067F040(node3, base + 0x188);
+
+    void* node4 = ext_00640390(arg1, mem_00A9ED1C, 0);
+    ext_0067F040(node4, base + 0x194);
+
+    return arg1;
+}
+} // namespace lift_004CA6A0

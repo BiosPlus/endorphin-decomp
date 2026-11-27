@@ -5456,6 +5456,13 @@
     "summary": "Calls helper on owner, clears byte flag at +0x0D, kills owner timer, then restarts it with owner's +0x168 interval.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00442A40": {
+    "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_6",
+    "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+    "signature": "uint8_t __thiscall fn_00442A40(void* self, uint32_t flags, int32_t x, int32_t y)",
+    "summary": "Handles mouse/input event in WaitState, dispatching to owner or switching state on Alt+click",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp"
+  },
   "0x00442B20": {
     "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_18",
     "class": "MultiTrackView::MultiTrackViewStates::WaitState",
@@ -21081,6 +21088,13 @@
     "signature": "void fn_004CA590(void* self, const char* name)",
     "summary": "Compares name against the 5-entry string table; passes the matching index (or 2 if none) to SetIndexClamped0To4.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
+  "0x004CA6A0": {
+    "name": "NMData::MetaBodyConstraintData::vfunc_22",
+    "class": "NMData::MetaBodyConstraintData",
+    "signature": "void* __thiscall fn_004CA6A0(void* self, void* arg1)",
+    "summary": "Serializes MetaBodyConstraintData fields to an XML/data node.",
+    "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
   },
   "0x004CA750": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40",

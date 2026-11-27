@@ -15,7 +15,8 @@ struct NMData_MetaBodyConstraintData_Fields {
     // +0x168 void*                    field_0x168  (evidence: 0x004CD0D0)
     // +0x180 void*                    field_0x180  (evidence: 0x0048DE30, 0x004CD090, 0x004CE390, 0x005CF3E0)
     // +0x184 int                      field_0x184  (evidence: 0x004A9B50, 0x004CA3D0)
-    // +0x188 void*                    field_0x188  (evidence: 0x004CA310)
-    // +0x194 void*                    field_0x194  (evidence: 0x004CA310)
+    // +0x188 void*                    field_0x188  (evidence: 0x004CA310, 0x004CA6A0)
+    // +0x194 void*                    field_0x194  (evidence: 0x004CA310, 0x004CA6A0)
+    // +0x1A0 uint8_t                  field_0x1a0  (evidence: 0x004CA6A0)
 };
 } // namespace lifted_layout
