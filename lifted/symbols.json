@@ -73274,6 +73274,13 @@
     "summary": "Removes four specific named items from the object returned by ext_006C9360 and notifies ext_00732CB0.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00700F50": {
+    "name": "Unknown::insertSourceElementsIntoTarget_00700F50",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00700F50(void* self, void* arg1)",
+    "summary": "For each int32 in the owner's array at +0xD0 (count at +0xC0), inserts it into arg1 via DynamicArray::InsertAt at index *arg1.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007010B0": {
     "name": "CopyHugeConstantToGlobals",
     "signature": "extern uint32_t mem_00925284; // .rdata u32 0x0062D360 (pointer to _HUGE) extern uint32_t mem_00B5E7D0; // global, low dword extern uint32_t mem_00B5E7D4; // global, high dword void CopyHugeConstantToGlobals()",

@@ -2593,3 +2593,30 @@ void __thiscall sub_0070CED0(void* self, int32_t value) {
     reinterpret_cast<InsertAtFn>(ext_006D2170)(array, index, &local);
 }
 } // namespace lift_0070CED0
+
+// [0x00700F50] sub_00700F50 (68 bytes)
+namespace lift_00700F50 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::insertSourceElementsIntoTarget_00700F50
+// @class Unknown
+// @summary For each int32 in the owner's array at +0xD0 (count at +0xC0), inserts it into arg1 via DynamicArray::InsertAt at index *arg1.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0xC0 int32_t field_0xC0
+// @field Unknown +0xD0 int32_t* field_0xD0
+void __thiscall fn_00700F50(void* self, void* arg1) {
+    // Count is read once before the loop; the owner and its array pointer
+    // are re-read every iteration, matching the original code.
+    void* const first_owner = lift_field<void*>(self, 0x0C);
+    const int32_t count = lift_field<int32_t>(first_owner, 0xC0);
+
+    for (int32_t i = 0; i < count; ++i) {
+        void* owner = lift_field<void*>(self, 0x0C);
+        int32_t* data = lift_field<int32_t*>(owner, 0xD0);
+        int32_t elem = data[i];
+        int32_t index = *static_cast<int32_t*>(arg1);
+        ext_006D2170(arg1, index, &elem);
+    }
+}
+} // namespace lift_00700F50

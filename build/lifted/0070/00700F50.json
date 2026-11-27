@@ -1,0 +1,34 @@
+{
+  "va": "0x00700F50",
+  "size": 68,
+  "orig_symbol": "sub_00700F50",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::insertSourceElementsIntoTarget_00700F50",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00700F50(void* self, void* arg1)",
+  "summary": "For each int32 in the owner's array at +0xD0 (count at +0xC0), inserts it into arg1 via DynamicArray::InsertAt at index *arg1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "int32_t",
+      "name": "field_0xC0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "int32_t*",
+      "name": "field_0xD0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:18Z"
+}
