@@ -52455,6 +52455,13 @@
     "summary": "Pure jump thunk forwarding to sub_00673750.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006737B0": {
+    "name": "ExprParser::DeclarationsParser::~DeclarationsParser (base body)",
+    "class": "ExprParser::DeclarationsParser",
+    "signature": "void fn_006737B0(void* self)",
+    "summary": "Destructor body: resets vtable, destroys subobject at +0x24, frees pointer at +0x18, clears +0x18..+0x20, tidies string vector at +0x04, then runs sub_0065F440 on this.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x006738B0": {
     "name": "ExprParser::DeclarationsParser::vfunc_0",
     "class": "ExprParser::DeclarationsParser",

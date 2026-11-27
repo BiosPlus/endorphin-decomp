@@ -2200,3 +2200,48 @@ void fn_00673750(void* self) {
 }
 } // namespace lift_00559C80
 } // namespace lift_00673750
+
+// [0x006737B0] sub_006737B0 (123 bytes)
+namespace lift_006737B0 {
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void __fastcall ext_0065F440(void* self);
+// Known callee 0x00672D10: StdVectorStringTidy (Destroys all std::string elements in a vector, frees its buffer, and zeroes its pointers.)
+extern void __fastcall ext_00672D10(void* self);
+// Known callee 0x00673750: sub_00673750 (Auto-lifted identical-shape clone of 0x00559C80 (destroyRecordVectorAndReset).)
+extern void __fastcall ext_00673750(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* ptr);
+
+// @name ExprParser::DeclarationsParser::~DeclarationsParser (base body)
+// @class ExprParser::DeclarationsParser
+// @summary Destructor body: resets vtable, destroys subobject at +0x24, frees pointer at +0x18, clears +0x18..+0x20, tidies string vector at +0x04, then runs sub_0065F440 on this.
+// @field ExprParser::DeclarationsParser +0x00 uint32_t vtable
+// @field ExprParser::DeclarationsParser +0x04 uint8_t field_0x04
+// @field ExprParser::DeclarationsParser +0x18 void* field_0x18
+// @field ExprParser::DeclarationsParser +0x1c uint32_t field_0x1c
+// @field ExprParser::DeclarationsParser +0x20 uint32_t field_0x20
+// @field ExprParser::DeclarationsParser +0x24 uint8_t field_0x24
+void fn_006737B0(void* self) {
+    // Vtable pointer reset to DeclarationsParser's vtable (0x0098BF2C).
+    lift_field<uint32_t>(self, 0x00) = 0x0098BF2Cu;
+
+    // Destroy subobject at +0x24.
+    ext_00673750(static_cast<uint8_t*>(self) + 0x24);
+
+    // Free the pointer stored at +0x18 if it is non-null.
+    void* p18 = lift_field<void*>(self, 0x18);
+    if (p18 != nullptr) {
+        ext_006A5C5C(p18);
+    }
+
+    lift_field<void*>(self, 0x18) = nullptr;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Tidy the string vector at +0x04.
+    ext_00672D10(static_cast<uint8_t*>(self) + 0x04);
+
+    // Final base-level cleanup on this.
+    ext_0065F440(self);
+}
+} // namespace lift_006737B0
