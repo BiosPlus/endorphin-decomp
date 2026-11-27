@@ -1350,3 +1350,28 @@ void* fn_004C94E0(void* self) {
     return self;
 }
 } // namespace lift_004C94E0
+
+// [0x004CA3E0] sub_004CA3E0 (60 bytes)
+namespace lift_004CA3E0 {
+extern void ext_0066AC90(void* self, std::string name);
+extern int mem_00925354;
+extern int mem_00924FE4;
+extern int mem_00A2FBBC;
+extern int mem_00B5CE94;
+
+// @name Lifted_004CA3E0
+// @summary Gets the decorated type name of the type_info at mem_00A2FBBC, copies it to a std::string, passes it with self to ext_0066AC90, and returns self.
+void* fn_004CA3E0(void* self) {
+    using NameInternalFn = const char* (__thiscall*)(void* thisptr, void* node);
+    // Import thunk slot for type_info::_name_internal_method (IAT entry at mem_00925354).
+    auto name_internal = *reinterpret_cast<NameInternalFn*>(&mem_00925354);
+    const char* raw = name_internal(reinterpret_cast<void*>(&mem_00A2FBBC),
+                                    reinterpret_cast<void*>(&mem_00B5CE94));
+    // Original asm constructs std::string(const char*) via import thunk mem_00924FE4;
+    // std::string's constructor here replaces that call.
+    (void)&mem_00924FE4;
+    std::string name(raw);
+    ext_0066AC90(self, name);
+    return self;
+}
+} // namespace lift_004CA3E0

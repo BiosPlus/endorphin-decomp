@@ -20150,6 +20150,12 @@
     "summary": "Returns early when the state field at +0x184 equals 3; otherwise tail-calls ext_00493D90.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CA3E0": {
+    "name": "Lifted_004CA3E0",
+    "signature": "void* fn_004CA3E0(void* self)",
+    "summary": "Gets the decorated type name of the type_info at mem_00A2FBBC, copies it to a std::string, passes it with self to ext_0066AC90, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CA420": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData\u003e::vfunc_16",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {[thunk]: __thiscall NMData::MetaBodyConstraintData::`vcall'{352, {flat}}, 0}\u003e",

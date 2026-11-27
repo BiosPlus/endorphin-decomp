@@ -1,0 +1,13 @@
+{
+  "va": "0x004CA3E0",
+  "size": 60,
+  "orig_symbol": "sub_004CA3E0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "Lifted_004CA3E0",
+  "signature": "void* fn_004CA3E0(void* self)",
+  "summary": "Gets the decorated type name of the type_info at mem_00A2FBBC, copies it to a std::string, passes it with self to ext_0066AC90, and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:15:57Z"
+}
