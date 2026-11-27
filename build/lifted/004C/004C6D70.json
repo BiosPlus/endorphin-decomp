@@ -1,0 +1,40 @@
+{
+  "va": "0x004C6D70",
+  "size": 184,
+  "orig_symbol": "NMData::ForceEventData::vfunc_34",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_34",
+  "class": "NMData::ForceEventData",
+  "signature": "void* fn_004C6D70(void* self, void* arg1)",
+  "summary": "Resolves a shared object at ext_00594000()+0x1c8, updates its count from field_0x15c, and links the result of a virtual query back through the object; returns the link result.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:28Z"
+}

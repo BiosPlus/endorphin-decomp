@@ -548,3 +548,59 @@ void fn_004C5390(void* self, const float* arg) {
     ext_004C5010(second);
 }
 } // namespace lift_004C5390
+
+// [0x004C6D70] NMData::ForceEventData::vfunc_34 (184 bytes)
+namespace lift_004C6D70 {
+// Known callee 0x00466910: Unknown::copyAndReset (Copy-assigns the embedded object at +0x04 into the object pointed to by +0x00, sets that object's flag byte to 1, then destroys the embedded object at +0x04.)
+extern void __thiscall ext_00466910(void* self);
+// Known callee 0x00466F00: sub_00466F00 (109B)
+extern void __thiscall ext_00466F00(void* self, void* src);
+// Known callee 0x00493E40: forwardVtableSlot194 (Dereferences a pointer-to-pointer held in self, then tail-jumps to the)
+extern void* __thiscall ext_00493E40(void* self, void* value);
+// Known callee 0x00528B90: Unknown::setPeerWithBackLink (Stores the argument at this+0x04; if it is non-null, writes this into argument+0x08.)
+extern void __thiscall ext_00528B90(void* self, void* peer);
+// Known callee 0x00661F70: sub_00661F70 (262B)
+extern void __thiscall ext_00661F70(void* self, uint32_t count);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern void* __cdecl ext_00594000(void);
+extern void* mem_00B40640;
+
+// @name NMData::ForceEventData::vfunc_34
+// @class NMData::ForceEventData
+// @summary Resolves a shared object at ext_00594000()+0x1c8, updates its count from field_0x15c, and links the result of a virtual query back through the object; returns the link result.
+// @field NMData::ForceEventData +0x00 void** vptr
+// @field NMData::ForceEventData +0x04 void* field_0x04
+// @field NMData::ForceEventData +0x0c void* field_0x0c
+// @field NMData::ForceEventData +0x15c int32_t field_0x15c
+void* fn_004C6D70(void* self, void* arg1) {
+    // Holder: +0x00 target pointer, +0x04 embedded object (copied by ext_00466F00).
+    uint8_t holder[16] = {};
+
+    uint8_t* obj = static_cast<uint8_t*>(ext_00594000()) + 0x1c8;
+    *reinterpret_cast<void**>(holder) = obj;
+    ext_00466F00(holder + 4, obj);
+
+    int32_t count = lift_field<int32_t>(self, 0x15c) + 1;
+    ext_00661F70(obj, static_cast<uint32_t>(count));
+
+    // Query through the function pointer stored at (*(self+4)) + 0x0c.
+    using QueryFn = void* (*)(void* self_slot, void* mem, void* field_c, uint32_t flag);
+    void* ti = lift_field<void*>(self, 0x04);
+    auto query = reinterpret_cast<QueryFn>(lift_field<void*>(ti, 0x0c));
+    void* q = query(static_cast<uint8_t*>(self) + 0x04, mem_00B40640,
+                    static_cast<uint8_t*>(self) + 0x0c, 0);
+
+    // Virtual slot 0xd8 on self's vtable, passing q.
+    using VirtFn = void* (*)(void* self_obj, void* arg);
+    void* vt = lift_field<void*>(self, 0x00);
+    auto vfn = reinterpret_cast<VirtFn>(lift_field<void*>(vt, 0xd8));
+    void* v = vfn(self, q);
+
+    void* result = ext_00493E40(arg1, v);
+
+    ext_00528B90(obj, result);
+    ext_00466910(holder);
+
+    return result;
+}
+} // namespace lift_004C6D70

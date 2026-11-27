@@ -20592,6 +20592,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::ForceEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C6D70": {
+    "name": "NMData::ForceEventData::vfunc_34",
+    "class": "NMData::ForceEventData",
+    "signature": "void* fn_004C6D70(void* self, void* arg1)",
+    "summary": "Resolves a shared object at ext_00594000()+0x1c8, updates its count from field_0x15c, and links the result of a virtual query back through the object; returns the link result.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C6E60": {
     "name": "NMData::ForceEventData::ResetOwnedBlock0x18",
     "class": "NMData::ForceEventData",
