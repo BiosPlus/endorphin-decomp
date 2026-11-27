@@ -73,3 +73,31 @@ void fn_0049EDF0(void* a1, uint32_t a2, uint32_t a3, void* a4) {
     ext_0049CF60(esi, a2, lift_u32(edi), lift_u32(cast));
 }
 } // namespace lift_0049EDF0
+
+// [0x0049F4E0] Properties::PointainerVectorType<PointainerWithUndo<UndoablePointainerVectorWithFind<NMData::ValuePtrData>>, Properties::GetPropertySource>::vfunc_9 (88 bytes)
+namespace lift_0049F4E0 {
+// Known callee 0x0049F260: sub_0049F260 (114B, thiscall: ecx = this, 3 stack args, callee-cleans).
+extern uint32_t ext_0049F260(uint32_t self, uint32_t arg1, uint32_t arg2, void* arg3);
+// Known callee 0x00494FF0: initWithOneAndArg (__stdcall(arg1, arg2); calls ext_00661680 on arg1 with (1, arg2) and returns arg1.)
+extern uint32_t ext_00494FF0(uint32_t arg1, uint32_t arg2);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType, const void* targetType, int32_t isReference);
+// Type descriptors referenced as immediates by the RTDynamicCast call (.rdata).
+extern char mem_00A2E2D8[];
+extern char mem_00A35030[];
+
+// @name Properties::PointainerVectorType::vfunc_9
+// @class Properties::PointainerVectorType<PointainerWithUndo<UndoablePointainerVectorWithFind<NMData::ValuePtrData>>, Properties::GetPropertySource>
+// @summary Dynamic-casts a6 to the type descriptor pair (0xA2E2D8 -> 0xA35030), passes the cast result with a3 and field +4 of a4 to sub_0049F260 on the value at *a2, then calls initWithOneAndArg(a1, that result); returns a1.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+uint32_t __stdcall fn_0049F4E0(uint32_t a1, void* a2, uint32_t a3, void* a4, uint32_t a5, void* a6) {
+    (void)a5;
+    const uint32_t esi = lift_field<uint32_t>(a2, 0x00);
+    const uint32_t edi = lift_field<uint32_t>(a4, 0x04);
+    void* const casted = ext_006A6E9E(a6, 0, mem_00A2E2D8, mem_00A35030, 0);
+    const uint32_t r = ext_0049F260(esi, a3, edi, casted);
+    ext_00494FF0(a1, r);
+    return a1;
+}
+} // namespace lift_0049F4E0

@@ -1,0 +1,28 @@
+{
+  "va": "0x0049F4E0",
+  "size": 88,
+  "orig_symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVectorWithFind\u003cNMData::ValuePtrData\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_9",
+  "src_path": "src/templates/PointainerVectorType.cpp",
+  "lifted_path": "lifted/templates/PointainerVectorType.cpp",
+  "name": "Properties::PointainerVectorType::vfunc_9",
+  "class": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVectorWithFind\u003cNMData::ValuePtrData\u003e\u003e, Properties::GetPropertySource\u003e",
+  "signature": "uint32_t __stdcall fn_0049F4E0(uint32_t a1, void* a2, uint32_t a3, void* a4, uint32_t a5, void* a6)",
+  "summary": "Dynamic-casts a6 to the type descriptor pair (0xA2E2D8 -\u003e 0xA35030), passes the cast result with a3 and field +4 of a4 to sub_0049F260 on the value at *a2, then calls initWithOneAndArg(a1, that result); returns a1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:16:50Z"
+}

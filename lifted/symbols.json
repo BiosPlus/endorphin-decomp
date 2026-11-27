@@ -15149,6 +15149,13 @@
     "summary": "Returns 1 if the cached key equals the argument; otherwise looks the key up in the owner at +0xFC, and if absent stores it as the cached key and runs assignAllEntriesFromLists on the owner.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049F4E0": {
+    "name": "Properties::PointainerVectorType::vfunc_9",
+    "class": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVectorWithFind\u003cNMData::ValuePtrData\u003e\u003e, Properties::GetPropertySource\u003e",
+    "signature": "uint32_t __stdcall fn_0049F4E0(uint32_t a1, void* a2, uint32_t a3, void* a4, uint32_t a5, void* a6)",
+    "summary": "Dynamic-casts a6 to the type descriptor pair (0xA2E2D8 -\u003e 0xA35030), passes the cast result with a3 and field +4 of a4 to sub_0049F260 on the value at *a2, then calls initWithOneAndArg(a1, that result); returns a1.",
+    "lifted_path": "lifted/templates/PointainerVectorType.cpp"
+  },
   "0x0049F760": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::State::setName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::State::setName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
