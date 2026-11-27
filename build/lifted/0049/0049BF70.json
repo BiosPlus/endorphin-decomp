@@ -1,0 +1,13 @@
+{
+  "va": "0x0049BF70",
+  "size": 128,
+  "orig_symbol": "sub_0049BF70",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "parseRoundedFloatAndCall_0049BF70",
+  "signature": "uint32_t fn_0049BF70(const char* text, uint32_t esi_in)",
+  "summary": "Converts the string's c_str() with atof to float, rounds half away from zero (+/-0.5), then forwards the caller's esi as the sole argument to ext_006A6DE0 and returns its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:10:49Z"
+}

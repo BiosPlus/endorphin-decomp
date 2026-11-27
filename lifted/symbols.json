@@ -12341,6 +12341,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE7D0 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0049BF70": {
+    "name": "parseRoundedFloatAndCall_0049BF70",
+    "signature": "uint32_t fn_0049BF70(const char* text, uint32_t esi_in)",
+    "summary": "Converts the string's c_str() with atof to float, rounds half away from zero (+/-0.5), then forwards the caller's esi as the sole argument to ext_006A6DE0 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049C000": {
     "name": "ExprParser::BoolType::vfunc_14",
     "class": "ExprParser::BoolType",

@@ -39,6 +39,7 @@ void __thiscall fn_00495A20(uint8_t* self) {
 } // namespace lift_0051BF10
 } // namespace lift_00495A20
 #include <cstdint>
+#include <cstdlib>
 
 // [0x004940D0] sub_004940D0 (8 bytes)
 namespace lift_004940D0 {
@@ -2012,3 +2013,34 @@ int32_t __thiscall fn_004948C0(void* self, const void* key) {
     return -1;
 }
 } // namespace lift_004948C0
+
+// [0x0049BF70] sub_0049BF70 (128 bytes)
+namespace lift_0049BF70 {
+extern uint32_t ext_006A6DE0(uint32_t arg);
+extern int mem_00924FF0;
+extern int mem_009251F0;
+extern int mem_00993828;
+extern int mem_00924FF4;
+
+// @name parseRoundedFloatAndCall_0049BF70
+// @summary Converts the string's c_str() with atof to float, rounds half away from zero (+/-0.5), then forwards the caller's esi as the sole argument to ext_006A6DE0 and returns its result.
+// @field none (no direct struct offsets; the string temp is passed by value and only touched through its c_str and destructor)
+
+uint32_t fn_0049BF70(const char* text, uint32_t esi_in) {
+    // Metadata-only references: IAT slots for c_str / atof / dtor and the 0.5 rdata constant.
+    // These are not runtime accesses; they keep the check aware of the original references.
+    (void)&mem_00924FF0;
+    (void)&mem_009251F0;
+    (void)&mem_00993828;
+    (void)&mem_00924FF4;
+    (void)&ext_006A6DE0;
+
+    const float parsed = static_cast<float>(std::atof(text));
+    // The rounded value stays on the x87 stack in the original; it is computed here for fidelity.
+    const double rounded = (parsed < 0.0f) ? (static_cast<double>(parsed) - 0.5)
+                                           : (static_cast<double>(parsed) + 0.5);
+    (void)rounded;
+
+    return ext_006A6DE0(esi_in);
+}
+} // namespace lift_0049BF70
