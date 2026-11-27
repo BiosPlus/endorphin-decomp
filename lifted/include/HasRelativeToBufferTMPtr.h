@@ -10,7 +10,8 @@
 // Recovered field layout for HasRelativeToBufferTMPtr:
 namespace lifted_layout {
 struct HasRelativeToBufferTMPtr_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x005323C0)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x005323C0)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00532320, 0x005323C0)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x005323C0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x00532320) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout

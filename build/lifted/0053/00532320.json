@@ -1,0 +1,28 @@
+{
+  "va": "0x00532320",
+  "size": 85,
+  "orig_symbol": "HasRelativeToBufferTMPtr::vfunc_13",
+  "src_path": "src/classes/HasRelativeToBufferTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasRelativeToBufferTMPtr.cpp",
+  "name": "HasRelativeToBufferTMPtr::vfunc_13",
+  "class": "HasRelativeToBufferTMPtr",
+  "signature": "void fn_00532320(void* self)",
+  "summary": "Issues two glTranslatef calls: one using the element returned by ext_00661B50(global, this-\u003efield_0x04) and one using the block at this-\u003efield_0x08 directly, each reading translation from +0x30..+0x38.",
+  "fields": [
+    {
+      "class": "HasRelativeToBufferTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "HasRelativeToBufferTMPtr",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:01:50Z"
+}
