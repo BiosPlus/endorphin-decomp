@@ -352,3 +352,39 @@ uintptr_t fn_004AA020(void* self, void* obj) {
     return reinterpret_cast<uintptr_t>(resolved);
 }
 } // namespace lift_004AA020
+
+// [0x004ABDF0]
+namespace lift_004ABDF0 {
+// @name NMData::BehaviourData::vfunc_15
+// @class NMData::BehaviourData
+// @summary Dispatches on a 32-bit key to populate an output pair via BehaviourData-specific or base DesiredPoseEventData helpers, returning the output pointer.
+
+
+extern DWORD* ext_004ABAA0(DWORD* dst, DWORD value);
+extern DWORD* ext_004ABAC0(DWORD* dst, DWORD value);
+extern DWORD* __thiscall ext_004C3410(void* self, DWORD* out, DWORD key);
+extern void ext_00671F30(uint32_t* out);
+extern void ext_006404E0();
+extern uint32_t mem_00A9F240;
+
+DWORD* __thiscall fn_004ABDF0(void* self, DWORD* out, DWORD key) {
+    (void)ext_006404E0;
+    (void)mem_00A9F240;
+    switch (key) {
+        case 0x21B:
+            ext_004ABAA0(out, static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+            break;
+        case 0x247:
+            ext_004ABAC0(out, static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+            break;
+        case 0x361:
+        case 0x386:
+            ext_00671F30(reinterpret_cast<uint32_t*>(out));
+            break;
+        default:
+            ext_004C3410(self, out, key);
+            break;
+    }
+    return out;
+}
+} // namespace lift_004ABDF0
