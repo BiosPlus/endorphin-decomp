@@ -1,0 +1,22 @@
+{
+  "va": "0x006D89D0",
+  "size": 112,
+  "orig_symbol": "sub_006D89D0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::forwardArgInsertIndex_006D89D0",
+  "class": "Unknown",
+  "signature": "int32_t fn_006D89D0(void* self, int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4)",
+  "summary": "Wraps arg1 in a temporary holder, forwards this-\u003efield_0x00 and the holder to insertArgAndReturnIndex, runs the empty cleanup helper, and returns the insert index.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:54:53Z"
+}

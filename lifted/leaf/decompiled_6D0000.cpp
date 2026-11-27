@@ -3494,3 +3494,31 @@ bool fn_006D4B30(void* self, uint32_t item) {
     return false;
 }
 } // namespace lift_006D4B30
+
+// [0x006D89D0]
+namespace lift_006D89D0 {
+// @name Unknown::forwardArgInsertIndex_006D89D0
+// @class Unknown
+// @summary Wraps arg1 in a temporary holder, forwards this->field_0x00 and the holder to insertArgAndReturnIndex, runs the empty cleanup helper, and returns the insert index.
+// @field Unknown +0x00 int32_t field_0x00
+
+void* ext_0077FAC0(void* self, uint32_t arg1);
+int32_t ext_006D8A40(void* self, int32_t arg1, int32_t* arg2);
+void ext_006D80A0(void);
+
+int32_t fn_006D89D0(void* self, int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4) {
+    int32_t holder[4] = {0, 0, 0, 0};
+    (void)arg2;
+    (void)arg3;
+    (void)arg4;
+
+    // Temporary holder referencing arg1 (ForwardArgToCalleeReturnThis).
+    ext_0077FAC0(holder, (uint32_t)(uintptr_t)&arg1);
+
+    int32_t first = *(int32_t*)self;
+    int32_t result = ext_006D8A40(self, first, &arg1);
+
+    ext_006D80A0();
+    return result;
+}
+} // namespace lift_006D89D0

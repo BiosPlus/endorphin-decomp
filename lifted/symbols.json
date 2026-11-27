@@ -69012,6 +69012,13 @@
     "summary": "Returns pointer to subobject/field at offset +0x8.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D89D0": {
+    "name": "Unknown::forwardArgInsertIndex_006D89D0",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D89D0(void* self, int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4)",
+    "summary": "Wraps arg1 in a temporary holder, forwards this-\u003efield_0x00 and the holder to insertArgAndReturnIndex, runs the empty cleanup helper, and returns the insert index.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D8A40": {
     "name": "Unknown::insertArgAndReturnIndex_006D8A40",
     "class": "Unknown",
