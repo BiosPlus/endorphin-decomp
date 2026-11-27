@@ -62257,6 +62257,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00977734 and tail-calls base destructor sub_0060BA10.",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00626900": {
+    "name": "NMData::EffectorSkeletalData::vfunc_17",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "static inline void call_float_vmethod(void* self, ptrdiff_t slot, float value)",
+    "summary": "Allocates a 0x2C-byte object, constructs it, applies nine float-valued vtable setters (1000 or 10000), and returns it (or null if allocation returned null).",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
+  },
   "0x00626D00": {
     "name": "NMData::EffectorSkeletalData::vfunc_19",
     "class": "NMData::EffectorSkeletalData",
