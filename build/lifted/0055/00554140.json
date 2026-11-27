@@ -1,0 +1,13 @@
+{
+  "va": "0x00554140",
+  "size": 95,
+  "orig_symbol": "sub_00554140",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "allocate_60byte_array",
+  "signature": "extern \"C\" void* fn_00554140(uint32_t count)",
+  "summary": "Allocates an array of 60-byte elements with overflow check, throwing std::bad_alloc on overflow.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:55:21Z"
+}

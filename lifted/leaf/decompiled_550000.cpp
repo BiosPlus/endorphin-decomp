@@ -1667,3 +1667,34 @@ void* fn_00553F90(uint32_t count) {
     return ext_006A5C62(size);
 }
 } // namespace lift_00553F90
+
+// [0x00554140]
+namespace lift_00554140 {
+// @name allocate_60byte_array
+// @summary Allocates an array of 60-byte elements with overflow check, throwing std::bad_alloc on overflow.
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+extern void (*mem_00925130)(void* self, const char* const* msg);
+
+struct StdException {
+    uint32_t vftable;
+    uint32_t what;
+    uint32_t dofree;
+};
+
+extern void* fn_00554140(uint32_t count) {
+    if (count > 0) {
+        if (0xFFFFFFFFu / count < 0x3Cu) {
+            StdException exc{};
+            const char* msg = nullptr;
+            mem_00925130(&exc, &msg);
+            exc.vftable = 0x00928EC0u;
+            ext_006A6DD2(&exc, 0x009CDF94u);
+        }
+    } else {
+        count = 0;
+    }
+    return ext_006A5C62(count * 60u);
+}
+} // namespace lift_00554140
