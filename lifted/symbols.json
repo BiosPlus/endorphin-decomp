@@ -7603,6 +7603,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00465D00 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00466BA0": {
+    "name": "DispatchRangeWithDefault",
+    "signature": "void fn_00466BA0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Dispatches arg1 (or self-\u003e+0x24 when arg1 is 0) to every object pointer in the [+0x18, +0x1C) range, then forwards arg2 to ext_00678D70.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00466CF0": {
     "name": "VMCActionDoc::vfunc_30",
     "class": "VMCActionDoc",

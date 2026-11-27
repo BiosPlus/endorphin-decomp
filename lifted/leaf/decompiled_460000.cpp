@@ -1964,3 +1964,53 @@ void fn_004647D0(std::string* target) {
     shellExecuteA(nullptr, verbC, fileC, nullptr, nullptr, 5 /* SW_SHOWDEFAULT */);
 }
 } // namespace lift_004647D0
+
+// [0x00466BA0] sub_00466BA0 (121 bytes)
+namespace lift_00466BA0 {
+// Known callee 0x0043CB70: sub_0043CB70 (Virtual dispatch thunk: reads the object's vtable pointer and calls slot 0 with the same object.)
+extern void ext_0043CB70(void* self, uint32_t arg);
+// Known callee 0x00678D70: BaseEventDispatcher::vfunc_1 (Invokes virtual slot 0 on every object pointer in the dispatcher's [begin, end) list, passing the single argument.)
+extern void ext_00678D70(void* self, uint32_t arg);
+// Import slot 0x00925134 holding the MSVCR80 _invalid_parameter_noinfo pointer.
+extern uint32_t mem_00925134;
+
+// @name DispatchRangeWithDefault
+// @summary Dispatches arg1 (or self->+0x24 when arg1 is 0) to every object pointer in the [+0x18, +0x1C) range, then forwards arg2 to ext_00678D70.
+// @field Unknown +0x18 uint32_t rangeBegin
+// @field Unknown +0x1C uint32_t rangeEnd
+// @field Unknown +0x24 uint32_t defaultArg
+void fn_00466BA0(void* self, uint32_t arg1, uint32_t arg2) {
+    auto invalid_parameter = [] {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    };
+
+    if (arg1 == 0) {
+        arg1 = lift_field<uint32_t>(self, 0x24);
+    }
+
+    // Range sanity checks (begin <= end); the original's second check is a
+    // duplicate of the first and the always-taken `cmp esi,esi` branch is dead.
+    if (lift_field<uint32_t>(self, 0x18) > lift_field<uint32_t>(self, 0x1C)) {
+        invalid_parameter();
+    }
+    if (lift_field<uint32_t>(self, 0x18) > lift_field<uint32_t>(self, 0x1C)) {
+        invalid_parameter();
+    }
+
+    uintptr_t cur = lift_field<uint32_t>(self, 0x18);
+    for (;;) {
+        uintptr_t end = lift_field<uint32_t>(self, 0x1C);
+        if (cur == end) {
+            break;
+        }
+        if (cur >= end) {
+            invalid_parameter();
+        }
+        auto* elem = reinterpret_cast<uint32_t*>(cur);
+        ext_0043CB70(reinterpret_cast<void*>(static_cast<uintptr_t>(*elem)), arg1);
+        cur += sizeof(uint32_t);
+    }
+
+    ext_00678D70(self, arg2);
+}
+} // namespace lift_00466BA0

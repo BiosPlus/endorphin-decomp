@@ -1,0 +1,33 @@
+{
+  "va": "0x00466BA0",
+  "size": 121,
+  "orig_symbol": "sub_00466BA0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "DispatchRangeWithDefault",
+  "signature": "void fn_00466BA0(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Dispatches arg1 (or self-\u003e+0x24 when arg1 is 0) to every object pointer in the [+0x18, +0x1C) range, then forwards arg2 to ext_00678D70.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "rangeBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "rangeEnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "defaultArg"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:15:03Z"
+}
