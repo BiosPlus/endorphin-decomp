@@ -55079,6 +55079,13 @@
     "summary": "Returns ext_005851B0 result unless the first child's vfunc_21 matches the 0x800 flag; otherwise sets each child's flag byte and calls its vfunc_11.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005ED030": {
+    "name": "NMData::SkeletalJointData::vfunc_2",
+    "class": "NMData::SkeletalJointData",
+    "signature": "void* fn_005ED030(void* self, void* dst, const void* name)",
+    "summary": "Compares the std::string argument against 11 literals in order; on the first match calls the matching store helper with (dst, this) and returns dst. If nothing matches, forwards (dst, name) to FixedPathJointData::vfunc_2 and returns dst.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005ED2C0": {
     "name": "Tree::lower_bound_pair (descriptive; owner class not yet identified)",
     "class": "_Tree",

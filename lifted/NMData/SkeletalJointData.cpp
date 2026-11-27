@@ -290,3 +290,120 @@ void fn_005E4BB0(void* self) {
     put_endl(ext_0067E9E0(cout_obj, value_b));
 }
 } // namespace lift_005E4BB0
+
+// [0x005ED030] NMData::SkeletalJointData::vfunc_2 (464 bytes)
+namespace lift_005ED030 {
+// Known callees: each stores `value` into dst[0] and a static-object address into dst[1] (cdecl, caller cleans).
+// 0x005EC9B0: fillValueAndStaticObject_005EC9B0
+extern void ext_005EC9B0(void* dst, DWORD value);
+// 0x005EC9D0: storeValueAndLazyStaticObject_005EC9D0
+extern void ext_005EC9D0(void* dst, DWORD value);
+// 0x005EC9F0: sub_005EC9F0 (clone of 0x005EC8D0 storeValueAndStaticObject)
+extern void ext_005EC9F0(void* dst, DWORD value);
+// 0x005ECA10: sub_005ECA10 (clone of 0x005EC8D0)
+extern void ext_005ECA10(void* dst, DWORD value);
+// 0x005ECA30: sub_005ECA30 (clone of 0x005EC8D0)
+extern void ext_005ECA30(void* dst, DWORD value);
+// 0x005ECA50: sub_005ECA50 (clone of 0x005EC8D0)
+extern void ext_005ECA50(void* dst, DWORD value);
+// 0x005ECA70: sub_005ECA70 (clone of 0x005EC8D0)
+extern void ext_005ECA70(void* dst, DWORD value);
+// 0x005ECA90: sub_005ECA90 (clone of 0x005EC8D0)
+extern void ext_005ECA90(void* dst, DWORD value);
+// 0x005ECAB0: sub_005ECAB0 (clone of 0x005EC8D0)
+extern void ext_005ECAB0(void* dst, DWORD value);
+// 0x005ECAD0: sub_005ECAD0 (clone of 0x005EC8D0)
+extern void ext_005ECAD0(void* dst, DWORD value);
+// 0x005ECAF0: sub_005ECAF0 (clone of 0x005EC8D0)
+extern void ext_005ECAF0(void* dst, DWORD value);
+// 0x005E24F0: NMData::FixedPathJointData::vfunc_2 (thiscall: self in ECX, two stack args)
+extern void ext_005E24F0(void* self, void* a, void* b);
+// 0x00588330: AnimatableTransform::vfunc_40 (not invoked by this function; referenced for metadata only)
+extern void ext_00588330();
+// 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (not invoked by this function; referenced for metadata only)
+extern void ext_006A6E9E();
+
+// IAT slot holding std::operator==(const std::string&, const char*) (cdecl).
+extern void* mem_00924FC0;
+// Data references from the original asm (not accessed by this function's code; metadata only).
+extern int mem_00A2E2BC;
+extern int mem_00A8F318;
+
+// Literal strings in .rdata compared against the std::string argument.
+extern const char mem_0096B094[];
+extern const char mem_0096B084[];
+extern const char mem_0096B074[];
+extern const char mem_0096B064[];
+extern const char mem_0096B054[];
+extern const char mem_0096B044[];
+extern const char mem_0096B034[];
+extern const char mem_0096B024[];
+extern const char mem_0096B014[];
+extern const char mem_0096B004[];
+extern const char mem_0096AFF4[];
+
+using StringEqFn = bool (*)(const void* str, const char* lit);
+
+// @name NMData::SkeletalJointData::vfunc_2
+// @class NMData::SkeletalJointData
+// @summary Compares the std::string argument against 11 literals in order; on the first match calls the matching store helper with (dst, this) and returns dst. If nothing matches, forwards (dst, name) to FixedPathJointData::vfunc_2 and returns dst.
+// (No fields of *this are accessed directly; `this` is only passed by value to the helpers.)
+void* fn_005ED030(void* self, void* dst, const void* name) {
+    // Reference-only (no code emitted).
+    (void)&ext_00588330;
+    (void)&ext_006A6E9E;
+    (void)&mem_00A2E2BC;
+    (void)&mem_00A8F318;
+
+    const auto strEq = reinterpret_cast<StringEqFn>(mem_00924FC0);
+    const auto selfValue = static_cast<DWORD>(reinterpret_cast<uintptr_t>(self));
+
+    if (strEq(name, mem_0096B094)) {
+        ext_005EC9B0(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096B084)) {
+        ext_005EC9D0(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096B074)) {
+        ext_005EC9F0(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096B064)) {
+        ext_005ECA10(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096B054)) {
+        ext_005ECA30(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096B044)) {
+        ext_005ECA50(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096B034)) {
+        ext_005ECA70(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096B024)) {
+        ext_005ECA90(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096B014)) {
+        ext_005ECAB0(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096B004)) {
+        ext_005ECAD0(dst, selfValue);
+        return dst;
+    }
+    if (strEq(name, mem_0096AFF4)) {
+        ext_005ECAF0(dst, selfValue);
+        return dst;
+    }
+
+    ext_005E24F0(self, dst, const_cast<void*>(name));
+    return dst;
+}
+} // namespace lift_005ED030

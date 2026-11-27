@@ -1,0 +1,14 @@
+{
+  "va": "0x005ED030",
+  "size": 464,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_2",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_2",
+  "class": "NMData::SkeletalJointData",
+  "signature": "void* fn_005ED030(void* self, void* dst, const void* name)",
+  "summary": "Compares the std::string argument against 11 literals in order; on the first match calls the matching store helper with (dst, this) and returns dst. If nothing matches, forwards (dst, name) to FixedPathJointData::vfunc_2 and returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:57:07Z"
+}
