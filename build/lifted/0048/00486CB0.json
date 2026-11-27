@@ -1,0 +1,13 @@
+{
+  "va": "0x00486CB0",
+  "size": 143,
+  "orig_symbol": "sub_00486CB0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "ThrowIfFirstGreater",
+  "signature": "void fn_00486CB0(const void* arg1, const void* arg2, const char* arg3)",
+  "summary": "If arg1 \u003e arg2 (std::string comparison), builds a temporary std::string from arg3 and throws an exception object constructed from (arg1, arg2, temp). Otherwise returns without effect.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:33:09Z"
+}

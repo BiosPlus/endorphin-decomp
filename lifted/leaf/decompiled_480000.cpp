@@ -2707,3 +2707,38 @@ void fn_00480700(void* self) {
     ext_00586440(self, static_cast<char*>(obj) + 0x168);
 }
 } // namespace lift_00480700
+
+// [0x00486CB0] sub_00486CB0 (143 bytes)
+namespace lift_00486CB0 {
+// Callees
+// 0x004765B0: sub_004765B0_ctor. Constructs the exception object (four std::string fields plus a bool at +0x70).
+extern void ext_004765B0(void* self, const void* arg1, const void* arg2, const void* arg3);
+// 0x006A6DD2: thunk_MSVCR80__CxxThrowException. Forwards to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// IAT slot for MSVCP80 operator>(const std::string&, const std::string&)
+extern bool (*mem_00924FB0)(const void* lhs, const void* rhs);
+// IAT slot for MSVCP80 std::string::basic_string(const char*) (thiscall in the binary)
+extern void (*mem_00924FE4)(void* self, const char* s);
+// RTTI ThrowInfo for the thrown exception type
+extern const char mem_009DFD38[];
+
+// @name ThrowIfFirstGreater
+// @summary If arg1 > arg2 (std::string comparison), builds a temporary std::string from arg3 and throws an exception object constructed from (arg1, arg2, temp). Otherwise returns without effect.
+void fn_00486CB0(const void* arg1, const void* arg2, const char* arg3) {
+    if (!mem_00924FB0(arg1, arg2)) {
+        return;
+    }
+
+    // Temporary std::string (0x1C bytes on MSVC 8) built from arg3.
+    alignas(4) unsigned char tmp[0x1C];
+    mem_00924FE4(tmp, arg3);
+
+    // Exception object (0x74 bytes: four std::string fields + bool at +0x70).
+    alignas(4) unsigned char exc[0x74];
+    ext_004765B0(exc, arg1, arg2, tmp);
+
+    // Throw exc. Never returns.
+    ext_006A6DD2(exc, mem_009DFD38);
+}
+} // namespace lift_00486CB0
