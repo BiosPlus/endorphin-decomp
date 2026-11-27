@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct _unnamed__Fields {
     // +0x0   DWORD                    vtbl  (evidence: 0x005EAFA0)
+    // +0x8   int32_t*                 field_0x08  (evidence: 0x00596660)
 };
 } // namespace lifted_layout

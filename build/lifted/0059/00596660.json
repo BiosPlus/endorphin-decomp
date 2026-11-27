@@ -1,0 +1,21 @@
+{
+  "va": "0x00596660",
+  "size": 92,
+  "orig_symbol": "sub_00596660",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "eraseInt32Range",
+  "signature": "void fn_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last)",
+  "summary": "Validates (self-pointer) args, erases [first,last) from a 4-byte-element buffer by shifting the tail down, sets end, and writes a 2-pointer result to out.",
+  "fields": [
+    {
+      "class": "\u003cunnamed\u003e",
+      "offset": "+0x8",
+      "type": "int32_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:45:40Z"
+}

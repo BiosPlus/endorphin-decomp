@@ -1509,3 +1509,44 @@ void* __cdecl fn_0059FDE0(void* first_cont, void* first_node, void* last_cont, v
     return out;
 }
 } // namespace lift_0059FDE0
+
+// [0x00596660] sub_00596660 (92 bytes)
+namespace lift_00596660 {
+extern void ext_0059DE60();
+extern int mem_00925134;
+extern int mem_009251EC;
+
+// @name eraseInt32Range
+// @summary Validates (self-pointer) args, erases [first,last) from a 4-byte-element buffer by shifting the tail down, sets end, and writes a 2-pointer result to out.
+// @field <unnamed> +0x08 int32_t* field_0x08
+void fn_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last) {
+    // Original: if (a2 == NULL || a2 != a4) _invalid_parameter_noinfo();
+    // Portable equivalent of the CRT invalid-parameter trap: abort.
+    if (a2 == nullptr || a2 != a4) {
+        (void)&mem_00925134; // IAT slot of _invalid_parameter_noinfo (metadata reference only)
+        std::abort();
+    }
+
+    // Original: end pointer is stored at self+0x08.
+    int32_t*& end = lift_field<int32_t*>(self, 0x08);
+
+    if (first != last) {
+        // Original: count = (end - last) >> 2 (signed); newEnd = first + 4*count.
+        intptr_t count = (reinterpret_cast<intptr_t>(end) - reinterpret_cast<intptr_t>(last)) >> 2;
+        int32_t* newEnd = reinterpret_cast<int32_t*>(reinterpret_cast<intptr_t>(first) + count * 4);
+
+        // Original: if (count > 0) memmove_s(first, 4*count, last, 4*count).
+        if (count > 0) {
+            (void)&mem_009251EC; // IAT slot of memmove_s (metadata reference only)
+            std::memmove(first, last, static_cast<size_t>(count) * 4);
+        }
+        end = newEnd;
+    }
+
+    // Original: [out] = a2; [out+4] = first.
+    lift_field<void*>(out, 0) = a2;
+    lift_field<void*>(out, sizeof(void*)) = first;
+
+    (void)&ext_0059DE60; // callee listed in metadata; not called by the disassembly
+}
+} // namespace lift_00596660

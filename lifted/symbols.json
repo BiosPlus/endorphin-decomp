@@ -28632,6 +28632,12 @@
     "summary": "Validates a global list iterator at [0xB40644]+8 and returns its node value minus one (or 0 if zero)",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00596660": {
+    "name": "eraseInt32Range",
+    "signature": "void fn_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last)",
+    "summary": "Validates (self-pointer) args, erases [first,last) from a 4-byte-element buffer by shifting the tail down, sets end, and writes a 2-pointer result to out.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596A30": {
     "name": "CallForEachOffsetPlusBase",
     "signature": "void fn_00596A30(uint32_t* out, uint32_t /*stack slot +0x08, unused*/, const uint32_t* begin, uint32_t /*stack slot +0x10, unused*/, const uint32_t* end, OffsetCallback cb, uint32_t base)",
