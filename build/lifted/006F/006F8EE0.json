@@ -1,0 +1,22 @@
+{
+  "va": "0x006F8EE0",
+  "size": 80,
+  "orig_symbol": "sub_006F8EE0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::forwardRecordAt_006F8EE0",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006F8EE0(void* self, int32_t index, void* arg)",
+  "summary": "Validates index in [0,191), lazily initializes the 80-byte record's subobject when its +0x0C pointer is null, and forwards the optional source pointer to the record's copy routine. Returns true unless index is out of range or the lazy init fails.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void* field_0x0c (record-relative; records are 80 bytes, indexed",
+      "name": "0..190)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:17Z"
+}

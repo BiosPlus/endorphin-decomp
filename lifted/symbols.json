@@ -72824,6 +72824,13 @@
     "summary": "Getter returning uint8_t field at offset +0xA.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F8EE0": {
+    "name": "Unknown::forwardRecordAt_006F8EE0",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006F8EE0(void* self, int32_t index, void* arg)",
+    "summary": "Validates index in [0,191), lazily initializes the 80-byte record's subobject when its +0x0C pointer is null, and forwards the optional source pointer to the record's copy routine. Returns true unless index is out of range or the lazy init fails.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F8FB0": {
     "name": "Unknown::CopyRecordIfActive",
     "class": "Unknown",

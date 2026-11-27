@@ -2670,3 +2670,37 @@ void* fn_006F7370(void* self) {
     return self;
 }
 } // namespace lift_006F7370
+
+// [0x006F8EE0] sub_006F8EE0 (80 bytes)
+namespace lift_006F8EE0 {
+// Known callee 0x006B9950: sub_006B0050 (Stores address of mem_00991168 into field at offset +0x0.)
+// Returns bool (tested via al); takes this in ecx, no stack args.
+extern uint8_t ext_006B9950(void* self);
+// Known callee 0x006F8AD0: Unknown::copyHeaderAndForward_006F8AD0 (Copies the leading dword of the source record into this object's first field, then forwards the source pointer advanced by 4 to conditionalAllocAndCopy on the subobject at +0x04. Returns this.)
+// this in ecx, one stack arg (source pointer), result ignored by caller.
+extern void* ext_006F8AD0(void* self, void* arg);
+
+// @name Unknown::forwardRecordAt_006F8EE0
+// @class Unknown
+// @summary Validates index in [0,191), lazily initializes the 80-byte record's subobject when its +0x0C pointer is null, and forwards the optional source pointer to the record's copy routine. Returns true unless index is out of range or the lazy init fails.
+// @field Unknown +0x0C void* field_0x0c (record-relative; records are 80 bytes, indexed 0..190)
+uint8_t fn_006F8EE0(void* self, int32_t index, void* arg) {
+    if (index < 0 || index >= 0xBF) {
+        return 0;
+    }
+
+    uint8_t* rec = static_cast<uint8_t*>(self) + static_cast<ptrdiff_t>(index) * 80;
+
+    if (lift_field<void*>(rec, 0x0C) == nullptr) {
+        if (ext_006B9950(rec + 0x10) != 0) {
+            return 0;
+        }
+    }
+
+    if (arg != nullptr) {
+        ext_006F8AD0(arg, rec + 0x0C);
+    }
+
+    return 1;
+}
+} // namespace lift_006F8EE0
