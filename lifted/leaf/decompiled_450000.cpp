@@ -1880,3 +1880,58 @@ void fn_0045AE60(void* self) {
     (*reinterpret_cast<CStringDtorFn*>(&mem_009242F4))(&cstr);
 }
 } // namespace lift_0045AE60
+
+// [0x0045C130] sub_0045C130 (129 bytes)
+namespace lift_0045C130 {
+// Known callee 0x00422E00: TreeCtrl::sendExpandMessage (Sends a TVM_EXPAND (0x1102) message to the window handle at this+0x20.)
+extern void ext_00422E00(void* self, uint32_t lParam, uint32_t wParam);
+// Known callee 0x0045BC30: Unknown::SendPairedMessagesAndNotify (Sends WM_USER-range message 0x110B (wParam 9) twice and then 0x1114 (wParam 0) to the window handle at this+0x20, all with the given lParam.)
+extern void ext_0045BC30(void* self, uint32_t lparam);
+// Known callee 0x0045C0C0: sub_0045C0C0 (Updates an MFC control/item state based on a boolean flag and dispatches a message/command with computed parameters.)
+extern void ext_0045C0C0(void* self, uint32_t arg0, uint32_t flag);
+// Known callee 0x006A60D0: thunk_MFC80_ord_5833 (IAT jump thunk forwarding to MFC80!ord_5833.)
+extern void ext_006A60D0(void* self);
+// Known callee 0x006A6820: thunk_MFC80_ord_2867 (IAT jump thunk forwarding to MFC80!ord_2867.)
+extern uint32_t ext_006A6820(void* self, uint32_t arg0);
+// Known callee 0x006A6832: thunk_MFC80_ord_3799 (IAT jump thunk forwarding to MFC80!ord_3799.)
+extern uint32_t ext_006A6832(void* self, uint32_t arg0, uint32_t arg1, uint32_t* outFlags);
+
+// @name Unknown::DispatchItemFlagsMessage
+// @class Unknown
+// @summary Looks up an item via MFC80 ord_3799, then dispatches expand/notify messages or a state update based on the item's flag byte.
+// @field Unknown +0x54 void* field_0x54
+void fn_0045C130(void* self, uint32_t unusedArg, uint32_t arg1, uint32_t arg2) {
+    (void)unusedArg;
+
+    ext_006A60D0(self);
+
+    uint32_t flagsOut = 0;
+    uint32_t item = ext_006A6832(self, arg1, arg2, &flagsOut);
+    if (item == 0) {
+        return;
+    }
+    uint8_t flags = static_cast<uint8_t>(flagsOut);
+
+    if ((flags & 0x42) != 0) {
+        void* obj = lift_field<void*>(self, 0x54);
+        if (obj == nullptr) {
+            return;
+        }
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        uint32_t eax = ext_006A6820(self, item);
+        using VtFn = uint32_t(__thiscall*)(void*, uint32_t);
+        uint32_t result = reinterpret_cast<VtFn>(vtbl[1])(lift_field<void*>(self, 0x54), eax);
+        ext_0045C0C0(self, item, result);
+        return;
+    }
+
+    if ((flags & 0x4) != 0) {
+        ext_0045BC30(self, item);
+        return;
+    }
+    if ((flags & 0x10) != 0) {
+        ext_00422E00(self, item, 3);
+        return;
+    }
+}
+} // namespace lift_0045C130

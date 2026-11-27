@@ -7024,6 +7024,13 @@
     "summary": "Updates an MFC control/item state based on a boolean flag and dispatches a message/command with computed parameters.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045C130": {
+    "name": "Unknown::DispatchItemFlagsMessage",
+    "class": "Unknown",
+    "signature": "void fn_0045C130(void* self, uint32_t unusedArg, uint32_t arg1, uint32_t arg2)",
+    "summary": "Looks up an item via MFC80 ord_3799, then dispatches expand/notify messages or a state update based on the item's flag byte.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045C1C0": {
     "name": "CTreeCtrl::clearAllItemStates",
     "class": "CTreeCtrl",
