@@ -1,0 +1,58 @@
+{
+  "va": "0x004CC610",
+  "size": 137,
+  "orig_symbol": "sub_004CC610",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "Unknown::copyVec3AndDispatchRange",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_004CC610(void* self, const float* src)",
+  "summary": "Copies a 3-float vector into self+0x18, sets the flag at +0x15, then walks the uint32 pointer range [+0x04, +0x08) and calls vtable slot 41 of each element's sub-object (element+0x234) with a pointer to self+0x18.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "vec_x"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "vec_y"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "vec_z"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:29:47Z"
+}

@@ -1030,3 +1030,69 @@ void fn_004CCB10(void* self, const float* src) {
 }
 } // namespace lift_004CCB50
 } // namespace lift_004CCB10
+
+// [0x004CC610] sub_004CC610 (137 bytes)
+namespace lift_004CC610 {
+extern int mem_00925134;
+
+// @name Unknown::copyVec3AndDispatchRange
+// @class Unknown
+// @summary Copies a 3-float vector into self+0x18, sets the flag at +0x15, then walks the uint32 pointer range [+0x04, +0x08) and calls vtable slot 41 of each element's sub-object (element+0x234) with a pointer to self+0x18.
+// @field Unknown +0x04 uint32_t begin
+// @field Unknown +0x08 uint32_t end
+// @field Unknown +0x15 uint8_t flag
+// @field Unknown +0x18 float vec_x
+// @field Unknown +0x1C float vec_y
+// @field Unknown +0x20 float vec_z
+// @field Element +0x234 void* field_0x234
+void __thiscall fn_004CC610(void* self, const float* src) {
+    using InvalidParamFn = void(__cdecl*)();
+    using VirtualFn = void(__thiscall*)(void* self_sub, void* arg);
+
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+    auto as_ptr = [](uint32_t v) {
+        return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(v));
+    };
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    *reinterpret_cast<float*>(base + 0x18) = src[0];
+    *reinterpret_cast<float*>(base + 0x1C) = src[1];
+    *reinterpret_cast<float*>(base + 0x20) = src[2];
+    uint8_t* vec = base + 0x18;
+
+    uint32_t it = *reinterpret_cast<uint32_t*>(base + 0x04);
+    if (it > *reinterpret_cast<uint32_t*>(base + 0x08)) {
+        invalid_param();
+    }
+    *reinterpret_cast<uint8_t*>(base + 0x15) = 1;
+
+    for (;;) {
+        uint32_t end = *reinterpret_cast<uint32_t*>(base + 0x08);
+        if (*reinterpret_cast<uint32_t*>(base + 0x04) > end) {
+            invalid_param();
+        }
+        if (self == nullptr) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint32_t*>(base + 0x08)) {
+            invalid_param();
+        }
+
+        uint8_t* element = as_ptr(*reinterpret_cast<uint32_t*>(as_ptr(it)));
+        uint8_t* sub = as_ptr(*reinterpret_cast<uint32_t*>(element + 0x234));
+        uint8_t* vtbl = as_ptr(*reinterpret_cast<uint32_t*>(sub));
+        auto fn = reinterpret_cast<VirtualFn>(
+            static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(vtbl + 0xA4)));
+        fn(sub, vec);
+
+        if (it >= *reinterpret_cast<uint32_t*>(base + 0x08)) {
+            invalid_param();
+        }
+        it += 4;
+    }
+}
+} // namespace lift_004CC610

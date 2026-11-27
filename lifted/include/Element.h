@@ -52,5 +52,6 @@ struct Element_Fields {
     // +0x40  double                   field_0x40  (evidence: 0x00621090)
     // +0x54  std::string              str3  (evidence: 0x00556740)
     // +0x22C DWORD                    field_0x22c  (evidence: 0x004D9C60)
+    // +0x234 void*                    field_0x234  (evidence: 0x004CC610)
 };
 } // namespace lifted_layout

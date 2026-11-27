@@ -16751,6 +16751,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CC610": {
+    "name": "Unknown::copyVec3AndDispatchRange",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_004CC610(void* self, const float* src)",
+    "summary": "Copies a 3-float vector into self+0x18, sets the flag at +0x15, then walks the uint32 pointer range [+0x04, +0x08) and calls vtable slot 41 of each element's sub-object (element+0x234) with a pointer to self+0x18.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CC6A0": {
     "name": "UnknownClass::SetVec3AndNotifyElements",
     "class": "UnknownClass",
