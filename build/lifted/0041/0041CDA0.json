@@ -1,0 +1,14 @@
+{
+  "va": "0x0041CDA0",
+  "size": 60,
+  "orig_symbol": "sub_0041CDA0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "ExprParser::GetTypeNameInto",
+  "class": "ExprParser",
+  "signature": "void* fn_0041CDA0(void* dst)",
+  "summary": "Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:48:44Z"
+}

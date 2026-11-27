@@ -3951,3 +3951,41 @@ void fn_0041C8E0(void* self) {
     }
 }
 } // namespace lift_0041C8E0
+
+// [0x0041CDA0] sub_0041CDA0 (60 bytes)
+namespace lift_0041CDA0 {
+// 28-byte MSVC std::string (x86) passed by value on the stack.
+struct StdString28 {
+    unsigned char bytes[28];
+};
+
+extern void ext_0066AC90(void* dst, StdString28 value);
+extern int mem_00925354;  // IAT: std::type_info::_name_internal_method
+extern int mem_00924FE4;  // IAT: std::basic_string<char>::basic_string(const char*)
+extern int mem_00A2E2F8;  // global std::type_info object
+extern int mem_00B5CE94;  // __type_info_node pointer constant
+extern int mem_00924FD0;
+extern int mem_00924FF4;
+
+// @name ExprParser::GetTypeNameInto
+// @summary Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.
+void* fn_0041CDA0(void* dst) {
+    using NameInternalMethodFn = const char* (__thiscall*)(void* self, const void* node);
+    using StringCtorFn = void (__thiscall*)(void* self, const char* s);
+
+    // Metadata-only refs (not accessed by this function's asm).
+    (void)&mem_00924FD0;
+    (void)&mem_00924FF4;
+
+    auto name_internal = *reinterpret_cast<NameInternalMethodFn*>(&mem_00925354);
+    const char* name = name_internal(reinterpret_cast<void*>(&mem_00A2E2F8),
+                                     reinterpret_cast<const void*>(&mem_00B5CE94));
+
+    StdString28 str{};
+    auto string_ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE4);
+    string_ctor(static_cast<void*>(&str), name);
+
+    ext_0066AC90(dst, str);
+    return dst;
+}
+} // namespace lift_0041CDA0
