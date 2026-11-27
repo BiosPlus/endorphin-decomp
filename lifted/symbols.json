@@ -10097,6 +10097,12 @@
     "summary": "Allocates a 0x48-byte record, stores three DWORDs and a byte flag, and copy-constructs the string pair from src; returns the record or null.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00472870": {
+    "name": "CopyStringElementRange",
+    "signature": "void* fn_00472870(void* src_first, void* src_last, void* dst)",
+    "summary": "Copy-constructs a range of 0x20-byte string elements into dst; destroys partial copy and rethrows on failure. Returns end of dst range.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004736F0": {
     "name": "sub_004736F0",
     "signature": "uint32_t fn_004736F0(void* self)",

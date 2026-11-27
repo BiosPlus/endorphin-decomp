@@ -1489,3 +1489,46 @@ uint32_t fn_004736F0(void* self) {
     return result;
 }
 } // namespace lift_004736F0
+
+// [0x00472870] sub_00472870 (155 bytes)
+namespace lift_00472870 {
+// IAT slots (MSVCP80): basic_string copy-ctor and basic_string dtor (thiscall).
+// Slot contents are function addresses; read them and call through a thiscall pointer.
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+
+using StringCopyCtorFn = void(__thiscall*)(void* self, const void* src);
+using StringDtorFn     = void(__thiscall*)(void* self);
+
+// @name CopyStringElementRange
+// @summary Copy-constructs a range of 0x20-byte string elements into dst; destroys partial copy and rethrows on failure. Returns end of dst range.
+// @field StringElem +0x1c uint32_t field_0x1c
+void* fn_00472870(void* src_first, void* src_last, void* dst) {
+    uint8_t* src = static_cast<uint8_t*>(src_first);
+    uint8_t* const end = static_cast<uint8_t*>(src_last);
+    uint8_t* out = static_cast<uint8_t*>(dst);
+    uint8_t* const start = out;
+
+    auto copy_ctor = reinterpret_cast<StringCopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0));
+    auto dtor      = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+
+    try {
+        while (src != end) {
+            if (out != nullptr) {
+                copy_ctor(out, src);
+                lift_field<uint32_t>(out, 0x1c) = lift_field<uint32_t>(src, 0x1c);
+            }
+            out += 0x20;
+            src += 0x20;
+        }
+    } catch (...) {
+        // Unwind: destroy fully constructed elements [start, out), then rethrow.
+        for (uint8_t* p = start; p != out; p += 0x20) {
+            dtor(p);
+        }
+        throw;
+    }
+
+    return out;
+}
+} // namespace lift_00472870
