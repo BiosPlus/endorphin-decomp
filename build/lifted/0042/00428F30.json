@@ -1,0 +1,28 @@
+{
+  "va": "0x00428F30",
+  "size": 174,
+  "orig_symbol": "sub_00428F30",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Vector36::insert",
+  "class": "Vector36",
+  "signature": "extern \"C\" Vector36Iter* __thiscall sub_00428F30( void* self, Vector36Iter* ret_iter, void* iter_container, void* iter_ptr, void* val_ptr)",
+  "summary": "Inserts a single 36-byte element into a checked vector at the given iterator position",
+  "fields": [
+    {
+      "class": "Vector36",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "Vector36",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:28:47Z"
+}

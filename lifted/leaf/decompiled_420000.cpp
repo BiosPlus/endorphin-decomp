@@ -2308,3 +2308,63 @@ DWORD __stdcall fn_00427FE0(void* arg) {
     return 0;
 }
 } // namespace lift_00427FE0
+
+// [0x00428F30]
+namespace lift_00428F30 {
+// @name Vector36::insert
+// @class Vector36
+// @summary Inserts a single 36-byte element into a checked vector at the given iterator position
+// @field Vector36 +0x04 void* begin
+// @field Vector36 +0x08 void* end
+
+
+extern void (__stdcall *mem_00925134)();
+extern void __thiscall ext_00428C20(void* self, void* iter_container, void* iter_ptr, uint32_t count, void* val_ptr);
+
+struct Vector36Iter {
+    void* container;
+    void* ptr;
+};
+
+extern Vector36Iter* __thiscall sub_00428F30(
+    void* self,
+    Vector36Iter* ret_iter,
+    void* iter_container,
+    void* iter_ptr,
+    void* val_ptr)
+{
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x04);
+    int32_t index = 0;
+
+    if (begin != nullptr) {
+        uint8_t* end = lift_field<uint8_t*>(self, 0x08);
+        int32_t diff = static_cast<int32_t>(end - begin);
+        if (diff / 36 != 0) {
+            if (begin > end) {
+                mem_00925134();
+            }
+            if (iter_container == nullptr || iter_container != self) {
+                mem_00925134();
+            }
+            index = static_cast<int32_t>(static_cast<uint8_t*>(iter_ptr) - begin) / 36;
+        }
+    }
+
+    ext_00428C20(self, iter_container, iter_ptr, 1, val_ptr);
+
+    uint8_t* new_begin = lift_field<uint8_t*>(self, 0x04);
+    uint8_t* new_end = lift_field<uint8_t*>(self, 0x08);
+    if (new_begin > new_end) {
+        mem_00925134();
+    }
+
+    uint8_t* result_ptr = new_begin + static_cast<intptr_t>(index) * 36;
+    if (result_ptr > new_end || result_ptr < new_begin) {
+        mem_00925134();
+    }
+
+    ret_iter->container = self;
+    ret_iter->ptr = result_ptr;
+    return ret_iter;
+}
+} // namespace lift_00428F30

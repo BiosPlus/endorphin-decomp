@@ -2928,6 +2928,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/Properties/GWCPropertiesControlDriver.cpp"
   },
+  "0x0041DFC0": {
+    "name": "SortedVector::insertUnique",
+    "class": "SortedVector",
+    "signature": "bool __thiscall fn_0041DFC0(void* self, const uint32_t* val)",
+    "summary": "Inserts a uint32_t into a sorted vector if not already present, returning true if inserted",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041E070": {
     "name": "AdvXMLParser-style constructor (sub_0041E070)",
     "class": "\u003cunknown\u003e",
@@ -3402,6 +3409,13 @@
     "name": "sub_00428BA0",
     "signature": "DWORD* __thiscall fn_00428BA0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x00428F30": {
+    "name": "Vector36::insert",
+    "class": "Vector36",
+    "signature": "extern \"C\" Vector36Iter* __thiscall sub_00428F30( void* self, Vector36Iter* ret_iter, void* iter_container, void* iter_ptr, void* val_ptr)",
+    "summary": "Inserts a single 36-byte element into a checked vector at the given iterator position",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x00428FE0": {
