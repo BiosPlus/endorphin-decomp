@@ -43116,6 +43116,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005A32F0": {
+    "name": "NMData::BackGroundData::vfunc_2_off_4",
+    "class": "NMData::BackGroundData",
+    "signature": "inline R lift_vcall(void* obj, A... args)",
+    "summary": "Resolves a named value via AnimatableTransform::vfunc_2 and, when no usable object is found, looks the key up in the +0x564/+0x570 tables and +0x540 provider, assigning a C-string or copying the (value, object) pair into the key-result argument.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x005A3610": {
     "name": "sub_005A3610",
     "signature": "void fn_005A3610()",

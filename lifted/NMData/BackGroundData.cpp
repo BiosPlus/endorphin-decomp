@@ -528,3 +528,117 @@ float __thiscall fn_0059D6A0(void* self) {
     return result;
 }
 } // namespace lift_0059D6A0
+
+// [0x005A32F0] NMData::BackGroundData::vfunc_2_off_4 (461 bytes)
+namespace lift_005A32F0 {
+// Virtual dispatch helper: calls vtable slot `Slot` of `obj` (MSVC __thiscall), passing obj as this.
+template <typename R, std::size_t Slot, typename... A>
+inline R lift_vcall(void* obj, A... args) {
+    void** vt = lift_field<void**>(obj, 0);
+    using Fn = R (__thiscall*)(void*, A...);
+    return reinterpret_cast<Fn>(vt[Slot])(obj, args...);
+}
+
+// MSVC std::string storage (0x1C bytes) used for the stack temporaries.
+struct MsvcStringStorage {
+    alignas(4) unsigned char bytes[0x1C];
+};
+
+// (value, object) pair at stack slot esp+0x14: value at +0x00, object at +0x04.
+struct ValueObjPair {
+    uint32_t value;
+    void* obj;
+};
+
+// Callees and import slots referenced by the original asm.
+extern void* __thiscall ext_0058A370(void* self, void** out, void* key); // AnimatableTransform::vfunc_2 (direct call)
+extern void __thiscall ext_0041CF00(void* self, void* src);              // sub_0041CF00 (copy pair into self)
+extern uint32_t __thiscall ext_005DF5C0(void* self);                     // sub_005DF5C0 (lookup in +0x564/+0x570)
+extern void* __thiscall ext_005A06F0(void* self);                        // sub_005A06F0 (returns object with vtable)
+extern void* __thiscall ext_0041CE40(void* self, const char* str);       // sub_0041CE40 (assign C-string to self)
+
+using StrCopyCtorFn = void* (__thiscall*)(void* self, void* other);      // MSVCP80 basic_string copy ctor
+using StrCStrCtorFn = void* (__thiscall*)(void* self, const char* s);    // MSVCP80 basic_string(const char*) ctor
+using StrCStrFn = const char* (__thiscall*)(void* self);                 // MSVCP80 basic_string::c_str
+using StrDtorFn = void(__thiscall*)(void* self);                         // MSVCP80 basic_string dtor
+
+extern StrCopyCtorFn mem_00924FE0;
+extern StrCStrCtorFn mem_00924FE4;
+extern StrCStrFn mem_00924FF0;
+extern StrDtorFn mem_00924FF4;
+extern void* mem_00B599BC;          // sentinel object value compared against the result
+extern const char* mem_00B41B04;    // const char* constant used as a string source
+extern const char mem_0095E77C[];   // string literal pushed in the lookup-by-literal path
+
+// @name NMData::BackGroundData::vfunc_2_off_4
+// @class NMData::BackGroundData
+// @summary Resolves a named value via AnimatableTransform::vfunc_2 and, when no usable object is found, looks the key up in the +0x564/+0x570 tables and +0x540 provider, assigning a C-string or copying the (value, object) pair into the key-result argument.
+// @field NMData::BackGroundData +0x540 void* field_0x540
+// @field NMData::BackGroundData +0x564 uint8_t field_0x564
+// @field NMData::BackGroundData +0x570 uint8_t field_0x570
+void* fn_005A32F0(void* self, void* arg1, void* arg2) {
+    (void)arg1; // [ESP+4] is never read by the original code (only ret 8 cleanup).
+
+    uint8_t* const base = static_cast<uint8_t*>(self);
+
+    // Out-pointer for AnimatableTransform::vfunc_2 is the object slot of the pair.
+    ValueObjPair pair{};
+    pair.obj = nullptr;
+    ext_0058A370(self, &pair.obj, arg2);
+
+    if (pair.obj != nullptr && pair.obj != mem_00B599BC) {
+        ext_0041CF00(arg2, &pair);
+        if (pair.obj != nullptr) {
+            lift_vcall<void, 30>(pair.obj, static_cast<void*>(&pair));
+        }
+        return arg2;
+    }
+
+    // Object missing or sentinel: try the +0x564 table with a temporary copy of the key.
+    MsvcStringStorage t1;
+    mem_00924FE0(&t1, arg2);
+    if (ext_005DF5C0(base + 0x564) != 0) {
+        const char* s = mem_00924FF0(arg2);
+        ext_0041CE40(arg2, const_cast<char*>(s));
+        if (pair.obj != nullptr) {
+            lift_vcall<void, 30>(pair.obj, static_cast<void*>(&pair));
+        }
+        return arg2;
+    }
+
+    // Try the +0x570 table.
+    MsvcStringStorage t2;
+    mem_00924FE0(&t2, arg2);
+    if (ext_005DF5C0(base + 0x570) != 0) {
+        const char* s = mem_00924FF0(arg2);
+        ext_0041CE40(arg2, const_cast<char*>(s));
+        if (pair.obj != nullptr) {
+            lift_vcall<void, 30>(pair.obj, static_cast<void*>(&pair));
+        }
+        return arg2;
+    }
+
+    // Fall back to the +0x540 provider.
+    MsvcStringStorage t3;
+    mem_00924FE4(&t3, mem_00B41B04);
+    void* provider = ext_005A06F0(base + 0x540);
+    void* resolved = lift_vcall<void*, 1>(provider, arg2);
+    if (resolved == nullptr) {
+        ext_0041CF00(arg2, &pair);
+        if (pair.obj != nullptr) {
+            lift_vcall<void, 30>(pair.obj, static_cast<void*>(&pair));
+        }
+        return arg2;
+    }
+
+    MsvcStringStorage t4;
+    mem_00924FE4(&t4, mem_0095E77C);
+    lift_vcall<void, 2>(resolved, arg2, static_cast<void*>(&t4));
+    mem_00924FF4(&t4);
+
+    if (pair.obj != nullptr) {
+        lift_vcall<void, 30>(pair.obj, static_cast<void*>(&pair));
+    }
+    return self;
+}
+} // namespace lift_005A32F0
