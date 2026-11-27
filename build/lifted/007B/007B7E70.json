@@ -1,0 +1,27 @@
+{
+  "va": "0x007B7E70",
+  "size": 64,
+  "orig_symbol": "sub_007B7E70",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ReadFloatPairToBuffer",
+  "signature": "void fn_007B7E70(void* dst)",
+  "summary": "Writes two values into the destination buffer: a float read from the stream, then (conditionally) a second float; the seeded u32 constants are stored first and overwritten by the float reads.",
+  "fields": [
+    {
+      "class": "ReadFloatPairToBuffer",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "value0"
+    },
+    {
+      "class": "ReadFloatPairToBuffer",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "value1"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:15:43Z"
+}

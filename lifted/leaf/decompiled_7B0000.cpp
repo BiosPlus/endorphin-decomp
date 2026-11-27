@@ -2445,3 +2445,31 @@ void fn_007B2CA0(void** slot, DWORD value) {
     }
 }
 } // namespace lift_007B2CA0
+
+// [0x007B7E70] sub_007B7E70 (64 bytes)
+namespace lift_007B7E70 {
+// Known callee 0x007B7910: sub_007B7910 (Reads one 4-byte value from the stream returned by ext_0079EBE0 and returns its bits as a float; on a short read it reports via ext_007AA510(13) and returns 0.0f unless the global flag mem_00B61219 is set.)
+extern float ext_007B7910();
+extern uint32_t mem_00999748;
+extern uint32_t mem_0099974C;
+extern uint8_t mem_00B61218;
+extern uint8_t mem_00B61219;
+
+// @name ReadFloatPairToBuffer
+// @summary Writes two values into the destination buffer: a float read from the stream, then (conditionally) a second float; the seeded u32 constants are stored first and overwritten by the float reads.
+// @field ReadFloatPairToBuffer +0x00 float value0
+// @field ReadFloatPairToBuffer +0x04 float value1
+void fn_007B7E70(void* dst) {
+    // Seed both slots with the rdata constants (u32), as in the original.
+    lift_field<uint32_t>(dst, 0) = mem_00999748;
+    lift_field<uint32_t>(dst, 4) = mem_0099974C;
+
+    // First read always happens and overwrites slot 0 as a float.
+    lift_field<float>(dst, 0) = ext_007B7910();
+
+    // Second read happens unless (mem_00B61218 != 0 && mem_00B61219 == 0).
+    if (mem_00B61218 == 0 || mem_00B61219 != 0) {
+        lift_field<float>(dst, 4) = ext_007B7910();
+    }
+}
+} // namespace lift_007B7E70

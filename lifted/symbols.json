@@ -85280,6 +85280,12 @@
     "summary": "Writes the three uint32 values at arg+0x0, +0x4, +0x8 via ext_007B78D0, gated by two global byte flags.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7E70": {
+    "name": "ReadFloatPairToBuffer",
+    "signature": "void fn_007B7E70(void* dst)",
+    "summary": "Writes two values into the destination buffer: a float read from the stream, then (conditionally) a second float; the seeded u32 constants are stored first and overwritten by the float reads.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B8968": {
     "name": "sub_007B8968_table",
     "signature": "const uint8_t* fn_007B8968(void* self)",
