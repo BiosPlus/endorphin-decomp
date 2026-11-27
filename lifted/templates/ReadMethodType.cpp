@@ -187108,3 +187108,233 @@ void fn_006958E0(void* self) {
     reinterpret_cast<void (*)(void*, void*)>(subVtbl[47])(sub, self);
 }
 } // namespace lift_006958E0
+
+// [0x005B3970] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_45 (164 bytes)
+namespace lift_005B3970 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_45
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B38C0 (ExprParser::ReadMethodType::vfunc_44).
+namespace lift_005B38C0 {
+// Known callee 0x006720E0: sub_006720E0 (43B). Constructs temp value object from `value`.
+extern void ext_006720E0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04 / field_0x00).
+extern void ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object with fixed message).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exception, void* throw_info);
+// RDATA throw-info descriptor at 0x009DEC1C.
+extern uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType::vfunc_44
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Gets a value from the held object's sub-object via vfunc slot 8, copies it into self via Unknown::assignFromOther, releases the temp, then forwards to vfunc slot 44 of self's field_0x04 (throws if field_0x00 is null).
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0> +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0c
+void* fn_005B3970(void* self, void* arg2) {
+    void* x = lift_field<void*>(self, 0x00);
+    if (x == nullptr) {
+        // Throw path: build DerivedException and raise it through MSVC's CxxThrowException.
+        alignas(8) uint8_t exc[16]{};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    // p = x->field_0x0c; v = p->vfunc[8](); (vtable slot 0x20)
+    void* p = lift_field<void*>(x, 0x0c);
+    void** vt = *reinterpret_cast<void***>(p);
+    void* v = reinterpret_cast<void* (*)(void*)>(vt[0x20 / sizeof(void*)])(p);
+
+    // Temp object: field_0x04 at +4 holds an owned pointer.
+    alignas(8) uint8_t tmp[16]{};
+    ext_006720E0(tmp, v);
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's field_0x04 via its vtable slot 0x78.
+    void* tmp4 = lift_field<void*>(tmp, 0x04);
+    if (tmp4 != nullptr) {
+        void** vt2 = *reinterpret_cast<void***>(tmp4);
+        reinterpret_cast<void (*)(void*, void*)>(vt2[0x78 / sizeof(void*)])(tmp4, tmp);
+    }
+
+    // Forward: self->field_0x04->vfunc[0xB0](self, arg2) (vtable slot 0xB0)
+    void* f4 = lift_field<void*>(self, 0x04);
+    void** vt3 = *reinterpret_cast<void***>(f4);
+    return reinterpret_cast<void* (*)(void*, void*, void*)>(vt3[0xB4 / sizeof(void*)])(f4, self, arg2);
+}
+} // namespace lift_005B38C0
+} // namespace lift_005B3970
+
+// [0x005B3A20] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_46 (164 bytes)
+namespace lift_005B3A20 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_46
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B38C0 (ExprParser::ReadMethodType::vfunc_44).
+namespace lift_005B38C0 {
+// Known callee 0x006720E0: sub_006720E0 (43B). Constructs temp value object from `value`.
+extern void ext_006720E0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04 / field_0x00).
+extern void ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object with fixed message).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exception, void* throw_info);
+// RDATA throw-info descriptor at 0x009DEC1C.
+extern uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType::vfunc_44
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Gets a value from the held object's sub-object via vfunc slot 8, copies it into self via Unknown::assignFromOther, releases the temp, then forwards to vfunc slot 44 of self's field_0x04 (throws if field_0x00 is null).
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0> +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0c
+void* fn_005B3A20(void* self, void* arg2) {
+    void* x = lift_field<void*>(self, 0x00);
+    if (x == nullptr) {
+        // Throw path: build DerivedException and raise it through MSVC's CxxThrowException.
+        alignas(8) uint8_t exc[16]{};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    // p = x->field_0x0c; v = p->vfunc[8](); (vtable slot 0x20)
+    void* p = lift_field<void*>(x, 0x0c);
+    void** vt = *reinterpret_cast<void***>(p);
+    void* v = reinterpret_cast<void* (*)(void*)>(vt[0x20 / sizeof(void*)])(p);
+
+    // Temp object: field_0x04 at +4 holds an owned pointer.
+    alignas(8) uint8_t tmp[16]{};
+    ext_006720E0(tmp, v);
+    ext_0041CF50(self, tmp);
+
+    // Release the temp's field_0x04 via its vtable slot 0x78.
+    void* tmp4 = lift_field<void*>(tmp, 0x04);
+    if (tmp4 != nullptr) {
+        void** vt2 = *reinterpret_cast<void***>(tmp4);
+        reinterpret_cast<void (*)(void*, void*)>(vt2[0x78 / sizeof(void*)])(tmp4, tmp);
+    }
+
+    // Forward: self->field_0x04->vfunc[0xB0](self, arg2) (vtable slot 0xB0)
+    void* f4 = lift_field<void*>(self, 0x04);
+    void** vt3 = *reinterpret_cast<void***>(f4);
+    return reinterpret_cast<void* (*)(void*, void*, void*)>(vt3[0xB8 / sizeof(void*)])(f4, self, arg2);
+}
+} // namespace lift_005B38C0
+} // namespace lift_005B3A20
+
+// [0x0066FE20] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_45 (198 bytes)
+namespace lift_0066FE20 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_45
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0066FD50 (ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>::vfunc_44).
+namespace lift_0066FD50 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// Known callee 0x00672080: sub_00672080 (18B). Initializes the temp ValuePtr-like slot at its first argument from a float.
+extern void ext_00672080(void* slot, float value);
+// Known callee 0x0041CF50: Unknown::assignFromOther (Self-assignment guarded copy of field_0x04/field_0x00 from other; returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Exception type info for the null-vector throw.
+extern char mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>::vfunc_44
+// @class ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>
+// @summary Computes the length of the Vector3 referenced by holder->field_0x00, stores it in a temp ValuePtr, assigns that into holder, then dispatches vfunc 44 on holder->field_0x04.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NM::Vector3 +0x00 float field_0x00
+// @field NM::Vector3 +0x04 float field_0x04
+// @field NM::Vector3 +0x08 float field_0x08
+void fn_0066FE20(void* holder, void* arg2) {
+    void* const vec = lift_field<void*>(holder, 0x00);
+    if (vec == nullptr) {
+        // Exception object storage: the original constructs it in the frame at [ebp-0x34 .. frame-end).
+        alignas(8) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+    }
+
+    const float x = lift_field<float>(vec, 0x00);
+    const float y = lift_field<float>(vec, 0x04);
+    const float z = lift_field<float>(vec, 0x08);
+    const float len = std::sqrt(x * x + y * y + z * z);
+
+    // Temp ValuePtr-like pair: tmp[0] = field_0x00, tmp[1] = field_0x04.
+    void* tmp[2] = {nullptr, nullptr};
+    ext_00672080(&tmp[0], len);
+    ext_0041CF50(holder, &tmp[0]);
+
+    void* const obj = tmp[1];
+    if (obj != nullptr) {
+        void* const vt = lift_field<void*>(obj, 0x00);
+        reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78))(obj, &tmp[0]);
+    }
+
+    void* const sub = lift_field<void*>(holder, 0x04);
+    void* const subVt = lift_field<void*>(sub, 0x00);
+    reinterpret_cast<void (*)(void*, void*, void*)>(lift_field<void*>(subVt, 0xB4))(sub, holder, arg2);
+}
+} // namespace lift_0066FD50
+} // namespace lift_0066FE20
+
+// [0x0066FEF0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_46 (198 bytes)
+namespace lift_0066FEF0 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_46
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0066FD50 (ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>::vfunc_44).
+namespace lift_0066FD50 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// Known callee 0x00672080: sub_00672080 (18B). Initializes the temp ValuePtr-like slot at its first argument from a float.
+extern void ext_00672080(void* slot, float value);
+// Known callee 0x0041CF50: Unknown::assignFromOther (Self-assignment guarded copy of field_0x04/field_0x00 from other; returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Exception type info for the null-vector throw.
+extern char mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>::vfunc_44
+// @class ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>
+// @summary Computes the length of the Vector3 referenced by holder->field_0x00, stores it in a temp ValuePtr, assigns that into holder, then dispatches vfunc 44 on holder->field_0x04.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NM::Vector3 +0x00 float field_0x00
+// @field NM::Vector3 +0x04 float field_0x04
+// @field NM::Vector3 +0x08 float field_0x08
+void fn_0066FEF0(void* holder, void* arg2) {
+    void* const vec = lift_field<void*>(holder, 0x00);
+    if (vec == nullptr) {
+        // Exception object storage: the original constructs it in the frame at [ebp-0x34 .. frame-end).
+        alignas(8) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+    }
+
+    const float x = lift_field<float>(vec, 0x00);
+    const float y = lift_field<float>(vec, 0x04);
+    const float z = lift_field<float>(vec, 0x08);
+    const float len = std::sqrt(x * x + y * y + z * z);
+
+    // Temp ValuePtr-like pair: tmp[0] = field_0x00, tmp[1] = field_0x04.
+    void* tmp[2] = {nullptr, nullptr};
+    ext_00672080(&tmp[0], len);
+    ext_0041CF50(holder, &tmp[0]);
+
+    void* const obj = tmp[1];
+    if (obj != nullptr) {
+        void* const vt = lift_field<void*>(obj, 0x00);
+        reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78))(obj, &tmp[0]);
+    }
+
+    void* const sub = lift_field<void*>(holder, 0x04);
+    void* const subVt = lift_field<void*>(sub, 0x00);
+    reinterpret_cast<void (*)(void*, void*, void*)>(lift_field<void*>(subVt, 0xB8))(sub, holder, arg2);
+}
+} // namespace lift_0066FD50
+} // namespace lift_0066FEF0

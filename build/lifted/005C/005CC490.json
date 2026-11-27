@@ -1,0 +1,28 @@
+{
+  "va": "0x005CC490",
+  "size": 134,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_16_off_C",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_16_off_C",
+  "class": "NMData::CollisionModelData",
+  "signature": "void* __thiscall fn_005CC490(void* self, void* arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x005CC6C0 (NMData::FluidObjectData::vfunc_16_off_C).",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:56:06Z"
+}

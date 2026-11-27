@@ -43905,6 +43905,20 @@
     "summary": "Gets a value from the held object's sub-object via vfunc slot 8, copies it into self via Unknown::assignFromOther, releases the temp, then forwards to vfunc slot 44 of self's field_0x04 (throws if field_0x00 is null).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B3970": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+    "signature": "void* fn_005B3970(void* self, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B38C0 (ExprParser::ReadMethodType::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005B3A20": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+    "signature": "void* fn_005B3A20(void* self, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B38C0 (ExprParser::ReadMethodType::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B3AD0": {
     "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_47 (Geometry::getFileName)",
     "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
@@ -48229,6 +48243,13 @@
     "class": "NMData::CollisionModelData",
     "signature": "void* fn_005CC420(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
+  "0x005CC490": {
+    "name": "NMData::CollisionModelData::vfunc_16_off_C",
+    "class": "NMData::CollisionModelData",
+    "signature": "void* __thiscall fn_005CC490(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x005CC6C0 (NMData::FluidObjectData::vfunc_16_off_C).",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
   "0x005CC5A0": {
@@ -73727,6 +73748,20 @@
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::calcNorm,1\u003e",
     "signature": "void fn_0066FD50(void* holder, void* arg2)",
     "summary": "Computes the length of the Vector3 referenced by holder-\u003efield_0x00, stores it in a temp ValuePtr, assigns that into holder, then dispatches vfunc 44 on holder-\u003efield_0x04.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0066FE20": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
+    "signature": "void fn_0066FE20(void* holder, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066FD50 (ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::calcNorm,1\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0066FEF0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
+    "signature": "void fn_0066FEF0(void* holder, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066FD50 (ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::calcNorm,1\u003e::vfunc_44).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00670090": {
