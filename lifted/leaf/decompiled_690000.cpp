@@ -1734,3 +1734,46 @@ extern void __fastcall fn_00692BA0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_00692BA0
+
+// [0x00698240] sub_00698240 (142 bytes)
+namespace lift_00698240 {
+// Known callee 0x00664A80: replaceString (Replaces occurrences of a substring in a std::string and returns the replacement count.)
+extern int ext_00664A80(void* str, const char* find_str, const char* replace_str, bool only_first);
+// MSVCP80 std::string::c_str import slot (thiscall). Its MSVC 2005 layout logic is
+// reproduced below instead of calling through the slot.
+extern uint32_t mem_00924FF0;
+// MSVCRT _invalid_parameter_noinfo import slot (debug iterator checks). Boilerplate: referenced
+// only as metadata, the checks themselves are not reproduced.
+extern uint32_t mem_00925134;
+
+// MSVC 2005 std::string::c_str: buffer lives inline at +0 when capacity < 16, else heap pointer at +0.
+// Capacity (_Myres) is at +0x14.
+static const char* msvc_string_c_str(void* s) {
+    uint32_t res = lift_field<uint32_t>(s, 0x14);
+    if (res < 16) {
+        return reinterpret_cast<const char*>(s);
+    }
+    return reinterpret_cast<const char*>(static_cast<uintptr_t>(lift_field<uint32_t>(s, 0)));
+}
+
+// @name Unknown::countReplacementsInStrings
+// @summary Walks a 0x38-byte-stride range of string pairs (find at +0x00, replace at +0x1C) and sums replaceString results on str; returns true if any replacement occurred.
+// @field Unknown +0x04 uint32_t begin
+// @field Unknown +0x08 uint32_t end
+bool __thiscall fn_00698240(void* self, void* str) {
+    uint8_t* it = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04)));
+    uint8_t* end = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08)));
+
+    (void)&mem_00924FF0;
+    (void)&mem_00925134;
+
+    int total = 0;
+    while (it != end) {
+        const char* find_str = msvc_string_c_str(it + 0x00);
+        const char* replace_str = msvc_string_c_str(it + 0x1C);
+        total += ext_00664A80(str, find_str, replace_str, false);
+        it += 0x38;
+    }
+    return total > 0;
+}
+} // namespace lift_00698240

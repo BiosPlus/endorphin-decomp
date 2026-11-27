@@ -9104,6 +9104,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_4 (NMData::State::getFileName)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046D7F0": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, int, getEndFrame\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, int, getEndFrame\u003e",
+    "signature": "void __thiscall fn_0046D7F0(void* self, void* arg0)",
+    "summary": "Reads an int via ImageExporter::getEndFrame() into the expression value wrapper, or throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046D890": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, int, getImageHeight\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, getImageHeight\u003e",
@@ -9144,6 +9151,13 @@
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e",
     "signature": "extern void fn_0046DBC0(int* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0046DE70": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getImageWidth\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getImageWidth\u003e",
+    "signature": "void __thiscall fn_0046DE70(void* self, void* arg1)",
+    "summary": "Reads ImageExporter::getImageWidth from arg1[0], wraps it via ext_006720C0, assigns to arg1, and dispatches vfunc_47 on arg1[1].",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0046DF10": {
@@ -9326,6 +9340,13 @@
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0\u003e",
     "signature": "extern void fn_0046EE70(int* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0046EFE0": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getImageHeight\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getImageHeight\u003e",
+    "signature": "int __thiscall fn_0046EFE0(void* self, void* arg0)",
+    "summary": "Evaluates ImageExporter::getImageHeight via the bound object in arg0, or throws DerivedException if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0046F080": {
@@ -9976,6 +9997,13 @@
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine,int,RuntimeEngine::getNumTicksToRun\u003e",
     "signature": "extern \"C\" double __stdcall fn_004720D0(const uint32_t* ptr)",
     "summary": "Dereferences RuntimeEngine*, calls getNumTicksToRun() and returns as double, or throws on null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00472250": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine,int,getNumTicksToRun\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void __thiscall fn_00472250(void* self, void* arg)",
+    "summary": "Reads RuntimeEngine::getNumTicksToRun() into the expression value wrapper and invokes its virtual update method, or throws if the target object is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004722F0": {
@@ -60567,6 +60595,13 @@
     "name": "copyStringPairRange",
     "signature": "extern \"C\" void __cdecl fn_00698200(uint32_t begin, uint32_t end, uint32_t src)",
     "summary": "For each 0x38-byte element in [begin, end), assigns its two std::string members (at +0x00 and +0x1C) from the matching members of src via basic_string::operator=.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00698240": {
+    "name": "Unknown::countReplacementsInStrings",
+    "class": "Unknown",
+    "signature": "static const char* msvc_string_c_str(void* s)",
+    "summary": "Walks a 0x38-byte-stride range of string pairs (find at +0x00, replace at +0x1C) and sums replaceString results on str; returns true if any replacement occurred.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x00698810": {

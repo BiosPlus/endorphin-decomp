@@ -1,0 +1,28 @@
+{
+  "va": "0x00698240",
+  "size": 142,
+  "orig_symbol": "sub_00698240",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "Unknown::countReplacementsInStrings",
+  "class": "Unknown",
+  "signature": "static const char* msvc_string_c_str(void* s)",
+  "summary": "Walks a 0x38-byte-stride range of string pairs (find at +0x00, replace at +0x1C) and sums replaceString results on str; returns true if any replacement occurred.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:03:22Z"
+}
