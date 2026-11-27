@@ -2877,6 +2877,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005FF040 (ResourceHolder::ReleaseAndReset).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x0042ECC0": {
+    "name": "sub_0042ECC0_contains",
+    "signature": "bool __thiscall sub_0042ECC0(void* self, uint32_t value)",
+    "summary": "Checks whether a 32-bit value is present in the vector at +0x54",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042EE50": {
     "name": "sub_0042EE50",
     "class": "NMData::RealChannel",
@@ -6563,6 +6569,12 @@
     "signature": "extern \"C\" int32_t __fastcall fn_00458FE0(void* self)",
     "summary": "Sets the vtable to mem_0093785C; if the window handle at +0x1c is non-null, tail-calls SendMessageToFieldWindow, otherwise returns.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
+  "0x00459060": {
+    "name": "sendMessageOrDelegate_00459060",
+    "signature": "int fn_00459060(HWND hwnd)",
+    "summary": "Sends message mem_00AD3E34 to hwnd via SendMessageA; if unhandled (0), creates a 0x20-byte object and forwards hwnd to its handler fn_00459000.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
   "0x004590E0": {
     "name": "CMessageReflector::vfunc_0",

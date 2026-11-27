@@ -1701,3 +1701,38 @@ float fn_0045AEE0(void* self) {
     return result;
 }
 } // namespace lift_0045AEE0
+
+// [0x00459060] sub_00459060 (116 bytes)
+namespace lift_00459060 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// cdecl, one DWORD argument, returns a pointer (used as `this` for fn_00459000).
+extern void* ext_006A5C62(DWORD arg);
+// Direct callee 0x00459000: thiscall (this in ECX, one stack argument), returns int.
+extern int __thiscall fn_00459000(void* self, HWND hwnd);
+// IAT slot for USER32!SendMessageA (value is the resolved function address at runtime).
+extern uint32_t mem_00925694;
+// Global message id read by this function.
+extern uint32_t mem_00AD3E34;
+
+// @name sendMessageOrDelegate_00459060
+// @summary Sends message mem_00AD3E34 to hwnd via SendMessageA; if unhandled (0), creates a 0x20-byte object and forwards hwnd to its handler fn_00459000.
+int fn_00459060(HWND hwnd) {
+    using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+    // The original SEH frame (fs:[0] push/pop around the body) is omitted: it only
+    // matters for exception unwinding and has no effect on the normal return paths.
+    const auto sendMessageA =
+        reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    const UINT msg = static_cast<UINT>(mem_00AD3E34);
+
+    const LRESULT handled = sendMessageA(hwnd, msg, 0, 0);
+    if (handled != 0) {
+        return static_cast<int>(handled);
+    }
+
+    void* obj = ext_006A5C62(0x20);
+    if (obj == nullptr) {
+        return 0;
+    }
+    return fn_00459000(obj, hwnd);
+}
+} // namespace lift_00459060

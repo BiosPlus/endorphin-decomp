@@ -1,0 +1,13 @@
+{
+  "va": "0x00459060",
+  "size": 116,
+  "orig_symbol": "sub_00459060",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "sendMessageOrDelegate_00459060",
+  "signature": "int fn_00459060(HWND hwnd)",
+  "summary": "Sends message mem_00AD3E34 to hwnd via SendMessageA; if unhandled (0), creates a 0x20-byte object and forwards hwnd to its handler fn_00459000.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:06:52Z"
+}
