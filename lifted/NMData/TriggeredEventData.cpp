@@ -170,3 +170,119 @@ void __thiscall fn_004C24C0(void* self, void* node) {
     mem_00924FF4(str_buf);
 }
 } // namespace lift_004C24C0
+
+// [0x004C1DE0] NMData::TriggeredEventData::vfunc_22 (432 bytes)
+namespace lift_004C1DE0 {
+extern void __thiscall ext_0058F650(void* self, void* xmlNode);
+extern void* __thiscall ext_00640110(void* xmlNode, uint32_t key);
+extern void __cdecl ext_00640A50(void* xmlNode, int32_t value);
+extern void __cdecl ext_00640A80(void* xmlNode, uint32_t value);
+extern void __thiscall ext_00427550(void* nodeRef, const char* value);
+extern void* __thiscall ext_006404E0(void* xmlNode, uint32_t key);
+extern void __thiscall ext_0063F8D0(void* xmlNode);
+extern void __thiscall ext_00640270(void* xmlNode, void* strObj);
+extern void ext_004275E0();
+extern void ext_00427640();
+extern void ext_0047A4A0();
+extern void ext_0047A880();
+extern void ext_0049F540();
+extern void ext_0053F5F0();
+extern void ext_0058F630();
+extern void ext_0063EFE0();
+extern void ext_0063F530();
+
+extern uint32_t mem_00A9F9B8;
+extern uint32_t mem_00A9F610;
+extern uint32_t mem_00A9F604;
+extern uint32_t mem_00A9F554;
+extern void* mem_00924FF0;
+extern uint32_t mem_00A9F144;
+extern uint32_t mem_00A9F140;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+extern int mem_00925134;
+extern int mem_00AE29D0;
+extern int mem_00924FE8;
+extern int mem_00924FEC;
+extern int mem_009849B0;
+extern int mem_00924FD0;
+extern int mem_00924FDC;
+
+// @name NMData::TriggeredEventData::saveToXML
+// @class NMData::TriggeredEventData
+// @summary Serializes TriggeredEventData fields, optional target object name, and string list to XML.
+// @field NMData::TriggeredEventData +0x15C int32_t field_0x15C
+// @field NMData::TriggeredEventData +0x160 int32_t field_0x160
+// @field NMData::TriggeredEventData +0x164 int32_t field_0x164
+// @field NMData::TriggeredEventData +0x168 void* field_0x168
+// @field NMData::TriggeredEventData +0x170 uint8_t* field_0x170
+// @field NMData::TriggeredEventData +0x174 uint8_t* field_0x174
+// @field NMData::TriggeredEventData +0x17C uint8_t field_0x17C
+void* __thiscall fn_004C1DE0(void* self, void* xmlNode) {
+    // Metadata-only address references (no call/read at runtime): listed in metadata
+    // from adjacent chunk, not referenced by the 432-byte body at 0x004C1DE0.
+    (void)&ext_004275E0;
+    (void)&ext_00427640;
+    (void)&ext_0047A4A0;
+    (void)&ext_0047A880;
+    (void)&ext_0049F540;
+    (void)&ext_0053F5F0;
+    (void)&ext_0058F630;
+    (void)&ext_0063EFE0;
+    (void)&ext_0063F530;
+    (void)&mem_00924FD0;
+    (void)&mem_00924FDC;
+    (void)&mem_00924FE8;
+    (void)&mem_00924FEC;
+    (void)&mem_00925134;
+    (void)&mem_00AE29D0;
+
+    using StrCStrFn = const char* (__thiscall*)(const void*);
+    using StrCtorFn = void (__thiscall*)(void*, const char*);
+    using StrDtorFn = void (__thiscall*)(void*);
+    using GetNameFn = const void* (__thiscall*)(void*);
+
+    auto str_c_str = reinterpret_cast<StrCStrFn>(mem_00924FF0);
+    auto str_ctor = reinterpret_cast<StrCtorFn>(mem_00924FE4);
+    auto str_dtor = reinterpret_cast<StrDtorFn>(mem_00924FF4);
+
+    ext_0058F650(self, xmlNode);
+
+    void* attrNode = ext_00640110(xmlNode, mem_00A9F9B8);
+    ext_00640A50(attrNode, lift_field<int32_t>(self, 0x15C));
+
+    attrNode = ext_00640110(xmlNode, mem_00A9F610);
+    ext_00640A50(attrNode, lift_field<int32_t>(self, 0x160));
+
+    attrNode = ext_00640110(xmlNode, 0x00944DFCu);
+    ext_00640A50(attrNode, lift_field<int32_t>(self, 0x164));
+
+    attrNode = ext_00640110(xmlNode, mem_00A9F604);
+    ext_00640A80(attrNode, lift_field<uint8_t>(self, 0x17C));
+
+    void* target = lift_field<void*>(self, 0x168);
+    if (target != nullptr) {
+        void* targetAttr = ext_00640110(xmlNode, mem_00A9F554);
+        void* iface = static_cast<uint8_t*>(target) + 0x4;
+        void** vtable = lift_field<void**>(iface, 0x0);
+        auto getName = reinterpret_cast<GetNameFn>(vtable[9]);
+        const void* nameStr = getName(iface);
+        ext_00427550(&targetAttr, str_c_str(nameStr));
+    }
+
+    void* listNode = ext_006404E0(xmlNode, mem_00A9F144);
+    uint8_t* it = lift_field<uint8_t*>(self, 0x170);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x174);
+    for (; it != end; it += 0x1C) {
+        void* itemNode = ext_006404E0(listNode, mem_00A9F140);
+        const char* itemCStr = str_c_str(it);
+        ext_0063F8D0(itemNode);
+        alignas(4) uint8_t tempStr[28];
+        str_ctor(tempStr, itemCStr);
+        ext_00640270(itemNode, tempStr);
+        str_dtor(tempStr);
+    }
+
+    return xmlNode;
+}
+} // namespace lift_004C1DE0

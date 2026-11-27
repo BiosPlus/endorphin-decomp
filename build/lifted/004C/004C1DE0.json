@@ -1,0 +1,58 @@
+{
+  "va": "0x004C1DE0",
+  "size": 432,
+  "orig_symbol": "NMData::TriggeredEventData::vfunc_22",
+  "src_path": "src/NMData/TriggeredEventData.cpp",
+  "lifted_path": "lifted/NMData/TriggeredEventData.cpp",
+  "name": "NMData::TriggeredEventData::saveToXML",
+  "class": "NMData::TriggeredEventData",
+  "signature": "void* __thiscall fn_004C1DE0(void* self, void* xmlNode)",
+  "summary": "Serializes TriggeredEventData fields, optional target object name, and string list to XML.",
+  "fields": [
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15C"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x164",
+      "type": "int32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x170",
+      "type": "uint8_t*",
+      "name": "field_0x170"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x174",
+      "type": "uint8_t*",
+      "name": "field_0x174"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-27T12:43:07Z"
+}

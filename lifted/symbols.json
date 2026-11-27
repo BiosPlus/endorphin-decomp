@@ -20373,6 +20373,13 @@
     "summary": "One-time initializer for the static object at 0x00AE3064; sets a guard bit, runs ext_0067A670 on the object, then stamps its vtable-like first DWORD with 0x00944AA4. Returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C1DE0": {
+    "name": "NMData::TriggeredEventData::saveToXML",
+    "class": "NMData::TriggeredEventData",
+    "signature": "void* __thiscall fn_004C1DE0(void* self, void* xmlNode)",
+    "summary": "Serializes TriggeredEventData fields, optional target object name, and string list to XML.",
+    "lifted_path": "lifted/NMData/TriggeredEventData.cpp"
+  },
   "0x004C1F90": {
     "name": "NMData::AnimationEventData::vfunc_94",
     "class": "NMData::AnimationEventData",
