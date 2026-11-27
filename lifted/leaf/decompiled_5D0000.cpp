@@ -20,6 +20,7 @@ float fn_005D06D0(uint32_t ecx) {
 }
 } // namespace lift_00611160
 } // namespace lift_005D06D0
+#include <cstring>
 
 // [0x005D07E0] sub_005D07E0 (12 bytes)
 namespace lift_005D07E0 {
@@ -811,3 +812,57 @@ void __thiscall fn_005D0240(void* self, float value) {
     // leaveOnExit destructor: call sub_0065C650 (leave lock) with ecx = lock
 }
 } // namespace lift_005D0240
+
+// [0x005DC300] sub_005DC300 (136 bytes)
+namespace lift_005DC300 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void __thiscall ext_0065C640(void* self);
+// Known callee 0x005DA150: sub_005DC420 (Member forwarding thunk: loads subobject pointer at +0x44 and tail-calls sub_005DA190.)
+extern void __thiscall ext_005DA150(void* self, float value);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* __thiscall ext_00493EE0(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void __thiscall ext_0065C650(void* self);
+
+// @name Unknown::StoreFloatAndDispatchUnderLock
+// @class Unknown
+// @summary Gets a global object's +0x258 subobject, calls its vtable slot 0x1D8 to obtain a lock handle, enters that lock, stores the float argument at self+0x2C, forwards it via ext_005DA150 with self+0x44 as this, dispatches ext_00493EE0 on the +0x258 slot, then leaves the lock. SEH frame setup/teardown omitted.
+// @field Unknown +0x2C float field_0x2C
+// @field Unknown +0x44 void* field_0x44
+void __thiscall fn_005DC300(uint8_t* self, float value) {
+    // Global object pointer returned by ext_00594000 (32-bit address).
+    uint8_t* base = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(
+        static_cast<uint32_t>(ext_00594000())));
+
+    // Subobject slot at base+0x258 holds the object pointer; ecx = *(base+0x258).
+    uint8_t* slot = base + 0x258;
+    uint8_t* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(
+        *reinterpret_cast<uint32_t*>(slot)));
+
+    // Vtable slot at byte offset 0x1D8 (32-bit vtable entries), called with obj as this.
+    uint8_t* vtbl = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(
+        *reinterpret_cast<uint32_t*>(obj)));
+    uint32_t method_addr = 0;
+    std::memcpy(&method_addr, vtbl + 0x1D8, sizeof(method_addr));
+    using VirtualFn = uint32_t(__thiscall*)(void*);
+    uint32_t lock = reinterpret_cast<VirtualFn>(static_cast<uintptr_t>(method_addr))(obj);
+
+    void* lockPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(lock));
+    ext_0065C640(lockPtr);
+
+    // Store the float argument into self+0x2C.
+    *reinterpret_cast<float*>(self + 0x2C) = value;
+
+    // Forward value to the thunk, with self+0x44 as this.
+    void* sub44 = reinterpret_cast<void*>(static_cast<uintptr_t>(
+        *reinterpret_cast<uint32_t*>(self + 0x44)));
+    ext_005DA150(sub44, value);
+
+    // Dispatch on the +0x258 slot (pointer to object pointer).
+    ext_00493EE0(static_cast<void*>(slot));
+
+    ext_0065C650(lockPtr);
+}
+} // namespace lift_005DC300

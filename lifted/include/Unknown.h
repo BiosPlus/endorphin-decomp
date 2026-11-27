@@ -798,7 +798,7 @@ struct Unknown_Fields {
     // +0x2C  int32_t*                 elements  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void**                   elements_begin  (evidence: 0x00665B80) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  DWORD                    field_0x2C  (evidence: 0x0063EC10) // CONFLICT: multiple definitions at +0x2C
-    // +0x2C  float                    field_0x2C  (evidence: 0x004B10D0, 0x004CCC30, 0x004CF910, 0x00538FA0, 0x0055CD10, 0x005ACB00, 0x005ACD30, 0x005DC650, 0x00622B40, 0x00629E80, 0x00629EE0, 0x007CAF70, 0x007CCAB0) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  float                    field_0x2C  (evidence: 0x004B10D0, 0x004CCC30, 0x004CF910, 0x00538FA0, 0x0055CD10, 0x005ACB00, 0x005ACD30, 0x005DC300, 0x005DC650, 0x00622B40, 0x00629E80, 0x00629EE0, 0x007CAF70, 0x007CCAB0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  int32_t                  field_0x2C  (evidence: 0x0078C280) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 field_0x2C  (evidence: 0x0041DDA0, 0x0048F2F0, 0x004E3A30, 0x0057FD10, 0x0063F4E0, 0x006406D0, 0x00790E20, 0x007C9D80, 0x007CAF70) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint8_t                  field_0x2C  (evidence: 0x004155E0, 0x00665DC0) // CONFLICT: multiple definitions at +0x2C
@@ -924,7 +924,7 @@ struct Unknown_Fields {
     // +0x44  uint16_t                 field_0x44  (evidence: 0x007AF750, 0x007BADF0) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint32_t                 field_0x44  (evidence: 0x00518080, 0x0060C570, 0x0063F960, 0x00665DC0, 0x007C8490, 0x007C97A0, 0x007CAF70) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint8_t                  field_0x44  (evidence: 0x0052F340, 0x0052F7D0, 0x0052FC10) // CONFLICT: multiple definitions at +0x44
-    // +0x44  void*                    field_0x44  (evidence: 0x005D0AF0, 0x005DA150, 0x005DC6C0, 0x005DC930, 0x0074AEF0) // CONFLICT: multiple definitions at +0x44
+    // +0x44  void*                    field_0x44  (evidence: 0x005D0AF0, 0x005DA150, 0x005DC300, 0x005DC6C0, 0x005DC930, 0x0074AEF0) // CONFLICT: multiple definitions at +0x44
     // +0x44  void*                    imageListAddMaskedProc  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint32_t field_0x44 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x44
     // +0x46  uint8_t                  field_0x46  (evidence: 0x00648800)
