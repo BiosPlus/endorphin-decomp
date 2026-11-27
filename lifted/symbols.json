@@ -12893,6 +12893,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x004916B0": {
+    "name": "InvokeWithStaticInitAndStringArg",
+    "class": "Unknown",
+    "signature": "void fn_004916B0(void* self, const char* arg0)",
+    "summary": "Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, \u0026str, \u0026static_init_slot, 1).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00491840": {
     "name": "sub_00491840",
     "signature": "uint32_t fn_00491840(uint32_t begin, uint32_t end, uint32_t value)",

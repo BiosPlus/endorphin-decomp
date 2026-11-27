@@ -2487,3 +2487,35 @@ uint32_t fn_0049CF60(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     return ext_00666670(ctx, result);
 }
 } // namespace lift_0049CF60
+
+// [0x004916B0] sub_004916B0 (114 bytes)
+namespace lift_004916B0 {
+// Known callee 0x00490490: ensureGuardedStaticDword_00490490 (One-time guarded initializer for the static DWORD at mem_00ADAB74; returns its address.)
+extern DWORD* ext_00490490();
+// Unlifted callee 0x00475960, thiscall: ECX = self, three stack args.
+extern void ext_00475960(uint32_t self_ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+// IAT slots for std::string ctor/dtor in the original. Replaced by native std::string;
+// referenced only as metadata (not a real access).
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name InvokeWithStaticInitAndStringArg
+// @class Unknown
+// @summary Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, &str, &static_init_slot, 1).
+// @field Unknown +0x00 uint32_t field_0x00
+void fn_004916B0(void* self, const char* arg0) {
+    // Static-init DWORD address, held in a local whose address is passed on.
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    DWORD* init_slot = ext_00490490();
+    uint32_t init_slot_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&init_slot));
+
+    // Temporary std::string built from the caller-supplied C string.
+    std::string name(arg0);
+    uint32_t str_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&name));
+
+    // ECX for the thiscall is the first dword of *this.
+    uint32_t self_ecx = lift_field<uint32_t>(self, 0x00);
+    ext_00475960(self_ecx, str_addr, init_slot_addr, 1);
+}
+} // namespace lift_004916B0

@@ -1,0 +1,22 @@
+{
+  "va": "0x004916B0",
+  "size": 114,
+  "orig_symbol": "sub_004916B0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "InvokeWithStaticInitAndStringArg",
+  "class": "Unknown",
+  "signature": "void fn_004916B0(void* self, const char* arg0)",
+  "summary": "Takes a const char* name, builds a temporary std::string from it, and calls ext_00475960 with (*this, \u0026str, \u0026static_init_slot, 1).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:56:21Z"
+}
