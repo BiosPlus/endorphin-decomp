@@ -1120,3 +1120,55 @@ void fn_00802E10(void* self, int32_t* a1, int32_t* a2, int32_t* a3,
     }
 }
 } // namespace lift_00802E10
+
+// [0x008044A0] sub_008044A0 (133 bytes)
+namespace lift_008044A0 {
+// Known callee 0x007E46B0: Vec3::normalize. The 133-byte body never calls it
+// (no E8 rel32 in the disassembly); the reference below only takes its address.
+extern void ext_007E46B0();
+
+// @name Unknown::buildSymmetricDotMatrix
+// @class Unknown
+// @summary For each bit j set in (+0x1BC | +0x1C4), dots 3-float record j with record at index +0x1C0 and mirror-stores the result into a symmetric 4x4 float matrix at +0x78.
+// @field Unknown +0x00 float vec_x_base
+// @field Unknown +0x04 float vec_y_base
+// @field Unknown +0x08 float vec_z_base
+// @field Unknown +0x78 float matrix4x4_symmetric
+// @field Unknown +0x1BC int32_t maskLoA
+// @field Unknown +0x1C0 int32_t rowIndex
+// @field Unknown +0x1C4 int32_t maskLoB
+void fn_008044A0(void* self) {
+    (void)&ext_007E46B0; // metadata-only reference; no runtime effect
+    const int32_t mask = lift_field<int32_t>(self, 0x1BC) | lift_field<int32_t>(self, 0x1C4);
+    if (mask < 1) {
+        return;
+    }
+
+    const int32_t idx = lift_field<int32_t>(self, 0x1C0);
+    const ptrdiff_t rowBase = static_cast<ptrdiff_t>(idx) * 24;
+
+    int32_t bit = 1;
+    int32_t j = 0;
+    do {
+        if ((bit & mask) != 0) {
+            const ptrdiff_t recBase = static_cast<ptrdiff_t>(j) * 24;
+
+            const float v0 = lift_field<float>(self, recBase + 0);
+            const float v1 = lift_field<float>(self, recBase + 4);
+            const float v2 = lift_field<float>(self, recBase + 8);
+
+            const float r0 = lift_field<float>(self, rowBase + 0);
+            const float r1 = lift_field<float>(self, rowBase + 4);
+            const float r2 = lift_field<float>(self, rowBase + 8);
+
+            const float dot = (v1 * r1 + v0 * r0) + r2 * v2;
+
+            // Symmetric store into the 4x4 float matrix at +0x78 (index = row + 4*col).
+            lift_field<float>(self, 0x78 + 4 * (idx + 4 * j)) = dot;
+            lift_field<float>(self, 0x78 + 4 * (j + 4 * idx)) = dot;
+        }
+        bit <<= 1;
+        ++j;
+    } while (bit <= mask);
+}
+} // namespace lift_008044A0

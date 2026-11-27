@@ -81521,6 +81521,13 @@
     "summary": "Counts consecutive set bits from bit 0 of the u32 mask at +0x1bc and returns the address of the entry at that index in 24-byte records starting at self.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x008044A0": {
+    "name": "Unknown::buildSymmetricDotMatrix",
+    "class": "Unknown",
+    "signature": "void fn_008044A0(void* self)",
+    "summary": "For each bit j set in (+0x1BC | +0x1C4), dots 3-float record j with record at index +0x1C0 and mirror-stores the result into a symmetric 4x4 float matrix at +0x78.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x00809540": {
     "name": "GlobalAllocZeroWrapper",
     "class": "Writer",

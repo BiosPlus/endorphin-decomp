@@ -1,0 +1,58 @@
+{
+  "va": "0x008044A0",
+  "size": 133,
+  "orig_symbol": "sub_008044A0",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "Unknown::buildSymmetricDotMatrix",
+  "class": "Unknown",
+  "signature": "void fn_008044A0(void* self)",
+  "summary": "For each bit j set in (+0x1BC | +0x1C4), dots 3-float record j with record at index +0x1C0 and mirror-stores the result into a symmetric 4x4 float matrix at +0x78.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "vec_x_base"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "vec_y_base"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "vec_z_base"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "matrix4x4_symmetric"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1BC",
+      "type": "int32_t",
+      "name": "maskLoA"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C0",
+      "type": "int32_t",
+      "name": "rowIndex"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "int32_t",
+      "name": "maskLoB"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:29:49Z"
+}
