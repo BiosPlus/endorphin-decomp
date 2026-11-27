@@ -1,0 +1,14 @@
+{
+  "va": "0x00595770",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cWorld, float\u003e::vfunc_40 (static-init guard, bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e",
+  "signature": "void fn_00595770(void* holder)",
+  "summary": "One-time guarded initializer: on first call, sets the guard bit, initializes the static accessor object at 0x00B413C4, then stores its address into holder+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:30:30Z"
+}

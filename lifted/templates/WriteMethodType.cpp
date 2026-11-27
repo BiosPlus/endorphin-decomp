@@ -7201,3 +7201,30 @@ Pair* __stdcall fn_00603480(Pair* out, void** target, char* src) {
     return out;
 }
 } // namespace lift_00603480
+
+// [0x00595770] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_00595770 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B413C8;
+extern DWORD mem_00B413C4;
+extern DWORD mem_00B414B0;
+extern DWORD mem_00B414AC;
+
+// @name ExprParser::WriteMethodType<World, float>::vfunc_40 (static-init guard, bind holder+0x04 to static accessor object)
+// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>
+// @summary One-time guarded initializer: on first call, sets the guard bit, initializes the static accessor object at 0x00B413C4, then stores its address into holder+0x04.
+// @field ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}> +0x04 void* field_0x04
+void fn_00595770(void* holder) {
+    (void)&mem_00B414B0;  // metadata-only RDATA ref; not accessed by the asm
+    (void)&mem_00B414AC;
+    if ((mem_00B413C8 & 1u) == 0) {
+        mem_00B413C8 |= 1u;
+        ext_0067A670(&mem_00B413C4, 0u);
+        mem_00B413C4 = 0x0095D70Cu;
+        lift_field<DWORD>(holder, 0x04) = 0x00B413C4u;
+        return;
+    }
+    lift_field<DWORD>(holder, 0x04) = 0x00B413C4u;
+}
+} // namespace lift_00595770

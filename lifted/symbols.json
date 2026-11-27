@@ -30032,6 +30032,13 @@
     "summary": "Lazily constructs the shared static instance (guarded by a one-bit init flag), then points this+0x04 at it.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00595770": {
+    "name": "ExprParser::WriteMethodType\u003cWorld, float\u003e::vfunc_40 (static-init guard, bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e",
+    "signature": "void fn_00595770(void* holder)",
+    "summary": "One-time guarded initializer: on first call, sets the guard bit, initializes the static accessor object at 0x00B413C4, then stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005957F0": {
     "name": "sub_005957F0",
     "signature": "void* fn_005957F0()",
