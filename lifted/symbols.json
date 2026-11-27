@@ -16398,6 +16398,13 @@
     "summary": "Reads the float at +0x24 of the wrapped NMData::EngineData (if present) and then always throws a DerivedException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B8260": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getTimeZoomFactor\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",
+    "signature": "void fn_004B8260(void* self)",
+    "summary": "Reads the float at +0x24 of the object referenced by the argument's first dword, assigns it into the argument via a temporary, releases the temporary, then invokes the argument's field_0x04 object's vfunc_47 with the argument; throws a DerivedException if the first dword is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B8310": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e::vfunc_40",
     "class": "ExprParser::ValuePtrType",

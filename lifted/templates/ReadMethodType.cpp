@@ -86776,3 +86776,60 @@ bool fn_0046CED0(void* arg1) {
     return false;
 }
 } // namespace lift_0046CED0
+
+// [0x004B8260] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_47 (163 bytes)
+namespace lift_004B8260 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an ExceptionWithMessage-derived exception in place)
+extern void* ext_0046C3C0(void* self);
+// Not lifted: float-constructs a 4-byte temporary (ecx = temp, float on stack).
+extern void ext_00672080(void* self, float value);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2();
+// Metadata-only references (SEH handler table and RTTI type descriptor). Not accessed directly.
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getTimeZoomFactor>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>
+// @summary Reads the float at +0x24 of the object referenced by the argument's first dword, assigns it into the argument via a temporary, releases the temporary, then invokes the argument's field_0x04 object's vfunc_47 with the argument; throws a DerivedException if the first dword is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field NMData::EngineData +0x24 float field_0x24
+void fn_004B8260(void* self) {
+    (void)&mem_008A5428;
+    (void)&mem_009DEC1C;
+
+    void** obj = static_cast<void**>(self);
+    void* inner = obj[0];
+    if (inner == nullptr) {
+        // Build the exception object in place, then throw through the CRT thunk.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return;
+    }
+
+    float timeZoom = *reinterpret_cast<float*>(static_cast<unsigned char*>(inner) + 0x24);
+
+    // Temporary whose first dword is an owned pointer.
+    void* temp = nullptr;
+    ext_00672080(&temp, timeZoom);
+
+    ext_0041CF50(obj, &temp);
+
+    // Release the temporary: vtable slot 0x78 on temp's owner, passing &temp.
+    if (temp != nullptr) {
+        void** vt = *reinterpret_cast<void***>(temp);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(vt[0x78 / sizeof(void*)]);
+        release(temp, &temp);
+    }
+
+    // Invoke vfunc slot 0xBC on the object at +0x04, passing obj as the argument.
+    void* sub = obj[1];
+    void** subVt = *reinterpret_cast<void***>(sub);
+    auto invoke = reinterpret_cast<void (*)(void*, void*)>(subVt[0xBC / sizeof(void*)]);
+    invoke(sub, obj);
+}
+} // namespace lift_004B8260
