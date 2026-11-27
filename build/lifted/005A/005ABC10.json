@@ -1,0 +1,34 @@
+{
+  "va": "0x005ABC10",
+  "size": 200,
+  "orig_symbol": "NMData::RigNode::vfunc_34",
+  "src_path": "src/NMData/RigNode.cpp",
+  "lifted_path": "lifted/NMData/RigNode.cpp",
+  "name": "NMData::RigNode::vfunc_34",
+  "class": "NMData::RigNode",
+  "signature": "void* fn_005ABC10(void* self, void* frame_slot_0x24)",
+  "summary": "One-time guarded init of a static object at mem_00B42218, then wires a peer",
+  "fields": [
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::RigNode",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:32:26Z"
+}

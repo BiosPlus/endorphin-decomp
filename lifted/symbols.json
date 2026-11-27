@@ -43142,6 +43142,13 @@
     "summary": "Calls the child's virtual gate (slot 1) when a child is present; if there is no child or the gate returns true, forwards the key to SetValueFromStringKey.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005ABC10": {
+    "name": "NMData::RigNode::vfunc_34",
+    "class": "NMData::RigNode",
+    "signature": "void* fn_005ABC10(void* self, void* frame_slot_0x24)",
+    "summary": "One-time guarded init of a static object at mem_00B42218, then wires a peer",
+    "lifted_path": "lifted/NMData/RigNode.cpp"
+  },
   "0x005ABCE0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RigNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {private: void __thiscall NMData::RigNode::setHoldModeFromNameProperty(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {private: void __thiscall NMData::RigNode::setHoldModeFromNameProperty(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

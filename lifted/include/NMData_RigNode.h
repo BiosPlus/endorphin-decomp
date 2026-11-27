@@ -10,6 +10,9 @@
 // Recovered field layout for NMData::RigNode:
 namespace lifted_layout {
 struct NMData_RigNode_Fields {
+    // +0x0   void*                    field_0x00  (evidence: 0x005ABC10)
+    // +0x4   void*                    field_0x04  (evidence: 0x005ABC10)
+    // +0xC   void*                    field_0x0C  (evidence: 0x005ABC10)
     // +0x154 uint32_t                 field_0x154  (evidence: 0x005AA900)
     // +0x158 uint8_t                  field_0x158  (evidence: 0x005AA900)
     // +0x164 uint8_t                  field_0x164  (evidence: 0x005AA900)

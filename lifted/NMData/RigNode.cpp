@@ -68,3 +68,76 @@ void* fn_005AA900(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_005AA900
+
+// [0x005ABC10] NMData::RigNode::vfunc_34 (200 bytes)
+namespace lift_005ABC10 {
+// Known callee 0x00493E40: forwardVtableSlot194 (Dereferences a pointer-to-pointer held in self, then tail-jumps to the)
+extern void ext_00493E40();
+// Known callee 0x00528B90: Unknown::setPeerWithBackLink (Stores the argument at this+0x04; if it is non-null, writes this into argument+0x08.)
+extern void ext_00528B90();
+extern void ext_005B5780();
+extern void ext_006A6C87();
+extern int mem_00B42264;
+extern int mem_00B40640;
+extern int mem_00B42218;
+
+// @name NMData::RigNode::vfunc_34
+// @class NMData::RigNode
+// @summary One-time guarded init of a static object at mem_00B42218, then wires a peer
+//          (obtained via forwardVtableSlot194) back to this node's +0x0C subobject and
+//          invokes the peer's vtable slot 11 with flags 0x80000 / 1. Returns the peer.
+// @field NMData::RigNode +0x00 void* field_0x00
+// @field NMData::RigNode +0x04 void* field_0x04
+// @field NMData::RigNode +0x0C void* field_0x0C
+void* fn_005ABC10(void* self, void* frame_slot_0x24) {
+    // SEH frame (push -1 / handler / fs:[0] chain) dropped; no exception state is modelled.
+
+    // test byte [0xb42264],1 ; jne -> skip one-time init
+    if ((mem_00B42264 & 1) == 0) {
+        // or dword [0xb42264],1  (mark guard as taken)
+        mem_00B42264 |= 1;
+        // push 0xc ; mov ecx,0xb42218 ; call sub_005B5780   (thiscall, one arg = 0xc)
+        using CtorFn = void (*)(void* obj, uint32_t arg);
+        reinterpret_cast<CtorFn>(&ext_005B5780)(&mem_00B42218, 0x0c);
+        // push 0x91da00 ; call sub_006A6C87 ; add esp,4      (cdecl)
+        using RegFn = void (*)(uint32_t arg);
+        reinterpret_cast<RegFn>(&ext_006A6C87)(0x0091da00);
+    }
+
+    // mov eax,[esi] ; mov edx,[eax+0xec] ; push 0xb42218 ; call edx   (vtable slot 59)
+    void** vtbl = lift_field<void**>(self, 0x00);
+    using VSlot59 = void (*)(void* self, void* arg);
+    reinterpret_cast<VSlot59>(lift_field<void*>(vtbl, 0xec))(self, &mem_00B42218);
+
+    // mov eax,[esi+4] ; mov edx,[0xb40640] ; mov eax,[eax+0xc]
+    void* inner = lift_field<void*>(self, 0x04);
+    uint32_t gval = static_cast<uint32_t>(mem_00B40640);
+    void* callTarget = lift_field<void*>(inner, 0x0C);
+
+    // push 0 ; lea ecx,[esi+4] ; lea edi,[esi+0xc] ; push edi ; push edx ; call eax
+    void* edi = static_cast<char*>(self) + 0x0C; // lea edi,[esi+0xc] (address, not a load)
+    using Call3 = uintptr_t (*)(void* thisPtr, uint32_t a, void* b, uint32_t c);
+    uintptr_t eax = reinterpret_cast<Call3>(callTarget)(
+        static_cast<char*>(self) + 0x04, gval, edi, 0u);
+
+    // mov ecx,[esp+0x24] -> frame slot (see note in header comment)
+    void* ecxSlot = frame_slot_0x24;
+
+    // push eax ; push 0xb42218 ; call sub_00493E40   (self = ecxSlot)
+    using FwdFn = uintptr_t (*)(void* self, uintptr_t arg1, void* arg2);
+    uintptr_t esiVal = reinterpret_cast<FwdFn>(&ext_00493E40)(ecxSlot, eax, &mem_00B42218);
+    void* peer = reinterpret_cast<void*>(esiVal);
+
+    // push esi ; mov ecx,edi ; call sub_00528B90   (setPeerWithBackLink(this=self+0xc, peer))
+    using SetPeerFn = void (*)(void* self, void* peer);
+    reinterpret_cast<SetPeerFn>(&ext_00528B90)(edi, peer);
+
+    // mov edx,[esi] ; mov eax,[edx+0x2c] ; push 1 ; push 0x80000 ; mov ecx,esi ; call eax
+    void** peerVtbl = lift_field<void**>(peer, 0x00);
+    using PeerSlot11 = void (*)(void* self, uint32_t a, uint32_t b);
+    reinterpret_cast<PeerSlot11>(lift_field<void*>(peerVtbl, 0x2c))(peer, 0x00080000u, 1u);
+
+    // SEH chain restore (mov fs:[0],ecx) dropped; return peer in eax.
+    return peer;
+}
+} // namespace lift_005ABC10
