@@ -2872,3 +2872,28 @@ void* fn_0070EAB0(void* self, const char* s) {
     return ext_006B9EC0(static_cast<char*>(self) + 0x60, mem_00B5D2C0);
 }
 } // namespace lift_0070EAB0
+
+// [0x0070EB00] sub_0070EB00 (64 bytes)
+namespace lift_0070EB00 {
+// Known callee 0x006BADB0: sub_006BADB0 (This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_006E6340.)
+// Its eax result is forwarded as the C-string argument to ext_006B9EC0.
+extern void* __fastcall ext_006BADB0(void* self);
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+// Known callee 0x006B9D20: Unknown::initOrCopy_006B9D20 (Initializes self; if ext_006B9940(obj) is nonzero, passes ext_006E7460(obj) as src and ext_006B99C0(obj) as len to ext_006B9B40, otherwise calls ext_006B9920. Returns self.)
+extern void* __thiscall ext_006B9D20(void* self, void* obj);
+
+// @name Unknown::refreshAndInitOther_0070EB00
+// @class Unknown
+// @summary If the pointer at +0x5c is non-null, reassigns the embedded string at +0x60 from it; then initializes the argument object from +0x60 and returns the argument.
+// @field Unknown +0x5c void* field_5c
+// @field Unknown +0x60 void* field_60
+void* fn_0070EB00(void* self, void* obj) {
+    if (lift_field<void*>(self, 0x5c) != nullptr) {
+        void* src = ext_006BADB0(lift_field<void*>(self, 0x5c));
+        ext_006B9EC0(static_cast<char*>(self) + 0x60, static_cast<const char*>(src));
+    }
+    ext_006B9D20(obj, static_cast<char*>(self) + 0x60);
+    return obj;
+}
+} // namespace lift_0070EB00

@@ -1,0 +1,28 @@
+{
+  "va": "0x0070EB00",
+  "size": 64,
+  "orig_symbol": "sub_0070EB00",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::refreshAndInitOther_0070EB00",
+  "class": "Unknown",
+  "signature": "void* fn_0070EB00(void* self, void* obj)",
+  "summary": "If the pointer at +0x5c is non-null, reassigns the embedded string at +0x60 from it; then initializes the argument object from +0x60 and returns the argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "void*",
+      "name": "field_60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:48:57Z"
+}
