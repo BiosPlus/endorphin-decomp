@@ -68750,6 +68750,13 @@
     "summary": "Linear-searches the pointer array at +0x13c for arg; if found, removes it, calls arg's vtable slot 5 (arg, 1) when non-null, and returns 1; otherwise calls ext_006E7440(this+0x1c4, 0) and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D5010": {
+    "name": "Unknown::removeEntryByValue_006D5010",
+    "class": "Unknown",
+    "signature": "bool __thiscall fn_006D5010(void* self, DWORD value)",
+    "summary": "Linearly searches the DWORD table at +0x11c (count at +0x10c) for value; if found, removes it and, when value is nonzero, destroys and frees it; otherwise assigns string index 0 via +0x1c4 and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D5190": {
     "name": "Unknown::removeItemAndRelease_006D5190",
     "class": "Unknown",
