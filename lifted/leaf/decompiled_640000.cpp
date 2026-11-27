@@ -2278,3 +2278,51 @@ void fn_006406D0(void* self, void* arg) {
     }
 }
 } // namespace lift_006406D0
+
+// [0x00641350] sub_00641350 (114 bytes)
+namespace lift_00641350 {
+//
+// Binary-tree search over a header-linked node set. Walks from root (header+4)
+// down the tree, tracking the last node whose key >= *key (lower-bound style).
+// Writes the result pair {self, node-or-header} to *out and returns out
+// (MSVC hidden-return-pointer convention, ret 8).
+//
+// @name Unknown::FindNodeExact
+// @class Unknown
+// @summary Lower-bound tree walk on signed-char key; returns {self, match} or {self, header} if no exact match
+// @field Unknown +0x04 void* header
+// @field UnknownNode +0x00 void* left
+// @field UnknownNode +0x08 void* right
+// @field UnknownNode +0x0c int8_t key
+// @field UnknownNode +0x2d uint8_t isNil
+
+struct PairPtr {
+    void* first;
+    void* second;
+};
+
+PairPtr* fn_00641350(void* self, PairPtr* out, const int8_t* key) {
+    void* head = lift_field<void*>(self, 0x04);
+    void* node = lift_field<void*>(head, 0x04);
+    const int8_t k = *key;
+    void* y = head;
+
+    while (lift_field<uint8_t>(node, 0x2d) == 0) {
+        if (lift_field<int8_t>(node, 0x0c) >= k) {
+            y = node;
+            node = lift_field<void*>(node, 0x00);
+        } else {
+            node = lift_field<void*>(node, 0x08);
+        }
+    }
+
+    if (y == head || k < lift_field<int8_t>(y, 0x0c)) {
+        out->first = self;
+        out->second = head;
+    } else {
+        out->first = self;
+        out->second = y;
+    }
+    return out;
+}
+} // namespace lift_00641350

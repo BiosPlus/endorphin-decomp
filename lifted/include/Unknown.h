@@ -204,7 +204,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (destination operand holder; inner object's vtable slot 6 returns float* to 4 floats)  (evidence: 0x0066D190) // CONFLICT: multiple definitions at +0x4
     // +0x4   HDC                      hDC  (evidence: 0x0042EA50) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 header  (evidence: 0x0041A530, 0x0045E700) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    header  (evidence: 0x004774B0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    header  (evidence: 0x004774B0, 0x00641350) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (read indirectly via ext_006AD180, not directly here)  (evidence: 0x0041CB80) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  hi  (evidence: 0x006DBE30) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    holder  (evidence: 0x00624F10) // CONFLICT: multiple definitions at +0x4

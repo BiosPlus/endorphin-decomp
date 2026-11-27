@@ -44439,6 +44439,13 @@
     "summary": "Serializes the XML declaration header using version/encoding strings, appends a newline, and delegates to NodeContainer::vfunc_5.",
     "lifted_path": "lifted/AdvXMLParser/Document.cpp"
   },
+  "0x00641350": {
+    "name": "Unknown::FindNodeExact",
+    "class": "Unknown",
+    "signature": "PairPtr* fn_00641350(void* self, PairPtr* out, const int8_t* key)",
+    "summary": "Lower-bound tree walk on signed-char key; returns {self, match} or {self, header} if no exact match",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00641760": {
     "name": "ChainNode::DestroyChain",
     "class": "ChainNode",
