@@ -78170,6 +78170,13 @@
     "summary": "Classify array elements against lower/upper bounds into two output int arrays",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x00802E10": {
+    "name": "fn_00802E10 (partitionIndicesByFlag)",
+    "class": "(none; object type not recovered)",
+    "signature": "void fn_00802E10(void* self, int32_t* a1, int32_t* a2, int32_t* a3, int32_t* a4, int32_t* a5, int32_t* a6)",
+    "summary": "For i in [0, count): route index i into a2 (if a5[i]==0) or a1 (otherwise), and copy one float from srcA/srcB to dst[i] for the nonzero case.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x00803980": {
     "name": "fn_00803980 (returns **a - *b)",
     "signature": "int32_t fn_00803980(int32_t** a, const int32_t* b)",

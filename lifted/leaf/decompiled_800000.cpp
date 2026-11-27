@@ -1093,3 +1093,30 @@ uint32_t fn_0080AA80(uint32_t packed, uint32_t* out) {
     return 9u;
 }
 } // namespace lift_0080AA80
+
+// [0x00802E10] sub_00802E10 (123 bytes)
+namespace lift_00802E10 {
+// @name fn_00802E10 (partitionIndicesByFlag)
+// @class (none; object type not recovered)
+// @summary For i in [0, count): route index i into a2 (if a5[i]==0) or a1 (otherwise), and copy one float from srcA/srcB to dst[i] for the nonzero case.
+// @field (none; object type not recovered) +0x04 int32_t field_0x04
+// @field (none; object type not recovered) +0x38 float* field_0x38
+// @field (none; object type not recovered) +0x3c float* field_0x3c
+// @field (none; object type not recovered) +0x44 float* field_0x44
+void fn_00802E10(void* self, int32_t* a1, int32_t* a2, int32_t* a3,
+                 int32_t* a4, int32_t* a5, int32_t* a6) {
+    const int32_t count = lift_field<int32_t>(self, 0x04);
+    for (int32_t i = 0; i < count; ++i) {
+        if (a5[i] == 0) {
+            a2[(*a4)++] = i;
+        } else {
+            a1[(*a3)++] = i;
+            const float* src = (a6[i] != 0)
+                ? lift_field<float*>(self, 0x38)
+                : lift_field<float*>(self, 0x3c);
+            float* dst = lift_field<float*>(self, 0x44);
+            dst[i] = src[i];
+        }
+    }
+}
+} // namespace lift_00802E10
