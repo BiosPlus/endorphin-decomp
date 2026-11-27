@@ -186538,3 +186538,75 @@ void* const src = *static_cast<void**>(holder);
     return forward(obj, holder, arg2);
 }
 } // namespace lift_005FCDE0
+
+// [0x005FCF40]
+namespace lift_005FCF40 {
+// Known callee 0x00672110 (sub_00672110): constructs a temporary from a value (thiscall, one stack arg).
+extern void ext_00672110(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of other's field_0x04 into self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an exception object with a fixed message.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, Sensor::getMutableVector3, 1>::vfunc_46
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>
+// @summary Reads the source object from holder+0x00 (throws if null), obtains a value via vtable slot 0x38, builds a temporary from it, assigns that into holder, releases the temporary, then forwards the call to holder+0x04's vtable slot 0xB8 with (holder, out).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+namespace {
+
+inline void** lift_005FCF40_vtable(void* obj) {
+    return *static_cast<void***>(obj);
+}
+
+// Call vtable slot `slot` (byte offset / 4) of obj with no arguments, returning a pointer result.
+inline void* lift_005FCF40_vcall_ret(void* obj, std::size_t slot) {
+    using Fn = void* (*)(void* self);
+    return reinterpret_cast<Fn>(lift_005FCF40_vtable(obj)[slot])(obj);
+}
+
+// Call vtable slot `slot` of obj with one stack argument.
+inline void lift_005FCF40_vcall_arg(void* obj, std::size_t slot, void* arg) {
+    using Fn = void (*)(void* self, void* a);
+    reinterpret_cast<Fn>(lift_005FCF40_vtable(obj)[slot])(obj, arg);
+}
+
+} // namespace
+
+void fn_005FCF40(void* holder, void* out) {
+    void** h = static_cast<void**>(holder);
+    void* src = h[0];                       // holder->field_0x00
+
+    if (src == nullptr) {
+        // Original constructs an exception object and throws it via CxxThrowException.
+        alignas(8) unsigned char exc[0x10] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+        return;
+    }
+
+    // Slot 0x38: value supplier on src.
+    void* value = lift_005FCF40_vcall_ret(src, 0x38 / 4);
+
+    // Temporary built from the value (sub_00672110).
+    alignas(8) unsigned char tmp[0x10] = {};
+    ext_00672110(tmp, value);
+
+    // Assign the temporary into holder (sub_0041CF50, thiscall on holder).
+    ext_0041CF50(holder, tmp);
+
+    // Release the temporary's first-dword object via slot 0x78.
+    void* rel = *reinterpret_cast<void**>(tmp);
+    if (rel != nullptr) {
+        lift_005FCF40_vcall_arg(rel, 0x78 / 4, tmp);
+    }
+
+    // Forward to holder->field_0x04's vtable slot 0xB8 with (holder, out).
+    void* obj = h[1];                       // holder->field_0x04
+    using Fwd = void (*)(void* self, void* a, void* b);
+    reinterpret_cast<Fwd>(lift_005FCF40_vtable(obj)[0xB8 / 4])(obj, holder, out);
+}
+} // namespace lift_005FCF40

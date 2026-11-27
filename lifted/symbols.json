@@ -55951,6 +55951,13 @@
     "summary": "Takes the source pointer in holder-\u003efield_0x00, reads a value through its vtable slot 0x38, assigns it into holder via a temporary, releases the temporary, then forwards the call to holder-\u003efield_0x04's vtable slot 0xB0; throws if the source pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005FCF40": {
+    "name": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, Sensor::getMutableVector3, 1\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
+    "signature": "inline void** lift_005FCF40_vtable(void* obj)",
+    "summary": "Reads the source object from holder+0x00 (throws if null), obtains a value via vtable slot 0x38, builds a temporary from it, assigns that into holder, releases the temporary, then forwards the call to holder+0x04's vtable slot 0xB8 with (holder, out).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005FCFF0": {
     "name": "ReadMethodType::vfunc_47",
     "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
