@@ -3823,3 +3823,55 @@ void fn_0043D800(void* out, uint32_t unusedArg2, void* container, uint32_t first
     lift_field<uint32_t>(out, 0x00) = 0;
 }
 } // namespace lift_0043D800
+
+// [0x0043D2E0] sub_0043D2E0 (112 bytes)
+namespace lift_0043D2E0 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+extern int mem_00924FE4;   // IAT slot: MSVCP80 basic_string(const char*) ctor
+extern int mem_009251C4;   // IAT slot: MSVCR80 std::exception() ctor
+extern int mem_00924FE0;   // IAT slot: MSVCP80 basic_string(const basic_string&) ctor
+extern int mem_00932088;   // .rdata message literal
+extern int mem_00928ECC;   // vtable: thrown exception type (first stage)
+extern int mem_00928ED8;   // vtable: thrown exception type (final)
+extern int mem_009CDF20;   // _ThrowInfo for the thrown type
+
+using StringFromCStrCtor = void (*)(void* self, const char* text);
+using DefaultCtor        = void (*)(void* self);
+using StringCopyCtor     = void (*)(void* self, const void* src);
+
+// @name throwStringLiteralException
+// @summary Builds a std::string from a literal, copies it into an exception object, and throws that object.
+// @field ThrownObject +0x00 void* vptr
+// @field ThrownObject +0x10 std::string message
+// @field ThrownObject +0x30 uint32_t field_0x30
+// @field ThrownObject +0x34 uint8_t field_0x34
+// @field ThrownObject +0x38 uint8_t field_0x38
+void fn_0043D2E0(void) {
+    // Stack frame: temp string @+0x00, exception object @+0x1c, copy destination @+0x2c.
+    uint8_t frame[0x58] = {};
+    uint8_t* temp = frame;
+    uint8_t* obj = frame + 0x1c;
+    uint8_t* member = frame + 0x2c;
+
+    // std::string temp("...")
+    (*reinterpret_cast<StringFromCStrCtor*>(&mem_00924FE4))(
+        temp, reinterpret_cast<const char*>(&mem_00932088));
+
+    // Exception base constructed in place; state word cleared before the call.
+    lift_field<uint32_t>(frame, 0x4c) = 0;
+    (*reinterpret_cast<DefaultCtor*>(&mem_009251C4))(obj);
+
+    lift_field<uint8_t>(frame, 0x50) = 1;
+    lift_field<const void*>(frame, 0x1c) = &mem_00928ECC;
+
+    // member = temp (copy-construct the message into the exception object)
+    (*reinterpret_cast<StringCopyCtor*>(&mem_00924FE0))(member, temp);
+
+    lift_field<uint8_t>(frame, 0x54) = 0;
+    lift_field<const void*>(frame, 0x1c) = &mem_00928ED8;
+
+    // _CxxThrowException(obj, &_ThrowInfo) -- does not return.
+    ext_006A6DD2(obj, &mem_009CDF20);
+}
+} // namespace lift_0043D2E0
