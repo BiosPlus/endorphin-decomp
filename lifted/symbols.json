@@ -74691,6 +74691,13 @@
     "summary": "Getter returning int32_t field at offset +0x58.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070CF10": {
+    "name": "sub_0070CF10",
+    "class": "Unknown",
+    "signature": "DWORD fn_0070CF10(void* self, int32_t index)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070CE90 (Unknown::getIndexedEntry_0070CE90).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070E380": {
     "name": "sub_0070E380",
     "signature": "extern \"C\" void __fastcall fn_0070E380(void* self)",

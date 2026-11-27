@@ -1,0 +1,28 @@
+{
+  "va": "0x0070CF10",
+  "size": 64,
+  "orig_symbol": "sub_0070CF10",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_0070CF10",
+  "class": "Unknown",
+  "signature": "DWORD fn_0070CF10(void* self, int32_t index)",
+  "summary": "Auto-lifted identical-shape clone of 0x0070CE90 (Unknown::getIndexedEntry_0070CE90).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "DWORD*",
+      "name": "entryTable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x150",
+      "type": "uint8_t",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T04:52:29Z"
+}

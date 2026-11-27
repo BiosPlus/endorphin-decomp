@@ -2994,3 +2994,33 @@ DWORD fn_0070CE90(void* self, int32_t index) {
     return 0;
 }
 } // namespace lift_0070CE90
+
+// [0x0070CF10] sub_0070CF10 (64 bytes)
+namespace lift_0070CF10 {
+// @name sub_0070CF10
+// @summary Auto-lifted identical-shape clone of 0x0070CE90 (Unknown::getIndexedEntry_0070CE90).
+namespace lift_0070CE90 {
+// Known callee 0x006CD320: sub_006CD320 (Getter returning int32_t field at offset +0x40.)
+extern int32_t __fastcall ext_0070CF00(void* self);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (fastcall: ecx = self, one stack argument = index.)
+extern void* __fastcall ext_006E7440(void* self, int edx_unused, DWORD index);
+
+// @name Unknown::getIndexedEntry_0070CE90
+// @class Unknown
+// @summary Returns the DWORD at entry `index` of the table at +0x50 when 0 <= index < getter(+0x40); otherwise calls ext_006E7440 on this+0x150 with index 0 and returns 0.
+// @field Unknown +0x50 DWORD* entryTable
+// @field Unknown +0x150 uint8_t field_0x150
+DWORD fn_0070CF10(void* self, int32_t index) {
+    if (index >= 0) {
+        int32_t count = ext_0070CF00(self);
+        if (index < count) {
+            DWORD* table = lift_field<DWORD*>(self, 0x68);
+            return table[index];
+        }
+    }
+
+    ext_006E7440(static_cast<uint8_t*>(self) + 0x150, 0, 0);
+    return 0;
+}
+} // namespace lift_0070CE90
+} // namespace lift_0070CF10
