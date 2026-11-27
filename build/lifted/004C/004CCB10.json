@@ -1,0 +1,40 @@
+{
+  "va": "0x004CCB10",
+  "size": 50,
+  "orig_symbol": "sub_004CCB10",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "sub_004CCB10",
+  "class": "UnknownClass",
+  "signature": "void fn_004CCB10(void* self, const float* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CCB50 (UnknownClass::SetVec3IfNoPendingNotify).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x180",
+      "type": "int32_t",
+      "name": "pendingNotifyFlag"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x194",
+      "type": "float",
+      "name": "vec3X"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x198",
+      "type": "float",
+      "name": "vec3Y"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x19C",
+      "type": "float",
+      "name": "vec3Z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:00:36Z"
+}
