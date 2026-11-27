@@ -1,0 +1,22 @@
+{
+  "va": "0x0062C510",
+  "size": 54,
+  "orig_symbol": "sub_0062C510",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Sub_0062C510::Sub_0062C510",
+  "class": "Sub_0062C510",
+  "signature": "extern \"C\" void* fn_0062C510(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Constructor: forwards four args to base ctor ext_0062C3F0, then sets vtable to 0x009790FC and returns this.",
+  "fields": [
+    {
+      "class": "Sub_0062C510",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:45:27Z"
+}

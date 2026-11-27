@@ -2636,3 +2636,19 @@ void* __thiscall fn_00629850(void* self, uint32_t arg1, uint32_t arg2, uint32_t 
     return self;
 }
 } // namespace lift_00629850
+
+// [0x0062C510] sub_0062C510 (54 bytes)
+namespace lift_0062C510 {
+// Known callee 0x0062C3F0: MetaBodySensor_sub_0062C3F0 (thiscall, 4 stack args, callee-cleans 0x10).
+extern void* ext_0062C3F0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name Sub_0062C510::Sub_0062C510
+// @class Sub_0062C510
+// @summary Constructor: forwards four args to base ctor ext_0062C3F0, then sets vtable to 0x009790FC and returns this.
+// @field Sub_0062C510 +0x00 uint32_t vtable
+extern void* fn_0062C510(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    ext_0062C3F0(self, arg0, arg1, arg2, arg3);
+    lift_field<uint32_t>(self, 0x00) = 0x009790FCu;
+    return self;
+}
+} // namespace lift_0062C510
