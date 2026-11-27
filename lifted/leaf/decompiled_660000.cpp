@@ -3240,3 +3240,29 @@ void* fn_0066A2E0(void* self, const void* rhs) {
     return self;
 }
 } // namespace lift_0066A2E0
+
+// [0x0066A2A0] sub_0066A2A0 (60 bytes)
+namespace lift_0066A2A0 {
+// Callee 0x0053B470 (sub_0053B470): thiscall-style helper. Takes a scratch
+// pointer and a float, returns a pointer to four float32 values.
+extern float* ext_0053B470(void* self, float* scratch, float value);
+// Known callee 0x0066A220: ClampFourFloatsToUnitRange (Clamps the four consecutive float32 values at self+0x00..+0x0C to [0.0, 1.0] in place; values above 1.0 become 1.0, values below 0.0 become 0.0, NaN and in-range values are left unchanged)
+extern void ext_0066A220(void* self);
+
+// @name Unknown::SetVec4FromScalarAndClamp_0066A2A0
+// @class Unknown
+// @summary Resolves a float-driven 4-float vector via ext_0053B470, copies it into self+0x00..+0x0C, then clamps it to [0,1].
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+void fn_0066A2A0(void* self, float x) {
+    float scratch[4];
+    float* src = ext_0053B470(self, scratch, x);
+    lift_field<float>(self, 0x00) = src[0];
+    lift_field<float>(self, 0x04) = src[1];
+    lift_field<float>(self, 0x08) = src[2];
+    lift_field<float>(self, 0x0C) = src[3];
+    ext_0066A220(self);
+}
+} // namespace lift_0066A2A0
