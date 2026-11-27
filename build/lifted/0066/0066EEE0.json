@@ -1,0 +1,14 @@
+{
+  "va": "0x0066EEE0",
+  "size": 135,
+  "orig_symbol": "ExprParser::StringType::vfunc_50",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_50",
+  "class": "ExprParser::StringType",
+  "signature": "void __stdcall fn_0066EEE0(void* arg1, void* arg2, void* arg3, void* arg4)",
+  "summary": "Converts two arguments to strings via ext_0041CEB0 and throws via ext_00486CB0 if the first is greater than the second.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:34:38Z"
+}

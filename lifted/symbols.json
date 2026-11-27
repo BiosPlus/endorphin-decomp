@@ -55579,6 +55579,13 @@
     "summary": "Evaluates a boolean from both stack operands via their child's vfunc slot 3, then forwards both results to ext_0049AD90.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
+  "0x0066EEE0": {
+    "name": "ExprParser::StringType::vfunc_50",
+    "class": "ExprParser::StringType",
+    "signature": "void __stdcall fn_0066EEE0(void* arg1, void* arg2, void* arg3, void* arg4)",
+    "summary": "Converts two arguments to strings via ext_0041CEB0 and throws via ext_00486CB0 if the first is greater than the second.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066EF90": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, getX, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
@@ -56851,6 +56858,13 @@
     "summary": "Builds a local 3x3 identity float matrix and passes it to two helper calls (with arg and self).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067BEC0": {
+    "name": "Vec3::mulMat3",
+    "class": "Vec3",
+    "signature": "float* __thiscall sub_0067BEC0(void* self, float* out, const float* mat)",
+    "summary": "Multiplies a 3D row vector by a 3x3 matrix and writes the result to out.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067C3D0": {
     "name": "Vec3::rotateX",
     "class": "Vec3",
@@ -57664,6 +57678,12 @@
     "signature": "extern void (*mem_00925134)(); // MSVCR80!_invalid_parameter_noinfo (IAT slot) void fn_00687100(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x005A5400 (NMData::BackGroundData::vfunc_6_off_4).",
     "lifted_path": "lifted/classes/SymbolContainer.cpp"
+  },
+  "0x00687150": {
+    "name": "sub_00687150",
+    "signature": "void* __thiscall sub_00687150(void* this_ptr, void* arg1)",
+    "summary": "Constructor initializing vtable, std::string, red-black tree, ID counter, and zeroed fields.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x006871F0": {
     "name": "SymbolContainer::vfunc_0",

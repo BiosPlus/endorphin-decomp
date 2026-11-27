@@ -308,3 +308,30 @@ bool fn_0066B410(void* arg1, void* arg2) {
     // Destruction order (second, then first) matches the original cleanup.
 }
 } // namespace lift_0066B410
+
+// [0x0066EEE0]
+namespace lift_0066EEE0 {
+// @name ExprParser::StringType::vfunc_50
+// @class ExprParser::StringType
+// @summary Converts two arguments to strings via ext_0041CEB0 and throws via ext_00486CB0 if the first is greater than the second.
+
+extern uint32_t ext_0041CEB0(void* self, uint32_t arg1);
+extern void ext_00486CB0(const void* arg1, const void* arg2, const char* arg3);
+extern const char* mem_0098B7D8;
+extern void* mem_00924FF4;
+
+void __stdcall fn_0066EEE0(void* arg1, void* arg2, void* arg3, void* arg4) {
+    (void)arg3;
+    (void)arg4;
+    (void)mem_00924FF4;
+    std::string s1;
+    std::string s2;
+    uint32_t p1 = ext_0041CEB0(arg2, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&s1)));
+    uint32_t p2 = ext_0041CEB0(arg1, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&s2)));
+    ext_00486CB0(
+        reinterpret_cast<const void*>(static_cast<uintptr_t>(p2)),
+        reinterpret_cast<const void*>(static_cast<uintptr_t>(p1)),
+        mem_0098B7D8
+    );
+}
+} // namespace lift_0066EEE0
