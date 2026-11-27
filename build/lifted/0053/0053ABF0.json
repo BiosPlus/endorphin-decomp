@@ -1,0 +1,14 @@
+{
+  "va": "0x0053ABF0",
+  "size": 85,
+  "orig_symbol": "Primitives::Animation::vfunc_30",
+  "src_path": "src/Primitives/Animation.cpp",
+  "lifted_path": "lifted/Primitives/Animation.cpp",
+  "name": "Primitives::Animation::vfunc_30",
+  "class": "Primitives::Animation",
+  "signature": "float* __thiscall fn_0053ABF0(void* self, uint32_t /*unused*/, uint32_t flags)",
+  "summary": "Dispatches to sub_0053A930 and optionally copies 3 floats + 0.5f into global color/vector buffer",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:37:28Z"
+}

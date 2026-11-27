@@ -346,3 +346,30 @@ uint32_t __thiscall fn_0053A8E0(void* self, uint32_t mode) {
     return 0;
 }
 } // namespace lift_0053A8E0
+
+// [0x0053ABF0]
+namespace lift_0053ABF0 {
+// @name Primitives::Animation::vfunc_30
+// @class Primitives::Animation
+// @summary Dispatches to sub_0053A930 and optionally copies 3 floats + 0.5f into global color/vector buffer
+
+
+extern float* __thiscall ext_0053A930(void* self, uint32_t a1, uint32_t a2);
+
+extern float mem_00AF053C;
+extern float mem_00AF0540;
+extern float mem_00AF0544;
+extern float mem_00AF0548;
+
+float* __thiscall fn_0053ABF0(void* self, uint32_t /*unused*/, uint32_t flags) {
+    float* res = ext_0053A930(self, 0x009553B0u, flags);
+    if ((flags & 0x200u) == 0) {
+        return res;
+    }
+    mem_00AF053C = res[0];
+    mem_00AF0540 = res[1];
+    mem_00AF0544 = res[2];
+    mem_00AF0548 = 0.5f;
+    return &mem_00AF053C;
+}
+} // namespace lift_0053ABF0
