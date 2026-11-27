@@ -1863,3 +1863,45 @@ uint16_t __cdecl sub_0085F9D0(uint8_t key, uint8_t* buf, uint32_t len) {
     return 0;
 }
 } // namespace lift_0085F9D0
+
+// [0x0085E470] sub_0085E470 (154 bytes)
+namespace lift_0085E470 {
+// Known callee 0x0085D530: copyBytesForward (Forward byte-by-byte copy of `count` bytes from src to dst (cdecl, no return value).)
+extern void ext_0085D530(uint8_t* dst, const uint8_t* src, uint32_t count);
+// Record count (dword at 0x00ABA454).
+extern int32_t mem_00ABA454;
+// Base of 13-byte records (record i starts at 0x00ABA458 + 13*i).
+extern uint8_t mem_00ABA458;
+// Indirect callee pointer (0x00BC70F8), called __stdcall with one arg, returns 16-bit value.
+extern void* mem_00BC70F8;
+
+// @name RegisterKeyIfAbsent
+// @summary If key is nonzero and not already stored in the record table, appends a record {type=8, key, id} where id = mem_00BC70F8(value); otherwise does nothing.
+// @field SlotRecord +0x00 uint8_t type
+// @field SlotRecord +0x01 uint32_t key
+// @field SlotRecord +0x0B uint16_t id
+void fn_0085E470(uint32_t key, uint16_t value) {
+    if (key == 0) {
+        return;
+    }
+
+    uint8_t* records = reinterpret_cast<uint8_t*>(&mem_00ABA458);
+    const int32_t count = mem_00ABA454;
+
+    for (int32_t i = 0; i < count; ++i) {
+        uint8_t* rec = records + 13 * i;
+        uint32_t existing = 0;
+        ext_0085D530(reinterpret_cast<uint8_t*>(&existing), rec + 1, 4);
+        if (existing == key) {
+            return;
+        }
+    }
+
+    uint8_t* rec = records + 13 * count;
+    ext_0085D530(rec + 1, reinterpret_cast<const uint8_t*>(&key), 4);
+    lift_field<uint8_t>(rec, 0) = 8;
+    auto helper = reinterpret_cast<uint16_t(__stdcall*)(uint32_t)>(mem_00BC70F8);
+    lift_field<uint16_t>(rec, 11) = helper(value);
+    mem_00ABA454 = count + 1;
+}
+} // namespace lift_0085E470

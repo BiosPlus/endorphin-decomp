@@ -1,0 +1,33 @@
+{
+  "va": "0x0085E470",
+  "size": 154,
+  "orig_symbol": "sub_0085E470",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "RegisterKeyIfAbsent",
+  "signature": "void fn_0085E470(uint32_t key, uint16_t value)",
+  "summary": "If key is nonzero and not already stored in the record table, appends a record {type=8, key, id} where id = mem_00BC70F8(value); otherwise does nothing.",
+  "fields": [
+    {
+      "class": "SlotRecord",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "type"
+    },
+    {
+      "class": "SlotRecord",
+      "offset": "+0x1",
+      "type": "uint32_t",
+      "name": "key"
+    },
+    {
+      "class": "SlotRecord",
+      "offset": "+0xB",
+      "type": "uint16_t",
+      "name": "id"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:19:05Z"
+}

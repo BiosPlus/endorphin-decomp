@@ -89499,6 +89499,12 @@
     "summary": "Copies n bytes from src to dst, handling overlapping ranges (memmove semantics) by copying backward when dst lies inside [src, src+n).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085E470": {
+    "name": "RegisterKeyIfAbsent",
+    "signature": "void fn_0085E470(uint32_t key, uint16_t value)",
+    "summary": "If key is nonzero and not already stored in the record table, appends a record {type=8, key, id} where id = mem_00BC70F8(value); otherwise does nothing.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085E690": {
     "name": "ToUpperAscii",
     "signature": "uint8_t ToUpperAscii(uint8_t ch)",
