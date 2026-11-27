@@ -22539,6 +22539,13 @@
     "summary": "Dispatches on a 32-bit key to one of the static-pair store helpers (or the key-0x317 path, selected by a field at +0x190 == 4), otherwise forwards to ext_004C3410; returns the output pointer.",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
   },
+  "0x004D2A20": {
+    "name": "NMData::TransitionEventData::vfunc_84",
+    "class": "NMData::TransitionEventData",
+    "signature": "extern \"C\" void __thiscall fn_004D2A20(void* self, int32_t arg)",
+    "summary": "Gated setter for the cached value at +0x184: when enabled and the argument differs from it, dispatch to one of three helpers based on the argument's position relative to +0x15c and +0x160, then store the argument.",
+    "lifted_path": "lifted/NMData/TransitionEventData.cpp"
+  },
   "0x004D2C70": {
     "name": "sub_004D2C70",
     "class": "Unknown",

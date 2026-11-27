@@ -214,3 +214,44 @@ void fn_004D0E10(void* self, void* obj) {
     lift_field<uint32_t>(self, 0x164) = 0;
 }
 } // namespace lift_004D0E10
+
+// [0x004D2A20] NMData::TransitionEventData::vfunc_84 (119 bytes)
+namespace lift_004D2A20 {
+// Callee 0x004D1F00: sub_004D1F00 (186B), thiscall, no stack args; receives this = [self+0x18c].
+extern void __thiscall ext_004D1F00(void* self);
+// Callee 0x004D27D0: sub_004D27D0 (338B), thiscall, no stack args; receives this = [self+0x18c].
+extern void __thiscall ext_004D27D0(void* self);
+// Callee 0x004D2930: sub_004D2930 (236B), thiscall, no stack args; receives this = [self+0x18c].
+extern void __thiscall ext_004D2930(void* self);
+
+// @name NMData::TransitionEventData::vfunc_84
+// @class NMData::TransitionEventData
+// @summary Gated setter for the cached value at +0x184: when enabled and the argument differs from it, dispatch to one of three helpers based on the argument's position relative to +0x15c and +0x160, then store the argument.
+// @field NMData::TransitionEventData +0x15c int32_t field_0x15c
+// @field NMData::TransitionEventData +0x160 int32_t field_0x160
+// @field NMData::TransitionEventData +0x17c uint8_t field_0x17c
+// @field NMData::TransitionEventData +0x184 int32_t field_0x184
+// @field NMData::TransitionEventData +0x18c void* field_0x18c
+extern void __thiscall fn_004D2A20(void* self, int32_t arg) {
+    if (lift_field<uint8_t>(self, 0x17C) == 0) {
+        return;
+    }
+
+    if (lift_field<int32_t>(self, 0x184) == arg) {
+        return;
+    }
+
+    const int32_t lo = lift_field<int32_t>(self, 0x15C);
+    const int32_t hi = lift_field<int32_t>(self, 0x160);
+
+    if (arg == lo) {
+        ext_004D27D0(lift_field<void*>(self, 0x18C));
+    } else if (arg > lo && arg < hi) {
+        ext_004D1F00(lift_field<void*>(self, 0x18C));
+    } else if (arg == hi) {
+        ext_004D2930(lift_field<void*>(self, 0x18C));
+    }
+
+    lift_field<int32_t>(self, 0x184) = arg;
+}
+} // namespace lift_004D2A20

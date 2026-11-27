@@ -1,0 +1,46 @@
+{
+  "va": "0x004D2A20",
+  "size": 119,
+  "orig_symbol": "NMData::TransitionEventData::vfunc_84",
+  "src_path": "src/NMData/TransitionEventData.cpp",
+  "lifted_path": "lifted/NMData/TransitionEventData.cpp",
+  "name": "NMData::TransitionEventData::vfunc_84",
+  "class": "NMData::TransitionEventData",
+  "signature": "extern \"C\" void __thiscall fn_004D2A20(void* self, int32_t arg)",
+  "summary": "Gated setter for the cached value at +0x184: when enabled and the argument differs from it, dispatch to one of three helpers based on the argument's position relative to +0x15c and +0x160, then store the argument.",
+  "fields": [
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x184",
+      "type": "int32_t",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:02:56Z"
+}
