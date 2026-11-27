@@ -24195,6 +24195,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004DA5D0": {
+    "name": "NMData::RigEventData::vfunc_58",
+    "class": "NMData::RigEventData",
+    "signature": "static inline uint32_t addr_of(const void* p)",
+    "summary": "Refreshes state via sub_004D3E40, clears the output string vector arg, and if the 28-byte element range at +0x170..+0x174 is non-empty, resolves the first entry via ext_00594000/ext_00594640 and appends non-empty virtual slot 9 strings from its +0x598 list into arg.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004DA800": {
     "name": "sub_004DA800",
     "class": "Unknown",

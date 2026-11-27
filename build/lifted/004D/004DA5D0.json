@@ -1,0 +1,28 @@
+{
+  "va": "0x004DA5D0",
+  "size": 360,
+  "orig_symbol": "NMData::RigEventData::vfunc_58",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_58",
+  "class": "NMData::RigEventData",
+  "signature": "static inline uint32_t addr_of(const void* p)",
+  "summary": "Refreshes state via sub_004D3E40, clears the output string vector arg, and if the 28-byte element range at +0x170..+0x174 is non-empty, resolves the first entry via ext_00594000/ext_00594640 and appends non-empty virtual slot 9 strings from its +0x598 list into arg.",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x174",
+      "type": "uint32_t",
+      "name": "field_0x174"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-carbon@low",
+  "lifted_at": "2026-11-27T13:07:43Z"
+}

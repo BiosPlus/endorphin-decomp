@@ -782,3 +782,205 @@ void __thiscall fn_004DBE80(uint8_t* self, void* arg) {
     lift_field<uint8_t>(self, 0x188) = 1;
 }
 } // namespace lift_004DBE80
+
+// [0x004DA5D0] NMData::RigEventData::vfunc_58 (360 bytes)
+namespace lift_004DA5D0 {
+// Known callee 0x00406510: Unknown::copyStringRangeTruncate
+extern uint32_t __thiscall ext_00406510(void* self, void* sret, void* a2, uint32_t a3, void* a4, uint32_t a5);
+// Known callee 0x0040ECB0: Unknown::PushBackString_0040ECB0
+extern void __thiscall ext_0040ECB0(void* self, const void* value);
+// Known callee 0x004D3E40: sub_004D3E40
+extern void __thiscall ext_004D3E40(void* self);
+// Known callee 0x00594000: sub_00594000
+extern int32_t __cdecl ext_00594000();
+// Known callee 0x00594640: sub_00594640
+extern void* __thiscall ext_00594640(void* self, uint32_t key);
+// Known callee 0x00673C20: sub_00673C20
+extern void __thiscall ext_00673C20(void* self);
+
+// Trailing declarations placed before the next [0xVA] marker in src/NMData/RigEventData.cpp:
+extern void ext_004275E0();
+extern void ext_00427640();
+extern void ext_0046C0A0();
+extern void ext_0047A4A0();
+extern void ext_004C24C0();
+extern void ext_004D3940();
+extern void ext_004D4060();
+extern void ext_004D4190();
+extern void ext_004D42A0();
+extern void ext_004D8C30();
+extern void ext_004D8D70();
+extern void ext_004DA180();
+extern void ext_004DA510();
+extern void ext_004DB940();
+extern void ext_004EE590();
+extern void ext_0053F5F0();
+extern void ext_00586300();
+extern void ext_00587920();
+extern void ext_0063EFE0();
+
+extern void* const mem_00924FE0; // MSVCP80 basic_string(const basic_string&) copy ctor
+extern void* const mem_00924FEC; // MSVCP80 basic_string::empty
+extern void* const mem_00924FF4; // MSVCP80 basic_string::~basic_string
+extern void* const mem_00925134; // MSVCR80 _invalid_parameter_noinfo
+
+extern int mem_00924FCC;
+extern int mem_00924FD4;
+extern int mem_00924FDC;
+extern int mem_00924FE4;
+extern int mem_00924FE8;
+extern int mem_009849B4;
+extern int mem_00A34648;
+extern int mem_00A3464C;
+extern int mem_00A34650;
+extern int mem_00A9F690;
+extern int mem_00A9F6A0;
+extern int mem_00A9F6DC;
+extern int mem_00A9F71C;
+extern int mem_00A9F720;
+extern int mem_00A9F734;
+extern int mem_00A9F89C;
+extern int mem_00A9F914;
+extern int mem_00A9F924;
+extern int mem_00A9FA74;
+extern int mem_00AE29D0;
+extern int mem_00B40640;
+
+static inline uint32_t addr_of(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+static inline void* ptr_of(uint32_t a) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(a));
+}
+
+// @name NMData::RigEventData::vfunc_58
+// @class NMData::RigEventData
+// @summary Refreshes state via sub_004D3E40, clears the output string vector arg, and if the 28-byte element range at +0x170..+0x174 is non-empty, resolves the first entry via ext_00594000/ext_00594640 and appends non-empty virtual slot 9 strings from its +0x598 list into arg.
+// @field NMData::RigEventData +0x170 uint32_t field_0x170
+// @field NMData::RigEventData +0x174 uint32_t field_0x174
+extern void __thiscall fn_004DA5D0(void* self, void* arg) {
+    // Trailing declarations from the next function's header in src/NMData/RigEventData.cpp:
+    (void)&ext_004275E0;
+    (void)&ext_00427640;
+    (void)&ext_0046C0A0;
+    (void)&ext_0047A4A0;
+    (void)&ext_004C24C0;
+    (void)&ext_004D3940;
+    (void)&ext_004D4060;
+    (void)&ext_004D4190;
+    (void)&ext_004D42A0;
+    (void)&ext_004D8C30;
+    (void)&ext_004D8D70;
+    (void)&ext_004DA180;
+    (void)&ext_004DA510;
+    (void)&ext_004DB940;
+    (void)&ext_004EE590;
+    (void)&ext_0053F5F0;
+    (void)&ext_00586300;
+    (void)&ext_00587920;
+    (void)&ext_0063EFE0;
+    (void)&mem_00924FCC;
+    (void)&mem_00924FD4;
+    (void)&mem_00924FDC;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FE8;
+    (void)&mem_009849B4;
+    (void)&mem_00A34648;
+    (void)&mem_00A3464C;
+    (void)&mem_00A34650;
+    (void)&mem_00A9F690;
+    (void)&mem_00A9F6A0;
+    (void)&mem_00A9F6DC;
+    (void)&mem_00A9F71C;
+    (void)&mem_00A9F720;
+    (void)&mem_00A9F734;
+    (void)&mem_00A9F89C;
+    (void)&mem_00A9F914;
+    (void)&mem_00A9F924;
+    (void)&mem_00A9FA74;
+    (void)&mem_00AE29D0;
+    (void)&mem_00B40640;
+
+    using PFN_invalidParam = void (__cdecl*)();
+    using PFN_getString = const void* (__thiscall*)(void* self);
+    using PFN_copyString = void (__thiscall*)(void* self, const void* src);
+    using PFN_emptyString = bool (__thiscall*)(const void* self);
+    using PFN_dtorString = void (__thiscall*)(void* self);
+
+    auto invalid_param = reinterpret_cast<PFN_invalidParam>(mem_00925134);
+
+    ext_004D3E40(self);
+
+    const uint32_t arg_end = lift_field<uint32_t>(arg, 0x08);
+    if (lift_field<uint32_t>(arg, 0x04) > arg_end) {
+        invalid_param();
+    }
+    const uint32_t arg_begin = lift_field<uint32_t>(arg, 0x04);
+    if (arg_begin > lift_field<uint32_t>(arg, 0x08)) {
+        invalid_param();
+    }
+
+    uint32_t sret_pair[2] = {0u, 0u};
+    (void)ext_00406510(arg, sret_pair, arg, arg_begin, arg, arg_end);
+
+    const uint32_t vec_begin = lift_field<uint32_t>(self, 0x170);
+    if (vec_begin == 0) {
+        return;
+    }
+
+    const uint32_t vec_end = lift_field<uint32_t>(self, 0x174);
+    const int32_t count = static_cast<int32_t>(vec_end - vec_begin) / 28;
+    if (count == 0) {
+        return;
+    }
+
+    const uint32_t first_elem = lift_field<uint32_t>(self, 0x170);
+    if (first_elem > lift_field<uint32_t>(self, 0x174)) {
+        invalid_param();
+    }
+    if (first_elem >= lift_field<uint32_t>(self, 0x174)) {
+        invalid_param();
+    }
+
+    void* const global_mgr = ptr_of(static_cast<uint32_t>(ext_00594000()));
+    uint8_t* const resolved = static_cast<uint8_t*>(ext_00594640(global_mgr, first_elem));
+    void* const list_container = resolved + 0x598;
+
+    const uint32_t head_ptr = lift_field<uint32_t>(list_container, 0x04);
+    uint32_t cursor[2];
+    cursor[0] = addr_of(list_container);
+    cursor[1] = lift_field<uint32_t>(ptr_of(head_ptr), 0x00);
+
+    for (;;) {
+        const uint32_t end_node = lift_field<uint32_t>(list_container, 0x04);
+        if (cursor[0] == 0 || cursor[0] != addr_of(list_container)) {
+            invalid_param();
+        }
+        if (cursor[1] == end_node) {
+            break;
+        }
+        if (cursor[0] == 0) {
+            invalid_param();
+        }
+        if (cursor[1] == lift_field<uint32_t>(ptr_of(cursor[0]), 0x04)) {
+            invalid_param();
+        }
+
+        void* const node = ptr_of(cursor[1]);
+        void* const item = ptr_of(lift_field<uint32_t>(node, 0x28));
+        void* const vtable = ptr_of(lift_field<uint32_t>(item, 0x00));
+        const auto get_string = reinterpret_cast<PFN_getString>(ptr_of(lift_field<uint32_t>(vtable, 0x24)));
+        const void* const src = get_string(item);
+
+        alignas(8) uint8_t tmp[28];
+        reinterpret_cast<PFN_copyString>(mem_00924FE0)(tmp, src);
+        if (!reinterpret_cast<PFN_emptyString>(mem_00924FEC)(tmp)) {
+            ext_0040ECB0(arg, tmp);
+        }
+        reinterpret_cast<PFN_dtorString>(mem_00924FF4)(tmp);
+
+        ext_00673C20(cursor);
+    }
+}
+} // namespace lift_004DA5D0
