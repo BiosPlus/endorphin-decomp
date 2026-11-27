@@ -1,0 +1,14 @@
+{
+  "va": "0x0058C130",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerX(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, getEulerX, float, setEulerX\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerX(float), 0}\u003e",
+  "signature": "void __stdcall fn_0058C130(void* self)",
+  "summary": "Lazily constructs the static accessor holder (once, guarded by bit 0 of mem_00B3F908), then binds self+0x04 to that holder.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:25:57Z"
+}

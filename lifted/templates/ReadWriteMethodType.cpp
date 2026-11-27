@@ -11381,3 +11381,25 @@ void fn_005249E0(void* holder) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AED2CC));
 }
 } // namespace lift_005249E0
+
+// [0x0058C130] ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerX(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_0058C130 {
+// Callee 0x0067A670 (thiscall, ECX = holder object). Called with no stack args.
+extern void __thiscall ext_0067A670(void* self);
+// Init-guard dword (bit 0 = "holder constructed") and static holder object.
+extern int mem_00B3F908;
+extern int mem_00B3F904;
+
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform, float, getEulerX, float, setEulerX>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerX(float), 0}>
+// @summary Lazily constructs the static accessor holder (once, guarded by bit 0 of mem_00B3F908), then binds self+0x04 to that holder.
+// @field ExprParser::ReadWriteMethodType<AnimatableTransform, float, getEulerX, float, setEulerX> +0x04 void* field_0x04
+void __stdcall fn_0058C130(void* self) {
+    if ((mem_00B3F908 & 1) == 0) {
+        mem_00B3F908 |= 1;
+        ext_0067A670(static_cast<void*>(&mem_00B3F904));
+        mem_00B3F904 = 0x0095B5CC;  // holder vtable
+    }
+    lift_field<void*>(self, 0x04) = static_cast<void*>(&mem_00B3F904);
+}
+} // namespace lift_0058C130
