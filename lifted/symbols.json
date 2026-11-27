@@ -3710,6 +3710,13 @@
     "summary": "Calls virtual slot +0x1E4 (arg 0) on the object returned by ext_00465B40; on exception, logs the std::string at obj+0x0C via thunk_MFC80_ord_1123 and returns 0x004324CB.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00432520": {
+    "name": "fetchObjectAndInvokeSlot1C8",
+    "class": "(none; object type not recovered)",
+    "signature": "void fn_00432520(void)",
+    "summary": "Gets the singleton-like object from ext_00465B40 and calls its vtable slot at +0x1C8 with (this, 1); the SEH cleanup funclet at 0x0043256C is not part of the normal path and is omitted.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004326D0": {
     "name": "sub_004326D0",
     "signature": "void fn_004326D0(void)",
