@@ -760,3 +760,111 @@ void* __thiscall fn_005EC0A0(void* self, void* arg0) {
     return arg0;
 }
 } // namespace lift_005EC0A0
+
+// [0x005F30E0] NMData::SkeletalJointData::vfunc_21 (590 bytes)
+namespace lift_005F30E0 {
+// Known callee 0x005F2970: NMData::NullRelationshipData::vfunc_21 (Deserializes NullRelationshipData properties, coordinates, and child relationship items from a data node.)
+extern void __thiscall ext_005F2970(void* self, void* arg0);
+// Known callee 0x0063EFE0: sub_0063EFE0 (Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.)
+extern void* __thiscall ext_0063EFE0(void* self, const char* name);
+// Known callee 0x004275E0: assignVirtualString (Calls vtable[2] on obj to obtain a temporary std::string, assigns it to dst, and destroys the temporary.)
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern uint32_t __thiscall ext_005E0770(void* self, void* str_ptr);
+extern void __thiscall ext_00587920(void* self, void* child, uint32_t flag);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType, const void* targetType, int32_t isReference);
+// Known callee 0x005B11E0: ReadFloatArrayElement (Returns float element `index` from the float array at this+0x10 (thiscall, ret 4).)
+extern float __thiscall ext_005B11E0(void* self, int32_t index);
+
+extern uint32_t mem_00924FE8;
+extern const char* mem_00A9F65C;
+extern uint32_t mem_00924ECC;
+extern uint32_t mem_00924FF4;
+
+namespace {
+
+struct MsvcStringRaw {
+    uint8_t bytes[0x1C];
+};
+
+} // namespace
+
+// @name NMData::SkeletalJointData::vfunc_21
+// @class NMData::SkeletalJointData
+// @summary Deserializes SkeletalJointData by delegating to NullRelationshipData::vfunc_21, resolving +0x308 from a named item, deserializing and attaching sub-objects at +0x17C/+0x180/+0x184, and reading 6 floats into +0x30C..+0x320.
+// @field NMData::SkeletalJointData +0x14 MsvcString field_0x14
+// @field NMData::SkeletalJointData +0x17C void* field_0x17c
+// @field NMData::SkeletalJointData +0x180 void* field_0x180
+// @field NMData::SkeletalJointData +0x184 void* field_0x184
+// @field NMData::SkeletalJointData +0x308 uint32_t field_0x308
+// @field NMData::SkeletalJointData +0x30C float field_0x30c
+// @field NMData::SkeletalJointData +0x310 float field_0x310
+// @field NMData::SkeletalJointData +0x314 float field_0x314
+// @field NMData::SkeletalJointData +0x318 float field_0x318
+// @field NMData::SkeletalJointData +0x31C float field_0x31c
+// @field NMData::SkeletalJointData +0x320 float field_0x320
+void __thiscall fn_005F30E0(void* self, void* arg0) {
+    ext_005F2970(self, arg0);
+
+    auto str_ctor   = reinterpret_cast<void* (__thiscall*)(void*)>(static_cast<uintptr_t>(mem_00924FE8));
+    auto str_concat = reinterpret_cast<void* (__cdecl*)(void*, const void*, const char*)>(static_cast<uintptr_t>(mem_00924ECC));
+    auto str_dtor   = reinterpret_cast<void (__thiscall*)(void*)>(static_cast<uintptr_t>(mem_00924FF4));
+
+    MsvcStringRaw local_str;
+    str_ctor(&local_str);
+
+    void* item = ext_0063EFE0(arg0, mem_00A9F65C);
+    ext_004275E0(&local_str, item);
+    lift_field<uint32_t>(self, 0x308) = ext_005E0770(self, &local_str);
+
+    struct SubObjDeser {
+        ptrdiff_t offset;
+        uintptr_t suffix_addr;
+    };
+    const SubObjDeser sub_objs[3] = {
+        { 0x17C, 0x0096B500u },
+        { 0x180, 0x0096B4F4u },
+        { 0x184, 0x0096B938u },
+    };
+
+    void* name_ptr = static_cast<uint8_t*>(self) + 0x14;
+    for (const auto& entry : sub_objs) {
+        void* sub = lift_field<void*>(self, entry.offset);
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto vfunc_21 = reinterpret_cast<void (__thiscall*)(void*, void*)>(vtbl[0x54 / 4]);
+        vfunc_21(sub, arg0);
+
+        sub = lift_field<void*>(self, entry.offset);
+        vtbl = *reinterpret_cast<void***>(sub);
+        MsvcStringRaw tmp_str;
+        void* concat_res = str_concat(&tmp_str, name_ptr, reinterpret_cast<const char*>(entry.suffix_addr));
+        auto vfunc_23 = reinterpret_cast<void (__thiscall*)(void*, void*)>(vtbl[0x5C / 4]);
+        vfunc_23(sub, concat_res);
+        str_dtor(&tmp_str);
+    }
+
+    ext_00587920(self, lift_field<void*>(self, 0x180), 0);
+    ext_00587920(lift_field<void*>(self, 0x17C), lift_field<void*>(self, 0x184), 0);
+
+    void* casted = ext_006A6E9E(
+        lift_field<void*>(self, 0x17C),
+        0,
+        reinterpret_cast<const void*>(0x00A2FB9Cu),
+        reinterpret_cast<const void*>(0x00A91240u),
+        0);
+    void** casted_vtbl = *reinterpret_cast<void***>(casted);
+    auto get_arr1 = reinterpret_cast<uint8_t* (__thiscall*)(void*)>(casted_vtbl[0x11C / 4]);
+    auto get_arr2 = reinterpret_cast<uint8_t* (__thiscall*)(void*)>(casted_vtbl[0x124 / 4]);
+
+    for (int32_t i = 0; i < 3; ++i) {
+        uint8_t* arr = get_arr1(casted);
+        lift_field<float>(self, 0x30C + i * 4) = ext_005B11E0(arr + 0x08, i);
+    }
+    for (int32_t i = 0; i < 3; ++i) {
+        uint8_t* arr = get_arr2(casted);
+        lift_field<float>(self, 0x318 + i * 4) = ext_005B11E0(arr + 0x08, i);
+    }
+
+    str_dtor(&local_str);
+}
+} // namespace lift_005F30E0

@@ -1,0 +1,82 @@
+{
+  "va": "0x005F30E0",
+  "size": 590,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_21",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_21",
+  "class": "NMData::SkeletalJointData",
+  "signature": "void __thiscall fn_005F30E0(void* self, void* arg0)",
+  "summary": "Deserializes SkeletalJointData by delegating to NullRelationshipData::vfunc_21, resolving +0x308 from a named item, deserializing and attaching sub-objects at +0x17C/+0x180/+0x184, and reading 6 floats into +0x30C..+0x320.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x14",
+      "type": "MsvcString",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x308",
+      "type": "uint32_t",
+      "name": "field_0x308"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x30C",
+      "type": "float",
+      "name": "field_0x30c"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x310",
+      "type": "float",
+      "name": "field_0x310"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x314",
+      "type": "float",
+      "name": "field_0x314"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x318",
+      "type": "float",
+      "name": "field_0x318"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x31C",
+      "type": "float",
+      "name": "field_0x31c"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x320",
+      "type": "float",
+      "name": "field_0x320"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-27T13:09:14Z"
+}

@@ -56331,6 +56331,13 @@
     "summary": "Pure jump thunk forwarding to NMData::NullRelationshipData::vfunc_21.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005F30E0": {
+    "name": "NMData::SkeletalJointData::vfunc_21",
+    "class": "NMData::SkeletalJointData",
+    "signature": "void __thiscall fn_005F30E0(void* self, void* arg0)",
+    "summary": "Deserializes SkeletalJointData by delegating to NullRelationshipData::vfunc_21, resolving +0x308 from a named item, deserializing and attaching sub-objects at +0x17C/+0x180/+0x184, and reading 6 floats into +0x30C..+0x320.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005F3370": {
     "name": "NMData::MagnetJointData::vfunc_21",
     "class": "NMData::MagnetJointData",
