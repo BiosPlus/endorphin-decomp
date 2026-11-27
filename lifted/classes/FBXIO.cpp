@@ -302,3 +302,31 @@ void* fn_0055DE50(void* self, void* arg) {
     return arg;
 }
 } // namespace lift_0055DE50
+
+// [0x00562A30]
+namespace lift_00562A30 {
+// @name FBXIO::vfunc_13
+// @class FBXIO
+// @summary Initializes FBXIO if needed and delegates to sub_0055E990 with arg0.
+// @field FBXIO +0x1F8 void* field_0x1f8
+// @field FBXIO +0x214 uint8_t field_0x214
+
+
+    uint8_t __thiscall ext_0055F4E0(void* self);
+    uint8_t __cdecl ext_006629B0(void* strPtr);
+    void __thiscall ext_005605A0(void* self);
+    void __thiscall ext_005619C0(void* self);
+    void __thiscall ext_0055E990(void* self, void* arg0);
+
+void __thiscall fn_00562A30(void* self, void* arg0) {
+    if (!ext_0055F4E0(self)) {
+        return;
+    }
+    if (lift_field<uint8_t>(self, 0x214) == 0 ||
+        !ext_006629B0(reinterpret_cast<uint8_t*>(self) + 0x1F8)) {
+        ext_005605A0(self);
+    }
+    ext_005619C0(self);
+    ext_0055E990(self, arg0);
+}
+} // namespace lift_00562A30

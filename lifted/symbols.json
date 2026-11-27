@@ -38246,6 +38246,13 @@
     "summary": "Loads an FBX file, extracts scene/take names, and initializes FBX import state",
     "lifted_path": "lifted/classes/FBXIO.cpp"
   },
+  "0x00562A30": {
+    "name": "FBXIO::vfunc_13",
+    "class": "FBXIO",
+    "signature": "void __thiscall fn_00562A30(void* self, void* arg0)",
+    "summary": "Initializes FBXIO if needed and delegates to sub_0055E990 with arg0.",
+    "lifted_path": "lifted/classes/FBXIO.cpp"
+  },
   "0x00562F80": {
     "name": "FBXIO::vfunc_10",
     "class": "FBXIO",

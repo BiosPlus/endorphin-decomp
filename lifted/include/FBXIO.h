@@ -15,6 +15,8 @@ struct FBXIO_Fields {
     // +0x90  uint8_t                  field_0x90  (evidence: 0x00560300)
     // +0x94  uint8_t[4]               field_0x94  (evidence: 0x00560300)
     // +0xA4  int32_t                  field_0xa4  (evidence: 0x00562F80)
+    // +0x1F8 void*                    field_0x1f8  (evidence: 0x00562A30)
+    // +0x214 uint8_t                  field_0x214  (evidence: 0x00562A30)
     // +0x27C void*                    field_0x27c  (evidence: 0x00560300)
     // +0x414 void*                    field_0x414  (evidence: 0x00562F80)
     // +0x420 void*                    field_0x420  (evidence: 0x00562F80)
