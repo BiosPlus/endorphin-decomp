@@ -1586,3 +1586,38 @@ void* __thiscall fn_00524610(void* self, uint32_t arg1, uint32_t arg2) {
     return self;
 }
 } // namespace lift_00524610
+
+// [0x00523220] sub_00523220 (110 bytes)
+namespace lift_00523220 {
+extern void* ext_00526DC0(void* self);
+
+// @name constructInterpreter_vtable94F74C
+// @class Interpreter_vtable94F74C
+// @summary Derived-class constructor: runs InterpreterSubclass base ctor (ext_00526DC0), installs vtable 0x0094F74C, zeroes the nine trailing fields at +0xC0..+0xE8, returns this. The MSVC SEH frame (fs:[0] push/pop) is dropped; it only matters on unwind.
+// @field Interpreter_vtable94F74C +0x00 uint32_t vtable
+// @field Interpreter_vtable94F74C +0xC0 uint32_t field_0xC0
+// @field Interpreter_vtable94F74C +0xC4 uint32_t field_0xC4
+// @field Interpreter_vtable94F74C +0xC8 uint32_t field_0xC8
+// @field Interpreter_vtable94F74C +0xD0 uint32_t field_0xD0
+// @field Interpreter_vtable94F74C +0xD4 uint32_t field_0xD4
+// @field Interpreter_vtable94F74C +0xD8 uint32_t field_0xD8
+// @field Interpreter_vtable94F74C +0xE0 uint32_t field_0xE0
+// @field Interpreter_vtable94F74C +0xE4 uint32_t field_0xE4
+// @field Interpreter_vtable94F74C +0xE8 uint32_t field_0xE8
+void* fn_00523220(void* self) {
+    ext_00526DC0(self);  // InterpreterSubclass base ctor (__thiscall, this in ecx)
+
+    lift_field<uint32_t>(self, 0x00) = 0x0094F74Cu;
+    lift_field<uint32_t>(self, 0xC0) = 0;
+    lift_field<uint32_t>(self, 0xC4) = 0;
+    lift_field<uint32_t>(self, 0xC8) = 0;
+    lift_field<uint32_t>(self, 0xD0) = 0;
+    lift_field<uint32_t>(self, 0xD4) = 0;
+    lift_field<uint32_t>(self, 0xD8) = 0;
+    lift_field<uint32_t>(self, 0xE0) = 0;
+    lift_field<uint32_t>(self, 0xE4) = 0;
+    lift_field<uint32_t>(self, 0xE8) = 0;
+
+    return self;
+}
+} // namespace lift_00523220

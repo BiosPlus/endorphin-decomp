@@ -22026,6 +22026,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00523220": {
+    "name": "constructInterpreter_vtable94F74C",
+    "class": "Interpreter_vtable94F74C",
+    "signature": "void* fn_00523220(void* self)",
+    "summary": "Derived-class constructor: runs InterpreterSubclass base ctor (ext_00526DC0), installs vtable 0x0094F74C, zeroes the nine trailing fields at +0xC0..+0xE8, returns this. The MSVC SEH frame (fs:[0] push/pop) is dropped; it only matters on unwind.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00524540": {
     "name": "fn_00524540",
     "signature": "void* __thiscall fn_00524540(void* self, uint32_t arg0, uint32_t arg1, const void* arg2)",

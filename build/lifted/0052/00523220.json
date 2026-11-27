@@ -1,0 +1,76 @@
+{
+  "va": "0x00523220",
+  "size": 110,
+  "orig_symbol": "sub_00523220",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "constructInterpreter_vtable94F74C",
+  "class": "Interpreter_vtable94F74C",
+  "signature": "void* fn_00523220(void* self)",
+  "summary": "Derived-class constructor: runs InterpreterSubclass base ctor (ext_00526DC0), installs vtable 0x0094F74C, zeroes the nine trailing fields at +0xC0..+0xE8, returns this. The MSVC SEH frame (fs:[0] push/pop) is dropped; it only matters on unwind.",
+  "fields": [
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0xC0",
+      "type": "uint32_t",
+      "name": "field_0xC0"
+    },
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0xC4",
+      "type": "uint32_t",
+      "name": "field_0xC4"
+    },
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0xC8",
+      "type": "uint32_t",
+      "name": "field_0xC8"
+    },
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0xD0",
+      "type": "uint32_t",
+      "name": "field_0xD0"
+    },
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0xD4",
+      "type": "uint32_t",
+      "name": "field_0xD4"
+    },
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0xD8",
+      "type": "uint32_t",
+      "name": "field_0xD8"
+    },
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0xE0",
+      "type": "uint32_t",
+      "name": "field_0xE0"
+    },
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0xE4",
+      "type": "uint32_t",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "Interpreter_vtable94F74C",
+      "offset": "+0xE8",
+      "type": "uint32_t",
+      "name": "field_0xE8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:00:24Z"
+}
