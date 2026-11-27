@@ -31324,6 +31324,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x00511190": {
+    "name": "RegisterNamedKeysFromLiterals_00511190",
+    "signature": "void fn_00511190()",
+    "summary": "Ensures the static object is initialized, then builds two std::string temporaries from literal C strings at 0x00950AA8 and 0x009508AC and passes each to its registration routine (0x00510F90, 0x00511090).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x00511290": {
     "name": "sub_00511290",
     "signature": "extern \"C\" void __fastcall fn_00511290(void* self, int edx_unused, float value)",

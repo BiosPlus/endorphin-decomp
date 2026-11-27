@@ -1,0 +1,13 @@
+{
+  "va": "0x00511190",
+  "size": 67,
+  "orig_symbol": "sub_00511190",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "RegisterNamedKeysFromLiterals_00511190",
+  "signature": "void fn_00511190()",
+  "summary": "Ensures the static object is initialized, then builds two std::string temporaries from literal C strings at 0x00950AA8 and 0x009508AC and passes each to its registration routine (0x00510F90, 0x00511090).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:44:56Z"
+}

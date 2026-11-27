@@ -2184,3 +2184,37 @@ void fn_0051DB40(void* arg) {
 }
 } // namespace lift_004BF020
 } // namespace lift_0051DB40
+
+// [0x00511190] sub_00511190 (67 bytes)
+namespace lift_00511190 {
+// Known callee 0x0050F550: InitOnceGlobal_0050F550 (One-time guarded initializer for the global object at 0x00AEBD5C; returns the object's address.)
+extern void* ext_0050F550();
+// Known callee 0x00510F90: sub_00510F90 (Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).)
+extern void ext_00510F90(void* arg);
+// Known callee 0x00511090: sub_00511090 (Auto-lifted identical-shape clone of 0x004BF020 (RegisterNamedKey_004BF020).)
+extern void ext_00511090(void* arg);
+// MSVCP80 basic_string(const char*) constructor, read through its IAT slot.
+extern int mem_00924FE4;
+
+// @name RegisterNamedKeysFromLiterals_00511190
+// @summary Ensures the static object is initialized, then builds two std::string temporaries from literal C strings at 0x00950AA8 and 0x009508AC and passes each to its registration routine (0x00510F90, 0x00511090).
+// Strings are 0x18-byte MSVCP80 std::string objects.
+void fn_00511190() {
+    // Ensure the global object is initialized (return value unused by the caller).
+    ext_0050F550();
+
+    // First temporary: std::string(literal at 0x00950AA8), then register it.
+    alignas(8) uint8_t s0[0x18] = {};
+    (*reinterpret_cast<void (**)(void*, const char*)>(&mem_00924FE4))(
+        static_cast<void*>(s0),
+        reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00950AA8u)));
+    ext_00510F90(static_cast<void*>(s0));
+
+    // Second temporary: std::string(literal at 0x009508AC), then register it.
+    alignas(8) uint8_t s1[0x18] = {};
+    (*reinterpret_cast<void (**)(void*, const char*)>(&mem_00924FE4))(
+        static_cast<void*>(s1),
+        reinterpret_cast<const char*>(static_cast<uintptr_t>(0x009508ACu)));
+    ext_00511090(static_cast<void*>(s1));
+}
+} // namespace lift_00511190
