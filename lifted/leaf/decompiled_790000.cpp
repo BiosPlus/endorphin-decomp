@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cstdint>
 #include <cstdarg>
+#include <cstring>
 
 // [0x0079DD30] sub_0079DD30 (32 bytes)
 namespace lift_0079DD30 {
@@ -1247,3 +1248,23 @@ void sub_0079B070(const char* prefix, const char* fmt, void* args) {
     fprintf_fn(mem_009251A8 + 0x40, reinterpret_cast<const char*>(0x00AAFC40));
 }
 } // namespace lift_0079B070
+
+// [0x00798F60]
+namespace lift_00798F60 {
+extern void ext_00798F10(uint32_t* slot, const void* src, uint32_t size);
+extern void ext_006C33C0(void* self, uint32_t index, uint32_t* out);
+extern uint32_t ext_00714AE0(void* self);
+
+// @name ReplaceGlobalString
+// @summary Replaces the global block in *slot with a copy of the NUL-terminated string str (strlen(str)+1 bytes).
+extern void fn_00798F60(uint32_t* slot, const char* str)
+{
+    // Metadata lists 0x006C33C0 / 0x00714AE0 as callees, but the asm never
+    // calls them; address-only references with no runtime effect.
+    (void)&ext_006C33C0;
+    (void)&ext_00714AE0;
+
+    uint32_t len = (uint32_t)std::strlen(str) + 1;
+    ext_00798F10(slot, str, len);
+}
+} // namespace lift_00798F60
