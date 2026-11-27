@@ -91292,6 +91292,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/clones/auto_clones_6C0000.cpp"
   },
+  "0x006C8F90": {
+    "name": "CopyHugeValueTo16Slots_006C8F90",
+    "signature": "void fn_006C8F90(void* self)",
+    "summary": "Copies the 8-byte value pointed to by the global _HUGE pointer into 16 consecutive 8-byte slots starting at mem_00B5D660.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9250": {
     "name": "Unknown::ReleaseChildAndTeardown",
     "class": "Unknown",

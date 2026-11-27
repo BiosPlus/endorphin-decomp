@@ -2523,3 +2523,22 @@ uint32_t __thiscall sub_006C9F80(void* self, uint32_t arg0) {
     return ext_006D03E0(self, 0x10, -1);
 }
 } // namespace lift_006C9F80
+
+// [0x006C8F90] sub_006C8F90 (278 bytes)
+namespace lift_006C8F90 {
+// Global holding a pointer to an 8-byte source value (MSVCR80 _HUGE, a double*).
+extern void* mem_00925284;
+// Destination block of 16 consecutive 8-byte slots.
+extern uint8_t mem_00B5D660[];
+
+// @name CopyHugeValueTo16Slots_006C8F90
+// @summary Copies the 8-byte value pointed to by the global _HUGE pointer into 16 consecutive 8-byte slots starting at mem_00B5D660.
+void fn_006C8F90(void* self) {
+    (void)self;
+    const uint8_t* src = static_cast<const uint8_t*>(mem_00925284);
+    uint8_t* dst = mem_00B5D660;
+    for (int i = 0; i < 16; ++i) {
+        std::memcpy(dst + i * 8, src, 8);
+    }
+}
+} // namespace lift_006C8F90
