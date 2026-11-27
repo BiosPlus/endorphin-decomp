@@ -27280,6 +27280,13 @@
     "summary": "Recursively traverses a node's child vector at +0x24 with an unused second argument",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x005679D0": {
+    "name": "traverseChildRange_005679D0",
+    "class": "UnknownClass",
+    "signature": "void fn_005679D0(void* self)",
+    "summary": "Walks a uint32 node array delimited by self+0x18 (begin) and self+0x1C (end), calling ext_00567210 on each entry with arg2 = 0.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00569440": {
     "name": "sub_00569440",
     "signature": "DWORD* __thiscall fn_00569440(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

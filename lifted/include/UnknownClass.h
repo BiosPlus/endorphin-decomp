@@ -53,11 +53,11 @@ struct UnknownClass_Fields {
     // +0x14  void**                   field_0x14  (evidence: 0x00517360) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    listHead  (evidence: 0x007B2E20, 0x007BD640) // CONFLICT: multiple definitions at +0x14
     // +0x18  float[]                  field_0x18  (evidence: 0x00610C60) // CONFLICT: multiple definitions at +0x18
-    // +0x18  uint32_t                 field_0x18  (evidence: 0x00526C70, 0x0052F7D0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x00526C70, 0x0052F7D0, 0x005679D0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void**                   field_0x18  (evidence: 0x00517360) // CONFLICT: multiple definitions at +0x18
     // +0x1C  std::basic_string<char>  cachedKey  (evidence: 0x0049F490) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x0078CBE0) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x004019B0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x004019B0, 0x005679D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x00526C70, 0x0052F7D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t[0x1C]            field_0x1c  (evidence: 0x00476530) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 flags  (evidence: 0x007BFD80) // CONFLICT: multiple definitions at +0x1C

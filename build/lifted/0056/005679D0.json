@@ -1,0 +1,28 @@
+{
+  "va": "0x005679D0",
+  "size": 95,
+  "orig_symbol": "sub_005679D0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "traverseChildRange_005679D0",
+  "class": "UnknownClass",
+  "signature": "void fn_005679D0(void* self)",
+  "summary": "Walks a uint32 node array delimited by self+0x18 (begin) and self+0x1C (end), calling ext_00567210 on each entry with arg2 = 0.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:48Z"
+}

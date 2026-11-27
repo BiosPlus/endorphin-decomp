@@ -690,3 +690,27 @@ void __thiscall fn_00567210(void* self, uint32_t node, uint32_t arg2) {
     }
 }
 } // namespace lift_00567210
+
+// [0x005679D0] sub_005679D0 (95 bytes)
+namespace lift_005679D0 {
+// Known callee 0x00567210: sub_00567210 (Recursively traverses a node's child vector at +0x24 with an unused second argument)
+extern void __thiscall ext_00567210(void* self, uint32_t node, uint32_t arg2);
+
+// @name traverseChildRange_005679D0
+// @class UnknownClass
+// @summary Walks a uint32 node array delimited by self+0x18 (begin) and self+0x1C (end), calling ext_00567210 on each entry with arg2 = 0.
+// @field UnknownClass +0x18 uint32_t field_0x18
+// @field UnknownClass +0x1C uint32_t field_0x1C
+extern int mem_00925134;
+
+void fn_005679D0(void* self) {
+    (void)&mem_00925134; // metadata only: original's _invalid_parameter_noinfo guard slot (bounds checks omitted)
+    uint32_t cur = lift_field<uint32_t>(self, 0x18);
+    const uint32_t end = lift_field<uint32_t>(self, 0x1C);
+    while (cur != end) {
+        const uint32_t node = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cur));
+        ext_00567210(self, node, 0);
+        cur += sizeof(uint32_t);
+    }
+}
+} // namespace lift_005679D0
