@@ -8979,6 +8979,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00470840": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine,float,getTimeZoomFactor,0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e",
+    "signature": "void* fn_00470840(void* out, void* holder)",
+    "summary": "Reads the RuntimeEngine pointer from the holder's first dword; throws if it is null, otherwise formats the engine's time zoom factor (via ext_00407700) into the caller's sret slot through ext_0046C390 and returns that slot.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004708A0": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, getTimeZoomFactor, 0\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e",

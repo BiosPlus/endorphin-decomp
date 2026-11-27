@@ -62538,3 +62538,41 @@ std::string* fn_0066F780(std::string* out, void* self) {
 }
 } // namespace lift_005D74A0
 } // namespace lift_0066F780
+
+// [0x00470840]
+namespace lift_00470840 {
+// Callee 0x00407700 (sub_00407700, 7 bytes): thiscall-style getter; receives the object pointer
+// loaded from the holder and returns a float (st0 in the original).
+extern float ext_00407700(void* self);
+
+// Callee 0x0046C390: formatFloatTrimmedStringWrapper. Forwards a float to formatFloatTrimmedString
+// using the caller-provided sret slot and returns that slot.
+extern void* ext_0046C390(void* out, float value);
+
+// Callee 0x0046C3C0: DerivedException::DerivedException. Constructs the exception object in place.
+extern void* ext_0046C3C0(void* self);
+
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo VA used by the throw path (0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<RuntimeEngine,float,getTimeZoomFactor,0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>
+// @summary Reads the RuntimeEngine pointer from the holder's first dword; throws if it is null, otherwise formats the engine's time zoom factor (via ext_00407700) into the caller's sret slot through ext_0046C390 and returns that slot.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_00470840(void* out, void* holder) {
+    void* engine = *static_cast<void* const*>(holder);
+    if (engine == nullptr) {
+        // Null target: build the exception object and throw it.
+        alignas(8) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return out;
+    }
+    float zoom = ext_00407700(engine);
+    ext_0046C390(out, zoom);
+    return out;
+}
+} // namespace lift_00470840
