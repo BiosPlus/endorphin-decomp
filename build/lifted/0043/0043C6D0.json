@@ -1,0 +1,22 @@
+{
+  "va": "0x0043C6D0",
+  "size": 531,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_79",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_79",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "void __thiscall fn_0043C6D0(void* self)",
+  "summary": "Allocates and registers nine view-element objects into the container at +0x64.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:06:02Z"
+}

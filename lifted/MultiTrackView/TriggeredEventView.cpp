@@ -196,3 +196,52 @@ void fn_0045DEB0(void* self) {
     invalidate(as_ptr(lift_field<uint32_t>(self, 0x20)), nullptr, 1);
 }
 } // namespace lift_0045DEB0
+
+// [0x0043C6D0]
+namespace lift_0043C6D0 {
+// @name MultiTrackView::TriggeredEventView::vfunc_79
+// @class MultiTrackView::TriggeredEventView
+// @summary Allocates and registers nine view-element objects into the container at +0x64.
+// @field MultiTrackView::TriggeredEventView +0x64 uint8_t field_0x64
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void __thiscall ext_0041C9A0(void* self, uint32_t index, void* item);
+extern void* __thiscall ext_00442990(void* self, void* arg1, void* arg2);
+extern void* __thiscall ext_00442B60(void* self, void* arg1, void* arg2);
+extern void* __thiscall ext_00442B80(void* self, void* arg1, void* arg2);
+extern void* __thiscall ext_00442BB0(void* self, void* arg1, void* arg2);
+extern void* __thiscall ext_00442BD0(void* self, void* arg1, void* arg2);
+extern void* __thiscall ext_00442C40(void* self, void* arg1, void* arg2);
+extern void* __thiscall ext_00443960(void* self, void* arg1, void* arg2);
+extern void* __thiscall ext_004436B0(void* self, void* arg1, void* arg2);
+extern void* __thiscall ext_00443700(void* self, void* arg1, void* arg2);
+
+void __thiscall fn_0043C6D0(void* self) {
+    void* container = reinterpret_cast<uint8_t*>(self) + 0x64;
+
+    using CtorFn = void* (__thiscall*)(void*, void*, void*);
+    struct Entry {
+        uint32_t size;
+        CtorFn ctor;
+    };
+
+    const Entry entries[] = {
+        {0x14, ext_00442990},
+        {0x0C, ext_00442B60},
+        {0x18, ext_00442B80},
+        {0x0C, ext_00442BB0},
+        {0x0C, ext_00442BD0},
+        {0x0C, ext_00442C40},
+        {0x38, ext_00443960},
+        {0x14, ext_004436B0},
+        {0x14, ext_00443700},
+    };
+
+    for (uint32_t i = 0; i < 9; ++i) {
+        void* mem = ext_006A5C62(entries[i].size);
+        void* obj = mem ? entries[i].ctor(mem, container, self) : nullptr;
+        ext_0041C9A0(container, i, obj);
+    }
+}
+} // namespace lift_0043C6D0
