@@ -1,0 +1,14 @@
+{
+  "va": "0x004D8860",
+  "size": 149,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "bool __stdcall fn_004D8860(void* arg1, void* arg2)",
+  "summary": "Evaluates a RigEventData::getUserRetargetRefFrame expression by resolving the target object and forwarding to its vfunc_42.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:09:11Z"
+}
