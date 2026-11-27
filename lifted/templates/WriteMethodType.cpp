@@ -7214,7 +7214,7 @@ extern DWORD mem_00B414AC;
 // @name ExprParser::WriteMethodType<World, float>::vfunc_40 (static-init guard, bind holder+0x04 to static accessor object)
 // @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>
 // @summary One-time guarded initializer: on first call, sets the guard bit, initializes the static accessor object at 0x00B413C4, then stores its address into holder+0x04.
-// @field ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}> +0x04 void* field_0x04
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
 void fn_00595770(void* holder) {
     (void)&mem_00B414B0;  // metadata-only RDATA ref; not accessed by the asm
     (void)&mem_00B414AC;
