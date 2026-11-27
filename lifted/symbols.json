@@ -33146,6 +33146,13 @@
     "summary": "Blend between the key at `key` and the following key (stride 0x14, value at +4) into `self`; returns `self`, or the key's value address when t is at/before the key or the key is the last one.",
     "lifted_path": "lifted/Interpolator/Linear.cpp"
   },
+  "0x00528820": {
+    "name": "Interpolator::Linear::vfunc_1",
+    "class": "Interpolator::Linear",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00528820( void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, float arg3)",
+    "summary": "Linearly interpolates between two keyframe transforms or returns the single keyframe if at the end.",
+    "lifted_path": "lifted/Interpolator/Linear.cpp"
+  },
   "0x00528AB0": {
     "name": "sub_00528AB0",
     "signature": "extern \"C\" void __fastcall fn_00528AB0(void* self)",
