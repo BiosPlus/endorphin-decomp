@@ -2627,3 +2627,37 @@ void __thiscall fn_0067B930(void* self, void* container) {
     ext_0046C0A0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x08)), reinterpret_cast<float*>(&slot));
 }
 } // namespace lift_0067B930
+
+// [0x006738D0] sub_006738D0 (138 bytes)
+namespace lift_006738D0 {
+// MSVCP80 std::string (MSVC 2005 layout) is 0x1C bytes; its copy-ctor and dtor are
+// imported through these IAT slots. They are referenced for metadata only.
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+// .rdata constant 0x0062822A referenced by the original asm; metadata-only.
+extern int mem_009241E0;
+
+// @name Unknown::initTwoStringsAndFlags
+// @class Unknown
+// @summary Copies two by-value std::string args into this+0x00 and this+0x1C, stores two dwords at +0x38/+0x40 and clears +0x3C; returns this.
+// @field Unknown +0x00 uint8_t[0x1C] m_str0 (std::string copy of arg a)
+// @field Unknown +0x1C uint8_t[0x1C] m_str1 (std::string copy of arg b)
+// @field Unknown +0x38 uint32_t field_0x38
+// @field Unknown +0x3C uint32_t field_0x3C
+// @field Unknown +0x40 uint32_t field_0x40
+void* fn_006738D0(void* self, const void* a, const void* b, uint32_t v1, uint32_t v2) {
+    // std::string copy-construct (MSVCP80 ctor via mem_00924FE0): the 0x1C-byte blob is copied.
+    (void)&mem_00924FE0;
+    std::memcpy(static_cast<uint8_t*>(self) + 0x00, a, 0x1C);
+    std::memcpy(static_cast<uint8_t*>(self) + 0x1C, b, 0x1C);
+
+    lift_field<uint32_t>(self, 0x38) = v2;
+    lift_field<uint32_t>(self, 0x3C) = 0;
+    lift_field<uint32_t>(self, 0x40) = v1;
+
+    // Callee-side destruction of the two by-value std::string args (MSVCP80 dtor via mem_00924FF4).
+    (void)&mem_00924FF4;
+    (void)&mem_009241E0;
+    return self;
+}
+} // namespace lift_006738D0

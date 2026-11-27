@@ -1,0 +1,46 @@
+{
+  "va": "0x006738D0",
+  "size": 138,
+  "orig_symbol": "sub_006738D0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Unknown::initTwoStringsAndFlags",
+  "class": "Unknown",
+  "signature": "void* fn_006738D0(void* self, const void* a, const void* b, uint32_t v1, uint32_t v2)",
+  "summary": "Copies two by-value std::string args into this+0x00 and this+0x1C, stores two dwords at +0x38/+0x40 and clears +0x3C; returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t[0x1C] m_str0 (std::string copy of arg",
+      "name": "a)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t[0x1C] m_str1 (std::string copy of arg",
+      "name": "b)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:56Z"
+}
