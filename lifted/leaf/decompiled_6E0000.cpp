@@ -2101,3 +2101,43 @@ extern bool fn_006E8BF0(void* self, int32_t index) {
     return true;
 }
 } // namespace lift_006E8BF0
+
+// [0x006E9500] sub_006E9500 (128 bytes)
+namespace lift_006E9500 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called as cdecl with one argument (8 = allocation size) and returns the new block.
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+// Known callee 0x006E8A20: Unknown::SetValueAndFlag (Stores a 32-bit argument at +0x00, sets the flag word at +0x04 to 1, and returns this.)
+extern void* ext_006E8A20(void* self, uint32_t value);
+
+// @name Unknown::findOrInsertValue_006E9500
+// @class Unknown
+// @summary Scans the pointer array at +0x74 (count at +0x64) for an entry whose first dword equals value; if found, bumps that entry's +4 counter, otherwise allocates a new 8-byte node, initializes it with value, and appends it to the array. Always returns 1.
+// @field Unknown +0x64 int32_t field_0x64
+// @field Unknown +0x74 uint8_t** field_0x74
+uint8_t fn_006E9500(void* self, uint32_t value) {
+    const int32_t count = lift_field<int32_t>(self, 0x64);
+    uint8_t** const base = lift_field<uint8_t**>(self, 0x74);
+
+    for (int32_t i = 0; i < count; ++i) {
+        uint8_t* entry = base[i];
+        if (*reinterpret_cast<uint32_t*>(entry) == value) {
+            uint32_t& counter = *reinterpret_cast<uint32_t*>(entry + 4);
+            ++counter;
+            return 1;
+        }
+    }
+
+    void* node = ext_006A5C62(8);
+    void* result = nullptr;
+    if (node != nullptr) {
+        result = ext_006E8A20(node, value);
+    }
+
+    void* elem = result;
+    ext_006D2170(static_cast<uint8_t*>(self) + 0x64, count, &elem);
+    return 1;
+}
+} // namespace lift_006E9500

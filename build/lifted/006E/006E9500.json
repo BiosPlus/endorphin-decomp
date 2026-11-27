@@ -1,0 +1,28 @@
+{
+  "va": "0x006E9500",
+  "size": 128,
+  "orig_symbol": "sub_006E9500",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::findOrInsertValue_006E9500",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006E9500(void* self, uint32_t value)",
+  "summary": "Scans the pointer array at +0x74 (count at +0x64) for an entry whose first dword equals value; if found, bumps that entry's +4 counter, otherwise allocates a new 8-byte node, initializes it with value, and appends it to the array. Always returns 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "int32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint8_t**",
+      "name": "field_0x74"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:00:39Z"
+}
