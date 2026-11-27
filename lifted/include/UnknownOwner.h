@@ -8,7 +8,7 @@
 // Recovered field layout for UnknownOwner:
 namespace lifted_layout {
 struct UnknownOwner_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00475CF0)
+    // +0x0   void*                    field_0x00  (evidence: 0x00475CF0, 0x005027E0)
     // +0x4   void* subObject (embedded object; first dword is its vtable pointer)  (evidence: 0x005D0530)
     // +0x1F1 uint8_t disabledFlag (non-zero: return without doing anything)  (evidence: 0x005D0530)
 };

@@ -3687,3 +3687,39 @@ void* fn_0050F1A0(void* self) {
     return self;
 }
 } // namespace lift_0050F1A0
+
+// [0x005027E0] sub_005027E0 (114 bytes)
+namespace lift_005027E0 {
+// Known callee 0x004FF940: getStaticSingleton_004FF940 (Lazily initializes and returns the static singleton object at 0x00AEB274.)
+extern void* ext_004FF940();
+// Callee 0x00475960 (sub_00475960): thiscall, ECX = receiver (*this), stack args = (slot ref, temp std::string*, flag).
+extern void ext_00475960(void* self, void** slot, void* str, uint32_t flag);
+// MSVCP80 basic_string ctor/dtor IAT slots (thiscall targets, invoked via pointer below).
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name UnknownOwner::dispatchWithSingletonAndName_005027E0
+// @class UnknownOwner
+// @summary Fetches the static singleton, builds a temporary std::string from the name argument, passes the singleton slot, string and flag 1 to ext_00475960 on this->field_0x00, then destroys the temporary.
+// @field UnknownOwner +0x00 void* field_0x00
+void fn_005027E0(void* self, const char* name) {
+    // SEH frame setup/teardown (fs:[0] push/pop) is compiler bookkeeping; omitted.
+
+    // Singleton pointer, held in a local slot that is also passed onward by reference.
+    void* slot = ext_004FF940();
+
+    // Temporary MSVC std::string (0x1C bytes) constructed from the name argument.
+    alignas(8) unsigned char tmpStr[0x1C];
+    using StrCtor = void (*)(void* self, const char* s);
+    using StrDtor = void (*)(void* self);
+    auto strCtor = reinterpret_cast<StrCtor>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE4)));
+    auto strDtor = reinterpret_cast<StrDtor>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    strCtor(tmpStr, name);
+
+    // Receiver = *(void**)this (original: mov ecx, [esi]).
+    void* receiver = lift_field<void*>(self, 0);
+    ext_00475960(receiver, &slot, tmpStr, 1);
+
+    strDtor(tmpStr);
+}
+} // namespace lift_005027E0

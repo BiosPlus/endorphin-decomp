@@ -27862,6 +27862,13 @@
     "summary": "Fetches the singleton via ext_004FF8E0, builds a temporary std::string from the argument, and dispatches to ext_00475960 on this-\u003e[0] with the temporary, the singleton slot, and flag 1.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x005027E0": {
+    "name": "UnknownOwner::dispatchWithSingletonAndName_005027E0",
+    "class": "UnknownOwner",
+    "signature": "void fn_005027E0(void* self, const char* name)",
+    "summary": "Fetches the static singleton, builds a temporary std::string from the name argument, passes the singleton slot, string and flag 1 to ext_00475960 on this-\u003efield_0x00, then destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503A10": {
     "name": "Evaluator::vfunc_1",
     "class": "Evaluator",
