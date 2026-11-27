@@ -11690,6 +11690,12 @@
     "summary": "Compares a dereferenced string pointer with the string value extracted from arg2.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497800": {
+    "name": "formatFloatTrimmedStringSlot",
+    "signature": "std::string* fn_00497800(std::string* out, float value)",
+    "summary": "Formats a float into the caller-provided std::string slot and returns that slot.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00497830": {
     "name": "sub_00497830",
     "signature": "void* fn_00497830(void* out_str, uint8_t flag)",

@@ -1950,3 +1950,16 @@ extern void* __thiscall fn_00497530(void* self, float a1, float a2, float a3, fl
     return self;
 }
 } // namespace lift_00497530
+
+// [0x00497800] sub_00497800 (36 bytes)
+namespace lift_00497800 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+std::string* ext_0046C390(std::string* out, float value);
+
+// @name formatFloatTrimmedStringSlot
+// @summary Formats a float into the caller-provided std::string slot and returns that slot.
+std::string* fn_00497800(std::string* out, float value) {
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_00497800

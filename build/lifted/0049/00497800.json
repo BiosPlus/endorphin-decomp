@@ -1,0 +1,13 @@
+{
+  "va": "0x00497800",
+  "size": 36,
+  "orig_symbol": "sub_00497800",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "formatFloatTrimmedStringSlot",
+  "signature": "std::string* fn_00497800(std::string* out, float value)",
+  "summary": "Formats a float into the caller-provided std::string slot and returns that slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:29Z"
+}
