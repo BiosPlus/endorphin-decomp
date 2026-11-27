@@ -1,0 +1,13 @@
+{
+  "va": "0x0079B070",
+  "size": 100,
+  "orig_symbol": "sub_0079B070",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "logErrorV",
+  "signature": "void sub_0079B070(const char* prefix, const char* fmt, void* args)",
+  "summary": "Logs an optional prefix, formatted message via vfprintf, and trailing newline to stderr",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:03:30Z"
+}

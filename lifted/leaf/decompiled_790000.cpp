@@ -1228,3 +1228,22 @@ void fn_0079B0E0(const char* prefix, const char* fmt, va_list args) {
     fprintf_p(stderr_stream, mem_00AAFC40);
 }
 } // namespace lift_0079B0E0
+
+// [0x0079B070]
+namespace lift_0079B070 {
+// @name logErrorV
+// @summary Logs an optional prefix, formatted message via vfprintf, and trailing newline to stderr
+extern int (*mem_0092525C)(void* stream, const char* fmt, ...);
+extern int (*mem_009251A4)(void* stream, const char* fmt, void* args);
+extern uint8_t* mem_009251A8;
+
+void sub_0079B070(const char* prefix, const char* fmt, void* args) {
+    auto fprintf_fn = mem_0092525C;
+    if (prefix != nullptr) {
+        fprintf_fn(mem_009251A8 + 0x40, reinterpret_cast<const char*>(0x00AAFC50), prefix);
+    }
+    fprintf_fn(mem_009251A8 + 0x40, reinterpret_cast<const char*>(0x00AAFC44));
+    mem_009251A4(mem_009251A8 + 0x40, fmt, args);
+    fprintf_fn(mem_009251A8 + 0x40, reinterpret_cast<const char*>(0x00AAFC40));
+}
+} // namespace lift_0079B070
