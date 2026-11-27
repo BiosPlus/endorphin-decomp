@@ -2039,10 +2039,10 @@ extern void ext_006A5FC2();
 // @class Unknown
 // @summary Constructor body (thiscall, ret 8): calls MFC80 ord_354(0x256, a2), installs vtables at +0x00, +0x78 and +0xCC (initialising the +0x78 and +0xCC sub-objects via MFC80 ord_572), stores a1 at +0x74, returns this.
 // @field Unknown +0x00 uint32_t field_0x00
-// @field Unknown +0x74 uint32_t field_0x74
+// @field Unknown +0x74 void* field_0x74
 // @field Unknown +0x78 uint32_t field_0x78
 // @field Unknown +0xCC uint32_t field_0xCC
-void* fn_004624C0(void* self, uint32_t a1, uint32_t a2) {
+void* fn_004624C0(void* self, void* a1, uint32_t a2) {
     // ord_354 (stdcall-style, 2 stack args: 0x256, a2). Return value unused.
     reinterpret_cast<void (__stdcall*)(uint32_t, uint32_t)>(&ext_006A5FC2)(0x256u, a2);
 
@@ -2060,7 +2060,7 @@ void* fn_004624C0(void* self, uint32_t a1, uint32_t a2) {
     call_ord_572(subCC);
     lift_field<uint32_t>(self, 0xCC) = 0x9287e4u;
 
-    lift_field<uint32_t>(self, 0x74) = a1;
+    lift_field<void*>(self, 0x74) = a1;
     return self;
 }
 } // namespace lift_004624C0
