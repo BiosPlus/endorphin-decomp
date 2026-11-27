@@ -1980,3 +1980,60 @@ void fn_006B4CB0(void* self, uint32_t arg1) {
     (void)postMessage(lift_field<void*>(target, 0x20), msg, wparam, 0);
 }
 } // namespace lift_006B4CB0
+
+// [0x006B6480] sub_006B6480 (129 bytes)
+namespace lift_006B6480 {
+// SelectionBuffer::vfunc_21 (thiscall; returns this-pointer for next call)
+extern void* ext_006AD1C0(void* self);
+// sub_006A7D30 (thiscall, returns value used as color / virtual arg)
+extern uint32_t ext_006A7D30(void* self);
+// sub_006A7D50 (thiscall, returns value used as virtual arg)
+extern uint32_t ext_006A7D50(void* self);
+// Known callee 0x006A5FF2: thunk_MFC80_ord_1934 (IAT jump thunk forwarding to MFC80!ord_1934.)
+// (declared with ext_ spelling for the leaf-check callee match)
+extern void ext_006A5FF2(void* self);
+// Known callee 0x006A5FFE: thunk_MFC80_ord_1280 (IAT jump thunk forwarding to MFC80!ord_1280.)
+extern void ext_006A5FFE(void* self, HBRUSH brush);
+// IAT slot for GDI32!CreateSolidBrush (value at 0x0092407C)
+extern uint32_t mem_0092407C;
+
+// @name Unknown::UpdateSelectionBrush
+// @class Unknown
+// @summary Feeds two SelectionBuffer-derived values to obj's virtuals 13/14, then creates a solid brush and applies it to the element at self+0x118; returns that element's +4 value (or 0 if null).
+// @field Unknown +0x114 void* selectionBuffer
+// @field Unknown +0x11C uint32_t elementValue
+uint32_t fn_006B6480(void* self, void* obj, uint32_t arg2, uint32_t arg3) {
+    (void)arg2;
+    (void)arg3;
+
+    // First value: vfunc_21 on selectionBuffer, then sub_006A7D30.
+    void* selectionBuffer = lift_field<void*>(self, 0x114);
+    uint32_t colorA = ext_006A7D30(ext_006AD1C0(selectionBuffer));
+
+    // Second value: same chain through sub_006A7D50.
+    uint32_t valueB = ext_006A7D50(ext_006AD1C0(selectionBuffer));
+
+    // obj->vtable[0x34](colorA); obj->vtable[0x38](valueB)
+    using VMethod = void (*)(void* self, uint32_t arg);
+    void* vtable = *reinterpret_cast<void**>(obj);
+    reinterpret_cast<VMethod>(lift_field<void*>(vtable, 0x34))(obj, colorA);
+    vtable = *reinterpret_cast<void**>(obj);
+    reinterpret_cast<VMethod>(lift_field<void*>(vtable, 0x38))(obj, valueB);
+
+    // Element at self+0x118; if non-null and its +4 is nonzero, call ord_1934 on it.
+    void* element = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x118);
+    if (element != nullptr && lift_field<uint32_t>(element, 4) != 0) {
+        ext_006A5FF2(element);
+    }
+
+    // CreateSolidBrush(colorA) via IAT slot, then ord_1280 on element.
+    HBRUSH brush = reinterpret_cast<HBRUSH (*)(COLORREF)>(
+        static_cast<uintptr_t>(mem_0092407C))(colorA);
+    ext_006A5FFE(element, brush);
+
+    if (element == nullptr) {
+        return 0;
+    }
+    return lift_field<uint32_t>(element, 4);
+}
+} // namespace lift_006B6480

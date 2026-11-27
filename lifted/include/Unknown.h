@@ -1401,11 +1401,13 @@ struct Unknown_Fields {
     // +0x110 uint32_t                 field_0x110  (evidence: 0x0077FFD0) // CONFLICT: multiple definitions at +0x110
     // +0x110 void*                    field_0x110  (evidence: 0x004352B0) // CONFLICT: multiple definitions at +0x110
     // +0x114 uint32_t                 field_0x114  (evidence: 0x0077FFD0) // CONFLICT: multiple definitions at +0x114
+    // +0x114 void*                    selectionBuffer  (evidence: 0x006B6480) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    sub114  (evidence: 0x006305A0) // CONFLICT: multiple definitions at +0x114
     // +0x114 void*                    vfptr_embedded  (evidence: 0x0041B480) // CONFLICT: multiple definitions at +0x114
     // +0x118 double                   field_0x118  (evidence: 0x0043CA30) // CONFLICT: multiple definitions at +0x118
     // +0x118 uint32_t                 field_0x118  (evidence: 0x0077FFD0) // CONFLICT: multiple definitions at +0x118
     // +0x118 uint8_t                  field_0x118  (evidence: 0x006C2C60) // CONFLICT: multiple definitions at +0x118
+    // +0x11C uint32_t                 elementValue  (evidence: 0x006B6480) // CONFLICT: multiple definitions at +0x11C
     // +0x11C uint32_t                 field_0x11c  (evidence: 0x0077FFD0) // CONFLICT: multiple definitions at +0x11C
     // +0x11C void*                    field_0x11c  (evidence: 0x00434340) // CONFLICT: multiple definitions at +0x11C
     // +0x120 DWORD                    field_0x120  (evidence: 0x004584C0, 0x006BA780) // CONFLICT: multiple definitions at +0x120
