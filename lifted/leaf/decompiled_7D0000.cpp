@@ -1400,3 +1400,47 @@ void fn_007D8600(void* self, float a, float b, float c) {
     }
 }
 } // namespace lift_007D8600
+
+// [0x007DEC00] sub_007DEC00 (124 bytes)
+namespace lift_007DEC00 {
+extern double mem_00993830; // .rdata double -1.0
+
+// @name negateAndSwapRecords
+// @summary Negates self's float triple at +0x10..+0x18; for each record in the array at self+0x04 (stride 0x28, count at self+0x0c), swaps dwords +0x20/+0x24, rewrites the word at +0x1c as (lo<<8)+signed(hi), and negates floats +0x0c/+0x10/+0x14.
+// @field Object +0x04 void* recordBase
+// @field Object +0x0c int32_t recordCount
+// @field Object +0x10 float field_0x10
+// @field Object +0x14 float field_0x14
+// @field Object +0x18 float field_0x18
+// self arrives in EDX (ECX unused), so use __fastcall with a dummy ECX parameter.
+extern void __fastcall fn_007DEC00(int ecx_unused, void* self) {
+    (void)ecx_unused;
+    // Negate by multiplying with the -1.0 constant (exact for float).
+    lift_field<float>(self, 0x10) = static_cast<float>(lift_field<float>(self, 0x10) * -1.0);
+    lift_field<float>(self, 0x14) = static_cast<float>(lift_field<float>(self, 0x14) * -1.0);
+    lift_field<float>(self, 0x18) = static_cast<float>(lift_field<float>(self, 0x18) * -1.0);
+
+    // The original re-reads the array base and count from self on every iteration.
+    for (int32_t i = 0; i < lift_field<int32_t>(self, 0x0c); ++i) {
+        uint8_t* base = lift_field<uint8_t*>(self, 0x04);
+        uint8_t* rec = base + static_cast<ptrdiff_t>(i) * 0x28;
+
+        // Swap the two dwords at +0x20 and +0x24.
+        uint32_t lo = lift_field<uint32_t>(rec, 0x20);
+        uint32_t hi = lift_field<uint32_t>(rec, 0x24);
+        lift_field<uint32_t>(rec, 0x20) = hi;
+        lift_field<uint32_t>(rec, 0x24) = lo;
+
+        // Word at +0x1c: low byte moves to high byte; signed high byte added to the result (16-bit wrap).
+        uint16_t w = lift_field<uint16_t>(rec, 0x1c);
+        uint16_t shifted = static_cast<uint16_t>((w & 0xFFu) << 8);
+        uint16_t sarHi = static_cast<uint16_t>(static_cast<int16_t>(static_cast<int16_t>(w) >> 8));
+        lift_field<uint16_t>(rec, 0x1c) = static_cast<uint16_t>(shifted + sarHi);
+
+        // Negate floats at +0x0c, +0x10, +0x14.
+        lift_field<float>(rec, 0x0c) = static_cast<float>(lift_field<float>(rec, 0x0c) * -1.0);
+        lift_field<float>(rec, 0x10) = static_cast<float>(lift_field<float>(rec, 0x10) * -1.0);
+        lift_field<float>(rec, 0x14) = static_cast<float>(lift_field<float>(rec, 0x14) * -1.0);
+    }
+}
+} // namespace lift_007DEC00

@@ -1,0 +1,45 @@
+{
+  "va": "0x007DEC00",
+  "size": 124,
+  "orig_symbol": "sub_007DEC00",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "negateAndSwapRecords",
+  "signature": "extern \"C\" void __fastcall fn_007DEC00(int ecx_unused, void* self)",
+  "summary": "Negates self's float triple at +0x10..+0x18; for each record in the array at self+0x04 (stride 0x28, count at self+0x0c), swaps dwords +0x20/+0x24, rewrites the word at +0x1c as (lo\u003c\u003c8)+signed(hi), and negates floats +0x0c/+0x10/+0x14.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "recordBase"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "recordCount"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:52:38Z"
+}

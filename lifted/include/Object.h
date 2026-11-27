@@ -25,6 +25,7 @@ struct Object_Fields {
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00419990, 0x00602EC0, 0x007D4800, 0x007D8470, 0x007DEC80) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00810410) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 length  (evidence: 0x0080FBC0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    recordBase  (evidence: 0x007DEC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (flags dword at target+0x4)  (evidence: 0x00810410) // CONFLICT: multiple definitions at +0x4
     // +0x8   float                    field_0x08  (evidence: 0x00533FB0) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  field_0x08  (evidence: 0x00533F10) // CONFLICT: multiple definitions at +0x8
@@ -38,15 +39,16 @@ struct Object_Fields {
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00602EC0, 0x00622B40, 0x0062CD30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x0071C520) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    geometry  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005B3B70, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0xC
+    // +0xC   int32_t                  recordCount  (evidence: 0x007DEC00) // CONFLICT: multiple definitions at +0xC
     // +0x10  BYTE                     enabledFlag  (evidence: 0x00468730, 0x00468A30) // CONFLICT: multiple definitions at +0x10
-    // +0x10  float                    field_0x10  (evidence: 0x00533FB0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  float                    field_0x10  (evidence: 0x00533FB0, 0x007DEC00) // CONFLICT: multiple definitions at +0x10
     // +0x10  float[]                  field_0x10  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0x10
     // +0x10  int32_t                  field_0x10  (evidence: 0x00533F10) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 field_0x10  (evidence: 0x004B08A0, 0x00602EC0, 0x00622B40, 0x0062CD30) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    child  (evidence: 0x00468730, 0x00468A30) // CONFLICT: multiple definitions at +0x14
-    // +0x14  float                    field_0x14  (evidence: 0x00533FB0, 0x00602EC0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  float                    field_0x14  (evidence: 0x00533FB0, 0x00602EC0, 0x007DEC00) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 field_0x14  (evidence: 0x00790DA0, 0x0079ADA0, 0x0079DCE0, 0x007C2E50, 0x00859330, 0x0085C260) // CONFLICT: multiple definitions at +0x14
-    // +0x18  float                    field_0x18  (evidence: 0x00602EC0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  float                    field_0x18  (evidence: 0x00602EC0, 0x007DEC00) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18  (evidence: 0x007D8470) // CONFLICT: multiple definitions at +0x18
     // +0x1C  float                    field_0x1C  (evidence: 0x007C2E50) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x006ACFD0, 0x006AD150, 0x007D8470) // CONFLICT: multiple definitions at +0x1C

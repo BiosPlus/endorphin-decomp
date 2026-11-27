@@ -77941,6 +77941,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007DD020 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x007DEC00": {
+    "name": "negateAndSwapRecords",
+    "signature": "extern \"C\" void __fastcall fn_007DEC00(int ecx_unused, void* self)",
+    "summary": "Negates self's float triple at +0x10..+0x18; for each record in the array at self+0x04 (stride 0x28, count at self+0x0c), swaps dwords +0x20/+0x24, rewrites the word at +0x1c as (lo\u003c\u003c8)+signed(hi), and negates floats +0x0c/+0x10/+0x14.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DEC80": {
     "name": "sub_007D8850",
     "class": "// @summary If the object's +0x04 field is non-zero, forwards it with the +0x1c field and a constant to ext_007D5950.",
