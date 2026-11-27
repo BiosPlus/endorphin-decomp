@@ -247,3 +247,31 @@ bool fn_005CCF60(void* self, void* arg1, uint32_t value) {
 }
 } // namespace lift_005CCE20
 } // namespace lift_005CCF60
+
+// [0x005CC6C0] NMData::FluidObjectData::vfunc_16_off_C (134 bytes)
+namespace lift_005CC6C0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762, operator new(size)).
+extern void* __cdecl ext_006A5C62(size_t size);
+// Callee 0x005CC5C0 (sub_005CC5C0, 131B): thiscall on the freshly allocated object, one stack arg (base-adjusted this).
+extern void* __thiscall ext_005CC5C0(void* self, void* base);
+// Callee 0x005BF510 (sub_005BF510, 93B): thiscall on arg1, one stack arg (constructed object).
+extern void __thiscall ext_005BF510(void* self, void* obj);
+// Callee 0x005BF570 (sub_005BF570, 59B): thiscall on this->field_0x158, one stack arg (base-adjusted this).
+extern void __thiscall ext_005BF570(void* self, void* base);
+
+// @name NMData::FluidObjectData::vfunc_16_off_C
+// @class NMData::FluidObjectData
+// @summary Allocates a 0x19c-byte object, constructs it against the base-adjusted this, hands it to arg1 and re-registers this->field_0x158; returns the constructed object (or null if allocation failed).
+// @field NMData::FluidObjectData +0x158 void* field_0x158
+void* __thiscall fn_005CC6C0(void* self, void* arg1) {
+    void* base = reinterpret_cast<uint8_t*>(self) - 0xc;
+    void* result = nullptr;
+    void* obj = ext_006A5C62(0x19c);
+    if (obj != nullptr) {
+        result = ext_005CC5C0(obj, base);
+    }
+    ext_005BF510(arg1, result);
+    ext_005BF570(lift_field<void*>(self, 0x158), base);
+    return result;
+}
+} // namespace lift_005CC6C0

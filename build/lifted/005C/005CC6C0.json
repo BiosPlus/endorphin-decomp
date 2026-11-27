@@ -1,0 +1,22 @@
+{
+  "va": "0x005CC6C0",
+  "size": 134,
+  "orig_symbol": "NMData::FluidObjectData::vfunc_16_off_C",
+  "src_path": "src/NMData/FluidObjectData.cpp",
+  "lifted_path": "lifted/NMData/FluidObjectData.cpp",
+  "name": "NMData::FluidObjectData::vfunc_16_off_C",
+  "class": "NMData::FluidObjectData",
+  "signature": "void* __thiscall fn_005CC6C0(void* self, void* arg1)",
+  "summary": "Allocates a 0x19c-byte object, constructs it against the base-adjusted this, hands it to arg1 and re-registers this-\u003efield_0x158; returns the constructed object (or null if allocation failed).",
+  "fields": [
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:48:45Z"
+}

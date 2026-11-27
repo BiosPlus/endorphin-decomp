@@ -48217,6 +48217,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/FluidObjectData.cpp"
   },
+  "0x005CC6C0": {
+    "name": "NMData::FluidObjectData::vfunc_16_off_C",
+    "class": "NMData::FluidObjectData",
+    "signature": "void* __thiscall fn_005CC6C0(void* self, void* arg1)",
+    "summary": "Allocates a 0x19c-byte object, constructs it against the base-adjusted this, hands it to arg1 and re-registers this-\u003efield_0x158; returns the constructed object (or null if allocation failed).",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
+  },
   "0x005CC750": {
     "name": "sub_005CC750",
     "signature": "DWORD ext_005CBF80();  // ConstructOnce_0046F580 DWORD* fn_005CC750(DWORD* dst, DWORD value)",
