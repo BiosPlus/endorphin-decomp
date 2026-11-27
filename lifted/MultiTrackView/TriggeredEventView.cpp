@@ -245,3 +245,70 @@ void __thiscall fn_0043C6D0(void* self) {
     }
 }
 } // namespace lift_0043C6D0
+
+// [0x0045F0A0] MultiTrackView::TriggeredEventView::vfunc_3_off_24C (176 bytes)
+namespace lift_0045F0A0 {
+// Callees (differentially tested against endorphin.exe; do not inline).
+// MSVC thiscall: ecx = object, remaining args on the stack. Portable form passes `this` first.
+// sub_0045E920: this-adjustor thunk (+0x258) tail-calling sub_0045E700; returns an object pointer.
+extern void* ext_0045E920(void* self, void* arg);
+// sub_0045E9D0: 132-byte helper taking one stack arg.
+extern void ext_0045E9D0(void* self, void* arg);
+// eraseInt32Range: erases [first,last) from the int32 buffer at self; writes 2-pointer result to out.
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// GetPointerChainDword10: returns the DWORD at +0x10 of the pointer at self+0x44, or 0 if null.
+extern uint32_t ext_004407B0(void* self);
+// sub_00440730: 49-byte helper taking only this.
+extern void ext_00440730(void* self);
+// MSVCR80!__RTDynamicCast via IAT thunk: (in, vfDelta, srcType, targetType, isReference).
+extern void* ext_006A6E9E(uintptr_t in, int32_t vf_delta, const void* src_type, const void* target_type, int32_t is_reference);
+
+// Data
+extern uint32_t mem_00925134;  // IAT slot: MSVCR80!_invalid_parameter_noinfo
+extern int mem_00A2E968;   // .data u32 0x009908FC (RTTI type descriptor slot)
+extern int mem_00A2E99C;   // .data u32 0x009908FC (RTTI type descriptor slot)
+
+// @name MultiTrackView::TriggeredEventView::vfunc_3_off_24C
+// @class MultiTrackView::TriggeredEventView
+// @summary Calls a virtual on arg, re-registers arg with the object at this-0x24C, clears the int32 range at this-0x1BC, and if the thunk returns a non-null object, RTTI-casts a value from it and runs two helpers.
+// @field MultiTrackView::TriggeredEventView +0xFFFFFFFC void* field_0xFFFFFFFC
+// @field MultiTrackView::TriggeredEventView +0x1B4 int32_t* field_0x1B4
+// @field MultiTrackView::TriggeredEventView +0x1B8 int32_t* field_0x1B8
+void fn_0045F0A0(void* self, void* arg) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    // arg->vtable[0xFC / 4]() — result discarded.
+    void** arg_vtable = lift_field<void**>(arg, 0);
+    reinterpret_cast<void (*)(void*)>(arg_vtable[63])(arg);
+
+    // ebp = thunk(this - 0x24C, arg)
+    void* found = ext_0045E920(base - 0x24C, arg);
+
+    // Range vector embedded at this - 0x1BC: begin at +4, end at +8.
+    uint8_t* range = base - 0x1BC;
+    int32_t* begin = lift_field<int32_t*>(range, 4);
+    int32_t* end = lift_field<int32_t*>(range, 8);
+    if (begin > end) {
+        // Range precondition failed: MSVCR80!_invalid_parameter_noinfo (IAT slot), no return value.
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    }
+
+    // eraseInt32Range(range, out, range, begin, range, end) — clears [begin, end).
+    void* out[2] = {nullptr, nullptr};
+    ext_00596660(range, out, range, begin, range, end);
+
+    if (found != nullptr) {
+        // RTTI cast of the DWORD from the chain lookup on `found`.
+        const uint32_t value = ext_004407B0(found);
+        ext_006A6E9E(static_cast<uintptr_t>(value), 0,
+                     &mem_00A2E99C, &mem_00A2E968, 0);
+        ext_00440730(found);
+        ext_0045E9D0(base + 0x0C, arg);
+    }
+
+    // Tail: (this - 4)->vtable[1](this - 4) — virtual call on the sub-object at this-4.
+    uint8_t* sub = base - 4;
+    void** sub_vtable = lift_field<void**>(sub, 0);
+    reinterpret_cast<void (*)(void*)>(sub_vtable[1])(sub);
+}
+} // namespace lift_0045F0A0

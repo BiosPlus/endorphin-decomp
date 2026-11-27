@@ -1,0 +1,34 @@
+{
+  "va": "0x0045F0A0",
+  "size": 176,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_3_off_24C",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_3_off_24C",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "extern \"C\" int mem_00A2E968;   // .data u32 0x009908FC (RTTI type descriptor slot) extern \"C\" int mem_00A2E99C;   // .data u32 0x009908FC (RTTI type descriptor slot) void fn_0045F0A0(void* self, void* arg)",
+  "summary": "Calls a virtual on arg, re-registers arg with the object at this-0x24C, clears the int32 range at this-0x1BC, and if the thunk returns a non-null object, RTTI-casts a value from it and runs two helpers.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFFFC",
+      "type": "void*",
+      "name": "field_0xFFFFFFFC"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x1B4",
+      "type": "int32_t*",
+      "name": "field_0x1B4"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x1B8",
+      "type": "int32_t*",
+      "name": "field_0x1B8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:06:39Z"
+}

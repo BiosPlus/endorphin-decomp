@@ -8141,6 +8141,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x258 and tail-calls sub_0045E690.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x0045F0A0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_3_off_24C",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "extern \"C\" int mem_00A2E968;   // .data u32 0x009908FC (RTTI type descriptor slot) extern \"C\" int mem_00A2E99C;   // .data u32 0x009908FC (RTTI type descriptor slot) void fn_0045F0A0(void* self, void* arg)",
+    "summary": "Calls a virtual on arg, re-registers arg with the object at this-0x24C, clears the int32 range at this-0x1BC, and if the thunk returns a non-null object, RTTI-casts a value from it and runs two helpers.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045F4B0": {
     "name": "InitDualTreeAndPair",
     "signature": "void* __thiscall fn_0045F4B0(void* self, uint32_t arg0, uint32_t arg1)",
@@ -34730,6 +34737,13 @@
     "signature": "extern \"C\" int mem_00925134;   // IAT slot holding _invalid_parameter_noinfo (MSVCR80) static inline uint32_t load32(uint32_t base, uint32_t off)",
     "summary": "Thiscall indexed accessor: validates the block map and returns the element address at index (64-byte blocks); calls the CRT invalid-parameter handler on bad state or out-of-range index.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
+  "0x0053E2E0": {
+    "name": "Primitives::Mesh::vfunc_28",
+    "class": "Primitives::Mesh",
+    "signature": "void* __thiscall ext_005B11F0(void* self); // OglRenderer::vfunc_118 extern void (__stdcall *mem_00925418)(uint32_t cap);            // glEnable extern void (__stdcall *mem_00925414)();                        // glPushMatrix extern void (__stdcall *mem_009254B0)(float x, float y, float z); // glScalef extern void (__stdcall *mem_00925490)(uint32_t mode);           // glBegin extern void (__stdcall *mem_0092549C)(const float* v);          // glNormal3fv extern void (__stdcall *mem_009254D4)(const float* v);          // glTexCoord2fv extern void (__stdcall *mem_00925498)(const float* v);          // glVertex3fv extern void (__stdcall *mem_00925488)();                        // glEnd extern void (__stdcall *mem_00925404)();                        // glPopMatrix extern void (__stdcall *mem_00925438)(uint32_t cap);            // glDisable extern void (__cdecl *mem_00925134)();                           // _invalid_parameter_noinfo } namespace",
+    "summary": "Renders the mesh polygons using OpenGL immediate mode with normals, texture coordinates, and vertices.",
+    "lifted_path": "lifted/Primitives/Mesh.cpp"
   },
   "0x0053F410": {
     "name": "Primitives::Animation::vfunc_28",
