@@ -1094,3 +1094,25 @@ void fn_0066D5B0(void* self) {
     lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B596C0));
 }
 } // namespace lift_0066D5B0
+
+// [0x0066DFD0] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &public: void __thiscall NM::Vector3::radArbitraryRotateTSA(class NM::Vector3 const &, float)>::vfunc_40 (122 bytes)
+namespace lift_0066DFD0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack argument; runs ext_00672000 on self, then stores the argument into the first DWORD of self.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B5975C; // init-guard flags (bit 0 = initialized/in-progress)
+extern DWORD mem_00B59758; // function-local static object storage (first DWORD = vtable 0x0098AFD4)
+
+// @name ExprParser::Method2Type<Vector3,radArbitraryRotateTSA>::vfunc_40
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &public: void __thiscall NM::Vector3::radArbitraryRotateTSA(class NM::Vector3 const &, float)>
+// @summary One-time guarded init of the static object at mem_00B59758 (vtable 0x0098AFD4, via ext_0067A670), then stores its address into holder+0x04.
+// @field ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &public: void __thiscall NM::Vector3::radArbitraryRotateTSA(class NM::Vector3 const &, float)> +0x04 DWORD field_0x04
+// __stdcall-style: one stack argument (holder), callee cleans up 4 bytes. ECX is not used.
+void fn_0066DFD0(void* holder) {
+    if ((mem_00B5975C & 1u) == 0) {
+        mem_00B5975C |= 1u;
+        ext_0067A670(&mem_00B59758, 0u);
+        mem_00B59758 = 0x0098AFD4u;
+    }
+    lift_field<DWORD>(holder, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B59758));
+}
+} // namespace lift_0066DFD0

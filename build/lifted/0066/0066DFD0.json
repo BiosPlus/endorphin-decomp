@@ -1,0 +1,14 @@
+{
+  "va": "0x0066DFD0",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026public: void __thiscall NM::Vector3::radArbitraryRotateTSA(class NM::Vector3 const \u0026, float)\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type\u003cVector3,radArbitraryRotateTSA\u003e::vfunc_40",
+  "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026public: void __thiscall NM::Vector3::radArbitraryRotateTSA(class NM::Vector3 const \u0026, float)\u003e",
+  "signature": "extern DWORD mem_00B5975C; // init-guard flags (bit 0 = initialized/in-progress) extern DWORD mem_00B59758; // function-local static object storage (first DWORD = vtable 0x0098AFD4) void fn_0066DFD0(void* holder)",
+  "summary": "One-time guarded init of the static object at mem_00B59758 (vtable 0x0098AFD4, via ext_0067A670), then stores its address into holder+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:48:26Z"
+}
