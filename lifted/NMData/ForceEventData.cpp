@@ -774,3 +774,60 @@ void __thiscall fn_004C6BF0(void* self, void* arg0) {
     ext_004026E0(vec);
 }
 } // namespace lift_004C6BF0
+
+// [0x004C6990]
+namespace lift_004C6990 {
+// @name NMData::ForceEventData::vfunc_21
+// @class NMData::ForceEventData
+// @summary Loads ForceEventData properties (float, vector, int, and sub-object) from an XML/data node.
+// @field NMData::ForceEventData +0x15C int32_t field_0x15c
+// @field NMData::ForceEventData +0x16C uint8_t field_0x16c
+// @field NMData::ForceEventData +0x180 float field_0x180
+
+extern void __thiscall ext_004C24C0(void* self, void* node);
+extern float __cdecl ext_0067EE80(void* node, uint32_t param1, uint32_t param2);
+extern uint32_t __thiscall ext_0063F530(void* node, uint32_t key, uint32_t arg1, uint32_t arg2);
+extern void __cdecl ext_0067EFD0(void* out_vec, uint32_t val);
+extern void __thiscall ext_004C5120(void* self, void* vec);
+extern uint32_t __thiscall ext_0063EFE0(void* node, uint32_t key);
+extern void __cdecl ext_0053F5F0(int32_t* out, uint32_t* prop);
+extern void __cdecl ext_0049F540(uint32_t val, void* out_field, uint32_t key, uint32_t arg3);
+
+extern uint32_t mem_00A9F8E4;
+extern uint32_t mem_00A9F4D8;
+extern uint32_t mem_00A9EF38;
+extern uint32_t mem_00A9F680;
+extern uint32_t mem_00A9F0C0;
+extern uint32_t mem_00A9F0C4;
+
+static bool is_sentinel(uint32_t val) {
+    return val == 0x00B53A34u || val == 0x00B53B30u || val == 0x00B53AB0u ||
+           val == 0x00B53A70u || val == 0x00B53AF0u;
+}
+
+extern void __thiscall fn_004C6990(void* self, void* node) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+
+    ext_004C24C0(self, node);
+
+    *reinterpret_cast<float*>(base + 0x180) = ext_0067EE80(node, mem_00A9F4D8, mem_00A9F8E4);
+
+    uint32_t val1 = ext_0063F530(node, mem_00A9EF38, 0, 1);
+    if (!is_sentinel(val1)) {
+        uint8_t vec_buf[12];
+        ext_0067EFD0(vec_buf, val1);
+        ext_004C5120(self, vec_buf);
+    }
+
+    uint32_t val2 = ext_0063EFE0(node, mem_00A9F680);
+    if (!is_sentinel(val2)) {
+        uint32_t prop = ext_0063EFE0(node, mem_00A9F680);
+        ext_0053F5F0(reinterpret_cast<int32_t*>(base + 0x15C), &prop);
+    }
+
+    uint32_t val3 = ext_0063F530(node, mem_00A9F0C0, 0, 1);
+    if (!is_sentinel(val3)) {
+        ext_0049F540(val3, base + 0x16C, mem_00A9F0C4, 0);
+    }
+}
+} // namespace lift_004C6990

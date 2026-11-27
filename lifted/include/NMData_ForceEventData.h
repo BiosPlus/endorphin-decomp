@@ -19,11 +19,12 @@ struct NMData_ForceEventData_Fields {
     // +0xC   void**                   Updateable_vptr  (evidence: 0x004C52B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x004C6D70) // CONFLICT: multiple definitions at +0xC
     // +0xC   Updateable               updateable  (evidence: 0x004C63F0) // CONFLICT: multiple definitions at +0xC
-    // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1B20, 0x004C63F0, 0x004C6BF0, 0x004C6D70)
+    // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1B20, 0x004C63F0, 0x004C6990, 0x004C6BF0, 0x004C6D70)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1B20)
     // +0x168 void*                    field_0x168  (evidence: 0x004C65C0)
+    // +0x16C uint8_t                  field_0x16c  (evidence: 0x004C6990)
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x004C63F0)
-    // +0x180 float                    field_0x180  (evidence: 0x004C4E00)
+    // +0x180 float                    field_0x180  (evidence: 0x004C4E00, 0x004C6990)
     // +0x184 uint32_t                 field_0x184  (evidence: 0x004C66F0, 0x004C6E60) // CONFLICT: multiple definitions at +0x184
     // +0x184 void*                    field_0x184  (evidence: 0x004C63F0) // CONFLICT: multiple definitions at +0x184
     // +0x188 uint8_t                  field_0x188  (evidence: 0x004C63F0, 0x004C6E60)

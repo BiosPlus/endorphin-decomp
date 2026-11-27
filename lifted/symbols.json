@@ -14912,6 +14912,13 @@
     "summary": "Passes the stack argument to ext_00505F00 with this+0x84 as receiver, then forwards this to ext_004996E0 and returns its result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x00499EF0": {
+    "name": "NMData::Transition::loadFromXML",
+    "class": "NMData::Transition",
+    "signature": "void __thiscall fn_00499EF0(uint8_t* self, uint8_t* node)",
+    "summary": "Loads Transition data from an XML node, clamping vector pairs to minimum thresholds and zeroing vec4 at +0x84.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x0049A930": {
     "name": "Unknown::lookupStringKeyedValue_0049A930",
     "class": "Unknown",
@@ -20933,6 +20940,13 @@
     "class": "NMData::ForceEventData",
     "signature": "void* fn_004C6710(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
+  "0x004C6990": {
+    "name": "NMData::ForceEventData::vfunc_21",
+    "class": "NMData::ForceEventData",
+    "signature": "static bool is_sentinel(uint32_t val)",
+    "summary": "Loads ForceEventData properties (float, vector, int, and sub-object) from an XML/data node.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
   "0x004C6BE0": {
