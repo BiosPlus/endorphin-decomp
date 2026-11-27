@@ -2644,3 +2644,65 @@ void* fn_004101B0(void* self) {
     return self;                                      // original returns this in EAX
 }
 } // namespace lift_004101B0
+
+// [0x0041BA60]
+namespace lift_0041BA60 {
+extern void ext_006A5F4A(void);
+extern uint32_t mem_009242FC;
+extern uint32_t mem_00924300;
+extern uint32_t mem_009251E4;
+extern uint32_t mem_009242F4;
+
+// @name sub_0041BA60
+// @summary Reads an integer from a child window's text and passes it to a virtual method on field_0x1ec.
+// @field UnknownClass +0x134 uint8_t[1] field_0x134
+// @field UnknownClass +0x1ec void* field_0x1ec
+void sub_0041BA60(void* self) {
+    uint32_t local_str = 0;
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_009242FC)(&local_str);
+    reinterpret_cast<void(__thiscall*)(void*, void*)>(ext_006A5F4A)(
+        reinterpret_cast<uint8_t*>(self) + 0x134, &local_str);
+    const char* text = reinterpret_cast<const char*(__thiscall*)(void*)>(mem_00924300)(&local_str);
+    int value = reinterpret_cast<int(__cdecl*)(const char*)>(mem_009251E4)(text);
+    void* target = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x1ec);
+    void** vtable = *reinterpret_cast<void***>(target);
+    reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0x48 / sizeof(void*)])(target, value);
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_009242F4)(&local_str);
+}
+} // namespace lift_0041BA60
+
+// [0x0041BAE0]
+namespace lift_0041BAE0 {
+extern void* mem_009242FC; // MFC80!ord_310 (CString::CString)
+extern void* mem_00924300; // MFC80!ord_876 (CString::operator const char*)
+extern void* mem_009251E4; // MSVCR80!atoi
+extern void* mem_009242F4; // MFC80!ord_578 (CString::~CString)
+
+extern void ext_006A5F4A(void); // thunk_MFC80_ord_3761 (CWnd::GetWindowTextA)
+
+// @name OnEditChange_0041BAE0
+// @summary Reads integer text from control at +0x188 and passes it to virtual method +0x44 on object at +0x1EC.
+// @field Self +0x188 void* field_0x188
+// @field Self +0x1EC void* field_0x1EC
+extern void __thiscall fn_0041BAE0(void* self) {
+    uint8_t str_buf[16];
+    using CStringCtor = void(__thiscall*)(void*);
+    using GetWindowTextFn = void(__thiscall*)(void*, void*);
+    using CStringCStr = const char*(__thiscall*)(void*);
+    using AtoiFn = int(__cdecl*)(const char*);
+    using CStringDtor = void(__thiscall*)(void*);
+
+    reinterpret_cast<CStringCtor>(mem_009242FC)(str_buf);
+    reinterpret_cast<GetWindowTextFn>(&ext_006A5F4A)(
+        reinterpret_cast<uint8_t*>(self) + 0x188, str_buf);
+    const char* text = reinterpret_cast<CStringCStr>(mem_00924300)(str_buf);
+    int value = reinterpret_cast<AtoiFn>(mem_009251E4)(text);
+
+    void* target = lift_field<void*>(self, 0x1EC);
+    void** vtable = *reinterpret_cast<void***>(target);
+    using VMethod44 = void(__thiscall*)(void*, int);
+    reinterpret_cast<VMethod44>(vtable[0x44 / 4])(target, value);
+
+    reinterpret_cast<CStringDtor>(mem_009242F4)(str_buf);
+}
+} // namespace lift_0041BAE0

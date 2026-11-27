@@ -1,0 +1,27 @@
+{
+  "va": "0x0041BA60",
+  "size": 119,
+  "orig_symbol": "sub_0041BA60",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_0041BA60",
+  "signature": "void sub_0041BA60(void* self)",
+  "summary": "Reads an integer from a child window's text and passes it to a virtual method on field_0x1ec.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x134",
+      "type": "uint8_t[1]",
+      "name": "field_0x134"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1EC",
+      "type": "void*",
+      "name": "field_0x1ec"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:24:02Z"
+}
