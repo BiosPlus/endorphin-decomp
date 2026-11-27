@@ -283,3 +283,81 @@ void __thiscall fn_00612980(void* self, float* out) {
     out[2] = static_cast<float>(static_cast<double>(vec[2]) * k);
 }
 } // namespace lift_00612980
+
+// [0x0061F760]
+namespace lift_0061F760 {
+// @name NMData::HingeConstraint::vfunc_21
+// @class NMData::HingeConstraint
+// @summary Loads hinge constraint parameters, stiffness/damping, and flags from an XML/data node.
+// @field NMData::HingeConstraint +0x00 void** vtable
+// @field NMData::HingeConstraint +0x160 uint8_t field_0x160
+
+    void __thiscall ext_00612650(void* self, void* node);
+    uint32_t __thiscall ext_0063F530(void* self, uint32_t key, uint32_t a2, uint32_t a3);
+    float __cdecl ext_0067EE80(uint32_t node, uint32_t key1, uint32_t key2);
+    void __thiscall ext_00593910(void* self, uint32_t node);
+    void __thiscall ext_0061F510(void* self, uint32_t node);
+    uint32_t __thiscall ext_0063EFE0(void* self, uint32_t key);
+    void __cdecl ext_00427640(void* out, void* obj);
+
+    extern uint8_t mem_00972D68[];
+    extern uint8_t mem_00972D60[];
+    extern uint32_t mem_00A9FAC0;
+    extern uint32_t mem_00A9F34C;
+    extern uint32_t mem_00A9F6D8;
+    extern uint32_t mem_00A9F49C;
+    extern uint32_t mem_00A9F008;
+    extern uint32_t mem_00A9F604;
+
+static inline bool is_sentinel(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+static inline uint32_t normalize_sentinel(uint32_t v) {
+    return is_sentinel(v) ? 0x00B53B30u : v;
+}
+
+void __thiscall fn_0061F760(void* self, void* arg0) {
+    uint8_t* self_bytes = static_cast<uint8_t*>(self);
+    ext_00612650(self, arg0);
+
+    uint32_t sub = normalize_sentinel(
+        ext_0063F530(arg0, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00972D68)), 0, 1));
+
+    using VFunc60 = void(__thiscall*)(void*, uint32_t, float);
+    void** vtable = *reinterpret_cast<void***>(self_bytes);
+    VFunc60 vfunc_60 = reinterpret_cast<VFunc60>(vtable[0xF0 / 4]);
+
+    if (!is_sentinel(sub)) {
+        float val = ext_0067EE80(
+            sub,
+            static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00972D60)),
+            mem_00A9FAC0);
+        vfunc_60(self, 0, val);
+
+        uint32_t sub2 = normalize_sentinel(
+            ext_0063F530(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)), mem_00A9F34C, 0, 1));
+        if (!is_sentinel(sub2)) {
+            ext_00593910(self, sub);
+        }
+    } else {
+        float val = ext_0067EE80(
+            static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg0)),
+            mem_00A9F49C,
+            mem_00A9F6D8);
+        vfunc_60(self, 0, val);
+    }
+
+    uint32_t sub3 = normalize_sentinel(ext_0063F530(arg0, mem_00A9F008, 0, 1));
+    ext_0061F510(self, sub3);
+
+    uint32_t item = ext_0063EFE0(arg0, mem_00A9F604);
+    if (is_sentinel(item)) {
+        *reinterpret_cast<uint8_t*>(self_bytes + 0x160) = 1;
+    } else {
+        uint32_t local_item = item;
+        ext_00427640(self_bytes + 0x160, &local_item);
+    }
+}
+} // namespace lift_0061F760

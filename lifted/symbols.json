@@ -7954,6 +7954,13 @@
     "summary": "Displays the time ruler context menu and handles Zoom To Fit, Reset Save Range, and Reset Loop Range actions.",
     "lifted_path": "lifted/MultiTrackView/TimeRuler.cpp"
   },
+  "0x00459700": {
+    "name": "MultiTrackView::TimeRuler::vfunc_6",
+    "class": "MultiTrackView::TimeRuler",
+    "signature": "static inline Ret vcall(void* obj, uint32_t offset, Args... args)",
+    "summary": "Displays a context menu for the time ruler and dispatches the selected command.",
+    "lifted_path": "lifted/MultiTrackView/TimeRuler.cpp"
+  },
   "0x00459900": {
     "name": "MultiTrackView::TimeRulerMarkerTrack::vfunc_0",
     "class": "MultiTrackView::TimeRulerMarkerTrack",
@@ -55533,6 +55540,13 @@
     "summary": "Gate on ext_005ECF40; when it succeeds, recomputes a flag from ext_00528BD0 and (if flags \u0026 0x200) ext_00584C00 on self+0x174, and when that flag changes it re-dispatches via ext_00528BB0 and ext_00528C70. Returns the gate result.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005EDD30": {
+    "name": "NMData::SkeletalJointData::vfunc_64",
+    "class": "NMData::SkeletalJointData",
+    "signature": "void __thiscall fn_005EDD30(void* self)",
+    "summary": "Allocates and initializes a helper object, registers two named attributes on field_0x18c if missing, and attaches the object.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005EDFD0": {
     "name": "NMData::FixedPathJointData::vfunc_33",
     "class": "NMData::FixedPathJointData",
@@ -63746,6 +63760,13 @@
     "signature": "uint32_t* __thiscall fn_0061F310(void* self, uint32_t* out, uint32_t id)",
     "summary": "Dispatches property/symbol ID to the corresponding TwistAndSwingLimit accessor or default zero initializer.",
     "lifted_path": "lifted/NMData/TwistAndSwingLimit.cpp"
+  },
+  "0x0061F760": {
+    "name": "NMData::HingeConstraint::vfunc_21",
+    "class": "NMData::HingeConstraint",
+    "signature": "static inline bool is_sentinel(uint32_t v)",
+    "summary": "Loads hinge constraint parameters, stiffness/damping, and flags from an XML/data node.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
   "0x0061F940": {
     "name": "NMData::HingeConstraint::vfunc_15",

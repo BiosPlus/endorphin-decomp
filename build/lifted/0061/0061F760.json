@@ -1,0 +1,28 @@
+{
+  "va": "0x0061F760",
+  "size": 476,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_21",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_21",
+  "class": "NMData::HingeConstraint",
+  "signature": "static inline bool is_sentinel(uint32_t v)",
+  "summary": "Loads hinge constraint parameters, stiffness/damping, and flags from an XML/data node.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x160",
+      "type": "uint8_t",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:22:37Z"
+}
