@@ -11504,6 +11504,13 @@
     "summary": "Returns a copy of the string element at index if in bounds, or an empty string otherwise.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x004948C0": {
+    "name": "FindIndexByLeadingString",
+    "class": "Unknown",
+    "signature": "int32_t __thiscall fn_004948C0(void* self, const void* key)",
+    "summary": "Gets an entry count from ext_00494830, then scans the 0x1C-byte element array at this+0x0C..this+0x10 comparing each element's leading std::string against the key via the MSVCP80 operator==; returns the first matching index or -1.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00494940": {
     "name": "Unknown::ReleaseOptionalSubobjectAndReset",
     "class": "Unknown",

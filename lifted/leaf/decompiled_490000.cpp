@@ -1963,3 +1963,52 @@ std::string* fn_00497800(std::string* out, float value) {
     return out;
 }
 } // namespace lift_00497800
+
+// [0x004948C0] sub_004948C0 (127 bytes)
+namespace lift_004948C0 {
+extern int32_t __thiscall ext_00494830(void* self);
+extern uint32_t mem_00924FC4;
+extern uint32_t mem_00925134;
+
+// @name FindIndexByLeadingString
+// @class Unknown
+// @summary Gets an entry count from ext_00494830, then scans the 0x1C-byte element array at this+0x0C..this+0x10 comparing each element's leading std::string against the key via the MSVCP80 operator==; returns the first matching index or -1.
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+int32_t __thiscall fn_004948C0(void* self, const void* key) {
+    using StringEqFn = bool(__cdecl*)(const void*, const void*);
+    using InvalidParamFn = void(__cdecl*)();
+    constexpr uint32_t kElemSize = 0x1C;
+
+    const int32_t count = ext_00494830(self);
+    if (count <= 0) {
+        return -1;
+    }
+
+    auto string_eq = reinterpret_cast<StringEqFn>(static_cast<uintptr_t>(mem_00924FC4));
+    auto invalid_parameter = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    for (int32_t i = 0; i < count; ++i) {
+        const uint32_t begin = lift_field<uint32_t>(self, 0x0C);
+        // Original calls the CRT invalid-parameter handler here, which terminates the process.
+        if (begin == 0) {
+            invalid_parameter();
+            std::abort();
+        }
+        const uint32_t end = lift_field<uint32_t>(self, 0x10);
+        const int32_t slots = static_cast<int32_t>(end - begin) / static_cast<int32_t>(kElemSize);
+        if (static_cast<uint32_t>(i) >= static_cast<uint32_t>(slots)) {
+            invalid_parameter();
+            std::abort();
+        }
+
+        const uint32_t elem_addr = begin + static_cast<uint32_t>(i) * kElemSize;
+        const auto* elem = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(elem_addr));
+        if (string_eq(elem, key)) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+} // namespace lift_004948C0
