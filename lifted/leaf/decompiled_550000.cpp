@@ -2206,3 +2206,41 @@ void sub_00556740(uint8_t* begin, uint8_t* end) {
     }
 }
 } // namespace lift_00556740
+
+// [0x00559840] sub_00559840 (80 bytes)
+namespace lift_00559840 {
+// Known callee 0x00556740: destroyStructArray_00556740 (Destroys a contiguous range of 0xa0-byte structs containing four std::string members)
+// Called with four stack arguments: [esi], [esi+4], esi-4, and the outer begin pointer.
+extern void ext_00556740(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg0);
+
+// @name destroyEntryRange_00559840
+// @summary Walks [begin, end) in 0x14-byte entries; for each entry with a non-zero dword at +0x08, calls ext_00556740 and ext_006A5C5C on its fields, then zeroes the three dwords at +0x08..+0x10.
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_00559840(uint8_t* begin, uint8_t* end) {
+    if (begin == end) {
+        return;
+    }
+
+    uint8_t* entry = begin;
+    do {
+        uint8_t* slot = entry + 0x08;
+        const uint32_t value0 = lift_field<uint32_t>(slot, 0x00);
+        if (value0 != 0) {
+            const uint32_t value1 = lift_field<uint32_t>(slot, 0x04);
+            const uint32_t slotAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(slot));
+            const uint32_t beginAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(begin));
+            ext_00556740(value0, value1, slotAddr - 4u, beginAddr);
+            ext_006A5C5C(lift_field<uint32_t>(slot, 0x00));
+        }
+        lift_field<uint32_t>(slot, 0x00) = 0;
+        lift_field<uint32_t>(slot, 0x04) = 0;
+        lift_field<uint32_t>(slot, 0x08) = 0;
+
+        entry += 0x14;
+    } while (entry != end);
+}
+} // namespace lift_00559840

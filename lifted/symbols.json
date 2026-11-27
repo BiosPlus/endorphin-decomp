@@ -28059,6 +28059,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00559840": {
+    "name": "destroyEntryRange_00559840",
+    "signature": "void fn_00559840(uint8_t* begin, uint8_t* end)",
+    "summary": "Walks [begin, end) in 0x14-byte entries; for each entry with a non-zero dword at +0x08, calls ext_00556740 and ext_006A5C5C on its fields, then zeroes the three dwords at +0x08..+0x10.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559A30": {
     "name": "Unknown::ReleaseHandleAndClearThenThrow",
     "class": "Unknown",
