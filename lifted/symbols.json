@@ -24185,6 +24185,13 @@
     "summary": "Stores two float arguments at +0x28/+0x2C and two dword arguments at +0x20/+0x24 of this (thiscall, ECX = this, callee pops 0x10 bytes).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00539340": {
+    "name": "UtilityGraphics::Label::vfunc_22",
+    "class": "UtilityGraphics::Label",
+    "signature": "void fn_00539340(void* self, DWORD mode)",
+    "summary": "Draws the label: if enabled and mode != 2, sets the color, pushes the matrix, runs the attached object's vmethod +0x2C, draws the text at raster position (0.02, 0) using the format string at +0x14, then pops the matrix.",
+    "lifted_path": "lifted/UtilityGraphics/Label.cpp"
+  },
   "0x00539490": {
     "name": "allocateArray12",
     "signature": "extern \"C\" void* fn_00539490(uint32_t count)",

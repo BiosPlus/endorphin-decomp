@@ -1,0 +1,40 @@
+{
+  "va": "0x00539340",
+  "size": 101,
+  "orig_symbol": "UtilityGraphics::Label::vfunc_22",
+  "src_path": "src/UtilityGraphics/Label.cpp",
+  "lifted_path": "lifted/UtilityGraphics/Label.cpp",
+  "name": "UtilityGraphics::Label::vfunc_22",
+  "class": "UtilityGraphics::Label",
+  "signature": "void fn_00539340(void* self, DWORD mode)",
+  "summary": "Draws the label: if enabled and mode != 2, sets the color, pushes the matrix, runs the attached object's vmethod +0x2C, draws the text at raster position (0.02, 0) using the format string at +0x14, then pops the matrix.",
+  "fields": [
+    {
+      "class": "UtilityGraphics::Label",
+      "offset": "+0xC",
+      "type": "BYTE",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UtilityGraphics::Label",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "UtilityGraphics::Label",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    },
+    {
+      "class": "UtilityGraphics::Label",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:47Z"
+}
