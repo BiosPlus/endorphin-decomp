@@ -85,6 +85,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 header_word  (evidence: 0x0086D210) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 heldObject  (evidence: 0x00468630) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    heldPtr  (evidence: 0x00401DE0, 0x004030F0, 0x0040A910, 0x0040BE90, 0x004693D0, 0x004693F0, 0x00480750, 0x004A5BE0, 0x004AECE0, 0x004D2C70, 0x004DA800, 0x00594790, 0x005947B0, 0x005C4780, 0x005CEA30, 0x00648200, 0x00648510, 0x00648A20) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    index  (evidence: 0x006E7440) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      index  (evidence: 0x00543220) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (object kind word; low byte used as index)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (accessed only via arg/ECX; layout not inferred)  (evidence: 0x0068BB30) // CONFLICT: multiple definitions at +0x0
@@ -1111,6 +1112,7 @@ struct Unknown_Fields {
     // +0x54  uint32_t                 field_0x54  (evidence: 0x004030F0, 0x0040BE90, 0x00415F97, 0x0053B1F0, 0x00622B40, 0x006296D0, 0x006B6290, 0x006F99B0, 0x0078D7A0) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint8_t                  field_0x54  (evidence: 0x00610D10, 0x006B6320, 0x006D0370) // CONFLICT: multiple definitions at +0x54
     // +0x54  void*                    field_0x54  (evidence: 0x004584C0, 0x00458650, 0x00458670, 0x00458840, 0x00458A00, 0x0045C130, 0x006A92F0, 0x006AAC90, 0x006B0EC0, 0x006B4CB0) // CONFLICT: multiple definitions at +0x54
+    // +0x54  DWORD*                   stringTable  (evidence: 0x006E7440) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t                 vec_proxy  (evidence: 0x0042ECC0) // CONFLICT: multiple definitions at +0x54
     // +0x54  void*                    vtable2  (evidence: 0x0056D840, 0x00571DD0, 0x00573180, 0x00579890, 0x006B6090) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t                 vtable_54  (evidence: 0x006B5090) // CONFLICT: multiple definitions at +0x54

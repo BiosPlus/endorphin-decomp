@@ -69457,6 +69457,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E7440": {
+    "name": "Unknown::assignStringByIndex_006E7440",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_006E7440(void* self, DWORD index)",
+    "summary": "Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7460": {
     "name": "sub_006E7460",
     "signature": "extern \"C\" int32_t __fastcall fn_006E7460(void* self)",
@@ -79633,6 +79640,13 @@
     "class": "Unknown",
     "signature": "DWORD fn_00798710(void* self)",
     "summary": "Returns ceil(+0x28 / +0x50) (or nonzero-flag when +0x50 == -1); if +0x72 == 2, multiplies the result by the u16 at +0x4e.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x00798750": {
+    "name": "UnknownClass::computeImageByteSize",
+    "class": "UnknownClass",
+    "signature": "uint32_t fn_00798750(uint8_t* self, uint32_t height)",
+    "summary": "Computes the byte size of an image or planar/tiled buffer for a given height.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x00798800": {

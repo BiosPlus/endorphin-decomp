@@ -1706,3 +1706,28 @@ void* fn_006E7470(void* self) {
     return ext_006B9EC0(sub, str);
 }
 } // namespace lift_006E7470
+
+// [0x006E7440] sub_006E7440 (32 bytes)
+namespace lift_006E7440 {
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* ext_006B9EC0(void* self, const char* s);
+
+// @name Unknown::assignStringByIndex_006E7440
+// @class Unknown
+// @summary Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.
+// @field Unknown +0x00 DWORD index
+// @field Unknown +0x54 DWORD* stringTable
+extern void* fn_006E7440(void* self, DWORD index) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+
+    // mov dword ptr [ecx], eax
+    *reinterpret_cast<DWORD*>(base + 0x00) = index;
+
+    // mov edx, dword ptr [ecx + 0x54]; mov eax, dword ptr [edx + 4*eax]
+    DWORD* table = *reinterpret_cast<DWORD**>(base + 0x54);
+    const char* s = reinterpret_cast<const char*>(static_cast<uintptr_t>(table[index]));
+
+    // add ecx, 8; push eax; call ext_006B9EC0 (callee returns this in eax)
+    return ext_006B9EC0(base + 0x08, s);
+}
+} // namespace lift_006E7440
