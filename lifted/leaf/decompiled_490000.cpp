@@ -1888,3 +1888,37 @@ uintptr_t fn_0049F490(void* self, const void* key) {
     return reinterpret_cast<uintptr_t>(assigned);
 }
 } // namespace lift_0049F490
+
+// [0x00490960] sub_00490960 (122 bytes)
+namespace lift_00490960 {
+// Known callee 0x0048A120: ForEachEntryDispatchVirtual_0048A120 (Walks 8-byte entries from begin up to (not including) end; for each entry whose +4 pointer is non-null, calls that object's virtual slot 0x78 (index 30) with the entry address as its single argument.)
+extern void ext_0048A120(uint32_t begin, uint32_t end);
+// Known callee 0x0048FC00: copy_ref_pairs (Copies a range of 8-byte ref-counted/managed pairs, releasing old targets and acquiring new ones via vtable calls.)
+extern uint32_t ext_0048FC00(uint32_t first, uint32_t last, uint32_t dest);
+extern int mem_00925134;
+
+// @name moveRangeToDestAndDestroyTail_00490960
+// @class unknown
+// @summary If dest != last, moves [last, end) into dest via ext_0048FC00, dispatches the vacated tail via ext_0048A120, sets end to the new end, and writes {first, dest} to out; invalid first/check aborts.
+// @field unknown +0x08 uint32_t field_0x08
+void fn_00490960(void* self, void* out, uint32_t first, uint32_t dest, uint32_t check, uint32_t last) {
+    if (first == 0 || first != check) {
+        // MSVC _invalid_parameter_noinfo via IAT slot; treat as fatal.
+        (void)&mem_00925134;
+        std::abort();
+    }
+
+    if (dest != last) {
+        const uint32_t endBefore = lift_field<uint32_t>(self, 0x08);
+        ext_0048FC00(last, endBefore, dest);
+        const uint32_t endAfter = lift_field<uint32_t>(self, 0x08);
+        const uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(endBefore - last) >> 3);
+        const uint32_t newEnd = dest + count * 8u;
+        ext_0048A120(newEnd, endAfter);
+        lift_field<uint32_t>(self, 0x08) = newEnd;
+    }
+
+    lift_field<uint32_t>(out, 0) = first;
+    lift_field<uint32_t>(out, 4) = dest;
+}
+} // namespace lift_00490960

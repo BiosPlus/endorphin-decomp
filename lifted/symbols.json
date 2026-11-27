@@ -10961,6 +10961,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00490960": {
+    "name": "moveRangeToDestAndDestroyTail_00490960",
+    "class": "unknown",
+    "signature": "void fn_00490960(void* self, void* out, uint32_t first, uint32_t dest, uint32_t check, uint32_t last)",
+    "summary": "If dest != last, moves [last, end) into dest via ext_0048FC00, dispatches the vacated tail via ext_0048A120, sets end to the new end, and writes {first, dest} to out; invalid first/check aborts.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00490B80": {
     "name": "sub_00490B80",
     "class": "Vector",
