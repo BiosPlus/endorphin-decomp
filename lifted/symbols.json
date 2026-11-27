@@ -18543,6 +18543,13 @@
     "summary": "For each DWORD child pointer in [this-\u003efield_0x04, this-\u003efield_0x08) (end re-read each iteration), if child-\u003efield_0x22c is non-null and this-\u003efield_0x1fa is set, call ext_00586A50(child-\u003efield_0x22c, 0x400, 0).",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004D9CE0": {
+    "name": "SubsystemHost::broadcastFlagThenDispatch",
+    "class": "Unknown",
+    "signature": "void* fn_004D9CE0(void* self, uint8_t flag)",
+    "summary": "Stores a flag byte, forwards it to every pointer in the list at +0x334..+0x338 via vtable slot 8 of each element's +0x0C sub-object, then tail-dispatches on the object returned by ext_00594000() at +0x258.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D9DA0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsVisible(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsVisible(bool), 0}\u003e",

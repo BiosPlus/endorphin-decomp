@@ -1,0 +1,34 @@
+{
+  "va": "0x004D9CE0",
+  "size": 135,
+  "orig_symbol": "sub_004D9CE0",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "SubsystemHost::broadcastFlagThenDispatch",
+  "class": "Unknown",
+  "signature": "void* fn_004D9CE0(void* self, uint8_t flag)",
+  "summary": "Stores a flag byte, forwards it to every pointer in the list at +0x334..+0x338 via vtable slot 8 of each element's +0x0C sub-object, then tail-dispatches on the object returned by ext_00594000() at +0x258.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x191",
+      "type": "uint8_t",
+      "name": "field_0x191"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x334",
+      "type": "void**",
+      "name": "componentsBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x338",
+      "type": "void**",
+      "name": "componentsEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:24:26Z"
+}

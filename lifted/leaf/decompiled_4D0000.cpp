@@ -695,3 +695,42 @@ void fn_004D0260(void* self, void* container) {
     ext_0053F5F0(static_cast<uint8_t*>(self) + 0x04, &item);
 }
 } // namespace lift_004D0260
+
+// [0x004D9CE0] sub_004D9CE0 (135 bytes)
+namespace lift_004D9CE0 {
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// MSVC iterator-debug _invalid_parameter_noinfo import slot; only referenced for metadata (not a real access).
+extern int mem_00925134;
+
+// @name SubsystemHost::broadcastFlagThenDispatch
+// @class Unknown
+// @summary Stores a flag byte, forwards it to every pointer in the list at +0x334..+0x338 via vtable slot 8 of each element's +0x0C sub-object, then tail-dispatches on the object returned by ext_00594000() at +0x258.
+// @field Unknown +0x191 uint8_t field_0x191
+// @field Unknown +0x334 void** componentsBegin
+// @field Unknown +0x338 void** componentsEnd
+void* fn_004D9CE0(void* self, uint8_t flag) {
+    // Thiscall (this = ecx) with one stack byte, callee-cleans 4 bytes.
+    (void)&mem_00925134;
+    lift_field<uint8_t>(self, 0x191) = flag;
+
+    // Element stride is 4 bytes (32-bit pointers). The end pointer is re-read
+    // each iteration, matching the original loop.
+    void** it = lift_field<void**>(self, 0x334);
+    while (it != lift_field<void**>(self, 0x338)) {
+        void* elem = *it;
+        // Sub-object at element +0x0C; its vtable slot 8 (+0x20) takes the flag byte.
+        void* sub = static_cast<uint8_t*>(elem) + 0x0C;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto slot8 = reinterpret_cast<void (*)(void*, uint8_t)>(vtbl[8]);
+        slot8(sub, lift_field<uint8_t>(self, 0x191));
+        it = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(it) + 4);
+    }
+
+    // Tail call: obj = ext_00594000(); return ext_00493EE0(obj + 0x258).
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+    return ext_00493EE0(static_cast<uint8_t*>(obj) + 0x258);
+}
+} // namespace lift_004D9CE0
