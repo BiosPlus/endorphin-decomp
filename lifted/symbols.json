@@ -83244,6 +83244,13 @@
     "summary": "Skips blank lines backward, then consumes '=' if present (skipping blanks again) or restores the saved cursor fields and returns false.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x008712A0": {
+    "name": "TextCursor::ReadIdentifierBack_008712A0",
+    "class": "TextCursor",
+    "signature": "static inline bool is_ascii_letter(uint8_t c)",
+    "summary": "Reads a backward identifier token (letter first, then letters/digits/'_'/'.'/'-'); on the terminator steps the cursor back one line and extracts the token into dst. Returns 0 (after stepping back) if the first character is not a letter.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x00871860": {
     "name": "Unknown_CallVtableSlot0_IfNonNull",
     "class": "Unknown",

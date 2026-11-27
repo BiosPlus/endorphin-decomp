@@ -428,3 +428,58 @@ bool fn_008719F0(void* self, uint8_t* out) {
     return true;
 }
 } // namespace lift_008719F0
+
+// [0x008712A0] sub_008712A0 (137 bytes)
+namespace lift_008712A0 {
+// The original passes its cursor block to the callees as a stack argument frame:
+// {self, self->+0x08, self->+0x10, self->+0x14}. The callees read/step through it,
+// and sub_0063E050 receives the same block as its `this`.
+// Known callee 0x00870E90: sub_00870E90 (reads/advances the text cursor; returns the byte in AL)
+extern uint8_t ext_00870E90(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00870EF0: TextCursor::StepBackOneLine_00870EF0 (steps the backward cursor to the start of the previous line)
+extern void ext_00870EF0(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x0063E050: sub_0063E050 (extracts a substring from a buffer range and assigns it to the destination std::string)
+extern void __thiscall ext_0063E050(void* self, void* dst_str, uint32_t tail_len);
+
+static inline bool is_ascii_letter(uint8_t c) {
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+}
+
+static inline bool is_ascii_digit(uint8_t c) {
+    return c >= '0' && c <= '9';
+}
+
+// @name TextCursor::ReadIdentifierBack_008712A0
+// @class TextCursor
+// @summary Reads a backward identifier token (letter first, then letters/digits/'_'/'.'/'-'); on the terminator steps the cursor back one line and extracts the token into dst. Returns 0 (after stepping back) if the first character is not a letter.
+// @field TextCursor +0x08 uint32_t field_0x08
+// @field TextCursor +0x10 uint32_t field_0x10
+// @field TextCursor +0x14 uint32_t field_0x14
+uint8_t fn_008712A0(void* self, void* dst_str) {
+    // Stack argument block the original builds before each callee call.
+    uint32_t args[4];
+    args[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    args[1] = lift_field<uint32_t>(self, 0x08);
+    args[2] = lift_field<uint32_t>(self, 0x10);
+    args[3] = lift_field<uint32_t>(self, 0x14);
+
+    uint8_t c = ext_00870E90(args[0], args[1], args[2], args[3]);
+    if (!is_ascii_letter(c)) {
+        ext_00870EF0(args[0], args[1], args[2], args[3]);
+        return 0;
+    }
+
+    for (;;) {
+        c = ext_00870E90(args[0], args[1], args[2], args[3]);
+        if (is_ascii_letter(c) || is_ascii_digit(c) ||
+            c == '_' || c == '.' || c == '-') {
+            continue;
+        }
+        break;
+    }
+
+    ext_00870EF0(args[0], args[1], args[2], args[3]);
+    ext_0063E050(args, dst_str, 0);
+    return 1;
+}
+} // namespace lift_008712A0
