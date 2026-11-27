@@ -2053,3 +2053,29 @@ bool fn_0069A9D0(void* self, const void* value) {
 }
 } // namespace lift_005CD120
 } // namespace lift_0069A9D0
+
+// [0x0069E750]
+namespace lift_0069E750 {
+extern void __fastcall ext_0069C150(void* self, void* edx, const void* src);
+extern void __fastcall ext_00673420(void* self);
+extern void ext_006A6DD2(void);
+
+// @name UninitializedFillN_0x50
+// @summary Copy-constructs count 0x50-byte elements at dest from src (uninitialized_fill_n); on exception destroys constructed elements and rethrows.
+extern void __cdecl fn_0069E750(void* dest, uint32_t count, const void* src)
+{
+    uint8_t* const first = static_cast<uint8_t*>(dest);
+    uint8_t* cur = first;
+    try {
+        for (; count != 0; --count, cur += 0x50) {
+            if (cur != nullptr)
+                ext_0069C150(cur, nullptr, src);
+        }
+    } catch (...) {
+        for (uint8_t* p = first; p != cur; p += 0x50)
+            ext_00673420(p);
+        ext_006A6DD2();
+        throw;
+    }
+}
+} // namespace lift_0069E750

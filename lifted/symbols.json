@@ -82897,6 +82897,12 @@
     "summary": "Default constructor initializing two std::string members and five 32-bit zero fields",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x0069E750": {
+    "name": "UninitializedFillN_0x50",
+    "signature": "extern \"C\" void __cdecl fn_0069E750(void* dest, uint32_t count, const void* src)",
+    "summary": "Copy-constructs count 0x50-byte elements at dest from src (uninitialized_fill_n); on exception destroys constructed elements and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x0069E7E0": {
     "name": "sub_0069E7E0",
     "signature": "uint32_t fn_0069E7E0(uint32_t begin, uint32_t end, uint32_t value)",

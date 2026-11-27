@@ -1,0 +1,13 @@
+{
+  "va": "0x0069E750",
+  "size": 141,
+  "orig_symbol": "sub_0069E750",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "UninitializedFillN_0x50",
+  "signature": "extern \"C\" void __cdecl fn_0069E750(void* dest, uint32_t count, const void* src)",
+  "summary": "Copy-constructs count 0x50-byte elements at dest from src (uninitialized_fill_n); on exception destroys constructed elements and rethrows.",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:48:31Z"
+}
