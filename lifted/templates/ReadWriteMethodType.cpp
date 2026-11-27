@@ -10459,3 +10459,34 @@ void fn_004DEF80(void* obj) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE6434));
 }
 } // namespace lift_004DEF80
+
+// [0x004EA2B0] sub_004EA2B0 (122 bytes)
+namespace lift_004EA2B0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack arg).
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE7130;
+extern DWORD mem_00AE712C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, isGravityEnabled, setGravityEnabled>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, isGravityEnabled, setGravityEnabled>
+// @summary One-time guarded init of the static vtable/object at 0xAE712C; stores its address into the single stack argument's +4 slot.
+// @field ExprParser::ReadWriteMethodType +0x04 DWORD field_0x04
+void __stdcall fn_004EA2B0(void* arg) {
+    // SEH frame push/pop (fs:[0] bookkeeping) is compiler/runtime boilerplate and is omitted.
+    DWORD* flag = &mem_00AE7130;
+    DWORD* obj  = &mem_00AE712C;
+
+    if ((*flag & 1u) != 0) {
+        // Already initialised: just publish the object address.
+        *reinterpret_cast<DWORD*>(static_cast<char*>(arg) + 0x4) = 0x00AE712Cu;
+        return;
+    }
+
+    *flag |= 1u;
+    // Original: call 0x67A670 with ECX = &obj and stack arg = 0.
+    ext_0067A670(obj, 0u);
+    // Install the vtable pointer for the object.
+    *obj = 0x0094B5BCu;
+    *reinterpret_cast<DWORD*>(static_cast<char*>(arg) + 0x4) = 0x00AE712Cu;
+}
+} // namespace lift_004EA2B0

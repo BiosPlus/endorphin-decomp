@@ -10821,6 +10821,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
     "lifted_path": "lifted/Commands/BufferChannelsCommand.cpp"
   },
+  "0x0048F510": {
+    "name": "Unknown::ctor_0048F510",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_0048F510(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Initializes base object with vtable 0x0093E730, stores two arguments, zeroes fields, and sets field_0x08 from global vector element 0.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048F590": {
     "name": "sub_0048F590_dtor",
     "signature": "extern \"C\" void __fastcall fn_0048F590(void* self)",
@@ -18414,6 +18421,13 @@
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)\u003e",
     "signature": "void fn_004EA260(void** target, void* source)",
     "summary": "Auto-lifted identical-shape clone of 0x004E9F60 (ExprParser::ReadWriteMethodType::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004EA2B0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, isGravityEnabled, setGravityEnabled\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, isGravityEnabled, setGravityEnabled\u003e",
+    "signature": "void __stdcall fn_004EA2B0(void* arg)",
+    "summary": "One-time guarded init of the static vtable/object at 0xAE712C; stores its address into the single stack argument's +4 slot.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004EA330": {
