@@ -3018,3 +3018,39 @@ void fn_00402730(void* self, void* arg1) {
     lift_field<void*>(dstHead, 0x08) = c;
 }
 } // namespace lift_00402730
+
+// [0x004028E0] sub_004028E0 (130 bytes)
+namespace lift_004028E0 {
+// Known callee 0x00402730: Tree::assignFrom (Replaces this tree's root with a deep clone of the source tree's root, re-establishes the header's leftmost/rightmost links, and copies the source's +0x08 word.)
+extern void ext_00402730(void* self, void* src);
+// Known callee 0x0043D780: AllocAndInitRecord (Allocates a 0x18-byte record, zeroes its three dword slots at +0x00/+0x04/+0x08, sets the flag bytes at +0x14=1 and +0x15=0, and returns the record.)
+extern void* ext_0043D780();
+// Known callee 0x0053FB40: sub_0053FB40 (Auto-lifted identical-shape clone of 0x00493970 (ResetPtrFieldsAfterDispatch).)
+extern void ext_0053FB40(void* self);
+
+// @name Tree::resetAndAssignFrom
+// @class Tree
+// @summary Allocates a fresh sentinel head record for this tree, clears the +0x08 word, assigns the source tree into it, and returns this; on exception, runs the ResetPtrFieldsAfterDispatch cleanup and rethrows.
+// @field Tree +0x04 void* head
+// @field Tree +0x08 void* field_0x08
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* field_0x04
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x15 uint8_t isnil
+void* fn_004028E0(void* self, void* src) {
+    try {
+        void* const head = ext_0043D780();
+        lift_field<void*>(self, 0x04) = head;
+        lift_field<uint8_t>(head, 0x15) = 1;
+        lift_field<void*>(head, 0x04) = head;
+        lift_field<void*>(head, 0x00) = head;
+        lift_field<void*>(head, 0x08) = head;
+        lift_field<void*>(self, 0x08) = nullptr;
+        ext_00402730(self, src);
+    } catch (...) {
+        ext_0053FB40(self);
+        throw;
+    }
+    return self;
+}
+} // namespace lift_004028E0

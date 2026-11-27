@@ -1,0 +1,52 @@
+{
+  "va": "0x004028E0",
+  "size": 130,
+  "orig_symbol": "sub_004028E0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Tree::resetAndAssignFrom",
+  "class": "Tree",
+  "signature": "void* fn_004028E0(void* self, void* src)",
+  "summary": "Allocates a fresh sentinel head record for this tree, clears the +0x08 word, assigns the source tree into it, and returns this; on exception, runs the ResetPtrFieldsAfterDispatch cleanup and rethrows.",
+  "fields": [
+    {
+      "class": "Tree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "Tree",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "isnil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:32:48Z"
+}
