@@ -56012,6 +56012,13 @@
     "summary": "Zeroes five consecutive 32-bit fields at offsets +0x04..+0x14 of the object passed in ECX and returns that object pointer.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067B090": {
+    "name": "HandleArray::CloseAllAndRelease",
+    "class": "Unknown",
+    "signature": "inline void* addr_to_ptr(uint32_t a)",
+    "summary": "Closes every HANDLE in the [begin,end) array, frees the array buffer via ext_006A5C5C, and zeroes the three pointer fields.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067B260": {
     "name": "RuntimeEngine::NullThread::vfunc_0",
     "class": "RuntimeEngine::NullThread",

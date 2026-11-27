@@ -266,6 +266,7 @@ struct Unknown_Fields {
     // +0x4   void*                    peer  (evidence: 0x00528B90) // CONFLICT: multiple definitions at +0x4
     // +0x4   void(*)(void*,int32_t*)  pfnCallback  (evidence: 0x008115A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   float* field_0x04 (begin pointer)  (evidence: 0x00607F20) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t field_0x04 (array begin pointer)  (evidence: 0x0067B090) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (begin pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (self -> link pointer)  (evidence: 0x00810200) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (sentinel/head node pointer)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0x4
@@ -383,6 +384,7 @@ struct Unknown_Fields {
     // +0x8   void* field_0x08 (child object pointer passed as this in the flagged path)  (evidence: 0x00711BE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    peer  (evidence: 0x00532B40) // CONFLICT: multiple definitions at +0x8
     // +0x8   float* field_0x08 (end-of-data pointer)  (evidence: 0x00607F20) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t field_0x08 (array end pointer)  (evidence: 0x0067B090) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (end pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t* field_0x08 (self end pointer)  (evidence: 0x0065DAD0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (array end pointer)  (evidence: 0x00503BC0, 0x00505D00, 0x0050C4D0) // CONFLICT: multiple definitions at +0x8
@@ -486,6 +488,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t field_0x0c (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0xC
     // +0xC   WriteFn                  writeChunk  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD field_0x0C (capacity pointer, zeroed)  (evidence: 0x00503BC0, 0x00505D00, 0x0050C4D0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t field_0x0C (capacity end pointer, zeroed)  (evidence: 0x0067B090) // CONFLICT: multiple definitions at +0xC
     // +0xD   uint8_t                  field_0x0d  (evidence: 0x00441C10, 0x004429C0)
     // +0x10  uint32_t field_0x10      (slot[1])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 arg  (evidence: 0x0048DFF0) // CONFLICT: multiple definitions at +0x10

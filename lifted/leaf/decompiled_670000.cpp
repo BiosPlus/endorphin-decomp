@@ -2496,3 +2496,63 @@ void fn_00673420(void* self) {
     call_string_dtor(self);
 }
 } // namespace lift_00673420
+
+// [0x0067B090] sub_0067B090 (138 bytes)
+namespace lift_0067B090 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+extern uint32_t mem_00925134; // IAT slot: MSVCR80!_invalid_parameter_noinfo
+extern uint32_t mem_009241E0; // IAT slot: KERNEL32!CloseHandle
+
+namespace {
+
+// Addresses in this 32-bit image are stored as uint32_t; convert to a host pointer.
+inline void* addr_to_ptr(uint32_t a) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(a));
+}
+
+inline void call_invalid_parameter_noinfo() {
+    auto fn = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134));
+    fn();
+}
+
+inline void call_close_handle(uint32_t handle_value) {
+    using CloseHandleFn = BOOL (__stdcall*)(HANDLE);
+    auto fn = reinterpret_cast<CloseHandleFn>(static_cast<uintptr_t>(mem_009241E0));
+    fn(reinterpret_cast<HANDLE>(static_cast<uintptr_t>(handle_value)));
+}
+
+} // namespace
+
+// @name HandleArray::CloseAllAndRelease
+// @class Unknown
+// @summary Closes every HANDLE in the [begin,end) array, frees the array buffer via ext_006A5C5C, and zeroes the three pointer fields.
+// @field Unknown +0x04 uint32_t field_0x04 (array begin pointer)
+// @field Unknown +0x08 uint32_t field_0x08 (array end pointer)
+// @field Unknown +0x0C uint32_t field_0x0C (capacity end pointer, zeroed)
+void fn_0067B090(void* self) {
+    // Both range checks in the original call _invalid_parameter_noinfo when begin > end.
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+    if (lift_field<uint32_t>(self, 0x04) > end) {
+        call_invalid_parameter_noinfo();
+    }
+    if (lift_field<uint32_t>(self, 0x04) > lift_field<uint32_t>(self, 0x08)) {
+        call_invalid_parameter_noinfo();
+    }
+
+    // Close each handle in [begin, end).
+    for (uint32_t p = lift_field<uint32_t>(self, 0x04); p != end; p += 4) {
+        call_close_handle(*static_cast<uint32_t*>(addr_to_ptr(p)));
+    }
+
+    // Release the array buffer if present.
+    uint32_t buffer = lift_field<uint32_t>(self, 0x04);
+    if (buffer != 0) {
+        ext_006A5C5C(addr_to_ptr(buffer));
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_0067B090
