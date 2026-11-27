@@ -11697,6 +11697,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00487000": {
+    "name": "WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_00487000(void* out, void* arg2, void* arg3)",
+    "summary": "Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004870B0": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
