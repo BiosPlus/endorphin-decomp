@@ -1902,6 +1902,13 @@
     "summary": "Virtual accessor that ignores its receiver and returns the address of the global at mem_0092CB80.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00416B90": {
+    "name": "sub_00416B90",
+    "class": "CObject_0092CBCC",
+    "signature": "void __thiscall fn_00416B90(void* this_ptr)",
+    "summary": "Destructor that resets vtable and destroys five MFC member subobjects before base destructor",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00416C30": {
     "name": "readIntFromAccessor",
     "signature": "extern \"C\" void* mem_009242FC;  // MFC80!ord_310  (string construct) extern \"C\" void* mem_00924300;  // MFC80!ord_876  (string -\u003e const char*) extern \"C\" void* mem_009251E4;  // MSVCR80!atoi extern \"C\" void* mem_009242F4;  // MFC80!ord_578  (string destruct) int fn_00416C30(void* obj)",
@@ -5541,6 +5548,12 @@
     "summary": "Stores arg at +0xc8, runs 0x006B0DE0 on the subobject at +0x5c, then caches vfunc_21's result at +0xcc and its +0x19c value at +0xec.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00448600": {
+    "name": "sub_00448600",
+    "signature": "int32_t __thiscall fn_00448600(void* self, uint32_t /*unused*/)",
+    "summary": "OnCreate handler creating child controls and setting font on child window",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004486A0": {
     "name": "Unknown::ComputeSelectionMetricsAndAttachBrush",
     "class": "Unknown",
@@ -5748,6 +5761,12 @@
     "signature": "extern \"C\" void fn_00449FF0(void)",
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_587.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0044A000": {
+    "name": "sub_0044A000",
+    "signature": "extern \"C\" void __thiscall fn_0044A000(void* self)",
+    "summary": "Destructor for an MFC dialog/window class, tearing down member controls and base class.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044A0A0": {
     "name": "NMColourButton::GetConstantAddress",

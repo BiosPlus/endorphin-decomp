@@ -3379,3 +3379,34 @@ void* fn_0041B610() {
 }
 } // namespace lift_004198C0
 } // namespace lift_0041B610
+
+// [0x00416B90]
+namespace lift_00416B90 {
+// @name sub_00416B90
+// @class CObject_0092CBCC
+// @summary Destructor that resets vtable and destroys five MFC member subobjects before base destructor
+// @field CObject_0092CBCC +0x00 uint32_t vftable
+// @field CObject_0092CBCC +0x8C uint8_t field_0x8C
+// @field CObject_0092CBCC +0xE0 uint8_t field_0xE0
+// @field CObject_0092CBCC +0x134 uint8_t field_0x134
+// @field CObject_0092CBCC +0x188 uint8_t field_0x188
+// @field CObject_0092CBCC +0x1DC uint8_t field_0x1DC
+
+
+void __thiscall ext_006A5DFA(void* this_ptr);
+void __thiscall ext_006A5F38(void* this_ptr);
+void __thiscall ext_006A61D2(void* this_ptr);
+
+void __thiscall fn_00416B90(void* this_ptr) {
+    uint8_t* self = static_cast<uint8_t*>(this_ptr);
+
+    lift_field<uint32_t>(self, 0x00) = 0x0092CBCCu;
+
+    ext_006A5F38(self + 0x1DC);
+    ext_006A5F38(self + 0x188);
+    ext_006A5DFA(self + 0x134);
+    ext_006A5F38(self + 0xE0);
+    ext_006A5F38(self + 0x8C);
+    ext_006A61D2(self);
+}
+} // namespace lift_00416B90

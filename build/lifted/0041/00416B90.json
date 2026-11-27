@@ -1,0 +1,52 @@
+{
+  "va": "0x00416B90",
+  "size": 149,
+  "orig_symbol": "sub_00416B90",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_00416B90",
+  "class": "CObject_0092CBCC",
+  "signature": "void __thiscall fn_00416B90(void* this_ptr)",
+  "summary": "Destructor that resets vtable and destroys five MFC member subobjects before base destructor",
+  "fields": [
+    {
+      "class": "CObject_0092CBCC",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "CObject_0092CBCC",
+      "offset": "+0x8C",
+      "type": "uint8_t",
+      "name": "field_0x8C"
+    },
+    {
+      "class": "CObject_0092CBCC",
+      "offset": "+0xE0",
+      "type": "uint8_t",
+      "name": "field_0xE0"
+    },
+    {
+      "class": "CObject_0092CBCC",
+      "offset": "+0x134",
+      "type": "uint8_t",
+      "name": "field_0x134"
+    },
+    {
+      "class": "CObject_0092CBCC",
+      "offset": "+0x188",
+      "type": "uint8_t",
+      "name": "field_0x188"
+    },
+    {
+      "class": "CObject_0092CBCC",
+      "offset": "+0x1DC",
+      "type": "uint8_t",
+      "name": "field_0x1DC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:08:36Z"
+}
