@@ -1,0 +1,13 @@
+{
+  "va": "0x007B7890",
+  "size": 64,
+  "orig_symbol": "sub_007B7890",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "writeDwordToStream",
+  "signature": "void fn_007B7890(uint32_t arg1)",
+  "summary": "Copies its uint32 argument into a local via copyDword, then fwrite()s it (size mem_0099978C, count 1) to the stream returned by ext_0079EBE0(); on short write reports error 0x11 via ext_007AA510.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:13:51Z"
+}

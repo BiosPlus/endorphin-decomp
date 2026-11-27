@@ -85151,6 +85151,12 @@
     "summary": "12-byte byte-index table for a switch jump table at 0x007B6xxx; this is data, not code. The disassembly above is the table bytes decoded as instructions.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7890": {
+    "name": "writeDwordToStream",
+    "signature": "void fn_007B7890(uint32_t arg1)",
+    "summary": "Copies its uint32 argument into a local via copyDword, then fwrite()s it (size mem_0099978C, count 1) to the stream returned by ext_0079EBE0(); on short write reports error 0x11 via ext_007AA510.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B78D0": {
     "name": "sub_007B78D0",
     "signature": "extern uint32_t mem_00999790; // .rdata u32 0x00000004 (fwrite element size) extern void* mem_00925268;    // IAT slot for MSVCR80!fwrite (replaced by direct fwrite call) extern \"C\" void sub_007B78D0(uint32_t value)",

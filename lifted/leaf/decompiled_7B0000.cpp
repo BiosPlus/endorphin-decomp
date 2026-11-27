@@ -2085,3 +2085,31 @@ void fn_007B7A90(uint8_t* buf, uint32_t n) {
     }
 }
 } // namespace lift_007B7A90
+
+// [0x007B7890] sub_007B7890 (64 bytes)
+namespace lift_007B7890 {
+// Known callee 0x0079EBE0: sub_0079EBE0 (Calls ext_0079EBD0 to get a pointer-sized address and returns the int32 stored at it.)
+extern int32_t ext_0079EBE0(void);
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+// Known callee 0x007BAE20: copyDword (Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).)
+extern void ext_007BAE20(uint32_t* src, uint32_t* dst);
+extern int mem_0099978C;
+// IAT slot for MSVCR80!fwrite (the original did `call [0x925268]`); replaced by a direct fwrite() call.
+extern int mem_00925268;
+
+// @name writeDwordToStream
+// @summary Copies its uint32 argument into a local via copyDword, then fwrite()s it (size mem_0099978C, count 1) to the stream returned by ext_0079EBE0(); on short write reports error 0x11 via ext_007AA510.
+void fn_007B7890(uint32_t arg1) {
+    (void)&mem_00925268;  // import-binding slot; fwrite is called directly below
+    uint32_t value = 0;
+    ext_007BAE20(&arg1, &value);
+
+    auto stream = reinterpret_cast<FILE*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_0079EBE0())));
+    size_t written = fwrite(&value, static_cast<size_t>(mem_0099978C), 1, stream);
+    if (written != 1) {
+        ext_007AA510(0x11);
+    }
+}
+} // namespace lift_007B7890
