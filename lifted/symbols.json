@@ -92712,6 +92712,13 @@
     "summary": "Returns the first DWORD of the element at table[index] if index is in [0, count); otherwise calls ext_006E7440 on (this + 0x94) with index 3 and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E8E50": {
+    "name": "Unknown::findEntryByString",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006E8E50(void* self)",
+    "summary": "Scans the 32-bit entry-pointer array at +0x2C (count at +0x1C), comparing each entry's string with a temp String; returns the first matching entry object, or assigns index 5 into the sub-object at +0x94 and returns null.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E8EF0": {
     "name": "Unknown::findOrAddByKey_006E8EF0",
     "class": "Unknown",

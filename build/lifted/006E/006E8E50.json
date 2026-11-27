@@ -1,0 +1,34 @@
+{
+  "va": "0x006E8E50",
+  "size": 160,
+  "orig_symbol": "sub_006E8E50",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::findEntryByString",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_006E8E50(void* self)",
+  "summary": "Scans the 32-bit entry-pointer array at +0x2C (count at +0x1C), comparing each entry's string with a temp String; returns the first matching entry object, or assigns index 5 into the sub-object at +0x94 and returns null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "entryCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t entriesBase (address of array of 32-bit entry",
+      "name": "pointers)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "void* indexedString (sub-object passed to",
+      "name": "assignStringByIndex)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:41:42Z"
+}
