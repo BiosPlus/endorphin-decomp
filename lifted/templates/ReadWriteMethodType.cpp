@@ -5,6 +5,7 @@
 #include <cstring>
 #include <cstddef>
 #include <string>
+#include <memory>
 
 // [0x0066EBA0] ExprParser::ReadWriteMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, float, &public: void __thiscall NM::Vector3::setX(float)>::vfunc_41 (62 bytes)
 namespace lift_0066EBA0 {
@@ -18295,7 +18296,7 @@ void fn_00497C10(void* holder, void* value) {
         void* ret = ext_0046E780(self_for_call, tmp, value, holder);
         ext_00496F00(target, ret);
         (void)&mem_00924FF4; // original releases tmp via IAT slot; portable form calls the destructor directly
-        reinterpret_cast<std::string*>(tmp)->~basic_string();
+        std::destroy_at(reinterpret_cast<std::string*>(tmp));
     } else {
         alignas(8) unsigned char exc[0x20] = {};
         ext_0046C3C0(exc);
