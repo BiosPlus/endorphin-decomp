@@ -303,3 +303,31 @@ void __thiscall fn_005333C0(void* self, uint32_t val) {
     vfn(self);
 }
 } // namespace lift_005333C0
+
+// [0x00533910] OglRenderer::vfunc_20 (57 bytes)
+namespace lift_00533910 {
+// Known callee 0x0054C7F0: DeleteGlobalDisplayListRange (Deletes the 0x60-entry block of GL display lists starting at the global base list id.)
+extern void __thiscall ext_0054C7F0(void* self);
+// Known callee 0x0054C770: Unknown::BuildFontDisplayLists (Creates a 96-glyph bitmap display-list font (ASCII 32..127) from the name string at +0x08 and the height at +0x04, selected into the given DC.)
+extern void __thiscall ext_0054C770(void* self, HDC hdc);
+
+// @name OglRenderer::vfunc_20
+// @class OglRenderer
+// @summary Stores the argument into +0x3B8, +0x1E0 and +0x204, deletes the GL display-list block and rebuilds the font display lists on the subobject at +0x1DC using the HDC from +0x24.
+// @field OglRenderer +0x024 HDC field_0x24
+// @field OglRenderer +0x1DC uint8_t field_0x1DC
+// @field OglRenderer +0x1E0 uint32_t field_0x1E0
+// @field OglRenderer +0x204 uint32_t field_0x204
+// @field OglRenderer +0x3B8 uint32_t field_0x3B8
+void fn_00533910(void* self, uint32_t arg) {
+    void* sub = static_cast<uint8_t*>(self) + 0x1DC;
+
+    lift_field<uint32_t>(self, 0x3B8) = arg;
+    ext_0054C7F0(sub);
+
+    HDC hdc = lift_field<HDC>(self, 0x24);
+    lift_field<uint32_t>(self, 0x1E0) = arg;
+    lift_field<uint32_t>(self, 0x204) = arg;
+    ext_0054C770(sub, hdc);
+}
+} // namespace lift_00533910

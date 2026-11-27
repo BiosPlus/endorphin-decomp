@@ -1,0 +1,46 @@
+{
+  "va": "0x00533910",
+  "size": 57,
+  "orig_symbol": "OglRenderer::vfunc_20",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_20",
+  "class": "OglRenderer",
+  "signature": "void fn_00533910(void* self, uint32_t arg)",
+  "summary": "Stores the argument into +0x3B8, +0x1E0 and +0x204, deletes the GL display-list block and rebuilds the font display lists on the subobject at +0x1DC using the HDC from +0x24.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x24",
+      "type": "HDC",
+      "name": "field_0x24"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x1DC",
+      "type": "uint8_t",
+      "name": "field_0x1DC"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x1E0",
+      "type": "uint32_t",
+      "name": "field_0x1E0"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x204",
+      "type": "uint32_t",
+      "name": "field_0x204"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x3B8",
+      "type": "uint32_t",
+      "name": "field_0x3B8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:30:25Z"
+}

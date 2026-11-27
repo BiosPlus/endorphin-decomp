@@ -23921,6 +23921,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x300 and tail-calls sub_0052AA80.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00533910": {
+    "name": "OglRenderer::vfunc_20",
+    "class": "OglRenderer",
+    "signature": "void fn_00533910(void* self, uint32_t arg)",
+    "summary": "Stores the argument into +0x3B8, +0x1E0 and +0x204, deletes the GL display-list block and rebuilds the font display lists on the subobject at +0x1DC using the HDC from +0x24.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00533A30": {
     "name": "OglRenderer::vfunc_26",
     "class": "OglRenderer",
