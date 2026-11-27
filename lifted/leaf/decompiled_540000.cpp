@@ -1371,3 +1371,56 @@ void* __thiscall sub_0054C700(void* self) {
     return self;
 }
 } // namespace lift_0054C700
+
+// [0x0054A860] sub_0054A860 (106 bytes)
+namespace lift_0054A860 {
+// Known callee 0x005528E0: HandleGraphic::setVtableAndReset (Writes the vtable pointer 0x00957534 into the object's first dword, calls HandleGraphic::vfunc_1 on it, and returns self.)
+extern void ext_005528E0();
+extern void ext_00549940();
+// Known callee 0x0063E000: thunk_GLU32_gluNewQuadric (IAT jump thunk forwarding to GLU32!gluNewQuadric.)
+extern void ext_0063E000();
+// Known callee 0x0063E00C: thunk_GLU32_gluQuadricNormals (IAT jump thunk forwarding to GLU32!gluQuadricNormals.)
+extern void ext_0063E00C();
+// Known callee 0x0063E012: thunk_GLU32_gluQuadricDrawStyle (IAT jump thunk forwarding to GLU32!gluQuadricDrawStyle.)
+extern void ext_0063E012();
+
+// @name ToolGraphics::TranslateHandleGraphic::ctor
+// @class ToolGraphics::TranslateHandleGraphic
+// @summary Base-initialises the handle graphic, installs the derived vtable at 0x00956CFC, and creates a GLU quadric (smooth normals, GLU_FILL draw style) stored at +0x18.
+// @field ToolGraphics::TranslateHandleGraphic +0x00 void* vtable
+// @field ToolGraphics::TranslateHandleGraphic +0x18 void* quadric
+
+using GluNewQuadricFn = void*(__stdcall*)();
+using GluQuadricDrawStyleFn = void(__stdcall*)(void* quadric, unsigned int style);
+using GluQuadricNormalsFn = void(__stdcall*)(void* quadric, unsigned int normals);
+using ThiscallVfunc1Fn = void(__thiscall*)(void* self);
+using HandleGraphicResetFn = void*(__fastcall*)(void* self);
+
+static constexpr unsigned int GLU_FILL = 100012;    // 0x000186AC
+static constexpr unsigned int GLU_SMOOTH = 100000;  // 0x000186A0
+static constexpr uint32_t kVtableTranslateHandleGraphic = 0x00956CFC;
+
+void* __fastcall fn_0054A860(void* self) {
+    // Base initialisation (writes base vtable 0x00957534, then calls vfunc_1).
+    reinterpret_cast<HandleGraphicResetFn>(reinterpret_cast<void*>(&ext_005528E0))(self);
+
+    // Install the derived vtable.
+    lift_field<uint32_t>(self, 0x00) = kVtableTranslateHandleGraphic;
+
+    // quadric = gluNewQuadric(); quadric->field_0x18
+    void* quadric = reinterpret_cast<GluNewQuadricFn>(reinterpret_cast<void*>(&ext_0063E000))();
+    lift_field<void*>(self, 0x18) = quadric;
+
+    // gluQuadricDrawStyle(quadric, GLU_FILL);
+    reinterpret_cast<GluQuadricDrawStyleFn>(reinterpret_cast<void*>(&ext_0063E012))(quadric, GLU_FILL);
+
+    // gluQuadricNormals(quadric, GLU_SMOOTH);
+    quadric = lift_field<void*>(self, 0x18);
+    reinterpret_cast<GluQuadricNormalsFn>(reinterpret_cast<void*>(&ext_0063E00C))(quadric, GLU_SMOOTH);
+
+    // TranslateHandleGraphic::vfunc_1 on self (thiscall, ecx = self).
+    reinterpret_cast<ThiscallVfunc1Fn>(reinterpret_cast<void*>(&ext_00549940))(self);
+
+    return self;
+}
+} // namespace lift_0054A860

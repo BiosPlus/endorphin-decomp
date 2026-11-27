@@ -25311,6 +25311,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005498E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ToolGraphics/auto_tiny.cpp"
   },
+  "0x0054A860": {
+    "name": "ToolGraphics::TranslateHandleGraphic::ctor",
+    "class": "ToolGraphics::TranslateHandleGraphic",
+    "signature": "void* __fastcall fn_0054A860(void* self)",
+    "summary": "Base-initialises the handle graphic, installs the derived vtable at 0x00956CFC, and creates a GLU quadric (smooth normals, GLU_FILL draw style) stored at +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054A8D0": {
     "name": "ToolGraphics::TranslateHandleGraphic::vfunc_0",
     "class": "ToolGraphics::TranslateHandleGraphic",
