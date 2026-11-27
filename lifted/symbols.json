@@ -33418,6 +33418,12 @@
     "summary": "Compares arg with the 2 string entries at 0x00B45900 (stride 0x1C) using std::string operator==; returns the matching index, or 3 if none match.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005CFDB0": {
+    "name": "findStringInTable",
+    "signature": "int __stdcall fn_005CFDB0(void* str)",
+    "summary": "Compares the std::string at arg to literal mem_0092F10C (returns 1 on match), else to 4 table entries at mem_00B45938 (stride 0x1C) returning the matching index, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CFE10": {
     "name": "set_field_0x1f2",
     "signature": "void __thiscall fn_005CFE10(void* self, uint32_t arg1)",

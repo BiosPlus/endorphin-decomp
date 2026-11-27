@@ -1509,3 +1509,43 @@ void* fn_005C35E0(uint32_t count) {
     return ext_006A5C62(count << 5);
 }
 } // namespace lift_005C35E0
+
+// [0x005CFDB0]
+namespace lift_005CFDB0 {
+// @name findStringInTable
+// @summary Compares the std::string at arg to literal mem_0092F10C (returns 1 on match), else to 4 table entries at mem_00B45938 (stride 0x1C) returning the matching index, else 0.
+
+// MSVCP80 import slots (function pointers loaded from the IAT).
+extern uintptr_t mem_00924FC0; // operator==(const std::string&, const char*)
+extern uintptr_t mem_00924FC4; // operator==(const std::string&, const std::string&)
+
+// .rdata literal compared against arg.
+extern const char mem_0092F10C[];
+
+// Table of 28-byte std::string objects; loop covers 0x70 bytes (4 entries).
+extern uint8_t mem_00B45938[];
+
+using StrEqCStr_t = bool(__cdecl*)(const void*, const char*);
+using StrEqStr_t = bool(__cdecl*)(const void*, const void*);
+
+int __stdcall fn_005CFDB0(void* str) {
+    auto eq_cstr = reinterpret_cast<StrEqCStr_t>(mem_00924FC0);
+    if (eq_cstr(str, mem_0092F10C)) {
+        return 1;
+    }
+
+    auto eq_str = reinterpret_cast<StrEqStr_t>(mem_00924FC4);
+    uint8_t* esi = mem_00B45938;
+    uint8_t* const end = mem_00B45938 + 0x70;
+    int edi = 0;
+    do {
+        if (eq_str(esi, str)) {
+            return edi;
+        }
+        esi += 0x1c;
+        edi += 1;
+    } while (esi < end);
+
+    return 0;
+}
+} // namespace lift_005CFDB0

@@ -1,0 +1,13 @@
+{
+  "va": "0x005CFDB0",
+  "size": 92,
+  "orig_symbol": "sub_005CFDB0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "findStringInTable",
+  "signature": "int __stdcall fn_005CFDB0(void* str)",
+  "summary": "Compares the std::string at arg to literal mem_0092F10C (returns 1 on match), else to 4 table entries at mem_00B45938 (stride 0x1C) returning the matching index, else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:45:22Z"
+}
