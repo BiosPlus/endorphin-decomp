@@ -47263,6 +47263,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x68 and tail-calls sub_0065C2C0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006595F0": {
+    "name": "RelationshipRPROJoint::vfunc_52",
+    "class": "RelationshipRPROJoint",
+    "signature": "void fn_006595F0(void* self)",
+    "summary": "Zeroes the entry range via ext_00645A00, clears the bool at +0x64, and invokes the sub-object at +0x68 (ret 8: callee pops two stack args).",
+    "lifted_path": "lifted/classes/RelationshipRPROJoint.cpp"
+  },
   "0x00659610": {
     "name": "RelationshipRPROJoint::vfunc_39",
     "class": "RelationshipRPROJoint",

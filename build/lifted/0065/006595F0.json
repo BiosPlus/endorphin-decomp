@@ -1,0 +1,22 @@
+{
+  "va": "0x006595F0",
+  "size": 24,
+  "orig_symbol": "RelationshipRPROJoint::vfunc_52",
+  "src_path": "src/classes/RelationshipRPROJoint.cpp",
+  "lifted_path": "lifted/classes/RelationshipRPROJoint.cpp",
+  "name": "RelationshipRPROJoint::vfunc_52",
+  "class": "RelationshipRPROJoint",
+  "signature": "void fn_006595F0(void* self)",
+  "summary": "Zeroes the entry range via ext_00645A00, clears the bool at +0x64, and invokes the sub-object at +0x68 (ret 8: callee pops two stack args).",
+  "fields": [
+    {
+      "class": "RelationshipRPROJoint",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:14:36Z"
+}
