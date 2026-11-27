@@ -32629,6 +32629,13 @@
     "summary": "Advances a red-black-tree iterator to its in-order successor (stored at this+0x04), with _invalid_parameter_noinfo reporting on null/sentinel inputs.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00595B70": {
+    "name": "Obj::create (sub_00595B70)",
+    "class": "Obj",
+    "signature": "void* __stdcall fn_00595B70(uint32_t a, uint32_t b, uint32_t c, const void* rhs, uint8_t flag)",
+    "summary": "Allocates a 0x34-byte Obj, stores three dwords, copy-constructs the string sub-object at +0x0C from rhs, and sets the trailing flag byte; returns the new object or null on allocation failure.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00595C50": {
     "name": "sub_00595C50",
     "signature": "void* fn_00595C50()",

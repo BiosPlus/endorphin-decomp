@@ -2170,3 +2170,49 @@ void fn_0059FE80(DWORD* first, DWORD* last) {
     }
 }
 } // namespace lift_0059FE80
+
+// [0x00595B70]
+namespace lift_00595B70 {
+// Known callee 0x00594250: copy_string_and_field (Copy-constructs a std::string at +0x00 and clones/copies a vtable-backed member at +0x1C/+0x20)
+extern void ext_00594250();
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.) -- operator delete
+extern void ext_006A5C5C();
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.) -- operator new
+extern void ext_006A5C62();
+
+// @name Obj::create (sub_00595B70)
+// @summary Allocates a 0x34-byte Obj, stores three dwords, copy-constructs the string sub-object at +0x0C from rhs, and sets the trailing flag byte; returns the new object or null on allocation failure.
+// @field Obj +0x00 uint32_t field_0x00
+// @field Obj +0x04 uint32_t field_0x04
+// @field Obj +0x08 uint32_t field_0x08
+// @field Obj +0x0C std::string field_0x0C
+// @field Obj +0x30 uint8_t field_0x30
+// @field Obj +0x31 uint8_t field_0x31
+void* __stdcall fn_00595B70(uint32_t a, uint32_t b, uint32_t c, const void* rhs, uint8_t flag) {
+    using alloc_fn_t = void* (__cdecl*)(size_t);
+    using free_fn_t = void (__cdecl*)(void*);
+    using copy_fn_t = void* (__thiscall*)(void* self, const void* rhs);
+
+    void* obj = reinterpret_cast<alloc_fn_t>(ext_006A5C62)(0x34);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    try {
+        lift_field<uint32_t>(obj, 0x00) = a;
+        lift_field<uint32_t>(obj, 0x04) = b;
+        lift_field<uint32_t>(obj, 0x08) = c;
+
+        reinterpret_cast<copy_fn_t>(ext_00594250)(static_cast<uint8_t*>(obj) + 0x0C, rhs);
+
+        lift_field<uint8_t>(obj, 0x30) = flag;
+        lift_field<uint8_t>(obj, 0x31) = 0;
+    } catch (...) {
+        // Unwind funclet: release the partially constructed object, then rethrow.
+        reinterpret_cast<free_fn_t>(ext_006A5C5C)(obj);
+        throw;
+    }
+
+    return obj;
+}
+} // namespace lift_00595B70

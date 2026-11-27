@@ -1,0 +1,52 @@
+{
+  "va": "0x00595B70",
+  "size": 147,
+  "orig_symbol": "sub_00595B70",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "Obj::create (sub_00595B70)",
+  "class": "Obj",
+  "signature": "void* __stdcall fn_00595B70(uint32_t a, uint32_t b, uint32_t c, const void* rhs, uint8_t flag)",
+  "summary": "Allocates a 0x34-byte Obj, stores three dwords, copy-constructs the string sub-object at +0x0C from rhs, and sets the trailing flag byte; returns the new object or null on allocation failure.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x31",
+      "type": "uint8_t",
+      "name": "field_0x31"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:40:53Z"
+}
