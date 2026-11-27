@@ -1,0 +1,28 @@
+{
+  "va": "0x00501140",
+  "size": 102,
+  "orig_symbol": "sub_00501140",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "ValidatedCursorAdvance_00501140",
+  "class": "Unknown",
+  "signature": "void* fn_00501140(void* self, DWORD arg)",
+  "summary": "Calls ext_00500DA0 to fetch an (owner, cursor) pair, validates the range at self+0x04/+0x08 and the owner, and returns cursor+0x1C (or null when cursor == end). Invalid states call mem_00925134 and continue.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "self",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:12:58Z"
+}

@@ -27057,6 +27057,13 @@
     "summary": "Copy-constructs count 0x24-byte elements from rhs into begin and returns the one-past-end pointer (begin + count * 0x24).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00501140": {
+    "name": "ValidatedCursorAdvance_00501140",
+    "class": "Unknown",
+    "signature": "void* fn_00501140(void* self, DWORD arg)",
+    "summary": "Calls ext_00500DA0 to fetch an (owner, cursor) pair, validates the range at self+0x04/+0x08 and the owner, and returns cursor+0x1C (or null when cursor == end). Invalid states call mem_00925134 and continue.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005013A0": {
     "name": "EvolveEngine::vfunc_2_off_10",
     "class": "EvolveEngine",
