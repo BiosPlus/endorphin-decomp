@@ -6652,6 +6652,13 @@
     "summary": "Returns the address of the read-only string literal \"6gj\" (.rdata at 0x00934DB4).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044CB90": {
+    "name": "Unknown::PushBackDword_0044CB90",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_0044CB90(void* self, uint32_t value)",
+    "summary": "Appends one 4-byte value to a vector-like object: fast path constructs at the end pointer and bumps it when spare capacity exists; otherwise checks begin \u003c= end and calls the grow path ext_0044CAF0.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044CC20": {
     "name": "RenderView::vfunc_12",
     "class": "RenderView",

@@ -3498,3 +3498,48 @@ void fn_0044B7E0(void* self) {
     dtor(tmp);
 }
 } // namespace lift_0044B7E0
+
+// [0x0044CB90] sub_0044CB90 (131 bytes)
+namespace lift_0044CB90 {
+extern void __thiscall ext_0044CAF0(void* self, const uint32_t* value_ref, void* self_arg, void* end, uint32_t value);
+extern void ext_0044C330(void* dst, int count, uint32_t value, void* self, uint32_t value_dup, uint32_t flag);
+extern uint32_t mem_00925134;
+
+// @name Unknown::PushBackDword_0044CB90
+// @class Unknown
+// @summary Appends one 4-byte value to a vector-like object: fast path constructs at the end pointer and bumps it when spare capacity exists; otherwise checks begin <= end and calls the grow path ext_0044CAF0.
+// @field Unknown +0x04 uint8_t* vec_begin
+// @field Unknown +0x08 uint8_t* vec_end
+// @field Unknown +0x0C uint8_t* vec_cap_end
+extern void __thiscall fn_0044CB90(void* self, uint32_t value) {
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x4);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x8);
+    uint8_t* cap_end = lift_field<uint8_t*>(self, 0xC);
+
+    const uint32_t b = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(begin));
+    const uint32_t e = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(end));
+    const uint32_t c = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(cap_end));
+
+    if (b != 0) {
+        const uint32_t size = static_cast<uint32_t>(static_cast<int32_t>(e - b) >> 2);
+        const uint32_t capacity = static_cast<uint32_t>(static_cast<int32_t>(c - b) >> 2);
+        if (size < capacity) {
+            // Spare capacity: construct the new element at end, then bump end by one slot.
+            ext_0044C330(end, 1, value, self, value, 0);
+            end += 4;
+            lift_field<uint8_t*>(self, 0x8) = end;
+            return;
+        }
+    }
+
+    // Slow path: begin must not be above end.
+    if (b > e) {
+        using InvalidParamFn = void (*)();
+        InvalidParamFn invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+        invalid_param();
+    }
+
+    uint32_t copy = value;
+    ext_0044CAF0(self, &copy, self, end, copy);
+}
+} // namespace lift_0044CB90

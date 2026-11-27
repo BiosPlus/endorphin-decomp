@@ -1,0 +1,34 @@
+{
+  "va": "0x0044CB90",
+  "size": 131,
+  "orig_symbol": "sub_0044CB90",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::PushBackDword_0044CB90",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_0044CB90(void* self, uint32_t value)",
+  "summary": "Appends one 4-byte value to a vector-like object: fast path constructs at the end pointer and bumps it when spare capacity exists; otherwise checks begin \u003c= end and calls the grow path ext_0044CAF0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "vec_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "vec_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "vec_cap_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:24:15Z"
+}
