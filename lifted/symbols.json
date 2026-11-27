@@ -78079,6 +78079,13 @@
     "summary": "Calls vslot+0x24 on the child at this+0x10 (result t), then vslot+0x14 with (a1, 0x10) returning its result r, then vslot+0x28 with t; returns r.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00725AE0": {
+    "name": "Unknown::formatFieldsAndInit_00725AE0",
+    "class": "Unknown",
+    "signature": "void* fn_00725AE0(void* self, void* target)",
+    "summary": "Formats seven dwords at +0x1cc..+0x1e4 with a constant format string into a 24-byte stack buffer, passes it to initAssignCString on the target, and returns the target.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00725B50": {
     "name": "parseVector7Fields",
     "signature": "extern \"C\" void __fastcall fn_00725B50(void* self, void* /*edx*/, StrArg76 str_arg)",

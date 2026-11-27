@@ -1236,3 +1236,42 @@ void fn_007283B0(void* self) {
     ext_006E7440(sub, 0x0B);
 }
 } // namespace lift_007283B0
+
+// [0x00725AE0] sub_00725AE0 (112 bytes)
+namespace lift_00725AE0 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+
+// Format string at .rdata 0x00AACF78 (passed to sprintf in the original).
+extern const char mem_00AACF78[];
+
+// .rdata import slot for MSVCR80!sprintf (0x00925218). Metadata-only reference.
+extern int mem_00925218;
+
+// @name Unknown::formatFieldsAndInit_00725AE0
+// @class Unknown
+// @summary Formats seven dwords at +0x1cc..+0x1e4 with a constant format string into a 24-byte stack buffer, passes it to initAssignCString on the target, and returns the target.
+// @field Unknown +0x1cc uint32_t field_0x1cc
+// @field Unknown +0x1d0 uint32_t field_0x1d0
+// @field Unknown +0x1d4 uint32_t field_0x1d4
+// @field Unknown +0x1d8 uint32_t field_0x1d8
+// @field Unknown +0x1dc uint32_t field_0x1dc
+// @field Unknown +0x1e0 uint32_t field_0x1e0
+// @field Unknown +0x1e4 uint32_t field_0x1e4
+void* fn_00725AE0(void* self, void* target) {
+    char buf[24];
+    (void)&mem_00925218;
+
+    std::sprintf(buf, mem_00AACF78,
+                 lift_field<uint32_t>(self, 0x1cc),
+                 lift_field<uint32_t>(self, 0x1d0),
+                 lift_field<uint32_t>(self, 0x1d4),
+                 lift_field<uint32_t>(self, 0x1d8),
+                 lift_field<uint32_t>(self, 0x1dc),
+                 lift_field<uint32_t>(self, 0x1e0),
+                 lift_field<uint32_t>(self, 0x1e4));
+
+    ext_006B9D80(target, buf);
+    return target;
+}
+} // namespace lift_00725AE0
