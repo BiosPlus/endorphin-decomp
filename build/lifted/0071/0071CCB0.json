@@ -1,0 +1,28 @@
+{
+  "va": "0x0071CCB0",
+  "size": 80,
+  "orig_symbol": "sub_0071CCB0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::SetChildAndPropertyValue_0071CCB0",
+  "class": "Unknown",
+  "signature": "void __fastcall fn_0071CCB0(void* self, double value)",
+  "summary": "Finds a child by name at 0x00AA8D2C, invokes its vtable+0x80 with a double value, and if field_0x04 is non-null updates it with the float-converted value.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:18:35Z"
+}

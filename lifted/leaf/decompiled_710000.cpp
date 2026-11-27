@@ -3019,3 +3019,32 @@ void* fn_00713EC0(void* self, void* arg) {
     return self;
 }
 } // namespace lift_00713EC0
+
+// [0x0071CCB0]
+namespace lift_0071CCB0 {
+// @name Unknown::SetChildAndPropertyValue_0071CCB0
+// @class Unknown
+// @summary Finds a child by name at 0x00AA8D2C, invokes its vtable+0x80 with a double value, and if field_0x04 is non-null updates it with the float-converted value.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0C
+
+
+    void* __fastcall ext_00708000(void* self, const char* name);
+    void* __fastcall ext_006DC460(void* self);
+    void* __fastcall ext_006C9540(void* self, float value);
+    void __fastcall ext_006CD330(void* self);
+
+void __fastcall fn_0071CCB0(void* self, double value) {
+    void* child = ext_00708000(lift_field<void*>(self, 0x0C), reinterpret_cast<const char*>(0x00AA8D2C));
+    void** vtable = *reinterpret_cast<void***>(child);
+    using VMethod = void(__thiscall*)(void*, double);
+    reinterpret_cast<VMethod>(vtable[0x80 / sizeof(void*)])(child, value);
+
+    void* field4 = lift_field<void*>(self, 0x04);
+    if (field4 != nullptr) {
+        void* obj = ext_006DC460(field4);
+        void* res = ext_006C9540(obj, static_cast<float>(value));
+        ext_006CD330(res);
+    }
+}
+} // namespace lift_0071CCB0
