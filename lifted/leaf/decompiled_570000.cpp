@@ -2303,3 +2303,44 @@ void* __thiscall fn_00573430(void* this_ptr, const void* src) {
     return this_ptr;
 }
 } // namespace lift_00573430
+
+// [0x00572720] sub_00572720 (147 bytes)
+namespace lift_00572720 {
+// Known callee 0x005726C0: sub_005726C0 (Auto-lifted identical-shape clone of 0x006998D0 (Unknown::copyStringAndRecord).)
+extern void* ext_005726C0(void* self, const void* src);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 = operator new)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764 = operator delete)
+extern void ext_006A5C5C(void* p);
+
+// @name Unknown::createWithCopiedString
+// @class Unknown
+// @summary Allocates a 0x3C-byte record, stores three dwords, copies a string into the embedded sub-object, sets a flag byte, and returns the record (NULL on allocation failure).
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x0C Unknown field_0x0c
+// @field Unknown +0x38 BYTE field_0x38
+// @field Unknown +0x39 BYTE field_0x39
+void* fn_00572720(DWORD a0, DWORD a1, DWORD a2, const void* src, BYTE flag) {
+    void* p = ext_006A5C62(0x3C);
+    if (p == nullptr) {
+        return nullptr;
+    }
+
+    try {
+        lift_field<DWORD>(p, 0x00) = a0;
+        lift_field<DWORD>(p, 0x04) = a1;
+        lift_field<DWORD>(p, 0x08) = a2;
+        ext_005726C0(static_cast<uint8_t*>(p) + 0x0C, src);
+        lift_field<BYTE>(p, 0x38) = flag;
+        lift_field<BYTE>(p, 0x39) = 0;
+    } catch (...) {
+        // Unwind cleanup from the original SEH funclet: free the record, then rethrow.
+        ext_006A5C5C(p);
+        throw;
+    }
+
+    return p;
+}
+} // namespace lift_00572720

@@ -30044,6 +30044,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006998D0 (Unknown::copyStringAndRecord).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00572720": {
+    "name": "Unknown::createWithCopiedString",
+    "class": "Unknown",
+    "signature": "void* fn_00572720(DWORD a0, DWORD a1, DWORD a2, const void* src, BYTE flag)",
+    "summary": "Allocates a 0x3C-byte record, stores three dwords, copies a string into the embedded sub-object, sets a flag byte, and returns the record (NULL on allocation failure).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00573180": {
     "name": "sub_00573180",
     "class": "Unknown",
