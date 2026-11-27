@@ -2061,3 +2061,33 @@ bool fn_005CD120(void* self, const void* value) {
     return true;
 }
 } // namespace lift_005CD120
+
+// [0x005C3390]
+namespace lift_005C3390 {
+extern uint32_t mem_00925354;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00A8AFF4;
+extern uint8_t mem_00B5CE94;
+
+extern void ext_0066AC90(void* out_str, ...);
+
+// @name getTypeNameWrapped
+// @summary Gets type_info name and passes it as a std::string to ext_0066AC90
+void* sub_005C3390(void* out_str) {
+    using NameInternalFn = const char* (__thiscall*)(void* this_ptr, void* node);
+    using StdStringCtorFn = void* (__thiscall*)(void* this_ptr, const char* s);
+
+    auto name_fn = reinterpret_cast<NameInternalFn>(static_cast<uintptr_t>(mem_00925354));
+    auto str_ctor = reinterpret_cast<StdStringCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+
+    const char* name = name_fn(&mem_00A8AFF4, &mem_00B5CE94);
+
+    struct StdString28 {
+        uint8_t bytes[0x1C];
+    } temp_str;
+
+    str_ctor(&temp_str, name);
+    ext_0066AC90(out_str, temp_str);
+    return out_str;
+}
+} // namespace lift_005C3390

@@ -48063,6 +48063,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x005C3390": {
+    "name": "getTypeNameWrapped",
+    "signature": "void* sub_005C3390(void* out_str)",
+    "summary": "Gets type_info name and passes it as a std::string to ext_0066AC90",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C33E0": {
     "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addForce(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addForce(class NM::Vector3 const \u0026), 0}\u003e",
@@ -101067,6 +101073,13 @@
     "name": "sub_0077CB00",
     "signature": "extern void* fn_0077CB00(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077E760": {
+    "name": "Unknown::configureMaterial_0077E760",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_0077E760(void* self, void* arg)",
+    "summary": "Configures a \"Material\" entry on the sub-object at +0xAC+0x4 using properties from the passed object.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
   "0x0077F010": {

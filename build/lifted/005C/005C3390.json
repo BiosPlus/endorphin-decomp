@@ -1,0 +1,13 @@
+{
+  "va": "0x005C3390",
+  "size": 60,
+  "orig_symbol": "sub_005C3390",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "getTypeNameWrapped",
+  "signature": "void* sub_005C3390(void* out_str)",
+  "summary": "Gets type_info name and passes it as a std::string to ext_0066AC90",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:18:10Z"
+}
