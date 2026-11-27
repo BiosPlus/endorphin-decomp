@@ -765,7 +765,7 @@ struct Unknown_Fields {
     // +0x24  std::string              field_0x24  (evidence: 0x0063E100, 0x0063E1A0, 0x0063E5B0, 0x0063E610, 0x0063E9E0) // CONFLICT: multiple definitions at +0x24
     // +0x24  std::uint32_t            field_0x24  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x24
     // +0x24  uint16_t                 field_0x24  (evidence: 0x007C2E50, 0x007C70F0) // CONFLICT: multiple definitions at +0x24
-    // +0x24  uint32_t                 field_0x24  (evidence: 0x0048F2F0, 0x0048F510, 0x0048F740, 0x004E3A30, 0x004F0250, 0x004F0A90, 0x00515B20, 0x00572680, 0x0057FD10, 0x0060B240, 0x0063F4E0, 0x006CA540, 0x006FD3A0, 0x0078D7A0, 0x00790E20, 0x00790F40, 0x007AF180) // CONFLICT: multiple definitions at +0x24
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x0048F2F0, 0x0048F510, 0x0048F740, 0x004E3A30, 0x004F0250, 0x004F0A90, 0x00515B20, 0x00572680, 0x0057FD10, 0x005DC270, 0x0060B240, 0x0063F4E0, 0x006CA540, 0x006FD3A0, 0x0078D7A0, 0x00790E20, 0x00790F40, 0x007AF180) // CONFLICT: multiple definitions at +0x24
     // +0x24  uint8_t*                 field_0x24  (evidence: 0x00547B70) // CONFLICT: multiple definitions at +0x24
     // +0x24  void (*)(void*, void*)   field_0x24  (evidence: 0x007C15A0, 0x007CAF70) // CONFLICT: multiple definitions at +0x24
     // +0x24  void*                    field_0x24  (evidence: 0x00441C10, 0x00518030, 0x0051A000, 0x0058A9A0, 0x0058AA20, 0x007DB130) // CONFLICT: multiple definitions at +0x24
@@ -938,7 +938,7 @@ struct Unknown_Fields {
     // +0x44  uint16_t                 field_0x44  (evidence: 0x007AF750, 0x007BADF0) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint32_t                 field_0x44  (evidence: 0x00518080, 0x0060C570, 0x0063F960, 0x00665DC0, 0x007C8490, 0x007C97A0, 0x007CAF70) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint8_t                  field_0x44  (evidence: 0x0052F340, 0x0052F7D0, 0x0052FC10) // CONFLICT: multiple definitions at +0x44
-    // +0x44  void*                    field_0x44  (evidence: 0x005D0AF0, 0x005DA150, 0x005DC1E0, 0x005DC300, 0x005DC6C0, 0x005DC930, 0x0074AEF0) // CONFLICT: multiple definitions at +0x44
+    // +0x44  void*                    field_0x44  (evidence: 0x005D0AF0, 0x005DA150, 0x005DC1E0, 0x005DC270, 0x005DC300, 0x005DC6C0, 0x005DC930, 0x0074AEF0) // CONFLICT: multiple definitions at +0x44
     // +0x44  BYTE                     flag44  (evidence: 0x005B3500) // CONFLICT: multiple definitions at +0x44
     // +0x44  void*                    imageListAddMaskedProc  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x44
     // +0x44  uintptr_t                rangeEnd  (evidence: 0x0063F620) // CONFLICT: multiple definitions at +0x44

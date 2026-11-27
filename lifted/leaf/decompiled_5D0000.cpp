@@ -897,3 +897,33 @@ void __thiscall sub_005DC1E0(void* self, uint32_t arg) {
     ext_0065C650(lock);
 }
 } // namespace lift_005DC1E0
+
+// [0x005DC270]
+namespace lift_005DC270 {
+// @name Unknown::setValueAndNotify
+// @class Unknown
+// @summary Sets field_0x24 and child field_0x60 under a critical section lock, then dispatches vtable slot +0x154 on the global object's +0x258 member.
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x44 void* field_0x44
+
+
+extern void* __thiscall ext_00493EE0(void* ecx);
+extern int32_t __cdecl ext_00594000(void);
+extern void __thiscall ext_005DA130(void* self, uint32_t value);
+extern void __thiscall ext_0065C640(void* self);
+extern void __thiscall ext_0065C650(void* self);
+
+void __thiscall fn_005DC270(void* self, uint32_t value) {
+    uint8_t* globalObj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+    void** slot258 = reinterpret_cast<void**>(globalObj + 0x258);
+    void* lockTarget = *slot258;
+    using GetLockFn = void* (__thiscall*)(void*);
+    void* lock = (*reinterpret_cast<GetLockFn**>(lockTarget))[0x1d8 / 4](lockTarget);
+
+    ext_0065C640(lock);
+    lift_field<uint32_t>(self, 0x24) = value;
+    ext_005DA130(lift_field<void*>(self, 0x44), value);
+    ext_00493EE0(slot258);
+    ext_0065C650(lock);
+}
+} // namespace lift_005DC270

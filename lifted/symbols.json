@@ -38556,6 +38556,13 @@
     "summary": "Sets field_0x20 and child field_0x5C under a critical section lock, then dispatches virtual slot 0x154.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005DC270": {
+    "name": "Unknown::setValueAndNotify",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_005DC270(void* self, uint32_t value)",
+    "summary": "Sets field_0x24 and child field_0x60 under a critical section lock, then dispatches vtable slot +0x154 on the global object's +0x258 member.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DC300": {
     "name": "Unknown::StoreFloatAndDispatchUnderLock",
     "class": "Unknown",
