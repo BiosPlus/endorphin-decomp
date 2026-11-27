@@ -1,0 +1,52 @@
+{
+  "va": "0x006D8280",
+  "size": 112,
+  "orig_symbol": "sub_006D8280",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::LookupIndexedValue",
+  "class": "Unknown",
+  "signature": "extern \"C\" int32_t __thiscall fn_006D8280(void* self, int32_t idx, int32_t sub)",
+  "summary": "Validates a sub-object header and returns table[idx] entry value at base+sub, or -1 on any failed check.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "int32_t",
+      "name": "field_0x1c4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D4",
+      "type": "int32_t*",
+      "name": "field_0x1d4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "int32_t*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:36Z"
+}

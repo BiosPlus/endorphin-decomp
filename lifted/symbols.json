@@ -60574,6 +60574,13 @@
     "summary": "Looks up an entry in a 12-byte-stride table at this+0x1D4 (indexed by arg1, bounded by this+0x1C4); each entry holds a base index and a limit, and the result is this+0x1EC[base + arg2] if arg2 is below the limit, else -1. Thiscall, two stack args, returns int32 in eax.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D8280": {
+    "name": "Unknown::LookupIndexedValue",
+    "class": "Unknown",
+    "signature": "extern \"C\" int32_t __thiscall fn_006D8280(void* self, int32_t idx, int32_t sub)",
+    "summary": "Validates a sub-object header and returns table[idx] entry value at base+sub, or -1 on any failed check.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D8520": {
     "name": "sub_006D8520",
     "class": "\u003cUnknown\u003e",

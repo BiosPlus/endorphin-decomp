@@ -2034,3 +2034,57 @@ void fn_006DE3F0(void* self, void* newObj) {
     lift_field<void*>(self, 0x14) = nullptr;
 }
 } // namespace lift_006DE3F0
+
+// [0x006D8280] sub_006D8280 (112 bytes)
+namespace lift_006D8280 {
+// Known callee 0x006FDF70: sub_006FDF70 (unlifted; thiscall-style, one stack arg, returns pointer in eax)
+extern void* __thiscall ext_006FDF70(void* self, int32_t arg);
+// Known callee 0x006FC930: sub_006FC930 (returns pointer in eax, used as object base)
+extern void* __fastcall ext_006FC930(void* self);
+
+// @name Unknown::LookupIndexedValue
+// @class Unknown
+// @summary Validates a sub-object header and returns table[idx] entry value at base+sub, or -1 on any failed check.
+// @field Unknown +0x1c4 int32_t field_0x1c4
+// @field Unknown +0x1d4 int32_t* field_0x1d4
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x20 int32_t field_0x20
+// @field Unknown +0x30 int32_t* field_0x30
+extern int32_t __thiscall fn_006D8280(void* self, int32_t idx, int32_t sub) {
+    void* first = ext_006FDF70(self, 0);
+    if (first == nullptr) {
+        return -1;
+    }
+
+    void* obj = ext_006FC930(first);
+    if (obj == nullptr) {
+        return -1;
+    }
+    if (lift_field<int32_t>(obj, 0x00) != 2) {
+        return -1;
+    }
+    if (lift_field<int32_t>(obj, 0x04) != 2) {
+        return -1;
+    }
+
+    if (idx >= lift_field<int32_t>(self, 0x1c4)) {
+        return -1;
+    }
+
+    // Table of 12-byte entries: [0] = base offset, [1] = limit for sub.
+    int32_t* table = lift_field<int32_t*>(self, 0x1d4);
+    int32_t* entry = table + 3 * idx;
+    if (sub >= entry[1]) {
+        return -1;
+    }
+
+    int32_t index = entry[0] + sub;
+    if (index >= lift_field<int32_t>(obj, 0x20)) {
+        return -1;
+    }
+
+    int32_t* data = lift_field<int32_t*>(obj, 0x30);
+    return data[index];
+}
+} // namespace lift_006D8280
