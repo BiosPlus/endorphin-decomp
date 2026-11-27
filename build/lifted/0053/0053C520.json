@@ -1,0 +1,40 @@
+{
+  "va": "0x0053C520",
+  "size": 509,
+  "orig_symbol": "Primitives::Bone::vfunc_28",
+  "src_path": "src/Primitives/Bone.cpp",
+  "lifted_path": "lifted/Primitives/Bone.cpp",
+  "name": "Primitives::Bone::vfunc_28",
+  "class": "Primitives::Bone",
+  "signature": "extern void (*mem_0092546C)(GLbitfield mask);     // OPENGL32!glPushAttrib extern void (*mem_00925520)(GLfloat width);       // OPENGL32!glLineWidth extern void (*mem_00925490)(GLenum mode);         // OPENGL32!glBegin extern void (*mem_0092548C)(GLfloat x, GLfloat y, GLfloat z); // OPENGL32!glVertex3f extern const double mem_00955648;                 // .rdata double 0.001 void fn_0053C520(void* self)",
+  "summary": "Draws the bone as GL_LINES from the origin to four points offset around the bone axis, scaled by value3.",
+  "fields": [
+    {
+      "class": "Primitives::Bone",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "value0"
+    },
+    {
+      "class": "Primitives::Bone",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "value1"
+    },
+    {
+      "class": "Primitives::Bone",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "value2"
+    },
+    {
+      "class": "Primitives::Bone",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "value3"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:39:13Z"
+}

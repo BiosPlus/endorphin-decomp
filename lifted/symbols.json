@@ -34675,6 +34675,13 @@
     "summary": "Runs the base init on self, then installs two vtable pointers and zeroes three float fields.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x0053C520": {
+    "name": "Primitives::Bone::vfunc_28",
+    "class": "Primitives::Bone",
+    "signature": "extern void (*mem_0092546C)(GLbitfield mask);     // OPENGL32!glPushAttrib extern void (*mem_00925520)(GLfloat width);       // OPENGL32!glLineWidth extern void (*mem_00925490)(GLenum mode);         // OPENGL32!glBegin extern void (*mem_0092548C)(GLfloat x, GLfloat y, GLfloat z); // OPENGL32!glVertex3f extern const double mem_00955648;                 // .rdata double 0.001 void fn_0053C520(void* self)",
+    "summary": "Draws the bone as GL_LINES from the origin to four points offset around the bone axis, scaled by value3.",
+    "lifted_path": "lifted/Primitives/Bone.cpp"
+  },
   "0x0053C8B0": {
     "name": "Primitives::Sphere::vfunc_0",
     "class": "Primitives::Sphere",
