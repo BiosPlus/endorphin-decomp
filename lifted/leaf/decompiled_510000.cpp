@@ -416,3 +416,23 @@ void* fn_0051A270() {
     return mem_00AEC72C;
 }
 } // namespace lift_0051A270
+
+// [0x0051A560]
+namespace lift_0051A560 {
+extern uint32_t mem_00AEC778;
+extern uint8_t mem_00AEC75C[];
+
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+extern int ext_006A6C87(void* fn);
+
+// @name initStaticBoolString
+// @summary Initializes a static string via ext_0066AD10 once, registers its destructor with atexit, and returns it.
+void* fn_0051A560() {
+    if ((mem_00AEC778 & 1u) == 0) {
+        mem_00AEC778 |= 1u;
+        ext_0066AD10(mem_00AEC75C, static_cast<uint8_t>(0x00A43418u));
+        ext_006A6C87(reinterpret_cast<void*>(0x0091A000u));
+    }
+    return mem_00AEC75C;
+}
+} // namespace lift_0051A560

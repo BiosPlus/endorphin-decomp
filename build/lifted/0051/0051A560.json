@@ -1,0 +1,13 @@
+{
+  "va": "0x0051A560",
+  "size": 95,
+  "orig_symbol": "sub_0051A560",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "initStaticBoolString",
+  "signature": "void* fn_0051A560()",
+  "summary": "Initializes a static string via ext_0066AD10 once, registers its destructor with atexit, and returns it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:55:09Z"
+}
