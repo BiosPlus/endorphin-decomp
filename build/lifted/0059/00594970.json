@@ -1,0 +1,13 @@
+{
+  "va": "0x00594970",
+  "size": 95,
+  "orig_symbol": "sub_00594970",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "getSingleton_00B4135C",
+  "signature": "void* sub_00594970()",
+  "summary": "Lazily initializes and returns the singleton object at 0x00B4135C.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:33:11Z"
+}

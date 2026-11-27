@@ -15973,6 +15973,13 @@
     "summary": "Clears a doubly-linked list by unlinking its sentinel head, destroying each element, and freeing each node.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049E930": {
+    "name": "Unknown::InitWithCastAndIndex",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0049E930(void* self, void* arg0, void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Initializes vtable 0x009404C0, casts arg1 via __RTDynamicCast, and computes an index into arg0's vector.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049ECB0": {
     "name": "destroyEntryRange",
     "signature": "void fn_0049ECB0(void* begin, void* end)",
@@ -42982,6 +42989,12 @@
     "class": "TreeIterator",
     "signature": "void __thiscall sub_005948E0(void* self)",
     "summary": "Decrements a red-black tree iterator to the previous node, invoking _invalid_parameter_noinfo on invalid state.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x00594970": {
+    "name": "getSingleton_00B4135C",
+    "signature": "void* sub_00594970()",
+    "summary": "Lazily initializes and returns the singleton object at 0x00B4135C.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x00594AA0": {

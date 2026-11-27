@@ -2550,3 +2550,25 @@ extern void __thiscall fn_0059B0E0(void* self) {
     *reinterpret_cast<uint32_t*>(member + 0x8) = 0;
 }
 } // namespace lift_0059B0E0
+
+// [0x00594970]
+namespace lift_00594970 {
+// @name getSingleton_00B4135C
+// @summary Lazily initializes and returns the singleton object at 0x00B4135C.
+
+
+extern uint32_t mem_00B41378;
+extern uint8_t mem_00B4135C;
+
+extern void ext_00662610(void* obj, uintptr_t arg);
+extern void ext_006A6C87(uintptr_t dtor);
+
+void* sub_00594970() {
+    if ((mem_00B41378 & 1u) == 0) {
+        mem_00B41378 |= 1u;
+        ext_00662610(&mem_00B4135C, 0x00A353F8u);
+        ext_006A6C87(0x0091D6A0u);
+    }
+    return &mem_00B4135C;
+}
+} // namespace lift_00594970
