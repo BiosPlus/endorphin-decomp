@@ -2609,3 +2609,34 @@ void fn_00660180(uint8_t* begin, uint8_t* end) {
     }
 }
 } // namespace lift_00660180
+
+// [0x00662AB0]
+namespace lift_00662AB0 {
+extern uint32_t mem_0092424C;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924250;
+extern uint32_t mem_00924FE4;
+extern uint8_t mem_00B5925C[];
+
+// @name getTempFileName
+// @summary Generates a unique temporary file path in the system temp directory using a global prefix string.
+void* __cdecl sub_00662AB0(void* out_str) {
+    char temp_path[0x104];
+    char temp_file[0x104];
+    *reinterpret_cast<uint32_t*>(temp_path) = 0;
+
+    using GetTempPathAFn = uint32_t(__stdcall*)(uint32_t, char*);
+    reinterpret_cast<GetTempPathAFn>(mem_0092424C)(0x104, temp_path);
+
+    using CStrFn = const char*(__thiscall*)(void*);
+    const char* prefix = reinterpret_cast<CStrFn>(mem_00924FF0)(mem_00B5925C);
+
+    using GetTempFileNameAFn = uint32_t(__stdcall*)(const char*, const char*, uint32_t, char*);
+    reinterpret_cast<GetTempFileNameAFn>(mem_00924250)(temp_path, prefix, 0, temp_file);
+
+    using StringCtorFn = void*(__thiscall*)(void*, const char*);
+    reinterpret_cast<StringCtorFn>(mem_00924FE4)(out_str, temp_file);
+
+    return out_str;
+}
+} // namespace lift_00662AB0

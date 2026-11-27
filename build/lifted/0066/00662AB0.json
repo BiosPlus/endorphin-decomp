@@ -1,0 +1,13 @@
+{
+  "va": "0x00662AB0",
+  "size": 97,
+  "orig_symbol": "sub_00662AB0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "getTempFileName",
+  "signature": "void* __cdecl sub_00662AB0(void* out_str)",
+  "summary": "Generates a unique temporary file path in the system temp directory using a global prefix string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:59:01Z"
+}
