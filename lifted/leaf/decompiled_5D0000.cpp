@@ -961,3 +961,43 @@ void __thiscall fn_005DC390(void* self, uint32_t value) {
 }
 } // namespace lift_005DC270
 } // namespace lift_005DC390
+
+// [0x005DC430] sub_005DC430 (65 bytes)
+namespace lift_005DC430 {
+// Known callee 0x005DC1E0: Unknown::setField20AndUpdateChild (Sets field_0x20 and child field_0x5C under a critical section lock, then dispatches virtual slot 0x154.)
+extern void ext_005DC1E0(void* self, uint32_t arg);
+// Known callee 0x005DC270: Unknown::setValueAndNotify (Sets field_0x24 and child field_0x60 under a critical section lock, then dispatches vtable slot +0x154 on the global object's +0x258 member.)
+extern void ext_005DC270(void* self, uint32_t value);
+// Known callee 0x005DC300: Unknown::StoreFloatAndDispatchUnderLock (Gets a global object's +0x258 subobject, calls its vtable slot 0x1D8 to obtain a lock handle, enters that lock, stores the float argument at self+0x2C, forwards it via ext_005DA150 with self+0x44 as this, dispatches ext_00493EE0 on the +0x258 slot, then leaves the lock. SEH frame setup/teardown omitted.)
+extern void ext_005DC300(void* self, float value);
+// Known callee 0x005DC390: sub_005DC390 (Auto-lifted identical-shape clone of 0x005DC270 (Unknown::setValueAndNotify).)
+extern void ext_005DC390(void* self, uint32_t value);
+
+// @name Unknown::forwardChildFieldsToTarget
+// @class Unknown
+// @summary If this->field_0x04 is non-null, forwards its fields +0x68, +0x5C, +0x60 (uint32) and +0x64 (float) to the four setter/notify callees using the stack argument as the target object.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x5C uint32_t field_0x5C
+// @field Unknown +0x60 uint32_t field_0x60
+// @field Unknown +0x64 float field_0x64
+// @field Unknown +0x68 uint32_t field_0x68
+void __thiscall fn_005DC430(void* self, void* obj) {
+    // Offsets 0x5C..0x68 are read from the object pointed to by self+0x04.
+    void* inner = lift_field<void*>(self, 0x04);
+    if (inner == nullptr) {
+        return;
+    }
+
+    uint32_t f68 = lift_field<uint32_t>(inner, 0x68);
+    ext_005DC390(obj, f68);
+
+    uint32_t f5c = lift_field<uint32_t>(inner, 0x5C);
+    ext_005DC1E0(obj, f5c);
+
+    uint32_t f60 = lift_field<uint32_t>(inner, 0x60);
+    ext_005DC270(obj, f60);
+
+    float f64 = lift_field<float>(inner, 0x64);
+    ext_005DC300(obj, f64);
+}
+} // namespace lift_005DC430

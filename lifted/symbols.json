@@ -38666,6 +38666,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x44 and tail-calls sub_005DA190.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
+  "0x005DC430": {
+    "name": "Unknown::forwardChildFieldsToTarget",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_005DC430(void* self, void* obj)",
+    "summary": "If this-\u003efield_0x04 is non-null, forwards its fields +0x68, +0x5C, +0x60 (uint32) and +0x64 (float) to the four setter/notify callees using the stack argument as the target object.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DC4D0": {
     "name": "sub_005DC4D0",
     "signature": "void fn_005DC4D0(uint32_t* out, uint32_t value)",
