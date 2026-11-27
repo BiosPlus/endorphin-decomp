@@ -2528,3 +2528,24 @@ void* __thiscall sub_0078D7A0(void* self) {
     return self;
 }
 } // namespace lift_0078D7A0
+
+// [0x0078D740] sub_0078D740 (96 bytes)
+namespace lift_0078D740 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (0x250); returns the allocated block or NULL.
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x0078D7A0: sub_0078D7A0 (Initializes object fields and sets vtable to 0x0099708C)
+// __thiscall: `self` is passed in ECX; returns self.
+extern void* ext_0078D7A0(void* self);
+
+// @name allocAndConstructObject0x250
+// @summary Allocates a 0x250-byte object via ext_006A5C62 and runs ext_0078D7A0 on it; returns the object, or NULL if allocation failed.
+// The original SEH frame (fs:[0] push/restore, try-level slot) is omitted: it is exception bookkeeping only and not portable.
+void* fn_0078D740(void) {
+    void* obj = ext_006A5C62(0x250);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_0078D7A0(obj);
+}
+} // namespace lift_0078D740

@@ -77382,6 +77382,12 @@
     "summary": "Initializes the object via ext_006D2130(self, arg1, 4), then stores a pointer to self+0x10 at self+0x14; returns self.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078D740": {
+    "name": "allocAndConstructObject0x250",
+    "signature": "void* fn_0078D740(void)",
+    "summary": "Allocates a 0x250-byte object via ext_006A5C62 and runs ext_0078D7A0 on it; returns the object, or NULL if allocation failed.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078D7A0": {
     "name": "sub_0078D7A0",
     "signature": "void* __thiscall sub_0078D7A0(void* self)",

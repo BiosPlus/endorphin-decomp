@@ -1,0 +1,13 @@
+{
+  "va": "0x0078D740",
+  "size": 96,
+  "orig_symbol": "sub_0078D740",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "allocAndConstructObject0x250",
+  "signature": "void* fn_0078D740(void)",
+  "summary": "Allocates a 0x250-byte object via ext_006A5C62 and runs ext_0078D7A0 on it; returns the object, or NULL if allocation failed.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:33:46Z"
+}
