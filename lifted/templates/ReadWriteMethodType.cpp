@@ -18227,3 +18227,43 @@ void fn_004C7310(void* arg1, void* arg2) {
     strDtor(tmp);
 }
 } // namespace lift_004C7310
+
+// [0x00497CC0] ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setResultantState(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_00497CC0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern void* ext_0046E780(void* self, void* a1, void* a2, void* a3);
+// Known callee 0x00497030: Unknown::setKeyAndLookup (Copies the key string into +0x30, looks up its value in the list at +0xB8 (via child +0xFC when set) into +0xBC, then forwards to the global object if present.)
+extern void ext_00497030(void* self, const void* key);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo for the exception thrown when the wrapped pointer is null.
+extern int mem_009DEC1C;
+// MSVCP80 basic_string destructor slot; the std::string temporary below
+// destroys itself, so this is metadata only.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setResultantState(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Pulls the wrapped object pointer from self and forwards the string taken from value (via slot 4) to its key lookup; throws if self holds a null object.
+// @field ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setResultantState(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}> +0x00 void* field_0x00
+void fn_00497CC0(void* self, void* value) {
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj == nullptr) {
+        // Original builds an exception object in the frame and throws it.
+        // Its size is not recovered; 32 bytes is a placeholder.
+        alignas(8) unsigned char exc[32] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return;
+    }
+
+    // Temporary string filled by the forwarding call; destroyed at scope exit
+    // (replaces the original SEH-guarded MSVCP basic_string destructor call).
+    std::string key;
+    (void)&mem_00924FF4;
+    ext_0046E780(lift_field<void*>(value, 4), &key, value, self);
+    ext_00497030(obj, &key);
+}
+} // namespace lift_00497CC0
