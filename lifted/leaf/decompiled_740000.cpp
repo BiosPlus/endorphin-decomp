@@ -233,3 +233,29 @@ extern void* fn_0074F7F0(void* const* base_holder, const int32_t* count_ptr, con
     return std::bsearch(key, base, static_cast<std::size_t>(count), 0x10, ext_0074F7A0);
 }
 } // namespace lift_0074F7F0
+
+// [0x0074B330] sub_0074B330 (127 bytes)
+namespace lift_0074B330 {
+// Known callee 0x006D2160: sub_006D2160 (Pure jump thunk forwarding to sub_006D2250.)
+extern void __thiscall ext_006D2160(void* self);
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void __thiscall ext_006B9D70(void* self);
+
+// @name Unknown::destroySubobjectsThenBase_0074B330
+// @class Unknown
+// @summary Destructor body: destroys four embedded sub-objects at +0xD0, +0xB8, +0xA0, +0x88 (via sub_006D2160), then runs the base teardown sub_006B9D70 on this.
+// @field Unknown +0x88 void field_0x88
+// @field Unknown +0xA0 void field_0xA0
+// @field Unknown +0xB8 void field_0xB8
+// @field Unknown +0xD0 void field_0xD0
+extern void __thiscall fn_0074B330(void* self) {
+    // The original MSVC SEH frame (fs:[0] push, trylevel stores) only tracks
+    // unwind state for the calls below; it is not part of the portable semantics.
+    char* base = static_cast<char*>(self);
+    ext_006D2160(base + 0xD0);
+    ext_006D2160(base + 0xB8);
+    ext_006D2160(base + 0xA0);
+    ext_006D2160(base + 0x88);
+    ext_006B9D70(self);
+}
+} // namespace lift_0074B330

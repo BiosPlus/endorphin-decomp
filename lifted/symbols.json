@@ -74560,6 +74560,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D2AA0 (ForwardIndexedElementToCallee).",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x0074B330": {
+    "name": "Unknown::destroySubobjectsThenBase_0074B330",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_0074B330(void* self)",
+    "summary": "Destructor body: destroys four embedded sub-objects at +0xD0, +0xB8, +0xA0, +0x88 (via sub_006D2160), then runs the base teardown sub_006B9D70 on this.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074B840": {
     "name": "sub_0074B840",
     "signature": "extern \"C\" void* __fastcall fn_0074B840(void* self, int edx_unused, unsigned int flags)",
