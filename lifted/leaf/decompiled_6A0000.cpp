@@ -1169,3 +1169,40 @@ extern void __thiscall fn_006AD440(void* self, uint32_t* out1, uint32_t* out2, u
     *out3 = ext_006A7D50(lift_field<uint32_t>(self, 0x14));
 }
 } // namespace lift_006AD440
+
+// [0x006A02B0] sub_006A02B0 (138 bytes)
+namespace lift_006A02B0 {
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void __fastcall ext_00665810(void* self);
+
+// @name ClassUnknown::cleanup_006A02B0
+// @class ClassUnknown
+// @summary Releases three slots at +0x20/+0x18/+0x10 via vtable slot 0x78, then runs base cleanup fn_00665810.
+// @field ClassUnknown +0x10 uint32_t field_0x10
+// @field ClassUnknown +0x14 uint32_t field_0x14
+// @field ClassUnknown +0x18 uint32_t field_0x18
+// @field ClassUnknown +0x1c uint32_t field_0x1c
+// @field ClassUnknown +0x20 uint32_t field_0x20
+// @field ClassUnknown +0x24 uint32_t field_0x24
+void fn_006A02B0(void* self) {
+    // 32-bit target: every pointer is a 4-byte value stored in the object.
+    // Each slot is {value at +off, object pointer at +off+4}. If the object
+    // pointer is non-null, call its vtable entry at +0x78 with (obj, &slot).
+    // Order is +0x20, +0x18, +0x10, matching the asm.
+    using SlotFn = void (__thiscall*)(void* obj, void* slot);
+
+    const ptrdiff_t offsets[3] = {0x20, 0x18, 0x10};
+    for (ptrdiff_t off : offsets) {
+        const uintptr_t objAddr = lift_field<uint32_t>(self, off + 4);
+        if (objAddr != 0) {
+            const uintptr_t vtblAddr = *reinterpret_cast<const uint32_t*>(objAddr);
+            const uintptr_t fnAddr = *reinterpret_cast<const uint32_t*>(vtblAddr + 0x78);
+            const uintptr_t slotAddr = reinterpret_cast<uintptr_t>(self) + static_cast<uintptr_t>(off);
+            reinterpret_cast<SlotFn>(fnAddr)(reinterpret_cast<void*>(objAddr),
+                                             reinterpret_cast<void*>(slotAddr));
+        }
+    }
+
+    ext_00665810(self);
+}
+} // namespace lift_006A02B0
