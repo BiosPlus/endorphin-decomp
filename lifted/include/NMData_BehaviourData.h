@@ -11,10 +11,16 @@
 namespace lifted_layout {
 struct NMData_BehaviourData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004A9A70, 0x004A9B70)
+    // +0x10  void*                    field_0x10  (evidence: 0x004ABF60)
     // +0x168 uint32_t                 field_0x168  (evidence: 0x00486C20, 0x004A9C60, 0x004A9C90)
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x00486C20)
     // +0x180 void*                    field_0x180  (evidence: 0x004A9A70)
+    // +0x184 uint32_t                 field_0x184  (evidence: 0x004ABF60)
     // +0x228 void*                    field_0x228  (evidence: 0x004A9B50)
+    // +0x2F0 void*                    field_0x2f0  (evidence: 0x004ABF60)
     // +0x328 std::string              field_0x328  (evidence: 0x004A9A70)
+    // +0x3D8 uint8_t                  field_0x3d8  (evidence: 0x004ABF60)
+    // +0x3DC int32_t*                 field_0x3dc  (evidence: 0x004ABF60)
+    // +0x3E0 int32_t*                 field_0x3e0  (evidence: 0x004ABF60)
 };
 } // namespace lifted_layout

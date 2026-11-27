@@ -210,3 +210,56 @@ void fn_004A9AC0(uint32_t* out1, uint32_t* out2, uint32_t* out3, uint32_t* out4)
     *out4 = 2;
 }
 } // namespace lift_004A9AC0
+
+// [0x004ABF60]
+namespace lift_004ABF60 {
+extern void (*mem_00925134)();
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+
+// @name NMData::BehaviourData::vfunc_87
+// @class NMData::BehaviourData
+// @summary Clears active behaviour state, notifies child object, erases int32 range, and deletes subobject
+// @field NMData::BehaviourData +0x10 void* field_0x10
+// @field NMData::BehaviourData +0x184 uint32_t field_0x184
+// @field NMData::BehaviourData +0x2f0 void* field_0x2f0
+// @field NMData::BehaviourData +0x3d8 uint8_t field_0x3d8
+// @field NMData::BehaviourData +0x3dc int32_t* field_0x3dc
+// @field NMData::BehaviourData +0x3e0 int32_t* field_0x3e0
+void fn_004ABF60(void* self) {
+    if (lift_field<uint32_t>(self, 0x184) == 0) {
+        return;
+    }
+
+    void* obj = lift_field<void*>(self, 0x10);
+    if (obj != nullptr) {
+        void* inner = lift_field<void*>(obj, 0x10);
+        void** vtable = lift_field<void**>(inner, 0x0);
+        using Fn = void(__thiscall*)(void*);
+        reinterpret_cast<Fn>(vtable[5])(inner);
+    }
+
+    uint8_t* vec = reinterpret_cast<uint8_t*>(self) + 0x3D8;
+    int32_t* last = lift_field<int32_t*>(self, 0x3E0);
+    if (lift_field<int32_t*>(self, 0x3DC) > last) {
+        mem_00925134();
+    }
+
+    int32_t* first = lift_field<int32_t*>(vec, 0x4);
+    if (first > lift_field<int32_t*>(vec, 0x8)) {
+        mem_00925134();
+    }
+
+    void* out[2];
+    ext_00596660(vec, out, vec, first, vec, last);
+
+    void* sub = lift_field<void*>(self, 0x2F0);
+    if (sub != nullptr) {
+        void** vtable = lift_field<void**>(sub, 0x0);
+        using DtorFn = void(__thiscall*)(void*, int);
+        reinterpret_cast<DtorFn>(vtable[0])(sub, 1);
+    }
+
+    lift_field<uint32_t>(self, 0x2F0) = 0;
+    lift_field<uint32_t>(self, 0x184) = 0;
+}
+} // namespace lift_004ABF60

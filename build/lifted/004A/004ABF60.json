@@ -1,0 +1,52 @@
+{
+  "va": "0x004ABF60",
+  "size": 133,
+  "orig_symbol": "NMData::BehaviourData::vfunc_87",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_87",
+  "class": "NMData::BehaviourData",
+  "signature": "void fn_004ABF60(void* self)",
+  "summary": "Clears active behaviour state, notifies child object, erases int32 range, and deletes subobject",
+  "fields": [
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x184",
+      "type": "uint32_t",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x2F0",
+      "type": "void*",
+      "name": "field_0x2f0"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3D8",
+      "type": "uint8_t",
+      "name": "field_0x3d8"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3DC",
+      "type": "int32_t*",
+      "name": "field_0x3dc"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x3E0",
+      "type": "int32_t*",
+      "name": "field_0x3e0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:33:44Z"
+}
