@@ -1,0 +1,40 @@
+{
+  "va": "0x007051B0",
+  "size": 53,
+  "orig_symbol": "sub_007051B0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::resetSubobjectFlags_007051B0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_007051B0(void* self)",
+  "summary": "If self+0xF0 is non-null, clear flag 0x7CC, set flag 0x7CD, and assign the global string mem_00B5D2C0 to the subobject at self+0xF0+0x7D0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "void*",
+      "name": "field_0xf0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7CC",
+      "type": "uint8_t field_0x7cc (pointee of",
+      "name": "+0xf0)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7CD",
+      "type": "uint8_t field_0x7cd (pointee of",
+      "name": "+0xf0)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7D0",
+      "type": "void* field_0x7d0 (pointee of +0xf0; subobject passed as",
+      "name": "this)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:48:28Z"
+}

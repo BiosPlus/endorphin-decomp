@@ -2821,3 +2821,29 @@ void* fn_00705170(void* self, const char* s) {
     return ext_006B9EC0(target, s);
 }
 } // namespace lift_00705170
+
+// [0x007051B0]
+namespace lift_007051B0 {
+// @name Unknown::resetSubobjectFlags_007051B0
+// @class Unknown
+// @summary If self+0xF0 is non-null, clear flag 0x7CC, set flag 0x7CD, and assign the global string mem_00B5D2C0 to the subobject at self+0xF0+0x7D0.
+// @field Unknown +0xf0 void* field_0xf0
+// @field Unknown +0x7cc uint8_t field_0x7cc (pointee of +0xf0)
+// @field Unknown +0x7cd uint8_t field_0x7cd (pointee of +0xf0)
+// @field Unknown +0x7d0 void* field_0x7d0 (pointee of +0xf0; subobject passed as this)
+
+
+extern char mem_00B5D2C0[];
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+
+extern void __thiscall fn_007051B0(void* self) {
+    void* p = lift_field<void*>(self, 0xf0);
+    if (p == nullptr) {
+        return;
+    }
+    lift_field<uint8_t>(p, 0x7cc) = 0;
+    lift_field<uint8_t>(p, 0x7cd) = 1;
+    void* sub = static_cast<uint8_t*>(p) + 0x7d0;
+    ext_006B9EC0(sub, reinterpret_cast<const char*>(mem_00B5D2C0));
+}
+} // namespace lift_007051B0

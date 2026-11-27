@@ -1545,7 +1545,7 @@ struct Unknown_Fields {
     // +0xF0  void*                    field_0xF0  (evidence: 0x006C2ED0, 0x00705170) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  double                   field_0xf0  (evidence: 0x0043CA30) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x006C3360, 0x006C33C0, 0x00705160) // CONFLICT: multiple definitions at +0xF0
-    // +0xF0  void*                    field_0xf0  (evidence: 0x006C2070) // CONFLICT: multiple definitions at +0xF0
+    // +0xF0  void*                    field_0xf0  (evidence: 0x006C2070, 0x007051B0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  void* field_0xF0 (sub-object pointer; used as this for ext_00708000 and as base for the +0x1C08 embedded object)  (evidence: 0x006C2E60) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  void*                    subObject  (evidence: 0x006C78D0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  void*                    subobject  (evidence: 0x00704EB0) // CONFLICT: multiple definitions at +0xF0
@@ -2065,8 +2065,11 @@ struct Unknown_Fields {
     // +0x750 uint32_t                 field_0x750  (evidence: 0x0071C750)
     // +0x754 uint32_t                 field_0x754  (evidence: 0x0071C750)
     // +0x768 HWND                     field_0x768  (evidence: 0x00441C10, 0x0044E100)
-    // +0x7CC u8                       field_0x7CC  (evidence: 0x00704DA0)
-    // +0x7CD uint8_t                  field_0x7cd  (evidence: 0x00705160)
+    // +0x7CC uint8_t field_0x7cc (pointee of +0xf0)  (evidence: 0x007051B0) // CONFLICT: multiple definitions at +0x7CC
+    // +0x7CC u8                       field_0x7CC  (evidence: 0x00704DA0) // CONFLICT: multiple definitions at +0x7CC
+    // +0x7CD uint8_t field_0x7cd (pointee of +0xf0)  (evidence: 0x007051B0) // CONFLICT: multiple definitions at +0x7CD
+    // +0x7CD uint8_t                  field_0x7cd  (evidence: 0x00705160) // CONFLICT: multiple definitions at +0x7CD
+    // +0x7D0 void* field_0x7d0 (pointee of +0xf0; subobject passed as this)  (evidence: 0x007051B0)
     // +0x7D4 uint32_t                 field_0x7d4  (evidence: 0x007AC510)
     // +0x804 std::string              field_0x804  (evidence: 0x0054FCB0)
     // +0x81C void*                    field_0x81C  (evidence: 0x00704A20, 0x0070AD00) // CONFLICT: multiple definitions at +0x81C

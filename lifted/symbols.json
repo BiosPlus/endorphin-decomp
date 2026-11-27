@@ -73938,6 +73938,13 @@
     "summary": "Loads the pointer at self+0xF0, offsets it by 0x7D0, and returns the int32 at its +0x0 via the getter.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x007051B0": {
+    "name": "Unknown::resetSubobjectFlags_007051B0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_007051B0(void* self)",
+    "summary": "If self+0xF0 is non-null, clear flag 0x7CC, set flag 0x7CD, and assign the global string mem_00B5D2C0 to the subobject at self+0xF0+0x7D0.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007051F0": {
     "name": "Unknown::fetchCachedPair",
     "class": "Unknown",
