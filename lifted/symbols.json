@@ -59404,6 +59404,13 @@
     "summary": "Queries the TransformInterface slot-2 object, derives a 3-vector through it using an identity 3x3 matrix, and writes the negated vector to the caller's out buffer.",
     "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
+  "0x00612B60": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_61",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "void __thiscall fn_00612B60(void* self, const float* p)",
+    "summary": "Scales the input 3-vector componentwise by self's +0x154..+0x15C floats, calls vtable slot 3 on the embedded subobject at +0x4 twice (passing the global dword), feeds the results to ext_0067E600 and ext_00551D20, then dispatches ext_00493EE0 on ext_00594000()'s object +0x258 if non-null.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x00612C00": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_68",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

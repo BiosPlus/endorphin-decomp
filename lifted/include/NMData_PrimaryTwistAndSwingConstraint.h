@@ -11,10 +11,10 @@
 namespace lifted_layout {
 struct NMData_PrimaryTwistAndSwingConstraint_Fields {
     // +0x4   void* field_0x04 (sub-object; when null the function returns after the base call)  (evidence: 0x00611E00) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x04  (evidence: 0x00612C00) // CONFLICT: multiple definitions at +0x4
-    // +0x154 float                    field_0x154  (evidence: 0x00612C00)
-    // +0x158 float                    field_0x158  (evidence: 0x00612C00)
-    // +0x15C float                    field_0x15c  (evidence: 0x00612C00)
+    // +0x4   void*                    field_0x04  (evidence: 0x00612B60, 0x00612C00) // CONFLICT: multiple definitions at +0x4
+    // +0x154 float                    field_0x154  (evidence: 0x00612B60, 0x00612C00)
+    // +0x158 float                    field_0x158  (evidence: 0x00612B60, 0x00612C00)
+    // +0x15C float                    field_0x15c  (evidence: 0x00612B60, 0x00612C00)
     // +0x164 uint8_t                  field_0x164  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0)
     // +0x224 uint8_t                  field_0x224  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0)
     // +0x320 void* field_0x320 (object; vtable slots 8 and 9 are called with the argument)  (evidence: 0x00611E00)

@@ -1,0 +1,40 @@
+{
+  "va": "0x00612B60",
+  "size": 150,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_61",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_61",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "void __thiscall fn_00612B60(void* self, const float* p)",
+  "summary": "Scales the input 3-vector componentwise by self's +0x154..+0x15C floats, calls vtable slot 3 on the embedded subobject at +0x4 twice (passing the global dword), feeds the results to ext_0067E600 and ext_00551D20, then dispatches ext_00493EE0 on ext_00594000()'s object +0x258 if non-null.",
+  "fields": [
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x154",
+      "type": "float",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x158",
+      "type": "float",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x15C",
+      "type": "float",
+      "name": "field_0x15c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:30:25Z"
+}

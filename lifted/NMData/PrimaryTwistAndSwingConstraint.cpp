@@ -315,3 +315,50 @@ float* __thiscall fn_00612C00(void* self, float* out) {
     return out;
 }
 } // namespace lift_00612C00
+
+// [0x00612B60] NMData::PrimaryTwistAndSwingConstraint::vfunc_61 (150 bytes)
+namespace lift_00612B60 {
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* __thiscall ext_00493EE0(void* ecx);
+// Known callee 0x00551D20: sub_00551D20 (88B)
+extern void __thiscall ext_00551D20(void* ecx);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern uint32_t ext_00594000(void);
+// Known callee 0x0067E600: buildPaddedMatrixFromParam (Starts from a packed 3x3 identity, applies ext_006951E0 with the stack parameter, then copies the result into the padded matrix at self.)
+extern void __thiscall ext_0067E600(void* ecx);
+extern int32_t mem_00B40640;
+
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_61
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Scales the input 3-vector componentwise by self's +0x154..+0x15C floats, calls vtable slot 3 on the embedded subobject at +0x4 twice (passing the global dword), feeds the results to ext_0067E600 and ext_00551D20, then dispatches ext_00493EE0 on ext_00594000()'s object +0x258 if non-null.
+// @field NMData::PrimaryTwistAndSwingConstraint +0x04 void* field_0x04
+// @field NMData::PrimaryTwistAndSwingConstraint +0x154 float field_0x154
+// @field NMData::PrimaryTwistAndSwingConstraint +0x158 float field_0x158
+// @field NMData::PrimaryTwistAndSwingConstraint +0x15C float field_0x15c
+void __thiscall fn_00612B60(void* self, const float* p) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    float v[3];
+    v[0] = p[0] * lift_field<float>(self, 0x154);
+    v[1] = p[1] * lift_field<float>(self, 0x158);
+    v[2] = p[2] * lift_field<float>(self, 0x15C);
+
+    void* sub = base + 0x4;
+    void** vt = *reinterpret_cast<void***>(sub);
+    using Slot3WithVec = void* (__thiscall*)(void* self, int32_t g, const float* vec);
+    using Slot3WithDword = void* (__thiscall*)(void* self, int32_t g);
+
+    const int32_t g = mem_00B40640;
+    void* r1 = reinterpret_cast<Slot3WithVec>(vt[3])(sub, g, v);
+    ext_0067E600(r1);
+
+    vt = *reinterpret_cast<void***>(sub);
+    const int32_t g2 = mem_00B40640;
+    void* r2 = reinterpret_cast<Slot3WithDword>(vt[3])(sub, g2);
+    ext_00551D20(r2);
+
+    const uint32_t obj = ext_00594000();
+    if (obj != 0) {
+        ext_00493EE0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj) + 0x258));
+    }
+}
+} // namespace lift_00612B60
