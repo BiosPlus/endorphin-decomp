@@ -57,6 +57,7 @@ extern "C" uint8_t mem_00B5964C[];
 // the static's destructor (cdecl, one arg).
 // Guard word for the function-local static (bit 0 = initialized).
 // Storage of the function-local static object (only its address is used).
+#include <string>
 
 // [0x0066CE30] ExprParser::RealType::vfunc_18 (98 bytes)
 // @name ExprParser::RealType::vfunc_18
@@ -106,3 +107,16 @@ void __stdcall fn_0066EDE0(void* a1, void* a2, uint32_t a3, uint32_t a4) {
     ext_00487A30(frame_slot, r2);
 }
 } // namespace lift_0066EDE0
+
+// [0x0066ADE0]
+namespace lift_0066ADE0 {
+// @name ExprParser::RealType::vfunc_4
+// @class ExprParser::RealType
+// @summary Reads a float from the second argument and formats it into the caller-supplied std::string out-slot (first argument), returning that slot.
+extern std::string* ext_0046C390(std::string* out, float value);
+
+std::string* fn_0066ADE0(std::string* out, const float* value) {
+    float v = *value;
+    return ext_0046C390(out, v);
+}
+} // namespace lift_0066ADE0
