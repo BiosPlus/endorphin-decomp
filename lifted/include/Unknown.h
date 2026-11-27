@@ -1632,6 +1632,7 @@ struct Unknown_Fields {
     // +0x158 uint8_t                  flag  (evidence: 0x00455B50) // CONFLICT: multiple definitions at +0x158
     // +0x158 uint32_t field_0x158 (child pointer; non-null selects the forward path)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0x158
     // +0x158 void*                    subObject  (evidence: 0x005B68F0) // CONFLICT: multiple definitions at +0x158
+    // +0x15C void*                    childObject  (evidence: 0x004447E0) // CONFLICT: multiple definitions at +0x15C
     // +0x15C int32_t                  count  (evidence: 0x0074D800) // CONFLICT: multiple definitions at +0x15C
     // +0x15C uint32_t field_0x15c (pointer; its +0xC dword is the shift count)  (evidence: 0x007BA200) // CONFLICT: multiple definitions at +0x15C
     // +0x15C int32_t                  field_0x15C  (evidence: 0x007648F0) // CONFLICT: multiple definitions at +0x15C
@@ -1667,6 +1668,7 @@ struct Unknown_Fields {
     // +0x17C Unknown                  field_0x17C  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0x17C
     // +0x17C uint8_t                  field_0x17C  (evidence: 0x004CEAC0, 0x004CF910) // CONFLICT: multiple definitions at +0x17C
     // +0x17C void*                    field_0x17c  (evidence: 0x005E2770, 0x005E27C0, 0x005E2810, 0x005E2860, 0x005E2900, 0x005E2950, 0x005E29A0) // CONFLICT: multiple definitions at +0x17C
+    // +0x17C HWND                     hwnd  (evidence: 0x004447E0) // CONFLICT: multiple definitions at +0x17C
     // +0x180 DWORD                    field_0x180  (evidence: 0x004CB3E0) // CONFLICT: multiple definitions at +0x180
     // +0x180 std::string              field_0x180  (evidence: 0x00486BB0) // CONFLICT: multiple definitions at +0x180
     // +0x180 uint32_t                 field_0x180  (evidence: 0x004ABFF0) // CONFLICT: multiple definitions at +0x180
@@ -1707,6 +1709,7 @@ struct Unknown_Fields {
     // +0x1B4 uint32_t                 field_0x1b4  (evidence: 0x006D7C40) // CONFLICT: multiple definitions at +0x1B4
     // +0x1B4 uint8_t                  field_0x1b4[]  (evidence: 0x004141D0) // CONFLICT: multiple definitions at +0x1B4
     // +0x1B8 int32_t field_0x1B8 (int32_t[6] array, indexed 0..5)  (evidence: 0x0072B180, 0x0072CEB0) // CONFLICT: multiple definitions at +0x1B8
+    // +0x1B8 BYTE                     busyFlag  (evidence: 0x004447E0) // CONFLICT: multiple definitions at +0x1B8
     // +0x1B8 int32_t[6]               field_0x1B8  (evidence: 0x0072B180, 0x0072CED0) // CONFLICT: multiple definitions at +0x1B8
     // +0x1B8 uint32_t                 field_0x1b8  (evidence: 0x004141D0) // CONFLICT: multiple definitions at +0x1B8
     // +0x1B8 void*                    field_0x1b8  (evidence: 0x005B6B60) // CONFLICT: multiple definitions at +0x1B8

@@ -1,0 +1,34 @@
+{
+  "va": "0x004447E0",
+  "size": 73,
+  "orig_symbol": "sub_004447E0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::windowRefreshSequence",
+  "class": "Unknown",
+  "signature": "void fn_004447E0(void* self)",
+  "summary": "Sends WM 0x110A/0x1102 messages to the window at +0x17c, then runs the child refresh at +0x15c and sets the busy flag.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "childObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x17C",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1B8",
+      "type": "BYTE",
+      "name": "busyFlag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:38:30Z"
+}

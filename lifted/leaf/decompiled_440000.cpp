@@ -3124,3 +3124,137 @@ double fn_00448BF0(void* self, double value) {
     return 1.0;
 }
 } // namespace lift_00448BF0
+
+// [0x00446680]
+namespace lift_00446680 {
+// @name sub_00446680
+// @summary Recursively visits a node and its children, invoking virtual method +0x20 on dynamic_cast<0xa2fc50> subobject at +0xc
+// @field Node +0x7c void* field_0x7c
+// @field Node +0x80 void** children_begin
+// @field Node +0x84 void** children_end
+
+
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+extern uintptr_t mem_00925134;
+
+void __thiscall fn_00446680(void* self, void* node, void* arg1) {
+    void* cast_obj = ext_006A6E9E(node, 0, reinterpret_cast<void*>(0x00A2E2BC), reinterpret_cast<void*>(0x00A2FC50), 0);
+    if (cast_obj != nullptr) {
+        void* subobj = reinterpret_cast<uint8_t*>(cast_obj) + 0x0C;
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(subobj);
+        using VMethod = void(__thiscall*)(void*, void*);
+        auto fn = reinterpret_cast<VMethod>(vtable[0x20 / sizeof(uintptr_t)]);
+        fn(subobj, arg1);
+    }
+
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    uint8_t* vec = reinterpret_cast<uint8_t*>(node) + 0x7C;
+    uintptr_t* it = lift_field<uintptr_t*>(node, 0x80);
+    if (it > lift_field<uintptr_t*>(vec, 0x08)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uintptr_t* end = lift_field<uintptr_t*>(vec, 0x08);
+        if (lift_field<uintptr_t*>(vec, 0x04) > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= lift_field<uintptr_t*>(vec, 0x08)) {
+            invalid_param();
+        }
+        void* child = reinterpret_cast<void*>(*it);
+        fn_00446680(self, child, arg1);
+        if (it >= lift_field<uintptr_t*>(vec, 0x08)) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_00446680
+
+// [0x004465F0]
+namespace lift_004465F0 {
+// @name Node::visitAndDynamicCast
+// @class Node
+// @summary Recursively traverses a node tree, dynamic-casting each node and invoking vtable+0x20 on subobject +0xC if non-null.
+// @field Node +0x7c std_vector_ptr children_vec
+// @field Node +0x80 uint32_t* children_begin
+// @field Node +0x84 uint32_t* children_end
+
+
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+extern uint32_t mem_00925134;
+
+void __thiscall fn_004465F0(void* self, void* node, uint32_t arg2) {
+    uint8_t* esi = reinterpret_cast<uint8_t*>(node);
+    void* cast_res = ext_006A6E9E(
+        esi,
+        0,
+        reinterpret_cast<void*>(0x00A2E2BC),
+        reinterpret_cast<void*>(0x00A2FC34),
+        0
+    );
+    if (cast_res != nullptr) {
+        void* subobj = reinterpret_cast<uint8_t*>(cast_res) + 0xC;
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(subobj);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtable[0x20 / sizeof(uintptr_t)]);
+        fn(subobj, arg2);
+    }
+
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    uint8_t* vec = esi + 0x7C;
+    uint32_t* it = *reinterpret_cast<uint32_t**>(vec + 0x4);
+    if (it > *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uint32_t* end = *reinterpret_cast<uint32_t**>(vec + 0x8);
+        if (*reinterpret_cast<uint32_t**>(vec + 0x4) > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            invalid_param();
+        }
+        void* child = reinterpret_cast<void*>(static_cast<uintptr_t>(*it));
+        fn_004465F0(self, child, arg2);
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_004465F0
+
+// [0x004447E0] sub_004447E0 (73 bytes)
+namespace lift_004447E0 {
+// Known callee 0x0045BE30: sendWindowRefreshMessages (Sends a sequence of SendMessageA calls (0x110A/0x110B/0x1114) to the window handle at +0x20, interleaved with two ext_006A6442 calls.)
+extern void ext_0045BE30(void* self);
+// USER32!SendMessageA IAT slot (pointer value stored in the import table)
+extern int mem_00925694;
+
+// @name Unknown::windowRefreshSequence
+// @class Unknown
+// @summary Sends WM 0x110A/0x1102 messages to the window at +0x17c, then runs the child refresh at +0x15c and sets the busy flag.
+// @field Unknown +0x15c void* childObject
+// @field Unknown +0x17c HWND hwnd
+// @field Unknown +0x1b8 BYTE busyFlag
+void fn_004447E0(void* self) {
+    using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+    auto sendMessageA = reinterpret_cast<SendMessageAFn>(static_cast<intptr_t>(mem_00925694));
+
+    lift_field<BYTE>(self, 0x1b8) = 0;
+    LRESULT first = sendMessageA(lift_field<HWND>(self, 0x17c), 0x110A, 0, 0);
+    (void)first;
+    LRESULT second = sendMessageA(lift_field<HWND>(self, 0x17c), 0x1102, 2, first);
+    (void)second;
+    ext_0045BE30(lift_field<void*>(self, 0x15c));
+    lift_field<BYTE>(self, 0x1b8) = 1;
+}
+} // namespace lift_004447E0

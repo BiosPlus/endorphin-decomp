@@ -5188,6 +5188,13 @@
     "summary": "Forwards three arguments to ext_004564A0, then, if the embedded object at self+0x15C is non-null and its +0x20 field is set, calls ext_006A5E4E with adjusted arguments.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x004447E0": {
+    "name": "Unknown::windowRefreshSequence",
+    "class": "Unknown",
+    "signature": "void fn_004447E0(void* self)",
+    "summary": "Sends WM 0x110A/0x1102 messages to the window at +0x17c, then runs the child refresh at +0x15c and sets the busy flag.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004461B0": {
     "name": "traverseAndInvoke",
     "signature": "void __thiscall fn_004461B0(void* this_ptr, void* node, uint32_t arg1)",
