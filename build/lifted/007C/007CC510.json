@@ -1,0 +1,34 @@
+{
+  "va": "0x007CC510",
+  "size": 123,
+  "orig_symbol": "sub_007CC510",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "dotWithOffsetDifference",
+  "class": "Unknown",
+  "signature": "extern \"C\" float __cdecl fn_007CC510(void* a, void* b, uint32_t unused3, uint32_t unused4, uint32_t unused5, const float* v)",
+  "summary": "Calls ext_007CC4E0(a, b, tmp); copies v[0..2] into a local, subtracts b's",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:50:49Z"
+}

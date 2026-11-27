@@ -1820,3 +1820,38 @@ void fn_007C54F0(void* self) {
     pendingCount = 0;
 }
 } // namespace lift_007C54F0
+
+// [0x007CC510] sub_007CC510 (123 bytes)
+namespace lift_007CC510 {
+extern void __cdecl ext_007CC4E0(void* a, void* b, float* out);
+
+// @name dotWithOffsetDifference
+// @class Unknown
+// @summary Calls ext_007CC4E0(a, b, tmp); copies v[0..2] into a local, subtracts b's
+//          +0x30/+0x34/+0x38 floats when b != null, and returns dot(tmp, local) as float.
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+extern float __cdecl fn_007CC510(void* a, void* b, uint32_t unused3, uint32_t unused4,
+                                     uint32_t unused5, const float* v) {
+    (void)unused3;
+    (void)unused4;
+    (void)unused5;
+
+    float tmp[3];
+    ext_007CC4E0(a, b, tmp);
+
+    float local[3] = {v[0], v[1], v[2]};
+    if (b != nullptr) {
+        local[0] = local[0] - lift_field<float>(b, 0x30);
+        local[1] = local[1] - lift_field<float>(b, 0x34);
+        local[2] = local[2] - lift_field<float>(b, 0x38);
+    }
+
+    // x87 evaluation order: ((tmp[0]*local[0] + tmp[1]*local[1]) + tmp[2]*local[2])
+    double acc = static_cast<double>(tmp[1]) * static_cast<double>(local[1]);
+    acc = static_cast<double>(tmp[0]) * static_cast<double>(local[0]) + acc;
+    acc = static_cast<double>(tmp[2]) * static_cast<double>(local[2]) + acc;
+    return static_cast<float>(acc);
+}
+} // namespace lift_007CC510

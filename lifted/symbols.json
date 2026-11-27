@@ -77134,6 +77134,13 @@
     "summary": "Calls the function pointer at sub-object +0x08 with (0x18, 0x10); if it returns non-null, forwards (sub-object, self, x, y) to ext_007CC180, otherwise returns null.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CC510": {
+    "name": "dotWithOffsetDifference",
+    "class": "Unknown",
+    "signature": "extern \"C\" float __cdecl fn_007CC510(void* a, void* b, uint32_t unused3, uint32_t unused4, uint32_t unused5, const float* v)",
+    "summary": "Calls ext_007CC4E0(a, b, tmp); copies v[0..2] into a local, subtracts b's",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CC5D0": {
     "name": "Unknown::callAllocAndInit_007CC5D0",
     "class": "Unknown",
