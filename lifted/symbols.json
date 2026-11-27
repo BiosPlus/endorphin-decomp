@@ -84198,6 +84198,12 @@
     "summary": "Frees the buffer pointed to by *p (if non-null) via CRT free and nulls *p; no-op if p is null.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007A8BC0": {
+    "name": "ReleaseCachedSlot",
+    "signature": "void fn_007A8BC0(uint32_t* slot)",
+    "summary": "If slot is null, caches index 2 via ext_007AA510 (when flag mem_00B61219 is set, falls through); otherwise frees the pointer stored in *slot and nulls it.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007A95C0": {
     "name": "ConditionalStoreFlagByte",
     "class": "\u003cClassName\u003e (optional)",

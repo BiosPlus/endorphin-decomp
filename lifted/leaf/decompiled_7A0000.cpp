@@ -1745,3 +1745,28 @@ void fn_007A9920(void* self) {
     *dst = mem_00998070;
 }
 } // namespace lift_007A9920
+
+// [0x007A8BC0]
+namespace lift_007A8BC0 {
+// @name ReleaseCachedSlot
+// @summary If slot is null, caches index 2 via ext_007AA510 (when flag mem_00B61219 is set, falls through); otherwise frees the pointer stored in *slot and nulls it.
+
+extern void ext_007AA510(uint32_t idx);
+extern uint8_t mem_00B61219;
+extern uint8_t mem_009251D8;
+
+void fn_007A8BC0(uint32_t* slot) {
+    (void)&mem_009251D8;
+    if (slot == nullptr) {
+        ext_007AA510(2);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+    }
+    uint32_t value = *slot;
+    if (value != 0) {
+        free(reinterpret_cast<void*>(static_cast<uintptr_t>(value)));
+        *slot = 0;
+    }
+}
+} // namespace lift_007A8BC0

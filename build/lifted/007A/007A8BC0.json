@@ -1,0 +1,13 @@
+{
+  "va": "0x007A8BC0",
+  "size": 64,
+  "orig_symbol": "sub_007A8BC0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "ReleaseCachedSlot",
+  "signature": "void fn_007A8BC0(uint32_t* slot)",
+  "summary": "If slot is null, caches index 2 via ext_007AA510 (when flag mem_00B61219 is set, falls through); otherwise frees the pointer stored in *slot and nulls it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:13:28Z"
+}
