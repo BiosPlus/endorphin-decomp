@@ -187494,3 +187494,60 @@ uint8_t fn_006707D0(void** slot, void* unused_arg) {
     return result;
 }
 } // namespace lift_006707D0
+
+// [0x006052B0]
+namespace lift_006052B0 {
+// Known callee 0x00672080: sub_00672080 (18B). Receives a pointer to a slot and a float value.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* exceptionObj);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Effector, float, Effector::getPoseRawDesiredDisplacement>::vfunc_47
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>
+// @summary Reads the float from the target's getter (vtable slot 14), stores it into a temp pair assigned into obj, releases the temp, then calls obj->field_0x04->vfunc_47(obj); throws a CRT exception when obj->field_0x00 is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_006052B0(void* obj) {
+    void* target = lift_field<void*>(obj, 0x00);
+    if (target == nullptr) {
+        // Original builds a 0x28-byte exception object and throws it with the ThrowInfo at VA 0x009DEC1C.
+        alignas(8) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return;
+    }
+
+    // target->vfunc_14(&out) returns a float* whose pointee is the value.
+    using GetRawFn = void* (__thiscall*)(void* self, void** out);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    void* outSlot = nullptr;
+    void* valuePtr = reinterpret_cast<GetRawFn>(targetVt[14])(target, &outSlot);
+    float value = *static_cast<const float*>(valuePtr);
+
+    // Temp pair: other.field_0x00 is the assignment source; other.field_0x04 receives the value.
+    struct TempPair {
+        void* field_0x00;
+        void* field_0x04;
+    } other{nullptr, nullptr};
+
+    ext_00672080(&other.field_0x04, value);
+    ext_0041CF50(obj, &other);
+
+    // Release the temp's field_0x04 (vtable slot 30) when it is non-null.
+    if (other.field_0x04 != nullptr) {
+        using ReleaseFn = void (__thiscall*)(void* self, void* arg);
+        void** heldVt = *reinterpret_cast<void***>(other.field_0x04);
+        reinterpret_cast<ReleaseFn>(heldVt[30])(other.field_0x04, &other);
+    }
+
+    // obj->field_0x04->vfunc_47(obj)
+    void* dispatch = lift_field<void*>(obj, 0x04);
+    using DispatchFn = void (__thiscall*)(void* self, void* arg);
+    void** dispatchVt = *reinterpret_cast<void***>(dispatch);
+    reinterpret_cast<DispatchFn>(dispatchVt[47])(dispatch, obj);
+}
+} // namespace lift_006052B0

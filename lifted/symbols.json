@@ -57262,6 +57262,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00604FB0 (ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006052B0": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, Effector::getPoseRawDesiredDisplacement\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
+    "signature": "void fn_006052B0(void* obj)",
+    "summary": "Reads the float from the target's getter (vtable slot 14), stores it into a temp pair assigned into obj, releases the temp, then calls obj-\u003efield_0x04-\u003evfunc_47(obj); throws a CRT exception when obj-\u003efield_0x00 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00605360": {
     "name": "ExprParser::WriteMethodType\u003cEffector, float, vcall112\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",
