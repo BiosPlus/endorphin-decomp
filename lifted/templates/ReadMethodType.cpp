@@ -67841,3 +67841,46 @@ void fn_004BCCA0(void* self) {
     ext_0046C4E0();
 }
 } // namespace lift_004BCCA0
+
+// [0x005131B0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_3 (130 bytes)
+namespace lift_005131B0 {
+// Callees
+// Known callee 0x005119F0: sub_005119F0 (std::string copy constructor, auto-lifted clone; returns self)
+extern void* ext_005119F0(void* self, const void* src);
+
+// IAT slots (MSVCP80)
+extern int mem_00924FC0;  // operator==(const std::string&, const char*)
+extern int mem_00924FF4;  // std::string::~basic_string (thiscall)
+
+// Rodata C strings compared against the copied string
+extern const char mem_0092F10C[];
+extern const char mem_0093A810[];
+
+using StringEqFn  = bool (*)(const void* str, const char* s);
+using StringDtorFn = void (__thiscall*)(void* self);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor>
+// @summary Copies the std::string referenced by the argument and returns true if it equals either of two constant strings.
+// @field ExprParser::ValuePtrType +0x00 const void* field_0x00
+bool fn_005131B0(const void* p) {
+    alignas(8) unsigned char tmp[0x1C];
+
+    // Copy the string whose pointer is stored at *p into a local temporary.
+    const void* src = *static_cast<const void* const*>(p);
+    ext_005119F0(tmp, src);
+
+    auto eq = reinterpret_cast<StringEqFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FC0)));
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+
+    bool result = eq(tmp, mem_0092F10C);
+    if (!result) {
+        result = eq(tmp, mem_0093A810);
+    }
+
+    dtor(tmp);
+    return result;
+}
+} // namespace lift_005131B0
