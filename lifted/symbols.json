@@ -34654,6 +34654,13 @@
     "summary": "Inserts an entry into the map at +0x04 using a key and value, throwing an exception if insertion fails, and returns a pointer to the mapped value (+0x28).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052AEB0": {
+    "name": "TreeMap::eraseRange",
+    "class": "TreeMap",
+    "signature": "inline uint32_t\u0026 mem32(uint32_t addr)",
+    "summary": "Erases the range [first, last) from a red-black tree map; clears the whole tree when the range covers begin()..end(), and returns the resulting iterator pair through retp.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052EBA0": {
     "name": "TreeMap::find",
     "class": "TreeMap",

@@ -2402,3 +2402,96 @@ TreeIter* __thiscall fn_0052A650(void* self, TreeIter* out_iter, void* iter_cont
     return out_iter;
 }
 } // namespace lift_0052A650
+
+// [0x0052AEB0] sub_0052AEB0 (203 bytes)
+namespace lift_0052AEB0 {
+// Known callee 0x0052A1C0: TreeIterator::increment (Advances a red-black tree iterator to the next in-order node, calling _invalid_parameter_noinfo on invalid/end iterators.)
+extern void ext_0052A1C0(void* self);
+// Known callee 0x0052A650: TreeMap::erase (Removes the element at the given red-black tree iterator, rebalances the tree, destroys the node's value and key string, and returns the next iterator.)
+extern void ext_0052A650(void* self, void* retbuf, uint32_t cont, uint32_t node);
+// Known callee 0x0052AC70: Unknown::walkChainDestroyStrings_0052AC70 (Walks a linked chain of nodes from arg (until a node with flag +0x61 is set), recursing on each node's +0x08 payload, resetting the subobject at +0x28 and destroying the std::string at +0x0C, then notifying via thunk_MFC80_ord_764.)
+extern void ext_0052AC70(void* self, uint32_t arg);
+extern int mem_00925134;
+
+namespace {
+
+inline uint32_t& mem32(uint32_t addr) {
+    return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+inline uint32_t addr_of(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// _invalid_parameter_noinfo, called through its import slot (mem_00925134).
+inline void invalid_parameter() {
+    (*reinterpret_cast<void (**)()>(&mem_00925134))();
+}
+
+} // namespace
+
+// @name TreeMap::eraseRange
+// @class TreeMap
+// @summary Erases the range [first, last) from a red-black tree map; clears the whole tree when the range covers begin()..end(), and returns the resulting iterator pair through retp.
+// @field TreeMap +0x04 void* head
+// @field TreeMap +0x08 uint32_t size
+void fn_0052AEB0(void* self, uint32_t retp, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5) {
+    const uint32_t esi = addr_of(self);
+
+    // Iterators are {container, node} pairs; the container must be this.
+    if (a2 != esi) {
+        invalid_parameter();
+    }
+
+    const uint32_t head = mem32(esi + 4);
+    const uint32_t begin = mem32(head);
+
+    if (a3 == begin) {
+        // Second iterator's container must be this as well.
+        if (a4 != esi) {
+            invalid_parameter();
+        }
+        const uint32_t end_head = mem32(esi + 4);
+
+        if (a5 == end_head) {
+            // Full range: destroy every node, then reset the header to empty.
+            const uint32_t root = mem32(mem32(esi + 4) + 4);
+            ext_0052AC70(self, root);
+
+            uint32_t h = mem32(esi + 4);
+            mem32(h + 4) = h;          // root = header
+            mem32(esi + 8) = 0;        // size = 0
+            h = mem32(esi + 4);
+            mem32(h) = h;              // leftmost = header
+            h = mem32(esi + 4);
+            mem32(h + 8) = h;          // rightmost = header
+            const uint32_t end_node = mem32(mem32(esi + 4));
+
+            mem32(retp) = esi;
+            mem32(retp + 4) = end_node;
+            return;
+        }
+    }
+
+    // General case: step through [first, last), erasing each element.
+    uint32_t it[2] = {a2, a3};
+    for (;;) {
+        if (it[0] == 0 || it[0] != a4) {
+            invalid_parameter();
+        }
+        if (it[1] == a5) {
+            mem32(retp) = it[0];
+            mem32(retp + 4) = it[1];
+            return;
+        }
+
+        const uint32_t old_cont = it[0];
+        const uint32_t old_node = it[1];
+
+        ext_0052A1C0(it);
+
+        uint32_t scratch[2] = {0, 0};
+        ext_0052A650(self, scratch, old_cont, old_node);
+    }
+}
+} // namespace lift_0052AEB0
