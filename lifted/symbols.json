@@ -17688,6 +17688,13 @@
     "summary": "Iterates over a vector of pointers at +0x8 and sets each element's byte at +0x1 to (byte at +0x2 == 0)",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B4E60": {
+    "name": "Unknown::AllocateAndInit",
+    "class": "Unknown",
+    "signature": "static inline void* u32_to_ptr(uint32_t value)",
+    "summary": "Allocates a 0x28-byte object and, if allocation succeeds, initializes it from self and the three stack arguments; then calls the global helper chain.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B5030": {
     "name": "sub_004B5030",
     "signature": "extern \"C\" void __fastcall fn_004B5030(void* self)",

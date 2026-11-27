@@ -1,0 +1,14 @@
+{
+  "va": "0x004B4E60",
+  "size": 117,
+  "orig_symbol": "sub_004B4E60",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::AllocateAndInit",
+  "class": "Unknown",
+  "signature": "static inline void* u32_to_ptr(uint32_t value)",
+  "summary": "Allocates a 0x28-byte object and, if allocation succeeds, initializes it from self and the three stack arguments; then calls the global helper chain.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:13:04Z"
+}

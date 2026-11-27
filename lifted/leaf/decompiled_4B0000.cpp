@@ -2427,3 +2427,34 @@ void* fn_004BEBE0(void* self) {
     return self;
 }
 } // namespace lift_004BEBE0
+
+// [0x004B4E60] sub_004B4E60 (117 bytes)
+namespace lift_004B4E60 {
+// Known callee 0x004B49A0: Unknown::InitWithCastAndArgs (Calls ext_006657F0(self, 0), stores arg1 at +0x10, the RTDynamicCast result at +0x14, zero at +0x18/+0x20, arg3 at +0x1C and arg4 at +0x24; if the cast result is 0 also stores arg2 at +0x08. Returns self.)
+extern void* ext_004B49A0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4);
+// Known callee 0x00665870: sub_00665870 (Returns global int32 value from mem_00B59420.)
+extern int32_t ext_00665870();
+// Callee 0x00666670: sub_00666670 (292B), thiscall with the int32 result of ext_00665870 in ecx.
+extern void ext_00666670(void* ecx);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with the allocation size 0x28 and returns the allocated block (or 0).
+extern void* ext_006A5C62(uint32_t size);
+
+static inline void* u32_to_ptr(uint32_t value) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(value));
+}
+
+// @name Unknown::AllocateAndInit
+// @class Unknown
+// @summary Allocates a 0x28-byte object and, if allocation succeeds, initializes it from self and the three stack arguments; then calls the global helper chain.
+void fn_004B4E60(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x28);
+    if (obj != nullptr) {
+        // Result (the object) is the callee's return value; the original code keeps it only as a temporary.
+        (void)ext_004B49A0(obj, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)), arg1, arg2, arg3);
+    }
+
+    int32_t global = ext_00665870();
+    ext_00666670(u32_to_ptr(static_cast<uint32_t>(global)));
+}
+} // namespace lift_004B4E60
