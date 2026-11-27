@@ -3022,3 +3022,88 @@ void __thiscall fn_0049E8D0(void* ecx) {
     } while (node != lift_field<void*>(self, 0x4));
 }
 } // namespace lift_0049E8D0
+
+// [0x0049E930]
+namespace lift_0049E930 {
+extern void* ext_006657F0(void* self, uint32_t arg);
+extern void* ext_006A6E9E(void* ptr, int32_t vf_delta, void* src_type, void* dst_type, int32_t is_reference);
+extern void (*mem_00925134)(void);
+
+// @name Unknown::InitWithCastAndIndex
+// @class Unknown
+// @summary Initializes vtable 0x009404C0, casts arg1 via __RTDynamicCast, and computes an index into arg0's vector.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+void* __thiscall fn_0049E930(void* self, void* arg0, void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    ext_006657F0(self, 0);
+
+    lift_field<uint32_t>(self, 0x00) = 0x009404C0u;
+    lift_field<void*>(self, 0x10) = arg0;
+
+    void* cast_res = ext_006A6E9E(arg1, 0, reinterpret_cast<void*>(0x00A2F4F4u), reinterpret_cast<void*>(0x00A354C8u), 0);
+    lift_field<void*>(self, 0x14) = cast_res;
+    lift_field<uint32_t>(self, 0x18) = arg2;
+    lift_field<uint32_t>(self, 0x1C) = arg2;
+    lift_field<uint32_t>(self, 0x24) = arg4;
+
+    if (cast_res == nullptr) {
+        lift_field<void*>(self, 0x08) = arg1;
+    }
+
+    void* vec = lift_field<void*>(self, 0x10);
+    uint32_t* vec_begin = lift_field<uint32_t*>(vec, 0x04);
+
+    if (arg3 != 0) {
+        if (vec_begin > lift_field<uint32_t*>(vec, 0x08)) {
+            mem_00925134();
+        }
+        vec = lift_field<void*>(self, 0x10);
+        uint32_t* vec_end = lift_field<uint32_t*>(vec, 0x08);
+        if (lift_field<uint32_t*>(vec, 0x04) > vec_end) {
+            mem_00925134();
+        }
+        void* vec2 = lift_field<void*>(self, 0x10);
+        uint32_t* it = lift_field<uint32_t*>(vec2, 0x04);
+        if (it > lift_field<uint32_t*>(vec2, 0x08)) {
+            mem_00925134();
+        }
+        while (it != vec_end) {
+            if (*it == arg3) {
+                break;
+            }
+            ++it;
+        }
+        if (vec2 == nullptr || vec2 != arg0) {
+            mem_00925134();
+        }
+        int32_t diff = static_cast<int32_t>(reinterpret_cast<uintptr_t>(it) - reinterpret_cast<uintptr_t>(arg1));
+        lift_field<int32_t>(self, 0x20) = (diff >> 2) + 1;
+    } else {
+        uint32_t count = 0;
+        if (vec_begin != nullptr) {
+            uint32_t* vec_end = lift_field<uint32_t*>(vec, 0x08);
+            count = static_cast<uint32_t>(static_cast<int32_t>(reinterpret_cast<uintptr_t>(vec_end) - reinterpret_cast<uintptr_t>(vec_begin)) >> 2);
+        }
+        lift_field<uint32_t>(self, 0x20) = count;
+    }
+
+    void* vec_final = lift_field<void*>(self, 0x10);
+    uint32_t* final_begin = lift_field<uint32_t*>(vec_final, 0x04);
+    uint32_t final_count = 0;
+    if (final_begin != nullptr) {
+        uint32_t* final_end = lift_field<uint32_t*>(vec_final, 0x08);
+        final_count = static_cast<uint32_t>(static_cast<int32_t>(reinterpret_cast<uintptr_t>(final_end) - reinterpret_cast<uintptr_t>(final_begin)) >> 2);
+    }
+    if (lift_field<uint32_t>(self, 0x20) > final_count) {
+        lift_field<uint32_t>(self, 0x20) = final_count;
+    }
+
+    return self;
+}
+} // namespace lift_0049E930
