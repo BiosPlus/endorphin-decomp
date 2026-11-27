@@ -4045,6 +4045,13 @@
     "summary": "Look up a 32-bit signed key in an embedded MSVC-style red-black tree at this+0xa4 and return the node value, or 0 if absent",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043E090": {
+    "name": "dispatchVirtual0Range",
+    "class": "Unknown",
+    "signature": "inline uintptr_t addr_of(const void* p)",
+    "summary": "Walks the pointer range [this+0x58, this+0x5c) and calls virtual slot 0 of each element object with arg; aborts on range violation.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043E3A0": {
     "name": "destroyRange_0043E3A0",
     "signature": "void __stdcall sub_0043E3A0(uint32_t begin, uint32_t end)",

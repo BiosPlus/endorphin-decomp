@@ -3663,3 +3663,60 @@ void fn_00433320(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_00433320
+
+// [0x0043E090] sub_0043E090 (92 bytes)
+namespace lift_0043E090 {
+extern int mem_00925134;
+
+namespace {
+
+inline uintptr_t addr_of(const void* p) {
+    return reinterpret_cast<uintptr_t>(p);
+}
+
+// Original tail-called _invalid_parameter_noinfo through the import slot; here it aborts.
+[[noreturn]] inline void invalid_parameter() {
+    std::abort();
+}
+
+} // namespace
+
+// @name dispatchVirtual0Range
+// @class Unknown
+// @summary Walks the pointer range [this+0x58, this+0x5c) and calls virtual slot 0 of each element object with arg; aborts on range violation.
+// @field Unknown +0x58 void** field_0x58
+// @field Unknown +0x5c void** field_0x5c
+void __thiscall fn_0043E090(void* self, void* arg) {
+    (void)&mem_00925134; // import slot for _invalid_parameter_noinfo (see invalid_parameter)
+
+    // Range bounds live in the object and may be changed by the callee, so they are
+    // re-read on every pass; only the cursor is kept locally.
+    void** cur = lift_field<void**>(self, 0x58);
+    if (addr_of(cur) > addr_of(lift_field<void**>(self, 0x5c))) {
+        invalid_parameter();
+    }
+
+    for (;;) {
+        void** limit = lift_field<void**>(self, 0x5c);
+        if (addr_of(lift_field<void**>(self, 0x58)) > addr_of(limit)) {
+            invalid_parameter();
+        }
+        if (cur == limit) {
+            return;
+        }
+        if (addr_of(cur) >= addr_of(limit)) {
+            invalid_parameter();
+        }
+
+        void* obj = *cur;
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<void (*)(void*, void*)>(vtbl[0])(obj, arg);
+
+        if (addr_of(cur) >= addr_of(lift_field<void**>(self, 0x5c))) {
+            invalid_parameter();
+        }
+        // Element stride is 4 bytes (32-bit pointer array).
+        cur = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(cur) + 4);
+    }
+}
+} // namespace lift_0043E090
