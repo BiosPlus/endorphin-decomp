@@ -1,0 +1,22 @@
+{
+  "va": "0x004E1A70",
+  "size": 91,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_0_off_184",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_0_off_184",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" void __thiscall fn_004E1A70(void* self, void* arg)",
+  "summary": "If field +0x10 is non-zero, validate arg (non-null, arg-\u003eend != arg-\u003eptr-\u003e+4), then call ext_00661F70 on this+0x740 with max(arg-\u003eptr-\u003e+8 - ext_004DE160(), 1).",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T12:04:02Z"
+}

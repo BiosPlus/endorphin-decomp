@@ -24904,6 +24904,13 @@
     "summary": "Handles frame buffer tick events by validating the iterator, checking frame bounds, and forwarding the computed record.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004E1A70": {
+    "name": "NMData::AnimationEventData::vfunc_0_off_184",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" void __thiscall fn_004E1A70(void* self, void* arg)",
+    "summary": "If field +0x10 is non-zero, validate arg (non-null, arg-\u003eend != arg-\u003eptr-\u003e+4), then call ext_00661F70 on this+0x740 with max(arg-\u003eptr-\u003e+8 - ext_004DE160(), 1).",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004E1B30": {
     "name": "sub_004E1B30",
     "signature": "DWORD ext_004E13E0();  // ConstructOnce_0046F580 DWORD* fn_004E1B30(DWORD* dst, DWORD value)",

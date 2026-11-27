@@ -627,3 +627,61 @@ void* fn_004E7040(void* self) {
     return result;
 }
 } // namespace lift_004E7040
+
+// [0x004E1A70] NMData::AnimationEventData::vfunc_0_off_184 (91 bytes)
+namespace lift_004E1A70 {
+// Known callee 0x004DE160: sub_004DE160, thiscall, returns (this->field_0x15c - this->field_0x9a0) + 1 as int32.
+extern int32_t __thiscall ext_004DE160(void* self);
+// Callee 0x00661F70: thiscall with one stack arg (cleaned by callee); operates on the subobject at this+0x740.
+extern void __thiscall ext_00661F70(void* self, int32_t count);
+// Metadata-only callees: listed for this address but not called by the bytes at 0x004E1A70.
+extern void ext_0047C480();
+extern void ext_00493EE0();
+extern void ext_004C1B20();
+extern void ext_004E1AD0();
+// MSVCR80 import slot used by the original for _invalid_parameter_noinfo (replaced by std::abort below).
+extern int mem_00925134;
+
+// @name NMData::AnimationEventData::vfunc_0_off_184
+// @class NMData::AnimationEventData
+// @summary If field +0x10 is non-zero, validate arg (non-null, arg->end != arg->ptr->+4), then call ext_00661F70 on this+0x740 with max(arg->ptr->+8 - ext_004DE160(), 1).
+// @field NMData::AnimationEventData +0x10 uint32_t field_0x10
+extern void __thiscall fn_004E1A70(void* self, void* arg) {
+    // self is the FrameBufferPlaybackEventListener subobject (AnimationEventData + 0x184).
+    // The original reads the enclosing AnimationEventData through a -0x184 adjustment.
+    char* real = static_cast<char*>(self) - 0x184;
+
+    // Metadata-only references (no runtime effect; take addresses only).
+    (void)&ext_0047C480;
+    (void)&ext_00493EE0;
+    (void)&ext_004C1B20;
+    (void)&ext_004E1AD0;
+    (void)&mem_00925134;
+
+    // Original: cmp dword ptr [edi-0x174], 0 ; je exit   (edi-0x174 == real+0x10)
+    if (lift_field<uint32_t>(self, -0x174) == 0) {
+        return;
+    }
+
+    // arg is a record with pointer p at +0x8 and pointer q at +0xC.
+    void* p = lift_field<void*>(arg, 0x8);
+    if (p == nullptr) {
+        // Original calls MSVCR80 _invalid_parameter_noinfo (fatal in the CRT).
+        std::abort();
+    }
+    void* q = lift_field<void*>(arg, 0xC);
+    if (q == lift_field<void*>(p, 0x4)) {
+        // Same invalid-parameter path as above.
+        std::abort();
+    }
+
+    int32_t r = ext_004DE160(real);
+
+    // Original: ecx = q->+0x8 - r; if (ecx <= 0) ecx = 1;
+    int32_t diff = lift_field<int32_t>(q, 0x8) - r;
+    int32_t count = (diff > 0) ? diff : 1;
+
+    // Original: lea ecx,[edi+0x740]; push count; call ext_00661F70
+    ext_00661F70(static_cast<char*>(self) + 0x740, count);
+}
+} // namespace lift_004E1A70
