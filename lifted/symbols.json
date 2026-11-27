@@ -39618,6 +39618,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0057AD10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0055A390": {
+    "name": "createFromSource",
+    "signature": "extern uint32_t mem_00924FE4; // IAT: std::string::string(const char*) extern uint32_t mem_00924FD0; // IAT: operator+(const string\u0026, const string\u0026) extern \"C\" void* fn_0055A390(void* src)",
+    "summary": "Allocate a 0x46C-byte object; copy-construct it from a dynamic_cast'ed source, default-construct when source is null, or throw a type-mismatch exception.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055AE90": {
     "name": "sub_0055AE90",
     "signature": "extern \"C\" void fn_0055AE90(void)",

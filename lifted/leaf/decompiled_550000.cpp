@@ -3284,3 +3284,63 @@ void fn_005593A0() {
     reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(frame + 0x4C);
 }
 } // namespace lift_005593A0
+
+// [0x0055A390]
+namespace lift_0055A390 {
+extern void ext_006A6E9E(void); // __RTDynamicCast
+extern void ext_006A5C62(void); // operator new (MFC80 ord 762)
+extern void ext_006A6DD2(void); // _CxxThrowException
+extern void ext_00402E50(void);
+extern void ext_00403560(void);
+extern void ext_00430F30(void);
+extern void ext_0056D820(void);
+extern uint32_t mem_00924FE4; // IAT: std::string::string(const char*)
+extern uint32_t mem_00924FD0; // IAT: operator+(const string&, const string&)
+
+// @name createFromSource
+// @summary Allocate a 0x46C-byte object; copy-construct it from a dynamic_cast'ed source, default-construct when source is null, or throw a type-mismatch exception.
+// @field createFromSource +0x00 void* vtable0
+// @field createFromSource +0x04 void* vtable1
+extern void* fn_0055A390(void* src)
+{
+    typedef void* (__cdecl *RTDynCastFn)(void*, int, void*, void*, int);
+    typedef void* (__cdecl *NewFn)(uint32_t);
+    typedef void (__stdcall *ThrowFn)(void*, void*);
+    typedef void* (__thiscall *CopyCtorFn)(void*, void*);
+    typedef void* (__thiscall *DefCtorFn)(void*);
+    typedef void* (__cdecl *TypeNameFn)(void*);
+    typedef void* (__thiscall *StrCtorFn)(void*, const char*);
+    typedef void* (__cdecl *StrCatFn)(void*, void*, void*);
+    typedef void* (__thiscall *ExcCtorFn)(void*, void*);
+
+    if (src == nullptr) {
+        void* obj = ((NewFn)&ext_006A5C62)(0x46C);
+        if (obj == nullptr)
+            return nullptr;
+        return ((DefCtorFn)&ext_0056D820)(obj);
+    }
+
+    void* cast = ((RTDynCastFn)&ext_006A6E9E)(src, 0, (void*)(uintptr_t)0x00A2E24C,
+                                              (void*)(uintptr_t)0x00A85378, 0);
+    if (cast != nullptr) {
+        uint32_t* obj = (uint32_t*)((NewFn)&ext_006A5C62)(0x46C);
+        if (obj == nullptr)
+            return nullptr;
+        ((CopyCtorFn)&ext_00402E50)(obj, cast);
+        obj[0] = 0x009578D4;
+        obj[1] = 0x009578C8;
+        return obj;
+    }
+
+    alignas(8) uint8_t typeName[0x20];
+    alignas(8) uint8_t prefix[0x20];
+    alignas(8) uint8_t message[0x20];
+    alignas(8) uint8_t exc[0x40];
+    void* name = ((TypeNameFn)&ext_00430F30)(typeName);
+    void* pre = ((StrCtorFn)(uintptr_t)mem_00924FE4)(prefix, (const char*)(uintptr_t)0x0092F9D4);
+    void* msg = ((StrCatFn)(uintptr_t)mem_00924FD0)(message, pre, name);
+    ((ExcCtorFn)&ext_00403560)(exc, msg);
+    ((ThrowFn)&ext_006A6DD2)(exc, (void*)(uintptr_t)0x009D47A4);
+    return nullptr;
+}
+} // namespace lift_0055A390
