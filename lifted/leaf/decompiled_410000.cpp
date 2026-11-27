@@ -2543,11 +2543,10 @@ extern int mem_00924300;  // MFC80!ord_876 (CString -> LPCSTR), IAT slot
 extern int mem_009242F4;  // MFC80!ord_578 (CString dtor), IAT slot
 extern int mem_009251E4;  // MSVCR80!atoi, IAT slot
 
-// @name CommandParser::setIntFromCStringArg
-// @class CommandParser
+// @name setIntFromCStringArg
 // @summary Builds a CString temp, forwards it to member at +0xdc, then atoi()s it into the int at [[self+0x184]+0x17c].
-// @field CommandParser +0xdc void* field_0xdc
-// @field CommandParser +0x184 void* field_0x184
+// @field Unknown +0xdc void* field_0xdc
+// @field Unknown +0x184 void* field_0x184
 void fn_004167A0(void* self) {
     auto* const base = static_cast<unsigned char*>(self);
 
