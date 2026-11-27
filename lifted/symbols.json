@@ -75772,6 +75772,13 @@
     "summary": "Pure jump thunk forwarding to sub_00784720.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00784650": {
+    "name": "Unknown::AppendPairGrowable",
+    "class": "Unknown",
+    "signature": "int fn_00784650(void* self, uint32_t value, uint32_t /*unused_stack_arg*/)",
+    "summary": "Appends one 8-byte entry (value stored twice as dwords) to a growable buffer, reallocating when count reaches width*height first.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007846D0": {
     "name": "SortedArray::findValue",
     "class": "SortedArray",

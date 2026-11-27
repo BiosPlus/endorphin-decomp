@@ -2177,3 +2177,48 @@ int32_t __thiscall fn_00783940(void* self, int32_t key1, int32_t key2) {
     return 1;
 }
 } // namespace lift_00783940
+
+// [0x00784650] sub_00784650 (128 bytes)
+namespace lift_00784650 {
+extern int mem_00925208;
+extern int mem_00925290;
+
+// @name Unknown::AppendPairGrowable
+// @class Unknown
+// @summary Appends one 8-byte entry (value stored twice as dwords) to a growable buffer, reallocating when count reaches width*height first.
+// @field Unknown +0x00 uint32_t* field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint8_t field_0x10
+int fn_00784650(void* self, uint32_t value, uint32_t /*unused_stack_arg*/) {
+    (void)&mem_00925208; // malloc IAT slot in original
+    (void)&mem_00925290; // realloc IAT slot in original
+
+    const uint32_t width  = lift_field<uint32_t>(self, 0x08);
+    const uint32_t height = lift_field<uint32_t>(self, 0x0C);
+    const uint32_t count  = lift_field<uint32_t>(self, 0x04);
+
+    if (count == width * height) {
+        void* grown;
+        if (width == 0) {
+            lift_field<uint32_t>(self, 0x08) = 1;
+            grown = std::malloc(static_cast<size_t>(height) * 8u);
+        } else {
+            lift_field<uint32_t>(self, 0x08) = width + 1;
+            uint32_t* old = lift_field<uint32_t*>(self, 0x00);
+            grown = std::realloc(old, static_cast<size_t>(width + 1) * height * 8u);
+        }
+        lift_field<uint32_t*>(self, 0x00) = static_cast<uint32_t*>(grown);
+    }
+
+    uint32_t* data = lift_field<uint32_t*>(self, 0x00);
+    const uint32_t index = lift_field<uint32_t>(self, 0x04);
+    data[2 * index]     = value;
+    data[2 * index + 1] = value;
+
+    lift_field<uint8_t>(self, 0x10) = 1;
+    lift_field<uint32_t>(self, 0x04) = index + 1;
+    return 0;
+}
+} // namespace lift_00784650
