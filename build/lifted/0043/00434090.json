@@ -1,0 +1,13 @@
+{
+  "va": "0x00434090",
+  "size": 132,
+  "orig_symbol": "sub_00434090",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "callAppVtable20CWithSeh",
+  "signature": "extern void __cdecl fn_00434090(void)",
+  "summary": "Calls vtable +0x20C on the object returned by fn_00465B40 inside a try-catch block.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:26:52Z"
+}

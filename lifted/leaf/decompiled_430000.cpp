@@ -4404,3 +4404,36 @@ void __cdecl fn_00433440(void) {
     }
 }
 } // namespace lift_00433440
+
+// [0x00434090]
+namespace lift_00434090 {
+// @name callAppVtable20CWithSeh
+// @summary Calls vtable +0x20C on the object returned by fn_00465B40 inside a try-catch block.
+
+extern void* __cdecl ext_00465B40(void);
+extern void ext_006A5E60(void);
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+
+extern void __cdecl fn_00434090(void) {
+    try {
+        void* obj = ext_00465B40();
+        void** vtable = *reinterpret_cast<void***>(obj);
+        using VMethod = void(__thiscall*)(void*);
+        auto method = reinterpret_cast<VMethod>(
+            *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtable) + 0x20C));
+        method(obj);
+    } catch (...) {
+        uint8_t str_buf[0x1C]{};
+        using CopyCtor = void(__thiscall*)(void*, const void*);
+        using CStrFn = const char*(__thiscall*)(const void*);
+        using DtorFn = void(__thiscall*)(void*);
+        reinterpret_cast<CopyCtor>(mem_00924FE0)(str_buf, nullptr);
+        const char* msg = reinterpret_cast<CStrFn>(mem_00924FF0)(str_buf);
+        (void)msg;
+        ext_006A5E60();
+        reinterpret_cast<DtorFn>(mem_00924FF4)(str_buf);
+    }
+}
+} // namespace lift_00434090
