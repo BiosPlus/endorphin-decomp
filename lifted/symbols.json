@@ -81041,6 +81041,13 @@
     "summary": "Stores a dword into slot[index] of the dword array at +0x734 when 0 \u003c index \u003c 0x12; other indices are ignored. thiscall, 2 stack args, callee pops 8 bytes.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AAA20": {
+    "name": "Unknown::conditionalAssignCStringTemp_007AAA20",
+    "class": "Unknown",
+    "signature": "void fn_007AAA20(void* self, const char* s)",
+    "summary": "If the virtual predicate at vtable slot 0x12C returns true, builds a temporary from the C string argument, hands it to the subobject at +0x788 via ext_006B9E60, then destroys the temporary. Returns nothing.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AAB30": {
     "name": "Unknown::ReleaseDoubleIndirectBuffer",
     "class": "Unknown",

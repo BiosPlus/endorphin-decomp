@@ -1418,3 +1418,40 @@ void fn_007AA990(void* self, int32_t idx, Arg76 arg) {
     ext_006B9D70(&arg);
 }
 } // namespace lift_007AA990
+
+// [0x007AAA20] sub_007AAA20 (112 bytes)
+namespace lift_007AAA20 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+// Known callee 0x006B9E60: Unknown::conditionalAllocAndCopy_006B9E60 (If the argument's type tag check passes, copies its getter values into this object's allocator; otherwise calls sub_006B9920 on this. Returns this.)
+extern void* ext_006B9E60(void* self, void* arg);
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void ext_006B9D70(void* self);
+
+// @name Unknown::conditionalAssignCStringTemp_007AAA20
+// @class Unknown
+// @summary If the virtual predicate at vtable slot 0x12C returns true, builds a temporary from the C string argument, hands it to the subobject at +0x788 via ext_006B9E60, then destroys the temporary. Returns nothing.
+// @field Unknown +0x00 void* vptr_00
+// @field Unknown +0x788 uint8_t field_0x788
+void fn_007AAA20(void* self, const char* s) {
+    // Virtual predicate: function pointer at byte offset 0x12C of the vtable.
+    void* const vtable = lift_field<void*>(self, 0x00);
+    using PredFn = uint8_t (*)(void*);
+    const uint8_t ok = reinterpret_cast<PredFn>(lift_field<void*>(vtable, 0x12C))(self);
+    if (ok == 0) {
+        return;
+    }
+
+    // Temporary object built from s. Its exact size is not recovered; the
+    // caller's frame reserves 0x4C bytes and the temporary lives inside it.
+    alignas(8) unsigned char tmp[0x48];
+    void* const temp = ext_006B9D80(tmp, s);
+
+    // Subobject at this+0x788 receives the temporary.
+    void* const subobject = static_cast<unsigned char*>(self) + 0x788;
+    ext_006B9E60(subobject, temp);
+
+    // Destroy the temporary (thunk forwards to the destructor body).
+    ext_006B9D70(tmp);
+}
+} // namespace lift_007AAA20

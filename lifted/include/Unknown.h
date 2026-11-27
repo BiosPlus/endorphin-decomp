@@ -155,6 +155,7 @@ struct Unknown_Fields {
     // +0x0   void*                    vptr  (evidence: 0x004030F0, 0x0040A910, 0x0040BE90, 0x0040F0B0, 0x0041C750, 0x0042FAC0, 0x0042FAE0, 0x0042FE70, 0x00430C50, 0x00432520, 0x00433710, 0x0043C9B0, 0x0043C9D0, 0x0046E780, 0x00493EA0, 0x00493EE0, 0x0054E360, 0x0054F3A0, 0x005760E0, 0x00584B10, 0x006118A0, 0x0063D970, 0x0063DDF0, 0x006B06A0, 0x006B51D0, 0x006BA780, 0x00700840) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vptr  (evidence: 0x004104E0, 0x00432400) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr_00  (evidence: 0x004ED750) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vptr_00  (evidence: 0x007AAA20) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr_0x00  (evidence: 0x00670FD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr_primary  (evidence: 0x0052F7D0, 0x0052FC10) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    vtable  (evidence: 0x004F27E0, 0x004F91F0, 0x004F9800, 0x00532BC0, 0x0053C8F0, 0x005B3500, 0x006098F0, 0x0063D970, 0x0063DDF0, 0x0063E240, 0x0063E770, 0x0063F600, 0x006B3A90, 0x006B3C90, 0x006B4060, 0x006B43F0, 0x006BA780, 0x0072CF30, 0x00754F20) // CONFLICT: multiple definitions at +0x0
@@ -2143,6 +2144,7 @@ struct Unknown_Fields {
     // +0x750 uint32_t                 field_0x750  (evidence: 0x0071C750)
     // +0x754 uint32_t                 field_0x754  (evidence: 0x0071C750)
     // +0x768 HWND                     field_0x768  (evidence: 0x00441C10, 0x0044E100)
+    // +0x788 uint8_t                  field_0x788  (evidence: 0x007AAA20)
     // +0x7CC uint8_t field_0x7cc (pointee of +0xf0)  (evidence: 0x007051B0) // CONFLICT: multiple definitions at +0x7CC
     // +0x7CC u8                       field_0x7CC  (evidence: 0x00704DA0) // CONFLICT: multiple definitions at +0x7CC
     // +0x7CD uint8_t field_0x7cd (pointee of +0xf0)  (evidence: 0x007051B0) // CONFLICT: multiple definitions at +0x7CD

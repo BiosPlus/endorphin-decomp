@@ -1,0 +1,28 @@
+{
+  "va": "0x007AAA20",
+  "size": 112,
+  "orig_symbol": "sub_007AAA20",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Unknown::conditionalAssignCStringTemp_007AAA20",
+  "class": "Unknown",
+  "signature": "void fn_007AAA20(void* self, const char* s)",
+  "summary": "If the virtual predicate at vtable slot 0x12C returns true, builds a temporary from the C string argument, hands it to the subobject at +0x788 via ext_006B9E60, then destroys the temporary. Returns nothing.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr_00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x788",
+      "type": "uint8_t",
+      "name": "field_0x788"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:57:07Z"
+}
