@@ -59642,6 +59642,13 @@
     "summary": "Virtual slot 5: if the held pointer is non-null, runs the default-message exception helper on (ptr+0x1c); then always throws a fixed DerivedException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00674D80": {
+    "name": "ReadMethodType\u003cExpressionEntry\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cExpressionEntry, const std::string\u0026, \u0026ExpressionEntry::getExpression, 0\u003e",
+    "signature": "uint8_t __stdcall fn_00674D80(void** holder, void* arg2)",
+    "summary": "Reads the wrapped object pointer from *holder (throws if null), dispatches vtable slot 42 on the resolved sub-object at +0x1c, then releases it via vtable slot 30.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00674EC0": {
     "name": "sub_00674EC0",
     "signature": "void* fn_00674EC0()",

@@ -1,0 +1,28 @@
+{
+  "va": "0x00674D80",
+  "size": 154,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType\u003cExpressionEntry\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cExpressionEntry, const std::string\u0026, \u0026ExpressionEntry::getExpression, 0\u003e",
+  "signature": "uint8_t __stdcall fn_00674D80(void** holder, void* arg2)",
+  "summary": "Reads the wrapped object pointer from *holder (throws if null), dispatches vtable slot 42 on the resolved sub-object at +0x1c, then releases it via vtable slot 30.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:19:34Z"
+}
