@@ -10,8 +10,8 @@
 // Recovered field layout for NMData::CollisionModelData:
 namespace lifted_layout {
 struct NMData_CollisionModelData_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x005C37A0, 0x005C37E0)
-    // +0xC   void*                    field_0x0c  (evidence: 0x005C3AB0, 0x005C3B40)
+    // +0x4   void*                    field_0x04  (evidence: 0x005C37A0, 0x005C37E0, 0x005C84C0)
+    // +0xC   void*                    field_0x0c  (evidence: 0x005C3AB0, 0x005C3B40, 0x005C84C0)
     // +0x10  void*                    field_0x10  (evidence: 0x005C3AB0, 0x005C3B40)
     // +0x14  std::string              field_0x14  (evidence: 0x005C31D0, 0x005C32E0)
     // +0x74  uint32_t                 field_0x74  (evidence: 0x005CCE20, 0x005CCF60)
@@ -19,7 +19,8 @@ struct NMData_CollisionModelData_Fields {
     // +0x94  void*                    field_0x94  (evidence: 0x005C2F70)
     // +0x150 void*                    field_0x150  (evidence: 0x005C37A0, 0x005C37E0, 0x005C3840, 0x005C3890)
     // +0x158 void*                    field_0x158  (evidence: 0x005CC490, 0x005CCE20, 0x005CCF60)
-    // +0x15C void*                    field_0x15c  (evidence: 0x005C3AB0, 0x005C3B40, 0x005C3E20)
+    // +0x15C void*                    field_0x15c  (evidence: 0x005C3AB0, 0x005C3B40, 0x005C3E20, 0x005C84C0)
+    // +0x160 uint8_t                  field_0x160  (evidence: 0x005C84C0)
     // +0x168 uint8_t                  field_0x168  (evidence: 0x005C87C0)
     // +0x16C void*                    field_0x16c  (evidence: 0x005C38B0, 0x005C87C0)
     // +0x17C std::string              field_0x17c  (evidence: 0x005C4020)

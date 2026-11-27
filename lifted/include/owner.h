@@ -8,7 +8,9 @@
 // Recovered field layout for owner:
 namespace lifted_layout {
 struct owner_Fields {
-    // +0x20  DWORD                    hwnd  (evidence: 0x00443390)
+    // +0x20  DWORD                    hwnd  (evidence: 0x00443390) // CONFLICT: multiple definitions at +0x20
+    // +0x20  void*                    hwnd  (evidence: 0x00444120) // CONFLICT: multiple definitions at +0x20
+    // +0xA0  void*                    view  (evidence: 0x00444120)
     // +0xE8  double                   field_0xE8  (evidence: 0x00443390)
     // +0xF0  double                   field_0xF0  (evidence: 0x00443390)
 };

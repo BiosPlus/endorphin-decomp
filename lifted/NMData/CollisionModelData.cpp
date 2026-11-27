@@ -612,3 +612,59 @@ void fn_005C87C0(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     lift_field<uint8_t>(self, 0x168) = 0;
 }
 } // namespace lift_005C87C0
+
+// [0x005C84C0] NMData::CollisionModelData::vfunc_34 (159 bytes)
+namespace lift_005C84C0 {
+// Known callee 0x00493E40: forwardVtableSlot194 (Dereferences a pointer-to-pointer held in self, then tail-jumps to the)
+// Variadic: called with (self, x, v) on one path and (self, w) on the other.
+extern void* ext_00493E40(void* self, ...);
+// Known callee 0x00528B90: Unknown::setPeerWithBackLink (Stores the argument at this+0x04; if it is non-null, writes this into argument+0x08.)
+extern void ext_00528B90(void* self, void* peer);
+// Unlifted callee 0x005B5AF0 (sub_005B5AF0, 92B): one stack argument, result in eax.
+extern void* ext_005B5AF0(void* a);
+// Metadata-only: listed in CALLEES/RDATA but never referenced by the original bytes.
+// Address-of only below, so nothing executes or reads at runtime.
+extern void ext_005BF400();
+extern int mem_00924FDC;
+extern int mem_00924FF4;
+
+// @name NMData::CollisionModelData::vfunc_34
+// @class NMData::CollisionModelData
+// @summary Resolves a peer through the embedded TransformInterface vslot 11 and a forwarding helper, links it back to the embedded subobject at +0x0C, and returns it.
+// @field NMData::CollisionModelData +0x04 void* field_0x04
+// @field NMData::CollisionModelData +0x0C void* field_0x0c
+// @field NMData::CollisionModelData +0x15C void* field_0x15c
+// @field NMData::CollisionModelData +0x160 uint8_t field_0x160
+void* fn_005C84C0(void* self, void* arg) {
+    typedef void* (*VSlotFn)(void* thisPtr, void* a);
+
+    // Metadata-only references (see declarations above); address-of only, no runtime effect.
+    (void)&ext_005BF400;
+    (void)&mem_00924FDC;
+    (void)&mem_00924FF4;
+
+    // Embedded subobjects: TransformInterface at +0x04 (its vtable is at +0x04 itself), peer link slot at +0x0C.
+    void* transformIface = reinterpret_cast<unsigned char*>(self) + 0x04;
+    void* linkSlot = reinterpret_cast<unsigned char*>(self) + 0x0C;
+
+    void* x = lift_field<void*>(self, 0x15C);
+    bool haveX = (x != nullptr) && (lift_field<uint8_t>(self, 0x160) != 0);
+
+    // vslot 11 (offset 0x2C) of the TransformInterface vtable, called with linkSlot as its argument.
+    void** vtbl = *reinterpret_cast<void***>(transformIface);
+    VSlotFn slot11 = reinterpret_cast<VSlotFn>(vtbl[11]);
+    void* v = slot11(transformIface, linkSlot);
+
+    void* result;
+    if (haveX) {
+        result = ext_00493E40(arg, x, v);
+        lift_field<void*>(result, 0x20) = x;
+    } else {
+        void* w = ext_005B5AF0(v);
+        result = ext_00493E40(arg, w);
+    }
+
+    ext_00528B90(linkSlot, result);
+    return result;
+}
+} // namespace lift_005C84C0

@@ -1,0 +1,34 @@
+{
+  "va": "0x00444120",
+  "size": 190,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_12",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_12",
+  "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+  "signature": "BOOL fn_00444120(void* self, int32_t arg0, int32_t x, int32_t arg2)",
+  "summary": "Maps a client x to time via owner, and if the view's cached value changed, invalidates the owner window and notifies the view.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "owner",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "hwnd"
+    },
+    {
+      "class": "owner",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "view"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:23Z"
+}

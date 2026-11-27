@@ -5643,6 +5643,13 @@
     "summary": "Resize-left state step: passes owner+0xA0 through two owner helpers, switches the state manager to index 0, forwards a nonzero scratch result to MFC80, returns true.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp"
   },
+  "0x00444120": {
+    "name": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_12",
+    "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+    "signature": "BOOL fn_00444120(void* self, int32_t arg0, int32_t x, int32_t arg2)",
+    "summary": "Maps a client x to time via owner, and if the view's cached value changed, invalidates the owner window and notifies the view.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp"
+  },
   "0x004442C0": {
     "name": "descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)",
     "signature": "void fn_004442C0(void* self)",
@@ -48108,6 +48115,13 @@
     "signature": "extern \"C\" void __fastcall fn_005C84A0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::CollisionModelDataBase::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005C84C0": {
+    "name": "NMData::CollisionModelData::vfunc_34",
+    "class": "NMData::CollisionModelData",
+    "signature": "void* fn_005C84C0(void* self, void* arg)",
+    "summary": "Resolves a peer through the embedded TransformInterface vslot 11 and a forwarding helper, links it back to the embedded subobject at +0x0C, and returns it.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
   "0x005C85C0": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e::vfunc_26",

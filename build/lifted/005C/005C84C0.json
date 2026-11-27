@@ -1,0 +1,40 @@
+{
+  "va": "0x005C84C0",
+  "size": 159,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_34",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_34",
+  "class": "NMData::CollisionModelData",
+  "signature": "void* fn_005C84C0(void* self, void* arg)",
+  "summary": "Resolves a peer through the embedded TransformInterface vslot 11 and a forwarding helper, links it back to the embedded subobject at +0x0C, and returns it.",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x160",
+      "type": "uint8_t",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:24Z"
+}

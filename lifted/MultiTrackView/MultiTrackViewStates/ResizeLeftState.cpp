@@ -81,3 +81,65 @@ bool fn_00444090(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
     return true;
 }
 } // namespace lift_00444090
+
+// [0x00444120] MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_12 (190 bytes)
+namespace lift_00444120 {
+// Known callee 0x0043CDD0: pixelToTime. __thiscall(this=owner, int32 x) -> double.
+// Caller pushes one stack argument; callee pops it.
+extern double ext_0043CDD0(void* self, int32_t x);
+// Known callee 0x00440870: sub_00440870. __thiscall(this=view, double t). Callee pops 8 bytes.
+extern void ext_00440870(void* self, double t);
+// Known callee 0x00441020: GetStringLiteral_00440680 (returns the address of the read-only string "$aj").
+// __thiscall(this=view) -> const char*.
+extern const char* ext_00441020(void* self);
+// Known callee 0x0041A920: sub_0041A920. __thiscall(this=local object, const void* src). Callee pops 4 bytes.
+extern void ext_0041A920(void* self, const void* src);
+// Known callee 0x0043F520: sub_0043F520. __thiscall(this=owner, void* obj, int32_t flag). Callee pops 8 bytes.
+extern void ext_0043F520(void* self, void* obj, int32_t flag);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764). cdecl, one arg.
+extern void ext_006A5C5C(uintptr_t arg0);
+// IAT slot for USER32!InvalidateRect.
+extern int mem_00925688;
+
+// @name MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_12
+// @class MultiTrackView::MultiTrackViewStates::ResizeLeftState
+// @summary Maps a client x to time via owner, and if the view's cached value changed, invalidates the owner window and notifies the view.
+// @field MultiTrackView::MultiTrackViewStates::ResizeLeftState +0x08 void* owner
+// @field owner +0x20 void* hwnd
+// @field owner +0xA0 void* view
+BOOL fn_00444120(void* self, int32_t arg0, int32_t x, int32_t arg2) {
+    (void)arg0;
+    (void)arg2;
+
+    void* owner = lift_field<void*>(self, 0x08);
+    void* view = lift_field<void*>(owner, 0xA0);
+
+    const char* old_value = ext_00441020(view);
+
+    double t = ext_0043CDD0(owner, x);
+    ext_00440870(view, t);
+
+    if (ext_00441020(view) == old_value) {
+        return 1;
+    }
+
+    // Local object (6 dwords) and a stack slot holding the view pointer,
+    // both passed by address to the callees below.
+    uint32_t obj[8] = {};
+    void* view_slot = view;
+
+    ext_0041A920(obj, &view_slot);
+    ext_0043F520(owner, obj, 1);
+
+    void* hwnd = lift_field<void*>(owner, 0x20);
+    using InvalidateRectFn = int32_t(__stdcall*)(void*, const void*, int32_t);
+    reinterpret_cast<InvalidateRectFn>(static_cast<uintptr_t>(mem_00925688))(hwnd, nullptr, 1);
+
+    uint32_t tag = obj[1];
+    if (tag != 0) {
+        ext_006A5C5C(static_cast<uintptr_t>(tag));
+    }
+
+    return 1;
+}
+} // namespace lift_00444120
