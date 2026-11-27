@@ -22160,6 +22160,13 @@
     "summary": "Reads the uint32 index stored at self+0x188 and returns the 28-byte-stride table entry address for it.",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004D0E10": {
+    "name": "NMData::TransitionEventData::vfunc_21",
+    "class": "NMData::TransitionEventData",
+    "signature": "static inline bool isSentinel(uint32_t v)",
+    "summary": "Calls the base vfunc_21, resolves name-table indices from obj lookups, sets m_momentumScaleFactor, and dispatches vslot 21 on the embedded object at +0x198.",
+    "lifted_path": "lifted/NMData/TransitionEventData.cpp"
+  },
   "0x004D1010": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0\u003e",

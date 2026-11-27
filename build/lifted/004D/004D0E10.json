@@ -1,0 +1,46 @@
+{
+  "va": "0x004D0E10",
+  "size": 510,
+  "orig_symbol": "NMData::TransitionEventData::vfunc_21",
+  "src_path": "src/NMData/TransitionEventData.cpp",
+  "lifted_path": "lifted/NMData/TransitionEventData.cpp",
+  "name": "NMData::TransitionEventData::vfunc_21",
+  "class": "NMData::TransitionEventData",
+  "signature": "static inline bool isSentinel(uint32_t v)",
+  "summary": "Calls the base vfunc_21, resolves name-table indices from obj lookups, sets m_momentumScaleFactor, and dispatches vslot 21 on the embedded object at +0x198.",
+  "fields": [
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x188",
+      "type": "int32_t",
+      "name": "field_0x188"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x190",
+      "type": "uint32_t",
+      "name": "field_0x190"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x194",
+      "type": "float",
+      "name": "m_momentumScaleFactor"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x198",
+      "type": "uint8_t",
+      "name": "field_0x198"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:57:46Z"
+}

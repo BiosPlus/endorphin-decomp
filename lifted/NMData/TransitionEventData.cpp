@@ -131,3 +131,86 @@ DWORD* __thiscall fn_004D2750(void* self, DWORD* out, DWORD key) {
     return out;
 }
 } // namespace lift_004D2750
+
+// [0x004D0E10] NMData::TransitionEventData::vfunc_21 (510 bytes)
+namespace lift_004D0E10 {
+extern void ext_004C24C0(void* self, void* obj);
+extern void ext_004275E0(void* dst, void* obj);
+extern int32_t ext_004D0B20(const void* name);
+extern void ext_004D0D40(void* self, const void* name);
+extern void ext_0046C0A0(void* out_float, void* in_item);
+extern uint32_t ext_0063EFE0(void* self, const char* name);
+extern uint32_t ext_0063F530(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+extern uint32_t mem_00A9FAE4;
+extern uint32_t mem_00A9F8F8;
+extern uint32_t mem_00A9F2F8;
+extern uint32_t mem_00A9EDE8;
+// MSVCP std::string ctor/dtor import slots; replaced by real std::string.
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_00924FF4;
+
+// Sentinel "not found" values returned by the lookup helpers.
+static inline bool isSentinel(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+static inline const char* asCString(uint32_t addr) {
+    return reinterpret_cast<const char*>(static_cast<uintptr_t>(addr));
+}
+
+static inline void* asPtr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// @name NMData::TransitionEventData::vfunc_21
+// @class NMData::TransitionEventData
+// @summary Calls the base vfunc_21, resolves name-table indices from obj lookups, sets m_momentumScaleFactor, and dispatches vslot 21 on the embedded object at +0x198.
+// @field NMData::TransitionEventData +0x164 uint32_t field_0x164
+// @field NMData::TransitionEventData +0x188 int32_t field_0x188
+// @field NMData::TransitionEventData +0x190 uint32_t field_0x190
+// @field NMData::TransitionEventData +0x194 float m_momentumScaleFactor
+// @field NMData::TransitionEventData +0x198 uint8_t field_0x198
+void fn_004D0E10(void* self, void* obj) {
+    ext_004C24C0(self, obj);
+    (void)&mem_00924FE8;
+    (void)&mem_00924FF4;
+
+    {
+        std::string name_a;
+        uint32_t r1 = ext_0063EFE0(obj, asCString(mem_00A9FAE4));
+        ext_004275E0(&name_a, asPtr(r1));
+        lift_field<int32_t>(self, 0x188) = ext_004D0B20(&name_a);
+    }
+
+    uint32_t r2 = ext_0063EFE0(obj, asCString(mem_00A9F8F8));
+    if (isSentinel(r2)) {
+        lift_field<uint32_t>(self, 0x190) = 0;
+    } else {
+        std::string name_b;
+        ext_004275E0(&name_b, asPtr(r2));
+        ext_004D0D40(self, &name_b);
+    }
+
+    uint32_t r3 = ext_0063EFE0(obj, asCString(0x009473C0u));
+    if (isSentinel(r3)) {
+        lift_field<float>(self, 0x194) = 1.0f;
+    } else {
+        uint32_t item = r3;
+        ext_0046C0A0(&lift_field<float>(self, 0x194), &item);
+    }
+
+    uint32_t r4 = ext_0063F530(obj, mem_00A9EDE8, 0, 1);
+    if (!isSentinel(r4)) {
+        uint32_t r5 = ext_0063F530(asPtr(r4), mem_00A9F2F8, 0, 1);
+        uint32_t arg = isSentinel(r5) ? 0x00B53B30u : r5;
+
+        uint8_t* embedded = static_cast<uint8_t*>(self) + 0x198;
+        uint32_t vptr = lift_field<uint32_t>(self, 0x198);
+        void* vfn = reinterpret_cast<void**>(static_cast<uintptr_t>(vptr))[21];
+        reinterpret_cast<void (*)(void*, uint32_t)>(vfn)(embedded, arg);
+    }
+
+    lift_field<uint32_t>(self, 0x164) = 0;
+}
+} // namespace lift_004D0E10
