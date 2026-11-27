@@ -64236,6 +64236,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x006239D0": {
+    "name": "NMData::DesiredPoseData::vfunc_1",
+    "class": "NMData::DesiredPoseData",
+    "signature": "inline bool is_sentinel(uint32_t val)",
+    "summary": "Loads desired pose data and joint/pose entries from an XML node.",
+    "lifted_path": "lifted/NMData/DesiredPoseData.cpp"
+  },
   "0x00623D80": {
     "name": "sub_00623D80",
     "signature": "DWORD* __thiscall fn_00623D80(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

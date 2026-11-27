@@ -1,0 +1,40 @@
+{
+  "va": "0x006239D0",
+  "size": 944,
+  "orig_symbol": "NMData::DesiredPoseData::vfunc_1",
+  "src_path": "src/NMData/DesiredPoseData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseData.cpp",
+  "name": "NMData::DesiredPoseData::vfunc_1",
+  "class": "NMData::DesiredPoseData",
+  "signature": "inline bool is_sentinel(uint32_t val)",
+  "summary": "Loads desired pose data and joint/pose entries from an XML node.",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseData",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMData::DesiredPoseData",
+      "offset": "+0x24",
+      "type": "uint8_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::DesiredPoseData",
+      "offset": "+0x34",
+      "type": "std::string",
+      "name": "field_0x34"
+    },
+    {
+      "class": "NMData::DesiredPoseData",
+      "offset": "+0x50",
+      "type": "uint8_t",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:26:05Z"
+}
