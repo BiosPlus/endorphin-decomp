@@ -1,0 +1,40 @@
+{
+  "va": "0x00557160",
+  "size": 117,
+  "orig_symbol": "sub_00557160",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::relinkHeadChains",
+  "class": "Unknown",
+  "signature": "static inline void* link_at(const void* base, ptrdiff_t off)",
+  "summary": "Builds a record for self's head node from arg's payload, copies arg's sibling link into self, and relinks the head's child and sibling chains to the first and last non-nil nodes (self-loops when the current node is nil).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2D",
+      "type": "BYTE",
+      "name": "field_0x2D"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:41:38Z"
+}

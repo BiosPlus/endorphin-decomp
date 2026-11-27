@@ -3103,3 +3103,64 @@ void* __thiscall fn_005586F0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_005586F0
+
+// [0x00557160] sub_00557160 (117 bytes)
+namespace lift_00557160 {
+// Known callee 0x00556A00: Unknown::BuildNodeChain (thiscall; self in ECX, node and owner on the stack)
+extern void* __thiscall ext_00556A00(void* self, void* node, DWORD owner);
+
+// @name Unknown::relinkHeadChains
+// @class Unknown
+// @summary Builds a record for self's head node from arg's payload, copies arg's sibling link into self, and relinks the head's child and sibling chains to the first and last non-nil nodes (self-loops when the current node is nil).
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x2D BYTE field_0x2D
+
+static inline void* link_at(const void* base, ptrdiff_t off) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<DWORD>(base, off)));
+}
+
+static inline void set_link(void* base, ptrdiff_t off, const void* v) {
+    lift_field<DWORD>(base, off) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(v));
+}
+
+static inline bool is_nil(const void* node) {
+    return lift_field<BYTE>(node, 0x2D) != 0;
+}
+
+void __thiscall fn_00557160(void* self, void* arg) {
+    void* head = link_at(self, 0x04);
+    DWORD owner = static_cast<DWORD>(reinterpret_cast<uintptr_t>(head));
+    void* payloadNode = link_at(link_at(arg, 0x04), 0x04);
+
+    void* built = ext_00556A00(self, payloadNode, owner);
+    set_link(head, 0x04, built);
+
+    set_link(self, 0x08, link_at(arg, 0x08));
+
+    void* h = link_at(self, 0x04);
+    void* cur = link_at(h, 0x04);
+    if (is_nil(cur)) {
+        set_link(h, 0x00, h);
+        set_link(h, 0x08, h);
+        return;
+    }
+
+    void* p = cur;
+    void* q = link_at(p, 0x00);
+    while (!is_nil(q)) {
+        p = q;
+        q = link_at(p, 0x00);
+    }
+    set_link(h, 0x00, p);
+
+    void* r = link_at(h, 0x04);
+    void* s = link_at(r, 0x08);
+    while (!is_nil(s)) {
+        r = s;
+        s = link_at(r, 0x08);
+    }
+    set_link(h, 0x08, r);
+}
+} // namespace lift_00557160

@@ -38710,6 +38710,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00557160": {
+    "name": "Unknown::relinkHeadChains",
+    "class": "Unknown",
+    "signature": "static inline void* link_at(const void* base, ptrdiff_t off)",
+    "summary": "Builds a record for self's head node from arg's payload, copies arg's sibling link into self, and relinks the head's child and sibling chains to the first and last non-nil nodes (self-loops when the current node is nil).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005571E0": {
     "name": "sub_005571E0",
     "class": "(none)",
