@@ -2560,3 +2560,37 @@ void* fn_00492150(void* self, uint32_t* out, const char* arg) {
     return out;
 }
 } // namespace lift_00492150
+
+// [0x0049EE60] sub_0049EE60 (126 bytes)
+namespace lift_0049EE60 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (0x28) and its result is null-checked: allocation-style.
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x0049E930: sub_0049E930 (326 bytes)
+// Thiscall: ecx = obj, then 5 stack args (outer this, a1..a4).
+extern void* ext_0049E930(void* obj, void* outer, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x00665870: sub_00665870 (Returns global int32 value from mem_00B59420.)
+extern int32_t ext_00665870(void);
+// Known callee 0x00666670: sub_00666670 (292 bytes)
+// Thiscall: ecx = int32 from ext_00665870, one stack arg (result of ext_0049E930 or null).
+extern void ext_00666670(int32_t self, void* result);
+// SEH scope table referenced by the prolog (push 0x008A7A5B).
+extern int mem_008A7A5B;
+
+// @name ConstructAndRegister_0049EE60
+// @summary Allocates a 0x28-byte object, constructs it via sub_0049E930 when allocation succeeds, then calls sub_00665870/sub_00666670 and returns the second argument.
+// Note: the SEH frame (fs:[0] push/restore and trylevel bookkeeping) is not reproduced; portable C++ has no equivalent.
+uint32_t fn_0049EE60(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    (void)&mem_008A7A5B;  // SEH scope table address from prolog; frame itself omitted.
+
+    void* obj = ext_006A5C62(0x28);
+    void* result = nullptr;
+    if (obj != nullptr) {
+        result = ext_0049E930(obj, self, a1, a2, a3, a4);
+    }
+
+    int32_t g = ext_00665870();
+    ext_00666670(g, result);
+    return a2;
+}
+} // namespace lift_0049EE60

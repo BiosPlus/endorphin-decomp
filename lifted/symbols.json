@@ -14819,6 +14819,12 @@
     "summary": "Searches the list at this+0xdc for a node matching key and returns a pointer to its value (node+8) or null.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049EE60": {
+    "name": "ConstructAndRegister_0049EE60",
+    "signature": "uint32_t fn_0049EE60(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Allocates a 0x28-byte object, constructs it via sub_0049E930 when allocation succeeds, then calls sub_00665870/sub_00666670 and returns the second argument.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049EFC0": {
     "name": "UnknownClass::assignAllEntriesFromLists",
     "class": "UnknownClass",
