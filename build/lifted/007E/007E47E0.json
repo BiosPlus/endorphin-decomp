@@ -1,0 +1,88 @@
+{
+  "va": "0x007E47E0",
+  "size": 130,
+  "orig_symbol": "sub_007E47E0",
+  "src_path": "src/leaf/decompiled_7E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7E0000.cpp",
+  "name": "Transform34::inverseTransformPoint",
+  "class": "Transform34",
+  "signature": "void __thiscall sub_007E47E0(const void* self, const float* src, float* dst)",
+  "summary": "Transforms a 3D point by the inverse of a 3x4 rigid transform (subtract translation, multiply by 3x3 transpose).",
+  "fields": [
+    {
+      "class": "Transform34",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "m00"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "m01"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "m02"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "m10"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "m11"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "m12"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "m20"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "m21"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "m22"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "tx"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "ty"
+    },
+    {
+      "class": "Transform34",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "tz"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:22:34Z"
+}

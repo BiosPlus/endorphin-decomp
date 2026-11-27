@@ -194,3 +194,33 @@ void fn_007E4770(void* self) {
     }
 }
 } // namespace lift_007E4770
+
+// [0x007E47E0]
+namespace lift_007E47E0 {
+// @name Transform34::inverseTransformPoint
+// @class Transform34
+// @summary Transforms a 3D point by the inverse of a 3x4 rigid transform (subtract translation, multiply by 3x3 transpose).
+// @field Transform34 +0x00 float m00
+// @field Transform34 +0x04 float m01
+// @field Transform34 +0x08 float m02
+// @field Transform34 +0x10 float m10
+// @field Transform34 +0x14 float m11
+// @field Transform34 +0x18 float m12
+// @field Transform34 +0x20 float m20
+// @field Transform34 +0x24 float m21
+// @field Transform34 +0x28 float m22
+// @field Transform34 +0x30 float tx
+// @field Transform34 +0x34 float ty
+// @field Transform34 +0x38 float tz
+
+
+void __thiscall sub_007E47E0(const void* self, const float* src, float* dst) {
+    float dx = src[0] - lift_field<float>(self, 0x30);
+    float dy = src[1] - lift_field<float>(self, 0x34);
+    float dz = src[2] - lift_field<float>(self, 0x38);
+
+    dst[0] = (lift_field<float>(self, 0x04) * dy + lift_field<float>(self, 0x00) * dx) + lift_field<float>(self, 0x08) * dz;
+    dst[1] = (lift_field<float>(self, 0x14) * dy + lift_field<float>(self, 0x10) * dx) + lift_field<float>(self, 0x18) * dz;
+    dst[2] = (lift_field<float>(self, 0x20) * dx + lift_field<float>(self, 0x24) * dy) + lift_field<float>(self, 0x28) * dz;
+}
+} // namespace lift_007E47E0
