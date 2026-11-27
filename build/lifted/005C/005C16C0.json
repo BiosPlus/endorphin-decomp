@@ -1,0 +1,34 @@
+{
+  "va": "0x005C16C0",
+  "size": 233,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_0_off_154",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_0_off_154",
+  "class": "NMData::MetaBodyData",
+  "signature": "void fn_005C16C0(void* self)",
+  "summary": "RuntimeEngineEventListener thunk: clamps a float in [0,1] and forwards it, with a global, to ext_005C1310 after refreshing a transform matrix.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x20C",
+      "type": "void*",
+      "name": "field_0x20C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:36:09Z"
+}

@@ -420,3 +420,56 @@ void* fn_005B8D90(void* self, void* out) {
     return out;
 }
 } // namespace lift_005B8D90
+
+// [0x005C16C0] NMData::MetaBodyData::vfunc_0_off_154 (233 bytes)
+namespace lift_005C16C0 {
+extern void ext_005C1310(void* self, uint32_t arg0, float arg1);
+// Known callee 0x00647F00: sub_00647F00 (Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).)
+extern void* ext_00647F00(void* self);
+extern void ext_00647FB0(void* self, const float* arg0);
+extern void ext_0067DAD0(void* self, const float* arg0);
+extern uint32_t mem_00B40640;
+
+// @name NMData::MetaBodyData::vfunc_0_off_154
+// @class NMData::MetaBodyData
+// @summary RuntimeEngineEventListener thunk: clamps a float in [0,1] and forwards it, with a global, to ext_005C1310 after refreshing a transform matrix.
+// @field NMData::MetaBodyData +0x04 void* field_0x04
+// @field NMData::MetaBodyData +0x158 void* field_0x158
+// @field NMData::MetaBodyData +0x20C void* field_0x20C
+void fn_005C16C0(void* self) {
+    // self is the RuntimeEngineEventListener subobject at MetaBodyData+0x154.
+    uint8_t* obj = reinterpret_cast<uint8_t*>(self) - 0x154;
+
+    if (lift_field<void*>(obj, 0x158) == nullptr) {
+        return;
+    }
+
+    // TransformInterface subobject at MetaBodyData+0x04; virtual slot 5 (+0x14).
+    uint8_t* tif = reinterpret_cast<uint8_t*>(obj) + 0x04;
+    void** vtbl = *reinterpret_cast<void***>(tif);
+    using VFn = void* (__thiscall*)(void* self, uint32_t arg0);
+    void* xf = reinterpret_cast<VFn>(vtbl[5])(tif, mem_00B40640);
+
+    float buf[9] = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+    ext_0067DAD0(xf, buf);
+
+    void* dst = ext_00647F00(lift_field<void*>(lift_field<void*>(obj, 0x158), 0xAC));
+    std::memcpy(dst, xf, 64);
+
+    ext_00647FB0(lift_field<void*>(lift_field<void*>(obj, 0x158), 0xAC), buf);
+
+    void* p20c = lift_field<void*>(obj, 0x20C);
+    void* p18c = lift_field<void*>(p20c, 0x18C);
+    float f = lift_field<float>(p18c, 0x604);
+
+    // Clamp to [0,1]; NaN passes through unchanged (matches the x87 compare path).
+    float clamped = f;
+    if (f < 0.0f) {
+        clamped = 0.0f;
+    } else if (f > 1.0f) {
+        clamped = 1.0f;
+    }
+
+    ext_005C1310(obj, mem_00B40640, clamped);
+}
+} // namespace lift_005C16C0

@@ -11,7 +11,7 @@
 namespace lifted_layout {
 struct NMData_MetaBodyData_Fields {
     // +0x0   void*                    vtable  (evidence: 0x005B8D90)
-    // +0x4   void*                    field_0x04  (evidence: 0x005BFBD0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x005BFBD0, 0x005C16C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    transformInterface_vptr  (evidence: 0x005C1410) // CONFLICT: multiple definitions at +0x4
     // +0xC   void*                    field_0x0C  (evidence: 0x005B6F00) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    renderObjectOwner_vptr  (evidence: 0x005B6E70) // CONFLICT: multiple definitions at +0xC
@@ -20,11 +20,12 @@ struct NMData_MetaBodyData_Fields {
     // +0x80  uint32_t*                field_0x80  (evidence: 0x0049FC80, 0x005C0E00, 0x008703F0)
     // +0x84  uint32_t*                field_0x84  (evidence: 0x0049FC80, 0x005C0E00, 0x008703F0)
     // +0x14C void*                    field_0x14C  (evidence: 0x005B6880, 0x005B68D0, 0x005BFBD0)
-    // +0x158 void*                    field_0x158  (evidence: 0x005B6E70, 0x005B6F00, 0x005BFC90)
+    // +0x158 void*                    field_0x158  (evidence: 0x005B6E70, 0x005B6F00, 0x005BFC90, 0x005C16C0)
     // +0x15C void*                    field_0x15C  (evidence: 0x005BFC90)
     // +0x160 void*                    field_0x160  (evidence: 0x005BFC90)
     // +0x168 void*                    field_0x168  (evidence: 0x005BFC90)
     // +0x16C void*                    field_0x16C  (evidence: 0x005BFC90)
-    // +0x20C void*                    subObject  (evidence: 0x005B8D90)
+    // +0x20C void*                    field_0x20C  (evidence: 0x005C16C0) // CONFLICT: multiple definitions at +0x20C
+    // +0x20C void*                    subObject  (evidence: 0x005B8D90) // CONFLICT: multiple definitions at +0x20C
 };
 } // namespace lifted_layout
