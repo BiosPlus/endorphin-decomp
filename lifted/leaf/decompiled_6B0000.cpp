@@ -3172,3 +3172,76 @@ void sub_006BBAE0() {
     }
 }
 } // namespace lift_006BBAE0
+
+// [0x006BEA80] sub_006BEA80 (278 bytes)
+namespace lift_006BEA80 {
+extern int mem_00B5D4E0;
+extern int mem_00B5D4E4;
+extern int mem_00B5D4E8;
+extern int mem_00B5D4EC;
+extern int mem_00B5D4F0;
+extern int mem_00B5D4F4;
+extern int mem_00B5D4F8;
+extern int mem_00B5D4FC;
+extern int mem_00B5D500;
+extern int mem_00B5D504;
+extern int mem_00B5D508;
+extern int mem_00B5D50C;
+extern int mem_00B5D510;
+extern int mem_00B5D514;
+extern int mem_00B5D518;
+extern int mem_00B5D51C;
+extern int mem_00B5D520;
+extern int mem_00B5D524;
+extern int mem_00B5D528;
+extern int mem_00B5D52C;
+extern int mem_00B5D530;
+extern int mem_00B5D534;
+extern int mem_00B5D538;
+extern int mem_00B5D53C;
+extern int mem_00B5D540;
+extern int mem_00B5D544;
+extern int mem_00B5D548;
+extern int mem_00B5D54C;
+extern int mem_00B5D550;
+extern int mem_00B5D554;
+extern int mem_00B5D558;
+extern int mem_00B5D55C;
+extern int mem_00925284;
+
+// @name copyHugeValueToGlobals_006BEA80
+// @summary Copies the 8-byte value pointed to by the _HUGE pointer into 16 consecutive global qword slots at 0xB5D4E0..0xB5D55F.
+
+namespace {
+
+// Reads the qword at *src (two dwords) and stores it into the global pair (lo, hi).
+inline void copyQword(const volatile uint32_t* src, int& lo, int& hi) {
+    lo = static_cast<int>(src[0]);
+    hi = static_cast<int>(src[1]);
+}
+
+} // namespace
+
+extern void sub_006BEA80(void) {
+    // mem_00925284 holds the address of the _HUGE double; dereference it.
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925284)));
+
+    copyQword(src, mem_00B5D4E0, mem_00B5D4E4);
+    copyQword(src, mem_00B5D4E8, mem_00B5D4EC);
+    copyQword(src, mem_00B5D4F0, mem_00B5D4F4);
+    copyQword(src, mem_00B5D4F8, mem_00B5D4FC);
+    copyQword(src, mem_00B5D500, mem_00B5D504);
+    copyQword(src, mem_00B5D508, mem_00B5D50C);
+    copyQword(src, mem_00B5D510, mem_00B5D514);
+    copyQword(src, mem_00B5D518, mem_00B5D51C);
+    copyQword(src, mem_00B5D520, mem_00B5D524);
+    copyQword(src, mem_00B5D528, mem_00B5D52C);
+    copyQword(src, mem_00B5D530, mem_00B5D534);
+    copyQword(src, mem_00B5D538, mem_00B5D53C);
+    copyQword(src, mem_00B5D540, mem_00B5D544);
+    copyQword(src, mem_00B5D548, mem_00B5D54C);
+    copyQword(src, mem_00B5D550, mem_00B5D554);
+    copyQword(src, mem_00B5D558, mem_00B5D55C);
+}
+} // namespace lift_006BEA80

@@ -89869,6 +89869,12 @@
     "summary": "Dereferences the _HUGE pointer and copies its 8-byte value into four adjacent 8-byte globals.",
     "lifted_path": "lifted/clones/auto_clones_6B0000.cpp"
   },
+  "0x006BEA80": {
+    "name": "copyHugeValueToGlobals_006BEA80",
+    "signature": "inline void copyQword(const volatile uint32_t* src, int\u0026 lo, int\u0026 hi)",
+    "summary": "Copies the 8-byte value pointed to by the _HUGE pointer into 16 consecutive global qword slots at 0xB5D4E0..0xB5D55F.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BEC70": {
     "name": "sub_006BEC70_init_globals",
     "signature": "void sub_006BEC70_init_globals()",
