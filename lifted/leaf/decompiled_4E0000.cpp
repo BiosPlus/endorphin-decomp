@@ -1350,3 +1350,36 @@ void fn_004E8640(void* dst, void* self) {
     }
 }
 } // namespace lift_004E8640
+
+// [0x004EE630] sub_004EE630 (114 bytes)
+namespace lift_004EE630 {
+// Known callee 0x004ECC40: fn_004ECC40 (returns the static object address; auto-lifted clone of 0x004CAE30).
+extern void* ext_004ECC40();
+// Known callee 0x00475960: thiscall, ecx = self, stack = (str, slot, flag), callee cleans 12 bytes.
+extern void __thiscall ext_00475960(void* self, void* str, void** slot, int flag);
+// MSVCP80 import slots: basic_string(const char*) ctor and ~basic_string() dtor.
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+
+using string_ctor_fn = void(__thiscall*)(void* self, const char* s);
+using string_dtor_fn = void(__thiscall*)(void* self);
+
+// @name dispatchWithStaticObjectAndTempString
+// @class <unknown>
+// @summary Gets the static object from ext_004ECC40, builds a temporary std::string from the argument, calls ext_00475960 on this->field_0x00 with the temporary and the object slot (flag 1), then destroys the temporary.
+// @field <unknown> +0x00 void* field_0x00
+void __thiscall fn_004EE630(void* self, const char* arg) {
+    void* obj = ext_004ECC40();
+
+    unsigned char str[0x1C];
+    (*reinterpret_cast<string_ctor_fn*>(&mem_00924FE4))(str, arg);
+
+    // RAII replaces the original SEH frame: the temporary is destroyed on normal return and on unwind.
+    struct TempStringGuard {
+        unsigned char* s;
+        ~TempStringGuard() { (*reinterpret_cast<string_dtor_fn*>(&mem_00924FF4))(s); }
+    } guard{str};
+
+    ext_00475960(lift_field<void*>(self, 0x00), str, &obj, 1);
+}
+} // namespace lift_004EE630

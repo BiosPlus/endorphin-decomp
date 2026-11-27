@@ -25190,6 +25190,13 @@
     "summary": "Pure jump thunk forwarding to sub_004ED9D0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004EE630": {
+    "name": "dispatchWithStaticObjectAndTempString",
+    "class": "\u003cunknown\u003e",
+    "signature": "void __thiscall fn_004EE630(void* self, const char* arg)",
+    "summary": "Gets the static object from ext_004ECC40, builds a temporary std::string from the argument, calls ext_00475960 on this-\u003efield_0x00 with the temporary and the object slot (flag 1), then destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EE760": {
     "name": "ExprParser::ReadMethodType\u003cSelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cSelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1\u003e",
