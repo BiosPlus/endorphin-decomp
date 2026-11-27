@@ -1,0 +1,22 @@
+{
+  "va": "0x00502760",
+  "size": 114,
+  "orig_symbol": "sub_00502760",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "SingletonDispatchWithString_00502760",
+  "class": "Unknown",
+  "signature": "void fn_00502760(void* self, const char* arg)",
+  "summary": "Fetches the singleton via ext_004FF8E0, builds a temporary std::string from the argument, and dispatches to ext_00475960 on this-\u003e[0] with the temporary, the singleton slot, and flag 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:29:58Z"
+}

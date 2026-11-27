@@ -3567,3 +3567,35 @@ void* fn_0050E3B0(void* out) {
     return out;
 }
 } // namespace lift_0050E3B0
+
+// [0x00502760] sub_00502760 (114 bytes)
+namespace lift_00502760 {
+// Known callee 0x004FF8E0: getSingleton_004FF8E0 (Lazily initializes and returns the singleton object at 0x00AEB26C.)
+extern void* ext_004FF8E0();
+// Callee 0x00475960 (sub_00475960): thiscall, ECX = receiver, 3 stack args (out, slot, flag).
+extern void ext_00475960(void* self, void* out, void** slot, int flag);
+// .rdata import slots for MSVCP80 basic_string ctor/dtor (replaced by std::string); metadata-only.
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name SingletonDispatchWithString_00502760
+// @class Unknown
+// @summary Fetches the singleton via ext_004FF8E0, builds a temporary std::string from the argument, and dispatches to ext_00475960 on this->[0] with the temporary, the singleton slot, and flag 1.
+// @field Unknown +0x00 void* field_0x00
+void fn_00502760(void* self, const char* arg) {
+    // First field of self is the callee's receiver (original: mov ecx, [esi]).
+    void* const receiver = lift_field<void*>(self, 0);
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+
+    // Singleton returned by the lazy accessor; its address is passed as the second stack argument.
+    void* singletonSlot = ext_004FF8E0();
+
+    // Temporary std::string built from the argument (original: MSVCP80 basic_string(const char*) ctor,
+    // destroyed at scope exit in place of the original basic_string dtor call).
+    std::string tmp(arg);
+
+    // Original pushes &tmp, &singletonSlot and the constant 1, then calls with ECX = receiver.
+    ext_00475960(receiver, static_cast<void*>(&tmp), &singletonSlot, 1);
+}
+} // namespace lift_00502760

@@ -27772,6 +27772,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00501DC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00502760": {
+    "name": "SingletonDispatchWithString_00502760",
+    "class": "Unknown",
+    "signature": "void fn_00502760(void* self, const char* arg)",
+    "summary": "Fetches the singleton via ext_004FF8E0, builds a temporary std::string from the argument, and dispatches to ext_00475960 on this-\u003e[0] with the temporary, the singleton slot, and flag 1.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503A10": {
     "name": "Evaluator::vfunc_1",
     "class": "Evaluator",
