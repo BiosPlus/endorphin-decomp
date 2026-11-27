@@ -27598,6 +27598,12 @@
     "summary": "Rewinds the file, skips the first line, then for each line beginning with \"v \" scans three values into the buffer whose pointer is stored in the context's vertex table; returns 0.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005505B0": {
+    "name": "parseObjTextureCoords",
+    "signature": "void __stdcall sub_005505B0(FILE* file, void* obj, char* buf)",
+    "summary": "Parses 'vt %f %f' texture coordinate lines from an OBJ file into an object's UV pointer array",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00550F80": {
     "name": "ModelImporter::vfunc_0",
     "class": "ModelImporter",

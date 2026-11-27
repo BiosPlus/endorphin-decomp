@@ -1,0 +1,27 @@
+{
+  "va": "0x005505B0",
+  "size": 131,
+  "orig_symbol": "sub_005505B0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "parseObjTextureCoords",
+  "signature": "void __stdcall sub_005505B0(FILE* file, void* obj, char* buf)",
+  "summary": "Parses 'vt %f %f' texture coordinate lines from an OBJ file into an object's UV pointer array",
+  "fields": [
+    {
+      "class": "ObjLoader",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "hasTextureCoords"
+    },
+    {
+      "class": "ObjLoader",
+      "offset": "+0x20",
+      "type": "float**",
+      "name": "textureCoordPtrs"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:25:06Z"
+}

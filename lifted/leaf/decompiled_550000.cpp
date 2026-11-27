@@ -2244,3 +2244,35 @@ void fn_00559840(uint8_t* begin, uint8_t* end) {
     } while (entry != end);
 }
 } // namespace lift_00559840
+
+// [0x005505B0]
+namespace lift_005505B0 {
+extern int(__cdecl* mem_0092521C)(const char*, const char*, ...);
+extern char*(__cdecl* mem_009252C0)(char*, int, FILE*);
+extern int(__cdecl* mem_009252C4)(FILE*, long, int);
+
+// @name parseObjTextureCoords
+// @summary Parses 'vt %f %f' texture coordinate lines from an OBJ file into an object's UV pointer array
+// @field ObjLoader +0x08 uint32_t hasTextureCoords
+// @field ObjLoader +0x20 float** textureCoordPtrs
+void __stdcall sub_005505B0(FILE* file, void* obj, char* buf) {
+    if (lift_field<uint32_t>(obj, 0x8) == 0) {
+        return;
+    }
+
+    mem_009252C4(file, 0, 0);
+    if (!mem_009252C0(buf, 0x800, file)) {
+        return;
+    }
+
+    uint32_t offset = 0;
+    do {
+        if (buf[0] == 'v' && buf[1] == 't') {
+            uint8_t* ptr_array = lift_field<uint8_t*>(obj, 0x20);
+            float* uv = *reinterpret_cast<float**>(ptr_array + offset);
+            mem_0092521C(buf, "vt %f %f", uv, uv + 1);
+            offset += 4;
+        }
+    } while (mem_009252C0(buf, 0x800, file) != nullptr);
+}
+} // namespace lift_005505B0
