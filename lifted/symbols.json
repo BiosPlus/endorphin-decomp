@@ -21398,6 +21398,13 @@
     "summary": "Copies 0x24-byte elements backward from [first, last) to d_last and returns the new destination start.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050A780": {
+    "name": "UnknownClass::swapStringAndFloat",
+    "class": "UnknownClass",
+    "signature": "inline StringAssignFn string_assign_import()",
+    "summary": "Swaps the std::string at +0x04 and the float at +0x20 between two instances, using a temporary copy of self.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050AA00": {
     "name": "NMData::TaskTemplate::vfunc_13",
     "class": "NMData::TaskTemplate",

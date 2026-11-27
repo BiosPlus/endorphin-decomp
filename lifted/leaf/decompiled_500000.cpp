@@ -2603,3 +2603,51 @@ void fn_0050EDF0(void* self) {
     }
 }
 } // namespace lift_0050EDF0
+
+// [0x0050A780] sub_0050A780 (127 bytes)
+namespace lift_0050A780 {
+// Known callee 0x00509EB0: UnknownClass::copyCtor_00509EB0 (Copy constructor setting vtable, copying std::string at +0x4 and float at +0x20)
+extern void* __thiscall ext_00509EB0(void* self, const void* other);
+// Known callee 0x00508790: ClassName::~ClassName (Destructor: resets vtable, destroys the std::string member at +0x04, then runs base cleanup via ext_0065F440.)
+extern void __thiscall ext_00508790(void* self);
+extern int mem_00924FDC;
+
+namespace {
+
+// std::string::operator=(const std::string&) (MSVC 2005 ABI), reached through the import slot mem_00924FDC.
+using StringAssignFn = void* (__thiscall*)(void* self, const void* rhs);
+
+inline StringAssignFn string_assign_import() {
+    return reinterpret_cast<StringAssignFn>(*reinterpret_cast<void* const*>(&mem_00924FDC));
+}
+
+} // namespace
+
+// @name UnknownClass::swapStringAndFloat
+// @class UnknownClass
+// @summary Swaps the std::string at +0x04 and the float at +0x20 between two instances, using a temporary copy of self.
+// @field UnknownClass +0x04 std::string field_0x04
+// @field UnknownClass +0x20 float field_0x20
+void fn_0050A780(void* self, void* other) {
+    alignas(4) unsigned char temp[0x24];
+    const StringAssignFn assign = string_assign_import();
+
+    void* self_str = static_cast<unsigned char*>(self) + 0x04;
+    void* other_str = static_cast<unsigned char*>(other) + 0x04;
+    void* temp_str = temp + 0x04;
+
+    // temp = copy of *self
+    ext_00509EB0(temp, self);
+
+    // self.str = other.str; self.f20 = other.f20
+    assign(self_str, other_str);
+    lift_field<float>(self, 0x20) = lift_field<float>(other, 0x20);
+
+    // other.str = temp.str; other.f20 = temp.f20 (original self values)
+    assign(other_str, temp_str);
+    lift_field<float>(other, 0x20) = lift_field<float>(temp, 0x20);
+
+    // Destroy temp
+    ext_00508790(temp);
+}
+} // namespace lift_0050A780

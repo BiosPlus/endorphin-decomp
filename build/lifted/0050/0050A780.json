@@ -1,0 +1,28 @@
+{
+  "va": "0x0050A780",
+  "size": 127,
+  "orig_symbol": "sub_0050A780",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "UnknownClass::swapStringAndFloat",
+  "class": "UnknownClass",
+  "signature": "inline StringAssignFn string_assign_import()",
+  "summary": "Swaps the std::string at +0x04 and the float at +0x20 between two instances, using a temporary copy of self.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:06:19Z"
+}
