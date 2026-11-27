@@ -1,0 +1,28 @@
+{
+  "va": "0x00612D70",
+  "size": 261,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_7_off_C",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "PrimaryTwistAndSwingConstraint::vfunc_7_off_C",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "inline void** lift_vtbl(void* obj)",
+  "summary": "Builds a 4x4 transform matrix from the two child twist/swing sub-objects and a unit-axis identity, then applies it to the object at +0x2D8.",
+  "fields": [
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x318",
+      "type": "void*",
+      "name": "field_0x318"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x2D8",
+      "type": "void*",
+      "name": "field_0x2d8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:35:41Z"
+}

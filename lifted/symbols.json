@@ -59663,6 +59663,13 @@
     "summary": "Zeroes the caller's float[3] output, runs a virtual call on the +0x04 sub-object into a unit quaternion-like buffer, post-processes it via ext_0067DAD0/ext_00694900/ext_00694880, then divides each output component by this-\u003efield_0x154/0x158/0x15c and returns the output pointer.",
     "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
   },
+  "0x00612D70": {
+    "name": "PrimaryTwistAndSwingConstraint::vfunc_7_off_C",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "inline void** lift_vtbl(void* obj)",
+    "summary": "Builds a 4x4 transform matrix from the two child twist/swing sub-objects and a unit-axis identity, then applies it to the object at +0x2D8.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x00612E80": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_59",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

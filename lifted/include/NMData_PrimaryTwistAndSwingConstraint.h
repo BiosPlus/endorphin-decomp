@@ -17,6 +17,8 @@ struct NMData_PrimaryTwistAndSwingConstraint_Fields {
     // +0x15C float                    field_0x15c  (evidence: 0x00612B60, 0x00612C00)
     // +0x164 uint8_t                  field_0x164  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0)
     // +0x224 uint8_t                  field_0x224  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0)
+    // +0x2D8 void*                    field_0x2d8  (evidence: 0x00612D70)
+    // +0x318 void*                    field_0x318  (evidence: 0x00612D70)
     // +0x320 void* field_0x320 (object; vtable slots 8 and 9 are called with the argument)  (evidence: 0x00611E00)
     // +0x324 void* field_0x324 (object; vtable slot 8 is called with the argument)  (evidence: 0x00611E00)
     // +0x328 void* field_0x328 (object; vtable slot 8 is called with the argument)  (evidence: 0x00611E00) // CONFLICT: multiple definitions at +0x328

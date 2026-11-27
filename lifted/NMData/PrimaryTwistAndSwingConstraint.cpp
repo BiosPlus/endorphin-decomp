@@ -425,3 +425,88 @@ void fn_00611CE0(void* self) {
     lift_child_pair(self, 0x338, 0x328);
 }
 } // namespace lift_00611CE0
+
+// [0x00612D70] NMData::PrimaryTwistAndSwingConstraint::vfunc_7_off_C (261 bytes)
+namespace lift_00612D70 {
+extern void ext_004875A0();
+extern void ext_0067DAD0();
+// Known callee 0x0067E5B0: setPaddedMatrixFromAdjustedIdentity (Builds a packed 3x3 identity, adjusts it via sub_006951A0 using the stack argument, then copies it into self's padded 4-stride matrix.)
+extern void ext_0067E5B0();
+extern void ext_0067E990();
+extern void ext_00694840();
+extern void* mem_00B40644;
+
+// @name PrimaryTwistAndSwingConstraint::vfunc_7_off_C
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Builds a 4x4 transform matrix from the two child twist/swing sub-objects and a unit-axis identity, then applies it to the object at +0x2D8.
+// @field NMData::PrimaryTwistAndSwingConstraint +0x318 void* field_0x318
+// @field NMData::PrimaryTwistAndSwingConstraint +0x2D8 void* field_0x2d8
+
+namespace {
+
+// Reads the vtable of a COM-style object (vtable pointer at offset 0).
+inline void** lift_vtbl(void* obj) {
+    return *reinterpret_cast<void***>(obj);
+}
+
+}  // namespace
+
+void fn_00612D70(void* self) {
+    // Stack scratch frame (sub esp, 0x8c). Offsets below are frame-relative.
+    unsigned char frame[0x8c];
+    void* const G = mem_00B40644;
+
+    // P = this->+0x318; Q = P+4 (sub-object)
+    void* const P = lift_field<void*>(self, 0x318);
+    void* const Q = static_cast<unsigned char*>(P) + 4;
+
+    // r1 = Q->vfunc[3](G)
+    const uint32_t r1 = reinterpret_cast<uint32_t (*)(void*, void*)>(lift_vtbl(Q)[3])(Q, G);
+
+    // R = P->+0x180; r2 = (R+4)->vfunc[3](G)
+    void* const R = lift_field<void*>(P, 0x180);
+    void* const R4 = static_cast<unsigned char*>(R) + 4;
+    void* const r2 = reinterpret_cast<void* (*)(void*, void*)>(lift_vtbl(R4)[3])(R4, G);
+
+    // sub_004875A0(r2, &frame[0x4c], r1)
+    reinterpret_cast<void (*)(void*, void*, uint32_t)>(&ext_004875A0)(r2, frame + 0x4c, r1);
+
+    // r3 = Q->vfunc[11]()
+    const uint32_t r3 = reinterpret_cast<uint32_t (*)(void*)>(lift_vtbl(Q)[11])(Q);
+
+    // r4 = (this-8)->vfunc[3](G)
+    void* const O = static_cast<unsigned char*>(self) - 8;
+    void* const r4 = reinterpret_cast<void* (*)(void*, void*)>(lift_vtbl(O)[3])(O, G);
+
+    // r5 = sub_004875A0(r4, &frame[0x0c], r3)
+    const uint32_t r5 = reinterpret_cast<uint32_t (*)(void*, void*, uint32_t)>(&ext_004875A0)(r4, frame + 0x0c, r3);
+
+    // sub_0067E990(&frame[0x4c], r5)
+    reinterpret_cast<void (*)(void*, uint32_t)>(&ext_0067E990)(frame + 0x4c, r5);
+
+    // Packed 3x3 identity at frame[0x0c..0x2c] (row stride 12 bytes).
+    lift_field<float>(frame, 0x0c) = 1.0f;
+    lift_field<float>(frame, 0x10) = 0.0f;
+    lift_field<float>(frame, 0x14) = 0.0f;
+    lift_field<float>(frame, 0x18) = 0.0f;
+    lift_field<float>(frame, 0x1c) = 1.0f;
+    lift_field<float>(frame, 0x20) = 0.0f;
+    lift_field<float>(frame, 0x24) = 0.0f;
+    lift_field<float>(frame, 0x28) = 0.0f;
+    lift_field<float>(frame, 0x2c) = 1.0f;
+
+    // sub_0067DAD0(&frame[0x4c], &frame[0x0c])
+    reinterpret_cast<void (*)(void*, void*)>(&ext_0067DAD0)(frame + 0x4c, frame + 0x0c);
+
+    // Vector at frame[0x00..0x0c]: sub_00694840 fills it; y/z are then cleared.
+    reinterpret_cast<void (*)(void*, void*)>(&ext_00694840)(frame + 0x10, frame + 0x00);
+    lift_field<float>(frame, 0x08) = 0.0f;
+    lift_field<float>(frame, 0x04) = 0.0f;
+
+    // Negate x.
+    lift_field<float>(frame, 0x00) = -lift_field<float>(frame, 0x00);
+
+    // setPaddedMatrixFromAdjustedIdentity(this+0x2D8, &vec)
+    reinterpret_cast<void (*)(void*, void*)>(&ext_0067E5B0)(static_cast<unsigned char*>(self) + 0x2d8, frame + 0x00);
+}
+} // namespace lift_00612D70
