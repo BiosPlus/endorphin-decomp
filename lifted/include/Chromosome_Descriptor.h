@@ -14,5 +14,17 @@ struct Chromosome_Descriptor_Fields {
     // +0x4   void* field_0x04 (embedded sub-object passed as this to the virtual slot-9 call)  (evidence: 0x00514070) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x00513740, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              value_subobject  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x4
+    // +0x8   std::string              name_string  (evidence: 0x005116F0)
+    // +0x24  uint32_t                 formatted_id  (evidence: 0x005116F0)
+    // +0x28  float                    value_28  (evidence: 0x005116F0)
+    // +0x2C  float                    value_2C  (evidence: 0x005116F0)
+    // +0x30  float                    value_30  (evidence: 0x005116F0)
+    // +0x34  float                    value_34  (evidence: 0x005116F0)
+    // +0x38  float                    value_38  (evidence: 0x005116F0)
+    // +0x3C  float                    value_3C  (evidence: 0x005116F0)
+    // +0x40  float                    value_40  (evidence: 0x005116F0)
+    // +0x44  float                    value_44  (evidence: 0x005116F0)
+    // +0x48  float                    value_48  (evidence: 0x005116F0)
+    // +0x4C  float                    value_4C  (evidence: 0x005116F0)
 };
 } // namespace lifted_layout

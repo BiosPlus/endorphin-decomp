@@ -1,0 +1,88 @@
+{
+  "va": "0x005116F0",
+  "size": 375,
+  "orig_symbol": "Chromosome::Descriptor::vfunc_3",
+  "src_path": "src/Chromosome/Descriptor.cpp",
+  "lifted_path": "lifted/Chromosome/Descriptor.cpp",
+  "name": "Chromosome::Descriptor::vfunc_3",
+  "class": "Chromosome::Descriptor",
+  "signature": "static void apply_float_slot(void* a, uint32_t key, float value)",
+  "summary": "Pushes the descriptor's name string and 12 float/int values into the child objects of the argument, returning the argument.",
+  "fields": [
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "name_string"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "formatted_id"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "value_28"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "value_2C"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "value_30"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "value_34"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "value_38"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "value_3C"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "value_40"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "value_44"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "value_48"
+    },
+    {
+      "class": "Chromosome::Descriptor",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "value_4C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:56:50Z"
+}

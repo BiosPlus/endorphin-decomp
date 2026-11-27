@@ -29985,6 +29985,13 @@
     "summary": "Setter storing float argument into field at offset +0x44.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x005116F0": {
+    "name": "Chromosome::Descriptor::vfunc_3",
+    "class": "Chromosome::Descriptor",
+    "signature": "static void apply_float_slot(void* a, uint32_t key, float value)",
+    "summary": "Pushes the descriptor's name string and 12 float/int values into the child objects of the argument, returning the argument.",
+    "lifted_path": "lifted/Chromosome/Descriptor.cpp"
+  },
   "0x00511930": {
     "name": "Properties::TerminalParentType\u003cDoubleWithProperties\u003e::vfunc_0",
     "class": "Properties::TerminalParentType\u003cDoubleWithProperties\u003e",
