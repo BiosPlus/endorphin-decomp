@@ -25405,6 +25405,13 @@
     "summary": "Allocates a 0xB7C-byte object, constructs it from the primary subobject (this-0xC), runs sub_004E4E40 on the result and returns it (NULL if allocation fails).",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004E7280": {
+    "name": "NMData::AnimationEventData::vfunc_87",
+    "class": "NMData::AnimationEventData",
+    "signature": "void __thiscall fn_004E7280(void* self)",
+    "summary": "Cleans up animation event data buffers, resets time fields, unregisters tick listener, and resets iterator state.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004E7350": {
     "name": "NMData::AnimationEventData::vfunc_0",
     "class": "NMData::AnimationEventData",
@@ -47507,6 +47514,13 @@
     "signature": "void fn_005BEDD0(void* self, uint32_t arg)",
     "summary": "Walks the intrusive list whose sentinel is at +0x15C; for each entry whose object at node+0x28 accepts (vtable +0x6C), forwards arg to its subobject at +0x0C (vtable +0x10).",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005BF770": {
+    "name": "NMData::MetaBodyData::vfunc_13_off_C",
+    "class": "NMData::MetaBodyData",
+    "signature": "extern \"C\" uint8_t __thiscall fn_005BF770(void* self_off_C, void* arg0)",
+    "summary": "Initializes a MetaBodyData subobject, creates and configures its associated object, and updates child lists.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
   "0x005BFBD0": {
     "name": "NMData::MetaBodyData::vfunc_5_off_C",

@@ -1057,3 +1057,85 @@ void __thiscall fn_004E4ED0(void* self, void* node) {
     ext_004E4690(self);
 }
 } // namespace lift_004E4ED0
+
+// [0x004E7280]
+namespace lift_004E7280 {
+// @name NMData::AnimationEventData::vfunc_87
+// @class NMData::AnimationEventData
+// @summary Cleans up animation event data buffers, resets time fields, unregisters tick listener, and resets iterator state.
+// @field NMData::AnimationEventData +0x180 void* field_0x180
+// @field NMData::AnimationEventData +0x9b0 uint8_t[16] field_0x9b0
+// @field NMData::AnimationEventData +0x9b4 uint32_t field_0x9b4
+// @field NMData::AnimationEventData +0x9b8 uint32_t field_0x9b8
+// @field NMData::AnimationEventData +0x9c0 void* field_0x9c0
+// @field NMData::AnimationEventData +0x9c4 uint32_t field_0x9c4
+// @field NMData::AnimationEventData +0x9c8 int32_t field_0x9c8
+// @field NMData::AnimationEventData +0x9cc int32_t field_0x9cc
+// @field NMData::AnimationEventData +0x9d8 float field_0x9d8
+// @field NMData::AnimationEventData +0x9dc float field_0x9dc
+// @field NMData::AnimationEventData +0xb74 void* field_0xb74
+// @field NMData::AnimationEventData +0xb78 void* field_0xb78
+
+
+extern void (__thiscall ext_004E3AB0)(void*);
+extern void (__thiscall ext_004E35B0)(void*);
+extern void (__cdecl ext_006A5C5C)(void*);
+extern void (__thiscall ext_004E5990)(void*);
+extern void (__thiscall ext_004E5AE0)(void*);
+extern int32_t (__cdecl ext_00594000)(void);
+extern void (__thiscall ext_006622D0)(void*, void*);
+extern void (*mem_00925134)(void);
+extern void ext_004769F0(void);
+extern void ext_00486CB0(void);
+extern void ext_0049AD90(void);
+extern void ext_004C1B50(void);
+extern void ext_0058D800(void);
+
+void __thiscall fn_004E7280(void* self) {
+    void* obj1 = lift_field<void*>(self, 0xb74);
+    if (obj1 != nullptr) {
+        ext_004E3AB0(obj1);
+        void* obj1_del = lift_field<void*>(self, 0xb74);
+        if (obj1_del != nullptr) {
+            ext_004E35B0(obj1_del);
+            ext_006A5C5C(obj1_del);
+        }
+        lift_field<void*>(self, 0xb74) = nullptr;
+    }
+
+    void* obj2 = lift_field<void*>(self, 0xb78);
+    if (obj2 != nullptr) {
+        ext_004E5990(obj2);
+        void* obj2_del = lift_field<void*>(self, 0xb78);
+        if (obj2_del != nullptr) {
+            ext_004E5AE0(obj2_del);
+            ext_006A5C5C(obj2_del);
+        }
+        lift_field<void*>(self, 0xb78) = nullptr;
+    }
+
+    lift_field<float>(self, 0x9d8) = 0.0f;
+    lift_field<float>(self, 0x9dc) = 0.0f;
+
+    int32_t mgr = ext_00594000();
+    ext_006622D0(reinterpret_cast<void*>(static_cast<uintptr_t>(mgr) + 0x168),
+                 reinterpret_cast<uint8_t*>(self) + 0x180);
+
+    uint32_t end_val = lift_field<uint32_t>(self, 0x9b8);
+    uint32_t beg_val = lift_field<uint32_t>(self, 0x9b4);
+    if (beg_val > end_val) {
+        mem_00925134();
+    }
+
+    lift_field<void*>(self, 0x9c0) = reinterpret_cast<uint8_t*>(self) + 0x9b0;
+    lift_field<uint32_t>(self, 0x9c4) = end_val;
+    lift_field<int32_t>(self, 0x9c8) = 0x7fffffff;
+    lift_field<int32_t>(self, 0x9cc) = 0x7fffffff;
+
+    (void)ext_004769F0;
+    (void)ext_00486CB0;
+    (void)ext_0049AD90;
+    (void)ext_004C1B50;
+    (void)ext_0058D800;
+}
+} // namespace lift_004E7280
