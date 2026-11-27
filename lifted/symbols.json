@@ -56149,6 +56149,13 @@
     "summary": "Clones a HingeData object, copying its properties, transform/constraint state, and sub-objects.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005EFD20": {
+    "name": "NMData::HingeData::vfunc_40",
+    "class": "NMData::HingeData",
+    "signature": "void apply_transform(void* self_ti, void* target_ti, void* arg2)",
+    "summary": "Updates transform orientation from a target TransformInterface and optionally re-applies after dispatching buffered frame events.",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
   "0x005EFF60": {
     "name": "NMData::FixedPathJointData::vfunc_59",
     "class": "NMData::FixedPathJointData",

@@ -1,0 +1,22 @@
+{
+  "va": "0x005EFD20",
+  "size": 437,
+  "orig_symbol": "NMData::HingeData::vfunc_40",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_40",
+  "class": "NMData::HingeData",
+  "signature": "void apply_transform(void* self_ti, void* target_ti, void* arg2)",
+  "summary": "Updates transform orientation from a target TransformInterface and optionally re-applies after dispatching buffered frame events.",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "transform_interface_vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:03:59Z"
+}

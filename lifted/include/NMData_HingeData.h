@@ -11,7 +11,7 @@
 namespace lifted_layout {
 struct NMData_HingeData_Fields {
     // +0x4   void* transform_interface_vptr (TransformInterface subobject; vtable slot 7 at +0x1c is called)  (evidence: 0x005E05F0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    transform_interface_vptr  (evidence: 0x005E1970, 0x005F2F80) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    transform_interface_vptr  (evidence: 0x005E1970, 0x005EFD20, 0x005F2F80) // CONFLICT: multiple definitions at +0x4
     // +0x14  MsvcString               field_0x14  (evidence: 0x005EDAC0) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint8_t                  field_0x14  (evidence: 0x005F2F80) // CONFLICT: multiple definitions at +0x14
     // +0xE4  void*                    field_0xe4  (evidence: 0x005EFB30)

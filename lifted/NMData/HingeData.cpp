@@ -4,8 +4,10 @@
 #include <string>
 extern "C" const char* mem_00A9EF9C;
 extern "C" void __thiscall ext_005E29F0(void* self, void* a, void* b);
+#include <cstdint>
+#include <cstring>
 
-// [0x005E2A90] NMData::HingeData::vfunc_14 (32 bytes)
+#include <cstring>
 // @name NMData::HingeData::vfunc_14
 // @class NMData::HingeData
 // @summary Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).
@@ -669,3 +671,76 @@ extern void* __thiscall fn_005EFB30(void* self) {
     return esi;
 }
 } // namespace lift_005EFB30
+
+// [0x005EFD20]
+namespace lift_005EFD20 {
+// @name NMData::HingeData::vfunc_40
+// @class NMData::HingeData
+// @summary Updates transform orientation from a target TransformInterface and optionally re-applies after dispatching buffered frame events.
+// @field NMData::HingeData +0x04 void* transform_interface_vptr
+
+
+extern void* mem_00B40640;
+extern const float mem_0093F7B8;
+
+void __thiscall ext_0067E6C0(void* self, void* arg);
+float* __thiscall ext_0053B470(void* self, void* out_vec, float scale);
+uint8_t __thiscall ext_00661B10(void* self);
+void __thiscall ext_00466F00(void* self, void* src);
+void __thiscall ext_00662120(void* self);
+void __thiscall ext_00466910(void* self);
+void __thiscall ext_00586D00(void* self);
+
+namespace {
+
+using GetMatrixFn = void* (__thiscall*)(void* self, void* ctx);
+using SetQuatFn = void (__thiscall*)(void* self, int index, float* quat, void* ctx);
+using CheckFlagFn = uint8_t (__thiscall*)(void* self);
+
+void apply_transform(void* self_ti, void* target_ti, void* arg2) {
+    void** target_vtbl = *reinterpret_cast<void***>(target_ti);
+    void* src_mat = reinterpret_cast<GetMatrixFn>(target_vtbl[5])(target_ti, mem_00B40640);
+
+    uint32_t local_mat[16];
+    std::memcpy(local_mat, src_mat, sizeof(local_mat));
+
+    ext_0067E6C0(local_mat, arg2);
+
+    uint8_t local_vec[32];
+    float* quat_src = ext_0053B470(local_mat, local_vec, mem_0093F7B8);
+
+    float local_quat[4];
+    std::memcpy(local_quat, quat_src, sizeof(local_quat));
+
+    void** self_vtbl = *reinterpret_cast<void***>(self_ti);
+    reinterpret_cast<SetQuatFn>(self_vtbl[0])(self_ti, 0, local_quat, mem_00B40640);
+}
+
+} // namespace
+
+void __thiscall fn_005EFD20(void* self, void* arg1, void* arg2) {
+    void* target_ti = static_cast<uint8_t*>(arg1) + 4;
+    void* self_ti = static_cast<uint8_t*>(self) + 4;
+
+    apply_transform(self_ti, target_ti, arg2);
+
+    void** self_vtbl = *reinterpret_cast<void***>(self_ti);
+    if (reinterpret_cast<CheckFlagFn>(self_vtbl[7])(self_ti) != 0) {
+        if (ext_00661B10(mem_00B40640) == 0) {
+            struct {
+                void* ptr;
+                uint8_t embedded[64];
+            } local_obj;
+            local_obj.ptr = mem_00B40640;
+            ext_00466F00(local_obj.embedded, mem_00B40640);
+
+            ext_00662120(mem_00B40640);
+            apply_transform(self_ti, target_ti, arg2);
+
+            ext_00466910(&local_obj);
+        }
+    }
+
+    ext_00586D00(self);
+}
+} // namespace lift_005EFD20
