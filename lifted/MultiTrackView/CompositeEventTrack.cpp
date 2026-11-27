@@ -605,3 +605,440 @@ void __thiscall fn_004105F0(void* self, void* arg0, int32_t pt_x, int32_t pt_y) 
     ext_006A6166(menu_buf);
 }
 } // namespace lift_004105F0
+
+// [0x00411A80]
+namespace lift_00411A80 {
+// @name MultiTrackView::CompositeEventTrack::vfunc_7
+// @class MultiTrackView::CompositeEventTrack
+// @summary Builds and displays the context menu for a composite event track and dispatches the selected command.
+// @field MultiTrackView::CompositeEventTrack +0x14 uint32_t field_0x14
+// @field MultiTrackView::CompositeEventTrack +0x1C uint8_t field_0x1c
+// @field MultiTrackView::CompositeEventTrack +0x30 void* field_0x30
+// @field MultiTrackView::CompositeEventTrack +0x37 uint8_t field_0x37
+
+
+    void* __cdecl ext_00594000(void);
+    void* __thiscall ext_00597630(void* self, uint32_t key);
+    void* __thiscall ext_00412EC0(void* self, const POINT* pt);
+    uint32_t __thiscall ext_00412D70(void* self, void* elem);
+    void __thiscall ext_0065D120(void* self);
+    void __thiscall ext_006A616C(void* self, void* hMenu);
+    void* __cdecl ext_00468180(void);
+    int32_t __thiscall ext_00412CC0(void* self);
+    uint8_t __thiscall ext_00410390(void* self);
+    uint8_t __thiscall ext_005A6130(void* self);
+    void __thiscall ext_0059D740(void* self, void* out_vec);
+    void* __cdecl ext_00404F00(void* out_str, int32_t value);
+    void __cdecl ext_006A5C5C(void* ptr);
+    uint32_t __thiscall ext_0043C930(void* self, void* menu, POINT* pt);
+    void* __thiscall ext_0042FE90(void* self);
+    void* __thiscall ext_0042FE70(void* self, void* item);
+    void __thiscall ext_00468F90(void* self, void* arg);
+    void __thiscall ext_0043A580(void* self, int32_t arg0, uint32_t arg1);
+    void* __thiscall ext_00468660(void* self);
+    int32_t __cdecl ext_006A5E60(uint32_t msg_id, uint32_t type, uint32_t parent);
+    void __thiscall ext_00469CC0(void* self);
+    void __thiscall ext_004684D0(void* self, void* item);
+    void __thiscall ext_00468550(void* self, void* item);
+    void __thiscall ext_00411680(void* self, uint32_t idx);
+    void* __thiscall ext_00412E60(void* self, uint32_t idx);
+    int32_t __thiscall ext_00410520(void* self);
+    void __thiscall ext_00469E30(void* self, void* item, uint32_t idx);
+    void __thiscall ext_004118A0(void* self, uint32_t idx);
+    void __thiscall ext_0043DE60(void* self, void* track);
+    void __thiscall ext_0043DEA0(void* self, void* track);
+    void __thiscall ext_0043DEE0(void* self);
+    void __thiscall ext_0043DFB0(void* self);
+    void __thiscall ext_00410540(void* self, void* mgr, void* item);
+    uint32_t* __thiscall ext_00489320(void* self, uint32_t* out);
+    uint32_t* __thiscall ext_00410D10(void* self, uint32_t* out);
+    uint8_t __thiscall ext_0049AD40(void* self, const void* other);
+    void** __thiscall ext_00492A50(void* self);
+    void __thiscall ext_00425E30(void* self);
+    void __thiscall ext_00449270(void* self, uint32_t a0, int32_t a1, uint32_t a2);
+    float __cdecl ext_00407870(float x);
+    int32_t __cdecl ext_006A6DE0(void);
+    void __thiscall ext_004490B0(void* self, uint32_t a0, int32_t a1);
+    void __thiscall ext_004490D0(void* self, uint32_t a0, int32_t a1);
+    int32_t __thiscall ext_006A5FA4(void* self);
+    void __thiscall ext_004493C0(void* self);
+    void __thiscall ext_006A6166(void* self);
+
+    extern void* (__stdcall *mem_00925638)(void); // USER32!CreatePopupMenu
+    extern const char* (__thiscall *mem_00924300)(void*); // MFC80!ord_876
+    extern int32_t (__stdcall *mem_00925634)(void*, uint32_t, uint32_t, const char*); // USER32!AppendMenuA
+    extern void (__thiscall *mem_009242F0)(void*, const char*); // MFC80!ord_304
+    extern const char* (__thiscall *mem_00924FF0)(void*); // std::string::c_str
+    extern void (__thiscall *mem_00924518)(void*, const char*); // MFC80!ord_911
+    extern void (__thiscall *mem_00924FF4)(void*); // std::string::~string
+    extern void (__thiscall *mem_009242F4)(void*); // MFC80!ord_578
+    extern int32_t (__stdcall *mem_0092562C)(void*, uint32_t, uint32_t); // USER32!SetMenuDefaultItem
+    extern int32_t (__stdcall *mem_00925630)(void*, POINT*); // USER32!ClientToScreen
+    extern void* mem_00ACDB40;
+    extern double mem_00993828;
+    extern int32_t (__stdcall *mem_00925688)(void*, void*, int32_t); // USER32!InvalidateRect
+
+void __thiscall fn_00411A80(void* self, POINT pt, int32_t frame) {
+    void* doc = ext_00594000();
+    void* item = ext_00597630(doc, lift_field<uint32_t>(self, 0x14));
+    void* elem = ext_00412EC0(self, &pt);
+    uint32_t elem_idx = 0;
+    if (elem != nullptr) {
+        elem_idx = ext_00412D70(self, elem);
+    }
+
+    void* doc2 = ext_00594000();
+    ext_0065D120(reinterpret_cast<uint8_t*>(doc2) + 0xFC);
+
+    uint32_t menu_obj[2] = { 0x0092BD7C, 0 };
+    void* hMenu = mem_00925638();
+    ext_006A616C(menu_obj, hMenu);
+
+    void* mgr = ext_00468180();
+    const char* track_name = mem_00924300(reinterpret_cast<uint8_t*>(self) + 0x1C);
+    mem_00925634(menu_obj[1] ? reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])) : nullptr, 0x2, 0xFFFFFFFFu, track_name);
+    mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+
+    void* parent_view = lift_field<void*>(self, 0x30);
+    int32_t divider_x = lift_field<int32_t>(parent_view, 0xFC);
+    if (pt.x <= divider_x) {
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x75, reinterpret_cast<const char*>(0x0092C170));
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x76, reinterpret_cast<const char*>(0x0092C160));
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x6F, reinterpret_cast<const char*>(0x0092C150));
+        if (ext_00412CC0(self) > 1) {
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x70, reinterpret_cast<const char*>(0x0092C13C));
+        }
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+        if (lift_field<uint8_t>(self, 0x37) != 0) {
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x71, reinterpret_cast<const char*>(0x0092C12C));
+        } else {
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x72, reinterpret_cast<const char*>(0x0092C118));
+        }
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x73, reinterpret_cast<const char*>(0x0092C100));
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x74, reinterpret_cast<const char*>(0x0092C0E8));
+
+        if (item != nullptr) {
+            using PredFn = uint8_t(__thiscall*)(void*);
+            void** vtbl = lift_field<void**>(item, 0);
+            if (!reinterpret_cast<PredFn>(vtbl[0x28 / 4])(item)) {
+                if (lift_field<uint8_t>(item, 0x4E2) != 0) {
+                    mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+                    mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x84, reinterpret_cast<const char*>(0x0092C0D0));
+                } else {
+                    mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+                    mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x83, reinterpret_cast<const char*>(0x0092C0B4));
+                }
+                mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+                mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x77, reinterpret_cast<const char*>(0x0092BF14));
+            }
+        }
+    } else {
+        using PredFn = uint8_t(__thiscall*)(void*);
+        void** vtbl = lift_field<void**>(item, 0);
+        bool pred1 = reinterpret_cast<PredFn>(vtbl[0x28 / 4])(item) != 0;
+        bool pred2 = ext_00410390(item) != 0;
+        if (!pred1 && !pred2) {
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x66, reinterpret_cast<const char*>(0x0092C098));
+        } else if (!pred2) {
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x66, reinterpret_cast<const char*>(0x0092C098));
+        }
+
+        if (reinterpret_cast<PredFn>(vtbl[0x28 / 4])(item) == 0 && ext_00410390(item) == 0) {
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x65, reinterpret_cast<const char*>(0x0092A9B8));
+        }
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x68, reinterpret_cast<const char*>(0x0092A9A0));
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x6D, reinterpret_cast<const char*>(0x0092A98C));
+
+        if ((reinterpret_cast<PredFn>(vtbl[0x28 / 4])(item) == 0 && ext_00410390(item) == 0) || ext_00410390(item) == 0) {
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x6C, reinterpret_cast<const char*>(0x0092A978));
+        }
+
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x67, reinterpret_cast<const char*>(0x0092C080));
+        if (ext_005A6130(item) != 0) {
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x69, reinterpret_cast<const char*>(0x0092C060));
+        }
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x6A, reinterpret_cast<const char*>(0x0092C048));
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x6B, reinterpret_cast<const char*>(0x0092C030));
+
+        void* doc3 = ext_00594000();
+        void* sub_obj = lift_field<void*>(doc3, 0x26C);
+        uint32_t vec_begin = lift_field<uint32_t>(sub_obj, 0x34);
+        if (vec_begin != 0) {
+            uint32_t vec_end = lift_field<uint32_t>(sub_obj, 0x38);
+            int32_t count = static_cast<int32_t>(vec_end - vec_begin) >> 2;
+            if (count > 0) {
+                mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+                mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x6E, reinterpret_cast<const char*>(0x0092C01C));
+            }
+        }
+
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x79, reinterpret_cast<const char*>(0x0092C008));
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x7A, reinterpret_cast<const char*>(0x0092BFF8));
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x7B, reinterpret_cast<const char*>(0x0092BFD0));
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x7C, reinterpret_cast<const char*>(0x0092BFAC));
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x7D, reinterpret_cast<const char*>(0x0092BF74));
+
+        uint32_t vec_data[4] = { 0, 0, 0, 0 };
+        ext_0059D740(item, vec_data);
+        if (vec_data[1] != 0 && ((static_cast<int32_t>(vec_data[2] - vec_data[1]) >> 2) != 0)) {
+            uint32_t cstr1[1] = { 0 };
+            uint32_t cstr2[1] = { 0 };
+            uint8_t std_str[32] = {};
+            mem_009242F0(cstr1, reinterpret_cast<const char*>(0x0092BF5C));
+            ext_00404F00(std_str, frame);
+            mem_00924518(cstr1, mem_00924FF0(std_str));
+            mem_00924FF4(std_str);
+
+            mem_009242F0(cstr2, reinterpret_cast<const char*>(0x0092BF44));
+            ext_00404F00(std_str, frame);
+            mem_00924518(cstr2, mem_00924FF0(std_str));
+            mem_00924FF4(std_str);
+
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x7F, reinterpret_cast<const char*>(0x0092BF34));
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x82, reinterpret_cast<const char*>(0x0092BF20));
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x81, mem_00924300(cstr1));
+            mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x80, mem_00924300(cstr2));
+
+            mem_009242F4(cstr2);
+            mem_009242F4(cstr1);
+        }
+        if (vec_data[1] != 0) {
+            ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(vec_data[1])));
+        }
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0x800, 0, nullptr);
+        mem_00925634(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 0x77, reinterpret_cast<const char*>(0x0092BF14));
+    }
+
+    mem_0092562C(reinterpret_cast<void*>(static_cast<uintptr_t>(menu_obj[1])), 0, 1);
+    void* hwnd = lift_field<void*>(lift_field<void*>(self, 0x30), 0x20);
+    mem_00925630(hwnd, &pt);
+    uint32_t cmd = ext_0043C930(lift_field<void*>(self, 0x30), menu_obj, &pt);
+
+    switch (cmd) {
+        case 0x65:
+            ext_0042FE90(mem_00ACDB40);
+            ext_0042FE70(mem_00ACDB40, item);
+            break;
+        case 0x66:
+            ext_0042FE90(mem_00ACDB40);
+            break;
+        case 0x67:
+            ext_00468F90(mgr, item ? reinterpret_cast<uint8_t*>(item) + 4 : nullptr);
+            ext_0043A580(mem_00ACDB40, frame, elem_idx);
+            break;
+        case 0x68: {
+            void* target = ext_00468660(mgr);
+            using VFn = void(__thiscall*)(void*, void*, uint32_t, int32_t, void*, uint32_t, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            reinterpret_cast<VFn>(vtbl[0xE4 / 4])(target, item, 2, frame, reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(frame)) + 0x3C, elem_idx, 0);
+            break;
+        }
+        case 0x69: {
+            void* target = ext_00468660(mgr);
+            using VFn = void*(__thiscall*)(void*, void*, uint32_t, int32_t, void*, uint32_t, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            void* res = reinterpret_cast<VFn>(vtbl[0xE4 / 4])(target, item, 6, frame, reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(frame)) + 0x3C, elem_idx, 0);
+            ext_00468F90(mgr, res);
+            break;
+        }
+        case 0x6A: {
+            void* target = ext_00468660(mgr);
+            using VFn = void(__thiscall*)(void*, void*, uint32_t, int32_t, void*, uint32_t, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            reinterpret_cast<VFn>(vtbl[0xE4 / 4])(target, item, 4, frame, reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(frame)) + 0x3C, elem_idx, 0);
+            break;
+        }
+        case 0x6B: {
+            void* target = ext_00468660(mgr);
+            using VFn = void*(__thiscall*)(void*, void*, uint32_t, int32_t, void*, uint32_t, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            void* res = reinterpret_cast<VFn>(vtbl[0xE4 / 4])(target, item, 7, frame, reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(frame)) + 0x3C, elem_idx, 0);
+            ext_00468F90(mgr, res);
+            break;
+        }
+        case 0x6C: {
+            void* target = ext_00468660(mgr);
+            using VFn = void*(__thiscall*)(void*, void*, uint32_t, int32_t, int32_t, uint32_t, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            void* res = reinterpret_cast<VFn>(vtbl[0xE4 / 4])(target, item, 0, frame, frame, 0, 0);
+            ext_00468F90(mgr, res);
+            break;
+        }
+        case 0x6D: {
+            void* target = ext_00468660(mgr);
+            using VFn = void*(__thiscall*)(void*, void*, uint32_t, int32_t, void*, uint32_t, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            void* res = reinterpret_cast<VFn>(vtbl[0xE4 / 4])(target, item, 9, frame, reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(frame)) + 0xF, 0, 0);
+            ext_00468F90(mgr, res);
+            break;
+        }
+        case 0x6E: {
+            void* target = ext_00468660(mgr);
+            using VFn = void(__thiscall*)(void*, void*, uint32_t, int32_t, int32_t, uint32_t, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            reinterpret_cast<VFn>(vtbl[0xE4 / 4])(target, item, 3, frame, frame, elem_idx, 0);
+            break;
+        }
+        case 0x6F: {
+            void* target = ext_00468660(mgr);
+            using VFn = void(__thiscall*)(void*, void*, uint32_t, int32_t, int32_t, uint32_t, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            reinterpret_cast<VFn>(vtbl[0xE4 / 4])(target, item, 5, frame, frame, elem_idx, 0);
+            break;
+        }
+        case 0x70:
+            if (ext_006A5E60(0x0092BED8, 0x104, 0) == 6) {
+                ext_00469CC0(mgr);
+            }
+            break;
+        case 0x71:
+            ext_004684D0(mgr, item);
+            break;
+        case 0x72:
+            ext_00468550(mgr, item);
+            break;
+        case 0x73:
+            ext_00411680(self, elem_idx + 1);
+            break;
+        case 0x74: {
+            void* el = ext_00412E60(self, elem_idx);
+            if (ext_00410520(el) == 0 || ext_006A5E60(0x0092BE90, 0x104, 0) == 6) {
+                ext_00469E30(mgr, item, elem_idx);
+                ext_004118A0(self, elem_idx);
+            }
+            break;
+        }
+        case 0x75:
+            ext_0043DE60(lift_field<void*>(self, 0x30), self);
+            break;
+        case 0x76:
+            ext_0043DEA0(lift_field<void*>(self, 0x30), self);
+            break;
+        case 0x77:
+            ext_0043DEE0(lift_field<void*>(self, 0x30));
+            break;
+        case 0x78:
+            ext_0043DFB0(lift_field<void*>(self, 0x30));
+            break;
+        case 0x79: {
+            void* pv = lift_field<void*>(self, 0x30);
+            using VFn = void(__thiscall*)(void*);
+            void** vtbl = lift_field<void**>(pv, 0);
+            reinterpret_cast<VFn>(vtbl[0x144 / 4])(pv);
+            break;
+        }
+        case 0x7A: {
+            void* target = ext_00468660(mgr);
+            using VFn = void(__thiscall*)(void*, void*);
+            void** vtbl = lift_field<void**>(target, 0);
+            reinterpret_cast<VFn>(vtbl[0x188 / 4])(target, item ? reinterpret_cast<uint8_t*>(item) + 4 : nullptr);
+            break;
+        }
+        case 0x7B: {
+            void* target = ext_00468660(mgr);
+            using VFn = void(__thiscall*)(void*, void*, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            reinterpret_cast<VFn>(vtbl[0x18C / 4])(target, item ? reinterpret_cast<uint8_t*>(item) + 4 : nullptr, 0);
+            break;
+        }
+        case 0x7C: {
+            void* target = ext_00468660(mgr);
+            using VFn = void(__thiscall*)(void*, void*, uint32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            reinterpret_cast<VFn>(vtbl[0x18C / 4])(target, item ? reinterpret_cast<uint8_t*>(item) + 4 : nullptr, 0);
+            ext_00410540(self, mgr, item);
+            break;
+        }
+        case 0x7D: {
+            void* range_obj = reinterpret_cast<uint8_t*>(doc) + 0x238;
+            uint32_t cur[2] = {};
+            uint32_t end[2] = {};
+            ext_00489320(range_obj, cur);
+            while (ext_0049AD40(cur, ext_00410D10(range_obj, end)) != 0) {
+                void* obj = *ext_00492A50(cur);
+                void* target = ext_00468660(mgr);
+                using VFn = void(__thiscall*)(void*, void*, uint32_t);
+                void** vtbl = lift_field<void**>(target, 0);
+                reinterpret_cast<VFn>(vtbl[0x18C / 4])(target, obj ? reinterpret_cast<uint8_t*>(obj) + 4 : nullptr, 0);
+                ext_00425E30(cur);
+            }
+            break;
+        }
+        case 0x7E: {
+            void* range_obj = reinterpret_cast<uint8_t*>(doc) + 0x238;
+            uint32_t cur[2] = {};
+            uint32_t end[2] = {};
+            ext_00489320(range_obj, cur);
+            while (ext_0049AD40(cur, ext_00410D10(range_obj, end)) != 0) {
+                void* obj = *ext_00492A50(cur);
+                void* target = ext_00468660(mgr);
+                using VFn = void(__thiscall*)(void*, void*, uint32_t);
+                void** vtbl = lift_field<void**>(target, 0);
+                reinterpret_cast<VFn>(vtbl[0x18C / 4])(target, obj ? reinterpret_cast<uint8_t*>(obj) + 4 : nullptr, 0);
+                ext_00410540(self, mgr, obj);
+                ext_00425E30(cur);
+            }
+            break;
+        }
+        case 0x7F:
+            if (ext_006A5E60(0x0092BE60, 0x104, 0) == 6) {
+                void* target = ext_00468660(mgr);
+                using VFn = void(__thiscall*)(void*, void*, uint32_t, int32_t);
+                void** vtbl = lift_field<void**>(target, 0);
+                reinterpret_cast<VFn>(vtbl[0x190 / 4])(target, item ? reinterpret_cast<uint8_t*>(item) + 4 : nullptr, 0, -1);
+            }
+            break;
+        case 0x80:
+            if (ext_006A5E60(0x0092BE60, 0x104, 0) == 6) {
+                void* target = ext_00468660(mgr);
+                using VFn = void(__thiscall*)(void*, void*, int32_t, int32_t);
+                void** vtbl = lift_field<void**>(target, 0);
+                reinterpret_cast<VFn>(vtbl[0x190 / 4])(target, item ? reinterpret_cast<uint8_t*>(item) + 4 : nullptr, frame, -1);
+            }
+            break;
+        case 0x81: {
+            void* target = ext_00468660(mgr);
+            using VFn = void(__thiscall*)(void*, void*, int32_t, int32_t);
+            void** vtbl = lift_field<void**>(target, 0);
+            reinterpret_cast<VFn>(vtbl[0x190 / 4])(target, item ? reinterpret_cast<uint8_t*>(item) + 4 : nullptr, frame, frame);
+            break;
+        }
+        case 0x82: {
+            uint8_t dlg[0x160] = {};
+            ext_00449270(dlg, 0, frame, 0);
+            void* doc4 = ext_00594000();
+            float scale = lift_field<float>(doc4, 0x234);
+            void* sub_item = reinterpret_cast<uint8_t*>(item) + 4;
+            using GetValFn = float(__thiscall*)(void*);
+            void** vtbl = lift_field<void**>(sub_item, 0);
+            float val = reinterpret_cast<GetValFn>(vtbl[0xE0 / 4])(sub_item);
+            ext_00407870(static_cast<float>(val * scale + mem_00993828));
+            int32_t rounded = ext_006A6DE0();
+            ext_004490B0(dlg, 0, rounded);
+            ext_004490D0(dlg, 0, rounded);
+            if (ext_006A5FA4(dlg) == 1) {
+                void* target = ext_00468660(mgr);
+                using VFn = void(__thiscall*)(void*, void*, int32_t, int32_t);
+                void** tvtbl = lift_field<void**>(target, 0);
+                int32_t p1 = lift_field<int32_t>(dlg, 0x13C);
+                int32_t p2 = lift_field<int32_t>(dlg, 0x140);
+                reinterpret_cast<VFn>(tvtbl[0x190 / 4])(target, sub_item, p1, p2);
+            }
+            ext_004493C0(dlg);
+            break;
+        }
+        default:
+            break;
+    }
+
+    void* hwnd2 = lift_field<void*>(lift_field<void*>(self, 0x30), 0x20);
+    mem_00925688(hwnd2, nullptr, 1);
+    menu_obj[0] = 0x0092BD7C;
+    ext_006A6166(menu_obj);
+}
+} // namespace lift_00411A80

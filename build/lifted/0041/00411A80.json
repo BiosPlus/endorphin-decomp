@@ -1,0 +1,40 @@
+{
+  "va": "0x00411A80",
+  "size": 2947,
+  "orig_symbol": "MultiTrackView::CompositeEventTrack::vfunc_7",
+  "src_path": "src/MultiTrackView/CompositeEventTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp",
+  "name": "MultiTrackView::CompositeEventTrack::vfunc_7",
+  "class": "MultiTrackView::CompositeEventTrack",
+  "signature": "extern int32_t (__stdcall *mem_00925688)(void*, void*, int32_t); // USER32!InvalidateRect } void __thiscall fn_00411A80(void* self, POINT pt, int32_t frame)",
+  "summary": "Builds and displays the context menu for a composite event track and dispatches the selected command.",
+  "fields": [
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    },
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x37",
+      "type": "uint8_t",
+      "name": "field_0x37"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:00:38Z"
+}
