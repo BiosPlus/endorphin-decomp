@@ -2675,3 +2675,66 @@ void fn_0055CAC0(uint32_t key) {
     ext_006A6DD2(exception, throwInfo);
 }
 } // namespace lift_0055CAC0
+
+// [0x005554B0] sub_005554B0 (156 bytes)
+namespace lift_005554B0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C();
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_00924FE0;
+
+namespace lift_005554B0 {
+
+using AllocFn = void* (*)(size_t);
+using FreeFn = void (*)(void*);
+using ThrowFn = void (*)(uint32_t, uint32_t);
+// MSVCP80 std::string copy constructor: thiscall, this = dst, one stack argument = src.
+using StringCopyCtorFn = void(__thiscall*)(void* self, const void* src);
+
+}  // namespace lift_005554B0
+
+// @name Record_CreateFromParts
+// @class Record
+// @summary Allocates a 0x30-byte Record (returns null on allocation failure) and fills a0/a1/a2, a copy of the std::string at src, the float at src+0x1C, and the flag byte; on exception during the string copy, frees the record and rethrows.
+// @field Record +0x00 DWORD field_0x00
+// @field Record +0x04 DWORD field_0x04
+// @field Record +0x08 DWORD field_0x08
+// @field Record +0x0C std::string field_0x0C
+// @field Record +0x28 float field_0x28
+// @field Record +0x2C BYTE field_0x2C
+// @field Record +0x2D BYTE field_0x2D
+extern void* __stdcall fn_005554B0(DWORD a0, DWORD a1, DWORD a2, const void* src, BYTE flag) {
+    using namespace lift_005554B0;
+
+    // push 0x30; call thunk_MFC80_ord_762 (operator new); add esp, 4
+    void* obj = reinterpret_cast<AllocFn>(ext_006A5C62)(0x30);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    lift_field<DWORD>(obj, 0x00) = a0;
+    lift_field<DWORD>(obj, 0x04) = a1;
+    lift_field<DWORD>(obj, 0x08) = a2;
+
+    try {
+        // call dword ptr [0x924fe0] with ecx = obj + 0x0C, pushed src
+        auto copyCtor = reinterpret_cast<StringCopyCtorFn>(
+            static_cast<uintptr_t>(*reinterpret_cast<const uint32_t*>(&mem_00924FE0)));
+        copyCtor(static_cast<char*>(obj) + 0x0C, src);
+
+        lift_field<float>(obj, 0x28) = lift_field<float>(src, 0x1C);
+        lift_field<BYTE>(obj, 0x2C) = flag;
+        lift_field<BYTE>(obj, 0x2D) = 0;
+    } catch (...) {
+        // Unwind funclet at 0x00555537: free the record, then rethrow via _CxxThrowException(0, 0).
+        reinterpret_cast<FreeFn>(ext_006A5C5C)(obj);
+        reinterpret_cast<ThrowFn>(ext_006A6DD2)(0, 0);
+        throw;  // not reached: _CxxThrowException does not return
+    }
+
+    return obj;
+}
+} // namespace lift_005554B0

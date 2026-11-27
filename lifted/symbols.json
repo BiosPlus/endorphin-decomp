@@ -30807,6 +30807,13 @@
     "summary": "std::lower_bound over a [first,last) array of 32-byte elements, comparing each element's first uint32 against *key; returns the first element not less than *key.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005554B0": {
+    "name": "Record_CreateFromParts",
+    "class": "Record",
+    "signature": "extern \"C\" void* __stdcall fn_005554B0(DWORD a0, DWORD a1, DWORD a2, const void* src, BYTE flag)",
+    "summary": "Allocates a 0x30-byte Record (returns null on allocation failure) and fills a0/a1/a2, a copy of the std::string at src, the float at src+0x1C, and the flag byte; on exception during the string copy, frees the record and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00555550": {
     "name": "CopyElementRange",
     "signature": "uint8_t* fn_00555550(uint8_t* src_begin, uint8_t* src_end, uint8_t* dst)",
