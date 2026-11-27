@@ -867,3 +867,161 @@ extern uint8_t __thiscall fn_005BF770(void* self_off_C, void* arg0) {
     return 1;
 }
 } // namespace lift_005BF770
+
+// [0x005C0A50]
+namespace lift_005C0A50 {
+// @name NMData::MetaBodyData::vfunc_21
+// @class NMData::MetaBodyData
+// @summary Deserializes MetaBodyData child objects, name property, and default sub-object from an input data node.
+// @field NMData::MetaBodyData +0x14 MsvcString field_0x14
+// @field NMData::MetaBodyData +0x158 void* field_0x158
+// @field NMData::MetaBodyData +0x164 uint32_t field_0x164
+// @field NMData::MetaBodyData +0x210 uint8_t field_0x210
+
+
+struct CheckedVecIter {
+    void* container;
+    void* container2;
+    void** ptr;
+};
+
+struct MsvcStringStorage {
+    uint32_t data[7];
+};
+
+extern void __thiscall ext_00427A60(void* self);
+extern void __thiscall ext_0058F630(void* self, void* arg0);
+extern void __thiscall ext_00593910(void* self, void* arg0);
+extern void __thiscall ext_005B6750(void* self, void* arg0);
+extern void __thiscall ext_005BF400(void* self, void* arg0);
+extern void __thiscall ext_005BF510(void* self, void* arg0);
+extern void __thiscall ext_005C0200(void* self, void* arg0);
+extern void* __thiscall ext_005CC2F0(void* self);
+extern void* __thiscall ext_005CC520(void* self);
+extern void* __thiscall ext_005CF150(void* self);
+extern void __thiscall ext_005CF4C0(void* self, void* arg0);
+extern void* __thiscall ext_006201B0(void* self);
+extern void* __thiscall ext_0063EFE0(void* self, const char* name);
+extern uint32_t __thiscall ext_0063F530(void* self, void* arg0, uint32_t arg1, uint32_t arg2);
+extern void* __cdecl ext_006A5C62(uint32_t size);
+
+extern void (__cdecl* mem_00925134)(void);
+extern bool (__cdecl* mem_00924FC0)(const void* str, const char* cstr);
+extern void* (__thiscall* mem_00924FDC)(void* dst, const void* src);
+extern void (__thiscall* mem_00924FF4)(void* str);
+extern void* (__thiscall* mem_00924FE4)(void* str, const char* cstr);
+
+extern const char* mem_00A9EFC8;
+extern const char* mem_00A9F34C;
+extern const char* mem_00A9EDCC;
+extern const char* mem_00A9EF18;
+extern const char* mem_00A9EF74;
+extern const char* mem_00A9F838;
+
+static bool is_sentinel_node(uint32_t addr) {
+    return addr == 0x00B53A34 || addr == 0x00B53B30 || addr == 0x00B53AB0 ||
+           addr == 0x00B53A70 || addr == 0x00B53AF0;
+}
+
+void __thiscall fn_005C0A50(void* self, void* arg0) {
+    ext_0058F630(self, arg0);
+
+    uint8_t* vec = static_cast<uint8_t*>(arg0) + 0x24;
+    void** vec_begin = lift_field<void**>(vec, 0x4);
+    void** vec_end = lift_field<void**>(vec, 0x8);
+    if (vec_begin > vec_end) {
+        mem_00925134();
+    }
+
+    CheckedVecIter it{vec, vec, vec_begin};
+    ext_00427A60(&it);
+
+    void** end_ptr = lift_field<void**>(vec, 0x8);
+    if (lift_field<void**>(vec, 0x4) > end_ptr) {
+        mem_00925134();
+    }
+
+    CheckedVecIter end_it{vec, vec, end_ptr};
+    ext_00427A60(&end_it);
+
+    for (;;) {
+        if (!it.container || it.container != end_it.container) {
+            mem_00925134();
+        }
+        if (it.ptr >= end_it.ptr) {
+            break;
+        }
+        if (!it.container) {
+            mem_00925134();
+        }
+        uint8_t* it_vec = static_cast<uint8_t*>(it.container);
+        if (it.ptr >= lift_field<void**>(it_vec, 0x8)) {
+            mem_00925134();
+        }
+
+        void* item = *it.ptr;
+        void* item_name = static_cast<uint8_t*>(item) + 0x4;
+
+        if (mem_00924FC0(item_name, mem_00A9EFC8)) {
+            void* raw = ext_006A5C62(0xB4);
+            void* obj = raw ? ext_005CF150(raw) : nullptr;
+            ext_005CF4C0(obj, item);
+            ext_005B6750(self, obj);
+
+            uint32_t res = ext_0063F530(item, const_cast<char*>(mem_00A9F34C), 0, 1);
+            if (!is_sentinel_node(res)) {
+                ext_00593910(self, item);
+            }
+        } else if (mem_00924FC0(item_name, mem_00A9EDCC)) {
+            void* raw = ext_006A5C62(0x1A0);
+            void* obj = raw ? ext_005CC2F0(raw) : nullptr;
+            using Vfunc54 = void (__thiscall*)(void*, void*);
+            void** vtable = *reinterpret_cast<void***>(obj);
+            reinterpret_cast<Vfunc54>(vtable[0x54 / 4])(obj, item);
+            ext_005BF400(self, obj);
+        } else if (mem_00924FC0(item_name, mem_00A9EF18)) {
+            void* raw = ext_006A5C62(0x19C);
+            void* obj = raw ? ext_005CC520(raw) : nullptr;
+            using Vfunc54 = void (__thiscall*)(void*, void*);
+            void** vtable = *reinterpret_cast<void***>(obj);
+            reinterpret_cast<Vfunc54>(vtable[0x54 / 4])(obj, item);
+            ext_005BF510(self, obj);
+        } else if (mem_00924FC0(item_name, mem_00A9EF74)) {
+            void* raw = ext_006A5C62(0x1A0);
+            void* obj = raw ? ext_006201B0(raw) : nullptr;
+            using Vfunc54 = void (__thiscall*)(void*, void*);
+            void** vtable = *reinterpret_cast<void***>(obj);
+            reinterpret_cast<Vfunc54>(vtable[0x54 / 4])(obj, item);
+            ext_005C0200(self, obj);
+        }
+
+        if (it.ptr >= lift_field<void**>(it.container, 0x8)) {
+            mem_00925134();
+        }
+        ++it.ptr;
+        ext_00427A60(&it);
+    }
+
+    void* found = ext_0063EFE0(arg0, mem_00A9F838);
+    MsvcStringStorage temp_str{};
+    using Vfunc08 = void* (__thiscall*)(void*, void*);
+    void** found_vtable = *reinterpret_cast<void***>(found);
+    void* str_val = reinterpret_cast<Vfunc08>(found_vtable[0x8 / 4])(found, &temp_str);
+    mem_00924FDC(static_cast<uint8_t*>(self) + 0x14, str_val);
+    mem_00924FF4(&temp_str);
+
+    if (lift_field<uint8_t>(self, 0x210) != 0 &&
+        lift_field<uint32_t>(self, 0x164) == 0 &&
+        lift_field<void*>(self, 0x158) != nullptr) {
+        void* raw = ext_006A5C62(0x1A0);
+        void* obj = raw ? ext_005CC2F0(raw) : nullptr;
+        MsvcStringStorage default_str{};
+        mem_00924FE4(&default_str, reinterpret_cast<const char*>(0x0095E8A0));
+        using Vfunc5C = void (__thiscall*)(void*, void*);
+        void** vtable = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<Vfunc5C>(vtable[0x5C / 4])(obj, &default_str);
+        mem_00924FF4(&default_str);
+        ext_005BF400(self, obj);
+    }
+}
+} // namespace lift_005C0A50
