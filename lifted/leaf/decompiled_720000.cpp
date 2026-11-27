@@ -1530,3 +1530,25 @@ void* fn_0072CB90() {
 } // namespace lift_00771F60
 } // namespace lift_007721F0
 } // namespace lift_0072CB90
+
+// [0x00722CA0]
+namespace lift_00722CA0 {
+extern int32_t __fastcall ext_006CA6A0(void* self);
+extern void __cdecl ext_007221A0(void* outB, void* outA, void* src, int32_t arg);
+extern void* __cdecl ext_00722570(void* out, int32_t arg1, void* b, void* a);
+
+// @name computePairFromSource
+// @summary If source count > 0, builds two temporaries via 7221A0 and combines them into out via 722570; else zeroes out (8 bytes).
+extern void* __cdecl fn_00722CA0(uint32_t* out, int32_t arg1, void* src, int32_t arg3)
+{
+    uint32_t a[2];
+    uint32_t b[2];
+    if (ext_006CA6A0(src) > 0) {
+        ext_007221A0(b, a, src, arg3);
+        return ext_00722570(out, arg1, b, a);
+    }
+    out[0] = 0;
+    out[1] = 0;
+    return out;
+}
+} // namespace lift_00722CA0

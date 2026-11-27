@@ -1,0 +1,13 @@
+{
+  "va": "0x00722CA0",
+  "size": 95,
+  "orig_symbol": "sub_00722CA0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "computePairFromSource",
+  "signature": "extern \"C\" void* __cdecl fn_00722CA0(uint32_t* out, int32_t arg1, void* src, int32_t arg3)",
+  "summary": "If source count \u003e 0, builds two temporaries via 7221A0 and combines them into out via 722570; else zeroes out (8 bytes).",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:53:05Z"
+}

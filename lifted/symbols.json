@@ -102169,6 +102169,12 @@
     "summary": "Returns BlendTwoValuesOverRange100(a, b, c) plus (x*x)*t1, where x = (a+500)*-0.002 and t1 = (b\u003cc) ? 1000 : -1000.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00722CA0": {
+    "name": "computePairFromSource",
+    "signature": "extern \"C\" void* __cdecl fn_00722CA0(uint32_t* out, int32_t arg1, void* src, int32_t arg3)",
+    "summary": "If source count \u003e 0, builds two temporaries via 7221A0 and combines them into out via 722570; else zeroes out (8 bytes).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00722F60": {
     "name": "sub_00722F60",
     "signature": "extern \"C\" void* __fastcall fn_00722F60(void* self, int edx_unused, unsigned int flags)",
