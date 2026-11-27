@@ -25662,6 +25662,13 @@
     "summary": "Calls virtual slot 2 on each element in the [field_0x18, field_0x1C) pointer range.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C2B0": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_8",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "extern \"C\" int mem_00925134;   // CRT _invalid_parameter_noinfo IAT slot (bounds-check boilerplate) void __thiscall fn_0054C2B0(void* self, void* arg)",
+    "summary": "Walks the element pointer range [field_0x18, field_0x1C) and calls vtable slots 8 and 9 on each element with the given argument.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C3A0": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_12",
     "class": "ManagedDisplayList\u003cRenderableList\u003e",

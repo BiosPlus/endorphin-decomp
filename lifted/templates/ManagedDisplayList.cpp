@@ -338,3 +338,31 @@ int __thiscall fn_0054C0F0(void* this_ptr, int arg) {
     return 0;
 }
 } // namespace lift_0054C0F0
+
+// [0x0054C2B0] ManagedDisplayList<RenderableList>::vfunc_8 (119 bytes)
+namespace lift_0054C2B0 {
+// @name ManagedDisplayList<RenderableList>::vfunc_8
+// @class ManagedDisplayList<RenderableList>
+// @summary Walks the element pointer range [field_0x18, field_0x1C) and calls vtable slots 8 and 9 on each element with the given argument.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+extern int mem_00925134;   // CRT _invalid_parameter_noinfo IAT slot (bounds-check boilerplate)
+
+void __thiscall fn_0054C2B0(void* self, void* arg) {
+    (void)&mem_00925134;          // metadata-only reference; bounds checks omitted
+
+    using VMethod = void(__thiscall*)(void* self, void* arg);
+
+    auto* base = static_cast<unsigned char*>(self);
+    void** cur = *reinterpret_cast<void***>(base + 0x18);
+    void** const end = *reinterpret_cast<void***>(base + 0x1C);
+
+    for (; cur != end; ++cur) {
+        void* obj = *cur;
+        void** vtbl = *reinterpret_cast<void***>(obj);
+
+        reinterpret_cast<VMethod>(vtbl[8])(obj, arg);   // vfunc +0x20
+        reinterpret_cast<VMethod>(vtbl[9])(obj, arg);   // vfunc +0x24
+    }
+}
+} // namespace lift_0054C2B0
