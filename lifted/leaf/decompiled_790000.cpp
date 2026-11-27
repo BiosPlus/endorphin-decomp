@@ -1579,3 +1579,46 @@ int32_t __cdecl sub_0079ABF0(int32_t op, uint32_t value) {
     return 0;
 }
 } // namespace lift_0079ABF0
+
+// [0x00798750]
+namespace lift_00798750 {
+// @name UnknownClass::computeImageByteSize
+// @class UnknownClass
+// @summary Computes the byte size of an image or planar/tiled buffer for a given height.
+// @field UnknownClass +0x0c uint32_t field_0x0c
+// @field UnknownClass +0x24 uint32_t field_0x24
+// @field UnknownClass +0x28 uint32_t field_0x28
+// @field UnknownClass +0x40 uint16_t field_0x40
+// @field UnknownClass +0x46 uint16_t field_0x46
+// @field UnknownClass +0x72 uint16_t field_0x72
+// @field UnknownClass +0xe4 uint16_t field_0xe4
+// @field UnknownClass +0xe6 uint16_t field_0xe6
+
+
+extern uint32_t ext_00798840(uint8_t* self);
+
+uint32_t fn_00798750(uint8_t* self, uint32_t height) {
+    if (height == 0xFFFFFFFFu) {
+        height = lift_field<uint32_t>(self, 0x28);
+    }
+
+    if (lift_field<uint16_t>(self, 0x72) == 1 &&
+        lift_field<uint16_t>(self, 0x46) == 6 &&
+        (lift_field<uint32_t>(self, 0x0c) & 0x4000u) == 0) {
+        uint32_t width = lift_field<uint32_t>(self, 0x24);
+        uint32_t tile_w = lift_field<uint16_t>(self, 0xe4);
+        uint32_t tile_h = lift_field<uint16_t>(self, 0xe6);
+        uint32_t bpp = lift_field<uint16_t>(self, 0x40);
+
+        uint32_t tiles_x = (width + tile_w - 1u) / tile_w;
+        uint32_t tiles_y = (height + tile_h - 1u) / tile_h;
+
+        uint32_t row_bytes = ((tiles_x * bpp * tile_w) + 7u) >> 3;
+        uint32_t main_bytes = row_bytes * (tiles_y * tile_h);
+        uint32_t tile_area = tile_h * tile_w;
+        return main_bytes + 2u * (main_bytes / tile_area);
+    }
+
+    return ext_00798840(self) * height;
+}
+} // namespace lift_00798750
