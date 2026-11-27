@@ -1,0 +1,22 @@
+{
+  "va": "0x006D2C30",
+  "size": 73,
+  "orig_symbol": "sub_006D2C30",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::initFromArgBlocks_006D2C30",
+  "class": "Unknown",
+  "signature": "void* fn_006D2C30(void* self, const void* arg)",
+  "summary": "Resets this, copies arg-\u003e+0x08 into this-\u003e+0x08, then for i in [0, arg-\u003e+0x00) builds a 0x20-byte block from sub_006D2A90(arg, i) and inserts it into this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:12Z"
+}

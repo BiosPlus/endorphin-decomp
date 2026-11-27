@@ -3389,3 +3389,38 @@ uint8_t fn_006DC370(void* self, int32_t index) {
     return 0;
 }
 } // namespace lift_006DC370
+
+// [0x006D2C30]
+namespace lift_006D2C30 {
+// @name Unknown::initFromArgBlocks_006D2C30
+// @class Unknown
+// @summary Resets this, copies arg->+0x08 into this->+0x08, then for i in [0, arg->+0x00) builds a 0x20-byte block from sub_006D2A90(arg, i) and inserts it into this.
+// @field Unknown +0x08 uint32_t field_0x08
+
+
+extern uint32_t ext_006D2A90(const void* self, uint32_t arg);
+extern int32_t ext_006D2BD0(void* self, uint32_t* args);
+extern void ext_006D2250(void* self);
+extern void* ext_006D2390(void* self, uint32_t arg1);
+
+void* fn_006D2C30(void* self, const void* arg) {
+    ext_006D2250(self);
+
+    const uint8_t* a = static_cast<const uint8_t*>(arg);
+    uint8_t* s = static_cast<uint8_t*>(self);
+
+    *reinterpret_cast<uint32_t*>(s + 0x08) = *reinterpret_cast<const uint32_t*>(a + 0x08);
+
+    const int32_t count = *reinterpret_cast<const int32_t*>(a + 0x00);
+    for (int32_t i = 0; i < count; ++i) {
+        const uint32_t value = ext_006D2A90(arg, static_cast<uint32_t>(i));
+
+        // 0x20-byte scratch block (asm: sub esp, 0x20; ecx = esp).
+        uint32_t block[8] = {};
+        ext_006D2390(block, value);
+        ext_006D2BD0(self, block);
+    }
+
+    return self;
+}
+} // namespace lift_006D2C30

@@ -68424,6 +68424,13 @@
     "summary": "Passes the 0x20-byte argument block to a forwarding helper via a scratch object, then inserts the value at this+0x00 via ext_006D2A40 and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D2C30": {
+    "name": "Unknown::initFromArgBlocks_006D2C30",
+    "class": "Unknown",
+    "signature": "void* fn_006D2C30(void* self, const void* arg)",
+    "summary": "Resets this, copies arg-\u003e+0x08 into this-\u003e+0x08, then for i in [0, arg-\u003e+0x00) builds a 0x20-byte block from sub_006D2A90(arg, i) and inserts it into this.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2C80": {
     "name": "sub_006D2C80",
     "signature": "void fn_006D2C80(void)",
