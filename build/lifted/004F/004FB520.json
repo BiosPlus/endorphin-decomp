@@ -1,0 +1,22 @@
+{
+  "va": "0x004FB520",
+  "size": 38,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_125",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_125",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "void __thiscall fn_004FB520(void* self, uint32_t arg1)",
+  "summary": "Calls ext_004667A0(field_0x04, 1) and tail-calls vfunc_125(0) on field_0x04's subobject at +0xC.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:23:59Z"
+}

@@ -28319,6 +28319,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004FB520": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_125",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void __thiscall fn_004FB520(void* self, uint32_t arg1)",
+    "summary": "Calls ext_004667A0(field_0x04, 1) and tail-calls vfunc_125(0) on field_0x04's subobject at +0xC.",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004FB5E0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_129",
     "class": "VMCSModes::DefaultImplementation",

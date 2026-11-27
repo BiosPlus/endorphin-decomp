@@ -1168,3 +1168,27 @@ extern void __fastcall fn_004FB0C0(void* self) {
     }
 }
 } // namespace lift_004FB0C0
+
+// [0x004FB520]
+namespace lift_004FB520 {
+// @name VMCSModes::DefaultImplementation::vfunc_125
+// @class VMCSModes::DefaultImplementation
+// @summary Calls ext_004667A0(field_0x04, 1) and tail-calls vfunc_125(0) on field_0x04's subobject at +0xC.
+// @field VMCSModes::DefaultImplementation +0x4 void* field_0x04
+
+
+extern void __thiscall ext_004667A0(void* self, uint32_t arg1);
+
+void __thiscall fn_004FB520(void* self, uint32_t arg1) {
+    (void)arg1;
+    void* obj = lift_field<void*>(self, 0x4);
+    ext_004667A0(obj, 1);
+
+    void* obj2 = lift_field<void*>(self, 0x4);
+    void* subobj = lift_field<void*>(obj2, 0xC);
+    void** vtable = lift_field<void**>(subobj, 0x0);
+    using VFunc125 = void(__thiscall*)(void*, uint32_t);
+    auto fn = reinterpret_cast<VFunc125>(vtable[0x1F4 / sizeof(void*)]);
+    fn(subobj, 0);
+}
+} // namespace lift_004FB520
