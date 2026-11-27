@@ -34522,6 +34522,13 @@
     "summary": "Sets or clears the bit mask in a1 on either the indexed slot of obj (when obj predicate is false and field_0x30 is valid) or on this-\u003efield_0x1C, depending on flag.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053B320": {
+    "name": "Primitives::Animation::vfunc_22",
+    "class": "Primitives::Animation",
+    "signature": "inline Fn iat_fn(int slot)",
+    "summary": "Draws the animation: optional GL name/attrib setup plus display-list call, otherwise forwards to sub-object vfunc +0x28.",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
   "0x0053B4B0": {
     "name": "UnknownClass::ScaleInlineArrayByTable",
     "class": "UnknownClass",

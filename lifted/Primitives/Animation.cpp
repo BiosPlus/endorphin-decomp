@@ -373,3 +373,121 @@ float* __thiscall fn_0053ABF0(void* self, uint32_t /*unused*/, uint32_t flags) {
     return &mem_00AF053C;
 }
 } // namespace lift_0053ABF0
+
+// [0x0053B320] Primitives::Animation::vfunc_22 (323 bytes)
+namespace lift_0053B320 {
+// Known callee 0x00661C90: sub_00661C90 (Look up element by index from either a fallback vector or the current list node's vector)
+extern uint32_t __thiscall ext_00661C90(void* self, uint32_t index);
+// Helper 0x0053B130: sub_0053B130 (thiscall, 3 stack args: mask, table ptr, flags)
+extern void __thiscall ext_0053B130(void* self, uint32_t mask, const void* tbl, uint32_t flags);
+// Listed in CALLEES metadata for 0x0053ACF0 but the bytes never call it; address-only reference, no call.
+extern void ext_0053ACF0();
+extern int mem_00AEE8A8;
+extern int mem_00AEED24;
+extern int mem_009253CC;
+extern int mem_0092546C;
+extern int mem_0092551C;
+extern int mem_00925438;
+extern int mem_009253F8;
+extern int mem_009253F4;
+extern int mem_009253F0;
+extern int mem_0092552C;
+extern int mem_00925524;
+extern int mem_009553B0;
+
+using MethodFn = void (__thiscall*)(void*, uint32_t);
+using GlNameFn = void (__stdcall*)(GLuint);
+using GlEnum2Fn = void (__stdcall*)(GLenum, GLenum);
+using GlEnum1Fn = void (__stdcall*)(GLenum);
+using GlBitsFn = void (__stdcall*)(GLbitfield);
+using GlNewListFn = void (__stdcall*)(GLuint, GLenum);
+using GlListFn = void (__stdcall*)(GLuint);
+using GlVoidFn = void (__stdcall*)();
+
+// Resolve a function pointer stored in an import-address slot (the "call dword ptr [slot]" form).
+template <typename Fn>
+inline Fn iat_fn(int slot) {
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(static_cast<uint32_t>(slot)));
+}
+
+// Fetch vtable slot at byte offset `off` of the object's vtable.
+template <typename Fn>
+inline Fn vslot(void* obj, ptrdiff_t off) {
+    void* vtbl = lift_field<void*>(obj, 0);
+    return reinterpret_cast<Fn>(lift_field<void*>(vtbl, off));
+}
+
+// @name Primitives::Animation::vfunc_22
+// @class Primitives::Animation
+// @summary Draws the animation: optional GL name/attrib setup plus display-list call, otherwise forwards to sub-object vfunc +0x28.
+// @field Primitives::Animation +0x00 void* vtable
+// @field Primitives::Animation +0x04 uint8_t field_0x04
+// @field Primitives::Animation +0x0C uint8_t field_0x0c
+// @field Primitives::Animation +0x1C uint32_t flags
+// @field Primitives::Animation +0x30 uint32_t field_0x30
+// @field Primitives::Animation +0x34 uint32_t field_0x34
+// @field Primitives::Animation +0x38 void* field_0x38
+void fn_0053B320(void* self, uint32_t mask) {
+    (void)&ext_0053ACF0;  // metadata-only reference; the original asm does not call it
+    uint32_t id = lift_field<uint32_t>(self, 0x30);
+    uint32_t flags = lift_field<uint32_t>(self, 0x1C);
+    if (id != 0x7FFFFFFFu) {
+        flags = ext_00661C90(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00AEE8A8))), id);
+    }
+
+    bool al = ((lift_field<uint32_t>(self, 0x1C) & mask) == mask);
+
+    bool draw;
+    if (flags & 0x200) {
+        draw = (mask == 0x100000) || (al && mask != 1);
+    } else {
+        draw = al;
+    }
+
+    void* sub = lift_field<void*>(self, 0x38);
+    uint32_t sub_arg = static_cast<uint32_t>(mem_00AEED24);
+
+    if (!(draw && (flags & 0x1000))) {
+        // Plain path: sub->vfunc_0x28(arg)
+        vslot<MethodFn>(sub, 0x28)(sub, sub_arg);
+        return;
+    }
+
+    // Draw-with-name path
+    iat_fn<GlNameFn>(mem_009253CC)(static_cast<GLuint>(reinterpret_cast<uintptr_t>(self)));
+    ext_0053B130(self, mask, &mem_009553B0, flags);
+
+    if (lift_field<uint8_t>(self, 0x0C) == 0) {
+        vslot<MethodFn>(sub, 0x28)(sub, sub_arg);
+        iat_fn<GlVoidFn>(mem_00925524)();
+        return;
+    }
+
+    if (lift_field<uint32_t>(self, 0x1C) & 0x100) {
+        iat_fn<GlBitsFn>(mem_0092546C)(8);
+        iat_fn<GlEnum2Fn>(mem_0092551C)(0x408, 0x1B01);
+        iat_fn<GlEnum1Fn>(mem_00925438)(0xB44);
+    }
+
+    vslot<MethodFn>(sub, 0x28)(sub, sub_arg);
+
+    uint32_t list = lift_field<uint32_t>(self, 0x34);
+    if (list != 0) {
+        if (lift_field<uint8_t>(self, 0x04) != 0) {
+            iat_fn<GlNewListFn>(mem_009253F8)(list, 0x1301);
+            vslot<MethodFn>(self, 0x70)(self, mask);
+            iat_fn<GlVoidFn>(mem_009253F4)();
+            lift_field<uint8_t>(self, 0x04) = 0;
+        } else {
+            iat_fn<GlListFn>(mem_009253F0)(list);
+        }
+    } else {
+        vslot<MethodFn>(self, 0x70)(self, mask);
+    }
+
+    if (lift_field<uint32_t>(self, 0x1C) & 0x100) {
+        iat_fn<GlVoidFn>(mem_0092552C)();
+    }
+    iat_fn<GlVoidFn>(mem_00925524)();
+}
+} // namespace lift_0053B320
