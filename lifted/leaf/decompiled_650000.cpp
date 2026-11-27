@@ -2095,3 +2095,36 @@ void fn_00518840(uint32_t* base, int32_t hi, int32_t lo, uint32_t val, void* ctx
     base[hi] = val;
 }
 } // namespace lift_00518840
+
+// [0x00518770] sub_00518770 (100 bytes)
+namespace lift_00518770 {
+// Known callee 0x005185D0: Unknown::compareChildValuesLess (Returns whether the double at +0x20 of child[ix2] is less than that of child[ix1] (false on NaN).)
+// Original ABI: self in ecx, two stack args (ix1 pushed last, so it is the first parameter), callee-cleaned.
+extern int ext_005185D0(void* self, uint32_t ix1, uint32_t ix2);
+
+// @name sortThreeChildIndices
+// @summary Three-comparator network that orders the uint32 values behind p, q, r (swap when compare says so) using compareChildValuesLess.
+void fn_00518770(uint32_t* p, uint32_t* q, uint32_t* r, void* inner) {
+    // The original passes the address of its 4th stack slot as `this`; the callee reads its `inner` pointer from *self.
+    void* self = static_cast<void*>(&inner);
+
+    // Compare-exchange (p, q)
+    if (ext_005185D0(self, *q, *p)) {
+        uint32_t t = *p;
+        *p = *q;
+        *q = t;
+    }
+    // Compare-exchange (q, r)
+    if (ext_005185D0(self, *r, *q)) {
+        uint32_t t = *q;
+        *q = *r;
+        *r = t;
+    }
+    // Compare-exchange (p, q)
+    if (ext_005185D0(self, *q, *p)) {
+        uint32_t t = *p;
+        *p = *q;
+        *q = t;
+    }
+}
+} // namespace lift_00518770

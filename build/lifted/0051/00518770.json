@@ -1,0 +1,13 @@
+{
+  "va": "0x00518770",
+  "size": 100,
+  "orig_symbol": "sub_00518770",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "sortThreeChildIndices",
+  "signature": "void fn_00518770(uint32_t* p, uint32_t* q, uint32_t* r, void* inner)",
+  "summary": "Three-comparator network that orders the uint32 values behind p, q, r (swap when compare says so) using compareChildValuesLess.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:56:49Z"
+}

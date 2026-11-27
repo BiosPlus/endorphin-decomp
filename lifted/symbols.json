@@ -22110,6 +22110,12 @@
     "summary": "Three-element compare-swap network (1,2),(2,3),(1,2) over the DWORDs at arg1..arg3, ordering them by the double at +0x20 of the element each index selects in the container reached through self.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00518770": {
+    "name": "sortThreeChildIndices",
+    "signature": "void fn_00518770(uint32_t* p, uint32_t* q, uint32_t* r, void* inner)",
+    "summary": "Three-comparator network that orders the uint32 values behind p, q, r (swap when compare says so) using compareChildValuesLess.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x005187E0": {
     "name": "heapSiftUpIndices",
     "class": "(none)",
