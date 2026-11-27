@@ -2716,3 +2716,52 @@ void* __thiscall sub_00620F80(void* self, const void* other) {
     return self;
 }
 } // namespace lift_00620F80
+
+// [0x00624640] sub_00624640 (110 bytes)
+namespace lift_00624640 {
+extern void* ext_005A07A0(void* self, void* out_iter, const void* key);
+extern uintptr_t mem_00925134;
+
+// @name TreeMap::lookupValue
+// @class TreeMap
+// @summary Calls ext_005A07A0 (TreeMap::find) with an out-iterator pair; returns node->+0x28 or 0 when the node is the head sentinel. Traps via _invalid_parameter_noinfo if the iterator does not belong to this map.
+// @field TreeMap +0x04 uint32_t field_0x04
+// @field TreeMap +0x08 uint32_t field_0x08
+// @field Unknown +0x04 uint32_t field_0x04
+// @field TreeNode +0x28 uint32_t field_0x28
+static void invalid_parameter_noinfo() {
+    reinterpret_cast<void (*)()>(mem_00925134)();
+    std::abort();
+}
+
+static void* addr_of(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+uint32_t fn_00624640(void* self, const void* key) {
+    if (lift_field<uint32_t>(self, 0x08) == 0) {
+        return 0;
+    }
+
+    uint32_t out[2] = {0, 0};
+    ext_005A07A0(self, out, key);
+
+    const uint32_t head = lift_field<uint32_t>(self, 0x04);
+    const uint32_t owner = out[0];
+    const uint32_t node = out[1];
+
+    if (owner != static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self))) {
+        invalid_parameter_noinfo();
+    }
+    if (node == head) {
+        return 0;
+    }
+    if (owner == 0) {
+        invalid_parameter_noinfo();
+    }
+    if (node == lift_field<uint32_t>(addr_of(owner), 0x04)) {
+        invalid_parameter_noinfo();
+    }
+    return lift_field<uint32_t>(addr_of(node), 0x28);
+}
+} // namespace lift_00624640

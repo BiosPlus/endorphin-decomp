@@ -41400,6 +41400,13 @@
     "summary": "Runs the virtual-slot-18 range pass (00624540) then the slot-12 range pass (00624590) on the same object.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00624640": {
+    "name": "TreeMap::lookupValue",
+    "class": "TreeMap",
+    "signature": "static void invalid_parameter_noinfo()",
+    "summary": "Calls ext_005A07A0 (TreeMap::find) with an out-iterator pair; returns node-\u003e+0x28 or 0 when the node is the head sentinel. Traps via _invalid_parameter_noinfo if the iterator does not belong to this map.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006248D0": {
     "name": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e::vfunc_1",
     "class": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e",
