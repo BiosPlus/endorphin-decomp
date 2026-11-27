@@ -1729,3 +1729,81 @@ void __thiscall fn_005969C0(void* self, void* range, uint32_t extra) {
     ext_00678D70(self, 1);
 }
 } // namespace lift_005969C0
+
+// [0x00598A90] sub_00598A90 (126 bytes)
+namespace lift_00598A90 {
+extern void ext_00519CF0(void* self);
+extern void ext_00673C20(void* self);
+extern uint32_t mem_00925134;
+
+// @name iterateFlaggedNodesAndDispatch
+// @class <Unknown> (owner class not yet recovered)
+// @summary Walks a debug-checked node list from this->field_0x26C and, for each node, calls a vtable slot (+0x30) and ext_00519CF0 on the node's object, then advances the iterator via fn_00673C20.
+// @field Unknown +0x26C void* field_0x26C
+namespace {
+
+struct LiftIter {
+    uint32_t cont; // iterator's container (sentinel) address
+    uint32_t node; // current node address
+};
+
+inline uint8_t* lift_ptr(uint32_t addr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
+}
+
+inline void lift_invalid_parameter() {
+    // Equivalent of: call dword ptr [mem_00925134] (_invalid_parameter_noinfo)
+    reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+}
+
+} // namespace
+
+void fn_00598A90(void* self) {
+    // mov ebx, [ecx+0x26c]; mov eax, [ebx+0xc]; add ebx, 8
+    const uint32_t proxy = lift_field<uint32_t>(self, 0x26C);
+    const uint32_t sentinel = proxy + 8;
+    // mov edi, [eax] where eax = [proxy+0xc]
+    const uint32_t first = lift_field<uint32_t>(lift_ptr(lift_field<uint32_t>(lift_ptr(proxy), 0xC)), 0);
+
+    LiftIter it{sentinel, first}; // stored to [esp+0x10] / [esp+0x14]
+
+    for (;;) {
+        // mov ebp, [ebx+4]
+        const uint32_t end = lift_field<uint32_t>(lift_ptr(sentinel), 4);
+
+        // iterator validity checks (debug): esi must be non-null and == ebx
+        if (it.cont == 0 || it.cont != sentinel) {
+            lift_invalid_parameter();
+        }
+
+        if (it.node == end) {
+            break;
+        }
+
+        if (it.cont == 0) {
+            lift_invalid_parameter();
+        }
+        if (it.node == lift_field<uint32_t>(lift_ptr(it.cont), 4)) {
+            lift_invalid_parameter();
+        }
+
+        // mov ecx, [edi+0x28]; mov edx, [ecx]; mov eax, [edx+0x30]; push 0; call eax
+        const uint32_t obj = lift_field<uint32_t>(lift_ptr(it.node), 0x28);
+        const uint32_t vtbl = lift_field<uint32_t>(lift_ptr(obj), 0);
+        const uint32_t slot = lift_field<uint32_t>(lift_ptr(vtbl), 0x30);
+        reinterpret_cast<void (*)(void*, int)>(static_cast<uintptr_t>(slot))(lift_ptr(obj), 0);
+
+        // re-check iterator after the virtual call
+        if (it.node == lift_field<uint32_t>(lift_ptr(it.cont), 4)) {
+            lift_invalid_parameter();
+        }
+
+        // mov ecx, [edi+0x28]; call sub_00519CF0
+        const uint32_t obj2 = lift_field<uint32_t>(lift_ptr(it.node), 0x28);
+        ext_00519CF0(lift_ptr(obj2));
+
+        // lea ecx, [esp+0x10]; call ext_00673C20 (advances it in place)
+        ext_00673C20(&it);
+    }
+}
+} // namespace lift_00598A90

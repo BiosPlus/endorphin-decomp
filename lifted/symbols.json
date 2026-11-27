@@ -30992,6 +30992,13 @@
     "summary": "Pushes eight stack copies of its caller's arguments (unused by the callee), calls invalid_parameter_noinfo, and cdecl-cleans the 0x24 bytes.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00598A90": {
+    "name": "iterateFlaggedNodesAndDispatch",
+    "class": "\u003cUnknown\u003e (owner class not yet recovered)",
+    "signature": "inline uint8_t* lift_ptr(uint32_t addr)",
+    "summary": "Walks a debug-checked node list from this-\u003efield_0x26C and, for each node, calls a vtable slot (+0x30) and ext_00519CF0 on the node's object, then advances the iterator via fn_00673C20.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x005991D0": {
     "name": "Unknown::EraseAtAndWritePair",
     "class": "Unknown",
