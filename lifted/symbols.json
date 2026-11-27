@@ -4824,6 +4824,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043AB70": {
+    "name": "registerNamedEntry",
+    "signature": "void __cdecl fn_0043AB70(LiftStr0043AB70 name, uint32_t flag)",
+    "summary": "Builds a default string, substitutes it for an empty name, optionally logs, then registers name in two static registries and destroys the by-value string.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043B380": {
     "name": "sub_0043B380",
     "class": "GWCPropertyEditFeel",

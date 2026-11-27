@@ -6090,3 +6090,50 @@ extern VectorIter4B* __thiscall sub_0043F820(
     return out_it;
 }
 } // namespace lift_0043F820
+
+// [0x0043AB70]
+namespace lift_0043AB70 {
+struct LiftStr0043AB70 { uint8_t bytes[0x1c]; };
+
+extern void* __cdecl ext_0066AD10(void* out_str, const void* src);
+extern void* __cdecl ext_00430F30(void* dst);
+extern void* __stdcall ext_006798D0(void* a, void* b);
+extern void __thiscall ext_006790C0(void* self);
+extern void* __cdecl ext_0043AB10();
+extern void __thiscall ext_0043AA10(void* self, void* key, void* value, int flag);
+extern void __thiscall ext_0043A910(void* self, void* key, void* value, int flag);
+extern uint32_t mem_00924FEC;  // IAT: std::string::empty
+extern uint32_t mem_00924FDC;  // IAT: std::string::operator=
+extern uint32_t mem_00924FF4;  // IAT: std::string::~string
+extern uint8_t mem_00A2E238;
+
+// @name registerNamedEntry
+// @summary Builds a default string, substitutes it for an empty name, optionally logs, then registers name in two static registries and destroys the by-value string.
+void __cdecl fn_0043AB70(LiftStr0043AB70 name, uint32_t flag) {
+    using EmptyFn = bool(__thiscall*)(void*);
+    using AssignFn = void*(__thiscall*)(void*, void*);
+    using DtorFn = void(__thiscall*)(void*);
+    auto str_empty = reinterpret_cast<EmptyFn>(static_cast<uintptr_t>(mem_00924FEC));
+    auto str_assign = reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+    auto str_dtor = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+
+    LiftStr0043AB70 defstr;
+    LiftStr0043AB70 tmp;
+    ext_0066AD10(&defstr, &mem_00A2E238);
+    if (str_empty(&name)) {
+        str_assign(&name, &defstr);
+    }
+    if (static_cast<uint8_t>(flag) != 0) {
+        void* r = ext_00430F30(&tmp);
+        void* s = ext_006798D0(r, &defstr);
+        ext_006790C0(s);
+        str_dtor(&tmp);
+    }
+    uint8_t* reg = static_cast<uint8_t*>(ext_0043AB10());
+    uint32_t fnptr = 0x00434AF0u;
+    ext_0043AA10(reg + 0x4, &name, &fnptr, 1);
+    ext_0043A910(reg + 0x14, &name, &defstr, 1);
+    str_dtor(&defstr);
+    str_dtor(&name);
+}
+} // namespace lift_0043AB70
