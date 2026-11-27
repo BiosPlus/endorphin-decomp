@@ -107020,6 +107020,13 @@
     "summary": "Resolves a value through the object at +0x04 and a vfunc, converts it via ext_00493E40 and stores it as peer at +0x0C.",
     "lifted_path": "lifted/NMData/Marker.cpp"
   },
+  "0x00870B70": {
+    "name": "NMData::Marker::vfunc_17_off_C",
+    "class": "NMData::Marker",
+    "signature": "inline void* as_ptr(uint32_t v)",
+    "summary": "Allocates a 0x178-byte object, copies the string at +0x148 into it, runs two",
+    "lifted_path": "lifted/NMData/Marker.cpp"
+  },
   "0x00870E00": {
     "name": "sub_00870E00",
     "signature": "extern \"C\" void fn_00870E00(void)",

@@ -1,0 +1,34 @@
+{
+  "va": "0x00870B70",
+  "size": 167,
+  "orig_symbol": "NMData::Marker::vfunc_17_off_C",
+  "src_path": "src/NMData/Marker.cpp",
+  "lifted_path": "lifted/NMData/Marker.cpp",
+  "name": "NMData::Marker::vfunc_17_off_C",
+  "class": "NMData::Marker",
+  "signature": "inline void* as_ptr(uint32_t v)",
+  "summary": "Allocates a 0x178-byte object, copies the string at +0x148 into it, runs two",
+  "fields": [
+    {
+      "class": "NMData::Marker",
+      "offset": "-0x8",
+      "type": "void*",
+      "name": "field_0x_08"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "-0xC",
+      "type": "void*",
+      "name": "field_0x_0C"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x148",
+      "type": "std::string",
+      "name": "field_0x148"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:16Z"
+}

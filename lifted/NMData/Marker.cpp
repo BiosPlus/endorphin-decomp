@@ -233,3 +233,75 @@ void __thiscall fn_00870650(void* self, void* owner) {
     lift_field<float>(obj, 0x3C) = 1.0f;
 }
 } // namespace lift_00870650
+
+// [0x00870B70] NMData::Marker::vfunc_17_off_C (167 bytes)
+namespace lift_00870B70 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* __cdecl ext_006A5C62(uint32_t size);
+// Known callee 0x00587EE0: sub_00587EE0 (129B) - thiscall, returns object pointer in eax
+extern void* __thiscall ext_00587EE0(void* self);
+// Known callee 0x005881D0: sub_005881D0 (352B) - thiscall, one stack argument
+extern void __thiscall ext_005881D0(void* self, void* arg);
+// IAT slot 0x924FDC holds the address of MSVCP80 std::string::operator=(const string&)
+extern uint32_t mem_00924FDC;
+// Global pointer/value at 0xB40640, passed as the argument to two virtual calls
+extern uint32_t mem_00B40640;
+
+namespace {
+
+inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+using ThisArgFn = void* (__thiscall*)(void* self, uint32_t arg);
+using StringAssignFn = void* (__thiscall*)(void* self, const void* src);
+
+} // namespace
+
+// @name NMData::Marker::vfunc_17_off_C
+// @class NMData::Marker
+// @summary Allocates a 0x178-byte object, copies the string at +0x148 into it, runs two
+// @summary sub-object initializers, and copies 64 bytes from one virtual call result to another.
+// @field NMData::Marker -0x08 void* field_0x_08
+// @field NMData::Marker -0x0C void* field_0x_0C
+// @field NMData::Marker +0x148 std::string field_0x148
+void* __thiscall fn_00870B70(void* self) {
+    // push 0x178 / call operator new / add esp,4
+    void* ebx = nullptr;
+    void* obj = ext_006A5C62(0x178);
+    if (obj != nullptr) {
+        // mov ecx,eax / call sub_00587EE0 / mov ebx,eax
+        ebx = ext_00587EE0(obj);
+    }
+
+    // lea eax,[esi+0x148] ; lea ecx,[ebx+0x154] ; call [0x924FDC] (std::string::operator=)
+    void* dst_str = static_cast<uint8_t*>(ebx) + 0x154;
+    const void* src_str = static_cast<uint8_t*>(self) + 0x148;
+    auto string_assign = reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+    string_assign(dst_str, src_str);
+
+    // lea ecx,[esi-0xc] ; push ecx ; mov ecx,ebx ; call sub_005881D0
+    ext_005881D0(ebx, static_cast<uint8_t*>(self) - 0x0C);
+
+    // mov edx,[esi-8] ; mov edx,[edx+8] ; lea ecx,[esi-8] ; push [0xB40640] ; call edx
+    uint32_t p8 = lift_field<uint32_t>(self, -8);
+    uint32_t fn1 = lift_field<uint32_t>(as_ptr(p8), 8);
+    auto call1 = reinterpret_cast<ThisArgFn>(static_cast<uintptr_t>(fn1));
+    void* sel = call1(static_cast<uint8_t*>(self) - 0x08, mem_00B40640);
+
+    // mov edx,[0xB40640] ; mov eax,[ebx+4] ; mov eax,[eax+0xc] ; lea ecx,[ebx+4] ; push edx ; call eax
+    uint32_t q = lift_field<uint32_t>(ebx, 4);
+    uint32_t fn2 = lift_field<uint32_t>(as_ptr(q), 0x0C);
+    auto call2 = reinterpret_cast<ThisArgFn>(static_cast<uintptr_t>(fn2));
+    void* edi = call2(static_cast<uint8_t*>(ebx) + 4, mem_00B40640);
+
+    // mov ecx,0x10 ; rep movsd : copy 16 dwords from sel (esi) to edi
+    uint32_t* src = static_cast<uint32_t*>(sel);
+    uint32_t* dst = static_cast<uint32_t*>(edi);
+    for (int i = 0; i < 16; ++i) {
+        dst[i] = src[i];
+    }
+
+    return ebx;
+}
+} // namespace lift_00870B70
