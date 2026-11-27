@@ -4021,3 +4021,65 @@ void fn_005028E0(void* self, const char* a1) {
     (*reinterpret_cast<StdStringDtorFn*>(&mem_00924FF4))(&str);
 }
 } // namespace lift_005028E0
+
+// [0x0050F5B0] sub_0050F5B0 (246 bytes)
+namespace lift_0050F5B0 {
+// Callees (direct calls, names kept from the original asm).
+// 0x0050F550: one-time guarded init of the global object at 0x00AEBD5C; returns its address.
+extern void* ext_0050F550(void);
+// 0x00505D50: thiscall lookup on (this + 4); returns element pointer (+0x1C) or nullptr.
+extern void* __thiscall ext_00505D50(void* self, const void* key);
+// 0x0050E3B0: builds a type-name std::string into `out`; returns `out`.
+extern void* ext_0050E3B0(void* out);
+// 0x0066AC90: helper taking the second std::string temporary.
+extern void ext_0066AC90(void* tmp);
+// 0x004C6F60: thiscall constructor of the exception object; returns self.
+extern void* __thiscall ext_004C6F60(void* self);
+// 0x004C7200: thiscall StringExceptionWithMember copy constructor.
+extern void* __thiscall ext_004C7200(void* self, const void* other);
+// 0x006A6DD2: IAT thunk forwarding to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+// IAT slot for the MSVCP80 std::string copy constructor.
+extern void* mem_00924FE0;
+
+namespace {
+// MSVC x86 std::string is 0x1C bytes; the exception object's recovered layout ends at +0x54 + 0x1C.
+constexpr std::size_t kStringSize = 0x1C;
+constexpr std::size_t kExceptionSize = 0x70;
+// ThrowInfo for StringExceptionWithMember (address constant from the original push).
+const void* const kThrowInfo = reinterpret_cast<const void*>(static_cast<std::uintptr_t>(0x009E9404u));
+
+using StringCopyCtor = void* (__thiscall*)(void* self, const void* other);
+} // namespace
+
+// @name lookupKeyOrThrow_0050F5B0
+// @summary Looks up a std::string key in the lazily-initialized global map; if found, calls the element's stored function pointer with out, otherwise throws StringExceptionWithMember when throwIfMissing is set.
+void fn_0050F5B0(const void* key, void* out, unsigned char throwIfMissing) {
+    void* global = ext_0050F550();
+    // The map header lives at global + 0x04.
+    void* elem = ext_00505D50(static_cast<unsigned char*>(global) + 4, key);
+    if (elem != nullptr) {
+        // The element's first member is a function pointer, called with `out`.
+        auto handler = *reinterpret_cast<void (**)(void*)>(elem);
+        handler(out);
+        return;
+    }
+    if (throwIfMissing == 0) {
+        return;
+    }
+
+    // Temporaries (never destroyed, as in the original).
+    alignas(8) unsigned char tmp1[kStringSize];
+    alignas(8) unsigned char tmp2[kStringSize];
+    alignas(8) unsigned char tmp3[kStringSize];
+    reinterpret_cast<StringCopyCtor>(mem_00924FE0)(tmp1, key);
+    ext_0050E3B0(tmp3);
+    ext_0066AC90(tmp2);
+
+    alignas(8) unsigned char excSrc[kExceptionSize];
+    alignas(8) unsigned char excObj[kExceptionSize];
+    void* src = ext_004C6F60(excSrc);
+    ext_004C7200(excObj, src);
+    ext_006A6DD2(excObj, kThrowInfo);
+}
+} // namespace lift_0050F5B0

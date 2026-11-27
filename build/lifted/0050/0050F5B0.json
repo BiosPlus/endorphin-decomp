@@ -1,0 +1,13 @@
+{
+  "va": "0x0050F5B0",
+  "size": 246,
+  "orig_symbol": "sub_0050F5B0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "lookupKeyOrThrow_0050F5B0",
+  "signature": "void fn_0050F5B0(const void* key, void* out, unsigned char throwIfMissing)",
+  "summary": "Looks up a std::string key in the lazily-initialized global map; if found, calls the element's stored function pointer with out, otherwise throws StringExceptionWithMember when throwIfMissing is set.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:49:40Z"
+}

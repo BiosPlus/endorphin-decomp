@@ -31331,6 +31331,12 @@
     "summary": "One-time guarded initializer for the global object at 0x00AEBD5C; on first call sets guard bit 0 of mem_00AEBD80, runs the object init via ext_0050F1A0 and registers a teardown via ext_006A6C87, then returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050F5B0": {
+    "name": "lookupKeyOrThrow_0050F5B0",
+    "signature": "void fn_0050F5B0(const void* key, void* out, unsigned char throwIfMissing)",
+    "summary": "Looks up a std::string key in the lazily-initialized global map; if found, calls the element's stored function pointer with out, otherwise throws StringExceptionWithMember when throwIfMissing is set.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050F970": {
     "name": "InitZeroedStateWithVTable",
     "signature": "void fn_0050F970(void* self)",
