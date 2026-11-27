@@ -1,0 +1,58 @@
+{
+  "va": "0x0072BFD0",
+  "size": 128,
+  "orig_symbol": "sub_0072BFD0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "CFoo::SetParamsAndMaybeCompute",
+  "class": "CFoo",
+  "signature": "void fn_0072BFD0(void* self, int32_t a1, int32_t a2, uint8_t a3, int32_t a4, int8_t a5)",
+  "summary": "Stores four params and a byte flag; when flags allow, stores ext_006A5C62(a5 * a1 * a2) at +0x10.",
+  "fields": [
+    {
+      "class": "CFoo",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "a1"
+    },
+    {
+      "class": "CFoo",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "a2"
+    },
+    {
+      "class": "CFoo",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "a4"
+    },
+    {
+      "class": "CFoo",
+      "offset": "+0xC",
+      "type": "int32_t a5 (sign-extended from",
+      "name": "byte)"
+    },
+    {
+      "class": "CFoo",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "result"
+    },
+    {
+      "class": "CFoo",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "CFoo",
+      "offset": "+0x65",
+      "type": "uint8_t",
+      "name": "a3_flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:13:12Z"
+}

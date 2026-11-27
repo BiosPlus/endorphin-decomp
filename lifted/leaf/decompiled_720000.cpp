@@ -860,3 +860,46 @@ double fn_00722BA0(double a, double b, double c) {
     return r + v1;
 }
 } // namespace lift_00722BA0
+
+// [0x0072BFD0] sub_0072BFD0 (128 bytes)
+namespace lift_0072BFD0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762).
+extern int32_t ext_006A5C62(int32_t);
+
+// @name CFoo::SetParamsAndMaybeCompute
+// @class CFoo
+// @summary Stores four params and a byte flag; when flags allow, stores ext_006A5C62(a5 * a1 * a2) at +0x10.
+// @field CFoo +0x00 int32_t a1
+// @field CFoo +0x04 int32_t a2
+// @field CFoo +0x08 int32_t a4
+// @field CFoo +0x0C int32_t a5 (sign-extended from byte)
+// @field CFoo +0x10 int32_t result
+// @field CFoo +0x64 uint8_t flag
+// @field CFoo +0x65 uint8_t a3_flag
+void fn_0072BFD0(void* self, int32_t a1, int32_t a2, uint8_t a3, int32_t a4, int8_t a5) {
+    lift_field<int32_t>(self, 0x00) = a1;
+    lift_field<int32_t>(self, 0x04) = a2;
+    lift_field<int32_t>(self, 0x08) = a4;
+    lift_field<int32_t>(self, 0x0C) = static_cast<int32_t>(a5);
+    lift_field<int32_t>(self, 0x10) = 0;
+
+    // Flag is 1 when (a1 > 0 && a2 > 0 && a4 in {0,1} && a5 >= 1), or when a3 == 0.
+    bool take = false;
+    if (a1 > 0 && a2 > 0 && (a4 == 0 || a4 == 1)) {
+        if (static_cast<int32_t>(a5) >= 1) {
+            take = true;
+        }
+    }
+    const uint8_t flag = (take || a3 == 0) ? 1 : 0;
+    lift_field<uint8_t>(self, 0x64) = flag;
+
+    if (flag != 0 && a3 != 0) {
+        const uint32_t product = static_cast<uint32_t>(static_cast<int32_t>(a5))
+                               * static_cast<uint32_t>(a1)
+                               * static_cast<uint32_t>(a2);
+        lift_field<int32_t>(self, 0x10) = ext_006A5C62(static_cast<int32_t>(product));
+    }
+
+    lift_field<uint8_t>(self, 0x65) = a3;
+}
+} // namespace lift_0072BFD0

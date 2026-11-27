@@ -74656,6 +74656,13 @@
     "summary": "If +0x10 is non-null, passes it to ext_006A5C5C; clears the byte at +0x64; then calls ext_006B9D70 on the embedded subobject at +0x18 (thiscall). SEH frame from the original is dropped.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x0072BFD0": {
+    "name": "CFoo::SetParamsAndMaybeCompute",
+    "class": "CFoo",
+    "signature": "void fn_0072BFD0(void* self, int32_t a1, int32_t a2, uint8_t a3, int32_t a4, int8_t a5)",
+    "summary": "Stores four params and a byte flag; when flags allow, stores ext_006A5C62(a5 * a1 * a2) at +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072C050": {
     "name": "sub_0072C050",
     "signature": "extern \"C\" void __fastcall fn_0072C050(void* self, int edx_unused, uint8_t value)",
