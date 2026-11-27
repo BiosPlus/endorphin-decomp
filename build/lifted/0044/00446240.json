@@ -1,0 +1,27 @@
+{
+  "va": "0x00446240",
+  "size": 144,
+  "orig_symbol": "sub_00446240",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_00446240",
+  "signature": "void __thiscall fn_00446240(void* this_ptr, void* node, uint32_t arg1)",
+  "summary": "Recursively visits a node and its children in a vector at +0x7c, invoking vtable+0x20 on dynamic_casted objects.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "vtable_or_subobj"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x7C",
+      "type": "uint32_t[3]",
+      "name": "children_vec"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:36:31Z"
+}
