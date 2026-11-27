@@ -12908,6 +12908,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048AA10": {
+    "name": "NMData::DesiredPoseEventData::vfunc_84",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "void __thiscall fn_0048AA10(void* self, int32_t frame)",
+    "summary": "Updates desired pose event data for a frame and resets/notifies children at the end of the range.",
+    "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
   "0x0048ABF0": {
     "name": "sub_0048ABF0",
     "class": "Unknown",

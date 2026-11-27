@@ -235,3 +235,91 @@ void fn_0062C690(void* self, void* a) {
     }
 }
 } // namespace lift_0062C690
+
+// [0x0062BB20]
+namespace lift_0062BB20 {
+// @name NMData::AxisDefineSensorData::vfunc_22
+// @class NMData::AxisDefineSensorData
+// @summary Serializes AxisDefineSensorData fields and axis pair list into an archive node.
+// @field NMData::AxisDefineSensorData +0x14 char[0x1C] field_0x14
+// @field NMData::AxisDefineSensorData +0x154 char[0x1C] field_0x154
+// @field NMData::AxisDefineSensorData +0x180 char[0x1C] field_0x180
+// @field NMData::AxisDefineSensorData +0x1DC uint32_t field_0x1dc
+// @field NMData::AxisDefineSensorData +0x1E0 uint32_t field_0x1e0
+
+    void* __thiscall ext_006404E0(void* self, uint32_t key);
+    void* __thiscall ext_00640110(void* self, uint32_t key);
+    void* __thiscall ext_00640390(void* self, uint32_t key, uint32_t arg);
+    void __thiscall ext_00427550(void* self, const char* name);
+    void __thiscall ext_0063F8D0(void* self);
+    void __thiscall ext_00640270(void* self, void* name);
+
+    extern uint32_t mem_00A9ED44;
+    extern uint32_t mem_00A9F838;
+    extern uint32_t mem_00A9FA6C;
+    extern uint32_t mem_00A9F7F4;
+    extern uint32_t mem_00A9F170;
+    extern uint32_t mem_00A9F16C;
+    extern uint32_t mem_00A9F9CC;
+    extern uint32_t mem_00A9F9D0;
+
+    extern bool (__thiscall* mem_00924FEC)(const void* self);           // std::string::empty
+    extern const char* (__thiscall* mem_00924FF0)(const void* self);    // std::string::c_str
+    extern void (__thiscall* mem_00924FE4)(void* self, const char* s);  // std::string::basic_string(const char*)
+    extern void (__thiscall* mem_00924FF4)(void* self);                 // std::string::~basic_string()
+    extern void (__cdecl* mem_00925134)();                              // _invalid_parameter_noinfo
+
+void* __thiscall fn_0062BB20(void* self, void* arg0) {
+    char* base = static_cast<char*>(self);
+    void* root = ext_006404E0(arg0, mem_00A9ED44);
+
+    void* str_0x14 = base + 0x14;
+    if (!mem_00924FEC(str_0x14)) {
+        void* node = ext_00640110(root, mem_00A9F838);
+        ext_00427550(&node, mem_00924FF0(str_0x14));
+    }
+
+    void* str_0x154 = base + 0x154;
+    if (!mem_00924FEC(str_0x154)) {
+        void* node = ext_00640110(root, mem_00A9FA6C);
+        ext_00427550(&node, mem_00924FF0(str_0x154));
+    }
+
+    {
+        void* node = ext_00640110(root, mem_00A9F7F4);
+        ext_00427550(&node, mem_00924FF0(base + 0x180));
+    }
+
+    void* list_node = ext_00640390(root, mem_00A9F170, 0);
+
+    char* cur = *reinterpret_cast<char**>(base + 0x1DC);
+    char* end = *reinterpret_cast<char**>(base + 0x1E0);
+    if (cur > end || *reinterpret_cast<char**>(base + 0x1DC) > end) {
+        mem_00925134();
+    }
+
+    while (cur != end) {
+        void* item_node = ext_006404E0(list_node, mem_00A9F16C);
+
+        void* attr1 = ext_00640110(item_node, mem_00A9F9CC);
+        const char* s1 = mem_00924FF0(cur);
+        ext_0063F8D0(attr1);
+        uint8_t tmp1[0x1C];
+        mem_00924FE4(tmp1, s1);
+        ext_00640270(attr1, tmp1);
+        mem_00924FF4(tmp1);
+
+        void* attr2 = ext_00640110(item_node, mem_00A9F9D0);
+        const char* s2 = mem_00924FF0(cur + 0x1C);
+        ext_0063F8D0(attr2);
+        uint8_t tmp2[0x1C];
+        mem_00924FE4(tmp2, s2);
+        ext_00640270(attr2, tmp2);
+        mem_00924FF4(tmp2);
+
+        cur += 0x38;
+    }
+
+    return arg0;
+}
+} // namespace lift_0062BB20

@@ -10,10 +10,13 @@
 // Recovered field layout for NMData::AxisDefineSensorData:
 namespace lifted_layout {
 struct NMData_AxisDefineSensorData_Fields {
-    // +0x154 void*                    field_0x154  (evidence: 0x0060F420, 0x0062CC60)
+    // +0x14  char[0x1C]               field_0x14  (evidence: 0x0062BB20)
+    // +0x154 char[0x1C]               field_0x154  (evidence: 0x0062BB20) // CONFLICT: multiple definitions at +0x154
+    // +0x154 void*                    field_0x154  (evidence: 0x0060F420, 0x0062CC60) // CONFLICT: multiple definitions at +0x154
     // +0x170 void*                    field_0x170  (evidence: 0x0060C040, 0x0060E7B0)
-    // +0x180 void*                    field_0x180  (evidence: 0x0060F420)
-    // +0x1DC uint32_t                 field_0x1dc  (evidence: 0x0062C690)
-    // +0x1E0 uint32_t                 field_0x1e0  (evidence: 0x0062C690)
+    // +0x180 char[0x1C]               field_0x180  (evidence: 0x0062BB20) // CONFLICT: multiple definitions at +0x180
+    // +0x180 void*                    field_0x180  (evidence: 0x0060F420) // CONFLICT: multiple definitions at +0x180
+    // +0x1DC uint32_t                 field_0x1dc  (evidence: 0x0062BB20, 0x0062C690)
+    // +0x1E0 uint32_t                 field_0x1e0  (evidence: 0x0062BB20, 0x0062C690)
 };
 } // namespace lifted_layout

@@ -1,0 +1,46 @@
+{
+  "va": "0x0062BB20",
+  "size": 519,
+  "orig_symbol": "NMData::AxisDefineSensorData::vfunc_22",
+  "src_path": "src/NMData/AxisDefineSensorData.cpp",
+  "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
+  "name": "NMData::AxisDefineSensorData::vfunc_22",
+  "class": "NMData::AxisDefineSensorData",
+  "signature": "extern bool (__thiscall* mem_00924FEC)(const void* self);           // std::string::empty extern const char* (__thiscall* mem_00924FF0)(const void* self);    // std::string::c_str extern void (__thiscall* mem_00924FE4)(void* self, const char* s);  // std::string::basic_string(const char*) extern void (__thiscall* mem_00924FF4)(void* self);                 // std::string::~basic_string() extern void (__cdecl* mem_00925134)();                              // _invalid_parameter_noinfo } void* __thiscall fn_0062BB20(void* self, void* arg0)",
+  "summary": "Serializes AxisDefineSensorData fields and axis pair list into an archive node.",
+  "fields": [
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x14",
+      "type": "char[0x1C]",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x154",
+      "type": "char[0x1C]",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x180",
+      "type": "char[0x1C]",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x1DC",
+      "type": "uint32_t",
+      "name": "field_0x1dc"
+    },
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x1E0",
+      "type": "uint32_t",
+      "name": "field_0x1e0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:03:18Z"
+}
