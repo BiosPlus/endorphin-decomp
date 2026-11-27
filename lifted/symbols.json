@@ -34036,6 +34036,13 @@
     "summary": "If the child pointer at +0x2C4 is non-null, tail-dispatch to its vtable slot at +0x3C; otherwise return the byte at +0x1F2.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005CFF60": {
+    "name": "Unknown_ComputeTransformedVec4_005CFF60",
+    "class": "Unknown",
+    "signature": "void fn_005CFF60(void* self)",
+    "summary": "Gets a 16-float matrix from the embedded object at +0x04 (vtable slot 0x14), transforms it with a negated float at +0x1F4 via sub_0053B470 and Vector4Add, and copies the resulting 4 floats into +0x274.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005D05B0": {
     "name": "Unknown::wrapVirtualFloatCall_005D05B0",
     "class": "Unknown",

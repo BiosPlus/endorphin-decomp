@@ -42,6 +42,7 @@ extern void __thiscall fn_005CF3E0(void* self) {
 } // namespace lift_0048DE30
 } // namespace lift_005CF3E0
 #include <cstddef>
+#include <cstring>
 
 // [0x005CF930] sub_005CF930 (14 bytes)
 namespace lift_005CF930 {
@@ -1617,3 +1618,52 @@ void __thiscall sub_005C3EA0(void* self, uint32_t index) {
     ext_00924FDC(dst, src);
 }
 } // namespace lift_005C3EA0
+
+// [0x005CFF60] sub_005CFF60 (117 bytes)
+namespace lift_005CFF60 {
+extern void* ext_0053B470(void* self, void* p, float f);
+// Known callee 0x00547080: Vector4Add_00547080 (Component-wise float addition of two 4-float vectors: out[i] = a[i] + b[i] for i in 0..3.)
+// The original call site consumes eax after the call, so the result pointer is used.
+extern float* ext_00547080(const float* a, float* out, const float* b);
+extern int mem_00B40644;
+
+// @name Unknown_ComputeTransformedVec4_005CFF60
+// @class Unknown
+// @summary Gets a 16-float matrix from the embedded object at +0x04 (vtable slot 0x14), transforms it with a negated float at +0x1F4 via sub_0053B470 and Vector4Add, and copies the resulting 4 floats into +0x274.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x1F4 float field_0x1F4
+// @field Unknown +0x274 float field_0x274
+// @field Unknown +0x278 float field_0x278
+// @field Unknown +0x27C float field_0x27C
+// @field Unknown +0x280 float field_0x280
+void fn_005CFF60(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    // Embedded sub-object at self+0x04: its vptr is at +0, slot at vptr+0x14 (thiscall, one int arg).
+    void* sub = base + 0x04;
+    void** vptr = *reinterpret_cast<void***>(sub);
+    using MatrixGetFn = float* (*)(void* thisPtr, int32_t arg);
+    void* slot = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vptr) + 0x14);
+    MatrixGetFn getMatrix = reinterpret_cast<MatrixGetFn>(slot);
+    const float* src = getMatrix(sub, static_cast<int32_t>(mem_00B40644));
+
+    const float negated = -lift_field<float>(self, 0x1F4);
+
+    // Stack frame of the original function, addressed by the same offsets.
+    alignas(16) uint8_t frame[0x70] = {};
+    std::memcpy(frame + 0x2C, src, 16 * sizeof(float));  // local 4x4 copy
+
+    void* scratch = frame + 0x0C;
+    void* thisArg = frame + 0x4C;                           // points into the copied matrix
+    void* rA = ext_0053B470(thisArg, scratch, negated);
+
+    float* out = reinterpret_cast<float*>(frame + 0x14);
+    const float* a = reinterpret_cast<const float*>(frame + 0x54);
+    float* result = ext_00547080(a, out, static_cast<const float*>(rA));
+
+    lift_field<float>(self, 0x274) = result[0];
+    lift_field<float>(self, 0x278) = result[1];
+    lift_field<float>(self, 0x27C) = result[2];
+    lift_field<float>(self, 0x280) = result[3];
+}
+} // namespace lift_005CFF60

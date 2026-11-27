@@ -1,0 +1,52 @@
+{
+  "va": "0x005CFF60",
+  "size": 117,
+  "orig_symbol": "sub_005CFF60",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "Unknown_ComputeTransformedVec4_005CFF60",
+  "class": "Unknown",
+  "signature": "void fn_005CFF60(void* self)",
+  "summary": "Gets a 16-float matrix from the embedded object at +0x04 (vtable slot 0x14), transforms it with a negated float at +0x1F4 via sub_0053B470 and Vector4Add, and copies the resulting 4 floats into +0x274.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1F4",
+      "type": "float",
+      "name": "field_0x1F4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x274",
+      "type": "float",
+      "name": "field_0x274"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x278",
+      "type": "float",
+      "name": "field_0x278"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x27C",
+      "type": "float",
+      "name": "field_0x27C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x280",
+      "type": "float",
+      "name": "field_0x280"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:07:21Z"
+}
