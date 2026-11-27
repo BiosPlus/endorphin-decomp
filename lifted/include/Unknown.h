@@ -172,6 +172,7 @@ struct Unknown_Fields {
     // +0x0   u32                      vtable_0x953D74  (evidence: 0x0052F7D0, 0x0052FD90, 0x005301F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_primary  (evidence: 0x0052F770) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable_primary  (evidence: 0x0052F3C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    vtable_ptr  (evidence: 0x007AB2F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_ptr  (evidence: 0x0053C4C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable_ptr  (evidence: 0x007AE190) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtbl  (evidence: 0x00462D50, 0x0048E190, 0x0048E270, 0x004BA0D0, 0x004FDE10, 0x00508C30, 0x00508D30, 0x00527310, 0x00609970) // CONFLICT: multiple definitions at +0x0

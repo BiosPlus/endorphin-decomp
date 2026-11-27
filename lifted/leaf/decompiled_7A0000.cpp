@@ -1522,3 +1522,29 @@ void* __thiscall fn_007AE190(void* self) {
     return self;
 }
 } // namespace lift_007AE190
+
+// [0x007AB2F0]
+namespace lift_007AB2F0 {
+// @name Unknown::construct_007AB2F0
+// @class Unknown
+// @summary Constructs the object: initializes the sub-object with two static arguments, sets the vtable pointer, then runs the reset helper.
+// @field Unknown +0x00 DWORD vtable_ptr
+
+DWORD ext_007853D0_ret_unused_placeholder;
+
+void* ext_007853D0(void* self, DWORD arg1, DWORD arg2, DWORD arg3);
+void ext_007AB720(void* self);
+
+void* fn_007AB2F0(void* self) {
+    // Sub-object initialization (original pushes 0x2, 0xab07ac, 0xab07b4 and calls ext_007853D0 with this).
+    ext_007853D0(self, 0x00AB07B4, 0x00AB07AC, 2);
+
+    // Set vtable pointer at +0x00.
+    *reinterpret_cast<DWORD*>(self) = 0x00998398;
+
+    // Reset helper (tail-called in the original).
+    ext_007AB720(self);
+
+    return self;
+}
+} // namespace lift_007AB2F0
