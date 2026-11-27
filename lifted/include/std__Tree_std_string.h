@@ -8,7 +8,7 @@
 // Recovered field layout for std::_Tree_std_string:
 namespace lifted_layout {
 struct std__Tree_std_string_Fields {
-    // +0x4   void*                    myhead  (evidence: 0x00489E10)
-    // +0x8   uint32_t                 mysize  (evidence: 0x00489E10)
+    // +0x4   void*                    myhead  (evidence: 0x00489E10, 0x005A2900, 0x005ADE30, 0x005AE1B0)
+    // +0x8   uint32_t                 mysize  (evidence: 0x00489E10, 0x005A2900, 0x005ADE30, 0x005AE1B0)
 };
 } // namespace lifted_layout

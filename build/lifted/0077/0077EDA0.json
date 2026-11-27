@@ -1,0 +1,22 @@
+{
+  "va": "0x0077EDA0",
+  "size": 208,
+  "orig_symbol": "sub_0077EDA0",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "sub_0077EDA0",
+  "class": "Unknown",
+  "signature": "extern void __thiscall fn_0077EDA0(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x0077E760 (Unknown::configureMaterial_0077E760).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "void*",
+      "name": "field_0xAC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:19:28Z"
+}

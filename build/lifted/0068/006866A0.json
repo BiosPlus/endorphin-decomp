@@ -1,0 +1,21 @@
+{
+  "va": "0x006866A0",
+  "size": 112,
+  "orig_symbol": "sub_006866A0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_006866A0",
+  "signature": "DWORD __stdcall fn_006866A0(void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00427FE0 (checkBoundedIndexOrThrow_00427FE0).",
+  "fields": [
+    {
+      "class": "arg",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:19:28Z"
+}

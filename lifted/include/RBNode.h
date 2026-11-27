@@ -8,11 +8,11 @@
 // Recovered field layout for RBNode:
 namespace lifted_layout {
 struct RBNode_Fields {
-    // +0x0   RBNode*                  left  (evidence: 0x00489E10)
-    // +0x4   RBNode*                  parent  (evidence: 0x00489E10)
-    // +0x8   RBNode*                  right  (evidence: 0x00489E10)
-    // +0xC   char                     key_str  (evidence: 0x00489E10)
-    // +0x68  uint8_t                  color  (evidence: 0x00489E10)
-    // +0x69  uint8_t                  is_nil  (evidence: 0x00489E10)
+    // +0x0   RBNode*                  left  (evidence: 0x00489E10, 0x005A2900, 0x005ADE30, 0x005AE1B0)
+    // +0x4   RBNode*                  parent  (evidence: 0x00489E10, 0x005A2900, 0x005ADE30, 0x005AE1B0)
+    // +0x8   RBNode*                  right  (evidence: 0x00489E10, 0x005A2900, 0x005ADE30, 0x005AE1B0)
+    // +0xC   char                     key_str  (evidence: 0x00489E10, 0x005A2900, 0x005ADE30, 0x005AE1B0)
+    // +0x68  uint8_t                  color  (evidence: 0x00489E10, 0x005A2900, 0x005ADE30, 0x005AE1B0)
+    // +0x69  uint8_t                  is_nil  (evidence: 0x00489E10, 0x005A2900, 0x005ADE30, 0x005AE1B0)
 };
 } // namespace lifted_layout

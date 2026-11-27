@@ -43966,6 +43966,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00479620 (ResolveOrThrowMissing).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A2900": {
+    "name": "sub_005A2900",
+    "class": "std::_Tree_std_string",
+    "signature": "void* fn_005A2900(void* self, void* out_iter, void* it_proxy, void* it_node)",
+    "summary": "Auto-lifted identical-shape clone of 0x00489E10 (std::_Tree_std_string::erase).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A2BD0": {
     "name": "DestroyNodeChain",
     "signature": "void __thiscall ext_005A2BD0(void* self, void* node)",
@@ -44832,6 +44839,13 @@
     "summary": "Fills a range [first, last) with an 8-byte value pointed to by val.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005ADE30": {
+    "name": "sub_005ADE30",
+    "class": "std::_Tree_std_string",
+    "signature": "void* fn_005ADE30(void* self, void* out_iter, void* it_proxy, void* it_node)",
+    "summary": "Auto-lifted identical-shape clone of 0x00489E10 (std::_Tree_std_string::erase).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AE100": {
     "name": "sub_005AE100",
     "class": "TreeMap",
@@ -44844,6 +44858,13 @@
     "class": "UnknownNode",
     "signature": "void __thiscall fn_005AE170(void* self, void* arg)",
     "summary": "Walks a linked chain of nodes via the +0x00 link, recursing into the +0x08 child and destroying each node's +0x0C string until a node with flag +0x29 set is reached.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005AE1B0": {
+    "name": "sub_005AE1B0",
+    "class": "std::_Tree_std_string",
+    "signature": "void* fn_005AE1B0(void* self, void* out_iter, void* it_proxy, void* it_node)",
+    "summary": "Auto-lifted identical-shape clone of 0x00489E10 (std::_Tree_std_string::erase).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005AE480": {
@@ -79088,6 +79109,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0060F3B0 (sub_0060F3B0).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x006866A0": {
+    "name": "sub_006866A0",
+    "signature": "DWORD __stdcall fn_006866A0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00427FE0 (checkBoundedIndexOrThrow_00427FE0).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00686740": {
     "name": "sub_00686740",
     "signature": "__stdcall std::uint8_t* fn_00686740(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
@@ -101119,6 +101146,41 @@
     "class": "Unknown",
     "signature": "extern \"C\" void __thiscall fn_0077E760(void* self, void* arg)",
     "summary": "Configures a \"Material\" entry on the sub-object at +0xAC+0x4 using properties from the passed object.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077E880": {
+    "name": "sub_0077E880",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_0077E880(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0077E760 (Unknown::configureMaterial_0077E760).",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077E9A0": {
+    "name": "sub_0077E9A0",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_0077E9A0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0077E760 (Unknown::configureMaterial_0077E760).",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077EAB0": {
+    "name": "sub_0077EAB0",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_0077EAB0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0077E760 (Unknown::configureMaterial_0077E760).",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077EBC0": {
+    "name": "sub_0077EBC0",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_0077EBC0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0077E760 (Unknown::configureMaterial_0077E760).",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077EDA0": {
+    "name": "sub_0077EDA0",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_0077EDA0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0077E760 (Unknown::configureMaterial_0077E760).",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
   "0x0077F010": {

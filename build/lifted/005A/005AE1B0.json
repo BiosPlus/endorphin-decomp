@@ -1,0 +1,64 @@
+{
+  "va": "0x005AE1B0",
+  "size": 709,
+  "orig_symbol": "sub_005AE1B0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005AE1B0",
+  "class": "std::_Tree_std_string",
+  "signature": "void* fn_005AE1B0(void* self, void* out_iter, void* it_proxy, void* it_node)",
+  "summary": "Auto-lifted identical-shape clone of 0x00489E10 (std::_Tree_std_string::erase).",
+  "fields": [
+    {
+      "class": "std::_Tree_std_string",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "myhead"
+    },
+    {
+      "class": "std::_Tree_std_string",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "mysize"
+    },
+    {
+      "class": "RBNode",
+      "offset": "+0x0",
+      "type": "RBNode*",
+      "name": "left"
+    },
+    {
+      "class": "RBNode",
+      "offset": "+0x4",
+      "type": "RBNode*",
+      "name": "parent"
+    },
+    {
+      "class": "RBNode",
+      "offset": "+0x8",
+      "type": "RBNode*",
+      "name": "right"
+    },
+    {
+      "class": "RBNode",
+      "offset": "+0xC",
+      "type": "char",
+      "name": "key_str"
+    },
+    {
+      "class": "RBNode",
+      "offset": "+0x68",
+      "type": "uint8_t",
+      "name": "color"
+    },
+    {
+      "class": "RBNode",
+      "offset": "+0x69",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:19:28Z"
+}
