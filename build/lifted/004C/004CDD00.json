@@ -1,0 +1,22 @@
+{
+  "va": "0x004CDD00",
+  "size": 114,
+  "orig_symbol": "sub_004CDD00",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "Unknown::ForwardStringToStaticObjectChild_004CDD00",
+  "class": "Unknown",
+  "signature": "void fn_004CDD00(void* self, const char* name)",
+  "summary": "Resolves the static object via ext_004CAE30, builds a std::string from the argument, and forwards it with the object slot to ext_00475960 using the first field of self as the receiver.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:24:08Z"
+}

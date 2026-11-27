@@ -1454,3 +1454,25 @@ void* fn_004CD9F0(void* self) {
     return self;
 }
 } // namespace lift_004CD9F0
+
+// [0x004CDD00] sub_004CDD00 (114 bytes)
+namespace lift_004CDD00 {
+// Known callee 0x004CAE30: initStaticObjectOnce_004CAE30 (One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.)
+extern void* ext_004CAE30();
+// Callee 0x00475960 (211B, unlifted): thiscall-style helper taking (this, const std::string&, void*& slot, int flag).
+extern void ext_00475960(void* thisPtr, std::string* name, void** slot, int flag);
+// MSVCP80 std::string ctor/dtor import slots (0x924FE4 / 0x924FF4); replaced by std::string below.
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name Unknown::ForwardStringToStaticObjectChild_004CDD00
+// @summary Resolves the static object via ext_004CAE30, builds a std::string from the argument, and forwards it with the object slot to ext_00475960 using the first field of self as the receiver.
+// @field Unknown +0x00 void* field_0x00
+void fn_004CDD00(void* self, const char* name) {
+    (void)&mem_00924FE4;  // std::string ctor import (replaced by std::string)
+    (void)&mem_00924FF4;  // std::string dtor import (replaced by std::string dtor)
+    void* obj = ext_004CAE30();
+    std::string tmp(name);
+    ext_00475960(lift_field<void*>(self, 0), &tmp, &obj, 1);
+}
+} // namespace lift_004CDD00

@@ -20976,6 +20976,13 @@
     "summary": "Builds a temporary std::string from the argument, calls ext_00475960 on the object reached through this[0] with the global object from ext_004CADD0, then destroys the string.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004CDD00": {
+    "name": "Unknown::ForwardStringToStaticObjectChild_004CDD00",
+    "class": "Unknown",
+    "signature": "void fn_004CDD00(void* self, const char* name)",
+    "summary": "Resolves the static object via ext_004CAE30, builds a std::string from the argument, and forwards it with the object slot to ext_00475960 using the first field of self as the receiver.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CDE30": {
     "name": "sub_004CDE30",
     "signature": "void __fastcall fn_004CDE30(void* self)",
