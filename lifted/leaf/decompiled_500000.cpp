@@ -2453,3 +2453,31 @@ void* __thiscall fn_00505290(void* self, const void* src) {
     return self;
 }
 } // namespace lift_00505290
+
+// [0x00504AA0]
+namespace lift_00504AA0 {
+// @name allocate_40byte_elements
+// @summary Allocates count * 40 bytes via operator new, throwing std::bad_alloc on 32-bit overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void* mem_00925130;
+
+extern void* fn_00504AA0(uint32_t count) {
+    if (count > 0) {
+        if ((0xFFFFFFFFu / count) < 0x28u) {
+            const char* msg = nullptr;
+            uint32_t exc[3] = {0, 0, 0};
+            using ctor_t = void(__thiscall*)(void*, const char* const*);
+            reinterpret_cast<ctor_t>(mem_00925130)(exc, &msg);
+            exc[0] = 0x00928EC0u;
+            ext_006A6DD2(exc, reinterpret_cast<void*>(0x009CDF94u));
+        }
+    } else {
+        count = 0;
+    }
+
+    return ext_006A5C62(count * 0x28u);
+}
+} // namespace lift_00504AA0
