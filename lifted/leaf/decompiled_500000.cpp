@@ -4047,7 +4047,7 @@ namespace {
 constexpr std::size_t kStringSize = 0x1C;
 constexpr std::size_t kExceptionSize = 0x70;
 // ThrowInfo for StringExceptionWithMember (address constant from the original push).
-const void* const kThrowInfo = reinterpret_cast<const void*>(static_cast<std::uintptr_t>(0x009E9404u));
+const void* const kThrowInfo = reinterpret_cast<const void*>(static_cast<std::size_t>(0x009E9404u));
 
 using StringCopyCtor = void* (__thiscall*)(void* self, const void* other);
 } // namespace
