@@ -1,0 +1,40 @@
+{
+  "va": "0x0060F640",
+  "size": 89,
+  "orig_symbol": "NMData::CompoundSensorData::vfunc_62",
+  "src_path": "src/NMData/CompoundSensorData.cpp",
+  "lifted_path": "lifted/NMData/CompoundSensorData.cpp",
+  "name": "NMData::CompoundSensorData::vfunc_62",
+  "class": "NMData::CompoundSensorData",
+  "signature": "extern \"C\" void __thiscall fn_0060F640(uint8_t* self)",
+  "summary": "Resets base sensor data, clears the vector at +0x180, and clears the string at +0x190.",
+  "fields": [
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x180",
+      "type": "uint32_t",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x184",
+      "type": "uint32_t",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x188",
+      "type": "uint32_t",
+      "name": "field_0x188"
+    },
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x190",
+      "type": "uint8_t",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:37:44Z"
+}

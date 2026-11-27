@@ -11,5 +11,9 @@
 namespace lifted_layout {
 struct NMData_CompoundSensorData_Fields {
     // +0x154 void*                    field_0x154  (evidence: 0x006108F0)
+    // +0x180 uint32_t                 field_0x180  (evidence: 0x0060F640)
+    // +0x184 uint32_t                 field_0x184  (evidence: 0x0060F640)
+    // +0x188 uint32_t                 field_0x188  (evidence: 0x0060F640)
+    // +0x190 uint8_t                  field_0x190  (evidence: 0x0060F640)
 };
 } // namespace lifted_layout
