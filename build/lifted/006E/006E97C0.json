@@ -1,0 +1,28 @@
+{
+  "va": "0x006E97C0",
+  "size": 128,
+  "orig_symbol": "sub_006E97C0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::acquireOrInsertValue_006E97C0",
+  "class": "Unknown",
+  "signature": "bool Unknown_acquireOrInsertValue_006E97C0(void* self, uint32_t value)",
+  "summary": "Searches the pointer array at +0x8C (count at +0x7C) for an object whose first dword equals value; if found, bumps its refcount at +0x04 and returns true. Otherwise allocates and initializes a new object via SetValueAndFlag, appends its pointer to the array, and returns true (the pointer is null if allocation failed).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "void**",
+      "name": "elements"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:00:45Z"
+}

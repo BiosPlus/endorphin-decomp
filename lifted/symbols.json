@@ -70256,6 +70256,13 @@
     "summary": "Returns the index-th item in the array at +0x8c matching the given type (or any type if type is 0).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E97C0": {
+    "name": "Unknown::acquireOrInsertValue_006E97C0",
+    "class": "Unknown",
+    "signature": "bool Unknown_acquireOrInsertValue_006E97C0(void* self, uint32_t value)",
+    "summary": "Searches the pointer array at +0x8C (count at +0x7C) for an object whose first dword equals value; if found, bumps its refcount at +0x04 and returns true. Otherwise allocates and initializes a new object via SetValueAndFlag, appends its pointer to the array, and returns true (the pointer is null if allocation failed).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E99C0": {
     "name": "ConstructObject_006E99C0",
     "class": "Unknown",

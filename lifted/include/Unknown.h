@@ -1309,6 +1309,7 @@ struct Unknown_Fields {
     // +0x78  uint8_t                  field_0x78[]  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x78
     // +0x78  float                    matrix4x4_symmetric  (evidence: 0x008044A0) // CONFLICT: multiple definitions at +0x78
     // +0x78  void                     member_78  (evidence: 0x00447F20) // CONFLICT: multiple definitions at +0x78
+    // +0x7C  int32_t                  count  (evidence: 0x006E97C0) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  float                    f7c  (evidence: 0x006465F0) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  DWORD                    field_0x7C  (evidence: 0x00540F60, 0x0079DAC0) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  float                    field_0x7C  (evidence: 0x0060CD40) // CONFLICT: multiple definitions at +0x7C
@@ -1373,6 +1374,7 @@ struct Unknown_Fields {
     // +0x88  uint32_t                 lastIndex  (evidence: 0x00530290) // CONFLICT: multiple definitions at +0x88
     // +0x88  float                    vec4_z  (evidence: 0x00547AF0) // CONFLICT: multiple definitions at +0x88
     // +0x89  uint8_t                  field_0x89  (evidence: 0x004408B0, 0x00441C10)
+    // +0x8C  void**                   elements  (evidence: 0x006E97C0) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  float                    f8c  (evidence: 0x006465F0) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  int32_t                  field_0x8C  (evidence: 0x007CDB70) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  uint8_t                  field_0x8C  (evidence: 0x00410370) // CONFLICT: multiple definitions at +0x8C

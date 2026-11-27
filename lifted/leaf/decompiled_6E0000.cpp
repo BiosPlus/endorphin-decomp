@@ -2178,3 +2178,43 @@ void fn_006E9BB0(void* self, const char* s) {
     reinterpret_cast<InsertAtFn>(ext_006D2170)(array, index, &result);
 }
 } // namespace lift_006E9BB0
+
+// [0x006E97C0] sub_006E97C0 (128 bytes)
+namespace lift_006E97C0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762; cdecl, one size argument, returns a pointer; used here as allocator)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+// Known callee 0x006E8A20: Unknown::SetValueAndFlag (Stores a 32-bit argument at +0x00, sets the flag word at +0x04 to 1, and returns this.)
+extern void* ext_006E8A20(void* self, uint32_t value);
+
+// @name Unknown::acquireOrInsertValue_006E97C0
+// @class Unknown
+// @summary Searches the pointer array at +0x8C (count at +0x7C) for an object whose first dword equals value; if found, bumps its refcount at +0x04 and returns true. Otherwise allocates and initializes a new object via SetValueAndFlag, appends its pointer to the array, and returns true (the pointer is null if allocation failed).
+// @field Unknown +0x7C int32_t count
+// @field Unknown +0x8C void** elements
+bool Unknown_acquireOrInsertValue_006E97C0(void* self, uint32_t value) {
+    const int32_t count = lift_field<int32_t>(self, 0x7C);
+    void** elements = lift_field<void**>(self, 0x8C);
+
+    for (int32_t i = 0; i < count; ++i) {
+        void* obj = elements[i];
+        if (lift_field<uint32_t>(obj, 0) == value) {
+            // Found: increment refcount at +0x04 and report success.
+            lift_field<uint32_t>(obj, 4) += 1;
+            return true;
+        }
+    }
+
+    // Not found: allocate (8 bytes) and initialize; a null result is stored as-is.
+    void* newObj = ext_006A5C62(8);
+    void* result = nullptr;
+    if (newObj != nullptr) {
+        result = ext_006E8A20(newObj, value);
+    }
+
+    // Append pointer to the array at index == count (clamped inside InsertAt).
+    ext_006D2170(static_cast<uint8_t*>(self) + 0x7C, count, &result);
+    return true;
+}
+} // namespace lift_006E97C0
