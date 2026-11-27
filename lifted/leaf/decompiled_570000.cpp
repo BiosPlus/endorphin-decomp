@@ -2721,3 +2721,39 @@ void __thiscall fn_0057FEC0(void* self, void* val) {
     ext_0057FBA0(self, iter_buf, self, end, val);
 }
 } // namespace lift_0057FEC0
+
+// [0x0057CCE0]
+namespace lift_0057CCE0 {
+struct MapIter_0057CCE0 { void* container; void* node; };
+
+extern void* __thiscall ext_0057CC10(void* self, MapIter_0057CCE0* out, uint32_t key);
+extern uint8_t mem_00925134[];
+
+// @name MapTree::findValue
+// @class MapTree
+// @summary Finds key in tree; returns pointer to node value (+0x1c) or null if end.
+// @field MapTree +0x04 void* field_0x04
+// @field MapTree +0x08 void* head
+void* __thiscall fn_0057CCE0(void* self, uint32_t key)
+{
+    typedef void (__cdecl *InvalidParamFn)(void);
+    MapIter_0057CCE0 it;
+    ext_0057CC10(self, &it, key);
+    uint8_t* s = (uint8_t*)self;
+    void* end = lift_field<void*>(s, 0x8);
+    InvalidParamFn invalid = *(InvalidParamFn*)mem_00925134;
+    if ((uintptr_t)lift_field<void*>(s, 0x4) > (uintptr_t)end)
+        invalid();
+    uint8_t* cont = (uint8_t*)it.container;
+    if (cont == nullptr || cont != s)
+        invalid();
+    uint8_t* node = (uint8_t*)it.node;
+    if (node == (uint8_t*)end)
+        return nullptr;
+    if (cont == nullptr)
+        invalid();
+    if ((uintptr_t)node >= (uintptr_t)lift_field<void*>(cont, 0x8))
+        invalid();
+    return node + 0x1c;
+}
+} // namespace lift_0057CCE0

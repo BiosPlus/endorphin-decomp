@@ -40774,6 +40774,13 @@
     "summary": "Copy-constructs `count` 0x3C-byte elements from `src` into the array at `begin`; on exception, destroys already-constructed elements and rethrows.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057CCE0": {
+    "name": "MapTree::findValue",
+    "class": "MapTree",
+    "signature": "void* __thiscall fn_0057CCE0(void* self, uint32_t key)",
+    "summary": "Finds key in tree; returns pointer to node value (+0x1c) or null if end.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057CEA0": {
     "name": "CopyConstructElementRangeEnd",
     "signature": "__stdcall uint8_t* fn_0057CEA0(uint8_t* begin, uint32_t count, const void* src)",
