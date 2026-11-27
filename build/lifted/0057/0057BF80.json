@@ -1,0 +1,13 @@
+{
+  "va": "0x0057BF80",
+  "size": 141,
+  "orig_symbol": "sub_0057BF80",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "copyElementRangeWithCleanup_0x3C",
+  "signature": "void* fn_0057BF80(uint8_t* first, uint8_t* last, uint8_t* dst)",
+  "summary": "Copy-constructs 0x3C-byte elements from [first,last) into dst (skipping null dst slots), returns the new end; on exception destroys the already-built elements and rethrows.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:28:22Z"
+}

@@ -2127,3 +2127,34 @@ bool __thiscall fn_00570700(void* self, void* marker, void* stream) {
     return true;
 }
 } // namespace lift_00570700
+
+// [0x0057BF80] sub_0057BF80 (141 bytes)
+namespace lift_0057BF80 {
+// Known callee 0x005541A0: sub_005541A0_dtor (Destructor that destroys std::string members at +0x20 and +0x04)
+extern void ext_005541A0(void* self);
+// Known callee 0x005541F0: sub_005541F0_copy_ctor (Copy constructor for a struct with two uint8_t flags and two std::string fields)
+extern void* ext_005541F0(void* self, const void* src);
+
+// @name copyElementRangeWithCleanup_0x3C
+// @summary Copy-constructs 0x3C-byte elements from [first,last) into dst (skipping null dst slots), returns the new end; on exception destroys the already-built elements and rethrows.
+void* fn_0057BF80(uint8_t* first, uint8_t* last, uint8_t* dst) {
+    constexpr std::ptrdiff_t kStride = 0x3C;
+    uint8_t* const begin = dst;
+    uint8_t* cur = dst;
+    try {
+        while (first != last) {
+            if (cur != nullptr) {
+                ext_005541F0(cur, first);
+            }
+            cur += kStride;
+            first += kStride;
+        }
+    } catch (...) {
+        for (uint8_t* p = begin; p != cur; p += kStride) {
+            ext_005541A0(p);
+        }
+        throw;
+    }
+    return cur;
+}
+} // namespace lift_0057BF80

@@ -30010,6 +30010,12 @@
     "summary": "Binary search (lower_bound) for a 0x2c-byte element by its leading std::string",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057BF80": {
+    "name": "copyElementRangeWithCleanup_0x3C",
+    "signature": "void* fn_0057BF80(uint8_t* first, uint8_t* last, uint8_t* dst)",
+    "summary": "Copy-constructs 0x3C-byte elements from [first,last) into dst (skipping null dst slots), returns the new end; on exception destroys the already-built elements and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057C010": {
     "name": "sub_0057C010",
     "signature": "extern uint32_t fn_0057C010(uint32_t first, uint32_t last, uint32_t dest)",
