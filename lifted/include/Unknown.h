@@ -122,6 +122,7 @@ struct Unknown_Fields {
     // +0x0   <unknown> (not accessed directly; the frame-local at [ebp-0x18] is passed as the release target)  (evidence: 0x00559A30) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to a sub-object; dereferenced to reach the target)  (evidence: 0x006BB780) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* obj (node's object pointer; vtable dispatched as this)  (evidence: 0x006FACA0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int32_t                  total  (evidence: 0x007F0DA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   double                   value  (evidence: 0x006E0050) // CONFLICT: multiple definitions at +0x0
     // +0x0   long long                value  (evidence: 0x006DAE00) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 value  (evidence: 0x0041CF00) // CONFLICT: multiple definitions at +0x0
@@ -186,6 +187,7 @@ struct Unknown_Fields {
     // +0x4   void* next (next node in chain)  (evidence: 0x006FACA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 child  (evidence: 0x0071CA70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child  (evidence: 0x00528AE0, 0x0052F7D0, 0x005DA150, 0x005DA170, 0x006305A0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    childListA  (evidence: 0x007F0DA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    childVtbl  (evidence: 0x005865D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child_a  (evidence: 0x00586440) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    container  (evidence: 0x00524A60) // CONFLICT: multiple definitions at +0x4
@@ -321,6 +323,7 @@ struct Unknown_Fields {
     // +0x8   char* field_0x08 (owned string pointer, replaced on each call)  (evidence: 0x007110C0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (payload passed to recursive call)  (evidence: 0x0052AC70) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    child  (evidence: 0x0041C710, 0x00441020, 0x0044B660, 0x0044B680, 0x0044B760, 0x0053A5E0, 0x005A2BD0, 0x00682DE0, 0x00687230) // CONFLICT: multiple definitions at +0x8
+    // +0x8   int32_t                  childCountA  (evidence: 0x007F0DA0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    child_b  (evidence: 0x00586440) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  chunkSize  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  count  (evidence: 0x00729A00) // CONFLICT: multiple definitions at +0x8
@@ -409,6 +412,7 @@ struct Unknown_Fields {
     // +0xC   void*                    capacity  (evidence: 0x00503BC0, 0x0050B960, 0x0050C4D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 capacity_limit  (evidence: 0x0085BB40) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    child  (evidence: 0x0071B0D0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    childListB  (evidence: 0x007F0DA0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 container  (evidence: 0x0071CA70) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 counter  (evidence: 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
@@ -499,6 +503,7 @@ struct Unknown_Fields {
     // +0x10  uint32_t field_0x10 (bitfield; bits 1-3 are the mode bits)  (evidence: 0x006C9C40) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t field_0x10 (one-shot byte)  (evidence: 0x00640CD0, 0x00648A20) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    child  (evidence: 0x00441020, 0x0044B780, 0x0044B7A0, 0x0044B7C0, 0x006722B0, 0x00672490, 0x00675D60) // CONFLICT: multiple definitions at +0x10
+    // +0x10  int32_t                  childCountB  (evidence: 0x007F0DA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 count  (evidence: 0x00796660, 0x007C1F90) // CONFLICT: multiple definitions at +0x10
     // +0x10  void**                   data_10  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  float field_0x10 (multiplied into the divisor)  (evidence: 0x00554D40) // CONFLICT: multiple definitions at +0x10
@@ -1535,6 +1540,7 @@ struct Unknown_Fields {
     // +0x153 uint8_t                  stopRequested  (evidence: 0x00480C30) // CONFLICT: multiple definitions at +0x153
     // +0x154 DWORD                    child  (evidence: 0x00433290, 0x005B6780, 0x005B7040, 0x005B7240, 0x005B7280, 0x005B72C0, 0x005C30F0, 0x005CE8F0) // CONFLICT: multiple definitions at +0x154
     // +0x154 uint16_t                 field_0x154  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0x154
+    // +0x154 int32_t                  objIndexB  (evidence: 0x007F0DA0) // CONFLICT: multiple definitions at +0x154
     // +0x156 uint8_t                  field_0x156  (evidence: 0x006D6CB0)
     // +0x158 void* field_0x158 (sub-object base; +0x30 pointer, +0x24 argument address)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0x158
     // +0x158 DWORD                    field_0x158  (evidence: 0x004275C0, 0x0042FC20, 0x0042FEC0, 0x0048ABF0, 0x004CCAF0, 0x004CCB00, 0x0050AD20, 0x0050F180, 0x005B7040, 0x005B72E0, 0x005C3170, 0x005CE910, 0x005CE920, 0x006C30F0, 0x00726690) // CONFLICT: multiple definitions at +0x158
@@ -1696,7 +1702,8 @@ struct Unknown_Fields {
     // +0x210 DWORD                    field_0x210  (evidence: 0x004A57F0, 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x210
     // +0x210 uint32_t                 field_0x210  (evidence: 0x007CD510, 0x007CD530) // CONFLICT: multiple definitions at +0x210
     // +0x214 DWORD                    field_0x214  (evidence: 0x0070AC00, 0x0070AD00)
-    // +0x218 uint32_t                 ownerIndex  (evidence: 0x007F0B00)
+    // +0x218 int32_t                  objIndexA  (evidence: 0x007F0DA0) // CONFLICT: multiple definitions at +0x218
+    // +0x218 uint32_t                 ownerIndex  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x218
     // +0x220 uint32_t                 field_0x220  (evidence: 0x007990F0)
     // +0x230 uint8_t                  field_0x230  (evidence: 0x00644F00) // CONFLICT: multiple definitions at +0x230
     // +0x230 void* field_0x230 (embedded CWnd passed to getWindowTextAsFloat)  (evidence: 0x0045B580, 0x0045B620) // CONFLICT: multiple definitions at +0x230

@@ -714,3 +714,61 @@ void fn_007FC5E0(const float* a, const float* b, float* out) {
     }
 }
 } // namespace lift_007FC5E0
+
+// [0x007F0DA0] sub_007F0DA0 (138 bytes)
+namespace lift_007F0DA0 {
+// @name Unknown::moveListsAndAccumulate
+// @summary Re-parents the two 20-byte-element child lists of element i into element j, tagging each moved object with j, then folds element i's totals into element j.
+// @field Unknown +0x00 int32_t total
+// @field Unknown +0x04 void* childListA
+// @field Unknown +0x08 int32_t childCountA
+// @field Unknown +0x0C void* childListB
+// @field Unknown +0x10 int32_t childCountB
+// @field Unknown +0x154 int32_t objIndexB
+// @field Unknown +0x218 int32_t objIndexA
+void fn_007F0DA0(uint8_t** pBase, uint32_t i, uint32_t j) {
+    uint8_t* base = *pBase;
+    uint8_t* P = base + static_cast<size_t>(20u * i);
+    uint8_t* Q = base + static_cast<size_t>(20u * j);
+
+    // List A (P+0x04 -> Q+0x04). Each node: next @0, object @4.
+    {
+        uint8_t* head = lift_field<uint8_t*>(P, 0x04);
+        uint8_t* last = nullptr;
+        for (uint8_t* node = head; node != nullptr; node = lift_field<uint8_t*>(node, 0x00)) {
+            uint8_t* obj = lift_field<uint8_t*>(node, 0x04);
+            lift_field<int32_t>(obj, 0x218) = static_cast<int32_t>(j);
+            lift_field<int32_t>(Q, 0x08) += 1;
+            last = node;
+        }
+        if (last != nullptr) {
+            lift_field<uint8_t*>(last, 0x00) = lift_field<uint8_t*>(Q, 0x04);
+            lift_field<uint8_t*>(Q, 0x04) = head;
+        }
+    }
+
+    // List B (P+0x0C -> Q+0x0C).
+    {
+        uint8_t* head = lift_field<uint8_t*>(P, 0x0C);
+        uint8_t* last = nullptr;
+        for (uint8_t* node = head; node != nullptr; node = lift_field<uint8_t*>(node, 0x00)) {
+            uint8_t* obj = lift_field<uint8_t*>(node, 0x04);
+            lift_field<int32_t>(obj, 0x154) = static_cast<int32_t>(j);
+            lift_field<int32_t>(Q, 0x10) += 1;
+            last = node;
+        }
+        if (last != nullptr) {
+            lift_field<uint8_t*>(last, 0x00) = lift_field<uint8_t*>(Q, 0x0C);
+            lift_field<uint8_t*>(Q, 0x0C) = head;
+        }
+    }
+
+    lift_field<int32_t>(Q, 0x00) += lift_field<int32_t>(P, 0x00);
+
+    lift_field<int32_t>(P, 0x08) = 0;
+    lift_field<uint8_t*>(P, 0x04) = nullptr;
+    lift_field<int32_t>(P, 0x10) = 0;
+    lift_field<uint8_t*>(P, 0x0C) = nullptr;
+    lift_field<int32_t>(P, 0x00) = 0;
+}
+} // namespace lift_007F0DA0

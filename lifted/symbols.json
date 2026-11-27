@@ -82132,6 +82132,13 @@
     "summary": "Three-way compares the float at +0x58 of two objects reached through double-pointer handles; returns -1, 0, or 1.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F0DA0": {
+    "name": "Unknown::moveListsAndAccumulate",
+    "class": "Unknown",
+    "signature": "void fn_007F0DA0(uint8_t** pBase, uint32_t i, uint32_t j)",
+    "summary": "Re-parents the two 20-byte-element child lists of element i into element j, tagging each moved object with j, then folds element i's totals into element j.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F1480": {
     "name": "CPU::hasSSE",
     "class": "CPU",

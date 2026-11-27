@@ -1,0 +1,58 @@
+{
+  "va": "0x007F0DA0",
+  "size": 138,
+  "orig_symbol": "sub_007F0DA0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "Unknown::moveListsAndAccumulate",
+  "class": "Unknown",
+  "signature": "void fn_007F0DA0(uint8_t** pBase, uint32_t i, uint32_t j)",
+  "summary": "Re-parents the two 20-byte-element child lists of element i into element j, tagging each moved object with j, then folds element i's totals into element j.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "total"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "childListA"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "childCountA"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "childListB"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "childCountB"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x154",
+      "type": "int32_t",
+      "name": "objIndexB"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x218",
+      "type": "int32_t",
+      "name": "objIndexA"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:25:29Z"
+}
