@@ -24,9 +24,11 @@ struct Node_Fields {
     // +0x4   uint32_t                 right  (evidence: 0x007D48C0) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 counter_08  (evidence: 0x007837A0, 0x00788E50) // CONFLICT: multiple definitions at +0x8
     // +0x8   uintptr_t                field_0x08  (evidence: 0x004275C0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x006FAC10) // CONFLICT: multiple definitions at +0x8
     // +0x8   Node*                    next  (evidence: 0x004A58E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    next  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 parent  (evidence: 0x007D48C0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    parent  (evidence: 0x006FAD00) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t                  payload[0x44]  (evidence: 0x00673EA0) // CONFLICT: multiple definitions at +0x8
     // +0x8   Node*                    right  (evidence: 0x005ED330) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t field_0x08 (embedded subobject; only its address is taken)  (evidence: 0x0062B6F0) // CONFLICT: multiple definitions at +0x8
@@ -49,6 +51,9 @@ struct Node_Fields {
     // +0x20  void*                    field_0x20  (evidence: 0x00859AF0) // CONFLICT: multiple definitions at +0x20
     // +0x24  uintptr_t                children_vec  (evidence: 0x00567210)
     // +0x28  uint32_t                 field_0x28  (evidence: 0x005B8EA0)
+    // +0x34  uint8_t                  flags  (evidence: 0x006FAC10, 0x006FAD00)
+    // +0x3C  void*                    chainHead  (evidence: 0x006FAC10) // CONFLICT: multiple definitions at +0x3C
+    // +0x3C  void*                    childChain  (evidence: 0x006FAD00) // CONFLICT: multiple definitions at +0x3C
     // +0x51  uint8_t                  isNil  (evidence: 0x005ED330)
     // +0x59  uint8_t                  field_0x59  (evidence: 0x004275C0)
     // +0x7C  uint32_t                 children_begin  (evidence: 0x004461B0) // CONFLICT: multiple definitions at +0x7C

@@ -2492,3 +2492,74 @@ extern uint32_t __stdcall fn_006F69B0(uint32_t arg0) {
 }
 } // namespace lift_006F6E40
 } // namespace lift_006F69B0
+
+// [0x006FAC10]
+namespace lift_006FAC10 {
+// @name sub_006FAC10
+// @summary Dispatches virtual slot 15 to field_0x08 if present and flag 0x10 at +0x34 is clear, otherwise walks the node chain at +0x3c and invokes slot 15 on its head object.
+// @field Node +0x08 void* field_0x08
+// @field Node +0x34 uint8_t flags
+// @field Node +0x3c void* chainHead
+
+
+extern uint32_t __stdcall ext_006FACA0(void* node, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7);
+
+using Slot15Fn = uint32_t(__thiscall*)(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6);
+
+uint32_t __thiscall fn_006FAC10(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6) {
+    void* obj = lift_field<void*>(self, 0x08);
+    if (obj != nullptr && (lift_field<uint8_t>(self, 0x34) & 0x10) == 0) {
+        auto vtable = lift_field<void**>(obj, 0x00);
+        auto fn = reinterpret_cast<Slot15Fn>(vtable[0x3c / sizeof(void*)]);
+        return fn(obj, a1, a2, a3, a4, a5, a6);
+    }
+
+    void* chain = lift_field<void*>(self, 0x3c);
+    if (chain != nullptr) {
+        ext_006FACA0(lift_field<void*>(chain, 0x04), a1, a2, a3, a4, a5, a6);
+        void* headObj = lift_field<void*>(chain, 0x00);
+        auto vtable = lift_field<void**>(headObj, 0x00);
+        auto fn = reinterpret_cast<Slot15Fn>(vtable[0x3c / sizeof(void*)]);
+        fn(headObj, a1, a2, a3, a4, a5, a6);
+    }
+
+    return 1;
+}
+} // namespace lift_006FAC10
+
+// [0x006FAD00]
+namespace lift_006FAD00 {
+// @name Node::dispatchOrTraverseSlot14
+// @class Node
+// @summary Dispatches vtable slot 14 to parent (+0x08) if present and bit 0x10 of +0x34 is clear; otherwise traverses the child node chain (+0x3c) and invokes slot 14 on its head object, returning 1.
+// @field Node +0x08 void* parent
+// @field Node +0x34 uint8_t flags
+// @field Node +0x3c void* childChain
+
+
+extern uint32_t ext_006FAD90(void* node, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7);
+
+using Slot14Fn = uint32_t(__thiscall*)(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6);
+
+uint32_t __thiscall fn_006FAD00(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6) {
+    void* parent = lift_field<void*>(self, 0x08);
+    if (parent != nullptr && (lift_field<uint8_t>(self, 0x34) & 0x10) == 0) {
+        auto vtable = lift_field<uintptr_t*>(parent, 0x00);
+        auto fn = reinterpret_cast<Slot14Fn>(vtable[0x38 / sizeof(uintptr_t)]);
+        return fn(parent, a1, a2, a3, a4, a5, a6);
+    }
+
+    void* chain = lift_field<void*>(self, 0x3C);
+    if (chain != nullptr) {
+        void* next = lift_field<void*>(chain, 0x04);
+        ext_006FAD90(next, a1, a2, a3, a4, a5, a6);
+
+        void* obj = lift_field<void*>(chain, 0x00);
+        auto vtable = lift_field<uintptr_t*>(obj, 0x00);
+        auto fn = reinterpret_cast<Slot14Fn>(vtable[0x38 / sizeof(uintptr_t)]);
+        fn(obj, a1, a2, a3, a4, a5, a6);
+    }
+
+    return 1;
+}
+} // namespace lift_006FAD00

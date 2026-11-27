@@ -1,0 +1,33 @@
+{
+  "va": "0x006FAC10",
+  "size": 144,
+  "orig_symbol": "sub_006FAC10",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006FAC10",
+  "signature": "uint32_t __thiscall fn_006FAC10(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6)",
+  "summary": "Dispatches virtual slot 15 to field_0x08 if present and flag 0x10 at +0x34 is clear, otherwise walks the node chain at +0x3c and invokes slot 15 on its head object.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x34",
+      "type": "uint8_t",
+      "name": "flags"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "chainHead"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:44:03Z"
+}
