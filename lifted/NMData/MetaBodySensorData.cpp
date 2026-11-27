@@ -61,3 +61,67 @@ void fn_0060EA90(void* self, void* arg) {
     ext_0053F5F0(base + 0x1b8, &out);
 }
 } // namespace lift_0060EA90
+
+// [0x0060E6C0] NMData::MetaBodySensorData::vfunc_22 (228 bytes)
+namespace lift_0060E6C0 {
+extern void* __thiscall ext_006404E0(void* self, void* arg);
+extern void __thiscall ext_0060E590(void* self, void* arg);
+extern void* __thiscall ext_00640110(void* self, void* arg);
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+extern void ext_00427550(void* self, const char* name);
+// Known callee 0x00640A50: FormatAndAssignChildName (Formats the int argument into a 16-byte buffer with sprintf and assigns the result as the child name of the object referenced by the first argument.)
+extern void ext_00640A50(void* unused, int a1);
+extern uint32_t mem_00A9F268;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FEC;
+extern uint32_t mem_00A9F7F4;
+extern uint32_t mem_00A9F7FC;
+extern uint32_t mem_00A9F554;
+extern uint32_t mem_00A9F6D4;
+
+// @name NMData::MetaBodySensorData::vfunc_22
+// @class NMData::MetaBodySensorData
+// @summary Assigns child names from the non-empty string members (+0x180/+0x19c/+0x1bc) and the int at +0x1b8 onto objects looked up via sub-calls; returns a1.
+// @field NMData::MetaBodySensorData +0x180 std::string field_0x180
+// @field NMData::MetaBodySensorData +0x19c std::string field_0x19c
+// @field NMData::MetaBodySensorData +0x1b8 int32_t field_0x1b8
+// @field NMData::MetaBodySensorData +0x1bc std::string field_0x1bc
+void* fn_0060E6C0(void* self, void* a1) {
+    // MSVCP80 std::string member functions, called through their IAT slots (thiscall).
+    using CStrFn = const char* (__thiscall*)(void* self);
+    using EmptyFn = bool (__thiscall*)(void* self);
+    auto str_c_str = [](void* s) -> const char* {
+        return (*reinterpret_cast<CStrFn*>(&mem_00924FF0))(s);
+    };
+    auto str_empty = [](void* s) -> bool {
+        return (*reinterpret_cast<EmptyFn*>(&mem_00924FEC))(s);
+    };
+
+    void* const cfg = ext_006404E0(a1, reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00A9F268)));
+    ext_0060E590(self, cfg);
+
+    // Sets the child name of the object returned by ext_00640110(cfg, src) to the string at str_obj.
+    auto set_child_name = [&](void* str_obj, uint32_t src) {
+        void* obj = ext_00640110(cfg, reinterpret_cast<void*>(static_cast<uintptr_t>(src)));
+        const char* name = str_c_str(str_obj);
+        ext_00427550(&obj, name);
+    };
+
+    set_child_name(&lift_field<uint8_t>(self, 0x180), mem_00A9F7F4);
+
+    if (!str_empty(&lift_field<uint8_t>(self, 0x19c))) {
+        set_child_name(&lift_field<uint8_t>(self, 0x19c), mem_00A9F7FC);
+    }
+
+    if (!str_empty(&lift_field<uint8_t>(self, 0x1bc))) {
+        set_child_name(&lift_field<uint8_t>(self, 0x1bc), mem_00A9F554);
+    }
+
+    if (lift_field<int32_t>(self, 0x1b8) != 0) {
+        void* obj = ext_00640110(cfg, reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00A9F6D4)));
+        ext_00640A50(obj, lift_field<int32_t>(self, 0x1b8));
+    }
+
+    return a1;
+}
+} // namespace lift_0060E6C0

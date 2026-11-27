@@ -60021,6 +60021,13 @@
     "summary": "Clears two string fields and resets sensor data fields to default values.",
     "lifted_path": "lifted/NMData/SensorData.cpp"
   },
+  "0x0060E6C0": {
+    "name": "NMData::MetaBodySensorData::vfunc_22",
+    "class": "NMData::MetaBodySensorData",
+    "signature": "void* fn_0060E6C0(void* self, void* a1)",
+    "summary": "Assigns child names from the non-empty string members (+0x180/+0x19c/+0x1bc) and the int at +0x1b8 onto objects looked up via sub-calls; returns a1.",
+    "lifted_path": "lifted/NMData/MetaBodySensorData.cpp"
+  },
   "0x0060E7B0": {
     "name": "NMData::AxisDefineSensorData::vfunc_2",
     "class": "NMData::AxisDefineSensorData",

@@ -1,0 +1,40 @@
+{
+  "va": "0x0060E6C0",
+  "size": 228,
+  "orig_symbol": "NMData::MetaBodySensorData::vfunc_22",
+  "src_path": "src/NMData/MetaBodySensorData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodySensorData.cpp",
+  "name": "NMData::MetaBodySensorData::vfunc_22",
+  "class": "NMData::MetaBodySensorData",
+  "signature": "void* fn_0060E6C0(void* self, void* a1)",
+  "summary": "Assigns child names from the non-empty string members (+0x180/+0x19c/+0x1bc) and the int at +0x1b8 onto objects looked up via sub-calls; returns a1.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodySensorData",
+      "offset": "+0x180",
+      "type": "std::string",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::MetaBodySensorData",
+      "offset": "+0x19C",
+      "type": "std::string",
+      "name": "field_0x19c"
+    },
+    {
+      "class": "NMData::MetaBodySensorData",
+      "offset": "+0x1B8",
+      "type": "int32_t",
+      "name": "field_0x1b8"
+    },
+    {
+      "class": "NMData::MetaBodySensorData",
+      "offset": "+0x1BC",
+      "type": "std::string",
+      "name": "field_0x1bc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:11:08Z"
+}
