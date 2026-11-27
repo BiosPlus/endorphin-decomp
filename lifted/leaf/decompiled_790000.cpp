@@ -1428,3 +1428,46 @@ void* __cdecl fn_0079AF60(void* src) {
 
 } // namespace lift_0079AF60
 } // namespace lift_0079AF60
+
+// [0x0079E0B0] sub_0079E0B0 (128 bytes)
+namespace lift_0079E0B0 {
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0();
+// Known callee 0x00714910: sub_00714910 (Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).)
+extern void* ext_00714910(void* self, uint32_t arg1);
+
+// @name Unknown::DispatchByModeToSubobject
+// @class Unknown
+// @summary Dispatches on mode (0/1/2) to ForwardToSubobject10 on the subobject at *self with a per-mode base offset (0x0/0x48/0x90), passing the address of arg2; other modes skip the call. Always invokes the empty sub_006D80A0 at the end.
+// @field Unknown +0x00 void* field_0x00
+void fn_0079E0B0(void* self, uint32_t arg1, uint32_t arg2) {
+    // The original installs an SEH frame (fs:[0] push/pop, state slot) with no
+    // observable effect on the data path; it is omitted here.
+    // Only the first stack argument (arg1 = mode) and the second (arg2, an object
+    // slot whose address is passed on) are used; the remaining stack args are
+    // popped by the caller-side `ret 0x24` and are not accessed.
+    const uint32_t slotAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&arg2));
+
+    switch (arg1) {
+    case 0: {
+        char* sub = *reinterpret_cast<char**>(self);
+        ext_00714910(sub, slotAddr);
+        break;
+    }
+    case 1: {
+        char* sub = *reinterpret_cast<char**>(self);
+        ext_00714910(sub + 0x48, slotAddr);
+        break;
+    }
+    case 2: {
+        char* sub = *reinterpret_cast<char**>(self);
+        ext_00714910(sub + 0x90, slotAddr);
+        break;
+    }
+    default:
+        break;
+    }
+
+    ext_006D80A0();
+}
+} // namespace lift_0079E0B0

@@ -76805,6 +76805,13 @@
     "summary": "Dispatches on a selector (stack arg): 0 checks *self, 1 checks *self+0x48, 2 checks *self+0x90; any other selector returns 0.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079E0B0": {
+    "name": "Unknown::DispatchByModeToSubobject",
+    "class": "Unknown",
+    "signature": "void fn_0079E0B0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Dispatches on mode (0/1/2) to ForwardToSubobject10 on the subobject at *self with a per-mode base offset (0x0/0x48/0x90), passing the address of arg2; other modes skip the call. Always invokes the empty sub_006D80A0 at the end.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079E260": {
     "name": "Unknown::DispatchSubobjectCall",
     "class": "Unknown",
