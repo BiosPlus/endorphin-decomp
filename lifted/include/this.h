@@ -19,11 +19,15 @@ struct this_Fields {
     // +0x38  uint32_t*                vec_last  (evidence: 0x00477F30)
     // +0x54  uint32_t*                field_0x54  (evidence: 0x006AF8E0)
     // +0x58  int32_t                  field_0x58  (evidence: 0x006AF8E0)
-    // +0xF0  uint32_t                 field_0xf0  (evidence: 0x0058AB90)
+    // +0xF0  uint32_t                 field_0xf0  (evidence: 0x0058AB90) // CONFLICT: multiple definitions at +0xF0
+    // +0xF0  uint8_t                  r  (evidence: 0x0044A2D0) // CONFLICT: multiple definitions at +0xF0
+    // +0xF1  uint8_t                  g  (evidence: 0x0044A2D0)
+    // +0xF2  uint8_t                  b  (evidence: 0x0044A2D0)
     // +0x108 uint32_t                 field_0x108  (evidence: 0x00434040)
     // +0x114 void*                    child  (evidence: 0x00430260, 0x00430310, 0x00433B70) // CONFLICT: multiple definitions at +0x114
     // +0x114 uint32_t                 field_0x114  (evidence: 0x0041B540) // CONFLICT: multiple definitions at +0x114
     // +0x118 uint32_t                 field_0x118  (evidence: 0x0041B540)
+    // +0x168 uint32_t                 hwnd  (evidence: 0x0044A2D0)
     // +0x17C std::string              field_0x17c  (evidence: 0x005C3EA0)
     // +0x198 uint32_t                 field_0x198  (evidence: 0x005C3EA0)
 };

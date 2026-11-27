@@ -1,0 +1,39 @@
+{
+  "va": "0x0044A2D0",
+  "size": 130,
+  "orig_symbol": "sub_0044A2D0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "getColorRGBA",
+  "signature": "float* __thiscall sub_0044A2D0(void* self, float* out)",
+  "summary": "Reads RGB bytes from fields +0xf0..+0xf2 and alpha via SendMessageA(WM_USER), writing normalized RGBA floats to out",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0xF0",
+      "type": "uint8_t",
+      "name": "r"
+    },
+    {
+      "class": "this",
+      "offset": "+0xF1",
+      "type": "uint8_t",
+      "name": "g"
+    },
+    {
+      "class": "this",
+      "offset": "+0xF2",
+      "type": "uint8_t",
+      "name": "b"
+    },
+    {
+      "class": "this",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:20:14Z"
+}

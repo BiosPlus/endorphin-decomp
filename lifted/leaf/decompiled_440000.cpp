@@ -2699,3 +2699,33 @@ int __thiscall fn_004486A0(void* self, void* arg1, DWORD arg2, DWORD arg3) {
     return *reinterpret_cast<int*>(base + 0xD4);
 }
 } // namespace lift_004486A0
+
+// [0x0044A2D0]
+namespace lift_0044A2D0 {
+extern uint32_t mem_00925694;
+extern double mem_0092C518;
+
+// @name getColorRGBA
+// @summary Reads RGB bytes from fields +0xf0..+0xf2 and alpha via SendMessageA(WM_USER), writing normalized RGBA floats to out
+// @field this +0xf0 uint8_t r
+// @field this +0xf1 uint8_t g
+// @field this +0xf2 uint8_t b
+// @field this +0x168 uint32_t hwnd
+float* __thiscall sub_0044A2D0(void* self, float* out) {
+    using SendMessageAFn = int32_t(__stdcall*)(uint32_t, uint32_t, uint32_t, uint32_t);
+    auto sendMessageA = reinterpret_cast<SendMessageAFn>(mem_00925694);
+    uint32_t hwnd = lift_field<uint32_t>(self, 0x168);
+    int32_t alpha = sendMessageA(hwnd, 0x400, 0, 0);
+
+    double scale = mem_0092C518;
+    uint8_t r = lift_field<uint8_t>(self, 0xf0);
+    uint8_t g = lift_field<uint8_t>(self, 0xf1);
+    uint8_t b = lift_field<uint8_t>(self, 0xf2);
+
+    out[0] = static_cast<float>(static_cast<double>(r) / scale);
+    out[1] = static_cast<float>(static_cast<double>(g) / scale);
+    out[2] = static_cast<float>(static_cast<double>(b) / scale);
+    out[3] = static_cast<float>(static_cast<double>(alpha) / scale);
+    return out;
+}
+} // namespace lift_0044A2D0
