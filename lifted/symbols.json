@@ -20662,6 +20662,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004BE680 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0050E4E0": {
+    "name": "sub_0050E4E0_copyAssign",
+    "signature": "void* __thiscall sub_0050E4E0(void* self, const void* other)",
+    "summary": "Copy assignment operator copying scalar fields and three std::string members",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050E7B0": {
     "name": "sub_0050E7B0",
     "signature": "void* fn_0050E7B0()",
@@ -29176,6 +29182,12 @@
     "name": "getGlobalListFrontMinusOne",
     "signature": "uint32_t sub_00596370()",
     "summary": "Validates a global list iterator at [0xB40644]+8 and returns its node value minus one (or 0 if zero)",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x005963F0": {
+    "name": "sub_005963F0",
+    "signature": "int32_t __thiscall sub_005963F0(void* self)",
+    "summary": "Sums field_0x5a0 across all pointer elements in the vector at this+0x238",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x00596660": {
