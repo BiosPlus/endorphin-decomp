@@ -1667,3 +1667,33 @@ void fn_005CFF60(void* self) {
     lift_field<float>(self, 0x280) = result[3];
 }
 } // namespace lift_005CFF60
+
+// [0x005C3F40]
+namespace lift_005C3F40 {
+// @name getStringVectorElementOrEmpty
+// @summary Returns a copy of the std::string at index in the global vector [0x00B44C08, 0x00B44C0C), or an empty std::string if out of bounds.
+
+
+extern uint32_t mem_00B44C08;
+extern uint32_t mem_00B44C0C;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FE8;
+
+using StringCopyCtor = void(__thiscall*)(void* self, const void* other);
+using StringDefaultCtor = void(__thiscall*)(void* self);
+
+void* __stdcall sub_005C3F40(void* out_str, uint32_t index) {
+    uint32_t begin = mem_00B44C08;
+    if (begin != 0) {
+        int32_t byte_len = static_cast<int32_t>(mem_00B44C0C - begin);
+        uint32_t count = static_cast<uint32_t>(byte_len / 28);
+        if (index < count) {
+            const void* elem = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(begin)) + index * 28;
+            reinterpret_cast<StringCopyCtor>(static_cast<uintptr_t>(mem_00924FE0))(out_str, elem);
+            return out_str;
+        }
+    }
+    reinterpret_cast<StringDefaultCtor>(static_cast<uintptr_t>(mem_00924FE8))(out_str);
+    return out_str;
+}
+} // namespace lift_005C3F40

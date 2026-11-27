@@ -32982,6 +32982,12 @@
     "summary": "Stores an index at +0x198 and copies the corresponding string from global vector mem_00B44C08 into +0x17c",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C3F40": {
+    "name": "getStringVectorElementOrEmpty",
+    "signature": "void* __stdcall sub_005C3F40(void* out_str, uint32_t index)",
+    "summary": "Returns a copy of the std::string at index in the global vector [0x00B44C08, 0x00B44C0C), or an empty std::string if out of bounds.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C3FB0": {
     "name": "TableFindStringIndex",
     "class": "\u003cunknown\u003e",
@@ -74840,6 +74846,12 @@
     "name": "setFpuPrecision",
     "signature": "uint32_t __cdecl sub_007D5DA0(uint32_t precision)",
     "summary": "Sets the x87 FPU precision control bits while preserving exception masks and clearing exceptions.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
+  "0x007D5DD0": {
+    "name": "terminateWorkerThreads",
+    "signature": "void sub_007D5DD0(void* self)",
+    "summary": "Terminates active worker threads in the thread pool and resets thread pool state.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D6260": {
