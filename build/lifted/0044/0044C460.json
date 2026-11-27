@@ -1,0 +1,22 @@
+{
+  "va": "0x0044C460",
+  "size": 99,
+  "orig_symbol": "sub_0044C460",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "VectorUint32::erase",
+  "class": "VectorUint32",
+  "signature": "VectorIter* __thiscall fn_0044C460( void* self, VectorIter* out_iter, void* first_cont, uint32_t* first_ptr, void* last_cont, uint32_t* last_ptr)",
+  "summary": "Erases a range [first, last) of 32-bit elements from a vector and returns the updated iterator.",
+  "fields": [
+    {
+      "class": "VectorUint32",
+      "offset": "+0x8",
+      "type": "uint32_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:02:09Z"
+}

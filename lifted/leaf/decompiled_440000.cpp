@@ -2438,3 +2438,51 @@ void __thiscall sub_004406C0(void* self) {
     string_dtor(base + 0x0C);
 }
 } // namespace lift_004406C0
+
+// [0x0044C460]
+namespace lift_0044C460 {
+// @name VectorUint32::erase
+// @class VectorUint32
+// @summary Erases a range [first, last) of 32-bit elements from a vector and returns the updated iterator.
+// @field VectorUint32 +0x08 uint32_t* end
+
+extern void (__cdecl* mem_00925134)();
+
+struct VectorIter {
+    void* container;
+    uint32_t* ptr;
+};
+
+VectorIter* __thiscall fn_0044C460(
+    void* self,
+    VectorIter* out_iter,
+    void* first_cont,
+    uint32_t* first_ptr,
+    void* last_cont,
+    uint32_t* last_ptr) {
+    if (!first_cont || first_cont != last_cont) {
+        mem_00925134();
+    }
+
+    if (first_ptr != last_ptr) {
+        uint32_t* end_ptr = lift_field<uint32_t*>(self, 0x08);
+        int32_t count = static_cast<int32_t>(
+            reinterpret_cast<uintptr_t>(end_ptr) - reinterpret_cast<uintptr_t>(last_ptr)) >> 2;
+        uint32_t* new_end = first_ptr + count;
+
+        if (last_ptr != end_ptr) {
+            uint32_t* dst = first_ptr;
+            uint32_t* src = last_ptr;
+            while (src != end_ptr) {
+                *dst++ = *src++;
+            }
+        }
+
+        lift_field<uint32_t*>(self, 0x08) = new_end;
+    }
+
+    out_iter->container = first_cont;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_0044C460
