@@ -2164,3 +2164,69 @@ void* fn_006B6290(void* self) {
     return self;
 }
 } // namespace lift_006B6290
+
+// [0x006B6C60] sub_006B6C60 (138 bytes)
+namespace lift_006B6C60 {
+// Known callee 0x006A5E00: thunk to MFC80!ord_2372 (takes one DWORD argument on the stack).
+// Called as ext_006A5E00 (the fn_ spelling trips liftwork's missing_callee check).
+extern void __stdcall ext_006A5E00(uint32_t);
+// IAT slots (.rdata): USER32!SetParent and USER32!SendMessageA.
+extern uint32_t mem_009256C0;
+extern uint32_t mem_00925694;
+
+typedef uint32_t(__stdcall* SetParentFn)(uint32_t hwndChild, uint32_t hwndNewParent);
+typedef uint32_t(__stdcall* SendMessageFn)(uint32_t hwnd, uint32_t msg, uint32_t wParam, uint32_t lParam);
+// Virtual method at vtable +0x64 on the child object: thiscall, 11 DWORD stack arguments, callee-cleaned.
+typedef void(__thiscall* ChildVirtualFn)(void* self,
+                                         uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4,
+                                         uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8,
+                                         uint32_t a9, uint32_t a10, uint32_t a11);
+
+// @name Unknown::refreshChildWindow
+// @class Unknown
+// @summary Copies this->+0x20 into child->+0x38, conditionally re-initializes the child via a vfunc, reparents the child HWND to NULL, then sends WM_SETFONT (0x30) to it.
+// @field Unknown +0x20 DWORD field_0x20
+// @field Unknown +0x58 BYTE field_0x58
+// @field Unknown +0x5C DWORD field_0x5C
+// @field Unknown +0x6C void* child
+// @field UnknownChild +0x00 void** vtable
+// @field UnknownChild +0x20 HWND hwnd
+// @field UnknownChild +0x38 DWORD field_0x38
+void fn_006B6C60(void* self) {
+    // Child pointer (this->+0x6C) receives this->+0x20 at its +0x38.
+    lift_field<uint32_t>(lift_field<uint8_t*>(self, 0x6C), 0x38) = lift_field<uint32_t>(self, 0x20);
+
+    // If child is null or child->+0x20 is zero, run the init block (falls through to the tail).
+    uint8_t* child = lift_field<uint8_t*>(self, 0x6C);
+    bool skipInit = (child != nullptr) && (lift_field<uint32_t>(child, 0x20) != 0);
+    if (!skipInit) {
+        uint32_t hwnd0 = lift_field<uint32_t>(self, 0x20);
+        // Virtual call on child: ecx = child, method = vtable[0x64].
+        void** vtable = *reinterpret_cast<void***>(child);
+        void* method = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtable) + 0x64);
+        reinterpret_cast<ChildVirtualFn>(method)(child,
+            0x88, 0x992778, 0, 0x40B00000, 0, 0, 0, 0, hwnd0, 0x1E240, 0);
+
+        // SetParent(child->+0x20, NULL); then pass the result to fn_006A5E00.
+        uint8_t* child2 = lift_field<uint8_t*>(self, 0x6C);
+        uint32_t childHwnd = lift_field<uint32_t>(child2, 0x20);
+        uint32_t prevParent = reinterpret_cast<SetParentFn>(static_cast<uintptr_t>(mem_009256C0))(childHwnd, 0);
+        ext_006A5E00(prevParent);
+    }
+
+    // Tail: q = &this->+0x58 (non-null in practice).
+    uint32_t q = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0x58);
+    uint8_t* target = lift_field<uint8_t*>(self, 0x6C);
+    uint32_t targetHwnd = lift_field<uint32_t>(target, 0x20);
+    SendMessageFn sendMessage = reinterpret_cast<SendMessageFn>(static_cast<uintptr_t>(mem_00925694));
+
+    if (q != 0) {
+        // WM_SETFONT (0x30): wParam = *(q + 4) == this->+0x5C, lParam = 0.
+        uint32_t wParam = lift_field<uint32_t>(self, 0x5C);
+        sendMessage(targetHwnd, 0x30, wParam, 0);
+    } else {
+        // q == 0: wParam = lParam = q.
+        sendMessage(targetHwnd, 0x30, q, q);
+    }
+}
+} // namespace lift_006B6C60

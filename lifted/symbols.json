@@ -64897,6 +64897,13 @@
     "summary": "Sets vtables, optionally notifies an owned object (vtbl slot 1), tears down member at +0x70, and re-inits sub-objects at +0x58 and +0x00.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B6C60": {
+    "name": "Unknown::refreshChildWindow",
+    "class": "Unknown",
+    "signature": "void fn_006B6C60(void* self)",
+    "summary": "Copies this-\u003e+0x20 into child-\u003e+0x38, conditionally re-initializes the child via a vfunc, reparents the child HWND to NULL, then sends WM_SETFONT (0x30) to it.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B7420": {
     "name": "PostMessageIfActive",
     "class": "Unknown",

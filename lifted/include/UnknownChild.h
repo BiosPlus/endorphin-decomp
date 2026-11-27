@@ -8,6 +8,9 @@
 // Recovered field layout for UnknownChild:
 namespace lifted_layout {
 struct UnknownChild_Fields {
-    // +0x20  double                   value  (evidence: 0x005185D0)
+    // +0x0   void**                   vtable  (evidence: 0x006B6C60)
+    // +0x20  HWND                     hwnd  (evidence: 0x006B6C60) // CONFLICT: multiple definitions at +0x20
+    // +0x20  double                   value  (evidence: 0x005185D0) // CONFLICT: multiple definitions at +0x20
+    // +0x38  DWORD                    field_0x38  (evidence: 0x006B6C60)
 };
 } // namespace lifted_layout
