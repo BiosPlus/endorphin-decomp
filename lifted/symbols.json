@@ -80923,6 +80923,12 @@
     "summary": "Returns the 32-bit value at offset +0x08 of the object pointed to by the first stack argument.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085BDA0": {
+    "name": "readSignedBigEndianCounted_0085BDA0",
+    "signature": "uint32_t fn_0085BDA0(void* self, uint32_t count, int32_t* out)",
+    "summary": "Reads up to `count` bytes from the cursor into *out (first byte sign-extended, rest accumulated big-endian); returns the GetField08 delta across the read.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BE20": {
     "name": "ReadBigEndianBytes",
     "signature": "extern \"C\" uint32_t fn_0085BE20(void* self, uint32_t count, uint32_t* out_val)",

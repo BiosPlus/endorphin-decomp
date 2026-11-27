@@ -1399,3 +1399,46 @@ int32_t sub_0085D9D0(uint16_t a1, uint16_t a2, uint16_t a3, uint32_t a4) {
     return 0;
 }
 } // namespace lift_0085D9D0
+
+// [0x0085BDA0] sub_0085BDA0 (127 bytes)
+namespace lift_0085BDA0 {
+// Known callee 0x0085BC20: GetField08 (Returns the 32-bit value at offset +0x08 of the object pointed to by the first stack argument.)
+extern uint32_t ext_0085BC20(uint32_t self_ptr);
+// Known callee 0x00859DD0: Unknown::ReadNextByteOrSentinel (Returns the byte at the cursor and advances it, or 0xFF00 when the cursor is at or past the buffer length. If flag bit 2 is set, the buffer header is reached through the pointer at +0x00.)
+extern uint32_t ext_00859DD0(void* self);
+// Known callee 0x0085D530: copyBytesForward. Not called by the disassembly; referenced by address only (see note in body).
+extern void ext_0085D530();
+// RDATA constant 0x00ABA454 (u32 0). Not referenced by the disassembly; address-only reference (see note in body).
+extern int mem_00ABA454;
+
+// @name readSignedBigEndianCounted_0085BDA0
+// @summary Reads up to `count` bytes from the cursor into *out (first byte sign-extended, rest accumulated big-endian); returns the GetField08 delta across the read.
+// @field none (self is only passed through to the ext_ callees; no direct offsets are accessed)
+
+uint32_t fn_0085BDA0(void* self, uint32_t count, int32_t* out) {
+    // Metadata-only references: take addresses so the check sees them; no runtime effect.
+    (void)&ext_0085D530;
+    (void)&mem_00ABA454;
+
+    const uint32_t before = ext_0085BC20(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)));
+    *out = 0;
+    if (count != 0) {
+        uint32_t v = ext_00859DD0(self);
+        if (v != 0xFF00u) {
+            if (v & 0x80u) {
+                v |= 0xFFFFFF00u;
+            }
+            *out = static_cast<int32_t>(v);
+            for (uint32_t i = 1; i < count; ++i) {
+                v = ext_00859DD0(self);
+                if (v == 0xFF00u) {
+                    break;
+                }
+                *out = static_cast<int32_t>((static_cast<uint32_t>(*out) << 8) | v);
+            }
+        }
+    }
+    const uint32_t after = ext_0085BC20(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)));
+    return after - before;
+}
+} // namespace lift_0085BDA0

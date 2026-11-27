@@ -1,0 +1,13 @@
+{
+  "va": "0x0085BDA0",
+  "size": 127,
+  "orig_symbol": "sub_0085BDA0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "readSignedBigEndianCounted_0085BDA0",
+  "signature": "uint32_t fn_0085BDA0(void* self, uint32_t count, int32_t* out)",
+  "summary": "Reads up to `count` bytes from the cursor into *out (first byte sign-extended, rest accumulated big-endian); returns the GetField08 delta across the read.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:09:46Z"
+}
