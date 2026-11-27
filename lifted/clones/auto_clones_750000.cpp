@@ -106,3 +106,40 @@ void __cdecl fn_007551E0(void)
 }
 } // namespace lift_0072D210
 } // namespace lift_007551E0
+
+// [0x007554F0]
+namespace lift_007554F0 {
+// @name Unknown::initWithTwoArgs_007554F0
+// @class Unknown
+// @summary Initializes base object with arg1, sets fields at +0xAC..+0xC0, initializes sub-objects at +0xC4 and +0xD8 with 0x14, sets vtable to 0x00996C10, and returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0xAC uint32_t field_0xAC
+// @field Unknown +0xB0 uint32_t field_0xB0
+// @field Unknown +0xB4 uint32_t field_0xB4
+// @field Unknown +0xB8 uint32_t field_0xB8
+// @field Unknown +0xBC uint32_t field_0xBC
+// @field Unknown +0xC0 uint32_t field_0xC0
+// @field Unknown +0xC4 uint8_t subobj_0xC4
+// @field Unknown +0xD8 uint8_t subobj_0xD8
+
+
+extern void* ext_00754F20(void* self, DWORD arg1);
+extern void ext_00784620(void* self, DWORD arg);
+
+void* fn_007554F0(void* self, DWORD arg1, DWORD arg2) {
+    ext_00754F20(self, arg1);
+
+    lift_field<uint32_t>(self, 0xAC) = 0;
+    lift_field<uint32_t>(self, 0xB0) = arg2;
+    lift_field<uint32_t>(self, 0xB4) = 0;
+    lift_field<uint32_t>(self, 0xB8) = 1;
+    lift_field<uint32_t>(self, 0xBC) = 0;
+    lift_field<uint32_t>(self, 0xC0) = 0;
+
+    ext_00784620(static_cast<uint8_t*>(self) + 0xC4, 0x14);
+    ext_00784620(static_cast<uint8_t*>(self) + 0xD8, 0x14);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00996C10u;
+    return self;
+}
+} // namespace lift_007554F0

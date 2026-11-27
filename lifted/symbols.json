@@ -69518,6 +69518,13 @@
     "summary": "Validates a sub-object header and returns table[idx] entry value at base+sub, or -1 on any failed check.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D8490": {
+    "name": "Unknown::forwardArgToSubobject_006D8490",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_006D8490(void* self, Arg16_006D8490 arg)",
+    "summary": "Checks subobject via 006FDF70 and 006FC930, copies 16-byte arg via 0077FAC0, and forwards it to 006D89D0 on 006D89C0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D8520": {
     "name": "sub_006D8520",
     "class": "\u003cUnknown\u003e",
@@ -79476,6 +79483,13 @@
     "name": "CopyHugeValueToGlobals_00755270",
     "signature": "void fn_00755270(void* self)",
     "summary": "Copies the 8-byte _HUGE value into four consecutive 8-byte globals.",
+    "lifted_path": "lifted/clones/auto_clones_750000.cpp"
+  },
+  "0x007554F0": {
+    "name": "Unknown::initWithTwoArgs_007554F0",
+    "class": "Unknown",
+    "signature": "void* fn_007554F0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Initializes base object with arg1, sets fields at +0xAC..+0xC0, initializes sub-objects at +0xC4 and +0xD8 with 0x14, sets vtable to 0x00996C10, and returns this.",
     "lifted_path": "lifted/clones/auto_clones_750000.cpp"
   },
   "0x00755590": {

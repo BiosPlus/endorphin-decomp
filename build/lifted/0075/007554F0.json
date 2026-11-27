@@ -1,0 +1,70 @@
+{
+  "va": "0x007554F0",
+  "size": 146,
+  "orig_symbol": "sub_007554F0",
+  "src_path": "src/clones/auto_clones_750000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_750000.cpp",
+  "name": "Unknown::initWithTwoArgs_007554F0",
+  "class": "Unknown",
+  "signature": "void* fn_007554F0(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Initializes base object with arg1, sets fields at +0xAC..+0xC0, initializes sub-objects at +0xC4 and +0xD8 with 0x14, sets vtable to 0x00996C10, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint32_t",
+      "name": "field_0xB0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "uint32_t",
+      "name": "field_0xB4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "uint32_t",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xBC",
+      "type": "uint32_t",
+      "name": "field_0xBC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "uint32_t",
+      "name": "field_0xC0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC4",
+      "type": "uint8_t",
+      "name": "subobj_0xC4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD8",
+      "type": "uint8_t",
+      "name": "subobj_0xD8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:13:54Z"
+}
