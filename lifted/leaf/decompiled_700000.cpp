@@ -2570,3 +2570,26 @@ void __thiscall sub_00704A70(void* self, const char* src) {
     std::memcpy(dst, src, src_len + 1);
 }
 } // namespace lift_00704A70
+
+// [0x0070CED0]
+namespace lift_0070CED0 {
+// @name Unknown::insertValueIntoArray_0070CED0
+// @class Unknown
+// @summary Forwards a value to DynamicArray::InsertAt on the embedded array at +0x40, using the dword at +0x40 as the index and passing the value by pointer.
+// @field Unknown +0x40 int32_t field_0x40
+
+
+extern void ext_006D2170();
+
+void __thiscall sub_0070CED0(void* self, int32_t value) {
+    // Embedded DynamicArray lives at self+0x40; its first dword is used as the index.
+    void* array = static_cast<uint8_t*>(self) + 0x40;
+    int32_t index = lift_field<int32_t>(self, 0x40);
+
+    // Asm stores the argument back into its own stack slot before taking its address.
+    int32_t local = value;
+
+    using InsertAtFn = int32_t(__thiscall*)(void*, int32_t, const void*);
+    reinterpret_cast<InsertAtFn>(ext_006D2170)(array, index, &local);
+}
+} // namespace lift_0070CED0
