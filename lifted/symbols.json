@@ -35076,6 +35076,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005CEE00": {
+    "name": "ReadWriteMethodType\u003cInertialBodyData\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, float, {public: void __thiscall NMData::InertialBodyData::setDensity(float), 0}\u003e",
+    "signature": "extern \"C\" DWORD mem_00B44C18;  // one-time initialization guard (bit 0) extern \"C\" DWORD mem_00B44C14;  // static accessor object; first DWORD holds its vtable void fn_005CEE00(void* self)",
+    "summary": "Binds holder+0x04 to the static accessor object, running its one-time init (guard bit 0 in mem_00B44C18) on first use.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005CEE80": {
     "name": "ExprParser::ReadMethodType\u003cNMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0\u003e",

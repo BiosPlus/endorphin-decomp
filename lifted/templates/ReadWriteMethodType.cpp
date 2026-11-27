@@ -12234,3 +12234,25 @@ void fn_005B87A0(void* holder) {
     lift_field<std::uint32_t>(holder, 0x04) = static_cast<std::uint32_t>(kAccessorAddr);
 }
 } // namespace lift_005B87A0
+
+// [0x005CEE00] ExprParser::ReadWriteMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, float, {public: void __thiscall NMData::InertialBodyData::setDensity(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005CEE00 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B44C18;  // one-time initialization guard (bit 0)
+extern DWORD mem_00B44C14;  // static accessor object; first DWORD holds its vtable
+
+// @name ReadWriteMethodType<InertialBodyData>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, float, {public: void __thiscall NMData::InertialBodyData::setDensity(float), 0}>
+// @summary Binds holder+0x04 to the static accessor object, running its one-time init (guard bit 0 in mem_00B44C18) on first use.
+// @field ExprParser::ReadWriteMethodType<NMData::InertialBodyData, float, ...> +0x04 void* accessor
+void fn_005CEE00(void* self) {
+    // The original SEH frame push/pop (fs:[0] manipulation) is compiler bookkeeping and is omitted.
+    if ((mem_00B44C18 & 1u) == 0) {
+        mem_00B44C18 |= 1u;
+        ext_0067A670(&mem_00B44C14, 0);
+        mem_00B44C14 = 0x00965B9Cu;  // vtable of the static accessor object
+    }
+    lift_field<DWORD>(self, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B44C14));
+}
+} // namespace lift_005CEE00
