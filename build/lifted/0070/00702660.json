@@ -1,0 +1,21 @@
+{
+  "va": "0x00702660",
+  "size": 131,
+  "orig_symbol": "sub_00702660",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_00702660",
+  "signature": "void __thiscall sub_00702660(void* self, uint32_t mode)",
+  "summary": "Sets a mode/state field on the sub-object at +0x268 based on the input value (1..5, else 0).",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x268",
+      "type": "void*",
+      "name": "field_0x268"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:25:36Z"
+}

@@ -2494,3 +2494,23 @@ extern uint32_t __fastcall fn_00702B40(void* self) {
     return method(obj);
 }
 } // namespace lift_00702B40
+
+// [0x00702660]
+namespace lift_00702660 {
+// @name sub_00702660
+// @summary Sets a mode/state field on the sub-object at +0x268 based on the input value (1..5, else 0).
+// @field Class +0x268 void* field_0x268
+void __thiscall sub_00702660(void* self, uint32_t mode) {
+    void* obj = lift_field<void*>(self, 0x268);
+    uint32_t val = 0;
+    switch (mode) {
+        case 1: val = 3; break;
+        case 2: val = 4; break;
+        case 3: val = 1; break;
+        case 4: val = 2; break;
+        case 5: val = 5; break;
+        default: val = 0; break;
+    }
+    lift_field<uint32_t>(obj, 0x160) = val;
+}
+} // namespace lift_00702660

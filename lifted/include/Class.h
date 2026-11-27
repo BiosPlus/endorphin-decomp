@@ -40,6 +40,7 @@ struct Class_Fields {
     // +0xF8  int32_t                  field_0xf8  (evidence: 0x0043CE40)
     // +0x158 void*                    field_0x158  (evidence: 0x006C30A0)
     // +0x240 void*                    field_0x240  (evidence: 0x00480130)
+    // +0x268 void*                    field_0x268  (evidence: 0x00702660)
     // +0x414 uint32_t                 field_0x414  (evidence: 0x00463D00)
     // +0x418 void**                   vec_begin  (evidence: 0x00463D00)
     // +0x41C void**                   vec_end  (evidence: 0x00463D00)
