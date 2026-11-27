@@ -3410,3 +3410,107 @@ void __thiscall fn_00416B90(void* this_ptr) {
     ext_006A61D2(self);
 }
 } // namespace lift_00416B90
+
+// [0x0041DE30]
+namespace lift_0041DE30 {
+// @name UnknownClass::destructor_0041DE30
+// @class UnknownClass
+// @summary Destructor that cleans up sub-objects and frees memory via MFC80
+// @field UnknownClass +0x00 uint32_t vftable
+// @field UnknownClass +0x08 void* field_0x08
+// @field UnknownClass +0x0C void* field_0x0C
+// @field UnknownClass +0x20 void* field_0x20
+// @field UnknownClass +0x24 uint32_t field_0x24
+// @field UnknownClass +0x28 uint32_t field_0x28
+
+
+extern void* __thiscall ext_006A7BF0(void* ecx);
+extern void __thiscall ext_006A5FF2(void* ecx);
+extern void __cdecl ext_006A5C5C(void* ptr);
+
+extern void __thiscall fn_0041DE30(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base) = 0x0092DF58;
+
+    void* obj_c = *reinterpret_cast<void**>(base + 0x0C);
+    void* res = ext_006A7BF0(obj_c);
+    if (res != nullptr) {
+        ext_006A5FF2(res);
+    }
+
+    void* ptr_20 = *reinterpret_cast<void**>(base + 0x20);
+    if (ptr_20 != nullptr) {
+        ext_006A5C5C(ptr_20);
+    }
+
+    *reinterpret_cast<uint32_t*>(base + 0x20) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x24) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x28) = 0;
+
+    void* sub_c = *reinterpret_cast<void**>(base + 0x0C);
+    if (sub_c != nullptr) {
+        using dtor_fn = void(__thiscall*)(void*, int32_t);
+        uintptr_t* vtbl = *reinterpret_cast<uintptr_t**>(sub_c);
+        reinterpret_cast<dtor_fn>(vtbl[1])(sub_c, 1);
+    }
+
+    void* sub_8 = *reinterpret_cast<void**>(base + 0x08);
+    if (sub_8 != nullptr) {
+        using dtor_fn = void(__thiscall*)(void*, int32_t);
+        uintptr_t* vtbl = *reinterpret_cast<uintptr_t**>(sub_8);
+        reinterpret_cast<dtor_fn>(vtbl[1])(sub_8, 1);
+    }
+}
+} // namespace lift_0041DE30
+
+// [0x0041AD60]
+namespace lift_0041AD60 {
+// @name destroyVectorElements
+// @summary Iterates over a checked vector range of pointers, freeing each element's buffer, destroying it, and deleting it.
+
+
+extern void (*mem_00925134)(void);
+extern uint32_t mem_0092A23C;
+extern void ext_006A5C5C(void* ptr);
+extern void __thiscall ext_006A5FF2(void* self);
+
+extern void __stdcall fn_0041AD60(void* firstContainer, uint32_t* firstPtr, void* lastContainer, uint32_t* lastPtr) {
+    while (true) {
+        if (!firstContainer || firstContainer != lastContainer) {
+            mem_00925134();
+        }
+        if (firstPtr == lastPtr) {
+            break;
+        }
+        void* container = firstContainer;
+        uint32_t* elemPtr = firstPtr;
+        if (!firstContainer) {
+            mem_00925134();
+        }
+        if (reinterpret_cast<uintptr_t>(firstPtr) >= *reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(firstContainer) + 0x8)) {
+            mem_00925134();
+        }
+        firstPtr = reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(firstPtr) + 4);
+        if (!container) {
+            mem_00925134();
+        }
+        if (reinterpret_cast<uintptr_t>(elemPtr) >= *reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(container) + 0x8)) {
+            mem_00925134();
+        }
+        uint8_t* elem = reinterpret_cast<uint8_t*>(*elemPtr);
+        if (!elem) {
+            continue;
+        }
+        void* innerBuf = *reinterpret_cast<void**>(elem + 0xC);
+        if (innerBuf) {
+            ext_006A5C5C(innerBuf);
+        }
+        *reinterpret_cast<uint32_t*>(elem + 0xC) = 0;
+        *reinterpret_cast<uint32_t*>(elem + 0x10) = 0;
+        *reinterpret_cast<uint32_t*>(elem + 0x14) = 0;
+        *reinterpret_cast<uint32_t*>(elem) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0092A23C));
+        ext_006A5FF2(elem);
+        ext_006A5C5C(elem);
+    }
+}
+} // namespace lift_0041AD60

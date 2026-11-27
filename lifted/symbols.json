@@ -2121,6 +2121,12 @@
     "summary": "Looks up the tree's lower_bound for a 32-bit key and returns the 32-bit value stored at node+0x10; returns 0 when the tree is empty or no node matches.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041AD60": {
+    "name": "destroyVectorElements",
+    "signature": "extern \"C\" void __stdcall fn_0041AD60(void* firstContainer, uint32_t* firstPtr, void* lastContainer, uint32_t* lastPtr)",
+    "summary": "Iterates over a checked vector range of pointers, freeing each element's buffer, destroying it, and deleting it.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041AFF0": {
     "name": "sub_0041AFF0",
     "class": "SomeContainer",
@@ -2651,6 +2657,13 @@
     "class": "(none)",
     "signature": "void fn_0041DE10(void* self, int edx_unused, int a1, int a2)",
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
+  "0x0041DE30": {
+    "name": "UnknownClass::destructor_0041DE30",
+    "class": "UnknownClass",
+    "signature": "extern \"C\" void __thiscall fn_0041DE30(void* self)",
+    "summary": "Destructor that cleans up sub-objects and frees memory via MFC80",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
   "0x0041DED0": {
@@ -84448,6 +84461,13 @@
     "signature": "void fn_007CFEC0(const float* m, const float* v, float* linear, float* point)",
     "summary": "Multiplies a 3-vector by the 3x3 linear part of a column-major 4x4 float matrix (m[i + 4*j]) into linear, then adds the translation column (m[12..14]) into point.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007D4680": {
+    "name": "BlockPool::init",
+    "class": "BlockPool",
+    "signature": "extern \"C\" void sub_007D4680(void* pool, int32_t capacity, int32_t blockSize, int32_t alignment, void* allocator)",
+    "summary": "Initializes a fixed-size block pool with optional alignment and allocator callbacks.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D4720": {
     "name": "Unknown::InvokeSlotThenForward",
