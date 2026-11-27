@@ -1,0 +1,28 @@
+{
+  "va": "0x0071CC60",
+  "size": 80,
+  "orig_symbol": "sub_0071CC60",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::applyValueToNamedChild",
+  "class": "Unknown",
+  "signature": "void fn_0071CC60(void* self, double value)",
+  "summary": "Finds the child named by the string at 0x00AA8D1C under this+0x0C, calls its vtable slot at +0x80 with the double argument, then if this+0x04 is non-null converts the value to float and forwards it through sub_006C9530 and sub_006CD330.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:29:58Z"
+}

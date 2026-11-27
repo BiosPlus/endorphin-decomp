@@ -95952,6 +95952,13 @@
     "summary": "Finds child \"mem_00AA8D10\" under this-\u003efield_0x0C, calls its virtual slot 0x80 with the two 32-bit halves of a double argument, then if this-\u003efield_0x04 is set, passes it through ext_006DC460/ext_006C9520/ext_006CD330 and returns the last result.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071CC60": {
+    "name": "Unknown::applyValueToNamedChild",
+    "class": "Unknown",
+    "signature": "void fn_0071CC60(void* self, double value)",
+    "summary": "Finds the child named by the string at 0x00AA8D1C under this+0x0C, calls its vtable slot at +0x80 with the double argument, then if this+0x04 is non-null converts the value to float and forwards it through sub_006C9530 and sub_006CD330.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071D530": {
     "name": "Unknown::initAssignCString_0071D530",
     "class": "Unknown",

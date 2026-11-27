@@ -2950,3 +2950,53 @@ extern void* __thiscall fn_00713DC0(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_00713DC0
+
+// [0x0071CC60] sub_0071CC60 (80 bytes)
+namespace lift_0071CC60 {
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+extern void ext_00708000();
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern void ext_006DC460();
+extern void ext_006C9530();
+extern void ext_006CD330();
+
+// @name Unknown::applyValueToNamedChild
+// @class Unknown
+// @summary Finds the child named by the string at 0x00AA8D1C under this+0x0C, calls its vtable slot at +0x80 with the double argument, then if this+0x04 is non-null converts the value to float and forwards it through sub_006C9530 and sub_006CD330.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0C
+void fn_0071CC60(void* self, double value) {
+    auto* s = static_cast<unsigned char*>(self);
+
+    // Child lookup: FindChildByName(this->field_0x0C, "<string at 0x00AA8D1C>")
+    using FindFn = uint32_t(__thiscall*)(void*, const char*);
+    void* parent = *reinterpret_cast<void**>(s + 0x0C);
+    const char* name = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AA8D1Cu));
+    uint32_t child_addr = reinterpret_cast<FindFn>(&ext_00708000)(parent, name);
+    void* child = reinterpret_cast<void*>(static_cast<uintptr_t>(child_addr));
+
+    // child->vtable[+0x80](value)
+    using ChildMethodFn = void(__thiscall*)(void*, double);
+    void** vtbl = *reinterpret_cast<void***>(child);
+    void* slot = *reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(vtbl) + 0x80);
+    reinterpret_cast<ChildMethodFn>(slot)(child, value);
+
+    // Optional second stage when this->field_0x04 is set
+    void* obj = *reinterpret_cast<void**>(s + 0x04);
+    if (obj == nullptr) {
+        return;
+    }
+
+    using GetValueFn = uint32_t(__thiscall*)(void*);
+    uint32_t value_raw = reinterpret_cast<GetValueFn>(&ext_006DC460)(obj);
+    void* value_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(value_raw));
+
+    using ConvertFn = uint32_t(__thiscall*)(void*, float);
+    float fv = static_cast<float>(value);
+    uint32_t result_raw = reinterpret_cast<ConvertFn>(&ext_006C9530)(value_obj, fv);
+    void* result_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(result_raw));
+
+    using FinishFn = void(__thiscall*)(void*);
+    reinterpret_cast<FinishFn>(&ext_006CD330)(result_obj);
+}
+} // namespace lift_0071CC60
