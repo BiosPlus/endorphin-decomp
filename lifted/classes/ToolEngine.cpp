@@ -258,3 +258,28 @@ int fn_004809E0(void* self) {
     return 0;
 }
 } // namespace lift_004809E0
+
+// [0x004800E0] ToolEngine::vfunc_13 (29 bytes)
+namespace lift_004800E0 {
+// Known callee 0x00530290: Unknown::selectIndex3Adjusted (Selects index arg0 (remapping 3 to 7 when the field at +0x88 already equals 3), stores it at +0x70, updates the container at +0x38, then invokes vtable slot 0x154 on the object at +0x10.)
+extern void ext_00530290(void* self);
+
+// @name ToolEngine::vfunc_13
+// @class ToolEngine
+// @summary Calls vtable slot 0xB4 on the object at this->+0x3B0->+0x30 with argument 3, then forwards the result as `this` to Unknown::selectIndex3Adjusted.
+// @field ToolEngine +0x3B0 void* field_0x3B0
+void fn_004800E0(void* self) {
+    // p = this->+0x3B0; q = p->+0x30 (type not yet recovered, read as opaque pointer)
+    void* p = lift_field<void*>(self, 0x3B0);
+    void* q = lift_field<void*>(p, 0x30);
+
+    // Virtual call: vtable(q)[0xB4] (thiscall-style, argument 3), result in eax.
+    void* vt = lift_field<void*>(q, 0);
+    using VSlot = void* (*)(void* self, uint32_t arg);
+    VSlot slot = reinterpret_cast<VSlot>(lift_field<void*>(vt, 0xB4));
+    void* r = slot(q, 3u);
+
+    // Tail: ecx = eax; call selectIndex3Adjusted with ecx as `this`.
+    ext_00530290(r);
+}
+} // namespace lift_004800E0

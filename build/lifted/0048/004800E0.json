@@ -1,0 +1,22 @@
+{
+  "va": "0x004800E0",
+  "size": 29,
+  "orig_symbol": "ToolEngine::vfunc_13",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_13",
+  "class": "ToolEngine",
+  "signature": "void fn_004800E0(void* self)",
+  "summary": "Calls vtable slot 0xB4 on the object at this-\u003e+0x3B0-\u003e+0x30 with argument 3, then forwards the result as `this` to Unknown::selectIndex3Adjusted.",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x3B0",
+      "type": "void*",
+      "name": "field_0x3B0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:56:03Z"
+}
