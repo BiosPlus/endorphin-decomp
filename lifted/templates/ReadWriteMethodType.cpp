@@ -11931,3 +11931,25 @@ void fn_005B8870(void* holder) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B43D14));
 }
 } // namespace lift_005B8870
+
+// [0x005C7730] ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithParent(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_005C7730 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores its single stack argument into the first DWORD of self; returns that value)
+extern void ext_0067A670(void* self, DWORD value);
+extern int mem_00B444DC;
+extern int mem_00B444D8;
+
+// @name ExprParser::ReadWriteMethodType<CollisionModelData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithParent(bool), 0}>
+// @summary One-time static init of the accessor object at mem_00B444D8, then stores its address into holder+0x04.
+// @field ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithParent(bool), 0}> +0x04 void* staticAccessor
+void fn_005C7730(void* self) {
+    // Guard bit 0 of mem_00B444DC: initialize the static accessor exactly once.
+    if ((mem_00B444DC & 1) == 0) {
+        mem_00B444DC |= 1;
+        ext_0067A670(&mem_00B444D8, 0);
+        mem_00B444D8 = 0x964ef4; // vtable pointer for the accessor object
+    }
+    lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B444D8));
+}
+} // namespace lift_005C7730
