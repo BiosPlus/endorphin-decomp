@@ -287,3 +287,61 @@ void fn_004CFF00(void* self) {
     ext_00586A50(static_cast<uint8_t*>(sub) + 0x4, 0x200000, 1);
 }
 } // namespace lift_004CFF00
+
+// [0x004CE5F0]
+namespace lift_004CE5F0 {
+// @name NMData::IncarnationEventData::vfunc_21
+// @class NMData::IncarnationEventData
+// @summary Calls the TriggeredEventData base vfunc_21, reads a string-table value into +0x180 (index, or 7 if absent), then falls back to a float parse into +0x18c or a string-to-int remap (3 -> 6).
+// @field NMData::IncarnationEventData +0x180 uint32_t field_0x180
+// @field NMData::IncarnationEventData +0x18c float field_0x18c
+
+extern void __thiscall ext_004C24C0(void* self, void* arg);
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+extern void ext_004275E0(void* dst, void* obj);
+extern int32_t ext_004CE590(const void* str);
+extern void ext_0046C0A0(float* out, void* itemref);
+extern void ext_0053F5F0(int32_t* out, void* itemref);
+extern uint32_t mem_00A9F898;
+// std::string ctor/dtor IAT slots: replaced by the real std::string local below; referenced only for provenance.
+extern void* mem_00924FE8;
+extern void* mem_00924FF4;
+
+static inline void* lift_ptr_from_u32(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+extern void __thiscall fn_004CE5F0(void* self, void* arg) {
+    (void)&mem_00924FE8;
+    (void)&mem_00924FF4;
+    ext_004C24C0(self, arg);
+
+    std::string s;
+    const char* key = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F898));
+    uint32_t item = ext_0063EFE0(arg, key);
+    ext_004275E0(&s, lift_ptr_from_u32(item));
+    int32_t idx = ext_004CE590(&s);
+    lift_field<uint32_t>(self, 0x180) = static_cast<uint32_t>(idx);
+
+    const char* literal = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x009473C0u));
+    uint32_t found = ext_0063EFE0(arg, literal);
+    if (found == 0x00B53A34u || found == 0x00B53B30u || found == 0x00B53AB0u ||
+        found == 0x00B53A70u || found == 0x00B53AF0u) {
+        lift_field<float>(self, 0x18C) = 1.0f;
+    } else {
+        uint32_t tmp = found;
+        ext_0046C0A0(&lift_field<float>(self, 0x18C), &tmp);
+    }
+
+    if (lift_field<uint32_t>(self, 0x180) == 7u) {
+        uint32_t item2 = ext_0063EFE0(arg, key);
+        uint32_t tmp = item2;
+        int32_t out = 0;
+        ext_0053F5F0(&out, &tmp);
+        if (out == 3) {
+            out = 6;
+        }
+        lift_field<uint32_t>(self, 0x180) = static_cast<uint32_t>(out);
+    }
+}
+} // namespace lift_004CE5F0

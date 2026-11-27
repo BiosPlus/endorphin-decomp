@@ -17,8 +17,9 @@ struct NMData_IncarnationEventData_Fields {
     // +0x170 uint8_t*                 string_range_begin  (evidence: 0x004CFF00)
     // +0x174 uint8_t*                 string_range_end  (evidence: 0x004CFF00)
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x004CF320)
-    // +0x180 uint32_t                 field_0x180  (evidence: 0x004CFE20)
+    // +0x180 uint32_t                 field_0x180  (evidence: 0x004CE5F0, 0x004CFE20)
     // +0x184 void*                    field_0x184  (evidence: 0x004CF320, 0x004CFCA0, 0x004CFE90)
     // +0x188 uint8_t                  field_0x188  (evidence: 0x004CF320, 0x004CFE90)
+    // +0x18C float                    field_0x18c  (evidence: 0x004CE5F0)
 };
 } // namespace lifted_layout

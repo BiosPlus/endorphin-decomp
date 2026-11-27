@@ -1,0 +1,28 @@
+{
+  "va": "0x004CE5F0",
+  "size": 282,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_21",
+  "src_path": "src/NMData/IncarnationEventData.cpp",
+  "lifted_path": "lifted/NMData/IncarnationEventData.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_21",
+  "class": "NMData::IncarnationEventData",
+  "signature": "static inline void* lift_ptr_from_u32(uint32_t v)",
+  "summary": "Calls the TriggeredEventData base vfunc_21, reads a string-table value into +0x180 (index, or 7 if absent), then falls back to a float parse into +0x18c or a string-to-int remap (3 -\u003e 6).",
+  "fields": [
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x180",
+      "type": "uint32_t",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x18C",
+      "type": "float",
+      "name": "field_0x18c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:35:40Z"
+}

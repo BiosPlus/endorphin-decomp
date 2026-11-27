@@ -21494,6 +21494,13 @@
     "summary": "Searches two 7-entry std::string tables for a matching string and returns its 0-based index, or 7 if not found.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004CE5F0": {
+    "name": "NMData::IncarnationEventData::vfunc_21",
+    "class": "NMData::IncarnationEventData",
+    "signature": "static inline void* lift_ptr_from_u32(uint32_t v)",
+    "summary": "Calls the TriggeredEventData base vfunc_21, reads a string-table value into +0x180 (index, or 7 if absent), then falls back to a float parse into +0x18c or a string-to-int remap (3 -\u003e 6).",
+    "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
   "0x004CE710": {
     "name": "NMData::IncarnationEventData::vfunc_59",
     "class": "NMData::IncarnationEventData",
