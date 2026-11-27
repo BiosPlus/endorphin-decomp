@@ -4778,9 +4778,7 @@ extern int mem_00924FF0;
 extern int mem_00924FF4;
 
 // @name fn_004335F0
-// @class <ClassName> (optional)
 // @summary Gets the object returned by ext_00465B40, invokes its vtable slot 0x208 with argument 2.
-// @field <ClassName> +0x00 <type> <fieldName>
 void fn_004335F0(void* self) {
     (void)self;
     // Main path: obtain object from ext_00465B40 (returned in eax), then
