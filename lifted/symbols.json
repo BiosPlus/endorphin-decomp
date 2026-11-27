@@ -20475,6 +20475,13 @@
     "summary": "Updates field_0x19c, frees the previous object if changed, and initializes the new one.",
     "lifted_path": "lifted/NMData/SeverEventData.cpp"
   },
+  "0x004CA220": {
+    "name": "BuildKeyString_004CA220",
+    "class": "Unknown",
+    "signature": "void* fn_004CA220(void* self, uint32_t* out, uint32_t arg2)",
+    "summary": "Builds a std::string from a literal, optionally reassigns it through self+0x18 when arg2 is nonzero, stores ext_00476360(self+0x08, str) into *out, destroys the string, and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CA300": {
     "name": "sub_004CA300",
     "class": "GWCCategoryWithButtonsItem",

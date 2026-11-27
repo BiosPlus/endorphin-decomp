@@ -1508,3 +1508,50 @@ uint32_t* __thiscall fn_004C4070(uint8_t* self, uint32_t* out, uint32_t arg2) {
     return out;
 }
 } // namespace lift_004C4070
+
+// [0x004CA220] sub_004CA220 (140 bytes)
+namespace lift_004CA220 {
+// Callee 0x00662610 (sub_00662610): receives self in ECX, builds a string from a literal.
+extern void ext_00662610(void* self, void* out, const char* literal);
+// Callee 0x00474F00 (sub_00474F00): thiscall on self+0x18, (string*, arg2); returns a string* in EAX.
+extern void* ext_00474F00(void* self, void* str, uint32_t arg2);
+// Callee 0x00476360 (sub_00476360): thiscall on self+0x08, (string*); returns a 32-bit value in EAX.
+extern uint32_t ext_00476360(void* self, void* str);
+// Import slots: mem_00924FD4 = std::string::operator=(const char*), mem_00924FF4 = std::string::~string().
+extern int mem_00924FD4;
+extern int mem_00924FF4;
+
+// @name BuildKeyString_004CA220
+// @class Unknown
+// @summary Builds a std::string from a literal, optionally reassigns it through self+0x18 when arg2 is nonzero, stores ext_00476360(self+0x08, str) into *out, destroys the string, and returns out.
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0x18 uint8_t field_0x18
+void* fn_004CA220(void* self, uint32_t* out, uint32_t arg2) {
+    // SEH frame setup/teardown (fs:[0] push/pop and try-state slot) is boilerplate and dropped.
+
+    // Local std::string, passed by address to the callees.
+    alignas(16) unsigned char str[0x18];
+
+    // Construct the string from the literal at 0x00A3A828 (ECX still holds self).
+    ext_00662610(self, str, reinterpret_cast<const char*>(uintptr_t{0x00A3A828}));
+
+    if (arg2 != 0) {
+        // Reassign through the subobject at self+0x18.
+        void* assigned = ext_00474F00(static_cast<unsigned char*>(self) + 0x18, str, arg2);
+        using StrAssignFn = void* (*)(void* self_str, const void* src);
+        auto assign = reinterpret_cast<StrAssignFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FD4)));
+        assign(assigned, str);
+    }
+
+    // Compute the result from the subobject at self+0x08 and store it through out.
+    const uint32_t result = ext_00476360(static_cast<unsigned char*>(self) + 0x08, str);
+    *out = result;
+
+    // Destroy the local string.
+    using StrDtorFn = void (*)(void* self_str);
+    auto dtor = reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(str);
+
+    return out;
+}
+} // namespace lift_004CA220
