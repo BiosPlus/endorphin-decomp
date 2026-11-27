@@ -4500,12 +4500,26 @@
     "summary": "Calls the base init helper with the two stack arguments, then installs the vtable pointer mem_00932694 at offset 0 and returns self.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00442BF0": {
+    "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_1",
+    "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+    "signature": "void __thiscall fn_00442BF0(void* self)",
+    "summary": "Starts the redraw timer on the delegate window using its timer ID at +0x170.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp"
+  },
   "0x00442C00": {
     "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_2",
     "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
     "signature": "extern \"C\" void __fastcall fn_00442C00(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_0043CD80.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
+  },
+  "0x00442C10": {
+    "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_20",
+    "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+    "signature": "uint8_t __thiscall fn_00442C10(void* self, uint32_t /*unused*/)",
+    "summary": "Transitions state to index 6 if cursor is over delegate_0x8, otherwise to index 0, and returns 1.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp"
   },
   "0x00442C40": {
     "name": "Unknown::InitWithTagAndVtable",
