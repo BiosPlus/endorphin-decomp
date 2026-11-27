@@ -1,0 +1,13 @@
+{
+  "va": "0x00428050",
+  "size": 110,
+  "orig_symbol": "sub_00428050",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "findOrThrow_00428050",
+  "signature": "void* fn_00428050(void* self, void* key)",
+  "summary": "Looks up an entry by key via ext_00505D50 and returns its value pointer, or constructs and throws an exception if not found.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:49:14Z"
+}

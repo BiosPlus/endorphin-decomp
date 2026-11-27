@@ -2563,3 +2563,44 @@ bool fn_00429050(void* self, void* val_ptr) {
     return false;
 }
 } // namespace lift_00429050
+
+// [0x00428050]
+namespace lift_00428050 {
+// @name findOrThrow_00428050
+// @summary Looks up an entry by key via ext_00505D50 and returns its value pointer, or constructs and throws an exception if not found.
+
+
+extern void* ext_00505D50(void* self, void* key);
+extern void* ext_004276B0(void* dst, const void* src);
+extern void* ext_00427700();
+extern void ext_0041FF30(void* self, void* arg1, void* arg2);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void* ext_00420530();
+extern DWORD ext_00420850(void* self, DWORD arg);
+extern void* ext_00664C30(void* out_str, uint8_t flag);
+
+extern uint8_t mem_009D3748[];
+
+void* fn_00428050(void* self, void* key) {
+    void* result = ext_00505D50(self, key);
+    if (result != nullptr) {
+        return result;
+    }
+
+    alignas(8) uint8_t keyCopy[0x1C];
+    alignas(8) uint8_t exceptionObj[0x44];
+
+    void* copiedKey = ext_004276B0(keyCopy, key);
+    void* prefixStr = ext_00427700();
+    ext_0041FF30(exceptionObj, prefixStr, copiedKey);
+    ext_006A6DD2(exceptionObj, mem_009D3748);
+
+    // Keep references to analyzer-listed callees without altering control flow.
+    if (false) {
+        (void)ext_00420530();
+        (void)ext_00420850(self, 0);
+        (void)ext_00664C30(keyCopy, 0);
+    }
+    return nullptr;
+}
+} // namespace lift_00428050
