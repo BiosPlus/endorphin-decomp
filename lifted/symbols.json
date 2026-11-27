@@ -53874,6 +53874,13 @@
     "summary": "Recursively erases a red-black tree subtree starting from the given node.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EE2F0": {
+    "name": "NMData::SkeletalJointData::vfunc_33",
+    "class": "NMData::SkeletalJointData",
+    "signature": "void fn_005EE2F0(void* self)",
+    "summary": "Runs the FixedPathJointData base step, invokes vtable slot 33 on the three owned sub-objects at +0x17C/+0x180/+0x184, sets +0x308 to 0x700, then calls sub_00587920 on the sub-objects.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005EE360": {
     "name": "NMData::FixedPathJointData::vfunc_15",
     "class": "NMData::FixedPathJointData",

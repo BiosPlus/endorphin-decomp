@@ -1,0 +1,40 @@
+{
+  "va": "0x005EE2F0",
+  "size": 104,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_33",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_33",
+  "class": "NMData::SkeletalJointData",
+  "signature": "void fn_005EE2F0(void* self)",
+  "summary": "Runs the FixedPathJointData base step, invokes vtable slot 33 on the three owned sub-objects at +0x17C/+0x180/+0x184, sets +0x308 to 0x700, then calls sub_00587920 on the sub-objects.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x308",
+      "type": "uint32_t",
+      "name": "field_0x308"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:41:18Z"
+}
