@@ -184537,3 +184537,59 @@ void* fn_005137E0(void* self, void* arg2) {
     return fn(target, self, arg2);
 }
 } // namespace lift_005137E0
+
+// [0x00695830] ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>::vfunc_45 (167 bytes)
+namespace lift_00695830 {
+// Callees (differentially tested against endorphin.exe; keep names).
+extern void ext_00672080(void* self, float value);   // sub_00672080: init temp holder from float (thiscall, 18B)
+extern void ext_0041CF50(void* self, void* other);   // Unknown::assignFromOther_0041CF50
+extern void ext_0046C3C0(void* self);                // DerivedException::DerivedException
+extern void ext_006A6DD2(void* obj, void* throwInfo); // thunk_MSVCR80__CxxThrowException
+
+// Globals: mem_008A5428 is the SEH scope table (boilerplate, referenced only for parity);
+// mem_009DEC1C is the RTTI/throw-info passed to _CxxThrowException.
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<DoubleWithProperties>::vfunc_45
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
+// @summary Reads the double behind field_0x00, stores it as float through a temp holder, assigns the holder into self, and forwards to vtable slot 45 of self->field_0x04.
+// @field ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0> +0x00 double* field_0x00
+// @field ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0> +0x04 void* field_0x04
+float fn_00695830(void* self, void* extra) {
+    (void)extra;          // second stack arg is not read by the original (ret 8 pops it)
+    (void)&mem_008A5428;  // SEH frame scope table: boilerplate, not part of the logic
+
+    void** obj = static_cast<void**>(self);
+    double* src = static_cast<double*>(obj[0]);   // field_0x00
+    if (src == nullptr) {
+        // Throw path: construct DerivedException in a stack slot and throw it.
+        alignas(8) unsigned char exc[64] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0.0f;  // not reached: _CxxThrowException does not return
+    }
+
+    float value = static_cast<float>(*src);
+
+    // Temp holder: tmp[0] = field_0x00, tmp[1] = field_0x04 (filled by ctor).
+    void* tmp[2] = {nullptr, nullptr};
+    ext_00672080(&tmp[1], value);
+
+    ext_0041CF50(self, &tmp[0]);
+
+    // Release the temp's field_0x04 through vtable slot 0x78 (index 30) when non-null.
+    if (tmp[1] != nullptr) {
+        void** vt = *static_cast<void***>(tmp[1]);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(vt[0x78 / sizeof(void*)]);
+        release(tmp[1], &tmp[0]);
+    }
+
+    // Forward: self->field_0x04->vfunc_0xb4(self, value)  (slot 45)
+    void* inner = obj[1];
+    void** inner_vt = *static_cast<void***>(inner);
+    using VFn45 = float (*)(void*, void*, float);
+    auto vfunc45 = reinterpret_cast<VFn45>(inner_vt[0xb4 / sizeof(void*)]);
+    return vfunc45(inner, self, value);
+}
+} // namespace lift_00695830
