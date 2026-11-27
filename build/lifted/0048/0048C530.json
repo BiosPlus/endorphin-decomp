@@ -1,0 +1,22 @@
+{
+  "va": "0x0048C530",
+  "size": 165,
+  "orig_symbol": "sub_0048C530",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Vector::InsertStaticCStringKey_0048C530",
+  "class": "Vector",
+  "signature": "void fn_0048C530(void* self, const char* arg1)",
+  "summary": "Lazily initializes a static key object, builds a std::string from the C string argument, inserts it into the vector at self-\u003efield_0x00 (throwing on duplicate), then destroys the temporary string.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vector"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:49:18Z"
+}

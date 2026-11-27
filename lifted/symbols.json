@@ -3413,6 +3413,12 @@
     "summary": "Validates a bounded index via ext_00420850 and throws a C++ exception on zero result.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00428050": {
+    "name": "findOrThrow_00428050",
+    "signature": "void* fn_00428050(void* self, void* key)",
+    "summary": "Looks up an entry by key via ext_00505D50 and returns its value pointer, or constructs and throws an exception if not found.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004280C0": {
     "name": "TreeMap::findInsertPoint",
     "class": "TreeMap",
@@ -13432,6 +13438,13 @@
     "class": "Unknown",
     "signature": "extern \"C\" int mem_00AD9EB0;  // init guard (bit 0) extern \"C\" int mem_00AD9EAC;  // static object (first DWORD holds its vtable) extern \"C\" int mem_00924FE4;  // IAT slot: std::basic_string\u003cchar\u003e::basic_string(const char*) extern \"C\" int mem_00924FF4;  // IAT slot: std::basic_string\u003cchar\u003e::~basic_string() void fn_0048C480(void* self, const char* name)",
     "summary": "Lazily initializes the static object at mem_00AD9EAC once, builds a temporary std::string from the C-string argument, passes it with *self to 0x00475960, then destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x0048C530": {
+    "name": "Vector::InsertStaticCStringKey_0048C530",
+    "class": "Vector",
+    "signature": "void fn_0048C530(void* self, const char* arg1)",
+    "summary": "Lazily initializes a static key object, builds a std::string from the C string argument, inserts it into the vector at self-\u003efield_0x00 (throwing on duplicate), then destroys the temporary string.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x0048C5E0": {

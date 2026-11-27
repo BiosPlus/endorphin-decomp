@@ -150,6 +150,7 @@ struct Unknown_Fields {
     // +0x0   long long                value  (evidence: 0x006DAE00) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 value  (evidence: 0x0041CF00) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    vec_x_base  (evidence: 0x008044A0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vector  (evidence: 0x0048C530) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    vfptr  (evidence: 0x006B95F0, 0x006BA780) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vfptr  (evidence: 0x0063F350, 0x0063F6B0, 0x0067A670, 0x00713DC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vfptr  (evidence: 0x004030F0, 0x0040A910, 0x0040BE90) // CONFLICT: multiple definitions at +0x0

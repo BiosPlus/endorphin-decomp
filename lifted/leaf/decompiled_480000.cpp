@@ -4622,3 +4622,44 @@ void fn_0048C480(void* self, const char* name) {
     dtor(tmpStr);
 }
 } // namespace lift_0048C480
+
+// [0x0048C530] sub_0048C530 (165 bytes)
+namespace lift_0048C530 {
+// Known callee 0x00475960: Vector::InsertUniqueOrThrow_00475960 (Inserts a copy of the std::string at a1 into the sorted vector self; if it is already present and a3 is set, builds a message and throws it, otherwise returns false.)
+extern bool __thiscall ext_00475960(void* self, const void* a1, const void* a2, bool a3);
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void __fastcall ext_0067A670(void* self);
+extern int mem_00AD9EB8;
+extern int mem_00AD9EB4;
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+namespace {
+// MSVCP80 std::string constructor / destructor, called through their IAT slots.
+using StringCtorFn = void (__thiscall*)(void* self, const char* s);
+using StringDtorFn = void (__thiscall*)(void* self);
+} // namespace
+
+// @name Vector::InsertStaticCStringKey_0048C530
+// @class Vector
+// @summary Lazily initializes a static key object, builds a std::string from the C string argument, inserts it into the vector at self->field_0x00 (throwing on duplicate), then destroys the temporary string.
+// @field Unknown +0x00 void* vector
+void fn_0048C530(void* self, const char* arg1) {
+    // Function-local static guard (bit 0 of mem_00AD9EB8).
+    if ((mem_00AD9EB8 & 1) == 0) {
+        mem_00AD9EB8 |= 1;
+        ext_0067A670(&mem_00AD9EB4);
+        mem_00AD9EB4 = 0x93c92c;
+    }
+
+    // Temporary std::string storage (MSVC std::string is 0x1C bytes on x86).
+    alignas(8) unsigned char str[0x1C];
+    const void* keyRef = &mem_00AD9EB4;
+
+    (*reinterpret_cast<StringCtorFn*>(&mem_00924FE4))(str, arg1);
+
+    ext_00475960(*static_cast<void**>(self), str, &keyRef, true);
+
+    (*reinterpret_cast<StringDtorFn*>(&mem_00924FF4))(str);
+}
+} // namespace lift_0048C530
