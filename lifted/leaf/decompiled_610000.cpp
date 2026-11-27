@@ -2686,3 +2686,51 @@ extern void __fastcall fn_00610D10(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_00610D10
+
+// [0x00611200] sub_00611200 (98 bytes)
+namespace lift_00611200 {
+// Known callee 0x0067E600: buildPaddedMatrixFromParam (thiscall: self in ECX, p on stack)
+extern void __thiscall ext_0067E600(void* self, const void* p);
+// Known callee 0x00594000: sub_00594000 (cdecl, returns int32 from a global)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (thiscall: self in ECX)
+extern void* __thiscall ext_00493EE0(void* self);
+extern int mem_00B40640;
+
+// @name scaleVec3IntoSlotsAndDispatch
+// @class UnknownClass
+// @summary Scales floats at +0x154/+0x158/+0x15C by p[0..2] into +0x160/+0x164/+0x168, calls vslot 3 of the embedded object at +0x04 with mem_00B40640, passes the result to ext_0067E600 with &field_0x160, then if ext_00594000() is nonzero returns ext_00493EE0(value + 0x258).
+// @field UnknownClass +0x04 void* field_0x04
+// @field UnknownClass +0x154 float field_0x154
+// @field UnknownClass +0x158 float field_0x158
+// @field UnknownClass +0x15C float field_0x15C
+// @field UnknownClass +0x160 float field_0x160
+// @field UnknownClass +0x164 float field_0x164
+// @field UnknownClass +0x168 float field_0x168
+void* fn_00611200(void* self, const void* p) {
+    using VSlot3Fn = void* (__thiscall*)(void* self, int32_t arg);
+
+    const float* pf = static_cast<const float*>(p);
+
+    // Component-wise scale: out[i] = self[0x154 + 4*i] * p[i], stored at 0x160 + 4*i.
+    lift_field<float>(self, 0x160) = lift_field<float>(self, 0x154) * pf[0];
+    lift_field<float>(self, 0x164) = lift_field<float>(self, 0x158) * pf[1];
+    lift_field<float>(self, 0x168) = lift_field<float>(self, 0x15C) * pf[2];
+
+    // Embedded object at +0x04: call vtable slot 3 with this = &self[+0x04].
+    void* sub = static_cast<uint8_t*>(self) + 0x04;
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    VSlot3Fn vfn = reinterpret_cast<VSlot3Fn>(vtbl[3]);
+    void* matrixOwner = vfn(sub, mem_00B40640);
+
+    ext_0067E600(matrixOwner, static_cast<uint8_t*>(self) + 0x160);
+
+    int32_t gval = ext_00594000();
+    if (gval == 0) {
+        return nullptr;
+    }
+
+    void* objPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(gval)) + 0x258);
+    return ext_00493EE0(objPtr);
+}
+} // namespace lift_00611200
