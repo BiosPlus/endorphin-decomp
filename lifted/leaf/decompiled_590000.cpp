@@ -2521,3 +2521,32 @@ void* fn_0059F520(uint32_t a0, uint32_t a1, uint32_t a2, const void* src, uint8_
     return obj;
 }
 } // namespace lift_0059F520
+
+// [0x0059B0E0]
+namespace lift_0059B0E0 {
+extern void ext_005AEC70(void* self, void* out_iter, void* c1, uint32_t first, void* c2, uint32_t last);
+extern void ext_006A5C5C(void* ptr);
+
+// @name sub_0059B0E0
+// @summary Destructor that resets the vtable, clears a tree/map member at +0x4, and frees its head node.
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+extern void __thiscall fn_0059B0E0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base) = 0x0095DA18u;
+
+    uint8_t* member = base + 0x4;
+    uint32_t head = *reinterpret_cast<uint32_t*>(member + 0x4);
+    uint32_t begin = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(head));
+
+    uint32_t tmp_iter[2] = {0, 0};
+    ext_005AEC70(member, tmp_iter, member, begin, member, head);
+
+    ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(member + 0x4))));
+
+    *reinterpret_cast<uint32_t*>(member + 0x4) = 0;
+    *reinterpret_cast<uint32_t*>(member + 0x8) = 0;
+}
+} // namespace lift_0059B0E0
