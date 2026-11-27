@@ -1,0 +1,14 @@
+{
+  "va": "0x00429350",
+  "size": 211,
+  "orig_symbol": "sub_00429350",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Map::InsertUnique_00429350",
+  "class": "Map",
+  "signature": "bool fn_00429350(void* self, const void* key, const uint32_t* value, uint8_t throw_on_dup)",
+  "summary": "Inserts a (string, uint32_t) pair into a sorted unique vector; optionally throws on duplicate.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:32:50Z"
+}

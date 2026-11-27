@@ -3444,6 +3444,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004AD970 (Unknown::DestroyStringAndArray).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00429350": {
+    "name": "Map::InsertUnique_00429350",
+    "class": "Map",
+    "signature": "bool fn_00429350(void* self, const void* key, const uint32_t* value, uint8_t throw_on_dup)",
+    "summary": "Inserts a (string, uint32_t) pair into a sorted unique vector; optionally throws on duplicate.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042E7B0": {
     "name": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0",
     "class": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
