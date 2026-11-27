@@ -80102,6 +80102,12 @@
     "summary": "Forwards 8 32-bit stack arguments via ext_006D2390 to ext_006C3520 at index 0 on the object returned by ext_00714AE0(*(this + 0x00)).",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079E520": {
+    "name": "getFirstEntryCopy",
+    "signature": "void* __fastcall fn_0079E520(void* self, int edx_unused, void* out)",
+    "summary": "Constructs a temporary object from the first entry (index 0) of this-\u003efield_0x0-\u003efield_0xD8, copies it to out, and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079E5E0": {
     "name": "descriptiveName: SelectSelfOrOffsetByMode",
     "class": "(none, free function)",
