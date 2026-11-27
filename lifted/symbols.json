@@ -29648,6 +29648,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
     "lifted_path": "lifted/classes/XSIIO.cpp"
   },
+  "0x00563740": {
+    "name": "SetStringPropertyIfTypeMatches",
+    "signature": "void __thiscall fn_00563740(void* this_ptr, void* target, void* src_obj)",
+    "summary": "Sets a string property on a target object via vtable+0x5C if its type name (vtable+0x24) matches 0x00928B5D.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x005637D0": {
     "name": "sub_005637D0",
     "class": "(none)",
