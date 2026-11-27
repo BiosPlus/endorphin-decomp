@@ -1,0 +1,22 @@
+{
+  "va": "0x004B2BE0",
+  "size": 84,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData,float,getMaxAutoWidth,0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e",
+  "signature": "void* fn_004B2BE0(void* /*unused_first_arg*/, void* out)",
+  "summary": "Formats the max auto width of the GraphEngineData referenced by the value pointer into the sret slot (second stack argument), throwing DerivedException if the pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:01:39Z"
+}

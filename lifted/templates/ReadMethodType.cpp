@@ -62747,3 +62747,32 @@ std::string* fn_00470430(std::string* out, void* self) {
     return out;
 }
 } // namespace lift_00470430
+
+// [0x004B2BE0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_004B2BE0 {
+// Known callee 0x0048FAE0: sub_0048FAE0 (thiscall-style getter; object pointer passed in ecx, float result in st0)
+extern float ext_0048FAE0(void* self);
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void* ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData,float,getMaxAutoWidth,0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Formats the max auto width of the GraphEngineData referenced by the value pointer into the sret slot (second stack argument), throwing DerivedException if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+void* fn_004B2BE0(void* /*unused_first_arg*/, void* out) {
+    void* obj = *static_cast<void**>(out);
+    if (obj == nullptr) {
+        // Local exception storage (size not recovered from the asm).
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    }
+    const float width = ext_0048FAE0(obj);
+    ext_0046C390(out, width);
+    return out;
+}
+} // namespace lift_004B2BE0
