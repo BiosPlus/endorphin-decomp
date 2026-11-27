@@ -1,0 +1,28 @@
+{
+  "va": "0x00528640",
+  "size": 232,
+  "orig_symbol": "Interpolator::Linear::vfunc_3",
+  "src_path": "src/Interpolator/Linear.cpp",
+  "lifted_path": "lifted/Interpolator/Linear.cpp",
+  "name": "Interpolator::Linear::vfunc_3",
+  "class": "Interpolator::Linear",
+  "signature": "__stdcall float fn_00528640(void* self, void* other, uint32_t key, float t)",
+  "summary": "Linear interpolation between the key at `key` (time, value) and the following key; returns the key's value when t \u003c= key time + 1e-6 or the following key is the end sentinel.",
+  "fields": [
+    {
+      "class": "Interpolator::Linear",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "keys_begin"
+    },
+    {
+      "class": "Interpolator::Linear",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "keys_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:00:59Z"
+}

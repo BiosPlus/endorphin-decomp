@@ -32264,6 +32264,13 @@
     "summary": "Bounds-checked index into an object's table at +0x08 count; returns index + 4.",
     "lifted_path": "lifted/Interpolator/Const.cpp"
   },
+  "0x00528640": {
+    "name": "Interpolator::Linear::vfunc_3",
+    "class": "Interpolator::Linear",
+    "signature": "__stdcall float fn_00528640(void* self, void* other, uint32_t key, float t)",
+    "summary": "Linear interpolation between the key at `key` (time, value) and the following key; returns the key's value when t \u003c= key time + 1e-6 or the following key is the end sentinel.",
+    "lifted_path": "lifted/Interpolator/Linear.cpp"
+  },
   "0x00528AB0": {
     "name": "sub_00528AB0",
     "signature": "extern \"C\" void __fastcall fn_00528AB0(void* self)",
