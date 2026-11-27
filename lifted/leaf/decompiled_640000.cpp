@@ -2691,3 +2691,22 @@ void __thiscall fn_00640300(void* self, void* src, uint32_t tail_len) {
     // 'name' is destroyed automatically at end of scope (replaces the original std::string dtor call).
 }
 } // namespace lift_00640300
+
+// [0x00640A80] sub_00640A80 (28 bytes)
+namespace lift_00640A80 {
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+extern void ext_00427550(void* self, const char* name);
+extern int mem_0092F10C;
+extern int mem_0093A808;
+
+// @name ResetChildNameFromBool
+// @class <ClassName> (optional)
+// @summary Resets the child object's name to "true" or "false" depending on the boolean argument.
+// @field <ClassName> +0x00 <type> <fieldName>
+void fn_00640A80(uint8_t flag) {
+    const char* name = flag
+        ? reinterpret_cast<const char*>(&mem_0092F10C)
+        : reinterpret_cast<const char*>(&mem_0093A808);
+    ext_00427550(&flag, name);
+}
+} // namespace lift_00640A80

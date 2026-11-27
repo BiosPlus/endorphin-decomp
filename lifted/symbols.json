@@ -50411,6 +50411,13 @@
     "summary": "Appends '\u0026' + this-\u003efield_0x04 + ';' to the string at arg+0x08 and clears the byte flag at arg+0x11 before each append (builds an XML entity reference \"\u0026\u003ctext\u003e;\").",
     "lifted_path": "lifted/AdvXMLParser/EntityRef.cpp"
   },
+  "0x00640A80": {
+    "name": "ResetChildNameFromBool",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_00640A80(uint8_t flag)",
+    "summary": "Resets the child object's name to \"true\" or \"false\" depending on the boolean argument.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00640CB0": {
     "name": "Unknown::IncrementAndFlushOnce",
     "class": "Unknown",
@@ -65974,6 +65981,13 @@
     "summary": "Getter returning int32_t field at offset +0x4.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B9A00": {
+    "name": "Unknown::allocBuffer",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall fn_006B9A00(void* ecx, int32_t len, uint32_t* out)",
+    "summary": "Detaches any existing buffer and allocates an inline or heap buffer of the requested length, returning 0 on success or 1 on error.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9CE0": {
     "name": "StrContainsChar_006B9CE0",
     "signature": "extern \"C\" BOOLEAN __stdcall StrContainsChar_006B9CE0(CHAR c, const CHAR* s)",
@@ -66088,6 +66102,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006BB520(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006BB540 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
+  "0x006BB540": {
+    "name": "Unknown::DestructPtrArray",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_006BB540(void* self)",
+    "summary": "Sets vtable, destroys and frees non-null elements in embedded array at +0x04, then resets and destroys the array.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006BB6E0": {
     "name": "sub_006BB6E0",

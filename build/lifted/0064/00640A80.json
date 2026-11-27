@@ -1,0 +1,22 @@
+{
+  "va": "0x00640A80",
+  "size": 28,
+  "orig_symbol": "sub_00640A80",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "ResetChildNameFromBool",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_00640A80(uint8_t flag)",
+  "summary": "Resets the child object's name to \"true\" or \"false\" depending on the boolean argument.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "\u003ctype\u003e",
+      "name": "\u003cfieldName\u003e"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:40:26Z"
+}
