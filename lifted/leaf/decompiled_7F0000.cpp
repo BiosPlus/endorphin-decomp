@@ -547,3 +547,25 @@ void fn_007F9F30(int32_t count, float* dst, const float* src, float scale) {
     }
 }
 } // namespace lift_007F9F30
+
+// [0x007F36C0]
+namespace lift_007F36C0 {
+// @name accumulateStridedProducts
+// @summary For k=0..3, adds 6 float products into out[k]: blk[16k+j]*mat[k+4j] (j=0..2) then blk[16k+4+j]*mat[k+12+4j]; each step rounds to float.
+
+void fn_007F36C0(float* out, const unsigned char* base, const float* mat, int idx) {
+    const float* blk = reinterpret_cast<const float*>(base + idx * 32);
+    for (int k = 0; k < 4; ++k) {
+        const float* p = blk + 16 * k;
+        float* a = out + k;
+        for (int j = 0; j < 3; ++j) {
+            *a = static_cast<float>(static_cast<double>(p[j]) * static_cast<double>(mat[k + 4 * j]) +
+                                    static_cast<double>(*a));
+        }
+        for (int j = 0; j < 3; ++j) {
+            *a = static_cast<float>(static_cast<double>(p[4 + j]) * static_cast<double>(mat[k + 12 + 4 * j]) +
+                                    static_cast<double>(*a));
+        }
+    }
+}
+} // namespace lift_007F36C0

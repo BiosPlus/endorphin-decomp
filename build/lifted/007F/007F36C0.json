@@ -1,0 +1,13 @@
+{
+  "va": "0x007F36C0",
+  "size": 119,
+  "orig_symbol": "sub_007F36C0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "accumulateStridedProducts",
+  "signature": "void fn_007F36C0(float* out, const unsigned char* base, const float* mat, int idx)",
+  "summary": "For k=0..3, adds 6 float products into out[k]: blk[16k+j]*mat[k+4j] (j=0..2) then blk[16k+4+j]*mat[k+12+4j]; each step rounds to float.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T02:13:35Z"
+}
