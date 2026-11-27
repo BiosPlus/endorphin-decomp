@@ -44,3 +44,41 @@ void fn_005E2470(void* self) {
     mem_00B45E04 = lift_field<uint8_t>(self, 0x178);
 }
 } // namespace lift_005E2470
+
+// [0x005EC2D0] NMData::RPROMagnetData::vfunc_22 (80 bytes)
+namespace lift_005EC2D0 {
+// Known callee 0x006404E0: sub_006404E0 (224B, thiscall-style: ecx = arg1, one stack argument, returns object in EAX).
+extern void* __fastcall ext_006404E0(void* ecx, uint32_t arg);
+// Known callee 0x005EB5A0: NMData::RelationshipData::vfunc_22 (752B, thiscall: this = self, one stack argument).
+extern void __thiscall ext_005EB5A0(void* self, void* arg);
+// Known callee 0x00640110: sub_00640110 (296B, thiscall-style: ecx = object, one stack argument, returns object in EAX).
+extern void* __fastcall ext_00640110(void* ecx, uint32_t arg);
+// Known callee 0x00640A80: ResetChildNameFromBool (cdecl: child object, bool flag).
+extern void ext_00640A80(void* child, uint8_t flag);
+extern int mem_00A9F724;
+extern int mem_00A9F1E8;
+
+// @name NMData::RPROMagnetData::vfunc_22
+// @class NMData::RPROMagnetData
+// @summary Calls sub_006404E0 on the stack argument with a constant from 0x00986694, forwards the result to RelationshipData::vfunc_22; when the flag at +0x178 is clear, resets the child name via sub_00640110 and ResetChildNameFromBool; returns the stack argument.
+// @field NMData::RPROMagnetData +0x178 uint8_t field_0x178
+
+// thiscall (ECX = this), one stack argument, callee pops 4 (ret 4); returns the stack argument.
+void* __fastcall fn_005EC2D0(void* ecx, void* arg1) {
+    auto* self = static_cast<uint8_t*>(ecx);
+
+    uint32_t tag = static_cast<uint32_t>(mem_00A9F1E8);
+    void* obj = ext_006404E0(arg1, tag);
+
+    ext_005EB5A0(self, obj);
+
+    if (lift_field<uint8_t>(self, 0x178) == 0) {
+        uint32_t value = static_cast<uint32_t>(mem_00A9F724);
+        void* child = ext_00640110(obj, value);
+        uint8_t flag = lift_field<uint8_t>(self, 0x178);
+        ext_00640A80(child, flag);
+    }
+
+    return arg1;
+}
+} // namespace lift_005EC2D0

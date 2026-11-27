@@ -1,0 +1,22 @@
+{
+  "va": "0x005EC2D0",
+  "size": 80,
+  "orig_symbol": "NMData::RPROMagnetData::vfunc_22",
+  "src_path": "src/NMData/RPROMagnetData.cpp",
+  "lifted_path": "lifted/NMData/RPROMagnetData.cpp",
+  "name": "NMData::RPROMagnetData::vfunc_22",
+  "class": "NMData::RPROMagnetData",
+  "signature": "void* __fastcall fn_005EC2D0(void* ecx, void* arg1)",
+  "summary": "Calls sub_006404E0 on the stack argument with a constant from 0x00986694, forwards the result to RelationshipData::vfunc_22; when the flag at +0x178 is clear, resets the child name via sub_00640110 and ResetChildNameFromBool; returns the stack argument.",
+  "fields": [
+    {
+      "class": "NMData::RPROMagnetData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:02:36Z"
+}

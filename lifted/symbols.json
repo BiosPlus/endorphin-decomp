@@ -55013,6 +55013,13 @@
     "summary": "Returns early if kind equals the stored field; otherwise maps kind 5 to 3 and tail-forwards to NMData::FixedPathJointData::vfunc_63 (ext_005EB920).",
     "lifted_path": "lifted/NMData/RPROJointData.cpp"
   },
+  "0x005EC2D0": {
+    "name": "NMData::RPROMagnetData::vfunc_22",
+    "class": "NMData::RPROMagnetData",
+    "signature": "void* __fastcall fn_005EC2D0(void* ecx, void* arg1)",
+    "summary": "Calls sub_006404E0 on the stack argument with a constant from 0x00986694, forwards the result to RelationshipData::vfunc_22; when the flag at +0x178 is clear, resets the child name via sub_00640110 and ResetChildNameFromBool; returns the stack argument.",
+    "lifted_path": "lifted/NMData/RPROMagnetData.cpp"
+  },
   "0x005EC8D0": {
     "name": "storeValueAndStaticObject",
     "signature": "void fn_005EC8D0(DWORD* dst, DWORD value)",

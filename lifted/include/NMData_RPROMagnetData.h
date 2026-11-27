@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::RPROMagnetData:
 namespace lifted_layout {
 struct NMData_RPROMagnetData_Fields {
-    // +0x178 BYTE                     field_0x178  (evidence: 0x005E2470)
+    // +0x178 BYTE                     field_0x178  (evidence: 0x005E2470) // CONFLICT: multiple definitions at +0x178
+    // +0x178 uint8_t                  field_0x178  (evidence: 0x005EC2D0) // CONFLICT: multiple definitions at +0x178
 };
 } // namespace lifted_layout
