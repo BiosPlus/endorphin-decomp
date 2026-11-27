@@ -1191,3 +1191,26 @@ uint32_t __thiscall fn_005EE290(void* self, uint32_t arg) {
     return ext_005EDA00(self);
 }
 } // namespace lift_005EE290
+
+// [0x005ECD10]
+namespace lift_005ECD10 {
+extern void __thiscall ext_005EBCF0(void* self, const float* val);
+extern void __thiscall ext_005E4990(void* self, const float* val);
+extern void ext_00586D00();
+extern void ext_0067DDB0();
+extern uint8_t mem_00B40640[];
+
+// @name NMData::FixedPathJointData::vfunc_37
+// @class NMData::FixedPathJointData
+// @summary Forwards a float value by pointer to ext_005EBCF0 and ext_005E4990.
+void __thiscall fn_005ECD10(void* self, const float* arg)
+{
+    (void)ext_00586D00;
+    (void)ext_0067DDB0;
+    (void)mem_00B40640;
+    float val = *arg;
+    ext_005EBCF0(self, &val);
+    val = *arg;
+    ext_005E4990(self, &val);
+}
+} // namespace lift_005ECD10

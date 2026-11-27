@@ -55367,6 +55367,13 @@
     "summary": "Adjusts this by -0xC and forwards dereferenced float argument to sub_005EBC10",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005ECD10": {
+    "name": "NMData::FixedPathJointData::vfunc_37",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void __thiscall fn_005ECD10(void* self, const float* arg)",
+    "summary": "Forwards a float value by pointer to ext_005EBCF0 and ext_005E4990.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005ECD40": {
     "name": "ComputeDeltaVec4ViaSubobjectVtable",
     "signature": "void fn_005ECD40(void* self, void* dst)",
