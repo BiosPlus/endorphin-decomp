@@ -83313,3 +83313,50 @@ int fn_004B1C00(void* self, void* out) {
     return reinterpret_cast<VFnChild>(vfn)(child, self, out);
 }
 } // namespace lift_004B1C00
+
+// [0x004C0960] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_43 (157 bytes)
+namespace lift_004C0960 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* __stdcall ext_004C0280(void* arg1, void* arg2);
+// Unnamed callee 0x006720E0 (43B): thiscall helper that takes the temporary object as ecx and the copied string as its argument.
+extern void __thiscall ext_006720E0(void* self, void* arg);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string; the std::string local below owns that lifetime.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Copies the document string for the bound value into a temporary, assigns the value from it, then forwards the call to the held object's vfunc_43 and returns its result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_004C0960(void* self, void* arg2) {
+    // Local std::string receiving the document text (destroyed at scope exit).
+    std::string docText;
+    void* document = lift_field<void*>(self, 0x00);
+    ext_004C0280(&docText, document);
+
+    // Temporary built from the copied string; size of this object is not recovered.
+    alignas(8) unsigned char temp[16] = {};
+    ext_006720E0(temp, &docText);
+
+    void* other = temp;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary's held object via vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0x00);
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(held, &other);
+    }
+
+    (void)&mem_00924FF4;
+
+    // Forward to the held object of self: vtable slot 0xAC (method 43), passing (self, arg2).
+    void* target = lift_field<void*>(self, 0x04);
+    void** targetVt = *reinterpret_cast<void***>(target);
+    auto vfunc43 = reinterpret_cast<void* (*)(void*, void*, void*)>(lift_field<void*>(targetVt, 0xAC));
+    return vfunc43(target, self, arg2);
+}
+} // namespace lift_004C0960
