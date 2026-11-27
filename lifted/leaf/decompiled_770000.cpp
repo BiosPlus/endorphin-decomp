@@ -573,3 +573,26 @@ extern void __thiscall fn_0077FA30(void* self, void* arg) {
     }
 }
 } // namespace lift_0077FA30
+
+// [0x007720F0] sub_007720F0 (95 bytes)
+namespace lift_007720F0 {
+// Known callee 0x007721B0: Unknown::closeFileAndResetString_007721B0 (Closes the FILE* at +0xac if set (clearing it), then assigns the string at 0x00B5D2C0 to the sub-object at +0xb0; returns true if no fclose error occurred.)
+extern bool __thiscall ext_007721B0(void* self);
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+// The original passes the sub-object address in ecx, so it is modelled as a fastcall taking self.
+extern void __fastcall ext_006B9D70(void* self);
+// Known callee 0x00754FA0: sub_00754FA0_dtor (Destructor that sets vtable 0x996bf0 and destroys members at +0x60 and +0x8.)
+extern void __fastcall ext_00754FA0(void* self);
+
+// @name Unknown::resetAndDestroy_007720F0
+// @class Unknown
+// @summary Stamps vtable 0x996C98 into this, runs closeFileAndResetString on this, calls the +0xb0 sub-object thunk, then runs the destructor on this.
+// @field Unknown +0x00 uint32_t vtable
+extern void __thiscall fn_007720F0(void* self) {
+    // Original SEH frame / EH state bookkeeping is omitted; it has no portable equivalent.
+    lift_field<uint32_t>(self, 0x00) = 0x996C98u;
+    (void)ext_007721B0(self);
+    ext_006B9D70(static_cast<uint8_t*>(self) + 0xB0);
+    ext_00754FA0(self);
+}
+} // namespace lift_007720F0

@@ -78818,6 +78818,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007720F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x007720F0": {
+    "name": "Unknown::resetAndDestroy_007720F0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_007720F0(void* self)",
+    "summary": "Stamps vtable 0x996C98 into this, runs closeFileAndResetString on this, calls the +0xb0 sub-object thunk, then runs the destructor on this.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x007721B0": {
     "name": "Unknown::closeFileAndResetString_007721B0",
     "class": "Unknown",
