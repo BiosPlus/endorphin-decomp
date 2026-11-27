@@ -16,6 +16,7 @@ struct NMData_CharacterData_Fields {
     // +0x14  void*                    field_0x14  (evidence: 0x0059DFB0)
     // +0x30  std::string              field_0x30  (evidence: 0x0059DFB0)
     // +0x4DE uint8_t                  field_0x4de  (evidence: 0x0059D7D0)
+    // +0x4E0 uint8_t                  field_0x4e0  (evidence: 0x005A4D60)
     // +0x4F4 void*                    field_0x4f4  (evidence: 0x0059F370)
     // +0x5F4 void*                    field_0x5f4  (evidence: 0x0059DFB0)
 };

@@ -128,3 +128,107 @@ void __thiscall fn_0059DFB0(void* self, const void* key) {
     strDtor(&tmp);
 }
 } // namespace lift_0059DFB0
+
+// [0x005A4D60] NMData::CharacterData::vfunc_20 (327 bytes)
+namespace lift_005A4D60 {
+// Known callee 0x00427A60: advanceIteratorUntilMatch (Advances a checked vector iterator until end or an element's vfunc(+0xC)(1) returns true)
+extern void ext_00427A60(void* iter);
+// Known callee 0x005A3540: sub_005A3540 (50B), thiscall(self, obj)
+extern void ext_005A3540(void* self, void* obj);
+// Known callee 0x005C0E70: sub_005C0E70 (480B), thiscall constructor on a new block; returns the constructed object
+extern void* ext_005C0E70(void* self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762, forwards to MFC80!ord_762 (operator new)
+extern void* ext_006A5C62(std::size_t size);
+// Comparison literal pointer (.data u32 0x00986A00)
+extern int mem_00A9F0C4;
+// IAT slots replaced by portable code below (not real accesses)
+extern int mem_00925134; // MSVCR80!_invalid_parameter_noinfo
+extern int mem_00924FC0; // MSVCP80 std::operator==(const string&, const char*)
+
+// Guest (32-bit) address helpers.
+static inline uint32_t guest_addr(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+static inline void* host_ptr(uint32_t a) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(a));
+}
+
+// MSVC 2005 std::string layout: 16-byte _Bx union {char* ptr; char buf[16]}, +0x10 size, +0x14 capacity.
+// Implements operator==(const std::string&, const char*).
+static bool msvc_string_equals_cstr(const void* s, const char* rhs) {
+    const uint32_t size = lift_field<uint32_t>(s, 0x10);
+    const uint32_t capacity = lift_field<uint32_t>(s, 0x14);
+    const char* data = capacity >= 16
+        ? static_cast<const char*>(host_ptr(lift_field<uint32_t>(s, 0)))
+        : static_cast<const char*>(s);
+    const std::size_t n = std::strlen(rhs);
+    return n == size && std::memcmp(data, rhs, size) == 0;
+}
+
+// MSVC _invalid_parameter_noinfo: the CRT handler terminates the process by default.
+[[noreturn]] static void msvc_invalid_parameter() {
+    std::abort();
+}
+
+// @name NMData::CharacterData::vfunc_20
+// @class NMData::CharacterData
+// @summary Walks the 4-byte-element vector at arg+0x24 with checked iterators; for each element whose std::string (at +4) equals the literal, allocates a 0x220-byte object, copies self+0x4E0 into its +0x210 byte, calls its vfunc_21 with the element, then calls sub_005A3540(self, obj).
+// @field NMData::CharacterData +0x4E0 uint8_t field_0x4e0
+void fn_005A4D60(void* self, void* arg) {
+    (void)&mem_00925134;
+    (void)&mem_00924FC0;
+
+    uint8_t* const vec = static_cast<uint8_t*>(arg) + 0x24;
+    const uint32_t vec_addr = guest_addr(vec);
+
+    // Range is [begin, end) with begin at +0x4 and end at +0x8; both checked against begin <= end.
+    const uint32_t begin = lift_field<uint32_t>(vec, 0x4);
+    const uint32_t end = lift_field<uint32_t>(vec, 0x8);
+    if (begin > end) msvc_invalid_parameter();
+
+    // Iterator layout: {container, container (tag), position}.
+    uint32_t it1[3] = {vec_addr, vec_addr, begin};
+    ext_00427A60(it1);
+
+    if (lift_field<uint32_t>(vec, 0x4) > lift_field<uint32_t>(vec, 0x8)) msvc_invalid_parameter();
+    uint32_t it2[3] = {vec_addr, vec_addr, lift_field<uint32_t>(vec, 0x8)};
+    ext_00427A60(it2);
+
+    for (;;) {
+        const uint32_t tag = it1[1];
+        if (tag == 0 || tag != it2[1]) msvc_invalid_parameter();
+
+        uint32_t cur = it1[2];
+        if (!(cur < it2[2])) break;
+
+        if (!(cur < lift_field<uint32_t>(vec, 0x8))) msvc_invalid_parameter();
+        const uint32_t elem = lift_field<uint32_t>(host_ptr(cur), 0);
+        const char* literal = static_cast<const char*>(host_ptr(static_cast<uint32_t>(mem_00A9F0C4)));
+
+        if (msvc_string_equals_cstr(host_ptr(elem + 4), literal)) {
+            void* block = ext_006A5C62(0x220);
+            void* obj = nullptr;
+            if (block != nullptr) {
+                obj = ext_005C0E70(block);
+            }
+
+            lift_field<uint8_t>(obj, 0x210) = lift_field<uint8_t>(self, 0x4E0);
+
+            if (!(cur < lift_field<uint32_t>(vec, 0x8))) msvc_invalid_parameter();
+            const uint32_t elem_value = lift_field<uint32_t>(host_ptr(cur), 0);
+            const uint32_t vtbl = lift_field<uint32_t>(obj, 0);
+            const uint32_t slot = lift_field<uint32_t>(host_ptr(vtbl), 0x54);
+            // vfunc at vtable+0x54 (slot 21), __thiscall(obj, elem_value)
+            reinterpret_cast<void (*)(void*, uint32_t)>(static_cast<uintptr_t>(slot))(obj, elem_value);
+
+            ext_005A3540(self, obj);
+        }
+
+        if (!(cur < lift_field<uint32_t>(vec, 0x8))) msvc_invalid_parameter();
+        cur += 4;
+        it1[2] = cur;
+        ext_00427A60(it1);
+    }
+}
+} // namespace lift_005A4D60

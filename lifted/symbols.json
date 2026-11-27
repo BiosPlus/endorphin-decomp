@@ -43149,6 +43149,13 @@
     "summary": "Calls a helper on the target object, then writes a ValuePtr to out: the value from the input's object via vtable slot +0x70 if the object is non-null, otherwise a null ValuePtr.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005A4D60": {
+    "name": "NMData::CharacterData::vfunc_20",
+    "class": "NMData::CharacterData",
+    "signature": "extern \"C\" int mem_00924FC0; // MSVCP80 std::operator==(const string\u0026, const char*) static inline uint32_t guest_addr(const void* p)",
+    "summary": "Walks the 4-byte-element vector at arg+0x24 with checked iterators; for each element whose std::string (at +4) equals the literal, allocates a 0x220-byte object, copies self+0x4E0 into its +0x210 byte, calls its vfunc_21 with the element, then calls sub_005A3540(self, obj).",
+    "lifted_path": "lifted/NMData/CharacterData.cpp"
+  },
   "0x005A5400": {
     "name": "NMData::BackGroundData::vfunc_6_off_4",
     "class": "NMData::BackGroundData",
