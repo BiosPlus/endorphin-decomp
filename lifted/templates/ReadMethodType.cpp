@@ -187070,8 +187070,8 @@ extern int mem_009DEC1C;
 // @name ExprParser::ReadMethodType<DoubleWithProperties>::vfunc_47
 // @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
 // @summary Reads the double behind field_0x00 as a float, stores it into a temp value, assigns it to field_0x04, then forwards vfunc_47 to field_0x04 with self.
-// @field ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0> +0x00 double* field_0x00
-// @field ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0> +0x04 void* field_0x04
+// @field ExprParser::ReadMethodType<DoubleWithProperties> +0x00 double* field_0x00
+// @field ExprParser::ReadMethodType<DoubleWithProperties> +0x04 void* field_0x04
 void fn_006958E0(void* self) {
     (void)&mem_008A5428;  // EH/SEH scope table for the original try region (boilerplate)
 
