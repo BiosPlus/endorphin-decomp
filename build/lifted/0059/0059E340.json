@@ -1,0 +1,13 @@
+{
+  "va": "0x0059E340",
+  "size": 95,
+  "orig_symbol": "sub_0059E340",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "StaticObject_GuardedInit_0059E340",
+  "signature": "void* fn_0059E340()",
+  "summary": "One-time guarded initializer for the static object at 0x00B4145C; runs its init callee once, registers a follow-up callee, and returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:48:48Z"
+}

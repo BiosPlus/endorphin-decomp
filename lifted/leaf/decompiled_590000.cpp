@@ -2686,3 +2686,26 @@ void* fn_00594A30() {
     return reinterpret_cast<void*>(&mem_00B4139C);
 }
 } // namespace lift_00594A30
+
+// [0x0059E340] sub_0059E340 (95 bytes)
+namespace lift_0059E340 {
+// Known callee 0x00662610: sub_00662610 (cdecl, 2 args: object pointer, init argument)
+extern void ext_00662610(void* obj, const void* arg);
+// Known callee 0x006A6C87: sub_006A6C87 (cdecl, 1 arg: cleanup/registration pointer)
+extern void ext_006A6C87(const void* fn);
+// One-time init guard flag (bit 0 = initialized)
+extern uint32_t mem_00B41478;
+// Static object whose address is returned
+extern uint8_t mem_00B4145C;
+
+// @name StaticObject_GuardedInit_0059E340
+// @summary One-time guarded initializer for the static object at 0x00B4145C; runs its init callee once, registers a follow-up callee, and returns the object's address.
+void* fn_0059E340() {
+    if ((mem_00B41478 & 1u) == 0) {
+        mem_00B41478 |= 1u;
+        ext_00662610(&mem_00B4145C, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A2F438u)));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x0091D810u)));
+    }
+    return &mem_00B4145C;
+}
+} // namespace lift_0059E340

@@ -44580,6 +44580,12 @@
     "summary": "Decrements a red-black tree iterator to the previous in-order node.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x0059E340": {
+    "name": "StaticObject_GuardedInit_0059E340",
+    "signature": "void* fn_0059E340()",
+    "summary": "One-time guarded initializer for the static object at 0x00B4145C; runs its init callee once, registers a follow-up callee, and returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059E3A0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1\u003e",
