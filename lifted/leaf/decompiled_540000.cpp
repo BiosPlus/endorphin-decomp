@@ -2168,3 +2168,45 @@ void fn_00541AB0(void* self) {
     }
 }
 } // namespace lift_00541AB0
+
+// [0x00544F30]
+namespace lift_00544F30 {
+// @name Unknown::dtor_00544F30
+// @class Unknown
+// @summary Destructor that resets vtables, frees field_0x250 via MFC80!ord_764, clears fields, and destroys subobjects.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x98 void* subobject_vtable_0x98
+// @field Unknown +0x9C uint8_t subobject_0x9C
+// @field Unknown +0x164 uint8_t subobject_0x164
+// @field Unknown +0x250 void* field_0x250
+// @field Unknown +0x254 uint32_t field_0x254
+// @field Unknown +0x258 uint32_t field_0x258
+
+
+extern uint8_t mem_009566D4[];
+extern uint8_t mem_009565D4[];
+
+extern void ext_006A5C5C(void* ptr);
+extern void __fastcall ext_00540130(void* self);
+extern void __fastcall ext_00544BE0(void* self);
+extern void __fastcall ext_00543320(void* self);
+
+void __fastcall fn_00544F30(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    lift_field<void*>(base, 0x00) = mem_009566D4;
+    lift_field<void*>(base, 0x98) = mem_009565D4;
+
+    void* ptr = lift_field<void*>(base, 0x250);
+    if (ptr != nullptr) {
+        ext_006A5C5C(ptr);
+    }
+
+    lift_field<uint32_t>(base, 0x250) = 0;
+    lift_field<uint32_t>(base, 0x254) = 0;
+    lift_field<uint32_t>(base, 0x258) = 0;
+
+    ext_00540130(base + 0x164);
+    ext_00544BE0(base + 0x9C);
+    ext_00543320(self);
+}
+} // namespace lift_00544F30
