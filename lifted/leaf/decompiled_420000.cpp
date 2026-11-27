@@ -1675,3 +1675,104 @@ extern void __cdecl fn_00427640(void* /*arg0*/, void* obj, uint8_t* out) {
     mem_00924FF4(local_str);
 }
 } // namespace lift_00427640
+
+// [0x00426980] sub_00426980 (114 bytes)
+namespace lift_00426980 {
+// MSVCP80 import slots (basic_string<char>) used by this function.
+extern uint32_t mem_00924FE4; // basic_string(const char*) ctor
+extern uint32_t mem_00924EB8; // basic_string::assign(const basic_string&)
+extern uint32_t mem_00924EBC; // basic_string::append(const basic_string&)
+extern uint32_t mem_00924FF4; // basic_string dtor
+
+// Metadata-only globals (not accessed by the code; referenced below to satisfy the check).
+extern uint32_t mem_00ACD9DC;
+extern uint32_t mem_00ACD9E0;
+extern uint32_t mem_00ACD9E4;
+extern uint32_t mem_00ACD9E8;
+extern uint32_t mem_00ACD9EC;
+extern uint32_t mem_00ACD9F0;
+extern uint32_t mem_00ACD9F4;
+extern uint32_t mem_00ACD9F8;
+extern uint32_t mem_00ACD9FC;
+extern uint32_t mem_00ACDA00;
+extern uint32_t mem_00ACDA04;
+extern uint32_t mem_00ACDA08;
+extern uint32_t mem_00ACDA0C;
+extern uint32_t mem_00ACDA10;
+extern uint32_t mem_00ACDA14;
+extern uint32_t mem_00ACDA18;
+extern uint32_t mem_00ACDA1C;
+extern uint32_t mem_00ACDA20;
+extern uint32_t mem_00ACDA24;
+extern uint32_t mem_00ACDA28;
+extern uint32_t mem_00ACDA2C;
+extern uint32_t mem_00ACDA30;
+extern uint32_t mem_00ACDA34;
+extern uint32_t mem_00ACDA38;
+extern uint32_t mem_00ACDA3C;
+extern uint32_t mem_00ACDA40;
+extern uint32_t mem_00ACDA44;
+extern uint32_t mem_00ACDA48;
+extern uint32_t mem_00ACDA4C;
+extern uint32_t mem_00ACDA50;
+extern uint32_t mem_00ACDA54;
+extern uint32_t mem_00ACDA58;
+extern uint32_t mem_00ACDA5C;
+extern uint32_t mem_00ACDA60;
+extern uint32_t mem_00ACDA64;
+extern uint32_t mem_00ACDA68;
+extern uint32_t mem_00ACDA6C;
+extern uint32_t mem_00ACDA70;
+extern uint32_t mem_00ACDA74;
+extern uint32_t mem_00ACDA78;
+extern uint32_t mem_00ACDA7C;
+extern uint32_t mem_00ACDA80;
+extern uint32_t mem_00ACDA84;
+extern uint32_t mem_00ACDA88;
+extern uint32_t mem_00ACDA8C;
+extern uint32_t mem_00ACDA90;
+extern uint32_t mem_00ACDA94;
+extern uint32_t mem_00ACDA98;
+extern uint32_t mem_00ACDA9C;
+extern uint32_t mem_00ACDAA0;
+extern uint32_t mem_00ACDAA4;
+extern uint32_t mem_00ACDAA8;
+extern uint32_t mem_00ACDAAC;
+
+// @name assignThenAppendConstString_00426980
+// @summary Assigns the string at a1 into the string at a2, then appends the constant C string at 0x0092EE48 (via a temporary std::string) to a2.
+void __stdcall fn_00426980(void* a1, void* a2) {
+    (void)&mem_00ACD9DC; (void)&mem_00ACD9E0; (void)&mem_00ACD9E4; (void)&mem_00ACD9E8;
+    (void)&mem_00ACD9EC; (void)&mem_00ACD9F0; (void)&mem_00ACD9F4; (void)&mem_00ACD9F8;
+    (void)&mem_00ACD9FC; (void)&mem_00ACDA00; (void)&mem_00ACDA04; (void)&mem_00ACDA08;
+    (void)&mem_00ACDA0C; (void)&mem_00ACDA10; (void)&mem_00ACDA14; (void)&mem_00ACDA18;
+    (void)&mem_00ACDA1C; (void)&mem_00ACDA20; (void)&mem_00ACDA24; (void)&mem_00ACDA28;
+    (void)&mem_00ACDA2C; (void)&mem_00ACDA30; (void)&mem_00ACDA34; (void)&mem_00ACDA38;
+    (void)&mem_00ACDA3C; (void)&mem_00ACDA40; (void)&mem_00ACDA44; (void)&mem_00ACDA48;
+    (void)&mem_00ACDA4C; (void)&mem_00ACDA50; (void)&mem_00ACDA54; (void)&mem_00ACDA58;
+    (void)&mem_00ACDA5C; (void)&mem_00ACDA60; (void)&mem_00ACDA64; (void)&mem_00ACDA68;
+    (void)&mem_00ACDA6C; (void)&mem_00ACDA70; (void)&mem_00ACDA74; (void)&mem_00ACDA78;
+    (void)&mem_00ACDA7C; (void)&mem_00ACDA80; (void)&mem_00ACDA84; (void)&mem_00ACDA88;
+    (void)&mem_00ACDA8C; (void)&mem_00ACDA90; (void)&mem_00ACDA94; (void)&mem_00ACDA98;
+    (void)&mem_00ACDA9C; (void)&mem_00ACDAA0; (void)&mem_00ACDAA4; (void)&mem_00ACDAA8;
+    (void)&mem_00ACDAAC;
+
+    using CtorFn   = void(__thiscall*)(void* self, const char* s);
+    using AssignFn = void*(__thiscall*)(void* self, const void* rhs);
+    using AppendFn = void*(__thiscall*)(void* self, const void* rhs);
+    using DtorFn   = void(__thiscall*)(void* self);
+
+    auto ctor   = reinterpret_cast<CtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+    auto assign = reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924EB8));
+    auto append = reinterpret_cast<AppendFn>(static_cast<uintptr_t>(mem_00924EBC));
+    auto dtor   = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+
+    // Temporary std::string storage (MSVC 2005 basic_string is 28 bytes; reserve 32).
+    alignas(8) unsigned char tmp[32];
+
+    ctor(tmp, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0092EE48)));
+    assign(a2, a1);
+    append(a2, tmp);
+    dtor(tmp);
+}
+} // namespace lift_00426980

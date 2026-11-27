@@ -2672,6 +2672,12 @@
     "summary": "Calls the MSVCP80 std::string(const char*) constructor in place on self with the literal \"\" (mem_00928B5D) via the IAT slot mem_00924FE4, then returns self.",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x00426980": {
+    "name": "assignThenAppendConstString_00426980",
+    "signature": "void __stdcall fn_00426980(void* a1, void* a2)",
+    "summary": "Assigns the string at a1 into the string at a2, then appends the constant C string at 0x0092EE48 (via a temporary std::string) to a2.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004271F0": {
     "name": "isStringNotEqualToGlobalName",
     "signature": "extern \"C\" uint32_t mem_00924FC8; // IAT slot: MSVCP80 operator!=(const basic_string\u003cchar\u003e\u0026, const char*) bool __stdcall fn_004271F0(const void* str)",
