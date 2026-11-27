@@ -8,8 +8,9 @@
 // Recovered field layout for ThreeStrings:
 namespace lifted_layout {
 struct ThreeStrings_Fields {
-    // +0x0   std::string              field_0x00  (evidence: 0x00574D30)
-    // +0x1C  std::string              field_0x1C  (evidence: 0x00574D30)
-    // +0x38  std::string              field_0x38  (evidence: 0x00574D30)
+    // +0x0   std::string              field_0x00  (evidence: 0x00553F00, 0x00574D30)
+    // +0x1C  std::string              field_0x1C  (evidence: 0x00574D30) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  std::string              field_0x1c  (evidence: 0x00553F00) // CONFLICT: multiple definitions at +0x1C
+    // +0x38  std::string              field_0x38  (evidence: 0x00553F00, 0x00574D30)
 };
 } // namespace lifted_layout

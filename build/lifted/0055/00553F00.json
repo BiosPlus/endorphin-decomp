@@ -1,0 +1,33 @@
+{
+  "va": "0x00553F00",
+  "size": 101,
+  "orig_symbol": "sub_00553F00",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "ThreeStringsCopyCtor",
+  "signature": "void* __thiscall sub_00553F00(void* self, const void* other)",
+  "summary": "Copy-constructs a struct containing three std::string fields at +0x00, +0x1c, and +0x38",
+  "fields": [
+    {
+      "class": "ThreeStrings",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ThreeStrings",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "ThreeStrings",
+      "offset": "+0x38",
+      "type": "std::string",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:06:32Z"
+}

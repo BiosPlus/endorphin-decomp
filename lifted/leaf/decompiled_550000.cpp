@@ -1753,3 +1753,29 @@ void* __thiscall sub_005541F0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_005541F0
+
+// [0x00553F00]
+namespace lift_00553F00 {
+// @name ThreeStringsCopyCtor
+// @summary Copy-constructs a struct containing three std::string fields at +0x00, +0x1c, and +0x38
+// @field ThreeStrings +0x00 std::string field_0x00
+// @field ThreeStrings +0x1c std::string field_0x1c
+// @field ThreeStrings +0x38 std::string field_0x38
+
+
+extern uint32_t mem_00924FE0;
+
+void* __thiscall sub_00553F00(void* self, const void* other) {
+    using StringCopyCtor = void(__thiscall*)(void*, const void*);
+    auto copy_ctor = reinterpret_cast<StringCopyCtor>(mem_00924FE0);
+
+    auto* dst = static_cast<uint8_t*>(self);
+    const auto* src = static_cast<const uint8_t*>(other);
+
+    copy_ctor(dst + 0x00, src + 0x00);
+    copy_ctor(dst + 0x1c, src + 0x1c);
+    copy_ctor(dst + 0x38, src + 0x38);
+
+    return self;
+}
+} // namespace lift_00553F00
