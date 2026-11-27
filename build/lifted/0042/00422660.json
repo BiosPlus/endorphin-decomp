@@ -1,0 +1,124 @@
+{
+  "va": "0x00422660",
+  "size": 127,
+  "orig_symbol": "sub_00422660",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Unknown::InitState9",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_00422660(void* self, DWORD a1, DWORD a2, DWORD a3, DWORD a4, DWORD a5, DWORD a6, DWORD a7, BYTE a8, DWORD a9)",
+  "summary": "Calls thunk_MFC80_ord_572 on this, zeroes flag/counter fields, stores 9 stack args (thiscall, ret 0x24) into the object, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "DWORD",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "DWORD",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "DWORD",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "DWORD",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "DWORD",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "BYTE",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "DWORD",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "DWORD",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "DWORD",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "DWORD",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "DWORD",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "DWORD",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "DWORD",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "BYTE",
+      "name": "field_0x8c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8D",
+      "type": "BYTE",
+      "name": "field_0x8d"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8E",
+      "type": "BYTE",
+      "name": "field_0x8e"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:04:38Z"
+}

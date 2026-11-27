@@ -2632,6 +2632,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004225D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00422660": {
+    "name": "Unknown::InitState9",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_00422660(void* self, DWORD a1, DWORD a2, DWORD a3, DWORD a4, DWORD a5, DWORD a6, DWORD a7, BYTE a8, DWORD a9)",
+    "summary": "Calls thunk_MFC80_ord_572 on this, zeroes flag/counter fields, stores 9 stack args (thiscall, ret 0x24) into the object, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00422B20": {
     "name": "postCommandToMainWnd",
     "signature": "extern \"C\" void __thiscall fn_00422B20(void* self, uint32_t, uint32_t, uint32_t)",

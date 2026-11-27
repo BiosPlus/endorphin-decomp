@@ -1857,3 +1857,62 @@ void* fn_0042EE90(void* self) {
     return self;
 }
 } // namespace lift_0042EE90
+
+// [0x00422660] sub_00422660 (127 bytes)
+namespace lift_00422660 {
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+// Called with `this` still in ecx (no arguments are set up before the call).
+extern void __fastcall ext_006A5C6E(void* self);
+
+// Vtable address stored into the object at +0x00.
+extern int mem_0092E8F4;
+
+// @name Unknown::InitState9
+// @class Unknown
+// @summary Calls thunk_MFC80_ord_572 on this, zeroes flag/counter fields, stores 9 stack args (thiscall, ret 0x24) into the object, and returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x54 DWORD field_0x54
+// @field Unknown +0x58 DWORD field_0x58
+// @field Unknown +0x5C DWORD field_0x5c
+// @field Unknown +0x60 DWORD field_0x60
+// @field Unknown +0x64 DWORD field_0x64
+// @field Unknown +0x68 DWORD field_0x68
+// @field Unknown +0x6C BYTE field_0x6c
+// @field Unknown +0x70 DWORD field_0x70
+// @field Unknown +0x74 DWORD field_0x74
+// @field Unknown +0x78 DWORD field_0x78
+// @field Unknown +0x7C DWORD field_0x7c
+// @field Unknown +0x80 DWORD field_0x80
+// @field Unknown +0x84 DWORD field_0x84
+// @field Unknown +0x88 DWORD field_0x88
+// @field Unknown +0x8C BYTE field_0x8c
+// @field Unknown +0x8D BYTE field_0x8d
+// @field Unknown +0x8E BYTE field_0x8e
+extern void* __thiscall fn_00422660(void* self, DWORD a1, DWORD a2, DWORD a3, DWORD a4,
+                                        DWORD a5, DWORD a6, DWORD a7, BYTE a8, DWORD a9) {
+    ext_006A5C6E(self);
+
+    lift_field<DWORD>(self, 0x58) = a4;
+    lift_field<DWORD>(self, 0x54) = a3;
+    lift_field<DWORD>(self, 0x5C) = a5;
+    lift_field<DWORD>(self, 0x64) = a7;
+    lift_field<DWORD>(self, 0x60) = a6;
+    lift_field<DWORD>(self, 0x68) = a9;
+    lift_field<DWORD>(self, 0x84) = a1;
+
+    lift_field<BYTE>(self, 0x6C) = 0;
+    lift_field<DWORD>(self, 0x70) = 0;
+    lift_field<DWORD>(self, 0x74) = 0;
+    lift_field<DWORD>(self, 0x78) = 0;
+    lift_field<DWORD>(self, 0x7C) = 0;
+    lift_field<DWORD>(self, 0x80) = 0;
+    lift_field<BYTE>(self, 0x8D) = 0;
+    lift_field<BYTE>(self, 0x8E) = 0;
+
+    lift_field<void*>(self, 0x00) = &mem_0092E8F4;
+    lift_field<DWORD>(self, 0x88) = a2;
+    lift_field<BYTE>(self, 0x8C) = a8;
+
+    return self;
+}
+} // namespace lift_00422660
