@@ -308,3 +308,54 @@ void fn_005521E0(void* self, void* props) {
     ext_00548A20(self, props);
 }
 } // namespace lift_005521E0
+
+// [0x005525A0]
+namespace lift_005525A0 {
+// @name NMCamera::Perspective::vfunc_10
+// @class NMCamera::Perspective
+// @summary Transforms screen coordinates into world/view space using the perspective camera and inverse matrix.
+// @field NMCamera::Perspective +0xB8 double field_0xB8
+
+
+uintptr_t __thiscall ext_004875A0(uintptr_t this_ptr, uintptr_t out_mat, uintptr_t in_mat);
+void __thiscall ext_00548150(uintptr_t this_ptr, uintptr_t mat_ptr);
+void __thiscall ext_00551D20(uintptr_t this_ptr);
+uint32_t __thiscall ext_00552130(uintptr_t this_ptr, uintptr_t out_ptr, uint32_t index);
+uintptr_t __thiscall ext_006943B0(uintptr_t this_ptr, uintptr_t out_ptr, uintptr_t mat_ptr);
+
+void __thiscall sub_005525A0(uintptr_t this_ptr, int32_t x, int32_t y, uintptr_t mat_ptr, uintptr_t out_ptr) {
+    float row3[4];
+    ext_00552130(mat_ptr, reinterpret_cast<uintptr_t>(row3), 3);
+
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(this_ptr);
+    using VFunc6 = double(__thiscall*)(uintptr_t, uintptr_t);
+    double depth = reinterpret_cast<VFunc6>(vtable[6])(this_ptr, reinterpret_cast<uintptr_t>(row3));
+    double scale = depth / lift_field<double>(reinterpret_cast<void*>(this_ptr), 0xB8);
+
+    float* out = reinterpret_cast<float*>(out_ptr);
+    out[0] = static_cast<float>(static_cast<double>(x) * scale);
+    out[1] = static_cast<float>(static_cast<double>(-y) * scale);
+    out[2] = 0.0f;
+    out[3] = 0.0f;
+
+    float mat[16] = {
+        1.0f, 0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 0.0f, 1.0f
+    };
+    ext_00548150(this_ptr, reinterpret_cast<uintptr_t>(mat));
+
+    float inv_mat[16];
+    ext_004875A0(mat_ptr, reinterpret_cast<uintptr_t>(inv_mat), reinterpret_cast<uintptr_t>(mat));
+    ext_00551D20(reinterpret_cast<uintptr_t>(inv_mat));
+
+    float tmp[4];
+    uintptr_t res_ptr = ext_006943B0(out_ptr, reinterpret_cast<uintptr_t>(tmp), reinterpret_cast<uintptr_t>(inv_mat));
+    const float* res = reinterpret_cast<const float*>(res_ptr);
+    out[0] = res[0];
+    out[1] = res[1];
+    out[2] = res[2];
+    out[3] = res[3];
+}
+} // namespace lift_005525A0

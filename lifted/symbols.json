@@ -37337,6 +37337,13 @@
     "summary": "Computes the dot product of (arg - ref) with a normalized camera-space vector (from +0xA0 object or +0x80/+0xE8 fallback), then passes it to virtual slot 5.",
     "lifted_path": "lifted/NMCamera/Perspective.cpp"
   },
+  "0x005525A0": {
+    "name": "NMCamera::Perspective::vfunc_10",
+    "class": "NMCamera::Perspective",
+    "signature": "void __thiscall sub_005525A0(uintptr_t this_ptr, int32_t x, int32_t y, uintptr_t mat_ptr, uintptr_t out_ptr)",
+    "summary": "Transforms screen coordinates into world/view space using the perspective camera and inverse matrix.",
+    "lifted_path": "lifted/NMCamera/Perspective.cpp"
+  },
   "0x005526A0": {
     "name": "NMCamera::Perspective::vfunc_5",
     "class": "NMCamera::Perspective",
