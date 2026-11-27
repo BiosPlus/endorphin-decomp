@@ -2230,3 +2230,50 @@ void fn_006B6C60(void* self) {
     }
 }
 } // namespace lift_006B6C60
+
+// [0x006B6320] sub_006B6320 (142 bytes)
+namespace lift_006B6320 {
+// Known callee 0x006A5FF2: thunk_MFC80_ord_1934 (IAT jump thunk forwarding to MFC80!ord_1934.)
+extern void ext_006A5FF2();
+// Known callee 0x006A6310: thunk_MFC80_ord_760 (IAT jump thunk forwarding to MFC80!ord_760.)
+extern void ext_006A6310();
+// Known callee 0x006A6808: thunk_MFC80_ord_739 (IAT jump thunk forwarding to MFC80!ord_739.)
+extern void ext_006A6808();
+// Known callee 0x006B0CD0: sub_006B0CD0_dtor (Destructor that resets vtable, destroys member at +0x64 via MFC80_ord_1934, and calls base destructor MFC80_ord_620.)
+extern void ext_006B0CD0();
+
+// @name Unknown::Unknown (constructor, unidentified class)
+// @class Unknown
+// @summary Constructor: sets primary vtable, constructs two sub-objects at +0x118/+0x120 (vtable 0x92A23C), runs sub-dtor-style init at +0xA8 and MFC80 init at +0x54, then MFC80 finalizer call on self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x54 uint8_t field_0x54
+// @field Unknown +0xA8 uint8_t field_0xA8
+// @field Unknown +0x118 uint32_t vtable_sub118
+// @field Unknown +0x120 uint32_t vtable_sub120
+void fn_006B6320(void* self) {
+    // Helper: write a 32-bit vtable pointer at a byte offset from self.
+    auto store_vptr = [](void* base, uintptr_t off, uint32_t vt) {
+        *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(base) + off) = vt;
+    };
+
+    // Primary vtable.
+    store_vptr(self, 0x00, 0x992404u);
+
+    // Sub-object at +0x120: vtable 0x92A23C, then MFC80 init (ord_1934).
+    store_vptr(self, 0x120, 0x92A23Cu);
+    ext_006A5FF2();
+
+    // Sub-object at +0x118: vtable 0x92A23C, then MFC80 init (ord_1934).
+    store_vptr(self, 0x118, 0x92A23Cu);
+    ext_006A5FF2();
+
+    // Member at +0xA8: destructor-style cleanup/init via 0x006B0CD0.
+    ext_006B0CD0();
+
+    // Member at +0x54: MFC80 ord_739 init.
+    ext_006A6808();
+
+    // Self: MFC80 ord_760 finalizer.
+    ext_006A6310();
+}
+} // namespace lift_006B6320

@@ -65106,6 +65106,13 @@
     "summary": "Constructor-style init: sets vftables at +0x00/+0x54/+0x118/+0x120, calls two sub-object inits (+0x54, +0xA8), zeroes +0x114/+0x11C/+0x124; returns this. MSVC SEH frame dropped.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B6320": {
+    "name": "Unknown::Unknown (constructor, unidentified class)",
+    "class": "Unknown",
+    "signature": "void fn_006B6320(void* self)",
+    "summary": "Constructor: sets primary vtable, constructs two sub-objects at +0x118/+0x120 (vtable 0x92A23C), runs sub-dtor-style init at +0xA8 and MFC80 init at +0x54, then MFC80 finalizer call on self.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B6480": {
     "name": "Unknown::UpdateSelectionBrush",
     "class": "Unknown",
