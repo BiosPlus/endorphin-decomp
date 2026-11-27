@@ -665,3 +665,46 @@ void* fn_004ED640(void* self) {
     return self;
 }
 } // namespace lift_004ED640
+
+// [0x004EFE80]
+namespace lift_004EFE80 {
+// Declared external dependencies used by this function.
+void ext_004EFA50(void* self, uint32_t begin, void* self2, uint32_t end);
+void ext_006A5C5C(uint32_t ptr);
+extern void (*mem_00925134)(void);
+
+// @name OwnedPointerRange::clearAndFree
+// @class OwnedPointerRange
+// @summary Validates the range fields, destroys the range via helper, frees the begin buffer if non-null, then zeroes begin/end/cap.
+// @field OwnedPointerRange +0x04 uint32_t field_0x04
+// @field OwnedPointerRange +0x08 uint32_t field_0x08
+// @field OwnedPointerRange +0x0c uint32_t field_0x0c
+void fn_004EFE80(void* self_) {
+    uint8_t* self = static_cast<uint8_t*>(self_);
+    auto field = [&](int off) -> uint32_t* {
+        return reinterpret_cast<uint32_t*>(self + off);
+    };
+
+    // Validate: begin <= end, end <= cap (asm: cmp [esi+4],[esi+8]; cmp ebx,[esi+8]).
+    if (*field(0x04) > *field(0x08)) {
+        mem_00925134();
+    }
+    uint32_t begin = *field(0x04);
+    if (begin > *field(0x08)) {
+        mem_00925134();
+    }
+    begin = *field(0x04);
+    uint32_t end = *field(0x08);
+
+    ext_004EFA50(self, begin, self, end);
+
+    uint32_t cur = *field(0x04);
+    if (cur != 0) {
+        ext_006A5C5C(cur);
+    }
+
+    *field(0x04) = 0;
+    *field(0x08) = 0;
+    *field(0x0c) = 0;
+}
+} // namespace lift_004EFE80
