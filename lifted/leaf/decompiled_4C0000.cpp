@@ -1401,3 +1401,56 @@ void __thiscall fn_004CDC80(void* self, const char* name) {
     (*reinterpret_cast<string_dtor_fn*>(&mem_00924FF4))(str);
 }
 } // namespace lift_004CDC80
+
+// [0x004CD9F0] sub_004CD9F0 (128 bytes)
+namespace lift_004CD9F0 {
+// Known callee 0x0040ECB0: sub_0040ECB0 (thiscall, ecx = global at mem_00B5962C, one stack arg, callee cleans stack)
+extern void __thiscall ext_0040ECB0(void* self, void* arg);
+// Known callee 0x004CA3E0: Lifted_004CA3E0 (Gets the decorated type name of the type_info at mem_00A2FBBC, copies it to a std::string, passes it with self to ext_0066AC90, and returns self.)
+extern void* __cdecl ext_004CA3E0(void* self);
+// MSVCP80 std::string destructor, loaded via IAT slot at 0x924FF4
+extern int mem_00924FF4;
+// Vtable for the object at this+0x00
+extern int mem_00947348;
+// Global object passed as ecx to ext_0040ECB0
+extern int mem_00B5962C;
+// Guard/SEH cookie region (SEH frame setup removed; no reference kept)
+
+using StringDtorFn = void(__thiscall*)(void*);
+
+// @name Unknown::InitTypeNameRecord_004CD9F0
+// @class Unknown
+// @summary Zeroes the record fields of this, installs its vtable, builds the decorated type name string of the type_info at mem_00A2FBBC, forwards it to the global object's member at mem_00B5962C, destroys the temporary string, and returns this.
+// @field Unknown +0x00 void* vftable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+void* fn_004CD9F0(void* self) {
+    // Install vtable.
+    lift_field<void*>(self, 0x00) = &mem_00947348;
+
+    // Zero the record fields.
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Temporary std::string storage (sizeof(std::string) == 0x18 under MSVC 2005 CRT).
+    alignas(8) unsigned char str_buf[0x18];
+
+    // Callee constructs the decorated type name into str_buf and returns it.
+    void* str = ext_004CA3E0(str_buf);
+
+    ext_0040ECB0(&mem_00B5962C, str);
+
+    // Destroy the temporary string through the IAT-resolved destructor.
+    (*reinterpret_cast<StringDtorFn*>(&mem_00924FF4))(str_buf);
+
+    return self;
+}
+} // namespace lift_004CD9F0

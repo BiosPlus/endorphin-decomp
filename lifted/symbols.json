@@ -20962,6 +20962,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::MetaBodyConstraintData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CD9F0": {
+    "name": "Unknown::InitTypeNameRecord_004CD9F0",
+    "class": "Unknown",
+    "signature": "void* fn_004CD9F0(void* self)",
+    "summary": "Zeroes the record fields of this, installs its vtable, builds the decorated type name string of the type_info at mem_00A2FBBC, forwards it to the global object's member at mem_00B5962C, destroys the temporary string, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CDC80": {
     "name": "CallWithNamedString",
     "class": "\u003cunknown\u003e",
