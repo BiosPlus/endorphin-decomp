@@ -63992,6 +63992,13 @@
     "summary": "Copy constructor calling base copy constructor, setting vtable 0x00977734, and copying member at +0x44.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00626EB0": {
+    "name": "NMData::EffectorSkeletalData::vfunc_13",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "bool isSentinel(uint32_t v)",
+    "summary": "Initializes base data and defaults, then fills ten float fields from string-table lookups and sets two string-index fields and a string-equality flag.",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
+  },
   "0x00627110": {
     "name": "NMData::EffectorSkeletalData::vfunc_15",
     "class": "NMData::EffectorSkeletalData",

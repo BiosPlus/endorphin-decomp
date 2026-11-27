@@ -281,3 +281,135 @@ extern void* __thiscall fn_00627110(void* self, void* a1, uint32_t a2, uint32_t 
     return obj;
 }
 } // namespace lift_00627110
+
+// [0x00626EB0] NMData::EffectorSkeletalData::vfunc_13 (597 bytes)
+namespace lift_00626EB0 {
+// Known callee 0x0060BA80: NMData::EffectorBaseData::vfunc_13 (Initializes m_name and m_jointName from the provided attribute source after calling vfunc_19.)
+extern void __thiscall ext_0060BA80(uint8_t* self, uint8_t* arg1);
+// Known callee 0x0063D8F0: initFields (Initializes float, integer, and flag fields on the object to default values.)
+extern void __thiscall ext_0063D8F0(uint8_t* self);
+// Known callee 0x0063F530: sub_0063F530 (197B) - thiscall(arg1, a, b, c), returns a sentinel/index in eax.
+extern uint32_t __thiscall ext_0063F530(uint8_t* self, uint32_t a, uint32_t b, uint32_t c);
+// Known callee 0x0067EE80: sub_0067EE80 (222B) - cdecl(a, b, c), returns float in st0.
+extern float __cdecl ext_0067EE80(uint32_t a, uint32_t b, uint32_t c);
+// Known callee 0x0063EFE0: sub_0063EFE0 (Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.)
+extern uint32_t __thiscall ext_0063EFE0(uint8_t* self, const char* name);
+// Known callee 0x004275E0: assignVirtualString (Calls vtable[2] on obj to obtain a temporary std::string, assigns it to dst, and destroys the temporary.)
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+// Known callee 0x00626770: findStringIndex (Searches a 9-element string table at 0x00A97F70 for a match, returning its index or 0 if not found.)
+extern uint32_t __cdecl ext_00626770(void* s);
+// Known callee 0x00427640: checkStringEqualsConst (Gets a std::string via ext_004275C0, compares it with mem_0092F10C, and stores the boolean result in *out.)
+extern void __cdecl ext_00427640(void* arg0, void* obj, uint8_t* out);
+
+extern int mem_00A9ED74;
+extern int mem_00A9F780;
+extern int mem_00A9F4AC;
+extern int mem_00A9F770;
+extern int mem_00A9F4A4;
+extern int mem_00A9F9FC;
+extern int mem_00A9F504;
+extern int mem_00A9FA5C;
+extern int mem_00A9F520;
+extern int mem_00A9F9EC;
+extern int mem_00A9F4F8;
+extern int mem_00A9FA44;
+extern int mem_00A9F510;
+extern int mem_00A9F77C;
+extern int mem_00A9F4A8;
+extern int mem_00A9F9F4;
+extern int mem_00A9F4FC;
+extern int mem_00A9FA4C;
+extern int mem_00A9F514;
+extern int mem_00924FE8;
+extern int mem_00924FF4;
+extern int mem_00A9F774;
+extern int mem_00A9F458;
+extern int mem_00A9F43C;
+
+namespace {
+
+// Sentinel "not found" values returned by ext_0063F530 / ext_0063EFE0.
+constexpr uint32_t kSentinelA = 0x00B53A34u;
+constexpr uint32_t kSentinelB = 0x00B53B30u;
+constexpr uint32_t kSentinelC = 0x00B53AB0u;
+constexpr uint32_t kSentinelD = 0x00B53A70u;
+constexpr uint32_t kSentinelE = 0x00B53AF0u;
+
+bool isSentinel(uint32_t v) {
+    return v == kSentinelA || v == kSentinelB || v == kSentinelC ||
+           v == kSentinelD || v == kSentinelE;
+}
+
+uint32_t memU32(const int& m) { return static_cast<uint32_t>(m); }
+
+const char* memStr(const int& m) {
+    return reinterpret_cast<const char*>(static_cast<uintptr_t>(static_cast<uint32_t>(m)));
+}
+
+void* asPtr(uint32_t v) { return reinterpret_cast<void*>(static_cast<uintptr_t>(v)); }
+
+} // namespace
+
+// @name NMData::EffectorSkeletalData::vfunc_13
+// @class NMData::EffectorSkeletalData
+// @summary Initializes base data and defaults, then fills ten float fields from string-table lookups and sets two string-index fields and a string-equality flag.
+// @field NMData::EffectorSkeletalData +0x44 uint8_t field_0x44
+// @field NMData::EffectorSkeletalData +0x74 uint32_t field_0x74
+// @field NMData::EffectorSkeletalData +0x78 uint32_t field_0x78
+// @field NMData::EffectorSkeletalData +0x7c uint8_t field_0x7c
+// @field NMData::EffectorSkeletalData +0x80 float field_0x80
+// @field NMData::EffectorSkeletalData +0x84 float field_0x84
+// @field NMData::EffectorSkeletalData +0x88 float field_0x88
+// @field NMData::EffectorSkeletalData +0x8c float field_0x8c
+// @field NMData::EffectorSkeletalData +0x90 float field_0x90
+// @field NMData::EffectorSkeletalData +0x94 float field_0x94
+// @field NMData::EffectorSkeletalData +0x98 float field_0x98
+// @field NMData::EffectorSkeletalData +0x9c float field_0x9c
+// @field NMData::EffectorSkeletalData +0xa0 float field_0xa0
+// @field NMData::EffectorSkeletalData +0xa4 float field_0xa4
+void __thiscall fn_00626EB0(uint8_t* self, uint8_t* arg1) {
+    ext_0060BA80(self, arg1);
+    ext_0063D8F0(self + 0x44);
+
+    const uint32_t r = ext_0063F530(arg1, memU32(mem_00A9ED74), 0u, 1u);
+    const uint32_t edi = isSentinel(r) ? kSentinelB : r;
+
+    if (!isSentinel(edi)) {
+        lift_field<float>(self, 0x80) = ext_0067EE80(edi, memU32(mem_00A9F4AC), memU32(mem_00A9F780));
+        lift_field<float>(self, 0x84) = ext_0067EE80(edi, memU32(mem_00A9F4A4), memU32(mem_00A9F770));
+        lift_field<float>(self, 0x88) = ext_0067EE80(edi, memU32(mem_00A9F504), memU32(mem_00A9F9FC));
+        lift_field<float>(self, 0x8c) = ext_0067EE80(edi, memU32(mem_00A9F520), memU32(mem_00A9FA5C));
+        lift_field<float>(self, 0x90) = ext_0067EE80(edi, memU32(mem_00A9F4F8), memU32(mem_00A9F9EC));
+        lift_field<float>(self, 0x94) = ext_0067EE80(edi, memU32(mem_00A9F510), memU32(mem_00A9FA44));
+        lift_field<float>(self, 0xa0) = ext_0067EE80(edi, memU32(mem_00A9F4A8), memU32(mem_00A9F77C));
+        lift_field<float>(self, 0x98) = ext_0067EE80(edi, memU32(mem_00A9F4FC), memU32(mem_00A9F9F4));
+        lift_field<float>(self, 0x9c) = ext_0067EE80(edi, memU32(mem_00A9F514), memU32(mem_00A9FA4C));
+        lift_field<float>(self, 0xa4) = ext_0067EE80(edi, 0x0097705Cu, 0x00977068u);
+    }
+
+    // MSVC std::string temporary (28 bytes on MSVC 2005; over-allocated).
+    alignas(16) uint8_t str_tmp[32] = {};
+    using str_ctor_fn = void(__thiscall*)(void*);
+    using str_dtor_fn = void(__thiscall*)(void*);
+    auto str_ctor = reinterpret_cast<str_ctor_fn>(
+        static_cast<uintptr_t>(memU32(mem_00924FE8)));
+    auto str_dtor = reinterpret_cast<str_dtor_fn>(
+        static_cast<uintptr_t>(memU32(mem_00924FF4)));
+
+    str_ctor(str_tmp);
+
+    const uint32_t obj1 = ext_0063EFE0(arg1, memStr(mem_00A9F774));
+    ext_004275E0(str_tmp, asPtr(obj1));
+    lift_field<uint32_t>(self, 0x74) = ext_00626770(str_tmp);
+
+    const uint32_t obj2 = ext_0063EFE0(arg1, memStr(mem_00A9F458));
+    ext_004275E0(str_tmp, asPtr(obj2));
+    lift_field<uint32_t>(self, 0x78) = ext_00626770(str_tmp);
+
+    const uint32_t obj3 = ext_0063EFE0(arg1, memStr(mem_00A9F43C));
+    uint32_t flag_slot = obj3;
+    ext_00427640(arg1, self + 0x7c, reinterpret_cast<uint8_t*>(&flag_slot));
+
+    str_dtor(str_tmp);
+}
+} // namespace lift_00626EB0
