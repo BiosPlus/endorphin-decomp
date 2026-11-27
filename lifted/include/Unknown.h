@@ -116,6 +116,7 @@ struct Unknown_Fields {
     // +0x0   void* innerPtr (pointer to inner struct, dereferenced from self)  (evidence: 0x006BA780, 0x006BB790) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711A20, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    self_0  (evidence: 0x0049CE90) // CONFLICT: multiple definitions at +0x0
+    // +0x0   std::string copy (MSVCP80 basic_string copy ctor, via mem_00924FE0 IAT slot)  (evidence: 0x0052A140) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    src_x  (evidence: 0x007C8490, 0x007CA310, 0x007CAF70) // CONFLICT: multiple definitions at +0x0
     // +0x0   char*                    str  (evidence: 0x006BA2F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              str  (evidence: 0x004CF910) // CONFLICT: multiple definitions at +0x0
@@ -705,6 +706,7 @@ struct Unknown_Fields {
     // +0x1C  void*                    criticalSection  (evidence: 0x006FC200) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 default_value  (evidence: 0x0045E700) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  elementCount  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  <unknown> field_0x1C (copy-initialized by ext_00532900)  (evidence: 0x0052A140) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  DWORD                    field_0x1C  (evidence: 0x00622B40, 0x00624540) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  HWND                     field_0x1C  (evidence: 0x00458E10) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  StringArray              field_0x1C  (evidence: 0x0052F7D0, 0x005947B0) // CONFLICT: multiple definitions at +0x1C
