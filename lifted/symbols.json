@@ -25924,6 +25924,13 @@
     "summary": "Constructs the object, initializes base and embedded subobject, and invokes subobject virtual init.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054C5E0": {
+    "name": "DerivedRangeOwner::destroyOwnedRangeAndBase",
+    "class": "DerivedRangeOwner",
+    "signature": "void fn_0054C5E0(void* self)",
+    "summary": "Sets the derived vtable (0x00956D8C), clears and frees the owned pointer range at +0x14, then runs the base Unknown destructor on this object.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054C640": {
     "name": "Container::removePointer",
     "class": "Container",

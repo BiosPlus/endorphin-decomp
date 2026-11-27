@@ -1491,3 +1491,25 @@ void* fn_00543790(void* self, void* arg1, void* arg2) {
     return self;
 }
 } // namespace lift_00543790
+
+// [0x0054C5E0] sub_0054C5E0 (82 bytes)
+namespace lift_0054C5E0 {
+// Known callee 0x00532B40: Unknown::dtor_00532B40 (Sets vtable to 0x009543E4 and unlinks peer at +0x08 if it points back to this at +0x04.)
+extern void ext_00532B40(void* self);
+// Known callee 0x006246B0: OwnedPointerRange::clearAndFreeChecked (Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.)
+extern void ext_006246B0(void* self);
+
+// @name DerivedRangeOwner::destroyOwnedRangeAndBase
+// @summary Sets the derived vtable (0x00956D8C), clears and frees the owned pointer range at +0x14, then runs the base Unknown destructor on this object.
+// @field DerivedRangeOwner +0x00 uint32_t vptr
+// @field DerivedRangeOwner +0x14 OwnedPointerRange range
+void fn_0054C5E0(void* self) {
+    // Compiler-generated EH frame setup/teardown (fs:[0] chain, state slots) is not reproduced.
+    lift_field<uint32_t>(self, 0x00) = 0x00956D8Cu;
+
+    void* range = static_cast<uint8_t*>(self) + 0x14;
+    ext_006246B0(range);
+
+    ext_00532B40(self);
+}
+} // namespace lift_0054C5E0
