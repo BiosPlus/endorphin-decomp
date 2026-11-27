@@ -10,9 +10,11 @@
 // Recovered field layout for NMData::DesiredPoseData:
 namespace lifted_layout {
 struct NMData_DesiredPoseData_Fields {
-    // +0x8   std::string              field_0x08  (evidence: 0x006239D0)
+    // +0x8   std::string              field_0x08  (evidence: 0x00623150, 0x006239D0)
     // +0x24  uint8_t                  field_0x24  (evidence: 0x006239D0)
-    // +0x34  std::string              field_0x34  (evidence: 0x006239D0)
-    // +0x50  uint8_t                  field_0x50  (evidence: 0x006239D0)
+    // +0x28  void*                    field_0x28  (evidence: 0x00623150)
+    // +0x2C  void*                    field_0x2c  (evidence: 0x00623150)
+    // +0x34  std::string              field_0x34  (evidence: 0x00623150, 0x006239D0)
+    // +0x50  uint8_t                  field_0x50  (evidence: 0x00623150, 0x006239D0)
 };
 } // namespace lifted_layout

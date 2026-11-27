@@ -1,0 +1,46 @@
+{
+  "va": "0x00623150",
+  "size": 337,
+  "orig_symbol": "NMData::DesiredPoseData::vfunc_3",
+  "src_path": "src/NMData/DesiredPoseData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseData.cpp",
+  "name": "NMData::DesiredPoseData::vfunc_3",
+  "class": "NMData::DesiredPoseData",
+  "signature": "void* __thiscall fn_00623150(void* self, void* parent)",
+  "summary": "Serializes DesiredPoseData to an XML node, writing either its pose map entries or its single pose string.",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseData",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMData::DesiredPoseData",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "NMData::DesiredPoseData",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "NMData::DesiredPoseData",
+      "offset": "+0x34",
+      "type": "std::string",
+      "name": "field_0x34"
+    },
+    {
+      "class": "NMData::DesiredPoseData",
+      "offset": "+0x50",
+      "type": "uint8_t",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:03:15Z"
+}

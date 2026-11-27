@@ -131,3 +131,79 @@ void __thiscall fn_006239D0(uint8_t* self, uint8_t* xml_node) {
     }
 }
 } // namespace lift_006239D0
+
+// [0x00623150]
+namespace lift_00623150 {
+// @name NMData::DesiredPoseData::vfunc_3
+// @class NMData::DesiredPoseData
+// @summary Serializes DesiredPoseData to an XML node, writing either its pose map entries or its single pose string.
+// @field NMData::DesiredPoseData +0x08 std::string field_0x08
+// @field NMData::DesiredPoseData +0x28 void* field_0x28
+// @field NMData::DesiredPoseData +0x2c void* field_0x2c
+// @field NMData::DesiredPoseData +0x34 std::string field_0x34
+// @field NMData::DesiredPoseData +0x50 uint8_t field_0x50
+
+
+
+extern void* __thiscall ext_006404E0(void* self, uint32_t tag);
+extern void* __thiscall ext_00640110(void* self, uint32_t tag);
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern void* __thiscall ext_00640390(void* self, uint32_t tag, uint32_t zero, void* val);
+extern void ext_0067F0F0(void* arg);
+extern void __thiscall ext_00667030(void* self);
+
+extern uint32_t mem_00A9EE28;
+extern uint32_t mem_00A9F838;
+extern const char* (__thiscall *mem_00924FF0)(const void* str);
+extern void (*mem_00925134)();
+extern uint32_t mem_00A9EE6C;
+extern uint32_t mem_00A9EE34;
+extern uint32_t mem_00A9EEE8;
+extern uint32_t mem_00A9F644;
+
+struct TreeIter {
+    void* cont;
+    void* ptr;
+};
+
+void* __thiscall fn_00623150(void* self, void* parent) {
+    void* node = ext_006404E0(parent, mem_00A9EE28);
+    void* attr = ext_00640110(node, mem_00A9F838);
+    const char* name_cstr = mem_00924FF0(reinterpret_cast<const uint8_t*>(self) + 0x08);
+    ext_00427550(&attr, name_cstr);
+
+    if (lift_field<uint8_t>(self, 0x50) == 0) {
+        void* head = lift_field<void*>(self, 0x2C);
+        void* map_base = reinterpret_cast<uint8_t*>(self) + 0x28;
+        TreeIter it{map_base, *reinterpret_cast<void**>(head)};
+        while (true) {
+            if (!it.cont || it.cont != map_base) {
+                mem_00925134();
+            }
+            if (it.ptr == head) {
+                break;
+            }
+            void* child = ext_006404E0(node, mem_00A9EE6C);
+            if (!it.cont || it.ptr == lift_field<void*>(it.cont, 0x04)) {
+                mem_00925134();
+            }
+            void* child_attr = ext_00640110(child, mem_00A9F838);
+            const char* item_name = mem_00924FF0(reinterpret_cast<const uint8_t*>(it.ptr) + 0x0C);
+            ext_00427550(&child_attr, item_name);
+            if (it.ptr == lift_field<void*>(it.cont, 0x04)) {
+                mem_00925134();
+            }
+            void* sub_attr = ext_00640390(child, mem_00A9EE34, 0, reinterpret_cast<uint8_t*>(it.ptr) + 0x28);
+            ext_0067F0F0(sub_attr);
+            ext_00667030(&it);
+        }
+    } else {
+        void* child = ext_006404E0(node, mem_00A9EEE8);
+        void* child_attr = ext_00640110(child, mem_00A9F644);
+        const char* pose_cstr = mem_00924FF0(reinterpret_cast<const uint8_t*>(self) + 0x34);
+        ext_00427550(&child_attr, pose_cstr);
+    }
+
+    return node;
+}
+} // namespace lift_00623150

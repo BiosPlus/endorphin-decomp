@@ -64671,6 +64671,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00623150": {
+    "name": "NMData::DesiredPoseData::vfunc_3",
+    "class": "NMData::DesiredPoseData",
+    "signature": "void* __thiscall fn_00623150(void* self, void* parent)",
+    "summary": "Serializes DesiredPoseData to an XML node, writing either its pose map entries or its single pose string.",
+    "lifted_path": "lifted/NMData/DesiredPoseData.cpp"
+  },
   "0x006233B0": {
     "name": "sub_006233B0",
     "signature": "uint32_t fn_006233B0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
@@ -65989,6 +65996,13 @@
     "signature": "extern \"C\" char* __cdecl fn_0062BA00(char* first, char* last, char* dest)",
     "summary": "Copies a 0x38-byte record range via sub_0062B8B0, then returns dest advanced by the record count times 0x38.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062BB20": {
+    "name": "NMData::AxisDefineSensorData::vfunc_22",
+    "class": "NMData::AxisDefineSensorData",
+    "signature": "extern bool (__thiscall* mem_00924FEC)(const void* self);           // std::string::empty extern const char* (__thiscall* mem_00924FF0)(const void* self);    // std::string::c_str extern void (__thiscall* mem_00924FE4)(void* self, const char* s);  // std::string::basic_string(const char*) extern void (__thiscall* mem_00924FF4)(void* self);                 // std::string::~basic_string() extern void (__cdecl* mem_00925134)();                              // _invalid_parameter_noinfo } void* __thiscall fn_0062BB20(void* self, void* arg0)",
+    "summary": "Serializes AxisDefineSensorData fields and axis pair list into an archive node.",
+    "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
   },
   "0x0062BDC0": {
     "name": "Sensors::HorizontalAxisSensor::vfunc_27",
