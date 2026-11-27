@@ -15192,6 +15192,13 @@
     "summary": "Reads the held object pointer; if non-null, forwards to a virtual slot-1 call and throws its message, otherwise throws a fixed-type exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049D830": {
+    "name": "ReadMethodType::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
+    "signature": "bool fn_0049D830(void** handle, void* name)",
+    "summary": "Dereferences a handle pointer (throwing DerivedException if null), resolves the sub-object at +0x8, runs vtable slot 42 on the returned handle with the name argument and releases the scratch result through slot 30.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049D8D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e::vfunc_44",
     "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",

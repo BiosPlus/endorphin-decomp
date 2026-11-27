@@ -184944,3 +184944,49 @@ float fn_00604FB0(void* self, uint32_t arg2) {
     return reinterpret_cast<ForwardFn>(vslot(obj4, 0xAC))(obj4, self, arg2);
 }
 } // namespace lift_00604FB0
+
+// [0x0049D830] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_42 (159 bytes)
+namespace lift_0049D830 {
+// Known callee 0x0046A470: VirtualSlot1Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.)
+extern void* ext_0046A470(void* self);
+// Callee 0x006720E0 (43B, unnamed): writes a handle into *self, taking one stack argument.
+extern void ext_006720E0(void* self, void* arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* typeInfo);
+extern int mem_009DEC1C;
+
+// @name ReadMethodType::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>
+// @summary Dereferences a handle pointer (throwing DerivedException if null), resolves the sub-object at +0x8, runs vtable slot 42 on the returned handle with the name argument and releases the scratch result through slot 30.
+// @field ExprParser::ValuePtrType +0x08 void* field_0x08
+bool fn_0049D830(void** handle, void* name) {
+    void* obj = *handle;
+    if (obj == nullptr) {
+        // Null path: construct the exception object and throw it.
+        // Buffer size is a guess (ExceptionWithMessage layout not recovered).
+        alignas(8) unsigned char exc[0x40] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return false;
+    }
+
+    void* sub = ext_0046A470(static_cast<unsigned char*>(obj) + 8);
+
+    void* h = nullptr;
+    ext_006720E0(&h, sub);
+
+    void* scratch = nullptr;
+    void** vt = *reinterpret_cast<void***>(h);
+    using Slot42 = bool (*)(void* self, void* out, void* arg);
+    bool result = reinterpret_cast<Slot42>(vt[42])(h, &scratch, name);
+
+    if (h != nullptr) {
+        using Slot30 = void (*)(void* self, void* out);
+        void** vt2 = *reinterpret_cast<void***>(h);
+        reinterpret_cast<Slot30>(vt2[30])(h, &scratch);
+    }
+    return result;
+}
+} // namespace lift_0049D830

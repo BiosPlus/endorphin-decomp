@@ -75,6 +75,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x6   uint8_t                  field_0x06  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004B8920, 0x0059F920, 0x005FCC10, 0x00639730, 0x0066F700, 0x00695740)
     // +0x8   int                      field_0x08  (evidence: 0x00494DE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00494DE0, 0x00515C50) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x0049D830) // CONFLICT: multiple definitions at +0x8
     // +0x9   BOOLEAN                  field_0x09  (evidence: 0x004EA400) // CONFLICT: multiple definitions at +0x9
     // +0x9   uint8_t                  field_0x09  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004B8920, 0x004EA4D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x0066F700, 0x00695740) // CONFLICT: multiple definitions at +0x9
     // +0xC   int                      field_0x0C  (evidence: 0x00494DE0, 0x005161E0) // CONFLICT: multiple definitions at +0xC
