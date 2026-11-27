@@ -1,0 +1,28 @@
+{
+  "va": "0x0046A810",
+  "size": 203,
+  "orig_symbol": "sub_0046A810",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "_Tree::eraseRange",
+  "class": "_Tree",
+  "signature": "extern \"C\" TreeIter* __thiscall fn_0046A810(void* self, TreeIter* ret, void* firstCont, void* firstNode, void* lastCont, void* lastNode)",
+  "summary": "Erases nodes in [first,last); clears whole tree fast-path when range is begin..end; returns iterator.",
+  "fields": [
+    {
+      "class": "_Tree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "_Tree",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:40:56Z"
+}

@@ -2728,3 +2728,64 @@ void __thiscall fn_00462F00(void* self, void* arg) {
 }
 } // namespace lift_00462E10
 } // namespace lift_00462F00
+
+// [0x0046A810]
+namespace lift_0046A810 {
+extern void __thiscall ext_0046A510(void* self, void* node);
+extern void* __thiscall ext_0046A550(void* self, void* outIter, void* cont, void* node);
+extern void __thiscall ext_00474FF0(void* self);
+extern void (*mem_00925134)();
+
+struct TreeIter {
+    void* cont;
+    void* node;
+};
+
+// @name _Tree::eraseRange
+// @class _Tree
+// @summary Erases nodes in [first,last); clears whole tree fast-path when range is begin..end; returns iterator.
+// @field _Tree +0x04 void* head
+// @field _Tree +0x08 uint32_t size
+extern TreeIter* __thiscall fn_0046A810(void* self, TreeIter* ret, void* firstCont, void* firstNode,
+                                          void* lastCont, void* lastNode)
+{
+    uint8_t* s = (uint8_t*)self;
+    TreeIter first = {firstCont, firstNode};
+    void** head = *(void***)(s + 0x4);
+    void* beginNode = head[0];
+    if (firstCont == nullptr || firstCont != self)
+        mem_00925134();
+    if (firstNode == beginNode) {
+        void* endNode = *(void**)(s + 0x4);
+        if (lastCont == nullptr || lastCont != self)
+            mem_00925134();
+        if (lastNode == endNode) {
+            void** h = *(void***)(s + 0x4);
+            ext_0046A510(self, h[1]);
+            h = *(void***)(s + 0x4);
+            h[1] = h;
+            *(uint32_t*)(s + 0x8) = 0;
+            h[0] = h;
+            h[2] = h;
+            h = *(void***)(s + 0x4);
+            ret->cont = self;
+            ret->node = h[0];
+            return ret;
+        }
+    }
+    for (;;) {
+        if (first.cont == nullptr || first.cont != lastCont)
+            mem_00925134();
+        if (first.node == lastNode)
+            break;
+        void* oc = first.cont;
+        void* on = first.node;
+        ext_00474FF0(&first);
+        TreeIter tmp;
+        ext_0046A550(self, &tmp, oc, on);
+    }
+    ret->cont = first.cont;
+    ret->node = first.node;
+    return ret;
+}
+} // namespace lift_0046A810

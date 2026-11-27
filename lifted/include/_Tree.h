@@ -8,6 +8,8 @@
 // Recovered field layout for _Tree:
 namespace lifted_layout {
 struct _Tree_Fields {
-    // +0x4   uint32_t                 _Myhead  (evidence: 0x005ED2C0)
+    // +0x4   uint32_t                 _Myhead  (evidence: 0x005ED2C0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    head  (evidence: 0x0046A810) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 size  (evidence: 0x0046A810)
 };
 } // namespace lifted_layout

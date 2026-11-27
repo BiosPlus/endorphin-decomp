@@ -9648,6 +9648,13 @@
     "summary": "Recursively erases a red-black tree subtree by recursing on right children, freeing nodes, and iterating down left children.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046A810": {
+    "name": "_Tree::eraseRange",
+    "class": "_Tree",
+    "signature": "extern \"C\" TreeIter* __thiscall fn_0046A810(void* self, TreeIter* ret, void* firstCont, void* firstNode, void* lastCont, void* lastNode)",
+    "summary": "Erases nodes in [first,last); clears whole tree fast-path when range is begin..end; returns iterator.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046A8E0": {
     "name": "TreeIterator::decrement",
     "class": "TreeIterator",
