@@ -4084,3 +4084,44 @@ void fn_0043B5D0(void** a, void** b, void** c) {
     cswap_by_predicate(b, a);
 }
 } // namespace lift_0043B5D0
+
+// [0x00436A50] sub_00436A50 (127 bytes)
+namespace lift_00436A50 {
+extern int mem_00925134;
+
+// @name Unknown::iterateNodesDispatchThenFlag
+// @class Unknown
+// @summary Walks the circular node list headed at this+0xEC, invokes vfunc +0x178 on each node's object with arg, then if flag is set invokes vfunc +0x150 with 1.
+// @field Unknown +0x00 void** vftable
+// @field Unknown +0xEC void* listHead
+void fn_00436A50(void* self, int arg, uint8_t flag) {
+    using InvalidParamFn = void (*)();
+    using VFnArg = void (__thiscall*)(void*, int);
+    using VFnFlag = void (__thiscall*)(void*, int);
+
+    // Sentinel node pointer stored at self+0xEC; the list is circular through node+0.
+    void* sentinel = lift_field<void*>(self, 0xEC);
+    void* node = *static_cast<void**>(sentinel);
+
+    while (node != sentinel) {
+        // Element object is stored at node+8.
+        void* obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(node) + 8);
+        void** vt = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<VFnArg>(vt[0x178 / sizeof(void*)]);
+        fn(obj, arg);
+
+        // Iterator-invalidation guard: if the list head changed under us, bail via invalid-parameter handler.
+        if (node == lift_field<void*>(self, 0xEC)) {
+            auto invalid = *reinterpret_cast<InvalidParamFn*>(&mem_00925134);
+            invalid();
+        }
+        node = *static_cast<void**>(node);
+    }
+
+    if (flag != 0) {
+        void** vt = *reinterpret_cast<void***>(self);
+        auto fn = reinterpret_cast<VFnFlag>(vt[0x150 / sizeof(void*)]);
+        fn(self, 1);
+    }
+}
+} // namespace lift_00436A50

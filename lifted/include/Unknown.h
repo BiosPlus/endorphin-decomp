@@ -119,6 +119,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 vfptr  (evidence: 0x0063F350, 0x0067A670) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vfptr  (evidence: 0x004030F0, 0x0040A910, 0x0040BE90) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x00455EB0, 0x00458A00, 0x0048E2E0, 0x0063FFF0, 0x006B8210, 0x006BA780) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vftable  (evidence: 0x00436A50) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable_0x00  (evidence: 0x0052FFD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable_primary  (evidence: 0x00447F20) // CONFLICT: multiple definitions at +0x0
     // +0x0   const void*              vptr  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x0
@@ -1259,6 +1260,7 @@ struct Unknown_Fields {
     // +0xEC  BYTE                     field_0xEC  (evidence: 0x007C8490, 0x007C93A0, 0x007CAF70) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  float                    field_0xEC  (evidence: 0x007C8490, 0x007C9AA0, 0x007CAF70) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  DWORD                    field_0xec  (evidence: 0x00441C10, 0x00448420) // CONFLICT: multiple definitions at +0xEC
+    // +0xEC  void*                    listHead  (evidence: 0x00436A50) // CONFLICT: multiple definitions at +0xEC
     // +0xF0  int32_t field_0xF0 (indexed array base; element stride 4, indices 1..17)  (evidence: 0x007AA7F0, 0x007AA8F0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  DWORD                    field_0xF0  (evidence: 0x006C3390) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  double                   field_0xF0  (evidence: 0x0043DDF0) // CONFLICT: multiple definitions at +0xF0

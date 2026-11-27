@@ -3909,6 +3909,13 @@
     "summary": "Linearly searches a uint32_t range [first, last) for *val_ptr and writes {tag, found_ptr} to out.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00436A50": {
+    "name": "Unknown::iterateNodesDispatchThenFlag",
+    "class": "Unknown",
+    "signature": "void fn_00436A50(void* self, int arg, uint8_t flag)",
+    "summary": "Walks the circular node list headed at this+0xEC, invokes vfunc +0x178 on each node's object with arg, then if flag is set invokes vfunc +0x150 with 1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00436F20": {
     "name": "sub_00436F20",
     "signature": "extern \"C\" void fn_00436F20(void)",
