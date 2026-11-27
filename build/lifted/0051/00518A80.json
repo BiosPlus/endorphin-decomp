@@ -1,0 +1,13 @@
+{
+  "va": "0x00518A80",
+  "size": 115,
+  "orig_symbol": "sub_00518A80",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "siftDownIndexArray",
+  "signature": "void fn_00518A80(uint32_t* base, int32_t i, int32_t hi, uint32_t val, void* ctx)",
+  "summary": "Sift-down of index at slot i in a heap-style (children 2i+1, 2i+2) uint32 array up to hi, then sift-up to i via siftUpIndexArray.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:01:29Z"
+}

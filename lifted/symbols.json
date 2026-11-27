@@ -22203,6 +22203,12 @@
     "summary": "Sift-up insertion into a 32-bit index array (heap-style parent=(i-1)/2), stopping at lo; stores val into the resulting slot.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00518A80": {
+    "name": "siftDownIndexArray",
+    "signature": "void fn_00518A80(uint32_t* base, int32_t i, int32_t hi, uint32_t val, void* ctx)",
+    "summary": "Sift-down of index at slot i in a heap-style (children 2i+1, 2i+2) uint32 array up to hi, then sift-up to i via siftUpIndexArray.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519060": {
     "name": "sub_00519060",
     "signature": "void fn_00519060(uint32_t* first, uint32_t* last, uint32_t pred)",

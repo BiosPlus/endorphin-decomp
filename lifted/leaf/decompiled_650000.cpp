@@ -2128,3 +2128,37 @@ void fn_00518770(uint32_t* p, uint32_t* q, uint32_t* r, void* inner) {
     }
 }
 } // namespace lift_00518770
+
+// [0x00518A80] heap sift-down over a 32-bit index array (115 bytes)
+namespace lift_00518A80 {
+// Known callee 0x005185D0: Unknown::compareChildValuesLess (Returns whether the double at +0x20 of child[ix2] is less than that of child[ix1]; false on NaN.)
+extern uint8_t ext_005185D0(void* inner, uint32_t ix1, uint32_t ix2);
+// Known callee 0x00518840: siftUpIndexArray (Sift-up insertion into a 32-bit index array, stopping at lo; stores val into the resulting slot.)
+extern void ext_00518840(uint32_t* base, int32_t hi, int32_t lo, uint32_t val, void* ctx);
+
+// @name siftDownIndexArray
+// @summary Sift-down of index at slot i in a heap-style (children 2i+1, 2i+2) uint32 array up to hi, then sift-up to i via siftUpIndexArray.
+void fn_00518A80(uint32_t* base, int32_t i, int32_t hi, uint32_t val, void* ctx) {
+    int32_t hole = i;
+    int32_t j = 2 * hole + 2;
+    void* ctxSlot = ctx;
+
+    while (j < hi) {
+        // Pick the right child (j) or the left child (j - 1) based on the comparator.
+        if (ext_005185D0(&ctxSlot, base[j - 1], base[j])) {
+            j -= 1;
+        }
+        base[hole] = base[j];
+        hole = j;
+        j = 2 * j + 2;
+    }
+
+    if (j == hi) {
+        // Lone left child at hi - 1 moves up into the hole.
+        base[hole] = base[hi - 1];
+        hole = hi - 1;
+    }
+
+    ext_00518840(base, hole, i, val, ctx);
+}
+} // namespace lift_00518A80
