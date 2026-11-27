@@ -6030,3 +6030,63 @@ bool fn_0043A840(void* self, const void* value) {
 }
 } // namespace lift_005CD120
 } // namespace lift_0043A840
+
+// [0x0043F820]
+namespace lift_0043F820 {
+// @name Vector4B::insert
+// @class Vector4B
+// @summary Inserts a single 4-byte element into the vector at the given iterator position and returns the updated iterator.
+// @field Vector4B +0x04 uint32_t begin
+// @field Vector4B +0x08 uint32_t end
+
+
+extern void __thiscall ext_0043ED20(void* self, void* it_container, uint32_t it_ptr, uint32_t count, uint32_t val_ptr);
+extern void (__cdecl *mem_00925134)();
+
+struct VectorIter4B {
+    void* container;
+    uint32_t ptr;
+};
+
+extern VectorIter4B* __thiscall sub_0043F820(
+    void* self,
+    VectorIter4B* out_it,
+    void* it_container,
+    uint32_t it_ptr,
+    uint32_t val_ptr)
+{
+    uint32_t first = lift_field<uint32_t>(self, 0x04);
+    int32_t offset = 0;
+
+    if (first != 0) {
+        uint32_t last = lift_field<uint32_t>(self, 0x08);
+        int32_t count = static_cast<int32_t>(last - first) >> 2;
+        if (count != 0) {
+            if (first > last) {
+                mem_00925134();
+            }
+            if (it_container == nullptr || it_container != self) {
+                mem_00925134();
+            }
+            offset = static_cast<int32_t>(it_ptr - first) >> 2;
+        }
+    }
+
+    ext_0043ED20(self, it_container, it_ptr, 1, val_ptr);
+
+    uint32_t new_first = lift_field<uint32_t>(self, 0x04);
+    if (new_first > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t result_ptr = new_first + static_cast<uint32_t>(offset) * 4;
+    if (result_ptr > lift_field<uint32_t>(self, 0x08) ||
+        result_ptr < lift_field<uint32_t>(self, 0x04)) {
+        mem_00925134();
+    }
+
+    out_it->ptr = result_ptr;
+    out_it->container = self;
+    return out_it;
+}
+} // namespace lift_0043F820

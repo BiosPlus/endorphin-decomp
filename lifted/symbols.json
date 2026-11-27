@@ -5248,6 +5248,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00451AE0 (ForwardSubobjectArg_00451AE0).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043F820": {
+    "name": "Vector4B::insert",
+    "class": "Vector4B",
+    "signature": "extern \"C\" VectorIter4B* __thiscall sub_0043F820( void* self, VectorIter4B* out_it, void* it_container, uint32_t it_ptr, uint32_t val_ptr)",
+    "summary": "Inserts a single 4-byte element into the vector at the given iterator position and returns the updated iterator.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043F9E0": {
     "name": "ElementVector::EmplaceBack_0043F9E0",
     "class": "ElementVector",
@@ -26787,6 +26794,12 @@
     "class": "\u003cClassName\u003e (optional)",
     "signature": "void* fn_004EF970(DWORD a0, DWORD a1, DWORD a2, const DWORD* a3, BYTE a4)",
     "summary": "Allocates a 0x18-byte record, fills it from five arguments (three dwords, a dword pair read through a pointer, and a byte flag), zeroes the trailing byte, and returns the record or null on allocation failure.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
+  "0x004EF9B0": {
+    "name": "createListNode0x70",
+    "signature": "extern \"C\" void* __stdcall fn_004EF9B0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Allocates a 0x70-byte node, initializes two header fields, and constructs its payload at +0x08",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
   "0x004EFA50": {
