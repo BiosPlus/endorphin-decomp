@@ -72483,6 +72483,13 @@
     "summary": "Copies a type-name string into out based on field_0x10 (0..2) and returns out.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D93B0": {
+    "name": "Unknown::Sync6Dwords",
+    "class": "Unknown",
+    "signature": "void fn_006D93B0(void* self, const uint32_t* src)",
+    "summary": "Notifies self via vtable slot +0x38 (id 0x14), then either forwards a copy of the 6-dword src block through subobject vcall +0x14 or copies it into self+0x80, and notifies again (id 0x15).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D9450": {
     "name": "sub_006D9450",
     "signature": "extern \"C\" void __fastcall fn_006D9450(void* self)",

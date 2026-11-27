@@ -4564,3 +4564,48 @@ void* fn_006DC200(void* self, int32_t unused, const char* s, int32_t arg3) {
     return self;
 }
 } // namespace lift_006DC200
+
+// [0x006D93B0] sub_006D93B0 (155 bytes)
+namespace lift_006D93B0 {
+// Known callee 0x006BC380: sub_006BC380 (Getter returning int32_t field at offset +0x8.)
+extern int32_t ext_006BC380(void* self);
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+// Receives a by-value copy of 6 dwords (passed on the stack in the original).
+extern void* ext_0071E680(void* self, const uint32_t* block);
+
+// @name Unknown::Sync6Dwords
+// @class Unknown
+// @summary Notifies self via vtable slot +0x38 (id 0x14), then either forwards a copy of the 6-dword src block through subobject vcall +0x14 or copies it into self+0x80, and notifies again (id 0x15).
+// @field Unknown +0x54 int32_t field_0x54
+void fn_006D93B0(void* self, const uint32_t* src) {
+    // Slot +0x38 is a 6-argument virtual method (this in ECX, args pushed).
+    using VCall6 = void (*)(void* self, int32_t a1, int32_t a2, void* a3,
+                            const void* a4, void* a5, int32_t a6);
+    // Subobject slot +0x14: thiscall with one value passed in ECX.
+    using VCall0 = void (*)(void* self);
+
+    uint8_t* s = static_cast<uint8_t*>(self);
+    void** vtbl = *static_cast<void***>(self);
+    auto notify38 = *reinterpret_cast<VCall6*>(reinterpret_cast<uint8_t*>(vtbl) + 0x38);
+    notify38(self, 0, 0x14, self, src, s + 0x80, 0);
+
+    if (*reinterpret_cast<int32_t*>(s + 0x54) != 0) {
+        uint32_t block[6];
+        for (int i = 0; i < 6; ++i) block[i] = src[i];
+
+        void* sub = ext_0071E680(self, block);
+        int32_t code = ext_006BC380(self);
+
+        void** subvtbl = *static_cast<void***>(sub);
+        auto invoke = *reinterpret_cast<VCall0*>(reinterpret_cast<uint8_t*>(subvtbl) + 0x14);
+        invoke(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(code))));
+    } else {
+        uint32_t* dst = reinterpret_cast<uint32_t*>(s + 0x80);
+        for (int i = 0; i < 6; ++i) dst[i] = src[i];
+    }
+
+    vtbl = *static_cast<void***>(self);
+    auto notify38b = *reinterpret_cast<VCall6*>(reinterpret_cast<uint8_t*>(vtbl) + 0x38);
+    notify38b(self, 0, 0x15, self, src, nullptr, 0);
+}
+} // namespace lift_006D93B0

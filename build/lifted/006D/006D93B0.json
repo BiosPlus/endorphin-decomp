@@ -1,0 +1,22 @@
+{
+  "va": "0x006D93B0",
+  "size": 155,
+  "orig_symbol": "sub_006D93B0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::Sync6Dwords",
+  "class": "Unknown",
+  "signature": "void fn_006D93B0(void* self, const uint32_t* src)",
+  "summary": "Notifies self via vtable slot +0x38 (id 0x14), then either forwards a copy of the 6-dword src block through subobject vcall +0x14 or copies it into self+0x80, and notifies again (id 0x15).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "int32_t",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:39Z"
+}
