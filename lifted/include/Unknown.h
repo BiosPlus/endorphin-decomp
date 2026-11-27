@@ -18,6 +18,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (vtable pointer, set to 0x953B0C)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, written to 0x953f0c)  (evidence: 0x0052F690) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer 0x955BDC)  (evidence: 0x0053C910) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t field_0x00 (vtable pointer, set to 0x994FE0)  (evidence: 0x006F9A10) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (vtable pointer read for the virtual call at slot 0xD8)  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (read to dispatch the virtual call at slot 0xF4)  (evidence: 0x00708FF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable vtable pointer (slot 0 called with arg 1)  (evidence: 0x006DE130) // CONFLICT: multiple definitions at +0x0
@@ -1487,6 +1488,7 @@ struct Unknown_Fields {
     // +0xB2  uint8_t                  field_0xb2  (evidence: 0x006872E0)
     // +0xB3  uint8_t                  field_0xb3  (evidence: 0x006872E0)
     // +0xB4  uint32_t field_0xB4      (zeroed)  (evidence: 0x006BAB80) // CONFLICT: multiple definitions at +0xB4
+    // +0xB4  void* field_0xB4 (sub-object passed as self to ext_006D3530)  (evidence: 0x006F9A10) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  float                    field_0xB4  (evidence: 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void*                    field_0xB4  (evidence: 0x0053F9D0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  float                    field_0xb4  (evidence: 0x00547220, 0x00611100) // CONFLICT: multiple definitions at +0xB4
@@ -1495,6 +1497,7 @@ struct Unknown_Fields {
     // +0xB4  int32_t                  mode  (evidence: 0x00464780, 0x004647A0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void** entries (array of entry pointers)  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0xB4
     // +0xB8  int32_t                  count  (evidence: 0x006DC370) // CONFLICT: multiple definitions at +0xB8
+    // +0xB8  int32_t field_0xB8 (result of ext_006D3530)  (evidence: 0x006F9A10) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  int32_t countGetter (read via ext_006DC550)  (evidence: 0x006DC510) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  Buffer                   field_0xB8  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  DWORD                    field_0xB8  (evidence: 0x00540F60) // CONFLICT: multiple definitions at +0xB8

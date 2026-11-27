@@ -2764,3 +2764,30 @@ int32_t fn_006F3160(void* self, int32_t arg1) {
 }
 } // namespace lift_00704D60
 } // namespace lift_006F3160
+
+// [0x006F9A10] sub_006F9A10 (104 bytes)
+namespace lift_006F9A10 {
+// Known callee 0x006BAB80: Unknown::initWithCString_006BAB80 (Constructs this: sets vtable 0x9931EC, initializes base sub-object at +0x04 from the C string, initializes range sub-object at +0x9C, links data pointer at +0xB0 to +0xAC, zeroes +0xB4, switches vtable to 0x9931C4, returns this.)
+extern void* ext_006BAB80(void* self, int32_t unused, const char* s);
+// Known callee 0x006D3530: sub_006D3530_appendVirtualSlot1Result (Calls vtable slot 1 of this; if the result is non-zero, appends it to the DynamicArray at this+0x04. Returns the result.)
+extern int32_t ext_006D3530(void* self);
+// Callee 0x006F9B00: sub_006F9B00 (32B, not yet lifted; called with this in ecx and no stack arguments.)
+extern void ext_006F9B00(void* self);
+
+// @name Unknown::initWithCStringAndFinalize_006F9A10
+// @class Unknown
+// @summary Initializes this from a C string and an extra argument, sets the object's vtable, stores the result of a slot-1 call on the sub-object at +0xB4 into +0xB8, runs a finalizer on this, and returns this.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer, set to 0x994FE0)
+// @field Unknown +0xB4 void* field_0xB4 (sub-object passed as self to ext_006D3530)
+// @field Unknown +0xB8 int32_t field_0xB8 (result of ext_006D3530)
+void* fn_006F9A10(void* self, int32_t arg1, const char* arg2) {
+    ext_006BAB80(self, arg1, arg2);
+
+    void* sub = lift_field<void*>(self, 0xB4);
+    lift_field<uint32_t>(self, 0x00) = 0x994FE0u;
+    lift_field<int32_t>(self, 0xB8) = ext_006D3530(sub);
+
+    ext_006F9B00(self);
+    return self;
+}
+} // namespace lift_006F9A10
