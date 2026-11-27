@@ -1366,3 +1366,36 @@ uint32_t fn_0085A370(void* self) {
     return count;
 }
 } // namespace lift_0085A370
+
+// [0x0085D9D0]
+namespace lift_0085D9D0 {
+// @name findOrFirstFreeEntry
+// @summary Searches a 1000-entry table at 0x00ABB374 for a matching entry, returning its 1-based index, or the negated 1-based index of the first free slot, or 0 if full.
+int32_t sub_0085D9D0(uint16_t a1, uint16_t a2, uint16_t a3, uint32_t a4) {
+    int32_t first_free = -1;
+    int32_t index = 1;
+    uintptr_t cur = 0x00ABB380;
+
+    while (cur <= 0x00AC018C) {
+        if (*reinterpret_cast<const int32_t*>(cur) == 0) {
+            if (first_free < 0) {
+                first_free = index;
+            }
+        } else {
+            if (*reinterpret_cast<const uint16_t*>(cur - 0x8) == a3 &&
+                *reinterpret_cast<const uint16_t*>(cur - 0xC) == a1 &&
+                *reinterpret_cast<const uint16_t*>(cur - 0xA) == a2 &&
+                *reinterpret_cast<const uint32_t*>(cur - 0x4) == a4) {
+                return index;
+            }
+        }
+        cur += 0x14;
+        ++index;
+    }
+
+    if (first_free >= 0) {
+        return -first_free;
+    }
+    return 0;
+}
+} // namespace lift_0085D9D0

@@ -1,0 +1,13 @@
+{
+  "va": "0x0085D9D0",
+  "size": 106,
+  "orig_symbol": "sub_0085D9D0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "findOrFirstFreeEntry",
+  "signature": "int32_t sub_0085D9D0(uint16_t a1, uint16_t a2, uint16_t a3, uint32_t a4)",
+  "summary": "Searches a 1000-entry table at 0x00ABB374 for a matching entry, returning its 1-based index, or the negated 1-based index of the first free slot, or 0 if full.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:08:55Z"
+}
