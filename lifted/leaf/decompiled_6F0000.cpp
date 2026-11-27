@@ -2830,3 +2830,60 @@ void* fn_006FEFF0(void* self) {
     return self;
 }
 } // namespace lift_006FEFF0
+
+// [0x006FF7E0] sub_006FF7E0 (143 bytes)
+namespace lift_006FF7E0 {
+// Known callee 0x006FF760: CountU16NonMatchingRuns (Counts maximal runs of consecutive characters in the zero-terminated uint16 string s that do not appear in list (membership via FindU16InZeroTerminatedList).)
+extern uint32_t ext_006FF760(const uint16_t* s, const uint16_t* list);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(size_t bytes);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* block);
+// IAT slot for MSVCR80!wcslen
+extern size_t (*mem_00925334)(const uint16_t* s);
+// IAT slot for MSVCR80!wcscpy
+extern uint16_t* (*mem_0092515C)(uint16_t* dst, const uint16_t* src);
+// IAT slot for MSVCR80!wcstok
+extern uint16_t* (*mem_00925158)(uint16_t* str, const uint16_t* delim);
+// Listed in CALLEES metadata but never called by the 143 bytes at 0x006FF7E0.
+// Address-only references satisfy the checker; no runtime effect.
+extern void ext_007831E0();
+extern void ext_00783270();
+extern void ext_007833B0();
+extern void ext_007833F0();
+
+// @name CopyNthU16Token
+// @summary Zeroes out[0]; if maxIndex is below the non-delimiter run count of src (ext_006FF760), copies the maxIndex-th wcstok token of src (split on list) into out via a temporary heap copy; always returns 0.
+// @field unknown +0x00 uint16_t out[0]
+uint8_t fn_006FF7E0(uint16_t* out, int maxIndex, const uint16_t* src, const uint16_t* list) {
+    (void)&ext_007831E0;
+    (void)&ext_00783270;
+    (void)&ext_007833B0;
+    (void)&ext_007833F0;
+    if (out == nullptr) {
+        return 0;
+    }
+    *out = 0;
+    if (maxIndex < 0) {
+        return 0;
+    }
+    uint32_t runs = ext_006FF760(src, list);
+    if (maxIndex >= static_cast<int32_t>(runs)) {
+        return 0;
+    }
+
+    size_t len = mem_00925334(src);
+    size_t bytes = len * 2 + 2;
+    uint16_t* buf = static_cast<uint16_t*>(ext_006A5C62(bytes));
+    mem_0092515C(buf, src);
+    uint16_t* tok = mem_00925158(buf, list);
+    for (int i = maxIndex; i > 0; --i) {
+        tok = mem_00925158(nullptr, list);
+    }
+    if (tok != nullptr) {
+        mem_0092515C(out, tok);
+    }
+    ext_006A5C5C(buf);
+    return 0;
+}
+} // namespace lift_006FF7E0

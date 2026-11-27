@@ -1,0 +1,21 @@
+{
+  "va": "0x006FF7E0",
+  "size": 143,
+  "orig_symbol": "sub_006FF7E0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "CopyNthU16Token",
+  "signature": "uint8_t fn_006FF7E0(uint16_t* out, int maxIndex, const uint16_t* src, const uint16_t* list)",
+  "summary": "Zeroes out[0]; if maxIndex is below the non-delimiter run count of src (ext_006FF760), copies the maxIndex-th wcstok token of src (split on list) into out via a temporary heap copy; always returns 0.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint16_t",
+      "name": "out[0]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T05:03:50Z"
+}
