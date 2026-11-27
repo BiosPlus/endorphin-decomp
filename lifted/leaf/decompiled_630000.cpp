@@ -1826,3 +1826,48 @@ extern void* __thiscall fn_0063E890(void* self, uint32_t arg0) {
     return result;
 }
 } // namespace lift_0063E890
+
+// [0x0063E6C0] sub_0063E6C0 (155 bytes)
+namespace lift_0063E6C0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Used here as operator new(size_t).
+extern void* __cdecl ext_006A5C62(uint32_t size);
+// Known callee 0x0063E610: Unknown::Unknown(uint32_t, const std::string&, const std::string&)
+extern void* __thiscall ext_0063E610(void* self, uint32_t arg0, const void* arg1, const void* arg2);
+// IAT slot holding the address of MSVCP80 std::string destructor.
+extern int mem_00924FF4;
+
+// @name CreateUnknownFromSelf
+// @class Unknown
+// @summary Allocates a 0x40-byte Unknown, constructs it from arg0 and self+4 plus a string fetched via self's vtable[1]; returns it or null.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x04 std::string field_0x04
+void* fn_0063E6C0(void* self, uint32_t arg0) {
+    // MSVC std::string temporary (sret buffer), lives at [esp+0x14] in the original.
+    alignas(8) uint8_t tmp[0x20];
+    bool constructed = false;
+    void* result = nullptr;
+
+    void* obj = ext_006A5C62(0x40);
+    if (obj != nullptr) {
+        // vtable slot 1 (offset +4): returns a std::string via hidden pointer.
+        void** vt = *reinterpret_cast<void***>(self);
+        auto get_str = reinterpret_cast<void* (__thiscall*)(void*, void*)>(vt[1]);
+        void* str = get_str(self, tmp);
+
+        constructed = true;
+        result = ext_0063E610(obj,
+                              arg0,
+                              static_cast<uint8_t*>(self) + 4,
+                              str);
+    }
+
+    if (constructed) {
+        // Destroy the temporary std::string through the IAT slot mem_00924FF4.
+        auto dtor = *reinterpret_cast<void (__thiscall**)(void*)>(&mem_00924FF4);
+        dtor(tmp);
+    }
+
+    return result;
+}
+} // namespace lift_0063E6C0

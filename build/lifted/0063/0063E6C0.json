@@ -1,0 +1,28 @@
+{
+  "va": "0x0063E6C0",
+  "size": 155,
+  "orig_symbol": "sub_0063E6C0",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "CreateUnknownFromSelf",
+  "class": "Unknown",
+  "signature": "void* fn_0063E6C0(void* self, uint32_t arg0)",
+  "summary": "Allocates a 0x40-byte Unknown, constructs it from arg0 and self+4 plus a string fetched via self's vtable[1]; returns it or null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:34Z"
+}
