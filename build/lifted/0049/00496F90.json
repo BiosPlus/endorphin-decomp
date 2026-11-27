@@ -1,0 +1,22 @@
+{
+  "va": "0x00496F90",
+  "size": 65,
+  "orig_symbol": "NMData::Transition::vfunc_2_off_8",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_2_off_8",
+  "class": "NMData::Transition",
+  "signature": "void* __thiscall fn_00496F90(void* self, void* a1, void* a2)",
+  "summary": "If this+0xB0 is null, calls Character::vfunc_2 on this with (a1, a2); otherwise calls vtable slot 2 of the sub-object at this+0xB0+0x10 with (a1, a2). Returns a1.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xB0",
+      "type": "void*",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:02:50Z"
+}

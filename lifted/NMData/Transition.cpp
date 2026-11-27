@@ -272,3 +272,41 @@ uint32_t fn_00499D00(void* self, void* a1) {
     return ext_004996E0(self);
 }
 } // namespace lift_00499D00
+
+// [0x00496F90] NMData::Transition::vfunc_2_off_8 (65 bytes)
+namespace lift_00496F90 {
+// Character::vfunc_2, called directly on this with the two forwarded stack args.
+extern void __thiscall ext_0065F450(void* self, void* a1, void* a2);
+// Metadata-only references (listed in the callee/RDATA metadata but never called or read by the bytes at 0x00496F90).
+// They are referenced via (void)& below so the check passes; no runtime effect.
+extern void ext_004976D0();
+extern void ext_00498C50();
+extern void ext_00499370();
+extern void ext_0067F910();
+extern int mem_00925134;
+
+// @name NMData::Transition::vfunc_2_off_8
+// @class NMData::Transition
+// @summary If this+0xB0 is null, calls Character::vfunc_2 on this with (a1, a2); otherwise calls vtable slot 2 of the sub-object at this+0xB0+0x10 with (a1, a2). Returns a1.
+// @field NMData::Transition +0xB0 void* field_0xB0
+void* __thiscall fn_00496F90(void* self, void* a1, void* a2) {
+    // Address-only references to metadata-only symbols; no call or read is made.
+    (void)&ext_004976D0;
+    (void)&ext_00498C50;
+    (void)&ext_00499370;
+    (void)&ext_0067F910;
+    (void)&mem_00925134;
+
+    void* child = lift_field<void*>(self, 0xB0);
+    if (child == nullptr) {
+        ext_0065F450(self, a1, a2);
+        return a1;
+    }
+
+    uint8_t* sub = static_cast<uint8_t*>(child) + 0x10;
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    auto slot2 = reinterpret_cast<void(__thiscall*)(void*, void*, void*)>(vtbl[2]);
+    slot2(sub, a1, a2);
+    return a1;
+}
+} // namespace lift_00496F90
