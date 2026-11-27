@@ -1,0 +1,28 @@
+{
+  "va": "0x00586B60",
+  "size": 123,
+  "orig_symbol": "sub_00586B60",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Node::ForwardAndVisitChildren",
+  "class": "Node",
+  "signature": "void fn_00586B60(void* self, uint32_t a0, uint32_t a1)",
+  "summary": "Forwards (a0,a1) to the sub-object at +0x0C, then recursively visits every pointer in the list at +0x80..+0x84 with the same arguments.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:48:36Z"
+}

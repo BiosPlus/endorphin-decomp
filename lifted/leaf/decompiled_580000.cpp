@@ -1477,3 +1477,32 @@ void __thiscall fn_005864C0(uint8_t* self, uint32_t arg) {
     }
 }
 } // namespace lift_005864C0
+
+// [0x00586B60] sub_00586B60 (123 bytes)
+namespace lift_00586B60 {
+// Known callee 0x00528C10: AnimatableTransform::vfunc_forwardToChild (forwards to child vtable slot 14 when non-null).
+extern void ext_00528C10(void* self, uint32_t a0, uint32_t a1);
+// Self-recursive call to 0x00586B60.
+extern void ext_00586B60(void* self, uint32_t a0, uint32_t a1);
+// Import slot for MSVCR80!_invalid_parameter_noinfo (debug iterator checks, dropped in portable code).
+extern int mem_00925134;
+
+// @name Node::ForwardAndVisitChildren
+// @class Node
+// @summary Forwards (a0,a1) to the sub-object at +0x0C, then recursively visits every pointer in the list at +0x80..+0x84 with the same arguments.
+// @field Node +0x80 uint32_t field_0x80
+// @field Node +0x84 uint32_t field_0x84
+void fn_00586B60(void* self, uint32_t a0, uint32_t a1) {
+    (void)&mem_00925134; // metadata-only: debug iterator-check path omitted
+    ext_00528C10(&lift_field<uint8_t>(self, 0x0C), a0, a1);
+
+    // Walk the slot range [begin, end) stored at +0x80 / +0x84.
+    uintptr_t slot = lift_field<uint32_t>(self, 0x80);
+    const uintptr_t end = lift_field<uint32_t>(self, 0x84);
+    while (slot != end) {
+        const uintptr_t obj = *reinterpret_cast<const uint32_t*>(slot);
+        ext_00586B60(reinterpret_cast<void*>(obj), a0, a1);
+        slot += sizeof(uint32_t);
+    }
+}
+} // namespace lift_00586B60

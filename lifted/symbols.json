@@ -28750,6 +28750,13 @@
     "summary": "Invokes the virtual slot 0x8c on self, then on every pointer element in the range [self+0x80, self+0x84).",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00586B60": {
+    "name": "Node::ForwardAndVisitChildren",
+    "class": "Node",
+    "signature": "void fn_00586B60(void* self, uint32_t a0, uint32_t a1)",
+    "summary": "Forwards (a0,a1) to the sub-object at +0x0C, then recursively visits every pointer in the list at +0x80..+0x84 with the same arguments.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00587110": {
     "name": "Unknown::teardownChildTree",
     "class": "Unknown",
