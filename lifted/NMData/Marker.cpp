@@ -305,3 +305,107 @@ void* __thiscall fn_00870B70(void* self) {
     return ebx;
 }
 } // namespace lift_00870B70
+
+// [0x00870C20]
+namespace lift_00870C20 {
+extern void ext_005BE710(void*, void*);
+extern void ext_005A2340(void);
+extern void ext_00587EE0(void);
+extern void ext_005881D0(void);
+extern void ext_006A5C62(void);
+
+extern void* mem_00924FDC;
+extern void* mem_00924FE0;
+extern void* mem_00B40640;
+
+// @name NMData::Marker::vfunc_13_off_C
+// @class NMData::Marker
+// @summary Copies name string from arg0, stores owner/manager pointer, and registers marker with it.
+// @field NMData::Marker +0x154 std::string field_0x154
+// @field NMData::Marker +0x174 void* field_0x174
+uint8_t __thiscall fn_00870C20(void* self, void* arg0) {
+    auto* vtbl = *reinterpret_cast<void***>(arg0);
+    using GetStrFn = void* (__thiscall*)(void*);
+    void* str_ptr = reinterpret_cast<GetStrFn>(vtbl[0x24 / 4])(arg0);
+
+    using AssignStrFn = void* (__thiscall*)(void*, void*);
+    reinterpret_cast<AssignStrFn>(mem_00924FDC)(
+        reinterpret_cast<uint8_t*>(self) + 0x148, str_ptr);
+
+    void* obj = lift_field<void*>(arg0, 0x20C);
+    void* mgr = lift_field<void*>(obj, 0x18C);
+    lift_field<void*>(self, 0x168) = mgr;
+
+    void* name_ref = reinterpret_cast<uint8_t*>(self) + 0x8;
+    void* target = reinterpret_cast<uint8_t*>(mgr) + 0x5E0;
+    ext_005BE710(target, name_ref);
+
+    void* base_self = reinterpret_cast<uint8_t*>(self) - 0xC;
+    struct Msvc8String {
+        uint8_t data[0x1C];
+    };
+    Msvc8String str_copy;
+    using CopyCtorFn = void(__thiscall*)(void*, void*);
+    reinterpret_cast<CopyCtorFn>(mem_00924FE0)(&str_copy, name_ref);
+
+    using RegisterFn = void(__thiscall*)(void*, Msvc8String, void*);
+    reinterpret_cast<RegisterFn>(&ext_005A2340)(
+        reinterpret_cast<uint8_t*>(lift_field<void*>(self, 0x168)) + 0x5E0,
+        str_copy,
+        base_self);
+
+    (void)ext_00587EE0;
+    (void)ext_005881D0;
+    (void)ext_006A5C62;
+    (void)mem_00B40640;
+
+    return 1;
+}
+} // namespace lift_00870C20
+
+// [0x00870460]
+namespace lift_00870460 {
+// @name NMData::Marker::vfunc_22
+// @class NMData::Marker
+// @summary Serializes or exports Marker node data to a child object and assigns its name.
+// @field NMData::Marker +0x154 std::string field_0x154
+// @field NMData::Marker +0x170 uint32_t field_0x170
+
+
+extern uint32_t mem_00A9F064;
+extern uint32_t mem_00A9F7F4;
+extern uint32_t mem_00A9F744;
+extern void* mem_00924FF0;
+extern void* mem_00924FDC;
+extern void* mem_00924FE0;
+
+extern void* __thiscall ext_006404E0(void* self, uint32_t arg);
+extern void __thiscall ext_0058F650(void* self, void* node);
+extern void* __thiscall ext_00640110(void* self, uint32_t arg);
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern void ext_005A2340();
+extern void ext_005BE710();
+
+void* __thiscall fn_00870460(void* self, void* arg1) {
+    (void)mem_00924FDC;
+    (void)mem_00924FE0;
+    (void)ext_005A2340;
+    (void)ext_005BE710;
+
+    void* node = ext_006404E0(arg1, mem_00A9F064);
+    ext_0058F650(self, node);
+
+    uint32_t key = (lift_field<uint32_t>(self, 0x170) != 0) ? mem_00A9F744 : mem_00A9F7F4;
+    void* child = ext_00640110(node, key);
+
+    using c_str_fn = const char* (__thiscall*)(void*);
+    const char* name = reinterpret_cast<c_str_fn>(mem_00924FF0)(
+        reinterpret_cast<uint8_t*>(self) + 0x154
+    );
+
+    void* holder = child;
+    ext_00427550(&holder, name);
+
+    return node;
+}
+} // namespace lift_00870460

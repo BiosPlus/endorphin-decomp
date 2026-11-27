@@ -107706,6 +107706,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C0E00 (NMData::MetaBodyData::vfunc_6).",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x00870460": {
+    "name": "NMData::Marker::vfunc_22",
+    "class": "NMData::Marker",
+    "signature": "void* __thiscall fn_00870460(void* self, void* arg1)",
+    "summary": "Serializes or exports Marker node data to a child object and assigns its name.",
+    "lifted_path": "lifted/NMData/Marker.cpp"
+  },
   "0x008704D0": {
     "name": "NMData::Marker::vfunc_3",
     "class": "NMData::Marker",
@@ -107739,6 +107746,13 @@
     "class": "NMData::Marker",
     "signature": "inline void* as_ptr(uint32_t v)",
     "summary": "Allocates a 0x178-byte object, copies the string at +0x148 into it, runs two",
+    "lifted_path": "lifted/NMData/Marker.cpp"
+  },
+  "0x00870C20": {
+    "name": "NMData::Marker::vfunc_13_off_C",
+    "class": "NMData::Marker",
+    "signature": "uint8_t __thiscall fn_00870C20(void* self, void* arg0)",
+    "summary": "Copies name string from arg0, stores owner/manager pointer, and registers marker with it.",
     "lifted_path": "lifted/NMData/Marker.cpp"
   },
   "0x00870E00": {

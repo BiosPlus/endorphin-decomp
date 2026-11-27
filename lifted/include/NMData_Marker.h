@@ -16,8 +16,8 @@ struct NMData_Marker_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x00870650, 0x00870930)
     // +0xC   void*                    field_0x0C  (evidence: 0x00870930)
     // +0x148 std::string              field_0x148  (evidence: 0x00870B70)
-    // +0x154 std::string              field_0x154  (evidence: 0x00870650)
-    // +0x170 uint32_t                 field_0x170  (evidence: 0x00870650)
-    // +0x174 void*                    field_0x174  (evidence: 0x008704D0)
+    // +0x154 std::string              field_0x154  (evidence: 0x00870460, 0x00870650, 0x00870C20)
+    // +0x170 uint32_t                 field_0x170  (evidence: 0x00870460, 0x00870650)
+    // +0x174 void*                    field_0x174  (evidence: 0x008704D0, 0x00870C20)
 };
 } // namespace lifted_layout
