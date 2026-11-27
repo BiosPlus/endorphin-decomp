@@ -11419,6 +11419,13 @@
     "summary": "Refreshes per-frame state from the handle in `obj`: resolves normalized",
     "lifted_path": "lifted/classes/RuntimeEngine.cpp"
   },
+  "0x00474A00": {
+    "name": "StringMapTree::insertWithHint_00474A00",
+    "class": "StringMapTree",
+    "signature": "inline void invalid_parameter()",
+    "summary": "Hint-based insert of value into the red-black tree: uses the hint iterator when it is consistent with the key ordering, otherwise falls back to lower-bound insertion; returns {tree, node} via out.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00474ED0": {
     "name": "RuntimeEngine::vfunc_0_off_4",
     "class": "RuntimeEngine",

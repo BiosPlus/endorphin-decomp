@@ -1,0 +1,58 @@
+{
+  "va": "0x00474A00",
+  "size": 518,
+  "orig_symbol": "sub_00474A00",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "StringMapTree::insertWithHint_00474A00",
+  "class": "StringMapTree",
+  "signature": "inline void invalid_parameter()",
+  "summary": "Hint-based insert of value into the red-black tree: uses the hint iterator when it is consistent with the key ordering, otherwise falls back to lower-bound insertion; returns {tree, node} via out.",
+  "fields": [
+    {
+      "class": "StringMapTree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "StringMapTree",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "TreeHeader",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "leftmost"
+    },
+    {
+      "class": "TreeHeader",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "StringMapNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "StringMapNode",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "StringMapNode",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:50:24Z"
+}

@@ -2864,3 +2864,155 @@ void fn_0047B830(void* self, void* owner, const char* key, uint8_t clearFirst) {
     }
 }
 } // namespace lift_0047B830
+
+// [0x00474A00] sub_00474A00 (518 bytes)
+namespace lift_00474A00 {
+// Known callee 0x00473C70: StringMapTree::insertNode_00473C70 (thiscall; out, insertLeft, hint, value; returns out)
+void* ext_00473C70(void* self, void* out, uint8_t insertLeft, void* hint, const void* value);
+// Known callee 0x00470090: TreeIterator::decrement (thiscall; this = iterator)
+void ext_00470090(void* self);
+// Known callee 0x00470120: TreeIterator::increment (thiscall; this = iterator)
+void ext_00470120(void* self);
+// Known callee 0x00414510: StringMapTree key-less comparator forwarder (thiscall; returns bool in al)
+uint8_t ext_00414510(void* self, const void* lhs, const void* rhs);
+// Known callee 0x00666980: iterator end-comparison helper (thiscall on &iter.node; one stack arg = end pair)
+uint8_t ext_00666980(void* self, const void* end);
+// Known callee 0x00474540: StringMapTree lower-bound fallback (thiscall; scratch out-pair, value; returns pointer to {tree, node} pair)
+void* ext_00474540(void* self, void* scratch, const void* value);
+// Metadata-only callees (address taken only; never called by this function)
+void ext_00475E50();
+void* ext_00476050(void* self, void* out, const void* key);
+void ext_00666C00(void* self);
+void ext_00667030(void* self);
+// MSVCR80!_invalid_parameter_noinfo, loaded through IAT slot mem_00925134.
+extern int mem_00925134;
+// MSVCP80 string less-than (cdecl; lhs, rhs), loaded through IAT slot mem_00924EF4.
+extern int mem_00924EF4;
+
+namespace {
+
+using InvalidParamFn = void (__cdecl*)();
+using StringLessFn = bool (__cdecl*)(const void* lhs, const void* rhs);
+
+inline void invalid_parameter() {
+    auto fn = reinterpret_cast<InvalidParamFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925134)));
+    fn();
+}
+
+inline bool string_less(const void* lhs, const void* rhs) {
+    auto fn = reinterpret_cast<StringLessFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924EF4)));
+    return fn(lhs, rhs);
+}
+
+inline void* node_key(void* node) {
+    return static_cast<uint8_t*>(node) + 0x0C;
+}
+
+inline void* node_right(void* node) {
+    return lift_field<void*>(node, 0x08);
+}
+
+inline uint8_t node_is_nil(void* node) {
+    return lift_field<uint8_t>(node, 0x45);
+}
+
+// Lower-bound fallback: copy the {tree, node} pair produced by ext_00474540 into out.
+void* insert_fallback(void* self, void* out, const void* value) {
+    void* scratch[2] = {nullptr, nullptr};
+    void* pair = ext_00474540(self, scratch, value);
+    lift_field<void*>(out, 0x00) = lift_field<void*>(pair, 0x00);
+    lift_field<void*>(out, 0x04) = lift_field<void*>(pair, 0x04);
+    return out;
+}
+
+} // namespace
+
+// @name StringMapTree::insertWithHint_00474A00
+// @class StringMapTree
+// @summary Hint-based insert of value into the red-black tree: uses the hint iterator when it is consistent with the key ordering, otherwise falls back to lower-bound insertion; returns {tree, node} via out.
+// @field StringMapTree +0x04 void* head
+// @field StringMapTree +0x08 uint32_t size
+// @field TreeHeader +0x00 void* leftmost
+// @field TreeHeader +0x08 void* field_0x08
+// @field StringMapNode +0x08 void* right
+// @field StringMapNode +0x0C uint8_t field_0x0C
+// @field StringMapNode +0x45 uint8_t isNil
+void* fn_00474A00(void* self, void* out, void* hint_tree, void* hint_node, const void* value) {
+    // Metadata-only callees (listed in CALLEES, never called by the disassembly; address taken only)
+    (void)&ext_00475E50;
+    (void)&ext_00476050;
+    (void)&ext_00666C00;
+    (void)&ext_00667030;
+
+    void* head = lift_field<void*>(self, 0x04);
+
+    // Empty tree: insert at the head as left child.
+    if (lift_field<uint32_t>(self, 0x08) == 0) {
+        ext_00473C70(self, out, 1, head, value);
+        return out;
+    }
+
+    void* leftmost = lift_field<void*>(head, 0x00);
+    if (hint_tree == nullptr || hint_tree != self) {
+        invalid_parameter();
+    }
+
+    // Hint is the leftmost node.
+    if (hint_node == leftmost) {
+        if (string_less(value, node_key(hint_node))) {
+            ext_00473C70(self, out, 1, hint_node, value);
+            return out;
+        }
+        return insert_fallback(self, out, value);
+    }
+
+    // Hint is the end (header) sentinel: compare against the rightmost node.
+    if (hint_node == head) {
+        void* rightmost = lift_field<void*>(head, 0x08);
+        if (string_less(node_key(rightmost), value)) {
+            ext_00473C70(self, out, 0, rightmost, value);
+            return out;
+        }
+        return insert_fallback(self, out, value);
+    }
+
+    // Hint is an interior node: try the predecessor side first.
+    if (string_less(value, node_key(hint_node))) {
+        void* local[2] = {hint_tree, hint_node};
+        ext_00470090(local);
+        void* prev = local[1];
+        if (ext_00414510(self, node_key(prev), value)) {
+            if (node_is_nil(node_right(prev)) == 0) {
+                ext_00473C70(self, out, 1, hint_node, value);
+            } else {
+                ext_00473C70(self, out, 0, prev, value);
+            }
+            return out;
+        }
+    }
+
+    // Hint key must be less than value for the successor side.
+    if (!string_less(node_key(hint_node), value)) {
+        return insert_fallback(self, out, value);
+    }
+
+    void* local[2] = {hint_tree, hint_node};
+    void* end[2] = {self, head};
+    ext_00470120(local);
+    if (!ext_00666980(&local[1], end)) {
+        if (!ext_00414510(self, node_key(local[1]), value)) {
+            return insert_fallback(self, out, value);
+        }
+    }
+
+    void* succ = local[1];
+    if (node_is_nil(node_right(hint_node)) == 0) {
+        ext_00473C70(self, out, 0, hint_node, value);
+    } else {
+        ext_00473C70(self, out, 1, succ, value);
+    }
+    return out;
+}
+} // namespace lift_00474A00

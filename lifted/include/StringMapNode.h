@@ -10,8 +10,9 @@ namespace lifted_layout {
 struct StringMapNode_Fields {
     // +0x0   void*                    left  (evidence: 0x00473C70)
     // +0x4   void*                    parent  (evidence: 0x00473C70)
-    // +0x8   void*                    right  (evidence: 0x00473C70)
+    // +0x8   void*                    right  (evidence: 0x00473C70, 0x00474A00)
+    // +0xC   uint8_t                  field_0x0C  (evidence: 0x00474A00)
     // +0x44  uint8_t                  color  (evidence: 0x00473C70)
-    // +0x45  uint8_t                  isNil  (evidence: 0x00473C70)
+    // +0x45  uint8_t                  isNil  (evidence: 0x00473C70, 0x00474A00)
 };
 } // namespace lifted_layout
