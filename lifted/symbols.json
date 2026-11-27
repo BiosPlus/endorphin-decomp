@@ -47460,6 +47460,13 @@
     "summary": "Resolves named flags from obj into this object's bytes and rebuilds the owned node at +0x15C (with string payload) via the base vfunc_21 and helper calls.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C4390": {
+    "name": "NMData::CollisionModelData::vfunc_22",
+    "class": "NMData::CollisionModelData",
+    "signature": "extern \"C\" void* __thiscall fn_005C4390(void* self, void* arg)",
+    "summary": "Builds an object from the stack argument, runs base vfunc_22 on it, optionally sets the child name from field_0x17c, pushes five bool-flagged children from fields 0x19c-0x19f and 0x160, forwards to ext_005B44B0 when field_0x15c is set, and returns the object.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C44A0": {
     "name": "NMData::FluidObjectData::vfunc_33",
     "class": "NMData::FluidObjectData",

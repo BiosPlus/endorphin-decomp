@@ -786,3 +786,77 @@ void fn_005C4100(void* self, void* obj) {
     ext_005B5E50(fresh, r3);
 }
 } // namespace lift_005C4100
+
+// [0x005C4390] NMData::CollisionModelData::vfunc_22 (263 bytes)
+namespace lift_005C4390 {
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+extern void __thiscall ext_00427550(void* self, const char* name);
+// Base vfunc_22 (NMData::CollisionModelDataBase::vfunc_22), called with ecx=this, one stack arg.
+extern void __thiscall ext_0058F650(void* self, void* obj);
+// Helper sub_005B44B0, called with ecx=field_0x15c and one stack arg.
+extern void __thiscall ext_005B44B0(void* self, void* obj);
+// Helper sub_00640110, called with ecx=object and one stack arg; returns a new object pointer.
+extern void* __thiscall ext_00640110(void* self, uint32_t arg);
+// Helper sub_006404E0, called with ecx=stack argument and one stack arg; returns an object pointer.
+extern void* __thiscall ext_006404E0(void* self, uint32_t arg);
+// Known callee 0x00640A80: ResetChildNameFromBool (Resets the child object's name to "true" or "false" depending on the boolean argument.)
+extern void ext_00640A80(void* child, uint8_t flag);
+
+// Global values pushed as call arguments (data-section constants).
+extern int mem_00A9EDCC;
+extern int mem_00A9F7B8;
+extern int mem_00A9F568;
+extern int mem_00A9F56C;
+extern int mem_00A9F564;
+extern int mem_00A9F724;
+extern int mem_00A9FAB4;
+// MSVCP80 import slots for std::string::empty / c_str. Replaced by the std::string
+// member calls below; referenced only so the original-asm global set is accounted for.
+extern int mem_00924FEC;
+extern int mem_00924FF0;
+
+// @name NMData::CollisionModelData::vfunc_22
+// @class NMData::CollisionModelData
+// @summary Builds an object from the stack argument, runs base vfunc_22 on it, optionally sets the child name from field_0x17c, pushes five bool-flagged children from fields 0x19c-0x19f and 0x160, forwards to ext_005B44B0 when field_0x15c is set, and returns the object.
+// @field NMData::CollisionModelData +0x15C void* field_0x15c
+// @field NMData::CollisionModelData +0x160 uint8_t field_0x160
+// @field NMData::CollisionModelData +0x17C std::string field_0x17c
+// @field NMData::CollisionModelData +0x19C uint8_t field_0x19c
+// @field NMData::CollisionModelData +0x19D uint8_t field_0x19d
+// @field NMData::CollisionModelData +0x19E uint8_t field_0x19e
+// @field NMData::CollisionModelData +0x19F uint8_t field_0x19f
+extern void* __thiscall fn_005C4390(void* self, void* arg) {
+    (void)&mem_00924FEC;
+    (void)&mem_00924FF0;
+
+    void* obj = ext_006404E0(arg, static_cast<uint32_t>(mem_00A9EDCC));
+    ext_0058F650(self, obj);
+
+    std::string& name = lift_field<std::string>(self, 0x17C);
+    if (!name.empty()) {
+        void* child = ext_00640110(obj, static_cast<uint32_t>(mem_00A9F7B8));
+        ext_00427550(&child, name.c_str());
+    }
+
+    void* child = ext_00640110(obj, static_cast<uint32_t>(mem_00A9F568));
+    ext_00640A80(child, lift_field<uint8_t>(self, 0x19C));
+
+    child = ext_00640110(obj, static_cast<uint32_t>(mem_00A9F56C));
+    ext_00640A80(child, lift_field<uint8_t>(self, 0x19D));
+
+    child = ext_00640110(obj, static_cast<uint32_t>(mem_00A9F564));
+    ext_00640A80(child, lift_field<uint8_t>(self, 0x19E));
+
+    child = ext_00640110(obj, static_cast<uint32_t>(mem_00A9F724));
+    ext_00640A80(child, lift_field<uint8_t>(self, 0x160));
+
+    child = ext_00640110(obj, static_cast<uint32_t>(mem_00A9FAB4));
+    ext_00640A80(child, lift_field<uint8_t>(self, 0x19F));
+
+    void* sub = lift_field<void*>(self, 0x15C);
+    if (sub != nullptr) {
+        ext_005B44B0(sub, obj);
+    }
+    return obj;
+}
+} // namespace lift_005C4390
