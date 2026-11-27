@@ -5358,3 +5358,41 @@ void __thiscall fn_004343C0(void* self, void* target) {
     slot(target, 1)(target, dispatchArg);
 }
 } // namespace lift_004343C0
+
+// [0x0043D580] sub_0043D580 (143 bytes)
+namespace lift_0043D580 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_00924494;
+extern int mem_009242F4;
+
+// @name CopyConstructRange
+// @summary Constructs one element per source slot in [first, last) into dst (4-byte slots), returning the end of the constructed range; on exception destroys the constructed prefix and rethrows.
+
+// Element constructor: thiscall(this=dst slot, src slot address), reached via IAT slot mem_00924494.
+// Element destructor: thiscall(this=dst slot), reached via IAT slot mem_009242F4.
+using lift_elem_ctor_fn = void (*)(void* self, void* src);
+using lift_elem_dtor_fn = void (*)(void* self);
+
+uint32_t* fn_0043D580(uint32_t* first, uint32_t* last, uint32_t* dst) {
+    uint32_t* const origDst = dst;
+    try {
+        while (first != last) {
+            if (dst != nullptr) {
+                auto ctor = *reinterpret_cast<lift_elem_ctor_fn*>(&mem_00924494);
+                ctor(dst, first);
+            }
+            ++dst;
+            ++first;
+        }
+    } catch (...) {
+        auto dtor = *reinterpret_cast<lift_elem_dtor_fn*>(&mem_009242F4);
+        for (uint32_t* p = origDst; p != dst; ++p) {
+            dtor(p);
+        }
+        ext_006A6DD2();
+        throw;
+    }
+    return dst;
+}
+} // namespace lift_0043D580

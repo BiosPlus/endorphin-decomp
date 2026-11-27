@@ -4552,6 +4552,12 @@
     "summary": "Initializes or assigns a range of 4-byte CString objects from a source value",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043D580": {
+    "name": "CopyConstructRange",
+    "signature": "uint32_t* fn_0043D580(uint32_t* first, uint32_t* last, uint32_t* dst)",
+    "summary": "Constructs one element per source slot in [first, last) into dst (4-byte slots), returning the end of the constructed range; on exception destroys the constructed prefix and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043D610": {
     "name": "MultiTrackView::Frame::vfunc_12",
     "class": "MultiTrackView::Frame",
