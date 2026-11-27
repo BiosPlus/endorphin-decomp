@@ -1,0 +1,46 @@
+{
+  "va": "0x0043BD40",
+  "size": 414,
+  "orig_symbol": "MultiTrackView::MarkerTrack::vfunc_2",
+  "src_path": "src/MultiTrackView/MarkerTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/MarkerTrack.cpp",
+  "name": "MultiTrackView::MarkerTrack::vfunc_2",
+  "class": "MultiTrackView::MarkerTrack",
+  "signature": "void __thiscall fn_0043BD40(void* self, void* arg0, const uint32_t* arg1)",
+  "summary": "Updates visibility, screen X coordinate, and bounding rect for markers in the track within the view's time range.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "markers_begin"
+    },
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "markers_end"
+    },
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "view"
+    },
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "height"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:05:38Z"
+}

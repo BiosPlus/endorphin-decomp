@@ -4763,6 +4763,13 @@
     "summary": "Constructor-style init: sets vtable 0x931EA4, stores arg1 at +0x04 and arg2 at +0x10 and arg3 at +0x24, initializes two embedded MFC80 objects at +0x08 and +0x0C via MFC80!ord_304 with string 0x928B5D, zeroes +0x18..+0x20 and +0x2C..+0x3C, sets +0x28 to 0xE, returns this.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043BD40": {
+    "name": "MultiTrackView::MarkerTrack::vfunc_2",
+    "class": "MultiTrackView::MarkerTrack",
+    "signature": "void __thiscall fn_0043BD40(void* self, void* arg0, const uint32_t* arg1)",
+    "summary": "Updates visibility, screen X coordinate, and bounding rect for markers in the track within the view's time range.",
+    "lifted_path": "lifted/MultiTrackView/MarkerTrack.cpp"
+  },
   "0x0043BEE0": {
     "name": "MultiTrackView::MarkerTrack::vfunc_0",
     "class": "MultiTrackView::MarkerTrack",
