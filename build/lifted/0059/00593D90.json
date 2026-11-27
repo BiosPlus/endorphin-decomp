@@ -1,0 +1,14 @@
+{
+  "va": "0x00593D90",
+  "size": 138,
+  "orig_symbol": "IdentityNode::vfunc_10_off_4",
+  "src_path": "src/classes/IdentityNode.cpp",
+  "lifted_path": "lifted/classes/IdentityNode.cpp",
+  "name": "IdentityNode::initIdentityMatrixOnce",
+  "class": "IdentityNode",
+  "signature": "void* fn_00593D90(void* self)",
+  "summary": "One-time init of a global 4x4 identity float matrix at mem_00B40C78 (guarded by bit 0 of mem_00B40CB8); calls ext_006A6C87 on first init. Returns the matrix address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:31:58Z"
+}

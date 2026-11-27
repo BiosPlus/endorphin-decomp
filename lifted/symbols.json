@@ -31126,6 +31126,13 @@
     "summary": "Switch on the dword at *p: 1 returns a3, 2 returns a2, 3 recurses with the key forced to 2 (yielding a2), anything else returns a4. Stdcall, callee pops 0x10.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00593D90": {
+    "name": "IdentityNode::initIdentityMatrixOnce",
+    "class": "IdentityNode",
+    "signature": "void* fn_00593D90(void* self)",
+    "summary": "One-time init of a global 4x4 identity float matrix at mem_00B40C78 (guarded by bit 0 of mem_00B40CB8); calls ext_006A6C87 on first init. Returns the matrix address.",
+    "lifted_path": "lifted/classes/IdentityNode.cpp"
+  },
   "0x00593EB0": {
     "name": "Unknown::assignGlobalFromLocal_00593EB0",
     "class": "Unknown",
