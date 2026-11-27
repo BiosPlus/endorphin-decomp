@@ -2185,3 +2185,54 @@ float fn_007B7910(void) {
     return std::bit_cast<float>(val);
 }
 } // namespace lift_007B7910
+
+// [0x007B2D80] sub_007B2D80 (112 bytes)
+namespace lift_007B2D80 {
+// Absolute-address base used with lift_field (game VAs are used as offsets from nullptr).
+static void* const kNoBase = nullptr;
+
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+
+// Global flag at 0x00B61219
+extern uint8_t mem_00B61219;
+
+// Depth-first search: returns the address of the first node under `node`
+// (inclusive) whose key equals `key`, or 0 if none exists.
+// Children are reached via first_child (+0x14) and siblings via next_sibling (+0x10).
+static uint32_t search_tree(uint32_t node, uint32_t key) {
+    if (node == 0) {
+        return 0;
+    }
+    if (lift_field<uint32_t>(kNoBase, static_cast<ptrdiff_t>(node) + 0x00) == key) {
+        return node;
+    }
+    uint32_t child = lift_field<uint32_t>(kNoBase, static_cast<ptrdiff_t>(node) + 0x14);
+    while (child != 0) {
+        uint32_t found = search_tree(child, key);
+        if (found != 0) {
+            return found;
+        }
+        child = lift_field<uint32_t>(kNoBase, static_cast<ptrdiff_t>(child) + 0x10);
+    }
+    return 0;
+}
+
+// @name sub_007B2D80
+// @summary Searches the key tree rooted at root for key and stores the matching node address (0 if not found) into *out; with out==NULL it first reports idx 2 via ext_007AA510 and only proceeds if mem_00B61219 is set.
+// @field TreeNode +0x00 uint32_t key
+// @field TreeNode +0x10 uint32_t next_sibling (VA, 0 = end)
+// @field TreeNode +0x14 uint32_t first_child (VA, 0 = none)
+void fn_007B2D80(uint32_t root, uint32_t key, uint32_t out) {
+    if (out == 0) {
+        ext_007AA510(2);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+    }
+
+    uint32_t result = search_tree(root, key);
+    // Stores through a null out pointer fault, matching the original asm's behavior.
+    lift_field<uint32_t>(kNoBase, static_cast<ptrdiff_t>(out)) = result;
+}
+} // namespace lift_007B2D80

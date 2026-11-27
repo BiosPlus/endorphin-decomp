@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct TreeNode_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007D4AA0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 key  (evidence: 0x007B2D80) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (child pointer, taken when node key >= search key)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   TreeNode*                left  (evidence: 0x004EC160, 0x00624D30) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 left  (evidence: 0x0041A190, 0x005AC8C0, 0x005D0670, 0x005DF270, 0x005FF000, 0x00624DC0, 0x007DEC80) // CONFLICT: multiple definitions at +0x0
@@ -41,9 +42,11 @@ struct TreeNode_Fields {
     // +0xC   int32_t field_0x0c (node key)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 key_hi  (evidence: 0x00624F10) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              value  (evidence: 0x00596B20) // CONFLICT: multiple definitions at +0xC
+    // +0x10  uint32_t next_sibling (VA, 0 = end)  (evidence: 0x007B2D80) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 field_0x10  (evidence: 0x005DF940) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    field_0x10  (evidence: 0x0041A200) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 key_lo  (evidence: 0x00624F10) // CONFLICT: multiple definitions at +0x10
+    // +0x14  uint32_t first_child (VA, 0 = none)  (evidence: 0x007B2D80)
     // +0x15  uint8_t                  isNil  (evidence: 0x0045E510, 0x005D0670, 0x005DF270) // CONFLICT: multiple definitions at +0x15
     // +0x15  uint8_t                  isnil  (evidence: 0x0041A190) // CONFLICT: multiple definitions at +0x15
     // +0x15  uint8_t field_0x15 (nil flag; nonzero = sentinel/end of walk)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0x15

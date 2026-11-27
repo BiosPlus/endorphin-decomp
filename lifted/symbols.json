@@ -85085,6 +85085,12 @@
     "summary": "Heap-duplicates a NUL-terminated string (strlen + 1 bytes via malloc) and returns the copy.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B2D80": {
+    "name": "sub_007B2D80",
+    "signature": "static uint32_t search_tree(uint32_t node, uint32_t key)",
+    "summary": "Searches the key tree rooted at root for key and stores the matching node address (0 if not found) into *out; with out==NULL it first reports idx 2 via ext_007AA510 and only proceeds if mem_00B61219 is set.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B2DF0": {
     "name": "ListFindFirstByKey",
     "class": "ListNode",

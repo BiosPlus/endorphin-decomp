@@ -1,0 +1,33 @@
+{
+  "va": "0x007B2D80",
+  "size": 112,
+  "orig_symbol": "sub_007B2D80",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "sub_007B2D80",
+  "signature": "static uint32_t search_tree(uint32_t node, uint32_t key)",
+  "summary": "Searches the key tree rooted at root for key and stores the matching node address (0 if not found) into *out; with out==NULL it first reports idx 2 via ext_007AA510 and only proceeds if mem_00B61219 is set.",
+  "fields": [
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "key"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x10",
+      "type": "uint32_t next_sibling (VA, 0 =",
+      "name": "end)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x14",
+      "type": "uint32_t first_child (VA, 0 =",
+      "name": "none)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:14:09Z"
+}
