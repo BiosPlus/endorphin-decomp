@@ -2196,3 +2196,27 @@ extern void __fastcall fn_00645EB0(void* self) {
     ext_0065F440(edi);
 }
 } // namespace lift_00645EB0
+
+// [0x006455D0]
+namespace lift_006455D0 {
+// @name vec_alloc_24
+// @summary Allocates count * 24 bytes with overflow check, throwing std::bad_alloc on overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+extern void* mem_00925130;
+
+extern void* fn_006455D0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0x18u) {
+        const char* msg = nullptr;
+        uint32_t exc[3] = {0, 0, 0};
+        using ExcCtor = void(__thiscall*)(void*, const char* const*);
+        reinterpret_cast<ExcCtor>(mem_00925130)(exc, &msg);
+        exc[0] = 0x00928EC0u;
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009CDF94u));
+        return nullptr;
+    }
+    return ext_006A5C62(count * 0x18u);
+}
+} // namespace lift_006455D0

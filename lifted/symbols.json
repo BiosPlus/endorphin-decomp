@@ -19562,6 +19562,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00504AA0": {
+    "name": "allocate_40byte_elements",
+    "signature": "extern \"C\" void* fn_00504AA0(uint32_t count)",
+    "summary": "Allocates count * 40 bytes via operator new, throwing std::bad_alloc on 32-bit overflow.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00504C90": {
     "name": "GetStaticBoolString",
     "signature": "extern \"C\" uint32_t mem_00AEBB68;  // one-time-init guard word (bit 0) extern \"C\" char mem_00AEBB4C[];    // function-local static string storage void* fn_00504C90()",
