@@ -1,0 +1,22 @@
+{
+  "va": "0x006C5940",
+  "size": 128,
+  "orig_symbol": "sub_006C5940",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::appendNewCString_006C5940",
+  "class": "Unknown",
+  "signature": "void fn_006C5940(void* self, const char* s)",
+  "summary": "Allocates a 0x4C-byte object, initializes it from a C string, and appends it to the DynamicArray at this+0xF4 (appends null if allocation failed).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "DynamicArray",
+      "name": "field_0xf4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:59:16Z"
+}

@@ -2429,3 +2429,29 @@ void fn_006C78D0(void* self, void* arg) {
     }
 }
 } // namespace lift_006C78D0
+
+// [0x006C5940] sub_006C5940 (128 bytes)
+namespace lift_006C5940 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762 = operator new)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (thiscall: zero-inits object, assigns C string, returns this)
+extern void* ext_006B9D80(void* self, const char* s);
+// Known callee 0x006D2170: DynamicArray::InsertAt (thiscall: inserts elem at index, clamped to count, grows buffer)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::appendNewCString_006C5940
+// @class Unknown
+// @summary Allocates a 0x4C-byte object, initializes it from a C string, and appends it to the DynamicArray at this+0xF4 (appends null if allocation failed).
+// @field Unknown +0xf4 DynamicArray field_0xf4
+void fn_006C5940(void* self, const char* s) {
+    void* obj = nullptr;
+    void* mem = ext_006A5C62(0x4c);
+    if (mem != nullptr) {
+        obj = ext_006B9D80(mem, s);
+    }
+
+    void* dynArray = reinterpret_cast<uint8_t*>(self) + 0xf4;
+    int32_t index = lift_field<int32_t>(self, 0xf4);
+    ext_006D2170(dynArray, index, &obj);
+}
+} // namespace lift_006C5940

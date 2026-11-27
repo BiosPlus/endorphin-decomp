@@ -67265,6 +67265,13 @@
     "summary": "Appends the 32-bit value a1 to the DynamicArray embedded at +0x4D0 (index = current count, read from the array's first dword).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C5940": {
+    "name": "Unknown::appendNewCString_006C5940",
+    "class": "Unknown",
+    "signature": "void fn_006C5940(void* self, const char* s)",
+    "summary": "Allocates a 0x4C-byte object, initializes it from a C string, and appends it to the DynamicArray at this+0xF4 (appends null if allocation failed).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C59C0": {
     "name": "Unknown::GetChildByIndex",
     "class": "Unknown",
