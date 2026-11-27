@@ -10439,6 +10439,13 @@
     "summary": "One-time guarded initializer for the static object at mem_00AD9E24; runs ext_0067A670 on it with argument 0, stores vtable 0x0093D424 into its first DWORD, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004881D0": {
+    "name": "ReadWriteMethodType::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setStrength(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_004881D0(void* holder, void* value)",
+    "summary": "If the holder's target pointer is non-null, forward the string argument through vtable slot 4 into a temp std::string and pass it to the target's setter helper; otherwise throw a DerivedException.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00488260": {
     "name": "sub_00488260",
     "signature": "extern \"C\" void __fastcall fn_00488260(void* self)",

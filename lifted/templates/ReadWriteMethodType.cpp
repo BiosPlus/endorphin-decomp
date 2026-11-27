@@ -18131,3 +18131,46 @@ void fn_0046E7B0(void* arg1, void* arg2) {
     (void)&mem_00924FF4;
 }
 } // namespace lift_0046E7B0
+
+// [0x004881D0] ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setStrength(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_004881D0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern void* ext_0046E780(void* self, void* a1, void* a2, void* a3);
+// Known callee 0x00486BB0: Unknown::setStringIfNonEmpty_00486BB0 (If the given std::string is non-empty, copy it into self+0x180 and then call SetGlobalObjectFlag4IfPresent(self); otherwise do nothing.)
+extern void ext_00486BB0(void* self, const void* str);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// IAT slot holding the std::string destructor (MSVCP80); replaced by a C++ destructor call below.
+extern int mem_00924FF4;
+
+// @name ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setStrength(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary If the holder's target pointer is non-null, forward the string argument through vtable slot 4 into a temp std::string and pass it to the target's setter helper; otherwise throw a DerivedException.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004881D0(void* holder, void* value) {
+    // esi = *holder
+    void* target = lift_field<void*>(holder, 0x00);
+    if (target == nullptr) {
+        // Null target: construct the exception object and throw it.
+        alignas(8) unsigned char exception[0x28] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, reinterpret_cast<const void*>(uintptr_t{0x009DEC1C}));
+    }
+
+    // ecx = [value + 4]
+    void* self = lift_field<void*>(value, 0x04);
+
+    std::string temp;
+    // Forward (holder, value) plus the temp out-slot; returns the temp slot.
+    void* strSlot = ext_0046E780(self, &temp, value, holder);
+    ext_00486BB0(target, strSlot);
+
+    // Destroy the temporary std::string (originally the MSVCP80 dtor via mem_00924FF4).
+    (void)&mem_00924FF4;
+    using TempString = std::string;
+    temp.~TempString();
+}
+} // namespace lift_004881D0
