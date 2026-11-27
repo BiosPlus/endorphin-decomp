@@ -1152,3 +1152,27 @@ extern void __fastcall fn_004B5030(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_004B5030
+
+// [0x004B74E0]
+namespace lift_004B74E0 {
+extern uint32_t mem_00AE1638;
+extern uint8_t mem_00AE161C[];
+extern uint32_t mem_00924FE0;
+
+extern void* ext_0066AD10(void* out_str, uintptr_t arg);
+extern int ext_006A6C87(void* func);
+extern void* ext_004B4A40();
+
+// @name InitOnceGlobalString_004B74E0
+// @summary One-time guarded initializer for the global object at 0x00AE161C; registers its teardown via ext_006A6C87 and returns the global's address.
+void* fn_004B74E0() {
+    (void)ext_004B4A40;
+    (void)mem_00924FE0;
+    if ((mem_00AE1638 & 1u) == 0u) {
+        mem_00AE1638 |= 1u;
+        ext_0066AD10(mem_00AE161C, 0x00A38930u);
+        ext_006A6C87(reinterpret_cast<void*>(0x009184C0u));
+    }
+    return mem_00AE161C;
+}
+} // namespace lift_004B74E0

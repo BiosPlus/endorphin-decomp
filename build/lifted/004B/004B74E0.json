@@ -1,0 +1,13 @@
+{
+  "va": "0x004B74E0",
+  "size": 95,
+  "orig_symbol": "sub_004B74E0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "InitOnceGlobalString_004B74E0",
+  "signature": "void* fn_004B74E0()",
+  "summary": "One-time guarded initializer for the global object at 0x00AE161C; registers its teardown via ext_006A6C87 and returns the global's address.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:54:48Z"
+}
