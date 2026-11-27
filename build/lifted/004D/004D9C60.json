@@ -1,0 +1,40 @@
+{
+  "va": "0x004D9C60",
+  "size": 121,
+  "orig_symbol": "sub_004D9C60",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "Unknown::visitChildRangeDispatch22C",
+  "class": "Unknown",
+  "signature": "static inline void* guest_ptr(DWORD addr)",
+  "summary": "For each DWORD child pointer in [this-\u003efield_0x04, this-\u003efield_0x08) (end re-read each iteration), if child-\u003efield_0x22c is non-null and this-\u003efield_0x1fa is set, call ext_00586A50(child-\u003efield_0x22c, 0x400, 0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1FA",
+      "type": "BYTE",
+      "name": "field_0x1fa"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x22C",
+      "type": "DWORD",
+      "name": "field_0x22c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T02:51:54Z"
+}

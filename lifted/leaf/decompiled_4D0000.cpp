@@ -619,3 +619,50 @@ void* fn_004D40E0(void* self, void* ret) {
     return ret;
 }
 } // namespace lift_004D40E0
+
+// [0x004D9C60]
+namespace lift_004D9C60 {
+extern void ext_00586A50(void* self, DWORD arg0, DWORD arg1);
+// Metadata lists this as a callee, but the disasm of 0x004D9C60 never calls it
+// (only 0x586A50 is called; 0x528BB0 is reached from inside that callee).
+extern DWORD ext_00528BB0(void* self, DWORD arg0, DWORD arg1);
+// MSVCR80 _invalid_parameter_noinfo IAT slot read by the original prologue;
+// the debug-iterator assertions are dropped, the reference is kept for the check.
+extern int mem_00925134;
+
+// @name Unknown::visitChildRangeDispatch22C
+// @class Unknown
+// @summary For each DWORD child pointer in [this->field_0x04, this->field_0x08) (end re-read each iteration), if child->field_0x22c is non-null and this->field_0x1fa is set, call ext_00586A50(child->field_0x22c, 0x400, 0).
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x1fa BYTE field_0x1fa
+// @field Element +0x22c DWORD field_0x22c
+
+static inline void* guest_ptr(DWORD addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+void fn_004D9C60(void* self) {
+    // Address-only references (no read, no call); they do not change behavior.
+    (void)&ext_00528BB0;
+    (void)&mem_00925134;
+
+    // self is the thiscall ecx. Iterator 'it' is a guest address of a DWORD slot.
+    DWORD it = lift_field<DWORD>(self, 0x04);
+    for (;;) {
+        DWORD end = lift_field<DWORD>(self, 0x08);
+        if (it == end) {
+            break;
+        }
+
+        // child = *it (a guest object pointer stored in the range)
+        DWORD child = *reinterpret_cast<DWORD*>(guest_ptr(it));
+        DWORD sub = lift_field<DWORD>(guest_ptr(child), 0x22c);
+        if (sub != 0 && lift_field<BYTE>(self, 0x1fa) != 0) {
+            ext_00586A50(guest_ptr(sub), 0x400, 0);
+        }
+
+        it += 4;
+    }
+}
+} // namespace lift_004D9C60
