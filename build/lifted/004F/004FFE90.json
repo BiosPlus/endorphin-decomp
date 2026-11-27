@@ -1,0 +1,13 @@
+{
+  "va": "0x004FFE90",
+  "size": 93,
+  "orig_symbol": "sub_004FFE90",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "backwardCopy36B_destBegin",
+  "signature": "void* fn_004FFE90(void* first, void* last, void* dest)",
+  "summary": "Backward-copies 36-byte records [first, last) to end at dest, then returns dest minus the byte span of whole 36-byte records.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:32:04Z"
+}

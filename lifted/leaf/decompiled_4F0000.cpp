@@ -1101,3 +1101,21 @@ void* __cdecl fn_004FDBD0(void* first, void* last, void* d_last) {
     return as_ptr(dst);
 }
 } // namespace lift_004FDBD0
+
+// [0x004FFE90] sub_004FFE90 (93 bytes)
+namespace lift_004FFE90 {
+// Known callee 0x004FDBD0: copy_backward_records_36B (Backward-copies the 36-byte records in [first, last) so they end at d_last (copy-assigning each string at +0x00, the u32 at +0x1C, and the pointer at +0x20 via its vtable); returns the new begin of the destination range.)
+extern void* ext_004FDBD0(void* first, void* last, void* d_last);
+
+// @name backwardCopy36B_destBegin
+// @summary Backward-copies 36-byte records [first, last) to end at dest, then returns dest minus the byte span of whole 36-byte records.
+void* fn_004FFE90(void* first, void* last, void* dest) {
+    const int32_t span = static_cast<int32_t>(
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(first)));
+    const int32_t count = span / 36;
+
+    (void)ext_004FDBD0(first, last, dest);
+
+    return static_cast<uint8_t*>(dest) - static_cast<ptrdiff_t>(36) * count;
+}
+} // namespace lift_004FFE90
