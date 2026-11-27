@@ -1763,3 +1763,60 @@ void fn_004CDF40(void* key, void* value, bool flag) {
         exc, reinterpret_cast<const void*>(uintptr_t{0x009E9404}));
 }
 } // namespace lift_004CDF40
+
+// [0x004C8B30]
+namespace lift_004C8B30 {
+extern void ext_006A6E9E(void); // __RTDynamicCast
+extern void ext_006A5C62(void); // operator new (MFC80 ord 762)
+extern void ext_004A6970(void); // thiscall copy-ctor of +4 member
+extern void ext_004C7270(void); // type name temp passthrough
+extern void ext_00403560(void); // StringExceptionWithMember::ctor
+extern void ext_006A6DD2(void); // _CxxThrowException
+extern int mem_00924FE4;        // IAT std::string(const char*)
+extern int mem_00924FD0;        // IAT std::operator+(string,const char*)
+extern int mem_00A3A44C;        // source type descriptor
+extern int mem_00A3A6EC;        // target type descriptor
+
+// @name CloneFromBase_004C8B30
+// @summary Allocate a 0x14-byte object (vtable 0x945C48); if a source is given, dynamic_cast it and copy its +4 member, throwing on bad cast.
+// @field Obj +0x00 void* vtable
+// @field Obj +0x04 int field_0x04
+// @field Obj +0x08 int field_0x08
+// @field Obj +0x0C int field_0x0C
+// @field Obj +0x10 int field_0x10
+extern void* fn_004C8B30(void* src)
+{
+    typedef void* (*new_t)(unsigned);
+    new_t op_new = (new_t)&ext_006A5C62;
+    if (src == nullptr) {
+        uint8_t* p = (uint8_t*)op_new(0x14);
+        if (!p) return nullptr;
+        *(uint32_t*)(p + 0x08) = 0;
+        *(uint32_t*)(p + 0x0C) = 0;
+        *(uint32_t*)(p + 0x10) = 0;
+        *(uint32_t*)(p + 0x00) = 0x945C48u;
+        return p;
+    }
+    typedef void* (*dc_t)(void*, int, void*, void*, int);
+    uint8_t* d = (uint8_t*)((dc_t)&ext_006A6E9E)(src, 0, &mem_00A3A44C, &mem_00A3A6EC, 0);
+    if (d) {
+        uint8_t* p = (uint8_t*)op_new(0x14);
+        if (!p) return nullptr;
+        *(uint32_t*)p = 0x945C38u;
+        typedef void (__thiscall *cc_t)(void*, void*);
+        ((cc_t)&ext_004A6970)(p + 4, d + 4);
+        *(uint32_t*)p = 0x945C48u;
+        return p;
+    }
+    uint8_t tmpName[0x20], s1[0x20], s2[0x20], exc[0x40];
+    void* name = ((void* (*)(void*))&ext_004C7270)(tmpName);
+    typedef void* (__thiscall *sctor_t)(void*, const char*);
+    void* a = ((sctor_t)(uintptr_t)mem_00924FE4)(s1, (const char*)0x92F9D4);
+    typedef void* (*cat_t)(void*, void*, void*);
+    void* b = ((cat_t)(uintptr_t)mem_00924FD0)(s2, a, name);
+    typedef void* (__thiscall *ector_t)(void*, void*);
+    ((ector_t)&ext_00403560)(exc, b);
+    ((void (*)(void*, void*))&ext_006A6DD2)(exc, (void*)0x9D47A4);
+    return nullptr;
+}
+} // namespace lift_004C8B30

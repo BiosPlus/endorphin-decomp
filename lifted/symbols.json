@@ -21742,6 +21742,12 @@
     "summary": "Dynamically cast input object to target type, allocate and copy-construct a 0x14-byte wrapper, or throw a type-mismatch string exception.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C8B30": {
+    "name": "CloneFromBase_004C8B30",
+    "signature": "extern \"C\" void ext_006A6E9E(void); // __RTDynamicCast extern \"C\" void ext_006A5C62(void); // operator new (MFC80 ord 762) extern \"C\" void ext_004A6970(void); // thiscall copy-ctor of +4 member extern \"C\" void ext_004C7270(void); // type name temp passthrough extern \"C\" void ext_00403560(void); // StringExceptionWithMember::ctor extern \"C\" void ext_006A6DD2(void); // _CxxThrowException extern \"C\" int mem_00924FE4;        // IAT std::string(const char*) extern \"C\" int mem_00924FD0;        // IAT std::operator+(string,const char*) extern \"C\" int mem_00A3A44C;        // source type descriptor extern \"C\" int mem_00A3A6EC;        // target type descriptor extern \"C\" void* fn_004C8B30(void* src)",
+    "summary": "Allocate a 0x14-byte object (vtable 0x945C48); if a source is given, dynamic_cast it and copy its +4 member, throwing on bad cast.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C9370": {
     "name": "NMData::SeverEventData::vfunc_1_off_158",
     "class": "NMData::SeverEventData",

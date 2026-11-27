@@ -1,0 +1,45 @@
+{
+  "va": "0x004C8B30",
+  "size": 347,
+  "orig_symbol": "sub_004C8B30",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "CloneFromBase_004C8B30",
+  "signature": "extern \"C\" void ext_006A6E9E(void); // __RTDynamicCast extern \"C\" void ext_006A5C62(void); // operator new (MFC80 ord 762) extern \"C\" void ext_004A6970(void); // thiscall copy-ctor of +4 member extern \"C\" void ext_004C7270(void); // type name temp passthrough extern \"C\" void ext_00403560(void); // StringExceptionWithMember::ctor extern \"C\" void ext_006A6DD2(void); // _CxxThrowException extern \"C\" int mem_00924FE4;        // IAT std::string(const char*) extern \"C\" int mem_00924FD0;        // IAT std::operator+(string,const char*) extern \"C\" int mem_00A3A44C;        // source type descriptor extern \"C\" int mem_00A3A6EC;        // target type descriptor extern \"C\" void* fn_004C8B30(void* src)",
+  "summary": "Allocate a 0x14-byte object (vtable 0x945C48); if a source is given, dynamic_cast it and copy its +4 member, throwing on bad cast.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "int",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "int",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0xC",
+      "type": "int",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x10",
+      "type": "int",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:44:37Z"
+}
