@@ -1,0 +1,22 @@
+{
+  "va": "0x005E2470",
+  "size": 128,
+  "orig_symbol": "NMData::RPROMagnetData::vfunc_54",
+  "src_path": "src/NMData/RPROMagnetData.cpp",
+  "lifted_path": "lifted/NMData/RPROMagnetData.cpp",
+  "name": "NMData::RPROMagnetData::vfunc_54",
+  "class": "NMData::RPROMagnetData",
+  "signature": "void fn_005E2470(void* self)",
+  "summary": "One-time guarded init of static object 0x00B45DC0 (registering its cleanup), then forwards self to ext_005E0380 and caches self-\u003efield_0x178 into mem_00B45E04.",
+  "fields": [
+    {
+      "class": "NMData::RPROMagnetData",
+      "offset": "+0x178",
+      "type": "BYTE",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:56:49Z"
+}

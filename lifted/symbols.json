@@ -51840,6 +51840,13 @@
     "summary": "Lazily constructs the shared static object at 0xB45D70 (guarded by mem_00B45DBC), binds it to self, caches self+0x178 into mem_00B45DB4, and returns the object.",
     "lifted_path": "lifted/NMData/RPROJointData.cpp"
   },
+  "0x005E2470": {
+    "name": "NMData::RPROMagnetData::vfunc_54",
+    "class": "NMData::RPROMagnetData",
+    "signature": "void fn_005E2470(void* self)",
+    "summary": "One-time guarded init of static object 0x00B45DC0 (registering its cleanup), then forwards self to ext_005E0380 and caches self-\u003efield_0x178 into mem_00B45E04.",
+    "lifted_path": "lifted/NMData/RPROMagnetData.cpp"
+  },
   "0x005E2770": {
     "name": "descriptiveName_005E2770",
     "signature": "float fn_005E2770(void* self)",
