@@ -186479,3 +186479,62 @@ bool fn_005FCC90(void** holder, void* arg2) {
     return result;
 }
 } // namespace lift_005FCC90
+
+    // [0x005FCDE0] Both arguments are stack arguments (ret 8); holder is at [esp+4] on entry.
+namespace lift_005FCDE0 {
+// Known callee 0x00672110: sub_00672110 (52B). Constructs a 0x08-byte temporary from a value.
+extern void ext_00672110(void* tmp, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04/field_0x00).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object with fixed message).
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Sensor,...>::vfunc_44 (ValuePtrType forward-through-source)
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>
+// @summary Takes the source pointer in holder->field_0x00, reads a value through its vtable slot 0x38, assigns it into holder via a temporary, releases the temporary, then forwards the call to holder->field_0x04's vtable slot 0xB0; throws if the source pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005FCDE0(void* holder, void* arg2) {
+
+void* const src = *static_cast<void**>(holder);
+    if (src == nullptr) {
+        // Null source: build a CRT exception object and throw through the thunk.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return nullptr;
+    }
+
+    // Vtable slot 0x38 on src (index 14): value = src->getValue().
+    void** const srcVt = *static_cast<void***>(src);
+    using GetValueFn = void* (*)(void*);
+    const auto getValue = reinterpret_cast<GetValueFn>(srcVt[14]);
+    void* const value = getValue(src);
+
+    // Temporary object built from the value (lea ecx,[esp+8] after push eax).
+    struct Tmp {
+        void* field_0x00;
+        void* field_0x04;
+    } tmp{};
+    ext_00672110(&tmp, value);
+
+    // holder <- tmp (guarded self-assignment copy).
+    ext_0041CF50(holder, &tmp);
+
+    // Release tmp.field_0x04 via its vtable slot 0x78 (index 30), arg = &tmp.
+    if (tmp.field_0x04 != nullptr) {
+        void** const relVt = *static_cast<void***>(tmp.field_0x04);
+        using ReleaseFn = void (*)(void*, void*);
+        const auto release = reinterpret_cast<ReleaseFn>(relVt[30]);
+        release(tmp.field_0x04, &tmp);
+    }
+
+    // Forward: holder->field_0x04->vtable slot 0xB0 (index 44)(holder, arg2).
+    void* const obj = lift_field<void*>(holder, 0x04);
+    void** const objVt = *static_cast<void***>(obj);
+    using ForwardFn = void* (*)(void*, void*, void*);
+    const auto forward = reinterpret_cast<ForwardFn>(objVt[44]);
+    return forward(obj, holder, arg2);
+}
+} // namespace lift_005FCDE0

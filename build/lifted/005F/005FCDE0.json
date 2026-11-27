@@ -1,0 +1,28 @@
+{
+  "va": "0x005FCDE0",
+  "size": 161,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e::vfunc_44",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensor,...\u003e::vfunc_44 (ValuePtrType forward-through-source)",
+  "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
+  "signature": "void* fn_005FCDE0(void* holder, void* arg2)",
+  "summary": "Takes the source pointer in holder-\u003efield_0x00, reads a value through its vtable slot 0x38, assigns it into holder via a temporary, releases the temporary, then forwards the call to holder-\u003efield_0x04's vtable slot 0xB0; throws if the source pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:48:32Z"
+}
