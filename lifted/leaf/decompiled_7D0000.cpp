@@ -1266,3 +1266,33 @@ void __cdecl sub_007DB6C0(void* node) {
     ext_007CC930(node);
 }
 } // namespace lift_007DB6C0
+
+// [0x007DB640] sub_007DB640 (120 bytes)
+namespace lift_007DB640 {
+// @name Mat4::TransformPointRelative
+// @class Mat4
+// @summary Subtracts the translation row (m[12..14]) from a 3-float point and applies the upper-left 3x3 of the row-major 4x4 matrix m.
+// @field Mat4 +0x00 float field_0x00
+// @field Mat4 +0x04 float field_0x04
+// @field Mat4 +0x08 float field_0x08
+// @field Mat4 +0x10 float field_0x10
+// @field Mat4 +0x14 float field_0x14
+// @field Mat4 +0x18 float field_0x18
+// @field Mat4 +0x20 float field_0x20
+// @field Mat4 +0x24 float field_0x24
+// @field Mat4 +0x28 float field_0x28
+// @field Mat4 +0x30 float field_0x30
+// @field Mat4 +0x34 float field_0x34
+// @field Mat4 +0x38 float field_0x38
+void fn_007DB640(const float* src, const float* m, float* out) {
+    // t = src - translation row (m[12..14])
+    const float t0 = src[0] - m[12];
+    const float t1 = src[1] - m[13];
+    const float t2 = src[2] - m[14];
+
+    // out = upper-left 3x3 of m applied to t (row-major, 4 floats per row)
+    out[0] = (m[0] * t0 + m[1] * t1) + m[2] * t2;
+    out[1] = (m[4] * t0 + m[5] * t1) + m[6] * t2;
+    out[2] = (m[8] * t0 + m[9] * t1) + m[10] * t2;
+}
+} // namespace lift_007DB640

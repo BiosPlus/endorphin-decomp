@@ -1,0 +1,88 @@
+{
+  "va": "0x007DB640",
+  "size": 120,
+  "orig_symbol": "sub_007DB640",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "Mat4::TransformPointRelative",
+  "class": "Mat4",
+  "signature": "void fn_007DB640(const float* src, const float* m, float* out)",
+  "summary": "Subtracts the translation row (m[12..14]) from a 3-float point and applies the upper-left 3x3 of the row-major 4x4 matrix m.",
+  "fields": [
+    {
+      "class": "Mat4",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Mat4",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:14:52Z"
+}

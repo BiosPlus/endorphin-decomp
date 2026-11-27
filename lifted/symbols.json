@@ -74826,6 +74826,13 @@
     "summary": "Calls the function pointer at (self-\u003e+0xB0)-\u003e+0x08 with (0x4C, 0x10); if it returns nonzero, forwards (result, self, a1, a2) to sub_007DAE80, otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DB640": {
+    "name": "Mat4::TransformPointRelative",
+    "class": "Mat4",
+    "signature": "void fn_007DB640(const float* src, const float* m, float* out)",
+    "summary": "Subtracts the translation row (m[12..14]) from a 3-float point and applies the upper-left 3x3 of the row-major 4x4 matrix m.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DB6C0": {
     "name": "destroyListNode",
     "signature": "void __cdecl sub_007DB6C0(void* node)",
