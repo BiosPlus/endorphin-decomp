@@ -91,3 +91,72 @@ int32_t fn_005731D0(void* self) {
     return bytes / 12;
 }
 } // namespace lift_005731D0
+
+// [0x00571DD0] sub_00571DD0 (18 bytes)
+namespace lift_00571DD0 {
+// @name sub_00571DD0
+// @summary Auto-lifted identical-shape clone of 0x006B6090 (Unknown::resetVtablesAndTailDestruct).
+namespace lift_006B6090 {
+// Known callee 0x006B5090: sub_006B5090_dtor (Destructor that resets vtables, deletes member at +0xd4, destroys member at +0x68, destroys member at +0x5c via MFC80_ord_1934, and calls base destructor MFC80_ord_760.)
+extern void ext_00558920(void* self);
+extern int mem_00957BBC;
+extern int mem_00957BB0;
+
+// @name Unknown::resetVtablesAndTailDestruct
+// @class Unknown
+// @summary Sets the primary vtable at +0x00 and the secondary vtable at +0x54, then tail-calls the base destructor sub_006B5090.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x54 void* vtable2
+void fn_00571DD0(void* self) {
+    lift_field<void*>(self, 0x00) = &mem_00957BBC;
+    lift_field<void*>(self, 0x4) = &mem_00957BB0;
+    ext_00558920(self);
+}
+} // namespace lift_006B6090
+} // namespace lift_00571DD0
+
+// [0x00573180] sub_00573180 (18 bytes)
+namespace lift_00573180 {
+// @name sub_00573180
+// @summary Auto-lifted identical-shape clone of 0x006B6090 (Unknown::resetVtablesAndTailDestruct).
+namespace lift_006B6090 {
+// Known callee 0x006B5090: sub_006B5090_dtor (Destructor that resets vtables, deletes member at +0xd4, destroys member at +0x68, destroys member at +0x5c via MFC80_ord_1934, and calls base destructor MFC80_ord_760.)
+extern void ext_00558920(void* self);
+extern int mem_00957CB4;
+extern int mem_00957CA8;
+
+// @name Unknown::resetVtablesAndTailDestruct
+// @class Unknown
+// @summary Sets the primary vtable at +0x00 and the secondary vtable at +0x54, then tail-calls the base destructor sub_006B5090.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x54 void* vtable2
+void fn_00573180(void* self) {
+    lift_field<void*>(self, 0x00) = &mem_00957CB4;
+    lift_field<void*>(self, 0x4) = &mem_00957CA8;
+    ext_00558920(self);
+}
+} // namespace lift_006B6090
+} // namespace lift_00573180
+
+// [0x00579890] sub_00579890 (18 bytes)
+namespace lift_00579890 {
+// @name sub_00579890
+// @summary Auto-lifted identical-shape clone of 0x006B6090 (Unknown::resetVtablesAndTailDestruct).
+namespace lift_006B6090 {
+// Known callee 0x006B5090: sub_006B5090_dtor (Destructor that resets vtables, deletes member at +0xd4, destroys member at +0x68, destroys member at +0x5c via MFC80_ord_1934, and calls base destructor MFC80_ord_760.)
+extern void ext_005797D0(void* self);
+extern int mem_00957EA4;
+extern int mem_00957E98;
+
+// @name Unknown::resetVtablesAndTailDestruct
+// @class Unknown
+// @summary Sets the primary vtable at +0x00 and the secondary vtable at +0x54, then tail-calls the base destructor sub_006B5090.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x54 void* vtable2
+void fn_00579890(void* self) {
+    lift_field<void*>(self, 0x00) = &mem_00957EA4;
+    lift_field<void*>(self, 0x4) = &mem_00957E98;
+    ext_005797D0(self);
+}
+} // namespace lift_006B6090
+} // namespace lift_00579890

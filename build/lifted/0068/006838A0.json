@@ -1,0 +1,14 @@
+{
+  "va": "0x006838A0",
+  "size": 130,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e",
+  "signature": "extern int mem_00924FC0;   // IAT slot: operator==(const std::string\u0026, const char*) extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall) extern const char mem_0092F10C[];  // .rdata string literal (1st comparand) extern const char mem_0093A810[];  // .rdata string literal (2nd comparand) bool fn_006838A0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00512B10 (ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_3).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:35:30Z"
+}

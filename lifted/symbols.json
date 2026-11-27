@@ -18272,11 +18272,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType\u003cNMData::TriggeredEventData\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D8710": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e",
+    "signature": "extern int mem_00924FC0;   // IAT slot: operator==(const std::string\u0026, const char*) extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall) extern const char mem_0092F10C[];  // .rdata string literal (1st comparand) extern const char mem_0093A810[];  // .rdata string literal (2nd comparand) bool fn_004D8710(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00512B10 (ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D87A0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e",
     "signature": "void* fn_004D87A0(void* dst, const void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00683930 (ExprParser::ReadMethodType\u003cNMData::ValuePtrData\u003e::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D8820": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D8820(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006839B0 (ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004D8A40": {
@@ -29143,6 +29157,13 @@
     "summary": "Returns 1 if the range [+0x28, +0x2c) is non-null and spans more than one 4-byte element, else 0.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x0056D840": {
+    "name": "sub_0056D840",
+    "class": "Unknown",
+    "signature": "void fn_0056D840(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B6090 (Unknown::resetVtablesAndTailDestruct).",
+    "lifted_path": "lifted/leaf/tiny_560000.cpp"
+  },
   "0x0056D920": {
     "name": "NMCIO::vfunc_13",
     "class": "NMCIO",
@@ -29190,6 +29211,13 @@
     "summary": "Reads lines from stream into this+0x46c, skipping '#' comment lines via ext_00570380, until a line equals marker; returns false on stream failure.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00571DD0": {
+    "name": "sub_00571DD0",
+    "class": "Unknown",
+    "signature": "void fn_00571DD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B6090 (Unknown::resetVtablesAndTailDestruct).",
+    "lifted_path": "lifted/leaf/tiny_570000.cpp"
+  },
   "0x00571DF0": {
     "name": "CSMMotionIO::vfunc_3",
     "class": "CSMMotionIO",
@@ -29210,6 +29238,13 @@
     "signature": "void* fn_005726C0(void* self, const void* src)",
     "summary": "Auto-lifted identical-shape clone of 0x006998D0 (Unknown::copyStringAndRecord).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x00573180": {
+    "name": "sub_00573180",
+    "class": "Unknown",
+    "signature": "void fn_00573180(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B6090 (Unknown::resetVtablesAndTailDestruct).",
+    "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
   "0x005731A0": {
     "name": "OBJIO::vfunc_3",
@@ -29487,6 +29522,13 @@
     "signature": "extern void* fn_00579680(void* first, void* last, void* destEnd)",
     "summary": "Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x00579890": {
+    "name": "sub_00579890",
+    "class": "Unknown",
+    "signature": "void fn_00579890(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B6090 (Unknown::resetVtablesAndTailDestruct).",
+    "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
   "0x00579F40": {
     "name": "sub_00579F40",
@@ -31131,6 +31173,13 @@
     "class": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e",
     "signature": "float fn_005911A0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType\u003cNMData::TriggeredEventData\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00591210": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e",
+    "signature": "extern int mem_00924FC0;   // IAT slot: operator==(const std::string\u0026, const char*) extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall) extern const char mem_0092F10C[];  // .rdata string literal (1st comparand) extern const char mem_0093A810[];  // .rdata string literal (2nd comparand) bool fn_00591210(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00512B10 (ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005912A0": {
@@ -33616,6 +33665,20 @@
     "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e",
     "signature": "void* fn_005B2510(void* self, void* /*second stack arg, unused (ret 0x8)*/)",
     "summary": "Builds the Geometry type-name string from the object's vtable, forwards it to a helper, destroys the temporary, and returns self.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005B2590": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e",
+    "signature": "extern int mem_00924FC0;   // IAT slot: operator==(const std::string\u0026, const char*) extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall) extern const char mem_0092F10C[];  // .rdata string literal (1st comparand) extern const char mem_0093A810[];  // .rdata string literal (2nd comparand) bool fn_005B2590(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00512B10 (ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005B2620": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e",
+    "signature": "void fn_005B2620(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006839B0 (ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005B2A00": {
@@ -38568,6 +38631,13 @@
     "class": "Unknown",
     "signature": "void __thiscall fn_005DC300(uint8_t* self, float value)",
     "summary": "Gets a global object's +0x258 subobject, calls its vtable slot 0x1D8 to obtain a lock handle, enters that lock, stores the float argument at self+0x2C, forwards it via ext_005DA150 with self+0x44 as this, dispatches ext_00493EE0 on the +0x258 slot, then leaves the lock. SEH frame setup/teardown omitted.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
+  "0x005DC390": {
+    "name": "sub_005DC390",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_005DC390(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005DC270 (Unknown::setValueAndNotify).",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
   "0x005DC420": {
@@ -56491,6 +56561,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType\u003cNMData::TriggeredEventData\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006838A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e",
+    "signature": "extern int mem_00924FC0;   // IAT slot: operator==(const std::string\u0026, const char*) extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall) extern const char mem_0092F10C[];  // .rdata string literal (1st comparand) extern const char mem_0093A810[];  // .rdata string literal (2nd comparand) bool fn_006838A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00512B10 (ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00683930": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData\u003e::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)",
     "class": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e",
@@ -66758,6 +66835,12 @@
     "name": "forwardMem006D2CB0_006D2CA0",
     "signature": "uint32_t fn_006D2CA0()",
     "summary": "Pushes the address of mem_006D2CB0 as a single cdecl argument, calls sub_006A6C87, and returns its result unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D2CC0": {
+    "name": "sub_006D2CC0",
+    "signature": "void* fn_006D2CC0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0078D740 (allocAndConstructObject0x250).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D2F90": {

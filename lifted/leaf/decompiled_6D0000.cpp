@@ -21,9 +21,12 @@ extern "C" void* __fastcall fn_006D7B30(void* self, int edx_unused, unsigned int
 }
 #include <cstdint>
 #include <cmath>
+#include <cstdio>
+#include <cstdarg>
+#include <bit>
 
-// [0x006D7D90] sub_006D7D90 (32 bytes)
-// @name sub_006D7D90
+#include <cstdarg>
+#include <bit>
 // @summary MSVC scalar deleting destructor: calls sub_006D7DB0 and frees memory when (flags & 1) is set.
 extern "C" void* __fastcall fn_006D7D90(void* self, int edx_unused, unsigned int flags) {
     (void)edx_unused;
@@ -2315,3 +2318,28 @@ extern void fn_006DBDF0(void* self, uint32_t /*unused*/, void* dst) {
     d[1] = static_cast<uint32_t>(sum >> 32);
 }
 } // namespace lift_006DBDF0
+
+// [0x006D2CC0] sub_006D2CC0 (96 bytes)
+namespace lift_006D2CC0 {
+// @name sub_006D2CC0
+// @summary Auto-lifted identical-shape clone of 0x0078D740 (allocAndConstructObject0x250).
+namespace lift_0078D740 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (0x250); returns the allocated block or NULL.
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x0078D7A0: sub_0078D7A0 (Initializes object fields and sets vtable to 0x0099708C)
+// __thiscall: `self` is passed in ECX; returns self.
+extern void* ext_006D2D20(void* self);
+
+// @name allocAndConstructObject0x250
+// @summary Allocates a 0x250-byte object via ext_006A5C62 and runs ext_0078D7A0 on it; returns the object, or NULL if allocation failed.
+// The original SEH frame (fs:[0] push/restore, try-level slot) is omitted: it is exception bookkeeping only and not portable.
+void* fn_006D2CC0(void) {
+    void* obj = ext_006A5C62(0x21C);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_006D2D20(obj);
+}
+} // namespace lift_0078D740
+} // namespace lift_006D2CC0

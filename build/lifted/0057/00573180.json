@@ -1,0 +1,28 @@
+{
+  "va": "0x00573180",
+  "size": 18,
+  "orig_symbol": "sub_00573180",
+  "src_path": "src/leaf/tiny_570000.cpp",
+  "lifted_path": "lifted/leaf/tiny_570000.cpp",
+  "name": "sub_00573180",
+  "class": "Unknown",
+  "signature": "void fn_00573180(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006B6090 (Unknown::resetVtablesAndTailDestruct).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "vtable2"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:35:30Z"
+}

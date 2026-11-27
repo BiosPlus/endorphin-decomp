@@ -67884,3 +67884,225 @@ bool fn_005131B0(const void* p) {
     return result;
 }
 } // namespace lift_005131B0
+
+// [0x004D8710] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_3 (130 bytes)
+namespace lift_004D8710 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00512B10 (ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3).
+namespace lift_00512B10 {
+// Known callee 0x00511960: sub_00511960 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_004D5560(void* self, const void* src);
+extern int mem_00924FC0;   // IAT slot: operator==(const std::string&, const char*)
+extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall)
+extern const char mem_0092F10C[];  // .rdata string literal (1st comparand)
+extern const char mem_0093A810[];  // .rdata string literal (2nd comparand)
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Copies the string referenced by *self and returns true if it equals either of two literal method-type names.
+bool fn_004D8710(void* self) {
+    // Source pointer is the first dword of the argument object.
+    const void* src = *reinterpret_cast<void* const*>(self);
+
+    // Stack-resident std::string (MSVC 2005 layout, 0x1c bytes).
+    alignas(8) unsigned char tmp[0x1c];
+    void* str = ext_004D5560(tmp, src);
+
+    using StrEq = bool (*)(const void* lhs, const char* rhs);
+    using StrDtor = void (*)(void* self);
+    const StrEq str_eq = *reinterpret_cast<StrEq*>(&mem_00924FC0);
+    const StrDtor str_dtor = *reinterpret_cast<StrDtor*>(&mem_00924FF4);
+
+    bool result = str_eq(str, mem_0092F10C);
+    if (!result) {
+        result = str_eq(str, mem_0093A810);
+    }
+
+    str_dtor(tmp);
+    return result;
+}
+} // namespace lift_00512B10
+} // namespace lift_004D8710
+
+// [0x004D8820] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004D8820 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x006839B0 (ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_5).
+namespace lift_006839B0 {
+// Known callee 0x00683100: sub_00683100 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_004D5560(void* self, const void* src);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Copies the string referenced by the first field of the argument into a local temporary, then throws a default-message ExceptionWithMessage.
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1> +0x00 const void* field_0x00
+void fn_004D8820(void* self) {
+    // Local std::string-sized temporary (0x1c bytes, matching the sub esp, 0x1c frame).
+    alignas(8) unsigned char tmp[0x1c];
+
+    // Load the source pointer stored at the first dword of the argument.
+    const void* src = *reinterpret_cast<const void* const*>(self);
+
+    // Copy-construct the temporary from src.
+    ext_004D5560(tmp, src);
+
+    // Build a default ExceptionWithMessage and throw it (does not return).
+    ext_0046C4E0();
+}
+} // namespace lift_006839B0
+} // namespace lift_004D8820
+
+// [0x00591210] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_3 (130 bytes)
+namespace lift_00591210 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00512B10 (ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3).
+namespace lift_00512B10 {
+// Known callee 0x00511960: sub_00511960 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_0058F770(void* self, const void* src);
+extern int mem_00924FC0;   // IAT slot: operator==(const std::string&, const char*)
+extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall)
+extern const char mem_0092F10C[];  // .rdata string literal (1st comparand)
+extern const char mem_0093A810[];  // .rdata string literal (2nd comparand)
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Copies the string referenced by *self and returns true if it equals either of two literal method-type names.
+bool fn_00591210(void* self) {
+    // Source pointer is the first dword of the argument object.
+    const void* src = *reinterpret_cast<void* const*>(self);
+
+    // Stack-resident std::string (MSVC 2005 layout, 0x1c bytes).
+    alignas(8) unsigned char tmp[0x1c];
+    void* str = ext_0058F770(tmp, src);
+
+    using StrEq = bool (*)(const void* lhs, const char* rhs);
+    using StrDtor = void (*)(void* self);
+    const StrEq str_eq = *reinterpret_cast<StrEq*>(&mem_00924FC0);
+    const StrDtor str_dtor = *reinterpret_cast<StrDtor*>(&mem_00924FF4);
+
+    bool result = str_eq(str, mem_0092F10C);
+    if (!result) {
+        result = str_eq(str, mem_0093A810);
+    }
+
+    str_dtor(tmp);
+    return result;
+}
+} // namespace lift_00512B10
+} // namespace lift_00591210
+
+// [0x005B2590] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_3 (130 bytes)
+namespace lift_005B2590 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00512B10 (ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3).
+namespace lift_00512B10 {
+// Known callee 0x00511960: sub_00511960 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_005B1220(void* self, const void* src);
+extern int mem_00924FC0;   // IAT slot: operator==(const std::string&, const char*)
+extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall)
+extern const char mem_0092F10C[];  // .rdata string literal (1st comparand)
+extern const char mem_0093A810[];  // .rdata string literal (2nd comparand)
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Copies the string referenced by *self and returns true if it equals either of two literal method-type names.
+bool fn_005B2590(void* self) {
+    // Source pointer is the first dword of the argument object.
+    const void* src = *reinterpret_cast<void* const*>(self);
+
+    // Stack-resident std::string (MSVC 2005 layout, 0x1c bytes).
+    alignas(8) unsigned char tmp[0x1c];
+    void* str = ext_005B1220(tmp, src);
+
+    using StrEq = bool (*)(const void* lhs, const char* rhs);
+    using StrDtor = void (*)(void* self);
+    const StrEq str_eq = *reinterpret_cast<StrEq*>(&mem_00924FC0);
+    const StrDtor str_dtor = *reinterpret_cast<StrDtor*>(&mem_00924FF4);
+
+    bool result = str_eq(str, mem_0092F10C);
+    if (!result) {
+        result = str_eq(str, mem_0093A810);
+    }
+
+    str_dtor(tmp);
+    return result;
+}
+} // namespace lift_00512B10
+} // namespace lift_005B2590
+
+// [0x005B2620] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_5 (55 bytes)
+namespace lift_005B2620 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x006839B0 (ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_5).
+namespace lift_006839B0 {
+// Known callee 0x00683100: sub_00683100 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_005B1220(void* self, const void* src);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Copies the string referenced by the first field of the argument into a local temporary, then throws a default-message ExceptionWithMessage.
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1> +0x00 const void* field_0x00
+void fn_005B2620(void* self) {
+    // Local std::string-sized temporary (0x1c bytes, matching the sub esp, 0x1c frame).
+    alignas(8) unsigned char tmp[0x1c];
+
+    // Load the source pointer stored at the first dword of the argument.
+    const void* src = *reinterpret_cast<const void* const*>(self);
+
+    // Copy-construct the temporary from src.
+    ext_005B1220(tmp, src);
+
+    // Build a default ExceptionWithMessage and throw it (does not return).
+    ext_0046C4E0();
+}
+} // namespace lift_006839B0
+} // namespace lift_005B2620
+
+// [0x006838A0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_3 (130 bytes)
+namespace lift_006838A0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00512B10 (ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3).
+namespace lift_00512B10 {
+// Known callee 0x00511960: sub_00511960 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+extern void* ext_00683100(void* self, const void* src);
+extern int mem_00924FC0;   // IAT slot: operator==(const std::string&, const char*)
+extern int mem_00924FF4;   // IAT slot: std::string::~basic_string (thiscall)
+extern const char mem_0092F10C[];  // .rdata string literal (1st comparand)
+extern const char mem_0093A810[];  // .rdata string literal (2nd comparand)
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Copies the string referenced by *self and returns true if it equals either of two literal method-type names.
+bool fn_006838A0(void* self) {
+    // Source pointer is the first dword of the argument object.
+    const void* src = *reinterpret_cast<void* const*>(self);
+
+    // Stack-resident std::string (MSVC 2005 layout, 0x1c bytes).
+    alignas(8) unsigned char tmp[0x1c];
+    void* str = ext_00683100(tmp, src);
+
+    using StrEq = bool (*)(const void* lhs, const char* rhs);
+    using StrDtor = void (*)(void* self);
+    const StrEq str_eq = *reinterpret_cast<StrEq*>(&mem_00924FC0);
+    const StrDtor str_dtor = *reinterpret_cast<StrDtor*>(&mem_00924FF4);
+
+    bool result = str_eq(str, mem_0092F10C);
+    if (!result) {
+        result = str_eq(str, mem_0093A810);
+    }
+
+    str_dtor(tmp);
+    return result;
+}
+} // namespace lift_00512B10
+} // namespace lift_006838A0

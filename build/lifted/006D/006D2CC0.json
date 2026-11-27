@@ -1,0 +1,13 @@
+{
+  "va": "0x006D2CC0",
+  "size": 96,
+  "orig_symbol": "sub_006D2CC0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "sub_006D2CC0",
+  "signature": "void* fn_006D2CC0(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x0078D740 (allocAndConstructObject0x250).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T03:35:30Z"
+}
