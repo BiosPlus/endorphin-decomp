@@ -1,0 +1,34 @@
+{
+  "va": "0x004B5270",
+  "size": 121,
+  "orig_symbol": "sub_004B5270",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Vector_destroyAndReset",
+  "class": "Vector",
+  "signature": "void fn_004B5270(void* self)",
+  "summary": "Validates begin/end/bound ordering, destroys the element range via ext_004B4930, releases the storage through ext_006A5C5C when it is non-null, then resets the three pointers to null.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:14:40Z"
+}

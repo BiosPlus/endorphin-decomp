@@ -14183,6 +14183,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0050BE20 (Vector_eraseTailChecked).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B5270": {
+    "name": "Vector_destroyAndReset",
+    "class": "Vector",
+    "signature": "void fn_004B5270(void* self)",
+    "summary": "Validates begin/end/bound ordering, destroys the element range via ext_004B4930, releases the storage through ext_006A5C5C when it is non-null, then resets the three pointers to null.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B54F0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e",
@@ -21536,6 +21543,12 @@
     "name": "sub_005190B0",
     "signature": "void fn_005190B0(uint32_t* first, uint32_t* last, uint32_t pred)",
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00519100": {
+    "name": "initDerivedStateWithDefaults",
+    "signature": "void* fn_00519100(void* self)",
+    "summary": "Initializes base state via ext_0050F970, sets vtable 0x00950A9C, and initializes default double and dword fields.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
   "0x00519170": {

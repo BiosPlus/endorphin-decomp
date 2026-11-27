@@ -1307,3 +1307,50 @@ void* fn_004B75A0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4
     return self;
 }
 } // namespace lift_004B75A0
+
+// [0x004B5270] sub_004B5270 (121 bytes)
+namespace lift_004B5270 {
+// Known callee 0x004B4930: destroyStringPtrRange (Destroys and frees a range of heap-allocated objects containing a std::string at +0x04.)
+// Stdcall with four stack words, pushed as (self, begin, self, end).
+extern void ext_004B4930(uint32_t arg1, uint32_t first, uint32_t arg3, uint32_t bound);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Cdecl, single argument: the storage pointer to release.
+extern void ext_006A5C5C(uint32_t storage);
+// Invalid-parameter handler pointer (MSVCR80!_invalid_parameter_noinfo).
+extern void mem_00925134();
+
+// @name Vector_destroyAndReset
+// @class Vector
+// @summary Validates begin/end/bound ordering, destroys the element range via ext_004B4930, releases the storage through ext_006A5C5C when it is non-null, then resets the three pointers to null.
+// @field Vector +0x04 uint32_t field_0x04
+// @field Vector +0x08 uint32_t field_0x08
+// @field Vector +0x0c uint32_t field_0x0c
+void fn_004B5270(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t selfValue = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    // Validate begin <= bound before destroying.
+    const uint32_t bound = lift_field<uint32_t>(base, 0x08);
+    if (lift_field<uint32_t>(base, 0x04) > bound) {
+        mem_00925134();
+    }
+
+    // Re-read begin and validate it against bound once more.
+    const uint32_t first = lift_field<uint32_t>(base, 0x04);
+    if (first > lift_field<uint32_t>(base, 0x08)) {
+        mem_00925134();
+    }
+
+    ext_004B4930(selfValue, first, selfValue, bound);
+
+    // Release the storage block if one is present.
+    const uint32_t storage = lift_field<uint32_t>(base, 0x04);
+    if (storage != 0) {
+        ext_006A5C5C(storage);
+    }
+
+    lift_field<uint32_t>(base, 0x04) = 0;
+    lift_field<uint32_t>(base, 0x08) = 0;
+    lift_field<uint32_t>(base, 0x0c) = 0;
+}
+} // namespace lift_004B5270
