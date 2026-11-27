@@ -10986,3 +10986,30 @@ void fn_00511FE0(void* self) {
     lift_field<DWORD>(self, 0x4) = 0x00AEBE04u;
 }
 } // namespace lift_00511FE0
+
+// [0x005222B0] ExprParser::ReadWriteMethodType<ThreeLayerNet, int, &public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, &public: void __thiscall ThreeLayerNet::setNumHidden(int)>::vfunc_40 (122 bytes)
+namespace lift_005222B0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores the single stack argument into the first DWORD of self; returns that value.)
+extern std::uint32_t ext_0067A670(void* self, std::uint32_t value);
+extern int mem_00AED290;
+extern int mem_00AED28C;
+
+// @name ExprParser::ReadWriteMethodType<ThreeLayerNet>::vfunc_40 (binds holder+0x04 to the ThreeLayerNet accessor slot)
+// @class ExprParser::ReadWriteMethodType<ThreeLayerNet, int, &public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, &public: void __thiscall ThreeLayerNet::setNumHidden(int)>
+// @summary One-time guarded initialisation of the shared accessor object at mem_00AED28C, then stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005222B0(void* self) {
+    // First call initialises the shared accessor object exactly once
+    // (guard bit 0 of mem_00AED290). The original SEH frame setup is
+    // MSVC bookkeeping and is not needed for the portable form.
+    if ((mem_00AED290 & 1) == 0) {
+        mem_00AED290 |= 1;
+        ext_0067A670(&mem_00AED28C, 0);
+        mem_00AED28C = 0x952A7C; // vtable address for the accessor object
+    }
+
+    // holder+0x04 = &mem_00AED28C (both paths).
+    auto* slot = reinterpret_cast<std::uint32_t*>(static_cast<std::uint8_t*>(self) + 0x04);
+    *slot = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_00AED28C));
+}
+} // namespace lift_005222B0

@@ -1,0 +1,22 @@
+{
+  "va": "0x005222B0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cThreeLayerNet, int, \u0026public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, \u0026public: void __thiscall ThreeLayerNet::setNumHidden(int)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cThreeLayerNet\u003e::vfunc_40 (binds holder+0x04 to the ThreeLayerNet accessor slot)",
+  "class": "ExprParser::ReadWriteMethodType\u003cThreeLayerNet, int, \u0026public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, \u0026public: void __thiscall ThreeLayerNet::setNumHidden(int)\u003e",
+  "signature": "void fn_005222B0(void* self)",
+  "summary": "One-time guarded initialisation of the shared accessor object at mem_00AED28C, then stores its address into holder+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:24:04Z"
+}
