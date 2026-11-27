@@ -671,3 +671,34 @@ void* __thiscall fn_0077F650(void* self, uint32_t flags) {
     return self;
 }
 } // namespace lift_0077F650
+
+// [0x00772050] sub_00772050 (113 bytes)
+namespace lift_00772050 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+// Known callee 0x00754F20: Unknown::initWithArgsAndInitSubobject_00754F20 (Stores arg1 at +0x04, initializes the sub-object at +0x08 with constant args (0x00AAE878, 6), initializes the sub-object at +0x60, sets the vtable to 0x00996BF0, and returns this.)
+extern void* ext_00754F20(void* self, DWORD arg1);
+
+// Data referenced by the original asm: C string passed to 0x006B9D80.
+extern const char mem_00b5d2c0[];
+
+// @name Unknown::initWithArgAndInitSubobjects_00772050
+// @class Unknown
+// @summary Calls the base initializer with arg1, zero-initializes the field at +0xAC, assigns the C string at 0x00B5D2C0 to the sub-object at +0xB0, sets three flag bytes at +0xFC..+0xFE to 1, sets the vtable to 0x00996C98, and returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0xAC DWORD field_0xac
+// @field Unknown +0xB0 BYTE field_0xb0
+// @field Unknown +0xFC BYTE field_0xfc
+// @field Unknown +0xFD BYTE field_0xfd
+// @field Unknown +0xFE BYTE field_0xfe
+void* fn_00772050(void* self, DWORD arg1) {
+    ext_00754F20(self, arg1);
+    lift_field<DWORD>(self, 0xAC) = 0u;
+    ext_006B9D80(&lift_field<BYTE>(self, 0xB0), mem_00b5d2c0);
+    lift_field<BYTE>(self, 0xFE) = 1;
+    lift_field<BYTE>(self, 0xFC) = 1;
+    lift_field<BYTE>(self, 0xFD) = 1;
+    lift_field<DWORD>(self, 0x00) = 0x00996C98u;
+    return self;
+}
+} // namespace lift_00772050
