@@ -1937,3 +1937,34 @@ void* fn_00403560(void* self, const void* src) {
     return self;
 }
 } // namespace lift_00403560
+
+// [0x00404C60] sub_00404C60 (105 bytes)
+namespace lift_00404C60 {
+// Imported MSVCP80 std::basic_string<char> constructors (original asm called through IAT slots).
+extern void ext_basic_string_ctor_cstr(void* self, const char* s);
+extern void ext_basic_string_ctor_default(void* self);
+
+extern int mem_00924FE4;
+extern int mem_00924FE8;
+extern int mem_00928B5D;
+
+// @name Unknown::ctor (descriptive; owner class not yet identified)
+// @summary Construct a 3-string record: store the DWORD argument at +0x00, construct std::string at +0x04 and +0x20 from the empty C string, and default-construct std::string at +0x3C. Returns self.
+// @field unknown +0x00 uint32_t tag
+// @field unknown +0x04 std::string field_0x04
+// @field unknown +0x20 std::string field_0x20
+// @field unknown +0x3C std::string field_0x3C
+void* fn_00404C60(void* self, uint32_t tag) {
+    // IAT slots referenced by the original indirect calls (metadata only).
+    (void)&mem_00924FE4;
+    (void)&mem_00924FE8;
+    const char* empty = reinterpret_cast<const char*>(&mem_00928B5D);
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    lift_field<uint32_t>(base, 0x00) = tag;
+    ext_basic_string_ctor_cstr(base + 0x04, empty);
+    ext_basic_string_ctor_cstr(base + 0x20, empty);
+    ext_basic_string_ctor_default(base + 0x3C);
+    return self;
+}
+} // namespace lift_00404C60
