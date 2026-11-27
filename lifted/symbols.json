@@ -38979,6 +38979,13 @@
     "summary": "Calls the function pointer at subobject+0xC with (this=self+4, global, p), then passes the result as self to fn_0067E560 with p.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005F5730": {
+    "name": "UnknownClass::CallSlot3ThenForwardToSubcall",
+    "class": "UnknownClass",
+    "signature": "void fn_005F5730(void* self, const void* p)",
+    "summary": "Virtual-calls slot 3 of the embedded object at +0x04 with (mem_00B40640, p), then passes the result as self and p to 0x0067E510.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005F57B0": {
     "name": "HelperGraphic::vfunc_0_off_158",
     "class": "HelperGraphic",

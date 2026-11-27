@@ -1,0 +1,22 @@
+{
+  "va": "0x005F5730",
+  "size": 32,
+  "orig_symbol": "sub_005F5730",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "UnknownClass::CallSlot3ThenForwardToSubcall",
+  "class": "UnknownClass",
+  "signature": "void fn_005F5730(void* self, const void* p)",
+  "summary": "Virtual-calls slot 3 of the embedded object at +0x04 with (mem_00B40640, p), then passes the result as self and p to 0x0067E510.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "embeddedObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:58:39Z"
+}

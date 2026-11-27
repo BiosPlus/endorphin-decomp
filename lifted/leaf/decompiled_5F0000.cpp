@@ -1956,3 +1956,32 @@ void fn_005F56C0(void* self, const void* p) {
     ext_0067E600(result, p);
 }
 } // namespace lift_005F56C0
+
+// [0x005F5730] sub_005F5730 (32 bytes)
+namespace lift_005F5730 {
+// Known callee 0x0067E510: sub_0067E510 (Auto-lifted identical-shape clone of 0x0067E600 (buildPaddedMatrixFromParam).)
+extern void ext_0067E510(void* self, const void* p);
+extern int mem_00B40640;
+
+// @name UnknownClass::CallSlot3ThenForwardToSubcall
+// @class UnknownClass
+// @summary Virtual-calls slot 3 of the embedded object at +0x04 with (mem_00B40640, p), then passes the result as self and p to 0x0067E510.
+// @field UnknownClass +0x04 void* embeddedObject
+void fn_005F5730(void* self, const void* p) {
+    using Slot3Fn = uint32_t (*)(void* thisPtr, int value, const void* arg);
+
+    // [self+4] holds the vtable pointer of the embedded object; slot 3 is at +0x0C.
+    void* vtable = lift_field<void*>(self, 4);
+    void* slot3 = lift_field<void*>(vtable, 0xC);
+
+    // The embedded object's address is self+4 (passed as `this`).
+    void* embeddedThis = static_cast<uint8_t*>(self) + 4;
+
+    auto fn = reinterpret_cast<Slot3Fn>(slot3);
+    uint32_t result = fn(embeddedThis, mem_00B40640, p);
+
+    // Result is passed as the `self` argument (ecx) of 0x0067E510.
+    void* newSelf = reinterpret_cast<void*>(static_cast<uintptr_t>(result));
+    ext_0067E510(newSelf, p);
+}
+} // namespace lift_005F5730
