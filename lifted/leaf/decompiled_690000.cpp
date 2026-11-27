@@ -2079,3 +2079,38 @@ extern void __cdecl fn_0069E750(void* dest, uint32_t count, const void* src)
     }
 }
 } // namespace lift_0069E750
+
+// [0x0069E6C0]
+namespace lift_0069E6C0 {
+// @name uninitialized_copy_Class_00673420
+// @summary Copies a range of 0x50-byte Class_00673420 objects into uninitialized storage, destroying already-constructed elements and rethrowing on exception.
+
+extern void __thiscall ext_00673420(void* self);
+extern void __thiscall ext_0069C150(void* self, const void* src);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __cdecl fn_0069E6C0(const void* first, const void* last, void* dest) {
+    const uint8_t* src = static_cast<const uint8_t*>(first);
+    const uint8_t* src_end = static_cast<const uint8_t*>(last);
+    uint8_t* dst = static_cast<uint8_t*>(dest);
+    uint8_t* dst_start = dst;
+
+    try {
+        while (src != src_end) {
+            if (dst != nullptr) {
+                ext_0069C150(dst, src);
+            }
+            dst += 0x50;
+            src += 0x50;
+        }
+    } catch (...) {
+        for (uint8_t* cur = dst_start; cur != dst; cur += 0x50) {
+            ext_00673420(cur);
+        }
+        ext_006A6DD2(nullptr, nullptr);
+        throw;
+    }
+
+    return dst;
+}
+} // namespace lift_0069E6C0

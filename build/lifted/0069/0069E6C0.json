@@ -1,0 +1,13 @@
+{
+  "va": "0x0069E6C0",
+  "size": 141,
+  "orig_symbol": "sub_0069E6C0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "uninitialized_copy_Class_00673420",
+  "signature": "extern \"C\" void* __cdecl fn_0069E6C0(const void* first, const void* last, void* dest)",
+  "summary": "Copies a range of 0x50-byte Class_00673420 objects into uninitialized storage, destroying already-constructed elements and rethrowing on exception.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-27T13:48:47Z"
+}

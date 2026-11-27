@@ -60349,6 +60349,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FFFB0": {
+    "name": "getSingleton_00B47078",
+    "signature": "extern \"C\" void* __cdecl sub_005FFFB0()",
+    "summary": "Lazily constructs and returns the static singleton instance at 0x00B47078, registering its destructor via atexit.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x00600010": {
     "name": "sub_00600010",
     "signature": "extern int mem_00924FDC; // basic_string::operator=(const basic_string\u0026) extern int mem_00924FF4; // basic_string::~basic_string void fn_00600010(void* arg)",
