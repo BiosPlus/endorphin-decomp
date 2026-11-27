@@ -1,0 +1,40 @@
+{
+  "va": "0x005864C0",
+  "size": 122,
+  "orig_symbol": "sub_005864C0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::visitChildrenGated_005864C0",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_005864C0(uint8_t* self, uint32_t arg)",
+  "summary": "If the object embedded at +0x04 reports true via vtable slot 7, forward arg to the object embedded at +0x08 (vtable slot 4), then recurse into every element of the pointer vector at +0x80..+0x84 with the same arg.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "children_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "children_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:26:19Z"
+}

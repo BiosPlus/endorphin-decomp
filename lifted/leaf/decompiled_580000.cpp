@@ -1418,3 +1418,62 @@ void fn_00586440(void* self, uint32_t arg) {
     // pop edi/esi/ebp/ebx ; ret 4  (void, one stack arg)
 }
 } // namespace lift_00586440
+
+// [0x005864C0] sub_005864C0 (122 bytes)
+namespace lift_005864C0 {
+extern uint32_t mem_00925134;
+extern void __thiscall ext_005864C0(void* self, uint32_t arg);
+
+// @name Unknown::visitChildrenGated_005864C0
+// @class Unknown
+// @summary If the object embedded at +0x04 reports true via vtable slot 7, forward arg to the object embedded at +0x08 (vtable slot 4), then recurse into every element of the pointer vector at +0x80..+0x84 with the same arg.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x80 uint32_t children_begin
+// @field Unknown +0x84 uint32_t children_end
+void __thiscall fn_005864C0(uint8_t* self, uint32_t arg) {
+    using InvalidParamFn = void(__cdecl*)();
+    InvalidParamFn invalid_param =
+        reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    // Gate: vtable slot 7 (+0x1C) of the object at self+0x04, this = self+0x04, no args.
+    void** gate_vtbl = *reinterpret_cast<void***>(self + 0x04);
+    using GateFn = uint8_t(__thiscall*)(void*);
+    GateFn gate_fn = reinterpret_cast<GateFn>(gate_vtbl[7]);
+    if (gate_fn(self + 0x04) != 0) {
+        // Sink: vtable slot 4 (+0x10) of the object at self+0x08, this = self+0x08, arg pushed.
+        void** sink_vtbl = *reinterpret_cast<void***>(self + 0x08);
+        using SinkFn = void(__thiscall*)(void*, uint32_t);
+        SinkFn sink_fn = reinterpret_cast<SinkFn>(sink_vtbl[4]);
+        sink_fn(self + 0x08, arg);
+    }
+
+    // Vector walk over self+0x80 (begin) .. self+0x84 (end), elements are 32-bit object pointers.
+    uint32_t cursor = lift_field<uint32_t>(self, 0x80);
+    if (cursor > lift_field<uint32_t>(self, 0x84)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uint32_t end = lift_field<uint32_t>(self, 0x84);
+        if (lift_field<uint32_t>(self, 0x80) > end) {
+            invalid_param();
+        }
+        // The asm's "cmp esi,esi / je" check is always equal and never calls invalid_param; omitted.
+        if (cursor == end) {
+            break;
+        }
+        if (cursor >= end) {
+            invalid_param();
+        }
+
+        uint32_t elem = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cursor));
+        ext_005864C0(reinterpret_cast<void*>(static_cast<uintptr_t>(elem)), arg);
+
+        if (cursor >= lift_field<uint32_t>(self, 0x84)) {
+            invalid_param();
+        }
+        cursor += 4;
+    }
+}
+} // namespace lift_005864C0

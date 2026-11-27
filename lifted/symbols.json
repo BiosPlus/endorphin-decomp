@@ -28683,6 +28683,13 @@
     "summary": "Visits this+0x4 and this+0x8 children, then recursively visits each element of the pointer range [begin, end) stored at this+0x80/this+0x84.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x005864C0": {
+    "name": "Unknown::visitChildrenGated_005864C0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_005864C0(uint8_t* self, uint32_t arg)",
+    "summary": "If the object embedded at +0x04 reports true via vtable slot 7, forward arg to the object embedded at +0x08 (vtable slot 4), then recurse into every element of the pointer vector at +0x80..+0x84 with the same arg.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00586660": {
     "name": "Unknown::CallVirtual8COnSelfAndElements",
     "class": "Unknown",
