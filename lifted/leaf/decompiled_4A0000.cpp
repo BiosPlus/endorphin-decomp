@@ -2233,3 +2233,118 @@ extern TreeIter* __thiscall fn_004AE420(void* self, TreeIter* ret, void* firstCo
 }
 } // namespace lift_0046A810
 } // namespace lift_004AE420
+
+// [0x004AE210]
+namespace lift_004AE210 {
+struct TreeIterator {
+    void* container;
+    void* node;
+};
+
+struct InsertResult {
+    void* container;
+    void* node;
+    uint8_t inserted;
+    uint8_t pad[3];
+};
+
+extern TreeIterator* __thiscall ext_004ADB20(void* self, TreeIterator* ret, uint32_t addLeft, void* tryNode, const void* val);
+extern void __thiscall ext_00666C00(TreeIterator* it);
+extern uint8_t __thiscall ext_00414510(void* self, const void* lhs, const void* rhs);
+extern void __thiscall ext_00667030(TreeIterator* it);
+extern uint8_t __thiscall ext_00666980(const TreeIterator* lhs, const TreeIterator* rhs);
+extern InsertResult* __thiscall ext_004AE110(void* self, InsertResult* ret, const void* val);
+
+extern void* mem_00925134;
+extern void* mem_00924EF4;
+
+// @name TreeMap::insertHint
+// @class TreeMap
+// @summary Inserts a key-value element into a red-black tree map using an iterator hint, falling back to full tree insertion if the hint does not bracket the key.
+// @field TreeMap +0x04 void* head
+// @field TreeMap +0x08 uint32_t size
+TreeIterator* __thiscall fn_004AE210(void* self, TreeIterator* ret, void* whereContainer, void* whereNode, const void* val) {
+    using InvalidParamFn = void(__cdecl*)();
+    using StringLessFn = uint8_t(__cdecl*)(const void*, const void*);
+
+    auto callInvalidParam = []() {
+        reinterpret_cast<InvalidParamFn>(mem_00925134)();
+    };
+    auto stringLess = [](const void* lhs, const void* rhs) -> bool {
+        return reinterpret_cast<StringLessFn>(mem_00924EF4)(lhs, rhs) != 0;
+    };
+
+    if (lift_field<uint32_t>(self, 0x08) == 0) {
+        void* head = lift_field<void*>(self, 0x04);
+        ext_004ADB20(self, ret, 1, head, val);
+        return ret;
+    }
+
+    void* head = lift_field<void*>(self, 0x04);
+    void* beginNode = lift_field<void*>(head, 0x00);
+
+    if (whereContainer == nullptr || whereContainer != self) {
+        callInvalidParam();
+    }
+
+    if (whereNode == beginNode) {
+        if (stringLess(val, static_cast<const uint8_t*>(whereNode) + 0x0C)) {
+            ext_004ADB20(self, ret, 1, whereNode, val);
+            return ret;
+        }
+    } else {
+        void* endNode = lift_field<void*>(self, 0x04);
+        if (whereContainer == nullptr || whereContainer != self) {
+            callInvalidParam();
+        }
+
+        if (whereNode == endNode) {
+            void* curHead = lift_field<void*>(self, 0x04);
+            void* rightMost = lift_field<void*>(curHead, 0x08);
+            if (stringLess(static_cast<const uint8_t*>(rightMost) + 0x0C, val)) {
+                void* curHead2 = lift_field<void*>(self, 0x04);
+                void* rightMost2 = lift_field<void*>(curHead2, 0x08);
+                ext_004ADB20(self, ret, 0, rightMost2, val);
+                return ret;
+            }
+        } else {
+            if (stringLess(val, static_cast<const uint8_t*>(whereNode) + 0x0C)) {
+                TreeIterator prev{whereContainer, whereNode};
+                ext_00666C00(&prev);
+                if (ext_00414510(self, static_cast<const uint8_t*>(prev.node) + 0x0C, val) != 0) {
+                    void* prevRight = lift_field<void*>(prev.node, 0x08);
+                    if (lift_field<uint8_t>(prevRight, 0x39) != 0) {
+                        ext_004ADB20(self, ret, 0, prev.node, val);
+                    } else {
+                        ext_004ADB20(self, ret, 1, whereNode, val);
+                    }
+                    return ret;
+                }
+            }
+
+            if (stringLess(static_cast<const uint8_t*>(whereNode) + 0x0C, val)) {
+                TreeIterator endIt{self, lift_field<void*>(self, 0x04)};
+                TreeIterator next{whereContainer, whereNode};
+                ext_00667030(&next);
+                uint8_t isEnd = ext_00666980(&next, &endIt);
+                void* nextNode = next.node;
+                if (isEnd != 0 || ext_00414510(self, val, static_cast<const uint8_t*>(nextNode) + 0x0C) != 0) {
+                    void* whereRight = lift_field<void*>(whereNode, 0x08);
+                    if (lift_field<uint8_t>(whereRight, 0x39) != 0) {
+                        ext_004ADB20(self, ret, 0, whereNode, val);
+                    } else {
+                        ext_004ADB20(self, ret, 1, nextNode, val);
+                    }
+                    return ret;
+                }
+            }
+        }
+    }
+
+    InsertResult tmp{};
+    InsertResult* res = ext_004AE110(self, &tmp, val);
+    ret->container = res->container;
+    ret->node = res->node;
+    return ret;
+}
+} // namespace lift_004AE210
