@@ -1922,3 +1922,31 @@ void fn_00490960(void* self, void* out, uint32_t first, uint32_t dest, uint32_t 
     lift_field<uint32_t>(out, 4) = dest;
 }
 } // namespace lift_00490960
+
+// [0x00497530] sub_00497530 (122 bytes)
+namespace lift_00497530 {
+// @name Unknown::computeRatioPair
+// @class Unknown
+// @summary Computes t = (a3-a1)/a4 and d = (a4-a2) - a3*t from four floats, storing t and d in this[0]/this[4]; this[8] is a 0/1/2 status code (2 when a3==a1, 1 when a4==a2, else 0). Returns this.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+extern void* __thiscall fn_00497530(void* self, float a1, float a2, float a3, float a4) {
+    const float tmp = a3 - a1;
+    lift_field<DWORD>(self, 0x8) = 0;
+    if (tmp == 0.0f) {
+        lift_field<float>(self, 0x0) = 0.0f;
+        lift_field<float>(self, 0x4) = a3;
+        lift_field<DWORD>(self, 0x8) = 2;
+        return self;
+    }
+    const float u = a4 - a2;
+    if (u == 0.0f) {
+        lift_field<DWORD>(self, 0x8) = 1;
+    }
+    const float r = u / tmp;
+    lift_field<float>(self, 0x0) = r;
+    lift_field<float>(self, 0x4) = a4 - a3 * r;
+    return self;
+}
+} // namespace lift_00497530

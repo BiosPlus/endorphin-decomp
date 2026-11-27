@@ -11509,6 +11509,13 @@
     "summary": "Returns the byte at this+0xB4 and resets it to zero.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00497530": {
+    "name": "Unknown::computeRatioPair",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_00497530(void* self, float a1, float a2, float a3, float a4)",
+    "summary": "Computes t = (a3-a1)/a4 and d = (a4-a2) - a3*t from four floats, storing t and d in this[0]/this[4]; this[8] is a 0/1/2 status code (2 when a3==a1, 1 when a4==a2, else 0). Returns this.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004975B0": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_1",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",

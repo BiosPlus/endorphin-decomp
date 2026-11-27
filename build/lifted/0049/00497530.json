@@ -1,0 +1,34 @@
+{
+  "va": "0x00497530",
+  "size": 122,
+  "orig_symbol": "sub_00497530",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Unknown::computeRatioPair",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_00497530(void* self, float a1, float a2, float a3, float a4)",
+  "summary": "Computes t = (a3-a1)/a4 and d = (a4-a2) - a3*t from four floats, storing t and d in this[0]/this[4]; this[8] is a 0/1/2 status code (2 when a3==a1, 1 when a4==a2, else 0). Returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:21:25Z"
+}
