@@ -10893,3 +10893,25 @@ void fn_005120B0(void* obj) {
     lift_field<void*>(obj, 0x04) = &mem_00AEBE0C;
 }
 } // namespace lift_005120B0
+
+// [0x0051A450] ExprParser::ReadWriteMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, float, &public: void __thiscall NMData::RealChannel::setKeyFrame(float)>::vfunc_40 (122 bytes)
+namespace lift_0051A450 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AEC750;
+extern DWORD mem_00AEC74C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::RealChannel>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, float, &public: void __thiscall NMData::RealChannel::setKeyFrame(float)>
+// @summary One-time initialization of the static RealChannel accessor object (guarded by bit 0 of mem_00AEC750), then stores its address into out->+0x04.
+// @field ExprParser::ReadWriteMethodType<NMData::RealChannel> +0x04 void* field_0x04
+void fn_0051A450(void* out) {
+    // SEH frame setup/teardown (fs:[0] push/pop) is runtime boilerplate and is omitted.
+    if ((mem_00AEC750 & 1u) == 0) {
+        mem_00AEC750 |= 1u;                              // mark initialized before calling out
+        ext_0067A670(&mem_00AEC74C, 0u);                 // init object with 0 in first dword
+        mem_00AEC74C = 0x009522CCu;                      // install vtable pointer
+    }
+    lift_field<DWORD>(out, 0x04) = 0x00AEC74Cu;          // out->+0x04 = &static object
+}
+} // namespace lift_0051A450

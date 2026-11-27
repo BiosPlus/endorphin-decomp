@@ -22024,6 +22024,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0051A450": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::RealChannel\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, float, \u0026public: void __thiscall NMData::RealChannel::setKeyFrame(float)\u003e",
+    "signature": "void fn_0051A450(void* out)",
+    "summary": "One-time initialization of the static RealChannel accessor object (guarded by bit 0 of mem_00AEC750), then stores its address into out-\u003e+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0051A4D0": {
     "name": "ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)",
     "class": "ExprParser::ROWriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
