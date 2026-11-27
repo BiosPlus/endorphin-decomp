@@ -1466,3 +1466,28 @@ void __cdecl sub_0054C800(const char* fmt, ...) {
     reinterpret_cast<GlPopAttribFn>(static_cast<uintptr_t>(mem_0092552C))();
 }
 } // namespace lift_0054C800
+
+// [0x00543790] sub_00543790 (121 bytes)
+namespace lift_00543790 {
+// Known callee 0x00538530: Unknown::InitWithVTableAndDefaults (Base-initializes this object, then sets vtable to 0x95501c, a float at +0x14 to 1.0, and flag bytes at +0x18 and +0x19 to 1; returns this.)
+extern void* ext_00538530(void* self);
+// Known callee 0x00538550: Unknown::SetFloatAndFlagBytes (Stores a float at +0x14 and two byte values at +0x18 and +0x19 of self (thiscall, callee pops 12 bytes).)
+extern void ext_00538550(void* self, float value, uint8_t byteA, uint8_t byteB);
+// Callee 0x005436B0 (181 bytes, unlifted): thiscall taking two stack args.
+extern void ext_005436B0(void* self, void* arg1, void* arg2);
+// .rdata float 0.5 (u32 0x3F000000)
+extern float mem_009324A4;
+
+// @name Unknown::ConstructWithEmbeddedSubobject
+// @class Unknown
+// @summary Runs base init with two args, sets vtable, then initializes the embedded subobject at +0x98 (float 0.5, flags 1 and 1); returns this.
+// @field Unknown +0x00 uint32_t vtable
+void* fn_00543790(void* self, void* arg1, void* arg2) {
+    ext_005436B0(self, arg1, arg2);
+    lift_field<uint32_t>(self, 0x00) = 0x95619c;
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x98;
+    ext_00538530(sub);
+    ext_00538550(sub, mem_009324A4, 1, 1);
+    return self;
+}
+} // namespace lift_00543790
