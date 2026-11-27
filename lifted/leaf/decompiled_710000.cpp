@@ -2245,3 +2245,44 @@ uint32_t __stdcall sub_0071A6B0(uint32_t index) {
     }
 }
 } // namespace lift_0071A6B0
+
+// [0x0071130C] sub_0071130C (126 bytes)
+namespace lift_0071130C {
+// Known callee 0x00711DB0: getSubobjectField28 (Calls ext_0071E680 on self and returns the 32-bit field at offset +0x28 of the returned pointer.)
+extern uint32_t ext_00711DB0(void* self);
+
+// Byte mode table at 0x00711398, indexed by (ext_00711DB0 result - 1), range 0..15.
+extern const uint8_t mem_00711398[16];
+
+// Vtable slot at +0x8C (index 35), thiscall-style: (this, ptr, 0, 0, 0).
+using VirtualSlot35 = uint32_t (*)(void* self, void* arg, uint32_t a, uint32_t b, uint32_t c);
+
+// @name DispatchFlagVirtualCall
+// @class Object
+// @summary Selects a mode from a table keyed by getSubobjectField28; invokes vtable slot 35 with a flag or the argument address and returns 1, or 0 when out of range.
+// @field Object +0x00 void* vtbl
+uint8_t fn_0071130C(void* self, uint32_t arg1) {
+    uint32_t idx = ext_00711DB0(self);
+    idx -= 1;
+    if (idx > 15) {
+        return 0;
+    }
+    uint8_t mode = mem_00711398[idx];
+
+    void** vtbl = *reinterpret_cast<void***>(self);
+    VirtualSlot35 slot = reinterpret_cast<VirtualSlot35>(vtbl[35]);
+
+    switch (mode) {
+    case 0: {
+        uint8_t flag = (arg1 != 0) ? 1 : 0;
+        slot(self, &flag, 0, 0, 0);
+        return 1;
+    }
+    case 1:
+        slot(self, &arg1, 0, 0, 0);
+        return 1;
+    default:
+        return 0;
+    }
+}
+} // namespace lift_0071130C
