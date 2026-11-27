@@ -1,0 +1,13 @@
+{
+  "va": "0x00575CE0",
+  "size": 98,
+  "orig_symbol": "sub_00575CE0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "readStreamHeaderAndName",
+  "signature": "bool __stdcall sub_00575CE0(void* stream, void* out_str, int32_t* out_val)",
+  "summary": "Reads a 4-byte integer and 28-byte string from an istream, returning true if the integer is less than 1.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:00:11Z"
+}

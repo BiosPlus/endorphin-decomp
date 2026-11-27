@@ -1764,3 +1764,40 @@ void* __cdecl sub_0057BF20(void* first, void* last, const void* val) {
     return cur;
 }
 } // namespace lift_0057BF20
+
+// [0x00575CE0]
+namespace lift_00575CE0 {
+// @name readStreamHeaderAndName
+// @summary Reads a 4-byte integer and 28-byte string from an istream, returning true if the integer is less than 1.
+
+extern uint32_t mem_00924FD4;
+extern uint32_t mem_0092508C;
+extern uint32_t mem_00925090;
+
+bool __stdcall sub_00575CE0(void* stream, void* out_str, int32_t* out_val) {
+    struct fpos_t_msvc {
+        uint8_t data[24];
+    } pos;
+
+    using TellgFn = void* (__thiscall*)(void* this_ptr, void* ret_buf);
+    using ReadFn = void* (__thiscall*)(void* this_ptr, char* buf, int32_t count);
+    using AssignStrFn = void* (__thiscall*)(void* this_ptr, const char* s);
+
+    auto tellg_fn = reinterpret_cast<TellgFn>(mem_0092508C);
+    auto read_fn = reinterpret_cast<ReadFn>(mem_00925090);
+    auto assign_str_fn = reinterpret_cast<AssignStrFn>(mem_00924FD4);
+
+    tellg_fn(stream, &pos);
+    read_fn(stream, reinterpret_cast<char*>(out_val), 4);
+
+    char name_buf[28];
+    read_fn(stream, name_buf, 0x1c);
+    assign_str_fn(out_str, name_buf);
+
+    if (*out_val < 1) {
+        *out_val = 0;
+        return true;
+    }
+    return false;
+}
+} // namespace lift_00575CE0
