@@ -1356,3 +1356,109 @@ void fn_004D30E0(void* self) {
     (void)&ext_006A5C62;
 }
 } // namespace lift_004D30E0
+
+// [0x004E4550] NMData::AnimationEventData::vfunc_84 (320 bytes)
+namespace lift_004E4550 {
+// @name NMData::AnimationEventData::vfunc_84
+// @class NMData::AnimationEventData
+// @summary Steps animation event playback for the given frame, triggering start and keyframe events, updating the playback controller, advancing playback time, and finalizing on the last frame.
+// @field NMData::AnimationEventData +0x15C int32_t field_0x15c
+// @field NMData::AnimationEventData +0x160 int32_t field_0x160
+// @field NMData::AnimationEventData +0x17C uint8_t field_0x17c
+// @field NMData::AnimationEventData +0x998 float field_0x998
+// @field NMData::AnimationEventData +0x9B0 uint8_t[16] field_0x9b0
+// @field NMData::AnimationEventData +0x9C0 void* field_0x9c0
+// @field NMData::AnimationEventData +0x9C8 int32_t field_0x9c8
+// @field NMData::AnimationEventData +0x9D8 float field_0x9d8
+// @field NMData::AnimationEventData +0x9DC float field_0x9dc
+// @field NMData::AnimationEventData +0xB74 void* field_0xb74
+// @field NMData::AnimationEventData +0xB78 void* field_0xb78
+
+extern uint32_t* __thiscall ext_00410D10(void* self, uint32_t* out);
+extern void* __thiscall ext_00425E30(void* self);
+extern int32_t* __thiscall ext_00492A50(void* self);
+extern uint8_t __thiscall ext_0049AD40(void* self, const void* other);
+extern void __thiscall ext_004E1E90(void* self);
+extern void __thiscall ext_004E27A0(void* self, float weight, float time);
+extern void __thiscall ext_004E2FE0(void* self);
+extern void __thiscall ext_004E4350(void* self, void* owner, uint32_t arg);
+
+extern void ext_00493E40(void);
+extern void ext_00493E70(void);
+extern void ext_004DE020(void);
+extern void ext_004E1DC0(void);
+extern void ext_004E3660(void);
+extern void ext_00528B90(void);
+extern int32_t __cdecl ext_00594000(void);
+extern void ext_00596660(void);
+extern void ext_00662420(void);
+extern void ext_006A6E9E(void);
+
+extern uint32_t mem_00B40640;
+extern void (__cdecl* mem_00925134)(void);
+
+void __thiscall fn_004E4550(void* self, int32_t frame) {
+    (void)&ext_00493E40;
+    (void)&ext_00493E70;
+    (void)&ext_004DE020;
+    (void)&ext_004E1DC0;
+    (void)&ext_004E3660;
+    (void)&ext_00528B90;
+    (void)&ext_00594000;
+    (void)&ext_00596660;
+    (void)&ext_00662420;
+    (void)&ext_006A6E9E;
+    (void)&mem_00925134;
+
+    if (lift_field<uint8_t>(self, 0x17C) == 0) {
+        return;
+    }
+
+    int32_t start_frame = lift_field<int32_t>(self, 0x15C);
+    if (frame == start_frame && lift_field<int32_t>(self, 0x9C8) != frame) {
+        void* sub_b74 = lift_field<void*>(self, 0xB74);
+        if (sub_b74 != nullptr) {
+            ext_004E1E90(sub_b74);
+        }
+        void* sub_b78 = lift_field<void*>(self, 0xB78);
+        if (sub_b78 != nullptr) {
+            ext_004E4350(sub_b78, self, mem_00B40640);
+            float time_val = lift_field<float>(self, 0x9D8);
+            void* sub_b78_cur = lift_field<void*>(self, 0xB78);
+            float weight_val = lift_field<float>(self, 0x998);
+            ext_004E27A0(sub_b78_cur, weight_val, time_val);
+        }
+    } else if (frame > start_frame && frame < lift_field<int32_t>(self, 0x160)) {
+        if (lift_field<void*>(self, 0xB74) != nullptr && lift_field<int32_t>(self, 0x9C8) != frame) {
+            uint32_t end_iter[2];
+            uint8_t* vec_9b0 = static_cast<uint8_t*>(self) + 0x9B0;
+            uint8_t* iter_9c0 = static_cast<uint8_t*>(self) + 0x9C0;
+            uint32_t* end_ptr = ext_00410D10(vec_9b0, end_iter);
+            if (ext_0049AD40(iter_9c0, end_ptr) != 0) {
+                int32_t* elem_ptr = ext_00492A50(iter_9c0);
+                if (frame == *elem_ptr) {
+                    ext_00425E30(iter_9c0);
+                    ext_004E1E90(lift_field<void*>(self, 0xB74));
+                }
+            }
+        }
+        void* sub_b78 = lift_field<void*>(self, 0xB78);
+        if (sub_b78 != nullptr) {
+            float time_val = lift_field<float>(self, 0x9D8);
+            float weight_val = lift_field<float>(self, 0x998);
+            ext_004E27A0(sub_b78, weight_val, time_val);
+        }
+        lift_field<float>(self, 0x9D8) = lift_field<float>(self, 0x9DC) + lift_field<float>(self, 0x9D8);
+    }
+
+    int32_t last_frame = static_cast<int32_t>(static_cast<uint32_t>(lift_field<int32_t>(self, 0x160)) - 1u);
+    if (frame == last_frame) {
+        void* sub_b78 = lift_field<void*>(self, 0xB78);
+        if (sub_b78 != nullptr) {
+            ext_004E2FE0(sub_b78);
+        }
+    }
+
+    lift_field<int32_t>(self, 0x9C8) = frame;
+}
+} // namespace lift_004E4550

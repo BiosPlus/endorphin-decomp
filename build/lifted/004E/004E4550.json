@@ -1,0 +1,82 @@
+{
+  "va": "0x004E4550",
+  "size": 320,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_84",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_84",
+  "class": "NMData::AnimationEventData",
+  "signature": "void __thiscall fn_004E4550(void* self, int32_t frame)",
+  "summary": "Steps animation event playback for the given frame, triggering start and keyframe events, updating the playback controller, advancing playback time, and finalizing on the last frame.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x998",
+      "type": "float",
+      "name": "field_0x998"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9B0",
+      "type": "uint8_t[16]",
+      "name": "field_0x9b0"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9C0",
+      "type": "void*",
+      "name": "field_0x9c0"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9C8",
+      "type": "int32_t",
+      "name": "field_0x9c8"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9D8",
+      "type": "float",
+      "name": "field_0x9d8"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9DC",
+      "type": "float",
+      "name": "field_0x9dc"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0xB74",
+      "type": "void*",
+      "name": "field_0xb74"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0xB78",
+      "type": "void*",
+      "name": "field_0xb78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-carbon@low",
+  "lifted_at": "2026-11-27T12:58:21Z"
+}

@@ -25398,6 +25398,13 @@
     "summary": "Clears the [begin,end) range at +0x984/+0x988, re-wires subobject +0xC to a peer from the call on the TransformInterface vtable, dynamic-casts the peer and stores +0x934 into it, then forwards through two helpers and the +0x2FC table; returns the last helper result (or 0).",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004E4550": {
+    "name": "NMData::AnimationEventData::vfunc_84",
+    "class": "NMData::AnimationEventData",
+    "signature": "void __thiscall fn_004E4550(void* self, int32_t frame)",
+    "summary": "Steps animation event playback for the given frame, triggering start and keyframe events, updating the playback controller, advancing playback time, and finalizing on the last frame.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004E4ED0": {
     "name": "NMData::AnimationEventData::vfunc_21",
     "class": "NMData::AnimationEventData",
