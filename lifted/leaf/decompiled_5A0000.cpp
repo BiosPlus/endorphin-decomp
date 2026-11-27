@@ -2898,3 +2898,55 @@ void fn_005A34C0(void* self, void* arg) {
     ext_005A1E90(static_cast<uint8_t*>(self) + 0x550, &tmp, tmp);
 }
 } // namespace lift_005A34C0
+
+// [0x005A27F0] sub_005A27F0 (167 bytes)
+namespace lift_005A27F0 {
+// Known callee 0x004727D0: Unknown::createCopyRecord (Allocates a 0x48-byte record, stores three DWORDs and a byte flag, and copy-constructs the string pair from src; returns the record or null.)
+void* __stdcall ext_004727D0(uint32_t a1, uint32_t a2, uint32_t a3, const void* src, uint8_t a5);
+// Known callee 0x004EC160: StringMapTree::eraseSubtree (Recursively erases a red-black tree subtree of std::string key-value nodes)
+void __thiscall ext_004EC160(void* self, void* nodePtr);
+
+// @name StringMapTree::copySubtree
+// @class StringMapTree
+// @summary Recursively copies a source red-black subtree into the tree under construction; on exception erases the partial copy and rethrows.
+// @field StringMapTree +0x04 void* myhead
+// @field TreeNode +0x00 TreeNode* left
+// @field TreeNode +0x08 TreeNode* right
+// @field TreeNode +0x0c uint8_t[28] key
+// @field TreeNode +0x44 uint8_t color
+// @field TreeNode +0x45 uint8_t isNil
+void* __thiscall fn_005A27F0(void* self, void* srcNode, void* parent) {
+    uint8_t* src = static_cast<uint8_t*>(srcNode);
+    void* head = lift_field<void*>(self, 0x04);
+    void* result = head;
+
+    // Source sentinel: nothing to copy, return the head.
+    if (lift_field<uint8_t>(src, 0x45) != 0) {
+        return result;
+    }
+
+    void* newNode = ext_004727D0(
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(head)),
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(parent)),
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(head)),
+        src + 0x0C,
+        lift_field<uint8_t>(src, 0x44));
+
+    // First copied node into an empty tree becomes the root.
+    if (lift_field<uint8_t>(head, 0x45) != 0) {
+        result = newNode;
+    }
+
+    try {
+        void* left = lift_field<void*>(src, 0x00);
+        lift_field<void*>(newNode, 0x00) = fn_005A27F0(self, left, newNode);
+        void* right = lift_field<void*>(src, 0x08);
+        lift_field<void*>(newNode, 0x08) = fn_005A27F0(self, right, newNode);
+    } catch (...) {
+        ext_004EC160(self, result);
+        throw;
+    }
+
+    return result;
+}
+} // namespace lift_005A27F0

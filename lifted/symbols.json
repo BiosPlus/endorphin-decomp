@@ -44685,6 +44685,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004796D0 (sub_004796D0).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A27F0": {
+    "name": "StringMapTree::copySubtree",
+    "class": "StringMapTree",
+    "signature": "void* __thiscall fn_005A27F0(void* self, void* srcNode, void* parent)",
+    "summary": "Recursively copies a source red-black subtree into the tree under construction; on exception erases the partial copy and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A2900": {
     "name": "sub_005A2900",
     "class": "std::_Tree_std_string",

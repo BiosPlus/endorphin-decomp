@@ -1,0 +1,52 @@
+{
+  "va": "0x005A27F0",
+  "size": 167,
+  "orig_symbol": "sub_005A27F0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "StringMapTree::copySubtree",
+  "class": "StringMapTree",
+  "signature": "void* __thiscall fn_005A27F0(void* self, void* srcNode, void* parent)",
+  "summary": "Recursively copies a source red-black subtree into the tree under construction; on exception erases the partial copy and rethrows.",
+  "fields": [
+    {
+      "class": "StringMapTree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "myhead"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "TreeNode*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "TreeNode*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "uint8_t[28]",
+      "name": "key"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "color"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:42:41Z"
+}

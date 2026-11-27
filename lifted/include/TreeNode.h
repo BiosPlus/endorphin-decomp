@@ -13,7 +13,7 @@ struct TreeNode_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007D4AA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 key  (evidence: 0x007B2D80) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (child pointer, taken when node key >= search key)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   TreeNode*                left  (evidence: 0x004EC160, 0x00624D30) // CONFLICT: multiple definitions at +0x0
+    // +0x0   TreeNode*                left  (evidence: 0x004EC160, 0x005A27F0, 0x00624D30) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 left  (evidence: 0x0041A190, 0x005AC8C0, 0x005D0670, 0x005DF270, 0x005FF000, 0x00624DC0, 0x007DEC80) // CONFLICT: multiple definitions at +0x0
     // +0x0   uintptr_t                left  (evidence: 0x00666C00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    left  (evidence: 0x00402500, 0x004028E0, 0x004205B0, 0x004442E0, 0x0045E510, 0x00470090, 0x00472730, 0x004774B0, 0x00487C00, 0x00493330, 0x004F0FB0, 0x0052A230, 0x0055C490, 0x0059B290, 0x005A6220, 0x005AD010, 0x005FD330, 0x00624F10, 0x007D48F0) // CONFLICT: multiple definitions at +0x0
@@ -37,7 +37,7 @@ struct TreeNode_Fields {
     // +0x8   void* field_0x08 (right child link)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 parent  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    parent  (evidence: 0x007D48F0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   TreeNode*                right  (evidence: 0x004EC160, 0x00624D30) // CONFLICT: multiple definitions at +0x8
+    // +0x8   TreeNode*                right  (evidence: 0x004EC160, 0x005A27F0, 0x00624D30) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 right  (evidence: 0x0041A190, 0x005AC8C0, 0x005D0670, 0x005DF270, 0x005FF000, 0x00624DC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uintptr_t                right  (evidence: 0x00666C00) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    right  (evidence: 0x00402500, 0x004028E0, 0x004205B0, 0x004442E0, 0x0045E510, 0x00470090, 0x00472730, 0x004774B0, 0x00487C00, 0x00493330, 0x004F0FB0, 0x0052A230, 0x0055C490, 0x0059B290, 0x005A6220, 0x005AD010, 0x005FD330, 0x00624F10) // CONFLICT: multiple definitions at +0x8
@@ -45,7 +45,7 @@ struct TreeNode_Fields {
     // +0xC   char[1]                  key  (evidence: 0x0052A230) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              key  (evidence: 0x004205B0, 0x00472730, 0x004774B0, 0x00487C00, 0x004F0FB0, 0x0055C490, 0x0059B290, 0x005AD010) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 key  (evidence: 0x0041A190, 0x0045E510) // CONFLICT: multiple definitions at +0xC
-    // +0xC   uint8_t[28]              key  (evidence: 0x004EC160) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint8_t[28]              key  (evidence: 0x004EC160, 0x005A27F0) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t field_0x0c (node key)  (evidence: 0x005DF6B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD                    keyPair[2]  (evidence: 0x00402500) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 key_hi  (evidence: 0x00624F10) // CONFLICT: multiple definitions at +0xC
@@ -74,7 +74,8 @@ struct TreeNode_Fields {
     // +0x34  uint32_t                 field_0x34  (evidence: 0x004F0FB0)
     // +0x39  uint8_t                  is_nil  (evidence: 0x004205B0, 0x00472730, 0x00487C00, 0x004F0FB0, 0x0055C490, 0x0059B290, 0x005AD010) // CONFLICT: multiple definitions at +0x39
     // +0x39  uint8_t                  isnil  (evidence: 0x00666C00) // CONFLICT: multiple definitions at +0x39
-    // +0x45  uint8_t                  isNil  (evidence: 0x004EC160) // CONFLICT: multiple definitions at +0x45
+    // +0x44  uint8_t                  color  (evidence: 0x005A27F0)
+    // +0x45  uint8_t                  isNil  (evidence: 0x004EC160, 0x005A27F0) // CONFLICT: multiple definitions at +0x45
     // +0x45  uint8_t                  is_nil  (evidence: 0x00470090) // CONFLICT: multiple definitions at +0x45
     // +0x45  uint8_t                  isnil  (evidence: 0x005A6220) // CONFLICT: multiple definitions at +0x45
     // +0x60  uint8_t                  _Color  (evidence: 0x0052A650)
