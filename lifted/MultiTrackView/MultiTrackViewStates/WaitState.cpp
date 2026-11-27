@@ -61,3 +61,26 @@ uint8_t fn_00442DC0(void* self, int32_t /* stack arg, popped by callee (ret 4); 
     return 1;
 }
 } // namespace lift_00442DC0
+
+// [0x00442B20]
+namespace lift_00442B20 {
+extern double __thiscall ext_0043CDD0(void* self, int32_t x);
+extern void __thiscall ext_0043E140(void* self, uint32_t arg1, double time);
+
+// @name MultiTrackView::MultiTrackViewStates::WaitState::vfunc_18
+// @class MultiTrackView::MultiTrackViewStates::WaitState
+// @summary Converts cursor x-coordinate to time and updates the multi-track view if active
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x04 void* field_0x04
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x08 void* field_0x08
+// @field MultiTrackView::MultiTrackViewStates::WaitState +0x0c uint8_t field_0x0c
+uint8_t __thiscall fn_00442B20(void* self, uint32_t arg1) {
+    if (lift_field<uint8_t>(self, 0x0C) != 0) {
+        void* stateData = lift_field<void*>(self, 0x04);
+        void* view = lift_field<void*>(self, 0x08);
+        int32_t x = lift_field<int32_t>(stateData, 0x14);
+        double time = ext_0043CDD0(view, x);
+        ext_0043E140(lift_field<void*>(self, 0x08), arg1, time);
+    }
+    return 0;
+}
+} // namespace lift_00442B20

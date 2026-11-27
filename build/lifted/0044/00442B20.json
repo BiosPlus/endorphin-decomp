@@ -1,0 +1,34 @@
+{
+  "va": "0x00442B20",
+  "size": 51,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_18",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_18",
+  "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+  "signature": "uint8_t __thiscall fn_00442B20(void* self, uint32_t arg1)",
+  "summary": "Converts cursor x-coordinate to time and updates the multi-track view if active",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:34:46Z"
+}
