@@ -1,0 +1,14 @@
+{
+  "va": "0x005CCCF0",
+  "size": 147,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_15",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_15",
+  "class": "NMData::CollisionModelData",
+  "signature": "extern \"C\" uint32_t fn_005CCCF0(void* self, uint32_t unused, uint32_t value)",
+  "summary": "Dispatches on the selector value (0x21F/0x220/0x221/0x373) to a specific helper; all other values forward to the base vfunc_15. Returns the selector unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:41:03Z"
+}

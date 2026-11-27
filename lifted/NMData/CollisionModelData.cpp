@@ -360,3 +360,40 @@ void fn_005C4020(void* self) {
     ext_005C3660(self);
 }
 } // namespace lift_005C4020
+
+// [0x005CCCF0] NMData::CollisionModelData::vfunc_15 (147 bytes)
+namespace lift_005CCCF0 {
+// Callees (stack args pushed as: first arg = selector value, second = self/ECX).
+extern uint32_t ext_005CC750(uint32_t value, uintptr_t self);
+extern uint32_t ext_005CC770(uint32_t value, uintptr_t self);
+extern uint32_t ext_005CC790(uint32_t value, uintptr_t self);
+extern uint32_t ext_005CC7B0(uint32_t value, uintptr_t self);
+// Base-class vfunc_15: thiscall (self in ECX), two stack args.
+extern uint32_t ext_005C3010(void* self, uint32_t a, uint32_t b);
+
+// @name NMData::CollisionModelData::vfunc_15
+// @class NMData::CollisionModelData
+// @summary Dispatches on the selector value (0x21F/0x220/0x221/0x373) to a specific helper; all other values forward to the base vfunc_15. Returns the selector unchanged.
+// @field none
+extern uint32_t fn_005CCCF0(void* self, uint32_t unused, uint32_t value) {
+    const uintptr_t self_bits = reinterpret_cast<uintptr_t>(self);
+    switch (value) {
+    case 0x21F:
+        ext_005CC750(value, self_bits);
+        break;
+    case 0x220:
+        ext_005CC770(value, self_bits);
+        break;
+    case 0x221:
+        ext_005CC790(value, self_bits);
+        break;
+    case 0x373:
+        ext_005CC7B0(value, self_bits);
+        break;
+    default:
+        ext_005C3010(self, value, value);
+        break;
+    }
+    return value;
+}
+} // namespace lift_005CCCF0
