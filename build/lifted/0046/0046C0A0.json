@@ -1,0 +1,13 @@
+{
+  "va": "0x0046C0A0",
+  "size": 101,
+  "orig_symbol": "sub_0046C0A0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "parseFloatFromString",
+  "signature": "extern \"C\" void fn_0046C0A0(uint32_t /*unused*/, float* out_val)",
+  "summary": "Calls ext_004275C0 to get a std::string, converts it with atof, and stores the float result.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:03:55Z"
+}

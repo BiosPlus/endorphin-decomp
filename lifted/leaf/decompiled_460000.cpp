@@ -1902,3 +1902,30 @@ void __thiscall fn_00463D00(void* self, void* arg1) {
     }
 }
 } // namespace lift_00463D00
+
+// [0x0046C0A0]
+namespace lift_0046C0A0 {
+// @name parseFloatFromString
+// @summary Calls ext_004275C0 to get a std::string, converts it with atof, and stores the float result.
+
+
+extern void* ext_004275C0(void* this_ptr, void* out_str);
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+extern uint32_t mem_00924FF4;
+
+extern void fn_0046C0A0(uint32_t /*unused*/, float* out_val) {
+    // 28-byte buffer for std::string (MSVCP80 basic_string<char> is 28 bytes)
+    uint8_t str_buf[28];
+
+    using c_str_fn = const char* (__thiscall*)(void*);
+    using atof_fn = double (__cdecl*)(const char*);
+    using dtor_fn = void (__thiscall*)(void*);
+
+    void* str_ptr = ext_004275C0(out_val, str_buf);
+    const char* cstr = reinterpret_cast<c_str_fn>(mem_00924FF0)(str_ptr);
+    double val = reinterpret_cast<atof_fn>(mem_009251F0)(cstr);
+    *out_val = static_cast<float>(val);
+    reinterpret_cast<dtor_fn>(mem_00924FF4)(str_buf);
+}
+} // namespace lift_0046C0A0
