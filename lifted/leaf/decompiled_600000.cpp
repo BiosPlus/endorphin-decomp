@@ -1275,3 +1275,26 @@ extern void __fastcall fn_006096D0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_006096D0
+
+// [0x0060CCC0] sub_0060CCC0 (85B)
+namespace lift_0060CCC0 {
+extern __thiscall void* ext_0060C570(void* self);
+extern void ext_0060BDF0(void* self);
+extern void ext_00661980(void* self);
+
+// @name Unknown::constructDerivedEffector
+// @class Unknown
+// @summary Runs the base constructor ext_0060C570, stamps vtable 0x009721BC, calls ext_0060BDF0, sets float at +0x5C to 0 and dword at +0x60 to 20, returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x5C float field_0x5C
+// @field Unknown +0x60 uint32_t field_0x60
+__thiscall void* fn_0060CCC0(void* self) {
+    (void)&ext_00661980;  // SEH unwind handler callee (metadata only)
+    ext_0060C570(self);
+    lift_field<uint32_t>(self, 0x00) = 0x009721BCu;
+    ext_0060BDF0(self);
+    lift_field<float>(self, 0x5C) = 0.0f;
+    lift_field<uint32_t>(self, 0x60) = 0x14u;
+    return self;
+}
+} // namespace lift_0060CCC0
