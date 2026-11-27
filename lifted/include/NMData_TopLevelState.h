@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::TopLevelState:
 namespace lifted_layout {
 struct NMData_TopLevelState_Fields {
-    // +0x14C uint8_t field_0x14C (address only, not read or written here)  (evidence: 0x004EBE10)
+    // +0x14C uint8_t                  field_0x14C  (evidence: 0x004EBD50) // CONFLICT: multiple definitions at +0x14C
+    // +0x14C uint8_t field_0x14C (address only, not read or written here)  (evidence: 0x004EBE10) // CONFLICT: multiple definitions at +0x14C
 };
 } // namespace lifted_layout
