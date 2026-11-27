@@ -1,0 +1,28 @@
+{
+  "va": "0x0061D3F0",
+  "size": 170,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_34",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_34",
+  "class": "NMData::HingeConstraint",
+  "signature": "uintptr_t fn_0061D3F0(void* self, int edx_unused, DWORD stack_arg)",
+  "summary": "Calls TransformInterface slot 3 (subobject this+0x0C or 0), passes the result and this+0x184 to 0x493E40 to obtain an object, stores this+0x184 at obj+0x20, calls 0x528B90(this+0x0C, obj), then forwards the byte at this+0x160 to 0x586AD0 and 0x586A50; returns obj.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "TransformInterface_vtable"
+    },
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x160",
+      "type": "uint8_t",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:57:36Z"
+}

@@ -199,3 +199,53 @@ void __thiscall fn_00611650(void* self, uint32_t arg1, uint32_t arg2) {
     }
 }
 } // namespace lift_00611650
+
+// [0x0061D3F0] NMData::HingeConstraint::vfunc_34 (170 bytes)
+namespace lift_0061D3F0 {
+// Known callee 0x00493E40: forwardVtableSlot194 (Dereferences a pointer-to-pointer held in self, then tail-jumps to the)
+extern uintptr_t __cdecl ext_00493E40(void* self, uintptr_t arg1);
+// Known callee 0x00528B90: Unknown::setPeerWithBackLink (Stores the argument at this+0x04; if it is non-null, writes this into argument+0x08.)
+extern void __fastcall ext_00528B90(void* self, int edx_unused, void* peer);
+// Known callee 0x00586A50: forwardToChildAndRecurseRange (Forwards (arg0, arg1) to the sub-object at this+0x0C via 0x00528BB0, then recursively calls itself on each DWORD pointer in the range [this->field_0x80, this->field_0x84).)
+extern void __fastcall ext_00586A50(void* self, int edx_unused, DWORD arg0, DWORD arg1);
+// Known callee 0x00586AD0: Unknown::ApplyToChildTree (Forwards (a0, a1, a2) to the sub-object at this+0x0C, then recursively applies the same call to every child pointer stored in the vector at this+0x80..this+0x84.)
+extern void __fastcall ext_00586AD0(void* self, int edx_unused, DWORD a0, DWORD a1, DWORD a2);
+extern DWORD mem_00B40640;
+extern DWORD mem_00B40644;
+
+// Virtual slot 3 (+0x0C) of the TransformInterface subobject; three stack args, returns a value in eax.
+typedef uintptr_t (__fastcall* TransformIfaceSlot3Fn)(void* self, int edx_unused, DWORD a, uintptr_t b, DWORD c);
+
+// @name NMData::HingeConstraint::vfunc_34
+// @class NMData::HingeConstraint
+// @summary Calls TransformInterface slot 3 (subobject this+0x0C or 0), passes the result and this+0x184 to 0x493E40 to obtain an object, stores this+0x184 at obj+0x20, calls 0x528B90(this+0x0C, obj), then forwards the byte at this+0x160 to 0x586AD0 and 0x586A50; returns obj.
+// @field NMData::HingeConstraint +0x04 void* TransformInterface_vtable
+// @field NMData::HingeConstraint +0x160 uint8_t field_0x160
+uintptr_t fn_0061D3F0(void* self, int edx_unused, DWORD stack_arg) {
+    (void)edx_unused;
+    (void)stack_arg;
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t* hinge_slot = base + 0x184;
+
+    // Argument to the slot-3 call: address of the this+0x0C subobject, or 0 when self is null.
+    uintptr_t sub_arg = self ? reinterpret_cast<uintptr_t>(base + 0xC) : 0;
+
+    // Vtable of the TransformInterface subobject at this+0x04; slot 3 is at vtable+0x0C.
+    uint8_t* iface_vtable = *reinterpret_cast<uint8_t**>(base + 0x4);
+    TransformIfaceSlot3Fn slot3 =
+        *reinterpret_cast<TransformIfaceSlot3Fn*>(iface_vtable + 0x0C);
+    uintptr_t slot_result = slot3(base + 0x4, 0, mem_00B40640, sub_arg, 0);
+
+    uintptr_t obj_value = ext_00493E40(hinge_slot, slot_result);
+    uint8_t* obj = reinterpret_cast<uint8_t*>(obj_value);
+
+    lift_field<uintptr_t>(obj, 0x20) = reinterpret_cast<uintptr_t>(hinge_slot);
+    ext_00528B90(base + 0xC, 0, obj);
+
+    ext_00586AD0(self, 0, 0x1000, base[0x160], mem_00B40644);
+    ext_00586A50(self, 0, 0x1000, base[0x160]);
+
+    return obj_value;
+}
+} // namespace lift_0061D3F0

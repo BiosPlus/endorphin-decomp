@@ -61504,6 +61504,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::HingeConstraint::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0061D3F0": {
+    "name": "NMData::HingeConstraint::vfunc_34",
+    "class": "NMData::HingeConstraint",
+    "signature": "uintptr_t fn_0061D3F0(void* self, int edx_unused, DWORD stack_arg)",
+    "summary": "Calls TransformInterface slot 3 (subobject this+0x0C or 0), passes the result and this+0x184 to 0x493E40 to obtain an object, stores this+0x184 at obj+0x20, calls 0x528B90(this+0x0C, obj), then forwards the byte at this+0x160 to 0x586AD0 and 0x586A50; returns obj.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x0061D980": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_1_off_C",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
