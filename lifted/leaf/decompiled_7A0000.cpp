@@ -1815,3 +1815,43 @@ void fn_007A9230(void** slot) {
     lift_field<uint32_t>(blk, 0x10) = 0;
 }
 } // namespace lift_007A9230
+
+// [0x007AC610] sub_007AC610 (96 bytes)
+namespace lift_007AC610 {
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+// Unlifted callees 0x007AC5D0 / 0x007AC5F0 (cdecl, one stack argument each).
+extern void ext_007AC5D0(uint32_t p);
+extern void ext_007AC5F0(uint32_t p);
+// Globals: mem_00B61219 = byte flag; mem_00925208 = IAT slot holding malloc's address.
+extern uint8_t mem_00B61219;
+extern uint32_t mem_00925208;
+
+// @name EnsureSlotBlockAndRegister
+// @summary Takes a pointer to a 32-bit cell; if the cell is empty, allocates a 0x14-byte block into it (on malloc failure, registers index 1 via fn_007AA510). Then passes the cell's block pointer and block+8 to ext_007AC5D0 / ext_007AC5F0. A zero argument registers index 2 first and falls through when the flag byte is set.
+void fn_007AC610(uint32_t* cell) {
+    using MallocFn = uint32_t (__cdecl*)(uint32_t size);
+
+    if (cell == nullptr) {
+        ext_007AA510(2);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+        // Original code falls through and dereferences the null cell here.
+    }
+
+    if (*cell == 0) {
+        auto malloc_fn = reinterpret_cast<MallocFn>(static_cast<uintptr_t>(mem_00925208));
+        *cell = malloc_fn(0x14);
+        if (*cell == 0) {
+            ext_007AA510(1);
+            if (mem_00B61219 == 0) {
+                return;
+            }
+        }
+    }
+
+    ext_007AC5D0(*cell);
+    ext_007AC5F0(*cell + 8);
+}
+} // namespace lift_007AC610

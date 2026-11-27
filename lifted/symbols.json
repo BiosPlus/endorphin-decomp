@@ -84518,6 +84518,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
     "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
   },
+  "0x007AC610": {
+    "name": "EnsureSlotBlockAndRegister",
+    "signature": "void fn_007AC610(uint32_t* cell)",
+    "summary": "Takes a pointer to a 32-bit cell; if the cell is empty, allocates a 0x14-byte block into it (on malloc failure, registers index 1 via fn_007AA510). Then passes the cell's block pointer and block+8 to ext_007AC5D0 / ext_007AC5F0. A zero argument registers index 2 first and falls through when the flag byte is set.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AC670": {
     "name": "ReleaseAndNullPtr_007AC670",
     "signature": "extern \"C\" void __cdecl ReleaseAndNullPtr_007AC670(void** slot)",
