@@ -19671,6 +19671,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::SeverEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C9860": {
+    "name": "initStaticObjectOnce_004C9860",
+    "signature": "void* fn_004C9860()",
+    "summary": "One-time initializer for the static object at mem_00AE3D94: under a local SEH frame, runs ext_004C94E0 on the object and ext_006A6C87(0x918AE0) on first call, marks the guard bit, and returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CA1C0": {
     "name": "NMData::SeverEventData::vfunc_88",
     "class": "NMData::SeverEventData",

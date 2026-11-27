@@ -1,0 +1,13 @@
+{
+  "va": "0x004C9860",
+  "size": 90,
+  "orig_symbol": "sub_004C9860",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "initStaticObjectOnce_004C9860",
+  "signature": "void* fn_004C9860()",
+  "summary": "One-time initializer for the static object at mem_00AE3D94: under a local SEH frame, runs ext_004C94E0 on the object and ext_006A6C87(0x918AE0) on first call, marks the guard bit, and returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:55:49Z"
+}
