@@ -714,3 +714,31 @@ void fn_005679D0(void* self) {
     }
 }
 } // namespace lift_005679D0
+
+// [0x0056B690] sub_0056B690 (123 bytes)
+namespace lift_0056B690 {
+// Known callee 0x0056B670: sub_0056B670 (cdecl; takes three doubles, returns bool in al)
+extern bool ext_0056B670(double, double, double);
+
+// @name ComponentsPassTest3f (descriptiveName)
+// @summary Tests each of the three float components (self[0], self[1], self[2]) against a float argument with a shared double parameter via ext_0056B670, short-circuiting on the first failure; returns true only if all three pass.
+// @field self +0x00 float field_0x00
+// @field self +0x04 float field_0x04
+// @field self +0x08 float field_0x08
+bool fn_0056B690(void* self, float a, float b, float c, double d) {
+    const float x = lift_field<float>(self, 0x00);
+    const float y = lift_field<float>(self, 0x04);
+    const float z = lift_field<float>(self, 0x08);
+
+    if (!ext_0056B670(x, a, d)) {
+        return false;
+    }
+    if (!ext_0056B670(y, b, d)) {
+        return false;
+    }
+    if (!ext_0056B670(z, c, d)) {
+        return false;
+    }
+    return true;
+}
+} // namespace lift_0056B690

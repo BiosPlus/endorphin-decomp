@@ -27762,6 +27762,12 @@
     "summary": "Checks whether field_0x1E0 is zero and the pointer range [0x28, 0x2C) is empty.",
     "lifted_path": "lifted/ASFData/Bone.cpp"
   },
+  "0x0056B690": {
+    "name": "ComponentsPassTest3f (descriptiveName)",
+    "signature": "bool fn_0056B690(void* self, float a, float b, float c, double d)",
+    "summary": "Tests each of the three float components (self[0], self[1], self[2]) against a float argument with a shared double parameter via ext_0056B670, short-circuiting on the first failure; returns true only if all three pass.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x0056B850": {
     "name": "Unknown::getStrOrVirtualConcat",
     "class": "Unknown",

@@ -1,0 +1,33 @@
+{
+  "va": "0x0056B690",
+  "size": 123,
+  "orig_symbol": "sub_0056B690",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "ComponentsPassTest3f (descriptiveName)",
+  "signature": "bool fn_0056B690(void* self, float a, float b, float c, double d)",
+  "summary": "Tests each of the three float components (self[0], self[1], self[2]) against a float argument with a shared double parameter via ext_0056B670, short-circuiting on the first failure; returns true only if all three pass.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "self",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:48:24Z"
+}
