@@ -82593,3 +82593,53 @@ uint8_t __stdcall fn_00674D80(void** holder, void* arg2) {
     return result;
 }
 } // namespace lift_00674D80
+
+// [0x00504E70] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_44 (155 bytes)
+namespace lift_00504E70 {
+// Known callee 0x006720C0: sub_006720C0 (18B). Thiscall with one stack argument; initializes the temporary at self.
+extern void ext_006720C0(void* self, int arg);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, void* throwInfo);
+extern int mem_009DEC1C;
+
+// Reads the vtable slot at byte offset `byteOffset` of the 32-bit vtable of `obj`.
+inline void* vtable_slot(void* obj, ptrdiff_t byteOffset) {
+    void** vt = *reinterpret_cast<void***>(obj);
+    return vt[byteOffset / 4];
+}
+
+// @name ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_44
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary Throws DerivedException when field_0x00 is null; otherwise assigns from a temporary, releases the temporary's field_0x04, and forwards to field_0x04's vfunc at 0xB0 with (obj, arg).
+// @field ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0> +0x04 void* field_0x04
+void __stdcall fn_00504E70(void* obj, void* arg) {
+    if (lift_field<void*>(obj, 0x00) == nullptr) {
+        // Exception object is built in the caller frame; the original places it at frame+0x0C
+        // with at most 0x28 bytes before the saved SEH link at frame+0x34.
+        alignas(16) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(&mem_009DEC1C));
+        return; // _CxxThrowException does not return
+    }
+
+    // 8-byte temporary: field 0x00 and field 0x04 (the slot released below).
+    alignas(8) unsigned char tmp[8] = {};
+    ext_006720C0(tmp, 0);
+    ext_0041CF50(obj, tmp);
+
+    void* tmpField04 = lift_field<void*>(tmp, 0x04);
+    if (tmpField04 != nullptr) {
+        auto release = reinterpret_cast<void (*)(void*, void*)>(vtable_slot(tmpField04, 0x78));
+        release(tmpField04, tmp);
+    }
+
+    void* field04 = lift_field<void*>(obj, 0x04);
+    auto forward = reinterpret_cast<void (*)(void*, void*, void*)>(vtable_slot(field04, 0xB0));
+    forward(field04, obj, arg);
+}
+} // namespace lift_00504E70

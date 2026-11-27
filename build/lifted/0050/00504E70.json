@@ -1,0 +1,14 @@
+{
+  "va": "0x00504E70",
+  "size": 155,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_44",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_44",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+  "signature": "inline void* vtable_slot(void* obj, ptrdiff_t byteOffset)",
+  "summary": "Throws DerivedException when field_0x00 is null; otherwise assigns from a temporary, releases the temporary's field_0x04, and forwards to field_0x04's vfunc at 0xB0 with (obj, arg).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:19:51Z"
+}

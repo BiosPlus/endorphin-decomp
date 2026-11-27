@@ -23133,6 +23133,13 @@
     "summary": "Null-checks the pointer held in arg1, fetches a wrapped object through a helper, invokes its vtable slot 42 with arg2, releases the wrapper, and returns the result; throws a DerivedException if arg1 holds null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00504E70": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+    "signature": "inline void* vtable_slot(void* obj, ptrdiff_t byteOffset)",
+    "summary": "Throws DerivedException when field_0x00 is null; otherwise assigns from a temporary, releases the temporary's field_0x04, and forwards to field_0x04's vfunc at 0xB0 with (obj, arg).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00504FB0": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter,int,bogus,0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
