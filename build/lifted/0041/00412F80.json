@@ -1,0 +1,33 @@
+{
+  "va": "0x00412F80",
+  "size": 152,
+  "orig_symbol": "sub_00412F80",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "findMaxByField28",
+  "signature": "void* __thiscall sub_00412F80(void* self)",
+  "summary": "Returns the element pointer in the vector at +0x4 with the largest signed int32_t at +0x28, or nullptr if empty.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "vec_begin"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "void**",
+      "name": "vec_end"
+    },
+    {
+      "class": "Item",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "score"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:17:43Z"
+}

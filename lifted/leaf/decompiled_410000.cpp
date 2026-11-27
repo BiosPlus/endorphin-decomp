@@ -3514,3 +3514,45 @@ extern void __stdcall fn_0041AD60(void* firstContainer, uint32_t* firstPtr, void
     }
 }
 } // namespace lift_0041AD60
+
+// [0x00412F80]
+namespace lift_00412F80 {
+extern void (*mem_00925134)();
+
+// @name findMaxByField28
+// @summary Returns the element pointer in the vector at +0x4 with the largest signed int32_t at +0x28, or nullptr if empty.
+// @field Self +0x8 void** vec_begin
+// @field Self +0xC void** vec_end
+// @field Item +0x28 int32_t score
+void* __thiscall sub_00412F80(void* self) {
+    void** begin = lift_field<void**>(self, 0x8);
+    if (!begin) {
+        return nullptr;
+    }
+    void** end = lift_field<void**>(self, 0xC);
+    if (((reinterpret_cast<intptr_t>(end) - reinterpret_cast<intptr_t>(begin)) >> 2) == 0) {
+        return nullptr;
+    }
+
+    if (begin > end) {
+        mem_00925134();
+    }
+    if (begin >= end) {
+        mem_00925134();
+    }
+
+    void* best = *begin;
+    for (void** it = begin; it != end; ++it) {
+        if (it >= end) {
+            mem_00925134();
+        }
+        void* item = *it;
+        int32_t item_val = lift_field<int32_t>(item, 0x28);
+        int32_t best_val = lift_field<int32_t>(best, 0x28);
+        if (item_val > best_val) {
+            best = item;
+        }
+    }
+    return best;
+}
+} // namespace lift_00412F80

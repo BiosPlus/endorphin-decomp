@@ -1558,6 +1558,12 @@
     "summary": "Linear scan over a [begin,end) pointer vector at self+0x08; returns the first element whose RECT at +0x30 contains the POINT, else nullptr.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00412F80": {
+    "name": "findMaxByField28",
+    "signature": "void* __thiscall sub_00412F80(void* self)",
+    "summary": "Returns the element pointer in the vector at +0x4 with the largest signed int32_t at +0x28, or nullptr if empty.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004136E0": {
     "name": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
     "class": "MultiTrackView::CompositeMarkerTrack",
