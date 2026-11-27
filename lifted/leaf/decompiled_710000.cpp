@@ -2313,3 +2313,31 @@ void fn_007110C0(void* self, const char* src) {
     std::memcpy(copy, src, size);
 }
 } // namespace lift_007110C0
+
+// [0x0071B7E0] sub_0071B7E0 (128 bytes)
+namespace lift_0071B7E0 {
+// Constants in .rdata: mem_00993868 = 0.001 (lower clamp), mem_00996630 = 600000 (upper clamp).
+extern const double mem_00993868;
+extern const double mem_00996630;
+
+// @name Unknown::ClampAndStoreDouble_0071B7E0
+// @class Unknown
+// @summary Clamps the double argument to [0.001, 600000] (NaN passes through), stores it at this->sub+0xa80, and if it exceeds the double at sub+0xb08 also stores it there. Here sub = this+0x0c.
+// @field Unknown +0x0C void* field_0x0c
+// @field Unknown +0x0A80 double field_0xa80
+// @field Unknown +0x0B08 double field_0xb08
+void fn_0071B7E0(void* self, double x) {
+    // Clamp: x < 0.001 -> 0.001; x > 600000 -> 600000; otherwise x (NaN compares false, so x is kept).
+    double r = (x < mem_00993868) ? mem_00993868
+             : (!(x > mem_00996630) ? x : mem_00996630);
+
+    void* sub = lift_field<void*>(self, 0x0C);
+    lift_field<double>(sub, 0x0A80) = r;
+
+    // Only raise the stored high-water value; ordered comparison so NaN never stores.
+    double& hi = lift_field<double>(sub, 0x0B08);
+    if (r > hi) {
+        hi = r;
+    }
+}
+} // namespace lift_0071B7E0

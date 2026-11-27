@@ -1,0 +1,34 @@
+{
+  "va": "0x0071B7E0",
+  "size": 128,
+  "orig_symbol": "sub_0071B7E0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::ClampAndStoreDouble_0071B7E0",
+  "class": "Unknown",
+  "signature": "void fn_0071B7E0(void* self, double x)",
+  "summary": "Clamps the double argument to [0.001, 600000] (NaN passes through), stores it at this-\u003esub+0xa80, and if it exceeds the double at sub+0xb08 also stores it there. Here sub = this+0x0c.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA80",
+      "type": "double",
+      "name": "field_0xa80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB08",
+      "type": "double",
+      "name": "field_0xb08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:12:30Z"
+}
