@@ -2235,3 +2235,39 @@ extern void fn_006C9C40(Unknown* self, uint32_t arg) {
     *field10 = (f & ~0xEu) | (arg & 0xEu);
 }
 } // namespace lift_006C9C40
+
+// [0x006C9250] sub_006C9250 (128 bytes)
+namespace lift_006C9250 {
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void __fastcall ext_006B9D70(void* self);
+// Known callee 0x006C92D0: Unknown::PruneFlag08Children (Recursively removes child items whose flag 0x08 is set via vtable calls.)
+extern void __thiscall ext_006C92D0(void* self, void* node);
+// Known callee 0x006DEEA0: Unknown::GetFlag08 (Returns bit 0x08 of the dword at this+0x18 (0 or 8).)
+extern uint32_t __fastcall ext_006DEEA0(const uint8_t* self);
+// Known callee 0x007641C0: sub_007641C0 (This-adjustor thunk: adjusts `this` by +0x8 and tail-calls sub_006B9D70.)
+extern void __fastcall ext_007641C0(void* self);
+
+// @name Unknown::ReleaseChildAndTeardown
+// @class Unknown
+// @summary Prunes flag-0x08 children from the child at +0x4c, deletes that child via vtable slot 0, then tears down the subobject at +0x50 and the base via sub_006B9D70.
+// @field Unknown +0x4c void* field_0x4c
+// @field Unknown +0x50 uint8_t field_0x50
+void fn_006C9250(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    void* child = *reinterpret_cast<void**>(base + 0x4c);
+    if (ext_006DEEA0(static_cast<const uint8_t*>(child)) == 8) {
+        ext_006C92D0(self, child);
+    }
+
+    child = *reinterpret_cast<void**>(base + 0x4c);
+    if (child != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(child);
+        using ScalarDtorFn = void(__thiscall*)(void*, int32_t);
+        reinterpret_cast<ScalarDtorFn>(vtable[0])(child, 1);
+    }
+
+    ext_007641C0(base + 0x50);
+    ext_006B9D70(self);
+}
+} // namespace lift_006C9250

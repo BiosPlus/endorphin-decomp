@@ -64964,6 +64964,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/clones/auto_clones_6C0000.cpp"
   },
+  "0x006C9250": {
+    "name": "Unknown::ReleaseChildAndTeardown",
+    "class": "Unknown",
+    "signature": "void fn_006C9250(void* self)",
+    "summary": "Prunes flag-0x08 children from the child at +0x4c, deletes that child via vtable slot 0, then tears down the subobject at +0x50 and the base via sub_006B9D70.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C92D0": {
     "name": "Unknown::PruneFlag08Children",
     "class": "Unknown",

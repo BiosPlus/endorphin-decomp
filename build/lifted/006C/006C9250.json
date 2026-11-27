@@ -1,0 +1,28 @@
+{
+  "va": "0x006C9250",
+  "size": 128,
+  "orig_symbol": "sub_006C9250",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::ReleaseChildAndTeardown",
+  "class": "Unknown",
+  "signature": "void fn_006C9250(void* self)",
+  "summary": "Prunes flag-0x08 children from the child at +0x4c, deletes that child via vtable slot 0, then tears down the subobject at +0x50 and the base via sub_006B9D70.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint8_t",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:10:40Z"
+}

@@ -905,7 +905,7 @@ struct Unknown_Fields {
     // +0x4C  std::uint32_t            field_0x4c  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint32_t                 field_0x4c  (evidence: 0x00709AB0, 0x00790F40, 0x007911E0, 0x007966D0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint8_t                  field_0x4c  (evidence: 0x0063F960) // CONFLICT: multiple definitions at +0x4C
-    // +0x4C  void*                    field_0x4c  (evidence: 0x00441020, 0x0044B5C0, 0x0046C2F0) // CONFLICT: multiple definitions at +0x4C
+    // +0x4C  void*                    field_0x4c  (evidence: 0x00441020, 0x0044B5C0, 0x0046C2F0, 0x006C9250) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  void**                   field_0x4c  (evidence: 0x006BA780, 0x006BC6F0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint8_t                  field_0x4c[0x11]  (evidence: 0x00602F70) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint32_t                 flag  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x4C
@@ -921,7 +921,7 @@ struct Unknown_Fields {
     // +0x50  std::string              field_0x50  (evidence: 0x00422C80) // CONFLICT: multiple definitions at +0x50
     // +0x50  std::uint32_t            field_0x50  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x50
     // +0x50  uint32_t                 field_0x50  (evidence: 0x004ED750, 0x0053B1F0, 0x00648800, 0x007911E0, 0x007C8490, 0x007C9D80, 0x007C9E20, 0x007CAF70) // CONFLICT: multiple definitions at +0x50
-    // +0x50  uint8_t                  field_0x50  (evidence: 0x005E4D90) // CONFLICT: multiple definitions at +0x50
+    // +0x50  uint8_t                  field_0x50  (evidence: 0x005E4D90, 0x006C9250) // CONFLICT: multiple definitions at +0x50
     // +0x50  uint8_t[12]              field_0x50  (evidence: 0x004939B0) // CONFLICT: multiple definitions at +0x50
     // +0x50  void                     field_0x50  (evidence: 0x0072DA80) // CONFLICT: multiple definitions at +0x50
     // +0x50  void*                    field_0x50  (evidence: 0x004AEC60, 0x006E6800) // CONFLICT: multiple definitions at +0x50
